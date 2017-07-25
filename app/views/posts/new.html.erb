@@ -4,3 +4,10 @@
 
   <%= form.submit "Submit" %>
 <% end %>
+
+<%= form_for @comment do |form| %>
+  <%= form.label :text %>
+  <%= form.text_field :text %>
+
+  <%= form.submit "Comment" %>
+<% end %>
