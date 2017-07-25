@@ -5,9 +5,7 @@
   <%= form.submit "Submit" %>
 <% end %>
 
-<%= form_for @comment do |form| %>
-  <%= form.label :text %>
-  <%= form.text_field :text %>
-
-  <%= form.submit "Comment" %>
-<% end %>
+<form id="comment" method="POST" action="/posts">
+<input type="text" name="comment">
+<input type="submit" value="Comment">
+</form>

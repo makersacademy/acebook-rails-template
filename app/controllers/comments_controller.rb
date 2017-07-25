@@ -4,12 +4,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create(comment_params)
+    @comment = Comment.create(params[:comment])
     p @comment
     redirect_to posts_url
   end
-
-
 
   private
 
