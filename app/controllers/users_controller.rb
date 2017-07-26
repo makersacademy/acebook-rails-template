@@ -5,6 +5,7 @@ class UsersController < ApplicationController
       render 'show'
     else
       @user = User.create
+      
       render 'show'
     end
   end
