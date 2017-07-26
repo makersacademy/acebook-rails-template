@@ -22,7 +22,7 @@ RSpec.feature "Sign up", type: :feature do
   end
 
   describe "Duplicate details" do
-    xscenario "Email address must be unique" do
+    scenario "Email address must be unique" do
       sign_up
       expect { sign_up }.to_not change(User, :count)
     end
