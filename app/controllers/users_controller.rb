@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-    render 'sign-up'
+    render 'new'
   end
 
   def create
@@ -19,17 +19,14 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       render 'show'
     else
-      @user = User.create(default_params)
-      render 'show'
+      redirect_to posts_url
+      # add flash error
     end
   end
 
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
+  private
 
-  def default_params
-    {name: "Default", email: "default@test.com", password: "Password123",
-    password_confirmation: "Password123"}
-  end
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
 end
