@@ -38,6 +38,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem 'timecop'
+  gem 'orderly'
 end
 
 group :development do
