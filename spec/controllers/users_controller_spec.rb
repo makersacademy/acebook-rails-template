@@ -7,7 +7,8 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(200)
     end
     it "adds user to database" do
-      expect{ User.create }.to change{ User.count }.by(1)
+      expect{ User.create(name: "test", email: "test@test.com", password: "Password123",
+        password_confirmation: "Password123") }.to change{ User.count }.by(1)
     end
   end
 end
