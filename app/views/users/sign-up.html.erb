@@ -3,10 +3,8 @@
   <%= form.text_field :name %>
   <%= form.label :email %>
   <%= form.text_field :email %>
-  <%= form.label :password %>
-  <%= form.text_field :password %>
-  <%= form.label :password_confirmation %>
-  <%= form.text_field :password_confirmation %>
+  Password: <%= form.password_field :password %>
+  Password Confirmation: <%= form.password_field :password_confirmation %>
 
   <%= form.submit "Submit" %>
 <% end %>

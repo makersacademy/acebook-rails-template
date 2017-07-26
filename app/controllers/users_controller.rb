@@ -5,8 +5,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    redirect_to posts_url
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to posts_url
+    else
+      redirect_to new_user_url
+    end
   end
 
   def show
@@ -15,7 +20,6 @@ class UsersController < ApplicationController
       render 'show'
     else
       @user = User.create(default_params)
-
       render 'show'
     end
   end
