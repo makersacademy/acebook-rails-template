@@ -2,7 +2,7 @@
 
 [You can find the week outline here.](https://github.com/makersacademy/course/tree/master/acebook)
 
-The card wall is here: https://trello.com/b/o9DtdREA/acebook-june-2017
+The card wall is here: https://trello.com/b/o9DtdREA/acebook-june-2017 
 
 ## How to contribute to this project
 
