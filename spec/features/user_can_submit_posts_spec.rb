@@ -10,6 +10,7 @@ RSpec.feature "Timeline", type: :feature do
     Timecop.freeze(Time.parse("2017-07-25 14:56:46.490151 +0100"))
     create_post
     expect(page).to have_content('2017-07-25 13:56:46 UTC')
+    Timecop.return
   end
 
   scenario "posts are displayed in reverse chron order" do
