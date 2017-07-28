@@ -2,9 +2,6 @@
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
-  <%= link_to new_like_path do %>
-    Like
-  <% end %>
 <% end %>
 
 <br><%= link_to new_post_path do %>
