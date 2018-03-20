@@ -1,11 +1,11 @@
 # AceBook
 
-**Coaches: Fork this repository to `acebook-cohortname` and customize
+Fork this repository to `acebook-teamname` and customize
 the below**
 
 [You can find the week outline here.](https://github.com/makersacademy/course/tree/acebook/acebook)
 
-The card wall is here: [[[]]]
+The card wall is here: <please update>
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -15,10 +15,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 First, clone this repository. Then:
 
 ```bash
-bundle install
-bin/rails db:create
-bin/rails db:migrate
+> bundle install
+> bin/rails db:create
+> bin/rails db:migrate
 
-bundle exec rspec # Run the tests to ensure it works
-bin/rails server # Start the server at localhost:3000
+> bundle exec rspec # Run the tests to ensure it works
+> bin/rails server # Start the server at localhost:3000
 ```
