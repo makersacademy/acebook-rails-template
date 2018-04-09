@@ -1,17 +1,15 @@
-before_install: gem install bundler
-
-addons:
-  postgresql: 9.6
-
-before_script:
-  - cp config/database.yml config/database.yml.travis
-  - psql -c 'create database travis_ci_test;' -U postgres
-
-dist: trusty
-language: ruby
-rvm:
-  - 2.5
+rvm: '2.5.0'
 
 script:
-- bundle exec rails db:migrate RAILS_ENV=test
-- bundle exec rspec
+  - bundle exec rake test_setup
+  - mkdir -p spec && bundle exec rspec spec
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+
+before_install:
+- sudo apt-get update -qq
+- sudo apt-get install -qq postgresql-server-dev-9.3
+
+
+before_script:
+- psql -c 'create database travis;' -U postgres
