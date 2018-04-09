@@ -1,7 +1,21 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DART</title>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+  </head>
+  <body>
+    <div id="new-post">
+      <%= link_to new_post_path do %>
+        New post
+      <% end %>
+    </div>
+    <br>
+    <div id="all-posts">
+      <% @posts.each do |post| %>
+        <p><%= post.message %></p>
+      <% end %>
+    </div>
+  </body>
+</html>

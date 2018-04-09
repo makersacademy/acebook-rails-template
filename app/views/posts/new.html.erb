@@ -1,6 +1,16 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DART</title>
 
-  <%= form.submit "Submit" %>
-<% end %>
+  </head>
+  <div id="new-post">
+    <body>
+      <%= form_for @post do |form| %>
+        <%= form.text_area :message %>
+        <%= form.submit "Throw" %>
+      <% end %>
+    </body>
+  </div>
+</html>
