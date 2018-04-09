@@ -3,7 +3,7 @@
 Fork this repository to `acebook-teamname` and customize
 the below**
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/apprenticeships-course/tree/master/engineering_projects/rails)
+[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
 The card wall is here: <please update>
 
