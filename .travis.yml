@@ -1,5 +1,12 @@
 rvm: '2.5.0'
 
+addons:
+  code_climate:
+    repo_token: 418d3c72e74748a998e609e2dbf9c04b9e7195c4dc412bd1e8e37aad160f47e5
+
+after_success:
+  - bundle exec codeclimate-test-reporter
+  
 script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
