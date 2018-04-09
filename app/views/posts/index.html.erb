@@ -14,7 +14,8 @@
     <br>
     <div id="all-posts">
       <% @posts.each do |post| %>
-        <p><%= post.message %></p>
+        <p><%= post.message %>
+        <%= post.created_at %></p>
       <% end %>
     </div>
   </body>
