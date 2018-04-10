@@ -15,7 +15,9 @@
     <div id="all-posts">
       <% @posts.each do |post| %>
         <p><%= post.message %></p>
-        <p><%= post.created_at %></p>
+        <p><%= post.created_at.to_s.split(" ")[0] %>
+        <%= post.created_at.to_s.split(" ")[1][0...-3] %></p>
+
         <% post.comments.each do |comment|%>
           <p><%= comment.body%></p>
         <% end %>
