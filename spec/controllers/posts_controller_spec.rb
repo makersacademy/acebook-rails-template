@@ -31,9 +31,9 @@ RSpec.describe PostsController, type: :controller do
     it 'deletes a post' do
       post :create, params: { post: { message: 'Bye, world!' } }
 
-      post :delete, params: { post: { message: 'Bye, world!' } }
+      Post.find_by(message: 'Bye, world!').destroy
 
-      expect(Post.find_by(message: 'Bye, world!')).to be false
+      expect(Post.find_by(message: 'Bye, world!')).to be nil
     end
   end
 end

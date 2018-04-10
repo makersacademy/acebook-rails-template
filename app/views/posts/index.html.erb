@@ -3,10 +3,14 @@
 <% @posts.each_with_index do |post, idx| %>
   <div id="post_div_<%=idx%>">
     <p id="post_body_<%=idx%>"><%= post.message %></p>
+
+    <h5><%= link_to 'Destroy', post_path(post), method: :delete %></h5>
+
     <p><%= link_to 'Show', post_path(post) %></p>
+
   </div>
 <% end %>
 
 <%= link_to new_post_path do %>
-  New post
+New post
 <% end %>
