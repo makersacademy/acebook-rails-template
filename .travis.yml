@@ -3,7 +3,7 @@ language: ruby
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=fd9a33dafd1e450a26e193cb6250c8c88892591c4d6b3961e0fe0ca0a6edd1a6
+    - CC_TEST_REPORTER_ID=d7eb51517e9a3d02451f0c56c5d9fde0f119b9b61a9a0995749f886c33e1fb9b
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
