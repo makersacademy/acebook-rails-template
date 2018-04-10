@@ -25,6 +25,11 @@
 
           <p><%= comment.body%></p>
           <p>(<%= ((Time.zone.now - comment.created_at) / 60).to_i%> mins ago)</p>
+
+
+        <%= link_to 'Delete Comment', post_comment_path(post, comment),
+                                   method: :delete,
+                                   data: {confirm: 'Confirm Delete Comment?'}%>
         <% end %>
         <%= form_with(model: [ post, post.comments.build], local: true) do |form| %>
           <%= form.text_area :body, cols: "50", rows: "5" %>
