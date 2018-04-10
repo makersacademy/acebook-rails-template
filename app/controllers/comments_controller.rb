@@ -5,8 +5,16 @@ class CommentsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def destroy
+    @comment = @post.comments.find(params[:comment_id])
+
+    @comment.destroy
+    redirect_to post_path(@post)
+  end
+
   private
-    def comment_params
-      params.require(:comment).permit(:commenter, :body)
-    end
+
+  def comment_params
+    params.require(:comment).permit(:commenter, :body)
+  end
 end
