@@ -15,9 +15,12 @@
     <div id="all-posts">
       <% @posts.each do |post| %>
         <p><%= post.message %></p>
-        <p><%= post.created_at %></p>
+        <p><%= post.created_at.to_s.split(" ")[0] %>
+        <%= post.created_at.to_s.split(" ")[1][0...-3] %></p>
+
         <% post.comments.each do |comment|%>
           <p><%= comment.body%></p>
+          <p>(<%= ((Time.zone.now - comment.created_at) / 60).to_i%> mins ago)</p>
         <% end %>
         <%= form_with(model: [ post, post.comments.build], local: true) do |form| %>
           <%= form.text_area :body, cols: "50", rows: "5" %>
