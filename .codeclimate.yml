@@ -1,0 +1,10 @@
+verison: "2"
+engines:
+  # ... CONFIG CONTENT ...
+  rubocop:
+    enabled: true
+    # ... CONFIG CONTENT ...
+    checks:
+      Rubocop/Style/FrozenStringLiteralComment:
+        enabled: false
+# ... CONFIG CONTENT ..
