@@ -2,8 +2,7 @@
 <% @posts.each_with_index do |post, idx| %>
   <div id="post_div_<%=idx%>">
     <p id="post_body_<%=idx%>"><%= post.message %></p>
-    <p>Likes: post.likes</p>
-    <button id="post_like_<%=idx%>">Like!</button>
+    <p><%= link_to 'Show', post_path(post) %></p>
   </div>
 <% end %>
 
