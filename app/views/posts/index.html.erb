@@ -1,7 +1,10 @@
 <h1>Welcome to your Acebook newsfeed!</h1>
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-  <td><%= link_to 'Show', post_path(post) %></td>
+
+<% @posts.each_with_index do |post, idx| %>
+  <div id="post_div_<%=idx%>">
+    <p id="post_body_<%=idx%>"><%= post.message %></p>
+    <p><%= link_to 'Show', post_path(post) %></p>
+  </div>
 <% end %>
 
 <%= link_to new_post_path do %>
