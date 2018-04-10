@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
-  has_many :likes, :comments
+  has_many :likes
+  has_many :comments
   validates :message, presence: true
 end
