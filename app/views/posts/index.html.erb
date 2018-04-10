@@ -1,4 +1,5 @@
 <h1>Welcome to your Acebook newsfeed!</h1>
+
 <% @posts.each_with_index do |post, idx| %>
   <div id="post_div_<%=idx%>">
     <p id="post_body_<%=idx%>"><%= post.message %></p>
