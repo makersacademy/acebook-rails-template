@@ -15,6 +15,7 @@
     <div id="all-posts">
       <% @posts.each do |post| %>
         <p><%= post.message %></p>
+        <p><%= post.created_at %></p>
         <% post.comments.each do |comment|%>
           <p><%= comment.body%></p>
         <% end %>
