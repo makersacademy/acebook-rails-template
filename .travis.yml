@@ -1,0 +1,8 @@
+language: ruby
+
+  - psql -c 'create database travis_ci_test;' -U postgres
+
+script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rspec
