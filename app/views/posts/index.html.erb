@@ -14,9 +14,22 @@
     <br>
     <div id="all-posts">
       <% @posts.each do |post| %>
-        <p><%= post.message %>
-        <%= post.created_at %></p>
+        <p><%= post.message %></p>
+        <p><%= post.created_at %></p>
+        <% post.comments.each do |comment|%>
+          <p><%= comment.body%></p>
+        <% end %>
+        <%= form_with(model: [ post, post.comments.build], local: true) do |form| %>
+          <%= form.text_area :body, cols: "50", rows: "5" %>
+          <br>
+          <%=form.submit "Comment"%>
+          <br>
+          <br>
+          <br>
+          <br>
+        <% end %>
       <% end %>
+
     </div>
   </body>
 </html>

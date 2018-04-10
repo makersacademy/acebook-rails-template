@@ -9,7 +9,7 @@
       <div id="new-post">
       <%= form_for @post do |form| %>
       <%= form.label :message %>
-        <%= form.text_area :message %>
+        <%= form.text_area :message, cols: "30", rows: "10"%>
         <%= form.submit "Throw" %>
       <% end %>
         </div>
