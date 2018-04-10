@@ -1,0 +1,19 @@
+language: ruby
+  - psql -c 'create database travis_ci_test;' -U postgres
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=d7eb51517e9a3d02451f0c56c5d9fde0f119b9b61a9a0995749f886c33e1fb9b
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rspec
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
