@@ -38,6 +38,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov'
   gem 'rubocop'
+  gem 'travis'
+  gem 'travis-lint'
 end
 
 group :development do
