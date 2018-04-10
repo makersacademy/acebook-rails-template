@@ -9,3 +9,11 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Hello, world!")
   end
 end
+
+RSpec.feature "Links", type: :feature do
+  scenario "Redirected to the Posts page when you click on the link" do
+    visit "/"
+    click_link "Go to Posts page"
+    expect(page).to have_content("Welcome to your Acebook newsfeed!")
+  end
+end
