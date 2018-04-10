@@ -3,6 +3,12 @@
   <%= @post.message %>
 </p>
 
+<div id="post_<%= @post.id %>_likes">
+  <%= render partial: "likes", locals: {post: @post} %>
+</div>
+
+<%= link_to 'Back', posts_path %>
+
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
   <p>
