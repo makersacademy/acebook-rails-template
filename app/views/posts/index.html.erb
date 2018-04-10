@@ -1,6 +1,7 @@
 <h1>Welcome to your Acebook newsfeed!</h1>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <td><%= link_to 'Show', post_path(post) %></td>
 <% end %>
 
 <%= link_to new_post_path do %>
