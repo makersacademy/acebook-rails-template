@@ -1,3 +1,4 @@
+[![Test Coverage](https://api.codeclimate.com/v1/badges/70ad0217d63f10aac886/test_coverage)](https://codeclimate.com/github/Byte4/acebook-byte4/test_coverage)
 # AceBook
 
 Fork this repository to `acebook-teamname` and customize
