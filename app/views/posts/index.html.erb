@@ -9,10 +9,15 @@
 <% end %>
 </p>
 
+<h1>Acebook</h1>
+
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <tr>
+    <td><%= post.message %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+  </tr>
 <% end %>
 
 <%= link_to new_post_path do %>
-  New post
+  <p>New post</p>
 <% end %>
