@@ -9,6 +9,14 @@
   </head>
 
   <body>
+
+    <% if user_signed_in? %>
+      <p>Hello, <%= current_user.name %> - <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %></p>
+      <br>
+      <% end %>
     <%= yield %>
   </body>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 </html>
