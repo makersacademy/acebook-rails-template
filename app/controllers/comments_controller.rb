@@ -21,8 +21,8 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
 
-    if @comment.update(comment_params)
-      redirect_to('/posts/' + comment_params[:post_id])
+    if @comment.update(update_comment_params)
+      redirect_to('/posts/' + update_comment_params[:post_id])
     else
       render 'commentsform'
     end
@@ -31,6 +31,10 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
+    params.require(:comment).permit(:commenter, :body, :post_id)
+  end
+
+  def update_comment_params
     params.permit(:commenter, :body, :post_id)
   end
 end
