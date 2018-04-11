@@ -10,20 +10,8 @@
 <%= link_to 'Back', posts_path %>
 
 <h2>Comments</h2>
-<% @post.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-
-  <h5><%= link_to 'Delete Comment', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure? '} %></h5>
-
-<% end %>
+<%= render 'comments/comments' %>
 
 <h2>Add a comment:</h2>
 <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
