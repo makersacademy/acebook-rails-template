@@ -3,22 +3,8 @@
 
 <%= link_to 'Go to Posts page', posts_path %>
 <br>
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Edit registration', edit_user_registration_path) %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Register', new_user_registration_path)  %>
-  </li>
-<% end %>
-<br>
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>
-  </li>
-<% end %>
+<ul class="hmenu">
+  <%= render 'registration' %>
+  <%= render 'login' %>
+</ul>
+<%= yield %>
