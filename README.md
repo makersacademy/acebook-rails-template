@@ -15,6 +15,7 @@ The app is hosted live using Heroku at: https://fierce-headland-12326.herokuapp.
 
 ## Testing
 1. Run `rspec` in bash from the project root directory
+2. To view test coverage, open the _index.html_ file found in the **coverage** folder
 
 
 ## Core Resources:
