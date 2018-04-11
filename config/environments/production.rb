@@ -81,7 +81,7 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   # Default URL
-  config.action_mailer.default_url_options = { host: 'splendaberg-acebook.herokuapp.com'}
+  config.action_mailer.default_url_options = { host: 'ec2-54-225-96-191.compute-1.amazonaws.com'}
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
