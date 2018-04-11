@@ -25,5 +25,11 @@ RSpec.describe PostsController, type: :controller do
       get :index
       expect(response).to have_http_status(200)
     end
+
+    it "shows post in a descending order" do
+      get :index
+      expect(post(:last)).to eq @post.first
+      expect(post(:first)).to eq @post.last
+    end  
   end
 end
