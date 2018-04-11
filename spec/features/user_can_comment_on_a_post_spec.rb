@@ -3,11 +3,8 @@ require 'rails_helper'
 RSpec.feature "Commenting on posts", type: :feature do
   scenario "Can submit comments on posts" do
     add_new_post
-    click_link "Show"
-    fill_in "comment[commenter]", with: "Charlene"
-    fill_in "comment[body]", with: "Hello, world!"
-    click_button "Create Comment"
+    add_comment
     expect(page).to have_content("Charlene")
-    expect(page).to have_content("Hello, world!")
+    expect(page).to have_content("Rails is awesome")
   end
 end
