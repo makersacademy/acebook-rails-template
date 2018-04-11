@@ -35,7 +35,7 @@ https://acebook-pinkfish.herokuapp.com/
 
 # Team members
 - Christopher Ly :squirrel: - https://github.com/defc0nONE
-- Chiaki Mizuta :joy: - https://github.com/chiakimz
+- Chiaki Mizuta :thumbs-up-parrot: - https://github.com/chiakimz
 - Hemesh Unka :tiger: - https://github.com/hemesh-unka
 - Reena Koudi :rowboat: - https://github.com/Reenakoudi
 - Richard Hewitt :ok_hand: - https://github.com/rewitt94
