@@ -29,6 +29,10 @@
         <p><%= post.message %></p>
         <p><%= post.created_at.to_s.split(" ")[0] %>
         <%= post.created_at.to_s.split(" ")[1][0...-3] %></p>
+
+
+        <%= link_to 'Like', post_likes_path(post), method: :post %>
+        <%= post.likes.count %>
         <%= link_to 'Delete Post', post_path(post),
                                    method: :delete,
                                    data: {confirm: 'Confirm Delete Post?'}%>
