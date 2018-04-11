@@ -26,4 +26,4 @@ First, clone this repository. Then:
 ```
 
 
-[Trello board URL: ](https://trello.com/b/Jju01whu/acebook-underdogs)
+[Trello board URL ](https://trello.com/b/Jju01whu/acebook-underdogs)
