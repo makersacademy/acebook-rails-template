@@ -27,3 +27,10 @@ def sign_out
   visit "/"
   click_link "Logout"
 end
+
+def add_comment
+  click_link "Show"
+  fill_in "comment[commenter]", with: "Charlene"
+  fill_in "comment[body]", with: "Rails is awesome!"
+  click_button "Create Comment"
+end
