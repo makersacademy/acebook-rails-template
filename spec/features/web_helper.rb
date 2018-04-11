@@ -5,3 +5,25 @@ def add_new_post
   fill_in "Post a new message", with: "Hello, world!"
   click_button "Submit"
 end
+
+def sign_up
+  visit "/"
+  click_link "Register"
+  fill_in "Email", with: "hello@live.com"
+  fill_in "Password", with: "password123"
+  fill_in "Password confirmation", with: "password123"
+  click_button "Sign up"
+end
+
+def sign_in
+  visit "/"
+  click_link "Login"
+  fill_in "Email", with: "hello@live.com"
+  fill_in "Password", with: "password123"
+  click_button "Log in"
+end
+
+def sign_out
+  visit "/"
+  click_link "Logout"
+end
