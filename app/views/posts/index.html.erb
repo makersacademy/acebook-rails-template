@@ -13,7 +13,7 @@
     </div>
     <br>
     <div id="all-posts">
-      <% @posts.each do |post| %>
+      <% @posts.reverse.each do |post| %>
         <p><%= post.message %></p>
         <p><%= post.created_at.to_s.split(" ")[0] %>
         <%= post.created_at.to_s.split(" ")[1][0...-3] %></p>
@@ -21,7 +21,7 @@
                                    method: :delete,
                                    data: {confirm: 'Confirm Delete Post?'}%>
 
-        <% post.comments.each do |comment|%>
+        <% post.comments.reverse.each do |comment|%>
 
           <p><%= comment.body%></p>
           <p>(<%= ((Time.zone.now - comment.created_at) / 60).to_i%> mins ago)</p>
