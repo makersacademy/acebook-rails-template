@@ -3,10 +3,7 @@
 
 def add_new_post
   sign_up
-  visit '/posts'
-  click_link 'New post'
-  fill_in 'post[message]', with: 'Hello, world!'
-  click_button 'Submit'
+
 end
 
 def sign_up
