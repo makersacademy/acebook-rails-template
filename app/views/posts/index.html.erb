@@ -1,7 +1,67 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DART</title>
+  </head>
+  <body>
+    <div id="footerBar"></div>
+    <div id="headerBar">
+      <% if user_signed_in? %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <%= link_to current_user.email, edit_user_registration_path %>
+      <% else %>
+          <%= link_to 'Sign Up', new_user_registration_path %>
+          <%= link_to 'Login', new_user_session_path %>
+      <% end %>
+    </div>
+    <h1>DART</h1>
+    <div id="footerBar"></div>
+    </br>
+    </br>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+    <% if notice %> <p class="notice"><%= notice %></p> <% end %>
+    <% if alert %> <p class="alert"><%= alert %></p> <% end %>
+    <div id="new-post">
+      <%= link_to new_post_path do %>
+        New post
+      <% end %>
+    </div>
+    <br>
+    <div id="all-posts">
+      <% @posts.reverse.each do |post| %>
+        <p><%= post.message %></p>
+        <p id="user_post_name"><%= post.user.email %></p>
+        <p><%= post.created_at.to_s.split(" ")[0] %>
+        <%= post.created_at.to_s.split(" ")[1][0...-3] %></p>
+
+
+        <%= link_to 'Like', post_likes_path(post), method: :post %>
+        Likes:<%= post.likes.count %>
+        <%= link_to 'Delete Post', post_path(post),
+                                   method: :delete,
+                                   data: {confirm: 'Confirm Delete Post?'}%>
+
+        <% post.comments.reverse.each do |comment|%>
+
+          <p><%= comment.body%></p>
+          <p>(<%= ((Time.zone.now - comment.created_at) / 60).to_i%> mins ago)</p>
+
+        <%= link_to 'Delete Comment', post_comment_path(post, comment),
+                                   method: :delete,
+                                   data: {confirm: 'Confirm Delete Comment?'}%>
+        <% end %>
+        <%= form_with(model: [ post, post.comments.build], local: true) do |form| %>
+          <%= form.text_area :body, cols: "50", rows: "5" %>
+          <br>
+          <%=form.submit "Comment"%>
+          <br>
+          <br>
+          <br>
+          <br>
+        <% end %>
+      <% end %>
+
+    </div>
+  </body>
+</html>
