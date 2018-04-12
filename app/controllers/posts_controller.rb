@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :authenticate_user!
   def new
@@ -10,11 +12,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-      @post = current_user.posts.find(params[:id])
-      @post.destroy
-      redirect_to posts_url
-    rescue ActiveRecord::RecordNotFound
-      redirect_to posts_url
+    @post = current_user.posts.find(params[:id])
+    @post.destroy
+    redirect_to posts_url
+  rescue ActiveRecord::RecordNotFound
+    redirect_to posts_url
   end
 
   def index
