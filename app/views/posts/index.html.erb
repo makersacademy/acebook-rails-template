@@ -4,9 +4,9 @@
   <div id="post_div_<%=idx%>" class='news_deck'>
     <p id="post_body_<%=idx%>"><%= post.message %></p>
     <br>
-    <%= button_to 'Delete', post_path(post), {method: :delete, id: 'post_button'} %>
-    <%= button_to 'Show', post_path(post), {id: 'post_button'} %>
-    <%= button_to 'Edit', edit_post_path(post), {id: 'post_button'} %>
+    <%= button_to 'Delete', post_path(post), {method: :delete, id: 'del_btn', class: 'post_button'} %>
+    <%= button_to 'Show', post_path(post), {method: :get, id: 'post_btn', class: 'post_button'} %>
+    <%= button_to 'Edit', edit_post_path(post), {method: :get,id: 'edit_btn', class: 'post_button'} %>
 
   </div>
 <% end %>
