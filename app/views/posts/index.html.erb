@@ -1,13 +1,12 @@
-<h1>Welcome to your Acebook newsfeed!</h1>
+<h1>News Deck</h1>
 
 <% @posts.each_with_index do |post, idx| %>
-  <div id="post_div_<%=idx%>">
+  <div id="post_div_<%=idx%>" class='news_deck'>
     <p id="post_body_<%=idx%>"><%= post.message %></p>
-
-    <h5><%= link_to 'Delete', post_path(post), method: :delete %></h5>
-
-    <p><%= link_to 'Show', post_path(post) %></p>
-    <p><%= link_to 'Edit', edit_post_path(post) %></p>
+    <br>
+    <%= button_to 'Delete', post_path(post), {method: :delete, id: 'post_button'} %>
+    <%= button_to 'Show', post_path(post), {id: 'post_button'} %>
+    <%= button_to 'Edit', edit_post_path(post), {id: 'post_button'} %>
 
   </div>
 <% end %>
