@@ -15,8 +15,6 @@ class PostsController < ApplicationController
     @post = current_user.posts.find(params[:id])
     @post.destroy
     redirect_to posts_url
-  rescue ActiveRecord::RecordNotFound
-    redirect_to posts_url
   end
 
   def index
