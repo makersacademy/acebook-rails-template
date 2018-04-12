@@ -10,9 +10,10 @@
 </p>
 
 <h1>Acebook</h1>
-
-<% @posts.each do |post| %>
+<table>
+<% @posts.sort_by { |x| x.created_at }.reverse.each do |post| %>
   <tr>
+    <td><%= post.created_at.strftime("%a %e %b %H:%M") %></td>
     <td><%= post.message %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Delete', post_path(post),
@@ -20,6 +21,7 @@
             data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</table>
 
 <%= link_to new_post_path do %>
   <p>New post</p>
