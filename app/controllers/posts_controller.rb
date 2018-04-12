@@ -1,10 +1,6 @@
 class PostsController < ApplicationController
   # before_action :authenticate_user!
 
-  def posts
-      @posts = Post.order(created_at: :desc)
-  end
-
   def new
     @post = Post.new
   end
@@ -19,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   private
