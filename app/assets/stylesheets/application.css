@@ -13,10 +13,47 @@
  *= require_tree .
  *= require_self
  */
- body {
-   font-family: Andale Mono;
-   background-color: #DBEDF3;
+
+ html, body {
+     margin: 0;
+     padding: 0
  }
+ #headerBar {
+     height: 30px;
+     background: red;
+     position: fixed;
+     top: 0;
+     width: 100%;
+     /* z-index: -1 */
+ }
+ #footerBar {
+     height: 40px;
+     background: green;
+     position: relative;
+     /* bottom: 0; */
+     width: 100%;
+     color: white;
+     /* z-index: -1 */
+ }
+
+ body {
+   font-family: Avenir Book;
+   font-size: 15px;
+   color: #4E387E;
+   background-color: #FBF6D9;
+   /* background-image: url("Best-Electronic-Dart-Board.jpg"); */
+   text-align: center;
+ }
+
+h1 {
+  font-size: 80px;
+  letter-spacing: 5px;
+  font-weight: 100;
+  color: #E82900;
+  background-image: url("Best-Electronic-Dart-Board.jpg");
+  margin: 50px;
+  z-index: -1
+}
 
  #all-posts {
    text-align: center;;
