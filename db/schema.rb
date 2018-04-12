@@ -15,10 +15,9 @@ ActiveRecord::Schema.define(version: 20180411130748) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accounts", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
