@@ -19,7 +19,7 @@ This is the Engineering Project challenge for weeks 8-9 at Makers Academy.
 
 The Splendaberg team consists of Alfie Darko (@AlfieDarko), Charlene Bastians (@CharSV5), Julian Ng (@julesnuggy), and Tom Betts (@T-Betts).
 
-The app is hosted live using Heroku at: https://fierce-headland-12326.herokuapp.com/
+The app is hosted live using Heroku at: https://splendaberg-acebook.herokuapp.com
 
 ## Local Set Up
 1. Clone repo: `git clone git@github.com:julesnuggy/acebook-byte-3.git`
@@ -99,8 +99,8 @@ https://trello.com/b/3DGCTw4g/acebook-byte-3
 The app is hosted on Heroku and uses its built-in cloud database. For this project, we used Tom's Heroku account. You will need to be a Collaborator to be able to run / modify the Heroku app.
 
 To run the app in the deployed Heroku environment:
-* In your browser, visit https://fierce-headland-12326.herokuapp.com/posts
-* Or, in your bash, run: `heroku open -a fierce-headland-12326`
+* In your browser, visit https://splendaberg-acebook.herokuapp.com
+* Or, in your bash, run: `heroku open -a splendaberg-acebook
 
 To access the psql database hosted on Heroku, in your bash, navigate to the
 project directory and run:
