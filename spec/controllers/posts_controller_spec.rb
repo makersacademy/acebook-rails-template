@@ -5,11 +5,13 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :controller do
 
 before (:each) do
- @user = User.create! ({
-   :email => 'user@test.com',
-   :password => 'please',
-   :password_confirmation => 'please'
-                       })
+ @user = User.create! (
+   {
+     :email => 'user@test.com',
+     :password => 'please',
+     :password_confirmation => 'please'
+   }
+ )
  sign_in @user
 end
 
