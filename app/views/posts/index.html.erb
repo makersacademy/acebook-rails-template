@@ -36,7 +36,7 @@
 
 
         <%= link_to 'Like', post_likes_path(post), method: :post %>
-        <%= post.likes.count %>
+        Likes:<%= post.likes.count %>
         <%= link_to 'Delete Post', post_path(post),
                                    method: :delete,
                                    data: {confirm: 'Confirm Delete Post?'}%>
