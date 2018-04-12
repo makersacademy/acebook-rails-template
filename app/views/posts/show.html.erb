@@ -1,0 +1,29 @@
+<p>
+  <strong>Post:</strong>
+  <%= @post.message %>
+</p>
+
+<div id="post_<%= @post.id %>_likes">
+  <%= render partial: "likes", locals: {post: @post} %>
+</div>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+<h2>Comments</h2>
+
+<%= render 'comments/comments' %>
+
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
+<p>
+  <%= form.label :commenter %><br>
+  <%= form.text_field :commenter %>
+</p>
+<p>
+  <%= form.label :body %><br>
+  <%= form.text_area :body %>
+</p>
+<p>
+  <%= form.submit %>
+</p>
+<% end %>
