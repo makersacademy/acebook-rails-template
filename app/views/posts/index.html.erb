@@ -41,8 +41,8 @@
 
           <p><%= comment.body%></p>
           <p>(<%= ((Time.zone.now - comment.created_at) / 60).to_i%> mins ago)</p>
-
-
+        <%= link_to 'Like', post_comment_comment_likes_path(comment), method: :post %>
+        <%= comment.comment_likes.count %>
         <%= link_to 'Delete Comment', post_comment_path(post, comment),
                                    method: :delete,
                                    data: {confirm: 'Confirm Delete Comment?'}%>

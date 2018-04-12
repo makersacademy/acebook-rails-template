@@ -1,3 +1,7 @@
+# rubocop:disable LineLength
+
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -16,3 +20,5 @@ module Acebook
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+# rubocop:enable LineLength
