@@ -7,6 +7,7 @@ RSpec.describe PostsController, type: :controller do
 before (:each) do
  @user = User.create! (
    {
+     :username => 'testUser',
      :email => 'user@test.com',
      :password => 'please',
      :password_confirmation => 'please'

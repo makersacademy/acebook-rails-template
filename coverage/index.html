@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-12T22:42:10+01:00">2018-04-12T22:42:10+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-12T23:00:32+01:00">2018-04-12T23:00:32+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -353,7 +353,7 @@
       <tr>
         <td class="strong"><a href="#5719bad92e63387dd95d330fadc20cf20ce04374" class="src_link" title="spec/controllers/posts_controller_spec.rb">spec/controllers/posts_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>34</td>
+        <td>35</td>
         <td>15</td>
         <td>15</td>
         <td>0</td>
@@ -4905,148 +4905,154 @@
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">     :email =&gt; &#39;user@test.com&#39;,</code>
+          <code class="ruby">     :username =&gt; &#39;testUser&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">     :password =&gt; &#39;please&#39;,</code>
+          <code class="ruby">     :email =&gt; &#39;user@test.com&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">     :password_confirmation =&gt; &#39;please&#39;</code>
+          <code class="ruby">     :password =&gt; &#39;please&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">   }</code>
+          <code class="ruby">     :password_confirmation =&gt; &#39;please&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
+          <code class="ruby">   }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
           <code class="ruby"> )</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
+        <li class="covered" data-hits="2" data-linenumber="16">
           <span class="hits">2</span>
           
           <code class="ruby"> sign_in @user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
-          
-          <code class="ruby"> describe &quot;GET /new &quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">   it &quot;responds with 200&quot; do</code>
+          <code class="ruby"> describe &quot;GET /new &quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">     get :new</code>
+          <code class="ruby">   it &quot;responds with 200&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">     expect(response).to have_http_status(200)</code>
+          <code class="ruby">     get :new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">   end</code>
+          <code class="ruby">     expect(response).to have_http_status(200)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby"> end</code>
+          <code class="ruby">   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"> end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="25">
           
-          <code class="ruby"> describe &#39;POST&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">   context &quot;a valid post to delete&quot; do</code>
+          <code class="ruby"> describe &#39;POST&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">     it &quot;deletes a valid post&quot; do</code>
+          <code class="ruby">   context &quot;a valid post to delete&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
-          <code class="ruby">       post :create, params: { post: { message: &quot;Hello World!&quot;}}</code>
+          <code class="ruby">     it &quot;deletes a valid post&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">       post :destroy, params: { id: Post.last.id }</code>
+          <code class="ruby">       post :create, params: { post: { message: &quot;Hello World!&quot;}}</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">       expect(Post.all.count).to eq(0)</code>
+          <code class="ruby">       post :destroy, params: { id: Post.last.id }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">     end</code>
+          <code class="ruby">       expect(Post.all.count).to eq(0)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby">   end</code>
+          <code class="ruby">     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby"> end</code>
+          <code class="ruby">   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"> end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">end</code>
