@@ -1,5 +1,19 @@
 # AceBook
 
+
+<a href="https://travis-ci.org/julesnuggy/acebook-byte-3">
+  <img src="https://travis-ci.org/julesnuggy/acebook-byte-3.svg?branch=master"/>
+</a>
+
+
+<a href="https://codeclimate.com/github/ryandav/ruby_types/maintainability">
+  <img src="https://api.codeclimate.com/v1/badges/3cb11f09ea68cad7b523/maintainability" />
+</a>
+
+<a href="https://codeclimate.com/github/julesnuggy/acebook-byte-3/test_coverage">
+  <img src="https://api.codeclimate.com/v1/badges/3cb11f09ea68cad7b523/test_coverage" />
+</a>
+
 ## Description
 This is the Engineering Project challenge for weeks 8-9 at Makers Academy.
 
