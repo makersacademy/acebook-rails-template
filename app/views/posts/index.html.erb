@@ -11,7 +11,7 @@
 
 <h1>Acebook</h1>
 <table>
-<% @posts.each do |post| %>
+<% @posts.sort_by { |x| x.created_at }.reverse.each do |post| %>
   <tr>
     <td><%= post.created_at.in_time_zone("Berlin").strftime("%a %e %b %H:%M") %></td>
     <td><%= post.message %></td>
