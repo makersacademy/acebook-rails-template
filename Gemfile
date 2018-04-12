@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem "devise"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -36,6 +36,10 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem 'rubocop-rails'
+  gem 'simplecov', require: false, group: :test
+  gem "factory_bot_rails", "~> 4.0"
+  gem 'ffaker'
 end
 
 group :development do
