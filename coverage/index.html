@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-12T23:04:11+01:00">2018-04-12T23:04:11+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-12T23:50:54+01:00">2018-04-12T23:50:54+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.58%</span></span>
+    (<span class="covered_percent"><span class="green">100.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.52
+         1.59
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>47</b> files in total.
-    <b>238</b> relevant lines. 
-    <span class="green"><b>237</b> lines covered</span> and
-    <span class="red"><b>1</b> lines missed </span>
+    <b>48</b> files in total.
+    <b>256</b> relevant lines. 
+    <span class="green"><b>256</b> lines covered</span> and
+    <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#e0a827ccf70df0d518249c7d3a065891cf5e1359" class="src_link" title="app/controllers/comments_controller.rb">app/controllers/comments_controller.rb</a></td>
-        <td class="green strong">92.86 %</td>
-        <td>24</td>
-        <td>14</td>
-        <td>13</td>
-        <td>1</td>
-        <td>1.2</td>
+        <td class="green strong">100.0 %</td>
+        <td>34</td>
+        <td>21</td>
+        <td>21</td>
+        <td>0</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>22</td>
         <td>22</td>
         <td>0</td>
-        <td>3.8</td>
+        <td>4.2</td>
       </tr>
       
       <tr>
@@ -401,9 +401,19 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#1964c0fafe51f8a0285ae3aec0af9d11c0abb5a9" class="src_link" title="spec/features/user_can_edit_comments_spec.rb">spec/features/user_can_edit_comments_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>16</td>
+        <td>11</td>
+        <td>11</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#2c8754f4d5b486074546172f3ee59ee1897107f5" class="src_link" title="spec/features/user_can_edit_their_post_spec.rb">spec/features/user_can_edit_their_post_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>15</td>
+        <td>16</td>
         <td>11</td>
         <td>11</td>
         <td>0</td>
@@ -447,7 +457,7 @@
         <td>25</td>
         <td>25</td>
         <td>0</td>
-        <td>3.3</td>
+        <td>3.8</td>
       </tr>
       
       <tr>
@@ -588,11 +598,11 @@
         <div class="source_table" id="e0a827ccf70df0d518249c7d3a065891cf5e1359">
   <div class="header">
     <h3>app/controllers/comments_controller.rb</h3>
-    <h4><span class="green">92.86 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>14</b> relevant lines. 
-      <span class="green"><b>13</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <b>21</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -623,20 +633,20 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
           
           <code class="ruby">    @post = Post.find(params[:post_id])</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
           
           <code class="ruby">    @comment = @post.comments.create(comment_params.merge(user_id: current_user.id))</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="7">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="7">
+          <span class="hits">3</span>
           
           <code class="ruby">    redirect_to posts_url</code>
         </li>
@@ -686,58 +696,118 @@
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">  rescue ActiveRecord::RecordNotFound</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
-          
-          <code class="ruby">    redirect_to posts_url</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def edit</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @post = Post.find(params[:post_id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">    @comment = @post.comments.find(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">  def comment_params</code>
+          <code class="ruby">  def update</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="22">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
           
-          <code class="ruby">    params.require(:comment).permit(:body)</code>
+          <code class="ruby">    @post = Post.find(params[:post_id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @comment = @post.comments.find(params[:id])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @comment.update(body: params[:body])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    redirect_to posts_url</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def comment_params</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="32">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    params.require(:comment).permit(:body)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">end</code>
@@ -907,8 +977,8 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="6">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="6">
+          <span class="hits">9</span>
           
           <code class="ruby">    @post = current_user.posts.new</code>
         </li>
@@ -931,14 +1001,14 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="10">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="10">
+          <span class="hits">9</span>
           
           <code class="ruby">    @post = current_user.posts.create(post_params)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="11">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="11">
+          <span class="hits">9</span>
           
           <code class="ruby">    redirect_to posts_url</code>
         </li>
@@ -997,8 +1067,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="21">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="34" data-linenumber="21">
+          <span class="hits">34</span>
           
           <code class="ruby">    @posts = Post.all</code>
         </li>
@@ -1093,8 +1163,8 @@
           <code class="ruby">  def post_params</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="37">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="37">
+          <span class="hits">9</span>
           
           <code class="ruby">    params.require(:post).permit(:message)</code>
         </li>
@@ -5437,6 +5507,121 @@
 </div>
 
       
+        <div class="source_table" id="1964c0fafe51f8a0285ae3aec0af9d11c0abb5a9">
+  <div class="header">
+    <h3>spec/features/user_can_edit_comments_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="never" data-hits="" data-linenumber="1">
+          
+          
+          <code class="ruby"># frozen_string_literal: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require_relative &#39;../helpers/custom_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe &#39;Timeline&#39;, type: :feature do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &#39;User wants to edit a comment&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_up</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    create_comment</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link &#39;Edit Comment&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &#39;body&#39;, with: &#39;&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &#39;body&#39;, with: &#39;This is my world, MY WORLD!&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button &#39;Update Comment&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&#39;This is my world, MY WORLD!&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="2c8754f4d5b486074546172f3ee59ee1897107f5">
   <div class="header">
     <h3>spec/features/user_can_edit_their_post_spec.rb</h3>
@@ -5451,91 +5636,97 @@
   <pre>
     <ol>
       
-        <li class="covered" data-hits="1" data-linenumber="1">
+        <li class="never" data-hits="" data-linenumber="1">
+          
+          
+          <code class="ruby"># frozen_string_literal: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
           <code class="ruby">require &#39;rails_helper&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
           <code class="ruby">require_relative &#39;../helpers/custom_helper&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">RSpec.describe &quot;Timeline&quot;, type: :feature do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">  scenario &quot;User wants to delete a post&quot; do</code>
+          <code class="ruby">RSpec.describe &#39;Timeline&#39;, type: :feature do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    sign_up</code>
+          <code class="ruby">  scenario &#39;User wants to edit a post&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">    create_post</code>
+          <code class="ruby">    sign_up</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_link &#39;Edit&#39;</code>
+          <code class="ruby">    create_post</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">    fill_in &#39;message&#39;, with: &#39;&#39;</code>
+          <code class="ruby">    click_link &#39;Edit&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">    fill_in &#39;message&#39;, with: &#39;This is my world, MY WORLD!&#39;</code>
+          <code class="ruby">    fill_in &#39;message&#39;, with: &#39;&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_button &#39;Update Post&#39;</code>
+          <code class="ruby">    fill_in &#39;message&#39;, with: &#39;This is my world, MY WORLD!&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
+          <code class="ruby">    click_button &#39;Update Post&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
           <code class="ruby">    expect(page).to have_content(&#39;This is my world, MY WORLD!&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
@@ -5893,26 +6084,26 @@
           <code class="ruby">def create_post</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="6">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="6">
+          <span class="hits">8</span>
           
           <code class="ruby">  visit &#39;/posts&#39;</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="7">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="7">
+          <span class="hits">8</span>
           
           <code class="ruby">  click_link &#39;New post&#39;</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="8">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="8">
+          <span class="hits">8</span>
           
           <code class="ruby">  fill_in &#39;post[message]&#39;, with: &#39;Hello, world!&#39;</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="9">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="9">
+          <span class="hits">8</span>
           
           <code class="ruby">  click_button &#39;Throw&#39;</code>
         </li>
@@ -5935,20 +6126,20 @@
           <code class="ruby">def create_comment</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="13">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="13">
+          <span class="hits">3</span>
           
           <code class="ruby">  create_post</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="14">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="14">
+          <span class="hits">3</span>
           
           <code class="ruby">  fill_in &#39;comment[body]&#39;, with: &#39;Hello, Mars!&#39;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="15">
+          <span class="hits">3</span>
           
           <code class="ruby">  click_button &#39;Comment&#39;</code>
         </li>
@@ -5971,32 +6162,32 @@
           <code class="ruby">def sign_up</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="19">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="19">
+          <span class="hits">8</span>
           
           <code class="ruby">  visit &quot;/users/sign_up&quot;</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="20">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="20">
+          <span class="hits">8</span>
           
           <code class="ruby">  fill_in &quot;user[email]&quot;, with: &quot;example@email.com&quot;</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="21">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="21">
+          <span class="hits">8</span>
           
           <code class="ruby">  fill_in &quot;user[password]&quot;, with: &quot;password&quot;</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="22">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="22">
+          <span class="hits">8</span>
           
           <code class="ruby">  fill_in &quot;user[password_confirmation]&quot;, with: &quot;password&quot;</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="23">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="23">
+          <span class="hits">8</span>
           
           <code class="ruby">  click_button &quot;Sign up&quot;</code>
         </li>

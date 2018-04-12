@@ -53,6 +53,7 @@
           <p>(<%= ((Time.zone.now - comment.created_at) / 60).to_i%> mins ago)</p>
 
         <% if current_user === comment.user %>
+        <%= link_to 'Edit Comment', edit_post_comment_path(post.id, comment.id)%>
         <%= link_to 'Delete Comment', post_comment_path(post, comment),
                                    method: :delete,
                                    data: {confirm: 'Confirm Delete Comment?'}%>

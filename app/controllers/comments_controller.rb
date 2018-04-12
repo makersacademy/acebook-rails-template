@@ -12,7 +12,17 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
     @comment.destroy
     redirect_to posts_url
-  rescue ActiveRecord::RecordNotFound
+  end
+
+  def edit
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    @comment.update(body: params[:body])
     redirect_to posts_url
   end
 
