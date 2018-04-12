@@ -1,7 +1,7 @@
 
 <%= form_with model: @post, local: true do |form| %>
 
-
+  <imput type="hidden" name="user_id" value= " <%=current_user.id %>">
   <%= form.label :message, "Post a message" %>
   <br>
   <%= form.text_area :message %>
