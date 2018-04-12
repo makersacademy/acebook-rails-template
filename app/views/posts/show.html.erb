@@ -11,19 +11,7 @@
 <%= link_to 'Back', posts_path %>
 
 <h2>Comments</h2>
-
-
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-
-  <h5><%= link_to 'Delete Comment', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure? '} %></h5>
-  <h5><%= link_to 'Edit Comment', edit_post_comment_path(comment.post, comment) %>
-  </h5>
-
-<% end %>
+<%= render 'comments/comments' %>
 
 <h2>Add a comment:</h2>
-
-<%= render 'addcomment' %>
+<%= render 'comments/form' %>
