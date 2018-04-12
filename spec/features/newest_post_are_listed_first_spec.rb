@@ -12,6 +12,6 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with: "Bye, world!"
     click_button "Submit"
 
-    expect(page.first('p').text).to eq("Bye, world!")
+    expect(page.first('p').text).to include("Bye, world!")
   end
 end
