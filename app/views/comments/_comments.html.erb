@@ -8,6 +8,8 @@
   <strong>Comment:</strong>
   <%= comment.body %>
 </p>
-<%= link_to 'Delete Comment', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure? '} %>
-<%= link_to 'Edit Comment', edit_post_comment_path(comment.id) %>
+
+<%= link_to 'Delete Comment', [@post, comment], method: :delete, data: { confirm: 'Are you sure? '} %>
+<%= link_to 'Edit Comment', edit_post_comment_path(@post, comment) %>
+
 <% end %>
