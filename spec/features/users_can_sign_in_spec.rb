@@ -8,6 +8,6 @@ RSpec.feature 'users can sign in', type: :feature do
     sign_up
     sign_out
     sign_in
-    expect(page).to have_content 'Edit registration'
+    expect(page).to have_selector("input[type=submit][value='Logout']")
   end
 end

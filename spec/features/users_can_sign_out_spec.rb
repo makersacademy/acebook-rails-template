@@ -8,6 +8,6 @@ RSpec.feature 'users can sign out' do
     visit '/'
     sign_up
     sign_out
-    expect(page).to have_content 'Register'
+    expect(page).to have_selector("input[type=submit][value='Login']")
   end
 end
