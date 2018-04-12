@@ -15,6 +15,9 @@
   <tr>
     <td><%= post.message %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Delete', post_path(post),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 
