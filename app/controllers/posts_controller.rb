@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :set_user_id
+  # before_action :set_user_id
 
   def show
     @post = Post.find(params[:id])
@@ -48,9 +48,5 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message, :user_id)
-  end
-
-  def set_user_id
-    @user = User.find(current_user.id)
   end
 end
