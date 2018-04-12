@@ -6,9 +6,7 @@ RSpec.feature "Timeline", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
-    expect(page).to have_content("Hello, world!")
-  end
 
-  scenario "Posts are listed in descending order" do
+    expect(page).to have_content("Hello, world!")
   end
 end
