@@ -37,10 +37,14 @@
 
         <%= link_to 'Like', post_likes_path(post), method: :post %>
         Likes:<%= post.likes.count %>
-        <%= link_to 'Delete Post', post_path(post),
-                                   method: :delete,
-                                   data: {confirm: 'Confirm Delete Post?'}%>
+
+
+        <% if current_user.id === post.user_id%>
         <%= link_to 'Edit', edit_post_path(post.id)%>
+        <%= link_to 'Delete Post', post_path(post),
+                                   method: :delete%>
+        <% end %>
+
 
 
         <% post.comments.reverse.each do |comment|%>
