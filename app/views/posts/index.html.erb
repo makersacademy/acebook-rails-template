@@ -42,8 +42,7 @@
         <% if current_user.id === post.user_id%>
         <%= link_to 'Edit', edit_post_path(post.id)%>
         <%= link_to 'Delete Post', post_path(post),
-                                   method: :delete,
-                                   data: {confirm: 'Confirm Delete Post?'}%>
+                                   method: :delete%>
         <% end %>
 
 
