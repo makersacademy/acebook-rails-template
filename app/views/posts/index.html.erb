@@ -3,21 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>DART</title>
-
   </head>
   <body>
-    <% if user_signed_in? %>
-    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-    <%= link_to current_user.email, edit_user_registration_path %>
-
-    <% else %>
-    <%= link_to 'Sign Up', new_user_registration_path %>
-    <%= link_to 'Login', new_user_session_path %>
-    <% end %>
+    <div id="footerBar"></div>
+    <div id="headerBar">
+      <% if user_signed_in? %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <%= link_to current_user.email, edit_user_registration_path %>
+      <% else %>
+          <%= link_to 'Sign Up', new_user_registration_path %>
+          <%= link_to 'Login', new_user_session_path %>
+      <% end %>
+    </div>
+    <h1>DART</h1>
+    <div id="footerBar"></div>
+    </br>
+    </br>
 
     <% if notice %> <p class="notice"><%= notice %></p> <% end %>
     <% if alert %> <p class="alert"><%= alert %></p> <% end %>
-
     <div id="new-post">
       <%= link_to new_post_path do %>
         New post
