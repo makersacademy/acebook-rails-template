@@ -5,11 +5,13 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '0.18.1', group: :production
+gem 'sqlite3', group: :development
+gem 'rails_12factor', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -36,6 +38,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem "rubocop-rails"
+  gem 'simplecov', require: false, group: :test
 end
 
 group :development do
