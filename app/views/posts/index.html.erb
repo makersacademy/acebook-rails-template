@@ -18,7 +18,9 @@
     <td><%= link_to 'Delete', post_path(post),
             method: :delete,
             data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', post_path(post) %></td>
   </tr>
+<br>
 <% end %>
 
 <%= link_to new_post_path do %>
