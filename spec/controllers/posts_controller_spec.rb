@@ -22,6 +22,15 @@ end
      expect(response).to have_http_status(200)
    end
  end
+ 
+ describe 'POST' do
+  context "creates a valid post" do
+    it "writes a valid post message" do
+      post :create, params: { post: { message: "Hello World!"}}
+      expect(Post.all.count).to eq(1)
+    end
+  end
+ end
 
  describe 'POST' do
    context "a valid post to delete" do
