@@ -1,0 +1,40 @@
+h1 {
+  color: #ffffff;
+  font-family: 'Lobster', sans-serif;
+  font-size: 60px;
+  text-align: center;
+  margin: auto;
+}
+
+body{
+
+}
+
+div.news_deck {
+  max-width: 70% !important;
+  display: flex;
+}
+
+form.button_to {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+}
+
+input#post_button {
+  max-width: 30px;
+  max-height: 20px;
+  padding: 5px;
+  margin: 10px 5px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 10px;
+  color: #ecc51f;
+  border-radius: 5px;
+  background-color: #838bb0;
+  flex: 1;
+}
+
+input#post_button:hover {
+  background-color: #cfd7dd;
+  color: #850d14;
+}
