@@ -31,6 +31,7 @@
     <div id="all-posts">
       <% @posts.reverse.each do |post| %>
         <p><%= post.message %></p>
+        <p id="user_post_name"><%= post.user.email %></p>
         <p><%= post.created_at.to_s.split(" ")[0] %>
         <%= post.created_at.to_s.split(" ")[1][0...-3] %></p>
 
