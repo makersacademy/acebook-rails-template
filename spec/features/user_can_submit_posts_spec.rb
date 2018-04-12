@@ -8,6 +8,14 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
   end
+  scenario "Can posts and view time" do
+    dateString = Time.now.strftime("%a %e %b %H")
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    expect(page).to have_content(dateString)
+  end
   scenario "posts are viewed in ascending age" do
     visit "/posts"
     click_link "New post"
