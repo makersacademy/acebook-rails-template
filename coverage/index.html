@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-12T21:23:22+01:00">2018-04-12T21:23:22+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-12T23:04:11+01:00">2018-04-12T23:04:11+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.53
+         1.52
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>47</b> files in total.
-    <b>236</b> relevant lines. 
-    <span class="green"><b>235</b> lines covered</span> and
+    <b>238</b> relevant lines. 
+    <span class="green"><b>237</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -143,9 +143,9 @@
       <tr>
         <td class="strong"><a href="#32c3e608a7637a0d091ea55ef5484327a00a9994" class="src_link" title="app/models/comment.rb">app/models/comment.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>6</td>
-        <td>3</td>
-        <td>3</td>
+        <td>7</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -173,9 +173,9 @@
       <tr>
         <td class="strong"><a href="#6279f57654798b8eda5582af8728028951648e8c" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>9</td>
-        <td>3</td>
-        <td>3</td>
+        <td>10</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -632,7 +632,7 @@
         <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
-          <code class="ruby">    @comment = @post.comments.create(comment_params)</code>
+          <code class="ruby">    @comment = @post.comments.create(comment_params.merge(user_id: current_user.id))</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="7">
@@ -1342,8 +1342,8 @@
     <h3>app/models/comment.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1378,10 +1378,16 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
+          <code class="ruby">  belongs_to :user</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
           <code class="ruby">  validates :body, presence: true, length: { minimum: 1 }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>
@@ -1513,8 +1519,8 @@
     <h3>app/models/user.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1570,7 +1576,13 @@
           <code class="ruby">  has_many :posts</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_many :comments</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">end</code>

@@ -596,6 +596,7 @@
         1,
         null,
         1,
+        1,
         null
       ],
       "/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects8/acebook-dart/app/helpers/application_helper.rb": [
@@ -1000,6 +1001,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects8/acebook-dart/app/models/like.rb": [
@@ -1010,6 +1012,6 @@
         null
       ]
     },
-    "timestamp": 1523564602
+    "timestamp": 1523570651
   }
 }
