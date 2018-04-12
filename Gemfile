@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'travis'
   gem 'travis-lint'
+  gem 'pry'
 end
 
 group :development do
