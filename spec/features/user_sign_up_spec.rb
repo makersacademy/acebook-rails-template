@@ -1,5 +1,4 @@
 require 'rails_helper'
-require './spec/web_helper/user_sign_up_helper.rb'
 
 RSpec.feature "User sign up", type: :feature do
   scenario "Confirmation for user registration" do
