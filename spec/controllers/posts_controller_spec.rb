@@ -26,15 +26,4 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
-
-  describe "GET /posts" do
-    it "sorts newest first" do
-      # @post_newest = Post.new(message: "Bye, world!")
-     post :create, params: { post: { message: "Hello, world!" } }
-     post :create, params: { post: { message: "Bye, world!" } }
-     p Post.all
-      # p Post.new(message: "Bye, world!")
-      # expect(Post.order('created_at desc').all).to be [@post_newest, @post]
-    end
-  end
 end
