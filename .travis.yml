@@ -16,3 +16,4 @@ deploy:
   env: acebook-fullstaxx-env
   on:
     repo: VivianAllen/acebook-FullStaxx
+  bucket_name: "elasticbeanstalk-eu-west-2-862365935758"
