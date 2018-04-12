@@ -8,9 +8,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
+    @post = current_user.posts.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     @comment.destroy
+    redirect_to posts_url
+  rescue ActiveRecord::RecordNotFound
     redirect_to posts_url
   end
 
