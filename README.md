@@ -6,7 +6,7 @@
 </a>
 
 
-<a href="https://codeclimate.com/github/ryandav/ruby_types/maintainability">
+<a href="https://codeclimate.com/github/julesnuggy/acebook-byte-3/maintainability">
   <img src="https://api.codeclimate.com/v1/badges/3cb11f09ea68cad7b523/maintainability" />
 </a>
 
