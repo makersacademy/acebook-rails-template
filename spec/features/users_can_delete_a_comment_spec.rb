@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.feature 'users can delete comments', type: :feature do
   scenario 'user adds comment on post, then deletes it' do
     add_new_post
-    click_link 'Show'
+    click_button 'Show'
     fill_in 'comment[commenter]', with: 'Charlene'
     fill_in 'comment[body]', with: 'Rails is awesome'
     click_button 'Create Comment'
