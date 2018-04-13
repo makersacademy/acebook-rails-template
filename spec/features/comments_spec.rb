@@ -34,4 +34,11 @@ RSpec.feature "Commenting", type: :feature do
     i2 = alltext.index('I am comment#2')
     expect(i2 < i1).to eq true
   end
+
+  scenario "comment count is shown" do
+    fill_in "comment[content]", with: "I am comment#2"
+    click_button "Create Comment"
+    click_link "Back"
+    expect(page).to have_content("2 Comments")
+  end
 end
