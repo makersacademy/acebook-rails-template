@@ -1,0 +1,6 @@
+<%= form_tag post_path(@post), method: "put" do %>
+  <label>Post Description</label><br>
+  <%= text_area_tag :message, @post.message %><br>
+
+  <%= submit_tag "Update Post" %>
+<% end %>
