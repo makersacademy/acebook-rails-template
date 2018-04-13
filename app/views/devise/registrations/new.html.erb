@@ -3,9 +3,17 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+
   <div class="field">
     <%= f.label :username %><br />
     <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :avatar, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+      <%= f.file_field :avatar %>
+    </div>
   </div>
 
   <div class="field">
