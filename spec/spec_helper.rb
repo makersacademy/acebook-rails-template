@@ -28,9 +28,9 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
 
 SimpleCov.start 'rails' do
   puts "\e[33mSimpleCov excludes folders: app/channels, app/mailers, app/jobs\e[0m"
-  add_filter "app/channels"
-  add_filter "app/mailers"
-  add_filter "app/jobs"
+  add_filter 'app/channels'
+  add_filter 'app/mailers'
+  add_filter 'app/jobs'
 end
 
 RSpec.configure do |config|
