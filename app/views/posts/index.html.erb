@@ -12,14 +12,12 @@
 <h1>Acebook</h1>
 
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.message %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Delete', post_path(post),
+  <%= post.message %>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  <%= link_to 'Delete', post_path(post),
             method: :delete,
-            data: { confirm: 'Are you sure?' } %></td>
-    <td><%= link_to 'Show', post_path(post) %></td>
-  </tr>
+            data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Show', post_path(post) %>
 <br>
 <% end %>
 
