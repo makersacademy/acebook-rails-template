@@ -3,7 +3,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9eaa847ec7745c2b8852/test_coverage)](https://codeclimate.com/github/Hemesh-Unka/acebook-pinkfish/test_coverage)
 
 # PinkFish
-Working in the team of 5 to implement a social media platform. [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+Working in a team of 5 to implement a social media platform. [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
 # Trello Board
 The card wall is here: https://trello.com/b/oiLPY0VV/pinkfish
