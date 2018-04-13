@@ -11,8 +11,9 @@
 
 <h1>Acebook</h1>
 <ul>
-  <% @posts.each do |post| %>
+  <% @posts.sort_by { |x| x.created_at }.reverse.each do |post| %>
     <li>
+      <h4><%= post.created_at.strftime("%a %e %b %H:%M") %></h4>
       <div><%= post.message %></div>
       <span><%= link_to 'Edit', edit_post_path(post) %></span>
       <span><%= link_to 'Delete', post_path(post),
@@ -23,6 +24,7 @@
 
   <% end %>
 </ul>
+
 <%= link_to new_post_path do %>
   <p>New post</p>
 <% end %>
