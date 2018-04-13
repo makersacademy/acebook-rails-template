@@ -5,6 +5,7 @@ AllCops:
     - 'db/**/*'
     - 'script/**/*'
     - 'Gemfile'
+    - 'vendor/**/*'
 
 Metrics/BlockLength:
   Max: 30
