@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 def add_new_post
-  sign_up
   visit '/posts'
   click_link 'New post'
   fill_in 'post[message]', with: 'Hello, world!'
