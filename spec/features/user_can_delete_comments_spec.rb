@@ -1,6 +1,3 @@
-require 'rails_helper'
-require_relative '../helpers/custom_helper'
-
 RSpec.describe "Timeline", type: :feature do
   scenario "User wants to delete a comment, but not a post" do
     sign_up
