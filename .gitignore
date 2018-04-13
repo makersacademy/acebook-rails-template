@@ -21,3 +21,8 @@
 /yarn-error.log
 
 .byebug_history
+
+/coverage
+
+# Ignore private environmental variables
+/config/local_env.yml

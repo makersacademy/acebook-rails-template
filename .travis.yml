@@ -1,0 +1,26 @@
+env:
+  global:
+  - CC_TEST_REPORTER_ID=36b54a6e73cd8bc7130997c66836337f879d1f385bf7b3a3810aae8d929401f8
+language: ruby
+rvm:
+- 2.5.0
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
+- psql -c 'create database travis_ci_test;' -U postgres
+script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rspec
+after_script:
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+deploy:
+  provider: heroku
+  api_key:
+    secure: DPZxrnLuLI8w303BKv/laWEEd6JQ7rMdiXK6O9CX9/lkT+NqCJOx5kDhY2t79r8UuvryFAXegh/YY25Wk9l9amjdxfP15dsIZAzOLsCCCweGnvyn/sFOU3pz3J/yVaS1SIzdzO8lCrI6NE1FzbHEF0IsllPHqDpMDdkW+uU+e26QEhXD2/6DspaIUpjG+15cvGj8pDVKLNbEENaOU1M8bLAj+MCLwVJZ0FZ4aNjmPsgld+qV058jB/VF6IA/d8IsagO7ieB9dCXKNRWm4joVfwGA1M9n51LgFhP/VDGOwjD8HsSTjIXYJ4ZrPTzwm9fhk7trGzV9Z9HmHJP2R6mwXqlJs5c559il0NkQ32HsC5pT2wGiagENCDxrVg59cO6r8d84brkOm0VzWB4RNMa1O9DHkFsdjmb4wiPpjLmO/ziPgQdHr2lcrrAHK7OCstGfqx2LEtB6Lam15dtDqHtOJjyt0ZtiAbornBJi10+qeNY1FG/J6SYh89JEEeRnWs9zBwP2pneMEftUNIrrvIWPdM6yltXXBVi3F9YTgv2a2FX9MwcytiA9D1JT8oC1vm5kiDrwM8Xqi8G5q+oNYFTL4VZyhsEDZ3Fq15Ilyvpjxgl9/y8CvWFXDio5b6yUP0B1PRZp3Se89y7NGQNEXP88IkjrjgvUnDO4HHwL1DhXrGU=
+  app: acebook-pinkfish-staging
+  on:
+    repo: Hemesh-Unka/acebook-pinkfish
+    all_branches: true
