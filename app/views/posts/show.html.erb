@@ -6,6 +6,6 @@
 <span><%= link_to 'Back', posts_path %></span>
 
 <%= render 'comments/form' %>
-  <% @post.comments.each do |comment| %>
+  <% @post.comments.sort_by { |x| x.created_at || 0}.reverse.each do |comment| %>
     <div><%= comment.content %></div>
   <% end %>
