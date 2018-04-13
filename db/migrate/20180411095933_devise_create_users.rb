@@ -1,5 +1,3 @@
-# rubocop:disable LineLength
-
 # frozen_string_literal: true
 
 class DeviseCreateUsers < ActiveRecord::Migration[5.1]
@@ -43,4 +41,3 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
     # add_index :users, :unlock_token,         unique: true
   end
 end
-# rubocop:enable LineLength
