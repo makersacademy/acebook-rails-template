@@ -1,0 +1,17 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'script/**/*'
+    - 'Gemfile'
+    - 'vendor/**/*'
+
+Metrics/BlockLength:
+  Max: 30
+
+Metrics/LineLength:
+  Max: 100
+
+Documentation:
+  Enabled: false
