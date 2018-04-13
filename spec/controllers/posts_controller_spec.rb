@@ -7,6 +7,7 @@ RSpec.describe PostsController, type: :controller do
 before (:each) do
  @user = User.create! (
    {
+     :username => 'testUser',
      :email => 'user@test.com',
      :password => 'please',
      :password_confirmation => 'please'
@@ -20,6 +21,15 @@ end
      get :new
      expect(response).to have_http_status(200)
    end
+ end
+ 
+ describe 'POST' do
+  context "creates a valid post" do
+    it "writes a valid post message" do
+      post :create, params: { post: { message: "Hello World!"}}
+      expect(Post.all.count).to eq(1)
+    end
+  end
  end
 
  describe 'POST' do

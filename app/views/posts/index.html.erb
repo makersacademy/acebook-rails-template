@@ -9,7 +9,7 @@
     <div id="headerBar">
       <% if user_signed_in? %>
         <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-        <%= link_to current_user.email, edit_user_registration_path %>
+        <%= link_to current_user.username, edit_user_registration_path %>
       <% else %>
           <%= link_to 'Sign Up', new_user_registration_path %>
           <%= link_to 'Login', new_user_session_path %>
@@ -30,7 +30,7 @@
     <br>
     <div id="all-posts">
       <% @posts.reverse.each do |post| %>
-        <p id="user_post"><%= post.user.email %>: <%= post.message %></p>
+        <p id="user_post">@<%= post.user.username %>: <%= post.message %></p>
         <p><%= post.created_at.to_s.split(" ")[0] %>
         <%= post.created_at.to_s.split(" ")[1][0...-3] %></p>
 
