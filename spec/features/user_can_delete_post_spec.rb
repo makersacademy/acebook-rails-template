@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-require_relative '../helpers/custom_helper'
+
 
 
 RSpec.describe "Timeline", type: :feature do
