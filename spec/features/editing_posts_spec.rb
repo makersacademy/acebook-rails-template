@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Editing posts', type: :feature do
   scenario 'users can edit existing posts' do
+    sign_up
     add_new_post
     click_button 'Edit'
     fill_in 'post[message]', with: 'Rails is awesome'

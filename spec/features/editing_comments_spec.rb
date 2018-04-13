@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Editing comments', type: :feature do
   scenario 'users can edit an existing comment' do
+    sign_up
     add_new_post
     add_comment
     click_link 'Edit Comment'
