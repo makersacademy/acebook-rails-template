@@ -3,14 +3,8 @@ require 'rails_helper'
 RSpec.feature "Commenting", type: :feature do
 
   before(:each) do
-    visit "/users/sign_up"
-    fill_in "user[email]", with: "test@test.com"
-    fill_in "user[password]", with: "testtest"
-    fill_in "user[password_confirmation]", with: "testtest"
-    click_button "Sign up"
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    sign_up
+    add_post
     click_link "View Comments"
     fill_in "comment[content]", with: "I am comment#1"
     click_button "Create Comment"
