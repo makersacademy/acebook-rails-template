@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = current_user.posts.build(post_params)
+    @post.save
     redirect_to posts_url
   end
 
