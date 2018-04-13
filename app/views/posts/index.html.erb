@@ -1,6 +1,15 @@
 <% @posts.each do |post| %>
-  <p class="post"><%= post.user.name %> - <%= post.message %> - <%= post.created_at.strftime("%e %B at %k:%M") %></p>
+  <p class="post">
+    <%= post.user.name %>
+    - <%= post.message %>
+    - <%= post.created_at.strftime("%e %B at %k:%M") %>
+    <% if current_user.id == post.user_id %>
+      - <%= link_to 'DELETE', post, method: :delete %>
+    <% end %>
+  </p>
+
 <% end %>
+
 
 <%= link_to new_post_path do %>
   New post
