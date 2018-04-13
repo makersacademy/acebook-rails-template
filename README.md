@@ -15,6 +15,9 @@ the below**
 
 The card wall is here: <please update>
 
+## Set-Up
+To set-up imagemagick package using brew (in command line): brew install imagemagick
+
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
