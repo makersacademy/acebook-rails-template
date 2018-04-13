@@ -49,6 +49,4 @@ RSpec.configure do |config|
     puts "\e[33mRemember to run Rubocop!\e[0m"
     puts
   end
-
-
 end

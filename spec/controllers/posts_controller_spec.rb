@@ -3,5 +3,5 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-# Original tests removed as now deprecated
+  # Original tests removed as now deprecated
 end

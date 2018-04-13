@@ -14,14 +14,14 @@ RSpec.feature 'Commenting on posts', type: :feature do
     expect(page).to have_content('Rails is awesome')
   end
 
-## Uncomment when needing to test comments liking
-#   scenario 'users can like comments' do
-#     click_link('like_comment')
-#     expect(page).to have_content 'Comment Like 1'
-#   end
-
-#   scenario 'users can unlike a comment they already liked' do
-#     click_link('like_comment')
-#     expect(page).to have_content 'Comment Like 0'
-#   end
+  # UNCOMMENT WHEN NEED TO TEST COMMENTS LIKING
+  # scenario 'users can like comments' do
+  #   click_link('like_comment')
+  #   expect(page).to have_content 'Comment Like 1'
+  # end
+  #
+  # scenario 'users can unlike a comment they already liked' do
+  #   click_link('like_comment')
+  #   expect(page).to have_content 'Comment Like 0'
+  # end
 end
