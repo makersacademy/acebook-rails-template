@@ -1,5 +1,3 @@
-# rubocop:disable LineLength
-
 # frozen_string_literal: true
 
 class DeviseCreateViews < ActiveRecord::Migration[5.1]
@@ -43,4 +41,3 @@ class DeviseCreateViews < ActiveRecord::Migration[5.1]
     # add_index :views, :unlock_token,         unique: true
   end
 end
-# rubocop:enable LineLength

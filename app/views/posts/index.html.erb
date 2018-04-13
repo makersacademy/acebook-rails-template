@@ -5,10 +5,13 @@
     <title>DART</title>
   </head>
   <body>
+    </br>
     <div id="footerBar"></div>
     <div id="headerBar">
+      </br>
       <% if user_signed_in? %>
         <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <div class="round-image-50 inline"><%= image_tag(current_user.avatar.url(:thumb)) %></div>
         <%= link_to current_user.username, edit_user_registration_path %>
       <% else %>
           <%= link_to 'Sign Up', new_user_registration_path %>
@@ -30,9 +33,13 @@
     <br>
     <div id="all-posts">
       <% @posts.reverse.each do |post| %>
-        <p id="user_post">@<%= post.user.username %>: <%= post.message %></p>
+        <p id="user_post">
+          <div class="round-image-50 inline"><%= image_tag(post.user.avatar.url(:thumb)) %></div>
+          @<%= post.user.username %>:
+          <%= post.message %>
+        </p>
+  <p id="user_post">@<%= post.user.username %>: <%= post.message %></p>
         <p><%=Posted.new(post.created_at).string%>
-
 
 
         <%= link_to 'Like', post_likes_path(post), method: :post %>

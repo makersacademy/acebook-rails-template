@@ -9,6 +9,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Paperclip used with imagemagick package to add avatar pics for users
+gem 'paperclip'
+# User Authentification System with ORM that creates signup login and user db table
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
