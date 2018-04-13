@@ -1,0 +1,11 @@
+<div><%= @post.message %></div>
+<span><%= link_to 'Edit', edit_post_path(@post) %></span>
+<span><%= link_to 'Delete', post_path(@post),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></span>
+<span><%= link_to 'Back', posts_path %></span>
+
+<%= render 'comments/form' %>
+  <% @post.comments.each do |comment| %>
+    <div><%= comment.content %></div>
+  <% end %>

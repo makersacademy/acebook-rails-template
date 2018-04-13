@@ -1,7 +1,30 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
+</p>
+
+<h1>Acebook</h1>
+<ul>
+  <% @posts.sort_by { |x| x.created_at }.reverse.each do |post| %>
+    <li>
+      <h4><%= post.created_at.strftime("%a %e %b %H:%M") %></h4>
+      <div><%= post.message %></div>
+      <span><%= link_to 'Edit', edit_post_path(post) %></span>
+      <span><%= link_to 'Delete', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></span>
+      <span><%= link_to 'View Comments', post_path(post) %></span>
+    </li>
+
+  <% end %>
+</ul>
 
 <%= link_to new_post_path do %>
-  New post
+  <p>New post</p>
 <% end %>
