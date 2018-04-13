@@ -1,0 +1,10 @@
+<p>Post: <%= @post.message %></p>
+<p>Add a comment:
+<%= render 'comments/form'%></p>
+<%= @post.comments.count %> Comments
+<br>
+<% @post.comments.each do |comment| %>
+<%= comment.body %>
+<br>
+<% end %>
+<%= link_to 'Back', posts_path %>
