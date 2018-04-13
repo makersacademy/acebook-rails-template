@@ -6,12 +6,6 @@
 <span><%= link_to 'Back', posts_path %></span>
 
 <%= render 'comments/form' %>
-
-<ul>
   <% @post.comments.each do |comment| %>
-    <li>
-      <div><%= comment.content %></div>
-    </li>
-
+    <div><%= comment.content %></div>
   <% end %>
-</ul>
