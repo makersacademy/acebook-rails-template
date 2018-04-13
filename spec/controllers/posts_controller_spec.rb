@@ -22,7 +22,7 @@ end
      expect(response).to have_http_status(200)
    end
  end
- 
+
  describe 'POST' do
   context "creates a valid post" do
     it "writes a valid post message" do

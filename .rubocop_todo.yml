@@ -80,7 +80,7 @@ Lint/UnneededCopDisableDirective:
 # Offense count: 1
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/BlockLength:
-  Max: 60
+  Max: 65
 
 # Offense count: 2
 # Configuration parameters: CountComments.
@@ -152,4 +152,4 @@ Style/StringLiterals:
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
 Metrics/LineLength:
-  Max: 95
+  Max: 200
