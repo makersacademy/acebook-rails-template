@@ -9,7 +9,7 @@ Working in the team of 5 to implement a social media platform. [You can find the
 The card wall is here: https://trello.com/b/oiLPY0VV/pinkfish
 
 # Blog
-https://medium.com/@Team_PinkFish
+https://medium.com/team-pinkfish
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
