@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 require 'time'
 
 class Posted
-
-    SECONDS_IN_A_MINUTE = 60
-    SECONDS_IN_A_HOUR = 3600
-    SECONDS_IN_A_DAY = 86400
-    SECONDS_IN_A_WEEK = 604800
-    SECONDS_IN_A_YEAR =  31536000
+  SECONDS_IN_A_MINUTE = 60
+  SECONDS_IN_A_HOUR = 3600
+  SECONDS_IN_A_DAY = 86400
+  SECONDS_IN_A_WEEK = 604800
+  SECONDS_IN_A_YEAR = 31536000
 
   attr_reader :time_posted
 
@@ -15,7 +16,7 @@ class Posted
   end
 
   def string
-    return ("Posted " + (simplest_number).to_s + " #{units_controller}" + "#{plurals} ago")
+    ('Posted ' + simplest_number.to_s + " #{units_controller}" + "#{plurals} ago")
   end
 
   private
@@ -25,12 +26,12 @@ class Posted
   end
 
   def units_controller
-    return "second" if calculator < SECONDS_IN_A_MINUTE
-    return "minute" if calculator < SECONDS_IN_A_HOUR
-    return "hour" if calculator < SECONDS_IN_A_DAY
-    return "day" if calculator < SECONDS_IN_A_WEEK
-    return "week" if calculator < SECONDS_IN_A_YEAR
-    return "year"
+    return 'second' if calculator < SECONDS_IN_A_MINUTE
+    return 'minute' if calculator < SECONDS_IN_A_HOUR
+    return 'hour' if calculator < SECONDS_IN_A_DAY
+    return 'day' if calculator < SECONDS_IN_A_WEEK
+    return 'week' if calculator < SECONDS_IN_A_YEAR
+    'year'
   end
 
   def integer_controller
@@ -39,15 +40,15 @@ class Posted
     return SECONDS_IN_A_HOUR if calculator < SECONDS_IN_A_DAY
     return SECONDS_IN_A_DAY if calculator < SECONDS_IN_A_WEEK
     return SECONDS_IN_A_WEEK if calculator < SECONDS_IN_A_YEAR
-    return SECONDS_IN_A_YEAR
+    SECONDS_IN_A_YEAR
   end
 
   def simplest_number
-    (calculator.to_i)/(integer_controller)
+    calculator.to_i / integer_controller
   end
 
   def plurals
-    return ("") if simplest_number == 1
-    return "s"
+    return '' if simplest_number == 1
+    's'
   end
 end
