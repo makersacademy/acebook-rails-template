@@ -34,8 +34,8 @@
     <div id="all-posts">
       <% @posts.reverse.each do |post| %>
         <p id="user_post">
-          <div class="round-image-50 inline"><%= image_tag(current_user.avatar.url(:thumb)) %></div>
-          @<%= post.user.username %>: 
+          <div class="round-image-50 inline"><%= image_tag(post.user.avatar.url(:thumb)) %></div>
+          @<%= post.user.username %>:
           <%= post.message %>
         </p>
         <p><%= post.created_at.to_s.split(" ")[0] %>
