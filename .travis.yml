@@ -23,4 +23,4 @@ deploy:
   app: acebook-pinkfish-staging
   on:
     repo: Hemesh-Unka/acebook-pinkfish
-    branch: production
+    all_branches: true
