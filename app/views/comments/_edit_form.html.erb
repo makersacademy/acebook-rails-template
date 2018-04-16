@@ -1,6 +1,5 @@
 <%= form_with(model: [@post, @comment], local: true) do |form| %>
   <p>
-    <%= hidden_field_tag 'comment[commenter]', current_user.username %>
     <%= form.label :body %><br>
     <%= form.text_area :body %>
   </p>
