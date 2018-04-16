@@ -13,7 +13,7 @@ RSpec.feature 'Liking Posts' do
     expect(page).not_to have_content 'Like 1'
   end
 
-  scenario 'Can like a post and see like count' do
+  scenario 'Can like a post and see like count', type: :feature do
     # Arrange
     sign_up
     add_new_post
