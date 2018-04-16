@@ -62,7 +62,7 @@
         </span>
         <span>
           <%= link_to 'Edit', edit_post_path(post) %>
-          <% if post.user_id.to_i == current_user.id.to_i %>
+          <% if post.owner_logged_in?(current_user) %>
             <%= link_to 'Delete', post_path(post),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>

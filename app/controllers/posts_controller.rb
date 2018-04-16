@@ -22,20 +22,26 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    find_post
     @post.update(post_params)
     redirect_to posts_path
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-
-    redirect_to posts_path
+    find_post
+    if @post.user_logged_in?(current_user)
+      @post.destroy
+      redirect_to posts_path
+    else
+      flash[:notice] = "Cannot delete"
+    end
   end
 
-
   private
+
+  def find_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:message).merge(user_id: current_user.id)
