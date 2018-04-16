@@ -11,7 +11,5 @@ RSpec.feature 'users can delete comments', type: :feature do
     click_button 'Create Comment'
     click_link 'Delete Comment'
     expect(page).not_to have_content 'Rails is awesome'
-    expect(page).not_to have_content 'Commentor'
-    expect(page).not_to have_content "Comment Timestamp: #{Time.now}"
   end
 end

@@ -11,6 +11,9 @@ RSpec.feature 'Commenting on posts', type: :feature do
 
   scenario 'users can submit comments on posts' do
     expect(page).to have_content('Rails is awesome!')
+  end
+
+  scenario 'each comment shows a creation timestamp' do
     expect(page).to have_content "Comment Timestamp: #{Time.now}"
   end
 
