@@ -11,3 +11,25 @@ def add_post(message = "Hello, world!")
   fill_in "Message", with: message
   click_button "Submit"
 end
+
+def create_user_2
+  User.create(email: "test2@test.com", password: "testtest", password_confirmation: "testtest")
+end
+
+def create_user_3
+  User.create(email: "test3@test.com", password: "testtest", password_confirmation: "testtest")
+end
+
+def sign_in_user_2
+  visit "/users/sign_in"
+  fill_in "user[email]", with: "test2@test.com"
+  fill_in "user[password]", with: "testtest"
+  click_button "Log in"
+end
+
+def sign_in_user_3
+  visit "/users/sign_in"
+  fill_in "user[email]", with: "test3@test.com"
+  fill_in "user[password]", with: "testtest"
+  click_button "Log in"
+end
