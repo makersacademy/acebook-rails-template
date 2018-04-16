@@ -9,7 +9,7 @@ RSpec.feature 'Commenting on posts', type: :feature do
     add_comment
   end
 
-  scenario 'users can submit comments on posts' do
+  scenario 'users can submit comments on posts', type: :feature do
     expect(page).to have_content('Charlene')
     expect(page).to have_content('Rails is awesome')
   end

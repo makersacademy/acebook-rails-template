@@ -1,13 +1,6 @@
 
 # frozen_string_literal: true
 
-def add_new_post
-  visit '/posts'
-  click_link 'New post'
-  fill_in 'post[message]', with: 'Hello, world!'
-  click_button 'Submit'
-end
-
 def sign_up
   visit '/'
   click_button 'Register'
@@ -28,6 +21,13 @@ end
 def sign_out
   visit '/'
   click_button 'Logout'
+end
+
+def add_new_post
+  visit '/posts'
+  click_link 'New post'
+  fill_in 'post[message]', with: 'Hello, world!'
+  click_button 'Submit'
 end
 
 def add_comment
