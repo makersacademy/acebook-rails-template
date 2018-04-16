@@ -2,13 +2,11 @@
 
 class PostsController < ApplicationController
   # before_action :set_user_id
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :correct_user, only: %i[edit update destroy]
 
-def correct_user
+  def correct_user
     @post = Post.find(params[:id])
-    unless current_user.id == @post.user.id
-      redirect_to posts_path
-    end
+    redirect_to posts_path unless current_user.id == @post.user.id
   end
 
   def index
