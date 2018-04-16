@@ -19,6 +19,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+require 'capybara'
 require 'simplecov'
 require 'simplecov-console'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
@@ -34,6 +35,8 @@ SimpleCov.start 'rails' do
   add_filter 'app/jobs'
   add_filter 'app/controllers/users'
 end
+
+Capybara.javascript_driver = :selenium
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

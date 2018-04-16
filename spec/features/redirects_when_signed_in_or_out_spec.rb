@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Welcome redirects', type: :feature do
-  scenario 'when signed in, page redirects to News Deck' do
+  scenario 'when signed in, page redirects to News Deck', :js => true  do
     sign_up
     visit '/'
     expect(page).to have_content 'News Deck'
@@ -11,7 +11,7 @@ RSpec.feature 'Welcome redirects', type: :feature do
 end
 
 RSpec.feature 'Welcome redirects', type: :feature do
-  scenario 'when signed out, page redirects to sign up page' do
+  scenario 'when signed out, page redirects to sign up page', :js => true  do
     visit '/'
     expect(page).to have_content 'Log in'
     expect(page).to have_content 'Email'
@@ -20,7 +20,7 @@ RSpec.feature 'Welcome redirects', type: :feature do
 end
 
 RSpec.feature 'Posts redirects', type: :feature do
-  scenario 'when signed out, page redirects to sign up page' do
+  scenario 'when signed out, page redirects to sign up page', :js => true  do
     visit '/posts'
     expect(page).to have_content 'Log in'
     expect(page).to have_content 'Email'
