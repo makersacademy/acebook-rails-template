@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Liking Comments' do
   scenario 'Can like a post and see like count', type: :feature do
-    #Arrange
+    # rubocopArrange
     sign_up
     add_new_post
     click_button('Show')
@@ -16,7 +16,7 @@ RSpec.feature 'Liking Comments' do
   end
 
   scenario 'Users can like a comment only once', type: :feature do
-    #Arrange
+    # Arrange
     sign_up
     add_new_post
     click_button('Show')
@@ -28,5 +28,4 @@ RSpec.feature 'Liking Comments' do
     expect(page).to have_content 'Like 0'
     expect(page).not_to have_content 'Like 1'
   end
-
-  end
+end

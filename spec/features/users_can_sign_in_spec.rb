@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'users can sign in', type: :feature do
-  scenario 'user can sign in to their Acebook account' do
+  scenario 'to their Acebook account' do
     sign_up
     sign_out
     sign_in

@@ -16,11 +16,3 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content Time.now.to_s
   end
 end
-
-RSpec.feature 'Links', type: :feature do
-  scenario 'Redirected to the Posts page when you click on the link' do
-    visit '/'
-    click_link 'Go to Posts page'
-    expect(page).to have_content('News Deck')
-  end
-end

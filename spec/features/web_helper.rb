@@ -15,8 +15,6 @@ end
 def sign_in
   visit '/'
   click_button 'Login'
-  fill_in 'Name', with: 'Tom'
-  fill_in 'Username', with: 'Tom123'
   fill_in 'Email', with: 'hello@live.com'
   fill_in 'Password', with: 'password123'
   click_button 'Log in'
