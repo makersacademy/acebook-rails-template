@@ -1,6 +1,15 @@
 <% @posts.each do |post| %>
-  <p class="post"><%= post.user.name %> - <%= post.message %> - <%= post.created_at.strftime("%e %B at %k:%M") %></p>
+  <h3 class="post"><%= post.id %> - <%= post.user.name %> - <%= post.message %> - <%= post.created_at.strftime("%e %B at %k:%M") %></h3>
+  <% post.comments.each do |comment| %>
+    <p><%= comment.comment %></p>
+  <% end %>
+  <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
+    <%= form.submit "Submit" %>
+  <% end %>
 <% end %>
+
 
 <%= link_to new_post_path do %>
   New post
