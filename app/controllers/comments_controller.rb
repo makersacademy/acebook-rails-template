@@ -3,15 +3,17 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @comment = @post.comments.create(params[:comment].permit(:content))
-    @comment.user_id = current_user.id
-    @comment.save
+    @post.comments.create(comment_params)
     redirect_to post_path(@post)
   end
 
   private
   def find_post
     @post = Post.find(params[:post_id])
+  end
+
+  def comment_params
+    params[:comment].permit(:content).merge(user_id: current_user.id)
   end
 
 end
