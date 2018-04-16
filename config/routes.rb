@@ -8,11 +8,6 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :likes, :comments
-
-    # resource :comments do
-    #   resources :comment_likes
-    # end
-
   end
 
   resources :comments do

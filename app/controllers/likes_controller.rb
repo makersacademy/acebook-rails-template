@@ -4,6 +4,7 @@ class LikesController < ApplicationController
   before_action :set_post
   before_action :find_like
 
+
   def create
     if @like
       @post.likes.where(like_params).destroy(@post.likes.where(user_id: params[:user_id]).ids)
