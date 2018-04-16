@@ -2,6 +2,14 @@
 
 class PostsController < ApplicationController
   # before_action :set_user_id
+  before_action :correct_user, only: [:edit, :update, :destroy]
+
+def correct_user
+    @post = Post.find(params[:id])
+    unless current_user.id == @post.user.id
+      redirect_to posts_path
+    end
+  end
 
   def index
     @posts = Post.all.order('created_at DESC')
