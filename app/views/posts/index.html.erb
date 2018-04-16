@@ -1,7 +1,19 @@
-<% @posts.each do |post| %>
-  <p class="post"><%= post.user.name %> - <%= post.message %> - <%= post.created_at.strftime("%e %B at %k:%M") %></p>
+<% if user_signed_in? %>
+  <%= form_for @post do |form| %>
+    <%= form.text_field :message, placeholder: 'Enter your message' %>
+
+    <%= form.submit "Submit" %>
+  <% end %>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<% @posts.each do |post| %>
+  <p class="post">
+    <%= post.user.name %>
+    - <%= best_in_place post, :message, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel', activator: '#edit-' + post.id.to_s %>
+    - <%= post.created_at.strftime("%e %B at %k:%M") %>
+    <% if current_user.id == post.user_id %>
+      - <%= link_to 'DELETE', post, method: :delete %>
+      - <a href="#" id="edit-<%= post.id %>">EDIT</a>
+    <% end %>
+  </p>
 <% end %>
