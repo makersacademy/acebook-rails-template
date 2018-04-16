@@ -5,6 +5,9 @@
         data: { confirm: 'Are you sure?' } %></span>
 <span><%= link_to 'Back', posts_path %></span>
 
+<%= render 'likes/form' %>
+  <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes' %> </p>
+
 <%= render 'comments/form' %>
   <% @post.comments.sort_by { |x| x.created_at || 0}.reverse.each do |comment| %>
     <div><%= comment.content %> <%= '-' if (comment.content)%> <%= User.find(comment.user_id).email if (comment.user_id)  %></div>
