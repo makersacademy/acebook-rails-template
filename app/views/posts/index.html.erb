@@ -40,10 +40,11 @@
         </p>
         <%=Posted.new(post.created_at).string%>
         </br>
-        🎯 <%= post.likes.count %>
-        <%= link_to 'Bullseye', post_likes_path(post), method: :post %>
 
-        <% if current_user.id === post.user_id%>
+        <%= link_to image_tag("darts_PNG57", :border=>0, :class => 'like-button', :size => "30x30"), like_post_path(post), method: :put %>
+        <%= post.get_upvotes.size %>
+
+        <% if current_user === post.user%>
         <%= link_to 'Edit', edit_post_path(post.id)%>
         <%= link_to 'Delete Post', post_path(post),
                                    method: :delete%>
@@ -55,6 +56,9 @@
 
           <p><%= comment.body%></p>
           <p><%=Posted.new(comment.created_at).string%></p>
+
+        <%= link_to image_tag("darts_PNG57", :border=>0, :class => 'like-button', :size => "30x30"), like_comment_path(comment), method: :put %>
+        <%= comment.get_upvotes.size %>
 
         <% if current_user === comment.user %>
         <%= link_to 'Edit Comment', edit_post_comment_path(post.id, comment.id)%>

@@ -2,6 +2,7 @@
 
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+
   def new
     @post = current_user.posts.new
   end
@@ -29,6 +30,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.update(message: params[:message])
     redirect_to posts_url
+  end
+
+  def upvote
+    @post = Post.find(params[:id])
+    @post.upvote_by current_user
+    redirect_back(fallback_location: root_path)
   end
 
   private
