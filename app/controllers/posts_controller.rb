@@ -3,6 +3,10 @@
 class PostsController < ApplicationController
   # before_action :set_user_id
 
+  def index
+    @posts = Post.all.order('created_at DESC')
+  end
+
   def show
     @post = Post.find(params[:id])
   end
@@ -31,10 +35,6 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
-  end
-
-  def index
-    @posts = Post.all
   end
 
   def destroy

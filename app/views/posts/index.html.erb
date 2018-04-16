@@ -2,7 +2,7 @@
 
 <% @posts.each_with_index do |post, idx| %>
   <div id="post_div_<%=idx%>" class='news_deck'>
-    <p id="post_body_<%=idx%>"><%= post.message %></p>
+    <p id="post_body_<%=idx%>"><%= simple_format(post.message) %></p>
     <p id="post_user_<%=idx%>"><%= post.user.email %></p>
     <br>
     <div>
