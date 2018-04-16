@@ -10,5 +10,9 @@ Rails.application.routes.draw do
     resources :likes, :comments
   end
 
+  resources :comments do
+    resources :comment_likes
+  end
+
   root 'welcome#index'
 end
