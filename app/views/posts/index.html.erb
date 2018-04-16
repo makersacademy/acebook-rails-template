@@ -30,7 +30,7 @@
         New post
       <% end %>
     </div>
-    <br>
+    </br>
     <div id="all-posts">
       <% @posts.reverse.each do |post| %>
         <p id="user_post">
@@ -38,13 +38,10 @@
           @<%= post.user.username %>:
           <%= post.message %>
         </p>
-  <p id="user_post">@<%= post.user.username %>: <%= post.message %></p>
-        <p><%=Posted.new(post.created_at).string%>
-
-
-        <%= link_to 'Like', post_likes_path(post), method: :post %>
-        Likes:<%= post.likes.count %>
-
+        <%=Posted.new(post.created_at).string%>
+        </br>
+        🎯 <%= post.likes.count %>
+        <%= link_to 'Bullseye', post_likes_path(post), method: :post %>
 
         <% if current_user.id === post.user_id%>
         <%= link_to 'Edit', edit_post_path(post.id)%>
