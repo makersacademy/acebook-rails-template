@@ -16,10 +16,28 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    redirect_to posts_url and return unless @post.user_id == current_user.id
+    redirect_to posts_url && return unless @post.user_id == current_user.id
     @post.destroy
     redirect_to posts_url
   end
+
+  def update
+    p 'we are here'
+  @post = Post.find params[:id]
+  p @post
+  p post_params
+  p @post.attributes
+  respond_to do |format|
+    if @post.update_attributes(post_params)
+      format.html { redirect_to(@post, :notice => 'User was successfully updated.') }
+      format.json { respond_with_bip(@post) }
+    else
+      format.html { render :action => "edit" }
+      format.json { respond_with_bip(@post) }
+    end
+  end
+end
+
 
   private
 

@@ -1,10 +1,13 @@
 <% @posts.each do |post| %>
   <p class="post">
     <%= post.user.name %>
-    - <%= post.message %>
+    - <%= best_in_place post, :message, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
     - <%= post.created_at.strftime("%e %B at %k:%M") %>
     <% if current_user.id == post.user_id %>
       - <%= link_to 'DELETE', post, method: :delete %>
+      - <%= link_to 'EDIT', post, method: :edit %>
+
+
     <% end %>
   </p>
 
