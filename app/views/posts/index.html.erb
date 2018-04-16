@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <%= form_for @post do |form| %>
     <%= form.text_field :message, placeholder: 'Enter your message' %>
-    <%= form.submit "Submit" %>
+    <%= form.submit "Post" %>
   <% end %>
 <% end %>
 
@@ -19,8 +19,7 @@
     <p><%= comment.comment %></p>
   <% end %>
   <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-    <%= form.label :comment %>
     <%= form.text_field :comment %>
-    <%= form.submit "Submit" %>
+    <%= form.submit "Comment" %>
   <% end %>
 <% end %>
