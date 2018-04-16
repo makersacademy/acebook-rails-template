@@ -7,11 +7,9 @@ RSpec.feature 'users can delete comments', type: :feature do
     sign_up
     add_new_post
     click_button 'Show'
-    fill_in 'comment[commenter]', with: 'Charlene'
     fill_in 'comment[body]', with: 'Rails is awesome'
     click_button 'Create Comment'
-    click_link 'Delete'
+    click_link 'Delete Comment'
     expect(page).not_to have_content 'Rails is awesome'
-    expect(page).not_to have_content 'Charlene'
   end
 end

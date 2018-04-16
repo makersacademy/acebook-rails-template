@@ -1,12 +1,16 @@
 <% @post.comments.each do |comment| %>
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
 
 <p>
   <strong>Comment:</strong>
   <%= comment.body %>
+</p>
+
+<p>
+  <strong>Commenter:</strong>
+  <%= comment.commenter %>
+  <br>
+  <strong>Comment Timestamp:</strong>
+  <%= comment.created_at.localtime %>
 </p>
 
 <%= link_to 'Delete Comment', [@post, comment], method: :delete, data: { confirm: 'Are you sure? '} %>

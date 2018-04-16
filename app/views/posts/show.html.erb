@@ -1,6 +1,13 @@
 <p>
   <strong>Post:</strong>
   <%= @post.message %>
+  <br>
+  <br>
+  <strong>User:</strong>
+  <%= @post.user.username %>
+  <br>
+  <strong>Post Timestamp:</strong>
+  <%= @post.created_at.localtime %>
 </p>
 
 <div id="post_<%= @post.id %>_likes">
