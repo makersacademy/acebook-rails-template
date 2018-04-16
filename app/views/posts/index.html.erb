@@ -13,7 +13,7 @@
 <ul>
   <% @posts.sort_by { |x| x.created_at }.reverse.each do |post| %>
     <li>
-      <span><%= post.created_at.strftime("%a %e %b %H:%M") %></span>
+      <span><%= post.created_at.localtime.strftime("%a %e %b %H:%M") %></span>
       <div><%= post.message %> <%= '-' if (post.message)%> <%= User.find(post.user_id).email if (post.user_id)  %></div>
       <div><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %> </div>
       <div><%= post.comments.count %> Comments</div>
