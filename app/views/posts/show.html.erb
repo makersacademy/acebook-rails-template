@@ -26,10 +26,7 @@
   <%= button_to 'Like', post_likes_path(@post), method: :post %>
 <% end %>
   <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes' %> </p>
-    <%= render 'comments/form' %>
-      <% @post.comments.sort_by { |x| x.created_at || 0}.reverse.each do |comment| %>
-        <div><%= comment.content %> <%= '-' if (comment.content)%> <%= User.find(comment.user_id).email if (comment.user_id)  %></div>
-      <% end %>
+    <%= render 'comments/comment' %>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
 </html>
