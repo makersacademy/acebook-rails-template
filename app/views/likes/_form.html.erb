@@ -1,0 +1,3 @@
+<%=form_with(model: [@post, @post.likes.build], local: true) do |f|%>
+  <%= f.submit "Like" %>
+<% end %>
