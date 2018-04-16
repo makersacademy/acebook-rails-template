@@ -13,6 +13,15 @@
  *= require_tree .
  *= require_self
  */
+   #toggleThis {
+    height: 20px;
+    background: green;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    width: 100%;
+ 		top: 0;
+   }
 
  html, body {
      margin: 0;
@@ -54,10 +63,12 @@
  }
  #headerBar {
      height: 60px;
-     background: red;
+     background: coral;
      position: fixed;
-     top: 0;
+     position: relative;
      width: 100%;
+     display: none;
+
      /* z-index: -1 */
  }
  #footerBar {
