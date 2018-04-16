@@ -6,6 +6,7 @@ AllCops:
     - 'script/**/*'
     - 'Gemfile'
     - 'vendor/**/*'
+    - 'app/channels/**/*'
 
 Metrics/BlockLength:
   Max: 30
@@ -15,3 +16,6 @@ Metrics/LineLength:
 
 Documentation:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
