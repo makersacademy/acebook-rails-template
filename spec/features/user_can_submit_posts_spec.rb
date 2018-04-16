@@ -13,7 +13,7 @@ RSpec.feature 'Timeline', type: :feature do
   end
 
   scenario 'Posts show creation timestamp' do
-    expect(page).to have_content "#{Time.now}"
+    expect(page).to have_content Time.now.to_s
   end
 end
 
