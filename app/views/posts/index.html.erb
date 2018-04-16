@@ -1,3 +1,11 @@
+<% if user_signed_in? %>
+  <%= form_for @post do |form| %>
+    <%= form.text_field :message, placeholder: 'Enter your message' %>
+
+    <%= form.submit "Submit" %>
+  <% end %>
+<% end %>
+
 <% @posts.each do |post| %>
   <p class="post">
     <%= post.user.name %>
@@ -6,13 +14,6 @@
     <% if current_user.id == post.user_id %>
       - <%= link_to 'DELETE', post, method: :delete %>
       - <a href="#" id="edit-<%= post.id %>">EDIT</a>
-
     <% end %>
   </p>
-
-<% end %>
-
-
-<%= link_to new_post_path do %>
-  New post
 <% end %>

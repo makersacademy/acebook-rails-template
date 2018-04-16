@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @post = current_user.posts.build
     @posts = Post.all.order(created_at: :desc)
   end
 
