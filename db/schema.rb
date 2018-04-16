@@ -83,8 +83,8 @@ ActiveRecord::Schema.define(version: 20180416133746) do
     t.integer "vote_weight"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
-    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+    t.index %w[votable_id votable_type vote_scope], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index %w[voter_id voter_type vote_scope], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
   add_foreign_key "comments", "posts"

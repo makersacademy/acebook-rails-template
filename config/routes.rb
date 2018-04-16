@@ -10,13 +10,13 @@ Rails.application.routes.draw do
     resources :comments do
     end
     member do
-      put "like", to: "posts#upvote"
+      put 'like', to: 'posts#upvote'
     end
   end
 
   resources :comments do
     member do
-      put "like", to: "comments#upvote"
+      put 'like', to: 'comments#upvote'
     end
   end
 end

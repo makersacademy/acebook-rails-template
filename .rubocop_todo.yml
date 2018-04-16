@@ -80,7 +80,7 @@ Lint/UnneededCopDisableDirective:
 # Offense count: 1
 # Configuration parameters: CountComments, ExcludedMethods.
 Metrics/BlockLength:
-  Max: 65
+  Max: 100
 
 # Offense count: 2
 # Configuration parameters: CountComments.

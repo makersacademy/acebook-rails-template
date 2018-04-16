@@ -39,5 +39,4 @@ class CommentsController < ApplicationController
   def post_find
     @post = Post.find(params[:post_id])
   end
-
 end
