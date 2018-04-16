@@ -1,6 +1,8 @@
 require 'simplecov'
 require 'simplecov-console'
-require_relative './web_helper/user_sign_up_helper.rb'  
+require_relative './web_helper/user_sign_up_helper.rb'
+require 'best_in_place'
+require 'best_in_place/test_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [
@@ -30,6 +32,7 @@ SimpleCov.start
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.include BestInPlace::TestHelpers
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
