@@ -2,12 +2,10 @@ class LikesController < ApplicationController
   before_action :find_post
 
   def create
-    if (Like.where(user_id: current_user.id, post_id: params[:post_id]).exists?)
+    if (already_liked?)
       flash[:notice] = "You can't like more than once"
     else
-      @like = @post.likes.create(params[:like])
-      @like.user_id = current_user.id
-      @like.save
+      @post.likes.create(user_id: current_user.id)
     end
     redirect_to post_path(@post)
   end
@@ -17,6 +15,10 @@ class LikesController < ApplicationController
 
   def find_post
     @post = Post.find(params[:post_id])
+  end
+
+  def already_liked?
+    Like.where(user_id: current_user.id, post_id: params[:post_id]).exists?
   end
 
 end
