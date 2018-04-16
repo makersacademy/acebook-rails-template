@@ -6,9 +6,10 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can see the time of date of a post" do
     user_sign_up
     travel_to Time.zone.local(1988, 8, 11, 00, 00, 00)
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
+
+    fill_in "post_message", with: "Hello, world!"
     click_button "Submit"
+
     expect(page).to have_content("11 August at 0:00")
   end
 end
