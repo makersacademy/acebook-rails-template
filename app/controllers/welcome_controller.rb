@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 class WelcomeController < ApplicationController
-  def index;
-    # if current_user.nil?
-    #   redirect_to welcome_index_url
-    # else
-    #   redirect_to posts_url
-    # end
+  before_action :check_signed_in
+  def index; end
+
+  def check_signed_in
+    redirect_to posts_path if signed_in?
   end
 end
