@@ -1,11 +1,27 @@
 language: ruby
 rvm:
 - 2.5.0
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
 - bundle install --jobs=3 --retry=3
 - bundle exec rake db:create
 - bundle exec rake db:migrate
 - bundle exec rspec
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+notifications:
+  - false
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=d9fe39387a1482e4a4d83a6aa41f6991c9967e13c5ed45bb679f9e8b01eb67db
 
 deploy:
   - provider: elasticbeanstalk
