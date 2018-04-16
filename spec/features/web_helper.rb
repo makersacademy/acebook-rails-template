@@ -37,3 +37,14 @@ def add_comment
   fill_in 'comment[body]', with: 'Rails is awesome!'
   click_button 'Create Comment'
 end
+
+def sign_up_second_user
+  visit '/'
+  click_button 'Register'
+  fill_in 'Name', with: 'Charlene'
+  fill_in 'Username', with: 'Char'
+  fill_in 'Email', with: 'test@live.com'
+  fill_in 'Password', with: 'password123'
+  fill_in 'Password confirmation', with: 'password123'
+  click_button 'Sign up'
+end
