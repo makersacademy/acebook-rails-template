@@ -5,10 +5,10 @@
     <title>DART</title>
   </head>
   <body>
-    <div id="toggleThis"><%= current_user.username %></div>
     <div id="headerBar">
       </br>
       <% if user_signed_in? %>
+        <div id="toggleThis"><%= current_user.username %></div>
         <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
         <div class="round-image-50 inline"><%= image_tag(current_user.avatar.url(:thumb)) %></div>
         <%= link_to current_user.username, edit_user_registration_path %>
