@@ -15,6 +15,7 @@
     <li>
       <span><%= post.created_at.strftime("%a %e %b %H:%M") %></span>
       <div><%= post.message %> <%= '-' if (post.message)%> <%= User.find(post.user_id).email if (post.user_id)  %></div>
+      <div><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %> </div>
       <div><%= post.comments.count %> Comments</div>
       <span><%= link_to 'Edit', edit_post_path(post) %></span>
       <span><%= link_to 'Delete', post_path(post),
