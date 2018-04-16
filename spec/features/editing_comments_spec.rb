@@ -8,10 +8,10 @@ RSpec.feature 'Editing comments', type: :feature do
     add_new_post
     add_comment
     click_link 'Edit Comment'
-    fill_in 'comment[commenter]', with: 'Charlene'
     fill_in 'comment[body]', with: 'Makers is great'
     click_button 'Update Comment'
     expect(page).to have_content 'Makers is great'
     expect(page).not_to have_content 'Rails is awesome'
+    expect(page).to have_content "Comment Timestamp: #{Time.now}"
   end
 end

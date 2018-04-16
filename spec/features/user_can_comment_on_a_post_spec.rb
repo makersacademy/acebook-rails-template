@@ -10,8 +10,8 @@ RSpec.feature 'Commenting on posts', type: :feature do
   end
 
   scenario 'users can submit comments on posts' do
-    expect(page).to have_content('Charlene')
-    expect(page).to have_content('Rails is awesome')
+    expect(page).to have_content('Rails is awesome!')
+    expect(page).to have_content "Comment Timestamp: #{Time.now}"
   end
 
   # UNCOMMENT WHEN NEED TO TEST COMMENTS LIKING
