@@ -1,0 +1,5 @@
+<%= form_tag post_comment_path(@post, @comment), method: "put" do %>
+  <label>Comment Description</label><br>
+  <%= text_area_tag :body, @comment.body %><br>
+  <%= submit_tag "Update Comment" %>
+<% end %>
