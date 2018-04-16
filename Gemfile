@@ -8,7 +8,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
+# jQuery gem for rails
+gem 'jquery-rails'
 # Paperclip used with imagemagick package to add avatar pics for users
 gem 'paperclip'
 # User Authentification System with ORM that creates signup login and user db table
