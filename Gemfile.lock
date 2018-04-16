@@ -233,7 +233,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.1)
   rails_12factor
-  rspec-rails (~> 3.5)
+  rspec-rails (~> 3.7)
   rubocop (~> 0.54.0)
   sass-rails (~> 5.0)
   selenium-webdriver
