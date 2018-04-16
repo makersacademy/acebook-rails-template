@@ -4,6 +4,6 @@ class Post < ApplicationRecord
   has_many :likes,  dependent: :destroy
 
   def owner_logged_in?(user)
-    self.id.to_i == user.id.to_i
+    self.user_id.to_i == user.id.to_i
   end
 end
