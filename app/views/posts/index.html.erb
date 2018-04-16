@@ -1,7 +1,79 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DART</title>
+  </head>
+  <body>
+    <div id="toggleThis"><%= current_user.username %></div>
+    <div id="headerBar">
+      </br>
+      <% if user_signed_in? %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <div class="round-image-50 inline"><%= image_tag(current_user.avatar.url(:thumb)) %></div>
+        <%= link_to current_user.username, edit_user_registration_path %>
+      <% else %>
+          <%= link_to 'Sign Up', new_user_registration_path %>
+          <%= link_to 'Login', new_user_session_path %>
+      <% end %>
+    </div>
+    <h1>DART</h1>
+    <div id="footerBar"></div>
+    </br>
+    </br>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+    <% if notice %> <p class="notice"><%= notice %></p> <% end %>
+    <% if alert %> <p class="alert"><%= alert %></p> <% end %>
+    <div id="new-post">
+      <%= link_to new_post_path do %>
+        New post
+      <% end %>
+    </div>
+    </br>
+    <div id="all-posts">
+      <% @posts.reverse.each do |post| %>
+        <p id="user_post">
+          <div class="round-image-50 inline"><%= image_tag(post.user.avatar.url(:thumb)) %></div>
+          @<%= post.user.username %>:
+          <%= post.message %>
+        </p>
+        <%=Posted.new(post.created_at).string%>
+        </br>
+        🎯 <%= post.likes.count %>
+        <%= link_to 'Bullseye', post_likes_path(post), method: :post %>
+
+        <% if current_user.id === post.user_id%>
+        <%= link_to 'Edit', edit_post_path(post.id)%>
+        <%= link_to 'Delete Post', post_path(post),
+                                   method: :delete%>
+        <% end %>
+
+
+
+        <% post.comments.reverse.each do |comment|%>
+
+          <p><%= comment.body%></p>
+          <p><%=Posted.new(comment.created_at).string%></p>
+
+        <% if current_user === comment.user %>
+        <%= link_to 'Edit Comment', edit_post_comment_path(post.id, comment.id)%>
+        <%= link_to 'Delete Comment', post_comment_path(post, comment),
+                                   method: :delete,
+                                   data: {confirm: 'Confirm Delete Comment?'}%>
+        <% end %>
+        <% end %>
+
+        <%= form_with(model: [ post, post.comments.build], local: true) do |form| %>
+          <%= form.text_area :body, cols: "50", rows: "5" %>
+          <br>
+          <%=form.submit "Comment"%>
+          <br>
+          <br>
+          <br>
+          <br>
+        <% end %>
+      <% end %>
+
+    </div>
+  </body>
+</html>
