@@ -7,9 +7,11 @@
     <p id="post_timestamp_<%=idx%>"><%= post.user.created_at.localtime %></p>
     <br>
     <div>
+      <% if post.user.id == current_user.id %>
       <%= button_to 'Delete', post_path(post), {method: :delete, id: 'del_btn', class: 'post_button'} %>
-      <%= button_to 'Show', post_path(post), {method: :get, id: 'post_btn', class: 'post_button'} %>
       <%= button_to 'Edit', edit_post_path(post), {method: :get,id: 'edit_btn', class: 'post_button'} %>
+      <% end %>
+      <%= button_to 'Show', post_path(post), {method: :get, id: 'post_btn', class: 'post_button'} %>
     </div>
   </div>
 <% end %>
