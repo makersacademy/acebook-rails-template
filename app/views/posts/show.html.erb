@@ -6,7 +6,7 @@
 <span><%= link_to 'Back', posts_path %></span>
 
 <%= render 'likes/form' %>
-  <%= @post.likes.count %>
+  <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes' %> </p>
 
 <%= render 'comments/form' %>
   <% @post.comments.sort_by { |x| x.created_at || 0}.reverse.each do |comment| %>

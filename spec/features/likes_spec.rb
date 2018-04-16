@@ -15,4 +15,10 @@ RSpec.feature "Commenting", type: :feature do
     expect(page).to have_content("1")
   end
 
+  scenario "User can ony like post once" do
+    click_button 'Like'
+    expect(page).to have_content("1 Like")
+    click_button 'Like'
+    expect(page).to_not have_content("2 Likes")
+  end
 end
