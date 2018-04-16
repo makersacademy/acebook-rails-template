@@ -44,12 +44,16 @@
     <%= link_to new_post_path do %>
       <p>New post</p>
     <% end %>
-      <% @posts.sort_by { |x| x.created_at }.reverse.each do |post| %>
-      <div class="list-group">
+      <% @posts.sort_by { |x| x.created_at }.reverse.each_with_index do |post, i| %>
+      <div id="<%="post_#{i}"%>" class="list-group">
         <div class="list-group-item">
-        <div><%= User.find(post.user_id).email if (post.user_id)%></div>
+        <div id="<%="post_email_#{i}"%>">
+          <%= User.find(post.user_id).email if (post.user_id)%>
+        </div>
         <div class="small"><%= post.created_at.strftime("%a %e %b %H:%M") %></div>
-        <div><h5><%= post.message %></h5></div>
+        <div id="<%="post_message_#{i}"%>">
+          <h5><%= post.message %></h5>
+        </div>
         <span class="counters">
           <% if post.likes.count >=1 %>
           <%= post.likes.count %>

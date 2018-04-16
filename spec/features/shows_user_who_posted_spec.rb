@@ -1,9 +1,10 @@
 require 'rails_helper'
 
-RSpec.feature "Deleting", type: :feature do
+RSpec.feature "Shows user", type: :feature do
   scenario "Can delete posts" do
     sign_up
     add_post
-    expect(page).to have_content("Hello, world! - test@test.com")
+    expect(find("div#post_email_0")).to have_content("test@test.com")
+    expect(find("div#post_message_0")).to have_content("Hello, world!")
   end
 end
