@@ -1,14 +1,32 @@
-<div><%= @post.message %></div>
-<span><%= link_to 'Edit', edit_post_path(@post) %></span>
-<span><%= link_to 'Delete', post_path(@post),
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %></span>
-<span><%= link_to 'Back', posts_path %></span>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <style>
+    body {
+    padding-top: 50px;
+    padding-left: 50px;
+    }
+    </style>
+  <title></title>
+  </head>
+  <body>
+    <div><%= @post.message %></div>
+    <span><%= link_to 'Edit', edit_post_path(@post) %></span>
+    <span><%= link_to 'Delete', post_path(@post),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></span>
+    <span><%= link_to 'Back', posts_path %></span>
 
-<%= render 'likes/form' %>
-  <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes' %> </p>
+    <%= render 'likes/form' %>
+      <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes' %> </p>
 
-<%= render 'comments/form' %>
-  <% @post.comments.sort_by { |x| x.created_at || 0}.reverse.each do |comment| %>
-    <div><%= comment.content %> <%= '-' if (comment.content)%> <%= User.find(comment.user_id).email if (comment.user_id)  %></div>
-  <% end %>
+    <%= render 'comments/form' %>
+      <% @post.comments.sort_by { |x| x.created_at || 0}.reverse.each do |comment| %>
+        <div><%= comment.content %> <%= '-' if (comment.content)%> <%= User.find(comment.user_id).email if (comment.user_id)  %></div>
+      <% end %>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>
