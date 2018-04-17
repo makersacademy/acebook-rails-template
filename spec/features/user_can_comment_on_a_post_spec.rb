@@ -3,9 +3,11 @@
 require 'rails_helper'
 
 RSpec.feature 'Commenting on posts', type: :feature do
+  include ActiveSupport::Testing::TimeHelpers
   before(:each) do
     sign_up
     add_new_post
+    travel_to Time.zone.local(1991)
     add_comment
   end
 
@@ -14,7 +16,7 @@ RSpec.feature 'Commenting on posts', type: :feature do
   end
 
   scenario 'each comment shows a creation timestamp' do
-    expect(page).to have_content "Comment Timestamp: #{Time.now}"
+    expect(page).to have_content '1991-01-01 00:00:00'
   end
 
   # UNCOMMENT WHEN NEED TO TEST COMMENTS LIKING
