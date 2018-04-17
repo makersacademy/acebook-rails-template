@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "User can edit a post", type: :feature do
+RSpec.feature "User can edit a post", :js => true, type: :feature do
   scenario "User makes a successful edit" do
     user_sign_up
 
@@ -8,10 +8,9 @@ RSpec.feature "User can edit a post", type: :feature do
     click_button "Post"
 
     click_link('EDIT')
-    expect(page).to have_content("Hello world!")
-    sleep 1
-    # bip_area post, :message "Totally edited comment!"
-    sleep 1
+
+    fill_in 'message', with: 'Totally edited comment'
+    click_button "Save"
 
     expect(page).to have_content("Totally edited comment")
   end

@@ -5,8 +5,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
-require 'best_in_place'
-require 'best_in_place/web_helpers'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -29,8 +28,6 @@ require 'best_in_place/web_helpers'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  config.include BestInPlace::TestHelpers
-
   # Make tests work with Devise
   config.include Devise::Test::ControllerHelpers, type: :controller
 
