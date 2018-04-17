@@ -29,7 +29,7 @@ RSpec.describe Post, type: :model do
     end
   end
   describe "#comment_count_string" do
-    it "returns singular string when given a single comments" do
+    it "returns singular string when given a single comment" do
       post = Post.create(message: "test", user_id: 1)
       post.comments.create(content: "test", post_id: 1, user_id: 1)
       expect(post.comment_count_string).to eq('1 Comment')
@@ -64,6 +64,14 @@ RSpec.describe Post, type: :model do
       post1 = Post.create(message: "test", user_id: 1)
       post2 = Post.create(message: "test2", user_id: 2)
       expect(Post.time_sort_all[0].message).to eq(post2.message)
+    end
+  end
+
+  describe "#author" do
+    it "returns the username/email" do
+      user = User.create(email: "test@test.com", username: "test", password: "password")
+      post = Post.create(message: "test", user_id: user.id)
+      expect(post.author).to eq("test")
     end
   end
 

@@ -35,4 +35,8 @@ class Post < ApplicationRecord
   def self.time_sort_all
     self.all.sort_by { |post| post.created_at }.reverse
   end
+
+  def author
+    User.find(self.user_id.to_i).identifier
+  end
 end
