@@ -1,10 +1,9 @@
 env:
   global:
-  - CC_TEST_REPORTER_ID=36b54a6e73cd8bc7130997c66836337f879d1f385bf7b3a3810aae8d929401f8
+    secure: "hJiRXtbtYH7QLZml+q/yfgWoqELIcyGfM6nAkEheD7PRsIqMk6Km5hIIKNpv09tXkhpEkD04o76tf6hn34BooivYrulC3UZFDALmE3sSH0AJaAM5gxWii80CL7Japs3YQKlk4axhh/UNwQTaOxoEyf/hTxCA/wPXYqLCgZ98LKV6sjBOifQTifUDCjlhDo9E6rtPDmIm77ZDwhc65ymvzzBolC/miyPzeO+5HWz9s/uP+z8vnr1IPCuZjE7h7IKpQZ5XcdQtT3GUUxC0tO09XTp4SrN2Y0X0Qxqpe5QQF1NBkT3i0HAlZrE6HdcSvtuTc0PFm7bCgUaMgFuYL7nCrwd7MZFe6sCkOsURA4eIpepIcZR83FWMbxQml3vYkED3QkthB6t/SAQolkLuVy7/TuaTcNLVGTE5MNqYSeJjaLERzwiAeMSpwuYbMWAsNaQ0tr+QWigt/GLcK+CTihpeunnGPIyijVHLDNHm+ggFzTDzoTtCEoI0HPXt2pEuvI8znwmY+0AWANOZvLPFJLoJkdaWVQktR65NgrmoEpx/NrdQbmZuuArP2GLX0/nSEjyQQoABU5hVMndAE5MCW3tlxHVdGNiUfD7AMFuc7Z2RgqEqX57/Vc8dWCvZaj1cN4xYZOv/ZTG6axI22b8E6yiyHl0ncTrkGNwrvtBeiXlSaUE="
 language: ruby
 rvm:
 - 2.5.0
-install: gem install capybara-webkit
 before_script:
 - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
   > ./cc-test-reporter
