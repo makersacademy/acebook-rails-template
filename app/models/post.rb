@@ -7,13 +7,17 @@ class Post < ApplicationRecord
   def owner?(user)
     self.user_id.to_i == user.id.to_i
   end
-  
+
   def like_count_string
-    "#{self.likes.length} #{self.likes.length ==1 ? "Like" : "Likes" }"
+    if self.likes.length > 0
+      return "#{self.likes.length} #{self.likes.length ==1 ? "Like" : "Likes" }"
+    end
   end
 
   def comment_count_string
-    "#{self.comments.length} #{self.comments.length ==1 ? "Comment" : "Comments" }"
+    if self.comments.length > 0
+      return "#{self.comments.length} #{self.comments.length ==1 ? "Comment" : "Comments" }"
+    end
   end
 
   def created_at_timestring
@@ -27,7 +31,7 @@ class Post < ApplicationRecord
   def find_like(user)
     self.likes.find { |like| like.user_id.to_i == user.id.to_i}
   end
- 
+
   def self.time_sort_all
     self.all.sort_by { |post| post.created_at }.reverse
   end

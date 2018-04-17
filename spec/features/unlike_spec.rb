@@ -11,6 +11,6 @@ RSpec.feature "Unliking", type: :feature do
   scenario "User can ony like post once" do
     click_button 'Like'
     click_button 'Unlike'
-    expect(page).to have_content("0 Likes")
+    expect(page).to_not have_content("Likes")
   end
 end
