@@ -26,6 +26,7 @@
   <% end %>
   <% post.comments.each do |comment| %>
     <p><%= comment.comment %></p>
+     <%= button_to "Delete", post_comment_path(post, comment), method: :delete %>
   <% end %>
   <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
     <%= form.text_field :comment %>
