@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Liking Comments', type: :feature do
   scenario 'Can like a post and see like count' do
-    # rubocopArrange
+    # Arrange
     sign_up
     add_new_post
     add_comment

@@ -4,14 +4,15 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # Resources should never be nested more than 1 level deep!
 
   resources :posts do
-    resources :likes, :comments
+    resources :likes, only: [:create, :update]
+    resources :comments
   end
 
   resources :comments do
-    resources :comment_likes
+    resources :likes, only: [:create, :update]
   end
 
   root 'welcome#index'
