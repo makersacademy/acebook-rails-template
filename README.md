@@ -1,6 +1,16 @@
-<a href="https://codeclimate.com/github/ryandav/ruby_types/maintainability"><img src="https://api.codeclimate.com/v1/badges/70ad0217d63f10aac886/maintainability" /></a>
+#Project URL
 
-<a href="https://codeclimate.com/github/ryandav/ruby_types/test_coverage"><img src="https://api.codeclimate.com/v1/badges/70ad0217d63f10aac886/test_coverage" /></a>
+http://acebook-fullstaxx-env.muc2hwru9t.eu-west-2.elasticbeanstalk.com
+
+#Contents
+
+#Getting Started
+
+#Testing
+
+<a href="https://codeclimate.com/github/VivianAllen/acebook-FullStaxx/maintainability"><img src="https://api.codeclimate.com/v1/badges/5ce3d8dfe461a757a6fb/maintainability" /></a>
+
+<a href="https://codeclimate.com/github/VivianAllen/acebook-FullStaxx/test_coverage"><img src="https://api.codeclimate.com/v1/badges/5ce3d8dfe461a757a6fb/test_coverage" /></a>
 
 
 # AceBook

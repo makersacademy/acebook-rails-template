@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_post, only: [:edit, :show, :update, :destroy]
+
   def index
     @posts = Post.all
   end
@@ -9,7 +11,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def create
@@ -18,24 +19,31 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
-    @post.update(post_params)
+    if @post.owner?(current_user)
+      @post.update(post_params)
+    else
+      flash[:notice] = "Cannot edit"
+    end
     redirect_to posts_path
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-
-    redirect_to posts_path
+    if @post.owner?(current_user)
+      @post.destroy
+    else
+      flash[:notice] = "Cannot delete"
+    end
+     redirect_to posts_path
   end
 
-
   private
+
+  def find_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:message).merge(user_id: current_user.id)

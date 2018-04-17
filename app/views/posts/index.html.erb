@@ -5,73 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <style>
-    body {
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
-    }
-    .list-group {
-    padding-bottom: 20px;
-    }
-    .likes-count {
-    text-align: left;
-    }
-    .comments-count {
-    text-align: right;
-    }
-    .counters {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-    }
+      body {
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .list-group {
+        padding-bottom: 20px;
+      }
+      .likes-count {
+        text-align: left;
+      }
+      .comments-count {
+        text-align: right;
+      }
+      .counters {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
     </style>
   <title></title>
   </head>
   <body>
     <p class="navbar-text pull-right">
-    <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.identifier %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
     </p>
-
     <h1>Acebook</h1>
     <%= link_to new_post_path do %>
       <p>New post</p>
     <% end %>
-      <% @posts.sort_by { |x| x.created_at }.reverse.each_with_index do |post, i| %>
+    <% @posts.time_sort_all.each_with_index do |post, i| %>
       <div id="<%="post_#{i}"%>" class="list-group">
         <div class="list-group-item">
-        <div id="<%="post_email_#{i}"%>">
-          <%= User.find(post.user_id).email if (post.user_id)%>
+        <div id="<%="post_username_#{i}"%>">
+          <%= post.author %>
         </div>
-        <div class="small"><%= post.created_at.strftime("%a %e %b %H:%M") %></div>
-        <div id="<%="post_message_#{i}"%>">
-          <h5><%= post.message %></h5>
-        </div>
-        <span class="counters">
-          <% if post.likes.count >=1 %>
-          <%= post.likes.count %>
-          <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %> <% end %>
-          <% if post.comments.count >= 1 %>
-          <%= post.comments.count %> Comments <% end %>
-        </span>
-        <span>
-          <%= link_to 'Edit', edit_post_path(post) %>
-          <%= link_to 'Delete', post_path(post),
-            method: :delete,
-            data: { confirm: 'Are you sure?' } %>
-          <%= link_to 'View Comments', post_path(post) %>
-        </span>
+        <div class="small"><%= post.created_at_timestring %></div>
+          <div id="<%="post_message_#{i}"%>">
+            <h5><%= simple_format(post.message) %></h5>
+          </div>
+          <span class="counters">
+            <%= post.like_count_string %>
+            <%= post.comment_count_string %>
+          </span>
+          <span>
+            <% if post.owner?(current_user) %>
+              <%= link_to 'Edit', edit_post_path(post) %>
+              <%= link_to 'Delete', post_path(post),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+            <% end %>
+            <%= link_to 'View Comments', post_path(post) %>
+          </span>
         </div>
       </div>
-      <% end %>
-
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <% end %>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
 </html>

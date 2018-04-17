@@ -1,5 +1,7 @@
-<%=form_with(model: [@post, @post.comments.build], local: true) do |f|%>
-  <%= f.text_area :content %>
-  <%= f.submit %>
-
-<% end %>
+<div class="comment">
+  <%=form_with(model: [@post, @post.comments.build], local: true) do |f|%>
+    <%= f.text_area :content, :maxlength => 140 %>
+    <br>
+    <%= f.submit %>
+  <% end %>
+</div>
