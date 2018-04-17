@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
   def new
     @post = current_user.posts.build
   end
@@ -37,7 +36,7 @@ class PostsController < ApplicationController
   end
 
   private
-
+  
   def post_params
     params.require(:post).permit(:message)
   end

@@ -5,10 +5,10 @@ RSpec.feature "Timeline", type: :feature do
     user_sign_up
 
     fill_in "post_message", with: "Hello, world!"
-    click_button "Submit"
+    click_button "Post"
 
     fill_in "post_message", with: "Bye, world!"
-    click_button "Submit"
+    click_button "Post"
 
     expect(page.all('.post').first.text).to include("Bye, world!")
   end
