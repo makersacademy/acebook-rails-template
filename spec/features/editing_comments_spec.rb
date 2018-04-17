@@ -3,9 +3,11 @@
 require 'rails_helper'
 
 RSpec.feature 'Editing comments', type: :feature do
+  include ActiveSupport::Testing::TimeHelpers
   before(:each) do
     sign_up
     add_new_post
+    travel_to Time.zone.local(1991)
     add_comment
     click_link 'Edit Comment'
     fill_in 'comment[body]', with: 'Makers is great'
@@ -21,6 +23,6 @@ RSpec.feature 'Editing comments', type: :feature do
   end
 
   scenario 'editing a comment does not change the comment timestamp' do
-    expect(page).to have_content "Comment Timestamp: #{Time.now}"
+    expect(page).to have_content '1991-01-01 00:00:00'
   end
 end
