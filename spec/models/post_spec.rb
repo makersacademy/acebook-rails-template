@@ -49,6 +49,15 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe "#created_at_timestring" do
+    it "returns a formatted string with the time it was created at" do
+      allow(Time).to receive(:now).and_return(Time.mktime(0))
+      dateString = Time.now.strftime("%a %e %b %H:%M")
+      post = Post.create(message: "test", user_id: 1)
+      expect(post.created_at_timestring).to eq(dateString)
+    end
+  end
+
 
   describe "#self.timesort" do
     it "returns a time-sorted list of posts" do
