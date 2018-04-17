@@ -48,7 +48,7 @@
         <div id="<%="post_email_#{i}"%>">
           <%= User.find(post.user_id).email if (post.user_id)%>
         </div>
-        <div class="small"><%= post.created_at.localtime.strftime("%a %e %b %H:%M") %></div>
+        <div class="small"><%= post.created_at_timestring %></div>
           <div id="<%="post_message_#{i}"%>">
             <h5><%= post.message %></h5>
           </div>

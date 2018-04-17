@@ -15,6 +15,10 @@ class Post < ApplicationRecord
     "#{self.comments.length} #{self.comments.length ==1 ? "Comment" : "Comments" }"
   end
 
+  def created_at_timestring
+    self.created_at.localtime.strftime("%a %e %b %H:%M")
+  end
+
   # class methods
   def self.time_sort_all
     self.all.sort_by { |post| post.created_at }.reverse
