@@ -20,10 +20,7 @@ RSpec.describe Post, type: :model do
       post.likes.create(user_id: 1)
       expect(post.like_count_string).to eq('1 Like')
     end
-    it "returns plural string when no likes" do
-      post = Post.create(message: "test", user_id: 1)
-      expect(post.like_count_string).to eq('0 Likes')
-    end
+
     it "returns plural string when given multiple likes" do
       post = Post.create(message: "test", user_id: 1)
       post.likes.create(user_id: 1)
@@ -31,16 +28,11 @@ RSpec.describe Post, type: :model do
       expect(post.like_count_string).to eq('2 Likes')
     end
   end
-
   describe "#comment_count_string" do
     it "returns singular string when given a single comment" do
       post = Post.create(message: "test", user_id: 1)
       post.comments.create(content: "test", post_id: 1, user_id: 1)
       expect(post.comment_count_string).to eq('1 Comment')
-    end
-    it "returns plural string when no comments" do
-      post = Post.create(message: "test", user_id: 1)
-      expect(post.comment_count_string).to eq('0 Comments')
     end
     it "returns plural string when given multiple comments" do
       post = Post.create(message: "test", user_id: 1)
@@ -49,7 +41,6 @@ RSpec.describe Post, type: :model do
       expect(post.comment_count_string).to eq('2 Comments')
     end
   end
-
   describe "#created_at_timestring" do
     it "returns a formatted string with the time it was created at" do
       allow(Time).to receive(:now).and_return(Time.mktime(0))
