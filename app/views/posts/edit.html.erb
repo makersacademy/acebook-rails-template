@@ -16,7 +16,7 @@
     <h1>Edit post</h1>
     <%= form_with(model: @post, local: true) do |form| %>
       <%= form.label :message %>
-      <%= form.text_area :message, :maxlength => 140 %>
+      <%= form.text_area :message, :maxlength => 500 %>
       <%= form.submit "Submit" %>
     <% end %>
     <%= link_to 'Back', posts_path %>
