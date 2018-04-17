@@ -1,4 +1,4 @@
-<%= @post.timesort_comments.each_with_index do |comment, i| %>
+<% @post.timesort_comments.each_with_index do |comment, i| %>
   <div id="<%="comment_#{i}"%>">
     <%= simple_format(comment.content) %>
   </div>
