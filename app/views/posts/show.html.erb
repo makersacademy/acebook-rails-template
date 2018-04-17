@@ -7,7 +7,7 @@
   <%= @post.user.username %>
   <br>
   <strong>Post Timestamp:</strong>
-  <%= @post.created_at.localtime %>
+  <%= @post.created_at.localtime.strftime("%M:%H %A %d-%m-%Y") %>
 </p>
 
 <div id="post_<%= @post.id %>_likes">
