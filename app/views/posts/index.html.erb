@@ -4,7 +4,7 @@
   <div id="post_div_<%=idx%>" class='news_deck'>
     <p id="post_body_<%=idx%>"><%= simple_format(post.message) %></p>
     <p id="post_user_<%=idx%>"><%= post.user.username %></p>
-    <p id="post_timestamp_<%=idx%>"><%= post.created_at.localtime.strftime("%M:%H %A %d-%m-%Y") %></p>
+    <p id="post_timestamp_<%=idx%>"><%= post.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %></p>
     <br>
     <div>
       <% if post.user.id == current_user.id %>
