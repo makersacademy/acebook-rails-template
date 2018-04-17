@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180416141933) do
+ActiveRecord::Schema.define(version: 20180417101536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "comment_likes", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "comment_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["comment_id"], name: "index_comment_likes_on_comment_id"
-    t.index ["user_id"], name: "index_comment_likes_on_user_id"
-  end
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
@@ -40,6 +31,9 @@ ActiveRecord::Schema.define(version: 20180416141933) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "comment_id"
+    t.boolean "on"
+    t.index ["comment_id"], name: "index_likes_on_comment_id"
     t.index ["post_id"], name: "index_likes_on_post_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
@@ -71,10 +65,9 @@ ActiveRecord::Schema.define(version: 20180416141933) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comment_likes", "comments"
-  add_foreign_key "comment_likes", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "likes", "comments"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
