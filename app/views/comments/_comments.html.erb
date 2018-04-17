@@ -1,0 +1,28 @@
+<% @post.comments.each do |comment| %>
+
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
+
+<p>
+  <strong>Commenter:</strong>
+  <%= comment.commenter %>
+  <%= comment.user_id %>
+  <br>
+  <strong>Comment Timestamp:</strong>
+  <%= comment.created_at.localtime.strftime("%M:%H %A %d-%m-%Y") %>
+</p>
+
+<p>
+  <strong>Comment Likes:</strong>
+  <%= comment.comment_likes.count %>
+</p>
+
+<%= link_to 'Like Comment', comment_comment_likes_path(comment, :user_id => current_user.id),
+    method: :post, id: 'Comment Like', value: current_user.id %>
+<% if comment.user_id == current_user.id %>
+<%= link_to 'Delete Comment', [@post, comment], method: :delete, data: { confirm: 'Are you sure? '} %>
+<%= link_to 'Edit Comment', edit_post_comment_path(@post, comment) %>
+<% end %>
+<% end %>
