@@ -12,16 +12,16 @@ RSpec.describe Post, type: :model do
       expect(post.owner?(dbl_user)).to be_falsey
     end
   end
-  describe "#already_liked?" do
+  describe "#find_like" do
     it "returns true when called with its owner" do
       post = Post.create(message: "test", user_id: 1)
-      post.likes.create(user_id: 1)
-      expect(post.already_liked?(dbl_user)).to be_truthy
+      like = post.likes.create(user_id: 1)
+      expect(post.find_like(dbl_user)).to eq(like)
     end
     it "return false when called with a different owner" do
       post = Post.create(message: "test", user_id: 1)
       post.likes.create(user_id: 2)
-      expect(post.already_liked?(dbl_user)).to be_falsey
+      expect(post.find_like(dbl_user)).to be_falsey
     end
   end
 end

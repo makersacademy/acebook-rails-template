@@ -7,8 +7,8 @@ class Post < ApplicationRecord
     self.user_id.to_i == user.id.to_i
   end
 
-  def already_liked?(user)
-    self.likes.any? { |like| like.user_id.to_i == user.id.to_i}
+  def find_like(user)
+    self.likes.find { |like| like.user_id.to_i == user.id.to_i}
   end
 
 end
