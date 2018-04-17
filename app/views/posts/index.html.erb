@@ -50,7 +50,7 @@
         </div>
         <div class="small"><%= post.created_at_timestring %></div>
           <div id="<%="post_message_#{i}"%>">
-            <h5><%= auto_link(simple_format(post.message)) %></h5>
+            <h5><%= simple_format(post.message) %></h5>
           </div>
           <span class="counters">
             <%= post.like_count_string %>
