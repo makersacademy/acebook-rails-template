@@ -4,6 +4,9 @@ env:
 language: ruby
 rvm:
 - 2.5.0
+sudo: required
+addons:
+  chrome: stable
 before_script:
 - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
   > ./cc-test-reporter
@@ -25,5 +28,3 @@ deploy:
   on:
     repo: Hemesh-Unka/acebook-pinkfish
     all_branches: true
-addons:
-  chrome: stable
