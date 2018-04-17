@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_post, only: [:edit, :show, :update, :destroy]
-  
+
   def index
     @posts = Post.all
   end
@@ -22,7 +22,11 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(post_params)
+    if @post.owner?(current_user)
+      @post.update(post_params)
+    else
+      flash[:notice] = "Cannot edit"
+    end
     redirect_to posts_path
   end
 
