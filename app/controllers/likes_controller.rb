@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class LikesController < ApplicationController
-  before_action :set_post
+  # before_action :set_post
   # before_action :set_comment
+  before_action :set_reference
 
   def create
     # Find the like or create one
@@ -22,13 +23,14 @@ class LikesController < ApplicationController
 
   private
 
-  def set_post
-    @post = Post.find(params[:post_id])
+  def set_reference
+    if params[:post_id].nil?
+      @comment = Comment.find(params[:comment_id])
+      @post = Post.find(@comment.post_id)
+    else
+      @post = Post.find(params[:post_id])
+    end
   end
-
-  # def set_comment
-  #   @comment = Comment.find(params[:comment_id])
-  # end
 
   def like_params
     params.permit(:user_id, :post_id, :comment_id, :on)
