@@ -3,8 +3,11 @@
 <% @posts.each_with_index do |post, idx| %>
   <div id="post_div_<%=idx%>" class='news_deck'>
     <p id="post_body_<%=idx%>"><%= simple_format(post.message) %></p>
-    <p id="post_user_<%=idx%>"><%= post.user.username %></p>
-    <p id="post_timestamp_<%=idx%>"><%= post.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %></p>
+    <strong>User: </strong>
+    <span id="post_user_<%=idx%>"><%= post.user.username %></span>
+    <br>
+    <strong>Post On: </strong>
+    <span id="post_timestamp_<%=idx%>"><%= post.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %></span>
     <br>
     <div>
       <% if post.user.id == current_user.id %>

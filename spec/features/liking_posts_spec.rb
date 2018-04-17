@@ -11,7 +11,7 @@ RSpec.feature 'Liking Posts' do
     click_button('Show')
     click_link('Like')
     # Assert
-    expect(page).to have_content('Like 1')
+    expect(page).to have_content('Likes: 1')
   end
 
   scenario 'Users can like a post only once' do
@@ -23,6 +23,6 @@ RSpec.feature 'Liking Posts' do
     click_link('Like')
     click_link('Like')
     # Assert
-    expect(page).to have_content 'Like 0'
+    expect(page).to have_content 'Likes: 0'
   end
 end
