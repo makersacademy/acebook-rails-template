@@ -42,7 +42,7 @@
     <%= link_to new_post_path do %>
       <p>New post</p>
     <% end %>
-    <% @posts.sort_by { |x| x.created_at }.reverse.each_with_index do |post, i| %>
+    <% @posts.time_sort_all.each_with_index do |post, i| %>
       <div id="<%="post_#{i}"%>" class="list-group">
         <div class="list-group-item">
         <div id="<%="post_email_#{i}"%>">

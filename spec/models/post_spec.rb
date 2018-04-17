@@ -16,7 +16,7 @@ RSpec.describe Post, type: :model do
     it "returns a time-sorted list of posts" do
       post1 = Post.create(message: "test", user_id: 1)
       post2 = Post.create(message: "test2", user_id: 2)
-      expect(Post.timesort[0]).to equal(post2)
+      expect(Post.time_sort_all[0].message).to eq(post2.message)
     end
   end
 end

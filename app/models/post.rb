@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   end
 
   # class methods
-  # def self.time_sort
-  #   self.all.sort_by { |x| x.created_at }.reverse.each_with_index
-  # end
+  def self.time_sort_all
+    self.all.sort_by { |post| post.created_at }.reverse
+  end
 end
