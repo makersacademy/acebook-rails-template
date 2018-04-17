@@ -10,10 +10,6 @@ before_script:
 - chmod +x ./cc-test-reporter
 - "./cc-test-reporter before-build"
 - psql -c 'create database travis_ci_test;' -U postgres
-- wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz
-- mkdir geckodriver
-- tar -xzf geckodriver-v0.11.1-linux64.tar.gz -C geckodriver
-- export PATH=$PATH:$PWD/geckodriver
 script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
