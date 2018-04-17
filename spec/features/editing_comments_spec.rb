@@ -23,6 +23,6 @@ RSpec.feature 'Editing comments', type: :feature do
   end
 
   scenario 'editing a comment does not change the comment timestamp' do
-    expect(page).to have_content '1991-01-01 00:00:00'
+    expect(page).to have_content '00:00 Tuesday 01-01-1991'
   end
 end

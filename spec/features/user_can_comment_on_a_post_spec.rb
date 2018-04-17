@@ -16,7 +16,7 @@ RSpec.feature 'Commenting on posts', type: :feature do
   end
 
   scenario 'each comment shows a creation timestamp' do
-    expect(page).to have_content '1991-01-01 00:00:00'
+    expect(page).to have_content '00:00 Tuesday 01-01-1991'
   end
 
   # UNCOMMENT WHEN NEED TO TEST COMMENTS LIKING
