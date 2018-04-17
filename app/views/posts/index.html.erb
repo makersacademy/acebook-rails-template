@@ -46,7 +46,7 @@
       <% @posts.sort_by { |x| x.created_at }.reverse.each_with_index do |post, i| %>
       <div id="<%="post_#{i}"%>" class="list-group">
         <div class="list-group-item">
-        <div id="<%="post_email_#{i}"%>">
+        <div id="<%="post_username_#{i}"%>">
           <%= User.find(post.user_id).username if (post.user_id)%>
         </div>
         <div class="small"><%= post.created_at.localtime.strftime("%a %e %b %H:%M") %></div>

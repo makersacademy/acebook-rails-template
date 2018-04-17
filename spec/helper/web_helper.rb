@@ -14,11 +14,11 @@ def add_post(message = "Hello, world!")
 end
 
 def create_user_2
-  User.create(email: "test2@test.com",  password: "testtest", password_confirmation: "testtest")
+  User.create(email: "test2@test.com",  username: "test2", password: "testtest", password_confirmation: "testtest")
 end
 
 def create_user_3
-  User.create(email: "test3@test.com", password: "testtest", password_confirmation: "testtest")
+  User.create(email: "test3@test.com", username: "test3", password: "testtest", password_confirmation: "testtest")
 end
 
 def sign_in_user_2

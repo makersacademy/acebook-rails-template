@@ -11,7 +11,7 @@ RSpec.feature "Commenting", type: :feature do
   end
 
   scenario "Can create comment and view immediately" do
-    expect(page).to have_content("I am comment#1 - test@test.com")
+    expect(page).to have_content("I am comment#1 - test")
   end
-  
+
 end
