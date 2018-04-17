@@ -1,29 +1,32 @@
 # frozen_string_literal: true
 
 class LikesController < ApplicationController
-  before_action :set_post
-  before_action :find_like
+  before_action :set_reference
 
   def create
-    if @like
-      @post.likes.where(like_params).destroy(@post.likes.where(user_id: params[:user_id]).ids)
+    @like = Like.find_or_create_by(like_params)
+
+    if @like.on == true
+      @like.update_attribute(:on, false)
     else
-      @post.likes.create(like_params)
+      @like.update_attribute(:on, true)
     end
+
     redirect_to post_path(@post)
   end
 
   private
 
-  def set_post
-    @post = Post.find(params[:post_id])
-  end
-
-  def find_like
-    @like = @post.likes.find_by(like_params)
+  def set_reference
+    if params[:post_id].nil?
+      @comment = Comment.find(params[:comment_id])
+      @post = Post.find(@comment.post_id)
+    else
+      @post = Post.find(params[:post_id])
+    end
   end
 
   def like_params
-    params.permit(:user_id, :post_id)
+    params.permit(:user_id, :post_id, :comment_id, :on)
   end
 end
