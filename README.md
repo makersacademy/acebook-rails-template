@@ -1,8 +1,8 @@
-#Project URL
+# Project URL
 
 http://acebook-fullstaxx-env.muc2hwru9t.eu-west-2.elasticbeanstalk.com
 
-#Code Quality
+# Code Quality
 
 [![Build Status](https://travis-ci.org/VivianAllen/acebook-FullStaxx.svg?branch=master)](https://travis-ci.org/VivianAllen/acebook-FullStaxx)
 
@@ -10,11 +10,11 @@ http://acebook-fullstaxx-env.muc2hwru9t.eu-west-2.elasticbeanstalk.com
 
 <a href="https://codeclimate.com/github/VivianAllen/acebook-FullStaxx/test_coverage"><img src="https://api.codeclimate.com/v1/badges/5ce3d8dfe461a757a6fb/test_coverage" /></a>
 
-#Contents
+# Contents
 
-#Getting Started
+# Getting Started
 
-#Testing 
+# Testing 
 
 # AceBook
 
