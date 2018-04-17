@@ -19,6 +19,10 @@ class Post < ApplicationRecord
     self.created_at.localtime.strftime("%a %e %b %H:%M")
   end
 
+  def timesort_comments
+    self.comments.sort_by { |comment| comment.created_at || 0}.reverse
+  end
+
   # class methods
   def self.time_sort_all
     self.all.sort_by { |post| post.created_at }.reverse

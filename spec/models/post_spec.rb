@@ -58,6 +58,15 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe "#timesort_comments" do
+    it "returns a time-sorted array of comments" do
+      post = Post.create(message: "test", user_id: 1)
+      post.comments.create(content: "test", post_id: 1, user_id: 1)
+      post.comments.create(content: "test2", post_id: 1, user_id: 1)
+      expect(post.timesort_comments[0].content).to eq("test2")
+    end
+  end
+
   describe "#self.timesort" do
     it "returns a time-sorted list of posts" do
       post1 = Post.create(message: "test", user_id: 1)
