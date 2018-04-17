@@ -5,7 +5,7 @@ RSpec.feature "User can delete a post", type: :feature do
     user_sign_up
 
     fill_in "post_message", with: "Hello, world!"
-    click_button "Submit"
+    click_button "Post"
 
     click_link "DELETE"
     expect(page).not_to have_content("Hello, world!")
