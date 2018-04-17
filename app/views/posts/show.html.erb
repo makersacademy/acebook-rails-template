@@ -8,32 +8,44 @@
       body {
         padding-top: 50px;
         padding-left: 50px;
+        padding-right: 50px;
+      }
+      .comment {
+        width: 300px;
+        padding-top: 50px;
+        margin: auto;
+        width: 40%;
+      }
+      .comment-box {
+        width: 300px;
+        padding: 30px;
+        border-style: solid;
+        border-width: thin;
+        margin: auto;
+        width: 40%;
       }
     </style>
     <title></title>
   </head>
   <body>
-    <div>
-      <%= @post.message %>
-    </div>
-    <span>
-      <%= link_to 'Edit', edit_post_path(@post) %>
-    </span>
-    <span>
-      <%= link_to 'Delete', post_path(@post),
+    <%= link_to 'Back', posts_path %>
+    <div class="comment-box">
+      <h5><%= @post.message %></h5>
+      <div class="small"><%= @post.created_at_timestring %></div>
+      <span>
+        <%= link_to 'Edit', edit_post_path(@post) %>
+        <%= link_to 'Delete', post_path(@post),
             method: :delete,
             data: { confirm: 'Are you sure?' } %>
-    </span>
-    <span>
-      <%= link_to 'Back', posts_path %>
-    </span>
-    <% pre_like = @post.find_like(current_user) %>
-    <% if pre_like %>
-      <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
-    <% else %>
-      <%= button_to 'Like', post_likes_path(@post), method: :post %>
-    <% end %>
-    <p><%= @post.like_count_string %></p>
+      </span>
+      <% pre_like = @post.find_like(current_user) %>
+      <% if pre_like %>
+        <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+      <% else %>
+        <%= button_to 'Like', post_likes_path(@post), method: :post %>
+      <% end %>
+      <p><%= @post.like_count_string %></p>
+    </div>
     <%= render 'comments/comment' %>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
