@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  validates :message, presence: true
   belongs_to :user, required: false
   has_many :comments, dependent: :destroy
   has_many :likes,  dependent: :destroy
@@ -6,7 +7,7 @@ class Post < ApplicationRecord
   def owner?(user)
     self.user_id.to_i == user.id.to_i
   end
-
+  
   def like_count_string
     "#{self.likes.length} #{self.likes.length ==1 ? "Like" : "Likes" }"
   end
@@ -23,7 +24,10 @@ class Post < ApplicationRecord
     self.comments.sort_by { |comment| comment.created_at || 0}.reverse
   end
 
-  # class methods
+  def find_like(user)
+    self.likes.find { |like| like.user_id.to_i == user.id.to_i}
+  end
+ 
   def self.time_sort_all
     self.all.sort_by { |post| post.created_at }.reverse
   end
