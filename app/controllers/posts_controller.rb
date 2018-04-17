@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_post, only: [:edit, :show, :update, :destroy]
+  
   def index
     @posts = Post.all
   end
@@ -9,7 +11,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def create
@@ -18,23 +19,20 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def update
-    find_post
     @post.update(post_params)
     redirect_to posts_path
   end
 
   def destroy
-    find_post
     if @post.owner?(current_user)
       @post.destroy
-      redirect_to posts_path
     else
       flash[:notice] = "Cannot delete"
     end
+     redirect_to posts_path
   end
 
   private
