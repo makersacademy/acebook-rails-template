@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'users can sign out', type: :feature do
-  scenario 'users can sign out of Acebook', :js => true  do
+  scenario 'users can sign out of Acebook' do
     visit '/'
     sign_up
     sign_out

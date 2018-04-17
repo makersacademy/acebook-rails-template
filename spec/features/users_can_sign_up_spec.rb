@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'users can sign up', type: :feature do
-  scenario 'user can register to Acebook', :js => true  do
+  scenario 'user can register to Acebook' do
     sign_up
     expect(page).to have_selector("input[type=submit][value='Logout']")
   end

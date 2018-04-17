@@ -42,7 +42,7 @@ class CommentsController < ApplicationController
   def find_post
     @post = Post.find(params[:post_id])
   end
-  
+
   def correct_user
     @comment = Comment.find(params[:id])
     redirect_to posts_path unless current_user.id == @comment.user_id

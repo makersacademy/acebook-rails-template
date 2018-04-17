@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'users can only delete own comment', type: :feature do
-  scenario 'user signs in, posts, signs out, another user cant delete post', :js => true  do
+  scenario 'user signs in, posts, signs out, another user cant delete post' do
     sign_up
     add_new_post
     sign_out
