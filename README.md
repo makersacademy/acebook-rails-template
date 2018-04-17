@@ -7,6 +7,7 @@ http://acebook-fullstaxx-env.muc2hwru9t.eu-west-2.elasticbeanstalk.com
 #Getting Started
 
 #Testing
+[![Build Status](https://travis-ci.org/VivianAllen/acebook-FullStaxx.svg?branch=master)](https://travis-ci.org/VivianAllen/acebook-FullStaxx)
 
 <a href="https://codeclimate.com/github/VivianAllen/acebook-FullStaxx/maintainability"><img src="https://api.codeclimate.com/v1/badges/5ce3d8dfe461a757a6fb/maintainability" /></a>
 
