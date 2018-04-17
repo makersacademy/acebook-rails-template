@@ -58,7 +58,6 @@ RSpec.describe Post, type: :model do
     end
   end
 
-
   describe "#self.timesort" do
     it "returns a time-sorted list of posts" do
       post1 = Post.create(message: "test", user_id: 1)
