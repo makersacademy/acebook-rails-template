@@ -16,8 +16,7 @@
     <% end %>
   </p>
   <p>
-    <%= post.likes.length %>
-    Likes
+    <%= post.likes.length %> <%= 'Like'.pluralize(post.likes.length) %>
   </p>
   <% pre_like = Like.find_by(user_id: current_user.id, post_id: post.id) %>
   <% if pre_like %>
