@@ -24,3 +24,5 @@ deploy:
   on:
     repo: Hemesh-Unka/acebook-pinkfish
     all_branches: true
+addons:
+  chrome: stable
