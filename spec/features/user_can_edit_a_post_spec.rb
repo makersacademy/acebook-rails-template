@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "User can edit a post", :js => true do
+RSpec.feature "User can edit a post", :js => true, type: :feature do
   scenario "User makes a successful edit" do
     user_sign_up
 
