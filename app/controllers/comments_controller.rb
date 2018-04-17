@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
+  before_action :correct_user, only: %i[edit update destroy]
   before_action :find_post
 
   def create
@@ -40,5 +41,10 @@ class CommentsController < ApplicationController
 
   def find_post
     @post = Post.find(params[:post_id])
+  end
+  
+  def correct_user
+    @comment = Comment.find(params[:id])
+    redirect_to posts_path unless current_user.id == @comment.user_id
   end
 end
