@@ -1,6 +1,7 @@
-def sign_up(email = "test@test.com")
+def sign_up(email = "test@test.com", username = "test")
   visit "/users/sign_up"
   fill_in "user[email]", with: email
+  fill_in "user[username]", with: username
   fill_in "user[password]", with: "testtest"
   fill_in "user[password_confirmation]", with: "testtest"
   click_button "Sign up"
@@ -13,7 +14,7 @@ def add_post(message = "Hello, world!")
 end
 
 def create_user_2
-  User.create(email: "test2@test.com", password: "testtest", password_confirmation: "testtest")
+  User.create(email: "test2@test.com",  password: "testtest", password_confirmation: "testtest")
 end
 
 def create_user_3
