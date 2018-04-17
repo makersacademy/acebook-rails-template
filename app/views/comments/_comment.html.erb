@@ -1,7 +1,7 @@
 <%= render 'comments/form' %>
 
-<% @post.comments.sort_by { |x| x.created_at || 0}.reverse.each do |comment| %>
-  <div><%= comment.content %> <%= '-' if (comment.content)%> <%= User.find(comment.user_id).email if (comment.user_id)  %></div>
+<% @post.timesort_comments.each do |comment| %>
+  <div><%= simple_format(comment.content) %> <%= '-' if (comment.content)%> <%= User.find(comment.user_id).email if (comment.user_id)  %></div>
   <% if current_user == comment.user %>
     <%= link_to 'Delete comment', [comment.post, comment],
       method: :delete,
