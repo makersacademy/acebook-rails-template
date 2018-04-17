@@ -18,7 +18,7 @@ RSpec.feature "Deleting comments", type: :feature do
   scenario "Can't delete other's comments" do
     click_link "Back"
     click_link "Logout"
-    sign_up("test2@test2.com")
+    sign_up(email = "test4@test.com", username = "test4")
     click_link "View Comments"
     expect(page).not_to have_content("Delete comment")
   end
