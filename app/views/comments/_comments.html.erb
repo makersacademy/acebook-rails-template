@@ -1,11 +1,7 @@
 <% @post.comments.each do |comment| %>
 
 <p>
-  <strong>Comment:</strong>
   <%= simple_format(comment.body) %>
-</p>
-
-<p>
   <strong>Commenter:</strong>
   <%= comment.commenter %>
   <br>
