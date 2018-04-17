@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def destroy
     find_post
-    if @post.owner_logged_in?(current_user)
+    if @post.owner?(current_user)
       @post.destroy
       redirect_to posts_path
     else
