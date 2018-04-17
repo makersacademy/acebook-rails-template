@@ -5,6 +5,7 @@
     <title>DART</title>
   </head>
   <body>
+
     <div id="toggleThis">Taskbar</div>
     <div id="headerBar">
       </br>
@@ -31,6 +32,7 @@
         New post
       <% end %>
     </div>
+    <%= render 'newsFeed' %>
     </br>
     <div id="all-posts">
       <% @posts.reverse.each do |post| %>

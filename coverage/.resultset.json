@@ -671,7 +671,6 @@
         1,
         6,
         null,
-        null,
         null
       ],
       "/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects8/acebook-dart/app/controllers/application_controller.rb": [
@@ -691,35 +690,6 @@
         21,
         21,
         21,
-        null,
-        null
-      ],
-      "/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects8/acebook-dart/spec/controllers/likes_controller_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects8/acebook-dart/app/controllers/likes_controller.rb": [
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        null,
-        1,
-        0,
         null,
         null
       ],
@@ -1027,10 +997,41 @@
         null,
         null
       ],
-      "/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects8/acebook-dart/spec/models/like_spec.rb": [
+      "/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects8/acebook-dart/spec/models/news_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/thomasduffy/Documents/Programming/Learning/Makers Academy/Projects8/acebook-dart/app/models/news.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
         null,
         null,
         1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        0,
         null,
         null,
         null,
@@ -1222,6 +1223,6 @@
         null
       ]
     },
-    "timestamp": 1523895021
+    "timestamp": 1523956665
   }
 }

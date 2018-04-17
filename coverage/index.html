@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-16T17:10:21+01:00">2018-04-16T17:10:21+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-17T10:17:45+01:00">2018-04-17T10:17:45+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.8%</span></span>
+    (<span class="covered_percent"><span class="green">97.84%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.18
+         3.14
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>50</b> files in total.
-    <b>363</b> relevant lines. 
-    <span class="green"><b>355</b> lines covered</span> and
+    <b>49</b> files in total.
+    <b>371</b> relevant lines. 
+    <span class="green"><b>363</b> lines covered</span> and
     <span class="red"><b>8</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -63,21 +63,11 @@
       <tr>
         <td class="strong"><a href="#e0a827ccf70df0d518249c7d3a065891cf5e1359" class="src_link" title="app/controllers/comments_controller.rb">app/controllers/comments_controller.rb</a></td>
         <td class="yellow strong">87.5 %</td>
-        <td>43</td>
+        <td>42</td>
         <td>24</td>
         <td>21</td>
         <td>3</td>
         <td>1.3</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#be656c41d785551e1681f6bfef9da85b3fed6742" class="src_link" title="app/controllers/likes_controller.rb">app/controllers/likes_controller.rb</a></td>
-        <td class="red strong">62.5 %</td>
-        <td>19</td>
-        <td>8</td>
-        <td>5</td>
-        <td>3</td>
-        <td>0.6</td>
       </tr>
       
       <tr>
@@ -148,6 +138,16 @@
         <td>5</td>
         <td>0</td>
         <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#0a14572be9e51a664aa0b61f0ee7b724d3a24117" class="src_link" title="app/models/news.rb">app/models/news.rb</a></td>
+        <td class="red strong">75.0 %</td>
+        <td>24</td>
+        <td>12</td>
+        <td>9</td>
+        <td>3</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -341,16 +341,6 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#0b3f20e432102607e4bbbb83f5fb3f595ef9b318" class="src_link" title="spec/controllers/likes_controller_spec.rb">spec/controllers/likes_controller_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>6</td>
-        <td>2</td>
-        <td>2</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
         <td class="strong"><a href="#41d04329caa3b0be45b74d341cdd83109b1aed19" class="src_link" title="spec/controllers/posts_controller_spec.rb">spec/controllers/posts_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>44</td>
@@ -491,13 +481,13 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#8f6824b6362780d17a44c40dad362cef36747abd" class="src_link" title="spec/models/like_spec.rb">spec/models/like_spec.rb</a></td>
+        <td class="strong"><a href="#1f93a5cd0aea8e73dc49ff0e24b7c9d9900593d6" class="src_link" title="spec/models/news_spec.rb">spec/models/news_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>12</td>
         <td>7</td>
-        <td>1</td>
-        <td>1</td>
+        <td>7</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -956,145 +946,6 @@
         <li class="never" data-hits="" data-linenumber="42">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="be656c41d785551e1681f6bfef9da85b3fed6742">
-  <div class="header">
-    <h3>app/controllers/likes_controller.rb</h3>
-    <h4><span class="red">62.5 %</span> covered</h4>
-    <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="never" data-hits="" data-linenumber="1">
-          
-          
-          <code class="ruby"># frozen_string_literal: true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">class LikesController &lt; ApplicationController</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  before_action :set_post</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">#likes database has a comment_id and a post_id as foreign keys.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def create</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
-          
-          <code class="ruby">    like = Like.create(comment_id: nil, post_id: params[:post_id] )</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="11">
-          
-          
-          <code class="ruby">    redirect_to posts_url</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  private</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def set_post</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
-          
-          <code class="ruby">    @post = Post.find(params[:post_id])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
           <code class="ruby">end</code>
         </li>
       
@@ -1138,7 +989,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :authenticate_user!, except: [:index, :show]</code>
+          <code class="ruby">  before_action :authenticate_user!, except: %i[index show]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -1676,6 +1527,169 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="0a14572be9e51a664aa0b61f0ee7b724d3a24117">
+  <div class="header">
+    <h3>app/models/news.rb</h3>
+    <h4><span class="red">75.0 %</span> covered</h4>
+    <div>
+      <b>12</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;open-uri&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class News &lt; ApplicationRecord</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @titleFeed = []</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def extract</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @data = JSON.parse(open(&quot;https://newsapi.org/v2/everything?q=darts&amp;sortBy=publishedAt&amp;apiKey=0f0ca44ff1624746a29cae871a4ad1a5&quot;))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def parse</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
+          
+          <code class="ruby">    JSON.parse(@data).read</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def extractTitle(dataSource)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
+          
+          <code class="ruby">    dataSource[:articles].each do |a|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="20">
+          
+          
+          <code class="ruby">      titleFeed.push(a[:title])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">end</code>
@@ -5290,7 +5304,7 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">      put &quot;like&quot;, to: &quot;posts#upvote&quot;</code>
+          <code class="ruby">      put &#39;like&#39;, to: &#39;posts#upvote&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
@@ -5326,7 +5340,7 @@
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">      put &quot;like&quot;, to: &quot;comments#upvote&quot;</code>
+          <code class="ruby">      put &#39;like&#39;, to: &#39;comments#upvote&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
@@ -5394,61 +5408,6 @@
           <span class="hits">1</span>
           
           <code class="ruby">RSpec.describe CommentsController, type: :controller do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="0b3f20e432102607e4bbbb83f5fb3f595ef9b318">
-  <div class="header">
-    <h3>spec/controllers/likes_controller_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
-    <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="never" data-hits="" data-linenumber="1">
-          
-          
-          <code class="ruby"># frozen_string_literal: true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">require &#39;rails_helper&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">RSpec.describe LikesController, type: :controller do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -7096,13 +7055,13 @@
 </div>
 
       
-        <div class="source_table" id="8f6824b6362780d17a44c40dad362cef36747abd">
+        <div class="source_table" id="1f93a5cd0aea8e73dc49ff0e24b7c9d9900593d6">
   <div class="header">
-    <h3>spec/models/like_spec.rb</h3>
+    <h3>spec/models/news_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>1</b> relevant lines. 
-      <span class="green"><b>1</b> lines covered</span> and
+      <b>7</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -7110,10 +7069,10 @@
   <pre>
     <ol>
       
-        <li class="never" data-hits="" data-linenumber="1">
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># frozen_string_literal: true</code>
+          <code class="ruby">require &#39;rails_helper&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
@@ -7125,31 +7084,61 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">require &#39;rails_helper&#39;</code>
+          <code class="ruby">RSpec.describe News, type: :model do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby"># </code>
+          <code class="ruby">  subject(:news) { News.new }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
           
           
-          <code class="ruby"># RSpec.describe Like, type: :model do</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#   pending &quot;add some examples to (or delete) #{__FILE__}&quot;</code>
+          <code class="ruby">  describe &#39;:extract&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;should connect to the bbc news API and extract a JSON file&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      subject.should_receive(:open).with(&quot;https://newsapi.org/v2/everything?q=darts&amp;sortBy=publishedAt&amp;apiKey=0f0ca44ff1624746a29cae871a4ad1a5&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      subject.extract</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby"># end</code>
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">end</code>
         </li>
       
     </ol>
