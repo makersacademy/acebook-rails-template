@@ -7,7 +7,7 @@ RSpec.feature 'Commenting on posts', type: :feature do
   before(:each) do
     sign_up
     add_new_post
-    travel_to Time.zone.local(1991, 5, 27, 00, 00, 00)
+    travel_to Time.zone.local(1991)
     add_comment
   end
 
@@ -16,7 +16,7 @@ RSpec.feature 'Commenting on posts', type: :feature do
   end
 
   scenario 'each comment shows a creation timestamp' do
-    expect(page).to have_content "1991-05-27 01:00:00"
+    expect(page).to have_content '1991-01-01 00:00:00'
   end
 
   # UNCOMMENT WHEN NEED TO TEST COMMENTS LIKING
