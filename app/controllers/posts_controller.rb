@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  # before_action :set_user_id
+  before_action :find_post, except: %i[index new create]
   before_action :correct_user, only: %i[edit update destroy]
 
   def correct_user
-    @post = Post.find(params[:id])
     redirect_to posts_path unless current_user.id == @post.user.id
   end
 
@@ -13,9 +12,7 @@ class PostsController < ApplicationController
     @posts = Post.all.order('created_at DESC')
   end
 
-  def show
-    @post = Post.find(params[:id])
-  end
+  def show; end
 
   def new
     @post = Post.new
@@ -30,12 +27,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to @post
     else
@@ -44,13 +38,16 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
 
     redirect_to posts_url
   end
 
   private
+
+  def find_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:message)
