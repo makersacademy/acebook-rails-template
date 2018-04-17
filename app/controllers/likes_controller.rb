@@ -1,23 +1,17 @@
 # frozen_string_literal: true
 
 class LikesController < ApplicationController
-  # before_action :set_post
-  # before_action :set_comment
   before_action :set_reference
 
   def create
-    # Find the like or create one
     @like = Like.find_or_create_by(like_params)
 
-    # If the like is on, turn it off or vice versa
     if @like.on == true
       @like.update_attribute(:on, false)
     else
       @like.update_attribute(:on, true)
     end
-    # SET DEFAULT VALUE OF ON TO TRUE IN MIGRATE
 
-    # Redirect back to the post page
     redirect_to post_path(@post)
   end
 
