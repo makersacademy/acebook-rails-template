@@ -7,8 +7,6 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   def has_username?
-    if self.username == nil
-      self.username == self.email
-    end
+    self.username ? self.username : self.email
   end
 end
