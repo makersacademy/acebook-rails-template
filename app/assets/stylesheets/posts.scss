@@ -13,6 +13,7 @@ body{
 div#news_deck {
   max-width: 70% !important;
   display: flex;
+  flex-direction: column;
   margin: auto;
 }
 
@@ -27,16 +28,19 @@ div.post_div {
 div.post_user_div {
   flex-grow: 1;
   border: solid 1px black;
+  flex-basis: 0;
   margin: auto;
 }
 
 div.parent_container_div {
   flex-grow: 3;
+  flex-basis: 0;
   margin: auto;
   border: solid 1px black;
 }
 
 div.conatainer_div {
+  width: 100% !important;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -44,10 +48,12 @@ div.conatainer_div {
 }
 
 div.post_message_div {
+  // width: 100% !important;
   flex-grow: 9;
 }
 
 div.post_options_div {
+  // width: 100% !important;
   flex-grow: 1;
 }
 
