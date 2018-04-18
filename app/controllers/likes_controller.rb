@@ -8,7 +8,7 @@ class LikesController < ApplicationController
     else
       @post.likes.create(user_id: current_user.id)
     end
-    redirect_to post_path(@post)
+    redirect_to URI(request.referer).path
   end
 
   def destroy
@@ -17,7 +17,7 @@ class LikesController < ApplicationController
     else
       @like.destroy
     end
-    redirect_to post_path(@post)
+    redirect_to URI(request.referer).path
   end
 
 
