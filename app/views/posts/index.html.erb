@@ -7,7 +7,7 @@
     <script>
       function redrawLike(divId) {
       var url = '/posts';
-      $('#' + divId).load(url + ' #' + divId.replace("_wrapper", "")); //note: the space before #div1 is very important
+      $('#' + divId).load(url + ' #' + divId.replace("_wrapper", ""));
       };
 </script>
     <style>
@@ -64,10 +64,12 @@
                 <% pre_like = post.find_like(current_user) %>
                 <% if pre_like %>
                   <%= button_to 'Unlike', post_like_path(post, pre_like) + "#post_#{i}",
-                  method: :delete, onclick: "redrawLike('post_likes_wrapper_#{i}')", remote: true %>
+                  method: :delete, onclick: "redrawLike('post_likes_wrapper_#{i}')", remote: true,
+                  data: { disable_with: "Unlike" } %>
                 <% else %>
                   <%= button_to 'Like', post_likes_path(post) + "#post_#{i}",
-                  method: :post, onclick: "redrawLike('post_likes_wrapper_#{i}')", remote: true %>
+                  method: :post, onclick: "redrawLike('post_likes_wrapper_#{i}')", remote: true,
+                  data: { disable_with: "Like" } %>
                 <% end %>
                 <%= post.like_count_string %>
                 <%= post.comment_count_string %>
