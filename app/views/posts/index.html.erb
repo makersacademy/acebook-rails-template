@@ -70,11 +70,13 @@
                                    data: {confirm: 'Confirm Delete Comment?'}%>
         <% end %>
         <% end %>
-        <button id="new_comment"> ADD COMMENT 📣</button>
+        <% if current_user %>
+        <button id="new_comment"> Comment </button>
         <%= form_with(model: [ post, post.comments.build], id: :comment_form, local: true) do |form| %>
           <%= form.text_area :body, cols: "50", rows: "5" %>
           <br>
           <%=form.submit "Comment"%>
+        <% end %>
           <br>
           <br>
           <br>
