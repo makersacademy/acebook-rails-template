@@ -10,7 +10,6 @@ RSpec.feature "Editing", type: :feature do
   scenario "Can edit posts" do
     click_link "Edit"
     fill_in "post[message]", with: "Changed text"
-    binding.pry
     click_button "Submit"
     expect(page).to have_content("Changed text")
     expect(page).not_to have_content("Hello, world!")
