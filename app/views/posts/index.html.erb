@@ -1,4 +1,5 @@
 <h1>News Deck</h1>
+<%= link_to 'Profile', user_path(current_user.id) %>
 
 <% @posts.each_with_index do |post, idx| %>
   <div id="post_div_<%=idx%>" class='news_deck'>
