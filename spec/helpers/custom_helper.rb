@@ -33,8 +33,3 @@ def sign_up_user_2
   fill_in "user[password_confirmation]", with: "password123"
   click_button "Sign up"
 end
-
-def create_liked_post
-  create_post
-  click_link "Like"
-end

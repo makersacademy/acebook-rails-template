@@ -61,7 +61,7 @@
           <p><%= comment.body%></p>
           <p><%=Posted.new(comment.created_at).string%></p>
 
-        <%= link_to image_tag("https://thumb.ibb.co/kbanU7/darts_PNG57.png", :size => "30x30"), like_comment_path(comment), method: :put %>
+        <%= link_to image_tag("https://thumb.ibb.co/kbanU7/darts_PNG57.png", :size => "30x30", alt: "comment_like"), like_comment_path(comment), method: :put %>
         <%= comment.get_upvotes.size %>
 
         <% if current_user === comment.user %>
