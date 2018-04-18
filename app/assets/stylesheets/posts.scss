@@ -10,9 +10,45 @@ body{
 
 }
 
-div.news_deck {
+div#news_deck {
   max-width: 70% !important;
   display: flex;
+  margin: auto;
+}
+
+div.post_div {
+  width: 100% !important;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  background-color: white;
+}
+
+div.post_user_div {
+  flex-grow: 1;
+  border: solid 1px black;
+  margin: auto;
+}
+
+div.parent_container_div {
+  flex-grow: 3;
+  margin: auto;
+  border: solid 1px black;
+}
+
+div.conatainer_div {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  border: solid 1px black;
+}
+
+div.post_message_div {
+  flex-grow: 9;
+}
+
+div.post_options_div {
+  flex-grow: 1;
 }
 
 form.button_to {
