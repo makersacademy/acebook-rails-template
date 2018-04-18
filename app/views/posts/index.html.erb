@@ -63,11 +63,11 @@
               <span class="counters">
                 <% pre_like = post.find_like(current_user) %>
                 <% if pre_like %>
-                  <%= button_to 'Unlike', post_like_path(post, pre_like) + "#post_#{i}",
+                  <%= button_to 'Unlike', post_like_path(post, pre_like),
                   method: :delete, onclick: "redrawLike('post_likes_wrapper_#{i}')", remote: true,
                   data: { disable_with: "Unlike" } %>
                 <% else %>
-                  <%= button_to 'Like', post_likes_path(post) + "#post_#{i}",
+                  <%= button_to 'Like', post_likes_path(post),
                   method: :post, onclick: "redrawLike('post_likes_wrapper_#{i}')", remote: true,
                   data: { disable_with: "Like" } %>
                 <% end %>
