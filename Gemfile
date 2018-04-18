@@ -9,6 +9,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# For protecting sensitive data and use of ENV variables and application.yml
+# to use after bundle install run (in CL): bundle exec figaro install
+gem 'figaro'
+# AWS S3 storage for user avatars
+gem 'aws-sdk', '~> 3'
 # jQuery gem for rails
 gem 'jquery-rails'
 # Paperclip used with imagemagick package to add avatar pics for users
@@ -40,7 +45,6 @@ gem 'acts_as_votable', '~> 0.11.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,8 +1,7 @@
+# frozen_string_literal: true
+
 class CreateNews < ActiveRecord::Migration[5.1]
   def change
-    create_table :news do |t|
-
-      t.timestamps
-    end
+    create_table :news, &:timestamps
   end
 end
