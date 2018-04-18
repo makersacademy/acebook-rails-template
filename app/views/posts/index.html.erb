@@ -26,14 +26,19 @@
   <% end %>
 
   <% post.comments.each do |comment| %>
-
     <p class="comment">
       <%= comment.user.name %>
-      - <%= comment.comment %></p>
-     <%= button_to "Delete", post_comment_path(post, comment), method: :delete %>
+      - <%= best_in_place comment, :comment, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
+
+
+      <% if current_user.id == comment.user_id %>
+        - <a href="#" id="edit-comment">EDIT</a>
+      <% end %>
+    </p>
+
   <% end %>
   <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-    <%= form.text_field :comment %>
+    <%= form.text_field :comment, id: 'post_comment' %>
     <%= form.submit "Comment" %>
   <% end %>
 <% end %>

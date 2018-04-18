@@ -13,6 +13,20 @@ class CommentsController < ApplicationController
     redirect_to posts_path
   end
 
+  def update
+    @comment = Comment.find(params[:id])
+
+    respond_to do |format|
+      if @comment.update_attributes(comment_params)
+        notice_message = 'Comment was successfully updated.'
+        format.html { redirect_to(@comment, notice: notice_message) }
+      else
+        format.html { render action: 'edit' }
+      end
+      format.json { respond_with_bip(@comment) }
+    end
+  end
+
   private
 
   def comment_params
