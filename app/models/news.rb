@@ -4,11 +4,11 @@ require 'open-uri'
 
 class News < ApplicationRecord
   def initialize
-    @titleFeed = []
+    @title_feed = []
   end
 
   def extract
-    @data = JSON.parse(open('https://newsapi.org/v2/everything?q=darts&sortBy=publishedAt&apiKey=0f0ca44ff1624746a29cae871a4ad1a5'))
+    @data = open('https://newsapi.org/v2/everything?q=darts&sortBy=publishedAt&apiKey=0f0ca44ff1624746a29cae871a4ad1a5')
   end
 
   def parse
@@ -17,9 +17,9 @@ class News < ApplicationRecord
 
   private
 
-  def extractTitle(dataSource)
-    dataSource[:articles].each do |a|
-      titleFeed.push(a[:title])
+  def extract_title(data_source)
+    data_source[:articles].each do |a|
+      title_feed.push(a[:title])
     end
   end
 end
