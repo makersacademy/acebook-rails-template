@@ -21,20 +21,23 @@ div.post_div {
   width: 100% !important;
   display: flex;
   flex-direction: row;
-  margin: auto;
+  margin: 5px 0px;
   background-color: white;
+  min-width: 505px;
 }
 
 div.post_user_div {
   flex-grow: 1;
-  border: solid 1px black;
   flex-basis: 0;
+  min-width: 150px;
   margin: auto;
+  border: solid 1px black;
 }
 
 div.parent_container_div {
-  flex-grow: 3;
+  flex-grow: 5;
   flex-basis: 0;
+  min-width: 350px;
   margin: auto;
   border: solid 1px black;
 }
@@ -48,12 +51,10 @@ div.conatainer_div {
 }
 
 div.post_message_div {
-  // width: 100% !important;
   flex-grow: 9;
 }
 
 div.post_options_div {
-  // width: 100% !important;
   flex-grow: 1;
 }
 

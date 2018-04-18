@@ -1,20 +1,19 @@
-@import "posts";
+@import 'posts.scss';
+h1#logo_text {
+  color: #ffffff;
+  font-family: 'Lobster', sans-serif;
+  font-size: 60px;
+  text-align: center;
+  margin: auto;
+}
 
- h1#logo_text {
-   color: #ffffff;
-   font-family: 'Lobster', sans-serif;
-   font-size: 60px;
-   text-align: center;
-   margin: auto;
- }
-
- h2#subtitle {
-   color: #ecc51f;
-   font-family: 'Nunito', sans-serif;
-   font-size: 40px;
-   text-align: center;
-   margin: auto;
- }
+h2#subtitle {
+  color: #ecc51f;
+  font-family: 'Nunito', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  margin: auto;
+}
 
 div#banner {
   max-width: 100%;
