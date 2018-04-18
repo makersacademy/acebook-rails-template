@@ -1,5 +1,7 @@
 <%=form_with(model: [@post, @post.comments.build], local: true) do |f|%>
-  <%= f.text_area :content, :maxlength => 140 %>
+  <p class="emoji-picker-container">
+    <%= f.text_area :content, :maxlength => 140, data: { emojiable: true } %>
+  </p>
   <%= f.submit %>
 
 <% end %>
