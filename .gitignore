@@ -29,6 +29,3 @@
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
-
-# Ignore the emoji images
-/app/assets/images
