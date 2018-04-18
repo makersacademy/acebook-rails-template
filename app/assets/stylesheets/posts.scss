@@ -6,10 +6,6 @@ h1 {
   margin: auto;
 }
 
-body{
-
-}
-
 div#news_deck {
   max-width: 70% !important;
   display: flex;
@@ -21,7 +17,7 @@ div.post_div {
   width: 100% !important;
   display: flex;
   flex-direction: row;
-  margin: 5px 0px;
+  margin: 5px 0;
   background-color: white;
   min-width: 505px;
 }
@@ -31,6 +27,7 @@ div.post_user_div {
   flex-basis: 0;
   min-width: 150px;
   margin: auto;
+  padding: 5px;
   border: solid 1px black;
 }
 
@@ -56,28 +53,42 @@ div.post_message_div {
 
 div.post_options_div {
   flex-grow: 1;
-}
-
-form.button_to {
-  margin: 0 !important;
-  padding: 0 !important;
   display: flex;
 }
 
-input#post_button {
-  max-width: 30px;
+div#comment_count, #like_count {
+  flex-grow: 1;
+  flex-basis: 0;
+  text-align: center;
+  padding: 5px;
+  border: solid 1px black;
+}
+
+div.btn_div {
+  display: flex;
+  margin: auto;
+}
+
+form.button_to {
+  margin: auto;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+#edit_btn,
+input#del_btn {
   max-height: 20px;
   padding: 5px;
-  margin: 10px 5px;
+  margin: 5px;
   font-family: 'Dosis', sans-serif;
   font-size: 10px;
   color: #ecc51f;
   border-radius: 5px;
   background-color: #838bb0;
-  flex: 1;
 }
 
-input#post_button:hover {
+#edit_btn:hover,
+input#del_btn:hover {
   background-color: #cfd7dd;
   color: #850d14;
 }
