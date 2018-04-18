@@ -53,6 +53,12 @@
             <h5><%= simple_format(Rinku.auto_link(post.message)) %></h5>
           </div>
           <span class="counters">
+            <% pre_like = post.find_like(current_user) %>
+            <% if pre_like %>
+              <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+            <% else %>
+              <%= button_to 'Like', post_likes_path(post), method: :post %>
+            <% end %>
             <%= post.like_count_string %>
             <%= post.comment_count_string %>
           </span>
