@@ -12,7 +12,7 @@ RSpec.feature "User can edit a comment", :js => true, type: :feature do
 
     expect(page).to have_content("Hello world in a comment!")
 
-    find("a[id='edit-comment']").click
+    find(".comment").click_link("EDIT")
 
     fill_in 'comment', with: 'Totally edited comment'
     click_button "Save"
