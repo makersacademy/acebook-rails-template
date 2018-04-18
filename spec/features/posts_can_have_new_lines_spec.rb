@@ -6,8 +6,7 @@ RSpec.feature "Posts with newlines", type: :feature do
 
     fill_in "post_message", with: "Hello, world!\rWaddup"
     click_button "Post"
-    save_and_open_page
-    # Expect
+
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Waddup")
   end
