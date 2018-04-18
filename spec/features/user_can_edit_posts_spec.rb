@@ -10,13 +10,14 @@ RSpec.feature "Editing", type: :feature do
   scenario "Can edit posts" do
     click_link "Edit"
     fill_in "post[message]", with: "Changed text"
+    binding.pry
     click_button "Submit"
     expect(page).to have_content("Changed text")
     expect(page).not_to have_content("Hello, world!")
     expect(page).to have_current_path("/posts")
   end
 
-  scenario "Can edit posts" do
+  scenario "Cannot edit posts" do
     click_link 'Logout'
     sign_up("test2@test.com", "test2")
     click_link "View Comments"
