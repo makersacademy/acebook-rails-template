@@ -15,7 +15,9 @@
   <body>
     <%= form_for @post do |form| %>
       <%= form.label :message %>
-      <%= form.text_area :message, :maxlength => 500 %>
+      <p class="emoji-picker-container">
+        <%= form.text_area :message, :maxlength => 500, data: { emojiable: true } %>
+      </p>
       <%= form.submit "Submit" %>
     <% end %>
     <%= link_to 'Back', posts_path %>
