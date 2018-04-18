@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <%= form_for @post do |form| %>
-    <%= form.text_field :message, placeholder: 'Enter your message' %>
+    <%= form.text_area :message, placeholder: 'Enter your message' %>
     <%= form.submit "Post" %>
   <% end %>
 <% end %>
