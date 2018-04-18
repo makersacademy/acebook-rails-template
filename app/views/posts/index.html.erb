@@ -4,12 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <script>
-      function redrawLike(divId) {
-      var url = '/posts';
-      $('#' + divId).load(url + ' #' + divId.replace("_wrapper", ""));
-      };
-</script>
     <style>
       body {
         padding-top: 50px;
@@ -64,11 +58,11 @@
                 <% pre_like = post.find_like(current_user) %>
                 <% if pre_like %>
                   <%= button_to 'Unlike', post_like_path(post, pre_like),
-                  method: :delete, onclick: "redrawLike('post_likes_wrapper_#{i}')", remote: true,
+                  method: :delete, onclick: "redrawLike('post_likes_wrapper_#{i}', '/posts')", remote: true,
                   data: { disable_with: "Unlike" } %>
                 <% else %>
                   <%= button_to 'Like', post_likes_path(post),
-                  method: :post, onclick: "redrawLike('post_likes_wrapper_#{i}')", remote: true,
+                  method: :post, onclick: "redrawLike('post_likes_wrapper_#{i}', '/posts')", remote: true,
                   data: { disable_with: "Like" } %>
                 <% end %>
                 <%= post.like_count_string %>
