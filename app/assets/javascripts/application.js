@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require_tree .
 //= require jquery
+//= require bootstrap-sprockets
 //= require best_in_place
 $(document).ready(function() {
   /* Activating Best In Place */

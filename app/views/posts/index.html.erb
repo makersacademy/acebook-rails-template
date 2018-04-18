@@ -1,3 +1,4 @@
+<div class="container">
 <% if user_signed_in? %>
   <%= form_for @post do |form| %>
     <%= form.text_field :message, placeholder: 'Enter your message' %>
@@ -40,3 +41,4 @@
     <%= form.submit "Comment" %>
   <% end %>
 <% end %>
+</div>
