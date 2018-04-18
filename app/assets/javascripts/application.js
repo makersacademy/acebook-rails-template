@@ -11,4 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
+//= require rails_emoji_picker
 //= require_tree .
