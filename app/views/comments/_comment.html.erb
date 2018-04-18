@@ -3,7 +3,7 @@
     <div class="list-group">
       <div class="list-group-item">
         <div id="<%="comment_#{i}"%>">
-          <%= simple_format(comment.content) %>
+          <%= simple_format(Rinku.auto_link(comment.content)) %>
         </div>
         <div>
           <%= User.find(comment.user_id).identifier %>

@@ -168,6 +168,7 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rinku (2.0.4)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -271,6 +272,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.1)
   rails_emoji_picker
+  rinku
   rspec-rails (~> 3.5)
   rubocop
   sass-rails (~> 5.0)
