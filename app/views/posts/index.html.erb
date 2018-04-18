@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script>
+      function redrawLike(divId) {
+      var url = '/posts';
+      $('#' + divId).load(url + ' #' + divId.replace("_wrapper", "")); //note: the space before #div1 is very important
+      };
+</script>
     <style>
       body {
         padding-top: 50px;
@@ -52,16 +58,22 @@
           <div id="<%="post_message_#{i}"%>">
             <h5><%= simple_format(Rinku.auto_link(post.message)) %></h5>
           </div>
-          <span class="counters">
-            <% pre_like = post.find_like(current_user) %>
-            <% if pre_like %>
-              <%= button_to 'Unlike', post_like_path(post, pre_like) + "#post_#{i}", method: :delete %>
-            <% else %>
-              <%= button_to 'Like', post_likes_path(post) + "#post_#{i}", method: :post %>
-            <% end %>
-            <%= post.like_count_string %>
-            <%= post.comment_count_string %>
-          </span>
+          <div id="<%="post_likes_wrapper_#{i}"%>">
+            <div id="<%="post_likes_#{i}"%>">
+              <span class="counters">
+                <% pre_like = post.find_like(current_user) %>
+                <% if pre_like %>
+                  <%= button_to 'Unlike', post_like_path(post, pre_like) + "#post_#{i}",
+                  method: :delete, onclick: "redrawLike('post_likes_wrapper_#{i}')", remote: true %>
+                <% else %>
+                  <%= button_to 'Like', post_likes_path(post) + "#post_#{i}",
+                  method: :post, onclick: "redrawLike('post_likes_wrapper_#{i}')", remote: true %>
+                <% end %>
+                <%= post.like_count_string %>
+                <%= post.comment_count_string %>
+              </span>
+            </div>
+          </div>
           <span>
             <% if post.owner?(current_user) %>
               <%= link_to 'Edit', edit_post_path(post) %>
