@@ -15,5 +15,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :update]
   end
 
+  resources :users, only: [:show]
+
   root 'welcome#index'
 end
