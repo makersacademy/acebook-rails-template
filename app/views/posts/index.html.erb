@@ -28,11 +28,10 @@
   <% post.comments.each do |comment| %>
     <p class="comment">
       <%= comment.user.name %>
-      - <%= best_in_place comment, :comment, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel' %>
-
+      - <%= best_in_place comment, :comment, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel',  activator: '#edit-comment' + comment.id.to_s %>
 
       <% if current_user.id == comment.user_id %>
-        - <a href="#" id="edit-comment">EDIT</a>
+        - <a href="#" id="edit-comment<%= comment.id %>">EDIT</a>
       <% end %>
     </p>
 
