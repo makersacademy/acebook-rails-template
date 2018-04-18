@@ -25,7 +25,7 @@ class Post < ApplicationRecord
   end
 
   def timesort_comments
-    self.comments.sort_by { |comment| comment.created_at || 0}.reverse
+    self.comments.sort_by { |comment| comment.created_at }.reverse
   end
 
   def find_like(user)
