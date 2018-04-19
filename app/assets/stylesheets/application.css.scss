@@ -1,4 +1,5 @@
 @import 'posts';
+@import 'comments';
 h1#logo_text {
   color: #ffffff;
   font-family: 'Lobster', sans-serif;
@@ -32,7 +33,7 @@ div#banner_button {
 }
 
 form.button_to {
-  margin: 0 !important;
+  margin: 0;
   padding: 0 !important;
   display: flex;
 }

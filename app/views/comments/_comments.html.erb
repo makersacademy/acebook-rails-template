@@ -1,26 +1,28 @@
-<% @post.comments.each do |comment| %>
-
-<p>
-  <%= simple_format(comment.body) %>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-  <br>
-  <strong>Commented on:</strong>
-  <%= comment.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %>
-</p>
-
-<p>
-  <strong>Comment Likes:</strong>
-  <%= comment.likes.where(on: true).count %>
-</p>
-
-<!-- link_to 'Like Comment', comment_likes_path(comment, :user => current_user),
-    method: :post, id: 'Comment Like', value: current_user.id -->
-
-<%= link_to "Like Comment", comment_likes_path(comment, @like, user_id: current_user.id), method: :post, id: 'Like Comment', value: current_user.id %>
-
-<% if comment.user_id == current_user.id %>
-<%= link_to 'Delete Comment', [@post, comment], method: :delete, data: { confirm: 'Are you sure? '} %>
-<%= link_to 'Edit Comment', edit_post_comment_path(@post, comment) %>
-<% end %>
-<% end %>
+<div id='all_comments_div'>
+  <% @post.comments.each do |comment| %>
+    <div id='comments_div'>
+      <div id='comment_user_div'>
+        <strong>Commenter:</strong>
+        <%= comment.commenter %>
+        <br>
+        <strong>Commented on:</strong>
+        <%= comment.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %>
+        <% if comment.user_id == current_user.id %>
+          <%= button_to 'Delete Comment', [@post, comment], method: :delete, data: { confirm: 'Are you sure? '}, id: "del_btn" %>
+          <%= button_to 'Edit Comment', edit_post_comment_path(@post, comment), method: :get, id: "edit_btn" %>
+        <% end %>
+      </div>
+      <div id='parent_container_div'>
+        <div id="container_div">
+          <div id='comment_message_div'>
+            <%= simple_format(comment.body) %>
+          </div>
+          <div id='comment_likes_div'>
+            <strong><%= link_to "Comment Likes: ", comment_likes_path(comment, @like, user_id: current_user.id), method: :post, id: 'Like Comment', value: current_user.id %></strong>
+            <%= comment.likes.where(on: true).count %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

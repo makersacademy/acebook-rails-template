@@ -1,50 +1,52 @@
-<h1>News Deck</h1>
+<h2 id="body_title">News Deck</h2>
 
 <div id='news_deck'>
-  <% @posts.each_with_index do |post, idx| %>
-    <div id="post_div_<%=idx%>" class="post_div">
-      <div class="post_user_div">
-        <strong>User:
-        </strong>
-        <span id="post_user_<%=idx%>"><%= post.user.username %></span>
-        <br>
-        <strong>Post On:
-        </strong>
-        <span id="post_timestamp_<%=idx%>"><%= post.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %></span>
-        <br>
-        <div class="btn_div">
-          <% if post.user.id == current_user.id %>
-            <%= button_to 'Delete', post_path(post), {method: :delete, id: 'del_btn'} %>
-            <%= button_to 'Edit', edit_post_path(post), {method: :get, id: 'edit_btn'} %>
-          <% end %>
-        </div>
+  <div class='btn_div'>
+    <%= button_to new_post_path, {method: :get, id: 'new_btn'} do %>
+    New post
+  <% end %>
+</div>
+<br>
+<% @posts.each_with_index do |post, idx| %>
+  <div id="post_div_<%=idx%>" class="post_div">
+    <div class="post_user_div">
+      <strong>User:
+      </strong>
+      <span id="post_user_<%=idx%>"><%= post.user.username %></span>
+      <br>
+      <strong>Post On:
+      </strong>
+      <span id="post_timestamp_<%=idx%>"><%= post.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %></span>
+      <br>
+      <div class="btn_div">
+        <% if post.user.id == current_user.id %>
+          <%= button_to 'Delete', post_path(post), {method: :delete, id: 'del_btn'} %>
+          <%= button_to 'Edit', edit_post_path(post), {method: :get, id: 'edit_btn'} %>
+        <% end %>
       </div>
-      <div class="parent_container_div">
-        <div class="container_div">
-          <div class="post_message_div">
-            <p id="post_body_<%=idx%>"><%= simple_format(post.message) %></p>
+    </div>
+    <div class="parent_container_div">
+      <div class="container_div">
+        <div class="post_message_div">
+          <p id="post_body_<%=idx%>"><%= simple_format(post.message) %></p>
 
+        </div>
+        <div class="post_options_div">
+          <div id='comment_count'>
+            <%= link_to 'Comments: ', post_path(post), {method: :get, id: 'post_btn', class: 'post_button'} %>
+            <%= post.comments.count %>
           </div>
-          <div class="post_options_div">
-            <div id='comment_count'>
-              <%= link_to 'Comments: ', post_path(post), {method: :get, id: 'post_btn', class: 'post_button'} %>
-              <%= post.comments.count %>
-            </div>
 
-            <div id='like_count'>
-              <strong>
-                <%= link_to "Likes: ", post_likes_path(post, @like, user_id: current_user.id), method: :post, id: 'Like', value: current_user.id %>
-              </strong>
-              <%= post.likes.where(on: true).count %>
-            </div>
-
+          <div id='like_count'>
+            <strong>
+              <%= link_to "Likes: ", post_likes_path(post, @like, user_id: current_user.id), method: :post, id: 'Like', value: current_user.id %>
+            </strong>
+            <%= post.likes.where(on: true).count %>
           </div>
+
         </div>
       </div>
     </div>
-  <% end %>
-</div>
-
-<%= link_to new_post_path do %>
-New post
+  </div>
 <% end %>
+</div>
