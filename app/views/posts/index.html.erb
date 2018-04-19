@@ -9,6 +9,7 @@
 <% @posts.each do |post| %>
   <p class="post">
     <%= post.user.name %>
+    <%= image_tag post.user.avatar(:thumb) %>
     - <%= best_in_place post, :message, :as => :textarea, :ok_button => 'Save', display_with: -> v { v.gsub(/[\r\n]+/, '<br>').html_safe }, :cancel_button => 'Cancel', activator: '#edit-' + post.id.to_s %>
     - <%= post.created_at.strftime("%e %B at %k:%M") %>
     <% if current_user.id == post.user_id %>
