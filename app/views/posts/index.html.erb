@@ -12,14 +12,17 @@
 <% @posts.each_with_index do |post, idx| %>
   <div id="post_div_<%=idx%>" class="post_div">
     <div class="post_user_div">
+      <%= image_tag post.user.avatar.url(:thumb) %><br />
       <strong>User:
       </strong>
       <span id="post_user_<%=idx%>"><%= post.user.username %></span>
       <br>
+      <div id='timestamp'>
       <strong>Post On:
       </strong>
       <span id="post_timestamp_<%=idx%>"><%= post.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %></span>
       <br>
+    </div>
       <div class="btn_div">
         <% if post.user.id == current_user.id %>
           <%= button_to 'Delete', post_path(post), {method: :delete, id: 'del_btn'} %>

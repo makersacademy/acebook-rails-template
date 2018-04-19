@@ -45,6 +45,7 @@ div#container_div {
   display: flex;
   flex-direction: column;
   margin: auto;
+  align-items: stretch;
 }
 
 div#comment_message_div {
@@ -55,6 +56,7 @@ div#comment_message_div {
 div#comment_likes_div {
   flex-grow: 1;
   display: flex;
+  min-height: 100%;
   padding: 2px 10px;
   align-self: stretch;
 }
@@ -65,4 +67,11 @@ h2#sub_heading {
   flex-direction: column;
   margin: auto;
   font-family: 'Lobster', sans-serif;
+}
+
+div#post_like_count {
+  flex-grow: 1;
+  display: flex;
+  padding: 2px 10px;
+  align-self: flex-end;
 }

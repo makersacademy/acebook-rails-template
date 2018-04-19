@@ -3,19 +3,22 @@
 <div id="news_deck">
   <div class='post_div'>
     <div class="post_user_div">
+      <%= image_tag @post.user.avatar.url(:thumb) %><br />
       <strong>User:
       </strong>
       <%= @post.user.username %>
       <br>
+      <div id='timestamp'>
       <strong>Posted On:
       </strong>
       <%= @post.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %>
+    </div>
     </div>
     <div class="parent_container_div">
       <div class="post_message_div">
       <%= simple_format(@post.message) %>
     </div>
-    <div id="comment_likes_div">
+    <div id="post_like_count">
       <div id="post_<%= @post.id %>_likes">
         <strong>Likes:</strong>
         <%= @post.likes.where(on: true).count %>
