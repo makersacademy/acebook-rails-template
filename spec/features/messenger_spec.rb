@@ -5,7 +5,8 @@ require 'rails_helper'
 RSpec.feature 'Messenger', type: :feature do
   scenario 'User can check who is online' do
     sign_up
-    click_button 'Messenger'
+    click_button 'Inbox'
+    click_link 'Send Messages'
     expect(page).to have_content 'Users Online'
   end
 
@@ -13,7 +14,8 @@ RSpec.feature 'Messenger', type: :feature do
     sign_up
     sign_out
     sign_up2
-    click_button 'Messenger'
+    click_button 'Inbox'
+    click_link 'Send Messages'
     expect(page).to have_content 'Tom | send a message'
   end
 
@@ -21,7 +23,8 @@ RSpec.feature 'Messenger', type: :feature do
     sign_up
     sign_out
     sign_up2
-    click_button 'Messenger'
+    click_button 'Inbox'
+    click_link 'Send Messages'
     within('ul') do
       within('li.Tom') do
         click_link 'send a message'
@@ -36,7 +39,9 @@ RSpec.feature 'Messenger', type: :feature do
     sign_up
     sign_out
     sign_up2
-    click_button 'Messenger'
+    click_button 'Inbox'
+    click_link 'Send Messages'
+
     within('ul') do
       within('li.Tom') do
         click_link 'send a message'
@@ -45,9 +50,8 @@ RSpec.feature 'Messenger', type: :feature do
     fill_in 'personal_message[body]', with: 'hello matey'
     click_button 'Create Personal message'
     sign_out
-    login
-    click_button 'Messenger'
-    click_link 'Inbox'
-    exactly(page).to have_content 'hello matey'
+    sign_in
+    click_button 'Inbox'
+    expect(page).to have_content 'hello matey'
   end
 end
