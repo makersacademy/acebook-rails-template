@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     @post.save
+
+    flash[:notice] = 'Post was successfully created!'
     redirect_to posts_url
   end
 
@@ -18,19 +20,17 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     redirect_to posts_url && return unless @post.user_id == current_user.id
     @post.destroy
+    flash[:notice] = 'Post was successfully deleted!'
     redirect_to posts_url
   end
 
   def update
-    @post = Post.find params[:id]
+    @post = Post.find(params[:id])
 
     respond_to do |format|
-      if @post.update_attributes(post_params)
-        notice_message = 'Posts was successfully updated.'
-        format.html { redirect_to(@post, notice: notice_message) }
-      else
-        format.html { render action: 'edit' }
-      end
+      @post.update_attributes(post_params)
+      format.html { redirect_to(@post) }
+      format.json { render :json => { :message => 'Post was successfully edited!' }}
       format.json { respond_with_bip(@post) }
     end
   end
