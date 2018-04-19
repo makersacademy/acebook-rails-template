@@ -9,4 +9,10 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
   has_many :likes
+
+  has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
+  has_many :received_conversations, class_name: 'Conversation', foreign_key: 'received_id'
+  has_many :personal_messages, dependent: :destroy
+
+  # validates :author, uniqueness: { scope: :receiver }
 end

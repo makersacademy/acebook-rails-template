@@ -7,15 +7,18 @@ Rails.application.routes.draw do
   # Resources should never be nested more than 1 level deep!
 
   resources :posts do
-    resources :likes, only: [:create, :update]
+    resources :likes, only: %i[create update]
     resources :comments
   end
 
   resources :comments do
-    resources :likes, only: [:create, :update]
+    resources :likes, only: %i[create update]
   end
 
-  resources :users, only: [:show]
+  resources :conversations, only: %i[index show]
+  resources :users
+  resources :online, only: [:index]
+  resources :personal_messages, only: %i[new create]
 
   root 'welcome#index'
 end
