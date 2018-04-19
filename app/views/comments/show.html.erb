@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @comment.post_id %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @comment.body %>
+</p>
+<% if @comment.user == current_user %>
+  <%= link_to 'Edit', edit_post_path(@comment) %> |
+  <%= link_to 'Back', posts_path %>
+<% else %>
+  <%= link_to 'Back', posts_path %>
+<% end %>
