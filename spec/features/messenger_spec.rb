@@ -17,11 +17,13 @@ RSpec.feature 'Messenger', type: :feature do
     expect(page).to have_content 'Tom | send a message'
   end
 
-  scenario 'User can send his friend a message' do
+  scenario 'Users can send a message to a specific friend' do
     sign_up
     sign_out
     sign_up2
     click_button 'Messenger'
-    click_link 'Tom'
+    click_link 'send a message'
+    fill_in 'body', with: 'hello'
+    expect(page).to have_content('hello')
   end
 end
