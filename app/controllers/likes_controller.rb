@@ -10,9 +10,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    if @like
-      @like.update_attribute(:liked, false)
-    end
+    @like && @like.update_attribute(:liked, false)
     redirect_to posts_url
   end
 
