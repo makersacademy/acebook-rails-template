@@ -15,4 +15,5 @@ class NotificationsChannel < ApplicationCable::Channel
       personal_message.save!
     end
   end
+  # checks whether a conversation exists and a user has rights to access it. This is a very important step, because otherwise, anyone may write to any conversation
 end
