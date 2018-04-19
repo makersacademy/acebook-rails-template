@@ -2,25 +2,24 @@
 
 class ConversationsController < ApplicationController
   before_action :set_conversation, except: [:index]
-  before_action :check_participating!,
-                expect: [:index]
-
-  def show
-    @personal_messages = PersonalMessage.new
-  end
+  before_action :check_participating!, except: [:index]
 
   def index
     @conversations = Conversation.participating(current_user).order('updated_at DESC')
   end
 
+  def show
+    @conversation = Conversation.find_by(id: params[:id])
+    @personal_message = PersonalMessage.new
+  end
+
   private
 
   def set_conversation
-    @conversation =  Conversation.find_by(id: params[:id])
+    @conversation = Conversation.find_by(id: params[:id])
   end
 
   def check_participating!
-    redirect_to root_path unless
-    @conversation&.participates?(current_user)
+    redirect_to root_path unless @conversation&.participates?(current_user)
   end
 end

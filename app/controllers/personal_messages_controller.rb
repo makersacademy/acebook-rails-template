@@ -17,7 +17,7 @@ class PersonalMessagesController < ApplicationController
 
     flash[:success] = 'Your message was sent!'
     redirect_to conversation_path(@conversation)
-end
+  end
 
   private
 

@@ -22,8 +22,14 @@ RSpec.feature 'Messenger', type: :feature do
     sign_out
     sign_up2
     click_button 'Messenger'
-    click_link 'send a message'
-    fill_in 'body', with: 'hello'
+    within('ul') do
+      within('li.Tom') do
+        click_link 'send a message'
+      end
+    end
+    # click_link 'send a message'
+    fill_in 'personal_message[body]', with: 'hello'
+    click_button 'Create Personal message'
     expect(page).to have_content('hello')
   end
 end
