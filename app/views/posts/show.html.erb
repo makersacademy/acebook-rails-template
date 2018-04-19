@@ -46,12 +46,18 @@
             <% pre_like = @post.find_like(current_user) %>
             <% if pre_like %>
               <%= button_to 'Unlike', post_like_path(@post, pre_like),
-              method: :delete, onclick: "redrawLikes('post_likes_wrapper', '/posts/#{@post.id}')", remote: true,
-              data: { disable_with: "Unlike" } %>
+              method: :delete,
+              onclick: "redrawLikes('post_likes_wrapper', '/posts/#{@post.id}', 'unlike_button')",
+              remote: true,
+              data: { disable_with: "Unlike" },
+              id: "unlike_button" %>
             <% else %>
               <%= button_to 'Like', post_likes_path(@post),
-              method: :post, onclick: "redrawLikes('post_likes_wrapper', '/posts/#{@post.id}')", remote: true,
-              data: { disable_with: "Like" } %>
+              method: :post,
+              onclick: "redrawLikes('post_likes_wrapper', '/posts/#{@post.id}', 'like_button')", 
+              remote: true,
+              data: { disable_with: "Like" },
+              id: "like_button" %>
             <% end %>
             <%= @post.like_count_string %>
           </span>
