@@ -60,3 +60,9 @@ body {
   font-family: 'Dosis', sans-serif;
   font-size: 15px;
 }
+
+#conversation-body {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 2em;
+}
