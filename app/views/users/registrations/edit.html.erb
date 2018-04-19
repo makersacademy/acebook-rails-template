@@ -9,7 +9,12 @@
     <%= f.label :username %><br />
     <%= f.text_field :username %><br>
     <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %><br>
+    <%= f.label :profile_picture %><br>
+    <%= f.file_field :avatar %><br>
+    <% if @user.avatar? %>
+      <%= image_tag @user.avatar.url(:thumb) %>
+    <% end %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
