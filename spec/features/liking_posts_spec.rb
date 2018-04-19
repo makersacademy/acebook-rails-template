@@ -8,7 +8,7 @@ RSpec.feature 'Liking Posts' do
     sign_up
     add_new_post
     # Action
-    within("div.post_options_div") do
+    within('div.post_options_div') do
       find('div#like_count').click_on('Like')
     end
     # Assert
@@ -20,7 +20,7 @@ RSpec.feature 'Liking Posts' do
     sign_up
     add_new_post
     # Action
-    within("div.post_options_div") do
+    within('div.post_options_div') do
       find('div#like_count').click_on('Like')
       find('div#like_count').click_on('Like')
     end
