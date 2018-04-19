@@ -13,7 +13,7 @@
       <%= current_user.username %>
         <%= current_user.username %>
         <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-        <div class="round-image-50 inline"><%= link_to image_tag(current_user.avatar.url(:thumb)), user_path(current_user) %></div>
+        <div class="round-image-50 inline"><%= link_to image_tag(current_user.avatar.url(:thumb), id: 'user_profile_img_taskbar'), user_path(current_user) %></div>
         <%= link_to current_user.username, user_path(current_user) %>
       <% else %>
           <%= link_to 'Sign Up', new_user_registration_path %>
@@ -37,8 +37,8 @@
     <div id="all-posts">
       <% @posts.reverse.each do |post| %>
         <p id="user_post">
-          <div class="round-image-50 inline"><%= image_tag(post.user.avatar.url(:thumb)) %></div>
-          @<%= post.user.username %>:
+          <div class="round-image-50 inline"><%= link_to image_tag(post.user.avatar.url(:thumb), id: 'user_post_profile_img'), user_path(post.user_id) %></div>
+          @<%= link_to post.user.username, user_path(post.user_id), id: 'user_post_profile_username'  %>:
           <%= post.message %>
         </p>
         <%=Posted.new(post.created_at).string%>
