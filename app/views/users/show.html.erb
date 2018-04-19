@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DART Profile</title>
+  </head>
+  <body>
+    <h1>Welcome to your profile page</h1>
+
+    <%= @user.username %>
+
+    <div id='profile_image'>
+      <%= image_tag(@user.avatar.url(:medium)) %>
+    </div>
+
+    <% @user.posts.reverse.each do |post| %>
+      <div id='profile_posts'>
+      <%= post.message %>
+      <p><%= Posted.new(post.created_at).string %></p>
+      <hr>
+      <% post.comments.reverse.each do |comment| %>
+        <p><%= comment.body %></p>
+        <p><%= Posted.new(comment.created_at).string %></p>
+      <% end %>
+      </div>
+    <% end %>
+  </body>
+</html>
