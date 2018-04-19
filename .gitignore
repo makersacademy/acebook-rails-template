@@ -21,3 +21,9 @@
 /yarn-error.log
 
 .byebug_history
+
+# Ignore coverage files from Simplecov Gem
+coverage
+
+# Don't check in credentials 
+config/env.yml
