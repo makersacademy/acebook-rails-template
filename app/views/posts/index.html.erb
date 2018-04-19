@@ -35,17 +35,9 @@
         </div>
         <div class="post_options_div">
           <div id='comment_count'>
-            <%= link_to "Comments: #{post.comments.count}", post_path(post), {method: :get, id: 'post_btn', class: 'post_button'} %>
-            <% arr = [] %>
-            <% post.comments.each do |comment|%>
-              <% arr << comment.user.username%>
-            <% end%>
-            <%= arr.uniq.slice(0,3).join(", ")%>
-            <% if arr.uniq.length - 3 > 0%>
-              and <%=arr.uniq.length - 3%> more...
-            <% end%>
+            <%= link_to 'Comments: ', post_path(post), {method: :get, id: 'post_btn', class: 'post_button'} %>
+            <%= post.comments.count%>
           </div>
-
           <div id='like_count'>
             <strong>
               <%= link_to "Likes: ", post_likes_path(post, @like, user_id: current_user.id), method: :post, id: 'Like', value: current_user.id %>
@@ -54,6 +46,7 @@
           </div>
 
         </div>
+        <%= render partial: 'commenter_logic', locals: {post: post} %>  
       </div>
     </div>
   </div>
