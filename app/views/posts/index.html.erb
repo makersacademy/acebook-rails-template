@@ -25,8 +25,12 @@
   <% else %>
     <%= button_to "Like", post_likes_path(post), class: 'like_post' %>
   <% end %>
+
   <% post.comments.each do |comment| %>
-    <p><%= comment.comment %></p>
+
+    <p class="comment">
+      <%= comment.user.name %>
+      - <%= comment.comment %></p>
      <%= button_to "Delete", post_comment_path(post, comment), method: :delete %>
      <%= comment.likes.where(liked: true).length %> <%= 'Like'.pluralize(comment.likes.where(liked: true).length) %>
      <% pre_like = Like.find_by(user_id: current_user.id, comment_id: comment.id) %>
