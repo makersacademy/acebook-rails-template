@@ -6,7 +6,7 @@ class Conversation < ApplicationRecord
   has_many :personal_messages, -> { order(created_at: :asc) }, dependent: :destroy
 
   scope :participating, ->(user) do
-    where('(conversations.author_id = ? OR conversations.reciever_id = )', user.id, user.id)
+    where('(conversations.author_id = ? OR conversations.receiver_id = ?)', user.id, user.id)
   end
 
   scope :between, ->(sender_id, receiver_id) do
