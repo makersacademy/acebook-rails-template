@@ -2,11 +2,14 @@
   <% @post.comments.each do |comment| %>
     <div id='comments_div'>
       <div id='comment_user_div'>
+        <%= image_tag comment.user.avatar.url(:thumb) %><br />
         <strong>Commenter:</strong>
         <%= comment.commenter %>
         <br>
+        <div id='timestamp'>
         <strong>Commented on:</strong>
         <%= comment.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %>
+        </div>
         <% if comment.user_id == current_user.id %>
           <%= button_to 'Delete Comment', [@post, comment], method: :delete, data: { confirm: 'Are you sure? '}, id: "del_btn" %>
           <%= button_to 'Edit Comment', edit_post_comment_path(@post, comment), method: :get, id: "edit_btn" %>
