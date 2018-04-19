@@ -8,8 +8,9 @@ RSpec.feature 'Liking Posts' do
     sign_up
     add_new_post
     # Action
-    click_button('Show')
-    click_link('Like')
+    within("div.post_options_div") do
+      find('div#like_count').click_on('Like')
+    end
     # Assert
     expect(page).to have_content('Likes: 1')
   end
@@ -19,9 +20,10 @@ RSpec.feature 'Liking Posts' do
     sign_up
     add_new_post
     # Action
-    click_button('Show')
-    click_link('Like')
-    click_link('Like')
+    within("div.post_options_div") do
+      find('div#like_count').click_on('Like')
+      find('div#like_count').click_on('Like')
+    end
     # Assert
     expect(page).to have_content 'Likes: 0'
   end
