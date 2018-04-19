@@ -16,13 +16,13 @@
     <% end %>
   </p>
   <p>
-    <%= post.likes.length %> <%= 'Like'.pluralize(post.likes.length) %>
+    <%= post.likes.where(liked: true).length %> <%= 'Like'.pluralize(post.likes.where(liked: true).length) %>
   </p>
   <% pre_like = Like.find_by(user_id: current_user.id, post_id: post.id) %>
-  <% if pre_like %>
-   <%= button_to "Unlike", post_like_path(post, pre_like), method: :delete %>
+  <% if pre_like && pre_like.liked %>
+   <%= button_to "Unlike", post_like_path(post, pre_like), method: :delete, class: 'unlike_post' %>
   <% else %>
-    <%= button_to "Like", post_likes_path(post) %>
+    <%= button_to "Like", post_likes_path(post), class: 'like_post' %>
   <% end %>
 
   <% post.comments.each do |comment| %>
@@ -31,6 +31,13 @@
       <%= comment.user.name %>
       - <%= comment.comment %></p>
      <%= button_to "Delete", post_comment_path(post, comment), method: :delete %>
+     <%= comment.likes.where(liked: true).length %> <%= 'Like'.pluralize(comment.likes.where(liked: true).length) %>
+     <% pre_like = Like.find_by(user_id: current_user.id, comment_id: comment.id) %>
+     <% if pre_like && pre_like.liked %>
+      <%= button_to "Unlike", comment_like_path(comment, pre_like), method: :delete, class: 'unlike_comment' %>
+     <% else %>
+       <%= button_to "Like", comment_likes_path(comment), class: 'like_comment' %>
+     <% end %>
   <% end %>
   <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
     <%= form.text_field :comment %>
