@@ -1,3 +1,4 @@
+<div class="container">
 <% if user_signed_in? %>
   <%= form_for @post do |form| %>
     <%= form.text_area :message, placeholder: 'Enter your message' %>
@@ -35,7 +36,7 @@
         - <a href="#" id="edit-comment<%= comment.id %>">EDIT</a>
       <% end %>
     </p>
-     
+
 <%= comment.likes.where(liked: true).length %> <%= 'Like'.pluralize(comment.likes.where(liked: true).length) %>
      <% pre_like = Like.find_by(user_id: current_user.id, comment_id: comment.id) %>
      <% if pre_like && pre_like.liked %>
@@ -50,3 +51,4 @@
     <%= form.submit "Comment" %>
   <% end %>
 <% end %>
+</div>

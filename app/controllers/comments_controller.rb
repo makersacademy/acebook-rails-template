@@ -4,12 +4,14 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     comment_hash = comment_params.merge(user_id: current_user.id)
     @comment = @post.comments.create(comment_hash)
+    flash[:notice] = 'Comment was successfully created!'
     redirect_to posts_path
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
+    flash[:notice] = 'Comment was successfully deleted!'
     redirect_to posts_path
   end
 
@@ -17,12 +19,8 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     respond_to do |format|
-      if @comment.update_attributes(comment_params)
-        notice_message = 'Comment was successfully updated.'
-        format.html { redirect_to(@comment, notice: notice_message) }
-      else
-        format.html { render action: 'edit' }
-      end
+      format.html { redirect_to(@comment) }
+      format.json { render json: { message: 'Comment was successfully edited!' } }  
       format.json { respond_with_bip(@comment) }
     end
   end

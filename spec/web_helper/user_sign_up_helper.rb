@@ -4,5 +4,5 @@ def user_sign_up
   fill_in "Email", with: "codingatmakers@gmail.com"
   fill_in "Password", with: "password"
   fill_in "Password confirmation", with: "password"
-  click_button "Sign up"
+  click_button "Sign Up"
 end
