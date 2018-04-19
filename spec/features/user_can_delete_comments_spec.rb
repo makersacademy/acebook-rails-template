@@ -8,7 +8,8 @@ RSpec.feature "User can delete a comment", type: :feature do
     click_button "Post"
     fill_in "comment[comment]", with: "Morning"
     click_button "Comment"
-    click_button "Delete"
+    find(".comment").click_link("DELETE")
+
     expect(page).not_to have_content("Morning")
   end
 end

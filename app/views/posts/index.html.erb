@@ -26,21 +26,27 @@
   <% end %>
 
   <% post.comments.each do |comment| %>
-
     <p class="comment">
       <%= comment.user.name %>
-      - <%= comment.comment %></p>
-     <%= button_to "Delete", post_comment_path(post, comment), method: :delete %>
-     <%= comment.likes.where(liked: true).length %> <%= 'Like'.pluralize(comment.likes.where(liked: true).length) %>
+      - <%= best_in_place comment, :comment, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel',  activator: '#edit-comment' + comment.id.to_s %>
+
+      <% if current_user.id == comment.user_id %>
+        - <%= link_to 'DELETE', comment, method: :delete %>
+        - <a href="#" id="edit-comment<%= comment.id %>">EDIT</a>
+      <% end %>
+    </p>
+     
+<%= comment.likes.where(liked: true).length %> <%= 'Like'.pluralize(comment.likes.where(liked: true).length) %>
      <% pre_like = Like.find_by(user_id: current_user.id, comment_id: comment.id) %>
      <% if pre_like && pre_like.liked %>
       <%= button_to "Unlike", comment_like_path(comment, pre_like), method: :delete, class: 'unlike_comment' %>
      <% else %>
        <%= button_to "Like", comment_likes_path(comment), class: 'like_comment' %>
      <% end %>
+
   <% end %>
   <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-    <%= form.text_field :comment %>
+    <%= form.text_field :comment, id: 'post_comment' %>
     <%= form.submit "Comment" %>
   <% end %>
 <% end %>
