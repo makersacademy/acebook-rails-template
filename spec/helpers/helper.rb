@@ -19,5 +19,4 @@ def new_comment
   fill_in 'comment_post_id', with: 1
   fill_in 'comment_body', with: 'text'
   click_on 'Create Comment'
-  expect(page).to have_content 'text'
 end
