@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(@comment) }
-      format.json { render json: { message: 'Comment was successfully edited!' } }
+      format.json { render json: { message: 'Comment was successfully edited!' } }  
       format.json { respond_with_bip(@comment) }
     end
   end

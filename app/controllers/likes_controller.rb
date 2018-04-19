@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_like
+
   def create
     if @like
       @like.update_attribute(:liked, true)
