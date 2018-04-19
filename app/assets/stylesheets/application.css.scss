@@ -1,18 +1,20 @@
- h1#logo_text {
-   color: #ffffff;
-   font-family: 'Lobster', sans-serif;
-   font-size: 60px;
-   text-align: center;
-   margin: auto;
- }
+@import 'posts';
+@import 'comments';
+h1#logo_text {
+  color: #ffffff;
+  font-family: 'Lobster', sans-serif;
+  font-size: 60px;
+  text-align: center;
+  margin: auto;
+}
 
- h2#subtitle {
-   color: #ecc51f;
-   font-family: 'Nunito', sans-serif;
-   font-size: 40px;
-   text-align: center;
-   margin: auto;
- }
+h2#subtitle {
+  color: #ecc51f;
+  font-family: 'Nunito', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  margin: auto;
+}
 
 div#banner {
   max-width: 100%;
@@ -31,7 +33,7 @@ div#banner_button {
 }
 
 form.button_to {
-  margin: 0 !important;
+  margin: 0;
   padding: 0 !important;
   display: flex;
 }
