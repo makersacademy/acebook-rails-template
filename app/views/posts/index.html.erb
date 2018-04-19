@@ -19,7 +19,7 @@
         <td><%= post.message %></td>
         <td><%= post.user.email %></td>
         <td><%= link_to 'Show', post %></td>
-        <td><a href="http://localhost:3000/comments">Comments</a></td>
+        <td><%= link_to 'comments',comments_path  %></td>
         <% if post.user == current_user %>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
