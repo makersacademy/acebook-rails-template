@@ -6,7 +6,7 @@ RSpec.feature "User sign in", type: :feature do
     click_link "Sign_out"
     fill_in "Email", with: "codingatmakers@gmail.com"
     fill_in "Password", with: "password"
-    click_button "Log in"
+    click_button "Log In"
     expect(page).to have_content("Signed in successfully.")
   end
 end
