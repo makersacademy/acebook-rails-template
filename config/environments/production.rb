@@ -51,6 +51,12 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
 
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :preserve_files => true,
+  :bucket => "elasticbeanstalk-eu-west-2-862365935758"
+}
+
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
