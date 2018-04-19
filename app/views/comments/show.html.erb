@@ -9,5 +9,9 @@
   <strong>Body:</strong>
   <%= @comment.body %>
 </p>
-
-<%= link_to 'Back', comments_path %>
+<% if @comment.user == current_user %>
+  <%= link_to 'Edit', edit_post_path(@comment) %> |
+  <%= link_to 'Back', posts_path %>
+<% else %>
+  <%= link_to 'Back', posts_path %>
+<% end %>
