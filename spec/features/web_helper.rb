@@ -48,3 +48,10 @@ def sign_up_second_user
   fill_in 'Password confirmation', with: 'password123'
   click_button 'Sign up'
 end
+
+def second_user_add_post
+  visit '/posts'
+  click_link 'New post'
+  fill_in 'post[message]', with: 'Makers Academy is awesome!'
+  click_button 'Submit'
+end
