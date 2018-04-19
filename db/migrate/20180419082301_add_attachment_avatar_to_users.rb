@@ -10,7 +10,7 @@ class AddAttachmentAvatarToUsers < ActiveRecord::Migration[5.1]
   end
 end
 
-  class AddAvatarToUsers < ActiveRecord::Migration
+  class AddAvatarToUsers < ActiveRecord::Migration [5.1]
   def up
     add_attachment :users, :avatar
   end
