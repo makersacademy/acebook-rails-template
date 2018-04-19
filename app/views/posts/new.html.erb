@@ -13,11 +13,12 @@
   <title></title>
   </head>
   <body>
-    <%= form_for @post do |form| %>
+    <%= form_for @post, url: posts_path, html: { multipart: true } do |form| %>
       <%= form.label :message %>
       <p class="emoji-picker-container">
         <%= form.text_area :message, :maxlength => 500, data: { emojiable: true } %>
       </p>
+      <%= form.file_field :image %>
       <%= form.submit "Submit" %>
     <% end %>
     <%= link_to 'Back', posts_path %>

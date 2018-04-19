@@ -31,6 +31,9 @@
     <%= link_to 'Back', posts_path %>
     <div class="comment-box">
       <h5><%= simple_format(Rinku.auto_link(@post.message)) %></h5>
+      <% if @post.image.file? %>
+        <%= image_tag @post.image.url, :style => "max-height: 500px; max-width: 500px;" %>
+      <% end %>
       <div class="small"><%= @post.created_at_timestring %></div>
       <span>
         <% if @post.owner?(current_user) %>
@@ -40,13 +43,29 @@
               data: { confirm: 'Are you sure?' } %>
         <% end %>
       </span>
-      <% pre_like = @post.find_like(current_user) %>
-      <% if pre_like %>
-        <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
-      <% else %>
-        <%= button_to 'Like', post_likes_path(@post), method: :post %>
-      <% end %>
-      <p><%= @post.like_count_string %></p>
+      <div id="<%="post_likes_wrapper"%>">
+        <div id="<%="post_likes"%>">
+          <span class="counters">
+            <% pre_like = @post.find_like(current_user) %>
+            <% if pre_like %>
+              <%= button_to 'Unlike', post_like_path(@post, pre_like),
+              method: :delete,
+              onclick: "redrawLikes('post_likes_wrapper', '/posts/#{@post.id}', 'unlike_button')",
+              remote: true,
+              data: { disable_with: "Unlike" },
+              id: "unlike_button" %>
+            <% else %>
+              <%= button_to 'Like', post_likes_path(@post),
+              method: :post,
+              onclick: "redrawLikes('post_likes_wrapper', '/posts/#{@post.id}', 'like_button')", 
+              remote: true,
+              data: { disable_with: "Like" },
+              id: "like_button" %>
+            <% end %>
+            <%= @post.like_count_string %>
+          </span>
+        </div>
+      </div>
     </div>
     <%= render 'comments/comment' %>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
