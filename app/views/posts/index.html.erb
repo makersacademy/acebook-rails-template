@@ -42,41 +42,58 @@
     <%= link_to new_post_path do %>
       <p>New post</p>
     <% end %>
-    <% @posts.time_sort_all.each_with_index do |post, i| %>
-      <div id="<%="post_#{i}"%>" class="list-group">
-        <div class="list-group-item">
-        <div id="<%="post_username_#{i}"%>">
-          <%= post.author %>
-        </div>
-        <div class="small"><%= post.created_at_timestring %></div>
-          <div id="<%="post_message_#{i}"%>">
-            <h5><%= simple_format(Rinku.auto_link(post.message)) %></h5>
+      <% @posts.time_sort_all.each_with_index do |post, i| %>
+        <div id="<%="post_#{i}"%>" class="list-group">
+          <div class="list-group-item">
+          <div id="<%="post_username_#{i}"%>">
+            <%= post.author %>
           </div>
-          <% if post.image.file? %>
-            <%= image_tag post.image.url, :style => "max-height: 500px; max-width: 500px;" %>
-          <% end %>
-          <span class="counters">
-            <% pre_like = post.find_like(current_user) %>
-            <% if pre_like %>
-              <%= button_to 'Unlike', post_like_path(post, pre_like) + "#post_#{i}", method: :delete %>
-            <% else %>
-              <%= button_to 'Like', post_likes_path(post) + "#post_#{i}", method: :post %>
-            <% end %>
-            <%= post.like_count_string %>
-            <%= post.comment_count_string %>
-          </span>
-          <span>
-            <% if post.owner?(current_user) %>
-              <%= link_to 'Edit', edit_post_path(post) %>
-              <%= link_to 'Delete', post_path(post),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %>
-            <% end %>
-            <%= link_to 'View Comments', post_path(post) %>
-          </span>
+          <div class="small"><%= post.created_at_timestring %></div>
+            <div id="<%="post_message_#{i}"%>">
+              <h5><%= simple_format(Rinku.auto_link(post.message)) %></h5>
+            </div>
+            <div id="<%="posts_wrapper_#{i}"%>">
+              <% if post.image.file? %>
+                <%= image_tag post.image.url, :style => "max-height: 500px; max-width: 500px;" %>
+              <% end %>
+              <div id="<%="post_likes_#{i}"%>">
+                <span class="counters">
+                  <% pre_like = post.find_like(current_user) %>
+                  <% if pre_like %>
+                    <%= button_to 'Unlike',
+                    post_like_path(post, pre_like),
+                    method: :delete,
+                    onclick: "redrawLikes('posts_wrapper_#{i}', '/posts', 'unlike_button_#{i}')",
+                    remote: true,
+                    data: { disable_with: "Unlike" },
+                    id: "unlike_button_#{i}"%>
+                  <% else %>
+                    <%= button_to 'Like',
+                    post_likes_path(post),
+                    method: :post,
+                    onclick: "redrawLikes('posts_wrapper_#{i}', '/posts', 'like_button_#{i}')",
+                    remote: true,
+                    data: { disable_with: "Like" },
+                    id: "like_button_#{i}" %>
+                  <% end %>
+                  <%= post.like_count_string %>
+                  <%= post.comment_count_string %>
+                </span>
+              </div>
+            </div>
+            <span>
+              <% if post.owner?(current_user) %>
+                <%= link_to 'Edit', edit_post_path(post) %>
+                <%= link_to 'Delete', post_path(post),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+              <% end %>
+              <%= link_to 'View Comments', post_path(post) %>
+            </span>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
 </html>
