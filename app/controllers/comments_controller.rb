@@ -3,8 +3,12 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     comment_hash = comment_params.merge(user_id: current_user.id)
-    @comment = @post.comments.create(comment_hash)
-    flash[:notice] = 'Comment was successfully created!'
+    @comment = @post.comments.build(comment_hash)
+    if @comment.save
+      flash[:notice] = 'Comment was successfully created!'
+    else
+      flash[:notice] = 'Invalid comment'
+    end
     redirect_to posts_path
   end
 
@@ -20,7 +24,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(@comment) }
-      format.json { render json: { message: 'Comment was successfully edited!' } }  
+      format.json { render json: { message: 'Comment was successfully edited!' } }
       format.json { respond_with_bip(@comment) }
     end
   end
