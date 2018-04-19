@@ -1,4 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
+
+  def avatar
+    20.times { p 'here fuckboy' }
+    redirect_to posts_url
+  end
+
   private
 
   def sign_up_params

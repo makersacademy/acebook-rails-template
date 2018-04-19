@@ -18,7 +18,7 @@
     <% end %>
 
     <% if user_signed_in? %>
-      <p>Hello, <%= current_user.name %> - <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %></p>
+      <p>Hello, <%= current_user.name %> - <%= link_to "Edit_user",  edit_user_registration_path %> - <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %></p>
       <br>
     <% end %>
     <%= render partial: "shared/navbar" %>
