@@ -9,6 +9,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# For Rails controller rspec testing
+gem 'rails-controller-testing'
 # For protecting sensitive data and use of ENV variables and application.yml
 # to use after bundle install run (in CL): bundle exec figaro install
 gem 'figaro'

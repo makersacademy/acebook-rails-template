@@ -30,8 +30,6 @@ ActiveRecord::Schema.define(version: 20180417081851) do
     t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "comment_id"
-    t.index ["comment_id"], name: "index_likes_on_comment_id"
     t.index ["post_id"], name: "index_likes_on_post_id"
   end
 
@@ -65,6 +63,8 @@ ActiveRecord::Schema.define(version: 20180417081851) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
@@ -103,6 +103,5 @@ ActiveRecord::Schema.define(version: 20180417081851) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "likes", "comments"
   add_foreign_key "likes", "posts"
 end
