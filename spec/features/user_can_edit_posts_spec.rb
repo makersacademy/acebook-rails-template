@@ -16,7 +16,7 @@ RSpec.feature "Editing", type: :feature do
     expect(page).to have_current_path("/posts")
   end
 
-  scenario "Can edit posts" do
+  scenario "Cannot edit posts" do
     click_link 'Logout'
     sign_up("test2@test.com", "test2")
     click_link "View Comments"
