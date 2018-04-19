@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     resources :likes
   end
 
-  resources :comments
+  resources :comments do
+    resources :likes
+  end
 end
