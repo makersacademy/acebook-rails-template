@@ -19,6 +19,8 @@
         <% pre_like = @post.find_like(current_user) %>
         <% if pre_like %>
           <%= button_to 'Unlike', post_like_path(@post, pre_like),
+          type: "button",
+          class: "btn btn-primary",
           method: :delete,
           onclick: "redrawLikes('post_likes_wrapper', '/posts/#{@post.id}', 'unlike_button')",
           remote: true,
@@ -26,14 +28,16 @@
           id: "unlike_button" %>
         <% else %>
           <%= button_to 'Like', post_likes_path(@post),
+          type: "button",
+          class: "btn btn-primary",
           method: :post,
           onclick: "redrawLikes('post_likes_wrapper', '/posts/#{@post.id}', 'like_button')",
           remote: true,
           data: { disable_with: "Like" },
           id: "like_button" %>
         <% end %>
-        <%= @post.like_count_string %>
-      </span>
+        <span class="glyphicon glyphicon-heart"><%= @post.like_count_string %> </span>
+        <span class="glyphicon glyphicon-comment"><%= @post.comment_count_string %></span>
     </div>
   </div>
 </div>
