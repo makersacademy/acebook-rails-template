@@ -24,8 +24,12 @@
   <% else %>
     <%= button_to "Like", post_likes_path(post) %>
   <% end %>
+
   <% post.comments.each do |comment| %>
-    <p><%= comment.comment %></p>
+
+    <p class="comment">
+      <%= comment.user.name %>
+      - <%= comment.comment %></p>
      <%= button_to "Delete", post_comment_path(post, comment), method: :delete %>
   <% end %>
   <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
