@@ -53,6 +53,9 @@
               <h5><%= simple_format(Rinku.auto_link(post.message)) %></h5>
             </div>
             <div id="<%="posts_wrapper_#{i}"%>">
+              <% if post.image.file? %>
+                <%= image_tag post.image.url, :style => "max-height: 500px; max-width: 500px;" %>
+              <% end %>
               <div id="<%="post_likes_#{i}"%>">
                 <span class="counters">
                   <% pre_like = post.find_like(current_user) %>
