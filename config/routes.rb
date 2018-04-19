@@ -2,6 +2,8 @@
 
 Rails.application.routes.draw do
   devise_for :users
+  mount ActionCable.server => '/cable'
+
   get 'welcome/index'
 
   # Resources should never be nested more than 1 level deep!
