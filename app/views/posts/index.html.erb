@@ -18,6 +18,7 @@
         <td><%= post.created_at.strftime("%B %d %Y, %l:%M%P") %></td>
         <td><%= post.message %></td>
         <td><%= post.user.email %></td>
+        <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'comments',comments_path  %></td>
         <% if post.user == current_user %>
