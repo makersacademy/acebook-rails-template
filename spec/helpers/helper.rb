@@ -12,3 +12,12 @@ def new_post
   fill_in 'Message', with: 'blah blah'
   click_on 'Create Post'
 end
+
+def new_comment
+  visit('/comments')
+  click_link 'New Comment'
+  fill_in 'comment_post_id', with: 1
+  fill_in 'comment_body', with: 'text'
+  click_on 'Create Comment'
+  expect(page).to have_content 'text'
+end
