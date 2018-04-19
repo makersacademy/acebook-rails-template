@@ -1,7 +1,90 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DART</title>
+  </head>
+  <body>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+    <div id="toggleThis">Taskbar</div>
+    <div id="headerBar">
+      </br>
+      <% if user_signed_in? %>
+      <%= current_user.username %>
+        <%= current_user.username %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <div class="round-image-50 inline"><%= link_to image_tag(current_user.avatar.url(:thumb)), user_path(current_user) %></div>
+        <%= link_to current_user.username, user_path(current_user) %>
+      <% else %>
+          <%= link_to 'Sign Up', new_user_registration_path %>
+          <%= link_to 'Login', new_user_session_path %>
+      <% end %>
+    </div>
+    <h1>DART</h1>
+    <div id="footerBar"></div>
+    </br>
+    </br>
+
+    <% if notice %> <p class="notice"><%= notice %></p> <% end %>
+    <% if alert %> <p class="alert"><%= alert %></p> <% end %>
+    <div id="new-post">
+      <%= link_to new_post_path do %>
+        New post
+      <% end %>
+    </div>
+    <%= render 'newsFeed' %>
+    </br>
+    <div id="all-posts">
+      <% @posts.reverse.each do |post| %>
+        <p id="user_post">
+          <div class="round-image-50 inline"><%= image_tag(post.user.avatar.url(:thumb)) %></div>
+          @<%= post.user.username %>:
+          <%= post.message %>
+        </p>
+        <%=Posted.new(post.created_at).string%>
+        </br>
+
+        <%= link_to image_tag("https://thumb.ibb.co/kbanU7/darts_PNG57.png", :size => "30x30"), like_post_path(post), method: :put %>
+        <%= post.get_upvotes.size %>
+
+        <% if current_user === post.user%>
+        <%= link_to 'Edit', edit_post_path(post.id)%>
+        <%= link_to 'Delete Post', post_path(post),
+                                   method: :delete%>
+        <hr>
+        <% end %>
+
+
+
+        <% post.comments.reverse.each do |comment|%>
+
+          <p><%= comment.body%></p>
+          <p><%=Posted.new(comment.created_at).string%></p>
+
+        <%= link_to image_tag("https://thumb.ibb.co/kbanU7/darts_PNG57.png", :size => "30x30", alt: "comment_like"), like_comment_path(comment), method: :put %>
+        <%= comment.get_upvotes.size %>
+
+        <% if current_user === comment.user %>
+        <%= link_to 'Edit Comment', edit_post_comment_path(post.id, comment.id)%>
+        <%= link_to 'Delete Comment', post_comment_path(post, comment),
+                                   method: :delete,
+                                   data: {confirm: 'Confirm Delete Comment?'}%>
+        <% end %>
+        <% end %>
+        <% if current_user %>
+        <button id="new_comment"> New Comment </button>
+        <%= form_with(model: [ post, post.comments.build], id: :comment_form, local: true) do |form| %>
+          <%= form.text_area :body, cols: "50", rows: "5" %>
+          <br>
+          <%=form.submit "Comment"%>
+        <% end %>
+          <br>
+          <br>
+          <br>
+          <br>
+        <% end %>
+      <% end %>
+
+    </div>
+  </body>
+</html>

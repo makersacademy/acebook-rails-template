@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+   #toggleThis {
+    height: 20px;
+    background: green;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    width: 100%;
+ 		top: 0;
+   }
+
+ html, body {
+     margin: 0;
+     padding: 0
+ }
+
+
+  body {
+    font-family: Avenir Book;
+    font-size: 15px;
+    color: #4E387E;
+    background-color: #FBF6D9;
+    /* background-image: url("Best-Electronic-Dart-Board.jpg"); */
+    text-align: center;
+  }
+
+ h1 {
+   font-size: 80px;
+   letter-spacing: 5px;
+   font-weight: 100;
+   color: #E82900;
+   background-image: url("https://s3.eu-west-2.amazonaws.com/dart-user-avatars/index_images/Dart-board-closeup.jpg");
+   margin: 50px;
+   z-index: -1
+ }
+
+ .round-image-50 {
+     background-color: white;
+     border: 1px solid #red;
+     border-radius: 40px;
+     -moz-border-radius: 40px;
+     -webkit-border-radius: 40px;
+     height: 30px;
+     width: 30px;
+     overflow: hidden;
+     text-align: center;
+     display: inline-flex;
+     img { width: 100% }
+ }
+ #headerBar {
+     height: 60px;
+     background: coral;
+     position: fixed;
+     position: relative;
+     width: 100%;
+     display: none;
+
+     /* z-index: -1 */
+ }
+ #footerBar {
+     height: 40px;
+     background: green;
+     position: relative;
+     /* bottom: 0; */
+     width: 100%;
+     color: white;
+     /* z-index: -1 */
+ }
+
+ #all-posts {
+   text-align: center;;
+   margin: auto;
+   width: 45%;
+   border: solid 8px;
+   border-color: #404B69;
+   padding: 20px;
+   border-radius: 25px;
+ }
+ #new-post {
+   text-align: center;;
+   margin: auto;
+   width: 45%;
+   border: solid 8px;
+   border-color: coral;
+   padding: 20px;
+   border-radius: 25px;
+ }
