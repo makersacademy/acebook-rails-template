@@ -21,3 +21,11 @@
 /yarn-error.log
 
 .byebug_history
+
+coverage
+
+/public/system/users/
+
+
+# Ignore application configuration
+/config/application.yml
