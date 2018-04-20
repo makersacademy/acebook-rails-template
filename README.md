@@ -1,4 +1,6 @@
-<a href="https://codeclimate.com/github/TomJamesDuffy/acebook-dart/maintainability"><img src="https://api.codeclimate.com/v1/badges/59c24b47dcc4c27c480a/maintainability" /></a>
+
+
+<!-- <a href="https://codeclimate.com/github/TomJamesDuffy/acebook-dart/maintainability"><img src="https://api.codeclimate.com/v1/badges/59c24b47dcc4c27c480a/maintainability" /></a>
 <a href="https://codeclimate.com/github/TomJamesDuffy/acebook-dart/test_coverage"><img src="https://api.codeclimate.com/v1/badges/59c24b47dcc4c27c480a/test_coverage" /></a>
 
 
@@ -32,4 +34,4 @@ First, clone this repository. Then:
 
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
-```
+``` -->
