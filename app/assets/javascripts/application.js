@@ -17,4 +17,3 @@
 //= require rails-ujs
 //= require_tree .
 //= require cable
-//= require capybara_turbolinks

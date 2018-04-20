@@ -53,14 +53,17 @@ RSpec.feature 'Messenger', type: :feature do
   end
 
   scenario 'users can see whether a friend they are in a conversation with is online' do
+    Capybara.using_session("Jerry's session") do
+      sign_up2
+    end
+
     Capybara.using_session("Tom's session") do
       sign_up_send_msg('Hello Jerry')
     end
 
     Capybara.using_session("Jerry's session") do
-      sign_up2
       click_button 'Inbox'
-      expect(find(:xpath, path).native.css_value('color')).to eq 'green'
+      expect(page.find('span', text: 'Tom')[:class].include?('online')).to eq true
     end
   end
 end

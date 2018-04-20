@@ -11,7 +11,7 @@ module ApplicationHelper
         end
       end.html_safe
     end
-end
+  end
 
   def online_status(user)
     content_tag :span, user.name,
