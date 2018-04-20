@@ -15,6 +15,14 @@ class Post < ApplicationRecord
     self.user_id.to_i == user.id.to_i
   end
 
+  def likedisplay
+    self.likes.count > 0 ? self.likes.count : ""
+  end
+
+  def commentdisplay
+    self.comments.count > 0 ? self.comments.count : ""
+  end
+
   def created_at_timestring
     self.created_at.localtime.strftime("%a %e %b %H:%M")
   end

@@ -3,7 +3,7 @@
 <div class="comment-box">
   <h5><%= simple_format(Rinku.auto_link(@post.message)) %></h5>
   <% if @post.image.file? %>
-    <img class="img-fluid" alt="Responsive image"><%= image_tag @post.image.url(:original) %></img>
+    <img><%= image_tag @post.image.url(:original) %></img>
   <% end %>
   <div class="small"><%= @post.created_at_timestring %></div>
   <div id="<%="post_likes_wrapper"%>">
@@ -29,7 +29,7 @@
           data: { disable_with: "Like" },
           id: "like_button" %>
         <% end %></p>
-        <h4><i class="fas fa-heart"><%= @post.likes.count %></i></h4>
+        <h4><i class="fas fa-heart"><%= @post.likedisplay %></i></h4>
     </div>
   </div>
   <span>
