@@ -5,9 +5,11 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    @post.save
-
-    flash[:notice] = 'Post was successfully created!'
+    if @post.save
+      flash[:notice] = 'Post was successfully created!'
+    else
+      flash[:notice] = 'Invalid post'
+    end
     redirect_to posts_url
   end
 
