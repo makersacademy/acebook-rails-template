@@ -34,6 +34,7 @@ gem 'turbolinks', '~> 5.0.0'
 gem 'emoji'
 gem 'coffee-rails'
 gem 'jquery-rails'
+gem 'redis'
 
 
 group :development, :test do
@@ -46,6 +47,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'capybara_turbolinks'
+
 
 end
 
