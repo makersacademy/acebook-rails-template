@@ -29,6 +29,19 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: ENV.fetch('S3_BUCKET_NAME'),
+      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+      s3_region: ENV.fetch('AWS_REGION'),
+      endpoint: ENV.fetch('AWS_ENDPOINT')
+    },
+    # s3_host_name: "s3-#{ENV.fetch('AWS_REGION')}.amazonaws.com",
+    # url: "s3_domain_url"
+  }
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
