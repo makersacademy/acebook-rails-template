@@ -7,6 +7,6 @@ RSpec.feature "User linked to posts", type: :feature do
     fill_in "post_message", with: "Hello, world!"
     click_button "Post"
 
-    expect(page).to have_content "John - Hello, world!"
+    expect(page.find('post')).to have_content "John"
   end
 end
