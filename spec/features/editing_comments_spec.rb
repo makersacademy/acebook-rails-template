@@ -9,7 +9,7 @@ RSpec.feature 'Editing comments', type: :feature do
     add_new_post
     travel_to Time.zone.local(1991)
     add_comment
-    click_link 'Edit Comment'
+    click_on 'Edit Comment'
     fill_in 'comment[body]', with: 'Makers is great'
     click_button 'Update Comment'
   end

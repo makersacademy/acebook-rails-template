@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   resources :users
   resources :online, only: [:index]
   resources :personal_messages, only: %i[new create]
-
+  
   root 'welcome#index'
 end

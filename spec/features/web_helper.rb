@@ -46,13 +46,13 @@ end
 
 def add_new_post
   visit '/posts'
-  click_link 'New post'
+  click_button 'New post'
   fill_in 'post[message]', with: 'Hello, world!'
   click_button 'Submit'
 end
 
 def add_comment
-  click_button 'Show'
+  click_on 'post_btn'
   fill_in 'comment[body]', with: 'Rails is awesome!'
   click_button 'Create Comment'
 end
@@ -70,7 +70,7 @@ end
 
 def second_user_add_post
   visit '/posts'
-  click_link 'New post'
+  click_button 'New post'
   fill_in 'post[message]', with: 'Makers Academy is awesome!'
   click_button 'Submit'
 end

@@ -1,40 +1,129 @@
-h1 {
-  color: #ffffff;
-  font-family: 'Lobster', sans-serif;
-  font-size: 60px;
+h2#body_title {
+  color: #ea125e;
+  font-family: 'Nunito', sans-serif;
+  font-size: 40px;
   text-align: center;
   margin: auto;
 }
 
-body{
-
-}
-
-div.news_deck {
+div#news_deck {
   max-width: 70% !important;
   display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+div.post_div {
+  width: 100% !important;
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0;
+  min-width: 505px;
+  border-radius: 5px;
+}
+
+div.post_user_div {
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 150px;
+  margin: 0 !important;
+  border-radius: 5px 0px 0px 5px;
+  padding: 5px;
+  background-color: #e1ebf5;
+}
+
+div.parent_container_div {
+  flex-grow: 5;
+  flex-basis: 0;
+  min-width: 350px;
+  min-height: 100%;
+  margin: 0 !important;
+  border-radius: 0px 5px 5px 0px;
+  background-color: white;
+  align-items: stretch;
+}
+
+div.container_div {
+  width: 100% !important;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+div.post_message_div {
+  flex-grow: 9;
+  padding: 0px 10px;
+  font-size: 18px;
+}
+
+div.post_options_div {
+  flex-grow: 1;
+  display: flex;
+  font-size: 12px;
+}
+
+div#comment_count, #like_count {
+  flex-grow: 1;
+  flex-basis: 0;
+  text-align: center;
+  padding: 5px;
+}
+
+div.btn_div {
+  display: flex;
+  margin: auto;
 }
 
 form.button_to {
-  margin: 0 !important;
-  padding: 0 !important;
-  display: flex;
+  margin: auto !important;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
-input#post_button {
-  max-width: 30px;
-  max-height: 20px;
+#edit_btn,
+#del_btn {
+  flex-grow: 1;
+  flex-basis: 0;
   padding: 5px;
-  margin: 10px 5px;
+  margin: 5px;
   font-family: 'Dosis', sans-serif;
   font-size: 10px;
   color: #ecc51f;
   border-radius: 5px;
   background-color: #838bb0;
-  flex: 1;
 }
 
-input#post_button:hover {
+#edit_btn:hover,
+#del_btn:hover {
   background-color: #cfd7dd;
   color: #850d14;
+}
+
+div#add_comments_form {
+  max-width: 70% !important;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+#new_btn {
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 10px;
+  margin: 5px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+  color: #ecc51f;
+  border-radius: 5px;
+  background-color: #838bb0;
+}
+
+#new_btn:hover {
+  background-color: #cfd7dd;
+  color: #850d14;
+}
+
+div#timestamp {
+  font-size: 9px;
 }
