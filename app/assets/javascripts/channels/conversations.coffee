@@ -16,8 +16,12 @@ jQuery(document).on 'turbolinks:load', ->
     disconnected: ->
       # Called when the subscription has been terminated by the server
 
-    received: (data) ->
-      # Called when data is received
+received: (data) ->
+  if messages.size() > 0 && messages.data('conversation-id') is data['conversation_id']
+    messages.append data['message']
+    messages_to_bottom()
+  else
+    $('body').append(data['notification']) if data['notification']
 if messages.length > 0
   messages_to_bottom()
   $('#new_personal_message').submit (e) ->
