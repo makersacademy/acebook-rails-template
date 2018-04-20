@@ -36,8 +36,7 @@
           data: { disable_with: "Like" },
           id: "like_button" %>
         <% end %>
-        <span class="glyphicon glyphicon-heart"><%= @post.like_count_string %> </span>
-        <span class="glyphicon glyphicon-comment"><%= @post.comment_count_string %></span>
+        <i class="far fa-heart"><%= @post.like_count_string %></i>
     </div>
   </div>
 </div>
