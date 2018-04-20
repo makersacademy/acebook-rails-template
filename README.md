@@ -1,4 +1,11 @@
-
+# DART
+DART is team project consisting of the implementation of a social media platform.
+The primary goal of this project is to use high-quality processes to build a project in a team.
+The areas of focus are:
+* Learning process.
+* Code writing.
+* Team work and use of Agile methodologies.
+* Understanding of a deployment pipeline.
 
 <!-- <a href="https://codeclimate.com/github/TomJamesDuffy/acebook-dart/maintainability"><img src="https://api.codeclimate.com/v1/badges/59c24b47dcc4c27c480a/maintainability" /></a>
 <a href="https://codeclimate.com/github/TomJamesDuffy/acebook-dart/test_coverage"><img src="https://api.codeclimate.com/v1/badges/59c24b47dcc4c27c480a/test_coverage" /></a>
