@@ -3,7 +3,6 @@
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <title>Acebook</title>
-      <h1>AceBook</h1>
       <%= csrf_meta_tags %>
 
       <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -12,38 +11,9 @@
 
   <body>
 
+    <%= render "layouts/navbar" %>
 
-
-    <nav class="navbar navbar-default" style=" background-color: blue;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">Acebook</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-      <% if user_signed_in? %>
-
-      <li class= "nav-item ">
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %>
-        <li class= "nav-item">
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %></li>
-
-      <% else %>
-
-      <li class= "nav-item">
-        <%= link_to "Sign up", new_user_registration_path, :class => 'nav-link'  %>
-      </li>
-        <li class= "nav-item">
-        <%= link_to "Login", new_user_session_path, :class => 'nav-link'  %>
-      </li>
-      <% end %>
-
-    </ul>
-
-  </div>
-</nav>
-
-    <p class="navbar-text ">
+    <!-- <p class="navbar-text ">
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong>.
         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
@@ -52,7 +22,7 @@
       <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
       <% end %>
-    </p>
+    </p> -->
 
   <!-- <ul class="nav">
     <li class="active"><a href="/ideas">Ideas</a></li>
@@ -64,6 +34,7 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+
     <%= yield %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
