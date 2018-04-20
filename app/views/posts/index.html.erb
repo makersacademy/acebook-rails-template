@@ -1,7 +1,27 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<h1>News Deck</h1>
+<%= link_to 'Profile', user_path(current_user.id) %>
+
+<% @posts.each_with_index do |post, idx| %>
+  <div id="post_div_<%=idx%>" class='news_deck'>
+    <p id="post_body_<%=idx%>"><%= simple_format(post.message) %></p>
+    <strong>User:
+    </strong>
+    <span id="post_user_<%=idx%>"><%= post.user.username %></span>
+    <br>
+    <strong>Post On:
+    </strong>
+    <span id="post_timestamp_<%=idx%>"><%= post.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %></span>
+    <br>
+    <div>
+      <% if post.user.id == current_user.id %>
+        <%= button_to 'Delete', post_path(post), {method: :delete, id: 'del_btn', class: 'post_button'} %>
+        <%= button_to 'Edit', edit_post_path(post), {method: :get,id: 'edit_btn', class: 'post_button'} %>
+      <% end %>
+      <%= button_to 'Show', post_path(post), {method: :get, id: 'post_btn', class: 'post_button'} %>
+    </div>
+  </div>
 <% end %>
 
 <%= link_to new_post_path do %>
-  New post
+New post
 <% end %>

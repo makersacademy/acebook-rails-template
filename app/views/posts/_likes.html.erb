@@ -1,0 +1,4 @@
+<%= link_to "Like", post_likes_path(post, @like, user_id: current_user.id), method: :post, id: 'Like', value: current_user.id %>
+
+<br>
+<strong>Likes:</strong> <%= post.likes.where(on: true).count %>

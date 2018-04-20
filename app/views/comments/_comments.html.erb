@@ -1,0 +1,26 @@
+<% @post.comments.each do |comment| %>
+
+<p>
+  <%= simple_format(comment.body) %>
+  <strong>Commenter:</strong>
+  <%= comment.commenter %>
+  <br>
+  <strong>Comment Timestamp:</strong>
+  <%= comment.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %>
+</p>
+
+<p>
+  <strong>Comment Likes:</strong>
+  <%= comment.likes.where(on: true).count %>
+</p>
+
+<!-- link_to 'Like Comment', comment_likes_path(comment, :user => current_user),
+    method: :post, id: 'Comment Like', value: current_user.id -->
+
+<%= link_to "Like Comment", comment_likes_path(comment, @like, user_id: current_user.id), method: :post, id: 'Like Comment', value: current_user.id %>
+
+<% if comment.user_id == current_user.id %>
+<%= link_to 'Delete Comment', [@post, comment], method: :delete, data: { confirm: 'Are you sure? '} %>
+<%= link_to 'Edit Comment', edit_post_comment_path(@post, comment) %>
+<% end %>
+<% end %>

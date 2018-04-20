@@ -1,0 +1,21 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'script/**/*'
+    - 'Gemfile'
+    - 'vendor/**/*'
+    - 'app/channels/**/*'
+
+Metrics/BlockLength:
+  Max: 30
+
+Metrics/LineLength:
+  Max: 100
+
+Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact

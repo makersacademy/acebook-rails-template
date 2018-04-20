@@ -1,0 +1,8 @@
+<%= @user.name%>'s Profile
+
+<% @user.posts.each do |post| %>
+    <%= simple_format(post.message) %>
+    Likes: <%= post.likes.count  %><br />
+    <strong>Post On: </strong>
+    <span id="post_timestamp_"><%= post.created_at.localtime.strftime("%H:%M %A %d-%m-%Y") %></span>
+<% end %>

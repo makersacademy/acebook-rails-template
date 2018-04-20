@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Krona+One|Lobster|Quicksand|Nunito|Dosis" rel="stylesheet">
+
     <title>Acebook</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div id='banner'>
+      <div id='banner_button'>
+        <%= button_to('Home', root_url, {method: :get, id: 'banner_btn'}) %>
+        <%= button_to('Git Repo', 'https://github.com/julesnuggy/acebook-byte-3', {method: :get, id: 'banner_btn'}) %>
+      </div>
+      <div id='banner_button'>
+        <%= button_to('Inbox', conversations_url, {method: :get, id: 'banner_btn'}) %>
+      </div>
+      <div id='banner_text'>
+        <h1 id='logo_text'>Acebook</h1>
+        <h2 id='subtitle'>Feed your self-validation demon</h2>
+      </div>
+      <div id='banner_button'>
+        <%= render 'layouts/registration' %>
+        <%= render 'layouts/login' %>
+      </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>
