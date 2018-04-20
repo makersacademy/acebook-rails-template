@@ -54,7 +54,7 @@
             </div>
             <div id="<%="posts_wrapper_#{i}"%>">
               <% if post.image.file? %>
-                <%= image_tag post.image.url, :style => "max-height: 500px; max-width: 500px;" %>
+                <%= image_tag post.image.url(:medium) %>
               <% end %>
               <div id="<%="post_likes_#{i}"%>">
                 <span class="counters">

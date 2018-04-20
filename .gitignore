@@ -32,3 +32,6 @@
 
 #image files
 public/system/posts/images/000/000
+
+# Ignore application configuration
+/config/application.yml
