@@ -1,8 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def avatar
-    20.times { p 'here fuckboy' }
-    redirect_to posts_url
+    @user = current_user
+  end
+
+  def create_avatar
+    update
   end
 
   private

@@ -1,55 +1,79 @@
-<div class="container">
-<% if user_signed_in? %>
-  <%= form_for @post do |form| %>
-    <%= form.text_area :message, placeholder: 'Enter your message' %>
-    <%= form.submit "Post" %>
+<div id="timeline">
+  <% if user_signed_in? %>
+    <%= form_for @post do |form| %>
+      <%= form.text_area :message, placeholder: 'Enter your message' %>
+      <%= form.submit "Post" %>
+    <% end %>
   <% end %>
-<% end %>
 
 <% @posts.each do |post| %>
-  <p class="post">
-    <%= post.user.name %>
-    <%= image_tag post.user.avatar(:thumb) %>
-    - <%= best_in_place post, :message, :as => :textarea, :ok_button => 'Save', display_with: -> v { v.gsub(/[\r\n]+/, '<br>').html_safe }, :cancel_button => 'Cancel', activator: '#edit-' + post.id.to_s %>
-    - <%= post.created_at.strftime("%e %B at %k:%M") %>
-    <% if current_user.id == post.user_id %>
-      - <%= link_to 'DELETE', post, method: :delete %>
-      - <a href="#" id="edit-<%= post.id %>">EDIT</a>
-    <% end %>
-  </p>
-  <p>
-    <%= post.likes.where(liked: true).length %> <%= 'Like'.pluralize(post.likes.where(liked: true).length) %>
-  </p>
-  <% pre_like = Like.find_by(user_id: current_user.id, post_id: post.id) %>
-  <% if pre_like && pre_like.liked %>
-   <%= button_to "Unlike", post_like_path(post, pre_like), method: :delete, class: 'unlike_post' %>
-  <% else %>
-    <%= button_to "Like", post_likes_path(post), class: 'like_post' %>
-  <% end %>
+  <div class="post">
+
+    <div class="post_flex">
+      <div class="post_avatar"><%= image_tag post.user.avatar(:thumb), :class => "avatar_img" %> </div>
+      <h1 class="post_user"><%= post.user.name %></h1>
+      <h2 class="post_time"><%= post.created_at.strftime("%e %B at %k:%M") %></h2>
+    </div>
+
+    <h4 class="post_text">
+      <%= best_in_place post, :message, :as => :textarea, :ok_button => 'Save', display_with: -> v { v.gsub(/[\r\n]+/, '<br>').html_safe }, :cancel_button => 'Cancel', activator: '#edit-' + post.id.to_s %>
+      <% if current_user.id == post.user_id %>
+        &emsp; <%= link_to 'DELETE', post, method: :delete %>
+        &emsp; <a href="#" id="edit-<%= post.id %>">EDIT</a>
+      <% end %>
+    </h4>
+
+    <div class="likes">
+      <p class="likes_count">
+        <%= post.likes.where(liked: true).length %> <%= 'Like'.pluralize(post.likes.where(liked: true).length) %>
+      </p>
+      <div class="likes_button">
+      <% pre_like = Like.find_by(user_id: current_user.id, post_id: post.id) %>
+      <% if pre_like && pre_like.liked %>
+       <%= button_to "Unlike", post_like_path(post, pre_like), method: :delete, class: 'unlike_post' %>
+      <% else %>
+        <%= button_to "Like", post_likes_path(post), class: 'like_post' %>
+      <% end %>
+      </div>
+    </div>
+
 
   <% post.comments.each do |comment| %>
-    <p class="comment">
-      <%= comment.user.name %>
-      - <%= best_in_place comment, :comment, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel',  activator: '#edit-comment' + comment.id.to_s %>
+    <div class="comment">
+      <p>
+        <span class="comment_user"> <%= comment.user.name %> </span>
+        &emsp; <%= best_in_place comment, :comment, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel',  activator: '#edit-comment' + comment.id.to_s %>
 
-      <% if current_user.id == comment.user_id %>
-        - <%= link_to 'DELETE', comment, method: :delete %>
-        - <a href="#" id="edit-comment<%= comment.id %>">EDIT</a>
+        <% if current_user.id == comment.user_id %>
+          &emsp; <%= link_to 'DELETE', comment, method: :delete %>
+          &emsp; <a href="#" id="edit-comment<%= comment.id %>">EDIT</a>
+        <% end %>
+      </p>
+
+        <div class="likes">
+          <p class="likes_count">
+            <%= comment.likes.where(liked: true).length %> <%= 'Like'.pluralize(comment.likes.where(liked: true).length) %>
+          </p>
+          <div class="likes_button">
+            <% pre_like = Like.find_by(user_id: current_user.id, comment_id: comment.id) %>
+            <% if pre_like && pre_like.liked %>
+              <%= button_to "Unlike", comment_like_path(comment, pre_like), method: :delete, class: 'unlike_comment' %>
+            <% else %>
+               <%= button_to "Like", comment_likes_path(comment), class: 'like_comment' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
       <% end %>
-    </p>
 
-<%= comment.likes.where(liked: true).length %> <%= 'Like'.pluralize(comment.likes.where(liked: true).length) %>
-     <% pre_like = Like.find_by(user_id: current_user.id, comment_id: comment.id) %>
-     <% if pre_like && pre_like.liked %>
-      <%= button_to "Unlike", comment_like_path(comment, pre_like), method: :delete, class: 'unlike_comment' %>
-     <% else %>
-       <%= button_to "Like", comment_likes_path(comment), class: 'like_comment' %>
-     <% end %>
+      <div class="make_comment">
+        <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+          <%= form.text_field :comment, id: 'post_comment' %>
+          <%= form.submit "Comment" %>
+        <% end %>
+      </div>
 
+
+    </div>
   <% end %>
-  <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-    <%= form.text_field :comment, id: 'post_comment' %>
-    <%= form.submit "Comment" %>
-  <% end %>
-<% end %>
-</div>
+<div>

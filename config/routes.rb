@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
-  # get 'users/avatar', to: 'registrations#avatar'
 
   devise_scope :user do
-     get "/users/avatar" => 'registrations#avatar'
+     get "/avatar" => 'registrations#avatar'
+     put "/avatar" => 'registrations#create_avatar'
    end
 
   devise_for :users, controllers: { registrations: "registrations" }
