@@ -10,37 +10,41 @@ The areas of focus are:
 ##Criteria
 The criteria followed to self-evaluate the work done is grouped into four sections:
 ###Tests
-* Passes tests
-* 100% test coverage
-* Appropriate feature and isolated unit tests
+* Passes tests.
+* 100% test coverage.
+* Appropriate feature and isolated unit tests.
 ###Quality
-* Passes rubocop
-* Code Climate grades of A
-* Low flog score
+* Passes rubocop.
+* Code Climate grades of A.
+* Low flog score.
 ###Development
-* Evidence of git workflow
-* Good documentation of project in the README.md
-* CI is set up for continuous deployment from master
-* Development and deployment done with docker, heroku/ aws
+* Evidence of git workflow.
+* Good documentation of project in the README.md.
+* CI is set up for continuous deployment from master.
+* Development and deployment done with docker, heroku/ aws.
 ###Learning
-* Daily reflective blogs
-* Daily stand ups/retrospectives or another technique for * group checkins/reflection 
-<!-- <a href="https://codeclimate.com/github/TomJamesDuffy/acebook-dart/maintainability"><img src="https://api.codeclimate.com/v1/badges/59c24b47dcc4c27c480a/maintainability" /></a>
+* Daily reflective blogs.
+* Daily stand ups/retrospectives or another technique for group checkins/reflection.
+
+##Sources of information
+###Quality indicators
+The facts are here:
+<a href="https://codeclimate.com/github/TomJamesDuffy/acebook-dart/maintainability"><img src="https://api.codeclimate.com/v1/badges/59c24b47dcc4c27c480a/maintainability" /></a>
 <a href="https://codeclimate.com/github/TomJamesDuffy/acebook-dart/test_coverage"><img src="https://api.codeclimate.com/v1/badges/59c24b47dcc4c27c480a/test_coverage" /></a>
+###Collaborations tool
+The card wall is here: [Trello](https://trello.com/b/rehxDBbM/dartbook)
+###Team reflections
+The blog is here:
+https://medium.com/@teamdartlondon
+###Platform
+The application is here:
+http://team-dart.herokuapp.com
 
-
-
-
-[Trello](https://trello.com/b/rehxDBbM/dartbook)
-
-# AceBook
-
-Fork this repository to `acebook-teamname` and customize
-the below**
+<!--
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-The card wall is here: <please update>
+
 
 ## Set-Up
 To set-up imagemagick package using brew (in command line): brew install imagemagick
