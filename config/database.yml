@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: pgapp_production
-  username: pgapp
-  password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
+  adaptor: postgresql
+  database: db/production.sqlite3
+  
