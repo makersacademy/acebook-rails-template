@@ -7,6 +7,8 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "post_message", with: "Hello, world!"
     click_button "Post"
 
-    expect(page).to have_css("img[src*='capybara.jpg']")
+    save_and_open_page
+
+    expect(page).to have_xpath("img[src^='capybara']")
   end
 end

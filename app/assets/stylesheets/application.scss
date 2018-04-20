@@ -1,2 +1,64 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.post {
+  position:relative;
+  border-style:solid;
+  margin-bottom: 100px;
+  width:100%;
+}
+
+.post_flex {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.post_avatar {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.avatar_img {
+  height: 80px;
+  border-radius:20%;
+}
+
+.post_user {
+  flex-grow: 1;
+}
+
+.post_time {
+  flex-grow: 8;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.post_text {
+  text-align:center;
+}
+
+.post_likes {
+  display: flex;
+  text-align:center;
+  margin-top:10px;
+}
+
+.likes_count {
+  flex-grow: 1;
+  text-align:right;
+  margin-right: 10px;
+}
+
+.likes_button {
+  flex-grow: 1;
+  text-align:left;
+  margin-left: 10px;
+}
+
+.comment {
+  position:relative;
+  border-style:solid;
+  margin-bottom: 100px;
+  width:100%;
+}
