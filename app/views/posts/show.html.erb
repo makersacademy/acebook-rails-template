@@ -29,7 +29,7 @@
           data: { disable_with: "Like" },
           id: "like_button" %>
         <% end %></p>
-        <h4><i class="fas fa-heart"><%= @post.like_count_string %></i></h4>
+        <h4><i class="fas fa-heart"><%= @post.likes.count %></i></h4>
     </div>
   </div>
   <span>

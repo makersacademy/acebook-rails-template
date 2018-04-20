@@ -10,18 +10,6 @@ class Post < ApplicationRecord
     self.user_id.to_i == user.id.to_i
   end
 
-  def like_count_string
-    if self.likes.length > 0
-      return "#{self.likes.length}"
-    end
-  end
-
-  def comment_count_string
-    if self.comments.length > 0
-      return "#{self.comments.length}"
-    end
-  end
-
   def created_at_timestring
     self.created_at.localtime.strftime("%a %e %b %H:%M")
   end

@@ -8,10 +8,10 @@ RSpec.feature "Liking", type: :feature do
   end
 
   scenario "Can like post from show page and view immediately" do
-    click_link "View Comments"
+    click_link "Hello, world!"
     click_button 'Like'
-    expect(page).to have_button("Create Comment")
-    expect(page).to have_content("1 Like")
+    expect(page).to have_button("New Comment")
+    expect(page).to have_content("1")
   end
 
   scenario "Can like post from index page and view immediately" do
@@ -19,7 +19,7 @@ RSpec.feature "Liking", type: :feature do
       click_button 'Like'
     end
     expect(current_path).to eq '/posts'
-    expect(find("div#post_0")).to have_content("1 Like")
+    expect(find("div#post_0")).to have_content("1")
   end
 
 end
