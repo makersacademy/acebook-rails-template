@@ -36,41 +36,15 @@ The facts are here:
 The card wall is here: [Trello](https://trello.com/b/rehxDBbM/dartbook)
 ###Team reflections
 The blog is here:
-https://medium.com/@teamdartlondon
+[Blog](https://medium.com/@teamdartlondon)
 ###Platform
 The deployment of the application is here:
-http://team-dart.herokuapp.com
+[Team DART](http://team-dart.herokuapp.com)
 
-##Authors 🖋
-* **Daniel Regalo Campos**
-https://github.com/ddregalo
-* **Alejandro Pitarch Olivas**
-https://github.com/xelAhcratiPsavilO
-* **Raefe Newton-Jones**
-https://github.com/Raefey
-* **Thomas James Duffy**
-https://github.com/TomJamesDuffy
+## Contributing 🎭
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the process for submitting pull requests to us.
 
-##Acknowledgments 🎓
-* **Edward Withers**
-https://github.com/dearshrewdwit
-* **Kay Lovelace**
-https://github.com/neoeno
-* **Daniel Bergquist**
-https://github.com/dbugsy
-<!--
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-
-
-## Set-Up
-To set-up imagemagick package using brew (in command line): brew install imagemagick
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Quickstart
+## Getting Started 🚴‍
 
 First, clone this repository. Then:
 
@@ -81,4 +55,23 @@ First, clone this repository. Then:
 
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
-``` -->
+```
+Note: Avatar images would only work once setting your own image DB. For extra information on how to do this contact one of the team members in the authors section bellow.
+
+##Authors 🖋
+* **Daniel Regalo Campos**
+[Checkout my projects](https://github.com/ddregalo)
+* **Alejandro Pitarch Olivas**
+[Checkout my projects](https://github.com/xelAhcratiPsavilO)
+* **Raefe Newton-Jones**
+[Checkout my projects](https://github.com/Raefey)
+* **Thomas James Duffy**
+[Checkout my projects](https://github.com/TomJamesDuffy)
+
+##Acknowledgments 🎓
+* **Edward Withers**
+[Checkout my projects](https://github.com/dearshrewdwit)
+* **Kay Lovelace**
+[Checkout my projects](https://github.com/neoeno)
+* **Daniel Bergquist**
+[Checkout my projects](https://github.com/dbugsy)
