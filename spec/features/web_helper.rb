@@ -51,7 +51,7 @@ end
 
 def second_user_add_post
   visit '/posts'
-  click_link 'New post'
+  click_button 'New post'
   fill_in 'post[message]', with: 'Makers Academy is awesome!'
   click_button 'Submit'
 end
