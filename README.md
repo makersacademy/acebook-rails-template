@@ -7,37 +7,37 @@ The areas of focus are:
 * Team work and use of Agile methodologies.
 * Understanding of a deployment pipeline.
 
-##Criteria 🔍
+## Criteria 🔍  
 The criteria followed to self-evaluate the work done is grouped into four sections:
-###Tests
+### Tests
 * Passes tests.
 * 100% test coverage.
 * Appropriate feature and isolated unit tests.
-###Quality
+### Quality
 * Passes rubocop.
 * Code Climate grades of A.
 * Low flog score.
-###Development
+### Development
 * Evidence of git workflow.
 * Good documentation of project in the README.md.
 * CI is set up for continuous deployment from master.
 * Development and deployment done with docker, heroku/ aws.
-###Learning
+### Learning
 * Daily reflective blogs.
 * Daily stand ups/retrospectives or another technique for group checkins/reflection.
 
-##Sources of information 📚
+## Sources of information 📚
 The sources of information are organised as follows:
-###Quality indicators
+### Quality indicators
 The facts are here:
 <a href="https://codeclimate.com/github/TomJamesDuffy/acebook-dart/maintainability"><img src="https://api.codeclimate.com/v1/badges/59c24b47dcc4c27c480a/maintainability" /></a>
 <a href="https://codeclimate.com/github/TomJamesDuffy/acebook-dart/test_coverage"><img src="https://api.codeclimate.com/v1/badges/59c24b47dcc4c27c480a/test_coverage" /></a>
-###Collaborations tool
+### Collaborations tool
 The card wall is here: [Trello](https://trello.com/b/rehxDBbM/dartbook)
-###Team reflections
+### Team reflections
 The blog is here:
 [Blog](https://medium.com/@teamdartlondon)
-###Platform
+### Platform
 The deployment of the application is here:
 [Team DART](http://team-dart.herokuapp.com)
 
@@ -58,7 +58,7 @@ First, clone this repository. Then:
 ```
 Note: Avatar images would only work once setting your own image DB. For extra information on how to do this contact one of the team members in the authors section bellow.
 
-##Authors 🖋
+## Authors 🖋
 * **Daniel Regalo Campos**
 [Checkout my projects](https://github.com/ddregalo)
 * **Alejandro Pitarch Olivas**
@@ -68,7 +68,7 @@ Note: Avatar images would only work once setting your own image DB. For extra in
 * **Thomas James Duffy**
 [Checkout my projects](https://github.com/TomJamesDuffy)
 
-##Acknowledgments 🎓
+## Acknowledgments 🎓
 * **Edward Withers**
 [Checkout my projects](https://github.com/dearshrewdwit)
 * **Kay Lovelace**
