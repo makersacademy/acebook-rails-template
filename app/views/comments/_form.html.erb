@@ -3,8 +3,6 @@
     <p class="emoji-picker-container">
       <%= f.text_area :content, :maxlength => 140, data: { emojiable: true } %>
     </p>
-    <%= f.submit %>
-
+    <%= f.submit :Submit, class: 'btn btn-primary' %>
   <% end %>
 </div>
-
