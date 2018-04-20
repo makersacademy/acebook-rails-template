@@ -1,9 +1,46 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  background-color: #f2deec36;
+}
+
+input[type=submit] {
+  background-color: #cc0066;
+}
+
+input[type=submit]:hover {
+  opacity: 0.2;
+}
+
+textarea {
+  background-color: pink;
+}
+
+
+
+button {
+  background-color: red;
+}
+
+a {
+  color: #990099;
+  font-weight: bold;
+}
+
+#timeline {
+  position:relative;
+  width: 80%;
+  left:10%;
+  color: white;
+}
+
 .post {
   position:relative;
+  background-color: pink;
   border-style:solid;
+  border-width:thin;
+  border-radius: 1%;
   margin-bottom: 100px;
   width:100%;
 }
@@ -38,16 +75,18 @@
   text-align:center;
 }
 
-.post_likes {
+.likes {
   display: flex;
   text-align:center;
-  margin-top:10px;
+  margin-top:5px;
+  margin-bottom:5px;
 }
 
 .likes_count {
   flex-grow: 1;
   text-align:right;
   margin-right: 10px;
+  color: black;
 }
 
 .likes_button {
@@ -58,7 +97,23 @@
 
 .comment {
   position:relative;
+  text-align:left;
   border-style:solid;
-  margin-bottom: 100px;
-  width:100%;
+  border-width:thin;
+  background-color: #e06377;
+  margin-top: 10px;
+  padding:4px;
+  width:95%;
+  left:2.5%;
+}
+
+.comment_user {
+  color: black;
+  font-weight: bold;
+}
+
+.make_comment {
+  text-align:center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

@@ -26,3 +26,6 @@
 
 # Ignore private environmental variables
 /config/local_env.yml
+
+.DS_Store
+public/system/users/avatars*
