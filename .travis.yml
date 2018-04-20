@@ -3,7 +3,7 @@ language: ruby
 
   env:
   global:
-    - CC_TEST_REPORTER_ID=5b99bfdf3a599e764aa81ee407fb5548f9b170790cf299d0a96319940fc41e55
+    - CC_TEST_REPORTER_ID="5b99bfdf3a599e764aa81ee407fb5548f9b170790cf299d0a96319940fc41e55"
 
 notifications:
   email: false
