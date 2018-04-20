@@ -1,20 +1,29 @@
-<%= form_for(@user, as: resource_name, url: avatar_path, html: { method: :put, multipart: true }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="container">
 
-  <div class="field">
-    <%= f.label :avatar %><br />
-    <%= f.file_field :avatar %><br />
-  </div>
+  <%= form_for(@user, as: resource_name, url: avatar_path, html: { method: :put, multipart: true }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+    <div id="paperclip_form" class="field">
+      <%= f.label :avatar %><br />
+      <br>
+      <%= f.file_field :avatar %><br />
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+    <div class="field">
+      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off" %>
+    </div>
 
-<% end %>
+    <br>
 
-<%= link_to "Back", :back %>
+    <div class="actions">
+      <%= f.submit "Update" %>
+    </div>
+
+  <% end %>
+
+  <hr>
+
+  <%= link_to "Back", :back %>
+
+</div>

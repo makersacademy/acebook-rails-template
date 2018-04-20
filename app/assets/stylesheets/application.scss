@@ -5,6 +5,11 @@ body {
   background-color: #f2deec36;
 }
 
+input[type=file] {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 input[type=submit] {
   background-color: #cc0066;
 }
@@ -17,7 +22,10 @@ textarea {
   background-color: pink;
 }
 
-
+.container {
+  margin-top: 100px;
+  text-align:center;
+}
 
 button {
   background-color: red;
