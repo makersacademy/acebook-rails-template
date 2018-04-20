@@ -26,7 +26,7 @@ The criteria followed to self-evaluate the work done is grouped into four sectio
 * Daily reflective blogs.
 * Daily stand ups/retrospectives or another technique for group checkins/reflection.
 
-##Sources of information📚
+##Sources of information 📚
 The sources of information are organised as follows:
 ###Quality indicators
 The facts are here:
@@ -41,7 +41,7 @@ https://medium.com/@teamdartlondon
 The deployment of the application is here:
 http://team-dart.herokuapp.com
 
-##Authors
+##Authors 🖋
 * **Daniel Regalo Campos**
 https://github.com/ddregalo
 * **Alejandro Pitarch Olivas**
@@ -50,6 +50,14 @@ https://github.com/xelAhcratiPsavilO
 https://github.com/Raefey
 * **Thomas James Duffy**
 https://github.com/TomJamesDuffy
+
+##Acknowledgments 🎓
+* **Edward Withers**
+https://github.com/dearshrewdwit
+* **Kay Lovelace**
+https://github.com/neoeno
+* **Daniel Bergquist**
+https://github.com/dbugsy
 <!--
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
