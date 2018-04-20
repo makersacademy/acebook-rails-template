@@ -56,4 +56,5 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
 
+  Paperclip.options[:command_path] = "/usr/local/bin"
 end
