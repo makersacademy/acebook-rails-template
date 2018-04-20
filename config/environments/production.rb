@@ -39,7 +39,8 @@ Rails.application.configure do
       s3_region: ENV.fetch('AWS_REGION'),
       # endpoint: ENV.fetch('AWS_ENDPOINT')
     },
-    s3_host_name: "s3-eu-west-2.amazonaws.com"
+    s3_host_name: "s3-eu-west-2.amazonaws.com",
+    url: "s3_domain_url"
   }
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
