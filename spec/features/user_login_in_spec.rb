@@ -3,7 +3,7 @@ require 'spec_helper'
 RSpec.feature "User sign in", type: :feature do
   scenario "User can sign in after registration" do
     user_sign_up
-    click_link "Sign_out"
+    click_link "Sign Out"
     fill_in "Email", with: "codingatmakers@gmail.com"
     fill_in "Password", with: "password"
     click_button "Log In"
