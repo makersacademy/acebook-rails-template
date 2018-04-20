@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<nav class="navbar navbar-light" style="background-color: #ffb3f5ba;">
+  <a class="navbar-brand">PinkFish</a>
+</nav>
 <html>
   <head>
     <title>Acebook</title>
@@ -17,8 +20,9 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpYw8zT74fI_hEC1oWuxBffkeucCoirAe-G_hjrjyNmIXJCCX4TQ" class="rounded float-right">
     <% if user_signed_in? %>
-      <p>Hello, <%= current_user.name %> - <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %></p>
+      <p>Hello, <%= current_user.name %> - <%= link_to "Edit_user",  edit_user_registration_path %> - <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %></p>
       <br>
     <% end %>
     <%= render partial: "shared/navbar" %>
