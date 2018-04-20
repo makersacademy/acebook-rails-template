@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class NotificationBroadcastJob < ApplicationJob
+class NotificationsBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(personal_message)

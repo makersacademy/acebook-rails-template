@@ -20,38 +20,20 @@ RSpec.feature 'Messenger', type: :feature do
   end
 
   scenario 'Users can send a message to a specific friend' do
-    sign_up
-    sign_out
-    sign_up2
-    click_button 'Inbox'
-    click_link 'Send Messages'
-    within('ul') do
-      within('li.Tom') do
-        click_link 'send a message'
-      end
-    end
-    fill_in 'personal_message[body]', with: 'hello'
-    click_button 'Create Personal message'
+    both_users_signup_then_send_tom_msg('hello')
     expect(page).to have_content('hello')
   end
 
   scenario 'user can view messages sent to them in Inbox page' do
-    sign_up
-    sign_out
-    sign_up2
-    click_button 'Inbox'
-    click_link 'Send Messages'
-
-    within('ul') do
-      within('li.Tom') do
-        click_link 'send a message'
-      end
-    end
-    fill_in 'personal_message[body]', with: 'hello matey'
-    click_button 'Create Personal message'
+    both_users_signup_then_send_tom_msg('hello matey')
     sign_out
     sign_in
     click_button 'Inbox'
     expect(page).to have_content 'hello matey'
+  end
+
+  scenario 'users receive notifications when messaged' do
+    Capybara.using_session("Tom's session") do
+    end
   end
 end

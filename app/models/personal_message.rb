@@ -6,6 +6,6 @@ class PersonalMessage < ApplicationRecord
   validates :body, presence: true
 
   after_create_commit do
-    NotificationBroadcastJob.perform_later(self)
+    NotificationsBroadcastJob.perform_later(self)
   end
 end

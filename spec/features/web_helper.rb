@@ -74,3 +74,19 @@ def second_user_add_post
   fill_in 'post[message]', with: 'Makers Academy is awesome!'
   click_button 'Submit'
 end
+
+def both_users_signup_then_send_tom_msg(message)
+  sign_up
+  sign_out
+  sign_up2
+  click_button 'Inbox'
+  click_link 'Send Messages'
+
+  within('ul') do
+    within('li.Tom') do
+      click_link 'send a message'
+    end
+  end
+  fill_in 'personal_message[body]', with: message
+  click_button 'Create Personal message'
+end

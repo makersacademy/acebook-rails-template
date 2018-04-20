@@ -12,5 +12,5 @@
 //
 //= require rails-ujs
 //= require_tree .
-//= require conversations
+//= require channels/conversations
 //= require cable
