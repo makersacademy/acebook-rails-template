@@ -1,5 +1,10 @@
 class Post < ApplicationRecord
-  has_attached_file :image, styles: { medium: "100x100>", thumb: "100x100>" }
+  has_attached_file :image, styles: {
+   thumb: '100x100>',
+   square: '200x200#',
+   medium: '300x300>',
+   large: '600x600>'
+ }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   validates :message, presence: true
   belongs_to :user, required: false
