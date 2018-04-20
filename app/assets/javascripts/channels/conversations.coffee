@@ -3,7 +3,7 @@ jQuery(document).on 'turbolinks:load', ->
   messages = $('#conversation-body')
   # code scrolls the conversations box to the most recent message at the bottom
 
-  if $('#current-user').size() > 0
+  if $('#current-user').size() >= 0
     App.personal_chat = App.cable.subscriptions.create {
       channel: "NotificationsChannel"
     },
@@ -22,6 +22,10 @@ received: (data) ->
     messages_to_bottom()
   else
     $('body').append(data['notification']) if data['notification']
+
+    $(document).on 'click', '#notification .close', ->
+  $(this).parents('#notification').fadeOut(1000)
+
 if messages.length > 0
   messages_to_bottom()
   $('#new_personal_message').submit (e) ->
