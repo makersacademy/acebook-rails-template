@@ -5,11 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'aws-sdk-s3'
 gem 'best_in_place', '~> 3.0.1'
 gem 'devise'
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
+# Use paperclip for user avatars
+gem "paperclip", "~> 6.0.0"
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
