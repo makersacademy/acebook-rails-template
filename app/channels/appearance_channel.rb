@@ -8,6 +8,7 @@ class AppearancesChannel < ApplicationCable::Channel
                                  user_id: current_user.id,
                                  online: true
   end
+  # Once someone is subscribed, set “user_SOME_ID_online” to “1” in Redis. Then start streaming and broadcast a message saying that a user is now online.
 
   def unsubscribed
     redis.del("user_#{current_user.id}_online")
@@ -15,6 +16,7 @@ class AppearancesChannel < ApplicationCable::Channel
                                  user_id: current_user.id,
                                  online: false
   end
+  # When a user unsubscribes, we delete the “user_SOME_ID_online” key and once again broadcast a message. Pretty simple, really.
 
   private
 

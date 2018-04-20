@@ -15,4 +15,8 @@ class User < ApplicationRecord
   has_many :personal_messages, dependent: :destroy
 
   # validates :author, uniqueness: { scope: :receiver }
+
+  def online?
+    !Redis.new.get("user_#{id}_online").nil?
+end
 end
