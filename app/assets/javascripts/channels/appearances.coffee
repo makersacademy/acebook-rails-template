@@ -9,5 +9,8 @@ jQuery(document).on 'turbolinks:load', ->
   received: (data) ->
     user = $(".user-#{data['user_id']}")
     user.toggleClass 'online', data['online']
+    # adds or removes the online class:
+
+
 
 # Basically, when a user subscribes to this channel, they are online.
