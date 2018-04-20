@@ -6,19 +6,11 @@
     <img class="img-fluid" alt="Responsive image"><%= image_tag @post.image.url, :style => "max-height: 500px; max-width: 500px;" %></img>
   <% end %>
   <div class="small"><%= @post.created_at_timestring %></div>
-  <span>
-    <% if @post.owner?(current_user) %>
-      <%= link_to 'Edit', edit_post_path(@post) %>
-      <%= link_to 'Delete', post_path(@post),
-          method: :delete,
-          data: { confirm: 'Are you sure?' } %>
-    <% end %>
-  </span>
   <div id="<%="post_likes_wrapper"%>">
     <div id="<%="post_likes"%>">
       <span class="counters">
         <% pre_like = @post.find_like(current_user) %>
-        <% if pre_like %>
+        <p><% if pre_like %>
           <%= button_to 'Unlike', post_like_path(@post, pre_like),
           type: "button",
           class: "btn btn-primary",
@@ -36,10 +28,18 @@
           remote: true,
           data: { disable_with: "Like" },
           id: "like_button" %>
-        <% end %>
-        <i class="far fa-heart"><%= @post.like_count_string %></i>
+        <% end %></p>
+        <h4><i class="fas fa-heart"><%= @post.like_count_string %></i></h4>
     </div>
   </div>
+  <span>
+    <% if @post.owner?(current_user) %>
+      <%= link_to 'Edit', edit_post_path(@post) %>
+      <%= link_to 'Delete', post_path(@post),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </span>
 </div>
 <%= render 'comments/comment' %>
 </div>
