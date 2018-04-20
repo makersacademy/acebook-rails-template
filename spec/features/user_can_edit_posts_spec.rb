@@ -19,7 +19,7 @@ RSpec.feature "Editing", type: :feature do
   scenario "Cannot edit posts" do
     click_link 'Logout'
     sign_up("test2@test.com", "test2")
-    click_link "View Comments"
+    click_link "Hello, world!"
     expect(page).not_to have_link("Edit")
     expect(page).not_to have_link("Delete")
   end

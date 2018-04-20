@@ -14,10 +14,11 @@ RSpec.feature "Auto links", type: :feature do
 
   scenario "Link exists in comments" do
     link_url = "https://github.com/vmg/rinku"
+    link_text = "this - " + link_url
     add_post
-    click_link "View Comments"
-    fill_in "comment[content]", with: link_url
-    click_button "Create Comment"
+    click_link "Hello, world!"
+    fill_in "comment[content]", with: link_text
+    click_button "New Comment"
     expect(find("div#comment_0")).to have_link(link_url)
   end
 

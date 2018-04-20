@@ -19,9 +19,9 @@ RSpec.feature "Character capacity", type: :feature do
 
   scenario "Can like post and view immediately" do
     add_post
-    click_link "View Comments"
+    click_link "Hello, world!"
     fill_in "comment[content]", with: @long_comment
-    click_button "Create Comment"
+    click_button "New Comment"
     expect(page).to have_css("div#comment_0", text: @shortened_comment)
   end
 
