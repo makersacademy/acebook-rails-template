@@ -8,4 +8,12 @@ class PersonalMessage < ApplicationRecord
   after_create_commit do
     NotificationsBroadcastJob.perform_later(self)
   end
+
+  def receiver
+    if conversation.author == conversation.receiver || conversation.receiver == user
+      conversation.author
+    else
+      conversation.receiver
+    end
+  end
 end

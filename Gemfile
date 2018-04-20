@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'turbolinks', '~> 5.0.0'
 gem 'emoji'
 gem 'coffee-rails'
+gem 'jquery-rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
