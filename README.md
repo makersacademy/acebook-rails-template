@@ -1,4 +1,4 @@
-# DART
+# DART 🎯
 DART is team project consisting of the implementation of a social media platform.
 The primary goal of this project is to use high-quality processes to build a project in a team.
 The areas of focus are:
@@ -7,7 +7,7 @@ The areas of focus are:
 * Team work and use of Agile methodologies.
 * Understanding of a deployment pipeline.
 
-##Criteria
+##Criteria 🔍
 The criteria followed to self-evaluate the work done is grouped into four sections:
 ###Tests
 * Passes tests.
@@ -26,7 +26,8 @@ The criteria followed to self-evaluate the work done is grouped into four sectio
 * Daily reflective blogs.
 * Daily stand ups/retrospectives or another technique for group checkins/reflection.
 
-##Sources of information
+##Sources of information📚
+The sources of information are organised as follows:
 ###Quality indicators
 The facts are here:
 <a href="https://codeclimate.com/github/TomJamesDuffy/acebook-dart/maintainability"><img src="https://api.codeclimate.com/v1/badges/59c24b47dcc4c27c480a/maintainability" /></a>
@@ -37,9 +38,18 @@ The card wall is here: [Trello](https://trello.com/b/rehxDBbM/dartbook)
 The blog is here:
 https://medium.com/@teamdartlondon
 ###Platform
-The application is here:
+The deployment of the application is here:
 http://team-dart.herokuapp.com
 
+##Authors
+* **Daniel Regalo Campos**
+https://github.com/ddregalo
+* **Alejandro Pitarch Olivas**
+https://github.com/xelAhcratiPsavilO
+* **Raefe Newton-Jones**
+https://github.com/Raefey
+* **Thomas James Duffy**
+https://github.com/TomJamesDuffy
 <!--
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
