@@ -21,86 +21,50 @@ The Splendaberg team consists of Alfie Darko (@AlfieDarko), Charlene Bastians (@
 
 The app is hosted live using Heroku at: https://splendaberg-acebook.herokuapp.com
 
+We used the Heroku Pipeline integrated with Travis CI for continuous integration and deployment of the app. Only when all tests in Travis were passing (including RSpec, Rubocop and Code Climate) would the Git master branch be deployed to the Heroku Staging Environment. This acted as a live-environment test-bed for the team, who could then manually deploy the app to Production.
+
+## Tech Stack
+* Client Side: HTML, CSS, JavaScript, jQuery
+* Server Side: Rails, Heroku, AWS S3
+* Database: PSQL
+* Tools: Travis CI, Code Climate, RSpec, Rubocop, PSequel
+
+## Team & Project Approach
+* Project managed by Julian throughout (SPOC)
+* Daily Stand Ups in the morning
+* Daily Retros in the afternoon
+* Outputs of both stored in project Wiki
+* Regular informal communications via Slack
+* Wiki also used for Knowledge Sharing
+* Took a mixed approach of solo, pair and mob work depending on daily priorities, individual learning objectives/desires, and team member experience
+* Trello for task management
+
 ## Local Set Up
 1. Clone repo: `git clone git@github.com:julesnuggy/acebook-byte-3.git`
 2. Install Bundler: `gem install bundler`
 3. Install app gems: `bundle install`
-4. Build local databases: `rails db:migrate`
+4. Create local databases: `rails db:create`
+5. Migrate database tables: `rails db:migrate`
 
-## Testing
-1. Run `rspec` in bash from the project root directory
-2. To view test coverage, open the _index.html_ file found in the **coverage** folder
-
-
-## Core Resources:
-1. Posts - responsible for managing the posts by a user
-2. Likes - responsible for managing likes by a user on posts in the app
-3. Comments - responsible for managing comments by a user on posts in the app
-4. Users - responsible for managing the app's users
-
-## How to Use
-ROUGH ESTIMATION
-1. From the index page, click Sign Up to create an account
-2. Enter your username and password
-3. Click on Log In and enter your credentials
-4.
+## Testing & Code Quality
+1. Run `rspec` in bash from the project root directory to check feature tests
+2. Run `rubocop` to check code quality
+3. Check Code Climate images above for additional code quality checks
+4. As long as Travis is passing, all these tests/checks are passing
 
 ## MVP User Stories
-```
-As a user,
-So that I can validate my self-worth,
-I want to be able to post a message on Acebook.
-```
-
-```
-As a user,
-So that I can be a nosey git,
-I want to see everyone's posts in a news feed.
-```
-
-```
-As a user,
-So that I can put other people down,
-I want to be able to comment on other people's posts.
-```
-
-```As a user,
-So that I can show my support,
-I want to be able to like a post.
-```
-
-```As a user,
-So that I can see how popular (or unpopular) I am,
-I want to be able to see the number of likes of a post.
-```
-
-```
-As a user,
-So that I can partake in Acebook,
-I want to be able to sign up.
-```
-
-```
-As a user,
-So that I can control my account security,
-I want to be able to sign in and out.
-```
-
-### Nice-to-Haves User Stories
-```
-TBC
-```
+Click [here](Userstories.md) for User Stories
 
 ## Card Wall
 The project Card Wall is where the team's To Do list and specification are located. This is a "working document" which changes as we complete tasks and implement features.
 https://trello.com/b/3DGCTw4g/acebook-byte-3
 
 ## Deployment and Database
-The app is hosted on Heroku and uses its built-in cloud database. For this project, we used Tom's Heroku account. You will need to be a Collaborator to be able to run / modify the Heroku app.
+The app is hosted on Heroku and uses its built-in cloud database (based on PostgreSQL). For this project, we used Tom's Heroku account. You will need to be a Collaborator to be able to run / modify the Heroku app.
 
-To run the app in the deployed Heroku environment:
-* In your browser, visit https://splendaberg-acebook.herokuapp.com
-* Or, in your bash, run: `heroku open -a splendaberg-acebook
+To open the app in the deployed Heroku environment:
+* Production: https://splendaberg-acebook.herokuapp.com
+* Staging: https://splendaberg-acebook-staging.herokuapp.com
 
 To access the psql database hosted on Heroku, in your bash, navigate to the
 project directory and run:
@@ -108,3 +72,10 @@ project directory and run:
 heroku pg:psql # Access the psql REPL
 SELECT * FROM <table_name> # Display all table contents
 ```
+
+## Known Issues
+* With the Chat function, there is no way to test the pop-up box function due to non-compatibility between Selenium WebDriver and Turbolinks. This is a known problem by the Shopify team.
+Selenium doesn't pick up the pop-up element.
+* Didn't have time to test Avatar upload function.
+* Didn't test the new line funciton in Posts.
+* Issue with JavaScript / jQuery where the click event is not picking up the first time, thus preventing no-refresh update of Likes counter.
