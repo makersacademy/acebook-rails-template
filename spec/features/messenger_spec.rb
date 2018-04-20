@@ -36,7 +36,6 @@ RSpec.feature 'Messenger', type: :feature do
     Capybara.using_session("Jerry's session") do
       sign_up2
     end
-
     Capybara.using_session("Tom's session") do
       sign_up_send_msg('Hello Jerry')
     end
