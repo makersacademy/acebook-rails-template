@@ -11,6 +11,8 @@ The Underdogs team consists of Giacomo Ninniri (@Giacomo Ninniri), Somayeh Alimo
 
 The app is hosted live using Heroku at: https://arcane-woodland-75224.herokuapp.com/
 
+![alt text](https://github.com/Gia1987/acebook-Underdogs/blob/master/mvc.png)
+
 ## Local Set Up
 1. Clone repo: `git clone git@github.com:Gia1987/acebook-Underdogs.git`
 2. Install Bundler: `gem install bundler`
@@ -82,3 +84,4 @@ The app is hosted on Heroku. We used Giacomo's Heroku account. You need to be a 
 To run the app in the deployed Heroku environment:
 * In your browser, visit https://arcane-woodland-75224.herokuapp.com/
 * Or, in your bash, run: `heroku open -a acebook-underdogs
+
