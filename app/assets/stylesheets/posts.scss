@@ -54,11 +54,13 @@ div.container_div {
 div.post_message_div {
   flex-grow: 9;
   padding: 0px 10px;
+  font-size: 18px;
 }
 
 div.post_options_div {
   flex-grow: 1;
   display: flex;
+  font-size: 12px;
 }
 
 div#comment_count, #like_count {
