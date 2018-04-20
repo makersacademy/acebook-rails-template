@@ -90,3 +90,17 @@ def both_users_signup_then_send_tom_msg(message)
   fill_in 'personal_message[body]', with: message
   click_button 'Create Personal message'
 end
+
+def sign_up_send_msg(message)
+  sign_up
+  click_button 'Inbox'
+  click_link 'Send Messages'
+
+  within('ul') do
+    within('li.Jerry') do
+      click_link 'send a message'
+    end
+  end
+  fill_in 'personal_message[body]', with: message
+  click_button 'Create Personal message'
+end

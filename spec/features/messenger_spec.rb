@@ -33,7 +33,15 @@ RSpec.feature 'Messenger', type: :feature do
   end
 
   scenario 'users receive notifications when messaged' do
+    Capybara.using_session("Jerry's session") do
+      sign_up2
+    end
+
     Capybara.using_session("Tom's session") do
+      sign_up_send_msg('Hello Jerry')
+    end
+    Capybara.using_session("Jerry's session") do
+      expect(page).to have_content 'Hello Jerry'
     end
   end
 end
