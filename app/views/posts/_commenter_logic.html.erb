@@ -2,7 +2,7 @@
 <% post.comments.each do |comment|%>
   <% arr << comment.user.username%>
 <% end%>
-<%= arr.uniq.slice(0,3).join(", ")%>
+<%=arr.uniq.slice(0,3).join(", ")%>
 <% if arr.uniq.length - 3 > 0%>
   and <%=arr.uniq.length - 3%> more...
 <% end%>

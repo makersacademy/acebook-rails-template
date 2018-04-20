@@ -31,12 +31,13 @@
       <div class="container_div">
         <div class="post_message_div">
           <p id="post_body_<%=idx%>"><%= simple_format(post.message) %></p>
-
         </div>
         <div class="post_options_div">
           <div id='comment_count'>
             <%= link_to 'Comments: ', post_path(post), {method: :get, id: 'post_btn', class: 'post_button'} %>
             <%= post.comments.count%>
+            <br>
+            <%= render partial: 'commenter_logic', locals: {post: post} %>
           </div>
           <div id='like_count'>
             <strong>
@@ -44,9 +45,7 @@
             </strong>
             <%= post.likes.where(on: true).count %>
           </div>
-
         </div>
-        <%= render partial: 'commenter_logic', locals: {post: post} %>  
       </div>
     </div>
   </div>
