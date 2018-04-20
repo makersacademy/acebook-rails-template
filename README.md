@@ -1,5 +1,5 @@
 # DART 🎯
-DART is team project consisting of the implementation of a social media platform.
+DART is a team project consisting of the implementation of a social media platform.
 The primary goal of this project is to use high-quality processes to build a project in a team.
 The areas of focus are:
 * Learning process.
