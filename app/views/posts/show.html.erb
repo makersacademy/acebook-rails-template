@@ -3,7 +3,7 @@
 <div class="comment-box">
   <h5><%= simple_format(Rinku.auto_link(@post.message)) %></h5>
   <% if @post.image.file? %>
-    <img><%= image_tag @post.image.url(:original) %></img>
+    <img><%= image_tag @post.image.url(:medium) %></img>
   <% end %>
   <div class="small"><%= @post.created_at_timestring %></div>
   <div id="<%="post_likes_wrapper"%>">
