@@ -13,7 +13,7 @@
           <%= form_for(@user, as: resource_name, url: avatar_path, html: { method: :put, multipart: true }) do |f| %>
             <%= devise_error_messages! %>
 
-            <%= image_tag @user.avatar(:thumb), class: "img-fit-contain centered"%>
+            <%= image_tag @user.avatar(:thumb), class: "img-responsive centered"%>
             <p class="text-center">Current avatar</p>
 
             <div class="divider"></div>
