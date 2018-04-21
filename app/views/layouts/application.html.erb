@@ -9,22 +9,33 @@
   </head>
 
   <body>
+    <div class="container">
     <% if user_signed_in? %>
-      <ul>
-        <li><%= link_to 'Edit User', edit_user_registration_path, :class => "" %></li>
-        <li><%= link_to 'Edit Avatar', avatar_path, :class => "" %></li>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete', :class => "" %></li>
-      </ul>
+      <header class="navbar">
+        <section class="navbar-section">
+          <a href="#" class="navbar-brand mr-2">PinkFish</a>
+        </section>
+        <section class="navbar-section">
+          <%= link_to 'Edit User', edit_user_registration_path, :class => "btn btn-link" %>
+          <%= link_to 'Edit Avatar', avatar_path, :class => "btn btn-link" %>
+          <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete', :class => "btn btn-link" %>
+        </section>
+      </header>
     <% end %>
 
     <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
+      <div class="toast toast-success">
+        <%= notice %>
+      </div>
     <% end %>
 
     <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
+      <div class="toast toast-error">
+        <%= alert %>
+      </div>
     <% end %>
 
     <%= yield %>
+    </div>
   </body>
 </html>
