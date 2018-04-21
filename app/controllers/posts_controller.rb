@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     if @post.save
       flash[:notice] = 'Post was successfully created!'
     else
-      flash[:notice] = 'Invalid post'
+      flash[:alert] = 'Please enter a valid post'
     end
     redirect_to posts_url
   end

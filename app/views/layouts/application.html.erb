@@ -10,18 +10,19 @@
 
   <body>
     <div class="container">
-    <% if user_signed_in? %>
-      <header class="navbar">
-        <section class="navbar-section">
-          <a href="#" class="navbar-brand mr-2">PinkFish</a>
-        </section>
-        <section class="navbar-section">
-          <%= link_to 'Edit User', edit_user_registration_path, :class => "btn btn-link" %>
-          <%= link_to 'Edit Avatar', avatar_path, :class => "btn btn-link" %>
-          <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete', :class => "btn btn-link" %>
-        </section>
-      </header>
-    <% end %>
+      <% if user_signed_in? %>
+        <header class="navbar">
+          <section class="navbar-section">
+            <a href="#" class="navbar-brand mr-2">PinkFish</a>
+          </section>
+          <section class="navbar-section">
+            <%= link_to 'Edit User', edit_user_registration_path, :class => "btn btn-link" %>
+            <%= link_to 'Edit Avatar', avatar_path, :class => "btn btn-link" %>
+            <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete', :class => "btn btn-link" %>
+          </section>
+        </header>
+      <% end %>
+    </div>
 
     <% if notice %>
       <div class="toast toast-success">
@@ -36,6 +37,5 @@
     <% end %>
 
     <%= yield %>
-    </div>
   </body>
 </html>

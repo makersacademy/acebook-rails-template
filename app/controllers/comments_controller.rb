@@ -1,13 +1,16 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+
+
   def create
     @post = Post.find(params[:post_id])
     comment_hash = comment_params.merge(user_id: current_user.id)
     @comment = @post.comments.build(comment_hash)
+
     if @comment.save
       flash[:notice] = 'Comment was successfully created!'
     else
-      flash[:notice] = 'Invalid comment'
+      flash[:alert] = 'Please enter a valid comment'
     end
     redirect_to posts_path
   end
