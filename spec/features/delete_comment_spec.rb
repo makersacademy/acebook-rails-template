@@ -11,7 +11,9 @@ RSpec.feature "Deleting comments", type: :feature do
   end
 
   scenario "Can delete comments" do
-    click_link "Delete"
+    within(find("div#comment_0")) do
+      click_link "Delete"
+    end
     expect(page).not_to have_content("I am comment#1")
   end
 

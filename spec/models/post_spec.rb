@@ -28,7 +28,7 @@ RSpec.describe Post, type: :model do
       post = Post.create(message: "test", user_id: 1)
       post.comments.create(content: "test", post_id: 1, user_id: 1)
       post.comments.create(content: "test2", post_id: 1, user_id: 1)
-      expect(post.timesort_comments[0].content).to eq("test2")
+      expect(post.timesort_comments[0].content).to eq("test")
     end
   end
 

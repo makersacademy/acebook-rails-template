@@ -1,26 +1,26 @@
-<div class="row">
-    <div class="col">
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
       <div class="comment">
         <% @post.timesort_comments.each_with_index do |comment, i| %>
           <div class="list-group">
             <div class="list-group-item">
               <div id="<%="comment_#{i}"%>">
                 <%= simple_format(Rinku.auto_link(comment.content)) %>
-              </div>
-              <div>
                 <%= User.find(comment.user_id).identifier %>
+                <% if current_user == comment.user %>
+                  <%= link_to 'Delete', post_comment_path(@post, comment),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+                <% end %>
               </div>
-              <% if current_user == comment.user %>
-                <%= link_to 'Delete comment', [comment.post, comment],
-                  method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
-              <% end %>
             </div>
           </div>
         <% end %>
       </div>
     </div>
-    <div class="col">
+    <div class="col-sm">
       <%= render 'comments/form' %>
     </div>
   </div>
+</div>

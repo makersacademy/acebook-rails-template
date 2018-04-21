@@ -14,7 +14,6 @@ class LikesController < ApplicationController
     redirect_to URI(request.referer).path
   end
 
-
   private
 
   def find_post

@@ -20,13 +20,13 @@ RSpec.feature "Commenting", type: :feature do
     expect(page).to have_content("I am comment#1")
   end
 
-  scenario "Comments are sorted by ascending age" do
+  scenario "Comments are sorted by descending age" do
     fill_in "comment[content]", with: "I am comment#2"
     click_button "New Comment"
     alltext = page.body
     i1 = alltext.index('I am comment#1')
     i2 = alltext.index('I am comment#2')
-    expect(i2 < i1).to eq true
+    expect(i2 > i1).to eq true
   end
 
   scenario "comment count is shown" do

@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   def not_their_comment
     current_user.id.to_i != @comment.user_id.to_i
   end
-
+  
   def find_comment
     @comment = @post.comments.find(params[:id])
   end
