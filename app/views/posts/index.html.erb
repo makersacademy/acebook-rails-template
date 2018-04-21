@@ -1,77 +1,70 @@
 <div class="container" style="padding-top: 30px">
-<div class="columns ">
-  <div class="column col-8 centered">
-    <div class="columns">
-      <!-- User profile -->
-      <div class="column col-4">
-        <div class="empty">
-          <!-- Profile avatar -->
-          <figure class="avatar avatar-xl">
-            <%= image_tag @post.user.avatar(:thumb), class: "avatar_img" %>
-          </figure>
-          <!-- Profile username -->
-          <p class="empty-title h5"><%= @post.user.name %></p>
-          <!-- Profile links -->
-          <ul class="nav">
-            <li class="nav-item">
-              <a href="#">Edit User</a>
-            </li>
-            <li class="nav-item">
-              <a href="#">Edit Avatar</a>
-            </li>
-          </ul>
-          <div class="empty-action">
-            <button class="btn btn-primary">Sign Out</button>
-          </div>
-        </div>
-      </div>
+  <div class="columns ">
+    <div class="column col-8 centered">
+      <div class="columns">
 
-      <!-- Enter post -->
-      <div class="column">
-        <div class="empty" style="padding: 1rem 1rem;">
-          <div class="column">
-            <div class="form-group">
-              <%= form_for @post do |form| %>
-                <%= form.text_area :message, placeholder: 'Enter your message', class: 'form-input', rows: '2'%>
-                <%= form.submit "Post", class: "btn btn-primary btn-block", style: 'margin-top: 10px' %>
-              <% end %>
+        <div class="column col-4"> <!-- User profile -->
+          <div class="empty">
+            <figure class="avatar avatar-xl"> <!-- Profile avatar -->
+              <%= image_tag @post.user.avatar(:thumb), class: "avatar_img" %>
+            </figure>
+            <p class="empty-title h5"><%= @post.user.name %></p> <!-- Profile username -->
+            <ul class="nav"> <!-- Profile links -->
+              <li class="nav-item">
+                <%= link_to 'Edit User', edit_user_registration_path, :class => "btn btn-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Edit Avatar', avatar_path, :class => "btn btn-link" %>
+              </li>
+            </ul>
+            <div class="empty-action">
+              <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete', :class => "btn btn-primary" %>
             </div>
           </div>
         </div>
 
-        <!-- Posts -->
-        <% @posts.each do |post| %>
-          <div class="columns" style="padding: .4rem;">
-            <div class="column">
-              <div class="panel">
+        <div class="column">
+          <div class="empty" style="padding: 1rem 1rem;">
+            <div class="form-group">
+              <%= form_for @post do |form| %>
+                <%= form.text_area :message, placeholder: 'Enter your message', class: 'form-input', rows: '2'%>
+                <%= form.submit "Post", class: "btn btn-primary btn-block", style: 'margin-top: 10px' %>
+                <% end %>
+            </div>
+          </div>
 
-                <div class="column">
-                  <div class="panel-header">
-                    <div class="float-right">
-                      <%= post.likes.where(liked: true).length %>
-                      <%= 'Like'.pluralize(post.likes.where(liked: true).length) %>
-                      <% pre_like = Like.find_by(user_id: current_user.id, post_id: post.id) %>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="columns col-oneline">
-                  <div class="column col-2">
-                    <div class="panel-header text-center">
-                      <figure class="avatar avatar-lg">
-                        <%= image_tag @post.user.avatar(:thumb), class: "avatar_img" %>
-                      </figure>
-                      <div class="d-block">
-                        <%= post.user.name %>
+          <% @posts.each do |post| %> <!-- Posts -->
+            <div class="columns" style="padding-top: 10px;">
+              <div class="column">
+                <div class="panel">
+                  <div class="column">
+                    <div class="panel-header">
+                      <div class="float-right">
+                        <%= post.likes.where(liked: true).length %>
+                        <%= 'Like'.pluralize(post.likes.where(liked: true).length) %>
+                        <% pre_like = Like.find_by(user_id: current_user.id, post_id: post.id) %>
                       </div>
                     </div>
                   </div>
-                  <div class="column">
-                    <div class="tile">
-                      <%= best_in_place post, :message, :as => :textarea, :ok_button => 'Save', display_with: -> v { v.gsub(/[\r\n]+/, '<br>').html_safe }, :cancel_button => 'Cancel', activator: '#edit-' + post.id.to_s %>
+
+                  <div class="columns col-oneline">
+                    <div class="column col-2">
+                      <div class="panel-header text-center">
+                        <figure class="avatar avatar-lg">
+                          <%= image_tag @post.user.avatar(:thumb), class: "avatar_img" %>
+                        </figure>
+                        <div class="d-block">
+                          <%= post.user.name %>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="column">
+                      <div class="tile">
+                        <%= best_in_place post, :message, :as => :textarea, :ok_button => 'Save', display_with: -> v { v.gsub(/[\r\n]+/, '<br>').html_safe }, :cancel_button => 'Cancel', activator: '#edit-' + post.id.to_s %>
+                      </div>
                     </div>
                   </div>
-                </div>
 
                 <div class="column">
                   <div class="float-right">
@@ -90,8 +83,7 @@
                   </div>
                 </div>
 
-                <!-- Comments -->
-                <% post.comments.each do |comment| %>
+                <% post.comments.each do |comment| %> <!-- Comments -->
                   <div class="columns" style="padding: .4rem;">
                     <div class="column">
                       <div class="panel">
@@ -110,6 +102,7 @@
                                 <%= image_tag comment.user.avatar(:thumb), class: "avatar_img" %>
                               </figure>
                             </div>
+
                             <div class="tile-content">
                               <p class="tile-title"><%= comment.user.name %></p>
                               <p class="tile-subtitle text-gray"><%= best_in_place comment, :comment, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel',  activator: '#edit-comment' + comment.id.to_s %></p>
@@ -136,19 +129,20 @@
                       </div>
                     </div>
                   </div>
-              <% end %> <!-- End of comments -->
-                <div class="empty" style="padding: 0.5rem 0.5rem;">
-                  <%= form_with(model: [ post, post.comments.build ], local: true, class: 'input-group') do |form| %>
-                    <%= form.text_field :comment, id: 'post_comment', class: "form-input" %>
-                    <%= form.submit "Comment", class: 'btn btn-primary input-group-btn' %>
-                  <% end %>
+
+                <% end %> <!-- End of comments -->
+                  <div class="empty" style="padding: 0.5rem 0.5rem;">
+                    <%= form_with(model: [ post, post.comments.build ], local: true, class: 'input-group') do |form| %>
+                      <%= form.text_field :comment, id: 'post_comment', class: "form-input" %>
+                      <%= form.submit "Comment", class: 'btn btn-primary input-group-btn' %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
