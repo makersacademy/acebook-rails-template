@@ -68,13 +68,13 @@
 
                 <div class="column">
                   <div class="float-right">
-                    <% if current_user.id == post.user_id %>
-                      <% if pre_like && pre_like.liked %>
-                        <%= link_to "Unlike", post_like_path(post, pre_like), method: :delete, class: 'btn btn-link', id: 'unlike-post' %>
-                      <% else %>
-                        <%= link_to "Like", post_likes_path(post), method: :post, class: 'btn btn-link', id: 'like-post' %>
-                      <% end %>
+                    <% if pre_like && pre_like.liked %>
+                      <%= link_to "Unlike", post_like_path(post, pre_like), method: :delete, class: 'btn btn-link', id: 'unlike-post' %>
+                    <% else %>
+                      <%= link_to "Like", post_likes_path(post), method: :post, class: 'btn btn-link', id: 'like-post' %>
+                    <% end %>
 
+                    <% if current_user.id == post.user_id %>
                       <%= link_to 'Edit', 'javascript:', id: 'edit-' + post.id.to_s, class: "btn btn-link"%>
                       <%= link_to 'Delete', post, method: :delete, class: "btn btn-link"%>
                     <% end %>
@@ -110,13 +110,12 @@
                               <div class="column">
                                 <div class="float-right">
                                   <% pre_like = Like.find_by(user_id: current_user.id, comment_id: comment.id) %>
+                                  <% if pre_like && pre_like.liked %>
+                                    <%= link_to "Unlike", comment_like_path(comment, pre_like), method: :delete, class: 'btn btn-link', id: 'unlike-comment' %>
+                                  <% else %>
+                                    <%= link_to "Like", comment_likes_path(comment), method: :post, class: 'btn btn-link', id: 'like-comment' %>
+                                  <% end %>
                                   <% if current_user.id == comment.user_id %>
-                                    <% if pre_like && pre_like.liked %>
-                                      <%= link_to "Unlike", comment_like_path(comment, pre_like), method: :delete, class: 'btn btn-link', id: 'unlike-comment' %>
-                                    <% else %>
-                                      <%= link_to "Like", comment_likes_path(comment), method: :post, class: 'btn btn-link', id: 'like-comment' %>
-                                    <% end %>
-
                                     <%= link_to 'Edit', 'javascript:', id: 'edit-comment' + comment.id.to_s, class: "btn btn-link"%>
                                     <%= link_to 'Delete', comment, method: :delete, class: "btn btn-link"%>
                                   <% end %>
