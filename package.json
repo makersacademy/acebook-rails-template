@@ -1,7 +1,0 @@
-{
-  "name": "acebook",
-  "private": true,
-  "dependencies": {
-    "spectre.css": "^0.5.1"
-  }
-}
