@@ -16,9 +16,9 @@
             <a href="#" class="navbar-brand mr-2">PinkFish</a>
           </section>
           <section class="navbar-section">
-            <%= link_to 'Edit User', edit_user_registration_path, :class => "btn btn-link" %>
-            <%= link_to 'Edit Avatar', avatar_path, :class => "btn btn-link" %>
-            <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete', :class => "btn btn-link" %>
+            <%= link_to 'Edit User', edit_user_registration_path, class: "btn btn-link" %>
+            <%= link_to 'Edit Avatar', avatar_path, :class => "btn btn-link", id: 'navbar-edit-avatar'%>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: 'delete', class: "btn btn-link", id: 'navbar-sign-out'%>
           </section>
         </header>
       <% end %>

@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       @post.update_attributes(post_params)
       format.html { redirect_to(@post) }
-      format.json { render json: { message:'Post was successfully edited!' } }
+      format.json { render json: { message: 'Post was successfully edited!' } }
       format.json { respond_with_bip(@post) }
     end
   end

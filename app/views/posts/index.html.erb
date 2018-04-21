@@ -27,7 +27,7 @@
           <div class="empty" style="padding: 1rem 1rem;">
             <div class="form-group">
               <%= form_for @post do |form| %>
-                <%= form.text_area :message, placeholder: 'Enter your message', class: 'form-input', rows: '2'%>
+                <%= form.text_area :message, placeholder: 'Enter your message', id: 'post-message',class: 'form-input', rows: '2'%>
                 <%= form.submit "Post", class: "btn btn-primary btn-block", style: 'margin-top: 10px' %>
                 <% end %>
             </div>
@@ -36,7 +36,7 @@
           <% @posts.each do |post| %> <!-- Posts -->
             <div class="columns" style="padding-top: 10px;">
               <div class="column">
-                <div class="panel">
+                <div class="panel" id="posts">
                   <div class="column">
                     <div class="panel-header">
                       <div class="float-right">
@@ -70,9 +70,9 @@
                   <div class="float-right">
                     <% if current_user.id == post.user_id %>
                       <% if pre_like && pre_like.liked %>
-                        <%= link_to "Unlike", post_like_path(post, pre_like), method: :delete, class: 'btn btn-link' %>
+                        <%= link_to "Unlike", post_like_path(post, pre_like), method: :delete, class: 'btn btn-link', id: 'unlike-post' %>
                       <% else %>
-                        <%= link_to "Like", post_likes_path(post), method: :create, class: 'btn btn-link' %>
+                        <%= link_to "Like", post_likes_path(post), method: :post, class: 'btn btn-link', id: 'like-post' %>
                       <% end %>
 
                       <%= link_to 'Edit', 'javascript:', id: 'edit-' + post.id.to_s, class: "btn btn-link"%>
@@ -86,7 +86,7 @@
                 <% post.comments.each do |comment| %> <!-- Comments -->
                   <div class="columns" style="padding: .4rem;">
                     <div class="column">
-                      <div class="panel">
+                      <div class="panel" id="comments">
                         <div class="panel-header">
                           <div class="panel-title">
                             <div class="float-right">
@@ -112,9 +112,9 @@
                                   <% pre_like = Like.find_by(user_id: current_user.id, comment_id: comment.id) %>
                                   <% if current_user.id == comment.user_id %>
                                     <% if pre_like && pre_like.liked %>
-                                      <%= link_to "Unlike", comment_like_path(comment, pre_like), method: :delete, class: 'btn btn-link' %>
+                                      <%= link_to "Unlike", comment_like_path(comment, pre_like), method: :delete, class: 'btn btn-link', id: 'unlike-comment' %>
                                     <% else %>
-                                      <%= link_to "Like", comment_likes_path(comment), method: :create, class: 'btn btn-link' %>
+                                      <%= link_to "Like", comment_likes_path(comment), method: :post, class: 'btn btn-link', id: 'like-comment' %>
                                     <% end %>
 
                                     <%= link_to 'Edit', 'javascript:', id: 'edit-comment' + comment.id.to_s, class: "btn btn-link"%>
@@ -133,7 +133,7 @@
                 <% end %> <!-- End of comments -->
                   <div class="empty" style="padding: 0.5rem 0.5rem;">
                     <%= form_with(model: [ post, post.comments.build ], local: true, class: 'input-group') do |form| %>
-                      <%= form.text_field :comment, id: 'post_comment', class: "form-input" %>
+                      <%= form.text_field :comment, id: 'post-comment', class: "form-input" %>
                       <%= form.submit "Comment", class: 'btn btn-primary input-group-btn' %>
                     <% end %>
                   </div>

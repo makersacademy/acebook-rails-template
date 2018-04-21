@@ -7,7 +7,7 @@ RSpec.feature "Timeline", type: :feature do
     user_sign_up
     travel_to Time.zone.local(1988, 8, 11, 00, 00, 00)
 
-    fill_in "post_message", with: "Hello, world!"
+    fill_in "post-message", with: "Hello, world!"
     click_button "Post"
 
     expect(page).to have_content("11 August at 0:00")

@@ -4,12 +4,12 @@ RSpec.feature "Empty comments", type: :feature do
   scenario "User cannot post an empty comment" do
     user_sign_up
 
-    fill_in "post_message", with: "Hello world in a post!"
+    fill_in "post-message", with: "Hello world in a post!"
     click_button "Post"
 
-    fill_in "post_comment", with: nil
+    fill_in "post-comment", with: nil
     click_button "Comment"
 
-    expect(page).to have_content("Invalid comment")
+    expect(page).to have_content("Please enter a valid comment")
   end
 end
