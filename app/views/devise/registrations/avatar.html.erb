@@ -1,29 +1,43 @@
-<div class="container">
+<div class="container" style="padding-top: 100px">
+  <div class="columns">
+    <div class="column col-4 centered">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title h3">
+            Edit avatar
+          </div>
+        </div>
 
-  <%= form_for(@user, as: resource_name, url: avatar_path, html: { method: :put, multipart: true }) do |f| %>
-    <%= devise_error_messages! %>
+        <div class="panel-body">
 
-    <div id="paperclip_form" class="field">
-      <%= f.label :avatar %><br />
-      <br>
-      <%= f.file_field :avatar %><br />
+          <%= form_for(@user, as: resource_name, url: avatar_path, html: { method: :put, multipart: true }) do |f| %>
+            <%= devise_error_messages! %>
+
+            <%= image_tag @user.avatar(:thumb), class: "img-fit-contain centered"%>
+            <p class="text-center">Current avatar</p>
+
+            <div class="divider"></div>
+
+            <div id="paperclip_form" class="field">
+              <%= f.file_field :avatar %>
+            </div>
+
+            <div class="form-group" style="padding-top: 20px">
+              <%= f.label :current_password, class: 'form-label'%> <sup>(we need your current password to confirm your changes)</sup>
+              <%= f.password_field :current_password, autocomplete: "off", class: 'form-input' %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Update", class: 'btn btn-primary'%>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="panel-footer">
+          <div class="divider"></div>
+          <%= link_to "Back", :back %>
+        </div>
+      </div>
     </div>
-
-    <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off" %>
-    </div>
-
-    <br>
-
-    <div class="actions">
-      <%= f.submit "Update" %>
-    </div>
-
-  <% end %>
-
-  <hr>
-
-  <%= link_to "Back", :back %>
-
+  </div>
 </div>
