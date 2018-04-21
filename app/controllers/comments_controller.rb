@@ -10,15 +10,12 @@ class CommentsController < ApplicationController
 
 
   def destroy
-    if (not_their_comment)
-      flash[:notice] = "This is not your comment"
-    else
-      @comment.destroy
-    end
+    @comment.destroy unless not_their_comment
     redirect_to post_path(@post)
   end
 
   private
+
   def find_post
     @post = Post.find(params[:post_id])
   end

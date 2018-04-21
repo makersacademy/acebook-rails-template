@@ -3,20 +3,14 @@ class LikesController < ApplicationController
   before_action :find_like, only: [:destroy]
 
   def create
-    if (@post.find_like(current_user))
-      flash[:notice] = "You can't like more than once"
-    else
+    unless (@post.find_like(current_user))
       @post.likes.create(user_id: current_user.id)
     end
     redirect_to URI(request.referer).path
   end
 
   def destroy
-    if !(@post.find_like(current_user))
-      flash[:notice] = "Cannot unlike"
-    else
-      @like.destroy
-    end
+    @like.destroy if !(@post.find_like(current_user))
     redirect_to URI(request.referer).path
   end
 

@@ -22,21 +22,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.owner?(current_user)
-      @post.update(post_params)
-    else
-      flash[:notice] = "Cannot edit"
-    end
+    @post.update(post_params) if @post.owner?(current_user)
     redirect_to posts_path
   end
 
   def destroy
-    if @post.owner?(current_user)
-      @post.destroy
-    else
-      flash[:notice] = "Cannot delete"
-    end
-     redirect_to posts_path
+    @post.destroy if @post.owner?(current_user)
+    redirect_to posts_path
   end
 
   private
