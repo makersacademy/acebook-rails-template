@@ -1,7 +1,147 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<div class="container" style="padding-top: 30px">
+  <div class="columns ">
+    <div class="column col-8 centered">
+      <div class="columns">
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+        <div class="column col-4"> <!-- User profile -->
+          <div class="empty">
+            <figure class="avatar avatar-xl"> <!-- Profile avatar -->
+              <%= image_tag @post.user.avatar(:thumb), class: "avatar_img" %>
+            </figure>
+            <p class="empty-title h5"><%= @post.user.name %></p> <!-- Profile username -->
+            <ul class="nav"> <!-- Profile links -->
+              <li class="nav-item">
+                <%= link_to 'Edit User', edit_user_registration_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Edit Avatar', avatar_path %>
+              </li>
+            </ul>
+            <div class="empty-action">
+              <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete', :class => "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="empty" style="padding: 1rem 1rem;">
+            <div class="form-group">
+              <%= form_for @post do |form| %>
+                <%= form.text_area :message, placeholder: 'Enter your message', id: 'post-message',class: 'form-input', rows: '2'%>
+                <%= form.submit "Post", class: "btn btn-primary btn-block", style: 'margin-top: 10px' %>
+                <% end %>
+            </div>
+          </div>
+
+          <% @posts.each do |post| %> <!-- Posts -->
+            <div class="columns" style="padding-top: 10px;">
+              <div class="column">
+                <div class="panel" id="posts">
+                  <div class="column">
+                    <div class="panel-header">
+                      <div class="float-right">
+                        <%= post.likes.where(liked: true).length %>
+                        <%= 'Like'.pluralize(post.likes.where(liked: true).length) %>
+                        <% pre_like = Like.find_by(user_id: current_user.id, post_id: post.id) %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="columns col-oneline">
+                    <div class="column col-2">
+                      <div class="panel-header text-center">
+                        <figure class="avatar avatar-lg">
+                          <%= image_tag @post.user.avatar(:thumb), class: "avatar_img" %>
+                        </figure>
+                        <div class="d-block">
+                          <%= post.user.name %>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="column">
+                      <div class="tile">
+                        <%= best_in_place post, :message, :as => :textarea, :ok_button => 'Save', display_with: -> v { v.gsub(/[\r\n]+/, '<br>').html_safe }, :cancel_button => 'Cancel', activator: '#edit-' + post.id.to_s %>
+                      </div>
+                    </div>
+                  </div>
+
+                <div class="column">
+                  <div class="float-right">
+                    <% if pre_like && pre_like.liked %>
+                      <%= link_to "Unlike", post_like_path(post, pre_like), method: :delete, class: 'btn btn-link', id: 'unlike-post' %>
+                    <% else %>
+                      <%= link_to "Like", post_likes_path(post), method: :post, class: 'btn btn-link', id: 'like-post' %>
+                    <% end %>
+
+                    <% if current_user.id == post.user_id %>
+                      <%= link_to 'Edit', 'javascript:', id: 'edit-' + post.id.to_s, class: "btn btn-link"%>
+                      <%= link_to 'Delete', post, method: :delete, class: "btn btn-link"%>
+                    <% end %>
+
+                    <span class="text-gray"><%= post.created_at.strftime("%e %B at %k:%M") %></span>
+                  </div>
+                </div>
+
+                <% post.comments.each do |comment| %> <!-- Comments -->
+                  <div class="columns" style="padding: .4rem;">
+                    <div class="column">
+                      <div class="panel" id="comments">
+                        <div class="panel-header">
+                          <div class="panel-title">
+                            <div class="float-right">
+                              <%= comment.likes.where(liked: true).length %> <%= 'Like'.pluralize(comment.likes.where(liked: true).length) %>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="panel-body">
+                          <div class="tile">
+                            <div class="tile-icon">
+                              <figure class="avatar avatar-sm">
+                                <%= image_tag comment.user.avatar(:thumb), class: "avatar_img" %>
+                              </figure>
+                            </div>
+
+                            <div class="tile-content">
+                              <p class="tile-title"><%= comment.user.name %></p>
+                              <p class="tile-subtitle text-gray"><%= best_in_place comment, :comment, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel',  activator: '#edit-comment' + comment.id.to_s %></p>
+
+                              <div class="column">
+                                <div class="float-right">
+                                  <% pre_like = Like.find_by(user_id: current_user.id, comment_id: comment.id) %>
+                                  <% if pre_like && pre_like.liked %>
+                                    <%= link_to "Unlike", comment_like_path(comment, pre_like), method: :delete, class: 'btn btn-link', id: 'unlike-comment' %>
+                                  <% else %>
+                                    <%= link_to "Like", comment_likes_path(comment), method: :post, class: 'btn btn-link', id: 'like-comment' %>
+                                  <% end %>
+                                  <% if current_user.id == comment.user_id %>
+                                    <%= link_to 'Edit', 'javascript:', id: 'edit-comment' + comment.id.to_s, class: "btn btn-link"%>
+                                    <%= link_to 'Delete', comment, method: :delete, class: "btn btn-link"%>
+                                  <% end %>
+                                  <span class="text-gray"><%= comment.created_at.strftime("%e %B at %k:%M") %></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                <% end %> <!-- End of comments -->
+                  <div class="empty" style="padding: 0.5rem 0.5rem;">
+                    <%= form_with(model: [ post, post.comments.build ], local: true, class: 'input-group') do |form| %>
+                      <%= form.text_field :comment, id: 'post-comment', class: "form-input" %>
+                      <%= form.submit "Comment", class: 'btn btn-primary input-group-btn' %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

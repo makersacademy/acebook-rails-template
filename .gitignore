@@ -21,3 +21,11 @@
 /yarn-error.log
 
 .byebug_history
+
+/coverage
+
+# Ignore private environmental variables
+/config/local_env.yml
+
+.DS_Store
+public/system/users/avatars*

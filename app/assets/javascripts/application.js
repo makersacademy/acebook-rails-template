@@ -12,3 +12,11 @@
 //
 //= require rails-ujs
 //= require_tree .
+//= require jquery
+//= require best_in_place
+$(document).ready(function() {
+  $('.best_in_place').best_in_place().bind('ajax:success', function(evt, data, status, xhr) {
+    var result = JSON.parse(data)
+    $(".notice").text(result.message);
+  });
+});

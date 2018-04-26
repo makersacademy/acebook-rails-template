@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acebook</title>
+    <title>PinkFish</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +9,33 @@
   </head>
 
   <body>
+    <div class="container">
+      <% if user_signed_in? %>
+        <header class="navbar" style="padding:10px">
+          <section class="navbar-section">
+            <%= link_to 'PinkFish', root_path, class: "navbar-brand mr-2" %>
+          </section>
+          <section class="navbar-section">
+            <%= link_to 'Edit User', edit_user_registration_path, class: "btn btn-link" %>
+            <%= link_to 'Edit Avatar', avatar_path, :class => "btn btn-link", id: 'navbar-edit-avatar'%>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: 'delete', class: "btn btn-link", id: 'navbar-sign-out'%>
+          </section>
+        </header>
+      <% end %>
+    </div>
+
+    <% if notice %>
+      <div class="toast toast-success">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if alert %>
+      <div class="toast toast-error">
+        <%= alert %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
