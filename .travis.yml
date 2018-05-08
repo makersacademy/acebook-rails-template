@@ -2,7 +2,8 @@
 #   postgresql: 10.3
 before_script:
 - bin/rails db:create
-- bin/rails db:migrate
+# - bin/rails db:migrate
+
   #- cp config/database.yml.travis config/database.yml
  # - psql -c 'create database pgapp_test;' -U postgres
   #- gem install bundler
@@ -12,9 +13,6 @@ rvm:
   - 2.5.0
 script:
   - bundle exec rspec
+  - bundle exec rails db:migrate RAILS_ENV=test
 services:
   - postgresql: "10.3"
-
-  test:
-    adapter: postgresql
-    database: travis_ci_test
