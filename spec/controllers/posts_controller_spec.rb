@@ -26,6 +26,12 @@ RSpec.describe PostsController, type: :controller do
       post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be
     end
+
+    it "creates a post" do
+      post :create, params: { post: { message: "Hello!" } }
+      puts expected_post[0].created_at
+      expect(Post.find_by(message: "Hello!").created_at.strftime("%m/%d/%Y")).to eq(expected_post[0].created_at.strftime("%m/%d/%Y"))
+    end
   end
 
   describe "GET /" do
