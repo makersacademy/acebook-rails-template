@@ -11,16 +11,20 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-
 gem 'jbuilder', '~> 2.5'
 
-
 group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'simplecov'
+  gem 'simplecov-console'
   gem 'rspec-rails', '~> 3.5'
+  gem 'rubocop'
   gem 'rake'
+  gem 'rubycritic', '~> 3.4'
 end
 
 group :development do
