@@ -10,7 +10,7 @@ services:
 before_script:
  - bin/rails db:create
  - bin/rails db:migrate
- 
+
 deploy:
   provider: heroku
   api_key:
@@ -18,4 +18,3 @@ deploy:
   app: TEAM-MALN-ACEBOOK
   on:
     repo: blarvin/TEAM-MALN-ACEBOOK
-
