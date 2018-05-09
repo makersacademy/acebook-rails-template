@@ -4,6 +4,11 @@ Stand up:
 Before coming in to the stand up we had a working CI build on travis. The first thing we did at the start up was assign the project manager
 for the day which was to be Sam. After that we discussed the tasks we needed to accomplish in the first sprint of the day.
 Once tasks had been decided and written on the board, estimated time for completion of the tasks were discussed. We decided to tackle the shorter ones first
-(sorting out kanban board on github, begin writing our project log, and merging our travis branch into our master branch.
+(sorting out kanban board on github, begin writing our project log, and merging our travis branch into our master branch).
 We then discussed who would work on which longer tasks once the shorter tasks were complete. We decided to split into two pairs,
 one was to tackle our staging environment and the other was to begin writing feature tests. We then ended the stand up with everyone clear what their immediate task was and decided to meet again in 1 hour.
+Second stand up:
+Before we had a break for lunch we had a second stand up discussing our progress in the tasks we wanted to accomplish in the first sprint.
+The log had begun to be written so that was completed. However the kanban board still needed to be sorted so that was written on the board.
+The travis branch had also been merged successfully. The staging environment was still proving complicated in terms of being able to continuously have 
+access to our production database.
