@@ -1,8 +1,7 @@
 {
   "name": "Acebook-Byte-3",
   "scripts": {
-    "postdeploy": ["bundle exec rake db:create",
-    "bundle exec rake db:migrate"]
+    "postdeploy": "bundle exec rake bootstrap"
   },
   "env": {
     "LANG": {
