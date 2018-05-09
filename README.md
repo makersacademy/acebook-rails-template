@@ -24,3 +24,5 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+Install heroku cli "$ brew install heroku/brew/heroku" and travis "$  gem install travis -v 1.8.8 --no-rdoc --no-ri"
