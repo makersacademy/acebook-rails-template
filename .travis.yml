@@ -1,0 +1,20 @@
+language: ruby
+rvm:
+- 2.5.0
+script:
+
+- bundle exec rspec spec
+
+services:
+  - postgresql
+before_script:
+ - bin/rails db:create
+ - bin/rails db:migrate
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: Fsah98v2a4uView3RhmqRUrEUjMUreBOGWPZ/TScLoCRSspvSnehLN9rrewNWJLhraRFz7xWEI1HLa0A3rDFWw0fWcbxe5iMG/zq3ZKauYfNyEnHYdwe4lJ+R2+/pdVwPs3dVUDbZdha2P6DoMoFPWrYMnCufp28m3YofcoVCIk3PSb9CWG/L5lTcOhfxYun4Fo63URaQ1c08FbcmxPErerMo6BxbIsMHFatDmEem1JYPVCR1g7UYKHAaw7YCyhjdKGIm31pocT3QNqcEPUHDY8A82mv0eXGl+4H3GN0r3drkWsJdQNaVazsNMBtKt4Fukvz0QOyUoNAdY55Yr1fWRVoXhnNBMPcW0o54HkENgXYRTB1tnejo5XnKkZAq2tXtJ5wT5LalV6/iND0NK5gH6Q/lL1uM4RzyuBflfxP6lcWsriJsz8U0vwGLrojaNR5YaZrJH8IejO727TKppVFi77YrGOV1NUX3AXmTLaooqWxAtmfZFUUp0m8UHAqplCQ+iSNKfLnLjIhmSA/JFz2inJc4K55ty/oLYLx3Tt9TnOi68zvPY/bA0sVVswlNY/aiSa3qcqEeM2sXu+X+PH7tQ+JrqUrMes1IzBPRZQQ9AnKBaegsEpkpt4MsNivdZ7/RXNuGcrXCxCUwemI/QsnHD62uVuCrZnj4vCEP+UcBVk=
+  app: TEAM-MALN-ACEBOOK
+  on:
+    repo: blarvin/TEAM-MALN-ACEBOOK
