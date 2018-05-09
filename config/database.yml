@@ -2,6 +2,10 @@ test:
   adapter: postgresql
   database: travis_ci_test
 
+staging:
+  adapter: postgresql
+  database: acebook_staging
+
 # default: &default
 #   adapter: postgresql
 #   encoding: unicode
