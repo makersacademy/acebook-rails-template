@@ -5,6 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Rubocop
+gem 'rubocop', require: false
+
+# Simple Cover
+gem 'simplecov', require: false, group: :test
+gem 'simplecov-console', require: false, group: :test
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
