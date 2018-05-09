@@ -1,21 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: travis_ci_test
+
+  pool: 5
+
+development:
+  <<: *default
+  database: travis_ci_test
+
+production:
+  <<: *default
+  database: pgapp_production
+  username: pgapp
+  password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
+
 test:
   adapter: postgresql
   database: travis_ci_test
-
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-#    database: travis_ci_test
-
-#   pool: 5
-
-# #development:
-#   <<: *default
-#   database: travis_ci_test
-
-# production:
-#   <<: *default
-#   database: pgapp_production
-#   username: pgapp
-#   password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
-# test:
