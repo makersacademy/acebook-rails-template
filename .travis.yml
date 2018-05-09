@@ -2,12 +2,15 @@ language: ruby
 rvm:
 - 2.5.0
 script:
+
 - bundle exec rspec spec
+
 services:
   - postgresql
 before_script:
  - bin/rails db:create
  - bin/rails db:migrate
+ 
 deploy:
   provider: heroku
   api_key:
@@ -15,3 +18,4 @@ deploy:
   app: TEAM-MALN-ACEBOOK
   on:
     repo: blarvin/TEAM-MALN-ACEBOOK
+
