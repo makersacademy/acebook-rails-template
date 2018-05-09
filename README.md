@@ -8,7 +8,7 @@ We aren't building it with the intention of producing a competitor (please don't
 
 Rather, the aim is to provide goals and structure under which to familiarise ourselves with the Ruby on Rails framework and associated test-driven development tooling, including, but not limited to, Heroku, Rubocop, Rspec, Travis CI & staging (!insert further tooling here!).
 
-The card wall is hosted by Waffle, and you can find it here: https://waffle.io/SamNiechcial/acebook-jspesh
+[The card wall is hosted by Waffle, and you can find it here.](https://waffle.io/SamNiechcial/acebook-jspesh)
 
 [You can find the engineering project outline provided by Makers Academy here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
