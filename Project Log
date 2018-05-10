@@ -15,3 +15,9 @@ access to our production database.
 
 Thursday 10th May
 Stand up:
+We discussed what we were working on yesterday and progress on that work. Jordan had not really had a chance to get a grip on using Heroku pipeline so he would work on that.
+Daniel and I(Matthew) had also not really had a chance to begin feature testing on a user sign up feature as we were still deciding which ruby gems to use to help
+us implement this feature (mainly looking at using devise). We decided to firstly decide on whether we were going to use the gem then look at how to seed our database using capybara which 
+is what we are using to write our feature tests. We then had a bit more of a discussion breaking down the steps in the feature test so we were clear.
+We decided to have another meeting in around 1 hour.
+
