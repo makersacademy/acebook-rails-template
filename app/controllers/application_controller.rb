@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  def hello
-    render html: "hi jspesh"
+  def index
+    render html: "Signup successful, welcome #{current_user.email}"
   end
 end
