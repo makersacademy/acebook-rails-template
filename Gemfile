@@ -16,6 +16,7 @@ gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'better_errors', '~> 2.1', '>= 2.1.1'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
@@ -28,7 +29,6 @@ group :development, :test do
   gem 'rubycritic', '~> 3.4'
   gem 'pry'
   gem 'pry-rails'
-
 end
 
 group :development do
