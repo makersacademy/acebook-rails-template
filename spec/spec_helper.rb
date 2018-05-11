@@ -1,6 +1,7 @@
 require 'simplecov'
 require 'simplecov-console'
 require 'database_cleaner'
+#allowing travis to run
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
  SimpleCov::Formatter::Console,
