@@ -1,7 +1,7 @@
 {
   "name": "Acebook-Byte-3",
   "scripts": {
-    "postdeploy": 
+    "postdeploy": "bundle exec rake bootstrap"
   },
   "env": {
     "LANG": {
