@@ -1,16 +1,6 @@
 # frozen_string_literal: true
-require 'pry'
-require 'pry-rails'
 
 class Users::RegistrationsController < Devise::RegistrationsController
-
-
-  #email_for_message = params[:user]
-  #email_for_message = email_for_message[:email]
-  #binding.pry
-  #puts email_for_message
-  #flash[:successful_login] = "Login successful, welcome #
-
 
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
@@ -21,10 +11,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    byebug
-    super
-  end
+  #def create
+   # super
+  #end
 
   # GET /resource/edit
   # def edit
