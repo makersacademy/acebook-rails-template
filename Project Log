@@ -1,0 +1,32 @@
+Acebook JSpesh project log
+Wednesday 9th May
+Stand up:
+Before coming in to the stand up we had a working CI build on travis. The first thing we did at the start up was assign the project manager
+for the day which was to be Sam. After that we discussed the tasks we needed to accomplish in the first sprint of the day.
+Once tasks had been decided and written on the board, estimated time for completion of the tasks were discussed. We decided to tackle the shorter ones first
+(sorting out kanban board on github, begin writing our project log, and merging our travis branch into our master branch).
+We then discussed who would work on which longer tasks once the shorter tasks were complete. We decided to split into two pairs,
+one was to tackle our staging environment and the other was to begin writing feature tests. We then ended the stand up with everyone clear what their immediate task was and decided to meet again in 1 hour.
+Second stand up:
+Before we had a break for lunch we had a second stand up discussing our progress in the tasks we wanted to accomplish in the first sprint.
+The log had begun to be written so that was completed. However the kanban board still needed to be sorted so that was written on the board.
+The travis branch had also been merged successfully. The staging environment was still proving complicated in terms of being able to continuously have 
+access to our production database.
+
+Thursday 10th May
+Stand up:
+We discussed what we were working on yesterday and progress on that work. Jordan had not really had a chance to get a grip on using Heroku pipeline so he would work on that.
+Daniel and I(Matthew) had also not really had a chance to begin feature testing on a user sign up feature as we were still deciding which ruby gems to use to help
+us implement this feature (mainly looking at using devise). We decided to firstly decide on whether we were going to use the gem then look at how to seed our database using capybara which 
+is what we are using to write our feature tests. We then had a bit more of a discussion breaking down the steps in the feature test so we were clear.
+We decided to have another meeting in around 1 hour.
+
+Friday 11th May
+Stand up:
+We rotated project manager as we had been doing so far. We had passed one feature test at the end of the day on Thursday however this caused a problem with our staging environment on Heroku. This was a task that needed to be sorted
+first so it was written on our board. Throughout our project we were trying to be Agile and we were given lots of objectives right off the bat by the coaches at Makers,
+however we had yet to make any serious thought into how we envisioned our project to look and behave at the end. So another task for the next sprint was to have one person do some domain modelling and general
+planning for how our app might look at the end, however since we were being Agile, this was by no means concrete, merely meant to be a guide throughout.
+Lastly we needed to work on the next feature which was Users being able to log out, since we had worked on sign up yesterday. One pair was assigned to fix the problem with staging and since we were one person down,
+the other person was to do some domain modelling and investigation into the future of the project.
+
