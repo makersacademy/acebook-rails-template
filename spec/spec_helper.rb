@@ -7,7 +7,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
  SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
-DatabaseCleaner.strategy = :truncation
+DatabaseCleaner[:active_record].strategy = :truncation
 
 RSpec.configure do |config|
   
