@@ -28,6 +28,7 @@ group :development, :test do
   gem 'rubycritic', '~> 3.4'
   gem 'pry'
   gem 'pry-rails'
+  gem 'database_cleaner'
 
 end
 
