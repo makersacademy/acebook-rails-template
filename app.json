@@ -1,6 +1,8 @@
 {
   "name": "acebook-jspesh",
+
   "scripts": {},
+
   "env": {
     "LANG": {
       "required": true
@@ -32,8 +34,11 @@
   "addons": [
     "heroku-postgresql"
   ],
-  "buildpacks": [{
-    "url": "heroku/ruby"
-  }
-]
+
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+
 }

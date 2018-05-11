@@ -21,3 +21,12 @@ us implement this feature (mainly looking at using devise). We decided to firstl
 is what we are using to write our feature tests. We then had a bit more of a discussion breaking down the steps in the feature test so we were clear.
 We decided to have another meeting in around 1 hour.
 
+Friday 11th May
+Stand up:
+We rotated project manager as we had been doing so far. We had passed one feature test at the end of the day on Thursday however this caused a problem with our staging environment on Heroku. This was a task that needed to be sorted
+first so it was written on our board. Throughout our project we were trying to be Agile and we were given lots of objectives right off the bat by the coaches at Makers,
+however we had yet to make any serious thought into how we envisioned our project to look and behave at the end. So another task for the next sprint was to have one person do some domain modelling and general
+planning for how our app might look at the end, however since we were being Agile, this was by no means concrete, merely meant to be a guide throughout.
+Lastly we needed to work on the next feature which was Users being able to log out, since we had worked on sign up yesterday. One pair was assigned to fix the problem with staging and since we were one person down,
+the other person was to do some domain modelling and investigation into the future of the project.
+
