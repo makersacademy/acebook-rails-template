@@ -30,3 +30,12 @@ planning for how our app might look at the end, however since we were being Agil
 Lastly we needed to work on the next feature which was Users being able to log out, since we had worked on sign up yesterday. One pair was assigned to fix the problem with staging and since we were one person down,
 the other person was to do some domain modelling and investigation into the future of the project.
 
+Monday 14th May:
+Retro:
+At the retro we divided topics into three sections, things we had learned, things that didn't go so well and what we are going to do 
+to improve. One clear thing that we took away from the retro is that we lacked a clear escalation process when tasks were not being completed 
+in the expected timeframe. While the drive and dertermination to do things our way and completely by ourselves we agreed that we would only 
+spend up to a maximum of 1 hour trying to debug/get unblocked before we escalated our problem. Firstly to members of our cohort, then if necessary, to
+a coach at Makers. This should ensure a more fluid workflow. We were pleased with the spirit in the team and our attitude. We learned plenty about rails including aspects relating to the database and the controllers.
+
+
