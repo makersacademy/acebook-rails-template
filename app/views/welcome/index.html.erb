@@ -1,5 +1,11 @@
 <div class="jumbotron">
-<h1 class="display-4">Welcome to Acebook</h1>
+<h1 class="display-4">Welcome
+  <% if user_signed_in? %>
+  <%= current_user.real_name %>
+  <% else %>
+  to Acebook
+  <% end %>
+</h1>
 <hr class="my-4">
 <p class="lead">What would you like to do today?</p>
 <p><%= link_to 'View posts', controller: 'posts' %></p>
