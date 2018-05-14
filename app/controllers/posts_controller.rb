@@ -5,10 +5,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    binding.pry
     redirect_to posts_url
   end
 
   def index
+    binding.pry
     @posts = Post.all
   end
 
