@@ -8,6 +8,6 @@ RSpec.feature "Logout", type: :feature do
     fill_in "user_password_confirmation", with: "ajdpwomakwmnd29q0jediaw"
     click_button "Sign up"
     page.find_by_id('log_out').click
-    expect(page).to have_content("Signed out successfully. Sign up | Login")
+    expect(page).to have_content("Signed out successfully")
   end
 end
