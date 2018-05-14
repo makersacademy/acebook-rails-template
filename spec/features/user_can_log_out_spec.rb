@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Logout", type: :feature do 
+RSpec.feature "Logout", type: :feature do
   scenario "User can logout" do
     visit "/users/sign_up"
     fill_in "user_email", with: "example@example.com"
@@ -9,5 +9,5 @@ RSpec.feature "Logout", type: :feature do
     click_button "Sign up"
     page.find_by_id('log_out').click
     expect(page).to have_content("Signed out successfully. Sign up | Login")
-  end 
+  end
 end
