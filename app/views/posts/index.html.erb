@@ -1,3 +1,5 @@
+You are signed in
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p> <%= post.created_at.strftime("%m/%d/%Y") %> Testing Travis/Heroku integration</p>
 <% end %>
@@ -5,3 +7,7 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+<li>
+<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+</li>
