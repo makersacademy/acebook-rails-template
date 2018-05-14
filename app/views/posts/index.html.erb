@@ -1,13 +1,18 @@
-You are signed in
-
-<% @posts.each do |post| %>
-  <p><%= post.message %></p> <%= post.created_at.strftime("%m/%d/%Y") %> Testing Travis/Heroku integration</p>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<h1> ACEBOOK </h1>
 
 <li>
-<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <%= link_to('Profile', user_path(current_user), method: :get) %>
+</li>
+
+<% @posts.each do |post| %>
+  <p><%= post.message %></p> <%= post.created_at.strftime("%m/%d/%Y") %> </p>
+<% end %>
+
+<li><%= link_to new_post_path do %>
+  New post
+<% end %>
+</li>
+
+<li>
+ <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
 </li>
