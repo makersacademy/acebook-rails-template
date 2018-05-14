@@ -1,16 +1,15 @@
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
   end
 
   def create
-    @post = Post.create(post_params)
-    binding.pry
+    @post = current_user.posts.build(post_params)
     redirect_to posts_url
   end
 
   def index
-    binding.pry
     @posts = Post.all
   end
 
@@ -20,3 +19,4 @@ class PostsController < ApplicationController
     params.require(:post).permit(:message)
   end
 end
+ 
