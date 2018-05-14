@@ -1,11 +1,17 @@
 <div class="jumbotron">
-<h1>Welcome to Acebook</h1>
-<%= link_to 'Posts', controller: 'posts' %>
+<h1 class="display-4">Welcome to Acebook</h1>
+<hr class="my-4">
+<p class="lead">What would you like to do today?</p>
+<p><%= link_to 'View posts', controller: 'posts' %></p>
+<p><%= link_to 'Make a new post', new_post_path %></p>
+<hr class="my-4">
 <% if user_signed_in? %>
- <li><%= link_to current_user.email, edit_user_registration_path %></li>
- <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+ <p>Logged in as: <%= current_user.real_name %></p>
+ <p><%= link_to 'Edit your account details', edit_user_registration_path %></p>
+ <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
 <% else %>
- <li><%= link_to "Sign Up", new_user_registration_path %></li>
- <li><%= link_to "Login", new_user_session_path %></li>
+ <p><%= link_to "Sign Up", new_user_registration_path %></p>
+ <p><%= link_to "Login", new_user_session_path %></p>
 <% end %>
+
 </div>
