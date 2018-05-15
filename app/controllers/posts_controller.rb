@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  require 'pry'
+  # require 'pry'
   before_action :authenticate_user!
 
   def index

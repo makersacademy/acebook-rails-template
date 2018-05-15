@@ -16,3 +16,5 @@ deploy:
   on:
     repo: blarvin/TEAM-MALN-ACEBOOK
     branch: master
+  run:
+    - 'bundle install'
