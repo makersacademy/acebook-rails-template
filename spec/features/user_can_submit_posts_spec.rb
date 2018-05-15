@@ -1,6 +1,5 @@
 require 'rails_helper'
 def user_makes_a_post
-  user_signs_up
   visit "/posts"
   click_link "New post"
   fill_in "Message", with: "Hello, world!"
