@@ -1,19 +1,25 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/posts">AceBook</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <%= link_to('My Profile', user_path(current_user), method: :get) %>
+      </li>
+      <li><%= link_to('Log Out', destroy_user_session_path, method: :delete) %></li>
 
-<h1> ACEBOOK </h1>
-
-<li>
-  <%= link_to('Profile', user_path(current_user), method: :get) %>
-</li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
 
 <% @posts.each do |post| %>
   <p>@<%= User.find(post.user_id).username %> | <%= post.message %>     | <%= post.created_at.strftime("%m/%d/%Y") %>  </p>
 <% end %>
 
-<li><%= link_to new_post_path do %>
+<a><%= link_to new_post_path do %>
   New post
 <% end %>
-</li>
-
-<li>
- <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-</li>
+</a>
+</div>
