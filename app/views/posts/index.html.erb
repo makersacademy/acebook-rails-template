@@ -4,9 +4,11 @@
   <%= link_to('Profile', user_path(current_user), method: :get) %>
 </li>
 
+
 <% @posts.each do |post| %>
-  <p><%= post.message %></p> <%= post.created_at.strftime("%m/%d/%Y") %> </p>
+  <p style="max-width: 450px; min-width: 100px"><%= post.message %></p> <%= post.created_at.strftime("%m/%d/%Y") %> </p>
 <% end %>
+
 
 <li><%= link_to new_post_path do %>
   New post
