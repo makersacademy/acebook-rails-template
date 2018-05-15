@@ -1,4 +1,4 @@
-require_relative "./support/login_helper_spec"
+require_relative "./support/helper_methods"
 
 require 'simplecov'
 SimpleCov.start 'rails' do
