@@ -1,7 +1,18 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
-  <p><%= post.updated_at %></p>
+  <p>
+    <%= post.user.username %>
+    <br>
+    <%= post.message %>
+    <br>
+    <%= post.updated_at %>
+    <br>
+    <% if current_user.id == post.user_id %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </p>
   <br>
+
 <% end %>
 
 <%= link_to new_post_path do %>
