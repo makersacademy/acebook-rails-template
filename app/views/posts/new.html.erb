@@ -1,6 +1,12 @@
+<div class="card">
 <%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
+  <div class="card-header"><h5><%= form.label 'New Post:' %></h5></div>
 
-  <%= form.submit "Submit" %>
+  <div style="padding: 15px;">
+  <div class="form-group" >
+  <%= form.text_area :message %>
+  </div>
+  <%= form.submit "Submit", :class => "btn btn-primary" %>
+  </div>
 <% end %>
+</div>
