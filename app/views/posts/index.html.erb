@@ -1,6 +1,7 @@
 <% @posts.each do |post| %>
   <h2><%= post.message %></h2>
   <h3><%= post.updated_at %></h3>
+
   <% if post.comments %>
     <% post.comments.each do |c| %>
       <br/>
@@ -9,6 +10,11 @@
       <br/>
       comment:
       <%= c.content %>
+
+      <%if c.user == current_user %>
+        <%= link_to "Delete", post_comment_path(post, c), method: :delete %>
+      <%end%>
+
     <% end %>
   <% end %>
 
