@@ -1,0 +1,5 @@
+<% if current_user.like?(post) %>
+  <%= link_to 'Unlike', unlike_path(current_user.id, post_id: post.id), remote: true, method: :delete %>
+<% else %>
+  <%= link_to 'Like', like_path(current_user.id, post_id: post.id), remote: true, method: :post%>
+<% end %>
