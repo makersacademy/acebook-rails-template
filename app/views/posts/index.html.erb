@@ -6,8 +6,10 @@
     <br>
     <%= post.updated_at %>
     <br>
-    <%= link_to 'Edit', edit_post_path(post) %>
-    <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% if current_user.id == post.user_id %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </p>
   <br>
 

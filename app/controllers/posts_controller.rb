@@ -12,7 +12,14 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+
+    @postid = Post.find(params[:id]).user_id
+    if current_user.id == @postid
+      @post = Post.find(params[:id])
+    else
+      redirect_to posts_url
+    end
+
   end
 
   def update
