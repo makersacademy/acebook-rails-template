@@ -5,7 +5,7 @@ the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-The card wall is here: <please update>
+The card wall is here: https://waffle.io/shihhanwang/Acebook-Byte-3/join
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)

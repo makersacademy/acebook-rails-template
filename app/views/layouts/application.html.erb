@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= render 'devise/shared/logout_items.html.erb' %>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,22 @@
+language: ruby
+
+rvm:
+  - 2.5.0
+
+install:
+  - bundle install
+
+env:
+  - RAILS_ENV=test
+
+before_script:
+  - bin/rails db:create
+  - bin/rails db:migrate
+
+# script:
+#   - bundle exec rake spec
+
+
+# services:
+#   - postgresql
+#
