@@ -1,3 +1,5 @@
+require_relative "./support/login_helper_spec"
+
 require 'simplecov'
 SimpleCov.start 'rails' do
   add_filter '/bin/'
