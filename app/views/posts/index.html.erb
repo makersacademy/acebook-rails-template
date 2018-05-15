@@ -1,6 +1,13 @@
 <% @posts.each do |post| %>
+
+  <h2><%= post.user.username %></h2>
   <h2><%= post.message %></h2>
   <h3><%= post.updated_at %></h3>
+
+  <% if current_user.id == post.user_id %>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 
   <% if post.comments %>
     <% post.comments.each do |c| %>
@@ -19,8 +26,8 @@
   <% end %>
 
   <%= form_for [post, post.comments.new ] do |f| %>
-  <%= f.label :comment %>
-  <%= f.text_field :content %>
+    <%= f.label :comment %>
+    <%= f.text_field :content %>
   <% end %>
 
 <% end %>
