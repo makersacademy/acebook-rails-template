@@ -5,7 +5,7 @@
 </li>
 
 <% @posts.each do |post| %>
-  <p><%= post.message %></p> <%= post.created_at.strftime("%m/%d/%Y") %> </p>
+  <p><%= post.created_at.strftime("%m/%d/%Y" + ": ") %><%= post.message %></p>
 <% end %>
 
 <li><%= link_to new_post_path do %>
