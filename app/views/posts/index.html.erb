@@ -1,5 +1,5 @@
 <% @posts.reverse.each do |post| %>
-  <p><%= post.user.real_name %> says: <%= post.message %></p>
+  <p><%= post.user.real_name %> says: <%= simple_format(post.message) %></p>
   <small><%= post.created_at.strftime("posted at %R on the %d. of %B") %></small>
   <%= link_to 'Delete', post_path(post), method: :delete %>
 <% end %>
