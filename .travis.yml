@@ -15,3 +15,4 @@ deploy:
   app: maln-acebook
   on:
     repo: blarvin/TEAM-MALN-ACEBOOK
+    branch: master
