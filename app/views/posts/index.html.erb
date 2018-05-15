@@ -1,3 +1,4 @@
+
 <h1> ACEBOOK </h1>
 
 <li>
@@ -7,6 +8,7 @@
 
 <% @posts.each do |post| %>
   <p style="max-width: 450px; min-width: 100px"><%= post.message %></p> <%= post.created_at.strftime("%m/%d/%Y") %> </p>
+  <p>@<%= User.find(post.user_id).username %> | <%= post.message %>     | <%= post.created_at.strftime("%m/%d/%Y") %>  </p>
 <% end %>
 
 

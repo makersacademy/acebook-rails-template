@@ -1,4 +1,4 @@
-<h1>You are singed in like <%= @user.email %></h1>
+<h1>Hello <%= @user.username %>. You are now signed in!</h1>
 
 <% @user_posts.each do |post| %>
   <li> <%= post.message %> </li>
