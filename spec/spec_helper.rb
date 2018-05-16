@@ -1,17 +1,19 @@
 require 'simplecov'
 require 'simplecov-console'
 require 'database_cleaner'
-#allowing travis to run
+
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
  SimpleCov::Formatter::Console,
  SimpleCov::Formatter::HTMLFormatter
 ])
-SimpleCov.start
+SimpleCov.start do
+  add_filter 'helpers.rb'
+end
 DatabaseCleaner[:active_record].strategy = :truncation
 
 RSpec.configure do |config|
-  
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
