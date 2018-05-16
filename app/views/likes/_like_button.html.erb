@@ -1,8 +1,13 @@
-<% if current_user.like?(post) %>
-  <%= link_to 'Unlike', unlike_path(current_user.id, post_id: post.id), remote: true, method: :delete %>
-<% else %>
-  <%= link_to 'Like', like_path(current_user.id, post_id: post.id), remote: true, method: :post%>
+
+
+<% if user_signed_in? %>
+  <% if current_user.like?(post) %>
+    <%= link_to 'Unlike', unlike_path(current_user.id, post_id: post.id), remote: true, method: :delete %>
+  <% else %>
+    <%= link_to 'Like', like_path(current_user.id, post_id: post.id), remote: true, method: :post%>
+  <% end %>
 <% end %>
+
 <% if post.likes.count > 1 %>
   <%= post.likes.count %> people like this.
 <% elsif post.likes.count > 0 %>
