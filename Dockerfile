@@ -6,3 +6,5 @@ COPY Gemfile /maln-acebook/Gemfile
 COPY Gemfile.lock /maln-acebook/Gemfile.lock
 RUN bundle install
 COPY . /maln-acebook
+
+CMD bundle exec rackup --port=$PORT
