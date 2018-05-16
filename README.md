@@ -8,6 +8,10 @@ We aren't building it with the intention of producing a competitor (please don't
 
 Rather, the aim is to provide goals and structure under which to familiarise ourselves with the Ruby on Rails framework and associated test-driven development tooling, including, but not limited to, Heroku, Rubocop, Rspec, Travis CI & staging (!insert further tooling here!).
 
+Current Travis CI Build Status
+
+[![Build Status](https://travis-ci.org/SamNiechcial/acebook-jspesh.svg?branch=master)](https://travis-ci.org/SamNiechcial/acebook-jspesh)
+
 Current test coverage information from CodeClimate:
 
 <a href="https://codeclimate.com/github/SamNiechcial/acebook-jspesh/test_coverage"><img src="https://api.codeclimate.com/v1/badges/412d87af8cabda3d63f9/test_coverage" /></a>
