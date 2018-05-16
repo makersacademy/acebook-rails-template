@@ -13,7 +13,7 @@ RSpec.feature 'Timeline', type: :feature do
     # password_confirmation: '12345678'
     click_button 'Sign up'
     click_link 'New post'
-    fill_in 'post_message', with: "my first post"
+    fill_in 'post_message', with: 'my first post'
     click_button 'Submit'
   end
   scenario 'Can comment on a post' do
@@ -22,6 +22,4 @@ RSpec.feature 'Timeline', type: :feature do
     click_button 'Comment'
     expect(page).to have_content('my first comment!')
   end
-
-
 end
