@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Rails.configuration.middleware.use RailsWarden::Manager do |manager|
-  manager.failure_app = Proc.new { |_env|
-    ['401', {'Content-Type' => 'application/json'}, { error: 'Unauthorized', code: 401 }]
+  manager.failure_app = proc { |_env|
+    ['401', { 'Content-Type' => 'application/json' }, { error: 'Unauthorized', code: 401 }]
   }
   manager.default_strategies :password # needs to be defined
   # Optional Settings (see Warden wiki)
@@ -21,5 +23,4 @@ Rails.configuration.middleware.use RailsWarden::Manager do |manager|
   #     end
   #   end
   # end
-
 end

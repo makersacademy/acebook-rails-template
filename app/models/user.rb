@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -7,5 +9,4 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
 
   has_many :posts
-
 end
