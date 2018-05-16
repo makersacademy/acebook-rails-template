@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# defines posts and thier routes
 class PostsController < ApplicationController
   # require 'pry'
   before_action :authenticate_user!
@@ -9,7 +10,8 @@ class PostsController < ApplicationController
   end
 
   def new
-    # build doesn't save to DB like new doesn't. For saving we need to use create
+    # build doesn't save to DB like new doesn't. For saving
+    # we need to use create
     @post = current_user.posts.build
   end
 

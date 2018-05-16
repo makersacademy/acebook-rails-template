@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# From Devise
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])

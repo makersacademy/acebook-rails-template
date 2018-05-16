@@ -9,7 +9,8 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in 'Email', with: 'tansaku@gmail.com'
     fill_in 'Password', with: '12345678m'
     fill_in 'Password confirmation', with: '12345678m'
-    # user = User.create email: 'tansaku@gmail.com', password: '12345678', password_confirmation: '12345678'
+    # user = User.create email: 'tansaku@gmail.com', password: '12345678',
+    # password_confirmation: '12345678'
     click_button 'Sign up'
   end
   scenario 'Can submit posts and view them' do

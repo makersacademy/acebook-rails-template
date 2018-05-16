@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# manages home page folowing auth
 class HomeController < ApplicationController
   before_action :authenticate_user!
 
