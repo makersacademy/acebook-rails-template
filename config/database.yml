@@ -7,7 +7,7 @@ default: &default
 
 development:
   <<: *default
-  database: travis_ci_test
+  database: acebook_development
 
 production:
   <<: *default

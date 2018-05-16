@@ -8,9 +8,15 @@ We aren't building it with the intention of producing a competitor (please don't
 
 Rather, the aim is to provide goals and structure under which to familiarise ourselves with the Ruby on Rails framework and associated test-driven development tooling, including, but not limited to, Heroku, Rubocop, Rspec, Travis CI & staging (!insert further tooling here!).
 
-[The card wall is hosted by Waffle, and you can find it here.](https://waffle.io/SamNiechcial/acebook-jspesh)
+Current test coverage information from CodeClimate:
 
-[You can find the engineering project outline provided by Makers Academy here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+<a href="https://codeclimate.com/github/SamNiechcial/acebook-jspesh/test_coverage"><img src="https://api.codeclimate.com/v1/badges/412d87af8cabda3d63f9/test_coverage" /></a>
+
+Current maintainability assessment from CodeClimate:
+
+<a href="https://codeclimate.com/github/SamNiechcial/acebook-jspesh/maintainability"><img src="https://api.codeclimate.com/v1/badges/412d87af8cabda3d63f9/maintainability" /></a>
+
+[The card wall is hosted by Waffle, and you can find it here.](https://waffle.io/SamNiechcial/acebook-jspesh)
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -27,4 +33,3 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
- 
