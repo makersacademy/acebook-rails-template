@@ -1,6 +1,23 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/posts">AceBook</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <%= link_to('My Profile', user_path(current_user), method: :get) %>
+      </li>
+      <li><%= link_to('Log Out', destroy_user_session_path, method: :delete) %></li>
+
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+
 <%= form_for @post do |form| %>
   <p><%= form.label :message %></p>
   <p><%= form.text_area(:message, rows: 4, cols: 80)%></p>
 
   <p><%= form.submit "Submit" %></p>
 <% end %>
+</div>
