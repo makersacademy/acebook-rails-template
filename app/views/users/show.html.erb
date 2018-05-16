@@ -13,11 +13,14 @@
   </div>
 </nav>
 <div class="container-fluid">
-<h5>Hello <%= @user.username %>. You are now signed in!</h5>
+
+<h5>Hello <%= current_user.username %>. You are now signed in!</h5>
+
 <ul class="list-group">
 <% @user_posts.each do |post| %>
   <li class="list-group-item"><p style="max-width: 450px; min-width: 100px"><%= post.message %> | <%= post.created_at.strftime("%m/%d/%Y") %></p> </li>
 <% end %>
+
 </ul>
 <a><%= link_to new_post_path do %>
   New post
