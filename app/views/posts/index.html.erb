@@ -1,8 +1,20 @@
 <% @posts.each do |post| %>
-  <p><%= "#{post.user.email}: #{post.message} #{time_ago_in_words(post.created_at)} ago" %></p>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+    <div class="card-body">
+      <!-- <h5 class="card-title">Card title</h5> -->
+      <p class="card-text"><%="#{post.message}"%></p>
+    </div>
+    <ul class="list-group list-group-flush">
+       <li class="list-group-item"><%= "#{post.user.email}"%></li>
+      <li class="list-group-item"><%="#{time_ago_in_words(post.created_at)} ago"%></li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Like</a>
+      <a href="#" class="card-link">Wall</a>
+    </div>
+  </div>
 <% end %>
-
-
 
 <%= link_to new_post_path do %>
   New post
