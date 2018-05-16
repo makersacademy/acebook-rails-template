@@ -18,4 +18,3 @@ production:
 test:
   adapter: postgresql
   database: travis_ci_test
-  #model: active_record
