@@ -19,6 +19,6 @@ RSpec.feature "Timeline", type: :feature do
   scenario "User email displayed with a post" do
     user_signs_up
     user_makes_a_post
-    expect(page).to have_content("Hello, world! jordan@matt.com")
+    expect(page).to have_content("jordan@matt.com: Hello, world!")
   end
 end
