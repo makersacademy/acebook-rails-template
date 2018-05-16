@@ -21,4 +21,10 @@ RSpec.feature "Timeline", type: :feature do
     user_makes_a_post
     expect(page).to have_content("jordan@matt.com: Hello, world!")
   end
+
+  scenario "Time is displayed with post" do 
+    user_signs_up
+    user_makes_a_post
+    expect(page).to have_content("jordan@matt.com: Hello, world! less than a minute ago")
+  end  
 end
