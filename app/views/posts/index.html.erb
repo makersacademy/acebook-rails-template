@@ -2,6 +2,8 @@
   <p><%= "#{post.user.email}: #{post.message} #{time_ago_in_words(post.created_at)} ago" %></p>
 <% end %>
 
+
+
 <%= link_to new_post_path do %>
   New post
 <% end %>
