@@ -1,18 +1,23 @@
 # addons:
 #   postgresql: 10.3
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 before_script:
-- bin/rails db:create
-# - bin/rails db:migrate
-
-  #- cp config/database.yml.travis config/database.yml
- # - psql -c 'create database pgapp_test;' -U postgres
-  #- gem install bundler
+  - bin/rails db:create
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 dist: trusty
+env:
+  global:
+    - CC_TEST_REPORTER_ID=8b3e4e9a2855157d85093a7daffd533cc1b6f429a4c55946c44e1793a38ecf82
 language: ruby
+notifications:
+  - false
 rvm:
   - 2.5.0
 script:
-  - bundle exec rspec
+  - bundle exec rspec spec
   - bundle exec rails db:migrate RAILS_ENV=test
 services:
   - postgresql: "10.3"
