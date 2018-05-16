@@ -14,8 +14,11 @@
 </nav>
 <div class="container-fluid">
 
+
 <% @posts.each do |post| %>
-  <p>@<%= User.find(post.user_id).username %> | <%= post.message %>     | <%= post.created_at.strftime("%m/%d/%Y") %>  </p>
+  <!-- <p><%= post.created_at.strftime("%m/%d/%Y" + ": ") %><%= post.message %></p>
+  <p style="max-width: 450px; min-width: 100px"><%= post.message %></p> <%= post.created_at.strftime("%m/%d/%Y") %> </p> -->
+  <p style="max-width: 450px; min-width: 100px">@<%= User.find(post.user_id).username %> | <%= post.message %> | <%= post.created_at.strftime("%m/%d/%Y") %></p>
 <% end %>
 
 <a><%= link_to new_post_path do %>

@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  require 'pry'
+  # require 'pry'
   before_action :authenticate_user!
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order('updated_at DESC')
   end
 
   def new
-    #build doesn't save to DB like new doesn't. For saving we need to use create
+    # build doesn't save to DB like new doesn't. For saving we need to use create
     @post = current_user.posts.build
   end
 

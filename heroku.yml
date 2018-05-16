@@ -1,0 +1,12 @@
+build:
+  languages:
+    - ruby
+  packages:
+    - imagemagick
+  config:
+    RAILS_ENV: development
+release:
+  command:
+    - rake db:migrate
+run:
+  web: bundle exec puma -C config/puma.rb
