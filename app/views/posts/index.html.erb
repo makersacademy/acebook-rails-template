@@ -1,5 +1,7 @@
-<%= link_to new_post_path(:wall_id => current_user.id) do %>
-  Create a new post
+<% if user_signed_in? %>
+  <%= link_to new_post_path(:wall_id => current_user.id) do %>
+    Create a new post
+  <% end %>
 <% end %>
 <br />
 
