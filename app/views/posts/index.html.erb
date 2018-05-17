@@ -14,6 +14,7 @@
 </nav>
 <div class="container-fluid">
 
+<h5>Hello <%= current_user.username %>. You are now signed in!</h5>
 
 <% @posts.each do |post| %>
   <!-- <p><%= post.created_at.strftime("%m/%d/%Y" + ": ") %><%= post.message %></p>
