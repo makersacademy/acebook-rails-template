@@ -1,0 +1,100 @@
+2018-05-16T16:53:29.509309+00:00 app[web.1]: [9c3eae97-8f98-4fde-980b-d03e0b9c2aac]     8:     <%= javascript_include_tag 'application' %>
+2018-05-16T16:53:29.509311+00:00 app[web.1]: [9c3eae97-8f98-4fde-980b-d03e0b9c2aac]     9:   </head>
+2018-05-16T16:53:29.509313+00:00 app[web.1]: [9c3eae97-8f98-4fde-980b-d03e0b9c2aac]    10:   <body>
+2018-05-16T16:53:29.509348+00:00 app[web.1]: F, [2018-05-16T16:53:29.509299 #6] FATAL -- : [9c3eae97-8f98-4fde-980b-d03e0b9c2aac]
+2018-05-16T16:53:29.509407+00:00 app[web.1]: F, [2018-05-16T16:53:29.509354 #6] FATAL -- : [9c3eae97-8f98-4fde-980b-d03e0b9c2aac] app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___787737036180569375_47146787304560'
+2018-05-16T16:53:29.508826+00:00 heroku[router]: at=info method=GET path="/posts" host=maln-acebook.herokuapp.com request_id=9c3eae97-8f98-4fde-980b-d03e0b9c2aac fwd="185.53.227.70" dyno=web.1 connect=1ms service=14ms status=500 bytes=1827 protocol=https
+2018-05-16T16:53:30.209065+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=maln-acebook.herokuapp.com request_id=1e59a38f-5ca8-4910-824a-30a133f9498c fwd="185.53.227.70" dyno=web.1 connect=1ms service=2ms status=200 bytes=143 protocol=https
+2018-05-16T16:54:55.142642+00:00 heroku[release.4039]: Starting process with command `if curl https://heroku-release-output.s3.amazonaws.com/log-stream?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJ3LIQ2SWG7V76SVQ%2F20180516%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20180516T165437Z&X-Amz-Expires=900&X-Amz-SignedHeaders=host&X-Amz-Signature=737ed72d4c9adbd713523c0a6eec079b078cb2e1b5f00f591c50e10ba27b8b78 --silent --connect-timeout 10 --retry 3 --retry-delay 1 >/tmp/log-stream; then   chmod u+x /tmp/log-stream   /tmp/log-stream /bin/sh -c '/bin/sh -c rake\ db:migrate' else   /bin/sh -c rake\ db:migrate fi`
+2018-05-16T16:54:55.896755+00:00 heroku[release.4039]: State changed from starting to up
+2018-05-16T16:55:01.827888+00:00 heroku[release.4039]: Process exited with status 0
+2018-05-16T16:55:01.708004+00:00 app[release.4039]: D, [2018-05-16T16:55:01.536415 #22] DEBUG -- :   [1m[35m (2.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3395744738432094825)[0m
+2018-05-16T16:55:01.708029+00:00 app[release.4039]: D, [2018-05-16T16:55:01.592798 #22] DEBUG -- :   [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+2018-05-16T16:55:01.708036+00:00 app[release.4039]: D, [2018-05-16T16:55:01.638764 #22] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (30.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+2018-05-16T16:55:01.708042+00:00 app[release.4039]: D, [2018-05-16T16:55:01.676463 #22] DEBUG -- :   [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+2018-05-16T16:55:01.708044+00:00 app[release.4039]: D, [2018-05-16T16:55:01.680443 #22] DEBUG -- :   [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+2018-05-16T16:55:01.708046+00:00 app[release.4039]: D, [2018-05-16T16:55:01.683836 #22] DEBUG -- :   [1m[35m (3.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(3395744738432094825)[0m
+2018-05-16T16:55:02.291195+00:00 heroku[release.4039]: State changed from up to complete
+2018-05-16T16:55:02.805721+00:00 heroku[router]: at=info method=GET path="/posts" host=maln-acebook.herokuapp.com request_id=986bbf29-0757-4392-b090-8448cde491d5 fwd="185.53.227.70" dyno=web.1 connect=0ms service=17ms status=500 bytes=1827 protocol=https
+2018-05-16T16:55:02.792965+00:00 app[web.1]: I, [2018-05-16T16:55:02.792854 #6]  INFO -- : [986bbf29-0757-4392-b090-8448cde491d5] Started GET "/posts" for 185.53.227.70 at 2018-05-16 16:55:02 +0000
+2018-05-16T16:55:02.793673+00:00 app[web.1]: I, [2018-05-16T16:55:02.793603 #6]  INFO -- : [986bbf29-0757-4392-b090-8448cde491d5] Processing by PostsController#index as HTML
+2018-05-16T16:55:02.796856+00:00 app[web.1]: D, [2018-05-16T16:55:02.796783 #6] DEBUG -- : [986bbf29-0757-4392-b090-8448cde491d5]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+2018-05-16T16:55:02.797704+00:00 app[web.1]: I, [2018-05-16T16:55:02.797637 #6]  INFO -- : [986bbf29-0757-4392-b090-8448cde491d5]   Rendering posts/index.html.erb within layouts/application
+2018-05-16T16:55:02.799177+00:00 app[web.1]: D, [2018-05-16T16:55:02.799093 #6] DEBUG -- : [986bbf29-0757-4392-b090-8448cde491d5]   [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY updated_at DESC[0m
+2018-05-16T16:55:02.801255+00:00 app[web.1]: D, [2018-05-16T16:55:02.801180 #6] DEBUG -- : [986bbf29-0757-4392-b090-8448cde491d5]   [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+2018-05-16T16:55:02.806272+00:00 app[web.1]: D, [2018-05-16T16:55:02.806204 #6] DEBUG -- : [986bbf29-0757-4392-b090-8448cde491d5]   [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+2018-05-16T16:55:02.806639+00:00 app[web.1]: I, [2018-05-16T16:55:02.806576 #6]  INFO -- : [986bbf29-0757-4392-b090-8448cde491d5]   Rendered posts/index.html.erb within layouts/application (8.8ms)
+2018-05-16T16:55:02.807558+00:00 app[web.1]: I, [2018-05-16T16:55:02.807497 #6]  INFO -- : [986bbf29-0757-4392-b090-8448cde491d5] Completed 500 Internal Server Error in 14ms (ActiveRecord: 7.8ms)
+2018-05-16T16:55:02.808590+00:00 app[web.1]: F, [2018-05-16T16:55:02.808538 #6] FATAL -- : [986bbf29-0757-4392-b090-8448cde491d5]     4:     <title>Acebook</title>
+2018-05-16T16:55:02.808455+00:00 app[web.1]: F, [2018-05-16T16:55:02.808404 #6] FATAL -- : [986bbf29-0757-4392-b090-8448cde491d5] ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.):
+2018-05-16T16:55:02.808378+00:00 app[web.1]: F, [2018-05-16T16:55:02.808315 #6] FATAL -- : [986bbf29-0757-4392-b090-8448cde491d5]
+2018-05-16T16:55:02.808592+00:00 app[web.1]: [986bbf29-0757-4392-b090-8448cde491d5]     5:     <%= csrf_meta_tags %>
+2018-05-16T16:55:02.808594+00:00 app[web.1]: [986bbf29-0757-4392-b090-8448cde491d5]     6:     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+2018-05-16T16:55:02.808596+00:00 app[web.1]: [986bbf29-0757-4392-b090-8448cde491d5]     7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+2018-05-16T16:55:02.808597+00:00 app[web.1]: [986bbf29-0757-4392-b090-8448cde491d5]     8:     <%= javascript_include_tag 'application' %>
+2018-05-16T16:55:02.808599+00:00 app[web.1]: [986bbf29-0757-4392-b090-8448cde491d5]     9:   </head>
+2018-05-16T16:55:02.808600+00:00 app[web.1]: [986bbf29-0757-4392-b090-8448cde491d5]    10:   <body>
+2018-05-16T16:55:02.808638+00:00 app[web.1]: F, [2018-05-16T16:55:02.808591 #6] FATAL -- : [986bbf29-0757-4392-b090-8448cde491d5]
+2018-05-16T16:55:02.808699+00:00 app[web.1]: F, [2018-05-16T16:55:02.808652 #6] FATAL -- : [986bbf29-0757-4392-b090-8448cde491d5] app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___787737036180569375_47146787304560'
+2018-05-16T16:55:03.444601+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=maln-acebook.herokuapp.com request_id=742da00f-83a6-4ad3-8b23-16c46e1518a8 fwd="185.53.227.70" dyno=web.1 connect=2ms service=1ms status=200 bytes=143 protocol=https
+2018-05-16T16:55:03.608928+00:00 heroku[web.1]: Restarting
+2018-05-16T16:55:03.610194+00:00 heroku[web.1]: State changed from up to starting
+2018-05-16T16:55:04.177863+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2018-05-16T16:55:04.173515+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2018-05-16T16:55:04.231868+00:00 heroku[web.1]: Process exited with status 143
+2018-05-16T16:55:22.070526+00:00 heroku[web.1]: Starting process with command `/bin/sh -c bundle\ exec\ rackup\ --port\=\24747`
+2018-05-16T16:55:26.184447+00:00 app[web.1]: Puma starting in single mode...
+2018-05-16T16:55:26.184476+00:00 app[web.1]: * Version 3.11.3 (ruby 2.5.0-p0), codename: Love Song
+2018-05-16T16:55:26.184477+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2018-05-16T16:55:26.184479+00:00 app[web.1]: * Environment: production
+2018-05-16T16:55:26.184524+00:00 app[web.1]: * Listening on tcp://0.0.0.0:24747
+2018-05-16T16:55:26.184809+00:00 app[web.1]: Use Ctrl-C to stop
+2018-05-16T16:55:26.552606+00:00 heroku[web.1]: State changed from starting to up
+2018-05-16T16:55:27.700645+00:00 heroku[router]: at=info method=GET path="/" host=maln-acebook.herokuapp.com request_id=3b1749cb-314a-4df1-aada-c3e0a7aee5bc fwd="185.53.227.70" dyno=web.1 connect=3ms service=92ms status=302 bytes=918 protocol=https
+2018-05-16T16:55:27.610131+00:00 app[web.1]: I, [2018-05-16T16:55:27.610030 #6]  INFO -- : [3b1749cb-314a-4df1-aada-c3e0a7aee5bc] Started GET "/" for 185.53.227.70 at 2018-05-16 16:55:27 +0000
+2018-05-16T16:55:27.616262+00:00 app[web.1]: I, [2018-05-16T16:55:27.616190 #6]  INFO -- : [3b1749cb-314a-4df1-aada-c3e0a7aee5bc] Processing by HomeController#index as HTML
+2018-05-16T16:55:27.674740+00:00 app[web.1]: D, [2018-05-16T16:55:27.674556 #6] DEBUG -- : [3b1749cb-314a-4df1-aada-c3e0a7aee5bc]   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+2018-05-16T16:55:27.697242+00:00 app[web.1]: I, [2018-05-16T16:55:27.697146 #6]  INFO -- : [3b1749cb-314a-4df1-aada-c3e0a7aee5bc] Redirected to https://maln-acebook.herokuapp.com/posts
+2018-05-16T16:55:27.697423+00:00 app[web.1]: I, [2018-05-16T16:55:27.697359 #6]  INFO -- : [3b1749cb-314a-4df1-aada-c3e0a7aee5bc] Completed 302 Found in 81ms (ActiveRecord: 21.8ms)
+2018-05-16T16:55:27.818527+00:00 app[web.1]: I, [2018-05-16T16:55:27.818359 #6]  INFO -- : [e971a59d-135b-4e75-955a-3cd5d7141754] Started GET "/posts" for 185.53.227.70 at 2018-05-16 16:55:27 +0000
+2018-05-16T16:55:27.820089+00:00 app[web.1]: I, [2018-05-16T16:55:27.819990 #6]  INFO -- : [e971a59d-135b-4e75-955a-3cd5d7141754] Processing by PostsController#index as HTML
+2018-05-16T16:55:27.823342+00:00 app[web.1]: D, [2018-05-16T16:55:27.823258 #6] DEBUG -- : [e971a59d-135b-4e75-955a-3cd5d7141754]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+2018-05-16T16:55:27.826113+00:00 app[web.1]: I, [2018-05-16T16:55:27.826005 #6]  INFO -- : [e971a59d-135b-4e75-955a-3cd5d7141754]   Rendering posts/index.html.erb within layouts/application
+2018-05-16T16:55:27.828760+00:00 app[web.1]: D, [2018-05-16T16:55:27.828670 #6] DEBUG -- : [e971a59d-135b-4e75-955a-3cd5d7141754]   [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY updated_at DESC[0m
+2018-05-16T16:55:27.843245+00:00 app[web.1]: D, [2018-05-16T16:55:27.843169 #6] DEBUG -- : [e971a59d-135b-4e75-955a-3cd5d7141754]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+2018-05-16T16:55:27.844678+00:00 app[web.1]: D, [2018-05-16T16:55:27.844606 #6] DEBUG -- : [e971a59d-135b-4e75-955a-3cd5d7141754]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+2018-05-16T16:55:27.845149+00:00 app[web.1]: I, [2018-05-16T16:55:27.845085 #6]  INFO -- : [e971a59d-135b-4e75-955a-3cd5d7141754]   Rendered posts/index.html.erb within layouts/application (18.9ms)
+2018-05-16T16:55:27.846579+00:00 app[web.1]: I, [2018-05-16T16:55:27.846512 #6]  INFO -- : [e971a59d-135b-4e75-955a-3cd5d7141754] Completed 500 Internal Server Error in 26ms (ActiveRecord: 8.2ms)
+2018-05-16T16:55:27.847463+00:00 app[web.1]: F, [2018-05-16T16:55:27.847395 #6] FATAL -- : [e971a59d-135b-4e75-955a-3cd5d7141754]
+2018-05-16T16:55:27.847696+00:00 app[web.1]: F, [2018-05-16T16:55:27.847637 #6] FATAL -- : [e971a59d-135b-4e75-955a-3cd5d7141754]     4:     <title>Acebook</title>
+2018-05-16T16:55:27.847521+00:00 app[web.1]: F, [2018-05-16T16:55:27.847467 #6] FATAL -- : [e971a59d-135b-4e75-955a-3cd5d7141754] ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.):
+2018-05-16T16:55:27.847697+00:00 app[web.1]: [e971a59d-135b-4e75-955a-3cd5d7141754]     5:     <%= csrf_meta_tags %>
+2018-05-16T16:55:27.847699+00:00 app[web.1]: [e971a59d-135b-4e75-955a-3cd5d7141754]     6:     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+2018-05-16T16:55:27.847701+00:00 app[web.1]: [e971a59d-135b-4e75-955a-3cd5d7141754]     7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+2018-05-16T16:55:27.847702+00:00 app[web.1]: [e971a59d-135b-4e75-955a-3cd5d7141754]     8:     <%= javascript_include_tag 'application' %>
+2018-05-16T16:55:27.847704+00:00 app[web.1]: [e971a59d-135b-4e75-955a-3cd5d7141754]     9:   </head>
+2018-05-16T16:55:27.847705+00:00 app[web.1]: [e971a59d-135b-4e75-955a-3cd5d7141754]    10:   <body>
+2018-05-16T16:55:27.847747+00:00 app[web.1]: F, [2018-05-16T16:55:27.847698 #6] FATAL -- : [e971a59d-135b-4e75-955a-3cd5d7141754]
+2018-05-16T16:55:27.847803+00:00 app[web.1]: F, [2018-05-16T16:55:27.847753 #6] FATAL -- : [e971a59d-135b-4e75-955a-3cd5d7141754] app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__695196321667147760_46965042496200'
+2018-05-16T16:55:27.856475+00:00 app[web.1]: I, [2018-05-16T16:55:27.856408 #6]  INFO -- : [19756498-bfc6-469d-8c3b-98681bc87b74] Started GET "/posts" for 185.53.227.70 at 2018-05-16 16:55:27 +0000
+2018-05-16T16:55:27.857175+00:00 app[web.1]: I, [2018-05-16T16:55:27.857107 #6]  INFO -- : [19756498-bfc6-469d-8c3b-98681bc87b74] Processing by PostsController#index as HTML
+2018-05-16T16:55:27.860047+00:00 app[web.1]: D, [2018-05-16T16:55:27.859976 #6] DEBUG -- : [19756498-bfc6-469d-8c3b-98681bc87b74]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+2018-05-16T16:55:27.871531+00:00 heroku[router]: at=info method=GET path="/posts" host=maln-acebook.herokuapp.com request_id=19756498-bfc6-469d-8c3b-98681bc87b74 fwd="185.53.227.70" dyno=web.1 connect=3ms service=15ms status=500 bytes=1827 protocol=https
+2018-05-16T16:55:27.847812+00:00 heroku[router]: at=info method=GET path="/posts" host=maln-acebook.herokuapp.com request_id=e971a59d-135b-4e75-955a-3cd5d7141754 fwd="185.53.227.70" dyno=web.1 connect=2ms service=31ms status=500 bytes=1827 protocol=https
+2018-05-16T16:55:27.860958+00:00 app[web.1]: I, [2018-05-16T16:55:27.860833 #6]  INFO -- : [19756498-bfc6-469d-8c3b-98681bc87b74]   Rendering posts/index.html.erb within layouts/application
+2018-05-16T16:55:27.862253+00:00 app[web.1]: D, [2018-05-16T16:55:27.862183 #6] DEBUG -- : [19756498-bfc6-469d-8c3b-98681bc87b74]   [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY updated_at DESC[0m
+2018-05-16T16:55:27.863794+00:00 app[web.1]: D, [2018-05-16T16:55:27.863722 #6] DEBUG -- : [19756498-bfc6-469d-8c3b-98681bc87b74]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+2018-05-16T16:55:27.865385+00:00 app[web.1]: D, [2018-05-16T16:55:27.865304 #6] DEBUG -- : [19756498-bfc6-469d-8c3b-98681bc87b74]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+2018-05-16T16:55:27.866109+00:00 app[web.1]: I, [2018-05-16T16:55:27.866008 #6]  INFO -- : [19756498-bfc6-469d-8c3b-98681bc87b74]   Rendered posts/index.html.erb within layouts/application (5.0ms)
+2018-05-16T16:55:27.867340+00:00 app[web.1]: I, [2018-05-16T16:55:27.867272 #6]  INFO -- : [19756498-bfc6-469d-8c3b-98681bc87b74] Completed 500 Internal Server Error in 10ms (ActiveRecord: 3.4ms)
+2018-05-16T16:55:27.868259+00:00 app[web.1]: F, [2018-05-16T16:55:27.868190 #6] FATAL -- : [19756498-bfc6-469d-8c3b-98681bc87b74]
+2018-05-16T16:55:27.868352+00:00 app[web.1]: F, [2018-05-16T16:55:27.868262 #6] FATAL -- : [19756498-bfc6-469d-8c3b-98681bc87b74] ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.):
+2018-05-16T16:55:27.868509+00:00 app[web.1]: F, [2018-05-16T16:55:27.868436 #6] FATAL -- : [19756498-bfc6-469d-8c3b-98681bc87b74]     4:     <title>Acebook</title>
+2018-05-16T16:55:27.868512+00:00 app[web.1]: [19756498-bfc6-469d-8c3b-98681bc87b74]     5:     <%= csrf_meta_tags %>
+2018-05-16T16:55:27.868514+00:00 app[web.1]: [19756498-bfc6-469d-8c3b-98681bc87b74]     6:     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+2018-05-16T16:55:27.868516+00:00 app[web.1]: [19756498-bfc6-469d-8c3b-98681bc87b74]     7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+2018-05-16T16:55:27.868518+00:00 app[web.1]: [19756498-bfc6-469d-8c3b-98681bc87b74]     8:     <%= javascript_include_tag 'application' %>
+2018-05-16T16:55:27.868520+00:00 app[web.1]: [19756498-bfc6-469d-8c3b-98681bc87b74]     9:   </head>
+2018-05-16T16:55:27.868521+00:00 app[web.1]: [19756498-bfc6-469d-8c3b-98681bc87b74]    10:   <body>
+2018-05-16T16:55:27.868577+00:00 app[web.1]: F, [2018-05-16T16:55:27.868503 #6] FATAL -- : [19756498-bfc6-469d-8c3b-98681bc87b74]
+2018-05-16T16:55:27.868694+00:00 app[web.1]: F, [2018-05-16T16:55:27.868615 #6] FATAL -- : [19756498-bfc6-469d-8c3b-98681bc87b74] app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__695196321667147760_46965042496200'

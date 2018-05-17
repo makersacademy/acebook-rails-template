@@ -17,13 +17,15 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  username: postgres
+  password:
   pool: 5
 
 development:
   <<: *default
   database: pgapp_development
+  host: db
+  username: postgres
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -78,8 +80,15 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   database: pgapp_production
+#   username: pgapp
+#   password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
-  database: pgapp_production
-  username: pgapp
-  password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>

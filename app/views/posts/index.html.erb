@@ -20,7 +20,23 @@
   <!-- <p><%= post.created_at.strftime("%m/%d/%Y" + ": ") %><%= post.message %></p>
   <p style="max-width: 450px; min-width: 100px"><%= post.message %></p> <%= post.created_at.strftime("%m/%d/%Y") %> </p> -->
   <p style="max-width: 450px; min-width: 100px">@<%= User.find(post.user_id).username %> | <%= post.message %> | <%= post.created_at.strftime("%m/%d/%Y") %></p>
-<% end %>
+  <p>Comments: <% post.comments.each do |comment| %>
+  <ul>
+    <li><%=comment.content%></li>
+  </ul>
+  <% end %>
+  </p>
+  <div class="form-group">
+    <% comment = post.comments.build %>
+    <%= form_for [post, comment], :url => post_comments_path(post) do |comment_fields| %>
+
+            <%= comment_fields.text_area :content, placeholder: "Write a comment..." %>
+            <br>
+            <%= comment_fields.submit "Comment" %>
+
+    <% end %>
+  </div>
+  <% end %>
 
 <a><%= link_to new_post_path do %>
   New post

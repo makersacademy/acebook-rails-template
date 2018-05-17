@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# classism
 module ControllerHelpers
   def sign_in(user = double('user'))
     if user.nil?
