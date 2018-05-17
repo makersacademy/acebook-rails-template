@@ -8,7 +8,7 @@
 </h1>
 <hr class="my-4">
 <p class="lead">What would you like to do today?</p>
-<p><%= link_to 'View posts', controller: 'posts' %></p>
+<p><%= link_to 'View posts', controller: 'posts', :id => "view-posts-link" %></p>
 <hr class="my-4">
 <% if user_signed_in? %>
  <p>Logged in as: <%= current_user.real_name %></p>
