@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def new
     @post = current_user.posts.new
+    @target_user = User.find(params[:wall_id])
   end
 
   def create

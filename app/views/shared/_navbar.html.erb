@@ -17,6 +17,7 @@
         <%= current_user.real_name %>
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <%= link_to "My Profile", user_path(current_user), :class => "dropdown-item" %>
         <%= link_to "Edit Account Details", edit_user_registration_path, :class => "dropdown-item"%>
         <div class="dropdown-divider"></div>
          <%= link_to "Logout", destroy_user_session_path, :class => "dropdown-item", method: :delete %>

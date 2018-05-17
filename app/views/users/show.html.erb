@@ -1,7 +1,13 @@
 <h1><%= @user.real_name %></h1>
 
+<br />
+
 <%= link_to new_post_path(:wall_id => @user.id) do %>
   Create a new post
 <% end %>
+
+<br />
+
+<br />
 
 <%= render 'shared/show_posts' %>
