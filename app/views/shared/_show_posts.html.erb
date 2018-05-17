@@ -2,7 +2,20 @@
   <div style="padding-bottom: 7.5px;">
     <div class="card">
         <div style="padding: 20px;">
-        <strong><%= post.user.real_name %></strong><br/>
+          <% if post.user.id == post.wall.id %>
+            <strong>
+              <%= link_to post.user.real_name, user_path(post.user) %>
+            </strong>
+            <br/>
+          <% else %>
+            <strong>
+              <%= link_to post.user.real_name, user_path(post.user) %>
+            </strong> ☞
+            <strong>
+              <%= link_to post.wall.user.real_name, user_path(post.wall.user) %>
+            </strong>
+            <br/>
+          <% end %>
         <small><%= time_ago_in_words(post.created_at)%> ago.</small>
 
         <p><%= simple_format(post.message) %></p>
