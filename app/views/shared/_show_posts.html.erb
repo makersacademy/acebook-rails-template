@@ -1,0 +1,19 @@
+<% @posts.reverse.each do |post| %>
+  <div style="padding-bottom: 7.5px;">
+    <div class="card">
+        <div style="padding: 20px;">
+        <strong><%= post.user.real_name %></strong><br/>
+        <small><%= time_ago_in_words(post.created_at)%> ago.</small>
+
+        <p><%= simple_format(post.message) %></p>
+
+          <%= div_for post do %>
+            <%= render partial: "likes/like_button", locals: { post: post } %>
+          <% end %>
+        <% if user_signed_in? && current_user == post.user %>
+          <%= link_to 'Delete', post_path(post), method: :delete %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
