@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   match 'unlike', to: 'likes#unlike', via: :delete
   resources :likes
   devise_for :users, controllers: { registrations: "users/registrations"}
+  resources :users
   get 'welcome/index'
 
   root 'welcome#index'

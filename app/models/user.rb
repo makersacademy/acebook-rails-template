@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :posts, through: :likes
   has_many :posts
+  has_one :wall, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

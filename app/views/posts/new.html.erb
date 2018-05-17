@@ -1,5 +1,6 @@
 <div class="card">
 <%= form_for @post do |form| %>
+  <%= form.hidden_field :wall_id, :value => params[:wall_id] %>
   <div class="card-header"><h5><%= form.label 'New Post:' %></h5></div>
 
   <div style="padding: 15px;">
