@@ -1,11 +1,26 @@
 # AceBook
 
-Fork this repository to `acebook-teamname` and customize
-the below**
+Welcome to the Acebook project by team JSpesh, members of the March 2018 cohort at Makers Academy in Shoreditch!
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+This project is an attempt to build a functional (and probably not particularly pretty!) clone of a certain famous social media platform.
 
-The card wall is here: <please update>
+We aren't building it with the intention of producing a competitor (please don't sue us!) - we don't have the expertise or the time.
+
+Rather, the aim is to provide goals and structure under which to familiarise ourselves with the Ruby on Rails framework and associated test-driven development tooling, including, but not limited to, Heroku, Rubocop, Rspec, Travis CI & staging (!insert further tooling here!).
+
+Current Travis CI Build Status
+
+[![Build Status](https://travis-ci.org/SamNiechcial/acebook-jspesh.svg?branch=master)](https://travis-ci.org/SamNiechcial/acebook-jspesh)
+
+Current test coverage information from CodeClimate:
+
+<a href="https://codeclimate.com/github/SamNiechcial/acebook-jspesh/test_coverage"><img src="https://api.codeclimate.com/v1/badges/412d87af8cabda3d63f9/test_coverage" /></a>
+
+Current maintainability assessment from CodeClimate:
+
+<a href="https://codeclimate.com/github/SamNiechcial/acebook-jspesh/maintainability"><img src="https://api.codeclimate.com/v1/badges/412d87af8cabda3d63f9/maintainability" /></a>
+
+[The card wall is hosted by Waffle, and you can find it here.](https://waffle.io/SamNiechcial/acebook-jspesh)
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)

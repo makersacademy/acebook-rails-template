@@ -1,0 +1,25 @@
+ @import "bootstrap";
+
+ .user-form {
+   position: relative;
+   left: 40%;
+   top: 200px;
+   padding: 25px;
+   width: 270px;
+   border: 1px solid grey;
+   background-color:rgba(255,255,255, 0.8);
+   border-radius: 5px;
+ }
+
+ .user-form-background {
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 55px;
+   bottom: 0;
+   background-color: rgb(64, 28, 121);
+ }
+
+ .navbar {
+   z-index: 100;
+ }
