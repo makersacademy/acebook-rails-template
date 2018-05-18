@@ -23,6 +23,8 @@
           <%= div_for post do %>
             <%= render partial: "likes/like_button", locals: { post: post } %>
           <% end %>
+          <%= link_to 'Comment', new_post_comment_url(post) %>
+          <%= link_to 'See comments', post_path(post) %>
         <% if user_signed_in? && current_user == post.user %>
           <%= link_to 'Delete', post_path(post), method: :delete %>
         <% end %>

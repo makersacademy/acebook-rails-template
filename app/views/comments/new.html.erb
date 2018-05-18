@@ -1,0 +1,16 @@
+<div class="card">
+<%= form_with(model: [@post, @post.comments.build ], local: true) do |form| %>
+  <div class="card-header">
+      <%= form.hidden_field :commenter, :value => current_user.real_name %>
+    <h5>
+        <%= form.label 'Say something horrible about this post' %>
+    </h5>
+  </div>
+  <div style="padding: 15px;">
+  <div class="form-group" >
+  <%= form.text_area :content %>
+  </div>
+  <%= form.submit "Submit", :class => "btn btn-primary" %>
+  </div>
+<% end %>
+</div>
