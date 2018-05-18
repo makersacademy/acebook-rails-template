@@ -1,7 +1,45 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/posts">AceBook</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <%= link_to('My Profile', user_path(current_user), method: :get) %>
+      </li>
+      <li><%= link_to('Log Out', destroy_user_session_path, method: :delete) %></li>
 
-<%= link_to new_post_path do %>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+
+<h5>Hello <%= current_user.username %>. You are now signed in!</h5>
+
+<% @posts.each do |post| %>
+  <!-- <p><%= post.created_at.strftime("%m/%d/%Y" + ": ") %><%= post.message %></p>
+  <p style="max-width: 450px; min-width: 100px"><%= post.message %></p> <%= post.created_at.strftime("%m/%d/%Y") %> </p> -->
+  <p style="max-width: 450px; min-width: 100px">@<%= User.find(post.user_id).username %> | <%= post.message %> | <%= post.created_at.strftime("%m/%d/%Y") %></p>
+  <p>Comments: <% post.comments.each do |comment| %>
+  <ul>
+    <li><%=comment.content%></li>
+  </ul>
+  <% end %>
+  </p>
+  <div class="form-group">
+    <% comment = post.comments.build %>
+    <%= form_for [post, comment], :url => post_comments_path(post) do |comment_fields| %>
+
+            <%= comment_fields.text_area :content, placeholder: "Write a comment..." %>
+            <br>
+            <%= comment_fields.submit "Comment" %>
+
+    <% end %>
+  </div>
+  <% end %>
+
+<a><%= link_to new_post_path do %>
   New post
 <% end %>
+</a>
+</div>
