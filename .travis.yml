@@ -1,0 +1,13 @@
+language: ruby
+rvnm:
+  - 2.4.1
+
+before_script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+
+script:
+  - bundle exec rspec
+
+notifications:
+  email: false

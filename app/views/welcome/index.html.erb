@@ -1,0 +1,24 @@
+<div class="jumbotron">
+<h1 class="display-4">Welcome
+  <% if user_signed_in? %>
+  <%= current_user.real_name %>
+  <% else %>
+  to Acebook!
+  <% end %>
+</h1>
+<hr class="my-4">
+<p class="lead">What would you like to do today?</p>
+<p><%= link_to 'View posts', controller: 'posts', :id => "view-posts-link" %></p>
+<hr class="my-4">
+<% if user_signed_in? %>
+ <p>Logged in as: <%= current_user.real_name %></p>
+ <p><%= link_to 'Make a new post', new_post_path %></p>
+ <p><%= link_to "My Profile", user_path(current_user)%></p>
+ <p><%= link_to 'Edit your account details', edit_user_registration_path %></p>
+ <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
+<% else %>
+ <p><%= link_to "Sign Up", new_user_registration_path %></p>
+ <p><%= link_to "Login", new_user_session_path %></p>
+<% end %>
+
+</div>
