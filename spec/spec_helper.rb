@@ -8,8 +8,6 @@ SimpleCov.start 'rails' do
   add_filter '/test/'
 end
 
-
-
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   SimpleCov::Formatter::HTMLFormatter,
