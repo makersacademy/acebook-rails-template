@@ -8,6 +8,5 @@ script:
  - bundle exec rake db:test:prepare
  - bundle exec rspec spec/
 before_script:
- - cp config/database.travis.yml config/database.yml
  - mysql -e 'create database mydb_test'
 bundler_args: --binstubs=./bundler_stubs
