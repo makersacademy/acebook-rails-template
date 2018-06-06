@@ -16,4 +16,13 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect("Bye").to appear_before("Yo")
   end
+
+  scenario "Post display a timestamp" do
+    new_time = Time.local(2016, 6, 1, 12, 0, 0).strftime("%e %B %Y %H:%M")
+    Timecop.freeze(new_time)
+    visit "/posts"
+    fill_in "Message", with: "Yo"
+    click_button "Submit"
+    expect(page).to have_content("#{new_time}")
+  end
 end

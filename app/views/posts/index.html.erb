@@ -7,4 +7,6 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <p><%= post.created_at.strftime("%e %B %Y %H:%M") %></p>
+  <hr />
 <% end %>

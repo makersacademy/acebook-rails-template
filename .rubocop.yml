@@ -39,7 +39,9 @@
 AllCops:
   Exclude:
     - './bin/**/*'
+    - './config/**/*'
     - './spec/rails_helper.rb'
+    - './db/**/*'
 
 Metrics/LineLength:
   Max: 150
