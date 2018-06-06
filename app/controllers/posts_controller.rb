@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     @post = Post.create(post_params)
