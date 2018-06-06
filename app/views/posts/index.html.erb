@@ -1,7 +1,12 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<%= form_for @post do |form| %>
+  <%= form.label :message %>
+  <%= form.text_field :message %>
+
+  <%= form.submit "Submit" %>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<% @posts.each do |post| %>
+  <p><%= post.message %></p>
+  <p><%= post.created_at.strftime("%e %B %Y %H:%M") %></p>
+  <hr />
 <% end %>
