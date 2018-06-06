@@ -1,7 +1,10 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<%= form_for @post do |form| %>
+  <%= form.label :what_floats_your_boat? %>
+  <%= form.text_field :message %>
+
+  <%= form.submit "Submit" %>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<% @posts.each do |post| %>
+  <p><%= post.message %></p>
 <% end %>
