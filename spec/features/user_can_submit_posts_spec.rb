@@ -9,7 +9,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Posts should be displayed in chronological order" do
-    visit "/posts"
+    sign_up_and_sign_in
     fill_in "Message", with: "Yo"
     click_button "Submit"
     fill_in "Message", with: "Bye"
@@ -20,7 +20,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Post display a timestamp" do
     new_time = Time.local(2016, 6, 1, 12, 0, 0).strftime("%e %B %Y %H:%M")
     Timecop.freeze(new_time)
-    visit "/posts"
+    sign_up_and_sign_in
     fill_in "Message", with: "Yo"
     click_button "Submit"
     expect(page).to have_content("#{new_time}")
@@ -29,7 +29,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Doesn't allow empty posts" do
     new_time = Time.local(2015, 5, 1, 12, 0, 0).strftime("%e %B %Y %H:%M")
     Timecop.freeze(new_time)
-    visit "/posts"
+    sign_up_and_sign_in
     click_button "Submit"
     expect(page).not_to have_content("#{new_time}")
   end
