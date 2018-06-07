@@ -2,13 +2,14 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @post = Post.create(post_params)
+    @post = current_user.posts.create(post_params)
+    puts current_user
     redirect_to posts_url
   end
 
   def index
+    @post = current_user.posts.create
     @posts = Post.all.reverse
-    @post = Post.new
   end
 
   def destroy

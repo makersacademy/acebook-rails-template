@@ -5,7 +5,12 @@ RSpec.describe PostsController, type: :controller do
 
     before(:each) do
       user = double(:user)
+      posts = double(:posts)
+      post = double(:post)
       allow(request.env['warden']).to receive(:authenticate!).and_return(user)
+      allow(controller).to receive(:current_user).and_return(user)
+      allow(user).to receive(:posts).and_return(posts)
+      allow(posts).to receive(:create).and_return(post)
     end
 
     describe "GET /new " do
@@ -22,8 +27,8 @@ RSpec.describe PostsController, type: :controller do
       end
 
       it "creates a post" do
-        post :create, params: { post: { message: "Hello, world!" } }
-        expect(Post.find_by(message: "Hello, world!")).to be
+        post :create, params: { post: { message: "Hello, world!", id: 1 } }
+        expect(Post.find_by(id: 1)).to be
       end
     end
 
@@ -50,8 +55,9 @@ RSpec.describe PostsController, type: :controller do
 
   describe "DELETE /" do
     it "deletes a post" do
-      @post = Post.create(message: "Hello World")
-      delete :destroy, params: { id: @post.id }
+      post :create, params: { message: "Hello World", id: 1 }
+      #DOESN'T CREATE ANYTHING
+      delete :destroy, params: { id: 1 }
       expect(Post.find_by(message: "Hello, world!")).not_to be
     end
   end
