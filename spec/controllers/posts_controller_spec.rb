@@ -1,9 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+
+  before(:each) do
+    user = double(:user)
+    allow(request.env['warden']).to receive(:authenticate!).and_return(user)
+  end
+
   describe "GET /new " do
     it "responds with 200" do
-# GET A USER THAT IS ALREADY SIGNED IN BEFORE RUNNING TESTS
       get :new
       expect(response).to have_http_status(200)
     end
