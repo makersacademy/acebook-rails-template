@@ -47,4 +47,12 @@ RSpec.describe PostsController, type: :controller do
       end
     end
   end
+
+  describe "DELETE /" do
+    it "deletes a post" do
+      @post = Post.create(message: "Hello World")
+      delete :destroy, params: { id: @post.id }
+      expect(Post.find_by(message: "Hello, world!")).not_to be
+    end
+  end
 end
