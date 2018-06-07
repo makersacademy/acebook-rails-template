@@ -44,4 +44,15 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Hello, world!")
     expect(page).not_to have_content("Yo")
   end
+
+  scenario "It edits a post" do
+    sign_up_and_sign_in
+    fill_in "Message", with: "Hello, world"
+    click_button "Submit"
+    first('.item').click_link('Edit')
+    fill_in "Message", with: "!"
+    click_button "Update"
+    expect(page).to have_content("!")
+
+  end
 end
