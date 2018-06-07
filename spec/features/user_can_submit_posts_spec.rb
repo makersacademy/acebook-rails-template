@@ -53,6 +53,26 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with: "!"
     click_button "Update"
     expect(page).to have_content("!")
-
   end
+
+  scenario "Cancel edit goes back to posts" do
+    sign_up_and_sign_in
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    first('.item').click_link('Edit')
+    click_link "Cancel"
+    expect(page).to have_content("Hello, world!")
+    expect(page).not_to have_content("Update")
+  end
+
+  scenario "Cancel edit goes back to posts" do
+    sign_up_and_sign_in
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    first('.item').click_link('Edit')
+    fill_in "Message", with: ""
+    click_button "Update"
+    expect(page).to have_content("Message can't be blank")
+  end
+
 end
