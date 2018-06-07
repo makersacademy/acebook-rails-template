@@ -6,8 +6,11 @@
 <% end %>
 
 <% @posts.each do |post| %>
+<div class="item">
   <p><%= post.message %></p>
   <% Time.zone = 'London' %>
   <p><%= post.created_at.strftime("%e %B %Y %H:%M") %></p>
+  <p><%= link_to "Delete", post, :data => { :confirm => "Are you sure you want to delete this post?" }, :method => :delete %></p>
+</div>
   <hr />
 <% end %>

@@ -33,4 +33,15 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).not_to have_content("#{new_time}")
   end
+
+  scenario "It deletes a post" do
+    visit "/posts"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    fill_in "Message", with: "Yo"
+    click_button "Submit"
+    first('.item').click_link('Delete')
+    expect(page).to have_content("Hello, world!")
+    expect(page).not_to have_content("Yo")
+  end
 end
