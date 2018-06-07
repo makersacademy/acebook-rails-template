@@ -8,3 +8,5 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
+
+<%= link_to "Log Out", destroy_user_session_url, method: "delete" %>
