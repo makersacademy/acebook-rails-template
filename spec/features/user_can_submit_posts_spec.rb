@@ -25,4 +25,12 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("#{new_time}")
   end
+
+  scenario "Doesn't allow empty posts" do
+    new_time = Time.local(2015, 5, 1, 12, 0, 0).strftime("%e %B %Y %H:%M")
+    Timecop.freeze(new_time)
+    visit "/posts"
+    click_button "Submit"
+    expect(page).not_to have_content("#{new_time}")
+  end
 end
