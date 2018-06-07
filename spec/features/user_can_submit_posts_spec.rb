@@ -35,7 +35,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "It deletes a post" do
-    visit "/posts"
+    sign_up_and_sign_in
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     fill_in "Message", with: "Yo"
