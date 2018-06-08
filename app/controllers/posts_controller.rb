@@ -7,10 +7,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.reverse
+    @posts = Post.order(:id).reverse
     @post = Post.new
   end
-
 
   def destroy
     @post = Post.find(params[:id])
