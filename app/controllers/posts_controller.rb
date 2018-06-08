@@ -2,7 +2,9 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def create
+    binding.pry
     @post = current_user.posts.create(post_params)
+    # binding.pry
     puts current_user
     redirect_to posts_url
   end

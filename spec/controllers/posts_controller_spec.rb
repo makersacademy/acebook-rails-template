@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   context 'User is signed in' do
+    let!(:user) { create a user } # factorybot
+    let(:user) { create a user } # factorybot
+
 
     before(:each) do
       user = double(:user)
@@ -38,6 +41,16 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to have_http_status(200)
       end
     end
+
+    describe "DELETE /" do
+      it "deletes a post" do
+        # binding.pry
+        post :create, params: { post: { message: "Hello World", id: 1 } }
+        #DOESN'T CREATE ANYTHING
+        delete :destroy, params: { id: 1 }
+        expect(Post.find_by(message: "Hello, world!")).not_to be
+      end
+    end
   end
 
   context 'User is not signed in' do
@@ -50,15 +63,6 @@ RSpec.describe PostsController, type: :controller do
         get :index
         expect(response).to redirect_to(new_user_session_url)
       end
-    end
-  end
-
-  describe "DELETE /" do
-    it "deletes a post" do
-      post :create, params: { message: "Hello World", id: 1 }
-      #DOESN'T CREATE ANYTHING
-      delete :destroy, params: { id: 1 }
-      expect(Post.find_by(message: "Hello, world!")).not_to be
     end
   end
 end
