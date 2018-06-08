@@ -21,7 +21,7 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to redirect_to(posts_url)
       end
 
-      it "creates a post", :t do
+      it "creates a post" do
         expect { post :create, params: { post: { message: 'Hello World!'} } }.to change{ Post.count }.by(1)
       end
     end
@@ -37,6 +37,20 @@ RSpec.describe PostsController, type: :controller do
       it "deletes a post" do
         @post = create(:post)
         expect{ delete :destroy, params: { id: @post.id } }.to change{ Post.count }.by(-1)
+      end
+    end
+
+    describe "UPDATE /", :update do
+      let(:update_post) do { message: 'Changed Message' }
+      end
+      it "updates a post" do
+        # @post = attributes_for(:post)
+        # post :create, params: { post: @post }
+        # @post = Post.create(message: 'Changed Message')
+        # p Post.all
+        # get :update, params: { :id => @post.id, :post => update_post }
+        # p Post.all
+
       end
     end
   end
