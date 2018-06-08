@@ -2,18 +2,10 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   context 'User is signed in' do
-    let!(:user) { create a user } # factorybot
-    let(:user) { create a user } # factorybot
-
 
     before(:each) do
-      user = double(:user)
-      posts = double(:posts)
-      post = double(:post)
-      allow(request.env['warden']).to receive(:authenticate!).and_return(user)
-      allow(controller).to receive(:current_user).and_return(user)
-      allow(user).to receive(:posts).and_return(posts)
-      allow(posts).to receive(:create).and_return(post)
+      @user = create(:user)
+      sign_in(@user)
     end
 
     describe "GET /new " do
@@ -29,9 +21,8 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to redirect_to(posts_url)
       end
 
-      it "creates a post" do
-        post :create, params: { post: { message: "Hello, world!", id: 1 } }
-        expect(Post.find_by(id: 1)).to be
+      it "creates a post", :t do
+        expect { post :create, params: { post: { message: 'Hello World!'} } }.to change{ Post.count }.by(1)
       end
     end
 
@@ -44,11 +35,8 @@ RSpec.describe PostsController, type: :controller do
 
     describe "DELETE /" do
       it "deletes a post" do
-        # binding.pry
-        post :create, params: { post: { message: "Hello World", id: 1 } }
-        #DOESN'T CREATE ANYTHING
-        delete :destroy, params: { id: 1 }
-        expect(Post.find_by(message: "Hello, world!")).not_to be
+        @post = create(:post)
+        expect{ delete :destroy, params: { id: @post.id } }.to change{ Post.count }.by(-1)
       end
     end
   end
