@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   def index
     @post = current_user.posts.create
-    @posts = Post.all.reverse
+    @posts = Post.order(:id).reverse
   end
 
   def destroy
