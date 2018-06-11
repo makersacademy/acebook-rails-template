@@ -43,6 +43,8 @@ GEM
     ansi (1.5.0)
     arel (8.0.0)
     ast (2.4.0)
+    autoprefixer-rails (8.6.1)
+      execjs
     aws-sdk (2.11.64)
       aws-sdk-resources (= 2.11.64)
     aws-sdk-core (2.11.64)
@@ -51,8 +53,6 @@ GEM
     aws-sdk-resources (2.11.64)
       aws-sdk-core (= 2.11.64)
     aws-sigv4 (1.0.2)
-    autoprefixer-rails (8.6.1)
-      execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
     bootstrap-sass (3.3.7)
