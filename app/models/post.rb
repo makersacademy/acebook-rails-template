@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
-  validates :message, :presence => true
+  validates :message, presence: true, unless: ->(post){post.image.present?}
+  validates :image, presence: true, unless: ->(post){post.message.present?}
 
   belongs_to :user
 

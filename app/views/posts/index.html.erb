@@ -9,7 +9,9 @@
 
 <% @posts.each do |post| %>
 <div class="item">
+  <% if post.image? %>
   <p><%= image_tag post.image.url(:medium) %></p>
+  <% end %>
   <p><%= post.message %></p>
   <% Time.zone = 'London' %>
   <p><%= post.created_at.strftime("%e %B %Y %H:%M") %></p>
