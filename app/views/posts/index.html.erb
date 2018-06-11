@@ -1,12 +1,17 @@
-<%= form_for @post do |form| %>
+<%= form_for @post, html: { multipart: true } do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
+  <%= form.label :image %>
+  <%= form.file_field :image %>
 
   <%= form.submit "Submit" %>
 <% end %>
 
 <% @posts.each do |post| %>
 <div class="item">
+  <% if post.image? %>
+  <p><%= image_tag post.image.url(:medium) %></p>
+  <% end %>
   <p><%= post.message %></p>
   <% Time.zone = 'London' %>
   <p><%= post.created_at.strftime("%e %B %Y %H:%M") %> by <%= (User.find_by(id: post.user_id)).username %></p>

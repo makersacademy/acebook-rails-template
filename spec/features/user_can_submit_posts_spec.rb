@@ -87,6 +87,21 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Message can't be blank")
   end
 
+  scenario "Can post a picture with message" do
+   sign_up_and_sign_in
+   fill_in "Message", with: "Hello fish"
+   page.attach_file("post_image", Rails.root + 'app/assets/images/fish.jpeg')
+   click_button 'Submit'
+   expect(page).to have_css("img[src*='fish.jpeg']")
+ end
+
+ scenario "Can post a picture without message" do
+  sign_up_and_sign_in
+  page.attach_file("post_image", Rails.root + 'app/assets/images/fish.jpeg')
+  click_button 'Submit'
+  expect(page).to have_css("img[src*='fish.jpeg']")
+end
+
   scenario "Username appears on post" do
     sign_up_and_sign_in
     fill_in "Message", with: "Hello, world!"
