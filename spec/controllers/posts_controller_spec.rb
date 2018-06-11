@@ -41,17 +41,11 @@ RSpec.describe PostsController, type: :controller do
     end
 
     describe "UPDATE /", :update do
-      let(:update_post) do { message: 'Changed Message' }
-      end
-      it "updates a post" do
-        # @post = attributes_for(:post)
-        # post :create, params: { post: @post }
-        # @post = Post.create(message: 'Changed Message')
-        # p Post.all
-        # get :update, params: { :id => @post.id, :post => update_post }
-        # p Post.all
-        #testing testing
-
+      it "responds with 200" do
+        @post = create(:post)
+        put :update, params: { post: { message: 'Test'}, id: @post.id }
+        @post.reload.message
+        expect(@post.message).to eq('Test')
       end
     end
   end
