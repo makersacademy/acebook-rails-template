@@ -86,4 +86,12 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Update"
     expect(page).to have_content("Message can't be blank")
   end
+
+  scenario "Username appears on post" do
+    sign_up_and_sign_in
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    expect(page).to have_content("GoldFish")
+    # Change when user appears on everypage
+  end
 end
