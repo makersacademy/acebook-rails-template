@@ -1,7 +1,19 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<%= form_for @post do |form| %>
+  <%= form.label :message %>
+  <%= form.text_field :message %>
+
+  <%= form.submit "Submit" %>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<% @posts.each do |post| %>
+<div class="item">
+  <p><%= post.message %></p>
+  <% Time.zone = 'London' %>
+  <p><%= post.created_at.strftime("%e %B %Y %H:%M") %> by <%= (User.find_by(id: post.user_id)).username %></p>
+  <p><%= link_to "Edit", edit_post_path(post) %> |
+  <%= link_to "Delete", post, :data => { :confirm => "Are you sure you want to delete this post?" }, :method => :delete %></p>
+</div>
+  <hr />
 <% end %>
+
+<%= link_to "Log Out", destroy_user_session_url, method: "delete" %>

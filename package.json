@@ -1,5 +1,7 @@
 {
   "name": "acebook",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "startbootstrap-landing-page": "^4.0.0"
+  }
 }
