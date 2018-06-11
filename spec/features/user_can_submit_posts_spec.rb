@@ -102,4 +102,11 @@ RSpec.feature "Timeline", type: :feature do
   expect(page).to have_css("img[src*='fish.jpeg']")
 end
 
+  scenario "Username appears on post" do
+    sign_up_and_sign_in
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    expect(page).to have_content("GoldFish")
+    # Change when user appears on everypage
+  end
 end

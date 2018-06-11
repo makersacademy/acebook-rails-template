@@ -51,8 +51,13 @@ GEM
     aws-sdk-resources (2.11.64)
       aws-sdk-core (= 2.11.64)
     aws-sigv4 (1.0.2)
+    autoprefixer-rails (8.6.1)
+      execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (10.0.1)
     capybara (2.18.0)
@@ -259,6 +264,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk (~> 2.3)
+  bootstrap-sass
   byebug
   capybara (~> 2.13)
   devise
