@@ -4,8 +4,8 @@ RSpec.describe PostsController, type: :controller do
   context 'User is signed in' do
 
     before(:each) do
-      user = double(:user)
-      allow(request.env['warden']).to receive(:authenticate!).and_return(user)
+      @user = create(:user)
+      sign_in(@user)
     end
 
     describe "GET /new " do
@@ -22,8 +22,7 @@ RSpec.describe PostsController, type: :controller do
       end
 
       it "creates a post" do
-        post :create, params: { post: { message: "Hello, world!" } }
-        expect(Post.find_by(message: "Hello, world!")).to be
+        expect { post :create, params: { post: { message: 'Hello World!'} } }.to change{ Post.count }.by(1)
       end
     end
 
@@ -31,6 +30,28 @@ RSpec.describe PostsController, type: :controller do
       it "responds with 200" do
         get :index
         expect(response).to have_http_status(200)
+      end
+    end
+
+    describe "DELETE /" do
+      it "deletes a post" do
+        @post = create(:post)
+        expect{ delete :destroy, params: { id: @post.id } }.to change{ Post.count }.by(-1)
+      end
+    end
+
+    describe "UPDATE /", :update do
+      let(:update_post) do { message: 'Changed Message' }
+      end
+      it "updates a post" do
+        # @post = attributes_for(:post)
+        # post :create, params: { post: @post }
+        # @post = Post.create(message: 'Changed Message')
+        # p Post.all
+        # get :update, params: { :id => @post.id, :post => update_post }
+        # p Post.all
+        #testing testing
+
       end
     end
   end
@@ -45,14 +66,6 @@ RSpec.describe PostsController, type: :controller do
         get :index
         expect(response).to redirect_to(new_user_session_url)
       end
-    end
-  end
-
-  describe "DELETE /" do
-    it "deletes a post" do
-      @post = Post.create(message: "Hello World")
-      delete :destroy, params: { id: @post.id }
-      expect(Post.find_by(message: "Hello, world!")).not_to be
     end
   end
 end

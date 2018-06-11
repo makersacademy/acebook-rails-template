@@ -55,6 +55,18 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("!")
   end
 
+  scenario "Edited post does not change posts order" do
+    sign_up_and_sign_in
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    fill_in "Message", with: "Yo"
+    click_button "Submit"
+    page.find('div', text: "Hello, world!").click_link('Edit')
+    fill_in "Message", with: "Yo Fish!"
+    click_button "Update"
+    expect("Yo").to appear_before("Yo Fish!")
+  end
+
   scenario "Cancel edit goes back to posts" do
     sign_up_and_sign_in
     fill_in "Message", with: "Hello, world!"
@@ -75,4 +87,11 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Message can't be blank")
   end
 
+  scenario "Username appears on post" do
+    sign_up_and_sign_in
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    expect(page).to have_content("GoldFish")
+    # Change when user appears on everypage
+  end
 end
