@@ -22,7 +22,7 @@ RSpec.describe PostsController, type: :controller do
       end
 
       it "creates a post" do
-        expect { post :create, params: { post: { message: 'Hello World!'} } }.to change{ Post.count }.by(1)
+        expect { post :create, params: { post: { message: 'Hello World!' } } }.to change { Post.count }.by(1)
       end
     end
 
@@ -36,14 +36,14 @@ RSpec.describe PostsController, type: :controller do
     describe "DELETE /" do
       it "deletes a post" do
         @post = create(:post)
-        expect{ delete :destroy, params: { id: @post.id } }.to change{ Post.count }.by(-1)
+        expect { delete :destroy, params: { id: @post.id } }.to change { Post.count }.by(-1)
       end
     end
 
     describe "UPDATE /", :update do
       it "responds with 200" do
         @post = create(:post)
-        put :update, params: { post: { message: 'Test'}, id: @post.id }
+        put :update, params: { post: { message: 'Test' }, id: @post.id }
         @post.reload.message
         expect(@post.message).to eq('Test')
       end
