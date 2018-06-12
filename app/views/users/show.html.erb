@@ -3,5 +3,20 @@
   <%= @user.username %>
   <%= @user.last_name %>
 </h1>
+<% @posts.each do |post| %>
+<div class="item">
+  <% if post.image? %>
+  <p><%= image_tag post.image.url(:medium) %></p>
+  <% end %>
+  <p><%= post.message %></p>
+  <% Time.zone = 'London' %>
+  <p><%= post.created_at.strftime("%e %B %Y %H:%M") %> by <%= @user.first_name %> (<%= @user.username %>) <%= @user.last_name %></p>
+
+  <% if post.user_id == current_user.id %>
+    <p><%= link_to "Edit", edit_post_path(post) %> |
+    <%= link_to "Delete", post, :data => { :confirm => "Are you sure you want to delete this post?" }, :method => :delete %></p>
+  <% end %>
+<% end %>
+
 
 <%= render 'posts/form' %>

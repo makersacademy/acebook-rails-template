@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
-    redirect_to posts_url
+    redirect_back(fallback_location: root_path)
   end
 
   def index
