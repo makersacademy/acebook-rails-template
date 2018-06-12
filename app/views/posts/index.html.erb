@@ -20,6 +20,19 @@
   <% Time.zone = 'London' %>
   <% @user = (User.find_by(id: post.user_id)) %>
   <p><%= post.created_at.strftime("%e %B %Y %H:%M") %> by <%= @user.first_name %> (<%= @user.username %>) <%= @user.last_name %></p>
+  <br />
+  <p>Comment section:</p>
+  <% post.comments.each do |comment| %>
+    <p><%= comment.content %></p>
+  <% end %>
+
+  <%= form_for ([post, post.comments.build]) do |form| %>
+    <%= form.label :comment %>
+    <%= form.text_area :content %>
+
+    <%= form.submit "Comment" %>
+
+  <% end %>
 
   <% if post.user_id == current_user.id %>
     <p><%= link_to "Edit", edit_post_path(post) %> |

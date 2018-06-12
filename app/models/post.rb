@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   validates :image, presence: true, unless: ->(post) { post.message.present? }
 
   belongs_to :user
+  has_many :comments
 
   has_attached_file :image,
   styles: { large: "600x600>", medium: "300x300>", thumb: "150x150#" }
