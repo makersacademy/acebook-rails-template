@@ -2,14 +2,7 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
 
-<%= form_for @post, html: { multipart: true } do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-  <%= form.label :image %>
-  <%= form.file_field :image %>
-
-  <%= form.submit "Submit" %>
-<% end %>
+<%= render partial: 'form' %>
 
 <% @posts.each do |post| %>
 <div class="item">
@@ -46,6 +39,7 @@
 </div>
   <hr />
 <% end %>
+<%= link_to "Users", users_path %>
 
 <div class='content'>
   <div class='post'>

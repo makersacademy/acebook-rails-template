@@ -17,11 +17,14 @@
         <%= image_tag "fish.png" %>
         <h1><%= link_to 'Fishbook', posts_url %></h1>
       </div>
+
+
       <div class='account'>
         <% if user_signed_in? %>
             <p><%= image_tag current_user.image.url(:thumb) %></p>
             <% if params[:action] == "index" %>
           <%= link_to "Settings", edit_user_registration_path %>
+          <%= link_to 'Profile', user_path(current_user) %>
             <% else %>
           <%= link_to "Posts", posts_url %>
             <% end %>
