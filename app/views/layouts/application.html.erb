@@ -19,6 +19,7 @@
       </div>
       <div class='account'>
         <% if user_signed_in? %>
+            <p><%= image_tag current_user.image.url(:thumb) %></p>
             <% if params[:action] == "index" %>
           <%= link_to "Settings", edit_user_registration_path %>
             <% else %>
