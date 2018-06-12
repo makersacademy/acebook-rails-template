@@ -24,3 +24,5 @@ First, clone this repository. Then:
 ```
 
 ________________________________________________________
+
+brew install imagemagick
