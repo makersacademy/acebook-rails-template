@@ -1,0 +1,61 @@
+.content {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.content h2{
+  font-family: 'BioRhyme Expanded', serif;
+}
+
+.content img {
+  width: 700px;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+label {
+  margin-right: 3rem;
+}
+
+.actions {
+  text-align: center;
+  margin: 1rem;
+}
+
+.button {
+  height: 3rem;
+  width: 7rem;
+  border-radius: 20px;
+  color: white;
+  background-color: #061e44;
+  box-shadow: 0 6px 10px black;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+.button:hover {
+  box-shadow: 0 3px 3px black;
+  transform: translateY(5px);
+}
+
+.button:active {
+  box-shadow: 0 0;
+}
+
+a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-style: underline;
+  text-decoration: underline;
+  color: black;
+  margin: 0 0.8rem
+}
+
+.links {
+  margin: 1rem;
+  display: flex;
+}

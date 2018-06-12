@@ -1,3 +1,7 @@
+<%= stylesheet_link_tag 'posts' %>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
+
 <%= form_for @post, html: { multipart: true } do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
@@ -26,4 +30,52 @@
   <hr />
 <% end %>
 
-<%= link_to "Log Out", destroy_user_session_url, method: "delete" %>
+<div class='content'>
+  <div class='post'>
+    <div class='user'>
+      <%= image_tag 'pufferfish.jpg', class: 'avatar' %>
+      <div class='name'>
+        <p class='post-name'>Salomé</p>
+        <div class='post-username'>
+          <p class='username'> Salpal</p>
+          <p class='timestamp'> 4pm</p>
+        </div>
+      </div>
+    </div>
+
+    <div class='post-caption'>
+      <p>Das me when I'm angry</p>
+    </div>
+
+    <%= image_tag 'angry-puffer-fish.jpg', class: 'image-post' %>
+
+    <div class='popularity'>
+      <div class='likes'>
+        <%= image_tag 'buuble.png', class: 'bubble-logo' %>
+        <p>4</p>
+      </div>
+      <div class='dislikes'>
+        <%= image_tag 'anchor.png', class: 'anchor-logo' %>
+        <p>5</p>
+      </div>
+      <div class='comments'>
+        <%= image_tag 'message-in-a-botle.png', class: 'message-logo' %>
+        <p>4</p>
+      </div>
+    </div>
+
+    <div class='comments-list'>
+      <div class='comment'>
+
+          <p class='comment-name'>LilBitch</p>
+
+          <p class='comment-message'>Looking good boo</p>
+      </div>
+    </div>
+
+    <div class='crud'>
+      <p>Delete</p>
+      <p>Edit</p>
+    </div>
+  </div>
+</div>

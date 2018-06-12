@@ -61,7 +61,7 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     fill_in "Message", with: "Yo"
     click_button "Submit"
-    page.find('div', text: "Hello, world!").click_link('Edit')
+    page.find('div.item', text: "Hello, world!").click_link('Edit')
     fill_in "Message", with: "Yo Fish!"
     click_button "Update"
     expect("Yo").to appear_before("Yo Fish!")
