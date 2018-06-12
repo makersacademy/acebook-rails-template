@@ -23,11 +23,11 @@ def sign_up_and_sign_in_other_user
 end
 
 def make_a_text_post
- fill_in "Message", with: "Hello, world!"
- click_button "Submit"
+  fill_in "Message", with: "Hello, world!"
+  click_button "Submit"
 end
 
 def make_a_text_and_picture_post
- fill_in "Message", with: "Hello fish"
- page.attach_file("post_image", Rails.root + 'app/assets/images/fish.jpeg')
+  fill_in "Message", with: "Hello fish"
+  page.attach_file("post_image", Rails.root + 'app/assets/images/fish.jpeg')
 end
