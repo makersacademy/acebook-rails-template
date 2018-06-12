@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # see http://guides.rubyonrails.org/routing.html
   root 'posts#index'
   resources :posts
-  resources :users, only: [:show]
+  resources :users, only: [:show, :index]
   put 'update/posts'
 
 end
