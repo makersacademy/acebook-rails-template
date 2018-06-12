@@ -1,9 +1,8 @@
-.post {
+.item, .form-header {
   display: flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
   width: 500px;
-  background-color: #d7dde5;
   padding: 2rem;
   box-shadow: 0px 5px 10px black;
   margin-bottom: 1.5rem;
@@ -29,9 +28,14 @@
 
 .post-username {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   font-family: 'BioRhyme Expanded', serif;
   color: #8f9db5;
+}
+
+.username {
+  margin-right: 2rem;
 }
 
 .user p {
@@ -43,8 +47,19 @@
   font-weight: bold;
 }
 
+
+.timestamp {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+.post-caption {
+  margin: 1.5rem 0;
+}
+
 .image-post {
-  border: 1px solid black;
+  height: auto;
+  width: 100%;
 }
 
 .popularity {
@@ -87,17 +102,28 @@
 }
 
 .comment {
+  background-color: #e3eaf7;
+  padding: 0.6rem;
+  margin: 0.2rem;
+}
+
+.comment-user {
   display: flex;
+  justify-content: space-between;
+  color: #8f9db5;
+}
+
+.comment-message {
+  font-style: italic;
 }
 
 .comment-name {
   font-family: 'BioRhyme Expanded', serif;
-  color: #8f9db5;
   font-weight: bold;
   font-size: 1rem;
 }
 
-.comment-message {
+.comment-username, .comment-timestamp {
   padding-top: 3px;
 }
 
@@ -105,7 +131,7 @@
   display: flex;
 }
 
-.crud p {
+.crud a {
   margin: 1rem 1.5rem 0 0;
   text-decoration: underline;
   color: #8f9db5
