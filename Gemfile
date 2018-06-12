@@ -4,7 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk'
+gem 'aws-sdk-s3'
 gem 'bootstrap-sass'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
