@@ -23,6 +23,10 @@
   <br />
   <p>Comment section:</p>
   <% post.comments.each do |comment| %>
+    <% @comment_user = User.find_by(id: comment.user_id) %>
+    <div class="username">
+      <%= @comment_user.first_name %> (<%= @comment_user.username %>) <%= @comment_user.last_name %>
+    </div>
     <p><%= comment.content %></p>
   <% end %>
 
