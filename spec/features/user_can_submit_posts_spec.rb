@@ -45,6 +45,16 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).not_to have_content("Yo")
   end
 
+  scenario "It deletes a post with a comment" do
+    sign_up_and_sign_in
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    fill_in "comment_content", with: 'This is a comment!'
+    click_button "Comment"
+    first('.item').click_link('Delete')
+    expect(page).not_to have_content("Hello, world!")
+  end
+
   scenario "It edits a post" do
     sign_up_and_sign_in
     fill_in "Message", with: "Hello, world"

@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :username, :presence => true
 
   has_many :posts
+  has_many :comments
 
   has_attached_file :image,
   styles: { large: "600x600>", medium: "300x300>", thumb: "150x150" },
