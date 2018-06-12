@@ -21,7 +21,13 @@
 
       <div class='account'>
         <% if user_signed_in? %>
+            <p><%= image_tag current_user.image.url(:thumb) %></p>
+            <% if params[:action] == "index" %>
+          <%= link_to "Settings", edit_user_registration_path %>
           <%= link_to 'Profile', user_path(current_user) %>
+            <% else %>
+          <%= link_to "Posts", posts_url %>
+            <% end %>
           <%= link_to "Log Out", destroy_user_session_url, method: "delete" %>
         <% end %>
       </div>
