@@ -9,3 +9,13 @@ def sign_up_and_sign_in
   fill_in "Password confirmation", with: "123456"
   click_button "Sign up"
 end
+
+def make_a_text_post
+ fill_in "Message", with: "Hello, world!"
+ click_button "Submit"
+end
+
+def make_a_text_and_picture_post
+ fill_in "Message", with: "Hello fish"
+ page.attach_file("post_image", Rails.root + 'app/assets/images/fish.jpeg')
+end
