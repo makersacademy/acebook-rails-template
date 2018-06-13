@@ -6,10 +6,12 @@
     <div class='user'>
       <% @user = (User.find_by(id: post.user_id)) %>
 
-      <%= image_tag @user.image.url(:thumb), class:'avatar' %>
+      <%= link_to(image_tag(@user.image.url(:thumb)), user_url(@user), class:'avatar') %>
       <div class='name'>
         <div class='post-name'>
-          <p> <%= @user.first_name %> <%= @user.last_name %> </p>
+          <%= link_to(user_url(@user)) do %>
+            <p> <%= @user.first_name %> <%= @user.last_name %> </p>
+          <% end %>
         </div>
         <div class='post-username'>
           <div class='username'>

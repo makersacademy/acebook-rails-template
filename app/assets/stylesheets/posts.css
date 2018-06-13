@@ -19,6 +19,12 @@
   border-radius: 50%;
 }
 
+.avatar img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+
 .small_avatar img {
   height: 2rem;
   width: 2rem;
@@ -49,6 +55,15 @@
 }
 
 .post-name {
+  text-decoration: none;
+  color: #black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.post-name a {
+  text-decoration: none;
+  color: black;
   font-size: 1.5rem;
   font-weight: bold;
 }
