@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_post, only: [:destroy, :edit, :update, :upvote, :downvote]
 
   def create
     @post = current_user.posts.create(post_params)
@@ -12,24 +13,37 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_url
+    redirect_back(fallback_location: root_path)
   end
 
   def edit
-    @post = Post.find(params[:id])
+    session[:prev_url] = request.referer
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
-      redirect_to posts_url, :notice => "Post has been updated"
+      redirect_to session[:prev_url], :notice => "Post has been updated"
     else
       render "edit"
     end
   end
+
+  def upvote
+    @post.upvote_from current_user
+    redirect_back(fallback_location: root_path)
+  end
+
+  def downvote
+    @post.downvote_from current_user
+    redirect_back(fallback_location: root_path)
+  end
+
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:message, :image)
