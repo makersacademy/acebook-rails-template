@@ -2,12 +2,40 @@ require 'rails_helper'
 
 RSpec.feature "Notifications", type: :feature do
   scenario "User can see real time updates of all other posts", :notifications do
+    sign_up_and_sign_in
+    make_a_text_post
+    expect(page).to have_content("Post was created")
+  end
+
+  scenario "Displays the time of the newly created post" do
     Time.zone = 'London'
     new_time = Time.local(2016, 6, 1, 12, 0, 0).strftime("%e %B %Y %H:%M")
     Timecop.freeze(new_time)
     sign_up_and_sign_in
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
-    expect(page).to have_content("Post was created at #{new_time}")
+    make_a_text_post
+    expect(page).to have_content("#{new_time} Post was created")
   end
+
+  scenario "Displays the time of the edited post" do
+    Time.zone = 'London'
+    new_time = Time.local(2016, 6, 1, 12, 0, 0).strftime("%e %B %Y %H:%M")
+    Timecop.freeze(new_time)
+    sign_up_and_sign_in
+    make_a_text_post
+    first('.item').click_link('Edit')
+    fill_in "Message", with: "!"
+    click_button "Update"
+    expect(page).to have_content("#{new_time} Post was edited")
+  end
+
+  scenario "Displays the time of the deleted post" do
+    Time.zone = 'London'
+    new_time = Time.local(2016, 6, 1, 12, 0, 0).strftime("%e %B %Y %H:%M")
+    Timecop.freeze(new_time)
+    sign_up_and_sign_in
+    make_a_text_post
+    first('.item').click_link('Delete')
+    expect(page).to have_content("#{new_time} Post was deleted")
+  end
+
 end

@@ -1,6 +1,6 @@
 <li class="activities-list">
   <% if a.trackable %>
-    Post was edited.
+    <%= a.created_at.strftime("%e %B %Y %H:%M") %> Post was edited
   <% else %>
     A post that is currently deleted was edited.
   <% end %>
