@@ -10,9 +10,7 @@ class PostsController < ApplicationController
   def index
     @post = current_user.posts.create
     @posts = Post.order(:id).reverse
-    if @post.save
-      @post.create_activity :create, owner: current_user
-    end
+    @post.create_activity :create, owner: current_user if @post.save
   end
 
   def destroy
