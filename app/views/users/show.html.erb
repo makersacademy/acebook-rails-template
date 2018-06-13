@@ -1,12 +1,14 @@
+<%= stylesheet_link_tag 'profile' %>
 
-
-<div class='content profile-content'>
+<div class='profile-content'>
   <div class='profile-user-info'>
+    <%= image_tag @user.image.url(:thumb), class:'profile-avatar' %>
+    <!-- <%= image_tag 'frame.png', class:'frame' %> -->
     <h1>
       <%= @user.first_name %>
       <%= @user.last_name %>
     </h1>
-    <h3> <%= @user.username %> </h3>
+    <h3> @<%= @user.username %> </h3>
   </div>
 
   <div class='profile-posts'>
