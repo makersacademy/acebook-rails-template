@@ -43,6 +43,7 @@ RSpec.describe PostsController, type: :controller do
     describe "UPDATE /", :update do
       it "responds with 200" do
         @post = create(:post)
+        session[:prev_url] = posts_url
         put :update, params: { post: { message: 'Test' }, id: @post.id }
         @post.reload.message
         expect(@post.message).to eq('Test')

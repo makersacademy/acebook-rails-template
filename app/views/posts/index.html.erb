@@ -28,7 +28,7 @@
     </div>
 
     <div class='post-caption'>
-      <%= post.message %>
+      <%= post.message.gsub(/\n/, '<br>').html_safe%>
     </div>
 
     <% if post.image? %>
