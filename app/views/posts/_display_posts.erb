@@ -47,6 +47,7 @@
       </div>
     </div>
 
+    <div class='comments-container'>
     <div class='comments-list'>
       <% post.comments.each do |comment| %>
         <% @comment_user = User.find_by(id: comment.user_id) %>
@@ -61,6 +62,7 @@
         </div>
       <% end %>
     </div>
+  </div>
 
 <!-- form -->
     <%= form_for ([post, post.comments.build]) do |form| %>
