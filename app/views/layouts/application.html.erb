@@ -23,8 +23,9 @@
         <% if user_signed_in? %>
             <div><%= link_to(image_tag(current_user.image.url(:thumb)), user_path(current_user), class: "header-avatar") %></div>
             <% if params[:action] == "index" %>
+          <%= link_to current_user.first_name, user_path(current_user) %>
           <%= link_to "Settings", edit_user_registration_path %>
-          <%= link_to 'Profile', user_path(current_user) %>
+          <%= link_to "Users", users_path, class: 'button' %>
             <% else %>
           <%= link_to "Posts", posts_url %>
             <% end %>

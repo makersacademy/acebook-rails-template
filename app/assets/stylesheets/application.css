@@ -46,7 +46,7 @@ header {
 }
 
 .account a:hover {
-  background-color: #E8D0A9;
+  text-decoration: underline;
 }
 
 .account {
