@@ -16,5 +16,4 @@ class ApplicationController < ActionController::Base
       keys: [:first_name, :last_name, :username, :email, :image,
             :password, :confirm_password, :remember_me])
   end
-
 end

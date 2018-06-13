@@ -1,18 +1,18 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_activities, only: [:index, :show, :new, :edit]
+  before_action :load_activities, only: [:index, :new, :show, :edit]
 
   def create
     @post = current_user.posts.create(post_params)
-    if @post.save
-      @post.create_activity :create, owner: current_user
-    end
     redirect_back(fallback_location: root_path)
   end
 
   def index
     @post = current_user.posts.create
     @posts = Post.order(:id).reverse
+    if @post.save
+      @post.create_activity :create, owner: current_user
+    end
   end
 
   def destroy
