@@ -1,4 +1,4 @@
-.item, .form-header {
+.item, .form-header{
   display: flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;

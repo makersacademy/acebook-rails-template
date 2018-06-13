@@ -14,7 +14,7 @@
   <header>
     <div class='container header-container'>
       <div class='info'>
-        <%= image_tag "fish.png"%>
+        <%= link_to(image_tag("fish.png"), posts_url, class: 'header-logo') %>
         <h1><%= link_to 'Fishbook', posts_url %></h1>
       </div>
 

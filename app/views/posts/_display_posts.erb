@@ -1,0 +1,78 @@
+<%= stylesheet_link_tag 'posts' %>
+
+  <% @posts.each do |post| %>
+  <div class="item">
+    <% Time.zone = 'London' %>
+    <div class='user'>
+      <% @user = (User.find_by(id: post.user_id)) %>
+
+      <%= image_tag @user.image.url(:thumb), class:'avatar' %>
+      <div class='name'>
+        <div class='post-name'>
+          <p> <%= @user.first_name %> <%= @user.last_name %> </p>
+        </div>
+        <div class='post-username'>
+          <div class='username'>
+            <%= @user.username %>
+          </div>
+          <div class='timestamp'>
+            <%= post.created_at.strftime("%e %B %Y %H:%M") %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='post-caption'>
+      <%= post.message %>
+    </div>
+
+    <% if post.image? %>
+      <%= image_tag post.image.url(:medium), class: 'image-post' %>
+    <% end %>
+
+    <div class='popularity'>
+      <div class='likes'>
+        <%= image_tag 'buuble.png', class: 'bubble-logo' %>
+        <p>4</p>
+      </div>
+      <div class='dislikes'>
+        <%= image_tag 'anchor.png', class: 'anchor-logo' %>
+        <p>5</p>
+      </div>
+      <div class='comments'>
+        <%= image_tag 'message-in-a-botle.png', class: 'message-logo' %>
+        <p> <%= post.comments.count %> </p>
+      </div>
+    </div>
+
+    <div class='comments-list'>
+      <% post.comments.each do |comment| %>
+        <% @comment_user = User.find_by(id: comment.user_id) %>
+        <div class='comment'>
+          <div class='comment-user'>
+            <p class='comment-name'><%= @comment_user.first_name %> </p>
+            <p class='comment-username'> @<%= @comment_user.username %> </p>
+            <p class='comment-timestamp'> <%= comment.created_at.strftime("%e %B %Y %H:%M") %> </p>
+          </div>
+          <p class='comment-message'> "<%= comment.content %>" </p>
+        </div>
+      <% end %>
+    </div>
+
+<!-- form -->
+    <%= form_for ([post, post.comments.build]) do |form| %>
+      <%= form.label :comment %>
+      <%= form.text_area :content %>
+      <%= form.submit "Comment" %>
+    <% end %>
+
+<!-- crud -->
+    <% if post.user_id == current_user.id %>
+      <div class='crud'>
+        <p> <%= link_to "Edit", edit_post_path(post) %> </p>
+        <p> <%= link_to "Delete", post, :data => { :confirm => "Are you sure you want to delete this post?" }, :method => :delete %> </p>
+      </div>
+    <% end %>
+
+  </div>
+  <% end %>
