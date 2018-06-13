@@ -123,7 +123,9 @@
   font-style: italic;
 }
 
-.comment-name {
+.comment-name a {
+  color: #8f9db5;
+  text-decoration: none;
   font-family: 'BioRhyme Expanded', serif;
   font-weight: bold;
   font-size: 1rem;

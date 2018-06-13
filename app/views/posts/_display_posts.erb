@@ -51,7 +51,7 @@
         <div class='comment'>
           <div class='comment-user'>
             <%= link_to(image_tag(@comment_user.image.url(:thumb)), user_url(@comment_user), class:'small_avatar') %>
-            <p class='comment-name'><%= @comment_user.first_name %> </p>
+            <p class='comment-name'><%= link_to(@comment_user.first_name, user_url(@comment_user)) %> </p>
             <p class='comment-username'> @<%= @comment_user.username %> </p>
             <p class='comment-timestamp'> <%= comment.created_at.strftime("%e %B %Y %H:%M") %> </p>
           </div>
