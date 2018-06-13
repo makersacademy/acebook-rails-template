@@ -21,7 +21,7 @@
 
       <div class='account'>
         <% if user_signed_in? %>
-            <p><%= image_tag current_user.image.url(:thumb), class:'header-avatar' %></p>
+            <div><%= link_to(image_tag(current_user.image.url(:thumb)), user_path(current_user), class: "header-avatar") %></div>
             <% if params[:action] == "index" %>
           <%= link_to "Settings", edit_user_registration_path %>
           <%= link_to 'Profile', user_path(current_user) %>
