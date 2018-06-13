@@ -17,7 +17,11 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    find_activity
     @post.destroy
+    if @activity.present?
+      @activity.destroy
+    end
     redirect_to posts_url
   end
 
@@ -41,5 +45,9 @@ class PostsController < ApplicationController
 
   def load_activities
     @activities = PublicActivity::Activity.order('created_at DESC').limit(20)
+  end
+
+  def find_activity
+    @activity = PublicActivity::Activity.find_by(trackable_id: params[:id])
   end
 end
