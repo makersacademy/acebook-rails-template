@@ -4,6 +4,7 @@
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( devise_new )
 Rails.application.config.assets.precompile += %w( posts.css )
+Rails.application.config.assets.precompile += %w( profile.css )
 
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path

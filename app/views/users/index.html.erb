@@ -1,5 +1,23 @@
-<% @users.each do |user| %>
-  <%= link_to(user_path(user)) do %>
-  <p> <%= user.first_name %> <%= user.last_name %> </p>
+<%= stylesheet_link_tag 'posts' %>
+
+<div class='content'>
+  <% @users.each do |user| %>
+    <%= link_to user_path(user) do %>
+      <div class='item'>
+        <div class='user'>
+          <%= link_to(image_tag(user.image.url(:thumb)), user_url(user), class:'avatar') %>
+          <div class='name'>
+            <div class='post-name'>
+              <p> <%= user.first_name %> <%= user.last_name %> </p>
+            </div>
+            <div class='post-username'>
+              <div class='username'>
+                <%= user.username %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

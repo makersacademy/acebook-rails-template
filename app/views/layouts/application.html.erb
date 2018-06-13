@@ -14,20 +14,19 @@
   <header>
     <div class='container header-container'>
       <div class='info'>
-        <%= image_tag "fish.png" %>
+        <%= link_to(image_tag("fish.png"), posts_url, class: 'header-logo') %>
         <h1><%= link_to 'Fishbook', posts_url %></h1>
       </div>
 
 
       <div class='account'>
         <% if user_signed_in? %>
-            <p><%= image_tag current_user.image.url(:thumb) %></p>
+            <div><%= link_to(image_tag(current_user.image.url(:thumb)), user_path(current_user), class: "header-avatar") %></div>
             <% if params[:action] == "index" %>
+          <%= link_to current_user.first_name, user_path(current_user) %>
           <%= link_to "Settings", edit_user_registration_path %>
-          <%= link_to 'Profile', user_path(current_user) %>
-            <% else %>
-          <%= link_to "Posts", posts_url %>
             <% end %>
+          <%= link_to "Users", users_path %>
           <%= link_to "Log Out", destroy_user_session_url, method: "delete" %>
         <% end %>
       </div>
@@ -35,12 +34,11 @@
   </header>
 
   <body>
-    <div class='container'>
 
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
-    </div>
+
 
   </body>
 </html>

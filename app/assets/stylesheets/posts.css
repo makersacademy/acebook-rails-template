@@ -1,4 +1,4 @@
-.item, .form-header {
+.item, .form-header{
   display: flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
@@ -17,6 +17,18 @@
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
+}
+
+.avatar img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.small_avatar img {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%
 }
 
 .name {
@@ -43,6 +55,15 @@
 }
 
 .post-name {
+  text-decoration: none;
+  color: #black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.post-name a {
+  text-decoration: none;
+  color: black;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -101,6 +122,12 @@
   margin: 0 1.2rem 0 0;
 }
 
+.comments-container {
+  max-height: 8rem;
+  overflow: scroll;
+}
+
+
 .comment {
   background-color: #e3eaf7;
   padding: 0.6rem;
@@ -117,7 +144,9 @@
   font-style: italic;
 }
 
-.comment-name {
+.comment-name a {
+  color: #8f9db5;
+  text-decoration: none;
   font-family: 'BioRhyme Expanded', serif;
   font-weight: bold;
   font-size: 1rem;

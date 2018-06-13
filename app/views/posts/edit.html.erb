@@ -1,4 +1,6 @@
-
+<%= stylesheet_link_tag 'posts' %>
+<div class='content'>
+<div class='item'>
 <%= form_for @post do |f| %>
 <% if @post.errors.any? %>
   <% @post.errors.full_messages.each do |message| %>
@@ -11,7 +13,13 @@
   <%= f.text_field :message %>
 </p>
 <p>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+</p>
+<p>
   <%= f.submit "Update" %>
   <%= link_to 'Cancel', posts_url %>
 </p>
 <% end %>
+</div>
+</div>

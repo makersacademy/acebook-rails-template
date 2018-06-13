@@ -1,22 +1,22 @@
-<h1>
-  <%= @user.first_name %>
-  <%= @user.username %>
-  <%= @user.last_name %>
-</h1>
-<% @posts.each do |post| %>
-<div class="item">
-  <% if post.image? %>
-  <p><%= image_tag post.image.url(:medium) %></p>
-  <% end %>
-  <p><%= post.message %></p>
-  <% Time.zone = 'London' %>
-  <p><%= post.created_at.strftime("%e %B %Y %H:%M") %> by <%= @user.first_name %> (<%= @user.username %>) <%= @user.last_name %></p>
-
-  <% if post.user_id == current_user.id %>
-    <p><%= link_to "Edit", edit_post_path(post) %> |
-    <%= link_to "Delete", post, :data => { :confirm => "Are you sure you want to delete this post?" }, :method => :delete %></p>
-  <% end %>
-<% end %>
+<%= stylesheet_link_tag 'profile' %>
 
 
-<%= render 'posts/form' %>
+<div class='profile-content'>
+  <div class='profile-user-info'>
+    <%= image_tag @user.image.url(:thumb), class:'profile-avatar' %>
+    <!-- <%= image_tag 'frame.png', class:'frame' %> -->
+    <h1>
+      <%= @user.first_name %>
+      <%= @user.last_name %>
+    </h1>
+    <h3> @<%= @user.username %> </h3>
+    <% if @user == current_user %>
+      <%= link_to "Settings", edit_user_registration_path, class: 'user_settings' %>
+    <% end %>
+  </div>
+
+  <div class='profile-posts'>
+    <%= render partial: 'posts/form' %>
+    <%= render partial: 'posts/display_posts' %>
+  </div>
+</div>
