@@ -19,6 +19,12 @@
   border-radius: 50%;
 }
 
+.small_avatar {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%
+}
+
 .name {
   display: flex;
   flex-direction: column;

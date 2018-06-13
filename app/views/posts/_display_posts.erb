@@ -50,6 +50,7 @@
         <% @comment_user = User.find_by(id: comment.user_id) %>
         <div class='comment'>
           <div class='comment-user'>
+            <%= image_tag @comment_user.image.url(:thumb), class:'small_avatar' %>
             <p class='comment-name'><%= @comment_user.first_name %> </p>
             <p class='comment-username'> @<%= @comment_user.username %> </p>
             <p class='comment-timestamp'> <%= comment.created_at.strftime("%e %B %Y %H:%M") %> </p>
