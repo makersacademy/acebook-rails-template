@@ -25,6 +25,12 @@ header {
   justify-content: space-between;
 }
 
+.header-avatar {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+}
+
 .info a {
   text-decoration: none;
   color: white;
@@ -35,6 +41,7 @@ header {
   text-decoration: none;
   color: white;
   font-family: 'Montserrat', sans-serif;
+  padding: 0 6px;
 }
 
 .account {
@@ -44,6 +51,7 @@ header {
 
 .info {
   display: flex;
+  align-items: center;
 }
 
 body {
