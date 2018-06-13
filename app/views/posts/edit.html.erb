@@ -1,0 +1,19 @@
+
+<%= form_for @post do |f| %>
+<% if @post.errors.any? %>
+  <% @post.errors.full_messages.each do |message| %>
+  <%= message %>
+  <% end %>
+<% end %>
+<h1>Edit post</h1>
+<p>
+  <%= f.label :message %>
+  <%= f.text_area :message %><br />
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+</p>
+<p>
+  <%= f.submit "Update" %>
+  <%= link_to 'Cancel', posts_url %>
+</p>
+<% end %>
