@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180612142135) do
+ActiveRecord::Schema.define(version: 20180613095951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", id: :serial, force: :cascade do |t|
+    t.string "trackable_type"
+    t.integer "trackable_id"
+    t.string "owner_type"
+    t.integer "owner_id"
+    t.string "key"
+    t.text "parameters"
+    t.string "recipient_type"
+    t.integer "recipient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
+    t.index ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
+    t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -58,6 +74,20 @@ ActiveRecord::Schema.define(version: 20180612142135) do
     t.datetime "image_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "votes", id: :serial, force: :cascade do |t|
+    t.string "votable_type"
+    t.integer "votable_id"
+    t.string "voter_type"
+    t.integer "voter_id"
+    t.boolean "vote_flag"
+    t.string "vote_scope"
+    t.integer "vote_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
   add_foreign_key "comments", "posts"

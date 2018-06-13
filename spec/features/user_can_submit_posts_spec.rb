@@ -119,4 +119,11 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("GoldFish")
     # Change when user appears on everypage
   end
+
+  scenario "User can submit multi-line posts" do
+    sign_up_and_sign_in
+    fill_in "Message", with: "Yo\nseabed"
+    click_button "Submit"
+    expect(page).to have_content("Yo\nseabed")
+  end
 end
