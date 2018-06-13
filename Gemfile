@@ -8,6 +8,7 @@ gem 'aws-sdk'
 gem 'aws-sdk-s3'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'public_activity'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record

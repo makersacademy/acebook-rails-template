@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :load_activities, only: [:index, :show, :new, :edit]
 
   def create
     @post = current_user.posts.create(post_params)
@@ -33,5 +34,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message, :image)
+  end
+
+  def load_activities
+    @activities = PublicActivity::Activity.order('created_at DESC').limit(20)
   end
 end

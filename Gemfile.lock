@@ -712,6 +712,11 @@ GEM
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    public_activity (1.5.0)
+      actionpack (>= 3.0.0)
+      activerecord (>= 3.0)
+      i18n (>= 0.5.0)
+      railties (>= 3.0.0)
     public_suffix (3.0.2)
     puma (3.11.4)
     rack (2.0.5)
@@ -851,6 +856,7 @@ DEPENDENCIES
   paperclip
   pg
   pry
+  public_activity
   puma (~> 3.7)
   rails (~> 5.1.1)
   rspec-rails (~> 3.5)
