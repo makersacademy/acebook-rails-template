@@ -30,12 +30,20 @@ class PostsController < ApplicationController
   end
 
   def upvote
-    @post.upvote_from current_user
+    if current_user.liked? @post
+      @post.unliked_by current_user
+    else
+      @post.liked_by current_user
+    end
     redirect_back(fallback_location: root_path)
   end
 
   def downvote
-    @post.downvote_from current_user
+    if current_user.disliked? @post
+      @post.undisliked_by current_user
+    else
+      @post.disliked_by current_user
+    end
     redirect_back(fallback_location: root_path)
   end
 

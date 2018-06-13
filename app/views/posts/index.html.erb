@@ -37,16 +37,18 @@
 
     <div class='popularity'>
       <div class='likes'>
-        <%= image_tag 'buuble.png', class: 'bubble-logo' %>
         <p><%= link_to like_post_path(post), class: "like", method: :put do %>
-              <%= post.get_upvotes.size %></span>
-            <% end %></p>
+            <%= image_tag 'buuble.png', class: 'bubble-logo' %>
+            <% end %>
+            </p>
+            <%= post.get_upvotes.size %>
       </div>
       <div class='dislikes'>
-        <%= image_tag 'anchor.png', class: 'anchor-logo' %>
         <p><%= link_to dislike_post_path(post), class: "dislike", method: :put do %>
-              <%= post.get_downvotes.size %></span>
-            <% end %></p>
+            <%= image_tag 'anchor.png', class: 'anchor-logo' %>
+            <% end %>
+            </p>
+            <%= post.get_downvotes.size %>
       </div>
       <div class='comments'>
         <%= image_tag 'message-in-a-botle.png', class: 'message-logo' %>
