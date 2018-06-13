@@ -1,6 +1,7 @@
 <li class="activities-list">
+<% Time.zone = 'London' %>
   <% if a.trackable %>
-    Post was created.
+    Post was created at  <%= a.created_at.strftime("%e %B %Y %H:%M") %>
   <% else %>
     A post that is currently deleted was added.
   <% end %>
