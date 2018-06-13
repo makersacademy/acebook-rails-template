@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_activities, only: [:index, :new, :show, :edit]
+  before_action :load_activities, only: [:index, :new, :edit]
 
   def create
     @post = current_user.posts.create(post_params)
