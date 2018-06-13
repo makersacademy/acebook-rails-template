@@ -26,3 +26,4 @@ First, clone this repository. Then:
 ________________________________________________________
 
 brew install imagemagick
+https://morning-everglades-97311.herokuapp.com/

@@ -14,17 +14,18 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_url
+    redirect_back(fallback_location: root_path)
   end
 
   def edit
     @post = Post.find(params[:id])
+    session[:prev_url] = request.referer
   end
 
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
-      redirect_to posts_url, :notice => "Post has been updated"
+      redirect_to session[:prev_url], :notice => "Post has been updated"
     else
       render "edit"
     end
