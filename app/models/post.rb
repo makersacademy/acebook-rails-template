@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  acts_as_votable
   validates :message, presence: true, unless: ->(post) { post.image.present? }
   validates :image, presence: true, unless: ->(post) { post.message.present? }
 
