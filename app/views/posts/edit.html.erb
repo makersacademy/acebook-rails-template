@@ -7,8 +7,10 @@
 <% end %>
 <h1>Edit post</h1>
 <p>
-  <%= f.label :message %><br />
-  <%= f.text_field :message %>
+  <%= f.label :message %>
+  <%= f.text_area :message %><br />
+  <%= f.label :image %>
+  <%= f.file_field :image %>
 </p>
 <p>
   <%= f.submit "Update" %>
