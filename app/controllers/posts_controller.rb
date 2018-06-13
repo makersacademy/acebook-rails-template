@@ -4,6 +4,9 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
+      if @post.save
+        @post.create_activity :create, owner: current_user
+      end
     redirect_back(fallback_location: root_path)
   end
 
