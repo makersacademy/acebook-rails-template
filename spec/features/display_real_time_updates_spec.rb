@@ -31,7 +31,4 @@ RSpec.feature "Notifications", type: :feature do
     first('.item').click_link('Delete')
     expect(page).to have_content("#{new_time} post was deleted")
   end
-
-
-
 end
