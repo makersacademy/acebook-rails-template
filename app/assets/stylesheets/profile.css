@@ -1,6 +1,6 @@
 .profile-content {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   width: 100%;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .profile-posts {
-  width: 100%;
+  width: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
