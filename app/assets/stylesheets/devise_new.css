@@ -46,7 +46,7 @@ label {
   box-shadow: 0 0;
 }
 
-a {
+.edit-user a {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-style: underline;
