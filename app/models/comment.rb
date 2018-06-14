@@ -2,6 +2,6 @@ class Comment < ApplicationRecord
   belongs_to :post
   belongs_to :user
 
-  # include PublicActivity::Model
-  # tracked
+  include PublicActivity::Model
+  tracked
 end
