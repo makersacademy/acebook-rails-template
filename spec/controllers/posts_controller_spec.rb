@@ -7,7 +7,7 @@ RSpec.describe PostsController, type: :controller do
       @user = create(:user)
       sign_in(@user)
     end
-    
+
     describe "POST /" do
       it "responds with 200" do
         post :create, params: { post: { message: "Hello, world!" } }
@@ -40,6 +40,24 @@ RSpec.describe PostsController, type: :controller do
         put :update, params: { post: { message: 'Test' }, id: @post.id }
         @post.reload.message
         expect(@post.message).to eq('Test')
+      end
+    end
+
+    describe "UPVOTE /" do
+      it "creates a like" do
+        @post = create(:post)
+        put :upvote, params: { id: @post.id }
+        put :upvote, params: { id: @post.id }
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
+    describe "DOWNVOTE /" do
+      it "creates a dislike" do
+        @post = create(:post)
+        put :downvote, params: { id: @post.id }
+        put :downvote, params: { id: @post.id }
+        expect(response).to redirect_to(root_path)
       end
     end
   end
