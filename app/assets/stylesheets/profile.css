@@ -1,0 +1,60 @@
+.profile-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.user_settings {
+  text-decoration: underline;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 6px;
+}
+
+.profile-user-info {
+  background-color: #E8D0A9;
+  height: 100%;
+  width: 20rem;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-posts {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 20rem; */
+}
+
+.profile-avatar {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+}
+
+.frame {
+  position: absolute;
+  height: 222px;
+  width: 320px;
+  top: 112px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: #F5F3F5;
+}
+
+h3 {
+  font-family: 'BioRhyme Expanded', serif;
+  color: #F5F3F5;
+}
