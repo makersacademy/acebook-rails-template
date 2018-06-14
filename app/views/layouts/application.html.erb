@@ -21,7 +21,12 @@
 
       <div class='account'>
         <% if user_signed_in? %>
-            <div><%= link_to(image_tag(current_user.image.url(:thumb)), user_path(current_user), class: "header-avatar") %></div>
+          <div>
+            <%= image_tag 'coral.png', id:'notification-icon' %>
+          </div>
+           <div>
+             <%= link_to(image_tag(current_user.image.url(:thumb)), user_path(current_user), class: "header-avatar") %>
+          </div>
           <%= link_to current_user.first_name, user_path(current_user) %>
           <%= link_to "Home", posts_url %>
           <%= link_to "Users", users_path %>
@@ -34,10 +39,11 @@
 
   <body>
 
+<div class='content'>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
-
+</div>
 
   </body>
 </html>

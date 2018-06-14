@@ -1,3 +1,17 @@
+.activities {
+  display: none;
+}
+
+#notification-icon {
+  height: 3rem;
+  display: none;
+}
+
+#notification-icon:hover {
+  opacity: 0.6;
+}
+
+
 .item, .form-header{
   display: flex;
   flex-direction: column;
