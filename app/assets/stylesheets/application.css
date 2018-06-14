@@ -99,6 +99,8 @@ header img {
   margin-bottom: 1.5rem;
   background-color: #efb1b1;
   box-shadow: 0px 5px 10px #efcece;
+  height: 5rem;
+  overflow: scroll;
 }
 
 .activities-list {
