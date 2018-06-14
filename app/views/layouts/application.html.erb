@@ -21,7 +21,7 @@
 
       <div class='account'>
         <% if user_signed_in? %>
-          <div id='notifications'>SOMETHING HAPPENENED</div>
+          <div><%= image_tag 'enveloppe.png', id:'notification-icon' %></div>
           <div>
             <%= link_to(image_tag(current_user.image.url(:thumb)), user_path(current_user), class: "header-avatar") %>
           </div>
