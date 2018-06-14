@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acebook</title>
+    <title>Fishbook</title>
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
 
+  <header>
+    <div class='container header-container'>
+      <div class='info'>
+        <%= image_tag "fish.png" %>
+        <h1><%= link_to 'Fishbook', posts_url %></h1>
+      </div>
+
+
+      <div class='account'>
+        <% if user_signed_in? %>
+            <p><%= image_tag current_user.image.url(:thumb) %></p>
+            <% if params[:action] == "index" %>
+          <%= link_to "Settings", edit_user_registration_path %>
+          <%= link_to 'Profile', user_path(current_user) %>
+            <% else %>
+          <%= link_to "Posts", posts_url %>
+            <% end %>
+          <%= link_to "Log Out", destroy_user_session_url, method: "delete" %>
+        <% end %>
+      </div>
+    </div>
+  </header>
+
   <body>
-    <%= yield %>
+    <div class='container'>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+
   </body>
 </html>

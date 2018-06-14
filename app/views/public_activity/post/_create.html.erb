@@ -1,0 +1,5 @@
+<li class="activities-list">
+  <% if a.trackable %>
+    <%= a.created_at.strftime("%e %B %Y %H:%M") %> <%= a.trackable.user.first_name %> (<%= a.trackable.user.username%>) created a post
+  <% end %>
+</li>
