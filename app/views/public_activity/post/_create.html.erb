@@ -1,6 +1,8 @@
 <li class="activities-list">
   <% if a.trackable %>
-    <%= a.created_at.strftime("%e %B %Y %H:%M") %> <%= a.trackable.user.first_name %> (<%= a.trackable.user.username%>) created a post
+    <%= link_to user_url(a.trackable.user) do %>
+      <%= a.created_at.strftime("%e %B %Y %H:%M") %> <%= a.trackable.user.first_name %> (<%= a.trackable.user.username%>) created a post
+    <% end %>
   <% else %>
     A post that is currently deleted was added.
   <% end %>

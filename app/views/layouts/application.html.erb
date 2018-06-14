@@ -21,7 +21,7 @@
 
       <div class='account'>
         <% if user_signed_in? %>
-          <div><%= image_tag 'enveloppe.png', id:'notification-icon' %></div>
+          <div><%= image_tag 'coral.png', id:'notification-icon' %></div>
           <div>
             <%= link_to(image_tag(current_user.image.url(:thumb)), user_path(current_user), class: "header-avatar") %>
           </div>
@@ -38,10 +38,11 @@
 
   <body>
 
+<div class='content'>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
-
+</div>
 
   </body>
 </html>

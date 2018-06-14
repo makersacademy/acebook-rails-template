@@ -7,6 +7,10 @@
   display: none;
 }
 
+#notification-icon:hover {
+  opacity: 0.6;
+}
+
 
 .item, .form-header{
   display: flex;

@@ -32,10 +32,21 @@ header {
   border-radius: 50%;
 }
 
+.header-avatar img:hover {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
 .info a {
   text-decoration: none;
   color: white;
   font-family: 'BioRhyme Expanded', serif;
+}
+
+.info a:hover {
+  opacity: 0.6;
 }
 
 .account a {
@@ -46,7 +57,7 @@ header {
 }
 
 .account a:hover {
-  text-decoration: underline;
+  opacity: 0.6;
 }
 
 .account {
@@ -77,4 +88,20 @@ header img {
 .notice, .alert {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
+}
+
+.activities {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  width: 500px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  background-color: #efb1b1;
+  box-shadow: 0px 5px 10px #efcece;
+}
+
+.activities-list a {
+  text-decoration: none;
+  color: white;
 }
