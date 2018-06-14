@@ -1,0 +1,181 @@
+.activities {
+  display: none;
+}
+
+#notification-icon {
+  height: 3rem;
+  display: none;
+}
+
+#notification-icon:hover {
+  opacity: 0.6;
+}
+
+
+.item, .form-header{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  width: 500px;
+  padding: 2rem;
+  box-shadow: 0px 5px 10px black;
+  margin-bottom: 1.5rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.avatar img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.small_avatar img {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 2rem;
+}
+
+.post-username {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'BioRhyme Expanded', serif;
+  color: #8f9db5;
+}
+
+.username {
+  margin-right: 2rem;
+}
+
+.user p {
+  margin: 0 1rem 0 0;
+}
+
+.post-name {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.post-name a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+.timestamp {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+.post-caption {
+  margin: 1.5rem 0;
+}
+
+.image-post {
+  height: auto;
+  width: 100%;
+}
+
+.popularity {
+  display: flex;
+  justify-content: space-around;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+}
+
+.bubble-logo {
+  height: 1.7rem;
+  margin-right: 1rem;
+}
+
+.dislikes {
+  display: flex;
+  align-items: center;
+}
+
+.anchor-logo {
+  height: 1.7rem;
+  margin-right: 1rem;
+}
+
+.comments {
+  display: flex;
+  align-items: center;
+}
+
+.message-logo {
+  height: 1.7rem;
+  margin-right: 1rem;
+}
+
+.comments-list p {
+  margin: 0 1.2rem 0 0;
+}
+
+.comments-container {
+  max-height: 8rem;
+  overflow: scroll;
+}
+
+
+.comment {
+  background-color: #e3eaf7;
+  padding: 0.6rem;
+  margin: 0.2rem;
+}
+
+.comment-user {
+  display: flex;
+  justify-content: space-between;
+  color: #8f9db5;
+}
+
+.comment-message {
+  font-style: italic;
+}
+
+.comment-name a {
+  color: #8f9db5;
+  text-decoration: none;
+  font-family: 'BioRhyme Expanded', serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.comment-username, .comment-timestamp {
+  padding-top: 3px;
+}
+
+.crud {
+  display: flex;
+}
+
+.crud a {
+  margin: 1rem 1.5rem 0 0;
+  text-decoration: underline;
+  color: #8f9db5
+}
