@@ -1,3 +1,7 @@
+.activities {
+  display: none;
+}
+
 .item, .form-header{
   display: flex;
   flex-direction: column;
