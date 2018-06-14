@@ -8,12 +8,14 @@
   <% end %>
 <% end %>
 <h1>Edit post</h1>
-<p>
+<div class='form'>
   <%= f.label :message %>
-  <%= f.text_area :message %><br />
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-</p>
+  <%= f.text_area :message, class:'message-box' %>
+  <div class='form-fields'>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+</div>
 <p>
   <%= f.submit "Update" %>
   <%= link_to 'Cancel', posts_url %>
