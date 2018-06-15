@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acebook</title>
+    <title>Fishbook</title>
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
 
+  <header>
+    <div class='container header-container'>
+      <div class='info'>
+        <%= link_to(image_tag("fish.png"), posts_url, class: 'header-logo') %>
+        <h1><%= link_to 'Fishbook', posts_url %></h1>
+      </div>
+
+
+      <div class='account'>
+        <% if user_signed_in? %>
+          <div>
+            <%= image_tag 'coral.png', id:'notification-icon' %>
+          </div>
+           <div>
+             <%= link_to(image_tag(current_user.image.url(:thumb)), user_path(current_user), class: "header-avatar") %>
+          </div>
+          <%= link_to current_user.first_name, user_path(current_user) %>
+          <%= link_to "Home", posts_url %>
+          <%= link_to "Users", users_path %>
+          <%= link_to "Settings", edit_user_registration_path %>
+          <%= link_to "Log Out", destroy_user_session_url, method: "delete" %>
+        <% end %>
+      </div>
+    </div>
+  </header>
+
   <body>
-    <%= yield %>
+
+<div class='content'>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+</div>
+
   </body>
 </html>

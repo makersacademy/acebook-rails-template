@@ -1,0 +1,30 @@
+<div class='form-header'>
+
+<div class='user'>
+  <% @user = current_user %>
+  <%= image_tag @user.image.url(:thumb), class:'avatar' %>
+  <div class='name'>
+    <div class='post-name'>
+      <p> <%= @user.first_name %> <%= @user.last_name %> </p>
+      </div>
+      <div class='post-username'>
+        <div class='username'>
+        <%= @user.username %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= form_for post, html: { multipart: true } do |form| %>
+  <div class='form'>
+    <%= form.label :message %>
+    <%= form.text_area :message, class:'message-box' %>
+    <div class='form-fields'>
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+      <%= form.hidden_field :recipient_id, :value => @user_id %>
+      <%= form.submit "Submit" %>
+    </div>
+  </div>
+  <% end %>
+</div>
