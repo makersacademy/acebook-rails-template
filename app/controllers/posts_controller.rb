@@ -16,11 +16,8 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    find_activity
     @post.destroy
-    if @activity.present?
-      @activity.destroy
-    end
+    find_like_activity
     redirect_back(fallback_location: root_path)
   end
 
@@ -37,18 +34,28 @@ class PostsController < ApplicationController
   end
 
   def upvote
+    Post.public_activity_off
     if current_user.liked? @post
+      Post.public_activity_on
+      @post.create_activity(:unlike, owner: current_user)
       @post.unliked_by current_user
     else
+      Post.public_activity_on
+      @post.create_activity(:like, owner: current_user)
       @post.liked_by current_user
     end
     redirect_back(fallback_location: root_path)
   end
 
   def downvote
+    Post.public_activity_off
     if current_user.disliked? @post
+      Post.public_activity_on
+      @post.create_activity(:undislike, owner: current_user)
       @post.undisliked_by current_user
     else
+      Post.public_activity_on
+      @post.create_activity(:dislike, owner: current_user)
       @post.disliked_by current_user
     end
     redirect_back(fallback_location: root_path)
@@ -70,5 +77,13 @@ class PostsController < ApplicationController
 
   def find_activity
     @activity = PublicActivity::Activity.find_by(trackable_id: params[:id])
+  end
+
+  def find_like_activity
+    find_activity
+    if @activity.present?
+      @activity.destroy
+      find_like_activity
+    end
   end
 end
