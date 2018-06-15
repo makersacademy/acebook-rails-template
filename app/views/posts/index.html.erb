@@ -1,7 +1,10 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<%= stylesheet_link_tag 'posts' %>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<%= render 'shared/activities' %>
+
+<div class='content'>
+  <%= render partial: 'form' %>
+  <%= render partial: 'display_posts' %>
+</div>

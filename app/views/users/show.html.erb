@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag 'profile' %>
+
+<div class='profile-content'>
+  <div class='profile-user-info'>
+    <%= image_tag @user.image.url(:thumb), class:'profile-avatar' %>
+    <h1>
+      <%= @user.first_name %>
+      <%= @user.last_name %>
+    </h1>
+    <h3> @<%= @user.username %> </h3>
+    <% if @user == current_user %>
+      <%= link_to "Settings", edit_user_registration_path, class: 'user_settings' %>
+    <% end %>
+  </div>
+
+  <div class='profile-posts'>
+    <%= render partial: 'posts/form' %>
+    <%= render partial: 'posts/display_posts' %>
+  </div>
+</div>
