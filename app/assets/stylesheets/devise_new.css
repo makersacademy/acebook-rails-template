@@ -56,6 +56,11 @@ label {
 }
 
 .links {
-  margin: 1rem;
   display: flex;
+}
+
+.links a {
+  color: black;
+  text-decoration: underline;
+  margin: 1rem;
 }
