@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def index
     @post = current_user.posts.create
-    @posts = ((Post.where(recipient_id: nil)).or(Post.where("user_id = recipient_id"))).order(:id).reverse
+    @posts = Post.all.order(:id).reverse
     @post.create_activity :create, owner: current_user if @post.save
   end
 

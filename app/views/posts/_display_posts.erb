@@ -12,11 +12,22 @@
           <%= link_to(user_url(@user)) do %>
             <p> <%= @user.first_name %> <%= @user.last_name %> </p>
           <% end %>
+
         </div>
         <div class='post-username'>
           <div class='username'>
             <%= @user.username %>
           </div>
+
+          <% if post.recipient_id != @user.id && post.recipient_id != nil %>
+          <div class="inter_user_posts">
+            <% @recipient_user = User.find_by(id: post.recipient_id) %>
+            To <%= link_to(user_url(@recipient_user)) do %>
+                <p> <%= @recipient_user.first_name %> <%= @recipient_user.last_name %> </p>
+               <% end %>
+          </div>
+          <% end %>
+
           <div class='timestamp'>
             <%= post.created_at.strftime("%e %B %Y %H:%M") %>
           </div>
