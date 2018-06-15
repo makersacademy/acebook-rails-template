@@ -35,29 +35,13 @@ class PostsController < ApplicationController
 
   def upvote
     Post.public_activity_off
-    if current_user.liked? @post
-      Post.public_activity_on
-      @post.create_activity(:unlike, owner: current_user)
-      @post.unliked_by current_user
-    else
-      Post.public_activity_on
-      @post.create_activity(:like, owner: current_user)
-      @post.liked_by current_user
-    end
+    like_post
     redirect_back(fallback_location: root_path)
   end
 
   def downvote
     Post.public_activity_off
-    if current_user.disliked? @post
-      Post.public_activity_on
-      @post.create_activity(:undislike, owner: current_user)
-      @post.undisliked_by current_user
-    else
-      Post.public_activity_on
-      @post.create_activity(:dislike, owner: current_user)
-      @post.disliked_by current_user
-    end
+    dislike_post
     redirect_back(fallback_location: root_path)
   end
 
@@ -81,9 +65,30 @@ class PostsController < ApplicationController
 
   def find_like_activity
     find_activity
-    if @activity.present?
-      @activity.destroy
-      find_like_activity
+    return unless @activity.present?
+    @activity.destroy
+    find_like_activity
+  end
+
+  def like_post
+    Post.public_activity_on
+    if current_user.liked? @post
+      @post.create_activity(:unlike, owner: current_user)
+      @post.unliked_by current_user
+    else
+      @post.create_activity(:like, owner: current_user)
+      @post.liked_by current_user
+    end
+  end
+
+  def dislike_post
+    Post.public_activity_on
+    if current_user.disliked? @post
+      @post.create_activity(:undislike, owner: current_user)
+      @post.undisliked_by current_user
+    else
+      @post.create_activity(:dislike, owner: current_user)
+      @post.disliked_by current_user
     end
   end
 end
