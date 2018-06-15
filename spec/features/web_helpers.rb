@@ -48,3 +48,9 @@ def make_a_text_and_picture_post
   fill_in "Message", with: "Hello fish"
   page.attach_file("post_image", Rails.root + 'app/assets/images/fish.jpeg')
 end
+
+def set_and_freeze_time
+  Time.zone = 'London'
+  new_time = Time.local(2016, 6, 10, 12, 0, 0).strftime("%e %B %Y %H:%M")
+  Timecop.freeze(new_time)
+end
