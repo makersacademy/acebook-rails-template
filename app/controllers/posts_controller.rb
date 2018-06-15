@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def index
     @post = current_user.posts.create
-    @posts = Post.order(:id).reverse
+    @posts = Post.all.order(:id).reverse
     @post.create_activity :create, owner: current_user if @post.save
   end
 
@@ -68,7 +68,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:message, :image)
+    params.require(:post).permit(:message, :image, :recipient_id)
   end
 
   def load_activities

@@ -39,6 +39,11 @@ def make_a_text_post
   click_button "Submit"
 end
 
+def make_a_profile_post
+  fill_in "Message", with: "Not my profile"
+  click_button "Submit"
+end
+
 def make_a_text_and_picture_post
   fill_in "Message", with: "Hello fish"
   page.attach_file("post_image", Rails.root + 'app/assets/images/fish.jpeg')

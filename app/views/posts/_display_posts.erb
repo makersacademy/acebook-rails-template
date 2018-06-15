@@ -2,6 +2,7 @@
 
   <% @posts.each do |post| %>
   <div class="item">
+
     <% Time.zone = 'London' %>
     <div class='user'>
       <% @user = (User.find_by(id: post.user_id)) %>
@@ -12,17 +13,38 @@
           <%= link_to(user_url(@user)) do %>
             <p> <%= @user.first_name %> <%= @user.last_name %> </p>
           <% end %>
+
         </div>
         <div class='post-username'>
           <div class='username'>
             <%= @user.username %>
           </div>
+
           <div class='timestamp'>
             <%= post.created_at.strftime("%e %B %Y %H:%M") %>
           </div>
         </div>
       </div>
     </div>
+
+    <% if post.recipient_id != @user.id && post.recipient_id != nil %>
+    <div class="user">
+      <% @recipient_user = User.find_by(id: post.recipient_id) %>
+      <%= link_to(image_tag(@recipient_user.image.url(:thumb)), user_url(@recipient_user), class:'avatar') %>
+      <div class='name'>
+        <div class='post-name'>
+      To <%= link_to(user_url(@recipient_user)) do %>
+           <%= @recipient_user.first_name %> <%= @recipient_user.last_name %>
+         <% end %>
+        </div>
+        <div class='post-username'>
+          <div class='username'>
+            <%= @recipient_user.username %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
 
     <div class='post-caption'>
       <%= post.message.gsub(/\n/, '<br>').html_safe%>
