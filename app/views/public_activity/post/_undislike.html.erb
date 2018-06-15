@@ -1,7 +1,7 @@
 <li class="activities-list">
   <% if a.trackable %>
     <%= link_to user_url(a.trackable.user) do %>
-      <%= link_to(image_tag(a.trackable.user.image.url(:thumb)), user_url(a.trackable.user), class:'avatar') %>
+    <%= link_to(image_tag(a.trackable.user.image.url(:thumb)), user_url(a.trackable.user), class:'notification-avatar') %>
       <%= a.created_at.strftime("%e %B %Y %H:%M") %>
       <%= a.trackable.user.first_name %> (<%= a.trackable.user.username%>) undisliked a post
     <% end %>
