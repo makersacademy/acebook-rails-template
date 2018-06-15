@@ -73,7 +73,7 @@
 <!-- form -->
     <%= form_for ([post, post.comments.build]) do |form| %>
       <%= form.label :comment %>
-      <%= form.text_area :content %>
+      <%= form.text_area :content, class:'message-box' %>
       <%= form.submit "Comment" %>
     <% end %>
 

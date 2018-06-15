@@ -179,3 +179,15 @@
   text-decoration: underline;
   color: #8f9db5
 }
+
+.form-fields {
+  display: flex;
+  margin: 1rem 0;
+  justify-content: space-between;
+}
+
+.message-box {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+}
