@@ -45,4 +45,12 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_valid
     end
   end
+
+  it 'email addresses should be unique' do
+    user = User.new(name: "Example user", email: "user@email.com")
+    duplicate_user = user.dup
+    user.save
+    duplicate_user.email = user.email.upcase
+    expect(duplicate_user).not_to be_valid
+  end
 end
