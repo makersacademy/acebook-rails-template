@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:each) do
-    @user = User.new(name: "Example user", email: "user@email.com")
+    @user = User.new(name: "Example user", email: "user@email.com", password: "Password123", password_confirmation: "Password123")
   end
 
-  let(:user) {@user}
+  let(:user) { @user }
 
   it 'user input should be valid' do
     expect(user).to be_valid
@@ -53,4 +53,15 @@ RSpec.describe User, type: :model do
     duplicate_user.email = user.email.upcase
     expect(duplicate_user).not_to be_valid
   end
+
+  it 'password should be present' do
+    user.password = user.password_confirmation = " " * 6
+    expect(user).not_to be_valid
+  end
+
+  it 'password should have a minimum length' do
+    user.password = user.password_confirmation = "a" * 5
+    expect(user).not_to be_valid
+  end
+
 end
