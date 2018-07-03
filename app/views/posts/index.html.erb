@@ -1,7 +1,10 @@
-<% @posts.each do |post| %>
+<ul><% @posts.reverse.each do |post| %>
+  <li>
   <p><%= post.message %></p>
+  <p><%= post.created_at %></p>
+  </li>
 <% end %>
-
+</ul>
 <%= link_to new_post_path do %>
   New post
 <% end %>
