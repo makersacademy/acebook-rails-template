@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'create_three_posts'
+require 'helpers/create_three_posts'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Posts appear in reverse order" do
