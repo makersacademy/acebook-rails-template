@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      redirect_to posts_url # Change this to the newsfeed when it has been built!
     else
       render 'new'
     end
