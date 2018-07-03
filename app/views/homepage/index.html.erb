@@ -1,6 +1,14 @@
-This is working!
-
-<%# See this stack overflow for more info on what new_user_path is : https://stackoverflow.com/questions/4242234/rails-where-is-new-user-path-dont-see-any-reference-to-this-path %>
-<%= link_to new_user_path do %>
-  Create new account
-<% end %>
+<ul>
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to "sign in", new_user_session_path %>
+    </li>
+    <li>
+      <%= link_to "sign UP", new_user_registration_path %>
+    </li>
+  <% end %>
+</ul>
