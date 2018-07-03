@@ -52,3 +52,9 @@ As a pet, I can see posts in reverse chronological order, so that other pets see
 ```
 As a pet, I can see other pets' previous posts so I can see what they're saying (medium)
 ```
+
+
+Resources Used:
+1. Documentation for devise: https://github.com/plataformatec/devise#strong-parameters
+2. Adding custom fields to devise registration: http://www.peoplecancode.com/tutorials/adding-custom-fields-to-devise
+3. Followed this guide for getting devise up and running: https://www.youtube.com/watch?v=rrC37eeMNIY
