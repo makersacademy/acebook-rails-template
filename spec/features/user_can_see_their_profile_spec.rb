@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "User can view their profile", type: :feature do
   scenario 'successfuly' do
     visit root_path
-    click_link "Sign Up"
+    click_link "Sign up"
     fill_in "Email", with: 'millie@gmail.com'
     fill_in "Firstname", with: "Jen"
     fill_in "Lastname", with: "Smith"
