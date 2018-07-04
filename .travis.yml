@@ -1,9 +1,15 @@
 language: ruby
 rvm:
-- 2.5
+- "2.5.0"
+cache: bundler
+services:
+  - postgresql
+before_script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+script: bundle exec rspec
 deploy:
   provider: heroku
   api_key:
     secure: X9xA8jSXYJmDwXAnHEF7HuZnf3c/WxiJWEwbh3lAsUXavp/jlZ7HxMCEvUUIh1bdBPIvy9FsIpNhbAIFvn4W6XAJMpgn1c8XNBld67SbF2tI6um0FNnzIZPyDtAu+QPhq05Y+9xGkmbLmnAdDlbciSubaYVkQV+vUhFB6Uk1oSqSmTL4SIHWLs7GvzpnEb+gNAXcFydBYZn50ZkyCXdtTW8ss8kPKCkpk6hnI7HhwmwRFt7JFW4Le2UiWNCrBzBpiIUqGvDFhWLjZvKn3LSjKvSIF5O3FT4jw6gI2mMXtWxC3cp1C3RDRNN+WkrLFr24bQRAzlGu5Lr767hG0fTuEIHsqTPUz4OhvgZ4j4nL9K7yTyYWWjnKxgcKXqlm46vSQ0EN8yCG3yd3BIKRbnVcXnyaclPHn5dSsrRdwTnkOIV72fFmH8padR+gL9qs0zqKgm/ClTOYZ7WS3X4bGoKIki7m4OEe2j2YFMpFk/kFzMM7E4kE2YySJi9tDH1KIDJrMdamdh7nR2t4wpBzIYZIYpSYwNgJgSay9bIxgBjnIjOYh1g5lp0tmtji7ceN2qhYnPmwahmSMI3CvZTBny6aP9j4tGJkTKYIKLO4+qfPDeBu/QkaoJ1H/xpxUPzxLYsXCK8cTbMuZaEIelv6LkZMClsmNWlk/YFjsqXmCdXJSfI=
  app: blooming-meadow-10813
-
