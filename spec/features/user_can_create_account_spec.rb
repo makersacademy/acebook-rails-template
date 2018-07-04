@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "User creates an account", type: :feature do
   scenario 'successfuly' do
     visit root_path
-    click_link "Sign Up"
+    click_link "Sign up"
     fill_in "Email", with: 'millie@gmail.com'
     fill_in "Firstname", with: "Millie"
     fill_in "Lastname", with: "Smith"
