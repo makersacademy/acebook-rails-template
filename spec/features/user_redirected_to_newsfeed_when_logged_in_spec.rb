@@ -5,7 +5,7 @@ RSpec.feature "User redirected to newsfeed on login", type: :feature do
     visit root_path
     fill_in "Email", with: 'millie@gmail.com'
     fill_in "Password", with: "Secure123"
-    click_button "Submit"
+    click_button "Log in"
     expect(page.current_url).to eq("https://localhost:3000/posts")
   end
 end
