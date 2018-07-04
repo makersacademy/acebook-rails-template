@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    post = Post.new
+    @post = Post.new
     @posts = Post.all
   end
 
