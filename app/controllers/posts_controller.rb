@@ -9,7 +9,9 @@ class PostsController < ApplicationController
   end
 
   def index
+    @post = Post.new
     @posts = Post.all
+    @user = User.new
   end
 
   private
