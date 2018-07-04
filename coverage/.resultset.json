@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/controllers/posts_controller_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/controllers/posts_controller_spec.rb": [
         1,
         null,
         1,
@@ -32,7 +32,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/posts_controller.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/controllers/posts_controller.rb": [
         1,
         1,
         6,
@@ -44,7 +44,7 @@
         null,
         null,
         1,
-        15,
+        17,
         null,
         null,
         1,
@@ -54,14 +54,14 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/application_controller.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/controllers/application_controller.rb": [
         1,
         1,
         null,
         1,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/controllers/sessions_controller_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
         1,
@@ -75,16 +75,16 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/sessions_controller.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
         null,
         1,
-        3,
-        3,
-        1,
-        1,
+        4,
+        4,
+        2,
+        2,
         null,
         null,
         2,
@@ -93,12 +93,13 @@
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
+        1,
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/controllers/users_controller_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/controllers/users_controller_spec.rb": [
         1,
         null,
         1,
@@ -112,33 +113,33 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/users_controller.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/controllers/users_controller.rb": [
+        1,
+        null,
+        1,
+        10,
+        null,
+        null,
+        1,
+        9,
+        9,
+        6,
+        6,
+        6,
+        null,
+        3,
+        null,
+        null,
+        null,
         1,
         null,
         1,
         9,
         null,
         null,
-        1,
-        8,
-        8,
-        5,
-        5,
-        5,
-        null,
-        3,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        8,
-        null,
-        null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/posts_reverse_order_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/features/posts_reverse_order_spec.rb": [
         1,
         1,
         null,
@@ -150,7 +151,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/create_three_posts.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/helpers/create_three_posts.rb": [
         1,
         1,
         1,
@@ -164,7 +165,7 @@
         1,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/posts_show_date_created_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/features/posts_show_date_created_spec.rb": [
         1,
         1,
         null,
@@ -179,7 +180,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/create_post.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/helpers/create_post.rb": [
         1,
         2,
         2,
@@ -187,7 +188,7 @@
         2,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/features/user_can_submit_posts_spec.rb": [
         1,
         1,
         null,
@@ -198,12 +199,9 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/user_log_in_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/features/user_log_in_spec.rb": [
         1,
         null,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -215,13 +213,22 @@
         1,
         1,
         1,
-        1,
-        1,
-        1,
         null,
         null,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/features/user_log_out_spec.rb": [
+        1,
+        1,
+        1,
+        null,
         1,
         1,
         1,
@@ -232,7 +239,50 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/user_sign_up_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/helpers/create_user.rb": [
+        1,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/helpers/user_log_in.rb": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/features/user_sign_up_spec.rb": [
         1,
         1,
         null,
@@ -259,40 +309,12 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/create_user.rb": [
-        1,
-        6,
-        6,
-        6,
-        6,
-        6,
-        6,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/logged_in_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/helpers/logged_in_spec.rb": [
         1,
         0,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/sessions_helper_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/helpers/sessions_helper_spec.rb": [
         1,
         null,
         null,
@@ -306,10 +328,10 @@
         null,
         null,
         1,
-        1,
+        null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/users_helper_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/helpers/users_helper_spec.rb": [
         1,
         null,
         null,
@@ -323,26 +345,40 @@
         null,
         null,
         1,
-        1,
+        null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/models/post_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/models/post_spec.rb": [
         1,
         null,
+        1,
         1,
         2,
+        null,
+        null,
+        3,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/models/post.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/models/post.rb": [
+        1,
         1,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/models/application_record.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/models/user_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -411,9 +447,9 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/models/user.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/models/user.rb": [
         1,
-        7,
+        8,
         null,
         1,
         null,
@@ -425,21 +461,24 @@
         1,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/views/sessions/new.html.erb_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/views/sessions/new.html.erb_spec.rb": [
         1,
         null,
         1,
-        1,
+        null,
+        null,
+        null,
+        null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/views/users/new.html.erb_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/views/users/new.html.erb_spec.rb": [
         1,
         null,
         1,
-        1,
+        null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/homepage_controller.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/controllers/homepage_controller.rb": [
         1,
         1,
         null,
