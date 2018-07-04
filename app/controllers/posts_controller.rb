@@ -11,7 +11,6 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.all
-    @user = User.new
   end
 
   private
