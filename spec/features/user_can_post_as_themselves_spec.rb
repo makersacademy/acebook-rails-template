@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "User creates an account", type: :feature do
+RSpec.feature "User can post as themselves", type: :feature do
   scenario 'successfully' do
     visit root_path
     click_link "Sign up"
@@ -10,6 +10,8 @@ RSpec.feature "User creates an account", type: :feature do
     fill_in "Password", with: "Secure123"
     fill_in "Password confirmation", with: "Secure123"
     click_button 'Sign up'
-    expect(page).to have_content("Sign Out")
+    fill_in "Message", with: "test text"
+    click_button 'Submit'
+    expect(page).to have_content("Millie")
   end
 end
