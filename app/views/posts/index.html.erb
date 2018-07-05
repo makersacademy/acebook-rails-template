@@ -1,4 +1,5 @@
-<%= link_to "View profile", current_user %>
+<div id="center">
+  <%= link_to "View profile", current_user %>
 
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </br></br>
 
@@ -15,3 +16,5 @@
 
   <%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %>
 <% end %>
+
+</div>
