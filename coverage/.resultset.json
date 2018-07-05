@@ -8,7 +8,7 @@
         1,
         1,
         1,
-        0,
+        1,
         null,
         null
       ],
@@ -20,19 +20,40 @@
         1,
         null
       ],
+      "/Users/matthewwareing/Projects/Makers/acebook-off-the-rails/app/models/user.rb": [
+        1,
+        1,
+        null,
+        2,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewwareing/Projects/Makers/acebook-off-the-rails/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/matthewwareing/Projects/Makers/acebook-off-the-rails/app/controllers/posts_controller.rb": [
         1,
         null,
         1,
         1,
+        null,
         1,
         null,
         null,
         1,
         1,
-        0,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         1,
@@ -57,27 +78,8 @@
         1,
         1,
         null
-      ],
-      "/Users/matthewwareing/Projects/Makers/acebook-off-the-rails/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/matthewwareing/Projects/Makers/acebook-off-the-rails/app/models/user.rb": [
-        1,
-        2,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1530716613
+    "timestamp": 1530784748
   }
 }
