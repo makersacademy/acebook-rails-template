@@ -11,6 +11,7 @@ module SessionsHelper
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
+    #this doesn't work properly
   end
 
   def logged_in?
