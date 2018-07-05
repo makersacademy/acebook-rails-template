@@ -2,6 +2,17 @@
   Welcome, <%= @user.firstname %>
 </h1>
 
+curent user = <%= current_user.avatar.url %></br></br>
+
+<%= form_for(@user, html: { multipart: true }) do |f| %>
+  Update your profile pic:
+  <span class="avatar">
+    <%= f.file_field :avatar %>
+  </span>
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>
+
+
 <h2>
   <p> Type of Animal: </p>
   <p> Age: </p>
