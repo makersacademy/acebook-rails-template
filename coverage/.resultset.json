@@ -1,37 +1,52 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/matthewwareing/Projects/Makers/acebook-off-the-rails/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/spec/controllers/likes_controller_spec.rb": [
         1,
+        null,
         1,
         null,
         1,
         1,
         1,
         1,
+        1,
+        1,
+        1,
+        null,
         null,
         null
       ],
-      "/Users/matthewwareing/Projects/Makers/acebook-off-the-rails/spec/helpers/create_post.rb": [
-        1,
-        1,
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/controllers/likes_controller.rb": [
         1,
         1,
         null,
         1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
         1,
         null
       ],
-      "/Users/matthewwareing/Projects/Makers/acebook-off-the-rails/app/models/user.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/models/user.rb": [
         1,
         1,
-        7,
-        7,
-        7,
-        7,
-        7,
-        7,
-        null,
         null,
         2,
         null,
@@ -45,50 +60,19 @@
         1,
         null
       ],
-      "/Users/matthewwareing/Projects/Makers/acebook-off-the-rails/app/models/application_record.rb": [
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/matthewwareing/Projects/Makers/acebook-off-the-rails/app/controllers/posts_controller.rb": [
-        1,
-        null,
+      "/Users/lucygore/Documents/makers_academy/Week8/acebook/acebook-off-the-rails/app/models/post.rb": [
         1,
         1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/matthewwareing/Projects/Makers/acebook-off-the-rails/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/matthewwareing/Projects/Makers/acebook-off-the-rails/app/models/post.rb": [
         1,
         1,
         null
       ]
     },
-    "timestamp": 1530784748
+    "timestamp": 1530789351
   }
 }
