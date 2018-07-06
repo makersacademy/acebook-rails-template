@@ -1,5 +1,6 @@
 def create_three_posts
-  visit "/posts"
+  user = User.create(name: "simone", email: "mail@simone.com", password: "123456")
+  visit user_posts_path(user)
   click_link "New post"
   fill_in "Message", with: "First post"
   click_button "Submit"
