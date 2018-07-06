@@ -3,10 +3,11 @@
   <p style="color: blue;"><%= post.user.name %>:</p>
   <p><%= post.message %></p>
   <p><%= post.created_at.strftime("%m/%d/%Y") %></p>
+  <p><%= link_to "Comment", new_user_post_comment_path(current_user.id, post.id)%></p>
   <p>Likes: <%= post.votes_for.size %></p>
   <%= link_to('Like', "/users/#{current_user.id}/posts/#{post.id}/likes", method: :post) %>
   <% post.comments.each do |message| %>
-    <p><%= message.comment %> - by <%= message.user.name %> at <%= message.created_at %></p>
+    <p><%= message.comment %> - by <%= message.user.name %> at <%= message.created_at.strftime("%m/%d/%Y") %></p>
   <% end %>
   </li>
 <% end %>
