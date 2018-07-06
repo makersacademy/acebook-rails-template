@@ -1,5 +1,3 @@
-require 'pry'
-
 class PostsController < ApplicationController
   def new
     @post = Post.new

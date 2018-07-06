@@ -5,7 +5,9 @@
   <p><%= post.created_at.strftime("%m/%d/%Y") %></p>
   <p>Likes: <%= post.votes_for.size %></p>
   <%= link_to('Like', "/users/#{current_user.id}/posts/#{post.id}/likes", method: :post) %>
-
+  <% post.comments.each do |message| %>
+    <p><%= message.comment %> - by <%= message.user.name %> at <%= message.created_at %></p>
+  <% end %>
   </li>
 <% end %>
 </ul>
