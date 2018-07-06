@@ -1,0 +1,51 @@
+Add profile pic to profile
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Fri Jul 6 10:24:43 2018 +0100
+#
+# On branch uploadiagev3
+# Changes to be committed:
+#	modified:   app/controllers/users_controller.rb
+#	modified:   app/views/users/show.html.erb
+#	new file:   db/migrate/20180705140018_add_avatar_to_users.rb
+#	new file:   db/migrate/20180705140148_remove_avatar_from_users.rb
+#	new file:   db/migrate/20180705140326_remove_picture_from_users.rb
+#	new file:   public/uploads/tmp/1530798748-39472-0027-4570/Screen_Shot_2018-07-03_at_10.23.26.png
+#	new file:   public/uploads/tmp/1530798903-39472-0028-3328/Screen_Shot_2018-06-10_at_20.09.13.png
+#	new file:   public/uploads/tmp/1530798925-39472-0029-8039/Screen_Shot_2018-07-04_at_11.53.46.png
+#	new file:   public/uploads/tmp/1530798959-39472-0030-3616/Screen_Shot_2018-07-03_at_10.23.17.png
+#	new file:   public/uploads/tmp/1530799495-40657-0001-6043/Screen_Shot_2018-07-03_at_10.23.26.png
+#	new file:   public/uploads/tmp/1530799569-40657-0002-5075/Screen_Shot_2018-07-04_at_13.48.01.png
+#	new file:   public/uploads/tmp/1530799872-40657-0003-0901/Screen_Shot_2018-07-03_at_10.23.26.png
+#	new file:   public/uploads/tmp/1530799872-40657-0004-4058/Screen_Shot_2018-07-03_at_10.23.26.png
+#	new file:   public/uploads/tmp/1530799921-40657-0005-3464/RackMultipart20180705-40657-9d0t5a.png
+#	new file:   public/uploads/tmp/1530799921-40657-0006-9772/Screen_Shot_2018-07-03_at_10.23.26.png
+#	new file:   public/uploads/tmp/1530800526-40657-0007-5589/RackMultipart20180705-40657-1u77rqt.png
+#	new file:   public/uploads/tmp/1530800526-40657-0008-2816/Screen_Shot_2018-07-04_at_13.48.01.png
+#	new file:   public/uploads/tmp/1530806485-42356-0001-9950/RackMultipart20180705-42356-hqsmyn.png
+#	new file:   public/uploads/tmp/1530806485-42356-0002-2329/Screen_Shot_2018-07-03_at_10.23.26.png
+#	new file:   public/uploads/tmp/1530806640-42519-0001-9152/Screen_Shot_2018-07-04_at_13.48.01.png
+#	new file:   public/uploads/tmp/1530806805-42519-0002-4060/Screen_Shot_2018-07-04_at_09.15.17.png
+#	new file:   public/uploads/tmp/1530808063-42519-0003-9497/Screen_Shot_2018-06-26_at_09.20.21.png
+#	new file:   public/uploads/tmp/1530808281-42519-0004-1290/Screen_Shot_2018-06-26_at_09.20.21.png
+#	new file:   public/uploads/tmp/1530808533-42519-0005-6091/Screen_Shot_2018-07-04_at_09.15.17.png
+#	new file:   public/uploads/tmp/1530808547-42519-0006-2222/Screen_Shot_2018-07-04_at_09.15.17.png
+#	new file:   public/uploads/tmp/1530808633-42519-0007-1009/Screen_Shot_2018-07-04_at_09.15.17.png
+#	new file:   public/uploads/tmp/1530808659-42519-0008-8543/Screen_Shot_2018-07-03_at_10.23.17.png
+#	new file:   public/uploads/tmp/1530808870-42519-0009-7265/Screen_Shot_2018-06-22_at_19.07.41.png
+#	new file:   public/uploads/tmp/1530808987-42519-0010-7721/Screen_Shot_2018-07-03_at_10.23.26.png
+#	new file:   public/uploads/tmp/1530809039-42519-0011-2808/Screen_Shot_2018-07-04_at_11.53.46.png
+#	new file:   public/uploads/tmp/1530809070-42519-0012-9689/Screen_Shot_2018-07-04_at_11.53.46.png
+#	new file:   public/uploads/tmp/1530809141-42519-0013-2909/Screen_Shot_2018-06-10_at_20.07.30.png
+#	new file:   public/uploads/tmp/1530809415-42519-0014-3364/Screen_Shot_2018-07-04_at_09.25.46.png
+#	new file:   public/uploads/tmp/1530809468-42519-0015-1594/Screen_Shot_2018-07-04_at_11.53.46.png
+#	new file:   public/uploads/tmp/1530868473-48190-0001-0193/Screen_Shot_2018-07-04_at_13.48.01.png
+#	new file:   public/uploads/tmp/1530868545-48190-0002-7437/Screen_Shot_2018-07-04_at_09.15.17.png
+#	new file:   public/uploads/tmp/1530868611-48190-0003-3669/Screen_Shot_2018-07-03_at_10.23.17.png
+#	new file:   public/uploads/tmp/1530868719-48190-0004-0588/Screen_Shot_2018-07-04_at_11.53.46.png
+#	new file:   public/uploads/tmp/1530868734-48190-0005-2541/Screen_Shot_2018-07-04_at_09.25.46.png
+#	new file:   public/uploads/tmp/1530868792-48190-0006-2453/Screen_Shot_2018-07-04_at_11.53.46.png
+#	new file:   public/uploads/user/avatar/2/Screen_Shot_2018-07-04_at_13.48.01.png
+#
