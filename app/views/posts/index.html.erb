@@ -1,7 +1,8 @@
 <ul><% @posts.reverse.each do |post| %>
   <li>
+  <p style="color: blue;"><%= post.user.name %>:</p>
   <p><%= post.message %></p>
-  <p><%= post.created_at %></p>
+  <p><%= post.created_at.strftime("%m/%d/%Y") %></p>
   <p>Likes: <%= post.votes_for.size %></p>
   <%= link_to('Like', "/users/#{current_user.id}/posts/#{post.id}/likes", method: :post) %>
 
