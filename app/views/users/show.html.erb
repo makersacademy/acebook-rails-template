@@ -2,7 +2,7 @@
   Welcome, <%= @user.firstname %>
 </h1>
 
-<%= image_tag @user.avatar.url(:profile)  if @user.avatar? %>
+<%= image_tag @user.avatar.url(:profile), :class => "profile_pic" if @user.avatar? %>
 
 <% if current_user == @user %>
   <%= form_for(current_user, html: { multipart: true }) do |f| %>
@@ -15,7 +15,7 @@
 <% end %>
 
 <h2>
-  <p> Type of Animal: </p> <%= @user.firstname %>
+  <p> Type of Animal: </p> 
   <p> Age: </p>
   <p> Owner: </p>
 </h2>
