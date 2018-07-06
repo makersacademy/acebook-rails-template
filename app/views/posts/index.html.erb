@@ -10,20 +10,18 @@
 
   <% @posts.each.reverse_each do |post| %>
   <div class="card border-primary mb-3" style="width: 18rem;">
+    <div class="card-header">
+      <a class="card-link text-left"><%= link_to post.user.first, post.user %></a>
+        <a class="card-subtitle mb-2 text-muted text-right"><%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %></a>
+    </div>
     <div class="card-body">
         <p class="card-text"><%= post.message %></p>
-        <h6 class="card-subtitle mb-2 text-muted"><%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %></h6>
-        <a href="#" class="card-link"><%= link_to post.user.firstname, post.user %></a>
+    </div>
+    <div class="card-footer text-muted">
+      <p class="card-text"><%= link_to %></p>
     </div>
   </div>
   <% end %>
 
-
-
-<div class="card border-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body text-primary">
-    <h5 class="card-title">Primary card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
