@@ -1,17 +1,20 @@
-<!-- A comment -->
-Hi there, <%= current_user.firstname %>
-<%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </br></br>
+<div class="container text-center">
+  Hi there, <%= current_user.firstname %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </br></br>
 
-<%= form_for(@post) do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
 
-  <%= form.submit "Submit" %>
-<% end %>
+  <%= form_for(@post) do |form| %>
+    <%= form.label :"what's on your mind?" %><br>
+    <%= form.text_area :message, :cols => "60", :rows => "4" %>
+  <p>
+    <%= form.submit "Post" %>
+  <% end %>
 
-<% @posts.each.reverse_each do |post| %>
-  <p><%= post.message %></p>
-  <%= post.user.firstname %>
+  <% @posts.each.reverse_each do |post| %>
+    <p><%= post.message %></p>
 
-  <%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %>
-<% end %>
+  <%= link_to post.user.firstname, post.user %>
+
+    <%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %>
+  <% end %>
+</div>

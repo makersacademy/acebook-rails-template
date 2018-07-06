@@ -76,6 +76,7 @@ For using Devise gem for login & authentication
 1. Documentation for devise: https://github.com/plataformatec/devise#strong-parameters
 2. Adding custom fields to devise registration: http://www.peoplecancode.com/tutorials/adding-custom-fields-to-devise
 3. Followed this guide for getting devise up and running: https://www.youtube.com/watch?v=rrC37eeMNIY
+4. Adding bootstrap: https://github.com/twbs/bootstrap-rubygem
 
 For testing
 1. To stub authentication in controller spec:
