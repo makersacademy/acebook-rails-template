@@ -1,7 +1,5 @@
 <div class="container text-center">
-  Hi there, <%= current_user.firstname %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </br></br>
-
+<h2>  Hi there, <%= current_user.firstname %> </h2>
 
   <%= form_for(@post) do |form| %>
     <%= form.label :"what's on your mind?" %><br>
@@ -11,10 +9,21 @@
   <% end %>
 
   <% @posts.each.reverse_each do |post| %>
-    <p><%= post.message %></p>
-
-  <%= link_to post.user.firstname, post.user %>
-
-    <%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %>
+  <div class="card border-primary mb-3" style="width: 18rem;">
+    <div class="card-body">
+        <p class="card-text"><%= post.message %></p>
+        <h6 class="card-subtitle mb-2 text-muted"><%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %></h6>
+        <a href="#" class="card-link"><%= link_to post.user.firstname, post.user %></a>
+    </div>
+  </div>
   <% end %>
+
+
+
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">Primary card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
 </div>
