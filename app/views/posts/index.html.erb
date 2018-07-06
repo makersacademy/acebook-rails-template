@@ -3,7 +3,7 @@
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
   <p>Likes: <%= post.votes_for.size %></p>
-  <%= link_to('Like', "/users/#{post.user.id}/posts/#{post.id}/likes", method: :post) %>
+  <%= link_to('Like', "/users/#{current_user.id}/posts/#{post.id}/likes", method: :post) %>
 
   </li>
 <% end %>
