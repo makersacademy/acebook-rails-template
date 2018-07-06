@@ -1,6 +1,8 @@
+<div style='padding: 20px'>
 <%= form_for :post, :url => {:action => 'create'} do |form| %>
   <%= form.label :message %>
-  <%= form.text_area :message, class: "post_area"  %>
+  <div style='width: 30%'><%= form.text_area :message, class: "post_area" %></div>
 
   <%= form.submit "Submit" %>
 <% end %>
+</div>

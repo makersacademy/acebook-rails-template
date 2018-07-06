@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
  skip_before_action :require_login
 
   def index
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Welcome to Acebook #{@user.name}!"
-      redirect_to user_posts_url(@user) # Change this to the newsfeed when it has been built!
+      redirect_to user_posts_url(@user)
     else
       render 'new'
     end
