@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def update
     current_user.avatar = params[:user][:avatar]
     current_user.save!
+    redirect_to user_path
   end
 
   private
