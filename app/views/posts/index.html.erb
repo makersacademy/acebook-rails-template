@@ -2,6 +2,9 @@
   <li>
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
+  <% post.comments.each do |message| %>
+    <p><%= message.comment %> - by <%= message.user.name %> at <%= message.created_at %></p>
+  <% end %>
   </li>
 <% end %>
 </ul>
