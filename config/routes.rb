@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   get '/', to: 'homepage#index'
   get '/signup', to: 'users#new'
+  post '/likes', to: 'posts#likes'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users do
     resources :posts do
+      resources :likes
       resources :comments
     end
   end

@@ -1,4 +1,7 @@
 require 'rails_helper'
+require 'helpers/create_user'
+require 'helpers/user_log_in'
+require 'pry'
 
 RSpec.feature "User log in", type: :feature do
   scenario "Signed up users can log in" do

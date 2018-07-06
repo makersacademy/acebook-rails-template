@@ -13,6 +13,12 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def likes
+    @post = Post.find(params[:id])
+    @post.liked_by current_user
+    redirect_to user_posts_path(current_user)
+  end
+
   private
 
   def post_params
