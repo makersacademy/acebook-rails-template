@@ -2,7 +2,6 @@ require 'pry'
 
 class PostsController < ApplicationController
   def new
-    # binding.pry
     @post = Post.new
   end
 
