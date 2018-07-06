@@ -7,7 +7,6 @@ RSpec.feature "User log in", type: :feature do
   scenario "Signed up users can log in" do
     create_user
     user_log_in
-    binding.pry
     expect{page}.not_to raise_error
   end
 
