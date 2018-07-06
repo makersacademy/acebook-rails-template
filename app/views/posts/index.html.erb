@@ -1,7 +1,13 @@
-<% @posts.each do |post| %>
+<ul><% @posts.reverse.each do |post| %>
+  <li>
   <p><%= post.message %></p>
+  <p><%= post.created_at %></p>
+  <% post.comments.each do |message| %>
+    <p><%= message.comment %> - by <%= message.user.name %> at <%= message.created_at %></p>
+  <% end %>
+  </li>
 <% end %>
-
-<%= link_to new_post_path do %>
+</ul>
+<%= link_to new_user_post_url do %>
   New post
 <% end %>
