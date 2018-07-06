@@ -1,6 +1,49 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/controllers/comments_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/comments_controller.rb": [
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
       "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
@@ -37,13 +80,6 @@
         1,
         1,
         null,
-        null
-      ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null,
-        1,
         null
       ],
       "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/controllers/users_controller_spec.rb": [
@@ -324,6 +360,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/models/application_record.rb": [
@@ -403,6 +440,7 @@
       "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/models/user.rb": [
         1,
         1,
+        1,
         null,
         12,
         null,
@@ -435,8 +473,6 @@
       ],
       "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/posts_controller.rb": [
         1,
-        null,
-        1,
         1,
         5,
         null,
@@ -455,6 +491,13 @@
         null,
         1,
         5,
+        null,
+        null
+      ],
+      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/models/comment.rb": [
+        1,
+        1,
+        1,
         null,
         null
       ],

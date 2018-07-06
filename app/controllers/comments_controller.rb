@@ -1,10 +1,4 @@
-require 'pry'
-
 class CommentsController < ApplicationController
-  # before_action :require_login
-  # before_action :find_commentable, only: :create
-  # respond_to? :js
-
   def index
     @comments = Comment.all
   end
