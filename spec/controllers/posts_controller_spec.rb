@@ -7,7 +7,7 @@ RSpec.describe PostsController, type: :controller do
     sign_in
   end
 
-  describe "GET /new " do
+  describe "GET / " do
     it "responds with 200" do
       get :new
       expect(response).to have_http_status(200)
