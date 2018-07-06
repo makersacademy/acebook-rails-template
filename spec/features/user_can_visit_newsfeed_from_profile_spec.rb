@@ -12,6 +12,6 @@ RSpec.feature "User can return to newsfeed from profile", type: :feature do
     click_button 'Sign up'
     click_link 'View profile'
     click_link 'Newsfeed'
-    expect(page).to have_content("Message")
+    expect(page).to have_content("What's on your mind?")
   end
 end
