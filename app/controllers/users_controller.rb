@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.animal = params[:user][:animal]
+    @user.age = params[:user][:age]
+    @user.owner = params[:user][:owner]
     @user.save
     redirect_to :action => "show", :id => current_user.id
   end
