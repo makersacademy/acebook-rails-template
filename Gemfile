@@ -13,7 +13,7 @@ gem 'jquery-rails'
 gem "font-awesome-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -60,3 +60,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "bcrypt", "~> 3.1"
 gem 'travis', '~> 1.8', '>= 1.8.8'
+
+gem "bootsnap", "~> 1.3"
