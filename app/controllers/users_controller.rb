@@ -5,10 +5,9 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.type = params[:user][:type]
-    # puts params[:user][:type]
-    puts "HELLO"
+    @user.animal = params[:user][:animal]
     @user.save
+    redirect_to :action => "show", :id => current_user.id
   end
 
   def edit
