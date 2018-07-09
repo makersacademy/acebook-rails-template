@@ -1,0 +1,9 @@
+Type of Animal
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :type %>
+  <%= f.text_field :type, class: 'form-control' %>
+  <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>
+
+<%= @user.type == nil %>
