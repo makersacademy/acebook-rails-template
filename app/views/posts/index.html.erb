@@ -1,5 +1,5 @@
 <div class="container text-center">
-<h2>  Hi there, <%= current_user.firstname %> </h2>
+  <h2>  Hi there, <%= current_user.firstname %> </h2>
 
   <%= form_for(@post) do |form| %>
     <%= form.label :"what's on your mind?" %><br>
@@ -9,19 +9,22 @@
   <% end %>
 
   <% @posts.each.reverse_each do |post| %>
-  <div class="card border-primary mb-3" style="width: 18rem;">
-    <div class="card-header">
-      <a class="card-link text-left"><%= link_to post.user.firstname, post.user %></a>
-        <a class="card-subtitle mb-2 text-muted text-right"><%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %></a>
-    </div>
-    <div class="card-body">
+    <div class="card border-primary mb-3" style="width: 31rem;">
+     <div class="card-header">
+      <a class="card-link"><%= link_to post.user.firstname, post.user %></a>
+      <a class="card-subtitle text-muted"><%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %></a>
+     </div>
+     <div class="card-body">
         <p class="card-text"><%= post.message %></p>
-    </div>
-    <div class="card-footer text-muted">
-      <p class="card-text"><%= link_to %></p>
-    </div>
-  </div>
+     </div>
+     <div class="card-footer">
+      <a class="card-text text-muted">Likes: <%= post.likes.count %></a>
 
-<% end %>
-  </div>
+      <%= form_for(@like) do |form| %>
+        <%= hidden_field_tag "like[post_id]", post.id %>
+        <%= form.submit "Like" %>
+      <% end %>
+     </div>
+    </div>
+   <% end %>
 </div>
