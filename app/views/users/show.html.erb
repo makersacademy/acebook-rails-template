@@ -5,11 +5,13 @@
 <%= link_to "Edit", edit_user_path(@user) %>
 <h3>
   <%= @user.email %>
-  <ul><% @posts.each do |message| %>
-    <li>
-      <%= "#{message.message}" %>
-    </li>
-      <% end %>
+  <% if @posts %>
+    <ul><% @posts.each do |message| %>
+      <li>
+        <%= "#{message.message}" %>
+      </li>
+    <% end %>
     </ul>
+  <% end %>
 
 </h3>

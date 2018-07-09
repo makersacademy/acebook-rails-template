@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :update, :edit]
+  before_action :logged_in_user, only: [:edit, :update]
   skip_before_action :require_login
 
   def index
@@ -30,16 +31,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    # avatar = params[:user][:avatar]
-    if @user.update(user_params)
-      if avatar
-        @user.avatar.attach(io: File.open(Rails.root.join("app", "assets", "images")), content_type: "image/jpg")
-        flash[:success] = "Profile Updated"
-        redirect_to @user
-      else
-        flash.now[:danger] = "Something went wrong"
-        render :edit
-      end
+    if @user.name != user_params[:name]
+      @user.update_attributes(name: user_params[:name])
+      @user.avatar.attach(user_params[:avatar].tempfile)
+      flash[:success] = "Profile Updated"
+      render :show
+    else
+      flash.now[:danger] = "Something went wrong"
+      render :edit
     end
   end
 
@@ -50,7 +49,14 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
+    end
+
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in"
+        redirect_to login_url
+      end
     end
 
 end
