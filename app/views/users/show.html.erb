@@ -1,0 +1,15 @@
+<h1>
+  <%= image_tag(@user.avatar) %>
+  <%= @user.name.capitalize + "'s Profile" %>
+</h1>
+<%= link_to "Edit", edit_user_path(@user) %>
+<h3>
+  <%= @user.email %>
+  <ul><% @posts.each do |message| %>
+    <li>
+      <%= "#{message.message}" %>
+    </li>
+      <% end %>
+    </ul>
+
+</h3>

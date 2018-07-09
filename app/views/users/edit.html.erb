@@ -1,0 +1,6 @@
+<p> Update Profile Photo </p>
+<%= form_for :user, method: :patch, :url => {:action => 'update'} do |form| %>
+  <%= form.label :avatar %>
+    <%= form.file_field :image %>
+    <%= form.submit "Submit" %>
+<% end %>
