@@ -1,17 +1,24 @@
-<ul><% @posts.reverse.each do |post| %>
+<div class="newsfeed">
+  <ul><% @posts.reverse.each do |post| %>
+    <li>
+    <p style="color: blue; font-size: 20px;"><%= post.user.name %>:</p>
+    <p><%= post.message %></p>
+    <p style="font-size: 10px; color: grey; text-align: right"><%= post.created_at.strftime("%m/%d/%Y") %></p>
+    <p>Likes: <%= post.votes_for.size %></p>
+    <p><%= link_to('Like', "/users/#{current_user.id}/posts/#{post.id}/likes", method: :post) %>
+    <%= link_to "Comment", new_user_post_comment_path(current_user.id, post.id)%></p>
+    <p>Comments:</p>
+    <% post.comments.each do |message| %>
+      <p style="color: blue;"><%= message.user.name %></p>
+      <p><%= message.comment %></p>
+      <p style="font-size: 10px; color: grey; text-align: right"><%= message.created_at.strftime("%m/%d/%Y") %></p>
+    <% end %>
+    </li>
+  <% end %>
   <li>
-  <p style="color: blue;"><%= post.user.name %>:</p>
-  <p><%= post.message %></p>
-  <p><%= post.created_at.strftime("%m/%d/%Y") %></p>
-  <p><%= link_to "Comment", new_user_post_comment_path(current_user.id, post.id)%></p>
-  <p>Likes: <%= post.votes_for.size %></p>
-  <%= link_to('Like', "/users/#{current_user.id}/posts/#{post.id}/likes", method: :post) %>
-  <% post.comments.each do |message| %>
-    <p><%= message.comment %> - by <%= message.user.name %> at <%= message.created_at.strftime("%m/%d/%Y") %></p>
+    <%= link_to new_user_post_url do %>
+    New post
   <% end %>
   </li>
-<% end %>
-</ul>
-<%= link_to new_user_post_url do %>
-  New post
-<% end %>
+  </ul>
+</div>
