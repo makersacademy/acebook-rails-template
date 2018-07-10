@@ -5,10 +5,15 @@
 <%= link_to "Edit", edit_user_path(@user) %>
 <h3>
   <%= @user.email %>
+  <br>
+  <% if @user.biography %>
+    <%= "About me: " + @user.biography %>
+  <% end %>
   <% if @posts %>
-    <ul><% @posts.each do |message| %>
+    <ul><% @posts.reverse.each do |post| %>
       <li>
-        <%= "#{message.message}" %>
+        <%= "#{post.message}" %>
+          <div style="font-size: 10px; color: grey; text-align: right"><%= post.created_at.strftime("%m/%d/%Y") %></div>
       </li>
     <% end %>
     </ul>

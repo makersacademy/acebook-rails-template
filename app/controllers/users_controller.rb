@@ -40,8 +40,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # @user.avatar.attach(user_params[:avatar].tempfile)
-
   private
 
     def set_user
@@ -49,7 +47,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :biography)
     end
 
     def logged_in_user
@@ -58,5 +56,4 @@ class UsersController < ApplicationController
         redirect_to login_url
       end
     end
-
 end
