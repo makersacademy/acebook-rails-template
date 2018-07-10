@@ -64,4 +64,24 @@ RSpec.describe User, type: :model do
     expect(user).not_to be_valid
   end
 
+  context 'two users' do
+    user1 = User.create(name: 'matt', email:'mdwareing@gmail.com', password: 'test12345')
+    user2 = User.create(name: 'ben', email:'ben@gmail.com', password: 'test12345')
+
+    it 'dont follow each other automatically' do
+      expect(user1.following?(user2)).to be false
+    end
+
+    it 'can follow one another' do
+      user1.follow(user2)
+      expect(user1.following?(user2)).to be true
+    end
+
+    it 'can unfollow one another' do
+      user1.unfollow(user2)
+      expect(user1.following?(user2)).to be false
+    end
+
+  end
+
 end
