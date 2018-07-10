@@ -4,8 +4,7 @@ class LikesController < ApplicationController
   end
 
   def create
-    @like_data = like_params.merge(user: current_user)
-    @like = Like.create(@like_data)
+    @like = Like.create(like_params.merge(user: current_user))
     redirect_to root_path
   end
 

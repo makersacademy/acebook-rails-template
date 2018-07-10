@@ -10,11 +10,6 @@
   <% end %>
 
   <% @posts.each.reverse_each do |post| %>
-<<<<<<< HEAD
-    <p><%= post.message %></p>
-
-  <%= link_to post.user.firstname, post.user if post.user != nil %>
-=======
     <div class="card border-primary mb-3" style="width: 31rem;">
      <div class="card-header">
       <a class="card-link"><%= link_to post.user.firstname, post.user %></a>
@@ -25,7 +20,6 @@
      </div>
      <div class="card-footer">
       <a class="card-text text-muted">Likes: <%= post.likes.count %></a>
->>>>>>> cbc706e961dca062a3e9c8e3d8a7e804746cc1c4
 
       <%= form_for(@like) do |form| %>
         <%= hidden_field_tag "like[post_id]", post.id %>
