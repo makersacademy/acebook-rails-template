@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :likes
   has_many :liked_post, through: :likes, source: :post
 
+  mount_uploader :avatar, AvatarUploader
 end

@@ -81,3 +81,8 @@ For using Devise gem for login & authentication
 For testing
 1. To stub authentication in controller spec:
 https://github.com/plataformatec/devise/wiki/How-To:-Stub-authentication-in-controller-specs
+
+For uploading image:
+1. CarrierWave gem: https://github.com/carrierwaveuploader/carrierwave
+2. I found this video useful, it does image upload without CarrierWave (to show you what carrierwave
+  automates) and then with it: https://www.youtube.com/watch?v=Q8wF9RrJhrY&t=1171s
