@@ -28,7 +28,7 @@
      </div>
 
      <%= form_for(@comment) do |form| %>
-       <%= hidden_field_tag "comment[post]", post %>
+       <%= hidden_field_tag "comment[post_id]", post.id %>
        <%= form.text_area :content, :cols => "60", :rows => "4" %>
      <p>
        <%= form.submit "Comment" %>
