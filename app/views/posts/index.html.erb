@@ -1,5 +1,6 @@
 <div class="container text-center">
-  <h2>  Hi there, <%= current_user.firstname %> </h2>
+  Hi there, <%= current_user.firstname %>
+ </br></br>
 
   <%= form_for(@post) do |form| %>
     <%= form.label :"what's on your mind?" %><br>
