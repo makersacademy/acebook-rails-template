@@ -9,7 +9,14 @@ class ApplicationController < ActionController::Base
   private
  
   def require_login
-    unless current_user
+    puts current_user.id
+    puts params[:user_id]
+    if current_user
+      if current_user.id != params[:user_id].to_i
+        flash[:error] = "You can't post on to another person's account"
+        redirect_to user_posts_url(current_user.id)
+      end
+    else
       flash[:error] = "You must be logged in to access this section"
       redirect_to login_url
     end
