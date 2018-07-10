@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     puts params[:user_id]
     if current_user
       if current_user.id != params[:user_id].to_i
-        flash[:error] = "You can't post on to another persons account"
+        flash[:error] = "You can't post on to another person's account"
         redirect_to user_posts_url(current_user.id)
       end
     else
