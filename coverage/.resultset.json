@@ -1,12 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/models/user_spec.rb": [
+      "/Users/diegofontecillagarcia/Projects/course/week_8/acebook-off-the-rails/spec/models/user_spec.rb": [
         1,
         null,
         1,
         1,
-        13,
+        14,
         null,
         null,
         11,
@@ -86,11 +86,15 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        null,
         null,
         null,
         null
       ],
-      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/models/user.rb": [
+      "/Users/diegofontecillagarcia/Projects/course/week_8/acebook-off-the-rails/app/models/user.rb": [
         1,
         1,
         1,
@@ -98,6 +102,11 @@
         null,
         null,
         null,
+        1,
+        null,
+        null,
+        null,
+        1,
         1,
         null,
         2,
@@ -112,7 +121,8 @@
         1,
         null,
         1,
-        1,
+        2,
+        2,
         null,
         null,
         1,
@@ -125,12 +135,12 @@
         null,
         null
       ],
-      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/models/application_record.rb": [
+      "/Users/diegofontecillagarcia/Projects/course/week_8/acebook-off-the-rails/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/models/relationship.rb": [
+      "/Users/diegofontecillagarcia/Projects/course/week_8/acebook-off-the-rails/app/models/relationship.rb": [
         1,
         1,
         1,
@@ -139,6 +149,6 @@
         null
       ]
     },
-    "timestamp": 1531232783
+    "timestamp": 1531237306
   }
 }

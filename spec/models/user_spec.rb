@@ -64,7 +64,7 @@ RSpec.describe User, type: :model do
     expect(user).not_to be_valid
   end
 
-  context 'two users' do
+  context 'users' do
     user1 = User.create(name: 'matt', email:'mdwareing@gmail.com', password: 'test12345')
     user2 = User.create(name: 'ben', email:'ben@gmail.com', password: 'test12345')
 
@@ -82,6 +82,10 @@ RSpec.describe User, type: :model do
       expect(user1.following?(user2)).to be false
     end
 
+    it 'are included in another users followres list' do
+      user1.follow(user2)
+      expect(user2.followers).to include(user1)
+    end
   end
 
 end
