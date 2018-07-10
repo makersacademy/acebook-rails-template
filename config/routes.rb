@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   resources :users, :only => [:show, :update, :edit]
   resources :posts
+  resources :likes
 end
 
 
