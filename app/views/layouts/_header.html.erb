@@ -11,6 +11,15 @@
         </div>
         <div class="right-side">
             <div class="rightofright">
+              <div class="links">
+              <% if logged_in? %>
+              <%= link_to "New Post", new_user_post_url(@current_user) %>
+              <%= link_to "Log Out", logout_path, method: :delete %>
+              <% else %>
+              <%= link_to "Sign Up", signup_path %>
+              <%= link_to "Log In", login_path %>
+              <% end %>
+            </div>
                 <div class="right-icon fr"><button class="btn btn-top"><i class="fa fa-users fa-2x" aria-hidden="true"></i></button></div>
                 <div class="right-icon messages"><button class="btn btn-top"><i class="fa fa-comment fa-2x" aria-hidden="true"></i></button></div>
                 <div class="right-icon notification"><button class="btn btn-top"><i class="fa fa-globe fa-2x" aria-hidden="true"></i></button></div>

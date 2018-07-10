@@ -16,6 +16,7 @@
           <div style="font-size: 10px; color: grey; text-align: right"><%= post.created_at.strftime("%m/%d/%Y") %></div>
       </li>
     <% end %>
+    <%= link_to "Timeline", user_posts_path(@user) %>
     </ul>
   <% end %>
 
