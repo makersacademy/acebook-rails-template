@@ -1,7 +1,5 @@
 <div class="container text-center">
-  Hi there, <%= current_user.firstname %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </br></br>
-
+  <h2>  Hi there, <%= current_user.firstname %> </h2>
 
   <%= form_for(@post) do |form| %>
     <%= form.label :"what's on your mind?" %><br>
@@ -11,10 +9,28 @@
   <% end %>
 
   <% @posts.each.reverse_each do |post| %>
+<<<<<<< HEAD
     <p><%= post.message %></p>
 
   <%= link_to post.user.firstname, post.user if post.user != nil %>
+=======
+    <div class="card border-primary mb-3" style="width: 31rem;">
+     <div class="card-header">
+      <a class="card-link"><%= link_to post.user.firstname, post.user %></a>
+      <a class="card-subtitle text-muted"><%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %></a>
+     </div>
+     <div class="card-body">
+        <p class="card-text"><%= post.message %></p>
+     </div>
+     <div class="card-footer">
+      <a class="card-text text-muted">Likes: <%= post.likes.count %></a>
+>>>>>>> cbc706e961dca062a3e9c8e3d8a7e804746cc1c4
 
-    <%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %>
-  <% end %>
+      <%= form_for(@like) do |form| %>
+        <%= hidden_field_tag "like[post_id]", post.id %>
+        <%= form.submit "Like" %>
+      <% end %>
+     </div>
+    </div>
+   <% end %>
 </div>

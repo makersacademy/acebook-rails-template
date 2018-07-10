@@ -35,7 +35,7 @@ gem 'devise'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
-gem 'bootstrap-sass'
+gem 'bootstrap'
 
 
 group :development, :test do
