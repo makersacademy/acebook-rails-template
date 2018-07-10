@@ -5,6 +5,6 @@ RSpec.feature "User cannot visit any page unless logged in" do
     user = User.create(name: 'matt', email:'mdwareing@gmail.com', password: 'test12345')
     visit new_user_post_path(user)
     
-    expect(page.current_path).to eq signup_url
+    expect(page.current_url).to eq login_url
   end
 end

@@ -4,12 +4,19 @@
     <p style="color: blue; font-size: 20px;"><%= post.user.name %>:</p>
     <p><%= post.message %></p>
     <p style="font-size: 10px; color: grey; text-align: right"><%= post.created_at.strftime("%m/%d/%Y") %></p>
-    <p>Likes: <%= post.votes_for.size %></p>
-    <p><%= link_to('Like', "/users/#{current_user.id}/posts/#{post.id}/likes", method: :post) %>
-    <%= link_to "Comment", new_user_post_comment_path(current_user.id, post.id)%></p>
-    <p>Comments:</p>
+    <% if post.image.attached? %>
+      <div>
+        <p><%= image_tag(post.image, size: "410x300") %></p>
+      </div>
+    <% end %>
+    <p><i class="fa fa-thumbs-up"></i><%= post.votes_for.size %></p>
+    <div style="text-align: center;">
+    <p><%= link_to('<i class="fa fa-thumbs-up fa-lg"></i>'.html_safe, "/users/#{current_user.id}/posts/#{post.id}/likes", method: :post) %>
+      <%= link_to '<i class="fa fa-comment fa-lg"></i>'.html_safe, new_user_post_comment_path(current_user.id, post.id)%></p>
+    </div>
+    <hr/>
     <% post.comments.each do |message| %>
-      <p style="color: blue;"><%= message.user.name %></p>
+      <p style="color: blue;"><%= message.user.name %>:</p>
       <p><%= message.comment %></p>
       <p style="font-size: 10px; color: grey; text-align: right"><%= message.created_at.strftime("%m/%d/%Y") %></p>
     <% end %>

@@ -6,6 +6,7 @@ RSpec.feature "Timeline" do
     visit "/login"
     fill_in "session_email", with: "mdwareing@gmail.com"
     fill_in "session_password", with: "test12345"
+    click_button "Log in"
     visit new_user_post_path(user)
     fill_in "Message", with: "Hello, world!\n This is a post with multiple \n lines"
     click_button "Submit"
