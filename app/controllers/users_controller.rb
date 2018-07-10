@@ -31,9 +31,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.name != user_params[:name]
-      @user.update_attributes(name: user_params[:name])
-      @user.avatar.attach(user_params[:avatar].tempfile)
+    if @user.update_attributes(user_params)
       flash[:success] = "Profile Updated"
       render :show
     else
@@ -41,6 +39,8 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  # @user.avatar.attach(user_params[:avatar].tempfile)
 
   private
 
