@@ -1,0 +1,22 @@
+<h1>
+  <%= image_tag(@user.avatar, size: "300x300") %>
+  <%= @user.name.capitalize + "'s Profile" %>
+</h1>
+<%= link_to "Edit", edit_user_path(@user) %>
+<h3>
+  <%= @user.email %>
+  <br>
+  <% if @user.biography %>
+    <%= "About me: " + @user.biography %>
+  <% end %>
+  <% if @posts %>
+    <ul><% @posts.reverse.each do |post| %>
+      <li>
+        <%= "#{post.message}" %>
+          <div style="font-size: 10px; color: grey; text-align: right"><%= post.created_at.strftime("%m/%d/%Y") %></div>
+      </li>
+    <% end %>
+    </ul>
+  <% end %>
+
+</h3>

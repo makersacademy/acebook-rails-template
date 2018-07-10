@@ -1,0 +1,20 @@
+<p> Update Profile </p>
+<%= form_for :user, :html => {:method => :put}, :url => {:action => 'update'} do |form| %>
+
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+
+    <%= form.label :biography %>
+    <%= form.text_area :biography %>
+
+    <%= form.submit "Submit" %>
+<% end %>
