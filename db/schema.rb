@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_09_100412) do
+ActiveRecord::Schema.define(version: 2018_07_10_103046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,12 +37,18 @@ ActiveRecord::Schema.define(version: 2018_07_09_100412) do
   end
 
   create_table "comments", force: :cascade do |t|
+    t.string "title", limit: 50, default: ""
     t.text "comment"
+    t.string "commentable_type"
+    t.bigint "commentable_id"
     t.bigint "user_id"
     t.bigint "post_id"
     t.string "role", default: "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["commentable_id"], name: "index_comments_on_commentable_id"
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+    t.index ["commentable_type"], name: "index_comments_on_commentable_type"
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -55,13 +61,22 @@ ActiveRecord::Schema.define(version: 2018_07_09_100412) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   create_table "votes", id: :serial, force: :cascade do |t|
