@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @posts = Post.all
     @like = Like.new
+    @comment = Comment.new
   end
 
   private

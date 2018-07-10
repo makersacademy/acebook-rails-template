@@ -26,6 +26,18 @@
         <%= form.submit "Like" %>
       <% end %>
      </div>
+
+     <%= form_for(@comment) do |form| %>
+       <%= hidden_field_tag "comment[post]", post %>
+       <%= form.text_area :content, :cols => "60", :rows => "4" %>
+     <p>
+       <%= form.submit "Comment" %>
+     <% end %>
+
+     <% post.comments.each do |comment| %>
+      <%= comment.user.firstname %>: <%= comment.content %><br>
+     <% end %>
+
     </div>
    <% end %>
 </div>
