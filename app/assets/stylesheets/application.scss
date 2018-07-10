@@ -12,6 +12,15 @@ body {
   background-blend-mode: lighten;
 }
 
+.btn-top {
+    background-color:#3b5998;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 12px;
+    margin-top: -12px;
+}
+
 .newsfeed {
   margin: auto;
   width: 50%;
@@ -144,6 +153,7 @@ p {
   background-image: url(https://web.facebook.com/rsrc.php/v2/yL/r/cnjWBJCYDcu.png);
   background-position: 0 -248px;
   opacity: 0.7;
+  padding: 0 25px;
 }
 
 .messages {
@@ -158,6 +168,7 @@ p {
   position: relative;
   top: 3px;
   left: 10%;
+  padding: 8px;
 }
 
 
