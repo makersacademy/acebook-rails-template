@@ -23,5 +23,22 @@ h2 {
 .card {
         margin: 0 auto;
         float: none;
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
+}
+
+.comments-box {
+  // border: solid black 3px;
+  border: border-primary mb-3;
+}
+
+.border-primary {
+  width: 31rem;
+}
+
+.comment-text {
+  text-align: left;
+}
+
+.comment-error {
+  background-color: red;
 }

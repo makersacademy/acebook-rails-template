@@ -8,8 +8,8 @@
     <%= form.submit "Post" %>
   <% end %>
 
-  <% @posts.each do |post| %>
-    <div class="card border-primary mb-3" style="width: 31rem;">
+  <% @posts.each.reverse_each do |post| %>
+    <div class="card border-primary mb-3" >
      <div class="card-header">
       <a class="card-link"><%= link_to post.user.firstname, post.user %></a>
       <a class="card-subtitle text-muted"><%= post.custom_time %></a>
@@ -25,6 +25,32 @@
         <%= form.submit "Like" %>
       <% end %>
      </div>
+
+     <div class="card-block">
+       <% post.comments.each do |comment| %>
+         <div class="container comments-box border border-primary">
+           <span class="row">
+             <div class="col-sm comment-text">
+               <%= comment.content %><br>
+             </div>
+           </span>
+           <div class="row">
+             <div class="col-sm">
+               <%= link_to post.user.firstname, post.user %></a>
+             </div>
+             <div class="col-sm">
+               Made <%= time_ago_in_words(comment.created_at) %> ago
+             </div>
+           </div>
+         </div>
+       <% end %>
+     </div>
+
+     <%= form_for @comment, :html => {:onsubmit => "return checkIfTextTooLong(this)"} do |form| %>
+       <%= hidden_field_tag "comment[post_id]", post.id %>
+       <%= form.text_area :content, :cols => "40", :rows => "3" %>
+       <%= form.submit "Comment" %>
+     <% end %>
     </div>
    <% end %>
 </div>

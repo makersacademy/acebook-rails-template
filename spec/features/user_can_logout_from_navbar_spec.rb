@@ -8,3 +8,4 @@ RSpec.feature "User can log out of account from their profile page", type: :feat
     expect(page).to have_content("Log in")
   end
 end
+
