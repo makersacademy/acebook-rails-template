@@ -62,3 +62,5 @@ gem "bcrypt", "~> 3.1"
 gem 'travis', '~> 1.8', '>= 1.8.8'
 
 gem "bootsnap", "~> 1.3"
+
+gem "will_paginate", "~> 3.1"
