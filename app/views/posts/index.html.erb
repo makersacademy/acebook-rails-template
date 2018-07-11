@@ -3,8 +3,7 @@
 <div class="newsfeed">
   <ul><% @posts.reverse.each do |post| %>
     <li>
-    <p style="color: blue; font-size: 20px;"><%= post.user.name %>:</p>
-
+    <p style="color: blue; font-size: 20px;"><%= link_to "#{post.user.name}", user_path(post.user.id) %>:</p>
       <div id="follow_form">
       <% if current_user.following?(post.user) && current_user != post.user %>
         <%= form_for(current_user.active_relationships.find_by(followed_id: post.user.id),
@@ -18,7 +17,6 @@
         <% end %>
       <% end %>
       </div>
-
 
     <p><%= post.message %></p>
     <p style="font-size: 10px; color: grey; text-align: right"><%= post.created_at.strftime("%m/%d/%Y") %></p>
