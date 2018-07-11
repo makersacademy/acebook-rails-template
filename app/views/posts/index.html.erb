@@ -1,5 +1,4 @@
-
-  <%= render 'shared/stats' %>
+<%= render 'shared/stats' %>
 
 
 <div class="newsfeed">
@@ -8,10 +7,16 @@
     <p style="color: blue; font-size: 20px;"><%= post.user.name %>:</p>
 
       <div id="follow_form">
-      <% if current_user.following?(post.user) %>
-        <%= render 'unfollow' %>
+      <% if current_user.following?(post.user) && current_user != post.user %>
+        <%= form_for(current_user.active_relationships.find_by(followed_id: post.user.id),
+            html: {method: :delete }) do |f| %>
+          <%= f.submit "Unfollow", class: "btn btn-warning" %>
+        <% end %>
       <% else %>
-        <%= render 'shared/follow' %>
+        <%= form_for(current_user.active_relationships.build) do |f| %>
+            <div><%= hidden_field_tag :followed_id, post.user.id %></div>
+            <%= f.submit "Follow", class: "btn btn-primary" %>
+        <% end %>
       <% end %>
       </div>
 

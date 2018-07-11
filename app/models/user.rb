@@ -25,7 +25,6 @@ class User < ApplicationRecord
 
   def follow(other_user)
     following << other_user
-    other_user.followers << self
   end
 
   def unfollow(other_user)
