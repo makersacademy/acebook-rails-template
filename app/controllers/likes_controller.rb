@@ -1,10 +1,9 @@
 class LikesController < ApplicationController
-  def new
-    @like = Like.new
-  end
+  before_action :current_user, only: [:create, :destroy]
 
   def create
     @like = Like.create(like_params.merge(user: current_user))
+    flash[:success] = "Comment created!"
     redirect_to root_path
   end
 
