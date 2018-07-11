@@ -1,9 +1,10 @@
 require 'rails_helper'
+require 'pry'
 
 RSpec.describe Relationship, type: :model do
   before(:each) do
-    @user1 = User.create(name: 'matt', email:'mdwareing@gmail.com', password: 'test12345')
-    @user2 = User.create(name: 'ben', email:'ben@gmail.com', password: 'test12345')
+    @user1 = User.create(name: 'matt', email:'mdwareing@email.com', password: 'test12345')
+    @user2 = User.create(name: 'ben', email:'ben@email.com', password: 'test12345')
     @relationship = Relationship.new(follower_id: @user1.id, followed_id: @user2.id)
   end
 
