@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :update, :edit]
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :current_user_loggedin, only: [:edit, :update]
   skip_before_action :require_login
 
   def index
@@ -33,12 +33,26 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes(user_params)
       flash[:success] = "Profile Updated"
-      render :show
+      redirect_to user_url(@user)
     else
       flash.now[:danger] = "Something went wrong"
       render :edit
     end
   end
+  
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end 
 
   private
 
@@ -50,10 +64,10 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :biography)
     end
 
-    def logged_in_user
-      unless logged_in?
-        flash[:danger] = "Please log in"
-        redirect_to login_url
+    def current_user_loggedin
+      unless @user == current_user
+        flash[:danger] = "You cannot edit another person's profile"
+        redirect_to user_posts_path(@user)
       end
     end
 end

@@ -7,9 +7,16 @@ Rails.application.routes.draw do
   post '/likes', to: 'posts#likes'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users do
+
+    member do
+      get :following, :followers
+    end
+
     resources :posts do
       resources :likes
       resources :comments
     end
+
   end
+  resources :relationships, only: [:create, :destroy]
 end
