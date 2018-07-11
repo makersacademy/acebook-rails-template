@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes(user_params)
       flash[:success] = "Profile Updated"
-      render :show
+      redirect_to user_url(@user)
     else
       flash.now[:danger] = "Something went wrong"
       render :edit
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     end
 
     def current_user_loggedin
-      unless @user == @current_user
+      unless @user == current_user
         flash[:danger] = "You cannot edit another person's profile"
         redirect_to user_posts_path(@user)
       end
