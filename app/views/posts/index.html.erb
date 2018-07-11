@@ -1,5 +1,13 @@
 <div class="newsfeed">
-  <ul><% @posts.reverse.each do |post| %>
+  <ul>
+    <li>
+      <%= link_to "Your Profile", user_path(@current_user) %>
+    <li>
+      <%= link_to new_user_post_url do %>
+      New post
+    <% end %>
+    </li>
+    <% @posts.reverse.each do |post| %>
     <li>
     <p style="color: blue; font-size: 20px;"><%= post.user.name %>:</p>
     <p><%= post.message %></p>
@@ -22,10 +30,6 @@
     <% end %>
     </li>
   <% end %>
-  <li>
-    <%= link_to new_user_post_url do %>
-    New post
-  <% end %>
-  </li>
+
   </ul>
 </div>
