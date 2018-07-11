@@ -1,0 +1,25 @@
+<h1>
+  Welcome, <%= @user.firstname %>
+</h1>
+
+<%= image_tag @user.avatar.url(:profile), :class => "profile_pic" if @user.avatar? %>
+
+<% if current_user == @user %>
+  <%= form_for(current_user, html: { multipart: true }) do |f| %>
+    Update profile pic:
+    <span class="avatar">
+      <%= f.file_field :avatar %>
+    </span>
+    <%= f.submit "Update", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
+
+<h2>
+  <p> Type of Animal: <%= @user.animal %> </p>
+  <p> Age: <%= @user.age %> </p>
+  <p> Owner: <%= @user.owner %> </p>
+</h2>
+
+<%= link_to "Newsfeed", posts_path %> </br>
+
+<%= link_to "Edit profile", edit_user_path(current_user) %> </br>
