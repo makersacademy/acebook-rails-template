@@ -7,7 +7,7 @@ RSpec.feature "User Log out", type: :feature do
     create_user
     user_log_in
     visit '/'
-    click_link "Log out"
+    click_link "Log Out"
     expect(page).to have_content "Goodbye"
   end
 end
