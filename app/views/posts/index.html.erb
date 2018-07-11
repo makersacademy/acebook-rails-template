@@ -1,8 +1,25 @@
+<%= render 'shared/stats' %>
 
 <div class="newsfeed">
   <ul><% @posts.reverse.each do |post| %>
     <li>
     <p style="color: blue; font-size: 20px;"><%= post.user.name %>:</p>
+
+      <div id="follow_form">
+      <% if current_user.following?(post.user) && current_user != post.user %>
+        <%= form_for(current_user.active_relationships.find_by(followed_id: post.user.id),
+            html: {method: :delete }) do |f| %>
+          <%= f.submit "Unfollow", class: "btn btn-warning" %>
+        <% end %>
+      <% else %>
+        <%= form_for(current_user.active_relationships.build) do |f| %>
+            <div><%= hidden_field_tag :followed_id, post.user.id %></div>
+            <%= f.submit "Follow", class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+      </div>
+
+
     <p><%= post.message %></p>
     <p style="font-size: 10px; color: grey; text-align: right"><%= post.created_at.strftime("%m/%d/%Y") %></p>
     <% if post.image.attached? %>
