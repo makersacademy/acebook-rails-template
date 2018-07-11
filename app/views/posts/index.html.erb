@@ -1,6 +1,5 @@
 <div class="container text-center">
   Hi there, <%= current_user.firstname %>
- </br></br>
 
   <%= form_for(@post) do |form| %>
     <%= form.label :"what's on your mind?" %><br>
@@ -13,7 +12,7 @@
     <div class="card border-primary mb-3" >
      <div class="card-header">
       <a class="card-link"><%= link_to post.user.firstname, post.user %></a>
-      <a class="card-subtitle text-muted"><%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %></a>
+      <a class="card-subtitle text-muted"><%= post.custom_time %></a>
      </div>
      <div class="card-body">
         <p class="card-text"><%= post.message %></p>
