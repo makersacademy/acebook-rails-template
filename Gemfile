@@ -5,9 +5,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'timecop'
+gem 'rubocop', '0.56.0'
+ruby '2.5.0'
+gem 'bootstrap'
+gem 'jquery-rails'
+gem "font-awesome-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -28,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'acts_as_votable', '~> 0.11.1'
+# Use acts_as_votable for making likes
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -36,6 +44,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+  gem 'pry'
 end
 
 group :development do
@@ -46,3 +57,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "bcrypt", "~> 3.1"
+gem 'travis', '~> 1.8', '>= 1.8.8'
+
+gem "bootsnap", "~> 1.3"
