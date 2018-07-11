@@ -17,7 +17,7 @@ function checkIfTextTooLong(commentForm){
   commentTextLength = commentForm.childNodes[5].value.length
 
   if (commentTextLength > 140 ) {
-    alert('Comment too short!');
+    alert('Comment too long!');
     return false;
   }
 }
