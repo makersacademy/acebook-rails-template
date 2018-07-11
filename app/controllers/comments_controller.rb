@@ -5,11 +5,10 @@ class CommentsController < ApplicationController
 
   def create
     post = Post.find(params[:post_id])
-    @comment = post.comments.create(comment_params)
-    @comment.user_id = current_user.id
-    @comment.post_id = post.id
+    @comment = post.comments.new(comment_params)
+    @comment.user = current_user
     if @comment.save
-      redirect_to user_posts_path(post)
+      redirect_to user_posts_path
     else
       flash.now[:danger] = "error"
     end
@@ -22,6 +21,7 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:comment).permit(:comment, :post_id)
+    params.require(:comment).permit(:comment)
     end
 end
+
