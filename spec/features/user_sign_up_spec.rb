@@ -22,4 +22,15 @@ RSpec.feature "User sign up", type: :feature do
     create_user
     expect(page).to have_content "Email has already been taken"
   end
+
+  scenario "Users have a default image on sign up" do
+    user = User.create(id: 20, name: "New user", email: "new_user@email.com", password: "Password123")
+    visit '/'
+    click_link 'Log In'
+    fill_in "Email", with: "new_user@email.com"
+    fill_in "Password", with: "Password123"
+    click_button "Log in"
+    visit '/users/20'
+    expect(page).to have_xpath("//img[contains(@src, 'default.jpg')]")
+  end
 end
