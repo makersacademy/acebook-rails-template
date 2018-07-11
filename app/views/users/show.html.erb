@@ -2,7 +2,9 @@
   <%= image_tag(@user.avatar, size: "300x300") %>
   <%= @user.name + "'s Profile" %>
 </h1>
+<% if @user == @current_user %>
 <%= link_to "Edit", edit_user_path(@user) %>
+<% end %>
 <h3>
   <%= @user.email %>
   <br>

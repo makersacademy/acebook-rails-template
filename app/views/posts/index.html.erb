@@ -9,7 +9,7 @@
     </li>
     <% @posts.reverse.each do |post| %>
     <li>
-    <p style="color: blue; font-size: 20px;"><%= post.user.name %>:</p>
+    <p style="color: blue; font-size: 20px;"><%= link_to "#{post.user.name}", user_path(post.user.id) %>:</p>
     <p><%= post.message %></p>
     <p style="font-size: 10px; color: grey; text-align: right"><%= post.created_at.strftime("%m/%d/%Y") %></p>
     <% if post.image.attached? %>
