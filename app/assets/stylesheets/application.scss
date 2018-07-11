@@ -31,10 +31,14 @@ h2 {
   border: border-primary mb-3;
 }
 
+.border-primary {
+  width: 31rem;
+}
+
 .comment-text {
   text-align: left;
 }
 
-.border-primary {
-  width: 31rem;
+.comment-error {
+  background-color: red;
 }

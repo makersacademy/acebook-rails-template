@@ -2,6 +2,12 @@
   Hi there, <%= current_user.firstname %>
  </br></br>
 
+ <div class="comment-error">
+   <% if flash[:error] %>
+     <p class="notice"><%= flash[:error] %> </p>
+   <% end %>
+ </div>
+
   <%= form_for(@post) do |form| %>
     <%= form.label :"what's on your mind?" %><br>
     <%= form.text_area :message, :cols => "60", :rows => "4" %>
