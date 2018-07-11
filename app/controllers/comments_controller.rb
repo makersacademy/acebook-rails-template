@@ -1,11 +1,9 @@
-require 'pry'
 class CommentsController < ApplicationController
   def index
     @comments = Comment.all
   end
 
   def create
-    binding.pry
     post = Post.find(params[:post_id])
     @comment = post.comments.new(comment_params)
     @comment.user = current_user
