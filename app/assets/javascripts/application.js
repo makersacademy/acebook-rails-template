@@ -12,3 +12,12 @@
 
 //= require jquery
 //= require bootstrap-sprockets
+
+function checkIfTextTooLong(commentForm){
+  commentTextLength = commentForm.childNodes[5].value.length
+
+  if (commentTextLength > 140 ) {
+    alert('Comment too short!');
+    return false;
+  }
+}

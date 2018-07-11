@@ -53,10 +53,9 @@
        <% end %>
      </div>
 
-     <%= form_for(@comment) do |form| %>
+     <%= form_for @comment, :html => {:onsubmit => "return checkIfTextTooLong(this)"} do |form| %>
        <%= hidden_field_tag "comment[post_id]", post.id %>
        <%= form.text_area :content, :cols => "40", :rows => "3" %>
-     <p>
        <%= form.submit "Comment" %>
      <% end %>
     </div>
