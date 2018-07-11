@@ -9,7 +9,36 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
  */
+@import "bootstrap";
+
+h2 {
+  color: blue;
+}
+
+.center {
+  text-allign: inline-block;
+}
+
+.card {
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+}
+
+.comments-box {
+  // border: solid black 3px;
+  border: border-primary mb-3;
+}
+
+.border-primary {
+  width: 31rem;
+}
+
+.comment-text {
+  text-align: left;
+}
+
+.comment-error {
+  background-color: red;
+}

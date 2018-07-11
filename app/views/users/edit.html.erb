@@ -1,0 +1,11 @@
+Type of Animal
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :animal %>
+  <%= f.text_field :animal, class: 'form-control' %>
+  <%= f.label :age %>
+  <%= f.text_field :age, class: 'form-control' %>
+  <%= f.label :owner %>
+  <%= f.text_field :owner, class: 'form-control' %>
+  <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>
