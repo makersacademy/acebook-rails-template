@@ -6,6 +6,16 @@
   <ul><% @posts.reverse.each do |post| %>
     <li>
     <p style="color: blue; font-size: 20px;"><%= post.user.name %>:</p>
+
+      <div id="follow_form">
+      <% if current_user.following?(post.user) %>
+        <%= render 'unfollow' %>
+      <% else %>
+        <%= render 'shared/follow' %>
+      <% end %>
+      </div>
+
+
     <p><%= post.message %></p>
     <p style="font-size: 10px; color: grey; text-align: right"><%= post.created_at.strftime("%m/%d/%Y") %></p>
     <% if post.image.attached? %>
