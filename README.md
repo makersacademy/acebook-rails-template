@@ -26,8 +26,8 @@ First, clone this repository. Then:
 
 ## MVP
 
-<img src="mvp_sign_in.23.17.png" width="250px" />
-<img src="mvp_news_feed.23.26.png" width="250px" />
+<img src="assets/images/mvp_sign_in.23.17.png" width="250px" />
+<img src="assets/images/mvp_news_feed.23.26.png" width="250px" />
 
 ### User Stories<br>
 
