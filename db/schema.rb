@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2018_07_10_103046) do
     t.string "commentable_type"
     t.bigint "commentable_id"
     t.bigint "user_id"
-    t.bigint "post_id"
     t.string "role", default: "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -77,6 +76,8 @@ ActiveRecord::Schema.define(version: 2018_07_10_103046) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.string "biography"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   create_table "votes", id: :serial, force: :cascade do |t|
