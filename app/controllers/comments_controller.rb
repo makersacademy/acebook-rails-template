@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     content = params[:comment][:content]
     @comment = post.comments.build(content: content, user: current_user)
     @comment.save
-    flash[:success] = "Comment created!"
+    # flash[:success] = "Comment created!"
     redirect_to root_path
   end
 
