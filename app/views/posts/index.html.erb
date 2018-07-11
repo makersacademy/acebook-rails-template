@@ -10,7 +10,7 @@
   <% end %>
 
   <% @posts.each.reverse_each do |post| %>
-    <div class="card border-primary mb-3" style="width: 31rem;">
+    <div class="card border-primary mb-3" >
      <div class="card-header">
       <a class="card-link"><%= link_to post.user.firstname, post.user %></a>
       <a class="card-subtitle text-muted"><%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %></a>
@@ -27,19 +27,23 @@
       <% end %>
      </div>
 
-     <div class="card-block comments-box">
+     <div class="card-block">
        <% post.comments.each do |comment| %>
-       <div class="card">
-         <span class="comment-content">
-           <%= comment.content %><br>
-         </span>
-         <span class="comment-author">
-           <%= link_to post.user.firstname, post.user %></a>
-         </span>
-         <span class="comment-time">
-           <%= post.created_at.in_time_zone("London").strftime("%H:%M %b %d, %Y") %>
-         </span>
-       </div>
+         <div class="container comments-box border border-primary">
+           <span class="row">
+             <div class="col-sm comment-text">
+               <%= comment.content %><br>
+             </div>
+           </span>
+           <div class="row">
+             <div class="col-sm">
+               <%= link_to post.user.firstname, post.user %></a>
+             </div>
+             <div class="col-sm">
+               Made <%= time_ago_in_words(comment.created_at) %> ago
+             </div>
+           </div>
+         </div>
        <% end %>
      </div>
 
