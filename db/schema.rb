@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 2018_07_10_103046) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "biography"
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   create_table "votes", id: :serial, force: :cascade do |t|
