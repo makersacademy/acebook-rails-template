@@ -33,9 +33,10 @@
       <p style="color: blue;"><%= message.user.name %></p>
       <p><%= message.comment %></p>
       <p style="font-size: 10px; color: grey; text-align: right"><%= message.created_at.strftime("%m/%d/%Y") %></p>
+      <%= link_to "Edit Comment", edit_user_post_comment_path(current_user.id, post.id, message.id) %>
+      <%= link_to('Delete Comment', "/users/#{current_user.id}/posts/#{post.id}/comments/#{message.id}", method: :delete) %>
+
     <% end %>
-    <%= link_to "Edit", edit_user_post_comment_path(message.comment.id) %>
-    <%= link_to('Delete', "/users/#{current_user.id}/posts/#{post.id}/comments/#{post.comment.id}", method: :delete) %>
 
     <%= form_for :comment, :url => "/users/#{current_user.id}/posts/#{post.id}/comments" do |form| %>
       <div class="form-group">
