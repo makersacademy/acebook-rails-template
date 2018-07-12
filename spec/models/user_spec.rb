@@ -82,9 +82,9 @@ RSpec.describe User, type: :model do
       expect(user1.following?(user2)).to be false
     end
 
-    it 'are included in another users followres list' do
+    it 'are included in another users followers list' do
       user1.follow(user2)
-      expect(user2.followers).to include(user1)
+      expect(user1.following).to include(user2)
     end
   end
 

@@ -24,7 +24,7 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   has_secure_password
-  
+
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   def follow(other_user)
@@ -39,8 +39,8 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
-  private 
-  
+  private
+
     def add_default_avatar
       unless avatar.attached?
         self.avatar.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpg")), filename: 'default.jpg', content_type: "image/jpg")
