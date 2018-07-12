@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature "User can like a post", type: :feature do
   scenario 'successfully' do
     sign_up_successfully
-    
+
     fill_in "post_message", with: "test text"
     click_button 'Post'
     click_button 'Like'

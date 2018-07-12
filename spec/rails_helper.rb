@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
@@ -60,6 +62,6 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   # https://github.com/plataformatec/devise/wiki/How-To:-Stub-authentication-in-controller-specs
-  config.include Devise::TestHelpers, :type => :controller
-  config.include ControllerHelpers, :type => :controller
+  config.include Devise::TestHelpers, type: :controller
+  config.include ControllerHelpers, type: :controller
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.feature "User can view their profile", type: :feature do
   scenario 'successfuly' do
     sign_up_successfully
