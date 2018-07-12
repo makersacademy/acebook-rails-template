@@ -1,0 +1,7 @@
+<p>Edit comment</p>
+<%= form_for :comment, :html => {:method => :put}, :url => {:action => 'update'} do |form| %>
+    <%= form.label :comment %>
+    <%= form.text_area :comment %>
+    
+  <%= form.submit 'Submit' %>
+<% end %>
