@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/controllers/comments_controller_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/controllers/comments_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/comments_controller.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/controllers/comments_controller.rb": [
         1,
         1,
         0,
@@ -37,7 +37,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/application_controller.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/controllers/application_controller.rb": [
         1,
         1,
         null,
@@ -49,67 +49,41 @@
         1,
         null,
         1,
-        41,
-        41,
+        40,
+        39,
         0,
         0,
         null,
         null,
-        0,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/controllers/likes_controller_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         null,
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/likes_controller.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/controllers/likes_controller_spec.rb": [
+        1,
+        null,
         1,
         null,
         1,
         1,
         1,
         1,
-        null,
-        null,
         1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/controllers/relationships_controller_spec.rb": [
+        1,
         1,
         null,
-        1,
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/relationships_controller.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/controllers/likes_controller.rb": [
         1,
         null,
         1,
-        null,
         1,
-        0,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         1,
@@ -120,7 +94,33 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/controllers/sessions_controller_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/controllers/relationships_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/controllers/relationships_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
         1,
@@ -134,17 +134,17 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/sessions_controller.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/controllers/sessions_controller.rb": [
         1,
         1,
         1,
         null,
         null,
         1,
-        16,
-        16,
-        13,
-        13,
+        15,
+        15,
+        12,
+        12,
         null,
         null,
         3,
@@ -159,7 +159,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/controllers/users_controller_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/controllers/users_controller_spec.rb": [
         1,
         null,
         1,
@@ -173,7 +173,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/users_controller.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -189,15 +189,15 @@
         null,
         null,
         1,
-        11,
+        10,
         null,
         null,
         1,
-        10,
-        10,
-        7,
-        7,
-        7,
+        9,
+        9,
+        6,
+        6,
+        6,
         null,
         3,
         null,
@@ -237,7 +237,7 @@
         null,
         null,
         1,
-        14,
+        13,
         null,
         null,
         1,
@@ -248,32 +248,32 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/creating_new_comments_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/features/creating_new_comments_spec.rb": [
         null,
         1,
         1,
         1,
         1,
         null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        0,
-        0,
-        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/create_user.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/helpers/create_user.rb": [
         1,
-        8,
-        8,
-        8,
-        8,
-        8,
-        8,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
         null,
         null,
         1,
@@ -294,12 +294,12 @@
         1,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/user_log_in.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/helpers/user_log_in.rb": [
         1,
-        3,
-        3,
-        3,
-        3,
+        2,
+        2,
+        2,
+        2,
         null,
         null,
         1,
@@ -309,15 +309,15 @@
         2,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/create_post.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/helpers/create_post.rb": [
         1,
-        1,
-        1,
+        0,
+        0,
         0,
         0,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/images_can_be_added_to_posts_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/features/images_can_be_added_to_posts_spec.rb": [
         1,
         1,
         1,
@@ -337,7 +337,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/posts_can_be_liked_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/features/posts_can_be_liked_spec.rb": [
         1,
         null,
         1,
@@ -354,119 +354,51 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/posts_reverse_order_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/features/posts_reverse_order_spec.rb": [
         1,
         1,
         null,
         1,
         1,
         null,
-        1,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/create_three_posts.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/posts_show_date_created_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/update_user_profile_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/helpers/create_three_posts.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/features/posts_show_date_created_spec.rb": [
         1,
         null,
         1,
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
         1,
         1,
         1,
@@ -481,8 +413,56 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/features/update_user_profile_spec.rb": [
         1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         1,
         1,
@@ -499,7 +479,25 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/user_log_in_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/features/user_can_submit_posts_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/features/user_log_in_spec.rb": [
         1,
         1,
         1,
@@ -527,7 +525,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/user_log_out_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/features/user_log_out_spec.rb": [
         1,
         1,
         1,
@@ -542,7 +540,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/user_must_log_in_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/features/user_must_log_in_spec.rb": [
         1,
         null,
         1,
@@ -550,11 +548,11 @@
         1,
         1,
         null,
-        0,
+        1,
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/features/user_sign_up_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/features/user_sign_up_spec.rb": [
         1,
         1,
         null,
@@ -592,29 +590,12 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/logged_in_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/helpers/logged_in_spec.rb": [
         1,
         0,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/relationships_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/sessions_helper_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/helpers/sessions_helper_spec.rb": [
         1,
         null,
         null,
@@ -631,7 +612,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/helpers/users_helper_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/helpers/users_helper_spec.rb": [
         1,
         null,
         null,
@@ -648,7 +629,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/models/post_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/models/post_spec.rb": [
         1,
         null,
         1,
@@ -668,7 +649,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/models/post.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/models/post.rb": [
         1,
         1,
         1,
@@ -677,12 +658,12 @@
         1,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/models/application_record.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/models/relationship_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/models/relationship_spec.rb": [
         1,
         1,
         null,
@@ -708,7 +689,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/models/relationship.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/models/relationship.rb": [
         1,
         1,
         1,
@@ -716,7 +697,7 @@
         1,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/models/user_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -744,10 +725,6 @@
         1,
         1,
         null,
-        1,
-        1,
-        1,
-        null,
         null,
         1,
         1,
@@ -770,11 +747,6 @@
         null,
         null,
         null,
-        null,
-        null,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -818,7 +790,7 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/models/user.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/models/user.rb": [
         1,
         1,
         1,
@@ -831,13 +803,10 @@
         null,
         null,
         1,
-        null,
-        null,
-        null,
         1,
         1,
         null,
-        30,
+        27,
         null,
         1,
         null,
@@ -866,13 +835,13 @@
         1,
         null,
         1,
-        50,
-        25,
+        44,
+        22,
         null,
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/views/sessions/new.html.erb_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/views/sessions/new.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -882,14 +851,14 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/spec/views/users/new.html.erb_spec.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/spec/views/users/new.html.erb_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/posts_controller.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/controllers/posts_controller.rb": [
         1,
         1,
         6,
@@ -902,7 +871,7 @@
         null,
         null,
         1,
-        28,
+        26,
         null,
         null,
         1,
@@ -918,14 +887,14 @@
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/models/comment.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/models/comment.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/simonesmith/Makers_Academy/acebook-off-the-rails/app/controllers/homepage_controller.rb": [
+      "/Users/nickrichardson/Projects/acebook-off-the-rails/app/controllers/homepage_controller.rb": [
         1,
         1,
         null,
