@@ -1,7 +1,59 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<div class="container text-center">
+  Hi there, <%= current_user.firstname %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+  <%= form_for(@post) do |form| %>
+    <%= form.label :"what's on your mind?" %><br>
+    <%= form.text_area :message, :cols => "60", :rows => "4" %>
+  <p>
+    <%= form.submit "Post" %>
+  <% end %>
+
+  <% @posts.each do |post| %>
+    <div class="card border-primary mb-3" >
+     <div class="card-header">
+      <a class="card-link"><%= link_to post.user.firstname, post.user %></a>
+      <a class="card-subtitle text-muted"><%= post.custom_time %></a>
+     </div>
+     <div class="card-body">
+        <p class="card-text"><%= post.message %></p>
+     </div>
+     <div class="card-footer">
+      <a class="card-text text-muted">Likes: <%= post.likes.count %></a>
+
+      <%= form_for(@like) do |form| %>
+        <%= hidden_field_tag "like[post_id]", post.id %>
+        <%= form.submit "Like" %>
+      <% end %>
+     </div>
+
+     <div class="card-block">
+       <% post.comments.each do |comment| %>
+         <div class="container comments-box border border-primary">
+           <span class="row">
+             <div class="col-sm comment-text">
+               <%= comment.content %><br>
+             </div>
+           </span>
+           <div class="row">
+             <div class="col-sm">
+               <%= link_to comment.user.firstname, comment.user %></a>
+             </div>
+             <div class="col-sm">
+               Made <%= time_ago_in_words(comment.created_at) %> ago
+             </div>
+             <div class="col-sm">
+              <%= button_to "Delete", comment, :method => "delete" %>
+             </div>
+           </div>
+         </div>
+       <% end %>
+     </div>
+
+     <%= form_for @comment, :html => {:onsubmit => "return checkIfTextTooLong(this)"} do |form| %>
+       <%= hidden_field_tag "comment[post_id]", post.id %>
+       <%= form.text_area :content, :cols => "40", :rows => "3" %>
+       <%= form.submit "Comment" %>
+     <% end %>
+    </div>
+   <% end %>
+</div>
