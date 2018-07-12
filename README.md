@@ -103,14 +103,14 @@ so that other pets see the most recent posts first
 * Retro at end of sprints where we discussed what we thought was going well and what could be improved.
 * Daily morning standup where we announced previous days work, any blockages and what we planned to achieve that day.
 
-Trello board at start of project:
-<img src="/app/assets/images/start_trello.png" width="250px" />
+Trello board at start of project:<br>
+<img src="/app/assets/images/start_trello.png" width="750px" />
 
-Trello board at end of project:
-<img src="/app/assets/images/end_trello.png" width="250px" />
+Trello board at end of project:<br>
+<img src="/app/assets/images/end_trello.png" width="750px" />
 
 ## Learning objectives
 
 We agreed on the following learning objectives before starting the project:
 
-<img src="/app/assets/images/learning_objectives.png" width="250px" />
+<img src="/app/assets/images/learning_objectives.png" width="750px" />
