@@ -1,0 +1,10 @@
+require 'rails_helper'
+
+RSpec.feature "User cannot visit any page unless logged in" do
+  scenario "Not signed-up users can't see any page except the login page" do
+    user = User.create(id: 4, name: 'matt', email:'mdwareing@gmail.com', password: 'test12345')
+    visit new_user_post_path(user)
+
+    expect(page.current_url).to eq login_url
+  end
+end
