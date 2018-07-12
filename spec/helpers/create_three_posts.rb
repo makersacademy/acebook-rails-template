@@ -3,9 +3,7 @@ require 'helpers/create_user'
 require 'helpers/user_log_in'
 
 def create_three_posts
-  user = User.create(name: "simone", email: "mail@simone.com", password: "123456")
-  # create_user
-  # user_log_in
+  user = User.create(id: 3, name: "simone", email: "mail@simone.com", password: "123456")
   visit '/'
   click_link 'Log In'
   fill_in "Email", with: "mail@simone.com"
