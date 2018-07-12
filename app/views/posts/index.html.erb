@@ -9,15 +9,17 @@
     <li>
     <p style="color: blue; font-size: 20px;"><%= link_to "#{post.user.name}", user_path(post.user.id) %>:</p>
       <div id="follow_form">
-      <% if current_user.following?(post.user) && current_user != post.user %>
-        <%= form_for(current_user.active_relationships.find_by(followed_id: post.user.id),
-            html: {method: :delete }) do |f| %>
-          <%= f.submit "Unfollow", class: "btn btn-warning" %>
-        <% end %>
-      <% else %>
-        <%= form_for(current_user.active_relationships.build) do |f| %>
-            <div><%= hidden_field_tag :followed_id, post.user.id %></div>
-            <%= f.submit "Follow", class: "btn btn-primary" %>
+      <% if current_user.id != post.user.id %>
+        <% if current_user.following?(post.user) && current_user != post.user %>
+          <%= form_for(current_user.active_relationships.find_by(followed_id: post.user.id),
+              html: {method: :delete }) do |f| %>
+            <%= f.submit "Unfollow", class: "btn btn-warning" %>
+          <% end %>
+        <% else %>
+          <%= form_for(current_user.active_relationships.build) do |f| %>
+              <div><%= hidden_field_tag :followed_id, post.user.id %></div>
+              <%= f.submit "Follow", class: "btn btn-primary" %>
+          <% end %>
         <% end %>
       <% end %>
       </div>
