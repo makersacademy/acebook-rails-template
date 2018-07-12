@@ -29,9 +29,12 @@
         <p><%= image_tag(post.image) %></p>
       </div>
     <% end %>
-
-
-
+    <% if post.user.id == current_user.id %>
+    <%= link_to "Edit", edit_user_post_path(current_user.id, post.id) %>
+    <% end %>
+    <% if post.user.id == current_user.id %>
+    <%= link_to('Delete', "/users/#{current_user.id}/posts/#{post.id}", method: :delete) %>
+    <% end %>
     <p>Likes: <%= post.votes_for.size %></p>
     <p><%= link_to('Like', "/users/#{current_user.id}/posts/#{post.id}/likes", method: :post) %>
     <%= link_to "Comment", new_user_post_comment_path(current_user.id, post.id)%></p>
