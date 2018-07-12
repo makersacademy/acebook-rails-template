@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :current_user, only: [:create, :destroy]
   before_action :validate_delete_permission,   only: :destroy
@@ -10,7 +12,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to root_path
     else
-      redirect_to root_path, :flash => { :error => "Comment too long!" }
+      redirect_to root_path, flash: { error: "Comment too long!" }
     end
   end
 
@@ -18,7 +20,6 @@ class CommentsController < ApplicationController
     @comment_destroy.destroy
     redirect_to root_path
   end
-
 
   private
 
