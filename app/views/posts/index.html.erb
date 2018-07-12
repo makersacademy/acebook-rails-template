@@ -8,7 +8,7 @@
     <%= form.submit "Post" %>
   <% end %>
 
-  <% @posts.each.reverse_each do |post| %>
+  <% @posts.each do |post| %>
     <div class="card border-primary mb-3" >
      <div class="card-header">
       <a class="card-link"><%= link_to post.user.firstname, post.user %></a>
