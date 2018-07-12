@@ -5,7 +5,7 @@
 
  This project is our 8-9th week team challenge. 5 of us (Jen, Angus, Josh, Chris and Rob) were tasked with creating a clone of Facebook. It was our first experience with the Rails framework and our second group project.
 
- Heroku link: http://petbook-acebook.herokuapp.com/users/sign_in
+ __Heroku link:__ http://petbook-acebook.herokuapp.com/users/sign_in
 
  ## Instructions:  
 
@@ -106,6 +106,13 @@ __Trello board at start of project:__<br>
 
 __Trello board at end of project:__<br>
 <img src="/app/assets/images/end_trello.png" width="750px" />
+
+## Usage
+
+Deployed on Heroku, link: http://petbook-acebook.herokuapp.com/users/sign_in
+
+__Signup:__<br>
+ ![Alt text](https://media.giphy.com/media/1kVMJO0M4eVi8nCBdW/giphy.gif)
 
 ## Learning objectives
 
