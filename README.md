@@ -1,35 +1,47 @@
-# AceBook
+# Petbook group project (Facebook clone!)
+==================
 
-Fork this repository to `acebook-teamname` and customize
-the below**
+ ![Alt text](https://media.giphy.com/media/14cilFdQzr8hG0/giphy-downsized.gif)
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+ This project is our 8-9th week team challenge. 5 of us (Jen, Angus, Josh, Chris and Rob) were tasked with creating a clone of Facebook. It was our first experience with the Rails framework and our second group project.
 
-The card wall is here: <please update>
+ __Heroku link:__ http://petbook-acebook.herokuapp.com/users/sign_in
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+ ## Instructions:  
 
-## Quickstart
+ ```
+ For this project you will be working in teams to produce a social media platform.
 
-First, clone this repository. Then:
+ Each team will start with the same project seed and virtual card-wall with some initial tickets to get you started.
+ ```
 
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
+ ## Getting started
 
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
-```
+ * Fork this repo and clone to your local machine
 
+ ```
+ > bundle install
+ > bin/rails db:create
+ > bin/rails db:migrate
+ > brew install imagemagick
+
+ > rake # Run the tests to ensure it works
+ > bin/rails server # Start the server at localhost:3000
+ ```
+
+ ## Running tests
+
+ Run
+ ``` rake ```
+ from the root directory
 
 ## MVP
 
-<img src="mvp_sign_in.23.17.png" width="250px" />
-<img src="mvp_news_feed.23.26.png" width="250px" />
+### Original MVP diagram
 
-### User Stories<br>
+<img src="/app/assets/images/original_mvp.png" width="750px" />
+
+__MVP User Stories__
 
 ```
 As a pet,
@@ -69,20 +81,41 @@ so that other pets see the most recent posts first
 (small)
 ```
 
+## Tech/Framework used
 
-Resources Used:
+* __Ruby__
+* __Rails__ framework (5.1.1)
+* __Heroku__
+* __CarrierWave__ gem for uploading images
+* __Devise__ gem for login, registration and authentication
+* __Postgresql__
+* __Rspec-rails__ (3.5) / Capybara (2.13) for testing
+* __Bootstrap / CSS__
 
-For using Devise gem for login & authentication
-1. Documentation for devise: https://github.com/plataformatec/devise#strong-parameters
-2. Adding custom fields to devise registration: http://www.peoplecancode.com/tutorials/adding-custom-fields-to-devise
-3. Followed this guide for getting devise up and running: https://www.youtube.com/watch?v=rrC37eeMNIY
-4. Adding bootstrap: https://github.com/twbs/bootstrap-rubygem
+* __Trello__ (for kanban style workflow)
+* __Balsamiq__ (for wireframing mockups)
 
-For testing
-1. To stub authentication in controller spec:
-https://github.com/plataformatec/devise/wiki/How-To:-Stub-authentication-in-controller-specs
+## Development workflow and methodologies
 
-For uploading image:
-1. CarrierWave gem: https://github.com/carrierwaveuploader/carrierwave
-2. I found this video useful, it does image upload without CarrierWave (to show you what carrierwave
-  automates) and then with it: https://www.youtube.com/watch?v=Q8wF9RrJhrY&t=1171s
+* __2 day sprint__ where we reflected on current progress, estimated new features (using small/medium/large complexity sizing), assessed blockages and assigned work.
+* __Retro at end of sprints__ where we discussed what we thought was going well and what could be improved.
+* __Daily morning standup__ where we announced previous days work, any blockages and what we planned to achieve that day.
+
+__Trello board at start of project:__<br>
+<img src="/app/assets/images/start_trello.png" width="750px" />
+
+__Trello board at end of project:__<br>
+<img src="/app/assets/images/end_trello.png" width="750px" />
+
+## Usage
+
+Deployed on Heroku, link: http://petbook-acebook.herokuapp.com/users/sign_in
+
+__Signup:__<br>
+ ![Alt text](https://media.giphy.com/media/1kVMJO0M4eVi8nCBdW/giphy.gif)
+
+## Learning objectives
+
+We agreed on the following learning objectives before starting the project:
+
+<img src="/app/assets/images/learning_objectives.png" width="750px" />
