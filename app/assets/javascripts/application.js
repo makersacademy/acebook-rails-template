@@ -9,6 +9,15 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
-//= require rails-ujs
-//= require_tree .
+
+//= require jquery
+//= require bootstrap-sprockets
+
+function checkIfTextTooLong(commentForm){
+  commentTextLength = commentForm.childNodes[5].value.length
+
+  if (commentTextLength > 140 ) {
+    alert('Comment too long!');
+    return false;
+  }
+}
