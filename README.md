@@ -10,11 +10,9 @@
  ## Instructions:  
 
  ```
- For this project you will be working in teams to produce a
- social media platform.
+ For this project you will be working in teams to produce a social media platform.
 
- Each team will start with the same project seed and virtual
- card-wall with some initial tickets to get you started.
+ Each team will start with the same project seed and virtual card-wall with some initial tickets to get you started.
  ```
 
  ## Getting started
@@ -43,7 +41,7 @@
 
 <img src="/app/assets/images/original_mvp.png" width="750px" />
 
-### MVP User Stories
+__MVP User Stories__
 
 ```
 As a pet,
@@ -99,14 +97,14 @@ so that other pets see the most recent posts first
 
 ## Development workflow and methodologies
 
-* 2 day sprint where we reflected on current progress, estimated new features (using small/medium/large complexity sizing), assessed blockages and assigned work.
-* Retro at end of sprints where we discussed what we thought was going well and what could be improved.
-* Daily morning standup where we announced previous days work, any blockages and what we planned to achieve that day.
+* __2 day sprint__ where we reflected on current progress, estimated new features (using small/medium/large complexity sizing), assessed blockages and assigned work.
+* __Retro at end of sprints__ where we discussed what we thought was going well and what could be improved.
+* __Daily morning standup__ where we announced previous days work, any blockages and what we planned to achieve that day.
 
-Trello board at start of project:<br>
+__Trello board at start of project:__<br>
 <img src="/app/assets/images/start_trello.png" width="750px" />
 
-Trello board at end of project:<br>
+__Trello board at end of project:__<br>
 <img src="/app/assets/images/end_trello.png" width="750px" />
 
 ## Learning objectives
