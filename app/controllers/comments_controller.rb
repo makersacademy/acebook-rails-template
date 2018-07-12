@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
 
 before_action :find_comment, only: [:edit, :update, :show, :destroy]
+before_action :find_user, only: [:edit, :update, :show, :destroy]
+before_action :find_post, only: [:create, :edit, :update, :show, :destroy]
 
   def index
     @comments = Comment.all
@@ -21,11 +23,9 @@ before_action :find_comment, only: [:edit, :update, :show, :destroy]
   end
 
   def update
-    post = Post.find(params[:post_id])
-    user = User.find(params[:user_id])
     if @comment.update_attributes(comment_params)
       flash[:notice] = "Successfully updated post"
-      redirect_to user_posts_path(user)
+      redirect_to user_posts_path(@user)
     else
       flash[:alert] = "Error updating post!"
       render :edit
@@ -36,11 +36,9 @@ before_action :find_comment, only: [:edit, :update, :show, :destroy]
   end
 
   def destroy
-    post = Post.find(params[:post_id])
-    user = User.find(params[:user_id])
     if @comment.destroy
       flash[:notice] = "Successfully deleted comment"
-      redirect_to user_posts_path(user)
+      redirect_to user_posts_path(@user)
     else
       flash[:alert] = "Error deleting comment!"
     end
@@ -58,5 +56,13 @@ before_action :find_comment, only: [:edit, :update, :show, :destroy]
 
     def find_comment
       @comment = Comment.find(params[:id])
+    end
+
+    def find_post
+      @post = Post.find(params[:post_id])
+    end
+
+    def find_user
+      @user = User.find(params[:user_id])
     end
 end
