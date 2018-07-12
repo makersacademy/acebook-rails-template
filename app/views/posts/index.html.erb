@@ -29,19 +29,21 @@
         <p><%= image_tag(post.image) %></p>
       </div>
     <% end %>
-
-
-
+    <% if post.user.id == current_user.id %>
+    <%= link_to "Edit", edit_user_post_path(current_user.id, post.id) %>
+    <% end %>
+    <% if post.user.id == current_user.id %>
+    <%= link_to('Delete', "/users/#{current_user.id}/posts/#{post.id}", method: :delete) %>
+    <% end %>
     <p>Likes: <%= post.votes_for.size %></p>
     <p><%= link_to('Like', "/users/#{current_user.id}/posts/#{post.id}/likes", method: :post) %>
-    <%= link_to "Comment", new_user_post_comment_path(current_user.id, post.id)%></p>
-
+    <p>Comments:</p>
     <% post.comments.each do |message| %>
-      <div class="comment">
-        <p style="color: blue;"></p><p style="color: black;"><%= message.user.name %>:
-        <%= message.comment %></p>
-        <p style="font-size: 10px; color: grey; text-align: right"><%= message.created_at.strftime("%m/%d/%Y") %></p>
-        </div>
+      <p style="color: blue;"><%= message.user.name %></p>
+      <p><%= message.comment %></p>
+      <p style="font-size: 10px; color: grey; text-align: right"><%= message.created_at.strftime("%m/%d/%Y") %></p>
+      <%= link_to "Edit Comment", edit_user_post_comment_path(current_user.id, post.id, message.id) %>
+      <%= link_to('Delete Comment', "/users/#{current_user.id}/posts/#{post.id}/comments/#{message.id}", method: :delete) %>
     <% end %>
 
     <%= form_for :comment, :url => "/users/#{current_user.id}/posts/#{post.id}/comments" do |form| %>
