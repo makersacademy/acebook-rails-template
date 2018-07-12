@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
   def require_login
     if current_user
       if current_user.id != params[:user_id].to_i
-        p "hello params", params
         flash[:error] = "You can't post on to another person's account"
         redirect_to user_posts_url(current_user.id)
       end
