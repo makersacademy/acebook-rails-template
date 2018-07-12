@@ -8,7 +8,7 @@
     <%= form.submit "Post" %>
   <% end %>
 
-  <% @posts.each.reverse_each do |post| %>
+  <% @posts.each do |post| %>
     <div class="card border-primary mb-3" >
      <div class="card-header">
       <a class="card-link"><%= link_to post.user.firstname, post.user %></a>
@@ -36,10 +36,13 @@
            </span>
            <div class="row">
              <div class="col-sm">
-               <%= link_to post.user.firstname, post.user %></a>
+               <%= link_to comment.user.firstname, comment.user %></a>
              </div>
              <div class="col-sm">
                Made <%= time_ago_in_words(comment.created_at) %> ago
+             </div>
+             <div class="col-sm">
+              <%= button_to "Delete", comment, :method => "delete" %>
              </div>
            </div>
          </div>
