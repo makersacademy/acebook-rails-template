@@ -1,0 +1,27 @@
+
+<div class="container">
+  <h1>Update Profile</h1>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for :user, :html => {:method => :put}, :url => {:action => 'update'} do |form| %>
+
+          <%= form.label :name %>
+          <%= form.text_field :name, class: 'form-control' %>
+
+          <%= form.label :email %>
+          <%= form.email_field :email, class: 'form-control' %>
+
+          <%= form.label :password %>
+          <%= form.password_field :password, class: 'form-control' %>
+
+          <%= form.label :avatar %>
+          <%= form.file_field :avatar, class: 'form-control' %>
+
+          <%= form.label :biography %>
+          <%= form.text_area :biography, class: 'form-control' %>
+
+          <%= form.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

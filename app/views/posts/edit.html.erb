@@ -1,0 +1,11 @@
+<p> Edit Post </p>
+<%= form_for :post, :html => {:method => :put}, :url => {:action => 'update'} do |form| %>
+
+    <%= form.label :message %>
+    <%= form.text_area :message %>
+
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+
+    <%= form.submit "Submit" %>
+<% end %>

@@ -1,0 +1,137 @@
+<div id="user-profile-2" class="user-profile">
+		<div class="tabbable">
+
+			<div class="tab-content no-border padding-24">
+				<div id="home" class="tab-pane in active">
+					<div class="row">
+						<div class="col-xs-12 col-sm-3 center">
+							<span class="profile-picture">
+								<img class="editable img-responsive">
+                <%= image_tag(@user.avatar, size: "300x300") %>
+              </span>
+
+							<div class="space space-4"></div>
+
+              <% if current_user.following?(@user) %>
+                <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id),
+                    html: {method: :delete }) do |f| %>
+                  <%= f.submit "Unfollow", class: "btn btn-warning" %>
+                <% end %>
+              <% else %>
+                <%= form_for(current_user.active_relationships.build) do |f| %>
+                    <div><%= hidden_field_tag :followed_id, @user.id %></div>
+                    <%= f.submit "Follow", class: "btn btn-primary" %>
+                <% end %>
+              <% end %>
+
+						</div><!-- /.col -->
+
+						<div class="col-xs-12 col-sm-9">
+							<h4 class="blue">
+								<span class="middle"><%= @user.name %></span>
+
+								<span class="label label-purple arrowed-in-right">
+									<i class="ace-icon fa fa-circle smaller-80 align-middle"></i>
+									online
+								</span>
+							</h4>
+
+							<div class="profile-user-info">
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Email </div>
+
+									<div class="profile-info-value">
+										<span><%= @user.email %></span>
+									</div>
+								</div>
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Joined </div>
+
+									<div class="profile-info-value">
+										<span><%= @user.created_at %></span>
+									</div>
+								</div>
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> About Me: </div>
+
+									<div class="profile-info-value">
+										<span>
+                      <% if @user.biography %>
+                        <%= @user.biography %>
+                      <% end %>
+                    </span>
+
+									</div>
+								</div>
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Following: </div>
+
+									<div class="profile-info-value">
+										<span>
+											<a href="<%= following_user_path(@user) %>">
+												<strong id="following" class="stat">
+													<%= @user.following.count %>
+												</strong>
+											</a>
+										</span>
+
+									</div>
+								</div>
+
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Followers: </div>
+
+									<div class="profile-info-value">
+										<span>
+											<a href="<%= followers_user_path(@user) %>">
+												<strong id="followers" class="stat">
+													<%= @user.followers.count %>
+												</strong>
+											</a>
+										</span>
+
+									</div>
+								</div>
+
+                <div class="profile-info-row">
+                  <div class="profile-info-name">
+                    <% if @user == current_user %>
+                    <%= link_to "Edit", edit_user_path(@user) %>
+                    <% end %>
+                  </div>
+
+                </div>
+
+							</div>
+
+							<div class="hr hr-8 dotted"></div>
+
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+          <div class="space-20"></div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <div class="widget-box transparent">
+                <div class="widget-header widget-header-small">
+                  <h4 class="widget-title smaller">
+                    <i class="ace-icon fa fa-check-square-o bigger-110"></i>
+                    My Posts:
+                  </h4>
+                </div>
+                <% if @posts %>
+                  <ul><% @posts.reverse.each do |post| %>
+                    <li>
+                      <%= "#{post.message}" %>
+                        <div style="font-size: 10px; color: grey; text-align: right"><%= post.created_at.strftime("%m/%d/%Y") %></div>
+                    </li>
+                  <% end %>
+                  <%= link_to "Timeline", user_posts_path(@user) %>
+                  </ul>
+                <% end %>
+        </div>
+      </div>
+    </div>

@@ -1,7 +1,69 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col col-sm-auto">
+      <%= render 'shared/stats' %>
+    </div>
+    <div class="col col-lg-18">
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+  <ul><% @posts.reverse.each do |post| %>
+    <li>
+    <p style="color: blue; font-size: 20px;"><%= link_to "#{post.user.name}", user_path(post.user.id) %>:</p>
+      <div id="follow_form">
+      <% if current_user.id != post.user.id %>
+        <% if current_user.following?(post.user) && current_user != post.user %>
+          <%= form_for(current_user.active_relationships.find_by(followed_id: post.user.id),
+              html: {method: :delete }) do |f| %>
+            <%= f.submit "Unfollow", class: "btn btn-warning" %>
+          <% end %>
+        <% else %>
+          <%= form_for(current_user.active_relationships.build) do |f| %>
+              <div><%= hidden_field_tag :followed_id, post.user.id %></div>
+              <%= f.submit "Follow", class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
+      <% end %>
+      </div>
+
+    <p><%= post.message %></p>
+    <p style="font-size: 10px; color: grey; text-align: right"><%= post.created_at.strftime("%m/%d/%Y") %></p>
+    <% if post.image.attached? %>
+      <div>
+        <p><%= image_tag(post.image) %></p>
+      </div>
+    <% end %>
+    <% if post.user.id == current_user.id %>
+    <%= link_to "Edit", edit_user_post_path(current_user.id, post.id) %>
+    <% end %>
+    <% if post.user.id == current_user.id %>
+    <%= link_to('Delete', "/users/#{current_user.id}/posts/#{post.id}", method: :delete) %>
+    <% end %>
+    <p>Likes: <%= post.votes_for.size %></p>
+    <p><%= link_to('Like', "/users/#{current_user.id}/posts/#{post.id}/likes", method: :post) %>
+    <p>Comments:</p>
+    <% post.comments.each do |message| %>
+      <p style="color: blue;"><%= message.user.name %></p>
+      <p><%= message.comment %></p>
+      <p style="font-size: 10px; color: grey; text-align: right"><%= message.created_at.strftime("%m/%d/%Y") %></p>
+      <%= link_to "Edit Comment", edit_user_post_comment_path(current_user.id, post.id, message.id) %>
+      <%= link_to('Delete Comment', "/users/#{current_user.id}/posts/#{post.id}/comments/#{message.id}", method: :delete) %>
+    <% end %>
+
+    <%= form_for :comment, :url => "/users/#{current_user.id}/posts/#{post.id}/comments" do |form| %>
+      <div class="form-group">
+        <%= form.text_area :comment, placeholder: 'Enter Comment', class: 'form-control' %>
+      </div>
+      <%= form.submit 'Submit' %>
+    <% end %>
+    </li>
+  <% end %>
+
+  <li>
+    <%= link_to new_user_post_url do %>
+    New post
+  <% end %>
+  </li>
+  </ul>
+
+</div>
+</div>
+</div>
