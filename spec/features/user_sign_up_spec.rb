@@ -3,7 +3,12 @@ require 'helpers/create_user'
 
 RSpec.feature "User sign up", type: :feature do
   scenario "Users can sign up with appropriate name, email address and valid password" do
-    create_user
+    visit "/signup"
+    fill_in "user_name", with: "Gulliver"
+    fill_in "user_email", with: "gulliver@mail.com"
+    fill_in "user_password", with: "travels"
+    fill_in "user_password_confirmation", with: "travels"
+    click_button "Create my account"
     expect{page}.not_to raise_error
   end
 
@@ -19,12 +24,17 @@ RSpec.feature "User sign up", type: :feature do
 
   scenario "Email addresses must be unique" do
     create_user
-    create_user
+    visit "/signup"
+    fill_in "user_name", with: "Gulliver"
+    fill_in "user_email", with: "new_user@email.com"
+    fill_in "user_password", with: "travels"
+    fill_in "user_password_confirmation", with: "travels"
+    click_button "Create my account"
     expect(page).to have_content "Email has already been taken"
   end
 
   scenario "Users have a default image on sign up" do
-    user = User.create(id: 20, name: "New user", email: "new_user@email.com", password: "Password123")
+    create_user
     visit '/'
     click_link 'Log In'
     fill_in "Email", with: "new_user@email.com"

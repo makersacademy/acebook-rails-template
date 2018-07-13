@@ -1,7 +1,7 @@
 def user_log_in
   visit "/login"
-  fill_in "session_email", with: "gulliver@mail.com"
-  fill_in "session_password", with: "travels"
+  fill_in "session_email", with: "new_user@email.com"
+  fill_in "session_password", with: "Password123"
   click_button "Log in"
 end
 

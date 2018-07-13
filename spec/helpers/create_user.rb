@@ -1,10 +1,5 @@
 def create_user
-  visit "/signup"
-  fill_in "user_name", with: "Gulliver"
-  fill_in "user_email", with: "gulliver@mail.com"
-  fill_in "user_password", with: "travels"
-  fill_in "user_password_confirmation", with: "travels"
-  click_button "Create my account"
+  User.create(id: 20, name: "New user", email: "new_user@email.com", password: "Password123")
 end
 
 def create_user_with_empty_name
