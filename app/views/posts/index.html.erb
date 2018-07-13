@@ -1,7 +1,7 @@
 <div class="container text-center">
   Hi there, <%= current_user.firstname %>
 
-  <%= form_for(@post) do |form| %>
+  <%= form_for @post, :html => { :onsubmit => "return checkIfTextTooLong(this, 6)"} do |form| %>
     <%= form.label :"what's on your mind?" %><br>
     <%= form.text_area :message, :cols => "60", :rows => "4" %>
   <p>
