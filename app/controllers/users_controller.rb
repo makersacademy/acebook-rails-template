@@ -6,16 +6,16 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
+    user_params
     @user.update_attributes(
-      animal: params[:user][:animal],
-      age: params[:user][:age],
-      owner: params[:user][:owner]
+      animal: user_params["animal"],
+      age: user_params["age"],
+      owner: user_params["owner"]
     )
-    current_user.avatar = params[:user][:avatar]
+    current_user.avatar = user_params["avatar"]
     current_user.save!
     redirect_to user_path
-    #     redirect_to :action => "show", :id => current_user.id
   end
 
   def edit
@@ -25,6 +25,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:avatar)
+    params.require(:user).permit(:avatar, :animal, :age, :owner)
   end
 end
