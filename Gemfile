@@ -7,6 +7,9 @@ end
 
 gem "mini_magick"
 
+# For test coverage
+gem 'simplecov', require: false, group: :test
+
 gem 'carrierwave', '~> 1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
