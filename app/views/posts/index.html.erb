@@ -1,11 +1,11 @@
 <div class="container text-center">
-  Hi there, <%= current_user.firstname %>
+<div class="display-4">  Hi there, <%= current_user.firstname %> </div>
 
   <%= form_for @post, :html => { :onsubmit => "return checkTextLength(this, 6)"} do |form| %>
     <%= form.label :"what's on your mind?" %><br>
     <%= form.text_area :message, :cols => "60", :rows => "4" %>
   <p>
-    <%= form.submit "Post" %>
+    <%= form.submit "Post", class: "btn btn-primary" %>
   <% end %>
 
   <% @posts.each do |post| %>
@@ -22,7 +22,7 @@
 
       <%= form_for(@like) do |form| %>
         <%= hidden_field_tag "like[post_id]", post.id %>
-        <%= form.submit "Like" %>
+        <%= form.submit "Like", class: "btn btn-primary" %>
       <% end %>
      </div>
 
@@ -42,17 +42,17 @@
                Made <%= time_ago_in_words(comment.created_at) %> ago
              </div>
              <div class="col-sm">
-              <%= button_to "Delete", comment, :method => "delete" %>
+              <%= button_to "Delete", comment, :method => "delete", class: "btn btn-primary" %>
              </div>
            </div>
          </div>
        <% end %>
-     </div>
+     </div><br>
 
      <%= form_for @comment, :html => {:onsubmit => "return checkTextLength(this, 5)"} do |form| %>
        <%= hidden_field_tag "comment[post_id]", post.id %>
        <%= form.text_area :content, :cols => "40", :rows => "3" %>
-       <%= form.submit "Comment" %>
+       <%= form.submit "Comment", class: "btn btn-primary" %>
      <% end %>
     </div>
    <% end %>
