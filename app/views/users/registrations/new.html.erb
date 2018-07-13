@@ -10,7 +10,6 @@
     </div>
 
     <div class="field">
-       <div class="row">
       <%= f.label :firstname %><br />
       <%= f.text_field :firstname, autocomplete: "off" %>
     </div>
@@ -34,9 +33,10 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Sign up", class: "btn btn-success" %>
+      <br /><%= f.submit "Sign up", class: "btn btn-success" %><br /><br />
+      <%= render "users/shared/links" %>
     </div>
   </div>
 
+
   <% end %>
-<%= render "users/shared/links" %>
