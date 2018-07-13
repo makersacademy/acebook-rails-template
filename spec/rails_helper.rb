@@ -10,6 +10,10 @@ require 'rspec/rails'
 require 'support/controller_helpers'
 require 'support/signup_helper.rb'
 require 'support/submit_post_helper.rb'
+require 'simplecov'
+
+SimpleCov.start
+
 
 
 # Add additional requires below this line. Rails is not loaded until this point!
