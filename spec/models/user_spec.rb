@@ -65,8 +65,13 @@ RSpec.describe User, type: :model do
   end
 
   context 'users' do
-    user1 = User.create(name: 'matt', email:'mdwareing@gmail.com', password: 'test12345')
-    user2 = User.create(name: 'ben', email:'ben@gmail.com', password: 'test12345')
+    before(:each) do
+      @user1 = User.create(name: 'matt', email:'md@email.com', password: 'test12345')
+      @user2 = User.create(name: 'ben', email:'be@email.com', password: 'test12345')
+    end
+
+    let(:user1) { @user1 }
+    let(:user2) { @user2 }
 
     it 'dont follow each other automatically' do
       expect(user1.following?(user2)).to be false
