@@ -24,4 +24,6 @@
 
 <p><%= link_to "Newsfeed", posts_path %></p>
 
-<p><%= link_to "Edit profile", edit_user_path(current_user) %></p>
+<% if current_user == @user %>
+  <p><%= link_to "Edit profile", edit_user_path(current_user) %></p>
+<% end %>
