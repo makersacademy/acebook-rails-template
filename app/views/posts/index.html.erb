@@ -1,5 +1,5 @@
 <% @posts.reverse_each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= simple_format(post.message).html_safe %></p>
 <% end %>
 
 <%= link_to new_post_path do %>

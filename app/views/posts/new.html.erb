@@ -1,6 +1,10 @@
+<%= stylesheet_link_tag "application.css" %>
+
 <%= form_for @post do |form| %>
   <%= form.label :message %>
-  <%= form.text_field :message %>
-
+  <br>
+  <%= form.text_area :message, :rows => '10', cols: '50' %>
+  <br>
   <%= form.submit "Submit" %>
+
 <% end %>
