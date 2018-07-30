@@ -1,4 +1,4 @@
-<% @posts.each do |post| %>
+<% @posts.each.reverse_each do |post| %>
   <p><%= post.message %></p>
 <% end %>
 
