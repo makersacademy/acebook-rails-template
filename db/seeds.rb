@@ -3,5 +3,8 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+  posts = Post.create([ { message: 'You\'ll never catch me alive' },
+                        { message: 'I\'m robbing a bank tomorrow, who\'s coming?' },
+                        { message: 'Good, illegal is always faster' },
+                        { message: 'The criminal is the creative artist, the detective only the critic' },
+                        { message: 'Oh, yes, there will be blood' }])
