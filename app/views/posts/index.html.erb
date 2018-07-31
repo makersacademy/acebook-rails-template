@@ -1,5 +1,7 @@
 <% @posts.reverse_each do |post| %>
-  <p><%= simple_format(post.message).html_safe %></p>
+  <p><%= simple_format(post.message).html_safe %>
+      <%= 'Posted ' + time_ago_in_words(post.created_at) + ' ago' %></p>
+
 <% end %>
 
 <%= link_to new_post_path do %>
