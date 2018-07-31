@@ -7,7 +7,7 @@ RSpec.feature "Session", type: :feature do
     visit "session/new"
     fill_in :email, with: "jay@gmail.com"
     fill_in :password, with: "jay123"
-    click_button "Submit"
+    click_button "Log In"
 
     expect(page).to have_content("Welcome Jay")
   end

@@ -9,7 +9,7 @@ RSpec.describe SessionController, type: :controller do
   end
 
   describe "POST /session" do
-    it "responds with 200" do
+    it "redirect to the user_url" do
       post :create, params: { session: { email: "jay@gmail.com", password: "jay123" } }
       expect(response).to redirect_to(user_url)
     end
