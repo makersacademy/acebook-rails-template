@@ -2,7 +2,7 @@
 
 ## Summary
 
-Week 8 and 9 Makers Academy engineering project to develop an Facebook clone, called Acebook. <br>
+Week 8 and 9 Makers Academy engineering project to develop a Facebook clone, called Acebook. <br>
 You can find the engineering project outline [here](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 ___
 
@@ -73,7 +73,7 @@ ___
 
 ### Tech/Frameworks Used
 
-Ruby on Rails, Sinatra, CSS, RSpec, Capybara
+Ruby on Rails, CSS, RSpec, Capybara
 
 ### Original Quickstart Instructions (for use during project development only, delete later)
 
