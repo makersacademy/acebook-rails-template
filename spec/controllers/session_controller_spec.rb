@@ -10,13 +10,13 @@ RSpec.describe SessionController, type: :controller do
 
   describe "POST /session" do
     it "responds with 200" do
-      session :create, params: { session: { email: "jay@gmail.com", password: "jay123" } }
+      post :create, params: { session: { email: "jay@gmail.com", password: "jay123" } }
       expect(response).to redirect_to(user_url)
     end
 
     it "create a session" do
-      session :create, params: { session: { email: "jay@gmail.com", password: "jay123" } }
-      expect(Session.find_by(id: 1)).to be
+      post :create, params: { session: { email: "jay@gmail.com", password: "jay123" } }
+      expect(User.find_by(id: 1)).to be
     end
   end
 end
