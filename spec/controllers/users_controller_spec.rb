@@ -11,20 +11,13 @@ RSpec.describe UsersController, type: :controller do
 
   describe "POST /users" do
     it "responds with 200" do
-      post :create, params: { user: { first_name: "Elishka", last_name: "Flint", email_address: "elishka@keepitrails.com", password: "pas55w0rd" }}
-      expect(response).to redirect_to(user_url)
+      post :create, params: { user: { first_name: "Elishka", last_name: "Flint", email: "elishka@keepitrails.com", password: "pas55w0rd" }}
+      expect(response).to redirect_to("/users/#{assigns(:user).id}")
     end
 
     it "creates a user" do
-      post :create, params: { user: { first_name: "Elishka", last_name: "Flint", email_address: "elishka@keepitrails.com", password: "pas55w0rd" }}
-      expect(User.find_by(email_address: "elishka@keepitrails.com")).to be
-    end
-  end
-
-  describe "GET /users/id" do
-    it "responds with 200" do
-      get :show
-      expect(response).to have_http_status(200)
+      post :create, params: { user: { first_name: "Elishka", last_name: "Flint", email: "elishka@keepitrails.com", password: "pas55w0rd" }}
+      expect(User.find_by(email: "elishka@keepitrails.com")).to be
     end
   end
 
