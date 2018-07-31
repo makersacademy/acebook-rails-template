@@ -9,6 +9,6 @@
   New post
 <% end %>
 
-<%= link_to destroy_user_session_path do %>
+<%= link_to destroy_user_session_path(:user), :method => :delete do %>
   Log out
 <% end %>
