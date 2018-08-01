@@ -11,13 +11,12 @@ class UsersController < ApplicationController
   end
 
   def show
-
     @user = User.find(session[:current_user_id])
     @posts = Post.all
   end
 
   def update
-    # p params
+    p params
     @post = Post.create( { message: params[:message], user_id: params[:user_id] } )
     redirect_to user_path(params[:user_id])
   end
