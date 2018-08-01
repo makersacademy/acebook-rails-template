@@ -19,8 +19,12 @@
         <%= form.submit %>
       </p>
       <% end %>
+      <%= link_to 'Delete', @post, :confirm => "Are you sure?" , :method => :delete %>
   </div>
 <% end %>
+
+
+
 
 <%= link_to new_post_path do %>
   New post
