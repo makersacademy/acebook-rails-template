@@ -5,3 +5,7 @@
   <%= text_field_tag :message %>
 <%= submit_tag "Post" %>
 <% end %>
+
+<% @posts.each do |post| %>
+  <p><%= post.message %></p>
+<% end %>
