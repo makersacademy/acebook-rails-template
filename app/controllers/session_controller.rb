@@ -10,13 +10,19 @@ class SessionController < ApplicationController
 
   #POST /session
   def create
-    @user = User.find_by(email: params[:email])
-    if @user && @user.authenticate(params[:password])
-      session[:current_user_id] = @user.id
-      # p @user.id
-      redirect_to user_path(@user)
+    if @user = User.find_by(email: params[:email])
+      if @user && @user.authenticate(params[:password])
+        session[:current_user_id] = @user.id
+        # p @user.id
+        redirect_to user_path(@user)
+      else
+        flash[:alert] = 'Sorry, please check your password and try again'
+        render :new
+      end
+    else
+      flash[:alert] = 'Sorry, we do not recognise this email address'
+      render :new
     end
-
   end
 
 end
