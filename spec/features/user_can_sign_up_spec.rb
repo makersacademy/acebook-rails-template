@@ -16,7 +16,7 @@ RSpec.feature "SignUp", type: :feature do
 
     scenario "A user provides an password with more than 10 characters" do
       unsuccessful_sign_up_with_wrong_password
-      fill_in 'Password', with: "passWordthatismorethan10Characters"
+      fill_in 'Password', with: "passWordthatismorethan10Char"
       click_button "Sign Up"
       expect(page).to have_content("The password needs to be between 6-10 characters")
     end

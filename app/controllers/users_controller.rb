@@ -6,8 +6,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    session[:current_user_id] = @user.id
-    redirect_to user_path(@user)
+    if @user.save
+      session[:current_user_id] = @user.id
+      redirect_to user_path(@user)
+      else
+      flash[:alert] = "The password needs to be between 6-10 characters"
+      render :new
+      end
   end
 
   def show
