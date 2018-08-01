@@ -1,1 +1,7 @@
 <p>Welcome <%= @user.first_name %>!</p>
+
+<%= form_tag('/users/@user.id', method: :patch) do |form| %>
+  <%= hidden_field_tag :user_id, @user.id %>
+  <%= text_field_tag :message %>
+<%= submit_tag "Post" %>
+<% end %>
