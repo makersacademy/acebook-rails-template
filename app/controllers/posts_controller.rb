@@ -4,17 +4,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @user = User.find(current_user.id)
+    @post = @user.posts.create(post_params)
     redirect_to posts_url
   end
 
   def index
     @posts = Post.all
+    @username = current_user.username
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :created_at)
   end
 end
