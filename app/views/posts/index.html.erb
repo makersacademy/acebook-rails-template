@@ -1,7 +1,9 @@
+<h1> Welcome to Ruffbook, <%= @username %> </h1>
+
 <% @posts.reverse_each do |post| %>
   <div>
     <p><%= simple_format(post.message).html_safe %></p>
-    <p><%= 'Posted ' + time_ago_in_words(post.created_at) + ' ago' %></p>
+    <p><%= 'posted ' + time_ago_in_words(post.created_at) + ' ago' %></p>
     <h3>Comments</h3>
     <% post.comments.each do |comment| %>
       <p>

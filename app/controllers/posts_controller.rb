@@ -10,8 +10,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @username = current_user.username
   end
-  
+
   private
 
   def post_params
