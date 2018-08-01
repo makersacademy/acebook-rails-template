@@ -10,7 +10,8 @@
   <%= form.submit "Sign Up" %>
 <% end %>
 
-
-<% if alert %>
-<%= alert %>
+<% if @user.errors.any? %>
+  <% @user.errors.messages.each do |message| %>
+  <p><%= message.last.last %></p>
+  <% end %>
 <% end %>

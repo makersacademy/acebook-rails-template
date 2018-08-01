@@ -21,4 +21,52 @@ RSpec.feature "SignUp", type: :feature do
       expect(page).to have_content("The password needs to be between 6-10 characters")
     end
 
+    scenario "A user does not provide a first name" do
+      visit "/"
+      fill_in 'Last name', with: "test_last_name"
+      fill_in 'Email', with: "test_email@keepingitrails.com"
+      fill_in 'Password', with: "pa55w0rd"
+      click_button "Sign Up"
+      expect(page).to have_content("Please enter your first name")
+    end
+
+    scenario "A user does not provide a last name" do
+      visit "/"
+      fill_in 'First name', with: "test_first_name"
+      fill_in 'Email', with: "test_email@keepingitrails.com"
+      fill_in 'Password', with: "pa55w0rd"
+      click_button "Sign Up"
+      expect(page).to have_content("Please enter your last name")
+    end
+
+    scenario "A user does not provide an email address" do
+      visit "/"
+      fill_in 'First name', with: "test_first_name"
+      fill_in 'Last name', with: "test_last_name"
+      fill_in 'Password', with: "pa55w0rd"
+      click_button "Sign Up"
+      expect(page).to have_content("Please enter an email address")
+    end
+
+    scenario "A user provides an email already taken" do
+      successful_sign_up
+      visit "/"
+      fill_in 'First name', with: "test_first_name"
+      fill_in 'Last name', with: "test_last_name"
+      fill_in 'Email', with: "test_email@keepingitrails.com"
+      fill_in 'Password', with: "pa55w0rd"
+      click_button "Sign Up"
+      expect(page).to have_content("This email address has already been used")
+    end
+
+    scenario "A user does not provide a valid email address format" do
+      visit "/"
+      fill_in 'First name', with: "test_first_name"
+      fill_in 'Last name', with: "test_last_name"
+      fill_in 'Email', with: "wrongformat"
+      fill_in 'Password', with: "pa55w0rd"
+      click_button "Sign Up"
+      expect(page).to have_content("Please provide a valid email address")
+    end
+
 end

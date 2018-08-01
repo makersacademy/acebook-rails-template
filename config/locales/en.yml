@@ -28,6 +28,23 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
+#
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      format: "%{message}"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Please enter an email address"
+              taken: "This email address has already been used"
+              invalid: "Please provide a valid email address"
+            first_name:
+              blank: "Please enter your first name"
+            last_name:
+              blank: "Please enter your last name"
+            password:
+              too_short: "The password needs to be between 6-10 characters"
+              too_long: "The password needs to be between 6-10 characters"
+              blank: "Password must exists"
