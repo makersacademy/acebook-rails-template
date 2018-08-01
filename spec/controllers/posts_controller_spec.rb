@@ -1,31 +1,29 @@
 require 'rails_helper'
 
-# disabling tests as this is legacy code which we are not using
-
 RSpec.describe PostsController, type: :controller do
+
   describe "GET /new " do
+
     xit "responds with 200" do
       get :new
       expect(response).to have_http_status(200)
     end
+    
   end
 
-  describe "POST /" do
-    xit "responds with 200" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect(response).to redirect_to(posts_url)
+  describe "POST /posts" do
+
+    before(:each) do
+      post :create, params: { post: { message: "Test message", user_id: 1 } }
     end
 
-    xit "creates a post" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect(Post.find_by(message: "Hello, world!")).to be
+    it "responds with 200" do
+      expect(response).to redirect_to("/users/1")
+    end
+
+    it "creates a user" do
+      expect(Post.find_by(message: "Test message")).to be
     end
   end
 
-  describe "GET /" do
-    xit "responds with 200" do
-      get :index
-      expect(response).to have_http_status(200)
-    end
-  end
 end
