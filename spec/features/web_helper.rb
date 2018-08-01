@@ -18,25 +18,27 @@ end
 
 #sign in
 def successful_sign_in
-  visit "/"
-  click_link "Already a User?"
+  path_to_the_sign_in
   fill_in 'Email', with: "test_email@keepingitrails.com"
   fill_in 'Password', with: "pa55w0rd"
   click_button "Log In"
 end
 
 def unsuccessful_sign_in_with_wrong_email
-  visit "/"
-  click_link "Already a User?"
+  path_to_the_sign_in
   fill_in 'Email', with: "test_email_other@gmail.com"
   fill_in 'Password', with: "pa55w0rd"
   click_button "Log In"
 end
 
 def unsuccessful_sign_in_with_wrong_password
-  visit "/"
-  click_link "Already a User?"
+  path_to_the_sign_in
   fill_in 'Email', with: "test_email@keepingitrails.com"
   fill_in 'Password', with: "incorrect password"
   click_button "Log In"
+end
+
+def path_to_the_sign_in
+  visit "/"
+  click_link "Already a User?"
 end

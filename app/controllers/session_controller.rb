@@ -10,23 +10,33 @@ class SessionController < ApplicationController
 
   #POST /session
   def create
-    if @user = User.find_by(email: params[:email])
-      authenticate?
+    if valid_email? && valid_password?
+      session[:current_user_id] = @user.id
+      redirect_to user_path(@user)
+    elsif !valid_email?
+      invalid_email_alert
     else
-      flash[:alert] = 'Sorry, we do not recognise this email address'
-      render :new
+      invalid_password_alert
     end
   end
-end
 
   private
 
-    def authenticate?
-      if @user && @user.authenticate(params[:password])
-        session[:current_user_id] = @user.id
-        redirect_to user_path(@user)
-      else
-        flash[:alert] = 'Sorry, please check your password and try again'
-        render :new
-      end
+    def valid_email?
+      @user = User.find_by(email: params[:email])
     end
+
+    def valid_password?
+      @user && @user.authenticate(params[:password])
+    end
+
+    def invalid_password_alert
+      flash[:alert] = 'Sorry, please check your password and try again'
+      render :new
+    end
+
+    def invalid_email_alert
+      flash[:alert] = 'Sorry, we do not recognise this email address'
+      render :new
+    end
+end
