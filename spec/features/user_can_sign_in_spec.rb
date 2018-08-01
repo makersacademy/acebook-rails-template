@@ -7,31 +7,19 @@ RSpec.feature "Session/ Sign-in", type: :feature do
   end
 
   scenario "A user can sign in with valid credentials" do
-    visit '/'
-    click_link "Already a User?"
-    fill_in :email, with: "test_email@keepingitrails.com"
-    fill_in :password, with: "pa55w0rd"
-    click_button "Log In"
+    successful_sign_in
     expect(page).to have_content("Welcome test_first_name")
   end
 
   # not implementing the below feature in this commit:
 
   scenario "A user signs in with invalid email address" do
-    visit '/'
-    click_link "Already a User?"
-    fill_in :email, with: "test_email_other@gmail.com"
-    fill_in :password, with: "pa55w0rd"
-    click_button "Log In"
+    unsuccessful_sign_in_with_wrong_email
     expect(page).to have_content("Sorry, we do not recognise this email address")
   end
 
   scenario "A user signs in with incorrect password" do
-    visit '/'
-    click_link "Already a User?"
-    fill_in :email, with: "test_email@keepingitrails.com"
-    fill_in :password, with: "incorrect password"
-    click_button "Log In"
+    unsuccessful_sign_in_with_wrong_password
     expect(page).to have_content("Sorry, please check your password and try again")
   end
 end

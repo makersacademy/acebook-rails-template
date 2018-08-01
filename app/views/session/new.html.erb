@@ -7,6 +7,4 @@
 <%= submit_tag "Log In" %>
 <% end %>
 
-<% if alert %>
- <%= alert %>
-<% end %>
+<%= alert ? alert : '' %>
