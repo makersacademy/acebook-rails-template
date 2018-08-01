@@ -28,7 +28,11 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-#
+
+
+# This is a yaml file that is loaded by rails, it lets you use translate your
+# define texts in a different language. In our case we are using it to customise
+# our messages for our validation checks
 en:
   activerecord:
     errors:

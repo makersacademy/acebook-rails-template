@@ -4,7 +4,6 @@ class User < ApplicationRecord
   # full details here: https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html
   has_secure_password
 
-
   validates_length_of :password, :in => 6..10, :on => :create
 
   validates_presence_of :first_name
