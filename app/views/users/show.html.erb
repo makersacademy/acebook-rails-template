@@ -1,9 +1,10 @@
 <p>Welcome <%= @user.first_name %>!</p>
 
-<%= form_tag('/users/@user.id', method: :patch) do |form| %>
+<%= form_for @post do |form| %>
   <%= hidden_field_tag :user_id, @user.id %>
+  <%= label_tag "What's on your mind, #{@user.first_name}?" %>
   <%= text_field_tag :message %>
-<%= submit_tag "Post" %>
+  <%= form.submit "Submit" %>
 <% end %>
 
 <% @posts.reverse.each do |post| %>

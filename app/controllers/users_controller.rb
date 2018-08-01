@@ -12,13 +12,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:current_user_id])
+    @post = Post.new
     @posts = Post.all
-  end
-
-  def update
-    p params
-    @post = Post.create( { message: params[:message], user_id: params[:user_id] } )
-    redirect_to user_path(params[:user_id])
   end
 
   private
@@ -26,9 +21,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
-
-  # def post_params2
-  #   params.require(:post).permit(:user_id, :message)
-  # end
 
 end

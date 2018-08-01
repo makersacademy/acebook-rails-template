@@ -24,18 +24,4 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "PATCH /users/id/" do
-
-    it "creates a post" do
-      patch :update, params: { "user_id"=>"3", "message"=>"hello again", "id" =>"3"}
-      expect(Post.find_by(message: "hello again")).to be
-    end
-
-    it "redirects to the same page" do
-      patch :update, params: { "user_id"=>"3", "message"=>"hello again", "id" =>"3"}
-      expect(response).to redirect_to("/users/3")
-    end
-
-  end
-
 end
