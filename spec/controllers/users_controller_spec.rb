@@ -24,4 +24,18 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "PATCH /users/id/" do
+
+    it "create a post" do
+      patch :update, params: { post: { message: "Test Post" }}
+      expect(Post.find_by(message: "Test Post")).to be
+    end
+
+    it "redirects to the same page" do
+      patch :update, params: { post: { message: "Test Post" }}
+      expect(response).to redirect_to("/users/#{assigns(:user).id}")
+    end
+
+  end
+
 end

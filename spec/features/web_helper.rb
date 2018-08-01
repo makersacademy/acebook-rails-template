@@ -12,5 +12,4 @@ def successful_log_in
   fill_in :email, with: "test_email@keepingitrails.com"
   fill_in :password, with: "pa55w0rd"
   click_button "Log In"
-  expect(page).to have_content("Welcome test_first_name")
 end
