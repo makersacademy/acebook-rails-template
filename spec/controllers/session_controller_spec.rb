@@ -20,7 +20,6 @@ RSpec.describe SessionController, type: :controller do
     end
 
     it "create a session" do
-      @user.authenticate("wrong_pa55w0rd")
       expect(session[:current_user_id]).to equal(@user.id)
     end
   end
