@@ -6,3 +6,11 @@ def successful_sign_up
   fill_in 'Password', with: "pa55w0rd"
   click_button "Sign Up"
 end
+
+def successful_log_in
+  visit "/"
+  fill_in :email, with: "test_email@keepingitrails.com"
+  fill_in :password, with: "pa55w0rd"
+  click_button "Log In"
+  expect(page).to have_content("Welcome test_first_name")
+end
