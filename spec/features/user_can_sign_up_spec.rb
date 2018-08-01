@@ -4,7 +4,7 @@ RSpec.feature "SignUp", type: :feature do
 
     scenario "A user can sign up with valid credentials" do
       successful_sign_up
-      expect(page).to have_content("Welcome Elishka!")
+      expect(page).to have_content("Welcome test_first_name!")
     end
 
 end
