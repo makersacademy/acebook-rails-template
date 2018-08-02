@@ -1,15 +1,27 @@
+<%= stylesheet_link_tag "application.css" %>
+
+
+<%= link_to destroy_user_session_path(:user), :method => :delete do %>
+  Log out
+<% end %>
+<center>
+  <h1>See posts</h1>
+  <%= link_to new_post_path do %>
+    <button id='new'>New post</button>
+  <% end %>
+<div></div>
 <% @posts.reverse_each do |post| %>
-  <div>
+  <div class='index'>
     <p><%= simple_format(post.message).html_safe %></p>
     <p><%= 'Posted ' + time_ago_in_words(post.created_at) + ' ago' %></p>
-    <h3>Comments</h3>
+    <div id='comments'><h3>Comments</h3>
     <% post.comments.each do |comment| %>
       <p>
         <strong>Comment:</strong>
         <%= comment.message %>
       </p>
     <% end %>
-    <h2>Add a comment:</h2>
+    <h3>Add a comment:</h3>
     <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
       <p>
         <%= form.label :message %><br>
@@ -17,15 +29,13 @@
       </p>
       <p>
         <%= form.submit %>
-      </p>
+      </p></div>
       <% end %>
+      <br>
+      <div id='text'>
+      <button id='edit'><%= link_to 'Edit', edit_post_path(post) %></button>
+      <button id='delete'><%= link_to 'Delete', post, :confirm => "Are you sure?" , :method => :delete %></button></div>
+      <br>
   </div>
 <% end %>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-
-<%= link_to destroy_user_session_path(:user), :method => :delete do %>
-  Log out
-<% end %>
+</center>

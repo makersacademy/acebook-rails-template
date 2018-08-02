@@ -16,3 +16,37 @@
  textarea {
    resize: none;
  }
+
+.index {
+
+   border-bottom: solid;
+   border-bottom-color: grey;
+ }
+
+/* #edit {
+  background-color: #4CAF50;
+}
+
+#delete {
+  background-color: #f44336;
+} */
+
+#text {
+  color: white !important;
+}
+
+#new {
+  background-color: yellow;
+}
+
+#comments {
+  margin-left: 200px;
+  margin-right: 200px;
+  border-width: 10px 5px 5px 10px;
+  border-style: dashed;
+  background-color: lightblue;
+}
+
+h1 {
+  color: lightblue;
+}
