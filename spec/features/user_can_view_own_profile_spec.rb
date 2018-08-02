@@ -7,7 +7,7 @@ RSpec.feature "Profile", type: :feature do
     successful_sign_up_second_user
   end
 
-  scenario "A user can add a post to their own homepage" do
+  scenario "A user can view their own posts on their profile" do
     successful_log_in
     fill_in :post, with: "My first post"
     click_button "Post"
