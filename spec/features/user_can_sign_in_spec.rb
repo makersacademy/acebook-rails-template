@@ -7,28 +7,24 @@ RSpec.feature "Session/ Sign-in", type: :feature do
   end
 
   scenario "A user can sign in with valid credentials" do
-    visit "/"
-    fill_in :email, with: "test_email@keepingitrails.com"
-    fill_in :password, with: "pa55w0rd"
-    click_button "Log In"
+    successful_sign_in
+    expect(page).to have_content("You have successfully logged in.")
     expect(page).to have_content("Welcome test_first_name")
   end
 
   scenario "A user signs in with invalid email address" do
-
-    visit "/"
-    fill_in :email, with: "test_email_other@gmail.com"
-    fill_in :password, with: "pa55w0rd"
-    click_button "Log In"
-    expect(page).to raise_error("Sorry, we do not recognise this email address")
+    unsuccessful_sign_in_with_wrong_email
+    expect(page).to have_content("The email address that you've entered doesn't match an account.")
   end
 
   scenario "A user signs in with incorrect password" do
+    unsuccessful_sign_in_with_wrong_password
+    expect(page).to have_content("The password that you've entered is incorrect.")
+  end
 
-    visit "/"
-    fill_in :email, with: "test_email@keepingitrails.com"
-    fill_in :password, with: "incorrect password"
-    click_button "Log In"
-    expect(page).to raise_error("Sorry, please check your password and try again")
+  scenario "A user can go to sign up page" do
+    path_to_the_sign_in
+    click_link("Sign up for Acebook")
+    expect(page).to have_content("First name")
   end
 end

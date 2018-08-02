@@ -10,13 +10,33 @@ class SessionController < ApplicationController
 
   #POST /session
   def create
-    @user = User.find_by(email: params[:email])
-    if @user && @user.authenticate(params[:password])
+    if valid_email? && valid_password?
       session[:current_user_id] = @user.id
-      # p @user.id
-      redirect_to user_path(@user)
+      redirect_to user_path(@user), notice: t(".notice")
+    elsif !valid_email?
+      invalid_email_alert
+    else
+      invalid_password_alert
     end
-
   end
 
+  private
+
+    def valid_email?
+      @user = User.find_by(email: params[:email])
+    end
+
+    def valid_password?
+      @user && @user.authenticate(params[:password])
+    end
+
+    def invalid_password_alert
+      flash[:alert] = "The password that you've entered is incorrect."
+      render :new
+    end
+
+    def invalid_email_alert
+      flash[:alert] = "The email address that you've entered doesn't match an account."
+      render :new
+    end
 end

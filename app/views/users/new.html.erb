@@ -6,6 +6,14 @@
   <%= form.label :email %>
   <%= form.text_field :email %>
   <%= form.label :password %>
-  <%= form.text_field :password %>
+  <%= form.password_field :password %>
   <%= form.submit "Sign Up" %>
+<% end %>
+
+<%= link_to "Already have an Acebook account?", "/session/new" %>
+
+<% if @user.errors.any? %>
+  <% @user.errors.messages.each do |message| %>
+  <p><%= message.last.last %></p>
+  <% end %>
 <% end %>
