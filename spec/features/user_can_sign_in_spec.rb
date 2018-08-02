@@ -24,7 +24,7 @@ RSpec.feature "Session/ Sign-in", type: :feature do
 
   scenario "A user can go to sign up page" do
     path_to_the_sign_in
-    click_link("Sign up for Keeping it rails")
+    click_link("Sign up for Acebook")
     expect(page).to have_content("First name")
   end
 end

@@ -72,5 +72,5 @@ end
 
 def path_to_the_sign_in
   visit "/"
-  click_link "Already a User?"
+  click_link "Already have an Acebook account?"
 end
