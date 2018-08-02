@@ -15,6 +15,38 @@ def unsuccessful_sign_up_with_wrong_password
   fill_in 'Email', with: "test_email@keepingitrails.com"
 end
 
+def unsuccessful_sign_up_without_first_name
+  visit "/"
+  fill_in 'Last name', with: "test_last_name"
+  fill_in 'Email', with: "test_email@keepingitrails.com"
+  fill_in 'Password', with: "pa55w0rd"
+  click_button "Sign Up"
+end
+
+def unsuccessful_sign_up_without_last_name
+  visit "/"
+  fill_in 'First name', with: "test_first_name"
+  fill_in 'Email', with: "test_email@keepingitrails.com"
+  fill_in 'Password', with: "pa55w0rd"
+  click_button "Sign Up"
+end
+
+def unsuccessful_sign_up_without_email
+  visit "/"
+  fill_in 'First name', with: "test_first_name"
+  fill_in 'Last name', with: "test_last_name"
+  fill_in 'Password', with: "pa55w0rd"
+  click_button "Sign Up"
+end
+
+def unsuccessful_sign_up_with_wrong_email_format
+  visit "/"
+  fill_in 'First name', with: "test_first_name"
+  fill_in 'Last name', with: "test_last_name"
+  fill_in 'Email', with: "wrongformat"
+  fill_in 'Password', with: "pas55w0rd"
+  click_button "Sign Up"
+end
 
 #sign in
 def successful_sign_in
@@ -40,5 +72,5 @@ end
 
 def path_to_the_sign_in
   visit "/"
-  click_link "Already a User?"
+  click_link "Already have an Acebook account?"
 end

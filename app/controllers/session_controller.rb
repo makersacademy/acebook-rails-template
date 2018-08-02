@@ -12,7 +12,7 @@ class SessionController < ApplicationController
   def create
     if valid_email? && valid_password?
       session[:current_user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to user_path(@user), notice: t(".notice")
     elsif !valid_email?
       invalid_email_alert
     else
@@ -31,12 +31,12 @@ class SessionController < ApplicationController
     end
 
     def invalid_password_alert
-      flash[:alert] = 'Sorry, please check your password and try again'
+      flash[:alert] = "The password that you've entered is incorrect."
       render :new
     end
 
     def invalid_email_alert
-      flash[:alert] = 'Sorry, we do not recognise this email address'
+      flash[:alert] = "The email address that you've entered doesn't match an account."
       render :new
     end
 end
