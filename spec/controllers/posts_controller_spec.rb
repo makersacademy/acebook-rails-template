@@ -1,29 +1,34 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  describe "GET /new " do
+
+  describe "POST /posts" do
+
+    before(:each) do
+      @user = User.create(first_name: "test first name", last_name: "test last name", email: "test@test.com", password: "pa55w0rd")
+      post :create, params: { user_id: @user.id, message: "Test message" }
+    end
+
     it "responds with 200" do
-      get :new
-      expect(response).to have_http_status(200)
+      expect(response).to redirect_to("/users/#{@user.id}")
+    end
+
+    it "creates a user" do
+      expect(Post.find_by(message: "Test message")).to be
     end
   end
 
-  describe "POST /" do
-    it "responds with 200" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect(response).to redirect_to(posts_url)
+  describe "GET /posts/:id" do
+
+    before(:each) do
+      @user = User.create(first_name: "test first name", last_name: "test last name", email: "test@test.com", password: "pa55w0rd")
     end
 
-    it "creates a post" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect(Post.find_by(message: "Hello, world!")).to be
+    it 'responds with 200' do
+      get :show, params: { user_id: @user.id }
+      expect(response).to redirect_to post_path(@user)
     end
+
   end
 
-  describe "GET /" do
-    it "responds with 200" do
-      get :index
-      expect(response).to have_http_status(200)
-    end
-  end
 end

@@ -17,6 +17,8 @@ class UsersController < ApplicationController
   def show
     if logged_in?
       @user = User.find(session[:current_user_id])
+      @post = Post.new
+      @posts = Post.all
     else
       redirect_to "/"
     end

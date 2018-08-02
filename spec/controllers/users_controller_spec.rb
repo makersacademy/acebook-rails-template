@@ -24,4 +24,17 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "GET /users/:id" do
+
+    before(:each) do
+      @user = User.create(first_name: "test first name", last_name: "test last name", email: "test@test.com", password: "pa55w0rd")
+    end
+
+    it 'responds with 200' do
+      get :show, params: { user_id: @user.id }
+      expect(response).to redirect_to user_path(@user)
+    end
+
+  end
+
 end
