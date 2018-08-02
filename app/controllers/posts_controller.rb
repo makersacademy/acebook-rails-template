@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find(session[:current_user_id])
-    @posts = Posts.find_by(user_id: @user.id)
+    @posts = Post.where(user_id: @user.id)
   end
 
   private

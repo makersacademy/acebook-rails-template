@@ -1,5 +1,9 @@
 <p>Welcome <%= @user.first_name %>!</p>
 
+<%= link_to post_path(@user) do %>
+  View your profile
+<% end %>
+
 <%= form_for @post do |form| %>
   <%= hidden_field_tag :user_id, @user.id %>
   <%= label_tag "What's on your mind, #{@user.first_name}?" %>
