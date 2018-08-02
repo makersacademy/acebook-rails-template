@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "User homepage", type: :feature do
 
   before(:each) do
     successful_sign_up

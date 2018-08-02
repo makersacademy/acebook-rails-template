@@ -9,7 +9,7 @@ def successful_sign_up
 end
 
 def successful_sign_up_second_user
-  visit "/users/new"
+  visit "/"
   fill_in 'First name', with: "test_first_name2"
   fill_in 'Last name', with: "test_last_name2"
   fill_in 'Email', with: "test_email2@keepingitrails.com"
@@ -66,9 +66,9 @@ def successful_sign_in
 end
 
 def successful_sign_in_second_user
-  visit "/"
-  fill_in :email, with: "test_email2@keepingitrails.com"
-  fill_in :password, with: "pa55w0rd"
+  path_to_the_sign_in
+  fill_in 'Email', with: "test_email2@keepingitrails.com"
+  fill_in 'Password', with: "pa55w0rd"
   click_button "Log In"
 end
 
@@ -89,4 +89,13 @@ end
 def path_to_the_sign_in
   visit "/"
   click_link "Already have an Acebook account?"
+end
+
+def two_user_posts
+  successful_sign_in
+  fill_in :message, with: "My first post"
+  click_button "Post"
+  successful_sign_in_second_user
+  fill_in :message, with: "Second user post"
+  click_button "Post"
 end

@@ -9,7 +9,7 @@
   <%= hidden_field_tag :user_id, @user.id %>
   <%= label_tag "What's on your mind, #{@user.first_name}?" %>
   <%= text_field_tag :message %>
-  <%= form.submit "Submit" %>
+  <%= form.submit "Post" %>
 <% end %>
 
 <% @posts.reverse.each do |post| %>

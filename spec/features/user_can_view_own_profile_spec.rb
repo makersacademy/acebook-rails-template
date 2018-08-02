@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Profile", type: :feature do
+RSpec.feature "User Profile", type: :feature do
 
   before(:each) do
     successful_sign_up
@@ -8,15 +8,18 @@ RSpec.feature "Profile", type: :feature do
   end
 
   scenario "A user can view their own posts on their profile" do
-    successful_log_in
-    fill_in :post, with: "My first post"
-    click_button "Post"
-    successful_log_in_second_user
-    fill_in :post, with: "Second user post"
-    click_button "Post"
-    click_button "My Profile"
+    two_user_posts
+    click_link "View your profile"
     expect(page).to have_content("Second user post")
     expect(page).not_to have_content("My first post")
+  end
+
+  scenario "A user move from profile to homepage" do
+    two_user_posts
+    click_link "View your profile"
+    click_link "Home"
+    expect(page).to have_content("My first post")
+    expect(page).to have_content("Second user post")
   end
 
 end
