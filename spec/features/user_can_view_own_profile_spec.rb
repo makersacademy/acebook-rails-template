@@ -8,14 +8,16 @@ RSpec.feature "User Profile", type: :feature do
   end
 
   scenario "A user can view their own posts on their profile" do
-    two_user_posts
+    first_user_post
+    second_user_post
     click_link "View your profile"
     expect(page).to have_content("Second user post")
     expect(page).not_to have_content("My first post")
   end
 
   scenario "A user move from profile to homepage" do
-    two_user_posts
+    first_user_post
+    second_user_post
     click_link "View your profile"
     click_link "Home"
     expect(page).to have_content("My first post")

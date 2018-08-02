@@ -91,10 +91,13 @@ def path_to_the_sign_in
   click_link "Already have an Acebook account?"
 end
 
-def two_user_posts
+def first_user_post
   successful_sign_in
   fill_in :message, with: "My first post"
   click_button "Post"
+end
+
+def second_user_post
   successful_sign_in_second_user
   fill_in :message, with: "Second user post"
   click_button "Post"
