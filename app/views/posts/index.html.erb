@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "application.css" %>
 <h1> Welcome to Ruffbook, <%= @username %> </h1>
 
-<%= link_to destroy_user_session_path, :method => :delete do %>
+<%= link_to destroy_user_session_path(:user), :method => :delete do %>
   Log out
 <% end %>
 
