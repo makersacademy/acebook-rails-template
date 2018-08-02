@@ -26,7 +26,7 @@ RSpec.describe PostsController, type: :controller do
 
     it 'responds with 200' do
       get :show, params: { user_id: @user.id }
-      expect(response).to redirect_to("/posts/#{@user.id}")
+      expect(response).to redirect_to post_path(@user)
     end
 
   end
