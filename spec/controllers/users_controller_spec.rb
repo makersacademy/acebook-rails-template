@@ -24,4 +24,12 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "POST /users/id" do
+
+    it "redirects a non-logged in user to the homepage" do
+      expect(response).to redirect_to("/")
+    end
+
+  end
+
 end
