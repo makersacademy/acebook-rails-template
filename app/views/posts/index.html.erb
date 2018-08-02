@@ -1,19 +1,22 @@
 <%= stylesheet_link_tag "application.css" %>
-
+<h1> Welcome to Ruffbook, <%= @username %> </h1>
 
 <%= link_to destroy_user_session_path(:user), :method => :delete do %>
   Log out
 <% end %>
+
 <center>
   <h1>See posts</h1>
   <%= link_to new_post_path do %>
     <button id='new'>New post</button>
   <% end %>
 <div></div>
+
 <% @posts.reverse_each do |post| %>
   <div class='index'>
     <p><%= simple_format(post.message).html_safe %></p>
-    <p><%= 'Posted ' + time_ago_in_words(post.created_at) + ' ago' %></p>
+    <% user = User.find(post.user_id) %>
+    <p><%= user.username + ' posted ' + time_ago_in_words(post.created_at) + ' ago' %></p>
     <div id='comments'><h3>Comments</h3>
     <% post.comments.each do |comment| %>
       <p>

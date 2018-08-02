@@ -8,12 +8,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @user = User.find(current_user.id)
+    @post = @user.posts.create(post_params)
     redirect_to posts_url
   end
 
   def index
     @posts = Post.all
+    @username = current_user.username
   end
 
   def edit
