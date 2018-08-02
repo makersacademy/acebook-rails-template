@@ -3,8 +3,8 @@
   <%= email_field_tag :email, params[:email] %>
   <%= label_tag :password, "Password" %>
   <%= password_field_tag :password, params[:password] %>
-
-<%= submit_tag "Log In" %>
+  <%= submit_tag "Log In" %>
 <% end %>
 
-<%= alert ? alert : '' %>
+<%= alert ? alert : '' %><br>
+<%= link_to "Sign up for Keeping it rails", "/users/new" %>
