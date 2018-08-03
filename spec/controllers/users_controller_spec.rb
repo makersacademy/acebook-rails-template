@@ -12,7 +12,7 @@ RSpec.describe UsersController, type: :controller do
   describe "POST /users" do
 
     before(:each) do
-      post :create, params: { user: { first_name: "Elishka", last_name: "Flint", email: "elishka@keepitrails.com", password: "pas55w0rd" }}
+      post :create, params: { user: { first_name: "Elishka", last_name: "Flint", email: "elishka@keepitrails.com", password: "pas55w0rd" } }
     end
 
     it "responds with 200" do
