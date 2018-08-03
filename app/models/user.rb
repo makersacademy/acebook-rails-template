@@ -12,5 +12,5 @@ class User < ApplicationRecord
   validates_length_of :password, :in => 6..10, :on => :create
   validates_presence_of :first_name
   validates_presence_of :last_name
-  validates :email, :uniqueness => true, :format => EmailRegex
+  validates :email, :uniqueness => true, :format => EMAIL_REGEX
 end
