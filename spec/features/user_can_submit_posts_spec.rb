@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'helpers/users_helper_spec'
 
 # RSpec.feature "Timeline", type: :feature do
 #   scenario "Can submit posts and view them" do
@@ -13,16 +14,6 @@ require 'rails_helper'
 #   end
 # end
 private
-
-def sign_up_test
-  visit "/users/sign_up"
-  email = 'test@test.com'
-  fill_in "user_username", with: 'test'
-  fill_in "user_email", with: email
-  fill_in "user_password", with: 'hello1'
-  fill_in "user_password_confirmation", with: 'hello1'
-  click_button 'Sign up'
-end
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
@@ -40,4 +31,4 @@ RSpec.feature "Timeline", type: :feature do
 
 end
 
- end
+end
