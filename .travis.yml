@@ -4,7 +4,7 @@ rvm:
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=d35dba3f6cf8569123e2fa4f1df2902a8362bad7770a5b7f765306dbb58ee126
+    - CC_TEST_REPORTER_ID=89f7dbadec8ea3cdc6c8927a6029651d2e8243819ce79a4e2288eea12fcda172
 
 script:
     - mkdir -p spec && bundle exec rspec spec
