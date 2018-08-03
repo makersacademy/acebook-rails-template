@@ -7,7 +7,7 @@ env:
     - CC_TEST_REPORTER_ID=89f7dbadec8ea3cdc6c8927a6029651d2e8243819ce79a4e2288eea12fcda172
 
 script:
-    - CODECLIMATE_REPO_TOKEN=my_token bundle exec rspec && bundle exec codeclimate-test-reporter
+    - CODECLIMATE_REPO_TOKEN=89f7dbadec8ea3cdc6c8927a6029651d2e8243819ce79a4e2288eea12fcda172 bundle exec rspec && bundle exec codeclimate-test-reporter
     - rubocop
 
 install:
