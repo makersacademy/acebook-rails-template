@@ -26,9 +26,5 @@ RSpec.feature "Timeline", type: :feature do
   # expect(page).to have_content("Hello, world!\bDid you miss me?")
   expect(page).to have_css('p', text: 'Hello, coppers!')
   expect(page).to have_css('p', text: 'Did you miss me?')
-  # expect(page).to have_content('Posted less than a minute ago')
-
-
-end
-
+  end
 end
