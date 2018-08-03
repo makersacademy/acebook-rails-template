@@ -18,3 +18,8 @@ script:
   - bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+deploy:
+  provider: heroku
+  api_key:
+    secure: 72961515-5812-4718-b9a5-f14a3fbce74f
+    app: acebook
