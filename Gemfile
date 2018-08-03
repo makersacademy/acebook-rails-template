@@ -36,6 +36,7 @@ group :development, :test do
   # Adds support for controller tests
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
+  gem 'rubocop', require: false
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
