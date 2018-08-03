@@ -15,11 +15,11 @@ RSpec.describe SessionController, type: :controller do
       post :create, params: { email: "elishka@keepingitrails.com", password: "pa55w0rd" }
     end
 
-    it "redirect to the user_url" do
+    it "redirects to the user_url" do
       expect(response).to redirect_to("/users/#{@user.id}")
     end
 
-    it "create a session" do
+    it "creates a session" do
       expect(session[:current_user_id]).to equal(@user.id)
     end
   end
