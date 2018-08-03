@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'codeclimate-test-reporter', '~> 1.0', '>= 1.0.8'
 gem 'devise'
 gem 'jbuilder', '~> 2.5'
 gem 'pg'
