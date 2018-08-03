@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # This is a module, part of ActiveModel library
   # full details here: https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html
   has_secure_password
+
+  # sets up database relationship for one user has many posts
   has_many :posts
 
   EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
