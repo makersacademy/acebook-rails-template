@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'codeclimate-test-reporter', '~> 1.0', '>= 1.0.8'
 gem 'devise'
 gem 'jbuilder', '~> 2.5'
 gem 'pg'
@@ -13,15 +12,15 @@ gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.1'
 gem 'rubocop'
 gem 'sass-rails', '~> 5.0'
-gem 'simplecov'
-gem 'simplecov-console'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
+  gem 'codeclimate-test-reporter', '~> 1.0', '>= 1.0.8'
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
+  gem 'simplecov'
 end
 
 group :development do
