@@ -7,7 +7,7 @@ class User < ApplicationRecord
   # sets up database relationship for one user has many posts
   has_many :posts
 
-  EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates_length_of :password, :in => 6..10, :on => :create
   validates_presence_of :first_name
