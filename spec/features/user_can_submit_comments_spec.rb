@@ -8,6 +8,6 @@ RSpec.feature "Comment", type: :feature do
     click_button "Submit"
     fill_in "comment[message]", with: "This is a comment"
     click_button "Create Comment"
-    expect(page).to have_css('p', text: "This is a comment")
+    expect(page).to have_css('p', text: "This is a commentan a line should be that is very long much longer th")
   end
 end
