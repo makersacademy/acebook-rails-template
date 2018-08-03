@@ -7,9 +7,14 @@ class PostsController < ApplicationController
   end
 
   def show
+    redirect_to user_posts_path
+  end
+
+  def index
     @user = User.find(session[:current_user_id])
     @posts = Post.where(user_id: @user.id)
   end
+
 
   private
 

@@ -6,5 +6,12 @@ Rails.application.routes.draw do
 
   get '/' => 'users#new'
 
+  # get '/posts/' => 'posts#index'
+
+
+  resources :users do
+    resources :posts
+  end
+  # posts_path(:id) returns /users/posts/:id
 
 end
