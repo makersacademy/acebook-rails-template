@@ -15,9 +15,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:current_user_id])
-    @post = Post.new
-    @posts = Post.all
+    if logged_in?
+      @user = User.find(session[:current_user_id])
+      @post = Post.new
+      @posts = Post.all
+    else
+      redirect_to "/"
+    end
   end
 
   private
@@ -25,4 +29,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password)
   end
+
+  def logged_in?
+    !session[:current_user_id].nil?
+  end
+
 end
