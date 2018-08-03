@@ -1,4 +1,4 @@
-#sign up
+# sign up
 def successful_sign_up
   visit "/"
   fill_in 'First name', with: "test_first_name"
@@ -57,7 +57,7 @@ def unsuccessful_sign_up_with_wrong_email_format
   click_button "Sign Up"
 end
 
-#sign in
+# sign in
 def successful_sign_in
   path_to_the_sign_in
   fill_in 'Email', with: "test_email@keepingitrails.com"
