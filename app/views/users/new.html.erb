@@ -10,7 +10,7 @@
   <%= form.submit "Sign Up" %>
 <% end %>
 
-<%= link_to "Already have an Acebook account?", "/session/new" %>
+<%= link_to "Already have an Acebook account?", login_path %>
 
 <% if @user.errors.any? %>
   <% @user.errors.messages.each do |message| %>

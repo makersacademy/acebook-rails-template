@@ -6,11 +6,16 @@ Rails.application.routes.draw do
 
   get '/' => 'users#new'
 
+  get    'login'   => 'session#new'
+  post   'login'   => 'session#create'
+  delete 'logout'  => 'session#destroy'
+
+
   # get '/posts/' => 'posts#index'
 
 
   resources :users do
-    resources :posts 
+    resources :posts
   end
 
 

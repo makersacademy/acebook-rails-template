@@ -20,6 +20,13 @@ class SessionController < ApplicationController
     end
   end
 
+  def destroy
+    session.delete(:current_user_id)
+    redirect_to login_path
+  end
+
+
+
   private
 
     def valid_email?

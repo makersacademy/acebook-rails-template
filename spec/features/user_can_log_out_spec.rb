@@ -9,7 +9,7 @@ RSpec.feature "Session/ Log-out", type: :feature do
   scenario "A user can sign in with valid credentials" do
     successful_sign_in
     click_button "Log Out"
-    expect(page).should have_selector(:link_or_button, 'Log In')
+    expect(current_path).to eq login_path
   end
 
 
