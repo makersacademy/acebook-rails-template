@@ -3,16 +3,11 @@ Rails.application.routes.draw do
   # get "session/create"
   resources :posts, :session, :users
 
-
   get '/' => 'users#new'
 
   get    'login'   => 'session#new'
   post   'login'   => 'session#create'
   delete 'logout'  => 'session#destroy'
-
-
-  # get '/posts/' => 'posts#index'
-
 
   resources :users do
     resources :posts
