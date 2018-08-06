@@ -20,5 +20,7 @@
   <p><%= post.users.first_name %></p>
   <p><%= post.message %></p>
   <p><%= time_ago_in_words(post.created_at) %></p>
-  <%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete", data: { confirm: 'Are you sure?' } %>
+  <div>
+    <%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete" %>
+  </div>
 <% end %>
