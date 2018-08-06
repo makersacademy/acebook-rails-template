@@ -23,4 +23,13 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Update Post"
     expect(page).to have_content("I have updated my post")
   end
+  scenario "Can delete posts" do
+    sign_up_test
+    click_link 'New post'
+    expect(page).to have_content("Message")
+    fill_in "Message", with: "Hello, coppers!\bDid you miss me?"
+    click_button "Submit"
+    click_link "Delete"
+    expect(page).not_to have_content("Hello, coppers!\bDid you miss me?")
+  end
 end
