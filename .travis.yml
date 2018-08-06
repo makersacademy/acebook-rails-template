@@ -23,7 +23,7 @@ after_script:
 deploy:
   provider: heroku
   api_key:
-    secure: KEY
-  app: acebook
+    secure: "cf3ccd7e-2f64-43bd-aff8-0ceed47da775"
+  app: acebook-rails-keeping-it-rails
   on:
     repo: jeff1108/acebook-rails-keeping-it-rails
