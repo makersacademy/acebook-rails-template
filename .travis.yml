@@ -24,7 +24,10 @@ before_install:
 deploy:
       provider: heroku
       api_key:
-        Secure: "65c982ef-99e9-4527-8f17-47ce35ddccea"
+        secure: "ACI9TgNv/aGiDMv9E94NxZTdbV95laTupog6BiZTLaX3wpZa4ZI6FOH8Pc2jJ4NUAHulOU0NJ7CNykW68ZyYVg6adeKesTbckUghzFYJgGtkc+aljE1y97ARZbY8JS3LtsUitH59Tjkbv8y7R1oqnxMBul3ITDsA2AWSzbSf08R8N2SjL5HrsGn2RqdG96SNaw
+WU2K5DOr5NJ/1hGOpaq9HWDE8ZCjBelTspPek83FYk9tR8Ejq0vCNoiq35giaNWaMLQgs1Izl9p5yVDf8aNEMXrOXKTwJmQ9ZLTrrxZ+28aoUcnA4tpjQtc6QyRT42auOUewHzmzFpYgSLNTwXA1IXrJhHFv9o8Ib8g82AUCHzTlZrXQDZc/Kag4Z0tbyUXe4hdlRes0+9mxw
+fyMibtpR9xZnIMMyW38mkIbemp72B/DpYJSH/chws4p2K+uHAh/rvEDyO21LLJ3GwxuzNAQrjg7nKdrqAYOsDKEwh3FpcuJBPguempVMYm5fcAeg9lZVpJfRekuQmCnKPMipd7R/nXz6b8fGQtYj/3JJzI8T8rGuTprfsA2gLTLej2V4oN5oX6q1O0HlDNXyfbKlUvucrl9Uk
+fsJWSu1z6Ys+ACWg/EXxqUVir3g04bLqSSyaHhmm1Wz/AKWG603Ul0DK3mn12/AM/Py81hh7Zu9rR7o="
         app: ruffbook
         on:
           repo: danieljonesdmj/acebook-ruff-criminals
