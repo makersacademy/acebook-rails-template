@@ -1,4 +1,5 @@
 # frozen_string_literal: true
-# Application Job 
+
+# Application Job
 class ApplicationJob < ActiveJob::Base
 end

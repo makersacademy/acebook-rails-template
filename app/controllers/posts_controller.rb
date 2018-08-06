@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # Posts controller, and methods.
 class PostsController < ApplicationController
   def new

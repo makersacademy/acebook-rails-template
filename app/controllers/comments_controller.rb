@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-# Comments controller, enables comments. 
+
+# Comments controller, enables comments
 class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
@@ -10,6 +11,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-     params.require(:comment).permit(:message)
+    params.require(:comment).permit(:message)
   end
 end

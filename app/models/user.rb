@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-# User class 
+
+# User class
 class User < ApplicationRecord
   has_many :posts
   # Include default devise modules. Others available are:
