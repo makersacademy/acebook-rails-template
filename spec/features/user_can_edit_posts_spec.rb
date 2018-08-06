@@ -8,18 +8,15 @@ RSpec.feature "Edit Posts", type: :feature do
   end
 
   scenario "A user can delete post from the user homepage" do
-    click_link("Update")
-    fill_in :message, with: "My changed post"
-    click_button "Update"
+    update_post
+    expect(page).to have_text('Your post has been updated')
     expect(page).to have_text("My changed post")
   end
 
-
   scenario "A user can update post from the user profile" do
     click_link("View your profile")
-    click_link("Update")
-    fill_in :message, with: "My changed post"
-    click_button "Update"
+    update_post
+    expect(page).to have_text('Your post has been updated')
     expect(page).to have_text("My changed post")
   end
 
