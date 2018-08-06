@@ -1,4 +1,3 @@
-# comment related to heroku
 env:
   global:
     - CC_TEST_REPORTER_ID=a033168785c4467b395e02a4817046d59e55d3e6999b5fb55f147af02f74e02f
