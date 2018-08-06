@@ -19,7 +19,8 @@ class PostsController < ApplicationController
     @user = User.find(session[:current_user_id])
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to user_path(@user)
+    post_delete_notice
+    redirect_back fallback_location: request.referrer
   end
 
 
@@ -29,4 +30,8 @@ class PostsController < ApplicationController
     { user_id: params[:user_id], message: params[:message] }
   end
 
+  def post_delete_notice
+    flash[:notice] = "Your post has been deleted"
+  end
+  
 end
