@@ -15,7 +15,7 @@ RSpec.feature "Edit Posts", type: :feature do
   end
 
 
-  scenario "A user can uqdate post from the user profile" do
+  scenario "A user can update post from the user profile" do
     click_link("View your profile")
     click_link("Update")
     fill_in :message, with: "My changed post"

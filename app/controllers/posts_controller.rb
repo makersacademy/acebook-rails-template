@@ -28,7 +28,10 @@ class PostsController < ApplicationController
     @user = User.find(session[:current_user_id])
     @post = Post.find(params[:id])
     @post.update(post_params)
-    redirect_to user_path(@user)
+    post_update_notice
+    # redirect_to user_path(@user)
+    # # ???
+    redirect_back fallback_location: request.referrer
   end
 
 
@@ -41,5 +44,9 @@ class PostsController < ApplicationController
   def post_delete_notice
     flash[:notice] = "Your post has been deleted"
   end
-  
+
+  def post_update_notice
+    flash[:notice] = "Your post has been updated"
+  end
+
 end

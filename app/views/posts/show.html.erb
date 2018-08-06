@@ -1,3 +1,13 @@
+<div>
+  <%= notice ? notice : '' %>
+</div>
+
+<div>
+  <%= link_to user_path(@user) do %>
+    Home
+  <% end %>
+</div>
+
 <p><%= @post.users.first_name %></p>
 <p><%= @post.message %></p>
 <p><%= time_ago_in_words(@post.created_at) %></p>
