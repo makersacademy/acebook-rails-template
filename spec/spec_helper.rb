@@ -1,7 +1,5 @@
 require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::Console
+require 'rubocop'
 
 SimpleCov.start
 
