@@ -1,0 +1,29 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=29c58086e9924e2ddcf251ad53952e9dd0ce40cc9b3e92e099be2a493a56a1a4
+language: ruby
+rvm:
+ - 2.5.0
+services:
+  - postgresql
+dist: trusty
+cache: bundler
+before_install:
+  - gem install bundler -v 1.16.1
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
+script:
+  - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+deploy:
+  provider: heroku
+  api_key:
+    secure: "cf3ccd7e-2f64-43bd-aff8-0ceed47da775"
+  app: acebook-rails-keeping-it-rails
+  on:
+    repo: jeff1108/acebook-rails-keeping-it-rails
