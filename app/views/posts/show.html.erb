@@ -4,7 +4,7 @@
 
 <%= form_for @post do |form| %>
   <%= hidden_field_tag :user_id, @user.id %>
-  <%= label_tag "Make your change, #{@user.first_name}?" %>
+  <%= label_tag "Make your change, #{@user.first_name}" %>
   <%= text_field_tag :message %>
   <%= form.submit "Update" %>
 <% end %>
