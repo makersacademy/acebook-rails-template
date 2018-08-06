@@ -22,7 +22,7 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
-  - rails db:setup RAILS_ENV=test
+  - rails db:create RAILS_ENV=test
   - rails db:migrate RAILS_ENV=test
 
 after_script:
