@@ -20,4 +20,9 @@
   <p><%= post.users.first_name %></p>
   <p><%= post.message %></p>
   <p><%= time_ago_in_words(post.created_at) %></p>
+  <div>
+    <% if @user.id == post.users.id %>
+      <%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete" %>
+    <% end %>
+  </div>
 <% end %>

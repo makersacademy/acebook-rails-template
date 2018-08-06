@@ -14,7 +14,7 @@ RSpec.feature "User homepage", type: :feature do
   scenario "Posts display in reverse chronological order" do
     successful_sign_up_second_user
     second_user_post
-    expect(page).to have_text('test_first_name2 Second user post less than a minute test_first_name My first post less than a minute')
+    expect(page).to have_text('test_first_name2 Second user post less than a minute Delete test_first_name My first post less than a minute')
   end
 
 end
