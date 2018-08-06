@@ -1,40 +1,52 @@
 # Acebook
 
+[![Build Status](https://travis-ci.org/jeff1108/acebook-rails-keeping-it-rails.svg?branch=master)](https://travis-ci.org/jeff1108/acebook-rails-keeping-it-rails)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ae07a7be6d0aaeeffa79/test_coverage)](https://codeclimate.com/github/jeff1108/acebook-rails-keeping-it-rails/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ae07a7be6d0aaeeffa79/maintainability)](https://codeclimate.com/github/jeff1108/acebook-rails-keeping-it-rails/maintainability)
+
 ## Summary
 
-Week 8 and 9 Makers Academy engineering project to develop a Facebook clone, called Acebook. <br>
-You can find the engineering project outline [here](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+Week 8 and 9 Makers Academy "Engineering Project" to develop a Facebook clone, called Acebook.
+
+This project is designed to simulate a real-world development environment.
+
+Our focus is on **learning to use high-quality processes* to build a project in a team**.
+
+*Agile Methodologies, Git Workflow, Pair Programming, Continuous Integration
 ___
+
+## Technical
+
+### Tech/Frameworks Used
+
+- **Framework** - Ruby on Rails
+- **Testing** - RSpec, Capybara, Simple Coverage
+- **Code Quality** - Rubocop, Code Climate
+- **Continuous Integration** - Travis CI
+- **Deployment** - Heroku
+- **Version Control** - GitHub (see our team Git Policy [here](https://hackmd.io/Rg0cJ_UoTSSHRF6SIgklnA?view))
+
+### Launching the Application
+
+```
+```
+___
+
+## Screenshots
+
+____
 
 ## Credits
 
-Developed in 10 days by Daniel Lau, Elishka Flint, Jeff Hung and Jay Khan.
-Reflections on process and learnings from our first week of group-work can be found [here](https://hackmd.io/-5Q6g-SnQqaELTfrZjOP0w?both).
-___
+Developed in 10 days by [Daniel Lau](https://github.com/dct-lau17), [Elishka Flint](https://github.com/elishkaflint), [Jeff Hung](https://github.com/jeff1108) and [Jay Khan](https://github.com/neobay991).
 
-## Objectives
+Reflections on process and learnings from this project can be found [here](https://hackmd.io/-5Q6g-SnQqaELTfrZjOP0w?both).
 
-Agreed as a team in our first planning meeting:
-* Tbc
-___
-
-## State of Completion
-
-### Implemented Functionality
-
-#### Front-end
-* tbc
-
-#### Back-end
-* tbc
-
-### What we would do next
-* tbc
 ___
 
 ## User Stories:
 
-### First Sprint (MVP)
+### Implemented in the first sprint (MVP)
 
 ```
 As a user,
@@ -51,11 +63,13 @@ As a user,
 So that I can see what's going on,
 I want to be able to see other people's posts on my homepage
 ```
-### Next user stories
+
+### Implemented in the second sprint
+
 ```
 As a user,
 So that I can come back to Acebook again and again,
-I want to be able to sign in and out of sessions
+I want to be able to sign in and out.
 ```
 ```
 As a user,
@@ -68,32 +82,3 @@ So that I can curate my content,
 I want to be able to update and delete my posts
 ```
 ___
-
-## Technical
-
-### Tech/Frameworks Used
-
-Ruby on Rails, CSS, RSpec, Capybara
-
-### Original Quickstart Instructions (for use during project development only, delete later)
-
-First, clone this repository. Then:
-
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
-```
-
-### Launching the Application
-
-```
-For example:
-$ git clone https://github.com/elishkaflint/chitter-challenge.git
-$ bundle
-$ rackup config.ru (Answer 'y' to command line prompts)
-```
-____
