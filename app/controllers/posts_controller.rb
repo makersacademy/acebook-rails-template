@@ -12,7 +12,9 @@ class PostsController < ApplicationController
   end
 
   def index
+    # SOMETHING IS WRONG
     @user = User.find(session[:current_user_id])
+    @user2 = User.find(params[:other_user_id])
     @posts = Post.where(user_id: @user.id)
   end
 
