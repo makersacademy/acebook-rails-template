@@ -10,6 +10,17 @@ RSpec.feature "Timeline", type: :feature do
   click_button "Submit"
   expect(page).to have_css('p', text: 'Hello, coppers!')
   expect(page).to have_css('p', text: 'Did you miss me?')
-  expect(page).to have_content('test posted less than a minute ago')
+  end
+  scenario "Can update posts" do
+    sign_up_test
+    click_link 'New post'
+    expect(page).to have_content("Message")
+    fill_in "Message", with: "Hello, coppers!\bDid you miss me?"
+    click_button "Submit"
+    click_link "Edit"
+    expect(page).to have_content("Edit Post")
+    fill_in "Message", with: "I have updated my post"
+    click_button "Update Post"
+    expect(page).to have_content("I have updated my post")
   end
 end
