@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    redirect_to user_posts_path
+    @user = User.find(session[:current_user_id])
+    @post = Post.find(params[:id])
   end
 
   def index
@@ -19,6 +20,13 @@ class PostsController < ApplicationController
     @user = User.find(session[:current_user_id])
     @post = Post.find(params[:id])
     @post.destroy
+    redirect_to user_path(@user)
+  end
+
+  def update
+    @user = User.find(session[:current_user_id])
+    @post = Post.find(params[:id])
+    @post.update(post_params)
     redirect_to user_path(@user)
   end
 
