@@ -20,3 +20,13 @@ install:
   - bundle install
 before_install:
   - gem install bundler
+
+deploy:
+      provider: heroku
+      api_key:
+        Secure: "65c982ef-99e9-4527-8f17-47ce35ddccea"
+        app: ruffbook
+        run:
+          - "rake db:migrate"
+          - restart
+          - "rake cleanup"
