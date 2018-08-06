@@ -1,0 +1,19 @@
+<%= notice ? notice : '' %>
+<p>Welcome <%= @user.first_name %>!</p>
+
+<%= link_to post_path(@user) do %>
+  View your profile
+<% end %>
+
+<%= form_for @post do |form| %>
+  <%= hidden_field_tag :user_id, @user.id %>
+  <%= label_tag "What's on your mind, #{@user.first_name}?" %>
+  <%= text_field_tag :message %>
+  <%= form.submit "Post" %>
+<% end %>
+
+<% @posts.reverse.each do |post| %>
+  <p><%= post.users.first_name %></p>
+  <p><%= post.message %></p>
+  <p><%= time_ago_in_words(post.created_at) %></p>
+<% end %>
