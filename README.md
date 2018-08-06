@@ -10,7 +10,7 @@ Week 8 and 9 Makers Academy "Engineering Project" to develop a Facebook clone, c
 
 This project is designed to simulate a real-world development environment.
 
-Our focus is on **learning to use high-quality processes* to build a project in a team**.
+Our focus is on learning to use high-quality processes* to build a project in a team.
 
 *Agile Methodologies, Git Workflow, Pair Programming, Continuous Integration
 ___
