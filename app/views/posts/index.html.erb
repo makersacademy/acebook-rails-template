@@ -1,7 +1,9 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<%= link_to user_path(@user) do %>
+  Home
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<% @posts.reverse.each do |post| %>
+  <p><%= post.users.first_name %></p>
+  <p><%= post.message %></p>
+  <p><%= time_ago_in_words(post.created_at) %></p>
 <% end %>
