@@ -3,8 +3,15 @@ Rails.application.routes.draw do
   # get "session/create"
   resources :posts, :session, :users
 
-
   get '/' => 'users#new'
+
+  get    'login'   => 'session#new'
+  post   'login'   => 'session#create'
+  delete 'logout'  => 'session#destroy'
+
+  resources :users do
+    resources :posts
+  end
 
 
 end
