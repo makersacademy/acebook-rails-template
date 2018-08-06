@@ -1,7 +1,7 @@
 # comment related to heroku
-# env:
-  # global:
-  #   - CC_TEST_REPORTER_ID=a033168785c4467b395e02a4817046d59e55d3e6999b5fb55f147af02f74e02f
+env:
+  global:
+    - CC_TEST_REPORTER_ID=a033168785c4467b395e02a4817046d59e55d3e6999b5fb55f147af02f74e02f
 language: ruby
 rvm:
  - 2.5.0
@@ -21,9 +21,9 @@ script:
   - bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-# deploy:
-#   provider: heroku
-#   api_key:
-#     secure: 72961515-5812-4718-b9a5-f14a3fbce74f
-#   app: acebook
-#   on: set_up/1/quality_checks
+deploy:
+  provider: heroku
+  api_key:
+    secure: 72961515-5812-4718-b9a5-f14a3fbce74f
+  app: acebook
+  on: set_up/1/quality_checks
