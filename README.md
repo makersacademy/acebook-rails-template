@@ -1,24 +1,39 @@
-# AceBook
+# Acebook Challenge: Ruff Criminals
+*Do you work in the 'garbage disposal' business? Are you looking to connect to your fellow 'misunderstood souls'? Then Ruff Criminal's Acebook is the place for you.*
 
-Fork this repository to `acebook-teamname` and customize
-the below**
+This app lets you create an account, log in, log out, write posts, see posts and comment on them.
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+## Getting started
+Enter the following commands in your terminal:
 
-The card wall is here: <please update>
+Clone the repository and change into the directory:
+`git clone https://github.com/danieljonesdmj/acebook-ruff-criminals.git && cd acebook-ruff-criminals`
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+Install the required gems:
+`bundle install`
 
-## Quickstart
+Set up the database:
+`rails db:create && rails db:migrate`
 
-First, clone this repository. Then:
+## Usage
+Enter the following commands in your terminal:
 
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
+Run the server:
+`rails server`
 
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
-```
+*screenshot coming soon*
+
+Then open your browser, head to http://localhost:3000/ where you should find the page shown above. Then simply follow the instructions on the page.
+
+## Running tests
+
+To run all available tests enter `rspec` in your terminal.
+
+## Built with
+Ruby on Rails - as the web application framework
+Rspec, Capybara, Selenium and SimpleCov - as the testing frameworks  
+Devise - as the user authentication solution  
+Travis and Code Climate - as the automatic testing solutions
+
+## Authors
+The Ruff Criminals
