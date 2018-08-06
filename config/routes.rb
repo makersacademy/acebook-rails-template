@@ -5,8 +5,13 @@ Rails.application.routes.draw do
 
   get '/' => 'users#new'
 
+  get    'login'   => 'session#new'
+  post   'login'   => 'session#create'
+  delete 'logout'  => 'session#destroy'
+
   resources :users do
     resources :posts
   end
+
 
 end
