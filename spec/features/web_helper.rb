@@ -102,3 +102,9 @@ def second_user_post
   fill_in :message, with: "Second user post"
   click_button "Post"
 end
+
+def update_post
+  click_link("Update")
+  fill_in :message, with: "My changed post"
+  click_button "Update"
+end
