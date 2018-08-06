@@ -2,6 +2,7 @@ require 'rails_helper'
 require 'helpers/users_helper_spec'
 
 RSpec.feature "Comment", type: :feature do
+
   scenario "Can submit comments and view them" do
     sign_up_test
     visit "/posts"

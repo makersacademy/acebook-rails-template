@@ -2,6 +2,7 @@ require 'rails_helper'
 require 'helpers/users_helper_spec'
 
 RSpec.describe PostsController, type: :controller do
+
   before(:each) do
     user = User.create!(email: 'example@example.com', password: '1234567')
     sign_in(user)
