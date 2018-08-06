@@ -26,6 +26,8 @@ deploy:
       api_key:
         Secure: "65c982ef-99e9-4527-8f17-47ce35ddccea"
         app: ruffbook
+        on:
+          repo: danieljonesdmj/acebook-ruff-criminals
         run:
           - "rake db:migrate"
           - restart
