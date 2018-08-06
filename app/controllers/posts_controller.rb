@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+# Posts controller, and methods.
 class PostsController < ApplicationController
   def new
     @post = Post.new
@@ -19,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-  @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def update
@@ -27,7 +29,6 @@ class PostsController < ApplicationController
     if @post.update_attributes(post_params)
       redirect_to posts_path, :notice => 'Your post has been updated'
     end
-
   end
 
   def destroy
