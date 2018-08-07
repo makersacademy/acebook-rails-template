@@ -27,6 +27,7 @@
     <h3>Add a comment:</h3>
     <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
       <p>
+    <%= form.hidden_field :user_id, value: current_user.id %>
         <%= form.label :message %><br>
         <%= form.text_area :message %>
       </p>
