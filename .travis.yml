@@ -29,7 +29,7 @@ fsJWSu1z6Ys+ACWg/EXxqUVir3g04bLqSSyaHhmm1Wz/AKWG603Ul0DK3mn12/AM/Py81hh7Zu9rR7o=
         app: ruffbook
         on:
           repo: danieljonesdmj/acebook-ruff-criminals
-        # run:
-        #   - "rake db:migrate"
-        #   - restart
-        #   - "rake cleanup"
+        run:
+          - "rake db:migrate"
+          - restart
+          - "rake cleanup"
