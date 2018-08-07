@@ -8,6 +8,7 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+  - sleep 3
   - rails db:create
   - rails db:migrate
   - bundle exec rspec
