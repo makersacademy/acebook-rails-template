@@ -14,4 +14,15 @@ RSpec.feature 'Comment', type: :feature do
     click_button 'Create Comment'
     expect(page).to have_css('p', text: 'This is a comment')
   end
+  
+  scenario 'Can see username on comments' do
+    sign_up_test
+    visit '/posts'
+    click_link 'New post'
+    fill_in 'Message', with: 'This is a post'
+    click_button 'Submit'
+    fill_in 'comment[message]', with: 'This is a comment'
+    click_button 'Create Comment'
+    expect(page).to have_content 'test posted less than a minute ago'
+  end
 end
