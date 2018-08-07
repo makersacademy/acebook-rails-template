@@ -5,8 +5,8 @@ RSpec.feature "Like a post", type: :feature do
   before(:each) do
     successful_sign_up
     first_user_post
-    click_button "Log Out"
-    successful_sign_in_second_user
+    # click_button "Log Out"
+    # successful_sign_in_second_user
   end
 
   scenario "A user can like a post" do
