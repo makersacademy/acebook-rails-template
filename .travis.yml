@@ -14,8 +14,8 @@ before_script:
   - bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-install:
-  - bundle install
+# install:
+  # - bundle install
 before_install:
   - gem install bundler
 
@@ -29,7 +29,7 @@ fsJWSu1z6Ys+ACWg/EXxqUVir3g04bLqSSyaHhmm1Wz/AKWG603Ul0DK3mn12/AM/Py81hh7Zu9rR7o=
         app: ruffbook
         on:
           repo: danieljonesdmj/acebook-ruff-criminals
-        run:
-          - "rake db:migrate"
-          - restart
-          - "rake cleanup"
+        # run:
+        #   - "rake db:migrate"
+        #   - restart
+        #   - "rake cleanup"
