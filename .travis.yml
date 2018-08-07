@@ -14,8 +14,8 @@ before_script:
   - bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-# install:
-  # - bundle install
+install:
+  - bundle install
 before_install:
   - gem install bundler
 
