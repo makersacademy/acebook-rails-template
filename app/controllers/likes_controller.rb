@@ -8,10 +8,10 @@ class LikesController < ApplicationController
     redirect_to user_path(@user)
   end
 
-end
-
   private
 
   def like_params
     { user_id: session[:current_user_id], post_id: params[:post_id] }
   end
+
+end
