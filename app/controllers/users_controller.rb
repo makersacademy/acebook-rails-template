@@ -16,11 +16,7 @@ class UsersController < ApplicationController
 
   def show
     if logged_in?
-      if params[:id] == session[:current_user_id]
-        @user = User.find(session[:current_user_id])
-      else @user = User.find(params[:id])
-      end
-      @posts = Post.where(user_id: @user.id)
+      get_user_posts
     else
       redirect_to new_user_path
     end
@@ -37,6 +33,19 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def get_user_posts
+    this_user
+    @posts = Post.where(user_id: @user.id)
+  end
+
+  def this_user
+    if params[:id] == session[:current_user_id]
+      @user = User.find(session[:current_user_id])
+    else
+      @user = User.find(params[:id])
+    end
+  end
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password)
