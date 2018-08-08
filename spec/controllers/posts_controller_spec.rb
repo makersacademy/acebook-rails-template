@@ -10,7 +10,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "responds with 200" do
-      expect(response).to redirect_to("/users/#{@user.id}")
+      expect(response).to redirect_to("/")
     end
 
     it "creates a post" do

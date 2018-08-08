@@ -12,7 +12,7 @@ class SessionController < ApplicationController
   def create
     if valid_email? && valid_password?
       session[:current_user_id] = @user.id
-      redirect_to user_path(@user), notice: t(".notice")
+      redirect_to "/", notice: t(".notice")
     elsif !valid_email?
       invalid_email_alert
     else
