@@ -8,6 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'devise'
+gem 'devise_token_auth'
 gem 'jbuilder', '~> 2.5'
 gem 'pg'
 gem 'puma', '~> 3.7'
