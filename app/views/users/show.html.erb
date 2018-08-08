@@ -3,32 +3,20 @@
 </div>
 
 <div>
-<%= button_to "Log Out", logout_path, method: "delete" %>
+  <%= link_to '/' do %>
+    Home
+  <% end %>
 </div>
-
-<h2>Welcome <%= @user.first_name %>!</h2>
-
-<%= link_to user_posts_path(@user.id) do %>
-  View your profile
-<% end %>
-
-<%= form_for @post do |form| %>
-  <%= hidden_field_tag :user_id, @user.id %>
-  <%= label_tag "What's on your mind, #{@user.first_name}?" %>
-  <%= text_field_tag :message %>
-  <%= form.submit "Post" %>
-<% end %>
 
 <% @posts.reverse.each do |post| %>
   <p><%= post.users.first_name %></p>
   <p><%= post.message %></p>
   <p><%= time_ago_in_words(post.created_at) %></p>
+
   <div>
     <% if @user.id == post.users.id %>
       <%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete" %>
       <%= link_to 'Update', user_post_path(@user.id, post.id), method: "get" %>
     <% end %>
-    <p>Likes: <%= post.likes.length %></p>
-    <div><%= button_to 'Like', user_post_likes_path(@user.id, post.id), method: "post" %> </div>
   </div>
 <% end %>

@@ -16,7 +16,7 @@ RSpec.describe SessionController, type: :controller do
     end
 
     it "redirects to the user_url" do
-      expect(response).to redirect_to("/users/#{@user.id}")
+      expect(response).to redirect_to("/")
     end
 
     it "creates a session" do

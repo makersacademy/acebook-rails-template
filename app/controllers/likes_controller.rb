@@ -5,7 +5,7 @@ class LikesController < ApplicationController
     @post = Post.find_by(id: params[:post_id])
     @like = Like.create(like_params)
     @like.save
-    redirect_to user_path(@user)
+    redirect_to users_path
   end
 
   private
