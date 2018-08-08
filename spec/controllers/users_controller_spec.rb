@@ -16,7 +16,7 @@ RSpec.describe UsersController, type: :controller do
     end
 
     it "responds with 200" do
-      expect(response).to redirect_to("/users/#{assigns(:user).id}")
+      expect(response).to redirect_to("/")
     end
 
     it "creates a user" do
