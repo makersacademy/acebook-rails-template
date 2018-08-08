@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get "session/create"
   resources :posts, :session, :users, :likes
 
-  get '/' => 'users#new'
+  root 'users#index'
 
   get    'login'   => 'session#new'
   post   'login'   => 'session#create'

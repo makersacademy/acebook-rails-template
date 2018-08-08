@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     end
   end
 
+
   def show
     if logged_in?
       @user = User.find(session[:current_user_id])
