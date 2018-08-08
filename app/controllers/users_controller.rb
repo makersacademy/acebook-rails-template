@@ -35,11 +35,11 @@ class UsersController < ApplicationController
   private
 
   def get_user_posts
-    this_user
+    find_user
     @posts = Post.where(user_id: @user.id)
   end
 
-  def this_user
+  def find_user
     if params[:id] == session[:current_user_id]
       @user = User.find(session[:current_user_id])
     else
