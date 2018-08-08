@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       session[:current_user_id] = @user.id
-      redirect_to user_path(@user), notice: t(".notice")
+      redirect_to "/", notice: t(".notice")
     else
       render :new
     end
@@ -17,10 +17,20 @@ class UsersController < ApplicationController
   def show
     if logged_in?
       @user = User.find(session[:current_user_id])
+      @posts = Post.where(user_id: @user.id)
+    else
+      redirect_to new_user_path
+    end
+  end
+
+
+  def index
+    if logged_in?
+      @user = User.find(session[:current_user_id])
       @post = Post.new
       @posts = Post.all
     else
-      redirect_to "/"
+      redirect_to new_user_path
     end
   end
 

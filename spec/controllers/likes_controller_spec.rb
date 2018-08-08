@@ -10,8 +10,8 @@ RSpec.describe LikesController, type: :controller do
       post :create, params: { user_id: @user.id, post_id: @post.id }
     end
 
-    it "responds with 200 user homepage" do
-      expect(response).to redirect_to("/users/#{@user.id}")
+    it "responds with 200" do
+      expect(response).to redirect_to users_path
     end
   end
 end
