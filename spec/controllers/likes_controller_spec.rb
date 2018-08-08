@@ -11,7 +11,7 @@ RSpec.describe LikesController, type: :controller do
     end
 
     it "responds with 200" do
-      expect(response).to redirect_to("/users/#{@user.id}")
+      expect(response).to redirect_to users_path
     end
 
   end
