@@ -29,11 +29,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.update(post_params)
     post_update_notice
-    # redirect_to user_path(@user)
-    # # ???
     redirect_back fallback_location: request.referrer
   end
-
 
   private
 

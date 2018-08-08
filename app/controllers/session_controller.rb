@@ -25,8 +25,6 @@ class SessionController < ApplicationController
     redirect_to login_path
   end
 
-
-
   private
 
   def valid_email?
