@@ -8,7 +8,7 @@
 
 <h2>Welcome <%= @user.first_name %>!</h2>
 
-<%= link_to user_posts_path(@user.id) do %>
+<%= link_to user_path(@user.id) do %>
   View your profile
 <% end %>
 

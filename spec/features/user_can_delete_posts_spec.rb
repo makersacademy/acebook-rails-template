@@ -4,8 +4,8 @@ RSpec.feature "Delete Posts", type: :feature do
 
   before(:each) do
     successful_sign_up
+    click_button("Log Out")
     first_user_post
-
   end
 
   scenario "A user can delete post from the user homepage" do
