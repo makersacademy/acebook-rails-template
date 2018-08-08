@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       session[:current_user_id] = @user.id
-      redirect_to user_path(@user), notice: t(".notice")
+      redirect_to "/", notice: t(".notice")
     else
       render :new
     end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       @post = Post.new
       @posts = Post.all
     else
-      redirect_to login_path
+      redirect_to new_user_path
     end
   end
 
