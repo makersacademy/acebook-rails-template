@@ -14,6 +14,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(session[:current_user_id])
+    @posts = Post.where(user_id: @user.id)
+  end
+
 
   def index
     if logged_in?
@@ -21,7 +26,7 @@ class UsersController < ApplicationController
       @post = Post.new
       @posts = Post.all
     else
-      redirect_to "/"
+      redirect_to login_path
     end
   end
 
