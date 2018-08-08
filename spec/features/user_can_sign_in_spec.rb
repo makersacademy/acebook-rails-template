@@ -4,6 +4,7 @@ RSpec.feature "Session/ Sign-in", type: :feature do
 
   before(:each) do
     successful_sign_up
+    click_button 'Log Out'
   end
 
   scenario "A user can sign in with valid credentials" do
