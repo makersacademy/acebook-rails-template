@@ -1,0 +1,4 @@
+All Like User:
+<% @likes.reverse.each do |like| %>
+  <p><%= like.users.first_name %></p>
+<% end %>
