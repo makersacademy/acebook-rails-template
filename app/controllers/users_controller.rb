@@ -16,13 +16,15 @@ class UsersController < ApplicationController
 
   def show
     if logged_in?
-      @user = User.find(session[:current_user_id])
+      if params[:id] == session[:current_user_id]
+        @user = User.find(session[:current_user_id])
+      else @user = User.find(params[:id])
+      end
       @posts = Post.where(user_id: @user.id)
     else
       redirect_to new_user_path
     end
   end
-
 
   def index
     if logged_in?

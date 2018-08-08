@@ -8,8 +8,10 @@
   <% end %>
 </div>
 
+<h2><%= @user.first_name %>'s profile%></h2>
+
 <% @posts.reverse.each do |post| %>
-  <p><%= link_to post.users.first_name, user_posts_path(@user.id) %></p>
+  <p><%= post.users.first_name %></p>
   <p><%= post.message %></p>
   <p><%= time_ago_in_words(post.created_at) %></p>
 
