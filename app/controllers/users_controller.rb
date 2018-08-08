@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
 
-  def show
+  def index
     if logged_in?
       @user = User.find(session[:current_user_id])
       @post = Post.new
