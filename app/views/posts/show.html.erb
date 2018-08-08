@@ -1,0 +1,20 @@
+<div>
+  <%= notice ? notice : '' %>
+</div>
+
+<div>
+  <%= link_to user_path(@user) do %>
+    Home
+  <% end %>
+</div>
+
+<p><%= @post.users.first_name %></p>
+<p><%= @post.message %></p>
+<p><%= time_ago_in_words(@post.created_at) %></p>
+
+<%= form_for @post do |form| %>
+  <%= hidden_field_tag :user_id, @user.id %>
+  <%= label_tag "Make your change, #{@user.first_name}" %>
+  <%= text_field_tag :message %>
+  <%= form.submit "Update" %>
+<% end %>
