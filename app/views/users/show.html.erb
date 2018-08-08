@@ -20,7 +20,7 @@
 <% end %>
 
 <% @posts.reverse.each do |post| %>
-  <p><%= link_to post.users.first_name, user_posts_path(:other_user_id => post.user_id), post: @post, method: "get" %></p>
+  <p><%= link_to post.users.first_name, user_posts_path(@user.id) %></p>
   <p><%= post.message %></p>
   <p><%= time_ago_in_words(post.created_at) %></p>
   <div>
