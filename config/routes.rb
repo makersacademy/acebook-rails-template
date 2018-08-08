@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # get "session/create"
-  resources :posts, :session, :users
+  resources :posts, :session, :users, :likes
 
   get '/' => 'users#new'
 
@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   delete 'logout'  => 'session#destroy'
 
   resources :users do
-    resources :posts
+    resources :posts do
+      resources :likes
+    end
   end
 
 end

@@ -32,7 +32,6 @@ class PostsController < ApplicationController
     redirect_back fallback_location: request.referrer
   end
 
-
   private
 
   def post_params
