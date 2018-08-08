@@ -11,7 +11,7 @@ class LikesController < ApplicationController
   def index
     @user = User.find_by(id: params[:user_id])
     @post = Post.find_by(id: params[:post_id])
-    @likes = Like.where(user_id: params[:user_id], post_id: params[:post_id])
+    @likes = Like.where(post_id: params[:post_id])
   end
 
   def destroy
