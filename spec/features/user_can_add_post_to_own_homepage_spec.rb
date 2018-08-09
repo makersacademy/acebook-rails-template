@@ -17,7 +17,7 @@ RSpec.feature "User homepage", type: :feature do
     successful_sign_up_second_user
     click_button "Log Out"
     second_user_post
-    expect(page).to have_content('test_first_name2 Second user post less than a minute Delete Update Likes: 0 test_first_name My first post less than a minute')
+    expect(page).to have_content('test_first_name2 Second user post less than a minute Delete Update Likes 0 test_first_name My first post less than a minute ')
   end
 
 end
