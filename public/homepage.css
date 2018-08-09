@@ -22,57 +22,61 @@
 #logo {
   width: 50px;
   padding: 8px;
-
 }
-
-.navigation a {
-  color: white;
-  font-family: Helvetica;
-  font-size: 25px;
-  margin: 10px;
-  text-decoration: none;
-
-}
-
-.navigation a:hover {
-  background-color: #5F7CB9;
-}
-
 
 .navigation {
- float: right;
+  float: right;
 }
 
 .links {
-  padding: 22px;
+  padding: 23px;
 }
 
-.name {
-  float: left;
-  width: 38%;
-  border: black solid;
+.links a {
+  color: white;
+  font-family: Helvetica;
+  font-size: 18px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  background-color: #5F7CB9;
+}
+
+.welcome {
+  border: red solid;
 }
 
 .content {
-  float: right;
   border: black solid;
-  width: 60%;
 }
 
 .add-post {
-  float: right;
-  width: 90%;
-  border: red solid;
-  padding: 20px;
+  border: green solid;
+  height: 150px;
+}
+
+.input-box {
+  width: 98.8%;
+  height: 60px;
+  padding-left: 10px;
+}
+
+input, select{
+  border: 1px #7A7F8B solid;
+  border-radius: 8px;
+  font-size: 20px;
+  width: 100%;
 }
 
 .post-button {
   background-color: #3B5998;
   border-radius: 3px;
-  font-size: 25px;
+  font-size: 20px;
   font-family: Helvetica;
   height: 40px;
-  width: 150px;
+  width: 120px;
   border: none;
   color: white;
   margin: 15px 0px;
@@ -84,81 +88,75 @@
 }
 
 
-.input-box {
-  margin: 15px 0px;
-  height: 80px;
-}
-
-input, select{
-  border: 1px #707070 solid;
-  border-radius: 5px;
-  font-size: 20px;
-  padding: 8px;
-  width: 100%;
-  float: right;
-}
-
-
-.all-posts {
-  width: 100%;
+.posts {
   border: orange solid;
-  padding: 50px;
-  border-bottom: gray solid;
 }
-
 
 .post {
-  border-bottom: gray solid;
-  padding: 20px;
-  margin-top: 20px;
-  width: 80%
+  border: blue solid;
+  border-bottom: #7A7F8B solid 0.75px;;
 }
 
-.delete {
-  float: right;
+.time {
+  font-family: Helvetica;
+  font-size: 14px;
+  color: #7A7F8B;
+  padding-top: 5px;
+  padding-bottom: 15px;
 }
 
-.update {
-  float: right;
+.message {
+  border: orange solid;
+  font-family: Helvetica;
+  font-size: 16px;
+  padding: 20px 0px;
+}
+
+.post a {
+  font-size: 16px;
+  font-family: Helvetica;
+  border: none;
+  width: 70px;
+  height: 30px;
+  color: #3B5998;
+  margin: none;
+  text-decoration: none;
+}
+
+.post a:hover {
+  text-decoration: underline;
+}
+
+.name {
+  border: orange solid;
+  font-weight: bold;
+  font-size: 30px;
+  color: #365899;
+  text-decoration: none;
+  padding: 20px 0px;
+}
+
+.name:hover {
+  text-decoration: underline;
 }
 
 .like-button {
-  background-color: white;
-  border-radius: 3px;
-  font-size: 15px;
+  font-size: 16px;
   font-family: Helvetica;
-  height: 30px;
-  width: 60px;
+  text-align: left;
   border: none;
+  width: 70px;
+  height: 30px;
   color: #3B5998;
-  margin: 15px 0px;
-  float: left;
+  margin: none;
 }
 
 .like-button:hover {
-  background-color: #5F7CB9;
+  text-decoration: underline;
 }
 
-.unlike-button {
-  background-color: white;
-  border-radius: 3px;
-  font-size: 15px;
-  font-family: Helvetica;
-  height: 30px;
-  width: 60px;
-  border: none;
-  color: #3B5998;
-  margin: 15px 0px;
-  float: left;
-}
-
-.unlike-button:hover {
-  background-color: #5F7CB9;
-}
-
-h1 {
+h2 {
   font-size: 30px;
   font-family: Helvetica;
-  color: #3B5998;
-  margin: 0px;
+  color: #1D2129;
 }

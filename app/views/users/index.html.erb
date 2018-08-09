@@ -1,9 +1,7 @@
 <%= stylesheet_link_tag "/homepage.css" %>
 
 <div class="header">
-
-    <img src="/acebook-logo.jpg" id="logo">
-
+  <img src="/acebook-logo.jpg" id="logo">
   <div class="navigation">
     <div class="links">
       <%= link_to @user.first_name, user_path(@user.id) %>
@@ -14,37 +12,35 @@
 </div>
 
 <div class="body">
-  <div class="name">
-    <h2>Welcome <%= @user.first_name %>!</h2>
-  </div>
-
   <div class="content">
+    <div class="welcome">
+      <h2>Welcome <%= @user.first_name %>!</h2>
+    </div>
     <div class="add-post">
       <%= form_for @post do |form| %>
         <%= hidden_field_tag :user_id, @user.id %>
-
         <%= form.text_field :message, placeholder: "What's on your mind, #{@user.first_name}?", class: "input-box" %><br>
-
         <%= form.submit "Post", class: 'post-button' %>
       <% end %>
     </div>
-    <div class="all-posts">
+    <div class="posts">
       <% @posts.reverse.each do |post| %>
-      <div class="rightcolumn">
         <div class="post">
-          <h1><%= link_to post.users.first_name, user_path(post.user_id) %></h1>
-          <p><%= post.message %></p>
-          <p><%= time_ago_in_words(post.created_at) %></p>
-
+          <%= link_to post.users.first_name, user_path(post.user_id), class: "name" %>
+          <div class="time"><%= time_ago_in_words(post.created_at) %> ago</div>
+          <div class="message"<p><%= post.message %></p></div>
             <% if @user.id == post.users.id %>
-              <div class="delete"><%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete" %></div>
-              <div class="update"><%= link_to 'Update', user_post_path(@user.id, post.id), method: "get"%></div>
+              <p>
+                <%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete" %>
+                <%= link_to 'Update', user_post_path(@user.id, post.id), method: "get"%>
+              </p>
             <% end %>
-            <p><%= link_to 'Likes', user_post_likes_path(@user.id, post.id) %> <%= post.likes.length %></p>
-            <%= button_to 'Like', user_post_likes_path(@user.id, post.id), method: "post", class: 'like-button'%>
-            <%= button_to 'Unlike', user_post_like_path(@user.id, post.id, @user.id), method: "delete", class: 'unlike-button' %><br><br>
+            <%= link_to 'Likes', user_post_likes_path(@user.id, post.id) %> <%= post.likes.length %>
+            <p>
+              <%= button_to 'Like', user_post_likes_path(@user.id, post.id), method: "post", class: 'like-button'%>
+              <%= button_to 'Unlike', user_post_like_path(@user.id, post.id, @user.id), method: "delete", class: 'like-button' %>
+            </p>
         </div>
-      </div>
       <% end %>
     </div>
   </div>
