@@ -20,15 +20,13 @@
     <div id='comments'><h3>Comments</h3>
     <% post.comments.each do |comment| %>
       <p>
+        <strong>Comment:</strong>
         <%= comment.message %>
-        <% user = User.find(comment.user_id) %>
-        <p><%= user.username + ' posted ' + time_ago_in_words(comment.created_at) + ' ago' %></p>
       </p>
     <% end %>
     <h3>Add a comment:</h3>
     <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
       <p>
-    <%= form.hidden_field :user_id, value: current_user.id %>
         <%= form.label :message %><br>
         <%= form.text_area :message %>
       </p>
