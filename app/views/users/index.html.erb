@@ -30,5 +30,6 @@
     <% end %>
     <p><%= link_to 'Likes', user_post_likes_path(@user.id, post.id) %> <%= post.likes.length %></p>
     <div><%= button_to 'Like', user_post_likes_path(@user.id, post.id), method: "post" %> </div>
+    <div><%= button_to 'Unlike', user_post_like_path(@user.id, post.id, @user.id), method: "delete" %> </div>
   </div>
 <% end %>

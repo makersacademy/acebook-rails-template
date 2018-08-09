@@ -14,6 +14,14 @@ class LikesController < ApplicationController
     @likes = Like.where(post_id: params[:post_id])
   end
 
+  def destroy
+    @user = User.find_by(id: params[:user_id])
+    @post = Post.find_by(id: params[:post_id])
+    @like = Like.find_by(post_id: params[:post_id], user_id: params[:user_id])
+    @like.destroy
+    redirect_back fallback_location: request.referrer
+  end
+
   private
 
   def like_params
