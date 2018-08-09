@@ -27,9 +27,7 @@ class Api::V1::PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update_attributes(post_params)
-      render json: post
-    end
+    render json: post if @post.update_attributes(post_params)
   end
 
   def destroy
