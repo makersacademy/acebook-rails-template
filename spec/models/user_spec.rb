@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-  it { is_expected.to be }
+  it { expect(described_class).to be < ApplicationRecord }
 
   describe '#authenticate' do
 
