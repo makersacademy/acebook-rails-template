@@ -2,45 +2,56 @@
 
 # Posts controller, and methods.
 class PostsController < ApplicationController
-  def new
-    @post = Post.new
-  end
+  before_action :set_post, only: %i[show update destroy]
 
-  def show
-    @posts = Post.find(params[:id])
-  end
-
-  def create
-    @user = User.find(current_user.id)
-    @post = @user.posts.create(post_params)
-    redirect_to posts_url
-  end
-
+  # GET /posts
   def index
     @posts = Post.all
     @username = current_user.username
+
+    render json: @posts
   end
 
-  def edit
-    @post = Post.find(params[:id])
+  # GET /posts/1
+  def show
+    render json: @post
   end
 
-  def update
-    @post = Post.find(params[:id])
-    if @post.update_attributes(post_params)
-      redirect_to posts_path, notice: 'Your post has been updated'
+  # POST /posts
+  def create
+    @user = User.find(current_user.id)
+    @post = @user.posts.create(post_params)
+
+    if @post.save
+      render json: @post, status: :created, location: @post
+    else
+      render json: @post.errors, status: :unprocessable_entity
     end
   end
 
+  # PATCH/PUT /posts/1
+  def update
+    if @post.update(post_params)
+      render json: @post
+    else
+      render json: @post.errors, status: :unprocessable_entity
+    end
+  end
+
+  # DELETE /posts/1
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path
   end
 
   private
 
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
   def post_params
-    params.require(:post).permit(:message, :created_at)
+    params.require(:post).permit(:message, :User_id)
   end
 end
