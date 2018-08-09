@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# API comments controller
 class Api::V1::CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
