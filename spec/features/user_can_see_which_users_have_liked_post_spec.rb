@@ -11,7 +11,7 @@ RSpec.feature "See which users have liked", type: :feature do
   scenario "A user can see his/her like on own post" do
     successful_sign_in
     click_button "Like"
-    click_link "Likes:"
+    click_link "Likes"
     expect(page).to have_text("test_first_name")
   end
 
@@ -21,7 +21,7 @@ RSpec.feature "See which users have liked", type: :feature do
       click_button "Like"
       click_button "Log Out"
       successful_sign_in_second_user
-      click_link "Likes:"
+      click_link "Likes"
       expect(page).to have_content("test_first_name")
     end
   end
@@ -33,7 +33,7 @@ RSpec.feature "See which users have liked", type: :feature do
       click_button "Log Out"
       successful_sign_in_second_user
       click_button "Like"
-      click_link "Likes:"
+      click_link "Likes"
       expect(page).to have_content("test_second_name test_first_name")
     end
   end
