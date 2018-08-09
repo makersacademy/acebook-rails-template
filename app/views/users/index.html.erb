@@ -5,7 +5,7 @@
 <div>
 <%= button_to "Log Out", logout_path, method: "delete" %>
 </div>
-<p><%= @like %><p>
+
 <h2>Welcome <%= @user.first_name %>!</h2>
 
 <%= link_to user_path(@user.id) do %>
