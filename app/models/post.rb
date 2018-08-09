@@ -2,6 +2,6 @@
 
 # Post class and its dependencies
 class Post < ApplicationRecord
-  belongs_to :user
   has_many :comments, dependent: :delete_all
+  belongs_to :user
 end
