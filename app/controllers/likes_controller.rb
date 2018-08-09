@@ -8,6 +8,12 @@ class LikesController < ApplicationController
     redirect_to users_path
   end
 
+  def index
+    @user = User.find_by(id: params[:user_id])
+    @post = Post.find_by(id: params[:post_id])
+    @likes = Like.where(post_id: params[:post_id])
+  end
+
   private
 
   def like_params
