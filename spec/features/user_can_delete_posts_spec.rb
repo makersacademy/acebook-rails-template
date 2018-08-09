@@ -15,7 +15,7 @@ RSpec.feature "Delete Posts", type: :feature do
   end
 
   scenario "A user can delete post from the user post page" do
-    click_link "test_first_name"
+    first(:link, "test_first_name").click
     click_link "Delete"
     expect(page).to have_text('Your post has been deleted')
     expect(page).not_to have_text('test_first_name My first post less than a minute')

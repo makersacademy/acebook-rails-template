@@ -15,7 +15,7 @@ RSpec.feature "Edit Posts", type: :feature do
   end
 
   scenario "A user can update post from the user profile" do
-    click_link "test_first_name"
+    first(:link, "test_first_name").click
     update_post
     expect(page).to have_text('Your post has been updated')
     expect(page).to have_text("My changed post")

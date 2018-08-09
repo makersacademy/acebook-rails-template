@@ -13,7 +13,7 @@ RSpec.feature "User Profile", type: :feature do
     first_user_post
     click_link 'Log Out'
     second_user_post
-    click_link "test_first_name"
+    first(:link, "test_first_name2").click
     expect(page).to have_content("Second user post")
     expect(page).not_to have_content("My first post")
   end
