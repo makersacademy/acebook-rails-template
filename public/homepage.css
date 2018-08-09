@@ -83,6 +83,7 @@
   background-color: #5F7CB9;
 }
 
+
 .input-box {
   margin: 15px 0px;
   height: 80px;
@@ -95,4 +96,69 @@ input, select{
   padding: 8px;
   width: 100%;
   float: right;
+}
+
+
+.all-posts {
+  width: 100%;
+  border: orange solid;
+  padding: 50px;
+  border-bottom: gray solid;
+}
+
+
+.post {
+  border-bottom: gray solid;
+  padding: 20px;
+  margin-top: 20px;
+  width: 80%
+}
+
+.delete {
+  float: right;
+}
+
+.update {
+  float: right;
+}
+
+.like-button {
+  background-color: white;
+  border-radius: 3px;
+  font-size: 15px;
+  font-family: Helvetica;
+  height: 30px;
+  width: 60px;
+  border: none;
+  color: #3B5998;
+  margin: 15px 0px;
+  float: left;
+}
+
+.like-button:hover {
+  background-color: #5F7CB9;
+}
+
+.unlike-button {
+  background-color: white;
+  border-radius: 3px;
+  font-size: 15px;
+  font-family: Helvetica;
+  height: 30px;
+  width: 60px;
+  border: none;
+  color: #3B5998;
+  margin: 15px 0px;
+  float: left;
+}
+
+.unlike-button:hover {
+  background-color: #5F7CB9;
+}
+
+h1 {
+  font-size: 30px;
+  font-family: Helvetica;
+  color: #3B5998;
+  margin: 0px;
 }

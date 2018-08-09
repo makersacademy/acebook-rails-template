@@ -28,36 +28,29 @@
         <%= form.submit "Post", class: 'post-button' %>
       <% end %>
     </div>
-  </div>
+    <div class="all-posts">
+      <% @posts.reverse.each do |post| %>
+      <div class="rightcolumn">
+        <div class="post">
+          <h1><%= link_to post.users.first_name, user_path(post.user_id) %></h1>
+          <p><%= post.message %></p>
+          <p><%= time_ago_in_words(post.created_at) %></p>
 
+            <% if @user.id == post.users.id %>
+              <div class="delete"><%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete" %></div>
+              <div class="update"><%= link_to 'Update', user_post_path(@user.id, post.id), method: "get"%></div>
+            <% end %>
+            <p><%= link_to 'Likes', user_post_likes_path(@user.id, post.id) %> <%= post.likes.length %></p>
+            <%= button_to 'Like', user_post_likes_path(@user.id, post.id), method: "post", class: 'like-button'%>
+            <%= button_to 'Unlike', user_post_like_path(@user.id, post.id, @user.id), method: "delete", class: 'unlike-button' %><br><br>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 
 <div>
   <%= notice ? notice : '' %>
 </div>
-
-<div>
-
-</div>
-
-
-
-
-
-
-
-<!-- <% @posts.reverse.each do |post| %>
-  <p><%= link_to post.users.first_name, user_path(post.user_id) %></p>
-  <p><%= post.message %></p>
-  <p><%= time_ago_in_words(post.created_at) %></p>
-  <div>
-    <% if @user.id == post.users.id %>
-      <%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete" %>
-      <%= link_to 'Update', user_post_path(@user.id, post.id), method: "get" %>
-    <% end %>
-    <p><%= link_to 'Likes', user_post_likes_path(@user.id, post.id) %> <%= post.likes.length %></p>
-    <div><%= button_to 'Like', user_post_likes_path(@user.id, post.id), method: "post" %> </div>
-    <div><%= button_to 'Unlike', user_post_like_path(@user.id, post.id, @user.id), method: "delete" %> </div>
-  </div>
-<% end %> -->
