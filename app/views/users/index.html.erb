@@ -15,9 +15,21 @@
 
 <div class="body">
   <div class="name">
+    <h2>Welcome <%= @user.first_name %>!</h2>
   </div>
+
   <div class="content">
+    <div class="add-post">
+      <%= form_for @post do |form| %>
+        <%= hidden_field_tag :user_id, @user.id %>
+
+        <%= form.text_field :message, placeholder: "What's on your mind, #{@user.first_name}?", class: "input-box" %><br>
+
+        <%= form.submit "Post", class: 'post-button' %>
+      <% end %>
+    </div>
   </div>
+
 </div>
 
 
@@ -29,19 +41,13 @@
 
 </div>
 
-<h2>Welcome <%= @user.first_name %>!</h2>
 
 
 
 
-<%= form_for @post do |form| %>
-  <%= hidden_field_tag :user_id, @user.id %>
-  <%= label_tag "What's on your mind, #{@user.first_name}?" %>
-  <%= text_field_tag :message %>
-  <%= form.submit "Post" %>
-<% end %>
 
-<% @posts.reverse.each do |post| %>
+
+<!-- <% @posts.reverse.each do |post| %>
   <p><%= link_to post.users.first_name, user_path(post.user_id) %></p>
   <p><%= post.message %></p>
   <p><%= time_ago_in_words(post.created_at) %></p>
@@ -54,4 +60,4 @@
     <div><%= button_to 'Like', user_post_likes_path(@user.id, post.id), method: "post" %> </div>
     <div><%= button_to 'Unlike', user_post_like_path(@user.id, post.id, @user.id), method: "delete" %> </div>
   </div>
-<% end %>
+<% end %> -->

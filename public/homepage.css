@@ -47,61 +47,27 @@
   padding: 22px;
 }
 
-
-
-
+.name {
+  float: left;
+  width: 38%;
+  border: black solid;
+}
 
 .content {
-  width: 700px;
   float: right;
+  border: black solid;
+  width: 60%;
 }
 
-.welcome {
-  padding-top: 50px;
-  padding-bottom: 15px;
+.add-post {
+  float: right;
+  width: 90%;
+  border: red solid;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 60px;
-  font-family: Helvetica;
-  color: #1D2129;
-  margin: 0px;
-}
-
-h2 {
-  font-size: 30px;
-  font-family: Helvetica;
-  color: #1D2129;
-  margin: 0px;
-}
-
-
-
-
-
-
-label {
-  font-family: Helvetica;
-  font-size: 20px;
-  color: #1D2129;
-  width: 50px;
-  padding-right: 8px;
-}
-
-.input-box {
-  margin: 15px 0px;
-}
-
-input, select{
-  border: 1px #707070 solid;
-  border-radius: 5px;
-  font-size: 20px;
-  padding: 8px;
-  width: 300px;
-}
-
-.entry-button {
-  background-color: #40B72B;
+.post-button {
+  background-color: #3B5998;
   border-radius: 3px;
   font-size: 25px;
   font-family: Helvetica;
@@ -110,8 +76,23 @@ input, select{
   border: none;
   color: white;
   margin: 15px 0px;
+  float: right;
 }
 
-.sign-up-button:hover {
-  background-color: #1B7C0A;
+.post-button:hover {
+  background-color: #5F7CB9;
+}
+
+.input-box {
+  margin: 15px 0px;
+  height: 80px;
+}
+
+input, select{
+  border: 1px #707070 solid;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 8px;
+  width: 100%;
+  float: right;
 }
