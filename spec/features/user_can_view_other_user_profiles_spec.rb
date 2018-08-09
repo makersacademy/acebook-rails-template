@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Edit Posts", type: :feature do
+RSpec.feature "User Profile", type: :feature do
 
   before(:each) do
     successful_sign_up

@@ -1,0 +1,9 @@
+<h1>hello world</h1>
+
+<%= form_for(@bio) do |f| %>
+  <%= f.label 'Add a bio' %><br>
+  <%= f.text_field :summary %>
+  <%= f.label 'Add a profile picture' %><br>
+  <%= f.file_field :image %>
+  <%= f.submit :upload %>
+<% end %>
