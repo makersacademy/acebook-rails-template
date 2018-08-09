@@ -4,7 +4,7 @@ RSpec.feature "Unlike a post", type: :feature do
 
   before(:each) do
     successful_sign_up
-    click_button 'Log Out'
+    click_link 'Log Out'
     first_user_post
   end
 

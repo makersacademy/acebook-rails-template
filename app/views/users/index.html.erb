@@ -1,16 +1,38 @@
+<%= stylesheet_link_tag "/homepage.css" %>
+
+<div class="header">
+
+    <img src="/acebook-logo.jpg" id="logo">
+
+  <div class="navigation">
+    <div class="links">
+      <%= link_to @user.first_name, user_path(@user.id) %>
+      <%= link_to "Home", '/' %>
+      <%= link_to "Log Out", logout_path, method: "delete" %>
+    </div>
+  </div>
+</div>
+
+<div class="body">
+  <div class="name">
+  </div>
+  <div class="content">
+  </div>
+</div>
+
+
 <div>
   <%= notice ? notice : '' %>
 </div>
 
 <div>
-<%= button_to "Log Out", logout_path, method: "delete" %>
+
 </div>
 
 <h2>Welcome <%= @user.first_name %>!</h2>
 
-<%= link_to user_path(@user.id) do %>
-  View your profile
-<% end %>
+
+
 
 <%= form_for @post do |form| %>
   <%= hidden_field_tag :user_id, @user.id %>

@@ -39,7 +39,7 @@ RSpec.feature "SignUp", type: :feature do
 
   scenario "A user provides an email already taken" do
     successful_sign_up
-    click_button 'Log Out'
+    click_link 'Log Out'
     successful_sign_up
     expect(page).to have_content("This email address has already been used")
   end

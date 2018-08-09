@@ -4,7 +4,7 @@ RSpec.feature "Edit Posts", type: :feature do
 
   before(:each) do
     successful_sign_up
-    click_button 'Log Out'
+    click_link 'Log Out'
     first_user_post
   end
 
@@ -15,7 +15,7 @@ RSpec.feature "Edit Posts", type: :feature do
   end
 
   scenario "A user can update post from the user profile" do
-    click_link("View your profile")
+    click_link "test_first_name"
     update_post
     expect(page).to have_text('Your post has been updated')
     expect(page).to have_text("My changed post")
