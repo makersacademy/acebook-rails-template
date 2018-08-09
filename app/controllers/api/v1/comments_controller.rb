@@ -2,7 +2,9 @@
 
 # API comments controller
 class Api
+  # class v1
   class V1
+    # class comments controller
     class CommentsController < ApplicationController
       def create
         @post = Post.find(params[:post_id])

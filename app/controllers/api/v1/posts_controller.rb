@@ -2,7 +2,9 @@
 
 # Posts controller, and methods.
 class Api
+  # class version 1
   class V1
+    # class posts controller
     class PostsController < ApplicationController
       def new
         @post = Post.new
