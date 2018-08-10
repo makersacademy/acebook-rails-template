@@ -29,35 +29,20 @@ ___
 ### Launching the Application
 
 
-__You can run the application on your local machine bye following the below steps:__  
-Clone the repository
+__You can run the application on your local machine by following these steps:__  
+
 ```
-git clone https://github.com/jeff1108/acebook-rails-keeping-it-rails.git
-```
-Navigate to the repository
-```
-cd acebook-rails-keeping-it-keepingitrails
+$ git clone https://github.com/jeff1108/acebook-rails-keeping-it-rails.git
+$ cd acebook-rails-keeping-it-keepingitrails
+$ bundle install
+$ rails s
 ```
 
-Install all gem dependencies
-```
-bundle install
-```
+In your browser, navigate to `localhost:3000`
 
-Start server
-```
-rails s
-```
 
-In your browser navigate to:
-```
-localhost:3000
-```
+Alternatively a [demo site is deployed onto Heroku](https://acebook-keeping-it-rails.herokuapp.com/).
 
-__Alternatively a demo site is deployed onto heroku:__
-```
-https://acebook-keeping-it-rails.herokuapp.com/
-```
 ___
 
 ## Screenshots
