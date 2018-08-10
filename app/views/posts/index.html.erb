@@ -1,7 +1,46 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<%= stylesheet_link_tag "application.css" %>
+<h1> Welcome to Ruffbook, <%= @username %> </h1>
+
+<%= link_to destroy_user_session_path(:user), :method => :delete do %>
+  Log out
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<center>
+  <h1>See posts</h1>
+  <%= link_to new_post_path do %>
+    <button id='new'>New post</button>
+  <% end %>
+<div></div>
+
+<% @posts.reverse_each do |post| %>
+  <div class='index'>
+    <p><%= simple_format(post.message).html_safe %></p>
+    <% user = User.find(post.user_id) %>
+    <p><%= user.username + ' posted ' + time_ago_in_words(post.created_at) + ' ago' %></p>
+    <div id='comments'><h3>Comments</h3>
+    <% post.comments.each do |comment| %>
+      <p>
+        <%= comment.message %>
+        <% user = User.find(comment.user_id) %>
+      <p><%= user.username + ' posted ' + time_ago_in_words(comment.created_at) + ' ago' %></p>
+      </p>
+    <% end %>
+    <h3>Add a comment:</h3>
+    <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+      <p>
+        <%= form.hidden_field :user_id, value: current_user.id %>
+        <%= form.label :message %><br>
+        <%= form.text_area :message %>
+      </p>
+      <p>
+        <%= form.submit %>
+      </p></div>
+      <% end %>
+      <br>
+      <div id='text'>
+      <button id='edit'><%= link_to 'Edit', edit_post_path(post) %></button>
+      <button id='delete'><%= link_to 'Delete', post, :confirm => "Are you sure?" , :method => :delete %></button></div>
+      <br>
+  </div>
 <% end %>
+</center>

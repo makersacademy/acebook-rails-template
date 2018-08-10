@@ -1,20 +1,45 @@
+# frozen_string_literal: true
+
+# Posts controller, and methods.
 class PostsController < ApplicationController
   def new
     @post = Post.new
   end
 
+  def show
+    @posts = Post.find(params[:id])
+  end
+
   def create
-    @post = Post.create(post_params)
+    @user = User.find(current_user.id)
+    @post = @user.posts.create(post_params)
     redirect_to posts_url
   end
 
   def index
     @posts = Post.all
+    @username = current_user.username
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    return unless @post.update_attributes(post_params)
+    redirect_to posts_path, notice: 'Your post has been updated'
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :created_at)
   end
 end
