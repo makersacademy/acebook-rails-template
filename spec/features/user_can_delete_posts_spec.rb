@@ -20,4 +20,13 @@ RSpec.feature "Delete Posts", type: :feature do
     expect(page).to have_text('Your post has been deleted')
     expect(page).not_to have_text('test_first_name My first post less than a minute ago')
   end
+
+  scenario "A user can delete a post which has been liked" do
+    click_link "Like"
+    click_link "Delete"
+    expect(page).to have_text('Your post has been deleted')
+    expect(page).not_to have_text('test_first_name My first post less than a minute ago')
+  end
+
+
 end
