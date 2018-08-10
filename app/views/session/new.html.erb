@@ -1,10 +1,35 @@
-<%= form_tag url_for('/session') do |form| %>
-  <%= label_tag :email, "Email" %>
-  <%= email_field_tag :email, params[:email] %>
-  <%= label_tag :password, "Password" %>
-  <%= password_field_tag :password, params[:password] %>
-  <%= submit_tag "Log In" %>
-<% end %>
+<%= stylesheet_link_tag "/entry.css" %>
 
-<%= alert ? alert : '' %><br>
-<%= link_to "Sign up for Acebook", "/users/new" %>
+<div class="header">
+  <div class="logo">
+    <img src="/acebook-logo.jpg" id="logo">cebook
+  </div>
+</div>
+
+<div class="body">
+  <div class="content">
+    <div class="welcome">
+      <h1>We need some details</h1>
+      <h2>Your account is right around the corner.</h2>
+    </div>
+
+    <div class="alert">
+      <%= alert ? alert : '' %><br>
+    </div>
+
+    <%= form_tag url_for('/session') do |form| %>
+      <div class="input-box">
+        <%= label_tag :email, "Email" %>
+        <%= email_field_tag :email, params[:email], placeholder: 'Email' %>
+      </div>
+      <div class="input-box">
+        <%= label_tag :password, "Password" %>
+        <%= password_field_tag :password, params[:password], placeholder: 'Password' %>
+      </div>
+      <%= submit_tag "Log In", class: 'entry-button' %>
+    <% end %>
+
+    <%= link_to "Sign up for Acebook", "/users/new" %>
+
+  </div>
+</div>

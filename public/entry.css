@@ -1,0 +1,105 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.header {
+  background-color: #3B5998;
+}
+
+#logo {
+  width: 150px;
+  padding: 25px;
+  padding-bottom: 0px;
+}
+
+.logo {
+  font-size: 130px;
+  font-family: Helvetica;
+  color: white;
+}
+
+.content {
+  width: 700px;
+  float: right;
+}
+
+.welcome {
+  padding-top: 50px;
+  padding-bottom: 15px;
+}
+
+h1 {
+  font-size: 60px;
+  font-family: Helvetica;
+  color: #1D2129;
+  margin: 0px;
+}
+
+h2 {
+  font-size: 30px;
+  font-family: Helvetica;
+  color: #1D2129;
+  margin: 0px;
+}
+
+a {
+  font-size: 20px;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: #1D2129;
+  text-decoration: none;
+
+}
+
+a:hover {
+  color: #3B5998;
+  text-decoration: underline;
+}
+
+label {
+  font-family: Helvetica;
+  font-size: 20px;
+  color: #1D2129;
+  width: 50px;
+  padding-right: 8px;
+}
+
+.input-box {
+  margin: 15px 0px;
+}
+
+input, select{
+  border: 1px #707070 solid;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 8px;
+  width: 300px;
+}
+
+.entry-button {
+  background-color: #40B72B;
+  border-radius: 3px;
+  font-size: 25px;
+  font-family: Helvetica;
+  height: 40px;
+  width: 150px;
+  border: none;
+  color: white;
+  margin: 15px 0px;
+}
+
+.entry-button:hover {
+  background-color: #1B7C0A;
+}

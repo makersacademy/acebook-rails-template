@@ -4,8 +4,8 @@ RSpec.feature "SignUp", type: :feature do
 
   scenario "A user can sign up with valid credentials" do
     successful_sign_up
-    expect(page).to have_content("User account was successfully created.")
-    expect(page).to have_content("Welcome test_first_name")
+    expect(page).to have_content("Welcome to Acebook!")
+    expect(page).to have_content("test_first_name test_last_name")
   end
 
   scenario "A user provides an password with less than 6 characters" do
@@ -39,7 +39,7 @@ RSpec.feature "SignUp", type: :feature do
 
   scenario "A user provides an email already taken" do
     successful_sign_up
-    click_button 'Log Out'
+    click_link 'Log Out'
     successful_sign_up
     expect(page).to have_content("This email address has already been used")
   end

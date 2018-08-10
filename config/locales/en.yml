@@ -36,10 +36,10 @@
 en:
   session:
      create:
-       notice: "You have successfully logged in."
+       notice: "Welcome back to Acebook!"
   users:
      create:
-       notice: "User account was successfully created."
+       notice: "Welcome to Acebook!"
   activerecord:
     errors:
       format: "%{message}"
