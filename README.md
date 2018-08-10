@@ -6,7 +6,7 @@
 
 This app lets users create an account, log in, log out, write posts on a shared wall, see the posts on the wall and comment on them.
 
-<img src="./lib/RuffScreen.gif">
+![Usage example](/lib/RuffScreen.gif)
 
 ## Getting started
 Enter the following commands in your terminal:
