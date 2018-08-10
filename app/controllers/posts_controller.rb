@@ -24,6 +24,7 @@ class PostsController < ApplicationController
     else
       @likes = Like.find_by(post_id: @post.id)
       @likes.destroy
+      @post.destroy
     end
     post_delete_notice
     redirect_back fallback_location: request.referrer
@@ -34,7 +35,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.update(post_params)
     post_update_notice
-    redirect_back fallback_location: request.referrer
+    redirect_to '/'
   end
 
   private
