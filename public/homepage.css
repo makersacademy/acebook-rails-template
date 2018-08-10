@@ -1,0 +1,269 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @font-face {
+   font-family: "helvetica-neue";
+   src: url("HelveticaNeueLt.ttf");
+ }
+
+ @font-face {
+   font-family: "helvetica-neue-medium";
+   src: url("HelveticaNeueMedium.ttf");
+ }
+
+ .header {
+   background-color: #3B5998;
+   padding: 0px;
+   margin-bottom: 15px;
+ }
+
+ #logo {
+   width: 50px;
+   padding: 8px;
+ }
+
+ #thumb {
+   width: 58px;
+ }
+
+ #big {
+   width: 90%;
+ }
+
+ .navigation {
+   float: right;
+ }
+
+ .links {
+   padding: 23px;
+ }
+
+ .links a {
+   color: white;
+   font-family: "helvetica-neue-medium";
+   font-size: 20px;
+   margin: 0px 12px;
+   text-decoration: none;
+ }
+
+ .links a:hover {
+   background-color: #5F7CB9;
+ }
+
+ .full-name {
+   width: 26%;
+   float: left;
+   margin: 10px;
+ }
+
+ .title {
+   float: right;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   height: 30px;
+   width: 180px;
+ }
+
+ .update {
+   width: 60%;
+   float: left;
+ }
+
+ .content {
+   width: 70%;
+   float: right;
+ }
+
+ .flash {
+   font-family: "helvetica-neue-medium";
+   color: #40B72B;
+ }
+
+ h1 {
+   font-size: 30px;
+   font-family: "helvetica-neue-medium";
+   color: #1D2129;
+   margin: 0px;
+ }
+
+ h2 {
+   font-size: 30px;
+   font-family: "helvetica-neue-medium";
+   color: #1D2129;
+   margin: 0px;
+ }
+
+ label {
+   font-size: 18px;
+   font-family: "helvetica-neue-medium";
+   color: gray;
+ }
+
+ .content {
+ }
+
+ .add-post {
+   border: 1px #DFE7EF solid;
+   height: 160px;
+   padding: 10px 10px;
+ }
+
+ input, select{
+   border: 1px #707070 solid;
+   font-size: 16px;
+   height: 90px;
+   width: 99.5%;
+   margin-top: 10px;
+ }
+
+ .post-button {
+   background-color: #3B5998;
+   font-size: 16px;
+   font-family: "helvetica-neue";
+   height: 30px;
+   width: 110px;
+   border: none;
+   color: white;
+   float: right;
+   margin-top: 8px;
+ }
+
+ .post-button:hover {
+   background-color: #5F7CB9;
+ }
+
+ .posts {
+ }
+
+ .post {
+   padding-top: 15px;
+   padding-bottom: 30px;
+   border-bottom: 0.75px #707070 solid;
+ }
+
+ .time {
+   font-family: "helvetica-neue-medium";
+   font-size: 14px;
+   color: #7A7F8B;
+   padding-top: 5px;
+   padding-bottom: 5px;
+ }
+
+ p {
+   font-family: "helvetica-neue";
+   font-size: 17px;
+ }
+
+ .name {
+   font-family: "helvetica-neue-medium";
+   font-weight: bold;
+   font-size: 30px;
+   color: #365899;
+   text-decoration: none;
+   padding-right: 15px;
+ }
+
+ .name:hover {
+   text-decoration: underline;
+ }
+
+ .likes {
+   display: flex;
+ }
+
+ .like-button {
+   display: inline-block;
+   font-size: 16px;
+   font-family: "helvetica-neue-medium";
+   text-align: left;
+   color: #3B5998;
+   margin-right: 10px;
+   text-decoration: none;
+ }
+
+ .like-button:hover {
+   text-decoration: underline;
+ }
+
+ .changes {
+   float: right;
+ }
+
+ .change {
+   font-size: 16px;
+   font-family: "helvetica-neue-medium";
+   text-align: right;
+   color: #3B5998;
+   margin-right: 10px;
+   text-decoration: none;
+
+ }
+
+ .change:hover {
+   text-decoration: underline;
+ }
+
+ .likes {
+   float: left;
+ }
+
+ .like {
+   font-size: 16px;
+   font-family: "helvetica-neue-medium";
+   text-align: right;
+   border: none;
+   border-left: #3B5998 solid 1px;
+   color: #3B5998;
+   padding-left: 8px;
+   margin-right: 10px;
+   text-decoration: none;
+ }
+
+ .like:hover {
+   text-decoration: underline;
+ }
+
+ .number {
+   font-family: "helvetica-neue-medium";
+   color: white;
+   background-color: #3B5998;
+   text-align: center;
+   font-size: 10px;
+   width: 15px;
+   padding: 3px;
+   border-radius: 4px;
+ }
+
+ .update-button {
+   background-color: #40B72B;
+   border-radius: 3px;
+   font-size: 20px;
+   font-family: Helvetica;
+   height: 35px;
+   width: 120px;
+   border: none;
+   color: white;
+   margin: 15px 0px;
+   float: right;
+ }
+
+ .update-button:hover {
+   background-color: #1B7C0A;
+ }
+
+ .update-form {
+   margin-top: 25px;
+ }

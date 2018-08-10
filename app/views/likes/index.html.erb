@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag "/homepage.css" %>
+
+<div class="header">
+  <img src="/acebook-logo.jpg" id="logo">
+  <div class="navigation">
+    <div class="links">
+      <%= link_to @user.first_name, user_path(@user.id) %>
+      <%= link_to "Home", '/' %>
+      <%= link_to "Log Out", logout_path, method: "delete" %>
+    </div>
+  </div>
+</div>
+
+
+<h1>Post liked by:</h1>
+<% @likes.reverse.each do |like| %>
+  <p><%= like.users.first_name %></p>
+<% end %>

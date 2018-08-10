@@ -1,0 +1,28 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=29c58086e9924e2ddcf251ad53952e9dd0ce40cc9b3e92e099be2a493a56a1a4
+language: ruby
+rvm:
+ - 2.5.0
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+  - sleep 3
+  - rails db:create
+  - rails db:migrate
+  - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+install:
+  - bundle install
+before_install:
+  - gem install bundler
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "fzG0X5mKXrNb4SFRyvtKENGz4LZKCzX7t1JgGZovvLGO+sQWdXD+HmnPH1n1JY+dzHqgTEuOOssyGR7DREV2nFeqtSMGDku91VKHHTJVRUHcQ2/H/mNLcA55w6wvjqS/qpDhoyYrPg0bsShsdENngNs0VXE/3MHjz0LDOr9Ibcmy1/LMbcgOGrrs9dMIGdv5doOAQeYPqSaMknukaYjaaw0RPABki2d07/AVZ43QnnoUQKERSjwS2XVaOczz7suGwsQu5jULOtMowELExN+JxVbgWAJ4v6QyUqOWDZOjHjeKQWVayC1jbzOGOeGgFD4LR5RZ3aRcKpyMFM+qj4loOenaARlITw2qgIYCjAX41ubEuPRfDgx8JcipZcidnzKW2EFASOfCLI9QEFKfKMxpmIG3kgkX7TBbt3lLbdQnJOJMkOb7qH6FRYl3Cvawq5UdjjBZJh4OSLgues2edmQPHLzzminsTpBbnEPpXuYbBmVHvEisE195SSLyZHhVpHJVOxFum4Aj673hgQhgXxr6gxZEAhc57nbsRzMRRRU6lS7jpTYAhsvCMqynyIphn53PNlEYiftrC/S5YYGrYrqeziO9Erm+uJLS2Uq6SF2WEseKu925n24U5MmruQnqi5Jml7cjWnF+CODV3EIiiVbBuMYbNeehtfAvjZB6O+6mTdo="
+  app: acebook-rails-keeping-it-rails
+  on:
+    repo: jeff1108/acebook-rails-keeping-it-rails
