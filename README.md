@@ -26,6 +26,10 @@ ___
 - **Deployment** - Heroku
 - **Version Control** - GitHub (see our team Git Policy [here](https://hackmd.io/Rg0cJ_UoTSSHRF6SIgklnA?view))
 
+### Documentation
+
+
+
 ### Launching the Application
 
 
@@ -40,12 +44,17 @@ $ rails s
 
 In your browser, navigate to `localhost:3000`
 
-
-Alternatively a [demo site is deployed onto Heroku](https://acebook-keeping-it-rails.herokuapp.com/).
+__Alternatively a [demo site is deployed onto Heroku](https://acebook-keeping-it-rails.herokuapp.com/).__
 
 ___
 
 ## Screenshots
+
+![sign-up](sign-up.png)
+
+![profile](profile.png)
+
+![homepage](homepage.png)
 
 ____
 
@@ -93,5 +102,23 @@ I want to be able to view my own profile with my posts only
 As a user,
 So that I can curate my content,
 I want to be able to update and delete my posts
+```
+
+### Implemented in the third sprint
+
+```
+As a user,
+So that I can show appreciation,
+I want to be able to like a post.
+```
+```
+As a user,
+So that I can see how successful my posts are,
+I want to be able to see who has like my posts.
+```
+```
+As a user,
+So that I can correct erroneous appreciations,
+I want to be able to unlike a post.
 ```
 ___
