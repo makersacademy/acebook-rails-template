@@ -8,6 +8,8 @@
   <% end %>
 </div>
 
+<h2><%= @user.first_name %>'s profile%></h2>
+
 <% @posts.reverse.each do |post| %>
   <p><%= post.users.first_name %></p>
   <p><%= post.message %></p>
