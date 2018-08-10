@@ -19,6 +19,11 @@
   </div>
 
   <div class="content">
+
+    <div class="flash">
+      <%= notice ? notice : '' %>
+    </div>
+
     <div class="add-post">
       <%= form_for @post do |form| %>
         <%= hidden_field_tag :user_id, @user.id %>
@@ -41,16 +46,9 @@
       <% end %>
         <%= link_to 'Like', user_post_likes_path(@user.id, post.id), method: "post", class: "like-button" %>
         <%= link_to 'Unlike', user_post_like_path(@user.id, post.id, @user.id), method: "delete", class: "like-button" %>
-        <%= link_to 'Likes', user_post_likes_path(@user.id, post.id), class: "change" %> <%= post.likes.length %>
+        <%= link_to 'Likes', user_post_likes_path(@user.id, post.id), class: "change" %> <div class="number"><%= post.likes.length %></div>
       </div>
     <% end %>
 
   </div>
-</div>
-
-
-
-
-<div>
-  <%= notice ? notice : '' %>
 </div>

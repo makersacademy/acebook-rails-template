@@ -60,8 +60,13 @@
    float: left;
  }
 
+ .update {
+   width: 60%;
+   float: left;
+ }
+
  #thumb {
-   width: 58px;
+   width: 200px;
  }
 
  .content {
@@ -69,7 +74,19 @@
    float: right;
  }
 
+ .flash {
+   font-family: "helvetica-neue-medium";
+   color: #40B72B;
+ }
+
  h1 {
+   font-size: 30px;
+   font-family: "helvetica-neue-medium";
+   color: #1D2129;
+   margin: 0px;
+ }
+
+ h2 {
    font-size: 30px;
    font-family: "helvetica-neue-medium";
    color: #1D2129;
@@ -181,4 +198,36 @@
 
  .change:hover {
    text-decoration: underline;
+ }
+
+ .number {
+   font-family: "helvetica-neue-medium";
+   color: white;
+   background-color: #3B5998;
+   text-align: center;
+   font-size: 10px;
+   width: 15px;
+   padding: 3px;
+   border-radius: 4px;
+ }
+
+ .update-button {
+   background-color: #40B72B;
+   border-radius: 3px;
+   font-size: 25px;
+   font-family: Helvetica;
+   height: 40px;
+   width: 150px;
+   border: none;
+   color: white;
+   margin: 15px 0px;
+   float: right;
+ }
+
+ .update-button:hover {
+   background-color: #1B7C0A;
+ }
+
+ .update-form {
+   margin-top: 25px;
  }
