@@ -1,20 +1,33 @@
-<div>
+<%= stylesheet_link_tag "/homepage.css" %>
+
+<div class="header">
+  <img src="/acebook-logo.jpg" id="logo">
+  <div class="navigation">
+    <div class="links">
+      <%= link_to @user.first_name, user_path(@user.id) %>
+      <%= link_to "Home", '/' %>
+      <%= link_to "Log Out", logout_path, method: "delete" %>
+    </div>
+  </div>
+</div>
+
+<div class="flash">
   <%= notice ? notice : '' %>
 </div>
 
-<div>
-  <%= link_to user_path(@user) do %>
-    Home
-  <% end %>
+<div class="update">
+<div class="post">
+<%= link_to @user.first_name, user_path(@user.id), class: "name" %>
+<div class="time"><%= time_ago_in_words(@post.created_at) %> ago</div>
+<p><%= @post.message %></p>
 </div>
 
-<p><%= @post.users.first_name %></p>
-<p><%= @post.message %></p>
-<p><%= time_ago_in_words(@post.created_at) %></p>
-
+<div class="update-form">
 <%= form_for @post do |form| %>
   <%= hidden_field_tag :user_id, @user.id %>
   <%= label_tag "Make your change, #{@user.first_name}" %>
   <%= text_field_tag :message %>
-  <%= form.submit "Update" %>
+  <%= form.submit "Update", class: "update-button" %>
 <% end %>
+</div>
+</div>

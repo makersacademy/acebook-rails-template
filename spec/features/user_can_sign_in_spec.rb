@@ -4,13 +4,13 @@ RSpec.feature "Session/ Sign-in", type: :feature do
 
   before(:each) do
     successful_sign_up
-    click_button 'Log Out'
+    click_link 'Log Out'
   end
 
   scenario "A user can sign in with valid credentials" do
     successful_sign_in
-    expect(page).to have_content("You have successfully logged in.")
-    expect(page).to have_content("Welcome test_first_name")
+    expect(page).to have_content("Welcome back to Acebook!")
+    expect(page).to have_content("test_first_name test_last_name")
   end
 
   scenario "A user signs in with invalid email address" do

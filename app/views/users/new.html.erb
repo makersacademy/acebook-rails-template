@@ -1,19 +1,46 @@
-<%= form_for @user do |form| %>
-  <%= form.label :first_name %>
-  <%= form.text_field :first_name %>
-  <%= form.label :last_name %>
-  <%= form.text_field :last_name %>
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-  <%= form.submit "Sign Up" %>
-<% end %>
+<%= stylesheet_link_tag "/entry.css" %>
 
-<%= link_to "Already have an Acebook account?", login_path %>
+<div class="header">
+  <div class="logo">
+    <img src="/acebook-logo.jpg" id="logo">cebook
+  </div>
+</div>
 
-<% if @user.errors.any? %>
-  <% @user.errors.messages.each do |message| %>
-  <p><%= message.last.last %></p>
-  <% end %>
-<% end %>
+<div class="body">
+  <div class="content">
+    <div class="welcome">
+      <h1>Create a new account</h1>
+      <h2>It's ace and it always will be.</h2>
+    </div>
+
+
+    <% if @user.errors.any? %>
+      <% @user.errors.messages.each do |message| %>
+      <h4><%= message.last.last %></h4>
+      <% end %>
+    <% end %>
+
+    <%= form_for @user do |form| %>
+      <div class="input-box">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name, placeholder: 'First Name' %><br>
+      </div>
+      <div class="input-box">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name, placeholder: 'Last Name' %><br>
+      </div>
+      <div class="input-box">
+        <%= form.label :email %>
+        <%= form.text_field :email, placeholder: 'Email' %><br>
+      </div>
+      <div class="input-box">
+        <%= form.label :password %>
+        <%= form.password_field :password, placeholder: 'Password' %><br>
+      </div>
+        <%= form.submit "Sign Up", class: 'entry-button' %>
+    <% end %>
+
+    <%= link_to "Already have an Acebook account?", login_path %>
+
+  </div>
+</div>
