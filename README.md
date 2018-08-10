@@ -24,9 +24,12 @@ ___
 - **Code Quality** - Rubocop, Code Climate
 - **Continuous Integration** - Travis CI
 - **Deployment** - Heroku
-- **Version Control** - GitHub (see our team Git Policy [here](https://hackmd.io/Rg0cJ_UoTSSHRF6SIgklnA?view))
+- **Version Control** - GitHub
 
-### Documentation
+### Our Documentation
+- __How we [use Git as a team](https://hackmd.io/Rg0cJ_UoTSSHRF6SIgklnA?view)__
+- __How to set up [Heroku on Rails](https://hackmd.io/Z1-fDKccQxuCSeyxDZ9lRg)__
+- __How to install [Travis on Rails](https://hackmd.io/gQXa22dWQ-a8WZ9K5rArrQ)__
 
 
 
