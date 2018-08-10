@@ -1,6 +1,6 @@
 # Acebook Challenge: Ruff Criminals
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/3b9e7532791176be3436/maintainability)](https://codeclimate.com/github/danieljonesdmj/acebook-ruff-criminals/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/3b9e7532791176be3436/test_coverage)](https://codeclimate.com/github/danieljonesdmj/acebook-ruff-criminals/test_coverage)
+[![Build Status](https://travis-ci.org/danieljonesdmj/acebook-ruff-criminals.svg?branch=master)](https://travis-ci.org/danieljonesdmj/acebook-ruff-criminals) [![Maintainability](https://api.codeclimate.com/v1/badges/3b9e7532791176be3436/maintainability)](https://codeclimate.com/github/danieljonesdmj/acebook-ruff-criminals/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/3b9e7532791176be3436/test_coverage)](https://codeclimate.com/github/danieljonesdmj/acebook-ruff-criminals/test_coverage)
 
 *Do you work in the 'garbage disposal' business? Are you looking to connect to your fellow 'misunderstood souls'? Then Ruff Criminal's Acebook is the place for you. Find accomplices, plan 'adventures' and let others know you haven't forgotten about the that time they snitched on you.*
 
