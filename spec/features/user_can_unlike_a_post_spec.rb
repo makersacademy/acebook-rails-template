@@ -9,10 +9,10 @@ RSpec.feature "Unlike a post", type: :feature do
   end
 
   scenario "A user can unlike a post" do
-    click_button "Like"
-    click_button "Unlike"
-    expect(page).to have_content('test_first_name My first post less than a minute Delete Update Likes 0')
-    expect(page).to_not have_content('test_first_name My first post less than a minute Delete Update Likes 1')
+    click_link "Like"
+    click_link "Unlike"
+    expect(page).to have_content('test_first_name less than a minute ago My first post Delete Update Like Unlike Likes 0')
+    expect(page).to_not have_content('test_first_name less than a minute ago My first post Delete Update Like Unlike Likes 1')
 
   end
 

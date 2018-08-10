@@ -9,7 +9,7 @@ RSpec.feature "User homepage", type: :feature do
   end
 
   scenario "A user can add a post to their own homepage" do
-    expect(page).to have_text('test_first_name My first post less than a minute')
+    expect(page).to have_text('test_first_name less than a minute ago My first post')
   end
 
   scenario "Posts display in reverse chronological order" do
@@ -17,7 +17,7 @@ RSpec.feature "User homepage", type: :feature do
     successful_sign_up_second_user
     click_link 'Log Out'
     second_user_post
-    expect(page).to have_content('test_first_name2 Second user post less than a minute Delete Update Likes 0 test_first_name My first post less than a minute ')
+    expect(page).to have_content('test_first_name2 less than a minute ago Second user post Delete Update Like Unlike Likes 0 test_first_name less than a minute ago My first post ')
   end
 
 end
