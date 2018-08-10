@@ -24,43 +24,40 @@ ___
 - **Code Quality** - Rubocop, Code Climate
 - **Continuous Integration** - Travis CI
 - **Deployment** - Heroku
-- **Version Control** - GitHub (see our team Git Policy [here](https://hackmd.io/Rg0cJ_UoTSSHRF6SIgklnA?view))
+- **Version Control** - GitHub
+
+### Our Documentation
+- __How we [use Git as a team](https://hackmd.io/Rg0cJ_UoTSSHRF6SIgklnA?view)__
+- __How to set up [Heroku on Rails](https://hackmd.io/Z1-fDKccQxuCSeyxDZ9lRg)__
+- __How to install [Travis on Rails](https://hackmd.io/gQXa22dWQ-a8WZ9K5rArrQ)__
+
+
 
 ### Launching the Application
 
 
-__You can run the application on your local machine bye following the below steps:__  
-Clone the repository
+__You can run the application on your local machine by following these steps:__  
+
 ```
-git clone https://github.com/jeff1108/acebook-rails-keeping-it-rails.git
-```
-Navigate to the repository
-```
-cd acebook-rails-keeping-it-keepingitrails
+$ git clone https://github.com/jeff1108/acebook-rails-keeping-it-rails.git
+$ cd acebook-rails-keeping-it-keepingitrails
+$ bundle install
+$ rails s
 ```
 
-Install all gem dependencies
-```
-bundle install
-```
+In your browser, navigate to `localhost:3000`
 
-Start server
-```
-rails s
-```
+__Alternatively a [demo site is deployed onto Heroku](https://acebook-keeping-it-rails.herokuapp.com/).__
 
-In your browser navigate to:
-```
-localhost:3000
-```
-
-__Alternatively a demo site is deployed onto heroku:__
-```
-https://acebook-keeping-it-rails.herokuapp.com/
-```
 ___
 
 ## Screenshots
+
+![sign-up](sign-up.png)
+
+![profile](profile.png)
+
+![homepage](homepage.png)
 
 ____
 
@@ -108,5 +105,23 @@ I want to be able to view my own profile with my posts only
 As a user,
 So that I can curate my content,
 I want to be able to update and delete my posts
+```
+
+### Implemented in the third sprint
+
+```
+As a user,
+So that I can show appreciation,
+I want to be able to like a post.
+```
+```
+As a user,
+So that I can see how successful my posts are,
+I want to be able to see who has like my posts.
+```
+```
+As a user,
+So that I can correct erroneous appreciations,
+I want to be able to unlike a post.
 ```
 ___
