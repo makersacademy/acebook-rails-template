@@ -14,7 +14,7 @@ RSpec.feature "User Profile", type: :feature do
 
   scenario "A user can click on a username profile" do
     click_link "test_first_name"
-    expect(page).to have_text('test_first_name\'s profile')
+    expect(page).to have_text('test_first_name test_last_name')
   end
 
 end

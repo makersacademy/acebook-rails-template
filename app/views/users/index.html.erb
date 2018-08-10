@@ -12,41 +12,43 @@
 </div>
 
 <div class="body">
+
+  <div class="full-name">
+    <img src="/blank-avatar.jpg" id="thumb">
+    <h1><%= @user.first_name + ' ' + @user.last_name %></h1>
+  </div>
+
   <div class="content">
-    <div class="welcome">
-      <h2>Welcome <%= @user.first_name %>!</h2>
+
+    <div class="flash">
+      <%= notice ? notice : '' %>
     </div>
+
     <div class="add-post">
       <%= form_for @post do |form| %>
         <%= hidden_field_tag :user_id, @user.id %>
-        <%= form.text_field :message, placeholder: "What's on your mind, #{@user.first_name}?", class: "input-box" %><br>
-        <%= form.submit "Post", class: 'post-button' %>
+        <%= label_tag "What's on your mind, #{@user.first_name}?" %>
+        <%= text_field_tag :message %>
+        <%= form.submit "Post", class: "post-button" %>
       <% end %>
     </div>
-    <div class="posts">
-      <% @posts.reverse.each do |post| %>
-        <div class="post">
+
+    <% @posts.reverse.each do |post| %>
+      <div class="post">
+        <div class="details">
           <%= link_to post.users.first_name, user_path(post.user_id), class: "name" %>
           <div class="time"><%= time_ago_in_words(post.created_at) %> ago</div>
-          <div class="message"<p><%= post.message %></p></div>
-            <% if @user.id == post.users.id %>
-              <p>
-                <%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete" %>
-                <%= link_to 'Update', user_post_path(@user.id, post.id), method: "get"%>
-              </p>
-            <% end %>
-            <%= link_to 'Likes', user_post_likes_path(@user.id, post.id) %> <%= post.likes.length %>
-            <p>
-              <%= button_to 'Like', user_post_likes_path(@user.id, post.id), method: "post", class: 'like-button'%>
-              <%= button_to 'Unlike', user_post_like_path(@user.id, post.id, @user.id), method: "delete", class: 'like-button' %>
-            </p>
         </div>
+      <p><%= post.message %></p>
+      <% if @user.id == post.users.id %>
+        <%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete", class: "change" %>
+        <%= link_to 'Update', user_post_path(@user.id, post.id), method: "get", class: "change" %><br>
       <% end %>
-    </div>
+        <%= link_to 'Like', user_post_likes_path(@user.id, post.id), method: "post", class: "like-button" %>
+        <%= link_to 'Unlike', user_post_like_path(@user.id, post.id, @user.id), method: "delete", class: "like-button" %>
+        <%= link_to 'Likes', user_post_likes_path(@user.id, post.id), class: "change" %> <div class="number"><%= post.likes.length %></div>
+      </div>
+    <% end %>
+
   </div>
-</div>
-
-
-<div>
-  <%= notice ? notice : '' %>
 </div>

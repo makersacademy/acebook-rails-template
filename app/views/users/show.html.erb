@@ -1,24 +1,43 @@
-<div>
-  <%= notice ? notice : '' %>
-</div>
+<%= stylesheet_link_tag "/homepage.css" %>
 
-<div>
-  <%= link_to '/' do %>
-    Home
-  <% end %>
-</div>
-
-<h2><%= @user.first_name %>'s profile%></h2>
-
-<% @posts.reverse.each do |post| %>
-  <p><%= post.users.first_name %></p>
-  <p><%= post.message %></p>
-  <p><%= time_ago_in_words(post.created_at) %></p>
-
-  <div>
-    <% if @user.id == post.users.id %>
-      <%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete" %>
-      <%= link_to 'Update', user_post_path(@user.id, post.id), method: "get" %>
-    <% end %>
+<div class="header">
+  <img src="/acebook-logo.jpg" id="logo">
+  <div class="navigation">
+    <div class="links">
+      <%= link_to @user.first_name, user_path(@user.id) %>
+      <%= link_to "Home", '/' %>
+      <%= link_to "Log Out", logout_path, method: "delete" %>
+    </div>
   </div>
-<% end %>
+</div>
+
+<div class="body">
+
+  <div class="full-name">
+    <h1><%= @user.first_name + ' ' + @user.last_name %></h1>
+  </div>
+
+  <div class="content">
+
+    <div>
+      <%= notice ? notice : '' %>
+    </div>
+
+    <% @posts.reverse.each do |post| %>
+    <div class="post">
+      <div class="name"><%= post.users.first_name %></div>
+      <div class="time"><%= time_ago_in_words(post.created_at) %></div>
+      <p><%= post.message %></p>
+
+      <div>
+        <% if @user.id == post.users.id %>
+          <%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete", class: "change" %>
+          <%= link_to 'Update', user_post_path(@user.id, post.id), method: "get", class: "change" %>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+
+</div>
