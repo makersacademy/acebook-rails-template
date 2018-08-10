@@ -18,7 +18,7 @@
 <div class="update">
 <div class="post">
 <%= link_to @user.first_name, user_path(@user.id), class: "name" %>
-<div class="time"><%= time_ago_in_words(@post.created_at) %></div>
+<div class="time"><%= time_ago_in_words(@post.created_at) %> ago</div>
 <p><%= @post.message %></p>
 </div>
 

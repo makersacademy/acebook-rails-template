@@ -13,7 +13,9 @@
       <h2>Your account is right around the corner.</h2>
     </div>
 
-    <%= alert ? alert : '' %><br>
+    <div class="alert">
+      <%= alert ? alert : '' %><br>
+    </div>
 
     <%= form_tag url_for('/session') do |form| %>
       <div class="input-box">

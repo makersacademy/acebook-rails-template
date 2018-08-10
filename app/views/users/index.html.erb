@@ -15,8 +15,10 @@
 
   <div class="full-name">
     <img src="/blank-avatar.jpg" id="thumb">
-    <h1><%= @user.first_name + ' ' + @user.last_name %></h1>
+    <div class="title"><h1><%= @user.first_name + ' ' + @user.last_name %></h1></div>
   </div>
+
+
 
   <div class="content">
 
@@ -41,13 +43,17 @@
         </div>
       <p><%= post.message %></p>
       <% if @user.id == post.users.id %>
-        <%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete", class: "change" %>
-        <%= link_to 'Update', user_post_path(@user.id, post.id), method: "get", class: "change" %><br>
+        <div class="changes">
+          <%= link_to 'Delete', user_post_path(@user.id, post.id), method: "delete", class: "change" %>
+          <%= link_to 'Update', user_post_path(@user.id, post.id), method: "get", class: "change" %><br>
+        </div>
       <% end %>
-        <%= link_to 'Like', user_post_likes_path(@user.id, post.id), method: "post", class: "like-button" %>
-        <%= link_to 'Unlike', user_post_like_path(@user.id, post.id, @user.id), method: "delete", class: "like-button" %>
-        <%= link_to 'Likes', user_post_likes_path(@user.id, post.id), class: "change" %> <div class="number"><%= post.likes.length %></div>
-      </div>
+        <div class="likes">
+          <%= link_to 'Like', user_post_likes_path(@user.id, post.id), method: "post", class: "like-button" %>
+          <%= link_to 'Unlike', user_post_like_path(@user.id, post.id, @user.id), method: "delete", class: "like-button" %>
+          <%= link_to 'Likes', user_post_likes_path(@user.id, post.id), class: "like" %> <div class="number"><%= post.likes.length %></div>
+        </div>
+    </div>
     <% end %>
 
   </div>

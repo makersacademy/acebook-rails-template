@@ -35,6 +35,14 @@
    padding: 8px;
  }
 
+ #thumb {
+   width: 58px;
+ }
+
+ #big {
+   width: 90%;
+ }
+
  .navigation {
    float: right;
  }
@@ -56,17 +64,22 @@
  }
 
  .full-name {
-   width: 30%;
+   width: 26%;
    float: left;
+   margin: 10px;
+ }
+
+ .title {
+   float: right;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   height: 30px;
+   width: 180px;
  }
 
  .update {
    width: 60%;
    float: left;
- }
-
- #thumb {
-   width: 200px;
  }
 
  .content {
@@ -136,8 +149,8 @@
  }
 
  .post {
-   padding-bottom: 15px;
-   padding-top: 5px;
+   padding-top: 15px;
+   padding-bottom: 30px;
    border-bottom: 0.75px #707070 solid;
  }
 
@@ -177,7 +190,6 @@
    font-family: "helvetica-neue-medium";
    text-align: left;
    color: #3B5998;
-   margin-top: 10px;
    margin-right: 10px;
    text-decoration: none;
  }
@@ -186,17 +198,41 @@
    text-decoration: underline;
  }
 
+ .changes {
+   float: right;
+ }
+
  .change {
    font-size: 16px;
    font-family: "helvetica-neue-medium";
    text-align: right;
-   border: none;
    color: #3B5998;
+   margin-right: 10px;
+   text-decoration: none;
+
+ }
+
+ .change:hover {
+   text-decoration: underline;
+ }
+
+ .likes {
+   float: left;
+ }
+
+ .like {
+   font-size: 16px;
+   font-family: "helvetica-neue-medium";
+   text-align: right;
+   border: none;
+   border-left: #3B5998 solid 1px;
+   color: #3B5998;
+   padding-left: 8px;
    margin-right: 10px;
    text-decoration: none;
  }
 
- .change:hover {
+ .like:hover {
    text-decoration: underline;
  }
 
@@ -214,10 +250,10 @@
  .update-button {
    background-color: #40B72B;
    border-radius: 3px;
-   font-size: 25px;
+   font-size: 20px;
    font-family: Helvetica;
-   height: 40px;
-   width: 150px;
+   height: 35px;
+   width: 120px;
    border: none;
    color: white;
    margin: 15px 0px;

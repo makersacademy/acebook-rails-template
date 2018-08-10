@@ -36,7 +36,7 @@
 en:
   session:
      create:
-       notice: "Welcome back to Acebook!."
+       notice: "Welcome back to Acebook!"
   users:
      create:
        notice: "Welcome to Acebook!"

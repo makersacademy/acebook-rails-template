@@ -13,9 +13,10 @@
       <h2>It's ace and it always will be.</h2>
     </div>
 
+
     <% if @user.errors.any? %>
       <% @user.errors.messages.each do |message| %>
-      <p><%= message.last.last %></p>
+      <h4><%= message.last.last %></h4>
       <% end %>
     <% end %>
 

@@ -12,7 +12,7 @@
 </div>
 
 
-<h1>Post liked <b></b>y:</h1>
+<h1>Post liked by:</h1>
 <% @likes.reverse.each do |like| %>
   <p><%= like.users.first_name %></p>
 <% end %>

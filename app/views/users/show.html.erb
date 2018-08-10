@@ -13,9 +13,10 @@
 
 <div class="body">
 
-  <div class="full-name">
-    <h1><%= @user.first_name + ' ' + @user.last_name %></h1>
-  </div>
+    <div class="full-name">
+      <img src="/blank-avatar.jpg" id="big">
+      <h1><%= @user.first_name + ' ' + @user.last_name %></h1>
+    </div>
 
   <div class="content">
 
@@ -26,7 +27,7 @@
     <% @posts.reverse.each do |post| %>
     <div class="post">
       <div class="name"><%= post.users.first_name %></div>
-      <div class="time"><%= time_ago_in_words(post.created_at) %></div>
+      <div class="time"><%= time_ago_in_words(post.created_at) %> ago</div>
       <p><%= post.message %></p>
 
       <div>
