@@ -1,5 +1,13 @@
 # AceBook
 
+## Makers Group Engineering Project, Weeks 8 & 9
+
+### Team members:
+- Olive Brady  
+- Marcus Kerr  
+- Angela Wolff  
+- Danielle Booysen  
+
 Fork this repository to `acebook-teamname` and customize
 the below**
 
