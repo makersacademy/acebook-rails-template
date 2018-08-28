@@ -1,5 +1,8 @@
 # Our Team Charter
 
+Team Card Wall: https://trello.com/b/ArBRnnAK/acebook	
+Team Learning Documentation : https://medium.com/@team.and.a.half	
+
 ### We will:
 1. Have a standup every morning @ 9:30AM-10AM  
   * In this standup, each of us will confirm with the group what they're doing that day.  
@@ -15,3 +18,7 @@
 4. Respect others - treat others like how you want to be treated.  
 5. It is okay to take breaks (max 15 minutes).
 6. If no progress is done in 1 hour, consult team members before proceeding.  
+
+Known absentees:
+Evie: This Friday to Next Tuesday (family wedding :wedding:)
+Cui Li: Next Wednesday (graduation :school_satchel:)
