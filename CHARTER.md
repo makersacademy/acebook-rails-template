@@ -21,4 +21,4 @@ Team Learning Documentation : https://medium.com/@team.and.a.half
 
 Known absentees:  
 Evie: This Friday to Next Tuesday (family wedding :wedding:)  
-Cui Li: Next Wednesday (graduation :school_satchel:)  
+Cui Li: Next Wednesday (graduation :mortar_board:)  
