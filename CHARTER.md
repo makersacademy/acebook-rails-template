@@ -19,6 +19,6 @@ Team Learning Documentation : https://medium.com/@team.and.a.half
 5. It is okay to take breaks (max 15 minutes).
 6. If no progress is done in 1 hour, consult team members before proceeding.  
 
-Known absentees:
-Evie: This Friday to Next Tuesday (family wedding :wedding:)
-Cui Li: Next Wednesday (graduation :school_satchel:)
+Known absentees:  
+Evie: This Friday to Next Tuesday (family wedding :wedding:)  
+Cui Li: Next Wednesday (graduation :school_satchel:)  
