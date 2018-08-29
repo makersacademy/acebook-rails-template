@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  context "validations" do
+    
+    it "requires an email" do
+      user = User.new(first_name: "Ang", last_name: "Wolff", email: "")
+      expect(user.valid?).to eq(false)
+    end
+  end
 end
