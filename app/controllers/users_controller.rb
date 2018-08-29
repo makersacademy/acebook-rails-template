@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to :home, notice: 'Account created successfully'
+      redirect_to '/home'
+      # :home, notice: 'Account created successfully'
     else
       redirect_to '/signup'
     end
