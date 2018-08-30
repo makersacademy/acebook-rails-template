@@ -2,9 +2,9 @@ require 'simplecov'
 # SimpleCov.start 'rails' only good for checking all groups
 SimpleCov.minimum_coverage 80
 SimpleCov.start do
-  add_group "Models", "app/models"
-  add_group "Controllers", "app/controllers"
-  add_group "Helpers", "app/helpers"
+  add_group 'Models', 'app/models'
+  add_group 'Controllers', 'app/controllers'
+  add_group 'Helpers', 'app/helpers'
 end
 
 # frozen_string_literal: true
