@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe UsersController, type: :controller do
+RSpec.describe SessionsController, type: :controller do
   describe 'GET #new' do
     it 'returns http success' do
       get :new
