@@ -12,13 +12,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20_170_526_114_520) do
+=======
+ActiveRecord::Schema.define(version: 20180830103256) do
+
+>>>>>>> 5b35980c717e8d76d1944509b8ec7a5095246076
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
+<<<<<<< HEAD
   create_table 'posts', force: :cascade do |t|
     t.string 'message'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+=======
+  create_table "posts", force: :cascade do |t|
+    t.string "message"
+    t.string "user_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> 5b35980c717e8d76d1944509b8ec7a5095246076
   end
 end
