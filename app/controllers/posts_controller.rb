@@ -1,3 +1,8 @@
+# frozen_string_literal: true
+
+# Add this line in every controller where we wish to restrict view to only signed in users
+# before_filter :authorize
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
