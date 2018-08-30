@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+ - 2.5.0
+ - jruby
+os: osx
+script:
+  - bundle exec rake spec
