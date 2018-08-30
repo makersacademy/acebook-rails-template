@@ -1,75 +1,78 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/spec/controllers/pages_controller_spec.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/spec/controllers/pages_controller_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
+        null
+      ],
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/spec/rails_helper.rb": [
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/spec/rails_helper.rb": [
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/environment.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/environment.rb": [
         null,
         null,
         null,
@@ -78,7 +81,7 @@
         null,
         1
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/application.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/application.rb": [
         null,
         null,
         1,
@@ -100,14 +103,14 @@
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/boot.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/boot.rb": [
         null,
         null,
         1,
         null,
         1
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/environments/test.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/environments/test.rb": [
         null,
         null,
         1,
@@ -153,7 +156,7 @@
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/initializers/application_controller_renderer.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -163,7 +166,7 @@
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/initializers/assets.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -181,7 +184,7 @@
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/initializers/backtrace_silencers.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -192,16 +195,8 @@
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/initializers/cookies_serializer.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
@@ -209,7 +204,15 @@
         null,
         1
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/initializers/inflections.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -229,7 +232,7 @@
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/initializers/mime_types.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/initializers/mime_types.rb": [
         null,
         null,
         null,
@@ -237,7 +240,7 @@
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/initializers/wrap_parameters.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -255,7 +258,7 @@
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/config/routes.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/config/routes.rb": [
         null,
         null,
         1,
@@ -275,29 +278,32 @@
         1,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/app/helpers/application_helper.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/app/helpers/application_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/app/helpers/pages_helper.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/app/helpers/pages_helper.rb": [
+        null,
+        null,
         1,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/app/helpers/users_helper.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/app/helpers/users_helper.rb": [
+        null,
+        null,
         1,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/app/controllers/pages_controller.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/app/controllers/pages_controller.rb": [
+        null,
+        null,
         1,
-        null,
         1,
-        null,
-        null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/app/controllers/application_controller.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/app/controllers/application_controller.rb": [
         null,
         null,
         1,
@@ -311,44 +317,42 @@
         1,
         0,
         null,
+        null
+      ],
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/spec/controllers/posts_controller_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/spec/controllers/posts_controller_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/app/controllers/posts_controller.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/app/controllers/posts_controller.rb": [
         null,
         null,
         null,
@@ -375,8 +379,8 @@
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/spec/controllers/users_controller_spec.rb": [
-        1,
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/spec/controllers/users_controller_spec.rb": [
+        null,
         null,
         1,
         null,
@@ -384,37 +388,36 @@
         1,
         1,
         1,
-        null,
+        1,
         null,
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/app/controllers/users_controller.rb": [
-        1,
-        null,
-        1,
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/app/controllers/users_controller.rb": [
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
-        null,
         1,
         null,
         1,
         0,
+        0,
+        0,
+        0,
         null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/spec/features/user_can_submit_posts_spec.rb": [
         null,
         null,
         1,
@@ -429,24 +432,9 @@
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/spec/helpers/pages_helper_spec.rb": [
-        1,
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/spec/helpers/pages_helper_spec.rb": [
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/spec/helpers/users_helper_spec.rb": [
         1,
         null,
         null,
@@ -463,7 +451,26 @@
         1,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/spec/models/post_spec.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/spec/helpers/users_helper_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/spec/models/post_spec.rb": [
         null,
         null,
         1,
@@ -472,23 +479,21 @@
         2,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/app/models/post.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/app/models/post.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/app/models/application_record.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/app/models/application_record.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/spec/models/user_spec.rb": [
-        1,
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/spec/models/user_spec.rb": [
         null,
-        1,
         null,
         1,
         null,
@@ -496,8 +501,6 @@
         1,
         1,
         null,
-        null,
-        1,
         1,
         1,
         null,
@@ -512,10 +515,29 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null,
         1,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         1,
@@ -524,16 +546,23 @@
         null,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/app/models/user.rb": [
-        1,
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/app/models/user.rb": [
+        null,
         null,
         1,
         1,
         1,
         1,
+        1,
+        1,
+        null,
+        1,
+        1,
         null
       ],
-      "/Users/marcus/Projects/Makers Academy/Week8/acebook-ROF/spec/views/users/new.html.erb_spec.rb": [
+      "/Users/whatapalaver/Documents/GitHub/Makers_Wk8/acebook-ROF/spec/views/users/new.html.erb_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -541,6 +570,6 @@
         null
       ]
     },
-    "timestamp": 1535560856
+    "timestamp": 1535625632
   }
 }
