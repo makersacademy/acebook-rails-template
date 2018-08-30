@@ -1,8 +1,19 @@
+services:
+    - postgresql
+
+addons:
+    postgresql: '9.6'
+
 language: ruby
+
 rvm:
  - 2.5.0
+
 os: osx
+
 before_script:
-  - bundle exec rails db:migrate
+    - cp config/database.yml.travis config/database.yml
+
 script:
-  - bundle exec rake spec
+  - bundle exec rspec
+  - bundle exec rubocop
