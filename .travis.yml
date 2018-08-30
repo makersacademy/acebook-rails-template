@@ -9,8 +9,6 @@ language: ruby
 rvm:
  - 2.5.0
 
-os: osx
-
 before_script:
     - cp config/database.yml.travis config/database.yml
 
