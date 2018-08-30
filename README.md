@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/Whatapalaver/acebook-ROF.svg?branch=master)](https://travis-ci.com/Whatapalaver/acebook-ROF)
 # AceBook
 
 ## Makers Group Engineering Project, Weeks 8 & 9
