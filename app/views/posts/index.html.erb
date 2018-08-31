@@ -1,7 +1,36 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+<% if current_user %>
+  Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
+<% else %>
+  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<h2> Team and a half Acebook </h2>
+  <div class="posts-list">
+    <% @posts.each do |post| %>
+    <div class="single-post">
+      <p><%= post.user_name %></p>
+      <p><%= post.message %></p>
+      <p><%= post.created_at %></p>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="new-post-link">
+    <%= link_to new_post_path do %>
+      New post
+    <% end %>
+  </div>
+
+<%= yield %>
+
+</body>
+</html>
