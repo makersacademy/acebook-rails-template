@@ -5,14 +5,13 @@
     <title>Show posts</title>
   </head>
   <body>
-
-<h2> Team and a half Acebook </h2>
+    
   <div class="posts-list">
     <% @posts.each do |post| %>
     <div class="single-post">
       <p><strong><%= post.user_name %></strong></p>
       <p><%= post.message %></p>
-      <p><%= post.created_at %></p>
+      <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
     </div>
     <p>Comments:</p>
     <!-- Loop for comments -->
@@ -29,14 +28,14 @@
       <!-- array may not work, it generates a view for just the post-->
       <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
         <p>
-          leave a comment:<br>
-          <%= form.text_area :body %>
+          <%= form.text_area :body, placeholder: "Leave a comment" %>
         </p>
         <p>
           <%= form.submit %>
         </p>
       <% end %>
     </div>
+    <br>
     <% end %>
   </div>
 
