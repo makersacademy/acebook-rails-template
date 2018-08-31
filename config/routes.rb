@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'posts#index'
+  root 'users#index'
 
   get 'sessions/new'
   get 'sessions/create'

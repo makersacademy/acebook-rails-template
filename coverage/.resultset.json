@@ -348,10 +348,39 @@
         null,
         null
       ],
+      "/Users/marek/Projects/acebook-Team-and-a-half/spec/features/user_can_sign_in_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/marek/Projects/acebook-Team-and-a-half/spec/features/user_can_submit_posts_spec.rb": [
         null,
         null,
         1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/marek/Projects/acebook-Team-and-a-half/spec/features/users_can_sign_up_spec.rb": [
+        1,
+        null,
+        null,
         null,
         null,
         null,
@@ -454,6 +483,6 @@
         null
       ]
     },
-    "timestamp": 1535708819
+    "timestamp": 1535713760
   }
 }
