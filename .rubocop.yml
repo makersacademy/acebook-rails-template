@@ -1,0 +1,11 @@
+Metrics/LineLength:
+  Max: 120
+
+Documentation:
+  Enabled: false
+
+Style/MixinUsage:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
