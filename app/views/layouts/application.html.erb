@@ -10,16 +10,25 @@
   </head>
 
   <body>
-    <h1>Team and a half Acebook </h1>
-    <% if current_user %>
-      Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
-    <% else %>
-      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-    <% end %>
-
-    <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+    <div id='header'>
+      <p id='header_title'>Team and a half Acebook</p>
+      <% if current_user %>
+        <p id='header_welcome_text'>
+          Welcome, <%= current_user.name %>
+        </p>
+        <p id='header_logout_link'>
+          <%= link_to 'Logout', '/logout' %>
+        </p>
+      <% else %>
+        <p id='header_login_link'>
+          <%= link_to 'Login', '/login' %>
+        </p>
       <% end %>
+    </div>
+
+    <!-- <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %> -->
 
     <%= yield %>
   </body>
