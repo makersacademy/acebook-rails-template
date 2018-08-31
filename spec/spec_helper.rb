@@ -1,4 +1,8 @@
 require 'simplecov'
+# This is the preferred coverage checking method but we would fail in the early days:
+# SimpleCov.minimum_coverage_by_file 80
+# This is temporary coverage target:
+SimpleCov.minimum_coverage 85
 SimpleCov.start
 # frozen_string_literal: true
 
