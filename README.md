@@ -1,12 +1,14 @@
 # AceBook
 ### A Facebook Clone
 
+[![Build Status](https://travis-ci.org/fabjab86/acebook-Team-and-a-half.svg?branch=master)](https://travis-ci.org/fabjab86/acebook-Team-and-a-half)
+
 Fork this repository to `acebook-teamname` and customize
 the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-The card wall is here: <please update>
+The card wall is <a href="https://trello.com/b/ArBRnnAK/acebook">here</a> 
 
 ## User Stories
 
