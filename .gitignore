@@ -21,4 +21,7 @@
 /yarn-error.log
 
 .byebug_history
-/coverage/*
+
+# Ignore test-related files
+/coverage.data
+/coverage/
