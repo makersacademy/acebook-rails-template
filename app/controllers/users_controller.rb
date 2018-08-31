@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       flash[:success] = 'Yay! you are now signed up!'
       session[:user_id] = user.id
       session[:user_name] = user.name
-      redirect_to '/posts/new'
+      redirect_to '/posts'
     else
       redirect_to '/signup'
     end
