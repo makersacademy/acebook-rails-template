@@ -106,5 +106,5 @@ I want a notification if my @name is used
 
 As a team we will regularly blog our highs and lows on Medium. We will also be filling out our indiviudal Diodes to keep track of our progress. We have two daily stand-up sessions to ensure we all know exactly what tasks we need to complete followed by a mid evening retro session to recap on the day. 
 
-** link to Medium blog **
+** [Team ROF Medium blog] (https://medium.com/team-rof) **
 
