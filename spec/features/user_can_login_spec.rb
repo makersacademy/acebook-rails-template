@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
-require 'web_helper'
+require 'features/web_helper'
 
 RSpec.feature 'User login', type: :feature do
   before(:each) { 
