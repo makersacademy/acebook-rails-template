@@ -13,9 +13,9 @@
       <p class="alert"><%= alert %></p>
 
     <% if current_user %>
-      Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
+      Signed in as <%= current_user.first_name %> | <%= link_to "Logout", destroy_user_session_path %>
     <% else %>
-      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+      <%= link_to 'Login', new_user_session_path %> | <%= link_to 'Signup', new_user_registration_path %>
     <% end %>
     
     <% flash.each do |key, value| %>

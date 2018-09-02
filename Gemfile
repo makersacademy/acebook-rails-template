@@ -41,10 +41,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
   gem 'pry'
   gem 'guard-rspec'
   gem 'spring-commands-rspec'
   gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
 end
 
 group :development do

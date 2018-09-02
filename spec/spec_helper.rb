@@ -1,4 +1,7 @@
 require 'simplecov'
+require_relative 'support/controller_helpers'
+require 'devise'
+
 # This is the preferred coverage checking method but we would fail in the early days:
 # SimpleCov.minimum_coverage_by_file 80
 # This is temporary coverage target:
