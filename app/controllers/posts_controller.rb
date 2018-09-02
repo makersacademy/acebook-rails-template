@@ -9,15 +9,20 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(post_params.merge(user_id: current_user.id))
     redirect_to posts_url
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc).all
+    @users = User.all
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:message)
