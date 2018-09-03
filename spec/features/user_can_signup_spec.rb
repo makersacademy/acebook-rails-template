@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'User Signup', type: :feature do
-  before(:each) { visit('/') }
+  before(:each) { visit(new_user_registration_path) }
 
   scenario 'user can create a new user account' do
     fill_in 'user_first_name', with: 'Jack'
@@ -9,8 +9,8 @@ RSpec.feature 'User Signup', type: :feature do
     fill_in 'user_email', with: 'js@test.com'
     fill_in 'user_password', with: 'foobar'
     fill_in 'user_password_confirmation', with: 'foobar'
-    click_button 'Submit'
-    expect(page).to have_content('Successfully signed up')
+    click_button 'Sign up'
+    expect(page).to have_content('You have signed up successfully.')
   end
 
 end
