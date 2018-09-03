@@ -6,14 +6,36 @@
   </head>
   <body>
 
-<h2> Team and a half Acebook </h2>
   <div class="posts-list">
     <% @posts.each do |post| %>
     <div class="single-post">
-      <p><%= post.user_name %></p>
+      <p><strong><%= post.user_name %></strong></p>
       <p><%= post.message %></p>
-      <p><%= post.created_at %></p>
+      <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
     </div>
+    <p>Comments:</p>
+    <!-- Loop for comments -->
+    <% post.comments.each do |comment| %>
+      <div class="single-comment">
+        <p>
+          <strong><%= comment.user_name %></strong>: <%= comment.body %>
+        </p>
+      </div>
+    <!-- End Loop -->
+    <% end %>
+    <div>
+      <!-- Leave a comment form-->
+      <!-- array may not work, it generates a view for just the post-->
+      <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+        <p>
+          <%= form.text_area :body, placeholder: "Leave a comment" %>
+        </p>
+        <p>
+          <%= form.submit %>
+        </p>
+      <% end %>
+    </div>
+    <br>
     <% end %>
   </div>
 
@@ -22,8 +44,6 @@
       New post
     <% end %>
   </div>
-
-<%= yield %>
 
 </body>
 </html>

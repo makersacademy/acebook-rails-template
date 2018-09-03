@@ -10,16 +10,21 @@
   </head>
 
   <body>
-    <h1>Team and a half Acebook </h1>
-    <% if current_user %>
-      Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
-    <% else %>
-      <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-    <% end %>
-
-    <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+    <div id='header'>
+      <p id='header_title' class='vertically_centered'>Team and a half Acebook</p>
+      <% if current_user %>
+        <p id='header_welcome_text' class='vertically_centered'>
+          Welcome, <%= current_user.name %>
+        </p>
+        <%= link_to 'Logout', '/logout', class: "header_log_in_or_out_link vertically_centered" %>
+      <% else %>
+        <%= link_to 'Login', '/login', class: "header_log_in_or_out_link vertically_centered" %>
       <% end %>
+    </div>
+
+    <!-- <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %> -->
 
     <%= yield %>
   </body>
