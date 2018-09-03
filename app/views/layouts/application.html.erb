@@ -5,7 +5,7 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -23,9 +23,9 @@
       <% end %>
     </div>
 
-    <!-- <% flash.each do |key, value| %>
+    <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %> -->
+    <% end %>
 
     <%= yield %>
 

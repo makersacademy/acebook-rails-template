@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new; end
 
   def create
@@ -10,6 +11,7 @@ class UsersController < ApplicationController
       session[:user_name] = user.name
       redirect_to '/posts'
     else
+      flash[:error] = 'Sorry, username not available!'
       redirect_to '/signup'
     end
   end

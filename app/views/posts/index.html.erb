@@ -10,10 +10,12 @@
   <div class="posts-list">
     <% @posts.each do |post| %>
     <div class="single-post">
-        <tr>
-          <td><p><strong><%= post.user_name %></strong></p></td>
-          <td><p><%= post.message %></p></td>
-          <td><small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small></td>
+            <p>
+              <big><strong><%= post.user_name %></strong><br>
+              <%= post.message %><br></big>
+              <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
+            </p>
+
           <% if post.user_name === current_user.name %>
             <td><%= link_to 'Edit', edit_post_path(post) %></td>
             <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
