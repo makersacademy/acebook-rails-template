@@ -13,7 +13,7 @@
       <p><%= post.message %></p>
       <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
     </div>
-    <button class='collapsible'><%= post.comments.length %> comments</button>
+    <button class='collapsible commentsButton'><%= post.comments.length %> comments</button>
     <div class='commentsContainer'>
       <!-- Loop for comments -->
       <% post.comments.each do |comment| %>
@@ -40,7 +40,7 @@
     <br>
     <% end %>
   </div>
-
+  <br>
   <div class="new-post-link">
     <%= link_to new_post_path do %>
       New post
