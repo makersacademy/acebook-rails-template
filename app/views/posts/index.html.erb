@@ -20,33 +20,34 @@
           <% end %>
         </tr>
     </div>
-
-    <p>Comments:</p>
-    <!-- Loop for comments -->
-    <% post.comments.each do |comment| %>
-      <div class="single-comment">
-        <p>
-          <strong><%= comment.user_name %></strong>: <%= comment.body %>
-        </p>
-      </div>
-    <!-- End Loop -->
-    <% end %>
-    <div>
-      <!-- Leave a comment form-->
-      <!-- array may not work, it generates a view for just the post-->
-      <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-        <p>
-          <%= form.text_area :body, placeholder: "Leave a comment" %>
-        </p>
-        <p>
-          <%= form.submit %>
-        </p>
+    <button class='collapsible commentsButton'><%= post.comments.length %> comments</button>
+    <div class='commentsContainer'>
+      <!-- Loop for comments -->
+      <% post.comments.each do |comment| %>
+        <div class="single-comment">
+          <p>
+            <strong><%= comment.user_name %></strong>: <%= comment.body %>
+          </p>
+        </div>
+      <!-- End Loop -->
       <% end %>
+      <div>
+        <!-- Leave a comment form-->
+        <!-- array may not work, it generates a view for just the post-->
+        <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+          <p>
+            <%= form.text_area :body, placeholder: "Leave a comment" %>
+          </p>
+          <p>
+            <%= form.submit %>
+          </p>
+        <% end %>
+      </div>
     </div>
     <br>
     <% end %>
   </div>
-
+  <br>
   <div class="new-post-link">
     <%= link_to new_post_path do %>
       New post
