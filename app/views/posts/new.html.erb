@@ -1,6 +1,1 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-
-  <%= form.submit "Submit" %>
-<% end %>
+<%= render "form", post: @post %>
