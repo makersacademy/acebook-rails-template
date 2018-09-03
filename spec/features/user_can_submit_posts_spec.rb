@@ -6,7 +6,7 @@ RSpec.feature 'Timeline', type: :feature do
 
   scenario 'can create a post with a logged in user' do
     login_as create( :user ), scope: :user
-    click_link 'New post'
+    visit new_post_path
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
     expect(page).to have_content('Hello, world!')

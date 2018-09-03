@@ -14,7 +14,7 @@
 
       <div class="navbar-brand mb-0 h1"><%= link_to 'Home', root_path, class: 'navbar-brand' %>
         <% if user_signed_in? %>
-          Logged in as <strong><%= current_user %></strong>.
+          Logged in as <strong><%= current_user.first_name %></strong>.
           <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-brand' %> |
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-brand'  %>
         <% else %>
