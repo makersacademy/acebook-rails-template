@@ -1,0 +1,51 @@
+<br>
+<br>
+<strong>Sign up<strong>
+
+<%= form_for :user, url: '/users' do |f| %>
+<br>
+<div class ="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+</div>
+
+<div class = "form-group">
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+<br>
+</div>
+
+<div class = "form=group">
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+</div>
+
+  <%= f.submit "Submit" %>
+
+<% end %>
+
+<br>
+<br>
+
+<strong>Sign In</strong>
+<br>
+<%= form_tag '/login' do %>
+
+<br>
+<div class = "form-group">
+  <strong>Email: </strong>
+  <%= text_field_tag :email %>
+  <br>
+</div>
+
+<div class = "form-group">
+  <strong>Password: </strong>
+  <%= password_field_tag :password %>
+  <br>
+</div>
+
+<%= submit_tag "Submit" %>
+
+<% end %>

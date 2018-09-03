@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
@@ -5,11 +7,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    @post.user_name = current_user.name
+    @post.save
     redirect_to posts_url
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc).all
   end
 
   private
