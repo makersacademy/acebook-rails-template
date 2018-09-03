@@ -1,7 +1,7 @@
 <input type="file" name="profile-pic" accept="image/x-png, image/gif, image/jpeg"/>
 
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= post.user_first_name %> says: <%= post.message %></p>
   <p><%= time_ago_in_words(post.created_at) %> ago</p>
 <% end %>
 
