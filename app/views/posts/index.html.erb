@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<p id="notice"><%= notice %></p>
   <head>
     <meta charset="utf-8">
     <title>Show posts</title>
@@ -9,10 +10,17 @@
   <div class="posts-list">
     <% @posts.each do |post| %>
     <div class="single-post">
-      <p><strong><%= post.user_name %></strong></p>
-      <p><%= post.message %></p>
-      <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
+        <tr>
+          <td><p><strong><%= post.user_name %></strong></p></td>
+          <td><p><%= post.message %></p></td>
+          <td><small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small></td>
+          <% if post.user_name === current_user.name %>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
     </div>
+
     <p>Comments:</p>
     <!-- Loop for comments -->
     <% post.comments.each do |comment| %>
