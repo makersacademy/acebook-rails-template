@@ -26,3 +26,5 @@
 /coverage.data
 /coverage/
 coverage
+
+.env
