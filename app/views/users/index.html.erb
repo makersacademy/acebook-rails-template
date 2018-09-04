@@ -12,14 +12,14 @@
           <strong><%= f.label :email %></strong>
           </br>
           </br>
-          <%= f.text_field :email, class:"sign_in_email" %>
+          <%= f.text_field :email, id:"sign_in_email" %>
         </div>
         </br>
         <div class = "form-group">
           <strong><%= f.label :password %></strong>
           </br>
           </br>
-          <%= f.password_field :password %>
+          <%= f.password_field :password, id: "sign_in_password" %>
         </div>
       </br>
       </br>
@@ -39,18 +39,18 @@
         <%= f.label :name %>
       </br>
       </br>
-        <%= f.text_field :name, class:"sign_up_name" %>
+        <%= f.text_field :name, id:"sign_up_name" %>
       </div>
       </br>
       <div class = "form-group">
-        <%= f.label :email %>
+        <%= f.label :email, id: "sign_up_email" %>
         </br>
         </br>
         <%= f.text_field :email %>
       </div>
       </br>
       <div class = "form=group">
-        <%= f.label :password %>
+        <%= f.label :password, id: "sign_up_password" %>
         </br>
         </br>
         <%= f.password_field :password %>

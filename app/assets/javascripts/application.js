@@ -12,3 +12,10 @@
 //
 //= require rails-ujs
 //= require_tree .
+
+
+// to be implemented later on
+// $(document).ready(function(){
+//   setTimeout(function(){
+//     $('#flash').remove();
+//   }, 5000);

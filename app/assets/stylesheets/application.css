@@ -21,6 +21,11 @@ body {
   padding: 0;
 }
 
+/* to be implemented later on  */
+/* #flash {
+  background-color: blue;
+} */
+
 #header {
   /* width: 100%; */
   height: 6%;
