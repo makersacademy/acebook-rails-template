@@ -9,6 +9,7 @@ end
 gem 'aws-sdk', '~> 2'
 # gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
+
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'fog-aws'
@@ -17,7 +18,6 @@ gem 'fog-aws'
 gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
-gem 'aws-sdk', '~> 2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
