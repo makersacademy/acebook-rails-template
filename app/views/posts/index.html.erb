@@ -10,6 +10,9 @@
     </span>
     <div class="card-body">
       <p class="card-text"><%= post.message %></p>
+      <span class="remove-post">
+        <%= button_to 'Remove', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </span>
     </div>
   </div>
 <% end %>
