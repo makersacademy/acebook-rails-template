@@ -21,9 +21,11 @@
         <p id='header_welcome_text' class='vertically_centered'>
           Welcome, <%= current_user.name %>
         </p>
+      <% end %>
+      <% if current_user %>
         <%= link_to 'Logout', '/logout', class: "log_in_or_out_link vertically_centered" %>
       <% else %>
-        <%= link_to 'Login', '/login', class: "log_in_or_out_link vertically_centered" %>
+        <%=  %>
       <% end %>
     </div>
 
