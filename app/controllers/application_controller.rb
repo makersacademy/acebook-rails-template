@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'fog/aws'
 
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
