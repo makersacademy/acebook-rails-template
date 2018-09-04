@@ -6,10 +6,12 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
+gem 'aws-sdk', '~> 2'
+# gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
+gem 'fog-aws'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -50,6 +52,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
+  
 end
 
 group :development do
