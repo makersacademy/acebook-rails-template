@@ -13,7 +13,13 @@
       <p><%= post.message %></p>
       <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
     </div>
-    <button class='collapsible commentsButton'><%= post.comments.length %> comments</button>
+    <button class='collapsible commentsButton'><%= post.comments.length %>
+      <% if post.comments.length === 1 %>
+        comment
+      <% else %>
+        comments
+      <% end %>
+    </button>
     <div class='commentsContainer'>
       <!-- Loop for comments -->
       <% post.comments.each do |comment| %>

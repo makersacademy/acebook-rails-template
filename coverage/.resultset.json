@@ -83,6 +83,7 @@
         1,
         null,
         1,
+        1,
         null,
         null,
         null,
@@ -533,6 +534,8 @@
       "/Users/marek/Projects/acebook-Team-and-a-half/app/models/user.rb": [
         1,
         1,
+        null,
+        1,
         null
       ],
       "/Users/marek/Projects/acebook-Team-and-a-half/spec/views/sessions/create.html.erb_spec.rb": [
@@ -557,6 +560,6 @@
         null
       ]
     },
-    "timestamp": 1535969727
+    "timestamp": 1536079123
   }
 }
