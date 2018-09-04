@@ -33,10 +33,15 @@ body {
 }
 
 #header_title {
+  text-decoration: none;
   margin: 0 10% 0 0;
   color: #6DB3BF;
   font-size: 2em;
   float: left;
+}
+
+#header_title:hover {
+  filter: brightness(120%);
 }
 
 #header_welcome_text {
@@ -46,18 +51,18 @@ body {
   float: left;
 }
 
-.header_log_in_or_out_link {
+.log_in_or_out_link {
   margin: 0;
   color: white;
   font-size: 1.5em;
   float: right;
 }
 
-.header_log_in_or_out_link:visited {
+.log_in_or_out_link:visited {
   color: white;
 }
 
-.header_log_in_or_out_link:hover {
+.log_in_or_out_link:hover {
   color: silver;
 }
 

@@ -11,14 +11,14 @@
 
   <body>
     <div id='header'>
-      <p id='header_title' class='vertically_centered'>Team and a half Acebook</p>
+      <%= link_to 'Team and a half Acebook', '/posts', id: "header_title", class: "vertically_centered" %>
       <% if current_user %>
         <p id='header_welcome_text' class='vertically_centered'>
           Welcome, <%= current_user.name %>
         </p>
-        <%= link_to 'Logout', '/logout', class: "header_log_in_or_out_link vertically_centered" %>
+        <%= link_to 'Logout', '/logout', class: "log_in_or_out_link vertically_centered" %>
       <% else %>
-        <%= link_to 'Login', '/login', class: "header_log_in_or_out_link vertically_centered" %>
+        <%= link_to 'Login', '/login', class: "log_in_or_out_link vertically_centered" %>
       <% end %>
     </div>
 
