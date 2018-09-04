@@ -11,7 +11,7 @@ CarrierWave.configure do |config|
       :region                 => 'eu-west-2',
       :host                   => 'rofbucket.s3.amazonaws.com'
     }
-    config.fog_directory = ENV['S3_BUCKET_NAME']
+    
     config.storage = :fog
   else
     config.storage = :file
