@@ -9,7 +9,7 @@ CarrierWave.configure do |config|
       :aws_access_key_id      => ENV['AWS_ACCESS_KEY_ID'],
       :aws_secret_access_key  => ENV['AWS_SECRET_ACCESS_KEY'],
       :region                 => 'eu-west-2',
-      :host                   => '//rofbucket.s3.amazonaws.com'
+      :host                   => 'rofbucket.s3.amazonaws.com'
     }
     config.fog_directory = ENV['S3_BUCKET_NAME']
     config.storage = :fog
