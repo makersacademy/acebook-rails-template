@@ -29,6 +29,15 @@
         end 
       end %>
     </div>
+    <%= link_to like_post_path(post), method: :put do %>
+      upvote
+    <%= post.get_upvotes.size %>
+    <% end %>
+    <%= post.score %>
+    <%= link_to dislike_post_path(post), method: :put do %>
+      downvote
+      <%= post.get_downvotes.size %>
+    <% end %>
   </div>
 <% end %>
   <div>

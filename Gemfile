@@ -12,6 +12,7 @@ gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'fog-aws'
+gem 'acts_as_votable', '~> 0.10.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -51,7 +52,10 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
-  
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
