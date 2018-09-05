@@ -1,51 +1,63 @@
-<br>
-<br>
-<strong>Sign up<strong>
 
-<%= form_for :user, url: '/users' do |f| %>
-<br>
-<div class ="form-group">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
+<div class='main_sign_up_in_page'>
+
+  <!-- <h1 class="acebook">Acebook</h1> -->
+
+  <div class="sign_in">
+    <div class="sign_in_form">
+      <%= form_for :user, url: '/users' do |f| %>
+        <%= form_tag '/login' do %>
+          <h2><strong>Sign In</strong></h2>
+        <div class = "form-group">
+          <strong><%= f.label :email %></strong>
+          </br>
+          </br>
+          <%= f.text_field :email, id:"sign_in_email" %>
+        </div>
+        </br>
+        <div class = "form-group">
+          <strong><%= f.label :password %></strong>
+          </br>
+          </br>
+          <%= f.password_field :password, id: "sign_in_password" %>
+        </div>
+      </br>
+      </br>
+        <%= submit_tag "Sign in", class: "sign_up_submit" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="sign_up">
+    <div class="sign_up_form">
+      <%= form_for :user, url: '/users' do |f| %>
+        <h2><strong>Sign up<strong></h2>
+      <div class ="form-group">
+        <%= f.label :name %>
+      </br>
+      </br>
+        <%= f.text_field :name, id:"sign_up_name" %>
+      </div>
+      </br>
+      <div class = "form-group">
+        <%= f.label :email, id: "sign_up_email" %>
+        </br>
+        </br>
+        <%= f.text_field :email %>
+      </div>
+      </br>
+      <div class = "form=group">
+        <%= f.label :password, id: "sign_up_password" %>
+        </br>
+        </br>
+        <%= f.password_field :password %>
+      </div>
+      </br>
+      </br>
+      <%= f.submit "Sign up", class: "sign_up_submit" %>
+      <% end %>
+    </div>
+
 </div>
-
-<div class = "form-group">
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-<br>
-</div>
-
-<div class = "form=group">
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br>
-</div>
-
-  <%= f.submit "Sign Up" %>
-
-<% end %>
-
-<br>
-<br>
-
-<strong>Sign In</strong>
-<br>
-<%= form_tag '/login' do %>
-
-<br>
-<div class = "form-group">
-  <strong>Email: </strong>
-  <%= text_field_tag :email %>
-  <br>
-</div>
-
-<div class = "form-group">
-  <strong>Password: </strong>
-  <%= password_field_tag :password %>
-  <br>
-</div>
-
-<%= submit_tag "Log In" %>
-
-<% end %>

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  before_action :authenticate_user!
   protect_from_forgery with: :exception
 
   def current_user
@@ -11,5 +12,15 @@ class ApplicationController < ActionController::Base
 
   def authorize
     redirect_to '/login' unless current_user
+  end
+
+  private
+
+  def authenticate_user!
+    if current_user
+      super
+    elsif request.original_fullpath != root_path
+      redirect_to root_path, notice: 'Please Login to view that page!'
+    end
   end
 end
