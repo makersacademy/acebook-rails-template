@@ -4,7 +4,9 @@
 # before_filter :authorize
 
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  # before_action :set_post, only: [:show]
+  load_and_authorize_resource :only => [:edit, :update, :destroy]
+  
   def new
     @post = Post.new
   end
@@ -63,4 +65,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:postimage, :message)
   end
+
 end

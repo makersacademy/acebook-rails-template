@@ -10,9 +10,14 @@
     </span>
     <div class="card-body">
       <p class="card-text"><%= post.message %></p>
-      <span class="remove-post">
-        <%= button_to 'Remove', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </span>
+      <% if can? :manage, post, user_id: current_user.id %>
+        <%= link_to edit_post_path(post), class: 'btn btn-success' do %>
+          <span class="glyphicon glyphicon-plus"></span> Edit Post
+        <% end %>
+        <span class="remove-post">
+          <%= button_to 'Remove', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </span>
+      <% end %>
     </div>
   </div>
 <% end %>
