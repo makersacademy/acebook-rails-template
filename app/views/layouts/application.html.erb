@@ -5,7 +5,8 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <%= javascript_include_tag 'application' %>
   </head>
 
@@ -17,15 +18,20 @@
           Welcome, <%= current_user.name %>
         </p>
         <%= link_to 'Logout', '/logout', class: "header_log_in_or_out_link vertically_centered" %>
+
+        <!-- <%= link_to 'My Profile', '/me', class: "header_log_in_or_out_link vertically_centered" %> -->
+
       <% else %>
         <%= link_to 'Login', '/login', class: "header_log_in_or_out_link vertically_centered" %>
       <% end %>
     </div>
 
-    <!-- <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %> -->
+    <% flash.each do |key, value| %>
+      <div class="flash alert alert-<%= key %>"><%= value %></div>
+    <% end %>
 
     <%= yield %>
+
+
   </body>
 </html>
