@@ -1,0 +1,21 @@
+Metrics/LineLength:
+  Max: 120
+
+Documentation:
+  Enabled: false
+
+Style/MixinUsage:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - db/**/*
+
+Metrics/MethodLength:
+  Enabled: true
+  Exclude:
+    - db/**/*
