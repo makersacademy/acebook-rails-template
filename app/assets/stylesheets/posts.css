@@ -11,3 +11,7 @@
 .commentsContainer {
   display: none;
 }
+
+.submit_button {
+  width: auto;
+}

@@ -5,27 +5,25 @@
 
   <div class="sign_in">
     <div class="sign_in_form">
-      <%= form_for :user, url: '/users' do |f| %>
         <%= form_tag '/login' do %>
           <h2><strong>Sign In</strong></h2>
         <div class = "form-group">
-          <strong><%= f.label :email %></strong>
+          <strong>Email:</strong>
           </br>
           </br>
-          <%= f.text_field :email, id:"sign_in_email" %>
+          <%= text_field_tag :email, nil, id:"sign_in_email" %>
         </div>
         </br>
         <div class = "form-group">
-          <strong><%= f.label :password %></strong>
+          <strong>Password: </strong>
           </br>
           </br>
-          <%= f.password_field :password, id: "sign_in_password" %>
+          <%= password_field_tag :password, nil, id: "sign_in_password" %>
         </div>
       </br>
       </br>
-        <%= submit_tag "Sign in", class: "sign_up_submit" %>
+        <%= submit_tag "Sign in", class: "sign_in_submit" %>
         <% end %>
-      <% end %>
     </div>
   </div>
 

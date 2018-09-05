@@ -35,12 +35,9 @@
         <!-- Leave a comment form-->
         <!-- array may not work, it generates a view for just the post-->
         <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-          <p>
-            <%= form.text_area :body, placeholder: "Leave a comment" %>
-          </p>
-          <p>
-            <%= form.submit %>
-          </p>
+          <%= form.text_area :body, placeholder: "Leave a comment" %>
+          <br>
+          <%= form.submit 'Submit', :class => 'submit_button' %>
         <% end %>
       </div>
     </div>

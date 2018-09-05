@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :authenticate_user!, :set_post, only: %i[show edit update destroy]
+  before_action :authenticate_user!
+  before_action :set_post, only: %i[show edit update destroy]
 
   def new
     @post = Post.new
@@ -60,5 +61,13 @@ class PostsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def authenticate_user!
+    if current_user
+      super
+    elsif request.original_fullpath != root_path
+      redirect_to root_path, notice: 'Please Login to view that page!'
+    end
   end
 end
