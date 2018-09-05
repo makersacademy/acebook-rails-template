@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   def create
+    session[:return_to] = "#{request.referer}"
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    redirect_to '/posts'
+    redirect_to session[:return_to]
   end
 
   private

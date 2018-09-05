@@ -15,6 +15,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def me
+    # Need to validate user before going to this route
+    @user = current_user
+    @posts = Post.where('user_name' => current_user.name).order(created_at: :desc).all
+  end
+
+  def update_avatar
+    @user = current_user
+    @user.update_attributes(:avatar => params['/me'][:avatar])
+    redirect_to '/me'
+  end
+
   private
 
   def user_params

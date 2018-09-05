@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def new
+    session[:return_to] = "#{request.referer}"
     @post = Post.new
   end
 
@@ -15,7 +16,7 @@ class PostsController < ApplicationController
     @post.user_name = current_user.name
     respond_to do |format|
       if @post.save
-        format.html { redirect_to posts_url, notice: 'Post was successfully created.' }
+        format.html { redirect_to session[:return_to], notice: 'Post was successfully created.' }
       else
         format.html { render :new }
       end
@@ -27,7 +28,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to posts_url, notice: 'Post was successfully updated.' }
+        format.html { redirect_to session[:return_to], notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -43,7 +44,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to session[:return_to], notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -25,6 +25,7 @@
       <% end %>
       <% if current_user %>
         <%= link_to 'Logout', '/logout', class: "log_in_or_out_link vertically_centered" %>
+        <%= link_to 'My Profile', '/me', class: "log_in_or_out_link vertically_centered" %>
       <% else %>
         <%=  %>
       <% end %>
