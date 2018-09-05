@@ -11,6 +11,10 @@
     <div class="card-body">
       <p class="card-text"><%= post.message %></p>
     </div>
+    <p><%= post.comments.count %> Comments</p>
+    <% post.comments.each do |comment| %>
+      <p><%= comment.user_name %> said: <%= comment.body %></p>
+    <% end %>
   </div>
 <% end %>
   <div>

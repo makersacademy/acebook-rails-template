@@ -3,14 +3,14 @@ class CommentsController < ApplicationController
 
   # GET /comments
   # GET /comments.json
-  def index
-    @comments = Comment.all
-  end
+  # def index
+  #   @comments = Comment.all
+  # end
 
   # GET /comments/1
   # GET /comments/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /comments/new
   def new

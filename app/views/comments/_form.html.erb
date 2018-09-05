@@ -12,19 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_name %>
-    <%= form.text_field :user_name, id: :comment_user_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
+    <%= form.label :comment %>
     <%= form.text_area :body, id: :comment_body %>
   </div>
 
-  <div class="field">
-    <%= form.label :post_id %>
-    <%= form.number_field :post_id, id: :comment_post_id %>
-  </div>
+  <%= form.hidden_field :post_id %>
 
   <div class="actions">
     <%= form.submit %>
