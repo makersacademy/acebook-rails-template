@@ -8,7 +8,7 @@ RSpec.feature 'User can create multiple posts', type: :feature do
     expect(page).to have_content('Hello, world!')
     click_link('New post')
     fill_in 'post[message]', with: 'Hello, kirt!'
-    click_button 'Create Post'
+    click_button 'Submit'
     expect(page).to have_content('Hello, kirt!')
   end
 end

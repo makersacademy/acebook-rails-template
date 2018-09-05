@@ -1,4 +1,9 @@
 require 'simplecov'
+require_relative './helpers/comment_helper.rb'
+require_relative './helpers/posts_helper.rb'
+require_relative './helpers/sessions_helper.rb'
+require_relative './helpers/users_helper.rb'
+
 # SimpleCov.start 'rails' only good for checking all groups
 SimpleCov.minimum_coverage 80
 SimpleCov.start do

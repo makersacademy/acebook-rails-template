@@ -22,7 +22,7 @@
         </div>
       </br>
       </br>
-        <%= submit_tag "Sign in", class: "sign_in_submit" %>
+        <%= submit_tag "Log In", class: "sign_in_submit" %>
         <% end %>
     </div>
   </div>
@@ -40,21 +40,21 @@
       </div>
       </br>
       <div class = "form-group">
-        <%= f.label :email, id: "sign_up_email" %>
+        <%= f.label :email %>
         </br>
         </br>
-        <%= f.text_field :email %>
+        <%= f.text_field :email, id:"sign_up_email" %>
       </div>
       </br>
       <div class = "form=group">
-        <%= f.label :password, id: "sign_up_password" %>
+        <%= f.label :password %>
         </br>
         </br>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, id:"sign_up_password" %>
       </div>
       </br>
       </br>
-      <%= f.submit "Sign up", class: "sign_up_submit" %>
+      <%= f.submit "Sign Up", class: "sign_up_submit" %>
       <% end %>
     </div>
 
