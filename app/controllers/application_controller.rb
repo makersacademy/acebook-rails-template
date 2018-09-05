@@ -12,4 +12,14 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to '/login' unless current_user
   end
+
+  private
+
+  def authenticate_user!
+    if current_user
+
+    elsif request.original_fullpath != root_path
+      redirect_to root_path, notice: 'Please Login to view that page!'
+    end
+  end
 end

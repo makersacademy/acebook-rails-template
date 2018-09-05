@@ -1,3 +1,68 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main_sign_up_in_page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.sign_in_form, .sign_up_form {
+  margin-top: -150px;
+}
+
+.sign_up_form {
+  margin-top: -80px;
+}
+
+.sign_up{
+  background-color: #468C98;
+  padding: 0px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.sign_in {
+  background-color: white;
+  margin-top: 20px;
+  flex: 0 0 50%;
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.acebook{
+  position: fixed;
+  top: 0;
+  left: 75%;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 70px;
+  z-index: 999;
+  width: 100%;
+  height: 23px;
+  color: white;
+}
+
+input{
+  width: 280px;
+  height: 35px;
+}
+
+h2 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 50px;
+}
+
+label{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  margin-bottom: 200px !important;
+}
+
+.sign_up_submit, .sign_in_submit {
+  width: 65px;
+  float: right;
+}
