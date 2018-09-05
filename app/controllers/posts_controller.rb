@@ -32,6 +32,20 @@ class PostsController < ApplicationController
     set_post
   end
 
+  def upvote
+    :verify_authenticity_token
+    @post = Post.find(params[:id])
+    @post.upvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end
+
+  def downvote
+    :verify_authenticity_token
+    @post = Post.find(params[:id])
+    @post.downvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def set_post
