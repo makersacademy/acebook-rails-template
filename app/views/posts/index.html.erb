@@ -7,13 +7,13 @@
   <body>
 
   <div class="posts-list">
-    <% @posts.each do |post| %>
+    <% @posts.each_with_index do |post, index| %>
     <div class="single-post">
       <big><strong><%= post.user_name %></strong><br>
       <%= post.message %><br></big>
       <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
     </div>
-    <button class='collapsible commentsButton'><%= post.comments.length %>
+    <button id='comment-button<%= index + 1%>' class='collapsible commentsButton'><%= post.comments.length %>
       <% if post.comments.length === 1 %>
         comment
       <% else %>
