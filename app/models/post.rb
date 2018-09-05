@@ -12,4 +12,10 @@ class Post < ApplicationRecord
   end
 end
 
+# def upvote_score
+#   self.get_upvotes.size
+# end
 
+# def downvote_score
+#   self.get_downvotes.size
+# end
