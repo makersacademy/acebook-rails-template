@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :post do
+    resources :likes
+  end
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 end

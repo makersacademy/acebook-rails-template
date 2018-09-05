@@ -13,6 +13,13 @@
       <%= post.message %><br></big>
       <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
     </div>
+    <small><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></small>
+    <% pre_like = post.likes.find { |like| like.user_name == current_user.name} %>
+      <% if pre_like %>
+        <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete, :class => 'button' %>
+      <% else %>
+        <%= button_to 'Like', post_likes_path(post), method: :post, :class => 'button' %>
+      <% end %>
     <button id='comment-button<%= index + 1%>' class='collapsible commentsButton'><%= post.comments.length %>
       <% if post.comments.length === 1 %>
         comment
@@ -51,6 +58,7 @@
       <br><br>
     <% end %>
   </div>
+
   <div class="new-post-link">
     <%= link_to new_post_path do %>
       New post
