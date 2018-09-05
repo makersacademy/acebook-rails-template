@@ -13,7 +13,7 @@
     </div>
     <p><%= post.comments.count %> Comments</p>
     <% post.comments.each do |comment| %>
-      <p><%= comment.user_name %> said: <%= comment.body %></p>
+      <p><%= comment.user_first_name %> said: <%= comment.body %></p>
     <% end %>
   </div>
 <% end %>
