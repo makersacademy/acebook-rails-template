@@ -11,21 +11,24 @@
     <div class="card-body">
       <p class="card-text"><%= post.message %></p>
     </div>
-    <p><%= post.comments.count %> Comments</p>
-    <%
-    count = 0
-    max_comments = 3
-    if post.comments.count < max_comments
-      post.comments.each do |comment| %>
-        <p><%= comment.body%></p>
-      <% end
-    else
-      while count < max_comments do %> 
-        <p><%= post.comments[count].body%></p>
-      <% 
-      count += 1
-      end 
-    end %>
+    <div class="comment-section">
+      <p><%= post.comments.count %> Comments</p>
+      <p> Leave a comment </p>
+      <%
+      count = 0
+      max_comments = 3
+      if post.comments.count < max_comments
+        post.comments.each do |comment| %>
+          <p><%= comment.body%></p>
+        <% end
+      else
+        while count < max_comments do %> 
+          <p><%= post.comments[count].body%></p>
+        <% 
+        count += 1
+        end 
+      end %>
+    </div>
   </div>
 <% end %>
   <div>
