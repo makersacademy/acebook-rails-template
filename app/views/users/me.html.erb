@@ -1,0 +1,10 @@
+<h1><%= @user.name %>'s Profile</h1>
+
+
+<!-- <%= form_for edit_user_path(current_user.id), :html => { :multipart => true } do |form| %> -->
+<%= form_for @user, url: me_path, method: :post do |form| %>
+  <%= form.label :avatar %><br>
+  <%= form.file_field :avatar %><br>
+  <%= form.submit "Upload Avatar" %>
+
+<% end %>

@@ -11,13 +11,13 @@ class UsersController < ApplicationController
       redirect_to '/posts'
     else
       flash[:error] = 'Sorry, username not available!'
-      redirect_to '/signup'
+      redirect_to '/login'
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:name, :email, :password, :avatar)
   end
 end

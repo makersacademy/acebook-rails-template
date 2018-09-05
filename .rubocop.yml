@@ -9,3 +9,13 @@ Style/MixinUsage:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - db/**/*
+
+Metrics/MethodLength:
+  Enabled: true
+  Exclude:
+    - db/**/*

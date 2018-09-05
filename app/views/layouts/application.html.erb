@@ -18,13 +18,16 @@
           Welcome, <%= current_user.name %>
         </p>
         <%= link_to 'Logout', '/logout', class: "header_log_in_or_out_link vertically_centered" %>
+
+        <!-- <%= link_to 'My Profile', '/me', class: "header_log_in_or_out_link vertically_centered" %> -->
+
       <% else %>
         <%= link_to 'Login', '/login', class: "header_log_in_or_out_link vertically_centered" %>
       <% end %>
     </div>
 
     <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
+      <div class="flash alert alert-<%= key %>"><%= value %></div>
     <% end %>
 
     <%= yield %>

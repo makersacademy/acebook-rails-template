@@ -9,19 +9,17 @@
   <div class="posts-list">
     <% @posts.each do |post| %>
     <div class="single-post">
-            <p>
-              <big><strong><%= post.user_name %></strong><br>
-              <%= post.message %><br></big>
-              <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
-            </p>
-
-          <% if post.user_name === current_user.name %>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
+      <big><strong><%= post.user_name %></strong><br>
+      <%= post.message %><br></big>
+      <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
     </div>
-    <button class='collapsible commentsButton'><%= post.comments.length %> comments</button>
+    <button class='collapsible commentsButton'><%= post.comments.length %>
+      <% if post.comments.length === 1 %>
+        comment
+      <% else %>
+        comments
+      <% end %>
+    </button>
     <div class='commentsContainer'>
       <!-- Loop for comments -->
       <% post.comments.each do |comment| %>
@@ -32,6 +30,7 @@
         </div>
       <!-- End Loop -->
       <% end %>
+
       <div>
         <!-- Leave a comment form-->
         <!-- array may not work, it generates a view for just the post-->
@@ -46,9 +45,15 @@
       </div>
     </div>
     <br>
+      <% if post.user_name === current_user.name %>
+      <tr>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+      <br><br>
     <% end %>
   </div>
-  <br>
   <div class="new-post-link">
     <%= link_to new_post_path do %>
       New post
