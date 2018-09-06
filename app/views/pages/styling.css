@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Aldrich', sans-serif; */
+  font-weight: 300;
+}
+
+label {
+  margin-top: 50%;
+  padding-top: 50%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+nav {
+  width: 100%;
+  background: white;
+  height: 65px;
+  box-shadow: 0px 2px 4px rgba(68, 68, 68, .5);
+  padding: 13px;
+  color: #444;
+}
+
+.fontsize {
+  font-size: 26px;
+}
+
+.header-logo {
+  height: 100%;
+  float: left;
+}
+
+.header-right {
+  height: 100%;
+  float: right;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.header-right {
+  margin: 0px 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header-seperator {
+  height: 100%;
+  width: 1px;
+  background: #444;
+}
+
+.header-profile {
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.header-profile-dropdown {
+  display: none;
+}
+
+.header-search {
+  height: 100%;
+  div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .fa {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+}
+
+.header-search-input {
+  display: inline-block;
+  width: 0;
+  //overflow: hidden;
+  height: 100%;
+  position: relative;
+  transition: width 0.2s ease-out;
+  &.active {
+    width: 300px;
+  }
+  .input {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border: 1px solid #444;
+    font-size: 16px;
+    padding: 10px;
+    font-weight: 300;
+    &:focus {
+      outline: none;
+      border: 2px solid #444;
+    }
+  }
+  .quickResultsCont {
+    position: absolute;
+    width: 100%;
+    display: none;
+    background: white;
+    border: 1px solid #444;
+    top: 40px;
+    box-shadow: 0px 2px 4px rgba(68,68,68,.5);
+    .quickResults {
+      width: 100%;
+      .quickResultsTitle {
+        font-size: 20px;
+        width: 100%;
+        padding: 10px 20px;
+        background: #888;
+        color: white;
+      }
+      .quickResultsItems {
+        font-size: 16px;
+        width: 100%;
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          li {
+            cursor: pointer;
+            width: 100%;
+            padding: 15px;
+            text-transform: none;
+            line-height:100%;
+            &:hover {
+              background: #676767;
+              color: white;
+            }
+            .searchImg {
+              display: inline-block;
+              width: 30px;
+              height: 30px;
+              border-radius: 100%;
+              overflow: hidden;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
