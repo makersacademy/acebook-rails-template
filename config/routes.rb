@@ -22,4 +22,7 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
+  get '/me' => 'users#me'
+  post '/me' => 'users#update_avatar'
 end

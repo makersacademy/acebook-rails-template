@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update destroy]
 
   def new
+    session[:return_to] = "#{request.referer}"
     @post = Post.new
   end
 
@@ -15,7 +16,7 @@ class PostsController < ApplicationController
     @post.user_name = current_user.name
     respond_to do |format|
       if @post.save
-        format.html { redirect_to posts_url, notice: 'Post was successfully created.' }
+        format.html { redirect_to session[:return_to], notice: 'Post was successfully created.' }
       else
         format.html { render :new }
       end
@@ -27,7 +28,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to posts_url, notice: 'Post was successfully updated.' }
+        format.html { redirect_to session[:return_to], notice: 'Post was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -41,7 +42,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to session[:return_to], notice: 'Post was successfully destroyed.' }
     end
   end
 
@@ -61,10 +62,6 @@ class PostsController < ApplicationController
   end
 
   def authenticate_user!
-    if current_user
-      super
-    elsif request.original_fullpath != root_path
-      redirect_to root_path, notice: 'Please Login to view that page!'
-    end
+    super
   end
 end

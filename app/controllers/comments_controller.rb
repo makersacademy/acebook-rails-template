@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   def create
+    session[:return_to] = "#{request.referer}"
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    redirect_to '/posts'
+    redirect_to session[:return_to]
   end
 
   private
@@ -13,10 +14,6 @@ class CommentsController < ApplicationController
   end
 
   def authenticate_user!
-    if current_user
-      super
-    elsif request.original_fullpath != root_path
-      redirect_to root_path, notice: 'Please Login to view that page!'
-    end
+    super
   end
 end

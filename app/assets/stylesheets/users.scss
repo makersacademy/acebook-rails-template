@@ -66,3 +66,10 @@ label{
   width: 65px;
   float: right;
 }
+
+.profile_avatar {
+  object-fit: contain;
+  width: 18vmin;
+  height: 18vmin;
+  background-color: black;
+}

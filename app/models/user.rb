@@ -3,5 +3,4 @@ class User < ApplicationRecord
 
   validates :name, uniqueness: true
   has_many :likes
-  has_one_attached :avatar
 end
