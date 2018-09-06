@@ -4,6 +4,9 @@
 # before_filter :authorize
 
 class PostsController < ApplicationController
+  # before_action :set_post, only: [:show]
+  load_and_authorize_resource :only => [:edit, :update, :destroy]
+  
   def new
     @post = Post.new
   end
@@ -20,6 +23,26 @@ class PostsController < ApplicationController
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.json { render :show, status: :ok, location: @post }
+      else
+        format.html { render :edit }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
@@ -58,4 +81,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:postimage, :message)
   end
+
 end
