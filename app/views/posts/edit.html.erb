@@ -3,4 +3,9 @@
 <%= render 'form', post: @post %>
 
 <%= link_to 'Show', @post %> |
+<% if can? :manage, @post, user_id: current_user.id %>
+  <span class="remove-post">
+        <%= button_to 'Remove', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </span>
+<% end %>
 <%= link_to 'Back', posts_path %>
