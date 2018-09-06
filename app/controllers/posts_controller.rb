@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update destroy]
 
   def new
-    session[:return_to] = "#{request.referer}"
+    session[:return_to] = request.referer.to_s
     @post = Post.new
   end
 

@@ -15,8 +15,8 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    if !(already_liked?)
-      flash[:error] = "Cannot unlike"
+    if !already_liked?
+      flash[:error] = 'Cannot unlike'
     else
       @like.destroy
     end
@@ -28,6 +28,7 @@ class LikesController < ApplicationController
   end
 
   private
+
   def like_params
     params.permit(:user_name, :post_id)
   end
@@ -40,5 +41,4 @@ class LikesController < ApplicationController
     @post = Post.find(params[:post_id])
     @like = @post.likes.find(params[:id])
   end
-
 end

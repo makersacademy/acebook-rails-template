@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:me]
 
-  def new
-  end
+  def new; end
 
   def create
     user = User.new(user_params)
@@ -25,7 +24,7 @@ class UsersController < ApplicationController
 
   def update_avatar
     @user = current_user
-    @user.update_attributes(:avatar => params['/me'][:avatar])
+    @user.update_attributes(avatar: params['/me'][:avatar])
     redirect_to '/me'
   end
 

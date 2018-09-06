@@ -1,8 +1,6 @@
 require 'rails_helper'
 require 'spec_helper'
 
-
-
 def sign_up
   visit '/login'
   fill_in 'sign_up_name', with: 'Sassy'
@@ -17,9 +15,6 @@ def sign_in
   fill_in 'sign_in_password', with: '123456'
   click_button 'Log In'
 end
-
-
-
 
 #
 # RSpec.describe UsersHelper, type: :helper do
