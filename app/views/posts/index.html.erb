@@ -1,7 +1,61 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<% @posts.each do |post| %>
+  <div class="card text-center" style="width: 31rem;">
+    <div class="card-header">
+      <%= post.user_first_name %> 
+      <p> posted <%= time_ago_in_words(post.created_at) %> ago </p>
+    </div>
+    <span class="card-img-top">
+      <%= image_tag post.postimage.square.url, :class => "post_image", :style => "width: 100%" if post.postimage? %>
+    </span>
+    <div class="card-body">
+      <p class="card-text"><%= post.message %></p>
+    </div>
+    <%= link_to like_post_path(post), method: :put do %>
+      upvote
+    <%= post.get_upvotes.size %>
+    <% end %>
+    <%= post.score %>
+    <%= link_to dislike_post_path(post), method: :put do %>
+      downvote
+      <%= post.get_downvotes.size %>
+    <% end %>
+    <div class="comment-section">
+      <p><%= post.comments.count %> Comments</p>
+      <p> Leave a comment </p>
+      <%= form_with( local: true, url: '/comments', method: 'post') do |form| %>
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :body, id: :comment_body %>
+  </div>
+
+  <%= form.hidden_field :post_id, value: post.id %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>
+      <%
+      count = 0
+      max_comments = 3
+      if post.comments.count < max_comments
+        post.comments.each do |comment| %>
+          <p><%= comment.user_first_name %> said: <%= comment.body%></p>
+        <% end
+      else
+        while count < max_comments do %> 
+          <p><%= post.comments[count].body%></p>
+        <% 
+        count += 1
+        end 
+      end %>
+    </div>
+  </div>
+<% end %>
+  <div>
+    <button type="button" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true">
+        <%= link_to 'New Post', new_post_path %>
+      </span>
+    </button>
+  </div>
