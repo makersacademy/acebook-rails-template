@@ -14,9 +14,6 @@
         <%= link_to edit_post_path(post), class: 'btn btn-success' do %>
           <span class="glyphicon glyphicon-plus"></span> Edit Post
         <% end %>
-        <span class="remove-post">
-          <%= button_to 'Remove', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </span>
       <% end %>
     </div>
     <%= link_to like_post_path(post), method: :put do %>
