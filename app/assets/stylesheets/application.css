@@ -33,6 +33,7 @@ body {
   vertical-align: middle;
   padding-left: 5%;
   padding-right: 5%;
+  font-family: 'Ubuntu', sans-serif;
   /* display: flex;
   justify-content: space-around */
 }
@@ -42,6 +43,7 @@ body {
   margin: 0 10% 0 0;
   color: #6DB3BF;
   font-size: 2em;
+  font-weight: bold;
   float: left;
 }
 
@@ -52,7 +54,7 @@ body {
 #header_welcome_text {
   margin: 0;
   color: white;
-  font-size: 1.5em;
+  font-size: 1.8em;
   float: left;
 }
 

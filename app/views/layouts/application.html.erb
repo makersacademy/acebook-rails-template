@@ -12,11 +12,7 @@
 
   <body>
     <div id='header'>
-      <% if current_user %>
-      <%= link_to 'Team and a half Acebook', '/posts', id: "header_title", class: "vertically_centered" %>
-      <% else %>
-      <%= link_to 'Team and a half Acebook', '/', id: "header_title", class: "vertically_centered" %>
-      <% end %>
+      <%= link_to 'Acebook', '/posts', id: "header_title", class: "vertically_centered" %>
 
       <% if current_user %>
         <p id='header_welcome_text' class='vertically_centered'>
