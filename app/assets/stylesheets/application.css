@@ -1,6 +1,7 @@
 body {
   scroll-behavior: smooth;
 }
+
 html, body {
   background: #FFC22F;
   height: 100%;
@@ -8,77 +9,75 @@ html, body {
   padding: 0px;
   width: 100%;
 }
+
 h1 {
   font-family: 'Abril Fatface', cursive;
   font-size: 5vw;
   font-weight: 600;
 }
+
 h2, a {
   color: black;
   font-family: 'Abril Fatface', cursive;
   text-decoration: none;
 }
+
 h3, p {
   font-family: 'Oxygen', sans-serif;
 }
+
 a:hover {
   color: #B23554;
   text-decoration: none;
 }
+
 .mustard {
   background-color: #FFC22F;
 }
+
 .left {
   border-right-style: solid;
   border-right-width: 1em;
 }
-.fill {
-  min-height: 100%;
-  height: 100%;
-}
+
 .right {
   border-left-style: solid;
   border-left-width: 1em;
 }
-.image {
 
-}
-.border-right-dark {
-  border-style: solid;
-  border-width: 5px;
+.fill {
+  min-height: 100%;
+  height: 100%;
 }
 
-/* // html {
-//   box-sizing: border-box;
-// }
-//Setting background colour
-.yellow {
-  background: #FFC22F;
+.navbar-brand {
+  margin-left: 3%;
 }
-//Heading Style
-// h1 {
-//   width: 60%;
-//   color: black;
-//   font-size: 5em;
-//   font-family: 'Abril Fatface', cursive;
-//   font-weight: 100;
-//   margin: 1em auto 1em auto;
-// }
-//Form Reset */
+
+.welcome {
+  pointer-events: none;
+}
+
+.bottom-left {
+  padding: 2%;
+}
 
 form * {
   background: none;
   border: none;
 }
+
 input:focus {
     outline: 0;
   color: #fff;
 }
+
 /* //Form Layout */
 form {
   margin: 0 auto;
   width: 60%;
 }
+
 /* //Input Style */
 form input {
   color: black;
@@ -91,27 +90,34 @@ form input {
   border-bottom: solid rgba(255,255,255,.5) 1px;
   -webkit-transition: height 2s, opacity 1s, color 1s, border 1s;
 }
+
 ::-webkit-input-placeholder {
   color: black;
   transition: color 1s;
 }
+
 :-ms-input-placeholder {
   color: #fff;
 }
+
 ::-moz-placeholder {
   color: #fff;
   opacity: 1;
 }
+
 :-moz-placeholder {
   color: #fff;
   opacity: 1;
 }
+
 form input:focus {
   border-bottom: solid rgba(255,255,255,1) 1px;
 }
+
 input:focus::-webkit-input-placeholder {
   color: #fff;
 }
+
 #hidePassword {
   font-family: 'Oxygen', sans-serif;
   font-weight: 100;
@@ -120,24 +126,23 @@ input:focus::-webkit-input-placeholder {
   text-decoration: none;
   cursor: pointer;
 }
+
 /* //Button Style */
 button {
-
-  width: 25%;
+  /* width: 25%; */
   margin: 1em 0 0 0;
   padding: .25em;
-  border: 1px solid rgba(255,255,255,.5);
   color: black;
   font-family: 'Oxygen', sans-serif;
-  font-weight: 100;
-  font-size: 2em;
   transition: color 1s, border 1s;
 }
+
 button:focus {
   outline: 0;
   border: 1px solid #fff;
   color: #fff;
 }
+
 form p {
   color: black;
   font-family: 'Oxygen', sans-serif;
@@ -145,6 +150,7 @@ form p {
   text-align: center;
   width: 100%;
 }
+
 form a {
   color: black;
   font-family: 'Oxygen', sans-serif;
@@ -152,6 +158,7 @@ form a {
   text-align: center;
   transition: color 1s;
 }
+
 form a:focus {
   outline: none;
   color: #fff;
@@ -178,10 +185,5 @@ form a:focus {
     width: 80%;
     font-size: 4em;
     margin: 2em auto 1em auto;
-  }
-
-  form {
-    width: 80%;
-    font-size: .8em;
   }
 }
