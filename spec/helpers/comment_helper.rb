@@ -3,7 +3,6 @@ require 'spec_helper'
 
 def create_comment
   sign_up
-  sign_in
   create_post
   click_button('comment-button1')
   fill_in 'comment[body]', with: 'I love cheese'
