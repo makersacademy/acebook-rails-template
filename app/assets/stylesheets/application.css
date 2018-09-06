@@ -27,7 +27,7 @@ h3, p {
 }
 
 a:hover {
-  color: #3B0A92;
+  color: white;
   text-decoration: none;
   transition: 0.5s;
 }
@@ -40,6 +40,7 @@ a:hover {
   margin-left: 0;
   padding-left: 0; 
   animation: blinker 3s linear infinite;
+  pointer-events: none;
 }
 
 @keyframes blinker {

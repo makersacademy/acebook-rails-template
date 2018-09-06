@@ -45,7 +45,7 @@ en:
       update_needs_confirmation: <p class="alert text-left">You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address</p>
       updated: <p class="alert text-left">Your account has been updated successfully</p>
     sessions:
-      signed_in: <p class="alert text-left">Signed in successfully</p>
+      signed_in: Signed in successfully
       signed_out: <p class="alert text-left">Signed out successfully</p>
       already_signed_out: <p class="alert text-left">Signed out successfully</p>
     unlocks:
