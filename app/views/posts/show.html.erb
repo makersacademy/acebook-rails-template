@@ -22,9 +22,15 @@
     <%= render partial: 'comments/form', locals: { comment: @comment } %>
   </div>
 <div>
+
+<% if can? :manage, @post, user_id: current_user.id %>
   <%= link_to edit_post_path(@post), class: 'btn btn-success' do %>
     <span class="glyphicon glyphicon-plus"></span> Edit Post
   <% end %>
+  <span class="remove-post">
+        <%= button_to 'Remove', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </span>
+<% end %>
   <%= link_to posts_path, class: 'btn btn-success' do %>
     <span class="glyphicon glyphicon-backward"></span> Back
   <% end %>
