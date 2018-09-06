@@ -1,0 +1,12 @@
+<%= form_with(local: true, url: '/comments', method: 'post') do |form| %>
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :body, id: :comment_body %>
+  </div>
+
+  <%= form.hidden_field :post_id, value: @post.id %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

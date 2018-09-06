@@ -20,6 +20,36 @@
       downvote
       <%= post.get_downvotes.size %>
     <% end %>
+    <div class="comment-section">
+      <p><%= post.comments.count %> Comments</p>
+      <p> Leave a comment </p>
+      <%= form_with( local: true, url: '/comments', method: 'post') do |form| %>
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :body, id: :comment_body %>
+  </div>
+
+  <%= form.hidden_field :post_id, value: post.id %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+      <%
+      count = 0
+      max_comments = 3
+      if post.comments.count < max_comments
+        post.comments.each do |comment| %>
+          <p><%= comment.user_first_name %> said: <%= comment.body%></p>
+        <% end
+      else
+        while count < max_comments do %> 
+          <p><%= post.comments[count].body%></p>
+        <% 
+        count += 1
+        end 
+      end %>
+    </div>
   </div>
 <% end %>
   <div>

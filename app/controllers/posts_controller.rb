@@ -30,6 +30,8 @@ class PostsController < ApplicationController
 
   def show
     set_post
+    @comments = @post.comments.all
+    @comment = @post.comments.build
   end
 
   def upvote
