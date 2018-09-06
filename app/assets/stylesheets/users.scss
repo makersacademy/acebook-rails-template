@@ -68,6 +68,8 @@ label{
 }
 
 .profile_avatar {
-  height: 18vmin;
+  object-fit: contain;
   width: 18vmin;
+  height: 18vmin;
+  background-color: black;
 }

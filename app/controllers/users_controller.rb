@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-  def new; end
+  before_action :authenticate_user!, only: [:me]
+
+  def new
+  end
 
   def create
     user = User.new(user_params)
@@ -16,7 +19,6 @@ class UsersController < ApplicationController
   end
 
   def me
-    # Need to validate user before going to this route
     @user = current_user
     @posts = Post.where('user_name' => current_user.name).order(created_at: :desc).all
   end
@@ -31,5 +33,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :avatar)
+  end
+
+  def authenticate_user!
+    super
   end
 end

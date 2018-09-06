@@ -3,9 +3,7 @@
 <%= form_for me_path do |form| %>
   <%= form.label :avatar %>
   <br>
-    <div class='profile_avatar'>
-      <%= image_tag(@user.avatar, :style => 'height: 100%; width: 100%') %>
-    </div>
+  <%= image_tag(@user.avatar, :class => 'profile_avatar') %>
   <br>
   <%= form.text_field :avatar, placeholder: 'Paste a URL here', value: nil %>
   <br>

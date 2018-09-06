@@ -13,6 +13,11 @@ The card wall is <a href="https://trello.com/b/ArBRnnAK/acebook">here</a>
 Our project is deployed on Heroku <a href ="https://murmuring-earth-81334.herokuapp.com/">here</a>
 
 ## User Stories
+Key:  
+:white_check_mark: : Complete and deployed  
+:soon: : Finished, under review  
+:construction: : In progress  
+:x: Not started yet  
 
 ```
 [MVP]
@@ -48,14 +53,6 @@ I would like each post to show the date posted.
 
 ```
 [MVP]
-As a user of Acebook,
-So that I can participate in the conversation,
-I would like to be able to comment on a post.
-```
-:construction:
-
-```
-[MVP]
 As a user of Acebook,  
 So that I can see my most recent posts,  
 I would like my posts to be seen in reverse chronological order.
@@ -65,27 +62,45 @@ I would like my posts to be seen in reverse chronological order.
 ```
 As a user of Acebook,
 So that I can change previous posts,
-I would like to update and delete my posts.
+I would like to be able to update and delete my posts.
 ```
+:soon:
+
+```
+[MVP]
+As a user of Acebook,
+So that I can participate in the conversation,
+I would like to be able to comment on a post.
+```
+:white_check_mark:
+
+```
+As a user of Acebook,
+So that I can change my previous comments,
+I would like to be able to update and delete my comments.
+```
+:x:
 
 ```
 As a user of Acebook,  
 So that I can manage my online presence,  
 I would like a profile page (pictures, see your own posts).
 ```
-:construction:
+:soon:
 
 ```
 As a user,  
 So that I can show that I enjoyed a post,  
 I would like to be able to like a post.
 ```
+:soon:
 
 ```
 As a user of Acebook,  
 So that I know how many people enjoyed my post,  
 I would like to be able to see how many likes there are.
 ```
+:soon:
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
