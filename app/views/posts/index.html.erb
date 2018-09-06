@@ -7,6 +7,7 @@
   <body>
 
   <div class="posts-list">
+    <!-- Below we have added the 'index' parameter for sake of testing so that comment blocks have unique id -->
     <% @posts.each_with_index do |post, index| %>
     <div class="single-post">
       <big><strong><%= post.user_name %></strong><br>
@@ -21,26 +22,18 @@
         <%= button_to 'Like', post_likes_path(post), method: :post, :class => 'button' %>
       <% end %>
     <button id='comment-button<%= index + 1%>' class='collapsible commentsButton'><%= post.comments.length %>
-      <% if post.comments.length === 1 %>
-        comment
-      <% else %>
-        comments
-      <% end %>
+      <%= (post.comments.length) == 1 ? 'comment' : 'comments' %>
     </button>
     <div class='commentsContainer'>
-      <!-- Loop for comments -->
       <% post.comments.each do |comment| %>
         <div class="single-comment">
           <p>
             <strong><%= comment.user_name %></strong>: <%= comment.body %>
           </p>
         </div>
-      <!-- End Loop -->
       <% end %>
 
       <div>
-        <!-- Leave a comment form-->
-        <!-- array may not work, it generates a view for just the post-->
         <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
           <%= form.text_area :body, placeholder: "Leave a comment" %>
           <br>

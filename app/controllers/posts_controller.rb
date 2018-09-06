@@ -9,8 +9,6 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  # POST /posts
-  # POST /posts.json
   def create
     @post = Post.create(post_params)
     @post.user_name = current_user.name
@@ -23,8 +21,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
       if @post.update(post_params)
@@ -35,10 +31,10 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    session[:return_to] = request.referer.to_s
+  end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     @post.destroy
     respond_to do |format|
@@ -56,7 +52,6 @@ class PostsController < ApplicationController
     params.require(:post).permit(:message)
   end
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
   end

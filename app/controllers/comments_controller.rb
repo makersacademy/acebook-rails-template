@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+
   def create
     session[:return_to] = request.referer.to_s
     @post = Post.find(params[:post_id])

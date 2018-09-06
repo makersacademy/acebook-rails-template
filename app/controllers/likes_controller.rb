@@ -1,7 +1,8 @@
 class LikesController < ApplicationController
-  before_action :authenticate_user!
   before_action :find_post, only: [:create]
   before_action :find_like, only: [:destroy]
+
+  # Our index page has accounted for the 'already_liked?' method; we are keeping the conditionals as a fail-safe.
 
   def create
     if already_liked?

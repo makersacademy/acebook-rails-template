@@ -6,14 +6,14 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
 
-    if user.save
-      flash[:success] = 'Yay! you are now signed up!'
-      session[:user_id] = user.id
-      session[:user_name] = user.name
-      redirect_to '/posts'
-    else
-      flash[:error] = 'Sorry, username not available!'
-      redirect_to '/login'
+    respond_to do |format|
+      if user.save
+        session[:user_id] = user.id
+        session[:user_name] = user.name
+        format.html { redirect_to '/posts', notice: 'Yay! you are now signed up!' }
+      else
+        format.html { redirect_to '/login', notice: 'Sorry, username not available!' }
+      end
     end
   end
 

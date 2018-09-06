@@ -27,15 +27,12 @@ body {
 } */
 
 #header {
-  /* width: 100%; */
   height: 6%;
   background-color: #202020;
   vertical-align: middle;
   padding-left: 5%;
   padding-right: 5%;
   font-family: 'Ubuntu', sans-serif;
-  /* display: flex;
-  justify-content: space-around */
 }
 
 #header_title {
