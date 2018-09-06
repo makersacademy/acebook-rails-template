@@ -5,7 +5,6 @@ require 'rails_helper'
 RSpec.feature 'After login/signup', type: :feature do
   scenario 'Can submit posts' do
     visit('/')
-    sign_in
     sign_up
     create_post
     expect(page).to have_content('Hello, world!')
