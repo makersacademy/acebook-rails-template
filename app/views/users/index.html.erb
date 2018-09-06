@@ -1,0 +1,59 @@
+
+<div class='main_sign_up_in_page'>
+
+  <div class="sign_in">
+    <div class="sign_in_form">
+        <%= form_tag '/login' do %>
+          <h2><strong>Sign In</strong></h2>
+        <div class = "form-group">
+          <strong>Email:</strong>
+          </br>
+          </br>
+          <%= text_field_tag :email, nil, id:"sign_in_email" %>
+        </div>
+        </br>
+        <div class = "form-group">
+          <strong>Password: </strong>
+          </br>
+          </br>
+          <%= password_field_tag :password, nil, id: "sign_in_password" %>
+        </div>
+      </br>
+      </br>
+        <%= submit_tag "Log In", class: "sign_in_submit" %>
+        <% end %>
+    </div>
+  </div>
+
+
+  <div class="sign_up">
+    <div class="sign_up_form">
+      <%= form_for :user, url: '/users' do |f| %>
+        <h2><strong>Sign up<strong></h2>
+      <div class ="form-group">
+        <%= f.label :name %>
+      </br>
+      </br>
+        <%= f.text_field :name, id:"sign_up_name" %>
+      </div>
+      </br>
+      <div class = "form-group">
+        <%= f.label :email %>
+        </br>
+        </br>
+        <%= f.text_field :email, id:"sign_up_email" %>
+      </div>
+      </br>
+      <div class = "form=group">
+        <%= f.label :password %>
+        </br>
+        </br>
+        <%= f.password_field :password, id:"sign_up_password" %>
+      </div>
+      </br>
+      </br>
+      <%= f.submit "Sign Up", class: "sign_up_submit" %>
+      <% end %>
+    </div>
+
+</div>

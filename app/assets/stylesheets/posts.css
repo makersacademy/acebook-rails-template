@@ -1,0 +1,20 @@
+.commentsButton {
+  background-color: Transparent;
+  border: none;
+  cursor:pointer;
+  padding: 0;
+  outline:none;
+  font-size: 0.8em;
+}
+
+.commentsContainer {
+  display: none;
+}
+
+.submit_button {
+  width: auto;
+}
+
+.button {
+  width: auto;
+}

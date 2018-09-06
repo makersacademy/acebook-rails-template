@@ -10,6 +10,70 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
+
  */
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0;
+}
+
+/* to be implemented later on  */
+/* #flash {
+  background-color: blue;
+} */
+
+#header {
+  height: 6%;
+  background-color: #202020;
+  vertical-align: middle;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#header_title {
+  text-decoration: none;
+  margin: 0 10% 0 0;
+  color: #6DB3BF;
+  font-size: 2em;
+  font-weight: bold;
+  float: left;
+}
+
+#header_title:hover {
+  filter: brightness(120%);
+}
+
+#header_welcome_text {
+  margin: 0;
+  color: white;
+  font-size: 1.8em;
+  float: left;
+}
+
+.log_in_or_out_link {
+  margin: 0 0 0 5vw;
+  color: white;
+  font-size: 1.5em;
+  float: right;
+}
+
+.log_in_or_out_link:visited {
+  color: white;
+}
+
+.log_in_or_out_link:hover {
+  color: silver;
+}
+
+.vertically_centered {
+  position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

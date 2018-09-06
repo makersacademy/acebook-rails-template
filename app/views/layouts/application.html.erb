@@ -1,14 +1,38 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <div id='header'>
+      <%= link_to 'Acebook', '/posts', id: "header_title", class: "vertically_centered" %>
+
+      <% if current_user %>
+        <p id='header_welcome_text' class='vertically_centered'>
+          Welcome, <%= current_user.name %>
+        </p>
+      <% end %>
+      <% if current_user %>
+        <%= link_to 'Logout', '/logout', class: "log_in_or_out_link vertically_centered" %>
+        <%= link_to 'My Profile', '/me', class: "log_in_or_out_link vertically_centered" %>
+      <% else %>
+        <%=  %>
+      <% end %>
+    </div>
+
+    <% flash.each do |key, value| %>
+      <div class="flash alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+
     <%= yield %>
+
+
   </body>
 </html>

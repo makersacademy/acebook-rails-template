@@ -1,0 +1,63 @@
+<h1><%= @user.name %>'s Profile</h1>
+<br>
+<%= form_for me_path do |form| %>
+  <%= form.label :avatar %>
+  <br>
+  <%= image_tag(@user.avatar, :class => 'profile_avatar') %>
+  <br>
+  <%= form.text_field :avatar, placeholder: 'Paste a URL here', value: nil %>
+  <br>
+  <%= form.submit 'Update Avatar', :class => 'submit_button' %>
+<% end %>
+<br>
+
+<div class="posts-list">
+  <% @posts.each do |post| %>
+  <div class="single-post">
+    <big><strong><%= post.user_name %></strong><br>
+    <%= post.message %><br></big>
+    <small>posted <%= distance_of_time_in_words(post.created_at, Time.now) %> ago</small>
+  </div>
+  <button class='collapsible commentsButton'><%= post.comments.length %>
+    <% if post.comments.length === 1 %>
+      comment
+    <% else %>
+      comments
+    <% end %>
+  </button>
+  <div class='commentsContainer'>
+    <!-- Loop for comments -->
+    <% post.comments.each do |comment| %>
+      <div class="single-comment">
+        <p>
+          <strong><%= comment.user_name %></strong>: <%= comment.body %>
+        </p>
+      </div>
+    <!-- End Loop -->
+    <% end %>
+
+    <div>
+      <!-- Leave a comment form-->
+      <!-- array may not work, it generates a view for just the post-->
+      <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+        <%= form.text_area :body, placeholder: "Leave a comment" %>
+        <br>
+        <%= form.submit 'Submit', :class => 'submit_button' %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+    <% if post.user_name === current_user.name %>
+    <tr>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    <br><br>
+  <% end %>
+</div>
+<div class="new-post-link">
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
+</div>

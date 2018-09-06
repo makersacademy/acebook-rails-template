@@ -1,5 +1,7 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.describe Post, type: :model do
-  it { is_expected.to be }
-end
+require 'rails_helper'
+#
+# RSpec.describe Post, type: :model do
+#   it { is_expected.to be }
+# end
