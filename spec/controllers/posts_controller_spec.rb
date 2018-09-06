@@ -40,7 +40,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "Super user" do
-    it "can only delete their own posts" do
+    it "can delete anybody's posts" do
       # This simulates an authenticated user
       superadmin_user = create(:user)
       superadmin_user.superadmin_role = true
