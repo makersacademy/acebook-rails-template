@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   acts_as_votable
   belongs_to :user
   delegate :first_name, to: :user, prefix: true
+  has_many :comments
  
   def score
     self.get_upvotes.size - self.get_downvotes.size
