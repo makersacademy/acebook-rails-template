@@ -55,11 +55,15 @@
       max_comments = 3
       if post.comments.count < max_comments
         post.comments.each do |comment| %>
-          <p><%= comment.user_first_name %> said: <%= comment.body%></p>
+        <div class = comment-box>
+          <p class="comment-text"><%= comment.user_first_name %> said: <%= comment.body%></p>
+        </div>
         <% end
       else
-        while count < max_comments do %> 
-          <p><%= post.comments[count].body%></p>
+        while count < max_comments do %>
+        <div class = comment-box> 
+          <p class="comment-text"><%= post.comments[count].body%></p>
+        </div>
         <% 
         count += 1
         end 
