@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm"></div>
+      <div class="col-sm"><img src="http://res.cloudinary.com/dani-devs-and-designs/image/upload/v1535992301/7024801-funny-cat-expression_v32nt1.jpg"></div>
+      <div class="col-sm">
+        <h1>Signup</h1>
+        <%= form_for :user, url: '/users' do |f| %>
+
+          First name: <%= f.text_field :first_name %>
+          Last name: <%= f.text_field :last_name %>
+          Email: <%= f.text_field :email %>
+          Password: <%= f.password_field :password %>
+          Password Confirmation: <%= f.password_field :password_confirmation %>
+          <%= f.submit "Submit" %>
+
+        <% end %>
+        </div>
+      <div class="col-lg-3">
+    </div>
+  </div>
+</div>
