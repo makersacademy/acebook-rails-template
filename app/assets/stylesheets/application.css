@@ -1,3 +1,5 @@
+require font-awesome
+
 body {
   scroll-behavior: smooth;
 }
@@ -32,6 +34,11 @@ a:hover {
   transition: 0.5s;
 }
 
+.pull-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .alert {
   color: red;
   font-family: 'Roboto', sans-serif;
@@ -41,6 +48,33 @@ a:hover {
   padding-left: 0; 
   animation: blinker 3s linear infinite;
   pointer-events: none;
+}
+
+.form.text_area: {
+  border: 3px solid black !important;
+  background-color: blue;
+}
+
+.new-post:hover {
+  background-color: green;
+  transition: 1s;
+}
+
+.logged-in-as {
+  padding-left: 5%;
+}
+
+.far {
+  padding: 1%;
+  transition: 1s;
+}
+
+.like:hover {
+  color: green;
+}
+
+.hate:hover {
+  color: orangered;
 }
 
 @keyframes blinker {

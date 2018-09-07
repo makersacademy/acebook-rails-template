@@ -1,3 +1,5 @@
+@import "font-awesome";
+
 body {
   scroll-behavior: smooth;
 }
@@ -65,6 +67,12 @@ ul {
 
 li {
   font-weight: 900;
+}
+
+.container .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .left {

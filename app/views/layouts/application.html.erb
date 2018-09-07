@@ -4,6 +4,7 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Oxygen" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -12,13 +13,11 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
-
-
-    <div class="navbar-brand"><%= link_to 'Home', root_path, class: 'navbar-brand' %>
-      <% if user_signed_in? %>
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-brand' %>
+    <div class="navbar-brand">
+      <%= link_to 'Home', root_path, class: 'navbar-brand' %>  
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-brand' %>
         <%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-brand' %>
-        <div class="logged-in-as">Logged in as <strong><%= current_user.first_name %></strong>
+        <% if user_signed_in? %><h4 class="text-right">Logged in as  <strong><%= current_user.first_name %></strong></h4>
       <% else %>
         <%= link_to 'Sign up', new_user_registration_path, :class => 'navbar-brand'  %>
         <%= link_to "Login", new_user_session_path, :class => 'navbar-brand'  %>

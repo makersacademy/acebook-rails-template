@@ -1,32 +1,41 @@
-
-<div class="container center">
-<% @posts.each do |post| %>
-  <div class="card text-center">
-    <div class="card-header">
-      <h3><%= post.user_first_name %></h3>
-      <p> posted <%= time_ago_in_words(post.created_at) %> ago</p>
-    </div>
-    <span class="card-img-top">
-      <%= image_tag post.postimage.square.url, :class => "post_image", :style => "width: 80%" if post.postimage? %>
-    </span>
-    <div class="card-body">
-      <p class="card-text"><%= post.message %></p>
-      <% if can? :manage, post, user_id: current_user.id %>
-        <%= link_to edit_post_path(post), class: 'btn btn-success' do %>
-          <span class="glyphicon glyphicon-plus"></span> Edit Post
-        <% end %>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
+<button type="button" class="btn btn-default btn-lg new-post">
+<span class="new-post" aria-hidden="true">
+  <%= link_to 'New Post', new_post_path %>
+</span>
+</button>
+  <% @posts.each do |post| %>
+    <div class="card text-center">
+      <div class="card-header">
+        <h3><%= post.user_first_name %></h3>
+        <p> posted <%= time_ago_in_words(post.created_at) %> ago</p>
+      
+        <% if can? :manage, post, user_id: current_user.id %>
+      <%= link_to edit_post_path(post), class: 'btn btn-success' do %>
+        <span class="pull-right"></span> Edit Post
       <% end %>
-    </div>
-    <%= link_to like_post_path(post), method: :put do %>
-      upvote
-    <%= post.get_upvotes.size %>
     <% end %>
-    <%= post.score %>
-    <%= link_to dislike_post_path(post), method: :put do %>
-      downvote
-      <%= post.get_downvotes.size %>
-    <% end %>
-    <div class="comment-section">
+      <span class="card-img-top">
+        <%= image_tag post.postimage.square.url, :class => "post_image", :style => "width: 90%" if post.postimage? %>
+      </span>
+
+      <div class="card-body">
+        <p class="card-text"><%= post.message %></p>
+      </div>
+      <%= link_to like_post_path(post), method: :put do %>
+        <i class="far fa-thumbs-up fa-3x like"></i>
+      <%= post.get_upvotes.size %>
+      <% end %>
+      
+      <%= link_to dislike_post_path(post), method: :put do %>
+        <i class="far fa-thumbs-down fa-3x hate"></i>
+        <%= post.get_downvotes.size %>
+      <% end %>
+
+      <div class="comment-section">
       <p><%= post.comments.count %> Comments</p>
       <p> Leave a comment </p>
       <%= form_with( local: true, url: '/comments', method: 'post') do |form| %>
@@ -37,9 +46,9 @@
 
   <%= form.hidden_field :post_id, value: post.id %>
 
-  <div class="actions">
+  <button type="button" class="actions btn-btn-danger">
     <%= form.submit %>
-  </div>
+  </button>
 <% end %>
       <%
       count = 0
@@ -57,14 +66,14 @@
       end %>
     </div>
   </div>
-<% end %>
-  <div>
-    <button type="button" class="btn btn-default btn-lg">
-      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true">
-        <%= link_to 'New Post', new_post_path %>
-      </span>
-    </button>
+      
+    </div>    
+  <% end %>   
+    </div>
+    </div>
+    </div>
   </div>
+  <div class="col-sm-3"></div>
   </div>
+</div>
 
-  
