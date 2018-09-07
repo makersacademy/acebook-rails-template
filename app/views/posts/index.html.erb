@@ -35,7 +35,7 @@
         <%= post.get_downvotes.size %>
       <% end %>
 
-      <div class="comment-section">
+      <div class="comment-section" style="padding-top: 4%;">
       <p><%= post.comments.count %> Comments</p>
       <p> Leave a comment </p>
       <%= form_with( local: true, url: '/comments', method: 'post') do |form| %>
@@ -56,7 +56,7 @@
       if post.comments.count < max_comments
         post.comments.each do |comment| %>
         <div class = comment-box>
-          <p class="comment-text"><%= comment.user_first_name %> said: <%= comment.body%></p>
+          <p class="comment-text" style="color:pink;"><%= comment.user_first_name %> said: <%= comment.body%></p>
         </div>
         <% end
       else
