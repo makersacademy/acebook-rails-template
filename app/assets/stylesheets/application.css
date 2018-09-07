@@ -50,11 +50,6 @@ a:hover {
   pointer-events: none;
 }
 
-.form.text_area: {
-  border: 3px solid black !important;
-  background-color: blue;
-}
-
 .new-post:hover {
   background-color: green;
   transition: 1s;

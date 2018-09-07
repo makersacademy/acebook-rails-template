@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def sign_up_jackbert
   visit '/users/sign_up'
   fill_in 'first name', with: 'Jack'
@@ -9,9 +11,9 @@ def sign_up_jackbert
 end
 
 def make_a_coffee
-  login_as create( :user ), scope: :user
-  visit new_post_path  
-  attach_file('post[postimage]', "./files/images/caffeine-coffee-cup-6347.jpg")
+  login_as create(:user), scope: :user
+  visit new_post_path
+  attach_file('post[postimage]', './files/images/caffeine-coffee-cup-6347.jpg')
   fill_in 'post[message]', with: 'Hello, world!'
   click_button 'Create Post'
 end

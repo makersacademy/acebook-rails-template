@@ -4,11 +4,11 @@ require 'rails_helper'
 require 'features/web_helper'
 
 RSpec.feature 'User login', type: :feature do
-  before(:each) { 
+  before(:each) do
     visit '/users/sign_up'
     sign_up_jackbert
-  }
-  
+  end
+
   scenario 'user can login to existing account' do
     sign_out :user
     visit '/users/sign_in'

@@ -5,8 +5,8 @@
 
 class PostsController < ApplicationController
   # before_action :set_post, only: [:show]
-  load_and_authorize_resource :only => [:edit, :update, :destroy]
-  
+  load_and_authorize_resource only: %i[edit update destroy]
+
   def new
     @post = Post.new
   end
@@ -75,11 +75,9 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
-   
   end
 
   def post_params
     params.require(:post).permit(:postimage, :message)
   end
-
 end
