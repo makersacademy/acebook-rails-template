@@ -9,7 +9,7 @@ en:
     failure:
       already_authenticated: <p class="alert text-left">You are already signed in</p>
       inactive: <p class="alert text-left">Your account is not activated yet</p>
-      invalid: <p class="alert text-left">Invalid %{authentication_keys} or password</p>
+      invalid: "Invalid %{authentication_keys} or password"
       locked: <p class="alert text-left">Your account is locked</p>
       last_attempt: <p class="alert text-left">You have one more attempt before your account is locked</p>
       not_found_in_database: <p class="alert text-left">Invalid %{authentication_keys} or password</p>
