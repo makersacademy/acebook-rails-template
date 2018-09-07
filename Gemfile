@@ -9,9 +9,13 @@ end
 gem 'aws-sdk', '~> 2'
 # gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
+
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'fog-aws'
+gem 'cancancan', '~> 2.0'
+gem 'rails_admin', '~> 1.3'
+gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'acts_as_votable', '~> 0.10.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

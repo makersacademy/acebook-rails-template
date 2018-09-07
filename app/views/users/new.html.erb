@@ -1,3 +1,4 @@
+
 <body>
   <h1>Welcome to aceBook.</h1>
 </body>
@@ -7,6 +8,5 @@
     <input type="text" id="email" name="user_email" placeholder="Email"><%= f.text_field :email %>
     <input type="text" id="password" name="user_password" placeholder="Password"><%= f.password_field :password %>
     <input type="text" id="passwordconfirm" name="user_confirmpassword" placeholder="Password confirmation"><%= f.password_field :password_confirmation %>
-          <%= f.submit "Submit" %>
-
-        <% end %>
+    <%= f.submit "Submit" %>
+  <% end %>

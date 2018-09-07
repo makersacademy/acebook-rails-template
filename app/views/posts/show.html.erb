@@ -9,12 +9,28 @@
     <div class="card-body">
       <p class="card-text"><%= @post.message %></p>
     </div>
-  </div>
 
+    <h3>Comments</h3>
+    <% @comments.each do |comment| %>
+      <div>
+        <strong><%= comment.user_first_name %></strong>
+        <br>
+        <p><%= comment.user_first_name%> said: <%= comment.body %></p>
+        <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    <% end %>
+    <%= render partial: 'comments/form', locals: { comment: @comment } %>
+  </div>
 <div>
-  <%= link_to edit_post_path(@post), class: 'btn btn-success' do %>
+
+<% if can? :manage, @post, user_id: current_user.id %>
+  <button class="btn btn-success"><%= link_to edit_post_path(@post) do %>
     <span class="glyphicon glyphicon-plus"></span> Edit Post
   <% end %>
+  <span class="remove-post">
+        <%= button_to 'Remove', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </span>
+<% end %>
   <%= link_to posts_path, class: 'btn btn-success' do %>
     <span class="glyphicon glyphicon-backward"></span> Back
   <% end %>
