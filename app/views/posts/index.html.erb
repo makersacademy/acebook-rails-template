@@ -1,12 +1,13 @@
 
+<div class="container center">
 <% @posts.each do |post| %>
-  <div class="card text-center" style="width: 31rem;">
+  <div class="card text-center">
     <div class="card-header">
-      <%= post.user_first_name %> 
-      <p> posted <%= time_ago_in_words(post.created_at) %> ago </p>
+      <h3><%= post.user_first_name %></h3>
+      <p> posted <%= time_ago_in_words(post.created_at) %> ago</p>
     </div>
     <span class="card-img-top">
-      <%= image_tag post.postimage.square.url, :class => "post_image", :style => "width: 100%" if post.postimage? %>
+      <%= image_tag post.postimage.square.url, :class => "post_image", :style => "width: 80%" if post.postimage? %>
     </span>
     <div class="card-body">
       <p class="card-text"><%= post.message %></p>
@@ -64,3 +65,6 @@
       </span>
     </button>
   </div>
+  </div>
+
+  

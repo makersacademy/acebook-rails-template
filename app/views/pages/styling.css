@@ -2,6 +2,12 @@ body {
   scroll-behavior: smooth;
 }
 
+.container .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 html, body {
   background: #FFC22F;
   height: 100%;
@@ -27,44 +33,12 @@ h3, p {
 }
 
 a:hover {
-  color: white;
+  color: #B23554;
   text-decoration: none;
-  transition: 0.5s;
-}
-
-.alert {
-  color: red;
-  font-family: 'Roboto', sans-serif;
-  font-size: 2vw;
-  font-weight: 900;
-  margin-left: 0;
-  padding-left: 0; 
-  animation: blinker 3s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
 }
 
 .mustard {
   background-color: #FFC22F;
-}
-
-.red {
-  color: red;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  font-weight: 900;
 }
 
 .left {
@@ -91,11 +65,7 @@ li {
 }
 
 .bottom-left {
-  padding: 2%;
-}
-
-.reset-password {
-  font-size: 2vw;
+  padding: 1%;
 }
 
 form * {

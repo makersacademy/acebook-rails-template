@@ -1,21 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm"></div>
-      <div class="col-sm"><img src="http://res.cloudinary.com/dani-devs-and-designs/image/upload/v1535992301/7024801-funny-cat-expression_v32nt1.jpg"></div>
-      <div class="col-sm">
-        <h1>Signup</h1>
-        <%= form_for :user, url: '/users' do |f| %>
 
-          First name: <%= f.text_field :first_name %>
-          Last name: <%= f.text_field :last_name %>
-          Email: <%= f.text_field :email %>
-          Password: <%= f.password_field :password %>
-          Password Confirmation: <%= f.password_field :password_confirmation %>
-          <%= f.submit "Submit" %>
-
-        <% end %>
-        </div>
-      <div class="col-lg-3">
-    </div>
-  </div>
-</div>
+<body>
+  <h1>Welcome to aceBook.</h1>
+</body>
+  <%= form_for :user, url: '/users' do |f| %>
+    <input type="text" id="First name" name="user_name" placeholder="First Name"><%= f.text_field :first_name %>
+    <input type="text" id="Last name" name="user_name" placeholder="Last Name"><%= f.text_field :last_name %>
+    <input type="text" id="email" name="user_email" placeholder="Email"><%= f.text_field :email %>
+    <input type="text" id="password" name="user_password" placeholder="Password"><%= f.password_field :password %>
+    <input type="text" id="passwordconfirm" name="user_confirmpassword" placeholder="Password confirmation"><%= f.password_field :password_confirmation %>
+    <%= f.submit "Submit" %>
+  <% end %>
