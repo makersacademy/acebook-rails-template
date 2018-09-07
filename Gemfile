@@ -1,21 +1,24 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
+ruby '2.5.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
+
 gem 'aws-sdk', '~> 2'
 # gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
-gem 'carrierwave', '~> 1.0'
-gem "mini_magick"
-gem 'fog-aws'
+
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'cancancan', '~> 2.0'
+gem 'carrierwave', '~> 1.0'
+gem 'fog-aws'
+gem 'mini_magick'
 gem 'rails_admin', '~> 1.3'
 gem 'remotipart', github: 'mshibuya/remotipart'
-gem 'acts_as_votable', '~> 0.10.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -46,15 +49,15 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'factory_bot_rails'
+  gem 'guard-rspec'
+  gem 'pry'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
-  gem 'pry'
-  gem 'guard-rspec'
   gem 'spring-commands-rspec'
-  gem 'rails-controller-testing'
-  gem 'factory_bot_rails'
 end
 
 group :test do

@@ -24,7 +24,7 @@
 <div>
 
 <% if can? :manage, @post, user_id: current_user.id %>
-  <%= link_to edit_post_path(@post), class: 'btn btn-success' do %>
+  <button class="btn btn-success"><%= link_to edit_post_path(@post) do %>
     <span class="glyphicon glyphicon-plus"></span> Edit Post
   <% end %>
   <span class="remove-post">
