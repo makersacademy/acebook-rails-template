@@ -1,0 +1,40 @@
+<h1 class="welcome text-center">Welcome to aceBook.</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <br/>
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "first name" %>
+  </div>
+
+  <div class="field">
+    <br/>
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "last name" %>
+  </div>
+
+  <div class="field">
+    <br/>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email" %>
+  </div>
+
+  <div class="field">
+    <br/>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "password" %>
+  </div>
+  <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+
+  <div class="field">
+   <br/>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "confirm password" %>
+  </div>
+
+  <div class="actions">
+    <br/>
+    <button type="button" class="btn btn-outline-light"><%= f.submit "Sign up" %></button>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

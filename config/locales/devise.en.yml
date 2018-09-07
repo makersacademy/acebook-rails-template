@@ -1,0 +1,64 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+en:
+  devise:
+    confirmations:
+      confirmed: <p class="alert text-left">Your email address has been successfully confirmed</p>
+      send_instructions: <p class="alert text-left">You will receive an email with instructions for how to confirm your email address in a few minutes</p>
+      send_paranoid_instructions: <p class="alert text-left">If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes</p>
+    failure:
+      already_authenticated: <p class="alert text-left">You are already signed in</p>
+      inactive: <p class="alert text-left">Your account is not activated yet</p>
+      invalid: "Invalid %{authentication_keys} or password"
+      locked: <p class="alert text-left">Your account is locked</p>
+      last_attempt: <p class="alert text-left">You have one more attempt before your account is locked</p>
+      not_found_in_database: <p class="alert text-left">Invalid %{authentication_keys} or password</p>
+      timeout: <p class="alert text-left">Your session expired. Please sign in again to continue</p>
+      # unauthenticated: <p class="alert text-left">You need to sign in or sign up before continuing</p>
+      unconfirmed: <p class="alert text-left">You have to confirm your email address before continuing</p>
+    mailer:
+      confirmation_instructions:
+        subject: <p class="alert text-left">Confirmation instructions</p>
+      reset_password_instructions:
+        subject: <p class="alert text-left">Reset password instructions</p>
+      unlock_instructions:
+        subject: <p class="alert text-left">Unlock instructions</p>
+      email_changed:
+        subject: <p class="alert text-left">Email Changed</p>
+      password_change:
+        subject: <p class="alert text-left">Password Changed</p>
+    omniauth_callbacks:
+      failure: <p class="alert text-left">Could not authenticate you from %{kind} because \"%{reason}\<p class="alert text-left"></p>
+      success: <p class="alert text-left">Successfully authenticated from %{kind} account</p>
+    passwords:
+      no_token: <p class="alert text-left">You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided</p>
+      send_instructions: <p class="alert text-left">You will receive an email with instructions on how to reset your password in a few minutes</p>
+      send_paranoid_instructions: <p class="alert text-left">If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes</p>
+      updated: <p class="alert text-left">Your password has been changed successfully. You are now signed in</p>
+      updated_not_active: <p class="alert text-left">Your password has been changed successfully</p>
+    registrations:
+      destroyed: <p class="alert text-left">Bye! Your account has been successfully cancelled. We hope to see you again soon</p>
+      signed_up: "Welcome! You have signed up successfully"
+      signed_up_but_inactive: <p class="alert text-left">You have signed up successfully. However, we could not sign you in because your account is not yet activated</p>
+      signed_up_but_locked: <p class="alert text-left">You have signed up successfully. However, we could not sign you in because your account is locked</p>
+      signed_up_but_unconfirmed: <p class="alert text-left">A message with a confirmation link has been sent to your email address. Please follow the link to activate your account</p>
+      update_needs_confirmation: <p class="alert text-left">You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address</p>
+      updated: <p class="alert text-left">Your account has been updated successfully</p>
+    sessions:
+      signed_in: Signed in successfully
+      signed_out: <p class="alert text-left">Signed out successfully</p>
+      already_signed_out: <p class="alert text-left">Signed out successfully</p>
+    unlocks:
+      send_instructions: <p class="alert text-left">You will receive an email with instructions for how to unlock your account in a few minutes</p>
+      send_paranoid_instructions: <p class="alert text-left">If your account exists, you will receive an email with instructions for how to unlock it in a few minutes</p>
+      unlocked: <p class="alert text-left">Your account has been unlocked successfully. Please sign in to continue</p>
+  errors:
+    messages:
+      already_confirmed: <p class="alert text-left">was already confirmed, please try signing in</p>
+      confirmation_period_expired: <p class="alert text-left">needs to be confirmed within %{period}, please request a new one</p>
+      expired: <p class="alert text-left">has expired, please request a new one</p>
+      not_found: <p class="alert text-left">not found</p>
+      not_locked: <p class="alert text-left">was not locked</p>
+      not_saved:
+        one: <p class="alert text-left">1 error prohibited this %{resource} from being saved:</p>
+        other: <p class="alert text-left">%{count} errors prohibited this %{resource} from being saved:</p>
