@@ -37,16 +37,15 @@
 
       <div class="comment-section" style="padding-top: 4%;">
       <p><%= post.comments.count %> Comments</p>
-      <p> Leave a comment </p>
+      <h3> Leave a comment </strong></h3>
       <%= form_with( local: true, url: '/comments', method: 'post') do |form| %>
   <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :body, id: :comment_body %>
+    <p class="comment-text" style="border:1px solid black;"><%= form.text_area :body, id: :comment_body %></p>
   </div>
 
   <%= form.hidden_field :post_id, value: post.id %>
 
-  <button type="button" class="actions btn-btn-danger">
+  <button type="button" class="actions btn-btn-danger" style="border:1px solid black;">
     <%= form.submit %>
   </button>
 <% end %>
@@ -56,7 +55,7 @@
       if post.comments.count < max_comments
         post.comments.each do |comment| %>
         <div class = comment-box>
-          <p class="comment-text" style="color:pink;"><%= comment.user_first_name %> said: <%= comment.body%></p>
+          <p class="comment-text"><%= comment.user_first_name %> said: <%= comment.body%></p>
         </div>
         <% end
       else
