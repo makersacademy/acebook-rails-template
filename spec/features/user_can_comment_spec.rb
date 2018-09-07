@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.feature 'Comments', type: :feature do
-
   scenario 'after creating a post, user can comment' do
     make_a_coffee
     fill_in 'comment_body', with: 'This is a test comment'
@@ -19,4 +18,3 @@ RSpec.feature 'Comments', type: :feature do
     expect(page).to have_content('This is a comment')
   end
 end
-

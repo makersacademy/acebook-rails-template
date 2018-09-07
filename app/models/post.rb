@@ -7,9 +7,8 @@ class Post < ApplicationRecord
   delegate :first_name, to: :user, prefix: true
 
   has_many :comments
- 
-  def score
-    self.get_upvotes.size - self.get_downvotes.size
-  end
 
+  def score
+    get_upvotes.size - get_downvotes.size
+  end
 end
