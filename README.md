@@ -1,26 +1,65 @@
-# AceBook
+# Acebook
 
-REQUIRED INSTRUCTIONS:
+## The Mission
+Create a clone of a well-known social media platform using Rails. 
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+## Created By
+[Alastair Edmonds](https://github.com/Alastair2D)
+[Esam Al-Dabagh](https://github.com/EsamAl-Dabagh)
+[James Sutherland](https://github.com/LondonJim)
+[Samir Soormally](https://github.com/LazySamir)
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+## User Stories
+```
+As a user
+So I can created an account
+I want to be able to signup
+```
 
-2. The card wall is here: <please update>
+```
+As a user 
+So I can access my account
+I want to be able to login
+```
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+```
+As a user
+So I can express myself
+I want to be able to create posts
+```
 
-## Quickstart
+```
+As a user
+So I can express agreement with someone else's post
+I want to be able to like posts
+```
 
-First, clone this repository. Then:
+```
+As a user
+So I can see when someone created a post
+Posts will show when they are created
+```
 
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
+```
+As a user
+So I can see latest posts
+Posts will display with newest first
+```
 
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+```
+As a user
+So I can spare my blushes
+I can delete my own posts
+```
+
+```
+As a user
+So I can fix typos
+I can update my post upto 10 mins after it's created. 
+```
+
+```
+As a user
+So I can be sure likes haven't be gamed
+Users can only like a post once.
 ```
