@@ -1,7 +1,7 @@
 # Acebook
 
 ## The Mission
-Create a clone of a well-known social media platform using Rails. 
+Create a clone of a well-known social media platform using Rails.
 
 ## Created By
 [Alastair Edmonds](https://github.com/Alastair2D)
@@ -17,7 +17,7 @@ I want to be able to signup
 ```
 
 ```
-As a user 
+As a user
 So I can access my account
 I want to be able to login
 ```
@@ -55,7 +55,7 @@ I can delete my own posts
 ```
 As a user
 So I can fix typos
-I can update my post upto 10 mins after it's created. 
+I can update my post upto 10 mins after it's created.
 ```
 
 ```
@@ -68,4 +68,32 @@ Users can only like a post once.
 As a user
 So I can create a conversation
 I want to be able to comment on posts
+```
+
+## Database Tables
+
+```
++--------------------------------------------+
+|                  Comments                  |
++--------------------------------------------+
+| id | user_id | post_id | body | created_on |
++----+---------+---------+------+------------+
+
++--------------------------------------------+
+|                    Users                   |
++--------------------------------------------+
+| id | handle | full_name | email | password |
++----+--------+-----------+-------+----------+
+
++-----------------------------------------------+
+|                     Posts                     |
++-----------------------------------------------+
+| id | user_id | body | created_on | updated_on |
++----+---------+------+------------+------------+
+
++------------------------+
+|       Liked_posts      |
++------------------------+
+| id | post_id | user_id |
++----+---------+---------+
 ```
