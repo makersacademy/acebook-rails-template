@@ -63,3 +63,9 @@ As a user
 So I can be sure likes haven't be gamed
 Users can only like a post once.
 ```
+
+```
+As a user
+So I can create a conversation
+I want to be able to comment on posts
+```
