@@ -1,15 +1,15 @@
 <%= form_with scope: :user, url: users_path, local: true do |form| %>
   <p>
-    <%= form.label :user_email %><br>
-    <%= form.text_field :user_email %>
+    <%= form.label :email %><br>
+    <%= form.text_field :email, id:"email" %>
   </p>
  
   <p>
     <%= form.label :password %><br>
-    <%= form.text_field :password %>
+    <%= form.text_field :password, id:"password" %>
   </p>
  
   <p>
-    <%= form.submit %>
+    <%= form.submit id:"submit" %>
   </p>
 <% end %>
