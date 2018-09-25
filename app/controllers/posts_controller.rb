@@ -7,8 +7,22 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.save
     redirect_to @post
-    # @posts = Post.all.order("created_at DESC")  
+    # @posts = Post.all.order("created_at DESC")
     # render 'index'
+  end
+
+  def update
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
   end
 
   def index
