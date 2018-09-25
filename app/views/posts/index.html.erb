@@ -1,7 +1,12 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
 
 <%= link_to new_post_path do %>
-  New post
+  <div class="new_post_link">
+    New post
+  </div>
 <% end %>
+
+<% @posts.each do |post| %>
+ <div class="post_container">
+     <p class="post_message"><%= post.message %></p>
+  <% end %>
+ </div>

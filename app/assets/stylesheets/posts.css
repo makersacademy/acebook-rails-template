@@ -1,0 +1,24 @@
+.new_post_link {
+  margin: auto;
+  width: 30%;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.post_container {
+  background-color: #A98D72;
+  margin: auto;
+  width: 60%;
+  border-radius: 3px;
+  /* border: 2px solid #73AD21; */
+}
+
+.post_message {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 2px;
+  text-align: left;
+  font-size: 25px;
+  color: white;
+}

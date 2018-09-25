@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-image: url(/app/assets/images/('background.JPG'));
+  font-family: "OpenDyslexic-Regular"
+}
+
+h1 {
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  background-color: #704214;
+  color: white;
+}
