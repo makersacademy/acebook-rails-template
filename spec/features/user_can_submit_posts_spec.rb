@@ -15,5 +15,6 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with: ""
     click_button "Submit"
     expect(page).to have_field("Message")
+    expect(page).to have_content("Message can't be blank")
   end
 end
