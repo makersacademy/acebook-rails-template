@@ -1,19 +1,37 @@
 <h1>New users page</h1>
 
 <%= form_with scope: :user, url: users_path, local: true do |form| %>
-  <p>
-    <%= form.label :Email %>
-      <br>
-      <%= form.text_field :email %>
-  </p>
 
-  <p>
-    <%= form.label :Password %>
-      <br>
-      <%= form.text_field :password %>
-  </p>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %>
+          prohibited this user from signing up
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |usr| %>
+          <li>
+            <%= usr %>
+          </li>
+          <% end %>
+      </ul>
+    </div>
+    <% end %>
+      <p>
+        <%= form.label :Email %>
+          <br>
+          <%= form.text_field :email, id: 'email' %>
+      </p>
 
-  <p>
-    <%= form.submit %>
-  </p>
-  <% end %>
+      <p>
+        <%= form.label :Password %>
+          <br>
+          <%= form.text_field :password, id: 'password' %>
+      </p>
+
+      <p>
+        <%= form.submit id: 'submit' %>
+      </p>
+      <% end %>
+
+        <%= link_to 'Back', users_path%>
