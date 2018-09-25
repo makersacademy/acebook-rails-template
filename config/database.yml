@@ -23,7 +23,12 @@ default: &default
 
 development:
   <<: *default
-  database: pgapp_development
+  database: acebook_dev
+  username: pushmepullyou
+  password: Makers18
+  host: pushmepullyou.c1xkphycfqgg.us-east-1.rds.amazonaws.com
+  port: 5432
+  # url: postgres://cdwlkpio:m3EO_NMKYiWnj98u0YM82HWCP5i21qSL@horton.elephantsql.com:5432/cdwlkpio
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
