@@ -1,6 +1,20 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
+<% if @post.errors.any? %>
+   <div id="error_explanation">
+     <h2>
+       <%= pluralize(@post.errors.count, "error") %> prohibited
+       this post from being saved:
+     </h2>
+     <ul>
+       <% @post.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+     </ul>
+   </div>
+ <% end %>
 
-  <%= form.submit "Submit" %>
-<% end %>
+ <%= form_for @post do |form| %>
+   <%= form.label :message %>
+   <%= form.text_field :message %>
+
+   <%= form.submit "Submit" %>
+ <% end %>

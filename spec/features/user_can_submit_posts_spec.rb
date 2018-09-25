@@ -8,4 +8,13 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
   end
+
+  scenario "User cannot post empty message" do
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: ""
+    click_button "Submit"
+    expect(page).to have_field("Message")
+    expect(page).to have_content("Message can't be blank")
+  end
 end
