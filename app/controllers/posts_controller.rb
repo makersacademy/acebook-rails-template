@@ -4,16 +4,25 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    @post = Post.new(post_params)
+    @post.save
+    redirect_to @post
+    # @posts = Post.all.order("created_at DESC")  
+    # render 'index'
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   private
-    def post_params
-      params.require(:post).permit(:message)
-    end
+
+  def post_params
+    params.require(:post).permit(:content)
+  end
+
 end
