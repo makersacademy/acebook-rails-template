@@ -1,12 +1,11 @@
+require 'rails_helper'
 
-# require 'rails_helper'
-#
-# RSpec.feature "Timeline", type: :feature do
-#   scenario "Can submit posts and view them" do
-#     visit "/posts"
-#     click_link "New post"
-#     fill_in "Message", with: "Hello, world!"
-#     click_button "Submit"
-#     expect(page).to have_content("Hello, world!")
-#   end
-# end
+RSpec.feature "New Posts", type: :feature do
+  scenario "user can post message" do
+    visit "/posts/new"
+    fill_in "content", with: "test"
+    click_button "submit"
+    expect(page).to have_content("test")
+  end
+
+end
