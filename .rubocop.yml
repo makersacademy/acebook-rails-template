@@ -29,6 +29,18 @@
 # As you become a better developer you will remove or amend this file according
 # to what you think good code should look like.
 #
+
+AllCops:
+  Excludes:
+    - 'bin/*'
+    - Gemfile
+    - Rakefile
+    - 'config/environments/*'
+    - 'spec/**/*'
+    - 'config/initializers/*'
+    - 'db/**/*'
+    - 'config/**/*'
+
 # Physical Code Size
 # ==================
 #
@@ -45,12 +57,15 @@ Metrics/LineLength:
 Metrics/LineLength:
   Exclude:
     - 'spec/**/*'
+    - 'spec/*'
     - 'test/**/*'
+    - 'bin/*'
 
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
+    - 'bin/*'
 
 # Code Style
 # ==========
