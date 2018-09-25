@@ -1,13 +1,42 @@
 # Acebook
 
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/LazySamir/Acebook-EagleWithTopHat.svg?columns=all)](https://waffle.io/LazySamir/Acebook-EagleWithTopHat)
+
+[![Build Status](https://travis-ci.org/LazySamir/Acebook-EagleWithTopHat.svg?branch=master)](https://travis-ci.org/LazySamir/Acebook-EagleWithTopHat)
+
 ## The Mission
 Create a clone of a well-known social media platform using Rails.
 
 ## Created By
-[Alastair Edmonds](https://github.com/Alastair2D)
-[Esam Al-Dabagh](https://github.com/EsamAl-Dabagh)
-[James Sutherland](https://github.com/LondonJim)
-[Samir Soormally](https://github.com/LazySamir)
+- [Alastair Edmonds](https://github.com/Alastair2D)
+- [Esam Al-Dabagh](https://github.com/EsamAl-Dabagh)
+- [James Sutherland](https://github.com/LondonJim)
+- [Samir Soormally](https://github.com/LazySamir)
+
+## How do I run it?
+
+##### Download the app
+```
+$ git clone git@github.com:LazySamir/acebook-eaglewithtophat.git
+$ cd acebook-eaglewithtophat
+$ bundle
+```
+
+##### Set up database
+```
+$ rake db:drop db:create db:migrate
+```
+
+##### Start the server
+```
+$ rails server
+```
+
+### How do I use it?
+- go to localhost:3000/posts
+- click 'New post' link
+- enter message body in the text box and press submit
+- see all current posts in chronological order
 
 ## User Stories
 ```
