@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+h1 {
+  padding-top: 40px;
+}
+.main {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 40px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+.card {
+  width: auto;
+}
+#nav {
+	float: left;
+	margin: 0 0 1em 0;
+	padding: 0;
+  background-color: #3b5998;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+#nav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 100;
+}
+#nav a:hover {
+  background-color: #ddd;
+    color: black; }
+
+::-webkit-scrollbar { 
+    display: none; 
+}
