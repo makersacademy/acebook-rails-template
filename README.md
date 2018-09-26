@@ -2,38 +2,58 @@
 
 [![Build Status](https://travis-ci.com/ChocolatineMathou/acebook-PushMePullYou.svg?branch=test%2Fadd_travis_to_project)](https://travis-ci.com/ChocolatineMathou/acebook-PushMePullYou)
 
-REQUIRED INSTRUCTIONS:
+Code with :heart: by:  
+- [David Lawes](https://github.com/DaveLawes)  
+- [Lucien Najev](https://github.com/Lucx14)  
+- [Malachy Gilchrist](https://github.com/Mallig)  
+- [Mathilde Ferrand](https://github.com/ChocolatineMathou)
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+## Technology
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+This project was built with Ruby and its framework Rails.  
+We are using [RSpec](https://github.com/rspec/rspec) as a testing framework paired with:  
+- [Capybara](https://github.com/teamcapybara/capybara) to test the user experience  
+- [Simplecov](https://github.com/colszowka/simplecov) to get the test coverage
 
-2. The card wall is here: <please update>
+[Rubocop](https://github.com/toshimaru/rubocop-rails_configcq) has been set up as a style checking.
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
 
-## Quickstart
+## How to install
 
-First, clone this repository. Then:
+### Download the project
 
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
+```
+$ git clone git@github.com:ChocolatineMathou/acebook-PushMePullYou.git
+$ cd acebook-PushMePullYou
+$ bundle install
+```
+### Setting up databases
 
+To play with this project, you'll need to set up a test and production databases.
+
+In a development environment:  
+- You can use a cloud PostreSQL database. We recommand using AWS as had troubles to connect our application with ElephantSQL. You will need to change `config/databases.yml` with your own credentials or even better use a `.env` file! (ADD EXAMPLE)  
+- You can have a local database but you'll need to change `congif/databases.yml` file as it is currently configured for a cloud dabatase. (ADD AN EXAMPLE).  
+
+In a test environment:  
+- `congif/databases.yml` is currently configured for a local database (faster to run the tests).  
+
+First, let's create the databases by running `bin/rails db:create` and finally run `bin/rails db:migrate` to create the tables.
+
+```
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
 
-## Useful Links
+## Useful links
 
-Card Wall:
-https://waffle.io/ChocolatineMathou/acebook-PushMePullYou
+- [Team card wall](https://waffle.io/ChocolatineMathou/acebook-PushMePullYou)
+- [Team learning documentation](https://hackmd.io/s/HkefB7V8Ym#)
 
-Commit message style:
-https://seesparkbox.com/foundry/semantic_commit_messages
+## Resources
+
+- [Commit message style](https://seesparkbox.com/foundry/semantic_commit_messages)
+- Documentation
 
 
 ## Running tests
