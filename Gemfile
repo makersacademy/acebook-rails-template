@@ -37,7 +37,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov', require: false
   gem 'dotenv-rails', '~> 2.5'
-  gem "rubocop-rails-config"
+  gem "rubocop-rails_config"
 end
 
 group :development do
