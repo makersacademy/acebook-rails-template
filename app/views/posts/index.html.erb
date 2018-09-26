@@ -1,5 +1,7 @@
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
+  <p><%= post.created_at %></p>
+  <p><%= post.convert_time(post) %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
