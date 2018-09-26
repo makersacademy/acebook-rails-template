@@ -10,9 +10,12 @@
   </head>
 
   <body>
-    
+
       <div id='nav'>
-        <a href="/" style='float:right; font-weight:100; font-size:14px;'>Log out</a>
+        <%= link_to 'Sign out', destroy_user_session_path,
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %>
+        <!-- <a href="/" style='float:right; font-weight:100; font-size:14px;'>Log out</a> -->
         <a href="/" style='letter-spacing: 7px;'>Acebook</a>
       </div>
 

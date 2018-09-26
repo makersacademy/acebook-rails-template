@@ -1,13 +1,13 @@
 require 'rails_helper'
 require 'web_helper'
 
-RSpec.feature "New Posts", type: :feature do
-  scenario "user can post message" do
+RSpec.feature "Delete Posts", type: :feature do
+  scenario "user can delete post" do
     submit_test_post
-    visit("/")
+    visit("/posts")
     click_link "test post"
     click_link "Delete"
-    visit("/")
+    visit("/posts")
     expect(page).not_to have_content("test post")
   end
 
