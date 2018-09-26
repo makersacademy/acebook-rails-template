@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.feature "Sign Up", type: :feature do
   scenario "User can sign up" do
     visit "/users/new"
-    fill_in "full name", with: "My Name"
-    fill_in "handle", with: "My Handle"
-    fill_in "email", with: "ab@cd.com"
-    fill_in "password", with: "123456"
+    fill_in "Full name", with: "My Name"
+    fill_in "Handle", with: "My Handle"
+    fill_in "Email", with: "ab@cd.com"
+    fill_in "Password", with: "123456"
 
     click_button "Submit"
 
