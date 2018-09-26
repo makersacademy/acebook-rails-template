@@ -25,4 +25,6 @@ First, clone this repository. Then:
 > bin/rails server # Start the server at localhost:3000
 ```
 
-Hello!
+## Running tests
+
+Before running tests, it might be worth running `rails db:setup`. This will ensure the test database and tables are created on your local machine and are up to date with the latest migration files.
