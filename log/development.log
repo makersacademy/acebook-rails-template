@@ -1158,3 +1158,62 @@ Processing by UsersController#create as HTML
 Completed 200 OK in 43ms (Views: 18.0ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/posts" for 127.0.0.1 at 2018-09-26 12:28:52 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 326ms (Views: 316.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-26 12:29:22 +0100
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 47ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-09-26 12:29:28 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 53ms (Views: 41.3ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-09-26 12:29:35 +0100
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-09-26 12:29:46 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HRMU7tG6oAgDZ4S01vJvUef3aXZTaqYquXEM0OzfNHMvLjZUaZ9fSiS+Uvkb5Nq/ddP+d5T6w5u1yup7GU7skg==", "post"=>{"message"=>"Post 4"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Post 4"], ["created_at", "2018-09-26 11:29:46.569638"], ["updated_at", "2018-09-26 11:29:46.569638"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 11ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-09-26 12:29:46 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-09-26 13:56:34 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC[0m
+  Rendered posts/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 34ms (Views: 29.3ms | ActiveRecord: 0.5ms)
+
+
