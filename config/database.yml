@@ -23,7 +23,12 @@ default: &default
 
 development:
   <<: *default
-  database: pgapp_development
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
+  # url: postgres://cdwlkpio:m3EO_NMKYiWnj98u0YM82HWCP5i21qSL@horton.elephantsql.com:5432/cdwlkpio
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
