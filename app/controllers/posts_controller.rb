@@ -1,14 +1,12 @@
 class PostsController < ApplicationController
   def new
+    return redirect_to root_path unless user_signed_in?
     @post = Post.new
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.save
+    @post = current_user.posts.create(post_params)
     redirect_to @post
-    # @posts = Post.all.order("created_at DESC")
-    # render 'index'
   end
 
   def update
@@ -32,7 +30,7 @@ class PostsController < ApplicationController
   def show
     find_post
   end
-  
+
   def destroy
     find_post
     @post.destroy
