@@ -7,8 +7,8 @@ RSpec.feature "Update Posts", type: :feature do
     visit("/")
     click_link "test post"
     click_link "Edit"
-    fill_in "content", with: "edited post"
-    click_button "submit"
+    fill_in :post_content, with: "edited post"
+    click_on "Update Post"
     expect(page).to have_content("edited post")
   end
 end
