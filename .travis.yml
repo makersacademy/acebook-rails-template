@@ -1,7 +1,6 @@
 language: ruby
 rvm:
   - 2.5.1
-  - jruby
 cache: bundler
 services:
   - postgresql
