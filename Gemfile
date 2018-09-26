@@ -35,6 +35,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem 'simplecov', require: false
   gem 'dotenv-rails', '~> 2.5'
   gem "rubocop-rails_config"
 end
