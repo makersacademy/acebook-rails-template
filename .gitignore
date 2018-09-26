@@ -19,7 +19,10 @@
 
 /node_modules
 /yarn-error.log
-/coverage
+/coverage/assets/
+/coverage/.last_run.json
+/coverage/.resultset.json
+/coverage/.resultset.json.lock
 .byebug_history
 
 # Ignore the DB credentials
