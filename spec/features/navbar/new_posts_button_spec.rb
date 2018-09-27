@@ -1,5 +1,5 @@
-require 'rails_helper'
-require 'web_helper'
+require "rails_helper"
+require "web_helper"
 
 RSpec.feature "Nav bar new posts button", type: :feature do
   scenario "User can click to move to new post page" do
@@ -9,7 +9,6 @@ RSpec.feature "Nav bar new posts button", type: :feature do
     click_on "Create Post"
     expect(page).to have_content("test me post")
   end
-
 end
 
 RSpec.feature "Nav bar not to have new posts button", type: :feature do
