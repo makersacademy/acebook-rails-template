@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'simple_form', '~> 3.5'
 
 gem 'devise'
+gem 'acts_as_votable'
 
 gem 'timecop', '~> 0.9.1'
 

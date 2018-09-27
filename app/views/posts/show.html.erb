@@ -2,9 +2,15 @@
   <div class="card-body">
     <h5 class="card-title"><%= link_to @post.user.name, @post %></h5>
     <p class="card-text"><%=@post.content%></p>
-    <h6 class="card-subtitle mb-2 text-muted">
-      <%=@post.updated_at.strftime("%B %d at %I:%M%p")%>
-    </h6>
+    <p class="card-text">
+      <h6 class="card-subtitle mb-2 text-muted">
+        <%=@post.updated_at.strftime("%B %d at %I:%M%p")%>
+      </h6>
+      <% if @post.votes_for.size > 0 %>
+        Liked by:
+        <%= @post.votes_for.voters.map { |u| u.name }.join(", ") %>
+      <% end %>
+    </p>
     <%= link_to 'Edit', edit_post_path(@post), class: 'card-link' %>
     <%= link_to 'Delete', post_path(@post), method: :delete, class: 'card-link' %>
   </div>
