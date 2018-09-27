@@ -3,6 +3,12 @@
     <div class="card-body">
       <h5 class="card-title"><%= link_to post.user.name, post%></h5>
       <p class="card-text"><%= link_to post.content, post%></p>
+      <p class="card-text">
+        <% if post.votes_for.size > 0 %>
+          Liked by:
+          <%= post.votes_for.voters.map { |u| u.name }.join(", ") %>
+        <% end %>
+      </p>
       <%= link_to 'Like', like_post_path(post.id), method: :put, class: 'card-link' %>
       <%= link_to 'Edit', edit_post_path(post.id), class: 'card-link' %>
       <%= link_to 'Delete', post_path(post.id), method: :delete, class: 'card-link' %>
