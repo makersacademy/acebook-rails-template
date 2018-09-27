@@ -34,6 +34,12 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def add_like
+    find_post
+    @post.upvote_by current_user
+    redirect_to request.referer
+  end
+
   private
 
     def post_params

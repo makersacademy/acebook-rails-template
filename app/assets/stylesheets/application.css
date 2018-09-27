@@ -16,6 +16,7 @@
 h1 {
   padding-top: 40px;
 }
+
 .main {
   padding-left: 10%;
   padding-right: 10%;
@@ -48,6 +49,6 @@ h1 {
   background-color: #ddd;
     color: black; }
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
