@@ -1,45 +1,45 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/controllers/home_controller.rb": [
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/controllers/home_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/controllers/application_controller.rb": [
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/controllers/posts_controller.rb": [
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/controllers/posts_controller.rb": [
         1,
         1,
-        3,
-        null,
-        null,
-        1,
-        4,
-        null,
-        4,
-        3,
-        null,
-        1,
-        null,
+        5,
         null,
         null,
         1,
-        4,
+        6,
+        null,
+        6,
+        5,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        7,
         null,
         null,
         1,
         null,
         1,
-        4,
+        6,
         null,
         null
       ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/controllers/users_controller.rb": [
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/controllers/users_controller.rb": [
         1,
         1,
         0,
@@ -65,58 +65,58 @@
         null,
         null
       ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/models/post.rb": [
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/models/post.rb": [
         1,
         1,
-        14,
+        21,
         null
       ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/models/user.rb": [
-        1,
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/mailers/application_mailer.rb": [
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/jobs/application_job.rb": [
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/helpers/users_helper.rb": [
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/helpers/users_helper.rb": [
         0,
         0
       ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/helpers/home_helper.rb": [
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/helpers/home_helper.rb": [
         0,
         0
       ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/helpers/application_helper.rb": [
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/helpers/application_helper.rb": [
         0,
         0
       ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/channels/application_cable/connection.rb": [
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/channels/application_cable/channel.rb": [
+      "/Users/andrewgibbs/Projects/acebook-PingPongAlmonds/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1537968725
+    "timestamp": 1538048042
   }
 }
