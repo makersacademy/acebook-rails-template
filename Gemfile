@@ -36,6 +36,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
   gem 'dotenv-rails', '~> 2.5'
   gem "rubocop-rails_config"
 end
