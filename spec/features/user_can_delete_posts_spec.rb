@@ -3,6 +3,7 @@ require 'web_helper'
 
 RSpec.feature "Delete Posts", type: :feature do
   scenario "user can delete post" do
+    user_sign_up
     submit_test_post
     visit("/posts")
     click_link "test post"

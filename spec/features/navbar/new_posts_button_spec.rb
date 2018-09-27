@@ -3,7 +3,7 @@ require 'web_helper'
 
 RSpec.feature "Nav bar new posts button", type: :feature do
   scenario "User can click to move to new post page" do
-    login
+    user_sign_up
     click_link "New post"
     fill_in :post_content, with: "test me post"
     click_on "Create Post"
