@@ -2,12 +2,13 @@ require 'rails_helper'
 
 RSpec.feature "Sign Up", type: :feature do
   scenario "User can sign up" do
-    visit "/users/new"
-    fill_in "Full name", with: "My Name"
-    fill_in "Email", with: "ab@cd.com"
-    fill_in "Password", with: "123456"
+    visit "/users/sign_up"
+    fill_in "user_full_name", with: "My Name"
+    fill_in "user_email", with: "ab@cd.com"
+    fill_in "user_password", with: "123456"
+    fill_in "user_password_confirmation", with: "123456"
 
-    click_button "Submit"
+    click_button "Sign up"
 
     expect(page).to have_content("You have signed up successfully")
   end
