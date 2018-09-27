@@ -40,6 +40,24 @@ I want to be able to sign up.
 As a user,
 so I can interact with Acebook
 I want to be able to sign in.
+- Done when login criteria are checked for 
+  validity ie. length of password, email...
+  
+As a user,
+so I can take time away from Acebook,
+I want to be able to log out.
+  
+As a user,
+so I can share my thoughts,
+I want to be able to post on Acebook.
+
+As a user,
+so I can show my support for posts,
+I want to be able to like others posts.
+
+As a user,
+so I can share my opinion re. other posts,
+I want to be able to comment on posts.
 ```
 
 ## Usage
