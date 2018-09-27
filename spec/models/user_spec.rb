@@ -34,7 +34,7 @@ RSpec.describe User, type: :model do
         expect(@user.valid?).not_to eq(true)
       end
     end
-    
+
     describe "email" do
       it "email should not be blank" do
         @user.email = " "
@@ -42,7 +42,7 @@ RSpec.describe User, type: :model do
       end
 
       it "will not be longer than 255 characters" do
-        @user.email = "a" * 249 + "@bc.com" 
+        @user.email = "a" * 249 + "@bc.com"
         expect(@user.valid?).not_to eq(true)
       end
 
@@ -50,8 +50,14 @@ RSpec.describe User, type: :model do
         @user.email = "abcd.com"
         expect(@user.valid?).not_to eq(true)
       end
+
+      it "will be unique" do
+        duplicate_user = @user.dup
+        @user.save
+        expect(duplicate_user.valid?).not_to eq(true)
+      end
     end
-    
+
     describe "password" do
       it "password should not be blank" do
         @user.password = " "
@@ -62,7 +68,7 @@ RSpec.describe User, type: :model do
         @user.password = "12345678910"
         expect(@user.valid?).not_to eq(true)
       end
-      
+
       it "will be no less than 6 characters" do
         @user.password = "12345"
         expect(@user.valid?).not_to eq(true)
