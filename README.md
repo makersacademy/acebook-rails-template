@@ -51,8 +51,7 @@ Look at Devise
 
 Sign up and Log in:
 
-![Signup/login]
-(https://github.com/andrewwood2/acebook-gazelle/blob/update_readme/wireframes/Signup-login.png)
+![Signup/login](https://github.com/andrewwood2/acebook-gazelle/blob/update_readme/wireframes/Signup-login.png)
 
 Timeline:
 
