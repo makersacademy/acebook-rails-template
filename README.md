@@ -52,7 +52,7 @@ Look at Devise
 Sign up and Log in:
 
 ![Signup/login]
-(https://github.com/andrewwood2/acebook-gazelle/wireframes/Signup-login.png)
+(acebook-gazelle/wireframes/Signup-login.png)
 
 Timeline:
 
