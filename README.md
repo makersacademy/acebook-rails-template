@@ -55,15 +55,12 @@ Sign up and Log in:
 
 Timeline:
 
-![Timeline]
-(https://github.com/andrewwood2/acebook-gazelle/wireframes/Timeline.png)
+![Timeline](https://github.com/andrewwood2/acebook-gazelle/blob/update_readme/wireframes/Timeline.png)
 
 Profile:
 
-![Profile]
-(https://github.com/andrewwood2/acebook-gazelle/wireframes/Profile.png)
+![Profile](https://github.com/andrewwood2/acebook-gazelle/blob/update_readme/wireframes/Profile.png)
 
 Create post:
 
-![Create post]
-(https://github.com/andrewwood2/acebook-gazelle/wireframes/Write-post.png)
+![Create post](https://github.com/andrewwood2/acebook-gazelle/blob/update_readme/wireframes/Write-post.png)
