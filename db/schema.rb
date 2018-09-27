@@ -10,15 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170526114520) do
+ActiveRecord::Schema.define(version: 20180925112316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "posts", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
+    t.bigint "users_id"
+    t.bigint "posts_id"
     t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["posts_id"], name: "index_comments_on_posts_id"
+    t.index ["users_id"], name: "index_comments_on_users_id"
+  end
+
+  create_table "liked_posts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_liked_posts_on_post_id"
+    t.index ["user_id"], name: "index_liked_posts_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
+    t.string "handle"
+    t.string "full_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "posts", column: "posts_id"
+  add_foreign_key "comments", "users", column: "users_id"
+  add_foreign_key "liked_posts", "posts"
+  add_foreign_key "liked_posts", "users"
+  add_foreign_key "posts", "users"
 end
