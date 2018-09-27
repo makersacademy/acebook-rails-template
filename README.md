@@ -40,13 +40,11 @@ I want to be able to sign up.
 As a user,
 so I can interact with Acebook
 I want to be able to sign in.
-- Done when login criteria are checked for 
-  validity ie. length of password, email...
-  
+
 As a user,
 so I can take time away from Acebook,
 I want to be able to log out.
-  
+
 As a user,
 so I can share my thoughts,
 I want to be able to post on Acebook.
@@ -60,12 +58,21 @@ so I can share my opinion re. other posts,
 I want to be able to comment on posts.
 ```
 
-## Usage
+## Quick Start
 
 Make sure to install Rails if you don't already have it:
 
 ```
 gem install rails
+
+Clone this repository. Then:
+
+> bundle install
+> bin/rails db:create
+> bin/rails db:migrate
+
+> bundle exec rspec # Run the tests to ensure it works
+> bin/rails server # Start the server at localhost:3000
 ```
 
 Things you may want to cover:
