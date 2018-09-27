@@ -45,6 +45,11 @@ RSpec.describe User, type: :model do
         @user.email = "a" * 249 + "@bc.com" 
         expect(@user.valid?).not_to eq(true)
       end
+
+      it "is in a valid format" do
+        @user.email = "abcd.com"
+        expect(@user.valid?).not_to eq(true)
+      end
     end
     
     describe "password" do
@@ -52,6 +57,17 @@ RSpec.describe User, type: :model do
         @user.password = " "
         expect(@user.valid?).not_to eq(true)
       end
+
+      it "will be no more than 10 characters" do
+        @user.password = "12345678910"
+        expect(@user.valid?).not_to eq(true)
+      end
+      
+      it "will be no less than 6 characters" do
+        @user.password = "12345"
+        expect(@user.valid?).not_to eq(true)
+      end
+
     end
 
   end
