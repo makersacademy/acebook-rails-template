@@ -4,7 +4,10 @@ class CommentsController < ApplicationController
     # redirect_to @post
 
     find_post
-    @comment = @post.comments.create(comment_params)
+    params = comment_params
+    params[:user_id] = current_user.id
+    @comment = @post.comments.create(params)
+    redirect_to post_path(@post)
     # set comment.user_id to current_user
   end
 

@@ -20,6 +20,7 @@ RSpec.feature "Comments can be made on posts", type: :feature do
     add_comment("This is a comment")
     click_on "Sign out"
     user_sign_up("Jim")
+    click_on "test post"
     add_comment("This is Jim's comment")
     expect(page).to have_content("Bob: This is a comment")
     expect(page).to have_content("Jim: This is Jim's comment")

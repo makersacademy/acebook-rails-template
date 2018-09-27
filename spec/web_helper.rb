@@ -15,5 +15,5 @@ end
 
 def add_comment(comment)
   fill_in :body, with: comment
-  click_on "Add comment"
+  click_on "Create Comment"
 end

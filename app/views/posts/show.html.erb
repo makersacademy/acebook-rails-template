@@ -16,15 +16,25 @@
   </div>
   <div class="card">
     <div class="card-body">
-
-      <!-- <%= simple_form_for @comments, :url => "/posts/#{@post.id}/comments", :method => :post %>
-        <%= f.input :body %>
-        <%= f.button :submit %>
-      <% end %> -->
+      <h5>Comments</h5>
+      <% @post.comments.each do |comment| %>
+        <p>
+          <%= User.find(comment.user_id).name %>:
+          <%= comment.body %>
+        </p>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <h5>Add a comment:</h5>
+      <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
+        <p>
+          <%= form.label :body %><br>
+          <%= form.text_area :body,  id: "body" %>
+        </p>
+        <p>
+          <%= form.submit %>
+        </p>
+      <% end %>
     </div>
   </div>
 </div>
-<form action="/posts/<%=@post.id%>/comments" method="post">
-  <input type="text" name="body" value="">
-  <input type="submit" name="submit" value="Submit">
-</form>
