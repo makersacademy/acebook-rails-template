@@ -16,6 +16,11 @@ RSpec.describe User, type: :model do
         @user.full_name = " "
         expect(@user.valid?).not_to eq(true)
       end
+
+      it "will not be longer than 50 characters" do
+        @user.full_name = "a" * 51
+        expect(@user.valid?).not_to eq(true)
+      end
     end
 
     describe "handle" do
@@ -23,11 +28,21 @@ RSpec.describe User, type: :model do
         @user.handle = " "
         expect(@user.valid?).not_to eq(true)
       end
+
+      it "will not be longer than 50 characters" do
+        @user.handle = "a" * 51
+        expect(@user.valid?).not_to eq(true)
+      end
     end
     
     describe "email" do
       it "email should not be blank" do
         @user.email = " "
+        expect(@user.valid?).not_to eq(true)
+      end
+
+      it "will not be longer than 255 characters" do
+        @user.email = "a" * 249 + "@bc.com" 
         expect(@user.valid?).not_to eq(true)
       end
     end
