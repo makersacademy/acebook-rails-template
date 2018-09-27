@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :posts do
-    user do
+    member do
       put "like", to: "posts#add_like"
     end
   end
