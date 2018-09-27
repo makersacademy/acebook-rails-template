@@ -1,5 +1,5 @@
-require 'rails_helper'
-require 'web_helper'
+require "rails_helper"
+require "web_helper"
 
 RSpec.feature "New Posts", type: :feature do
   scenario "user can post message" do
