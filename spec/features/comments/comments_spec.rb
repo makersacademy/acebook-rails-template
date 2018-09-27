@@ -7,7 +7,7 @@ RSpec.feature "Comments can be made on posts", type: :feature do
     submit_test_post
   end
 
-  scenario "Post is not liked before button clicked" do
+  scenario "Post is not commented on initially" do
     expect(page).not_to have_content("Bob: ")
   end
 

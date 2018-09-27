@@ -16,10 +16,15 @@
   </div>
   <div class="card">
     <div class="card-body">
-      <%= simple_form_for post_comments_path(@post) do |f| %>
+
+      <!-- <%= simple_form_for @comments, :url => "/posts/#{@post.id}/comments", :method => :post %>
         <%= f.input :body %>
         <%= f.button :submit %>
-      <% end %>
+      <% end %> -->
     </div>
   </div>
 </div>
+<form action="/posts/<%=@post.id%>/comments" method="post">
+  <input type="text" name="body" value="">
+  <input type="submit" name="submit" value="Submit">
+</form>
