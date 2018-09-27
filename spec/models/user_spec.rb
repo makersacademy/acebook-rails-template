@@ -11,24 +11,32 @@ RSpec.describe User, type: :model do
       expect(@user.valid?).to eq(true)
     end
 
-    it "full name should not be blank" do
-      @user.full_name = " "
-      expect(@user.valid?).not_to eq(true)
+    describe "full_name" do
+      it "full name should not be blank" do
+        @user.full_name = " "
+        expect(@user.valid?).not_to eq(true)
+      end
     end
 
-    it "handle should not be blank" do
-      @user.handle = " "
-      expect(@user.valid?).not_to eq(true)
+    describe "handle" do
+      it "handle should not be blank" do
+        @user.handle = " "
+        expect(@user.valid?).not_to eq(true)
+      end
     end
     
-    it "email should not be blank" do
-      @user.email = " "
-      expect(@user.valid?).not_to eq(true)
+    describe "email" do
+      it "email should not be blank" do
+        @user.email = " "
+        expect(@user.valid?).not_to eq(true)
+      end
     end
     
-    it "password should not be blank" do
-      @user.password = " "
-      expect(@user.valid?).not_to eq(true)
+    describe "password" do
+      it "password should not be blank" do
+        @user.password = " "
+        expect(@user.valid?).not_to eq(true)
+      end
     end
 
   end
