@@ -1,5 +1,5 @@
-require 'rails_helper'
-require 'web_helper'
+require "rails_helper"
+require "web_helper"
 
 RSpec.feature "Delete Posts", type: :feature do
   scenario "user can delete post" do
@@ -11,5 +11,4 @@ RSpec.feature "Delete Posts", type: :feature do
     visit("/posts")
     expect(page).not_to have_content("test post")
   end
-
 end
