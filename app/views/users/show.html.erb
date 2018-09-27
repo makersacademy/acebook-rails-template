@@ -1,22 +1,29 @@
 <h1><%= @user.email%></h1>
 
-<% if @user.profilepic %>
-  <a href=<%= edit_user_path(@user) %>>
-    <img src=<%= @user.profilepic %> style="height: 175px; width: 175px" >
-  </a>
-  <% else %>
-  <a href=<%= edit_user_path(@user) %>>
-    <img src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640-300x300.png" style="height: 175px; width: 175px" >
-  </a>
-<% end %>
-
-<% @posts.each do |post| %>
-<div class="card">
-    <div class="card-body">
-      <h5 class="card-title"><%= post.user.email%></h5>
-      <p class="card-text"><%= link_to post.content, post%></p>
-      <%= link_to 'Edit', edit_post_path(post.id), class: 'card-link' %>
-      <%= link_to 'Delete', post_path(post.id), method: :delete, class: 'card-link' %>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <% if @user.profilepic %>
+      <a href=<%= edit_user_path(@user) %>>
+        <img class="img-thumbnail" src=<%= @user.profilepic %> style="height: 175px; width: 175px" >
+      </a>
+      <% else %>
+      <a href=<%= edit_user_path(@user) %>>
+        <img src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640-300x300.png" style="height: 175px; width: 175px" >
+      </a>
+    <% end %>
+    </div>
+    <div class="col-8">
+      <% @posts.each do |post| %>
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= post.user.email%></h5>
+            <p class="card-text"><%= link_to post.content, post%></p>
+            <%= link_to 'Edit', edit_post_path(post.id), class: 'card-link' %>
+            <%= link_to 'Delete', post_path(post.id), method: :delete, class: 'card-link' %>
+          </div>
+        </div>
+      <% end %>   
     </div>
   </div>
-<% end %>
+</div>
