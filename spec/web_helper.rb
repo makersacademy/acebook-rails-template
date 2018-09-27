@@ -5,7 +5,7 @@ def submit_test_post
 end
 
 def user_sign_up
-  visit "/users/sign_up"
+  visit new_user_registration_path
   fill_in :user_name, with: "Bob"
   fill_in :user_email, with: "Bob@bob.com"
   fill_in :user_password, with: "123456"

@@ -12,11 +12,14 @@
   <body>
 
       <div id='nav'>
-        <%= link_to 'Sign out', destroy_user_session_path,
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' } %>
         <!-- <a href="/" style='float:right; font-weight:100; font-size:14px;'>Log out</a> -->
         <a href="/" style='letter-spacing: 7px;'>Acebook</a>
+        <% if user_signed_in? %>
+          <%= link_to 'Sign out', destroy_user_session_path,
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'New post', new_post_path %>
+        <% end %>
       </div>
 
       <div class="main">
