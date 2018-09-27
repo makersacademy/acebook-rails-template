@@ -54,6 +54,10 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
+
+  # Defining default url options
+  config.action_mailer.default_url_options = { host: https://acebook-eaglewithtophat.herokuapp.com/}
+
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
