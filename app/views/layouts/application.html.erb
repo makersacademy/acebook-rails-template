@@ -21,10 +21,17 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="/users/new">Sign Up</a>
+              <a class="nav-link" href="/users/sign_up">Sign Up</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/users/login">Log In</a>
+              <a class="nav-link" href="/users/sign_in">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <li class="nav-link">
+                <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+              </li>
+            </li>
+
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/posts/new">Create Post</a>
@@ -32,8 +39,8 @@
           </ul>
         </div>
       </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
   <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 </html>
