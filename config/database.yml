@@ -1,3 +1,4 @@
+
 # PostgreSQL. Versions 8.2 and up are supported.
 #
 # Install the pg driver:
@@ -20,10 +21,11 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  timeout: 5000
 
 development:
   <<: *default
-  database: pgapp_development
+  database: acebook_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: pgapp_test
+  database: acebook_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: pgapp_production
-  username: pgapp
-  password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
+  database: acebook_production
+  username: acebook
+  password: <%= ENV['ACEBOOK_DATABASE_PASSWORD'] %>
