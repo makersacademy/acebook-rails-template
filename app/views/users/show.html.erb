@@ -1,1 +1,12 @@
 <h1><%= @user.email%></h1>
+
+<% @posts.each do |post| %>
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= post.user.email%></h5>
+      <p class="card-text"><%= link_to post.content, post%></p>
+      <%= link_to 'Edit', edit_post_path(post.id), class: 'card-link' %>
+      <%= link_to 'Delete', post_path(post.id), method: :delete, class: 'card-link' %>
+    </div>
+  </div>
+<% end %>
