@@ -2,13 +2,33 @@ require "rails_helper"
 require "web_helper"
 
 RSpec.feature "Post can be liked", type: :feature do
-  scenario "User can sign up, create post and like it" do
+  before(:each) do
     user_sign_up
-    click_link "New post"
-    fill_in :post_content, with: "test me post"
-    click_on "Create Post"
+    submit_test_post
     visit root_path
+  end
+
+  scenario "Post is not liked before button clicked" do
+    expect(page).not_to have_content("Liked by: Bob")
+  end
+
+  scenario "Post can be liked, which is visible" do
     click_on "Like"
     expect(page).to have_content("Liked by: Bob")
   end
+
+  scenario "Post can be liked by multiple people" do
+    click_on "Like"
+    click_on "Sign out"
+    user_sign_up("Jim")
+    click_on "Like"
+    expect(page).to have_content("Liked by: Jim, Bob")
+  end
+
+  # scenario "Likes are visible on individual post page as well" do
+  #   click_on "Like"
+  #   click_on "test post"
+  #   expect(page).to have_content("Liked by: Bob")
+  # end
+
 end
