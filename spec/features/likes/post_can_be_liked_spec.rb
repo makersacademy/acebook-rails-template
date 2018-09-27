@@ -9,6 +9,6 @@ RSpec.feature "Post can be liked", type: :feature do
     click_on "Create Post"
     visit root_path
     click_on "Like"
-    expect(page).to_have content("Liked by: Bob@bob.com")
+    expect(page).to have_content("Liked by: Bob")
   end
 end
