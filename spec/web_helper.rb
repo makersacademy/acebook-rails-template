@@ -12,3 +12,8 @@ def user_sign_up(name = "Bob")
   fill_in :user_password_confirmation, with: "123456"
   click_button "Sign up"
 end
+
+def add_comment(comment)
+  fill_in :body, with: comment
+  click_on "Add comment"
+end

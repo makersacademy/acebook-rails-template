@@ -27,6 +27,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    # @comment.acommentmethodhere
   end
 
   def destroy

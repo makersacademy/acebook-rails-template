@@ -14,4 +14,12 @@
     <%= link_to 'Edit', edit_post_path(@post), class: 'card-link' %>
     <%= link_to 'Delete', post_path(@post), method: :delete, class: 'card-link' %>
   </div>
+  <div class="card">
+    <div class="card-body">
+      <%= simple_form_for post_comments_path(@post) do |f| %>
+        <%= f.input :body %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
 </div>
