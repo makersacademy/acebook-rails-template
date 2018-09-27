@@ -46,3 +46,25 @@ Rotate leading stand-ups.
 Popcorn size tickets.
 Regular pair rotation.
 Look at Devise
+
+## Wireframes
+
+Sign up and Log in:
+
+![Signup/login]
+(https://github.com/andrewwood2/acebook-gazelle/wireframes/Signup-login.png)
+
+Timeline:
+
+![Timeline]
+(https://github.com/andrewwood2/acebook-gazelle/wireframes/Timeline.png)
+
+Profile:
+
+![Profile]
+(https://github.com/andrewwood2/acebook-gazelle/wireframes/Profile.png)
+
+Create post:
+
+![Create post]
+(https://github.com/andrewwood2/acebook-gazelle/wireframes/Write-post.png)
