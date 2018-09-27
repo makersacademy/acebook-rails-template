@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.4'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
@@ -24,6 +25,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+  gem 'dotenv-rails', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -37,7 +39,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
-  gem 'dotenv-rails', '~> 2.5'
   gem "rubocop-rails_config"
 end
 
