@@ -33,6 +33,12 @@ RSpec.describe User, type: :model do
         @user.handle = "a" * 51
         expect(@user.valid?).not_to eq(true)
       end
+
+      it "will be unique" do
+        duplicate_user = User.new(full_name: "My Second Name", handle: "My Handle", email: "Secondab@cd.com", password:"345678")
+        @user.save
+        expect(duplicate_user.valid?).not_to eq(true)
+      end
     end
 
     describe "email" do
@@ -52,7 +58,7 @@ RSpec.describe User, type: :model do
       end
 
       it "will be unique" do
-        duplicate_user = @user.dup
+        duplicate_user = User.new(full_name: "My Other Name", handle: "My Other Handle", email: "ab@cd.com", password:"567890")
         @user.save
         expect(duplicate_user.valid?).not_to eq(true)
       end
