@@ -32,17 +32,34 @@ $ bundle install
 To play with this project, you'll need to set up a test and production databases.
 
 In a development environment:  
-- You can use a cloud PostreSQL database. We recommand using AWS as had troubles to connect our application with ElephantSQL. You will need to change `config/databases.yml` with your own credentials or even better use a `.env` file! (ADD EXAMPLE)  
-- You can have a local database but you'll need to change `congif/databases.yml` file as it is currently configured for a cloud dabatase. (ADD AN EXAMPLE).  
+- You can use a cloud PostreSQL database. We recommand using AWS as had troubles to connect our application with ElephantSQL. You will need to change `config/databases.yml` with your own credentials or even better use a `.env` file!  
+
+```
+<<: *default
+database: <%= ENV['RDS_DB_NAME'] %>
+username: <%= ENV['RDS_USERNAME'] %>  
+password: <%= ENV['RDS_PASSWORD'] %>  
+host: <%= ENV['RDS_HOSTNAME'] %>  
+port: <%= ENV['RDS_PORT'] %>
+```  
+- You can have a local database but you'll need to change `congif/databases.yml` file as it is currently configured for a cloud dabatase.
+
+```
+<<: *default
+database: pgapp
+``` 
 
 In a test environment:  
 - `congif/databases.yml` is currently configured for a local database (faster to run the tests).  
 
-First, let's create the databases by running `bin/rails db:create` and finally run `bin/rails db:migrate` to create the tables.
+First, let's create the databases by running `bin/rails db:create` and finally run `bin/rails db:migrate` to create the tables.  
+In case these commands do not create the databases in the an environment or another, you may need to specify the environment by adding `RAILS_ENV=development`or `RAILS_ENV=test`.
+
+Once the databases and tables are ready:
 
 ```
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+$ rspec # To run the tests
+$ bin/rails server # To start the server at localhost:3000
 ```
 
 ## Useful links
@@ -53,9 +70,4 @@ First, let's create the databases by running `bin/rails db:create` and finally r
 ## Resources
 
 - [Commit message style](https://seesparkbox.com/foundry/semantic_commit_messages)
-- Documentation
-
-
-## Running tests
-
-Before running tests, it might be worth running `rails db:setup`. This will ensure the test database and tables are created on your local machine and are up to date with the latest migration files.
+- [Documentation](./docs)
