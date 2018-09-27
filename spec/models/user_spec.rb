@@ -58,7 +58,7 @@ RSpec.describe User, type: :model do
       end
 
       it "will be unique" do
-        duplicate_user = User.new(full_name: "My Other Name", handle: "My Other Handle", email: "ab@cd.com", password:"567890")
+        duplicate_user = User.new(full_name: "My Other Name", handle: "My Other Handle", email: "AB@CD.COM", password:"567890")
         @user.save
         expect(duplicate_user.valid?).not_to eq(true)
       end
