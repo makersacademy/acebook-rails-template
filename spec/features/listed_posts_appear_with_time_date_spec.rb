@@ -8,7 +8,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with: "Test Post"
     click_button "Submit"
 
-    converted_time = convert_time_check # feature_helper method
+    converted_time = convert_time_check
 
     expect(page).to have_content(converted_time)
   end
