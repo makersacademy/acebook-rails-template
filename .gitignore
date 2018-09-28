@@ -24,6 +24,7 @@
 /coverage/.resultset.json
 /coverage/.resultset.json.lock
 .byebug_history
+.DS_Store
 
 # Ignore the DB credentials
 .env
