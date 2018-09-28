@@ -19,7 +19,8 @@ RSpec.describe PostsController, type: :controller do
 
   describe '#create' do
     it "adds a post with user id to the database" do
-      @post = Post.create({ message: 'test', user_id: 1})
+      @user = User.create({ email: "test@test.com", password: "tester" })
+      @post = Post.create({ message: 'test', user_id: @user.id})
       expect(Post.all.include?(@post)).to be(true)
     end
   
