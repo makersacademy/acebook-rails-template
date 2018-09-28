@@ -12,7 +12,7 @@ heroku: run rake db:migrate
 worker: bundle exec rake jobs:work
 ```
 
-Once our app deployed on Heroku, we realised that our tables weren't created as expected. We will explain in [Heroku on CLI](https://github.com/ChocolatineMathou/acebook-PushMePullYou/blob/master/docs/deployment-heroku.md#heroku-cli) how we solved this issue.
+Once our app deployed on Heroku, we realised that our tables weren't created as expected. We will explain in [Heroku CLI](https://github.com/ChocolatineMathou/acebook-PushMePullYou/blob/master/docs/deployment-heroku.md#heroku-cli) how we solved this issue.
 
 ## Deploy
 
