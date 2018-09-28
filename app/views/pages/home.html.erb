@@ -1,0 +1,10 @@
+<h1>Pages#home</h1>
+
+<% if current_customer %>
+<%= link_to 'Sign out', destroy_customer_session_path, method: :delete %>
+<% else %>
+<%= link_to 'Sign up', new_customer_registration_path %>
+<%= link_to 'Sign in', new_customer_session_path %>
+<% end %>
+
+<%= link_to 'posts', posts_path %>
