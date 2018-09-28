@@ -1,4 +1,5 @@
 .DS_Store
 tmp/
+coverage/
 log/test.log
 log/development.log
