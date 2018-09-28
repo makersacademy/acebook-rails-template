@@ -1,4 +1,5 @@
 language: ruby
-bundle install
-rails db:create
-rails db:migrate
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
