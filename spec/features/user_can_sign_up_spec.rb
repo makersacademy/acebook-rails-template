@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'helpers/user_registration_helper'
 
 feature 'User can sign up' do
   before(:each) do
@@ -17,8 +18,26 @@ feature 'User can sign up' do
     expect(page).to have_content('Password can\'t be blank')
   end
 
+  scenario 'gives an error if existing email is used' do
+    sign_up
+    click_on 'Logout'
+    visit 'sign_up'
+    fill_in 'user[email]', with: 'test@test.com'  
+    fill_in 'user[password]', with: 'tester'
+    fill_in 'user[password_confirmation]', with: 'tester'
+    click_on 'Sign up'
+    expect(page).to have_content('Email has already been taken')
+  end
+
+  scenario 'gives an error if the passwords don\'t match' do
+    fill_in 'user[email]', with: 'test@test.com'  
+    fill_in 'user[password]', with: 'tester'
+    fill_in 'user[password_confirmation]', with: 'retset'
+    click_on 'Sign up'
+    expect(page).to have_content('Password confirmation doesn\'t match Password')
+  end
+
   scenario 'confirms successful sign up' do
-    save_and_open_page
     fill_in 'user[email]', with: 'test@test.com'
     fill_in 'user[password]', with: 'tester'
     fill_in 'user[password_confirmation]', with: 'tester'

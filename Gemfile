@@ -52,6 +52,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rubocop'
 gem 'simplecov'
+gem 'simplecov-console'
 
 # orderly: an rspec assertion for request specs to assert
 # that one piece of content appears on the page before another.

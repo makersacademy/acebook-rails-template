@@ -1,9 +1,12 @@
 require 'rails_helper'
 require 'helpers/posts_helper'
+require 'helpers/user_registration_helper'
 include ActiveSupport::Testing::TimeHelpers
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
+    visit 'users/sign_up'
+    sign_up
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
@@ -13,6 +16,8 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "User cannot post empty message" do
+    visit 'users/sign_up'
+    sign_up
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: ""
@@ -22,6 +27,8 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Post are displayed in desc order" do
+    visit 'users/sign_up'
+    sign_up
     visit "/posts"
     click_link "New post"
     create_two_posts # Call to post_helper.rb function
