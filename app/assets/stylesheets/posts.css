@@ -1,0 +1,52 @@
+p.it_block {
+  color: #868B91;
+  margin: auto;
+  width: 100%;
+  padding-left: 4.8em;
+  padding-top: 1.2em;
+  padding-bottom: 0.4em;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.new_post_link {
+  margin: auto;
+  padding-left: 6.6em;
+  text-align: left;
+}
+
+.post_container {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+}
+
+p.post_message {
+  margin: inherit;
+  padding-left: 6.8em;
+}
+
+p.post_by {
+  margin: inherit;
+  padding-left: 6.8em;
+}
+
+p.post_time {
+  margin: inherit;
+  padding-left: 6.8em;
+}
+
+p.end {
+  color: #868B91;
+  margin: auto;
+  width: 100%;
+  padding-left: 4.8em;
+  padding-top: 0.4em;
+  padding-bottom: 1.2em;
+  font-size: 18px;
+  font-weight: bold;
+}

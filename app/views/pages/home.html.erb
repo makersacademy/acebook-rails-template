@@ -1,10 +1,26 @@
-<h1>Pages#home</h1>
+<h2>describe <mark class="green">"#home"</mark> <mark class="purple">do</mark></h2>
 
-<% if current_customer %>
-<%= link_to 'Sign out', destroy_customer_session_path, method: :delete %>
-<% else %>
-<%= link_to 'Sign up', new_customer_registration_path %>
-<%= link_to 'Sign in', new_customer_session_path %>
-<% end %>
-
-<%= link_to 'posts', posts_path %>
+<div class="link_container">
+  <ul class="link_list">
+    <% if current_customer %>
+      <li><%= link_to destroy_customer_session_path, method: :delete do%>
+          get <mark class="blue">:sign_out</mark>
+        <% end %>
+      </li>
+    <% else %>
+      <li><%= link_to new_customer_registration_path do%>
+          get <mark class="blue">:sign_up</mark>
+        <% end %>
+      </li>
+      <li><%= link_to new_customer_session_path do%>
+          get <mark class="blue">:sign_in</mark>
+        <% end %>
+      </li>
+    <% end %>
+    <li><%= link_to posts_path do%>
+      get <mark class="blue">:posts</mark>
+      <%end%>
+    </li>
+  </ul>
+</div>
+<h2 class="end"><mark class="purple">end</mark></h2>

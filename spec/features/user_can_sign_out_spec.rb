@@ -6,7 +6,7 @@ RSpec.feature 'Sign out', type: :feature do
     fill_in 'customer_password_confirmation', with: 'test123'
     click_button 'Sign up'
     # put above 5 lines into web helper
-    click_link 'Sign out'
+    click_link 'get :sign_out'
     expect(page).to have_content 'Signed out successfully'
     # second expectation to check user is no longer in session
   end
