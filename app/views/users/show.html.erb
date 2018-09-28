@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-4">
       <% if @user.profilepic %>
-      <a href=<%= edit_user_path(@user) %>>
+      <a id="profile-pic" href=<%= edit_user_path(@user) %>>
         <img class="img-thumbnail" src=<%= @user.profilepic %> style="height: 175px; width: 175px" >
       </a>
       <% else %>
