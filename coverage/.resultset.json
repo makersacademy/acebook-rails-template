@@ -1,0 +1,129 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/helpers/home_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/controllers/home_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/controllers/posts_controller.rb": [
+        1,
+        1,
+        4,
+        null,
+        null,
+        1,
+        4,
+        null,
+        4,
+        3,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        6,
+        null,
+        null,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/controllers/users_controller.rb": [
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/models/post.rb": [
+        1,
+        1,
+        16,
+        null
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/harryjames/Documents/MA/GroupProjects/acebook-PingPongAlmonds/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1538131800
+  }
+}

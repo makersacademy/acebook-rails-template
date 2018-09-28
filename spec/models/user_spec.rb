@@ -6,7 +6,7 @@ end
 
 describe '#create' do
   it 'adds a user to the database' do
-    @user = User.create({email: 'test@test.com', password: 'test'})
+    @user = User.create({email: 'test@test.com', password: 'tester'})
     expect(User.all.include?(@user)).to be(true)
   end
 
@@ -16,8 +16,8 @@ describe '#create' do
   end
 
   it 'doesn\'t add the same email twice' do
-    @user1 = User.create({email: 'test@test.com', password: 'test'})
-    @user2 = User.create({email: 'test@test.com', password: 'test'})
+    @user1 = User.create({email: 'test@test.com', password: 'tester'})
+    @user2 = User.create({email: 'test@test.com', password: 'tester'})
     expect(User.all.include?(@user1)).to be(true)
     expect(User.all.include?(@user2)).to be(false)
   end
