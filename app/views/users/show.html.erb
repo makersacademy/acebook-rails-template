@@ -3,15 +3,9 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <% if @user.profilepic %>
       <a id="profile-pic" href=<%= edit_user_path(@user) %>>
         <img class="img-thumbnail" src=<%= @user.profilepic %> style="height: 175px; width: 175px" >
       </a>
-      <% else %>
-      <a id="profile-pic" href=<%= edit_user_path(@user) %>>
-        <img src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640-300x300.png" style="height: 175px; width: 175px" >
-      </a>
-    <% end %>
     </div>
     <div class="col-8">
       <% @posts.each do |post| %>
