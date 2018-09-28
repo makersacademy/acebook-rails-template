@@ -1,7 +1,7 @@
 RSpec.feature 'Sign In', type: :feature do
   scenario 'If user has no account, they can\'t sign in' do
     visit '/'
-    click_link 'Sign in'
+    click_link 'get :sign_in'
     fill_in 'customer_email', with: 'tess@test.com'
     fill_in 'customer_password', with: '123456'
     click_button 'Log in'
@@ -12,7 +12,7 @@ RSpec.feature 'Sign In', type: :feature do
     customer = {email: 'tess@test.com', password: '123456'}
     Customer.create(customer)
     visit '/'
-    click_link 'Sign in'
+    click_link 'get :sign_in'
     fill_in 'customer_email', with: 'tess@test.com'
     fill_in 'customer_password', with: '123456'
     click_button 'Log in'
