@@ -14,14 +14,66 @@
  *= require_self
  */
 body {
-  background-image: url(/app/assets/images/('background.JPG'));
-  font-family: "OpenDyslexic-Regular"
+  background-color: #282C35;
+  font-family: "Courier New";
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 h1 {
+  width: 100%;
   margin: auto;
-  text-align: center;
+  padding-left: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  text-align: left;
   font-size: 30px;
-  background-color: #704214;
-  color: white;
+  background-color: #21242D;
+  color: #868B91;
+}
+
+h2 {
+  width: 100%;
+  margin: auto;
+  color: #868B91;
+  padding-left: 2.4em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+
+}
+
+mark.yellow {
+  background-color: inherit;
+  color: #D5C088;
+}
+
+mark.purple {
+  background-color: inherit;
+  color: #906C99
+}
+
+mark.green {
+  background-color: inherit;
+  color: 	#859B88
+}
+
+mark.blue {
+  background-color: inherit;
+  color: 	#6FADBF
+}
+
+mark.grey {
+  background-color: inherit;
+  color: #868B91;
+}
+
+h2.end {
+  position: absolute;
+  bottom: auto;
+}
+
+h1.end {
+  position: fixed;
+  bottom: 0;
 }

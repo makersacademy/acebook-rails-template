@@ -1,24 +1,52 @@
+p.it_block {
+  color: #868B91;
+  margin: auto;
+  width: 100%;
+  padding-left: 4.8em;
+  padding-top: 1.2em;
+  padding-bottom: 0.4em;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
 .new_post_link {
   margin: auto;
-  width: 30%;
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 3px;
+  padding-left: 6.6em;
+  text-align: left;
 }
 
 .post_container {
-  background-color: #A98D72;
-  margin: auto;
-  width: 60%;
-  border-radius: 3px;
-  /* border: 2px solid #73AD21; */
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
 }
 
-.post_message {
-  padding-top: 1px;
-  padding-bottom: 1px;
-  padding-left: 2px;
-  text-align: left;
-  font-size: 25px;
-  color: white;
+p.post_message {
+  margin: inherit;
+  padding-left: 6.8em;
+}
+
+p.post_by {
+  margin: inherit;
+  padding-left: 6.8em;
+}
+
+p.post_time {
+  margin: inherit;
+  padding-left: 6.8em;
+}
+
+p.end {
+  color: #868B91;
+  margin: auto;
+  width: 100%;
+  padding-left: 4.8em;
+  padding-top: 0.4em;
+  padding-bottom: 1.2em;
+  font-size: 18px;
+  font-weight: bold;
 }

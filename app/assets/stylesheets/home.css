@@ -1,0 +1,25 @@
+.link_container {
+  width: inherit;
+  padding-left: 3.8em;
+  padding-top: 1.6em;
+  padding-bottom: 1.6em;
+  color: #868B91;
+}
+
+.link_list {
+  width: 100%;
+  margin: auto;
+  list-style-type: none;
+}
+
+li {
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
