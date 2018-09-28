@@ -31,5 +31,4 @@ RSpec.feature "Comments can be made on posts", type: :feature do
     add_comment("This is a comment")
     expect(page).to have_content("Bob: This is a comment")
   end
-
 end
