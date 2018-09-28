@@ -19,5 +19,12 @@
 
 /node_modules
 /yarn-error.log
-
+/coverage/assets/
+/coverage/.last_run.json
+/coverage/.resultset.json
+/coverage/.resultset.json.lock
 .byebug_history
+.DS_Store
+
+# Ignore the DB credentials
+.env
