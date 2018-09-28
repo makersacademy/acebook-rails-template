@@ -3,8 +3,8 @@ require "web_helper"
 
 RSpec.feature "Post has dates", type: :feature do
   before do
-     Timecop.freeze(Time.local(1990))
-   end
+    Timecop.freeze(Time.local(1990))
+  end
 
   after do
     Timecop.return
