@@ -1,5 +1,7 @@
 # AceBook
 
+[![Build Status](https://travis-ci.org/andrewwood2/acebook-gazelle.svg?branch=master)](https://travis-ci.org/andrewwood2/acebook-gazelle) 
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
