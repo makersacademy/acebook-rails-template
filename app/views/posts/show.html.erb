@@ -11,6 +11,7 @@
         <%= @post.votes_for.voters.map { |u| u.name }.join(", ") %>
       <% end %>
     </p>
+    <%= link_to 'Like', like_post_path(@post.id), method: :put, class: 'card-link' %>
     <%= link_to 'Edit', edit_post_path(@post), class: 'card-link' %>
     <%= link_to 'Delete', post_path(@post), method: :delete, class: 'card-link' %>
   </div>
