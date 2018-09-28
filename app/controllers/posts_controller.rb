@@ -9,12 +9,14 @@ class PostsController < ApplicationController
   end
 
   def index
+    redirect_to pages_home_url if current_customer == nil
     @posts = Post.all.reverse
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params[:post][:customer_id] = current_customer.id unless current_customer == nil
+    params.require(:post).permit(:message, :customer_id)
   end
 end
