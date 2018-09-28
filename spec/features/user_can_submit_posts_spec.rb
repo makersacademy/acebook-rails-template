@@ -1,11 +1,16 @@
-require 'rails_helper'
+require "rails_helper"
+require "web_helper"
 
-RSpec.feature "Timeline", type: :feature do
-  scenario "Can submit posts and view them" do
-    visit "/posts"
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
-    expect(page).to have_content("Hello, world!")
+RSpec.feature "New Posts", type: :feature do
+  scenario "user can post message" do
+    user_sign_up
+    submit_test_post
+    expect(page).to have_content("test post")
+  end
+
+  scenario "user can't post and is redirected to home if not logged in" do
+    visit "/posts/new"
+    expect(page).to have_content("Sign up")
+    expect(page).to have_content("Log in")
   end
 end
