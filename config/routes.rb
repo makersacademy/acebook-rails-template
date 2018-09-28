@@ -14,5 +14,8 @@ Rails.application.routes.draw do
     member do
       put "like", to: "posts#add_like"
     end
+    resources :comments
   end
+
+
 end

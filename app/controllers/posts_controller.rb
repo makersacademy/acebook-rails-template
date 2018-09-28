@@ -27,6 +27,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    Comment.create
   end
 
   def destroy

@@ -16,5 +16,28 @@
       <%= link_to 'Edit', edit_post_path(post.id), class: 'card-link' %>
       <%= link_to 'Delete', post_path(post.id), method: :delete, class: 'card-link' %>
     </div>
+    <div class="card">
+      <div class="card-body">
+        <h5>Comments</h5>
+        <% post.comments.each do |comment| %>
+          <p>
+            <%= comment.user.name %>:
+            <%= comment.body %>
+          </p>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <h5>Add a comment:</h5>
+        <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+          <p>
+            <%= form.label :body %><br>
+            <%= form.text_area :body,  id: "body" %>
+          </p>
+          <p>
+            <%= form.submit %>
+          </p>
+        <% end %>
+      </div>
+    </div>
   </div>
 <% end %>

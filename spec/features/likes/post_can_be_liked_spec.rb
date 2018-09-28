@@ -30,5 +30,4 @@ RSpec.feature "Post can be liked", type: :feature do
     click_on "test post"
     expect(page).to have_content("Liked by: Bob")
   end
-
 end
