@@ -21,7 +21,7 @@
         <h5>Comments</h5>
         <% post.comments.each do |comment| %>
           <p>
-            <%= User.find(comment.user_id).name %>:
+            <%= comment.user.name %>:
             <%= comment.body %>
           </p>
         <% end %>
