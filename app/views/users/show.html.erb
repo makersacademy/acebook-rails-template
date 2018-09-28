@@ -1,0 +1,26 @@
+<h1><%= @user.name%></h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <a id="profile-pic" href=<%= edit_user_path(@user) %>>
+        <img class="img-thumbnail" src=<%= @user.profilepic %> style="height: 175px; width: 175px" >
+      </a>
+    </div>
+    <div class="col-8">
+      <% @posts.each do |post| %>
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= post.user.name%></h5>
+            <p class="card-text"><%= link_to simple_format(post.content), post%></p>
+            <h6 class="card-subtitle mb-2 text-muted">
+              <%=post.updated_at.strftime("%B %d at %I:%M%p")%>
+            </h6>
+            <%= link_to 'Edit', edit_post_path(post.id), class: 'card-link' %>
+            <%= link_to 'Delete', post_path(post.id), method: :delete, class: 'card-link' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
