@@ -18,5 +18,4 @@ RSpec.feature "Profile picture", type: :feature do
     click_on "Update User"
     expect(page).to have_css("img[src*='test']")
   end
-
 end
