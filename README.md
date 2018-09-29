@@ -2,7 +2,7 @@
 
 A social media clone.
 
-The card wall is here: https://waffle.io/andrewwood2/acebook-rails-template
+The card wall is here: https://waffle.io/andrewwood2/acebook-gazelle
 
 
 ## Quickstart
