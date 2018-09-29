@@ -1,9 +1,10 @@
 # AceBook
 
+[![Build Status](https://travis-ci.org/andrewwood2/acebook-gazelle.svg?branch=master)](https://travis-ci.org/andrewwood2/acebook-gazelle)
+
 A social media clone.
 
 The card wall is here: https://waffle.io/andrewwood2/acebook-gazelle
-
 
 ## Quickstart
 
