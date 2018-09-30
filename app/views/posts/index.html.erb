@@ -2,6 +2,9 @@
   <div class="posts-wrapper row">
       <div class="post">
         <div class="post-head">
+          <div class="profile-thumbnail">
+              <img class="profile-thumbnail" src=<%= post.user.profilepic %>>
+          </div>
           <div class="name">
               <%= link_to post.user.name, post.user %>
           </div>
@@ -14,12 +17,12 @@
         </div>
         <hr>
         <div class="comments">
-              <div class="likes">
-                  <% if post.votes_for.size > 0 %>
-                    Liked by:
-                    <%= post.votes_for.voters.map { |u| u.name }.join(", ") %>
-                  <% end %>
-                </div>
+          <div class="likes">
+            <% if post.votes_for.size > 0 %>
+              Liked by:
+              <%= post.votes_for.voters.map { |u| u.name }.join(", ") %>
+            <% end %>
+          </div>
         <a class="like-button" rel="nofollow" data-method="put" href=<%=like_post_path(post.id)%>>
           <span class="glyphicon glyphicon-thumbs-up"></span> Like
         </a> 

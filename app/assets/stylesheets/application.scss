@@ -64,7 +64,7 @@ body {
   color: #125688;
   font-size: 16px;
   line-height: 22px;
-  .thumbnail {}
+
   .name {
     display: block;
     font-weight: 500;
@@ -74,6 +74,15 @@ body {
     font-size: 12px;
     color: grey;
   }
+}
+
+.profile-thumbnail {
+  float:left;
+  margin-right: 10px;
+  border-radius: 50%;
+  border-color: gainsboro;
+  height: 40px; 
+  width: 40px;
 }
 
 .content {
