@@ -8,11 +8,11 @@
   </head>
 
   <body>
-
+      </div>
       <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
-              <a class="navbar-brand" href="/">Instagram</a>
+              <a class="navbar-brand" href="/">Acebook</a>
             </div>
               <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
@@ -20,16 +20,16 @@
               </ul>
               <ul class="nav navbar-nav navbar-right">
                   <% if user_signed_in? %>
-                  <li><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/users/sign_out"><span class="glyphicon glyphicon-log-out"></span> Sign out</a> </li>
-                <% else %>
-                <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li>
+                  <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/users/sign_out">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    Sign out
+                  </a>
+                </li>
                 <% end %>
-                
               </ul>
           </div>
         </nav>
-
       <div class="main">
         <%= yield %>
       </div>
