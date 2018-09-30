@@ -15,9 +15,9 @@
               <a class="navbar-brand" href="/">Acebook</a>
             </div>
               <ul class="nav navbar-nav navbar-right">
-                  <li><a href="/">Home</a></li>
-                  <li><%= link_to 'New Post', new_post_path %></li>
                   <% if user_signed_in? %>
+                  <li><%= link_to 'New Post', new_post_path %></li>
+                  <li><a href="/posts">Home</a></li>
                 <li>
                   <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/users/sign_out">
                     <span class="glyphicon glyphicon-log-out"></span>

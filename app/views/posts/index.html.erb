@@ -9,25 +9,25 @@
               <%=post.updated_at.strftime("%B %d at %I:%M%p")%>
             </div>
         </div>
-        <p class="content">
+        <div class="content">
           <%= post.content %>
-        </p>
-        <p class="content">
-          <% if post.votes_for.size > 0 %>
-            Liked by:
-            <%= post.votes_for.voters.map { |u| u.name }.join(", ") %>
-          <% end %>
-        </p>
-        <div class="post-links">
-            <hr>
-            <span class="glyphicon glyphicon-thumbs-up"></span>
-            <%= link_to 'Like', like_post_path(post.id), method: :put, class: 'card-link' %>
-        </div>       
+        </div>
+        <hr>
+        <div class="comments">
+              <div class="likes">
+                  <% if post.votes_for.size > 0 %>
+                    Liked by:
+                    <%= post.votes_for.voters.map { |u| u.name }.join(", ") %>
+                  <% end %>
+                </div>
+        <a class="like-button" rel="nofollow" data-method="put" href="/posts/5/like">
+          <span class="glyphicon glyphicon-thumbs-up"></span> Like
+        </a> 
         <button class="collapsible">Comments</button>
         <div class="collapsible-content">
         <div class="comments">
           <% post.comments.each do |comment| %>
-            <p>
+            <p class="bubble">
               <%= comment.user.name %>:
               <%= comment.body %>
             </p>
@@ -42,6 +42,7 @@
           <% end %>
         </div>
       </div>
+    </div>
   </div>
 <% end %>
 
