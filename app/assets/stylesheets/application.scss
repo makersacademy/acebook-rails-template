@@ -27,8 +27,8 @@ body {
 }
 
 .navbar-default {
-  background-color: #3b5998;
-  height: 54px;
+  background-color: #E85858;
+  height: 42px;
   border-radius: 0;
   .navbar-brand {
     color: white;
@@ -72,6 +72,7 @@ body {
   .date {
     font-weight: 400;
     font-size: 12px;
+    color: grey;
   }
 }
 
@@ -93,7 +94,7 @@ body {
   padding-left: 24px;
   padding-right: 24px;
   .bubble{
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(240, 240, 240);
     border-radius: 6px;
     padding: 8px;
   }
@@ -147,4 +148,8 @@ body {
 hr{
   padding: 0px;
   margin: 0px;    
+}
+
+a {
+  color: red;
 }

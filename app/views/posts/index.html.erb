@@ -28,7 +28,7 @@
         <div class="comments">
           <% post.comments.each do |comment| %>
             <p class="bubble">
-              <%= comment.user.name %>:
+              <%= link_to comment.user.name, comment.user %>
               <%= comment.body %>
             </p>
           <% end %>
