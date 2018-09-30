@@ -18,39 +18,99 @@
 @import "bootstrap";
 
 body {
+  background-color: #fafafa;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
-.main {
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 10px;
-  margin-top: 30px;
-  height: 1500px; /* Used in this example to enable scrolling */
-}
-
-.navbar-brand {
-  a {
-    color: #125688;
-  }
+.logo {
+  color: blue;
 }
 
 .navbar-default {
-  background-color: #fff;
+  background-color: #3b5998;
   height: 54px;
-  padding-left: 9%;
-  padding-right: 9%;
+  border-radius: 0;
+  .navbar-brand {
+    color: white;
+  }
   .navbar-nav li a {
-    color: #125688;
+    color: white;
   }
 }
 
 .navbar-container {
   width: 640px;
   margin: 0 auto;
-
 }
 
-::-webkit-scrollbar {
-    display: none;
+.posts-wrapper {
+  padding-top: 10px;
+  margin: 0 auto;
+  max-width: 720px;
+  width: 100%;
+}
+
+.post {
+  background-color: #fff;
+  border-color: #edeeee;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+}
+
+.post-head {
+  height: 64px;
+  padding: 24px;
+  color: #125688;
+  font-size: 16px;
+  line-height: 22px;
+  .thumbnail {}
+  .name {
+    display: block;
+    font-weight: 500;
+  }
+  .date {
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
+
+.content {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 16px;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.post-links {
+  padding-bottom: 12px;
+  padding-left: 24px;
+}
+
+.comments {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.collapsible {
+  background-color: #E5E5E5;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: gainsboro;
+}
+
+.collapsible-content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
 }
