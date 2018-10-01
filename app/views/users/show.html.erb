@@ -8,13 +8,12 @@
   <% for friendship in @user.friendships %>
   <li>
     <%= friendship.friend.name %>
-    (<%= link_to "remove", friendship_path, :method => :delete %>)
+    (<a rel="nofollow" data-method="delete" href="/friendships/<%=friendship.id%>">remove</a>)
   </li>
   <% end %>
 <ul>
   <% for user in @user.inverse_friends %>
   <li><%= user.name %>
-  (<%= link_to "remove", friendship_path, :method => :delete %>)
   <% end %>
   </li>
 </ul>
