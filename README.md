@@ -1,18 +1,10 @@
 # AceBook
 
-[![Build Status](https://travis-ci.org/andrewwood2/acebook-gazelle.svg?branch=master)](https://travis-ci.org/andrewwood2/acebook-gazelle) 
+[![Build Status](https://travis-ci.org/andrewwood2/acebook-gazelle.svg?branch=master)](https://travis-ci.org/andrewwood2/acebook-gazelle)
 
-REQUIRED INSTRUCTIONS:
+A social media clone.
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: https://waffle.io/andrewwood2/acebook-rails-template
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+The card wall is here: https://waffle.io/andrewwood2/acebook-gazelle
 
 ## Quickstart
 
@@ -26,6 +18,14 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## Technologies used:
+
+* This is a Ruby on Rails app.
+* Testing done by RSpec and Capybara.
+* ORM is ActiveRecord and the database is PostgreSQL.
+* Travis CI is used for continuous integration.
+* Linting by rubocop.
 
 ## Goals
 
@@ -47,22 +47,21 @@ Clear commit messages and pull requests.
 Rotate leading stand-ups.
 Popcorn size tickets.
 Regular pair rotation.
-Look at Devise
 
 ## Wireframes
 
 Sign up and Log in:
 
-![Signup/login](https://github.com/andrewwood2/acebook-gazelle/blob/update_readme/wireframes/Signup-login.png)
+![Alt text](/wireframes/Signup-login.png)
 
 Timeline:
 
-![Timeline](https://github.com/andrewwood2/acebook-gazelle/blob/update_readme/wireframes/Timeline.png)
+![Alt text](/wireframes/Timeline.png)
 
 Profile:
 
-![Profile](https://github.com/andrewwood2/acebook-gazelle/blob/update_readme/wireframes/Profile.png)
+![Alt text](/wireframes/Profile.png)
 
 Create post:
 
-![Create post](https://github.com/andrewwood2/acebook-gazelle/blob/update_readme/wireframes/Write-post.png)
+![Alt text](/wireframes/Write-post.png)
