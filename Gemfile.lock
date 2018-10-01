@@ -193,6 +193,8 @@ GEM
     simple_form (3.5.1)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
+    simple_hashtag (0.1.9)
+      rails (> 3.2.0)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -251,6 +253,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form (~> 3.5)
+  simple_hashtag
   simplecov
   simplecov-console
   timecop (~> 0.9.1)
