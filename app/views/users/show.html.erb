@@ -1,6 +1,10 @@
 <h1><%= @user.name%></h1>
 
+<%= @is_friend2 %>
+<%= @is_friend %>
+<% unless @is_friend || @is_friend2 %>
 <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post %>
+<% end %>
 <p><%= link_to "Find Friends", user_path(@user) %></p>
 
 <h2>Your Friends</h2>

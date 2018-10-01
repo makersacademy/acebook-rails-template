@@ -33,6 +33,7 @@ gem 'simple_form', '~> 3.5'
 
 gem 'devise'
 gem 'acts_as_votable'
+gem 'simple_hashtag'
 
 gem 'timecop', '~> 0.9.1'
 

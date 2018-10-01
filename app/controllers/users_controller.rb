@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @posts = Post.where(user_id: params[:id]).order(created_at: :desc)
+    @is_friend = Friendship.where(friend_id: params[:id], user_id: current_user.id)
+    @is_friend2 =  Friendship.where(friend_id: current_user.id, user_id: params[:id])
   end
 
   def update

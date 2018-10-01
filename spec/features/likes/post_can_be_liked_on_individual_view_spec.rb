@@ -13,7 +13,7 @@ RSpec.feature "Post can be liked on individual comment page", type: :feature do
 
   scenario "Post can be liked, which is visible" do
     click_on "Like"
-    expect(page).to have_content("Liked by: Bob")
+    expect(page).to have_content("Liked by Bob")
   end
 
   scenario "Post can be liked by multiple people" do

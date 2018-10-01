@@ -9,7 +9,7 @@ RSpec.feature "Post can be liked on index page", type: :feature do
   end
 
   scenario "Post is not liked before button clicked" do
-    expect(page).not_to have_content("Liked by: Bob")
+    expect(page).not_to have_content("Liked by Bob")
   end
 
   scenario "Post can be liked, which is visible" do
