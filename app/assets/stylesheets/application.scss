@@ -1,0 +1,173 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  background-color: #fafafa;
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.main {
+  padding-top: 40px;
+  margin: 0 auto;
+  max-width: 720px;
+  width: 100%;
+}
+
+.logo {
+  color: blue;
+}
+
+.navbar-default {
+  background-color: #E85858;
+  height: 42px;
+  border-radius: 0;
+  .navbar-brand {
+    color: white;
+  }
+  .navbar-nav li a {
+    color: white;
+  }
+}
+
+.navbar-container {
+  width: 640px;
+  margin: 0 auto;
+}
+
+.posts-wrapper {
+  padding-top: 10px;
+  margin: 0 auto;
+  max-width: 720px;
+  width: 100%;
+}
+
+.post {
+  background-color: #fff;
+  border-color: #edeeee;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+}
+
+.post-head {
+  height: 64px;
+  padding: 24px;
+  color: #125688;
+  font-size: 16px;
+  line-height: 22px;
+
+  .name {
+    display: block;
+    font-weight: 500;
+  }
+  .date {
+    font-weight: 400;
+    font-size: 12px;
+    color: grey;
+  }
+}
+
+.profile-thumbnail {
+  float:left;
+  margin-right: 10px;
+  border-radius: 50%;
+  border-color: gainsboro;
+  height: 40px; 
+  width: 40px;
+}
+
+.content {
+  padding: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.post-links {
+  padding-bottom: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.comments {
+  padding-left: 24px;
+  padding-right: 24px;
+  .bubble{
+    background-color: rgb(240, 240, 240);
+    border-radius: 6px;
+    padding: 8px;
+  }
+}
+
+.likes {
+  float:right;
+  padding-top: 7px;
+  color: grey;
+  font-size: 12px;
+}
+
+
+.like-button {
+  cursor: pointer;
+  padding: 5px;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 14px;
+  color: grey;}
+
+.active, .like-button:hover {
+  background-color: #ececec;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.active, .collapsible:hover {
+  background-color: #ececec;
+  border-radius: 5px;
+  color: #333;
+
+}
+
+.collapsible {
+  cursor: pointer;
+  padding: 5px;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 14px;
+  color: grey;
+}
+
+.collapsible-content {
+  padding-top: 16px;
+  display: none;
+  overflow: hidden;
+}
+
+hr{
+  padding: 0px;
+  margin: 0px;    
+}
+
+a {
+  color: red;
+}

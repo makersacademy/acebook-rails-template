@@ -1,41 +1,64 @@
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title"><%= link_to post.user.name, post.user %></h5>
-    <p class="card-text"><%= link_to simple_format(post.content), post%></p>
-    <p class="card-text">
-      <h6 class="card-subtitle mb-2 text-muted">
-        <%=post.updated_at.strftime("%B %d at %I:%M%p")%>
-      </h6>
-      <% if post.votes_for.size > 0 %>
-        Liked by:
-        <%= post.votes_for.voters.map { |u| u.name }.join(", ") %>
-      <% end %>
-    </p>
-    <%= link_to 'Like', like_post_path(post.id), method: :put, class: 'card-link' %>
-    <%= link_to 'Edit', edit_post_path(post.id), class: 'card-link' %>
-    <%= link_to 'Delete', post_path(post.id), method: :delete, class: 'card-link' %>
-  </div>
-  <div class="card">
-    <div class="card-body">
-      <h5>Comments</h5>
-      <% post.comments.each do |comment| %>
-        <p>
-          <%= comment.user.name %>:
-          <%= comment.body %>
-        </p>
-      <% end %>
-    </div>
-    <div class="card-body">
-      <h5>Add a comment:</h5>
-      <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-        <p>
-          <%= form.label :body %><br>
-          <%= form.text_area :body,  id: "body" %>
-        </p>
-        <p>
-          <%= form.submit %>
-        </p>
-      <% end %>
+<div class="posts-wrapper row">
+    <div class="post">
+      <div class="post-head">
+        <div class="profile-thumbnail">
+            <img class="profile-thumbnail" src=<%= post.user.profilepic %>>
+        </div>
+        <div class="name">
+            <%= link_to post.user.name, post.user %>
+        </div>
+        <div class="date">
+            <%=post.updated_at.strftime("%B %d at %I:%M%p")%>
+          </div>
+      </div>
+      <div class="content">
+        <%= post.content %>
+      </div>
+      <hr>
+      <div class="comments">
+        <div class="likes">
+          <% if post.votes_for.size > 0 %>
+            Liked by
+            <%= post.votes_for.voters.map { |u| u.name }.join(", ") %>
+          <% end %>
+        </div>
+      <a class="like-button" rel="nofollow" data-method="put" href=<%=like_post_path(post.id)%>>
+        <span class="glyphicon glyphicon-thumbs-up"></span> Like
+      </a>
+      <button class="collapsible" id="Comments">Comments</button>
+      <div class="collapsible-content">
+      <div class="comments">
+        <% post.comments.each do |comment| %>
+          <p class="bubble">
+            <%= link_to comment.user.name, comment.user %>
+            <%= comment.body %>
+          </p>
+        <% end %>
+        <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+          <p>
+            <%= form.text_area :body,  id: "body", class: 'form-control', placeholder: 'Write a comment...' %>
+          </p>
+          <p>
+            <%= form.submit 'Post', class: 'btn btn-primary' %>
+          </p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+</script>

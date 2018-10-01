@@ -5,23 +5,29 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
   </head>
 
   <body>
-
-      <div id='nav'>
-        <!-- <a href="/" style='float:right; font-weight:100; font-size:14px;'>Log out</a> -->
-        <a href="/" style='letter-spacing: 7px;'>Acebook</a>
-        <% if user_signed_in? %>
-          <%= link_to 'Sign out', destroy_user_session_path,
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' } %>
-          <%= link_to 'New post', new_post_path %>
-        <% end %>
       </div>
-
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/">Acebook</a>
+            </div>
+              <ul class="nav navbar-nav navbar-right">
+                  <% if user_signed_in? %>
+                  <li><a href="/posts">Home</a></li>
+                  <li><%= link_to 'New Post', new_post_path %></li>
+                <li>
+                  <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/users/sign_out">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    Sign out
+                  </a>
+                </li>
+                <% end %>
+              </ul>
+          </div>
+        </nav>
       <div class="main">
         <%= yield %>
       </div>
