@@ -16,6 +16,12 @@ p.it_block {
   text-align: left;
 }
 
+#new_post {
+  margin: auto;
+  padding-left: 6.6em;
+  text-align: left;
+}
+
 .post_container {
   text-align: left;
   font-size: 18px;
