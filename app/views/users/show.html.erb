@@ -1,7 +1,17 @@
 <h1><%= @user.name%></h1>
 
-<%= link_to "Add friend", friendships_path(:friend_id), :method => :post %>
+<%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post %>
+<p><%= link_to "Find Friends", user_path(@user) %></p>
 
+<h2>Your Friends</h2>
+<ul>
+  <% for friendship in @user.friendships %>
+  <li>
+    <%= friendship.friend.name %>
+    (<%= link_to "remove", friendship, :method => :delete %>)
+  </li>
+  <% end %>
+</ul>
 
 <div class="main">
   <div class="container">
