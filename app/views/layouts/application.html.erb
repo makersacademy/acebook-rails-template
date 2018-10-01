@@ -17,6 +17,7 @@
               <ul class="nav navbar-nav navbar-right">
                   <% if user_signed_in? %>
                   <li><a href="/posts">Home</a></li>
+                  <li><%= link_to 'Trending', hashtags_path %></li>
                   <li><%= link_to 'New Post', new_post_path %></li>
                 <li>
                   <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/users/sign_out">

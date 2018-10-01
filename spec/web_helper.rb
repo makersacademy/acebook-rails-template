@@ -1,5 +1,5 @@
 def submit_test_post(content = "test post")
-  visit "/posts/new"
+  visit new_post_path
   fill_in :post_content, with: content
   click_on "Create Post"
 end
