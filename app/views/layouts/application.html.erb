@@ -8,33 +8,36 @@
   </head>
 
   <body>
+    </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Acebook</a>
       </div>
-      <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="/">Acebook</a>
-            </div>
-              <ul class="nav navbar-nav navbar-right">
-                  <% if user_signed_in? %>
-                  <li><a href="/posts">Home</a></li>
-                  <li><%= link_to 'Trending', hashtags_path %></li>
-                  <li><%= link_to 'New Post', new_post_path %></li>
-                <li>
-                  <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/users/sign_out">
-                    <span class="glyphicon glyphicon-log-out"></span>
-                    Sign out
-                  </a>
-                </li>
-                <% end %>
-              </ul>
-          </div>
-        </nav>
-      <div class="main">
-        <%= yield %>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li><a href="/posts">Home</a></li>
+            <li><%= link_to 'Trending', hashtags_path %></li>
+            <li><%= link_to 'New Post', new_post_path %></li>
+            <li>
+              <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/users/sign_out">
+                <span class="glyphicon glyphicon-log-out"></span>
+                Sign out
+              </a>
+            </li>
+          <% end %>
+        </ul>
       </div>
+    </nav>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="container">
+      <%= render "layouts/messages" %>
+    </div>
+
+    <div class="main">
+      <%= yield %>
+    </div>
+
     <script> add_collapsible() </script>
   </body>
 </html>
