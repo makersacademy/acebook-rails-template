@@ -6,7 +6,7 @@ RSpec.feature "Update Posts", type: :feature do
     user_sign_up
     submit_test_post
     visit("/posts")
-    click_link "test post"
+    click_link "Bob"
     click_link "Edit"
     fill_in :post_content, with: "edited post"
     click_on "Update Post"

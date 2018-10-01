@@ -22,6 +22,13 @@ body {
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 
+.main {
+  padding-top: 40px;
+  margin: 0 auto;
+  max-width: 720px;
+  width: 100%;
+}
+
 .logo {
   color: blue;
 }
@@ -115,15 +122,7 @@ body {
   color: grey;
   font-size: 12px;
 }
-.collapsible {
-  cursor: pointer;
-  padding: 5px;
-  border: none;
-  text-align: center;
-  outline: none;
-  font-size: 14px;
-  color: grey;
-}
+
 
 .like-button {
   cursor: pointer;
@@ -146,6 +145,16 @@ body {
   border-radius: 5px;
   color: #333;
 
+}
+
+.collapsible {
+  cursor: pointer;
+  padding: 5px;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 14px;
+  color: grey;
 }
 
 .collapsible-content {

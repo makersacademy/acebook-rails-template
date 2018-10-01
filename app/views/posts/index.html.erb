@@ -19,14 +19,14 @@
         <div class="comments">
           <div class="likes">
             <% if post.votes_for.size > 0 %>
-              Liked by:
+              Liked by
               <%= post.votes_for.voters.map { |u| u.name }.join(", ") %>
             <% end %>
           </div>
         <a class="like-button" rel="nofollow" data-method="put" href=<%=like_post_path(post.id)%>>
           <span class="glyphicon glyphicon-thumbs-up"></span> Like
         </a> 
-        <button class="collapsible">Comments</button>
+        <button class="collapsible" id="Comments">Comments</button>
         <div class="collapsible-content">
         <div class="comments">
           <% post.comments.each do |comment| %>
