@@ -1,7 +1,23 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<h2>describe <mark class="green">"#posts"</mark> <mark class="purple">do</mark></h2>
+<div class="new_post">
+  <p class="it_block">it <mark class="green">"allows user to create new post"</mark> <mark class="purple">do</mark></p>
+    <%= render 'layouts/new_post_form' %>
+  <p class="end"><mark class="purple">end</p>
+</div>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+
+
+<div class="all_posts">
+  <p class="it_block">it <mark class="green">"allows user to see all posts"</mark> <mark class="purple">do</mark></p>
+  <% @posts.each do |post| %>
+    <div class="post_container">
+      <p class="post_message"><mark class="grey">post.message =</mark> <%= post.message %></p>
+      <% customer = Customer.find(post.customer_id) %>
+      <p class="post_by"><mark class="grey">post.by = </mark><%= "#{customer.first_name} #{customer.last_name}"%></p>
+      <p class="post_time"><mark class="grey">post.created_at = </mark><%= post.created_at.strftime("%H:%M:%S %m/%d/%Y") %></p>
+    </div>
+
+    <% end %>
+  <p class="end"><mark class="purple">end</p>
+</div>
+<h2 class="end"><mark class="purple">end</mark></h2>

@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acebook</title>
+    <title>acebook</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'home', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag 'favicon.ico' %>
   </head>
 
   <body>
+    <h1><mark class="yellow">PushMePullYou</mark>.acebook <mark class="purple">do</mark></h1>
+    <%= render 'layouts/alerts' %>
     <%= yield %>
+    <h1 class="end"><mark class="purple">end</mark></h1>
   </body>
 </html>
