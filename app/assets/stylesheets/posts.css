@@ -18,8 +18,41 @@ p.it_block {
 
 #new_post {
   margin: auto;
-  padding-left: 6.6em;
+  padding-left: 7.6em;
   text-align: left;
+  font-weight: bold;
+}
+
+#post_message {
+  background-color: inherit;
+  border: none;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  padding: 0px 10px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: none;
+
+}
+
+::placeholder {
+  color: white;
+  font-family: "Courier New";
+  font-weight:;
+
+}
+
+#form_submit_button {
+  background-color: inherit;
+  color: white;
+  font-weight: bold;
+  font-family: inherit;
+  padding: 0px 10px;
+  border: none;
+  font-size: 1em;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  margin-left: 15px;
 }
 
 .post_container {
