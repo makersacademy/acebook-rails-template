@@ -8,6 +8,8 @@ RSpec.feature "Timeline", type: :feature do
     visit 'users/sign_up'
     sign_up
     visit "/posts"
+    save_and_open_page
+
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
@@ -19,6 +21,7 @@ RSpec.feature "Timeline", type: :feature do
     visit 'users/sign_up'
     sign_up
     visit "/posts"
+    save_and_open_page
     click_link "New post"
     fill_in "Message", with: ""
     click_button "Submit"
@@ -30,6 +33,7 @@ RSpec.feature "Timeline", type: :feature do
     visit 'users/sign_up'
     sign_up
     visit "/posts"
+    save_and_open_page
     click_link "New post"
     create_two_posts # Call to post_helper.rb function
     expect("Message A, displayed above Message B").to appear_before "Message B, displayed below Message A"
