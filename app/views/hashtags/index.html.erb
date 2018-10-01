@@ -1,0 +1,7 @@
+<h1>Hashtags</h1>
+<ul>
+<% sortedtags = @hashtags.sort_by { |h| h.hashtagged_ids_by_types["Post"].count } %>
+<% sortedtags.reverse.each do |hashtag| %>
+  <li><%= link_to hashtag.name, hashtag_path(hashtag.name) %> (<%= hashtag.hashtagged_ids_by_types["Post"].count %>)</li>
+<% end -%>
+</ul>
