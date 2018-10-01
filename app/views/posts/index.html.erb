@@ -9,12 +9,7 @@
   <p class="end"><mark class="purple">end</p>
 </div>
 
-<%= form_for Post.new do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-
-  <%= form.submit "Submit" %>
-<% end %>
+<%= render 'layouts/new_post_form' %>
 
 <div class="all_posts">
   <p class="it_block">it <mark class="green">"allows user to see all posts"</mark> <mark class="purple">do</mark></p>
