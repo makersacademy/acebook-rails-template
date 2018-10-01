@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to @post.user.name, @post.user %></h5>
+    <p class="card-text"><%=simple_format(@post.content)%></p>
+    <p class="card-text">
+      <h6 class="card-subtitle mb-2 text-muted">
+        <%=@post.updated_at.strftime("%B %d at %I:%M%p")%>
+      </h6>
+      <% if @post.votes_for.size > 0 %>
+        Liked by:
+        <%= @post.votes_for.voters.map { |u| u.name }.join(", ") %>
+      <% end %>
+    </p>
+    <%= link_to 'Like', like_post_path(@post.id), method: :put, class: 'card-link' %>
+    <%= link_to 'Edit', edit_post_path(@post), class: 'card-link' %>
+    <%= link_to 'Delete', post_path(@post), method: :delete, class: 'card-link' %>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5>Comments</h5>
+      <% @post.comments.each do |comment| %>
+        <p>
+          <%= comment.user.name %>:
+          <%= comment.body %>
+        </p>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <h5>Add a comment:</h5>
+      <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
+        <p>
+          <%= form.label :body %><br>
+          <%= form.text_area :body,  id: "body" %>
+        </p>
+        <p>
+          <%= form.submit %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
