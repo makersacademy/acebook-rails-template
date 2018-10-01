@@ -14,6 +14,8 @@ def user_sign_up(name = "Bob")
 end
 
 def add_comment(comment)
+  visit '/'
+  click_on 'Comments'
   fill_in :body, with: comment
-  click_on "Create Comment"
+  click_on "Post"
 end

@@ -6,7 +6,7 @@ RSpec.feature "Delete Posts", type: :feature do
     user_sign_up
     submit_test_post
     visit("/posts")
-    click_link "test post"
+    click_link "Bob"
     click_link "Delete"
     visit("/posts")
     expect(page).not_to have_content("test post")
