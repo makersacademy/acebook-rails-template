@@ -20,8 +20,7 @@ RSpec.feature "Hashtag page shows all tagged with a specific tag", type: :featur
   end
   scenario "Hashtags are linkable form posts" do
     visit posts_path
-    expect(page).to have_link("#team", href: "/hashtags/team" )
-    expect(page).to have_link("#happy", href: "/hashtags/happy" )
-
+    expect(page).to have_link("#team", href: "/hashtags/team")
+    expect(page).to have_link("#happy", href: "/hashtags/happy")
   end
 end

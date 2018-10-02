@@ -1,7 +1,6 @@
 class FriendshipsController < ApplicationController
-
   def create
-    @friendship = current_user.friendships.new(:friend_id => params[:friend_id])
+    @friendship = current_user.friendships.new(friend_id: params[:friend_id])
     @user = User.find(params[:friend_id])
 
     if @friendship.save
@@ -19,5 +18,4 @@ class FriendshipsController < ApplicationController
     redirect_to user_path(current_user)
     flash[:notice] = "Removed friendship."
   end
-
 end
