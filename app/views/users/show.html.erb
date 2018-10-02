@@ -6,17 +6,16 @@
   <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post %>
 <% end %>
 
-<p><%= link_to "Find Friends", user_path(@user) %></p>
-
 <h2>Friends</h2>
 <ul>
   <% for friendship in @user.friendships %>
   <li>
     <%= friendship.friend.name %>
-    <a rel="nofollow" data-method="delete" href="/friendships/<%=friendship.id%>">remove</a>
+      <% if friendship.friend == current_user || friendship.user == current_user %>
+        <a rel="nofollow" data-method="delete" href="/friendships/<%=friendship.id%>">remove</a>
+      <% end %>
   </li>
   <% end %>
-<ul>
   <% for user in @user.inverse_friends %>
   <li><%= user.name %>
   <% end %>
