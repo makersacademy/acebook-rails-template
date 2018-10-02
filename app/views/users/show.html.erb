@@ -1,9 +1,11 @@
 <h1><%= @user.name%></h1>
 
-<% if (@user.friendships.map{|f| f.friend.name} + @user.inverse_friends.map{|f| f.name}).include? current_user.name %>
-  <a rel="nofollow" data-method="delete" href="/friendships/<%=@friendship.pluck(:id)[0]%>">remove</a>
-<% else %>
-  <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post %>
+<% unless @user == current_user %>
+  <% if (@user.friendships.map{|f| f.friend.name} + @user.inverse_friends.map{|f| f.name}).include? current_user.name %>
+    <a rel="nofollow" data-method="delete" href="/friendships/<%=@friendship.pluck(:id)[0]%>">remove</a>
+  <% else %>
+    <%= link_to "Add Friend", friendships_path(:friend_id => @user.id), :method => :post %>
+  <% end %>
 <% end %>
 
 <h2>Friends</h2>
