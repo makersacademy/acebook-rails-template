@@ -16,4 +16,17 @@ RSpec.describe PostsController, type: :controller do
       end
     end
   end
+
+  describe '#create' do
+    it "adds a post with user id to the database" do
+      @user = User.create({ email: "test@test.com", password: "tester" })
+      @post = Post.create({ message: 'test', user_id: @user.id})
+      expect(Post.all.include?(@post)).to be(true)
+    end
+  
+    it "doesn\'t add empty message" do
+      @post = Post.create({message: ''})
+      expect(Post.all.include?(@post)).to be(false)
+    end
+  end
 end
