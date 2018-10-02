@@ -1,6 +1,17 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div>
+        <p><%= post.message %></p>
+        <p><%= (post.created_at).strftime("%l:%M %p - %e %b '%y")   %>&nbsp;&nbsp;&nbsp;</p>
+      </div>
+    </li>
+  </ul>
 <% end %>
+
+
+
+
 
 <%= link_to new_post_path do %>
   New post
