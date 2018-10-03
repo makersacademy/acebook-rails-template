@@ -18,12 +18,12 @@ users.each do |user|
   User.create(user)
 end
 
-posts = [
-  { message: 'Hello world one' },
-  { message: 'Hey this is a message two' },
-  { message: 'Another message.......three' }
-]
-
-posts.each do |post|
-  Post.create(post)
-end
+# posts = [
+#   { message: 'Hello world one' },
+#   { message: 'Hey this is a message two' },
+#   { message: 'Another message.......three' }
+# ]
+#
+# posts.each do |post|
+#   Post.create(post)
+# end
