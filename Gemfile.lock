@@ -225,7 +225,7 @@ DEPENDENCIES
   rspec-rails (~> 3.5)
   rubocop
   selenium-webdriver
-  simple_token_authentication (~> 1.0)
+  simple_token_authentication
   simplecov
   simplecov-console
   tzinfo-data
