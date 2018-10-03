@@ -1,4 +1,4 @@
-module Api    
+module Api
   module V1
     class UsersController < ApplicationController
       def new
@@ -10,9 +10,10 @@ module Api
         @users = User.all
         render json: @users
       end
-      
+
       def show
         @user = User.find(params[:id])
+        render json: @user
       end
 
       def create
