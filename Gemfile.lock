@@ -175,6 +175,10 @@ GEM
     selenium-webdriver (3.14.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
+    simple_token_authentication (1.15.1)
+      actionmailer (>= 3.2.6, < 6)
+      actionpack (>= 3.2.6, < 6)
+      devise (>= 3.2, < 6)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -221,6 +225,7 @@ DEPENDENCIES
   rspec-rails (~> 3.5)
   rubocop
   selenium-webdriver
+  simple_token_authentication (~> 1.0)
   simplecov
   simplecov-console
   tzinfo-data
