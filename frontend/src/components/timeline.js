@@ -28,7 +28,7 @@ class Timeline extends React.Component {
   }
 
   handleSubmit(event) {
-    const url = "http://localhost:2000/api/v1/posts";
+    const url = "http://localhost:3000/api/v1/posts";
     fetch(url, {
       method: "GET"
     })
