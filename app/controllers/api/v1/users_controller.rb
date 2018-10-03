@@ -18,9 +18,9 @@ module Api
       def create
         @user = User.new(user_params)
         if @user.save
-          redirect_to @user
+          render :index
         else
-          render 'new'
+          render @user.errors
         end
       end
 
