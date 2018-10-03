@@ -21,10 +21,15 @@ class SignUp extends Component {
   }
 
   handleSubmit(event) {
-    const url = "http://localhost:2000/api/v1/users";
+    const url = "http://localhost:3000/api/v1/users";
     fetch(url, {
       method: "POST",
-      body: { user: { email: this.state.email, password: this.state.password } }
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        user: { email: this.state.email, password: this.state.password }
+      })
     }).then(res => console.log(res));
     event.preventDefault();
   }
