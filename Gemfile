@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 
 #  validation and all kinds of wonderful things
 gem 'devise'
+gem 'simple_token_authentication'
 
 # to allow for cross-origin HTTP requests
 gem 'rack-cors'
