@@ -1,5 +1,7 @@
 # AceBook
 
+[![Build Status](https://travis-ci.org/Kharouk/acebook-ciCADA.svg?branch=master)](https://travis-ci.org/Kharouk/acebook-ciCADA)
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
