@@ -1,10 +1,24 @@
 language: ruby
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=602204d952bc3a243e663f0100bfc69ff77832b113b014ac2aa4f7d15feaccdb
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
-- bundle install - jobs =3 - retry =3
-- bundle exec db:create
-- bundle exec db:migrate RAILS_ENV='development'
-- bundle exec rspec
-deploy: 
+  - bundle install - jobs =3 - retry =3
+  - bundle exec db:create
+  - bundle exec db:migrate RAILS_ENV='development'
+  - bundle exec rspec
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+deploy:
   provider: elasticbeanstalk
   access_key_id: ENV["EB_KEY_ID"]
   secret_access_key:
@@ -14,4 +28,4 @@ deploy:
   env: acebook-ciCADA-dev
   bucket_name: https://s3.console.aws.amazon.com/s3/buckets/elasticbeanstalk-eu-west-2-423668963318/?region=eu-west-2&tab=overview
   on:
-    repo: camjw/acebook-ciCADA
+    repo: Kharouk/acebook-ciCADA
