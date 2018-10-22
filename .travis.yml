@@ -2,7 +2,7 @@ language: ruby
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=602204d952bc3a243e663f0100bfc69ff77832b113b014ac2aa4f7d15feaccdb
+    - CC_TEST_REPORTER_ID=ENV["CODECLIMATE_TAG"]
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -11,9 +11,10 @@ before_script:
 
 script:
   - bundle install - jobs =3 - retry =3
-  - bundle exec db:create
-  - bundle exec db:migrate RAILS_ENV='development'
+  - bundle exec bin/rails db:create
+  - bundle exec bin/rails db:migrate
   - bundle exec rspec
+  - bundle exec rubocop
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

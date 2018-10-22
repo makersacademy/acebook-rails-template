@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'welcome_page/welcome'
   root 'welcome_page#welcome'
