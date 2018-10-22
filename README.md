@@ -1,6 +1,9 @@
 # AceBook
 
 [![Build Status](https://travis-ci.org/Kharouk/acebook-ciCADA.svg?branch=master)](https://travis-ci.org/Kharouk/acebook-ciCADA)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5674a4684704c9f4c615/test_coverage)](https://codeclimate.com/github/Kharouk/acebook-ciCADA/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5674a4684704c9f4c615/maintainability)](https://codeclimate.com/github/Kharouk/acebook-ciCADA/maintainability)
+
 
 REQUIRED INSTRUCTIONS:
 
