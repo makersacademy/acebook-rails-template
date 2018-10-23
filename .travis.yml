@@ -26,13 +26,12 @@ after_script:
 
 deploy:
   provider: elasticbeanstalk
-  access_key_id: ENV["EB_KEY_ID"]
+  access_key_id: $EB_KEY_ID
   secret_access_key:
-    secure: ENV["EB_SA_KEY"]
-  region: eu-west-2
-  app: acebook-ciCADA
-  env: acebook-ciCADA-dev
-  bucket_name: 'elasticbeanstalk-eu-west-2-423668963318'
+    secure: $EB_SA_KEY
+  region: "eu-west-2"
+  app: "acebook-ciCADA"
+  env: "acebook-ciCADA-dev"
+  bucket_name: "elasticbeanstalk-eu-west-2-423668963318"
   on:
-    repo: Kharouk/acebook-ciCADA
     branch: master
