@@ -23,6 +23,8 @@ script:
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - git add db/schema.rb
+  - git commit -m "upload schema"
 
 deploy:
   provider: elasticbeanstalk
