@@ -8,14 +8,14 @@ dist: trusty
 services:
   - postgresql
 
-test:
-  adapter: postgresql
-  database: travis_ci_test
-
 before_script:
   - pqsl -c 'create database pgapp_test;' -U postgres
   # - pqsl -c 'create database pgapp_production;' -U postgres
   - pqsl -c 'create database pgapp_development;' -U postgres
+
+test:
+  adapter: postgresql
+  database: travis_ci_test
 
 script:
   - bundle
