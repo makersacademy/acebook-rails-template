@@ -5,12 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-<<<<<<< HEAD
 gem 'devise'
-||||||| merged common ancestors
-
-=======
->>>>>>> 207e4a0de7b8e710b28daeb5b410bf5a19deb4a3
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record
