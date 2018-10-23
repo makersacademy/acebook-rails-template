@@ -4,5 +4,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  # before_action :authenticate_user! <- breaking our tests but we need it
+  # before_action :authenticate_user!
 end
