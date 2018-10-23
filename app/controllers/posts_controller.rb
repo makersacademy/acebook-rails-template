@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Logic for the Posts routes, allows us to create and index posts currently.
 class PostsController < ApplicationController
   def new
     @post = Post.new
