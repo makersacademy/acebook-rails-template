@@ -28,10 +28,11 @@ deploy:
   provider: elasticbeanstalk
   access_key_id: ENV["EB_KEY_ID"]
   secret_access_key:
-    secure: rcFbSFRRlZcvQ5+b++3IXtj/itMCXzmF5Z3tv+QMrWBfaMLnZuuHdPC0gMWPBPYxjZZ3rt0BIwY2kCf8PyyNstJP1q9TOx0zO8Plv8cZI8ANrqbB4KCo3NMzW188IVvXQyCbjjILJM9oTEJL7ucJhvTlc0RiMQTVbZ9gyG2qKwTehDgPjIfmSu31MNU98R1oXHpobhtpYOBNyzdQBeYctMvyFy1/dgjDsD5HBrAHviQSxT2a8PPyNgnAPCr3c2Rm/5/P8ozOMPeWGDeXi2aETdaaPqwHDFfbIcNaiwK9uI8MMxAADK2s7Y0HajF9YZy6T2wqnw5Gczpkfv2boz2UJaWQJcVlPlS1TnLDkX7t2Lp5f4l4axZGmnrMF80J/NT5h35hdAEb/8L1I4zprDXlkBCvxDifC2I/oiddujNOVmiq39Tq3R8/Hz0V6swxzi1WZqhaBlTksGUzFL5zziiqysMWdEJxQOJ2Ck5rlK4Kipen6B0XNg5UVdqhUSRgd5ZUlAD0Rfiz9PoAp06EBuZeaAyiioGB4iZDI8MOKnfwxkGbVCRsPp0fIXcXqUskqfm8Gpx2lvI3697wI9IO9UMq7ET1j1lO3gmkGHs+l/YVvGkGzZJ211aEnRkf7O4Ki/V7LdtAIFBVdGnRhEvWZzfDDj0CFfovWyAt1kQ1tvP4B+k=
+    secure: ENV["EB_SA_KEY"]
   region: eu-west-2
   app: acebook-ciCADA
   env: acebook-ciCADA-dev
-  bucket_name: https://s3.console.aws.amazon.com/s3/buckets/elasticbeanstalk-eu-west-2-423668963318/?region=eu-west-2&tab=overview
+  bucket_name: 'elasticbeanstalk-eu-west-2-423668963318'
   on:
     repo: Kharouk/acebook-ciCADA
+    branch: master
