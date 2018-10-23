@@ -1,4 +1,5 @@
 AllCops:
   Exclude:
-    - 'db/**/*'
+    - db/schema.rb
+    - 'vendor/*'
   TargetRubyVersion: 2.5
