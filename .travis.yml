@@ -6,10 +6,10 @@ rvm:
   - 2.5.0
 dist: trusty
 
-before_script:
-  - pqsl -c 'create database pgapp_test;' -U postgres
-  # - pqsl -c 'create database pgapp_production;' -U postgres
-  - pqsl -c 'create database pgapp_development;' -U postgres
+# before_script:
+#   - pqsl -c 'create database pgapp_test;' -U postgres
+#    - pqsl -c 'create database pgapp_production;' -U postgres
+#   - pqsl -c 'create database pgapp_development;' -U postgres
 
 script:
   - bundle
