@@ -24,6 +24,12 @@ SimpleCov.start 'rails' do
   add_filter '/test/' # for minitest
 end
 
+SimpleCov.at_exit do
+  SimpleCov.result.format!
+  SimpleCov.minimum_coverage 95
+  SimpleCov.minimum_coverage_by_file 90
+end
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
