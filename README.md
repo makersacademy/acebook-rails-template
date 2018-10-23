@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/darciew/acebook-rails-template.svg?branch=master)](https://travis-ci.org/darciew/acebook-rails-template)
+
 # AceBook
 
 REQUIRED INSTRUCTIONS:
