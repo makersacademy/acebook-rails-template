@@ -2,6 +2,7 @@ require 'coveralls'
 require 'simplecov'
 require 'simplecov-console'
 require 'timecop'
+require 'rake'
 require_relative './features/web_helpers.rb'
 require 'pry'
 
