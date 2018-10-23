@@ -1,5 +1,11 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <%= link_to edit_post_path(post[:id]) do %>
+    Edit post
+  <% end %>
+  <%= link_to post_path(post[:id]), method: :delete do %>
+    Delete post
+  <% end %>
 <% end %>
 
 <%= link_to new_post_path do %>

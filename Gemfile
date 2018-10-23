@@ -38,6 +38,7 @@ gem 'rubocop'
 
 # Use simplecov or test coverage.
 gem 'simplecov', require: false, group: :test
+gem 'simplecov-console', require: false, group: :test
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
