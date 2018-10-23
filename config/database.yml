@@ -83,3 +83,5 @@ production:
   database: pgapp_production
   username: pgapp
   password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
+  host: <%= ENV['PGAPP_HOST'] %>
+  port:  <%= ENV['PGAPP_PORT'] %>
