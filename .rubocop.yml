@@ -1,3 +1,4 @@
 AllCops:
   Exclude:
     - 'db/**/*'
+  TargetRubyVersion: 2.5
