@@ -1,6 +1,9 @@
 require 'coveralls'
 require 'simplecov'
 require 'simplecov-console'
+require 'timecop'
+require_relative './features/web_helpers.rb'
+require 'pry'
 
 Coveralls.wear!('rails')
 

@@ -1,5 +1,6 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p class='post-message'><%= post.message %></p>
+  <p class='post-timestamp'><%= post.format_date %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
