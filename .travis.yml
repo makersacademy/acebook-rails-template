@@ -20,7 +20,7 @@ test:
 script:
   - bundle exec rspec
   - bundle exec rubocop
-  - sbt clean coverage test
+  - clean coverage test
 
 after_success:
-  - sbt coveralls
+  - coveralls
