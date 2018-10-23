@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'coveralls', require: false
   gem 'rubocop', require: false
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false

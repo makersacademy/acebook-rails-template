@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/darciew/acebook-rails-template.svg?branch=master)](https://travis-ci.org/darciew/acebook-rails-template)
 
+[![Coverage Status](https://coveralls.io/repos/github/darciew/acebook-rails-template/badge.svg?branch=master)](https://coveralls.io/github/darciew/acebook-rails-template?branch=master)
+
 # AceBook
 
 REQUIRED INSTRUCTIONS:
