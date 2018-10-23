@@ -1,4 +1,5 @@
+# frozen_string_literal: true
+
 class WelcomePageController < ApplicationController
-  def welcome
-  end
+  def welcome; end
 end
