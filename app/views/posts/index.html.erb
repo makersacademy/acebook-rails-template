@@ -1,7 +1,11 @@
+<div class='timeline'>
 <% @posts.each do |post| %>
-  <p class='post-message'><%= post.message %></p>
-  <p class='post-timestamp'><%= post.format_date %></p>
+  <div class='post-div' id=<%=post.id%>>
+    <p class='post-message' id=<%=post.id%>><%= post.message %></p>
+    <p class='post-timestamp' id=<%=post.id%>><%= post.format_date %></p>
+  </div>
 <% end %>
+</div>
 
 <%= link_to new_post_path do %>
   Create post
