@@ -6,8 +6,9 @@ def create_post(message)
 end
 
 def sign_in_helper
-  visit('/')
+  visit('/users/sign_up')
   fill_in('user_email', with: 'test@email.com')
   fill_in('user_password', with: 'Testing123')
-  click_button('Log in')
+  fill_in('user_password_confirmation', with: 'Testing123')
+  click_button('Sign up')
 end
