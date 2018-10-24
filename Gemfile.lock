@@ -67,6 +67,7 @@ GEM
       term-ansicolor
       thor
     crass (1.0.3)
+    database_cleaner (1.7.0)
     devise (4.5.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -290,6 +291,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coveralls
+  database_cleaner
   devise
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
