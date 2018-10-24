@@ -21,17 +21,12 @@
         null,
         null,
         1,
-        5,
-        5,
-        5,
-        5,
-        5,
-        5,
-        null,
-        null,
-        1,
-        0,
-        0,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
         null
       ],
       "/Users/Cameron/Projects/acebook-ciCADA/spec/controllers/posts_controller_spec.rb": [
@@ -759,11 +754,11 @@
         null,
         1,
         1,
-        12,
-        6,
-        6,
+        16,
+        8,
+        8,
         null,
-        6,
+        8,
         null,
         null,
         null,
@@ -843,6 +838,7 @@
         1,
         1,
         1,
+        1,
         null,
         null
       ],
@@ -903,6 +899,6 @@
         null
       ]
     },
-    "timestamp": 1540380369
+    "timestamp": 1540385808
   }
 }
