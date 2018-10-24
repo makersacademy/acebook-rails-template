@@ -2,8 +2,12 @@ require 'rails_helper'
 require 'timecop'
 
 RSpec.feature "Timeline", type: :feature do
+  before do
+    sign_in_helper
+  end
   context "Creating a new post" do
     scenario "Can submit posts and view them" do
+      visit('/')
       create_post("Hello, world!")
       expect(page).to have_content("Hello, world!")
     end
