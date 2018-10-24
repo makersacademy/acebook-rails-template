@@ -10,8 +10,8 @@
   <%= link_to post_path(post[:id]), method: :delete do %>
     Delete post
   <% end %>
-  <button onclick="incrementCount()">Like</button>
-  <p>Likes: <span id="counter"><%= post.likeCount += post.likeCount %></span></p>
+  <%= button_to 'Like', post_likes_path(post[:id]), method: :post %>
+  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 <% end %>
 
 <%= link_to new_post_path do %>

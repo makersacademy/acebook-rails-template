@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   root 'welcome_page#welcome'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'posts/delete', to: 'posts#delete'
-  resources :posts
+  resources :posts do
+    resources :likes
+  end
 end
