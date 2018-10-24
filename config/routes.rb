@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :posts
 
   authenticated :user do
-    root to: "posts#index"
+    root to: 'posts#index'
   end
 
-  root to: redirect("/users/sign_in")
+  root to: redirect('/users/sign_in')
 end
