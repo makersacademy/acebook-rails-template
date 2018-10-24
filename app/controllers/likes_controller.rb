@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
   before_action :find_posts
 
@@ -6,7 +8,7 @@ class LikesController < ApplicationController
     redirect_to posts_url
   end
 
-  private 
+  private
 
   def find_posts
     @post = Post.find(params[:post_id])
