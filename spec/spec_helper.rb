@@ -1,4 +1,5 @@
 require 'coveralls'
+require 'database_cleaner'
 require 'simplecov'
 require 'simplecov-console'
 require 'timecop'
