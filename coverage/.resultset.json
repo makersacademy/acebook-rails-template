@@ -35,7 +35,6 @@
         1,
         null,
         1,
-        null,
         1,
         4,
         4,
@@ -671,9 +670,10 @@
         null
       ],
       "/Users/Cameron/Projects/acebook-ciCADA/spec/factories.rb": [
+        null,
+        null,
         1,
         1,
-        5,
         5,
         5,
         null,
@@ -901,6 +901,6 @@
         null
       ]
     },
-    "timestamp": 1540389662
+    "timestamp": 1540391037
   }
 }
