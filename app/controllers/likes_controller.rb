@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Controller for Likes - Manages creation and destruction of likes
 class LikesController < ApplicationController
   before_action :find_posts
   before_action :find_like, only: [:destroy]
@@ -8,13 +9,13 @@ class LikesController < ApplicationController
     if already_liked?
       flash[:notice] = "can't like more than once"
     else
-     @post.likes.create(user_id: current_user.id)
+      @post.likes.create(user_id: current_user.id)
     end
     redirect_to posts_url
   end
 
   def destroy
-    if !(already_liked?)
+    if !already_liked?
       flash[:notice] = 'cant unlike'
     else
       @like.destroy
@@ -35,5 +36,4 @@ class LikesController < ApplicationController
   def find_posts
     @post = Post.find(params[:post_id])
   end
-  
 end

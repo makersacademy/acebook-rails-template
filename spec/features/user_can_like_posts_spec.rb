@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.feature 'Like posts', type: :feature do
   scenario 'Like post counter' do
   end
-  
+
   scenario 'Can unlike post' do
     signup
     create_hello_world_post

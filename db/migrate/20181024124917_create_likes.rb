@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This migration creates a table for Likes, that references posts and users
 class CreateLikes < ActiveRecord::Migration[5.1]
   def change
     create_table :likes do |t|
