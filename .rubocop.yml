@@ -6,3 +6,9 @@ AllCops:
     - 'vendor/**/*'
     - config/initializers/devise.rb
   TargetRubyVersion: 2.5
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'

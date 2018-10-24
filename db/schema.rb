@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20181024124917) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "likeCount", default: 0
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

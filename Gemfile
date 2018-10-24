@@ -48,6 +48,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
+  # Use factory bot for factories
+  gem 'factory_bot'
 end
 
 group :development do
