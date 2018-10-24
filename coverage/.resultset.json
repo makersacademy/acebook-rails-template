@@ -629,12 +629,6 @@
         1,
         null
       ],
-      "/Users/alexkharouk/Desktop/Makers/rails/acebook-ciCADA/app/helpers/like_helper.rb": [
-        null,
-        null,
-        1,
-        null
-      ],
       "/Users/alexkharouk/Desktop/Makers/rails/acebook-ciCADA/app/helpers/welcome_page_helper.rb": [
         null,
         null,
@@ -645,6 +639,7 @@
       "/Users/alexkharouk/Desktop/Makers/rails/acebook-ciCADA/app/controllers/likes_controller.rb": [
         null,
         null,
+        null,
         1,
         1,
         1,
@@ -679,7 +674,6 @@
         null,
         1,
         2,
-        null,
         null,
         null
       ],
@@ -884,25 +878,6 @@
         null,
         null
       ],
-      "/Users/alexkharouk/Desktop/Makers/rails/acebook-ciCADA/spec/helpers/like_helper_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
       "/Users/alexkharouk/Desktop/Makers/rails/acebook-ciCADA/spec/helpers/welcome_page_helper_spec.rb": [
         null,
         null,
@@ -934,6 +909,7 @@
       "/Users/alexkharouk/Desktop/Makers/rails/acebook-ciCADA/app/models/like.rb": [
         null,
         null,
+        null,
         1,
         1,
         1,
@@ -949,6 +925,7 @@
         null
       ],
       "/Users/alexkharouk/Desktop/Makers/rails/acebook-ciCADA/app/models/post.rb": [
+        null,
         null,
         null,
         1,
@@ -974,6 +951,6 @@
         null
       ]
     },
-    "timestamp": 1540392084
+    "timestamp": 1540392922
   }
 }
