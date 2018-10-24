@@ -1,8 +1,10 @@
 require 'coveralls'
 require 'simplecov'
 require 'simplecov-console'
-
-Coveralls.wear!('rails')
+require 'timecop'
+require 'rake'
+require_relative './features/web_helpers.rb'
+require 'pry'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [
@@ -18,6 +20,12 @@ SimpleCov.start 'rails' do
   add_filter '/app/jobs/'
   add_filter '/spec/' # for rspec
   add_filter '/test/' # for minitest
+end
+
+SimpleCov.at_exit do
+  SimpleCov.result.format!
+  SimpleCov.minimum_coverage 95
+  SimpleCov.minimum_coverage_by_file 90
 end
 
 RSpec.configure do |config|

@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'coveralls', require: false
+  gem 'timecop', require: false
   gem 'rubocop', require: false
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
@@ -38,6 +39,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'pry', require: false
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
 end
