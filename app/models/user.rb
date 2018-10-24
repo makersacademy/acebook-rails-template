@@ -2,6 +2,7 @@
 
 # Devise Class for our Users that interacts with our database
 class User < ApplicationRecord
+  has_many :posts
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

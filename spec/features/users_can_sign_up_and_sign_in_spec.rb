@@ -8,7 +8,8 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content('Logged in as tests@mail.com')
   end
   scenario 'Can visit website and sign in' do
-    logout
+    signup
+    click_link 'Logout'
     login
     expect(page).to have_content('Logged in as tests@mail.com')
   end
