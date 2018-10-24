@@ -133,3 +133,8 @@ Style/SymbolArray:
 # URISchemes: http, https
 Metrics/LineLength:
   Max: 112
+
+AllCops:
+  Exclude:
+    - 'config/initializers/devise.rb'
+    - 'db/migrate/20181023140303_devise_create_users.rb'

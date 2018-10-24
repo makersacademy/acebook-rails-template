@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   before(:each) do
-    sign_in User.create(email: 'test@email.com', password: "Testing123")
+    sign_in User.create(email: 'test2@email.com', password: "Testing1234")
   end
 
   describe "GET /new " do

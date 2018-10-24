@@ -32,14 +32,12 @@ end
 
 RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
 
   config.before(:each) do
     ActiveRecord::Base.connection.reset_pk_sequence!(:posts)
-    ActiveRecord::Base.connection.reset_pk_sequence!(:users)
+    # ActiveRecord::Base.connection.reset_pk_sequence!(:users)
   end
-
-  # config.before(:each, :type => :controller) do
-  # end
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
