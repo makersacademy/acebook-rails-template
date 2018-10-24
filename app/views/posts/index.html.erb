@@ -1,3 +1,7 @@
+<% def increment %>
+  <% @post.likeCount += 1 %>
+<% end %>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <%= link_to edit_post_path(post[:id]) do %>
@@ -6,6 +10,8 @@
   <%= link_to post_path(post[:id]), method: :delete do %>
     Delete post
   <% end %>
+  <button onclick="incrementCount()">Like</button>
+  <p>Likes: <span id="counter"><%= post.likeCount += post.likeCount %></span></p>
 <% end %>
 
 <%= link_to new_post_path do %>
