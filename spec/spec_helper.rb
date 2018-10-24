@@ -6,8 +6,6 @@ require 'rake'
 require_relative './features/web_helpers.rb'
 require 'pry'
 
-Coveralls.wear!('rails')
-
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [
     SimpleCov::Formatter::Console, SimpleCov::Formatter::HTMLFormatter
