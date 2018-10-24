@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 def create_hello_world_post
+  signup
   visit '/posts'
   click_link 'New post'
   fill_in 'Message', with: 'Hello, world!'
@@ -22,9 +23,4 @@ def signup
   fill_in 'user_password', with: 'test123'
   fill_in 'user_password_confirmation', with: 'test123'
   click_button 'Sign up'
-end
-
-def logout
-  signup
-  click_link 'Logout'
 end

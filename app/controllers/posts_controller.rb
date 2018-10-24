@@ -2,6 +2,8 @@
 
 # Logic for the Posts routes, allows us to create and index posts currently.
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @post = Post.new
   end
@@ -37,6 +39,8 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    output = params.require(:post).permit(:message)
+    output[:user_id] = current_user.id
+    output
   end
 end

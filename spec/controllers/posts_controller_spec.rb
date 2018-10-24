@@ -3,10 +3,15 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+  before :each do
+    current_user = FactoryBot.create(:user)
+    login_as(current_user, scope: :user)
+  end
+
   describe 'GET /new ' do
-    it 'responds with 200' do
+    it 'responds with 302' do
       get :new
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(302)
     end
   end
 
@@ -17,7 +22,8 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it 'creates a post' do
-      post :create, params: { post: { message: 'Hello, world!' } }
+      user = User.create(email: 'test@mail.com', password: 'password')
+      Post.create(message: 'Hello, world!', user_id: user.id)
       expect(Post.find_by(message: 'Hello, world!')).to be
     end
   end
