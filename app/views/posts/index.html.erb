@@ -4,6 +4,7 @@
     <p class='post-message' id=<%=post.id%>><%= post.message %></p>
     <p class='post-timestamp' id=<%=post.id%>><%= post.format_date %></p>
     <% if current_user.id == post.user_id %>
+      <p class='post-edit'><%= link_to 'Edit Post', edit_post_path(post) %></p>
       <p class='post-delete'><%= link_to 'Delete', post, :data => {:confirm => "Are you sure?"}, :method => :delete %></p>
     <% end %>
   </div>
