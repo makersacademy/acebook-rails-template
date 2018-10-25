@@ -13,5 +13,11 @@ class WelcomePageController < ApplicationController
 
   def sign_in; end
 
-  def timeline; end
+  def timeline
+    if user_signed_in?
+      @user = current_user.username
+    else
+      redirect_to posts_url
+    end
+  end
 end
