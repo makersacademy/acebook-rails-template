@@ -1,14 +1,15 @@
 language: ruby
 rvm:
- - 2.5.1
- - jruby
- - 9.2.0.0
+- 2.5.1
 cache:
 - bundler
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
 deploy:
   provider: heroku
   api_key:
-    secure: "T8jsyorPBK2PjftEpdjiyc3Op3Yv2UdDSv2qgIptL+BJD2XxikMi8TsOpLxV8/PEcRH+IZYyJgWeXBN65NGZl4dFM5GHZN8GrQ3bsyffPApL+MahLLK2K3NBc4lbQa9xyVzM9+5L0efotj1/cQ12EBEY2CyF5kdliMdFxOrizkWcaXCVCWB/LYFGgP9S0uKcU5silsrZzkiJzYgvxIU6TqGx9LvHJtPR62mP6+ugdgxiPlgMNtWkSJc9jP67UbGB0K8Nql0rEll91OvB9SEmkHHzt4y4hsUKa+Qm067/XjU82FP1OHQirT6+Q7QfAXCszqTSik+W3iQxEAEOzQ2nHObMiIMN6BKbQYuB8QQdO2F/QxOFLl+t3/FSRWGu5XYhRpljsY2lkKAyBQlMU+Xm0d9bpnabv9sybbseKPwQPW+73q3RwJ0o6/bmnq8IoUdsVK6SIeOodw+xRlw1GMclzWcmj+vo3Ivm85mmb+cx9jpZD/66zUuKTyhzKx/In5X3/JhAzNGL8bf+jo79uxeGmxTTLv1yKJKKv0gSQA9k9daKL01eXL2+cMnH/zbD0zZ249Hpe2tc3KmBsZFgSw+n8+41Dhwoa1QI0TPmiWsDSURzvVA0SHtuBAddr6YL27aU2NHCA75TTd1hsmaqe0ghra1lZHX3y9XZ6034XZ7TzP0="
-  app: mighty-ravine-56690
+    secure: "GkwW/ivNN8qTg4S/20s/Zc0zZJzgR7kEaDvVFDaCnciVOpcgv/azOFErdPs3BRPXw1N+uOoa7tD88nuiIeTMbIm6naEBFl6xSyTMGmJH6ygKMyvGuDH4faeO+Q2yimT9Vc2J/5t13L7A/kEIEpmFANe4ABvw3twO70UIJvmRtJkGudz/cKRl8Nys2rO/zNpeGQLsFi4mCKxWzZD0R76qPGgXyLADq3aNjC6SZ6U4k3vv439VWhmhmXpbPZqxW5FI6amuq9Ja3wsgLksuPrpgJh/8sLzmW8lAdsCsNs4T8ZE3QfQuF02f+Vo4YwNZ0PSePASeO4b3MVvqWkF3K0KOAnZ8AkJ2HG8BEVw8eVyIZoUdBqtzpS7PAVbweY5qxFmEqRapfU9tvvOKK1JWImXMqTIUhSyjk1aLhEfZlZ9owLYSgP6T+0m6c8f0HW87tU9ds2NXQirsnP71q39MLtnEmmz8CkielscxtjBXARm6lEcvSwvd8K2mf6hzITqDow2UozBIfgF+aitwQ/vjtsKpc0XrbPSqzHsBzS+oh0qwIf5USBTiicjJq0fZhHuYccHENTt7szg2k8fDQBC5xKUafUwKI8S6j2Pa6RTqchcOf9g0u0pDurChwpQhRH/UdPLbxsP+6wN7Qpy1sJO9SBNtwtBdeV9cRihpKWdHjaiVt2A="
+  app: team-tela
   on:
     repo: emmaalbury/Team-Tela
