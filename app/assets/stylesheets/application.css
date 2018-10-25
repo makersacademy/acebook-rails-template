@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar-default {
+  background-color: #6495ED;
+  border-color:     #000000;
+}
