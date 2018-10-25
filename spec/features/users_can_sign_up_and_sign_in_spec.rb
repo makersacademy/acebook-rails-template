@@ -5,12 +5,6 @@ require 'rails_helper'
 RSpec.feature 'Timeline', type: :feature do
   scenario 'Can visit website and Sign up' do
     signup
-    expect(page).to have_content('Logged in as tests@mail.com')
-  end
-  scenario 'Can visit website and sign in' do
-    signup
-    click_link 'Logout'
-    login
-    expect(page).to have_content('Logged in as tests@mail.com')
+    expect(page).to have_content('Welcome! You have signed up successfully.')
   end
 end

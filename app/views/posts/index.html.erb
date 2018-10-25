@@ -1,3 +1,7 @@
+<% def increment %>
+  <% @post.likeCount += 1 %>
+<% end %>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <%= link_to edit_post_path(post[:id]) do %>
@@ -6,6 +10,13 @@
   <%= link_to post_path(post[:id]), method: :delete do %>
     Delete post
   <% end %>
+  <% like_checker = post.likes.find { |like| like.user_id == current_user.id } %>
+  <% if like_checker %>
+    <%= button_to 'Unlike', post_like_path(post[:id], like_checker), method: :delete %>
+  <% else %>
+    <%= button_to 'Like', post_likes_path(post[:id]), method: :post %>
+  <% end %>
+  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 <% end %>
 
 <%= link_to new_post_path do %>
