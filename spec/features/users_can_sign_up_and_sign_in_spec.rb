@@ -7,5 +7,4 @@ RSpec.feature 'Timeline', type: :feature do
     signup
     expect(page).to have_content('Welcome! You have signed up successfully.')
   end
-
 end
