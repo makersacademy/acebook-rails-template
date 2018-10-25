@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'welcome_page#timeline'
-  get 'welcome', to: "welcome_page#welcome"
+  get 'welcome', to: 'welcome_page#welcome'
 
   resources :welcome_page
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
