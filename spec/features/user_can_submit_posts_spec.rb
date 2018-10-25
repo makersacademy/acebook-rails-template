@@ -3,7 +3,7 @@ require 'timecop'
 
 RSpec.feature "Timeline", type: :feature do
   before do
-    sign_up_helper
+    sign_up_correct_helper
   end
 
   context "Creating a new post" do

@@ -46,6 +46,11 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with(:truncation)
   end
 
+  # Logs in before each controller test
+  config.before(:each, type: :controller) do
+    sign_in User.create(email: 'test2@email.com', password: "Testing123", name: 'TestName')
+  end
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

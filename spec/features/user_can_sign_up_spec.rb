@@ -16,12 +16,12 @@ RSpec.feature 'Sign up', type: :feature do
   end
 
   scenario 'user can sign up' do
-    sign_up_helper
+    sign_up_correct_helper
     expect(find('.notice')).to have_content('Welcome! You have signed up successfully.')
   end
 
   context 'when User signs up' do
-    before { sign_up_helper }
+    before { sign_up_correct_helper }
 
     scenario 'shows logout button' do
       expect(page).to have_selector('#log-out')
@@ -31,11 +31,22 @@ RSpec.feature 'Sign up', type: :feature do
       click_on('Logout')
       expect(find('.notice')).to have_content('Signed out successfully.')
     end
+
+  end
+
+  scenario 'user sign up raises error when name is blank' do
+    sign_up_no_name_helper
+    expect(page).to have_content("Name can't be blank")
+  end
+
+  scenario 'sign up raises error when email invalid' do
+    sign_up_helper('test@test', 'test', 'test123')
+    expect(page).to have_content('Email is invalid')
   end
 
   context 'existing user' do
     before do
-      sign_up_helper
+      sign_up_correct_helper
       click_on('Logout')
     end
 
