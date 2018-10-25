@@ -3,6 +3,7 @@
 # Devise Class for our Users that interacts with our database
 class User < ApplicationRecord
   has_many :posts
+  has_many :comments
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :likes, dependent: :destroy
