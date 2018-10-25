@@ -1,6 +1,8 @@
 <h2><%= @post.message %></h2>
-<h3>Comments:</h3>
-<% @comments.each do |comment| %>
-  <p><%= comment %></p>
-<% end %>
-<%= link_to 'Add Comment' %>
+<h2><%= @post.comments.count %></h2> Comments </h2>
+
+<%= render @post.comments %>
+<br>
+<h3>Add a comment:</h3>
+<%= render "comments/form" %>
+

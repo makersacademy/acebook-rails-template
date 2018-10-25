@@ -13,7 +13,7 @@
     <%= button_to 'Like', post_likes_path(post[:id]), method: :post %>
   <% end %>
   <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-  <%= button_to 'Add Comment', post_url(post[:id]), method: :get %>
+  <%= button_to 'Comments', post_url(post[:id]), method: :get %>
 <% end %>
 
 <%= link_to new_post_path do %>
