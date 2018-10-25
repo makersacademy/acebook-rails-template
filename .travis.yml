@@ -1,3 +1,7 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=b74ebbe823d71e170fa3c7aaab7051362b527c85483b83216485d11544158b6a
+    
 language: ruby
 
 rvm:
@@ -12,6 +16,9 @@ before_script:
   - bundle
   - bundle exec rails db:create
   - bundle exec rails db:migrate RAILS_ENV=test
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 test:
   adapter: postgresql
@@ -23,3 +30,6 @@ script:
 
 after_success:
   - coveralls
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
