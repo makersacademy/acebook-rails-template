@@ -10,6 +10,7 @@
   </head>
 
   <header>
+    <% if current_user %>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="/posts">aceBook</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +18,6 @@
         </button>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav mr-auto">
-            <% if current_user %>
               <li class="nav-item">
                 <a class="nav-link" href="/posts/new">New Post</a>
               </li>
@@ -30,8 +30,16 @@
                 <a class="nav-link" href="/users/sign_out" data-method="delete">Logout</a>
               </li>
           </ul>
-            <% else %>
-          <ul class="navbar-nav">
+          </div>
+      </nav>
+    <% else %>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="/posts">aceBook</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a id="loggedIn" class="nav-link" href="/users/sign_up">Sign Up</a>
             </li>
@@ -39,10 +47,9 @@
               <a class="nav-link" href="/users/sign_in">Login</a>
             </li>
           </ul>
-            <% end %>
           </div>
-          </ul>
       </nav>
+    <% end %>
     </header>
   <body>
 
@@ -54,5 +61,7 @@
   <% end %>
 
     <%= yield %>
+
+
   </body>
 </html>
