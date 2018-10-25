@@ -6,7 +6,7 @@
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-The card wall is [https://trello.com/b/Jmx4wwHz/acebook-cicada](here).
+The card wall is [here](https://trello.com/b/Jmx4wwHz/acebook-cicada).
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
