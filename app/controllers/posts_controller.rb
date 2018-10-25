@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   def update
     @post = current_user.posts.find(params[:id])
-    if @post.update_attributes(post_params)
+    if @post.update(post_params)
       redirect_to posts_url, notice: 'Your post has been updated'
     end
     # if @post.update_attributes(post_params)
