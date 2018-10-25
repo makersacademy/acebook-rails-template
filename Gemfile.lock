@@ -108,7 +108,6 @@ GEM
     puma (3.12.0)
     rack (2.0.5)
     rack-test (1.1.0)
-
       rack (>= 1.0, < 3)
     rails (5.1.6)
       actioncable (= 5.1.6)
@@ -169,7 +168,6 @@ GEM
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
-
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
