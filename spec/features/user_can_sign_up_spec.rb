@@ -40,12 +40,12 @@ RSpec.feature 'Sign up', type: :feature do
     end
 
     scenario 'can sign in' do
-      log_in( 'test@email.com', 'Testing123')
+      log_in('test@email.com', 'Testing123')
       expect(find('.notice')).to have_content('Signed in successfully.')
     end
 
     scenario 'cannot sign in if password wrong' do
-      log_in( 'test@email.com', 'password')
+      log_in('test@email.com', 'password')
       expect(find('.alert')).to have_content('Invalid Email or password.')
     end
   end
