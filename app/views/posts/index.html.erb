@@ -2,7 +2,7 @@
   <% @post.likeCount += 1 %>
 <% end %>
 
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
   <%= link_to edit_post_path(post[:id]) do %>
     Edit post
