@@ -4,15 +4,9 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5674a4684704c9f4c615/test_coverage)](https://codeclimate.com/github/Kharouk/acebook-ciCADA/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5674a4684704c9f4c615/maintainability)](https://codeclimate.com/github/Kharouk/acebook-ciCADA/maintainability)
 
-
-REQUIRED INSTRUCTIONS:
-
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+The card wall is [https://trello.com/b/Jmx4wwHz/acebook-cicada](here).
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
