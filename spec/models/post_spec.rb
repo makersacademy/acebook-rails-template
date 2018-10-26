@@ -15,4 +15,16 @@ RSpec.describe Post, type: :model do
       expect(subject.format_date).to eq 'Wednesday, 3 Oct 2018 at 1:00 PM'
     end
   end
+
+  describe '#older_than_10_mins?' do
+    it 'checks if a post is older than 10 mins' do
+      Timecop.freeze(Time.zone.parse('13:30 3 October 2018'))
+      expect(subject.older_than_10_mins?).to eq true
+    end
+
+    it 'checks if a post is older than 10 mins' do
+      Timecop.freeze(Time.zone.parse('13:05 3 October 2018'))
+      expect(subject.older_than_10_mins?).to eq false
+    end
+  end
 end

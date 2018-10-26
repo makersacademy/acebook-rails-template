@@ -14,6 +14,22 @@ class PostsController < ApplicationController
     @posts = Post.all.reverse
   end
 
+  def edit
+    @post = current_user.posts.find(params[:id])
+  end
+
+  def update
+    @post = current_user.posts.find(params[:id])
+
+    if @post.update(post_params).blank?
+      flash[:alert] = 'Post message cannot be empty'
+      render 'edit'
+    else
+      flash[:notice] = 'Your post has been updated'
+      redirect_to posts_url
+    end
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy

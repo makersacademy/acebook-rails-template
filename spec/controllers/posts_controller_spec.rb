@@ -26,4 +26,13 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  # describe "DELETE /posts/id" do
+  #   it "responds with 200" do
+  #     delete :destroy, params: { delete: { message: "Please delete me!", id: 1 } }
+  #     # delete :destroy, params: { delete: { id: 1 } }
+  #     # delete :destroy, id: post.id
+  #     expect(response).to redirect_to(posts_url)
+  #   end
+  # end
 end
