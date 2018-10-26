@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Deleting a Post', type: :feature do
   before do
-    sign_in_helper
+    sign_up_correct_helper
   end
 
   scenario 'User can submit a post then delete it' do
