@@ -5,5 +5,8 @@ class UsersController < ApplicationController
             else
               current_user
             end
+
+    @posts = @user.posts
+
   end
 end
