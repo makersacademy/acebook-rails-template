@@ -5,8 +5,6 @@ class CommentsController < ApplicationController
   before_action :find_post
   include CommentsHelper
 
-
-
   def create
     @post.comments.create(user_id: current_user.id,
                           comment_text: params[:comment].values.join(''))
