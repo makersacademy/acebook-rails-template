@@ -31,7 +31,6 @@ RSpec.feature 'Sign up', type: :feature do
       click_on('Logout')
       expect(find('.notice')).to have_content('Signed out successfully.')
     end
-
   end
 
   scenario 'user sign up raises error when name is blank' do

@@ -33,4 +33,14 @@ RSpec.feature 'Editing a Post', type: :feature do
     visit('/')
     expect(page).not_to have_selector(:link_or_button, 'Edit Post')
   end
+
+  scenario 'User cannot edit a post if text area is empty' do
+    Timecop.freeze(Time.zone.parse('13:05 3 October 2018'))
+    visit('/')
+    click_link('Edit Post')
+    fill_in('post_message', with: '')
+    click_on('Update Post')
+    expect(page).not_to have_content('Your post has been updated')
+    expect(page).to have_content('Post message cannot be empty')
+  end
 end
