@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts.inspect
     @posts = Post.all
   end
 
