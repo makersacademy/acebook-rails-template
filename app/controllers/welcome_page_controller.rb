@@ -7,7 +7,7 @@ class WelcomePageController < ApplicationController
       @posts = Post.all
       render 'timeline'
     else
-      render 'sign_in'
+      render 'landing_page'
     end
   end
 

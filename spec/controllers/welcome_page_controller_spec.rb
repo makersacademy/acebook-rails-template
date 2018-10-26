@@ -8,6 +8,10 @@ RSpec.describe WelcomePageController, type: :controller do
       get :welcome
       expect(response).to have_http_status(:success)
     end
+    it 'renders landing page if not signed in' do
+      get :welcome
+      response.should render_template('landing_page')
+    end
   end
   describe 'GET #timeline' do
     it 'returns http success' do
