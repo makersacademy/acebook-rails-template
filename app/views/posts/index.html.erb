@@ -17,7 +17,3 @@
   <%= button_to 'Comments', post_url(post[:id]), method: :get %>
   <p><%= post.comments.count %> <%= post.comments.count == 1 ? 'Comment' : 'Comments'%></p>
 <% end %>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
