@@ -10,16 +10,8 @@ class LikesController < ApplicationController
   # POST /likes
   # POST /likes.json
   def create
-    @like = Like.new(like_params)
-    respond_to do |format|
-      if @like.save
-        format.html { redirect_to @like, notice: 'Like was successfully created.' }
-        format.json { render :show, status: :created, location: @like }
-      else
-        format.html { render :new }
-        format.json { render json: @like.errors, status: :unprocessable_entity }
-      end
-    end
+    @like = Like.create(like_params)
+    redirect_to posts_url
   end
 
   # DELETE /likes/1
@@ -32,36 +24,6 @@ class LikesController < ApplicationController
     end
   end
 
-  # potentially make show work as notification "user A liked post B"
-  # GET /likes/1
-  # GET /likes/1.json
-  # def show
-  # end
-
-  # commented out unnecessary controller methods
-  # GET /likes/new
-  # def new
-  #   @like = Like.new
-  # end
-
-  # GET /likes/1/edit
-  # def edit
-  # end
-
-  # PATCH/PUT /likes/1
-  # PATCH/PUT /likes/1.json
-  # def update
-  #   respond_to do |format|
-  #     if @like.update(like_params)
-  #       format.html { redirect_to @like, notice: 'Like was successfully updated.' }
-  #       format.json { render :show, status: :ok, location: @like }
-  #     else
-  #       format.html { render :edit }
-  #       format.json { render json: @like.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -71,6 +33,46 @@ class LikesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def like_params
-      params.require(:like).permit(:user_id, :post_id)
+      params.permit(:user_id, :post_id)
     end
 end
+
+
+# potentially make show work as notification "user A liked post B"
+# GET /likes/1
+# GET /likes/1.json
+# def show
+# end
+
+# commented out unnecessary controller methods
+# respond_to do |format|
+#   if @like.save
+#     format.html { redirect_to @like, notice: 'Like was successfully created.' }
+#     format.json { render :show, status: :created, location: @like }
+#   else
+#     format.html { render :new }
+#     format.json { render json: @like.errors, status: :unprocessable_entity }
+#   end
+# end
+# GET /likes/new
+# def new
+#   @like = Like.new
+# end
+
+# GET /likes/1/edit
+# def edit
+# end
+
+# PATCH/PUT /likes/1
+# PATCH/PUT /likes/1.json
+# def update
+#   respond_to do |format|
+#     if @like.update(like_params)
+#       format.html { redirect_to @like, notice: 'Like was successfully updated.' }
+#       format.json { render :show, status: :ok, location: @like }
+#     else
+#       format.html { render :edit }
+#       format.json { render json: @like.errors, status: :unprocessable_entity }
+#     end
+#   end
+# end
