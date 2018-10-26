@@ -1,5 +1,6 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<% @posts.reverse.each do |post| %>
+  <p><%= post.message %>
+    <br><%= post.created_at.strftime("Posted at %I:%M%p, %d/%m/%Y")%> </p>
   <%= link_to edit_post_path(post[:id]) do %>
     Edit post
   <% end %>
