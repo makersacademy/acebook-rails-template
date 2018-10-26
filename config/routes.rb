@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'posts/create', to: 'posts#create'
   get 'my_images', to:'image_posts#user_images'
   resources :posts do
+    resources :comments
     resources :likes
   end
 end
