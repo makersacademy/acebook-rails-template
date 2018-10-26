@@ -1,5 +1,4 @@
 <% if comment.comment_text != nil %>
-<% puts comment.comment_text %>
-  <% time = comment.created_at%>
-  <p><%= comment.comment_text %> - <%= time_ago_in_words(comment.created_at || Time.now) %> - <%= @user.email %></p>
+<% time = comment.created_at%>
+<p><%= comment.comment_text %> - <%= time_ago_in_words(comment.created_at || Time.now) %> - <%= @user.email %></p>
 <% end %>
