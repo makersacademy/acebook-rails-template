@@ -22,4 +22,10 @@ RSpec.feature "Post", type: :feature do
     expect(page).to have_content(time)
   end
 
+  scenario "Posts are shown latest first" do
+    newPostAndSubmit("Old Message")
+    newPostAndSubmit("New Message")
+    expect("New Message").to appear_before("Old Message")
+  end
+
 end
