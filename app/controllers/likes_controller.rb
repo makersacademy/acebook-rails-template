@@ -1,12 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_like, only: [:show, :edit, :update, :destroy]
 
-  # GET /likes
-  # GET /likes.json
-  def index
-    @likes = Like.all
-  end
-
   # POST /likes
   # POST /likes.json
   def create
@@ -16,14 +10,13 @@ class LikesController < ApplicationController
 
   # DELETE /likes/1
   # DELETE /likes/1.json
-  def destroy
-    @like.destroy
-    respond_to do |format|
-      format.html { redirect_to likes_url, notice: 'Like was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
+  # def destroy
+  #   @like.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to likes_url, notice: 'Like was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -36,7 +29,6 @@ class LikesController < ApplicationController
       params.permit(:user_id, :post_id)
     end
 end
-
 
 # potentially make show work as notification "user A liked post B"
 # GET /likes/1

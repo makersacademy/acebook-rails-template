@@ -20,7 +20,6 @@ RSpec.feature "Likes", type: :feature do
   scenario 'When the user likes a post, the like count increases by one' do
     create_post("I want to like this post")
     click_on('Like')
-    save_and_open_page
     expect(find('p#like-count')).to have_content('1👍')
   end
 end
