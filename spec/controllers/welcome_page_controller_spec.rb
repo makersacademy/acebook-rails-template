@@ -9,7 +9,6 @@ RSpec.describe WelcomePageController, type: :controller do
       expect(response).to have_http_status(:success)
     end
     it 'renders landing page if not signed in' do
-
       get :welcome
       response.should render_template('landing_page')
     end
