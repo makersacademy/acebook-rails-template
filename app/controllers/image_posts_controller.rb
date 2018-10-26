@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ImagePostsController < ApplicationController
-  before_action :set_image_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_image_post, only: %i[show edit update destroy]
 
   # GET /image_posts
   # GET /image_posts.json
@@ -9,8 +11,7 @@ class ImagePostsController < ApplicationController
 
   # GET /image_posts/1
   # GET /image_posts/1.json
-  def show
-  end
+  def show; end
 
   # GET /image_posts/new
   def new
@@ -18,8 +19,7 @@ class ImagePostsController < ApplicationController
   end
 
   # GET /image_posts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /image_posts
   # POST /image_posts.json
@@ -62,13 +62,14 @@ class ImagePostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_image_post
-      @image_post = ImagePost.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def image_post_params
-      params.require(:image_post).permit(:caption, :picture)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_image_post
+    @image_post = ImagePost.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def image_post_params
+    params.require(:image_post).permit(:caption, :picture)
+  end
 end
