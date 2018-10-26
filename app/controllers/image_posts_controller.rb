@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ImagePostsController < ApplicationController
-  before_action :set_image_post, only: %i[show edit update destroy]
+  before_action only: %i[show edit update destroy]
 
   # GET /image_posts
   # GET /image_posts.json
@@ -9,13 +9,21 @@ class ImagePostsController < ApplicationController
     @image_posts = ImagePost.all
   end
 
+  def user_images
+    @user = current_user
+  end
+
   # GET /image_posts/1
   # GET /image_posts/1.json
-  def show; end
+  def show
+    puts params[:id]
+    set_image_post if params[:id]
+  end
 
   # GET /image_posts/new
   def new
     @image_post = ImagePost.new
+    @user = current_user
   end
 
   # GET /image_posts/1/edit
@@ -25,7 +33,6 @@ class ImagePostsController < ApplicationController
   # POST /image_posts.json
   def create
     @image_post = ImagePost.new(image_post_params)
-
     respond_to do |format|
       if @image_post.save
         format.html { redirect_to @image_post, notice: 'Image post was successfully created.' }
@@ -70,6 +77,8 @@ class ImagePostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def image_post_params
-    params.require(:image_post).permit(:caption, :picture)
+    output = params.require(:image_post).permit(:caption, :picture)
+    output[:user_id] = current_user.id
+    return output
   end
 end
