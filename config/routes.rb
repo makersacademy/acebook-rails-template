@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'posts/delete', to: 'posts#delete'
   post 'posts/create', to: 'posts#create'
   resources :posts do
+    resources :comments
     resources :likes
   end
 end
