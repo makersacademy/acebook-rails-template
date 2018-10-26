@@ -6,7 +6,8 @@ class ImagePost < ApplicationRecord
   validate :image_size_validation
 
   private
-    def image_size_validation
-      errors[:picture] << "should be less than 3MB" if picture.size > 3.megabytes
-    end
+
+  def image_size_validation
+    errors[:picture] << 'should be less than 3MB' if picture.size > 3.megabytes
+  end
 end
