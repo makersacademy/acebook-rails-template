@@ -1,7 +1,3 @@
-<% def increment %>
-  <% @post.likeCount += 1 %>
-<% end %>
-
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %> <%= post.created_at.strftime('Posted at %I:%M%p, %d/%m/%Y') %></p>
   <%= link_to edit_post_path(post[:id]) do %>
@@ -16,7 +12,9 @@
   <% else %>
     <%= button_to 'Like', post_likes_path(post[:id]), method: :post %>
   <% end %>
-  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+  <p><%= post.likes.count %> <%= post.likes.count == 1 ? 'Like' : 'Likes'%></p>
+  <%= button_to 'Comments', post_url(post[:id]), method: :get %>
+  <p><%= post.comments.count %> <%= post.comments.count == 1 ? 'Comment' : 'Comments'%></p>
 <% end %>
 
 <%= link_to new_post_path do %>
