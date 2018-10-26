@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/darciew/acebook-rails-template.svg?branch=master)](https://travis-ci.org/darciew/acebook-rails-template)  [![Maintainability](https://api.codeclimate.com/v1/badges/52d0d8cc4088fa6dd174/maintainability)](https://codeclimate.com/github/darciew/acebook-rails-template/maintainability)
+[![Build Status](https://travis-ci.org/darciew/acebook-rails-template.svg?branch=master)](https://travis-ci.org/darciew/acebook-rails-template)  [![Maintainability](https://api.codeclimate.com/v1/badges/52d0d8cc4088fa6dd174/maintainability)](https://codeclimate.com/github/darciew/acebook-rails-template/maintainability)  [![Test Coverage](https://api.codeclimate.com/v1/badges/52d0d8cc4088fa6dd174/test_coverage)](https://codeclimate.com/github/darciew/acebook-rails-template/test_coverage)
 
 # AceBook
 
