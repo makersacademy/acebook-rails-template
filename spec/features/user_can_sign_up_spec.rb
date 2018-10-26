@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'users can sign up' do
-  scenario '' do
+feature 'Sign-up' do
+  scenario 'users can sign up successfully' do
     visit new_user_registration_path
     fill_in 'Email', with: 'test@test.com'
     fill_in 'Password', with: '123456'
@@ -9,17 +9,10 @@ feature 'users can sign up' do
     click_button 'Sign up'
     expect(page).to have_content('Welcome! You have signed up successfully.')
   end
+end
 
-  scenario '' do
-    visit new_user_session_path
-    fill_in 'Email', with: 'test@test.com'
-    fill_in 'Password', with: '123456'
-    click_button 'Log in'
-    expect(page).to have_content('Invalid Email or password.')
-  end
-
-feature 'users can log out' do
-  scenario '' do
+feature 'Log-out' do
+  scenario 'users can log out' do
     visit new_user_registration_path
     fill_in 'Email', with: 'test2@test.com'
     fill_in 'Password', with: '234567'
@@ -28,9 +21,18 @@ feature 'users can log out' do
     click_link 'Logout'
     expect(page).to have_content('Signed out successfully.')
   end
+end
 
-feature 'users can login after they have signed up' do
-  scenario '' do
+feature 'Log-in' do
+  scenario "users can't log in if not signed up" do
+    visit new_user_session_path
+    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Password', with: '123456'
+    click_button 'Log in'
+    expect(page).to have_content('Invalid Email or password.')
+  end
+
+  scenario 'users can log in after sign up' do
     visit new_user_registration_path
     fill_in 'Email', with: 'test2@test.com'
     fill_in 'Password', with: '234567'
@@ -43,6 +45,4 @@ feature 'users can login after they have signed up' do
     click_button 'Log in'
     expect(page).to have_content('Logged in as test2@test.com.')
   end
-end
-end
 end
