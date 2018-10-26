@@ -34,7 +34,12 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-  def show; end
+  def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments.all
+    @comment = @post.comments.build
+    @user = User.find(current_user.id)
+  end
 
   private
 
