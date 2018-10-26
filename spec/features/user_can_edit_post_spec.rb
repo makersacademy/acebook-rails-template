@@ -3,7 +3,7 @@ require 'timecop'
 
 RSpec.feature 'Editing a Post', type: :feature do
   before do
-    sign_in_helper
+    sign_up_correct_helper
     visit('/')
     Timecop.freeze(Time.zone.parse('13:00 3 October 2018'))
     create_post('I would like to edit this post')
