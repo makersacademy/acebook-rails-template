@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :image_posts
   devise_for :users
   root 'welcome_page#welcome'
 

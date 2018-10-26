@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
+# able to use uploader and upload images
+gem 'carrierwave'
 
 # Add Devise to application for users
 gem 'devise'
