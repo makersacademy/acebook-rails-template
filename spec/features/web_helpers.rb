@@ -15,7 +15,7 @@ def sign_up_helper(email, name, password)
 end
 
 def sign_up_correct_helper
-  sign_up_helper('test@email.com', 'Test', 'Testing123')
+  sign_up_helper('test@email.com', 'TestName', 'Testing123')
 end
 
 def sign_up_no_name_helper
