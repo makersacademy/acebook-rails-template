@@ -12,9 +12,9 @@
   <% else %>
     <%= button_to 'Like', post_likes_path(post[:id]), method: :post %>
   <% end %>
-  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+  <p><%= post.likes.count %> <%= post.likes.count == 1 ? 'Like' : 'Likes'%></p>
   <%= button_to 'Comments', post_url(post[:id]), method: :get %>
-    <p><%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Comments'%></p>
+  <p><%= post.comments.count %> <%= post.comments.count == 1 ? 'Comment' : 'Comments'%></p>
 <% end %>
 
 <%= link_to new_post_path do %>
