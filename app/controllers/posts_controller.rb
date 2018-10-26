@@ -20,14 +20,10 @@ class PostsController < ApplicationController
 
   def update
     @post = current_user.posts.find(params[:id])
-    if @post.update(post_params)
-      redirect_to posts_url, notice: 'Your post has been updated'
-    end
-    # if @post.update_attributes(post_params)
-    #   redirect_to posts_url, notice: 'Your post has been updated'
-    # elsif @post.update_attributes(post_params).blank?
-    #   render 'edit'
-    # end
+
+    @post.update(post_params)
+    flash[:notice] = 'Your post has been updated'
+    redirect_to posts_url
   end
 
   def destroy
