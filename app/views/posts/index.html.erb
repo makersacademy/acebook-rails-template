@@ -6,8 +6,9 @@
 <% @posts.each do |post| %>
   <div class='post-div' id=<%=post.id%>>
     <p class='post-author' id=<%=post.id%>><%= post.user.name %></p>
-    <p class='post-message' id=<%=post.id%>><%= post.message %></p>
+    <p class='post-message' id=<%=post.id%>><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
     <p class='post-timestamp' id=<%=post.id%>><%= post.format_date %></p>
+    <button type="button" name="button" id="like-button">Like</button>
     <% if current_user.id == post.user_id %>
       <% if !post.older_than_10_mins? %>
         <p class='post-edit'><%= link_to 'Edit Post', edit_post_path(post) %></p>

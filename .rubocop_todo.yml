@@ -134,6 +134,10 @@ Style/SymbolArray:
 Metrics/LineLength:
   Max: 112
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/features/*.rb'
+
 AllCops:
   Exclude:
     - 'db/migrate/20181023140303_devise_create_users.rb'
