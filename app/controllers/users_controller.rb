@@ -5,8 +5,6 @@ class UsersController < ApplicationController
             else
               current_user
             end
-
-    @posts = @user.posts
-
+    @posts = @user.posts.reverse
   end
 end
