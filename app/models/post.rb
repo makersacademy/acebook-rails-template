@@ -15,5 +15,5 @@ class Post < ApplicationRecord
     likes.find_by(user_id: person.id)
   end
 
-  validates :message, presence: true
+  validates :message, presence: true, length: { maximum: 500 }
 end
