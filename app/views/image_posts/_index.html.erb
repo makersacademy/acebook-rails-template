@@ -1,20 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Image Posts</h1>
+<hr>
 
-  <tbody>
     <% @image_posts.each do |image_post| %>
-      <tr>
-        <td><%= image_post.caption %></td>
-        <td><%= image_tag image_post.picture_url, width: '50%' if image_post.picture.present? %></td>
-      </tr>
-      <br>
-      <br>
-      <br>
-      <tr>
-        <td><%= link_to 'Edit', edit_image_post_path(image_post) %></td>
-        <td><%= link_to 'Destroy', image_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="image_posts">
+      <br>Posted <%= time_ago_in_words(image_post.created_at || Time.now) %> ago by <%= find_image_post_email(image_post) %>.</p>
+
+      <%= image_tag image_post.picture_url, width: '50%' if image_post.picture.present? %><br>
+            <%= image_post.caption %><br>
+            <hr>
+          </div>
     <% end %>
-  </tbody>
-</table>
