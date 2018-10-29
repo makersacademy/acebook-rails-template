@@ -35,4 +35,31 @@ RSpec.feature 'Profile page', type: :feature do
     expect(page).not_to have_content 'Goodbye!'
     expect(page).to have_content 'Hello!'
   end
+
+  scenario 'Timeline has a My Profile button' do
+    expect(page).to have_button('My Profile')
+  end
+
+  scenario 'User can visit own profile by clicking on profile button (in timeline)' do
+    click_on('My Profile')
+    expect(page).to have_current_path('/profile')
+  end
+
+  scenario 'Profile has a button to timeline' do
+    visit('/profile')
+    expect(page).to have_button('Home')
+  end
+
+  scenario 'User can go back to timeline from profile by clicking Home' do
+    visit('/profile')
+    click_on('Home')
+    expect(page).to have_current_path('/')
+  end
+
+  scenario 'User can click on authors name for post to visit their profile' do
+    click_on('Logout')
+    sign_up_helper('seconduser@test.com', 'andres', 'password')
+    click_on('TestName')
+    expect(page).to have_current_path('/users/1')
+  end
 end

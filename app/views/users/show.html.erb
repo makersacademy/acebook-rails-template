@@ -1,8 +1,11 @@
 <h1 id="user-name-title"><%= @user.name %></h1>
+<%= button_to('Home', root_path, method: :get, id: 'home-button') %>
+
 
 <div class='timeline'>
 <% @posts.each do |post| %>
   <div class='post-div' id=<%=post.id%>>
+    <p class='post-author' id=<%=post.id%>><%= post.user.name %></p>
     <p class='post-message' id=<%=post.id%>><%= post.message %></p>
     <p class='post-timestamp' id=<%=post.id%>><%= post.format_date %></p>
     <% if current_user.id == post.user_id %>
