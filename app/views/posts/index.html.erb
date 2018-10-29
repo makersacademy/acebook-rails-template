@@ -10,7 +10,3 @@
 <%= link_to new_post_path do %>
   Create post
 <% end %>
-
-    <% if post.likes.where(user_id: current_user.id).blank? %>
-      <%= button_to 'Like', post_likes_path(post), method: :post, id: "like-button", class: "like-button", params: {user_id: current_user.id, post_id: post.id } %>
-    <% end %>
