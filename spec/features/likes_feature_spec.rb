@@ -28,4 +28,18 @@ RSpec.feature "Likes", type: :feature do
     click_on('Like')
     expect(page).not_to have_selector('#like-button')
   end
+
+  scenario 'When a user likes a post, the like button replaced by unlike' do
+    create_post("I want to like this post")
+    click_on('Like')
+    expect(page).not_to have_selector('#like-button')
+    expect(page).to have_selector('#unlike-button')
+  end
+
+  scenario 'When a user unlikes a post, the like is count is reduced by one' do
+    create_post("I want to like this post")
+    click_on('Like')
+    click_on('Unlike')
+    expect(find('p#like-count')).to have_content('0👍')
+  end
 end

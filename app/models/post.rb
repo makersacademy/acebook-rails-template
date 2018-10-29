@@ -11,5 +11,9 @@ class Post < ApplicationRecord
     (Time.now - created_at) > 10.minutes
   end
 
+  def liked_by(person)
+    likes.find_by(user_id: person.id)
+  end
+
   validates :message, presence: true
 end

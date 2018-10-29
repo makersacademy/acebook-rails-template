@@ -3,8 +3,10 @@
   <p class='post-message' id=<%=post.id%>><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
   <p class='post-timestamp' id=<%=post.id%>><%= post.format_date %></p>
   <p class='post-like-count' id='like-count'><%=post.likes.size%><span class=emoji>&#x1F44D;</span></p>
-  <% if post.likes.where(user_id: current_user.id).blank? %>
+  <% unless post.liked_by(current_user) %>
     <%= button_to 'Like', post_likes_path(post), method: :post, id: "like-button", class: "like-button", params: {user_id: current_user.id, post_id: post.id } %>
+  <% else %>
+    <%= button_to 'Unlike', post_like_path(post.id, post.liked_by(current_user).id), :method => :delete, id: 'unlike-button'%>
   <% end %>
   <% if current_user.id == post.user_id %>
     <% if !post.older_than_10_mins? %>
