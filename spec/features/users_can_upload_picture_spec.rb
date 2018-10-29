@@ -6,6 +6,7 @@ RSpec.feature 'Upload', type: :feature do
   scenario 'Can upload photos and view them' do
     signup
     upload_image
-    expect(page).to have_content('Caption: my logo')
+    expect(page).to have_content('my logo')
+    expect(page).to have_content('@mail')
   end
 end

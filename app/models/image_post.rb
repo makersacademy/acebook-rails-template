@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Model for the ImagePost
+# Model for the image posts
 class ImagePost < ApplicationRecord
   mount_uploader :picture, PictureUploader
   has_many :image_likes, dependent: :destroy

@@ -4,35 +4,24 @@
   <div class="row">
     <div class="col-sm">
 
-<div>
-<p>
-  <strong>Caption:</strong>
-  <%= @image_post.caption %>
-</p>
+      <div>
+        <%= image_tag(@image_post.picture_url, width: 600) if @image_post.picture.present? %> <br>
+        <%= @image_post.caption %> <br>
+        <p> Posted by <%= find_image_post_email(@image_post) %> <%= time_ago_in_words(@image_post.created_at || Time.now) %> ago. </p>
 
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag(@image_post.picture_url, width: 600) if @image_post.picture.present? %>
-
-</p>
-<p>
-  <td><%= @image_post.created_at.strftime("Posted at %I:%M%p, %d/%m/%Y")%> </td>
-</p>
-
-<div class="likes">
-  <% like_checker = @image_post.image_likes.find { |like| like.user_id == current_user.id } %>
-  <% if like_checker %>
-    <%= button_to 'Unlike', image_post_image_like_path(@image_post[:id], like_checker), method: :delete %>
-  <% else %>
-    <%= button_to 'Like', image_post_image_likes_path(@image_post[:id]), method: :post %>
-  <% end %>
-  <p><%= @image_post.image_likes.count %> <%= @image_post.image_likes.count == 1 ? 'Like' : 'Likes' %></p>
-</div>
-
-<%= link_to 'Edit', edit_image_post_path(@image_post) %> |
-<%= link_to 'Back', image_posts_path %>
-</div>
-
+        <%= link_to 'Edit', edit_image_post_path(@image_post) %> |
+        <%= link_to 'Back', image_posts_path %>
+        <div class="likes">
+          <% like_checker = @image_post.image_likes.find { |like| like.user_id == current_user.id } %>
+          <% if like_checker %>
+            <%= button_to 'Unlike', image_post_image_like_path(@image_post[:id], like_checker), method: :delete %>
+          <% else %>
+            <%= button_to 'Like', image_post_image_likes_path(@image_post[:id]), method: :post %>
+          <% end %>
+          <p><%= @image_post.image_likes.count %> <%= @image_post.image_likes.count == 1 ? 'Like' : 'Likes' %></p>
+          </div>
+        <hr>
+      </div>
     </div>
 
     <div class="col-sm">

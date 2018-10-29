@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Allows us to upload image posts to our app
+# Controller for the image post routes
 class ImagePostsController < ApplicationController
   before_action :set_image_post, only: %i[show edit update destroy]
 
@@ -10,20 +10,17 @@ class ImagePostsController < ApplicationController
     @image_posts = ImagePost.all
   end
 
-  def user_images
-    @user = current_user
-  end
-
   # GET /image_posts/1
   # GET /image_posts/1.json
   def show
-    set_image_post if params[:id]
+    @image_post = ImagePost.find(params[:id])
+    @image_comments = @image_post.image_comments.all
+    @image_comment = @image_post.image_comments.build
   end
 
   # GET /image_posts/new
   def new
     @image_post = ImagePost.new
-    @user = current_user
   end
 
   # GET /image_posts/1/edit
@@ -33,11 +30,12 @@ class ImagePostsController < ApplicationController
   # POST /image_posts.json
   def create
     @image_post = ImagePost.new(image_post_params)
+
     respond_to do |format|
       @image_post.save
       format.html do
-        redirect_to @image_post,
-                    notice: 'Image post was successfully created.'
+        redirect_to @image_post, notice: 'Image post was'\
+        ' successfully created.'
       end
       format.json { render :show, status: :created, location: @image_post }
     end
@@ -49,8 +47,8 @@ class ImagePostsController < ApplicationController
     respond_to do |format|
       @image_post.update(image_post_params)
       format.html do
-        redirect_to @image_post,
-                    notice: 'Image post was successfully updated.'
+        redirect_to @image_post, notice: 'Image post was '\
+        'successfully updated.'
       end
       format.json { render :show, status: :ok, location: @image_post }
     end
@@ -62,8 +60,8 @@ class ImagePostsController < ApplicationController
     @image_post.destroy
     respond_to do |format|
       format.html do
-        redirect_to image_posts_url,
-                    notice: 'Image post was successfully destroyed.'
+        redirect_to image_posts_url, notice: 'Image post was '\
+        'successfully destroyed.'
       end
       format.json { head :no_content }
     end

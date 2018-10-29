@@ -1,27 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Image Posts</h1>
+<h1>My Image Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Caption</th>
-      <th>Posted At</th>
-      <th>Picture</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% get_images_by_user(current_user).each do |image_post| %>
+  <div>
+    <%= image_tag(image_post.picture_url, width: 600) if image_post.picture.present? %> <br>
+    <%= image_post.caption %> <br>
+    <p> Posted by <%= find_image_post_email(image_post) %> <%= time_ago_in_words(image_post.created_at || Time.now) %> ago. </p>
 
-  <tbody>
-    <% get_images_by_user(@user.id).each do |image_post| %>
-      <tr>
-        <td><%= image_post.caption %></td>
-        <td><%= image_post.created_at.strftime("Posted at %I:%M%p, %d/%m/%Y")%></td>
-        <td><%= image_tag image_post.picture_url, width: '100%' if image_post.picture.present? %></td>
-        <td><%= link_to 'Show', image_post %></td>
-        <td><%= link_to 'Edit', edit_image_post_path(image_post) %></td>
-        <td><%= link_to 'Destroy', image_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <%= link_to 'Edit', edit_image_post_path(image_post) %> |
+    <%= link_to 'Back', image_posts_path %>
+    <hr>
+  </div>
+<% end %>
