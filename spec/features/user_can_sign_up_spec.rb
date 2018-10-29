@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'rake'
 
 RSpec.feature 'Sign up', type: :feature do
   scenario 'shows sign-up page with email/password prompt' do

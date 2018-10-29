@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   end
 
 
+  resources :users, only: [:show]
+  get 'profile', to: 'users#show'
+
+  ## Redirects to log in if not signed in
+  ## Sets home page
   authenticated :user do
     root to: 'posts#index'
   end

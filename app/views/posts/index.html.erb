@@ -6,7 +6,7 @@
 <% @posts.each do |post| %>
   <div class='post-div' id=<%=post.id%>>
     <p class='post-author' id=<%=post.id%>><%= post.user.name %></p>
-    <p class='post-message' id=<%=post.id%>><%= post.message %></p>
+    <p class='post-message' id=<%=post.id%>><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
     <p class='post-timestamp' id=<%=post.id%>><%= post.format_date %></p>
     <p class='post-like-count' id='like-count'><%=post.likes.size%><span class=emoji>&#x1F44D;</span></p>
     <% if post.likes.where(user_id: current_user.id).blank? %>
