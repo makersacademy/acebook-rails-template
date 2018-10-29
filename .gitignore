@@ -28,7 +28,6 @@
 !.elasticbeanstalk/*.global.yml
 
 # coverage files
-coverage
-coverage
+coverage/.resultset.json
 public/uploads/image_post/
 public/uploads/tmp
