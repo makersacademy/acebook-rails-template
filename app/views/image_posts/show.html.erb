@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @image_post.caption %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@image_post.picture_url, width: 600) if @image_post.picture.present? %>
+
+</p>
+<p>
+    <td><%= @image_post.created_at.strftime("Posted at %I:%M%p, %d/%m/%Y")%> </td>
+  </p>
+
+<%= link_to 'Edit', edit_image_post_path(@image_post) %> |
+<%= link_to 'Back', image_posts_path %>

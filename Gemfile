@@ -6,12 +6,14 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
+# able to use uploader and upload images
+gem 'carrierwave'
 
 # Add Devise to application for users
 gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -52,6 +54,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Use factory bot for factories
   gem 'factory_bot'
+  gem 'factory_bot_rails'
 end
 
 group :development do
