@@ -1,3 +1,5 @@
+<h1>Posts</h1>
+
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %>
     <br>Posted <%= time_ago_in_words(post.created_at || Time.now) %> ago by <%= find_post_email(post) %>.</p>
