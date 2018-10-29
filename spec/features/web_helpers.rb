@@ -1,12 +1,13 @@
 def create_post(message)
-  visit '/posts'
+  visit '/'
   click_link 'Create post'
   fill_in 'Message', with: message
   click_button 'Submit'
 end
 
 def sign_up_helper(email, name, password)
-  visit('/users/sign_up')
+  visit('/')
+  click_link('Sign up')
   fill_in('user_email', with: email)
   fill_in('user_name', with: name)
   fill_in('user_password', with: password)

@@ -27,12 +27,16 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  # describe "DELETE /posts/id" do
-  #   it "responds with 200" do
-  #     delete :destroy, params: { delete: { message: "Please delete me!", id: 1 } }
-  #     # delete :destroy, params: { delete: { id: 1 } }
-  #     # delete :destroy, id: post.id
-  #     expect(response).to redirect_to(posts_url)
-  #   end
-  # end
+  describe "DELETE /posts/id" do
+    before(:each) do
+      user = User.create(name: "Andres", email: "email@email.com", password: "password")
+      post = Post.create(message: 'Please delete me!', user_id: user.id )
+    end
+
+    it "responds with 302" do
+      delete :destroy, params: { id: 1 }
+      expect(response).to redirect_to(posts_url)
+      expect(response).to have_http_status(302)
+    end
+  end
 end
