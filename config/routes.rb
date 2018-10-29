@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :image_posts
   devise_for :users
   root 'welcome_page#timeline'
   get 'welcome', to: 'welcome_page#welcome'
@@ -11,9 +10,14 @@ Rails.application.routes.draw do
   get 'posts/delete', to: 'posts#delete'
   post 'posts/create', to: 'posts#create'
   get 'my_images', to: 'image_posts#user_images'
+
   resources :posts do
     resources :comments
     resources :likes
+  end
+
+  resources :image_posts do
+    resources :image_likes
   end
 
   resources :users do
