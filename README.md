@@ -4,7 +4,7 @@
 [Darcie Walsh](https://github.com/darciew) [Cristina María Ocaña Manzano](https://github.com/cristinaocanamanzano) [Andres Faraone-Pirie](https://github.com/afaraone/) [Oliver Baum](https://github.com/olliebaum)
 
 ## Task
-This is a collaborative 2-week project to make a social media app. It is an opportunity for us to use Rails, Continuous Integration, Deployment via Heroku and Agile Development.
+This is a collaborative 2-week project to make a social media app. It is an opportunity for us to apply our knowledge of Rails, Continuous Integration, Deployment via Heroku and Agile Development.
 
 [Card Wall](https://trello.com/b/csmJFvWt/acebook)
 
