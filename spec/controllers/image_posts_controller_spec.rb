@@ -100,7 +100,7 @@ RSpec.describe ImagePostsController, type: :controller do
     context 'with invalid params' do
       it "returns a success response (i.e. to display the 'new' template)" do
         post :create, params: { image_post: {caption: "", picture: "apple.jpeg"} }, session: valid_session
-        assert_select "h1", text: "hi"
+        expect(response).not_to be_successful
       end
     end
   end
@@ -125,8 +125,8 @@ RSpec.describe ImagePostsController, type: :controller do
       it "returns a success response (i.e. to display the 'edit' template)" do
         image_post = ImagePost.create! valid_attributes
         put :update, params: { id: image_post.to_param, image_post: invalid_attributes }, session: valid_session
-        expect(response).to be_successful
-        # expect(request.fullpath).not_to change
+        expect(response).not_to be_successful
+        # Should be successful?
       end
     end
   end
