@@ -1,27 +1,16 @@
 <% if current_user %>
 <%= link_to('Logout', destroy_user_session_path, id: "log-out" , method: :delete) %>
+<%= button_to('My Profile', profile_path, method: :get, id: 'profile-button') %>
 <% end %>
 
 <div class='timeline'>
-<% @posts.each do |post| %>
-  <div class='post-div' id=<%=post.id%>>
-    <p class='post-author' id=<%=post.id%>><%= post.user.name %></p>
-    <p class='post-message' id=<%=post.id%>><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
-    <p class='post-timestamp' id=<%=post.id%>><%= post.format_date %></p>
-    <p class='post-like-count' id='like-count'><%=post.likes.size%><span class=emoji>&#x1F44D;</span></p>
-    <% if post.likes.where(user_id: current_user.id).blank? %>
-      <%= button_to 'Like', post_likes_path(post), method: :post, id: "like-button", class: "like-button", params: {user_id: current_user.id, post_id: post.id } %>
-    <% end %>
-    <% if current_user.id == post.user_id %>
-      <% if !post.older_than_10_mins? %>
-        <p class='post-edit'><%= link_to 'Edit Post', edit_post_path(post) %></p>
-      <% end %>
-      <p class='post-delete'><%= link_to 'Delete', post, :data => {:confirm => "Are you sure?"}, :method => :delete %></p>
-    <% end %>
-  </div>
-<% end %>
+  <%= render @posts %>
 </div>
 
 <%= link_to new_post_path do %>
   Create post
 <% end %>
+
+    <% if post.likes.where(user_id: current_user.id).blank? %>
+      <%= button_to 'Like', post_likes_path(post), method: :post, id: "like-button", class: "like-button", params: {user_id: current_user.id, post_id: post.id } %>
+    <% end %>
