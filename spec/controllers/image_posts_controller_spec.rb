@@ -116,11 +116,19 @@ RSpec.describe ImagePostsController, type: :controller do
                              image_post: new_attributes },
                    session: valid_session
       image_post.reload
+      put :update, params: { id: image_post.to_param,
+                             image_post: new_attributes },
+                   session: valid_session
+      image_post.reload
       expect(response).to redirect_to(image_post)
     end
 
     it 'redirects to the image_post' do
       image_post = ImagePost.create! valid_attributes
+      put :update, params: { id: image_post.to_param,
+                             image_post: valid_attributes },
+                   session: valid_session
+      expect(response).to redirect_to(image_post)
       put :update, params: { id: image_post.to_param,
                              image_post: valid_attributes },
                    session: valid_session

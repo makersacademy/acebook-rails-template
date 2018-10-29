@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Image Posts</h1>
+<hr>
+
+    <% @image_posts.each do |image_post| %>
+    <div class="image_posts">
+      <br>Posted <%= time_ago_in_words(image_post.created_at || Time.now) %> ago by <%= find_image_post_email(image_post) %>.</p>
+
+      <%= image_tag image_post.picture_url, width: '50%' if image_post.picture.present? %><br>
+            <%= image_post.caption %><br>
+            <hr>
+          </div>
+    <% end %>

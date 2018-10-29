@@ -79,7 +79,6 @@ class ImagePostsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list.
   def image_post_params
     output = params.require(:image_post).permit(:caption, :picture)
-    output[:user_id] = current_user.id
-    output
+    output.merge(user_id: current_user.id)
   end
 end

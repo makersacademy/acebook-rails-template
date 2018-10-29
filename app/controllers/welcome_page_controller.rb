@@ -15,6 +15,8 @@ class WelcomePageController < ApplicationController
 
   def timeline
     if user_signed_in?
+      @posts = Post.all
+      @image_posts = ImagePost.all
       @user_email = current_user.email
     else
       redirect_to posts_url
