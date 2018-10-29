@@ -1,23 +1,9 @@
-<%= form_with(model: image_post, local: true) do |form| %>
-  <% if image_post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(image_post.errors.count, "error") %> prohibited this image_post from being saved:</h2>
-
-      <ul>
-      <% image_post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :caption %>
-    <%= form.text_field :comment, id: :image_post_comment %>
-  </div>
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<%= form_for([@image_post, @image_post.image_comments.build]) do |f| %>
+  <p>
+    <%= f.label :comment %>
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>

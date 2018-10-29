@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   resources :image_posts do
+    resources :image_comments
     resources :image_likes
   end
 
