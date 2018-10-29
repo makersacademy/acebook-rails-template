@@ -16,6 +16,8 @@ gem 'rubocop', '~> 0.60.0', require: false
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record
+gem 'simplecov'
+gem 'simplecov-console'
 gem 'travis'
 # use travis for tests
 gem 'pg'
