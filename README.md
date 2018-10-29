@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/darciew/acebook-rails-template.svg?branch=master)](https://travis-ci.org/darciew/acebook-rails-template)  [![Maintainability](https://api.codeclimate.com/v1/badges/52d0d8cc4088fa6dd174/maintainability)](https://codeclimate.com/github/darciew/acebook-rails-template/maintainability)  [![Test Coverage](https://api.codeclimate.com/v1/badges/52d0d8cc4088fa6dd174/test_coverage)](https://codeclimate.com/github/darciew/acebook-rails-template/test_coverage)
 
 # AceBook by Team COAD
-[Darcie Walsh](https://github.com/darciew) [Cristina María Ocaña Manzano](https://github.com/cristinaocanamanzano) [Andres Faraone-Pirie](https://github.com/afaraone/) [Oliver Baum](https://github.com/olliebaum)
+[Darcie Walsh](https://github.com/darciew), [Cristina María Ocaña Manzano](https://github.com/cristinaocanamanzano), [Andres Faraone-Pirie](https://github.com/afaraone/), [Oliver Baum](https://github.com/olliebaum)
 
 ## Task
 This is a collaborative 2-week project to make a social media app. It is an opportunity for us to apply our knowledge of Rails, Continuous Integration, Deployment via Heroku and Agile Development.
@@ -16,6 +16,7 @@ This is a collaborative 2-week project to make a social media app. It is an oppo
 - [x] Users can like posts
 - [x] Users can post comments
 - [x] RESTful Routes
+- [x] 95% Test Coverage
 - [ ] Users can comment on posts
 - [ ] Users can post images
 - [ ] Users can join groups
