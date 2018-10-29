@@ -11,5 +11,5 @@ class Post < ApplicationRecord
     (Time.now - created_at) > 10.minutes
   end
 
-  validates :message, presence: true
+  validates :message, presence: true, length: { maximum: 500 }
 end

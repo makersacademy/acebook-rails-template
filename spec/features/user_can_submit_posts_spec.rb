@@ -29,5 +29,11 @@ RSpec.feature "Timeline", type: :feature do
       create_post("Second Post")
       expect(first('p.post-message')).to have_content("Second Post")
     end
+
+    scenario 'Posts can not be longer than 500 words' do
+      string = "a" * 501
+      create_post(string)
+      expect(first('p.post-message')).not_to have_content(string)
+    end
   end
 end
