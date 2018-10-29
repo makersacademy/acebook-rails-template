@@ -87,19 +87,23 @@ RSpec.describe ImagePostsController, type: :controller do
     context 'with valid params' do
       it 'creates a new ImagePost' do
         expect do
-          post :create, params: { image_post: valid_attributes }, session: valid_session
+          post :create, params: { image_post: valid_attributes },
+                        session: valid_session
         end.to change(ImagePost, :count).by(1)
       end
 
       it 'redirects to the created image_post' do
-        post :create, params: { image_post: valid_attributes }, session: valid_session
+        post :create, params: { image_post: valid_attributes },
+                      session: valid_session
         expect(response).to redirect_to(ImagePost.last)
       end
     end
 
     context 'with invalid params' do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: { image_post: { caption: '', picture: 'apple.jpeg' } }, session: valid_session
+        post :create, params: { image_post: { caption: '',
+                                              picture: 'apple.jpeg' } },
+                      session: valid_session
         expect(response).not_to be_successful
       end
     end
@@ -108,21 +112,27 @@ RSpec.describe ImagePostsController, type: :controller do
   describe 'PUT #update' do
     it 'updates the requested image_post' do
       image_post = ImagePost.create! valid_attributes
-      put :update, params: { id: image_post.to_param, image_post: new_attributes }, session: valid_session
+      put :update, params: { id: image_post.to_param,
+                             image_post: new_attributes },
+                   session: valid_session
       image_post.reload
       expect(response).to redirect_to(image_post)
     end
 
     it 'redirects to the image_post' do
       image_post = ImagePost.create! valid_attributes
-      put :update, params: { id: image_post.to_param, image_post: valid_attributes }, session: valid_session
+      put :update, params: { id: image_post.to_param,
+                             image_post: valid_attributes },
+                   session: valid_session
       expect(response).to redirect_to(image_post)
     end
 
     context 'with invalid params' do
       it "returns a success response (i.e. to display the 'edit' template)" do
         image_post = ImagePost.create! valid_attributes
-        put :update, params: { id: image_post.to_param, image_post: invalid_attributes }, session: valid_session
+        put :update, params: { id: image_post.to_param,
+                               image_post: invalid_attributes },
+                     session: valid_session
         expect(response).not_to be_successful
         # Should be successful?
       end
@@ -133,13 +143,15 @@ RSpec.describe ImagePostsController, type: :controller do
     it 'destroys the requested image_post' do
       image_post = ImagePost.create! valid_attributes
       expect do
-        delete :destroy, params: { id: image_post.to_param }, session: valid_session
+        delete :destroy, params: { id: image_post.to_param },
+                         session: valid_session
       end.to change(ImagePost, :count).by(-1)
     end
 
     it 'redirects to the image_posts list' do
       image_post = ImagePost.create! valid_attributes
-      delete :destroy, params: { id: image_post.to_param }, session: valid_session
+      delete :destroy, params: { id: image_post.to_param },
+                       session: valid_session
       expect(response).to redirect_to(image_posts_url)
     end
   end
