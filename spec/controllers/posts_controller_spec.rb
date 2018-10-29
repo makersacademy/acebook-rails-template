@@ -23,7 +23,7 @@ RSpec.describe PostsController, type: :controller do
 
     it 'creates a post' do
       user = User.all[0]
-      Post.create(title: 'Hello, world!', image: image)
+      Post.create(message: 'Hello, world!', user_id: user.id)
       expect(Post.find_by(message: 'Hello, world!')).to be
     end
   end

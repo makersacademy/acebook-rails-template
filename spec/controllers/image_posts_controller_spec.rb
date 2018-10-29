@@ -98,8 +98,6 @@ RSpec.describe ImagePostsController, type: :controller do
         expect(response).to redirect_to(ImagePost.last)
       end
     end
-<<<<<<< HEAD
-=======
 
     context 'with invalid params' do
       it "returns a success response (i.e. to display the 'new' template)" do
@@ -109,31 +107,24 @@ RSpec.describe ImagePostsController, type: :controller do
         expect(response).not_to be_successful
       end
     end
->>>>>>> master
   end
 
   describe 'PUT #update' do
     it 'updates the requested image_post' do
       image_post = ImagePost.create! valid_attributes
-<<<<<<< HEAD
       put :update, params: { id: image_post.to_param, image_post: new_attributes }, session: valid_session
       image_post.reload
-      skip('Add assertions for updated state')
-=======
       put :update, params: { id: image_post.to_param,
                              image_post: new_attributes },
                    session: valid_session
       image_post.reload
       expect(response).to redirect_to(image_post)
->>>>>>> master
     end
 
     it 'redirects to the image_post' do
       image_post = ImagePost.create! valid_attributes
-<<<<<<< HEAD
       put :update, params: { id: image_post.to_param, image_post: valid_attributes }, session: valid_session
       expect(response).to redirect_to(image_post)
-=======
       put :update, params: { id: image_post.to_param,
                              image_post: valid_attributes },
                    session: valid_session
@@ -149,7 +140,6 @@ RSpec.describe ImagePostsController, type: :controller do
         expect(response).not_to be_successful
         # Should be successful?
       end
->>>>>>> master
     end
   end
 
