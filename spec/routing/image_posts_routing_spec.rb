@@ -17,7 +17,8 @@ RSpec.describe ImagePostsController, type: :routing do
     end
 
     it 'routes to #edit' do
-      expect(get: '/image_posts/1/edit').to route_to('image_posts#edit', id: '1')
+      expect(get: '/image_posts/1/edit').to route_to('image_posts#edit',
+                                                     id: '1')
     end
 
     it 'routes to #create' do
@@ -29,11 +30,13 @@ RSpec.describe ImagePostsController, type: :routing do
     end
 
     it 'routes to #update via PATCH' do
-      expect(patch: '/image_posts/1').to route_to('image_posts#update', id: '1')
+      expect(patch: '/image_posts/1').to route_to('image_posts#update',
+                                                  id: '1')
     end
 
     it 'routes to #destroy' do
-      expect(delete: '/image_posts/1').to route_to('image_posts#destroy', id: '1')
+      expect(delete: '/image_posts/1').to route_to('image_posts#destroy',
+                                                   id: '1')
     end
   end
 end

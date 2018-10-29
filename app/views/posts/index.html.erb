@@ -9,7 +9,6 @@
       Delete post
     <% end %>
   <% end%>
-
   <% like_checker = post.likes.find { |like| like.user_id == current_user.id } %>
   <% if like_checker %>
     <%= button_to 'Unlike', post_like_path(post[:id], like_checker), method: :delete %>
