@@ -35,7 +35,10 @@ class ImagePostsController < ApplicationController
     @image_post = ImagePost.new(image_post_params)
     respond_to do |format|
       @image_post.save
-      format.html { redirect_to @image_post, notice: 'Image post was successfully created.' }
+      format.html do
+        redirect_to @image_post,
+                    notice: 'Image post was successfully created.'
+      end
       format.json { render :show, status: :created, location: @image_post }
     end
   end
@@ -45,7 +48,10 @@ class ImagePostsController < ApplicationController
   def update
     respond_to do |format|
       @image_post.update(image_post_params)
-      format.html { redirect_to @image_post, notice: 'Image post was successfully updated.' }
+      format.html do
+        redirect_to @image_post,
+                    notice: 'Image post was successfully updated.'
+      end
       format.json { render :show, status: :ok, location: @image_post }
     end
   end
@@ -55,7 +61,10 @@ class ImagePostsController < ApplicationController
   def destroy
     @image_post.destroy
     respond_to do |format|
-      format.html { redirect_to image_posts_url, notice: 'Image post was successfully destroyed.' }
+      format.html do
+        redirect_to image_posts_url,
+                    notice: 'Image post was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
@@ -67,7 +76,7 @@ class ImagePostsController < ApplicationController
     @image_post = ImagePost.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet, only allow the white list.
   def image_post_params
     output = params.require(:image_post).permit(:caption, :picture)
     output[:user_id] = current_user.id
