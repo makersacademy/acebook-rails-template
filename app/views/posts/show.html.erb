@@ -1,0 +1,8 @@
+<h2>Post:"<%= @post.message %>"</h2>
+<br>
+<h5><%= @post.comments.count %> Comments </h5>
+
+<%= render @post.comments %>
+<br>
+<h3>Add a comment:</h3>
+<%= render "comments/form" %>
