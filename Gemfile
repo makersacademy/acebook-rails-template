@@ -52,6 +52,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Use factory bot for factories
   gem 'factory_bot'
+  gem 'factory_bot_rails'
 end
 
 group :development do

@@ -26,15 +26,25 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe ImagePostsController, type: :controller do
+  let(:user) { FactoryBot.create(:user) }
+
+  before :each do
+    login_as(user, scope: :user)
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # ImagePost. As you add validations to ImagePost, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
-    { caption: "The Bee's Knees", picture: "coolkat.jpeg" }
+    { caption: "The Bee's Knees", picture: "coolkat.jpeg", user_id: user.id }
+  end
+
+  let(:new_attributes) do
+    { caption: "The Dog's Bollocks", picture: "coolkat.jpeg", user_id: user.id }
   end
 
   let(:invalid_attributes) do
-    { caption: '', picture: '' }
+    { caption: '', picture: '', user_id: user.id }
   end
 
   # This should return the minimal set of values that should be in the session
@@ -102,7 +112,7 @@ RSpec.describe ImagePostsController, type: :controller do
         image_post = ImagePost.create! valid_attributes
         put :update, params: { id: image_post.to_param, image_post: new_attributes }, session: valid_session
         image_post.reload
-        skip('Add assertions for updated state')
+        expect(response).to redirect_to(image_post)
       end
 
       it 'redirects to the image_post' do
@@ -115,8 +125,8 @@ RSpec.describe ImagePostsController, type: :controller do
       it "returns a success response (i.e. to display the 'edit' template)" do
         image_post = ImagePost.create! valid_attributes
         put :update, params: { id: image_post.to_param, image_post: invalid_attributes }, session: valid_session
-        # expect(response).to be_successful
-        expect(request.fullpath).not_to change
+        expect(response).to be_successful
+        # expect(request.fullpath).not_to change
       end
     end
   end
