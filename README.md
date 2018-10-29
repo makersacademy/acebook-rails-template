@@ -7,7 +7,8 @@ the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+2. The card wall is here: https://trello.com/b/bwJN79eJ/team-tela
+   Shared learning documentation: https://github.com/emmaalbury/Team-Tela/wiki/A-record-of-progress
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -24,3 +25,4 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+A link to the app in production: https://team-tela.herokuapp.com/
