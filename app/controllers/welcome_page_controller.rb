@@ -7,11 +7,17 @@ class WelcomePageController < ApplicationController
       @posts = Post.all
       render 'timeline'
     else
-      render 'sign_in'
+      render 'landing_page'
     end
   end
 
   def sign_in; end
 
-  def timeline; end
+  def timeline
+    if user_signed_in?
+      @user_email = current_user.email
+    else
+      redirect_to posts_url
+    end
+  end
 end
