@@ -1,9 +1,14 @@
-def postAndClick
-  visit "/posts"
-  click_link "New post"
+def successfulSignUp
+  visit "/"
+  click_link 'Sign up'
+  fill_in 'Email', with: "test@aol.com"
+  fill_in 'Password', with: "123456"
+  fill_in 'Password confirmation', with: "123456"
+  click_button "Sign up"
 end
 
-def fillPostAndSubmit(message)
+def newPostAndSubmit(message)
+  click_link "New post"
   fill_in "Message", with: message
   click_button "Submit"
 end

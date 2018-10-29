@@ -1,8 +1,24 @@
-<% @posts.each do |post| %>
-  <p><%=post.created_at.strftime("%H:%M %F") %></p>
-  <p><%= simple_format(post.message) %></p>
-<% end %>
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <br>
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <p><%=post.created_at.strftime("%H:%M %F") %></p>
+        <p><%= simple_format(post.message) %></p>
+      </li>
+    <% end %>
+  </ul>
 
-<%= link_to new_post_path do %>
-  New post
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
+  </br>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
+</p>
