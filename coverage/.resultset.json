@@ -21,13 +21,13 @@
         null,
         null,
         1,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
         null
       ],
       "/Users/Cameron/Projects/acebook-ciCADA/spec/controllers/comments_controller_spec.rb": [
@@ -714,9 +714,9 @@
         1,
         null,
         1,
-        28,
+        31,
         null,
-        28,
+        31,
         null,
         null,
         null,
@@ -840,8 +840,8 @@
         null,
         null,
         1,
-        31,
-        31,
+        32,
+        32,
         null,
         null,
         1,
@@ -917,10 +917,10 @@
         1,
         null,
         1,
-        11,
-        0,
+        13,
+        1,
         null,
-        11,
+        12,
         null,
         null,
         null
@@ -1031,6 +1031,19 @@
         null,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Cameron/Projects/acebook-ciCADA/spec/features/user_is_greeted_by_their_email_spec.rb": [
+        null,
+        null,
+        1,
+        null,
         1,
         1,
         1,
@@ -1171,6 +1184,6 @@
         null
       ]
     },
-    "timestamp": 1540805141
+    "timestamp": 1540805346
   }
 }
