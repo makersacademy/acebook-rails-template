@@ -6,16 +6,10 @@ RSpec.feature 'Post', type: :feature do
   before(:each) do
     successful_sign_up
   end
-<<<<<<< HEAD
+
   scenario 'Can submit posts and view them' do
     new_post_and_submit('Hello, world!')
     expect(page).to have_content('Hello, world!')
-=======
-  
-  scenario "Can submit posts and view them" do
-    newPostAndSubmit("Hello, world!")
-    expect(page).to have_content("Hello, world!")
->>>>>>> dead111b849dff44d98804f2bb3030c5b0ea3134
   end
 
   scenario 'Can add posts with newlines' do
