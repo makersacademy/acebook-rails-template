@@ -4,20 +4,7 @@
 <% end %>
 
 <div class='timeline'>
-<% @posts.each do |post| %>
-  <div class='post-div' id=<%=post.id%>>
-    <%= link_to post.user.name, user_path(post.user.id), method: :get, id: post.id, class: 'post-author' %>
-    <p class='post-message' id=<%=post.id%>><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
-    <p class='post-timestamp' id=<%=post.id%>><%= post.format_date %></p>
-    <button type="button" name="button" id="like-button">Like</button>
-    <% if current_user.id == post.user_id %>
-      <% if !post.older_than_10_mins? %>
-        <p class='post-edit'><%= link_to 'Edit Post', edit_post_path(post) %></p>
-      <% end %>
-      <p class='post-delete'><%= link_to 'Delete', post, :data => {:confirm => "Are you sure?"}, :method => :delete %></p>
-    <% end %>
-  </div>
-<% end %>
+  <%= render @posts %>
 </div>
 
 <%= link_to new_post_path do %>

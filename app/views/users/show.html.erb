@@ -3,17 +3,5 @@
 
 
 <div class='timeline'>
-<% @posts.each do |post| %>
-  <div class='post-div' id=<%=post.id%>>
-    <p class='post-author' id=<%=post.id%>><%= post.user.name %></p>
-    <p class='post-message' id=<%=post.id%>><%= post.message %></p>
-    <p class='post-timestamp' id=<%=post.id%>><%= post.format_date %></p>
-    <% if current_user.id == post.user_id %>
-      <% if !post.older_than_10_mins? %>
-        <p class='post-edit'><%= link_to 'Edit Post', edit_post_path(post) %></p>
-      <% end %>
-      <p class='post-delete'><%= link_to 'Delete', post, :data => {:confirm => "Are you sure?"}, :method => :delete %></p>
-    <% end %>
-  </div>
-<% end %>
+  <%= render partial: "./posts/post", collection: @posts %>
 </div>
