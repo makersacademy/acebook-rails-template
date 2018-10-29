@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Creates an image comments table
 class AddCommentsToImages < ActiveRecord::Migration[5.1]
   def change
     create_table :image_comments do |t|
