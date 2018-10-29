@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+
+<div>
 <p>
   <strong>Caption:</strong>
   <%= @image_post.caption %>
@@ -12,3 +17,12 @@
 
 <%= link_to 'Edit', edit_image_post_path(@image_post) %> |
 <%= link_to 'Back', image_posts_path %>
+</div>
+
+    </div>
+
+    <div class="col-sm">
+      <%= render 'image_comments/index' %>
+    </div>
+  </div>
+</div>

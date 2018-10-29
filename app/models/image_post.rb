@@ -4,7 +4,7 @@ class ImagePost < ApplicationRecord
   mount_uploader :picture, PictureUploader
   validates_processing_of :picture
   validate :image_size_validation
-
+  has_many :image_comments
   private
 
   def image_size_validation
