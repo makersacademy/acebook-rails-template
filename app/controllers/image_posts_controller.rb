@@ -2,7 +2,7 @@
 
 class ImagePostsController < ApplicationController
   before_action :set_image_post, only: %i[show edit update destroy]
-
+  
   # GET /image_posts
   # GET /image_posts.json
   def index

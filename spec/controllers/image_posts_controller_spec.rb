@@ -30,11 +30,16 @@ RSpec.describe ImagePostsController, type: :controller do
   # ImagePost. As you add validations to ImagePost, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
+   {
+      caption: "string",
+      picture: "string"
+    }
   end
 
   let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
+    {
+      caption: nil
+    }
   end
 
   # This should return the minimal set of values that should be in the session
@@ -89,8 +94,8 @@ RSpec.describe ImagePostsController, type: :controller do
 
     context 'with invalid params' do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: { image_post: invalid_attributes }, session: valid_session
-        expect(response).to be_successful
+        post :create, params: { image_post: {caption: "", picture: "apple.jpeg"} }, session: valid_session
+        assert_select "h1", text: "hi"
       end
     end
   end
