@@ -20,6 +20,6 @@ end
 def upload_image
   visit '/image_posts/new'
   fill_in 'Caption', with: 'my logo'
-  attach_file('Picture', Rails.root + "spec/fixtures/logo.png")
+  attach_file('Picture', Rails.root + 'spec/fixtures/logo.png')
   click_button('Create Image post')
 end

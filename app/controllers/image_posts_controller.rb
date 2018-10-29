@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
+# Allows us to upload image posts to our app
 class ImagePostsController < ApplicationController
   before_action :set_image_post, only: %i[show edit update destroy]
-  
+
   # GET /image_posts
   # GET /image_posts.json
   def index
@@ -39,7 +40,8 @@ class ImagePostsController < ApplicationController
         format.json { render :show, status: :created, location: @image_post }
       else
         format.html { render :new }
-        format.json { render json: @image_post.errors, status: :unprocessable_entity }
+        format.json { render json: @image_post.errors, 
+          status: :unprocessable_entity }
       end
     end
   end
@@ -79,6 +81,6 @@ class ImagePostsController < ApplicationController
   def image_post_params
     output = params.require(:image_post).permit(:caption, :picture)
     output[:user_id] = current_user.id
-    return output
+    output
   end
 end
