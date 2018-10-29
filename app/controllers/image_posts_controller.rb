@@ -17,7 +17,6 @@ class ImagePostsController < ApplicationController
   # GET /image_posts/1
   # GET /image_posts/1.json
   def show
-    puts params[:id]
     set_image_post if params[:id]
   end
 
@@ -35,14 +34,9 @@ class ImagePostsController < ApplicationController
   def create
     @image_post = ImagePost.new(image_post_params)
     respond_to do |format|
-      if @image_post.save
-        format.html { redirect_to @image_post, notice: 'Image post was successfully created.' }
-        format.json { render :show, status: :created, location: @image_post }
-      else
-        format.html { render :new }
-        format.json { render json: @image_post.errors, 
-          status: :unprocessable_entity }
-      end
+      @image_post.save
+      format.html { redirect_to @image_post, notice: 'Image post was successfully created.' }
+      format.json { render :show, status: :created, location: @image_post }
     end
   end
 
@@ -50,13 +44,9 @@ class ImagePostsController < ApplicationController
   # PATCH/PUT /image_posts/1.json
   def update
     respond_to do |format|
-      if @image_post.update(image_post_params)
-        format.html { redirect_to @image_post, notice: 'Image post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @image_post }
-      else
-        format.html { render :edit }
-        format.json { render json: @image_post.errors, status: :unprocessable_entity }
-      end
+      @image_post.update(image_post_params)
+      format.html { redirect_to @image_post, notice: 'Image post was successfully updated.' }
+      format.json { render :show, status: :ok, location: @image_post }
     end
   end
 
