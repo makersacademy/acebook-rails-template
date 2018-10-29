@@ -756,36 +756,6 @@
         null,
         null
       ],
-      "/Users/Cameron/Projects/acebook-ciCADA/spec/controllers/image_comments_controller_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/Cameron/Projects/acebook-ciCADA/app/controllers/image_comments_controller.rb": [
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        0,
-        null,
-        0,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
       "/Users/Cameron/Projects/acebook-ciCADA/spec/controllers/image_posts_controller_spec.rb": [
         null,
         null,
@@ -1460,25 +1430,6 @@
         null,
         null
       ],
-      "/Users/Cameron/Projects/acebook-ciCADA/spec/helpers/image_comments_helper_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
       "/Users/Cameron/Projects/acebook-ciCADA/spec/helpers/image_posts_helper_spec.rb": [
         null,
         null,
@@ -1837,6 +1788,6 @@
         null
       ]
     },
-    "timestamp": 1540823474
+    "timestamp": 1540823594
   }
 }
