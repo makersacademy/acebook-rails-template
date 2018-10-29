@@ -4,6 +4,7 @@ RSpec.feature "Post", type: :feature do
   before(:each) do
     successfulSignUp
   end
+  
   scenario "Can submit posts and view them" do
     newPostAndSubmit("Hello, world!")
     expect(page).to have_content("Hello, world!")
