@@ -5,9 +5,9 @@ class PostsController < ApplicationController
     @post = current_user.posts.new
   end
 
-  def show
-    @post = Post.find(params[:id])
-  end
+  # def show
+  #   @post = Post.find(params[:id])
+  # end
 
   def create
     @post = current_user.posts.create(post_params)

@@ -22,4 +22,10 @@ RSpec.feature "Likes", type: :feature do
     click_on('Like')
     expect(find('p#like-count')).to have_content('1👍')
   end
+
+  scenario 'User can only like post once' do
+    create_post("You can only like me once")
+    click_on('Like')
+    expect(page).not_to have_selector('#like-button')
+  end
 end
