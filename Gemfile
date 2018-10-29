@@ -13,8 +13,8 @@ gem 'carrierwave'
 gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails'
 gem 'jquery-rails'
+gem 'rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server

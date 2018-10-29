@@ -9,14 +9,15 @@ class LikesController < ApplicationController
     @post.likes.create(user_id: current_user.id) unless already_liked?
 
     # redirect_to posts_url
-      redirect_back(fallback_location: post_url(@post), notice: "you have liked")
+    redirect_back(fallback_location: post_url(@post), notice: 'you have liked')
   end
 
   def destroy
     @like.destroy if already_liked?
 
     # redirect_to posts_url
-      redirect_back(fallback_location: post_url(@post), notice: "you have disliked")
+    redirect_back(fallback_location: post_url(@post),
+                  notice: 'you have disliked')
   end
 
   private

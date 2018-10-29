@@ -13,14 +13,16 @@ class ImageLikesController < ApplicationController
     end
 
     # redirect_to image_post_url(@image_post), notice: 'You have liked.'
-    redirect_back(fallback_location: image_post_url(@image_post), notice: "you have liked")
+    redirect_back(fallback_location: image_post_url(@image_post),
+                  notice: 'you have liked')
   end
 
   def destroy
     @image_like.destroy if already_liked?
 
     # redirect_to image_post_url(@image_post), notice: 'You have disliked.'
-    redirect_back(fallback_location: image_post_url(@image_post), notice: "you have disliked")
+    redirect_back(fallback_location: image_post_url(@image_post),
+                  notice: 'you have disliked')
   end
 
   private
