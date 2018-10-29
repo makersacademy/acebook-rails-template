@@ -1,12 +1,14 @@
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %>
-    <br><%= post.created_at.strftime("Posted at %I:%M%p, %d/%m/%Y")%> </p>
-  <%= link_to edit_post_path(post[:id]) do %>
-    Edit post
-  <% end %>
-  <%= link_to post_path(post[:id]), method: :delete do %>
-    Delete post
-  <% end %>
+    <br>Posted <%= time_ago_in_words(post.created_at || Time.now) %> ago by <%= find_post_email(post) %>.</p>
+  <% if user_made_this_post(post) %>
+    <%= link_to edit_post_path(post[:id]) do %>
+      Edit post
+    <% end %>
+    <%= link_to post_path(post[:id]), method: :delete do %>
+      Delete post
+    <% end %>
+  <% end%>
   <% like_checker = post.likes.find { |like| like.user_id == current_user.id } %>
   <% if like_checker %>
     <%= button_to 'Unlike', post_like_path(post[:id], like_checker), method: :delete %>
@@ -16,4 +18,5 @@
   <p><%= post.likes.count %> <%= post.likes.count == 1 ? 'Like' : 'Likes'%></p>
   <%= button_to 'Comments', post_url(post[:id]), method: :get %>
   <p><%= post.comments.count %> <%= post.comments.count == 1 ? 'Comment' : 'Comments'%></p>
+  <hr>
 <% end %>

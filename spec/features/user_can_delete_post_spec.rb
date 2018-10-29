@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Delete posts', type: :feature do
   scenario 'Can delete posts' do
+    logout
     create_hello_world_post
     click_link 'Delete post'
     expect(page).to_not have_content('Hello, world!')

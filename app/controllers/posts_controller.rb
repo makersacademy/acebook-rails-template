@@ -2,6 +2,7 @@
 
 # Logic for the Posts routes, allows us to create and index posts currently.
 class PostsController < ApplicationController
+  include PostsHelper
   before_action :authenticate_user!
 
   def new
