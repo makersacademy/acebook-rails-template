@@ -19,7 +19,7 @@ class WelcomePageController < ApplicationController
       @image_posts = ImagePost.all
       @user_email = current_user.email
     else
-      redirect_to posts_url
+      render 'landing_page'
     end
   end
 end
