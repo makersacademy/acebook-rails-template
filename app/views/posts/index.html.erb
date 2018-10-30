@@ -1,7 +1,7 @@
 
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
+
   <br>
   <ul>
     <% @posts.each do |post| %>
@@ -11,10 +11,6 @@
       </li>
     <% end %>
   </ul>
-
-  <%= link_to new_post_path do %>
-    New post
-  <% end %>
   </br>
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |

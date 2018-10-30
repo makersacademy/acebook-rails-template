@@ -7,10 +7,17 @@ SimpleCov.start
 def successful_sign_up
   visit '/'
   click_link 'Sign up'
-  fill_in 'Email', with: 'test@aol.com'
+  fill_in 'Email', with: 'test@test.com'
   fill_in 'Password', with: '123456'
   fill_in 'Password confirmation', with: '123456'
   click_button 'Sign up'
+end
+
+def successful_sign_in
+  visit new_user_session_path
+  fill_in 'Email', with: 'test@test.com'
+  fill_in 'Password', with: '123456'
+  click_button 'Log in'
 end
 
 def new_post_and_submit(message)
