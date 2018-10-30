@@ -22,8 +22,13 @@ Rails.application.routes.draw do
   end
   resources :profiles
 
+  get 'profiles/:id/posts/:post_id/edit', to: 'posts#edit_profile_post'
+
   resources :users do
     resources :image_posts, only: 'get'
   end
   get ':id', to: 'profiles#show'
+
+
+
 end

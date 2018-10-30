@@ -5,8 +5,11 @@
 <% @posts.reverse.each do |post| %>
   <div class='wall_post'>
     <%= simple_format(post.message) %>
-    <%= link_to profile_path(post[:id]), method: :delete do %>
+    <%= link_to post_path(post[:id]), method: :delete do %>
       Delete post
+    <% end %>
+    <%= link_to ('profiles/' + @user.id.to_s + '/posts/' + post.id.to_s + '/edit') do %>
+      Edit post
     <% end %>
     <hr>
   </div>

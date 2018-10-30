@@ -25,5 +25,15 @@ redirect_back(fallback_location: root_url)
   redirect_back(fallback_location: root_url)
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+  redirect_to profile_path
+  end
+
 
 end

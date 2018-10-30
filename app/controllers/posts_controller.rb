@@ -23,16 +23,26 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def edit_profile_post
+    @post = Post.find(params[:post_id])
+  end
+
+
+
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    redirect_to posts_url
+    if @post.profile_message == true
+      redirect_to ('/' + params[:post][:profile_id])
+    else
+      redirect_to posts_url
+    end
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_url
+    redirect_back(fallback_location: root_url)
   end
 
   def show
