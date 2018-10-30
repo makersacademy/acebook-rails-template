@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'posts/delete', to: 'posts#delete'
   post 'posts/create', to: 'posts#create'
   get 'my_images', to: 'image_posts#user_images'
-
+  get ':id', to: 'profiles#show'
   resources :posts do
     resources :comments
     resources :likes
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :image_comments
     resources :image_likes
   end
+  resources :profiles
 
   resources :users do
     resources :image_posts, only: 'get'
