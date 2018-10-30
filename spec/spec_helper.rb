@@ -21,7 +21,7 @@ def successful_sign_in
 end
 
 def new_post_and_submit(message)
-  click_link 'New post'
+  click_link 'New Post'
   fill_in 'Message', with: message
   click_button 'Submit'
 end
