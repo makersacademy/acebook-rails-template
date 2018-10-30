@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :users, only: [:show]
-  get 'profile', to: 'users#show'
+  resources :users, only: [:show], path: '/'
 
   ## Redirects to log in if not signed in
   ## Sets home page

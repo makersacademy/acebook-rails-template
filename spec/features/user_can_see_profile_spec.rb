@@ -8,7 +8,7 @@ RSpec.feature 'Profile page', type: :feature do
 
   context 'User visits their profile' do
     before do
-      visit '/profile'
+      visit '/1'
     end
 
     scenario 'Their name is displayed' do
@@ -31,7 +31,7 @@ RSpec.feature 'Profile page', type: :feature do
     click_on('Logout')
     sign_up_helper('bob@bob.com', 'Bob', 'password')
     create_post('Goodbye!')
-    visit '/users/1'
+    visit '/1'
     expect(page).not_to have_content 'Goodbye!'
     expect(page).to have_content 'Hello!'
   end
@@ -42,16 +42,16 @@ RSpec.feature 'Profile page', type: :feature do
 
   scenario 'User can visit own profile by clicking on profile button (in timeline)' do
     click_on('My Profile')
-    expect(page).to have_current_path('/profile')
+    expect(page).to have_current_path('/1')
   end
 
   scenario 'Profile has a button to timeline' do
-    visit('/profile')
+    visit('/1')
     expect(page).to have_button('Home')
   end
 
   scenario 'User can go back to timeline from profile by clicking Home' do
-    visit('/profile')
+    visit('/1')
     click_on('Home')
     expect(page).to have_current_path('/')
   end
@@ -60,6 +60,6 @@ RSpec.feature 'Profile page', type: :feature do
     click_on('Logout')
     sign_up_helper('seconduser@test.com', 'andres', 'password')
     click_on('TestName')
-    expect(page).to have_current_path('/users/1')
+    expect(page).to have_current_path('/1')
   end
 end

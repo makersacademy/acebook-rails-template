@@ -8,12 +8,5 @@ RSpec.describe UsersController, type: :controller do
         expect(response).to have_http_status(200)
       end
     end
-
-    context "no param id given" do
-      it "responds with 200" do
-        get :show
-        expect(response).to have_http_status(200)
-      end
-    end
   end
 end

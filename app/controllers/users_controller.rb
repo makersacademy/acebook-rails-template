@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = if params[:id]
-              User.find(params[:id])
-            else
-              current_user
-            end
+    @user = User.find(params[:id])
     @posts = @user.posts.reverse
   end
 end
