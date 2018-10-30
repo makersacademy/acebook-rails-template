@@ -59,6 +59,7 @@ RSpec.feature 'Profile page', type: :feature do
   scenario 'User can click on authors name for post to visit their profile' do
     click_on('Logout')
     sign_up_helper('seconduser@test.com', 'andres', 'password')
+    click_on('Home')
     click_on('TestName')
     expect(page).to have_current_path('/1')
   end

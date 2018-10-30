@@ -1,5 +1,6 @@
 <h1 id="user-name-title"><%= @user.name %></h1>
 <%= button_to('Home', root_path, method: :get, id: 'home-button') %>
+<%= link_to('Logout', destroy_user_session_path, id: "log-out" , method: :delete) %>
 
 
 <div class='timeline'>
