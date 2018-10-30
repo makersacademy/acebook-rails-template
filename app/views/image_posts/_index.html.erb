@@ -9,7 +9,6 @@
 
       <%= image_tag image_post.picture_url, width: '50%' if image_post.picture.present? %><br>
             <%= image_post.caption %><br>
-          </div>
         <div class="likes">
           <% like_checker = image_post.image_likes.find { |like| like.user_id == current_user.id } %>
           <% if like_checker %>
@@ -19,7 +18,6 @@
           <% end %>
           <p><%= image_post.image_likes.count %> <%= image_post.image_likes.count == 1 ? 'Like' : 'Likes' %></p>
         </div>
-
-            <hr>
-          </div>
+        <hr>
+      </div>
     <% end %>
