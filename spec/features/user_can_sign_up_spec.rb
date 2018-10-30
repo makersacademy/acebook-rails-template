@@ -22,7 +22,7 @@ RSpec.feature 'Sign up', type: :feature do
   context 'when User signs up' do
     before { sign_up_correct_helper }
 
-    scenario 'redirect to profile', focus:true do
+    scenario 'redirect to profile' do
       expect(page).to have_current_path('/1')
     end
 

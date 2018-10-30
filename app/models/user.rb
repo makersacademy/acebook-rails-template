@@ -6,5 +6,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :rememberable, :validatable
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true,
+    format: { with: /\A[a-zA-Z0-9]*\z/, message: "only allows letters or numbers" }
 end
