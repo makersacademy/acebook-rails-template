@@ -16,7 +16,7 @@ RSpec.describe WelcomePageController, type: :controller do
   describe 'GET #timeline' do
     it 'returns http success' do
       get :timeline
-      expect(response).to have_http_status(302)
+      expect(response).to have_http_status(200)
     end
   end
 end

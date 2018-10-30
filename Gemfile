@@ -12,6 +12,9 @@ gem 'carrierwave'
 # Add Devise to application for users
 gem 'devise'
 
+# add React gem
+gem 'react-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'jquery-rails'
 gem 'rails'
