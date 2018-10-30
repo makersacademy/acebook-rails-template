@@ -14,6 +14,12 @@ class PostsController < ApplicationController
     @posts = Post.all.order('created_at DESC')
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post = Post.destroy
+    redirect_to posts_url
+  end
+
   private
 
   def post_params
