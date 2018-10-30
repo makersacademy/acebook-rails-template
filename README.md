@@ -18,7 +18,7 @@ the below**
 
 3. Quickstart
 
-First, clone this repository. https://github.com/makersacademy/course/tree/master/engineering_projects/rails
+First, clone this repository. https://github.com/emmaalbury/Team-Tela
 Then enter in the command line:
 
 ```bash
