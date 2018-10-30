@@ -31,7 +31,7 @@ end
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-require_relative 'helpers/web_helpers'
+require_relative 'web_helpers'
 RSpec.configure do |config|
   config.raise_errors_for_deprecations!
   # rspec-expectations config goes here. You can use an alternate
