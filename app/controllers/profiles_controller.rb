@@ -11,6 +11,7 @@ class ProfilesController < ApplicationController
     @post = Post.new
     @comments = @post.comments.all
     @comment = @post.comments.build
+    @image_posts = ImagePost.all
   end
 
   def destroy

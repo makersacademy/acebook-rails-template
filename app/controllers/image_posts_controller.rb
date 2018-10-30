@@ -59,11 +59,13 @@ class ImagePostsController < ApplicationController
   def destroy
     @image_post.destroy
     respond_to do |format|
-      format.html do
-        redirect_to image_posts_url, notice: 'Image post was '\
-        'successfully destroyed.'
-      end
+      format.html
       format.json { head :no_content }
+    end
+    if params[:profile_id]
+      redirect_to '/' + params[:profile_id].to_s
+    else
+      redirect_back(fallback_location: root_url)
     end
   end
 

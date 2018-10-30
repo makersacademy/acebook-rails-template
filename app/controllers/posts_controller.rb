@@ -30,7 +30,8 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    if @post.profile_message.positive?
+    puts @post
+    if @post.profile_message > 0
       redirect_to '/' + params[:post][:profile_id]
     else
       redirect_to posts_url

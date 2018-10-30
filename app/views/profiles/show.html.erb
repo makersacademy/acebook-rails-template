@@ -1,22 +1,74 @@
 <h1> Welcome to Your profile <%= @user.username %> </h1>
 
 
-<h3> Here are your posts </h3>
-<% @posts.reverse.each do |post| %>
-  <div class='wall_post'>
-    <%= simple_format(post.message) %>
-    <%= link_to post_path(post[:id]), method: :delete do %>
-      Delete post
-    <% end %>
-    <%= link_to ('profiles/' + @user.id.to_s + '/posts/' + post.id.to_s + '/edit') do %>
-      Edit post
-    <% end %>
-    <%= button_to 'Comments', post_url(post[:id]), method: :get %>
-    <p><%= post.comments.count %> <%= post.comments.count == 1 ? 'Comment' : 'Comments'%></p>
-    <hr>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h3>Add a post:</h3>
+      <%= render "form" %>
+
+      <h3> Here are your posts </h3>
+      <% @posts.reverse.each do |post| %>
+      <div class='wall_post'>
+        <%= simple_format(post.message) %>
+        <%= link_to post_path(post[:id]), method: :delete do %>
+        Delete post
+        <% end %>
+        <%= link_to ('profiles/' + @user.id.to_s + '/posts/' + post.id.to_s + '/edit') do %>
+        Edit post
+        <% end %>
+        <% like_checker = post.likes.find { |like| like.user_id == current_user.id } %>
+        <% if like_checker %>
+        <%= button_to 'Unlike', post_like_path(post[:id], like_checker), method: :delete %>
+        <% else %>
+        <%= button_to 'Like', post_likes_path(post[:id]), method: :post %>
+        <% end %>
+        <p><%= post.likes.count %> <%= post.likes.count == 1 ? 'Like' : 'Likes'%></p>
+        <%= button_to 'Comments', post_url(post[:id]), method: :get %>
+        <p><%= post.comments.count %> <%= post.comments.count == 1 ? 'Comment' : 'Comments'%></p>
+        <hr>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="col-sm">
+      <h1> Right hand side </h1>
+      <h1>Image Posts</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Caption</th>
+            <th> Posted at </th>
+            <th>Picture</th>
+            <th colspan="4"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @image_posts.each do |image_post| %>
+            <tr>
+              <td><%= image_post.caption %></td>
+              <td><%= image_tag image_post.picture_url, width: '100%' if image_post.picture.present? %></td>
+              <td><%= link_to 'Show', image_post %></td>
+              <td><%= link_to 'Edit', edit_image_post_path(image_post) %></td>
+              <td><%= link_to 'Destroy', image_post_path(image_post, profile_id: @user.id), method: :delete %></td>
+            </tr>
+
+          <% end %>
+
+        </tbody>
+      </table>
+      <p>
+
+        </p>
+      <br>
+
+      <%= link_to 'New Image Post', new_image_post_path %>
+
+    </div>
+
   </div>
-<% end %>
-
-
-<h3>Add a post:</h3>
-<%= render "form" %>
+</div>

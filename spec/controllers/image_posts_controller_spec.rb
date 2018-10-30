@@ -160,7 +160,7 @@ RSpec.describe ImagePostsController, type: :controller do
       image_post = ImagePost.create! valid_attributes
       delete :destroy, params: { id: image_post.to_param },
                        session: valid_session
-      expect(response).to redirect_to(image_posts_url)
+      expect(response).to redirect_to(root_url)
     end
   end
 end
