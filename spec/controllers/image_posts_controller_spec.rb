@@ -156,11 +156,18 @@ RSpec.describe ImagePostsController, type: :controller do
       end.to change(ImagePost, :count).by(-1)
     end
 
-    it 'redirects to the image_posts list' do
+    it 'redirects to the image_posts list if no profile_id' do
       image_post = ImagePost.create! valid_attributes
       delete :destroy, params: { id: image_post.to_param },
                        session: valid_session
       expect(response).to redirect_to(root_url)
+    end
+
+    it 'redirects to the image_posts list if there is a profile_id' do
+      image_post = ImagePost.create! valid_attributes
+      delete :destroy, params: { id: image_post.to_param, profile_id: 1 },
+                       session: valid_session
+      expect(response).to redirect_to('/1')
     end
   end
 end
