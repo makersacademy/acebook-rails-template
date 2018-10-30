@@ -1,0 +1,8 @@
+<%= form_for @post do |form| %>
+  <%= form.label :message %>
+  <%= form.text_field :message %>
+  <%= form.hidden_field :profile_message, :value => params[:id] %>
+  <%= form.hidden_field :profile_id, :value => params[:id] %>
+  <%= form.hidden_field :post_id, :value => params[:post_id] %>
+  <%= form.submit "Update" %>
+<% end %>

@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    redirect_back(fallback_location: root_url)
   end
 
   def index
@@ -26,13 +26,17 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    redirect_to posts_url
+    if @post.profile_message.positive?
+      redirect_to '/' + params[:post][:profile_id]
+    else
+      redirect_to posts_url
+    end
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_url
+    redirect_back(fallback_location: root_url)
   end
 
   def show
@@ -45,7 +49,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    output = params.require(:post).permit(:message)
+    output = params.require(:post).permit(:message, :profile_message)
     output[:user_id] = current_user.id
     output
   end

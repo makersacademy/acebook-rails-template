@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.feature 'Comments', type: :feature do
   scenario 'Can see comments page' do
     create_hello_world_post
+    visit '/posts'
     click_button 'Comments'
     expect(page).to have_content('Post')
     expect(page).to have_content('Hello, world!')
@@ -12,6 +13,7 @@ RSpec.feature 'Comments', type: :feature do
 
   scenario 'Can create comments' do
     create_hello_world_post
+    visit '/posts'
     click_button 'Comments'
     fill_in 'Comment text', with: 'Hello back!'
     click_button 'Create Comment'

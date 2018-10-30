@@ -1,6 +1,7 @@
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
+  <%= form.hidden_field :profile_message, :value => 0 %>
 
   <%= form.submit "Update" %>
 <% end %>
