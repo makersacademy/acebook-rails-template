@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :likes
+  has_many :comments
 
   def format_date
     full_time = created_at
