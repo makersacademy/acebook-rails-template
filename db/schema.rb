@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20181030111147) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "likeCount", default: 0
-    t.boolean "profile_message", default: false
+    t.integer "profile_message", default: 0
   end
 
   create_table "users", force: :cascade do |t|

@@ -11,6 +11,8 @@
     <%= link_to ('profiles/' + @user.id.to_s + '/posts/' + post.id.to_s + '/edit') do %>
       Edit post
     <% end %>
+    <%= button_to 'Comments', post_url(post[:id]), method: :get %>
+    <p><%= post.comments.count %> <%= post.comments.count == 1 ? 'Comment' : 'Comments'%></p>
     <hr>
   </div>
 <% end %>

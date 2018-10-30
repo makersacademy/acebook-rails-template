@@ -4,16 +4,13 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
 
-  def create
-    @post.comments.create(user_id: current_user.id,
-                          comment_text: params[:comment].values.join(''))
-    redirect_back(fallback_location: root_url)
-  end
 
   def show
     @user = User.find(params[:id])
-    @posts = Post.all
+    @posts = Post.where(profile_message: params[:id])
     @post = Post.new
+    @comments = @post.comments.all
+    @comment = @post.comments.build
   end
 
   def destroy
