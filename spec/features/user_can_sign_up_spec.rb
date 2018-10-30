@@ -47,4 +47,11 @@ feature 'Log-in' do
     click_button 'Log in'
     expect(page).to have_content('Logged in as test2@test.com.')
   end
+
+  scenario 'user can see navbar once logged in' do
+    successful_sign_up
+    expect(page).to have_content('test@aol.com')
+    expect(page).to have_link('Edit Profile')
+    expect(page).to have_link('Logout')
+  end
 end

@@ -1,5 +1,9 @@
 {
   "result": {
+<<<<<<< HEAD
     "covered_percent": 98.33
+=======
+    "covered_percent": 96.64
+>>>>>>> Begin navbar build, TDD approach
   }
 }
