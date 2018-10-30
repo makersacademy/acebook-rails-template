@@ -1,3 +1,17 @@
-<h1> Your profile </h1>
+<h1> Welcome to Your profile <%= @user.username %> </h1>
 
-<h2> You are logged in as <%= @user.email %></h2>
+
+<h3> Here are your posts </h3>
+<% @posts.reverse.each do |post| %>
+  <div class='wall_post'>
+    <%= simple_format(post.message) %>
+    <%= link_to profile_path(post[:id]), method: :delete do %>
+      Delete post
+    <% end %>
+    <hr>
+  </div>
+<% end %>
+
+
+<h3>Add a post:</h3>
+<%= render "form" %>

@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    redirect_back(fallback_location: root_url)
   end
 
   def index
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    output = params.require(:post).permit(:message)
+    output = params.require(:post).permit(:message, :profile_message)
     output[:user_id] = current_user.id
     output
   end

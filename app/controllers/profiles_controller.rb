@@ -8,11 +8,21 @@ class ProfilesController < ApplicationController
   def create
     @post.comments.create(user_id: current_user.id,
                           comment_text: params[:comment].values.join(''))
-    redirect_to post_url(@post)
+redirect_back(fallback_location: root_url)
   end
 
   def show
 @user = User.find(params[:id])
+@posts = Post.all
+@post = Post.new
+
+  end
+
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+  redirect_back(fallback_location: root_url)
   end
 
 
