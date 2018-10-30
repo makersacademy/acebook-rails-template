@@ -12,9 +12,9 @@ redirect_back(fallback_location: root_url)
   end
 
   def show
-@user = User.find(params[:id])
-@posts = Post.all
-@post = Post.new
+    @user = User.find(params[:id])
+    @posts = Post.all
+    @post = Post.new
 
   end
 
@@ -22,7 +22,7 @@ redirect_back(fallback_location: root_url)
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-  redirect_back(fallback_location: root_url)
+    redirect_back(fallback_location: root_url)
   end
 
   def edit
@@ -32,7 +32,7 @@ redirect_back(fallback_location: root_url)
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-  redirect_to profile_path
+    redirect_to profile_path
   end
 
 
