@@ -4,70 +4,43 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5674a4684704c9f4c615/test_coverage)](https://codeclimate.com/github/Kharouk/acebook-ciCADA/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/5674a4684704c9f4c615/maintainability)](https://codeclimate.com/github/Kharouk/acebook-ciCADA/maintainability)
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+This repo is a Ruby on Rails clone of FaceBook built by ciCADA. Signed up users of AceBook share text and image posts and respond to them through likes and comments.
 
 The card wall is [here](https://trello.com/b/Jmx4wwHz/acebook-cicada).
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+## Installation
 
-## Quickstart
-
-First, clone this repository. Then:
+To run aceBook on your localhost first clone the repo and then follow these steps from the root of the repo:
 
 ```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+$ bundle install
+$ bin/rails db:create
+$ bin/rails db:migrate
+$ bin/rails server
 ```
-````
-As a user,
-So I can have an account on a pretty website,
-I can sign up with my email and password.
 
-As a user,
-So I can access the site with my details,
-I'd like to be able to login with my email and password.
+Then, go to `http://localhost:3000` to run aceBook.
 
-As a user,
-So I can let people know about my irrelevant opinions,
-I can post updates to my aceBook feed.
+## Testing
+At the time of writing (17:00, 29th of October) there are 60 tests written (7 of which are pending) with no failures. These tests cover 100% of the codebase.
 
-As a user,
-So I don't accidentally post something embarrassing,
-I'd like to edit my posts.
+To run the tests, just run `rspec` from the root of the repo.
 
-As a user,
-So I can get rid of an embarrassing post,
-I'd like to be able to delete my posts.
+We have set this repo up at Travis, so click on the `Build: Passing` button at the top of this README to see the build logs for the latest version of the app.
 
-As a user,
-So I can see when posts were created,
-I'd like to see the date and time they were posted.
+## Contributing
 
-As a user,
-So I can tell my friends what I think of their posts,
-I'd like the ability to leave comments on posts.
+If you want to contribute to this project you are more than welcome to open a PR.
 
-As a user,
-So I can show my approval.
-I'd like to be able to 'like' other people's posts.
+Please note, we've set ourselves quire rigorous linting and code coverage requirements:
+ - 90% code coverage on every non-spec ruby file.
+ - 95% overall coverage for the app.
+ - No rubocop offenses. Our rubocop.yml can be found. [here](https://github.com/Kharouk/acebook-ciCADA/blob/master/.rubocop_todo.yml).
 
-As a user,
-So I can see how popular my posts are,
-I'd like to be able to see the amount of likes on a post.
+We would be very happy for you to contribute to our app, but we won't accept any PRs which do not meet these requirements - we've already suffered through them. When you open a PR, Travis will check to see if your PR meets these requirements.
 
-As a user,
-So I don't accidentally give someone too much approval,
-I'd like to be able to only like a post once.
+If you notice any bugs please open an issue and we'll get onto it.
 
-As a user,
-So I can see what others think of my post,
-I'd like to see other people's comments on my post.
+## License
 
-As a user,
-So I can stay updated to the latest information,
-I'd like to see my posts in reverse chronological order.
+This project is under the MIT license.
