@@ -1,7 +1,11 @@
 <h1 id="user-name-title"><%= @user.name %></h1>
 <%= button_to('Home', root_path, method: :get, id: 'home-button') %>
-
-
+<br>
+<%= link_to new_user_wall_post_path(@user) do %>
+Post to this wall
+<% end %>
+<br>
+<br>
 <div class='timeline'>
   <%= render partial: "./posts/post", collection: @posts %>
 </div>
