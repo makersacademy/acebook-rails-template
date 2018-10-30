@@ -6,6 +6,7 @@
   <% if post.likes.where(user_id: current_user.id).blank? %>
     <%= button_to 'Like', post_likes_path(post), method: :post, id: "like-button", class: "like-button", params: {user_id: current_user.id, post_id: post.id } %>
   <% end %>
+  <%= button_to 'Comment', new_post_comment_path(post), method: :get, class: "comment-button", params: { post_id: post.id } %>
   <% if current_user.id == post.user_id %>
     <% if !post.older_than_10_mins? %>
       <p class='post-edit'><%= link_to 'Edit Post', edit_post_path(post) %></p>
