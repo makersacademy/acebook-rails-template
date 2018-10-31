@@ -28,3 +28,10 @@ def log_in(email, password)
   fill_in('user_password', with: password)
   click_button('Log in')
 end
+
+def create_wall_post(message)
+  visit '/profile'
+  click_link 'Post to this wall'
+  fill_in 'Text', with: message
+  click_button 'Submit'
+end

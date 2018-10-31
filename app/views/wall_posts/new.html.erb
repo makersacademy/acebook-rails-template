@@ -1,0 +1,10 @@
+<h1 class='wall-post-title'>Write your wall post here</h1>
+
+<%= form_for [@user, @wallpost] do |form| %>
+  <%= form.label :text %>
+  <%= form.text_area :text %>
+
+  <%= form.hidden_field :sender_id, value: current_user.id %>
+  <br>
+  <%= form.submit "Submit" %>
+<% end %>

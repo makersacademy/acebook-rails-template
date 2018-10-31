@@ -60,4 +60,12 @@ ActiveRecord::Schema.define(version: 20181031102226) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  create_table "wall_posts", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "sender_id"
+    t.integer "user_id"
+  end
+
 end
