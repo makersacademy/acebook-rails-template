@@ -1,5 +1,5 @@
 <div class='post-div' id=<%=post.id%>>
-  <%= link_to post.user.name, user_path(post.user.id), method: :get, id: post.id, class: 'post-author' %>
+  <%= link_to post.user.name, user_path(post.user), method: :get, id: post.id, class: 'post-author' %>
   <p class='post-message' id=<%=post.id%>><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
   <p class='post-timestamp' id=<%=post.id%>><%= post.format_date %></p>
   <p class='post-like-count' id='like-count'><%=post.likes.size%><span class=emoji>&#x1F44D;</span></p>

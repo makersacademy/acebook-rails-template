@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def show
-    if User.find_by_id(params[:id])
-      @user = User.find(params[:id])
+    begin
+      @user = User.friendly.find(params[:id])
       @posts = @user.posts.reverse
-    else
+    rescue
       user_not_found
     end
   end

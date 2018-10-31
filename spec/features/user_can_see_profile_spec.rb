@@ -8,7 +8,7 @@ RSpec.feature 'Profile page', type: :feature do
 
   context 'User visits their profile' do
     before do
-      visit '/1'
+      visit '/testname'
     end
 
     scenario 'Their name is displayed' do
@@ -31,7 +31,7 @@ RSpec.feature 'Profile page', type: :feature do
       click_on('Logout')
       sign_up_helper('bob@bob.com', 'Bob', 'password')
       create_post('Goodbye!')
-      visit '/1'
+      visit '/testname'
       expect(page).not_to have_content 'Goodbye!'
       expect(page).to have_content 'Hello!'
     end
@@ -40,11 +40,11 @@ RSpec.feature 'Profile page', type: :feature do
   context 'Navigation' do
     scenario 'User can visit own profile by clicking on profile button (in timeline)' do
       click_on('My Profile')
-      expect(page).to have_current_path('/1')
+      expect(page).to have_current_path('/testname')
     end
 
     scenario 'User can go back to timeline from profile by clicking Home' do
-      visit('/1')
+      visit('/testname')
       click_on('Home')
       expect(page).to have_current_path('/')
     end
@@ -54,14 +54,14 @@ RSpec.feature 'Profile page', type: :feature do
       sign_up_helper('seconduser@test.com', 'andres', 'password')
       click_on('Home')
       click_on('TestName')
-      expect(page).to have_current_path('/1')
+      expect(page).to have_current_path('/testname')
     end
   end
 
   context 'Routes' do
-    # scenario 'URL set to name', focus: true do
-    #   click_on('My Profile')
-    #   expect(page).to have_current_path('/TestName')
-    # end
+    scenario 'profile can be accessed using id' do
+      visit('/1')
+      expect(find('#user-name-title')).to have_content('TestName')
+    end
   end
 end
