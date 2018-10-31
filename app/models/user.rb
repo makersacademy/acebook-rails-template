@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :posts
@@ -8,6 +8,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :rememberable, :validatable
 
+  def slug_candidates
+    [
+      :name,
+      [:name, "#{rand(10)}"],
+      [:name, "#{rand(100)}"]
+    ]
+  end
+
   validates :name, presence: true, uniqueness: true,
-    format: { with: /\A[a-zA-Z]*\z/, message: "Name cannot contain numbers or special characters" }
+    format: { with: /\A[^0-9]*\z/, message: "cannot contain numbers" }
 end

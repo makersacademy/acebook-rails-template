@@ -7,8 +7,8 @@ RSpec.describe User, type: :model do
         user = User.new(name: "Bill", email: "bill2@bill.com", password: "billbill")
         expect(user.valid?).to be false
       end
-      fit 'invalid if contains special characters' do
-        user = User.new(name: "Bill Ben", email: "bill2@bill.com", password: "billbill")
+      fit 'invalid if contains numbers' do
+        user = User.new(name: "Bill Ben7", email: "bill2@bill.com", password: "billbill")
         expect(user.valid?).to be false
       end
     end
