@@ -22,6 +22,10 @@ RSpec.feature 'Sign up', type: :feature do
   context 'when User signs up' do
     before { sign_up_correct_helper }
 
+    scenario 'redirect to profile' do
+      expect(page).to have_current_path('/testname')
+    end
+
     scenario 'shows logout button' do
       expect(page).to have_selector('#log-out')
     end
