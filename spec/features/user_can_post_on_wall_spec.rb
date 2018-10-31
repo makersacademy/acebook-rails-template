@@ -32,5 +32,11 @@ RSpec.feature 'Profile page', type: :feature do
       create_wall_post('A message to my friend')
       expect(find('div.wall-post-wrapper')).to have_selector('a#1.wall-post-author')
     end
+
+    scenario 'Can delete a wallpost they have posted' do
+      create_wall_post('A message to my friend')
+      click_on('Delete wall post')
+      expect(page).not_to have_content('A message to my friend')
+    end
   end
 end

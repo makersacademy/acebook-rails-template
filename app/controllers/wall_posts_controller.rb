@@ -12,6 +12,13 @@ before_action :authenticate_user!
     redirect_to user_url(@user)
   end
 
+  def destroy
+    @user = User.find(params[:user_id])
+    @wallpost = WallPost.find(params[:id])
+    @wallpost.destroy
+    redirect_to user_url(@user), notice: 'Your wall post has been deleted'
+  end
+
   private
 
   def wallpost_params
