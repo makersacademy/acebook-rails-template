@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :likes
   end
 
-  resources :users, only: [:show], path: '/ do
+  resources :users, only: [:show], path: '/' do
     resources :wall_posts
   end
 
