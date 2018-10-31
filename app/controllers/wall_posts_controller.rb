@@ -33,7 +33,7 @@ class WallPostsController < ApplicationController
     else
       flash[:alert] = 'Wallpost message cannot be empty'
       render 'edit'
-     end
+    end
   end
 
   private
