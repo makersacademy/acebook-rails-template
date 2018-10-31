@@ -1,5 +1,5 @@
 class WallPostsController < ApplicationController
-before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def new
     @user = User.friendly.find(params[:user_id])
@@ -29,10 +29,10 @@ before_action :authenticate_user!
     @wallpost = WallPost.find(params[:id])
 
     if @wallpost.update(wallpost_params)
-       redirect_to user_url(@user)
-     else
-       flash[:alert] = 'Wallpost message cannot be empty'
-       render 'edit'
+      redirect_to user_url(@user)
+    else
+      flash[:alert] = 'Wallpost message cannot be empty'
+      render 'edit'
      end
   end
 
@@ -41,5 +41,4 @@ before_action :authenticate_user!
   def wallpost_params
     params.require(:wall_post).permit(:text, :sender_id)
   end
-
 end
