@@ -15,5 +15,10 @@ RSpec.feature 'Profile page', type: :feature do
       click_on('Post to this wall')
       expect(page).to have_content('Write your post here')
     end
+
+    scenario 'Can post to someones wall and is redirected back to the profile wall' do
+      create_wall_post('A message to my friend')
+      expect(page).to have_content('A message to my friend')
+    end
   end
 end

@@ -9,7 +9,7 @@ before_action :authenticate_user!
   def create
     @user = User.find(params[:user_id])
     @wallpost = @user.wall_posts.create(wallpost_params)
-    redirect_to posts_url
+    redirect_to user_url(@user)
   end
 
   private
@@ -17,4 +17,5 @@ before_action :authenticate_user!
   def wallpost_params
     params.require(:wall_post).permit(:text, :sender_id)
   end
+
 end
