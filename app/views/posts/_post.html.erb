@@ -15,4 +15,7 @@
     <% end %>
     <p class='post-delete'><%= link_to 'Delete', post, :data => {:confirm => "Are you sure?"}, :method => :delete %></p>
   <% end %>
+  <div class='comment-section'>
+    <%= render partial: './comments/comment', collection: post.comments %>
+  </div>
 </div>

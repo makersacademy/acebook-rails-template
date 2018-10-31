@@ -28,3 +28,9 @@ def log_in(email, password)
   fill_in('user_password', with: password)
   click_button('Log in')
 end
+
+def create_comment(message)
+  click_on('Comment')
+  fill_in('comment[message]', with: message)
+  click_button("Submit")
+end
