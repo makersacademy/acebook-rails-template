@@ -19,6 +19,23 @@ before_action :authenticate_user!
     redirect_to user_url(@user), notice: 'Your wall post has been deleted'
   end
 
+  def edit
+    @user = User.find(params[:user_id])
+    @wallpost = WallPost.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @wallpost = WallPost.find(params[:id])
+
+    if @wallpost.update(wallpost_params)
+       redirect_to user_url(@user)
+     else
+       flash[:alert] = 'Wallpost message cannot be empty'
+       render 'edit'
+     end
+  end
+
   private
 
   def wallpost_params

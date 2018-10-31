@@ -5,6 +5,7 @@
   <p class='wallpost-timestamp' id=<%=wall_post.id%>><%= wall_post.format_date %></p>
 
   <% if current_user.id == wall_post.sender.id %>
-    <p class='wallpost-delete'><%= link_to 'Delete wall post', user_wall_post_url(wall_post.user_id, wall_post.id), :data => {:confirm => "Are you sure?"}, :method => :delete %></p>
+    <p class='wallpost-edit'><%= link_to 'Edit Wall Post', edit_user_wall_post_path(wall_post.user_id, wall_post.id) %></p>
+    <p class='wallpost-delete'><%= link_to 'Delete wall post', user_wall_post_path(wall_post.user_id, wall_post.id), :data => {:confirm => "Are you sure?"}, :method => :delete %></p>
   <% end %>
 </div>
