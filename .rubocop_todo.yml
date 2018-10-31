@@ -108,7 +108,6 @@ Style/StringLiterals:
     - 'bin/yarn/'
     - 'config/environments/production.rb'
     - 'config/puma.rb'
-    - 'db/schema.rb'
     - 'spec/controllers/posts_controller_spec.rb'
     - 'spec/features/user_can_submit_posts_spec.rb'
     - 'spec/rails_helper.rb'
@@ -133,6 +132,8 @@ Style/SymbolArray:
 # URISchemes: http, https
 Metrics/LineLength:
   Max: 112
+  Exclude:
+    - 'config/initializers/**/*'
 
 Metrics/BlockLength:
   Exclude:
@@ -140,5 +141,6 @@ Metrics/BlockLength:
 
 AllCops:
   Exclude:
+    - '**/vendor/**/*'
     - 'db/**/*'
     - 'config/initializers/devise.rb'
