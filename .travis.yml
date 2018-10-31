@@ -28,7 +28,7 @@ test:
 
 script:
   - bundle exec rspec
-  # - bundle exec rubocop
+  - bundle exec rubocop
 
 after_success:
   - coveralls

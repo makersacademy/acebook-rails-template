@@ -5,17 +5,14 @@ Rails.application.routes.draw do
     resources :likes
   end
 
-
-
-  resources :users, only: [:show] do
+  resources :users, only: [:show], path: '/ do
     resources :wall_posts
   end
-  get 'profile', to: 'users#show'
 
   ## Redirects to log in if not signed in
   ## Sets home page
   authenticated :user do
-    root to: 'posts#index'
+    root 'posts#index'
   end
 
   root to: redirect('/users/sign_in')

@@ -8,7 +8,7 @@ RSpec.feature 'Profile page', type: :feature do
 
   context 'User visits their profile' do
     before do
-      visit '/profile'
+      visit '/testname'
     end
 
     scenario 'Their name is displayed' do
@@ -26,40 +26,42 @@ RSpec.feature 'Profile page', type: :feature do
       create_post('Second post')
       expect(first('.post-message')).to have_content 'Second post'
     end
-  end
-  scenario "user visits another profile and can see only that user's posts" do
-    click_on('Logout')
-    sign_up_helper('bob@bob.com', 'Bob', 'password')
-    create_post('Goodbye!')
-    visit '/users/1'
-    expect(page).not_to have_content 'Goodbye!'
-    expect(page).to have_content 'Hello!'
+
+    scenario "user visits another profile and can see only that user's posts" do
+      click_on('Logout')
+      sign_up_helper('bob@bob.com', 'Bob', 'password')
+      create_post('Goodbye!')
+      visit '/testname'
+      expect(page).not_to have_content 'Goodbye!'
+      expect(page).to have_content 'Hello!'
+    end
   end
 
-  scenario 'Timeline has a My Profile button' do
-    expect(page).to have_button('My Profile')
+  context 'Navigation' do
+    scenario 'User can visit own profile by clicking on profile button (in timeline)' do
+      click_on('My Profile')
+      expect(page).to have_current_path('/testname')
+    end
+
+    scenario 'User can go back to timeline from profile by clicking Home' do
+      visit('/testname')
+      click_on('Home')
+      expect(page).to have_current_path('/')
+    end
+
+    scenario 'User can click on authors name for post to visit their profile' do
+      click_on('Logout')
+      sign_up_helper('seconduser@test.com', 'andres', 'password')
+      click_on('Home')
+      click_on('TestName')
+      expect(page).to have_current_path('/testname')
+    end
   end
 
-  scenario 'User can visit own profile by clicking on profile button (in timeline)' do
-    click_on('My Profile')
-    expect(page).to have_current_path('/profile')
-  end
-
-  scenario 'Profile has a button to timeline' do
-    visit('/profile')
-    expect(page).to have_button('Home')
-  end
-
-  scenario 'User can go back to timeline from profile by clicking Home' do
-    visit('/profile')
-    click_on('Home')
-    expect(page).to have_current_path('/')
-  end
-
-  scenario 'User can click on authors name for post to visit their profile' do
-    click_on('Logout')
-    sign_up_helper('seconduser@test.com', 'andres', 'password')
-    click_on('TestName')
-    expect(page).to have_current_path('/users/1')
+  context 'Routes' do
+    scenario 'profile can be accessed using id' do
+      visit('/1')
+      expect(find('#user-name-title')).to have_content('TestName')
+    end
   end
 end

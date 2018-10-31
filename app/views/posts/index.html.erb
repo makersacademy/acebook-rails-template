@@ -1,6 +1,6 @@
 <% if current_user %>
 <%= link_to('Logout', destroy_user_session_path, id: "log-out" , method: :delete) %>
-<%= button_to('My Profile', profile_path, method: :get, id: 'profile-button') %>
+<%= button_to('My Profile', user_path(current_user), method: :get, id: 'profile-button') %>
 <% end %>
 
 <div class='timeline'>

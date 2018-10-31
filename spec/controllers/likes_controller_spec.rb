@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe LikesController, type: :controller do
   before(:each) do
     user = User.create(name: 'Andres', email: 'email@email.com', password: 'password')
-    post = Post.create(message: 'Please delete me!', user_id: user.id )
+    Post.create(message: 'Please delete me!', user_id: user.id)
   end
 
   describe 'POST /' do

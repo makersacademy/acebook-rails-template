@@ -6,6 +6,7 @@ Post to this wall
 <% end %>
 <br>
 <br>
+<%= link_to('Logout', destroy_user_session_path, id: "log-out" , method: :delete) %>
 <div class='timeline'>
   <%= render partial: "./posts/post", collection: @posts %>
   <%= render partial: "./wall_posts/wall_post", collection: @wallposts %>
