@@ -30,7 +30,7 @@ def log_in(email, password)
 end
 
 def create_wall_post(message)
-  visit '/profile'
+  visit '/testname'
   click_link 'Post to this wall'
   fill_in 'Text', with: message
   click_button 'Submit'

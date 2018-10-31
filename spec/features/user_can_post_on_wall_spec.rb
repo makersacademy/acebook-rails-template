@@ -4,7 +4,7 @@ require 'timecop'
 RSpec.feature 'Profile Page - Wall Posts', type: :feature do
   before(:each) do
     sign_up_correct_helper
-    visit '/profile'
+    visit '/testname'
   end
 
   context 'A signed in user' do
