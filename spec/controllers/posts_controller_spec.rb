@@ -30,7 +30,7 @@ RSpec.describe PostsController, type: :controller do
   describe "DELETE /posts/id" do
     before(:each) do
       user = User.create(name: "Andres", email: "email@email.com", password: "password")
-      post = Post.create(message: 'Please delete me!', user_id: user.id )
+      Post.create(message: 'Please delete me!', user_id: user.id)
     end
 
     it "responds with 302" do

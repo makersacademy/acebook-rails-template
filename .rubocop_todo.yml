@@ -105,7 +105,7 @@ Style/StderrPuts:
 Style/StringLiterals:
   Exclude:
     - 'Gemfile'
-    - 'bin/yarn'
+    - 'bin/yarn/'
     - 'config/environments/production.rb'
     - 'config/puma.rb'
     - 'db/schema.rb'
@@ -119,7 +119,7 @@ Style/StringLiterals:
 # SupportedStyles: single_quotes, double_quotes
 Style/StringLiteralsInInterpolation:
   Exclude:
-    - 'bin/yarn'
+    - 'bin/yarn/'
 
 # Offense count: 2
 # Cop supports --auto-correct.
@@ -136,9 +136,9 @@ Metrics/LineLength:
 
 Metrics/BlockLength:
   Exclude:
-    - 'spec/features/*.rb'
+    - 'spec/**/*'
 
 AllCops:
   Exclude:
-    - 'db/migrate/20181023140303_devise_create_users.rb'
+    - 'db/**/*'
     - 'config/initializers/devise.rb'

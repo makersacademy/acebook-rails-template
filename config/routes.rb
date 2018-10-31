@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resources :likes
   end
 
-
   resources :users, only: [:show], path: '/'
 
   ## Redirects to log in if not signed in

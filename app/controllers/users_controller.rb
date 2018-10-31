@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
   def show
-    begin
-      @user = User.friendly.find(params[:id])
-      @posts = @user.posts.reverse
-    rescue
-      user_not_found
-    end
+    @user = User.friendly.find(params[:id])
+    @posts = @user.posts.reverse
+  rescue ActiveRecord::RecordNotFound
+    user_not_found
   end
 
   def user_not_found

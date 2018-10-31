@@ -11,11 +11,11 @@ class User < ApplicationRecord
   def slug_candidates
     [
       :name,
-      [:name, "#{rand(10)}"],
-      [:name, "#{rand(100)}"]
+      [:name, rand(10).to_s],
+      [:name, rand(10..100).to_s]
     ]
   end
 
   validates :name, presence: true,
-    format: { with: /\A[^0-9]*\z/, message: "cannot contain numbers" }
+                   format: { with: /\A[^0-9]*\z/, message: 'cannot contain numbers' }
 end
