@@ -1,1 +1,7 @@
-<p class='wall-post-message' id=<%=wall_post.id%>><%= wall_post.text%></p>
+<% if @wallposts.present? %>
+<div class="wall-post-wrapper">
+  <p class='wall-post-message' id=<%=wall_post.id%>><%= wall_post.text%></p>
+  <%= link_to wall_post.sender.name, user_path(wall_post.sender_id), method: :get, id: wall_post.id, class: 'wall-post-author' %>
+  <p class='wallpost-timestamp' id=<%=wall_post.id%>><%= wall_post.format_date %></p>
+<% end %>
+</div>
