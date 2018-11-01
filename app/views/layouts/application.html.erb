@@ -9,6 +9,13 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <div class="nav">
+        <%= button_to('My Profile', user_path(current_user), method: :get, id: 'profile-button') %>
+        <%= button_to('Home', root_path, method: :get, id: 'home-button') %>
+        <%= button_to('Logout', destroy_user_session_path, id: "log-out" , method: :delete) %>
+      </div>
+    <% end %>
     <%= yield %>
     <div class="notice"><%= flash[:notice] %></div>
     <div class="alert"><%= flash[:alert] %></div>
