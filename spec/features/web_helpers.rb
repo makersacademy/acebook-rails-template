@@ -29,6 +29,12 @@ def log_in(email, password)
   click_button('Log in')
 end
 
+def create_comment(message)
+  click_on('Comment')
+  fill_in('comment[message]', with: message)
+  click_button("Submit")
+end
+
 def create_wall_post(message)
   visit '/testname'
   click_link 'Post to this wall'

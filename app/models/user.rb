@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :likes
+  has_many :comments
   has_many :wall_posts
   accepts_nested_attributes_for :wall_posts
 

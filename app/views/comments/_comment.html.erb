@@ -1,0 +1,10 @@
+<div class='comment-div' id=<%=comment.id%>>
+  <%= link_to comment.user.name, user_path(comment.user), method: :get, id: comment.id, class: 'comment-author' %>
+  <p class='comment-message' id=<%=comment.id%>><%= h(comment.message).gsub(/\n/, '<br/>').html_safe %></p>
+  <p class='comment-timestamp' id=<%=comment.id%>><%= comment.created_at %></p>
+
+  <% if current_user == comment.user %>
+    <p class='comment-edit'><%= link_to 'Edit Comment', edit_post_comment_path(comment.post, comment) %></p>
+    <p class='comment-delete'><%= link_to 'Delete Comment', post_comment_path(comment.post, comment), :data => {:confirm => "Are you sure?"}, :method => :delete %></p>
+  <% end %>
+</div>

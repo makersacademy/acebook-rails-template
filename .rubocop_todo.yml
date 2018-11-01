@@ -124,6 +124,10 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
 
+Metrics/AbcSize:
+  Exclude:
+    - 'app/controllers/comments_controller.rb'
+
 AllCops:
   Exclude:
     - '**/vendor/**/*'
