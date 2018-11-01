@@ -30,4 +30,11 @@ RSpec.feature 'Comments', type: :feature do
     expect(page).not_to have_content('This is a comment')
     expect(page).to have_content('A different comment')
   end
+  scenario 'User sees edit screen again when blank edit message submitted' do
+    create_comment('This is a comment')
+    click_on('Edit Comment')
+    fill_in('comment[message]', with: '')
+    click_button('Submit')
+    expect(find('h1')).to have_content('Edit comment')
+  end
 end
