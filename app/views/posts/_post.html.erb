@@ -8,7 +8,7 @@
   <% else %>
     <%= button_to 'Unlike', post_like_path(post.id, post.liked_by(current_user).id), :method => :delete, id: 'unlike-button'%>
   <% end %>
-  <% if current_user.id == post.user_id %>
+  <% if current_user == post.user %>
     <% if !post.older_than_10_mins? %>
       <p class='post-edit'><%= link_to 'Edit Post', edit_post_path(post) %></p>
     <% end %>

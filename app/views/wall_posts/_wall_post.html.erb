@@ -1,11 +1,12 @@
 
 <div class="wall-post-wrapper">
   <p class='wall-post-message' id=<%=wall_post.id%>><%= wall_post.text%></p>
-  <%= link_to wall_post.sender.name, user_path(wall_post.sender_id), method: :get, id: wall_post.id, class: 'wall-post-author' %>
+  <%= link_to wall_post.sender.name, user_path(wall_post.sender), method: :get, id: wall_post.id, class: 'wall-post-author' %> >
+  <%= link_to wall_post.user.name, user_path(wall_post.user), method: :get, id: wall_post.id, class: 'wall-post-receiver' %> 
   <p class='wallpost-timestamp' id=<%=wall_post.id%>><%= wall_post.format_date %></p>
 
-  <% if current_user.id == wall_post.sender.id %>
-    <p class='wallpost-edit'><%= link_to 'Edit Wall Post', edit_user_wall_post_path(wall_post.user_id, wall_post.id) %></p>
-    <p class='wallpost-delete'><%= link_to 'Delete wall post', user_wall_post_path(wall_post.user_id, wall_post.id), :data => {:confirm => "Are you sure?"}, :method => :delete %></p>
+  <% if current_user == wall_post.sender %>
+    <p class='wallpost-edit'><%= link_to 'Edit Wall Post', edit_user_wall_post_path(wall_post.user, wall_post.id) %></p>
+    <p class='wallpost-delete'><%= link_to 'Delete wall post', user_wall_post_path(wall_post.user, wall_post.id), :data => {:confirm => "Are you sure?"}, :method => :delete %></p>
   <% end %>
 </div>
