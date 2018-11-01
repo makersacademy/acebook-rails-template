@@ -6,12 +6,14 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :users, only: [:show], path: '/'
+  resources :users, only: [:show], path: '/' do
+    resources :wall_posts
+  end
 
   ## Redirects to log in if not signed in
   ## Sets home page
   authenticated :user do
-    root 'posts#index'
+    root to: 'posts#index'
   end
 
   root to: redirect('/users/sign_in')

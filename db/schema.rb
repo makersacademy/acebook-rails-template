@@ -15,14 +15,6 @@ ActiveRecord::Schema.define(version: 20181031102226) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: :cascade do |t|
-    t.text "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "post_id"
-    t.integer "user_id"
-  end
-
   create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -58,6 +50,14 @@ ActiveRecord::Schema.define(version: 20181031102226) do
     t.string "name"
     t.string "slug"
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "wall_posts", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "sender_id"
+    t.integer "user_id"
   end
 
 end

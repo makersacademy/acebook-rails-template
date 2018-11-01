@@ -1,0 +1,12 @@
+<h1>Edit Wall Post</h1>
+
+<%= form_for [@user, @wallpost] do |f| %>
+  <p>
+    <%= f.label :text %> <br />
+    <%= f.text_area :text %> <br />
+  </p>
+  <%= f.hidden_field :sender_id, value: current_user.id %>
+  <p>
+    <%= f.submit 'Update Wall Post' %> <br />
+  </p>
+<% end %>

@@ -3,9 +3,12 @@ class User < ApplicationRecord
   friendly_id :slug_candidates, use: :slugged
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
   has_many :posts
   has_many :likes
   has_many :comments
+  has_many :wall_posts
+  accepts_nested_attributes_for :wall_posts
 
   devise :database_authenticatable, :registerable,
          :rememberable, :validatable
