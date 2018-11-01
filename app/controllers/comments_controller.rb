@@ -15,9 +15,12 @@ class CommentsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
     if Comment.find(params[:id]).update(comment_params)
       redirect_to root_path
     else
+      flash[:alert] = 'Message cannot be empty'
       render 'edit'
     end
   end
