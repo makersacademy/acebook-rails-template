@@ -9,4 +9,3 @@ script:
 deploy:
   provider: heroku
   api_key: 5fe3e605-4b5a-4bbe-99da-d53836efc5e5
-  app: acebook
