@@ -1,6 +1,4 @@
-# Waffle Board Link
-
-https://waffle.io/rbbri/acebook-gracebook
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/rbbri/acebook-gracebook.svg?columns=all)](https://waffle.io/rbbri/acebook-gracebook)
 
 # AceBook
 
