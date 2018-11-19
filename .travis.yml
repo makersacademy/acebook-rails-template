@@ -12,7 +12,9 @@ deploy:
   provider: heroku
   api_key:
     secure: VAAaDwbGIwf/o9QEq6lHVhmlGFKWTXx5GFX8kahaLHcr1ZiA+VIQ8I8MQu5SMgZ/9BhRWZQhPgcYtoEFN4ofICANHJBuQQqst9x71OUbk1ga6TVSbfRC3/dyoH17viCZXCKRy/jR9DpjFGM5c/+MoAi/RF0wpo4XJxB2R0tIGcgiurdTNbM/z4XP/r+c44TOfMEh9f4XtU8oqZ3rB2olK5HorylBkR0inrWH2xwsLDKkLJ7xx4cBSBuD6JuT+jH0mVPXrcADfCu5bWgS0loqMV9kv2ov7ZRR3oM/JoJkM/GVBx0mYoSxLDb99/6+DBrOiLPJRAmmEFdX7gkh1T/Yrb8qoZ0Q/kYYCEn43RFh0emgWNFUCTDf6c6t1eKSHAxUfrvvITNcO1acOklUy6JBBzuDn5pE+kqh3COlnwUetDAauWN3JjV0j/84m/d4JxxlqyC9lvsFcaCvOv0LXfFeIQ9iC2wfTZS3tsEI/sEg9jNEgv7Fr2AgSFsDv+aDINTHMHjLN1VzImfRdc3h5qj9LKOrdAGz29pCnrBkEzaUKqBfMxQQKkOAFT6EKSj2tvLR+LwvlA2H0kgOWTBG52lsz6l6IjcGxpKMg8uc2mYXSDek/Hj4OJrbyI9Pe4ZJK3KiM/UoN+7NfFK5kiPDjIRtYFaajgakaOHLgfRhlvKE+RY=
+  app: mighty-shore-72320
   run:
     - bin/rails db:migrate
-  app:
-    production: mighty-shore-72320
+  branches:
+    only:
+      - master
