@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/spec/controllers/posts_controller_spec.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/spec/controllers/posts_controller_spec.rb": [
         1,
         null,
         1,
@@ -32,7 +32,7 @@
         null,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/spec/rails_helper.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -91,14 +91,14 @@
         null,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/environment.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/application.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/application.rb": [
         1,
         null,
         1,
@@ -118,12 +118,12 @@
         null,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/boot.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/environments/test.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/environments/test.rb": [
         1,
         null,
         null,
@@ -167,7 +167,7 @@
         null,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/initializers/application_controller_renderer.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -175,7 +175,7 @@
         null,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/initializers/assets.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -191,7 +191,7 @@
         null,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/initializers/backtrace_silencers.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -200,20 +200,20 @@
         null,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/initializers/cookies_serializer.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/initializers/inflections.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -231,13 +231,13 @@
         null,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/initializers/mime_types.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/initializers/wrap_parameters.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -253,18 +253,86 @@
         null,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/config/routes.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/config/routes.rb": [
+        1,
+        1,
         1,
         null,
         null,
         1,
-        null
-      ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/app/controllers/posts_controller.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/app/controllers/posts_controller.rb": [
+        1,
+        1,
+        6,
+        null,
+        null,
+        1,
+        7,
+        7,
+        null,
+        null,
+        1,
+        null,
+        10,
+        null,
+        null,
+        1,
+        null,
+        1,
+        7,
+        null,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/spec/controllers/users_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/app/controllers/users_controller.rb": [
         1,
         1,
         2,
@@ -276,22 +344,16 @@
         null,
         null,
         1,
-        3,
-        null,
-        null,
         1,
+        null,
         null,
         1,
         3,
         null,
+        null,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/spec/features/multiline_posts_spec.rb": [
         1,
         null,
         1,
@@ -304,23 +366,141 @@
         null,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/spec/models/post_spec.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/spec/features/posts_reverse_chrono_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/spec/features/posts_show_date_created_at_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/spec/features/user_can_submit_posts_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/spec/features/users_can_register_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/spec/helpers/users_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/spec/models/post_spec.rb": [
         1,
         null,
         1,
         2,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/app/models/post.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/app/models/post.rb": [
         1,
         null
       ],
-      "/Users/shannongamby/Desktop/Projects/acebook-stars/app/models/application_record.rb": [
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/app/models/application_record.rb": [
         1,
+        1,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/raylenesmith/Desktop/Projects/acebook-stars/spec/views/users/new.html.erb_spec.rb": [
+        1,
+        null,
         1,
         null
       ]
     },
-    "timestamp": 1542634901
+    "timestamp": 1542649986
   }
 }
