@@ -15,6 +15,5 @@ deploy:
   app: mighty-shore-72320
   run:
     - bin/rails db:migrate
-  branches:
-    only:
-      - master
+  on:
+    branch: master
