@@ -11,3 +11,4 @@ AllCops:
     - 'spec/rails_helper.rb'
     - 'Gemfile'
     - 'Rakefile'
+    - 'vendor/bundle/**/*'
