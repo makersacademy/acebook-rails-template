@@ -2,9 +2,10 @@ language: ruby
 cache: bundler
 rvm:
 - 2.5.1
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
 script:
-- bin/rails db:create
-- bin/rails db:migrate
 - bundle exec rspec spec
 deploy:
   provider: heroku

@@ -1,26 +1,13 @@
-# AceBook
+# Acebook
 
-REQUIRED INSTRUCTIONS:
+## How to Use
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+### Linting
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+* Run `rubocop` in the command line.
 
-2. The card wall is here: <please update>
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+## Testing
 
-## Quickstart
-
-First, clone this repository. Then:
-
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
-```
+### Test coverage
+* After running tests, open `coverage/index.html` to see test coverage.
