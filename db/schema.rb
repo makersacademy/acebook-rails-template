@@ -20,5 +20,6 @@ ActiveRecord::Schema.define(version: 20_170_526_114_520) do
     t.string 'message'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.integer 'user_id'
   end
 end
