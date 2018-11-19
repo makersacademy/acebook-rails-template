@@ -1,5 +1,12 @@
 language: ruby
 script:
-  - bundle exec bin/rails db:create
-  - bundle exec bin/rails db:migrate
-  - bundle exec rake
+- bundle exec bin/rails db:create
+- bundle exec bin/rails db:migrate
+- bundle exec rake
+deploy:
+  provider: heroku
+  api_key:
+    secure: hwEAsk7yzCjrhQOIsCbKUwWrXjLOYRBxLrSi/q2zF5ZHl6ffJ9jbOd5k4x6Ry4Ia1VUwn7X3Jm0RrW7EzVB7i0m9OuAgZemxTiyGE3s+4mfLVAUOjWwL6zrzAM0PGSKOAvTm4hDlUfDZo3WoSpebOLRlvm4eJoK0iq1b6qLbsFFQ2+0WusWgdO0xHMEFyEWgx/XwklPw1lszGn49/OlIDDSk/ihcWyz9ZOai4qNwF7sjRgwhKedVsRZ4u8mQPHIc9kCmLCRlfzGDxSTDIdGYemSjdvT8mC7VGhgIk2K+hNsorCokG+L11ZADp9CluXBPUAT2YUMB4B/z+CZENQsWL/ourT+YgEVtHNPd0oRsyhAwuYZ1qzDRJDgZ2GTB/AaPFFmNU3BvUm08G+OYZLiB6oQ03fE2AUcn+L/bLpZdX/rTwya0ECjZFmZtpzDoCbTsHd0lli3R7vEDTFbWBctBxVwOfPla2VOCyZi0aX/i/FLQoHPbLPJS0lnaKHjZXZ72ESGbzduKzVQozBy4dDn2U+22ImeCT7QkUaCVUtgisCvwCGlCC9cAtUQ97jwfrLn1zrn7qlwF6rnj2O1Jf/tiqH9TF4C2VRIgO/rGofGWxApJvtw8/ecUuvtzEbwK79IIqxo2+9uDz9Z/WANo1HCQ8J8DY+3axbzv5o8vzKbh+iY=
+  app: acebook-breakfast-club
+  on:
+    repo: chloeverity/acebook-breakfast-club
