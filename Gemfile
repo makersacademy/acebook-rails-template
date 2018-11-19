@@ -38,6 +38,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov'
+  gem 'simplecov-console'
 end
 
 group :development do
