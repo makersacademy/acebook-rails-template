@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/spec/controllers/posts_controller_spec.rb": [
+      "/Users/robin/Projects/acebook-gracebook/spec/controllers/posts_controller_spec.rb": [
         null,
         null,
         1,
@@ -34,7 +34,7 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/spec/rails_helper.rb": [
+      "/Users/robin/Projects/acebook-gracebook/spec/rails_helper.rb": [
         null,
         null,
         null,
@@ -95,7 +95,7 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/environment.rb": [
+      "/Users/robin/Projects/acebook-gracebook/config/environment.rb": [
         null,
         null,
         null,
@@ -104,7 +104,7 @@
         null,
         1
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/application.rb": [
+      "/Users/robin/Projects/acebook-gracebook/config/application.rb": [
         null,
         null,
         1,
@@ -126,14 +126,14 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/boot.rb": [
+      "/Users/robin/Projects/acebook-gracebook/config/boot.rb": [
         null,
         null,
         1,
         null,
         1
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/environments/test.rb": [
+      "/Users/robin/Projects/acebook-gracebook/config/environments/test.rb": [
         null,
         null,
         1,
@@ -179,7 +179,7 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/initializers/application_controller_renderer.rb": [
+      "/Users/robin/Projects/acebook-gracebook/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -189,7 +189,7 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/initializers/assets.rb": [
+      "/Users/robin/Projects/acebook-gracebook/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -207,7 +207,7 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/initializers/backtrace_silencers.rb": [
+      "/Users/robin/Projects/acebook-gracebook/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -218,16 +218,8 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/initializers/cookies_serializer.rb": [
+      "/Users/robin/Projects/acebook-gracebook/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
@@ -235,7 +227,15 @@
         null,
         1
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/initializers/inflections.rb": [
+      "/Users/robin/Projects/acebook-gracebook/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/robin/Projects/acebook-gracebook/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -255,7 +255,7 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/initializers/mime_types.rb": [
+      "/Users/robin/Projects/acebook-gracebook/config/initializers/mime_types.rb": [
         null,
         null,
         null,
@@ -263,7 +263,7 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/initializers/wrap_parameters.rb": [
+      "/Users/robin/Projects/acebook-gracebook/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -281,7 +281,7 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/config/routes.rb": [
+      "/Users/robin/Projects/acebook-gracebook/config/routes.rb": [
         null,
         null,
         1,
@@ -292,17 +292,20 @@
         1,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/app/helpers/application_helper.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/helpers/application_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/app/helpers/users_helper.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/helpers/users_helper.rb": [
+        null,
+        null,
+        null,
         1,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/app/controllers/posts_controller.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/controllers/posts_controller.rb": [
         null,
         null,
         1,
@@ -326,15 +329,15 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/app/controllers/application_controller.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/controllers/application_controller.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/spec/controllers/users_controller_spec.rb": [
-        1,
+      "/Users/robin/Projects/acebook-gracebook/spec/controllers/users_controller_spec.rb": [
+        null,
         null,
         1,
         null,
@@ -342,42 +345,12 @@
         1,
         1,
         1,
-        null,
+        1,
         null,
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/app/controllers/users_controller.rb": [
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/spec/features/user_can_submit_posts_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/spec/helpers/users_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+      "/Users/robin/Projects/acebook-gracebook/app/controllers/users_controller.rb": [
         null,
         null,
         null,
@@ -385,7 +358,41 @@
         1,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/spec/models/post_spec.rb": [
+      "/Users/robin/Projects/acebook-gracebook/spec/features/user_can_submit_posts_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/robin/Projects/acebook-gracebook/spec/helpers/users_helper_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/robin/Projects/acebook-gracebook/spec/models/post_spec.rb": [
         null,
         null,
         1,
@@ -394,22 +401,23 @@
         2,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/app/models/post.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/models/post.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/app/models/application_record.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/models/application_record.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/spec/models/user_spec.rb": [
-        1,
+      "/Users/robin/Projects/acebook-gracebook/spec/models/user_spec.rb": [
         null,
+        null,
+        1,
         null,
         1,
         1,
@@ -417,9 +425,6 @@
         null,
         1,
         1,
-        null,
-        1,
-        1,
         1,
         null,
         1,
@@ -434,7 +439,6 @@
         1,
         1,
         null,
-        null,
         1,
         1,
         1,
@@ -443,9 +447,6 @@
         1,
         1,
         null,
-        null
-      ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/app/models/user.rb": [
         1,
         1,
         1,
@@ -453,7 +454,21 @@
         null,
         null
       ],
-      "/Users/rebeccamulugeta/Projects/acebook-gracebook/spec/views/users/new.html.erb_spec.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/models/user.rb": [
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/robin/Projects/acebook-gracebook/spec/views/users/new.html.erb_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -461,6 +476,6 @@
         null
       ]
     },
-    "timestamp": 1542642811
+    "timestamp": 1542644684
   }
 }
