@@ -10,8 +10,7 @@ script:
 - bundle exec rspec
 deploy:
   provider: heroku
-  api_key:
-    secure: 53be322c-b216-461c-b05e-18ab700c8a40
+  api_key: 53be322c-b216-461c-b05e-18ab700c8a40
   app: acebook-stars
   run:
     - bin/rails db:migrate
