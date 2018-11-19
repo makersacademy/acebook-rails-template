@@ -8,5 +8,5 @@ script:
 - bundle exec rspec spec
 deploy:
   provider: heroku
-  api_key: 6eba380e-4b5d-4586-8426-1e5b0d08d936
+  api_key: 5fe3e605-4b5a-4bbe-99da-d53836efc5e5
   app: acebook
