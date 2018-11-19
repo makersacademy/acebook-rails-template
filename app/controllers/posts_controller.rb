@@ -9,7 +9,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    # This method is getting all posts from database and sorting by created_at
+    @posts = Post.order('created_at DESC')
   end
 
   private
