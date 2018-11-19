@@ -1,5 +1,8 @@
 # AceBook
 
+[![Build Status](https://travis-ci.com/toddpla/acebook-rails-template.svg?branch=master)](https://travis-ci.com/toddpla/acebook-rails-template)
+[![Coverage Status](https://coveralls.io/repos/github/toddpla/acebook-stars/badge.svg?branch=master)](https://coveralls.io/github/toddpla/acebook-stars?branch=master)
+
 Team:
 [Shannon Gamby](https://github.com/shannongamby)
 [Alfie Freeman](https://github.com/runticle)
