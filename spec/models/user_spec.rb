@@ -24,4 +24,13 @@ RSpec.describe User, type: :model do
     @user.email = "n" * 244 + '@example.com'
     expect(@user.valid?).to eq(false)
   end
-end
+
+  it 'should accept a valid email address' do
+    @user.email = "someuser@example.com"
+    expect(@user.valid?).to eq(true)
+  end
+  it "should not accept invalid email" do
+    @user.email = "some.@example.@.com"
+      expect(@user.valid?).to eq(false)
+    end
+  end
