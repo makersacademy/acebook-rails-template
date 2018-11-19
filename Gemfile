@@ -8,6 +8,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
+gem 'bcrypt'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -38,6 +40,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem "rubocop", "~> 0.60.0"
   gem "simplecov", "~> 0.16.1"
+  gem 'coveralls'
   gem "simplecov-console", "~> 0.4.2"
 end
 
