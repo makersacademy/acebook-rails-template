@@ -1,0 +1,13 @@
+<%= form_for(:session, url: login_path) do |form| %>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+  <%= form.submit "Log in" %>
+<% end %>
+
+
+New user?
+<%= link_to new_user_path do %>
+  Register
+<% end %>
