@@ -1,9 +1,14 @@
 inherit_from: .rubocop_todo.yml
 
 AllCops:
+  TargetRubyVersion: 2.5
   Exclude:
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
     - 'bin/{rails,rake}'
-    - !ruby/regexp /old_and_unused\.rb$/
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'vendor/bundle/**/*'
