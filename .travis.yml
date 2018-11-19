@@ -1,1 +1,4 @@
 language: ruby
+scripts:
+  - bundle exec bin/rails db:create
+  - bundle exec bin/rails db:migrate
