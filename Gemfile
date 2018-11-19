@@ -36,6 +36,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem "rubocop", "~> 0.60.0"
+  gem "simplecov", "~> 0.16.1"
+  gem "simplecov-console", "~> 0.4.2"
 end
 
 group :development do

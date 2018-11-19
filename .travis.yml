@@ -14,4 +14,4 @@ deploy:
   run: rake db:migrate
   app:
     master:
-    production: 
+    production:
