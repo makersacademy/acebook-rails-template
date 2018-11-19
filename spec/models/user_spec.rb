@@ -32,7 +32,14 @@ describe User, type: :model do
   end
   it 'should have a unique email' do
     duplicate_user = @user.dup
+    duplicate_user.email = @user.email.upcase
     @user.save
     expect(duplicate_user.valid?).to eq(false)
+  end
+  it 'should save the email as lower-case' do
+    mixed_case_email = 'WaVeY@example.com'
+    @user.email = mixed_case_email
+    @user.save
+    expect(mixed_case_email.downcase).to eq(@user.reload.email)
   end
 end
