@@ -2,7 +2,6 @@
 
 # user controller
 class UsersController < ApplicationController
-
   def show
     @user = User.find(params[:id])
   end
@@ -13,18 +12,18 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-      if @user.save
-
-      else
-        render 'new'
-      end
+    if @user.save
+      flash[:success] = 'Welcome to Acebook'
+      redirect_to @user
+    else
+      render 'new'
+    end
   end
 
-private
+  private
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
-    :password_confirmation)
+                                 :password_confirmation)
   end
-
 end
