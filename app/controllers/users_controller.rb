@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to users_url
+    redirect_to users_registration_confirmation_url
   end
 
   def index
