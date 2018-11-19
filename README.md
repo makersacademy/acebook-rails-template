@@ -1,6 +1,6 @@
 # Acebook
 
-## How to Use
+## Code Quality
 
 ### Linting
 
