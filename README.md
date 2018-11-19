@@ -24,3 +24,31 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+## Heroku App Link
+
+https://rocky-savannah-39650.herokuapp.com/
+
+## User Stories
+
+`````
+As a user,
+so that I can use AceBook,
+I want to sign up and login.
+
+As a user,
+so that I can let the world know what I am up to,
+I want to create a post.
+
+As a user,
+so that I can fix mistakes,
+I want to able to edit and delete post.
+
+As a user,
+so that I can engage in a healthy debate,
+I want to comment on other users post.
+
+As a user,
+so that I can connect with users,
+I want to add other users as friends.
+
+``````
