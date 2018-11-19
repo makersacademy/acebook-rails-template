@@ -4,7 +4,8 @@ require 'rails_helper'
 
 describe User, type: :model do
   before do
-    @user = User.new(name: 'example', email: 'example@example.com')
+    @user = User.new(name: 'example', email: 'example@example.com',
+            password: 'password', password_confirmation: 'password')
   end
   it 'name should be present' do
     @user.name = ''
@@ -22,10 +23,6 @@ describe User, type: :model do
     @user.email = 'n' * 244 + '@example.com'
     expect(@user.valid?).to eq(false)
   end
-  it 'should accept a valid email address' do
-    @user.email = 'someuser@example.com'
-    expect(@user.valid?).to eq(true)
-  end
   it 'should not accept invalid email' do
     @user.email = 'some.@example.@.com'
     expect(@user.valid?).to eq(false)
@@ -42,4 +39,13 @@ describe User, type: :model do
     @user.save
     expect(mixed_case_email.downcase).to eq(@user.reload.email)
   end
+  it 'password should be present' do
+    @user.password = @user.password_confirmation = '' * 5
+    expect(@user.valid?).to eq(false)
+  end
+  it 'password should have a minimum length' do
+    @user.password = @user.password_confirmation = 'a' * 5
+    expect(@user.valid?).to eq(false)
+  end
+
 end

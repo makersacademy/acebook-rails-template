@@ -421,7 +421,8 @@
         null,
         1,
         1,
-        8,
+        9,
+        null,
         null,
         1,
         1,
@@ -446,10 +447,6 @@
         1,
         1,
         1,
-        null,
-        1,
-        1,
-        1,
         1,
         1,
         null,
@@ -458,6 +455,15 @@
         1,
         1,
         1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
         null,
         null
       ],
@@ -472,6 +478,8 @@
         1,
         null,
         null,
+        1,
+        1,
         null
       ],
       "/Users/robin/Projects/acebook-gracebook/spec/views/users/new.html.erb_spec.rb": [
@@ -484,6 +492,6 @@
         null
       ]
     },
-    "timestamp": 1542645381
+    "timestamp": 1542646366
   }
 }
