@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+- 2.5.0
+services:
+- postgresql
+script:
+- bin/rails db:create
+- bin/rails db:migrate
+- bin/rails db:test:prepare
+- bundle exec rspec
+deploy:
+  provider:
+  api_key:
+  run: rake db:migrate
+  app:
+    master:
+    production: 
