@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  p self.superclass
   protect_from_forgery with: :exception
   include SessionsHelper
 
@@ -13,6 +14,7 @@ class ApplicationController < ActionController::Base
   private
 
   def require_login
-    redirect_to login_url unless session[:user_id]
+    # redirect_to login_url unless session[:user_id]
+    redirect_to login_url unless current_user
   end
 end
