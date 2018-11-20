@@ -1,4 +1,10 @@
+[![Build Status](https://travis-ci.com/rbbri/acebook-gracebook.svg?branch=master)](https://travis-ci.com/rbbri/acebook-gracebook)
+
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/rbbri/acebook-gracebook.svg?columns=all)](https://waffle.io/rbbri/acebook-gracebook)
+
+[![Coverage Status](https://coveralls.io/repos/github/rbbri/acebook-gracebook/badge.svg?branch=master)](https://coveralls.io/github/rbbri/acebook-gracebook?branch=master)
+
+
 
 # AceBook
 
