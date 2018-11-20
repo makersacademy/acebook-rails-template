@@ -11,7 +11,7 @@ script:
 deploy:
   provider: heroku
   api_key: 53be322c-b216-461c-b05e-18ab700c8a40
-  app: acebook-stars
+  app: acebook-rails-template
   run:
     - bin/rails db:migrate
   on:
