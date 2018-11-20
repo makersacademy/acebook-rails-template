@@ -241,6 +241,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport (~> 5.1)
   bcrypt
   byebug
   capybara (~> 2.13)
