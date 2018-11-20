@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'users/registration_confirmation'
   get 'users/show'
 
+  root to: 'application#redirect_to_login'
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'

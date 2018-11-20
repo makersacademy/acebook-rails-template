@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
 
   before_action :require_login
 
+  def redirect_to_login
+    redirect_to login_url
+  end
+
   private
 
   def require_login
