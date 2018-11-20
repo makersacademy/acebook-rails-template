@@ -26,6 +26,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it 'creates a post' do
+      FactoryGirl.create(:user)
       post :create, params: { post: { message: 'Hello, world!' } }
       post = Post.find_by(message: 'Hello, world!')
       expect(post).to be

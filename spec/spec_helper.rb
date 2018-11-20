@@ -7,6 +7,7 @@ require_relative './api_controller_helper'
 Coveralls.wear!
 
 RSpec.configure do |config|
+
   config.include ApiControllerHelper
 
   config.before(:suite) do

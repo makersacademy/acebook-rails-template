@@ -7,11 +7,19 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params.merge({user_id: current_user.id}))
+    p @post.id
     redirect_to posts_url
   end
 
   def index
     @posts = Post.order('created_at DESC')
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_path
   end
 
   private
