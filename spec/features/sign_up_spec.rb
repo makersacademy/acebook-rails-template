@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Sign up", type: :feature do
+RSpec.feature 'Sign in', type: :feature do
   let(:user) { build(:user) }
 
   before do
@@ -13,7 +13,6 @@ RSpec.feature "Sign up", type: :feature do
   end
 
   scenario 'user can sign up successfully' do
-    save_and_open_page
     fill_in 'user[name]', with: user.name
     fill_in 'user[email]', with: user.email
     fill_in 'user[password]', with: user.password
