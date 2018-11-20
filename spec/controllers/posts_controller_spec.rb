@@ -4,6 +4,9 @@ require 'rails_helper'
 require 'web_helpers'
 
 RSpec.describe PostsController, type: :controller do
+
+  let(:user) {double :user, id: 1}
+
   describe 'GET /new ' do
     it 'responds with 302 (redirect)' do
       get :new
@@ -12,8 +15,9 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe 'POST /' do
+
     before(:each) do
-      session[:user_id] = 63
+      stub_current_user(user)
     end
 
     it 'responds with 200' do
@@ -23,7 +27,9 @@ RSpec.describe PostsController, type: :controller do
 
     it 'creates a post' do
       post :create, params: { post: { message: 'Hello, world!' } }
-      expect(Post.find_by(message: 'Hello, world!')).to be
+      post = Post.find_by(message: 'Hello, world!')
+      expect(post).to be
+      expect(post.user.id).to be 1
     end
   end
 

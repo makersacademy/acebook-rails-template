@@ -3,11 +3,14 @@ rvm:
 - 2.5.0
 services:
 - postgresql
+
 script:
 - bin/rails db:create
 - bin/rails db:migrate
 - bin/rails db:test:prepare
 - bundle exec rspec
+- bundle exec rake db:reset RAILS_ENV=test
+
 deploy:
   provider: heroku
   api_key: 53be322c-b216-461c-b05e-18ab700c8a40
