@@ -10,4 +10,14 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).not_to have_content('Hello, world!')
   end
 
+  scenario 'user can only delete their own posts' do
+    user_1 = FactoryGirl.create(:user)
+    signin(user_1)
+    create_post
+    visit('/logout')
+    user_2 = FactoryGirl.create(:user)
+    signin(user_2)
+    expect(page).not_to have_content("❌")
+  end
+
 end
