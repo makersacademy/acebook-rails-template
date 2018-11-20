@@ -1,5 +1,5 @@
-<% unless session[:user_id].nil? %>
-Welcome to Acebook <%= @user.name %>
+<% if current_user %>
+Welcome to Acebook <%= current_user.name %>
 <% end %>
 
 <% @posts.each do |post| %>
@@ -9,4 +9,8 @@ Welcome to Acebook <%= @user.name %>
 
 <%= link_to new_post_path do %>
   New post
+<% end %>
+
+<%= link_to logout_path, { :action => 'delete' } do %>
+  Log out
 <% end %>

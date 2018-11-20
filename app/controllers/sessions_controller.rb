@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+
+  skip_before_action :require_login
+
   def new
   end
 
@@ -14,6 +17,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    log_out
+    redirect_to login_url
   end
 
   def session_params

@@ -11,7 +11,6 @@ class PostsController < ApplicationController
   def index
     # This method is getting all posts from database and sorting by created_at
     @posts = Post.order('created_at DESC')
-    @user = User.find(session[:user_id])
   end
 
   private
