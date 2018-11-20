@@ -1,5 +1,6 @@
-module SessionsHelper
+# frozen_string_literal: true
 
+module SessionsHelper
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -10,9 +11,6 @@ module SessionsHelper
   end
 
   def current_user
-    if session[:user_id]
-      @current_user ||= User.find_by(id: session[:user_id])
-    end
+    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
-
 end
