@@ -7,3 +7,7 @@
   <%= form.password_field :password %>
   <%= form.submit "Submit" %>
 <% end %>
+
+  <% if flash[:danger] %>
+    <%= flash[:danger].html_safe%>
+  <% end %>
