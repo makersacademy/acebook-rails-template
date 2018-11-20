@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov'
   gem 'simplecov-console'
+  gem 'timecop'
 end
 
 group :development do
