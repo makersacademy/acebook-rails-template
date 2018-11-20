@@ -19,4 +19,11 @@ def signin(user)
   fill_in('Email', with: user.email)
   fill_in('Password', with: user.password)
   click_button('Log in')
+
+ def signup2
+  visit('users/new')
+  fill_in('Name', with: 'Ray')
+  fill_in('Email', with: 'user2@email.com')
+  fill_in('Password', with: 'password')
+  click_button('Submit')
 end
