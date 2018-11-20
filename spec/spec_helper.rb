@@ -1,3 +1,7 @@
+require 'capybara'
+require 'selenium-webdriver'
+require 'factory_bot'
+require 'factory_bot_rails'
 require 'simplecov'
 require 'simplecov-console'
 
@@ -5,8 +9,10 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                 SimpleCov::Formatter::Console
                                                                 ])
   SimpleCov.start
-  
+
 RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
