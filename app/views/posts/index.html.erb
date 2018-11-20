@@ -1,11 +1,13 @@
-
 <%= link_to new_post_path do %>
   New post
 <% end %>
 <br>
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-  <p><%= post.updated_at.strftime("%I:%M %p") %></p>
-  <%= link_to 'Edit', edit_post_path(post) %>
-  <%= link_to 'Delete', post_path(post), method: :delete %>
-<% end %>
+
+<div class="posts">
+  <% @posts.each do |post| %>
+    <p><%= post.message %></p>
+    <p><%= post.updated_at.strftime('%I:%M %p, %A, %b %d') %></p>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Delete', post_path(post), method: :delete %>
+  <% end %>
+</div>

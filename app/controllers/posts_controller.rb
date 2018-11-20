@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order('updated_at DESC')
   end
 
   def edit
@@ -20,11 +20,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(message: post_params, user_id: session[:user_id])
-      redirect_to posts_url
-    else
-      render 'edit'
-    end
+    redirect_to posts_url if @post.update(post_params)
   end
 
   def destroy
