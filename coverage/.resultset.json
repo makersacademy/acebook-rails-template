@@ -505,26 +505,6 @@
         1,
         null
       ],
-      "/Users/robin/Projects/acebook-gracebook/spec/models/article_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/robin/Projects/acebook-gracebook/app/models/article.rb": [
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/robin/Projects/acebook-gracebook/app/models/application_record.rb": [
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
       "/Users/robin/Projects/acebook-gracebook/spec/models/post_spec.rb": [
         null,
         null,
@@ -537,6 +517,13 @@
       "/Users/robin/Projects/acebook-gracebook/app/models/post.rb": [
         null,
         null,
+        1,
+        null
+      ],
+      "/Users/robin/Projects/acebook-gracebook/app/models/application_record.rb": [
+        null,
+        null,
+        1,
         1,
         null
       ],
@@ -682,6 +669,6 @@
         null
       ]
     },
-    "timestamp": 1542716722
+    "timestamp": 1542722013
   }
 }
