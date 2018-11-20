@@ -15,6 +15,15 @@ def sign_up
   click_button 'Create my account'
 end
 
+def sign_up_as_second_user
+  visit '/'
+  fill_in 'Name', with: 'Bob Jones'
+  fill_in 'Email', with: 'bob@mail.com'
+  fill_in 'Password', with: 'bob12345'
+  fill_in 'Password Confirmation', with: 'bob12345'
+  click_button 'Create my account'
+end
+
 def log_out
   click_link 'Log out'
 end
