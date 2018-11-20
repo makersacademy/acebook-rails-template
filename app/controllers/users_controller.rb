@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  skip_before_action :require_login
+
   def new
     @user = User.new
   end
@@ -13,6 +16,7 @@ class UsersController < ApplicationController
       log_in @user
       redirect_to posts_url
     else
+      flash.now[:danger] = "Password must be 6-10 characters long"
       render 'new'
     end
   end
