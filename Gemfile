@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'warden'
 end
 
 group :development do
