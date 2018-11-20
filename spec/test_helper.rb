@@ -23,3 +23,10 @@ def log_in
   fill_in 'Password', with: 'password'
   click_button 'Log in'
 end
+
+def create_post
+  visit '/posts'
+  click_link 'New post'
+  fill_in 'Message', with: 'This is a new post'
+  click_button 'Submit'
+end
