@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'test_helper'
 
 RSpec.describe "UsersSignups", type: :request do
   describe "GET /users_signups" do
@@ -12,6 +13,7 @@ RSpec.describe "UsersSignups", type: :request do
       }
       }
       expect(response).to render_template(:new)
+      expect(user.is_logged_in?).to be(true)
     end
   end
 
