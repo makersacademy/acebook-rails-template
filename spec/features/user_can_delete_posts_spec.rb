@@ -1,5 +1,7 @@
 RSpec.feature 'Timeline', type: :feature do
   scenario 'Can submit posts and edit them' do
+    user = create(:user)
+    login_as(user, scope: :user)
     visit '/posts'
     click_link 'New post'
     fill_in 'post[message]', with: 'This is a test post!'
