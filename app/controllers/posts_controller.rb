@@ -20,7 +20,11 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(message: params[:post][:message])
+    if current_user.id == @post.user_id
+      @post.update(message: params[:post][:message])
+    else
+      flash[:danger] = "fuck off, this is not yours!"
+    end
     redirect_to posts_url
   end
 
