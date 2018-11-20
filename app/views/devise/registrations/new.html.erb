@@ -1,6 +1,5 @@
 <h2>Sign up</h2>
 
-<%= puts "RESOURCE: " + resource.to_s + "RESOURCE_NAME: " + resource_name.to_s + "REGISTRATION_PATH: " + registration_path(resource_name)%>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -31,5 +30,3 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
