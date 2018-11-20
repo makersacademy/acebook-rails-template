@@ -21,7 +21,9 @@ Coveralls.wear!
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console
 ])
-SimpleCov.start
+SimpleCov.start do
+  add_filter "helper"
+end
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 #
