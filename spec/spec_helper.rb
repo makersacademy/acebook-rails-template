@@ -1,7 +1,5 @@
 require 'simplecov'
 require 'database_cleaner'
-require_relative 'factories'
-require_relative 'support/factory_girl'
 SimpleCov.start 'rails'
 
 RSpec.configure do |config|
