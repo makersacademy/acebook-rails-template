@@ -8,4 +8,6 @@
   <%= form.submit "Submit" %>
 <% end %>
 
-<%= flash[:danger]%>
+  <% if flash[:danger] %>
+    <%= flash[:danger].html_safe%>
+  <% end %>

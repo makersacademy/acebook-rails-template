@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       log_in @user
       redirect_to posts_url
     else
-      flash.now[:danger] = "Password must be 6-10 characters long"
+      flash.now[:danger] = "<ul> Invalid email or password: <li> Password must be 6-10 characters long </li> <li> Email must include an @ symbol </li></ul>"
       render 'new'
     end
   end
