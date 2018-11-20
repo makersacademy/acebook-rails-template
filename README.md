@@ -7,7 +7,7 @@ the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+2. The card wall is [here](https://waffle.io/rekapap/acebook-rails-template)
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -23,4 +23,12 @@ First, clone this repository. Then:
 
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
+```
+
+## Testing
+
+Run this command in your command line:
+
+```bash
+rake testcode
 ```
