@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def create
     params_with_user = post_params
-    post_params[:user_id] = current_user.id
+    params_with_user[:user_id] = current_user.id
     @post = Post.create(params_with_user)
     redirect_to posts_url
   end
