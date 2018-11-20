@@ -1,6 +1,6 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=ABC123
+    - CC_TEST_REPORTER_ID
 
 before_install:
   - gem update --system
