@@ -13,10 +13,7 @@ RSpec.feature "New Post", type: :feature do
 #     expect(current_path).to eq '/posts/new'
 #   end
     scenario "Can create posts with new lines" do
-      visit "/posts"
-      click_link "New post"
-      fill_in "Message", with: "Hello, world\nBye world"
-      click_button "Submit"
+      post_message("Hello, world\nBye world")
       expect(page).to have_content "Hello, world\nBye world"
     end
 end
