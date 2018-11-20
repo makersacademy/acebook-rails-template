@@ -23,4 +23,16 @@ RSpec.feature "Signing Up", type: :feature do
     expect(page).to have_content 'Password is too short (minimum is 6 characters)'
   end
 
+  scenario "password must shorter than 10 characters" do
+    visit('/')
+    click_link('Register')
+    fill_in(:user_name, with: "user1")
+    fill_in(:user_email, with: "user1@test.com")
+    fill_in(:user_password, with: "11111111111")
+    fill_in(:user_password_confirmation, with: "11111111111")
+    click_button 'Sign up'
+    save_and_open_page
+    expect(page).to have_content 'Password is too long (maximum is 10 characters)'
+  end
+
 end
