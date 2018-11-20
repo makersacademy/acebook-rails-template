@@ -1,2 +1,6 @@
 <h1>Hello Acebook!</h1>
 <%= link_to 'View Posts', controller: 'posts' %>
+
+<% unless user_signed_in? %>
+  <%= link_to 'Sign up', new_user_registration_path %>
+<% end %>
