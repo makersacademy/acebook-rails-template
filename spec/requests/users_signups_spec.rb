@@ -13,7 +13,6 @@ RSpec.describe "UsersSignups", type: :request do
       }
       }
       expect(response).to render_template(:new)
-      expect(user.is_logged_in?).to be(true)
     end
   end
 
