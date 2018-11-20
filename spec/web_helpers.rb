@@ -8,7 +8,20 @@ def signup
   click_button('Submit')
 end
 
-def signup2
+def create_post
+  click_link 'New post'
+  fill_in 'Message', with: 'Hello, world!'
+  click_button 'Submit'
+end
+
+def signin(user)
+  visit('/login')
+  fill_in('Email', with: user.email)
+  fill_in('Password', with: user.password)
+  click_button('Log in')
+end
+
+ def signup2
   visit('users/new')
   fill_in('Name', with: 'Ray')
   fill_in('Email', with: 'user2@email.com')

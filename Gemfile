@@ -43,6 +43,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'simplecov', '~> 0.16.1'
   gem 'simplecov-console', '~> 0.4.2'
+  gem "factory_girl_rails", "~> 4.9"
+  gem "faker", "~> 1.9"
+  gem "database_cleaner", "~> 1.7"
 end
 
 group :development do
