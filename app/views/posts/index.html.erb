@@ -8,7 +8,7 @@
 
   <% @posts.reverse.each do |post| %>
     <tr>
-      <td><%= post.message %></td>
+      <td><strong><%= post.message %></strong></td>
       <td><%= post.created_at.asctime %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
        <td><%= link_to 'Edit', edit_post_path(post) %></td>
