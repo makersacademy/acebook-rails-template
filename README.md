@@ -1,6 +1,4 @@
-# MakersBnB
-BnB listing and booking app built with Ruby, Sinatra, PostgreSQL
-## MVP User Stories to complete
+## User Stories
 
 `````
 As a lonely person
@@ -44,9 +42,6 @@ So that I can see the most relevant posts first
 I want to see posts in reverse chronological order
 `````
 
-## Domain Model
-![domain model](./public/images/diagram2.png)
-
 ## How to use
 
 ### To set up the project
@@ -54,7 +49,7 @@ I want to see posts in reverse chronological order
 Clone this repository and then run:
 
 ```
-$ bundle
+bundle
 ```
 
 ### To set up the database
@@ -62,21 +57,22 @@ $ bundle
 Run the Rakefile:
 
 ```
-$ rake setup
+rake setup
 ```
 
 ### To run the AceBook app:
 
 ```
-$ ruby app.rb
+bin/rails server
 ```
 
-To view the app in a browser, navigate to `localhost` followed by the port (default is `4567`), e.g. `localhost:4567`.
+To view the app in a browser, navigate to `localhost` followed by the port (default is `3000`), e.g. `localhost:3000`.
+
 
 ### To run tests:
 
-```
-rspec
+```bash
+rake testcode
 ```
 
 ### To run linting:
@@ -88,3 +84,7 @@ rubocop
 ## Future updates
 
 1. ...
+
+
+## Cardwall
+The card wall is [here](https://waffle.io/rekapap/acebook-rails-template)
