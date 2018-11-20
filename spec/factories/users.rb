@@ -8,5 +8,4 @@ FactoryBot.define do
     email
     password { 'password123' }
   end
-  
 end

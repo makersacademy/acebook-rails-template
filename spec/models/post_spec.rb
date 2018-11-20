@@ -6,6 +6,4 @@ RSpec.describe Post, type: :model do
     described_class.reflect_on_association(:user)
     expect(association).to eq :belongs_to
   end
-
-
 end
