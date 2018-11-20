@@ -14,6 +14,6 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in 'Message', with: 'My second post!'
     click_button 'Submit'
     time_2 = Time.now
-    expect(page).to have_content("My second post! #{time_2.strftime('%eth %b %Y %T')} My first post! #{time_1.strftime('%eth %b %Y %T')}")
+    expect(page).to have_content("My second post! ✏️ Alfie #{time_2.strftime('%eth %b %Y %T')} My first post! ✏️ Alfie #{time_1.strftime('%eth %b %Y %T')}")
   end
 end
