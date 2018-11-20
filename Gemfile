@@ -36,7 +36,6 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'database_cleaner'
-  gem 'factory_bot_rails', require: false
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'rspec-rails', '~> 3.5'
