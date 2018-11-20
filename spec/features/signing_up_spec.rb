@@ -31,8 +31,18 @@ RSpec.feature "Signing Up", type: :feature do
     fill_in(:user_password, with: "11111111111")
     fill_in(:user_password_confirmation, with: "11111111111")
     click_button 'Sign up'
-    save_and_open_page
     expect(page).to have_content 'Password is too long (maximum is 10 characters)'
+  end
+
+  scenario "user must enter a valid email" do
+    visit('/')
+    click_link('Register')
+    fill_in(:user_name, with: "user1")
+    fill_in(:user_email, with: "user1test.com")
+    fill_in(:user_password, with: "password1")
+    fill_in(:user_password_confirmation, with: "password1")
+    click_button 'Sign up'
+    expect(page).to have_content "Email is invalid"
   end
 
 end
