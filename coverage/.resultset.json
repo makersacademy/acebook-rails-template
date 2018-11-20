@@ -1,11 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/san-di/makersAcademy/acebook-rails-template/app/helpers/application_helper.rb": [
+      "/Users/judithlloyd-jones/Desktop/Projects/acebook-rails-template/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/san-di/makersAcademy/acebook-rails-template/app/controllers/posts_controller.rb": [
+      "/Users/judithlloyd-jones/Desktop/Projects/acebook-rails-template/app/controllers/posts_controller.rb": [
         1,
         1,
         2,
@@ -27,7 +27,8 @@
         null,
         null
       ],
-      "/Users/san-di/makersAcademy/acebook-rails-template/app/controllers/application_controller.rb": [
+      "/Users/judithlloyd-jones/Desktop/Projects/acebook-rails-template/app/controllers/application_controller.rb": [
+        1,
         1,
         1,
         null,
@@ -37,38 +38,43 @@
         null,
         null
       ],
-      "/Users/san-di/makersAcademy/acebook-rails-template/app/models/post.rb": [
+      "/Users/judithlloyd-jones/Desktop/Projects/acebook-rails-template/app/models/post.rb": [
         1,
         null
       ],
-      "/Users/san-di/makersAcademy/acebook-rails-template/app/models/application_record.rb": [
+      "/Users/judithlloyd-jones/Desktop/Projects/acebook-rails-template/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/san-di/makersAcademy/acebook-rails-template/app/mailers/application_mailer.rb": [
+      "/Users/judithlloyd-jones/Desktop/Projects/acebook-rails-template/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/san-di/makersAcademy/acebook-rails-template/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/Users/san-di/makersAcademy/acebook-rails-template/app/channels/application_cable/connection.rb": [
+      "/Users/judithlloyd-jones/Desktop/Projects/acebook-rails-template/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/san-di/makersAcademy/acebook-rails-template/app/channels/application_cable/channel.rb": [
+      "/Users/judithlloyd-jones/Desktop/Projects/acebook-rails-template/app/jobs/application_job.rb": [
         0,
+        0
+      ],
+      "/Users/judithlloyd-jones/Desktop/Projects/acebook-rails-template/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/judithlloyd-jones/Desktop/Projects/acebook-rails-template/app/models/user.rb": [
         0,
         0,
         0
       ]
     },
-    "timestamp": 1542725228
+    "timestamp": 1542727966
   }
 }
