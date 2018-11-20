@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(message: post_params, user_id: session[:user_id])
     redirect_to posts_url
   end
 
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
+    if @post.update(message: post_params, user_id: session[:user_id])
       redirect_to posts_url
     else
       render 'edit'
