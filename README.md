@@ -65,7 +65,7 @@ Run the Rakefile:
 $ rake setup
 ```
 
-### To run the MakersBnB app:
+### To run the AceBook app:
 
 ```
 $ ruby app.rb
