@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  p self.superclass
   protect_from_forgery with: :exception
   include SessionsHelper
 
