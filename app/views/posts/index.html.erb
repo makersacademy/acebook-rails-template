@@ -1,3 +1,7 @@
+<% unless session[:user_id].nil? %>
+Welcome to Acebook <%= @user.name %>
+<% end %>
+
 <% @posts.each do |post| %>
   <p><%= simple_format(post.message) %></p>
   <p><%= post.updated_at.strftime("%eth %b %Y %T") %></p>

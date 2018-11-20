@@ -3,9 +3,18 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.create(user_params)
-    redirect_to users_registration_confirmation_url
+    if @user.save
+      log_in @user
+      redirect_to posts_url
+    else
+      render 'new'
+    end
   end
 
   def index
