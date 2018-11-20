@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'Timeline', type: :feature do
@@ -10,6 +12,6 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in 'Message', with: 'Bye, world!'
     click_button 'Submit'
     expect(page).to have_content('Bye, world!')
-    expect(page).to have_content(Time.now().strftime("%I:%M %p"))
+    expect(page).to have_content(Time.now.strftime('%I:%M %p'))
   end
 end

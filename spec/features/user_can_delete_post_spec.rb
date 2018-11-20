@@ -3,12 +3,12 @@
 require 'rails_helper'
 
 RSpec.feature 'Timeline', type: :feature do
-  scenario 'Can submit posts and view them' do
+  scenario 'User can delete a post' do
     visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
-    expect(page).to have_content('Hello, world!')
-    expect(page).to have_content(Time.now.strftime('%I:%M %p'))
+    click_link 'Delete'
+    expect(page).not_to have_content 'Hello, world!'
   end
 end
