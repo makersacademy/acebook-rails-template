@@ -1,4 +1,18 @@
 language: ruby
 rvm:
-  - 2.5.1
-  -jruby
+- 2.5.1
+services:
+- postgresql
+script:
+- bin/rails db:create
+- bin/rails db:migrate
+- bin/rails db:test:prepare
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key: 53be322c-b216-461c-b05e-18ab700c8a40
+  app: acebook-stars
+  run:
+    - bin/rails db:migrate
+  on:
+    branch: master
