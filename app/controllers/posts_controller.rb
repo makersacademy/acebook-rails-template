@@ -6,14 +6,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    params_with_user = post_params
-    params_with_user[:user_id] = current_user.id
-    @post = Post.create(params_with_user)
+    @post = Post.create(post_params.merge({user_id: current_user.id}))
     redirect_to posts_url
   end
 
   def index
-    # This method is getting all posts from database and sorting by created_at
     @posts = Post.order('created_at DESC')
   end
 

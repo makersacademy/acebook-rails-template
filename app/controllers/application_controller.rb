@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   private
 
   def require_login
-    redirect_to login_url unless session[:user_id]
+    # redirect_to login_url unless session[:user_id]
+    redirect_to login_url unless current_user
   end
 end
