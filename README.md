@@ -1,4 +1,7 @@
 # AceBook
+[![Build Status](https://travis-ci.org/RyanWolfen7/acebook-rails-template.svg?branch=master)](https://travis-ci.org/RyanWolfen7/acebook-rails-template)
+
+[![Waffle.io - Issues in progress](https://badge.waffle.io/RyanWolfen7/acebook-rails-template.png?label=in%20progress&title=In%20Progress)](http://waffle.io/RyanWolfen7/acebook-rails-template)
 
 REQUIRED INSTRUCTIONS:
 
