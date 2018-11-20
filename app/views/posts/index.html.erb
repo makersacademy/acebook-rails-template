@@ -6,7 +6,7 @@
     <th>Message</th>
   </tr>
 
-  <% @posts.each do |post| %>
+  <% @posts.reverse.each do |post| %>
     <tr>
       <td><%= post.message %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
