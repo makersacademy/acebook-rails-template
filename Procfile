@@ -2,5 +2,7 @@ build:
   languages:
     - ruby
 run:
-  bundle exec rake db:create db:migrate
+  rake: bundle exec
+  rails: db:create
+  rails: db:schema:load
   web: bundle exec rails server -p $PORT
