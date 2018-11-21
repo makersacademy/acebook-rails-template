@@ -18,4 +18,13 @@ RSpec.feature "Signing in", type: :feature do
     click_button 'Log in'
     expect(page).to have_content 'Invalid Email or password'
   end
+
+  scenario "incorrect password" do
+    visit('/')
+    click_link("Login")
+    fill_in(:user_email, with: "test@user.com")
+    fill_in(:user_password, with: "qwrty")
+    click_button 'Log in'
+    expect(page).to have_content 'Invalid Email or password'
+  end
 end
