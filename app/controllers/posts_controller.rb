@@ -16,6 +16,8 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    redirect_to posts_url if @post.user_id != current_user.id
+    flash[:danger] = 'You can only edit your own posts'
   end
 
   def update
