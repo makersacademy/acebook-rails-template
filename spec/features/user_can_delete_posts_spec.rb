@@ -16,7 +16,6 @@ RSpec.feature "Deleting posts", type: :feature do
     post_message("Hello, world!")
     click_link("Logout")
     signup2
-    post_message("Bye, world!")
     click_link("Hello, world!")
     click_button 'Delete'
     expect(page).to have_content("Error: You do not have permissions to delete this message")

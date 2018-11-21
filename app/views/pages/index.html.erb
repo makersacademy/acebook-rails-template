@@ -8,7 +8,7 @@
 
     <% @posts.each do |post| %>
       <pre>
-        <%= link_to user_post_path(user_id: post.user.id, id: post.id) do %>
+        <%= link_to user_post_path(user_id: post.user_id, id: post.id) do %>
           <%= post.message %>
         <% end %>
       </pre>
@@ -18,7 +18,7 @@
           <%= link_to new_user_post_path(current_user) do %>
           New post
         <% end %>
-        
+
     <% end %>
 
 

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @post = current_user.posts.create(post_params)
-    redirect_to user_posts_url(current_user)
+    redirect_to "/"
   end
 
   def index
@@ -24,11 +24,12 @@ class PostsController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
-    if @post.user_id == current_user.id
+    if @user.id == current_user.id
       @post.destroy
-      redirect_to user_posts_url(current_user)
+      redirect_to "/"
     else
       flash[:notice] = "Error: You do not have permissions to delete this message"
+      redirect_to user_post_path(user_id: @user.id, id: @post.id)
     end
   end
 

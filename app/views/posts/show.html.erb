@@ -1,4 +1,4 @@
 <p><%= @post.message  %></p>
 
 <%= button_to "Delete", {:controller => :posts,
-  :action => 'destroy', :id => @post.id }, :method => :delete %>
+  :action => 'destroy', :id => @post.id, :user_id => @post.user_id }, :method => :delete %>
