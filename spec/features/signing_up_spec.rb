@@ -10,7 +10,7 @@ RSpec.feature 'Signing Up', type: :feature do
 
   scenario 'password must be longer than 6 characters' do
     visit('/')
-    click_link('Register')
+    click_link('Register Now')
     fill_in(:user_name, with: 'user1')
     fill_in(:user_email, with: 'user1@test.com')
     fill_in(:user_password, with: '1')
@@ -21,7 +21,7 @@ RSpec.feature 'Signing Up', type: :feature do
 
   scenario 'password must shorter than 10 characters' do
     visit('/')
-    click_link('Register')
+    click_link('Register Now')
     fill_in(:user_name, with: 'user1')
     fill_in(:user_email, with: 'user1@test.com')
     fill_in(:user_password, with: '11111111111')
@@ -32,7 +32,7 @@ RSpec.feature 'Signing Up', type: :feature do
 
   scenario 'user must enter a valid email' do
     visit('/')
-    click_link('Register')
+    click_link('Register Now')
     fill_in(:user_name, with: 'user1')
     fill_in(:user_email, with: 'user1test.com')
     fill_in(:user_password, with: 'password1')

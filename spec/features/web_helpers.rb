@@ -8,7 +8,7 @@ end
 
 def signup1
   visit('/')
-  click_link('Register')
+  click_link('Register Now')
   fill_in(:user_name, with: 'user1')
   fill_in(:user_email, with: 'user1@test.com')
   fill_in(:user_password, with: 'password1')
@@ -18,7 +18,7 @@ end
 
 def signup2
   visit('/')
-  click_link('Register')
+  click_link('Register Now')
   fill_in(:user_name, with: 'user2')
   fill_in(:user_email, with: 'user2@test.com')
   fill_in(:user_password, with: 'password1')
