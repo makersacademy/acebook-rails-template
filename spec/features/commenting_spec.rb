@@ -9,7 +9,7 @@ RSpec.feature 'Commenting', type: :feature do
     create_post
     click_link 'Comment'
     fill_in 'Comment', with: 'Comment1'
-    click_link 'Comment'
+    click_button 'Comment'
     expect(page).to have_content 'Comment1'
   end
 

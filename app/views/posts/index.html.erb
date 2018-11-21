@@ -30,4 +30,12 @@ Welcome to Acebook <%= current_user.name %>
     Comment
   <% end %>
 
+  <ul>
+    <% post.comments.each do |comment| %>
+    <li>
+      <p><%= comment.comment %></p>
+    </li>
+      <% end %>
+  </ul>
+
 <% end %>
