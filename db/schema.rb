@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 20181121144730) do
     t.datetime "updated_at", null: false
     t.index ["cached_votes_down"], name: "index_commontator_comments_on_cached_votes_down"
     t.index ["cached_votes_up"], name: "index_commontator_comments_on_cached_votes_up"
-    t.index ["creator_id", "creator_type", "thread_id"], name: "index_commontator_comments_on_c_id_and_c_type_and_t_id"
-    t.index ["thread_id", "created_at"], name: "index_commontator_comments_on_thread_id_and_created_at"
+    t.index %w[creator_id creator_type thread_id], name: "index_commontator_comments_on_c_id_and_c_type_and_t_id"
+    t.index %w[thread_id created_at], name: "index_commontator_comments_on_thread_id_and_created_at"
   end
 
   create_table "commontator_subscriptions", id: :serial, force: :cascade do |t|
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20181121144730) do
     t.integer "thread_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subscriber_id", "subscriber_type", "thread_id"], name: "index_commontator_subscriptions_on_s_id_and_s_type_and_t_id", unique: true
+    t.index %w[subscriber_id subscriber_type thread_id], name: "index_commontator_subscriptions_on_s_id_and_s_type_and_t_id", unique: true
     t.index ["thread_id"], name: "index_commontator_subscriptions_on_thread_id"
   end
 
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20181121144730) do
     t.integer "closer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["commontable_id", "commontable_type"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true
+    t.index %w[commontable_id commontable_type], name: "index_commontator_threads_on_c_id_and_c_type", unique: true
   end
 
   create_table "likes", force: :cascade do |t|
