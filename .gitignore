@@ -26,3 +26,4 @@
 /coverage/index.html
 
 *.json
+*.json.lock
