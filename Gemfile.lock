@@ -61,9 +61,6 @@ GEM
       xpath (>= 2.0, < 4.0)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
-    commontator (5.1.0)
-      jquery-rails
-      rails (>= 5.0)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
     devise (4.5.0)
@@ -243,7 +240,6 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara (~> 2.13)
-  commontator
   devise
   factory_bot_rails
   jbuilder (~> 2.5)
