@@ -22,8 +22,4 @@
 
 .byebug_history]
 
-/coverage/resultset.json
-/coverage/index.html
-
-*.json
-*.json.lock
+coverage
