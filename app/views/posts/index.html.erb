@@ -35,6 +35,12 @@ Welcome to Acebook <%= current_user.name %>
       <li>
         <p><%= comment.comment %></p>
       </li>
+        <% if comment.user == current_user %>
+          <%= link_to '❌', post_comment_path(post, comment), method: :delete, id: "delete-#{comment.id}" %>
+          <% if comment.editable? %>
+            <%= link_to '✏️', edit_post_comment_path(post.id, comment.id) %>
+          <% end %>
+        <% end %>
         <% end %>
     </ul>
     </li>

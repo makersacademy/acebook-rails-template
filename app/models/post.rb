@@ -2,7 +2,7 @@
 
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :delete_all
 
   def editable?
     DateTime.now < (self.created_at + 10.minutes)
