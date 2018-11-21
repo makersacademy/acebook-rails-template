@@ -24,3 +24,5 @@
 
 /coverage/resultset.json
 /coverage/index.html
+
+*.json
