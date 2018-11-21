@@ -16,13 +16,11 @@ ActiveRecord::Schema.define(version: 20181120151445) do
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
-    t.bigint "users_id"
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
-    t.index ["users_id"], name: "index_posts_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
