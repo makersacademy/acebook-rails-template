@@ -15,7 +15,7 @@ RSpec.feature 'Timeline', type: :feature do
       post_message(message: 'Hello, world!')
     end
     post_message(message: 'Bye, world!')
-    expect(page).to have_content("Bye, world! Posted at: #{time.strftime('%Y-%m-%d %k:%M')}\nHello, world!")
+    expect(page).to have_content "Bye, world! Posted at: #{time.strftime('%Y-%m-%d %k:%M')}\nHello, world!"
   end
 
   scenario 'Can view posts newest first' do
@@ -23,7 +23,7 @@ RSpec.feature 'Timeline', type: :feature do
     Timecop.freeze(time = Time.now) do
       post_message(message: 'Hello, world!')
     end
-    expect(page).to have_content("Posted at: #{time.strftime('%Y-%m-%d %k:%M')}")
+    expect(page).to have_content "Posted at: #{time.strftime('%Y-%m-%d %k:%M')}"
   end
 
   scenario 'Redirects to index if not logged in' do
