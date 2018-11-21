@@ -60,3 +60,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem "activesupport", "~> 5.1"
 
 gem "pry", "~> 0.12.2"
+
+gem "timecop", "~> 0.9.1"
