@@ -5,7 +5,7 @@ RSpec.describe Comment, type: :model do
   subject do
     user = FactoryBot.create(:user)
     post = FactoryBot.create(:post, user: user)
-    described_class.new(comment: "This is a test", user_id: 1, post_id: 1)
+    described_class.new(comment: "This is a test", user: user, post: post)
   end
 
   it 'is valid with valid attributes' do
