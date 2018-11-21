@@ -1,0 +1,10 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+build:
+  languages:
+    - ruby
+release:
+  command:
+    - rake db:migrate
