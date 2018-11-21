@@ -7,13 +7,13 @@ require_relative './api_controller_helper'
 Coveralls.wear!
 
 RSpec.configure do |config|
-
+  require 'web_helpers'
   config.include ApiControllerHelper
 
-  config.before(:suite) do
-
-    Rails.application.load_seed # loading seeds
-  end
+  # config.before(:suite) do
+  #
+  #   Rails.application.load_seed # loading seeds
+  # end
 
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
