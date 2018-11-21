@@ -13,7 +13,8 @@ RSpec.feature "New Post", type: :feature do
 #     expect(current_path).to eq '/posts/new'
 #   end
     scenario "Can create posts with new lines" do
-      post_message("Hello, world\nBye world")
+      login(email: "test@user.com", password: "qwerty")
+      post_message(message: "Hello, world\nBye world")
       expect(page).to have_content "Hello, world\nBye world"
     end
 end
