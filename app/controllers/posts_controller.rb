@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.editable?
+    if @post.editable? && @post.user.id == current_user.id
       @post.update(message: params[:post][:message])
     else
       flash[:danger] = "fuck off, this is not yours!"

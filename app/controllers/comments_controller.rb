@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    if @comment.editable?
+    if @comment.editable? && @comment.user.id == current_user.id
       @comment.update(comment: params[:post][:comment])
       flash[:danger] = "Comment updated. Stop changing your story!"
     else
