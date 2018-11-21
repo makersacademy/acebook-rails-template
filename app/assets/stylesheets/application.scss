@@ -15,3 +15,17 @@
  */
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+body{
+  padding: 20px 20px;
+}
+
+.nav-right {
+  float: right;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-right {
+    float: left;
+  }
+}
