@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 1
 User.create(name: 'testUser', email: 'test@user.com', password: 'qwerty',
-   encrypted_password: 'qwerty').save!
+   encrypted_password: '$2a$11$stuRQsXboDka1QSaS5WNHe2IBidCiKabwk3p9TVUiIJiBQ8R9W3J6').save!
 puts 2
