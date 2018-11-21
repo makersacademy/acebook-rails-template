@@ -9,7 +9,7 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content(Time.now.getutc)
   end
-  scenario "Can submit posts and view them" do
+  scenario "Can submit posts with linebreak in them" do
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello! \n Goodbye!"
