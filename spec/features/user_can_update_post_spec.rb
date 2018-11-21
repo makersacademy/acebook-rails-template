@@ -19,9 +19,10 @@ RSpec.feature 'Timeline', type: :feature do
     click_button 'Submit'
     expect(page).to have_content('Bye, world!')
     expect(page).to have_content(Time.now.strftime('%I:%M %p'))
+    expect(page).to_not have_content('You can only edit your own posts')
   end
 
-  scenario "Cannot update a post that's not her own" do
+  scenario "Cannot update a post that's not their own" do
     sign_up
     create_post
     log_out
@@ -29,8 +30,6 @@ RSpec.feature 'Timeline', type: :feature do
     visit '/posts'
     click_link 'Edit'
     expect(page).to have_content('You can only edit your own posts')
-    log_out
-    expect(page).to_not have_content('You can only edit your own posts')
   end
 
   scenario 'User can only update a post within 10 minutes' do
@@ -39,7 +38,7 @@ RSpec.feature 'Timeline', type: :feature do
     visit '/posts'
     Timecop.travel(Time.now + 11.minutes) do
       click_link 'Edit'
-      expect(page).to have_content("You cannot edit this message")
+      expect(page).to have_content('You can no longer update this post')
     end
   end
 end
