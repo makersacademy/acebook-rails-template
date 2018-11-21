@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    user nil
-    message "Test post"
+    association :user, factory: :user
+    message { Faker::HarryPotter.quote }
   end
 end

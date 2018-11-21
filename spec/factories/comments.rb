@@ -1,8 +1,7 @@
-# FactoryBot.define do
-#   factory :comment do
-#     comment "MyString"
-#     user 1
-#     post 1
-#     # user and post were both nil before
-#   end
-# end
+FactoryBot.define do
+  factory :comment do
+    comment { Faker::HarryPotter.spell }
+    association :user, factory: :user
+    association :post, factory: :post
+  end
+end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
   end
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.editable?
+    if @post.editable? && @post.user.id == current_user.id
       @post.update(message: params[:post][:message])
       flash[:danger] = "Post updated. Yet another typo?"
     else
