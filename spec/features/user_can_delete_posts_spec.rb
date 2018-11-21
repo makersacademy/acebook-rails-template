@@ -12,11 +12,4 @@ RSpec.feature "Deleting posts", type: :feature do
     expect(page).not_to have_content("Hello, world!")
   end
 
-  scenario "Can view posts newest first" do
-    Timecop.freeze(time = Time.now) do
-      post_message("Hello, world!")
-    end
-    post_message("Bye, world!")
-    expect(page).to have_content("Bye, world! Posted at: #{time.strftime("%Y-%m-%d %k:%M")}\nHello, world!")
-  end
 end

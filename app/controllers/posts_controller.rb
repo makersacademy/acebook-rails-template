@@ -1,4 +1,9 @@
 class PostsController < ApplicationController
+  def show
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+  end
+
   def new
     @user = User.find(params[:user_id])
     @post = Post.new
@@ -14,6 +19,13 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @posts = Post.all
     @posts = Post.order('updated_at DESC')
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
+    @post.destroy
+    redirect_to user_posts_url(current_user)
   end
 
   private
