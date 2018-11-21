@@ -23,3 +23,9 @@ body{
 .nav-right {
   float: right;
 }
+
+@media screen and (max-width: 768px) {
+  .nav-right {
+    float: left;
+  }
+}
