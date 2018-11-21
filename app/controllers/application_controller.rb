@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
@@ -8,7 +10,6 @@ class ApplicationController < ActionController::Base
       super
     else
       redirect_to root_path
-    end 
+    end
   end
-
 end
