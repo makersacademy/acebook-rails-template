@@ -15,6 +15,6 @@ RSpec.feature 'Timeline', type: :feature do
     click_button 'Submit'
     time_2 = Time.now
 
-    expect(page).to have_content("My second post! Alfie #{time_2.strftime('%eth %b %Y %T')} ❌ ✏️  My first post! Alfie #{time_1.strftime('%eth %b %Y %T')} ❌ ✏️ ")
+    expect(page.find('li:nth-child(1)')).to have_content("My second post!")
   end
 end
