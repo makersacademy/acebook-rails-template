@@ -25,7 +25,11 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
+    if @post.user_id != current_user.id
+      flash[:danger] = "You cannot delete someone else's post"
+    else
+      @post.destroy
+    end
     redirect_to posts_url
   end
 
