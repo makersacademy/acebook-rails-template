@@ -30,5 +30,10 @@ RSpec.describe Comment, type: :model do
     expect(subject).to_not be_valid
   end
 
+  it 'is not valid if comment is over 250 chars' do
+    subject.comment = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec."
+    expect(subject).to_not be_valid
+  end
+
 
 end
