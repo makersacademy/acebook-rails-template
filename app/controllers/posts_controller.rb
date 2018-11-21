@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-# require 'date'
-# require 'activesupport'
-
 class PostsController < ApplicationController
   def new
     @post = Post.new
@@ -10,6 +7,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params.merge({user_id: current_user.id}))
+    flash[:danger] = "Post Added. Nobody cares.."
     redirect_to posts_url
   end
 
@@ -20,6 +18,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    flash[:danger] = "Post deleted. Embarrassed yourself again?"
     redirect_to posts_path
   end
 
@@ -31,8 +30,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.editable?
       @post.update(message: params[:post][:message])
+      flash[:danger] = "Post updated. Yet another typo?"
     else
-      flash[:danger] = "fuck off, this is not yours!"
+      flash[:danger] = "Fuck off, this is not yours!"
     end
     redirect_to posts_url
   end
