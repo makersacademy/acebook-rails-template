@@ -21,5 +21,4 @@ RSpec.feature 'Navbar', type: :feature do
     click_link 'navbar-sign-in'
     expect(page).to have_content 'Log in'
   end
-
 end
