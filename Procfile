@@ -2,7 +2,7 @@ build:
   languages:
     - ruby
 run:
-  rake: bundle exec
-  rails: db:create
-  rails: db:schema:load
-  web: bundle exec rails server -p $PORT
+  rake: bundle exec rake
+  rails: rails db:create
+  rails: rails db:schema:load
+  web: bundle exec puma config.ru -p $PORT
