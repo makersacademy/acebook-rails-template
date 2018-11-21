@@ -4,8 +4,11 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
+gem 'bootstrap-sass', '~> 2.3.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
+
 # Use postgresql as the database for Active Record
 gem 'rubocop'
 gem 'pg'
@@ -29,11 +32,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
 group :test do
-    gem 'simplecov', require: false
+  gem 'simplecov', require: false
 end
-
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -45,6 +46,7 @@ end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'rails-footnotes', '>= 3.7.9'
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
 
