@@ -15,3 +15,16 @@
  */
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+article#likes {
+  display: block;
+  margin-bottom: 5%;
+}
+
+span#likes-count {
+  float: left;
+  margin-right: 1%;
+}
+span#likes-button {
+  float: left;
+}
