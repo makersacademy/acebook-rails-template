@@ -13,4 +13,9 @@ RSpec.describe User, type: :model do
   it 'is not valid without a password' do
     expect(User.new(email: 'alicebobson1@gmail.com', password: '')).not_to be_valid
   end
+
+  it 'has many comments' do
+    association = described_class.reflect_on_association(:comments).macro
+    expect(association).to eq :has_many
+  end
 end
