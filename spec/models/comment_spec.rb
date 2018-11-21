@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  # User.new(name: 'Jeff', email: 'jeff@hotmail.com', password: 'password1')
-  # Post.new(message: 'This is a post', user_id: 1)
-  #
 
   subject do
     user = FactoryBot.create(:user)
