@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'pry'
 RSpec.describe CommentsController, type: :controller do
 
   describe 'GET /new' do
