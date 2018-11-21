@@ -1,3 +1,12 @@
+
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+
+<%= link_to logout_path do %>
+  Log out
+<% end %>
+
 <% if current_user %>
 Welcome to Acebook <%= current_user.name %>
 <% end %>
@@ -16,12 +25,9 @@ Welcome to Acebook <%= current_user.name %>
       <%= link_to '✏️', edit_post_path(post.id) %>
     <% end %>
   <% end %>
-<% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+  <%= link_to new_post_comment_path(post.id) do %>
+    Comment
+  <% end %>
 
-<%= link_to logout_path do %>
-  Log out
 <% end %>
