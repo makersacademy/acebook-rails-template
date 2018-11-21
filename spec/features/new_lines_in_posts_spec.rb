@@ -3,6 +3,9 @@ require 'rails_helper'
  #js: true add to rspec if needed
 
 RSpec.feature "New Post", type: :feature do
+  before do
+    signup1
+  end
 #   scenario "Can create posts with new lines" do
 #     visit "/posts"
 #     click_link "New post"
@@ -12,6 +15,7 @@ RSpec.feature "New Post", type: :feature do
 #     # fill_in "Message", with: "Bye world!"
 #     expect(current_path).to eq '/posts/new'
 #   end
+
     scenario "Can create posts with new lines" do
       post_message("Hello, world\nBye world")
       expect(page).to have_content "Hello, world\nBye world"
