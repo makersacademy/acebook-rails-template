@@ -7,5 +7,11 @@ Rails.application.routes.draw do
     resources :likes
   end
 
+  authenticated :user do
+    root to: 'welcome#index'
+  end
+
+  root to: redirect('/users/sign_in')
+
   root 'welcome#index'
 end

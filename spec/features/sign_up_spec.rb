@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Sign in', type: :feature do
+RSpec.feature 'Sign up', type: :feature do
   let(:user) { build(:user) }
 
   before do
