@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'User profile', type: :feature do
-
   before do
     user = create(:user)
     login_as(user, scope: :user)
