@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
+    flash[:danger] = "Comment deleted. What are you trying to hide?"
     redirect_to posts_path
   end
 
@@ -23,8 +24,9 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if @comment.editable?
       @comment.update(comment: params[:post][:comment])
+      flash[:danger] = "Comment updated. Stop changing your story!"
     else
-      flash[:danger] = "fuck off, this is not yours!"
+      flash[:danger] = "Fuck off, this is not yours!"
     end
     redirect_to posts_url
   end
