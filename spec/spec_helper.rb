@@ -1,10 +1,10 @@
 require 'simplecov'
-SimpleCov.start 'rails'
 require 'database_cleaner'
 
 RSpec.configure do |config|
 
   config.before (:suite) do
+    SimpleCov.start 'rails'
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
   end
