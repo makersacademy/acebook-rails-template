@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(post_comment_params.merge({user_id: current_user.id, post_id: params[:post_id]}))
+    flash[:danger] = "Comment Added. Making everything about you eh?"
     redirect_to posts_url
   end
 
