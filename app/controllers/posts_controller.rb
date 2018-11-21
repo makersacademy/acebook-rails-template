@@ -23,6 +23,9 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     redirect_to posts_url if @post.update(post_params)
+    if Time.now > (@post.updated_at + 10.minutes)
+      flash[:danger] = "You cannot edit this message"
+    end 
   end
 
   def destroy

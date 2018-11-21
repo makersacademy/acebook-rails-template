@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'timecop'
 
 RSpec.feature 'Timeline', type: :feature do
 
@@ -30,5 +31,15 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content('You can only edit your own posts')
     log_out
     expect(page).to_not have_content('You can only edit your own posts')
+  end
+
+  scenario 'User can only update a post within 10 minutes' do
+    sign_up
+    create_post
+    visit '/posts'
+    Timecop.travel(Time.now + 11.minutes) do
+      click_link 'Edit'
+      expect(page).to have_content("You cannot edit this message")
+    end
   end
 end
