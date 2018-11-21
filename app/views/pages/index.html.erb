@@ -5,16 +5,22 @@
       <p>Register to get started</p>
       <p><%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %></p>
     </div>
-  </div>
-  <div>
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to('Login', new_user_session_path)  %>
-      </li>
+
+    <% @posts.each do |post| %>
+      <pre>
+        <%= link_to user_post_path(user_id: post.user.id, id: post.id) do %>
+          <%= post.message %>
+        <% end %>
+      </pre>
+      <p>Posted at: <%= post.updated_at.strftime("%Y-%m-%d %k:%M")%></p>
     <% end %>
+        <% if user_signed_in? %>
+          <%= link_to new_user_post_path(current_user) do %>
+          New post
+        <% end %>
+        
+    <% end %>
+
+
   </div>
 <% end %>

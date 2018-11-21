@@ -24,8 +24,12 @@ class PostsController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
-    @post.destroy
-    redirect_to user_posts_url(current_user)
+    if @post.user_id == current_user.id
+      @post.destroy
+      redirect_to user_posts_url(current_user)
+    else
+      flash[:notice] = "Error: You do not have permissions to delete this message"
+    end
   end
 
   private

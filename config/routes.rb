@@ -7,8 +7,3 @@ Rails.application.routes.draw do
     resources :posts
   end
 end
-
-
-# 'Delete', [@user, @post],
-# method: Delete
-# data: { confirm: 'Are you sure?' }
