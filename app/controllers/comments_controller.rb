@@ -17,13 +17,14 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @post = Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
+    @post = Post.find(@comment.post_id)
   end
 
   def update
     @comment = Comment.find(params[:id])
     if @comment.editable?
-      @comment.update(comment: params[:post][:comment])
+      @comment.update(comment: params[:comment][:comment])
       flash[:danger] = "Comment updated. Stop changing your story!"
     else
       flash[:danger] = "Fuck off, this is not yours!"

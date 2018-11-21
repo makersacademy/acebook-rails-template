@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
   get 'posts/:id/edit', to: 'posts#edit'
-  
-  get 'comments/:id/edit', to: 'comments#edit'
+
+  get 'posts/:id/comments/:id/edit', to: 'comments#edit'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
