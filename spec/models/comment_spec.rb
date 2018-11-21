@@ -6,8 +6,8 @@ RSpec.describe Comment, type: :model do
   #
 
   subject do
-    user = FactoryGirl.create(:user)
-    post = FactoryGirl.create(:post, user: user)
+    user = FactoryBot.create(:user)
+    post = FactoryBot.create(:post, user: user)
     described_class.new(comment: "This is a test", user_id: 1, post_id: 1)
   end
 
