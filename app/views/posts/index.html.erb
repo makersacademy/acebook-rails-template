@@ -15,30 +15,28 @@ Welcome to Acebook <%= current_user.name %>
 <%= flash[:danger] %>
 <% end %>
 
-<% @posts.each do |post| %>
-  <li>
-    <%= simple_format(post.message) %>
-    <p><%= post.user.name %></p>
-    <p><%= post.updated_at.strftime("%eth %b %Y %T") %></p>
-    <% if post.user == current_user %>
-      <%= link_to '❌', post_path(post), method: :delete, id: "delete-#{post.id}" %>
-      <% if post.editable? %>
-        <%= link_to '✏️', edit_post_path(post.id) %>
-      <% end %>
-    <% end %>
-  </li>
-<% end %>
-
-  <%= link_to new_post_comment_path(post.id) do %>
-    Comment
-  <% end %>
-
-  <ul>
-    <% post.comments.each do |comment| %>
+<ul>
+  <% @posts.each do |post| %>
     <li>
-      <p><%= comment.comment %></p>
-    </li>
+      <%= simple_format(post.message) %>
+      <p><%= post.user.name %></p>
+      <p><%= post.updated_at.strftime("%eth %b %Y %T") %></p>
+      <% if post.user == current_user %>
+        <%= link_to '❌', post_path(post), method: :delete, id: "delete-#{post.id}" %>
+        <% if post.editable? %>
+          <%= link_to '✏️', edit_post_path(post.id) %>
+        <% end %>
       <% end %>
-  </ul>
-
-<% end %>
+    <%= link_to new_post_comment_path(post.id) do %>
+      Comment
+    <% end %>
+    <ul>
+      <% post.comments.each do |comment| %>
+      <li>
+        <p><%= comment.comment %></p>
+      </li>
+        <% end %>
+    </ul>
+    </li>
+  <% end %>
+</ul>
