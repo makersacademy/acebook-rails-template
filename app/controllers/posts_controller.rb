@@ -16,13 +16,10 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if @post.user_id != current_user.id
-      flash[:danger] = 'You can only edit your own posts'
-      redirect_to posts_url
-    end
-    if Time.now > (@post.updated_at + 10.minutes)
-      flash[:danger] = 'You can no longer update this post'
-      redirect_to posts_url
+    if not_authorised?
+      prevent_edit('You can only edit your own posts')
+    elsif not_editable?
+      prevent_edit('You can no longer edit this post')
     end
   end
 
@@ -33,7 +30,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.user_id != current_user.id
+    if not_authorised?
       flash[:danger] = "You cannot delete someone else's post"
     else
       @post.destroy

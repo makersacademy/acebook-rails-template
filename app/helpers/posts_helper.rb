@@ -2,15 +2,16 @@
 
 # Sessions helper
 module PostsHelper
-  def authorised?
-    @post.user_id == current_user.id
+  def not_authorised?
+    @post.user_id != current_user.id
   end
 
-  def prevent_edit_with(message)
+  def not_editable?
+    Time.now > (@post.updated_at + 10.minutes)
+  end
+
+  def prevent_edit(message)
     flash[:danger] = message
-  end
-
-  def editable?
-    Time.now < (@post.updated_at + 10.minutes)
+    redirect_to posts_url
   end
 end
