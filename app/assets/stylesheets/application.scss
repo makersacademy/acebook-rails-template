@@ -16,6 +16,12 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+@media screen and (max-width: 768px) {
+  .nav-right {
+    float: left;
+  }
+}
+
 article#likes {
   display: block;
   margin-bottom: 5%;
@@ -41,6 +47,7 @@ span#like-form-home {
 }
 span#like-count-home {
   float: left;
+}
 
 body{
   padding: 20px 20px;
@@ -48,10 +55,4 @@ body{
 
 .nav-right {
   float: right;
-}
-
-@media screen and (max-width: 768px) {
-  .nav-right {
-    float: left;
-  }
 }
