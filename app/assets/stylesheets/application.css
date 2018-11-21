@@ -31,13 +31,13 @@
  /* Sane defaults */
  body {
      font-family: Arial, Verdana, Geneva, serif;
-     color: #04080b;
+     color: #000000;
      background-color: #ffffff;
  }
 
  h1, h2, h3, h4, h5, h6 {
      font-weight: normal;
-     color: #714f2b;
+     color: #626868;
      font-family: 'Parisian', Georgia, serif;
  }
 
