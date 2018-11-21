@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-# require 'date'
-# require 'activesupport'
-
 class PostsController < ApplicationController
   def new
     @post = Post.new
@@ -20,7 +17,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @comments = Comment.where(post: @post)
-    @comments.each do |comment| comment.destroy end
+    @comments.each { |comment| comment.destroy }
     @post.destroy
     redirect_to posts_path
   end
