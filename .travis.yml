@@ -9,24 +9,18 @@ before_install:
 language: ruby
 rvm:
 - 2.5.0
-- 2.0.0
-- 1.9.3
-- jruby-19mode
-- rbx-2
 
 before_script:
-  - bundle exec
-  - rake db:create
-  - rake db:migrate:reset
+  - bundle exec rake db:create db:migrate
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
 
 script:
-  - bundle exec rake testcode
+  bundle exec rake testcode
 
-  after_script:
+after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 cache: bundler
