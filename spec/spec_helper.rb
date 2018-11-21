@@ -1,10 +1,10 @@
 # frozen_string_literal: true
-
+require 'coveralls'
+Coveralls.wear!('rails')
 require 'simplecov'
 require 'simplecov-console'
-require 'coveralls'
 require_relative './api_controller_helper'
-Coveralls.wear!
+
 
 RSpec.configure do |config|
 
