@@ -4,7 +4,6 @@ RSpec.feature "Signing Up", type: :feature do
   scenario "successful sign up" do
     signup1
     expect(page).to have_content 'Welcome! You have signed up successfully.'
-    expect(current_path).to eq '/posts'
   end
 
   scenario "password must be longer than 6 characters" do

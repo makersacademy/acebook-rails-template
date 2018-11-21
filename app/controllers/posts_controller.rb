@@ -1,14 +1,17 @@
 class PostsController < ApplicationController
   def new
+    @user = User.find(params[:user_id])
     @post = Post.new
   end
 
   def create
+    @user = User.find(params[:user_id])
     @post = current_user.posts.create(post_params)
-    redirect_to posts_url
+    redirect_to user_posts_url(current_user)
   end
 
   def index
+    @user = User.find(params[:user_id])
     @posts = Post.all
     @posts = Post.order('updated_at DESC')
   end
