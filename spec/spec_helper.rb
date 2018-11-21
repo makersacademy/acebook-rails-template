@@ -6,6 +6,7 @@ require 'factory_bot_rails'
 require 'simplecov'
 require 'simplecov-console'
 require 'warden'
+require './spec/support/feature_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                 SimpleCov::Formatter::Console
@@ -15,6 +16,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 RSpec.configure do |config|
   config.include Warden::Test::Helpers
   config.include FactoryBot::Syntax::Methods
+  config.include FeatureHelpers, type: :feature
 
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
