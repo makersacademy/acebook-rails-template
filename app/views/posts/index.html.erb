@@ -5,10 +5,14 @@
   <%= link_to "Sign In", new_user_session_path, method: :get %>
 <% end %> <br>
 
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
-
 <%= link_to new_post_path do %>
   New post
+<% end %> <br>
+
+<% @posts.each do |post| %>
+  <p>
+  <strong> <%= post.user.username %> </strong>
+  <br>
+  <em> <%= post.message %> </em>
+  </p>
 <% end %>
