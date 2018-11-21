@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# require 'date'
+# require 'activesupport'
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
@@ -26,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if current_user.id == @post.user_id
+    if @post.editable?
       @post.update(message: params[:post][:message])
     else
       flash[:danger] = "fuck off, this is not yours!"

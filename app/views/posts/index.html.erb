@@ -12,7 +12,9 @@ Welcome to Acebook <%= current_user.name %>
   <p><%= post.updated_at.strftime("%eth %b %Y %T") %></p>
   <% if post.user == current_user %>
     <%= link_to '❌', post_path(post), method: :delete, id: "delete-#{post.id}" %>
-    <%= link_to '✏️', edit_post_path(post.id) %>
+    <% if post.editable? %>
+      <%= link_to '✏️', edit_post_path(post.id) %>
+    <% end %>
   <% end %>
 <% end %>
 
