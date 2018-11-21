@@ -1,4 +1,5 @@
 require 'simplecov'
+SimpleCov.start 'rails'
 require 'database_cleaner'
 
 RSpec.configure do |config|
@@ -9,7 +10,6 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    SimpleCov.start 'rails'
     DatabaseCleaner.start
   end
 
