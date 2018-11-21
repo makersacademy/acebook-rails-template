@@ -8,6 +8,7 @@ RSpec.feature "Signing in", type: :feature do
     fill_in(:user_password, with: "qwerty")
     click_button 'Log in'
     expect(page).to have_content 'Signed in successfully.'
+    expect(current_path).to eq '/posts'
   end
 
   scenario "incorrect email" do
