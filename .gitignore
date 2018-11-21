@@ -21,3 +21,6 @@
 /yarn-error.log
 
 .byebug_history]
+
+/coverage/resultset.json
+/coverage/index.html
