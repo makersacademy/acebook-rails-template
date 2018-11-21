@@ -10,7 +10,7 @@
       <li><a href="#">Profile</a></li>
       <li><a href="/users/sign_up" id="navbar-sign-up">Sign Up</a></li>
       <li><a href="/users/sign_in" id="navbar-sign-in">Sign In</a></li>
-      <li><a href="/users/sign_out" id="navbar-sign-out">Sign Out</a></li>
+      <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
     </ul>
   </div>
 </nav>
