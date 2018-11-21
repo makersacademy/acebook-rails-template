@@ -19,7 +19,6 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
-    @post = Post.find(@comment.post_id)
   end
 
   def update

@@ -17,8 +17,6 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @comments = Comment.where(post: @post)
-    @comments.each { |comment| comment.destroy }
     @post.destroy
     flash[:danger] = "Post deleted. Embarrassed yourself again?"
     redirect_to posts_path
