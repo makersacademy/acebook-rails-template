@@ -9,7 +9,7 @@
   <% @posts.reverse.each do |post| %>
     <tr>
       <td><strong><%= post.message %></strong></td>
-      <td><i><%= User.find(post.user_id).name %></i></td>
+      <td><i></i></td>
       <td><%= post.created_at.asctime %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
        <td><%= link_to 'Edit', edit_post_path(post) %></td>
