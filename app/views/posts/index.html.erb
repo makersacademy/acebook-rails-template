@@ -18,6 +18,18 @@
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %></td>
       <% end %>
+      <article>
+
+        <span>
+          <%= form_with(model: [post, post.likes.build ], local: true) do |form| %>
+          <%= form.hidden_field :user_id, value: current_user.id %>
+          <%= form.submit 'Like' %>
+          <% end %>
+        </span>
+        <span>
+          (<%= post.likes.count %>)
+        </span>
+      </article>
       <td><%= link_to "Comment", new_post_comment_path(post) %></td>
     </tr>
   <% end %>
