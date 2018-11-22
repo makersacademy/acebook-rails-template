@@ -5,6 +5,8 @@
 
 <div class="posts">
   <% @posts.each do |post| %>
+    <% user = User.find(post.user_id) %>
+    <p><%= user.name %></p>
     <p><%= post.message %></p>
     <p><%= post.updated_at.strftime('%I:%M %p, %A, %b %d') %></p>
     <%= link_to 'Edit', edit_post_path(post) %>

@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  before_action :require_login
+
   def new
     @post = Post.new
   end
 
   def create
-    @post = Post.create(message: post_params, user_id: session[:user_id])
+    @post = Post.create(message: post_params[:message],
+                        user_id: session[:user_id])
     redirect_to posts_url
   end
 
@@ -16,16 +19,21 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    if not_authorised?
+      prevent_edit('You can only edit your own posts')
+    elsif not_editable?
+      prevent_edit('You can no longer edit this post')
+    end
   end
 
   def update
     @post = Post.find(params[:id])
-    redirect_to posts_url if @post.update(post_params)
+    redirect_to posts_url if @post.update(message: post_params[:message])
   end
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.user_id != current_user.id
+    if not_authorised?
       flash[:danger] = "You cannot delete someone else's post"
     else
       @post.destroy
@@ -37,5 +45,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def require_login
+    prevent_view unless logged_in?
   end
 end
