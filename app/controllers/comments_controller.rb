@@ -35,8 +35,14 @@ class CommentsController < ApplicationController
   end
 
   def like
-    Like.create(likeable: Comment.find(params[:id]), user: current_user)
-    flash[:success] = "Like Counted!"
+    like = Like.find_by({likeable: Comment.find(params[:id]), user: current_user})
+    if like
+      like.destroy
+      flash[:danger] = "Like Removed!"
+    else
+      Like.create(likeable: Comment.find(params[:id]), user: current_user)
+      flash[:danger] = "Like Counted!"
+    end
     redirect_to posts_url
   end
 
