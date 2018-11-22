@@ -19,7 +19,8 @@ class PostsController < ApplicationController
   end
 
   def delete
-    @post = Post.find(params[:id]).delete
+    @post = Post.find(params[:id])
+    @post.delete
     redirect_to posts_url
   end
 

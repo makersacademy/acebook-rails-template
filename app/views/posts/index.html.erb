@@ -1,14 +1,8 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
-  <button id="edit_post">
-    <%= link_to edit_post_path(post.id) do %>
-      Edit
-    <% end %>
-  </button>
+  <%= link_to 'Edit', edit_post_path(post.id) %>
   <%= link_to 'Delete', post_path(post.id), method: :delete %>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<%= link_to 'New Post', new_post_path %>
