@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "style" %>
 
 <% if current_user %>
-Welcome to Acebook <%= current_user.name %>
+<h2> Welcome to Acebook, <%= current_user.name.capitalize %>! </h2>
 <% end %>
 
 <br>
@@ -20,7 +20,7 @@ Welcome to Acebook <%= current_user.name %>
     <li>
       <br>
       <div id="post_format"><h4><%= post.user.name.capitalize %> </h4>
-        <span id="user_format"> <%= simple_format(post.message) %> </span>
+        <span id="post_content"> <%= simple_format(post.message) %> </span>
       </div>
       <p id="time"><%= post.updated_at.strftime("%eth %b %Y %T") %></p>
       <% if post.user == current_user %>
@@ -38,9 +38,9 @@ Welcome to Acebook <%= current_user.name %>
         <p><%= comment.comment %></p>
       </li>
         <% if comment.user == current_user %>
-          <%= link_to '❌', post_comment_path(post, comment), method: :delete, id: "delete-#{comment.id}" %>
+          <span class="comment_buttons"><%= link_to '❌', post_comment_path(post, comment), method: :delete, id: "delete-#{comment.id}" %></span>
           <% if comment.editable? %>
-            <%= link_to '✏️', edit_post_comment_path(post.id, comment.id) %>
+            <span class="comment_buttons"><%= link_to '✏️', edit_post_comment_path(post.id, comment.id) %></span>
           <% end %>
         <% end %>
         <% end %>
