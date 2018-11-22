@@ -54,3 +54,9 @@
  	label: 40%;
  	color: blue;
  }
+
+textarea {
+  height: 60px;
+  width: 150px;
+  margin: 5px;
+}
