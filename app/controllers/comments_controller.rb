@@ -1,5 +1,3 @@
-require 'pry'
-
 class CommentsController < ApplicationController
 
   def new
@@ -26,7 +24,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     if @comment.editable? && @comment.user.id == current_user.id
-      @comment.update(comment: params[:post][:comment])
+      @comment.update(comment: params[:comment][:comment])
       flash[:danger] = "Comment updated. Stop changing your story!"
     else
       flash[:danger] = "Fuck off, this is not yours!"

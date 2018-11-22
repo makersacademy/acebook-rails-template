@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-require 'pry'
-
 class PostsController < ApplicationController
 
   def new
