@@ -1,12 +1,13 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
+  <button id="edit_post">
+    <%= link_to edit_post_path(post.id) do %>
+      Edit post
+    <% end %>
+  </button>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
-
-<% link_to new_post_path do %>
- Edit
- <% end %>
