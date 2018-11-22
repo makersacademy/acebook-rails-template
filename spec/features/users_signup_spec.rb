@@ -2,7 +2,6 @@ require 'rails_helper'
 
 # Feature test for Signing up to the app
 feature 'Sign up' do
-
   scenario 'user can sign up and it is greeted by their name on the page' do
     visit '/'
     fill_in(:user_firstname, with: 'Bob')
