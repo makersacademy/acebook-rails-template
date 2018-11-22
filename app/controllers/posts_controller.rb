@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-
   before_action :require_login
 
   def new
@@ -43,10 +42,6 @@ class PostsController < ApplicationController
   end
 
   def require_login
-    unless logged_in?
-      flash[:error] = "You must be logged in to access this section"
-      redirect_to root_path
-    end
+    prevent_view unless logged_in?
   end
-
 end

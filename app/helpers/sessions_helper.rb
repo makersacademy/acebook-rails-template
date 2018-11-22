@@ -18,4 +18,9 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def prevent_view
+    flash[:error] = 'You must be logged in to access this section'
+    redirect_to root_path
+  end
 end
