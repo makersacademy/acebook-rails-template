@@ -4,11 +4,12 @@
 <table>
   <tr>
     <th>Message</th>
+
   </tr>
 
   <% @posts.reverse.each do |post| %>
     <tr>
-      <td><strong><%= post.message %></strong></td>
+      <td><strong><%=simple_format(post.message) %></strong></td>
       <td><i></i></td>
       <td><%= post.created_at.asctime %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
