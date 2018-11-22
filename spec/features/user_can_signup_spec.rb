@@ -12,5 +12,6 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Sign up"
     expect(page).to have_content("Log Out from user@user.com")
     expect(User.last.username).to eq("username123")
+    expect(User.last.email).to eq("user@user.com")
   end
 end
