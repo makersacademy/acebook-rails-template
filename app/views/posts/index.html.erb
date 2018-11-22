@@ -30,8 +30,8 @@ Welcome to Acebook <%= current_user.name %>
 
 
     <span class="pull-right">
-    	<%= link_to like_post_path(post), method: 'post' do %>
-    	<%= post.likes.count %> 👍
+    	<%= link_to like_post_path(post), method: 'post', remote: true do %> 👍
+      <span id="post_<%= post.id %>_likes"><%= post.likes.count %>likes</span>
     	<% end %>
     </span>
 
@@ -53,7 +53,7 @@ Welcome to Acebook <%= current_user.name %>
 
 
         <span class="pull-right">
-          <%= link_to like_post_comment_path(post, comment), method: 'post' do %>
+          <%= link_to like_post_comment_path(post, comment), method: 'post', remote: true do %>
           <%= comment.likes.count %> 👍
           <% end %>
         </span>

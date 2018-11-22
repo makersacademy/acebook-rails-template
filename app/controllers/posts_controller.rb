@@ -43,12 +43,18 @@ class PostsController < ApplicationController
     like = Like.find_by({likeable: Post.find(params[:id]), user: current_user})
     if like
       like.destroy
-      flash[:danger] = "Like Removed!"
+      flash = "Like Removed!"
     else
       Like.create(likeable: Post.find(params[:id]), user: current_user)
-      flash[:danger] = "Like Counted!"
+      flash = "Like Counted!"
     end
-    redirect_to posts_url
+    respond_to do |format|
+      format.html do
+        # flash[:danger] = flash
+        redirect_to posts_url
+      end
+      format.js
+    end
   end
 
   private

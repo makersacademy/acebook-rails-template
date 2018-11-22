@@ -16,10 +16,12 @@ Rails.application.routes.draw do
   resources :posts do
     member do
   		post 'like'
+      get 'like'
   	end
     resources :comments do
       member do
     		post 'like'
+        get 'like'
     	end
     end
   end
