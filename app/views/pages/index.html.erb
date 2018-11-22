@@ -2,8 +2,10 @@
   <div class="jumbotron">
 
     <h1>Welcome to Acebook!</h1>
+  </div>
 
-
+  <div class="container">
+    <h2>Posts</h2>
     <% if user_signed_in? %>
       <%= render('partials/posts', posts: @posts) %>
       <%= link_to new_user_post_path(current_user) do %>
@@ -15,6 +17,5 @@
         <p><%= link_to 'Register Now', new_user_registration_path, class: 'btn btn-primary btn-lg' %></p>
       </div>
     <% end %>
-
   </div>
 <% end %>
