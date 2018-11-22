@@ -1,6 +1,6 @@
 <p><%= @post.message  %></p>
 
-<% if current_user.id == @post.id %>
+<% if current_user.id == @post.user_id %>
   <%= button_to "Delete", {:controller => :posts,
     :action => 'destroy', :id => @post.id, :user_id => @post.user_id }, :method => :delete %>
 
