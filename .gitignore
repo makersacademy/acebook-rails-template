@@ -22,5 +22,5 @@
 
 .byebug_history
 
-# ignoring test coverasge created by simplecov
+# ignoring test coverage created by simplecov
 coverage/*
