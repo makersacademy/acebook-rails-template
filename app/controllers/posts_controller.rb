@@ -17,6 +17,11 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    if not_authorised?
+      prevent_edit('You can only edit your own posts')
+    elsif not_editable?
+      prevent_edit('You can no longer edit this post')
+    end
   end
 
   def update
@@ -26,7 +31,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.user_id != current_user.id
+    if not_authorised?
       flash[:danger] = "You cannot delete someone else's post"
     else
       @post.destroy
