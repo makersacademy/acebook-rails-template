@@ -20,6 +20,17 @@ feature 'Sign up' do
    fill_in(:user_email, with:'John@Lennon.com')
    fill_in(:user_password, with:'jonjon')
    click_button 'Sign up'
-   expect(page).to have_content('Username and E-mail must be unique, please try again')
+   expect(page).to have_content('Sign-up failed')
+ end
+
+ scenario 'user cannot sign up if the email is already in use' do
+   visit '/'
+   fill_in(:user_firstname, with:'Jen')
+   fill_in(:user_lastname, with:'Greg')
+   fill_in(:user_username, with:'jG')
+   fill_in(:user_email, with:'jen@leynon.com')
+   fill_in(:user_password, with:'jenjen')
+   click_button 'Sign up'
+   expect(page).to have_content('Sign-up failed')
  end
 end

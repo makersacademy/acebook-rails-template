@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to posts_url, notice: "User was successfully created"
     else
-      flash[:alert] = "Username and E-mail must be unique, please try again"
+      #Later, we should try to expand this to make the flash alerts unique
+      flash[:alert] = "Sign-up failed"
       render action: "new"
     end
   end
