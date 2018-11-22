@@ -1,7 +1,7 @@
 require 'simplecov'
 require 'simplecov-console'
 require 'coveralls'
-Coveralls.wear!
+Coveralls.wear!('rails')
 
 # frozen_string_literal: true
 
@@ -19,7 +19,8 @@ Coveralls.wear!
 # the additional setup, and require it from the spec files that actually need
 # it.
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console
+  SimpleCov::Formatter::Console,
+  Coveralls::SimpleCov::Formatter
 ])
 SimpleCov.start do
   add_filter "helper"
