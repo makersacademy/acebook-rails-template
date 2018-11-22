@@ -22,10 +22,5 @@
 
 .byebug_history
 
-<<<<<<< HEAD
 # ignoring test coverage created by simplecov
 ./coverage/*
-=======
-# ignoring test coverasge created by simplecov
-coverage/*
->>>>>>> master
