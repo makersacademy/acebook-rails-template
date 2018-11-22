@@ -3,4 +3,14 @@
 #
 # Examples:
 #
-User.create([{ firstname: 'Jenny', lastname: 'Laynon', username: 'jl', email: 'jen@leynon.com', password: 'jenjen' }])
+User.create(
+  [
+    {
+      firstname: 'Jenny',
+      lastname: 'Laynon',
+      username: 'jl',
+      email: 'jen@leynon.com',
+      password: 'jenjen'
+    }
+  ]
+)

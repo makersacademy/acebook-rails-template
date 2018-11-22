@@ -2,9 +2,8 @@ require 'simplecov'
 SimpleCov.start 'rails'
 require 'database_cleaner'
 
-
 RSpec.configure do |config|
-  config.before (:suite) do
+  config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
     require "#{Rails.root}/db/seeds.rb"
@@ -31,8 +30,8 @@ end
 
 # This is blocking out the files from SimleCov, delete the filter once we start using the files.
 SimpleCov.start do
-  add_filter "app/channels/application_cable/channel.rb"
-  add_filter "app/channels/application_cable/connection.rb"
-  add_filter "app/jobs/application_job.rb"
-  add_filter "app/mailers/application_mailer.rb"
+  add_filter 'app/channels/application_cable/channel.rb'
+  add_filter 'app/channels/application_cable/connection.rb'
+  add_filter 'app/jobs/application_job.rb'
+  add_filter 'app/mailers/application_mailer.rb'
 end
