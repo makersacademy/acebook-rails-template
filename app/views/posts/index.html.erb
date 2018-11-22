@@ -5,9 +5,7 @@
   <%= link_to "Sign In", new_user_session_path, method: :get %>
 <% end %> <br>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %> <br>
+<%= link_to "New Post", new_post_path, method: :get %> <br>
 
 <% @posts.reverse_each do |post| %>
   <p>
