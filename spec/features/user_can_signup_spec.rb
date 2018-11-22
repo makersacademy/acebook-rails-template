@@ -11,4 +11,5 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in "user[password_confirmation]", with: "pword123"
     click_button "Sign up"
     expect(page).to have_content("Log Out from user@user.com")
+  end
 end
