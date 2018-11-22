@@ -35,6 +35,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+    @post = Post.find(params[:id])
+  end
+
   private
 
   def post_params
