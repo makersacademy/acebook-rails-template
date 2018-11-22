@@ -1,21 +1,5 @@
 # Acebook
 
-## Code Quality
-
-### Linting
-
-* Run `rubocop` in the command line.
-
-
-## Testing
-
-### Test coverage
-* After running tests, open `coverage/index.html` to see test coverage.
-
-## Deploying
-* To deploy on heroku please enter this url into your browser: https://maicers-acebook.herokuapp.com/
-
-
 ## Setting Up Enviroments
 ### Test Environment
 1. `cd` into directory
@@ -31,3 +15,11 @@
 
 ### Production Environment
 Visit https://maicers-acebook.herokuapp.com/ in your web browser
+
+## Code Quality
+### Linting
+* Run `rubocop` in the command line.
+
+
+## Team Members
+[Imtiyaz Zaman](https://github.com/imtiyazzaman1) | [Chris Cooksley](https://github.com/Learner5200) | [Anouska Hopkins](https://github.com/ahopkins94) | [Muna Hussein](https://github.com/MHUS25)
