@@ -9,10 +9,10 @@
   New post
 <% end %> <br>
 
-<% @posts.each do |post| %>
+<% @posts.reverse_each do |post| %>
   <p>
-  <strong> <%= post.user.username %> </strong>
+  <strong> <%= post.user.username %> </strong> @ <em> <%= post.updated_at %> </em>
   <br>
-  <em> <%= post.message %> </em>
+  <%= post.message %>
   </p>
 <% end %>
