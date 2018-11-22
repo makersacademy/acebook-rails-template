@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class PostsController < ApplicationController
 
   def new
@@ -36,6 +35,25 @@ class PostsController < ApplicationController
       flash[:danger] = "Fuck off, this is not yours!"
     end
     redirect_to posts_url
+  end
+
+  def like
+    @likeable = Post.find(params[:id])
+    like = Like.find_by({likeable: @likeable, user: current_user})
+    if like
+      like.destroy
+      flash = "Like Removed!"
+    else
+      Like.create(likeable: Post.find(params[:id]), user: current_user)
+      flash = "Like Counted!"
+    end
+    respond_to do |format|
+      format.html do
+        flash[:danger] = flash
+        redirect_to posts_url
+      end
+      format.js
+    end
   end
 
   private
