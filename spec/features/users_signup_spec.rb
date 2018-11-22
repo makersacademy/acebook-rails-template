@@ -16,7 +16,7 @@ feature 'Sign up' do
    visit '/'
    fill_in(:user_firstname, with:'John')
    fill_in(:user_lastname, with:'Lennon')
-   fill_in(:user_username, with:'bm')
+   fill_in(:user_username, with:'jl')
    fill_in(:user_email, with:'John@Lennon.com')
    fill_in(:user_password, with:'jonjon')
    click_button 'Sign up'

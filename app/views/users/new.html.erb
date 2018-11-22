@@ -1,3 +1,4 @@
+<div id="form">
 <%= form_for(@user) do |f| %>
    <%= f.label :firstname %>
    <%= f.text_field :firstname %>
@@ -16,7 +17,11 @@
 
   <%= f.submit "Sign up" %>
 <% end %>
+</div>
 
+
+<div id="alert">
 <% if flash[:alert] %>
   <div class="alert"><%= flash[:alert] %></div>
 <% end %>
+</div>
