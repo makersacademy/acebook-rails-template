@@ -4,7 +4,7 @@ RSpec.describe PostsController, type: :controller do
   before do
     post :us
   end
-  
+
   describe "GET /new " do
     it "responds with 200" do
       get :new
