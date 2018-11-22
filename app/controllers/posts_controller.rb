@@ -26,6 +26,10 @@ class PostsController < ApplicationController
   def edit
     @user = current_user
     @post = Post.find(params[:id])
+    if @user.id != @post.user_id
+      flash[:notice] = 'Error: You do not have permissions to edit this message'
+      redirect_to user_post_path(user_id: @user.id, id: @post.id)
+    end
   end
 
   def update
