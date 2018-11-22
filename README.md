@@ -1,6 +1,8 @@
 # Acebook
 [![Build Status](https://travis-ci.org/Learner5200/acebook-MAICers.svg?branch=master)](https://travis-ci.org/Learner5200/acebook-MAICers)
 
+Acebook is a social media platform we designed during a 2 week-long engineering project at Makers Academy
+
 ## Setting Up Enviroments
 ### Test Environment
 1. `cd` into directory
