@@ -23,6 +23,21 @@ class PostsController < ApplicationController
     @posts = @user.posts.order('updated_at DESC')
   end
 
+  def edit
+    @user = current_user
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @user = current_user
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to '/'
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
@@ -35,10 +50,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-    @user = current_user
-    @post = Post.find(params[:id])
-  end
+
 
   private
 

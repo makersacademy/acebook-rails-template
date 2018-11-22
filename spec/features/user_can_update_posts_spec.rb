@@ -8,7 +8,10 @@ RSpec.feature 'Updating Posts', type: :feature do
     post_message(message: 'Hello, world!')
     click_link 'Hello, world!'
     click_button 'Edit'
-    expect(page).to have_field('Message')
+    fill_in('Message', with: 'Goodbye, world!')
+    click_button 'Submit'
+    expect(page).to have_content('Goodbye, world!')
+    expect(page).not_to have_content('Hello, world!')
   end
 
 
