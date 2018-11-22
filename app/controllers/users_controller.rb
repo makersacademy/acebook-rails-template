@@ -2,6 +2,9 @@
 
 # user controller
 class UsersController < ApplicationController
+
+  before_action :require_login, except: [:new, :create]
+
   def show
     @user = User.find(params[:id])
   end
@@ -19,7 +22,7 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
-    # p @user.id
+
   end
 
   private
@@ -28,4 +31,12 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation)
   end
+
+  def require_login
+    unless logged_in?
+      flash[:error] = "You must be logged in to access this section"
+      redirect_to root_path
+    end
+  end
+
 end
