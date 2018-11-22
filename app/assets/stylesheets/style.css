@@ -1,0 +1,36 @@
+.parent {
+    vertical-align: bottom;
+}
+
+.parent span {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+}
+
+
+ul {
+  vertical-align: bottom;
+  list-style-type: none;
+  white-space: nowrap;
+}
+
+li {
+  vertical-align: bottom;
+  display: inline;
+}
+
+#time {
+  font-size: x-small;
+}
+
+#post_format {
+  vertical-align: bottom;
+  display: inline-flex;
+  /* white-space: nowrap; */}
+
+  /* #user_format {
+    min-height: 50px;
+    vertical-align: bottom;
+    display: flex;
+    } */

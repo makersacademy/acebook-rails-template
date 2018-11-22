@@ -7,7 +7,7 @@ RSpec.feature 'Commenting', type: :feature do
     user_1 = FactoryBot.create(:user)
     signin(user_1)
     create_post
-    click_link 'Comment'
+    click_link '💬'
     fill_in 'Comment', with: 'Comment1'
     click_button 'Comment'
     expect(page).to have_content 'Comment1'

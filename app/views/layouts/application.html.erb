@@ -3,12 +3,35 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3b5998;">
+      <div>
+        <a class="navbar-brand" href="/posts">Acebook</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/posts/new">YourTimeline</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="nav item">
+              <%= link_to logout_path do %>
+                Log out
+              <% end %>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

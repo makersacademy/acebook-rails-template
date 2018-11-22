@@ -10,6 +10,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'bcrypt'
 gem 'rails', '~> 5.1.1'
+gem 'bootstrap'
+gem 'jquery-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
