@@ -1,4 +1,5 @@
 inherit_from: .rubocop_todo.yml
 
+# Excludes tests from Block Length issues.
 Metrics/BlockLength:
   ExcludedMethods: ['feature', 'describe']
