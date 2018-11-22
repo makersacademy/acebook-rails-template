@@ -25,7 +25,6 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-
     if @comment.editable? && @comment.user.id == current_user.id
       @comment.update(comment: params[:post][:comment])
       flash[:danger] = "Comment updated. Stop changing your story!"
@@ -34,6 +33,13 @@ class CommentsController < ApplicationController
     end
     redirect_to posts_url
   end
+
+  def like
+    Like.create(likeable: Comment.find(params[:id]), user: current_user)
+    flash[:success] = "Like Counted!"
+    redirect_to posts_url
+  end
+
 
   private
 

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'pry'
 
 class PostsController < ApplicationController
 
@@ -35,6 +36,12 @@ class PostsController < ApplicationController
     else
       flash[:danger] = "Fuck off, this is not yours!"
     end
+    redirect_to posts_url
+  end
+
+  def like
+    Like.create(likeable: Post.find(params[:id]), user: current_user)
+    flash[:success] = "Like Counted!"
     redirect_to posts_url
   end
 

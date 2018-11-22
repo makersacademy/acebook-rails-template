@@ -28,9 +28,14 @@ Welcome to Acebook <%= current_user.name %>
         <% end %>
       <% end %>
 
-    <%= post.post_likes.count %>
-    <%= link_to '👍', post_post_likes_path(post), method: :post %>
-    <%= link_to '👎', post_post_likes_path(post), method: :delete %>
+    ###
+    <span class="pull-right">
+    	<%= link_to like_post_path(post), method: 'post' do %>
+      <i class="icon-thumbs-up"></i>
+    	<%= post.likes.count %> likes
+    	<% end %>
+    </span>
+    ###
 
     <%= link_to new_post_comment_path(post.id) do %>
       Comment
@@ -47,9 +52,14 @@ Welcome to Acebook <%= current_user.name %>
           <% end %>
         <% end %>
 
-        <%= comment.comment_likes.count %>
-        <%= link_to '👍', post_comment_comment_likes_path(post, comment), method: :post %>
-        <%= link_to '👎', post_comment_comment_likes_path(post, comment), method: :delete %>
+        ###
+        <span class="pull-right">
+          <%= link_to like_post_comment_path(post, comment), method: 'post' do %>
+          <i class="icon-thumbs-up"></i>
+          <%= comment.likes.count %> likes
+          <% end %>
+        </span>
+        ###
 
         <% end %>
     </ul>
