@@ -11,6 +11,6 @@ RSpec.feature 'Timeline', type: :feature do
     click_button 'Submit'
     expect(page).to have_content('Hello, world!')
     expect(page).to have_content(Time.new.strftime('%I:%M %p, %A, %b %d'))
-
+    expect(page).to have_content('Amy Smith')
   end
 end
