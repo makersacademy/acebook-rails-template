@@ -8,6 +8,11 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def edit
+    @post = Post.find(params[:id])
+    redirect_to posts_url
+  end
+
   def index
     @posts = Post.all
   end
