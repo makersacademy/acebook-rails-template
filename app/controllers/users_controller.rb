@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+    # p @user.id
   end
 
   private

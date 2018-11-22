@@ -9,4 +9,11 @@ feature 'Authentication' do
     click_link 'Timeline'
     expect(page).to have_content "New post"
   end
+
+  scenario 'a logged out user tries to view users page' do
+    sign_up
+    log_out
+    visit '/users/1'
+    expect(page).to have_content "You must be logged in to access this section"
+  end
 end
