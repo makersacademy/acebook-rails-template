@@ -3,9 +3,9 @@
 
     <h1>Welcome to Acebook!</h1>
 
-    <%= render('partials/posts', posts: @posts) %>
 
     <% if user_signed_in? %>
+      <%= render('partials/posts', posts: @posts) %>
       <%= link_to new_user_post_path(current_user) do %>
         <p>New post</p>
       <% end %>

@@ -1,27 +1,25 @@
 # frozen_string_literal: true
 
-def post_message(message)
+def post_message(message:)
   click_link 'New post'
   fill_in 'Message', with: message
   click_button 'Submit'
 end
 
-def signup1
+def sign_up(user_name:, user_email:, user_password:)
   visit('/')
-  click_link('Register Now')
-  fill_in(:user_name, with: 'user1')
-  fill_in(:user_email, with: 'user1@test.com')
-  fill_in(:user_password, with: 'password1')
-  fill_in(:user_password_confirmation, with: 'password1')
+  click_link('Register')
+  fill_in(:user_name, with: user_name)
+  fill_in(:user_email, with: user_email)
+  fill_in(:user_password, with: user_password)
+  fill_in(:user_password_confirmation, with: user_password)
   click_button 'Sign up'
 end
 
-def signup2
+def login(email:, password:)
   visit('/')
-  click_link('Register Now')
-  fill_in(:user_name, with: 'user2')
-  fill_in(:user_email, with: 'user2@test.com')
-  fill_in(:user_password, with: 'password1')
-  fill_in(:user_password_confirmation, with: 'password1')
-  click_button 'Sign up'
+  click_link('Login')
+  fill_in(:user_email, with: email)
+  fill_in(:user_password, with: password)
+  click_button 'Log in'
 end
