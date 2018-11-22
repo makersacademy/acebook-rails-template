@@ -1,4 +1,5 @@
 # Acebook
+[![Build Status](https://travis-ci.org/Learner5200/acebook-MAICers.svg?branch=master)](https://travis-ci.org/Learner5200/acebook-MAICers)
 
 ## Setting Up Enviroments
 ### Test Environment
