@@ -1,3 +1,5 @@
+require 'pry'
+
 class CommentsController < ApplicationController
 
   def new
@@ -5,7 +7,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create(post_comment_params.merge({user_id: current_user.id, post_id: params[:post_id]}))
+    @comment = Comment.create(post_comment_params)
     flash[:danger] = "Comment Added. Making everything about you eh?"
     redirect_to posts_url
   end
@@ -37,6 +39,7 @@ class CommentsController < ApplicationController
 
   def post_comment_params
     params.require(:comment).permit(:comment)
+      .merge({post_id: params.require(:post_id), user_id: current_user.id})
   end
 
 end
