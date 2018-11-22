@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    p current_user
     @post = Post.create(post_params.merge({user_id: current_user.id}))
     redirect_to posts_url
   end
