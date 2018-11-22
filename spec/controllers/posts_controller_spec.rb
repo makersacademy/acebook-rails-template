@@ -26,4 +26,13 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+#   describe "GET /posts/:id/edit" do
+#   it "update a post" do
+#     # post :create, params: { post: { message: "Hello, world!" } }
+#     post :update, params: { patch: { message: "World!" } }.to change(Post,:message).by("Hello, world!")
+#     expect(Post.find_by(message: "World!")).to be
+#   end
+# end
+
 end
