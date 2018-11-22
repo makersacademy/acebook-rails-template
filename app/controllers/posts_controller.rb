@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  before_action :require_login
+
   def new
     @post = Post.new
   end
@@ -43,5 +45,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def require_login
+    prevent_view unless logged_in?
   end
 end
