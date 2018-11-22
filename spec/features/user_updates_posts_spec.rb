@@ -23,5 +23,8 @@ RSpec.feature 'Timeline', type: :feature do
     click_link 'Log out'
     signup2
     expect(page).not_to have_content('✏️')
+    visit '/posts/1/edit'
+    click_button 'Save changes'
+    expect(page).to have_content('Fuck off, this is not yours!')
   end
 end
