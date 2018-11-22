@@ -1,8 +1,8 @@
 class PostLikesController < ApplicationController
 
-  def new
-    @post_like = PostLike.new
-  end
+  # def new
+  #   @post_like = PostLike.new
+  # end
 
   def create
     @post_like = PostLike.create(post_like_params)

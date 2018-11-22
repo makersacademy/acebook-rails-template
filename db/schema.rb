@@ -10,17 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181122121853) do
+ActiveRecord::Schema.define(version: 20181122123125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comment_likes", force: :cascade do |t|
+  create_table "comment_likes", id: false, force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["comment_id"], name: "index_comment_likes_on_comment_id"
+    t.index ["user_id", "comment_id"], name: "index_comment_likes_on_user_id_and_comment_id", unique: true
     t.index ["user_id"], name: "index_comment_likes_on_user_id"
   end
 

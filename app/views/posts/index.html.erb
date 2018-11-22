@@ -31,7 +31,7 @@ Welcome to Acebook <%= current_user.name %>
     <%= post.post_likes.count %>
     <%= link_to '👍', post_post_likes_path(post), method: :post %>
     <%= link_to '👎', post_post_likes_path(post), method: :delete %>
-    
+
     <%= link_to new_post_comment_path(post.id) do %>
       Comment
     <% end %>
@@ -46,6 +46,11 @@ Welcome to Acebook <%= current_user.name %>
             <%= link_to '✏️', edit_post_comment_path(post.id, comment.id) %>
           <% end %>
         <% end %>
+
+        <%= comment.comment_likes.count %>
+        <%= link_to '👍', post_comment_comment_likes_path(post, comment), method: :post %>
+        <%= link_to '👎', post_comment_comment_likes_path(post, comment), method: :delete %>
+
         <% end %>
     </ul>
     </li>
