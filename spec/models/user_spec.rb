@@ -7,6 +7,10 @@ describe User, type: :model do
     @user = User.new(name: 'example', email: 'example@example.com',
             password: 'password', password_confirmation: 'password')
   end
+  it 'should work with factory bot' do
+    user1 = create(:user)
+    expect(user1.valid?).to eq(true)
+  end
   it 'name should be present' do
     @user.name = ''
     expect(@user.valid?).to eq(false)
