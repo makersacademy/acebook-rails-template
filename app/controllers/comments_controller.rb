@@ -10,6 +10,20 @@ class CommentsController < ApplicationController
 
     redirect_to post_path(@post)
   end
+  def edit
+      @post = Post.find(params[:id])
+      @comment = Comment.find(params[:post_id])
+  end
+  def update
+    @comment = current_user.comment.create(post_params)
+
+    if @comment.save
+      redirect_to posts_url
+    else
+      render 'new'
+    end
+
+  end
 
   private
 

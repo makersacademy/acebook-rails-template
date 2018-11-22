@@ -21,8 +21,12 @@
   <span> <%= User.find(comment.user_id).name %> commented:
   <%= comment.body %> </span>
   <br>
+  <%= link_to 'Edit comment', edit_post_comment_path(comment) %>
+  <br>
   <% end %>
 </p>
+
+
 
 <% if @post.user_id == current_user.id %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
