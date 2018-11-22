@@ -19,10 +19,12 @@
                 data: { confirm: 'Are you sure?' } %></td>
       <% end %>
           <td id='like-home'>
-            <span id='like-form-home'>
-              <%= form_with(model: [post, post.likes.build ], local: true) do |form| %>
-              <%= form.hidden_field :user_id, value: current_user.id %>
-              <%= form.submit 'Like' %>
+            <span class='like-button' id='like-form-home'>
+              <% user_like = post.likes.find { |like| like.user_id == current_user.id } %>
+              <% if user_like %>
+              <%= button_to 'Unlike', post_like_path(post.id, user_like), method: :delete, class: 'like-button' %>
+              <% else %>
+              <%= button_to 'Like', post_likes_path(post.id), method: :post, class: 'like-button' %>
               <% end %>
             </span>
             <span id='like-count-home'>

@@ -5,18 +5,20 @@
 
 <article id='likes'>
   <span id='likes-count'>
-    Likes: <%= @post.likes.count %>
+    Likes: <span id='likes-number'><%= @post.likes.count %></span>
   </span>
   <span id='likes-button'>
-    <%= form_with(model: [@post, @post.likes.build ], local: true) do |form| %>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-    <%= form.submit 'Like' %>
+    <% user_like = @post.likes.find { |like| like.user_id == current_user.id } %>
+    <% if user_like %>
+    <%= button_to 'Unlike', post_like_path(@post.id, user_like), method: :delete, class: 'like-button' %>
+    <% else %>
+    <%= button_to 'Like', post_likes_path(@post.id), method: :post, class: 'like-button' %>
     <% end %>
   </span>
-</article
+</article>
+<br>
 
-
-
+<br>
 <%= link_to 'Comment', new_post_comment_path(@post) %>
 <p>
   <% @post.comments.each do |comment| %>
