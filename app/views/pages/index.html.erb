@@ -1,20 +1,20 @@
 <% content_for :top_content do %>
   <div class="jumbotron">
-    <div class="container">
-      <h1>Welcome to Acebook!</h1>
-      <p>Register to get started</p>
-      <p><%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %></p>
-    </div>
-  </div>
-  <div>
+
+    <h1>Welcome to Acebook!</h1>
+
+
     <% if user_signed_in? %>
-      <li>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-      </li>
+      <%= render('partials/posts', posts: @posts) %>
+      <%= link_to new_user_post_path(current_user) do %>
+        <p>New post</p>
+      <% end %>
     <% else %>
-      <li>
-        <%= link_to('Login', new_user_session_path)  %>
-      </li>
+      <div class="container">
+        <p>Register to get started</p>
+        <p><%= link_to 'Register Now', new_user_registration_path, class: 'btn btn-primary btn-lg' %></p>
+      </div>
     <% end %>
+
   </div>
 <% end %>

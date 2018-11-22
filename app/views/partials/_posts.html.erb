@@ -1,0 +1,8 @@
+<% posts.each do |post| %>
+  <br>
+  <%= link_to user_post_path(user_id: post.user_id, id: post.id) do %>
+    <pre><%= post.message %></pre>
+  <% end %>
+  <p>Posted at: <%= post.updated_at.strftime("%Y-%m-%d %k:%M")%></p>
+  <br>
+<% end %>

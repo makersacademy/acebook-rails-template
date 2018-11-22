@@ -7,7 +7,7 @@ RSpec.feature 'Signing in', type: :feature do
     login(email: 'test@user.com', password: 'qwerty')
 
     expect(page).to have_content 'Signed in successfully.'
-    expect(current_path).to eq '/posts'
+    expect(current_path).to eq '/users/1/posts'
   end
 
   scenario 'incorrect email' do
@@ -18,7 +18,7 @@ RSpec.feature 'Signing in', type: :feature do
 
   scenario 'incorrect password' do
     login(email: 'test@user.com', password: 'qwrty')
-    
+
     expect(page).to have_content 'Invalid Email or password'
   end
 end

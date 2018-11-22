@@ -27,7 +27,7 @@ RSpec.feature 'Timeline', type: :feature do
   end
 
   scenario 'Redirects to index if not logged in' do
-    visit '/posts'
+    visit '/users/1/posts/new'
     expect(current_path).to eq '/'
   end
 end
