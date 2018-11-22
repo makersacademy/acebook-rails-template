@@ -35,4 +35,8 @@ RSpec.feature 'Updating Posts', type: :feature do
     click_button 'Edit'
     expect(page).to have_content('Error: You do not have permissions to edit this message')
   end
+
+
+
+
 end

@@ -3,6 +3,7 @@
 require 'simplecov' # THESE LINES MUST BE AT THE VERY TOP!
 require 'simplecov-console'
 require 'database_cleaner'
+require 'rake'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   # SimpleCov::Formatter::HTMLFormatter,
   SimpleCov::Formatter::Console
@@ -121,6 +122,7 @@ RSpec.configure do |config|
   config.before(:suite) do
    DatabaseCleaner.strategy = :transaction
    DatabaseCleaner.clean_with(:truncation)
+   Rails.application.load_seed
  end
 
  config.before(:each) do
