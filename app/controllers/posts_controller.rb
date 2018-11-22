@@ -29,6 +29,9 @@ class PostsController < ApplicationController
     if @user.id != @post.user_id
       flash[:notice] = 'Error: You do not have permissions to edit this message'
       redirect_to user_post_path(user_id: @user.id, id: @post.id)
+    elsif Time.now > (@post.created_at + 10.minutes)
+      flash[:notice] = 'Error: You do not have permissions to edit this message 10 mins after creation'
+      redirect_to user_post_path(user_id: @user.id, id: @post.id)
     end
   end
 

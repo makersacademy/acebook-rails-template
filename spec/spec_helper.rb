@@ -4,7 +4,7 @@ require 'simplecov' # THESE LINES MUST BE AT THE VERY TOP!
 require 'simplecov-console'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   # SimpleCov::Formatter::HTMLFormatter,
-  SimpleCov::Formatter::Console,
+  SimpleCov::Formatter::Console
 ]
 SimpleCov.start do
   add_filter "app/channels/application_cable/connection.rb"
