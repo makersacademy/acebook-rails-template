@@ -1,1 +1,4 @@
-$("#post_<%= post.id %>_likes").html("<%= post.likes.count %> likes");
+$(document).ready(function() {
+    $("#<%= @likeable.class %>_<%= @likeable.id %>_likes").html("<%= @likeable.likes.size %> likes");
+  }
+)

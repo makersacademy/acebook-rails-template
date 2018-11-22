@@ -64,3 +64,5 @@ gem "activesupport", "~> 5.1"
 gem "pry", "~> 0.12.2"
 
 gem "timecop", "~> 0.9.1"
+
+gem "jquery-rails", "~> 4.3"

@@ -40,7 +40,8 @@ class PostsController < ApplicationController
   end
 
   def like
-    like = Like.find_by({likeable: Post.find(params[:id]), user: current_user})
+    @likeable = Post.find(params[:id])
+    like = Like.find_by({likeable: @likeable, user: current_user})
     if like
       like.destroy
       flash = "Like Removed!"
@@ -50,7 +51,7 @@ class PostsController < ApplicationController
     end
     respond_to do |format|
       format.html do
-        # flash[:danger] = flash
+        flash[:danger] = flash
         redirect_to posts_url
       end
       format.js
