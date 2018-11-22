@@ -11,7 +11,6 @@ class RegistrationsController < Devise::RegistrationsController
 
   def sign_up_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
-    puts("sign up params from inside registration controller")
   end
 
   def configure_permitted_parameters
