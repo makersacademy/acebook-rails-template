@@ -6,6 +6,13 @@ RSpec.describe PostsController, type: :controller do
       get :new
       expect(response).to have_http_status(302)
     end
+
+    it "renders the new template" do
+      user = create(:user)
+      sign_in user
+      get :new
+      expect(subject).to render_template('new')
+    end
   end
 
   describe "POST /" do
@@ -51,6 +58,17 @@ RSpec.describe PostsController, type: :controller do
       post :like, params: { like: true, id: post_id }
       post :like, params: { like: true, id: post_id }
       expect(Post.find_by(message: "Hello, world!").likes.size).to be 0
+    end
+  end
+
+  describe "/posts/:id/edit" do
+    it "renders the edit template" do
+      # user = create(:user)
+      # sign_in user
+      # post :create, params: { post: { message: "Hello, world!" } }
+      # post_id = Post.find_by(message: "Hello, world!").id
+      # post :update, params: { id: post_id, post: true }
+      # expect(subject).to render_template 'edit'
     end
   end
 end
