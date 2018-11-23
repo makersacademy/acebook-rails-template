@@ -18,26 +18,6 @@
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %></td>
       <% end %>
-          <td id='like-home'>
-            <span class='like-button' id='like-form-home'>
-              <% user_like = post.likes.find { |like| like.user_id == current_user.id } %>
-
-              <% if user_like %>
-                <%= form_with model: [post, user_like], local: true, method: :delete, html: { id: :unlike_form } do |form| %>
-                  <%= form.hidden_field :user_id, value: current_user.id %>
-                  <%= form.submit 'Unlike' %>
-                <% end %>
-              <% else %>
-                <%= form_with model: [post, post.likes.build], local: true, html: { id: :like_form } do |form| %>
-                  <%= form.hidden_field :user_id, value: current_user.id %>
-                  <%= form.submit 'Like' %>
-                <% end %>
-              <% end %>
-            </span>
-            <span id='like-count-home'>
-              (<%= post.likes.count %>)
-            </span>
-          </td>
       <td><%= link_to "Comment", new_post_comment_path(post) %></td>
     </tr>
   <% end %>
