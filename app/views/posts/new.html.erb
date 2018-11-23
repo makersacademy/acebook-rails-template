@@ -1,9 +1,18 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
 
+<br>
+<div class="container" align="center">
+  <h2>
+    <%= current_user.name.capitalize %>'s profile!
+  </h2>
+  <br>
+  <%= form_for @post do |form| %> New
+  <%= form.label :message %>:
+  <br>
+  <%= form.text_area :message, style: 'width:80%', rows: 5 %>
+<br>
   <%= form.submit "Submit" %>
 <% end %>
+</div>
 
 <div class="container" id="posts">
   <% @posts.each do |post| %>
