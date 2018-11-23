@@ -16,11 +16,27 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+@import url(https://fonts.googleapis.com/css?family=Monoton);
+
 @media screen and (max-width: 768px) {
   .nav-right {
     float: left;
   }
 }
+body{
+  background-color: #A7D9DC;
+}
+.container-fluid {
+  background-color: #869de0;
+}
+#nav-text {
+  font-family: 'Monoton', cursive;
+  font-size: 4em;
+  color: white;
+}
+ #navbar-posts, a#navbar-sign-up, a#navbar-sign-in {
+   color: white;
+ }
 
 article#likes {
   display: block;
