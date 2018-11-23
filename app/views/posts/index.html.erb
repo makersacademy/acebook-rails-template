@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container" id="posts_page">
   <% if current_user %>
     <h2>
       Welcome to Acebook,
@@ -19,7 +19,7 @@
     <div class="border" name="post" id="post_<%= post.id %>">
       <br>
       <div id="post_format">
-        <h4><%= post.user.name.capitalize %></h4>
+        <h4 class="user_name"><%= post.user.name.capitalize %></h4>
         <p id="time"><%= post.updated_at.strftime("%e %b %Y") %></p>
         <span id="post_content"><%= simple_format(post.message) %></span>
       </div>
@@ -29,14 +29,14 @@
       <% end %>
       <%= link_to '💬', new_post_comment_path(post.id) %>
       <span class="pull-right">
-        <%= link_to like_post_path(post), method: 'post', remote: true do %> 👍
-          <span id="Post_<%= post.id %>_likes"><%= post.likes.count %>likes</span>
+        <%= link_to like_post_path(post), method: 'post', remote: true do %>
+          <span id="Post_<%= post.id %>_likes"><%= post.likes.count %> ⭐️</span>
         <% end %>
       </span>
     <div class="container border" id="comments">
       <% post.comments.each do |comment| %>
         <div class="container" name="comment" id="comment_<%= comment.id %>">
-          <p><%= comment.comment %></p>
+          <p><span class="user_name"><%= comment.user.name %></span> <%= comment.comment %></p>
         <% if comment.user == current_user %>
           <span class="comment_buttons"><%= link_to '❌', post_comment_path(post, comment), method: :delete, id: "delete-#{comment.id}" %></span>
           <% if comment.editable? %>
@@ -44,8 +44,8 @@
           <% end %>
         <% end %>
         <span class="pull-right">
-          <%= link_to like_post_comment_path(post, comment), method: 'post', remote: true do %> 👍
-            <span id="Comment_<%= comment.id %>_likes"><%= comment.likes.count %>likes</span>
+          <%= link_to like_post_comment_path(post, comment), method: 'post', remote: true do %>
+            <span id="Comment_<%= comment.id %>_likes"><%= comment.likes.count %> ⭐️</span>
           <% end %>
         </span>
         </div>

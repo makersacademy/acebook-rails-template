@@ -14,9 +14,10 @@
 //background colours
  $body-bg: #e6e9ef;
  $header: #3b5998;
- $light-theme: white;
+ $light-theme: #FFFAFA;
 
- //text colours
+ //text
+ $primary-font: "Helvetica Neue";
  $text-dark: black;
 
  //positioning
@@ -26,6 +27,7 @@
 .navbar-dark {
   background-color: $header;
 }
+
 
  @import 'bootstrap';
  @import './posts';
