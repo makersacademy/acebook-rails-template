@@ -15,7 +15,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto">
+          <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">
               <% if user_signed_in? %>
                 <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
@@ -26,6 +27,7 @@
             <a class="nav-item nav-link" href="#"></a>
             <a class="nav-item nav-link disabled" href="#"></a>
           </div>
+           </ul>
         </div>
       </nav>
 
@@ -45,10 +47,8 @@
 
     <footer class="page-footer font-small blue">
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">Maicers © 2018
+  <div class="footer-copyright text-left py-3"> Maicers © 2018
   </div>
-  <!-- Copyright -->
 
 </footer>
   </body>
