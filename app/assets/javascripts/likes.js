@@ -2,14 +2,22 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
-  $('.like-button').click(function(event) {
-    console.log(event)
-    event.preventDefault()
+  $('#like_form').submit(function(event) {
+    $.ajax({
+      type: 'POST',
+      url: $(this).attr('action'),
+      data: $(event).serialize(),
+      dataType: 'JSON'
+    }).then(json => { console.log('success', json) })
+
+    return false;
   });
-  //
-  // function incrementLikes() {
-  //   var newLikes = parseInt(document.getElementById('likes-number').innerHTML) + 1;
-  //   document.getElementById('likes-number').innerHTML = newLikes;
-  // }
+
+  $('#unlike_form').submit(function(event) {
+    event.preventDefault()
+    $.post($('#unlike-form').attr('action'), data).then(function(data) {
+      console.log(data)
+    });
+  })
 
 });

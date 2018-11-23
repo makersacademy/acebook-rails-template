@@ -9,10 +9,17 @@
   </span>
   <span id='likes-button'>
     <% user_like = @post.likes.find { |like| like.user_id == current_user.id } %>
+
     <% if user_like %>
-    <%= button_to 'Unlike', post_like_path(@post.id, user_like), method: :delete, class: 'like-button' %>
+      <%= form_with model: [@post, user_like], local: true, method: :delete, html: { id: :unlike_form } do |form| %>
+        <%= form.hidden_field :user_id, value: current_user.id %>
+        <%= form.submit 'Unlike' %>
+      <% end %>
     <% else %>
-    <%= button_to 'Like', post_likes_path(@post.id), method: :post, class: 'like-button' %>
+      <%= form_with model: [@post, @post.likes.build], local: true, html: { id: :like_form } do |form| %>
+        <%= form.hidden_field :user_id, value: current_user.id %>
+        <%= form.submit 'Like' %>
+      <% end %>
     <% end %>
   </span>
 </article>
