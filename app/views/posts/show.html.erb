@@ -35,7 +35,9 @@
 
 
 <% if @post.user_id == current_user.id %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<% if Time.now - 10.minutes <= @post.created_at.asctime %>
+<%= link_to 'Edit', edit_post_path(@post) %>
+<% end %> |
 <%= link_to 'Destroy', post_path(@post),
               method: :delete,
               data: { confirm: 'Are you sure?' } %> |
