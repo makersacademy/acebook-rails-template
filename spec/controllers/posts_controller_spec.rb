@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   before do
-    controller.stub(:require_login)
+    allow(controller).to receive(:require_login)
   end
   describe 'GET /new ' do
     it 'responds with 200' do
