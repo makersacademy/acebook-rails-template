@@ -54,7 +54,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html do
-        redirect_to :back
+        redirect_to posts_path
       end
       format.js
     end
