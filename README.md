@@ -27,3 +27,11 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## How to Run the App
+
+Our App is currently being hosted on Heroku and can be accessed with the following link:
+
+```bash
+  https://villans-book.herokuapp.com/
+```
