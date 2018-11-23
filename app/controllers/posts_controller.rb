@@ -1,3 +1,5 @@
+require_relative '../../lib/modules/date_format.rb'
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
