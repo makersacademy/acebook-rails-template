@@ -33,3 +33,16 @@ body{
 .nav-right {
   float: right;
 }
+
+.like-button {
+  border-radius: 2px;
+  background-color: #869de0;
+}
+
+button:focus {
+  outline: none;
+}
+
+span#post-likes {
+  margin-bottom: 1%;
+}

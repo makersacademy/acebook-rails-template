@@ -18,6 +18,12 @@
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %></td>
       <% end %>
+      <td>
+        <span id='home-post-likes'>
+        <%= link_to like_post_path(post, like: true), method: 'post', remote: true do %><button class='like-button'>👍</button><% end %>
+        <span id="post_<%= post.id %>_likes">Likes (<%= post.likes.size %>)</span>
+      </span>
+      </td>
       <td><%= link_to "Comment", new_post_comment_path(post) %></td>
     </tr>
   <% end %>

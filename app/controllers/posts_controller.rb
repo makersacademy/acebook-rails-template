@@ -46,10 +46,17 @@ class PostsController < ApplicationController
 
   def like
     @post = Post.find(params[:id])
-    Like.create(likeable: @post, user: current_user, like: params[:like])
+    user_like = Like.find_by({ likeable: @post, user: current_user })
+
+    if user_like
+      user_like.destroy
+    else
+      Like.create(likeable: @post, user: current_user, like: params[:like])
+    end
+
     respond_to do |format|
       format.html do
-        redirect_to post_path
+        redirect_to :back
       end
       format.js
     end
