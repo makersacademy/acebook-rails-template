@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     puts session[:user_id]
-    redirect_to posts_url, notice: 'Logged out!'
+    redirect_to '/', notice: 'Logged out!'
   end
 
 end
