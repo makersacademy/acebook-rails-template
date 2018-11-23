@@ -1,3 +1,4 @@
+</br>
 <p><%= @post.message  %></p>
 Comments:
 <% @post.comments.each do |comment| %>
@@ -6,11 +7,11 @@ Comments:
   <p>Commented at: <%= comment.updated_at.strftime("%Y-%m-%d %k:%M")%></p>
 <% end %>
 
-<%= button_to "Delete", {:controller => :posts,
-  :action => 'destroy', :id => @post.id, :user_id => @post.user_id }, :method => :delete %>
-
-<%= button_to "Edit", {:controller => :posts,
-  :action => 'edit', :id => @post.id, :user_id => @post.user_id }, :method => :get %>
-
-<%= button_to "Comment", {:controller => :comments,
-  :action => 'new', :post_id => @post.id, :user_id => @post.user_id }, :method => :get %>
+<% if current_user.id == @post.user_id %>
+  <%= button_to "Delete", {:controller => :posts,
+    :action => 'destroy', :id => @post.id, :user_id => @post.user_id }, :method => :delete, :class => 'btn btn-delete'%>
+  <%= button_to "Edit", {:controller => :posts,
+    :action => 'edit', :id => @post.id, :user_id => @post.user_id }, :method => :get, :class => 'btn'%>
+  <%= button_to "Comment", {:controller => :comments,
+  :action => 'new', :post_id => @post.id, :user_id => @post.user_id }, :method => :get, :class => 'btn'%>
+<% end %>
