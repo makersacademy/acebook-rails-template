@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This is a comments controller
 class CommentsController < ApplicationController
   def new
     # @comment = Comment.new(post_id: params[:post_id])
@@ -5,7 +8,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create(body: comment_params, post_id: params[:post_id], user_id: session[:user_id])
+    @comment = Comment.create(body: comment_params[:body],
+                              post_id: params[:post_id],
+                              user_id: session[:user_id])
     redirect_to '/posts'
   end
 

@@ -11,7 +11,7 @@
     <p><%= post.updated_at.strftime('%I:%M %p, %A, %b %d') %></p>
     <%= link_to 'Edit', edit_post_path(post) %>
     <%= link_to 'Delete', post_path(post), method: :delete %>
-    <%= link_to 'Comment', new_comment_path(post_id: post.id) %>
+    <%= link_to 'Comment', new_post_comment_path(post) %>
       <% post.comments.each do |comment| %>
       <p><%= comment.body %></p>
       <% end %>
