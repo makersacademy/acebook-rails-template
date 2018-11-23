@@ -21,7 +21,7 @@
   <span> <%= User.find(comment.user_id).name %> commented:
   <%= comment.body %> </span>
   <br>
-  <%= link_to 'Edit comment', edit_post_comment_path(comment) %>
+  <%= link_to 'Edit comment', edit_post_comment_path(@post, comment) %>
   <%= link_to 'Destroy comment', post_comment_path(comment),
                 method: :delete,
                 data: { confirm: 'Are you sure you want to delete this comment? '} %>
