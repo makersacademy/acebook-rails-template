@@ -38,31 +38,8 @@ body{
    color: white;
  }
 
-article#likes {
-  display: block;
-  margin-bottom: 5%;
-}
-
-span#likes-count {
-  float: left;
-  margin-right: 1%;
-}
-span#likes-button {
-  float: left;
-}
-
 td {
   padding-right: 20px;
-}
-
-td#like-home {
-  display: block;
-}
-span#like-form-home {
-  float: left;
-}
-span#like-count-home {
-  float: left;
 }
 
 body{
@@ -71,4 +48,17 @@ body{
 
 .nav-right {
   float: right;
+}
+
+.like-button {
+  border-radius: 2px;
+  background-color: #869de0;
+}
+
+button:focus {
+  outline: none;
+}
+
+span#post-likes {
+  margin-bottom: 1%;
 }

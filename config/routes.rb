@@ -3,8 +3,14 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :posts do
-    resources :comments
-    resources :likes
+    member do
+      post 'like'
+    end
+    resources :comments do
+      member do
+        post 'like'
+      end
+    end
   end
 
   authenticated :user do

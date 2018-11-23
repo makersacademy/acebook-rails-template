@@ -19,17 +19,12 @@
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %></td>
       <% end %>
-          <td id='like-home'>
-            <span id='like-form-home'>
-              <%= form_with(model: [post, post.likes.build ], local: true) do |form| %>
-              <%= form.hidden_field :user_id, value: current_user.id %>
-              <%= form.submit 'Like' %>
-              <% end %>
-            </span>
-            <span id='like-count-home'>
-              (<%= post.likes.count %>)
-            </span>
-          </td>
+      <td>
+        <span id='home-post-likes'>
+        <%= link_to like_post_path(post, like: true), method: 'post', remote: true do %><button class='like-button'>👍</button><% end %>
+        <span id="post_<%= post.id %>_likes">Likes (<%= post.likes.size %>)</span>
+      </span>
+      </td>
       <td><%= link_to "Comment", new_post_comment_path(post) %></td>
     </tr>
   <% end %>
