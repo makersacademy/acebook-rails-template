@@ -11,8 +11,11 @@ RSpec.feature 'Creating comments', type: :feature do
   scenario 'User can delete their own comment on a post' do
     click_link('Hello, world!')
     comment(body: 'this is a comment')
-
-    expect(page).to have_content('Successfully commented!')
+    within('div#comment_3') do
+      click_button 'Delete'
+    end
+    expect(page).to have_content('Comment deleted!')
+    expect(page).not_to have_content('this is a comment')
   end
 
 

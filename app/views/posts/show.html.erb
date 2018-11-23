@@ -1,9 +1,13 @@
 <p><%= @post.message  %></p>
 Comments:
 <% @post.comments.each do |comment| %>
-  <br>
-  <pre><%= comment.body %></pre>
-  <p>Commented at: <%= comment.updated_at.strftime("%Y-%m-%d %k:%M")%></p>
+  <div id="comment_<%= comment.id %>">
+    <br>
+    <pre><%= comment.body %></pre>
+    <p>Commented at: <%= comment.updated_at.strftime("%Y-%m-%d %k:%M")%></p>
+    <%= button_to "Delete", {:controller => :comments,
+      :action => 'destroy', :id => comment.id, :post_id => @post.id, :method => :delete} %>
+  </div>
 <% end %>
 
 <%= button_to "Delete", {:controller => :posts,
