@@ -23,15 +23,9 @@
  //positioning
  $post-position: center;
 
-
 .navbar-dark {
   background-color: $header;
 }
-
-#logout {
-  color: white !important;
-}
-
 
  @import 'bootstrap';
  @import './posts';
