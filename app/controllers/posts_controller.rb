@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-
-
   def index
     @posts = Post.all
   end
@@ -46,7 +44,7 @@ class PostsController < ApplicationController
 
   def like
     @post = Post.find(params[:id])
-    user_like = Like.find_by({ likeable: @post, user: current_user })
+    user_like = Like.find_by(likeable: @post, user: current_user)
 
     if user_like
       user_like.destroy
