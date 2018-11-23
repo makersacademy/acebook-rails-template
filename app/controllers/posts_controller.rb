@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def index
     @posts = Post.all
   end
@@ -41,6 +40,24 @@ class PostsController < ApplicationController
     @post.destroy
 
     redirect_to posts_path
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    user_like = Like.find_by(likeable: @post, user: current_user)
+
+    if user_like
+      user_like.destroy
+    else
+      Like.create(likeable: @post, user: current_user, like: params[:like])
+    end
+
+    respond_to do |format|
+      format.html do
+        redirect_to :back
+      end
+      format.js
+    end
   end
 
   private

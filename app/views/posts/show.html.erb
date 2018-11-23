@@ -3,25 +3,20 @@
   <%=simple_format(@post.message) %>
 </p>
 
-<article id='likes'>
-  <span id='likes-count'>
-    Likes: <%= @post.likes.count %>
-  </span>
-  <span id='likes-button'>
-    <%= form_with(model: [@post, @post.likes.build ], local: true) do |form| %>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-    <%= form.submit 'Like' %>
-    <% end %>
-  </span>
-</article>
-
+<span id='post-likes'>
+  <%= link_to like_post_path(@post, like: true), method: 'post', remote: true do %><button class='like-button'>👍</button><% end %>
+  <span id="post_<%= @post.id %>_likes">Likes (<%= @post.likes.size %>)</span>
+</span>
 <%= link_to 'Comment', new_post_comment_path(@post) %>
 <p>
   <% @post.comments.each do |comment| %>
   <span> <%= User.find(comment.user_id).name %> commented:
-  <%= comment.body %> </span>
+  <%= comment.body %>
+<td><i><%= comment.created_at.asctime %></i></td> </span>
   <br>
-  <%= link_to 'Edit comment', edit_post_comment_path(@post, comment) %>
+  <% if Time.now - 10.minutes <= comment.created_at.asctime %>
+    <%= link_to 'Edit comment', edit_post_comment_path(@post, comment) %>
+    <% end %>
   <%= link_to 'Destroy comment', post_comment_path(comment),
                 method: :delete,
                 data: { confirm: 'Are you sure you want to delete this comment? '} %>
@@ -29,10 +24,10 @@
   <% end %>
 </p>
 
-
-
 <% if @post.user_id == current_user.id %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<% if Time.now - 10.minutes <= @post.created_at.asctime %>
+<%= link_to 'Edit', edit_post_path(@post) %>
+<% end %> |
 <%= link_to 'Destroy', post_path(@post),
               method: :delete,
               data: { confirm: 'Are you sure?' } %> |
