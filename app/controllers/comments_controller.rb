@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def index
     @post = Post.find(params[:post_id])
     @comments = @post.comments.all
@@ -16,9 +15,8 @@ class CommentsController < ApplicationController
   end
 
   def edit
-      @post = Post.find(params[:post_id])
-      @comment = @post.comments.find(params[:id])
-
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
   end
 
   def create
@@ -50,8 +48,6 @@ class CommentsController < ApplicationController
 
     redirect_to posts_path(@post)
   end
-
-
 
   private
 
