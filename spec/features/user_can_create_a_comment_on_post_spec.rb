@@ -13,6 +13,7 @@ RSpec.feature 'Creating comments', type: :feature do
     click_button 'Comment'
     fill_in('Body', with: 'this is a comment' )
     click_button 'Submit'
+    click_link('Hello, world!')
     expect(page).to have_content('this is a comment')
   end
 

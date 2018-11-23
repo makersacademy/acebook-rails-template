@@ -1,4 +1,5 @@
 <p><%= @post.message  %></p>
+<p><%= @post.comments.map(&:body) %></p>
 
 <%= button_to "Delete", {:controller => :posts,
   :action => 'destroy', :id => @post.id, :user_id => @post.user_id }, :method => :delete %>

@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
     @user = current_user
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
+    byebug
     redirect_to '/'
   end
 
