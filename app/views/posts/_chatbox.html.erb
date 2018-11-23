@@ -1,4 +1,14 @@
 <section id="chat-box" class=Border>
   <h3>Chatbox</h3>
-  
+  <%= form_with(model: @chat) do |form| %>
+    <%= form.label :message %>
+    <%= form.text_area :message %>
+    <%= form.submit "Submit" %>
+  <% end %>
+  <% for chat in @chats %>
+    <article class="chat-line">
+      <span class="speaker"><%= chat.user.name %></span>
+      <span class="body"><%= chat.message %></span>
+    </article>
+  <% end %>
 </section>

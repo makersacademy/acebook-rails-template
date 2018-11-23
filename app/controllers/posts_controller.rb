@@ -13,6 +13,8 @@ class PostsController < ApplicationController
   end
 
   def index
+    @chat = Chat.new
+    @chats = Chat.all
     @posts = Post.order('created_at DESC')
   end
 
@@ -55,12 +57,6 @@ class PostsController < ApplicationController
       end
       format.js
     end
-    room = "Group Chat"
-    ActionCable.server.broadcast(
-      "chat_#{room}",
-      sent_by: 'Paul',
-      body: 'This is a cool chat app.'
-    )
   end
 
   private
