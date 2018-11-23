@@ -11,7 +11,7 @@
 
 <% @posts.reverse_each do |post| %>
   <p>
-  <strong> <%= post.user.username %> </strong> @ <em> <%= post.updated_at %> </em>
+  <strong> <%= post.user.username %> </strong> @ <em> <%= date_format(post.updated_at) %> </em>
   <br>
   <%= post.message %>
   <% if current_user && (current_user.id == post.user_id) %>
