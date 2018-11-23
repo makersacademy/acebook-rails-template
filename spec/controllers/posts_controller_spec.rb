@@ -20,7 +20,8 @@ RSpec.describe PostsController, type: :controller do
       user = create(:user)
       sign_in user
       post :create, params: { post: { message: "Hello, world!" } }
-      expect(Post.find_by(message: "Hello, world!")).to be
+      get :show
+      expect(response).to have_http_status(200)
     end
   end
 
