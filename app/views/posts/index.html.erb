@@ -1,65 +1,58 @@
+<%= stylesheet_link_tag "style" %>
 
-<%= link_to new_post_path do %>
+<div class="container">
+  <% if current_user %>
+    <h2>
+      Welcome to Acebook,
+      <%= current_user.name.capitalize %>!
+    </h2>
+  <% end %>
+  <%= link_to new_post_path do %>
   New post
 <% end %>
 
-<%= link_to logout_path do %>
-  Log out
-<% end %>
-
-<% if current_user %>
-Welcome to Acebook <%= current_user.name %>
-<% end %>
-
 <% if flash[:danger] %>
-<%= flash[:danger] %>
+  <%= flash[:danger] %>
 <% end %>
 
-<ul>
+<div class="container" id="posts">
   <% @posts.each do |post| %>
-    <li>
-      <%= simple_format(post.message) %>
-      <p><%= post.user.name %></p>
-      <p><%= post.updated_at.strftime("%eth %b %Y %T") %></p>
+    <div class="border" name="post" id="post_<%= post.id %>">
+      <br>
+      <div id="post_format">
+        <h4><%= post.user.name.capitalize %></h4>
+        <p id="time"><%= post.updated_at.strftime("%e %b %Y") %></p>
+        <span id="post_content"><%= simple_format(post.message) %></span>
+      </div>
       <% if post.user == current_user %>
         <%= link_to '❌', post_path(post), method: :delete, id: "delete-#{post.id}" %>
-        <% if post.editable? %>
-          <%= link_to '✏️', edit_post_path(post.id) %>
-        <% end %>
+        <% if post.editable? %><%= link_to '✏️', edit_post_path(post.id) %><% end %>
       <% end %>
-
-
-    <span class="pull-right">
-    	<%= link_to like_post_path(post), method: 'post', remote: true do %> 👍
-      <span id="Post_<%= post.id %>_likes"><%= post.likes.count %>likes</span>
-    	<% end %>
-    </span>
-
-
-    <%= link_to new_post_comment_path(post.id) do %>
-      Comment
-    <% end %>
-    <ul>
+      <%= link_to '💬', new_post_comment_path(post.id) %>
+      <span class="pull-right">
+        <%= link_to like_post_path(post), method: 'post', remote: true do %> 👍
+          <span id="Post_<%= post.id %>_likes"><%= post.likes.count %>likes</span>
+        <% end %>
+      </span>
+    <div class="container border" id="comments">
       <% post.comments.each do |comment| %>
-      <li>
-        <p><%= comment.comment %></p>
-      </li>
+        <div class="container" name="comment" id="comment_<%= comment.id %>">
+          <p><%= comment.comment %></p>
         <% if comment.user == current_user %>
-          <%= link_to '❌', post_comment_path(post, comment), method: :delete, id: "delete-#{comment.id}" %>
+          <span class="comment_buttons"><%= link_to '❌', post_comment_path(post, comment), method: :delete, id: "delete-#{comment.id}" %></span>
           <% if comment.editable? %>
-            <%= link_to '✏️', edit_post_comment_path(post.id, comment.id) %>
+            <span class="comment_buttons"><%= link_to '✏️', edit_post_comment_path(post.id, comment.id) %></span>
           <% end %>
         <% end %>
-
-
         <span class="pull-right">
           <%= link_to like_post_comment_path(post, comment), method: 'post', remote: true do %> 👍
-          <span id="Comment_<%= comment.id %>_likes"><%= comment.likes.count %>likes</span>
+            <span id="Comment_<%= comment.id %>_likes"><%= comment.likes.count %>likes</span>
           <% end %>
         </span>
-
-        <% end %>
-    </ul>
-    </li>
-  <% end %>
-</ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+</div>
+</div>

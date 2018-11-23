@@ -10,6 +10,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'bcrypt'
 gem 'rails', '~> 5.1.1'
+gem 'bootstrap'
+gem 'jquery-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -48,21 +50,19 @@ group :development, :test do
   gem "factory_bot_rails", "~> 4.9"
   gem "faker", "~> 1.9"
   gem "database_cleaner", "~> 1.7"
+  gem "activesupport", "~> 5.1"
+  gem "timecop", "~> 0.9.1"
+  gem "launchy", "~> 2.4"
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
+  gem "pry", "~> 0.12.2"
+  gem "activesupport", "~> 5.1"
+  gem "timecop", "~> 0.9.1"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-gem "activesupport", "~> 5.1"
-
-gem "pry", "~> 0.12.2"
-
-gem "timecop", "~> 0.9.1"
-
-gem "jquery-rails", "~> 4.3"

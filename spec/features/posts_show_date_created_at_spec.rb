@@ -9,6 +9,6 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
     time_now = Time.now
-    expect(page).to have_content(time_now.strftime('%eth %b %Y %T'))
+    expect(page).to have_content(time_now.strftime('%e %b %Y'))
   end
 end
