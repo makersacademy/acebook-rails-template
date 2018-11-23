@@ -15,3 +15,17 @@ def hello_world_post
   fill_in "Message", with: "Hello, world!"
   click_button "Submit"
 end
+
+def sign_in_to_test(wrong_credentials = false)
+  email = wrong_credentials ? "wrong@email.com" : "user@user.com"
+  password = wrong_credentials ? "wrongpassword" : "pword123"
+  visit '/posts'
+  click_link "Sign In"
+  fill_in "user[email]", with: email
+  fill_in "user[password]", with: password
+  click_button "Log in"
+end
+
+def sign_out
+  click_link "Log Out from user@user.com"
+end
