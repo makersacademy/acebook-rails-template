@@ -1,9 +1,10 @@
+</br>
 <p><%= @post.message  %></p>
 
 <% if current_user.id == @post.user_id %>
   <%= button_to "Delete", {:controller => :posts,
-    :action => 'destroy', :id => @post.id, :user_id => @post.user_id }, :method => :delete %>
+    :action => 'destroy', :id => @post.id, :user_id => @post.user_id }, :method => :delete, :class => 'btn-danger'%>
 
   <%= button_to "Edit", {:controller => :posts,
-    :action => 'edit', :id => @post.id, :user_id => @post.user_id }, :method => :get %>
+    :action => 'edit', :id => @post.id, :user_id => @post.user_id }, :method => :get, :class => 'btn-success'%>
 <% end %>
