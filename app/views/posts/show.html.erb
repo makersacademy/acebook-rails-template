@@ -12,6 +12,13 @@
   <% end %>
 </p>
 
+<span class='pull-right'>
+  <%= link_to like_post_path(@post, like: true), method: 'post', remote: true do %>
+    👍
+    <span id="post_<%= @post.id %>_likes">Likes (<%= @post.likes.size %>)</span>
+  <% end %>
+</span>
+
 <% if @post.user_id == current_user.id %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Destroy', post_path(@post),
