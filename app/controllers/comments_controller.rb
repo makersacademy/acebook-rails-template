@@ -10,7 +10,8 @@ class CommentsController < ApplicationController
     @user = current_user
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    redirect_to '/'
+    flash[:notice] = 'Successfully commented!'
+    redirect_to user_post_path(user_id: @user.id, id: @post.id)
   end
 
   private

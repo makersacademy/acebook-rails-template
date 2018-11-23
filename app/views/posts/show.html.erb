@@ -1,5 +1,10 @@
 <p><%= @post.message  %></p>
-<p><%= @post.comments.map(&:body) %></p>
+Comments:
+<% @post.comments.each do |comment| %>
+  <br>
+  <pre><%= comment.body %></pre>
+  <p>Commented at: <%= comment.updated_at.strftime("%Y-%m-%d %k:%M")%></p>
+<% end %>
 
 <%= button_to "Delete", {:controller => :posts,
   :action => 'destroy', :id => @post.id, :user_id => @post.user_id }, :method => :delete %>
