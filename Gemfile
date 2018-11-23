@@ -46,6 +46,8 @@ group :development, :test do
   gem 'simplecov'
   gem 'simplecov-console'
   gem 'timecop'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
 end
 
 group :development do

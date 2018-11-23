@@ -31,4 +31,8 @@ RSpec.feature 'Updating Posts', type: :feature do
     click_link 'This is test user 2'
     expect(page).not_to have_button("Edit")
   end
+
+
+
+
 end

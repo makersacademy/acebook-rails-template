@@ -1,5 +1,11 @@
 </br>
 <p><%= @post.message  %></p>
+Comments:
+<% @post.comments.each do |comment| %>
+  <br>
+  <pre><%= comment.body %></pre>
+  <p>Commented at: <%= comment.updated_at.strftime("%Y-%m-%d %k:%M")%></p>
+<% end %>
 
 <% if current_user.id == @post.user_id %>
   <%= button_to "Delete", {:controller => :posts,
@@ -7,3 +13,5 @@
   <%= button_to "Edit", {:controller => :posts,
     :action => 'edit', :id => @post.id, :user_id => @post.user_id }, :method => :get, :class => 'btn'%>
 <% end %>
+<%= button_to "Comment", {:controller => :comments,
+  :action => 'new', :post_id => @post.id, :user_id => @post.user_id }, :method => :get, :class => 'btn'%>
