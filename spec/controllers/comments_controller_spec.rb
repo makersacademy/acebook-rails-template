@@ -7,7 +7,7 @@ RSpec.describe CommentsController, type: :controller do
       sign_in user
       post = create(:post)
       get :new, params: { post_id: post.id }
-      expect(response).to have_http_status(200)
+      expect(subject).to render_template('new')
     end
   end
   # describe "it renders an edit comment form" do
