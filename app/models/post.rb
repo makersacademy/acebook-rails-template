@@ -2,6 +2,6 @@
 
 # posts!
 class Post < ApplicationRecord
-  include Commentable
+  has_many :comments
   belongs_to :user, foreign_key: 'user_id'
 end

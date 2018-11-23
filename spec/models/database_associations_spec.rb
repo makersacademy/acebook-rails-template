@@ -21,14 +21,13 @@ describe 'Database associations' do
     end
   end
   describe 'Comment' do
-    it 'is commentable' do
-      association = Comment.reflect_on_association(:commentable)
+    it 'belongs to a user' do
+      association = Comment.reflect_on_association(:user)
       expect(association.macro).to eq :belongs_to
     end
-    it 'has many comments' do
-        association = Comment.reflect_on_association(:comments)
-        expect(association.macro).to eq :has_many
-      end
-
+    it 'belongs to a post' do
+      association = Comment.reflect_on_association(:post)
+      expect(association.macro).to eq :belongs_to
+    end
   end
 end

@@ -10,9 +10,6 @@
         1,
         1,
         1,
-        0,
-        null,
-        1,
         null,
         null,
         1,
@@ -164,18 +161,6 @@
         1,
         null
       ],
-      "/Users/irinabaldwin/Dropbox/Projects/acebook-gracebook/app/controllers/concerns/commentable.rb": [
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        2,
-        null,
-        null
-      ],
       "/Users/irinabaldwin/Dropbox/Projects/acebook-gracebook/app/models/user.rb": [
         null,
         null,
@@ -233,6 +218,6 @@
         null
       ]
     },
-    "timestamp": 1542982980
+    "timestamp": 1542987669
   }
 }
