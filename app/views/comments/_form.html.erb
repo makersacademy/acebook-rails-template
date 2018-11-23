@@ -1,16 +1,4 @@
-<p>
-  <strong>Message:</strong>
-  <%= @post.message %>
-</p>
-
-<% if @post.user_id == current_user.id %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Destroy', post_path(@post),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %> |
-<% end %>
-
-<<%= form_with model: [@post, @post.comments.build], local: true do |form| %>
+<%= form_with model: [@post, @post.comments.build], local: true do |form| %>
 
   <% if @comment.errors.any? %>
     <div id="error_explanation">
@@ -37,6 +25,3 @@
   </p>
 
 <% end %>
-
-
-<%= link_to 'Back', posts_path %>

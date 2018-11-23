@@ -4,12 +4,13 @@
 <table>
   <tr>
     <th>Message</th>
+
   </tr>
 
   <% @posts.reverse.each do |post| %>
     <tr>
-      <td><strong><%= post.message %></strong></td>
-      <td><i></i></td>
+      <td><strong><%=simple_format(post.message) %></strong></td>
+      <td><i>by: <%= User.find(post.user_id).name %></i></td>
       <td><%= post.created_at.asctime %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
       <% if post.user_id == current_user.id %>
