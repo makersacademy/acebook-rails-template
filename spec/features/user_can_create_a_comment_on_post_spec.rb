@@ -10,9 +10,7 @@ RSpec.feature 'Creating comments', type: :feature do
 
   scenario 'User can comment on their own post' do
     click_link('Hello, world!')
-    click_button 'Comment'
-    fill_in('Body', with: 'this is a comment' )
-    click_button 'Submit'
+    comment(body: 'this is a comment')
     expect(page).to have_content('this is a comment')
     expect(page).to have_content('Successfully commented!')
   end
@@ -22,9 +20,7 @@ RSpec.feature 'Creating comments', type: :feature do
     login(email: 'test2@user.com', password: 'qwerty')
     visit '/'
     click_link('Hello, world!')
-    click_button 'Comment'
-    fill_in('Body', with: 'this is a comment on another users post' )
-    click_button 'Submit'
+    comment(body: 'this is a comment on another users post')
     expect(page).to have_content('this is a comment on another users post')
     expect(page).to have_content('Successfully commented!')
   end

@@ -6,6 +6,12 @@ def post_message(message:)
   click_button 'Submit'
 end
 
+def comment(body:)
+  click_button 'Comment'
+  fill_in('Body', with: body )
+  click_button 'Submit'
+end
+
 def sign_up(user_name:, user_email:, user_password:)
   visit('/')
   click_link('Register')
