@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'pry'
 
 class PostsController < ApplicationController
 
@@ -15,12 +14,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order('created_at DESC')
-    # binding.pry
-    # ActionCable.server.broadcast(
-    #   "chat_room",
-    #   sent_by: 'Paul',
-    #   body: 'This is a cool chat app.'
-    # )
   end
 
   def destroy
@@ -62,6 +55,12 @@ class PostsController < ApplicationController
       end
       format.js
     end
+    room = "Group Chat"
+    ActionCable.server.broadcast(
+      "chat_#{room}",
+      sent_by: 'Paul',
+      body: 'This is a cool chat app.'
+    )
   end
 
   private

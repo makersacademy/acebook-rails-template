@@ -5,7 +5,9 @@ App.chatChannel = App.cable.subscriptions.create { channel: "ChatChannel", room:
 
   appendLine: (data) ->
     html = @createLine(data)
-    $("[data-chat-room='Group Chat']").append(html)
+    # $("[data-chat-room='Group Chat']").append(html)
+
+    $("#chat-box").append(html)
 
   createLine: (data) ->
     """
