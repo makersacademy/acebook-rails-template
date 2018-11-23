@@ -15,3 +15,15 @@ def hello_world_post
   fill_in "Message", with: "Hello, world!"
   click_button "Submit"
 end
+
+def sign_in_to_test
+  visit '/posts'
+  click_link "Sign In"
+  fill_in "user[email]", with: "user@user.com"
+  fill_in "user[password]", with: "pword123"
+  click_button "Log in"
+end
+
+def sign_out
+  click_link "Log Out from user@user.com"  
+end
