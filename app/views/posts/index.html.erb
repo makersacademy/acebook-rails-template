@@ -29,6 +29,11 @@
         <% if post.editable? %><%= link_to '✏️', edit_post_path(post.id) %><% end %>
       <% end %>
       <%= link_to '💬', new_post_comment_path(post.id) %>
+      <span class="pull-right">
+        <%= link_to like_post_path(post), method: 'post', remote: true do %> 👍
+          <span id="Post_<%= post.id %>_likes"><%= post.likes.count %>likes</span>
+        <% end %>
+      </span>
     <div class="container border" id="comments">
       <% post.comments.each do |comment| %>
         <div class="container" name="comment" id="comment_<%= comment.id %>">
@@ -39,6 +44,11 @@
             <span class="comment_buttons"><%= link_to '✏️', edit_post_comment_path(post.id, comment.id) %></span>
           <% end %>
         <% end %>
+        <span class="pull-right">
+          <%= link_to like_post_comment_path(post, comment), method: 'post', remote: true do %> 👍
+            <span id="Comment_<%= comment.id %>_likes"><%= comment.likes.count %>likes</span>
+          <% end %>
+        </span>
         </div>
       <% end %>
     </div>
