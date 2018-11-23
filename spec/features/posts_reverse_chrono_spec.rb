@@ -19,7 +19,7 @@ RSpec.feature 'Timeline', type: :feature do
     click_button 'Submit'
     time_2 = Time.now
     Timecop.return
-
-    expect(page.find('li:nth-child(1)')).to have_content("My second post!")
+    # save_and_open_page
+    expect(page.find('div[name="post"]:nth-child(1)')).to have_content("My second post!")
   end
 end
