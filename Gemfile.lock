@@ -72,6 +72,11 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.7.1)
     execjs (2.7.0)
+    factory_bot (4.11.1)
+      activesupport (>= 3.0.0)
+    factory_bot_rails (4.11.1)
+      factory_bot (~> 4.11.1)
+      railties (>= 3.0.0)
     ffi (1.9.25)
     flog (4.6.2)
       path_expander (~> 1.0)
@@ -256,6 +261,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coveralls
   database_cleaner
+  factory_bot_rails
   flog
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
@@ -279,4 +285,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.6
+   1.17.1
