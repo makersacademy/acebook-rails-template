@@ -30,4 +30,19 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(302)
     end
   end
+
+  describe "POST /posts/:id/like" do
+    it "creates a like" do
+      user = create(:user)
+      sign_in user
+      post :create, params: { post: { message: "Hello, world!" } }
+      post_id = Post.find_by(message: "Hello, world!").id
+      post :like, params: { like: true, id: post_id }
+      expect(Post.find_by(message: "Hello, world!").likes.size).to be 1
+    end
+
+    it "removes a like" do
+
+    end
+  end
 end
