@@ -16,7 +16,6 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    render file: "posts/edit_forms.html.erb"
   end
 
   def update
@@ -26,8 +25,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
+    Post.find(params[:id]).delete
     redirect_to posts_url
   end
 

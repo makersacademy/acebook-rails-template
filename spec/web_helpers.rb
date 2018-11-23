@@ -11,7 +11,7 @@ end
 
 def hello_world_post
   visit "/posts"
-  click_link "New post"
+  click_link "New Post"
   fill_in "Message", with: "Hello, world!"
   click_button "Submit"
 end
@@ -27,5 +27,5 @@ def sign_in_to_test(wrong_credentials = false)
 end
 
 def sign_out
-  click_link "Log Out from user@user.com"
+  click_link "Log Out"
 end
