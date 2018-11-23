@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @posts = Post.where({user: current_user}).order('created_at DESC')
   end
 
   def create

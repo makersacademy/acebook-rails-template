@@ -28,6 +28,10 @@
   background-color: $header;
 }
 
+#logout {
+  color: white !important;
+}
+
 
  @import 'bootstrap';
  @import './posts';
