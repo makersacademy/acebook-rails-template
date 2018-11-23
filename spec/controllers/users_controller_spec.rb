@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  describe "" do
-    it "GET /" do
+  describe 'it loads a profile' do
+    it 'GET /' do
       user = create(:user)
       sign_in user
       get :show, params: { id: user.id }
