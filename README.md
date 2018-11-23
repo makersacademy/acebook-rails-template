@@ -35,3 +35,5 @@ Our App is currently being hosted on Heroku and can be accessed with the followi
 ```bash
   https://villans-book.herokuapp.com/
 ```
+
+Sign-up using your First Name, Last Name, Username, E-mail and Password and you will have access to the posts functionality.
