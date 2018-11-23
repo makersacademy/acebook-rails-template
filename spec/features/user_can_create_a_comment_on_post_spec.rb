@@ -17,4 +17,16 @@ RSpec.feature 'Creating comments', type: :feature do
     expect(page).to have_content('Successfully commented!')
   end
 
+  scenario 'User can comment on another users post' do
+    click_link('Logout')
+    login(email: 'test2@user.com', password: 'qwerty')
+    visit '/'
+    click_link('Hello, world!')
+    click_button 'Comment'
+    fill_in('Body', with: 'this is a comment on another users post' )
+    click_button 'Submit'
+    expect(page).to have_content('this is a comment on another users post')
+    expect(page).to have_content('Successfully commented!')
+  end
+
 end
