@@ -27,5 +27,5 @@ def sign_in_to_test(wrong_credentials = false)
 end
 
 def sign_out
-  click_link "Log Out from user@user.com"
+  click_link "Log Out"
 end
