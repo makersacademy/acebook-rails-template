@@ -17,7 +17,7 @@ RSpec.feature 'Commenting', type: :feature do
     user_1 = FactoryBot.create(:user)
     signin(user_1)
     create_post
-    click_link 'Comment'
+    click_link '💬'
     fill_in 'Comment', with: 'Comment1'
     click_button 'Comment'
     visit '/posts/1/comments/1/edit'
@@ -30,7 +30,7 @@ RSpec.feature 'Commenting', type: :feature do
     user_1 = FactoryBot.create(:user)
     signin(user_1)
     create_post
-    click_link 'Comment'
+    click_link '💬'
     fill_in 'Comment', with: 'Comment1'
     click_button 'Comment'
     user_2 = FactoryBot.create(:user)

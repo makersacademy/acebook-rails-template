@@ -11,7 +11,7 @@ RSpec.feature 'Signing in', type: :feature do
     fill_in('Email', with: 'user@email.com')
     fill_in('Password', with: 'password')
     click_button('Log in')
-    expect(page).to have_content('Welcome to Acebook Alfie')
+    expect(page).to have_content('Welcome to Acebook, Alfie!')
   end
 
   scenario 'Cannot sign in with invalid email/password' do

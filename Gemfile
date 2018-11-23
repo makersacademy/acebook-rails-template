@@ -60,15 +60,9 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   gem "pry", "~> 0.12.2"
+  gem "activesupport", "~> 5.1"
+  gem "timecop", "~> 0.9.1"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-gem "activesupport", "~> 5.1"
-
-gem "pry", "~> 0.12.2"
-
-gem "timecop", "~> 0.9.1"
-
-gem "jquery-rails", "~> 4.3"
