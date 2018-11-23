@@ -6,7 +6,7 @@ Comments:
     <pre><%= comment.body %></pre>
     <p>Commented at: <%= comment.updated_at.strftime("%Y-%m-%d %k:%M")%></p>
     <%= button_to "Delete", {:controller => :comments,
-      :action => 'destroy', :id => comment.id, :post_id => @post.id, :method => :delete} %>
+      :action => 'destroy', :id => comment.id, :post_id => @post.id}, :method => :delete %>
   </div>
 <% end %>
 
