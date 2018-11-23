@@ -28,12 +28,8 @@ RSpec.feature 'Updating Posts', type: :feature do
   end
 
   scenario "user cannot update another user's post" do
-    click_link 'Logout'
-    login(email: 'test2@user.com', password: 'qwerty')
-    visit '/'
-    click_link 'Hello, world!'
-    click_button 'Edit'
-    expect(page).to have_content('Error: You do not have permissions to edit this message')
+    click_link 'This is test user 2'
+    expect(page).not_to have_button("Edit")
   end
 
 

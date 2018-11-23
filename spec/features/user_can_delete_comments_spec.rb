@@ -1,6 +1,7 @@
-# frozen_string_literal: true
+# # frozen_string_literal: true
 
 require 'rails_helper'
+
 
 RSpec.feature 'Creating comments', type: :feature do
   before do
@@ -27,6 +28,5 @@ RSpec.feature 'Creating comments', type: :feature do
       expect(page).not_to have_selector(:button, "Delete")
     end
   end
-
 
 end

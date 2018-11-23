@@ -8,19 +8,14 @@ RSpec.feature 'Deleting posts', type: :feature do
   end
 
   scenario 'User can delete their own post' do
-    post_message(message: 'Hello, world!')
-    click_link('Hello, world!')
+    click_link('I am test user')
     click_button 'Delete'
-    expect(page).not_to have_content('Hello, world!')
+    expect(page).not_to have_content('I am test user')
   end
 
   scenario "User cannot delete someone else's post" do
-    post_message(message: 'Hello, world!')
-    click_link('Logout')
-    login(email: 'test2@user.com', password: 'qwerty')
     visit '/'
-    click_link('Hello, world!')
-    click_button 'Delete'
-    expect(page).to have_content('Error: You do not have permissions to delete this message')
+    click_link('This is test user 2')
+    expect(page).not_to have_button('Delete')
   end
 end
