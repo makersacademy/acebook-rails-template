@@ -12,6 +12,6 @@ Comments:
     :action => 'destroy', :id => @post.id, :user_id => @post.user_id }, :method => :delete, :class => 'btn btn-delete'%>
   <%= button_to "Edit", {:controller => :posts,
     :action => 'edit', :id => @post.id, :user_id => @post.user_id }, :method => :get, :class => 'btn'%>
-  <%= button_to "Comment", {:controller => :comments,
-  :action => 'new', :post_id => @post.id, :user_id => @post.user_id }, :method => :get, :class => 'btn'%>
 <% end %>
+<%= button_to "Comment", {:controller => :comments,
+  :action => 'new', :post_id => @post.id, :user_id => @post.user_id }, :method => :get, :class => 'btn'%>
