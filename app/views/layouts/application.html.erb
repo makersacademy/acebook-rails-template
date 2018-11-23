@@ -17,17 +17,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <ul class="navbar-nav ml-auto">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">
+            <ul class="navbar-links">
               <% if user_signed_in? %>
+                <%= link_to('My Posts', user_posts_path(current_user)) %>
                 <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
               <% else %>
                 <%= link_to('Login', new_user_session_path)  %>
-              <% end %> </a>
-            <a class="nav-item nav-link" href="#"></a>
-            <a class="nav-item nav-link" href="#"></a>
-            <a class="nav-item nav-link disabled" href="#"></a>
-          </div>
+              <% end %>
            </ul>
         </div>
       </nav>
