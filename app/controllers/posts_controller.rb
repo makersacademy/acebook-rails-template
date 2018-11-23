@@ -24,6 +24,7 @@ class PostsController < ApplicationController
 
   def destroy
     Post.find(params[:id]).delete
+    redirect_to posts_url
   end
 
   private
