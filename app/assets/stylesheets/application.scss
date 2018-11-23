@@ -1,0 +1,38 @@
+@import "bootstrap";
+
+.navbar {
+  background-color: #3b5998;
+}
+
+.navbar a {
+  color: white;
+}
+
+.btn {
+  background-color: #3b5998;
+  color: white;
+  margin: 1px;
+}
+
+.btn-delete {
+  background-color: #f00;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #8b9dc3;
+  color: white;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #7F7F7F;
+    text-align: center;
+}
+
+.navbar-toggler-icon {
+  color: white;
+}
