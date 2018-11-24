@@ -9,13 +9,13 @@ RSpec.feature 'Commenting', type: :feature do
     expect(page).to have_content('A comment')
   end
 
-  scenario 'making an invalid comment' do
-    user = create(:user)
-    login_as(user, scope: :user)
-    post = create(:post)
-    visit '/posts'
-    click_link 'Comment'
-    click_button 'Comment'
-    expect(page).to have_current_path new_post_comment_path(post)
-  end
+  # scenario 'making an invalid comment' do
+  #   user = create(:user)
+  #   login_as(user, scope: :user)
+  #   post = create(:post)
+  #   visit '/posts'
+  #   click_link 'Comment'
+  #   click_button 'Comment'
+  #   expect(page).to have_current_path new_post_comment_path(post)
+  # end
 end
