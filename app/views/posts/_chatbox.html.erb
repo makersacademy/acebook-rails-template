@@ -2,9 +2,11 @@
   <h3>Chatbox</h3>
   <section class="chat-log" id="chat-box">
     <% for chat in @chats %>
-      <article class="chat-line border border-primary rounded">
-        <span class="speaker"><%= chat.user.name %></span><br>
-        <span class="body"><%= chat.message %></span>
+      <article>
+        <span class="chat-line border rounded">
+            <span class="speaker"><%= chat.user.name %></span><br>
+            <span class="body"><%= chat.message %></span>
+        </span>
       </article>
     <% end %>
   </section>

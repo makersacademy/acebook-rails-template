@@ -11,9 +11,11 @@ App.chatChannel = App.cable.subscriptions.create { channel: "ChatChannel", room:
 
   createLine: (data) ->
     """
-    <article class="chat-line">
-      <span class="speaker">#{data["sent_by"]}</span>
-      <span class="body">#{data["body"]}</span>
+    <article>
+      <div class="chat-line border border-primary rounded">
+        <span class="speaker">#{data["sent_by"]}</span><br>
+        <span class="body">#{data["body"]}</span>
+      </div>
     </article>
     """
 
