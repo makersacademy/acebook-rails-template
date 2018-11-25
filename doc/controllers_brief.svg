@@ -10,7 +10,11 @@
 <title>controllers_diagram</title>
 <polygon fill="transparent" stroke="transparent" points="-4,4 -4,-249 368.1924,-249 368.1924,4 -4,4"/>
 <!-- _diagram_info -->
-
+<g id="node1" class="node">
+<title>_diagram_info</title>
+<text text-anchor="start" x="8" y="-124.6" font-family="Times,serif" font-size="13.00" fill="#000000">Gracebook Controllers view</text>
+<text text-anchor="start" x="8" y="-111.6" font-family="Times,serif" font-size="13.00" fill="#000000">Overview of all the Controllers</text>
+</g>
 <!-- ApplicationController -->
 <g id="node2" class="node">
 <title>ApplicationController</title>
