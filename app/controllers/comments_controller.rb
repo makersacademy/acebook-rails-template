@@ -14,6 +14,20 @@ class CommentsController < ApplicationController
     redirect_to '/posts'
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+    if comment_not_authorised?
+      prevent_edit('You can only edit your own comments')
+    elsif comment_not_editable?
+      prevent_edit('You can no longer edit this comment')
+    end
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    redirect_to posts_url if @comment.update(body: comment_params[:body])
+  end
+
   private
 
   def comment_params
