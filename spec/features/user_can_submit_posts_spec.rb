@@ -1,8 +1,9 @@
 require 'rails_helper'
+require 'web_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
-    visit "/posts"
+    signup
     click_link "New Post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
@@ -10,7 +11,7 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content(Time.now.getutc)
   end
   scenario "Can submit posts with linebreak in them" do
-    visit "/posts"
+    signup
     click_link "New Post"
     fill_in "Message", with: "Hello! \n Goodbye!"
     click_button "Submit"
@@ -19,7 +20,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can delete posts with linebreak in them" do
-    visit "/posts"
+    signup
     click_link "New Post"
     fill_in "Message", with: "Hello! \n Goodbye!"
     click_button "Submit"
@@ -29,7 +30,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can edit posts with linebreak in them" do
-    visit "/posts"
+    signup
     click_link "New Post"
     fill_in "Message", with: "Hello! \n Goodbye!"
     click_button "Submit"
