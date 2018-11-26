@@ -18,6 +18,11 @@
 
 @import url(https://fonts.googleapis.com/css?family=Monoton);
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@media only screen and (max-width: 768px) {
+  .jumbotron {
+    width: 100% !important;
+  }
+}
 
 .navbar {
   background-color: #869de0;
