@@ -9,7 +9,7 @@ RSpec.feature 'Sign out', type: :feature do
   end
 
   scenario 'user can sign out successfully' do
-    click_link 'Sign out'
-    expect(page).to have_content 'Log in'
+    click_link 'Sign Out'
+    expect(page).to have_content 'Log In'
   end
 end

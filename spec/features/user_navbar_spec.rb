@@ -19,6 +19,6 @@ RSpec.feature 'Navbar', type: :feature do
     visit root_path
     click_link 'navbar-sign-up'
     click_link 'navbar-sign-in'
-    expect(page).to have_content 'Log in'
+    expect(page).to have_content 'Log In'
   end
 end
