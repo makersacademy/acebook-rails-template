@@ -11,7 +11,9 @@
 
   <%= render partial: "chatbox" %>
 
-  <div class="container" id="posts">
+
+<!-- POSTS -->
+<div class="container" id="posts">
     <% @posts.each do |post| %>
       <div class="border" name="post" id="post_<%= post.id %>">
         <br>
@@ -20,30 +22,40 @@
           <p id="time"><%= post.updated_at.strftime("%e %b %Y") %></p>
           <span id="post_content"><%= simple_format(post.message) %></span>
         </div>
+<!-- Buttons underneath post -->
+<!-- Edit & Delete button -->
         <% if post.user == current_user %>
           <%= link_to '❌', post_path(post), method: :delete, id: "delete-#{post.id}" %>
-          <% if post.editable? %><%= link_to '✏️', edit_post_path(post.id) %>
+            <% if post.editable? %><%= link_to '✏️', edit_post_path(post.id) %>
           <% end %>
         <% end %>
+<!-- Comment & Like buttons -->
         <%= link_to '💬', new_post_comment_path(post.id) %>
         <span class="pull-right">
           <%= link_to like_post_path(post), method: 'post', remote: true do %>
-          <span id="Post_<%= post.id %>_likes"><%= post.likes.count %>
+        <span id="Post_<%= post.id %>_likes"><%= post.likes.count %>
             ⭐️</span>
         <% end %>
-      </span>
+        </span>
+
+
+<!-- FIRST LOOP STILL OPEN (POSTS); TWO DIVS (POSTS) STILL OPEN-->
+<!-- COMMENTS  -->
       <div class="container border" id="comments">
         <% post.comments.each do |comment| %>
           <div class="container" name="comment" id="comment_<%= comment.id %>">
             <p>
               <span class="user_name"><%= comment.user.name %></span>
               <%= comment.comment %></p>
+<!-- SECOND LOOP STILL OPEN (COMMENTS); TWO DIVS (COMMENTS) STILL OPEN-->
+<!-- Edit & Delete Comment Buttons -->
             <% if comment.user == current_user %>
               <span class="comment_buttons"><%= link_to '❌', post_comment_path(post, comment), method: :delete, id: "delete-#{comment.id}" %></span>
               <% if comment.editable? %>
                 <span class="comment_buttons"><%= link_to '✏️', edit_post_comment_path(post.id, comment.id) %></span>
               <% end %>
             <% end %>
+<!-- Comment & like Buttons -->
             <%= link_to '💬', new_post_comment_path(post.id) %>
             <span class="pull-right">
               <%= link_to like_post_path(post), method: 'post', remote: true do %>
@@ -51,27 +63,21 @@
               <span id="Post_<%= post.id %>_likes"><%= post.likes.count %>likes</span>
             <% end %>
           </span>
-          <div class="container border" id="comments">
-            <% post.comments.each do |comment| %>
-              <div class="container" name="comment" id="comment_<%= comment.id %>">
-                <p><%= comment.comment %></p>
-                <% if comment.user == current_user %>
-                  <span class="comment_buttons"><%= link_to '❌', post_comment_path(post, comment), method: :delete, id: "delete-#{comment.id}" %></span>
-                  <% if comment.editable? %>
-                    <span class="comment_buttons"><%= link_to '✏️', edit_post_comment_path(post.id, comment.id) %></span>
-                  <% end %>
-                <% end %>
-                <span class="pull-right">
-                  <%= link_to like_post_comment_path(post, comment), method: 'post', remote: true do %>
-                  👍
-                  <span id="Comment_<%= comment.id %>_likes"><%= comment.likes.count %>likes</span>
-                <% end %>
-              </span>
-            </div>
-          <% end %>
+
+<!-- CLOSE COMMENTS-->
+<!-- Close div container for each individual comment-->
         </div>
+<!-- Close Second for loop (Comments)-->
+        <% end %>
+<!-- Close div container for all comments-->
       </div>
-    <% end %>
-  </div>
+
+<!-- CLOSE POSTS-->
+<!-- Close div container for each individual post-->
+    </div>
+<!-- Close First for loop (Posts)-->
   <% end %>
+<!-- Close div container for all posts-->
+</div>
+
 </div>
