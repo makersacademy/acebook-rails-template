@@ -19,4 +19,16 @@ feature 'update comments' do
       click_button 'Submit'
       expect(page).to have_content 'Updated comment'
   end
+
+  scenario "Cannot update a comment that's not their own" do
+    log_out
+    sign_up_as_second_user
+    visit '/posts'
+    within('.comment') do
+      click_link 'Edit'
+      end
+    expect(page).to have_content('You can only edit your own comments')
+  end
+
+
 end

@@ -20,7 +20,7 @@
       <p><%= commentor.name %></p>
       <p><%= comment.body %></p>
       <p><%= comment.updated_at.strftime('%I:%M %p, %A, %b %d') %></p>
-      <%= link_to 'Edit', edit_post_comment_path(comment, post) %>
+      <%= link_to 'Edit', edit_post_comment_path(post, comment) %>
       </div>
       <% end %>
   <% end %>
