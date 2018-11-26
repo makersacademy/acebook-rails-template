@@ -22,9 +22,12 @@ skip_before_action :require_login, only: [:index]
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    flash[:danger] = "Post deleted. Embarrassed yourself again?"
-    redirect_to posts_path
+    if @post.user.id == current_user.id
+      @post.destroy
+      json_response(nil, 200)
+    else
+      json_response(@post, 401)
+    end
   end
 
   def edit
@@ -35,11 +38,10 @@ skip_before_action :require_login, only: [:index]
     @post = Post.find(params[:id])
     if @post.editable? && @post.user.id == current_user.id
       @post.update(message: params[:post][:message])
-      flash[:danger] = "Post updated. Yet another typo?"
+      json_response(@post)
     else
-      flash[:danger] = "Fuck off, this is not yours!"
+      json_response(@post, 401)
     end
-    redirect_to posts_url
   end
 
   def like
