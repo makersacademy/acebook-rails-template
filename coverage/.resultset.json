@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/controllers/comments_controller.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/controllers/comments_controller.rb": [
         null,
         null,
         null,
@@ -23,13 +23,18 @@
         null,
         null,
         1,
+        1,
+        1,
+        null,
         null,
         1,
-        2,
+        null,
+        1,
+        3,
         null,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/controllers/application_controller.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/controllers/application_controller.rb": [
         null,
         null,
         1,
@@ -38,7 +43,7 @@
         1,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/controllers/posts_controller.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/controllers/posts_controller.rb": [
         null,
         null,
         1,
@@ -55,7 +60,7 @@
         null,
         null,
         1,
-        39,
+        40,
         null,
         null,
         1,
@@ -89,11 +94,11 @@
         null,
         null,
         1,
-        69,
+        70,
         null,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/controllers/sessions_controller.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/controllers/sessions_controller.rb": [
         null,
         null,
         null,
@@ -117,7 +122,7 @@
         null,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/controllers/users_controller.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/controllers/users_controller.rb": [
         null,
         null,
         null,
@@ -155,7 +160,7 @@
         null,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/models/comment.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/models/comment.rb": [
         null,
         null,
         null,
@@ -164,14 +169,14 @@
         1,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/models/application_record.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/models/application_record.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/models/user.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/models/user.rb": [
         null,
         null,
         null,
@@ -188,7 +193,7 @@
         1,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/models/post.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/models/post.rb": [
         null,
         null,
         null,
@@ -197,7 +202,7 @@
         1,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/mailers/application_mailer.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/mailers/application_mailer.rb": [
         null,
         null,
         null,
@@ -205,13 +210,13 @@
         null,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/jobs/application_job.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/jobs/application_job.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/channels/application_cable/connection.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/channels/application_cable/connection.rb": [
         null,
         null,
         null,
@@ -219,7 +224,7 @@
         null,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/channels/application_cable/channel.rb": [
+      "/Users/robin/Projects/acebook-gracebook/app/channels/application_cable/channel.rb": [
         null,
         null,
         null,
@@ -228,6 +233,6 @@
         null
       ]
     },
-    "timestamp": 1543233450
+    "timestamp": 1543234370
   }
 }
