@@ -7,7 +7,7 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in 'post[message]', with: 'This is a test post!'
     click_button 'Create Post'
     visit '/posts'
-    click_link 'Destroy'
+    click_link 'Delete'
     expect(page).not_to have_content('This is a test post!')
   end
   scenario 'Cannot delete others posts' do
