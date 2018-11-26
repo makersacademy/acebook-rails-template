@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/', to: 'users#new'
+  get 'users/:id', to: 'users#show', as: "user"
   get 'posts/index', to: 'posts#index'
   get 'posts/:id/edit', to: 'posts#edit'
   patch 'posts/:id', to: 'posts#update'
@@ -10,4 +11,6 @@ Rails.application.routes.draw do
   resources :sessions
   resources :posts
   resources :users
+  devise_for :users
+  resources :users, only: [:show]
 end

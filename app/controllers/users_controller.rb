@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(post_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to posts_url, notice: 'User was successfully created'
+      redirect_to (user_path(@user.id)), notice: 'User was successfully created'
     else
       # Later, we should try to expand this to make the flash alerts unique
       flash[:alert] = 'Sign-up failed'
@@ -20,6 +20,9 @@ class UsersController < ApplicationController
     current_user = User.find_by_id(session[:current_user_id])
   end
 
+ def show
+   @user = User.find(params[:id])
+ end
   private
 
   def post_params
