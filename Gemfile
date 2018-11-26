@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem "composite_primary_keys", "~> 10.0"
+time_difference (~> 0.7.0)
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
