@@ -119,17 +119,17 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+
   config.before(:suite) do
-   DatabaseCleaner.strategy = :transaction
-   DatabaseCleaner.clean_with(:truncation)
-   Rails.application.load_seed
+   DatabaseCleaner.strategy = :truncation
  end
 
  config.before(:each) do
+   Rails.application.load_seed
    DatabaseCleaner.start
  end
 
- config.after(:each) do
+ config.append_after(:each) do
    DatabaseCleaner.clean
  end
 end

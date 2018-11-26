@@ -7,10 +7,19 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @user = current_user
     @post = Post.find(params[:post_id])
+    @user = @post.user
     @comment = @post.comments.create(comment_params)
     flash[:notice] = 'Successfully commented!'
+    redirect_to user_post_path(user_id: @user.id, id: @post.id)
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @user = @post.user
+    @comment.destroy
+    flash[:notice] = 'Comment deleted!'
     redirect_to user_post_path(user_id: @user.id, id: @post.id)
   end
 
@@ -21,4 +30,5 @@ class CommentsController < ApplicationController
     body_hash = params.require(:comment).permit(:body)
     user_id_hash.merge(body_hash)
   end
+  
 end
