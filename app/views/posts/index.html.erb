@@ -4,8 +4,10 @@
       <p><%= post.message %></p>
       <p><%= post.created_at %></p>
       <p><%= post.user_id %></p>
-      <%= link_to 'Edit', edit_post_path(post.id) %>
-      <%= link_to 'Delete', post_path(post.id), method: :delete %>
+      <% if post.user_id == session[:user_id] %>
+        <%= link_to 'Edit', edit_post_path(post.id) %>
+        <%= link_to 'Delete', post_path(post.id), method: :delete %>
+      <% end %>
     </ul>
   </div>
 <% end %>
