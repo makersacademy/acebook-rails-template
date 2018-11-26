@@ -5,11 +5,11 @@ require 'rails_helper'
 RSpec.feature 'Updating Comments', type: :feature do
   before do
     login(email: 'test@user.com', password: 'qwerty')
+    click_link 'I am test user'
+    comment(body: 'First comment!')
   end
 
   scenario 'user can update their own comments within 10 minutes' do
-    click_link 'I am test user'
-    comment(body: 'First comment!')
     Timecop.freeze(time = 9.minutes.from_now) do
       click_button 'Edit Comment'
       fill_in(:comment_body, with: 'Goodbye, world!')
@@ -20,8 +20,6 @@ RSpec.feature 'Updating Comments', type: :feature do
   end
 
   scenario "user cannot update a post after 10 minutes" do
-    click_link 'I am test user'
-    comment(body: 'First comment!')
     Timecop.freeze(time = 11.minutes.from_now) do
       click_button 'Edit Comment'
       expect(page).to have_content('Error: You do not have permissions to edit this comment 10 mins after creation')
@@ -29,8 +27,6 @@ RSpec.feature 'Updating Comments', type: :feature do
   end
 
   scenario "user cannot update another user's post" do
-    click_link 'I am test user'
-    comment(body: 'First comment!')
     click_link 'Logout'
     login(email: 'test2@user.com', password: 'qwerty')
     visit '/'
