@@ -1,3 +1,5 @@
+require_relative '../models/comment.rb'
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
