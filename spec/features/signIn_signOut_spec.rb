@@ -14,6 +14,12 @@ describe "Sign In" do
     sign_in_to_test(wrong_credentials = true)
     expect(page).to have_content ("Forgot your password")
   end
+
+  # it "redirects to users timeline after signing in" do
+  #   sign_in_to_test
+  #
+  #   expect(page).to have_content("tester's timeline")
+  # end
 end
 
 describe "Sign out" do
