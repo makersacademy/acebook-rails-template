@@ -3,12 +3,13 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @posts = Post.where({user: current_user}).order('created_at DESC')
   end
 
   def create
     @post = Post.create(post_params.merge({user_id: current_user.id}))
     flash[:danger] = "Post Added. Nobody cares.."
-    redirect_to posts_url
+    redirect_to new_post_path
   end
 
   def index
