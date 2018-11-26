@@ -1,14 +1,15 @@
 <h1>Newsfeed</h1>
 
 <% @posts.reverse_each do |post| %>
-  <p><%= post.message %></p>
-  <p><%= post.created_at %></p>
-  <p><%= post.user.username %></p>
-  <% if post.user_id== session[:user_id] %>
-    <%= link_to 'Edit', edit_post_path(post.id) %>
-    <%= link_to 'Delete', post_path(post.id), method: :delete %>
-  <% end %>
+  <div class="post">
+    <ul class="caption"
+      <p><%= post.message %></p>
+      <p><%= post.created_at %></p>
+      <p><%= post.user_id %></p>
+      <% if post.user_id == session[:user_id] %>
+        <%= link_to 'Edit', edit_post_path(post.id) %>
+        <%= link_to 'Delete', post_path(post.id), method: :delete %>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
-
-<%= link_to 'New Post', new_post_path %>
-<%= link_to "Log Out", session_path(:user_id), method: :delete %>
