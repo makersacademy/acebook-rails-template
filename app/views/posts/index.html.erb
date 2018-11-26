@@ -12,7 +12,7 @@
   <p>
   <strong> <%= post.user.username %> </strong> @ <em> <%= date_format(post.updated_at) %> </em>
   <br>
-  <%= post.message %>
+  <%= post.message %> <%= post.likecount %> like(s) <%= link_to 'Like', post_likes_path(post.id), method: :create %>
   <% if current_user && (current_user.id == post.user_id) %>
     <%= link_to 'Edit', edit_post_path(post.id)%>
     <%= link_to 'Delete', post_path(post),
