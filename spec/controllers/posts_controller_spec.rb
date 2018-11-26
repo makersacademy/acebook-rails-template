@@ -25,8 +25,7 @@ RSpec.describe PostsController, type: :request do
   describe 'POST /' do
     before { post "/posts", params: { post: { message: message } } }
     it 'responds with 302 (redirect)' do
-      puts json['json']
-      # expect(response).to have_http_status(302)
+      expect(json['status']).to eq 'bad'
     end
   end
 end
