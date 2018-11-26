@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'pry'
 
 class PostsController < ApplicationController
   before_action :require_login
@@ -9,8 +10,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(message: post_params[:message],
-                        user_id: session[:user_id])
-    redirect_to posts_url
+                        user_id: session[:user_id], wall_id: post_params[:id])
+    binding.pry
+    if post_params[:id] == nil
+      redirect_to posts_url
+    else
+      redirect_to user_path
+    end
   end
 
   def index
@@ -44,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :wall_id)
   end
 
   def require_login
