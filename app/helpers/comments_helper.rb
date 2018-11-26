@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-# This helper doesnt do anything atm
+# Comments helper module
 module CommentsHelper
 end

@@ -13,7 +13,12 @@
     <%= link_to 'Delete', post_path(post), method: :delete %>
     <%= link_to 'Comment', new_post_comment_path(post) %>
       <% post.comments.each do |comment| %>
+      <div class='comment'>
+      <% commentor = User.find(comment.user_id) %>
+      <p><%= commentor.name %></p>
       <p><%= comment.body %></p>
+      <p><%= comment.updated_at.strftime('%I:%M %p, %A, %b %d') %></p>
+      </div>
       <% end %>
   <% end %>
 </div>
