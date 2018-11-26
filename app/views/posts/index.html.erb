@@ -1,8 +1,10 @@
-<% @posts.each do |post| %>
+<% @posts.reverse_each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
+  <p><%= post.user_id %></p>
   <%= link_to 'Edit', edit_post_path(post.id) %>
   <%= link_to 'Delete', post_path(post.id), method: :delete %>
 <% end %>
 
 <%= link_to 'New Post', new_post_path %>
+<%= link_to "Log Out", session_path(:user_id), method: :delete %>
