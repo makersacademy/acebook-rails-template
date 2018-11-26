@@ -1,34 +1,38 @@
-<h1>Listing posts</h1>
+<h1>Posts</h1>
 
-<%= link_to 'New post', new_post_path %>
-<table>
-  <tr>
-    <th>Message</th>
-
-  </tr>
+<%= link_to 'New post', new_post_path %> <br></br>
 
   <% @posts.reverse.each do |post| %>
-    <tr>
-      <td><%= link_to(post_path(post)) do  %>
-        <strong><%=simple_format(post.message) %></strong>
-        <% end %>
-      </td>
-      <td><i>by: <%= User.find(post.user_id).name %></i></td>
-      <td><%= post.created_at.asctime %></td>
+  <div class='jumbotron'>
+  <div id='post-information'>
+    <span id='post-user'><strong><%= User.find(post.user_id).name %></strong></span>
+    <span id='post-time'><%= post.created_at.asctime %></span>
+    <span id='post-actions'>
+      <%= link_to 'Show', post_path(post) %>
 
       <% if post.user_id == current_user.id %>
-         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-         <td><%= link_to 'Destroy', post_path(post),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
+        <%= link_to 'Edit', edit_post_path(post) %>
+        <%= link_to 'Destroy', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-      <td>
-        <span id='home-post-likes'>
+    </span>
+  </div>
+  <div>
+    <span id='post-message'><strong><%=simple_format(post.message) %></strong></span>
+  </div>
+    <aside id='like-comment'>
+      <span id='index-likes'>
         <%= link_to like_post_path(post, like: true), method: 'post', remote: true do %><button class='like-button'>👍</button><% end %>
         <span id="post_<%= post.id %>_likes">Likes (<%= post.likes.size %>)</span>
       </span>
+      <span id='index-comment'><%= link_to "Comment", new_post_comment_path(post) %></span>
+    </aside>
+    <% post.comments.each do |comment| %>
+    <table>
+    <tr>
+    <td> <%= User.find(comment.user_id).name %> commented at <i><%= comment.created_at.asctime %></i>:
+      <%= simple_format(comment.body) %>
       </td>
-      <td><%= link_to "Comment", new_post_comment_path(post) %></td>
     </tr>
-  <% end %>
-</table>
+      <% end %>
+    </table></div><br>
+    <% end %>

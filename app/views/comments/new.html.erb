@@ -10,7 +10,7 @@
               data: { confirm: 'Are you sure?' } %> |
 <% end %>
 
-<<%= form_with model: [@post, @post.comments.build], local: true do |form| %>
+<%= form_with model: [@post, @post.comments.build], local: true do |form| %>
 
   <% if @comment.errors.any? %>
     <div id="error_explanation">
