@@ -14,17 +14,6 @@ class CommentsController < ApplicationController
     redirect_to '/posts'
   end
 
-  def destroy
-    @comment = Comment.find(params[:id])
-    if @comment.user_id != current_user.id
-      flash[:danger] = "You cannot delete someone else's comment"
-    else
-      @comment.destroy
-      flash[:confirmation] = 'Comment deleted'
-    end
-    redirect_to posts_url
-  end
-
   def edit
     @comment = Comment.find(params[:id])
     if comment_not_authorised?
@@ -37,6 +26,17 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     redirect_to posts_url if @comment.update(body: comment_params[:body])
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    if comment_not_authorised?
+      flash[:danger] = "You cannot delete someone else's comment"
+    else
+      @comment.destroy
+      flash[:confirmation] = 'Comment deleted'
+    end
+    redirect_to posts_url
   end
 
   private
