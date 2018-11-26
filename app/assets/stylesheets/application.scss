@@ -19,15 +19,9 @@
 @import url(https://fonts.googleapis.com/css?family=Monoton);
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-@media screen and (max-width: 768px) {
-  .nav-right {
-    float: left;
-  }
-}
-.navbar-default {
+.navbar {
   background-color: #869de0;
   width: 100%;
-  position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
@@ -37,14 +31,16 @@
   width: 100%;
   height: 30px;
 }
+
 #nav-text {
   font-family: 'Monoton', cursive;
   font-size: 2.5em;
   color: white;
 }
- #navbar-posts, a#navbar-sign-up, a#navbar-sign-in {
-   color: white;
- }
+
+a.navbar-link {
+  color: white;
+}
 
 td {
   padding-right: 20px;
@@ -56,10 +52,11 @@ h1 {
 
 body{
   padding: 20px 20px;
+  min-width: 282px;
 }
 
-.nav-right {
-  float: right;
+#profile-link, #sign-in-link, #sign-up-link, #sign-out-link {
+  color: white;
 }
 
 .like-button {
