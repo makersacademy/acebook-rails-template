@@ -21,6 +21,7 @@
       <p><%= comment.body %></p>
       <p><%= comment.updated_at.strftime('%I:%M %p, %A, %b %d') %></p>
       <%= link_to 'Edit', edit_post_comment_path(post, comment) %>
+      <%= link_to 'Delete', post_comment_path(post, comment), method: :delete %>
       </div>
       <% end %>
   <% end %>
