@@ -1,16 +1,6 @@
 # AceBook
 
-REQUIRED INSTRUCTIONS:
-
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+2. The card wall is [here.](https://waffle.io/chloeverity/acebook-breakfast-club)
 
 ## Quickstart
 
@@ -28,7 +18,7 @@ First, clone this repository. Then:
 
 https://acebook-breakfast-club.herokuapp.com/
 
-## User Stories
+## Initial User Stories
 
 `````
 As a user,
@@ -47,8 +37,8 @@ As a user,
 so that I can engage in a healthy debate,
 I want to comment on other users post.
 
-As a user,
-so that I can connect with users,
-I want to add other users as friends.
-
 ``````
+
+## Our learning logs
+[Here](https://github.com/chloeverity/acebook-breakfast-club/wiki) is our learning log that we updated each day.
+[Here](https://medium.com/the-breakfast-club-acebook-blog) is our blog that we kept with occasional posts.
