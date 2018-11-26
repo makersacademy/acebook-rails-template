@@ -14,6 +14,27 @@ class CommentsController < ApplicationController
     redirect_to user_post_path(user_id: @user.id, id: @post.id)
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @user = @post.user
+    if Time.now > (@comment.created_at + 10.minutes)
+      flash[:notice] = 'Error: You do not have permissions to edit this comment 10 mins after creation'
+      redirect_to user_post_path(user_id: @user.id, id: @post.id)
+    end
+  end
+
+  def update
+    comment = Comment.find(params[:id])
+    post = comment.post
+
+    if comment.update(comment_params)
+      redirect_to user_post_path(user_id: post.user.id, id: post.id)
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @comment = Comment.find(params[:id])
     @post = @comment.post
@@ -30,5 +51,5 @@ class CommentsController < ApplicationController
     body_hash = params.require(:comment).permit(:body)
     user_id_hash.merge(body_hash)
   end
-  
+
 end

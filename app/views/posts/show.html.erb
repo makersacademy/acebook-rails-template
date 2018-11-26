@@ -7,9 +7,12 @@ Comments:
   <pre><%= comment.body %></pre>
   <p>Commented at: <%= comment.updated_at.strftime("%Y-%m-%d %k:%M")%></p>
   <% if current_user.id == comment.user_id %>
-  <%= button_to "Edit", {:controller => :comments,
+    <%= button_to "Edit Comment", {:controller => :comments,
     :action => 'edit', :id => comment.id, :post_id => @post.id}, :method => :get %>
-    <% end %>
+    <%= button_to "Delete Comment", {:controller => :comments,
+      :action => 'destroy', :id => comment.id, :post_id => @post.id}, :method => :delete %>
+  <% end %>
+
 </div>
 <% end %>
 
