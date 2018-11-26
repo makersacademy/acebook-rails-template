@@ -11,10 +11,22 @@
  * It is generally better to create a new file per style scope.
  *
  */
+//background colours
+ $body-bg: #e6e9ef;
+ $header: #3b5998;
+ $light-theme: #FFFAFA;
+
+ //text
+ $primary-font: "Helvetica Neue";
+ $text-dark: black;
+
+ //positioning
+ $post-position: center;
+
+.navbar-dark {
+  background-color: $header;
+}
 
  @import 'bootstrap';
+ @import './posts';
  @import './chats';
-
-body {
-  background-color: #e6e9ef
-}

@@ -13,7 +13,6 @@ RSpec.feature 'Timeline', type: :feature do
     time_1 = Time.now
     click_button 'Submit'
     Timecop.return
-    click_link 'New post'
     fill_in 'Message', with: 'My second post!'
     Timecop.freeze(1991)
     click_button 'Submit'

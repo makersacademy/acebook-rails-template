@@ -8,7 +8,7 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3b5998;">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div>
         <a class="navbar-brand" href="/posts">Acebook</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,10 +24,8 @@
       </div>
       <div class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav navbar-right">
-          <li class="nav item">
-              <%= link_to logout_path do %>
-                Log out
-              <% end %>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Log out</a>
           </li>
         </ul>
       </div>

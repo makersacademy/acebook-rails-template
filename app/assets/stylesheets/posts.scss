@@ -1,8 +1,42 @@
-// Place all the styles related to the Comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  font-family: $primary-font;
+  color: $text-dark;
+}
 
-div[name="post"] {
-  background-color: white
+#posts_page {
+  width: 80%;
+  text-align: center;
+}
+
+div[name='post'] {
+  background-color: $light-theme;
+  margin: 70px;
+  text-align: $post-position;
+}
+
+div[name="comment"] {
+  background-color: lightgrey;
+  width: 90%;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+#time {
+  font-size: x-small;
+}
+
+.user_name {
+  color: $header;
+  font-weight: bold;
+}
+
+a {
+  color: $header;
+  text-decoration: none;
+}
+
+a:hover {
+    color: hotpink;
+    text-decoration: none;
 }
