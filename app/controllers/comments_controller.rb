@@ -20,6 +20,7 @@ class CommentsController < ApplicationController
       flash[:danger] = "You cannot delete someone else's comment"
     else
       @comment.destroy
+      flash[:confirmation] = 'Comment deleted'
     end
     redirect_to posts_url
   end
