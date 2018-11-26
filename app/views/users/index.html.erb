@@ -1,8 +1,8 @@
 <% provide(:title, 'Users') %>
 <h1>Users</h1>
 
-<table class="users">
+<ul>
     <% @users.each do |user| %>
-    <tr><a href="users/<%=user.id%>"><%= gravatar_for user %><%= user.name %></a></tr>
+      <li><a href="users/<%=user.id%>"><%= gravatar_for user %><%= user.name %></a></li>
     <% end %>
-</table>
+</ul>
