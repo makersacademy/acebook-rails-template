@@ -12,8 +12,8 @@ RSpec.feature 'Timeline', type: :feature do
   end
 
   scenario "allows user to leave comments on posts" do
-    fill_in :comment_box, with: "LOL"
-    click_button "Comment"
+    fill_in :text, with: "LOL"
+    click_button "Save"
     expect(page).to have_content "LOL"
   end
 end

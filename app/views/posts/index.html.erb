@@ -20,7 +20,7 @@
         data: { confirm: 'Are you sure?' } %>
   <% end %>
   <%= form_with model: @comment, url: comments_path do |form| %>
-    <%= form.label :text %>
+    <%= form.label :comment %>
     <br>
     <%= form.text_field :text %>
     <%= form.submit %>
