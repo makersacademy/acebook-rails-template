@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    if not_authorised?
+    if @comment.user_id != current_user.id
       flash[:danger] = "You cannot delete someone else's comment"
     else
       @comment.destroy
