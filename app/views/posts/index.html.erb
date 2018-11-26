@@ -1,9 +1,13 @@
+<h1>Newsfeed</h1>
+
 <% @posts.reverse_each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
   <p><%= post.user.username %></p>
-  <%= link_to 'Edit', edit_post_path(post.id) %>
-  <%= link_to 'Delete', post_path(post.id), method: :delete %>
+  <% if post.user_id== session[:user_id] %>
+    <%= link_to 'Edit', edit_post_path(post.id) %>
+    <%= link_to 'Delete', post_path(post.id), method: :delete %>
+  <% end %>
 <% end %>
 
 <%= link_to 'New Post', new_post_path %>
