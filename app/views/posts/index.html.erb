@@ -1,31 +1,34 @@
 <h1>Listing posts</h1>
 
-<%= link_to 'New post', new_post_path %>
-<table>
-  <tr>
-    <th>Message</th>
-
-  </tr>
+<%= link_to 'New post', new_post_path %> <br></br>
 
   <% @posts.reverse.each do |post| %>
-    <tr>
-      <td><strong><%=simple_format(post.message) %></strong></td>
-      <td><i>by: <%= User.find(post.user_id).name %></i></td>
-      <td><%= post.created_at.asctime %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <% if post.user_id == current_user.id %>
-         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-         <td><%= link_to 'Destroy', post_path(post),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
+  <table>
+  <tr>
+    <td><strong><%=simple_format(post.message) %></strong></td>
+    <td><i>by: <%= User.find(post.user_id).name %></i></td>
+    <td><%= post.created_at.asctime %></td>
+    <td><%= link_to 'Show', post_path(post) %></td>
+    <% if post.user_id == current_user.id %>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post_path(post),
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %></td>
       <% end %>
       <td>
         <span id='home-post-likes'>
-        <%= link_to like_post_path(post, like: true), method: 'post', remote: true do %><button class='like-button'>👍</button><% end %>
-        <span id="post_<%= post.id %>_likes">Likes (<%= post.likes.size %>)</span>
-      </span>
+          <%= link_to like_post_path(post, like: true), method: 'post', remote: true do %><button class='like-button'>👍</button><% end %>
+          <span id="post_<%= post.id %>_likes">Likes (<%= post.likes.size %>)</span>
+        </span>
       </td>
       <td><%= link_to "Comment", new_post_comment_path(post) %></td>
     </tr>
-  <% end %>
-</table>
+    <% post.comments.each do |comment| %>
+    <tr>
+    <td> <%= User.find(comment.user_id).name %> commented:
+      <%= comment.body %>
+      <i><%= comment.created_at.asctime %></i> </td>
+    </tr>
+      <% end %>
+      </table><br>
+      <% end %>
