@@ -24,8 +24,24 @@ RSpec.describe PostsController, type: :request do
 
   describe 'POST /' do
     before { post "/posts", params: { post: { message: message } } }
-    it 'responds with 302 (redirect)' do
-      expect(json['status']).to eq 'bad'
+    it 'responds with 401 (unauthorized)' do
+      expect(json['status']).to eq 401
     end
   end
+
+  describe 'GET /' do
+    before(:each) do
+      post1 = FactoryBot.create(:post)
+      post2 = FactoryBot.create(:post)
+      post3 = FactoryBot.create(:post, message: "Test")
+    end
+
+    before { get "/posts" }
+
+    it 'responds with posts' do
+      expect(json.length).to eq 3
+      expect(json[0]["message"]).to eq "Test"
+    end
+  end
+
 end

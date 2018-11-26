@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       log_in user
       json_response(user)
     else
-      json_response(@user, :bad)
+      json_response(@user, 401)
       # flash.now[:danger] = 'Invalid email/password combination!'
       # render 'new'
     end

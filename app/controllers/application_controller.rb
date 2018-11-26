@@ -16,6 +16,6 @@ class ApplicationController < ActionController::API
 
   def require_login
     # redirect_to login_url unless session[:user_id]
-    json_response(status: 'bad') unless current_user
+    json_response(status: 401) unless current_user
   end
 end

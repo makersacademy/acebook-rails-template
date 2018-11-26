@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+skip_before_action :require_login, only: [:index]
 
   def new
     @post = Post.new
@@ -16,6 +17,7 @@ class PostsController < ApplicationController
     @chat = Chat.new
     @chats = Chat.all
     @posts = Post.order('created_at DESC')
+    json_response(@posts)
   end
 
   def destroy
