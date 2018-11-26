@@ -2,40 +2,31 @@
 
 require 'rails_helper'
 
-RSpec.describe PostsController, type: :controller do
+RSpec.describe PostsController, type: :request do
 
-  # let(:user) {double :user, id: 1}
-
-  describe 'GET /new ' do
-    it 'responds with 302 (redirect) with unathenticated user' do
-      get :new
-      expect(response).to have_http_status(302)
-    end
-  end
+  let(:message) {'This is a test message'}
 
   describe 'POST /' do
     before(:each) do
       user = FactoryBot.create(:user)
       stub_current_user(user)
     end
-
-    it 'responds with 200' do
-      post :create, params: { post: { message: 'Hello, world!' } }
-      expect(response).to redirect_to(new_post_path)
+    before { post "/posts", params: { post: { message: message } } }
+    it 'responds with 200 and post details' do
+      expect(json['message']).to eq message
     end
 
     it 'creates a post' do
-      post :create, params: { post: { message: 'Hello, world!' } }
-      post = Post.find_by(message: 'Hello, world!')
+      post = Post.find_by(message: message)
       expect(post).to be
-      expect(post.user.id).to be 1
     end
   end
 
-  describe 'GET /' do
+  describe 'POST /' do
+    before { post "/posts", params: { post: { message: message } } }
     it 'responds with 302 (redirect)' do
-      get :index
-      expect(response).to have_http_status(302)
+      puts json['json']
+      # expect(response).to have_http_status(302)
     end
   end
 end
