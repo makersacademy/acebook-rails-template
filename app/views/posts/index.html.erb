@@ -19,12 +19,14 @@
         method: :delete,
         data: { confirm: 'Are you sure?' } %>
   <% end %>
-  <%= form_with model: @comment, url: comments_path do |form| %>
-    <%= form.label :comment %>
-    <br>
-    <%= form.text_field :text %>
-    <%= form.submit %>
-    <%= form.hidden_field :post_id, :value => post.id %>
+  <h2>Comments</h2>
+  <% post.comments.reverse_each do |comment| %>
+  <%= render partial: './comments/comment', locals: { post: post, comment: comment }, :remote => true %>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <h2>Add a comment:</h2>
+    <%= render partial: './comments/form', locals: { post: post} , remote: true %>
   <% end %>
   </p>
 <% end %>
