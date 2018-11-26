@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20181126153953) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.string "comments"
     t.integer "wall_id"
   end
 
