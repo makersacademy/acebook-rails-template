@@ -19,7 +19,7 @@ RSpec.feature 'Commenting', type: :feature do
   #   expect(page).to have_current_path new_post_comment_path(post)
   # end
 
-  scenario "viewing comments on the index page" do
+  scenario 'viewing comments on the index page' do
     sign_in_and_create_post
     click_link 'Comment'
     fill_in 'comment[body]', with: 'A comment'
