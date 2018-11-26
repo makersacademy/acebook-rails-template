@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 
-RSpec.feature 'Creating comments', type: :feature do
+RSpec.feature 'Deleting a comment', type: :feature do
   before do
     login(email: 'test@user.com', password: 'qwerty')
     post_message(message: 'Hello, world!')
