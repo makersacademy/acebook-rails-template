@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'welcome/index'
+  resources :users, only: [:show]
+
+  authenticated :user do
+    root to: 'posts#index'
+  end
 
   resources :posts do
     member do
@@ -13,13 +17,5 @@ Rails.application.routes.draw do
     end
   end
 
-  authenticated :user do
-    root to: 'welcome#index'
-  end
-
-  resources :users, only: [:show]
-
   root to: redirect('/users/sign_in')
-
-  root 'welcome#index'
 end
