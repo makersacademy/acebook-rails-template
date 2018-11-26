@@ -30,5 +30,14 @@ feature 'update comments' do
     expect(page).to have_content('You can only edit your own comments')
   end
 
+  scenario "Cannot update a comment after 10 minutes" do
+    visit '/posts'
+    Timecop.travel(Time.now + 11.minutes)
+    within('.comment') do
+      click_link 'Edit'
+      end
+    expect(page).to have_content('You can no longer edit this comment')
+  end
+
 
 end

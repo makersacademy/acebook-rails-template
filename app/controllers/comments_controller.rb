@@ -16,6 +16,11 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    if comment_not_authorised?
+      prevent_edit('You can only edit your own comments')
+    elsif comment_not_editable?
+      prevent_edit('You can no longer edit this comment')
+    end
   end
 
   def update
