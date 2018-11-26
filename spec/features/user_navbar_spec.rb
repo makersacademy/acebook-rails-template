@@ -6,7 +6,7 @@ RSpec.feature 'Navbar', type: :feature do
     login_as(user, scope: :user)
     visit root_path
     click_link('navbar-posts')
-    expect(page).to have_content('Listing posts')
+    expect(page).to have_content('Posts')
   end
 
   scenario 'User can click sign up nav link and gets the sign up page' do
