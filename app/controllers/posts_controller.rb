@@ -11,11 +11,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(message: post_params[:message],
                         user_id: session[:user_id], wall_id: post_params[:id])
-    binding.pry
+    p "post params #{post_params}"
     if post_params[:id] == nil
       redirect_to posts_url
     else
-      redirect_to user_path
+      redirect_to "/#{post_params[:id]}"
     end
   end
 
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :wall_id)
+    params.require(:post).permit(:message, :id)
   end
 
   def require_login
