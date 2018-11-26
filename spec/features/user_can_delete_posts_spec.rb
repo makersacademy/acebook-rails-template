@@ -20,7 +20,7 @@ RSpec.feature 'Timeline', type: :feature do
     second_user = create(:user, email: 'joel@test.com', name: 'Joel', password: 'password123')
     login_as(second_user, scope: :user)
     visit '/posts'
-    click_link 'Show'
+    click_link 'This is a test post!'
     expect(page).not_to have_content('Destroy')
   end
 end
