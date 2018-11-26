@@ -25,9 +25,9 @@
     </tr>
     <% post.comments.each do |comment| %>
     <tr>
-    <td> <%= User.find(comment.user_id).name %> commented:
-      <%= comment.body %>
-      <i><%= comment.created_at.asctime %></i> </td>
+    <td> <%= User.find(comment.user_id).name %> commented at <i><%= comment.created_at.asctime %></i>:
+      <%= simple_format(comment.body) %>
+      </td>
     </tr>
       <% end %>
       </table><br>

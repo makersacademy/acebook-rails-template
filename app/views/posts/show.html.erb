@@ -10,26 +10,26 @@
 <%= link_to 'Comment', new_post_comment_path(@post) %>
 <p>
   <% @post.comments.each do |comment| %>
-  <span> <%= User.find(comment.user_id).name %> commented:
-  <%= comment.body %>
-<td><i><%= comment.created_at.asctime %></i></td> </span>
-  <br>
-  <% if Time.now - 10.minutes <= comment.created_at.asctime %>
+  <span> <%= User.find(comment.user_id).name %> commented at <i><%= comment.created_at.asctime %></i>:
+    <%= simple_format(comment.body) %>
+    </span>
+    <br>
+    <% if Time.now - 10.minutes <= comment.created_at.asctime %>
     <%= link_to 'Edit comment', edit_post_comment_path(@post, comment) %>
     <% end %>
-  <%= link_to 'Destroy comment', post_comment_path(comment),
-                method: :delete,
-                data: { confirm: 'Are you sure you want to delete this comment? '} %>
-  <br>
-  <% end %>
-</p>
+    <%= link_to 'Destroy comment', post_comment_path(comment),
+    method: :delete,
+    data: { confirm: 'Are you sure you want to delete this comment? '} %>
+    <br>
+    <% end %>
+  </p>
 
-<% if @post.user_id == current_user.id %>
-<% if Time.now - 10.minutes <= @post.created_at.asctime %>
-<%= link_to 'Edit', edit_post_path(@post) %>
-<% end %> |
-<%= link_to 'Destroy', post_path(@post),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %> |
-<% end %>
-<%= link_to 'Back', posts_path %>
+  <% if @post.user_id == current_user.id %>
+  <% if Time.now - 10.minutes <= @post.created_at.asctime %>
+  <%= link_to 'Edit', edit_post_path(@post) %>
+  <% end %> |
+  <%= link_to 'Destroy', post_path(@post),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %> |
+  <% end %>
+  <%= link_to 'Back', posts_path %>
