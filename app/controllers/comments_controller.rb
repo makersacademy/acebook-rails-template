@@ -14,6 +14,10 @@ class CommentsController < ApplicationController
     redirect_to '/posts'
   end
 
+  def edit
+    @comment = Comment.find(params[:post_id])
+  end
+
   private
 
   def comment_params

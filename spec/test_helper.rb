@@ -41,3 +41,10 @@ def create_post
   fill_in 'Message', with: 'This is a new post'
   click_button 'Submit'
 end
+
+def create_comment
+  visit '/posts'
+  click_link 'Comment'
+  fill_in 'Body', with: 'new comment'
+  click_button 'Submit'
+end
