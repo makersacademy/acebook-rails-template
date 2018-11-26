@@ -9,16 +9,17 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user&.authenticate(params[:session][:password])
       log_in user
-      redirect_to posts_url
+      json_response(user)
     else
-      flash.now[:danger] = 'Invalid email/password combination!'
-      render 'new'
+      json_response(@user, :bad)
+      # flash.now[:danger] = 'Invalid email/password combination!'
+      # render 'new'
     end
   end
 
   def destroy
     log_out
-    redirect_to login_url
+    json_response(message: "logged out")
   end
 
   def session_params

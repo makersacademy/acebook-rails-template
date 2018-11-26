@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
-class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+class ApplicationController < ActionController::API
+  # protect_from_forgery with: :exception
   include SessionsHelper
+  include Response
+  include ExceptionHandler
 
   before_action :require_login
 
