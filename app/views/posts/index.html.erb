@@ -19,5 +19,12 @@
         method: :delete,
         data: { confirm: 'Are you sure?' } %>
   <% end %>
+  <%= form_with model: @comment, url: comments_path do |form| %>
+    <%= form.label :comment_text %>
+    <br>
+    <%= form.text_field :comment_text %>
+    <%= form.submit %>
+    <%= form.hidden_field :post_id, :value => post.id %>
+  <% end %>
   </p>
 <% end %>

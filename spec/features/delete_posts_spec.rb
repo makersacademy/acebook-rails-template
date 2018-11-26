@@ -7,6 +7,6 @@ RSpec.feature 'Timeline', type: :feature do
     hello_world_post
     click_link 'Delete'
     expect(page).not_to have_content 'Hello, world!'
-    expect(page).to have_content 'New post'
+    expect(page).to have_content 'New Post'
   end
 end
