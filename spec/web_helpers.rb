@@ -9,6 +9,16 @@ def visit_site_sign_up
   click_button "Sign up"
 end
 
+def sign_up_other_user
+  visit '/posts'
+  click_link 'Sign Up'
+  fill_in "user[username]", with: "username1"
+  fill_in "user[email]", with: "user1@user.com"
+  fill_in "user[password]", with: "pword1"
+  fill_in "user[password_confirmation]", with: "pword1"
+  click_button "Sign up"
+end
+
 def hello_world_post
   visit "/posts"
   click_link "New Post"
