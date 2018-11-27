@@ -17,4 +17,10 @@ RSpec.feature 'Login', type: :feature do
     click_button 'Log in'
     expect(page).to have_content 'Invalid login'
   end
+
+  scenario 'User logs in and is redirected to their wall' do
+    visit '/'
+    sign_up
+    expect(page).to have_content('Amy Smith - Wall')
+  end
 end

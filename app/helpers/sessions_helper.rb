@@ -23,4 +23,18 @@ module SessionsHelper
     flash[:error] = 'You must be logged in to access this section'
     redirect_to root_path
   end
+
+  def authenticated(user)
+    user&.authenticate(params[:session][:password])
+  end
+
+  def login_and_redirect(user)
+    log_in user
+    redirect_to "/#{user.id}"
+  end
+
+  def invalid_login
+    flash.now[:danger] = 'Invalid login'
+    render 'new'
+  end
 end
