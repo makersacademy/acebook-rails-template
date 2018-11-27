@@ -6,10 +6,11 @@ script:
 - bundle exec rubocop
 deploy:
   provider: elasticbeanstalk
-  access_key_id: AKIAIKXYNFQ4IULVQCGQ
-  secret_access_key: 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
+  access_key_id: <%= ENV['ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['SECRET_ACCESS_KEY'] %>
   region: eu-west-2
   app: acebook-breakfast-club
   env: acebook-breakfast-club-production
+  bucket_name: "elasticbeanstalk-eu-west-2-569774583596"
   on:
     repo: chloeverity/acebook-breakfast-club
