@@ -33,3 +33,5 @@
 
 #Precompiled assets
 /public
+
+.env.production
