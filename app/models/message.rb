@@ -7,4 +7,6 @@ class Message < ApplicationRecord
   def timestamp
     created_at.strftime('%H:%M %d %B')
   end
+
+  after_create_commit { MessageBroadcastJob.perform_later(self) }
 end
