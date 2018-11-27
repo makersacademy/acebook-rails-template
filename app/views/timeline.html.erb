@@ -1,6 +1,12 @@
-<%= "#{@user.email}'s timeline" %>
+<h1> <%= @user.username %>'s wall </h1>
+
+<%= form_with model: @post, url: posts_path, :method => :post do |f| %>
+  <%= f.label :message %>
+  <%= f.text_area :message %>
+  <%= f.hidden_field :wall_id, :value => params[:id] %>
+  <%= f.submit "Submit" %>
+<% end %>
 
 <% @posts.reverse_each do |post| %>
-  <%= post.message %>
-
+  <p> <%= post.message %> <p>
 <% end %>

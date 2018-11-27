@@ -5,7 +5,7 @@ class UserController < ApplicationController
     if current_user == nil
       redirect_to '/'
     else
-      get_posts_by_id(params["id"])
+      get_posts_by_id(params[:id])
     end
   end
 
