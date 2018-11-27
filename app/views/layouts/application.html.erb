@@ -10,17 +10,18 @@
 
   <body>
 
-
+   <%= render 'layouts/header' %>
 
        <div id="main-container" class="container">
-         
-         <%= render 'layouts/header' %>
+
+
          <% flash.each do |message_type, message| %>
          <div class="alert alert-<%= message_type %>"><%= message %></div>
          <% end %>
 
            <div id="content" class="col-xs-9">
-             %= yield %>->
+
+             <%= yield %>
            </div>
          </div>
 
@@ -28,7 +29,7 @@
 
 
 
-    <
+
     <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

@@ -3,16 +3,34 @@
 <% end %>
 <br>
 
+<div class='container'>
+<div class="row bootstrap snippets">
+    <div class="col-md-6 col-md-offset-2 col-sm-12">
+        <div class="comment-wrapper">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    New post
+                </div>
+                <div class="panel-body">
+                    <textarea class="form-control" placeholder="Let everyone know what's on your mind..." rows="3"></textarea>
+                    <br>
+                    <button type="button" class="btn btn-info pull-left">Post</button>
+                    </div>
 
+<div class='container-fluid'>
   <% @posts.each do |post| %>
-    <div class="posts">
+    <div class="card">
     <% user = User.find(post.user_id) %>
+    <div class="panel-body">
     <p><%= user.name %></p>
     <p><%= post.message %></p>
     <p><%= post.updated_at.strftime('%I:%M %p, %A, %b %d') %></p>
+    </div>
+    <div class="panel-footer">
     <%= link_to 'Edit', edit_post_path(post) %>
     <%= link_to 'Delete', post_path(post), method: :delete %>
     <%= link_to 'Comment', new_post_comment_path(post) %>
+    </div>
     </div>
       <% post.comments.each do |comment| %>
       <div class='comment'>
@@ -25,3 +43,4 @@
       </div>
       <% end %>
   <% end %>
+</div>
