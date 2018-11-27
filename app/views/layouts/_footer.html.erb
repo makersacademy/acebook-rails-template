@@ -1,44 +1,19 @@
-<!-- Footer -->
+
 <footer class="page-footer font-small indigo">
 
-    <!-- Footer Links -->
-    <div class="container">
 
-      <!-- Grid row-->
-      <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+  <div class="container">
 
-        <!-- Grid column -->
-        <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
-            <a href="#!">HOME</a>
-          </h6>
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+      <div class="footer_text">
+        <p>This website was built at <span>Makers Academy</span> by The Breakfast Club</p>
+        <p>Website was built using <span>Ruby on Rails, PostgreSQL, Capybara, HTML and CSS</span>.</p
         </div>
-        <!-- Grid column -->
 
-        <!-- Grid column -->
-        <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
-            <a href="#!"><% if user_signed_in? %><ul>
-
-              <%= link_to 'Sign Out', destroy_user_session_path, id: 'sign-out-link', method: :delete %>
-            <% else %>
-              <%= link_to 'Sign Up', new_user_registration_path, id: 'sign-up-link' %>
-            <% end %></ul></a>
-          </h6>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <!-- <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
-            <a href="#!">POST</a>
-          </h6>
-        </div> -->
-        <!-- Grid column -->
       </div>
-      <!-- Grid row-->
-    <div class="footer-copyright text-center py-3"><p>© 2018 Copyright: The Breakfast Club</p></div>
-    <!-- Copyright -->
 
+      <div class="footer-copyright text-center py-3"><p>© 2018 Copyright: The Breakfast Club</p></div>
+
+    </div>
   </footer>
-  <!-- Footer -->
