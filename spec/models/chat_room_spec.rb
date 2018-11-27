@@ -10,4 +10,9 @@ RSpec.describe ChatRoom, type: :model do
     room = described_class.new(title: nil)
     expect(room).not_to be_valid
   end
+
+  it 'has many messages' do
+    association = described_class.reflect_on_association(:messages).macro
+    expect(association).to eq :has_many
+  end
 end

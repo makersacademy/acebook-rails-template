@@ -61,10 +61,6 @@ body{
   min-width: 282px;
 }
 
-#profile-link, #sign-in-link, #sign-up-link, #sign-out-link, #chat-room-link {
-  color: white;
-}
-
 .like-button {
   border-radius: 5px;
   background-color: #869de0;
@@ -72,6 +68,11 @@ body{
 
 button:focus {
   outline: none;
+}
+
+div#messages {
+  max-height: 450px;
+  overflow-y: auto;
 }
 
 div#post-information {
@@ -129,4 +130,8 @@ aside#like-comment {
   text-align: center;
   width: 100%;
   margin: 2% 0% 2% 0%;
+}
+
+#profile-link, #sign-in-link, #sign-up-link, #sign-out-link, #chat-room-link {
+  color: white;
 }
