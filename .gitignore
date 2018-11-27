@@ -26,3 +26,5 @@
 ./coverage
 /coverage/*
 ./coverage/*
+
+.DS_Store
