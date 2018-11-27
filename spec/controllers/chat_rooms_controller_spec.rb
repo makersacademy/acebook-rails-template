@@ -43,12 +43,10 @@ RSpec.describe ChatRoomsController, type: :controller do
     before do
       user = create(:user)
       sign_in user
-      room = create(:chat_room)
     end
 
     it 'redirects to chat rooms index if successfully saves chat room' do
-      room = create(:chat_room)
-      post :create, params: { chat_room: { title: "Hello, world!" } }
+      post :create, params: { chat_room: { title: 'Hello, world!' } }
       expect(response).to have_http_status(:redirect)
     end
 

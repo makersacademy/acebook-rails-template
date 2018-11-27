@@ -14,7 +14,7 @@ RSpec.describe Message, type: :model do
   it 'can have a timestamp' do
     message = Message.new(body: 'Messagetest', created_at: Time.now)
     time = message.created_at
-    expect(message.timestamp).to eq time.strftime('%H:%M %d %B')
+    expect(message.timestamp).to eq time.strftime('%H:%M')
   end
 
   it 'is invalid if created without a body' do

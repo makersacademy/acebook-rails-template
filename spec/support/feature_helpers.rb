@@ -15,9 +15,9 @@ module FeatureHelpers
 
   def sign_in_and_create_chatroom
     sign_in_as_user
-    click_link "Live Chat"
-    click_link "New Chat Room"
-    fill_in 'chat_room[title]', with: "Test Chat Room"
-    click_button "Add"
+    click_link 'Live Chat'
+    click_link 'New Chat Room'
+    fill_in 'chat_room[title]', with: 'Test Chat Room'
+    click_button 'Add'
   end
 end
