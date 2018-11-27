@@ -17,5 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :chat_rooms
+  
   root to: redirect('/users/sign_in')
 end
