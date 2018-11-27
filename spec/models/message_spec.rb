@@ -18,6 +18,16 @@ RSpec.describe Message, type: :model do
   end
 
   it 'is invalid if created without a body' do
-    expect(Message.new(body: nil)).not_to be_valid
+    expect(Message.new(body: nil, user: create(:user), chat_room: create(:chat_room))).not_to be_valid
+  end
+
+  it 'is invalid if created with a body of length 1001' do
+    body = ''
+    1001.times { body << 'hi' }
+    expect(Message.new(body: body, user: create(:user), chat_room: create(:chat_room))).not_to be_valid
+  end
+
+  it 'is valid if created with a body of length 1' do
+    expect(Message.new(body: 'a', user: create(:user), chat_room: create(:chat_room))).to be_valid
   end
 end
