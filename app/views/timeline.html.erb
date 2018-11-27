@@ -1,5 +1,4 @@
-hello!
-
+<%= "#{@user.email}'s timeline" %>
 
 <% @posts.reverse_each do |post| %>
   <%= post.message %>
