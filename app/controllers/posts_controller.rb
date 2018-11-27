@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+skip_before_action :require_login, only: [:index]
 
   def new
     @post = Post.new
@@ -8,22 +9,25 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params.merge({user_id: current_user.id}))
-    flash[:danger] = "Post Added. Nobody cares.."
-    redirect_to new_post_path
+    @post = Post.create!(post_params.merge({user_id: current_user.id}))
+    json_response(@post)
   end
 
   def index
     @chat = Chat.new
     @chats = Chat.all
     @posts = Post.order('created_at DESC')
+    json_response(@posts)
   end
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    flash[:danger] = "Post deleted. Embarrassed yourself again?"
-    redirect_to posts_path
+    if @post.user.id == current_user.id
+      @post.destroy
+      json_response(nil, 200)
+    else
+      json_response(@post, 401)
+    end
   end
 
   def edit
@@ -34,11 +38,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.editable? && @post.user.id == current_user.id
       @post.update(message: params[:post][:message])
-      flash[:danger] = "Post updated. Yet another typo?"
+      json_response(@post)
     else
-      flash[:danger] = "Fuck off, this is not yours!"
+      json_response(@post, 401)
     end
-    redirect_to posts_url
   end
 
   def like

@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
-class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+class ApplicationController < ActionController::API
+  # protect_from_forgery with: :exception
   include SessionsHelper
+  include Response
+  include ExceptionHandler
 
   before_action :require_login
 
@@ -14,6 +16,6 @@ class ApplicationController < ActionController::Base
 
   def require_login
     # redirect_to login_url unless session[:user_id]
-    redirect_to login_url unless current_user
+    json_response(status: 401) unless current_user
   end
 end
