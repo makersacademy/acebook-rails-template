@@ -1,5 +1,4 @@
 ENV['RAILS_ENV'] ||= 'test'
-require 'rails_helper'
 
 
 def is_logged_in?

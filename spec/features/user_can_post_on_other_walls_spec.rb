@@ -6,7 +6,7 @@ feature 'wall posts', type: :feature do
   end
 
   scenario 'user can post on own wall' do
-    visit '/1'
+    save_and_open_page
     fill_in 'Message', with: 'Post on my wall'
     click_button 'Submit'
     expect(page).to have_content 'Post on my wall'

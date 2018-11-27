@@ -10,12 +10,12 @@
   </aside>
 </div>
 <div>
-  <% post = Post.new %>
-  <%= form_for post do |form| %>
+  <%= form_for @user do |form| %>
     <%= form.hidden_field :id %>
-    <%= form.label :message %>
-    <%= form.text_area :message %>
-
-    <%= form.submit "Submit" %>
+    <%= form.fields_for :posts, Post.new do |post| %>
+      <%= post.label :message %>
+      <%= post.text_area :message %>
+      <%= post.submit "Submit" %>
+    <% end %>
   <% end %>
 </div>
