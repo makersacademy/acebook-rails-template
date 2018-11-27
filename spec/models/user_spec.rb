@@ -18,4 +18,9 @@ RSpec.describe User, type: :model do
     association = described_class.reflect_on_association(:comments).macro
     expect(association).to eq :has_many
   end
+
+  it 'has many chatrooms' do
+    association = described_class.reflect_on_association(:chat_rooms).macro
+    expect(association).to eq :has_many
+  end
 end
