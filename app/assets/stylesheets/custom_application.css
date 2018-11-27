@@ -1,0 +1,13 @@
+.panel-heading {
+  font-size: 1.5rem;
+}
+
+.comment {
+  padding-left: 5%;
+  margin-left: 5%;
+  border-style: solid;
+  background-clip: border-box;
+  border: 1px solid rgba(220, 181, 181, 0.125);
+  border-radius: 0.25rem;
+  background-color: #58585312;
+}
