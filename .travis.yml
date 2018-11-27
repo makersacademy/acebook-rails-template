@@ -12,5 +12,6 @@ deploy:
   app: acebook-breakfast-club
   env: acebook-breakfast-club-production
   bucket_name: "elasticbeanstalk-eu-west-2-569774583596"
+  skip_cleanup: true
   on:
     repo: chloeverity/acebook-breakfast-club
