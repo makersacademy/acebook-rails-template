@@ -2,13 +2,17 @@ require_relative '../models/post.rb'
 class UserController < ApplicationController
 
   def user
-    @posts = get_posts_by_id(params[:id])
-    render :file => '../views/timeline.html.erb'
+    if current_user == nil
+      redirect_to '/'
+    else
+      get_posts_by_id(params["id"])
+    end
   end
 
   def get_posts_by_id(id)
     @user = User.find(id)
-    @user.posts
+    @posts = @user.posts
+    render :file => '../views/timeline.html.erb'
   end
 
 end
