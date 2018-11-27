@@ -14,3 +14,14 @@ User.create(
     }
   ]
 )
+
+Post.create(
+  [
+    {
+      message: 'This is a message',
+      created_at: '2018-11-26 13:30:53 UTC',
+      updated_at: '2018-11-27 13:30:53 UTC',
+      user_id: 1
+    }
+  ]
+)
