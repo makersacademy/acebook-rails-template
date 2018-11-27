@@ -1,0 +1,36 @@
+<footer class="page-footer font-small indigo">
+
+    <div class="container">
+
+      <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a class="footer-brand" id="footer-text" href="#!">About us</a>
+          </h6>
+        </div>
+
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a class="footer-brand" id="footer-text" href="#!">Contact</a>
+          </h6>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav nav-right">
+          <% if user_signed_in? %>
+            <li><%= link_to 'Profile', user_path(current_user), id: 'profile-link' %></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, id: 'sign-out-link', method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Sign Up', new_user_registration_path, id: 'sign-up-link' %></li>
+            <li><%= link_to 'Sign In', new_user_session_path, id: 'sign-in-link' %></li>
+          <% end %>
+        </ul>
+      </div>
+
+    <div class="footer-copyright text-center py-3">
+      <a class="footer-brand" id="footer-text" href="#!">© 2018 Copyright: The Breakfast Club</a>
+    </div>
+
+  </footer>
