@@ -13,6 +13,7 @@
         <% if user_signed_in? %>
           <li><%= link_to 'Profile', user_path(current_user), id: 'profile-link' %></li>
           <li><%= link_to 'Sign Out', destroy_user_session_path, id: 'sign-out-link', method: :delete %></li>
+          <li><%= link_to 'Live Chat', chat_rooms_path, id: 'chat-room-link' %></li>
         <% else %>
           <li><%= link_to 'Sign Up', new_user_registration_path, id: 'sign-up-link' %></li>
           <li><%= link_to 'Sign In', new_user_session_path, id: 'sign-in-link' %></li>
