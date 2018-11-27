@@ -17,13 +17,18 @@
       <a class="navbar-brand" href="#">Villians Book</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#"><%= link_to "Home", '/' %></a></li>
-      <li class="active"><a href="#"><%= link_to "New Post", new_post_path %></a></li>
+      <% if current_user != nil %>
+        <li class="active"><a href="#"><%= link_to "Home", '/' %></a></li>
+        <li class="active"><a href="#"><%= link_to "New Post", new_post_path %></a></li>
+        <li class="active"><a href="#"><%= link_to "News Feed", '/posts' %></a></li>
+        <li class="active"><a href="#"><%= link_to "My Wall", user_path(current_user) %></a></li>
+       <% end %>
+
     </ul>
     <ul class="nav navbar-nav navbar-right">
 
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> <%= link_to "Log In", new_session_path %></a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%= link_to "Sign Out", new_session_path %> </a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%= link_to "Sign Out", session_path(:user_id), method: :delete  %> </a></li>
 
 
     </ul>
