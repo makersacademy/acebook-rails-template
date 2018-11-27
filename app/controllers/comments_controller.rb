@@ -6,8 +6,8 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params.merge({user_id: current_user.id}))
-    redirect_to root_url
-
+    p '=============================='
+    redirect_to root_path
     # @post = Post.find(params[:post_id])
     # @comment = @post.comments.create(comment_params)
     # @comment.user = current_user
