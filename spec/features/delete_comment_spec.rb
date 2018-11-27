@@ -6,7 +6,9 @@ RSpec.feature 'Editing Comment', type: :feature do
     click_link 'Comment'
     fill_in 'comment[body]', with: 'A comment'
     click_button('Comment')
-    click_link 'Destroy comment'
+    within('#amend-comment') do
+      click_link 'Delete'
+    end
     expect(page).not_to have_content('A comment')
   end
 end
