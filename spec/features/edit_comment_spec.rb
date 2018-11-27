@@ -6,7 +6,9 @@ RSpec.feature 'Editing Comment', type: :feature do
     click_link 'Comment'
     fill_in 'comment[body]', with: 'A comment'
     click_button('Comment')
-    click_link 'Edit comment'
+    within('#amend-comment') do
+      click_link 'Edit'
+    end
     fill_in 'comment[body]', with: 'An edited comment'
     click_button('Update Comment')
     expect(page).to have_content('An edited comment')
