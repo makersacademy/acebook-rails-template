@@ -10,8 +10,6 @@ end
 
 gem 'coveralls', require: false
 gem 'launchy'
-gem 'bootstrap'
-gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 gem 'rails-controller-testing'
