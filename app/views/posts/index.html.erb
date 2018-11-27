@@ -18,11 +18,12 @@
         method: :delete,
         data: { confirm: 'Are you sure?' } %>
   <% end %>
-  <h2>Comments</h2>
-  <% post.comments.reverse_each do |comment| %>
-  <%= render partial: './comments/comment', locals: { post: post, comment: comment }, :remote => true %>
-  <% end %>
-
+  <div id="post_<%= post.id %>_comments">
+    <h2>Comments</h2>
+    <% post.comments.reverse_each do |comment| %>
+    <%= render partial: './comments/comment', locals: { post: post, comment: comment }, :remote => true %>
+    <% end %>
+  </div>
   <% if user_signed_in? %>
     <h2>Add a comment:</h2>
     <%= render partial: './comments/form', locals: { post: post} , remote: true %>
