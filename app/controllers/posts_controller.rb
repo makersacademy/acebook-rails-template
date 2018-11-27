@@ -9,9 +9,9 @@ class PostsController < ApplicationController
   end
 
   def create
+    p "Is create being called?"
     @post = Post.create(message: post_params[:message],
-                        user_id: session[:user_id], wall_id: post_params[:id])
-    p "post params #{post_params}"
+                        user_id: session[:user_id], wall_id: params[:wall_id])
     if post_params[:id] == nil
       redirect_to posts_url
     else
@@ -50,8 +50,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    p params
-    params.require(:post).permit(:message, :id)
+    params.require(:post).permit(:message)
   end
 
   def require_login

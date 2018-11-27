@@ -10,12 +10,13 @@
   </aside>
 </div>
 <div>
-  <%= form_for @user do |form| %>
-    <%= form.hidden_field :id %>
-    <%= form.fields_for :posts, Post.new do |post| %>
-      <%= post.label :message %>
-      <%= post.text_area :message %>
-      <%= post.submit "Submit" %>
-    <% end %>
+  <%= form_for :post, url: "/#{@user.id}" do |form| %>
+  <%= form.label :message %>
+  <%= form.text_area :message %>
+    <%= form.fields_for :users do |user| %>
+        <%= user.hidden_field :id %>
+          <% end %>
+          <%= form.hidden_field :wall_id, value: @user.id %>
+      <%= form.submit "Submit" %>
   <% end %>
 </div>
