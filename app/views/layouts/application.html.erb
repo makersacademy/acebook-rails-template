@@ -25,7 +25,7 @@
     <ul class="nav navbar-nav navbar-right">
 
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> <%= link_to "Log In", new_session_path %></a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%= link_to "Sign Out", new_session_path %> </a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%= link_to "Sign Out", session_path(destroy) %> </a></li>
 
 
     </ul>
