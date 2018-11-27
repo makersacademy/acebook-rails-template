@@ -32,3 +32,5 @@
 !.elasticbeanstalk/*.global.yml
 
 /public
+
+.env.production
