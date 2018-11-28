@@ -15,7 +15,7 @@ class Post < ApplicationRecord
   def post_already_liked_by_current_user?(current_user)
     self.likes.find_by(user_id: current_user.id)
   end
-  
+
   def sanitize_message
     Sanitize.fragment(message, Sanitize::Config::RELAXED)
   end
@@ -24,5 +24,9 @@ class Post < ApplicationRecord
     string = self.message
     html = simple_format(string)
     self.message = html
+  end
+
+  def formatted_time
+    Time.parse(self.updated_at.to_s).strftime('%-d %b %Y at %k:%M')
   end
 end
