@@ -4,7 +4,6 @@ require_relative '../web_helpers.rb'
 RSpec.feature 'Invalid User Error', type: :feature do
   scenario 'signed in user see an error page if user wall does not exist' do
     visit_site_sign_up
-    hello_world_post
     visit '/1234'
     expect(page).to have_content 'This user doesn’t exist'
   end
