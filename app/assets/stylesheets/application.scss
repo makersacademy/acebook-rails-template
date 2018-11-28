@@ -19,9 +19,11 @@
 @import url(https://fonts.googleapis.com/css?family=Monoton);
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @media only screen and (max-width: 768px) {
+
   .jumbotron {
     width: 100% !important;
   }
+
 }
 
 .navbar {
@@ -74,6 +76,7 @@ h1 {
 }
 
 body{
+  position: relative;
   padding: 20px 20px;
   min-width: 282px;
 }
@@ -149,6 +152,37 @@ aside#like-comment {
   margin: 2% 0% 2% 0%;
 }
 
+div.wrapper {
+  min-height: 80vh;
+    min-height: -webkit-calc(80vh - 150px);
+    min-height: -moz-calc(80vh - 150px);
+    min-height: calc(90vh - 150px);
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: auto;
+  line-height: 5px;
+  background-color: #869de0;
+  padding-top: 10px;
+}
+div.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+div.footer_text{
+  font-size:0.7em;
+  color: #fff;
+}
+div.footer-copyright {
+  color: #fff;
+  font-style: italic;
+  font-size: 0.6em;
+
 #profile-link, #sign-in-link, #sign-up-link, #sign-out-link, #chat-room-link {
   color: white;
+
 }
