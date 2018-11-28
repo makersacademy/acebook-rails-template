@@ -14,9 +14,18 @@
   <%= form.label :message %>
   <%= form.text_area :message %>
     <%= form.fields_for :users do |user| %>
-        <%= user.hidden_field :id %>
           <% end %>
           <%= form.hidden_field :wall_id, value: @user.id %>
       <%= form.submit "Submit" %>
   <% end %>
 </div>
+<% @posts.each do |post| %>
+  <div class="posts">
+    <% user = User.find(post.user_id) %>
+    <p><%= user.name %></p>
+    <p><%= post.message %></p>
+    <p><%= post.updated_at.strftime('%I:%M %p, %A, %b %d') %></p>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Delete', post_path(post), method: :delete %>
+  </div>
+<% end %>

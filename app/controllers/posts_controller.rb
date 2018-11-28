@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'pry'
 
 class PostsController < ApplicationController
   before_action :require_login
@@ -9,14 +8,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    p "Is create being called?"
     @post = Post.create(message: post_params[:message],
-                        user_id: session[:user_id], wall_id: params[:wall_id])
-    if post_params[:id] == nil
-      redirect_to posts_url
-    else
-      redirect_to "/#{post_params[:id]}"
-    end
+                        user_id: session[:user_id],
+                        wall_id: params[:post][:wall_id])
+    redirect_to params[:post][:wall_id].nil? ? posts_url : "/#{params[:post][:wall_id]}"
   end
 
   def index

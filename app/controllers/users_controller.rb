@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = Post.where(wall_id: @user.id).order(updated_at: :desc)
   end
 
   def new
