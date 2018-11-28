@@ -1,0 +1,14 @@
+<h1><%= @chat_room.title %></h1>
+
+<div id='messages' chat-room-id='<%= @chat_room.id %>'>
+  <%= render @chat_room.messages %>
+</div>
+
+<%= form_for @message, url: '#' do |f| %>
+  <div class='form-group'>
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
+
+  <%= f.submit 'Send', class: 'btn btn-primary btn-lg' %>
+<% end %>

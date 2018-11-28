@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-block">
+    <div class="row">
+      <div class="col-md-11">
+        <p class="card-text">
+          <span class="text-muted"><%= message.user.name %> <i>(<%= message.timestamp %>)</i></span><br>
+          <span id='message-body'><%= simple_format(message.body) %></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
