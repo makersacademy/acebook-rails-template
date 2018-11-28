@@ -47,3 +47,8 @@ def create_comment
   fill_in 'Body', with: 'new comment'
   click_button 'Submit'
 end
+
+def create_wall_post
+  fill_in 'Message', with: 'Post on my wall'
+  click_button 'Submit'
+end

@@ -39,7 +39,11 @@ class PostsController < ApplicationController
     else
       @post.destroy
     end
-    redirect_to posts_url
+   if @post.wall_id != nil
+     redirect_to "/#{@post.wall_id}"
+   else
+     redirect_to posts_url
+   end
   end
 
   private
