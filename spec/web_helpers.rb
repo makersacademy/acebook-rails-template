@@ -32,7 +32,6 @@ def sign_in_to_test(wrong_credentials = false)
 end
 
 def sign_out
-  visit '/'
   click_link "Log Out"
 end
 
