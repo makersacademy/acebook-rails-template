@@ -1,6 +1,6 @@
 <h1> <%= @user.username %>'s wall </h1>
 
-<%= form_with model: @post, url: posts_path, :method => :post do |f| %>
+<%= form_with model: Post.new, url: posts_path, :method => :post do |f| %>
   <%= f.label :message %>
   <%= f.text_area :message %>
   <%= f.hidden_field :wall_id, :value => params[:id] %>
@@ -8,5 +8,6 @@
 <% end %>
 
 <% @posts.reverse_each do |post| %>
-  <p> <%= post.message %> <p>
+  <strong> <%= post.user.username %> </strong>
+  <p> <%= post.message.html_safe %> <p>
 <% end %>
