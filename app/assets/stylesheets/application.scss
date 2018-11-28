@@ -81,10 +81,6 @@ body{
   min-width: 282px;
 }
 
-#profile-link, #sign-in-link, #sign-up-link, #sign-out-link {
-  color: white;
-}
-
 .like-button {
   border-radius: 5px;
   background-color: #869de0;
@@ -92,6 +88,11 @@ body{
 
 button:focus {
   outline: none;
+}
+
+div#messages {
+  max-height: 450px;
+  overflow-y: auto;
 }
 
 div#post-information {
@@ -180,4 +181,8 @@ div.footer-copyright {
   color: #fff;
   font-style: italic;
   font-size: 0.6em;
+
+#profile-link, #sign-in-link, #sign-up-link, #sign-out-link, #chat-room-link {
+  color: white;
+
 }

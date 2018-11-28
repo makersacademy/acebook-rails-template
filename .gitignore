@@ -33,3 +33,6 @@
 
 #Precompiled assets
 /public
+
+.env.production
+.ec2/
