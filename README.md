@@ -42,5 +42,3 @@ I want to comment on other users post.
 ## Our learning logs
 [Here](https://github.com/chloeverity/acebook-breakfast-club/wiki) is our learning log that we updated each day.
 [Here](https://medium.com/the-breakfast-club-acebook-blog) is our blog that we kept with occasional posts.
-
-.
