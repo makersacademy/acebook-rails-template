@@ -34,3 +34,4 @@
 /public
 
 .env.production
+.ec2/
