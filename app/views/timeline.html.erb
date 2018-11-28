@@ -1,3 +1,5 @@
+<%= render partial: './navbar_partial.html.erb', remote: true %>
+
 <h1> <%= @user.username %>'s wall </h1>
 
 <%= form_with model: Post.new, url: posts_path, :method => :post do |f| %>
