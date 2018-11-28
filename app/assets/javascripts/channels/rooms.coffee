@@ -18,7 +18,7 @@ $ ->
     $('#new_message').submit (event) ->
       $this = $(this)
       textarea = $this.find('#message_body')
-      if $.trim(textarea.val()).length > 1
+      if $.trim(textarea.val()).length > 0
         App.global_chat.send_message textarea.val(), messages.attr('chat-room-id')
         textarea.val('')
       event.preventDefault()
