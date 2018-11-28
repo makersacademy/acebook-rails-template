@@ -1,3 +1,5 @@
+# sign up, in and out methods
+
 def visit_site_sign_up
   visit '/posts'
   click_link 'Sign Up'
@@ -19,13 +21,6 @@ def sign_up_other_user
   click_button "Sign up"
 end
 
-def hello_world_post
-  visit "/posts"
-  click_link "New Post"
-  fill_in "Message", with: "Hello, world!"
-  click_button "Submit"
-end
-
 def sign_in_to_test(wrong_credentials = false)
   email = wrong_credentials ? "wrong@email.com" : "user@user.com"
   password = wrong_credentials ? "wrongpassword" : "pword123"
@@ -37,5 +32,26 @@ def sign_in_to_test(wrong_credentials = false)
 end
 
 def sign_out
+  visit '/'
   click_link "Log Out"
+end
+
+#posting actions
+
+def hello_world_post
+  visit "/posts"
+  click_link "New Post"
+  fill_in "Message", with: "Hello, world!"
+  click_button "Submit"
+end
+
+def hello_world_timeline_post
+  fill_in "post[message]", with: "Hello, world!"
+  click_button "Submit"
+end
+
+def edit_post
+  click_link "Edit"
+  fill_in "Message", with: 'Goodbye, world!'
+  click_button 'Update'
 end
