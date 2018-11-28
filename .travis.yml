@@ -11,7 +11,7 @@ deploy:
     secure: "$SECRETACCESSKEY"
   region: eu-west-2
   app: acebook-breakfast-club
-  env: acebook-breakfast-club-production
+  env: acebook-breakfast-club-production-2
   bucket_name: "elasticbeanstalk-eu-west-2-569774583596"
   skip_cleanup: true
   on:
