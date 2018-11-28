@@ -14,9 +14,9 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
-## Heroku App Link
+## AWS App Link
 
-https://acebook-breakfast-club.herokuapp.com/
+http://acebook-breakfast-club-production.4dqyreqn3i.eu-west-2.elasticbeanstalk.com
 
 ## Initial User Stories
 
