@@ -6,8 +6,8 @@ script:
 - bundle exec rubocop
 deploy:
   provider: elasticbeanstalk
-  access_key_id: <%= ENV['ACCESS_KEY_ID'] %>
-  secret_access_key: <%= ENV['SECRET_ACCESS_KEY'] %>
+  access_key_id: <%= ENV['ACCESS_KEY_ID_TRAVIS'] %>
+  secret_access_key: <%= ENV['SECRET_ACCESS_KEY_TRAVIS'] %>
   region: eu-west-2
   app: acebook-breakfast-club
   env: acebook-breakfast-club-production
