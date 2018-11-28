@@ -6,6 +6,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'jquery-rails'
+
+gem 'bootstrap', '~> 4.1.3'
+
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -31,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
   gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
   gem 'rails-ujs', '~> 0.1.0'
+
+  gem 'sanitize'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

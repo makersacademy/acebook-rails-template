@@ -23,7 +23,10 @@
 .byebug_history
 
 # ignoring test coverage created by simplecov
+./coverage
+/coverage/*
 ./coverage/*
 
 .DS_Store
 public/.DS_Store
+

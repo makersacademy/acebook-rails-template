@@ -1,4 +1,5 @@
 require_relative '../models/comment.rb'
+require_relative '../../lib/modules/date_format.rb'
 
 class PostsController < ApplicationController
   def new
@@ -6,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params.merge({user_id: current_user.id}))
+    @post = Post.create(post_params.merge({user_id: current_user.id, id: params[:id]}))
     redirect_to posts_url
   end
 
@@ -32,6 +33,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:wall_id, :message)
   end
 end

@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
   <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+  <%= link_to "New Post", new_post_path, method: :get %> <br>
   <h2> Welcome <%=current_user.username%> </h2>
   <%= link_to "New Post", new_post_path, method: :get %> <br>
 <% else %>
@@ -9,14 +10,26 @@
 
 <% @posts.reverse_each do |post| %>
   <p>
-  <strong> <%= post.user.username %> </strong> @ <em> <%= post.updated_at %> </em>
+  <strong> <%= post.user.username %> </strong>
+  <em> @ <%= date_format(post.updated_at) %> </em>
   <br>
-  <%= post.message %>
-  <% if current_user && (current_user.id == post.user_id) %>
-    <%= link_to 'Edit', edit_post_path(post.id)%>
-    <%= link_to 'Delete', post_path(post),
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %>
+
+  <%= post.message.html_safe %>
+  <%= post.likecount %> like(s)
+
+  <% if user_signed_in? %>
+    <% if post.post_already_liked_by_current_user?(current_user) then %>
+      <%= link_to 'Unlike', like_path(post.id), method: :delete %>
+    <% else %>
+      <%= link_to 'Like', post_likes_path(post.id), method: :post %>
+    <% end %>
+
+    <% if current_user && (current_user.id == post.user_id) %>
+      <%= link_to 'Edit', edit_post_path(post.id)%>
+      <%= link_to 'Delete', post_path(post),
+          method: :delete,
+          data: { confirm: 'Are you sure?' }%>
+    <% end %>
   <% end %>
   <div id="post_<%= post.id %>_comments">
     <h2>Comments</h2>
