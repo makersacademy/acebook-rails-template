@@ -76,6 +76,7 @@ h1 {
 }
 
 body{
+  position: relative;
   padding: 20px 20px;
   min-width: 282px;
 }
@@ -153,7 +154,7 @@ aside#like-comment {
 footer {
   position: absolute;
   bottom: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   line-height: 5px;
   background-color: #869de0;
