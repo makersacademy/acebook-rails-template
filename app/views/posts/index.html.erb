@@ -7,38 +7,4 @@
   <%= link_to "Sign In", new_user_session_path, method: :get %>
 <% end %> <br>
 
-<% @posts.reverse_each do |post| %>
-  <p>
-  <strong> <%= post.user.username %> </strong>
-  <em> @ <%= date_format(post.updated_at) %> </em>
-  <br>
-
-  <%= post.message.html_safe %>
-  <%= post.likecount %> like(s)
-
-  <% if user_signed_in? %>
-    <% if post.post_already_liked_by_current_user?(current_user) then %>
-      <%= link_to 'Unlike', like_path(post.id), method: :delete %>
-    <% else %>
-      <%= link_to 'Like', post_likes_path(post.id), method: :post %>
-    <% end %>
-
-    <% if current_user && (current_user.id == post.user_id) %>
-      <%= link_to 'Edit', edit_post_path(post.id)%>
-      <%= link_to 'Delete', post_path(post),
-          method: :delete,
-          data: { confirm: 'Are you sure?' }%>
-    <% end %>
-  <% end %>
-  <div id="post_<%= post.id %>_comments">
-    <h2>Comments</h2>
-    <% post.comments.each do |comment| %>
-    <%= render partial: './comments/comment', locals: { post: post, comment: comment }, :remote => true %>
-    <% end %>
-  </div>
-  <% if user_signed_in? %>
-    <h2>Add a comment:</h2>
-    <%= render partial: './comments/form', locals: { post: post} , remote: true %>
-  <% end %>
-  </p>
-<% end %>
+<%= render partial: './posts/view_posts.html.erb', remote: true %>
