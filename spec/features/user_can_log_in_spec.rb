@@ -21,6 +21,6 @@ RSpec.feature 'Login', type: :feature do
   scenario 'User logs in and is redirected to their wall' do
     visit '/'
     sign_up
-    expect(page).to have_content('Amy Smith - Wall')
+    expect(page).to have_content('Welcome, Amy Smith!')
   end
 end

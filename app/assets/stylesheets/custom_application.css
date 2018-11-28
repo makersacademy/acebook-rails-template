@@ -1,0 +1,59 @@
+.panel-heading {
+  font-size: 1.5rem;
+}
+
+.comment {
+  padding-left: 5%;
+  margin-left: 5%;
+  border-style: solid;
+  background-clip: border-box;
+  border: 1px solid rgba(220, 181, 181, 0.125);
+  border-radius: 0.25rem;
+  background-color: #58585312;
+}
+
+.btn-primary-custom {
+  color: #07575B;
+  background-color: #C4DFE6;
+  border-color: #C4DFE6;
+  margin-top: 5px;
+}
+
+.btn-primary-custom:hover {
+  color: #C4DFE6;
+  background-color: #003B46;
+  border-color: #003B46;
+  margin-top: 5px;
+}
+
+.mx-auto-custom {
+  width: 400px;
+  margin: auto;
+}
+
+.page-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+  color: #07575B;
+}
+.page-subtitle {
+  font-size: 2.0rem;
+  font-weight: 200;
+  line-height: 1.2;
+  text-align: center;
+  color: #66A5AD;
+}
+
+a {
+  color: #66A5AD;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+  color: #000000;
+  text-decoration: underline;
+}

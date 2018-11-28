@@ -1,14 +1,6 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %> - Wall
-      </h1>
-    </section>
-  </aside>
-</div>
+<h2 class="page-title">Welcome, <%= @user.name %>!</h2>
+<h3 class="page-subtitle">Your newsfeed</h3>
 <div>
   <%= form_for :post, url: "/#{@user.id}" do |form| %>
     <%= form.label :message %>
