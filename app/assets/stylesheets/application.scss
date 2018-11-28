@@ -157,6 +157,10 @@ div.wrapper {
     min-height: -moz-calc(80vh - 150px);
     min-height: calc(90vh - 150px);
 }
+textarea {
+  border: grey 2px solid;
+
+}
 footer {
   position: absolute;
   bottom: 0;
