@@ -151,11 +151,18 @@ aside#like-comment {
   margin: 2% 0% 2% 0%;
 }
 
+div.wrapper {
+  min-height: 70vh;
+    min-height: -webkit-calc(100vh - 186px);
+    min-height: -moz-calc(100vh - 186px);
+    min-height: calc(100vh - 186px);
+}
 footer {
   position: absolute;
   bottom: 0;
   right: 0;
   width: 100%;
+  z-index: auto;
   line-height: 5px;
   background-color: #869de0;
   padding-top: 10px;
