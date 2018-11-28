@@ -1,0 +1,18 @@
+language: ruby
+script:
+- bundle exec bin/rails db:create
+- bundle exec bin/rails db:migrate
+- bundle exec rake
+- bundle exec rubocop
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $ACCESSKEYID
+  secret_access_key:
+    secure: "$SECRETACCESSKEY"
+  region: eu-west-2
+  app: acebook-breakfast-club
+  env: acebook-breakfast-club-production
+  bucket_name: "elasticbeanstalk-eu-west-2-569774583596"
+  skip_cleanup: true
+  on:
+    branch: master
