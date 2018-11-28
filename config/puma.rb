@@ -15,7 +15,7 @@ port        ENV.fetch("PORT") { 3000 }
 #
 environment ENV.fetch("RAILS_ENV") { "development" }
 
-# todo: make this only apply to production and not development ENV
+# TODO: make this only apply to production and not development ENV
 bind "unix:///var/run/puma/my_app.sock"
 pidfile "/var/run/puma/my_app.sock"
 
