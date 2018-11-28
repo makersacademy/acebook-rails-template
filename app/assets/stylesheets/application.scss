@@ -158,6 +158,10 @@ div.wrapper {
     min-height: -moz-calc(80vh - 150px);
     min-height: calc(90vh - 150px);
 }
+textarea {
+  border: grey 2px solid;
+
+}
 footer {
   position: absolute;
   bottom: 0;
@@ -181,7 +185,7 @@ div.footer-copyright {
   color: #fff;
   font-style: italic;
   font-size: 0.6em;
-
+}
 #profile-link, #sign-in-link, #sign-up-link, #sign-out-link, #chat-room-link {
   color: white;
 
