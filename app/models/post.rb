@@ -3,9 +3,9 @@ require 'time'
 class Post < ApplicationRecord
   require 'sanitize'
   include ActionView::Helpers::TextHelper
-
   before_save :sanitize_message, :add_newline
   belongs_to :user
+  has_many :comments
   has_many :likes
 
   def likecount
