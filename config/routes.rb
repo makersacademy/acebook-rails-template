@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     resources :likes
   end
   root to: 'posts#index'
+  get '/:id', to: 'user#user', as: :user_page
 end
