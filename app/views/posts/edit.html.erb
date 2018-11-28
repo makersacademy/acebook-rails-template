@@ -1,4 +1,5 @@
 <%= form_for @post do |form| %>
+  <%= form.hidden_field :wall_id, value: @post.wall_id %>
   <%= form.label :message %>
   <%= form.text_area :message %>
 

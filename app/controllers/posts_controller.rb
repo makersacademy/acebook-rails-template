@@ -28,8 +28,15 @@ class PostsController < ApplicationController
   end
 
   def update
+    p params
     @post = Post.find(params[:id])
-    post_redirect if post_updated
+    p @post
+    # post_redirect if post_updated
+    if @post.wall_id != nil
+      redirect_to "/#{@post.wall_id}"
+    else
+      redirect_to posts_url
+    end
   end
 
   def destroy
