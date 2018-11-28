@@ -1,8 +1,10 @@
+<div class="py-5 text-center">
 <% provide(:title, 'Users') %>
-<h1>Users</h1>
+<h2>Users</h2>
+</div>
 
 <ul>
     <% @users.each do |user| %>
-      <li><a href="users/<%=user.id%>"><%= gravatar_for user %><%= user.name %></a></li>
+      <li><a href="users/<%=user.id%>"><%= user.name %></a></li>
     <% end %>
 </ul>

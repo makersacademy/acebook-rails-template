@@ -1,8 +1,10 @@
+<div class="py-5 text-center">
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<h2>Sign up</h2>
+</div>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="mx-auto" style="width: 400px;">
     <%= form_for(@user) do |f| %>
       <%= render '/shared/error_messages' %>
       <%= f.label :name %>

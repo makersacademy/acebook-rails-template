@@ -11,3 +11,22 @@
   border-radius: 0.25rem;
   background-color: #58585312;
 }
+
+.btn-primary-custom {
+  background-color: #66A5AD;
+  border-color: #66A5AD;
+}
+
+.btn-primary:focus, .btn-primary.focus-custom {
+  color: #C4DFE6;
+}
+
+.navbar-light .navbar-brand-custom {
+  color: #C4DFE6;
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
+}
+
+.bg-light-custom {
+  background-color: #07575B !important;
+}
