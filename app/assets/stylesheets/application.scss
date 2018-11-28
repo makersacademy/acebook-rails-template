@@ -152,10 +152,10 @@ aside#like-comment {
 }
 
 div.wrapper {
-  min-height: 70vh;
-    min-height: -webkit-calc(100vh - 186px);
-    min-height: -moz-calc(100vh - 186px);
-    min-height: calc(100vh - 186px);
+  min-height: 80vh;
+    min-height: -webkit-calc(80vh - 150px);
+    min-height: -moz-calc(80vh - 150px);
+    min-height: calc(90vh - 150px);
 }
 footer {
   position: absolute;
