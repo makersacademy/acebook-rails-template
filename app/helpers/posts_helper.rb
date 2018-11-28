@@ -16,7 +16,7 @@ module PostsHelper
   end
 
   def timeline_post?
-    params[:post][:wall_id].nil?
+    params[:post][:wall_id].nil? || params[:post][:wall_id].empty?
   end
 
   def wall_url

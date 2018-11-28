@@ -5,10 +5,11 @@ feature 'update wall post' do
 
   before do
     sign_up
-    create_post
   end
 
   scenario 'user can update existing post after creating' do
+    fill_in 'Message', with: 'This is a new post'
+    click_button 'Submit'
     click_link 'Edit'
     fill_in 'Message', with: 'Updated post'
     click_button 'Submit'
