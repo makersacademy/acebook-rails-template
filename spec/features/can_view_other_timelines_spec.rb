@@ -9,7 +9,7 @@ describe "Other timelines" do
     id = url[3]
     visit '/'
     sign_out
-    visit "/#{id}/user"
+    visit "/#{id}"
 
     expect(page).not_to have_content("user@user.com's timeline")
     expect(page).to have_content("Sign Up")
@@ -23,8 +23,8 @@ describe "Other timelines" do
     visit '/'
     sign_out
     sign_up_other_user
-    visit "/#{id}/user"
+    visit "/#{id}"
 
-    expect(page).to have_content("user@user.com's timeline")
+    expect(page).to have_content("username123's wall")
   end
 end

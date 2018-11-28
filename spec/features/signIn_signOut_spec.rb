@@ -23,7 +23,7 @@ describe "Sign In" do
   it "redirects to users timeline after signing in" do
     sign_in_to_test
 
-    expect(page).to have_content("user@user.com's timeline")
+    expect(page).to have_content("username123's wall")
   end
 end
 

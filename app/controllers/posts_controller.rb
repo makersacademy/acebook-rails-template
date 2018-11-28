@@ -32,6 +32,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:wall_id, :message)
+    params.require(:post).permit(:wall_id, :message)
   end
 end
