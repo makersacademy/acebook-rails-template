@@ -1,21 +1,18 @@
-<header class="navbar">
-  <div class="container">
-
-    <nav>
-      <ul class="nav">
-        <% if logged_in? %>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Timeline", posts_url  %>
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Users", users_path %></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: :delete %>
-              </li>
-            </ul>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-      </ul>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Acebook</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <% if logged_in? %>
+      <a class="nav-link"><%= link_to "Timeline", posts_url  %></a>
+      <a class="nav-link"><%= link_to "Profile", current_user %></a>
+      <a class="nav-link"><%= link_to "Users", users_path %></a>
+      <a class="nav-link"><%= link_to "Log out", logout_path, method: :delete %></a>
+      <% else %>
+        <a class="nav-link"><%= link_to "Log in", login_path %></a>
+      <% end %>
+    </div>
   </div>
-</header>
+</nav>
