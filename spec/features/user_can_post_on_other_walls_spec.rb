@@ -13,4 +13,17 @@ feature 'wall posts', type: :feature do
     expect(page).to have_content(Time.new.strftime('%I:%M %p, %A, %b %d'))
     expect(page).to have_content('Amy Smith')
   end
+
+  scenario "user can post on another user's wall" do
+    log_out
+    sign_up_as_second_user
+    click_link 'Users'
+    click_link 'Amy Smith'
+    fill_in 'Message', with: "Post on Amy's wall"
+    click_button 'Submit'
+    expect(page).to_not have_current_path('/posts')
+    expect(page).to have_content "Post on Amy's wall"
+    expect(page).to have_content(Time.new.strftime('%I:%M %p, %A, %b %d'))
+    expect(page).to have_content('Amy Smith')
+  end
 end
