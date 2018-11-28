@@ -12,4 +12,5 @@ Rails.application.routes.draw do
       resources :comments
     end
     get '/:id', to: 'users#show'
+    post '/:id', to: 'posts#create'
 end

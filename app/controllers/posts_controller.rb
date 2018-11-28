@@ -9,8 +9,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(message: post_params[:message],
-                        user_id: session[:user_id])
-    redirect_to posts_url
+                        user_id: session[:user_id],
+                        wall_id: params[:post][:wall_id])
+    post_redirect
   end
 
   def index
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    redirect_to posts_url if @post.update(message: post_params[:message])
+    post_redirect if post_updated
   end
 
   def destroy
@@ -49,5 +50,9 @@ class PostsController < ApplicationController
 
   def require_login
     prevent_view unless logged_in?
+  end
+
+  def post_redirect
+    timeline_post? ? redirect_to(posts_url) : redirect_to(wall_url)
   end
 end
