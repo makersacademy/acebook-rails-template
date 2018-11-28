@@ -23,7 +23,12 @@ module PostsHelper
     "/#{params[:post][:wall_id]}"
   end
 
+  def post_redirect
+  timeline_post? ? redirect_to(posts_url) : redirect_to(wall_url)
+  end
+
   def post_updated
     @post.update(message: post_params[:message])
   end
+
 end
