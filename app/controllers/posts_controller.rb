@@ -39,11 +39,7 @@ class PostsController < ApplicationController
     else
       @post.destroy
     end
-   if @post.wall_id != nil
-     redirect_to "/#{@post.wall_id}"
-   else
-     redirect_to posts_url
-   end
+    destroy_redirect
   end
 
   private
@@ -58,5 +54,9 @@ class PostsController < ApplicationController
 
   def post_redirect
     timeline_post? ? redirect_to(posts_url) : redirect_to(wall_url)
+  end
+
+  def destroy_redirect
+    timeline_post_edited? ? redirect_to(posts_url) : redirect_to(edit_wall_url)
   end
 end
