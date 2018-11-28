@@ -10,7 +10,7 @@
 <% @posts.reverse_each do |post| %>
   <p>
   <strong> <%= post.user.username %> </strong>
-  <em> @ <%= date_format(post.updated_at) %> </em>
+  <em> @ <%= post.formatted_time %> </em>
   <br>
 
   <%= post.message.html_safe %>
