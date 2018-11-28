@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :likes
   end
   get '/:id', to: 'user#user', as: :user_page
+  get 'errors/invalid-user-id'
 end
