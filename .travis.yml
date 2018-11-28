@@ -15,4 +15,4 @@ deploy:
   bucket_name: "elasticbeanstalk-eu-west-2-569774583596"
   skip_cleanup: true
   on:
-    branch: henry_aws
+    branch: master
