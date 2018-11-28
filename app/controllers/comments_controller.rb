@@ -5,20 +5,11 @@ class CommentsController < ApplicationController
   end
 
   def create
-    # @comment = Comment.create(comment_params.merge({user_id: current_user.id}))
-    # respond_to do |format|
-    #   format.html do
-    #   flash[:success] = "Comment added!"
-    #   redirect_to :back
-    # end
-    
-    # format.js
-    # end
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(comment_params.merge({user_id: current_user.id}))
+    @comment = @post.comments.create(comment_params.merge({ user_id: current_user.id }))
     respond_to do |format|
-        format.html { redirect_to :back }
-        format.js 
+        format.html { redirect_back fallback_location: root_path }
+        format.js
     end
   end
 

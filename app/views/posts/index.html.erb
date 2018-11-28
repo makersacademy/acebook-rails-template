@@ -20,7 +20,7 @@
   <% end %>
   <div id="post_<%= post.id %>_comments">
     <h2>Comments</h2>
-    <% post.comments.reverse_each do |comment| %>
+    <% post.comments.each do |comment| %>
     <%= render partial: './comments/comment', locals: { post: post, comment: comment }, :remote => true %>
     <% end %>
   </div>
