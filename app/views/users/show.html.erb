@@ -11,12 +11,10 @@
 </div>
 <div>
   <%= form_for :post, url: "/#{@user.id}" do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
-    <%= form.fields_for :users do |user| %>
-          <% end %>
-          <%= form.hidden_field :wall_id, value: @user.id %>
-      <%= form.submit "Submit" %>
+    <%= form.label :message %>
+    <%= form.text_area :message %>
+    <%= form.hidden_field :wall_id, value: @user.id %>
+  <%= form.submit "Submit" %>
   <% end %>
 </div>
 <% @posts.each do |post| %>
