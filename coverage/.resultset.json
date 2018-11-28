@@ -179,22 +179,6 @@
         null,
         null
       ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/models/comment.rb": [
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/caitlincooling/Projects/acebook-gracebook/app/models/application_record.rb": [
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
       "/Users/caitlincooling/Projects/acebook-gracebook/app/models/user.rb": [
         null,
         null,
@@ -212,7 +196,23 @@
         1,
         null
       ],
+      "/Users/caitlincooling/Projects/acebook-gracebook/app/models/application_record.rb": [
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
       "/Users/caitlincooling/Projects/acebook-gracebook/app/models/post.rb": [
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/caitlincooling/Projects/acebook-gracebook/app/models/comment.rb": [
         null,
         null,
         null,
@@ -252,6 +252,6 @@
         null
       ]
     },
-    "timestamp": 1543418745
+    "timestamp": 1543418874
   }
 }
