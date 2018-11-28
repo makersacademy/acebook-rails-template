@@ -8,7 +8,7 @@ RSpec.feature 'Timeline', type: :feature do
   end
 
   scenario "shows a comment button" do
-    expect(page).to have_content "Comment"
+    expect(page).to have_field "comment[text]"
   end
 
   scenario "allows user to leave comments on posts" do

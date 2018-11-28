@@ -1,3 +1,5 @@
+<%= render partial: './navbar_partial.html.erb', remote: true %>
+
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_area :message %>
