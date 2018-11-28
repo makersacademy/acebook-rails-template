@@ -16,13 +16,14 @@ class PostsController < ApplicationController
   end
 
   def edit
+    session[:return_to] ||= request.referer
     @post = Post.find(params[:id])
   end
 
   def update
     @post = Post.find(params[:id])
     @post.update(post_params.merge({user_id: current_user.id}))
-    redirect_to posts_url
+    redirect_to session.delete(:return_to)
   end
 
   def destroy
