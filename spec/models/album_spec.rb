@@ -6,7 +6,7 @@ RSpec.describe Album, type: :model do
     expect(association).to eq :belongs_to
   end
   it 'is not valid unless it has a title' do
-    album = described_class.new(title: nil)
+    album = described_class.new(name: nil)
     expect(album).not_to be_valid
   end
 end

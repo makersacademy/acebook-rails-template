@@ -9,7 +9,7 @@ gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'devise'
 gem 'jquery-rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.2.0'
 
 gem 'redis', '~> 3.2'
 gem 'pg'
