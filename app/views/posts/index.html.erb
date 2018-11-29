@@ -5,9 +5,11 @@
 <% end %>
 <br>
 
+
   <% @wall.add_posts %>
   <% @wall.posts.each do |post| %>
     <div class="posts">
+
     <% user = User.find(post.user_id) %>
     <p><%= user.name %></p>
     <p><%= post.message %></p>
