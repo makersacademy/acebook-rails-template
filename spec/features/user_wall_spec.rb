@@ -1,0 +1,2 @@
+feature 'wall' do
+  sceanrio ''

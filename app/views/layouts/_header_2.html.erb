@@ -8,7 +8,7 @@
     <ul class="navbar-nav mr-auto-custom">
       <% if logged_in? %>
         <li class="nav-item"><%= link_to "Timeline", posts_url  %></li>
-        <li class="nav-item"><%= link_to "Profile", current_user %></li>
+        <li class="nav-item"><%= link_to "Profile", "/#{current_user.id}" %></li>
         <li class="nav-item"><%= link_to "Users", users_path %></li>
         <li class="nav-item"><%= link_to "Log out", logout_path, method: :delete %></li>
       <% else %>
