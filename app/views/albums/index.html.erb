@@ -1,7 +1,3 @@
 <h1><%= @user.name %>'s Albums </h1>
 
-
-<%= form_with model: @album, local: true do |form| %>
-  <%= form.file_field :attachments, multiple: true, direct_upload: true %>
-  <%= form.submit %>
-<% end %>
+<p class="lead"><%= link_to "New Album", new_user_album_path(current_user), class: 'btn btn-primary' %>
