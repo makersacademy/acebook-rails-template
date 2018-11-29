@@ -8,6 +8,14 @@ describe 'Wall' do
     expect(wall.posts).to eq []
   end
 
+  it 'lists newest post first' do
+    user = create(:user)
+    post1 = create(:post)
+    post2 = create(:post)
+    wall.add_posts
+    expect(wall.posts.first).to eq post2
+  end
+
   describe 'User Walls' do
 
   let(:wall) {Wall.new(1)}
@@ -20,7 +28,7 @@ describe 'Wall' do
       user = create(:user)
       post = create(:post)
       wall.add_posts
-      expect(wall.posts).to eq [post.message]
+      expect(wall.posts).to eq [post]
     end
 
     it 'loads posts made on a wall' do
@@ -45,7 +53,7 @@ describe 'Wall' do
       user = create(:user)
       post = create(:post, wall_id: "NULL")
       timeline.add_posts
-      expect(timeline.posts).to eq [post.message]
+      expect(timeline.posts).to eq [post]
     end
 
     it 'loads posts made on a timeline' do
