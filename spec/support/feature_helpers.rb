@@ -28,4 +28,20 @@ module FeatureHelpers
     fill_in 'album[title]', with: 'My first album'
     click_link 'Create'
   end
+
+  def view_profile_of_second_user
+    user2 = create(:user)
+    login_as(user2, scope: :user)
+
+    visit '/posts'
+    click_link 'New post'
+    fill_in 'post[message]', with: 'This is a test post!'
+    click_button 'Create Post'
+    click_link 'Sign Out'
+
+    user = create(:user)
+    login_as(user, scope: :user)
+    visit '/posts'
+    click_link 'Alice Bobson'
+  end
 end

@@ -11,7 +11,7 @@ RSpec.feature 'Creating Album', type: :feature do
   #   expect(page).to have_link 'My first album'
   # end
   #
-  # scenario "user can view another's albums" do
+  # scenario "user can view another's created albums" do
   #   sign_in_and_create_post
   #   click_link 'My Albums'
   #   click_link 'Create Album'
@@ -19,10 +19,16 @@ RSpec.feature 'Creating Album', type: :feature do
   #   click_link 'Create'
   #   click_link 'Sign Out'
   #
-  #   user_2 = create(:user)
-  #   login_as(user_2, scope: :user)
+  #   user2 = create(:user)
+  #   login_as(user2, scope: :user)
   #   click_link 'Alice Bobson'
   #   click_link 'View Albums'
   #   expect(page).to have_link 'My first album'
   # end
+
+  scenario "user can view another user's albums" do
+    view_profile_of_second_user
+    click_link 'Photos'
+    expect(page).to have_content "Alice Bobson's Albums"
+  end
 end

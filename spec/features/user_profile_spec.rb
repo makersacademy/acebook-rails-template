@@ -18,8 +18,8 @@ RSpec.feature 'User profile', type: :feature do
     click_button 'Create Post'
 
     click_link 'Sign Out'
-    user_2 = create(:user)
-    login_as(user_2, scope: :user)
+    user2 = create(:user)
+    login_as(user2, scope: :user)
     visit '/posts'
     click_link 'Alice Bobson'
     expect(page).to have_current_path("/users/#{id}")
