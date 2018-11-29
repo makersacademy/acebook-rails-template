@@ -1,1 +1,9 @@
 <%= @album.name %>
+
+<%= form_with model: [@user, @user.albums.build], local: true do |form| %>
+
+  <div class="form-group">
+    <%= form.file_field :attachments, multiple: true, direct_upload: true %>
+  </div>
+  <%= form.submit "Upload", class: "btn btn-primary"%>
+<% end %>
