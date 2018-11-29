@@ -11,7 +11,7 @@ module UsersHelper
   def check_login_success(_user)
     if @user.save
       log_in @user
-      flash[:success] = 'Welcome to Acebook'
+      flash[:success] = 'Welcome to Gracebook'
       redirect_to @user
     else
       render 'new'

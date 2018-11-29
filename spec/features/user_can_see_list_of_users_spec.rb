@@ -16,6 +16,6 @@ feature 'list of users', type: :feature do
   scenario 'user can click on a user and go to their page' do
     click_link 'Users'
     click_link 'Bob Jones'
-    expect(page).to have_content("Bob Jones - Wall")
+    expect(page).to have_content("Welcome, Bob Jones!")
   end
 end
