@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @wall = Wall.new(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render '/shared/404_custom.html.erb'
   end
 
   def new
