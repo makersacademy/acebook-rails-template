@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'timecop'
 
 feature 'Wall posts comment' do
 
@@ -33,4 +34,32 @@ feature 'Wall posts comment' do
     expect(page).to have_content "You cannot delete someone else's comment"
   end
 
+  scenario 'user can edit comments on wall posts' do
+    within(".comment") do
+      click_link 'Edit'
+    end
+    fill_in 'Body', with: 'Updated comment'
+    click_button 'Submit'
+    expect(page).to have_content 'Updated comment'
+    expect(page).to have_content 'Your newsfeed'
+  end
+
+  scenario 'user only edit their comments on wall posts' do
+    log_out
+    sign_up_as_second_user
+    click_link 'Users'
+    click_link 'Amy Smith'
+    within(".comment") do
+      click_link 'Edit'
+    end
+    expect(page).to have_content "You can only edit your own comments"
+  end
+
+  scenario 'user can only update a comment within 10 minutes' do
+    Timecop.travel(Time.now + 11.minutes)
+    within(".comment") do
+      click_link 'Edit'
+    end
+    expect(page).to have_content "You can no longer edit this comment"
+  end
 end

@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    redirect_to posts_url if @comment.update(body: comment_params[:body])
+    post_redirect if @comment.update(body: comment_params[:body])
   end
 
   def destroy
