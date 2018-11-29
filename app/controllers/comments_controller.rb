@@ -10,12 +10,7 @@ class CommentsController < ApplicationController
     @comment = Comment.create(body: comment_params[:body],
                               post_id: params[:post_id],
                               user_id: session[:user_id])
-    post = Post.find(params[:post_id])
-    if !post.wall_id.nil?
-      redirect_to "/#{post.wall_id}"
-    else
-      redirect_to '/posts'
-    end
+    post_redirect
   end
 
   def edit
@@ -47,5 +42,14 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:body, :post_id)
+  end
+
+  def post_redirect
+    post = Post.find(params[:post_id])
+    if !post.wall_id.nil?
+      redirect_to "/#{post.wall_id}"
+    else
+      redirect_to posts_url
+    end
   end
 end
