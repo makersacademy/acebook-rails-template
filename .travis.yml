@@ -5,14 +5,9 @@ script:
 - bundle exec rake
 - bundle exec rubocop
 deploy:
-    provider: elasticbeanstalk
-    access_key_id: $ACCESSKEYID
-    secret_access_key:
-      secure: "$SECRETACCESSKEY"
-    region: eu-west-2
-    app: acebook-breakfast-club
-    env: acebook-breakfast-club-production
-    bucket_name: "elasticbeanstalk-eu-west-2-569774583596"
-    skip_cleanup: true
-    on:
-      branch: master
+  provider: heroku
+  api_key:
+    secure: afd26c02b8f0cbf88c889a209f247d15f8eb6a4c501e8934038f9a0dde317ccda910f0494d93c71cb5ba4b009aebd576057586d5bcc56b03eb0054d7f8f0f6ec
+  on:
+    repo: chloeverity/acebook-breakfast-club
+  run: "rails db:migrate"
