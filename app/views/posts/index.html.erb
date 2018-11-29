@@ -1,11 +1,15 @@
-<h1>Posts</h1>
+<h1>Welcome <%= current_user.name %></h1>
 
 <%= link_to 'New post', new_post_path %> <br></br>
 
   <% @posts.reverse.each do |post| %>
   <div class='jumbotron'>
   <div id='post-information'>
-    <span id='post-user'><strong><%= User.find(post.user_id).name %></strong></span>
+    <span id='post-user'><strong>
+      <%= link_to(user_path(User.find(post.user_id))) do %>
+        <span id='post-profile-link'><%= User.find(post.user_id).name %></span></strong>
+      <% end %>
+    </span>
     <span id='post-time'><%= post.created_at.asctime %></span>
     <span id='post-actions'>
       <% if post.user_id == current_user.id %>
