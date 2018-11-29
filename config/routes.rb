@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users do
+    resources :albums
+  end
+
   resources :chat_rooms
 
   root to: redirect('/users/sign_in')
