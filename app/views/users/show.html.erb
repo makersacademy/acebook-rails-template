@@ -1,2 +1,4 @@
-<h1>Profile</h1>
-<%= @user.name %>
+<h1><%= @user.name %></h1>
+<%= image_tag asset_path("sheep.png"), { class: 'profile-picture' } %>
+<br><br>
+<%= link_to 'Photos', user_albums_path(@user) %>
