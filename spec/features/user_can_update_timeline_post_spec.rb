@@ -10,7 +10,7 @@ RSpec.feature 'Timeline', type: :feature do
     create_post
   end
 
-  scenario 'Can update post after creating it' do
+  scenario 'Can update timeline post after creating it' do
     click_link 'Edit'
     expect(page).to_not have_content('You can only edit your own posts')
     expect(page).to_not have_content('You can no longer edit this post')
@@ -20,7 +20,7 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content(Time.now.strftime('%I:%M %p'))
   end
 
-  scenario "Cannot update a post that's not their own" do
+  scenario "Cannot update a timeline post that's not their own" do
     log_out
     sign_up_as_second_user
     visit '/posts'
@@ -29,7 +29,7 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to_not have_content('You can no longer edit this post')
   end
 
-  scenario 'User can only update a post within 10 minutes' do
+  scenario 'User can only update a timeline post within 10 minutes' do
     visit '/posts'
     Timecop.travel(Time.now + 11.minutes) do
       click_link 'Edit'
