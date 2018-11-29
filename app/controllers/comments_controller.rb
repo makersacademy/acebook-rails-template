@@ -35,7 +35,7 @@ class CommentsController < ApplicationController
       @comment.destroy
       flash[:confirmation] = 'Comment deleted'
     end
-    redirect_to posts_url
+    post_redirect
   end
 
   private
