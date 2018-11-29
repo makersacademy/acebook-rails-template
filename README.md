@@ -2,7 +2,6 @@
 
 To run the app on your machine, download the files, run `bundle install` to install the gems, run `rails db:create`, `rails db:migrate`, fire up the `rails server` and navigate to localhost:3000 in your browser.
 
-It is also deployed to Heroku at https://blooming-meadow-10813.herokuapp.com/.
 
 To run the tests, make sure RSpec is installed (`bundle install`) and run `rspec` from the command line.
 
