@@ -19,8 +19,16 @@ module PostsHelper
     params[:post][:wall_id].nil? || params[:post][:wall_id].empty?
   end
 
+  def timeline_post_edited?
+    @post.wall_id.nil?
+  end
+
   def wall_url
     "/#{params[:post][:wall_id]}"
+  end
+
+  def edit_wall_url
+    "/#{@post.wall_id}"
   end
 
   def post_redirect
