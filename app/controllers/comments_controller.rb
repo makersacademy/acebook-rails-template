@@ -15,9 +15,9 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
-    if comment_not_authorised?
+    if user_not_authorised?(@comment)
       prevent_edit('You can only edit your own comments')
-    elsif comment_not_editable?
+    elsif not_editable?(@comment)
       prevent_edit('You can no longer edit this comment')
     end
   end
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    if comment_not_authorised?
+    if user_not_authorised?(@comment)
       flash[:danger] = "You cannot delete someone else's comment"
     else
       @comment.destroy
