@@ -20,7 +20,7 @@ module Acebook
 
     config.middleware.use Rack::Cors do
       allow do
-        origins '*'
+        origins '0.0.0.0:3000', '0.0.0.0:3001', 'https://acebook-stars-frontend.herokuapp.com', 'localhost:3000', 'localhost:3001'
         resource '*',
           headers: :any,
           expose: ['access-token', 'expiry', 'token-type', 'uid', 'client'],
