@@ -7,7 +7,7 @@
 
 
   <% @posts.each do |post| %>
-    <div class="posts">
+    <div class="posts card">
     <% user = User.find(post.user_id) %>
     <p><%= user.name %></p>
     <p><%= post.message %></p>
