@@ -20,4 +20,12 @@ module FeatureHelpers
     fill_in 'chat_room[title]', with: 'Test Chat Room'
     click_button 'Add'
   end
+
+  def sign_in_and_create_album
+    sign_in_as_user
+    click_link 'My Albums'
+    click_link 'Create Album'
+    fill_in 'album[title]', with: 'My first album'
+    click_link 'Create'
+  end
 end
