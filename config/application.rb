@@ -8,6 +8,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+Dotenv::Railtie.load
+
+HOSTNAME = ENV['HOSTNAME']
+
 module Acebook
   class Application < Rails::Application
     config.api_only = true
@@ -20,7 +24,9 @@ module Acebook
 
     config.middleware.use Rack::Cors do
       allow do
-        origins '0.0.0.0:3000', '0.0.0.0:3001', 'https://acebook-stars-frontend.herokuapp.com', 'localhost:3000', 'localhost:3001'
+        origins 'localhost:3000', '127.0.0.1:3000', '0.0.0.0:3000',
+                'localhost:3001', '127.0.0.1:3001', '0.0.0.0:3001',
+                'https://acebook-stars-frontend.herokuapp.com/'
         resource '*',
           headers: :any,
           expose: ['access-token', 'expiry', 'token-type', 'uid', 'client'],
@@ -28,7 +34,5 @@ module Acebook
       end
     end
   end
-
-
 
 end

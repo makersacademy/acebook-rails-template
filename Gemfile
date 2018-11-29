@@ -38,6 +38,7 @@ gem "composite_primary_keys", "~> 10.0"
 gem "time_difference", "~> 0.7.0"
 
 group :development, :test do
+  gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
