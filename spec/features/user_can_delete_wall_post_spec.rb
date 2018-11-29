@@ -10,7 +10,7 @@ feature 'wall posts', type: :feature do
     scenario 'user can delete wall post' do
       click_link 'Delete'
       expect(page).not_to have_content 'Post on my wall'
-      expect(page).to have_content 'Amy Smith - Wall'
+      expect(page).to have_content 'Welcome, Amy Smith!'
     end
 
     scenario 'user can only delete their own post' do
