@@ -1,9 +1,7 @@
-<%= @album.name %>
+<h1><%= @album.name %><h1>
+<br><br>
 
-<%= form_with model: [@user, @user.albums.build], local: true do |form| %>
+<% @album.photos.each do |photo| %>
 
-  <div class="form-group">
-    <%= form.file_field :attachments, multiple: true, direct_upload: true %>
-  </div>
-  <%= form.submit "Upload", class: "btn btn-primary"%>
+<%= image_tag photo, class: 'album-photo' %>
 <% end %>

@@ -1,6 +1,7 @@
 class Album < ApplicationRecord
   validates :name, presence: true,
-                    length: { minimum: 1 }
+                   length: { minimum: 1 }
   belongs_to :user
-  has_many :photos, :dependent => :destroy
+
+  has_many_attached :photos
 end

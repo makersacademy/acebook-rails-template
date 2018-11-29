@@ -19,15 +19,15 @@ class AlbumsController < ApplicationController
     @album = @user.albums.create(album_params)
 
     if @album.save
-      redirect_to user_albums_url
+      redirect_to user_album_path(@user, @album)
     else
-      render 'new'
+      render 'show'
     end
   end
 
   private
 
   def album_params
-    params.require(:album).permit(:name)
+    params.require(:album).permit(:name, photos: [])
   end
 end
