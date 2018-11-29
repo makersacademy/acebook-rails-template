@@ -1,5 +1,7 @@
 class ChatsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def create
     chat = Chat.create(chat_params)
     room = "Group Chat"

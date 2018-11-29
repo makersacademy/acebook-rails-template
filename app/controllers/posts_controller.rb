@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: [:index]
 
   def new
