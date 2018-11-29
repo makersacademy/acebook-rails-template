@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order('updated_at DESC')
+    @wall = Wall.new(nil)
   end
 
   def edit

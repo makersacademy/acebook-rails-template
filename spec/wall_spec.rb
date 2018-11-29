@@ -42,24 +42,24 @@ describe 'Wall' do
 
   describe 'Timeline' do
 
-  let(:timeline) {Wall.new("NULL")}
+  let(:timeline) {Wall.new(nil)}
 
     it "has an empty wall id" do
-      expect(timeline.id).to eq("NULL")
+      expect(timeline.id).to eq(nil)
     end
 
 
     it 'loads a post made on the timeline' do
       user = create(:user)
-      post = create(:post, wall_id: "NULL")
+      post = create(:post, wall_id: nil)
       timeline.add_posts
       expect(timeline.posts).to eq [post]
     end
 
     it 'loads posts made on a timeline' do
       user = create(:user)
-      post1 = create(:post, wall_id: "NULL")
-      post2 = create(:post, wall_id: "NULL")
+      post1 = create(:post, wall_id: nil)
+      post2 = create(:post, wall_id: nil)
       timeline.add_posts
       expect(timeline.posts.length).to eq 2
     end
