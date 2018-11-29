@@ -10,7 +10,12 @@ class CommentsController < ApplicationController
     @comment = Comment.create(body: comment_params[:body],
                               post_id: params[:post_id],
                               user_id: session[:user_id])
-    redirect_to '/posts'
+    post = Post.find(params[:post_id])
+    if !post.wall_id.nil?
+      redirect_to "/#{post.wall_id}"
+    else
+      redirect_to '/posts'
+    end
   end
 
   def edit
