@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require('devise')
 
 class RegistrationsController < Devise::RegistrationsController
   devise :database_authenticatable, :registerable,
