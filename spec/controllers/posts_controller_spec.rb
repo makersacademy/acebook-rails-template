@@ -25,7 +25,7 @@ RSpec.describe PostsController, type: :request do
   describe 'POST /' do
     before { post "/posts", params: { post: { message: message } } }
     it 'responds with 401 (unauthorized)' do
-      expect(json['status']).to eq 401
+      expect(response.status).to eq 401
     end
   end
 
