@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: [:index]
 
-
   def new
     @comment = Comment.new
   end
@@ -21,6 +20,11 @@ class CommentsController < ApplicationController
   def edit
     @comment = Comment.find(params[:id])
     json_response(@comment)
+  end
+
+  def index
+    @comments = Post.find(params[:post_id]).comments
+    json_response(@comments)
   end
 
   def update
