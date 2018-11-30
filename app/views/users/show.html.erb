@@ -2,7 +2,7 @@
 <% provide(:title, @user.name) %>
 <h2 class="page-title">Welcome, <%= @user.name %>!</h2>
 <h3 class="page-subtitle">Your newsfeed</h3>
-<div">
+<div class="post_form">
   <%= form_for :post, url: "/#{@user.id}" do |form| %>
     <%= form.label :message %>
     <%= form.text_area :message %>
