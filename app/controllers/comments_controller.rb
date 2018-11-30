@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @comment = Comment.create(body: comment_params[:body],
                               post_id: params[:post_id],
                               user_id: session[:user_id])
-    redirect_to '/posts'
+    post_redirect
   end
 
   def edit
@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    redirect_to posts_url if @comment.update(body: comment_params[:body])
+    post_redirect if @comment.update(body: comment_params[:body])
   end
 
   def destroy
@@ -35,12 +35,21 @@ class CommentsController < ApplicationController
       @comment.destroy
       flash[:confirmation] = 'Comment deleted'
     end
-    redirect_to posts_url
+    post_redirect
   end
 
   private
 
   def comment_params
     params.require(:comment).permit(:body, :post_id)
+  end
+
+  def post_redirect
+    post = Post.find(params[:post_id])
+    if !post.wall_id.nil?
+      redirect_to "/#{post.wall_id}"
+    else
+      redirect_to posts_url
+    end
   end
 end
