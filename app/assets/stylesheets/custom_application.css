@@ -2,17 +2,6 @@
   font-size: 1.5rem;
 }
 
-.comment {
-  padding: 2% 5%;
-  margin-left: 12%;
-  margin-right: 12%;
-  border-style: solid;
-  background-clip: border-box;
-  border: 1px solid rgba(220, 181, 181, 0.125);
-  border-radius: 0.25rem;
-  background-color: #c4dfe68c;
-}
-
 .btn-primary-custom {
   color: #07575B;
   background-color: #C4DFE6;
@@ -61,13 +50,20 @@ a:hover {
 
 .posts {
   padding: 2%;
+  padding-bottom: 5%;
   margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
   background-color: #C4DFE6;
 }
 
-.card {
-  margin-left: 12%;
-  margin-right: 12%;
+.comment {
+  padding: 2%;
+  padding-bottom: 5%;
+  margin-top: 2%;
+  margin-left: 20%;
+  margin-right: 10%;
+  background-color: #c4dfe68c;
 }
 
 .not_found_error {
@@ -77,3 +73,72 @@ a:hover {
   text-align: center;
   color: #07575B;
 }
+
+.user_name {
+  text-decoration: underline;
+  display: inline;
+  text-align: left;
+}
+
+.post_time {
+  font-size: 0.8rem;
+  display: inline;
+  float: right;
+}
+
+.post_message {
+}
+
+.post_link {
+  display: inline;
+  float: left;
+  position: relative;
+  padding: 5px;
+  text-decoration: underline;
+}
+
+.new_post_link {
+  width: 100px;
+  padding: 5px;
+  margin-left: 10%;
+  text-align: center;
+  background-color: #c4dfe68c;
+  border: 1px solid #003B46;
+}
+
+/* .post_form {
+  text-align: center;
+  padding: 2%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+} */
+
+/* .new_post input {
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+} */
+
+/* .post_form label {
+  display: block; */
+  /* float: top;
+  text-align: center;
+  width: 6em;
+  margin-right: 1em;
+  margin-top: 0.4em; */
+  /* color: #003B46;
+}
+
+.post_form textarea {
+  border-radius: 5px;
+  color: #C4DFE6;
+}
+
+.post_form submit {
+  color: #07575B;
+  background-color: #C4DFE6;
+  border-color: #C4DFE6;
+  margin-top: 5px;
+} */

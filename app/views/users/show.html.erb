@@ -2,7 +2,7 @@
 <% provide(:title, @user.name) %>
 <h2 class="page-title">Welcome, <%= @user.name %>!</h2>
 <h3 class="page-subtitle">Your newsfeed</h3>
-<div>
+<div">
   <%= form_for :post, url: "/#{@user.id}" do |form| %>
     <%= form.label :message %>
     <%= form.text_area :message %>
@@ -16,21 +16,21 @@
   <div class="posts">
 
     <% user = User.find(post.user_id) %>
-    <p><%= user.name %></p>
-    <p><%= post.message %></p>
-    <p><%= post.updated_at.strftime('%I:%M %p, %A, %b %d') %></p>
-    <%= link_to 'Edit', edit_post_path(post) %>
-    <%= link_to 'Delete', post_path(post), method: :delete %>
-    <%= link_to 'Comment', new_post_comment_path(post) %>
+    <p class="user_name"><%= user.name %></p>
+    <p class="post_time"><%= post.updated_at.strftime('%I:%M %p, %A, %b %d') %></p>
+    <p class="post_message"><%= post.message %></p>
+    <div class="post_link"><%= link_to 'Edit', edit_post_path(post) %></div>
+    <div class="post_link"><%= link_to 'Delete', post_path(post), method: :delete %></div>
+    <div class="post_link"><%= link_to 'Comment', new_post_comment_path(post) %></div>
   </div>
     <% post.comments.each do |comment| %>
     <div class='comment'>
     <% commentor = User.find(comment.user_id) %>
-    <p><%= commentor.name %></p>
-    <p><%= comment.body %></p>
-    <p><%= comment.updated_at.strftime('%I:%M %p, %A, %b %d') %></p>
-    <%= link_to 'Edit', edit_post_comment_path(post, comment) %>
-    <%= link_to 'Delete', post_comment_path(post, comment), method: :delete %>
+    <p class="user_name"><%= commentor.name %></p>
+    <p class="post_time"><%= comment.updated_at.strftime('%I:%M %p, %A, %b %d') %></p>
+    <p class="post_message"><%= comment.body %></p>
+    <div class="post_link"><%= link_to 'Edit', edit_post_comment_path(post, comment) %></div>
+    <div class="post_link"><%= link_to 'Delete', post_comment_path(post, comment), method: :delete %></div>
     </div>
     <% end %>
   </div>
