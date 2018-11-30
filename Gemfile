@@ -38,6 +38,7 @@ gem "composite_primary_keys", "~> 10.0"
 gem "time_difference", "~> 0.7.0"
 
 group :development, :test do
+  gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
@@ -54,6 +55,9 @@ group :development, :test do
   gem "activesupport", "~> 5.1"
   gem "timecop", "~> 0.9.1"
   gem "launchy", "~> 2.4"
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :development do
@@ -69,3 +73,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem "coffee-rails", "~> 4.2"
+
+gem "devise_token_auth", "~> 1.0"
+
+gem "rack-cors", "~> 1.0"
