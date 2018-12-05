@@ -2,8 +2,10 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-   
+
   <div class="field">
+  <p><%= f.label :username %><br />
+    <%= f.text_field :username %></p>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -27,16 +29,3 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
-
-<style>
-h2 {
-  font-family: arial;
-  color: #3B5998;
-}
-bgcolor {
-  color: #3B5998;
-}
-div {
-  text-align: center;
-}
-</style>
