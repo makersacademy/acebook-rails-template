@@ -42,7 +42,7 @@
         <li><a <%= link_to "Log Out", destroy_user_session_path, method: :delete %></a></li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %> <span class="caret"></span></a>
           <ul class="dropdown-menu">
           <li><a <%= link_to "Change your password", edit_user_registration_path %></a></li>
 
@@ -50,7 +50,7 @@
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
-            
+
           </ul>
         </li>
       </ul>
