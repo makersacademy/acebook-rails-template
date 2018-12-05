@@ -9,7 +9,7 @@ root 'pages#index'
   get '/users/profile' => 'pages#home'
   get 'explore' => 'pages#explore'
   get '/users/explore' => 'pages#home'
-  
+  get '/users/:id' => 'pages#profile'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :posts
