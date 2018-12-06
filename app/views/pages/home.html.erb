@@ -14,15 +14,17 @@
 
 
 
-<div class='col-xs-6'>
-  <div class="panel panel-default">
-     <div class="panel-body">
-       <button>Make a post</button> <button> Photo/Video album </button>
-
-       <!--- <p> middle </p> --->
-     </div>
+  <div class='col-xs-6'>
+    <% for @p in @posts %>
+    <div class="panel panel-default">
+       <div class="panel-body">
+         <div id="timeline"
+         <p> <%= @p.content %></p>
+         </div>
+       </div>
+    </div
+         <% end %>
   </div>
-</div>
 
 
   <div class='col-xs-3'>
