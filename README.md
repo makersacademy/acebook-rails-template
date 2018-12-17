@@ -26,3 +26,22 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## Database Setup - (developing phase)
+
+To build database from schema
+```
+rake db:migrate
+```
+
+To reset the database and reload the current schema 
+(warning:database will be reset, all data will be lost)
+```
+rake db:drop db:create db:migrate
+```
+
+Table ```users```:
+id - PRIMARY KEY
+username - String, Non Nullable
+email - String, Non Nullable, Unique
+password - String, Non Nullable 
