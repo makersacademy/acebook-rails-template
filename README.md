@@ -28,3 +28,11 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## Diagrams
+
+![](assets/README-3814a64d.jpg)
+
+![](assets/README-4c144c6b.jpg)
+
+![](assets/README-f82fa3f2.jpg)
