@@ -1,0 +1,12 @@
+before_script:
+- cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
+language: ruby
+script:
+- bundle exec rails db:migrate RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: lL9E9vRQisjDj/3yvxuA+UWfyq7z7TXs4MsFvn9REWsJXfedFl2MD8a7ZaWM6lIfgtkK4s+4LWLJrtYduT0T19dGwEbKzy0VY5Ap1//9iwIZRTnF3R51rkHnz53JGZ7KutFQiO/bGYRerieWOidJAgq6AGPjVNPDwUr/wlHalj8grdFYdpicbUKiWs6HYpKtIGm6u096IAgu4X5Qax9A2XcYpemyzAqot579D25E7W4bDw/ExZYj9XF/dpZF5mRHpia5H6oy0sNi7Zw/LE32fRHFFWHHq0lrUWfVnEdJ8CgM+XrW4EpXZN4ZRTvmucnJLDmoGerkuHcARuUztdM20HfMex9BEUj3A+fVhnmxzV0BGGAvwGvKJtFhqr4+J4l5vGpHLRvDCbY3gn2BlowUNSJts9DW7HFnVW6jYQuuJmVpv85vN6dvHQh2TuXLXYFu1zJTK/VutN6tqflvGJI/CNJN48iRG9HHsVT1X6e1mrKoz2RQfaex8d31pay8R0v5C0zHDbH4j371I93+JeBTv0i0QU864gv92fUzujSlrmYlhT7raDodpcmUE/1toQqzZzVx5kW1U/zA7WRAoLgP/6LW5oM/t6U5grWP/1dhRnPiptvDUiog8+h+Mi878qjoZ1u2Lfeplxqqg5ar7caF+tPSPoSuTEmKhZpX56QF9so=
+  run: "rake db:migrate"

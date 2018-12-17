@@ -1,5 +1,6 @@
 # AceBook
 Building a Facebook clone using Rails.
+[![Build Status](https://travis-ci.org/tomasdoh/acebook-floppy-disk.svg?branch=master)](https://travis-ci.org/tomasdoh/acebook-floppy-disk)
 
 ## Team members
 
