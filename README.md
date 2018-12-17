@@ -1,16 +1,20 @@
-# AceBook
+# AceBook - JAID
 
-REQUIRED INSTRUCTIONS:
+## Members
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+- [Asad Khan](https://github.com/AsadK47)
+- [Darryl Banks](https://github.com/zombie9)
+- [Ijeoma Nelson](https://github.com/githubsttar)
+- [Jackie Dunne](https://github.com/kiedunne)
+
+
+## Trello Board
+
+https://trello.com/b/Fp0JIOMP/acebook-planning-team-jaid
+
+## Instructions
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Quickstart
 
