@@ -3,16 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #welcome
 {
+  margin-top: 40px;
   text-align: center;
   color: white;
-  font-size: 40px;
+  font-size: 70px;
 }
 body
 {
   background: #3b5998;
+  text-align: center;
 }
 #face
 {
+  margin-top: 70px;
   width:140px;
   height: 130px;
+}
+#login
+{
+  margin-top: 50px;
 }
