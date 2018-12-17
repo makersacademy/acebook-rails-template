@@ -1,16 +1,17 @@
 # AceBook
+Building a Facebook clone using Rails.
 
-REQUIRED INSTRUCTIONS:
+## Team members
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+* [Luisa Theodoro Paoliello]
+* [Chris Gilbert]
+* [Christopher Palacios]
+* [Kirill Zabrodin]
+* [Tomas Doherty](http://github.com/tomasdoh)
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
 
 ## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+See [Contributing](CONTRIBUTING.md)
 
 ## Quickstart
 
