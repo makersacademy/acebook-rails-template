@@ -45,3 +45,13 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## Rubocop
+`bundle` if not installed    
+`rubocop` to run    
+
+## View Test Coverage with Simplecov  
+Coverage reports are generated every time RSpec tests are run. To view results:  
+`bundle` if not installed    
+`cd coverage`     
+`open index.html`    
