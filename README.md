@@ -35,13 +35,13 @@ rake db:migrate
 ```
 
 To reset the database and reload the current schema 
-(warning:database will be reset, all data will be lost)
+(warning: database will be reset, all data will be lost)
 ```
 rake db:drop db:create db:migrate
 ```
 
-Table ```users```:
-id - PRIMARY KEY
-username - String, Non Nullable
-email - String, Non Nullable, Unique
-password - String, Non Nullable 
+Table ```users```:  
+id - PRIMARY KEY   
+username - String, Non Nullable   
+email - String, Non Nullable, Unique  
+password - String, Non Nullable   
