@@ -1,0 +1,9 @@
+<h1>User page</h1>
+
+<% @users.each do |user| %>
+  <p><%= user.message %></p>
+<% end %>
+
+<%= link_to new_user_path do %>
+  New user
+<% end %>
