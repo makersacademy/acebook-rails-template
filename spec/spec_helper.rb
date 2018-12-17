@@ -15,6 +15,10 @@
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 #
+# using simplecov here also covers the app/helpers files eg application_helper
+require 'simplecov'
+SimpleCov.start 'rails'
+
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
