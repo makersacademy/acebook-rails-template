@@ -8,5 +8,4 @@ class HomePageController < ApplicationController
     @users = User.all
   end
 
-
 end
