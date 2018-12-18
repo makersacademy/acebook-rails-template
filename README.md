@@ -1,6 +1,6 @@
-# AceBook
-Building a Facebook clone using Rails.
-[![Build Status](https://travis-ci.org/tomasdoh/acebook-floppy-disk.svg?branch=master)](https://travis-ci.org/tomasdoh/acebook-floppy-disk)
+# AceBook[![Build Status](https://travis-ci.org/tomasdoh/acebook-floppy-disk.svg?branch=master)](https://travis-ci.org/tomasdoh/acebook-floppy-disk)
+
+[Building a Facebook clone using Rails](https://aqueous-wave-77193.herokuapp.com/posts).
 
 ## Team members
 
@@ -41,7 +41,7 @@ I want to be able to update or delete my posts
 ```
 ```
 As a user
-So that I can see the latest updates from my friends
+So that I can see the latest updates from my amigos
 The newest posts should appear first in my feed
 ```
 ```
@@ -60,8 +60,9 @@ First, clone this repository. Then:
 > bin/rails db:migrate
 
 > bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+> rails s # Start the server at localhost:3000
 ```
+
 
 ## Testing
 #### Rubocop
@@ -73,3 +74,4 @@ Coverage reports are generated every time RSpec tests are run. To view results:
 `bundle` if not installed    
 `cd coverage`     
 `open index.html`    
+
