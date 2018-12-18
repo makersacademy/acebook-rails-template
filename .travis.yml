@@ -2,3 +2,11 @@ language: ruby
 rvm:
  - 2.5
  # - jruby
+
+addons:
+  postgresql: 11.1
+
+script:
+- bundle install
+- bin/rails db:create
+- bin/rails db:migrate
