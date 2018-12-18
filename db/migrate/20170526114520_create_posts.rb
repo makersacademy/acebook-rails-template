@@ -4,6 +4,6 @@ class CreatePosts < ActiveRecord::Migration[5.1]
       t.string :message
 
       t.timestamps
-    end
+  end
   end
 end
