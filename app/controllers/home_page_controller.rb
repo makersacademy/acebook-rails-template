@@ -4,4 +4,10 @@ class HomePageController < ApplicationController
 
   end
 
+  def afterlogin
+
+  end
+
+
+
 end
