@@ -1,4 +1,4 @@
-# AceBook[![Build Status](https://travis-ci.org/tomasdoh/acebook-floppy-disk.svg?branch=master)](https://travis-ci.org/tomasdoh/acebook-floppy-disk)
+# AceBook   [![Build Status](https://travis-ci.org/tomasdoh/acebook-floppy-disk.svg?branch=master)](https://travis-ci.org/tomasdoh/acebook-floppy-disk)
 
 [Building a Facebook clone using Rails](https://aqueous-wave-77193.herokuapp.com/posts).
 
