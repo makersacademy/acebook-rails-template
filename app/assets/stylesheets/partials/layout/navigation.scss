@@ -30,17 +30,21 @@
   background-color: white !important;
 }
 
-.active a {
-  background: $navbarColor !important;
-  border-bottom: solid 5px white;
-}
-
-.dropdown-toggle, .dropdown-menu {
-  background: $navbarColor !important;
-  border: none;
-}
+//.active a {
+//background: $navbarColor !important;
+//border-bottom: solid 5px white;
+//}
+//
+//.dropdown-toggle, .dropdown-menu {
+//  background: $navbarColor !important;
+//  border: none;
+//}
 
 .dropdown-menu a:hover {
   color: black !important;
   background: white !important;
+}
+
+body {
+  padding-top: 70px;
 }
