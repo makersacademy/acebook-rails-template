@@ -1,5 +1,5 @@
 <div id="container" class= "body">
-
+<p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
   <div>
   <h1 id="welcome">WELCOME ON ACEBOOK!</h1>
   <div>
@@ -8,6 +8,7 @@
       <img id="face" src="face.jpg">
     <div>
 
-      <p id="login"><%= link_to "Log In", '#', :class => "btn btn-primary btn-lg" %><p>
-      <p id="signup"><%= link_to "Sign Up", '#' %><p>
+      <p id="login"><%= link_to "Log In", user_session_path, :class => "btn btn-primary btn-lg" %><p>
+      <p id="signup"><%= link_to "Sign Up", new_user_registration_path %><p>
+
   <div>
