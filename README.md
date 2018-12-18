@@ -4,10 +4,10 @@ Building a Facebook clone using Rails.
 
 ## Team members
 
-* [Luisa Theodoro Paoliello]()
-* [Chris Gilbert]()
-* [Christopher Palacios]()
-* [Kirill Zabrodin]()
+* [Luisa Theodoro Paoliello](https://github.com/luisatheodoro)
+* [Chris Gilbert](https://github.com/chrisjgilbert)
+* [Cristopher Palacios](https://github.com/criszelaya24)
+* [Kirill Zabrodin](https://github.com/kirillzabrodin)
 * [Tomas Doherty](http://github.com/tomasdoh)
 
 ## User Stories
