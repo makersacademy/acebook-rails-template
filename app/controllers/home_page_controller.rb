@@ -5,9 +5,8 @@ class HomePageController < ApplicationController
   end
 
   def afterlogin
-
+    @users = User.all
   end
-
 
 
 end
