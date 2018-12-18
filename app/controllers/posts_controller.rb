@@ -12,9 +12,15 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def homepage
+
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:message)
   end
+
+
 end
