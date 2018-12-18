@@ -12,7 +12,7 @@ Building a Facebook clone using Rails.
 
 ## User Stories
 
-#### Authentication and posts
+#### Authentication
 ```
 As a user
 So that I can connect with amigos
@@ -23,15 +23,31 @@ As a user
 So that I can communicate with amigos
 I want to log in to Acebook
 ```
+#### Posts
 ```
 As a user
 So that I can see what my amigos are saying
-I want to be able to see all posts
+I want to be able to see all the posts on Acebook
 ```
 ```
 As a user
 So that I can share my thoughts
 I want to be able to create a post
+```
+```
+As a user
+So that I can change or remove anything I regret saying
+I want to be able to update or delete my posts
+```
+```
+As a user
+So that I can see the latest updates from my friends
+The newest posts should appear first in my feed
+```
+```
+As a user
+So that I can express myself as much as I need to
+I want to write long posts across multiple lines
 ```
 
 ## Quickstart
@@ -47,11 +63,12 @@ First, clone this repository. Then:
 > bin/rails server # Start the server at localhost:3000
 ```
 
-## Rubocop
+## Testing
+#### Rubocop
 `bundle` if not installed    
 `rubocop` to run    
 
-## View Test Coverage with Simplecov  
+#### Test Coverage with Simplecov  
 Coverage reports are generated every time RSpec tests are run. To view results:  
 `bundle` if not installed    
 `cd coverage`     
