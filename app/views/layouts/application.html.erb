@@ -9,7 +9,8 @@
 </head>
 
 <body>
-<%#= render 'layouts/navigation' %>
+<%= render 'layouts/navigation' %>
 <%= yield %>
+<%# <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
 </body>
 </html>
