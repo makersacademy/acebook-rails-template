@@ -3,7 +3,7 @@
 <br>
 <br>
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= post.message %> <%= post.created_at.strftime("%d/%m") %></p>
   <p><%= User.find(post.user_id).first_name %></p>
 <% end %>
 
