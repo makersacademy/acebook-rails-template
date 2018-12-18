@@ -1,9 +1,5 @@
-<br>
-<br>
-<br>
-<br>
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<% @posts.reverse.each do |post| %>
+  <p><%= post.message %> <%= post.created_at.strftime("%d/%m") %></p>
 <% end %>
 
 <%= link_to new_post_path do %>

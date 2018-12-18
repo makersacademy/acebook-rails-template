@@ -1,69 +1,109 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/chris/CodeProjects/Makers/wk-7/acebook-floppy-disk/app/controllers/posts_controller.rb": [
-        1,
-        1,
-        2,
-        null,
-        null,
-        1,
-        3,
-        3,
-        null,
-        null,
-        1,
-        3,
-        null,
-        null,
-        1,
-        null,
-        1,
-        3,
-        null,
-        null
-      ],
-      "/Users/chris/CodeProjects/Makers/wk-7/acebook-floppy-disk/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/chris/CodeProjects/Makers/wk-7/acebook-floppy-disk/app/models/post.rb": [
-        1,
-        null
-      ],
-      "/Users/chris/CodeProjects/Makers/wk-7/acebook-floppy-disk/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/chris/CodeProjects/Makers/wk-7/acebook-floppy-disk/app/mailers/application_mailer.rb": [
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/chris/CodeProjects/Makers/wk-7/acebook-floppy-disk/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/Users/chris/CodeProjects/Makers/wk-7/acebook-floppy-disk/app/helpers/application_helper.rb": [
-        0,
-        0
-      ],
-      "/Users/chris/CodeProjects/Makers/wk-7/acebook-floppy-disk/app/channels/application_cable/connection.rb": [
-        0,
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/models/application_record.rb": [
         0,
         0,
         0
       ],
-      "/Users/chris/CodeProjects/Makers/wk-7/acebook-floppy-disk/app/channels/application_cable/channel.rb": [
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/models/post.rb": [
+        0,
+        0
+      ],
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/models/user.rb": [
+        0,
+        null,
+        null,
+        0,
+        0,
+        0
+      ],
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/controllers/users_controller.rb": [
+        0,
+        null,
+        0
+      ],
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/controllers/posts_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/controllers/registrations_controller.rb": [
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/helpers/users_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1545066238
+    "timestamp": 1545149834
   }
 }
