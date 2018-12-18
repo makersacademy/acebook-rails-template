@@ -75,3 +75,6 @@ Coverage reports are generated every time RSpec tests are run. To view results:
 `cd coverage`     
 `open index.html`    
 
+
+## Wiki
+We have documented our entire journey on the Wiki of this repo. All page names are written in a format of 'MeetingType 00:00 01/01/2000'. Posts were made by individual members without agreement on a formal format. Each post summarizes the conversations had during the meeting.
