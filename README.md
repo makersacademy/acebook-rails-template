@@ -2,6 +2,8 @@
 
 [Heroku](https://acebook-unicorns.herokuapp.com/)
 
+(https://travis-ci.com/lucafrancesc/acebook-unicorns.svg?branch=master)
+
 # AceBook
 
 REQUIRED INSTRUCTIONS:
