@@ -8,8 +8,11 @@
 
       <%= bootstrap_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
-        <%= f.text_field :name,
-                         placeholder: 'username (will be shown publicly)',
+        <%= f.text_field :first_name,
+                         placeholder: 'first name',
+                         class: 'form-control' %>
+        <%= f.text_field :last_name,
+                         placeholder: 'last name',
                          class: 'form-control' %>
         <%= f.text_field :email,
                          placeholder: 'email',
