@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'bootstrap_form'
+gem 'bootstrap-sass', '~> 3.4.0'
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -37,7 +40,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
   gem 'devise'
-  gem 'bootstrap_form'
   gem "rubocop-rails_config"
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
