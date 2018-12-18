@@ -1,5 +1,5 @@
 addons:
-  postgresql: 11.1
+  postgresql: 9.5
 
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
