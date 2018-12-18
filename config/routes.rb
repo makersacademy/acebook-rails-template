@@ -9,4 +9,8 @@ Rails.application.routes.draw do
     get 'login', to: 'devise/sessions#new'
   end
   resources :posts
+  devise_scope :user do
+    root to: "devise/registrations#new"
+  end
 end
+
