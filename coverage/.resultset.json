@@ -1,0 +1,74 @@
+{
+  "Unknown Test Framework": {
+    "coverage": {
+    },
+    "timestamp": 1545131256
+  },
+  "RSpec": {
+    "coverage": {
+      "/Users/asadk/Projects/Makers-Course/Week8/acebook-rails-template/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week8/acebook-rails-template/app/controllers/posts_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        3,
+        3,
+        null,
+        null,
+        1,
+        3,
+        null,
+        null,
+        1,
+        null,
+        1,
+        3,
+        null,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week8/acebook-rails-template/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week8/acebook-rails-template/app/models/post.rb": [
+        1,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week8/acebook-rails-template/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week8/acebook-rails-template/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week8/acebook-rails-template/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week8/acebook-rails-template/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week8/acebook-rails-template/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1545131467
+  }
+}
