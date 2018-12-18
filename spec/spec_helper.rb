@@ -17,9 +17,10 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-  
+
   config.before(:each) do
-      connection = PG.connect(dbname: 'pgapp_test')
+      connection = PG.connect
+      connection.exec("CREATE DATABASE pgapp_test")
   end
 
   # rspec-expectations config goes here. You can use an alternate

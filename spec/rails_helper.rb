@@ -29,7 +29,8 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
 
   config.before(:each) do
-      connection = PG.connect(dbname: 'pgapp_test')
+      connection = PG.connect
+      connection.exec("CREATE DATABASE pgapp_test")
   end
 
 
