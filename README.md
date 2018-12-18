@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/leoncross/acebook-firenze.svg?branch=master)](https://travis-ci.com/leoncross/acebook-firenze)
+
 # AceBook
 
 REQUIRED INSTRUCTIONS:
