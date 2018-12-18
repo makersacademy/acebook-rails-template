@@ -3,6 +3,8 @@
   <p><%= User.find(post.user_id).first_name %></p>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<% if current_user %>
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
 <% end %>

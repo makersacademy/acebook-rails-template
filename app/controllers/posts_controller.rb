@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   def new
-    @post = Post.new
+    if current_user
+      @post = Post.new
+    else
+      redirect_to login_url
+    end
   end
 
   def create
