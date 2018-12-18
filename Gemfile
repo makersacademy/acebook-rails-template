@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap_form'
 gem 'bootstrap-sass', '~> 3.4.0'
 gem 'jquery-rails'
-
+gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -39,7 +39,6 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
-  gem 'devise'
   gem "rubocop-rails_config"
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
