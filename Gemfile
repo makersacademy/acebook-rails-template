@@ -42,6 +42,7 @@ group :development, :test do
   gem "rubocop-rails_config"
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'factory_bot_rails'
 end
 
 group :development do
