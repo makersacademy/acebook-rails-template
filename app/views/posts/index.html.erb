@@ -1,5 +1,5 @@
 <% @posts.reverse.each do |post| %>
-  <p><%= post.message %> <%= post.created_at.strftime("%d") %>/<%= post.created_at.strftime("%m") %></p>
+  <p><%= post.message %> <%= post.created_at.strftime("%d/%m") %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
