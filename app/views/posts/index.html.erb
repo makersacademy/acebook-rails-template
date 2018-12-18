@@ -1,5 +1,6 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <p><%= User.find(post.user_id).first_name %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
