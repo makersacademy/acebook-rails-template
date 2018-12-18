@@ -1,9 +1,11 @@
-<h1>hi</h1>
+<h1>hi <%= current_user.user_name %></h1>
 <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
 
 
-  <div>
-    <%= @users.each do |user| %>
-    <p> <%= user.email %> </p>
-    <% end %>
-  </div>
+  <% if user_signed_in? %>
+    <div>Signed in as... <%= current_user.email %></div>
+    <div>Signed in as... <%= current_user.id %></div>
+  <% end %>
+
+<%= link_to 'User Profile', userprofile_path, :class => 'btn btn-secondary'%> 
+
