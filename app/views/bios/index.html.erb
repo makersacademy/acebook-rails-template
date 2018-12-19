@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Id</th>
       <th>Age</th>
       <th>Bio</th>
       <th>Location</th>
@@ -13,10 +12,9 @@
     </tr>
   </thead>
 
-  <tbody>
+  <--! <tbody>
     <% @bios.each do |bio| %>
       <tr>
-        <td><%= bio.id %></td>
         <td><%= bio.age %></td>
         <td><%= bio.bio %></td>
         <td><%= bio.location %></td>
@@ -27,7 +25,7 @@
     <% end %>
   </tbody>
 </table>
-
+-->
 <br>
 
 <%= link_to 'New Bio', new_bio_path %>
