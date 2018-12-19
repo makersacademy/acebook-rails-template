@@ -1,10 +1,6 @@
-<br>
-<br>
-<br>
-<br>
 <div class="container text-center">
   <% @posts.reverse.each do |post| %>
-    <p><%= post.message %> <%= post.created_at.strftime("%d/%m") %></p>
+    <p class="post-message"><%= post.message %> <%= post.created_at.strftime("%d/%m") %></p>
     <p><%= User.find(post.user_id).first_name %></p>
   <% end %>
 
