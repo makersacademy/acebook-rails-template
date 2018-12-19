@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+
   resources :bios
+
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'posts#homepage'
+  resources :users, :only =>[:show]
+
   resources :posts
+
+  root 'posts#homepage'
+
+  match '/users/:id', to: 'users#show', via: 'get'
+  match '/users', to: 'users#index', via: 'get'
+
 end
