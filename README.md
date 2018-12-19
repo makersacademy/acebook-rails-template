@@ -63,6 +63,14 @@ First, clone this repository. Then:
 > rails s # Start the server at localhost:3000
 ```
 
+To clean local database use
+
+```
+> bin/rails db:drop
+> bin/rails db:create
+> bin/rails db:migrate
+```
+
 
 ## Testing
 #### Rubocop
