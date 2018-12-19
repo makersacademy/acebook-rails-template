@@ -7,5 +7,6 @@
     <div>Signed in as... <%= current_user.id %></div>
   <% end %>
 
-<%= link_to 'User Profile', userprofile_path, :class => 'btn btn-secondary'%> 
+<%= link_to 'User Profile', userprofile_path, :class => 'btn btn-secondary'%>
 
+<p><%= link_to "Update account details", edit_user_registration_path %></p>
