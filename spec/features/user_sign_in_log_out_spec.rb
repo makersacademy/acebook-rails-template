@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "User interactions", type: :feature do
+RSpec.feature "User sign in and out actions", type: :feature do
   scenario "User can sign up" do
     visit_signup_page
     fill_in_signup_form_and_submit
