@@ -16,6 +16,14 @@ the below**
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
+
+
+# routes:
+
+/users - shows all users
+/users/show - shows current user profile
+
+
 ## Quickstart
 
 First, clone this repository. Then:
