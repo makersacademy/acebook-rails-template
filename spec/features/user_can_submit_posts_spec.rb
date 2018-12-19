@@ -1,20 +1,13 @@
 require 'rails_helper'
+require_relative '../support/feature_web_helpers'
+require_relative '../support/capybara_selectors'
 
-RSpec.feature "Timeline", type: :feature do
-  scenario "User can log in and can submit posts and view them" do
-    visit "/"
-    click_link "Signup"
-    fill_in "user_first_name", with: 'first name'
-    fill_in "user_last_name", with: 'last name'
-    fill_in "user_email", with: 'test@email.com'
-    fill_in "user_password", with: 'password'
-    fill_in "user_password_confirmation", with: 'password'
-    click_button "Sign up"
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+
+RSpec.feature "User posts", type: :feature do
+  scenario "User can sign up, submit a post" do
+    signup
+    post_hello_world_message
     expect(page).to have_content("Hello, world!")
-    expect(page).to have_content("first name")
   end
 
   scenario "User unable to post and unless signed in" do
