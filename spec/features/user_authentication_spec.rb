@@ -33,7 +33,6 @@ RSpec.feature "User authentication", type: :feature do
 
   scenario "User unable to sign up if passwords do not match" do
     visit "/"
-    click_link "Signup"
     fill_in "user_first_name", with: 'first name'
     fill_in "user_last_name", with: 'last name'
     fill_in "user_email", with: 'test@email.com'
@@ -46,7 +45,6 @@ RSpec.feature "User authentication", type: :feature do
 
   scenario "User unable to sign up if no first name" do
     visit "/"
-    click_link "Signup"
     fill_in "user_last_name", with: 'last name'
     fill_in "user_email", with: 'test@email.com'
     fill_in "user_password", with: 'password'
@@ -58,7 +56,6 @@ RSpec.feature "User authentication", type: :feature do
 
   scenario "User unable to sign up if no last name" do
     visit "/"
-    click_link "Signup"
     fill_in "user_first_name", with: 'first name'
     fill_in "user_email", with: 'test@email.com'
     fill_in "user_password", with: 'password'
@@ -66,6 +63,18 @@ RSpec.feature "User authentication", type: :feature do
     click_button "Sign up"
     expect(current_path).to eq("/users")
     expect(page).to have_content("can't be blank")
+  end
+
+  scenario "User unable to sign up if no last name" do
+    visit "/"
+    fill_in_signup_form_and_submit
+    find(:linkhref, "/users/sign_out").click
+    expect(current_path).to eq("/")
+    first(:linkhref, "/login").click
+    fill_in "user_email", with: 'test@email.com'
+    click_button "Sign up"
+    expect(current_path).to eq("/users")
+    expect(page).to have_content("has already been taken")
   end
 
 end
