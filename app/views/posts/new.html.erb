@@ -1,6 +1,17 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-
-  <%= form.submit "Submit" %>
-<% end %>
+<div class="container new-post">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1 class="text-center">Create a new post</h1>
+      <%= bootstrap_form_for(@post) do |f| %>
+        <%= f.text_area :message,
+                        rows: 6,
+                        required: true,
+                        minlength: 20,
+                        maxlength: 1000,
+                        placeholder: 'How are you felling today?',
+                        class: 'form-control' %>
+        <%= f.submit "Submit", class: 'form-control create-post-button' %>
+      <% end %>
+    </div>
+  </div>
+</div>
