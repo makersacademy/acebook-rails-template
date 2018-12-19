@@ -31,8 +31,7 @@ RSpec.feature "User authentication", type: :feature do
     expect(page).to have_content("can't be blank")
   end
 
-  #  flash message needs to be implemented to reflect password mismatch
-  xscenario "User unable to sign up if passwords do not match" do
+  scenario "User unable to sign up if passwords do not match" do
     visit "/"
     click_link "Signup"
     fill_in "user_first_name", with: 'first name'
@@ -42,7 +41,31 @@ RSpec.feature "User authentication", type: :feature do
     fill_in "user_password_confirmation", with: 'asd'
     click_button "Sign up"
     expect(current_path).to eq("/users")
-    expect(page).to have_content("passwords do not match")
+    expect(page).to have_content("doesn't match Password")
+  end
+
+  scenario "User unable to sign up if no first name" do
+    visit "/"
+    click_link "Signup"
+    fill_in "user_last_name", with: 'last name'
+    fill_in "user_email", with: 'test@email.com'
+    fill_in "user_password", with: 'password'
+    fill_in "user_password_confirmation", with: 'password'
+    click_button "Sign up"
+    expect(current_path).to eq("/users")
+    expect(page).to have_content("can't be blank")
+  end
+
+  scenario "User unable to sign up if no last name" do
+    visit "/"
+    click_link "Signup"
+    fill_in "user_first_name", with: 'first name'
+    fill_in "user_email", with: 'test@email.com'
+    fill_in "user_password", with: 'password'
+    fill_in "user_password_confirmation", with: 'password'
+    click_button "Sign up"
+    expect(current_path).to eq("/users")
+    expect(page).to have_content("can't be blank")
   end
 
 end
