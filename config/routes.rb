@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   root 'posts#homepage'
 
-  match '/users/:id', to: 'users#show', via: 'get'
-  match '/users', to: 'users#index', via: 'get'
+  match '/users/:id', to: 'users#show', via: 'get', :as => :users_profile_page
+  match '/users', to: 'users#index', via: 'get', :as => :users_homepage
 
 end
