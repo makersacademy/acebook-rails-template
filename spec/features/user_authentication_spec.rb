@@ -65,12 +65,12 @@ RSpec.feature "User authentication", type: :feature do
     expect(page).to have_content("can't be blank")
   end
 
-  scenario "User unable to sign up if no last name" do
+  scenario "User unable to sign up if email is not unique" do
     visit "/"
     fill_in_signup_form_and_submit
     find(:linkhref, "/users/sign_out").click
     expect(current_path).to eq("/")
-    first(:linkhref, "/login").click
+    first(:linkhref, "/signup").click
     fill_in "user_email", with: 'test@email.com'
     click_button "Sign up"
     expect(current_path).to eq("/users")
