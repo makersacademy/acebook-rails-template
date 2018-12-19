@@ -10,6 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.date :birthday, default: ""
       t.string :avatar, default: ""
       t.string :occupation, default: ""
+      t.string :bio, default: ""
 
       ## Recoverable
       t.string   :reset_password_token
