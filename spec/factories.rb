@@ -3,7 +3,7 @@ FactoryBot.define do
     id { 1 }
     first_name { "John" }
     last_name  { "Doe" }
-    email { "myarse@yourfuckingface.com" }
+    email { "jon@doe.com" }
     password { "password" }
   end
 end
