@@ -21,9 +21,32 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def edit
+    @post = Post.find(params[:id])
+    redirect_to @post
+  end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def update
+  @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      redirect_to(@post)
+    else
+      render "edit"
+    end
+  end
+
+
   private
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def find_post
+    @post = Post.find(params[:id])
   end
 end
