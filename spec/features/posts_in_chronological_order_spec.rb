@@ -10,5 +10,6 @@ RSpec.feature "Posts order", type: :feature do
     fill_in "Message", with: "Goodbye, world!"
     click_button "Submit"
     expect("Goodbye, world!").to appear_before("Hello, world!")
+    expect("Hello, world!").to_not appear_before("Goodbye, world!")
   end
 end
