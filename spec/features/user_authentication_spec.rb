@@ -53,7 +53,7 @@ RSpec.feature "User authentication", type: :feature do
     fill_in "user_password_confirmation", with: 'password'
     click_button "Sign up"
     expect(current_path).to eq("/users")
-    expect(page).to have_content("is too short")
+    expect(page).to have_content("can't be blank")
   end
 
   scenario "User unable to sign up if no last name" do
@@ -65,7 +65,7 @@ RSpec.feature "User authentication", type: :feature do
     fill_in "user_password_confirmation", with: 'password'
     click_button "Sign up"
     expect(current_path).to eq("/users")
-    expect(page).to have_content("is too short")
+    expect(page).to have_content("can't be blank")
   end
 
 end
