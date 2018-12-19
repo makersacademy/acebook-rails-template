@@ -20,8 +20,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 # routes:
 
-/users - shows all users
-/users/show - shows current user profile
+- /users - shows all users
+- /users/show - shows current user profile
+- /users/sign_in
+- /users/sign_up
 
 
 ## Quickstart
