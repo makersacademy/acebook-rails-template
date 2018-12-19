@@ -23,6 +23,7 @@
         <%= f.password_field :password_confirmation,
                              placeholder: 'password confirmation',
                              class: 'form-control' %>
+      
         <%= f.submit 'Sign up', class: 'form-control sign-up-button' %>
       <% end %>
       <p>Already Signed up? <%= link_to 'Login', login_path %></p>

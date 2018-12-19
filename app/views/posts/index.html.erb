@@ -1,7 +1,12 @@
-<% @posts.reverse.each do |post| %>
-  <p class="post-message"><%= post.message %> <%= post.created_at.strftime("%d/%m") %></p>
-<% end %>
+<div class="container text-center">
+  <% @posts.reverse.each do |post| %>
+    <p class="post-message"><%= post.message %> <%= post.created_at.strftime("%d/%m") %></p>
+    <p><%= User.find(post.user_id).first_name %></p>
+  <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+  <% if current_user %>
+    <%= link_to new_post_path do %>
+      New post
+    <% end %>
+  <% end %>
+</div>
