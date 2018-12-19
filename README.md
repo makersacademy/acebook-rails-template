@@ -73,20 +73,43 @@ To clean local database use
 
 
 ## Testing
+
 #### Rubocop
+
 `bundle` if not installed    
 `rubocop` to run    
 
-#### Test Coverage with Simplecov  
+#### Test Coverage with Simplecov
+
 Coverage reports are generated every time RSpec tests are run. To view results:  
 `bundle` if not installed    
 `cd coverage`     
 `open index.html`    
 
-## Wiki
+#### Wiki
+
 We have documented our entire journey on the Wiki of this repo. All page names are written in a format of 'MeetingType 00:00 01/01/2000'. Posts were made by individual members without agreement on a formal format. Each post summarizes the conversations had during the meeting.
 
 ## Deployment
-Use ```heroku create``` and ```git push heroku master``` to deploy. Alrenatively allow travis to use your fork and deploy to master, with a working build it will attmpt to push to heroku, you will need to generate your own API key and encrypt it for travis. This is done by running ```travis encrypt $(heroku auth:token) --add deploy.api_key --org``` for travis-ci.org or ```travis encrypt $(heroku auth:token) --add deploy.api_key --pro``` for travis.ci.com.
 
-You can truncate the database by running ```heroku pg:reset DATABASE --confirm { name-of-your-app-here }``` and ```heroku run rails db:migrate```. This will clear and reset the database to working condition. You must have the required rights on the heroku project in order to do this.
+#### Creation
+
+Use 
+```
+heroku create
+git push heroku master
+```
+to deploy. Alternatively allow travis to use your repo and deploy when you push to master, with a working build it will attempt to push to heroku, you will need to generate your own API key and encrypt it for travis. This is done by running 
+```travis encrypt $(heroku auth:token) --add deploy.api_key --org```
+for travis-ci.org or 
+```travis encrypt $(heroku auth:token) --add deploy.api_key --pro``` 
+for travis.ci.com.
+
+#### Database Cleaning
+
+You can truncate the database by running
+```
+heroku pg:reset DATABASE --confirm { name-of-your-app-here }
+heroku run rails db:migrate
+```
+This will clear and reset the database to working condition. You must have the required rights on the heroku project in order to do this.
