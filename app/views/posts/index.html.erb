@@ -2,7 +2,11 @@
   <% @posts.reverse.each do |post| %>
     <p class="post-message"><%= post.message %> <%= post.created_at.strftime("%d/%m") %></p>
     <p><%= User.find(post.user_id).first_name %></p>
+    <% if current_user == User.find(post.user_id) %>
+      <%= link_to 'Delete', post, method: :delete %>
+    <% end %>
   <% end %>
+  <br>
 
   <% if current_user %>
     <%= link_to new_post_path do %>
