@@ -1,19 +1,6 @@
 
 <!-- navigation bar -->
 <h1>Edit your bio</h1>
-<form class="bio" action="/bios/:id" method="patch">
-age
-<input type="integer" name="age">
-bio
-<input type="string" name="bio">
-location
-<input type="string" name="location">
-
-
-<button type="submit" name="save">Save</button>
-
-
-</form>
 
 
 
@@ -29,9 +16,8 @@ location
 
 
 
-<!--
+
 <%= render 'form', bio: @bio %>
 
 <%= link_to 'Show', @bio %> |
 <%= link_to 'Back', bios_path %>
--->
