@@ -1,8 +1,3 @@
-def visit_signup_page
-  visit "/"
-  click_link "Signup"
-end
-
 def fill_in_signup_form_and_submit
   fill_in "user_first_name", with: 'first name'
   fill_in "user_last_name", with: 'last name'
