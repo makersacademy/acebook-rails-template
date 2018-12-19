@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe "bios/new", type: :view do
   before(:each) do
     assign(:bio, Bio.new(
-      :id => 1,
       :age => 1,
       :bio => "MyText",
       :location => "MyText"
@@ -14,8 +13,6 @@ RSpec.describe "bios/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", bios_path, "post" do
-
-      assert_select "input[name=?]", "bio[id]"
 
       assert_select "input[name=?]", "bio[age]"
 
