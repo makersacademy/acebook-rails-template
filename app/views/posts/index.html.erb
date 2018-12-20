@@ -1,32 +1,52 @@
-<div class="container text-center">
-  <% @posts.reverse.each do |post| %>
-  <% @post_user = User.find(post.user_id) %>
-    <p class="post-message"><%= post.message %> <%= post.created_at.strftime("%d/%m") %></p>
-    <a href="users/<%=@post_user.id%>"><%= @post_user.first_name %></a>
-    <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? ' Like' : ' Likes'%></p>
 
-    <% if current_user == @post_user %>
-      <%= link_to 'Delete', post, method: :delete %>
-      <%= link_to edit_post_path(post.id) do %>
-        Edit
-      <% end %>
-    <% end %>
-
-    <% if current_user %>
-      <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
-      <% if pre_like %>
-        <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
-        <% else %>
-        <%= button_to 'Like', post_likes_path(post), method: :post %>
-      <% end %>
-    <% end %>
-
-  <% end %>
-  <br>
-
+<div class="container new-post-container">
   <% if current_user %>
     <%= link_to new_post_path do %>
-      New post
+      <button class="btn btn-new-post">New Post</button>
     <% end %>
   <% end %>
+
 </div>
+<div class="container cards-container">
+  <% @posts.reverse.each do |post| %>
+    <% @post_user = User.find(post.user_id) %>
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <a class="username" href="users/<%=@post_user.id%>"><%= @post_user.first_name %></a>
+            <p class="post-time"><%= post.created_at.strftime("%d/%m/%y") %></p>
+          </div>
+          <div class="message-container">
+            <p class="post-message"><%= post.message %></p>
+          </div>
+          <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+          <% if pre_like %>
+            <button class="btn btn-unlike">
+              <i class="far fa-thumbs-down"></i>
+              <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete%>
+              <p class="likes-count"><%= post.likes.count %></p>
+            </button>
+          <% else %>
+            <button class="btn btn-like">
+              <i class="far fa-thumbs-up"></i>
+              <%= link_to 'Like', post_likes_path(post), method: :post%>
+              <p class="likes-count"><%= post.likes.count %></p>
+            </button>
+          <% end %>
+          <% if current_user == @post_user %>
+            <button class="btn btn-delete">
+              <i class="fas fa-trash-alt"></i>
+              <%= link_to 'Delete', post, method: :delete%>
+            </button>
+            <button class="btn btn-edit">
+              <i class="far fa-edit"></i>
+              <%= link_to edit_post_path(post.id) do %>
+                Edit
+              <% end %>
+            </button>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+</div>
+
