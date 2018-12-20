@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get 'login', to: 'devise/sessions#new'
   end
 
-  get "users/:id" => "users#show"
+  get "users/:id", to: "users#show", as: 'user'
 
   resources :posts
 
