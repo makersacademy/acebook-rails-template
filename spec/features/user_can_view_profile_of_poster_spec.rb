@@ -6,9 +6,9 @@ RSpec.feature "User can view profile of poster", type: :feature do
     visit "/"
     fill_in_signup_form_and_submit
     post_hello_world_message
-    click_link("first name")
-    expect(page).to have_content("first name's profile")
-    expect(page).to have_content("first name's posts")
+    click_link("First name")
+    expect(page).to have_content("First name's profile")
+    expect(page).to have_content("First name's posts")
     expect(page).to have_content("Hello, world!")
     expect(current_path).to eq("/users/1")
   end
