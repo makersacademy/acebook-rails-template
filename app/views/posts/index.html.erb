@@ -45,13 +45,8 @@
               <%= link_to 'Delete', post, method: :delete%>
             </button>
             <button class="btn btn-edit" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-              <i class="fa fa-sort-down"></i> Update
-            </button>
-            <button class="btn btn-edit">
               <i class="far fa-edit"></i>
-              <%= link_to edit_post_path(post.id) do %>
-                Edit
-              <% end %>
+              <label class="update">Update</label>
             </button>
               <div class="collapse" id="collapseExample">
                 <div class="card card-body">
