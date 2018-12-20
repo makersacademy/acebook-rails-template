@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'posts/post'
+
   devise_for :users
 
   devise_scope :user do
@@ -14,9 +16,8 @@ Rails.application.routes.draw do
     root 'home_page#home'
 
     get 'userprofile' => 'home_page#userprofile'
-    get "/posts" => "posts#new_post"
-    
-    # post "/posts" => "posts#new_post"
+    get "/posts" => "posts#post"
+
     # delete "/posts" => "posts#new_post"
     # patch "/posts" => "posts#new_post"
   end
