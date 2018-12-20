@@ -23,7 +23,6 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    redirect_to @post
   end
 
   def show
@@ -33,7 +32,7 @@ class PostsController < ApplicationController
   def update
   @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
-      redirect_to(@post)
+      redirect_to posts_path
     else
       render "edit"
     end
