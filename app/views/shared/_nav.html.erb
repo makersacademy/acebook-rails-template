@@ -1,5 +1,8 @@
+
+
 <div id="navbar">
-  <button><%= link_to 'Home' %></button>
-  <button name="My Page"><%= link_to 'My Page' %></button>
-  <button><%= link_to 'Logout' %></button>
+  <button><%= link_to 'Home', users_homepage_url %></button>
+  <button><%= link_to 'My Page', current_user %></button>
+
+  <button><%= link_to 'Logout', destroy_user_session_path, method: :delete %></button>
 </div>
