@@ -4,17 +4,28 @@
     <p><%= User.find(post.user_id).first_name %></p>
     <% if current_user == User.find(post.user_id) %>
       <%= link_to 'Delete', post, method: :delete %>
+
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     Update
   </button>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-  	<%= form_for(post) do |f| %>
-  	<p><%=f.text_area :message%></p>
-  	<%= f.submit "Update"
-  	<% end%>
+  	<%= bootstrap_form_for(post) do |f| %>
+  	<p><%= f.text_area :message,
+                        rows: 6,
+                        required: true,
+                        minlength: 20,
+                        maxlength: 1000,
+                        placeholder: post.message,
+                        value: "",
+                        class: 'form-control' %></p>
+  	<%= f.submit "Accept", class: 'form-control create-post-button' %>
+    <% end %>
   </div>
 </div>
+<%= link_to edit_post_path(post.id) do %>
+        Edit
+      <% end %>
     <% end %>
   <% end %>
   <br>

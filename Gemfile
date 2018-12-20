@@ -44,6 +44,7 @@ group :development, :test do
   gem 'simplecov-console', require: false
   gem 'timecop'
   gem 'factory_bot_rails'
+  gem 'orderly'
 end
 
 group :development do

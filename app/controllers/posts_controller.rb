@@ -28,9 +28,31 @@ end
     @posts = Post.all
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def update
+  @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      redirect_to posts_path
+    else
+      render "edit"
+    end
+  end
+
+
   private
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def find_post
+    @post = Post.find(params[:id])
   end
 end
