@@ -6,6 +6,9 @@
     
     <% if current_user == User.find(post.user_id) %>
       <%= link_to 'Delete', post, method: :delete %>
+      <%= link_to edit_post_path(post.id) do %>
+        Edit
+      <% end %>
     <% end %>
 
     <% if current_user %>
