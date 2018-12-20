@@ -10,6 +10,6 @@ RSpec.feature "User can view profile of poster", type: :feature do
     expect(page).to have_content("first name's profile")
     expect(page).to have_content("first name's posts")
     expect(page).to have_content("Hello, world!")
-    expect(current_path).to eq("users/1")
+    expect(current_path).to eq("/users/1")
   end
 end
