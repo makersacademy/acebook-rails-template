@@ -20,4 +20,5 @@ RSpec.feature "User posts", type: :feature do
     visit "/posts/new"
     expect(current_path).to eq "/login"
   end
+
 end

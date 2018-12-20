@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/models/user.rb": [
+      "/Users/chris/CodeProjects/Makers/wk-8/acebook-floppy-disk/app/models/user.rb": [
         1,
         null,
         null,
@@ -15,12 +15,12 @@
         null,
         null
       ],
-      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/models/application_record.rb": [
+      "/Users/chris/CodeProjects/Makers/wk-8/acebook-floppy-disk/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/controllers/homepage_controller.rb": [
+      "/Users/chris/CodeProjects/Makers/wk-8/acebook-floppy-disk/app/controllers/homepage_controller.rb": [
         1,
         null,
         1,
@@ -29,30 +29,29 @@
         null,
         null
       ],
-      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/controllers/application_controller.rb": [
+      "/Users/chris/CodeProjects/Makers/wk-8/acebook-floppy-disk/app/controllers/application_controller.rb": [
         1,
         1,
         null,
         1,
-        8,
-        8,
+        9,
         null,
         null,
         null
       ],
-      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/controllers/posts_controller.rb": [
+      "/Users/chris/CodeProjects/Makers/wk-8/acebook-floppy-disk/app/controllers/posts_controller.rb": [
         1,
         1,
-        7,
-        5,
+        8,
+        6,
         null,
         2,
         null,
         null,
         null,
         1,
-        5,
-        5,
+        6,
+        6,
         null,
         null,
         1,
@@ -61,35 +60,35 @@
         null,
         null,
         1,
-        15,
+        17,
         null,
         null,
         1,
         null,
         1,
-        5,
+        6,
         null,
         null
       ],
-      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/controllers/users_controller.rb": [
-        1,
-        null,
-        null
-      ],
-      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/models/post.rb": [
-        1,
-        null,
+      "/Users/chris/CodeProjects/Makers/wk-8/acebook-floppy-disk/app/controllers/users_controller.rb": [
         1,
         null,
         null
       ],
-      "/Users/kirillzabrodin/Projects/acebook-floppy-disk/app/controllers/registrations_controller.rb": [
+      "/Users/chris/CodeProjects/Makers/wk-8/acebook-floppy-disk/app/models/post.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/chris/CodeProjects/Makers/wk-8/acebook-floppy-disk/app/controllers/registrations_controller.rb": [
         1,
         null,
         1,
         null,
         1,
-        13,
+        14,
         null,
         null,
         null,
@@ -107,6 +106,6 @@
         null
       ]
     },
-    "timestamp": 1545302965
+    "timestamp": 1545307409
   }
 }
