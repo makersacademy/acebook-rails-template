@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :profiles
   resources :bios
 
   devise_for :users
