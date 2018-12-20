@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def destroy
     Post.find(params[:id]).destroy
+    flash[:danger] = "Your post have been deleted"
     redirect_to posts_path
   end
 

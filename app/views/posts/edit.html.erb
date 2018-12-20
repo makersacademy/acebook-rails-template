@@ -6,6 +6,7 @@
         <%= f.text_area :message,
                         rows: 6,
                         required: true,
+                        minlength: 0,
                         maxlength: 1000,
                         placeholder: @post,
                         class: 'form-control' %>

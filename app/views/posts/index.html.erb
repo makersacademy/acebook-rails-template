@@ -1,4 +1,10 @@
-
+<div class="container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key%>">
+      <%= value %>
+    </div>
+  <% end %>
+</div>
 <div class="container new-post-container">
   <% if current_user %>
     <%= link_to new_post_path do %>
@@ -38,12 +44,29 @@
               <i class="fas fa-trash-alt"></i>
               <%= link_to 'Delete', post, method: :delete%>
             </button>
+            <button class="btn btn-edit" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <i class="fa fa-sort-down"></i> Update
+            </button>
             <button class="btn btn-edit">
               <i class="far fa-edit"></i>
               <%= link_to edit_post_path(post.id) do %>
                 Edit
               <% end %>
             </button>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <%= bootstrap_form_for(post) do |f| %>
+                    <p><%= f.text_area :message,
+                                        rows: 6,
+                                        required: true,
+                                        minlength: 0,
+                                        maxlength: 1000,
+                                        placeholder: post.message,
+                                        class: 'form-control' %></p>
+                  <%= f.submit "Accept", class: 'form-control create-post-button' %>
+                <% end %>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>
