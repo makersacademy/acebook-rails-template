@@ -17,6 +17,13 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def update
+  @post = Post.find(params[:id])
+  @post.update_attributes(message: params[:message])
+  redirect_to posts_path
+end
+
+
   def index
     @posts = Post.all
   end

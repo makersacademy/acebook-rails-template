@@ -4,6 +4,17 @@
     <p><%= User.find(post.user_id).first_name %></p>
     <% if current_user == User.find(post.user_id) %>
       <%= link_to 'Delete', post, method: :delete %>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Update
+  </button>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+  	<%= form_for(post) do |f| %>
+  	<p><%=f.text_area :message%></p>
+  	<%= f.submit "Update"
+  	<% end%>
+  </div>
+</div>
     <% end %>
   <% end %>
   <br>
