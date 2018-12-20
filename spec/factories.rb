@@ -1,7 +1,7 @@
 FactoryBot.define do
-  factory :comment do
-    post { nil }
-    user { nil }
+  factory :post do
+    user_id { 1 }
+    message { "hello, world!"}
   end
   factory :like do
     post { nil }
