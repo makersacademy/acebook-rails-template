@@ -29,6 +29,7 @@ gem 'bootstrap_form'
 gem 'bootstrap-sass', '~> 3.4.0'
 gem 'jquery-rails'
 gem 'devise'
+gem 'coveralls', require: false
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
