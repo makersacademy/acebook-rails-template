@@ -1,10 +1,25 @@
 <div class="container text-center">
   <h1><%=@user.first_name%>'s profile</h1>
   <h2><%=@user.first_name%>'s posts:</h2>
+  <button class="btn btn-edit" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <i class="fa fa-sort-down"></i> Create a new post
+  </button>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        <%= bootstrap_form_for(@post) do |f| %>
+        <p><%= f.text_area :message,
+                            rows: 6,
+                            required: true,
+                            minlength: 0,
+                            maxlength: 1000,
+                            placeholder: "New post",
+                            class: 'form-control' %></p>
+      <%= f.submit "Accept", class: 'form-control create-post-button' %>
+    <% end %>
+  </div>
+</div>
   <div class="container text-center">
     <% @posts.reverse.each do |post| %>
       <p class="post-message"><%= post.message %> <%= post.created_at.strftime("%d/%m") %></p>
       <p>Likes <%= post.likes.count %></p>
     <% end %>
-  </div>
-</div>
