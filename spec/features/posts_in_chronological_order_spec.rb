@@ -3,7 +3,7 @@ require_relative '../support/feature_web_helpers'
 require_relative '../support/capybara_selectors'
 
 RSpec.feature "Posts order", type: :feature do
-  xscenario "The newest posts appear first in the feed" do
+  scenario "The newest posts appear first in the feed" do
     visit "/"
     fill_in_signup_form_and_submit
     post_hello_world_message

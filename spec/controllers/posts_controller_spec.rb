@@ -20,6 +20,10 @@ RSpec.describe PostsController, type: :controller do
       login_as(user, scope: :user)
     end
 
+    after :each do
+      logout
+    end
+
     describe "GET / " do
       it "responds with 200" do
         get :index
