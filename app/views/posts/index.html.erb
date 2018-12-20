@@ -1,0 +1,29 @@
+<h1>ACEBOOK</h1>
+
+<% if user_signed_in? %>
+    <div>Signed in as... <%= current_user.email %></div>
+    <div>Signed in as... <%= current_user.id %></div>
+<% end %>
+
+
+<%= form_with scope: :post, url: posts_path,local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+
+
+
+
+<p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
