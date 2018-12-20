@@ -9,5 +9,10 @@ Rails.application.routes.draw do
     get 'signup', to: 'devise/registrations#new'
     get 'login', to: 'devise/sessions#new'
   end
+
   resources :posts
+
+  resources :posts do
+    resources :likes
+  end
 end
