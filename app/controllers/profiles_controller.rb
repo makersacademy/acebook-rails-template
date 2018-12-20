@@ -11,7 +11,6 @@ respond_to :html
 
   def show
     @profile = User.find(params[:id])
-
   end
 
   def new
@@ -29,6 +28,7 @@ respond_to :html
   end
 
   def update
+
     @profile.profile(profile_params)
   end
 

@@ -19,3 +19,11 @@ Area for BIO
 <br>
 
 Area for all messages posted on users wall:
+
+<%= form_for(@createpost) do |f| %>
+  <%= f.label :text %>
+  <%= f.text_area :text %>
+  <%= f.hidden_field :poster_id, :value => current_user.username %>
+  <%= f.hidden_field :recipient_id, :value => @profile.username %>
+  <%= f.submit 'Post' %>
+<% end %>
