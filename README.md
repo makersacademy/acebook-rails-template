@@ -27,7 +27,7 @@ I want to log in to Acebook
 ```
 As a user
 So that I can see what my amigos are saying
-I want to be able to see all the posts on Acebook
+I want to be able to view all the posts on Acebook
 ```
 ```
 As a user
@@ -48,6 +48,18 @@ The newest posts should appear first in my feed
 As a user
 So that I can express myself as much as I need to
 I want to write long posts across multiple lines
+```
+#### Engagement
+```
+As a user
+So that I can express my love/outrage over my friends' views
+I want to be able to like and dislike posts
+```
+#### Profile
+```
+As a user
+So that I can read all of my posts in one place
+I want my own profile page
 ```
 
 ## Quickstart
