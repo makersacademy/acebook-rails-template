@@ -8,7 +8,7 @@ RSpec.describe UsersController, type: :controller do
       login_as(user, scope: :user)
     end
 
-    describe "GET /users/:id" do
+    describe "GET #show" do
 
       it "responds with 200" do
         get :show, params: { id: user.id }
