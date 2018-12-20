@@ -1,13 +1,9 @@
 <div class="container text-center">
   <% @posts.reverse.each do |post| %>
     <p class="post-message"><%= post.message %> <%= post.created_at.strftime("%d/%m") %></p>
-<<<<<<< HEAD
     <a href="users/<%=User.find(post.user_id).id%>"><%= User.find(post.user_id).first_name %></a>
-=======
-    <p><%= User.find(post.user_id).first_name %></p>
     <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? ' Like' : ' Likes'%></p>
-    
->>>>>>> 40bea47ca546df15ec9682b2fbcf415ac9d05770
+
     <% if current_user == User.find(post.user_id) %>
       <%= link_to 'Delete', post, method: :delete %>
       <%= link_to edit_post_path(post.id) do %>
