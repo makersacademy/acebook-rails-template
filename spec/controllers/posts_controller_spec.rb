@@ -40,6 +40,11 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to redirect_to(posts_url)
       end
     end
+
+    after :all do
+      logout
+    end
+
   end
 
 end

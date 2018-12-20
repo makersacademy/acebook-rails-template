@@ -5,7 +5,8 @@ require_relative '../support/capybara_selectors'
 
 RSpec.feature "User posts", type: :feature do
   scenario "User can sign up, submit a post" do
-    signup
+    visit "/"
+    fill_in_signup_form_and_submit
     post_hello_world_message
     expect(page).to have_content("Hello, world!")
   end
@@ -19,4 +20,5 @@ RSpec.feature "User posts", type: :feature do
     visit "/posts/new"
     expect(current_path).to eq "/login"
   end
+
 end

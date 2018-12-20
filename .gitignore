@@ -19,9 +19,9 @@
 
 /node_modules
 /yarn-error.log
-/coverage
+/coverage/*
+/tmp/*
 
 .byebug_history
 .DS_Store
 .idea
-

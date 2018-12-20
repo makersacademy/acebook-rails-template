@@ -45,12 +45,18 @@ group :development, :test do
   gem 'timecop'
   gem 'factory_bot_rails'
   gem 'orderly'
+  gem 'launchy'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
+  gem 'pry'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

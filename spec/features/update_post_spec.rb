@@ -4,7 +4,8 @@ require_relative '../support/capybara_selectors'
 
 RSpec.feature "Update posts", type: :feature do
   scenario "User can update their own post" do
-    signup
+    visit "/"
+    fill_in_signup_form_and_submit
     post_hello_world_message
     click_on('Edit')
     fill_in 'Message', with: "Goodbye, world!"

@@ -1,28 +1,30 @@
 require 'rails_helper'
 
-RSpec.feature "User interactions", type: :feature do
+RSpec.feature "User sign in and out actions", type: :feature do
   scenario "User can sign up" do
-    signup
+    visit "/"
+    fill_in_signup_form_and_submit
     expect(page).to have_content("first name")
   end
 
   scenario "User can Log Out" do
-    signup
+    visit "/"
+    fill_in_signup_form_and_submit
     find(:linkhref, "/users/sign_out").click
     expect(page).not_to have_content("first name")
   end
 
-  xscenario "User can sign up, log out, log in" do
-    signup
+  scenario "User can sign up, log out, log in" do
+    visit "/"
+    fill_in_signup_form_and_submit
     expect(page).to have_content("first name")
+    expect(current_path).to eq("/posts")
     find(:linkhref, "/users/sign_out").click
+    expect(current_path).to eq("/")
     expect(page).not_to have_content("first name")
-    find(:linkhref, "/login").click
-    fill_in "user_email", with: 'test@email.com'
-    fill_in "user_password", with: "password"
-    within 'form-group' do
-      find('input[name="commit"]').click
-    end
+    first(:linkhref, "/login").click
+    fill_in_login_form_and_submit
+    expect(current_path).to eq("/posts")
     expect(page).to have_content("first name")
   end
 end
