@@ -46,6 +46,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'orderly'
   gem 'launchy'
+  gem 'coveralls'
 end
 
 group :development do
