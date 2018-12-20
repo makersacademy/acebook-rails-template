@@ -10,20 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181217210944) do
+ActiveRecord::Schema.define(version: 20181219111631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "posts", force: :cascade do |t|
-    t.string "message"
+  create_table "comments", force: :cascade do |t|
+    t.bigint "post_id_id"
+    t.string "comment"
+    t.bigint "user_id_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id_id"], name: "index_comments_on_post_id_id"
+    t.index ["user_id_id"], name: "index_comments_on_user_id_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.bigint "creator_id"
+    t.string "description", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_posts_on_creator_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "user_name", default: ""
+    t.date "birthday"
+    t.string "avatar", default: ""
+    t.string "occupation", default: ""
+    t.string "bio", default: ""
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -33,4 +50,7 @@ ActiveRecord::Schema.define(version: 20181217210944) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "posts", column: "post_id_id"
+  add_foreign_key "comments", "users", column: "user_id_id"
+  add_foreign_key "posts", "users", column: "creator_id"
 end
