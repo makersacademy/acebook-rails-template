@@ -19,7 +19,7 @@
       <div class="card">
         <div class="card-body">
           <div>
-            <p><%=link_to @post_user.first_name, user_path(@post_user.id)%></p>
+            <p class="username"><%=link_to @post_user.first_name, user_path(@post_user.id)%></p>
             <p class="post-time"><%= post.created_at.strftime("%d/%m/%y") %></p>
           </div>
           <div class="message-container">
