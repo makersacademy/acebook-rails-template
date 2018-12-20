@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :bios
 
   devise_for :users
-  resources :users, :only =>[:show]
+  # resources :users, :only =>[:show]
 
   resources :posts
 
