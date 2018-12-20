@@ -24,7 +24,9 @@ ActiveRecord::Schema.define(version: 20181219122703) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "message"
+    t.string "text"
+    t.integer "poster_id"
+    t.integer "recipient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
