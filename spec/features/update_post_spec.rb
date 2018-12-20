@@ -7,7 +7,7 @@ RSpec.feature "Update posts", type: :feature do
     visit "/"
     fill_in_signup_form_and_submit
     post_hello_world_message
-    click_on('Edit')
+    click_link "Edit"
     fill_in 'Message', with: "Goodbye, world!"
     click_button "Submit"
     expect(page).to have_content("Goodbye, world!")

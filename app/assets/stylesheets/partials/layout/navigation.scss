@@ -1,3 +1,9 @@
+.container-fluid {
+  padding-right: 50px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .col-sm-5, .col-sm-7 {
   padding: 0;
 }
@@ -29,16 +35,6 @@
 .icon-bar {
   background-color: white !important;
 }
-
-//.active a {
-//background: $navbarColor !important;
-//border-bottom: solid 5px white;
-//}
-//
-//.dropdown-toggle, .dropdown-menu {
-//  background: $navbarColor !important;
-//  border: none;
-//}
 
 .dropdown-menu a:hover {
   color: black !important;
