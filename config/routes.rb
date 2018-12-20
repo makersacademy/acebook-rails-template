@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :profiles
-  resources :bios
+  resources :profiles do
+    resources :bios
+    resources :posts
+  end
 
   devise_for :users
-  resources :users, :only =>[:show]
-
-  resources :posts
+  # resources :users, :only =>[:show]
 
   root 'posts#homepage'
 
