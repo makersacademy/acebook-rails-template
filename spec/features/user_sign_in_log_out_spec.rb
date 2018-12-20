@@ -4,7 +4,7 @@ RSpec.feature "User sign in and out actions", type: :feature do
   scenario "User can sign up" do
     visit "/"
     fill_in_signup_form_and_submit
-    expect(page).to have_content("first name")
+    expect(page).to have_content("First name")
   end
 
   scenario "User can Log Out" do
@@ -17,7 +17,7 @@ RSpec.feature "User sign in and out actions", type: :feature do
   scenario "User can sign up, log out, log in" do
     visit "/"
     fill_in_signup_form_and_submit
-    expect(page).to have_content("first name")
+    expect(page).to have_content("First name")
     expect(current_path).to eq("/posts")
     find(:linkhref, "/users/sign_out").click
     expect(current_path).to eq("/")
@@ -25,6 +25,6 @@ RSpec.feature "User sign in and out actions", type: :feature do
     first(:linkhref, "/login").click
     fill_in_login_form_and_submit
     expect(current_path).to eq("/posts")
-    expect(page).to have_content("first name")
+    expect(page).to have_content("First name")
   end
 end
