@@ -8,7 +8,7 @@ RSpec.feature "Delete posts", type: :feature do
     visit "/"
     fill_in_signup_form_and_submit
     post_hello_world_message
-    click_on('Delete')
+    click_link 'Delete'
     expect(page).not_to have_content("Hello, world!")
   end
 end
