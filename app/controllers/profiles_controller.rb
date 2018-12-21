@@ -29,7 +29,6 @@ respond_to :html
   end
 
   def create
-    @post = Post.create({"text"=>params[:post][:text], "poster_id"=> current_user.id, "recipient_id"=>profile_path(current_user)})
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
     @profile.save
@@ -38,6 +37,7 @@ respond_to :html
 
   def update
     @posts = Post.all
+
     # @profile.profile(profile_params)
   end
 

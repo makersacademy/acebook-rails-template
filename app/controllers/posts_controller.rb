@@ -4,8 +4,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    @post = Post.create({"text"=>params[:post][:text], "poster_username"=> current_user.username, "recipient_username" => "NEED TO CHANGE"})
+    redirect_back(fallback_location: root_path)
+ 
   end
 
   def index

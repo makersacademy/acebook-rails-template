@@ -17,8 +17,6 @@ area for new posts:
 <%= form_for @post, url: create_post_path([:profile_id]) do |f| %>
   <%= f.label :post %>
   <%= f.text_area :text %>
-  <%= f.hidden_field :poster_id, :value => current_user.username %>
-  <%= f.hidden_field :recipient_id, :value => @profile.username %><br>
   <%= f.submit 'Post' %>
 <% end %>
 
@@ -28,7 +26,7 @@ area for new posts:
 Area for all messages posted on users wall:
 <% @posts.each do |post| %>
 <br>
-<%= post.text %> <%= post.poster_id %> <%= post.recipient_id %> 
+<%= post.text %> <%= post.poster_username %> <%= post.recipient_username %>
 <% end %>
 
 <br>
