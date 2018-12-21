@@ -4,6 +4,8 @@
 
 # AceBook
 
+Currently deployed at https://young-springs-98096.herokuapp.com
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
