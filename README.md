@@ -83,7 +83,7 @@ To clean local database use
 > bin/rails db:create
 > bin/rails db:migrate
 ```
-#### Registration
+## Registration
 
 You can sign up to use Acebook on the [homepage](https://aqueous-wave-77193.herokuapp.com). To change your avatar, register your email address at [Gravatar](https://en.gravatar.com) and follow the instructions to upload your chosen image. 
 
