@@ -124,6 +124,7 @@ RSpec.feature "Logged in features", type: :feature do
     click_link "Home"
     expect(page.current_url).to eq("http://www.example.com/profiles")
   end
+
 end
 RSpec.feature "Logout", type: :feature do
   scenario "can logout from homepage" do
@@ -187,6 +188,7 @@ RSpec.feature "Logout", type: :feature do
   end
 
 end
+
 RSpec.feature "My Page features", type: :feature do
   scenario "can edit the users bio " do
     visit "/"
