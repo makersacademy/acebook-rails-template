@@ -111,6 +111,32 @@ RSpec.feature "Logged in features", type: :feature do
     expect(page).to have_content("BenSmith12")
     expect(page).to have_content("bensmith@gmail.com")
   end
+  scenario "home page has the usernames and email of your account and others who have signed up" do
+    visit "/"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Ben"
+    fill_in "Lastname", with: "Smith"
+    fill_in "Username", with: "BenSmith12"
+    fill_in "Email", with: "bensmith@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
+    click_link "Logout"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Paul"
+    fill_in "Lastname", with: "Kane"
+    fill_in "Username", with: "PaulKane12"
+    fill_in "Email", with: "paulkane@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
+    click_link "Home"
+    expect(page).to have_content("Username ---- Email")
+    expect(page).to have_content("BenSmith12")
+    expect(page).to have_content("bensmith@gmail.com")
+    expect(page).to have_content("PaulKane12")
+    expect(page).to have_content("paulkane@gmail.com")
+  end
   scenario "home page after login has correct url" do
     visit "/"
     click_link "Sign up"
@@ -188,12 +214,6 @@ RSpec.feature "Logout", type: :feature do
 
 end
 RSpec.feature "My Page features", type: :feature do
-  scenario "can edit the users bio " do
-    visit "/"
-    expect(page.current_url).to eq("http://www.example.com/")
-
-
-  end
   scenario "home page has correct content" do
     visit "/"
     click_link "Sign up"
@@ -219,6 +239,21 @@ RSpec.feature "My Page features", type: :feature do
     click_button "Sign up"
     click_link "My Page"
     expect(page).to have_content("Area for BIO")
+
+
+  end
+  scenario "my profile has area for new posts text" do
+    visit "/"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Ben"
+    fill_in "Lastname", with: "Smith"
+    fill_in "Username", with: "BenSmith12"
+    fill_in "Email", with: "bensmith@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
+    click_link "My Page"
+    expect(page).to have_content("area for new posts:")
 
 
   end
@@ -268,4 +303,34 @@ RSpec.feature "My Page features", type: :feature do
 
 
   end
+  scenario "expect created post to now be on My Page" do
+    visit "/"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Ben"
+    fill_in "Lastname", with: "Smith"
+    fill_in "Username", with: "BenSmith12"
+    fill_in "Email", with: "bensmith@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
+    click_link "My Page"
+    fill_in "post_text", with: "Hello this is my first post"
+    click_button "Post"
+    expect(page).to have_content("Hello this is my first post")
+  end
+  scenario "expect url to be the same but with users id at the end" do
+    visit "/"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Ben"
+    fill_in "Lastname", with: "Smith"
+    fill_in "Username", with: "BenSmith12"
+    fill_in "Email", with: "bensmith@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
+    click_link "My Page"
+    expect(page.current_url).to eq("http://www.example.com/profiles/23")
+
+  end
+
 end
