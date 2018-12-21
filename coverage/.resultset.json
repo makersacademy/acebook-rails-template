@@ -4,6 +4,16 @@
       "/Users/tomdoh/makers_projects/acebook-floppy-disk/app/models/user.rb": [
         1,
         null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
         null,
         1,
         null,
@@ -13,6 +23,13 @@
         null,
         1,
         1,
+        null,
+        1,
+        null,
+        1,
+        22,
+        22,
+        null,
         null,
         null
       ],
@@ -36,6 +53,7 @@
         null,
         1,
         12,
+        null,
         null,
         null,
         null
@@ -100,6 +118,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         1,
@@ -111,15 +130,10 @@
         null,
         null,
         1,
-        0,
-        null,
-        null,
         1,
         1,
         1,
         1,
-        null,
-        0,
         null,
         null,
         null,
@@ -135,10 +149,9 @@
         1,
         null,
         1,
-        1,
-        1,
-        null,
-        null,
+        2,
+        2,
+        2,
         null,
         null
       ],
@@ -150,9 +163,7 @@
       ],
       "/Users/tomdoh/makers_projects/acebook-floppy-disk/app/models/post.rb": [
         1,
-        null,
         1,
-        null,
         1,
         null,
         null
@@ -181,6 +192,6 @@
         null
       ]
     },
-    "timestamp": 1545323943
+    "timestamp": 1545396526
   }
 }
