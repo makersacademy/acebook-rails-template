@@ -6,6 +6,8 @@
     <div class="col-sm-offset-4 col-sm-4">
       <h3>Sign up <small>it's free!</small></h3>
 
+      <%= devise_error_messages! %>
+
       <%= bootstrap_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
         <%= f.text_field :first_name,
@@ -23,7 +25,7 @@
         <%= f.password_field :password_confirmation,
                              placeholder: 'password confirmation',
                              class: 'form-control' %>
-      
+
         <%= f.submit 'Sign up', class: 'form-control sign-up-button' %>
       <% end %>
       <p>Already Signed up? <%= link_to 'Login', login_path %></p>
