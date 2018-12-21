@@ -22,10 +22,6 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
-
   def show
     @post = Post.find(params[:id])
   end
@@ -35,8 +31,6 @@ class PostsController < ApplicationController
     if @post.update_attributes(post_params)
       flash[:success] = "Your post has been updated"
       redirect_to posts_path
-    else
-      render "edit"
     end
   end
 
