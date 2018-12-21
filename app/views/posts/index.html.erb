@@ -18,10 +18,8 @@
     <% @post_user = User.find(post.user_id) %>
       <div class="card">
         <div class="card-body">
-          <div class="post-index-gravatar">
-          </div>
           <div>
-            <p class="username"><%= image_tag @post_user.gravatar_url(:size => 30) %>      <%=link_to @post_user.first_name, user_path(@post_user.id)%></p>
+            <p class="username"><%=link_to @post_user.first_name, user_path(@post_user.id)%></p>
             <p class="post-time"><%= post.created_at.strftime("%d/%m/%y") %></p>
           </div>
           <div class="message-container">
