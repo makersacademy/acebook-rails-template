@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params.merge(creator_id: current_user.id))
 
     if @post.save
-      redirect_to @post
+      redirect_to root_path
     else
       render 'new'
     end

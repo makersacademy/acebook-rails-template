@@ -8,7 +8,7 @@
 <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
 
 <%= form_with scope: :post, url: posts_path,local: true do |form| %>
-
+<%= posts_path %>
   <p>
     <%= form.label :text %><br>
     <%= form.text_area :description %><br>
@@ -16,7 +16,7 @@
   </p>
 
 
-<table>
+<table align="center">
 
   <% @posts.each do |post| %>
     <tr>
