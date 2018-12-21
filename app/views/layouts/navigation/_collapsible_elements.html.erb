@@ -8,7 +8,7 @@
         <%= link_to 'News Feed', posts_path %>
       </li>
       <li class="mobile-menu">
-        <%= link_to 'Edit Profile', edit_user_registration_path %>
+        <%= link_to 'My Profile', user_path(current_user.id) %>
       </li>
       <li class="mobile-menu">
         <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
