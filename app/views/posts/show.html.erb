@@ -8,10 +8,11 @@
 
 
 <h2>Add a comment:</h2>
+<%= render @post.comments %>
 <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
   <p>
     <%= form.label :commenter %><br>
-    
+
   </p>
   <p>
     <%= form.label :body %><br>

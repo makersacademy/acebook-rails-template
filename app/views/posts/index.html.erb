@@ -10,7 +10,6 @@
 <%= form_with scope: :post, url: posts_path,local: true do |form| %>
 
   <p>
-    <%= form.hidden_field :creator_id, value: current_user.id %>
     <%= form.label :text %><br>
     <%= form.text_area :description %><br>
     <%= form.submit %>
