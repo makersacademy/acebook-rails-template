@@ -1,5 +1,5 @@
 <%= form_with model: @post, local: true do |form| %>
- 
+
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -13,15 +13,17 @@
       </ul>
     </div>
   <% end %>
- 
+
   <p>
+    post id hidden field goes here
+    <%= form.hidden_field :creator_id, value: current_user.id %>
     <%= form.label :post %><br>
     <%= form.text_field :description %>
   </p>
 
- 
+
   <p>
     <%= form.submit %>
   </p>
- 
+
 <% end %>

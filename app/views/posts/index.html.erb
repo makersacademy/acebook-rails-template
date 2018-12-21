@@ -4,11 +4,13 @@
     <div>Signed in as... <%= current_user.email %></div>
     <div>Signed in as... <%= current_user.id %></div>
 <% end %>
+<%= link_to 'userprofile', userprofile_path %>
 
 
 <%= form_with scope: :post, url: posts_path,local: true do |form| %>
 
   <p>
+    <%= form.hidden_field :creator_id, value: current_user.id %>
     <%= form.label :text %><br>
     <%= form.text_area :description %>
   </p>
@@ -18,6 +20,7 @@
 
   <% @posts.each do |post| %>
     <tr>
+      <td><%= post.creator_id %></td>
       <td><%= post.description %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
