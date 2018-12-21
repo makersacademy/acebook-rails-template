@@ -2,35 +2,41 @@ require 'rails_helper'
 
 RSpec.feature "Navigation Bar", type: :feature do
   scenario "navigation bar home button is present on edit bio page" do
-    visit "/bios"
-    click_link "New Bio"
-    fill_in "Age", with: "20"
-    fill_in "Bio", with: "likes to eat food"
-    fill_in "Location", with: "sadly brentford"
-    click_button "Create Bio"
-    click_link "Edit"
+    visit "/"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Ben"
+    fill_in "Lastname", with: "Smith"
+    fill_in "Username", with: "BenSmith12"
+    fill_in "Email", with: "bensmith@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
     expect(page).to have_button("Home")
 
   end
   scenario "navigation bar my page button is present on edit bio page" do
-    visit "/bios"
-    click_link "New Bio"
-    fill_in "Age", with: "20"
-    fill_in "Bio", with: "likes to eat food"
-    fill_in "Location", with: "sadly brentford"
-    click_button "Create Bio"
-    click_link "Edit"
+    visit "/"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Ben"
+    fill_in "Lastname", with: "Smith"
+    fill_in "Username", with: "BenSmith12"
+    fill_in "Email", with: "bensmith@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
     expect(page).to have_button("My Page")
 
   end
   scenario "navigation bar logout button is present on edit bio page" do
-    visit "/bios"
-    click_link "New Bio"
-    fill_in "Age", with: "20"
-    fill_in "Bio", with: "likes to eat food"
-    fill_in "Location", with: "sadly brentford"
-    click_button "Create Bio"
-    click_link "Edit"
+    visit "/"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Ben"
+    fill_in "Lastname", with: "Smith"
+    fill_in "Username", with: "BenSmith12"
+    fill_in "Email", with: "bensmith@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
     expect(page).to have_button("Logout")
 
   end
