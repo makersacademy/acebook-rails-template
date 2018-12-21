@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params.merge(user_id: current_user.id))
+    flash[:success] = "Your post have been created"
     redirect_to posts_url
   end
 
