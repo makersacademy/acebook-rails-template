@@ -10,12 +10,21 @@ respond_to :html
   end
 
   def show
-    @profile = User.find(current_user.id)
+    # @profile = User.find(current_user.id)
+
+    @profile = User.find(params[:id])
+
     # user = {text: params[:text], poster_id: 999}
     # params[:text]
 
     @post = Post.new
-    @posts = Post.all
+
+    # User.find_by name: 'John', email: 'john@doe.com'
+    @posts = Post.where recipient_username: @profile.username
+
+    # @posts = Post.find_all_by recipient_username: @profile.username
+    # @posts = Post.all
+    # we want: profile id; profile username
   end
 
   def createpost
