@@ -205,50 +205,67 @@ RSpec.feature "My Page features", type: :feature do
     fill_in "Password confirmation", with: "password"
     click_button "Sign up"
     click_link "My Page"
+    expect(page).to have_content("hello BenSmith12")
   end
-  # scenario "my profile has area for bio" do
-  #   visit "/"
-  #   click_link "Sign up"
-  #   fill_in "Firstname", with: "Ben"
-  #   fill_in "Lastname", with: "Smith"
-  #   fill_in "Username", with: "BenSmith12"
-  #   fill_in "Email", with: "bensmith@gmail.com"
-  #   fill_in "Password", with: "password"
-  #   fill_in "Password confirmation", with: "password"
-  #   click_button "Sign up"
-  #   click_button "My Page"
-  #   expect(page).to have_content("Area for BIO")
-  #
-  #
-  # end
-  # scenario "my profile has area for bio" do
-  #   visit "/"
-  #   click_link "Sign up"
-  #   fill_in "Firstname", with: "Ben"
-  #   fill_in "Lastname", with: "Smith"
-  #   fill_in "Username", with: "BenSmith12"
-  #   fill_in "Email", with: "bensmith@gmail.com"
-  #   fill_in "Password", with: "password"
-  #   fill_in "Password confirmation", with: "password"
-  #   click_button "Sign up"
-  #   click_button "My Page"
-  #   expect(page).to have_content("Area for all messages posted on users wall")
-  #
-  #
-  # end
-  # scenario "my profile has area for bio" do
-  #   visit "/"
-  #   click_link "Sign up"
-  #   fill_in "Firstname", with: "Ben"
-  #   fill_in "Lastname", with: "Smith"
-  #   fill_in "Username", with: "BenSmith12"
-  #   fill_in "Email", with: "bensmith@gmail.com"
-  #   fill_in "Password", with: "password"
-  #   fill_in "Password confirmation", with: "password"
-  #   click_button "Sign up"
-  #   click_button "My Page"
-  #   expect(page).to have_button("Submit")
-  #
-  #
-  # end
+  scenario "my profile has area for bio" do
+    visit "/"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Ben"
+    fill_in "Lastname", with: "Smith"
+    fill_in "Username", with: "BenSmith12"
+    fill_in "Email", with: "bensmith@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
+    click_link "My Page"
+    expect(page).to have_content("Area for BIO")
+
+
+  end
+  scenario "my profile has area for bio" do
+    visit "/"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Ben"
+    fill_in "Lastname", with: "Smith"
+    fill_in "Username", with: "BenSmith12"
+    fill_in "Email", with: "bensmith@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
+    click_link "My Page"
+    expect(page).to have_content("Area for all messages posted on users wall")
+
+
+  end
+  scenario "Bio page has submit button" do
+    visit "/"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Ben"
+    fill_in "Lastname", with: "Smith"
+    fill_in "Username", with: "BenSmith12"
+    fill_in "Email", with: "bensmith@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
+    click_link "My Page"
+    expect(page).to have_button("Post")
+
+
+  end
+  scenario "create a post" do
+    visit "/"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Ben"
+    fill_in "Lastname", with: "Smith"
+    fill_in "Username", with: "BenSmith12"
+    fill_in "Email", with: "bensmith@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
+    click_link "My Page"
+    fill_in "post_text", with: "Hello this is my first post"
+    click_button "Post"
+
+
+  end
 end
