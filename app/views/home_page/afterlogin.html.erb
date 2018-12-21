@@ -1,4 +1,5 @@
 <h1>hi <%= current_user.user_name %></h1>
+<p><%= link_to "Update account details", edit_user_registration_path %></p>
 <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
 
 
@@ -6,7 +7,10 @@
     <div>Signed in as... <%= current_user.email %></div>
     <div>Signed in as... <%= current_user.id %></div>
   <% end %>
-
 <%= link_to 'User Profile', userprofile_path, :class => 'btn btn-secondary'%>
 
-<p><%= link_to "Update account details", edit_user_registration_path %></p>
+
+
+
+
+POST POST POST

@@ -1,0 +1,37 @@
+<h1>ACEBOOK</h1>
+
+<% if user_signed_in? %>
+    <div>Signed in as... <%= current_user.email %></div>
+    <div>Signed in as... <%= current_user.id %></div>
+<% end %>
+
+
+<%= form_with scope: :post, url: posts_path,local: true do |form| %>
+
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :description %>
+  </p>
+
+  <h1>Listing articles</h1>
+
+<table>
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.description %></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
