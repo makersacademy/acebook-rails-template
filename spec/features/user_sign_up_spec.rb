@@ -124,7 +124,6 @@ RSpec.feature "Logged in features", type: :feature do
     click_link "Home"
     expect(page.current_url).to eq("http://www.example.com/profiles")
   end
-
 end
 RSpec.feature "Logout", type: :feature do
   scenario "can logout from homepage" do
@@ -187,4 +186,69 @@ RSpec.feature "Logout", type: :feature do
     expect(page).to have_content("Signed in successfully.")
   end
 
+end
+RSpec.feature "My Page features", type: :feature do
+  scenario "can edit the users bio " do
+    visit "/"
+    expect(page.current_url).to eq("http://www.example.com/")
+
+
+  end
+  scenario "home page has correct content" do
+    visit "/"
+    click_link "Sign up"
+    fill_in "Firstname", with: "Ben"
+    fill_in "Lastname", with: "Smith"
+    fill_in "Username", with: "BenSmith12"
+    fill_in "Email", with: "bensmith@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
+    click_link "My Page"
+  end
+  # scenario "my profile has area for bio" do
+  #   visit "/"
+  #   click_link "Sign up"
+  #   fill_in "Firstname", with: "Ben"
+  #   fill_in "Lastname", with: "Smith"
+  #   fill_in "Username", with: "BenSmith12"
+  #   fill_in "Email", with: "bensmith@gmail.com"
+  #   fill_in "Password", with: "password"
+  #   fill_in "Password confirmation", with: "password"
+  #   click_button "Sign up"
+  #   click_button "My Page"
+  #   expect(page).to have_content("Area for BIO")
+  #
+  #
+  # end
+  # scenario "my profile has area for bio" do
+  #   visit "/"
+  #   click_link "Sign up"
+  #   fill_in "Firstname", with: "Ben"
+  #   fill_in "Lastname", with: "Smith"
+  #   fill_in "Username", with: "BenSmith12"
+  #   fill_in "Email", with: "bensmith@gmail.com"
+  #   fill_in "Password", with: "password"
+  #   fill_in "Password confirmation", with: "password"
+  #   click_button "Sign up"
+  #   click_button "My Page"
+  #   expect(page).to have_content("Area for all messages posted on users wall")
+  #
+  #
+  # end
+  # scenario "my profile has area for bio" do
+  #   visit "/"
+  #   click_link "Sign up"
+  #   fill_in "Firstname", with: "Ben"
+  #   fill_in "Lastname", with: "Smith"
+  #   fill_in "Username", with: "BenSmith12"
+  #   fill_in "Email", with: "bensmith@gmail.com"
+  #   fill_in "Password", with: "password"
+  #   fill_in "Password confirmation", with: "password"
+  #   click_button "Sign up"
+  #   click_button "My Page"
+  #   expect(page).to have_button("Submit")
+  #
+  #
+  # end
 end
