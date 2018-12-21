@@ -1,25 +1,29 @@
-<%= image_tag @user.gravatar_url %><h1><%=@user.first_name%> <%=@user.last_name%></h1>
+<div class="container text-center">
+  <%= image_tag @user.gravatar_url %><h1><%=@user.first_name%> <%=@user.last_name%></h1>
+</div>
+
+<% if current_user == @user %>
 <div class="container new-post-container">
-<% if current_user %>
   <button class="btn btn-new-post" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     <i class="fa fa-sort-down"></i> New post
   </button>
   <div class="collapse" id="collapseExample">
     <div class="card card-body">
         <%= bootstrap_form_for(@post) do |f| %>
-        <p><%= f.text_area :message,
+          <p><%= f.text_area :message,
                             rows: 6,
                             required: true,
                             minlength: 0,
                             maxlength: 1000,
                             placeholder: "New post",
                             class: 'form-control' %></p>
-      <%= f.submit "Accept", class: 'form-control create-post-button' %>
-    <% end %>
+            <%= f.submit "Accept", class: 'form-control create-post-button' %>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
-    <% end %>
-  <% end %>
+<% end %>
+
 <div class="container cards-container">
   <% @posts.reverse.each do |post| %>
     <% @post_user = User.find(post.user_id) %>
@@ -72,4 +76,4 @@
           <% end %>
         </div>
       </div>
-<% end %>
+      <% end %>
