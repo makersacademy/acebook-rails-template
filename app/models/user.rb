@@ -3,7 +3,7 @@ class User < ApplicationRecord
   include Gravtastic
   gravtastic  :secure => true,
               :filetype => :gif,
-              :size => 120,
+              :size => 250,
               :default => "monsterid"
 
 
