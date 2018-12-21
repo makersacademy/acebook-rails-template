@@ -1,6 +1,3 @@
-<%= @profile.username %>
-
-
 <%= render 'shared/nav' %>
 
 <h1> hello <%= @profile.username %> </h1>
@@ -9,13 +6,31 @@
 Area for BIO
 
 <br>
+<br>
 
-<textarea name="Post Box" rows="8" cols="80"></textarea>
+area for new posts:
+<br>
+<br>
+
+
+
+<%= form_for @post, url: create_post_path([:profile_id]) do |f| %>
+  <%= f.label :post %>
+  <%= f.text_area :text %>
+  <%= f.submit 'Post' %>
+<% end %>
 
 <br>
 
-<input type="submit" name="submit" value="submit">
-
-<br>
 
 Area for all messages posted on users wall:
+<% @posts.each do |post| %>
+<br>
+<%= post.text %> <%= post.poster_username %> <%= post.recipient_username %>
+<% end %>
+
+<br>
+<br>
+
+
+<!-- = form_for @job, :url => company_path, :html => { :method => :post/:put } -->
