@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20181220145831) do
     t.integer "age"
     t.text "bio"
     t.text "location"
+    t.text "bio_username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

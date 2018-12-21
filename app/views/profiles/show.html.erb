@@ -3,30 +3,51 @@
 <h1> hello <%= @profile.username %> </h1>
 
 <br>
-Area for BIO
+
+<% if (@bio_profile.is_a? Bio)%>
+-- BIO --
+<br>
+Age: <%= @bio_profile.age %>
+<br>
+Bio: <%= @bio_profile.bio %>
+<br>
+Location: <%= @bio_profile.location %>
+<br>
+<% else %>
+-- NEW BIO --
+  <%= form_for @bio, url: create_bio_path([:profile_id]) do |f| %>
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+    <%= f.hidden_field :bio_username, :value => @profile.username %>
+    <%= f.submit "Update" %>
+  <% end %>
+<% end %>
+
+
+
 
 <br>
 <br>
-
-area for new posts:
 <br>
+-- Posts --
 <br>
-
-
-
 <%= form_for @post, url: create_post_path([:profile_id]) do |f| %>
-  <%= f.label :post %>
   <%= f.text_area :text %>
   <%= f.hidden_field :recipient_username, :value => @profile.username %>
   <%= f.submit 'Post' %>
 <% end %>
-
 <br>
-
-Area for all messages posted on users wall:
+-- MESSAGES --
+<br>
 <% @posts.each do |post| %>
 <br>
 <%= post.text %> <%= post.poster_username %> <%= post.recipient_username %>
+<br>
+
 <% end %>
 
 <br>
