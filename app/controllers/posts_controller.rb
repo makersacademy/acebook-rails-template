@@ -9,12 +9,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params.merge(user_id: current_user.id))
-    redirect_to posts_url
+      redirect_to posts_url
   end
 
   def destroy
     Post.find(params[:id]).destroy
-    flash[:danger] = "Your post have been deleted"
+    flash[:danger] = "Your post has been deleted"
     redirect_to posts_path
   end
 
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   def update
   @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
-      flash[:success] = "Your post have been updated"
+      flash[:success] = "Your post has been updated"
       redirect_to posts_path
     end
   end
