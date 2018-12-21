@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+
 
 respond_to :html
 
@@ -10,7 +10,15 @@ respond_to :html
   end
 
   def show
-    @profile = User.find(params[:id])
+    @profile = User.find(current_user.id)
+    # user = {text: params[:text], poster_id: 999}
+    # params[:text]
+
+    @post = Post.new
+    @posts = Post.all
+  end
+
+  def createpost
   end
 
   def new
@@ -21,6 +29,7 @@ respond_to :html
   end
 
   def create
+    @post = Post.create({"text"=>params[:post][:text], "poster_id"=> current_user.id, "recipient_id"=>profile_path(current_user)})
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
     @profile.save
@@ -28,8 +37,8 @@ respond_to :html
   end
 
   def update
-
-    @profile.profile(profile_params)
+    @posts = Post.all
+    # @profile.profile(profile_params)
   end
 
   def destory
@@ -46,5 +55,9 @@ respond_to :html
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
       params.fetch(:profile, {})
+    end
+
+    def comment_params
+      params.fetch(:profile).permit(:text)
     end
 end
