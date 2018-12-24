@@ -9,9 +9,8 @@ Rails.application.routes.draw do
 
   get "users/:id", to: "users#show", as: 'user'
 
-  resources :posts
-
   resources :posts do
     resources :likes
+    resources :comments
   end
 end
