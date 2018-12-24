@@ -1,5 +1,12 @@
 class User < ApplicationRecord
 
+  include Gravtastic
+  gravtastic  :secure => true,
+              :filetype => :gif,
+              :size => 250,
+              :default => "monsterid"
+
+
   before_save :capitalize_names
 
   # Include default devise modules. Others available are:
