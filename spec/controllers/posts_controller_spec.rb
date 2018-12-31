@@ -32,9 +32,17 @@ RSpec.describe PostsController, type: :controller do
     @user = User.create!(email: "test@test.com", password: 'testtest')
     allow(controller).to receive(:current_user) { instance_double("User", :id => @user.id)}
     post :create, :params => {:post => {description: 'content'}}
-    # WTF: figure out what is this?
+    # detail this
     expect(assigns(:post)).to be_a(Post)
     expect(assigns(:post)).to be_persisted
+  end
+
+    it "false and flash" do
+    @user = User.create!(email: "test@test.com", password: 'testtest')
+    allow(controller).to receive(:current_user) { instance_double("User", :id => @user.id)}
+    post :create, :params => {:post => {description: ''}}
+    expect(controller).to set_flash[:notice]
+    expect(response).to redirect_to(posts_path) # to posts is all posts
   end
 
   it "destroys the requested post" do
@@ -51,7 +59,7 @@ RSpec.describe PostsController, type: :controller do
   it "update redirects to the post" do
     post = Post.create!(description: "content")
     put :update, :params => {:id => post.to_param, :post => { "description" => "new description" }}
-    expect(response).to redirect_to(post)
+    expect(response).to redirect_to(post) # to post is the specific post
   end
 
 end
