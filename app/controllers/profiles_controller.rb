@@ -6,6 +6,7 @@ respond_to :html
 
   def index
     @users = User.all
+    @posts = Post.all
     respond_with(@users)
   end
 
@@ -13,7 +14,6 @@ respond_to :html
     @profile = User.find(params[:id])
     @post = Post.new
     @posts = Post.where recipient_username: @profile.username
-
     @bio = Bio.new
     @bio_profile = Bio.find_by(bio_username: @profile.username)
   end

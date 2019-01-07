@@ -12,7 +12,21 @@
     </div>
 
     <div class="col-sm">
-      Feed
+      <% @posts.each do |post| %>
+
+      <br>
+      <div class="card-group">
+        <a class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">To <%= post.recipient_username %></h5>
+            <h5 class="mb-1">From <%= post.poster_username %></h5>
+            <small class="text-muted"><%= post.updated_at %> </small>
+          </div>
+          <p class="mb-1"><%= post.text %></p>
+          <small class="text-muted">Comment (5)- Like - Edit - Delete</small>
+        </a>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
