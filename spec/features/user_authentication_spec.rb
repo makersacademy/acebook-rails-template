@@ -76,5 +76,4 @@ RSpec.feature "User authentication", type: :feature do
     expect(current_path).to eq("/users")
     expect(page).to have_content("has already been taken")
   end
-
 end

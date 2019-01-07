@@ -1,11 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-
   let(:user) { FactoryBot.create(:user) }
 
   describe "When user NOT Logged IN" do
-
     describe "GET #new " do
       it "responds with 200" do
         get :new
@@ -15,7 +13,6 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "When Logged IN" do
-
     before :each do
       login_as(user, scope: :user)
     end
@@ -52,7 +49,5 @@ RSpec.describe PostsController, type: :controller do
     after :all do
       logout
     end
-
   end
-
 end
