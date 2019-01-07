@@ -1,14 +1,16 @@
 class PostsController < ApplicationController
 
-  def new
-    @post = Post.new
-  end
-
+  # def new
+  #   @post = Post.new 
+  #   # page not in use, reach with "render 'new'"
+  # end
+ 
   def edit
     @post = Post.find(params[:id])
   end
 
   def index
+    @post = Post.new
     @posts = Post.all
   end
 
@@ -22,7 +24,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post
     else
-      render 'new'
+      flash[:notice] = "Post can not be empty, please enter information."
+      redirect_to @post
     end
   end
 
