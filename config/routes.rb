@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   resources :profiles do
     resources :bios
-    resources :posts
+    resources :posts do
+      resources :comments
+    end
   end
 
   devise_for :users
