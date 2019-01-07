@@ -20,7 +20,8 @@
   <% @posts = @posts.reverse %>
   <% @posts.each do |post| %>
     <tr>
-      <td><%= post.creator_id %></td>
+      <% @user = User.find(post.creator_id) %>
+      <td><%= @user.email %></td>
       <td><%= post.description %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
       <% if current_user.id == post.creator_id %>
