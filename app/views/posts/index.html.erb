@@ -23,9 +23,6 @@
         <div class="message-container">
           <p class="post-message"><%= post.message %></p>
         </div>
-        <%= link_to post_path(post.id) do %>
-          <p>Full Post</p>
-        <% end %>
         <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
         <% if pre_like %>
           <button class="btn btn-unlike">
@@ -49,21 +46,24 @@
             <i class="far fa-edit"></i>
             <label class="update">Update</label>
           </button>
-          <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-              <%= bootstrap_form_for(post) do |f| %>
-              <p><%= f.text_area :message,
-                                  rows: 6,
-                                  required: true,
-                                  minlength: 0,
-                                  maxlength: 1000,
-                                  placeholder: post.message,
-                                  class: 'form-control' %></p>
-              <%= f.submit "Accept", class: 'form-control create-post-button' %>
-              <% end %>
-            </div>
-          </div>
         <% end %>
+        <%= link_to post_path(post.id) do %>
+          <p>Full Post</p>
+        <% end %>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <%= bootstrap_form_for(post) do |f| %>
+            <p><%= f.text_area :message,
+                                rows: 6,
+                                required: true,
+                                minlength: 0,
+                                maxlength: 1000,
+                                placeholder: post.message,
+                                class: 'form-control' %></p>
+            <%= f.submit "Accept", class: 'form-control create-post-button' %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
