@@ -42,7 +42,7 @@
             <i class="fas fa-trash-alt"></i>
             <%= link_to 'Delete', post, method: :delete%>
           </button>
-          <button class="btn btn-edit" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <button class="btn btn-edit" type="button" data-toggle="collapse" data-target="#collapseExample<%= post.id %>" aria-expanded="false" aria-controls="collapseExample">
             <i class="far fa-edit"></i>
             <label class="update">Update</label>
           </button>
@@ -50,7 +50,7 @@
         <%= link_to post_path(post.id) do %>
           <p>Full Post</p>
         <% end %>
-        <div class="collapse" id="collapseExample">
+        <div class="collapse" id="collapseExample<%= post.id %>">
           <div class="card card-body">
             <%= bootstrap_form_for(post) do |f| %>
             <p><%= f.text_area :message,
