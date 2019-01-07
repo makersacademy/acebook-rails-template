@@ -14,4 +14,9 @@ FactoryBot.define do
     email { "jon@doe.com" }
     password { "password" }
   end
+  factory :comment do
+    post { nil }
+    user { nil }
+    message{ "A comment!" }
+  end
 end
