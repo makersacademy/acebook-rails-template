@@ -11,10 +11,9 @@
       <button class="btn btn-new-post">New Post</button>
     <% end %>
   <% end %>
-
 </div>
 <div class="container cards-container">
-  <% @posts.reverse.each do |post| %>
+  <% @posts.each do |post| %>
     <% @post_user = User.find(post.user_id) %>
       <div class="card">
         <div class="card-body">
