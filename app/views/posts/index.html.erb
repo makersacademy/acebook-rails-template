@@ -1,8 +1,7 @@
 <h1>ACEBOOK</h1>
 
 <% if user_signed_in? %>
-    <div>Signed in as... <%= current_user.email %></div>
-    <div>Signed in as... <%= current_user.id %></div>
+    <div>Hello, <%= current_user.email %></div>
 <% end %>
 
 <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
@@ -16,7 +15,7 @@
   </p>
 
 
-<table>
+<table align="center">
 
   <% @posts.each do |post| %>
     <tr>
