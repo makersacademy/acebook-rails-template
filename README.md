@@ -131,7 +131,7 @@ This will clear and reset the database to working condition. You must have the r
 
 ## How to contribute   
 
-If you would like to contribute to this project, please fork our master branch, add your changes and then open a PR describing what you have done.
+If you would like to contribute to this project please begin by forking our repo. Once you finished, open a PR describing what you have done.
 
 Note: please make sure that your code adheres to our linting and code coverage (95%+) requirements. Travis will check to see if these requirements are met and will automatically fail the PR if they are not met.
 
