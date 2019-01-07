@@ -93,6 +93,7 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    gravtastic (3.2.6)
     hirb (0.7.3)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -290,6 +291,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_bot_rails
+  gravtastic
   jbuilder (~> 2.5)
   jquery-rails
   launchy
