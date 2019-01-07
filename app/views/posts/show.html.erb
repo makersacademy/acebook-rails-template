@@ -59,6 +59,8 @@
               <% end %>
             </div>
           </div>
+        <% end %>
+        <% if current_user %>
           <% @post.comments.each do |comment| %>
             <div class="comment" id="newCommente<%= comment.id %>">
               <div class="card card-body">
@@ -66,23 +68,21 @@
               </div>
             </div>
           <% end %>
-          <% if current_user %>
-            <div class="new-comment" id="newCommentInPost<%= @post.id %>">
-              <div class="card card-body">
-                <%= bootstrap_form_for(Comment.new, url: post_comments_path(@post.id), method: :post) do |f| %>
-                  <p><%= f.text_area :message,
-                                      rows: 2,
-                                      required: true,
-                                      minlength: 0,
-                                      maxlength: 1000,
-                                      placeholder: 'Your comment',
-                                      class: 'form-control' %></p>
-                  <%= f.submit "Accept", class: 'form-control create-comment-button' %>
-                <% end %>
-              </div>
+          <div class="new-comment" id="newCommentInPost<%= @post.id %>">
+            <div class="card card-body">
+              <%= bootstrap_form_for(Comment.new, url: post_comments_path(@post.id), method: :post) do |f| %>
+              <p><%= f.text_area :message,
+                                  rows: 2,
+                                  required: true,
+                                  minlength: 0,
+                                  maxlength: 1000,
+                                  placeholder: 'Your comment',
+                                  class: 'form-control' %></p>
+              <%= f.submit "Accept", class: 'form-control create-comment-button' %>
             </div>
-          <% end %>
+          </div>
         <% end %>
       </div>
     </div>
+  <% end %>
 </div>
