@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   def create
-    p "comment created"
     @post = Post.find(params['post_id'])
     @post.comments.create(comment_params.merge(user_id: current_user.id))
     redirect_to post_path(params['post_id'])
