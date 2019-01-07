@@ -1,11 +1,10 @@
 class Post < ApplicationRecord
-	belongs_to :user
+  belongs_to :user
   has_many :likes, dependent: :destroy
 
-	include Gravtastic
-  gravtastic  :secure => true,
-              :filetype => :gif,
-              :size => 250,
-              :default => "monsterid"
-
+  include Gravtastic
+  gravtastic secure: :true,
+             filetype: :gif,
+             size: 250,
+             default: "monsterid"
 end
