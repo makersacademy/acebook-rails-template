@@ -17,18 +17,25 @@
 <br>
 <br>
 <br>
-
 <br>
 
   <% if (@bio_profile.is_a? Bio)%>
   -- BIO --
-
+  <ul class="list-group">
+    <li class="list-group-item py-0 list-group-item-secondary">Age:</li>
+    <li class="list-group-item"><%= @bio_profile.age %></li>
+  </ul>
   <br>
-  Age: <%= @bio_profile.age %>
+  <ul class="list-group">
+    <li class="list-group-item py-0 list-group-item-secondary">Bio:</li>
+    <li class="list-group-item"><%= @bio_profile.bio %></li>
+  </ul>
   <br>
-  Bio: <%= @bio_profile.bio %>
+  <ul class="list-group">
+    <li class="list-group-item py-0 list-group-item-secondary">Location:</li>
+    <li class="list-group-item"> <%= @bio_profile.location %></li>
+  </ul>
   <br>
-  Location: <%= @bio_profile.location %>
   <br>
   <% else %>
   -- NEW BIO --
@@ -59,26 +66,25 @@
       <%= form_for @post, url: create_post_path([:profile_id]) do |f| %>
       <%= f.hidden_field :recipient_username, :value => @profile.username %>
       <div class="input-group">
-        <div class="input-group-prepend">
+        <textarea class="form-control" <%= f.text_area :text %></textarea>
+
+        <div class="input-group-append">
           <button <% f.submit%> class="input-group-text" >submit</button>
         </div>
-        <textarea class="form-control" <%= f.text_area :text %></textarea>
       </div>
       <% end %>
       <br>
       <br>
       -- MESSAGES --
       <% @posts.each do |post| %>
-
-      <br>
       <div class="card-group">
-        <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <a href="<%= profile_post_path(@profile, post.id) %>" class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">By <%= post.poster_username %></h5>
             <small class="text-muted"><%= post.updated_at %> </small>
           </div>
           <p class="mb-1"><%= post.text %></p>
-          <small class="text-muted">Comment (5)- Like - Edit - Delete</small>
+          <small class="text-muted">Comments (<%= post.comments.size %>) - Like - Edit - Delete</small>
         </a>
       </div>
       <% end %>
