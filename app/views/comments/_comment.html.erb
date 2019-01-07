@@ -1,7 +1,8 @@
 
 <p>
   <strong>Commenter:</strong>
-  <%= comment.commenter_id %>
+  <% @user = User.find(comment.commenter_id) %>
+  <%= @user.email %>
 </p>
 
 <p>

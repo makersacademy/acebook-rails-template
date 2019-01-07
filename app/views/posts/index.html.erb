@@ -17,8 +17,7 @@
 
 
 <table align="center">
-  <% @posts = @posts.reverse %>
-  <% @posts.each do |post| %>
+  <% @posts.reverse.each do |post| %>
     <tr>
       <% @user = User.find(post.creator_id) %>
       <td><%= @user.email %></td>
