@@ -2,20 +2,15 @@ require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
 
-  # it "assigns a newly created comments as comment", :yo => true do
-  #   a_post = Post.create!(description: "content")
-
-  #   @user = User.create!(email: "test@test.com", password: 'testtest')
-  #   allow(controller).to receive(:current_user) { instance_double("User", :id => @user.id)}
-  #   post :create, :params => {:comment => {body: 'content'}}    
-
-  #   byebug
-
-  #   # comment = post.comments.create!(body: 'content')
-  #   # byebug
-  #   expect(comment.post_id).to eq(post.id)
-
-  # end
+  it "assigns a newly created comments as comment" do
+    @user = User.create!(email: "test@test.com", password: 'testtest')
+    allow(controller).to receive(:current_user) { instance_double("User", :id => @user.id)}
+    @post = Post.create!(description: "content")
+    post :create, :params => {post_id: @post.id, :comment => {body: "some comment"}}
+    expect(assigns(:comment)).to be_a(Comment)
+    expect(assigns(:comment)).to be_persisted
+    expect(response).to redirect_to(@post)
+  end
 
 
   it 'deletes a comment' do
@@ -26,5 +21,4 @@ RSpec.describe CommentsController, type: :controller do
     expect(response).to redirect_to(@post)
   end
   
-
 end
