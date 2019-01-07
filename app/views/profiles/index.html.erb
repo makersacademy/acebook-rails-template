@@ -1,5 +1,18 @@
 <%= render 'shared/nav' %>
 
-Username ---- Email <br/>
-<% @users.each do |user| %>
-<%= user.username %> <%= user.email %><br/> <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      All Users:
+      <% @users.each do |user| %>
+        <ul class="list-group list-group-flush">
+          <a href="<%=profile_url(user) %>" class="list-group-item list-group-item-action">  <%= user.username %></a>
+        </ul>
+      <% end %>
+    </div>
+
+    <div class="col-sm">
+      Feed
+    </div>
+  </div>
+</div>
