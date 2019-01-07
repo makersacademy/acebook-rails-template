@@ -18,6 +18,7 @@ RSpec.feature "testing for the correct urls", type: :feature do
     expect(page.current_url).to eq("http://www.example.com/users/sign_up")
 
   end
+
   # scenario "new bio url " do
   #   visit "/bios"
   #   click_link "New Bio"

@@ -4,6 +4,7 @@ class CreateBios < ActiveRecord::Migration[5.1]
       t.integer :age
       t.text :bio
       t.text :location
+      t.text :bio_username
 
       t.timestamps
     end

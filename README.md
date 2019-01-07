@@ -4,7 +4,7 @@
 
 # AceBook
 
-Currently deployed at https://young-springs-98096.herokuapp.com
+Currently deployed at https://acebook-firenze.herokuapp.com/
 
 REQUIRED INSTRUCTIONS:
 
