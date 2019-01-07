@@ -16,7 +16,7 @@
 
 
 <table align="center">
-
+  <% @posts = @posts.reverse %>
   <% @posts.each do |post| %>
     <tr>
       <td><%= post.creator_id %></td>
