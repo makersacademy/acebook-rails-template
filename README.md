@@ -85,7 +85,7 @@ To clean local database use
 ```
 ## Registration
 
-You can sign up to use Acebook on the [homepage](https://aqueous-wave-77193.herokuapp.com). To change your avatar, register your email address at [Gravatar](https://en.gravatar.com) and follow the instructions to upload your chosen image. 
+You can sign up to use Acebook on the [homepage](https://aqueous-wave-77193.herokuapp.com). To change your avatar, register your email address at [Gravatar](https://en.gravatar.com) and follow the instructions to upload your chosen image.
 
 ## Testing
 
@@ -109,15 +109,15 @@ We have documented our entire journey on the Wiki of this repo. All page names a
 
 #### Creation
 
-Use 
+Use
 ```
 heroku create
 git push heroku master
 ```
-to deploy. Alternatively allow travis to use your repo and deploy when you push to master, with a working build it will attempt to push to heroku, you will need to generate your own API key and encrypt it for travis. This is done by running 
+to deploy. Alternatively allow travis to use your repo and deploy when you push to master, with a working build it will attempt to push to heroku, you will need to generate your own API key and encrypt it for travis. This is done by running
 ```travis encrypt $(heroku auth:token) --add deploy.api_key --org```
-for travis-ci.org or 
-```travis encrypt $(heroku auth:token) --add deploy.api_key --pro``` 
+for travis-ci.org or
+```travis encrypt $(heroku auth:token) --add deploy.api_key --pro```
 for travis.ci.com.
 
 #### Database Cleaning
@@ -128,3 +128,11 @@ heroku pg:reset DATABASE --confirm { name-of-your-app-here }
 heroku run rails db:migrate
 ```
 This will clear and reset the database to working condition. You must have the required rights on the heroku project in order to do this.
+
+## How to contribute   
+
+If you would like to contribute to this project please begin by forking our repo. Once finished, open a PR describing what you have done.
+
+Note: please make sure that your code adheres to our linting and code coverage (95%+) requirements. Travis will check to see if these requirements are met and will automatically fail the PR if they are not met.
+
+If you notice any bugs please open an issue and we'll get address it!
