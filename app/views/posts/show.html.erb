@@ -14,3 +14,10 @@ Leave a comment:
 <% end %>
 <br>
 <br>
+-- COMMENTS --
+<br>
+<% @comments.each do |comment| %>
+<br>
+<%= comment.text %>  <%= comment.username %>
+<br>
+<% end %>
