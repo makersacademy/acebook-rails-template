@@ -24,3 +24,5 @@
 Gemfile.lock
 coverage
 .db
+
+/note.md

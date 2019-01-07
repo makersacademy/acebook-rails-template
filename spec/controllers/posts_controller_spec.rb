@@ -28,11 +28,10 @@ RSpec.describe PostsController, type: :controller do
   end
 
   it "assigns a newly created posts as @post" do
-    # TODO: convert this into a fixture
     @user = User.create!(email: "test@test.com", password: 'testtest')
     allow(controller).to receive(:current_user) { instance_double("User", :id => @user.id)}
     post :create, :params => {:post => {description: 'content'}}
-    # detail this
+    # detail this for understanding
     expect(assigns(:post)).to be_a(Post)
     expect(assigns(:post)).to be_persisted
   end
