@@ -11,9 +11,14 @@ RSpec.describe CommentsController, type: :controller do
   describe "GET #index " do
     it "responds with 200" do
       post = FactoryBot.create(:post)
-      get :create, params: { post_id: 1, comment: "A comment" }
-      expect(response).to have_http_status(200)
+      controller.stub(current_user: FactoryBot.create(:user))
+      get :create, params: { post_id: 1, comment: { message: "A Comment" } }
+      expect(response).to have_http_status(302)
     end
+  end
+
+  after :all do
+    logout
   end
 
 end

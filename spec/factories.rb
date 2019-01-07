@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    user_id { 1 }
+    user
     message { "hello, world!"}
   end
   factory :like do
@@ -8,15 +8,21 @@ FactoryBot.define do
     user { nil }
   end
   factory :user do
-    id { 1 }
+    id { generate :user_id }
     first_name { "John" }
     last_name  { "Doe" }
-    email { "jon@doe.com" }
+    email { generate :email }
     password { "password" }
   end
   factory :comment do
-    post { nil }
-    user { nil }
+    post { 1 }
+    user { 1 }
     message{ "A comment!" }
+  end
+  sequence :email do |n|
+    "email#{n}@gmail.com"
+  end
+  sequence :user_id do |n|
+    n
   end
 end
