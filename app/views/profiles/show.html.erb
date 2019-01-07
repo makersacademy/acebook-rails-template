@@ -1,57 +1,96 @@
 <%= render 'shared/nav' %>
 
-<h1> hello <%= @profile.username %> </h1>
+<div class="container">
+  <h6> Wecome to <%= @profile.username %> profile page </h6>
+
+  <div class="row">
+    <div class="col-3">
+
+      -- Picture --
+
+
+<br>--------------
+<br>
+<br>
+<br>
+<br>--------------
+<br>
+<br>
+<br>
 
 <br>
 
-<% if (@bio_profile.is_a? Bio)%>
--- BIO --
-<br>
-Age: <%= @bio_profile.age %>
-<br>
-Bio: <%= @bio_profile.bio %>
-<br>
-Location: <%= @bio_profile.location %>
-<br>
-<% else %>
--- NEW BIO --
-  <%= form_for @bio, url: create_bio_path([:profile_id]) do |f| %>
-    <%= f.label :age %>
-    <%= f.number_field :age %>
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-    <%= f.hidden_field :bio_username, :value => @profile.username %>
-    <%= f.submit "Update" %>
+  <% if (@bio_profile.is_a? Bio)%>
+  -- BIO --
+
+  <br>
+  Age: <%= @bio_profile.age %>
+  <br>
+  Bio: <%= @bio_profile.bio %>
+  <br>
+  Location: <%= @bio_profile.location %>
+  <br>
+  <% else %>
+  -- NEW BIO --
+      <form>
+        <%= form_for @bio, url: create_bio_path([:profile_id]) do |f| %>
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <%= f.number_field :age, :class => 'form-control', :placeholder => "age"%>
+        </div>
+        <div class="form-group">
+          <label for="bio">Bio:</label>
+          <%= f.text_area :bio, :class => 'form-control', :placeholder => "bio"%>
+        </div>
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <%= f.text_field :location, :class => 'form-control', :placeholder => "location"%>
+          <%= f.hidden_field :bio_username, :value => @profile.username %>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    <% end %>
   <% end %>
-<% end %>
+
+    </div>
+    <div class="col-sm">
+      -- Add new post --
+      <br>
+      <%= form_for @post, url: create_post_path([:profile_id]) do |f| %>
+      <%= f.hidden_field :recipient_username, :value => @profile.username %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <button <% f.submit%> class="input-group-text" >submit</button>
+        </div>
+        <textarea class="form-control" <%= f.text_area :text %></textarea>
+      </div>
+      <% end %>
+      <br>
+      <br>
+      -- MESSAGES --
+      <% @posts.each do |post| %>
+
+      <br>
+      <div class="card-group">
+        <a class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">By <%= post.poster_username %></h5>
+            <small class="text-muted"><%= post.updated_at %> </small>
+          </div>
+          <p class="mb-1"><%= post.text %></p>
+          <small class="text-muted">Comment (5)- Like - Edit - Delete</small>
+        </a>
+      </div>
+      <% end %>
 
 
 
-
-<br>
-<br>
-<br>
--- Posts --
-<br>
-<%= form_for @post, url: create_post_path([:profile_id]) do |f| %>
-  <%= f.text_area :text %>
-  <%= f.hidden_field :recipient_username, :value => @profile.username %>
-  <%= f.submit 'Post' %>
-<% end %>
-<br>
--- MESSAGES --
-<br>
-<% @posts.each do |post| %>
-<br>
-<%= post.text %> <%= post.poster_username %> <%= post.recipient_username %>
-<br>
-
-<% end %>
-
-<br>
-<br>
+      <br>
+      <br>
 
 
-<!-- = form_for @job, :url => company_path, :html => { :method => :post/:put } -->
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
