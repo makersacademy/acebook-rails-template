@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :post do
     user
-    message { "hello, world!"}
+    message { "hello, world!" }
   end
   factory :like do
     post { nil }
@@ -17,7 +17,7 @@ FactoryBot.define do
   factory :comment do
     post { 1 }
     user { 1 }
-    message{ "A comment!" }
+    message { "A comment!" }
   end
   sequence :email do |n|
     "email#{n}@gmail.com"

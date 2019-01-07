@@ -1,7 +1,5 @@
 require 'rails_helper'
-
 RSpec.describe CommentsController, type: :controller do
-
   let(:user) { FactoryBot.create(:user) }
 
   before :each do
@@ -20,5 +18,4 @@ RSpec.describe CommentsController, type: :controller do
   after :all do
     logout
   end
-
 end
