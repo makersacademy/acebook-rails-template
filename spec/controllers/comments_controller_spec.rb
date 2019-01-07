@@ -12,7 +12,7 @@ RSpec.describe CommentsController, type: :controller do
     expect(response).to redirect_to(@post)
   end
 
-  it "assigns a newly created comments as comment" do
+  it "comment handle empty content and flash" do
     @user = User.create!(email: "test@test.com", password: 'testtest')
     allow(controller).to receive(:current_user) { instance_double("User", :id => @user.id)}
     @post = Post.create!(description: "content")

@@ -36,7 +36,7 @@ RSpec.describe PostsController, type: :controller do
     expect(assigns(:post)).to be_persisted
   end
 
-    it "false and flash" do
+  it "post handle empty content and flash" do
     @user = User.create!(email: "test@test.com", password: 'testtest')
     allow(controller).to receive(:current_user) { instance_double("User", :id => @user.id)}
     post :create, :params => {:post => {description: ''}}
