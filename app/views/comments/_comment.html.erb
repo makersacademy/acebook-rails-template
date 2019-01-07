@@ -10,7 +10,9 @@
 </p>
 
 <p>
+  <% if current_user.id == comment.commenter_id %>
   <%= link_to 'Destroy Comment', [comment.post, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
+  <%end%>
 </p>
