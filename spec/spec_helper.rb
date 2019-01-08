@@ -16,6 +16,14 @@ Coveralls.wear!
 #
 require 'simplecov'
 SimpleCov.start 'rails'
+
+SimpleCov.start do
+  add_filter "app/mailers"
+  add_filter "app/jobs"
+  add_filter "app/channels"
+  add_filter "app/helpers"
+end
+
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.before(:each) do
