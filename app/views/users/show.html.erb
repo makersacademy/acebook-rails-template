@@ -1,3 +1,5 @@
+
+<%= link_to 'HomePage', users_path, :class => 'btn btn-secondary btn-sm' %><br>
 <p>User ID: <%= @user.id %></p>
 
 
@@ -14,8 +16,6 @@
 
 
 <% @posts.each do |post| %>
-
-
 
   <a href="<%=post_path(post)%>"> <%= post.description %> </a>
   <br>
@@ -36,5 +36,3 @@
 <% end %>
 
 <br>
-
-<%= link_to 'Back', users_path %>
