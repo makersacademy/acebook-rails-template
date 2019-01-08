@@ -1,10 +1,23 @@
 <%= render 'shared/nav' %>
 
 <div class="container">
-  <h6> Wecome to <%= @profile.username %> profile page </h6>
+  <h6> Welcome to <%= @profile.username %>'s profile page </h6>
+
+
+
 
   <div class="row">
     <div class="col-3">
+      <% if @profile.username != current_user.username %>
+      <%= form_for @friend, url: profile_friends_url([:profile_id]) do |f| %>
+      <div class="form-group">
+        <%= f.hidden_field :requester, :value => current_user.username %>
+        <%= f.hidden_field :parent_friend, :value => @profile.username %>
+
+      </div>
+        <%= f.submit "Add as friend" %>
+      <% end %>
+      <% end %>
 
 --------------
 <br>
