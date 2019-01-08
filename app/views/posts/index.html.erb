@@ -1,37 +1,59 @@
-<h1>ACEBOOK</h1>
 
-<% if user_signed_in? %>
-    <div>Hello, <%= current_user.email %></div>
-<% end %>
 
-<p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
-<p><%= link_to "Update account details", edit_user_registration_path %></p>
+
+<div id="logout">
+
+  <%= link_to "Update account details", edit_user_registration_path, :class => 'btn btn-primary btn-sm'  %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
+
+</div>
+
+<div id="helloUser">
+  <% if user_signed_in? %>
+    Hello! <%= current_user.email %>
+  <% end %>
+</div><br>
+
 
 <%= form_with scope: :post, url: posts_path,local: true do |form| %>
 
+
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :description %><br>
-    <%= form.submit %>
+    Add Post<br>
+
+    <%= form.text_area :description, :class => "textarea" %><br>
+
+    <%= form.submit "Create Post", :class => 'btn btn-primary btn-sm' %>
   </p>
 
 
-<table align="center">
+<table align="center" id="test">
   <% @posts = @posts.reverse %>
   <% @posts.each do |post| %>
+
     <tr>
       <% @user = User.find(post.creator_id) %>
-      <td><%= @user.email %></td>
-      <td><%= post.description %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <% if current_user.id == post.creator_id %>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post_path(post),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+      <div class="eachpost">
+        <div class="createdby">
+          <small><%= "created by: " %> <%= @user.email %></small><br>
+          <small> <%= post.created_at %></small>
+        </div><br>
+        <div>
+          <%= post.description %>
+        </div><br>
+        <div class="buttons">
+        <%= link_to 'Show', post_path(post), :class => 'btn btn-secondary btn-sm' %>
+        <% if current_user.id == post.creator_id %>
+        <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-secondary btn-sm' %>
+        <%= link_to 'Destroy', post_path(post), :class => 'btn btn-secondary btn-sm',
+                method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div><br>
       <% end %>
     </tr>
   <% end %>
+
 </table>
 
 

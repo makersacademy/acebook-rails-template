@@ -1,26 +1,34 @@
-<p>
-  <strong>Post:</strong>
-  <%= @post.description %>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Back', posts_path %>
-</p>
+
+<div id="logout">
+  <%= link_to 'Back', posts_path, :class => 'btn btn-secondary btn-sm' %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
+</div>
+
+  <% @user = User.find(@post.creator_id) %>
+  <div class="eachpost">
+    <div class="createdby">
+      <small><%= "created by: " %> <%= @user.email %></small><br>
+      <small> <%= @post.created_at %></small>
+    </div><br>
+    <h3>Post</h3>
+    <div id="post-description">
+      <%= @post.description %>
+    </div><br>
 
 
 <h2>Add a comment:</h2>
-<%= render @post.comments %>
-<%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
 
+<%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
+
+  <p>
+
+    <%= form.text_area :body, :class => "textarea" %>
   </p>
   <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+    <%= form.submit "Create Comment", :class => 'btn btn-primary btn-sm' %>
+  </p><br>
 <% end %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="comment-background">
+  <%= render @post.comments %>
+</div>
