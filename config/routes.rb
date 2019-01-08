@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'users/index'
 
-  # resources :users do  
+  # resources :users do
   #   resources :posts do
   #     delete '/commentes/:id' => 'commentes#destroy'
   #     resources :comments
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
-    resources :users 
+    resources :users
     resources :posts do
       delete '/commentes/:id' => 'commentes#destroy'
       resources :comments

@@ -15,13 +15,13 @@
   <% end %>
 
   <p>
-    <%= form.label :post %><br>
-    <%= form.text_field :description %>
+
+    <%= form.text_field :description, :class => "textarea" %>
   </p>
 
 
   <p>
-    <%= form.submit %>
+    <%= form.submit "Update Post", :class => 'btn btn-primary btn-sm'%>
   </p>
 
 <% end %>
