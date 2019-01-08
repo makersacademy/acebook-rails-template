@@ -41,7 +41,7 @@
               <label class="update">Update</label>
             </button>
               <div class="collapse" id="collapseExampleUpdate">
-                <div class="card card-body">
+                <div class="card card-body update">
                     <%= bootstrap_form_for(user_post) do |f| %>
                     <p><%= f.text_area :message,
                                         rows: 6,
@@ -50,7 +50,7 @@
                                         maxlength: 1000,
                                         placeholder: user_post.message,
                                         class: 'form-control' %></p>
-                  <%= f.submit "Accept", class: 'form-control create-post-button' %>
+                  <%= f.submit "Accept", class: 'form-control edit-post-button' %>
                 <% end %>
               </div>
             </div>
