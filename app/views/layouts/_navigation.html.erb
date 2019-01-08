@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: -5em">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
 
       <!-- Elements visible all the time -->
@@ -8,7 +8,28 @@
 
       <!-- Elements collapse on smaller devices -->
       <div class="col-sm-5">
-        <%= render 'layouts/navigation/collapsible_elements' %>
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapsible-content">
+  <ul class="nav navbar-nav ">
+    <% if user_signed_in? %>
+      <li class="mobile-menu" id="user_name">
+        <p> Hi, <%= current_user.first_name %></p>
+      </li>
+      <li class="mobile-menu">
+        <%= link_to 'News Feed', posts_path %>
+      </li>
+      <li class="mobile-menu">
+        <%= link_to 'My Profile', user_path(current_user.id) %>
+      </li>
+      <li class="mobile-menu">
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+      </li>
+
+    <% else %>
+      <li ><%= link_to 'Login', login_path %></li>
+      <li ><%= link_to 'Signup', signup_path %></li>
+    <% end %>
+  </ul>
+</div>
       </div><!-- col-sm-5 -->
   </div><!-- container -->
 </nav>
