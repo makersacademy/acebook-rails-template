@@ -5,13 +5,8 @@
     </div>
   <% end %>
 </div>
-<div class="container new-post-container">
-  <% if current_user %>
-    <%= link_to new_post_path do %>
-      <button class="btn btn-new-post">New Post</button>
-    <% end %>
-  <% end %>
-</div>
+<%= render 'form' %>
+
 <div class="container cards-container">
   <% @posts.each do |post| %>
     <div class="card">
