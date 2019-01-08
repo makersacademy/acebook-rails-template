@@ -46,7 +46,7 @@
           <p>Full Post</p>
         <% end %>
         <div class="collapse" id="collapseExample<%= post.id %>">
-          <div class="card card-body update">
+          <div id= "update" class="card card-body">
             <%= bootstrap_form_for(post) do |f| %>
             <p><%= f.text_area :message,
                                 rows: 6,
