@@ -6,10 +6,19 @@ RSpec.describe LikesController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
 
   describe "POST #create " do
-    it "responds with 302 if post created" do
+
+    def create_post
       allow(controller).to receive(:current_user).and_return(user)
       post :create, params: { post_id: test_post.id }
+    end
+
+    it "responds with 302 if post created" do
+      create_post
       expect(response).to have_http_status(302)
+    end
+
+    it "adds a like to the db" do
+      expect { create_post }.to change { Like.count }.by(1)
     end
   end
 
@@ -17,9 +26,13 @@ RSpec.describe LikesController, type: :controller do
 
     let!(:like) { FactoryBot.create(:like) }
 
-    it "responds with 302 if post deleted" do
+    def delete_like
       allow(controller).to receive(:current_user).and_return(user)
       delete :destroy, params: { post_id: like.post.id, id: like.id }
+    end
+
+    it "responds with 302 if post deleted" do
+      delete_like
       expect(response).to have_http_status(302)
     end
   end
