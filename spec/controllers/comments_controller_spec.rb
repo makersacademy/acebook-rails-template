@@ -1,8 +1,6 @@
 require 'rails_helper'
 RSpec.describe CommentsController, type: :controller do
-
   describe "POST #create " do
-
     def create_comment
       comment = FactoryBot.build(:comment)
       user = FactoryBot.create(:user)
@@ -20,5 +18,4 @@ RSpec.describe CommentsController, type: :controller do
       expect(response).to have_http_status(302)
     end
   end
-
 end
