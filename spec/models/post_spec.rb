@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  it { is_expected.to be }
+  it "responds to create" do
+    expect(subject).to respond_to(:create)
+  end
 end
