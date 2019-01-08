@@ -1,5 +1,4 @@
 class RegistrationsController < Devise::RegistrationsController
-
   after_action :create_timeline, only: [:create]
 
   private
@@ -21,6 +20,6 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
     def create_timeline
-        Timeline.create(user_id: @user.id)
+      Timeline.create(user_id: @user.id)
     end
 end
