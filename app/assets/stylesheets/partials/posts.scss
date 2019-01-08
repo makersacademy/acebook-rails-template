@@ -105,5 +105,10 @@
   max-width: 0;
   margin-bottom: 0;
   font-weight: normal;
+}
 
+div.dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+  text-align: center;
 }
