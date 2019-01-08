@@ -4,17 +4,15 @@
   <%= link_to 'Back', user_path(@user.id), :class => 'btn btn-secondary btn-sm' %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
 </div>
-
-
-  <div class="eachpost">
-    <div class="createdby">
-      <small><%= "created by: " %> <%= @user.email %></small><br>
-      <small> <%= @post.created_at %></small>
-    </div><br>
-    <h3>Post</h3>
-    <div id="post-description">
-      <%= @post.description %>
-    </div><br>
+<div class="eachpost">
+  <div class="createdby">
+    <small><%= "created by: " %> <%= @user.email %></small><br>
+    <small> <%= @post.created_at %></small>
+  </div><br>
+  <h3>Post</h3>
+  <div id="post-description">
+    <%= @post.description %>
+ </div><br>
 
 
 <h2>Add a comment:</h2>

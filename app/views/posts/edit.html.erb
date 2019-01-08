@@ -1,6 +1,6 @@
 <div id="logout">
   <%= link_to 'Back', :users, :class => 'btn btn-secondary btn-sm' %>
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
 </div>
 
 
@@ -12,7 +12,7 @@
     <small><%= "created by: " %> <%= @user.email %></small><br>
     <small> <%= @post.created_at %></small>
   </div><br>
-
+  
   <h3>Post</h3>
 
   <div id="post-description">
@@ -20,6 +20,7 @@
   </div><br>
 
   <h3>Edit</h3>
+
 <%= render 'form' %>
 
 </div>
