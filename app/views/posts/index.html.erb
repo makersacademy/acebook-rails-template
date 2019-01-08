@@ -12,13 +12,14 @@
   <% if user_signed_in? %>
     Hello! <%= current_user.email %>
   <% end %>
-</div>
+</div><br>
 
 
 <%= form_with scope: :post, url: posts_path,local: true do |form| %>
 
+
   <p>
-    <%= form.label :Post  %><br>
+    Add Post<br>
 
     <%= form.text_area :description, :class => "textarea" %><br>
 
@@ -32,15 +33,15 @@
 
     <tr>
       <% @user = User.find(post.creator_id) %>
-      <div id="eachpost">
-        <div id="createdby">
+      <div class="eachpost">
+        <div class="createdby">
           <small><%= "created by: " %> <%= @user.email %></small><br>
           <small> <%= post.created_at %></small>
         </div><br>
-        <div id="post-description">
+        <div>
           <%= post.description %>
         </div><br>
-        <div id="buttons">
+        <div class="buttons">
         <%= link_to 'Show', post_path(post), :class => 'btn btn-secondary btn-sm' %>
         <% if current_user.id == post.creator_id %>
         <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-secondary btn-sm' %>
