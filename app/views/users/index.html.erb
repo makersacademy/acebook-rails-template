@@ -1,0 +1,33 @@
+<h1>ACEBOOK</h1>
+
+<% if user_signed_in? %>
+    <div>Hello, <%= current_user.email %></div>
+<% end %>
+
+<p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
+<p><%= link_to "Update account details", edit_user_registration_path %></p>
+
+<br>
+
+<% @users.each do |user| %>
+  <ul>
+    <a href="<%=user_path(user)%>">  <%= user.email %> </a>
+  </ul>
+<% end %>
+
+<%= form_with scope: :post, url: posts_path,local: true do |form| %>
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :description %><br>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<% @posts.each do |post| %>
+  <% if post.creator_id == current_user.id %>
+    <p>Posted by: <%= post.creator_id %></p>
+    <p><%= post.description %></p>
+    <small><%= post.updated_at %> </small>
+
+    <% end %>
+<% end %>
