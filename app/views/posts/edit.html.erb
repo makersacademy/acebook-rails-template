@@ -1,0 +1,6 @@
+<%= form_for @post, method: :patch do |form| %>
+  <%= form.label :message %>
+  <%= form.text_field :message %>
+
+  <%= form.submit "Submit" %>
+<% end %>
