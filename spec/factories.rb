@@ -1,4 +1,7 @@
 FactoryBot.define do
+  factory :timeline do
+    
+  end
   factory :post do
     user
     message { "hello, world!" }
