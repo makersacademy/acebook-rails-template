@@ -19,7 +19,6 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    # @post.attributes =
     redirect_to posts_url
   end
 
