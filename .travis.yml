@@ -1,3 +1,12 @@
 language: ruby
 cache: bundler
 sudo: false
+script:
+  - rails db:create
+  - rails db:migrate RAILS_ENV=test
+  - rails rspec
+
+deploy:
+  provider: heroku
+  api_key: 4b1290c9-2ee0-41e3-9c80-dd1d94f2b0d1 
+  app: ruby-acebook
