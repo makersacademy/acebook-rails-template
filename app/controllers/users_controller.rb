@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    if @user.update(post_params)
+    if @user.update(user_params)
       redirect_back(fallback_location: root_path)
     else
       render 'edit'
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   private
 
-  def post_params
+  def user_params
     params.require(:user).permit(:avatar, :user_name, :birthday, :occupation, :bio)
   end
 end
