@@ -1,12 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe LikesController, type: :controller do
-
   let(:test_post) { FactoryBot.create(:post) }
   let(:user) { FactoryBot.create(:user) }
 
   describe "POST #create " do
-
     def create_like
       allow(controller).to receive(:current_user).and_return(user)
       post :create, params: { post_id: test_post.id }
@@ -23,7 +21,6 @@ RSpec.describe LikesController, type: :controller do
   end
 
   describe "DELETE #destroy " do
-
     let!(:like) { FactoryBot.create(:like) }
 
     def delete_like
@@ -36,5 +33,4 @@ RSpec.describe LikesController, type: :controller do
       expect(response).to have_http_status(302)
     end
   end
-
 end
