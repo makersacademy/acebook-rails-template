@@ -21,7 +21,4 @@ RSpec.describe CommentsController, type: :controller do
     end
   end
 
-  after :all do
-    logout
-  end
 end
