@@ -22,7 +22,11 @@
 
   <div>
     <%= f.label :Birthday %><br>
-    <%= f.text_field :birthday, :placeholder => 'yyyy-mm-dd' %>
+    <%= f.text_field :birthday, data:{ provide:'datepicker',
+                                      'date-format': 'yyyy-mm-dd',
+                                      'date-autoclose': 'true',
+                                      'date-today-btn': 'linked',
+                                      'date-end-date': '0d' } %>
   </div>
 
   <div>
@@ -42,4 +46,5 @@
 
 <% end %>
 
+<p><%= link_to "Back", users_path%></p>
 
