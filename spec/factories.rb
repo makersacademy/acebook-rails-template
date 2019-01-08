@@ -1,14 +1,14 @@
 FactoryBot.define do
   factory :timeline do
-    
+
   end
   factory :post do
     user
     message { "hello, world!" }
   end
   factory :like do
-    post { nil }
-    user { nil }
+    user
+    post
   end
   factory :user do
     id { generate :user_id }
