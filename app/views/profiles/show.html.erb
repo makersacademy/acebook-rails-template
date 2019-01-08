@@ -8,16 +8,30 @@
 
   <div class="row">
     <div class="col-3">
-      <% if @profile.username != current_user.username %>
-      <%= form_for @friend, url: profile_friends_url([:profile_id]) do |f| %>
-      <div class="form-group">
-        <%= f.hidden_field :requester, :value => current_user.username %>
-        <%= f.hidden_field :parent_friend, :value => @profile.username %>
 
+<% if @profile.username != current_user.username %>
+  <% friend = Friend.find_by(requester: current_user.username, parent_friend: @profile.username) %>
+  <% if friend %>
+    <%= form_for @friend, url: profile_friend_url([:profile_id]), method: :delete do |f| %>
+      <div class="form-group">
+      <%= f.hidden_field :requester, :value => current_user.username %>
+      <%= f.hidden_field :parent_friend, :value => @profile.username %>
       </div>
-        <%= f.submit "Add as friend" %>
-      <% end %>
-      <% end %>
+      <%= f.submit "unfriend" %>
+    <% end %>
+  <% else %>
+    <%= form_for @friend, url: profile_friends_url([:profile_id]) do |f| %>
+      <div class="form-group">
+      <%= f.hidden_field :requester, :value => current_user.username %>
+      <%= f.hidden_field :parent_friend, :value => @profile.username %>
+      </div>
+      <%= f.submit "Add as friend" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+
 
 --------------
 <br>

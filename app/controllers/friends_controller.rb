@@ -8,6 +8,12 @@ class FriendsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  def destroy
+    @friend = Friend.find_by({requester: params[:friend][:requester], parent_friend: params[:friend][:parent_friend]})
+    @friend.destroy
+    redirect_back(fallback_location: root_path)
+
+  end
 
 
 
