@@ -48,6 +48,7 @@ group :development, :test do
   gem 'orderly'
   gem 'launchy'
   gem 'coveralls'
+  gem 'shoulda'
 end
 
 group :development do
