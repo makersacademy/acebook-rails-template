@@ -13,6 +13,11 @@ body
   background: #3b5998;
   text-align: center;
 }
+#test
+{
+  color: white;
+  border:1px solid #021a40;
+}
 #face
 {
   margin-top: 70px;
@@ -42,4 +47,52 @@ body
 #account-cancel
 {
   text-align: center;
+}
+#eachpost
+{
+  border:3px solid #021a40;
+  margin-top: 5px;
+  width: 50%;
+  color: black;
+  margin: auto;
+  white-space: inherit;
+  word-break: break-word;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5%;
+}
+#createdby
+{
+  color: gray;
+  text-align: right;
+}
+#post-description
+{
+  font-style: italic;
+  font-size: 15px;
+}
+#buttons
+{
+  text-align: left;
+}
+.textarea
+{
+  border:3px solid #021a40;
+  width: 40%;
+  border-radius: 10%;
+}
+#logout
+{
+  text-align: right;
+  padding-right: 10px;
+}
+#updateAccount
+{
+  text-align: left;
+}
+#helloUser
+{
+  color: white;
+  text-align: left;
+  padding: 10px;
 }
