@@ -7,18 +7,18 @@ RSpec.describe LikesController, type: :controller do
 
   describe "POST #create " do
 
-    def create_post
+    def create_like
       allow(controller).to receive(:current_user).and_return(user)
       post :create, params: { post_id: test_post.id }
     end
 
     it "responds with 302 if post created" do
-      create_post
+      create_like
       expect(response).to have_http_status(302)
     end
 
     it "adds a like to the db" do
-      expect { create_post }.to change { Like.count }.by(1)
+      expect { create_like }.to change { Like.count }.by(1)
     end
   end
 
