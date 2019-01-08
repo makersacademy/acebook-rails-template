@@ -11,4 +11,7 @@ class UsersController < ApplicationController
     @post = Post.new
   end
 
+
+
+
 end

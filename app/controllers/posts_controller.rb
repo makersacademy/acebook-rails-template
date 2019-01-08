@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @user = current_user
   end
 
   def create
@@ -42,7 +43,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to posts_path
+    redirect_back(fallback_location: root_path)
   end
 
   private

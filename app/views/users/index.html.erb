@@ -4,6 +4,9 @@
     <div>Hello, <%= current_user.email %></div>
 <% end %>
 
+<p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
+<p><%= link_to "Update account details", edit_user_registration_path %></p>
+
 <br>
 
 <% @users.each do |user| %>
