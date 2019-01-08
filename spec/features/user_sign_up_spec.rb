@@ -302,10 +302,8 @@ RSpec.feature "My Page features", type: :feature do
     click_link "My Page"
     fill_in "post_text", with: "Hello this is my first post"
     click_button "Post"
-
-
   end
-<<<<<<< testing
+
   scenario "expect created post to now be on My Page" do
     visit "/"
     click_link "Sign up"
@@ -335,8 +333,4 @@ RSpec.feature "My Page features", type: :feature do
     expect(page.current_url).to eq("http://www.example.com/profiles/23")
 
   end
-
 end
-=======
-end
->>>>>>> master
