@@ -1,0 +1,62 @@
+<div id="logout">
+
+  <%= link_to "Update account details", edit_user_registration_path, :class => 'btn btn-primary btn-sm'  %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
+
+</div>
+
+<div id="helloUser">
+  <% if user_signed_in? %>
+    Hello, <%= current_user.email %>!
+  <% end %>
+</div><br>
+
+<% @users.each do |user| %>
+  <ul>
+    <% if user.id != current_user.id%>
+      <a href="<%=user_path(user)%>">  <%= user.email %></a><br>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with scope: :post, url: posts_path,local: true do |form| %>
+<p>
+  Add Post<br>
+
+  <%= form.text_area :description, :class => "textarea" %><br>
+
+  <%= form.submit "Create Post", :class => 'btn btn-primary btn-sm' %>
+</p>
+<% end %>
+
+<table align="center" id="test">
+  <% @posts.reverse.each do |post| %>
+    <tr>
+      <% @user = User.find(post.creator_id) %>
+      <% if current_user.id == post.creator_id %>
+      <div class="eachpost">
+        <div class="createdby">
+          <small><%= "created by: " %> <%= @user.email %></small><br>
+          <small> <%= post.created_at %></small>
+        </div><br>
+
+        <div>
+          <%= post.description %>
+        </div><br>
+
+        <div class="buttons">
+
+        <%= link_to 'Comment', post_path(post), :class => 'btn btn-secondary btn-sm' %>
+        <% if current_user.id == post.creator_id %>
+        <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-secondary btn-sm' %>
+        <%= link_to 'Delete', post_path(post), :class => 'btn btn-secondary btn-sm',
+                method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div><br>
+      <% end %>
+    </tr>
+    <% end %>
+  <% end %>
+
+</table>

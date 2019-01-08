@@ -1,0 +1,50 @@
+<div id="logout">
+
+  <%= link_to 'HomePage', users_path, :class => 'btn btn-secondary btn-sm' %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
+
+</div>
+
+
+
+
+<h1>Profile User ID: <%= @user.id %></h1>
+<br><br><br>
+
+<% if current_user.id == @user.id %>
+  <%= form_for @post, url: create_post_path(:id) do |f| %>
+    <p>
+      <%= f.label :PostContent %><br>
+      <%= f.text_area :description %><br>
+      <%= f.submit %>
+    </p>
+
+  <% end %>
+<% end %>
+
+
+<% @posts.each do |post| %>
+<div class="eachpost">
+
+  <div class="createdby">
+    <small><%= "created by: " %> <%= @user.email %></small><br>
+    <small> <%= post.created_at %></small>
+  </div><br>
+
+    <%= post.description %>
+  <br>
+
+  <div class="buttons">
+  <%= link_to 'Comment', post_path(post), :class => 'btn btn-secondary btn-sm' %>
+  <% if current_user.id == @user.id %>
+  <td><%= link_to 'Edit', edit_post_path(post) %></td> |
+  <td><%= link_to 'Destroy', post_path(post),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+  </div>
+</div>
+
+<br>
+<% end %>
+</div>
