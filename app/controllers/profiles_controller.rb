@@ -17,6 +17,7 @@ respond_to :html
     @bio = Bio.new
     @bio_profile = Bio.find_by(bio_username: @profile.username)
     @friend = Friend.new
+    @friends = Friend.where requester: @profile.username
   end
 
   def createpost
