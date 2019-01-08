@@ -1,6 +1,7 @@
 
 <div id="logout">
   <%= link_to 'Back', posts_path, :class => 'btn btn-secondary btn-sm' %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
 </div>
 
   <% @user = User.find(@post.creator_id) %>
@@ -28,6 +29,6 @@
   </p><br>
 <% end %>
 
-<div class="eachpost">
+<div class="comment-background">
   <%= render @post.comments %>
 </div>
