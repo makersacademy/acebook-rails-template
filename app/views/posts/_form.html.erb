@@ -1,0 +1,20 @@
+<div class="container new-post-container">
+  <% if current_user %>
+    <button class="btn btn-new-post" type="button" data-toggle="collapse" data-target="#collapseExampleNew" aria-expanded="false" aria-controls="collapseExampleNew">
+      New Post
+    </button>
+    <div class="collapse" id="collapseExampleNew">
+      <div class="card card-body">
+        <%= bootstrap_form_for(Post.new) do |f| %>
+          <%= f.text_area :message,
+                          rows: 6,
+                          required: true,
+                          maxlength: 1000,
+                          placeholder: 'How are you feeling today?',
+                          class: 'form-control' %>
+          <%= f.submit "Submit", class: 'form-control create-post-button' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

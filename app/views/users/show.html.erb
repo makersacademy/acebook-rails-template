@@ -16,12 +16,9 @@
     <% end %>
   </div>
 </div>
-<div class="container new-post-container">
-    <%= link_to new_post_path do %>
-      <button class="btn btn-new-post">New Post</button>
-    <% end %>
-  <% end %>
-</div>
+<% end %>
+<%= render 'posts/form' %>
+
 
 <div class="container cards-container">
   <% @posts.reverse.each do |user_post| %>
@@ -54,12 +51,12 @@
               <i class="fas fa-trash-alt"></i>
               <%= link_to 'Delete', user_post, method: :delete%>
             </button>
-            <button class="btn btn-edit" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-edit" type="button" data-toggle="collapse" data-target="#collapseExampleUpdate" aria-expanded="false" aria-controls="collapseExampleUpdate">
               <i class="far fa-edit"></i>
               <label class="update">Update</label>
             </button>
-              <div class="collapse" id="collapseExample">
-                <div class="card card-body">
+              <div class="collapse" id="collapseExampleUpdate">
+                <div id= "update" class="card card-body">
                     <%= bootstrap_form_for(user_post) do |f| %>
                     <p><%= f.text_area :message,
                                         rows: 6,

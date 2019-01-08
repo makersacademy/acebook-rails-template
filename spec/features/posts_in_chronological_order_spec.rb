@@ -7,8 +7,8 @@ RSpec.feature "Posts order", type: :feature do
     visit "/"
     fill_in_signup_form_and_submit
     post_hello_world_message
-    click_link "New Post"
-    fill_in "Message", with: "Goodbye, world!"
+    click_button "New Post"
+    fill_in("Message", with: 'Goodbye, world!', :match => :prefer_exact)
     click_button "Submit"
     expect("Goodbye, world!").to appear_before("Hello, world!")
     expect("Hello, world!").to_not appear_before("Goodbye, world!")
