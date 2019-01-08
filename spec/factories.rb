@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :timeline do
-
   end
   factory :post do
     user
@@ -18,8 +17,8 @@ FactoryBot.define do
     password { "password" }
   end
   factory :comment do
-    post { 1 }
-    user { 1 }
+    post
+    user
     message { "A comment!" }
   end
   sequence :email do |n|

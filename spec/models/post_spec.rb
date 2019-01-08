@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-
   subject { described_class.new }
   let(:user) { FactoryBot.create(:user) }
 
@@ -19,5 +18,4 @@ RSpec.describe Post, type: :model do
   it "is not valid without a name, email and password" do
     expect(subject).to_not be_valid
   end
-
 end

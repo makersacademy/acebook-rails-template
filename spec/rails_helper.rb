@@ -46,7 +46,6 @@ Shoulda::Matchers.configure do |config|
 end
 
 RSpec.configure do |config|
-
   config.include Devise::Test::IntegrationHelpers, type: :request
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Warden::Test::Helpers
