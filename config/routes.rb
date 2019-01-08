@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
-  get 'posts/index'
+
+  get 'users/index'
+
+  resources :users do  
+    resources :posts do
+      delete '/commentes/:id' => 'commentes#destroy'
+      resources :comments
+    end
+  end
 
   devise_for :users
-
   devise_scope :user do
 
     authenticated :user do
-      root 'posts#index', as: :authenticated_root
+      root 'users#index', as: :authenticated_root
     end
 
     unauthenticated do
@@ -14,14 +21,9 @@ Rails.application.routes.draw do
     end
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-    resources :posts do
-      delete '/commentes/:id' => 'commentes#destroy'
-      resources :comments
-    end
-
     root 'home_page#home'
-
-    get 'userprofile' => 'home_page#userprofile'
-
   end
+
+  match "/users/:id", to: "posts#create", via: "post", :as => :create_post
+
 end

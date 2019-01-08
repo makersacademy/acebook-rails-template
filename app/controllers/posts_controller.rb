@@ -20,12 +20,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params.merge(creator_id: current_user.id))
-
     if @post.save
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     else
       flash[:notice] = "Post can not be empty, please enter information."
-      redirect_to @post
+      redirect_back(fallback_location: root_path)
     end
   end
 

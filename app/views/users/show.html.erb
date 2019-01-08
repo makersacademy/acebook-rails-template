@@ -1,0 +1,19 @@
+<p>User ID: <%= @user.id %></p>
+
+
+<%= form_for @post, url: create_post_path(:id) do |f| %>
+  <p>
+    <%= f.label :PostContent %><br>
+    <%= f.text_area :description %><br>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+
+
+<% @posts.each do |post| %>
+
+  <p><%= post.description %></p>
+  <small><%= post.updated_at %> </small>
+
+<% end %>

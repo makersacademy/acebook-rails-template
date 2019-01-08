@@ -1,0 +1,21 @@
+<h1>ACEBOOK</h1>
+
+<% if user_signed_in? %>
+    <div>Hello, <%= current_user.email %></div>
+<% end %>
+
+<br>
+
+<% @users.each do |user| %>
+  <ul>
+    <a href="<%=user_path(user)%>">  <%= user.email %> </a> 
+  </ul>
+<% end %>
+
+<% @posts.each do |post| %>
+
+  <p>Posted by: <%= post.creator_id %></p>
+  <p><%= post.description %></p>
+  <small><%= post.updated_at %> </small>
+
+<% end %>
