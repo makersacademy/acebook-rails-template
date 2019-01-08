@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts
+    p @user.id
+    @posts = @user.posts.where("timeline_id = #{@user.id}").order(created_at: :desc)
     @allUsers = User.all.where("id != ?", current_user.id)
     @allUsers = @allUsers.order(first_name: :asc)
   end
