@@ -19,6 +19,8 @@ respond_to :html
     @friend = Friend.new
     @friends = Friend.where requester: @profile.username
     @like = Like.new
+    @avatar = Avatar.new
+    @avatar_profile = Avatar.find_by(username: @profile.username)
   end
 
   def createpost

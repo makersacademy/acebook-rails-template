@@ -21,7 +21,29 @@
 
 <br>--------------------------
 <br>
-<br>---------Picture---------
+<% if (@avatar_profile.is_a? Avatar)%>
+  <%= image_tag @avatar_profile.image.thumb.url %>
+  <br>
+  <%= link_to 'Edit', edit_avatar_path(@avatar_profile) %>
+<% else %>
+  <%= form_for @avatar, html: { multipart: true } do |f| %>
+    <div class="field">
+      <%= f.hidden_field :username, :value => current_user.username %>
+    </div>
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+      <% if f.object.image? %>
+        <%= image_tag f.object.image.thumb.url %>
+        <%= f.label :remove_image %>
+        <%= f.check_box :remove_image %>
+        <% end %>
+      </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+<% end %>
 <br>
 <br>--------------------------
 <br>
