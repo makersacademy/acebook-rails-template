@@ -33,6 +33,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_and_crop: 200
   end
 
+  version :mini do
+    process resize_and_crop: 40
+  end
+
 private
 
   def resize_and_crop(size)
