@@ -125,12 +125,25 @@
             <small class="text-muted">last updated: <%= localize(post.updated_at, :format => :short) %> </small>
           </div>
           <p class="mb-1"><%= post.text %></p>
-          <small class="text-muted">Comments (<%= post.comments.size %>) - Like - Edit - Delete</small>
+          <small class="text-muted">Comments (<%= post.comments.size %>) - <%= form_for @like, url: profile_post_likes_url(@profile.id, post.id) do |f| %>
+            <div class="form-group">
+            <%= f.hidden_field :post_id, :value => post.id %>
+            <%= f.hidden_field :profile_id, :value => @profile.id %>
+            </div>
+            <%= f.submit "Like", :class => "btn btn-primary btn-sm col-center-block"%>
+          <% end %>
+          - Edit - Delete</small>
         </a>
       </div>
       <br>
       <% end %>
-
+      <%= form_for @like, url: profile_post_likes_url(@profile, 1) do |f| %>
+        <div class="form-group">
+        <%= f.hidden_field :post_id, :value => 1 %>
+        <%= f.hidden_field :profile_id, :value => 1 %>
+        </div>
+        <%= f.submit "Like", :class => "btn btn-primary btn-sm col-center-block"%>
+      <% end %>
 
 
       <br>
