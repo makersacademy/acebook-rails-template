@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "create bio", type: :feature do
+RSpec.feature "add to there bio as a new user", type: :feature do
   scenario "can create the users bio and view them" do
     visit "/"
     click_link "Sign up"
