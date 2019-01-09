@@ -28,4 +28,13 @@ RSpec.feature "Friends", type: :feature do
       click_button("Add as friend")
 
   end
+  scenario "added friends shows up on friend list on your own page" do
+      generate_fake_users()
+      click_link "PaulKane12"
+      click_button("Add as friend")
+      click_link("My Page")
+      expect(page).to have_content("Friends (1)")
+      expect(page).to have_content("PaulKane12")
+
+  end
 end
