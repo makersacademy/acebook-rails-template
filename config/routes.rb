@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root 'posts#index', as: 'home'
   resources :posts
   match 'users/:id' => 'users#show', via: :get, as: 'profile_page'
+  resources :comments, :except => [:new]
+  get 'posts/:id/comments/new' => 'comments#new'
 end

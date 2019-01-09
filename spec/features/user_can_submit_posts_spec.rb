@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Posts", type: :feature do
   before :each do
     visit "/users/sign_in"
     fill_in "Email", with: "hello@test.com"
