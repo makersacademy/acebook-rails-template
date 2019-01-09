@@ -81,6 +81,7 @@
           <p> <%= post.likes.count %></p>
         <% else %>
           <%= link_to 'Like', post_likes_path(post), method: :post, :class => 'btn btn-secondary btn-sm' %>
+          <p> <%= post.likes.count %></p>
         <% end %>
 
 
