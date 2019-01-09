@@ -28,13 +28,14 @@
     <%= @user.bio %>
   </div>
   <div style="clear:both;"></div>
+<br>
 
 
-
+<br>
 
 <div id="profileForm">
   <%= form_with model: @user, local: true do |f| %>
-
+  <h1>Update Profile</h1>
     <div>
       <%= f.label :avatar %><br>
       <%= f.text_field :avatar, :class => "form-control" %>
