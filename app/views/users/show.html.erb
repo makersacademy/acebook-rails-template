@@ -8,8 +8,27 @@
 
 
 
-<h1>Profile User ID: <%= @user.id %></h1>
+<h1>
+  
+    <% if @user.user_name.length > 0 %>
+      <em> <%= @user.user_name %> </em>
+    <% else %>
+      <em> <%= @user.email %> </em>
+    <% end %>
+
+</h1>
 <br><br><br>
+
+<div id='userPicture'>
+  <img src=<%= @user.avatar %> width="150" height="150" class="avatar">
+  <p> <%= @user.user_name %> </p>
+  <p> <%= @user.birthday %> </p>
+  <p> <%= @user.occupation %> </p>
+  <p> <%= @user.bio %> </p>
+
+</div>
+
+
 
 <% if current_user.id == @user.id %>
   <%= form_for @post, url: create_post_path(:id) do |f| %>
