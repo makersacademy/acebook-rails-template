@@ -24,21 +24,15 @@
 
     <a style="color: white; text-decoration: none;" href="<%=user_path(user)%>">
       <div id="eachUser">
-
-
             <%= user.email %>
-
         <br>
       </div>
-
     </a>
     <% end %>
   </ul>
 <% end %>
 <hr>
   </div>
-
-
 
 <%= form_with scope: :post, url: posts_path,local: true do |form| %>
 <div id="createPost">
