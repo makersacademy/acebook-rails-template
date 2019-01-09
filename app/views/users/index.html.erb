@@ -32,7 +32,11 @@
 
     <a style="color: white; text-decoration: none;" href="<%=user_path(user)%>">
       <div id="eachUser">
-            <%= user.email %>
+        <% if user.user_name.length > 0 %>
+          <%= user.user_name %> 
+        <% else %>
+          <%= user.email %> 
+        <% end %>
         <br>
       </div>
     </a>
