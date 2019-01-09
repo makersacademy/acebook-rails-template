@@ -2,20 +2,7 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <h1 class="text-center">Create a new post</h1>
-<<<<<<< HEAD
-      <%= bootstrap_form_for(@post) do |f| %>
-        <%= f.text_area :message,
-                        rows: 6,
-                        required: true,
-                        maxlength: 1000,
-                        placeholder: 'How are you feeling today?',
-                        class: 'form-control' %>
-        <%=f.hidden_field :timeline_id, value: @timeline_id%>
-        <%= f.submit "Submit", class: 'form-control create-post-button' %>
-      <% end %>
-=======
       <%= render 'form' %>
->>>>>>> 94806bd055d76e8215f781d3a3db971f4d2dc28c
     </div>
   </div>
 </div>
