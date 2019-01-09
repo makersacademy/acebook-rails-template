@@ -180,3 +180,34 @@ body
   -webkit-box-shadow: 0px 1px 15px 3px #000000;
    box-shadow: 0px 1px 15px 3px #000000;
 }
+#header
+{
+  width: auto;
+  height: auto;
+}
+#profile
+{
+  float: left;
+  padding: 20px;
+}
+#backButton
+{
+  float: right;
+  padding: 20px;
+}
+#profileForm
+{
+width: 30%;
+margin: auto;
+}
+#userPicture
+{
+  float: left;
+  padding: 20px;
+}
+#aboutMe
+{
+  padding: 20px;
+  width: 50%;
+  margin: auto;
+}
