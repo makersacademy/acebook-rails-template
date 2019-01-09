@@ -2,8 +2,6 @@
   <%= image_tag @user.gravatar_url %><h1><%=@user.first_name%> <%=@user.last_name%></h1>
 </div>
 
-
-
 <% if current_user == @user %>
 <div class="dropdown container text-center" style="margin-bottom: 2em;">
   <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -11,8 +9,9 @@
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <% @allUsers.each do |user| %>
-  <!--   <h1><%= link_to user.first_name, user_path(user.id) %></h1><br> -->
-    <a class="dropdown-item" href="/users/<%= user.id%>"><%= user.first_name %><p><%= image_tag user.gravatar_url(:size => 20) %></p></a>
+        <a class="dropdown-item" href="/users/<%= user.id%>"><%= user.first_name %>
+          <p><%= image_tag user.gravatar_url(:size => 20) %></p>
+        </a>
     <% end %>
   </div>
 </div>
