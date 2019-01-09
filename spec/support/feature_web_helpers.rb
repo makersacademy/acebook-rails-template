@@ -8,12 +8,9 @@ def fill_in_signup_form_and_submit
 end
 
 def post_hello_world_message
-<<<<<<< HEAD
   visit "/posts"
   click_link "New Post"
-=======
   click_button "New Post"
->>>>>>> 94806bd055d76e8215f781d3a3db971f4d2dc28c
   fill_in "Message", with: "Hello, world!"
   click_button "Submit"
 end
