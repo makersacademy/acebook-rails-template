@@ -7,9 +7,10 @@ class CommentsController < ApplicationController
   def create
     @params = comment_params
     @user = current_user
-    @post = Post.find(id: @params.post_id)
-    @comment = Comment.create(user_id: @user.id, post_id: @params.post_id, content: @params.content)
-    redirect_to comments_url
+    p @params
+    @post = Post.find(@params[:post_id])
+    @comment = Comment.create(user_id: @user.id, post_id: @post, content: @params[:content])
+    redirect_to posts_url
   end
 
   def edit
