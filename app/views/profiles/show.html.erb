@@ -6,6 +6,15 @@
     display: block;
     margin: 0 auto;
 }
+.linkButton {
+     background: none;
+     border: none;
+     cursor: pointer;
+}
+.linkButton:hover {
+    text-decoration: underline;
+}
+
 </style>
 
 <div class="container">
@@ -119,33 +128,46 @@
       <h2>Messages (<%= @posts.size %>)</h2>
       <% @posts.each do |post| %>
       <div class="card-group">
-        <a href="<%= profile_post_path(@profile, post.id) %>" class="list-group-item list-group-item-action flex-column align-items-start">
+        <a class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">By <%= post.poster_username %></h5>
             <small class="text-muted">last updated: <%= localize(post.updated_at, :format => :short) %> </small>
           </div>
           <p class="mb-1"><%= post.text %></p>
-          <small class="text-muted">Comments (<%= post.comments.size %>) - <%= form_for @like, url: profile_post_likes_url(@profile.id, post.id) do |f| %>
-            <div class="form-group">
-            <%= f.hidden_field :post_id, :value => post.id %>
-            <%= f.hidden_field :profile_id, :value => @profile.id %>
-            </div>
-            <%= f.submit "Like", :class => "btn btn-primary btn-sm col-center-block"%>
+
+
+          <% pre_like = Like.find_by(profile_id: @profile.id, post_id: post.id) %>
+          <% if pre_like %>
+            <%= form_for @like, url: profile_post_like_url(@profile.id, post.id), method: :delete do |f| %>
+              <div class="form-group">
+              <%= f.hidden_field :post_id, :value => post.id %>
+              <%= f.hidden_field :profile_id, :value => @profile.id %>
+              </div>
+              <%= f.submit "Unlike (#{Like.where(post_id: post).size})", :class => "linkButton text-muted" %>
+            <% end %>
+          <% else %>
+            <%= form_for @like, url: profile_post_likes_url(@profile.id, post.id) do |f| %>
+              <div class="form-group">
+              <%= f.hidden_field :post_id, :value => post.id %>
+              <%= f.hidden_field :profile_id, :value => @profile.id %>
+              </div>
+              <%= f.submit "Like (#{Like.where(post_id: post).size})", :class => "linkButton text-muted" %>
+            <% end %>
           <% end %>
-          - Edit - Delete</small>
+
+          <form action="<%= profile_post_path(@profile, post.id) %>">
+            <input class="linkButton text-muted" type="submit" value="Comments (<%= post.comments.size %>)"/>
+          </form>
+
+
+
+
+
+          - Edit - Delete
         </a>
       </div>
       <br>
       <% end %>
-      <%= form_for @like, url: profile_post_likes_url(@profile, 1) do |f| %>
-        <div class="form-group">
-        <%= f.hidden_field :post_id, :value => 1 %>
-        <%= f.hidden_field :profile_id, :value => 1 %>
-        </div>
-        <%= f.submit "Like", :class => "btn btn-primary btn-sm col-center-block"%>
-      <% end %>
-
-
       <br>
       <br>
 
