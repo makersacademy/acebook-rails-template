@@ -37,6 +37,18 @@
   <br>
 
   <div class="buttons">
+
+    <% pre_like = post.likes.find{|like| like.user_id == current_user.id } %>
+    <% if pre_like %>
+      <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete , :class => 'btn btn-secondary btn-sm' %>
+      <p> <%= post.likes.count %></p>
+    <% else %>
+      <%= link_to 'Like', post_likes_path(post), method: :post, :class => 'btn btn-secondary btn-sm' %>
+      <p> <%= post.likes.count %></p>
+    <% end %>
+
+
+
   <%= link_to 'Comment', post_path(post), :class => 'btn btn-secondary btn-sm' %>
   <% if current_user.id == @user.id %>
   <td><%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-secondary btn-sm' %></td>
