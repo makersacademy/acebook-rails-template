@@ -9,10 +9,6 @@ class CommentsController < ApplicationController
     redirect_to comments_url
   end
 
-  def index
-    @comments = Comment.all
-  end
-
   def edit
      @comment = Comment.find(params[:id])
   end
@@ -32,6 +28,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:message)
+    params.require(:comment).permit(:content)
   end
 end
