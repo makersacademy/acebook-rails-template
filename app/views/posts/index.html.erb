@@ -1,6 +1,3 @@
-
-
-
 <div id="logout">
 
   <%= link_to "Update account details", edit_user_registration_path, :class => 'btn btn-primary btn-sm'  %>
@@ -14,9 +11,7 @@
   <% end %>
 </div><br>
 
-
 <%= form_with scope: :post, url: posts_path,local: true do |form| %>
-
 
   <p>
     Add Post<br>
@@ -26,11 +21,8 @@
     <%= form.submit "Create Post", :class => 'btn btn-primary btn-sm' %>
   </p>
 
-
 <table align="center" id="test">
-  <% @posts = @posts.reverse %>
-  <% @posts.each do |post| %>
-
+  <% @posts.reverse.each do |post| %>
     <tr>
       <% @user = User.find(post.creator_id) %>
       <div class="eachpost">
@@ -53,8 +45,5 @@
       <% end %>
     </tr>
   <% end %>
-
 </table>
-
-
 <% end %>
