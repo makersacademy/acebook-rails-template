@@ -1,5 +1,17 @@
 
+<div>
+
+
+
 <div id="helloUser">
+
+  <p><%= link_to "Go to Profile", edit_user_path(current_user), :class => 'btn btn-primary btn-sm'%></p>
+
+  <% if current_user.avatar != "" %>
+      <img src=<%= current_user.avatar %> width="150" height="150" class="avatar">
+  <% end %>
+
+  <br>
   <% if user_signed_in? %>
     Hello,
 
@@ -8,17 +20,26 @@
     <% else %>
       <em> <%= current_user.email %> </em>
     <% end %>
-
     !
   <% end %>
 </div><br>
 
 <div id="logout">
 
-  <%= link_to "Update account details", edit_user_registration_path, :class => 'btn btn-primary btn-sm'  %>
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
 
 </div>
+
+<%= form_with scope: :post, url: posts_path,local: true do |form| %>
+<div id="createPost">
+  <p>Add Post</p>
+
+  <%= form.text_area :description, :class => "textarea" %><br>
+
+  <%= form.submit "Create Post", :class => 'btn btn-primary btn-sm' %>
+</div><br>
+<% end %>
+
 <div style="clear:both;"></div>
 <br>
 <div id="users">
@@ -47,15 +68,7 @@
 <hr>
   </div>
 
-<%= form_with scope: :post, url: posts_path,local: true do |form| %>
-<div id="createPost">
-  <p>Add Post</p>
 
-  <%= form.text_area :description, :class => "textarea" %><br>
-
-  <%= form.submit "Create Post", :class => 'btn btn-primary btn-sm' %>
-</div><br>
-<% end %>
 
 <table align="center" id="test">
   <% @posts.reverse.each do |post| %>
@@ -89,4 +102,5 @@
 
 </table>
 
-<p><%= link_to "Profile", edit_user_path(current_user)%></p>
+
+</div>

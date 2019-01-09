@@ -1,49 +1,78 @@
-<h2> My Profile </h2>
+<div>
 
-<% if @user.avatar != "" %>
-    <img src=<%= @user.avatar %> width="150" height="150" class="avatar">
+  <div id="header">
+    <div id="profile">
+      <h2> My Profile </h2>
+    </div>
+
+    <div id="backButton">
+      <%= link_to "Update account details", edit_user_registration_path, :class => 'btn btn-primary btn-sm'  %>
+      <%= link_to "Back", users_path, :class => 'btn btn-secondary btn-sm'%>
+    </div>
+  </div>
+  <div style="clear:both;"></div>
+
+  <div id="userPicture">
+    <% if @user.avatar != "" %>
+        <img src=<%= @user.avatar %> width="150" height="150" class="avatar">
+    <% end %>
+      <br>
+    Name: <%= @user.user_name %><br>
+    Birthday: <%= @user.birthday %><br>
+    Occupation: <%= @user.occupation %><br>
+  </div>
+
+
+  <div id="aboutMe">
+    <h2>About me</h2><br>
+    <%= @user.bio %>
+  </div>
+  <div style="clear:both;"></div>
+<br>
+
+
+<br>
+
+<div id="profileForm">
+  <%= form_with model: @user, local: true do |f| %>
+  <h1>Update Profile</h1>
+    <div>
+      <%= f.label :avatar %><br>
+      <%= f.text_field :avatar, :class => "form-control" %>
+    </div>
+
+    <div>
+      <%= f.label :username %><br>
+      <%= f.text_field :user_name, :class => "form-control" %>
+    </div>
+
+    <div>
+      <%= f.label :Birthday %><br>
+      <%= f.text_field :birthday, data:{ provide:'datepicker',
+                                        'date-format': 'yyyy-mm-dd',
+                                        'date-autoclose': 'true',
+                                        'date-today-btn': 'linked',
+                                        'date-end-date': '0d' }, :class => "form-control" %>
+    </div>
+
+    <div>
+      <%= f.label :Occupation %><br>
+      <%= f.text_field :occupation, :class => "form-control" %>
+    </div>
+
+    <div>
+      <%= f.label :Bio %><br>
+      <%= f.text_field :bio, :class => "form-control" %>
+    </div>
+
+    <br>
+    <p>
+      <%= f.submit "Update Profile", :class => 'btn btn-primary btn-sm'%>
+    </p>
+</div>
   <% end %>
-<p> Name: <%= @user.user_name %></p>
-<p> Birthday: <%= @user.birthday %></p>
-<p> Occupation: <%= @user.occupation %></p>
-<p> Bio: <%= @user.bio %></p>
 
-<%= form_with model: @user, local: true do |f| %>
 
-  <div>
-    <%= f.label :avatar %><br>
-    <%= f.text_field :avatar %>
-  </div>
 
-  <div>
-    <%= f.label :username %><br>
-    <%= f.text_field :user_name %>
-  </div>
 
-  <div>
-    <%= f.label :Birthday %><br>
-    <%= f.text_field :birthday, data:{ provide:'datepicker',
-                                      'date-format': 'yyyy-mm-dd',
-                                      'date-autoclose': 'true',
-                                      'date-today-btn': 'linked',
-                                      'date-end-date': '0d' } %>
-  </div>
-
-  <div>
-    <%= f.label :Occupation %><br>
-    <%= f.text_field :occupation %>
-  </div>
-
-  <div>
-    <%= f.label :Bio %><br>
-    <%= f.text_field :bio %>
-  </div>
-
-  <br>
-  <p>
-    <%= f.submit %>
-  </p>
-
-<% end %>
-
-<p><%= link_to "Back", users_path%></p>
+</div>
