@@ -69,7 +69,7 @@ RSpec.describe PostsController, type: :controller do
 
       it "responds with a redirect" do
         delete_post
-        expect(response).to redirect_to posts_path
+        expect(response).to redirect_to user_path(post_in_db.user.id)
       end
     end
 
