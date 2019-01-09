@@ -4,21 +4,56 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <% end %>
+
+    <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/sessions/new">Sign in</a> </li>
+            <li class="breadcrumb-item"><a href="/users/new">Sign up</a> </li>
+            <li class="breadcrumb-item"><a href="/peeps/new">Post a Peep!</a> </li>
+            <li class="breadcrumb-item"><a href="/peeps">View peeps</a></li>
+          </ol>
+        </nav>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Acebook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "Home", home_path, class: 'nav-link'  %>
+          </li>
+          <li class="nav-item">
+            <% if user_signed_in? %>
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <% if notice %>
-      <p class="notice"><%= notice %></p>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
     <% end %>
 
     <% if alert %>
-      <p class="alert"><%= alert %></p>
+      <div class="alert alert-warning" role="alert">
+        <%= alert %>
+      </div>
     <% end %>
-    <%= yield %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>
