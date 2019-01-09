@@ -1,8 +1,10 @@
 <% @posts.each do |post| %>
   <p>
     <%= post.message %>
-    <%= link_to "Delete", post_path(post.id), method: :delete %>
-    <%= link_to "Edit", edit_post_path(post.id) %>
+    <% if post.user_id == @user.id  %>
+      <%= link_to "Delete", post_path(post.id), method: :delete %>
+      <%= link_to "Edit", edit_post_path(post.id) %>
+    <% end %>
     <%= link_to "Comment", "/posts/#{post.id}/comments/new" %>
     <% post.comments.each do |comment| %>
     <br> <%= comment.content %>
