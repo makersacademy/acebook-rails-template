@@ -1,5 +1,5 @@
 # AceBook   
-[![Build Status](https://travis-ci.org/tomasdoh/acebook-floppy-disk.svg?branch=master)](https://travis-ci.org/tomasdoh/acebook-floppy-disk)    [![Coverage Status](https://coveralls.io/repos/github/tomasdoh/acebook-floppy-disk/badge.svg?branch=master)](https://coveralls.io/github/tomasdoh/acebook-floppy-disk?branch=master)
+[![Build Status](https://travis-ci.org/tomasdoh/acebook-floppy-disk.svg?branch=master)](https://travis-ci.org/tomasdoh/acebook-floppy-disk)    [![Coverage Status](https://coveralls.io/repos/github/tomasdoh/acebook-floppy-disk/badge.svg?branch=master&service=github)](https://coveralls.io/github/tomasdoh/acebook-floppy-disk?branch=master&service=github)
 
 [Building a Facebook clone using Rails](https://aqueous-wave-77193.herokuapp.com/posts).
 

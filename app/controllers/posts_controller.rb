@@ -11,7 +11,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params.merge(user_id: current_user.id))
+    if params[:post][:user_id] != ""
+      @user = User.find(params[:post][:user_id])
+      @post = Post.create(post_params.merge(user_id: current_user.id, timeline_id: @user.timeline.id))
+    else
+      @post = Post.create(post_params.merge(user_id: current_user.id))
+    end
+
     flash[:success] = "Your post has been created"
     redirect_to posts_url
   end

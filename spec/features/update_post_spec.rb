@@ -8,7 +8,9 @@ RSpec.feature "Update posts", type: :feature do
     fill_in_signup_form_and_submit
     post_hello_world_message
     click_button "Update"
-    fill_in 'Message', with: "Goodbye, world!"
+    within "div#update.card.card-body" do
+      fill_in 'Message', with: "Goodbye, world!"
+    end
     click_button "Accept"
     expect(page).to have_content("Goodbye, world!")
     expect(page).not_to have_content("Hello, world!")

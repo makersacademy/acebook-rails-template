@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  after_action :create_timeline, only: [:create]
+  after_action :add_new_timeline_to_user, only: [:create]
   private
     def sign_up_params
       params.require(:user).permit(:first_name,
@@ -18,7 +18,7 @@ class RegistrationsController < Devise::RegistrationsController
                                     :current_password)
     end
 
-    def create_timeline
-      Timeline.create(user_id: @user.id)
+    def add_new_timeline_to_user
+      @user.create_timeline(user_id: @user.id)
     end
 end

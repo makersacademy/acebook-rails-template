@@ -41,7 +41,7 @@
 .post-time{
   font-size: 10px;
   float: left;
-  margin-top: 4px;
+  margin-top: 7px;
   margin-left: 5px;
 }
 .card-body {
@@ -50,7 +50,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   font-size: 14px;
   text-align: center;
 }
@@ -105,5 +105,10 @@
   max-width: 0;
   margin-bottom: 0;
   font-weight: normal;
+}
 
+div.dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+  text-align: center;
 }
