@@ -1,7 +1,7 @@
 
 <div id="helloUser">
   <% if user_signed_in? %>
-    Hello, 
+    Hello,
 
     <% if current_user.user_name.length > 0 %>
       <em> <%= current_user.user_name %> </em>
@@ -27,15 +27,15 @@
   <small id="usersHeader">Explore other posts and have a fun !</small>
   <hr>
 <% @users.each do |user| %>
-  <ul>
-    <% if user.id != current_user.id%>
 
+    <% if user.id != current_user.id%>
+    <ul id="eachUser">
     <a style="color: white; text-decoration: none;" href="<%=user_path(user)%>">
-      <div id="eachUser">
+      <div>
         <% if user.user_name.length > 0 %>
-          <%= user.user_name %> 
+          <%= user.user_name %>
         <% else %>
-          <%= user.email %> 
+          <%= user.email %>
         <% end %>
         <br>
       </div>
