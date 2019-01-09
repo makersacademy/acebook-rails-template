@@ -15,7 +15,7 @@
   <% if user_signed_in? %>
     Hello,
 
-    <% if current_user.user_name.length > 0 %>
+    <% if current_user.user_name != nil && current_user.user_name.length > 0  %>
       <em> <%= current_user.user_name %> </em>
     <% else %>
       <em> <%= current_user.email %> </em>
@@ -53,7 +53,7 @@
     <ul id="eachUser">
     <a style="color: white; text-decoration: none;" href="<%=user_path(user)%>">
       <div>
-        <% if user.user_name.length > 0 %>
+        <% if user.user_name != nil && user.user_name.length > 0  %>
           <%= user.user_name %>
         <% else %>
           <%= user.email %>
