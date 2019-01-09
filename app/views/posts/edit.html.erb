@@ -1,0 +1,8 @@
+<%= render 'shared/nav' %>
+
+
+<%= form_for @post, url: profile_post_path  do |f| %>
+  <%= f.text_area :text %>
+  <%= f.submit "update" %>
+
+<% end %>

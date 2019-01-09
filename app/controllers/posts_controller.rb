@@ -13,8 +13,21 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def homepage
+  def edit
+    @profile = User.find(params[:profile_id])
+    @post = Post.find(params[:id])
+  end
 
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to profile_post_path
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_back(fallback_location: root_path) 
   end
 
   def show
@@ -28,7 +41,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:text)
   end
 
 
