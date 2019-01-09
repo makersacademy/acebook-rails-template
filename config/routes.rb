@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :avatars
   resources :profiles do
     resources :bios, :friends
     resources :posts do

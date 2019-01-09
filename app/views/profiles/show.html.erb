@@ -30,8 +30,40 @@
 
 <br>--------------------------
 <br>
-<br>---------Picture---------
+<% if (@avatar_profile.is_a? Avatar)%>
+  <%= image_tag @avatar_profile.image.thumb.url %>
+<% end %>
+  <br>
 <br>
+<% if @profile.username == current_user.username %>
+  <% if (@avatar_profile.is_a? Avatar)%>
+    <%= form_for @avatar, url: avatar_path(@avatar_profile), method: :patch, html: { multipart: true } do |f| %>
+      <div class="field">
+        <%= f.hidden_field :username, :value => current_user.username %>
+      </div>
+      <div class="field">
+        <%= f.file_field :image %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Update" %>
+      </div>
+      <% end %>
+  <% else %>
+    <%= form_for @avatar, html: { multipart: true } do |f| %>
+      <div class="field">
+        <%= f.hidden_field :username, :value => current_user.username %>
+      </div>
+      <div class="field">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
 <br>--------------------------
 <br>
 <br>
