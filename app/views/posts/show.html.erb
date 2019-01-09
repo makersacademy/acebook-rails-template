@@ -1,7 +1,7 @@
 <% @user = User.find(@post.creator_id) %>
 
 <div id="logout">
-  <%= link_to 'Back', user_path(@user.id), :class => 'btn btn-secondary btn-sm' %>
+  <%= link_to 'Back', :users, :class => 'btn btn-secondary btn-sm' %>
     <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
 </div>
 <div class="comments">

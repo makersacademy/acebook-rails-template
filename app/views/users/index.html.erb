@@ -15,7 +15,7 @@
   <% if user_signed_in? %>
     Hello,
 
-    <% if current_user.user_name.length > 0 %>
+    <% if current_user.user_name != nil && current_user.user_name.length > 0  %>
       <em> <%= current_user.user_name %> </em>
     <% else %>
       <em> <%= current_user.email %> </em>
@@ -53,7 +53,7 @@
     <ul id="eachUser">
     <a style="color: white; text-decoration: none;" href="<%=user_path(user)%>">
       <div>
-        <% if user.user_name.length > 0 %>
+        <% if user.user_name != nil && user.user_name.length > 0  %>
           <%= user.user_name %>
         <% else %>
           <%= user.email %>
@@ -86,6 +86,19 @@
         </div><br>
 
         <div class="buttons">
+
+
+        <% pre_like = post.likes.find{|like| like.user_id == current_user.id } %>
+        <% if pre_like %>
+          <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete, :class => 'btn btn-secondary btn-sm' %>
+          <p> <%= post.likes.count %></p>
+        <% else %>
+          <%= link_to 'Like', post_likes_path(post), method: :post, :class => 'btn btn-secondary btn-sm' %>
+          <p> <%= post.likes.count %></p>
+        <% end %>
+
+
+
 
         <%= link_to 'Comment', post_path(post), :class => 'btn btn-secondary btn-sm' %>
         <% if current_user.id == post.creator_id %>

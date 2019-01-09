@@ -8,8 +8,27 @@
 
 
 
-<h1>Profile User ID: <%= @user.id %></h1>
+<h1>
+  
+    <% if @user.user_name.length > 0 %>
+      <em> <%= @user.user_name %> </em>
+    <% else %>
+      <em> <%= @user.email %> </em>
+    <% end %>
+
+</h1>
 <br><br><br>
+
+<div id='userPicture'>
+  <img src=<%= @user.avatar %> width="150" height="150" class="avatar">
+  <p> <%= @user.user_name %> </p>
+  <p> <%= @user.birthday %> </p>
+  <p> <%= @user.occupation %> </p>
+  <p> <%= @user.bio %> </p>
+
+</div>
+
+
 
 <% if current_user.id == @user.id %>
   <%= form_for @post, url: create_post_path(:id) do |f| %>
@@ -37,6 +56,18 @@
   <br>
 
   <div class="buttons">
+
+    <% pre_like = post.likes.find{|like| like.user_id == current_user.id } %>
+    <% if pre_like %>
+      <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete , :class => 'btn btn-secondary btn-sm' %>
+      <p> <%= post.likes.count %></p>
+    <% else %>
+      <%= link_to 'Like', post_likes_path(post), method: :post, :class => 'btn btn-secondary btn-sm' %>
+      <p> <%= post.likes.count %></p>
+    <% end %>
+
+
+
   <%= link_to 'Comment', post_path(post), :class => 'btn btn-secondary btn-sm' %>
   <% if current_user.id == @user.id %>
   <td><%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-secondary btn-sm' %></td>

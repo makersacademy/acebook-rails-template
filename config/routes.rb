@@ -2,13 +2,6 @@ Rails.application.routes.draw do
 
   get 'users/index'
 
-  # resources :users do
-  #   resources :posts do
-  #     delete '/commentes/:id' => 'commentes#destroy'
-  #     resources :comments
-  #   end
-  # end
-
   devise_for :users
   devise_scope :user do
 
@@ -24,7 +17,7 @@ Rails.application.routes.draw do
 
     resources :users
     resources :posts do
-      delete '/commentes/:id' => 'commentes#destroy'
+      resources :likes
       resources :comments
     end
 
