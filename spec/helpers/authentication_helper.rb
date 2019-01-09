@@ -1,0 +1,33 @@
+def generate_fake_users
+  visit "/"
+  click_link "Sign up"
+  fill_in "Firstname", with: "Alfred"
+  fill_in "Lastname", with: "Jones"
+  fill_in "Username", with: "AlfredJones66"
+  fill_in "Email", with: "alfredjones@gmail.com"
+  fill_in "Password", with: "password"
+  fill_in "Password confirmation", with: "password"
+  click_button "Sign up"
+  click_link "Sign Out"
+  visit "/"
+  click_link "Sign up"
+  fill_in "Firstname", with: "Ben"
+  fill_in "Lastname", with: "Smith"
+  fill_in "Username", with: "BenSmith12"
+  fill_in "Email", with: "bensmith@gmail.com"
+  fill_in "Password", with: "password"
+  fill_in "Password confirmation", with: "password"
+  click_button "Sign up"
+end
+
+def sign_in_as_tester
+  visit "/"
+  click_link "Sign up"
+  fill_in "Firstname", with: "test"
+  fill_in "Lastname", with: "test"
+  fill_in "Username", with: "test"
+  fill_in "Email", with: "test@gmail.com"
+  fill_in "Password", with: "password"
+  fill_in "Password confirmation", with: "password"
+  click_button "Sign up"
+end
