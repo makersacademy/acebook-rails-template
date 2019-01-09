@@ -135,7 +135,6 @@
           </div>
           <p class="mb-1"><%= post.text %></p>
 
-          <a href="<%= profile_post_path(@profile, post.id) %>" class="text-muted">Comments (<%= post.comments.size %>)</a>
 
           <% pre_like = Like.find_by(profile_id: @profile.id, post_id: post.id) %>
           <% if pre_like %>
@@ -144,7 +143,7 @@
               <%= f.hidden_field :post_id, :value => post.id %>
               <%= f.hidden_field :profile_id, :value => @profile.id %>
               </div>
-              <%= f.submit "Unlike", :class => "linkButton text-muted" %> <a class="text-muted">(<%= Like.where(post_id: post).size %>)</a>
+              <%= f.submit "Unlike (#{Like.where(post_id: post).size})", :class => "linkButton text-muted" %>
             <% end %>
           <% else %>
             <%= form_for @like, url: profile_post_likes_url(@profile.id, post.id) do |f| %>
@@ -152,9 +151,15 @@
               <%= f.hidden_field :post_id, :value => post.id %>
               <%= f.hidden_field :profile_id, :value => @profile.id %>
               </div>
-              <%= f.submit "Like", :class => "linkButton text-muted" %> <a class="text-muted">(<%= Like.where(post_id: post).size %>)</a>
+              <%= f.submit "Like (#{Like.where(post_id: post).size})", :class => "linkButton text-muted" %>
             <% end %>
           <% end %>
+
+          <%= form_for @posts
+
+          <a href="<%= profile_post_path(@profile, post.id) %>" class="text-muted">Comments (<%= post.comments.size %>)</a> -
+
+
 
 
 
