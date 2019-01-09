@@ -31,6 +31,11 @@
             <%= link_to "Home", home_path, class: 'nav-link'  %>
           </li>
           <li class="nav-item">
+            <% if user_signed_in? %>
+              <%= link_to "My Profile", profile_page_path(current_user[:id]), class: 'nav-link'  %>
+            <% end %>
+          </li>
+          <li class="nav-item">
             <%= link_to "New Post", new_post_path, class: 'nav-link'  %>
           </li>
           <li class="nav-item">
