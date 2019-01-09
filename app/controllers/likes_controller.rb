@@ -1,7 +1,6 @@
 class LikesController < ApplicationController
 
   before_action :find_post
-  before_action :find_like, only: [:destroy]
 
   def create
     if !liked?
@@ -11,6 +10,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
+    @like = @post.likes.find(params[:id])
     if liked?
       @like.destroy
       redirect_back(fallback_location: root_path)
@@ -18,10 +18,6 @@ class LikesController < ApplicationController
   end
 
   private
-
-  def find_like
-    @like = @post.likes.find(params[:id])
-  end
 
   def liked?
     Like.where(user_id: current_user.id, post_id: params[:post_id]).exists?
