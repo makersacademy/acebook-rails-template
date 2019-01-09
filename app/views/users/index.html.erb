@@ -8,14 +8,14 @@
     <% else %>
       <em> <%= current_user.email %> </em>
     <% end %>
-
     !
   <% end %>
+  <br>
+<p><%= link_to "Go to Profile", edit_user_path(current_user), :class => 'btn btn-primary btn-sm'%></p>
 </div><br>
 
 <div id="logout">
 
-  <%= link_to "Update account details", edit_user_registration_path, :class => 'btn btn-primary btn-sm'  %>
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
 
 </div>
@@ -88,5 +88,3 @@
   <% end %>
 
 </table>
-
-<p><%= link_to "Profile", edit_user_path(current_user)%></p>
