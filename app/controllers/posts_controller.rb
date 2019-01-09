@@ -10,8 +10,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:post][:user_id])
-    @post = Post.create(post_params.merge(user_id: current_user.id, timeline_id: @user.timeline.id))
+    if params[:post][:user_id] != ""
+      @user = User.find(params[:post][:user_id])
+      @post = Post.create(post_params.merge(user_id: current_user.id, timeline_id: @user.timeline.id))
+    else
+      @post = Post.create(post_params.merge(user_id: current_user.id))
+    end
+
     flash[:success] = "Your post has been created"
     redirect_to posts_url
   end
@@ -23,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.where("timeline_id IS NULL").order(created_at: :desc)
   end
 
   def show
