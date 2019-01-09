@@ -155,9 +155,9 @@
             <% end %>
           <% end %>
 
-          <%= form_for @posts
-
-          <a href="<%= profile_post_path(@profile, post.id) %>" class="text-muted">Comments (<%= post.comments.size %>)</a> -
+          <form action="<%= profile_post_path(@profile, post.id) %>">
+            <input class="linkButton text-muted" type="submit" value="Comments (<%= post.comments.size %>)"/>
+          </form>
 
 
 
