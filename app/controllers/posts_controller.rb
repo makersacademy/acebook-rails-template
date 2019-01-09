@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
+  before_action :require_login
+
   def new
     if current_user
       @post = Post.new
+      @timeline_id = params[:timelineid]
     else
       redirect_to login_url
     end
@@ -35,9 +38,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def self.timelinePost(user_id)
+    @timelinepost = Post.where("timeline_id = #{user_id}").order(created_at: :desc)
+  end
+
   private
 
     def post_params
-      params.require(:post).permit(:message)
+      params.require(:post).permit(:message, :timeline_id)
     end
 end

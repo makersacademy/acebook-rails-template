@@ -1,6 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
   after_action :create_timeline, only: [:create]
-
   private
     def sign_up_params
       params.require(:user).permit(:first_name,

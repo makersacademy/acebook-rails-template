@@ -9,6 +9,7 @@
                         maxlength: 1000,
                         placeholder: 'How are you feeling today?',
                         class: 'form-control' %>
+        <%=f.hidden_field :timeline_id, value: @timeline_id%>
         <%= f.submit "Submit", class: 'form-control create-post-button' %>
       <% end %>
     </div>

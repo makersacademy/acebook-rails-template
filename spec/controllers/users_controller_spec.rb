@@ -8,9 +8,9 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "GET #show" do
-    it "responds with 200" do
+    it "responds with 302" do
       get :show, params: { id: user.id }
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(302)
     end
   end
 
