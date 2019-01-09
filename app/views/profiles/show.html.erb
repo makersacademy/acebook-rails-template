@@ -10,18 +10,20 @@
 
 <div class="container">
   <h6> Welcome to <%= @profile.username %>'s profile page </h6>
-
-
+  <br>
 
 
   <div class="row">
     <div class="col-3">
 
---------------
+
+
+
+<br>--------------------------
 <br>
-<br>--- Picture ---
+<br>---------Picture---------
 <br>
-<br>--------------
+<br>--------------------------
 <br>
 <br>
 
@@ -92,7 +94,7 @@
 <h2>Friends (<%= @friends.size %>)</h2>
   <% @friends.each do |friend| %>
     <ul class="list-group list-group-flush">
-      <a class="list-group-item list-group-item-action">  <%= friend.parent_friend  %></a>
+      <a class="list-group-item">  <%= friend.parent_friend  %></a>
     </ul>
   <% end %>
 
