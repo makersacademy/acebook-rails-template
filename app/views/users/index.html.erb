@@ -1,9 +1,3 @@
-<div id="logout">
-
-  <%= link_to "Update account details", edit_user_registration_path, :class => 'btn btn-primary btn-sm'  %>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
-
-</div>
 
 <div id="helloUser">
   <% if user_signed_in? %>
@@ -19,30 +13,44 @@
   <% end %>
 </div><br>
 
+<div id="logout">
+
+  <%= link_to "Update account details", edit_user_registration_path, :class => 'btn btn-primary btn-sm'  %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
+
+</div>
+<div style="clear:both;"></div>
+<br>
+<div id="users">
+  <h1 id="usersHeader">Users Profile</h1>
+
+  <small id="usersHeader">Explore other posts and have a fun !</small>
+  <hr>
 <% @users.each do |user| %>
   <ul>
     <% if user.id != current_user.id%>
-      <a href="<%=user_path(user)%>">  
 
-        <% if user.user_name.length > 0 %>
-          <%= user.user_name %> 
-        <% else %>
-          <%= user.email %> 
-        <% end %>
-        
-      </a><br>
+    <a style="color: white; text-decoration: none;" href="<%=user_path(user)%>">
+      <div id="eachUser">
+            <%= user.email %>
+        <br>
+      </div>
+    </a>
+
     <% end %>
   </ul>
 <% end %>
+<hr>
+  </div>
 
 <%= form_with scope: :post, url: posts_path,local: true do |form| %>
-<p>
-  Add Post<br>
+<div id="createPost">
+  <p>Add Post</p>
 
   <%= form.text_area :description, :class => "textarea" %><br>
 
   <%= form.submit "Create Post", :class => 'btn btn-primary btn-sm' %>
-</p>
+</div><br>
 <% end %>
 
 <table align="center" id="test">
