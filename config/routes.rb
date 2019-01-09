@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :profiles do
     resources :bios, :friends
     resources :posts do
-      resources :comments
+      resources :comments, :likes
     end
   end
 
