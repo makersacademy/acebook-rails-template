@@ -19,6 +19,9 @@ class AvatarsController < ApplicationController
 
   # GET /avatars/1/edit
   def edit
+    # @avatar.update(avatar_params)
+
+    # redirect_back(fallback_location: root_path)
   end
 
   # POST /avatars
@@ -33,15 +36,18 @@ class AvatarsController < ApplicationController
   # PATCH/PUT /avatars/1
   # PATCH/PUT /avatars/1.json
   def update
-    respond_to do |format|
-      if @avatar.update(avatar_params)
-        format.html { redirect_to @avatar, notice: 'Avatar was successfully updated.' }
-        format.json { render :show, status: :ok, location: @avatar }
-      else
-        format.html { render :edit }
-        format.json { render json: @avatar.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+      # if
+        @avatar.update(avatar_params)
+        redirect_back(fallback_location: root_path)
+
+        #format.html { redirect_to @avatar, notice: 'Avatar was successfully updated.' }
+        #format.json { render :show, status: :ok, location: @avatar }
+      #else
+        #format.html { render :edit }
+        #format.json { render json: @avatar.errors, status: :unprocessable_entity }
+      #end
+    #end
   end
 
   # DELETE /avatars/1
