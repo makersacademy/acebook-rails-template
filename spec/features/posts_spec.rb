@@ -16,6 +16,3 @@ require "helpers/authentication_helper"
 #     click_button "submit"
 #     expect(page).to have_content("Hello!!")
 #   end
-
-
-end

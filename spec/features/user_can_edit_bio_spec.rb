@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "edit bio", type: :feature do
-  scenario "can edit the users bio " do
+RSpec.feature "bio", type: :feature do
+  scenario "write bio" do
       visit "/"
       click_link "Sign up"
       fill_in "Firstname", with: "Ben"
