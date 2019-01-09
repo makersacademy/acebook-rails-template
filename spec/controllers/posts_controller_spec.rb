@@ -34,17 +34,34 @@ RSpec.describe PostsController, type: :controller do
     end
 
     describe "POST #create" do
-      def create_post
-        post :create, params: { post: { id: test_post.id, message: test_post.message } }
+      def create_global_post
+        allow(User).to receive(:find).and_return(user)
+        post :create, params: { post: { id: test_post.id, message: test_post.message, user_id: "" } }
       end
 
       it "responds creates a post in db" do
-        expect { create_post }.to change { Post.count }.by(1)
+        expect { create_global_post }.to change { Post.count }.by(1)
       end
 
       it "creates redirects to posts url" do
-        create_post
+        create_global_post
         expect(response).to redirect_to posts_url
+      end
+
+      def create_timeline_post
+        timeline = FactoryBot.create(:timeline)
+        user_with_timeline = FactoryBot.create(:user, timeline: timeline)
+        allow(User).to receive(:find).and_return(user_with_timeline)
+        post :create, params: { post: { id: test_post.id, message: test_post.message, user_id: timeline.user.id } }
+      end
+
+      it "responds creates a post in db" do
+        expect { create_timeline_post }.to change { Post.count }.by(1)
+      end
+
+      it "creates redirects to the timeline" do
+        create_timeline_post
+        expect(response).to have_http_status(302)
       end
     end
 
@@ -68,7 +85,7 @@ RSpec.describe PostsController, type: :controller do
 
       it "responds with a redirect" do
         delete_post
-        expect(response).to redirect_to posts_path
+        expect(response).to redirect_to user_path(post_in_db.user.id)
       end
     end
 

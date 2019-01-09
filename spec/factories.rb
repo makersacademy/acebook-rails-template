@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :timeline do
+    user
   end
 
   factory :post do
