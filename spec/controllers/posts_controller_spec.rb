@@ -35,7 +35,8 @@ RSpec.describe PostsController, type: :controller do
 
     describe "POST #create" do
       def create_post
-        post :create, params: { post: { id: test_post.id, message: test_post.message } }
+        allow(User).to receive(:find).and_return(user)
+        post :create, params: { post: { id: test_post.id, message: test_post.message, user_id: "" } }
       end
 
       it "responds creates a post in db" do

@@ -13,14 +13,12 @@ class PostsController < ApplicationController
     if params[:post][:user_id] != ""
       @user = User.find(params[:post][:user_id])
       @post = Post.create(post_params.merge(user_id: current_user.id, timeline_id: @user.timeline.id))
-      flash[:success] = "Your post has been created"
       redirect_to user_path(@user)
     else
       @post = Post.create(post_params.merge(user_id: current_user.id))
-      flash[:success] = "Your post has been created"
       redirect_to posts_url
     end
-
+      flash[:success] = "Your post has been created"
   end
 
   def destroy
@@ -41,7 +39,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
       flash[:success] = "Your post has been updated"
-      redirect_to posts_path
+      redirect_to user_path(@post.user)
     end
   end
 
