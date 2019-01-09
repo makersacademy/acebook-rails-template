@@ -12,14 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.hidden_field :username, :value => current_user.username %>
   </div>
 
   <div class="field">
     <%= f.label :image %>
     <%= f.file_field :image %>
-    
+
   </div>
 
   <div class="actions">

@@ -20,52 +20,42 @@
 <div class="container">
   <h6> Welcome to <%= @profile.username %>'s profile page </h6>
   <br>
-
-
   <div class="row">
     <div class="col-3">
 
 
-
-
-<br>--------------------------
-<br>
-<% if (@avatar_profile.is_a? Avatar)%>
-  <%= image_tag @avatar_profile.image.thumb.url %>
-<% end %>
-  <br>
-<br>
-<% if @profile.username == current_user.username %>
   <% if (@avatar_profile.is_a? Avatar)%>
-    <%= form_for @avatar, url: avatar_path(@avatar_profile), method: :patch, html: { multipart: true } do |f| %>
-      <div class="field">
-        <%= f.hidden_field :username, :value => current_user.username %>
-      </div>
-      <div class="field">
-        <%= f.file_field :image %>
-      </div>
-      <div class="actions">
-        <%= f.submit "Update" %>
-      </div>
+
+  <div class="card">
+    <img class="card-img-top" <%= image_tag @avatar_profile.image.thumb.url %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @profile.firstname %> <%= @profile.lastname %></h5>
+    </div>
+  </div>
+  <% end %>
+  <% if @profile.username == current_user.username %>
+    <% if (@avatar_profile.is_a? Avatar)%>
+
+    <form action="<%= edit_avatar_path(@avatar_profile)  %>">
+      <input class="linkButton text-muted" type="submit" value="Change Profile Picture"/>
+    </form>
+
+    <% else %>
+    <h6>Upload an avatar</h6>
+      <%= form_for @avatar, html: { multipart: true } do |f| %>
+        <div class="field">
+          <%= f.hidden_field :username, :value => current_user.username %>
+        </div>
+        <div class="field">
+          <%= f.file_field :image %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
       <% end %>
-  <% else %>
-    <%= form_for @avatar, html: { multipart: true } do |f| %>
-      <div class="field">
-        <%= f.hidden_field :username, :value => current_user.username %>
-      </div>
-      <div class="field">
-        <%= f.label :image %>
-        <%= f.file_field :image %>
-      </div>
-      <div class="actions">
-        <%= f.submit %>
-      </div>
     <% end %>
   <% end %>
-<% end %>
 
-<br>--------------------------
-<br>
 <br>
 
 <% if @profile.username != current_user.username %>
@@ -143,8 +133,7 @@
 
     </div>
     <div class="col-sm">
-      -- Add new post --
-      <br>
+      <h2>Post on <%= @profile.firstname %>'s wall:</h2>
       <%= form_for @post, url: create_post_path([:profile_id]) do |f| %>
       <%= f.hidden_field :recipient_username, :value => @profile.username %>
       <div class="input-group">
@@ -157,7 +146,7 @@
       <% end %>
       <br>
       <br>
-      <h2>Messages (<%= @posts.size %>)</h2>
+      <h2>Posts (<%= @posts.size %>)</h2>
       <% @posts.each do |post| %>
       <div class="card-group">
         <a class="list-group-item list-group-item-action flex-column align-items-start">
