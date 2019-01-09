@@ -15,7 +15,7 @@
   <div id="userPicture">
     <% if @user.avatar != "" %>
         <img src=<%= @user.avatar %> width="150" height="150" class="avatar">
-      <% end %>
+    <% end %>
       <br>
     Name: <%= @user.user_name %><br>
     Birthday: <%= @user.birthday %><br>
@@ -28,6 +28,9 @@
     <%= @user.bio %>
   </div>
   <div style="clear:both;"></div>
+
+
+
 
 <div id="profileForm">
   <%= form_with model: @user, local: true do |f| %>
