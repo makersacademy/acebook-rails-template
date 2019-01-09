@@ -1,7 +1,15 @@
 
 <div id="helloUser">
   <% if user_signed_in? %>
-    Hello, <%= current_user.email %>!
+    Hello, 
+
+    <% if current_user.user_name.length > 0 %>
+      <em> <%= current_user.user_name %> </em>
+    <% else %>
+      <em> <%= current_user.email %> </em>
+    <% end %>
+
+    !
   <% end %>
 </div><br>
 
@@ -24,10 +32,15 @@
 
     <a style="color: white; text-decoration: none;" href="<%=user_path(user)%>">
       <div id="eachUser">
-            <%= user.email %>
+        <% if user.user_name.length > 0 %>
+          <%= user.user_name %> 
+        <% else %>
+          <%= user.email %> 
+        <% end %>
         <br>
       </div>
     </a>
+
     <% end %>
   </ul>
 <% end %>
