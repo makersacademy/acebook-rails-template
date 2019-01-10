@@ -104,8 +104,11 @@
     <li class="list-group-item py-0 list-group-item-secondary">Location:</li>
     <li class="list-group-item"> <%= @bio_profile.location %></li>
   </ul>
-  <br>
-  <br>
+
+<form action="<%= edit_profile_bio_path(@bio_profile) %>">
+  <input class="linkButton text-muted" type="submit" value="Edit your Bio"/>
+</form>
+<br>
   <% else %>
   <h2>About me</h2>
     <%= form_for @bio, url: create_bio_path([:profile_id]) do |f| %>
