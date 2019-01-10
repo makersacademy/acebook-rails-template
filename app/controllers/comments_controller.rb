@@ -19,13 +19,13 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     @comment.update(comment_params)
-    redirect_to comments_url
+    redirect_to posts_url
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to comments_url
+    redirect_to posts_url
   end
 
   private
