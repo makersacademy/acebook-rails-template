@@ -134,16 +134,15 @@
   <br>
 
 <h2>Friends (<%= @friends.size %>)</h2>
-  <% @friends.each do |friend| %>
-  <div class="card-img-left">
-    <% avatar = Avatar.find_by(username: friend.parent_friend) %>
-    <%= image_tag avatar.image.mini.url %>
-      </div>
-    <ul class="list-group list-group-flush">
-      <a class="list-group-item">  <%= friend.parent_friend  %></a>
-    </ul>
-  <% end %>
-
+<% @friends.each do |friend| %>
+<div class="card-img-left">
+  <% avatar = Avatar.find_by(username: friend.parent_friend) %>
+  <%= image_tag avatar.image.mini.url %>
+    </div>
+  <ul class="list-group list-group-flush">
+    <a href="<%=profile_url(User.find_by(username: friend.parent_friend)) %>"class="list-group-item list-group-item-action">  <%= friend.parent_friend  %></a>
+  </ul>
+<% end %>
 
 
     </div>
