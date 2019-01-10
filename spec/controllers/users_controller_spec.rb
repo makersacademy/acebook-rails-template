@@ -6,7 +6,6 @@ RSpec.describe UsersController, type: :controller do
     request.env["HTTP_REFERER"] = root_url
     @user = User.new(:email => 'el@el.com', :password => '1234567')
     @user.save
-    # @user = User.create!(email: "test@test.com", password: 'testtest')
   end
 
   describe "GET #index" do
@@ -29,9 +28,9 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "PUT update" do
+  describe "PUT #update" do
     it "updates the requested user" do
-      put :update, :params => {:id => @user.id, :user => @user.attributes = { :email => "new@new.com", :password => "1234567" }}
+      put :update, :params => {:id => @user.id, :user => @user.attributes = { :email => "new@new.com", :password => "qwertyu" }}
       expect(@user.email).to eq("new@new.com") 
       expect(response).to redirect_to root_url
       # expect(response).to redirect_to ('/')
@@ -39,6 +38,3 @@ RSpec.describe UsersController, type: :controller do
   end
 
 end
-
-
-# , :lmao => true
