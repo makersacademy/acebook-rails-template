@@ -12,9 +12,9 @@ RSpec.feature "bio", type: :feature do
       fill_in "Password confirmation", with: "password"
       click_button "Sign up"
       click_link "My Page"
-      fill_in "Age", with: "50"
-      fill_in "Bio", with: "I like long walks and wine"
-      fill_in "Location", with: "Swansea"
+      fill_in "bio_age", with: "50"
+      fill_in "bio_bio", with: "I like long walks and wine"
+      fill_in "bio_location", with: "Swansea"
       click_button "Update"
       expect(page).to have_content("50")
       expect(page).to have_content("I like long walks and wine")

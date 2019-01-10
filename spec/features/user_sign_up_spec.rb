@@ -34,25 +34,16 @@ RSpec.feature "Sign Up page", type: :feature do
   end
   scenario "Sign up a user" do
     sign_up_as_ben()
-    expect(page).to have_content("Welcome! You have signed up successfully.")
+    expect(page).to have_content("Welcome to BenSmith12's profile page")
   end
 end
 
 RSpec.feature "Logged in features", type: :feature do
-  scenario "displays the correct message when signed in/up" do
-    sign_up_as_ben()
-    expect(page).to have_content("Welcome! You have signed up successfully.")
-    expect(page).to have_content("Welcome to whateverweregonnacallit!")
-  end
   scenario "displays navigation bar buttons onced signed in" do
     sign_up_as_ben()
     expect(page).to have_link("Home")
     expect(page).to have_link("My Page")
     expect(page).to have_link("Logout")
-  end
-  scenario "correct url after signing up" do
-    sign_up_as_ben()
-    expect(page.current_url).to eq("http://www.example.com/")
   end
   scenario "personal home page has your own username" do
     sign_up_as_ben()
@@ -110,19 +101,6 @@ scenario "My page has correct text subject to that user" do
     sign_up_as_ben()
     click_link "My Page"
     expect(page).to have_content("Bio")
-  end
-  scenario "my profile has area to add new posts" do
-    sign_up_as_ben()
-    click_link "My Page"
-    expect(page).to have_content("-- Add new post --")
-  end
-  scenario "my profile page correct content" do
-    sign_up_as_ben()
-    click_link "My Page"
-    expect(page).to have_content("-- Add new post -- ")
-    expect(page).to have_content("Age")
-    expect(page).to have_content("Bio")
-    expect(page).to have_content("Location")
   end
   scenario "My page has submit button" do
     sign_up_as_ben()
