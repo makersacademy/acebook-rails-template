@@ -1,19 +1,36 @@
 
-<% if user_signed_in? %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> AceBook </title>
+  </head>
+  <body>
+    <span class="align-middle">
+    <div class="container">
+    <div class="text-center">
+    <h1>AceBook</h1>
+    <br>
+
+    <% if user_signed_in? %>
 
 
-<%= render 'shared/nav' %>
+    <%= render 'shared/nav' %>
 
 
-Welcome to whateverweregonnacallit!
+    <%else %>
+    <div class="container">
+      <div class="text-center">
+        <br>
+        <h6>Please Login or Sign Up to access AceBook</h6>
+        <br>
+        <h4><%= link_to "Login", new_user_session_path%></h4>
+        <h4><%= link_to "Sign up", new_user_registration_path%></h4>
+    <% end %>
+    </div>
+    </div>
+  </div>
+  </div>
 
-
-<%else %>
-<div class="container">
-  <div class="text-center">
-    <h1>Please Sign Up or Sign In to view the content.</h1>
-    <h2><%= link_to "Sign up", new_user_registration_path%>
-
-<% end %>
-</div>
-</div>
+  </body>
+</html>
