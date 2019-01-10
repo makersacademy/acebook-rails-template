@@ -45,4 +45,4 @@ In your terminal:
 If you have any issues with the online DB or you find in a situation where you have to add a column to your schema
 go on 'https://dashboard.heroku.com/apps/your-app/settings' and click on reveal config vars.
 You can find the DATABASE_URL. Open it in your browser and it will open TablePlus.
-You can write the sql commands there in order to alter your tables.
+You can write the sql commands there in order to alter your tables!
