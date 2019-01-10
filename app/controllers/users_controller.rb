@@ -6,4 +6,12 @@ class UsersController < ApplicationController
                 @friend.new('Darth', 'Vader'), @friend.new('Bill', 'Tomson'),
                 @friend.new('Greg', 'Jones')]
   end
+
+  def remove
+    User.destroy(params[:format])
+
+    if @user.destroy
+      redirect_to root_url, notice: "User deleted."
+    end
+  end
 end
