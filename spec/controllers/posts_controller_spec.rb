@@ -4,7 +4,11 @@ require 'spec_helper'
 RSpec.describe PostsController, type: :controller do
 
   it 'should show post' do
+<<<<<<< HEAD
     post = Post.create!(description: 'content')
+=======
+    post = Post.create!(description: "content")
+>>>>>>> 6b9ce8a438e04e8d0a2810a7bf108a2f64d7c310
     get :show, params: { id: post.id }
     expect(response.status).to eq(200)
   end
