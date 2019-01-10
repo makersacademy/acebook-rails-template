@@ -23,6 +23,8 @@ class BiosController < ApplicationController
   end
 
   def update
+    @bio.update({age: params[:bio][:age], bio: params[:bio][:bio], location: params[:bio][:location], bio_username: params[:bio][:bio_username]})
+    redirect_to profile_path
   end
 
   def destroy
