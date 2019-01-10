@@ -20,8 +20,9 @@ class UsersController < ApplicationController
 
     if @user.update(user_params)
       redirect_back(fallback_location: root_path)
-    else
-      render 'edit'
+    # else # does not handle error right now user can blank all profile info
+    #   flash[:notice] = "Error" 
+    #   redirect_back(fallback_location: root_path)
     end
   end
 
