@@ -89,8 +89,6 @@
 
         <div class="buttons">
 
-
-
         <%= link_to 'Comment', post_path(post), :class => 'btn btn-secondary btn-sm' %>
         <% if current_user.id == post.creator_id %>
         <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-secondary btn-sm' %>
@@ -100,14 +98,12 @@
         <% end %>
 
         <% pre_like = post.likes.find{|like| like.user_id == current_user.id } %>
+
         <% count = post.likes.count %>
         <% if pre_like %>
           <%= link_to "Unlike", post_likes_path(post), method: :delete, :class => 'btn btn-secondary btn-sm' %>
-
         <% else %>
-
           <%= link_to "Like", post_likes_path(post), method: :post, :class => 'btn btn-secondary btn-sm' %>
-
         <% end %>
         <%= count %>
 
