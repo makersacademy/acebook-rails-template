@@ -13,55 +13,55 @@
 ActiveRecord::Schema.define(version: 20190109132621) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "comments", force: :cascade do |t|
-    t.text "body"
-    t.bigint "post_id"
-    t.bigint "commenter_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["commenter_id"], name: "index_comments_on_commenter_id"
-    t.index ["post_id"], name: "index_comments_on_post_id"
+  create_table 'comments', force: :cascade do |t|
+    t.text 'body'
+    t.bigint 'post_id'
+    t.bigint 'commenter_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['commenter_id'], name: 'index_comments_on_commenter_id'
+    t.index ['post_id'], name: 'index_comments_on_post_id'
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_likes_on_post_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
+  create_table 'likes', force: :cascade do |t|
+    t.bigint 'user_id'
+    t.bigint 'post_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['post_id'], name: 'index_likes_on_post_id'
+    t.index ['user_id'], name: 'index_likes_on_user_id'
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.bigint "creator_id"
-    t.string "description", default: "", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["creator_id"], name: "index_posts_on_creator_id"
+  create_table 'posts', force: :cascade do |t|
+    t.bigint 'creator_id'
+    t.string 'description', default: '', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['creator_id'], name: 'index_posts_on_creator_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "user_name", default: ""
-    t.date "birthday"
-    t.string "avatar", default: ""
-    t.string "occupation", default: ""
-    t.string "bio", default: ""
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'user_name', default: ''
+    t.date 'birthday'
+    t.string 'avatar', default: ''
+    t.string 'occupation', default: ''
+    t.string 'bio', default: ''
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key "comments", "posts"
-  add_foreign_key "comments", "users", column: "commenter_id"
-  add_foreign_key "likes", "posts"
-  add_foreign_key "likes", "users"
-  add_foreign_key "posts", "users", column: "creator_id"
+  add_foreign_key 'comments', 'posts'
+  add_foreign_key 'comments', 'users', column: 'commenter_id'
+  add_foreign_key 'likes', 'posts'
+  add_foreign_key 'likes', 'users'
+  add_foreign_key 'posts', 'users', column: 'creator_id'
 end

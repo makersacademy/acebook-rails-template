@@ -32,7 +32,7 @@ RSpec.describe UsersController, type: :controller do
   describe "PUT update" do
     it "updates the requested user" do
       put :update, :params => {:id => @user.id, :user => @user.attributes = { :email => "new@new.com", :password => "1234567" }}
-      expect(@user.email).to eq("new@new.com") 
+      expect(@user.email).to eq("new@new.com")
       expect(response).to redirect_to root_url
       # expect(response).to redirect_to ('/')
     end
