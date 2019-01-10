@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
 
-<<<<<<< HEAD
-  describe 'GET #index' do
-    it 'returns http success' do
-=======
   before(:each) do
     request.env["HTTP_REFERER"] = root_url
     @user = User.new(:email => 'el@el.com', :password => '1234567')
@@ -15,7 +11,6 @@ RSpec.describe UsersController, type: :controller do
 
   describe "GET #index" do
     it "returns http success" do
->>>>>>> 6b9ce8a438e04e8d0a2810a7bf108a2f64d7c310
       get :index
       expect(response).to have_http_status(:success)
     end
@@ -37,7 +32,7 @@ RSpec.describe UsersController, type: :controller do
   describe "PUT update" do
     it "updates the requested user" do
       put :update, :params => {:id => @user.id, :user => @user.attributes = { :email => "new@new.com", :password => "1234567" }}
-      expect(@user.email).to eq("new@new.com") 
+      expect(@user.email).to eq("new@new.com")
       expect(response).to redirect_to root_url
       # expect(response).to redirect_to ('/')
     end

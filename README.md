@@ -2,7 +2,7 @@
 
 [Heroku](https://acebook-unicorns.herokuapp.com/)
 
-[![Build Status](https://travis-ci.com/lucafrancesc/acebook-unicorns.svg?branch=master)]
+![Build Status](https://travis-ci.com/lucafrancesc/acebook-unicorns.svg?branch=master)
 
 # AceBook
 Facebook clone created using Ruby on Rails and various tools to practice developer workflow and working in a group environment.
