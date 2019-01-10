@@ -38,13 +38,10 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
+      p @post
       flash[:success] = "Your post has been updated"
       redirect_to request.referer || posts_url
     end
-  end
-
-  def self.timelinePost(user_id)
-    @timelinepost = Post.where("timeline_id = #{user_id}").order(created_at: :desc)
   end
 
   private
