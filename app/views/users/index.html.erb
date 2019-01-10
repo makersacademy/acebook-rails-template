@@ -36,7 +36,9 @@
 
   <%= form.text_area :description, :class => "textarea" %><br>
 
-  <%= form.submit "Create Post", :class => 'btn btn-primary btn-sm' %>
+  <div id="PostButton">
+    <%= form.submit "Create Post", :class => 'btn btn-primary btn-sm' %>
+  </div>
 </div><br>
 <% end %>
 
@@ -90,7 +92,7 @@
 
         <% pre_like = post.likes.find{|like| like.user_id == current_user.id } %>
         <% if pre_like %>
-          <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete, :class => 'btn btn-secondary btn-sm' %>
+          <%= link_to 'Unlike', post_likes_path(post), method: :delete, :class => 'btn btn-secondary btn-sm' %>
           <p> <%= post.likes.count %></p>
         <% else %>
           <%= link_to 'Like', post_likes_path(post), method: :post, :class => 'btn btn-secondary btn-sm' %>
