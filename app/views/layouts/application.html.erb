@@ -6,51 +6,20 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
 </head>
 <header>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: -4em">
-  <div class="container-fluid">
 
-      <!-- Elements visible all the time -->
-      <div class="col-sm-7">
-        <%= render 'layouts/navigation/header' %>
-      </div><!-- col-sm-7 -->
+  <%= render 'layouts/navigation/navbar' %>
 
-      <!-- Elements collapse on smaller devices -->
-      <div class="col-sm-5">
-        <div class="collapse navbar-collapse navbar-right" id="navbar-collapsible-content">
-  <ul class="nav navbar-nav ">
-    <% if user_signed_in? %>
-      <li class="mobile-menu" id="user_name">
-        <p> Hi, <%= current_user.first_name %></p>
-      </li>
-      <li class="mobile-menu">
-        <%= link_to 'News Feed', posts_path %>
-      </li>
-      <li class="mobile-menu">
-        <%= link_to 'My Profile', user_path(current_user.id) %>
-      </li>
-      <li class="mobile-menu">
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-      </li>
-
-    <% else %>
-      <li ><%= link_to 'Login', login_path %></li>
-      <li ><%= link_to 'Signup', signup_path %></li>
-    <% end %>
-  </ul>
-</div>
-      </div><!-- col-sm-5 -->
-  </div><!-- container -->
-</nav>
 
 </header>
 <body>
 <%= yield %>
-<%# <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+
 </body>
 </html>

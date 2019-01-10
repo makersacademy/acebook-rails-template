@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: -4em">
+  <div class="container-fluid px-md-4">
+    <div class="col-sm-7">
+      <a class="navbar-brand" href="/posts">Acebook</a>
+    </div>
+
+    <div class="col-sm-5">
+      <div class="navbar-right">
+        <ul class="nav navbar-nav ">
+          <% if user_signed_in? %>
+            <li class="mobile-menu" id="user_name">
+              <p> Hi, <%= current_user.first_name %></p>
+            </li>
+            <li class="mobile-menu">
+              <p><%= link_to 'News Feed', posts_path %></p>
+            </li>
+            <li class="mobile-menu">
+              <p><%= link_to 'My Profile', user_path(current_user.id) %></p>
+            </li>
+            <li class="mobile-menu nav-item dropdown">
+              <a class="dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Users
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <% if current_user == @user %>
+                      <% @users.each do |user| %>
+                        <a class="dropdown-item" href="/users/<%= user.id%>"><%= user.first_name %>
+                          <p><%= image_tag user.gravatar_url(:size => 20) %></p>
+                        </a>
+                      <% end %>
+                <% end %>
+              </div>
+            </li>
+            <li class="mobile-menu">
+              <p><%= link_to 'Log out', destroy_user_session_path, method: :delete %> </p>
+            </li>
+
+          <% else %>
+            <p><li ><%= link_to 'Login', login_path %></li></p>
+            <p><li ><%= link_to 'Signup', signup_path %></li></p>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
