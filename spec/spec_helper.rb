@@ -1,4 +1,6 @@
 require 'simplecov'
+require 'simplecov-console'
+SimpleCov.formatter = SimpleCov::Formatter::Console
 SimpleCov.start 'rails'
 SimpleCov.add_filter ['app/channels', 'app/jobs', 'app/mailers' ]
 # exclude these files for coverage
