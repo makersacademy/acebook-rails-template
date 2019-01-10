@@ -24,7 +24,11 @@ respond_to :html
     @friends = Friend.where requester: @profile.username
     @like = Like.new
     @avatar = Avatar.new
-    @avatar_profile = Avatar.find_by(username: @profile.username)
+    if Avatar.find_by(username: @profile.username) == nil
+      @avatar_profile = Avatar.create({"image"=>File.open(File.join(Rails.root, "app/assets/default.png")), "username"=>@profile.username})
+    else
+      @avatar_profile = Avatar.find_by(username: @profile.username)
+    end
   end
 
   def createpost
@@ -69,4 +73,12 @@ respond_to :html
     def comment_params
       params.fetch(:profile).permit(:text)
     end
+
+    def default_url
+    #   # For Rails 3.1+ asset pipeline compatibility:
+      ActionController::Base.helpers.asset_path("/default/default.png")
+    #
+    #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    end
+
 end
