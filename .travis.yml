@@ -13,5 +13,5 @@ script:
 - bin/rails db:create
 - bin/rails db:migrate
 - bundle exec rspec spec
-after_script:
-  - bundle exec rake coveralls:push
+# after_script:
+#   - bundle exec rake coveralls:push
