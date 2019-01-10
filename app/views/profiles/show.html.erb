@@ -161,9 +161,11 @@
       <br>
       <br>
       <h2>Posts (<%= @posts.size %>)</h2>
+      <% if @posts.size == 0 %>
+      <br>
+      No posts :(
+      <% else %>
       <% @posts.each do |post| %>
-
-
 
 
       <div class="card-group">
@@ -181,12 +183,12 @@
               <br>
 
               <div class="list-group-item">
-                <p class="mb-1"><%= post.text %></p>
+                <p href="<%= profile_post_path(@profile, post.id) %>" class="mb-1"><%= post.text %></p>
               </div>
 
           <div class="list-group-item py-0 list-group-item form-inline justify-content-center">
           <div class="d-flex justify-content-center">
-          <% pre_like = Like.find_by(profile_id: @profile.id, post_id: post.id) %>
+          <% pre_like = Like.find_by(profile_id: current_user.id, post_id: post.id) %>
           <% if pre_like %>
             <%= form_for @like, url: profile_post_like_url(@profile.id, post.id), method: :delete do |f| %>
               <div class="form-group">
@@ -203,22 +205,40 @@
               </div>
               <%= f.submit "Like (#{Like.where(post_id: post).size})", :class => "linkButton text-muted" %>
             <% end %>
-          <% end %>
+          <% end %> -
 
           <form action="<%= profile_post_path(@profile, post.id) %>">
-            <input class="linkButton text-muted" type="submit" value="Comments (<%= post.comments.size %>)"/>
-          </form>
+            <input class="linkButton text-muted" type="submit" value="Comment on post"/>
+          </form> -
 
           <form action="<%= edit_profile_post_path(@profile, post.id) %>">
             <input class="linkButton text-muted" type="submit" value="Edit"/>
-          </form>
-
+          </form> -
           <%= button_to 'Delete', profile_post_path(@profile, post.id), data: {confirm: "Are you sure?"}, method: :delete, :class=>"linkButton text-muted"%>
         </div>
+        <form>
+          <button class="linkButton text-muted col-center-block" type="button" data-toggle="collapse" href="#collapse<%= post.id %>">View all comments (<%= post.comments.size %>)</button>
+          </form>
+
       </div>
 
+              <div id="collapse<%= post.id %>" class="panel-collapse collapse">
 
+                <% comment = Comment.where(post_id: post.id) %>
+                <ul class="list-group">
+                <% comment.each do |comment| %>
+                <li class="list-group-item"><%= comment.text %>
+                  <br>
+                  <div class="d-flex w-100 justify-content-between">
+                    <small class="text-muted">Comment by: <%= comment.username %></small>
+                    <small class="mb-1 col-md text-muted text-right">last updated: <%= localize(post.updated_at, :format => :short) %> </small>
 
+                  </div>
+                </li>
+                  <% end %>
+
+                </ul>
+              </div>
 
 
         </a>
@@ -227,6 +247,7 @@
       <% end %>
       <br>
       <br>
+      <% end %>
 
 
       <br>
