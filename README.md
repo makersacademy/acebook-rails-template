@@ -1,6 +1,6 @@
 [Trello Unicorns](https://trello.com/b/iUkteEhD/acebook-unicorns)
 
-![Heroku](https://acebook-unicorns.herokuapp.com/)
+[acebook-unicorns](https://acebook-unicorns.herokuapp.com/)
 
 ![Build Status](https://travis-ci.com/lucafrancesc/acebook-unicorns.svg?branch=master)
 
