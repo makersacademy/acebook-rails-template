@@ -13,6 +13,7 @@
     <%= link_to "Comment", "/posts/#{post.id}/comments/new" %>
 
     <% post.comments.each do |comment| %>
+      <span class="comment-<%= comment.id %>">
       <br> <%= comment.content %>
       <% if comment.user_id == @user.id || post.user_id == @user.id %>
 
@@ -20,8 +21,9 @@
         <% if comment.user_id == @user.id  %>
           <%= link_to "Edit", edit_comment_path(comment.id) %>
         <%  end  %>
-        
+
       <% end %>
+      </span>
     <% end %>
     </p>
 <% end %>
