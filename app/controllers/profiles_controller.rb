@@ -5,8 +5,10 @@ class ProfilesController < ApplicationController
 respond_to :html
 
   def index
+    @profile = User.find(current_user.id)
     @users = User.all
     @posts = Post.all
+    @friends = Friend.where requester: @profile.username
     respond_with(@users)
   end
 
