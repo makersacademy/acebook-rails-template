@@ -17,11 +17,15 @@ def createUser(
 
 end
 
-def login(email: "maybe@test.com", password: "hello2")
+def signin(email: "maybe@test.com", password: "hello2")
   visit "/users/sign_in"
   fill_in "Email", with: email
   fill_in "Password", with: password
   click_button "Log in"
+end
+
+def signout
+  click_link "Sign out"
 end
 
 def postMessage(content: "This is a post")
