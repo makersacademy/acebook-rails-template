@@ -8,6 +8,11 @@ def generate_fake_users
   fill_in "Password", with: "password"
   fill_in "Password confirmation", with: "password"
   click_button "Sign up"
+  click_link "My Page"
+  click_button "Change Profile Picture"
+  attach_file("Image", Rails.root + "app/assets/default.png")
+  click_button "Update Avatar"
+  click_link "My Page"
   click_link "Logout"
   visit "/"
   click_link "Sign up"
@@ -18,6 +23,11 @@ def generate_fake_users
   fill_in "Password", with: "password"
   fill_in "Password confirmation", with: "password"
   click_button "Sign up"
+  click_link "My Page"
+  click_button "Change Profile Picture"
+  attach_file("Image", Rails.root + "app/assets/default.png")
+  click_button "Update Avatar"
+  click_link "My Page"
   click_link "Home"
 end
 
@@ -31,6 +41,11 @@ def sign_in_as_tester
   fill_in "Password", with: "password"
   fill_in "Password confirmation", with: "password"
   click_button "Sign up"
+  click_link "My Page"
+  click_button "Change Profile Picture"
+  attach_file("Image", Rails.root + "app/assets/default.png")
+  click_button "Update Avatar"
+  click_link "My Page"
 end
 
 def sign_up_as_ben
@@ -43,4 +58,9 @@ def sign_up_as_ben
   fill_in "Password", with: "password"
   fill_in "Password confirmation", with: "password"
   click_button "Sign up"
+  click_link "My Page"
+  click_button "Change Profile Picture"
+  attach_file("Image", Rails.root + "app/assets/default.png")
+  click_button "Update Avatar"
+  click_link "My Page"
 end
