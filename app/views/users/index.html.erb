@@ -1,8 +1,5 @@
-
 <div>
-
-
-
+  
 <div id="helloUser">
 
   <p><%= link_to "Go to Profile", edit_user_path(current_user), :class => 'btn btn-primary btn-sm'%></p>
@@ -70,8 +67,6 @@
 <hr>
   </div>
 
-
-
 <table align="center" id="test">
   <% @posts.reverse.each do |post| %>
     <tr>
@@ -88,7 +83,7 @@
         </div><br>
 
         <div class="buttons">
-
+          
         <%= link_to 'Comment', post_path(post), :class => 'btn btn-secondary btn-sm' %>
         <% if current_user.id == post.creator_id %>
         <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-secondary btn-sm' %>
@@ -115,6 +110,5 @@
   <% end %>
 
 </table>
-
 
 </div>
