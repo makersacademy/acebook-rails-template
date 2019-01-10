@@ -1,5 +1,6 @@
 <%= render 'shared/nav' %>
 
+
 <style>
   .col-center-block {
     float: none;
@@ -14,59 +15,54 @@
 .linkButton:hover {
     text-decoration: underline;
 }
-
+.card-img-left {
+  border-bottom-left-radius: calc(.25rem - 1px);
+  border-top-left-radius: calc(.25rem - 1px);
+  float: left;
+  padding-right: 1em;
+  margin-bottom: -1.25em;
+}
 </style>
 
 <div class="container">
   <h6> Welcome to <%= @profile.username %>'s profile page </h6>
   <br>
-
-
   <div class="row">
     <div class="col-3">
 
 
-
-
-<br>--------------------------
-<br>
-<% if (@avatar_profile.is_a? Avatar)%>
-  <%= image_tag @avatar_profile.image.thumb.url %>
-<% end %>
-  <br>
-<br>
-<% if @profile.username == current_user.username %>
   <% if (@avatar_profile.is_a? Avatar)%>
-    <%= form_for @avatar, url: avatar_path(@avatar_profile), method: :patch, html: { multipart: true } do |f| %>
-      <div class="field">
-        <%= f.hidden_field :username, :value => current_user.username %>
-      </div>
-      <div class="field">
-        <%= f.file_field :image %>
-      </div>
-      <div class="actions">
-        <%= f.submit "Update" %>
-      </div>
+
+  <div class="card">
+    <img class="card-img-top" <%= image_tag @avatar_profile.image.thumb.url %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @profile.firstname %> <%= @profile.lastname %></h5>
+    </div>
+  </div>
+  <% end %>
+  <% if @profile.username == current_user.username %>
+    <% if (@avatar_profile.is_a? Avatar)%>
+
+    <form action="<%= edit_avatar_path(@avatar_profile)  %>">
+      <input class="linkButton text-muted" type="submit" value="Change Profile Picture"/>
+    </form>
+
+    <% else %>
+    <h6>Upload an avatar</h6>
+      <%= form_for @avatar, html: { multipart: true } do |f| %>
+        <div class="field">
+          <%= f.hidden_field :username, :value => current_user.username %>
+        </div>
+        <div class="field">
+          <%= f.file_field :image %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
       <% end %>
-  <% else %>
-    <%= form_for @avatar, html: { multipart: true } do |f| %>
-      <div class="field">
-        <%= f.hidden_field :username, :value => current_user.username %>
-      </div>
-      <div class="field">
-        <%= f.label :image %>
-        <%= f.file_field :image %>
-      </div>
-      <div class="actions">
-        <%= f.submit %>
-      </div>
     <% end %>
   <% end %>
-<% end %>
 
-<br>--------------------------
-<br>
-<br>
 
 <% if @profile.username != current_user.username %>
   <% friend = Friend.find_by(requester: current_user.username, parent_friend: @profile.username) %>
@@ -92,7 +88,7 @@
 <br>
 
   <% if (@bio_profile.is_a? Bio)%>
-  <h2>Bio</h2>
+  <h2>About me</h2>
   <ul class="list-group">
     <li class="list-group-item py-0 list-group-item-secondary">Age:</li>
     <li class="list-group-item"><%= @bio_profile.age %></li>
@@ -108,43 +104,50 @@
     <li class="list-group-item"> <%= @bio_profile.location %></li>
   </ul>
   <br>
+  <form action="<%= edit_profile_bio_path(@bio_profile) %>">
+    <input class="linkButton text-muted" type="submit" value="Edit About me"/>
+  </form>
+<br>
   <br>
   <% else %>
-  -- NEW BIO --
+  <h2>About me</h2>
     <%= form_for @bio, url: create_bio_path([:profile_id]) do |f| %>
     <div class="form-group">
-      <%= f.label :age %>
+      <ul class="list-group">
+        <li class="list-group-item py-0 list-group-item-secondary">Age:</li>
       <%= f.number_field :age, :class => 'form-control' %>
     </div>
     <div class="form-group">
-
-      <%= f.label :bio %>
+      <ul class="list-group">
+        <li class="list-group-item py-0 list-group-item-secondary">Bio:</li>
       <%= f.text_area :bio, :class => 'form-control' %>
     </div>
     <div class="form-group">
-
-      <%= f.label :location %>
+      <ul class="list-group">
+        <li class="list-group-item py-0 list-group-item-secondary">Location:</li>
       <%= f.text_field :location, :class => 'form-control' %>
     </div>
-
       <%= f.hidden_field :bio_username, :value => @profile.username %>
-      <%= f.submit "Update" %>
+      <%= f.submit "Update about me", :class => "linkButton text-muted" %>
     <% end %>
   <% end %>
+  <br>
 
 <h2>Friends (<%= @friends.size %>)</h2>
-  <% @friends.each do |friend| %>
-    <ul class="list-group list-group-flush">
-      <a class="list-group-item">  <%= friend.parent_friend  %></a>
-    </ul>
-  <% end %>
-
+<% @friends.each do |friend| %>
+<div class="card-img-left">
+  <% avatar = Avatar.find_by(username: friend.parent_friend) %>
+  <%= image_tag avatar.image.mini.url %>
+    </div>
+  <ul class="list-group list-group-flush">
+    <a href="<%=profile_url(User.find_by(username: friend.parent_friend)) %>"class="list-group-item list-group-item-action">  <%= friend.parent_friend  %></a>
+  </ul>
+<% end %>
 
 
     </div>
     <div class="col-sm">
-      -- Add new post --
-      <br>
+      <h2>Post on <%= @profile.firstname %>'s wall:</h2>
       <%= form_for @post, url: create_post_path([:profile_id]) do |f| %>
       <%= f.hidden_field :recipient_username, :value => @profile.username %>
       <div class="input-group">
@@ -157,17 +160,32 @@
       <% end %>
       <br>
       <br>
-      <h2>Messages (<%= @posts.size %>)</h2>
+      <h2>Posts (<%= @posts.size %>)</h2>
       <% @posts.each do |post| %>
+
+
+
+
       <div class="card-group">
         <a class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">By <%= post.poster_username %></h5>
-            <small class="text-muted">last updated: <%= localize(post.updated_at, :format => :short) %> </small>
-          </div>
-          <p class="mb-1"><%= post.text %></p>
+          <div class="card-img-left">
+            <% avatar = Avatar.find_by(username: post.poster_username) %>
+            <%= image_tag avatar.image.mini.url %>
+              </div>
 
+              <div class="d-flex justify-content-center">
 
+              <h5 class="mb-1 col-md-6">By <%= post.poster_username %></h5>
+              <small class="mb-1 col-md text-muted text-right">last updated: <%= localize(post.updated_at, :format => :short) %> </small>
+              </div>
+              <br>
+
+              <div class="list-group-item">
+                <p class="mb-1"><%= post.text %></p>
+              </div>
+
+          <div class="list-group-item py-0 list-group-item form-inline justify-content-center">
+          <div class="d-flex justify-content-center">
           <% pre_like = Like.find_by(profile_id: @profile.id, post_id: post.id) %>
           <% if pre_like %>
             <%= form_for @like, url: profile_post_like_url(@profile.id, post.id), method: :delete do |f| %>
@@ -196,6 +214,10 @@
           </form>
 
           <%= button_to 'Delete', profile_post_path(@profile, post.id), data: {confirm: "Are you sure?"}, method: :delete, :class=>"linkButton text-muted"%>
+        </div>
+      </div>
+
+
 
 
 
