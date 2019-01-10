@@ -104,6 +104,10 @@
     <li class="list-group-item"> <%= @bio_profile.location %></li>
   </ul>
   <br>
+  <form action="<%= edit_profile_bio_path(@bio_profile) %>">
+    <input class="linkButton text-muted" type="submit" value="Edit About me"/>
+  </form>
+<br>
   <br>
   <% else %>
   <h2>About me</h2>
