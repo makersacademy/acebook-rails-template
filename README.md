@@ -4,6 +4,8 @@
 
 ![Build Status](https://travis-ci.com/lucafrancesc/acebook-unicorns.svg?branch=master)
 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9260433c796a0dcfa5d7/test_coverage)](https://codeclimate.com/github/lucafrancesc/acebook-unicorns/test_coverage)
+
 # AceBook
 Facebook clone created using Ruby on Rails and various tools to practice developer workflow and working in a group environment.
 
