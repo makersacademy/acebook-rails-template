@@ -190,12 +190,14 @@
           <form action="<%= profile_post_path(@profile, post.id) %>">
             <input class="linkButton text-muted" type="submit" value="Comments (<%= post.comments.size %>)"/>
           </form>
-
+          <% if @profile.username == current_user.username %>
           <form action="<%= edit_profile_post_path(@profile, post.id) %>">
             <input class="linkButton text-muted" type="submit" value="Edit"/>
           </form>
-
+          <% end %>
+          <% if @profile.username == current_user.username %>
           <%= button_to 'Delete', profile_post_path(@profile, post.id), data: {confirm: "Are you sure?"}, method: :delete, :class=>"linkButton text-muted"%>
+          <% end %>
 
 
 
