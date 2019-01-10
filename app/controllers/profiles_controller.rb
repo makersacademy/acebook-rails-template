@@ -7,8 +7,10 @@ respond_to :html
   def index
     @profile = User.find(current_user.id)
     @users = User.all
-    @posts = Post.all
     @friends = Friend.where requester: @profile.username
+    @posts = Post.last(10)
+    @like = Like.new
+
     respond_with(@users)
   end
 
