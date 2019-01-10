@@ -13,6 +13,7 @@
                           placeholder: 'How are you feeling today?',
                           class: 'form-control' %>
           <%= f.submit "Submit", class: 'form-control create-post-button' %>
+          <%= f.hidden_field :user_id, value: params[:id] %>
         <% end %>
       </div>
     </div>

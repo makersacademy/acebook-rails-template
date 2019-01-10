@@ -4,25 +4,31 @@ class PostsController < ApplicationController
   def new
     if current_user
       @post = Post.new
+      @timeline_id = params[:timelineid]
     else
       redirect_to login_url
     end
   end
 
   def create
-    @post = Post.create(post_params.merge(user_id: current_user.id))
+    if params[:post][:user_id] != ""
+      create_timeline_post
+    else
+      create_global_post
+    end
+    redirect_to request.referer || posts_url
     flash[:success] = "Your post has been created"
-    redirect_to posts_url
   end
 
   def destroy
-    Post.find(params[:id]).destroy
+    @post = Post.find(params[:id])
+    @post.destroy
     flash[:danger] = "Your post has been deleted"
-    redirect_to posts_path
+    redirect_to user_path(@post.user)
   end
 
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.where("timeline_id IS NULL").order(created_at: :desc)
   end
 
   def show
@@ -32,14 +38,24 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
+      p @post
       flash[:success] = "Your post has been updated"
-      redirect_to posts_path
+      redirect_to request.referer || posts_url
     end
   end
 
   private
 
     def post_params
-      params.require(:post).permit(:message)
+      params.require(:post).permit(:message, :timeline_id)
+    end
+
+    def create_timeline_post
+      @user = User.find(params[:post][:user_id])
+      @post = Post.create(post_params.merge(user_id: current_user.id, timeline_id: @user.timeline.id))
+    end
+
+    def create_global_post
+      @post = Post.create(post_params.merge(user_id: current_user.id))
     end
 end
