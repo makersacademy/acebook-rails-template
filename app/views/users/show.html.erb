@@ -3,7 +3,7 @@
   <div id="header">
     <div id="profile">
       <h2> <h1>
-            <% if @user.user_name.length > 0 %>
+            <% if @user.user_name != nil && @user.user_name.length > 0 %>
               <em> <%= @user.user_name %> </em>
             <% else %>
               <em> <%= @user.email %> </em>
@@ -71,7 +71,7 @@
 
     <% pre_like = post.likes.find{|like| like.user_id == current_user.id } %>
     <% if pre_like %>
-      <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete , :class => 'btn btn-secondary btn-sm' %>
+      <%= link_to 'Unlike', post_likes_path(post), method: :delete , :class => 'btn btn-secondary btn-sm' %>
       <p> <%= post.likes.count %></p>
     <% else %>
       <%= link_to 'Like', post_likes_path(post), method: :post, :class => 'btn btn-secondary btn-sm' %>
