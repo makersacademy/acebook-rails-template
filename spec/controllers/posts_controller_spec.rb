@@ -36,6 +36,7 @@ RSpec.describe PostsController, type: :controller do
     describe "POST #create" do
       def create_global_post
         allow(User).to receive(:find).and_return(user)
+        get :index
         post :create, params: { post: { id: test_post.id, message: test_post.message, user_id: "" } }
       end
 

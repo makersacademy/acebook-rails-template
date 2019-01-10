@@ -13,12 +13,11 @@ class PostsController < ApplicationController
   def create
     if params[:post][:user_id] != ""
       create_timeline_post
-      redirect_to user_path(@user)
     else
       create_global_post
-      redirect_to posts_url
     end
-      flash[:success] = "Your post has been created"
+    redirect_to request.referer || posts_url
+    flash[:success] = "Your post has been created"
   end
 
   def destroy
@@ -40,7 +39,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
       flash[:success] = "Your post has been updated"
-      redirect_to user_path(@post.user)
+      redirect_to request.referer || posts_url
     end
   end
 

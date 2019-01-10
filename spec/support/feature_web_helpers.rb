@@ -9,7 +9,6 @@ end
 
 def post_hello_world_message
   visit "/posts"
-  click_link "New Post"
   click_button "New Post"
   fill_in "Message", with: "Hello, world!"
   click_button "Submit"
