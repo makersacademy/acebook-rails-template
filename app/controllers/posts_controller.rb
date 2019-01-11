@@ -4,7 +4,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create({"text"=>params[:post][:text], "poster_username"=> current_user.username, "recipient_username" => params[:post][:recipient_username]})
+    @post = Post.create({ "text"=>params[:post][:text],
+      "poster_username" => current_user.username, "recipient_username" =>
+      params[:post][:recipient_username]})
     redirect_back(fallback_location: root_path)
 
   end
@@ -37,12 +39,10 @@ class PostsController < ApplicationController
     @comments = @post.comments
   end
 
-
   private
 
   def post_params
     params.require(:post).permit(:text)
   end
-
 
 end

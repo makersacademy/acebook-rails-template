@@ -31,13 +31,7 @@ class BiosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_bio
       @bio = Bio.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def bio_params
-      params.require(:bio).permit(:id, :age, :bio, :location)
     end
 end

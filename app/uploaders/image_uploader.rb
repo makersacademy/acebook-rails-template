@@ -14,7 +14,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  #def default_url(*args)
+  # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
   #  ActionController::Base.helpers.asset_path("/default/default.png")
   #
@@ -24,9 +24,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
 #  process scale(400, 400)
   #
- #def scale(width, height)
+ # def scale(width, height)
 #  process resize_to_fit: [width, height]
- #end
+ # end
 
   # Create different versions of your uploaded files:
   version :thumb do
@@ -42,10 +42,10 @@ private
   def resize_and_crop(size)
     manipulate! do |image|
       if image[:width] < image[:height]
-        remove = ((image[:height] - image[:width])/2).round
+        remove = ((image[:height] - image[:width]) / 2).round
         image.shave("0x#{remove}")
       elsif image[:width] > image[:height]
-        remove = ((image[:width] - image[:height])/2).round
+        remove = ((image[:width] - image[:height]) / 2).round
         image.shave("#{remove}x0")
       end
       image.resize("#{size}x#{size}")
@@ -60,7 +60,7 @@ private
   # end
 
   # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here, see uploader/store.rb for details.
+  # Avoid using model.id or version_name here, see uploader/store.rb for details
   # def filename
   #   "something.jpg" if original_filename
   # end

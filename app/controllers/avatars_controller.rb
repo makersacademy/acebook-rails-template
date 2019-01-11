@@ -24,35 +24,15 @@ class AvatarsController < ApplicationController
   end
 
   def update
-    # respond_to do |format|
-      # if
-        @avatar.update(avatar_params)
-        redirect_back(fallback_location: root_path)
-
-        #format.html { redirect_to @avatar, notice: 'Avatar was successfully updated.' }
-        #format.json { render :show, status: :ok, location: @avatar }
-      #else
-        #format.html { render :edit }
-        #format.json { render json: @avatar.errors, status: :unprocessable_entity }
-      #end
-    #end
-  end
-
-  def destroy
-    @avatar.destroy
-    respond_to do |format|
-      format.html { redirect_to avatars_url, notice: 'Avatar was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    @avatar.update(avatar_params)
+    redirect_back(fallback_location: root_path)
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_avatar
       @avatar = Avatar.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def avatar_params
       params.require(:avatar).permit(:username, :image, :remove_image)
     end
