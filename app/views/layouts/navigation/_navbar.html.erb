@@ -22,7 +22,7 @@
                 Users
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <% if current_user == @user %>
+                <% if current_user %>
                       <% @users.each do |user| %>
                         <a class="dropdown-item" href="/users/<%= user.id%>"><%= user.first_name %>
                           <p><%= image_tag user.gravatar_url(:size => 20) %></p>
