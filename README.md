@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/leoncross/acebook-firenze.svg?branch=master)](https://travis-ci.com/leoncross/acebook-firenze)
+[![Build Status](https://travis-ci.com/leoncross/acebook-firenze.svg?branch=master)](https://travis-ci.com/leoncross/acebook-firenze)[![Coverage Status](https://coveralls.io/repos/github/leoncross/acebook-firenze/badge.svg?branch=master)](https://coveralls.io/github/leoncross/acebook-firenze?branch=master)
 
 # AceBook
 
