@@ -12,6 +12,7 @@ respond_to :html
     @like = Like.new
 
     respond_with(@users)
+    
   end
 
   def show

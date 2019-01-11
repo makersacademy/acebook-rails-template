@@ -1,11 +1,7 @@
 require "helpers/authentication_helper"
 require 'rails_helper'
 
-RSpec.feature "visit home page", type: :feature do
-  scenario "home page has correct content" do
-    visit "/"
-    expect(page).to have_content("Please Sign Up or Sign In to view the content.")
-  end
+RSpec.feature "Sign Up page", type: :feature do
   scenario "redirected to sign up page" do
     visit "/"
     click_link "Sign up"
@@ -22,7 +18,6 @@ RSpec.feature "Sign Up page", type: :feature do
   scenario "contains texts fields for sign up" do
     visit "/"
     click_link "Sign up"
-    expect(page).to have_content("Sign up")
     expect(page).to have_content("Firstname")
     expect(page).to have_content("Lastname")
     expect(page).to have_content("Username")
@@ -30,8 +25,8 @@ RSpec.feature "Sign Up page", type: :feature do
     expect(page).to have_content("Password")
     expect(page).to have_content("(6 characters minimum)")
     expect(page).to have_content("Password confirmation")
-    expect(page).to have_button("Sign up")
   end
+
   scenario "Sign up a user" do
     sign_up_as_ben()
     expect(page).to have_content("Welcome to BenSmith12's profile page")
@@ -73,21 +68,6 @@ RSpec.feature "Logout", type: :feature do
     sign_up_as_ben()
     click_link "Logout"
     expect(page).to have_content("Signed out successfully.")
-  end
-  scenario "logout takes you out of the website" do
-    sign_up_as_ben()
-    click_link "Logout"
-    expect(page.current_url).to eq("http://www.example.com/")
-  end
-  scenario "sign in (user already has account)" do
-    sign_up_as_ben()
-    click_link "Logout"
-    click_link "Sign up"
-    click_link "Log in"
-    fill_in "Email", with: "bensmith@gmail.com"
-    fill_in "Password", with: "password"
-    click_button "Log in"
-    expect(page).to have_content("Welcome to whateverweregonnacallit!")
   end
 end
 
