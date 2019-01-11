@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   devise_for :users
 
   devise_scope :user do
+     # root to: "devise/sessions#new"
      get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  root 'posts#homepage'
+  root to:'posts#homepage'
+
 
   match "/profiles/posts", to: "posts#create", via: "post", :as => :create_post
   match "/profiles/bios", to: "bios#create", via: "post", :as => :create_bio
