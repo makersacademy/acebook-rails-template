@@ -1,6 +1,15 @@
 <%= form_for @post, method: :patch do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><li><%= msg %></li><div>
+    <% end %>
+  <% end %>
 
-  <%= form.submit "Submit" %>
+  <p>
+    <%= form.label :message %>
+    <%= form.text_field(:message, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    <%= form.submit('Submit', {:class => 'btn btn-primary'}) %>
+  </p>
 <% end %>

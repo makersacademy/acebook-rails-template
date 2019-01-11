@@ -1,9 +1,31 @@
 <% @posts.each do |post| %>
   <p>
+    <%= "#{post.user.firstname} #{post.user.lastname} " %>
+    <br>
+    <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
+    <br>
     <%= post.message %>
-    <%= link_to "Delete", post_path(post.id), method: :delete %>
-    <%= link_to "Edit", edit_post_path(post.id) %>
-  </p>
+    <% if post.user_id == @user.id  %>
+      <%= link_to "Delete", post_path(post.id), method: :delete %>
+      <%= link_to "Edit", edit_post_path(post.id) %>
+    <% end %>
+
+    <%= link_to "Comment", "/posts/#{post.id}/comments/new" %>
+
+    <% post.comments.each do |comment| %>
+      <span class="comment-<%= comment.id %>">
+      <br> <%= comment.content %>
+      <% if comment.user_id == @user.id || post.user_id == @user.id %>
+
+        <%= link_to "Delete", comment_path(comment.id), method: :delete %>
+        <% if comment.user_id == @user.id  %>
+          <%= link_to "Edit", edit_comment_path(comment.id) %>
+        <%  end  %>
+
+      <% end %>
+      </span>
+    <% end %>
+    </p>
 <% end %>
 
 <%= link_to new_post_path do %>

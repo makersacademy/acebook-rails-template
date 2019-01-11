@@ -1,6 +1,13 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Posts", type: :feature do
+  before :each do
+    visit "/users/sign_in"
+    fill_in "Email", with: "hello@test.com"
+    fill_in "Password", with: "hello2"
+    click_button "Log in"
+  end
+
   scenario "Can submit posts and view them" do
     visit "/posts"
     click_link "New post"

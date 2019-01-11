@@ -4,12 +4,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    @user = current_user
+    @post = @user.posts.create(post_params)
+
+    if(@post.save)
+      redirect_to posts_url
+    else
+      render 'new'
+    end
   end
 
   def index
     @posts = Post.all
+    @user = current_user
   end
 
   def edit
@@ -19,7 +26,12 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    redirect_to posts_url
+
+    if(@post.save)
+      redirect_to posts_url
+    else
+      render 'edit'
+    end
   end
 
   def destroy
