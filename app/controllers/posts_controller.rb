@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :require_login
+  before_action :find_users, only: [:show, :index]
+  before_action :find_post, only: [:show, :destroy, :update]
 
   def new
     if current_user
@@ -21,26 +23,20 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     flash[:danger] = "Your post has been deleted"
     redirect_to user_path(@post.user)
   end
 
   def index
-    @users = User.all.order(first_name: :asc)
     @posts = Post.where("timeline_id IS NULL").order(created_at: :desc)
   end
 
   def show
-    @users = User.all.order(first_name: :asc)
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
-      p @post
       flash[:success] = "Your post has been updated"
       redirect_to request.referer || posts_url
     end
@@ -60,4 +56,13 @@ class PostsController < ApplicationController
     def create_global_post
       @post = Post.create(post_params.merge(user_id: current_user.id))
     end
+
+    def find_users
+      @users = User.all.order(first_name: :asc)
+    end
+
+    def find_post
+      @post = Post.find(params[:id])
+    end
+
 end
