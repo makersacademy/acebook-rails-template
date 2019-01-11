@@ -23,7 +23,7 @@ RSpec.feature "Create posts", type: :feature do
     click_button "submit"
     click_button "Edit"
     fill_in "post_text", with: "Second post"
-    click_button "update"
+    click_button "Update"
     expect(page).to have_content("Second post")
     expect(page).to have_no_content("Hello this is my first post")
   end
