@@ -41,6 +41,7 @@ First, clone this repository. Then:
 
 In your terminal:
 ```bash
+> git push heroku master
 > heroku run rake db:migrate
 > heroku restart
 ```
