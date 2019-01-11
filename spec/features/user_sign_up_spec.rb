@@ -72,7 +72,7 @@ RSpec.feature "Logout", type: :feature do
 end
 
 RSpec.feature "My Page", type: :feature do
-scenario "My page has correct text subject to that user" do
+  scenario "My page has correct text subject to that user" do
     sign_up_as_ben()
     click_link "My Page"
     expect(page).to have_content("Welcome to BenSmith12's profile page")
