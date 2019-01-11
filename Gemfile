@@ -21,7 +21,7 @@ gem 'rake'
 
 gem 'rubocop', '0.56.0'
 
-gem 'simplecov-badge', '~> 2.0', '>= 2.0.2'
+gem 'simplecov-badge', '~> 2.0', '>= 2.0.2', require: false
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
