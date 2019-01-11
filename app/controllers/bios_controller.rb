@@ -15,6 +15,7 @@ class BiosController < ApplicationController
   end
 
   def edit
+    @profile = User.find(params[:profile_id])
   end
 
   def create
@@ -24,7 +25,7 @@ class BiosController < ApplicationController
 
   def update
     @bio.update({age: params[:bio][:age], bio: params[:bio][:bio], location: params[:bio][:location], bio_username: params[:bio][:bio_username]})
-    redirect_to profile_path
+    redirect_to profile_path(params[:profile_id])
   end
 
   def destroy

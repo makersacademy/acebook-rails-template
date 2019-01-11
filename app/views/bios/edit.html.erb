@@ -15,7 +15,7 @@
     <div class="col-sm">
       <h1>Edit your bio</h1>
 
-      <%= form_for @bio, url: profile_bio_path(@bio), method: :patch do |f| %>
+      <%= form_for @bio, url: profile_bio_path(@profile, @bio), method: :patch do |f| %>
       <div class="form-group">
         <%= f.label :age %>
         <%= f.number_field :age, :class => 'form-control' %>
