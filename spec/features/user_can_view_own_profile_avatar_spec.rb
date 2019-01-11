@@ -6,7 +6,7 @@ RSpec.feature "User has avatar", type: :feature do
     visit "/"
     fill_in_signup_form_and_submit
     post_hello_world_message
-    click_link("First name")
+    click_link("First name", match: :prefer_exact)
     expect(page).to have_content("First name Last name")
     expect(page).not_to have_content("Hello, world!")
     expect(page).to have_xpath("//img")

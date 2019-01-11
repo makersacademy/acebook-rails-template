@@ -28,10 +28,12 @@ class PostsController < ApplicationController
   end
 
   def index
+    @users = User.all.order(first_name: :asc)
     @posts = Post.where("timeline_id IS NULL").order(created_at: :desc)
   end
 
   def show
+    @users = User.all.order(first_name: :asc)
     @post = Post.find(params[:id])
   end
 
