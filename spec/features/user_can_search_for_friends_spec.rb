@@ -7,7 +7,7 @@ RSpec.feature "Friends search", type: :feature do
   end
 
   scenario "user can search for friends" do
-    visit 'friends/search'
+    visit 'friendships/search'
     fill_in 'search', with: "Sam A"
     click_button "submit"
     expect(page).to have_content "Sam Abc"

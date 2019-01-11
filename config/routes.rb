@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'posts#index', as: 'home'
-  match 'friends/search' => 'friends#search', via: :get, as: 'friends_search'
-  match 'friends/create' => 'friends#create', via: :post, as: 'friends_create'
+  match 'friendships/search' => 'friendships#search', via: :get, as: 'friendships_search'
+  match 'friendships/create' => 'friendships#create', via: :post, as: 'friendships_create'
   resources :posts
   match 'users/:id' => 'users#show', via: :get, as: 'profile_page'
   resources :comments, :except => [:new]
