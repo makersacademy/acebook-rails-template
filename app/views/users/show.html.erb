@@ -45,3 +45,16 @@
         <a href="????" type="button" class="btn btn">Delete</a>
     </span>
   </div>
+
+  <div id="your-friends">
+    <br>
+    <h3>Your friends: </h3>
+    <hr>
+    <% @friends.each do |friend| %>
+      <p>
+      (*v*)
+      <%= "#{friend.firstname} #{friend.lastname}" %>
+      <%= link_to "unfriend","#" %>
+      </p>
+    <% end %>
+  </div>
