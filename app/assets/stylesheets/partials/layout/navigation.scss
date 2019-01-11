@@ -13,37 +13,26 @@
 }
 
 .mobile-menu {
-  i {
-    color: white;
-  }
   ul {
-    padding: 0px;
+    padding: 0;
   }
   a {
     display: block;
-    padding: 10px 0px 10px 25px !important;
+    padding: 10px 0 10px 25px !important;
   }
-  a:hover {
-    color: black !important;
-    i {
-      color: black;
-    }
-  }
-}
-
-.icon-bar {
-  background-color: white !important;
-}
-
-.dropdown-menu a:hover {
-  color: black !important;
-  background: white !important;
+  text-align: center;
 }
 
 body {
-  padding-top: 70px;
+  padding-top: 54px;
 }
 
 #user_name {
-  padding: 10px 0px 10px 25px;
+  padding: 10px 0 10px 25px;
+}
+
+.navbar-brand {
+  font-family: 'Shrikhand', cursive;
+  font-size: 40px;
+  color: red;
 }
