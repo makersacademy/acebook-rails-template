@@ -25,7 +25,9 @@ class AvatarsController < ApplicationController
 
   def update
     @avatar.update(avatar_params)
-    redirect_back(fallback_location: root_path)
+    redirect_to profile_path(current_user.id)
+
+    # (fallback_location: root_path)
   end
 
   private
