@@ -17,5 +17,5 @@ end
 def fill_in_login_form_and_submit
   fill_in "user_email", with: 'test@email.com'
   fill_in "user_password", with: "password"
-  click_button "Log in"
+  click_button "Sign in"
 end

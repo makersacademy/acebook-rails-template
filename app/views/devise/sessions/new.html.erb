@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h2 class="text-center">Log in</h2>
+      <h2 class="text-center">Please sign in</h2>
       <%= devise_error_messages! %>
 
       <%= bootstrap_form_for(resource,
@@ -18,12 +18,7 @@
                               class: 'form-control',
                               placeholder: 'password' %>
 
-
-        <% if devise_mapping.rememberable? -%>
-          <%= f.check_box :remember_me %>
-        <% end -%>
-
-        <%= f.submit "Log in", class: 'form-control login-button' %>
+        <%= f.submit "Sign in", class: 'form-control login-button' %>
 
       <% end %>
       <p id="not-logged-in">Not Registered? <%= link_to 'Sign Up', signup_path %></p>
