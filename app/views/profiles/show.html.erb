@@ -104,9 +104,11 @@
     <li class="list-group-item"> <%= @bio_profile.location %></li>
   </ul>
   <br>
+  <% if @profile.username == current_user.username %>
   <form action="<%= edit_profile_bio_path(@profile, @bio_profile.id) %>">
     <input class="linkButton text-muted" type="submit" value="Edit About me"/>
   </form>
+  <% end %>
 <br>
   <br>
   <% else %>
@@ -127,8 +129,10 @@
         <li class="list-group-item py-0 list-group-item-secondary">Location:</li>
       <%= f.text_field :location, :class => 'form-control' %>
     </div>
+    <% if @profile.username == current_user.username %>
       <%= f.hidden_field :bio_username, :value => @profile.username %>
       <%= f.submit "Update about me", :class => "linkButton text-muted" %>
+    <% end %>
     <% end %>
   <% end %>
   <br>
@@ -209,12 +213,15 @@
 
           <form action="<%= profile_post_path(@profile, post.id) %>">
             <input class="linkButton text-muted" type="submit" value="Comment on post"/>
-          </form> -
+          </form>
+          <% if @profile.username == current_user.username %>
+          -
 
           <form action="<%= edit_profile_post_path(@profile, post.id) %>">
             <input class="linkButton text-muted" type="submit" value="Edit"/>
           </form> -
           <%= button_to 'Delete', profile_post_path(@profile, post.id), data: {confirm: "Are you sure?"}, method: :delete, :class=>"linkButton text-muted"%>
+          <% end %>
         </div>
         <form>
           <button class="linkButton text-muted col-center-block" type="button" data-toggle="collapse" href="#collapse<%= post.id %>">View all comments (<%= post.comments.size %>)</button>
