@@ -1,31 +1,21 @@
 class AvatarsController < ApplicationController
   before_action :set_avatar, only: [:show, :edit, :update, :destroy]
 
-  # GET /avatars
-  # GET /avatars.json
   def index
     @avatars = Avatar.all
   end
 
-  # GET /avatars/1
-  # GET /avatars/1.json
   def show
   end
 
-  # GET /avatars/new
   def new
     @avatar = Avatar.new
   end
 
-  # GET /avatars/1/edit
   def edit
-    # @avatar.update(avatar_params)
-
-    # redirect_back(fallback_location: root_path)
   end
 
-  # POST /avatars
-  # POST /avatars.json
+
   def create
     @avatar = Avatar.new(avatar_params)
     @avatar.save
@@ -33,8 +23,6 @@ class AvatarsController < ApplicationController
 
   end
 
-  # PATCH/PUT /avatars/1
-  # PATCH/PUT /avatars/1.json
   def update
     # respond_to do |format|
       # if
@@ -50,8 +38,6 @@ class AvatarsController < ApplicationController
     #end
   end
 
-  # DELETE /avatars/1
-  # DELETE /avatars/1.json
   def destroy
     @avatar.destroy
     respond_to do |format|
