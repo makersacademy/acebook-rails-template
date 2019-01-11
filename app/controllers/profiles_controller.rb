@@ -10,9 +10,7 @@ respond_to :html
     @friends = Friend.where requester: @profile.username
     @posts = Post.last(10)
     @like = Like.new
-
     respond_with(@users)
-
   end
 
   def show
@@ -26,7 +24,9 @@ respond_to :html
     @like = Like.new
     @avatar = Avatar.new
     if Avatar.find_by(username: @profile.username) == nil
-      @avatar_profile = Avatar.create({"image"=>File.open(File.join(Rails.root, "app/assets/default.png")), "username"=>@profile.username})
+      @avatar_profile = Avatar.create({
+        "image" => File.open(File.join(Rails.root, "app/assets/default.png")),
+        "username" => @profile.username })
     else
       @avatar_profile = Avatar.find_by(username: @profile.username)
     end
@@ -61,25 +61,9 @@ respond_to :html
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_profile
-      @profile = Profile.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def profile_params
-      params.fetch(:profile, {})
-    end
-
-    def comment_params
-      params.fetch(:profile).permit(:text)
-    end
 
     def default_url
-    #   # For Rails 3.1+ asset pipeline compatibility:
       ActionController::Base.helpers.asset_path("/default/default.png")
-    #
-    #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
     end
 
 end
