@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
@@ -7,7 +9,7 @@ class PostsController < ApplicationController
     @user = current_user
     @post = @user.posts.create(post_params)
 
-    if(@post.save)
+    if @post.save
       redirect_to posts_url
     else
       render 'new'
@@ -15,21 +17,21 @@ class PostsController < ApplicationController
   end
 
   def index
-    @friends = Friendship.where("user_id = ? OR friend_id = ?", "#{current_user.id}", "#{current_user.id}").pluck(:user_id, :friend_id).flatten.uniq
+    @friends = Friendship.where('user_id = ? OR friend_id = ?', current_user.id.to_s, current_user.id.to_s).pluck(:user_id, :friend_id).flatten.uniq
     @friends << current_user.id
     @posts = Post.where(user_id: @friends).order('posts.created_at DESC')
     @user = current_user
   end
 
   def edit
-     @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
 
-    if(@post.save)
+    if @post.save
       redirect_to posts_url
     else
       render 'edit'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
@@ -9,8 +11,6 @@ class UsersController < ApplicationController
   def remove
     User.destroy(params[:format])
 
-    if @user.destroy
-      redirect_to root_url, notice: "User deleted."
-    end
+    redirect_to root_url, notice: 'User deleted.' if @user.destroy
   end
 end
