@@ -1,57 +1,59 @@
+<%= link_to new_post_path do %>
+ <div class="btn btn-primary">Make a new post</div>
+<% end %>
 <% @posts.each do |post| %>
-<div class="card">
-  <div class="card-header">
-    <h5>
-      <%= "#{post.user.firstname} #{post.user.lastname} " %>
-      <small class="float-sm-right">
-        <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
-      </small>
-    </h5>
-  </div>
-
-  <div class="card-body">
-    <div class="card-text">
-      <%= post.message %>
-    </div>
-
-  </div>
-  <div class="card-footer">
-    <% if post.user_id == @user.id  %>
-      <%= link_to "Delete", post_path(post.id), method: :delete, class: "btn btn-primary" %>
-      <%= link_to "Edit", edit_post_path(post.id), class: "btn btn-primary" %>
-    <% end %>
-    <%= link_to "Comment", "/posts/#{post.id}/comments/new", class: "btn btn-primary" %>
-  </div>
-</div>
-
-
-
-    <% post.comments.each do |comment| %>
-    <div class="card bg-light">
+    <div class="card mt-5">
       <div class="card-header">
-        <h6>
-          <%= "#{comment.user.firstname} #{comment.user.lastname} " %>
+        <h5>
+          <img src="//placehold.it/70" alt="" class="mr-2 rounded-circle">
+          <%= "#{post.user.firstname} #{post.user.lastname} " %>
           <small class="float-sm-right">
             <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
           </small>
-        </h6>
+        </h4>
       </div>
-      <span class="comment-<%= comment.id %>">
-      <%= comment.content %>
 
-      </span>
+      <div class="card-body">
+        <div class="card-text">
+          <%= post.message %>
+        </div>
+
+      </div>
       <div class="card-footer">
-        <% if comment.user_id == @user.id  %>
-          <%= link_to "Delete", comment_path(comment.id), method: :delete, class: "btn btn-primary" %>
-          <%= link_to "Edit", edit_comment_path(comment.id), class: "btn btn-primary" %>
-        <% end %>
+        <div class="float-right">
+          <% if post.user_id == @user.id  %>
+            <%= link_to "Delete", post_path(post.id), method: :delete, class: "btn btn-link" %>
+            <%= link_to "Edit", edit_post_path(post.id), class: "btn btn-link" %>
+          <% end %>
+          <%= link_to "Comment", "/posts/#{post.id}/comments/new", class: "btn btn-link" %>
+        </div>
       </div>
     </div>
+
+    <% post.comments.each do |comment| %>
+       <div class="card flex-row flex-wrap mt-2">
+        <div class="card-header border-0">
+            <img src="//placehold.it/50" alt="" class="rounded-circle">
+        </div>
+        <div class="card-block col-11 px-2">
+          <h6 class="card-title">
+            <%= "#{comment.user.firstname} #{comment.user.lastname} " %>
+            <small class="float-right">
+              <%= "#{distance_of_time_in_words_to_now(comment.created_at)} ago" %>
+            </small>
+          </h6>
+          <p class="card-text">
+            <%= comment.content %>
+          </p>
+          <div class="mt-1 mb-2 float-right">
+            <% if comment.user_id == @user.id  %>
+              <%= link_to "Delete", comment_path(comment.id), method: :delete, class: "btn btn-link" %>
+              <%= link_to "Edit", edit_comment_path(comment.id), class: "btn btn-link" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
-
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-</div>
+
