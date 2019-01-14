@@ -30,13 +30,13 @@
           </li>
           <% if user_signed_in? %>
             <li class="nav-item">
-                <%= link_to "My Profile", profile_page_path(current_user[:id]), class: 'nav-link'  %>
+                <%= link_to "My profile", profile_page_path(current_user[:id]), class: 'nav-link'  %>
             </li>
             <li class="nav-item">
-              <%= link_to "new post", new_post_path, class: 'nav-link'  %>
+              <%= link_to "New post", new_post_path, class: 'nav-link'  %>
             </li>
             <li class="nav-item">
-              <%= link_to "find friends", friendships_search_path, method: :get, class: 'nav-link' %>
+              <%= link_to "Find friends", friendships_search_path, method: :get, class: 'nav-link' %>
             </li>
             <li class="nav-item">
               <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'nav-link' %>

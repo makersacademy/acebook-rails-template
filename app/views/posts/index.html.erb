@@ -1,33 +1,57 @@
 <% @posts.each do |post| %>
-  <p>
-    <%= "#{post.user.firstname} #{post.user.lastname} " %>
-    <br>
-    <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
-    <br>
-    <%= post.message %>
-    <% if post.user_id == @user.id  %>
-      <%= link_to "Delete", post_path(post.id), method: :delete %>
-      <%= link_to "Edit", edit_post_path(post.id) %>
-    <% end %>
+<div class="card">
+  <div class="card-header">
+    <h5>
+      <%= "#{post.user.firstname} #{post.user.lastname} " %>
+      <small class="float-sm-right">
+        <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
+      </small>
+    </h5>
+  </div>
 
-    <%= link_to "Comment", "/posts/#{post.id}/comments/new" %>
+  <div class="card-body">
+    <div class="card-text">
+      <%= post.message %>
+    </div>
+
+  </div>
+  <div class="card-footer">
+    <% if post.user_id == @user.id  %>
+      <%= link_to "Delete", post_path(post.id), method: :delete, class: "btn btn-primary" %>
+      <%= link_to "Edit", edit_post_path(post.id), class: "btn btn-primary" %>
+    <% end %>
+    <%= link_to "Comment", "/posts/#{post.id}/comments/new", class: "btn btn-primary" %>
+  </div>
+</div>
+
+
 
     <% post.comments.each do |comment| %>
+    <div class="card bg-light">
+      <div class="card-header">
+        <h6>
+          <%= "#{comment.user.firstname} #{comment.user.lastname} " %>
+          <small class="float-sm-right">
+            <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
+          </small>
+        </h6>
+      </div>
       <span class="comment-<%= comment.id %>">
-      <br> <%= comment.content %>
-      <% if comment.user_id == @user.id || post.user_id == @user.id %>
+      <%= comment.content %>
 
-        <%= link_to "Delete", comment_path(comment.id), method: :delete %>
-        <% if comment.user_id == @user.id  %>
-          <%= link_to "Edit", edit_comment_path(comment.id) %>
-        <%  end  %>
-
-      <% end %>
       </span>
+      <div class="card-footer">
+        <% if comment.user_id == @user.id  %>
+          <%= link_to "Delete", comment_path(comment.id), method: :delete, class: "btn btn-primary" %>
+          <%= link_to "Edit", edit_comment_path(comment.id), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
     <% end %>
-    </p>
+
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+</div>
