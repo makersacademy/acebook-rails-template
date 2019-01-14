@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise', '~> 4.5'
+gem "paperclip", "~> 6.0.0"
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'

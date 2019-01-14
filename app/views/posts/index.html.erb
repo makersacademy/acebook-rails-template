@@ -5,6 +5,7 @@
     <div class="card mt-5">
       <div class="card-header">
         <h5>
+          <%= image_tag post.user.avatar.url, size:"50x50", class: "mr-2 rounded-circle"%>
           <img src="//placehold.it/70" alt="" class="mr-2 rounded-circle">
           <%= "#{post.user.firstname} #{post.user.lastname} " %>
           <small class="float-sm-right">
@@ -17,7 +18,6 @@
         <div class="card-text">
           <%= post.message %>
         </div>
-
       </div>
       <div class="card-footer">
         <div class="float-right">
@@ -33,7 +33,7 @@
     <% post.comments.each do |comment| %>
        <div class="card flex-row flex-wrap mt-2">
         <div class="card-header border-0">
-            <img src="//placehold.it/50" alt="" class="rounded-circle">
+        <%= image_tag comment.user.avatar.url, size:"50x50", class: "mr-2 rounded-circle"%>
         </div>
         <div class="card-block col-11 px-2">
           <h6 class="card-title">
