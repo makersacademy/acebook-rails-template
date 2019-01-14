@@ -15,7 +15,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @friends = Friendship.where("user_id = ? OR friend_id = ?", "#{current_user.id}", "#{current_user.id}").pluck(:user_id, :friend_id).flatten.uniq
+    @friends << current_user.id
+    @posts = Post.where(user_id: @friends).order('posts.created_at DESC')
     @user = current_user
   end
 
