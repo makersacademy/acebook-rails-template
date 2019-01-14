@@ -10,16 +10,8 @@
 
   <body>
 
-    <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/sessions/new">Sign in</a> </li>
-            <li class="breadcrumb-item"><a href="/users/new">Sign up</a> </li>
-            <li class="breadcrumb-item"><a href="/peeps/new">Post a Peep!</a> </li>
-            <li class="breadcrumb-item"><a href="/peeps">View peeps</a></li>
-          </ol>
-        </nav>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Acebook</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,37 +22,41 @@
           <li class="nav-item">
             <%= link_to "Home", home_path, class: 'nav-link'  %>
           </li>
+        <% if user_signed_in? %>
           <li class="nav-item">
-            <% if user_signed_in? %>
               <%= link_to "My Profile", profile_page_path(current_user[:id]), class: 'nav-link'  %>
-            <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "New Post", new_post_path, class: 'nav-link'  %>
+            <%= link_to "new post", new_post_path, class: 'nav-link'  %>
           </li>
           <li class="nav-item">
-            <% if user_signed_in? %>
+              <%= link_to "find friends", friendships_search_path, method: :get, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
               <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'nav-link' %>
-            <% end %>
           </li>
+        <% end %>
         </ul>
       </div>
     </nav>
 
-    <% if notice %>
-      <div class="alert alert-success" role="alert">
-        <%= notice %>
-      </div>
-    <% end %>
-
-    <% if alert %>
-      <div class="alert alert-warning" role="alert">
-        <%= alert %>
-      </div>
-    <% end %>
+    <br>
 
     <div class="container">
-      <%= yield %>
+        <div class="row">
+            <% if notice %>
+              <div class="alert alert-success" role="alert">
+                <%= notice %>
+              </div>
+            <% end %>
+
+            <% if alert %>
+              <div class="alert alert-warning" role="alert">
+                <%= alert %>
+              </div>
+            <% end %>
+        </div>
+        <%= yield %>
     </div>
 
   </body>

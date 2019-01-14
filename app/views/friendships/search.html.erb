@@ -1,0 +1,17 @@
+<form action="search" method="get">
+  <input type="text" name="search" placeholder="Enter friend's name">
+  <input type="submit" value="submit" >
+</form>
+
+<% if @results %>
+  <% @results.each do |friend| %>
+    <hr>
+    <%= "#{friend.firstname} #{friend.lastname}" %>
+    <form  action="create" method="post">
+      <%= token_tag %>
+      <input type="hidden" name="friend_id" value="<%= friend.id %>">
+      <input type="submit" value="Add Friend">
+    </form>
+    </br>
+  <% end %>
+<% end %>
