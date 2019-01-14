@@ -34,3 +34,11 @@ def postMessage(content: "This is a post")
   fill_in "Message", with: content
   click_button "Submit"
 end
+
+def addFriend
+  click_link "find friends"
+  fill_in "search", with: "Wayne"
+  click_button "submit"
+  click_button "Add Friend"
+  visit '/'
+end
