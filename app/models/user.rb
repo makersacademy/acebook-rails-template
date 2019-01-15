@@ -15,6 +15,7 @@ class User < ApplicationRecord
            foreign_key: 'friend_id'
   has_many :inverse_friends, through: :inverse_friendships, source: :user
   has_many :likes, through: :post_likes
+  has_many :likes, through: :comment_likes
 
   has_attached_file :avatar,
                     styles: { medium: '300x300>', thumb: '100x100>' },
