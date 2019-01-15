@@ -28,7 +28,6 @@ RSpec.feature "Comments", type: :feature do
 
   scenario "Can delete a comment" do
     addFriend()
-    save_and_open_page
     all('a', :text => 'Delete')[0].click
     expect(page).not_to have_content "this_is_a_new_comment"
   end
