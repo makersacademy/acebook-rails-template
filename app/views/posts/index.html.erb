@@ -10,7 +10,7 @@
           <small class="float-sm-right">
             <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
           </small>
-        </h4>
+        </h5>
       </div>
 
       <div class="card-body">
@@ -24,7 +24,7 @@
             <%= link_to "Delete", post_path(post.id), method: :delete, class: "btn btn-link" %>
             <%= link_to "Edit", edit_post_path(post.id), class: "btn btn-link" %>
           <% end %>
-          <%= link_to "Comment", "/posts/#{post.id}/comments/new", class: "btn btn-link" %>
+          <%= link_to "Comment", "/posts/#{post.id}/comments/new", class: "btn btn-link comment" %>
         </div>
       </div>
     </div>
@@ -47,12 +47,10 @@
           <div class="mt-1 mb-2 float-right">
             <% if comment.user_id == @user.id  %>
               <%= link_to "Delete", comment_path(comment.id), method: :delete, class: "btn btn-link" %>
-              <%= link_to "Edit", edit_comment_path(comment.id), class: "btn btn-link" %>
+              <%= link_to "Edit", edit_comment_path(comment.id), class: "btn btn-link edit-comment" %>
             <% end %>
           </div>
         </div>
       </div>
     <% end %>
 <% end %>
-
-

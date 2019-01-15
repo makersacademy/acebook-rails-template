@@ -10,7 +10,6 @@ RSpec.feature "Friends search", type: :feature do
     visit 'friendships/search'
     fill_in 'search', with: "Sam A"
     click_button "submit"
-    expect(page).to have_content "Sam Abc"
+    expect(page).to have_content "Sam A"
   end
 end
-

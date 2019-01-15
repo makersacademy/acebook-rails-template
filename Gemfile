@@ -43,6 +43,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-controller-testing'
+  gem 'launchy'
 end
 
 group :development do

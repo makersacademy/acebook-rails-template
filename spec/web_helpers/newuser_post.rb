@@ -17,7 +17,7 @@ def createUser(
 
 end
 
-def signin(email: "maybe@test.com", password: "hello2")
+def signin(email: "hellox@test.com", password: "hello2")
   visit "/users/sign_in"
   fill_in "Email", with: email
   fill_in "Password", with: password
@@ -33,4 +33,13 @@ def postMessage(content: "This is a post")
   click_link "New post"
   fill_in "Message", with: content
   click_button "Submit"
+end
+
+
+def addFriend
+  click_link 'Find friends'
+  fill_in 'search', with: 'Sam'
+  click_button 'submit'
+  click_button 'Add Friend'
+  visit '/posts'
 end
