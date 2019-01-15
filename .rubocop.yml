@@ -1,0 +1,25 @@
+Style/Documentation:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+AllCops:
+  Include:
+    - 'app/views/*'
+    - 'app/controllers/*'
+    - 'app/models/*'
+    - 'spec/*'
+  Exclude:
+    - 'bin/*'
+    - 'db/*'
+    - 'log/*'
+    - 'public/*'
+    - 'lib/*'
+    - 'config/*'
