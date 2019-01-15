@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
   <p>
-    <%= image_tag @user.avatar.url, size:"50x50" %>
+    <%= image_tag post.user.avatar.url, size:"50x50" %>
     <%= "#{post.user.firstname} #{post.user.lastname} " %>
     <br>
     <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
@@ -16,7 +16,7 @@
     <% post.comments.each do |comment| %>
       <span class="comment-<%= comment.id %>">
       <br> <%= comment.content %>
-      <%= image_tag @user.avatar.url, size:"30x30" %>
+      <%= image_tag comment.user.avatar.url, size:"30x30" %>
       <% if comment.user_id == @user.id || post.user_id == @user.id %>
 
         <%= link_to "Delete", comment_path(comment.id), method: :delete %>

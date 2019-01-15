@@ -8,6 +8,9 @@
 /vendor/*
 /.bundle
 
+# Ignore added profile image avatars.
+/public/system/users/avatars
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
