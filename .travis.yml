@@ -12,7 +12,7 @@ script:
 - bundle exec rspec
 - bundle exec rubocop app/views/* app/controllers/* app/models/* spec/*
 
-before_deploy: 'rails db:migrate'
+
 
 deploy:
   provider: heroku
