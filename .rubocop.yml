@@ -9,3 +9,17 @@ Metrics/AbcSize:
 
 Metrics/BlockLength:
   Enabled: false
+
+AllCops:
+  Include:
+    - 'app/views/*'
+    - 'app/controllers/*'
+    - 'app/models/*'
+    - 'spec/*'
+  Exclude:
+    - 'bin/*'
+    - 'db/*'
+    - 'log/*'
+    - 'public/*'
+    - 'lib/*'
+    - 'config/*'
