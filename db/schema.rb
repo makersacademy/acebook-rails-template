@@ -25,16 +25,6 @@ ActiveRecord::Schema.define(version: 20190115121430) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "friends", force: :cascade do |t|
-    t.integer "friend1_id"
-    t.integer "friend2_id"
-    t.string "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_friends_on_user_id"
-  end
-
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id"
     t.integer "friend_id"
@@ -82,7 +72,6 @@ ActiveRecord::Schema.define(version: 20190115121430) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "friends", "users"
   add_foreign_key "post_likes", "posts"
   add_foreign_key "post_likes", "users"
   add_foreign_key "posts", "users"

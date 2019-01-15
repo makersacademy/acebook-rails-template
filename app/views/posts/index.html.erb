@@ -6,6 +6,8 @@
     <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
     <br>
     <%= post.message %>
+    <%= post.post_likes.count %>
+    <%= post.post_likes.count == 1 ? 'like' : 'likes' %> 
     <% if PostLike.where(post_id: post.id, user_id: @user.id).exists? %>
       <%= link_to "Unlike", post_like_path(post.id), method: :delete %>
     <% else %>
