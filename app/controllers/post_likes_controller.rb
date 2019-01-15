@@ -1,5 +1,4 @@
 class PostLikesController < ApplicationController
-
   def new
     @user = current_user
     @post = Post.find(params[:id])
