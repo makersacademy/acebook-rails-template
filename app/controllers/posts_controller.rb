@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
@@ -7,7 +9,7 @@ class PostsController < ApplicationController
     @user = current_user
     @post = @user.posts.create(post_params)
 
-    if(@post.save)
+    if @post.save
       redirect_to posts_url
     else
       render 'new'
@@ -20,14 +22,14 @@ class PostsController < ApplicationController
   end
 
   def edit
-     @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
 
-    if(@post.save)
+    if @post.save
       redirect_to posts_url
     else
       render 'edit'
@@ -36,7 +38,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.comments.each { |comment| comment.destroy }
+    @post.comments.each(&:destroy)
     @post.destroy
     redirect_to posts_url
   end

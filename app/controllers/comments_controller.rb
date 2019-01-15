@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   def new
     @post = Post.find(params[:id])
@@ -13,7 +15,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
-     @comment = Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
 
   def update
@@ -31,7 +33,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content,:post_id)
+    params.require(:comment).permit(:content, :post_id)
   end
-
 end
