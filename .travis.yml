@@ -10,7 +10,7 @@ before_script:
 script:
 - bundle exec rails db:migrate RAILS_ENV=test
 - bundle exec rspec
-- bundle exec rubocop app/views/* app/controllers/* app/models/* db/* spec/*
+- bundle exec rubocop app/views/* app/controllers/* app/models/* db/migrate/* spec/*
 deploy:
   provider: heroku
   api_key:
