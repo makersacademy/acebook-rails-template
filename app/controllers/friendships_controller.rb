@@ -6,7 +6,8 @@ class FriendshipsController < ApplicationController
       firstword = params[:search].split(' ').first
       lastword = params[:search].split(' ').last
 
-      @results = User.where(['firstname LIKE ? OR lastname LIKE ?', firstword.to_s, lastword.to_s])
+      @results = User.where(['firstname LIKE ? OR lastname LIKE ?',
+                             firstword.to_s, lastword.to_s])
     end
   end
 

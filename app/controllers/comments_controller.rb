@@ -10,7 +10,9 @@ class CommentsController < ApplicationController
     @params = comment_params
     @user = current_user
     @post = Post.find(@params[:post_id])
-    @comment = Comment.create(user_id: @user.id, post_id: @post.id, content: @params[:content])
+    @comment = Comment.create(user_id: @user.id,
+                              post_id: @post.id,
+                              content: @params[:content])
     redirect_to posts_url
   end
 
