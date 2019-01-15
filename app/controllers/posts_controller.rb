@@ -36,6 +36,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    @post.comments.each { |comment| comment.destroy }
     @post.destroy
     redirect_to posts_url
   end
