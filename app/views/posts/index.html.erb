@@ -16,11 +16,11 @@
       <div class="card-body">
         <div class="card-text">
           <%= post.message %>
-          % if post.user_id == @user.id  %>
+          <% if post.user_id == @user.id  %>
             <%= link_to "Delete", post_path(post.id), method: :delete, class: "btn btn-link" %>
             <%= link_to "Edit", edit_post_path(post.id), class: "btn btn-link" %>
           <% end %>
-          <%= link_to "Comment", "/posts/#{post.id}/comments/new", class: "btn btn-link comment" %>
+          <%= link_to "Comment", "/posts/#{post.id}/comments/new", class: "btn btn-primary" %>
         </div>
       </div>
       <div class="card-footer">
@@ -68,4 +68,4 @@
         </div>
       </div>
     <% end %>
-<% end %>
+  <% end %>
