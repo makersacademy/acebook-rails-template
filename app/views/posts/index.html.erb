@@ -6,7 +6,6 @@
       <div class="card-header">
         <h5>
           <%= image_tag post.user.avatar.url, size:"50x50", class: "mr-2 rounded-circle"%>
-          <img src="//placehold.it/70" alt="" class="mr-2 rounded-circle">
           <%= "#{post.user.firstname} #{post.user.lastname} " %>
           <small class="float-sm-right">
             <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
@@ -35,7 +34,7 @@
         <div class="card-header border-0">
         <%= image_tag comment.user.avatar.url, size:"50x50", class: "mr-2 rounded-circle"%>
         </div>
-        <div class="card-block col-11 px-2">
+        <div class="card-block col-10 px-2">
           <h6 class="card-title">
             <%= "#{comment.user.firstname} #{comment.user.lastname} " %>
             <small class="float-right">
