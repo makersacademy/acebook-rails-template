@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
     @comment = Comment.create(user_id: @user.id,
                               post_id: @post.id,
                               content: @params[:content])
+
     redirect_to posts_url
   end
 

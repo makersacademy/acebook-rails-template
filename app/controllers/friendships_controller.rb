@@ -5,14 +5,13 @@ class FriendshipsController < ApplicationController
     if params[:search]
       firstword = params[:search].split(' ').first
       lastword = params[:search].split(' ').last
-
-      @results = User.where(['firstname LIKE ? OR lastname LIKE ?',
-                             firstword.to_s, lastword.to_s])
+      @results = User.where(
+        ['firstname LIKE ? OR lastname LIKE ?', firstword.to_s, lastword.to_s]
+      )
     end
   end
 
   def create
-    p params
     @friendship = current_user.friendships.build(friend_id: params['friend_id'])
     if @friendship.save
       flash[:notice] = 'Added friend.'

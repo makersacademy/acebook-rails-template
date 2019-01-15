@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   resources :comments, except: [:new]
   get 'posts/:id/comments/new' => 'comments#new'
   match 'users/:id' => 'users#remove', via: :delete, as: 'delete-user'
+  resources :post_likes
+  match 'posts/:id/post_likes/new' => 'post_likes#new', via: :get, as: 'post_likes_new'
+  resources :comment_likes
+  match 'comments/:id/comment_likes/new' => 'comment_likes#new', via: :get, as: 'comment_likes_new'
 end

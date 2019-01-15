@@ -18,6 +18,7 @@ def createUser(
   )
 end
 
+
 def signin(email: 'hellox@test.com', password: 'hello2')
   visit '/users/sign_in'
   fill_in 'Email', with: email

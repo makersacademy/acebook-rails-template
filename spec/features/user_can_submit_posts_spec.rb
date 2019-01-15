@@ -29,6 +29,7 @@ RSpec.feature 'Posts', type: :feature do
   end
 
   scenario 'Can add a post and delete it' do
+
     signout
     createUser(email: 'new@test.com')
     signin(email: 'new@test.com', password: 'hello2')
@@ -36,6 +37,7 @@ RSpec.feature 'Posts', type: :feature do
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
     all('a', text: 'Delete')[0].click
+
     expect(page).not_to have_content('Hello, world!')
   end
 end

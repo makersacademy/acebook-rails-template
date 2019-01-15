@@ -10,6 +10,9 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Enabled: false
 
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 AllCops:
   Include:
     - 'app/views/*'
@@ -24,3 +27,4 @@ AllCops:
     - 'lib/*'
     - 'config/*'
     - 'spec/spec_helper.rb'
+
