@@ -19,3 +19,7 @@ deploy:
   api_key:
     secure: pkAuAC8CbVjFrsVETT66j8BLs3jLy944+fiOpmZISneNNr+sFWJ0f2Y8G3P0fINpjQnALPgD/3zkk1So1ugOj1ZRAI/P9EG+K+y7PVPB/If7aNoKVRrdTmFIb1ccXRS1fwJDw2AZyFrlrJqvY+ZaTR3f7TlVq6bT7Vgt84UiMabEbxbd6myGGkcA18AZx2SOYarrQSM6P3Asa6A98pmiN8UR3rrQkb9OCuKzfX0we27nSV800QgP3DcfZimouUrdZ0AC085+avl55gZMmNhj2kRLrgVpPCeJsyzXIp8kpFNXO9wEiRXgJpdz4me05IpGdGIa/UqLXfGh7fjOnY60Ri2XAJanDZq0ZUogGcJTAVF4l1Lwd1rewVtMmg7/A+ppq7h3C0PJTY6uMpdMMz7H7NUFZ6da4s5wYWK4ixrRgs5pllQhd0y8GPNJ6F8NDRz9GgS/mAa4nov3CgCZas8xXluCC4/jplOx1qpFV8dRfuJfoMQJEOs78th0HRbJ+1tlX03HbBxT/EEtXXGKzlRSL1ROV0t8uIa/WMNa+bykiZmU5WcLOXwdzYWGZjD4SYCKlMLzPxjOCqSGO/qbg1XZ37avao9MafrY6ZVwW+84eAyLizQo7VOQdjaf1zSODEWlFoVSk8J1rgOpRJ7Kf5Xz1r5p7Ji05MsSyf9+uN53ybc=
   app: ruby-acebook
+  run:
+    - "rails db:migrate"
+    - restart
+    - "rails cleanup"
