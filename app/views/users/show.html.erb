@@ -41,6 +41,7 @@
     </div>
   </div>
 
+<% if @user.id == current_user.id%>
  <div class="panel-footer">
     <span class="pull-right">
         <a href="edit.html" type="button" class="btn btn-info mb-2">Edit</a>
@@ -48,19 +49,25 @@
           data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger") %>
     </span>
   </div>
+<% end %>
 
   <div id="your-friends">
     <br>
-    <h3>Your friends: </h3>
+    <h3>Friends: </h3>
     <hr>
     <div class="card-columns">
       <% @friends.each do |friend| %>
           <div class="card col-5">
-            <div class="card-body">
-              <%= image_tag friend.avatar.url, size:"50x50", class: "mr-2 rounded-circle center"%>
-              <%= "#{friend.firstname} #{friend.lastname}" %>
-              <%= link_to "unfriend","#" %>
-            </div>
+            <%= link_to profile_page_path(friend.id) do %>
+              <div class="card-body">
+                <%= image_tag friend.avatar.url, size:"50x50", class: "mr-2 rounded-circle center"%>
+                <%= "#{friend.firstname} #{friend.lastname}" %>
+              
+              <% if @user.id == current_user.id %>
+                <%= link_to "unfriend","#" %>
+              <% end %>
+              </div>
+            <% end %>
           </div>
       <% end %>
     </div>
