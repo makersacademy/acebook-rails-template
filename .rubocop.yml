@@ -26,3 +26,5 @@ AllCops:
     - 'public/*'
     - 'lib/*'
     - 'config/*'
+    - 'spec/spec_helper.rb'
+

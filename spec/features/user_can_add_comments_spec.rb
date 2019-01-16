@@ -48,16 +48,17 @@ RSpec.feature 'Comments', type: :feature do
   scenario "Can delete another person's comment on own post" do
     signout
     expect(page).to have_content('sign in')
-    createUser(email: 'hello@mail.com', firstname: 'John')
-    signin(email: 'hello@mail.com')
+    createUser(email: 'hello5@mail.com', firstname: 'John')
+    signin(email: 'hello5@mail.com')
     addFriend
     click_link 'Comment'
     fill_in 'comment_content', with: 'Test comment'
     click_button 'Submit'
     signout
     signin
+    save_and_open_page
     expect(page).to have_content 'Test comment'
-    all('a', text: 'Delete')[1].click
+    all('a', text: 'Delete')[0].click
     expect(page).not_to have_content 'Test comment'
   end
 end

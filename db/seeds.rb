@@ -20,7 +20,7 @@ User.create(firstname: 'David',
             lastname: 'B',
             email: 'hello2@test.com',
             password: 'hello2')
-User.create(firstname: 'Sam',
+User.create(firstname: 'Will',
             lastname: 'Abc',
             email: 'hello3@test.com',
             password: 'hello2')

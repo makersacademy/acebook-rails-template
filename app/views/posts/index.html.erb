@@ -1,49 +1,71 @@
+<%= link_to new_post_path do %>
+ <div class="btn btn-primary">Make a new post</div>
+<% end %>
 <% @posts.each do |post| %>
-  <p>
-    <%= image_tag post.user.avatar.url, size:"50x50" %>
-    <%= "#{post.user.firstname} #{post.user.lastname} " %>
-    <br>
-    <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
-    <br>
-    <%= post.message %>
-    <%= post.post_likes.count %>
-    <%= post.post_likes.count == 1 ? 'like' : 'likes' %>
-    <% if PostLike.where(post_id: post.id, user_id: @user.id).exists? %>
-      <%= link_to "Unlike", post_like_path(post.id), method: :delete %>
-    <% else %>
-      <%= link_to "Like", post_likes_new_path(post.id) %>
-    <% end %>
-    <% if post.user_id == @user.id  %>
-      <%= link_to "Delete", post_path(post.id), method: :delete %>
-      <%= link_to "Edit", edit_post_path(post.id) %>
-    <% end %>
+    <div class="card mt-5">
+      <div class="card-header">
+        <h5>
+          <%= image_tag post.user.avatar.url, size:"50x50", class: "mr-2 rounded-circle"%>
+          <%= "#{post.user.firstname} #{post.user.lastname} " %>
+          <small class="float-sm-right">
+            <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
+          </small>
+        </h5>
+      </div>
 
-    <%= link_to "Comment", "/posts/#{post.id}/comments/new" %>
+      <div class="card-body">
+        <div class="card-text">
+          <%= post.message %>
+          <% if post.user_id == @user.id  %>
+            <%= link_to "Delete", post_path(post.id), method: :delete, class: "btn btn-link" %>
+            <%= link_to "Edit", edit_post_path(post.id), class: "btn btn-link" %>
+          <% end %>
+          <%= link_to "Comment", "/posts/#{post.id}/comments/new", class: "btn btn-link" %>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="float-right">
+          <%= post.post_likes.count %>
+          <%= post.post_likes.count == 1 ? 'like' : 'likes' %>
+          <% if PostLike.where(post_id: post.id, user_id: @user.id).exists? %>
+            <%= link_to "Unlike", post_like_path(post.id), method: :delete %>
+          <% else %>
+            <%= link_to "Like", post_likes_new_path(post.id) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
     <% post.comments.each do |comment| %>
-      <span class="comment-<%= comment.id %>">
-      <br> <%= comment.content %>
-      <%= comment.comment_likes.count %>
-      <%= comment.comment_likes.count == 1 ? 'like' : 'likes' %>
-      <% if CommentLike.where(comment_id: comment.id, user_id: @user.id).exists? %>
-        <%= link_to "Unlike", comment_like_path(comment.id), method: :delete %>
-      <% else %>
-        <%= link_to "Like", comment_likes_new_path(comment.id) %>
-      <% end %>
-      <%= image_tag comment.user.avatar.url, size:"30x30" %>
-      <% if comment.user_id == @user.id || post.user_id == @user.id %>
-
-        <%= link_to "Delete", comment_path(comment.id), method: :delete %>
-        <% if comment.user_id == @user.id  %>
-          <%= link_to "Edit", edit_comment_path(comment.id) %>
-        <%  end  %>
-
-      <% end %>
-      </span>
+       <div class="card flex-row flex-wrap mt-2">
+        <div class="card-header border-0">
+        <%= image_tag comment.user.avatar.url, size:"50x50", class: "mr-2 rounded-circle"%>
+        </div>
+        <div class="card-block col-10 px-2">
+          <h6 class="card-title">
+            <%= "#{comment.user.firstname} #{comment.user.lastname} " %>
+            <small class="float-right">
+              <%= "#{distance_of_time_in_words_to_now(comment.created_at)} ago" %>
+            </small>
+          </h6>
+          <p class="card-text">
+            <%= comment.content %>
+            <%= comment.comment_likes.count %>
+            <%= comment.comment_likes.count == 1 ? 'like' : 'likes' %>
+            <% if CommentLike.where(comment_id: comment.id, user_id: @user.id).exists? %>
+              <%= link_to "Unlike", comment_like_path(comment.id), method: :delete %>
+            <% else %>
+              <%= link_to "Like", comment_likes_new_path(comment.id) %>
+            <% end %>
+            <%= image_tag comment.user.avatar.url, size:"30x30" %>
+          </p>
+          <div class="mt-1 mb-2 float-right">
+            <% if comment.user_id == @user.id  %>
+              <%= link_to "Delete", comment_path(comment.id), method: :delete, class: "btn btn-link" %>
+              <%= link_to "Edit", edit_comment_path(comment.id), class: "btn btn-link edit-comment" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
-    </p>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+  <% end %>
