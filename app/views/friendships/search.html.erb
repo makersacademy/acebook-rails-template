@@ -6,8 +6,10 @@
 <% if @results %>
   <% @results.each do |friend| %>
     <% unless friend.id == current_user.id %>
-      <hr>
-      <%= "#{friend.firstname} #{friend.lastname}" %>
+      <%= link_to profile_page_path(friend.id) do %>
+        <hr>
+        <%= "#{friend.firstname} #{friend.lastname}" %>
+      <% end %>
       <form  action="create" method="post">
         <%= token_tag %>
         <input type="hidden" name="friend_id" value="<%= friend.id %>">
