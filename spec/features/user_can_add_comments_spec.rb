@@ -50,12 +50,12 @@ RSpec.feature 'Comments', type: :feature do
     expect(page).to have_content('sign in')
     createUser(email: 'hello5@mail.com', firstname: 'John')
     signin(email: 'hello5@mail.com')
-    addFriend
+    addFriend(name: "David")
     click_link 'Comment'
     fill_in 'comment_content', with: 'Test comment'
     click_button 'Submit'
     signout
-    signin
+    signin(email: 'hello2@test.com', password: 'hello2')
     expect(page).to have_content 'Test comment'
     all('a', text: 'Delete')[0].click
     expect(page).not_to have_content 'Test comment'
