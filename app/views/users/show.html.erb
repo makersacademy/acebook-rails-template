@@ -1,6 +1,10 @@
 <div class="panel panel-info">
   <div class="panel-heading">
+<% if @user.id == current_user.id%>
     <h3 class="panel-title">My Profile</h3>
+<% else %>
+  <h3 class="panel-title">Profile</h3>
+<% end %>
   </div>
 
   <div class="panel-body">
