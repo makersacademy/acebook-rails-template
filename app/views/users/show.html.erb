@@ -44,9 +44,11 @@
 <% if @user.id == current_user.id%>
  <div class="panel-footer">
     <span class="pull-right">
-        <a href="edit.html" type="button" class="btn btn-info mb-2">Edit</a>
-        <%= button_to("Delete", cancel_user_registration_path(@user.id),
-          data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger") %>
+        <a href="edit.html" type="button" class="btn btn-primary">Edit</a>
+        <%= link_to "Delete", delete_user_path(current_user.id),
+        method: :delete,
+        data: { confirm: "Are you sure?" },
+        class: "btn btn-danger" %>
     </span>
   </div>
 <% end %>
@@ -62,7 +64,7 @@
               <div class="card-body">
                 <%= image_tag friend.avatar.url, size:"50x50", class: "mr-2 rounded-circle center"%>
                 <%= "#{friend.firstname} #{friend.lastname}" %>
-              
+
               <% if @user.id == current_user.id %>
                 <%= link_to "unfriend","#" %>
               <% end %>
