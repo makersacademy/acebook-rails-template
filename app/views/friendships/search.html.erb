@@ -10,7 +10,11 @@
     <form  action="create" method="post">
       <%= token_tag %>
       <input type="hidden" name="friend_id" value="<%= friend.id %>">
-      <input type="submit" value="Add Friend">
+      <% if already_friends?(current_user, friend) %>
+        <h6>Already friends!</h6>
+      <% else %>
+        <input type="submit" value="Add Friend">
+      <% end %>
     </form>
     </br>
   <% end %>

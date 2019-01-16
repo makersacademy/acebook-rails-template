@@ -13,7 +13,8 @@ class FriendshipsController < ApplicationController
 
   def create
     @friendship = current_user.friendships.build(friend_id: params['friend_id'])
-    if @friendship.save
+    @opposite_friendship = User.find(params['friend_id']).friendships.build(friend_id: current_user.id)
+    if @friendship.save && @opposite_friendship.save
       flash[:notice] = 'Added friend.'
       redirect_to profile_page_path(current_user.id)
     else
