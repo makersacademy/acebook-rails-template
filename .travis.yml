@@ -22,4 +22,3 @@ deploy:
   run:
     - "rails db:migrate"
     - restart
-    - "rails cleanup"
