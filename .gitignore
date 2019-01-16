@@ -12,6 +12,9 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+# Ignore the schema file, it's always changing
+/db/schema.rb
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
