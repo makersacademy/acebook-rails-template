@@ -10,15 +10,14 @@ RSpec.feature 'Comments', type: :feature do
   end
 
   scenario 'Can leave a comment on a post and view them' do
-    first('.comment').click
+    click_link 'Comment'
     fill_in 'comment_content', with: 'Test comment'
     click_button 'Submit'
     expect(page).to have_content 'Test comment'
   end
 
   scenario 'Can edit a comment' do
-    addFriend()
-    first('.comment').click
+    click_link 'Comment'
     fill_in 'comment_content', with: 'Test comment'
     click_button 'Submit'
     all('a', text: 'Edit')[1].click
@@ -28,15 +27,20 @@ RSpec.feature 'Comments', type: :feature do
   end
 
   scenario 'Can delete a comment' do
-    addFriend
-    all('a', text: 'Delete')[0].click
-    expect(page).not_to have_content 'this_is_a_new_comment'
+    click_link 'Comment'
+    fill_in 'comment_content', with: 'No comment'
+    click_button 'Submit'
+    all('a', text: 'Delete')[1].click
+    expect(page).not_to have_content 'No comment'
   end
 
   scenario "Can't edit/delete someone else's comments" do
+    click_link 'Comment'
+    fill_in 'comment_content', with: 'Test comment'
+    click_button 'Submit'
     signout
-    createUser(email: 'new@test.com')
-    signin(email: 'new@test.com', password: 'hello2')
+    createUser(email: 'hello@mail.com')
+    signin(email: 'hello@mail.com')
     expect(page).not_to have_content 'Edit'
     expect(page).not_to have_content 'Delete'
   end
@@ -44,16 +48,17 @@ RSpec.feature 'Comments', type: :feature do
   scenario "Can delete another person's comment on own post" do
     signout
     expect(page).to have_content('sign in')
-    createUser(email: 'hello@mail.com', firstname: 'John')
-    signin(email: 'hello@mail.com')
+    createUser(email: 'hello5@mail.com', firstname: 'John')
+    signin(email: 'hello5@mail.com')
     addFriend
     click_link 'Comment'
     fill_in 'comment_content', with: 'Test comment'
     click_button 'Submit'
     signout
     signin
+    save_and_open_page
     expect(page).to have_content 'Test comment'
-    all('a', text: 'Delete')[1].click
+    all('a', text: 'Delete')[0].click
     expect(page).not_to have_content 'Test comment'
   end
 end
