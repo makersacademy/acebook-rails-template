@@ -58,14 +58,16 @@
     <div class="card-columns">
       <% @friends.each do |friend| %>
           <div class="card col-5">
-            <div class="card-body">
-              <%= image_tag friend.avatar.url, size:"50x50", class: "mr-2 rounded-circle center"%>
-              <%= "#{friend.firstname} #{friend.lastname}" %>
+            <%= link_to profile_page_path(friend.id) do %>
+              <div class="card-body">
+                <%= image_tag friend.avatar.url, size:"50x50", class: "mr-2 rounded-circle center"%>
+                <%= "#{friend.firstname} #{friend.lastname}" %>
               
-            <% if @user.id == current_user.id %>
-              <%= link_to "unfriend","#" %>
+              <% if @user.id == current_user.id %>
+                <%= link_to "unfriend","#" %>
+              <% end %>
+              </div>
             <% end %>
-            </div>
           </div>
       <% end %>
     </div>
