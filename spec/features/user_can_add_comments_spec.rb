@@ -56,7 +56,6 @@ RSpec.feature 'Comments', type: :feature do
     click_button 'Submit'
     signout
     signin
-    save_and_open_page
     expect(page).to have_content 'Test comment'
     all('a', text: 'Delete')[0].click
     expect(page).not_to have_content 'Test comment'
