@@ -9,8 +9,10 @@ class UsersController < ApplicationController
   end
 
   def remove
-    User.destroy(params[:format])
-
-    redirect_to root_url, notice: 'User deleted.' if @user.destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    if @user.destroy
+      redirect_to new_user_registration_url, notice: 'User deleted.'
+    end
   end
 end

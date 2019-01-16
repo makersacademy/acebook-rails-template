@@ -1,6 +1,10 @@
 <div class="panel panel-info">
   <div class="panel-heading">
+<% if @user.id == current_user.id%>
     <h3 class="panel-title">My Profile</h3>
+<% else %>
+  <h3 class="panel-title">Profile</h3>
+<% end %>
   </div>
 
   <div class="panel-body">
@@ -41,26 +45,35 @@
     </div>
   </div>
 
+<% if @user.id == current_user.id%>
  <div class="panel-footer">
     <span class="pull-right">
-        <a href="edit.html" type="button" class="btn btn-info mb-2">Edit</a>
-        <%= button_to("Delete", cancel_user_registration_path(@user.id),
-          data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger") %>
+        <a href="edit.html" type="button" class="btn btn-primary">Edit</a>
+        <%= link_to "Delete", delete_user_path(current_user.id),
+        method: :delete,
+        data: { confirm: "Are you sure?" },
+        class: "btn btn-danger" %>
     </span>
   </div>
+<% end %>
 
   <div id="your-friends">
     <br>
-    <h3>Your friends: </h3>
+    <h3>Friends: </h3>
     <hr>
     <div class="card-columns">
       <% @friends.each do |friend| %>
           <div class="card col-5">
-            <div class="card-body">
-              <%= image_tag friend.avatar.url, size:"50x50", class: "mr-2 rounded-circle center"%>
-              <%= "#{friend.firstname} #{friend.lastname}" %>
-              <%= link_to 'Unfriend', friendships_delete_path(friend.id),  method: :delete %>
-            </div>
+            <%= link_to profile_page_path(friend.id) do %>
+              <div class="card-body">
+                <%= image_tag friend.avatar.url, size:"50x50", class: "mr-2 rounded-circle center"%>
+                <%= "#{friend.firstname} #{friend.lastname}" %>
+
+              <% if @user.id == current_user.id %>
+                  <%= link_to 'Unfriend', friendships_delete_path(friend.id),  method: :delete %>
+              <% end %>
+              </div>
+            <% end %>
           </div>
       <% end %>
     </div>

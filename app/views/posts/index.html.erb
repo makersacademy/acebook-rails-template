@@ -5,8 +5,10 @@
     <div class="card mt-5">
       <div class="card-header">
         <h5>
-          <%= image_tag post.user.avatar.url, size:"50x50", class: "mr-2 rounded-circle"%>
-          <%= "#{post.user.firstname} #{post.user.lastname} " %>
+          <%= link_to profile_page_path(post.user.id) do %>
+            <%= image_tag post.user.avatar.url, size:"50x50", class: "mr-2 rounded-circle"%>
+            <%= "#{post.user.firstname} #{post.user.lastname} " %>
+          <% end %>
           <small class="float-sm-right">
             <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
           </small>
@@ -43,7 +45,9 @@
         </div>
         <div class="card-block col-10 px-2">
           <h6 class="card-title">
+          <%= link_to profile_page_path(post.user.id) do %>
             <%= "#{comment.user.firstname} #{comment.user.lastname} " %>
+          <% end %>
             <small class="float-right">
               <%= "#{distance_of_time_in_words_to_now(comment.created_at)} ago" %>
             </small>
