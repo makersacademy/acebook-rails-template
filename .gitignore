@@ -22,8 +22,8 @@
 !/tmp/.keep
 
 # Ignore all jpgs and pngs in avatars folder
-/public/system/users/*.png
-/public/system/users/*.jpg
+/public/system/users/**/*.png
+/public/system/users/**/*.jpg
 
 /node_modules
 /yarn-error.log
