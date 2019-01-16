@@ -59,7 +59,7 @@
             <div class="card-body">
               <%= image_tag friend.avatar.url, size:"50x50", class: "mr-2 rounded-circle center"%>
               <%= "#{friend.firstname} #{friend.lastname}" %>
-              <%= link_to "unfriend","#" %>
+              <%= link_to 'Unfriend', friendships_delete_path(friend.id),  method: :delete %>
             </div>
           </div>
       <% end %>
