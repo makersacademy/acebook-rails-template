@@ -5,17 +5,19 @@
 
 <% if @results %>
   <% @results.each do |friend| %>
-    <hr>
-    <%= "#{friend.firstname} #{friend.lastname}" %>
-    <form  action="create" method="post">
-      <%= token_tag %>
-      <input type="hidden" name="friend_id" value="<%= friend.id %>">
-      <% if already_friends?(current_user, friend) %>
-        <h6>Already friends!</h6>
-      <% else %>
-        <input type="submit" value="Add Friend">
-      <% end %>
-    </form>
-    </br>
+    <% unless friend.id == current_user.id %>
+      <hr>
+      <%= "#{friend.firstname} #{friend.lastname}" %>
+      <form  action="create" method="post">
+        <%= token_tag %>
+        <input type="hidden" name="friend_id" value="<%= friend.id %>">
+        <% if already_friends?(current_user, friend) %>
+          <h6>Already friends!</h6>
+        <% else %>
+          <input type="submit" value="Add Friend">
+        <% end %>
+      </form>
+      </br>
+    <% end %>
   <% end %>
 <% end %>
