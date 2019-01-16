@@ -5,9 +5,12 @@ class FriendshipsController < ApplicationController
     if params[:search]
       firstword = params[:search].split(' ').first
       lastword = params[:search].split(' ').last
-      @results = User.where(
-        ['firstname LIKE ? OR lastname LIKE ?', firstword.to_s, lastword.to_s]
-      )
+      @results = User.where([
+                              'lower(firstname) LIKE ?
+                              OR lower(lastname) LIKE ?',
+                              firstword.to_s.downcase,
+                              lastword.to_s.downcase
+                            ])
     end
   end
 

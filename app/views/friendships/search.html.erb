@@ -5,10 +5,11 @@
 
 <% if @results %>
   <% @results.each do |friend| %>
-    <%= link_to profile_page_path(friend.id) do %>
-      <hr>
-      <%= "#{friend.firstname} #{friend.lastname}" %>
-    <% end %>
+    <% unless friend.id == current_user.id %>
+      <%= link_to profile_page_path(friend.id) do %>
+        <hr>
+        <%= "#{friend.firstname} #{friend.lastname}" %>
+      <% end %>
       <form  action="create" method="post">
         <%= token_tag %>
         <input type="hidden" name="friend_id" value="<%= friend.id %>">
@@ -19,5 +20,6 @@
         <% end %>
       </form>
       </br>
+    <% end %>
   <% end %>
 <% end %>
