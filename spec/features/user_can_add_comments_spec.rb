@@ -17,7 +17,7 @@ RSpec.feature 'Comments', type: :feature do
   end
 
   scenario 'Can edit a comment' do
-    addFriend
+    addFriend()
     first('.comment').click
     fill_in 'comment_content', with: 'Test comment'
     click_button 'Submit'
@@ -39,7 +39,7 @@ RSpec.feature 'Comments', type: :feature do
     signin(email: 'new@test.com', password: 'hello2')
     expect(page).not_to have_content 'Edit'
     expect(page).not_to have_content 'Delete'
-  end 
+  end
 
   scenario "Can delete another person's comment on own post" do
     signout

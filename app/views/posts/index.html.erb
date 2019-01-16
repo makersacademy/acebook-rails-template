@@ -20,7 +20,7 @@
             <%= link_to "Delete", post_path(post.id), method: :delete, class: "btn btn-link" %>
             <%= link_to "Edit", edit_post_path(post.id), class: "btn btn-link" %>
           <% end %>
-          <%= link_to "Comment", "/posts/#{post.id}/comments/new", class: "btn btn-primary" %>
+          <%= link_to "Comment", "/posts/#{post.id}/comments/new", class: "btn btn-link" %>
         </div>
       </div>
       <div class="card-footer">
