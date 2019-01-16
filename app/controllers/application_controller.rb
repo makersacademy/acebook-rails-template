@@ -15,4 +15,5 @@ class ApplicationController < ActionController::Base
       :account_update, keys: %i[username firstname lastname birthday bio avatar]
     )
   end
+  
 end
