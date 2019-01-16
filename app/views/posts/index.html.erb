@@ -57,7 +57,6 @@
             <% else %>
               <%= link_to "Like", comment_likes_new_path(comment.id) %>
             <% end %>
-            <%= image_tag comment.user.avatar.url, size:"30x30" %>
           </p>
           <div class="mt-1 mb-2 float-right">
             <% if comment.user_id == @user.id  %>
