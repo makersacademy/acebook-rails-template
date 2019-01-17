@@ -32,4 +32,10 @@ RSpec.feature 'Posts', type: :feature do
     click_link 'Delete'
     expect(page).not_to have_content('Hello, world!')
   end
+
+  scenario 'posts show up in users profile' do
+    postMessage
+    click_link 'My profile'
+    expect(page).to have_content('This is a post')
+  end
 end
