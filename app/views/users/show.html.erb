@@ -78,3 +78,43 @@
       <% end %>
     </div>
   </div>
+
+  <div id="your-friends">
+    <br>
+    <h3>Posts: </h3>
+    <hr>
+    <% current_user.posts.each do |post| %>
+    <div class="card mt-5">
+      <div class="card-header">
+        <h5>
+
+            <%= link_to profile_page_path(post.user.id) do %>
+            <%= image_tag post.user.avatar.url, size:"50x50", class: "mr-2 rounded-circle"%>
+            <%= "#{post.user.firstname} #{post.user.lastname} " %>
+          <small class="float-sm-right">
+            <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
+            <% end %>
+          </small>
+        </h5>
+      </div>
+
+      <div class="card-body">
+        <div class="card-text">
+          <%= post.message %>
+          <div class="float-right">
+              <%= link_to "Delete", post_path(post.id), method: :delete, class: "btn btn-link" %>
+              <%= link_to "Edit", edit_post_path(post.id), class: "btn btn-link" %>
+              <%= link_to "Comment", "/posts/#{post.id}/comments/new", class: "btn btn-link" %>
+              <%= post.post_likes.count %>
+              <%= post.post_likes.count == 1 ? 'like' : 'likes' %>
+              <% if PostLike.where(post_id: post.id, user_id: @user.id).exists? %>
+                <%= link_to "Unlike", post_like_path(post.id), method: :delete %>
+              <% else %>
+                <%= link_to "Like", post_likes_new_path(post.id) %>
+              <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
