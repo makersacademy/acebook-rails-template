@@ -7,7 +7,7 @@ the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: https://trello.com/b/N4PRpCHf/acebook-rails-project
+2. The card wall is here: https://trello.com/b/N4PRpCHf/acebook-cats
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
