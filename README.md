@@ -1,3 +1,10 @@
+
+[![Build Status](https://travis-ci.com/Rodrigue-K/acebook-rails-template.svg?branch=master)](https://travis-ci.com/Rodrigue-K/acebook-rails-template)
+
+
+https://trello.com/b/WCP79ISK/acebook-chill
+
+
 # AceBook
 
 REQUIRED INSTRUCTIONS:
