@@ -1,22 +1,20 @@
 # AceBook
 
-REQUIRED INSTRUCTIONS:
+## Technologies Used
+ * [Ruby on Rails]()
+ * [Active Record]()
+ * [RSPEC]()
+ * [Capybara]()
+ 
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+## Prerequisites
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+### Installation
 
-2. The card wall is here: <please update>
+### Quickstart
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Quickstart
-
-First, clone this repository. Then:
-
-```bash
+```
+> git clone git@github.com:CazaBelle/acebook-rails-smoking-dragons.git
 > bundle install
 > bin/rails db:create
 > bin/rails db:migrate
@@ -24,3 +22,20 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## Testing 
+
+## Deployment
+
+## Built With 
+
+## Contributing 
+
+## Authors 
+* [Georges Le Vaillant]() 
+* [Onkar Sahota]()
+* [Jacques Laffy]()
+* [Carol Gardiner]()
+
+
+
