@@ -19,4 +19,8 @@ _Heroku_
 * We learned that we cannot deploy pure Javascript app/without node
 
 _Travis CI_
-*
+* Reinforced basic understanding of Continuous Integration functionality
+* Found out that the Travis .yml file is so sensitive to indendation that it won't run properly without the correct number of spaces in the indents
+* Also found out importance of having the 'bundle install --jobs=3 --retry=3' command at the top of the 'script:' section of the .yml file
+* We can get Travis set up so that it will pass latest iteration to Heroku automatically, as long as it passes the tests
+
