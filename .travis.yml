@@ -1,17 +1,8 @@
 language: ruby
 rvm:
-- 2.5.0
-# - 2.0.0
-# - 1.9.3
-- jruby-19mode
-- rbx-2
-
-env:
-  - DB=postgresql
-
+  - 2.5.0
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  — bundle install — jobs=3 — retry=3
-  — bundle exec rails db:create
-  — bundle exec rails db:migrate
+  - bundle install --jobs=3 --retry=3
+  - bin/rails db:create
+  - bin/rails db:migrate
   - bundle exec rspec
