@@ -9,9 +9,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
   end
 
+  def home
+    @posts = Post.all
+  end
   private
 
   def post_params
