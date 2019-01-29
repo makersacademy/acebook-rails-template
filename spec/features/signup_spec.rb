@@ -15,7 +15,4 @@ RSpec.feature "Signup", type: :feature do
 
   end
 
-
-
-
 end
