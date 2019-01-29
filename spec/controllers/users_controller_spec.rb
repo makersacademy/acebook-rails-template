@@ -9,5 +9,11 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "GET #create" do
+    it "creates a new user" do
+      get :create, params: { users: { username: "oss", email: "ossemail" , password: "123"} }
+      expect(User.find_by(username: "oss")).to be
+    end
+  end
 
 end
