@@ -43,7 +43,7 @@ group :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
-  gem 'simplecov-console'
+  gem 'simplecov-console', require: false
 end
 
 
