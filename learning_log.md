@@ -4,7 +4,7 @@ Monday 28th Afternoon Stand-Up
 ----
 
 ** What were we trying to achieve?
-* Basic understanding of rails
+* Basic understanding of rails 
 * Deploy our app on Heroku
 * Automatically deploy after CI tests
 * Set up Travis CI to check our merge and master status
@@ -24,17 +24,4 @@ _Travis CI_
 * Also found out importance of having the 'bundle install --jobs=3 --retry=3' command at the top of the 'script:' section of the .yml file
 * We can get Travis set up so that it will pass latest iteration to Heroku automatically, as long as it passes the tests
 
---------------------------------------------
-Monday 29th Morning Stand-Up
 
-** What we were trying to achieve ?
-* Explain how to set Travis to the all Team CI
-* Check on the team mood of the day
-* Goals for the Monday
-
-** What did we learn ?
-* How to set up Travis CI
-* Possible error when setting it up
-
-Goals of the day ?
-* Pair decided per tickets
