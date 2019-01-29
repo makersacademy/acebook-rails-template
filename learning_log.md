@@ -1,7 +1,9 @@
 ## Learning log Team Justice Moo
 
-Monday 28th Afternoon Stand-Up
-----
+Monday 28th
+------------
+
+Afternoon Stand-Up
 
 ** What were we trying to achieve?
 * Basic understanding of rails
@@ -25,7 +27,10 @@ _Travis CI_
 * We can get Travis set up so that it will pass latest iteration to Heroku automatically, as long as it passes the tests
 
 --------------------------------------------
-Monday 29th Morning Stand-Up
+Monday 29th
+------------
+
+Morning Stand-Up
 
 ** What we were trying to achieve ?
 * Explain how to set Travis to the all Team CI
@@ -36,5 +41,18 @@ Monday 29th Morning Stand-Up
 * How to set up Travis CI
 * Possible error when setting it up
 
-Goals of the day ?
+** Goals of the day ?
 * Pair decided per tickets
+
+
+Afternoon Stand-Up
+
+** ** What are we trying to achieve ?
+* Understand how to build a sign in / sign up route from scratch in rails
+* Make simplecov branch passing Travis tests
+
+** Goals for the rest of the day ?
+* For both sign in and sign up pairs:<br/>
+Write and pass infrastructure feature test.<br/>
+Creating new index page and populate with content
+* Joao is taking alone the ticket of debugging Travis / Simplecov-console
