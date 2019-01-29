@@ -6,10 +6,6 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     @post.save
-
-    # @post = Post.create(post_params)
-    # require 'pry'
-    # binding.pry
     redirect_to posts_url
   end
 
