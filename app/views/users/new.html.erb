@@ -1,0 +1,25 @@
+<h1>Users#new</h1>
+
+<h1></h1>
+<p>Find me in app/views/users/new.html.erb</p>
+
+<%# <%= form_with scope: :user, url: users_new_path, local: true do |form| %> %>
+  <p>
+    <%= form.label :username %><br>
+    <%= form.text_field :username %>
+  </p>
+
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </p>
+
+  <p>
+    <%= form.label :password %><br>
+    <%= form.text_field :password %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<%# <% end %> %>
