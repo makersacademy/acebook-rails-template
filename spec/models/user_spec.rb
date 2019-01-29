@@ -3,5 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+
+  describe "#validate" do
+    it "email is present" do
+      get :create, params: { users: { username: 'oss', email: '', password: '123' } }
+      expect(User.valid?).to eq false
+    end
+  end
