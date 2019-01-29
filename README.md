@@ -1,5 +1,4 @@
-
-Our build is currrently: [![Build Status](https://travis-ci.com/Rodrigue-K/acebook--Team-Acebook-and-Chill.svg?branch=master)](https://travis-ci.com/Rodrigue-K/acebook--Team-Acebook-and-Chill)
+[![Build Status](https://travis-ci.com/Rodrigue-K/acebook--Team-Acebook-and-Chill.svg?branch=master)](https://travis-ci.com/Rodrigue-K/acebook--Team-Acebook-and-Chill)
 
 
 https://trello.com/b/WCP79ISK/acebook-chill
