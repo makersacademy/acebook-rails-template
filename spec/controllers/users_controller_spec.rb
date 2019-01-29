@@ -21,4 +21,5 @@ RSpec.describe UsersController, type: :controller do
       expect(User.find_by(username: 'oss')).to be
     end
   end
+
 end
