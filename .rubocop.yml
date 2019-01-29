@@ -3046,20 +3046,20 @@ Style/Dir:
 
 Style/Documentation:
   Description: 'Document classes and non-namespace modules.'
-  Enabled: true
+  Enabled: false
   VersionAdded: '0.9'
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
-
-Style/DocumentationMethod:
-  Description: 'Checks for missing documentation comment for public methods.'
-  Enabled: false
-  VersionAdded: '0.43'
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-  RequireForNonPublicMethods: false
+#
+#Style/DocumentationMethod:
+#  Description: 'Checks for missing documentation comment for public methods.'
+#  Enabled: true
+#  VersionAdded: '0.43'
+#  Exclude:
+#    - 'spec/**/*'
+#    - 'test/**/*'
+#  RequireForNonPublicMethods: false
 
 Style/DoubleNegation:
   Description: 'Checks for uses of double negation (!!).'
@@ -3475,7 +3475,7 @@ Style/MixinGrouping:
 
 Style/MixinUsage:
   Description: 'Checks that `include`, `extend` and `prepend` exists at the top level.'
-  Enabled: true
+  Enabled: false
   VersionAdded: '0.51'
 
 Style/ModuleFunction:
