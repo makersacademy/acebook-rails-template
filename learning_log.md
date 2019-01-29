@@ -24,3 +24,4 @@ _Travis CI_
 * Also found out importance of having the 'bundle install --jobs=3 --retry=3' command at the top of the 'script:' section of the .yml file
 * We can get Travis set up so that it will pass latest iteration to Heroku automatically, as long as it passes the tests
 
+
