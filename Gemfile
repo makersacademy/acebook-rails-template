@@ -29,14 +29,19 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+group :test do
+  gem 'simplecov', require: false
+  gem 'simplecov-console'
+end
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'simplecov', require: false
-  gem 'simplecov-console'
   gem 'rspec-rails', '~> 3.5'
   gem 'travis'
   gem 'travis-lint'
