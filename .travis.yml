@@ -11,5 +11,3 @@ script:
 - bundle exec rspec spec
 after_script:
 - bundle exec rake coveralls:push
-notifications: 
-email: false
