@@ -33,4 +33,12 @@ RSpec.feature "User Authentication", type: :feature do
   #   expect(page).to have_current_path '/'
   #   expect(page).to have_content("Welcome! You have signed up successfully.")
   # end
+
+  scenario "User can Sign Out" do
+    visit "/"
+    click_link('Sign Out')
+    expect(page).to have_content("Signed out successfully.")
+  end
+
+
 end
