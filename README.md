@@ -2,6 +2,8 @@
 
 REQUIRED INSTRUCTIONS:
 
+[![Build Status](https://travis-ci.org/learningtocode101/acebook-team-cats.svg?branch=master)](https://travis-ci.org/learningtocode101/acebook-team-cats)
+
 1. Fork this repository to `acebook-teamname` and customize
 the below**
 
