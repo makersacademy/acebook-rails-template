@@ -1,19 +1,25 @@
 <h1>Users#new</h1>
 
-<html>
-  <body>
-    <div class="container">
-      <% flash.each do |key, value| %>
-        <%= content_tag :div, key, class: "flash#{key} #{value}" %>
-      <% end %>
-    </div>
-  </body>
-</html>
 
 <h1></h1>
 <p>Find me in app/views/users/new.html.erb</p>
 
 <%= form_for :users, local: true do |form| %>
+
+<% if @user != nil %>
+
+<% if @user.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msge| %>
+    <li><%= msge %></li>
+    <% end %>
+    </ul>
+    </div>
+    </h2>
+    <% end %>
+<% end %>
   <p>
     <%= form.label :username %><br>
     <%= form.text_field :username %>

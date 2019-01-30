@@ -19,7 +19,7 @@ RSpec.feature 'Signup', type: :feature do
       #Act on my data
       find('input[name="commit"]').click
       #Assert the behaviour of my action
-      expect(page).to have_content('Email is not valid')
+      expect(page).to have_content('Email is not unique')
     end
 
   end
