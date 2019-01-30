@@ -9,6 +9,11 @@ script:
 - bin/rails db:create
 - bin/rails db:migrate
 - bundle exec rspec
+env:
+  global:
+    -CC_TEST_REPORTER_ID=766e664dae0f727b6f668b11deec5c2516ffe52f9479a1b9eefdd1edbcba1dfa
+after_script:
+  - bundle exec rake coveralls:push
 services:
 - postgresql
 deploy:
