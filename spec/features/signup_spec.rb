@@ -12,11 +12,13 @@ RSpec.feature 'Signup', type: :feature do
   end
 
   scenario "A user has to sign up with an email address" do
+      #Arranging my data
       visit '/signup'
       fill_in 'users_username', with: 'Test 001'
       fill_in 'users_password', with: 'Password001'
+      #Act on my data
       find('input[name="commit"]').click
-
+      #Assert the behaviour of my action
       expect(page).to have_content('Email is not valid')
     end
 

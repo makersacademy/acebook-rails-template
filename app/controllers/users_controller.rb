@@ -11,9 +11,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def create
+  def create(user = User.create(user_params))
     # render plain: params[:users].inspect
-    @user = User.create(user_params)
+    @user = user
     # @user.save
     if @user.valid?
       redirect_to @user
@@ -23,8 +23,6 @@ class UsersController < ApplicationController
       p @user.errors.messages
       redirect_to '/signup'
       p flash[:notice]
-
-
     end
   end
 

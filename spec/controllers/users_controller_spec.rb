@@ -15,7 +15,7 @@ RSpec.describe UsersController, type: :controller do
       get :create, params: { users:
         {
           username: 'oss',
-          email: 'ossemail',
+          email: 'ossemail@gmail.com',
           password: '123'
         } }
       expect(User.find_by(username: 'oss')).to be
