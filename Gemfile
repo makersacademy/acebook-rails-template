@@ -39,6 +39,7 @@ end
 
 group :test do
   gem 'simplecov', require: false
+  gem 'simplecov-console'
 end
 
 group :development do
