@@ -1,7 +1,11 @@
 <% @posts.each do |post| %>
+<<<<<<< HEAD
  <div>
   <%= link_to post.message, post %>, <%= post.created_at.strftime("%H:%M:%S - %d/%m/%y") %>
 </div>
+=======
+  <p><%= simple_format(post.message) %> <%= post.created_at.strftime("%H:%M:%S - %d/%m/%y") %> </p>
+>>>>>>> 3999d7e16571d12d8923ce55cf08fdf8ba6643b4
 <% end %>
 
 <%= link_to new_post_path do %>

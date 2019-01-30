@@ -13,6 +13,9 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    # replace \n with \\n
+    # @post.message.gsub("\r", "\\r")
+    # @post.message.gsub("\n", "\\n")
     @post.save
     redirect_to posts_url
   end
