@@ -1,4 +1,5 @@
-language: ruby
+language:
+  - ruby
 rvm:
   - 2.5.0
 cache:
@@ -8,3 +9,18 @@ script:
   - bin/rails db:create
   - bin/rails db:migrate
   - bundle exec rspec
+services:
+  - postgresql
+deploy:
+  provider: heroku
+  api_key:
+    secure: "dUuIJq9n9jpJUpmgGw9npTLa8vewe+ru+yRaGKhM9lmRLpBNlmfuP0h19bkiJ5JgcxFKTQIaw/FRZ1OcBYbcHgaHuzmDZIp8xOyhx3
+aXydN7hTp46394+Ec4WQlHtSE3lShoND4X4GR5akhlYZs/o5g86OkdqOAyQdGk1yp0AtEUshRsyPbLGG+38Z3wfRZridRf0xGBclKUKXgYQeyzFNG
+CPJU32lN6JjDZgyDU/1g02YlbM4HSrtPDl+mz+GmMf6kGco8U5teTPDGHDEgqwco3JBg0tUrOLgHum6Cz+gRLJ75Jothp/CLrPzfi430OIng01ZcM
+Q+3R6p+C9+y0o3H9i7tKOSSGxserKRtAz9SuCPxP994oCv1mFFYXTuNXuxY9Yl4X8Hm+sjgOBi7B6MCf5BfdE6mWCvv4OI6tUv7vSPy41w+uZ2XQS
+qdOERNwQHNBRWs6CLM54k7Lmz2RhAbXQm7gI1Cmq/TIDjmBJZuD8tqV0BYHoQr209d/JcWGfb8LHgXnv8pQASC+YYu0FQ0Mdm72OrH+KhY5F0aZhk
+r1HMUs7sFvDr6HvBWKiLld3lRnYwYx8+1VvGhnw9R7AOq6xpZK9u1BFd39nbLhbdBg46z4OMuK6Iq0+5yAsW4S4cdWPICYVixkwkwlT3Ee6Tnnzzt
+Qfo3eE9ALZB1Zf28="
+  app: acebook-cats
+  on:
+    repo: learningtocode101/acebook-team-cats
