@@ -24,4 +24,14 @@ RSpec.feature "Timeline", type: :feature do
     page.should have_selector(:link_or_button, 'Delete')
   end
 
+  scenario "Can visit the individual post page and view the post and delete button" do
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    click_link "Hello, world!"
+    click_link "Delete"
+    expect(page).not_to have_content("Hello, world!")
+  end
+
 end

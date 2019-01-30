@@ -34,19 +34,4 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe "DELETE #destroy" do
-    it "destroys the requested post" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect {
-        delete :destroy, params: { id: post.to_param }, session: valid_session
-      }.to change(Post, :count).by(-1)
-    end
-
-    # it "redirects to the photos list" do
-    #   photo = Photo.create! valid_attributes
-    #   delete :destroy, params: { id: photo.to_param }, session: valid_session
-    #   expect(response).to redirect_to(photos_url)
-    # end
-  end
-
 end
