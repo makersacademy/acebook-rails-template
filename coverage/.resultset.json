@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/controllers/posts_controller_spec.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/controllers/posts_controller_spec.rb": [
         null,
         null,
         null,
@@ -33,7 +33,7 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/controllers/users_controller_spec.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/controllers/users_controller_spec.rb": [
         null,
         null,
         1,
@@ -48,7 +48,7 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/rails_helper.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/rails_helper.rb": [
         null,
         null,
         null,
@@ -111,7 +111,7 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/environment.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/environment.rb": [
         null,
         null,
         null,
@@ -120,7 +120,7 @@
         null,
         1
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/application.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/application.rb": [
         null,
         null,
         1,
@@ -142,14 +142,14 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/boot.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/boot.rb": [
         null,
         null,
         1,
         null,
         1
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/environments/test.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/environments/test.rb": [
         null,
         null,
         1,
@@ -196,7 +196,7 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/initializers/application_controller_renderer.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -206,7 +206,7 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/initializers/assets.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -224,7 +224,7 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/initializers/backtrace_silencers.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -237,16 +237,8 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/initializers/cookies_serializer.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
@@ -254,7 +246,15 @@
         null,
         1
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/initializers/inflections.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -274,7 +274,7 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/initializers/mime_types.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/mime_types.rb": [
         null,
         null,
         null,
@@ -282,7 +282,7 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/initializers/wrap_parameters.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -301,7 +301,7 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/config/routes.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/config/routes.rb": [
         null,
         null,
         1,
@@ -314,7 +314,15 @@
         null,
         1,
         null,
+        null,
+        null,
         1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
         null,
         1,
         null,
@@ -322,25 +330,25 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/app/helpers/application_helper.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/app/helpers/application_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/app/helpers/users_helper.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/app/helpers/users_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/app/helpers/welcome_helper.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/app/helpers/welcome_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/features/web_helpers.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/features/web_helpers.rb": [
         1,
         1,
         1,
@@ -349,7 +357,7 @@
         1,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/app/controllers/users_controller.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/app/controllers/users_controller.rb": [
         null,
         null,
         1,
@@ -385,14 +393,14 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/app/controllers/application_controller.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/app/controllers/application_controller.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/controllers/welcome_controller_spec.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/controllers/welcome_controller_spec.rb": [
         null,
         null,
         1,
@@ -406,14 +414,14 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/app/controllers/welcome_controller.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/app/controllers/welcome_controller.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/features/signup_spec.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/features/signup_spec.rb": [
         null,
         null,
         1,
@@ -438,7 +446,7 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/features/user_can_submit_posts_spec.rb": [
         null,
         null,
         1,
@@ -453,30 +461,11 @@
         1,
         1,
         1,
-        0,
+        1,
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/helpers/users_helper_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/helpers/welcome_helper_spec.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/helpers/users_helper_spec.rb": [
         null,
         null,
         1,
@@ -495,7 +484,26 @@
         1,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/models/post_spec.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/helpers/welcome_helper_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/models/post_spec.rb": [
         null,
         null,
         null,
@@ -503,7 +511,7 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/models/user_spec.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/models/user_spec.rb": [
         null,
         null,
         1,
@@ -519,7 +527,7 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/app/models/user.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/app/models/user.rb": [
         null,
         null,
         1,
@@ -533,23 +541,14 @@
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/app/models/application_record.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/app/models/application_record.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/views/users/new.html.erb_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/spec/views/welcome/index.html.erb_spec.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/views/users/new.html.erb_spec.rb": [
         null,
         null,
         1,
@@ -558,7 +557,16 @@
         1,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/app/controllers/posts_controller.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/spec/views/welcome/index.html.erb_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/carol/makers_projects/week-8/acebook-rails/app/controllers/posts_controller.rb": [
         null,
         null,
         1,
@@ -567,28 +575,29 @@
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
         null,
         1,
-        0,
+        1,
+        null,
         null,
         null
       ],
-      "/Users/jacqueslaffy/Desktop/Projects/Acebook-Rails/app/models/post.rb": [
+      "/Users/carol/makers_projects/week-8/acebook-rails/app/models/post.rb": [
         null,
         null,
         1,
         null
       ]
     },
-    "timestamp": 1548851671
+    "timestamp": 1548863468
   }
 }

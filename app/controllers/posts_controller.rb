@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    redirect_to '/poststo'
   end
 
   def index
