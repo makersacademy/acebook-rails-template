@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/carol/makers_projects/week-8/acebook-rails/spec/controllers/posts_controller_spec.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/controllers/posts_controller_spec.rb": [
         null,
         null,
         null,
@@ -33,7 +33,7 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/spec/controllers/users_controller_spec.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/controllers/users_controller_spec.rb": [
         null,
         null,
         1,
@@ -60,7 +60,7 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/spec/rails_helper.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/rails_helper.rb": [
         null,
         null,
         null,
@@ -122,7 +122,7 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/environment.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/environment.rb": [
         null,
         null,
         null,
@@ -131,7 +131,7 @@
         null,
         1
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/application.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/application.rb": [
         null,
         null,
         1,
@@ -153,14 +153,14 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/boot.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/boot.rb": [
         null,
         null,
         1,
         null,
         1
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/environments/test.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/environments/test.rb": [
         null,
         null,
         1,
@@ -207,7 +207,7 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/application_controller_renderer.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -217,7 +217,7 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/assets.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -235,7 +235,7 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/backtrace_silencers.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -248,16 +248,8 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/cookies_serializer.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
@@ -265,7 +257,15 @@
         null,
         1
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/inflections.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -285,7 +285,7 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/mime_types.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/mime_types.rb": [
         null,
         null,
         null,
@@ -293,7 +293,7 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/initializers/wrap_parameters.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -312,7 +312,7 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/config/routes.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/routes.rb": [
         null,
         null,
         1,
@@ -329,25 +329,25 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/app/helpers/application_helper.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/helpers/application_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/app/helpers/users_helper.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/helpers/users_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/app/helpers/welcome_helper.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/helpers/welcome_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/app/controllers/users_controller.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/users_controller.rb": [
         null,
         null,
         1,
@@ -371,14 +371,14 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/app/controllers/application_controller.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/application_controller.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/spec/controllers/welcome_controller_spec.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/controllers/welcome_controller_spec.rb": [
         null,
         null,
         1,
@@ -392,14 +392,14 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/app/controllers/welcome_controller.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/welcome_controller.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/spec/features/signup_spec.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/features/signup_spec.rb": [
         null,
         null,
         1,
@@ -414,45 +414,26 @@
         null,
         1,
         1,
+        1,
+        null,
+        null
+      ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/features/user_can_submit_posts_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/spec/features/user_can_submit_posts_spec.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/spec/helpers/users_helper_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/spec/helpers/welcome_helper_spec.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/helpers/users_helper_spec.rb": [
         null,
         null,
         1,
@@ -471,7 +452,26 @@
         1,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/spec/models/post_spec.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/helpers/welcome_helper_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/models/post_spec.rb": [
         null,
         null,
         null,
@@ -479,29 +479,7 @@
         null,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/spec/models/user_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/app/models/user.rb": [
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/app/models/application_record.rb": [
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/spec/views/users/new.html.erb_spec.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/models/user_spec.rb": [
         null,
         null,
         1,
@@ -510,7 +488,29 @@
         1,
         null
       ],
-      "/Users/carol/makers_projects/week-8/acebook-rails/spec/views/welcome/index.html.erb_spec.rb": [
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/models/user.rb": [
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/models/application_record.rb": [
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/views/users/new.html.erb_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/views/welcome/index.html.erb_spec.rb": [
         null,
         null,
         1,
@@ -520,6 +520,6 @@
         null
       ]
     },
-    "timestamp": 1548777055
+    "timestamp": 1548778442
   }
 }
