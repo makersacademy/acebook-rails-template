@@ -1,2 +1,29 @@
-<%= @user.username %>
-<%= @user.email %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<style>
+p {background-color: lightgrey;
+  width: 75px;
+  border: 25px solid green;
+  padding: 25px;
+  margin: 25px;
+}
+</style>
+<body>
+  <h1> Welcome <%=@user.username%>!</h1>
+</body>
+<p>
+  User Photo
+</p>
+<div>
+  Add Photo(button in future)
+</div>
+<div>
+  <a href="/posts">New Post</a>
+<div>
+  <h2> Posts </h2>
+</div>
+</html>
