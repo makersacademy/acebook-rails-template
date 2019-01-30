@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/controllers/posts_controller_spec.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/controllers/posts_controller_spec.rb": [
         null,
         null,
         null,
@@ -33,7 +33,7 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/controllers/users_controller_spec.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/controllers/users_controller_spec.rb": [
         null,
         null,
         1,
@@ -48,7 +48,7 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/rails_helper.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/rails_helper.rb": [
         null,
         null,
         null,
@@ -111,7 +111,7 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/environment.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/environment.rb": [
         null,
         null,
         null,
@@ -120,7 +120,7 @@
         null,
         1
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/application.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/application.rb": [
         null,
         null,
         1,
@@ -142,14 +142,14 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/boot.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/boot.rb": [
         null,
         null,
         1,
         null,
         1
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/environments/test.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/environments/test.rb": [
         null,
         null,
         1,
@@ -196,7 +196,7 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/application_controller_renderer.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -206,7 +206,7 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/assets.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -224,7 +224,7 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/backtrace_silencers.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -237,16 +237,8 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/cookies_serializer.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
@@ -254,7 +246,15 @@
         null,
         1
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/inflections.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -274,7 +274,7 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/mime_types.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/initializers/mime_types.rb": [
         null,
         null,
         null,
@@ -282,7 +282,7 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/initializers/wrap_parameters.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -301,7 +301,7 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/config/routes.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/config/routes.rb": [
         null,
         null,
         1,
@@ -320,25 +320,25 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/helpers/application_helper.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/app/helpers/application_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/helpers/users_helper.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/app/helpers/users_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/helpers/welcome_helper.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/app/helpers/welcome_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/features/web_helpers.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/features/web_helpers.rb": [
         1,
         1,
         1,
@@ -347,7 +347,7 @@
         1,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/users_controller.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/app/controllers/users_controller.rb": [
         null,
         null,
         1,
@@ -356,150 +356,39 @@
         null,
         1,
         null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        2,
-        null,
-        2,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
         null,
         1,
         2,
         null,
-        null
-      ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/application_controller.rb": [
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/controllers/welcome_controller_spec.rb": [
-        null,
         null,
         1,
         null,
-        1,
-        1,
-        1,
-        1,
+        5,
+        null,
+        5,
+        2,
+        null,
+        3,
+        3,
+        null,
+        null,
+        null,
         1,
         null,
+        1,
+        5,
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/welcome_controller.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/app/controllers/application_controller.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/features/signup_spec.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/controllers/welcome_controller_spec.rb": [
         null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/features/user_can_submit_posts_spec.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/helpers/users_helper_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/helpers/welcome_helper_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/models/post_spec.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/models/user_spec.rb": [
-        null,
-        null,
-        1,
         null,
         1,
         null,
@@ -512,11 +401,64 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/models/user.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/app/controllers/welcome_controller.rb": [
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/features/signup_spec.rb": [
         null,
         null,
         1,
         null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
         1,
         null,
         1,
@@ -526,14 +468,122 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/models/application_record.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/features/user_can_submit_posts_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/helpers/users_helper_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/views/users/new.html.erb_spec.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/helpers/welcome_helper_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/models/post_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/models/user_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/app/models/user.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/app/models/application_record.rb": [
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/views/users/new.html.erb_spec.rb": [
         null,
         null,
         1,
@@ -542,7 +592,7 @@
         1,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/views/welcome/index.html.erb_spec.rb": [
+      "/Users/ossahota/Projects/team_projects/acebook-rails-smoking-dragons/spec/views/welcome/index.html.erb_spec.rb": [
         null,
         null,
         1,
@@ -552,6 +602,6 @@
         null
       ]
     },
-    "timestamp": 1548850916
+    "timestamp": 1548861290
   }
 }
