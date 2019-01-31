@@ -7,8 +7,6 @@ RSpec.feature 'Signup', type: :feature do
     signup_and_click
 
     expect(page).to have_content('Test 001')
-    expect(page).to have_content('Test100@test.com')
-    expect(page).to_not have_content('Password001')
   end
 
   scenario "A user has to sign up with an email address" do
