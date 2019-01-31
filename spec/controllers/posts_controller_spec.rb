@@ -42,4 +42,13 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
+  describe "EDIT /update" do
+    it "edits a post" do
+      @user = User.create(email: "a@a.com", password: "abc123", id: 2)
+      @post = Post.create(message: "Hello, world!", id: 100, user_id: @user.id)
+      @post = Post.update(message: "Have a great day!", id: 100, user_id: @user.id)
+      expect(Post.find_by(message: "Have a great day!")).to be
+    end
+  end
+
 end
