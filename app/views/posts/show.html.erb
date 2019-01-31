@@ -1,3 +1,3 @@
-<%= @post.message %><br>
+<%= simple_format(@post.message) %><br>
 Created <%= @post.created_at.strftime("on %d/%m/%Y at %I:%M%p") %>
 <%= link_to 'Delete', post_path, method: :delete, data: {confirm: "Are you sure?"}  %>
