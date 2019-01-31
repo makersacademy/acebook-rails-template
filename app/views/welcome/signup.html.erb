@@ -1,0 +1,13 @@
+<h1> Sign Up Page </h1>
+
+<%= link_to 'Back to Homepage', root_path %>
+
+<%= form_with(url: "/profile", method: "post") do %>
+<%= label_tag(:email, "Enter your email:") %>
+<%= email_field_tag(:email) %><br>
+<%= label_tag(:password, "Enter a password:") %>
+<%= password_field_tag(:password) %><br>
+<%= label_tag(:password_confirmation, "Please confirm your password:") %>
+<%= password_field_tag(:password_confirmation) %><br>
+<%= submit_tag("Sign Up") %>
+<% end %>
