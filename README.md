@@ -5,7 +5,7 @@ Build Status | Maintainability | Test Coverage
  * [Active Record]()
  * [RSPEC]()
  * [Capybara]()
-
+ * [Travis]()
 
 
 ## Prerequisites
