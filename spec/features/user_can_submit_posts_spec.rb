@@ -9,3 +9,13 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Hello, world!")
   end
 end
+
+feature "Timeline", type: :feature do
+  scenario "empty posts raise error" do
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: ""
+    click_button "Submit"
+    expect(page).to raise_error("mystery-error")
+  end
+end
