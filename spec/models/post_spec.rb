@@ -15,4 +15,10 @@ RSpec.describe Post, type: :model do
     expect(post.created_at).to eq('2019-01-31 15:18:43.781661000')
   end
 
+  it 'Post is able to be edited' do
+    post.update(message: 'how are you ?')
+    expect(post.message).to eq('how are you ?')
+  end
+
+
 end
