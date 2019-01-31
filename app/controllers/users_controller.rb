@@ -7,9 +7,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.save
       if @user.save
-        render 'users/profile'
+        redirect_to users_profile_url
       else
-        render 'users/index'
+        redirect_to users_url
       end
   end
 
