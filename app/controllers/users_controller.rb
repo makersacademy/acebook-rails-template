@@ -18,11 +18,10 @@ class UsersController < ApplicationController
     if @user.valid?
       redirect_to @user
     else
-      p @user.errors.full_messages.to_s
+      @user.errors.full_messages.to_s
       render 'new'
     end
 
-    p @user.authenticate(@user.password)
   end
 
   private

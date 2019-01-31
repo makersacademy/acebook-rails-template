@@ -40,8 +40,6 @@ RSpec.feature 'Signup', type: :feature do
       fill_in 'users_password', with: 'Password001'
       #Act on my data
       find('input[name="commit"]').click
-      #Assert the behaviour of my action
-
       #Arranging my data
       visit '/signup'
       fill_in 'users_username', with: 'Test 003'

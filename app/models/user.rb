@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require 'pry'
 class User < ApplicationRecord
 
   has_secure_password
