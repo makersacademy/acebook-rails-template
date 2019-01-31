@@ -1,5 +1,8 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<% @posts.reverse.each do |post| %>
+  <div class='post'>
+    <p><%= post.message %></p>
+    <p><%= post.created_at %> </p>
+  </div>
 <% end %>
 
 <%= link_to new_post_path do %>
