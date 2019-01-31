@@ -21,6 +21,8 @@ class UsersController < ApplicationController
       p @user.errors.full_messages.to_s
       render 'new'
     end
+
+    p @user.authenticate(@user.password)
   end
 
   private

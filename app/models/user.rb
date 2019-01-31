@@ -2,9 +2,9 @@
 
 class User < ApplicationRecord
 
-  validates :username, presence: true
+  has_secure_password
 
-  # validates :email, presence: { message: ': Email is not unique' }
+  validates :username, presence: true
 
   validates :email, presence: { message: ': Email cannot be blank' },
                     uniqueness: {message: ': Email is not unique' }
