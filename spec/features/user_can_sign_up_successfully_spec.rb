@@ -7,8 +7,7 @@ RSpec.feature 'Signup', type: :feature do
     fill_in :password, with: 'Gato123'
     fill_in :birthday, with: '2000/10/10'
     choose :male, option: 'Male'
-    # click_button 'Sign Up'
-    # expect(page.current_path).to eq('/profile')
-    # expect(page).to have_content('Welcome, Dave Katze!')
+    click_button 'Sign Up'
+    expect(page.current_path).to eq('/users/profile')
   end
 end

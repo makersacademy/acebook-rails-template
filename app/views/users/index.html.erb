@@ -1,6 +1,5 @@
 <h1>Welcome to Catbook!</h1>
 
-
 <%= form_for @user do |f| %>
   <div class="field">
     <%= f.label :first_name %><br />
@@ -29,7 +28,7 @@
     <%= f.radio_button(:gender, "Female", id: 'female') %>
   </div>
   <div class="field">
-    <%= f.submit %><br />
+    <%= f.submit "Sign Up" %><br />
   </div>
 
 <% end %>
