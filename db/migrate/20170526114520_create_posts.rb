@@ -1,5 +1,5 @@
 class CreatePosts < ActiveRecord::Migration[5.1]
-  has_one :user
+  belongs_to :user
   def change
     create_table :posts do |t|
       t.string :message
