@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
 
  <div>
-  <%= link_to simple_format(post.message), post %>, <%= post.created_at.strftime("%H:%M:%S - %d/%m/%y") %>
+  <%= link_to simple_format(post.message), post %> <%= post.created_at.strftime("%H:%M:%S - %d/%m/%y") %>
 </div>
 
 <% end %>

@@ -28,4 +28,16 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Have a wonderful day!")
   end
 
+  # scenario "Cannot edit a post after 10 minutes" do
+  #   visit "/posts"
+  #   click_link "New post"
+  #   fill_in "Message", with: "Hello, world!"
+  #   click_button "Submit"
+  #   click_link "Hello, world!"
+  #   click_link "Edit"
+  #   fill_in "Message", with: "Have a wonderful day!"
+  #   click_button "Submit"
+  #   expect(page).to have_content("Have a wonderful day!")
+  # end
+
 end
