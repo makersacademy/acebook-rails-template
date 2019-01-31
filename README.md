@@ -1,10 +1,11 @@
 # AceBook 
-
+Build Status | Maintainability | Test Coverage
 ## Technologies Used
  * [Ruby on Rails]()
  * [Active Record]()
  * [RSPEC]()
  * [Capybara]()
+
 
 
 ## Prerequisites
