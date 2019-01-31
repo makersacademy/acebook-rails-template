@@ -5,28 +5,34 @@
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, id: 'first_name' %>
   </div>
+  <br />
   <div class="field">
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name, id: 'last_name' %>
   </div>
+  <br />
   <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email, id: 'email' %>
   </div>
+  <br />
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password, id: 'password'%>
   </div>
+  <br />
   <div class="field">
     <%= f.label :birthday %><br />
     <%= f.date_field :birthday, id: 'birthday' %>
   </div>
+  <br />
   <div class="field">
-    <%= f.label(:gender, "Male") %><br />
+    <%= f.label(:gender, "Male") %>
     <%= f.radio_button(:gender, "Male", id: 'male') %>
-    <%= f.label(:gender, "Female") %><br />
+    <%= f.label(:gender, "Female") %>
     <%= f.radio_button(:gender, "Female", id: 'female') %>
   </div>
+  <br />
   <div class="field">
     <%= f.submit "Sign Up" %><br />
   </div>
