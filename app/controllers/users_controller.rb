@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  def new
-  end
+  def new; end
 
-  def index
-  end
+  def index; end
 
   def show
     @user = User.find(params[:id])

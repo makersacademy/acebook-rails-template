@@ -50,5 +50,4 @@ RSpec.feature 'Signup', type: :feature do
       #Assert the behaviour of my action
       expect(page).to have_content('Email is not unique')
     end
-
-  end
+end
