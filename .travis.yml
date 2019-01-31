@@ -9,6 +9,13 @@ script:
 - bin/rails db:migrate
 - bin/rails db:migrate
 - bundle exec rspec
-services: 
+services:
 - postgresql
-
+deploy:
+  provider: heroku
+  api_key:
+    secure: Eo/5Ndfkx3dLpZlgOmQPBaK8IzrQjdUNAbRpJaKijDHGCHaGqWff8FMl1lho554E17tRxCeRVoifPjqUutK7ACjZXX9eFBs9PeeEx5IJ1vVTP82N8ix38WrHPj/SS9CxPwa1oV7t60A0C7zbYNCPMDORGJOtEvlcMbQOYNcBwiD3xMvmIvg0lC3INZU/m4cTJnZwvaW6oOSZu3eUMJldLssS+ALj/x+/DKLD65RxIOIV7hV85pOdUj3J/x55qROpnkZNVyURizkKZkWhaZ3ItMCJIECbPY/a8YDdAJ0oxtTafNUV/cJ5pdPKWb75MjK+LJGStoU4o0zs2sFUykiTYX5bXqjGgsrruMZoxII+8651sMjf6zZaFGpvgq8ewE7nqAIh8uaSAGLUdpCYpi0CZfn66Zilj8bLlL6NYJDYVyrnB16IggrgomWv3fCiaSO7NgN7SdwELDT6RExjPo1IIu8tA3E7SpLGnT7cK4c8w/KjW5OdqLqmGaRLVjytTivrQ0D5mKjrCNAltM2nqKVGmf4KtH79R0d9ATlxPTSugEWZrHRkOn/mPfbR8uiKB1psyof13hlPjR7kyJIiH5MnTt42jvXgbZ5QqyfzxTbfR54ZZzta8s5f04iGHA0ipQNvnAlQRUbLCQQUBGT4g2N6vCQUarg04jj/3VFTidvYSxs=
+  run: rake db:migrate
+  app: acebook-dragons
+  on:
+    repo: CazaBelle/acebook-rails-smoking-dragons
