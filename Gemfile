@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'selenium-webdriver'
   gem "simplecov", "~> 0.16.1"
+  gem 'timecop'
 end
 
 group :development do
