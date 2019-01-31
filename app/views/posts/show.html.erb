@@ -5,3 +5,7 @@ Created <%= @post.created_at.strftime("on %d/%m/%Y at %I:%M%p") %>
 <% if @post.edit_timer? %>
   <%= link_to 'Edit', edit_post_path %>
 <%end%>
+
+<% if flash[:error] %>
+   <div><%= flash[:error] %></div>
+ <% end %>
