@@ -4,7 +4,7 @@ rvm:
 cache:
 - bundler
 script:
-- bundle install
+- bundle install --jobs=3 --retry=3
 - bin/rails db:create
 - bin/rails db:migrate
 - bin/rails db:migrate
