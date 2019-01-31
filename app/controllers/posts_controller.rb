@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
-  # need to refactor as Post.find doesnt follow DRY
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
+
   def home
   end
 
@@ -19,15 +20,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(params[:post].permit(:message))
       redirect_to @post
     else
@@ -44,6 +42,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def find_post
+    @post = Post.find(params[:id])
   end
 
 end
