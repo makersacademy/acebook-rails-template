@@ -57,6 +57,7 @@ RSpec.feature "User Authentication", type: :feature do
 
   scenario "User can Sign Out" do
     visit "/"
+    sign_up_steps
     click_link('Sign Out')
     expect(page).to have_content("Signed out successfully.")
   end
