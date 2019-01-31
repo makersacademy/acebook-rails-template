@@ -1,0 +1,6 @@
+<%= form_for @post do |form| %>
+  <%= form.label :message %>
+  <%= form.text_area :message, size: "20x4" %>
+
+  <%= form.submit "Submit" %>
+<% end %>
