@@ -57,6 +57,8 @@
       ],
       "/Users/rodriguekayembe/Desktop/Acebook-Chill/acebook--Team-Acebook-and-Chill/app/models/post.rb": [
         1,
+        1,
+        null,
         null
       ],
       "/Users/rodriguekayembe/Desktop/Acebook-Chill/acebook--Team-Acebook-and-Chill/app/channels/application_cable/channel.rb": [
@@ -104,6 +106,6 @@
         0
       ]
     },
-    "timestamp": 1548948427
+    "timestamp": 1548973341
   }
 }
