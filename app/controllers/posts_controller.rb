@@ -26,16 +26,26 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(params[:post].permit(:message))
-      redirect_to @post
+    if current_user.id == @post.user_id
+      if @post.update(params[:post].permit(:message))
+        redirect_to @post
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      flash[:error] = "You can't edit posts which aren't yours"
+      redirect_to post_url
     end
   end
 
   def destroy
-    @post = Post.destroy(params[:id])
-    redirect_to posts_url
+    if current_user.id == @post.user_id
+      @post = Post.destroy(params[:id])
+      redirect_to posts_url
+    else
+      flash[:error] = "You can't delete posts which aren't yours"
+      redirect_to post_url
+  end
   end
 
   private
