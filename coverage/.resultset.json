@@ -72,6 +72,8 @@
       ],
       "/Users/beatricecourage/Projects/Enginnering_Project_2weeks/acebook--Team-Acebook-and-Chill/app/models/post.rb": [
         1,
+        1,
+        null,
         null
       ],
       "/Users/beatricecourage/Projects/Enginnering_Project_2weeks/acebook--Team-Acebook-and-Chill/app/mailers/application_mailer.rb": [
@@ -119,6 +121,6 @@
         0
       ]
     },
-    "timestamp": 1549031467
+    "timestamp": 1549032180
   }
 }

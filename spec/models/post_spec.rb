@@ -1,17 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  it "is a valid with  valid attributes" do
-    expect(Post.new).to be_valid
+
+  let(:post) { Post.new(message: nil, created_at: nil, updated_at: nil) }
+  let(:valid_post) { Post.new( message: "valid post")}
+
+  it "is valid with valid attributes" do
+    expect(valid_post).to be_valid
   end 
-  # it "is not valid without a message" do
-  #   post = Post.new(message: nil)
-  #   expect(post).to_not be_valid
-  # end
-  it "is not valid without a created_at" do 
-    expect(Post.new).to be_valid
+
+  it "is not valid without a message" do
+    expect(post).to_not be_valid
   end
+
+  it "is not valid without a timestamp" do 
+    expect(post).to_not be_valid
+  end
+
   it "is not valid without a updated_at" do 
-    expect(Post.new).to be_valid
+    expect(post).to_not be_valid
   end
+  
 end
