@@ -2,6 +2,7 @@
 
 require 'simplecov'
 require 'simplecov-console'
+require 'pry'
 
 SimpleCov.start
 

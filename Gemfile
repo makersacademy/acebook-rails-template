@@ -10,7 +10,7 @@ end
 
 
 gem 'bcrypt', '~> 3.1.7'
-
+gem "pry", "~> 0.12.2"
 gem 'rubocop'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -41,7 +41,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'pry'
+ 
   gem 'database_cleaner', '~> 1.7'
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
@@ -63,3 +63,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 
 gem "travis", "~> 1.8"
+
+
