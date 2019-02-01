@@ -57,6 +57,8 @@
       ],
       "/Users/Huxley/Desktop/makers_ruby/week8/acebook--Team-Acebook-and-Chill/app/models/post.rb": [
         1,
+        1,
+        null,
         null
       ],
       "/Users/Huxley/Desktop/makers_ruby/week8/acebook--Team-Acebook-and-Chill/app/channels/application_cable/channel.rb": [
@@ -104,6 +106,10 @@
         0
       ]
     },
+<<<<<<< HEAD
+    "timestamp": 1548973341
+=======
     "timestamp": 1548948843
+>>>>>>> 8c62433a91ac2a24a9d741b12640004f898e0315
   }
 }
