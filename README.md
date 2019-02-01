@@ -1,6 +1,5 @@
-[![Build Status](https://travis-ci.org/AlinaGoaga/AJAX-AceBook.svg?branch=master)](https://travis-ci.org/AlinaGoaga/AJAX-AceBook)
 
-# AceBook
+# AceBook [![Build Status](https://travis-ci.org/AlinaGoaga/AJAX-AceBook.svg?branch=master)](https://travis-ci.org/AlinaGoaga/AJAX-AceBook)
 
 REQUIRED INSTRUCTIONS:
 
