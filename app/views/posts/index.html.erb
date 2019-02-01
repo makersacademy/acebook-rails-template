@@ -1,7 +1,9 @@
+<h2> Posts </h2>
 <% @posts.reverse.each do |post| %>
   <div class='post'>
     <p><%= simple_format(post.message) %></p>
     <p><%= post.created_at %> </p>
+    <a href='/posts/delete'>delete</a>
   </div>
 <% end %>
 
