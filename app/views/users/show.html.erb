@@ -27,12 +27,8 @@ p {background-color: lightgrey;
   <h2> Posts </h2>
  
  <% @user.posts.each do |post| %>
-  <p><%= post.message %></p>
+  <div><%= post.message %></div>
 <% end %>
-
-
-
-<a href="/posts">New Post</a>
 
 
 </div>
