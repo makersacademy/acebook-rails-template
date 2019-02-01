@@ -10,7 +10,6 @@ RSpec.feature 'User Authenication' do
     scenario 'A user can log in' do
       visit '/'
       click_on 'Signup'
-      p page.body
       fill_in "user_email", with: email
       fill_in "user_password", with: password
       fill_in "user_password_confirmation", with: password
