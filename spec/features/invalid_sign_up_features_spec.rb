@@ -67,4 +67,16 @@ RSpec.feature 'Signup', type: :feature do
     expect(page.current_path).to eq('/users')
     expect(page).to have_content("can't be blank")
   end
+
+  scenario 'User can not leave password field empty' do
+    visit '/'
+    fill_in :first_name, with: 'Email'
+    fill_in :last_name, with: 'Thief'
+    fill_in :email, with: 'davethecat3@katze.com'
+    fill_in :birthday, with: '01/01/1995'
+    fill_in :gender, with: 'Female'
+    click_button 'Sign Up'
+    expect(page.current_path).to eq('/users')
+    expect(page).to have_content("can't be blank")
+  end
 end
