@@ -32,7 +32,7 @@ RSpec.feature 'Signup', type: :feature do
     expect(page).to have_content("is invalid")
   end
 
-  scenario 'User cannot chose password shorter than 6 characters' do
+  scenario 'User cannot choose password shorter than 6 characters' do
     visit '/'
     fill_in :last_name, with: 'Thief'
     fill_in :email, with: 'davethecat1@katze.com'
@@ -42,6 +42,18 @@ RSpec.feature 'Signup', type: :feature do
     click_button 'Sign Up'
     expect(page.current_path).to eq('/users')
     expect(page).to have_content("is too short (minimum is 6 characters)")
+  end
+
+  scenario 'User cannot choose password longer than 10 characters' do
+    visit '/'
+    fill_in :last_name, with: 'Thief'
+    fill_in :email, with: 'davethecat1@katze.com'
+    fill_in :password, with: '1234567891011'
+    fill_in :birthday, with: '2001/10/10'
+    fill_in :gender, with: 'Female'
+    click_button 'Sign Up'
+    expect(page.current_path).to eq('/users')
+    expect(page).to have_content("is too long (maximum is 10 characters)")
   end
 
   scenario 'User can not leave first_name field empty' do
