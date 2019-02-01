@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       if @user.save
         redirect_to posts_url
       else
-        redirect_to users_url
+        render :index
       end
   end
 

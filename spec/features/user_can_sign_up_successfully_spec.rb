@@ -6,7 +6,7 @@ RSpec.feature 'Signup', type: :feature do
     fill_in :email, with: 'davethecat@katze.com'
     fill_in :password, with: 'Gato123'
     fill_in :birthday, with: '2000/10/10'
-    choose :male, option: 'Male'
+    fill_in :gender, with: 'Male'
     click_button 'Sign Up'
     expect(page.current_path).to eq('/posts')
   end
