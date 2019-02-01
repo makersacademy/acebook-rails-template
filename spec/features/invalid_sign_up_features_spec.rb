@@ -20,6 +20,18 @@ RSpec.feature 'Signup', type: :feature do
     expect(page).to have_content('has already been taken')
   end
 
+  scenario 'User cannot provide email without @' do
+    visit '/'
+    fill_in :last_name, with: 'Thief'
+    fill_in :email, with: 'davethecat1-at-katze.com'
+    fill_in :password, with: 'Evil'
+    fill_in :birthday, with: '2001/10/10'
+    fill_in :gender, with: 'Female'
+    click_button 'Sign Up'
+    expect(page.current_path).to eq('/users')
+    expect(page).to have_content("is invalid")
+  end
+
   scenario 'User can not leave first_name field empty' do
     visit '/'
     fill_in :last_name, with: 'Thief'
