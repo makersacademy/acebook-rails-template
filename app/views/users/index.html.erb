@@ -1,32 +1,42 @@
 <h1>Welcome to Catbook!</h1>
 
 <%= form_for @user do |f| %>
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, id: 'first_name' %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, id: 'last_name' %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email, id: 'email' %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, id: 'password'%>
-  </div>
-  <div class="field">
-    <%= f.label :birthday %><br />
-    <%= f.date_field :birthday, id: 'birthday' %>
-  </div>
-  <div class="field">
-    <%= f.label(:gender, "Male") %><br />
-    <%= f.radio_button(:gender, "Male", id: 'male') %>
-    <%= f.label(:gender, "Female") %><br />
-    <%= f.radio_button(:gender, "Female", id: 'female') %>
-  </div>
+
+  <%= form_group_for f, :first_name, label: false  do %>
+    <%= f.text_field :first_name, id: 'first_name', placeholder: 'First Name' %>
+    </div>
+  <% end %>
+
+  <%= form_group_for f, :last_name, label: false  do %>
+    <div>
+    <%= f.text_field :last_name, id: 'last_name', placeholder: 'Last Name' %>
+    </div>
+  <% end %>
+
+  <%= form_group_for f, :email, label: false  do %>
+    <div>
+    <%= f.text_field :email, id: 'email', placeholder: 'Email' %>
+    </div>
+  <% end %>
+
+  <%= form_group_for f, :password, label: false  do %>
+    <div>
+    <%= f.text_field :password, id: 'password', placeholder: 'Password' %>
+    </div>
+  <% end %>
+
+  <%= form_group_for f, :birthday, label: false  do %>
+    <div>
+    <%= f.date_field :birthday, id: 'birthday'  %>
+    </div>
+  <% end %>
+
+  <%= form_group_for f, :gender, label: false  do %>
+    <div>
+    <%= f.text_field :gender, id: 'gender', placeholder: 'Gender' %>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= f.submit "Sign Up" %><br />
   </div>
