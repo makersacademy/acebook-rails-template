@@ -56,3 +56,40 @@ Afternoon Stand-Up
 Write and pass infrastructure feature test.<br/>
 Creating new index page and populate with content
 * Joao is taking alone the ticket of debugging Travis / Simplecov-console
+
+--------------------------------------------
+Wednesday 30th
+------------
+
+* We decide to not do any stand Up on this day, because we did a long Planning session in the morning to decided of the complexity of the tickets and allocated them.
+* During the planning session we also diagram and mock-up the project
+
+--------------------------------------------
+Thursday 31th
+------------
+
+Morning Stand-Up
+
+
+** What we were trying to achieve ?
+* sign-in / sign-up tickets => be able  redirect  user to the profile page when click on sign up/sign in
+
+** What did we learn ?
+* Partials can be use in rails, really useful because it helps to dry code
+* Rails generate cmd. Rails new default settings, possibility to pass params to have or not have what is wanted or unwanted
+* How to create and use a form in rails.
+* Difference between button (post request) and link (get request)
+* Awareness of a lot of steps between DB and views
+* Routes syntax not a */* but *something#pathname*
+* Need to  create user table
+
+** Goals of the day ?
+* Pair changed for tickets
+
+Afternoon Stand-Up
+
+** ** What are we trying to achieve ?
+* same as morning
+
+** Goals for the rest of the day ?
+* restart from scratch as a mob instead of pairs as we were feeling that split the sign up/sign in ticket was a bit confusing and to linked to be done separately.
