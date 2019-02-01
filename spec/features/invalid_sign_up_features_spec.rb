@@ -1,5 +1,5 @@
 RSpec.feature 'Signup', type: :feature do
-  scenario 'User successfully signs up' do
+  scenario 'User can not use same email twice' do
     visit '/'
     fill_in :first_name, with: 'Dave'
     fill_in :last_name, with: 'Katze'
@@ -17,6 +17,6 @@ RSpec.feature 'Signup', type: :feature do
     fill_in :gender, with: 'Female'
     click_button 'Sign Up'
     expect(page.current_path).to eq('/users')
-    expect(page).to have_content('has already been taken')
+    expect(page).to have_content('has already been ')
   end
 end
