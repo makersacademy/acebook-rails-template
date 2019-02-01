@@ -4,10 +4,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    @user.save
+    @user = User.create(user_params)
       if @user.save
-        redirect_to users_profile_url
+        redirect_to posts_url
       else
         render :index
       end

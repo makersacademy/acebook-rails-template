@@ -1,37 +1,36 @@
 <h1>Welcome to Catbook!</h1>
 
 <%= form_for @user do |f| %>
-
-  <%= form_group_for f, :first_name, label: false  do %>
+  <%= form_group_for f, :first_name, label: true  do %>
     <%= f.text_field :first_name, id: 'first_name', placeholder: 'First Name' %>
     </div>
   <% end %>
 
-  <%= form_group_for f, :last_name, label: false  do %>
+  <%= form_group_for f, :last_name, label: true  do %>
     <div>
     <%= f.text_field :last_name, id: 'last_name', placeholder: 'Last Name' %>
     </div>
   <% end %>
 
-  <%= form_group_for f, :email, label: false  do %>
+  <%= form_group_for f, :email, label: true  do %>
     <div>
     <%= f.text_field :email, id: 'email', placeholder: 'Email' %>
     </div>
   <% end %>
 
-  <%= form_group_for f, :password, label: false  do %>
+  <%= form_group_for f, :password, label: true  do %>
     <div>
     <%= f.text_field :password, id: 'password', placeholder: 'Password' %>
     </div>
   <% end %>
 
-  <%= form_group_for f, :birthday, label: false  do %>
+  <%= form_group_for f, :birthday, label: true  do %>
     <div>
     <%= f.date_field :birthday, id: 'birthday'  %>
     </div>
   <% end %>
 
-  <%= form_group_for f, :gender, label: false  do %>
+  <%= form_group_for f, :gender, label: true  do %>
     <div>
     <%= f.text_field :gender, id: 'gender', placeholder: 'Gender' %>
     </div>

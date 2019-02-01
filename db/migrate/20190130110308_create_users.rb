@@ -1,4 +1,5 @@
 class CreateUsers < ActiveRecord::Migration[5.1]
+  # has_many :posts
   def change
     create_table :users do |t|
       t.string :first_name

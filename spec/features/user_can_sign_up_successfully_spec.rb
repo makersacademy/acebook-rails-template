@@ -8,6 +8,6 @@ RSpec.feature 'Signup', type: :feature do
     fill_in :birthday, with: '2000/10/10'
     fill_in :gender, with: 'Male'
     click_button 'Sign Up'
-    expect(page.current_path).to eq('/users/profile')
+    expect(page.current_path).to eq('/posts')
   end
 end
