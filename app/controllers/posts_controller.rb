@@ -45,7 +45,7 @@ class PostsController < ApplicationController
     else
       flash[:error] = "You can't delete posts which aren't yours"
       redirect_to post_url
-  end
+    end
   end
 
   private

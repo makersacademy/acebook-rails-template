@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    ansi (1.5.0)
     arel (8.0.0)
     ast (2.4.0)
     bcrypt (3.1.12)
@@ -71,6 +72,7 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hirb (0.7.3)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
@@ -186,6 +188,10 @@ GEM
       docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
+    simplecov-console (0.4.2)
+      ansi
+      hirb
+      simplecov
     simplecov-html (0.10.2)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
@@ -234,6 +240,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   simplecov (~> 0.16.1)
+  simplecov-console (~> 0.4.2)
   timecop
   tzinfo-data
   uglifier (>= 1.3.0)
