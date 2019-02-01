@@ -8,16 +8,11 @@ RSpec.feature 'Sign up' do
   context 'Sign up' do
 
     scenario 'A user can sign up' do
-      visit '/'
-      click_on 'Signup'
-      fill_in "user_email", with: email
-      fill_in "user_password", with: password
-      fill_in "user_password_confirmation", with: password
-      click_button 'Sign up'
-      expect(page).to have_content('Welcome! You have signed up successfully.')
+      sign_up(email, password)
+      expect(page.current_path).to eql('/posts')
+      # expect(page).to have_content('Welcome! You have signed up successfully.')
     end
   end
-
 
 
 end

@@ -8,18 +8,11 @@ RSpec.feature 'User Authenication' do
   context 'Log in' do
 
     scenario 'A user can log in' do
-      visit '/'
-      click_on 'Signup'
-      fill_in "user_email", with: email
-      fill_in "user_password", with: password
-      fill_in "user_password_confirmation", with: password
-      click_button 'Sign up'
+      sign_up(email, password)
       click_on 'Logout'
-      click_on 'Login'
-      fill_in "user_email", with: email
-      fill_in "user_password", with: password
-      click_button 'Log in'
-      expect(page).to have_content('Welcome to Acebook and Chill')
+      log_in(email, password)
+      expect(page.current_path).to eql('/posts')
+      # expect(page).to have_content('Welcome to Acebook and Chill')
     end
 
 
