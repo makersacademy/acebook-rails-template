@@ -23,7 +23,7 @@ RSpec.feature 'Signup', type: :feature do
   scenario 'User can not leave first_name field empty' do
     visit '/'
     fill_in :last_name, with: 'Thief'
-    fill_in :email, with: 'davethecat@katze.com'
+    fill_in :email, with: 'davethecat1@katze.com'
     fill_in :password, with: 'Evil'
     fill_in :birthday, with: '2001/10/10'
     fill_in :gender, with: 'Female'
@@ -35,7 +35,7 @@ RSpec.feature 'Signup', type: :feature do
   scenario 'User can not leave last_name field empty' do
     visit '/'
     fill_in :first_name, with: 'Email'
-    fill_in :email, with: 'davethecat@katze.com'
+    fill_in :email, with: 'davethecat2@katze.com'
     fill_in :password, with: 'Evil'
     fill_in :birthday, with: '2001/10/10'
     fill_in :gender, with: 'Female'
@@ -43,4 +43,28 @@ RSpec.feature 'Signup', type: :feature do
     expect(page.current_path).to eq('/users')
     expect(page).to have_content("can't be blank")
   end
+
+  scenario 'User can not leave email field empty' do
+    visit '/'
+    fill_in :first_name, with: 'Email'
+    fill_in :last_name, with: 'Thief'
+    fill_in :password, with: 'Evil'
+    fill_in :birthday, with: '2001/10/10'
+    fill_in :gender, with: 'Female'
+    click_button 'Sign Up'
+    expect(page.current_path).to eq('/users')
+    expect(page).to have_content("can't be blank")
+  end
+
+  # scenario 'User can not leave birthday field empty' do
+  #   visit '/'
+  #   fill_in :first_name, with: 'Email'
+  #   fill_in :last_name, with: 'Thief'
+  #   fill_in :email, with: 'davethecat3@katze.com'
+  #   fill_in :password, with: 'Evil'
+  #   fill_in :gender, with: 'Female'
+  #   click_button 'Sign Up'
+  #   expect(page.current_path).to eq('/users')
+  #   expect(page).to have_content("can't be blank")
+  # end
 end
