@@ -2,8 +2,11 @@
 <% @posts.reverse.each do |post| %>
   <div class='post'>
     <p><%= simple_format(post.message) %></p>
-    <p><%= post.created_at %> </p>
-    <a href='/posts/delete'>delete</a>
+    <p><%= post.created_at%> </p>
+
+    <%= link_to 'delete', post_path(post.id), method: :delete %> 
+   
+
   </div>
 <% end %>
 
