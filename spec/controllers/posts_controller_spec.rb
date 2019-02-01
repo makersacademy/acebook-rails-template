@@ -34,8 +34,10 @@ RSpec.describe PostsController, type: :controller do
 
   describe "DELETE /destroy" do
     it "deletes a post" do
-      @user = User.create(email: "a@a.com", password: "abc123", id: 2)
-      @post = Post.create(message: "Hello, world!", id: 100, user_id: @user.id)
+      @user = User.create(email: "a@a.com", password: "abc123", id: 1)
+      @post = Post.create(message: "Hello, world!", id: 100, user_id: 1)
+      # require 'pry'
+      # binding.pry
       expect {
         delete :destroy, params: { id: @post.id }
       }.to change(Post, :count).by(-1)
@@ -44,7 +46,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe "EDIT /update" do
     it "edits a post" do
-      @user = User.create(email: "a@a.com", password: "abc123", id: 2)
+      @user = User.create(email: "a@a.com", password: "abc123", id: 1)
       @post = Post.create(message: "Hello, world!", id: 100, user_id: @user.id)
       @post = Post.update(message: "Have a great day!", id: 100, user_id: @user.id)
       expect(Post.find_by(message: "Have a great day!")).to be
