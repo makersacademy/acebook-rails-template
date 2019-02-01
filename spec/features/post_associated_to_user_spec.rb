@@ -1,4 +1,5 @@
-RSpec.feature do 
+require 'rails_helper'
+RSpec.feature 'Post Association', type: :feature do 
   scenario 'User can only see their posts on their profile' do 
     signup_and_click
     click_on 'New Post'
@@ -12,13 +13,8 @@ RSpec.feature do
     # fill_in 'Message', with: 'SecondUserMessage'
     # click_button 'Submit'
     # visit '/signup'
-expect(page.current_path = '/users/1')
-expect(page).to_have content('Message1')
-expect(page).not to have_content(
-
-
-  
-
-
-    
+  expect(page.current_path = '/users/1')
+  expect(page).to_have content('Message1')
+  expect(page).to_have_content('Message2')
+  end
 end 

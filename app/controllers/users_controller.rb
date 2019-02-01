@@ -3,7 +3,9 @@
 class UsersController < ApplicationController
   def new; end
 
-  def index; end
+  def index
+    current_user = User.find_by_id(session[:current_user_id])
+  end
 
   def show
     @user = User.find(params[:id])

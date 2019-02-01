@@ -7,14 +7,16 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = User.post.all
+    @posts = Post.all
   
   end
 
   def create
-    @post.user = current_user 
-    @post = current_user.Post.create(post_params)
-    redirect_to '/poststo'
+    @user = User.find_by_id(session[:current_user_id])
+    binding.pry
+    #@post = @user.posts.create(post_params)
+    p @user
+    redirect_to @user
   end
 
  
