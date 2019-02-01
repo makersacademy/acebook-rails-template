@@ -9,6 +9,8 @@ the below**
 
 2. The card wall is here: https://trello.com/b/eSDBp5iu/ajax-acebook
 
+3. App is deployed at: https://git.heroku.com/polar-journey-26072.git
+
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
