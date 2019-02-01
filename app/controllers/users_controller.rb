@@ -9,13 +9,17 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = Post.all.select{|p| p.user_id == @user.id }  
   end
 
   def create(user = User.create(user_params))
+   
     # render plain: params[:users].inspect
     @user = user
     # @user.save
     if @user.valid?
+      session[:current_user_id] = user.id
+      p session[:current_user_id]
       redirect_to @user
     else
       @user.errors.full_messages.to_s
