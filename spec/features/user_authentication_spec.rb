@@ -1,7 +1,6 @@
 require 'rails_helper'
 require 'web_helpers'
 
-
 RSpec.feature "User Authentication", type: :feature do
   scenario "Route page has Sign Up and Sign In buttons" do
     visit "/"
@@ -24,12 +23,11 @@ RSpec.feature "User Authentication", type: :feature do
 
   scenario "Same User tries to Sign Up twice" do
     visit "/"
-    sign_up_steps 
+    sign_up_steps
     click_link('Sign Out')
     sign_up_steps
     expect(page).to have_content("Email has already been taken")
   end
-
 
   scenario "User can Sign In" do
     visit "/"
@@ -54,13 +52,11 @@ RSpec.feature "User Authentication", type: :feature do
     expect(page).to have_content("Invalid Email or password.")
   end
 
-
   scenario "User can Sign Out" do
     visit "/"
     sign_up_steps
     click_link('Sign Out')
     expect(page).to have_content("Signed out successfully.")
   end
-
 
 end

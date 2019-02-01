@@ -1,7 +1,6 @@
 require 'rails_helper'
 require 'web_helpers'
 
-
 RSpec.feature "User Account Details", type: :feature do
   scenario "User can delete account" do
     visit "/"
