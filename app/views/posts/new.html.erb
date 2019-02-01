@@ -5,7 +5,7 @@
   <%= form.submit "Submit" %>
 <% end %>
 
-<% if @post.errors.any? %>
+<%# <% if @post.errors.any? %>
  <h2>The following errors prevented the post from saving:</h2>
  <ul>
  <% @post.errors.full_messages.each do |msg|%>
@@ -14,4 +14,4 @@
  </ul>
 
 
-<% end %>
+<% end %> %>
