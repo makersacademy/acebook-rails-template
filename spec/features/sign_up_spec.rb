@@ -23,4 +23,10 @@ describe "Authentication" do
     visit '/posts'
     expect(page).to have_content('You need to sign in or sign up before continuing.')
   end
+  scenario "user must provide email with valid email format" do
+    go_homepage
+    sign_up_bad_email
+    expect(page).to have_content("Sign up 1 error prohibited this user from being saved: Email is invalid")
+  end
+
 end
