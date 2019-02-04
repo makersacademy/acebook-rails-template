@@ -35,4 +35,3 @@ RSpec.feature 'Post display', type: :feature do
     expect(page).to have_content(post.created_at)
   end
 end
-end
