@@ -1,4 +1,5 @@
 require 'rails_helper'
+require "webhelper"
 
 # RSpec.feature "Timeline", type: :feature do
 #   scenario "empty posts raise error" do
@@ -12,6 +13,8 @@ require 'rails_helper'
 
 feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
+    go_homepage
+    sign_up
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
