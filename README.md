@@ -122,7 +122,7 @@ I want to deploy it via Heroku
 ```
 As a Dev,
 So I know my code always works,
-I want to implement Travis continues integration
+I want to implement Travis continuous integration
 ```
 ```
 As a Dev,
