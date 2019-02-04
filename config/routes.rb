@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :posts
   root 'posts#home'
 
+  devise_for :users do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
 end
 
 # INITIAL

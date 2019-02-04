@@ -42,7 +42,7 @@ li a:hover {
   <li><%= link_to('Home', home_path) %></li>
   <li><%= link_to('Feed', posts_path) %></li>
   <li><%= link_to('MyAccount', edit_user_registration_path) %></li>
-  <li><%= link_to('SignOut', destroy_user_session_path) %></li>
+  <li><%= link_to('SignOut', destroy_user_session_path, method: :delete) %></li>
 </ul>
 
 <div style="padding:20px;margin-top:30px;background-color:#FFFFFF;height:10px;">
