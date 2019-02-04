@@ -33,16 +33,16 @@
         null,
         null
       ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/controllers/users_controller_spec.rb": [
-        null,
-        null,
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
         1,
+        null,
         1,
         1,
         1,
         1,
+        null,
         null,
         null,
         null
@@ -310,6 +310,13 @@
         null,
         1,
         null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
         1,
         null,
         1,
@@ -330,6 +337,10 @@
         1,
         null
       ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
       "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/helpers/users_helper.rb": [
         null,
         null,
@@ -346,11 +357,38 @@
         null,
         null,
         1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/application_controller.rb": [
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/controllers/users_controller_spec.rb": [
+        null,
+        null,
+        1,
+        null,
         1,
         1,
         1,
         1,
         1,
+        null,
+        null,
         null
       ],
       "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/users_controller.rb": [
@@ -362,39 +400,26 @@
         1,
         null,
         1,
-        3,
-        null,
-        null,
-        1,
-        null,
         6,
         null,
-        6,
-        3,
-        null,
-        3,
-        3,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
         null,
         1,
         null,
-        1,
+        9,
+        null,
+        9,
         6,
         null,
-        null
-      ],
-      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/application_controller.rb": [
+        3,
+        3,
+        null,
         null,
         null,
         1,
+        null,
         1,
+        9,
+        null,
         null
       ],
       "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/controllers/welcome_controller_spec.rb": [
@@ -416,6 +441,29 @@
         null,
         1,
         1,
+        null
+      ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/features/signin_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
         null
       ],
       "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/features/signup_spec.rb": [
@@ -490,6 +538,23 @@
         1,
         1,
         null,
+        null
+      ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/helpers/sessions_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
         null
       ],
       "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/helpers/users_helper_spec.rb": [
@@ -593,6 +658,13 @@
         1,
         null
       ],
+      "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/views/sessions/new.html.erb_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
       "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/spec/views/users/new.html.erb_spec.rb": [
         null,
         null,
@@ -642,6 +714,6 @@
         null
       ]
     },
-    "timestamp": 1549280968
+    "timestamp": 1549281587
   }
 }

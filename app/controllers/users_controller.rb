@@ -21,12 +21,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def signin(user = User.find(params[:email]))
-    @user = user
-    redirect_to @user
-  end
-
-
   private
 
   def user_params
