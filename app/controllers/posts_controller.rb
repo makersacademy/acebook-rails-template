@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  
+
   def new
     @post = Post.new
   end
 
   def index
-    
+
     @posts = Post.all
-  
+
   end
 
   def create
-    @user = User.find_by_id(session[:current_user_id])
 
-    @post = @user.posts.create(post_params)
+    
+    @post = current_user.posts.create(post_params)
     p @user
-    redirect_to @user
+    redirect_to @current_user
   end
 
- 
+
 
   private
 
