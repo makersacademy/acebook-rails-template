@@ -22,4 +22,10 @@ RSpec.feature 'Sign in', type: :feature do
     expect(page.current_path).to eq('/')
     expect(page).to have_content("Email or password is invalid")
   end
+
+  scenario 'User cannot access posts page without signing in' do
+    visit '/posts'
+    expect(page.current_path).to eq('/')
+    expect(page).to have_content("You need to sign in first")
+  end
 end
