@@ -85,6 +85,36 @@ So I can better know someone by their profile,
 I want to see all their previous posts
 ```
 ```
+As a User,
+So I can visit my friend's profile and see their wall,
+I want to be able to search for them by name
+```
+```
+As a User,
+To maintain my privacy,
+Noone can see my wall unless they are logged in
+```
+```
+As a User,
+So I can interact with my friends,
+I can leave posts on my friends' walls
+```
+```
+As a User,
+To protect my content,
+Only I can edit or delete my posts on any wall
+```
+```
+As a User,
+So I can find my friends more easily,
+I would like to find them through entering their username in the URL
+```
+```
+As a User,
+So I can customise my wall,
+I would like to have a choice of backgrounds and fonts
+```
+```
 As a Dev,
 So users can use AceBook,
 I want to deploy it via Heroku
@@ -93,6 +123,16 @@ I want to deploy it via Heroku
 As a Dev,
 So I know my code always works,
 I want to implement Travis continues integration
+```
+```
+As a Dev,
+So I can protect my users,
+I want to restrict unregistered users actions to only Sign Up/Log In
+```
+```
+As a Dev,
+So my users know why there is an error,
+I want to redirect them to a 404 page if a user does not exist.
 ```
 ## Minimum Viable Product
 
