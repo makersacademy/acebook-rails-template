@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <h1>ⒶⒸⒺⒷᴼᴼⓀ</h1>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <a> <% if user_signed_in? %>
@@ -19,8 +20,11 @@
     </p>
     <% else %>
     <br>
-    <a href="<%= new_user_session_path%>"> Sign in or Sign up
-    </a>
-    <% end %></a>    <%= yield %>
-  </body>
-  </html>
+    <a href="<%= new_user_session_path%>"> Sign in
+    </a><br>
+    <a href="<%=  new_registration_path(User) %>">Sign up</a>
+    <% end %>
+  </a>
+  <%= yield %>
+</body>
+</html>
