@@ -3,8 +3,10 @@
 </div>
 
 <h1>Welcome</h1>
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+
+<% @posts.reverse.each do |post| %>
+  <p><%= simple_format(post.message) %></p>
+  <p> posted at: <%= post.created_at %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
