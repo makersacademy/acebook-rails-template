@@ -368,6 +368,10 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/application_controller.rb": [
@@ -400,15 +404,15 @@
         1,
         null,
         1,
-        6,
+        4,
         null,
         null,
         1,
         null,
-        9,
+        7,
         null,
-        9,
-        6,
+        7,
+        4,
         null,
         3,
         3,
@@ -418,7 +422,7 @@
         1,
         null,
         1,
-        9,
+        7,
         null,
         null
       ],
@@ -448,21 +452,12 @@
         1,
         1,
         1,
+        null,
         1,
         1,
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        0,
-        0,
-        0,
-        0,
         null,
         null
       ],
@@ -714,6 +709,6 @@
         null
       ]
     },
-    "timestamp": 1549281587
+    "timestamp": 1549282462
   }
 }
