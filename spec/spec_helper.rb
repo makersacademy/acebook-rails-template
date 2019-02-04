@@ -6,10 +6,12 @@ require 'pry'
 
 SimpleCov.start
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-                                                                 SimpleCov::Formatter::Console,
-                                                                 SimpleCov::Formatter::HTMLFormatter
-                                                               ])
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
+  [
+    SimpleCov::Formatter::Console,
+    SimpleCov::Formatter::HTMLFormatter
+  ]
+)
 
 RSpec.configure do |config|
   config.before(:suite) do

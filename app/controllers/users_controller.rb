@@ -19,8 +19,13 @@ class UsersController < ApplicationController
       @user.errors.full_messages.to_s
       render 'new'
     end
-
   end
+
+  def signin(user = User.find(params[:email]))
+    @user = user
+    redirect_to @user
+  end
+
 
   private
 
