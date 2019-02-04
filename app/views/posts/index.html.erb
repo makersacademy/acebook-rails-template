@@ -1,11 +1,16 @@
-<div> 
+<div>
   <%= notice %>
 </div>
 
 <h1>Welcome</h1>
 
-<% @posts.reverse.each do |post| %>
-  <p><%= simple_format(post.message) %></p>
+<% sorted = @posts.sort_by { |k| k["created_at"] } %>
+
+<% sorted.reverse.each do |post| %>
+
+  <p><%= link_to edit_post_path(post.id) do %>
+  <%= simple_format(post.message) %>
+    <% end %></p>
   <p> posted at: <%= post.created_at %></p>
 <% end %>
 
