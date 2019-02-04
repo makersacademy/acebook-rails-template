@@ -25,6 +25,6 @@ describe "Authentication" do
     visit '/'
     expect(page).to have_content('Sign in', 'Sign up')
     visit '/posts'
-    expect(page).to have_content('YOU MUST BE SIGNED IN TO SEE THIS!!!')
+    expect(page).to have_content('You need to sign in or sign up before continuing.')
   end
 end
