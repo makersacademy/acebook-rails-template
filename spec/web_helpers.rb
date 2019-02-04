@@ -9,7 +9,7 @@ end
 
 
  def log_in(email, password)
-   click_on 'Login'
+   click_on'Login'
    fill_in "user_email", with: email
    fill_in "user_password", with: password
    click_button 'Log in'
