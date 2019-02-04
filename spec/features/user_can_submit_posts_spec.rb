@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-RSpec.feature "Timeline", type: :feature do
-=======
 require 'rails_helper'
 
 RSpec.feature "Writing posts", type: :feature do
@@ -10,7 +7,6 @@ RSpec.feature "Writing posts", type: :feature do
   let(:password){'testingisfunlol'}
 
 
->>>>>>> to_be_tested
   scenario "Can submit posts and view them" do
     sign_up(email, password)
     click_on 'Logout'
