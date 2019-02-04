@@ -13,7 +13,7 @@
   <h1>ⒶⒸⒺⒷᴼᴼⓀ</h1>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <a> <% if user_signed_in? %>
+  <div> <% if user_signed_in? %>
     <p> Currently logged in as <%= current_user.email %> <br>
       <a href="<%= destroy_user_session_path%>" data-method="delete"> Sign out
       </a>
@@ -24,7 +24,7 @@
     </a><br>
     <a href="<%=  new_registration_path(User) %>">Sign up</a>
     <% end %>
-  </a>
+  </div>
   <%= yield %>
 </body>
 </html>

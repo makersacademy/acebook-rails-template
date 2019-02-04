@@ -24,6 +24,7 @@ describe "Authentication" do
   scenario "User must sign up/in to access posts" do
     visit '/'
     expect(page).to have_content('Sign in', 'Sign up')
-
+    visit '/posts'
+    expect(page).to have_content('YOU MUST BE SIGNED IN TO SEE THIS!!!')
   end
 end
