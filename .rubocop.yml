@@ -46,11 +46,16 @@ Metrics/LineLength:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
+    - 'config/**/*'
 
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/**/*'
 
 # Code Style
 # ==========
