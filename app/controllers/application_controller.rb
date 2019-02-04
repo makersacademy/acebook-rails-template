@@ -8,9 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    unless current_user
-      redirect_to root_url, notice: "You need to sign in first"
-    end
+    redirect_to root_url, notice: "Please sign in" unless current_user
   end
 
   helper_method :current_user
