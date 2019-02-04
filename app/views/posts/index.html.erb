@@ -1,5 +1,10 @@
+<% if current_user %>
+  Logged in as <%= current_user.email %>
+<% end %>
+
 <h1>Welcome</h1>
-<% @posts.each do |post| %>
+
+<% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
 
