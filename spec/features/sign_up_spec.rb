@@ -28,5 +28,10 @@ describe "Authentication" do
     sign_up_bad_email
     expect(page).to have_content("Sign up 1 error prohibited this user from being saved: Email is invalid")
   end
+  scenario "password must be 6 characters or more" do
+    go_homepage
+    sign_up_short_password
+    expect(page).to have_content("1 error prohibited this user from being saved: Password is too short (minimum is 6 characters)")
+    end
 
-end
+  end
