@@ -1,12 +1,14 @@
-<div> 
-  <%= notice %>
-</div>
+  <div> 
+    <%= notice %>
+  </div>
 
-<h1>Welcome</h1>
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+  <h1>Welcome</h1>
+  <% @posts.each do |post| %>
+    <p><%= post.message %></p>
+  <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
+
+  <%= link_to "Sign Out", session_path("current"), method: "delete" %>
