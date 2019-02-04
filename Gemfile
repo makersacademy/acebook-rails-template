@@ -60,3 +60,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "simplecov-console", "~> 0.4.2"
+
+#Added a comment to update git
