@@ -1,5 +1,3 @@
-require 'rails_helper' #is this needed here or could this go into the spec_helper file?
-
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
     visit "/posts"
