@@ -339,6 +339,16 @@
       ],
       "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/helpers/sessions_helper.rb": [
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/helpers/users_helper.rb": [
@@ -357,26 +367,38 @@
         null,
         null,
         1,
-        2,
-        2,
-        2,
-        2,
-        2,
+        1,
+        1,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/sessions_controller.rb": [
         1,
+        null,
         1,
         null,
         null,
         1,
         1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null,
         null
       ],
       "/Users/georgeslevaillant/Documents/Makers/Group projects/acebook-rails-smoking-dragons/app/controllers/application_controller.rb": [
         null,
         null,
+        1,
         1,
         1,
         null
@@ -400,6 +422,8 @@
         null,
         1,
         1,
+        8,
+        null,
         null,
         1,
         null,
@@ -410,7 +434,6 @@
         1,
         null,
         7,
-        null,
         7,
         4,
         null,
@@ -451,9 +474,15 @@
         1,
         1,
         1,
+        null,
+        1,
+        1,
+        1,
+        1,
         1,
         null,
         1,
+        null,
         1,
         1,
         1,
@@ -709,6 +738,6 @@
         null
       ]
     },
-    "timestamp": 1549282462
+    "timestamp": 1549289411
   }
 }
