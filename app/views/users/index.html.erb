@@ -41,3 +41,25 @@
   </div>
 
 <% end %>
+
+<br>
+
+<div> 
+  <%= notice %>
+</div>
+
+<br>
+
+<%= form_tag sessions_path do %>
+  <div class="field">
+    <%= label_tag :email %><br />
+    
+    <%= text_field_tag :sign_in_email, params[:email] %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %><br />
+    <%= password_field_tag :sign_in_password %>
+  </div>
+  <div class="actions"><%= submit_tag "Sign In" %></div>
+<% end %>
+
