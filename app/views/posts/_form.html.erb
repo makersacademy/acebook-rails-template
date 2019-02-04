@@ -1,6 +1,9 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message, size: "20x4" %>
+<div class="form-wrapper">
+  <%= form_for @post do |form| %>
+      <%= form.label :message %><br>
+      <%= form.text_area :message, size: "20x4" %><br>
 
-  <%= form.submit "Submit" %>
-<% end %>
+      <%= form.submit "Submit" %>
+  <% end %>
+</div> 
+
