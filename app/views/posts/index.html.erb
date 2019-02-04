@@ -1,12 +1,16 @@
-<% @posts.each do |post| %>
-
- <div>
-  <%= link_to simple_format(post.message), post %>
-  <%= post.created_at.strftime("%H:%M:%S - %d/%m/%y") %>
+<div class="posts-wrapper row">
+  <% @posts.each do |post| %>
+      <div class="post">
+        <div class="image center-block">
+          <%= link_to simple_format(post.message), post %> <%= post.created_at.strftime("%H:%M:%S - %d/%m/%y") %>
+        </div>
+      </div>
+  <% end %>
 </div>
 
-<% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<div class="form-group text-center">
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
+</div>
