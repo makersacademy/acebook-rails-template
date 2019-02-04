@@ -12,7 +12,27 @@
 
   </head>
 
-  <body>
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <header class="navbar  navbar-inverse">
+    <div class="navbar-class">
+      <div class="container">
+
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+    <ul class="nav navbar-nav">
+      <li><%= link_to('Edit Details', edit_user_registration_path) %></li>
+      <li><%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %></li>
+      </ul>
+    <% if user_signed_in? %>
+      <%= render "layouts/SignedInNavBar" %>
+    <% else %>
+      <%= render "layouts/SignedOutNavBar" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
