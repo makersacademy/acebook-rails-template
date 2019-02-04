@@ -21,3 +21,7 @@
 /yarn-error.log
 
 .byebug_history
+
+/devise-4.5.0
+
+/coverage/*
