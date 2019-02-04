@@ -7,7 +7,7 @@ RSpec.feature 'User logout' do
     scenario 'A user can logout to take you back to homepage' do
       sign_up(email, password)
       click_link 'Logout'
-      expect(page.current_path).to eql('/')
+      expect(page.current_path).to eql('/login')
     end
 
   end

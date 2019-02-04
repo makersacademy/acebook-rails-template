@@ -12,7 +12,6 @@ RSpec.feature 'User Authenication' do
       click_on 'Logout'
       log_in(email, password)
       expect(page.current_path).to eql('/posts')
-      # expect(page).to have_content('Welcome to Acebook and Chill')
     end
 
 
