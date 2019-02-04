@@ -1,11 +1,8 @@
-<% if current_user %>
-  Logged in as <%= current_user.email %>
-<% end %>
 
 <h1>Welcome</h1>
 
 <% @posts.reverse.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= post.message %>, posted at: <%= post.created_at %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
