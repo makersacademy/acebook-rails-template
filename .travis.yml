@@ -1,11 +1,15 @@
-rvm: '2.5.0'
-
-script:
-  - mkdir -p spec && bundle exec rspec spec
-
-# before_install:
-# - sudo apt-get update -qq
-# - sudo apt-get install -qq postgresql-server-dev-9.3
-
-before_script:
-  - psql -c 'create database pgapp_test;' -U postgres
+language: "— ruby"
+rvm: "— 2.5.0"
+cache: "— bundler"
+script: "— bundle install — bin/rails db:create — bin/rails db:migrate — bundle exec
+  rspec"
+services: "— postgresql"
+deploy:
+  provider: heroku
+  api_key:
+    secure: I1BONs/n4lGW+GvjYmEZz2kUIK8ooDUg9gDNkvMUGmBNLj9JGZFKZMgmqjFT9Qo0AkMURDYlEZJUdUFAZ3rh/o2THdKY+uxRdDokUHpzOoH5LeR48abbLcUH0e64G9IgsrUK/wV2Eb4jw31vidiDXmpzvNO60EuN0fxBh8T+a+52hDEYpM9HHXW3Wwz/WyeO4lpgxU0MALiYMgHkNzS654BHCHhrtySwp5EZDrsBzAlhbtzSA4O0ztg3/lwqxyGcUPakuCTvl2J65ltlfYvopua+4SMS+JMoi9s9F0ukwFCYHFOUWLS7vyb3f+oUmf+BlqYRTnPI5v7Mz02IifumhkEYe9EXsZBUqN9pz4HP3GD74kcMzK4L4kiFnGTeY3vF7qUQJ/k6WQmfbc1ZaxCWSrqM/kaXvg0/bcr8fXOHLO+xbELDPaqoYmd9J1NrmWU6Bfy9DczTSe6qKweSYrD+zTMiocqr3I5RpU2OwXAXXZ1BKI/Q2mZaX11OzVIDFJ0W1/lqjuxOhC5NrU59112VVVN1V3mTemL/sQAWorM+2NTfBYK7fzuUVwtBpocLQNTfZ8VLfdl3TlR7g5Lz1PX8v+FM2hu4L9NePvza0MraSkF7/bhNWxZB4YO/jysMbERwPaYc67CIceTuDlWHzevUTTvbW9Dq8pm1PlrFkTqkloI=
+api_key:
+  secure: 316f5328-4efe-4152-b92d-3d9052854a14
+app: polar-journey-26072
+true:
+  repo: AlinaGoaga/AJAX-AceBook
