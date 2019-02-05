@@ -26,3 +26,10 @@ def sign_up_short_password
   fill_in "user[password_confirmation]", with: "passw"
   click_button 'Sign up'
 end
+
+def create_post
+  visit "/posts"
+  click_link "New post"
+  fill_in "Message", with: "Hello, world!"
+  click_button "Submit"
+end
