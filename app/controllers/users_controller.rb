@@ -8,10 +8,13 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to posts_url
+      redirect_to user_path(@user.email)
     else
       render :index
     end
+  end
+
+  def show
   end
 
   private
