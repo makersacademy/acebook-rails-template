@@ -1,6 +1,3 @@
-require 'rails_helper'
-require_relative '../helpers/users_helper_spec'
-
 RSpec.feature 'Sign out', type: :feature do
   scenario 'User can sign out after signing in' do
     fill_in_sign_up_details

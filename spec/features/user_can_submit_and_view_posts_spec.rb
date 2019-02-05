@@ -1,6 +1,3 @@
-require 'rails_helper'
-require_relative '../helpers/users_helper_spec'
-
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
     fill_in_sign_up_details

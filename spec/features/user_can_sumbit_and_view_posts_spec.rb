@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.feature 'Post display', type: :feature do
   scenario 'User sumbits a post' do
     sign_up
