@@ -17,7 +17,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    if current_user_id === Post.find(params[:id]).user_id
+      @post = Post.find(params[:id])
+    else
+      redirect_to posts_url
+    end
   end
 
   def update
@@ -27,7 +31,7 @@ class PostsController < ApplicationController
   end
 
 
-  def destroy 
+  def destroy
      post = Post.find(params[:id])
      post.destroy
      redirect_to posts_path
