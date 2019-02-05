@@ -44,6 +44,7 @@
         1,
         1,
         null,
+        null,
         null
       ],
       "/Users/Huxley/Desktop/makers_ruby/week8/acebook--Team-Acebook-and-Chill/app/controllers/application_controller.rb": [
@@ -72,10 +73,6 @@
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
         null,
         null,
         1,
@@ -96,7 +93,7 @@
         1,
         null,
         1,
-        3,
+        1,
         null,
         null,
         1,
@@ -162,6 +159,6 @@
         0
       ]
     },
-    "timestamp": 1549362183
+    "timestamp": 1549367010
   }
 }

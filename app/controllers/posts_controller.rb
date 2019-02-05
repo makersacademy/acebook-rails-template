@@ -4,11 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    p 'first'
-    p post_params
-    p 'second'
-    p post_params[:message]
-    @post = Post.create(message: post_params[:message], user_id: current_user_id)
+    @post = Post.create(message: post_params[:message], user_id:current_user_id)
     redirect_to posts_url
   end
 
