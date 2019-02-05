@@ -2,12 +2,16 @@ class PostsController < ApplicationController
   before_action :require_login
   
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      redirect_to posts_url, notice: "Your post has been created!"
+    else
+      redirect_to '/posts#new', notice: "Your new post couldn't be created! Please check the form."
+    end
   end
 
   def index
