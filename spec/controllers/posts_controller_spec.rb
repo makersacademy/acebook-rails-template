@@ -13,6 +13,7 @@ RSpec.describe PostsController, type: :controller do
       post :create, params: { post: { message: "Hello, world!" } }
       expect(response).to redirect_to(new_user_session_path)
     end
+  end
 
   #   it "creates a post" do
   #     p Post

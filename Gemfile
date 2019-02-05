@@ -54,3 +54,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "rubocop", "~> 0.63.1"
+
+gem "database_cleaner", "~> 1.7"
