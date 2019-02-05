@@ -4,7 +4,9 @@ require 'simplecov'
 require 'simplecov-console'
 require 'pry'
 
-SimpleCov.start
+SimpleCov.start do
+  add_filter "spec/features/web_helpers.rb"
+end
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [
