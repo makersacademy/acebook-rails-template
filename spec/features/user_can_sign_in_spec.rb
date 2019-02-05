@@ -28,4 +28,11 @@ RSpec.feature 'Sign in', type: :feature do
     expect(page.current_path).to eq('/')
     expect(page).to have_content("Please sign in")
   end
+
+  scenario 'User cannot access any walls without signing in' do
+    visit '/users/davethecat@katze.com'
+    expect(page.current_path).to eq('/')
+    expect(page).to have_content("Please sign in")
+  end
+
 end

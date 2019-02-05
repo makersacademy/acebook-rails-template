@@ -15,8 +15,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @post = current_user.posts.build
-    @posts = Post.all
+    if current_user
+      @post = current_user.posts.build
+      @posts = Post.all
+    else
+      redirect_to root_url, notice: "Please sign in"
+    end
   end
 
   private
