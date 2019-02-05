@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_url, notice: "Your post has been created!"
     else
-      redirect_to '/posts#new', notice: "Your new post couldn't be created! Please check the form."
+      redirect_to '/posts#new', notice: "Your new post couldn't be created!"
     end
   end
 

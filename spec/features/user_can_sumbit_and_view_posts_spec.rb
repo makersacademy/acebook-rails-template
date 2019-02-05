@@ -1,4 +1,5 @@
 require 'rails_helper'
+require_relative '../helpers/users_helper_spec'
 
 RSpec.feature 'Post display', type: :feature do
   scenario 'User sumbits a post' do
@@ -15,6 +16,13 @@ RSpec.feature 'Post display', type: :feature do
     fill_in 'Message', with: "Hello, world! \nGoodbye, world!"
     click_button 'Submit'
     expect(page.text).to have_content("Hello, world! \nGoodbye, world!")
+  end
+
+  scenario 'User cannot submit an empty post' do
+    sign_up
+    click_link 'New post'
+    click_button 'Submit'
+    expect(page).to have_content("Your new post couldn't be created!")
   end
 
   scenario 'User views newest posts first' do

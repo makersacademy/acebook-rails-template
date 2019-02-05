@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @post = current_user.posts.build
+    @posts = Post.all
   end
 
   private
