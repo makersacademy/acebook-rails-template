@@ -1,7 +1,5 @@
 # AceBook - Team Cats
 
-REQUIRED INSTRUCTIONS:
-
 [![Build Status](https://travis-ci.org/learningtocode101/acebook-team-cats.svg?branch=master)](https://travis-ci.org/learningtocode101/acebook-team-cats) 
 [![Maintainability](https://api.codeclimate.com/v1/badges/3cb7048acedcfa3b76f1/maintainability)](https://codeclimate.com/github/learningtocode101/acebook-team-cats/maintainability)
 
