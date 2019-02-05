@@ -1,7 +1,7 @@
 ## Learning log Team Justice Moo
 
-Monday 28th
-------------
+Monday 28th of January
+----------------------
 
 Afternoon Stand-Up
 
@@ -27,8 +27,8 @@ _Travis CI_
 * We can get Travis set up so that it will pass latest iteration to Heroku automatically, as long as it passes the tests
 
 --------------------------------------------
-Monday 29th
-------------
+Monday 29th of January
+----------------------
 
 Morning Stand-Up
 
@@ -58,15 +58,15 @@ Creating new index page and populate with content
 * Joao is taking alone the ticket of debugging Travis / Simplecov-console
 
 --------------------------------------------
-Wednesday 30th
-------------
+Wednesday 30th of January
+-------------------------
 
 * We decide to not do any stand Up on this day, because we did a long Planning session in the morning to decided of the complexity of the tickets and allocated them.
 * During the planning session we also diagram and mock-up the project
 
 --------------------------------------------
-Thursday 31th
-------------
+Thursday 31th of January
+------------------------
 
 Morning Stand-Up
 
@@ -93,3 +93,30 @@ Afternoon Stand-Up
 
 ** Goals for the rest of the day ?
 * restart from scratch as a mob instead of pairs as we were feeling that split the sign up/sign in ticket was a bit confusing and to linked to be done separately.
+
+--------------------------------------------
+Monday 4th of February
+----------------------
+
+Morning Stand-Up
+
+** What we were trying to achieve ?
+* sign-in / sign-up tickets
+* Readme - diagram
+
+** What did we learn ? (based on the weekend challenge)
+* Full Rails workflow
+* Power of Devise
+* How to upload images (Paperclip + ImageMagick || Active Storage)
+* Active Record functionalities
+
+** Goals of the day ?
+* Finish our tickets
+
+Afternoon Stand-Up
+
+** ** What are we trying to achieve ?
+* same as morning
+
+** Goals for the rest of the day ?
+* Same as morning
