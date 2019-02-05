@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :posts, dependent: :destroy
   has_secure_password
   
   validates_presence_of :first_name
