@@ -21,8 +21,9 @@ Rails.application.routes.draw do
 
   post '/posts', to: 'posts#create'
 
-  get '/poststo', to: 'posts#index'
+  get '/allposts', to: 'posts#index'
 
+  get '/posts/:id', to: 'posts#show'
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
