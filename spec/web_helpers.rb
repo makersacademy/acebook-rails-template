@@ -14,3 +14,10 @@ end
    fill_in "user_password", with: password
    click_button 'Log in'
  end
+
+
+def post_message(message)
+  click_link "New post"
+  fill_in "Message", with: message
+  click_button "Submit"
+end
