@@ -1,6 +1,3 @@
-require 'rails_helper'
-require_relative '../helpers/users_helper_spec'
-
 RSpec.feature 'Edit Post', type: :feature do
   scenario 'User can edit a post' do
     sign_up

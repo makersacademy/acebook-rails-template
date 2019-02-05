@@ -1,6 +1,3 @@
-require 'rails_helper'
-require_relative '../helpers/users_helper_spec'
-
 RSpec.feature 'Delete post', type: :feature do
   scenario 'User can delete a post' do
     sign_up
