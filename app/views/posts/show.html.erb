@@ -6,7 +6,10 @@
 </head>
 <body>
   <div>
-    <%=@post.message%>
+   <% form_for @post, :url => url_for(:action => ‘destroy’, :id => @post) do |f| %>
+   <%= @post.message %>
+   <%= submit_tag(“Delete It”) %>
+   <% end %>
   </div>
 </body>
 </html>

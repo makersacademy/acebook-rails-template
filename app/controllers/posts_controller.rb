@@ -7,22 +7,22 @@ class PostsController < ApplicationController
   end
 
   def index
-
     @posts = Post.all
-
   end
 
   def create
-
-    
     @post = current_user.posts.create(post_params)
-    p @user
     redirect_to @current_user
   end
 
   def show
     @post = Post.find(params[:id])
-    p @post
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to @current_user
   end
 
   private
