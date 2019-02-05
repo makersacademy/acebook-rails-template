@@ -10,7 +10,6 @@ def fill_in_sign_up_details
   fill_in :gender, with: 'Male'
 end
 
-
 def create_user
   tom = User.create(first_name: 'Tom', last_name: 'Lawrence', birthday: '2000-01-01', password: 'nerds123', gender: 'Male', email: 'tom@hotmail.com') 
   session[:user_id] = tom.id
