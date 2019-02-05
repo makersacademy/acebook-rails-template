@@ -28,4 +28,34 @@ RSpec.feature 'Signin', type: :feature do
     find('input[name="commit"]').click
     expect(page).to have_content('you cretin')
   end
+
+  scenario "can't sign in with the wrong email" do
+    visit '/signup'
+    fill_in 'users_username', with: '1'
+    fill_in 'users_email', with: 'Test100@test.com'
+    fill_in 'users_password', with: '12345'
+    find('input[name="commit"]').click
+    click_on "Log Out"
+    click_link "Log In!"
+    fill_in 'session_email', with: 'test200@test.com'
+    fill_in 'session_password', with: '12345'
+    find('input[name="commit"]').click
+    expect(page).to have_content('you cretin')
+  end
+
+  scenario "can't sign in with the wrong password" do
+    visit '/signup'
+    fill_in 'users_username', with: '1'
+    fill_in 'users_email', with: 'Test100@test.com'
+    fill_in 'users_password', with: '12345'
+    find('input[name="commit"]').click
+    click_on "Log Out"
+    click_link "Log In!"
+    fill_in 'session_email', with: 'test100@test.com'
+    fill_in 'session_password', with: '012345'
+    find('input[name="commit"]').click
+    expect(page).to have_content('you cretin')
+  end
+
+
 end
