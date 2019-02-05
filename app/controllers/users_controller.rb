@@ -11,7 +11,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = Post.all.select{|p| p.user_id == @user.id }
+    p @user 
+    # @posts = Post.all.select{|p| p.user_id == @user.id }
+    @posts = Post.all
   end
 
   def create

@@ -134,6 +134,12 @@ As a Dev,
 So my users know why there is an error,
 I want to redirect them to a 404 page if a user does not exist.
 ```
+## CRC
+
+
+## Wireframe
+![](assets/images/acebook-wireframe.pdf)
+
 ## Minimum Viable Product
 
   As a group we decided the below requirements would meet our expectation of a minimum viable product that is deployed. We aimed to implement these as a minimum to enhance our learning and produce a working app.

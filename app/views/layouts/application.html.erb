@@ -5,8 +5,20 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"   %>
     <%= javascript_include_tag 'application' %>
   </head>
+
+
+  <body>
+  
+
+
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: "alert alert-info" %>       
+      <%end%>
+    </div>
 
   <body>
     <% flash.each do |message_type, message| %>

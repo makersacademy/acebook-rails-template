@@ -59,3 +59,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'travis', '~> 1.8'
+
+gem "bootstrap", "~> 4.2"
+
+gem "jquery-rails", "~> 4.3"
