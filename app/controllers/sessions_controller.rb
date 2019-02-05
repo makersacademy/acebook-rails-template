@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:sign_in_email])
-    if user && user.authenticate(params[:sign_in_password])
+    if user&.authenticate(params[:sign_in_password])
       session[:user_id] = user.id
       redirect_to user_path(user.email), notice: "Logged in as #{user.email}"
     else
