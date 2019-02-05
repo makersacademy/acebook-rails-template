@@ -1,12 +1,12 @@
-class WelcomeController < ApplicationController
+# class WelcomeController < ApplicationController
 
-  def index
-  end
+#   def index
+#   end
 
-  def signup
-  end
+#   def signup
+#   end
 
-  def profile
-  end
+#   def profile
+#   end
 
-end
+# end
