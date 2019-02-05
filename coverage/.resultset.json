@@ -52,7 +52,7 @@
         1,
         null,
         1,
-        2,
+        8,
         null,
         null,
         1,
@@ -66,20 +66,20 @@
       "/Users/beatricecourage/Projects/Enginnering_Project_2weeks/acebook--Team-Acebook-and-Chill/app/controllers/posts_controller.rb": [
         1,
         1,
-        2,
+        3,
         null,
         null,
         1,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
         null,
         null,
         1,
-        5,
+        12,
         null,
         null,
         1,
@@ -96,11 +96,11 @@
         1,
         null,
         1,
-        6,
+        9,
         null,
         null,
         1,
-        2,
+        3,
         null,
         null
       ],
@@ -162,6 +162,6 @@
         0
       ]
     },
-    "timestamp": 1549367616
+    "timestamp": 1549368856
   }
 }
