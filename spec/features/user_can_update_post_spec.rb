@@ -22,14 +22,14 @@ RSpec.feature 'Edit Post', type: :feature do
     expect(page).to have_content('Message')
   end
 
-   scenario 'User cannot edit other user posts' do
-     sign_up
-     click_link 'New post'
-     fill_in 'Message', with: 'Hello, world!'
-     click_button 'Submit'
-     click_link 'Sign Out'
-     second_user_sign_up
-     expect(page).not_to have_link("Hello, world!")
-     expect(page).to have_content "Hello, world!"
+  scenario 'User cannot edit other user posts' do
+    sign_up
+    click_link 'New post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    click_link 'Sign Out'
+    second_user_sign_up
+    expect(page).not_to have_link("Hello, world!")
+    expect(page).to have_content "Hello, world!"
   end
 end
