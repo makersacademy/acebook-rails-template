@@ -16,6 +16,8 @@ RSpec.feature 'Delete post', type: :feature do
     click_button 'Submit'
     click_link 'Sign Out'
     second_user_sign_up
+    visit '/users/davethecat@katze.com'
+
     expect(page).not_to have_link("Hello, universe!")
     expect(page).to have_content "Hello, universe!"
   end
