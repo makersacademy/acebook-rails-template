@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.feature 'Signin', type: :feature do
   scenario "A user signs in and see's their account details" do
@@ -8,7 +10,7 @@ RSpec.feature 'Signin', type: :feature do
     expect(page).to have_content('1')
   end
 
-  scenario "Signin is case sensitive" do
+  scenario 'Signin is case sensitive' do
     signup_and_click
     logout
     login_with_wrong_case_sensitive_details
@@ -31,6 +33,4 @@ RSpec.feature 'Signin', type: :feature do
 
     expect(page).to have_content('you cretin')
   end
-
-
 end

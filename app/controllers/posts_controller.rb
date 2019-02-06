@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-
   def new
     @post = Post.new
   end
@@ -11,14 +10,10 @@ class PostsController < ApplicationController
   end
 
   def create
-
-
     @post = current_user.posts.create(post_params)
 
     redirect_to @current_user
   end
-
-
 
   private
 

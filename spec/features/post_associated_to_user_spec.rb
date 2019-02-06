@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
-RSpec.feature 'Post Association', type: :feature do 
-  scenario 'User can only see their posts on their profile' do 
+RSpec.feature 'Post Association', type: :feature do
+  scenario 'User can only see their posts on their profile' do
     signup_and_click
     click_on 'New Post'
     fill_in 'Message', with: 'Message1'
@@ -19,4 +21,4 @@ RSpec.feature 'Post Association', type: :feature do
     expect(page).to have_content('Message2')
     expect(page).to have_content(Time.now.strftime('%H:%M:%S - %d/%m/%y'))
   end
-end 
+end
