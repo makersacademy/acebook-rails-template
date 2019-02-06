@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 feature 'User can delete posts' do
@@ -9,7 +11,6 @@ feature 'User can delete posts' do
     click_link 'Message1'
     click_on 'Delete'
     expect(page.current_path).to eq '/users/1'
-    expect(page).not_to have_content "Message1"
-   
+    expect(page).not_to have_content 'Message1'
   end
 end

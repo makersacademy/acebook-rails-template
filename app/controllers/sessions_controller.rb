@@ -1,16 +1,16 @@
-class SessionsController < ApplicationController
+# frozen_string_literal: true
 
-  def new
-  end
+class SessionsController < ApplicationController
+  def new; end
 
   def create
     user = User.find_by(email: params[:session][:email])
-    if user && user.authenticate(params[:session][:password])
+    if user&.authenticate(params[:session][:password])
       log_in user
       redirect_to user
     else
-    flash.now[:danger] = "Invalid details you cretin"
-    render 'new'
+      flash.now[:danger] = 'Invalid details you cretin'
+      render 'new'
     end
   end
 
@@ -18,5 +18,4 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url
   end
-
 end
