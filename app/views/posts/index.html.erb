@@ -1,6 +1,7 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <p> created by <%= post.user_id %></p>
+  <p> created by <%= post.user_id %>
+  <%= link_to "Edit Post", edit_post_path(post) %></p>
 <% end %>
 <br>
 <%= link_to "New post", new_post_path %>

@@ -1,0 +1,9 @@
+<h1>Editing post:</h1>
+<%= form_for @post do |form| %>
+  <%= form.label :message %>
+  <%= form.text_field :message %>
+
+  <%= form.submit "Submit" %>
+<% end %><br>
+
+<%= link_to "Cancel Edition", posts_path %>
