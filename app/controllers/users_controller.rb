@@ -6,9 +6,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-
-
-  def index; end
+  def index
+    @current_user = @current_user
+    @users = User.all
+  end
 
   def show
     @user = User.find(params[:id])
