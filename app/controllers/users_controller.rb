@@ -19,6 +19,12 @@ class UsersController < ApplicationController
     unless id.include? "@"
       @user = User.find(id)
       redirect_to user_path(@user.email)
+      # if User.find(id)
+      #   @user = User.find(id)
+      #   redirect_to user_path(@user.email)
+      # else
+      #   redirect_to '/errors#not_found'
+      # end
     end
     if current_user
       session[:current_wall] = request.original_url.split("/").pop
