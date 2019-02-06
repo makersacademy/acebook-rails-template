@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    @current_user = @current_user
     @users = User.all
   end
 
@@ -17,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # render plain: params[:users].inspect
     @user = User.new(user_params)
     if @user.save
       log_in @user
