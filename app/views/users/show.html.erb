@@ -25,15 +25,14 @@ p {background-color: lightgrey;
   Add Photo(button in future)
 </div>
 <div>
-  <a href="/posts">New Post</a>
+ <%= link_to "New Post", new_post_url  %>
 <div>
   <h2> Posts </h2>
 
  <% @user.posts.reverse.each do |post| %>
    <div>
      <h5><%= post.created_at.strftime("%H:%M:%S - %d/%m/%y")%></h5>
-     <%= post.message %>
-   </div>
+     <a href="/posts/<%=post.id%>"><%=post.message%> </a>
    <br>
 <% end %>
 

@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+
 RSpec.feature 'Signin', type: :feature do
   scenario "A user signs in and see's their account details" do
     signup_and_click
     logout
     login
-
+    
     expect(page).to have_content('1')
   end
 

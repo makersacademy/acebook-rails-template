@@ -6,13 +6,13 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+
+
   def index; end
 
   def show
     @user = User.find(params[:id])
-
     # @posts = Post.all.select{|p| p.user_id == @user.id }
-    @posts = Post.all
   end
 
   def create
