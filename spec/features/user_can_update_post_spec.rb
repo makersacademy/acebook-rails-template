@@ -33,4 +33,18 @@ RSpec.feature 'Edit Post', type: :feature do
     expect(page).not_to have_link("Hello, world!")
     expect(page).to have_content "Hello, world!"
   end
+
+  scenario "User can edit their own posts on someone else's wall" do
+    sign_up
+    click_link 'New post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    click_link 'Sign Out'
+    second_user_sign_up
+    visit '/users/davethecat@katze.com'
+    click_link 'New post'
+    fill_in 'Message', with: 'Hi Dave!'
+    click_button 'Submit'
+    expect(page).to have_link("Hi Dave!")
+  end
 end
