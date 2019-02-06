@@ -6,9 +6,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-
-
-  def index; end
+  def index
+    @users = User.all
+  end
 
   def show
     @user = User.find(params[:id])
@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # render plain: params[:users].inspect
     @user = User.new(user_params)
     if @user.save
       log_in @user

@@ -1,0 +1,17 @@
+<% provide(:title, 'Acebook Users') %>
+<h1>My Acebook Users</h1>
+
+<div id = "myAcebook">
+  <%= link_to "My Acebook", user_path(current_user.id) %>
+</div>
+
+<ul class="users" style="list-style-type:none">
+  <% @users.each do |user| %>
+    <% if current_user.id != user.id %>
+      <li>
+        <%= gravatar_for user, size: 50 %>
+        <%= link_to user.username, user %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
