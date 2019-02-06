@@ -18,5 +18,7 @@ RSpec.feature 'Post Association', type: :feature do
     expect(page).to have_content('Message1')
     expect(page).to have_content('Message2')
     expect(page).to have_content(Time.now.strftime('%H:%M:%S - %d/%m/%y'))
+ 
   end
 end 
+

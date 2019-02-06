@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 def signup_and_click
   visit '/signup'
   fill_in 'users_username', with: 'Test 001'

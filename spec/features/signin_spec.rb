@@ -13,6 +13,7 @@ RSpec.feature 'Signin', type: :feature do
     fill_in 'session_password', with: '12345'
     find('input[name="commit"]').click
     expect(page).to have_content('1')
+
   end
 
   scenario "Signin is case sensitive" do
@@ -27,5 +28,6 @@ RSpec.feature 'Signin', type: :feature do
     fill_in 'session_password', with: '12345'
     find('input[name="commit"]').click
     expect(page).to have_content('you cretin')
+
   end
 end

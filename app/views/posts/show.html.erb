@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-<body>
-  <div>
-   <% form_for @post, :url => url_for(:action => ‘destroy’, :id => @post) do |f| %>
-   <%= @post.message %>
-   <%= submit_tag(“Delete It”) %>
-   <% end %>
-  </div>
-</body>
-</html>
+
+
+  <%= @post.message %>
+  <%= form_tag post_path(@post.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@post.message}" %>
+  <%end%>
+ 
+

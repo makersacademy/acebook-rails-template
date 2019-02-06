@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'sessions/new'
+  
+  root 'welcome#index'
+  
+  # get 'sessions/new'
 
   get '/login', to: 'sessions#new'
 
@@ -9,7 +12,6 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
 
-  root 'welcome#index'
 
   get '/homepage', to: 'welcome#index'
 
@@ -17,17 +19,8 @@ Rails.application.routes.draw do
 
   post '/signup', to: 'users#create'
 
-  get '/posts', to: 'posts#new'
-
-  post '/posts', to: 'posts#create'
-
-  get '/allposts', to: 'posts#index'
-
-  get '/posts/:id', to: 'posts#show'
-
-  delete '/posts/:id', to: 'posts#destroy'
-  resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  # resources :posts
+ 
+  resources :users 
+  resources :posts
 end
+

@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Signup', type: :feature do
-  scenario "A user signs up and see's their account details" do
+  xscenario "A user signs up and see's their account details" do
     signup_and_click
 
     expect(page).to have_content('Test 001')
@@ -49,5 +49,6 @@ RSpec.feature 'Signup', type: :feature do
     find('input[name="commit"]').click
     # Assert the behaviour of my action
     expect(page).to have_content('Email is not unique')
+  
   end
 end
