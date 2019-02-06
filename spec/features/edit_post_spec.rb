@@ -3,10 +3,11 @@ require 'spec_helper'
 RSpec.feature "edit post", type: :feature  do 
   let(:message){ 'Hello, world!'}
   let(:email){'bea_courage@hotmail.co.uk'}
+  let(:username){'Makers'}
   let(:password){'testingisfunlol'}
 
   before(:each) {
-    sign_up(email, password)
+    sign_up(email, username, password)
     post_message(message)
   }
 

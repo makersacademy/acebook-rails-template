@@ -1,12 +1,13 @@
 require 'rails_helper' #is this needed here or could this go into the spec_helper file?
 
 RSpec.feature "delete posts", type: :feature do
-  let(:message){ 'Hello, world!'}
+  let(:message){'Hello, world!'}
   let(:email){'bea_courage@hotmail.co.uk'}
+  let(:username){'Makers'}
   let(:password){'testingisfunlol'}
 
   before {
-    sign_up(email, password)
+    sign_up(email, username, password)
     post_message(message)
   }
   context "user wants to delete a post" do

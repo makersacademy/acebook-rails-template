@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:user_name, :password_confirmation])
- end
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:user_name])
+  end
 
   def after_sign_in_path_for(resource)
     posts_path
@@ -14,6 +14,4 @@ class ApplicationController < ActionController::Base
   def after_sign_up_path_for(resource)
     posts_path
   end
-
-
 end

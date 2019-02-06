@@ -4,11 +4,12 @@ RSpec.feature "Writing posts", type: :feature do
 
 
   let(:email){'bea_courage@hotmail.co.uk'}
+  let(:username){'Makers'}
   let(:password){'testingisfunlol'}
 
 
   scenario "Can submit posts and view them" do
-    sign_up(email, password)
+    sign_up(email, username, password)
     click_on 'Logout'
     log_in(email, password)
     expect(page.current_path).to eql('/posts')
