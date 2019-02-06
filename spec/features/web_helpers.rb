@@ -47,3 +47,31 @@ end
 def logout
   click_on 'Log Out'
 end
+
+def signup_without_email
+  visit '/signup'
+  fill_in 'users_username', with: 'Test 001'
+  fill_in 'users_password', with: 'Password001'
+  find('input[name="commit"]').click
+end
+
+def signup_with_4_character_password
+  visit '/signup'
+  fill_in 'users_username', with: 'Test 001'
+  fill_in 'users_email', with: 'test0001@makers.com'
+  fill_in 'users_password', with: 'Pass'
+  find('input[name="commit"]').click
+end
+
+def signup_twice_with_the_same_email
+  visit '/signup'
+  fill_in 'users_username', with: 'Test A'
+  fill_in 'users_email', with: 'TestA@test.com'
+  fill_in 'users_password', with: 'Password001'
+  find('input[name="commit"]').click
+  visit '/signup'
+  fill_in 'users_username', with: 'Test 003'
+  fill_in 'users_email', with: 'TestA@test.com'
+  fill_in 'users_password', with: 'Password003'
+  find('input[name="commit"]').click
+end
