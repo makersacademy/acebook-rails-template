@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: %i[edit update show]
   def new
     @user = User.new
   end
 
-  def index
-    # current_user = User.find_by_id(session[:current_user_id])
-  end
+
+
+  def index; end
 
   def show
     @user = User.find(params[:id])
@@ -30,5 +31,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:users).permit(:username, :email, :password)
+  end
+
+  def logged_in_user
+    return if logged_in?
+
+    flash[:danger] = 'Please log in.'
+    redirect_to login_url
   end
 end

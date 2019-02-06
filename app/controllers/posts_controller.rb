@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
+
     redirect_to @current_user
   end
 
@@ -23,7 +24,7 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to current_user
   end
-
+  
   private
 
   def post_params

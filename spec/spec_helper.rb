@@ -4,7 +4,9 @@ require 'simplecov'
 require 'simplecov-console'
 require 'pry'
 
-SimpleCov.start
+SimpleCov.start do
+  add_filter 'spec/features/web_helpers.rb'
+end
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
   [
@@ -14,20 +16,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
 )
 
 RSpec.configure do |config|
-  # config.before(:suite) do
-  #   DatabaseCleaner.strategy = :transaction
-  #   DatabaseCleaner.clean_with(:truncation)
-  # end
-
-  # config.around(:each) do |example|
-
-  #   DatabaseCleaner.cleaning do
-  #     p "hello"
-  #     example.run
-  #   end
-  # end
-
-  config.expect_with :rspec do |expectations|
+ config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
