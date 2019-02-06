@@ -1,6 +1,3 @@
-require 'rails_helper'
-require_relative '../helpers/users_helper_spec'
-
 RSpec.feature 'Sign in', type: :feature do
   scenario 'User successfully signs in' do
     fill_in_sign_up_details
