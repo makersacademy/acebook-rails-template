@@ -15,6 +15,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    id = params[:id]
+    unless id.include? "@"
+      @user = User.find(id)
+      redirect_to user_path(@user.email)
+    end
     if current_user
       session[:current_wall] = request.original_url.split("/").pop
       @post = current_user.posts.build
