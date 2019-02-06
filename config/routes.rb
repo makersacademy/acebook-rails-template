@@ -17,6 +17,10 @@ Rails.application.routes.draw do
 
   post '/signup', to: 'users#create'
 
-  resources :users
-  resources :posts
+  #allows posts not to be nested under user? 
+  resources :posts, except: :new 
+
+  resources :users do 
+    resources :posts, only: :new
+  end
 end

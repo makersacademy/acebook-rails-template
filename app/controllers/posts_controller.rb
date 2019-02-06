@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  def new
-    @post = Post.new
+  
+def new
+  # raise params.inspect
+  user = User.find(params[:user_id])
+  #because user has many posts 
+  @post = user.posts.build
   end
 
   def index
@@ -10,8 +14,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.create(post_params)
-    redirect_to @current_user
+    user = User.find(params[:user_id])
+    @post =  user.posts.build(post_params).save
+    redirect_to user
+    #if want to go back to own page @post.user
   end
 
   def show
@@ -19,17 +25,25 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     @post.destroy
     redirect_to current_user
+  rescue ActiveRecord::RecordNotFound
+    @post = Post.find(params[:id])
+    flash.now[:alert] = "NOT YOUR POST"
+    render :show
   end
   
   def edit
     @post = Post.find(params[:id])
+  # rescue ActiveRecord::RecordNotFound
+  #   @post = Post.find(params[:id])
+  #   flash.now[:alert] = "NOT YOUR POST"
+  #   render :show
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     @post.update_attributes(post_params)
     redirect_to current_user
   end

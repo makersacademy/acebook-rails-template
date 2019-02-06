@@ -1,6 +1,8 @@
+<%# could also be user_post_new_path (the resource on routes) %>
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
+  <%= hidden_field_tag :user_id, @post.user_id %>
 
   <%= form.submit "Submit" %>
 <% end %>
