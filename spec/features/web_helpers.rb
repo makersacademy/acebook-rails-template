@@ -75,3 +75,23 @@ def signup_twice_with_the_same_email
   fill_in 'users_password', with: 'Password003'
   find('input[name="commit"]').click
 end
+
+def post_two_messages
+  click_on 'New Post'
+  fill_in 'Message', with: 'Message1'
+  click_button 'Submit'
+  click_on 'New Post'
+  fill_in 'Message', with: 'Message2'
+  click_button 'Submit'
+end
+
+def signup_and_post
+  visit '/signup'
+  fill_in 'users_username', with: 'test'
+  fill_in 'users_password', with: 'secret'
+  fill_in 'users_email', with: 'test@s.com'
+  click_button 'Save Users'
+  click_on 'New Post'
+  fill_in 'Message', with: 'Hello, world!'
+  click_button 'Submit'
+end
