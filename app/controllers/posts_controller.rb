@@ -17,7 +17,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    if current_user_id === Post.find(params[:id]).user_id
+    post_creator = Post.find(params[:id]).user_id
+
+    if current_user_id === post_creator
       @post = Post.find(params[:id])
     else
       redirect_to posts_url
