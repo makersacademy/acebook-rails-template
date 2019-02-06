@@ -1,0 +1,26 @@
+<div>
+  <%= notice %>
+</div>
+
+<h1>Welcome</h1>
+
+<% sorted = @posts.sort_by { |k| k["created_at"] } %>
+
+<% sorted.reverse.each do |post| %>
+  <% if @current_user.id == post.user_id %>
+
+    <p><%= link_to edit_post_path(post.id) do %>
+      <%= simple_format(post.message) %>
+      <% end %>
+    </p>
+    <% else %>
+      <p> <%= simple_format(post.message) %> </p>
+    <% end  %>
+      <p> posted at: <%= post.created_at %></p>
+  <% end %>
+
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
+
+  <%= link_to "Sign Out", session_path("current"), method: "delete" %>

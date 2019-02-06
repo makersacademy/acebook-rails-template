@@ -15,6 +15,13 @@ RSpec.feature 'Post display', type: :feature do
     expect(page.text).to have_content("Hello, world! \nGoodbye, world!")
   end
 
+  scenario 'User cannot submit an empty post' do
+    sign_up
+    click_link 'New post'
+    click_button 'Submit'
+    expect(page).to have_content("Your new post couldn't be created!")
+  end
+
   scenario 'User views newest posts first' do
     sign_up
     click_link 'New post'

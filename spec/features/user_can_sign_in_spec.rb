@@ -6,7 +6,7 @@ RSpec.feature 'Sign in', type: :feature do
     fill_in :sign_in_email, with: 'davethecat@katze.com'
     fill_in :sign_in_password, with: 'Gato123'
     click_button 'Sign In'
-    expect(page.current_path).to eq('/posts')
+    expect(page.current_path).to eq('/users/davethecat@katze.com')
   end
 
   scenario 'User gets notice when failing to sign in' do
@@ -25,4 +25,11 @@ RSpec.feature 'Sign in', type: :feature do
     expect(page.current_path).to eq('/')
     expect(page).to have_content("Please sign in")
   end
+
+  scenario 'User cannot access any walls without signing in' do
+    visit '/users/davethecat@katze.com'
+    expect(page.current_path).to eq('/')
+    expect(page).to have_content("Please sign in")
+  end
+
 end
