@@ -1,7 +1,8 @@
 ## Learning log Team Justice Moo
 
 Monday 28th of January
-----------------------
+------------------------
+Planning day (morning)
 
 Afternoon Stand-Up
 
@@ -27,8 +28,9 @@ _Travis CI_
 * We can get Travis set up so that it will pass latest iteration to Heroku automatically, as long as it passes the tests
 
 --------------------------------------------
-Monday 29th of January
+Tuesday 29th of January
 ----------------------
+Retro day (afternoon)
 
 Morning Stand-Up
 
@@ -43,6 +45,7 @@ Morning Stand-Up
 
 ** Goals of the day ?
 * Pair decided per tickets
+* Retro at the end of the day
 
 
 Afternoon Stand-Up
@@ -60,6 +63,7 @@ Creating new index page and populate with content
 --------------------------------------------
 Wednesday 30th of January
 -------------------------
+Planning day (morning)
 
 * We decide to not do any stand Up on this day, because we did a long Planning session in the morning to decided of the complexity of the tickets and allocated them.
 * During the planning session we also diagram and mock-up the project
@@ -67,9 +71,9 @@ Wednesday 30th of January
 --------------------------------------------
 Thursday 31th of January
 ------------------------
+Retro day (afternoon)
 
 Morning Stand-Up
-
 
 ** What we were trying to achieve ?
 * sign-in / sign-up tickets => be able  redirect  user to the profile page when click on sign up/sign in
@@ -85,6 +89,7 @@ Morning Stand-Up
 
 ** Goals of the day ?
 * Pair changed for tickets
+* Retro at the end of the day
 
 Afternoon Stand-Up
 
@@ -95,8 +100,29 @@ Afternoon Stand-Up
 * restart from scratch as a mob instead of pairs as we were feeling that split the sign up/sign in ticket was a bit confusing and to linked to be done separately.
 
 --------------------------------------------
+Friday 1st of February
+------------------------
+Planning day (morning)
+
+Morning Stand-Up
+
+* We decide to not do any stand Up on the morning, because we did a long Planning session.
+
+** Goals of the day ?
+* Work on ticket all together for better understanding of rails flow
+
+Afternoon Stand-Up
+
+** What are we trying to achieve ?
+* sign in / sign up manually all together
+
+** Goals for the rest of the day ?
+* Carry on with mobbing
+
+--------------------------------------------
 Monday 4th of February
 ----------------------
+Retro day (afternoon)
 
 Morning Stand-Up
 
@@ -111,7 +137,9 @@ Morning Stand-Up
 * Active Record functionalities
 
 ** Goals of the day ?
-* Finish our tickets
+* Use devise gem for sign-in/sign-up tickets
+* Write readme and make diagrams on draw.io
+* Retro at the end of the day
 
 Afternoon Stand-Up
 
@@ -120,3 +148,60 @@ Afternoon Stand-Up
 
 ** Goals for the rest of the day ?
 * Same as morning
+
+--------------------------------------------
+Tuesday 5th of February
+----------------------
+Planning day (afternoon)
+
+Morning Stand-Up
+
+** What we were trying to achieve ?
+* User can edit / delete any posts
+* Being able to visit profile page from the user id
+
+** What did we learn ?
+* Sticking to TDD / write tests
+* When in doubt use database cleaner
+* Migration files
+* Walk through is amazing for everything
+
+** Goals of the day ?
+* Carry on on our ticket
+* Ticket of user being able to edit/update posts
+
+
+Afternoon Stand-Up
+
+** What are we trying to achieve ?
+* same as morning
+
+** Goals for the rest of the day ?
+* Same as morning
+
+--------------------------------------------
+Wednesday 6th of February
+-------------------------
+Retro day (afternoon)
+
+Morning Stand-Up
+
+** What we were trying to achieve ?
+* User can edit / delete any posts + fix the create new post we broke the day before
+* Being able to visit profile page from the user id
+
+** What did we learn ?
+* Unpacking devise
+* Routes
+* Relation between routes and controller
+* Use of pry also possible with rails
+
+** Goals of the day ?
+* Carry on on our ticket / fix what we broke
+* We keep the same pairs as yesterday for today
+* Ticket of user being able to edit/update only their own posts
+* Retro at the end of the day
+
+Afternoon Stand-Up
+
+* No afternoon stand up as 2 person were in a meeting and because of retro at the end of the day
