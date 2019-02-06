@@ -2,7 +2,8 @@
 
   <%= @post.message %>
   <%= form_tag post_path(@post.id), method: "delete" do %>
-  <%= submit_tag "Delete #{@post.message}" %>
+    <%= submit_tag "Delete" %>
   <%end%>
- 
-
+  <%= form_tag edit_post_path(@post.id), method: "get" do%>
+    <%= submit_tag "Edit" %>
+  <% end %>
