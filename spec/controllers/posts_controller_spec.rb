@@ -14,12 +14,14 @@ RSpec.describe PostsController, type: :controller do
   describe "POST /" do
     it "responds with 200" do
       create_user
+      session[:current_wall] = "Cat"
       post :create, params: { post: { message: "Hello, world!" } }
-      expect(response).to redirect_to(posts_url)
+      expect(response).to redirect_to(user_url(session[:current_wall]))
     end
 
     it "creates a post" do
       create_user
+      session[:current_wall] = "Cat"
       post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be
     end

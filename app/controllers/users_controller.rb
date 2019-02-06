@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
     if current_user
+      session[:current_wall] = request.original_url.split("/").pop
       @post = current_user.posts.build
       @posts = Post.all
     else
