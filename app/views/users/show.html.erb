@@ -20,7 +20,18 @@
         <p> <%= simple_format(post.message) %> </p>
         <p> posted at: <%= post.created_at %></p>
       <% end  %>
+          <%= form_for [post, post.comments.build] do |f| %>
+      <div>
+        <%= f.text_field :message, id: 'message', placeholder: 'Comment' %>
+        <%= f.submit "Submit" %>
+      </div>
+    <% end %>
+    <% @comments.each do |comment| %>
+      <% if post.id == comment.post_id %>
+        <%= comment.message %></br>
+        <% end %>
       <% end %>
+    <% end %>
     <% end %>
 
   <%= link_to new_post_path do %>

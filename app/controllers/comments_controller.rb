@@ -5,13 +5,10 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
-    if @comment.save
-      redirect_to posts_url, notice: "Your comment has been created!"
-    else
-      redirect_to posts_url, notice: "Your new post couldn't be created!"
-    end
+    create_comment
   end
 
   private
@@ -22,6 +19,16 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:message)
+  end
+
+  def create_comment
+    if @comment.save
+      redirect_to user_path(session[:current_wall]), 
+      notice: "Your comment has been created!"
+    else
+      redirect_to user_path(session[:current_wall]), 
+      notice: "Your new post couldn't be created!"
+    end
   end
 
 end

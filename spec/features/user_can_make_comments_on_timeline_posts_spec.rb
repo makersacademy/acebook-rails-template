@@ -1,11 +1,9 @@
-RSpec.feature 'Timeline post comments', type: :feature do
-  scenario 'User submits a comment' do
+RSpec.feature 'Post comments', type: :feature do
+  scenario 'User submits a comment on their own wall' do
     sign_up
-    visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
-    visit '/posts'
     fill_in 'message', with: 'Comment, world!'
     click_button 'Submit'
     expect(page).to have_content('Comment, world!')
@@ -13,13 +11,27 @@ RSpec.feature 'Timeline post comments', type: :feature do
 
   scenario 'User cannot submit empty comment' do
     sign_up
-    visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
-    visit '/posts'
     fill_in 'message', with: ''
     click_button 'Submit'
     expect(page).to have_content("Your new post couldn't be created!")
+  end
+
+  scenario "User can comment on someone else's wall and stays there" do
+    sign_up
+    click_link 'New post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    fill_in 'message', with: 'Comment, world!'
+    click_button 'Submit'
+    click_link 'Sign Out'
+    second_user_sign_up
+    visit '/users/davethecat@katze.com'
+    fill_in 'message', with: 'Hi Dave!'
+    click_button 'Submit'
+    expect(page).to have_content('Hi Dave!')
+    expect(page.current_path).to eq('/users/davethecat@katze.com')
   end
 end

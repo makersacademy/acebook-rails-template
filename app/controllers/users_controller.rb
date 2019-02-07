@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @comments = Comment.all
     id = params[:id]
     unless id.include? "@"
       @user = User.find(id)
