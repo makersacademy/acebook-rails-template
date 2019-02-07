@@ -2,11 +2,12 @@
 
 class PostsController < ApplicationController
   
-def new
-  # raise params.inspect
-  user = User.find(params[:user_id])
-  #because user has many posts 
-  @post = user.posts.build
+  def new
+    # raise params.inspect
+    user = User.find(params[:user_id])
+    # sender = User.find(current_user.id)
+    #because user has many posts 
+    @post = user.posts.build
   end
 
   def index
@@ -16,7 +17,9 @@ def new
   def create
     #this is what identifies which wall to put it on
     user = User.find(params[:user_id])
-    @post =  user.posts.build(post_params).save
+    # sender = User.find(current_user.id)
+    @post = user.posts.build(post_params.merge(:sender_id => current_user.id)).save
+   
   
     redirect_to user
     #if want to go back to own page @post.user
