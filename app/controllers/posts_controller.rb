@@ -42,15 +42,14 @@ class PostsController < ApplicationController
   
   def edit
     @post = Post.find(params[:id])
-    
-  rescue ActiveRecord::RecordNotFound
-    @post = Post.find(params[:id])
-    flash.now[:alert] = "NOT YOUR POST"
-    render :show
+    unless @post.sender_id == current_user.id 
+      flash.now[:alert] = "NOT YOUR POST"
+      render :show
+    end
   end
 
   def update
-    @post = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
     @post.update_attributes(post_params)
     redirect_to current_user
   end
