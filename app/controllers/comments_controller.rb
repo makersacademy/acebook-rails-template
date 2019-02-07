@@ -24,8 +24,19 @@ class CommentsController < ApplicationController
      #{@user.email}. Post deleted!"
   end
 
-  private
+  def update
+    @user = current_user
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
+      @comment = current_user
+      redirect_to user_path(session[:current_wall]), notice: "Logged in
+       as #{@user.email}. Comment updated"
+    else
+      redirect_to edit_post_comment_path(@post.id, @comment.id), notice: "Comment can't be blank"
+    end
+  end
 
+  private
   def find_post
     @post = Post.find(params[:post_id])
   end

@@ -2,7 +2,10 @@
   <%= notice %>
 </div>
 
-<%= @post.id %>
-<%= @comment.id %>
+<%= form_for [@post, @comment] do |form| %>
+  <%= form.label :message %></br>
+  <%= form.text_area :message %></br>
+  <%= form.submit "Edit" %></br>
+<% end %>
 
 <%= link_to "Delete", post_comment_path(@post, @comment), method: :delete, data: { confirm: "Are you sure?" } %>

@@ -47,4 +47,30 @@ RSpec.feature 'Post comments', type: :feature do
     expect(page).not_to have_content('Comment, world!')
   end
 
+  scenario 'User can update their comments' do
+    sign_up
+    click_link 'New post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    fill_in 'message', with: 'Comment, world!'
+    click_button 'Submit'
+    click_link 'Comment, world!'
+    fill_in 'Message', with: 'Another comment, world!'
+    click_button 'Edit'
+    expect(page).to have_content('Another comment, world!')
+  end
+
+  scenario 'User can not make comment empty' do
+    sign_up
+    click_link 'New post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    fill_in 'message', with: 'Comment, world!'
+    click_button 'Submit'
+    click_link 'Comment, world!'
+    fill_in 'Message', with: ''
+    click_button 'Edit'
+    expect(page).to have_content("Comment can't be blank")
+  end
+
 end
