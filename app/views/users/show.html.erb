@@ -6,10 +6,13 @@
 </head>
 <div id = "Logout">
   <%= link_to "Log Out", logout_path, method: :delete %>
-  </div>
-  <div id = "ViewAllUser">
-    <%= link_to "View All Acers", users_path %>
-    </div>
+</div>
+<div id = "ViewAllUser">
+  <%= link_to "View All Acers", users_path %>
+</div>
+<div id = "Username">
+  Logged in as <%= current_user.username %>
+</div>
 <style>
 p {background-color: lightgrey;
   width: 75px;
@@ -19,7 +22,7 @@ p {background-color: lightgrey;
 }
 </style>
 <body>
-  <h1> Welcome <%=@user.username%>!</h1>
+  <h1> <%=@user.username%>'s Wall</h1>
 </body>
 <p>
   User Photo
@@ -36,8 +39,9 @@ p {background-color: lightgrey;
    <div>
     
      <h5><%= post.created_at.strftime("%H:%M:%S - %d/%m/%y")%></h5>
+     <% sender = User.find_by_id(post.sender_id) %>
+     <%= sender.username %>:
      <a href="/posts/<%= post.id %>"><%=post.message%> </a>
-     <%# <h4><%= post.user.id %></h4>
    <br>
 <% end %>
 
