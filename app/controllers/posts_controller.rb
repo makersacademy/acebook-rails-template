@@ -12,8 +12,11 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    @post.wall_id = session[:current_wall]
     if @post.save
-      redirect_to posts_url, notice: "Your post has been created!"
+      @user = current_user
+      redirect_to user_path(session[:current_wall]), notice: "Logged in
+       as #{@user.email}. Your post has been created!"
     else
       redirect_to '/posts#new', notice: "Your new post couldn't be created!"
     end
@@ -26,7 +29,9 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to posts_url
+      @user = current_user
+      redirect_to user_path(session[:current_wall]), notice: "Logged in
+       as #{@user.email}. Post updated"
     else
       render 'edit'
     end
@@ -35,7 +40,9 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_url
+    @user = current_user
+    redirect_to user_path(session[:current_wall]), notice: "Logged in as
+     #{@user.email}. Post deleted!"
   end
 
   private
