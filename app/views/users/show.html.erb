@@ -10,6 +10,9 @@
 <div id = "ViewAllUser">
   <%= link_to "View All Acers", users_path %>
 </div>
+<div id = "MyProfile">
+  <%= link_to "My Acebook", user_path(current_user.id) %>
+</div>
 <div id = "Username">
   Logged in as <%= current_user.username %>
 </div>
