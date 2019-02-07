@@ -60,7 +60,7 @@ RSpec.feature 'Post comments', type: :feature do
     expect(page).to have_content('Another comment, world!')
   end
 
-  scenario "User cannot update other user's comments" do
+  scenario "User cannot update/delete other user's comments" do
     sign_up
     click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
