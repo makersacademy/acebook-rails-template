@@ -31,9 +31,10 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    user = User.find_by_id(@post.user_id)
     if @post.sender_id == current_user.id
       @post.destroy
-      redirect_to current_user
+      redirect_to user
     else
       flash.now[:alert] = "NOT YOUR POST"
       render :show
@@ -51,7 +52,8 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update_attributes(post_params)
-    redirect_to current_user
+    user = User.find_by_id(@post.user_id)
+    redirect_to user
   end
 
   private
