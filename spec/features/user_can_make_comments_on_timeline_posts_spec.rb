@@ -60,7 +60,21 @@ RSpec.feature 'Post comments', type: :feature do
     expect(page).to have_content('Another comment, world!')
   end
 
-  scenario 'User can not make comment empty' do
+  scenario "User cannot update other user's comments" do
+    sign_up
+    click_link 'New post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    fill_in 'message', with: 'Comment, world!'
+    click_button 'Submit'
+    click_link 'Sign Out'
+    second_user_sign_up
+    visit '/users/davethecat@katze.com'
+    expect(page).not_to have_link("Comment, world!")
+    expect(page).to have_content("Comment, world!")
+  end
+
+  scenario 'User can not make comment empty comment edits' do
     sign_up
     click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
