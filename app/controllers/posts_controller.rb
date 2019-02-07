@@ -14,8 +14,10 @@ def new
   end
 
   def create
+    #this is what identifies which wall to put it on
     user = User.find(params[:user_id])
     @post =  user.posts.build(post_params).save
+  
     redirect_to user
     #if want to go back to own page @post.user
   end
@@ -28,6 +30,7 @@ def new
     @post = current_user.posts.find(params[:id])
     @post.destroy
     redirect_to current_user
+
   rescue ActiveRecord::RecordNotFound
     @post = Post.find(params[:id])
     flash.now[:alert] = "NOT YOUR POST"
@@ -36,10 +39,11 @@ def new
   
   def edit
     @post = Post.find(params[:id])
-  # rescue ActiveRecord::RecordNotFound
-  #   @post = Post.find(params[:id])
-  #   flash.now[:alert] = "NOT YOUR POST"
-  #   render :show
+    
+  rescue ActiveRecord::RecordNotFound
+    @post = Post.find(params[:id])
+    flash.now[:alert] = "NOT YOUR POST"
+    render :show
   end
 
   def update
