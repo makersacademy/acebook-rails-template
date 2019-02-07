@@ -34,4 +34,17 @@ RSpec.feature 'Post comments', type: :feature do
     expect(page).to have_content('Hi Dave!')
     expect(page.current_path).to eq('/users/davethecat@katze.com')
   end
+
+  scenario 'User can delete their comments' do
+    sign_up
+    click_link 'New post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    fill_in 'message', with: 'Comment, world!'
+    click_button 'Submit'
+    click_link 'Comment, world!'
+    click_link 'Delete'
+    expect(page).not_to have_content('Comment, world!')
+  end
+
 end

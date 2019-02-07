@@ -1,0 +1,8 @@
+<div>
+  <%= notice %>
+</div>
+
+<%= @post.id %>
+<%= @comment.id %>
+
+<%= link_to "Delete", post_comment_path(@post, @comment), method: :delete, data: { confirm: "Are you sure?" } %>

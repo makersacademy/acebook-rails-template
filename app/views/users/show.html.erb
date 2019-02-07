@@ -28,11 +28,18 @@
     <% end %>
     <% @comments.each do |comment| %>
       <% if post.id == comment.post_id %>
-        <%= comment.message %></br>
+        <%if @current_user.id == comment.user_id %>
+        <p><%= link_to edit_post_comment_path(post.id, comment.id) do %>
+             <%= comment.message %>
+           <% end %>
+           </p>
+        <% else %>
+          <%= comment.message %></br>
         <% end %>
       <% end %>
     <% end %>
-    <% end %>
+  <% end %>
+<% end %>
 
   <%= link_to new_post_path do %>
     New post

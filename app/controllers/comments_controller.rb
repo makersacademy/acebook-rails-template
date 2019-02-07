@@ -11,6 +11,19 @@ class CommentsController < ApplicationController
     create_comment
   end
 
+  def edit
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    @user = current_user
+    redirect_to user_path(session[:current_wall]), notice: "Logged in as
+     #{@user.email}. Post deleted!"
+  end
+
   private
 
   def find_post
@@ -23,10 +36,10 @@ class CommentsController < ApplicationController
 
   def create_comment
     if @comment.save
-      redirect_to user_path(session[:current_wall]), 
+      redirect_to user_path(session[:current_wall]),
       notice: "Your comment has been created!"
     else
-      redirect_to user_path(session[:current_wall]), 
+      redirect_to user_path(session[:current_wall]),
       notice: "Your new post couldn't be created!"
     end
   end
