@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root 'users#index'
   resources :errors
   resources :users
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :sessions
 end

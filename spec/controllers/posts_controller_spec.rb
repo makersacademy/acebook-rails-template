@@ -1,4 +1,3 @@
-require 'rails_helper'
 require_relative '../helpers/users_helper_spec'
 
 RSpec.describe PostsController, type: :controller do
