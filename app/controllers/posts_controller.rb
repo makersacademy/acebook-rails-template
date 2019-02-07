@@ -30,14 +30,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = current_user.posts.find(params[:id])
-    @post.destroy
-    redirect_to current_user
-
-  rescue ActiveRecord::RecordNotFound
     @post = Post.find(params[:id])
-    flash.now[:alert] = "NOT YOUR POST"
-    render :show
+    if @post.sender_id == current_user.id
+      @post.destroy
+      redirect_to current_user
+    else
+      flash.now[:alert] = "NOT YOUR POST"
+      render :show
+    end
   end
   
   def edit
