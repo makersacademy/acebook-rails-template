@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
   before_action :require_login
   
+  def index
+    @posts = Post.all
+    @comments = Comment.all
+  end
+
   def new
     @post = current_user.posts.build
   end
@@ -12,10 +17,6 @@ class PostsController < ApplicationController
     else
       redirect_to '/posts#new', notice: "Your new post couldn't be created!"
     end
-  end
-
-  def index
-    @posts = Post.all
   end
 
   def edit
