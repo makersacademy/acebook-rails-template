@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Signup', type: :feature do
-  scenario "A user signs up and is redirected to their wall" do
+  scenario 'A user signs up and is redirected to their wall' do
     signup_and_click
 
     expect(page).to have_content("1's Wall")

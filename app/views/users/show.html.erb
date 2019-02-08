@@ -4,38 +4,24 @@
   <meta charset="UTF-8">
   <title></title>
 </head>
-<div id = "Logout">
-  <%= link_to "Log Out", logout_path, method: :delete %>
-</div>
-<div id = "ViewAllUser">
-  <%= link_to "View All Acers", users_path %>
-</div>
-<div id = "MyProfile">
-  <%= link_to "My Acebook", user_path(current_user.id) %>
-</div>
-<div id = "Username">
+<div class = "courier">
+  <h4><%= link_to "Log Out", logout_path, method: :delete %></h4>
+  <h4><%= link_to "View All Acers", users_path %></h4>
+  <h4><%= link_to "My Acebook", user_path(current_user.id) %></h4>
+<div class ="lucida">
   Logged in as <%= current_user.username %>
 </div>
-<style>
-p {background-color: lightgrey;
-  width: 75px;
-  border: 25px solid green;
-  padding: 25px;
-  margin: 25px;
-}
-</style>
 <body>
-  <h1> <%=@user.username%>'s Wall</h1>
+  <div class = "lucida">
+    <h1> <%=@user.username%>'s Wall</h1>
+  </div>
 </body>
-<p>
-  User Photo
-</p>
-<div>
-  Add Photo(button in future)
+<div class = "SmokingDrags">
+  <img src="https://i.pinimg.com/originals/24/14/cf/2414cf8800a2ef9650527a18888919b0.jpg" width="300" height="333">
 </div>
-<div>
- <%= link_to "New Post", new_user_post_url(@user)  %>
-<div>
+<div class = "lucida">
+  <br>
+  <h3> <%= link_to "New Post", new_user_post_url(@user)  %></h3>
   <h2> Posts </h2>
 
  <% @user.posts.reverse.each do |post| %>
@@ -43,9 +29,10 @@ p {background-color: lightgrey;
     
      <h5><%= post.created_at.strftime("%H:%M:%S - %d/%m/%y")%></h5>
      <% sender = User.find_by_id(post.sender_id) %>
-     <%= sender.username %>:
-     <a href="/posts/<%= post.id %>"><%=post.message%> </a>
-   <br>
+     <h4><%= sender.username %>:
+       <a href="/posts/<%= post.id %>"><%=post.message%> </a></h4>
+     <br>
+   </div>
 <% end %>
 
 

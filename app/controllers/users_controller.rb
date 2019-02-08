@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :logged_in_user, only: %i[edit update show]
-  
+
   def new
     @user = User.new
   end

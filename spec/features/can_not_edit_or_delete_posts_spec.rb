@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.feature 'delete or edit own posts' do 
-  
+RSpec.feature 'delete or edit own posts' do
   scenario 'user cant delete other peoples posts ' do
     signup_and_click
     logout
@@ -12,11 +13,10 @@ RSpec.feature 'delete or edit own posts' do
     click_on 'Submit'
     logout
     login
-    click_link "Message1"
-    click_on "Delete"
-    expect(page).to have_content "NOT YOUR POST"
-
-  end 
+    click_link 'Message1'
+    click_on 'Delete'
+    expect(page).to have_content 'NOT YOUR POST'
+  end
 
   scenario 'user cant edit other people posts' do
     signup_and_click
@@ -28,8 +28,8 @@ RSpec.feature 'delete or edit own posts' do
     click_on 'Submit'
     logout
     login
-    click_link "Message1"
-    click_on "Edit"
-    expect(page).to have_content "NOT YOUR POST"
+    click_link 'Message1'
+    click_on 'Edit'
+    expect(page).to have_content 'NOT YOUR POST'
   end
 end

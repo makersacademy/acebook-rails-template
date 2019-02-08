@@ -13,9 +13,22 @@
  *= require_tree .
  *= require_self
  */
-/* 
- @import 'bootstrap';
+ /*@import 'bootstrap';*/
 
- body {
-   background: pink;
- } */
+ html {
+   background: powderblue;
+   text-align: center;
+ }
+
+ #welcome_title {
+   font-family: 'Courier New';
+   color: LightSalmon;
+   }
+
+.courier {
+  font-family: 'Courier New';
+}
+
+.lucida {
+  font-family: '"Lucida Sans Unicode", "Lucida Grande", sans-serif';
+}
