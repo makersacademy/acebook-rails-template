@@ -16,7 +16,6 @@ def second_user_signup_and_click
   find('input[name="commit"]').click
 end
 
-
 def login
   click_link 'Log In!'
   fill_in 'session_email', with: 'Test100@test.com'
@@ -96,4 +95,3 @@ def signup_and_post
   fill_in 'Message', with: 'Hello, world!'
   click_button 'Submit'
 end
-

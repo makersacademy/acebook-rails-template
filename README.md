@@ -4,7 +4,7 @@
 The latest Facebook clone that allows you to keep up to date with all of your friends' latest ramblings.
 
 ## Prerequisites
-* Rails 5.1.5 
+* Rails 5.1.5
 * Ruby 2.5.0
 * postgresql 11.1
 
@@ -21,13 +21,13 @@ The latest Facebook clone that allows you to keep up to date with all of your fr
 |  Tech|  Decription |   
 |---|---|
 |[Ruby](https://ruby-doc.org/)| Language|
-|[Ruby on Rails](https://guides.rubyonrails.org/) |  Web application framework | 
+|[Ruby on Rails](https://guides.rubyonrails.org/) |  Web application framework |
 |[Active Record](https://guides.rubyonrails.org/active_record_basics.html)  | Database  |  
 |[RSPEC](http://rspec.info/)  | Testing framework  |  
 |[Capybara](http://teamcapybara.github.io/capybara/)| Feature testing framework|
 |[Travis](https://travis-ci.org/)| Continuous integration service|
 |[Postgresql](https://www.postgresql.org/)|ORM|
- 
+
 ## User Stories
 ```
 As a User,
@@ -97,7 +97,7 @@ I want to be able to search for them by name
 ```
 As a User,
 To maintain my privacy,
-Noone can see my wall unless they are logged in
+No one can see my wall unless they are logged in
 ```
 ```
 As a User,

@@ -7,7 +7,7 @@ RSpec.feature 'Signin', type: :feature do
     signup_and_click
     logout
     login
-    
+
     expect(page).to have_content('1')
   end
 

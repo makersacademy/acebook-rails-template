@@ -3,10 +3,11 @@
 require 'rails_helper'
 
 RSpec.feature 'Signup', type: :feature do
-  xscenario "A user signs up and see's their account details" do
+  scenario 'A user signs up and is redirected to their wall' do
     signup_and_click
 
-    expect(page).to have_content('1')
+    expect(page).to have_content("1's Wall")
+    expect(page.current_path).to eq('/users/1')
   end
 
   scenario 'A user has to sign up with an email address' do

@@ -2,16 +2,25 @@
 
 class PostsController < ApplicationController
   def new
-    @post = Post.new
+    # raise params.inspect
+    user = User.find(params[:user_id])
+    # sender = User.find(current_user.id)
+    # because user has many posts
+    @post = user.posts.build
   end
 
   def index
-    @posts = Post.all
+    # @posts = Post.all
   end
 
   def create
-    @post = current_user.posts.create(post_params)
-    redirect_to @current_user
+    # this is what identifies which wall to put it on
+    user = User.find(params[:user_id])
+    # sender = User.find(current_user.id)
+    @post = user.posts.build(post_params.merge(sender_id: current_user.id)).save
+
+    redirect_to user
+    # if want to go back to own page @post.user
   end
 
   def show
@@ -20,18 +29,29 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to current_user
+    user = User.find_by_id(@post.user_id)
+    if @post.sender_id == current_user.id
+      @post.destroy
+      redirect_to user
+    else
+      flash.now[:alert] = 'NOT YOUR POST'
+      render :show
+    end
   end
-  
+
   def edit
     @post = Post.find(params[:id])
+    unless @post.sender_id == current_user.id
+      flash.now[:alert] = 'NOT YOUR POST'
+      render :show
+    end
   end
 
   def update
     @post = Post.find(params[:id])
     @post.update_attributes(post_params)
-    redirect_to current_user
+    user = User.find_by_id(@post.user_id)
+    redirect_to user
   end
 
   private
