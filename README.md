@@ -1,28 +1,33 @@
 # AceBook 
-Build Status | Maintainability | Test Coverage
-## Technologies Used
- * [Ruby on Rails]()
- * [Active Record]()
- * [RSPEC]()
- * [Capybara]()
- * [Travis]()
+[![Build Status](https://travis-ci.org/CazaBelle/acebook-rails-smoking-dragons.svg?branch=master)](https://travis-ci.org/CazaBelle/acebook-rails-smoking-dragons)
 
+The latest Facebook clone that allows you to keep up to date with all of your friends' latest ramblings.
 
 ## Prerequisites
+* Rails 5.1.5 
+* Ruby 2.5.0
+* postgresql 11.1
 
 ### Installation
+* `git clone git@github.com:CazaBelle/acebook-rails-smoking-dragons.git`
+* `cd acebook-rails-smoking-dragons`
+* `bundle install`
+* `bin/rails db:create`
+* `bin/rails db:migrate`
+* `bundle exec rspec` # Run the tests to ensure it works
+* `bin/rails server` # Start the server at localhost:3000
 
-### Quickstart
-
-```
-> git clone git@github.com:CazaBelle/acebook-rails-smoking-dragons.git
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
-```
+### Built with
+|  Tech|  Decription |   
+|---|---|
+|[Ruby](https://ruby-doc.org/)| Language|
+|[Ruby on Rails](https://guides.rubyonrails.org/) |  Web application framework | 
+|[Active Record](https://guides.rubyonrails.org/active_record_basics.html)  | Database  |  
+|[RSPEC](http://rspec.info/)  | Testing framework  |  
+|[Capybara](http://teamcapybara.github.io/capybara/)| Feature testing framework|
+|[Travis](https://travis-ci.org/)| Continuous integration service|
+|[Postgresql](https://www.postgresql.org/)|ORM|
+ 
 ## User Stories
 ```
 As a User,
@@ -135,13 +140,12 @@ So my users know why there is an error,
 I want to redirect them to a 404 page if a user does not exist.
 ```
 ## CRC
-
+![](app/assets/images/CRCmodel.png)
 
 ## Wireframe
-![](assets/images/acebook-wireframe.pdf)
+![](app/assets/images/acebook-wireframe.pdf)
 
-## Minimum Viable Product
-
+### Minimum Viable Product
   As a group we decided the below requirements would meet our expectation of a minimum viable product that is deployed. We aimed to implement these as a minimum to enhance our learning and produce a working app.
 ```
 - A user can signup for Acebook.
@@ -151,17 +155,18 @@ I want to redirect them to a 404 page if a user does not exist.
 - A User can Like a post via a button.
 - A profile picture is present on users profiles.
 ```
+
 ## Testing
+* $`rspec` 
 
 ## Deployment
 * [Hosted on Heroku](https://acebook-dragons.herokuapp.com)
 
-## Built With
-
 ## Contributing
+See [Contributing.md](https://github.com/CazaBelle/acebook-rails-smoking-dragons/blob/master/CONTRIBUTING.md) to contribute
 
 ## Authors
-* [Georges Le Vaillant](GLV/stonefarmer9)
-* [Onkar Sahota]()
-* [Jacques Laffy]()
-* [Carol Gardiner]()
+* [Georges Le Vaillant](https://github.com/stonefarmer9)
+* [Onkar Sahota](https://github.com/OSSahota)
+* [Jacques Laffy](https://github.com/jlaffbabs)
+* [Carol Gardiner](https://github.com/CazaBelle?tab=repositories)
