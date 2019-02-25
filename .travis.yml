@@ -6,7 +6,8 @@ rvm:
 install:
   - bundle install
 
-services: postgresql
+services:
+  - postgresql
 
 
 script:
