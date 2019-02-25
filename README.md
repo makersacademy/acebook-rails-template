@@ -1,3 +1,5 @@
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/david-mears/acebook-team-street-cred.svg?columns=all)](https://waffle.io/david-mears/acebook-team-street-cred)
+
 # AceBook
 
 REQUIRED INSTRUCTIONS:
