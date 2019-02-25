@@ -1,4 +1,33 @@
 # AceBook - Desk Warriors
+```
+                    _____|\
+               _.--| ADW |:     Acebook Desk Warriors
+              <____|.----||
+                     .---''---,
+                      ;..__..'    _...
+                    ,'/  ;|/..--''    \
+                  ,'_/.-/':            :
+             _..-'''/  /  |  \    \   _|/|
+            \      /-./_ \;   \    \,;'   \
+            ,\    / \:  `:\    \   //    `:`.
+          ,'  \  /-._;   | :    : ::    ,.   .
+        ,'     ::   /`-._| |    | || ' :  `.`.)
+     _,'       |;._:: |  | |    | `|   :    `'
+   ,'   `.     /   |`-:_ ; |    |  |  : \
+   `--.   )   /|-._:    :          |   \ \
+      /  /   :_|   ;`-._;   __..--';    : :
+     /  (    ;|;-./_  _/.-:'o |   /     ' |
+    /  , \._/_/_./--''/_|:|___|_,'        |
+   :  /   `'-'--'----'---------'          |
+   | :     O ._O   O_. O ._O   O_.      ; ;
+   : `.      //    //    //    //     ,' /
+ ~~~`.______//____//____//____//_______,'~
+           //    //~   //    //
+    ~~   _//   _//   _// ~ _//     ~
+  ~     / /   / /   / /   / /  ~      ~~
+       ~~~   ~~~   ~~~   ~~~
+
+```
 
 REQUIRED INSTRUCTIONS:
 
@@ -7,7 +36,7 @@ the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+2. The card wall is here: https://waffle.io/aidengleave/acebook-desk-warriors/
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
