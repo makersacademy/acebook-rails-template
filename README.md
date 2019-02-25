@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/thielsen/acebook-rails-template.svg?branch=staging)](https://travis-ci.com/thielsen/acebook-rails-template)
+
 ## AceBook
 
 REQUIRED INSTRUCTIONS:
