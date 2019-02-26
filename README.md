@@ -9,7 +9,7 @@ the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+2. The card wall is here: https://trello.com/b/k60sWUQo/team-rails-template
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
