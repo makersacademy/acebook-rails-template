@@ -7,10 +7,6 @@ language: ruby
 rvm:
   - 2.5.0
 
-addons:
-  code_climate:
-    repo_token: ENV['CC_TEST_REPORTER_ID']
-
 install:
   - bundle install
 
