@@ -47,6 +47,10 @@ Metrics/BlockLength:
     - 'spec/**/*'
     - 'test/**/*'
 
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+
 # Code Style
 # ==========
 #
@@ -96,7 +100,7 @@ NilComparison:
 Not:
   Enabled: true
 NumericLiterals:
-  Enabled: false
+  Enabled: true
 NumericPredicate:
   Enabled: true
 OneLineConditional:
