@@ -1,10 +1,9 @@
 
 rvm: '2.5.0'
 cache: bundler
-
 addons:
-    code_climate:
-        repo_token: fea4d5b65e1bf6418176935cee6a4a9108ce2bd48873f9d10e86d49b88e5d86b
+  code_climate:
+    repo_token: fea4d5b65e1bf6418176935cee6a4a9108ce2bd48873f9d10e86d49b88e5d86b
 
 after_success:
   - bundle exec codeclimate-test-reporter
