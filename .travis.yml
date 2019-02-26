@@ -4,4 +4,5 @@ cache: bundler
 script:
   - bin/rails db:create
   - bin/rails db:migrate
+  - bundle exec rake db:migrate
   - bundle exec rspec
