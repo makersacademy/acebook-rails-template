@@ -36,7 +36,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop'
   gem 'selenium-webdriver'
-
+  gem 'codeclimate-test-reporter'
 end
 
 group :development do
