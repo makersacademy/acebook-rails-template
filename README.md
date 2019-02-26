@@ -2,27 +2,31 @@
 
 ## AceBook
 
-REQUIRED INSTRUCTIONS:
+Acebook is a clone of Facebook developed as a group project in weeks 8 and 9 at Makers Academy.
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+## Technologies
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+- Ruby on Rails
+- Devise
+- Travis
+- Code Climate
+- Heroku
 
-2. The card wall is here: https://trello.com/b/k60sWUQo/team-rails-template
+## Links
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+The production application is deployed to https://acebook-template-staging.herokuapp.com/
+Trello card wall for the project management is here: https://trello.com/b/k60sWUQo/team-rails-template
 
-## Quickstart
+## Installing
 
-First, clone this repository. Then:
+To install a development instance locally clone this repository. Then:
 
 ```bash
 > bundle install
 > bin/rails db:create
 > bin/rails db:migrate
 
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+> bundle exec rspec # Confirm all green
+> bin/rails server
 ```
+You can then connect to http://localhost:3000
