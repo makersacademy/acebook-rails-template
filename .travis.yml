@@ -1,3 +1,6 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=ENV['CODECLIMATE']
 language: ruby
 
 rvm:
@@ -9,9 +12,16 @@ install:
 services:
   - postgresql
 
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 script:
   - bundle exec rubocop
   - bin/rails db:create
   - bin/rails db:migrate
   - bundle exec rspec spec
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
