@@ -96,7 +96,7 @@ NilComparison:
 Not:
   Enabled: true
 NumericLiterals:
-  Enabled: true
+  Enabled: false
 NumericPredicate:
   Enabled: true
 OneLineConditional:
