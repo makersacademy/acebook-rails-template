@@ -1,5 +1,6 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <p><%= post.user_id %></p>
 <% end %>
 
 <%= link_to new_post_path do %>

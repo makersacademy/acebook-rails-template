@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    Post.create({user_id: current_user.id, message: params[:post][:message]})
     redirect_to posts_url
   end
 
@@ -12,9 +12,4 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  private
-
-    def post_params
-      params.require(:post).permit(:message)
-    end
 end
