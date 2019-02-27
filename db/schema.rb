@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20190227123437) do
   create_table "likes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.bigint "post_id"
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
     t.index ["post_id"], name: "index_likes_on_post_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20190227123437) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20190227123437) do
     t.datetime "updated_at", null: false
     t.string "pronoun"
     t.string "profile_pic"
-    t.string "first_name"
+    t.string "first_name", null: false
     t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
