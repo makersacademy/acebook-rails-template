@@ -6,11 +6,17 @@ Acebook is a clone of Facebook developed as a group project in weeks 8 and 9 at 
 
 ## Technologies
 
-- Ruby on Rails
-- Devise
-- Travis
-- Code Climate
-- Heroku
+- Ruby on Rails (Web framework)
+- Devise (User authentication and routing)
+- Travis (Continuous Integration)
+- Code Climate (Code / test coverage)
+- Heroku (Deployment)
+
+## Project aims
+- High maintainability
+- Quality, easily-changeable code
+- High test coverage (95%+)
+- Effective Agile working methods with 2-day sprints
 
 ## Links
 
