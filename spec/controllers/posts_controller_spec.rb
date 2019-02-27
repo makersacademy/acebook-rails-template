@@ -1,10 +1,18 @@
 require 'rails_helper'
+require 'login_helper'
 
 RSpec.describe PostsController, type: :controller do
   describe "GET /new " do
     it "responds with 302 when not logged in" do
       get :new
       expect(response).to have_http_status(302)
+    end
+
+    it "responds with 200 when logged in" do
+      user = User.create(email: "testuser@makers.com", first_name: "test", last_name: "user", password: "abc123")
+      sign_in user
+      get :new
+      expect(response).to have_http_status(200)
     end
   end
 
