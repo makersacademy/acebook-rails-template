@@ -1,11 +1,20 @@
-language:
- - ruby
-rvm:
- - 2.5.0
-cache:
- - bundler
-script:
+# single test suite, non-parallel build.
 
- - bundle install && bin/rails db:create && bin/rails db:migrate && bundle exec rspec
+env:
+  global:
+    - CC_TEST_REPORTER_ID=e87f16b9111405bdb1c8e94f120487caccba356eed4f14c8d161e56b66faf0bc
+language: ruby
+rvm:
+  - 2.5.0
+cache:
+  - bundler
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - bundle install && bin/rails db:create && bin/rails db:migrate && bundle exec rspec
 services:
- - postgresql
+  - postgresql
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
