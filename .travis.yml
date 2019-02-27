@@ -1,8 +1,21 @@
-rvm: '2.5.0'
-cache: bundler
-
+language:
+ — ruby
+rvm:
+ — 2.5.0
+cache:
+ — bundler
 script:
-  - bin/rails db:create
-  - bin/rails db:migrate
-  - bundle exec rake db:migrate
-  - bundle exec rspec
+ — bundle install
+ — bin/rails db:create
+ — bin/rails db:migrate
+ — bundle exec rspec
+services:
+ — postgresql
+
+deploy:
+  provider: heroku
+ api_key:
+  secure: "ENCRYPTED_KEY_HERE"
+app: heroku-app-name-here
+  on:
+ repo: github-username-here/repo-name-here
