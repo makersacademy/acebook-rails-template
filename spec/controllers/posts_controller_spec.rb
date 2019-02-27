@@ -34,12 +34,6 @@ RSpec.describe PostsController, type: :controller do
       expect(Post.find_by(message: "Hello, world!")).to be(nil)
     end
 
-    it "can create a post when logged in" do
-      user = User.create(email: "testuser@makers.com", first_name: "test", last_name: "user", password: "abc123")
-      sign_in user
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect(Post.find_by(message: "Hello, world!")).to be
-    end
   end
 
   describe "GET /" do
