@@ -17,14 +17,28 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "POST /" do
-    it "responds with 200" do
+    it "redirects to login screen when trying to post when not logged in" do
       post :create, params: { post: { message: "Hello, world!" } }
       expect(response).to redirect_to(new_user_session_url)
+    end
+
+    it "successfully redirects to posts screen when logged in" do
+      user = User.create(email: "testuser@makers.com", first_name: "test", last_name: "user", password: "abc123")
+      sign_in user
+      post :create, params: { post: { message: "Hello, world!" } }
+      expect(response).to redirect_to(posts_url)
     end
 
     it "cannot create a post when not logged in" do
       post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be(nil)
+    end
+
+    it "can create a post when logged in" do
+      user = User.create(email: "testuser@makers.com", first_name: "test", last_name: "user", password: "abc123")
+      sign_in user
+      post :create, params: { post: { message: "Hello, world!" } }
+      expect(Post.find_by(message: "Hello, world!")).to be
     end
   end
 
