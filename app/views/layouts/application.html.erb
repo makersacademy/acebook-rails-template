@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

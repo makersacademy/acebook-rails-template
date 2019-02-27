@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.6.0'
+ruby '2.5.0'
 
 gem 'rake'
 gem 'rubocop'
@@ -24,7 +24,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Devise gem to have users sign_up and loging in/Without
-# gem 'devise', '~> 4.6', '>= 4.6.1'
+gem 'devise', '~> 4.6', '>= 4.6.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
