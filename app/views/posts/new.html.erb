@@ -1,6 +1,6 @@
-<%= form_for @post do |form| %>
+<%= form_for @post, html: {multipart: true} do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
-
+  <%= form.file_field :image %>
   <%= form.submit "Submit" %>
 <% end %>

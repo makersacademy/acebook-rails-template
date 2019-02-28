@@ -1,5 +1,8 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <% if post.image.url != '/images/original/missing.png' %>
+    <p><%= image_tag(post.image.url, style:'width:50%') %></p>
+  <% end %>
   <p><%= post.user_id %></p>
 <% end %>
 

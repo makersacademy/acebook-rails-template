@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create({user_id: current_user.id, message: params[:post][:message]})
+    Post.create({user_id: current_user.id, message: params[:post][:message], image: params[:post][:image]})
     redirect_to posts_url
   end
 
