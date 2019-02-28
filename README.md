@@ -29,6 +29,7 @@ To install a development instance locally clone this repository. Then:
 
 ```bash
 > bundle install
+> brew install imagemagick (assuming you are on a Mac)
 > bin/rails db:create
 > bin/rails db:migrate
 
