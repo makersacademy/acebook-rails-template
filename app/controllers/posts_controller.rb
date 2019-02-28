@@ -61,5 +61,4 @@ class PostsController < ApplicationController
     def post_params
       params.fetch(:post, {})
     end
-
 end
