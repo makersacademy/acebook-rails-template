@@ -9,3 +9,10 @@ def sign_up
   fill_in "Password confirmation", with: "123456"
   click_button "Sign up"
 end
+
+def log_in
+  visit "/"
+  fill_in "Email", with: "bob@bob.com"
+  fill_in "Password", with: "bbbbbbb"
+  click_button "Log in"
+end
