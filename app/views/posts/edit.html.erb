@@ -2,12 +2,7 @@
 
 <%= form_for @post, html: {multipart: true} do |form| %>
   <p><%= form.label :message %></p>
-  <p>
-  <%= form.text_area :message, :cols => 40, :rows => 5 %>
-  </p>
-
-  <%= link_to 'Show', @post %> |
+  <p><%= form.text_area :message, :cols => 40, :rows => 5 %></p>
   <%= link_to 'Back', posts_path %>
-
   <%= form.submit "Submit" %>
 <% end %>
