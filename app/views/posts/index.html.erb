@@ -1,13 +1,22 @@
 <% @posts.each do |post| %>
+
+  <p><%= post.user_id %></p>
+
   <p><%= simple_format(post.message) %></p>
 
   <% if post.image.url != '/images/original/missing.png' %>
     <p><%= image_tag(post.image.url, style:'width:50%') %></p>
   <% end %>
 
-  <p><%= post.user_id %></p>
-<% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+    <%= button_to 'Like', post_likes_path(post), method: :post %>
+
+
+
+  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
+  <% end %>
+
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
