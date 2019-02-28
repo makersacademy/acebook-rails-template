@@ -17,6 +17,5 @@ RSpec.feature "New lines in posts", type: :feature do
     click_on "Submit"
     expect(page.html).to include("<br /> This post should have new lines after every sentence.")
     expect(page.html).to include("<br /> This sentence and the following")
-
   end
 end
