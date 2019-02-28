@@ -1,6 +1,9 @@
 <ul id="posts">
 <% @posts.each do |post| %>
-  <li><%= post.message %></li>
+  <li>
+    <%= post.message %><br />
+    <%= post.updated_at %>
+  </li>
 <% end %>
 </ul>
 <%= link_to new_post_path do %>
