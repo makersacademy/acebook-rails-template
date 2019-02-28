@@ -2,7 +2,7 @@
 <% @posts.each do |post| %>
   <li>
     <%= post.message %><br />
-    <%= post.updated_at %>
+    <%= post.updated_at.strftime('%I:%M%p - %e %b %Y ') %>
   </li>
 <% end %>
 </ul>
