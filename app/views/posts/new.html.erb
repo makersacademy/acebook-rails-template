@@ -1,8 +1,10 @@
-<%= form_for @post do |form| %>
+
+<%= form_for @post, html: {multipart: true} do |form| %>
   <p><%= form.label :message %></p>
   <p>
   <%= form.text_area :message, :cols => 40, :rows => 5 %>
   </p>
-  <p></p>
+  <p><%= form.file_field :image %></p>
+
   <%= form.submit "Submit" %>
 <% end %>
