@@ -1,17 +1,13 @@
-language:
-  — ruby
-rvm:
-  — 2.5.0
-cache:
-  — bundler
+rvm: '2.5.0'
+cache: bundler
 
-script: 
-  — bundle install 
-  — bin/rails db:create  
-  — bin/rails db:migrate 
+script:
+  — bundle install
+  — bin/rails db:create
+  — bin/rails db:migrate
   — bundle exec rspec
 
-services: 
+services:
   — postgresql
 
 deploy:
