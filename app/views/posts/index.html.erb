@@ -1,13 +1,29 @@
-<% @posts.each do |post| %>
-  <p><%= simple_format(post.message) %></p>
+<p id="notice"><%= notice %></p>
 
+<h1>Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+ <% @posts.each do |post| %>
+  <p><%= simple_format(post.message) %></p>
   <% if post.image.url != '/images/original/missing.png' %>
     <p><%= image_tag(post.image.url, style:'width:50%') %></p>
   <% end %>
-
   <p><%= post.user_id %></p>
+  <tbody>
+      <tr>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete%></td>
+      </tr>
+  </tbody>
+</table>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<br>
+
+<%= link_to 'New post', new_post_path %>
