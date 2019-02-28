@@ -1,14 +1,20 @@
-<h5>Add a new message</h5>
+<div class="col-md-3 mx-auto card" style="text-align: center;">
+  <h5 style="margin-top: 10px; padding: 10px;">Add a new post</h5>
 
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-
-  <%= form.submit "Submit" %>
-<% end %>
-
-<hr>
-
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+  <%= form_for @post do |form| %>
+    <%= form.text_area :message, class:"form-control", id:"exampleTextarea", rows:"3" %>
+    <br>
+    <%= form.submit "Add post", class:"btn btn-primary btn-block"%>
+  <% end %>
+  <hr>
+  <% @posts.each do |post| %>
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+      <div class="card-header">Posted by: <%= current_user[:user_name] %> - on <%= post.updated_at.strftime("%b %d. %Y - %H:%M:%S") %></div>
+      <div class="card-body">
+        <p class="card-text">
+          <%= post.message %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
