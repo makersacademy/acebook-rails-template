@@ -21,3 +21,4 @@ Post.create(message: "A post \n with \n a few \n newlines", user_id: few_post.id
 Post.create(message: "A medium length post of a single sentence of an average length. Number 5", user_id: many_post.id)
 Post.create(message: "A medium length post of a single sentence of an average length. Number 6", user_id: many_post.id)
 Post.create(message: "A medium length post of a single sentence of an average length. Number 7", user_id: many_post.id)
+Post.create(message: "This post will be deleted", user_id: many_post.id)
