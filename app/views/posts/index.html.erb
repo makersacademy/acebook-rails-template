@@ -15,6 +15,7 @@
     <p><%= image_tag(post.image.url, style:'width:50%') %></p>
   <% end %>
   <p><%= post.first_name + ' ' + post.last_name %></p>
+  <p> <%= post.created_at.strftime("%e %b %Y %H:%M") %></p>
   <tbody>
       <tr>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>

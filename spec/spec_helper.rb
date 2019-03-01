@@ -23,6 +23,8 @@ rake.load_rakefile
 rake['db:test:prepare'].invoke
 rake['db:seed'].invoke
 
+TIMESTAMP_REGEX = "\\d{1,2} .{3} \\d{4} \\d{2}:\\d{2}"
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
