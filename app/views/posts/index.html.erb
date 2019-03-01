@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-  <p><%= simple_format(post.message) %></p>
+  <p id="post-id-<%= post.id %>"><%= simple_format(post.message) %></p>
 
   <% if post.image.url != '/images/original/missing.png' %>
     <p><%= image_tag(post.image.url, style:'width:50%') %></p>
