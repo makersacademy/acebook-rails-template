@@ -1,6 +1,6 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=<5a53fae00b4287ad7105026d6c625abc6db2274e1d33816b16d051221b3e323e>
+    - CC_TEST_REPORTER_ID=<33722e59264a77494b85fbd0d0f1cec95321e83178937704265dc88015cca4de>
 
 rvm: '2.5.0'
 cache: bundler
@@ -9,10 +9,8 @@ before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
-
 script:
   - bundle install && bin/rails db:create && bin/rails db:migrate && bundle exec rspec
-
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
