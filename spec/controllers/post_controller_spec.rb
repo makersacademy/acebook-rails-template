@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'web_helper'
 
 RSpec.describe PostsController, type: :controller do
 
@@ -15,10 +14,11 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe "POST #index" do
+  describe "POST #create" do
     it "creates a new post" do
       setup
-      post :index, params: { message: 'Test message ahoo', user_id: 1 }
+      # calls the create *method* (not the route) in the controller
+      post :create, params: { post: { message: 'Test message ahoo' } }
       expect(Post.last.message).to eq('Test message ahoo')
       expect(response).to have_http_status(302) # a redirect
     end
@@ -27,9 +27,9 @@ RSpec.describe PostsController, type: :controller do
   describe "PUT #index" do
     it "updates a new post" do
       setup
-      post :index, params: { message: 'Test message ahoo', user_id: 1 }
+      post :create, params: { post: { message: 'Test message ahoo' } }
       post_id = Post.last.id
-      put :index, params: { message: 'This is updated', user_id: 1, post_id: post_id }
+      put :update, params: { id: post_id, updated_post: { message: 'This is updated' } }
       expect(Post.find(post_id).message).to eq('This is updated')
     end
   end

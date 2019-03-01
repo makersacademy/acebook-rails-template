@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(message: post_params, user_id: current_user.id)
     redirect_to posts_url
   end
 
@@ -12,9 +12,18 @@ class PostsController < ApplicationController
     @posts = Post.all.order(updated_at: :desc)
   end
 
+  def update
+    @post = Post.find(params[:id])
+    @post.update_attributes(message: update_params)
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).require(:message)
+  end
+
+  def update_params
+    params.require(:updated_post).require(:message)
   end
 end
