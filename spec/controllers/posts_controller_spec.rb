@@ -1,6 +1,22 @@
 require 'rails_helper'
 
+
 RSpec.describe PostsController, type: :controller do
+
+  # before (:each) do
+  #   # @request.env["devise.mapping"] = Devise.mappings[:user]
+  #   # user = FactoryBot.create(:user)
+  #   # sign_in user
+  #   user = FactoryBot.create(:user)
+  #   user.save
+  #   user.sign_in
+  # end
+
+  before(:each) do
+    @user = create(:user)
+    sign_in @user
+  end
+
   describe "GET /new " do
     it "responds with 200" do
       get :new
