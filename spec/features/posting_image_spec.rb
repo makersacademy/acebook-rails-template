@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "Can post an image and view it", type: :feature do
-  scenario "A post can have newlines in it, and this will be reflected in the output" do
+RSpec.feature "Image post", type: :feature do
+  scenario "A post can have an image in it and show it" do
     visit '/'
     click_link("Sign up", match: :first)
     fill_in "user_email", with: "featureimage@email.com"

@@ -1,4 +1,3 @@
-
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
@@ -15,8 +14,19 @@
   <% if post.image.url != '/images/original/missing.png' %>
     <p><%= image_tag(post.image.url, style:'width:50%') %></p>
   <% end %>
+
   <p><%= post.first_name + ' ' + post.last_name %></p>
   <p> <%= post.created_at.strftime("%e %b %Y %H:%M") %></p>
+
+  <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+  <% if pre_like %>
+    <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+  <% else %>
+    <%= button_to 'Like', post_likes_path(post), method: :post %>
+  <% end %>
+
+  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
   <tbody>
       <tr>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
