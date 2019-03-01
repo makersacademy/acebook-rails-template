@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou);
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +15,63 @@
  *= require_tree .
  *= require_self
  */
+
+h1 {
+  font-size: 5em;
+  text-align: center;
+  margin: 5px;
+}
+
+body {
+  font-family: ZCOOL QingKe HuangYou;
+  background-color: #e2edff;
+}
+
+div#posts {
+  padding: 10px;
+}
+
+a {
+  color: #163b72;
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 2px 2px 5px;
+}
+
+a#new_post {
+  padding-left: 10px;
+  font-size: 3em;
+  position: absolute;
+  right: 20px;
+  text-decoration: none;
+}
+
+ul#posts {
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+li.posts {
+  margin-bottom: 50px;
+  list-style-type: none;
+  border: inset;
+  border-radius: 1em;
+  background-color: #d1e1f9;
+}
+
+li.posts:hover {
+  background-color: #f2f6fc;
+  box-shadow: 2px 2px 5px;
+}
+
+p.posts {
+  padding-left: 1em;
+  font-size: 1.5em
+}
+
+p.time {
+  text-align: right;
+  padding-right: 3em;
+}
