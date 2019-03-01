@@ -34,6 +34,11 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def index
+    @posts_with_users = Post.left_outer_joins(:user)
+                        .select('posts.*', 'users.first_name', 'users.last_name')
+  end
+
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
