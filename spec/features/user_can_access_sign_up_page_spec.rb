@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'sign-up page', type: :feature do
+
   scenario 'user can access sign-up page' do
     visit "/users/sign_up"
     expect(page).to have_content("Sign up")
@@ -13,4 +14,5 @@ RSpec.feature 'sign-up page', type: :feature do
     expect(page).to have_button("Sign up")
     expect(page).to have_selector(:css, 'a[href="/users/sign_in"]')
   end
+
 end
