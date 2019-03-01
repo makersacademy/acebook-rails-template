@@ -1,6 +1,8 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <p><%= post.user_id %></p>
+  <% @posts_with_users.each do |name| %>
+  <p><%= name.first_name + " " + name.last_name %></p>
+  <% end %>
 <% end %>
 
 <%= link_to new_post_path do %>

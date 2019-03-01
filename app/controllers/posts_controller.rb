@@ -10,6 +10,15 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts_with_users = Post.left_outer_joins(:user)
+                        .select('posts.*', 'users.first_name', 'users.last_name')
+   p @posts_with_users
+
+  end
+
+
+  def show
+    @post = Post.find(params[:id])
   end
 
 end
