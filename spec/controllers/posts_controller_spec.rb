@@ -32,8 +32,13 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "creates a post" do
+      user = User.create(user_name: 'testUser', email: 'test@test.com', password: "password", password_confirmation: "password")
+      sign_in user
+
       post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be
+
+      sign_out user
     end
   end
 
