@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/aidengleave/acebook-desk-warriors.svg?branch=development)](https://travis-ci.org/aidengleave/acebook-desk-warriors)
+[![Maintainability](https://api.codeclimate.com/v1/badges/630bc5799749ff8ef6c8/maintainability)](https://codeclimate.com/github/aidengleave/acebook-desk-warriors/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/630bc5799749ff8ef6c8/test_coverage)](https://codeclimate.com/github/aidengleave/acebook-desk-warriors/test_coverage)
+
+[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
 # AceBook - Desk Warriors
 ```
                     _____|\
