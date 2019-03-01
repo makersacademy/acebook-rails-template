@@ -1,7 +1,9 @@
 require 'rails_helper'
+require 'web_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
+    log_in
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "I am not seeded"
