@@ -3,6 +3,9 @@
   <li>
     <%= post.message %><br />
     <%= post.updated_at.strftime('%I:%M%p - %e %b %Y ') %>
+    <form method="post">
+      <input type="submit" value="Edit">
+    </form>
   </li>
 <% end %>
 </ul>
