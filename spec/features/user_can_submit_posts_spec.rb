@@ -12,5 +12,6 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "exampleTextarea", :with => 'test message'
     click_button "Add post"
     expect(page).to have_content("test message")
+    click_link "Sign Out"
   end
 end
