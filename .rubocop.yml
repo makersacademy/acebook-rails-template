@@ -12,6 +12,7 @@ AllCops:
     - 'actiontext/test/dummy/**/*'
     - 'node_modules/**/*'
     - 'bin/**'
+    - 'db/**'
 
 Performance:
   Exclude:
