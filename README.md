@@ -53,4 +53,12 @@ Git process:
 > git push
 ```
 Pull request to **dev**.
-dev --> staging --> master 
+dev --> staging --> master
+
+## How to deploy
+
+Once you have linked Heroku and clicked deploy, set up the app database:
+```bash
+heroku run rake db:migrate -a [name of heroku app]
+heroku run rake db:seed -a [name of heroku app]
+```
