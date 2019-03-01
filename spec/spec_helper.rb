@@ -110,6 +110,6 @@ RSpec.configure do |config|
 =end
   # pp ActiveRecord::Base
   config.after :all do
-    ActiveRecord::Base.connection.execute("TRUNCATE posts RESTART IDENTITY")
+    ActiveRecord::Base.connection.execute("TRUNCATE posts, users RESTART IDENTITY")
   end
 end
