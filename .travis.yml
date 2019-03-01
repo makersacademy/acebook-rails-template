@@ -1,3 +1,7 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=<5a53fae00b4287ad7105026d6c625abc6db2274e1d33816b16d051221b3e323e>
+
 rvm: '2.5.0'
 cache: bundler
 
