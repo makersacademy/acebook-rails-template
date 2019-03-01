@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
@@ -9,12 +10,13 @@
     </tr>
   </thead>
 
- <% @posts_with_users.each do |post| %>
-  <p><%= simple_format(post.message) %></p>
+<% @posts_with_users.each do |post| %>
+  <p id="post-id-<%= post.id %>"><%= simple_format(post.message) %></p>
   <% if post.image.url != '/images/original/missing.png' %>
     <p><%= image_tag(post.image.url, style:'width:50%') %></p>
   <% end %>
   <p><%= post.first_name + ' ' + post.last_name %></p>
+  <p> <%= post.created_at.strftime("%e %b %Y %H:%M") %></p>
   <tbody>
       <tr>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
