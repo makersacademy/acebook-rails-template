@@ -17,11 +17,23 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'rake'
+require 'simplecov'
+require 'simplecov-console'
+
 rake = Rake.application
 rake.init
 rake.load_rakefile
 rake['db:test:prepare'].invoke
 rake['db:seed'].invoke
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+])
+
+SimpleCov.start do
+  add_filter "spec/controllers/posts_controller_spec.rb"
+end
+
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
