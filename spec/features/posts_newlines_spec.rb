@@ -2,14 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "New lines in posts", type: :feature do
   scenario "A post can have newlines in it, and this will be reflected in the output" do
-    visit '/'
-    click_link("Sign up", match: :first)
-    fill_in "user_email", with: "featuretest@email.com"
-    fill_in "user_first_name", with: 'feature'
-    fill_in "user_last_name", with: 'test'
-    fill_in "user_password", with: "featurepwd"
-    fill_in 'user_password_confirmation', with: "featurepwd"
-    click_on "Submit"
+    login_percy_onepost
     expect(page).to have_content('Logged in')
     click_link("New post")
     expect(page).to have_content('Message')

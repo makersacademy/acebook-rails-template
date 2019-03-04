@@ -2,17 +2,10 @@ require 'rails_helper'
 
 RSpec.feature "Image post", type: :feature do
   scenario "A post can have an image in it and show it" do
-    visit '/'
-    click_link("Sign up", match: :first)
-    fill_in "user_email", with: "featureimage@email.com"
-    fill_in "user_first_name", with: 'image'
-    fill_in "user_last_name", with: 'test'
-    fill_in "user_password", with: "featurepwd"
-    fill_in 'user_password_confirmation', with: "featurepwd"
-    click_on "Submit"
+    login_george_manyposts
     click_link("New post")
     fill_in "post_message", with: "This post has a picture attached!"
-    page.attach_file("post_image", Rails.root + 'app/assets/images/imagename.jpg')
+    page.attach_file("post_image", 'spec/fixtures/imagename.jpg')
     click_on "Submit"
     expect(page.html).to include("imagename.jpg")
     expect(page.html).to include("This post has a picture attached!")
