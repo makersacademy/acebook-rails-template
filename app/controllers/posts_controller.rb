@@ -18,10 +18,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    # current_user.posts.find(params[:id]).update(message: params[:post][:message])
-
-    @post.update(message: params[:post][:message])
-    redirect_to posts_url
+    begin
+      current_user.posts.find(params[:id]).update(message: params[:post][:message])
+      redirect_to posts_url
+    rescue
+      redirect_to posts_url, notice: "Not your post"
+    end
   end
 
   def index
@@ -33,7 +35,6 @@ class PostsController < ApplicationController
   def destroy
     begin
       current_user.posts.find(params[:id]).destroy
-    # @post.destroy
       respond_to do |format|
         format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
         format.json { head :no_content }
