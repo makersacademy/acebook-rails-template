@@ -35,6 +35,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start do
   add_filter "spec/controllers/posts_controller_spec.rb"
   add_filter "spec/views/posts/index.html.erb_spec.rb"
+  add_filter "spec/login_helper.rb"
 end
 
 RSpec.configure do |config|

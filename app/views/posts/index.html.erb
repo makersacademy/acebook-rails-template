@@ -29,8 +29,10 @@
 
   <tbody>
       <tr>
+        <% if current_user.id == post.user_id %>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete%></td>
+        <% end %>
       </tr>
   </tbody>
 </table>
