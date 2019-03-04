@@ -1,22 +1,20 @@
-def create_test_user_1
-  User.create(email: "testuser@makers.com", first_name: "test", last_name: "user", password: "abc123")
-end
-
-def sign_up_test_user_1
-  visit '/'
-  click_link("Sign up", match: :first)
-  fill_in "user_email", with: "featuretest@email.com"
-  fill_in "user_first_name", with: 'First'
-  fill_in "user_last_name", with: 'Last'
-  fill_in "user_password", with: "featurepwd"
-  fill_in 'user_password_confirmation', with: "featurepwd"
-  click_on "Submit"
-  expect(page).to have_content('Logged in')
-end
-
-def log_in_test_user_1
+def login_george_manyposts
   visit("/users/sign_in")
-  fill_in :user_email, with: 'testuser@makers.com'
-  fill_in :user_password, with: 'abc123'
+  fill_in :user_email, with: 'George.Manyposts@gmail.com'
+  fill_in :user_password, with: 'gm1234'
+  click_button 'Log in'
+end
+
+def login_percy_onepost
+  visit("/users/sign_in")
+  fill_in :user_email, with: 'Percy.Onepost@gmail.com'
+  fill_in :user_password, with: 'po1234'
+  click_button 'Log in'
+end
+
+def login_sarah_fewposts
+  visit("/users/sign_in")
+  fill_in :user_email, with: 'Sarah.Fewposts@gmail.com'
+  fill_in :user_password, with: 'sf1234'
   click_button 'Log in'
 end

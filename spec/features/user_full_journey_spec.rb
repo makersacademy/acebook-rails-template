@@ -17,7 +17,7 @@ RSpec.feature "Journey", type: :feature do
     click_on "Submit"
     expect(page).to have_content("test feature message")
     click_link "Logout"
-    expect(page).to have_content("Log in")
+    expect(page).to have_content("Login")
     fill_in 'user_email', with: 'featuretest@email.com'
     fill_in 'user_password', with: 'featurepwd'
     click_on "Log in"
