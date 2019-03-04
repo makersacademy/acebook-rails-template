@@ -24,6 +24,16 @@ end
 
 Capybara.javascript_driver = :headless_chrome
 
+Capybara.register_driver :selenium do |app|
+
+ custom_profile = Selenium::WebDriver::Firefox::Profile.new
+
+ # Turn off the super annoying popup!
+ custom_profile[“network.http.prompt-temp-redirect”] = false
+
+ Capybara::Selenium::Driver.new(app, :browser => :firefox, :profile => custom_profile)
+end
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
