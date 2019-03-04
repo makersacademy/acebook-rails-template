@@ -2,21 +2,25 @@
 
 ## AceBook
 
-Acebook is a clone of Facebook developed as a group project in weeks 8 and 9 at Makers Academy.
+Acebook is a clone of Facebook functionality developed as a group project in weeks 8 and 9 at Makers Academy.
 
 ## Technologies
 
 - Ruby on Rails (Web framework)
+- RSpec, Capybara (testing)
 - Devise (User authentication and routing)
 - Travis (Continuous Integration)
 - Code Climate (Code / test coverage)
 - Heroku (Deployment)
 
 ## Project aims
+
 - High maintainability
 - Quality, easily-changeable code
 - High test coverage (95%+)
 - Effective Agile working methods with 2-day sprints
+- Strict best-practice Git use (branching, pull request reviewing)
+- Documentation of process and learnings in an associated wiki (above) and the linked collaborative learnings Google doc.
 
 ## Links
 
