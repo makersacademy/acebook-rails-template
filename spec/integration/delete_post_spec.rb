@@ -24,4 +24,16 @@ RSpec.feature "Delete a post", type: :feature do
     expect(page).not_to have_content("This post will be deleted")
   end
 
+  scenario "A user can not delete a post if not his" do
+    login_percy_onepost
+    page.driver.submit :delete, "/posts/9", {}
+    expect(page.html).to include("Not your post")
+  end
+
+  scenario "A user can not edit a post if not his" do
+    login_percy_onepost
+    page.driver.submit :patch, "/posts/9", {}
+    expect(page.html).to include("Not your post")
+  end
+
 end
