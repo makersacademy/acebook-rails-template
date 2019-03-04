@@ -1,15 +1,35 @@
-<ul id="posts">
-<% @posts.each do |post| %>
-  <li>
-    <%= post.message %><br />
-    <%= post.updated_at.strftime('%I:%M%p - %e %b %Y ') %>
-    <%= form_tag("posts/#{post.id}/edit", method: "get") do %>
-      <%= submit_tag("Edit") %>
-      <% end %>
-
-  </li>
-<% end %>
-</ul>
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="application.css">
+  </head>
+  <body>
+    <%= link_to new_post_path, id: 'new_post' do %>
+      new post
+    <% end %>
+    <%= link_to '/', id: 'header' do %>
+      <h1>acebook</h1>
+    <% end %>
+    <div id="posts">
+    <ul id="posts">
+    <% @posts.each do |post| %>
+      <li class='posts' id='<%= post.id %>'>
+        <p class='posts'>
+          <%= post.message %>
+        </p>
+        <p class='time'>
+          <%= post.updated_at.strftime('%I:%M%p - %e %b %Y ') %>
+        </p>
+        <%= form_tag("posts/#{post.id}/edit", method: "get") do %>
+          <%= submit_tag("Edit") %>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
+    </div>
+    <%= link_to new_post_path do %>
+      New post
+    <% end %>
+  </body>
+</html>
