@@ -21,7 +21,7 @@ RSpec.feature "Delete a post", type: :feature do
     expect(page.html).to include("A medium length post of a single sentence of an average length. Number 7")
   end
 
-  scenario "Is can destroy a post with likes, destroying the likes" do
+  scenario "It can destroy a post with likes, destroying the likes" do
     visit '/'
     fill_in "user_email", with: "george.manyposts@gmail.com"
     fill_in "user_password", with: 'gm1234'
