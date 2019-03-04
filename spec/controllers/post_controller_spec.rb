@@ -29,7 +29,7 @@ RSpec.describe PostsController, type: :controller do
       setup
       post :create, params: { post: { message: 'Test message ahoo' } }
       post_id = Post.last.id
-      put :update, params: { id: post_id, updated_post: { message: 'This is updated' } }
+      put :update, params: { id: post_id, post: { message: 'This is updated' } }
       expect(Post.find(post_id).message).to eq('This is updated')
     end
   end

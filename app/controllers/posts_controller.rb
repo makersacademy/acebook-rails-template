@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update_attributes(message: update_params)
+    @post.update_attributes(message: post_params)
   end
 
   private
@@ -23,7 +23,8 @@ class PostsController < ApplicationController
     params.require(:post).require(:message)
   end
 
-  def update_params
-    params.require(:updated_post).require(:message)
-  end
+  # def update_params
+  #   params.require(:updated_post).require(:message)
+  # end
+
 end
