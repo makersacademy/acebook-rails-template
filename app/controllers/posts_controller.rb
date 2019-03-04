@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show, :index]
 
   def show
   end
@@ -17,6 +18,8 @@ class PostsController < ApplicationController
   end
 
   def update
+    # current_user.posts.find(params[:id]).update(message: params[:post][:message])
+
     @post.update(message: params[:post][:message])
     redirect_to posts_url
   end
@@ -28,10 +31,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
-      format.json { head :no_content }
+    begin
+      current_user.posts.find(params[:id]).destroy
+    # @post.destroy
+      respond_to do |format|
+        format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    rescue
+      redirect_to posts_url, notice: "Not your post"
     end
   end
 
