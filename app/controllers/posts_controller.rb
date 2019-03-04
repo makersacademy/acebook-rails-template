@@ -12,9 +12,24 @@ class PostsController < ApplicationController
     @posts = Post.all.order(updated_at: :desc)
   end
 
+  def update
+    @post = Post.find(params[:id])
+    @post.update_attributes(message: post_params)
+    redirect_to posts_url
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   private
 
   def post_params
     params.require(:post).require(:message)
   end
+
+  # def update_params
+  #   params.require(:updated_post).require(:message)
+  # end
+
 end

@@ -21,9 +21,15 @@
         <p class='time'>
           <%= post.updated_at.strftime('%I:%M%p - %e %b %Y ') %>
         </p>
+        <%= form_tag("posts/#{post.id}/edit", method: "get") do %>
+          <%= submit_tag("Edit") %>
+        <% end %>
       </li>
     <% end %>
     </ul>
     </div>
+    <%= link_to new_post_path do %>
+      New post
+    <% end %>
   </body>
 </html>
