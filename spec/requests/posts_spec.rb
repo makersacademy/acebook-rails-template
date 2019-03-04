@@ -7,4 +7,9 @@ RSpec.describe "Posts", type: :request do
       expect(response).to have_http_status(200)
     end
   end
+
+  it 'accepts HTTP requests to DELETE /posts/id' do
+    delete "/posts/1"
+    expect(response).to have_http_status(200)
+  end
 end
