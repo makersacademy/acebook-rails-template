@@ -62,3 +62,7 @@ Once you have linked Heroku and clicked deploy, set up the app database:
 heroku run rake db:migrate -a [name of heroku app]
 heroku run rake db:seed -a [name of heroku app]
 ```
+
+## Shared learning documentation
+
+https://github.com/david-mears/acebook-team-street-cred/wiki
