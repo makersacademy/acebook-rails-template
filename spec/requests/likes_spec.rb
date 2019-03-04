@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "Likes", type: :request do
-  describe "GET /likes" do
+  describe "POST /post/1/likes" do
     it "works! (now write some real specs)" do
-      get likes_path
-      expect(response).to have_http_status(200)
+      post post_likes_path(Post.first)
+      expect(response).to have_http_status(302)
     end
   end
 end

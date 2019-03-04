@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :set_like, only: [:show, :edit, :update, :destroy]
+  before_action :set_like, only: [:destroy]
   before_action :find_post
   # GET /likes
   # GET /likes.json
@@ -24,15 +24,13 @@ class LikesController < ApplicationController
   # POST /likes
   # POST /likes.json
   def create
-    like = @post.likes.create(user_id: current_user.id)
-
     respond_to do |format|
-      if like.save
+      if created_like.save
         format.html { redirect_to posts_path, notice: 'Like was successfully created.' }
-        format.json { render "posts/index", status: :created, location: like }
+        format.json { render "posts/index", status: :created, location: created_like }
       else
         format.html { render :new }
-        format.json { render json: like.errors, status: :unprocessable_entity }
+        format.json { render json: created_like.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -63,16 +61,20 @@ class LikesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_like
-      @like = Like.find(params[:id])
-    end
+  def set_like
+    @like = Like.find(params[:id])
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def like_params
-      params.fetch(:like, {})
-    end
+  def like_params
+    params.fetch(:like, {})
+  end
 
-    def find_post
-      @post = Post.find(params[:post_id])
-    end
+  def created_like
+    @created_like ||= @post.likes.create(user_id: current_user.id)
+  end
+
+  def find_post
+    @post = Post.find(params[:post_id])
+  end
 end

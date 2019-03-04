@@ -47,6 +47,10 @@ Metrics/BlockLength:
     - 'spec/**/*'
     - 'test/**/*'
 
+Metrics/AbcSize:
+  Exclude:
+    - app/controllers/likes_controller.rb
+
 AllCops:
   Exclude:
     - 'db/schema.rb'
