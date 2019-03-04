@@ -1,6 +1,6 @@
-<h1>Editing Post</h1>
+<%= form_for @post do |form| %>
+    <%= form.label :message %>
+    <%= form.text_field :message %>
 
-<%= render 'form', post: @post %>
-
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+    <%= form.submit "Submit" %>
+  <% end %>

@@ -14,13 +14,23 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe "POST #index" do
+  describe "POST #create" do
     it "creates a new post" do
       setup
       # calls the create *method* (not the route) in the controller
       post :create, params: { post: { message: 'Test message ahoo' } }
       expect(Post.last.message).to eq('Test message ahoo')
       expect(response).to have_http_status(302) # a redirect
+    end
+  end
+
+  describe "PUT #index" do
+    it "updates a new post" do
+      setup
+      post :create, params: { post: { message: 'Test message ahoo' } }
+      post_id = Post.last.id
+      put :update, params: { id: post_id, post: { message: 'This is updated' } }
+      expect(Post.find(post_id).message).to eq('This is updated')
     end
   end
 
