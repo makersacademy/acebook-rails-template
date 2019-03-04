@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def new
     @post = Post.new
@@ -14,21 +15,47 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
     @post.update_attributes(message: post_params)
     redirect_to posts_url
   end
 
   def edit
-    @post = Post.find(params[:id])
+  end
+
+  def destroy
+    if current_user.id == @post.user_id
+      @post.destroy
+      successful_delete
+    else
+      failed_delete
+    end
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).require(:message)
   end
 
+  def successful_delete
+    respond_to do |format|
+      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def failed_delete
+    respond_to do |format|
+      format.html { redirect_to posts_url,
+         notice: 'You do not have permission to delete this post.'
+      }
+      format.json { head :no_content }
+    end
+  end
   # def update_params
   #   params.require(:updated_post).require(:message)
   # end
