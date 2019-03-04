@@ -24,6 +24,8 @@
         <%= form_tag("posts/#{post.id}/edit", method: "get") do %>
           <%= submit_tag("Edit") %>
         <% end %>
+        <%= button_to 'Like', post_likes_path(post), method: :post %>
+
       </li>
     <% end %>
     </ul>
