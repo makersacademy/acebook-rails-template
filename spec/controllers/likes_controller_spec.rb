@@ -53,6 +53,14 @@ RSpec.describe LikesController, type: :controller do
         }.to change(Like, :count).by(1)
       end
 
+
+      it "creates only one Like" do
+        post :create, params: valid_attributes
+        expect {
+          post :create, params: valid_attributes
+        }.to change(Like, :count).by(0)
+      end
+
       it "redirects to the posts index" do
         post :create, params: valid_attributes
         expect(response).to redirect_to(posts_path)

@@ -24,12 +24,10 @@ class LikesController < ApplicationController
   # POST /likes
   # POST /likes.json
   def create
-    respond_to do |format|
-      if already_liked?
-        format.html { redirect_to posts_path, notice: "You can't like more than once" }
-      else
-        process_like
-      end
+    if already_liked?
+      redirect_to posts_path, notice: 'Already liked.'
+    else
+      process_like
     end
   end
 
@@ -46,7 +44,6 @@ class LikesController < ApplicationController
       end
     end
   end
-
   # DELETE /likes/1
   # DELETE /likes/1.json
   def destroy
