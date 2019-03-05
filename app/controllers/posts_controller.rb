@@ -17,6 +17,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   def index
     @posts = Post.all.order("updated_at DESC")
     @post = Post.new
