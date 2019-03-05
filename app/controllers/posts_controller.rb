@@ -19,6 +19,12 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def wall
+    no_such_wall unless User.where(id: params[:wall]).count == 1
+    @posts = Post.where(wall: params[:wall])
+    @wall_owner = User.find(params[:wall])
+  end
+
   def edit
   end
 
@@ -52,6 +58,15 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url,
          notice: 'You do not have permission to delete this post.'
+      }
+      format.json { head :no_content }
+    end
+  end
+
+  def no_such_wall
+    respond_to do |format|
+      format.html { redirect_to posts_url,
+         notice: 'That user does not exist :('
       }
       format.json { head :no_content }
     end

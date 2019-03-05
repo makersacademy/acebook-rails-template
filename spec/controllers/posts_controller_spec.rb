@@ -29,7 +29,7 @@ RSpec.describe PostsController, type: :controller do
   # Post. As you add validations to Post, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    { message: 'Hello, Ruby!', user_id: 1 }
+    { message: 'Hello, Ruby!', user_id: User.first.id }
   }
 
   let(:invalid_attributes) {
@@ -42,7 +42,7 @@ RSpec.describe PostsController, type: :controller do
   let(:valid_session) { {} }
 
   before(:each) do
-    sign_in User.find_by_id(1)
+    sign_in User.find_by_id(User.first.id)
   end
 
   describe "GET #index" do

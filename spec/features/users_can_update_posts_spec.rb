@@ -4,7 +4,7 @@ require 'web_helper'
 RSpec.feature "Update posts", type: :feature do
   scenario "User can update post" do
     log_in
-    click_link "New post"
+    click_link "new post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     expect(page).to have_content("Hello, world!")

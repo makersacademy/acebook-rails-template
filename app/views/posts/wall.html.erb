@@ -1,9 +1,5 @@
-<%= link_to new_post_path, id: 'new_post' do %>
-  new post
-<% end %>
-<%= link_to '/', id: 'header' do %>
-  <h1>acebook</h1>
-<% end %>
+<h1><%= @wall_owner.first_name %>'s wall</h1>
+
 <div id="posts">
 <ul id="posts">
 <% @posts.each do |post| %>

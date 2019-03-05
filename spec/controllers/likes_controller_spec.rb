@@ -42,7 +42,7 @@ RSpec.describe LikesController, type: :controller do
   }
 
   before(:each) do
-    sign_in User.find_by_id(1)
+    sign_in User.find_by_id(User.first.id)
   end
 
   describe "POST #create" do

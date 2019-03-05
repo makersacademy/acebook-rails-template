@@ -15,4 +15,12 @@ RSpec.describe "Posts", type: :request do
     delete "/posts/#{User.first.posts.first.id}"
     expect(response).to have_http_status(302)
   end
+
+  describe 'GET /:wall' do
+    it "responds with 200" do
+      sign_in User.find_by_id(User.first.id)
+      get '1'
+      expect(response).to have_http_status(200)
+    end
+  end
 end
