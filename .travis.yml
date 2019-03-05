@@ -11,7 +11,6 @@ addons:
 script:
   - mkdir -p spec && bundle exec rspec spec
   - bin/rake db:migrate RAILS_ENV=test
-  - bin/rake db:seed
 
 before_install:
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux32.tar.gz
