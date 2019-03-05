@@ -1,15 +1,18 @@
 require 'rails_helper'
+require_relative 'add_a_post_helper'
 
 RSpec.feature 'edit post', type: :feature do
   scenario 'user can edit his posts' do
-    visit "/users/sign_up"
-    fill_in "user[user_name]", :with => 'testUser'
-    fill_in "user[email]", :with => 'test@test.com'
-    fill_in "user[password]", :with => '123456'
-    fill_in "user[password_confirmation]", :with => '123456'
-    click_button "Sign up"
-    fill_in "exampleTextarea", :with => 'test message'
-    click_button "Add post"
+    add_a_post
     expect(page).to have_link('Edit')
   end
+
+  scenario 'user can see the edited post' do
+    add_a_post
+    click_link "Edit"
+    fill_in "post[message]", :with => 'editted message'
+    click_button "Submit"
+    expect(page).to have_content 'editted message'
+  end
+
 end
