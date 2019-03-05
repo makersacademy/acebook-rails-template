@@ -24,4 +24,4 @@ deploy:
   on:
     branches:
       only:
-        - development
+        - master
