@@ -18,3 +18,10 @@ def login_sarah_fewposts
   fill_in :user_password, with: 'sf1234'
   click_button 'Log in'
 end
+
+def login_clare_noposts
+  visit("/users/sign_in")
+  fill_in :user_email, with: 'Clare.Noposts@gmail.com'
+  fill_in :user_password, with: 'cn1234'
+  click_button 'Log in'
+end
