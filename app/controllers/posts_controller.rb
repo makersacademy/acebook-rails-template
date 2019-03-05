@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(message: post_params, user_id: current_user.id)
+    @post = Post.create(message: post_params, user_id: current_user.id, wall: params[:wall])
     redirect_to posts_path
   end
 

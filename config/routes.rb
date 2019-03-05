@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :posts do
     resources :likes
   end
+  get ':wall/posts/new', action: :new, controller: 'posts'
   get ':wall', action: :wall, controller: 'posts'
 end
