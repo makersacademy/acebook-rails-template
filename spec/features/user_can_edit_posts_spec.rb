@@ -15,4 +15,16 @@ RSpec.feature 'edit post', type: :feature do
     expect(page).to have_content 'editted message'
   end
 
+  scenario 'only post owner can edit a post' do
+    add_a_post
+    click_link 'Sign Out'
+    visit "/users/sign_up"
+    fill_in "user[user_name]", :with => 'testUser2'
+    fill_in "user[email]", :with => 'test2@test.com'
+    fill_in "user[password]", :with => '1234567'
+    fill_in "user[password_confirmation]", :with => '1234567'
+    click_button "Sign up"
+    expect(page).not_to have_link('Edit')
+  end
+
 end
