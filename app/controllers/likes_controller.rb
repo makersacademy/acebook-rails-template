@@ -25,12 +25,10 @@ class LikesController < ApplicationController
   # POST /likes.json
   def create
     respond_to do |format|
-      if created_like.save
-        format.html { redirect_to posts_path, notice: 'Like was successfully created.' }
-        format.json { render "posts/index", status: :created, location: created_like }
+      if already_liked?
+        format.html { redirect_to posts_path, notice: "You can't like more than once" }
       else
-        format.html { render :new }
-        format.json { render json: created_like.errors, status: :unprocessable_entity }
+        process_like
       end
     end
   end
@@ -70,11 +68,33 @@ class LikesController < ApplicationController
     params.fetch(:like, {})
   end
 
-  def created_like
-    @created_like ||= @post.likes.create(user_id: current_user.id)
-  end
-
   def find_post
     @post = Post.find(params[:post_id])
+  end
+
+  def already_liked?
+    Like.where(user_id: current_user.id, post_id:
+        params[:post_id]).exists?
+  end
+
+  def fail_message(format)
+    format.html { render :new, notice: 'Unable to create like.' }
+    format.json { render json: created_like.errors, status: :unprocessable_entity }
+  end
+
+  def success_message(like, format)
+    format.html { redirect_to posts_path, notice: 'Like was successfully created.' }
+    format.json { render "posts/index", status: :created, location: like }
+  end
+
+  def process_like
+    respond_to do |format|
+      like = @post.likes.create(user_id: current_user.id)
+      if like.save
+        success_message(like, format)
+      else
+        fail_message(format)
+      end
+    end
   end
 end
