@@ -57,5 +57,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# To enable signing in and out for tests
+# To enable signing in and out for tests.
 gem 'rails-controller-testing'
