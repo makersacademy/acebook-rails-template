@@ -53,7 +53,6 @@ RSpec.describe LikesController, type: :controller do
         }.to change(Like, :count).by(1)
       end
 
-
       it "creates only one Like" do
         post :create, params: valid_attributes
         expect {

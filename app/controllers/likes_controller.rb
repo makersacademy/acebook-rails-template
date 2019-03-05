@@ -44,6 +44,7 @@ class LikesController < ApplicationController
       end
     end
   end
+
   # DELETE /likes/1
   # DELETE /likes/1.json
   def destroy
