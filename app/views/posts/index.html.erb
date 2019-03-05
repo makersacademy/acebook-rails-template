@@ -18,10 +18,14 @@
       <%= submit_tag("Edit") %>
       <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
+    <%= button_to 'Like', post_likes_path(post), method: :post %>
+    <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'like' : 'likes' %></p>
   </li>
-<% end %>
-</ul>
-</div>
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+    <% end %>
+    </ul>
+    </div>
+    <%= link_to new_post_path do %>
+      New post
+    <% end %>
+  </body>
+</html>

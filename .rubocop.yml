@@ -44,14 +44,14 @@ Metrics/LineLength:
 
 Metrics/BlockLength:
   Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
+    - "spec/**/*"
+    - "test/**/*"
 
 AllCops:
   Exclude:
-    - 'db/schema.rb'
-    - 'db/migrate/*'
-    - 'config/initializers/devise.rb'
+    - "db/schema.rb"
+    - "db/migrate/*"
+    - "config/initializers/devise.rb"
 
 # Code Style
 # ==========
