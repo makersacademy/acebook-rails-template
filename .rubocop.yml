@@ -44,18 +44,14 @@ Metrics/LineLength:
 
 Metrics/BlockLength:
   Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-
-Metrics/AbcSize:
-  Exclude:
-    - app/controllers/likes_controller.rb
+    - "spec/**/*"
+    - "test/**/*"
 
 AllCops:
   Exclude:
-    - 'db/schema.rb'
-    - 'db/migrate/*'
-    - 'config/initializers/devise.rb'
+    - "db/schema.rb"
+    - "db/migrate/*"
+    - "config/initializers/devise.rb"
 
 # Code Style
 # ==========
