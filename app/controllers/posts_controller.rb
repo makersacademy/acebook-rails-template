@@ -21,7 +21,7 @@ class PostsController < ApplicationController
         album = Album.create(title: current_user.first_name, user_id: current_user.id)
         # + add album.id to photo
       end
-      Photo.create!(post_id: this_post.id, image: params[:post][:image], album_id: user_album.id)
+      Photo.create!(post_id: this_post.id, image: params[:post][:image], album_id: Album.users_first_album(current_user).id)
     end
     redirect_to posts_url
   end
@@ -52,14 +52,6 @@ class PostsController < ApplicationController
   private
     def set_post
       @post = Post.find(params[:id])
-    end
-
-    # def album_exists?
-    #   Album.find_by(user_id: current_user.id) != nil
-    # end
-
-    def user_album
-      Album.find(user_id == current_user.id)
     end
 
     def create_album
