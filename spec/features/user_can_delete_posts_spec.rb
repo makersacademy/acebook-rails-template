@@ -6,12 +6,9 @@ feature 'Users can delete posts', type: :feature do
     expect(page).to have_content 'Post was successfully destroyed.'
   end
 
-  xscenario 'Users can only delete their own posts' do
+  scenario 'Users can only delete their own posts' do
     sign_up
-    expect(page).to have_content('Posts')
-    expect(page).to have_css("img[src*='test1.jpg']")
-    expect(page).to have_css("img[src*='test2.jpg']")
-    expect(page).to have_css("img[src*='test3.jpg']")
+    expect(page).to have_content('acebook')
     expect { click_link('Destroy', match: :first) }.to_not change(Post, :count)
     expect(page).to have_content('You do not have permission to delete this post.')
   end
