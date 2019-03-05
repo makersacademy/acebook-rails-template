@@ -27,4 +27,11 @@ RSpec.feature 'edit post', type: :feature do
     expect(page).not_to have_link('Edit')
   end
 
+  scenario 'only post owner can edit a post' do
+    add_a_post
+    sleep (5)
+    visit('/posts')
+    expect(page).not_to have_link('Edit')
+  end
+
 end

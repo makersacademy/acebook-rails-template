@@ -14,9 +14,6 @@
           <p class="card-text" style="text-align: left">
             <%= p %>
           </p>
-          <p class="card-text">
-            <%= post.message %>
-          </p>
         <% end %>
         <% if current_user.id == post.user_id  %>
           <%= link_to 'Edit', edit_post_path(post) %>
