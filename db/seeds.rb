@@ -12,9 +12,9 @@ User.create([{ first_name: 'Bob', last_name: 'Jonson',
                pronoun: 'she', email: 'jane@jane.com',
                password: 'jjjjjjj',
                profile_pic: 'www.jane.com/pic.jpg' }])
-Post.create([{ user_id: 1, message: 'Hello World', updated_at: '2019-02-26 14:51:33.76532' },
-             { user_id: 1, message: 'Huzzah!', updated_at: '2019-02-28 14:51:33.76532' },
-             { user_id: 1, message: 'Huzzay!', updated_at: '2019-02-27 14:51:33.76532' }])
+Post.create([{ user_id: 1, message: 'Hello World', updated_at: '2019-02-26 14:51:33.76532', wall: 1 },
+             { user_id: 1, message: 'Huzzah!', updated_at: '2019-02-28 14:51:33.76532', wall: 2 },
+             { user_id: 2, message: 'Huzzay!', updated_at: '2019-02-27 14:51:33.76532', wall: 1 }])
 
 # Character.create(name: 'Luke', movie: movies.first)
 #
