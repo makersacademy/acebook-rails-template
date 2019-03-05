@@ -9,28 +9,31 @@
     </tr>
   </thead>
 
-<% @posts_with_users.each do |post| %>
+  <% @posts_with_users.each do |post| %>
   <p id="post-id-<%= post.id %>"><%= simple_format(post.message) %></p>
-
+    <% unless post.get_photo(post.id).nil? %>
+      <%= image_tag(post.get_photo(post.id).image.url, style:'width:50%') %>
+    <% end %>
+  
   <p><%= post.first_name + ' ' + post.last_name %></p>
   <p> <%= post.created_at.strftime("%e %b %Y %H:%M") %></p>
 
   <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
   <% if pre_like %>
-    <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
-  <% else %>
-    <%= button_to 'Like', post_likes_path(post), method: :post %>
+      <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+    <% else %>
+      <%= button_to 'Like', post_likes_path(post), method: :post %>
   <% end %>
 
   <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
   <tbody>
-      <tr>
-        <% if current_user.id == post.user_id %>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete%></td>
-        <% end %>
-      </tr>
+    <tr>
+      <% if current_user.id == post.user_id %>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, method: :delete%></td>
+      <% end %>
+    </tr>
   </tbody>
 </table>
 <% end %>

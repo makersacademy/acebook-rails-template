@@ -13,7 +13,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create!(user_id: current_user.id, message: params[:post][:message])
+    this_post = Post.create!(user_id: current_user.id, message: params[:post][:message])
+    Photo.create!(post_id: this_post.id, image: params[:post][:image]) unless params[:post][:image].nil? 
     redirect_to posts_url
   end
 
@@ -26,8 +27,8 @@ class PostsController < ApplicationController
 
   def index
     @posts_with_users = Post.left_outer_joins(:user)
-                        .select('posts.*', 'users.first_name', 'users.last_name')
-                        .order("created_at DESC")
+                        .select('posts.*', 'users.first_name', 'users.last_name', )
+                        .order("posts.created_at DESC")
   end
 
   def destroy
