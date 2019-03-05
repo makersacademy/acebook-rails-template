@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'web_helper'
 
 RSpec.feature "Like a post", type: :feature do
-  scenario "user cannot like a post twise" do
+  scenario "user cannot like a post twice" do
     sign_up
     page.find('#posts li:first-child').click_button('Like')
     expect {
