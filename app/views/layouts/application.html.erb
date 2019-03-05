@@ -9,11 +9,21 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+  <a class="navbar-brand" style="color: white;">@ceBook
+    <% if current_user %> -
+      <%=current_user[:user_name]%> |
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, style:"color:white;"%>
+    <% end %>
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if current_user %>
-      <p><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
-    <% end %>
     <%= yield %>
   </body>
 </html>

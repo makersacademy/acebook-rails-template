@@ -21,6 +21,9 @@
 /yarn-error.log
 
 .byebug_history
+.DS_Store
+app/.DS_Store
+app/views/.DS_Store
 
 /coverage.data
 /coverage/

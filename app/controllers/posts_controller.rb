@@ -1,23 +1,30 @@
 class PostsController < ApplicationController
 
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def new
     @post = Post.new
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    @post = current_user.posts.build(post_params)
+    @post.user_id = current_user.id
+    if @post.save
+      redirect_to :action => 'index'
+    else
+      flash.now[:notice] = "Error saving your new note, please try again!"
+      redirect_to posts_url
+    end
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order("updated_at DESC")
+    @post = Post.new
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
 end
