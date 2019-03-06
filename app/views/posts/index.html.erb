@@ -16,7 +16,7 @@
           </p>
         <% end %>
         <% if current_user.id == post.user_id  %>
-          <% if Time.now < (post.created_at + 3) %>
+          <% if Time.now < (post.created_at + 600) %>
             <%= link_to 'Edit', edit_post_path(post) %>
           <% end %>
         <% end %>

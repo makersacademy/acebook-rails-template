@@ -53,5 +53,25 @@ RSpec.describe PostsController, type: :controller do
 
       sign_out user
     end
+
+    # it "checks if editable by different user than owner" do
+    #   user = User.create(user_name: 'testUser', email: 'test@test.com', password: "password", password_confirmation: "password")
+    #   sign_in user
+    #   post :create, params: { post: { message: "Hello, world!" } }
+    #   p "User 1"
+    #   p user[:id]
+    #   sign_out user
+    #
+    #   user2 = User.create(user_name: 'testUser2', email: 'test2@test.com', password: "password", password_confirmation: "password")
+    #   sign_in user2
+    #   p "User 2"
+    #   p user2[:id]
+    #
+    #   post = Post.last
+    #
+    #   expect(post.can_edit(post.id)).to eq true
+    #
+    #   sign_out user2
+    # end
   end
 end
