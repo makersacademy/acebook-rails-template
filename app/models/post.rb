@@ -6,5 +6,4 @@ class Post < ApplicationRecord
   def get_photo(post_id)
     Photo.find_by(post_id: post_id)
   end
-
 end
