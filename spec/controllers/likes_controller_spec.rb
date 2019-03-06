@@ -89,4 +89,13 @@ RSpec.describe LikesController, type: :controller do
     end
   end
 
+  describe "Custom destroy link should work" do
+    it "deletes a like" do
+      post :create, params: valid_attributes
+      expect {
+        post :destroy_like_on_post, params: valid_attributes
+      }.to change(Like, :count).by(-1)
+    end
+  end
+
 end
