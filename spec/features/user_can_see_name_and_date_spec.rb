@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'login_helper'
+require 'login_signup_helper'
 
 RSpec.feature "User details display", type: :feature do
     scenario "Can see user name and date information alongside each post" do

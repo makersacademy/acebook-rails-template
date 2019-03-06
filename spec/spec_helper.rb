@@ -37,6 +37,7 @@ SimpleCov.start do
   add_filter "spec/views/posts/index.html.erb_spec.rb"
   add_filter "spec/login_helper.rb"
   add_filter "spec/features/posting_image_spec.rb"
+  add_filter "spec/login_signup_helper.rb"
 end
 
 RSpec.configure do |config|

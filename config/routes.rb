@@ -8,5 +8,8 @@ Rails.application.routes.draw do
     resources :likes
   end
 
+  resources :users, only: [:index, :show]
+
   root to: 'posts#index'
+
 end
