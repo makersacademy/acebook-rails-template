@@ -9,7 +9,6 @@ RSpec.feature 'sign-up page', type: :feature do
     expect(page).to have_field("user[email]")
     expect(page).to have_content("Password")
     expect(page).to have_field("user[password]")
-    expect(page).to have_content("Password confirmation")
     expect(page).to have_field("user[password_confirmation]")
     expect(page).to have_button("Sign up")
     expect(page).to have_selector(:css, 'a[href="/users/sign_in"]')
