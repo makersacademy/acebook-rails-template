@@ -1,6 +1,7 @@
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
+  <%= form.hidden_field :wall, :value => params[:wall] %>
 
   <%= form.submit "Submit" %>
 <% end %>

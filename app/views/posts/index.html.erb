@@ -1,4 +1,4 @@
-<%= link_to new_post_path, id: 'new_post' do %>
+<%= link_to "#{current_user.id}/posts/new", id: 'new_post' do %>
   new post
 <% end %>
 <%= link_to '/', id: 'header' do %>
