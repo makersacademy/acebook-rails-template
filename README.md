@@ -1,7 +1,7 @@
 Deployed app on Heroku [here](https://street-cred-acebook.herokuapp.com/)
 
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/david-mears/acebook-team-street-cred.svg?columns=all)](https://waffle.io/david-mears/acebook-team-street-cred)
-(Click through for card wall)
+Click through to waffle and see the done or the deployed column to see which features are implemented:
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/team-street-cred/acebook-team-street-cred.svg?columns=all)](https://waffle.io/team-street-cred/acebook-team-street-cred)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/fcd1062011a5037d214d/maintainability)](https://codeclimate.com/github/david-mears/acebook-team-street-cred/maintainability)
 

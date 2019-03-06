@@ -47,6 +47,14 @@ class LikesController < ApplicationController
 
   # DELETE /likes/1
   # DELETE /likes/1.json
+
+  def destroy_like_on_post
+    like = Like.where('user_id = ? AND post_id = ?', current_user.id, @post.id).first
+    Like.destroy(like.id)
+    redirect_to posts_path
+
+  end
+
   def destroy
     @like.destroy
     respond_to do |format|

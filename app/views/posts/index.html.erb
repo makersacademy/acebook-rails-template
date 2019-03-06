@@ -20,6 +20,10 @@
     <% end %>
     <%= button_to 'Like', post_likes_path(post), method: :post %>
     <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'like' : 'likes' %></p>
+
+    <%=form_tag("posts/#{post.id}/likes/destroy_like_on_post", method: "post") do %>
+      <%=submit_tag("Unlike") %>
+    <% end %>
   </li>
     <% end %>
     </ul>
