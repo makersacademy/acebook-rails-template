@@ -1,8 +1,27 @@
-<h1>Welcome to Desk Warriors Acebook</h1>
+<style>
+#jumbo{
+  opacity: 0.8;
+  border-top-right-radius: 100px;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 0px;
 
-<% if !current_user %>
-  <h2><%= link_to "Sign Up", new_user_registration_path %></h2>
-  <h2><%= link_to "Sign In", new_user_session_path %></h2>
-<% else %>
-  <%= link_to "Go to posts", posts_path %>
-<% end %>
+}
+</style>
+<div class="container">
+  <div id="jumbo" class="jumbotron col-md-8 mx-auto">
+    <h1 class="display-3">Welcome warrior!</h1>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <hr class="my-4">
+    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <br>
+    <div class="lead">
+      <% if !current_user %>
+        <h2><%= link_to "Sign Up", new_user_registration_path, class:"btn btn-outline-primary btn-lg"%>
+        <%= link_to "Sign In", new_user_session_path, class:"btn btn-outline-primary btn-lg"%></h2>
+      <% else %>
+        <%= link_to "Go to posts", posts_path, class:"btn btn-primary btn-lg" %>
+      <% end %>
+    </div>
+  </div>
+</div>
