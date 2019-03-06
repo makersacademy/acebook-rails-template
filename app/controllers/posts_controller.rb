@@ -18,6 +18,10 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if !@post.can_edit(@post.id, current_user.id)
+      flash[:alert] = "Sorry, you can't edit this post!"
+      redirect_to :action => 'index'
+    end
   end
 
   def update
