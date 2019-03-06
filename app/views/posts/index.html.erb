@@ -21,7 +21,7 @@
   <% @posts.each do |post| %>
   <div style="padding: 15px;" class="col-md-6 mx-auto card">
     <div id="opacity2" class="card mb-3">
-      <h3 class="card-header">Posted by: <%= current_user[:user_name] %> - on <%= post.updated_at.strftime("%b %d. %Y - %H:%M:%S") %></h3>
+      <h3 class="card-header">Posted by: <%= post.user.user_name %> - on <%= post.updated_at.strftime("%b %d. %Y - %H:%M:%S") %></h3>
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
         <h6 class="card-subtitle text-muted">Support card subtitle</h6>
