@@ -27,4 +27,13 @@ RSpec.feature 'edit post', type: :feature do
     expect(page).not_to have_link('Edit')
   end
 
+  # To run this test please ammend the duration in posts/index.html.erb
+  # from 600 seconds to 3 seconds only, then change it back to 600 after testing.
+  # scenario 'only post owner can edit a post' do
+  #   add_a_post
+  #   sleep (5)
+  #   visit('/posts')
+  #   expect(page).not_to have_link('Edit')
+  # end
+
 end
