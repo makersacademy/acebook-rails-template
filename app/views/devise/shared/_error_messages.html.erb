@@ -1,15 +1,19 @@
+<style>
+  #error{
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+</style>
+
 <% if resource.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= I18n.t("errors.messages.not_saved",
-                 count: resource.errors.count,
-                 resource: resource.class.model_name.human.downcase)
-       %>
-    </h2>
+<div id="error" class="alert alert-dismissible alert-danger">
+  <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+  <div style="padding: 5px;" id="error_explanation">
     <ul>
       <% resource.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
   </div>
+</div>
 <% end %>

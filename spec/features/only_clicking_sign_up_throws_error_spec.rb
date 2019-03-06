@@ -7,6 +7,6 @@ RSpec.feature "Sign up", type: :feature do
     fill_in "user[password]", with: ""
     fill_in "user[password_confirmation]", with: ""
     click_button ("Sign up")
-    expect(page).to have_content("3 errors prohibited this user from being saved:")
+    expect(page).to have_content("Oh snap! Change a few things up and try submitting again.")
   end
 end
