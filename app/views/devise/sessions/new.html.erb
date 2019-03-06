@@ -1,5 +1,16 @@
-<div class="container col-md-4 mx-auto card">
-  <h2 style="padding: 5px;">Sign In</h2>
+<style>
+  #sign_in_form{
+    opacity: 0.9;
+    border-radius: 100px 100px 100px 100px;
+  }
+  #forgot_password{
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+  }
+</style>
+
+<div id="sign_in_form" class="container col-md-4 mx-auto card">
+  <h2 style="padding: 5px; text-align: center;">Sign In</h2>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group">
     <div class="field">
