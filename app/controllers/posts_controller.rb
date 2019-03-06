@@ -34,7 +34,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order("updated_at DESC")
+    @posts = Post.all.where(wall_user_id: current_user.id).order("updated_at DESC")
     @post = Post.new
   end
 
