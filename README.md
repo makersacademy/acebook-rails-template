@@ -36,15 +36,15 @@ Application deployed to [Heroku](https://acebook-team-desk-warriors.herokuapp.co
        ~~~   ~~~   ~~~   ~~~
 
 ```
+# Here at Team Desk Warriors, we are dedicated to bringing you the finest 3rd party clones of highly copyright protected social media applications
 
-REQUIRED INSTRUCTIONS:
+With our latest offering @ceBook, we bring you the final word in user post interation with basic CRUD funtionality.
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+(Now with WIP features such as personal walls, chat interfaces and product owner criteria integration.)
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: https://waffle.io/aidengleave/acebook-desk-warriors/
+Our card wall is here: https://waffle.io/aidengleave/acebook-desk-warriors/
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
