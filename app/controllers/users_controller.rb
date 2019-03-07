@@ -6,8 +6,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @post = Post.where(user_id: params[:id])
+    @posts = Post.where(user_id: params[:id])
                 .order("posts.created_at DESC")
+    @albums = Album.where(user_id: params[:id])
+    @photos = Photo.where(user_id: params[:id])
   end
 
   private
