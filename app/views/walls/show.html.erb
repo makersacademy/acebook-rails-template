@@ -40,8 +40,9 @@
         <% if post.can_edit(post.id, current_user.id)  %>
           <%= link_to 'Edit', edit_post_path(post), class:"btn btn-outline-primary", style:"float: right;" %>
         <% end %>
-        <%= link_to 'Delete', delete_post_path(post), method: :delete %>
-
+        <% if current_user.id == post.user_id || current_user.id.to_s == session[:wall_user_id]%>
+          <%= link_to 'Delete', delete_post_path(post), method: :delete %>
+        <% end %>
       </div>
     </div>
   </div>
