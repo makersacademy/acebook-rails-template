@@ -1,15 +1,19 @@
 require 'rails_helper'
-require 'login_signup_helper'
 
 RSpec.feature "Profile picture", type: :feature do
-  scenario 'user can upload profile picture on sign up' do
-    sign_up_wendy_withpicture
-    click_on("Edit profile")
-    expect(page).to have_content("Edit User")
-    page.attach_file("post_image", 'spec/fixtures/imagename.jpg')
-    click_on("Update")
-    click_on("wendy.withpicture@gmail.com")
-    expect(page.html).to include("imagename.jpg")
+  scenario 'user can have the default profile picture' do
+    sign_up_nellie_nopicture
+    click_on("nellie.nopicture@gmail.com")
+    expect(page.html).to include("defaultprofile")
   end
 
+  scenario 'user can replace the default profile picture' do
+    login_george_manyposts
+    click_link("New post")
+    fill_in "post_message", with: "This post has a picture attached!"
+    page.attach_file("post_image", 'spec/fixtures/imagename.jpg')
+    click_on "Submit"
+    click_link('george.manyposts@gmail.com')
+    expect(page.html).to include("imagename")
+  end
 end

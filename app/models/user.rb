@@ -8,4 +8,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  def get_photo(user_id)
+    @photo = Photo.find_by(user_id: user_id)
+    if @photo.nil?
+      'defaultprofile.jpg'
+    else
+      @photo.image.url
+    end
+  end
+
 end

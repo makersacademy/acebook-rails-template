@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @post = Post.where(user_id: params[:id])
                 .order("posts.created_at DESC")
-    @photo = Photo.find_by(user_id: params[:user_id])
   end
 
   private
