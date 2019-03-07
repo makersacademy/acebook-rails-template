@@ -33,7 +33,7 @@ RSpec.describe PostsController, type: :controller do
   }
 
   let(:invalid_attributes) {
-    {id: 555, post: { message: "I am invalid"}}
+    { id: 555, post: { message: "I am invalid" } }
   }
 
   let(:invalid_update) {
@@ -112,7 +112,7 @@ RSpec.describe PostsController, type: :controller do
         post = Post.create! valid_attributes
         put :update, params: { id: post.to_param, post: new_attributes }
         post.reload
-        skip("Add assertions for updated state")
+        expect(post.message).to eq("Hello, Colin!")
       end
 
       it "redirects to the post index" do
@@ -127,7 +127,7 @@ RSpec.describe PostsController, type: :controller do
         # post = Post.create! valid_attributes
         # put :update, params: { id: post.to_param, post: invalid_attributes }
 
-        expect {invalid_update}.to raise_error(ActiveRecord::RecordNotFound)
+        expect { invalid_update }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end

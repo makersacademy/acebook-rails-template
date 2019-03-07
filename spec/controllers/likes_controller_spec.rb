@@ -54,7 +54,7 @@ RSpec.describe LikesController, type: :controller do
     context "with valid params" do
       it "creates a new Like" do
         expect {
-          post :create, params: { user_id: 1, post_id: 2}
+          post :create, params: { user_id: 1, post_id: 2 }
         }.to change(Like, :count).by(1)
       end
 
@@ -73,8 +73,38 @@ RSpec.describe LikesController, type: :controller do
 
     context "with invalid params" do
       it "returns a RecordNotFound exception" do
-        expect {invalid_create}.to raise_error(ActiveRecord::RecordNotFound)
+        expect { invalid_create }.to raise_error(ActiveRecord::RecordNotFound)
       end
+    end
+  end
+
+  describe "PUT #update" do
+    context "with valid params" do
+      let(:new_attributes) {
+        { post_id: 2 }
+      }
+
+      # it "updates the requested post" do
+      #   like = Like.create! valid_attributes
+      #   put :update, params: { id: 1, post: new_attributes }
+      #   like.reload
+      #   expect(like.post_id).to eq(2)
+      # end
+
+    #   it "redirects to the post index" do
+    #     post = Post.create! valid_attributes
+    #     put :update, params: { id: post.to_param, post: valid_attributes }
+    #     expect(response).to redirect_to(posts_url)
+    #   end
+    # end
+    #
+    # context "with invalid params" do
+    #   it "raise a RecordNotFound exception)" do
+    #     # post = Post.create! valid_attributes
+    #     # put :update, params: { id: post.to_param, post: invalid_attributes }
+    #
+    #     expect {invalid_update}.to raise_error(ActiveRecord::RecordNotFound)
+    #   end
     end
   end
 
@@ -88,7 +118,7 @@ RSpec.describe LikesController, type: :controller do
 
     it "redirects to the posts list" do
       like = Like.create! valid_attributes
-      delete :destroy, params: { id: like.to_param, user_id: like.user_id, post_id: 1  }
+      delete :destroy, params: { id: like.to_param, user_id: like.user_id, post_id: 1 }
       expect(response).to redirect_to(posts_url)
     end
   end

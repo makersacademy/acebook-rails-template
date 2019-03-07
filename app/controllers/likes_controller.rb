@@ -29,17 +29,17 @@ class LikesController < ApplicationController
 
   # PATCH/PUT /likes/1
   # PATCH/PUT /likes/1.json
-  def update
-    respond_to do |format|
-      if @like.update(like_params)
-        format.html { redirect_to @like, notice: 'Like was successfully updated.' }
-        format.json { render :show, status: :ok, location: @like }
-      else
-        format.html { render :edit }
-        format.json { render json: @like.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @like.update(like_params)
+  #       format.html { redirect_to @like, notice: 'Like was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @like }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @like.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /likes/1
   # DELETE /likes/1.json
@@ -79,12 +79,6 @@ class LikesController < ApplicationController
         params[:post_id]).exists?
   end
 
-  def fail_message(format)
-    p 'I am a fail message'
-    format.html { redirect_to posts_path, notice: 'Unable to create like.' }
-    format.json { render json: created_like.errors, status: :unprocessable_entity }
-  end
-
   def success_message(like, format)
     format.html { redirect_to posts_path, notice: 'Like was successfully created.' }
     format.json { render "posts/index", status: :created, location: like }
@@ -95,8 +89,6 @@ class LikesController < ApplicationController
       like = @post.likes.create(user_id: current_user.id)
       if like.save
         success_message(like, format)
-      else
-        fail_message(format)
       end
     end
   end
