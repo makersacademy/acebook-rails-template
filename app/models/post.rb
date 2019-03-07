@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  belongs_to :wall
 
   def can_edit(post_id, current_user_id)
     @post = Post.find(post_id)
