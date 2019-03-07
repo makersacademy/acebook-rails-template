@@ -9,15 +9,20 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     @post.user_id = current_user.id
+    @post.wall_user_id = session[:wall_user_id]
     if @post.save
-      redirect_to :action => 'index'
+      redirect_to wall_path(session[:wall_user_id])
     else
       flash.now[:notice] = "Error saving your new note, please try again!"
-      redirect_to posts_url
+      redirect_to wall_path(session[:wall_user_id])
     end
   end
 
   def edit
+    if !@post.can_edit(@post.id, current_user.id)
+      flash[:alert] = "Sorry, you can't edit this post!"
+      redirect_to :action => 'index'
+    end
   end
 
   def update
@@ -30,7 +35,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order("updated_at DESC")
+    @posts = Post.all.where(wall_user_id: current_user.id).order("updated_at DESC")
     @post = Post.new
   end
 
@@ -41,6 +46,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:message, :user_id)
+    params.require(:post).permit(:message, :user_id, :wall_user_id)
   end
 end

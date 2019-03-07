@@ -37,9 +37,10 @@ RSpec.describe PostsController, type: :controller do
     it "responds with 200" do
       user = User.create(user_name: 'testUser', email: 'test@test.com', password: "password", password_confirmation: "password")
       sign_in user
+      session[:wall_user_id] = user.id
 
       post :create, params: { post: { message: "Hello, world!" } }
-      expect(response).to redirect_to(posts_url)
+      expect(response).to redirect_to(wall_path(session[:wall_user_id]))
 
       sign_out user
     end
@@ -47,6 +48,7 @@ RSpec.describe PostsController, type: :controller do
     it "creates a post" do
       user = User.create(user_name: 'testUser', email: 'test@test.com', password: "password", password_confirmation: "password")
       sign_in user
+      session[:wall_user_id] = user.id
 
       post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be
