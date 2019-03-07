@@ -13,7 +13,7 @@ RSpec.feature "Profile picture", type: :feature do
     fill_in "post_message", with: "This post has a picture attached!"
     page.attach_file("post_image", 'spec/fixtures/imagename.jpg')
     click_on "Submit"
-    click_link('George Manyposts')
+    click_link('George Manyposts', match: :first)
     expect(page.html).to include("imagename")
   end
 end
