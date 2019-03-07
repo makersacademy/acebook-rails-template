@@ -2,7 +2,7 @@
 
 ## AceBook
 
-Acebook is a clone of Facebook functionality developed as a group project in weeks 8 and 9 at Makers Academy by members of the January 2019 cohort.
+Acebook is a clone of Facebook functionality developed as a group project in weeks 8 and 9 at Makers Academy by four members of the January 2019 cohort.
 
 ## Technologies
 
