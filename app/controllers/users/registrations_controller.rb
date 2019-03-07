@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_permitted_parameters, if: :devise_controller?
-
+  # before_action :configure_permitted_parameters, if: :devise_controller?
 
   # GET /resource/sign_up
   def new
@@ -17,6 +16,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/edit
   def edit
     super
+  end
+
   end
 
   # PUT /resource
@@ -59,4 +60,3 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_inactive_sign_up_path_for(resource)
     super(resource)
   end
-end

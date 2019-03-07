@@ -1,5 +1,12 @@
-<h1><%= @user.first_name + " " + @user.last_name %>'s profile</h1>
-
+<table>
+  <tr>
+    <td>
+      <p><%= image_tag(@user.get_photo(@user.id), style:'width:100px') %></p>
+    </td>
+    <td>
+      <h1><%= @user.first_name + " " + @user.last_name %>'s profile</h1>
+    </td>
+</table>
 
 <h3><%= @user.first_name %>'s Albums</h3>
 
@@ -7,7 +14,7 @@
 
   <%= link_to(album) do %>
     <h4><%= album.title %></h4>
-      <%= image_tag(@photos.first.image.url, width:'160px') %>
+    <%= image_tag(@photos.first.image.url, width:'160px') %>
   <% end %>
 <% end %>
 
@@ -17,7 +24,7 @@
 <% end %>
 
 
-<h3><%= @user.first_name %>'s posts</h3>
+<h3><%= @user.first_name %>'s Posts</h3>
 
 <% @posts.each do |post| %>
   <% if post.user_id == @user.id %>
