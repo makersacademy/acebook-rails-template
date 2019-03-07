@@ -31,14 +31,19 @@ RSpec.describe LikesController, type: :controller do
   let(:user) { User.first }
 
   let(:valid_attributes) {
-    { post_id: user.posts.first.id
+    { post_id: user.posts.first.id,
+      user_id: user.id
     }
   }
 
   let(:invalid_attributes) {
-    { user_id: 0,
-      post_id: 0
+    { user_id: 555,
+      post_id: 555
     }
+  }
+
+  let(:invalid_create) {
+    post :create, params: invalid_attributes
   }
 
   before(:each) do
@@ -49,7 +54,7 @@ RSpec.describe LikesController, type: :controller do
     context "with valid params" do
       it "creates a new Like" do
         expect {
-          post :create, params: valid_attributes
+          post :create, params: { user_id: 1, post_id: 2 }
         }.to change(Like, :count).by(1)
       end
 
@@ -67,24 +72,53 @@ RSpec.describe LikesController, type: :controller do
     end
 
     context "with invalid params" do
-      xit "returns a success response (i.e. to display the 'new')" do
-        post :create, params: { like: invalid_attributes }
-        expect(response).to be_successful
+      it "returns a RecordNotFound exception" do
+        expect { invalid_create }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end
 
+  describe "PUT #update" do
+    context "with valid params" do
+      let(:new_attributes) {
+        { post_id: 2 }
+      }
+
+      # it "updates the requested post" do
+      #   like = Like.create! valid_attributes
+      #   put :update, params: { id: 1, post: new_attributes }
+      #   like.reload
+      #   expect(like.post_id).to eq(2)
+      # end
+
+    #   it "redirects to the post index" do
+    #     post = Post.create! valid_attributes
+    #     put :update, params: { id: post.to_param, post: valid_attributes }
+    #     expect(response).to redirect_to(posts_url)
+    #   end
+    # end
+    #
+    # context "with invalid params" do
+    #   it "raise a RecordNotFound exception)" do
+    #     # post = Post.create! valid_attributes
+    #     # put :update, params: { id: post.to_param, post: invalid_attributes }
+    #
+    #     expect {invalid_update}.to raise_error(ActiveRecord::RecordNotFound)
+    #   end
+    end
+  end
+
   describe "DELETE #destroy" do
-    xit "destroys the requested like" do
+    it "destroys the requested like" do
       like = Like.create! valid_attributes
       expect {
-        delete :destroy, params: { id: like.to_param }
+        delete :destroy, params: { id: like.to_param, user_id: like.user_id, post_id: 1 }
       }.to change(Like, :count).by(-1)
     end
 
-    xit "redirects to the posts list" do
+    it "redirects to the posts list" do
       like = Like.create! valid_attributes
-      delete :destroy, params: { id: like.to_param }
+      delete :destroy, params: { id: like.to_param, user_id: like.user_id, post_id: 1 }
       expect(response).to redirect_to(posts_url)
     end
   end
