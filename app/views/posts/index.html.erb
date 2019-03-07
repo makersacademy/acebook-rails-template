@@ -9,6 +9,8 @@
     </tr>
   </thead>
 
+  <%= link_to 'New post', new_post_path %>
+
   <% @posts_with_users.each do |post| %>
   <p id="post-id-<%= post.id %>"><%= simple_format(post.message) %></p>
     <% unless post.get_photo(post.id).nil? %>
@@ -39,5 +41,3 @@
 <% end %>
 
 <br>
-
-<%= link_to 'New post', new_post_path %>
