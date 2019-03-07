@@ -1,27 +1,21 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=33722e59264a77494b85fbd0d0f1cec95321e83178937704265dc88015cca4de
-
-rvm: '2.5.0'
+  - CC_TEST_REPORTER_ID=33722e59264a77494b85fbd0d0f1cec95321e83178937704265dc88015cca4de
+rvm: 2.5.0
 cache: bundler
-
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
-  - bundle install && bin/rails db:create && bin/rails db:migrate && bundle exec rspec
+- bundle install && bin/rails db:create && bin/rails db:migrate && bundle exec rspec
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
-services:
-  — postgresql
-
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+services: "— postgresql"
 deploy:
   provider: heroku
   api_key:
-    secure: G4gdUhj4rF+yUS5rGTBYoNpkOzgsl7vObiBScQyAeffx2e1w7hVmk8y2cL+SzCqSprR1RF6bxoOYxVS8EVbwoPZS5AjVgYWGzJRvM62GDNzV5mcVwGjPWvtXsn9pc2208IEKQoe9S1yekJPBB8sGqY53Pg7nYuMAxs98dLw+qH55jpIfw+7Og3MmQ1rCTW+lrP+j0FDAo8PQBvQg/VqqnAdRbJ3Rw/94VXT22m3O47lLRg32s3+IMEx2FKDFwcil9viU8sw/6klRF+CqW2njfl6CTdtmH7k1EA6HoWKDAZ9ROvEUg3EdGIIBn70m52OArhSrMpKRLhHqCdcrsbT88kJV7A9p8C9RzlQ0CkOUZOnXNCBLuHOVNZUwLjqZfms0Fgrkf8i08F5pOSSmdByB0fnghXMeCftV67HGyOi0pK+2P+FZ6w5DdA0CW35fCwKp2HlSg1cfYNaLnKaplNNo0F5EQfkH+Wc/dLI4b7RFbEbwLtNCvG3DCkJghIel2qbCZ7vpkgc0MJXFYaxhMBLVVuLutloICpH08Gwjj/o2ghHMDIc7pXEsqcnBArasCqjFEAolA/odl2mrX5EOCuk5GImfcD8ZCiOsIZP97Wh+O1jX4oV8ZwyHbAbddtRxFn28BnSUOC3zcpcMTg57TaA/nfALO7Kc7mB7PkTz4JL9g9g=
+    secure: ExMTIpDDebAln7/kqvyxr6IwJpNOM0Ax6ZgUK6u+DyR5j2X5B6rOrgSuPnahCitSKkBGfQodgzyV2nPWSD2ONivYk3OFjHmbsUPxwbJGyM9v5vwdbGZWyROW1G+5EoPQCVKRzaFk23CjGgf/l1YiL2ew5Sfojlkxa9r8mgFbFHf0al9l6v09cKaBc36FeQDKUH1OlZ7uZzEoHR9R10eVx1yzzS+yZ/xqvxGWTfyh7Coq6xWw1xat7xjFVxNGh9w8wczTI4EYIDl1Cm3X4qB55eZXi4p1lYwsstpl42tH3yVUmIPvnfVk4oBWVHuxPfT4Wh7nsOWBF750FBk6Y9k68HZH3Gqoc6EP2OKzBV1RS0EMlYjzNmgDrPhso71j/tCa11dUHhXEFCEf7ds27yaq07GuasFZIxe7TNDMx1619ajLDT+wxwMIPUi4XG5c7qtzrXLBEeJ69qxgiDqAmV3jzORCXwQt9kk9+sugGemfLH6qbisN+52sUYiu2esAwk+Fz5GXAy/mElp/DTS5H++CCSqHsHepJ8rv8CEeP1DxgJklOLfpLChBMId8tfksajXZx/MjAsxFhdtTCOfYeWAx0qn0yxBhz3vRyhWUoIvWnAh/RhJkZhBvIuvVL0QGAeNa9qzjIldm3RcfrkZeShw9FdGHRYIbojwJjkjokwi0Zqg=
   on:
-    branches:
-      only:
-        - master
+    all_branches: true
