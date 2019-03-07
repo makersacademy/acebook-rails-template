@@ -1,0 +1,16 @@
+<p>Profile of <%= @user.first_name + " " + @user.last_name %></p>
+<% @post.each do |post| %>
+<p id="post-id-<%= post.id %>"><%= simple_format(post.message) %></p>
+  <% unless post.get_photo(post.id).nil? %>
+    <%= image_tag(post.get_photo(post.id).image.url, style:'width:50%') %>
+  <% end %>
+ 
+  <p><%= @user.first_name + ' ' + @user.last_name %></p>
+  <p><%= post.created_at.strftime("%e %b %Y %H:%M") %></p>
+
+  <% if current_user.id == post.user_id %>
+  <p><td><%= link_to 'Edit', edit_post_path(post) %></td>
+  <td><%= link_to 'Destroy', post, method: :delete%></td></p>
+  <% end %>
+
+<% end %>
