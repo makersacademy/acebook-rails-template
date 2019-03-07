@@ -29,7 +29,7 @@ RSpec.describe PostsController, type: :controller do
   # Post. As you add validations to Post, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    { message: 'Hello, Ruby!', user_id: 1 }
+    { message: 'Hello, Ruby!', user_id: User.first.id, wall: User.first.id }
   }
 
   let(:invalid_attributes) {
@@ -40,13 +40,20 @@ RSpec.describe PostsController, type: :controller do
     put :update, params: invalid_attributes
   }
 
+  let(:attributes_to_update) {
+    { message: "To be updated", user_id: User.first.id, wall: User.last.id }
+  }
+
+  let(:valid_attributes_different_wall) {
+    { message: 'Hello, Ruby!', user_id: User.first.id, wall: User.last.id }
+  }
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # PostsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   before(:each) do
-    sign_in User.find_by_id(1)
+    sign_in User.find_by_id(User.first.id)
   end
 
   describe "GET #index" do
@@ -88,9 +95,9 @@ RSpec.describe PostsController, type: :controller do
         }.to change(Post, :count).by(1)
       end
 
-      it "redirects to the index after creation" do
-        post :create, params: { post: valid_attributes }
-        expect(response).to redirect_to(posts_url)
+      it "redirects to the appropriate wall after posting" do
+        post :create, params: { post: valid_attributes_different_wall }
+        expect(response).to redirect_to("/#{User.last.id}")
       end
     end
 
@@ -115,10 +122,10 @@ RSpec.describe PostsController, type: :controller do
         expect(post.message).to eq("Hello, Colin!")
       end
 
-      it "redirects to the post index" do
-        post = Post.create! valid_attributes
-        put :update, params: { id: post.to_param, post: valid_attributes }
-        expect(response).to redirect_to(posts_url)
+      it "redirects to the appropriate wall" do
+        post = Post.create! attributes_to_update
+        put :update, params: { id: post.to_param, post: { message: "Now I have been updated" } }
+        expect(response).to redirect_to("/#{User.last.id}")
       end
     end
 
