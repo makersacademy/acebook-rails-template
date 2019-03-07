@@ -20,14 +20,11 @@ class PostsController < ApplicationController
   end
 
   def wall
-    if User.where(id: params[:wall]).count == 0
-      params.merge!(wall: current_user.id)
+    if User.where(id: params[:wall]).count.zero?
+      params[:wall] = current_user.id
     end
-    @posts = Post.where(wall: params[:wall]).order(updated_at: :desc)
-    @wall_owner = User.find(params[:wall])
+    render_wall
   end
-
-
 
   def edit
   end
@@ -68,6 +65,11 @@ class PostsController < ApplicationController
       }
       format.json { head :no_content }
     end
+  end
+
+  def render_wall
+    @posts = Post.where(wall: params[:wall]).order(updated_at: :desc)
+    @wall_owner = User.find(params[:wall])
   end
 
   # def no_such_wall
