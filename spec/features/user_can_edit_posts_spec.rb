@@ -17,7 +17,7 @@ RSpec.feature 'edit post', type: :feature do
 
   scenario 'only post owner can edit a post' do
     add_a_post
-    click_link 'Sign Out'
+    click_link 'Sign out'
     visit "/users/sign_up"
     fill_in "user[user_name]", :with => 'testUser2'
     fill_in "user[email]", :with => 'test2@test.com'

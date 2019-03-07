@@ -19,15 +19,25 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
   <a class="navbar-brand" style="color: white;">@ceBook
+
     <% if current_user %> -
       <%=current_user[:user_name]%> |
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, style:"color:white;"%>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, style:"color:white;"%>
     <% end %>
+      <span style="width: 80%;text-align: right; color:white; padding-right:5px;">
+        <a style="color: white;" href="/walls">See other walls</a>
+      </span>
   </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+  <%# <%= form_for @wall do |form| %>
+    <%# <%= form.label :user %>
+
+  <%# <% end %>
+
+  <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> %>
+
 </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
