@@ -5,7 +5,7 @@ class LikesController < ApplicationController
     if !(already_liked?)
       @post.likes.create(user_id: current_user.id)
     end
-    redirect_to posts_url
+    redirect_back(fallback_location: posts_url)
   end
 
   def destroy
@@ -13,7 +13,7 @@ class LikesController < ApplicationController
       find_like
       Like.delete(@like)
     end
-    redirect_to posts_url
+    redirect_back(fallback_location: posts_url)
   end
 
   private

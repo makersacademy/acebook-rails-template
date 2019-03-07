@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Profile picture", type: :feature do
   scenario 'user can have the default profile picture' do
     sign_up_nellie_nopicture
-    click_on("nellie.nopicture@gmail.com")
+    click_on("Nellie Nopicture")
     expect(page.html).to include("defaultprofile")
   end
 
@@ -13,7 +13,7 @@ RSpec.feature "Profile picture", type: :feature do
     fill_in "post_message", with: "This post has a picture attached!"
     page.attach_file("post_image", 'spec/fixtures/imagename.jpg')
     click_on "Submit"
-    click_link('george.manyposts@gmail.com')
+    click_link('George Manyposts')
     expect(page.html).to include("imagename")
   end
 end
