@@ -1,9 +1,9 @@
-<%= link_to "#{current_user.id}/posts/new", id: 'new_post' do %>
+<%= link_to "#{@wall_owner.id}/posts/new", id: 'new_post' do %>
   new post
 <% end %>
-<%= link_to '/', id: 'header' do %>
-  <h1>acebook</h1>
-<% end %>
+
+<h1><%= @wall_owner.first_name %>'s wall</h1>
+
 <div id="posts">
 <ul id="posts">
 <% @posts.each do |post| %>
@@ -20,10 +20,6 @@
     <% end %>
     <%= button_to 'Like', post_likes_path(post), method: :post %>
     <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'like' : 'likes' %></p>
-
-    <%=form_tag("posts/#{post.id}/likes/destroy_like_on_post", method: "post") do %>
-      <%=submit_tag("Unlike") %>
-    <% end %>
   </li>
     <% end %>
     </ul>
