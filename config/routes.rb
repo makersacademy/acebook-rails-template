@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  delete 'posts/:id', to: 'posts#destroy', as: :delete_post
   get 'walls/index'
-
   get 'home/index'
 
   devise_for :users
