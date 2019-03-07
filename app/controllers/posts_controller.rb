@@ -52,6 +52,5 @@ class PostsController < ApplicationController
     end
 
     def create_album
-
     end
 end
