@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   post 'posts/:post_id/likes/destroy_like_on_post', to: 'likes#destroy_like_on_post'
 
-  root to: "posts#index"
+  root to: "posts#wall"
   resources :posts do
     resources :likes
   end

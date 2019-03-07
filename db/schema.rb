@@ -52,5 +52,5 @@ ActiveRecord::Schema.define(version: 20190306135516) do
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
-  add_foreign_key "posts", "users", column: "wall"
+  add_foreign_key "posts", "users", column: "wall", on_delete: :cascade
 end

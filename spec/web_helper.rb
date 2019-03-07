@@ -8,6 +8,7 @@ def sign_up
   fill_in "Password", with: "123456"
   fill_in "Password confirmation", with: "123456"
   click_button "Sign up"
+  visit "/posts"
 end
 
 def log_in
@@ -15,4 +16,9 @@ def log_in
   fill_in "Email", with: "bob@bob.com"
   fill_in "Password", with: "bbbbbbb"
   click_button "Log in"
+end
+
+def log_in_and_go_to_posts
+  log_in
+  visit "/posts"
 end
