@@ -22,7 +22,7 @@ RSpec.feature 'delete', type: :feature do
     click_link "testUser"
     expect(page).not_to have_content('Delete')
   end
-  #
+  ##
   scenario 'user can delete content on his own wall, posted by others' do
     visit "/users/sign_up"
     fill_in "user[user_name]", :with => 'testUser'
