@@ -1,0 +1,17 @@
+<style >
+  .body{
+    background-image: url(https://sbims.com/wp-content/uploads/2017/04/Association_Membership_Networking_Connections.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+</style>
+
+<div class="container">
+  <div class="col-md-6 mx-auto card">
+  <ul>
+    <% @walls.each do |wall| %>
+      <li><%= link_to wall.user_name, wall_path(wall[:id]) %></li>
+    <% end %>
+  </ul>
+  </div>
+</div>
