@@ -2,7 +2,7 @@
 
 ## AceBook
 
-Acebook is a clone of Facebook functionality developed as a group project in weeks 8 and 9 at Makers Academy.
+Acebook is a clone of Facebook functionality developed as a group project in weeks 8 and 9 at Makers Academy by members of the January 2019 cohort.
 
 ## Technologies
 
@@ -10,7 +10,7 @@ Acebook is a clone of Facebook functionality developed as a group project in wee
 - RSpec, Capybara (testing)
 - Devise (User authentication and routing)
 - Travis (Continuous Integration)
-- Code Climate (Code / test coverage)
+- Code Climate (Code / test coverage) - run on every commit confirming that code conforms to linting guidelines
 - Heroku (Deployment)
 
 ## Project aims
@@ -34,7 +34,10 @@ To install a development instance locally clone this repository. Then:
 
 ```bash
 > bundle install
-> brew install imagemagick (assuming you are on a Mac)
+> brew install imagemagick
+```
+ (assuming you are on a Mac. If you are on Linux, it will likely be bundled in your distro. This is required as the image handler gem, Paperclip, uses ImageMagick technology. It is only needed for running locally. Remote deployment on Heroku includes it on their dynos. For more information on Paperclip requirements see https://www.rubydoc.info/gems/paperclip/#requirements.)
+```bash
 > bin/rails db:create
 > bin/rails db:migrate
 
