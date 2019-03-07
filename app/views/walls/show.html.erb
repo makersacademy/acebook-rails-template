@@ -1,1 +1,4 @@
-wall show!
+<% @posts.each do |post| %>
+  <%= post.message %>
+  <br />
+<% end %>
