@@ -33,7 +33,11 @@ RSpec.describe PostsController, type: :controller do
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {id: 555, post: { message: "I am invalid"}}
+  }
+
+  let(:invalid_update) {
+    put :update, params: invalid_attributes
   }
 
   # This should return the minimal set of values that should be in the session
@@ -92,8 +96,8 @@ RSpec.describe PostsController, type: :controller do
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: { post: invalid_attributes }
         expect(response).to be_successful
+
       end
     end
   end
@@ -119,10 +123,11 @@ RSpec.describe PostsController, type: :controller do
     end
 
     context "with invalid params" do
-      it "returns a success response (i.e. to display the 'edit' template)" do
-        post = Post.create! valid_attributes
-        put :update, params: { id: post.to_param, post: invalid_attributes }
-        expect(response).to be_successful
+      it "raise a RecordNotFound exception)" do
+        # post = Post.create! valid_attributes
+        # put :update, params: { id: post.to_param, post: invalid_attributes }
+
+        expect {invalid_update}.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end

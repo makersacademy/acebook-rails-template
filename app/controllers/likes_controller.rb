@@ -1,21 +1,17 @@
 class LikesController < ApplicationController
   before_action :set_like, only: [:destroy]
   before_action :find_post
-  # GET /likes
-  # GET /likes.json
-  def index
-    @likes = Like.all
-  end
 
   # GET /likes/1
   # GET /likes/1.json
   def show
   end
 
-  # GET /likes/new
-  def new
-    @like = Like.new
-  end
+  # Why are we not using the likes controller to make new Likes? Is this best practice?
+  # # GET /likes/new
+  # def new
+  #   @like = Like.new
+  # end
 
   # GET /likes/1/edit
   def edit
@@ -58,7 +54,7 @@ class LikesController < ApplicationController
   def destroy
     @like.destroy
     respond_to do |format|
-      format.html { redirect_to likes_url, notice: 'Like was successfully destroyed.' }
+      format.html { redirect_to posts_path, notice: 'Like was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -84,7 +80,8 @@ class LikesController < ApplicationController
   end
 
   def fail_message(format)
-    format.html { render :new, notice: 'Unable to create like.' }
+    p 'I am a fail message'
+    format.html { redirect_to posts_path, notice: 'Unable to create like.' }
     format.json { render json: created_like.errors, status: :unprocessable_entity }
   end
 

@@ -16,6 +16,9 @@ Post.create([{ user_id: 1, message: 'Hello World', updated_at: '2019-02-26 14:51
              { user_id: 1, message: 'Huzzah!', updated_at: '2019-02-28 14:51:33.76532' },
              { user_id: 1, message: 'Huzzay!', updated_at: '2019-02-27 14:51:33.76532' }])
 
+Like.create(post_id: 1, user_id: 1)
+Like.create(post_id:1, user_id: 2)
+
 # Character.create(name: 'Luke', movie: movies.first)
 #
 #   movies = Movie.create([{ name: 'Star Wars' },
