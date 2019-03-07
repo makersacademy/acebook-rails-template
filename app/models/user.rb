@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :photos, dependent: :destroy
@@ -16,5 +15,4 @@ class User < ApplicationRecord
       @photo.image.url
     end
   end
-
 end
