@@ -9,11 +9,12 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     @post.user_id = current_user.id
+    @post.wall_user_id = session[:wall_user_id]
     if @post.save
-      redirect_to :action => 'index'
+      redirect_to wall_path(session[:wall_user_id])
     else
       flash.now[:notice] = "Error saving your new note, please try again!"
-      redirect_to posts_url
+      redirect_to wall_path(session[:wall_user_id])
     end
   end
 
@@ -45,6 +46,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:message, :user_id)
+    params.require(:post).permit(:message, :user_id, :wall_user_id)
   end
 end
