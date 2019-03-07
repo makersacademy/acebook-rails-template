@@ -17,7 +17,7 @@
       <%= image_tag(post.get_photo(post.id).image.url, style:'width:50%') %>
     <% end %>
   
-  <p><%= post.first_name + ' ' + post.last_name %></p>
+  <p><%= link_to (post.first_name + ' ' + post.last_name), "/users/#{post.user_id}" %></p>
   <p> <%= post.created_at.strftime("%e %b %Y %H:%M") %></p>
 
   <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
