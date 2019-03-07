@@ -34,6 +34,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path, notice: 'Your post was deleted!'
+  end
+
   def index
     @posts = Post.all.where(wall_user_id: current_user.id).order("updated_at DESC")
     @post = Post.new

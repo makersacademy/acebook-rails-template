@@ -39,8 +39,9 @@
       <div class="card-footer text-muted">
         <% if post.can_edit(post.id, current_user.id)  %>
           <%= link_to 'Edit', edit_post_path(post), class:"btn btn-outline-primary", style:"float: right;" %>
-          <%= link_to 'Delete' %>
         <% end %>
+        <%= link_to 'Delete', delete_post_path(post), method: :delete %>
+
       </div>
     </div>
   </div>
