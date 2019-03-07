@@ -35,14 +35,3 @@ def sign_up_nellie_nopicture
   fill_in :user_password_confirmation, with: 'nn1234'
   click_button 'Submit'
 end
-
-def sign_up_wendy_withpicture
-  visit("/users/sign_up")
-  fill_in :user_email, with: 'wendy.withpicture@gmail.com'
-  fill_in :user_first_name, with: 'Wendy'
-  fill_in :user_last_name, with: 'Withpicture'
-  fill_in :user_password, with: 'ww1234'
-  fill_in :user_password_confirmation, with: 'ww1234'
-  page.attach_file("post_image", 'spec/fixtures/imagename.jpg')
-  click_button 'Submit'
-end

@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
 
+  resources :albums, only: [:show]
+
+  resources :photos, only: [:show]
+  
   root to: 'posts#index'
 
 end

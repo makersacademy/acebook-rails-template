@@ -18,7 +18,7 @@ class PostsController < ApplicationController
       if !Album.default_album_exists?(current_user)
         Album.create(title: "#{current_user.first_name}'s Photos", user_id: current_user.id)
       end
-      Photo.create!(post_id: this_post.id, image: params[:post][:image], album_id: Album.users_default_album(current_user).id)
+      Photo.create!(post_id: this_post.id, image: params[:post][:image], album_id: Album.users_default_album(current_user).id, user_id: current_user.id)
     end
     redirect_to posts_url
   end
