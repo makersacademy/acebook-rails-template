@@ -15,11 +15,8 @@ class PostsController < ApplicationController
   def create
     this_post = Post.create!(user_id: current_user.id, message: params[:post][:message])
     if !(params[:post][:image].nil?)
-      if Album.default_album_exists?(current_user)
-        # + add album.id to photo album = current_user-defaultalbum.id
-      else
-        album = Album.create(title: current_user.first_name, user_id: current_user.id)
-        # + add album.id to photo
+      if !Album.default_album_exists?(current_user)
+        Album.create(title: "#{current_user.first_name}'s Photos", user_id: current_user.id)
       end
       Photo.create!(post_id: this_post.id, image: params[:post][:image], album_id: Album.users_default_album(current_user).id)
     end
