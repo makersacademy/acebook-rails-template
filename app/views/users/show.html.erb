@@ -1,8 +1,7 @@
+<div class='container'>
 <table>
   <br>
-  <div class='container'>
   <tr>
-
     <td>
         <div class="card bg-light mb-3" style="max-width: 20rem;">
       <p><%= image_tag(@user.get_photo(@user.id), style:'width:100px') %></p>
@@ -12,8 +11,9 @@
       <h1><%= @user.first_name + " " + @user.last_name %>'s Profile</h1>
   </td>
 </tr>
-</div>
 </table>
+</div>
+</div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand"><h4><%= @user.first_name %>'s Albums</h4></a>
 </nav>
@@ -61,6 +61,7 @@
         <% unless post.get_photo(post.id).nil? %>
           <%= image_tag(post.get_photo(post.id).image.url, style:'width:50%') %>
         <% end %>
+<br>
 <br>
 
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
