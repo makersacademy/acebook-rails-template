@@ -1,49 +1,36 @@
-<h1>Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-<%= form_for @post, html: {multipart: true} do |form| %>
-  <p><%= form.label :message %></p>
-  <p>
-  <%= form.text_area :message, :cols => 40, :rows => 5 %>
-  </p>
-  <p><%= form.file_field :image %></p>
-
-  <%= form.submit "Submit" %>
-<% end %>
-
-  <% @posts_with_users.each do |post| %>
-  <p id="post-id-<%= post.id %>"><%= simple_format(post.message) %></p>
-    <% unless post.get_photo(post.id).nil? %>
-      <%= image_tag(post.get_photo(post.id).image.url, style:'width:50%') %>
+<div class="container">
+<div class="card border-primary mb-3" style="max-width: 80%; margin-top: 40px;">
+  <div class="card-header">Create a post</div>
+  <div class="card-body">
+    <%= form_for @post, html: {multipart: true} do |form| %>
+      <p><%= form.text_area :message, class:"form-control", :cols => 40, :rows => 5 %></p>
+      <p><%= form.file_field :image, class:"form-control-file" %></p>
+      <%= form.submit "Submit", class:"btn btn-primary" %>
     <% end %>
-  
-  <p><%= link_to (post.first_name + ' ' + post.last_name), "/users/#{post.user_id}" %></p>
-  <p> <%= post.created_at.strftime("%e %b %Y %H:%M") %></p>
-
-  <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
-  <% if pre_like %>
-      <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
-    <% else %>
-      <%= button_to 'Like', post_likes_path(post), method: :post %>
-  <% end %>
-
-  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-
-  <tbody>
-    <tr>
-      <% if current_user.id == post.user_id %>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post, method: :delete%></td>
+  </div>
+</div>
+  <% @posts_with_users.each do |post| %>
+<div class="card border-primary mb-3" style="max-width: 80%; margin-top: 40px">
+  <div class="card-header"><%= link_to (post.first_name + ' ' + post.last_name), "/users/#{post.user_id}" %> | <%= post.created_at.strftime("%e %b %Y %H:%M") %></div>
+  <div class="card-body">
+    <p id="post-id-<%= post.id %>"><%= simple_format(post.message) %></p>
+      <% unless post.get_photo(post.id).nil? %>
+        <%= image_tag(post.get_photo(post.id).image.url, style:'width:50%') %>
       <% end %>
-    </tr>
-  </tbody>
-</table>
-<% end %>
+    <p><% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+    <% if pre_like %>
+        <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete, class:"btn btn-primary" %>
+      <% else %>
+        <%= button_to 'Like', post_likes_path(post), method: :post, class:"btn btn-primary" %>
+    <% end %></p>
 
-<br>
+    <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
+    <p><% if current_user.id == post.user_id %>
+    <%= link_to 'Edit', edit_post_path(post) %> |
+    <%= link_to 'Destroy', post, method: :delete%>
+    <% end %></p>
+  </div>
+</div>
+<% end %>
+</div>

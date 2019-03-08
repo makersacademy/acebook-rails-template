@@ -1,8 +1,13 @@
+<div class="container" style="width: 60%">
+<div class="jumbotron">
 <h1>Editing Post</h1>
 
 <%= form_for @post, html: {multipart: true} do |form| %>
-  <p><%= form.label :message %></p>
-  <p><%= form.text_area :message, :cols => 40, :rows => 5 %></p>
+  <p><%= form.text_area :message, :cols => 40, :rows => 5, class:"form-control" %></p>
+  <%= form.submit "Submit", class:"btn btn-primary" %>
+  <br>
+  <br>
   <%= link_to 'Back', posts_path %>
-  <%= form.submit "Submit" %>
 <% end %>
+</div>
+</div>
