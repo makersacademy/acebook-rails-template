@@ -1,7 +1,14 @@
-<p id="notice"><%= notice %></p>
+<br>
+<h2 align='center', ><%= @album.title %></h2>
+<br>
+<div class="row">
 
-<h2><%= @album.title %></h2>
+<% @photos.each do |photo| %>
+    <div class="col-lg-4 col-md-12 mb-4" >
+    <section><%= link_to image_tag(photo.image, width: '400px'), photo.image.url, class:"img-fluid z-depth-1"%></section>
+    </div>
+  <% end %>
+</div>
 
-<p><% @photos.each do |photo| %>
-    <section><%= link_to image_tag(photo.image, width: '200px'), photo.image.url %></section>
-  <% end %></p>
+</div>
+</div>
