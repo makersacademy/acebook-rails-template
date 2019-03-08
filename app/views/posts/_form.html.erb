@@ -1,6 +1,10 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
-
-  <%= form.submit "Submit" %>
-<% end %>
+<div style="margin-top: 10px; padding: 18px;" class="col-md-6 mx-auto card">
+  <div class="form-group">
+    <h2 style="text-align: center; padding: 10px;">Edit post</h2>    
+      <%= form_for @post do |form| %>
+      <%= form.text_area :message, class:"form-control", id:"exampleTextarea", rows:"3" %>
+      <br>
+      <%= form.submit "Submit", type:"button", class:"btn btn-outline-primary btn-block", style:"padding: 10px" %>
+    <% end %>    
+  </div>
+</div>
