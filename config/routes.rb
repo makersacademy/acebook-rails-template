@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   resources :albums, only: [:show]
 
   resources :photos, only: [:show]
-  
-  root to: 'posts#index'
 
+  root to: 'posts#index'
 end
