@@ -29,7 +29,5 @@ RSpec.describe Album, type: :model do
       Album.create(title: "#{sophiealbum.first_name}'s Photos", user_id: 1)
       expect(Album.users_default_album(current_user).title).to eq("Sophie's Photos")
     end
-  end
-
-  
+  end  
 end
