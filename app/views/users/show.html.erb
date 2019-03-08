@@ -51,10 +51,7 @@
 
 <% @posts.each do |post| %>
   <% if post.user_id == @user.id %>
-  <p id="post-id-<%= post.id %>"><%= simple_format(post.message) %></p>
-    <% unless post.get_photo_by_post(post.id).nil? %>
-      <%= image_tag(post.get_photo_by_post(post.id).image.url, style:'width:50%') %>
-    <% end %>
+
    
     <div class="card border-primary mb-3" style="max-width: 80%; margin-top: 40px">
       <div class="card-header"><%= @user.first_name + ' ' + @user.last_name %> | <%= post.created_at.strftime("%e %b %Y %H:%M") %></div>
