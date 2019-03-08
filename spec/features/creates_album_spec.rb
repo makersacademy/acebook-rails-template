@@ -8,5 +8,4 @@ RSpec.describe "Album features" do
     click_on "Submit"
     expect(Album.find_by(user_id: 1).title).to eq "George's Photos"
   end
-
 end
