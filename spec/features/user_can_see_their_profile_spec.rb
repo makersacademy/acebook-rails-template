@@ -18,5 +18,4 @@ RSpec.feature "Profile page", type: :feature do
     click_link('Percy Onepost')
     expect(page).to have_content("Percy Onepost's Profile")
   end
-
 end

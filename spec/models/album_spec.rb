@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Album, type: :model do
-
   context "#default_album_exists?" do
     it "returns true if default album exists" do
       sophiealbum = User.create!(email: "Sophie.Album@gmail.com", first_name: "Sophie", last_name: "Album", password: "sa1234")
@@ -21,6 +20,7 @@ RSpec.describe Album, type: :model do
       default_album_test = Album.create(title: "Sophie's Photos", user_id: 1)
       Album.create(title: "Sophie's Holidays", user_id: 1)
       expect(Album.users_default_album(current_user).id).to eq(default_album_test.id)
+      expect(not_default_album.id).not_to eq(default_album_test.id)
     end
     it ": can match the name of the user's default album in preparation for upload" do
       sophiealbum = User.create!(email: "Sophie.Album@gmail.com", first_name: "Sophie", last_name: "Album", password: "sa1234")
@@ -30,6 +30,4 @@ RSpec.describe Album, type: :model do
       expect(Album.users_default_album(current_user).title).to eq("Sophie's Photos")
     end
   end
-
-  
 end
