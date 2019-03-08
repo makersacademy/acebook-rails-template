@@ -35,5 +35,4 @@ RSpec.feature "Delete a post", type: :feature do
     page.driver.submit :patch, "/posts/9", {}
     expect(page.html).to include("Not your post")
   end
-
 end
