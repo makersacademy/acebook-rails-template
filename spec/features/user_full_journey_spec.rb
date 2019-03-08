@@ -11,7 +11,7 @@ RSpec.feature "Journey", type: :feature do
     fill_in 'user_password_confirmation', with: "featurepwd"
     click_on "Submit"
     expect(page).to have_content('Welcome! You have signed up successfully')
-    expect(page).to have_content('Message')
+    expect(page).to have_content('Create a post')
     fill_in "post_message", with: "test feature message"
     click_on "Submit"
     expect(page).to have_content("test feature message")

@@ -5,7 +5,7 @@ RSpec.feature "User details display", type: :feature do
     scenario "Can see user name and date information alongside each post" do
       login_percy_onepost
       expect(page).to have_content('Signed in successfully.')
-      expect(page).to have_content('Message')
+      expect(page).to have_content('Create a post')
       fill_in "post_message", with: "test feature message"
       click_on "Submit"
       expect(page).to have_content("test feature message")
