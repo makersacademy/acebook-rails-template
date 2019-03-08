@@ -9,18 +9,39 @@
   </head>
 
   <body>
+    <script src="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css"></script>
 
-    <p class="navbar-text pull-right">
-   <% if user_signed_in? %>
-     Logged in as <strong><%= link_to current_user.first_name + " " + current_user.last_name, current_user %></strong>.
-     <%= link_to 'Home', posts_url, :class => 'navbar-link' %> |
-     <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-     <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-   <% else %>
-     <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-     <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-   <% end %>
-   </p>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <% if user_signed_in? %>
+    <%= link_to 'Home', posts_url, class:"navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to current_user.first_name + " " + current_user.last_name, current_user, class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Edit profile', edit_user_registration_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link" %>
+      </li>
+      </ul>
+      <% else %>
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "Sign up", new_user_registration_path, class:"navbar-brand" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class:"navbar-brand" %>
+      </li>
+    </ul>
+  </div>
+         <% end %>
+</nav>
 
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>

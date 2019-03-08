@@ -1,40 +1,53 @@
+<div class='container'>
 <table>
+  <br>
   <tr>
     <td>
+        <div class="card bg-light mb-3" style="max-width: 20rem;">
       <p><%= image_tag(@user.get_photo_by_user(@user.id), style:'width:100px') %></p>
+        </div>
     </td>
     <td>
       <h1><%= @user.first_name + " " + @user.last_name %>'s Profile</h1>
-    </td>
+  </td>
+</tr>
 </table>
-
-<h3><%= @user.first_name %>'s Albums</h3>
-
+</div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand"><h4 style='margin-left: 150px'><%= @user.first_name %>'s Albums</h4></a>
+</nav>
+<br>
 <% @albums.each do |album| %>
-
+<div class='container'>
+<div class="card bg-light mb-3" style="max-width: 20rem;">
   <%= link_to(album) do %>
-    <h4><%= album.title %></h4>
-    <%= image_tag(@photos.first.image.url, width:'160px') %>
+    <div class="card-header"><h5 align='center'><%= album.title%></h5></div>
+    <p class="card-text" align='center'><%= image_tag(@photos.first.image.url, width:'160px') %></p>
   <% end %>
 <% end %>
+</div>
+</div>
+</div>
 
 <br>
-<% if @user.id == current_user.id %>
-  <%= link_to 'New post', new_post_path %>
-<% end %>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand"><h4 style='margin-left: 150px'><%= @user.first_name %>'s Posts</h4></a>
+</nav>
+<br>
 
-<h3><%= @user.first_name %>'s Posts</h3>
-
+<div class="container">
+<div class="card border-primary mb-3" style="max-width: 80%; margin-top: 40px;">
+  <div class="card-header">Create a post</div>
+  <div class="card-body">
 <%= form_for @post, html: {multipart: true} do |form| %>
-  <p><%= form.label :message %></p>
-  <p>
-  <%= form.text_area :message, :cols => 40, :rows => 5 %>
-  </p>
-  <p><%= form.file_field :image %></p>
-
-  <%= form.submit "Submit" %>
+  <p><%= form.text_area :message, class:"form-control", :cols => 40, :rows => 5 %></p>
+  <p><%= form.file_field :image, class:"form-control-file" %></p>
+  <%= form.submit "Submit", class:"btn btn-primary" %>
 <% end %>
+</div>
+</div>
 
 <% @posts.each do |post| %>
   <% if post.user_id == @user.id %>
@@ -43,29 +56,32 @@
       <%= image_tag(post.get_photo_by_post(post.id).image.url, style:'width:50%') %>
     <% end %>
    
-    <p><%= @user.first_name + ' ' + @user.last_name %></p>
-    <p><%= post.created_at.strftime("%e %b %Y %H:%M") %></p>
+    <div class="card border-primary mb-3" style="max-width: 80%; margin-top: 40px">
+      <div class="card-header"><%= @user.first_name + ' ' + @user.last_name %> | <%= post.created_at.strftime("%e %b %Y %H:%M") %></div>
+
+<div class="card-body">
+      <p id="post-id-<%= post.id %>"><%= simple_format(post.message) %></p>
+        <% unless post.get_photo_by_post(post.id).nil? %>
+          <%= image_tag(post.get_photo_by_post(post.id).image.url, style:'width:50%') %>
+        <% end %>
+<br>
+<br>
 
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
       <% if pre_like %>
-        <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+        <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete, class:"btn btn-primary" %>
       <% else %>
-        <%= button_to 'Like', post_likes_path(post), method: :post %>
+        <%= button_to 'Like', post_likes_path(post), method: :post, class:"btn btn-primary" %>
       <% end %>
     <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   <% end %>
 
-<table>
-  <tbody>
-    <tr>
       <% if current_user.id == post.user_id %>
       <p><td><%= link_to 'Edit', edit_post_path(post) %></td>
       <td><%= link_to 'Destroy', post, method: :delete%></td></p>
       <% end %>
-    </tr>
-  </tbody>
-</table>
 
-
-
+    </div>
+  </div>
 <% end %>
+</div>
