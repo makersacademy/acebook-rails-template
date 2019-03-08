@@ -31,6 +31,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @post = Post.new
     @posts_with_users = Post.left_outer_joins(:user)
                         .select('posts.*', 'users.first_name', 'users.last_name')
                         .order("posts.created_at DESC")
