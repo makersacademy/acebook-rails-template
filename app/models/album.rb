@@ -1,6 +1,6 @@
 class Album < ApplicationRecord
   def self.default_album_exists?(current_user)
-    users_default_album(current_user) != nil
+    !!users_default_album(current_user)
   end
 
   def self.users_default_album(user)
