@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   has_one :photo, dependent: :destroy
   belongs_to :user, optional: true
 
-  def get_photo(post_id)
+  def get_photo_by_post(post_id)
     Photo.find_by(post_id: post_id)
   end
 end
