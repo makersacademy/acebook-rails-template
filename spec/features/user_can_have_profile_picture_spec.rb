@@ -9,7 +9,6 @@ RSpec.feature "Profile picture", type: :feature do
 
   scenario 'user can replace the default profile picture' do
     login_george_manyposts
-    click_link("New post")
     fill_in "post_message", with: "This post has a picture attached!"
     page.attach_file("post_image", 'spec/fixtures/imagename.jpg')
     click_on "Submit"

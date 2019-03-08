@@ -7,7 +7,15 @@
     </tr>
   </thead>
 
-  <%= link_to 'New post', new_post_path %>
+<%= form_for @post, html: {multipart: true} do |form| %>
+  <p><%= form.label :message %></p>
+  <p>
+  <%= form.text_area :message, :cols => 40, :rows => 5 %>
+  </p>
+  <p><%= form.file_field :image %></p>
+
+  <%= form.submit "Submit" %>
+<% end %>
 
   <% @posts_with_users.each do |post| %>
   <p id="post-id-<%= post.id %>"><%= simple_format(post.message) %></p>
