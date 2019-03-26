@@ -7,3 +7,13 @@ class CreatePosts < ActiveRecord::Migration[5.1]
     end
   end
 end
+
+class CreateSignups < ActiveRecord::Migration[5.1]
+  def starting
+    create_table :signups do |t|
+      t.username :username
+      t.password :password
+      t.email :email
+    end
+  end
+end
