@@ -1,16 +1,17 @@
-language: ruby
-rvm:
-- 2.6.0
-- 1.9.3
-- jruby-19mode
-- rbx-2
-script:
-  - bundle install - jobs=3 - retry=3
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-  - bundle exec rspec
-cache: bundler
+rvm: '2.5.3'
+
 services:
   - postgresql
-addons:
-  postgresql: "9.4"
+
+script:
+  - mkdir -p spec && bundle exec rspec spec
+
+before_install:
+- sudo apt-get update -qq
+- sudo apt-get install -qq postgresql-server-dev-9.3
+- gem update --system
+- gem install bundler
+
+before_script:
+  - psql -c 'create database pgapp_test;' -U postgres
+  - psql -d pgapp_test -c 'CREATE TABLE "posts" ("id" SERIAL PRIMARY KEY, "message" VARCHAR(200), "created_at" TIMESTAMP, "updated_at" TIMESTAMP);'
