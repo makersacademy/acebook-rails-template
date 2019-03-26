@@ -24,3 +24,11 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## References
+
+- [Project Setup](https://github.com/makersacademy/course/blob/master/engineering_projects/project_setup.md)
+- [Engineering Project Schedule](https://github.com/makersacademy/course/blob/master/engineering_projects/week_schedule.md)
+- https://github.com/makersacademy/course/tree/master/engineering_projects/rails
+- [Final Project Goals](https://github.com/makersacademy/course/blob/master/final_projects/project_criteria.md)
+- [Sprints](https://github.com/makersacademy/course/blob/master/how-to/2_day_sprint.md)
