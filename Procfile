@@ -1,2 +1,1 @@
-heroku ps:scale web=1
-web: bundle exec bin/rails server
+web: `bundle exec bin/rails server -p 3000`
