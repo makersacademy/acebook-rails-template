@@ -12,10 +12,18 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can update a post and view the updated post" do
+    add_post("A post was here")
     visit "/posts"
-    click_button "Edit"
+    click_button "Edit1"
     fill_in "Message", with: "A changed post"
     click_button "Submit"
     expect(page).to have_content("A changed post")
   end
+end
+
+def add_post(message)
+  visit "/posts"
+  click_link "New post"
+  fill_in "Message", with: message
+  click_button "Submit"
 end

@@ -10,15 +10,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    p @time
-  end
-
-  def show
-    p "hello"
   end
 
   def edit
-    Post.update(1, :message => params[:message])
+    p params[:Message]
+    Post.update(1, :message => params[:Message])
+    redirect_to posts_url
   end
 
   private
