@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-  <p class="msg"><%= post.message %></p>
+  <p class="msg"><%= post.message %> <%= post.created_at.strftime("%B %d %Y, %l:%M%P") %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
