@@ -24,3 +24,16 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## User Stories
+
+```
+As a user
+So I can remove my typos
+I want to update my own posts
+```
+```
+As a user 
+So I can remove my dark past
+I want to delete my own posts
+```

@@ -13,6 +13,10 @@ class PostsController < ApplicationController
     p @time
   end
 
+  def show
+    p "hello"
+  end
+
   private
   def post_params
     params.require(:post).permit(:message)
