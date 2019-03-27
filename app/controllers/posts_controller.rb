@@ -13,9 +13,12 @@ class PostsController < ApplicationController
   end
 
   def edit
-    p params[:Message]
-    Post.update(1, :message => params[:Message])
+    Post.update(Post.find_by, :message => params[:Message])
     redirect_to posts_url
+  end
+
+  def update
+    Post.find_by(id: params[:post_id])
   end
 
   private
