@@ -10,10 +10,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    p @time
   end
 
   private
-
   def post_params
     params.require(:post).permit(:message)
   end
