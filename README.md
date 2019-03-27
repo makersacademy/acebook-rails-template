@@ -34,8 +34,7 @@ See https://trello.com/b/qGXi1GtK/acebook
 
 ## Tools used for this project
 
-SimpleCov - Provides Test coverage stats
-============================================
+### SimpleCov - Provides Test coverage stats
 * Gems used 
 ```simplecov```
 ``` simplecov-console```
