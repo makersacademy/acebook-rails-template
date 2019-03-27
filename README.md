@@ -7,6 +7,8 @@ the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
+2. The card wall is here: https://trello.com/b/qGXi1GtK/acebook
+
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
@@ -50,6 +52,3 @@ See https://docs.google.com/document/d/1-bv7yLO38CKlP1r0C1-qqpVL5H6gtalqZolHUrqK
 * Check the results in ./coverage/index.html or on the console
 * Remember to add /coverage to the .gitignore if it is not already there so that the test coverage stats don't get added to git.
 * More info here - https://github.com/colszowka/simplecov
-
-## Link to our trello
-See https://trello.com/b/qGXi1GtK/acebook
