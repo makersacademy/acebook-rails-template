@@ -10,7 +10,6 @@ class SignupController < ApplicationController
   end
 
   def index
-    @user = Signup.all
   end
 
   private
