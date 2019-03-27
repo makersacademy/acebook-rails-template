@@ -21,3 +21,8 @@
 /yarn-error.log
 
 .byebug_history
+
+.DS_Store
+app/controllers/.DS_Store
+app/.DS_Store
+.env

@@ -1,17 +1,21 @@
-rvm: '2.6.0'
-
+rvm: 2.6.0
 services:
-  - postgresql
-
+- postgresql
 script:
-  - mkdir -p spec && bundle exec rspec spec
-
+- mkdir -p spec && bundle exec rspec spec
 before_install:
 - sudo apt-get update -qq
 - sudo apt-get install -qq postgresql-server-dev-9.3
 - gem update --system
 - gem install bundler
-
 before_script:
-  - psql -c 'create database pgapp_test;' -U postgres
-  - psql -d pgapp_test -c 'CREATE TABLE "posts" ("id" SERIAL PRIMARY KEY, "message" VARCHAR(200), "created_at" TIMESTAMP, "updated_at" TIMESTAMP);'
+- psql -c 'create database pgapp_test;' -U postgres
+- psql -d pgapp_test -c 'CREATE TABLE "posts" ("id" SERIAL PRIMARY KEY, "message"
+  VARCHAR(200), "created_at" TIMESTAMP, "updated_at" TIMESTAMP);'
+deploy:
+  provider: heroku
+  api_key:
+    secure: jeFdkQbShGkzNkx23ORwSyT/UEN5mEVtXxgCHW6utZn77MEL1FldD+RARpsskiLZiapMkYXZdKEzDsQ8k0k9adNpTsEI5TWV9ICHc+qBSX13CCiEJYprQVLH8sNpYz4+daFt1jWp+CmgeEbmNJa0CiH8jhYHzAHAm+CtIqzl+OlIP4Rc82L5TQq43XbnMaTN84n5IU/od+pftr8eQxbwjBifMIVdDl6LwKWZoNB7jeEgB8wU3Wu+T5iKwp63aeESTQz7d37XfDUPU6apszT/YgbXsU/j3smvVq3PMCdYUnskSkHv3zoz5ORpGT7rYNWyHuk4OfxOGbbjzfkcHV4528L2Ws87xoO3ZyHagWlay7i6cpAHkJngfVlWwSLH11k7XtuPs/JGR0K+CR6aYUvd6k4+7xsuhyLYqoi5ruJ2Gi+a92hE5pQLDMsvcmBi0avLU/209qhgeZmXHr7z7Pzz1n4mmrQO8QmrNg3y7m1tj9E2fr1VELsPI13DIpohebjMIr2X9fBnGdsq9qx7axwMBvplxacym3A25i080NVKqtl7Il9WKYnTHl4IH7Y1BPUWrpwkUI9H8+PQyakh5XMeAS4c8LSrNqxUo58ld6eIrkfBTxuZo54WnPGkb9QqZM3bNzxQdafnkNUrRIph22HqCXSMr/d7/7PJ2JJ9L1Ky4HY=
+  app: acebook-bcds
+  on:
+    repo: soroushh/acebook-bcds
