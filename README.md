@@ -37,10 +37,9 @@ See https://trello.com/b/qGXi1GtK/acebook
 SimpleCov - Provides Test coverage stats
 ============================================
 * Gems used 
-``` simplecov```
+```simplecov```
 ``` simplecov-console```
 * It will run automatically every time the tests are run by running - 
-``` bundle exec rspec
-```
+```bundle exec rspec```
 * Check the results in ./coverage/index.html or on the console
 * Remember to add /coverage to the .gitignore if it is not already there so that the test coverage stats don't get added to git.
