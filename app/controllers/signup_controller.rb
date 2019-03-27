@@ -1,12 +1,16 @@
 class SignupController < ApplicationController
-  
+
+  def new
+    @user = Signup.new
+  end
+
   def create
     @user = Signup.create(signup_params)
-    redirect posts_url
+    redirect_to posts_url
   end
 
   def index
-    @user = Signup.new
+    @user = Signup.all
   end
 
   private
