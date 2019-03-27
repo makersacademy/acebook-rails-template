@@ -39,7 +39,7 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.start
-    Post.create(:message => "A test message")
+    5.times {Post.create(:message => "A test message")}
   end
 
   config.after(:each) do

@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  protect_from_forgery except: :index
+
   def new
     @post = Post.new
   end
@@ -18,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def update
-     @post_id = params[:post_id]
+    @post_id = params[:post_id]
   end
 
   private
