@@ -33,7 +33,14 @@ See https://docs.google.com/document/d/1-bv7yLO38CKlP1r0C1-qqpVL5H6gtalqZolHUrqK
 See https://trello.com/b/qGXi1GtK/acebook
 
 ## Tools used for this project
-* SimpleCov
-The simplecov and simplecov-console gems have been added to the Gemfile of this repo for checking code test coverage. It will be installed when the Command ```bundle install``` is run. It will run automatically every time the tests are run.
-Test coverage can be seen on the console and also on the index.html file inside the coverage directory which is created by Simplecov when the tests are run.
-The test coverage reports need not be stored in Git and hence the coverage directory has been added to the .gitignore file. The cache directory inside tmp has also been added to .gitignore.
+
+SimpleCov - Provides Test coverage stats
+============================================
+* Gems used 
+``` simplecov```
+``` simplecov-console```
+* It will run automatically every time the tests are run by running - 
+``` bundle exec rspec
+```
+* Check the results in ./coverage/index.html or on the console
+* Remember to add /coverage to the .gitignore if it is not already there so that the test coverage stats don't get added to git.
