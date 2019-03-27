@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
-  scenario "Can sign up stupid" do
+RSpec.feature "Sign up", type: :feature do
+  scenario "Can sign up " do
     visit "/"
     click_link("Sign up", match: :first)
     fill_in "Email", with: "emailstupid@duh.com!"

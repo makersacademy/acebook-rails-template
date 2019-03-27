@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
-  scenario "Can sign out and log in stupid" do
+RSpec.feature "Sign out and log in", type: :feature do
+  scenario "Can sign out and log in" do
     visit "/"
     click_link("Sign up", match: :first)
     fill_in "Email", with: "emailstupid@duh.com!"
