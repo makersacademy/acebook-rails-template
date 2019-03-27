@@ -43,3 +43,4 @@ SimpleCov - Provides Test coverage stats
 ```bundle exec rspec```
 * Check the results in ./coverage/index.html or on the console
 * Remember to add /coverage to the .gitignore if it is not already there so that the test coverage stats don't get added to git.
+* More info here - https://github.com/colszowka/simplecov
