@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    ansi (1.5.0)
     arel (8.0.0)
     ast (2.4.0)
     axiom-types (0.1.1)
@@ -69,6 +70,7 @@ GEM
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.3)
+    docile (1.3.1)
     equalizer (0.0.11)
     erubi (1.7.1)
     erubis (2.7.0)
@@ -85,6 +87,7 @@ GEM
       sexp_processor (~> 4.8)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hirb (0.7.3)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
@@ -212,6 +215,15 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     sexp_processor (4.12.0)
+    simplecov (0.16.1)
+      docile (~> 1.1)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-console (0.4.2)
+      ansi
+      hirb
+      simplecov
+    simplecov-html (0.10.2)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -262,6 +274,8 @@ DEPENDENCIES
   rubycritic
   sass-rails (~> 5.0)
   selenium-webdriver
+  simplecov
+  simplecov-console
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
