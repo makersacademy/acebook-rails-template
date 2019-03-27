@@ -4,6 +4,7 @@
      <% time = post.created_at.to_s %>
      <%= time[8..9] + "/" + time[5..6] + "/" + time[0..3] %>
      <form class="" action="posts/update" method="get">
+       <input type="hidden" name="post_id" value="<%= post.id %>">
        <input type="submit" name="" value="<%="Edit#{post.id}"%>">
      </form>
   </p>
