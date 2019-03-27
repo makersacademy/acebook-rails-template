@@ -5,6 +5,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# RubyCritic is a gem that wraps around static analysis gems such as Reek, Flay
+# and Flog to provide a quality report of Ruby code.
+gem 'rubycritic', require: false
+# rubycritic dependencies:
+gem 'reek'
+gem 'flay'
+gem 'flog'
+# code metric tool to check the quality of Rails code:
+gem 'rails_best_practices'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
