@@ -25,5 +25,11 @@ RSpec.describe PostsController, type: :controller do
       get :index
       expect(response).to have_http_status(200)
     end
+
+    it "orders posts in reverse order" do
+      post1 = post :create, params: { post: { message: "First post" } }
+      post2 = post :create, params: { post: { message: "Second post" } }
+      expect(Post.all.order("created_at DESC")[0][:message]).to eq("Second post")
+    end
   end
 end
