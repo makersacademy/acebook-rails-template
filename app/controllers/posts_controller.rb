@@ -17,7 +17,12 @@ class PostsController < ApplicationController
     p "hello"
   end
 
+  def edit
+    Post.update(1, :message => params[:message])
+  end
+
   private
+
   def post_params
     params.require(:post).permit(:message)
   end
