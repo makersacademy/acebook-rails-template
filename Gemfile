@@ -1,4 +1,4 @@
-ENV['PORT'] = 3000
+ENV['PORT'] = "3000"
 
 source 'https://rubygems.org'
 
