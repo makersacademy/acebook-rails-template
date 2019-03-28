@@ -22,6 +22,6 @@ language: ruby
 postgresql: "11.2"
 rvm:
   - "2.6.0"
-  - jruby
+  # - jruby
 services:
   - postgresql
