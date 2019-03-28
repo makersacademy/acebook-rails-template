@@ -2,8 +2,6 @@ language: ruby
 rvm:
   - 2.5
  - jruby
- cache:
-- bundler
 # before_script:
 # - bundle exec rake db:create
 # - bundle exec rake db:migrate
