@@ -1,0 +1,19 @@
+current directory: /Users/matt/projects/group-projects/acebook-creators/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.1/ext/byebug
+/Users/matt/.rvm/rubies/ruby-2.5.0/bin/ruby -r ./siteconf20190328-86802-l1s31g.rb extconf.rb
+creating Makefile
+
+current directory: /Users/matt/projects/group-projects/acebook-creators/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.1/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/matt/projects/group-projects/acebook-creators/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.1/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/matt/projects/group-projects/acebook-creators/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.1/ext/byebug
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 byebug.bundle ./.gem.20190328-86802-4gs81n/byebug
