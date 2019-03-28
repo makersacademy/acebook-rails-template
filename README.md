@@ -25,6 +25,18 @@ First, clone this repository. Then:
 > bin/rails server # Start the server at localhost:3000
 ```
 
+## User Stories
+
+```
+As a user
+So I can remove my typos
+I want to update my own posts
+```
+```
+As a user 
+So I can remove my dark past
+I want to delete my own posts
+```
 -------------------------------
 
 PATHWAY =>   
@@ -48,4 +60,4 @@ Showing it on a worldwide web page;
     release: rake db:migrate
     web: bundle exec bin/rails server
 
----------------
+

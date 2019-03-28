@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  protect_from_forgery except: :index
+
   def new
     @post = Post.new
   end
@@ -10,10 +13,19 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    p @time
+  end
+
+  def edit
+    Post.update(params[:post_id], :message => params[:Message])
+    redirect_to posts_url
+  end
+
+  def update
+    @post_id = params[:post_id]
   end
 
   private
+
   def post_params
     params.require(:post).permit(:message)
   end
