@@ -7,9 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-
     @post = Post.create(message: post_params()[:message], signup_id: session[:user])
-
     redirect_to posts_url
   end
 

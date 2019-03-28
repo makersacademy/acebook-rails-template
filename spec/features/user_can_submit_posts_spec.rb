@@ -10,21 +10,6 @@ RSpec.feature "Timeline", type: :feature do
     expect(Post.find_by(signup_id: 2)).to be
   end
 
-  scenario "Can update a post and view the updated post" do
-    visit "/posts"
-    click_button "Edit1"
-    fill_in "Message", with: "A changed post"
-    click_button "Submit"
-    expect(page).to have_content("A changed post")
-  end
-
-  scenario "Can edit the 5th post and view it updated" do
-    visit "/posts"
-    click_button "Edit5"
-    fill_in "Message", with: "The 5th post has been changed"
-    click_button "Submit"
-    expect(page).to have_content("The 5th post has been changed")
-  end
 end
 
 def signup()
