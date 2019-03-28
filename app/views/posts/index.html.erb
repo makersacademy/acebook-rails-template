@@ -1,7 +1,6 @@
 <% @posts.each do |post| %>
-  <p><%= simple_format(post.message) %></p>
+  <p class="msg"><%= simple_format(post.message) %> On <%= post.created_at.strftime("%B %d %Y, %l:%M%P") %></p>
 <% end %>
-
 <%= link_to new_post_path do %>
     <button type="button" class="btn btn-primary">New post</button>
 <% end %>
