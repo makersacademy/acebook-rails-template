@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Sign up", type: :feature do
     user_email = "bob@bob.com"
-    user_password = "password1234"
+    user_password = "1234567890"
     scenario "user can sign up with email and password" do
         visit "/"
             click_link "Sign up"
