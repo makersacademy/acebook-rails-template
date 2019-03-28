@@ -1,0 +1,17 @@
+<%= form_with scope: :signup, local: true do |form| %>
+<p>
+  <%= form.label :username %>
+  <%= form.text_field :username %>
+</p>
+<p>
+  <%= form.label :password %>
+  <%= form.text_field :password %>
+</p>
+<p>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+</p>
+<p>
+  <%= form.submit "Submit" %>
+</p>
+<% end %>
