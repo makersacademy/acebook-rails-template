@@ -37,3 +37,27 @@ As a user
 So I can remove my dark past
 I want to delete my own posts
 ```
+-------------------------------
+
+PATHWAY =>   
+ Browser ---> Controller ----> Model (links database) ------> Controller -----> Views
+
+---------------
+
+Generating new table in database:
+
+1 - bin/rails generate migration CreateSignups username:string password:string email:string
+
+2 - bin/rails db:migrate VERSION=20190326112345
+
+---------------
+Showing it on a worldwide web page;
+
+
+1 - Create Procfile
+
+2 - put in Procfile:
+    release: rake db:migrate
+    web: bundle exec bin/rails server
+
+
