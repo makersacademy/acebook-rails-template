@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @user = session[:user]
   end
 
   def edit
@@ -22,6 +23,7 @@ class PostsController < ApplicationController
 
   def update
     @post_id = params[:post_id]
+
   end
 
   private
