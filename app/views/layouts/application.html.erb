@@ -9,11 +9,25 @@
   </head>
 
   <body>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Acebook</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if user_signed_in? %>
+        <li><a href="/users/edit">Edit Profile</a></li>
+        <li><a data-method="delete" href="/users/sign_out" >Logout</a></li>
+        <% else %>
+        <li><a href="/users/sign_in" class="waves-effect waves-light btn">Login</a></li>
+        <li><a href="/users/sign_up">Sign-up</a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
   <p class="navbar-text pull-right">
    <% if user_signed_in? %>
      Logged in as <strong><%= current_user.email %></strong>.
      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-     <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+     <%# <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> %>
    <% else %>
      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
