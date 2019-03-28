@@ -18,6 +18,11 @@ RSpec.describe PostsController, type: :controller do
       fill_in_database("Hello, world!")
       expect(Post.find_by(message: "Hello, world!")).to be
     end
+
+    it "creates a multi-line post" do
+      post :create, params: { post: { message: "This\r\n is \r\n a \r\n multi-line \r\n post!" } }
+      expect(Post.find_by(message: "This\r\n is \r\n a \r\n multi-line \r\n post!")).to be
+    end
   end
 
   describe "GET /" do
