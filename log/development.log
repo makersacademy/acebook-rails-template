@@ -962,3 +962,37 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/posts" for ::1 at 2019-03-28 18:18:49 +0000
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 259ms (Views: 249.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-28 18:22:49 +0000
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 262ms (Views: 250.7ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-28 18:22:51 +0000
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 38ms (Views: 26.9ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-28 18:22:56 +0000
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.9ms)
+
+

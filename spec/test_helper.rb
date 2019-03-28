@@ -9,5 +9,5 @@ def fill_in_form(post)
 end
 
 def page_content
-  content = page.first(".msg").text
+  page.first(".msg").text
 end

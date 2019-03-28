@@ -27,6 +27,6 @@ RSpec.feature "Timeline", type: :feature, js: true do
     click_link "New post"
     find_field('post_message').send_keys('[This, enter, is, enter, a, enter, multi-line, enter, post]')
     click_button "Submit"
-    expect(page.html).to include("<p>This\n<br>is\n<br>a\n<br>multi-line\n<br>post")
+    expect(page.html).to include("This\n<br>is\n<br>a\n<br>multi-line\n<br>post")
   end
 end
