@@ -9,6 +9,7 @@ RSpec.feature "Timeline", type: :feature do
 
   scenario "Can see the newest post first" do
     visit "/posts"
+    fill_in_form("Hello World")
     fill_in_form("Good morning")
     expect(page_content).to have_content("Good morning")
   end
