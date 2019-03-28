@@ -2,16 +2,7 @@ language: ruby
 rvm:
   - 2.5
  - jruby
-<<<<<<< HEAD
-# before_script:
-# - bundle exec rake db:create
-# - bundle exec rake db:migrate
-# - bundle exec rake assets:precompile
-=======
- cache:
-- bundler
 before_script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
 - bundle exec rake assets:precompile
->>>>>>> 59562de3e72435f2d61fe86c2cdbc4a82a7cf385
