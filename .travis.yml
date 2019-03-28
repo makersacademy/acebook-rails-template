@@ -2,3 +2,9 @@ language: ruby
 rvm:
  - 2.2
  - jruby
+ cache:
+- bundler
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rake assets:precompile
