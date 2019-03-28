@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  extend Devise::Models
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -7,5 +7,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          has_many :posts
 
-
+  extend Devise::Models
+  
 end
