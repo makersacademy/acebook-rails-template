@@ -10,12 +10,12 @@ RSpec.describe PostsController, type: :controller do
 
   describe "POST /" do
     it "responds with 200" do
-      post :create, params: { post: { message: "Hello, world!" } }
+      fill_in_database
       expect(response).to redirect_to(posts_url)
     end
 
     it "creates a post" do
-      post :create, params: { post: { message: "Hello, world!" } }
+      fill_in_database
       expect(Post.find_by(message: "Hello, world!")).to be
     end
   end
@@ -27,8 +27,8 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "orders posts in reverse order" do
-      post1 = post :create, params: { post: { message: "First post" } }
-      post2 = post :create, params: { post: { message: "Second post" } }
+      fill_in_database
+      fill_in_database_again
       expect(Post.all.order("created_at DESC")[0][:message]).to eq("Second post")
     end
   end
