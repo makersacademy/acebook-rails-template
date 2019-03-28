@@ -9,8 +9,10 @@ RSpec.feature "Sign up", type: :feature do
             fill_in "Email", with: user_email
             fill_in "Password", with: user_password
             fill_in "Password confirmation", with: user_password
+            length =  User.all.length
             click_button "Sign up"
             expect(page).to have_content("Welcome! You have signed up successfully.")
             expect(page).to have_content("Logged in as #{user_email}.")
+            expect(User.all.length).to eq (length +1 )
     end
 end
