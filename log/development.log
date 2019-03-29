@@ -996,3 +996,1026 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 25ms (Views: 20.7ms | ActiveRecord: 0.9ms)
 
 
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1344049087128799065)[0m
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20190329120811)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (59.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190329120811"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1344049087128799065)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-03-29 12:20:27 +0000
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 12:20:27 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (44.7ms)
+Completed 200 OK in 328ms (Views: 311.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 12:20:40 +0000
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 12:20:40 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 41ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 12:20:57 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sGUe2VYvWv9xSIRK319ldpbhX7Ofa215OZF1yOTfimu8Pev/BE1tV690wlQAfNYaYOi28fJwBS6moT+y1mLqdQ==", "user"=>{"email"=>"abc@g.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (14.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abc@g.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 20ms (ActiveRecord: 14.9ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sGUe2VYvWv9xSIRK319ldpbhX7Ofa215OZF1yOTfimu8Pev/BE1tV690wlQAfNYaYOi28fJwBS6moT+y1mLqdQ==", "user"=>{"email"=>"abc@g.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 199ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 12:21:05 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 58ms (Views: 56.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-03-29 12:21:30 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/VjUFYSWTrUFupuJf0+c9s73EiijhdarueEcF4fqJL/xACEz1vR5HduG3ZegbC+aOP77as6evvwm0VZttVdEoQ==", "user"=>{"email"=>"a@g.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@g.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "a@g.com"], ["encrypted_password", "$2a$11$slAOZpwTMomm0Jwqafja3OW1PFOvBJbDpcJkKeC8oqa7yki8xkvq."], ["created_at", "2019-03-29 12:21:30.594761"], ["updated_at", "2019-03-29 12:21:30.594761"]]
+  [1m[35m (17.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 211ms (ActiveRecord: 19.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 12:21:30 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (14.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 66ms (Views: 33.1ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 13:49:02 +0000
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 424ms (Views: 354.7ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 13:49:07 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 13:49:22 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (3.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 52ms (Views: 38.0ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 13:49:51 +0000
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 13:49:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 61ms (Views: 58.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 14:12:08 +0000
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:12:08 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 393ms (Views: 371.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:12:15 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:13:00 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:13:41 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:13:42 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:13:43 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 14:14:28 +0000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 29ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:14:28 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 384ms (Views: 355.5ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:14:32 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:14:42 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 27ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:14:44 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:15:21 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2019-03-29 14:15:22 +0000
+Processing by Devise::PasswordsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/passwords/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 34ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:15:24 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 44ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:16:07 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:16:07 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 14:16:19 +0000
+  [1m[35m (8.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 35ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:16:19 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 388ms (Views: 369.3ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:16:24 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.8ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 14:17:02 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:17:03 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (4.7ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 397ms (Views: 380.7ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:17:06 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 34ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 14:18:14 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:18:14 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/sessions/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 395ms (Views: 371.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:18:19 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:18:33 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:19:00 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views/devise/registrations/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:21:11 +0000
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (42.1ms)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 4.9ms)
+
+
+  
+ActionView::Template::Error (Missing partial users/shared/_links with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/student/Projects/acebook-creators/app/views"
+  * "/Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views"
+):
+    23:   </div>
+    24: <% end %>
+    25: 
+    26: <%= render "users/shared/links" %>
+  
+app/views/devise/sessions/new.html.erb:26:in `_app_views_devise_sessions_new_html_erb__4459500304805789087_70097058569040'
+Started GET "/" for ::1 at 2019-03-29 14:21:19 +0000
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:21:19 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial users/shared/_links with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/student/Projects/acebook-creators/app/views"
+  * "/Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views"
+):
+    23:   </div>
+    24: <% end %>
+    25: 
+    26: <%= render "users/shared/links" %>
+  
+app/views/devise/sessions/new.html.erb:26:in `_app_views_devise_sessions_new_html_erb__4459500304805789087_70097054632060'
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:21:47 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial users/shared/_links with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/student/Projects/acebook-creators/app/views"
+  * "/Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views"
+):
+    23:   </div>
+    24: <% end %>
+    25: 
+    26: <%= render "users/shared/links" %>
+  
+app/views/devise/sessions/new.html.erb:26:in `_app_views_devise_sessions_new_html_erb__4459500304805789087_70097084385720'
+Started GET "/" for ::1 at 2019-03-29 14:21:59 +0000
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 32ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:21:59 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (28.1ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 5.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial users/shared/_links with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/student/Projects/acebook-creators/app/views"
+  * "/Users/student/.rvm/gems/ruby-2.5.0/gems/devise-4.6.2/app/views"
+):
+    23:   </div>
+    24: <% end %>
+    25: 
+    26: <%= render "users/shared/links" %>
+  
+app/views/devise/sessions/new.html.erb:26:in `_app_views_devise_sessions_new_html_erb__4592063387154587277_70161059396500'
+Started GET "/" for ::1 at 2019-03-29 14:23:36 +0000
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:23:36 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 394ms (Views: 371.6ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:23:40 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 14:33:07 +0000
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:33:07 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 329ms (Views: 315.7ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:33:37 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:35:54 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:35:58 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 38ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2019-03-29 14:36:00 +0000
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 28ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2019-03-29 14:36:21 +0000
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2019-03-29 14:37:40 +0000
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 36ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:37:42 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (74.6ms)
+Completed 200 OK in 105ms (Views: 100.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2019-03-29 14:38:15 +0000
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 14:47:55 +0000
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:47:56 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 345ms (Views: 328.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 14:47:57 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-03-29 14:48:11 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"88dVGcCNMPj6wPeWhNAeEVSnqv7EAI9t12Cf72KLd42hMG9UpT6nfUyixg9u2cWXUEKmkleq/QrfKKJWl1A7sg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@test.com"], ["encrypted_password", "$2a$11$GLL/c30038H6fgLQk761ael4eWNDIt.o1h4JeNFdJIygwmO4y1MDS"], ["created_at", "2019-03-29 14:48:11.646502"], ["updated_at", "2019-03-29 14:48:11.646502"]]
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 211ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 14:48:11 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 31ms (Views: 18.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-29 14:48:15 +0000
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 40ms (Views: 22.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-29 14:48:20 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SAlhecJ/UyGt5d481gDPNOGMVrfuZykv5s7Qeq6ef0wa/ls0p8zEpBuH76U8CRSy5Wla233NW0juhu3DW0Uzcw==", "post"=>{"message"=>"this is a post"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.6ms)[0m  [1m[32mINSERT INTO "posts" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "this is a post"], ["created_at", "2019-03-29 14:48:20.058797"], ["updated_at", "2019-03-29 14:48:20.058797"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 18ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-29 14:48:20 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-03-29 14:48:30 +0000
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 33ms (Views: 23.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/posts" for ::1 at 2019-03-29 14:48:37 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jF4uazV64g6i3K6WG75pf5+H5usF9A8xAZZ+pG3cGR3eqRQmUMl1ixS+nw/xt7L5m2Lqh5ZefVYJ3kMdmAdVIg==", "post"=>{"message"=>"this\r\nis\r\na\r\npost"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "this\r\nis\r\na\r\npost"], ["created_at", "2019-03-29 14:48:37.051620"], ["updated_at", "2019-03-29 14:48:37.051620"]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 15ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-29 14:48:37 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 45ms (Views: 40.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for ::1 at 2019-03-29 14:51:27 +0000
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 385ms (Views: 330.7ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 14:51:29 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 51ms (Views: 28.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 14:51:31 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 28ms (Views: 20.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 14:51:33 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 30ms (Views: 22.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 14:51:49 +0000
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 14:51:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 62ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 15:02:35 +0000
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 429ms (Views: 393.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 16:01:41 +0000
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 375ms (Views: 324.3ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 16:02:06 +0000
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 16:02:06 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 40ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 16:02:34 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-03-29 16:02:58 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FyQP6C7f0NnsJlUT/3bTWnbr2HHXlQDyQ3X81QcwiLdOi3ouuoTrDJCVAB51KFlw59zObOFlE536sqnjGqwTwg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abc@abc"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 53ms (Views: 29.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for ::1 at 2019-03-29 16:03:14 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8tF6r13H8e3lk5rh6HuvJsbFyCiZ76nkltjbCWuv3++rfg9pyZzKOJkgz+xiJSUMV/LeNa8fuosvH44/djNEmg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abc@abc"], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "abc@abc"], ["encrypted_password", "$2a$11$Lac5LnikwNiD7qm2B4e46OmFPzMd5lPvz8TKIBXjZ4VFBth./Za.W"], ["created_at", "2019-03-29 16:03:15.075043"], ["updated_at", "2019-03-29 16:03:15.075043"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 191ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 16:03:15 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 20ms (Views: 15.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 16:03:50 +0000
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 16:03:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 46ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:04:03 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hjb4RTFSQbuIFG5D65Drx3ZkcWRma0cFOs1dzZVZ1FPf1eUWMQ4598T8JGVgv1jFGRBIeWpZgFSMFcD4EorVAg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abc@abc"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 175ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 16:04:03 +0000
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  Rendered posts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 20ms (Views: 15.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-29 16:04:38 +0000
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-29 16:04:38 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:05:00 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pb3RKhI0J+XXFQVgYVbsMv0Cybh+FI9R40tcBwSWqpMXSkcsGoGCFCIi9Kxb1XdgcP5ovuQuXccJLMpADtMLYA==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pb3RKhI0J+XXFQVgYVbsMv0Cybh+FI9R40tcBwSWqpMXSkcsGoGCFCIi9Kxb1XdgcP5ovuQuXccJLMpADtMLYA==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:05:03 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fvSPxpPu1X/GA3J7rDNbO+9MXKSDhgpJnJ0D9lO69WnMAxnAm1twjjM0g7eWsMBpYrD9ohm82N92+pWxWf9Umg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fvSPxpPu1X/GA3J7rDNbO+9MXKSDhgpJnJ0D9lO69WnMAxnAm1twjjM0g7eWsMBpYrD9ohm82N92+pWxWf9Umg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:05:04 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ev1x/VWhKuUNIDJuRUJWCITlrbafQOBASnn9nkyJXZLHGPB/eMhWmEDcQWDlpIKr+83sEBH0RfrTnGxc3eEhQ==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ev1x/VWhKuUNIDJuRUJWCITlrbafQOBASnn9nkyJXZLHGPB/eMhWmEDcQWDlpIKr+83sEBH0RfrTnGxc3eEhQ==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:05:05 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D2X9LByixcbb0/Q0Ea0c/wgiE2ctDRl2mPdtGor2wRy9kmsqFBdgNy7kBfgrLoethd6yYbc3y+BykPtdgLNg7w==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D2X9LByixcbb0/Q0Ea0c/wgiE2ctDRl2mPdtGor2wRy9kmsqFBdgNy7kBfgrLoethd6yYbc3y+BykPtdgLNg7w==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:05:06 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yi5zX3U5qPc7BFHDN3YOfdoq2wDaaHrQqeTMRAFUL3/Q2eVZfYwNBs4zoA8N9ZUvV9Z6BkBSqEZDg1oDCxGOjA==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yi5zX3U5qPc7BFHDN3YOfdoq2wDaaHrQqeTMRAFUL3/Q2eVZfYwNBs4zoA8N9ZUvV9Z6BkBSqEZDg1oDCxGOjA==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 26ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:05:07 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Ch/NjnFPVTQ0iRYB9Z3LHAQiPQz7n44nPycokTCFjVm3+kwMXCYpSXl1ZQ9Vex+/ewp8qnUrK52mwrlToe3xg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Ch/NjnFPVTQ0iRYB9Z3LHAQiPQz7n44nPycokTCFjVm3+kwMXCYpSXl1ZQ9Vex+/ewp8qnUrK52mwrlToe3xg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:05:07 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8ZMwkl+gnPsH58sGudNwWU5epWGuu4GZkUY4xsX9BNlDZKaUVxU5CvLQOsqDUOsLw6IEZzSBUw97Ia6Bz7ilKg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8ZMwkl+gnPsH58sGudNwWU5epWGuu4GZkUY4xsX9BNlDZKaUVxU5CvLQOsqDUOsLw6IEZzSBUw97Ia6Bz7ilKg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:05:08 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wj0EFmYQikkh5VRNiOaN0iwUWKE9tvzEUNLHS/3Wve5wypIQbqUvuNTSpYGyZRaAoej5p6eMLlK6tVEM95McHQ==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wj0EFmYQikkh5VRNiOaN0iwUWKE9tvzEUNLHS/3Wve5wypIQbqUvuNTSpYGyZRaAoej5p6eMLlK6tVEM95McHQ==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:05:09 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4i3oizt3vbnRsbtyuI/7rke4k4ch2aukB/ywCj8UjmZQ2n6NM8IYSCSGSr6CDGD8ykQygbvjeTLtmyZNNVEvlQ==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4i3oizt3vbnRsbtyuI/7rke4k4ch2aukB/ywCj8UjmZQ2n6NM8IYSCSGSr6CDGD8ykQygbvjeTLtmyZNNVEvlQ==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:05:40 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xk88I3rXSlHrQ4eB/yhE8thkNdsAMKlwVeYTYkjc7o10uKolcmLvoB50dk3Fq9+gVZiU3ZoKe+a/gYUlQplPfg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abc@abc"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 162ms (ActiveRecord: 1.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xk88I3rXSlHrQ4eB/yhE8thkNdsAMKlwVeYTYkjc7o10uKolcmLvoB50dk3Fq9+gVZiU3ZoKe+a/gYUlQplPfg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 170ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:05:47 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rzDinX2w33kvpzRQReLbIoASCQI1oPptRfIQJhLraXwdx3SbdQV6iNqQxZx/YUBwDe6oBK+aKPuvlYZhGK7Ijw==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abc@abc"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 158ms (ActiveRecord: 0.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rzDinX2w33kvpzRQReLbIoASCQI1oPptRfIQJhLraXwdx3SbdQV6iNqQxZx/YUBwDe6oBK+aKPuvlYZhGK7Ijw==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 170ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:05:54 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qoOlrmxht/oWcRXSeUj/bi9Sk7ZEwGCsgO++him3qbQYdDOoZNQSC+NG5B5Dy2Q8oq4ysN76sjpqiCjBI/IIRw==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abc@abc"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 159ms (ActiveRecord: 1.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qoOlrmxht/oWcRXSeUj/bi9Sk7ZEwGCsgO++him3qbQYdDOoZNQSC+NG5B5Dy2Q8oq4ysN76sjpqiCjBI/IIRw==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 169ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-29 16:06:01 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZtTgcRlbwrTRJKkWi0r+5YLjxoJGWh97cKeN29KJdaHUI3Z3Ee5nRSQTWNqxyWW3Dx9nhNxgze2awBuc2MzUUg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abc@abc"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 162ms (ActiveRecord: 0.9ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZtTgcRlbwrTRJKkWi0r+5YLjxoJGWh97cKeN29KJdaHUI3Z3Ee5nRSQTWNqxyWW3Dx9nhNxgze2awBuc2MzUUg==", "user"=>{"email"=>"abc@abc", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 175ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-29 16:06:15 +0000
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-03-29 16:06:41 +0000
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x4BHqPLjZCkRVpPC7E4rIBBarHdxXUi1F79RPJBXO8V1d9Gu+lbB2ORhYg7WzbBynaYNcetnmiP92Md7mhKaNg==", "user"=>{"email"=>"ascd@g.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ascd@g.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 198ms (Views: 26.6ms | ActiveRecord: 0.8ms)
+
+
