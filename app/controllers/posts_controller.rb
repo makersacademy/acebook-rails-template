@@ -17,8 +17,15 @@ class PostsController < ApplicationController
   end
 
   def edit
-    Post.update(params[:post_id], :message => params[:Message])
-    redirect_to posts_url
+    # p session[:user]
+    # p Post.find_by(id: params[:post_id]).signup_id
+    # p Post.find_by(id: params[:post_id]).signup_id == session[:user]
+    # if Post.find_by(id: params[:post_id]).signup_id == session[:user]
+      Post.update(params[:post_id], :message => params[:Message])
+      redirect_to posts_url
+    # else
+    #   redirect_to posts_url
+    # end
   end
 
   def update

@@ -2,20 +2,28 @@ require 'rails_helper'
 
 feature "updates posts" do
 
-scenario "Can edit the 5th post and view it updated" do
+scenario "Can edit the 6th post and view it updated" do
   signup()
   visit "/posts"
   add_post("I like toast")
   click_button "Edit6"
-  fill_in "Message", with: "The 5th post has been changed"
+  fill_in "Message", with: "The 6th post has been changed"
   click_button "Submit"
-  expect(page).to have_content("The 5th post has been changed")
+  expect(page).to have_content("The 6th post has been changed")
 end
 
 scenario "doesn't see edit button on not their own post" do
   signup()
   visit "/posts"
   expect{click_button "Edit5"}.to raise_error(Capybara::ElementNotFound)
+end
+
+scenario "can only edit if it's the right user" do
+  signup()
+  visit "/posts"
+  add_post("Sunny day!")
+  click_button "Edit6"
+  expect{page}.not_to raise_error()
 end
 
 end
