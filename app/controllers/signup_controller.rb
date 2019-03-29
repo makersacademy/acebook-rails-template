@@ -6,10 +6,12 @@ class SignupController < ApplicationController
 
   def create
     @user = Signup.create(signup_params)
+    session[:user] = Signup.find_by(params.require(:signup).permit(:username)).id
     redirect_to posts_url
   end
 
   def index
+    @user = Signup.all
   end
 
   private

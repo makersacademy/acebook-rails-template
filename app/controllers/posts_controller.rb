@@ -7,21 +7,24 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(message: post_params()[:message], signup_id: session[:user])
     redirect_to posts_url
   end
 
   def index
     @posts = Post.all
+    @user = session[:user]
   end
 
   def edit
-    Post.update(params[:post_id], :message => params[:Message])
-    redirect_to posts_url
+      Post.update(params[:post_id], :message => params[:Message])
+      redirect_to posts_url
   end
+
 
   def update
     @post_id = params[:post_id]
+
   end
 
   private
