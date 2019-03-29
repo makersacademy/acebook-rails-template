@@ -1,5 +1,15 @@
 # AceBook
 
+## What
+
+An attempt to reproduce the functionality of a social network, using Rails and CI.
+
+## Where
+
+Nowhere yet, Heroku soon.
+
+## How To Run
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
@@ -11,6 +21,14 @@ the below**
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## How to Deploy
+
+We don't know yet.
+
+## Shared Learning Documentation
+
+https://github.com/mmar8/acebook-Team_404/wiki
 
 ## Quickstart
 
