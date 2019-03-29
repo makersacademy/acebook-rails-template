@@ -632,6 +632,33 @@
         null,
         null
       ],
+      "/Users/student/group_projects/acebook-bcds/spec/features/user_can_signin_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/student/group_projects/acebook-bcds/spec/features/user_can_signup_spec.rb": [
         1,
         null,
@@ -682,6 +709,18 @@
         1,
         null
       ],
+      "/Users/student/group_projects/acebook-bcds/spec/helpers/web_helpers_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/student/group_projects/acebook-bcds/spec/models/post_spec.rb": [
         1,
         null,
@@ -711,6 +750,6 @@
         null
       ]
     },
-    "timestamp": 1553862364
+    "timestamp": 1553871857
   }
 }
