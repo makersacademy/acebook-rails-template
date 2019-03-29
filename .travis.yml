@@ -6,6 +6,7 @@ before_install:
   - gem update bundler
   - rvm install ruby-2.5.0
   - bundle install
+  - export PATH=$PATH:$PWD/geckodriver
 before_script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
