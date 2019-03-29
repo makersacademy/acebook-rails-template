@@ -1,14 +1,33 @@
-# AceBook
+<h1 align="center">Ace Book: Team 404</h1>
+<p align="center">
 
-## What
+<div align="center">    
+  
+[Description ](#description) | 
+[Installation ](#installation) | 
+[Testing ](#testing) | 
+[Contributions ](#contributions) | 
+[Deployment ](#deployment) | 
+[App ](#app) |
+[Material ](#material)
+
+</div>
+
+## Description
 
 An attempt to reproduce the functionality of a social network, using Rails and CI.
 
-## Where
+## Installation
 
-Nowhere yet, Heroku soon.
+## Testing
 
-## How To Run
+la la la
+
+## Contributions
+
+See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Deployment
 
 REQUIRED INSTRUCTIONS:
 
@@ -18,27 +37,11 @@ the below**
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
 2. The card wall is here: <please update>
+  
+## App
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## How to Deploy
-
-We don't know yet.
-
-## Shared Learning Documentation
+## Material
 
 https://github.com/mmar8/acebook-Team_404/wiki
 
-## Quickstart
-
-First, clone this repository. Then:
-
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
-```
+Nowhere yet, Heroku soon.
