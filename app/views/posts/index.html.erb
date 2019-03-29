@@ -8,6 +8,10 @@
     <input type="hidden" name="post_id" value="<%= post.id %>">
     <input type="submit" id = "<%="Edit#{post.id}"%>" value="<%="Edit"%>">
   </form>
+  <form class="" action="posts/delete" method="get" >
+    <input type="hidden" name="post_id" value="<%= post.id %>">
+    <input type="submit" id = "<%="Delete#{post.id}"%>" value="<%="Edit"%>">
+  </form>
   <% end %>
 </p>
 <% end %>
