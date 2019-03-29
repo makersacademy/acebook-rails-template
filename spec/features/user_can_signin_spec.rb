@@ -11,4 +11,10 @@ RSpec.feature "Sign in", type: :feature do
         expect(page).to have_content("Signed in successfully.")
         expect(page).to have_content("Logged in as #{user_email}.")
     end
+
+    scenario "user cannot see posts if not signed in" do
+        visit '/posts'
+        expect(page).to have_content("Please sign up or login to use Acebook!")
+    end
+
 end
