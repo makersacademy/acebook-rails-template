@@ -24,3 +24,5 @@
 
 .byebug_history
 coverage/
+
+log/test.log
