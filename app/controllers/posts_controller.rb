@@ -4,13 +4,20 @@ class PostsController < ApplicationController
   end
 
   def create
-    p @post = Post.create(post_params)
+    @post = Post.create(post_params)
     redirect_to posts_url
   end
 
   def index
     @posts = Post.all
   end
+
+  def destroy
+    p @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path(@post)
+  end
+
 
   private
 
