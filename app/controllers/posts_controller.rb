@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  # protect_from_forgery except: :index
+  protect_from_forgery except: :index
 
   def new
     @post = Post.new
