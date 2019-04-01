@@ -8,7 +8,6 @@ RSpec.feature "Sign up", type: :feature do
     fill_in "Password", with: "notapassword"
     fill_in "Password confirmation", with: "notapassword"
     click_button "Sign up"
-    expect(page).to have_content("Logged in as emailstupid@duh.com")
+    expect(page).to have_content("Logout")
   end
 end
-
