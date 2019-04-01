@@ -19,7 +19,7 @@ RSpec.feature 'Timeline', type: :feature, js: true do
     post = Post.create(message: "Hello")
     time = post[:created_at].strftime("%B %d %Y, %l:%M%P")
     user_sign_up
-    expect(page_first_content).to have_content("#{time}")
+    expect(page_first_content).to have_content(time.to_s)
   end
 
   scenario 'Can submit a multi-line post and view it' do

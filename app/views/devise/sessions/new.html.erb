@@ -1,6 +1,15 @@
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<% if !flash[:alert].blank? %>
+    <% if flash[:alert][/The email address and password you entered do not match our records/] %>
+      <div class="flashNotice col last">
+        <%= t('devise.failure.not_found_in_database', resource_name: "#{params[:user][:email]}").html_safe %>
+      </div>
+    <% else %>
+      <div class="flashNotice col last"><%= flash[:alert]%></div>
+    <% end %>
+<% end %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
