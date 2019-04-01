@@ -6,7 +6,9 @@ class SignupController < ApplicationController
 
   def create
     @user = Signup.create(signup_params)
-    session[:user] = Signup.find_by(params.require(:signup).permit(:username)).id
+    session[:user] = Signup.find_by(params.require(:signup).permit(:username))
+    session[:user_id] = Signup.find_by(params.require(:signup).permit(:username)).id
+    # session[:username] = Signup.find_by(params.require(:signup).permit(:username)).username
     redirect_to posts_url
   end
 
