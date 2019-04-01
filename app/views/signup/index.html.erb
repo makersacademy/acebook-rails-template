@@ -1,19 +1,30 @@
-<link rel="stylesheet" href="/../assets/stylesheets/signup.css">
-<%= stylesheet_link_tag "application" %>
-<%= form_with scope: :signup, local: true do |form| %>
-<p>
-  <%= form.label :username %>
-  <%= form.text_field :username %>
-</p>
-<p>
-  <%= form.label :password %>
-  <%= form.text_field :password %>
-</p>
-<p>
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-</p>
-<p  class = "Submit">
-  <%= form.submit "Submit" %>
-</p>
-<% end %>
+<!-- <link rel="stylesheet" href="/../assets/stylesheets/signup.css"> -->
+<%= stylesheet_link_tag "signup" %>
+<body style="background: lightblue">
+  <center>
+  <h1 class="header"> Sign Up to PaceBook! </h1>
+  <%= form_with scope: :signup, local: true do |form| %>
+  <div class="form">
+    <p>
+      <%= form.label :username %>
+      <br>
+      <%= form.text_field :username %>
+    </p>
+    <p>
+      <%= form.label :password %>
+      <br>
+      <%= form.password_field :password %>
+    </p>
+    <p>
+      <%= form.label :email %>
+      <br>
+      <%= form.email_field :email %>
+    </p>
+    <p>
+      <%= form.submit "Submit" , class: "Submit" %>
+    </p>
+  </div>
+
+  <% end %>
+  </center>
+</body>
