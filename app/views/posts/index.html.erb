@@ -1,8 +1,16 @@
-
+<%= stylesheet_link_tag "posts" %>
 <% @posts.each do |post| %>
-<p><%= post.message %>
+<div class="posts_container">
+
+  <div class="posts">
+  <%= post.message %>
+  </div>
+  <div class="time_container">
+    <div class="time">
   <% time = post.created_at.to_s %>
   <%= time[8..9] + "/" + time[5..6] + "/" + time[0..3] %>
+  </div>
+  <div class="button">
   <% if post.signup_id == session[:user] %>
   <form class="" action="posts/update" method="get" >
     <input type="hidden" name="post_id" value="<%= post.id %>">
@@ -12,8 +20,10 @@
     <input type="hidden" name="post_id" value="<%= post.id %>">
     <input type="submit" id = "<%="Delete#{post.id}"%>" value="<%="Delete"%>">
   </form>
+  </div>
+  </div>
   <% end %>
-</p>
+</div>
 <% end %>
 
 <%= link_to new_post_path do %>
