@@ -51,6 +51,7 @@ group :development, :test do
   gem 'simple-send-keys'
   gem 'simplecov'
   gem 'simplecov-console'
+  gem 'timecop'
 end
 
 group :development do
