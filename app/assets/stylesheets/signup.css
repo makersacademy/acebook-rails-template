@@ -9,27 +9,34 @@
 }
 
 .Submit {
+  margin-top: 10px;
   width: 90px;
-  height: 100px;
-  font-size: 20pt;
+  height: 40px;
+  font-size: 13pt;
+  text-align: center;
+  font-family: "Trebuchet MS";
 
 }
 
 .header {
+  margin-top: 50px;
   width: 50px;
   display: inline;
+  color: black;
 }
 
 .form {
 
-  font-size: 20pt;
+  font-size: 15pt;
   width: 50%;
   margin-top: 50px;
 }
 
 body {
+  background-image: url("https://www.hdwallpaper.nu/wp-content/uploads/2015/07/4e8d81070377c62b6f70f19f5dbd29dc-995x498.jpg");
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Trebuchet MS";
+  color: white;
 }
