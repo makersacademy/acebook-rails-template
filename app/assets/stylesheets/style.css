@@ -1,0 +1,48 @@
+div[class="post"] {
+  text-align: center;
+}
+
+div[class="post-container"]{
+  text-align: center;
+}
+
+div[class="card-body"] {
+width: 50%;
+text-align: center;
+align-self: center;
+justify-content: center;
+display:inline-block;
+}
+
+div[class="card"] {
+  width: 50%;
+  text-align: center;
+  align-self: center;
+  justify-content: center;
+  display:inline-block;
+}
+
+div[class="new-post-button"]{
+  text-align: center;
+}
+
+ div[class="header"]{
+  overflow: hidden;
+  font-size: 30px;
+  font-family: "roboto";
+  font-weight: bold;
+  color: white;
+}
+
+div[class="header-title"]{
+  text-align: center;
+}
+
+div[class="actions"] {
+  text-align: center;
+}
+
+div[class="login-container"]{
+  padding-top: 50px;
+  text-align: center;
+}

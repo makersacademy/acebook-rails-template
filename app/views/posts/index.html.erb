@@ -4,9 +4,23 @@
     <% session[:display_welcome] = true %>
   <% end %>
 
-<% @posts.each do |post| %>
-  <p class="msg"><%= h(post.message).gsub(/\n/, '<br/>').html_safe %> On <%= post.created_at.strftime("%B %d %Y, %l:%M%P") %></p>
-<% end %>
-<%= link_to new_post_path do %>
-    <button type="button" class="btn btn-primary">New post</button>
-<% end %>
+<br>
+<div class="new-post-button">
+  <%= link_to new_post_path do %>
+      <button type="button" class="btn btn-primary">New post</button>
+  <% end %>
+</div>
+
+<div class="post-container">
+  <br>
+  <% @posts.each do |post| %>
+    <div class="card">
+      <div class="card-body">
+        <strong><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></strong>
+        <br>
+        <i>On <%= post.created_at.strftime("%B %d %Y, %l:%M%P") %></i>
+      </div>
+    </div>
+    <br><br>
+  <% end %>
+</div>
