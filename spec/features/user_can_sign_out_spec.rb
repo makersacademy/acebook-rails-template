@@ -12,6 +12,6 @@ RSpec.feature "Sign out and log in", type: :feature do
     fill_in "Email", with: "emailstupid@duh.com!"
     fill_in "Password", with: "notapassword"
     click_button "Log in"
-    expect(page).to have_content("Logged in as emailstupid@duh.com")
+    expect(page).to have_content("Logout")
   end
 end
