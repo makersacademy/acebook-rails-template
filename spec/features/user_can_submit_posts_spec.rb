@@ -12,14 +12,14 @@ RSpec.feature "Timeline", type: :feature, js: true do
     user_sign_up
     create_new_post("Hello World")
     create_new_post("Good morning")
-    expect(page_content).to have_content("Good morning")
+    expect(page_first_content).to have_content("Good morning")
   end
 
   scenario "Can see the post with date and time" do
     post = Post.create(message: "Hello")
     time = post[:created_at].strftime("%B %d %Y, %l:%M%P")
     user_sign_up
-    expect(page_content).to have_content("#{time}")
+    expect(page_first_content).to have_content("#{time}")
   end
 
   scenario "Can submit a multi-line post and view it" do
@@ -35,14 +35,21 @@ RSpec.feature "Timeline", type: :feature, js: true do
     expect(page.current_path).to eq '/users/sign_in'
   end
 
-  scenario  "user can sign up" do
-    visit "/posts"
-    expect(page.current_path).to eq '/users/sign_in'
-    click_link('Sign up')
-    fill_in('user_email', :with => 'test@test.com')
-    fill_in('user_password', :with => 'testing123')
-    fill_in('user_password_confirmation', :with => 'testing123')
-    click_button 'Sign up'
+  scenario "user can sign up" do
+    user_sign_up
     expect(page.current_path).to eq '/posts'
+  end
+
+  scenario "confirmation message is being displayed first time after signing up" do
+    visit "/posts"
+    user_sign_up
+    expect(page).to have_content("Sign in succesful")
+  end
+  
+  scenario "confirmation message is not being displayed constantly" do
+    visit "/posts"
+    user_sign_up
+    create_new_post("Hello wolrd")
+    expect(page).not_to have_content("Sign in succesful")
   end
 end
