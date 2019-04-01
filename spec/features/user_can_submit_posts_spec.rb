@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'simple_send_keys'
+require 'timecop'
 
 RSpec.feature 'Timeline', type: :feature, js: true do
   scenario 'Can submit posts and view them' do
@@ -12,14 +13,16 @@ RSpec.feature 'Timeline', type: :feature, js: true do
     user_sign_up
     create_new_post('Hello World')
     create_new_post('Good morning')
-    expect(page_first_content).to have_content('Good morning')
+    expect('Good morning').to appear_before('Hello World')
   end
 
   scenario 'Can see the post with date and time' do
-    post = Post.create(message: "Hello")
-    time = post[:created_at].strftime("%B %d %Y, %l:%M%P")
     user_sign_up
-    expect(page_first_content).to have_content(time.to_s)
+
+    Timecop.travel(Time.local(2008, 5, 15, 10, 0, 0))
+    create_new_post('Good morning')
+    Timecop.return
+    expect(page).to have_content("Good morning On May 15 2008, 9:00am")
   end
 
   scenario 'Can submit a multi-line post and view it' do
