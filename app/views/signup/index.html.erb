@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/../assets/stylesheets/signup.css">
+<%= stylesheet_link_tag "application" %>
 <%= form_with scope: :signup, local: true do |form| %>
 <p>
   <%= form.label :username %>
@@ -11,7 +13,7 @@
   <%= form.label :email %>
   <%= form.text_field :email %>
 </p>
-<p>
+<p  class = "Submit">
   <%= form.submit "Submit" %>
 </p>
 <% end %>

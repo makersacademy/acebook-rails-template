@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .signupform {
+   width: 150px;
+   clear: both;
+ }
+
+ .signupform input {
+   width: 100%;
+   clear: both;
+ }
+
+ .Submit {
+   width: 90px;
+   height: 30px;
+
+ }
+
+ h1 {
+   width: 50%;
+   display: inline;
+   align: center;
+ }

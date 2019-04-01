@@ -1,0 +1,22 @@
+.signupform {
+  width: 150px;
+  clear: both;
+}
+
+.signupform input {
+  width: 100%;
+  clear: both;
+}
+
+.Submit {
+  background-color: red;
+  width: 90px;
+  height: 30px;
+
+}
+
+h1 {
+  width: 50%;
+  display: inline;
+  align: center;
+}
