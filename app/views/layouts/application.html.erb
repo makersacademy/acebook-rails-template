@@ -2,14 +2,14 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Acebook</title>
+    <title>acebook</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "style.css" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
-    <div class="header" style = "overflow: hidden;background-color: #99ffff;padding: 20px 10px;">
-        <strong>Acebook</strong>
+    <div class="header" style = "overflow: hidden;background-color: #3b5998;padding: 10px 10px;">
+        Acebook
       <div class="header-right" style = "float: right;">
         <% if user_signed_in? %>
           <%= button_to('Logout', destroy_user_session_path, method: :delete, :class => "btn btn-secondary btn-sm") %>

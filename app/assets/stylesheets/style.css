@@ -26,14 +26,23 @@ div[class="new-post-button"]{
   text-align: center;
 }
 
-/* div[class="header"]{
-  display: inline-block;
-} */
+ div[class="header"]{
+  overflow: hidden;
+  font-size: 30px;
+  font-family: "roboto";
+  font-weight: bold;
+  color: white;
+}
 
 div[class="header-title"]{
   text-align: center;
 }
 
 div[class="actions"] {
+  text-align: center;
+}
+
+div[class="login-container"]{
+  padding-top: 50px;
   text-align: center;
 }
