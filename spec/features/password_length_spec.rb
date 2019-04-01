@@ -24,11 +24,3 @@ RSpec.feature "new user password", type: :feature, js: true do
     expect(page).to have_content("Password is too short (minimum is 6 characters)")
   end
 end
-
-# RSpec.feature "Timeline", type: :feature, js: true do
-#   scenario "Can submit posts and view them" do
-#     user_sign_up
-#     create_new_post("Hello world!")
-#     expect(page).to have_content("Hello world!")
-#   end
-# end
