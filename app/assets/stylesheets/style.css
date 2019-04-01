@@ -1,0 +1,39 @@
+div[class="post"] {
+  text-align: center;
+}
+
+div[class="post-container"]{
+  text-align: center;
+}
+
+div[class="card-body"] {
+width: 50%;
+text-align: center;
+align-self: center;
+justify-content: center;
+display:inline-block;
+}
+
+div[class="card"] {
+  width: 50%;
+  text-align: center;
+  align-self: center;
+  justify-content: center;
+  display:inline-block;
+}
+
+div[class="new-post-button"]{
+  text-align: center;
+}
+
+/* div[class="header"]{
+  display: inline-block;
+} */
+
+div[class="header-title"]{
+  text-align: center;
+}
+
+div[class="actions"] {
+  text-align: center;
+}
