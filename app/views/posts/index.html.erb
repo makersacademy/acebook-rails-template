@@ -2,8 +2,7 @@
 
   <div class="posts">
     <% @posts.each do |post| %>
-    <div class="post_container">
-
+    <div id="<%= "post#{post.id}" %>"class="post_container">
       <div class="post_message">
         <%= post.message %>
       </div>
@@ -16,15 +15,15 @@
           <% if post.signup_id == session[:user] %>
           <form class="" action="posts/update" method="get" >
             <input type="hidden" name="post_id" value="<%= post.id %>">
-            <input type="submit" id = "<%="Edit#{post.id}"%>" value="<%="Edit"%>">
+            <input class="edit" type="submit" id = "<%="Edit#{post.id}"%>" value="<%="Edit"%>">
           </form>
           <form class="" action="posts/delete" method="get" >
             <input type="hidden" name="post_id" value="<%= post.id %>">
-            <input type="submit" id = "<%="Delete#{post.id}"%>" value="<%="Delete"%>">
+            <input class="edit" type="submit" id = "<%="Delete#{post.id}"%>" value="<%="Delete"%>">
           </form>
+          <% end %>
         </div>
       </div>
-      <% end %>
     </div>
     <% end %>
   </div>

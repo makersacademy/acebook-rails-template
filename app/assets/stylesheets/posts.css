@@ -11,29 +11,55 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  width: 80%;
   flex: 1 0 100%;
   justify-content: flex-start;
 }
 
 .post_container {
+  background-color: white;
+  opacity: 0.2;
   display: flex;
-  align-items: stretch;
   flex: 1 0 100%;
   border-style: solid;
   flex-direction: row;
+  margin: 10px;
+  justify-content: space-between;
 }
 
 .post_message {
   flex: 1 0 70%;
   font-size: 16pt;
+  margin: 10px;
 }
 
 .time_container {
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
   margin-left: 10px;
-  flex: 1 0 30%;
+  flex: 1 0 10%;
   flex-direction: column;
+
 }
 
 .new_post_link {
 
+}
+
+.time {
+  text-align: right;
+  margin-right: 15px;
+  font-size: 10pt;
+}
+
+.edit {
+  font-size: 15pt;
+}
+
+.button {
+  margin-top: 2px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: flex-end;
 }
