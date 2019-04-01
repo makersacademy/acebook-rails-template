@@ -21,10 +21,13 @@ class PostsController < ApplicationController
       redirect_to posts_url
   end
 
-
   def update
     @post_id = params[:post_id]
+  end
 
+  def delete
+    Post.destroy(params[:post_id])
+    redirect_to posts_url
   end
 
   private
