@@ -7,12 +7,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(message: post_params()[:message], signup_id: session[:user])
+    @post = Post.create(message: post_params()[:message], signup_id: session[:user_id])
     redirect_to posts_url
   end
 
   def index
     @posts = Post.all
+    @user_id = session[:user_id]
     @user = session[:user]
   end
 

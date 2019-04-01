@@ -17,7 +17,7 @@ RSpec.feature "Signin", type: :feature do
     fill_in 'signin[username]', with: "Foo"
     fill_in 'signin[password]', with: "Bar"
     click_button "Signin"
-    expect(page).to have_content "Hello Foo"
+    expect(page).to have_content "Hello, Foo"
   end
 
 end
