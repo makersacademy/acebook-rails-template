@@ -1,0 +1,30 @@
+.post_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.posts {
+  flex-direction: column;
+}
+
+.post_container {
+  border-style: solid;
+  flex-direction: row;
+}
+
+.post_message {
+  font-size: 16pt;
+}
+
+.time_container {
+  margin-left: 10px;
+  flex-direction: column;
+}
+
+.new_post_link {
+
+}

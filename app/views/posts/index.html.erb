@@ -1,31 +1,36 @@
-<%= stylesheet_link_tag "posts" %>
-<% @posts.each do |post| %>
-<div class="posts_container">
+<body class = "post_page">
 
   <div class="posts">
-  <%= post.message %>
-  </div>
-  <div class="time_container">
-    <div class="time">
-  <% time = post.created_at.to_s %>
-  <%= time[8..9] + "/" + time[5..6] + "/" + time[0..3] %>
-  </div>
-  <div class="button">
-  <% if post.signup_id == session[:user] %>
-  <form class="" action="posts/update" method="get" >
-    <input type="hidden" name="post_id" value="<%= post.id %>">
-    <input type="submit" id = "<%="Edit#{post.id}"%>" value="<%="Edit"%>">
-  </form>
-  <form class="" action="posts/delete" method="get" >
-    <input type="hidden" name="post_id" value="<%= post.id %>">
-    <input type="submit" id = "<%="Delete#{post.id}"%>" value="<%="Delete"%>">
-  </form>
-  </div>
-  </div>
-  <% end %>
-</div>
-<% end %>
+    <% @posts.each do |post| %>
+    <div class="post_container">
 
-<%= link_to new_post_path do %>
-New post
-<% end %>
+      <div class="post_message">
+        <%= post.message %>
+      </div>
+      <div class="time_container">
+        <div class="time">
+          <% time = post.created_at.to_s %>
+          <%= time[8..9] + "/" + time[5..6] + "/" + time[0..3] %>
+        </div>
+        <div class="button">
+          <% if post.signup_id == session[:user] %>
+          <form class="" action="posts/update" method="get" >
+            <input type="hidden" name="post_id" value="<%= post.id %>">
+            <input type="submit" id = "<%="Edit#{post.id}"%>" value="<%="Edit"%>">
+          </form>
+          <form class="" action="posts/delete" method="get" >
+            <input type="hidden" name="post_id" value="<%= post.id %>">
+            <input type="submit" id = "<%="Delete#{post.id}"%>" value="<%="Delete"%>">
+          </form>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+  <div class="new_post_link">
+    <%= link_to new_post_path do %>
+    New post
+    <% end %>
+  </div>
+</body>

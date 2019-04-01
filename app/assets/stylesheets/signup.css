@@ -32,8 +32,7 @@
   margin-top: 50px;
 }
 
-body {
-  background-image: url("https://www.hdwallpaper.nu/wp-content/uploads/2015/07/4e8d81070377c62b6f70f19f5dbd29dc-995x498.jpg");
+.sign_up_page {
   display: flex;
   align-items: center;
   justify-content: center;
