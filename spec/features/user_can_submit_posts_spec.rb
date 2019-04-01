@@ -19,10 +19,10 @@ RSpec.feature 'Timeline', type: :feature, js: true do
   scenario 'Can see the post with date and time' do
     user_sign_up
 
-    Timecop.travel(Time.local(2008, 5, 15, 10, 0, 0))
+    Timecop.travel(Time.zone.local(2008, 5, 15, 10, 0, 0))
     create_new_post('Good morning')
     Timecop.return
-    expect(page).to have_content("Good morning On May 15 2008, 9:00am")
+    expect(page).to have_content("Good morning On May 15 2008, 10:00am")
   end
 
   scenario 'Can submit a multi-line post and view it' do
