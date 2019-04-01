@@ -52,6 +52,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'simplecov-console'
   gem 'timecop'
+  gem 'orderly'
 end
 
 group :development do

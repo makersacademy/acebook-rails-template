@@ -13,11 +13,12 @@ RSpec.feature 'Timeline', type: :feature, js: true do
     user_sign_up
     create_new_post('Hello World')
     create_new_post('Good morning')
-    expect(page_first_content).to have_content('Good morning')
+    expect('Good morning').to appear_before('Hello World')
   end
 
   scenario 'Can see the post with date and time' do
     user_sign_up
+
     Timecop.travel(Time.local(2008, 5, 15, 10, 0, 0))
     create_new_post('Good morning')
     Timecop.return
