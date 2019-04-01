@@ -26,9 +26,9 @@
 
   <% if notice %>
     <p class="alert alert-success"><script>M.toast({html: "You are logged in as: ", classes: 'blue rounded', displayLength:2000});</script></p><% end %>
-  <% if alert %>	  <% if alert %>
+  <% if alert %>	 
     <p class="alert alert-danger"><script>M.toast({html: "Incorrect Username or Password", classes: 'red rounded', displayLength:2000});</script></p>
   <% end %>
   <%= yield %>
-</body>	  
+</body>
 </html>
