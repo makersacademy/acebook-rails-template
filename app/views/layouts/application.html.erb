@@ -8,6 +8,9 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
+  <% if user_signed_in? %>
+    <%= button_to('Logout', destroy_user_session_path, method: :delete, :class => "btn btn-secondary btn-sm") %>
+  <% end %>
 
   <body>
     <%= yield %>
