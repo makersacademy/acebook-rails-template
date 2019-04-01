@@ -1,0 +1,17 @@
+<h1>Signin#index</h1>
+<p>Find me in app/views/signin/index.html.erb</p>
+<h2>Signin</h2>
+Username
+<%= form_for(:signin, url: signin_url) do |form| %>
+<p>
+ <%= form.label :username %>
+ <%= form.text_field :username %>
+</p>
+<p>
+ <%= form.label :password %>
+ <%= form.text_field :password %>
+</p>
+<p>
+<%= form.submit "Signin" %>
+</p>
+<% end %>
