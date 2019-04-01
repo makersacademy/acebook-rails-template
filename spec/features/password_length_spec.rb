@@ -1,8 +1,8 @@
 require 'rails_helper'
 require 'simple_send_keys'
 
-RSpec.feature "new user password", type: :feature, js: true do
-  scenario "user cannot input password more than 10 characters" do
+RSpec.feature 'new user password', type: :feature, js: true do
+  scenario 'user cannot input password more than 10 characters' do
     visit('/')
     click_link('Sign up')
     fill_in('user_email', :with => 'tester@test.com')
@@ -10,10 +10,10 @@ RSpec.feature "new user password", type: :feature, js: true do
     fill_in('user_password_confirmation', :with => 'reallyreallylongpassword')
     click_button 'Sign up'
     expect(page.current_path).to eq '/users'
-    expect(page).to have_content("Password is too long (maximum is 10 characters)")
+    expect(page).to have_content('Password is too long (maximum is 10 characters)')
   end
 
-  scenario "user cannot input password less than 6 characters" do
+  scenario 'user cannot input password less than 6 characters' do
     visit('/')
     click_link('Sign up')
     fill_in('user_email', :with => 'tester@test.com')
@@ -21,7 +21,7 @@ RSpec.feature "new user password", type: :feature, js: true do
     fill_in('user_password_confirmation', :with => 'short')
     click_button 'Sign up'
     expect(page.current_path).to eq '/users'
-    expect(page).to have_content("Password is too short (minimum is 6 characters)")
+    expect(page).to have_content('Password is too short (minimum is 6 characters)')
   end
 end
 
