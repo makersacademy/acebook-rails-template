@@ -25,16 +25,16 @@ RSpec.feature 'Timeline', type: :feature, js: true do
   scenario 'Can submit a multi-line post and view it' do
     user_sign_up
     click_link 'New post'
-    find_field('post_message').send_keys('[This, enter, is, enter, a, enter, multi-line, enter, post]')
+    find_field('post_message').send_keys("[This, enter, is, enter, a, enter, multi-line, enter, post]")
     click_button 'Submit'
-    expect(page.html).to include('This\n<br>is\n<br>a\n<br>multi-line\n<br>post')
+    expect(page.html).to include("This\n<br>is\n<br>a\n<br>multi-line\n<br>post")
   end
 
   scenario 'redirect to sign in page when not logged in' do
     visit '/posts'
     expect(page.current_path).to eq '/users/sign_in'
   end
-  
+
   scenario 'user can sign up' do
     user_sign_up
     expect(page.current_path).to eq '/posts'
@@ -45,7 +45,7 @@ RSpec.feature 'Timeline', type: :feature, js: true do
     user_sign_up
     expect(page).to have_content("Sign in succesful")
   end
-  
+
   scenario "confirmation message is not being displayed constantly" do
     visit "/posts"
     user_sign_up
