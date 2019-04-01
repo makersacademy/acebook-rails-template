@@ -8,20 +8,29 @@
 }
 
 .posts {
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  flex: 1 0 100%;
+  justify-content: flex-start;
 }
 
 .post_container {
+  display: flex;
+  align-items: stretch;
+  flex: 1 0 100%;
   border-style: solid;
   flex-direction: row;
 }
 
 .post_message {
+  flex: 1 0 70%;
   font-size: 16pt;
 }
 
 .time_container {
   margin-left: 10px;
+  flex: 1 0 30%;
   flex-direction: column;
 }
 
