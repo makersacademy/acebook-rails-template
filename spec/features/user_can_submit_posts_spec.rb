@@ -34,9 +34,22 @@ RSpec.feature 'Timeline', type: :feature, js: true do
     visit '/posts'
     expect(page.current_path).to eq '/users/sign_in'
   end
-
+  
   scenario 'user can sign up' do
     user_sign_up
     expect(page.current_path).to eq '/posts'
+  end
+
+  scenario "confirmation message is being displayed first time after signing up" do
+    visit "/posts"
+    user_sign_up
+    expect(page).to have_content("Sign in succesful")
+  end
+  
+  scenario "confirmation message is not being displayed constantly" do
+    visit "/posts"
+    user_sign_up
+    create_new_post("Hello wolrd")
+    expect(page).not_to have_content("Sign in succesful")
   end
 end
