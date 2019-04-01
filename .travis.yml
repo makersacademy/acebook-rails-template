@@ -1,4 +1,6 @@
 language: ruby
+addons:
+  firefox: "66.0"
 rvm:
   - 2.5.0
   - jruby
