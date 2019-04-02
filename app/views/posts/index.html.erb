@@ -4,7 +4,8 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <!-- <span class="card-title">Card Title</span> -->
-            <p><%= p simple_format(linebreak(post.message))%></p>
+            <p><%= p simple_format(linebreak(post.message))%></p>        
+            <p><%= post.created_at %></p>
           </div>
           <div class="card-action">
             <%= link_to "Delete", post_path(post), method: :delete %>
