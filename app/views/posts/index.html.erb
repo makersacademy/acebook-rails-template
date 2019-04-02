@@ -3,8 +3,16 @@
 <h1> Hello, <%=@user['username']%></h1>
 <% end %>
 
+
+
+
 <% @posts.each do |post| %>
-<p><%= post.message %>
+<p>
+    <% @users.each do |user| %>
+     <% if user.id  == post.signup_id %>
+    <%= "#{user.username} : #{post.message}" %>
+    <% end %>
+    <% end %>
   <% time = post.created_at.to_s %>
   <%= time[8..9] + "/" + time[5..6] + "/" + time[0..3] %>
   <% if post.signup_id == session[:user_id] %>
