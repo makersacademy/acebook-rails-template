@@ -19,8 +19,10 @@
         <strong><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></strong>
         <br>
         <i>On <%= post.created_at.strftime("%B %d %Y, %l:%M%P") %></i>
+        <br>By user number: <%= post.user_id %>
       </div>
     </div>
     <br><br>
   <% end %>
 </div>
+
