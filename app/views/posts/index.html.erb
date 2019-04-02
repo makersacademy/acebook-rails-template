@@ -22,11 +22,11 @@
         <br>By user number: <%= post.user_id %>
         <% if post.user_id == current_user.id %>
           <br><%= link_to 'Edit', edit_post_path(post), :id => "edit-#{post.id}" %>
+          <%= link_to post_path(:id => post.id), controller: 'posts', action: 'destroy', method: 'delete', :class => "btn btn-primary" do %>Delete
         <% end %>
       </div>
     </div>
-    <%= link_to post_path(:id => post.id), controller: 'posts', action: 'destroy', method: 'delete', :class => "btn btn-primary" do %>
-  Delete
+
 <% end %>
     <br><br>
   <% end %>
