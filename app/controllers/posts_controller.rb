@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order('created_at DESC')
   end
-
+  
   def update
     @post = Post.find(params[:id])
 
@@ -37,6 +37,11 @@ class PostsController < ApplicationController
       flash[:notice] = 'Access denied as you are not owner of this Post'
       redirect_to posts_path
     end
+  end
+
+  def destroy
+    @post = Post.find_by(id: params[:id]).destroy
+    redirect_to posts_url
   end
 
   private
