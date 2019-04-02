@@ -22,7 +22,9 @@
         <br>By user number: <%= post.user_id %>
       </div>
     </div>
+    <%= link_to post_path(:id => post.id), controller: 'posts', action: 'destroy', method: 'delete', :class => "btn btn-primary" do %>
+  Delete
+<% end %>
     <br><br>
   <% end %>
 </div>
-
