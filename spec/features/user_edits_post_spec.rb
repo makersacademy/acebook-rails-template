@@ -45,7 +45,19 @@ RSpec.feature 'edit posts' , type: :feature, js: true do
     click_button 'Logout'
     second_user_sign_up
     visit('/posts/1/edit')
+    page.driver.browser.switch_to.alert.accept
+    expect(page.current_path).to eq '/posts'
     expect(page).to have_content('Hello world!')
+  end
+
+  scenario 'user sees error message when trying to edit post more than 10 mins old' do
+    DatabaseCleaner.clean_with(:truncation)
+    Timecop.travel(Time.zone.local(2016, 5, 15, 10, 0, 0))
+    user_sign_up
+    create_new_post('Good morning')
+    Timecop.return
+    click_link 'Edit'
+    page.driver.browser.switch_to.alert.accept
     expect(page.current_path).to eq '/posts'
   end
 end

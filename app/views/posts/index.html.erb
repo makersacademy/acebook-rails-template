@@ -3,6 +3,12 @@
   <% session[:display_welcome] = true %>
 <% end %>
 
+<div class="error-message">
+  <% unless flash[:alert].nil? %>
+    <%= render html: "<script>alert('#{flash[:alert]}')</script>".html_safe %>
+  <% end %>
+</div>
+
 <br>
 <div class="new-post-button">
   <%= link_to new_post_path do %>

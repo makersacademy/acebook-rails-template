@@ -46,3 +46,11 @@ div[class="login-container"]{
   padding-top: 50px;
   text-align: center;
 }
+
+div[class="error-message"]{
+  color:red;
+}
+
+div[id="alert"]{
+  color:red;
+}

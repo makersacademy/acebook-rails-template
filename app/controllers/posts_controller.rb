@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :post_owner, only: [:edit, :update, :destroy]
+  before_action :post_owner, only: [:edit, :update]
   def show
     @post = Post.find(params[:id])
   end
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order('created_at DESC')
   end
-  
+
   def update
     @post = Post.find(params[:id])
 
@@ -33,15 +33,17 @@ class PostsController < ApplicationController
 
   def post_owner
     @post = Post.find(params[:id])
-    unless @post.user_id == current_user.id
-      flash[:notice] = 'Access denied as you are not owner of this Post'
-      redirect_to posts_path
+    if @post.user_id != current_user.id
+      redirect_to posts_path, :alert => "This is not your post to edit"
+    elsif Time.now > (@post.created_at + 10*60)
+      redirect_to posts_path, :alert => "You can no longer edit this post (it is more than 10 minutes old)"
     end
   end
 
   def destroy
     @post = Post.find_by(id: params[:id]).destroy
     redirect_to posts_url
+    # redirect_to posts_url, :alert => "Are you sure?"
   end
 
   private
