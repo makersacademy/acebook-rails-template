@@ -8,6 +8,7 @@
             <div class="chip">
               <%= post.user.email %>
             </div>
+            <p><%= p simple_format(linebreak(post.message))%></p>        
             <p><%= post.created_at %></p>
             <p><%= post.message %></p>
           </div>

@@ -1,4 +1,4 @@
-addons: 
+addons:
 before_script:
 - psql -c 'create database pgapp_test;' -U postgres
 bundler_args: "--without production"
@@ -10,5 +10,6 @@ services:
 - postgresql
 deploy:
   provider: heroku
+  app: obscure-ridge-98823
   api_key:
     secure: yFalbhQD73/CTg8SqBdg1N2fsPWgPqWtleTLSK1Kshn3xkwTJ9BTfQICKY+x4pRAfm9KIoWParWJHt7B0QwZS1uSHXNSl4S1Kvv7UH8OnR971QY3PhW/bwro5LcOTFoOCsiw77jF24KLJujj7BK4gauZyTef+vZgVJvEUpwItSM0X3RJ1oe+SmW2LTNmpn5L7Q+niRVuKqaFx60SOpazlyZ+AE+2lm2OrTs+wzC70laCoPjvJp0Ys9gMbf0B15Z7ziccNn6N9vih4nHNpqnJORyghmTHFhyurcc6nNG4lc3/DIUMkER6bD41kOjnuD3QafsgVvtQT0nfDf7EQ7hdOvd8s3H66PZkOqWvXiFZNSBnBBg0GxOospvKY/Uxc4u6dAbG0BzjmH1Q50T3zV3i4hzpEatlH+mv2jpz3eZ2bSz5EXCaDLFkmy/ByaJMelE6arcJLokfmZ6tkd4e+4Fm47KWxcXYP5XnhZyM7fxxznAB9FkrCUfTbuLsm8h3eZAu7QrvPSBE5UKOewvY0H1tHNaba75kvMXRyhiqy/M1r3FwRhuh1TBSvNccK0K48afNYj223vbGuvfWCp3JDmxLRmCVHXvKCOCS3YZpYLjOz+3UhKvCOiFhWFkrQngbfqrbZdv1N2e4GNOGSAc8HL+esf474X++XZSqK0jdsS6FVwg=
