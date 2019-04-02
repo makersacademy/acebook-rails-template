@@ -20,4 +20,11 @@ RSpec.feature "Signin", type: :feature do
     expect(page).to have_content "Hello, Foo"
   end
 
+
+  scenario "Sign-up button available on signin page" do
+    visit "/signin/new"
+    click_button "Signup"
+    expect(current_path).to eq "/signup"
+  end
+
 end
