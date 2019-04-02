@@ -1,9 +1,10 @@
 <div style="width:90%; margin: auto; margin-top: 5%">
-  Enter your Post
+  Enter your Post Right Here
   <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
-  <%= form.text_field :created_at %>
+  <%= puts current_user.email  %>
+  <%= form.hidden_field :email, value: current_user.email%>
   <%= form.hidden_field :user_id, value: current_user.id%>
   <%= form.submit "Post" %>
 <% end %>
