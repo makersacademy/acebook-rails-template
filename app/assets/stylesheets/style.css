@@ -49,6 +49,14 @@ div[class="login-container"]{
   padding-right: 25%;
 }
 
+div[class="error-message"]{
+  color:red;
+}
+
+div[id="alert"]{
+  color:red;
+}
+
 h2{
   text-align: left;
   padding-left: 20%;

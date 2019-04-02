@@ -1,8 +1,13 @@
-
-  <% unless session[:display_welcome] %>
+<% unless session[:display_welcome] %>
   <%= flash.now[:notice] = "Sign in succesful" %>
-    <% session[:display_welcome] = true %>
+  <% session[:display_welcome] = true %>
+<% end %>
+
+<div class="error-message">
+  <% unless flash[:alert].nil? %>
+    <%= render html: "<script>alert('#{flash[:alert]}')</script>".html_safe %>
   <% end %>
+</div>
 
 <br>
 <div class="new-post-button">
@@ -14,15 +19,23 @@
 <div class="post-container">
   <br>
   <% @posts.each do |post| %>
-    <div class="card">
+    <div class="card" id="post-#{post.id}">
       <div class="card-body">
         <strong><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></strong>
         <br>
         <i>On <%= post.created_at.strftime("%B %d %Y, %l:%M%P") %></i>
         <br>By user number: <%= post.user_id %>
+        <% if post.user_id == current_user.id %>
+          <br><%= link_to 'Edit', edit_post_path(post), :id => "edit-#{post.id}" %>
+          <%= link_to post_path(:id => post.id), controller: 'posts',
+          action: 'destroy', method: 'delete',
+          data: {confirm: "Are you sure you want to delete the post?",
+          confirm_proceed: "Disconnect"}, :class => "btn btn-primary" do %>Delete<% end %>
+      <% end %>
       </div>
     </div>
+
+
     <br><br>
   <% end %>
 </div>
-
