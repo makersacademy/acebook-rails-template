@@ -27,7 +27,10 @@
         <br>By user number: <%= post.user_id %>
         <% if post.user_id == current_user.id %>
           <br><%= link_to 'Edit', edit_post_path(post), :id => "edit-#{post.id}" %>
-          <%= link_to post_path(:id => post.id), controller: 'posts', action: 'destroy', method: 'delete', data: {confirm: "Are you sure you want to delete the post?", confirm_proceed: "Disconnect"}, :class => "btn btn-primary" do %>Delete<% end %>
+          <%= link_to post_path(:id => post.id), controller: 'posts',
+          action: 'destroy', method: 'delete',
+          data: {confirm: "Are you sure you want to delete the post?",
+          confirm_proceed: "Disconnect"}, :class => "btn btn-primary" do %>Delete<% end %>
       <% end %>
       </div>
     </div>
