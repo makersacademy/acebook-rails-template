@@ -12,3 +12,17 @@ before_script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
   - bundle exec rake assets:precompile
+deploy:
+  provider: heroku
+  api_key:
+    secure: "dUyxBINg40GFZ36JyxIpMg+UwPIVRcCy6qlfT9LF6CpcUsd73WJQaBcGF2Ret3GCjOcyWzioCgQPCE+ZzptqB
+WO2WI8F+WnX7CKu+jT1E7sBpwTcXX1XeCrstMy+nfNNl51X/QU572jpiIyhmKZcnzcgokSl61e9KWb8PxxSa0SsNQZNPkguE
+yfuUP+SCrIGstzi6xN5NA9EPBPU+vhw1c+a8w4IzbP/iRk9bvfD4Py5And/U6hZJ8F4dmKCM6jn2ATQdMtVys9Qx7gHCJTpT
+JElCNMZUQZqFKmDG09NbDzozKokKDqtn1AtFYbvgNNKo4ZdA/qVT7amfoSVho67T674z3NcZQKaftGD7W7iT4qStqEUu8iAt
+omv9kj83akctQLhA5ELhMWe26OrxLTBBwf3i8aofVPT90RAf5Wwh8MT3vbhzLsNaM5qrLncyw0Drd6+JIZI4g+hRZTtoLGxd
+TU6C3phV5IyhvXlK98kvSwpwor9jdP7qIX16GLGHhPirysALMdgAHfzxeW8zHTTX/ZEtHupX59voJPUW27jHfy7cO3LmEdGo
+94DqDDeFQTaCBY2fr717ddI03mXYDjAShWDpDyKJh4/EhHXRIcfbn5dpSn/qkSBboYtC2gkKtimSFYBIioJr/Ptv1Rlc2Jnq
+xifLWIuIL3FVhWQ4yciaHs="
+  app: makers-acebook-creators
+  on:
+    repo: matthewwhitaker/acebook-creators
