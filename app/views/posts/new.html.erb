@@ -2,8 +2,8 @@
   Enter your Post
   <%= form_for @post do |form| %>
   <%= form.label :message %>
-  <%= form.text_area :message %>
-  <%= form.text_field :created_at %>
+  <%= form.text_field :message %>
+  <%= form.hidden_field :email, value: current_user.email%>
   <%= form.hidden_field :user_id, value: current_user.id%>
   <%= form.submit "Post" %>
 <% end %>
