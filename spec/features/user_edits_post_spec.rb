@@ -25,4 +25,27 @@ RSpec.feature 'edit posts' , type: :feature, js: true do
     expect(page).to have_content("Hello everyone!")
     expect(page).not_to have_content("Hello world!")
   end
+
+  scenario 'user cannot edit another users post' do
+    user_sign_up
+    create_new_post('Hello world!')
+    expect(page).to have_content('Hello world!')
+    click_button 'Logout'
+    second_user_sign_up
+    expect(page).to have_content("Hello world!")
+    expect(page).not_to have_content("Edit")
+    expect(page).to have_no_link('Edit')
+  end
+
+  scenario 'user cannot edit another users post' do
+    DatabaseCleaner.clean_with(:truncation)
+    user_sign_up
+    create_new_post('Hello world!')
+    expect(page).to have_content('Hello world!')
+    click_button 'Logout'
+    second_user_sign_up
+    visit('/posts/1/edit')
+    expect(page).to have_content('Hello world!')
+    expect(page.current_path).to eq '/posts'
+  end
 end
