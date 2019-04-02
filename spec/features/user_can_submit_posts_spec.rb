@@ -21,7 +21,7 @@ RSpec.feature 'Timeline', type: :feature, js: true do
     Timecop.travel(Time.zone.local(2008, 5, 15, 10, 0, 0))
     create_new_post('Good morning')
     Timecop.return
-    expect(page).to have_content("Good morning On May 15 2008, 10:00am"
+    expect(page).to have_content("Good morning On May 15 2008, 10:00am") 
   end
 
   scenario 'Can submit a multi-line post and view it' do
