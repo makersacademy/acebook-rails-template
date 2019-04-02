@@ -1027,3 +1027,30 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2019-04-02 11:22:23 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Dori/Projects/team-acebook/acebook-creators/app/controllers/posts_controller.rb:28: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/posts_controller.rb:28: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for ::1 at 2019-04-02 11:22:30 +0100
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-04-02 11:22:31 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 246ms (Views: 215.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-04-02 11:23:42 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 34ms (Views: 23.2ms | ActiveRecord: 2.7ms)
+
+
