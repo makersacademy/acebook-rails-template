@@ -8,7 +8,7 @@ RSpec.feature 'Posts to show user name', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'Testing User name'
     click_button 'Post'
-    test_username = "email@mail.com"
+    test_username = 'Kate'
 
     expect(page).to have_content(test_username)
   end
