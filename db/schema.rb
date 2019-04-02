@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20190328140409) do
 
   create_table "signups", force: :cascade do |t|
     t.string "username"
-    t.string "password_digest"
+    t.string "password"
     t.string "email"
   end
 
