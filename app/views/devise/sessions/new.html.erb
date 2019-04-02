@@ -1,6 +1,6 @@
 <div class="login-container">
-<h2>Log in</h2>
-
+<h2>Connect with people in your life.</h2>
+<%= image_tag("download.png", alt: "hand") %>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <% if !flash[:alert].blank? %>
     <% if flash[:alert][/The email address and password you entered do not match our records/] %>
@@ -34,4 +34,19 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<footer class="container footer">
+      <nav class="navbar d-flex">
+        <ul>
+          <li>ABOUT US
+          </li>
+          <li>PRIVACY</li>
+          <li>TERMS</li>
+          <li>PROFILES</li>
+          <li>HASHTAGS</li>
+          <li>LANGUAGE</li>
+        </ul>
+        <p> Acebook © 2019  </p>
+      </nav>
+    </footer>
 </div>
