@@ -5,6 +5,7 @@ rvm:
   - 2.5.0
   - jruby
 before_install:
+  - gem install bundler
   - gem update bundler
   - rvm install ruby-2.5.0
   - bundle install
