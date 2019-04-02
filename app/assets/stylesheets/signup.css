@@ -1,0 +1,41 @@
+.signupform {
+  width: 150px;
+  clear: both;
+}
+
+.signupform input {
+  width: 100%;
+  clear: both;
+}
+
+.Submit {
+  margin-top: 10px;
+  width: 90px;
+  height: 40px;
+  font-size: 13pt;
+  text-align: center;
+  font-family: "Trebuchet MS";
+
+}
+
+.header {
+  margin-top: 50px;
+  width: 50px;
+  display: inline;
+  color: black;
+}
+
+.form {
+
+  font-size: 15pt;
+  width: 50%;
+  margin-top: 50px;
+}
+
+.sign_up_page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Trebuchet MS";
+  color: white;
+}
