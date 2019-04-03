@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190328140409) do
+ActiveRecord::Schema.define(version: 20190403095327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,30 @@ ActiveRecord::Schema.define(version: 20190328140409) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.string "caption_file_name"
+    t.string "caption_content_type"
+    t.integer "caption_file_size"
+    t.datetime "caption_updated_at"
     t.bigint "signup_id"
     t.index ["signup_id"], name: "index_posts_on_signup_id"
   end
 
+  create_table "sign_ups", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "username"
+    t.string "email"
+    t.string "password"
+    t.string "password_confirm"
+  end
+
   create_table "signups", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.string "email"
   end
 
