@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   resources :signup, :posts, :signin
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'signup#index'
+  root 'signin#new'
 end

@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(message: post_params()[:message], signup_id: session[:user_id])
+    session[:signup_id] = Post.find_by(params.require(:post).permit(:message)).signup_id
     redirect_to posts_url
   end
 
@@ -15,6 +16,7 @@ class PostsController < ApplicationController
     @posts = Post.all
     @user_id = session[:user_id]
     @user = session[:user]
+    @users = Signup.all
   end
 
   def edit

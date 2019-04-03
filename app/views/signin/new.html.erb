@@ -1,6 +1,4 @@
-<h1>Signin#index</h1>
-<p>Find me in app/views/signin/index.html.erb</p>
-<h2>Signin</h2>
+<h1>Welcome to Pacebook!</h1>
 
 <%= form_for(:signin, url: signin_url) do |form| %>
 <p>
@@ -9,9 +7,13 @@
 </p>
 <p>
  <%= form.label :password %>
- <%= form.text_field :password %>
+ <%= form.password_field :password %>
 </p>
 <p>
 <%= form.submit "Signin" %>
 </p>
 <% end %>
+
+<form class="" action="/signup" method="get" >
+  <input type="submit" value="Signup">
+</form>
