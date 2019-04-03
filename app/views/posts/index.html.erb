@@ -13,9 +13,11 @@
             <!-- <p style='font-size: 0.75em;'><%= post.created_at %></p> -->
             <!-- <h5></h5> -->
           </div>
-          <div class="card-action">
+          <div class="card-action" style: >
+            <% if current_user.id == post.user_id %>
             <%= link_to "Delete", post_path(post), method: :delete %>
             <a href="#">Update</a>
+            <%end%>
           </div>
         </div>
       </div>
