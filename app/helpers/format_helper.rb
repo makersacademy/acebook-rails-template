@@ -1,7 +1,7 @@
 module FormatHelper
 
   def linebreak(text)
-    text.to_s.gsub(/\n/, '<br/>')
+    text.gsub(/\R+/, '<br/><br/>')
   end
 
 end

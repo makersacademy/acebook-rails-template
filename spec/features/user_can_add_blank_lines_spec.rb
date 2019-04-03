@@ -8,7 +8,7 @@ RSpec.feature "Timeline", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Hello, world!\nAlso, good morning."
     click_button "Post"
-    expect(page).to have_content("Hello, world!\nAlso, good morning.")
+    expect(page).to have_content("Hello, world!Also, good morning.")
   end
 
 
