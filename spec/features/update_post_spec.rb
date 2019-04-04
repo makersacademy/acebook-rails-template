@@ -10,7 +10,7 @@ RSpec.feature 'Update post', type: :feature do
     click_button 'Post'
     click_link 'Update'
     fill_in 'Message', with: 'Testing User name and add more text'
-    click_button 'Post'
+    click_button 'Update'
     expect(page).to have_content('Testing User name and add more text')
   end
 end

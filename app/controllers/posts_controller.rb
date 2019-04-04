@@ -19,6 +19,18 @@ class PostsController < ApplicationController
   end
 
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    permitted_columns = params.require(:post).permit(:message, :user_id)
+    @post.update_attributes(permitted_columns)
+    redirect_to posts_path(@post)
+  end
+
+
 
 
   private
