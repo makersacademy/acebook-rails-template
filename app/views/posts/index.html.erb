@@ -13,9 +13,11 @@
           </div>
           <div class="card-action" style: >
             <% if current_user.id == post.user_id %>
-            <%= link_to "Delete", post_path(post), method: :delete %>
-            <%= link_to "Update", edit_post_path(post) %>
-            <%end%>
+              <%= link_to "Delete", post_path(post), method: :delete %>
+                <% unless Time.now > post.created_at + (Time.now +10*60) %> 
+                  <%= link_to "Update", edit_post_path(post) %>
+                  <%end%>
+            <%end%>  
           </div>
         </div>
       </div>
