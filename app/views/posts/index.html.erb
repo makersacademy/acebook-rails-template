@@ -7,7 +7,7 @@
             <!-- <span class="card-title">Card Title</span> -->
             <div class="chip">
               <%= post.user.username %>
-              <%= post.created_at %>
+              <%= post.created_at.strftime("on %H:%M, %B %Y") %>
             </div>
             <p><%= p simple_format(linebreak(post.message))%></p>
             <!-- <p style='font-size: 0.75em;'><%= post.created_at %></p> -->
@@ -15,7 +15,7 @@
           </div>
           <div class="card-action" style: >
             <% if current_user.id == post.user_id %>
-            <%= link_to "Delete", post_path(post), method: :delete %>
+              <%= link_to "Delete", post_path(post), method: :delete %>
             <a href="#">Update</a>
             <%end%>
           </div>
