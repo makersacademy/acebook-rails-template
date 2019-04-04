@@ -8,8 +8,7 @@ RSpec.feature 'Can not update post adter ten minutes', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'Testing User name'
     click_button 'Post'
-    Timecop.freeze(Date.today + 1) do
-      expect(page).to have_no_link('Update')
-    end 
+    Timecop.scale(1500)
+    expect(page).to have_no_link('Update')
   end
 end
