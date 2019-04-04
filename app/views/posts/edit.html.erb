@@ -1,10 +1,10 @@
 <div style="width:90%; margin: auto; margin-top: 5%">
-  Enter your Post
+  Edit your Post
   <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_area :message %>
   <%# <%= form.hidden_field :username, value: current_user.username%>
   <%= form.hidden_field :user_id, value: current_user.id%>
-  <%= form.submit "Post" %>
+  <%= form.submit "Update" %>
 <% end %>
 </div>
