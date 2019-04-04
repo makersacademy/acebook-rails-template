@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get '/signin', to: 'signin#new'
   post '/signin', to: 'signin#create'
-  delete '/signout', to: 'signin#destroy'
+  get '/signout', to: 'signin#destroy'
 
 
   get '/signup', to: 'signup#index'
