@@ -10,8 +10,6 @@
               <%= post.created_at.strftime("on %H:%M, %B %Y") %>
             </div>
             <p><%= p simple_format(linebreak(post.message))%></p>
-            <!-- <p style='font-size: 0.75em;'><%= post.created_at %></p> -->
-            <!-- <h5></h5> -->
           </div>
           <div class="card-action" style: >
             <% if current_user.id == post.user_id %>
