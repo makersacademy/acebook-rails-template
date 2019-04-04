@@ -40,6 +40,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.start
     Signup.create(:username => "bobby" , :password => "boblord95", :email => "bob@bobyd.bob")
+    Signup.create(:username => "Cauliflower" , :password => "veg", :email => "Cauliflower@veg.com")
     5.times {Post.create(:message => "A test message", :signup_id => 1)}
   end
 

@@ -41,4 +41,26 @@
     New post
     <% end %>
   </div>
+  <div class="" id="dropdown">
+    <input type="text" id="search" name="" value="">
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript">
+    var search = document.getElementById("search")
+    search.addEventListener('change',function(){
+      $.get("/findfriends",{input: search.value},function(res){
+        console.log(res)
+        res.forEach(function(row){
+          text = document.createTextNode(row.username)
+          div = document.createElement('a')
+          div.setAttribute('href','/profile')
+          div.append(text)
+          document.getElementById("dropdown").append(div)
+        })
+      })
+    })
+  </script>
 </body>
+<a href="#"></a>

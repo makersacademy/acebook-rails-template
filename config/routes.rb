@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post '/signin', to: 'signin#create'
   delete '/signout', to: 'signin#destroy'
 
-
+  get "/findfriends", to: "findfriends#index"
   get '/signup', to: 'signup#index'
   post '/signup', to: 'signup#create'
   resources :signup, :posts, :signin

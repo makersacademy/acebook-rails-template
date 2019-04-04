@@ -7,7 +7,7 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Hello, world!")
     time = Time.new
     expect(page).to have_content("#{time.strftime('%d/%m/%Y')}")
-    expect(Post.find_by(signup_id: 2)).to be
+    expect(Post.find_by(signup_id: 3)).to be
   end
 
 end
