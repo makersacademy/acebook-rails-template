@@ -1,14 +1,13 @@
 <%= stylesheet_link_tag "posts" %>
 
 <body class = "post_page">
+  <form class="logout" action="/signout" method="get">
+    <input type="submit" id="logout" value="Logout" align="right">
+  </form>
 
  <% if !@user.nil? %>
 <h1> Hello, <%=@user['username']%></h1>
 <% end %>
-
-<form class="" action="/signout" method="get">
-  <input type="submit" value="Logout" align="right">
-</form>
 
 
   <div class="posts">
