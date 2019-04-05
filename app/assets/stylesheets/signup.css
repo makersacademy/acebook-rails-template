@@ -22,7 +22,7 @@
   margin-top: 50px;
   width: 50px;
   display: inline;
-  color: black;
+  color: #99ccff;
 }
 
 .form {
@@ -38,4 +38,10 @@
   justify-content: center;
   font-family: "Trebuchet MS";
   color: white;
+}
+
+body {
+  background: url('https://i.pinimg.com/originals/e1/7c/6b/e17c6bbe81aeca9b1835d8b14294af1b.jpg');
+
+
 }
