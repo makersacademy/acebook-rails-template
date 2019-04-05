@@ -6,6 +6,11 @@
 <h1> Hello, <%=@user['username']%></h1>
 <% end %>
 
+<form class="" action="/signout" method="get">
+  <input type="submit" value="Logout" align="right">
+</form>
+
+
   <div class="posts">
     <% @posts.each do |post| %>
     <div id="<%= "post#{post.id}" %>"class="post_container">
@@ -45,7 +50,3 @@
     <% end %>
   </div>
 </body>
-
-<form class="" action="/signout" method="get" >
-  <input type="submit" value="Logout">
-</form>
