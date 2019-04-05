@@ -8,7 +8,6 @@ RSpec.feature 'Posts to show date', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'Testing Date'
     click_button 'Post'
-    test_date = Date.today
-    expect(page).to have_content(Time.now.strftime("%B %Y"))
+    expect(page).to have_content(Time.now.strftime('%B %Y'))
   end
 end

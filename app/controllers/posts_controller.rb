@@ -14,10 +14,9 @@ class PostsController < ApplicationController
 
   def destroy
     p @post = Post.find(params[:id])
-    @post.destroy  if current_user.id == @post.user_id  
+    @post.destroy if current_user.id == @post.user_id
     redirect_to posts_path(@post)
   end
-
 
   def edit
     @post = Post.find(params[:id])
