@@ -11,6 +11,12 @@
   background-color: yellow;
 }
 
+.username_name {
+  margin-left:5px;
+  font-size: 21px;
+  line-height: 45px;
+}
+
 .post_page {
   display: flex;
   flex-direction: column;
@@ -64,7 +70,7 @@
 .time {
   text-align: right;
   margin-right: 15px;
-  font-size: 10pt;
+  font-size: 15pt;
 }
 
 .edit {

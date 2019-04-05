@@ -9,14 +9,13 @@
 <h1> Hello, <%=@user['username']%></h1>
 <% end %>
 
-
   <div class="posts">
     <% @posts.each do |post| %>
     <div id="<%= "post#{post.id}" %>"class="post_container">
       <br>
      <% @users.each do |user| %>
      <% if user.id  == post.signup_id %>
-    <%= "#{user.username} : #{}" %>
+      <div class="username_name"><i><%= "#{user.username} : #{}" %></i></div>
     <% end %>
     <% end %>
       <div class="post_message">
