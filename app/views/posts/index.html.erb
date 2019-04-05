@@ -51,13 +51,14 @@
     var search = document.getElementById("search")
     search.addEventListener('change',function(){
       $.get("/findfriends",{input: search.value},function(res){
-        console.log(res)
         res.forEach(function(row){
           text = document.createTextNode(row.username)
           div = document.createElement('a')
-          div.setAttribute('href','/profile')
+          div.setAttribute('href','/friends?id='+ row.id)
           div.append(text)
+          console.log(text)
           document.getElementById("dropdown").append(div)
+          document.getElementById("dropdown").append(document.createElement('br'))
         })
       })
     })
