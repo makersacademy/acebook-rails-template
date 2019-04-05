@@ -17,7 +17,7 @@
 
 The purpose of this project was two fold. The technical challenge is to reproduce the functionality of a social network, using Rails and CI. The additional challenge was to work in teams using Agile practices.
 
-### The User Stories
+### Finished User Stories
 
 When a user hasn't signed up and visits the index of the application:
 - if they visit another URL, they are redirected to the index
@@ -42,6 +42,13 @@ Posts:
 - appear with newest post first
 - can have new lines in them
 - show the date they were posted
+
+## Outstanding User Stories
+
+Signed in users can:
+- Send each other friend requests
+- Accept friend requests
+- Reject friend requests 
 
 ### The Technical Challenge
 
@@ -83,23 +90,23 @@ This is a framework that speeds up the styling of the views in CSS by providing 
 
 ### Agile Practices
 
-The purpose of `Agile` practices is to make the development process more effective and more responsive to changes. There is a pattern of communication methods, planning and development cycles and interaction with the client that enables fast paced. Each morning we have a `Standup`, this is a quick meeting to go over where we are and what everyone plans to do today. At the end of the day we have a `Retro` which covers what we achieved, what problems we had and a rough plan for the next day. We have 2 day `Sprints` covering the planning and modelling in the first day and the coding once we have agreed on a model and plan. We regularly commit from separate branches and Travis carries out a comprehensive test using our test suites before committing a working, fully tested URL for the client to see and comment on. 
+The purpose of `Agile` practices is to make the development process more effective and more responsive to changes. There is a pattern of communication methods, planning and development cycles and interaction with the client that enables fast paced. Each morning we have a `Standup`, this is a quick meeting to go over where we are and what everyone plans to do today. At the end of the day we have a `Retro` which covers what we achieved, what problems we had and a rough plan for the next day. We have 2 day `Sprints` covering the planning and modelling in the first day and the coding once we have agreed on a model and plan. We regularly commit from separate branches and Travis carries out a comprehensive test using our test suites before committing a working, fully tested URL for the client to see and comment on.
 
 ## Installation
-... To be continued
+ - Clone this repository to your machine
+ - `cd` to project root in console
+ - `bundle install` in project root
 
 ## Testing
-... To be continued
+ - `rspec` in project root
+ - `rubocop` in project root
 
 ## Contributions
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Deployment
-... To be continued
+ - Continuous deployment and integration through Travis and Heroku
 
 ## App
-... To be continued
-
-## Material
-... To be continued
+https://obscure-ridge-98823.herokuapp.com/
