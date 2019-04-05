@@ -46,9 +46,11 @@ Posts:
 ## Outstanding User Stories
 
 Signed in users can:
+- Like other users' posts
 - Send each other friend requests
 - Accept friend requests
-- Reject friend requests 
+- Reject friend requests
+- Chat with friends
 
 ### The Technical Challenge
 
