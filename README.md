@@ -1,16 +1,10 @@
-# AceBook
+# PlaiceBook
 
-REQUIRED INSTRUCTIONS:
+![plaicebook gif](https://giphy.com/embed/xUPGcuPLCKs0LiYnCg)
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+1. The engineering project outline is [here](https://github.com/makersacademy/course/tree/master/engineering_projects/rails).
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+2. The card wall is here: https://trello.com/b/rpTFxQEg/acebook-plaicebook
 
 ## Quickstart
 
