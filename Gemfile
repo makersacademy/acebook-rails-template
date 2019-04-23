@@ -36,6 +36,10 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  # for test coverage
+  gem 'simplecov', require: false
+  # for linting.
+  gem 'rubocop'
 end
 
 group :development do

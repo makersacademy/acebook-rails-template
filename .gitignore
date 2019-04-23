@@ -21,3 +21,6 @@
 /yarn-error.log
 
 .byebug_history
+
+#dont commit the test coverate statistics from simplecov
+coverage/*
