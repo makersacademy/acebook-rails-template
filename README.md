@@ -1,6 +1,6 @@
 # PlaiceBook
 
-![plaicebook gif](https://giphy.com/embed/xUPGcuPLCKs0LiYnCg)
+![plaicebook gif](https://media.giphy.com/media/xUPGcuPLCKs0LiYnCg/giphy.gif)
 
 1. The engineering project outline is [here](https://github.com/makersacademy/course/tree/master/engineering_projects/rails).
 
