@@ -21,4 +21,7 @@ ActiveRecord::Schema.define(version: 20170526114520) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |a|
+    # a.datetime "created_at", null: false
+  end
 end
