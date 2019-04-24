@@ -9,10 +9,6 @@ rvm:
 #   directories:
 #     - node_modules
 
-# addons:
-#   chrome: stable
-#   #firefox: latest
-
 # env:
 #   global:
 #     CC_TEST_REPORTER_ID=ABC123
