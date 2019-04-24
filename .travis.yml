@@ -3,7 +3,7 @@ lanugage: ruby
 rvm: '2.5.0'
 
 addons:
-  postgresql: 11.2
+  postgresql: 9.6
 
 env:
   - DB=pgsql
