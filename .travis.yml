@@ -9,9 +9,9 @@ before_install:
 - gem install bundler
 deploy:
   provider: heroku
-  api_key:
-    secure: "LX14EuGM+/stZxnxCXW/gcTuaAMFhNwWB+tXTJq+arT8a2FCEvbjVBZI4jbG39AU03Ww1VuDpvpTLj34TYVI/Kf3aPPjf1iKg8TCVDcCfifO6VIZP0CTwkEX1+bzgInbP07HGrKpNmuupj/In5jqhMff7QMC8BACEK2icmEabqKI/iPo8ed52fAkrfvvc8Fvzg2xPVbP//wtpxzhLzgqc6nSgv5eb2Fz89niRqkHsMHhUV3Sq3L3DlfyqTBbp2XaZVmZd/DjWndjHI1Cewu++kWwBkml+/7p0iPMrujhz/L6uBc3/MiSADbxzb2N0NlpX4n1lSEESuXJ4TM4PxDLkOLInlNJQSFcaHca7tJAHbdIy6FDZhfnDbNjkA2TbtNBTP+7Eli4g0ypVFJUIuUNvWgzVkpIP0araGnjVay+ylAXG2iFAciQ2Z1IF0/ikuinTbSixzbGfRk/7WFkibY5gc3HTGyo097US4/7eaHz4sPaSeywJ9tVqMMEt3mNDvOxVrpQjUBrMFemoUaJz9dkQZ4+SfAwmRMOD3hrKvbnUOJ7wlZSlRzsVIaqWuVHZyOyARtJrLqg/FCtRA+ypr2z+bUvIuQNMhKHy+A7svwSMvpi2QKbCl3L+e2pLDSq3HhQv1zdlKrW6505s5aZkOSQLpltvzp6qLg8XsmWOcxHv7s="
   app: acebook-roku
   run:
-    - bin/rails db:create
-    - bin/rails db:migrate
+  - bin/rails db:create
+  - bin/rails db:migrate
+  api_key:
+    secure: c1iZfVG2POqrF2f+yea/op9KOKJ/bf7RZVGSK+x8dIvxQkE9OZ0qgxY3JO1W138ySjvBW7CO7gB+GnLQf3PoZA+F6Z03PywnIrYcza4lrsDrdkS9N/WwHSjd86T6Im1LTAyEjwyoWaW9PsICpu250d/PKmPJgVrVOvUPWx0YXOMylYaDm8vCtFL8O26T9iKtmOkgL2eW+/txuCS/jNKJQKHmyESEtwxL26iYKzoAIBI66Vqo3JFcMweQN8waXrS4lxUAanYLpHEXK3j1NuaFYooC/cct1/3Bq4Yr/g7NfHN0wxq+4/sR7YN+BOym8FacRFw/i21ZsPugmlAjrGoPAURcG3LkZnIqzIE2+BmNgJ1W+wKEUFoQZvYRqLS21l3zMi1NttU5ef1rOv7OTt/EPJnCm61LSDQ6ehGOhQXgAzqcgpV5UxgdgZtTrIGClpeEa8HZ+C5ZRTcENjks96njdctn2q4KLk/GMTXKpMHtaZ6VFXIMJXtP98DCJ1B+NSBT+CKWUjupv4+Em4Us0OcRMZ3k44fJ6/zfY7LQF02h7Ixw53Gmj9u98XusSkbKG3xqvAs6MaT9pQwykkoYuiybMTb9NR5YxcUtJQBOw2L9J7mtAihIDju1CqkKcm86HvJsvh2fJPmS0aPU1HdJHr1EL1+C2e4fVs3snEK0PVdQtXA=
