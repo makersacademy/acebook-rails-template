@@ -37,7 +37,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
   # for test coverage
-  gem 'simplecov', require: false
+  gem 'simplecov'
+  gem 'simplecov-console'
   # for linting.
   gem 'rubocop'
 end
