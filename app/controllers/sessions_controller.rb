@@ -3,12 +3,13 @@ class SessionsController < ApplicationController
   end
   
   def create
-    # user = User.find_by(email: params[:session][:email].downcase)
-    # if user # need to authenticate here as well
-    # else
-    #   # show an error message
-    # end
-    redirect_to posts_path
+    user = User.find_by(email: params[:session][:email_address].downcase)
+    if user # need to authenticate here as well
+      redirect_to posts_path
+    else
+      redirect_to login_path
+      # show an error message
+    end
   end
   
   def destroy
