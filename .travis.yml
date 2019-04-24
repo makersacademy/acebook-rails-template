@@ -3,11 +3,11 @@ rvm:
  - 2.5.0
  - jruby
 
-# # Cache gems
-# cache:
-#   bundler: true
-#   directories:
-#     - node_modules
+# Cache gems
+cache:
+  bundler: true
+  directories:
+    - node_modules
 
 # env:
 #   global:
@@ -20,19 +20,19 @@ rvm:
 #   #- export DISPLAY=:99.0                # Display number for xvfb (for headless browser testing)
 #   #- sh -e /etc/init.d/xvfb start        # Start xvfb (for headless browser testing)
 
-# install:
-#   - bundle install --without production --path=${BUNDLE_PATH:-vendor/bundle}  # Install ruby gems, excluding production only gems such as unicorn (already present by default in Travis)
-#   - npm install                         # Install npm dependencies
+install:
+  - bundle install --without production --path=${BUNDLE_PATH:-vendor/bundle}  # Install ruby gems, excluding production only gems such as unicorn (already present by default in Travis)
+  - npm install                         # Install npm dependencies
 #   #- npm install karma-firefox-launcher codeclimate-test-reporter
 
-# # Setup the database
-# before_script: bundle exec rake db:create db:migrate
+# Setup the database
+before_script: bundle exec rake db:create db:migrate
 
-# # Run the test suites
-# script:
-#   # - bundle exec rubocop -DESP           # Backend linting
-#   - bundle exec rake           # Backend specs
-#   - bundle exec rspec          # rspec testing
+# Run the test suites
+script:
+  # - bundle exec rubocop -DESP           # Backend linting
+  - bundle exec rake           # Backend specs
+  - bundle exec rspec          # rspec testing
 
 # # Pipe the coverage data to Code Climate
 # after_script:
