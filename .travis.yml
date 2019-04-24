@@ -14,4 +14,16 @@ before_script:
 
 script:
   - bundle exec rake db:migrate RAILS_ENV=test 
+   - bundle
   - bundle exec rspec
+
+  deploy:
+  provider: elasticbeanstalk
+  access_key_id: 
+    secure: "Encrypted <access-key-id>="
+  secret_access_key:
+    secure: "Encypted <secret-access-key>="
+  region: "eu-west-2"  
+  app: "example-app-name"
+  env: "example-app-environment"
+  bucket_name: "the-target-S3-bucket"
