@@ -1,5 +1,7 @@
 # AceBook
 
+[![Build Status](https://travis-ci.org/Hives/acebook-business-logic.svg?branch=master)](https://travis-ci.org/Hives/acebook-business-logic)
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/9e037f53027bc17b54fb/maintainability)](https://codeclimate.com/github/Hives/acebook-business-logic/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9e037f53027bc17b54fb/test_coverage)](https://codeclimate.com/github/Hives/acebook-business-logic/test_coverage)
