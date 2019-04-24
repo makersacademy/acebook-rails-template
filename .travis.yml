@@ -1,11 +1,17 @@
 language: ruby
 rvm:
- - 2.5
-
+- 2.5
 before_script:
-  - bin/rails db:create
-  - bin/rails db:migrate
-
+- bin/rails db:create
+- bin/rails db:migrate
+- bundle exec rake assets:precompile
 before_install:
-  - gem update --system
-  - gem install bundler
+- gem update --system
+- gem install bundler
+deploy:
+  provider: heroku
+  app: acebook-roku
+  api_key:
+    secure: IqGoXnE180aToUNSJQHRMkerMvFO8iV881UPIpnyUrjh60Nnx543vz1ko143GIDCEw78048xX+Jg12NTYqMFfPop8+wYyFkduGgxs7fGOK3oZQLm45Qaiq1rjAJL1DegX6zj+Ry9XQ7388kFw0MNmmK2DkOBLxO6dr5kEIoeIXj/ZFhbfcZEKRt42vRQJzMZ5A2U+vfdMSYjy1bFKFMgst0JWBY+I8u7CjK6ImPLM2aiRzTXJwPq4MCNg2Ukwxc2hKB9n/uKhCdqASnF0neTf5YLcva33wXypmegtb0douVtK5leHYtXvjUkYh64/TDXJ66rJIkBDS0hQEg8Eiv3MfXjoBdi/HL/f1VnPt6WLOMgU/gQy9fVqTr1sUpdQAwq1JIN3Ie5SP5XTZ78k5ez89QqCung76bHyC5WdEEuWdsRLSfOWV5lu1r29AtEBzrwLvFDAHIY85lPziRWXUQ331danlgsQiVYpBDhPOlvb1W+zcEobRBUL0M2Fk/uDNRSpMfnNuJKvaTLpTKpYXa28mNJpiy2S2l4j0asq0VaPxVedq1i8q/acUxqETjM3zBojU0ewRWM6shoFOEI0hhPQuZL7+pX34b4cgb+Tj9ZdQL7IsMyKlzQ2qa5Cnncndq4ayVSuPL4NO+LqXRxcNkSpo42K9QyWxhdA9kxvr1XDN4=
+    on:
+    repo: samanthaixer/acebook-roku
