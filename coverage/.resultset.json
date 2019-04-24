@@ -2,10 +2,14 @@
   "RSpec": {
     "coverage": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/controllers/posts_controller_spec.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/spec/controllers/posts_controller_spec.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/controllers/posts_controller_spec.rb": [
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         1,
         null,
         1,
@@ -36,11 +40,16 @@
         null,
         null
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/rails_helper.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/spec/rails_helper.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+      
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/rails_helper.rb": [
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         null,
         1,
         1,
@@ -99,22 +108,32 @@
         null,
         null
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/environment.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/environment.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+      
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/environment.rb": [
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         null,
         1,
         null,
         null,
         1
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/application.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/application.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/application.rb": [
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         1,
         null,
         1,
@@ -134,20 +153,31 @@
         null,
         null
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/boot.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/boot.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/boot.rb": [
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         1,
         null,
         1
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/environments/test.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/environments/test.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/environments/test.rb": [
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         1,
         null,
         null,
@@ -191,11 +221,17 @@
         null,
         null
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/application_controller_renderer.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/initializers/application_controller_renderer.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+      
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/application_controller_renderer.rb": [
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         null,
         null,
         null,
@@ -203,11 +239,17 @@
         null,
         null
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/assets.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/initializers/assets.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/assets.rb": [
+      
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         null,
         null,
         null,
@@ -223,11 +265,17 @@
         null,
         null
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/backtrace_silencers.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/initializers/backtrace_silencers.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+      
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/backtrace_silencers.rb": [
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         null,
         null,
         null,
@@ -236,32 +284,49 @@
         null,
         null
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/cookies_serializer.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/initializers/cookies_serializer.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/cookies_serializer.rb": [
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         null,
         null,
         null,
         null,
         1
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/filter_parameter_logging.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/initializers/filter_parameter_logging.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+      
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/filter_parameter_logging.rb": [
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         null,
         null,
         null,
         1
       ],
 <<<<<<< HEAD
+<<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/inflections.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/initializers/inflections.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/inflections.rb": [
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         null,
         null,
         null,
@@ -279,21 +344,32 @@
         null,
         null
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/mime_types.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/initializers/mime_types.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/mime_types.rb": [
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         null,
         null,
         null,
         null
       ],
 <<<<<<< HEAD
+<<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/wrap_parameters.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/initializers/wrap_parameters.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/wrap_parameters.rb": [
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         null,
         null,
         null,
@@ -310,10 +386,15 @@
         null
       ],
 <<<<<<< HEAD
+<<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/routes.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/routes.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/routes.rb": [
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         1,
         null,
         null,
@@ -321,6 +402,7 @@
         1,
         null
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/app/helpers/application_helper.rb": [
         1,
@@ -338,6 +420,14 @@
       ],
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/app/controllers/posts_controller.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/app/controllers/posts_controller.rb": [
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         1,
         1,
         2,
@@ -359,6 +449,7 @@
         null,
         null
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/app/controllers/application_controller.rb": [
 =======
@@ -384,16 +475,27 @@
         1,
         null,
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/app/controllers/application_controller.rb": [
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         1,
         1,
         null,
         null
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/features/user_can_submit_posts_spec.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/spec/features/user_can_submit_posts_spec.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/features/user_can_submit_posts_spec.rb": [
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         1,
         null,
         1,
@@ -407,9 +509,15 @@
         null
       ],
 <<<<<<< HEAD
+<<<<<<< HEAD
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/models/post_spec.rb": [
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/spec/helpers/users_helper_spec.rb": [
+=======
+
+      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/models/post_spec.rb": [
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         1,
         null,
         null,
@@ -427,7 +535,11 @@
         null
       ],
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/spec/models/post_spec.rb": [
+<<<<<<< HEAD
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         1,
         null,
         1,
@@ -435,6 +547,10 @@
         null
       ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/app/models/post.rb": [
         1,
         null
@@ -447,6 +563,7 @@
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/models/user_spec.rb": [
         1,
         null,
+<<<<<<< HEAD
 =======
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/app/models/post.rb": [
         1,
@@ -454,6 +571,9 @@
       ],
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/app/models/application_record.rb": [
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
         1,
         2,
         null,
@@ -466,9 +586,15 @@
       ]
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "timestamp": 1556117241
 =======
     "timestamp": 1556105868
 >>>>>>> d1a152c5621af5bdab6d7c4f854e17bb4fd9c7dc
+=======
+
+    "timestamp": 1556117241
+
+>>>>>>> 8b2bd6f9973a976f4042053c7c04f0c009a8cdb8
   }
 }
