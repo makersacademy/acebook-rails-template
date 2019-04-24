@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    ansi (1.5.0)
     arel (8.0.0)
     ast (2.4.0)
     bindex (0.7.0)
@@ -63,6 +64,10 @@ GEM
     ffi (1.10.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+<<<<<<< HEAD
+=======
+    hirb (0.7.3)
+>>>>>>> master
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
@@ -164,13 +169,24 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+<<<<<<< HEAD
     selenium-webdriver (3.142.0)
+=======
+    selenium-webdriver (3.141.5926)
+>>>>>>> master
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
+<<<<<<< HEAD
+=======
+    simplecov-console (0.4.2)
+      ansi
+      hirb
+      simplecov
+>>>>>>> master
     simplecov-html (0.10.2)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
@@ -214,6 +230,10 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   simplecov
+<<<<<<< HEAD
+=======
+  simplecov-console
+>>>>>>> master
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
