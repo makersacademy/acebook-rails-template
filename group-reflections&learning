@@ -1,1 +1,30 @@
+## Day 1 - pairs to insert here please
 
+Wardah & Bart:
+
+* Learnt how to set up heroku app
+* Learnt about automatic deployment and manual deployment
+* The difference between CI (Continuous Integration) and CD (Continuous Deployment) is a lot clearer
+* Got a better understanding on Travic CI, it checks if tests are passing and if there are any conflicts with master branch.
+
+## Day 2!
+
+- Deployed Heroku from the command line.
+- Set up the database using db:Migrate.
+- Touched on ActiveRecord.
+- Branching out for help when stuck on a problem caused it to move
+along more swiftly. Also talking with our wonderful client (*wink wink Mike*)
+caused us as a group to be assured that we were headed in the right direction.
+
+Sam & Bart
+
+### Retro after sprint 1
+- Didn't skimp on the setup - took a long time but it was worth it
+- Everyone knew what everyone else was doing
+- Different pair taking on automated deployment when Sam/Bart were fried from looking at it
+- Harry asking others for help with the deployment to Heroku
+- Appreciated the explanation from Harry on the existing code so that we didn't duplicate effort
+
+- We don't know enough about rails to be able to do this yet
+- We didn't change pairs at lunch time - maybe try to stick to this?
+-

@@ -1,7 +1,9 @@
 {
   "RSpec": {
     "coverage": {
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/controllers/posts_controller_spec.rb": [
+
         1,
         null,
         0,
@@ -32,7 +34,9 @@
         null,
         null
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/rails_helper.rb": [
+
         null,
         1,
         1,
@@ -91,14 +95,8 @@
         null,
         null
       ],
-      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/environment.rb": [
-        null,
-        1,
-        null,
-        null,
-        1
-      ],
-      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/application.rb": [
+
+
         1,
         null,
         1,
@@ -118,11 +116,14 @@
         null,
         null
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/boot.rb": [
+
         1,
         null,
         1
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/environments/test.rb": [
         1,
         null,
@@ -167,7 +168,9 @@
         null,
         null
       ],
+      
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/application_controller_renderer.rb": [
+
         null,
         null,
         null,
@@ -175,7 +178,9 @@
         null,
         null
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/assets.rb": [
+
         null,
         null,
         null,
@@ -191,7 +196,9 @@
         null,
         null
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/backtrace_silencers.rb": [
+
         null,
         null,
         null,
@@ -200,20 +207,26 @@
         null,
         null
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/cookies_serializer.rb": [
+
         null,
         null,
         null,
         null,
         1
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/filter_parameter_logging.rb": [
+
         null,
         null,
         null,
         1
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/inflections.rb": [
+
         null,
         null,
         null,
@@ -231,13 +244,17 @@
         null,
         null
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/mime_types.rb": [
+
         null,
         null,
         null,
         null
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/initializers/wrap_parameters.rb": [
+
         null,
         null,
         null,
@@ -253,13 +270,16 @@
         null,
         null
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/config/routes.rb": [
+
         1,
         null,
         null,
         1,
         null
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/app/helpers/application_helper.rb": [
         1,
         null
@@ -269,6 +289,7 @@
         null
       ],
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/controllers/users_controller_spec.rb": [
+
         1,
         null,
         0,
@@ -280,20 +301,7 @@
         null,
         null
       ],
-      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/features/user_can_submit_posts_spec.rb": [
-        1,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null
-      ],
-      "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/helpers/users_helper_spec.rb": [
+
         1,
         null,
         null,
@@ -310,6 +318,7 @@
         0,
         null
       ],
+
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/models/post_spec.rb": [
         1,
         null,
@@ -318,6 +327,7 @@
         null
       ],
       "/Users/gregpaul/Desktop/WORKSPACE/Makers/acebook-roku/spec/models/user_spec.rb": [
+
         1,
         null,
         0,
@@ -327,6 +337,8 @@
         null
       ]
     },
+
     "timestamp": 1556121344
+
   }
 }
