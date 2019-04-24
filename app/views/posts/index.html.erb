@@ -1,7 +1,39 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1 class="display-4">Feed</h1>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <center>
+      <div class="container-fluid" bg-color = blue>
+        <%= link_to new_post_path do %>
+        New post
+        <% end %>
+      </div><br>
+
+      <div class="container">
+        <% @posts.each do |post| %>
+          <div class="card">
+            <div class="card-body"
+              <p><%= post.message %></p>
+            </div>
+          </div><br>
+        <% end %>
+      </div>
+
+    </center>
+  </div>
+</html>
