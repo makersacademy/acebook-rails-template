@@ -1,7 +1,9 @@
 require 'rails_helper'
+require 'sign_up_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
+    create_user_and_sign_up
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
@@ -10,6 +12,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can see date and time posts submitted" do
+    create_user_and_sign_up
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
@@ -19,6 +22,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can see date and time posts submitted" do
+    create_user_and_sign_up
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
@@ -30,6 +34,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can submit post with line breaks" do
+    create_user_and_sign_up
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "New\nline breaks\nin this message"
