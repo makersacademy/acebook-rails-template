@@ -1,11 +1,13 @@
 language: ruby
 rvm:
- - 2.5
-
+- 2.5
 before_script:
-  - bin/rails db:create
-  - bin/rails db:migrate
-
+- bin/rails db:create
+- bin/rails db:migrate
 before_install:
-  - gem update --system
-  - gem install bundler
+- gem update --system
+- gem install bundler
+deploy:
+  provider: heroku
+  api_key:
+    secure: SiJMrZi7pSXZJsmvW97RX17bsx2EZxvSxkZxuYAfgj61AfV++BjubaMhsiJVk/z/XJ5cLNT3bIQt3Dp8Ls8x+FEgQ8hhZzzsLHRDnQsDY/0L1y30DWXYNsXkTMYhB4KaRszyiIfNCCv1UebJXr7wBdcuVBK3enAZF91YRUcLCGi7c89A+oyNjAEklpjSLpwixvz3QVaconQ9sDg7nkYm1QsgcOEvArcE4ltEt7MeId9/DGaeG1XoP69Hw/qhtFLFIZwRkrtzTopmnYXwrcchWJybmxw/tyM3t/qns2Z4IiNC1BRuuEqmbsMkI/1O3ZWnihGleZZ9ZdZdbbFB92KmvkdqW6zqZWAWGxY9+TNM9k2qXgQ0WluTtkqRqMQ2S0L0YNMcmbpABgAN3etti1c78ZCSXszqoShx3xb7XYy4r7MPRC66pkbFNTlntl9uzp+I/UjhT3KEQ3JFThFYl90eujCHDFCedERaQowjD91g76we/Kwf+kcpfmKTLe5LtoB4rDMkzWV6dpaLQ9OA+df83pgN5qNzx6ZW8rB6uErmRPmR/VcKG4LPuhP5TMNB5rqr8Pa8SEV8NQZU3rScz7PZWuQkKBh1wNJpF+alhPVMas0cwZtgDoqJtyehUjYTY0SMwuKqcsjgkCKcNXdi+uzefiuQhSdI+egAfc1zZ9vBdcg=
