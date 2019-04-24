@@ -3,8 +3,8 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create(email)
-    @user = User.create
+  def create
+    @user = User.create(user_params)
   end
 
   def index
@@ -15,5 +15,5 @@ end
 private
 
   def user_params
-    params.require(:user)
+    params.require(:user).require(:email).require(:password)
   end
