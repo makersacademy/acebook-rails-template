@@ -18,15 +18,14 @@ script:
 
 
 deploy:
-
-provider: elasticbeanstalk
-access_key_id: $ACCESSKEYID
-secret_access_key: $SECRETACCESSKEY
-region: "eu-west-2"  
-app: "acebook-zukerbros2"
-env: "production"
-bucket_name: "elasticbeanstalk-eu-west-2-290974039617"
-on:
-    branch: master
+  provider: elasticbeanstalk
+  access_key_id: $ACCESSKEYID
+  secret_access_key: $SECRETACCESSKEY
+  region: "eu-west-2"  
+  app: "acebook-zukerbros2"
+  env: "production"
+  bucket_name: "elasticbeanstalk-eu-west-2-290974039617"
+  on:
+      branch: master
 
 after_deploy: "echo 'deployed'"
