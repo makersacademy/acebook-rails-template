@@ -1,20 +1,21 @@
-# AceBook
+# AceBook - ROKU
 
-REQUIRED INSTRUCTIONS:
+### Roku - "Six" in Japanese. We are six and we are ninjas!
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+The ninjas are:
+1. "Trivial" Greg
+2. "Classic" Harry
+3. Andy (don't call me Andrew)
+4. Wardah
+5. Bart
+6. Sam (having a child day)
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+## INSTALLATION INSTRUCTIONS:
 
-2. The card wall is here: <please update>
+1. You can install this project by doing the following:
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Quickstart
-
-First, clone this repository. Then:
+- `git clone git@github.com:samanthaixer/acebook-roku.git`
+- `bundle install`
 
 ```bash
 > bundle install
@@ -24,3 +25,19 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+2. The card wall is here: https://trello.com/b/La8uq2yv/team-roku-acebook-project
+
+3. You can find our application hosted on heroku: [Click here to Go Roku!](https://acebook-roku.herokuapp.com/posts)
+
+## Our approach so far
+
+Please see our file called "group-reflections&learning" for daily reflections on process and learning.
+
+Before we started as a team, we reflected on the previous team project and used our learnings to help us set out how we want to work together:
+
+![pro tro](images/pro-tro.jpg)
+
+We have a regular approach for each sprint:
+
+![sprint planning](images/sprint-planning.jpg)
