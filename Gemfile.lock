@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/headius/jruby-pg.git
+  revision: d14e9d018aecb82a577ef4173db8bc2216d6118d
+  branch: master
+  specs:
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -92,7 +98,6 @@ GEM
     parallel (1.17.0)
     parser (2.6.2.1)
       ast (~> 2.4.0)
-    pg (1.1.4)
     psych (3.1.0)
     public_suffix (3.0.3)
     puma (3.12.1)
@@ -212,7 +217,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
-  pg
+  pg (= 0.17.1)!
   puma (~> 3.7)
   rails (~> 5.1.1)
   rspec-rails (~> 3.5)
