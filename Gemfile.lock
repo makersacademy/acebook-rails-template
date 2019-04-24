@@ -65,9 +65,13 @@ GEM
     globalid (0.4.2)
       activesupport (>= 4.2.0)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     hirb (0.7.3)
 >>>>>>> master
+=======
+    hirb (0.7.3)
+>>>>>>> 3390cd579b2003273a1178fc4887f0831c93c3a2
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
@@ -170,10 +174,14 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
 <<<<<<< HEAD
+<<<<<<< HEAD
     selenium-webdriver (3.142.0)
 =======
     selenium-webdriver (3.141.5926)
 >>>>>>> master
+=======
+    selenium-webdriver (3.142.0)
+>>>>>>> 3390cd579b2003273a1178fc4887f0831c93c3a2
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
     simplecov (0.16.1)
@@ -181,12 +189,18 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3390cd579b2003273a1178fc4887f0831c93c3a2
     simplecov-console (0.4.2)
       ansi
       hirb
       simplecov
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> 3390cd579b2003273a1178fc4887f0831c93c3a2
     simplecov-html (0.10.2)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
@@ -231,9 +245,14 @@ DEPENDENCIES
   selenium-webdriver
   simplecov
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   simplecov-console
 >>>>>>> master
+=======
+  simplecov-console
+
+>>>>>>> 3390cd579b2003273a1178fc4887f0831c93c3a2
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
