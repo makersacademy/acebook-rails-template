@@ -5,15 +5,15 @@ RSpec.feature "Timeline", type: :feature do
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    click_button "Post!"
 
     expect(current_path).to eq('/posts')
     expect(page).to have_content("Hello, world!")
-    
-    click_button "Edit"
-    #
-    # expect(current_path).to eq('/posts/1/edit')
-    #
+
+    click_link("Edit")
+
+    expect(current_path).to eq('/posts/1/edit')
+    # 
     # fill_in "Message", with: "Bye, World!"
     #
     # expect(current_path).to be('/posts')

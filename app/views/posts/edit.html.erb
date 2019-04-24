@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,31 +11,25 @@
 
   <div class="container-fluid">
     <div class="jumbotron">
-      <h1 class="display-4">Feed</h1>
+      <h1 class="display-4">Did I fuckin Stutter??</h1>
+      <p class="lead">How about you try again...</p>
     </div>
   </div>
 
-  <div class="container-fluid">
+  <div class="edit">
     <center>
-      <div class="container-fluid" bg-color = blue>
-        <%= link_to new_post_path do %>
-        New post
-        <% end %>
-      </div><br>
-
-      <div class="container">
-        <% @posts.each do |post| %>
-          <div class="card">
-            <div class="card-body">
-              <p><%= post.message %></p>
-              <%= link_to edit_post_path(post), :class => "btn btn-primary" do %>
-                  Edit
-              <% end %>
-            </div>
-          </div><br>
+      <div class="containter">
+        <%= form_for(@post) do |form| %>
+        <div class="field">
+          <h3><%= form.label :message %><br><h3>
+          <%= form.text_field :message %>
+        </div>
+        <div class="actions">
+          <%= form.submit "Edit" %>
+        </div>
         <% end %>
       </div>
-
     </center>
   </div>
+
 </html>
