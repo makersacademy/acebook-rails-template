@@ -1,43 +1,27 @@
+env:
+  global:
+    CC_TEST_REPORTER_ID=634c89ddb16bad65543236ca41d51dc282320eb5e4b88443b4cffece62a8c75b
+
 language: ruby
 rvm:
  - 2.5.0
 
-# Cache gems
-cache:
-  bundler: true
-  directories:
-    - node_modules
+before_install: gem install bundler
+notifications:
+  -false
 
-# env:
-#   global:
-#     CC_TEST_REPORTER_ID=ABC123
-
-# before_install:
-#   - nvm install                         # Install node version from .nvmrc
-#   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-#   - chmod +x ./cc-test-reporter
-#   #- export DISPLAY=:99.0                # Display number for xvfb (for headless browser testing)
-#   #- sh -e /etc/init.d/xvfb start        # Start xvfb (for headless browser testing)
-
-install:
-  - bundle install --without production --path=${BUNDLE_PATH:-vendor/bundle}  # Install ruby gems, excluding production only gems such as unicorn (already present by default in Travis)
-  # - npm install                         # Install npm dependencies
-  # - npm install karma-firefox-launcher codeclimate-test-reporter
-
-# Run the test suites
-script:
+before_script:
   - bundle exec rake db:create 
   - bundle exec rake db:migrate
-  # - bundle exec rubocop -DESP           # Backend linting
-  - bundle exec rake           # Backend specs
-  - bundle exec rspec          # rspec testing
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+# Run the test suites
+script:
+  - bundle exec rspec spec        # rspec testing
 
-# # Pipe the coverage data to Code Climate
-# after_script:
-#   - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json # Format backend coverage
-#   - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info  # Format frontend coverage
-#   - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2                  # Sum both coverage parts into coverage/codeclimate.json
-#   - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi  # Upload coverage/codeclimate.json
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 deploy:
   provider: heroku
