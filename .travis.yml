@@ -21,8 +21,7 @@ deploy:
 
 provider: elasticbeanstalk
 access_key_id: $ACCESSKEYID
-secret_access_key:
-  secure: "$SECRETACCESSKEY"
+secret_access_key: $SECRETACCESSKEY
 region: "eu-west-2"  
 app: "acebook-zukerbros2"
 env: "production"
