@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  get '/ghghg' => 'posts#sjsjs'
+
   root 'posts#index'
 end
