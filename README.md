@@ -1,16 +1,17 @@
 # AceBook
 
-REQUIRED INSTRUCTIONS:
+[![Maintainability](https://api.codeclimate.com/v1/badges/9e037f53027bc17b54fb/maintainability)](https://codeclimate.com/github/Hives/acebook-business-logic/maintainability)
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9e037f53027bc17b54fb/test_coverage)](https://codeclimate.com/github/Hives/acebook-business-logic/test_coverage)
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+### Card Wall
+Want to see our awesome cards? Go: [Here](https://trello.com/b/6XSi28FM/acebook-by-business-logic)
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+### Want to see the live version?
+
+[AceBook BusinessLogic](https://acebook-business-logic.herokuapp.com)
+
 
 ## Quickstart
 
