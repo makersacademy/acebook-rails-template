@@ -1,13 +1,17 @@
 Feature: Posts can have new lines in them
 =========================================
 
+(line breaks)
+
 [Link to trello card](https://trello.com/c/BFcRNJGu/11-posts-can-have-new-lines-in-them-low)
+
 
 
 Feature: Posts appear with newest post first
 ============================================
 
 [Link to trello](https://trello.com/c/4e1TZC2k/9-posts-appear-with-newest-post-first-low)
+
 
 
 Feature: Posts show the date they were posted
@@ -18,8 +22,6 @@ Feature: Posts show the date they were posted
 Low
 
 - Date stamp of each post submission shown in posts lists page
-
-
 
 
 

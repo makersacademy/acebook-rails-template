@@ -28,4 +28,12 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect("Hello, world again!").to appear_before "Hello, world!"
   end
+
+  scenario "Can submit post with line breaks" do
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "New\nline breaks\nin this message"
+    click_button "Submit"
+    expect(page.body).to include("New\n<br />line breaks\n<br />in this message")
+  end
 end
