@@ -12,6 +12,17 @@ class PostsController < ApplicationController
     @posts = Post.all.reverse
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to posts_url
+    end
+  end
+
   private
 
   def post_params

@@ -11,4 +11,7 @@ Rails.application.routes.draw do
     end
   end
   resources :posts
+  # resources :posts do
+  #   edit 'posts#edit'
+  # end
 end

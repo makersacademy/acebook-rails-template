@@ -1,6 +1,9 @@
 <% @posts.each do |post| %>
   <p><%= simple_format(post.message) %></p>
   <p><%= post.created_at.strftime('%H:%M, %-d %B') %></p>
+  <%= link_to edit_post_path(post.id) do %>
+    Update
+  <% end %>
 <% end %>
 
 <%= link_to new_post_path do %>

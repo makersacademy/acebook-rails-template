@@ -21,7 +21,7 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content(created_at)
   end
 
-  scenario "Can see date and time posts submitted" do
+  scenario "Can see posts in reverse chronological order" do
     create_user_and_sign_up
     visit "/posts"
     click_link "New post"

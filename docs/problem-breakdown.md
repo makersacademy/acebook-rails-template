@@ -46,6 +46,25 @@ High
 
 - A signed-in user can:
   - update their own posts for a maximum of 10 mins after they're created
+
+```
+As a user,
+so that I can correct spelling mistakes,
+I want to be able to update my own posts
+```
+
+Objects | Messages
+--------------- | ---------------
+User | 
+Post | update
+
+1. Feature test updating any post
+    - method to click to update
+    - redirect to message page
+    - editable pre-populated message with submit button
+    - submit redirects back to 'timeline' (posts#index)
+
+
   - see a helpful error message if they try to update another user's post
   - delete their own posts
   - see a helpful error message if they try to delete another user's post
