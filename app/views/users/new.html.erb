@@ -1,6 +1,11 @@
+<div class="header_bar">
+<p2>acebook</p2>
+</div>
+
+<div class="centre_box">
 <h1>Create a new account</h1>
 
-<%= form_with scope: :user, url: users_path, local: true do |form| %>
+<%= form_for(:user, url: users_path, local: true) do |form| %>
   <p>
     <%= form.label :email_address %><br>
     <%= form.text_field :email_address %>
@@ -19,3 +24,4 @@
 <p>
   Already signed up? <a href='/login'>Click here to log in.</a>
 </p>
+</div>
