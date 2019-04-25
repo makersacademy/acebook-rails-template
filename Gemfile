@@ -42,6 +42,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem "rubycritic", require: false
   gem 'simplecov'
+  gem 'simplecov-console'
+  gem 'simplecov-shields-badge', require: false
 end
 
 group :development do
