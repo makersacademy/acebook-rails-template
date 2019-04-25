@@ -24,4 +24,24 @@ RSpec.feature "Sign up", type: :feature do
     click_button("Sign up")
     expect(page).to have_content("Email is invalid")
   end
+
+  scenario "User can only enter a password above 6 characters" do
+    visit "/"
+    click_link "Sign up"
+    fill_in("user_email", with: "test@test.com")
+    fill_in("user_password", with: "pass")
+    fill_in("user_password_confirmation", with: "pass")
+    click_button("Sign up")
+    expect(page).to have_content("Password is too short (minimum is 6 characters)")
+  end
+
+  scenario "User can only enter a password up to 10 characters" do
+    visit "/"
+    click_link "Sign up"
+    fill_in("user_email", with: "test@test.com")
+    fill_in("user_password", with: "password1234")
+    fill_in("user_password_confirmation", with: "password1234")
+    click_button("Sign up")
+    expect(page).to have_content("Password is too long (maximum is 10 characters)")
+  end
 end
