@@ -1,3 +1,7 @@
+<% if flash[:success] %>
+<div class='notice'> <%= flash[:success] %> </div>
+<% end %>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>

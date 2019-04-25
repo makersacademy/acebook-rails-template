@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    flash[:success] = "Congratulations, you are signed up!"
     redirect_to posts_url
   end
 
