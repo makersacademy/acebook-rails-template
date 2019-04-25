@@ -38,12 +38,44 @@ RSpec.feature 'Sign up', type: :feature do
     expect(page).to have_content("Could not create account")
   end
 
-  # scenario 'User must provide a password' do
-  #   visit '/'
-  #   fill_in 'user[email_address]', with: 'myemail@gmail.com'
-  #   click_button 'Sign up'
-  #   expect(page).to have_content("Could not create account")
-  # end
+  scenario 'Email address must contain "@" symbol' do
+    visit '/'
+    fill_in 'user[email_address]', with: 'myemail'
+    fill_in 'user[password]', with: 'mypassword'
+    click_button 'Sign up'
+    expect(page).to have_content("Could not create account")
+  end
+
+  scenario 'Email address must have a local part' do
+    visit '/'
+    fill_in 'user[email_address]', with: '@myemail'
+    fill_in 'user[password]', with: 'mypassword'
+    click_button 'Sign up'
+    expect(page).to have_content("Could not create account")
+  end
+
+  scenario 'Email address must have a domain' do
+    visit '/'
+    fill_in 'user[email_address]', with: 'myemail@'
+    fill_in 'user[password]', with: 'mypassword'
+    click_button 'Sign up'
+    expect(page).to have_content("Could not create account")
+  end
+
+  scenario 'Email address must have a TLD' do
+    visit '/'
+    fill_in 'user[email_address]', with: 'myemail@domain'
+    fill_in 'user[password]', with: 'mypassword'
+    click_button 'Sign up'
+    expect(page).to have_content("Could not create account")
+  end
+
+  scenario 'User must provide a password' do
+    visit '/'
+    fill_in 'user[email_address]', with: 'myemail@gmail.com'
+    click_button 'Sign up'
+    expect(page).to have_content("Could not create account")
+  end
 
   # scenario 'Email must not already be in use' do
   #   visit '/'

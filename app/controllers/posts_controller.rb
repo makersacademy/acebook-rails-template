@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   end
 
   def index
-    p session
     @posts = Post.all
   end
 
