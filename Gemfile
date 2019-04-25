@@ -43,7 +43,7 @@ group :development, :test do
   gem "rubycritic", require: false
   gem 'simplecov'
   gem 'simplecov-console'
-   gem 'simplecov-shields-badge', require: false
+  gem 'simplecov-shields-badge', require: false
 end
 
 group :development do
