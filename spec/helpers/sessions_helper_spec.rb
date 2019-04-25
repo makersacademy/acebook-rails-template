@@ -1,15 +1,24 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the SessionsHelper. For example:
-#
-# describe SessionsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-RSpec.describe SessionsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe SessionsHelper do
+  describe "#current_user" do
+    it "creates current_user variable based on user id" do
+      user = double("User", :id => 123)
+      session[:user_id] = user.id
+      # mocking the @current user in the sessions helper
+      @current_user = user
+      expect(current_user).to eq(user)
+    end
+  end
+
+    describe "#current_user" do
+    it "it creates a current user from the database" do
+      user = double("User", :id => 123)
+      session[:user_id] = user.id
+      # mocking a database object in the sessions helper.
+      User = class_double("User")
+      allow(User).to receive(:find_by).with(id: session[:user_id]).and_return(user)
+      expect(current_user).to eq(user)
+    end
+  end
 end
