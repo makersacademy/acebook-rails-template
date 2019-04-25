@@ -13,7 +13,7 @@ RSpec.describe PostsController, type: :controller do
   describe "POST /" do
     it "responds with 200" do
 
-      user = User.create(email: "test@email.com", password: "123")
+      user = User.create(email: "test@email.com", password: "123456")
       session[:user_id] = user.id
 
       post :create, params: { post: { message: "Hello, world!", user_id: session[:user_id]} }
@@ -21,7 +21,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "creates a post" do
-      user = User.create(email: "test@email.com", password: "123")
+      user = User.create(email: "test@email.com", password: "123456")
       session[:user_id] = user.id
 
       post :create, params: { post: { message: "Hello, world!", user_id: session[:user_id] } }
@@ -29,12 +29,11 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "post has a user_id" do
-      user = User.create(email: "test@email.com", password: "123")
+      user = User.create(email: "test@email.com", password: "123456")
       session[:user_id] = user.id
 
       post :create, params: { post: {message: "Hello, world!", user_id: session[:user_id]}}
       check = Post.find_by(message: "Hello, world!")
-      p check
       expect(check.user_id).to be(session[:user_id])
     end
   end
