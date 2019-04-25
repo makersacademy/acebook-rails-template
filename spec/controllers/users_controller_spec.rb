@@ -11,6 +11,6 @@ RSpec.describe UsersController, type: :controller do
       post :create, params: { user: { email: "beefy@iamalegend.com", password: "suckurnan" } }
       expect(User.find_by(email: "beefy@iamalegend.com")).to be
     end
-  end
 
+  end
 end
