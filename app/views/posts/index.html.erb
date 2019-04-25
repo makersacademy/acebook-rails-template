@@ -11,29 +11,26 @@
   </head>
   Test1
   <div class="container-fluid">
-    <div class="jumbotron">
+    <div class="jumbotron bg-info text-white" >
       <h1 class="display-4">Feed</h1>
     </div>
   </div>
 
   <div class="container-fluid">
     <center>
-      <div class="container-fluid" bg-color = blue>
-        <%= link_to new_post_path do %>
-        New post
-        <% end %>
+      <div class="container-fluid">
+        <%= link_to new_post_path, :class => "btn btn-outline-success" do %>New post<% end %>
       </div><br>
 
       <div class="container">
         <% @posts.each do |post| %>
           <div class="card">
             <div class="card-body">
-              <p><%= post.message %></p>
-              <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %>
-              <%= link_to edit_post_path(post), :class => "btn btn-primary" do %>
-                Edit
-              <% end %>
-
+              <h3><%= post.message %></h3>
+                <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
+                <%= link_to edit_post_path(post), :class => "btn btn-outline-dark" do %>
+                  Edit
+                <% end %>
             </div>
           </div><br>
         <% end %>
