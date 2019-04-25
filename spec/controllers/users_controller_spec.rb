@@ -12,5 +12,11 @@ RSpec.describe UsersController, type: :controller do
       expect(User.find_by(email: "beefy@iamalegend.com")).to be
     end
 
+    it "prevents data entry when invalid email entered" do
+      post :create, params: { user: { email: "beefy", password: "suckurnan" } }
+      User.find_by(email:"beefy")
+      expect(User.find_by(email:"beefy")).to eq(nil)
+    end
+
   end
 end
