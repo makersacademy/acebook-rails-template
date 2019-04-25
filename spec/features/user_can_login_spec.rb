@@ -19,7 +19,7 @@ RSpec.feature 'Log in', type: :feature do
     fill_in 'user[password]', with: 'mypassword'
     click_button 'Sign up'
 
-    # need to log out here...
+    click_link("Log out")
 
     visit '/login'
     fill_in 'Email address', with: 'myemail@gmail.com'
@@ -35,7 +35,7 @@ RSpec.feature 'Log in', type: :feature do
     fill_in 'user[password]', with: 'mypassword'
     click_button 'Sign up'
 
-    # need to log out here...
+    click_link("Log out")
 
     visit '/login'
     fill_in 'Email address', with: 'my_wrong_email@gmail.com'
@@ -43,6 +43,40 @@ RSpec.feature 'Log in', type: :feature do
     click_button 'Log in'
 
     expect(page).to have_current_path("/login")
+  end
+
+  context 'Login password validation:-' do
+    scenario 'user should not log in with an invalid password' do
+      visit '/'
+      fill_in 'user[email_address]', with: 'myemail@gmail.com'
+      fill_in 'user[password]', with: 'mypassword'
+      click_button 'Sign up'
+
+      click_link("Log out")
+
+      visit '/login'
+      fill_in 'Email address', with: 'myemail@gmail.com'
+      fill_in 'Password', with: 'mywrongpassword'
+      click_button 'Log in'
+
+      expect(page).to have_content('Invalid password')
+    end
+
+    scenario 'user should not log in with an empty password' do
+      visit '/'
+      fill_in 'user[email_address]', with: 'myemail@gmail.com'
+      fill_in 'user[password]', with: 'mypassword'
+      click_button 'Sign up'
+
+      click_link("Log out")
+
+      visit '/login'
+      fill_in 'Email address', with: 'myemail@gmail.com'
+      fill_in 'Password', with: ''
+      click_button 'Log in'
+
+      expect(page).to have_content('Invalid password')
+    end
   end
 
 end
