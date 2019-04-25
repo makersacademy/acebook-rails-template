@@ -9,8 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    p session
-    @posts = Post.all
+    @posts = Post.order('created_at DESC')
   end
 
   private
