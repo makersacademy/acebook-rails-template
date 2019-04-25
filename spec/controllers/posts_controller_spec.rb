@@ -1,15 +1,14 @@
 # frozen_string_literal: true
 
-# require 'rails_helper'
-#
-# RSpec.describe PostsController, type: :controller do
-#   describe 'GET /posts/new ' do
-#     it 'redirects to home page' do
-#       get :posts
-#       get :new
-#       expect(response).to redirect_to("/users/sign_in")
-#     end
-#   end
+require 'rails_helper'
+
+RSpec.describe PostsController, type: :controller do
+  describe 'Going to page when not logged in redirects to login' do
+    it 'redirects to login page' do
+      get :index
+      expect(response).to redirect_to("/users/sign_in")
+    end
+  end
 
   # describe 'POST /' do
   #   it 'responds with 200' do
@@ -29,4 +28,4 @@
   #     expect(response).to have_http_status(200)
   #   end
   # end
-# end
+end
