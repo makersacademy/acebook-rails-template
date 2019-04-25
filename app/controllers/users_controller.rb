@@ -10,7 +10,6 @@ class UsersController < ApplicationController
       flash[:success] = "New account created"
       redirect_to posts_path
     else
-      
     end
   end
 end
