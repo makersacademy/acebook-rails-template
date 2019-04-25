@@ -1,5 +1,7 @@
 # AceBook
 
+[![Build Status](https://travis-ci.com/m-budryte/acebook-zuckerbros.svg?branch=master)](https://travis-ci.com/m-budryte/acebook-zuckerbros)
+
 MVP aims to have basic functionality:
 1. Users can make posts
 2. Users can see posts
