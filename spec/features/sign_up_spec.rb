@@ -44,4 +44,15 @@ RSpec.feature "Sign up", type: :feature do
     click_button("Sign up")
     expect(page).to have_content("Password is too long (maximum is 10 characters)")
   end
+
+  scenario "User signs up and sees success message" do
+    visit "/"
+    click_link "Sign up"
+    fill_in("user_email", with: "test@test.com")
+    fill_in("user_password", with: "password")
+    fill_in("user_password_confirmation", with: "password")
+    click_button("Sign up")
+    expect(page).to have_content("Welcome! You have signed up successfully.")
+    expect(page).to have_link("New post")
+  end
 end
