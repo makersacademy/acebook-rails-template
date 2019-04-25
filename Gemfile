@@ -11,6 +11,8 @@ end
 
 #User sign up/in gem
 gem 'devise'
+#to create a face user
+gem 'factory_bot_rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use rubocop as Linter
