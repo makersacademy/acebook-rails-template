@@ -39,7 +39,13 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'database_cleaner'
   gem 'rspec-rails', '~> 3.5'
+  gem 'rubocop', require: false
+  gem 'rubocop-performance'
   gem 'selenium-webdriver'
+  gem "rubycritic", require: false
+  gem 'simplecov'
+  gem 'simplecov-console'
+  gem 'simplecov-shields-badge', require: false
 end
 
 group :development do
