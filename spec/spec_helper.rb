@@ -1,6 +1,7 @@
 # adding the simplecov gem for test coverage.
 require 'simplecov'
 require 'simplecov-console'
+require 'test_helpers'
 SimpleCov.formatter = SimpleCov::Formatter::Console
 SimpleCov.start
 

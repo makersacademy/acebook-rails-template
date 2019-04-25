@@ -1,6 +1,16 @@
 require 'rails_helper'
 
 RSpec.feature 'Sign up', type: :feature do
+  scenario 'Logged out users should be redirected from posts to sign up page' do
+    visit '/posts'
+    expect(page).to have_current_path("/")
+  end
+
+  scenario 'Logged out users should get see a message when they get redirected' do
+    visit '/posts/new'
+    expect(page).to have_content('You must be logged in to access that page')
+  end
+
   scenario 'Signup form should have email address and password fields' do
     visit '/'
     expect(page).to have_field("user[email_address]")
@@ -22,6 +32,7 @@ RSpec.feature 'Sign up', type: :feature do
     click_button 'Sign up'
     expect(page).to have_link("Log out")
   end
+
 
   scenario 'After completing the signup form succesfully the user sees a confirmation mesage' do
     visit '/'
@@ -99,13 +110,5 @@ RSpec.feature 'Sign up', type: :feature do
     fill_in 'user[email_address]', with: 'myemail@gmail.com'
     click_button 'Sign up'
     expect(page).to have_content("Could not create account")
-  end
-
-  scenario 'After completing the signup form succesfully the user sees a confirmation mesage' do
-    visit '/'
-    fill_in 'user[email_address]', with: 'myemail@gmail.com'
-    fill_in 'user[password]', with: 'mypassword'
-    click_button 'Sign up'
-    expect(page).to have_content("New account created")
   end
 end
