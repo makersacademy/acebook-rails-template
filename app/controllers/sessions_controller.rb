@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   end
   
   def create
-    
     user = User.find_by(email: params[:session][:email_address].downcase)
     if user # need to authenticate here as well
       session[:user_id] = user.id
