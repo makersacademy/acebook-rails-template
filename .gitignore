@@ -24,3 +24,6 @@
 
 #dont commit the test coverate statistics from simplecov
 coverage/*
+
+# Ignore Vim swapfiles
+*.swp
