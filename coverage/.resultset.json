@@ -255,6 +255,8 @@
       ],
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/config/routes.rb": [
         1,
+        1,
+        null,
         null,
         null,
         1,
@@ -262,6 +264,10 @@
         null
       ],
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
@@ -285,8 +291,7 @@
         null,
         null,
         1,
-        3,
-        3,
+        6,
         null,
         null,
         1,
@@ -299,6 +304,26 @@
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/app/controllers/application_controller.rb": [
         1,
         1,
+        null
+      ],
+      "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/spec/controllers/sessions_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        null,
         null
       ],
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/spec/controllers/users_controller_spec.rb": [
@@ -321,20 +346,22 @@
       ],
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/app/controllers/users_controller.rb": [
         1,
-        1,
-        0,
-        null,
         null,
         1,
-        2,
+        1,
         2,
         null,
         null,
         1,
+        4,
+        4,
+        4,
+        null,
+        null,
         1,
         null,
         1,
-        2,
+        4,
         null,
         null
       ],
@@ -378,22 +405,39 @@
         1,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
-        0,
+        1,
         null,
+        null
+      ],
+      "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/spec/helpers/sessions_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
         null
       ],
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/spec/helpers/users_helper_spec.rb": [
@@ -446,6 +490,27 @@
         1,
         null
       ],
+      "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/app/models/user.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/spec/views/sessions/new.html.erb_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
       "/Users/vi1551/Makers/month_2/week_4/pairing_work/acebook-roku/spec/views/welcome/index.html.erb_spec.rb": [
         1,
         null,
@@ -454,6 +519,6 @@
         null
       ]
     },
-    "timestamp": 1556191562
+    "timestamp": 1556194791
   }
 }
