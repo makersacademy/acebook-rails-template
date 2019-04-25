@@ -6,6 +6,7 @@ RSpec.feature 'Posts are ordered', type: :feature do
     sign_up
 
     visit "/posts"
+
     click_link "New post"
     fill_in "Message", with: "First post"
     click_button "Submit"

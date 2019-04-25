@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Posts have creation dates', type: :feature do
   scenario 'Posts have a posted date' do
+
     sign_up 
 
     visit "/posts"
