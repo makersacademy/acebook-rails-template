@@ -17,12 +17,22 @@ The app was deployed on the AWS server. http://production.ujbndkqft3.eu-west-2.e
 
 ## Setup instructions
 - clone repo
-- run 'bundle'
+run
 
+```bash
+bundle install
+```
 ## Usage
-- run 'rails s'
+run
+```bash
+rails s
+```
 
 ## Running tests
-- run 'rspec' in project directory
+run 
+```
+rspec
+```
+in project directory
 
 
