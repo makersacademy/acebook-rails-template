@@ -9,6 +9,20 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <% if session[:user_id] %>
+          <li>
+            <%= link_to "Log out", logout_path, method: :delete %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
