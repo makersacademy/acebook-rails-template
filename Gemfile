@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-performance'
   gem 'selenium-webdriver'
+  gem "rubycritic", require: false
   gem 'simplecov'
 end
 
