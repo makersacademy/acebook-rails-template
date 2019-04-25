@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-04-25T10:33:23+01:00">2019-04-25T10:33:23+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-04-25T10:48:51+01:00">2019-04-25T10:48:51+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -253,7 +253,7 @@
       <tr>
         <td class="strong"><a href="#a2040b990f7e25bda082ae86279139ce7c31a306" class="src_link" title="spec/controllers/posts_controller_spec.rb">spec/controllers/posts_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>31</td>
+        <td>32</td>
         <td>0</td>
         <td>0</td>
         <td>0</td>
@@ -3881,13 +3881,13 @@
         <li class="never" data-hits="" data-linenumber="1">
           
           
-          <code class="ruby"># # frozen_string_literal: true</code>
+          <code class="ruby"># frozen_string_literal: true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
@@ -3929,136 +3929,142 @@
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">#       expect(response).to redirect_to(&quot;/users/sign_in&quot;)</code>
+          <code class="ruby">#       get :new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">#     end</code>
+          <code class="ruby">#       expect(response).to redirect_to(&quot;/users/sign_in&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">#     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby">#   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">#   describe &#39;POST /&#39; do</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">#     it &#39;responds with 200&#39; do</code>
+          <code class="ruby">  # describe &#39;POST /&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">#       post :create, params: { post: { message: &#39;Hello, world!&#39; } }</code>
+          <code class="ruby">  #   it &#39;responds with 200&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby">#       expect(response).to redirect_to(posts_url)</code>
+          <code class="ruby">  #     post :create, params: { post: { message: &#39;Hello, world!&#39; } }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">#     end</code>
+          <code class="ruby">  #     expect(response).to redirect_to(posts_url)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby">  #   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">#     it &#39;creates a post&#39; do</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">#       post :create, params: { post: { message: &#39;Hello, world!&#39; } }</code>
+          <code class="ruby">  #   it &#39;creates a post&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">#       expect(Post.find_by(message: &#39;Hello, world!&#39;)).to be</code>
+          <code class="ruby">  #     post :create, params: { post: { message: &#39;Hello, world!&#39; } }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">#     end</code>
+          <code class="ruby">  #     expect(Post.find_by(message: &#39;Hello, world!&#39;)).to be</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">  #   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby">  # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">#   describe &#39;GET /&#39; do</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">#     it &#39;responds with 200&#39; do</code>
+          <code class="ruby">  # describe &#39;GET /&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">#       get :index</code>
+          <code class="ruby">  #   it &#39;responds with 200&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">#       expect(response).to have_http_status(200)</code>
+          <code class="ruby">  #     get :index</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">#     end</code>
+          <code class="ruby">  #     expect(response).to have_http_status(200)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">  #   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">  # end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby"># end</code>
