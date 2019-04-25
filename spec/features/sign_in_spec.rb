@@ -10,7 +10,7 @@ RSpec.feature "Sign in", type: :feature do
     expect(page).to have_button("Log in")
   end
 
-  xscenario "User redirected if not signed in & visits posts" do
+  scenario "User redirected to index if not signed in & tries to visit posts" do
     visit '/posts'
     expect(page).to have_current_path("/")
   end
