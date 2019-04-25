@@ -258,6 +258,7 @@
         null,
         null,
         1,
+        1,
         null
       ],
       "/Users/student/Dropbox/Projects/week8/acebook-roku/app/helpers/application_helper.rb": [
@@ -265,6 +266,10 @@
         null
       ],
       "/Users/student/Dropbox/Projects/week8/acebook-roku/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/student/Dropbox/Projects/week8/acebook-roku/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
@@ -305,14 +310,52 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/student/Dropbox/Projects/week8/acebook-roku/app/controllers/users_controller.rb": [
         1,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/student/Dropbox/Projects/week8/acebook-roku/spec/controllers/welcome_controller_spec.rb": [
+        1,
+        null,
         1,
         null,
         1,
         1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Dropbox/Projects/week8/acebook-roku/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        null,
         null,
         null
       ],
@@ -346,6 +389,23 @@
         1,
         null
       ],
+      "/Users/student/Dropbox/Projects/week8/acebook-roku/spec/helpers/welcome_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
       "/Users/student/Dropbox/Projects/week8/acebook-roku/spec/models/post_spec.rb": [
         1,
         null,
@@ -361,8 +421,28 @@
         1,
         1,
         null
+      ],
+      "/Users/student/Dropbox/Projects/week8/acebook-roku/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Dropbox/Projects/week8/acebook-roku/app/models/user.rb": [
+        1,
+        null
+      ],
+      "/Users/student/Dropbox/Projects/week8/acebook-roku/spec/views/welcome/index.html.erb_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1556118091
+    "timestamp": 1556190669
   }
 }

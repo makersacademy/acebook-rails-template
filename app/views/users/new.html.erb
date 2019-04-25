@@ -3,17 +3,15 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@xuser) do |f| %>
-      <%= label name %>
-      <%= text_field name %>
+    <%= form_for(@user) do |f| %>
 
-      <%= label email %>
-      <%= email_field email %>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
 
-      <%= label password %>
-      <%= password_field password %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
 
-      <%= submit "Create my account", class: "btn btn-primary" %>
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
