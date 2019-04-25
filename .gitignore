@@ -24,3 +24,6 @@
 
 coverage/assets
 coverage/.*
+
+# comment line below to view test coverage.
+coverage/index.html
