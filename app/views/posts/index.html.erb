@@ -1,3 +1,4 @@
+<h1>Posts page</h1>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <p>Posted on <%= post.created_at.strftime("%Y-%m-%d")%>
