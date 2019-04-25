@@ -14,4 +14,14 @@ RSpec.feature "Sign up", type: :feature do
     expect(page).to have_field("user_password")
     expect(page).to have_field("user_password_confirmation")
   end
+
+  scenario "User can only enter valid email address" do
+    visit "/"
+    click_link "Sign up"
+    fill_in("user_email", with: "henryemail")
+    fill_in("user_password", with: "password")
+    fill_in("user_password_confirmation", with: "password")
+    click_button("Sign up")
+    expect(page).to have_content("Email is invalid")
+  end
 end
