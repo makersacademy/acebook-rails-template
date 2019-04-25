@@ -29,9 +29,11 @@
           <div class="card">
             <div class="card-body">
               <p><%= post.message %></p>
+              <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %>
               <%= link_to edit_post_path(post), :class => "btn btn-primary" do %>
-                  Edit
+                Edit
               <% end %>
+
             </div>
           </div><br>
         <% end %>
