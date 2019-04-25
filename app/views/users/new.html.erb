@@ -1,6 +1,6 @@
 <h1>Create a new account</h1>
 
-<%= form_with scope: :user, url: users_path, local: true do |form| %>
+<%= form_for(:user, url: users_path, local: true) do |form| %>
   <p>
     <%= form.label :email_address %><br>
     <%= form.text_field :email_address %>
