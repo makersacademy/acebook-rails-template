@@ -77,6 +77,22 @@ RSpec.feature 'Log in', type: :feature do
 
       expect(page).to have_content('Invalid password')
     end
+
+    scenario 'user should be able to log in with the correct password' do
+      visit '/'
+      fill_in 'user[email_address]', with: 'myemail@gmail.com'
+      fill_in 'user[password]', with: 'mypassword'
+      click_button 'Sign up'
+
+      click_link("Log out")
+
+      visit '/login'
+      fill_in 'Email address', with: 'myemail@gmail.com'
+      fill_in 'Password', with: 'mypassword'
+      click_button 'Log in'
+
+      expect(page).to have_content('Logged in successfully')
+    end
   end
 
 end
