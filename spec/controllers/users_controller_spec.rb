@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   describe "POST /" do
     it "redirects" do
-      post :create, params: { user: { email: "beefboi@beefy.com.org.uk", password: "BEEF" } }
+      post :create, params: { user: { email: "beefboi@beefy.com", password: "BEEF" } }
       expect(response).to redirect_to(posts_url)
     end
 
@@ -14,8 +14,12 @@ RSpec.describe UsersController, type: :controller do
 
     it "prevents data entry when invalid email entered" do
       post :create, params: { user: { email: "beefy", password: "suckurnan" } }
-      User.find_by(email:"beefy")
-      expect(User.find_by(email:"beefy")).to eq(nil)
+      expect(User.find_by(email: "beefy")).to eq(nil)
+    end
+
+    it "displays back-error message when invalid email format given" do
+      post :create, params: { user: { email: "withoutatsymbol", password: "irrelevant" } }
+      expect(flash[:bad_email]).to have_content("This email address is invalid")
     end
 
   end

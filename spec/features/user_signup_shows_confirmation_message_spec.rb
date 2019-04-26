@@ -15,7 +15,7 @@ RSpec.feature "Sign up message", type: :feature do
     fill_in 'user_email', with: 'test@gmail.com'
     fill_in 'user_password', with: '123'
     click_button "Create my account"
-    visit '/posts'
+    visit current_path
 
     expect(page).to_not have_content("Congratulations, you are signed up!")
   end
