@@ -183,7 +183,7 @@ body {
   height:40px;
 }
 
-.co-name > a {
+.co-name > p {
   font-family: Helvetica;
   font-size:14px;
   font-weight: bold;
@@ -194,8 +194,8 @@ body {
   margin-bottom:2px;
 }
 
-.co-name > a:hover {
-  text-decoration:underline;
+.co-name > p:hover {
+  transform: skew(-20deg);
 }
 
 .time {

@@ -12,12 +12,12 @@
       <div class="header">
         <div class="options"><i class="fa fa-chevron-down"></i></div>
         <%# <img class="co-logo" src="./app/assets/images/acebook.png"/> %>
-        <div class="co-name"><a href="#">PureCSS</a></div>
-        <%# <div class="time"><a href="#">2hrs</a> · <i class="fa fa-globe"></i></div> %>
+        <div class="co-name"><p><%= get_user_email(post) %></p></div>
+        <div class="time"><a><%= post.created_at.strftime("%Y-%m-%d")%></a><i class="fa fa-globe"></i></div>
       </div>
       <div class="content">
         <p><%= post.message %></p>
-        <p>Posted on <%= post.created_at.strftime("%Y-%m-%d")%> by <%= get_user_email(post) %></p>
+        
         <br>
       </div>
 
