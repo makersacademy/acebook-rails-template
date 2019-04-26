@@ -7,11 +7,36 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
+<<<<<<< HEAD
   <body> 
 
   <nav class="navbar navbar-dark bg-dark">
   
   <span class="navbar-brand mb-0 h1">Zuckerbros</span>
+=======
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Acebook</a>
+ 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav justify-content-end">
+            <%  if !user_signed_in? %>
+              <li class="nav-item ">
+                <%= button_to "Sign up", new_user_registration_path, method: :get %>
+              </li>
+              <li class="nav-item">           
+                <%= button_to "Sign in", new_user_session_path %>
+              </li>
+            <% else %>
+              <li class="nav-item">  
+                <%= button_to "Log out", destroy_user_session_path, :method => :delete %>
+              </li>  
+            <% end %>
+          </ul>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>            
+        </div>
+>>>>>>> 892153038f898166c4d4f72447ebafc44ef08394
 
   <ul class="nav justify-content-end">
       <% if !user_signed_in? %>
