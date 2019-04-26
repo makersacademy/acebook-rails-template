@@ -26,32 +26,21 @@
         <% @posts.each do |post| %>
           <div class="card">
             <div class="card-body">
-<<<<<<< HEAD
-
-              <p>User: <%= post.user.email %>
-
-              <p><%= post.message %></p>
-
-              <% if post.user == current_user%>
-
-              <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary" %> 
- 
-              <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-primary" %>
-
-              <%end%>
-
-=======
+              <p> Posted by: <%= post.user.first_name %>
               <h3><%= post.message %></h3>
-                <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
-                <%= link_to edit_post_path(post), :class => "btn btn-outline-dark" do %>
-                  Edit
+                <% if post.user == current_user %>
+
+                  <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
+
+                  <%= link_to edit_post_path(post), :class => "btn btn-outline-dark" do %>
+                    Edit
+                  <% end %>
+
                 <% end %>
->>>>>>> master
             </div>
           </div><br>
         <% end %>
       </div>
-
     </center>
   </div>
 </html>
