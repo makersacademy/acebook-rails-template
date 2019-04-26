@@ -10,5 +10,8 @@ Rails.application.routes.draw do
       root 'devise/sessions#new', as: :unauthenticated_root
     end
   end
+
+  root :to => redirect("/users/sign_in")
+
   resources :posts
 end
