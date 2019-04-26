@@ -7,6 +7,6 @@ RSpec.feature "Posts have creation dates", type: :feature do
     sign_up
     create_post message: "Hello, world!"
     expect(page).to have_content("Hello, world!")
-    expect(page).to have_content(DateTime.now.strftime("%Y-%m-%d"))
+    expect(page).to have_content(DateTime.now.strftime("%d-%m-%Y"))
   end
 end
