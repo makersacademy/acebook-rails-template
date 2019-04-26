@@ -71,6 +71,13 @@ Greg & Bart
 
 Harry & Wardah
 
-- Leanrt about how sessions work in Rails
+- Learnt about how sessions work in Rails
 - Learnt about destroying a session
 
+Andy & Sam 
+ - rails generate migration AddUserRefToPosts user:references - if you run this in the command line it will autogenerate a migration file. The "user:references" will create the foreign key details. Needs double checking for correct syntax
+ - if you make a field non-null in the database when there is data in the table already, you need to populate that field first or remove those rows. 
+ - sessions are not in scope of all controllers, you may need a method in a file where they are in scope which returns the session information to files where it is not in scope. We did this in the controller's helper file - checkout the sessions stuff we've done
+ - you should always WHICH tests are failing so you don't spend ages looking at the wrong thing :-)
+ - don't merge your own pull requests
+ - DO write tests! 
