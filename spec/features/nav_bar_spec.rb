@@ -36,4 +36,16 @@ RSpec.feature "Nav bar", type: :feature do
       expect(page).not_to have_link('Log in')
     end
   end
+
+  describe "'Log out'" do
+    scenario "Logged in users should see a 'log out' link" do
+      sign_up
+      expect(page).to have_link('Log out')
+    end
+
+    scenario "Logged out users should not see a 'log out'" do
+      visit "/"
+      expect(page).not_to have_link('Log out')
+    end
+  end
 end
