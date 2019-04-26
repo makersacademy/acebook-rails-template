@@ -1,7 +1,7 @@
 <h1>Edit post</h1>
- 
+
 <%= form_with(model: @post, local: true) do |form| %>
- 
+
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -15,14 +15,14 @@
       </ul>
     </div>
   <% end %>
- 
+
   <%= form.label :message %>
-  <%= form.text_field :message %>
- 
+  <%= form.text_area :message %>
+
   <p>
     <%= form.submit %>
   </p>
- 
+
 <% end %>
- 
+
 <%= link_to 'Back', posts_path %>

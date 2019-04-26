@@ -15,6 +15,8 @@ def sign_up_2
 end
 
 def post_message
+  @time_now = Time.parse("Apr 24 2019")
+  allow(Time).to receive(:now).and_return(@time_now)
   click_link 'New post'
   fill_in 'Message', with: 'Hello, World!'
   click_button 'Submit'
