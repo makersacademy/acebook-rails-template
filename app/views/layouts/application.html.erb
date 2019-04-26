@@ -9,15 +9,23 @@
   </head>
 
   <body>
+  <div class="flash-notice">
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+  </div>
+
+  <div class="page-header">
+  <%# <img src="logo.png" alt="orange fish"> %>
+  <%= image_tag("logo.png", :alt => "orange fish") %>
+  <h1>PlaiceBook</h1>
     <ul class="hmenu">
       <%= render 'devise/menu/login_items' %>
     </ul>
+  </div>
     <%= yield %>
   </body>
 </html>
