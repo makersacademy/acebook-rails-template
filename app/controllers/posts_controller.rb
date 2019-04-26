@@ -11,8 +11,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    # if post.user_id == session.user_id
-    @post = Post.find(params[:id])
+    if Post.verify_user(current_user, Post.find(params[:id]))
+      @post = Post.find(params[:id])
+    else
+      redirect_to posts_url
+    end
   end
 
   def update
