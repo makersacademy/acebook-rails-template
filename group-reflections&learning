@@ -45,9 +45,21 @@ Sam & Bart
 - We don't know enough about rails to be able to do this yet
 - We didn't change pairs at lunch time - maybe try to stick to this?
 
-Day 3!
+## Day 3!
+
+Wardah & Bart:
+
+- Added a sign up form
+- Made sure it was adding data into our database
+- Added a log in form as well (created sessions controller for it and redirected it to posts page)
+- Worked on the email authentication feature in backend (preventing incorrect email entry in DB)
+- Added a regex code in the User model file as a security measure
+- Tested it by manipulating the HTML in frontend and then checked DB, it wasn't added to the DB. Yay!
+
+## Day 4!
 
 Greg & Bart
 
 - Manual email verification with a displayed message if user has erred
 - Email verification blocks database insertion if invalid
+
