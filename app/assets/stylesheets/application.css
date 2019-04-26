@@ -145,5 +145,93 @@ input[type=text], input[type=password], input[type=email] {
   color: #881901;
 }
 
-
 /* <p2> font-family: 'Faster One', cursive; */
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+  background-color:#e9ebee;
+}
+
+.f-card {
+  background-color:white;
+  /*height:400px;*/
+  width:502px;
+  border: 1px solid #d0d1d5;
+  border-radius:3px;
+  margin: auto;
+  margin-bottom:10px;
+  padding: 12px; 
+  
+  box-shadow: 0 0 5px rgba(0, 0, 0, .30); /* Not original, just a test */
+}
+
+.header {
+  margin-bottom:17px;
+}
+
+.co-logo {
+  /*display:block;*/
+  float:left;
+  margin-right:8px;
+  
+  width:40px;
+  height:40px;
+}
+
+.co-name > a {
+  font-family: Helvetica;
+  font-size:14px;
+  font-weight: bold;
+  line-height: 1.38;
+  color: #365899;
+  text-decoration:none;
+  
+  margin-bottom:2px;
+}
+
+.co-name > a:hover {
+  text-decoration:underline;
+}
+
+.time {
+  font-family: Helvetica;
+  font-size:12px;
+  color: #90949c;
+}
+
+.time > a {
+  color: #90949c;
+  text-decoration:none;
+}
+
+.time > a:hover {
+  text-decoration:underline;
+}
+
+.options {
+  font-family: Helvetica;
+  font-size:12px;
+  color: #e5e5e5;
+  float:right;
+}
+
+.options:hover {
+  color: black; /* Fallback */
+  color: rgba(0, 0, 0, .30);
+}
+
+.content {
+  clear:both;
+  font-family: Helvetica, sans-serif;
+  font-size:14px;
+  line-height: 1.38;
+}
+
+.social {
+  margin-top:12px;
+}
