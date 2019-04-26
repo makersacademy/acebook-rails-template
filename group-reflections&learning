@@ -60,8 +60,14 @@ Wardah & Bart:
 
 Greg & Bart
 
-- Manual email verification with a displayed message if user has erred
-- Email verification blocks database insertion if invalid
+- Manually wrote back-end code which ensures email addresses at sign-up are valid.
+- If email address is valid, data is sent to DB and a verification 'flash' message is displayed.
+- If email address is invalid, data is not sent to DB and a distinct verification 'flash' message is displayed.  
+- Used TDD process throughout compilation of new code.  
+- As the back-end check is a safeguard against malicious modification of front-end email validity check, we have manually made 'malicious' modifications to check that our new code is fit for purpose.
+- Checked Flog data complexity score to ensure it remains below 10, which classifies as 'awesome'.
+- Identified and used Rubocop autocorrect tool to improve code quality.
+- Have monitored code coverage which is currently at 98%.
 
 Harry & Wardah
 
