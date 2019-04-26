@@ -10,7 +10,7 @@
   </head>
 
   <div class="container-fluid">
-    <div class="jumbotron">
+    <div class="jumbotron bg-info text-white">
       <h1 class="display-4">What'cha Up To?</h1>
       <p class="lead">How about you make a post to tell the world your thoughts...</p>
     </div>
@@ -25,11 +25,11 @@
           <%= form.text_field :message %>
         </div>
         <div class="actions">
-          <%= form.submit "Post!" %>
+          <%= form.submit "Post!", :class => "btn btn-outline-success" %>
         </div>
         <% end %>
       </div>
     </center>
   </div>
-  
+
 </html>
