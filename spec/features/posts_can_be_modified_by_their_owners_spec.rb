@@ -23,4 +23,14 @@ RSpec.feature "Editing posts", type: :feature do
     click_link 'Edit'
     expect(page).to have_content('Edit post')
   end
+
+  scenario "Users can edit posts from the edit post page" do
+    sign_up
+    create_post message: "My first post"
+    click_link 'Edit'
+    fill_in "Message", with: "My edited post"
+    click_on "Submit"
+    expect(page).not_to have_content("My first post")
+    expect(page).to have_content("My edited post")
+  end
 end
