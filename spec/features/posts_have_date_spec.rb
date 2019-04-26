@@ -1,9 +1,10 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.feature 'Posts have creation dates', type: :feature do
-  scenario 'Posts have a posted date' do
+require "rails_helper"
 
-    sign_up 
+RSpec.feature "Posts have creation dates", type: :feature do
+  scenario "Posts have a posted date" do
+    sign_up
 
     visit "/posts"
     click_link "New post"

@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 # adding the simplecov gem for test coverage.
-require 'simplecov'
-require 'simplecov-console'
-require 'test_helpers'
+require "simplecov"
+require "simplecov-console"
+require "test_helpers"
 SimpleCov.formatter = SimpleCov::Formatter::Console
 SimpleCov.start
 
@@ -104,4 +106,3 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
-

@@ -1,7 +1,8 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe PostsController, type: :controller do
-  
   describe "GET /new " do
     it "responds with 200" do
       session[:user_id] = 1
@@ -12,11 +13,10 @@ RSpec.describe PostsController, type: :controller do
 
   describe "POST /" do
     it "responds with 200" do
-
       user = User.create(email: "test@email.com", password: "123456")
       session[:user_id] = user.id
 
-      post :create, params: { post: { message: "Hello, world!", user_id: session[:user_id]} }
+      post :create, params: { post: { message: "Hello, world!", user_id: session[:user_id] } }
       expect(response).to redirect_to(posts_url)
     end
 
@@ -32,7 +32,7 @@ RSpec.describe PostsController, type: :controller do
       user = User.create(email: "test@email.com", password: "123456")
       session[:user_id] = user.id
 
-      post :create, params: { post: {message: "Hello, world!", user_id: session[:user_id]}}
+      post :create, params: { post: { message: "Hello, world!", user_id: session[:user_id] } }
       check = Post.find_by(message: "Hello, world!")
       expect(check.user_id).to be(session[:user_id])
     end

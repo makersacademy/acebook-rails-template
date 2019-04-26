@@ -1,8 +1,9 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.feature 'Posts are ordered', type: :feature do
-  scenario 'Posts are ordered by newest first' do
+require "rails_helper"
 
+RSpec.feature "Posts are ordered", type: :feature do
+  scenario "Posts are ordered by newest first" do
     sign_up
 
     visit "/posts"
