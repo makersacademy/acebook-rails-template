@@ -15,6 +15,9 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+    <ul class="hmenu">
+      <%= render 'devise/menu/login_items' %>
+    </ul>
     <%= yield %>
   </body>
 </html>
