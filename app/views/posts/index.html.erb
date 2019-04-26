@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <div class="container-fluid">
-    <div class="jumbotron">
+    <div class="jumbotron bg-info text-white" >
       <h1 class="display-4">Feed</h1>
     </div>
   </div>
@@ -18,16 +18,15 @@
 
   <div class="container-fluid">
     <center>
-      <div class="container-fluid" bg-color = blue>
-        <%= link_to new_post_path do %>
-        New post
-        <% end %>
+      <div class="container-fluid">
+        <%= link_to new_post_path, :class => "btn btn-outline-success" do %>New post<% end %>
       </div><br>
 
       <div class="container">
         <% @posts.each do |post| %>
           <div class="card">
             <div class="card-body">
+<<<<<<< HEAD
 
               <p>User: <%= post.user.email %>
 
@@ -41,6 +40,13 @@
 
               <%end%>
 
+=======
+              <h3><%= post.message %></h3>
+                <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
+                <%= link_to edit_post_path(post), :class => "btn btn-outline-dark" do %>
+                  Edit
+                <% end %>
+>>>>>>> master
             </div>
           </div><br>
         <% end %>
