@@ -1,5 +1,9 @@
 require 'simplecov'
 require 'simplecov-console'
+require 'coveralls'
+
+# Get coverage badge to work
+Coveralls.wear!
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

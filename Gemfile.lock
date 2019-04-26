@@ -57,9 +57,17 @@ GEM
     childprocess (1.0.1)
       rake (< 13.0)
     concurrent-ruby (1.1.5)
+    coveralls (0.7.1)
+      multi_json (~> 1.3)
+      rest-client
+      simplecov (>= 0.7)
+      term-ansicolor
+      thor
     crass (1.0.4)
     diff-lcs (1.3)
     docile (1.3.1)
+    domain_name (0.5.20180417)
+      unf (>= 0.0.5, < 1.0.0)
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.10.0)
@@ -70,6 +78,8 @@ GEM
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hirb (0.7.3)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
@@ -87,10 +97,14 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     method_source (0.9.2)
+    mime-types (3.2.2)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2019.0331)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     multi_json (1.13.1)
+    netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
@@ -133,6 +147,10 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.3)
@@ -194,13 +212,19 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    term-ansicolor (1.7.1)
+      tins (~> 1.0)
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    tins (1.20.2)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.6)
     unicode-display_width (1.5.0)
     web-console (3.7.0)
       actionview (>= 5.0)
@@ -220,6 +244,7 @@ DEPENDENCIES
   bcrypt
   byebug
   capybara (~> 2.13)
+  coveralls
   flog
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
@@ -237,4 +262,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.17.2
+   2.0.1
