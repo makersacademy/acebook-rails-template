@@ -12,7 +12,6 @@
 //
 //= require rails-ujs
 //= require_tree .
-//= require jquery
 
 $(function(){
   var flashDurationInSeconds = 5;
