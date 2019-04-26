@@ -5,11 +5,11 @@
     <%= csrf_meta_tags %>
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body> 
 
-   <nav class="navbar navbar-dark bg-dark">
+  <nav class="navbar navbar-dark bg-dark">
   
   <span class="navbar-brand mb-0 h1">Zuckerbros</span>
 
@@ -28,7 +28,6 @@
       <% end %>
     </ul>
   </nav>
-  
   
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>   
