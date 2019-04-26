@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    # if post.user_id == session.user_id
     @post = Post.find(params[:id])
   end
 
