@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.reverse
+    @posts = Post.order(:created_at).reverse_order
   end
 
   def edit
