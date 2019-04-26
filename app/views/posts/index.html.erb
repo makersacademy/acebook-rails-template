@@ -37,15 +37,14 @@
           <div class="card">
             <div class="card-body">
               <p> Posted by: <%= post.user.first_name %>
+
               <h3><%= post.message %></h3>
                 <% if post.user == current_user %>
-
                   <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
-
                   <%= link_to edit_post_path(post), :class => "btn btn-outline-dark" do %>
                     Edit
-                  <% end %>
-
+                  <% end %><br><br>
+                  <p class="text-right"><%= post.created_at.strftime('%b %d, %H:%M ') %></p>
                 <% end %>
             </div>
           </div><br>

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Simplecove setup
 require 'simplecov'
 require 'simplecov-console'
