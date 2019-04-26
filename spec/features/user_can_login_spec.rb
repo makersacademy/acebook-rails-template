@@ -45,8 +45,19 @@ RSpec.feature "Log in", type: :feature do
       log_in email: 'myemail@gmail.com', password: ''
       expect(page).to have_content("Invalid password")
     end
+  end
 
-    scenario "user should be able to log in with the correct password" do
+  context "Login email validation:-" do
+    scenario "user should not log in with an unknown email" do
+      sign_up email: 'myemail@gmail.com', password: 'mypassword'
+      click_link("Log out")
+      log_in email: 'notmyemail@gmail.com', password: 'mypassword'
+      expect(page).to have_content("There isn't an account for this email address")
+    end
+  end
+
+  context "Full credential validation:-" do
+    scenario "user should be able to log in with the correct credentials" do
       sign_up email: 'myemail@gmail.com', password: 'mypassword'
       click_link("Log out")
       log_in email: 'myemail@gmail.com', password: 'mypassword'
