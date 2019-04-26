@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    p 'gets here'
     @post = Post.create(post_params.merge(user_id: current_user.id)) # could be a source of bugs
     redirect_to posts_url
   end
