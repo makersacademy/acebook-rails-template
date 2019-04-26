@@ -12,4 +12,5 @@ class User < ApplicationRecord
   validates :password, length: { in: 6..10 }
 
   has_secure_password
+
 end
