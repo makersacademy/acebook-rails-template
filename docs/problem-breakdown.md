@@ -77,7 +77,10 @@ I want to be sure that only I can update my posts.
 
 1. DB migration to associate a user to many posts
     - add `user_id` as foreign key to `posts` table
+    - add `belongs_to :user` into Post model
+    - merge `user_id` with params in posts_controller
 
+2. When `edit` post is clicked - check if `user_id` of post = `current_user.id`
 
 
 
