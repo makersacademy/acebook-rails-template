@@ -11,7 +11,6 @@ SimpleCov.start
 
 Capybara.register_driver :selenium do |app|
   require 'selenium/webdriver'
-  Selenium::WebDriver::Firefox.driver_path = `which geckodriver`
   Capybara::Selenium::Driver.new(app, browser: :firefox)
 end
 
