@@ -1,6 +1,6 @@
 # PlaiceBook
 
-[![Build Status](https://travis-ci.org/amyj0rdan/acebook-plaicebook.svg?branch=master)](https://travis-ci.org/amyj0rdan/acebook-plaicebook) [![Maintainability](https://api.codeclimate.com/v1/badges/e6302f17e3033f9ccd47/maintainability)](https://codeclimate.com/github/amyj0rdan/acebook-plaicebook/maintainability)
+[![Build Status](https://travis-ci.org/amyj0rdan/acebook-plaicebook.svg?branch=master)](https://travis-ci.org/amyj0rdan/acebook-plaicebook) [![Maintainability](https://api.codeclimate.com/v1/badges/e6302f17e3033f9ccd47/maintainability)](https://codeclimate.com/github/amyj0rdan/acebook-plaicebook/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/e6302f17e3033f9ccd47/test_coverage)](https://codeclimate.com/github/amyj0rdan/acebook-plaicebook/test_coverage)
 
 ![plaicebook gif](https://media.giphy.com/media/xUPGcuPLCKs0LiYnCg/giphy.gif)
 
