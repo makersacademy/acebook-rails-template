@@ -37,56 +37,56 @@ RSpec.feature "Sign up", type: :feature do
   context "User must provide a valid email address" do
     scenario "User must provide an email address" do
       sign_up(email: "", password: "abc123")
-      expect(page).to have_content("Could not create account")
+      expect(page).to have_content("Invalid email address")
     end
 
     scenario 'Email address must contain "@" symbol' do
       sign_up(email: "myemail", password: "abc123")
-      expect(page).to have_content("Could not create account")
+      expect(page).to have_content("Invalid email address")
     end
 
     scenario "Email address must have a local part" do
       sign_up(email: "@myemail", password: "abc123")
-      expect(page).to have_content("Could not create account")
+      expect(page).to have_content("Invalid email address")
     end
 
     scenario "Email address must have a domain" do
       sign_up(email: "myemail@", password: "abc123")
-      expect(page).to have_content("Could not create account")
+      expect(page).to have_content("Invalid email address")
     end
 
     scenario "Email address must have a TLD" do
       sign_up(email: "myemail@domain", password: "abc123")
-      expect(page).to have_content("Could not create account")
+      expect(page).to have_content("Invalid email address")
     end
 
     scenario "Email must be unique" do
       sign_up(email: "myemail@hotmail.com", password: "abc123")
       sign_up(email: "myemail@hotmail.com", password: "xyx789")
-      expect(page).to have_content("Could not create account")
+      expect(page).to have_content("An account with this email already exists")
     end
 
     scenario "Email must be unique disregarding case" do
       sign_up(email: "myemail@hotmail.com", password: "abc123")
       sign_up(email: "myemail@HOTMAIL.com", password: "xyx789")
-      expect(page).to have_content("Could not create account")
+      expect(page).to have_content("An account with this email already exists")
     end
   end
 
   context "User must provide a valid password" do
     scenario "User must provide a password" do
       sign_up(email: "myemail@hotmail.com", password: "")
-      expect(page).to have_content("Could not create account")
+      expect(page).to have_content("Invalid password")
     end
 
     scenario "Password must be at least 6 characters" do
       sign_up(email: "myemail@hotmail.com", password: "12345")
-      expect(page).to have_content("Could not create account")
+      expect(page).to have_content("Invalid password")
     end
 
     scenario "Password must be at most 10 characters" do
       sign_up(email: "myemail@hotmail.com", password: "1234567890a")
-      expect(page).to have_content("Could not create account")
+      expect(page).to have_content("Invalid password")
     end
   end
 end
