@@ -16,4 +16,13 @@ RSpec.feature "Sign in", type: :feature do
     expect(page).to have_current_path("/")
   end
 
+  scenario "User signs in and is redirected to the posts page" do
+    create_user_and_sign_up
+    click_button("Sign out")
+    click_link("Log in")
+    fill_in("user_email", with: "georgie@com")
+    fill_in("user_password", with: "password1")
+    click_button("Log in")
+    expect(page).to have_link('New post')
+  end
 end

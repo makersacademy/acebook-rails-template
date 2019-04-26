@@ -1,3 +1,7 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=c81bb354071f6fb61c6b5cf0034e1ed458483b293fd943f017aaef2c9739f2f6
+
 language: ruby
 
 rvm: '2.5.0'
@@ -15,6 +19,9 @@ before_script:
 
 before_install:
   - gem install selenium-webdriver
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 script:
   - bundle exec rspec
@@ -24,3 +31,6 @@ addons:
 
 env:
   - MOZ_HEADLESS=1
+
+after_script:
+- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
