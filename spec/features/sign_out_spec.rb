@@ -6,4 +6,10 @@ RSpec.feature "Sign out", type: :feature do
     create_user_and_sign_up
     expect(page).to have_button("Sign out")
   end
+
+  scenario "User signs out & sees success message" do
+    create_user_and_sign_up
+    click_button("Sign out")
+    expect(page).to have_content("Signed out successfully.")
+  end
 end
