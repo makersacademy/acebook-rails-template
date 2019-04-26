@@ -18,7 +18,7 @@ RSpec.describe SessionsHelper do
     user = double("User", id: 123)
     session[:user_id] = user.id
     user_class = class_double("User").
-    as_stubbed_const(:transfer_nested_constants => true)
+    as_stubbed_const(transfer_nested_constants: true)
     allow(user_class).to receive(:find_by).with(id: session[:user_id]).and_return(user)
     expect(current_user).to eq(user)
   end
