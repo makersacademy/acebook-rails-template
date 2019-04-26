@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email_address].downcase)
     if user
-      if user && user.authenticate(params[:session][:password])
+      if user.authenticate(params[:session][:password])
         log_in(user)
         flash[:success] = "Logged in successfully"
         redirect_to posts_path
