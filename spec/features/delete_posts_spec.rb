@@ -2,6 +2,7 @@ require 'rails_helper'
 require 'sign_up_helper'
 
 RSpec.feature "Delete posts", type: :feature do
+  # switch to selenium to confirm the js popup
   Capybara.current_driver = :selenium
   scenario "user can delete an existing post" do
     create_user_and_sign_up
