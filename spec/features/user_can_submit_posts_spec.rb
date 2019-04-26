@@ -13,7 +13,7 @@ RSpec.feature 'Timeline', type: :feature do
     visit '/posts'
 
     click_link 'New post'
-    save_and_open_page
+    
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Post!'
 
