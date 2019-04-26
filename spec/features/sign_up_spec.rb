@@ -9,7 +9,6 @@ RSpec.feature "Sign up", type: :feature do
 
   scenario "User prompted to sign up with email address and password" do
     visit "/"
-    click_link "Sign up"
     expect(page).to have_field("user_email")
     expect(page).to have_field("user_password")
     expect(page).to have_field("user_password_confirmation")
@@ -17,7 +16,6 @@ RSpec.feature "Sign up", type: :feature do
 
   scenario "User can only enter valid email address" do
     visit "/"
-    click_link "Sign up"
     fill_in("user_email", with: "henryemail")
     fill_in("user_password", with: "password")
     fill_in("user_password_confirmation", with: "password")
@@ -27,7 +25,6 @@ RSpec.feature "Sign up", type: :feature do
 
   scenario "User can only enter a password above 6 characters" do
     visit "/"
-    click_link "Sign up"
     fill_in("user_email", with: "test@test.com")
     fill_in("user_password", with: "pass")
     fill_in("user_password_confirmation", with: "pass")
@@ -37,7 +34,6 @@ RSpec.feature "Sign up", type: :feature do
 
   scenario "User can only enter a password up to 10 characters" do
     visit "/"
-    click_link "Sign up"
     fill_in("user_email", with: "test@test.com")
     fill_in("user_password", with: "password1234")
     fill_in("user_password_confirmation", with: "password1234")
@@ -47,7 +43,6 @@ RSpec.feature "Sign up", type: :feature do
 
   scenario "User signs up and sees success message" do
     visit "/"
-    click_link "Sign up"
     fill_in("user_email", with: "test@test.com")
     fill_in("user_password", with: "password")
     fill_in("user_password_confirmation", with: "password")
