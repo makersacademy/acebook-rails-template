@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/samanthaixer/acebook-roku.svg?branch=master)](https://travis-ci.org/samanthaixer/acebook-roku)
 
+[![Coverage Status](https://coveralls.io/repos/github/samanthaixer/acebook-roku/badge.svg?branch=master)](https://coveralls.io/github/samanthaixer/acebook-roku?branch=master)
+
 ### Roku - "Six" in Japanese. We are six and we are ninjas!
 
 The ninjas are:
