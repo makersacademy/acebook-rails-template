@@ -13,4 +13,15 @@ require 'sign_up_helper'
     page.driver.browser.switch_to.alert.accept
     expect(page).not_to have_content "This message is going to be deleted!"
   end
+
+  scenario "user cannot delete other user's post" do
+    create_user_and_sign_up
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "User 1 message"
+    click_button "Submit"
+    click_button "Sign out"
+    create_second_user_and_sign_in
+    expect(page).to have_no_button "Delete"
+  end
 end
