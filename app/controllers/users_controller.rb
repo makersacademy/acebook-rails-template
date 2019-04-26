@@ -6,9 +6,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    flash[:success] = "Congratulations, you are signed up!"
-    redirect_to posts_url
+    if user_params[:email] =~ /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/
+      @user = User.create(user_params)
+      flash[:success] = "Congratulations, you are signed up!"
+      redirect_to posts_url
+    else
+      flash[:bad_email] = "This email address is invalid"
+      redirect_to('/users/new')
+
+    end
   end
 
 private
@@ -16,6 +22,4 @@ private
   def user_params
     params.require(:user).permit([:email, :password])
   end
-
 end
-
