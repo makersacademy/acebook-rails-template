@@ -48,6 +48,8 @@ High
   - update their own posts for a maximum of 10 mins after they're created
 
 ```
+User story 1: Update posts
+--------------------------
 As a user,
 so that I can correct spelling mistakes,
 I want to be able to update my own posts
@@ -65,9 +67,27 @@ Post | update
     - submit redirects back to 'timeline' (posts#index)
 
 
+```
+User story 2: Update own posts
+------------------------------
+As a user,
+so that the integrity of shared posts is maintained,
+I want to be sure that only I can update my posts.
+```
+
+1. DB migration to associate a user to many posts
+    - add `user_id` as foreign key to `posts` table
+    - add `belongs_to :user` into Post model
+    - merge `user_id` with params in posts_controller
+
+2. When `edit` post is clicked - check if `user_id` of post = `current_user.id`
+
+
+
   - see a helpful error message if they try to update another user's post
   - delete their own posts
   - see a helpful error message if they try to delete another user's post
+
 
 
 ## Requirements
