@@ -37,5 +37,6 @@ RSpec.feature "Log out", type: :feature do
 
     click_link("Log out")
     expect(page).not_to have_link("Log out")
+    expect(page).to have_text("You are logged out")
   end
 end
