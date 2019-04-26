@@ -1,8 +1,10 @@
 <h1>Posts page</h1>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<div class="new-post-button">
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
+</div>
 
 <% @posts.each do |post| %>
 

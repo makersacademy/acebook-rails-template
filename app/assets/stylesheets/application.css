@@ -126,6 +126,10 @@ input[type=text], input[type=password], input[type=email] {
   background: linear-gradient(#94d27b, #578843);
 }
 
+.new-post-button {
+  padding: 20px;
+}
+
 .alert {
   border: 1px solid grey;
   padding: 10px;
