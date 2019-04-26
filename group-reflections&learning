@@ -7,6 +7,23 @@ Wardah & Bart:
 * The difference between CI (Continuous Integration) and CD (Continuous Deployment) is a lot clearer
 * Got a better understanding on Travic CI, it checks if tests are passing and if there are any conflicts with master branch.
 
+Greg & Sam 23/4/19
+
+Today we have had initial group discussions in order to plan our team-working strategy from the very beginning 
+of this project.  We have set daily start and finish times, as well as expectations regarding stand-ups and 
+retrospectives.  We have also considered the best way to ensure that all team members are exposed to and work 
+on all parts of the project.  We agreed to adopt an initial pair working protocol of changing partners between 
+every morning and afternoon session.
+
+Upon conclusion of this meeting, we broke into three pairs and worked on the self-allocated set-up tasks which 
+were provided to us in the project specification.  Sam and I worked on adding Rubocop, SimpleCov and Flog, which 
+are a linter, a test coverage checker and a complexity analyser respectively.  We have learnt that Flog provides 
+us with a score and we have discovered that a score of 20 or under is optimal.  Scores of over 200 are possible, 
+but highly inadvisable.  
+
+Sam has shared the following resource (https://codeclimate.com/blog/deciphering-ruby-code-metrics/) which 
+explains the rationale behind and usefulness of the various metrics we are utilising in this project.
+
 ## Day 2!
 
 - Deployed Heroku from the command line.
@@ -27,4 +44,27 @@ Sam & Bart
 
 - We don't know enough about rails to be able to do this yet
 - We didn't change pairs at lunch time - maybe try to stick to this?
--
+
+## Day 3!
+
+Wardah & Bart:
+
+- Added a sign up form
+- Made sure it was adding data into our database
+- Added a log in form as well (created sessions controller for it and redirected it to posts page)
+- Worked on the email authentication feature in backend (preventing incorrect email entry in DB)
+- Added a regex code in the User model file as a security measure
+- Tested it by manipulating the HTML in frontend and then checked DB, it wasn't added to the DB. Yay!
+
+## Day 4!
+
+Greg & Bart
+
+- Manual email verification with a displayed message if user has erred
+- Email verification blocks database insertion if invalid
+
+Harry & Wardah
+
+- Leanrt about how sessions work in Rails
+- Learnt about destroying a session
+

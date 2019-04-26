@@ -9,4 +9,10 @@ RSpec.describe SessionsController, type: :controller do
     end
   end
 
+  describe "DELETE sessions#destroy" do
+    it "checks user is out of session" do
+      #need to add a unit test for log_out
+    end
+  end
+
 end
