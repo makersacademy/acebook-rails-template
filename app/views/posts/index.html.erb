@@ -9,12 +9,22 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
+
+    <%  if !user_signed_in? %>
+    <%= link_to "Sign up", new_user_registration_path%>
+    <%= link_to "Sign in", new_user_session_path %>
+    <% else %>
+    <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+    <% end %>
+
+
   <div class="container-fluid">
     <div class="jumbotron bg-info text-white" >
       <h1 class="display-4">Feed</h1>
     </div>
   </div>
 
+    
 
   <div class="container-fluid">
     <center>
@@ -27,15 +37,14 @@
           <div class="card">
             <div class="card-body">
               <p> Posted by: <%= post.user.first_name %>
+
               <h3><%= post.message %></h3>
                 <% if post.user == current_user %>
-
                   <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
-
                   <%= link_to edit_post_path(post), :class => "btn btn-outline-dark" do %>
                     Edit
-                  <% end %>
-
+                  <% end %><br><br>
+                  <p class="text-right"><%= post.created_at.strftime('%b %d, %H:%M ') %></p>
                 <% end %>
             </div>
           </div><br>

@@ -43,8 +43,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', require: false
   gem 'rubocop-performance'
-  gem 'selenium-webdriver'
   gem "rubycritic", require: false
+  gem 'selenium-webdriver'
   gem 'simplecov'
   gem 'simplecov-console'
   gem 'simplecov-shields-badge', require: false
