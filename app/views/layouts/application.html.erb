@@ -5,7 +5,7 @@
     <%= favicon_link_tag asset_path('acebook.png'), :rel => 'icon', :type =>  'image/png' %>
 
     <%= csrf_meta_tags %>
-
+    <%= jquery_include_tag :jquery %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Faster+One|Montserrat:600" rel="stylesheet">  </head>
@@ -19,7 +19,14 @@
         <ul>
           <% if session[:user_id] %>
             <li>
+              <%= link_to "View posts", posts_path %>
+            </li>
+            <li>
               <%= link_to "Log out", logout_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Log in", login_path %>
             </li>
           <% end %>
         </ul>
@@ -27,12 +34,13 @@
     </div>
     
     <div id="content">
-      <div class="flash-message container">
+      <div id="flash-messages" class="flash-message container">
         <% flash.each do |key, value| %>
           <div class="alert alert-<%= key %>"><%= value %></div>
         <% end %>
       </div>
       <%= yield %>
     </div>
+    
   </body>
 </html>

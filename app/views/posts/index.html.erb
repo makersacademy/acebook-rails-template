@@ -2,35 +2,24 @@
 
 <div class="new-post-button">
   <%= link_to new_post_path do %>
-    New post
+    Create new post
   <% end %>
 </div>
 
 <% @posts.each do |post| %>
 
-  <div class='post_card'>
-
-    <div class="f-card">
-      <div class="header">
-        <div class="options"><i class="fa fa-chevron-down"></i></div>
-        <%# <img class="co-logo" src="./app/assets/images/acebook.png"/> %>
-        <div class="co-name"><p><%= get_user_email(post) %></p></div>
-        <div class="time"><a><%= post.created_at.strftime("%d-%m-%Y")%> at <%= post.created_at.strftime("%I:%M %p")%></a><i class="fa fa-globe"></i></div>
+  <div class='post-card'>
+    <div class="post-header">
+      <div class="post-author">
+        <%= get_user_email(post) %>
       </div>
-      <div class="content">
-        <p><%= post.message %></p>
-        
-        <br>
-      </div>
-
-      <div class="social">
-        <div class="social-content"></div>
-        <div class="social-buttons">
-          <%# <span><i class="fa fa-thumbs-up"></i>Like</span>
-          <span><i class="fa fa-comment"></i>Comment</span>
-          <span><i class="fa fa-share"></i>Share</span></div> %>
-      </div>
+      <div class="post-pubished-time"><%= post.created_at.strftime("%d-%m-%Y")%> at <%= post.created_at.strftime("%I:%M %p")%></div>
     </div>
-
-</div>
+    <div class="post-content">
+      <p><%= post.message %></p>
+      <% if post.user_id == current_user.id %>
+        <p><%= link_to 'Edit', edit_post_path(post) %></p> 
+      <% end %>
+    </div>
+  </div>
 <% end %>
