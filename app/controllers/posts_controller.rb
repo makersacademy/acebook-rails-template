@@ -14,6 +14,7 @@ class PostsController < ApplicationController
     if Post.verify_user(current_user, Post.find(params[:id]))
       @post = Post.find(params[:id])
     else
+      flash[:error] = "You can't edit somebody elses post!"
       redirect_to posts_url
     end
   end
