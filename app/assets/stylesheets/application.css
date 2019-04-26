@@ -101,7 +101,6 @@ input[type=text], input[type=password], input[type=email] {
 .password_requirements {
   color: rgb(100, 100, 100); 
   font-size: 0.8rem;
-  line-height: 
 }
 
 .btn {
