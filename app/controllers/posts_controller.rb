@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-   
+
     if @post.update(post_params)
       redirect_to posts_url
     else
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
   end
 
   private
