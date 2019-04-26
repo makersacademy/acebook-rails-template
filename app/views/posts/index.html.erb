@@ -25,11 +25,12 @@
         <% @posts.each do |post| %>
           <div class="card">
             <div class="card-body">
-              <h3><%= post.message %></h3>
+              <h3><%= post.message %></h3><br><br><br>
                 <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
                 <%= link_to edit_post_path(post), :class => "btn btn-outline-dark" do %>
                   Edit
-                <% end %>
+                <% end %><br><br>
+                <p class="text-right"><%= post.created_at.strftime('%b %d, %H:%M ') %></p>
             </div>
           </div><br>
         <% end %>
