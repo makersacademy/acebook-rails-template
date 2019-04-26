@@ -16,4 +16,11 @@ RSpec.feature "Editing posts", type: :feature do
     visit '/posts'
     expect(page).not_to have_link('Edit')
   end
+
+  scenario "The edit link should go to the edit page for the post" do
+    sign_up
+    create_post
+    click_link 'Edit'
+    expect(page).to have_content('Edit post')
+  end
 end

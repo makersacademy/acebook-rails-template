@@ -1,8 +1,16 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  def index
+    @posts = Post.order("created_at DESC")
+  end
+
   def new
     @post = Post.new
+  end
+
+  def edit
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -11,10 +19,6 @@ class PostsController < ApplicationController
     params[:user_id] = user.id
     @post = Post.create(params)
     redirect_to posts_url
-  end
-
-  def index
-    @posts = Post.order("created_at DESC")
   end
 
   private
