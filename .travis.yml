@@ -7,17 +7,8 @@ rvm:
  - 2.5.0
 cache:
   - bundler: true
-  - yarn: true
-  directories:
-    - node_modules
 
 before_install: gem install bundler
-install:
-  - bundle install
-  - nvm install node
-  - node -v
-  - npm i -g yarn
-  - yarn install
 notifications:
   -false
 
