@@ -82,10 +82,22 @@ I want to be sure that only I can update my posts.
 
 2. When `edit` post is clicked - check if `user_id` of post = `current_user.id`
 
-
-
+NOT DONE - checked with PO - preferred not to show update button where a user cannot update a post
   - see a helpful error message if they try to update another user's post
+
+-------
+
   - delete their own posts
+```
+User story 3: Delete own posts
+------------------------------
+As a user,
+so that the integrity of shared posts is maintained,
+I want to be sure that only I can delete my posts.
+```
+
+
+NOT DONE - checked with PO - preferred not to show update button where a user cannot update a post
   - see a helpful error message if they try to delete another user's post
 
 
