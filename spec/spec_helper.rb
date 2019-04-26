@@ -10,7 +10,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 
 Capybara.register_driver :selenium do |app|
-  require 'selenium/webdriver'
   Capybara::Selenium::Driver.new(app, browser: :firefox)
 end
 
