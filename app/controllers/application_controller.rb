@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
@@ -11,10 +13,10 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def require_login
-    unless session[:user_id]
-      flash[:error] = "You must be logged in to access that page"
-      redirect_to root_url
+    def require_login
+      unless session[:user_id]
+        flash[:error] = "You must be logged in to access that page"
+        redirect_to root_url
+      end
     end
-  end
 end

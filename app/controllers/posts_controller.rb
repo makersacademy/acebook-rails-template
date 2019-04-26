@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
@@ -12,12 +14,12 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.order('created_at DESC')
+    @posts = Post.order("created_at DESC")
   end
 
   private
 
-  def post_params
-    params.require(:post).permit(:message)
-  end
+    def post_params
+      params.require(:post).permit(:message)
+    end
 end
