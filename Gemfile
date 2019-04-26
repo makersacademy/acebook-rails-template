@@ -7,6 +7,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'faker'
+
 gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -46,6 +48,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'simplecov-console'
   gem 'simplecov-shields-badge', require: false
+  gem 'devise'
 end
 
 group :development do

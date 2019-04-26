@@ -3,8 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+  include Devise::Test::ControllerHelpers
+
+  let(:user) {user = User.create(email: 'test@test.com', password: "password", password_confirmation: "password") }
+  
   describe 'GET /new ' do
     it 'responds with 200' do
+      sign_in user
       get :new
       expect(response).to have_http_status(200)
     end
@@ -12,11 +17,13 @@ RSpec.describe PostsController, type: :controller do
 
   describe 'POST /' do
     it 'responds with 200' do
+      sign_in user
       post :create, params: { post: { message: 'Hello, world!' } }
       expect(response).to redirect_to(posts_url)
     end
 
     it 'creates a post' do
+      sign_in user
       post :create, params: { post: { message: 'Hello, world!' } }
       expect(Post.find_by(message: 'Hello, world!')).to be
     end

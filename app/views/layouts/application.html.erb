@@ -4,12 +4,34 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
     <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
+  <body> 
+
+  <nav class="navbar navbar-dark bg-dark">
   
+  <span class="navbar-brand mb-0 h1">Zuckerbros</span>
 
-
-
+  <ul class="nav justify-content-end">
+      <% if !user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, :class => "btn text-light"%>  
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign in", new_user_session_path, :class => "btn text-light" %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "btn text-light" %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+  
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>   
+  
     <%= yield %>
   </body>
 
