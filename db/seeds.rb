@@ -25,7 +25,7 @@ uids = []
 User.all.each {|u| uids << u.id}
 
 ActiveRecord::Base.transaction do 
-  20 times do 
+  20.times do 
     post['message']= Faker::Hipster.sentence
     post['user_id']= uids.sample
     Post.create(post)
