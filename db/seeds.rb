@@ -32,8 +32,4 @@ ActiveRecord::Base.transaction do
     post['user_id']= uids.sample
     Post.create(post)
   end 
-<<<<<<< HEAD
 end 
-=======
-end 
->>>>>>> 9684f82290b4e1cb2bf4e3e6535b657fcfad5662

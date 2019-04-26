@@ -8,29 +8,16 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+  </head>   
 
-    <%  if !user_signed_in? %>
-    <%= link_to "Sign up", new_user_registration_path%>
-    <%= link_to "Sign in", new_user_session_path %>
-    <% else %>
-    <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
-    <% end %>
-
-
-  <div class="container-fluid">
-    <div class="jumbotron bg-info text-white" >
-      <h1 class="display-4">Feed</h1>
-    </div>
-  </div>
-
-    
 
   <div class="container-fluid">
     <center>
+      <% if user_signed_in? %>
       <div class="container-fluid">
         <%= link_to new_post_path, :class => "btn btn-outline-success" do %>New post<% end %>
       </div><br>
+      <%end%>
 
       <div class="container">
         <% @posts.each do |post| %>
@@ -44,8 +31,8 @@
                   <%= link_to edit_post_path(post), :class => "btn btn-outline-dark" do %>
                     Edit
                   <% end %><br><br>
-                  <p class="text-right"><%= post.created_at.strftime('%b %d, %H:%M ') %></p>
                 <% end %>
+                <p class="text-right"><%= post.created_at.strftime('%b %d, %H:%M ') %></p>
             </div>
           </div><br>
         <% end %>
