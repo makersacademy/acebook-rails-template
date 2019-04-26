@@ -13,10 +13,10 @@ class UsersController < ApplicationController
     if user.valid?
       user.save
       session[:user_id] = user.id
-      flash[:success] = "New account created"
+      # flash[:success] = "New account created"
       redirect_to posts_path
     else
-      flash[:danger] = "Could not create account"
+      # flash[:danger] = "Could not create account"
       redirect_to root_path
     end
   end
