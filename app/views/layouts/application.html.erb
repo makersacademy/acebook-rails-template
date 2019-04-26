@@ -11,20 +11,28 @@
     <link href="https://fonts.googleapis.com/css?family=Faster+One|Montserrat:600" rel="stylesheet">  </head>
 
   <body>
-    <nav>
-      <ul>
-        <% if session[:user_id] %>
-          <li>
-            <%= link_to "Log out", logout_path, method: :delete %>
-          </li>
-        <% end %>
-      </ul>
-    </nav>
-    <div class="container">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
+    <div id="header_bar">
+      <div id="title">
+        <h1>acebook</h1>
+      </div>
+      <nav id="main_nav">
+        <ul>
+          <% if session[:user_id] %>
+            <li>
+              <%= link_to "Log out", logout_path, method: :delete %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
     </div>
-    <%= yield %>
+    
+    <div id="content">
+      <div class="flash-message container">
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

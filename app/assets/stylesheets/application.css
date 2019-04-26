@@ -14,46 +14,131 @@
  *= require_self
  */
 
- p2 {
-  font-family: 'Montserrat', sans-serif;
-  font-size:42px; 
-  color: white
+* {
+  box-sizing: border-box;
 }
 
 html, body {
   margin:0;
   padding:0;
   border: 0;
-  }
+}
 
-.header_bar {
-  text-align: left;
-  text-indent: 50px;
-  line-height: 120px;
+body {
+  background-size: cover;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  background-color:#e9ebee;
+}
+
+#header_bar {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 20px 50px;
   height: 100px;
-  position: absolute;
   top: 0;
   width: 100%;
   background-color: #4267b2; 
   border-bottom: 1px solid #133783;
 }
-body {
-  background-size: cover;
-  background-color:#e9ebee;
+
+#title {
+  position: relative;
+  bottom: -10px;
 }
-.centre_box {
-  text-align: left;
-  padding-top: 25px;
-  padding-bottom: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 360px;
-  position: relative; 
-  top: 85px;
-  background-color:#e9ebee;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+#title h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size:42px; 
+  color: white;
+  margin: 0;
   display: block;
-  margin: 0 auto;
+  position: relative;
 }
+
+#main_nav a {
+  color: white; 
+  text-decoration: none;
+}
+
+#main_nav a:hover {
+  color: white; 
+  text-decoration: underline;
+  
+}
+
+#main_nav ul {
+  list-style: none;
+  margin: 0;
+}
+
+#main_nav li {
+  display: inline;  
+  margin: 0 5px;
+}
+
+#content {
+  text-align: left;
+  width: 360px;
+  margin: 30px auto 0 auto;
+}
+
+#single_form {
+  margin-top: 110px;
+}
+
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 1rem;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+}
+
+.btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 10px;
+  display: inline-flex;
+  font: inherit;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  border-color: #578843;
+
+  background: linear-gradient(#67ae55, #578843);
+  
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(#94d27b, #578843);
+}
+
+.alert {
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.alert-success {
+  background-color: #9fda90;
+  border-color: #578843;
+  color: #1f3716;
+}
+
+.alert-danger {
+  background-color: #f4b4b4;
+  border-color: #8f4537;
+  color: #881901;
+}
+
 
 /* <p2> font-family: 'Faster One', cursive; */

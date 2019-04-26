@@ -1,16 +1,18 @@
-<h1>Log in</h1>
-<%= form_for(:session, url: login_path) do |form| %>
-  <p>
-    <%= form.label :email_address %><br>
-    <%= form.email_field :email_address, class: 'form-control' %>
-  </p>
+<div id="single_form">
+  <h1>Log in</h1>
+  <%= form_for(:session, url: login_path) do |form| %>
+    <p>
+      <%= form.label :email_address %><br>
+      <%= form.email_field :email_address, class: 'form-control' %>
+    </p>
 
-  <p>
-    <%= form.label :password %><br>
-    <%= form.password_field :password, class: 'form-control' %>
-  </p>
+    <p>
+      <%= form.label :password %><br>
+      <%= form.password_field :password, class: 'form-control' %>
+    </p>
 
-  <p>
-    <%= form.submit "Log in", class: "btn btn-primary" %>
-  </p>
-<% end %>
+    <p>
+      <%= form.submit "Log in", class: "btn btn-primary" %>
+    </p>
+  <% end %>
+</div>

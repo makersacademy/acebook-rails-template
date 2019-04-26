@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       flash[:success] = "New account created"
       redirect_to posts_path
     else
-      flash[:success] = "Could not create account"
+      flash[:danger] = "Could not create account"
       redirect_to root_path
     end
   end
