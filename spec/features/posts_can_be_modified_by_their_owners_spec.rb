@@ -33,4 +33,13 @@ RSpec.feature "Editing posts", type: :feature do
     expect(page).not_to have_content("My first post")
     expect(page).to have_content("My edited post")
   end
+
+  scenario "Users can't edit other users' posts" do
+    user = User.create(email: 'my@email.com', password: '123456')
+    post = Post.create(message: 'my message', user_id: user.id)
+
+    sign_up
+    visit "/posts/#{post.id}/edit"
+    expect(page).to have_content "You can't edit that post!"
+  end
 end
