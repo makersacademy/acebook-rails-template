@@ -46,6 +46,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'simplecov-console'
   gem 'simplecov-shields-badge', require: false
+  gem 'devise'
 end
 
 group :development do
