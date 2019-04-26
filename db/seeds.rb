@@ -7,17 +7,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# User.create(first_name: 'Germany', last_name: 'chen', email: 'alexbaggio315@gmail.com', password:'asdfgh')
+
 user = {}
-user['password'] = 'asdf'
+user['password'] = 'asdfss'
 
 ActiveRecord::Base.transaction do
-  10.times do 
-    user['first_name']= Faker::Name.first_name
-    user['last_name']= Faker::Name.last_name
+  20.times do
+    user['first_name'] = Faker::Name.first_name
+    user['last_name'] = Faker::Name.last_name
     user['email'] = Faker::Internet.email
+
     User.create(user)
-  end 
-end 
+  end
+end
 
 post = {}
 uids = []
