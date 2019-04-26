@@ -11,6 +11,6 @@ RSpec.feature "Posts have creation dates", type: :feature do
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
-    expect(page).to have_content(DateTime.now.strftime("%Y-%m-%d"))
+    expect(page).to have_content(DateTime.now.strftime("%d-%m-%Y"))
   end
 end
