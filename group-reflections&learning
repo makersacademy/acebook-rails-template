@@ -63,3 +63,8 @@ Greg & Bart
 - Manual email verification with a displayed message if user has erred
 - Email verification blocks database insertion if invalid
 
+Harry & Wardah
+
+- Leanrt about how sessions work in Rails
+- Learnt about destroying a session
+
