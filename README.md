@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/samanthaixer/acebook-roku.svg?branch=master)](https://travis-ci.org/samanthaixer/acebook-roku)
-
 # AceBook - ROKU
+
+[![Build Status](https://travis-ci.org/samanthaixer/acebook-roku.svg?branch=master)](https://travis-ci.org/samanthaixer/acebook-roku)
 
 ### Roku - "Six" in Japanese. We are six and we are ninjas!
 
