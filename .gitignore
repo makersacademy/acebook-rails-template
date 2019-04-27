@@ -17,7 +17,9 @@
 !/log/.keep
 !/tmp/.keep
 
-/coverage/*
+# Ignore coverage resultset.json
+/coverage/.resultset.json
+/coverage/.resultset.json.lock
 
 /node_modules
 /yarn-error.log
