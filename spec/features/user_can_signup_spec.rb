@@ -8,6 +8,19 @@ RSpec.feature "Sign up", type: :feature do
     expect(page).to have_current_path("/")
   end
 
+  context "You can get from the log in page to the sign up page" do
+    scenario "The log in page has a link to the sign up page" do
+      visit "/login"
+      expect(page).to have_link("Sign up for one here")
+    end
+
+    scenario "The link goes to the sign up page" do
+      visit "/login"
+      click_link("Sign up for one here")
+      expect(page).to have_current_path("/")
+    end
+  end
+
   scenario "Logged out users should get see a message when they get redirected" do
     visit "/posts/new"
     expect(page).to have_content("You must be logged in to access that page")
@@ -15,11 +28,11 @@ RSpec.feature "Sign up", type: :feature do
 
   scenario "Signup form should have email address and password fields" do
     visit "/"
-    expect(page).to have_field("user[email_address]")
-    expect(page).to have_field("user[password]")
+    expect(page).to have_field("Email address")
+    expect(page).to have_field("Password")
   end
 
-  scenario "Completing the signup form navigates to posts route" do
+  scenario "Completing the signup form navigates to posts page" do
     sign_up
     expect(page).to have_current_path("/posts")
   end
@@ -29,7 +42,7 @@ RSpec.feature "Sign up", type: :feature do
     expect(page).to have_link("Log out")
   end
 
-  scenario "After completing the signup form succesfully the user sees a confirmation mesage" do
+  scenario "A confirmation message is shown after the user signs up" do
     sign_up
     expect(page).to have_content("New account created")
   end
