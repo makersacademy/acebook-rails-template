@@ -126,6 +126,10 @@ input[type=text], input[type=password], input[type=email] {
   background: linear-gradient(#94d27b, #578843);
 }
 
+.new-post-button {
+  padding: 20px;
+}
+
 .alert {
   border: 1px solid grey;
   padding: 10px;
@@ -145,5 +149,40 @@ input[type=text], input[type=password], input[type=email] {
   color: #881901;
 }
 
-
 /* <p2> font-family: 'Faster One', cursive; */
+
+.post-card {
+  background-color:white;
+  border: 1px solid #d0d1d5;
+  border-radius:3px;
+  margin: auto;
+  margin-bottom:10px;
+  padding: 12px; 
+  
+  box-shadow: 0 0 5px rgba(0, 0, 0, .30); /* Not original, just a test */
+}
+
+.post-header {
+  margin-bottom:17px;
+}
+
+.post-author {
+  font-size:14px;
+  font-weight: bold;
+  line-height: 1.38;
+  color: #365899;
+  text-decoration:none;
+  margin-bottom:2px;
+}
+
+.post-pubished-time {
+  font-family: Helvetica;
+  font-size:12px;
+  color: #90949c;
+}
+
+.post-content {
+  clear:both;
+  font-size:14px;
+  line-height: 1.38;
+}

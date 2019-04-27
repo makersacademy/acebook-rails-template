@@ -5,6 +5,8 @@ env:
 language: ruby
 rvm:
  - 2.5.0
+cache:
+  - bundler: true
 
 before_install: gem install bundler
 notifications:
