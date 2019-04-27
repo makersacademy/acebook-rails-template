@@ -81,12 +81,12 @@ body {
 
 #content {
   text-align: left;
-  width: 360px;
+  width: 500px;
   margin: 30px auto 0 auto;
 }
 
 #single_form {
-  margin-top: 110px;
+  margin: 110px 80px 0;
 }
 
 input[type=text], input[type=password], input[type=email] {
@@ -127,7 +127,7 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 .new-post-button {
-  padding: 20px;
+  margin: 20px 0;
 }
 
 .alert {
