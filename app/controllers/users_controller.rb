@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     else
       if user_with_same_email
         flash[:danger] = "An account with this email already exists"
-      elsif user.errors.details[:email].include? ({:error=>:invalid, :value=>""})
+      elsif user.errors.details[:email].include? ({:error=>:blank})
         flash[:danger] = "Email field cannot be empty"
       elsif user.errors[:email].any? 
         flash[:danger] = "Invalid email address"
