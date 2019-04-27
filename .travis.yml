@@ -9,12 +9,28 @@ rvm: '2.5.0'
 before_script:
   - bundle exec rails db:create RAILS_ENV=test
   - bundle exec rails db:migrate RAILS_ENV=test
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.20.0/geckodriver-v0.20.0-linux64.tar.gz
+  - mkdir geckodriver
+  - tar -xzf geckodriver-v0.20.0-linux64.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
+
+before_install:
+  - gem install selenium-webdriver
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
 script:
   - bundle exec rspec
+
+addons:
+  firefox: latest
+
+env:
+  - MOZ_HEADLESS=1
 
 after_script:
 - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
