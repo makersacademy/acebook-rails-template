@@ -8,7 +8,7 @@
 
 
 ### Card Wall
-Want to see our awesome cards? Go: [Here](https://trello.com/b/6XSi28FM/acebook-by-business-logic)
+See our awesome card wall [here](https://trello.com/b/6XSi28FM/acebook-by-business-logic)
 
 ### Want to see the live version?
 
