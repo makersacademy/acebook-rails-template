@@ -28,7 +28,7 @@
     margin: 0;
 }
 
-p{
+p {
     margin: 0;
 }
 
@@ -40,8 +40,11 @@ p{
     justify-content: space-around;
 
     margin: 5rem auto;
-    
+
     max-width: 600px;
     padding-left: 3rem;
     padding-right: 3rem;
-  }
+}
+
+.like {
+}

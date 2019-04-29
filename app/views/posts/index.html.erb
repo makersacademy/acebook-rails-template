@@ -5,12 +5,9 @@
   <div>
     <%= form_with(model: [ post, post.likes.build ], local: true) do |form| %>
       <p hidden><%= form.text_area :liker %></p>
-      <p><%= form.submit %></p>
+      <%= form.submit "🐟", :class => "like" %>
+      <%= post.likes.length - 1 %>
     <% end %>
-  </div>
-
-  <div>
-    <%= post.likes.length %>
   </div>
 
   <% if post.user_id == current_user.id %>
