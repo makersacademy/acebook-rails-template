@@ -119,11 +119,15 @@ Posts and comments can be 'liked' and the number of likes is visible next to the
 1. Need a button against each post
 
 ```
+User story 4: Like posts
+------------------------
 As a user,
 so that I can show my appreciation for a post,
 I want to be able to 'like' posts.
 ```
  - add `like_count` column to `posts` table
+
+- `rails generate model Like liker:integer post:references`
 
 
 2. Button to submit to a count (on the post instance)

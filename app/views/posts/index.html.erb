@@ -1,6 +1,18 @@
 <% @posts.each do |post| %>
   <p><%= simple_format(post.message) %></p>
   <p><%= post.created_at.strftime('%H:%M, %-d %B') %></p>
+  
+  <div>
+    <%= form_with(model: [ post, post.likes.build ], local: true) do |form| %>
+      <p hidden><%= form.text_area :liker %></p>
+      <p><%= form.submit %></p>
+    <% end %>
+  </div>
+
+  <div>
+    <%= post.likes.length %>
+  </div>
+
   <% if post.user_id == current_user.id %>
     <%= link_to edit_post_path(post.id) do %>
       Update
