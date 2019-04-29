@@ -5,14 +5,14 @@ Feature: Posts can have new lines in them
 
 [Link to trello card](https://trello.com/c/BFcRNJGu/11-posts-can-have-new-lines-in-them-low)
 
-
+------
 
 Feature: Posts appear with newest post first
 ============================================
 
 [Link to trello](https://trello.com/c/4e1TZC2k/9-posts-appear-with-newest-post-first-low)
 
-
+------
 
 Feature: Posts show the date they were posted
 =============================================
@@ -23,7 +23,7 @@ Low
 
 - Date stamp of each post submission shown in posts lists page
 
-
+------
 
 Feature: Users can update and delete their own posts
 ====================================================
@@ -75,6 +75,9 @@ so that the integrity of shared posts is maintained,
 I want to be sure that only I can update my posts.
 ```
 
+The following not implemented as update option only available to user who added post (confirmed with PO)
+  - see a helpful error message if they try to update another user's post
+
 1. DB migration to associate a user to many posts
     - add `user_id` as foreign key to `posts` table
     - add `belongs_to :user` into Post model
@@ -83,12 +86,61 @@ I want to be sure that only I can update my posts.
 2. When `edit` post is clicked - check if `user_id` of post = `current_user.id`
 
 
+```
+User story 3: Delete own posts
+------------------------------
+As a user,
+so that the integrity of shared posts is maintained,
+I want to be sure that only I can delete my posts.
+```
 
-  - see a helpful error message if they try to update another user's post
-  - delete their own posts
+The following not implemented as update option only available to user who added post (confirmed with PO)
   - see a helpful error message if they try to delete another user's post
 
+------
 
+Feature: Posts can be liked
+===========================
+
+[Link to trello card](https://trello.com/c/Xa9yO4Zw/35-feature-posts-can-be-liked)
+
+### DESCRIPTION
+
+Posts and comments can be 'liked' and the number of likes is visible next to the post or comment
+
+
+### ACCEPTANCE CRITERIA
+
+• A signed in user can click on a 'like' emoji next to posts and comments to indicate a like, and can then click on it to remove that like.
+• A count of likes shows next to the like emoji
+• Users can like each post only once
+
+
+1. Need a button against each post
+
+```
+As a user,
+so that I can show my appreciation for a post,
+I want to be able to 'like' posts.
+```
+ - add `like_count` column to `posts` table
+
+
+2. Button to submit to a count (on the post instance)
+3. Knows the specific user that added the like
+4. If user clicks again removes their like
+5. Style button to emoji
+
+
+### FURTHER CHALLENGE
+
+• the browser should not refresh when liking posts
+
+
+
+
+
+------
 
 ## Requirements
 
