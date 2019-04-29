@@ -3,12 +3,12 @@
   <%= form_for(:session, url: login_path) do |form| %>
     <p>
       <%= form.label :email_address %><br>
-      <%= form.email_field :email_address, class: 'form-control' %>
+      <%= form.email_field :email_address %>
     </p>
 
     <p>
       <%= form.label :password %><br>
-      <%= form.password_field :password, class: 'form-control' %>
+      <%= form.password_field :password %>
     </p>
 
     <p>

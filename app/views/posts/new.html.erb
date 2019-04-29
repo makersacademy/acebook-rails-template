@@ -1,7 +1,3 @@
 <h2>New post</h2>
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
 
-  <%= form.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+<%= render 'form' %>
