@@ -24,7 +24,7 @@ RSpec.feature "Delete post", type: :feature do
   #   fill_in "Message", with: "Please delete me toooo!!"
   #   click_button "Submit"
   #   expect(page).to have_content("Please delete me toooo!!")
-  #   # page.all(:xpath, '//*[@id="2"]').click
+  #   page.all(:xpath, '//*[@id="2"]').click
   #   expect(page).to_not have_content("Please delete me toooo!!")
-  end
+  # end
 end
