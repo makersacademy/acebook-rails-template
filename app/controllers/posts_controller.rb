@@ -19,9 +19,11 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    flash[:success] = "Boom, less is more. Congrats on becoming a minimalist!"
-    redirect_to posts_path
+    if @post.user_id == current_user.id
+      @post.destroy
+      flash[:success] = "Boom, less is more. Congrats on becoming a minimalist! #minimalism4life"
+      redirect_to posts_path
+    end
   end
 
   def create
