@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.user_id == current_user.id
       @post.destroy
-      flash[:success] = "Boom, less is more. Congrats on becoming a minimalist! #minimalism4life"
+      flash[:success] = "Post deleted"
       redirect_to posts_path
     end
   end

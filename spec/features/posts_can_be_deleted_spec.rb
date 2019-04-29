@@ -17,12 +17,20 @@ RSpec.feature "Deleting posts", type: :feature do
     expect(page).not_to have_link("Delete")
   end
 
-  scenario "Delete a post" do
-    sign_up email: "user1@gmail.com"
-    create_post
-    expect(page).to have_content("Hello m0m")
-    click_link('Delete')
-    expect(page).not_to have_content("Hello m0m")
-    expect(page).not_to have_link("Delete")
+  context "When a user clicks 'delete' on their post" do
+    before do
+      sign_up email: "user1@gmail.com"
+      create_post
+      expect(page).to have_content("Hello m0m")
+      click_link('Delete')
+    end
+
+    scenario "The post gets deleted" do
+      expect(page).not_to have_content("Hello m0m")
+    end
+
+    scenario "A confirmation message gets displayed" do
+      expect(page).to have_content("Post deleted")
+    end
   end
 end
