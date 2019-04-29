@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Adding coveralls badge of github coverage badge
 gem 'coveralls', require: false
+
+# Rake gem dependency
+gem 'rake', '~>12.3.2'
