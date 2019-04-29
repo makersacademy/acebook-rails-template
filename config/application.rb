@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Acebook
   class Application < Rails::Application
+    config.time_zone = 'London'
+    config.active_record.default_timezone = :local
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
@@ -18,7 +20,5 @@ module Acebook
     # Automatically loads any files in the lib path
     config.autoload_paths += %W(#{config.root}/lib)
 
-    config.time_zone = 'London'
-    config.active_record.default_timezone = :local
   end
 end

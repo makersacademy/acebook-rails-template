@@ -25,13 +25,14 @@ RSpec.feature "Update posts", type: :feature do
     expect(page).to have_no_link "Update"
   end
 
-  xscenario "user cannot update an existing post after 10 minutes" do
+  scenario "user cannot update an existing post after 10 minutes" do
     create_user_and_sign_up
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "This message is not going to be updated!"
     click_button "Submit"
     Timecop.travel(Time.now + 11.minutes) do
+      visit "/posts"
       expect(page).to have_no_link "Update"
     end
   end
