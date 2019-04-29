@@ -6,7 +6,8 @@
     <%= form_with(model: [ post, post.likes.build ], local: true) do |form| %>
       <p hidden><%= form.text_area :liker %></p>
       <%= form.submit "🐟", :class => "like" %>
-      <%= post.likes.length - 1 %>
+      <span id="number_of_likes"><%= post.likes.length - 1 %></span>
+
     <% end %>
   </div>
 
