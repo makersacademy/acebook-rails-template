@@ -50,56 +50,56 @@ RSpec.feature "Sign up", type: :feature do
   context "User must provide a valid email address" do
     scenario "User must provide an email address" do
       sign_up(email: "", password: "abc123")
-      expect(page).to have_content("Email field cannot be empty")
+      expect(page).to have_content("Email can't be blank")
     end
 
     scenario 'Email address must contain "@" symbol' do
       sign_up(email: "myemail", password: "abc123")
-      expect(page).to have_content("Invalid email address")
+      expect(page).to have_content("Email is invalid")
     end
 
     scenario "Email address must have a local part" do
       sign_up(email: "@myemail", password: "abc123")
-      expect(page).to have_content("Invalid email address")
+      expect(page).to have_content("Email is invalid")
     end
 
     scenario "Email address must have a domain" do
       sign_up(email: "myemail@", password: "abc123")
-      expect(page).to have_content("Invalid email address")
+      expect(page).to have_content("Email is invalid")
     end
 
     scenario "Email address must have a TLD" do
       sign_up(email: "myemail@domain", password: "abc123")
-      expect(page).to have_content("Invalid email address")
+      expect(page).to have_content("Email is invalid")
     end
 
     scenario "Email must be unique" do
       sign_up(email: "myemail@hotmail.com", password: "abc123")
       sign_up(email: "myemail@hotmail.com", password: "xyx789")
-      expect(page).to have_content("An account with this email already exists")
+      expect(page).to have_content("Email has already been taken")
     end
 
     scenario "Email must be unique disregarding case" do
       sign_up(email: "myemail@hotmail.com", password: "abc123")
       sign_up(email: "myemail@HOTMAIL.com", password: "xyx789")
-      expect(page).to have_content("An account with this email already exists")
+      expect(page).to have_content("Email has already been taken")
     end
   end
 
   context "User must provide a valid password" do
     scenario "User must provide a password" do
       sign_up(email: "myemail@hotmail.com", password: "")
-      expect(page).to have_content("Password field cannot be empty")
+      expect(page).to have_content("Password can't be blank")
     end
 
     scenario "Password must be at least 6 characters" do
       sign_up(email: "myemail@hotmail.com", password: "12345")
-      expect(page).to have_content("Password too short - must be 6-10 characters in length")
+      expect(page).to have_content("Password is too short (minimum is 6 characters)")
     end
 
     scenario "Password must be at most 10 characters" do
       sign_up(email: "myemail@hotmail.com", password: "1234567890a")
-      expect(page).to have_content("Password too long - must be 6-10 characters in length")
+      expect(page).to have_content("Password is too long (maximum is 10 characters)")
     end
   end
 end

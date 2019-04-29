@@ -11,14 +11,17 @@
   <div class='post-card'>
     <div class="post-header">
       <div class="post-author">
-        <%= get_user_email(post) %>
+        <%= post.email %>
       </div>
-      <div class="post-pubished-time"><%= post.created_at.strftime("%d-%m-%Y")%> at <%= post.created_at.strftime("%I:%M %p")%></div>
+      <div class="post-published-time">
+        <%= post.created_at.strftime("%d-%m-%Y")%> at <%= post.created_at.strftime("%I:%M %p")%>
+      </div>
     </div>
     <div class="post-content">
       <p><%= simple_format(post.message) %></p>
       <% if post.user_id == current_user.id %>
         <p><%= link_to 'Edit', edit_post_path(post) %></p> 
+        <p><%= link_to 'Delete', post, method: :delete, :data => { :confirm => "Are you sure you want to delete this message?" } %></p> 
       <% end %>
     </div>
   </div>
