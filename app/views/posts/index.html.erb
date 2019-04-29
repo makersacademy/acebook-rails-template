@@ -16,7 +16,7 @@
       <div class="post-pubished-time"><%= post.created_at.strftime("%d-%m-%Y")%> at <%= post.created_at.strftime("%I:%M %p")%></div>
     </div>
     <div class="post-content">
-      <p><%= post.message %></p>
+      <p><%= simple_format(post.message) %></p>
       <% if post.user_id == current_user.id %>
         <p><%= link_to 'Edit', edit_post_path(post) %></p> 
       <% end %>
