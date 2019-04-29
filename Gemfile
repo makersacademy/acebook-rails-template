@@ -41,6 +41,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
+  gem 'timecop'
   gem 'geckodriver-helper'
   # simplecov for test coverage stats
   gem 'simplecov', require: false
