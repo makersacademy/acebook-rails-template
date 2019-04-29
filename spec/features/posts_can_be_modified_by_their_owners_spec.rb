@@ -42,4 +42,62 @@ RSpec.feature "Editing posts", type: :feature do
     visit "/posts/#{post.id}/edit"
     expect(page).to have_content "You can't edit that post!"
   end
+
+  context "Presence of the edit link depends on the post's age" do
+    scenario "The edit link doesn't appear if a post is 10 minutes old" do
+      sign_up
+      create_post
+      Timecop.freeze(601)
+      visit "/posts"
+      expect(page).not_to have_link("Edit")
+    end
+
+    scenario "The edit link does appear if it's less than 10 minutes old" do
+      sign_up
+      create_post
+      Timecop.freeze(599)
+      visit "/posts"
+      expect(page).to have_link("Edit")
+    end
+  end
+
+  context "Editability depends on the post's age" do
+    context "Post can't be edited after 10 minutes" do
+      before do
+        sign_up
+        create_post message: "My message"
+        click_link "Edit"
+        fill_in "Message", with: "My edited post"
+        Timecop.freeze(601)
+        click_button "Submit"
+      end
+
+      scenario "Displays an error message if you edit after 10 minutes" do
+        expect(page).to have_content("Could not edit post.")
+      end
+
+      scenario "Message not edited if you edit after 10 minutes" do
+        expect(page).not_to have_content("My edited post")
+      end
+    end
+
+    context "Post can be edited for up to 10 minutes" do
+      before do
+        sign_up
+        create_post message: "My message"
+        click_link "Edit"
+        fill_in "Message", with: "My edited post"
+        Timecop.freeze(599)
+        click_button "Submit"
+      end
+
+      scenario "Does not display an error message if you edit after 10 minutes" do
+        expect(page).not_to have_content("Could not edit post.")
+      end
+
+      scenario "Message edited if you edit after 10 minutes" do
+        expect(page).to have_content("My edited post")
+      end
+    end
+  end
 end

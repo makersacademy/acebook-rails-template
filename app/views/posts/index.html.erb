@@ -20,7 +20,9 @@
     <div class="post-content">
       <p><%= simple_format(post.message) %></p>
       <% if post.user_id == current_user.id %>
-        <p><%= link_to 'Edit', edit_post_path(post) %></p> 
+        <% if post.isEditable %>
+          <p><%= link_to 'Edit', edit_post_path(post) %></p> 
+        <% end %>
         <p><%= link_to 'Delete', post, method: :delete, :data => { :confirm => "Are you sure you want to delete this message?" } %></p> 
       <% end %>
     </div>
