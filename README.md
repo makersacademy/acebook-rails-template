@@ -9,6 +9,7 @@ First, clone this repository. Then:
 ```bash
 > bundle install
 > bin/rails db:create
+>bin/rails db:seed
 > bin/rails db:migrate
 
 > bundle exec rspec # Run the tests to ensure it works

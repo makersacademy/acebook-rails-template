@@ -11,10 +11,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    if Post.verify_user(current_user, Post.find(params[:id]))
+    if Post.verify_user(current_user, Post.find(params[:id])) && ((Time.now - Post.find(params[:id]).created_at)/1.minute <= 10)
+
       @post = Post.find(params[:id])
     else
-      flash[:error] = "You can't edit somebody elses post!"
+      flash_error
       redirect_to posts_url
     end
   end
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to posts_url
     else
-      render 'edit'
+        render 'edit'
     end
   end
 
@@ -47,5 +48,13 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def flash_error
+    if Post.verify_user(current_user, Post.find(params[:id])) == false
+      flash[:error] = "You can't edit somebody elses post!"
+    else
+      flash[:error] = "You can't edit after 10 minutes!"
+    end
   end
 end
