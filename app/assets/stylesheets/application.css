@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    margin: 0
+ }
+.page-header {
+    background-color: rgb(1, 33, 105);
+    margin: 0;
+    color: white;
+}
+
+.flash-notice {
+    background-color: green;
+    opacity: 0.5;
+    margin: 0;
+}
+
+p{
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: rgb(128, 128, 128);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+
+    margin: 5rem auto;
+    
+    max-width: 600px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
