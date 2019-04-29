@@ -39,7 +39,7 @@ h1 {
   height: auto;
 }
 
-.log-in-link {
+.devise-shared-links {
   float: right;
   padding: 1rem;
   font-size: 1.25rem;
@@ -78,6 +78,7 @@ label {
   margin: 0;
   padding: 2rem;
   text-align: center;
+  font-size: 20px;
 }
 
 p{
@@ -93,9 +94,23 @@ p{
   margin: 5rem auto;
   max-width: 400px;
   padding: 2rem;
-
 }
 
 .field {
   padding: 1.5rem;
+}
+
+.hmenu {
+  float: right;
+  padding: 2rem;
+}
+
+.post {
+  padding: 1.5rem;
+  font-size: 20px;
+}
+
+.new-post-path {
+  padding: 1rem;
+  font-size: 1.25rem;
 }
