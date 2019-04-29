@@ -13,19 +13,72 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css?family=Roboto');
  body {
-    margin: 0
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
  }
 .page-header {
-    background-color: rgb(1, 33, 105);
+    background-color: #3b5998;
     margin: 0;
     color: white;
+    display: flex;
+    align-items: left;
 }
 
-.flash-notice {
-    background-color: green;
-    opacity: 0.5;
-    margin: 0;
+h1 {
+  padding: 2rem;
+}
+
+.logo {
+  padding: 1.5rem;
+  display: block;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+}
+
+.devise-shared-links {
+  float: right;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+input[type=submit] {
+  background-color: rgb(47, 85, 164);
+  border-radius: 0.25rem;
+  color: white;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  font-size: 20px;
+}
+
+input[type=password] {
+  font-size: 20px;
+}
+
+input[type=email] {
+  font-size: 20px;
+}
+
+label {
+  font-size: 20px;
+}
+
+.alert {
+  background-color: rgba(86, 149, 62, 0.3);
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  font-size: 20px;
 }
 
 p {
@@ -33,18 +86,31 @@ p {
 }
 
 .container {
-    text-align: center;
-    background-color: rgb(128, 128, 128);
-    border-radius: 0.5rem;
-    display: flex;
-    justify-content: space-around;
-
-    margin: 5rem auto;
-
-    max-width: 600px;
-    padding-left: 3rem;
-    padding-right: 3rem;
+  text-align: center;
+  background-color: rgba(106,106,106,0.2);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  margin: 5rem auto;
+  max-width: 400px;
+  padding: 2rem;
 }
 
-.like {
+.field {
+  padding: 1.5rem;
+}
+
+.hmenu {
+  float: right;
+  padding: 2rem;
+}
+
+.post {
+  padding: 1.5rem;
+  font-size: 20px;
+}
+
+.new-post-path {
+  padding: 1rem;
+  font-size: 1.25rem;
 }
