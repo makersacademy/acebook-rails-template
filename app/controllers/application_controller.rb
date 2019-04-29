@@ -7,10 +7,8 @@ class ApplicationController < ActionController::Base
 
   include ApplicationHelper
 
-
   include SessionsHelper
-  include PostsHelper
-
+  
   private
 
     def require_login

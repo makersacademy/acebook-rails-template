@@ -11,9 +11,11 @@
   <div class='post-card'>
     <div class="post-header">
       <div class="post-author">
-        <%= get_user_email(post) %>
+        <%= post.email %>
       </div>
-      <div class="post-pubished-time"><%= post.created_at.strftime("%d-%m-%Y")%> at <%= post.created_at.strftime("%I:%M %p")%></div>
+      <div class="post-published-time">
+        <%= post.created_at.strftime("%d-%m-%Y")%> at <%= post.created_at.strftime("%I:%M %p")%>
+      </div>
     </div>
     <div class="post-content">
       <p><%= post.message %></p>
