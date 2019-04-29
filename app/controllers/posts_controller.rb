@@ -17,6 +17,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:success] = "Boom, less is more. Congrats on becoming a minimalist!"
+    redirect_to posts_path
+  end
+
   def create
     user = current_user
     params = post_params
