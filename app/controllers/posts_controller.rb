@@ -33,6 +33,16 @@ class PostsController < ApplicationController
     @posts = Post.order(created_at: :desc)
   end
 
+  def destroy
+    if Post.verify_user(current_user, Post.find(params[:id]))
+      @post = Post.find(params[:id])
+      @post.destroy
+    else
+      flash[:error] = "You can't delete somebody elses post!"
+    end
+    redirect_to posts_url
+  end
+
   private
 
   def post_params

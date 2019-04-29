@@ -13,4 +13,14 @@ RSpec.feature 'Edit button', type: :feature do
     expect(page).to have_content("You can't edit somebody elses post!")
     expect(current_path).to eq("/posts")
   end
+
+  scenario 'Can edit own posts' do
+    sign_up
+    post_message
+    click_link('Edit')
+    fill_in('post[message]', with: 'This is edited')
+    click_button('Update Post')
+    expect(page).to have_content('This is edited')
+    expect(current_path).to eq("/posts")
+  end
 end
