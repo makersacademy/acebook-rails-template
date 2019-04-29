@@ -17,5 +17,8 @@ module Acebook
 
     # Automatically loads any files in the lib path
     config.autoload_paths += %W(#{config.root}/lib)
+
+    config.time_zone = 'London'
+    config.active_record.default_timezone = :local
   end
 end
