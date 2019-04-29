@@ -17,6 +17,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.user_id == current_user.id
+      @post.destroy
+      flash[:success] = "Post deleted"
+      redirect_to posts_path
+    end
+  end
+
   def create
     user = current_user
     params = post_params

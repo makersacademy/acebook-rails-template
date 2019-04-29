@@ -21,6 +21,7 @@
       <p><%= post.message %></p>
       <% if post.user_id == current_user.id %>
         <p><%= link_to 'Edit', edit_post_path(post) %></p> 
+        <p><%= link_to 'Delete', post, method: :delete, :data => { :confirm => "Are you sure you want to delete this message?" } %></p> 
       <% end %>
     </div>
   </div>
