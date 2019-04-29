@@ -6,8 +6,10 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id %>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
