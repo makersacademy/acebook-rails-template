@@ -13,19 +13,47 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css?family=Roboto');
  body {
-    margin: 0
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
  }
 .page-header {
-    background-color: rgb(1, 33, 105);
+    background-color: #3b5998;
     margin: 0;
     color: white;
+    display: flex;
+    align-items: left;
+}
+
+h1 {
+  padding: 2rem;
+}
+
+.logo {
+  padding: 1.5rem;
+  display: block;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+}
+
+.log-in-link {
+  float: right;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 5rem;
 }
 
 .flash-notice {
-    background-color: green;
-    opacity: 0.5;
+    background-color: rgba(86, 149, 62, 0.5);
     margin: 0;
+    border: 4rem;
 }
 
 p{
@@ -33,15 +61,17 @@ p{
 }
 
 .container {
-    text-align: center;
-    background-color: rgb(128, 128, 128);
-    border-radius: 0.5rem;
-    display: flex;
-    justify-content: space-around;
+  text-align: center;
+  background-color: rgba(106,106,106,0.2);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  margin: 5rem auto;
+  max-width: 400px;
+  padding: 2rem;
 
-    margin: 5rem auto;
-    
-    max-width: 600px;
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
+}
+
+.field {
+  padding: 0.5rem;
+}
