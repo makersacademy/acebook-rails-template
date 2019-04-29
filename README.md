@@ -5,10 +5,16 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/9e037f53027bc17b54fb/maintainability)](https://codeclimate.com/github/Hives/acebook-business-logic/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/9e037f53027bc17b54fb/test_coverage)](https://codeclimate.com/github/Hives/acebook-business-logic/test_coverage)
 
 #### Checkout [AceBook BusinessLogi&copy; Live Site](https://acebook-business-logic.herokuapp.com)
+  
+[Description](#Description) | [Contributing](#Contributing) | [Getting started](#Getting-Started) | [Running tests](#Running-Tests) | [Usage](#Usage) | [Deploying](#Deploying) | [Product Roadmap](#Product-Roadmap) | [User Stories](#User-Stories) | [Learning Documentation](#Learning-Documentation)
+
+
 ----
 ## Description
-This is a team proejct clone of Facebook built using Ruby on Rails, a challenge set by Makers Academy. The original repo can be found [here](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+This is a team proejct clone of Facebook built using Ruby on Rails, a challenge set by Makers Academy. The original repo can be found [here](https://github.com/makersacademy/course/tree/master/engineering_projects/rails).
 
+## Contributing
+...
 ## Getting Started
 ```bash
 > git clone https://github.com/Hives/acebook-business-logic
@@ -17,18 +23,21 @@ This is a team proejct clone of Facebook built using Ruby on Rails, a challenge 
 > bin/rails db:migrate
 ```
 ## Running Tests
+```bash
 > rspec
+```
 
 ## Usage
 
 ```bash
 > bin/rails server # Start the server at localhost:3000
 ```
-
+## Deploying
+...
 ## Product Roadmap
 
 ### Card Wall
-See our awesome card wall [here](https://trello.com/b/6XSi28FM/acebook-by-business-logic)
+See our awesome card wall [here](https://trello.com/b/6XSi28FM/acebook-by-business-logic).
 
 
 ## User stories
@@ -200,3 +209,6 @@ As a user
 I want to be redirected to the index page on logging out
 So that I can log back in 
 ```
+
+## Learning Documentation
+Our learnings can be found on our team wiki [here](https://github.com/Hives/acebook-business-logic/wiki).
