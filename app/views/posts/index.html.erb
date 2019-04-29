@@ -7,6 +7,7 @@
   <p> posted by <%= post.user.email %></p>
   <p><%= post.created_at.strftime("%d %B %Y, %l:%M%P") %></p>
   <td><%= link_to 'Edit', edit_post_path(post) %></td>
+  <td><%= link_to 'Delete',  post,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
 
 <%= link_to new_post_path do %>
