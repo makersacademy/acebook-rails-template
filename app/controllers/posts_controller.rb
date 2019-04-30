@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
 
-    unless post.isEditable
+    unless post.editable?
       flash[:danger] = "Could not edit post. Posts are only editable for 10 minutes."
       redirect_to posts_path and return
     end

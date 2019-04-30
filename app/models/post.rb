@@ -4,13 +4,13 @@ class Post < ApplicationRecord
   belongs_to :user
   delegate :email, :to => :user
   
-  def isEditable
-    isLessThan10MinutesOld
+  def editable?
+    less_than_ten_minutes_old?
   end
 
   private
 
-  def isLessThan10MinutesOld
+  def less_than_ten_minutes_old?
     created_at > 10.minutes.ago
   end
 end
