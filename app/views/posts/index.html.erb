@@ -10,8 +10,12 @@
       <span> <%= Post.format_time(post.created_at) %> </span>
       <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id %>
     </p>
+    <%= link_to edit_post_path(post) do %>
+      edit post 
+    <% end %> 
   </div>
 <% end %>
+
 
 <%= link_to new_post_path do %>
   New post
