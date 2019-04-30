@@ -27,5 +27,7 @@
           method: :delete,
           data: { confirm: 'Are you sure?' } %>
     <% end %>
+    <%= render "comments/index", :post => post %>
+    <%= render "comments/new", :post => post %>
   </div>
 <% end %>
