@@ -11,22 +11,11 @@
     <p id="number_of_likes"><%= post.likes.length %></p>
 
     <div id="like-form">
-      <% p post.likes.length %>
-      <% if post.likes.length == 0 %>
-        <%= form_with(model: [ post, post.likes.build ], local: true) do |form| %>
-          <p hidden><%= form.text_area :liker %></p>
-          <%= form.submit "🐟", :class => "like" %>
-        <% end %>
-      <% end %>
-      
-      <% p post.likes.length %>
-      <% if post.likes.length > 0 %>
-        <% post.likes.each do |like| %>
-          <% if like.liker == current_user.id %>
-            <%= link_to 'Unlike', [like.post, like], method: :delete %>
-          
-          <% end %>
-        <% end %>
+      <% if post.likes.find { |like| like.liker === current_user.id } %>
+        <% like = post.likes.find { |like| like.liker === current_user.id } %>
+        <%= button_to 'Unlike', post_like_path(post, like), method: :delete %>
+      <% else %>
+        <%= button_to 'Like', post_likes_path(post), method: :post %>
       <% end %>
     </div>
 
