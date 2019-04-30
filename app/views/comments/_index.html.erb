@@ -1,3 +1,8 @@
 <% post.comments.each do |comment| %>
   <p><%= comment.body %></p>
+  <% if comment.user_id == current_user.id %>
+    <%= link_to edit_post_comment_path(post, comment) do %>
+      Edit comment
+    <% end %>
+  <% end %>
 <% end %>
