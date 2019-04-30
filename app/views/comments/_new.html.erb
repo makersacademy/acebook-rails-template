@@ -1,0 +1,5 @@
+<%= form_for [post, post.comments.new] do |form| %>
+  <%= form.label :body, "Gonna rise to the bait?" %>
+  <%= form.text_area :body %>
+  <%= form.submit 'Add comment' %>
+<% end %>
