@@ -5,14 +5,21 @@
 <% end %>
 
 <% @posts.reverse.each do |post| %>
-  <div>
-    <p id='post-<%= post.id %>'><%= post.message %> -
-      <span> <%= Post.format_time(post.created_at) %> </span>
+  <div id='post-<%= post.id %>' class='post'>
+    <div class='message'>
+      <%= simple_format post.message %>
+    </div>
+    <div class='timestamp'>
+      <%= Post.format_time(post.created_at) %>
+    </div>
+    <div class="edit-link">
+      <%= link_to edit_post_path(post) do %>
+        edit post
+      <% end %>
+    </div>
+    <div class="delete-button">
       <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id %>
-    </p>
-    <%= link_to edit_post_path(post) do %>
-      edit post 
-    <% end %> 
+    </div>
   </div>
 <% end %>
 
@@ -20,4 +27,3 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
-
