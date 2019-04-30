@@ -15,12 +15,12 @@ RSpec.feature "Log in", type: :feature do
     expect(page).to have_field("Password")
   end
 
-  scenario "Logging in succesfully takes you to the posts page" do
+  scenario "Logging in succesfully takes you to your wall" do
     visit "/"
-    sign_up
+    sign_up email: "myemail@gmail.com"
     click_link("Log out")
-    log_in
-    expect(page).to have_current_path("/posts")
+    log_in email: "myemail@gmail.com"
+    expect(page).to have_content ("Myemail@gmail.com's Wall")
   end
 
   scenario "Trying to log in with invalid credentials returns to the login page" do

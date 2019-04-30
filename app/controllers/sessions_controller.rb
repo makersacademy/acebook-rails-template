@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       if user.authenticate(params[:session][:password])
         log_in(user)
         flash[:success] = "Logged in successfully"
-        redirect_to posts_path
+        redirect_to "/#{current_user.id}"
       else
         flash[:danger] = "Invalid password"
         redirect_to login_path

@@ -3,8 +3,8 @@
 require "rails_helper"
 
 RSpec.feature "Sign up", type: :feature do
-  scenario "Logged out users should be redirected from posts to sign up page" do
-    visit "/posts"
+  scenario "Logged out users should be redirected from a wall to sign up page" do
+    visit "/12"
     expect(page).to have_current_path("/")
   end
 
