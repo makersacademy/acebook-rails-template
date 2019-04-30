@@ -14,12 +14,11 @@
 //= require_tree .
 
 $(function(){
-  var flashDurationInSeconds = 5;
   var flashContainerId = 'flash-messages';
 
   function removeFlashMessages() {
-    $('#' + flashContainerId).remove();
-  }
+    $('#' + flashContainerId).fadeIn(300).delay(1500).fadeOut(400);
+  };
 
-  setTimeout(removeFlashMessages, flashDurationInSeconds * 1000);
+  setTimeout(removeFlashMessages);
 })
