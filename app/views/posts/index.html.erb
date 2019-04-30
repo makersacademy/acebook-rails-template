@@ -4,7 +4,7 @@
 <div class='notice'> <%= flash[:success] %> </div>
 <% end %>
 
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
 

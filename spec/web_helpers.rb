@@ -11,3 +11,10 @@ def log_in_helper(username, password)
   fill_in 'session_password', with: password
   click_button 'Log in'
 end
+
+def new_post_helper(message)
+  visit "/posts"
+  click_link "New post"
+  fill_in "Message", with: message 
+  click_button "Submit"
+end
