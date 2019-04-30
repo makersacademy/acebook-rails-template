@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Newest posts are shown first in list' do
   scenario 'Posts are displayed in reverse chronological order' do
     visit '/'

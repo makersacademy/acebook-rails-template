@@ -17,6 +17,9 @@
         edit post
       <% end %>
     </div>
+    <div class="delete-button">
+      <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id %>
+    </div>
   </div>
 <% end %>
 

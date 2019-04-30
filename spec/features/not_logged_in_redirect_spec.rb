@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Redirects to index if user not logged in' do
   scenario 'User is redirected to index if they try to view posts and are not logged in' do
     visit '/posts'
