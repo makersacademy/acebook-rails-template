@@ -19,4 +19,11 @@ class UsersController < ApplicationController
     @users = current_user.requested_friends
   end
 
+  def acceptfriend
+    @user = User.find(params[:user_id])
+    current_user.accept_request(@user)
+    flash[:success] = "You have accepted a friend request from #{@user.email}"
+    redirect_to user_friend_requests_url
+  end
+
 end
