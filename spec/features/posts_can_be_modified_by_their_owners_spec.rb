@@ -36,7 +36,7 @@ RSpec.feature "Editing posts", type: :feature do
 
   scenario "Users can't edit other users' posts" do
     user = User.create(email: "my@email.com", password: "123456")
-    post = Post.create(message: "my message", user_id: user.id)
+    post = Post.create(message: "my message", author_id: user.id)
 
     sign_up
     visit "/posts/#{post.id}/edit"
