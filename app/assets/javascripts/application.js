@@ -17,7 +17,7 @@ $(function(){
   var flashContainerId = 'flash-messages';
 
   function removeFlashMessages() {
-    $('#' + flashContainerId).fadeIn(300).delay(1500).fadeOut(400);
+    $('#' + flashContainerId).fadeIn(300).delay(3000).fadeOut(400);
   };
 
   setTimeout(removeFlashMessages);
