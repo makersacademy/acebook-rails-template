@@ -9,8 +9,12 @@
     <p id='post-<%= post.id %>'><%= post.message %> -
       <span> <%= Post.format_time(post.created_at) %> </span>
     </p>
+    <%= link_to edit_post_path(post) do %>
+      edit post 
+    <% end %> 
   </div>
 <% end %>
+
 
 <%= link_to new_post_path do %>
   New post
