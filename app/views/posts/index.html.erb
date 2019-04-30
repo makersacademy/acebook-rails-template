@@ -8,20 +8,25 @@
   <div class="post">
     <%= simple_format(post.message) %>
     <%= post.created_at.strftime('%H:%M, %-d %B') %>
+    <p id="number_of_likes"><%= post.likes.length %></p>
 
-    <div>
-      <%= form_with(model: [ post, post.likes.build ], local: true) do |form| %>
-        <p hidden><%= form.text_area :liker %></p>
-        <%= form.submit "🐟", :class => "like" %>
-        <span id="number_of_likes"><%= post.likes.length - 1 %></span>
+    <div id="like-form">
+      <% p post.likes.length %>
+      <% if post.likes.length == 0 %>
+        <%= form_with(model: [ post, post.likes.build ], local: true) do |form| %>
+          <p hidden><%= form.text_area :liker %></p>
+          <%= form.submit "🐟", :class => "like" %>
+        <% end %>
       <% end %>
-    </div>
-
-    <div>
-      <% post.likes.each do |like| %>
-        <% if like.liker == current_user.id %>
-          <%= link_to 'Unlike', [like.post, like], method: :delete %>
-        <% end %>  
+      
+      <% p post.likes.length %>
+      <% if post.likes.length > 0 %>
+        <% post.likes.each do |like| %>
+          <% if like.liker == current_user.id %>
+            <%= link_to 'Unlike', [like.post, like], method: :delete %>
+          
+          <% end %>
+        <% end %>
       <% end %>
     </div>
 
