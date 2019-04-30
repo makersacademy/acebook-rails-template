@@ -14,5 +14,9 @@ Rails.application.routes.draw do
 
   end
   resources :posts
+  resources :users, only: [:show, :index]
+  resources :users do
+    get "/addfriend", :to => "users#addfriend", :as => "addfriend"
+  end
 
 end

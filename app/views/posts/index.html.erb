@@ -2,14 +2,17 @@
  <%= content_tag :div, value, class: "flash #{key}" %>
 <% end %>
 
+<div>
+ <%= link_to "All Users", users_path %>
+ <%= link_to new_post_path do %>
+   New post
+ <% end %>
+</div>
+
 <% @posts.each do |post| %>
   <p><%= simple_format(post.message) %></p>
   <p> posted by <%= post.user.email %></p>
   <p><%= post.created_at.strftime("%d %B %Y, %l:%M%P") %></p>
   <td><%= link_to 'Edit', edit_post_path(post) %></td>
   <td><%= link_to 'Delete',  post,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
 <% end %>

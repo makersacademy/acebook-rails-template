@@ -13,6 +13,8 @@ end
 gem 'devise'
 #to create a face user
 gem 'factory_bot_rails'
+# Gem for relationship between users
+gem 'has_friendship'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use rubocop as Linter
