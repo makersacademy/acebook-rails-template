@@ -5,7 +5,11 @@
 <% end %>
 
 <% @posts.reverse.each do |post| %>
-  <p><%= post.message %></p>
+  <div>
+    <p><%= post.message %> - 
+      <span> <%= Post.format_time(post.created_at) %> </span>
+    </p>
+  </div>
 <% end %>
 
 <%= link_to new_post_path do %>
