@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if @post.user_id != current_user.id
+    if @post.author_id != current_user.id
       flash[:danger] = "You can't edit that post!"
       redirect_to posts_path
     end
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
-    if post.user_id == current_user.id
+    if post.author_id == current_user.id
       post.destroy
       flash[:success] = "Post deleted"
       redirect_to posts_path
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   def create
     user = current_user
     params = post_params
-    params[:user_id] = user.id
+    params[:author_id] = user.id
     @post = Post.create(params)
     redirect_to posts_url
   end

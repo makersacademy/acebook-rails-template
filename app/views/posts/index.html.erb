@@ -23,7 +23,7 @@
     </div>
     <div class="post-content">
       <p><%= simple_format(post.message) %></p>
-      <% if post.user_id == current_user.id %>
+      <% if post.author_id == current_user.id %>
         <% if post.editable? %>
           <p><%= link_to 'Edit', edit_post_path(post) %></p> 
         <% end %>
