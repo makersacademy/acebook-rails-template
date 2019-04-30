@@ -1,0 +1,9 @@
+<% flash.each do |key, value| %>
+<%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
+
+<% @users.each do |user| %>
+<div class="user-card">
+ <%= link_to user.email, user_path(user.id) %>
+</div>
+<% end %>
