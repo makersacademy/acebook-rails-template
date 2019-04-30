@@ -7,7 +7,9 @@ feature 'Newest posts are shown first in list' do
     new_post_helper("Second message")
     new_post_helper("Third message")
     new_post_helper("Fourth message")
-    page.all('p').collect(&:text)
-    expect(page.all('p').collect(&:text)).to have_content ["Fourth message", "Third message", "Second message", "First message"]
+    expect(all('p')[0][:id]).to eq 'post-4'
+    expect(all('p')[1][:id]).to eq 'post-3'
+    expect(all('p')[2][:id]).to eq 'post-2'
+    expect(all('p')[3][:id]).to eq 'post-1'
   end
 end

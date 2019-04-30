@@ -6,7 +6,7 @@
 
 <% @posts.reverse.each do |post| %>
   <div>
-    <p><%= post.message %> - 
+    <p id='post-<%= post.id %>'><%= post.message %> -
       <span> <%= Post.format_time(post.created_at) %> </span>
     </p>
   </div>
