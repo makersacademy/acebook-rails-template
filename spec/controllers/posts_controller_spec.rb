@@ -1,4 +1,6 @@
 require 'rails_helper'
+require 'sessions_helper'
+include SessionsHelper
 
 RSpec.describe PostsController, type: :controller do
   before(:each) do
@@ -37,5 +39,27 @@ RSpec.describe PostsController, type: :controller do
       get :index
       expect(response).to have_http_status(200)
     end
+  end
+
+  describe "DELETE /" do
+    it "correctly deletes a post" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      @post = Post.find_by(message: "Hello, world!")
+      delete :destroy, params: { id: @post.id }
+      expect(Post.find_by(message: "Hello, world!")).to_not be
+    end
+
+    it "doesn't delete the post if the post is owned by a different user" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      @post = Post.find_by(message: "Hello, world!")
+
+      @user2 = User.create({email: "iamlegend@makers.com", password: "helloroku"})
+      log_out
+      log_in(@user2)
+
+      delete :destroy, params: { id: @post.id }
+      expect(Post.find_by(message: "Hello, world!")).to be
+    end
+
   end
 end

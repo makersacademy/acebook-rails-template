@@ -13,19 +13,23 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.delete(params[:id])
+    @current_post = Post.find(params[:id])
+    if @current_user.id == @current_post.user_id
+      @post = Post.delete(params[:id])
+    end
     redirect_to posts_url
   end
-  def edit 
-    @post = Post.find(params[:id])
-  end 
 
-  def update 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
     @post = Post.find(params[:id])
     @post.message  = post_params
     @post.save
     redirect_to posts_url
-  end 
+  end
 
   private
 
