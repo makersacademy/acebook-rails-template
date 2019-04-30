@@ -13,4 +13,15 @@ RSpec.feature "Comment posts", type: :feature do
     click_button 'Add comment'
     expect(page).to have_content 'Test adding comment to post'
   end
+
+  scenario "User sees success message on adding comment" do
+    create_user_and_sign_up
+    create_post
+    click_button 'Sign out'
+    create_second_user_and_sign_in
+    visit '/posts'
+    fill_in 'comment_body', with: 'Test adding comment to post'
+    click_button 'Add comment'
+    expect(page).to have_content 'Salmon had to say it!'
+  end
 end
