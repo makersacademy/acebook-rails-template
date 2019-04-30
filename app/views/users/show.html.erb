@@ -1,7 +1,9 @@
 User: <%= @user.email %>
 
 <div class="add-friend">
-<%= link_to "Add friend", user_addfriend_path(@user) %>
+  <% if @user.id != current_user.id %>
+  <%= link_to "Add friend", user_addfriend_path(@user) %>
+  <% end %>
 </div>
 
 <div class="current-user-friends">

@@ -15,10 +15,4 @@ class UsersController < ApplicationController
     flash[:success] = "You have sent #{@user.email} a friend request!"
     redirect_to users_url
    end
-
-   def friends
-
-     "Hello world"
-     redirect_to
-    end
 end
