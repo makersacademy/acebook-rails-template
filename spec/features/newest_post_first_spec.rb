@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'Newest posts are shown first in list' do
   scenario 'Posts are displayed in reverse chronological order' do
     visit '/'
@@ -7,9 +9,10 @@ feature 'Newest posts are shown first in list' do
     new_post_helper("Second message")
     new_post_helper("Third message")
     new_post_helper("Fourth message")
-    expect(all('p')[0][:id]).to eq 'post-4'
-    expect(all('p')[1][:id]).to eq 'post-3'
-    expect(all('p')[2][:id]).to eq 'post-2'
-    expect(all('p')[3][:id]).to eq 'post-1'
+
+    expect(all(:css, 'div.post')[0][:id]).to eq 'post-4'
+    expect(all(:css, 'div.post')[1][:id]).to eq 'post-3'
+    expect(all(:css, 'div.post')[2][:id]).to eq 'post-2'
+    expect(all(:css, 'div.post')[3][:id]).to eq 'post-1'
   end
 end

@@ -1,9 +1,9 @@
+# frozen_string_literal: true
 
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
-
-#   let(:user) {user = User.create(email: 'test@test.com', password: "password", password_confirmation: "password") }
+RSpec.feature 'Timeline', type: :feature do
+  #   let(:user) {user = User.create(email: 'test@test.com', password: "password", password_confirmation: "password") }
 
   scenario 'Can update pre-made posts' do
     sign_up_helper('test@gmail.com', '123')
