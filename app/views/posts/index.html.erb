@@ -4,13 +4,12 @@
 <div class='notice'> <%= flash[:success] %> </div>
 <% end %>
 
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
   <div>
-    <p><%= post.message %> - 
+    <p id='post-<%= post.id %>'><%= post.message %> -
       <span> <%= Post.format_time(post.created_at) %> </span>
     </p>
   </div>
-
 <% end %>
 
 <%= link_to new_post_path do %>
