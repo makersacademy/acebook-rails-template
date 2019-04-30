@@ -1,2 +1,0 @@
-# class Edit < ApplicationController 
-# end 
