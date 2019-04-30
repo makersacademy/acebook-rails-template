@@ -1,18 +1,31 @@
-<% @posts.each do |post| %>
-  <p><%= simple_format(post.message) %></p>
-  <p><%= post.created_at.strftime('%H:%M, %-d %B') %></p>
-  <% if (post.user_id == current_user.id)  && post.less_than_ten_mins_ago %>
-    <%= link_to edit_post_path(post.id) do %>
-      Update
-    <% end %>
-  <% if post.user_id == current_user.id %>
-    <%= button_to 'Delete', post_path(post),
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %>
-    <% end %>
+<div class="new-post-path">
+  <%= link_to new_post_path do %>
+    New post
   <% end %>
-<% end %>
+</div>
 
-<%= link_to new_post_path do %>
-  New post
+<% @posts.each do |post| %>
+  <div class="post">
+    <%= simple_format(post.message) %>
+    <%= post.created_at.strftime('%H:%M, %-d %B') %>
+    
+    <div>
+      <%= form_with(model: [ post, post.likes.build ], local: true) do |form| %>
+        <p hidden><%= form.text_area :liker %></p>
+        <%= form.submit "🐟", :class => "like" %>
+        <span id="number_of_likes"><%= post.likes.length - 1 %></span>
+      <% end %>
+    </div>
+    
+    <% if (post.user_id == current_user.id)  && post.less_than_ten_mins_ago %>
+      <%= link_to edit_post_path(post.id) do %>
+        Update
+      <% end %>
+    <% if post.user_id == current_user.id %>
+      <%= button_to 'Delete', post_path(post),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    <% end %>
+  </div>
 <% end %>
