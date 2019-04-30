@@ -1,2 +1,2 @@
-class Edit < ApplicationController 
-end 
+# class Edit < ApplicationController 
+# end 
