@@ -1,6 +1,6 @@
 <% post.comments.each do |comment| %>
   <p><%= comment.body %></p>
-  <% if comment.user_id == current_user.id %>
+  <% if comment.user_id == current_user.id && comment.less_than_ten_mins_ago %>
     <%= link_to edit_post_comment_path(post, comment) do %>
       Edit comment
     <% end %>

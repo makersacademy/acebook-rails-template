@@ -28,4 +28,11 @@ RSpec.feature "Comment posts", type: :feature do
     click_button 'Update'
     expect(page).to have_content 'Updated comment'
   end
+
+  scenario "User cannot edit their comment after 10 minutes" do
+    Timecop.travel(Time.now + 11.minutes) do
+      visit '/posts'
+      expect(page).to have_no_link 'Edit comment'
+    end
+  end
 end
