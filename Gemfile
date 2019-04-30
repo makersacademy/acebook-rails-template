@@ -43,6 +43,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'timecop'
   gem 'geckodriver-helper'
+  gem 'pry'
   # simplecov for test coverage stats
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false

@@ -8,18 +8,18 @@ RSpec.feature "Like posts", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Test message!"
     click_button "Submit"
-    click_button "🐟"
+    click_button "Like"
     expect(page).to have_css("#number_of_likes", text: "1")
   end
 
-  xscenario "User can unlike a post they previously liked" do
+  scenario "User can unlike a post they previously liked" do
     create_user_and_sign_up
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Test message!"
     click_button "Submit"
-    click_button "🐟"
-    click_button "🐟"
+    click_button "Like"
+    click_button "Unlike"
     expect(page).to have_css("#number_of_likes", text: "0")
   end
 end
