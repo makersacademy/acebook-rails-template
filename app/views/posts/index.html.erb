@@ -4,9 +4,13 @@
 <div class='notice'> <%= flash[:success] %> </div>
 <% end %>
 
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-  <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id %>
+<% @posts.reverse.each do |post| %>
+  <div>
+    <p id='post-<%= post.id %>'><%= post.message %> -
+      <span> <%= Post.format_time(post.created_at) %> </span>
+      <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id %>
+    </p>
+  </div>
 <% end %>
 
 <%= link_to new_post_path do %>
