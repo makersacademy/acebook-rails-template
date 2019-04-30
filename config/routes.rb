@@ -11,12 +11,11 @@ Rails.application.routes.draw do
     unauthenticated do
       root 'devise/registrations#new', as: :unauthenticated_root
     end
-
   end
   resources :posts
-  resources :users, only: [:show, :index]
+  resources :users, only: %i[show index]
   resources :users do
-    get "/addfriend", :to => "users#addfriend", :as => "addfriend"
+    get '/addfriend', to: 'users#addfriend', as: 'addfriend'
+    get '/friends', to: 'users#friends'
   end
-
 end

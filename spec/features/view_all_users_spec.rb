@@ -10,6 +10,6 @@ RSpec.feature 'View users', type: :feature do
     sign_up_2
     click_link('All Users')
     expect(page).to have_content('james@test.com')
-    expect(current_path).to eq("/users")
+    expect(current_path).to eq('/users')
   end
 end

@@ -3,3 +3,8 @@ User: <%= @user.email %>
 <div class="add-friend">
 <%= link_to "Add friend", user_addfriend_path(@user) %>
 </div>
+
+<div class="current-user-friends">
+  Friends:
+  <%= current_user.friends %>
+</div>
