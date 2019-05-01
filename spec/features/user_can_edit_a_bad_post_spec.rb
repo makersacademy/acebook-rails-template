@@ -16,7 +16,7 @@ RSpec.feature 'Timeline', type: :feature do
     expect(current_path).to eq('/posts')
     expect(page).to have_content('Hello, world!')
 
-    click_link('edit post')
+    click_button('Edit')
 
     fill_in 'Message', with: 'Hey legendz'
 

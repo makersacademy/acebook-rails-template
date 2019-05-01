@@ -1,29 +1,56 @@
-<%= link_to "Log out", logout_path, method: :delete %>
+<div class="main-page">
 
-<% if flash[:success] %>
-  <div class='notice'> <%= flash[:success] %> </div>
-<% end %>
+  <div class="navigation-bar">
+        <%= link_to new_post_path do %>
+      New post
+    <% end %>
+    <%= link_to "Log out", logout_path, method: :delete %>
+  </div> <%# Navigation bar %>
+  <div class="profile">
 
-<% @posts.reverse.each do |post| %>
-  <div id='post-<%= post.id %>' class='post'>
-    <div class='message'>
-      <%= simple_format post.message %>
-    </div>
-    <div class='timestamp'>
-      <%= Post.format_time(post.created_at) %>
-    </div>
-    <div class="edit-link">
-      <%= link_to edit_post_path(post) do %>
-        edit post
-      <% end %>
-    </div>
-    <div class="delete-button">
-      <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id %>
-    </div>
-  </div>
-<% end %>
+  </div> <%# profile %>
 
+  <div class="posts">
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+    <% if flash[:success] %>
+      <div class='notice'> <%= flash[:success] %> </div>
+    <% end %>
+
+    <% @posts.reverse.each do |post| %>
+      <div class="post-card">
+
+        <div class="message-grid">
+
+          <div class="message-internal">
+            <div id='post-<%= post.id %>' class='post'>
+
+              <div class='message'>
+                <%= simple_format post.message %>
+              </div>
+
+              <div class='timestamp'>
+                <%= Post.format_time(post.created_at) %>
+              </div>
+
+            </div> 
+
+          </div> <%# message-internal %>
+
+            <div class="right-container">
+
+              <div class="profile-thumb-container">
+                <img src="http://fanaru.com/unicorns/image/230993-unicorns-unicorn-avatar.png" alt="Avatar" class="profile-thumb">
+              </div> <%# profile-thumb %>
+
+              <div class="message-buttons">
+
+                  <%= button_to "Edit", edit_post_path(:id => post.id), :method => :get, :id => "edit_#{post.id}", class: "button_edit"%>
+                  <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id, class: "button_delete" %>
+
+              </div>
+          </div> <%# right-container %>
+        </div> <%# message-grid %>
+      </div> <%# post-card%>
+    <% end %>
+  </div> <%# posts %>
+</div> <%# main %>
