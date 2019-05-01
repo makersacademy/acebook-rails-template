@@ -101,3 +101,10 @@ caused us as a group to be assured that we were headed in the right direction.
 ## Day 3! Weds 1st May 2019
 #### Sam (working on a useful error message when attempting to delete someone else's post)
 - When trying to debug my work on showing a useful error message, I discovered that the logout functionality was broken but the test was still passing. This was because the test looked for the text "login" on the page and the error message displayed the word "login"! Not helpful, but we've now added to the test to make it more likely to pickup an error in the page rather than interpretting the error as the right result. 
+
+#### Greg & Wardah (working on a function to prevent duplicate sign-ups with same email address)
+- Started off by writing a unit test which checked that only one specific email address was entered into the database even though we had tried to enter the same email address twice.  
+- Discovered a uniqueness function which prevents duplicate entries in DB - this solved the problem.  
+- Added a feature test which checked for an flash error message when an email address is used a second time.  
+- Accessed the production db to remove duplicate entries that had previously been accepted into the database.  
+- Used TablePlus to access a remote rather than a local db.  
