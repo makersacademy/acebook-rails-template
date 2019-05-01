@@ -10,7 +10,7 @@ RSpec.feature 'Delete button', type: :feature do
     click_link('Logout')
     sign_up_2
     click_link('Delete')
-    expect(page).to have_content("You can't delete somebody elses post!")
+    expect(page).to have_content("You must unlearn what you have learned.")
     expect(current_path).to eq('/posts')
   end
 

@@ -6,7 +6,7 @@ require 'feature_test_helpers'
 RSpec.feature 'Sign up', type: :feature do
   scenario 'User is at sign up page' do
     sign_up
-    expect(page).to have_content 'Sign up successful. Welcome to Acebook!'
+    expect(page).to have_content 'May the force be with you. Welcome to Acebook!'
     expect(page).to have_content 'Logged in as james@test.com.'
   end
 

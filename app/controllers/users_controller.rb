@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def addfriend
     @user = User.find(params[:user_id])
     current_user.friend_request(@user)
-    flash[:success] = "You have sent #{@user.email} a friend request!"
+    flash[:success] = "Ahhh! Yoda's little friend you seek!"
     redirect_to users_url
   end
 
@@ -23,14 +23,14 @@ class UsersController < ApplicationController
   def acceptfriend
     @user = User.find(params[:user_id])
     current_user.accept_request(@user)
-    flash[:success] = "You have accepted a friend request from #{@user.email}"
+    flash[:success] = "Good relations with the Wookiees, I have!"
     redirect_to user_friend_requests_url
   end
 
   def declinefriend
     @user = User.find(params[:user_id])
     current_user.decline_request(@user)
-    flash[:success] = "The garbage'll do!"
+    flash[:success] = "Death is a natural part of life. Rejoice for those around you who transform into the Force."
     redirect_to user_friend_requests_url
   end
 

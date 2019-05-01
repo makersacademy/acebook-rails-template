@@ -15,7 +15,7 @@ RSpec.feature 'Manage Requests', type: :feature do
     click_link('My Requests')
     click_link('Accept')
     expect(current_path).to include("/friend_requests")
-    expect(page).to have_content("You have accepted a friend request from tome@test.com")
+    expect(page).to have_content("Good relations with the Wookiees, I have!")
   end
 
   scenario 'Decline from request page' do
@@ -29,7 +29,7 @@ RSpec.feature 'Manage Requests', type: :feature do
     click_link('My Requests')
     click_link('Decline')
     expect(current_path).to include("/friend_requests")
-    expect(page).to have_content("The garbage'll do!")
+    expect(page).to have_content("Death is a natural part of life. Rejoice for those around you who transform into the Force.")
   end
 
 end

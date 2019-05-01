@@ -8,7 +8,7 @@ RSpec.feature 'Sign in', type: :feature do
     sign_up
     click_link('Logout')
     sign_in
-    expect(page).to have_content 'Signed in successfully.'
+    expect(page).to have_content 'Feel the force.'
     expect(page).to have_content 'Logged in as james@test.com.'
   end
 
