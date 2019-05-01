@@ -1,11 +1,5 @@
 User: <%= @user.email %>
 
-<div class="add-friend">
-  <% if (@user != current_user) && !(@user.friends_with?current_user) %>
-  <%= link_to "Add friend", user_addfriend_path(@user) %>
-  <% end %>
-</div>
-
 <div class="current-user-friends">
   Friends:
   <% @user.friends.each do |friend| %>

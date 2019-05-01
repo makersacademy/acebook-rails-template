@@ -10,7 +10,7 @@ RSpec.feature 'Edit button', type: :feature do
     click_link('Logout')
     sign_up_2
     click_link('Edit')
-    expect(page).to have_content("You can't edit somebody elses post!")
+    expect(page).to have_content("You will find only what you bring in")
     expect(current_path).to eq('/posts')
   end
 
@@ -19,7 +19,7 @@ RSpec.feature 'Edit button', type: :feature do
     post_message
     allow(Time).to receive(:now).and_return(@time_now + 11 * 60)
     click_link('Edit')
-    expect(page).to have_content("You can't edit after 10 minutes!")
+    expect(page).to have_content("The dark side clouds everything. Impossible to change the past 10 minutes is.")
   end
 
   scenario 'Can edit own posts' do

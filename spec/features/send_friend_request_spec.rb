@@ -9,10 +9,9 @@ RSpec.feature 'Send friend request', type: :feature do
     click_link('Logout')
     sign_up_2
     click_link('All Users')
-    click_link('james@test.com')
     click_link('Add friend')
     expect(current_path).to include('/users')
-    expect(page).to have_content('You have sent james@test.com a friend request!')
+    expect(page).to have_content("Ahhh! Yoda's little friend you seek!")
   end
 
   scenario "cannot add yourself as a friend" do

@@ -39,7 +39,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       @post.destroy
     else
-      flash[:error] = "You can't delete somebody elses post!"
+      flash[:error] = "You must unlearn what you have learned."
     end
     redirect_to posts_url
   end
@@ -52,9 +52,9 @@ class PostsController < ApplicationController
 
   def flash_error
     if Post.verify_user(current_user, Post.find(params[:id])) == false
-      flash[:error] = "You can't edit somebody elses post!"
+      flash[:error] = "You will find only what you bring in"
     else
-      flash[:error] = "You can't edit after 10 minutes!"
+      flash[:error] = "The dark side clouds everything. Impossible to change the past 10 minutes is."
     end
   end
 end
