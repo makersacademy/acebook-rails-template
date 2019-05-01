@@ -16,8 +16,17 @@ class CommentsController < ApplicationController
     post = Post.find(params[:post_id])
     @comment = post.comments.find(params[:id])
     if @comment.update(comment_params)
+      flash[:notice] = "You krill me!"
       redirect_to posts_url
     end
+  end
+
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+
+    flash[:notice] = "That comment is fish-tory"
+    redirect_to posts_path
   end
 
   private
