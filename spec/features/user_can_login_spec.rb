@@ -17,10 +17,10 @@ RSpec.feature "Log in", type: :feature do
 
   scenario "Logging in succesfully takes you to your wall" do
     visit "/"
-    sign_up email: "myemail@gmail.com"
+    sign_up username: "Hives", email: "myemail@gmail.com"
     click_link("Log out")
     log_in email: "myemail@gmail.com"
-    expect(page).to have_content ("Myemail@gmail.com's Wall")
+    expect(page).to have_content ("Hives's Wall")
   end
 
   scenario "Trying to log in with invalid credentials returns to the login page" do
