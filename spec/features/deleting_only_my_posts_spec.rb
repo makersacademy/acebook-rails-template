@@ -25,7 +25,7 @@ RSpec.feature "Delete post belonging to another user", type: :feature do
     new_post_helper("Post one two three")
 
     expect(page).to have_content("Post one two three")
-    click_link "Log out"
+    click_button "Log out"
 
     sign_up_helper('test2@test.com','654321')
     log_in_helper('test2@test.com','654321')
@@ -34,6 +34,6 @@ RSpec.feature "Delete post belonging to another user", type: :feature do
     find_button(deleteID).click
 
     expect(page).to have_content("Post one two three")
-    expect(page).to have_content("You can only delete posts that you created. Classis Roku.")
+    expect(page).to have_content("You can only delete posts that you created. Classic Roku.")
   end
 end

@@ -72,7 +72,7 @@ RSpec.describe PostsController, type: :controller do
 
       delete :destroy, params: { id: @post.id }
       expect(Post.find_by(message: "This is my post!")).to be
-      expect(flash[:no_delete]).to have_content('You can only delete posts that you created. Classis Roku.')
+      expect(flash[:no_delete]).to have_content('You can only delete posts that you created. Classic Roku.')
     end
 
   end
