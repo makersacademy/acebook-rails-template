@@ -1,40 +1,69 @@
-<%= button_to "Log out", logout_path, method: :delete %>
+<div class="main-page">
 
-<%= flash[:edit_timeout_failure] %>
+  <div class="navigation-bar">
+    <%= link_to new_post_path do %>
+      New post
+    <% end %>
+    <%= button_to "Log out", logout_path, method: :delete %>
 
-<% if flash[:success] %>
-  <div class='notice'> <%= flash[:success] %> </div>
-<% end %>
+  </div> <%# Navigation bar %>
+  <div class="profile">
 
-<% if flash[:no_delete] %>
-  <div class='notice'> <%= flash[:no_delete] %> </div>
-<% end %>
+  </div> <%# profile %>
 
+  <div class="posts">
 
-<% @posts.reverse.each do |post| %>
-  <div id='post-<%= post.id %>' class='post'>
-    <div class='message'>
-      <%= simple_format post.message %>
-    </div>
-    <div class='timestamp'>
-      <%= Post.format_time(post.created_at) %>
-    </div>
-
-    <% if post.allow_update? %>
-      <div class="edit-link">
-        <%= link_to edit_post_path(post) do %>
-          edit post
-        <% end %>
-      </div>
+    <% if flash[:success] %>
+      <div class='notice'> <%= flash[:success] %> </div>
     <% end %>
 
-    <div class="delete-button">
-      <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id %>
-    </div>
-  </div>
-<% end %>
+    <% if flash[:no_delete] %>
+      <div class='notice'> <%= flash[:no_delete] %> </div>
+    <% end %>
 
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+    <%= flash[:edit_timeout_failure] %>
+
+    <% @posts.reverse.each do |post| %>
+        <div class="post-card">
+
+          <div class="message-grid">
+
+            <div class="message-internal">
+              <div id='post-<%= post.id %>' class='post'>
+
+                <div class='message'>
+                  <%= simple_format post.message %>
+                </div>
+
+                <div class='timestamp'>
+                  <%= Post.format_time(post.created_at) %>
+                </div>
+
+              </div> 
+
+            </div> <%# message-internal %>
+
+            <div class="right-container">
+
+              <div class="profile-thumb-container">
+                <img src="http://fanaru.com/unicorns/image/230993-unicorns-unicorn-avatar.png" alt="Avatar" class="profile-thumb">
+              </div> <%# profile-thumb %>
+
+              <div class="message-buttons">
+
+                <% if post.allow_update? %>
+
+                  <%= button_to "Edit", edit_post_path(:id => post.id), :method => :get, :id => "edit_#{post.id}", class: "button_edit"%>
+                
+                <% end %>
+                  
+                  <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id, class: "button_delete" %>
+              </div>
+            </div> <%# right-container %>
+          </div> <%# message-grid %>
+        </div> <%# post-card%>
+    <% end %>
+
+  </div> <%# posts %>
+</div> <%# main %>
