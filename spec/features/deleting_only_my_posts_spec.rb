@@ -8,7 +8,7 @@ RSpec.feature "Delete post belonging to another user", type: :feature do
     new_post_helper("This post belongs to Wardah")
 
     expect(page).to have_content("This post belongs to Wardah")
-    click_link "Log out"
+    click_button "Log out"
 
     sign_up_helper('test2@test.com','654321')
     log_in_helper('test2@test.com','654321')
