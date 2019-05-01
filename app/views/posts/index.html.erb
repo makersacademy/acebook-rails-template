@@ -7,6 +7,7 @@
  <%= link_to new_post_path do %>
    New post
  <% end %>
+ <%= link_to "My Requests", user_friend_requests_path(current_user.id) %>
 </div>
 
 <% @posts.each do |post| %>

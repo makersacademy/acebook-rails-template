@@ -1,0 +1,10 @@
+<% flash.each do |key, value| %>
+<%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
+
+<% @users.each do |user| %>
+<div class="user-card">
+ <%= user.email %>
+ <%= link_to "Accept", user_acceptfriend_path(user) %>
+</div>
+<% end %>
