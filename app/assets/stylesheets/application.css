@@ -1,7 +1,7 @@
 
     body {
-        cursor: pointer;
-        background: #446db0;
+      background: #446db0;
+      cursor:url('http://www.snazzyspace.com/cursorsfolder/pikachu.png'), auto !important; 
     }
     
     .container {
