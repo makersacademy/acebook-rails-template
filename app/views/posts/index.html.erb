@@ -13,9 +13,15 @@
 
 <% @posts.reverse.each do |post| %>
   <div id='post-<%= post.id %>' class='post'>
+
     <div class='message'>
       <%= simple_format post.message %>
     </div>
+
+    <div class='user'>
+      <%= User.find_by(id: post.user_id).email %>
+    </div>
+
     <div class='timestamp'>
       <%= Post.format_time(post.created_at) %>
     </div>
