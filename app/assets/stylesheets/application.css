@@ -140,6 +140,13 @@ p {
     vertical-align: bottom;
   }
 
+  .user {
+    padding: 10px;
+    color: rgb(18, 202, 1);
+    text-align: right;
+    vertical-align: bottom;
+  }
+
   .message-buttons {
     position: right;
     display: flex;
@@ -176,8 +183,61 @@ p {
 
   .button_new {
     color: rgb(71, 64, 64); 
-    border: 2px solid #b500fd;
+    border: 2px solid #4e50d3;
     border-radius: 60px 5px 5px 60px;
   }
+  .button_profile {
+    color: rgb(71, 64, 64); 
+    border: 2px solid #39e41b;
+  }
+
+  .nav-right-wrap {
+  height:100%;
+  width:100%;
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-end;
+  }
+
+.nav-profile {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  text-align: center;
+}
+
+.nav-picture {
+  height:100px;
+  width:100px;
+  background:url('http://img2.wikia.nocookie.net/__cb20130201224335/lotr/images/7/79/Smeagol.jpeg');
+  border-radius:80px;
+  border:4px solid #87D7FF;
+  background-size:cover;
+}
 
   /* End Post main page */
+
+  /* banner */
+
+  
+  /* .main-banner {
+    display: block;
+    height: 60px;
+    width: 100%;
+    background:
+    linear-gradient(
+      cyan,
+      transparent
+    ),
+    linear-gradient(
+      -45deg,
+      magenta,
+      transparent
+    ),
+    linear-gradient(
+      45deg,
+      yellow,
+      transparent
+    );
+    background-blend-mode: multiply;
+  } */

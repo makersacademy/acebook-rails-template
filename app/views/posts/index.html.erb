@@ -1,13 +1,20 @@
 <div class="main-page">
 
   <div class="navigation-bar">
-    <%= button_to "New post", new_post_path, method: :get, class: "main_button button_new" %>
-    <%= button_to "Log out", logout_path, method: :delete, class: "main_button button_logout" %>
 
+  <div class="nav-right">
+
+      <div class="nav-right-wrap">
+        <h2>Username here</h2>
+        <div class="nav-profile">  
+            <%= button_to "New post", new_post_path, method: :get, class: "main_button button_new" %>
+            <%= button_to "Go to profile", new_post_path, method: :get, class: "main_button button_profile" %>
+            <%= button_to "Log out", logout_path, method: :delete, class: "main_button button_logout" %>
+        </div>
+        <div class="nav-picture"></div>
+      </div>
+    </div> <%# nav-right %>
   </div> <%# Navigation bar %>
-  <div class="profile">
-
-  </div> <%# profile %>
 
   <div class="posts">
 
