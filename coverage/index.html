@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-05-01T15:29:08+01:00">2019-05-01T15:29:08+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-05-01T16:57:00+01:00">2019-05-01T16:57:00+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.75%</span></span>
+    (<span class="covered_percent"><span class="green">99.77%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.85
+         1.96
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>41</b> files in total.
-    <b>398</b> relevant lines. 
-    <span class="green"><b>397</b> lines covered</span> and
+    <b>434</b> relevant lines. 
+    <span class="green"><b>433</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -67,7 +67,7 @@
         <td>31</td>
         <td>30</td>
         <td>1</td>
-        <td>3.9</td>
+        <td>4.2</td>
       </tr>
       
       <tr>
@@ -77,7 +77,7 @@
         <td>22</td>
         <td>22</td>
         <td>0</td>
-        <td>2.8</td>
+        <td>4.0</td>
       </tr>
       
       <tr>
@@ -307,7 +307,7 @@
         <td>28</td>
         <td>28</td>
         <td>0</td>
-        <td>7.4</td>
+        <td>8.9</td>
       </tr>
       
       <tr>
@@ -353,9 +353,9 @@
       <tr>
         <td class="strong"><a href="#6943db1916eba5b452b9abf2a7635537b4d0eb78" class="src_link" title="spec/features/send_friend_request_spec.rb">spec/features/send_friend_request_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>22</td>
-        <td>15</td>
-        <td>15</td>
+        <td>67</td>
+        <td>51</td>
+        <td>51</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -393,7 +393,7 @@
       <tr>
         <td class="strong"><a href="#b3b3c27176314e5082383da530312c7e42fb6087" class="src_link" title="spec/features/view_all_users_spec.rb">spec/features/view_all_users_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>15</td>
+        <td>18</td>
         <td>10</td>
         <td>10</td>
         <td>0</td>
@@ -749,8 +749,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="48" data-linenumber="34">
-          <span class="hits">48</span>
+        <li class="covered" data-hits="57" data-linenumber="34">
+          <span class="hits">57</span>
           
           <code class="ruby">    @posts = Post.order(created_at: :desc)</code>
         </li>
@@ -978,8 +978,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="9">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="21" data-linenumber="9">
+          <span class="hits">21</span>
           
           <code class="ruby">    @users = User.all</code>
         </li>
@@ -1002,26 +1002,26 @@
           <code class="ruby">  def addfriend</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="13">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="8" data-linenumber="13">
+          <span class="hits">8</span>
           
           <code class="ruby">    @user = User.find(params[:user_id])</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="14">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="8" data-linenumber="14">
+          <span class="hits">8</span>
           
           <code class="ruby">    current_user.friend_request(@user)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="15">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="8" data-linenumber="15">
+          <span class="hits">8</span>
           
           <code class="ruby">    flash[:success] = &quot;Ahhh! Yoda&#39;s little friend you seek!&quot;</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="16">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="8" data-linenumber="16">
+          <span class="hits">8</span>
           
           <code class="ruby">    redirect_to users_url</code>
         </li>
@@ -1044,8 +1044,8 @@
           <code class="ruby">  def friend_requests</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="20">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="10" data-linenumber="20">
+          <span class="hits">10</span>
           
           <code class="ruby">    @users = current_user.requested_friends</code>
         </li>
@@ -1068,26 +1068,26 @@
           <code class="ruby">  def acceptfriend</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="24">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="24">
+          <span class="hits">3</span>
           
           <code class="ruby">    @user = User.find(params[:user_id])</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="25">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="25">
+          <span class="hits">3</span>
           
           <code class="ruby">    current_user.accept_request(@user)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="26">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="26">
+          <span class="hits">3</span>
           
           <code class="ruby">    flash[:success] = &quot;Good relations with the Wookiees, I have!&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="27">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="27">
+          <span class="hits">3</span>
           
           <code class="ruby">    redirect_to user_friend_requests_url</code>
         </li>
@@ -5267,32 +5267,32 @@
           <code class="ruby">def sign_up</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="4">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="21" data-linenumber="4">
+          <span class="hits">21</span>
           
           <code class="ruby">  visit &#39;users/sign_up&#39;</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="5">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="21" data-linenumber="5">
+          <span class="hits">21</span>
           
           <code class="ruby">  fill_in &#39;user_email&#39;, with: &#39;james@test.com&#39;</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="6">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="21" data-linenumber="6">
+          <span class="hits">21</span>
           
           <code class="ruby">  fill_in &#39;user_password&#39;, with: &#39;123456&#39;</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="7">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="21" data-linenumber="7">
+          <span class="hits">21</span>
           
           <code class="ruby">  fill_in &#39;user_password_confirmation&#39;, with: &#39;123456&#39;</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="8">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="21" data-linenumber="8">
+          <span class="hits">21</span>
           
           <code class="ruby">  click_button &#39;Sign up&#39;</code>
         </li>
@@ -5315,32 +5315,32 @@
           <code class="ruby">def sign_up_2</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="12">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="12" data-linenumber="12">
+          <span class="hits">12</span>
           
           <code class="ruby">  visit &#39;users/sign_up&#39;</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="13">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="12" data-linenumber="13">
+          <span class="hits">12</span>
           
           <code class="ruby">  fill_in &#39;user_email&#39;, with: &#39;tome@test.com&#39;</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="14">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="12" data-linenumber="14">
+          <span class="hits">12</span>
           
           <code class="ruby">  fill_in &#39;user_password&#39;, with: &#39;123456&#39;</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="15">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="12" data-linenumber="15">
+          <span class="hits">12</span>
           
           <code class="ruby">  fill_in &#39;user_password_confirmation&#39;, with: &#39;123456&#39;</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="16">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="12" data-linenumber="16">
+          <span class="hits">12</span>
           
           <code class="ruby">  click_button &#39;Sign up&#39;</code>
         </li>
@@ -5411,26 +5411,26 @@
           <code class="ruby">def sign_in</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="28">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="8" data-linenumber="28">
+          <span class="hits">8</span>
           
           <code class="ruby">  visit &#39;/users/sign_in&#39;</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="29">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="8" data-linenumber="29">
+          <span class="hits">8</span>
           
           <code class="ruby">  fill_in &#39;user_email&#39;, with: &#39;james@test.com&#39;</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="30">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="8" data-linenumber="30">
+          <span class="hits">8</span>
           
           <code class="ruby">  fill_in &#39;user_password&#39;, with: &#39;123456&#39;</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="31">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="8" data-linenumber="31">
+          <span class="hits">8</span>
           
           <code class="ruby">  click_button &#39;Log in&#39;</code>
         </li>
@@ -5453,26 +5453,26 @@
           <code class="ruby">def sign_in_2</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="35">
+          <span class="hits">2</span>
           
           <code class="ruby">  visit &#39;/users/sign_in&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="36">
+          <span class="hits">2</span>
           
           <code class="ruby">  fill_in &#39;user_email&#39;, with: &#39;tome@test.com&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="37">
+          <span class="hits">2</span>
           
           <code class="ruby">  fill_in &#39;user_password&#39;, with: &#39;123456&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="38">
+          <span class="hits">2</span>
           
           <code class="ruby">  click_button &#39;Log in&#39;</code>
         </li>
@@ -6247,8 +6247,8 @@
     <h3>spec/features/send_friend_request_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>15</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
+      <b>51</b> relevant lines. 
+      <span class="green"><b>51</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -6385,7 +6385,277 @@
         <li class="never" data-hits="" data-linenumber="22">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &quot;cannot do two requests&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_up</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;Logout&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_up_2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;All Users&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;Add friend&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(current_path).to include(&#39;/users&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).not_to have_content(&quot;james@test.com Add friend&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&quot;james@test.com Request pending...&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &quot;cannot request someone who requested you&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_up</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;Logout&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_up_2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;All Users&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;Add friend&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;Logout&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_in</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;All Users&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&quot;tome@test.com View friend request.&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;View friend request.&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(current_path).to include(&quot;/friend_requests&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &quot;cannot request friends&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="49">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_up</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;Logout&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_up_2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;All Users&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;Add friend&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;Logout&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_in</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;All Users&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;View friend request.&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;Accept&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;Logout&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_in_2</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link(&#39;All Users&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="62">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).not_to have_content(&quot;james@test.com Add friend&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
           <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby"></code>
         </li>
       
     </ol>
@@ -6972,6 +7242,24 @@
           
           
           <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
         </li>
       
     </ol>
