@@ -114,5 +114,29 @@ RSpec.describe PostsController, type: :controller do
       get :edit, params: { id: @post.id }
       expect(flash[:edit_timeout_failure]).to eq nil
     end
+
+    it "disallows edit on someone else's post" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      @post = Post.find_by(message: "Hello, world!")
+
+      @user2 = User.create({email: "iamlegend@makers.com", password: "helloroku"})
+      log_out
+      log_in(@user2)
+
+      get :edit, params: { id: @post.id }
+      expect(response).to redirect_to(posts_url)
+    end
+
+    it "gives an error message on edit of someone else's post" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      @post = Post.find_by(message: "Hello, world!")
+
+      @user2 = User.create({email: "iamlegend@makers.com", password: "helloroku"})
+      log_out
+      log_in(@user2)
+
+      get :edit, params: { id: @post.id }
+      expect(flash[:no_edit]).to have_content("You can only edit posts that you created. Classic Roku.")
+    end
   end
 end
