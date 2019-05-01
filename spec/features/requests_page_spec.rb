@@ -9,7 +9,6 @@ RSpec.feature 'Accept Requests', type: :feature do
     click_link('Logout')
     sign_up_2
     click_link('All Users')
-    click_link('james@test.com')
     click_link('Add friend')
     click_link('Logout')
     sign_in
