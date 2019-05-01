@@ -3,6 +3,7 @@
 class Post < ApplicationRecord
   belongs_to :author, :class_name => "User"
   delegate :email, :to => :author
+  delegate :username, :to => :author
   
   def editable?
     less_than_ten_minutes_old?

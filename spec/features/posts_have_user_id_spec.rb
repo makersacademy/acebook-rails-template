@@ -2,10 +2,12 @@
 
 require "rails_helper"
 
-RSpec.feature "Posts have user id", type: :feature do
-  scenario "Post has the user id" do
-    sign_up email: "myemail@gmail.com"
+RSpec.feature "Posts have username", type: :feature do
+  scenario "Post has the username" do
+    sign_up username: "Hives"
     create_post
-    expect(page).to have_content("myemail@gmail.com")
+    within(".post-author") do
+      expect(page).to have_content("Hives")
+    end
   end
 end
