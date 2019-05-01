@@ -6,7 +6,7 @@ FactoryBot.define do
   end
 
   factory :like do
-    liker { 1 }
+    user { 1 }
     post { nil }
   end
 
