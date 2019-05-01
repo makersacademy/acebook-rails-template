@@ -9,7 +9,7 @@ RSpec.feature 'Timeline', type: :feature do
     sign_up_helper('test@gmail.com', '123')
     log_in_helper('test@gmail.com', '123')
     visit '/posts'
-    click_link 'New post'
+    click_button 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
 

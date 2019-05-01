@@ -16,7 +16,7 @@ end
 
 def new_post_helper(message)
   visit '/posts'
-  click_link 'New post'
+  click_button 'New post'
   fill_in 'Message', with: message
   click_button 'Submit'
 end

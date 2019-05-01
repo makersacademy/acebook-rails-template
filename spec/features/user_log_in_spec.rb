@@ -12,7 +12,7 @@ RSpec.feature 'User Log In', type: :feature do
     fill_in 'session_email', with: 'test@gmail.com'
     fill_in 'session_password', with: '123'
     click_button 'Log in'
-    expect(page).to have_link('New post')
+    expect(page).to have_button('New post')
   end
 
   scenario 'Incorrect details or unregistered user cannot sign in' do

@@ -5,7 +5,7 @@ RSpec.feature "Delete post", type: :feature do
   scenario "User can delete posts" do
     sign_up_helper('test@test.com','123456')
     log_in_helper('test@test.com','123456')
-    click_link "New post"
+    click_button "New post"
     fill_in "Message", with: "Please delete me!!"
     click_button "Submit"
     expect(page).to have_content("Please delete me!!")
@@ -17,11 +17,11 @@ RSpec.feature "Delete post", type: :feature do
   scenario "Testing to delete the second post" do
     sign_up_helper('test@test.com','123456')
     log_in_helper('test@test.com','123456')
-    click_link "New post"
+    click_button "New post"
     fill_in "Message", with: "Please delete me!!"
     click_button "Submit"
     expect(page).to have_content("Please delete me!!")
-    click_link "New post"
+    click_button "New post"
     fill_in "Message", with: "Please delete me toooo!!"
     click_button "Submit"
     expect(page).to have_content("Please delete me toooo!!")

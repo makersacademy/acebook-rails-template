@@ -1,10 +1,8 @@
 <div class="main-page">
 
   <div class="navigation-bar">
-    <%= link_to new_post_path do %>
-      New post
-    <% end %>
-    <%= button_to "Log out", logout_path, method: :delete %>
+    <%= button_to "New post", new_post_path, method: :get, class: "main_button button_new" %>
+    <%= button_to "Log out", logout_path, method: :delete, class: "main_button button_logout" %>
 
   </div> <%# Navigation bar %>
   <div class="profile">
@@ -60,12 +58,11 @@
               <div class="message-buttons">
 
                 <% if post.allow_update? %>
-
-                  <%= button_to "Edit", edit_post_path(:id => post.id), :method => :get, :id => "edit_#{post.id}", class: "button_edit"%>
-
+                  <%= button_to "Edit", edit_post_path(:id => post.id), :method => :get, :id => "edit_#{post.id}", class: "main_button button_edit"%>
+                
                 <% end %>
-
-                  <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id, class: "button_delete" %>
+                  
+                  <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id, class: "main_button button_delete" %>
               </div>
             </div> <%# right-container %>
           </div> <%# message-grid %>

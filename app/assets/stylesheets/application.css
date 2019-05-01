@@ -1,11 +1,7 @@
 body {
   cursor:url('http://www.snazzyspace.com/cursorsfolder/pikachu.png'), auto !important; 
-    background: #446db0;
+  background: #446db0;
 }
-
- 
-
-
 
 .navigation-bar {
   width: 100%;
@@ -15,13 +11,17 @@ body {
 }
 
 .container {
-    height: 400px;
+    height: 520px;
     width: 350px;
     border: none;
     padding: 10px;
     background: #fff;
     box-shadow: 5px 10px rgb(0, 0, 0);
     margin: 40px
+}
+
+.beefy {
+  padding: 25px;
 }
 
 input {
@@ -137,6 +137,7 @@ p {
   .timestamp {
     color: white;
     text-align: right;
+    vertical-align: bottom;
   }
 
   .message-buttons {
@@ -145,7 +146,7 @@ p {
     flex-direction: row;
   }
 
-  .button_delete {
+  .main_button {
     border: none;
     width: 130px;
     text-align: center;
@@ -153,20 +154,29 @@ p {
     margin: 4px 2px;
     color: rgba(255, 255, 255, 0.1);
     background-color: rgba(255, 255, 255, 0.3); 
+
+  }
+
+  .button_delete {
     color: rgb(71, 64, 64); 
     border: 2px solid #b500fd;
     border-radius: 5px 60px 60px 5px;
   }
   .button_edit {
-    border: none;
-    width: 130px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    color: rgba(255, 255, 255, 0.1);
-    background-color: rgba(255, 255, 255, 0.3); 
     color: rgb(71, 64, 64); 
     border: 2px solid #9ed1ee;
+    border-radius: 60px 5px 5px 60px;
+  }
+
+  .button_logout {
+    color: rgb(71, 64, 64); 
+    border: 2px solid #9ed1ee;
+    border-radius: 5px 60px 60px 5px;
+  }
+
+  .button_new {
+    color: rgb(71, 64, 64); 
+    border: 2px solid #b500fd;
     border-radius: 60px 5px 5px 60px;
   }
 
