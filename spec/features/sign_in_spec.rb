@@ -13,7 +13,7 @@ RSpec.feature "Sign in", type: :feature do
 
   scenario "User redirected to index if not signed in & tries to visit posts" do
     visit '/posts'
-    expect(page).to have_current_path("/")
+    expect(page).to have_current_path("/users/sign_up")
   end
 
   scenario "User signs in and is redirected to the posts page" do
@@ -24,5 +24,15 @@ RSpec.feature "Sign in", type: :feature do
     fill_in("user_password", with: "password1")
     click_button("Log in")
     expect(page).to have_link('New post')
+  end
+
+  scenario "User shown error message when incorrect credentials are entered" do
+    create_user_and_sign_up
+    click_button("Sign out")
+    click_link("Log in")
+    fill_in("user_email", with: "georgie@com")
+    fill_in("user_password", with: "password1x")
+    click_button("Log in")
+    expect(page).to have_content('Invalid Email or password.')
   end
 end
