@@ -27,4 +27,11 @@ class UsersController < ApplicationController
     redirect_to user_friend_requests_url
   end
 
+  def declinefriend
+    @user = User.find(params[:user_id])
+    current_user.decline_request(@user)
+    flash[:success] = "The garbage'll do!"
+    redirect_to user_friend_requests_url
+  end
+
 end

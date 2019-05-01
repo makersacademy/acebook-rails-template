@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     get '/friends', to: 'users#friends'
     get "/friend_requests", :to => "users#friend_requests", :as => "friend_requests"
     get "/acceptfriend", :to => "users#acceptfriend", :as => "acceptfriend"
+    get "/declinefriend", :to => "users#declinefriend", :as => "declinefriend"
   end
 end
