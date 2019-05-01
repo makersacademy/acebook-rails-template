@@ -1,16 +1,26 @@
-body {
-  cursor:url('http://www.snazzyspace.com/cursorsfolder/pikachu.png'), auto !important; 
-  background: #446db0;
-}
+/* Start of desktop */
 
-.navigation-bar {
-  width: 100%;
-  background-color: #9ed1ee;
-  height: 60px;
-  margin: 5px;
-}
+@media (min-width : 1070px) {
 
-.container {
+  body {
+    cursor:url('http://www.snazzyspace.com/cursorsfolder/pikachu.png'), auto !important; 
+    background: #446db0;
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .navigation-bar {
+    width: 100%;
+    background-color: #9ed1ee;
+    height: 60px;
+    margin: 5px;
+  }
+
+  .container {
     height: 520px;
     width: 350px;
     border: none;
@@ -18,39 +28,39 @@ body {
     background: #fff;
     box-shadow: 5px 10px rgb(0, 0, 0);
     margin: 40px
-}
+  }
 
-.beefy {
-  padding: 25px;
-}
+  .beefy {
+    padding: 25px;
+  }
 
-input {
-  height: auto;
-  width: 60%;
-  display: block;
-  padding: 5px;
-  margin: 25px 10px;
-  border: none;
-  border-bottom: 2px solid rgb(100, 193, 216);
-  position: center;
-}
+  input {
+    height: auto;
+    width: 60%;
+    display: block;
+    padding: 5px;
+    margin: 25px 10px;
+    border: none;
+    border-bottom: 2px solid rgb(100, 193, 216);
+    position: center;
+  }
 
-h1 {
-  text-align: center;
-  text-transform: uppercase;
-  color: rgb(255, 0, 212);
-  font-size: 70px;
-  text-indent: 50px;
-  letter-spacing: 3px;
-}
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(255, 0, 212);
+    font-size: 70px;
+    text-indent: 50px;
+    letter-spacing: 3px;
+  }
 
-p {
-  text-indent: 50px;
-  text-align: left;
-  letter-spacing: 3px;
-}
+  p {
+    text-indent: 50px;
+    text-align: left;
+    letter-spacing: 3px;
+  }
 
-.notice {
+  .notice {
     padding: 30px;
     background: rgb(255, 0, 212);
     color: rgb(0, 0, 0);
@@ -65,9 +75,9 @@ p {
     text-indent: 50px;
     text-align: center;
     letter-spacing: 3px;
-}
+  }
 
-.button {
+  .button {
     position: relative;
     left: 10%; 
     width: 200px;
@@ -92,12 +102,13 @@ p {
     padding: 10px;
   }
 
-/* Post main page */
+  /* Post main page */
   .post-card {
     width: 60%;
     background-color: rgba(224, 162, 226, 0.39);
     padding: 10px;
     margin-bottom: 15px;
+    margin-left: 10px;
     border-style: solid;
     border-color: plum;
     border-radius: 5px 60px;
@@ -165,54 +176,56 @@ p {
   }
 
   .button_delete {
-    color: rgb(71, 64, 64); 
+    color: rgb(46, 46, 46); 
     border: 2px solid #b500fd;
     border-radius: 5px 60px 60px 5px;
   }
   .button_edit {
-    color: rgb(71, 64, 64); 
+    color: rgb(46, 46, 46); 
     border: 2px solid #9ed1ee;
     border-radius: 60px 5px 5px 60px;
   }
 
   .button_logout {
-    color: rgb(71, 64, 64); 
-    border: 2px solid #9ed1ee;
+    color: rgb(255, 255, 255); 
+    border: 2px solid #ffd900;
     border-radius: 5px 60px 60px 5px;
   }
 
   .button_new {
-    color: rgb(71, 64, 64); 
+    color: rgb(255, 255, 255); 
     border: 2px solid #4e50d3;
     border-radius: 60px 5px 5px 60px;
   }
+
   .button_profile {
-    color: rgb(71, 64, 64); 
+    color: rgb(255, 255, 255); 
     border: 2px solid #39e41b;
   }
 
   .nav-right-wrap {
-  height:100%;
-  width:100%;
-  display:flex;
-  flex-direction:row;
-  justify-content:flex-end;
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end;
   }
 
-.nav-profile {
-  display: flex;
-  flex-direction: row;
-  align-self: flex-end;
-  text-align: center;
-}
+  .nav-profile {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    text-align: center;
+  }
 
-.nav-picture {
-  height:100px;
-  width:100px;
-  background:url('http://img2.wikia.nocookie.net/__cb20130201224335/lotr/images/7/79/Smeagol.jpeg');
-  border-radius:80px;
-  border:4px solid #87D7FF;
-  background-size:cover;
+  .nav-picture {
+    height:100px;
+    width:100px;
+    background:url('http://img2.wikia.nocookie.net/__cb20130201224335/lotr/images/7/79/Smeagol.jpeg');
+    border-radius:80px;
+    border:4px solid #87D7FF;
+    background-size:cover;
+  }
 }
 
   /* End Post main page */
@@ -241,3 +254,155 @@ p {
     );
     background-blend-mode: multiply;
   } */
+
+  /* End of desktop site*/
+
+  /* Start of mobile */
+
+@media only screen and (max-width: 1070px) {
+  body {
+    background: #446db0;
+  }
+
+  .main-page {
+    width: 90%;
+  }
+
+  .post-card {
+    width: 100%;
+    background-color: rgba(224, 162, 226, 0.39);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-style: solid;
+    border-color: plum;
+    border-radius: 5px 60px;
+  }
+
+
+  .message-grid {
+    display: flex;
+  }
+
+  .profile-thumb {
+    padding: 5px;
+    border-radius: 50%;
+    border: solid rgb(124, 165, 153);
+    width: 90px;
+    height: 90px;
+    margin: auto;
+  }
+
+  .profile-thumb-container {
+    padding: 0 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .message-internal {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px 60px;
+  }
+
+  .message {
+    color: pink;
+    padding: 10px;
+    word-wrap: break-word;
+    height: 57%;
+  }
+
+  .timestamp {
+    color: white;
+    text-align: right;
+    vertical-align: bottom;
+    font-size: 11px;
+  }
+
+  .user {
+    padding: 10px;
+    color: rgb(18, 202, 1);
+    text-align: right;
+    font-size: 11px;
+  }
+
+  .message-buttons {
+    position: right;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .main_button {
+    border: none;
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.3); 
+
+  }
+
+  .button_delete {
+    color: rgb(46, 46, 46); 
+    border: 2px solid #b500fd;
+    border-radius: 5px 60px 60px 5px;
+  }
+  .button_edit {
+    color: rgb(46, 46, 46); 
+    border: 2px solid #9ed1ee;
+    border-radius: 60px 5px 5px 60px;
+  }
+
+
+  .post {
+    height: 100%;
+  }
+
+  .right-container {
+    width: 35%;
+  }
+
+  .button_logout {
+    color: rgb(255, 255, 255); 
+    border: 2px solid #ffd900;
+    border-radius: 5px 60px 60px 5px;
+  }
+
+  .button_new {
+    color: rgb(255, 255, 255); 
+    border: 2px solid #4e50d3;
+    border-radius: 60px 5px 5px 60px;
+  }
+
+  .button_profile {
+    color: rgb(255, 255, 255); 
+    border: 2px solid #39e41b;
+  }
+
+  .nav-right-wrap {
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end;
+  }
+
+  .nav-profile {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    text-align: center;
+  }
+
+  .nav-picture {
+    height:100px;
+    width:100px;
+    background:url('http://img2.wikia.nocookie.net/__cb20130201224335/lotr/images/7/79/Smeagol.jpeg');
+    border-radius:80px;
+    border:4px solid #87D7FF;
+    background-size:cover;
+  }
+}
+
+  /* End of mobile */
