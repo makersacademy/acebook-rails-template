@@ -47,4 +47,9 @@ RSpec.feature "Comment posts", type: :feature do
     click_button 'Delete comment'
     expect(page).not_to have_content 'Test adding comment to post'
   end
+
+  scenario "User sees success message on deleting their comment" do
+    click_button 'Delete comment'
+    expect(page).to have_content 'That comment is fish-tory'
+  end
 end

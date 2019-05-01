@@ -25,6 +25,7 @@ class CommentsController < ApplicationController
     comment = Comment.find(params[:id])
     comment.destroy
 
+    flash[:notice] = "That comment is fish-tory"
     redirect_to posts_path
   end
 
