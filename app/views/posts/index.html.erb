@@ -19,6 +19,9 @@
       <div class='notice'> <%= flash[:no_delete] %> </div>
     <% end %>
 
+    <% if flash[:no_edit] %>
+      <div class='notice'> <%= flash[:no_edit] %> </div>
+    <% end %>
 
     <%= flash[:edit_timeout_failure] %>
 
@@ -33,12 +36,16 @@
                 <div class='message'>
                   <%= simple_format post.message %>
                 </div>
+                
+                <div class='user'>
+                  <%= User.find_by(id: post.user_id).email %>
+                </div>
 
                 <div class='timestamp'>
                   <%= Post.format_time(post.created_at) %>
                 </div>
 
-              </div> 
+              </div>
 
             </div> <%# message-internal %>
 
@@ -51,7 +58,6 @@
               <div class="message-buttons">
 
                 <% if post.allow_update? %>
-
                   <%= button_to "Edit", edit_post_path(:id => post.id), :method => :get, :id => "edit_#{post.id}", class: "main_button button_edit"%>
                 
                 <% end %>

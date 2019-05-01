@@ -86,6 +86,16 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "GET /edit" do
+
+    it "successfully edits a post" do
+      post :create, params: { post: { message: "Hello acebook!" } }
+      @post = Post.find_by(message: "Hello acebook!")
+
+      post :update, params: { id: @post.id, post: { message: "testing 1 2 3" } }
+      expect(Post.find_by(message: "testing 1 2 3")).to be
+      expect(Post.find_by(message: "Hello acebook!")).to_not be
+    end
+
     it "redirects if post is over 10 mins old" do
       post :create, params: { post: { message: "Hello, world!" } }
       @post = Post.find_by(message: "Hello, world!")
@@ -113,6 +123,41 @@ RSpec.describe PostsController, type: :controller do
       travel(599)
       get :edit, params: { id: @post.id }
       expect(flash[:edit_timeout_failure]).to eq nil
+    end
+
+    it "disallows edit on someone else's post" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      @post = Post.find_by(message: "Hello, world!")
+
+      @user2 = User.create({email: "iamlegend@makers.com", password: "helloroku"})
+      log_out
+      log_in(@user2)
+
+      get :edit, params: { id: @post.id }
+      expect(response).to redirect_to(posts_url)
+    end
+
+    it "gives an error message on edit of someone else's post" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      @post = Post.find_by(message: "Hello, world!")
+
+      @user2 = User.create({email: "iamlegend@makers.com", password: "helloroku"})
+      log_out
+      log_in(@user2)
+
+      get :edit, params: { id: @post.id }
+      expect(flash[:no_edit]).to eq("You can only edit posts that you created. Classic Roku.")
+    end
+
+    it "does not display an error on successful edit" do
+      post :create, params: { post: { message: "Hello acebook!" } }
+      @post = Post.find_by(message: "Hello acebook!")
+
+      get :edit, params: { id: @post.id }
+      expect(flash[:no_edit]).to_not eq("You can only edit posts that you created. Classic Roku.")
+
+      post :update, params: { id: @post.id, post: { message: "testing 1 2 3" } }
+      expect(flash[:no_edit]).to_not eq("You can only edit posts that you created. Classic Roku.")
     end
   end
 end
