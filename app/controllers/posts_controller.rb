@@ -18,6 +18,8 @@ class PostsController < ApplicationController
     @current_post = Post.find(params[:id])
     if @current_user.id == @current_post.user_id
       @post = Post.delete(params[:id])
+    else
+      flash[:no_delete] = 'You can only delete posts that you created. Classis Roku.'
     end
     redirect_to posts_url
   end

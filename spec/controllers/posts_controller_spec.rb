@@ -62,5 +62,18 @@ RSpec.describe PostsController, type: :controller do
       expect(Post.find_by(message: "Hello, world!")).to be
     end
 
+    it "displays a helpful error message if you try to delete someone else's post" do
+      post :create, params: { post: { message: "This is my post!" } }
+      @post = Post.find_by(message: "This is my post!")
+
+      @user2 = User.create({email: "mynewuser@users.com", password: "goroku666"})
+      log_out
+      log_in(@user2)
+
+      delete :destroy, params: { id: @post.id }
+      expect(Post.find_by(message: "This is my post!")).to be
+      expect(flash[:no_delete]).to have_content('You can only delete posts that you created. Classis Roku.')
+    end
+
   end
 end
