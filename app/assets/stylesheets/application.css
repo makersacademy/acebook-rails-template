@@ -1,83 +1,173 @@
+body {
+  cursor:url('http://www.snazzyspace.com/cursorsfolder/pikachu.png'), auto !important; 
+    background: #446db0;
+}
 
-    body {
-      background: #446db0;
-      cursor:url('http://www.snazzyspace.com/cursorsfolder/pikachu.png'), auto !important; 
-    }
-    
-    .container {
-        height: 400px;
-        width: 350px;
-        border: none;
-        padding: 10px;
-        background: #fff;
-        box-shadow: 5px 10px rgb(0, 0, 0);
-        margin: 40px
-    }
-    
-    input {
-      height: auto;
-      width: 60%;
-      display: block;
-      padding: 5px;
-      margin: 25px 10px;
-      border: none;
-      border-bottom: 2px solid rgb(100, 193, 216);
-      position: center;
-    }
-    
-    h1 {
-      text-align: center;
-      text-transform: uppercase;
-      color: rgb(255, 0, 212);
-      font-size: 70px;
-      text-indent: 50px;
-      letter-spacing: 3px;
-    }
-    
-    p {
-      text-indent: 50px;
-      text-align: left;
-      letter-spacing: 3px;
-    }
+ 
 
-    .notice {
-        padding: 30px;
-        background: rgb(255, 0, 0);
-        color: rgb(255, 255, 255);
-        font-size: 30px;
-        border: 1px solid #bbb;
-        margin-bottom: 15px;
-        width: 38%;
-        padding: 20px;
-        position: relative;
-        left: 30%;
 
-        text-indent: 50px;
-        text-align: center;
-        letter-spacing: 3px;
-    }
 
-    .button {
-        position: relative;
-        left: 10%; 
-        width: 200px;
-        background-color: rgb(76, 229, 240);
-        border: none;
-        color: rgb(0, 0, 0);
-        padding: 15px 32px;
-        text-align: center;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        border-radius: 5px 60px;
-      }
+.navigation-bar {
+  width: 100%;
+  background-color: #9ed1ee;
+  height: 60px;
+  margin: 5px;
+}
 
-      .button2:hover {
-        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-      }
+.container {
+    height: 400px;
+    width: 350px;
+    border: none;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 5px 10px rgb(0, 0, 0);
+    margin: 40px
+}
 
-      .sign_grid {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        padding: 10px;
-      }
+input {
+  height: auto;
+  width: 60%;
+  display: block;
+  padding: 5px;
+  margin: 25px 10px;
+  border: none;
+  border-bottom: 2px solid rgb(100, 193, 216);
+  position: center;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(255, 0, 212);
+  font-size: 70px;
+  text-indent: 50px;
+  letter-spacing: 3px;
+}
+
+p {
+  text-indent: 50px;
+  text-align: left;
+  letter-spacing: 3px;
+}
+
+.notice {
+    padding: 30px;
+    background: rgb(255, 0, 212);
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    border: 5px solid #bbb;
+    margin-bottom: 15px;
+    width: 38%;
+    padding: 20px;
+    position: relative;
+    left: 30%;
+
+    text-indent: 50px;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.button {
+    position: relative;
+    left: 10%; 
+    width: 200px;
+    background-color: rgb(76, 229, 240);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 5px 60px;
+  }
+
+  .button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .sign_grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+
+/* Post main page */
+  .post-card {
+    width: 60%;
+    background-color: rgba(224, 162, 226, 0.39);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-style: solid;
+    border-color: plum;
+    border-radius: 5px 60px;
+  }
+
+  .message-grid {
+    display: flex;
+    grid-template-columns: auto auto auto;
+  }
+
+  .profile-thumb {
+    padding: 5px;
+    border-radius: 50%;
+    border: solid rgb(124, 165, 153);
+    width: 90px;
+    height: 90px;
+    margin: auto;
+  }
+
+  .profile-thumb-container {
+    padding: 0 90px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .message-internal {
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px 60px;
+  }
+
+  .message {
+    color: pink;
+    padding: 10px;
+  }
+
+  .timestamp {
+    color: white;
+    text-align: right;
+  }
+
+  .message-buttons {
+    position: right;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .button_delete {
+    border: none;
+    width: 130px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.3); 
+    color: rgb(71, 64, 64); 
+    border: 2px solid #b500fd;
+    border-radius: 5px 60px 60px 5px;
+  }
+  .button_edit {
+    border: none;
+    width: 130px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.3); 
+    color: rgb(71, 64, 64); 
+    border: 2px solid #9ed1ee;
+    border-radius: 60px 5px 5px 60px;
+  }
+
+  /* End Post main page */
