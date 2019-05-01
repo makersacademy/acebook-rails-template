@@ -9,6 +9,6 @@ feature 'Redirects to index if user not logged in' do
     sign_up_helper('user@test.com', '123456')
     log_in_helper('user@test.com', '123456')
     visit '/posts'
-    expect(page).to have_content 'New post'
+    expect(page).to have_button 'New post'
   end
 end
