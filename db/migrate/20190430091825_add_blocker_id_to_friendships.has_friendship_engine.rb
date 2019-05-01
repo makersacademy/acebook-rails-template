@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This migration comes from has_friendship_engine (originally 2)
 if ActiveRecord.gem_version >= Gem::Version.new('5.0')
   class AddBlockerIdToFriendships < ActiveRecord::Migration[4.2]; end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'feature_test_helpers'
 
@@ -14,7 +16,7 @@ RSpec.feature 'Sign up', type: :feature do
     fill_in 'user_password', with: '1234'
     fill_in 'user_password_confirmation', with: '1234'
     click_button 'Sign up'
-    expect(page).to have_content("Password is too short (minimum is 6 characters)")
+    expect(page).to have_content('Password is too short (minimum is 6 characters)')
   end
 
   scenario 'User can only enter a password of 10 or less characters' do
@@ -23,7 +25,6 @@ RSpec.feature 'Sign up', type: :feature do
     fill_in 'user_password', with: '12345678910'
     fill_in 'user_password_confirmation', with: '12345678910'
     click_button 'Sign up'
-    expect(page).to have_content("Password is too long (maximum is 10 characters)")
+    expect(page).to have_content('Password is too long (maximum is 10 characters)')
   end
-
 end

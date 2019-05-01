@@ -9,9 +9,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-#User sign up/in gem
+# User sign up/in gem
 gem 'devise'
-#to create a face user
+# to create a face user
 gem 'factory_bot_rails'
 # Gem for relationship between users
 gem 'has_friendship'

@@ -15,5 +15,4 @@ RSpec.feature 'Timeline', type: :feature do
     post_message
     expect(page).to have_content('24 April 2019, 12:00am')
   end
-
 end

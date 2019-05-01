@@ -1,5 +1,14 @@
 User: <%= @user.email %>
 
 <div class="add-friend">
-<%= link_to "Add friend", user_addfriend_path(@user) %>
+  <% if (@user != current_user) && !(@user.friends_with?current_user) %>
+  <%= link_to "Add friend", user_addfriend_path(@user) %>
+  <% end %>
+</div>
+
+<div class="current-user-friends">
+  Friends:
+  <% @user.friends.each do |friend| %>
+    <%= link_to friend.email, user_path(friend.id) %>
+  <% end %>
 </div>
