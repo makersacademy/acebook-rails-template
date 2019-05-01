@@ -5,12 +5,13 @@
 <% @users.each do |user| %>
 <div class="user-card">
  <%= link_to user.email, user_path(user.id) %>
-  <% if (user != current_user) && !(user.friends_with?current_user) && !(current_user.pending_friends.include?(user)) && !(current_user.requested_friends.include?(user)) %>
-    <%= link_to "Add friend", user_addfriend_path(user) %>
+  <% if  (current_user.requested_friends.include?(user)) %>
+    <%= link_to "View friend request.", user_friend_requests_path(current_user.id) %>
   <% elsif current_user.pending_friends.include?(user) %>
     Request pending...
-  <% elsif current_user.requested_friends.include?(user) %>
-    <%= link_to "View friend request.", user_friend_requests_path(current_user.id) %>
+  <% elsif user.friends_with?current_user %>
+  <% elsif user != current_user %>
+    <%= link_to "Add friend", user_addfriend_path(user) %>
   <% end %>
 </div>
 <% end %>

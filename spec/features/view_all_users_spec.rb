@@ -13,3 +13,6 @@ RSpec.feature 'View users', type: :feature do
     expect(current_path).to eq('/users')
   end
 end
+
+
+

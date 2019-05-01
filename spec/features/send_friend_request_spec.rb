@@ -44,6 +44,23 @@ RSpec.feature 'Send friend request', type: :feature do
     click_link('View friend request.')
     expect(current_path).to include("/friend_requests")
   end
+
+  scenario "cannot request friends" do
+    sign_up
+    click_link('Logout')
+    sign_up_2
+    click_link('All Users')
+    click_link('Add friend')
+    click_link('Logout')
+    sign_in
+    click_link('All Users')
+    click_link('View friend request.')
+    click_link('Accept')
+    click_link('Logout')
+    sign_in_2
+    click_link('All Users')
+    expect(page).not_to have_content("james@test.com Add friend")
+  end
 end
 
 
