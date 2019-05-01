@@ -114,3 +114,19 @@ p {
   padding: 1rem;
   font-size: 1.25rem;
 }
+
+input.like-button {
+  background: url(unliked.png) no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+  width: 3rem;
+}
+
+input.unlike-button {
+  background: url(liked.png) no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+  width: 3rem;
+}
