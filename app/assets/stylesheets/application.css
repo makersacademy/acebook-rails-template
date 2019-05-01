@@ -11,6 +11,7 @@ textarea, select, .uneditable-input {
     
     body {
       background: #446db0;
+      cursor:url('http://www.snazzyspace.com/cursorsfolder/pikachu.png'), auto !important; 
     }
     
     .container {
