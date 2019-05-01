@@ -24,6 +24,10 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    unless @post.allow_update?
+      flash[:edit_timeout_failure] = 'Sorry, you can only edit this post in the first 10 minutes after creation'
+      redirect_to '/posts'
+    end
   end
 
   def update

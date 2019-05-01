@@ -1,5 +1,7 @@
 <%= button_to "Log out", logout_path, method: :delete %>
 
+<%= flash[:edit_timeout_failure] %>
+
 <% if flash[:success] %>
   <div class='notice'> <%= flash[:success] %> </div>
 <% end %>
