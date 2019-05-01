@@ -35,7 +35,7 @@ The ninjas are:
 
 ## Our approach so far
 
-Please see our file called "group-reflections&learning" for daily reflections on process and learning.
+Please see our file called [group-reflections&learning](https://github.com/samanthaixer/acebook-roku/blob/master/group-reflections%26learning.md) for daily reflections on process and learning.
 
 Before we started as a team, we reflected on the previous team project and used our learnings to help us set out how we want to work together:
 
