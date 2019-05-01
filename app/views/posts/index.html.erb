@@ -1,7 +1,7 @@
 <%= link_to "Log out", logout_path, method: :delete %>
 
 <% if flash[:success] %>
-<div class='notice'> <%= flash[:success] %> </div>
+  <div class='notice'> <%= flash[:success] %> </div>
 <% end %>
 
 <% @posts.each do |post| %>
