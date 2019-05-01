@@ -42,4 +42,9 @@ RSpec.feature "Comment posts", type: :feature do
     click_button 'Update'
     expect(page).to have_content 'You krill me!'
   end
+
+  scenario "User can delete their comment" do
+    click_button 'Delete comment'
+    expect(page).not_to have_content 'Test adding comment to post'
+  end
 end
