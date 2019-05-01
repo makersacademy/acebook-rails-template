@@ -26,6 +26,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+
+    if @current_user.id != @post.user_id
+      flash[:no_edit] = 'You can only edit posts that you created. Classic Roku.'
+      redirect_to '/posts'
+    end
+
     unless @post.allow_update?
       flash[:edit_timeout_failure] = 'Sorry, you can only edit this post in the first 10 minutes after creation'
       redirect_to '/posts'
