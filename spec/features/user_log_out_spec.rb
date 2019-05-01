@@ -12,7 +12,8 @@ RSpec.feature 'User Log Out', type: :feature do
     fill_in 'session_email', with: 'test@gmail.com'
     fill_in 'session_password', with: '123'
     click_button 'Log in'
-    click_link 'Log out'
-    expect(page).to have_link('Log in')
+    click_button 'Log out'
+    expect(page).to have_content('Log in')
+    expect(page).to_not have_content('Routing Error')
   end
 end

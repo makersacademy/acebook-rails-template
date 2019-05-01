@@ -1,19 +1,26 @@
 
 
     <%= flash[:not_logged_in_error] %>
+<div class="sign_grid">
 
-    <h1>Welcome to AceBook </h1>
+    <div class="welcome_menu container">
 
-<div class="container">
+        <p>Click below to log in </p>
+        <div align="center" class="button button2">
+            <a href= "login"> Log in </a>
+        </div>
 
-    <p>Click below to log in </p>
-    <div align="center">
-        <a href= "login"> Log in </a>
+        <p>Click below to Sign up </p>
+        <div align="center" class="button button2">
+            <a href= "users/new"> Sign Up </a>
+        </div>
+
     </div>
 
-    <p>Click below to Sign up </p>
-    <div align="center">
-        <a href= "users/new"> Sign Up </a>
+    <div class="welcome_text">
+        <h1>Welcome</h1>
+        <h1>to</h1>
+        <h1>Acebook</h1>
     </div>
 
 </div>
