@@ -75,5 +75,14 @@ RSpec.describe PostsController, type: :controller do
       expect(flash[:no_delete]).to have_content('You can only delete posts that you created. Classic Roku.')
     end
 
+    it "does not display an error message on successful deletion" do
+      post :create, params: { post: { message: "Wednesday Hump Day" } }
+      @post = Post.find_by(message: "Wednesday Hump Day")
+
+      delete :destroy, params: { id: @post.id }
+      expect(Post.find_by(message: "Wednesday Hump Day")).to_not be
+      expect(flash[:no_delete]).to_not have_content('You can only delete posts that you created. Classic Roku.')
+    end
+
   end
 end
