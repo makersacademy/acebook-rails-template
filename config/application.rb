@@ -19,6 +19,5 @@ module Acebook
 
     # Automatically loads any files in the lib path
     config.autoload_paths += %W(#{config.root}/lib)
-
   end
 end
