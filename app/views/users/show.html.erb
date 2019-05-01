@@ -8,5 +8,7 @@ User: <%= @user.email %>
 
 <div class="current-user-friends">
   Friends:
-  <%= current_user.friends %>
+  <% current_user.friends.each do |friend| %>
+    <%= link_to friend.email, user_path(friend.id) %>
+  <% end %>
 </div>

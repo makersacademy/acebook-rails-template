@@ -30,3 +30,10 @@ def sign_in
   fill_in 'user_password', with: '123456'
   click_button 'Log in'
 end
+
+def sign_in_2
+  visit '/users/sign_in'
+  fill_in 'user_email', with: 'tome@test.com'
+  fill_in 'user_password', with: '123456'
+  click_button 'Log in'
+end
