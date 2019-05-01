@@ -171,14 +171,13 @@ p {
   .button_logout {
     color: rgb(71, 64, 64); 
     border: 2px solid #9ed1ee;
-    border-radius: 60px 5px 5px 60px;
-
+    border-radius: 5px 60px 60px 5px;
   }
 
   .button_new {
     color: rgb(71, 64, 64); 
     border: 2px solid #b500fd;
-    border-radius: 5px 60px 60px 5px;
+    border-radius: 60px 5px 5px 60px;
   }
 
   /* End Post main page */
