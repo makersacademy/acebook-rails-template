@@ -44,3 +44,6 @@ Before we started as a team, we reflected on the previous team project and used 
 We have a regular approach for each sprint:
 
 ![sprint planning](images/sprint-planning.jpg)
+
+This shows our routes and how our methods work together to build our webpage.
+![Routes](images/database.png) 
