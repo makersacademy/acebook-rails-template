@@ -1,7 +1,7 @@
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
-    <p><%= @post %></p> 
+    <p>Original Message: <%= @post.message %></p>
 
   <%= form.submit "Submit" %>
 <% end %>
