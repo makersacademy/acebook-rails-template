@@ -14,11 +14,15 @@
     <div class='timestamp'>
       <%= Post.format_time(post.created_at) %>
     </div>
-    <div class="edit-link">
-      <%= link_to edit_post_path(post) do %>
-        edit post
-      <% end %>
-    </div>
+
+    <% if post.allow_update? %>
+      <div class="edit-link">
+        <%= link_to edit_post_path(post) do %>
+          edit post
+        <% end %>
+      </div>
+    <% end %>
+
     <div class="delete-button">
       <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id %>
     </div>

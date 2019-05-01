@@ -28,4 +28,11 @@ RSpec.feature "Stops post edits after 10 minutes", type: :feature do
     click_button('Submit')
     expect(page).to have_content 'Sorry, you can only edit this post in the first 10 minutes after creation'
   end
+  scenario "Edit button not generated in posts view if post is over 10 minutes old " do
+    sign_up_helper('user@test.com', '123456')
+    new_post_helper('My new test post')
+    travel(601)
+    visit '/posts'
+    expect(page).to_not have_link 'edit post'
+  end
 end
