@@ -7,11 +7,11 @@ class UsersController < ApplicationController
   end
 
   def create
+    username = params[:user][:username]
     email = params[:user][:email_address].downcase
     password = params[:user][:password]
 
-
-    user = User.new(email: email, password: password)
+    user = User.new(username: username, email: email, password: password)
 
     if user.valid?
       user.save

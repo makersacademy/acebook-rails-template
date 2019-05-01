@@ -26,10 +26,22 @@ RSpec.feature "Sign up", type: :feature do
     expect(page).to have_content("You must be logged in to access that page")
   end
 
-  scenario "Signup form should have email address and password fields" do
-    visit "/"
-    expect(page).to have_field("Email address")
-    expect(page).to have_field("Password")
+  context "Signup form should have correct fields" do
+    before do
+      visit "/"
+    end
+
+    scenario "it should have a username field" do
+      expect(page).to have_field("Username")
+    end
+
+    scenario "it should have an email field" do
+      expect(page).to have_field("Email address")
+    end
+
+    scenario "it should have a password field" do
+      expect(page).to have_field("Password")
+    end
   end
 
   scenario "Completing the signup form navigates to posts page" do

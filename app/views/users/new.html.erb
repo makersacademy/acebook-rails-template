@@ -3,6 +3,11 @@
   
   <%= form_for(:user, url: users_path, local: true) do |form| %>
     <p>
+      <%= form.label :username %><br>
+      <%= form.text_field :username %>
+    </p>
+    
+    <p>
       <%= form.label :email_address %><br>
       <%= form.text_field :email_address %>
     </p>

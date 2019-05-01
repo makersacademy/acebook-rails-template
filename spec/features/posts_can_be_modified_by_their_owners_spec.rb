@@ -10,9 +10,9 @@ RSpec.feature "Editing posts", type: :feature do
   end
 
   scenario "An 'edit' link should not appear on a different user's post" do
-    sign_up email: "user1@gmail.com"
+    sign_up username: "user1", email: "user1@gmail.com"
     create_post
-    sign_up email: "user2@gmail.com"
+    sign_up username: "user2", email: "user2@gmail.com"
     visit "/posts"
     expect(page).not_to have_link("Edit")
   end
@@ -35,10 +35,14 @@ RSpec.feature "Editing posts", type: :feature do
   end
 
   scenario "Users can't edit other users' posts" do
-    user = User.create(email: "my@email.com", password: "123456")
-    post = Post.create(message: "my message", author_id: user.id)
+    # not very feature testy!
+    # maybe this should be a unit test on the route???
+    user1 = User.create(username: "user1",
+                        email: "user1@gmail.com",
+                        password: "123456")
+    post = Post.create(message: "my message", author_id: user1.id)
 
-    sign_up
+    sign_up username: "user2", email: "user2@gmail.com"
     visit "/posts/#{post.id}/edit"
     expect(page).to have_content "You can't edit that post!"
   end

@@ -9,10 +9,10 @@ RSpec.feature "Deleting posts", type: :feature do
     expect(page).to have_link("Delete")
   end
 
-  scenario "An 'delete' link should not appear on a different user's post" do
-    sign_up email: "user1@gmail.com"
+  scenario "A 'delete' link should not appear on a different user's post" do
+    sign_up username: "user1", email: "user1@gmail.com"
     create_post
-    sign_up email: "user2@gmail.com"
+    sign_up username: "user2",  email: "user2@gmail.com"
     visit "/posts"
     expect(page).not_to have_link("Delete")
   end
