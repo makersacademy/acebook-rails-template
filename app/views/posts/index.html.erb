@@ -1,10 +1,11 @@
 <div class="main-page">
 
   <div class="navigation-bar">
-        <%= link_to new_post_path do %>
+    <%= link_to new_post_path do %>
       New post
     <% end %>
-    <%= link_to "Log out", logout_path, method: :delete %>
+    <%= button_to "Log out", logout_path, method: :delete %>
+
   </div> <%# Navigation bar %>
   <div class="profile">
 
@@ -16,7 +17,12 @@
       <div class='notice'> <%= flash[:success] %> </div>
     <% end %>
 
+    <% if flash[:no_delete] %>
+      <div class='notice'> <%= flash[:no_delete] %> </div>
+    <% end %>
+
     <% @posts.reverse.each do |post| %>
+      <div id='post-<%= post.id %>' class='post'>
       <div class="post-card">
 
         <div class="message-grid">
@@ -44,9 +50,12 @@
 
               <div class="message-buttons">
 
+                <% if post.allow_update? %>
+
                   <%= button_to "Edit", edit_post_path(:id => post.id), :method => :get, :id => "edit_#{post.id}", class: "button_edit"%>
                   <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id, class: "button_delete" %>
 
+                <% end %>
               </div>
           </div> <%# right-container %>
         </div> <%# message-grid %>
