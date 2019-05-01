@@ -23,5 +23,12 @@ RSpec.describe UsersController, type: :controller do
       post :create, params: { user: { email: 'withoutatsymbol', password: 'irrelevant' } }
       expect(flash[:bad_email]).to have_content('This email address is invalid')
     end
+
+    it 'prevents duplicate emails being created in database on sign up' do
+      post :create, params: { user: { email: 'testing@duplication.com', password: 'irrelevant' } }
+      post :create, params: { user: { email: 'testing@duplication.com', password: 'irrelevant' } }
+      expect(User.count).to eq(1)
+    end
+
   end
 end
