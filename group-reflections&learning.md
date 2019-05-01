@@ -94,6 +94,10 @@ caused us as a group to be assured that we were headed in the right direction.
 
 ## Day 2! Tues 30th April 2019
 
+#### Sam (pairing with Wardah) 
+We discovered that using `||=` in the `current_user` method would return incorrect results when we tried to update our session. We removed the pipe `||` and everything then worked OK and the tests all passed correctly. We're not entirely sure what the pipe even does.
 
 
 ## Day 3! Weds 1st May 2019
+#### Sam (working on a useful error message when attempting to delete someone else's post)
+When trying to debug my work on showing a useful error message, I discovered that the logout functionality was broken but the test was still passing. This was because the test looked for the text "login" on the page and the error message displayed the word "login"! Not helpful, but we've now added to the test to make it more likely to pickup an error in the page rather than interpretting the error as the right result. 
