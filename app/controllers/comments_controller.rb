@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
     post = Post.find(params[:post_id])
     @comment = post.comments.find(params[:id])
     if @comment.update(comment_params)
+      flash[:notice] = "You krill me!"
       redirect_to posts_url
     end
   end

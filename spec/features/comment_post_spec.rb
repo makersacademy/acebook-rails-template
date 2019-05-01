@@ -35,4 +35,11 @@ RSpec.feature "Comment posts", type: :feature do
       expect(page).to have_no_link 'Edit comment'
     end
   end
+
+  scenario "User sees success message on editing their comment" do
+    click_link 'Edit comment'
+    fill_in 'comment_body', with: 'I want to see a success message'
+    click_button 'Update'
+    expect(page).to have_content 'You krill me!'
+  end
 end
