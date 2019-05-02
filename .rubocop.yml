@@ -40,6 +40,9 @@ Metrics/LineLength:
   Max: 100
   IgnoredPatterns: ['(\A|\s)#']
 
+Metrics/BlockLength:
+  Max: 200
+
 # Code Style
 # ==========
 #

@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'sign_up_helper'
 
- RSpec.feature "Delete posts", type: :feature do
+RSpec.feature "Delete posts", type: :feature do
   scenario "user can delete an existing post" do
     create_user_and_sign_up
     visit "/posts"
