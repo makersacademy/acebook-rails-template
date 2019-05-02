@@ -6,16 +6,18 @@
 
     <div class="nav-right">
 
-      <div class="nav-right-wrap">
+        <div class="nav-right-wrap">
 
-        <%= button_to "New post", new_post_path, method: :get, class: "main_button button_new" %>
-        <%= button_to "Add pictures", new_post_path, method: :get, class: "main_button button_profile" %>
-        <%= button_to "Go to my profile", users_path, method: :get, class: "main_button button_profile" %>
-        <%= button_to "Log out", logout_path, method: :delete, class: "main_button button_logout" %>
-        <div class="nav-username"></div>
-        <div class="nav-profile">
-        </div>
-      <div class="nav-picture"></div>
+          <%= button_to "New post", new_post_path, method: :get, class: "main_button button_new" %>
+          <%= button_to "Add pictures", new_post_path, method: :get, class: "main_button button_add" %>
+          <%= button_to "Go to my profile", users_path, method: :get, class: "main_button button_profile" %>
+          <%= button_to "Log out", logout_path, method: :delete, class: "main_button button_logout" %>
+        
+          <div class="nav-username"></div>
+          <div class="nav-profile"></div>
+          <div class="nav-picture"></div>
+
+      </div> <%# nav-right-wrap %>
     </div> <%# nav-right %>
   </div> <%# Navigation bar %>
 
@@ -54,11 +56,11 @@
               <div class="message-buttons">
 
                 <% if post.allow_update? %>
+
                   <%= button_to "Edit", edit_post_path(:id => post.id), :method => :get, :id => "edit_#{post.id}", class: "main_button button_edit"%>
-
-                <% end %>
-
                   <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id, class: "main_button button_delete" %>
+                
+                <% end %>
               </div>
             </div> <%# right-container %>
           </div> <%# message-grid %>
