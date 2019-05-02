@@ -20,4 +20,12 @@ RSpec.describe AlbumsController, type: :controller do
     end
   end
 
+  describe "POST#CREATE" do
+    it "add an album to Database" do
+      User.create({email: "mynewuser@users.com", password: "goroku666"})
+      session[:user_id] = 1
+      post :create, params: { album: {name: "test album" }}
+      expect(Album.find_by(name: "test album")).to be
+    end
+  end
 end
