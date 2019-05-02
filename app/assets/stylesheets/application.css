@@ -61,8 +61,6 @@ h3 {
 }
 
 .devise-shared-links {
-  /* float: right; */
-  /* padding: 1rem; */
   font-size: 1.25rem;
 }
 
@@ -122,6 +120,62 @@ p {
   padding: 2rem;
 }
 
+.post-container {
+  margin: auto;
+  max-width: 800px;
+}
+
+.post-text {
+  background-color: white;
+  border-radius: 3px;
+  margin: auto;
+  padding: 1rem;
+  width: 90%;
+}
+
+.post-date {
+  background-color: darkgrey;
+  border-radius: 2px;
+  color: white;
+  font-size: 16px;
+  margin: 10px;
+  padding: 0.45rem;
+}
+
+.likes-container {
+  align-items: center;
+  display: flex;
+  margin: auto;
+  margin-left: 0.6rem;
+  max-width: 90%;
+  justify-content: left;
+}
+
+.update-delete-post-container {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-meta-data {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+
+.number-of-likes {
+  background-color: white;
+  border-radius: 3px;
+  color: rgb(47, 85, 164);
+  padding: 0.3rem;
+}
+
+input[type=submit].delete-button {
+  font-size: 16px;
+  margin: 10px;
+  padding: 0.5rem;
+}
+
 .field {
   font-size: 0;
   padding: 1rem;
@@ -135,8 +189,9 @@ p {
 
 .post {
   background-color: lightgrey;
+  border-radius: 5px;
   margin: 1rem;
-  padding: 1.5rem;
+  padding: 2rem;
   font-size: 20px;
 }
 
@@ -148,28 +203,36 @@ a {
   align-items: center;
   background-color: rgb(255, 81, 0);
   border-radius: 5px;
-  color: white;
   display: flex;
   font-size: 1.25rem;
-  justify-content: space-around;
+  justify-content: left;
   margin: 1rem;
   padding: 1rem;
   text-align: right;
   width: 10rem;
 }
 
+.new-post-anchor {
+  color: white;
+  padding-left: 1rem;
+}
+
 input.like-button, input.like-comment-button {
   background: url(unliked.png) no-repeat;
+  background-color: white;
   background-position: center;
   background-size: contain;
   cursor: pointer;
+  height: 2.3rem;
   width: 3rem;
 }
 
 input.unlike-button, input.unlike-comment-button {
   background: url(liked.png) no-repeat;
+  background-color: white;
   background-position: center;
   background-size: contain;
   cursor: pointer;
+  height: 2.3rem;
   width: 3rem;
 }
