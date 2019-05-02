@@ -8,6 +8,12 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index 
+    # @posts = Post.all
+    @current_user_id = current_user.id
+    @posts = Post.where("user_id = #{@current_user_id}")
+  end 
+
   def create
     if /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/.match?(user_params[:email])
       @user = User.create(user_params)
