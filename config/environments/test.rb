@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
+
+
+# Store uploaded files on the local file system in a temporary directory.
+ config.active_storage.service = :test
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's
