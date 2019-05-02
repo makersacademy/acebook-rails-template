@@ -158,8 +158,7 @@ a {
   width: 10rem;
 }
 
-
-input.like-button {
+input.like-button, input.like-comment-button {
   background: url(unliked.png) no-repeat;
   background-position: center;
   background-size: contain;
@@ -167,7 +166,7 @@ input.like-button {
   width: 3rem;
 }
 
-input.unlike-button {
+input.unlike-button, input.unlike-comment-button {
   background: url(liked.png) no-repeat;
   background-position: center;
   background-size: contain;

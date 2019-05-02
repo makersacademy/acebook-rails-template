@@ -1,7 +1,9 @@
 class LikesController < ApplicationController
+  before_action :find_likeable
+
   def create
-    @post = Post.find(params[:post_id])
-    @like = @post.likes.create!(user_id: current_user.id)
+    @like = @likeable.likes.new(user_id: current_user.id)
+    @like.save
     redirect_to posts_path
   end
 
@@ -10,6 +12,13 @@ class LikesController < ApplicationController
     like.destroy
 
     redirect_to posts_path
+  end
+
+  private
+
+  def find_likeable
+    @likeable = Comment.find_by_id(params[:comment_id]) if params[:comment_id]
+    @likeable = Post.find_by_id(params[:post_id]) if params[:post_id]
   end
 
 end

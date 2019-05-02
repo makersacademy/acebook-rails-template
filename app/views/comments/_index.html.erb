@@ -1,5 +1,17 @@
 <% post.comments.each do |comment| %>
   <p><%= comment.body %></p>
+  <%= comment.created_at.strftime('%H:%M, %-d %B') %>
+  <p id="comment_number_of_likes"><%= comment.likes.length %></p>
+
+  <div id="like-form">
+    <% if comment.likes.find { |like| like.user_id === current_user.id } %>
+      <% like = comment.likes.find { |like| like.user_id === current_user.id } %>
+      <%= button_to '', comment_like_path(comment, like), method: :delete, :class => "unlike-comment-button" %>
+    <% else %>
+      <%= button_to '', comment_likes_path(comment), method: :post, :class => "like-comment-button" %>
+    <% end %>
+  </div>
+
   <% if comment.user_id == current_user.id && comment.less_than_ten_mins_ago %>
     <%= link_to edit_post_comment_path(post, comment) do %>
       Edit comment
