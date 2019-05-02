@@ -13,21 +13,42 @@
  *= require_tree .
  *= require_self
  */
- @import url('https://fonts.googleapis.com/css?family=Roboto');
- body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+  font-family: 'Roboto', sans-serif;    
+  margin: 0;
+  margin-top: 200px;
+    
  }
 .page-header {
-    background-color: #3b5998;
-    margin: 0;
-    color: white;
-    display: flex;
-    align-items: left;
+  align-items: left;
+  background-color: #3b5998;
+  color: white;
+  display: flex;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-up-header {
+  text-align: center;
 }
 
 h1 {
-  padding: 2rem;
+  margin: 1.25rem 0 0 0;
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+
+h3 {
+  margin: 0.5rem 0;
+  padding-left: 2rem;
 }
 
 .logo {
@@ -40,14 +61,15 @@ h1 {
 }
 
 .devise-shared-links {
-  float: right;
-  padding: 1rem;
+  /* float: right; */
+  /* padding: 1rem; */
   font-size: 1.25rem;
 }
 
 h2 {
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
 
 input[type=submit] {
@@ -61,12 +83,13 @@ input[type=submit] {
   font-size: 20px;
 }
 
-input[type=password] {
+input {
   font-size: 20px;
+  margin: 5px;
 }
 
-input[type=email] {
-  font-size: 20px;
+.password-rules {
+  font-size: 14px;
 }
 
 label {
@@ -74,15 +97,18 @@ label {
 }
 
 .alert {
-  background-color: rgba(86, 149, 62, 0.3);
+  background-color: rgb(161, 201, 145);
   margin: 0;
-  padding: 2rem;
-  text-align: center;
-  font-size: 20px;
+  padding: 10px;
+  text-align: left;
+  font-size: 16px;
+  position: fixed;
+  top: 140px;
+  width: 100%;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 .container {
@@ -91,29 +117,47 @@ p {
   border-radius: 0.5rem;
   display: flex;
   justify-content: space-around;
-  margin: 5rem auto;
+  margin: 2rem auto;
   max-width: 400px;
   padding: 2rem;
 }
 
 .field {
-  padding: 1.5rem;
+  font-size: 0;
+  padding: 1rem;
 }
 
 .hmenu {
-  float: right;
   padding: 2rem;
+  position: fixed;
+  right: 2rem;
 }
 
 .post {
+  background-color: lightgrey;
+  margin: 1rem;
   padding: 1.5rem;
   font-size: 20px;
 }
 
-.new-post-path {
-  padding: 1rem;
-  font-size: 1.25rem;
+a {
+  text-decoration: none;
 }
+
+.new-post-path {
+  align-items: center;
+  background-color: rgb(255, 81, 0);
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  font-size: 1.25rem;
+  justify-content: space-around;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: right;
+  width: 10rem;
+}
+
 
 input.like-button {
   background: url(unliked.png) no-repeat;
