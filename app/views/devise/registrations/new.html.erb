@@ -1,9 +1,10 @@
-<div class="devise-shared-links">
-  <%= render "devise/shared/links" %>
-</div>
-<div class="header">
+<div class="sign-up-header">
   <h2>Sign up to PlaiceBook</h2>
+  <div class="devise-shared-links">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
+
 <div class="container">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -17,7 +18,7 @@
     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %><br>
-      <em>(Must be between <%= @minimum_password_length %> and 10 characters)</em>
+      <div class="password-rules">Must be between <%= @minimum_password_length %> and 10 characters</div>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
