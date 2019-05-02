@@ -234,37 +234,12 @@
 
   /* End Post main page */
 
-  /* banner */
-
-  
-  /* .main-banner {
-    display: block;
-    height: 60px;
-    width: 100%;
-    background:
-    linear-gradient(
-      cyan,
-      transparent
-    ),
-    linear-gradient(
-      -45deg,
-      magenta,
-      transparent
-    ),
-    linear-gradient(
-      45deg,
-      yellow,
-      transparent
-    );
-    background-blend-mode: multiply;
-  } */
-
   .page-padding {
     padding: 100px;
   }
 
   .new-container {
-    background-color: rgba(255, 0, 212, 0.6);
+    background-color: rgb(255, 0, 212);
     width: 50%;
     padding: 50px 90px;
     margin-left: auto;
@@ -283,7 +258,7 @@
   }
 
   .new-input {
-    background-color: rgb(255, 255, 255, 0.4);
+    background-color: rgb(255, 255, 255);
     width: 90%;
     height: 300px;
     margin: 20px 70px;
@@ -292,9 +267,6 @@
     font-size: 20px;
   }
 
-  ::placeholder {
-    color: white;
-  }
 
 
 
@@ -498,7 +470,6 @@
   .beefy {
     padding: 10px 150px;
   }
-
   
 }
   /* End of mobile */

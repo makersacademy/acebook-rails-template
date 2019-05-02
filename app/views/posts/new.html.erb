@@ -1,18 +1,14 @@
-<head>
-
-</head>
-
-<body>
   <div class="page-padding">
     <div class="new-container">
 
       <%= form_for @post do |form| %>
 
-        <%= form.text_area :message, placeholder: "Add a message", class: "new-input" %>
+      <% form.label :message %>
+
+        <%= form.text_area :message, placeholder: "Message", class: "new-input" %>
 
         <%= form.submit "Submit", class: "submit-button" %>
       <% end %>
-
+      
     </div> <%# new-container %>
-  </div> <%# new-header%>
-</body>
+  </div> <%# new-header %>
