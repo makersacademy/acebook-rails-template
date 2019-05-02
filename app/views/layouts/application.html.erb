@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acebook</title>
+    <title>WookieBook</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +10,31 @@
   </head>
 
   <body>
+
+
+  <% if user_signed_in? %>
+   <!--Navigation Bar-->
+    <nav class="navbar navbar-light bg-light d-flex">
+      <div class="container">
+        <div class="logo">
+          <a class="navbar-brand" href="/posts">
+            <i class="fab fa-jedi-order"></i>
+            WookieBook
+          </a>
+        </div>
+        <div class="m-auto">
+          <form class="form-inline search-form">
+            <div>
+            <%= link_to "All Users", users_path %>
+            <%= link_to "New post", new_post_path %>
+            <%= link_to "My friends", user_path(current_user.id) %>
+            <%= link_to "My Requests", user_friend_requests_path(current_user.id) %>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+  <% end %>
 
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
