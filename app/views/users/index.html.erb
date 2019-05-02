@@ -1,17 +1,40 @@
-<% flash.each do |key, value| %>
-<%= content_tag :div, value, class: "flash #{key}" %>
-<% end %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="http://allfont.net/allfont.css?fonts=star-jedi" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <style>
+      h1 {
+        font-family: 'Star Jedi', arial;
+        font-size: 48px;
+        text-shadow: 4px 4px 4px #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <br>
+    <br>
+    <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "flash #{key}" %>
+    <% end %>
 
-<% @users.each do |user| %>
-<div class="user-card">
- <%= link_to user.email, user_path(user.id) %>
-  <% if  (current_user.requested_friends.include?(user)) %>
-    <%= link_to "View friend request.", user_friend_requests_path(current_user.id) %>
-  <% elsif current_user.pending_friends.include?(user) %>
-    Request pending...
-  <% elsif user.friends_with?current_user %>
-  <% elsif user != current_user %>
-    <%= link_to "Add friend", user_addfriend_path(user) %>
-  <% end %>
-</div>
-<% end %>
+    <br>
+      <h1>Fellow Jedi</h1>
+    <br>
+    <center>
+    <% @users.each do |user| %>
+    <div class="user-card">
+     <%= link_to user.email, user_path(user.id) %>
+      <% if  (current_user.requested_friends.include?(user)) %>
+        <%= link_to "View friend request.", user_friend_requests_path(current_user.id), class:'btn btn-primary' %>
+      <% elsif current_user.pending_friends.include?(user) %>
+        Found someone, you have?
+      <% elsif user.friends_with?current_user %>
+      <% elsif user != current_user %>
+        <%= link_to "Add friend", user_addfriend_path(user), class:'btn btn-primary' %>
+      <% end %>
+    </div>
+    <% end %>
+    <center>
+  </body>
+</html>
