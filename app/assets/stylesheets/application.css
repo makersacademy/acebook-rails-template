@@ -203,6 +203,10 @@
     border: 2px solid #39e41b;
   }
 
+  .main_button:hover {
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
   .nav-right-wrap {
     height:100%;
     width:100%;
@@ -403,6 +407,59 @@
     border:4px solid #87D7FF;
     background-size:cover;
   }
-}
 
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(255, 0, 212);
+    text-indent: 50px;
+    letter-spacing: 3px;
+
+    /*font-size: 45px;*/
+    font-size: 2em; /*fallback*/
+    font-size: 5vw;
+  }
+
+  .button {
+    position: relative;
+    height: 90px;
+    left: 10%; 
+    width: 200px;
+    background-color: rgb(76, 229, 240);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 60px;
+    margin: 4px 2px;
+    border-radius: 5px 60px;
+  }
+
+  .welcome_text {
+    padding: 0 100px;
+  }
+
+  p {
+    color:  #446db0;
+  }
+
+  .container {
+    height: 150px;
+    width: 180px;
+    border: none;
+  }
+
+  .sign_grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+  }
+
+  .beefy {
+    padding: 10px 150px;
+  }
+
+  
+}
   /* End of mobile */
