@@ -2,13 +2,6 @@
  <%= content_tag :div, value, class: "flash #{key}" %>
 <% end %>
 
-<div>
- <%= link_to "All Users", users_path %>
- <%= link_to "New post", new_post_path %>
- <%= link_to "My friends", user_path(current_user.id) %>
- <%= link_to "My Requests", user_friend_requests_path(current_user.id) %>
-</div>
-
 <% @posts.each do |post| %>
   <p><%= simple_format(post.message) %></p>
   <p> posted by <%= post.user.email %></p>

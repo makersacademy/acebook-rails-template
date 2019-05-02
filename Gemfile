@@ -9,6 +9,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#Bootstrap Gem
+gem 'bootstrap'
+
+#JQuery
+gem 'jquery-rails'
+
+#Font awesome
+gem 'font-awesome-rails'
+
 # User sign up/in gem
 gem 'devise'
 # to create a face user
@@ -58,4 +67,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
