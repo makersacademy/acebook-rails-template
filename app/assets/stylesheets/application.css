@@ -258,7 +258,7 @@
   }
 
   .new-input {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(166, 78, 207, 0.6);
     width: 90%;
     height: 300px;
     margin: 20px 70px;
@@ -267,6 +267,19 @@
     font-size: 20px;
   }
 
+  .edit-input {
+    background-color: rgba(166, 78, 207, 0.6);
+    width: 90%;
+    height: 300px;
+    margin: 20px 70px;
+    border-radius: 5px 90px 150px 180px;
+    color: white;
+    font-size: 20px;
+  }
+
+  ::placeholder {
+    color: white;
+  }
 
 
 
