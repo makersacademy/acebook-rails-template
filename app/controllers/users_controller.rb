@@ -8,6 +8,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index 
+  end 
+
   def create
     if /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/.match?(user_params[:email])
       @user = User.create(user_params)
