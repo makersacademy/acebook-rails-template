@@ -2,12 +2,12 @@
     <div class="new-container">
 
       <%= form_for @post do |form| %>
-      
+
       <p>Original Message: <%= @post.message %></p>
-      <%= form.text_field :message, placeholder: "Message", class: "edit-input"  %>
+      <%= form.text_area :message, placeholder: "Message", class: "edit-input"  %>
 
       <%= form.submit "Submit", class: "submit-button" %>
       <% end %>
-      
+
     </div> <%# new-container %>
   </div> <%# new-header %>

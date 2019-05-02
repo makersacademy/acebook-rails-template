@@ -19,7 +19,13 @@
       <div class='notice'> <%= flash[:no_edit] %> </div>
     <% end %>
 
-    <%= flash[:edit_timeout_failure] %>
+    <% if flash[:edit_timeout_failure] %>
+      <div class='notice'> <%= flash[:edit_timeout_failure] %> </div>
+    <% end %>
+
+    <% if flash[:bad_email] %>
+      <div class='notice'> <%= flash[:bad_email] %> </div>
+    <% end %>
 
 
   </head>
