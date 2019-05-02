@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def destroy
     @current_post = Post.find(params[:id])
-    if @current_user.id == @current_post.user_id
+    if current_user.id == @current_post.user_id
       @post = Post.delete(params[:id])
     else
       flash[:no_delete] = 'You can only delete posts that you created. Classic Roku.'
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
 
-    if @current_user.id != @post.user_id
+    if current_user.id != @post.user_id
       flash[:no_edit] = 'You can only edit posts that you created. Classic Roku.'
       redirect_to '/posts'
     end
