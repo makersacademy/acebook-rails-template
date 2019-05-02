@@ -1,8 +1,32 @@
-User: <%= @user.email %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="http://allfont.net/allfont.css?fonts=star-jedi" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <style>
+      h1 {
+        font-family: 'Star Jedi', arial;
+        font-size: 48px;
+        text-shadow: 4px 4px 4px #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <br>
+    <br>
+    <h1>Who's your Jedi Master?</h1>
 
-<div class="current-user-friends">
-  Friends:
-  <% @user.friends.each do |friend| %>
-    <%= link_to friend.email, user_path(friend.id) %>
-  <% end %>
-</div>
+    Jedi: <%= @user.email %>
+    <center>
+    <div class="current-user-friends">
+      <div class="card" style="width: 15rem;">
+        <div class="card-body">
+      <% @user.friends.each do |friend| %>
+        <%= link_to friend.email, user_path(friend.id) %>
+      <% end %>
+      </div>
+      </div>
+    </div>
+    <center>
+  </body>
+</html>

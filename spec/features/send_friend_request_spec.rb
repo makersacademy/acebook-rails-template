@@ -28,7 +28,7 @@ RSpec.feature 'Send friend request', type: :feature do
     click_link('Add friend')
     expect(current_path).to include('/users')
     expect(page).not_to have_content("james@test.com Add friend")
-    expect(page).to have_content("james@test.com Request pending...")
+    expect(page).to have_content("james@test.com Found someone, you have?")
   end
 
   scenario "cannot request someone who requested you" do
@@ -62,6 +62,3 @@ RSpec.feature 'Send friend request', type: :feature do
     expect(page).not_to have_content("james@test.com Add friend")
   end
 end
-
-
-
