@@ -48,15 +48,6 @@ class PostsController < ApplicationController
     end
     redirect_to posts_url
   end
-
-  #          <%= link_to edit_post_path(post) do %>
-  # edit post
-  # <% end %>
-  #           <%= button_to "Edit", post_path(:id => edit.id), :method => :edit, :id => post.id, class: "button_edit"%>
-
-  #           <%= button_to "Edit", edit_post_path(:id => post.id), :method => :update, :id => post.id, class: "button_edit"%>
-
-
   private
 
   def post_params
