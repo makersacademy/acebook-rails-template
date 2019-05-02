@@ -1,10 +1,12 @@
 env:
+  matrix:
+  - MOZ_HEADLESS=1
   global:
-    - CC_TEST_REPORTER_ID=c81bb354071f6fb61c6b5cf0034e1ed458483b293fd943f017aaef2c9739f2f6
+    secure: LKCVApV/KonuE7Xxjcc0CgWGH9lsbcMSdtdtqsDsUM1m/wRRweZ0z1jNQbjn6jdMltiKiPAPRlrQ+JRSvZpJLJLhqd07a7c/Nkr0AjUavHOipCqFoJi4gqEOPNOvCAZCWFFIxevuxYR2X1B6PfELx0w6rOIRAJgYA8GQEz6accFRQkXQlvpoiemBMHHUww5fZc/byCp01lCgkb/uud4itp9Ifc6+/EchGrilbyHnpkc2VPZHJQxV75mYjWm8Lsp2/5GdmuIEf1w6Vkx05uFnwB04jKQBISxrkrgu011YuG+SB9bMut+uJogAIu9jUZaLBx1Kvk+QTW4H5FC/LM/WnFWHRTQmLyuXEDh7xxKBGsGwrML7p4hUq4P3Dkun8ol3xFOghEZVjMKMe/fRgH5/gsYq2Ty2I0Kh7Y74gsTfGCrLRWEBQfBNApC7fbPGua7p1yzhz6ZnxNp15+9CCoO/1OKQ11V8pYsV1Px0bvO5Hcs6hA3yOzuwiaH+RI0yndXFrx89JGp/8bHsuHFTQ0EmaglpsgbwIbdTYrQI/Ct90FihQ3SBA7+YzGiGyo0HG/c64CrOWF7ACdBI13Y1bDZicu7UzFAd8nIgLou09wPQnQfb6gVmWSqs//t6oqhVR+AgYTrLXXAlUAZLRDM/EhBJZuaBorD6uu9QF9bINPwKerE=
 
 language: ruby
 
-rvm: '2.5.0'
+rvm: 2.5.0
 
 before_script:
   - bundle exec rails db:create RAILS_ENV=test
@@ -19,18 +21,16 @@ before_script:
 
 before_install:
   - gem install selenium-webdriver
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+    > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+  - "./cc-test-reporter before-build"
 
 script:
   - bundle exec rspec
 
 addons:
   firefox: latest
-
-env:
-  - MOZ_HEADLESS=1
-
+  
 after_script:
-- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
