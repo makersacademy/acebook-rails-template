@@ -220,6 +220,26 @@
     flex-direction: row;
     align-self: flex-end;
     text-align: center;
+    overflow: hidden;
+  }
+
+  .nav-menu:before {
+    content: "\f0d8";
+    position: absolute;
+    top: -20px;
+    left: 23px;
+    font-size: 2em;
+    z-index: 1;
+    color: #fff;
+  }
+
+  .nav-menu{
+    border-radius: 10px;
+  }
+
+  .nav-menu li:hover, .nav-menu i:hover{
+    background-color: #34495e;
+    color: #fff;
   }
 
   .nav-picture {
@@ -278,7 +298,7 @@
   }
 
   ::placeholder {
-    color: white;
+    color: rgb(80, 79, 79);
   }
 
 
