@@ -2,6 +2,8 @@
  <%= content_tag :div, value, class: "flash #{key}" %>
 <% end %>
 
+<div class="posts">
+
 <% @posts.each do |post| %>
   <p><%= simple_format(post.message) %></p>
   <p> posted by <%= post.user.email %></p>
@@ -9,3 +11,5 @@
   <td><%= link_to 'Edit', edit_post_path(post) %></td>
   <td><%= link_to 'Delete',  post,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
+
+</div>
