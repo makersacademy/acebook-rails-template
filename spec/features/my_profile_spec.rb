@@ -5,7 +5,7 @@ RSpec.feature 'My profile', type: :feature do
         sign_up_helper('user@test.com', '123456')
         log_in_helper('user@test.com', '123456')
         expect(page).to have_button('Go to my profile')
-    end 
+    end
 
     scenario 'i want the "go to my profile" button to take me to my profile' do
         sign_up_helper('user@test.com', '123456')
@@ -38,5 +38,27 @@ RSpec.feature 'My profile', type: :feature do
         click_button('Go to my profile')
         expect(page).to have_content("It's not Monday!!")
         expect(page).to_not have_content("It's almost Friday!!")
-    end 
+    end
+
+    scenario 'I want to see buttons to navigate' do
+        sign_up_helper('user1@test.com', '123456')
+        log_in_helper('user1@test.com', '123456')
+        new_post_helper("It's almost Friday!!")
+
+        click_button('Go to my profile')
+        expect(page).to have_button("Go to posts")
+        expect(page).to have_button("Add pictures")
+        expect(page).to have_button("Log out")
+    end
+
+    scenario 'I want to be able to return to the main posts page' do
+        sign_up_helper('user1@test.com', '123456')
+        log_in_helper('user1@test.com', '123456')
+        new_post_helper("It's almost Friday!!")
+
+        click_button('Go to my profile')
+        click_button("Go to posts")
+        expect(page).to have_button("Go to my profile")
+        expect(current_path).to eq('/posts')
+    end
 end
