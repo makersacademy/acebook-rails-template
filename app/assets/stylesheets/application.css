@@ -2,8 +2,13 @@
 
 @media (min-width : 1070px) {
 
+  head {
+    background-color: #9ed1ee;
+
+  }
+
   body {
-    cursor:url('http://www.snazzyspace.com/cursorsfolder/pikachu.png'), auto !important; 
+    cursor:url('http://www.snazzyspace.com/cursorsfolder/pikachu.png'), auto !important;
     background: #446db0;
     margin: 0;
     padding: 0;
@@ -64,11 +69,11 @@
     padding: 30px;
     background: rgb(255, 0, 212);
     color: rgb(0, 0, 0);
-    font-size: 30px;
+    font-size: 20px;
     border: 5px solid #bbb;
     margin-bottom: 15px;
     width: 38%;
-    padding: 20px;
+    padding: 10px;
     position: relative;
     left: 30%;
 
@@ -79,7 +84,7 @@
 
   .button {
     position: relative;
-    left: 10%; 
+    left: 10%;
     width: 200px;
     background-color: rgb(76, 229, 240);
     border: none;
@@ -171,35 +176,35 @@
     font-size: 16px;
     margin: 4px 2px;
     color: rgba(255, 255, 255, 0.1);
-    background-color: rgba(255, 255, 255, 0.3); 
+    background-color: rgba(255, 255, 255, 0.3);
 
   }
 
   .button_delete {
-    color: rgb(46, 46, 46); 
+    color: rgb(46, 46, 46);
     border: 2px solid #b500fd;
     border-radius: 5px 60px 60px 5px;
   }
   .button_edit {
-    color: rgb(46, 46, 46); 
+    color: rgb(46, 46, 46);
     border: 2px solid #9ed1ee;
     border-radius: 60px 5px 5px 60px;
   }
 
   .button_logout {
-    color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
     border: 2px solid #ffd900;
     border-radius: 5px 60px 60px 5px;
   }
 
   .button_new {
-    color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
     border: 2px solid #4e50d3;
     border-radius: 60px 5px 5px 60px;
   }
 
   .button_profile {
-    color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
     border: 2px solid #39e41b;
   }
 
@@ -354,17 +359,17 @@
     font-size: 16px;
     margin: 4px 2px;
     color: rgba(255, 255, 255, 0.1);
-    background-color: rgba(255, 255, 255, 0.3); 
+    background-color: rgba(255, 255, 255, 0.3);
 
   }
 
   .button_delete {
-    color: rgb(46, 46, 46); 
+    color: rgb(46, 46, 46);
     border: 2px solid #b500fd;
     border-radius: 5px 60px 60px 5px;
   }
   .button_edit {
-    color: rgb(46, 46, 46); 
+    color: rgb(46, 46, 46);
     border: 2px solid #9ed1ee;
     border-radius: 60px 5px 5px 60px;
   }
@@ -379,19 +384,19 @@
   }
 
   .button_logout {
-    color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
     border: 2px solid #ffd900;
     border-radius: 5px 60px 60px 5px;
   }
 
   .button_new {
-    color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
     border: 2px solid #4e50d3;
     border-radius: 60px 5px 5px 60px;
   }
 
   .button_profile {
-    color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
     border: 2px solid #39e41b;
   }
 
@@ -434,7 +439,7 @@
   .button {
     position: relative;
     height: 90px;
-    left: 10%; 
+    left: 10%;
     width: 200px;
     background-color: rgb(76, 229, 240);
     border: none;
@@ -470,6 +475,6 @@
   .beefy {
     padding: 10px 150px;
   }
-  
+
 }
   /* End of mobile */

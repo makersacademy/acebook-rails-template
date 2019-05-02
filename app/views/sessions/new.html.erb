@@ -1,9 +1,11 @@
-<%= flash[:fail_duplicate_email] %>
+<% if flash[:fail_duplicate_email] %>
+  <div class='notice'> <%= flash[:fail_duplicate_email] %> </div>
+<% end %>
 
 <% provide(:title, "Log in") %>
 
 <% if flash[:danger] %>
-<div class='notice'> <%= flash[:danger] %> </div>
+  <div class='notice'> <%= flash[:danger] %> </div>
 <% end %>
 
 <div class="sign_grid">

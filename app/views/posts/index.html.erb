@@ -8,7 +8,7 @@
 
       <div class="nav-right-wrap">
         <div class="nav-username"></div>
-        <div class="nav-profile">  
+        <div class="nav-profile">
             <%= button_to "New post", new_post_path, method: :get, class: "main_button button_new" %>
             <%= button_to "Add pictures", new_post_path, method: :get, class: "main_button button_profile" %>
              <%= button_to "Go to my profile", users_path, method: :get, class: "main_button button_profile" %>
@@ -22,20 +22,6 @@
 
   <div class="posts">
 
-    <% if flash[:success] %>
-      <div class='notice'> <%= flash[:success] %> </div>
-    <% end %>
-
-    <% if flash[:no_delete] %>
-      <div class='notice'> <%= flash[:no_delete] %> </div>
-    <% end %>
-
-    <% if flash[:no_edit] %>
-      <div class='notice'> <%= flash[:no_edit] %> </div>
-    <% end %>
-
-    <%= flash[:edit_timeout_failure] %>
-
     <% @posts.reverse.each do |post| %>
         <div class="post-card">
 
@@ -47,7 +33,7 @@
                 <div class='message'>
                   <%= simple_format post.message %>
                 </div>
-                
+
                 <div class='user'>
                   <%= User.find_by(id: post.user_id).email %>
                 </div>
@@ -70,9 +56,9 @@
 
                 <% if post.allow_update? %>
                   <%= button_to "Edit", edit_post_path(:id => post.id), :method => :get, :id => "edit_#{post.id}", class: "main_button button_edit"%>
-                
+
                 <% end %>
-                  
+
                   <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id, class: "main_button button_delete" %>
               </div>
             </div> <%# right-container %>
