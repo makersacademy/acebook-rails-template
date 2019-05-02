@@ -234,30 +234,41 @@
 
   /* End Post main page */
 
-  /* banner */
+  .page-padding {
+    padding: 100px;
+  }
 
-  
-  /* .main-banner {
-    display: block;
-    height: 60px;
-    width: 100%;
-    background:
-    linear-gradient(
-      cyan,
-      transparent
-    ),
-    linear-gradient(
-      -45deg,
-      magenta,
-      transparent
-    ),
-    linear-gradient(
-      45deg,
-      yellow,
-      transparent
-    );
-    background-blend-mode: multiply;
-  } */
+  .new-container {
+    background-color: rgb(255, 0, 212);
+    width: 50%;
+    padding: 50px 90px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 400px;
+    border-radius: 50px 90px 150px 500px;
+  }
+
+  .submit-button {
+    background-color: #4e50d3;
+    text-align: center;
+    color: white;
+    border: 2px solid #b500fd;
+    border-radius: 60px;
+    margin: 20px 230px;
+  }
+
+  .new-input {
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    height: 300px;
+    margin: 20px 70px;
+    border-radius: 5px 90px 150px 300px;
+    color: white;
+    font-size: 20px;
+  }
+
+
+
 
   /* End of desktop site*/
 
@@ -459,7 +470,6 @@
   .beefy {
     padding: 10px 150px;
   }
-
   
 }
   /* End of mobile */
