@@ -20,12 +20,29 @@
    color: yellow;
  }
 
- // .posts{
- //   text-align: center;
- // }
+ .posts{
+   text-align: center;
+   padding-top: 50px;
+ }
 
- // .navbar{
- //   position: fixed;
- //   top: 0;
- //   width: 100%;
- // }
+ .card{
+   background-color: black;
+   border: groove grey;
+ }
+
+ .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-body{
+	font-weight: bold;
+	text-align: center;
+}
+
+.message-footer{
+  font-size: 10px;
+}
+
+.btn-primary {
+  padding: 1px 10px 1px 10px;
+}
