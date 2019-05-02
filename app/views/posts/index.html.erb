@@ -2,14 +2,28 @@
  <%= content_tag :div, value, class: "flash #{key}" %>
 <% end %>
 
-<div class="posts">
 
+<div class="card-center">
+<br>
+<div class="posts">
 <% @posts.each do |post| %>
+<center>
+<div class="card" style="width: 15rem;">
+  <div class="card-body">
+    <div class="message">
   <p><%= simple_format(post.message) %></p>
+  </div>
+  <div class="message-footer">
   <p> posted by <%= post.user.email %></p>
   <p><%= post.created_at.strftime("%d %B %Y, %l:%M%P") %></p>
-  <td><%= link_to 'Edit', edit_post_path(post) %></td>
-  <td><%= link_to 'Delete',  post,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </div>
+  <td><%= link_to 'Edit', edit_post_path(post), class:'btn btn-primary' %></td>
+  <td><%= link_to 'Delete',  post,  method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-primary' %></td>
+  </div>
+  <center>
+  </div>
+  <br>
 <% end %>
+</div>
 
 </div>
