@@ -38,7 +38,7 @@ RSpec.feature "Albums page", type: :feature do
     fill_in 'album_name', with: 'Shearing Harry'
     click_button 'Create'
     click_button 'Upload Photos'
-    attach_file 'album_photos', "images/avatar2.png"
+    attach_file 'album_photos', "images/pro-tro.jpg"
     click_button 'Upload'
     expect(page).to have_content 'Shearing Harry'
     # expect(page).to have_css("img[src*='avatar2.png']")
