@@ -1,7 +1,32 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-    <p>Original Message: <%= @post.message %></p>
 
-  <%= form.submit "Submit" %>
-<% end %>
+<div class="speech-page-split">
+
+  <div class="speech-left-half">
+    <div class="nav-picture"></div>
+  </div>
+
+  <div class="speech-right-half">
+    <div class="speech_bubble_outside">
+      <div class="speech-bubble1">
+        <div class="speech-bubble1-hide">
+          <div class="speech-bubble2">
+            <div class="speech-bubble2-hide">
+              <div class="speech-bubble3-hide">
+
+                <%= form_for @post do |form| %>
+
+                  <div class="new-bubble">
+                    <%= form.text_area :message, placeholder: "Message", class: "edit-new-input"  %>
+                  </div>
+                  <%= form.submit "Submit", class: "submit-button" %>
+                <% end %>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div> 
+  </div>
+</div> 
