@@ -6,12 +6,12 @@
 ### Roku - "Six" in Japanese. We are six and we are ninjas!
 
 The ninjas are:
-1. "Trivial" Greg
-2. "Classic" Harry
-3. Andy (don't call me Andrew)
-4. Wardah
-5. Bart
-6. Sam (having a child day)
+1. Greg - "Leonardo"
+2. Harry - "Michaelangelo"
+3. Andy - "Da Vinci"
+4. Wardah - April O'Neill
+5. Bart - "Krang"
+6. Sam - "Donatello" 
 
 ## INSTALLATION INSTRUCTIONS:
 
