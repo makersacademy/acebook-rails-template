@@ -49,6 +49,17 @@
     background-color: #9ed1ee;
     height: 60px;
     margin: 5px;
+    display: flex;
+  }
+
+  .nav-logo {
+    height:100px;
+    width:100px;
+  }
+
+  .nav-left-wrap {
+    height:100%;
+    width:80%;
   }
 
   .nav-right-wrap {
@@ -140,8 +151,12 @@
 
   
   /* Post main page */
+
+  .posts {
+    padding: 80px 150px;
+  }
   .post-card {
-    width: 60%;
+    width: 70%;
     background-color: rgba(224, 162, 226, 0.39);
     padding: 10px;
     margin-bottom: 15px;
@@ -373,208 +388,3 @@
 
                                 /* End of desktop site*/
 
-  /* Start of mobile */
-
-@media only screen and (max-width: 1070px) {
-  body {
-    background: #446db0;
-  }
-
-  .main-page {
-    width: 90%;
-  }
-
-  .post-card {
-    width: 100%;
-    background-color: rgba(224, 162, 226, 0.39);
-    padding: 10px;
-    margin-bottom: 15px;
-    border-style: solid;
-    border-color: plum;
-    border-radius: 5px 60px;
-  }
-
-
-  .message-grid {
-    display: flex;
-  }
-
-  .profile-thumb {
-    padding: 5px;
-    border-radius: 50%;
-    border: solid rgb(124, 165, 153);
-    width: 90px;
-    height: 90px;
-    margin: auto;
-  }
-
-  .profile-thumb-container {
-    padding: 0 10px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .message-internal {
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px 60px;
-  }
-
-  .message {
-    color: pink;
-    padding: 10px;
-    word-wrap: break-word;
-    height: 57%;
-  }
-
-  .timestamp {
-    color: white;
-    text-align: right;
-    vertical-align: bottom;
-    font-size: 11px;
-  }
-
-  .user {
-    padding: 10px;
-    color: rgb(18, 202, 1);
-    text-align: right;
-    font-size: 11px;
-  }
-
-  .message-buttons {
-    position: right;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .main_button {
-    border: none;
-    width: 70px;
-    height: 40px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    color: rgba(255, 255, 255, 0.1);
-    background-color: rgba(255, 255, 255, 0.3);
-
-  }
-
-  .button_delete {
-    color: rgb(46, 46, 46);
-    border: 2px solid #b500fd;
-    border-radius: 5px 60px 60px 5px;
-  }
-  .button_edit {
-    color: rgb(46, 46, 46);
-    border: 2px solid #9ed1ee;
-    border-radius: 60px 5px 5px 60px;
-  }
-
-  .post {
-    height: 100%;
-  }
-
-  .right-container {
-    width: 35%;
-  }
-
-  .button_logout {
-    color: rgb(255, 255, 255);
-    border: 2px solid #ffd900;
-    border-radius: 5px 60px 60px 5px;
-  }
-
-  .button_new {
-    color: rgb(255, 255, 255);
-    border: 2px solid #4e50d3;
-    border-radius: 60px 5px 5px 60px;
-  }
-
-  .button_profile {
-    color: rgb(255, 255, 255);
-    border: 2px solid #39e41b;
-  }
-
-  .button_add {
-    color: rgb(255, 255, 255);
-    border: 2px solid #c01515;
-  }
-  
-  .nav-right-wrap {
-    height:100%;
-    width:100%;
-    display:flex;
-    flex-direction:row;
-    justify-content:flex-end;
-  }
-
-  .nav-profile {
-    display: flex;
-    flex-direction: row;
-    align-self: flex-end;
-    text-align: center;
-  }
-
-  .nav-picture {
-    height:100px;
-    width:100px;
-    background:url('http://img2.wikia.nocookie.net/__cb20130201224335/lotr/images/7/79/Smeagol.jpeg');
-    border-radius:80px;
-    border:4px solid #87D7FF;
-    background-size:cover;
-  }
-
-  h1 {
-    text-align: center;
-    text-transform: uppercase;
-    color: rgb(255, 0, 212);
-    text-indent: 50px;
-    letter-spacing: 3px;
-
-    /*font-size: 45px;*/
-    font-size: 2em; /*fallback*/
-    font-size: 5vw;
-  }
-
-  .button {
-    position: relative;
-    height: 90px;
-    left: 10%;
-    width: 200px;
-    background-color: rgb(76, 229, 240);
-    border: none;
-    color: rgb(0, 0, 0);
-    padding: 15px 32px;
-    text-align: center;
-    display: inline-block;
-    font-size: 60px;
-    margin: 4px 2px;
-    border-radius: 5px 60px;
-  }
-
-  .welcome_text {
-    padding: 0 100px;
-  }
-
-  p {
-    color:  #446db0;
-  }
-
-  .container {
-    height: 150px;
-    width: 180px;
-    border: none;
-  }
-
-  .sign_grid {
-    display: grid;
-    grid-template-columns: auto auto;
-    padding: 10px;
-  }
-
-  .beefy {
-    padding: 10px 150px;
-  }
-
-}
-  /* End of mobile */
