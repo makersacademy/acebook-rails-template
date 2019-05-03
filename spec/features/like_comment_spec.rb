@@ -14,7 +14,7 @@ RSpec.feature "Like comments", type: :feature do
     create_second_user_and_sign_in
     visit '/posts'
     click_on(class: 'like-comment-button')
-    expect(page).to have_css("#comment_number_of_likes", text: "1")
+    expect(page).to have_css(".comment-number-of-likes", text: "1")
   end
 
   scenario "User can unlike a comment they have previously liked" do
@@ -28,6 +28,6 @@ RSpec.feature "Like comments", type: :feature do
     visit '/posts'
     click_on(class: 'like-comment-button')
     click_on(class: 'unlike-comment-button')
-    expect(page).to have_css("#comment_number_of_likes", text: "0")
+    expect(page).to have_css(".comment-number-of-likes", text: "0")
   end
 end

@@ -1,5 +1,4 @@
 <%= form_for [post, post.comments.new] do |form| %>
-  <%= form.label :body, "Gonna rise to the bait?" %>
-  <%= form.text_area :body %>
-  <%= form.submit 'Add comment' %>
+  <%= form.text_field :body, class: "comment-form-textarea", placeholder: "Take the bait, leave a comment" %>
+  <%= form.submit 'Add comment', class: "comment-form-submit" %>
 <% end %>
