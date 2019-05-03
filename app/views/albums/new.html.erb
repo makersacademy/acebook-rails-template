@@ -1,0 +1,7 @@
+<h1>Create a new Album</h1>
+
+
+<%= form_for @album, url: {action: "create"}, html: {class: "album_form"} do |f| %>
+ <%= f.text_field :name %>
+ <%= f.submit "Create" %>
+<% end %>
