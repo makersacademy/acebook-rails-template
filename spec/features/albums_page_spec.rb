@@ -43,4 +43,13 @@ RSpec.feature "Albums page", type: :feature do
     expect(page).to have_content 'Shearing Harry'
     # expect(page).to have_css("img[src*='avatar2.png']")
   end
+
+  scenario "User uploads a photo and sees it displayed on the album's page" do
+    sign_up_helper('photo@check.com','123456')
+    click_button "Albums"
+    click_button 'Create Album'
+    fill_in 'album_name', with: 'Shearing Harry'
+    click_button "Create"
+    expect(page).to have_content 'Shearing Harry'
+  end
 end
