@@ -8,7 +8,7 @@
 The ninjas are:
 1. Greg - "Leonardo"
 2. Harry - "Michaelangelo"
-3. Andy - "Da Vinci"
+3. Andy - "Raphael"
 4. Wardah - April O'Neill
 5. Bart - "Krang"
 6. Sam - "Donatello" 
