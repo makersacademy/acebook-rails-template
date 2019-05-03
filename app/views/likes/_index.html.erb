@@ -1,0 +1,9 @@
+<div id="like-form">
+  <% if post.likes.find { |like| like.user_id === current_user.id } %>
+    <% like = post.likes.find { |like| like.user_id === current_user.id } %>
+    <%= button_to '', post_like_path(post, like), method: :delete, :class => "unlike-button" %>
+  <% else %>
+    <%= button_to '', post_likes_path(post), method: :post, :class => "like-button" %>
+  <% end %>
+</div>
+<p class="number-of-likes"><%= post.likes.length %></p>
