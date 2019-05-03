@@ -1,0 +1,9 @@
+<div id="like-form">
+  <% if resource.likes.find { |like| like.user_id === current_user.id } %>
+    <% like = resource.likes.find { |like| like.user_id === current_user.id } %>
+    <%= button_to '', send("#{resource.class.to_s.underscore()}_like_path", resource, like), method: :delete, :class => "unlike-#{resource.class.to_s.underscore()}-button" %>
+  <% else %>
+    <%= button_to '', send("#{resource.class.to_s.underscore()}_likes_path", resource), method: :post, :class => "like-#{resource.class.to_s.underscore()}-button" %>
+  <% end %>
+</div>
+<p class="<%= resource.class.to_s.downcase %>-number-of-likes"><%= resource.likes.length %></p>
