@@ -16,7 +16,13 @@ class AlbumsController < ApplicationController
   end
 
   def new_photo
-    @album = Album.new
+    @album = Album.find(params[:id])
+  end
+
+  def update
+    @album = Album.find(params[:id])
+    @album.photos.attach(params.require(:album).require(:photos))
+    redirect_to "/albums/#{@album.id}"
   end
 
   private

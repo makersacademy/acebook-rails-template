@@ -1,7 +1,7 @@
 <h1> Upload Photos </h1>
 
-<%= form_tag("/albums/#{params[:id]}/photo", method: "post") do %>
-  <%= label_tag(:photos, "Upload a photo:") %>
-  <%= file_field_tag(:photos) %>
-  <%= submit_tag("Upload") %>
+<%= form_for(@album) do |f| %>
+  <%= f.label :photos %>
+  <%= f.file_field :photos %>
+  <%= f.submit "Upload" %>
 <% end %>
