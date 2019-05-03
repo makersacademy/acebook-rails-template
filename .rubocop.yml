@@ -36,12 +36,18 @@
 # reason to make things so abbreviated as to be unreadable. These messages are
 # designed to make you write more readable code - not less.
 
+# Style:
+#   Enabled: false
+
 Metrics/LineLength:
   Max: 100
   IgnoredPatterns: ['(\A|\s)#']
 
 Metrics/BlockLength:
   Max: 200
+
+MixinUsage:
+  Enabled: false
 
 # Code Style
 # ==========
@@ -76,7 +82,7 @@ EmptyLines:
 ExtraSpacing:
   Enabled: true
 GuardClause:
-  Enabled: true
+  Enabled: false
 IdenticalConditionalBranches:
   Enabled: true
 InverseMethods:
