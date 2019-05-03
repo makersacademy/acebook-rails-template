@@ -36,13 +36,24 @@ body {
   letter-spacing: 3px;
 }
 /* End of flash notice */
-
 /* Navigation bar */
+
 .navigation-bar {
   width: 100%;
   background-color: #9ed1ee;
   height: 60px;
   margin: 5px;
+  display: flex;
+}
+
+.nav-logo {
+  height:100px;
+  width:100px;
+}
+
+.nav-left-wrap {
+  height:100%;
+  width:80%;
 }
 
 .nav-right-wrap {
@@ -62,7 +73,6 @@ body {
   background-size:cover;
 }
 /* End of navigatoin bar */
-
 /* End of happens on every page area*/
 
 /* Welcome page */
@@ -132,10 +142,12 @@ p {
 }
 /* End of welcome page area */
 
-
 /* Post main page */
+.posts {
+  padding: 80px 150px;
+}
 .post-card {
-  width: 60%;
+  width: 70%;
   background-color: rgba(224, 162, 226, 0.39);
   padding: 10px;
   margin-bottom: 15px;
@@ -244,6 +256,7 @@ p {
   box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 /* End of posts page area */
+
 
 /* Edit a New post pages */
 .speech-page-split {
@@ -358,4 +371,5 @@ p {
   height: 250px;
   width: 75%;
 }
+
 /* End of Edit a New post pages area */
