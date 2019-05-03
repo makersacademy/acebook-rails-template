@@ -8,16 +8,16 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def index 
+  def index
     # @posts = Post.all
     @current_user_id = current_user.id
     @posts = Post.where("user_id = #{@current_user_id}")
-  end 
+  end
 
   def create
     if /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/.match?(user_params[:email])
       @user = User.create(user_params)
-      if @user.id != nil
+      if !@user.id.nil?
         log_in(@user)
         flash[:success] = 'Congratulations, you are signed up!'
         redirect_to posts_url
@@ -33,6 +33,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(%i[email password])
   end
