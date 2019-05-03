@@ -5,16 +5,7 @@
     <div class="post-meta-data">
       <div class="likes-container">
         <div class="comment-date"><%= comment.created_at.strftime('%H:%M, %-d %B') %></div>
-
-        <div id="like-form">
-          <% if comment.likes.find { |like| like.user_id === current_user.id } %>
-            <% like = comment.likes.find { |like| like.user_id === current_user.id } %>
-            <%= button_to '', comment_like_path(comment, like), method: :delete, :class => "unlike-comment-button" %>
-          <% else %>
-            <%= button_to '', comment_likes_path(comment), method: :post, :class => "like-comment-button" %>
-          <% end %>
-        </div>
-        <p class="comment-number-of-likes"><%= comment.likes.length %></p>
+        <%= render 'likes/index', :resource => comment %>
       </div>
 
       <div class="update-delete-post-container">

@@ -9,21 +9,13 @@
   <% @posts.each do |post| %>
     <div class="post">
       <div class="post-text"><%= simple_format(post.message) %></div>
-      
+
       <div class="post-meta-data">
         <div class="likes-container">
           <div class="post-date"><%= post.created_at.strftime('%H:%M, %-d %B') %></div>
-          <div id="like-form">
-            <% if post.likes.find { |like| like.user_id === current_user.id } %>
-              <% like = post.likes.find { |like| like.user_id === current_user.id } %>
-              <%= button_to '', post_like_path(post, like), method: :delete, :class => "unlike-button" %>
-            <% else %>
-              <%= button_to '', post_likes_path(post), method: :post, :class => "like-button" %>
-            <% end %>
-          </div>
-          <p class="post-number-of-likes"><%= post.likes.length %></p>
+          <%= render 'likes/index', :resource => post %>
         </div>
-        
+
         <div class="update-delete-post-container">
           <% if (post.user_id == current_user.id)  && post.less_than_ten_mins_ago %>
             <%= link_to edit_post_path(post.id) do %>
@@ -38,7 +30,7 @@
           <% end %>
         </div>
       </div>
-      
+
       <%= render "comments/index", :post => post %>
       <%= render "comments/new", :post => post %>
     </div>

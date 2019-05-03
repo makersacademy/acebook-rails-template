@@ -5,4 +5,3 @@ class AmendLikesForPostsAndComments < ActiveRecord::Migration[5.1]
     change_column :likes, :likeable_id, :integer, polymorphic: true
   end
 end
-

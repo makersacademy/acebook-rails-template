@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   root :to => redirect("/users/sign_in")
 
   resources :posts do
-    resources :likes
+    resources :likes, only: [:create, :edit, :update, :destroy]
     resources :comments, only: [:create, :edit, :update, :destroy]
   end
 
-  resources :comments do
-    resources :likes
+  resources :comments, only: [:create, :edit, :update, :destroy] do
+    resources :likes, only: [:create, :edit, :update, :destroy]
   end
 end

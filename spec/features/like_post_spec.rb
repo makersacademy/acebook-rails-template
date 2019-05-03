@@ -8,7 +8,7 @@ RSpec.feature "Like posts", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Test message!"
     click_button "Submit"
-    click_on(class: 'like-button')
+    click_on(class: 'like-post-button')
     expect(page).to have_css(".post-number-of-likes", text: "1")
   end
 
@@ -18,8 +18,8 @@ RSpec.feature "Like posts", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Test message!"
     click_button "Submit"
-    click_on(class: 'like-button')
-    click_on(class: 'unlike-button')
+    click_on(class: 'like-post-button')
+    click_on(class: 'unlike-post-button')
     expect(page).to have_css(".post-number-of-likes", text: "0")
   end
 end
