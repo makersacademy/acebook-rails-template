@@ -176,6 +176,14 @@ input[type=submit].delete-button {
   padding: 0.5rem;
 }
 
+.update-post-anchor {
+  border: solid 1px rgb(47, 85, 164);
+  border-radius: 3px;
+  color: rgb(47, 85, 164);
+  font-size: 16px;
+  padding: 0.375rem
+}
+
 .field {
   font-size: 0;
   padding: 1rem;
@@ -235,4 +243,54 @@ input.unlike-post-button, input.unlike-comment-button {
   cursor: pointer;
   height: 2.3rem;
   width: 3rem;
+}
+
+.new_comment {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 1rem;
+  margin-top: 1.5rem;
+}
+
+.comment-form-label {
+  font-size: 16px;
+  padding: 0 1rem;
+}
+
+.comment-form-textarea {
+  border: none;
+  height: 1.9rem;
+  width: 15rem;
+}
+
+input[type=submit].comment-form-submit {
+  font-size: 14px;
+  padding: 0.5rem;
+}
+
+input::placeholder {
+  font-size: 14px;
+  padding: 0.5rem;
+}
+
+.comment-text {
+  background-color: silver;
+  border-radius: 3px;
+  color: rgb(47, 85, 164);
+  font-size: 75%;
+  margin: auto;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  width: 90%;
+}
+
+.comment-date {
+  background-color: darkgrey;
+  border-radius: 2px;
+  color: white;
+  font-size: 16px;
+  margin: 10px;
+  padding: 0.45rem;
 }

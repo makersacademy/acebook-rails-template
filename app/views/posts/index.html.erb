@@ -19,7 +19,7 @@
         <div class="update-delete-post-container">
           <% if (post.user_id == current_user.id)  && post.less_than_ten_mins_ago %>
             <%= link_to edit_post_path(post.id) do %>
-              Update
+              <p class="update-post-anchor">Update</p>
             <% end %>
           <% end %>
           <% if post.user_id == current_user.id %>
