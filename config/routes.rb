@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'albums/new'
 
-  get 'albums/index'
+  get 'albums/:id/photo/new', to: 'albums#new_photo'
+  post 'albums/:id/photo', to: 'albums#create_photo'
 
   get '/login', to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

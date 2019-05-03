@@ -15,7 +15,11 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
   end
 
-  private 
+  def new_photo
+    @album = Album.new
+  end
+
+  private
 
   def post_params
     params.require(:album).require(:name)
