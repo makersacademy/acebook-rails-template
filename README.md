@@ -8,11 +8,11 @@
 
 [Project description](#project-description) | [Team learning documentation](#team-learning-documentation)
 
-[Getting started](#getting-started) | [Running tests](#running-tests) | [Usage](#Usage) | [How to contribute](#how-to-contribute) | [How to deploy](#how-to-deploy)
+[Getting started](#getting-started) | [Running tests](#running-tests) | [Usage](#Usage) | [How to contribute](#how-to-contribute) | [How we deployed](#how-we-deployed)
 
 ## Project description
 
-This is a team project to build a clone of Facebook using Ruby on Rails. The original repo can be found here. This project was built using Agile practices and was the first time all members of the team had worked with Rails.
+This is a team project to build a clone of Facebook using Ruby on Rails. The original repo can be found [here](https://github.com/makersacademy/acebook-rails-template). This project was built using Agile practices and was the first time all members of the team had worked with Rails.
 
 PlaiceBook was built by [Henry Gambles](https://github.com/henrygambles), [Amy Jordan](https://github.com/amyj0rdan), [Matt Thompson](https://github.com/mattTea) and [Evelyn Blázquez](https://github.com/EvelynAleLeo).
 
@@ -52,6 +52,10 @@ Follow the "fork-and-pull" Git workflow:
 - **Push** your work back up to your fork
 - Submit a **pull request** so that we can review your changes
 
-## How to deploy
+## How we deployed
 
-...
+As none of us had deployed an app previously, we decided to use Heroku. We understood that we would have more flexibility with AWS but with Heroku we would have more 'out of the box'.
+
+We followed [this Getting Started guide](https://devcenter.heroku.com/articles/getting-started-with-rails5) from Heroku.
+
+As we were following the fork-and-pull workflow, we felt comfortable to use CD for our project and enabled this on Day 2.
