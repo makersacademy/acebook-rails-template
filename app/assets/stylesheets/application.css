@@ -15,10 +15,10 @@
  */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 body {
-  font-family: 'Roboto', sans-serif;    
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   margin-top: 200px;
-    
+
  }
 .page-header {
   align-items: left;
@@ -163,7 +163,7 @@ p {
   margin-right: 1rem;
 }
 
-.number-of-likes {
+.post-number-of-likes, .comment-number-of-likes {
   background-color: white;
   border-radius: 3px;
   color: rgb(47, 85, 164);
@@ -217,7 +217,7 @@ a {
   padding-left: 1rem;
 }
 
-input.like-button, input.like-comment-button {
+input.like-post-button, input.like-comment-button {
   background: url(unliked.png) no-repeat;
   background-color: white;
   background-position: center;
@@ -227,7 +227,7 @@ input.like-button, input.like-comment-button {
   width: 3rem;
 }
 
-input.unlike-button, input.unlike-comment-button {
+input.unlike-post-button, input.unlike-comment-button {
   background: url(liked.png) no-repeat;
   background-color: white;
   background-position: center;

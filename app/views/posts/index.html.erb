@@ -13,7 +13,7 @@
       <div class="post-meta-data">
         <div class="likes-container">
           <div class="post-date"><%= post.created_at.strftime('%H:%M, %-d %B') %></div>
-          <%= render 'likes/index', :post => post %>
+          <%= render 'likes/index', :resource => post %>
         </div>
 
         <div class="update-delete-post-container">
