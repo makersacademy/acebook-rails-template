@@ -41,6 +41,7 @@ group :development, :test do
   # SimpleCov will return test coverage when running RSpec in terminal
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'travis'
 end
 
 group :development do
