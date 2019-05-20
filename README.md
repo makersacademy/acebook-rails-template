@@ -1,26 +1,65 @@
 # AceBook
 
-REQUIRED INSTRUCTIONS:
+  This project uses Ruby Rails, Capybara, RSpec and databases to create the foundations of a social media app.
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+  [This is the engineering project outline.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+## How to View and Use App
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+1. Clone this repository.
+2. Run `bundle install` in your command line to install all gems in the Gemfile.
+3. Run `bin/rails db:create` in your command line to create the required databases.
+4. Run `bin/rails db:migrate` in your command line to create the required tables in the databases.
+5. Start the server by running `bin/rails server` in the command line.
+6. -WIP-
 
-## Quickstart
+### How to Run Tests
 
-First, clone this repository. Then:
+`bundle exec rspec` in the command line will run the RSpec / Capybara tests.
 
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
 
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+## User Stories
+```
+USER SIGN-UP
+
+As a user,
+so that I don't forget to sign up,
+I am redirected to a sign up page unless already signed up.
+
+As a user,
+so that I know which details are required when signing up,
+I am prompted to enter a email and password.
+
+As a user,
+so that I know if my email is valid,
+I see a helpful message explaining if my email is not valid.
+
+As a user,
+so that I know if my password is valid,
+I see a helpful message highlighting the required length.
+
+As a user,
+so that I know I have signed up successfully,
+I want to be redirected to a page confirming my sign up.
+```
+
+```
+USER SIGN-IN
+
+As a user,
+so that I don't forget to sign in,
+I am redirected to the index page unless already signed in.
+
+As a user,
+so that I can sign in,
+I can see a link redirecting to a page where I am prompted to enter a email and password.
+
+As a user,
+so that I know I have entered my email correctly,
+I should receive an error message if my email is misspelt.
+
+As a user,
+so that I know I have signed in successfully,
+I want to be redirected to my post page.
 ```
