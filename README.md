@@ -1,5 +1,7 @@
 # AceBook
 
+[![Build Status](https://travis-ci.org/stuartpet/acebook-steam.svg?branch=master)](https://travis-ci.org/stuartpet/acebook-steam)
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
