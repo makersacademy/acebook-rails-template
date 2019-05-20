@@ -24,3 +24,7 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+## Card Wall
+
+As a group we made the decision to use Trello for our Card Wall.
+URL - https://trello.com/b/1N8vcjoF/acebook-fiveguys
