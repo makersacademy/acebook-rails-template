@@ -1,8 +1,8 @@
 language: ruby
 rvm:
-- 2.2.2
-- jruby-19mode
-- rbx-2
+- '2.5.0'
+# - jruby-19mode
+# - rbx-2
 
 env:
   - DB=postgresql
