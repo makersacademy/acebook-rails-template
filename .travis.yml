@@ -1,13 +1,9 @@
 language: ruby
 rvm:
 - 2.6.3
-- 2.0.0
-- 1.9.3
-- jruby-19mode
-- rbx-2
 os: osx
 script:
 - bundle install
-- bundle exec rake db:create
-- bundle exec rake db:migrate
-- bundle exec rspec spec
+- bin/rails db:create
+- bin/rails db:migrate
+- bundle exec rspec
