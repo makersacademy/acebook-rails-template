@@ -1,10 +1,7 @@
 # AceBook
 
-<<<<<<< HEAD
   This project uses Ruby Rails, Capybara, RSpec and databases to create the foundations of a social media app.
-=======
-REQUIRED INSTRUCTIONS
->>>>>>> refs/remotes/origin/master
+
 
   [This is the engineering project outline.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
