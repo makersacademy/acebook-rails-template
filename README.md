@@ -19,6 +19,9 @@
 
 `bundle exec rspec` in the command line will run the RSpec / Capybara tests.
 
+## Model View Controller
+![alt text](https://github.com/Hannah-Frost/acebook-Isambard/blob/MVC/MVC.png)
+
 
 ## User Stories
 ```
