@@ -1,6 +1,6 @@
 language: ruby
 rvm:
- - 2.5.0
+ - 2.6.0
 
 # Must run specific commands to make Travis follow the installation process before running tests.
 before_script:
