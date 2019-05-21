@@ -19,8 +19,8 @@ before_script:
 
  deploy:
    provider: heroku
-   api_key:
-   secure: 6241042e-c771-4103-ae7a-f8974724b3b5s
+   api_key: 6241042e-c771-4103-ae7a-f8974724b3b5s
+    secure: KEY
    app: steam-acebook
    on:
      repo: stuartpet/acebook-steam
