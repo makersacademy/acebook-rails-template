@@ -11,3 +11,11 @@ before_script:
 # Now the test command can be run successfully. :)
 script:
 - bundle exec rspec
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: KEY
+  app: acebook-isambard
+  on:
+    repo: hannahfrost/acebook-Isambard
