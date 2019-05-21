@@ -14,7 +14,7 @@ RSpec.feature 'Timeline', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'World, hello!'
     click_button 'Submit'
-    expect(page).to have_content("World, hello! Hello, world!")
+    expect(page).to have_content("World, hello! Created on", "Hello, world! Created on")
     # page.body.index(first_post.text).should < page.body.index(second_post.text)
   end
 end

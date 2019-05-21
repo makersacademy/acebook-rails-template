@@ -7,27 +7,31 @@
         1,
         null
       ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/helpers/registration_helper.rb": [
+        1,
+        null
+      ],
       "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/posts_controller.rb": [
         null,
         null,
         1,
         1,
-        4,
-        null,
-        null,
-        1,
-        5,
         5,
         null,
         null,
         1,
         6,
+        6,
+        null,
+        null,
+        1,
+        8,
         null,
         null,
         1,
         null,
         1,
-        5,
+        6,
         null,
         null
       ],
@@ -36,6 +40,22 @@
         null,
         1,
         1,
+        null
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/registration_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/student/Projects/Makers/week-8/acebook-steam/app/models/post.rb": [
@@ -48,6 +68,10 @@
         null,
         null,
         1,
+        1,
+        null
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/models/user.rb": [
         1,
         null
       ],
@@ -89,10 +113,133 @@
         0
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1558438851
-=======
-    "timestamp": 1558446797
->>>>>>> 8a5bbc82ac67cd5f7e43e88f28460559782a2ddb
+    "timestamp": 1558452696
+  },
+  "Unknown Test Framework": {
+    "coverage": {
+      "/Users/student/Projects/Makers/week-8/acebook-steam/Rakefile": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/channels/application_cable/channel.rb": [
+        null,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/channels/application_cable/connection.rb": [
+        null,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/application_controller.rb": [
+        null,
+        null,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/posts_controller.rb": [
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/registration_controller.rb": [
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/welcome_controller.rb": [
+        null,
+        null,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/helpers/application_helper.rb": [
+        null,
+        null,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/helpers/registration_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/jobs/application_job.rb": [
+        null,
+        null,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/mailers/application_mailer.rb": [
+        null,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/models/application_record.rb": [
+        null,
+        null,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/models/post.rb": [
+        null,
+        null,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/models/user.rb": [
+        0,
+        0
+      ]
+    },
+    "timestamp": 1558450636
   }
 }
