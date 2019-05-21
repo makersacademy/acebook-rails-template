@@ -1,36 +1,23 @@
-addons:
-  code_climate:
-    repo_token:
-      - CC_TEST_REPORTER_ID=<0d9d92b63e0d93e6b72bccfaaccd9663ce5dc29a442e3497c2c0018a3823dd21>
-
-after_success:
-  - bundle exec codeclimate-test-reporter
-  deploy:
-    provider: heroku
-    api_key:
-     secure: f037c3e5-6360-4c60-a510-bfe0265d0464
-    app: steam-acebook
-    on:
-      repo: stuartpet/acebook-steam
-
-
-language: ruby
-
-
+---
+after_script:
+  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 before_install:
-- gem update --system
-- gem install bundler
-
+  - "gem update --system"
+  - "gem install bundler"
 before_script:
- - bundle exec rails db:create RAILS_ENV=test
- - bundle exec rails db:migrate RAILS_ENV=test
- - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-
+  - "bundle exec rails db:create RAILS_ENV=test"
+  - "bundle exec rails db:migrate RAILS_ENV=test"
+  - "curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter - chmod +x ./cc-test-reporter - ./cc-test-reporter before-build"
+deploy:
+  api_key: ~
+  app: steam-acebook
+  provider: heroku
+  repo: stuartpet/acebook-steam
+  secure: 6241042e-c771-4103-ae7a-f8974724b3b5s
+  true: ~
+env:
+  global:
+    - CC_TEST_REPORTER_ID=<0d9d92b63e0d93e6b72bccfaaccd9663ce5dc29a442e3497c2c0018a3823dd21>
+language: ruby
 script:
- - bundle exec rspec
-
-
- after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - "bundle exec rspec"
