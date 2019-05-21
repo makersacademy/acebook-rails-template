@@ -1,0 +1,98 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/helpers/application_helper.rb": [
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/posts_controller.rb": [
+        null,
+        null,
+        1,
+        1,
+        4,
+        null,
+        null,
+        1,
+        5,
+        5,
+        null,
+        null,
+        1,
+        6,
+        null,
+        null,
+        1,
+        null,
+        1,
+        5,
+        null,
+        null
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/application_controller.rb": [
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/models/post.rb": [
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/models/application_record.rb": [
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/channels/application_cable/channel.rb": [
+        null,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/channels/application_cable/connection.rb": [
+        null,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/welcome_controller.rb": [
+        null,
+        null,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/jobs/application_job.rb": [
+        null,
+        null,
+        0,
+        0
+      ],
+      "/Users/student/Projects/Makers/week-8/acebook-steam/app/mailers/application_mailer.rb": [
+        null,
+        null,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+<<<<<<< HEAD
+    "timestamp": 1558438851
+=======
+    "timestamp": 1558446797
+>>>>>>> 8a5bbc82ac67cd5f7e43e88f28460559782a2ddb
+  }
+}

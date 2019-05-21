@@ -1,0 +1,7 @@
+Documentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - "/Users/student/Projects/Makers/week-8/acebook-steam/bin/setup"
+    - "/Users/student/Projects/Makers/week-8/acebook-steam/bin/update"
