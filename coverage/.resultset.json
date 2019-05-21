@@ -1,0 +1,77 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/stuartpethurst/Projects/acebook-steam/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/stuartpethurst/Projects/acebook-steam/app/controllers/posts_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        3,
+        3,
+        null,
+        null,
+        1,
+        3,
+        null,
+        null,
+        1,
+        null,
+        1,
+        3,
+        null,
+        null
+      ],
+      "/Users/stuartpethurst/Projects/acebook-steam/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/stuartpethurst/Projects/acebook-steam/app/models/post.rb": [
+        1,
+        null
+      ],
+      "/Users/stuartpethurst/Projects/acebook-steam/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/stuartpethurst/Projects/acebook-steam/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/stuartpethurst/Projects/acebook-steam/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/stuartpethurst/Projects/acebook-steam/app/controllers/welcome_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        null,
+        0
+      ],
+      "/Users/stuartpethurst/Projects/acebook-steam/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/stuartpethurst/Projects/acebook-steam/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1558436540
+  }
+}
