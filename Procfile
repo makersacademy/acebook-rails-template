@@ -1,1 +1,1 @@
-web: bundle exec bin/rails server
+web: bin/rails server
