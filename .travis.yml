@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+ - 2.5.0
+
+before_script:
+- bundle install
+- bin/rails db:create
+- bin/rails db:migrate
+
+script:
+- bundle exec rspec
