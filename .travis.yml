@@ -2,10 +2,12 @@ language: ruby
 rvm:
  - 2.5.0
 
+# Must run specific commands to make Travis follow the installation process before running tests.
 before_script:
 - bundle install
 - bin/rails db:create
 - bin/rails db:migrate
 
+# Now the test command can be run successfully. :)
 script:
 - bundle exec rspec
