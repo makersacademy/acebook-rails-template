@@ -7,14 +7,14 @@ before_install:
 before_script:
   - "bundle exec rails db:create RAILS_ENV=test"
   - "bundle exec rails db:migrate RAILS_ENV=test"
-  # - "curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter - chmod +x ./cc-test-reporter - ./cc-test-reporter before-build"
+  - "curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64"
+  - "chmod +x ./cc-test-reporter"
+  - "./cc-test-reporter before-build"
 deploy:
-  provider: heroku
   api_key:
     secure: 6241042e-c771-4103-ae7a-f8974724b3b5
   app: steam-acebook
-  on:
-    repo: stuartpet/acebook-steam
+  provider: heroku
   true: ~
 env:
   global:
