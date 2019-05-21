@@ -17,17 +17,17 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
- deploy:
-   provider: heroku
-   api_key:
-    secure: 6241042e-c771-4103-ae7a-f8974724b3b5s
-   app: steam-acebook
-   on:
-     repo: stuartpet/acebook-steam
-
-
 script:
  - bundle exec rspec
 
+
  after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+  deploy:
+    provider: heroku
+    api_key:
+     secure: 6241042e-c771-4103-ae7a-f8974724b3b5s
+    app: steam-acebook
+    on:
+      repo: stuartpet/acebook-steam
