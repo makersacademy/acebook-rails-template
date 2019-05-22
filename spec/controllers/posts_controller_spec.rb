@@ -16,13 +16,17 @@ RSpec.describe PostsController, type: :controller do
 
     it "creates a post" do
       post :create, params: { post: { message: "Hello, world!" } }
-      expect(Post.find_by(message: "Hello, world!")).to be
+      post = Post.find_by(message: "Hello, world!")
+      expect(post.message).to eq "Hello, world!"
     end
+  end
 
-    it "deletes a post" do
+  describe "DELETE /" do
+    it 'deletes a post' do
       post :create, params: { post: { message: "Hello, world!" } }
-      post :destroy, params: { id: 1}
-      expect(Post.find_by(id: 1)).not_to be
+      post = Post.find_by(message: "Hello, world!")
+      post.destroy
+      expect(Post.exists?(post.id)).to be false
     end
   end
 
