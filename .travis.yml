@@ -1,16 +1,12 @@
 language: ruby
+
 rvm:
 - 2.6.0
+
 before_script:
 - bundle install
 - bin/rails db:create
 - bin/rails db:migrate
-deploy:
-  provider: heroku
-  api_key:
-    secure: ijGyM7qsrj7vyptjRbpkpPOwpVrLdfTheG8sgidSo0gGwmpBQRNBoWkHcSiuAUek9HGAEw6CVatQou9tL65kSXIGw9cucyDmXO96LYPSk5ZmpY7uEwfQHSXg8UeaOmU18TUx1oZeA+QG+EIsG769YQgjfJiC3zQfW7UqpGuRp31sf32Z40WrLw5ye9JVUtuh06Q+N5qHYhp36jhF/KFCHMPTBAXynTkKRTFEkC2kqiItpZaJjjW9oYUwbFuEmASmQzGbRUSRx7kBtjGBWbM7xxHHF2w0MmFUfS++PEf9Z578RRLPIG8/ioXCrNlbJHnJkb3vV7pv5PME/6vYzuLFp5p/xdb04sExddpWfA0choLruwFsnU1RbqvYob52+DG+Dx0+Sk29vuY8IJIf9C+w7+OS2VPk0ng/+239zXmsNW0A6FPd8hDqZlWHBZwPcBX4PaDLW+q1lMLpqKg0HIHQ2CFDUhyBkyaAXARM2/GDtnCNJFTP/zBrhfaJs1dWTTRCO/MbSRJ+7IVXkIX3bP0J3zazxvfARLuQ+sdIVOdy18QmdbB51WFZOwR/SbAEig2DSTDgyJMKgbbd7vKSqPvw+D/1lQqFCoY/b9N6mCNENaYq4cgvK3FO8ydtJWBIi0Go059xPDKI2gyqLIYEO+OxfTeQK9pUowADPs6Vc0OBACU=
-  app: acebook-isambard
-  on:
-    repo: Hannah-Frost/acebook-Isambard
+
 script:
 - bundle exec rspec
