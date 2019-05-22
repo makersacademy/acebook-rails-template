@@ -44,6 +44,7 @@ GEM
     arel (8.0.0)
     ast (2.4.0)
     backports (3.15.0)
+    bcrypt (3.1.12)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.1)
@@ -243,6 +244,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   byebug
   capybara (~> 2.13)
   jbuilder (~> 2.5)
