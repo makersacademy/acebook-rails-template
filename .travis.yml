@@ -1,21 +1,16 @@
 language: ruby
 rvm:
- - 2.6.0
-
-# Must run specific commands to make Travis follow the installation process before running tests.
+- 2.6.0
 before_script:
 - bundle install
 - bin/rails db:create
 - bin/rails db:migrate
-
 deploy:
   provider: heroku
   api_key:
-    secure: "aIcSZ0oZj87Pyo8q55McQi/sJDGRGMiNXMeNT1ofcnOlPAMbdYuEc4+9YJ+13OQmYEp4y6qandjGJ8ZScpydQ2gXGTMPOHzuYDhPurBymoM1IZSTtV7q0amMt1pqvHWZSMkz2vtc8Ma5fkt7HggkvSPTP1gUHoLcAg6tXOUxiTnoM+1rNRUawdLKmJxSj5jIJoxy/NOzTNpJpu6pzlDUvaxoXCmeD7IuREfOEyekQT0XXZj9fK3S2yxwMdBKgL3C1/2gpuUXumSS8sFu1TEeZxquYTuhnub4pGKc/CSgVdXZoErT83iDdJFioDh3PiAdBKP05fkabz5feWCxxm8qFsAZSidu2UrFm7pmN+nCM+aLKOT4HvfeZ/yw9drdP9d6QR7V3d/JmvlCPIYwb860bGd2tA82PmddYN5eDNqd6BlPYYR8ZAxKockOHHL7CXncNC+O4lW1B3C6+hWu+41xzy5I/bHj6qlnl2aQSggHoR3m6AuxrMu/yCz/9ZYg+pg1f6CjXWuEku3UWLNW9zKdL/VZI21/X8GXSTnMwgtCJNAvyrP1Ntmf0KxJvFcrRrwbO/BxOFKoprAH3aPWavvoXdRUlr7ucX+imGiccU/w44m/ImsJTJSrjp1vFiM+suLmasvBX2VagiB2BQDRraPgfchvOtHPgGRR9SDoFEriIn0="
+    secure: AlTC1/aIVOYp7d46HShSWYgSoIritaKHYa0y+B2yeYrcDDm++PxAIkUpli2lnZAnxWWBY4WNj8IM4Ty0HBo7zzB/CXPBosr0juCdawJ5Z7tvgd9UhCzvscUIu6n8e6Uj5I22KMylv52us9KBf57rHsJekCFlQj5f62X4PW8Z4+qRGCH8MESdlUz7SNOcndNPzQbBWKLIC81Tysi73taAn155F8Kpoj5p522fzAZcrAYazk/wNw7PQg/H5UOgfuutQQ6NIZDjReva9AW5Xl70aTPDo7fm4hRQPZUna6kqyqggLkVCkf7Y86PgZEEzXgeWWT3nsBXmYvvBU8uQjDg8Hhdhb8XMukd9tmz9Bile8CR8Aq2D7gkJMqXHurTOBVl6b6zYPFjih83jaRFYP/hfQDt+fiwl/CkwwwhCBNNPMw/2wLfGatdjCNpliGgTtAMzuACIc4MB1zNRJPbT17nstAOaJRv5kKdYxaCmevA6G917VdKBcwiyjeAEeYNuNtvrbuAz4lddgtHIkoJBalU0QZ83pyKlZo86UlkWhCo/PgjJMMXSe8vBQL1iatmaOJsdnTHDsIZWlpoayThtKYNq89u7To+pKbpHDOqdBlmVKPFMrmG9fKnwLmsgCSAuEFiEnC/cAs35FdlQ7gjT+s0cTav9de8yuzwM1XtZUWgWcPI=
   app: acebook-isambard
   on:
     repo: Hannah-Frost/acebook-Isambard
-
-# Now the test command can be run successfully. :)
 script:
 - bundle exec rspec
