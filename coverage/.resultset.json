@@ -1,17 +1,17 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/helpers/application_helper.rb": [
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/helpers/application_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/helpers/users_helper.rb": [
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/controllers/posts_controller.rb": [
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/controllers/posts_controller.rb": [
         null,
         null,
         1,
@@ -35,27 +35,53 @@
         null,
         null
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/controllers/application_controller.rb": [
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/controllers/application_controller.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/models/post.rb": [
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/controllers/users_controller.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/models/post.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/models/application_record.rb": [
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/models/application_record.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/models/user.rb": [
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/models/user.rb": [
         1,
         1,
         null,
@@ -67,7 +93,7 @@
         null,
         null
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/mailers/application_mailer.rb": [
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/mailers/application_mailer.rb": [
         null,
         null,
         0,
@@ -75,33 +101,20 @@
         0,
         0
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/jobs/application_job.rb": [
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/jobs/application_job.rb": [
         null,
         null,
         0,
         0
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/controllers/users_controller.rb": [
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0
-      ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/controllers/welcome_controller.rb": [
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/controllers/welcome_controller.rb": [
         null,
         null,
         0,
         0,
         0
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/channels/application_cable/connection.rb": [
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/channels/application_cable/connection.rb": [
         null,
         null,
         0,
@@ -109,7 +122,7 @@
         0,
         0
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/channels/application_cable/channel.rb": [
+      "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/channels/application_cable/channel.rb": [
         null,
         null,
         0,
@@ -118,6 +131,6 @@
         0
       ]
     },
-    "timestamp": 1558519780
+    "timestamp": 1558523370
   }
 }
