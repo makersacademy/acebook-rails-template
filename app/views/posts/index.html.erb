@@ -1,12 +1,10 @@
 <% @posts.each do |post| %>
   <div>
-    <p><%= post.message %></p>
-    <p><%= post.created_at.strftime("Created on %d/%m/%Y")%></p>
+    <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
+    <p><%= post.created_at.strftime("Created on %d/%m/%Y - %H:%M")%></p>
   </div><br>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
-
-<p>Hello</p>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :posts
 
   root "posts#new"
+
   get "registration/signup"
   post "registration/new"
   get "registration/index"
