@@ -2,8 +2,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a41b60a496814d4abea4626d74e3d785)](https://app.codacy.com/app/stuartpet/acebook-steam?utm_source=github.com&utm_medium=referral&utm_content=stuartpet/acebook-steam&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/stuartpet/acebook-steam.svg?branch=master)](https://travis-ci.org/stuartpet/acebook-steam)
-[![Maintainability](https://api.codeclimate.com/v1/badges/70ad0217d63f10aac886/maintainability)](https://codeclimate.com/github/ryandav/ruby_types/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/70ad0217d63f10aac886/test_coverage)](https://codeclimate.com/github/ryandav/ruby_types/test_coverage)
+
 
 
 REQUIRED INSTRUCTIONS:

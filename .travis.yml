@@ -7,7 +7,6 @@ before_install:
 before_script:
   - "bundle exec rails db:create RAILS_ENV=test"
   - "bundle exec rails db:migrate RAILS_ENV=test"
-  # - "curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter - chmod +x ./cc-test-reporter - ./cc-test-reporter before-build"
 deploy:
   provider: heroku
   api_key:
@@ -16,9 +15,6 @@ deploy:
   on:
     repo: stuartpet/acebook-steam
   true: ~
-env:
-  global:
-    - CC_TEST_REPORTER_ID=<0d9d92b63e0d93e6b72bccfaaccd9663ce5dc29a442e3497c2c0018a3823dd21>
 language: ruby
 script:
   - "bundle exec rspec"
