@@ -41,11 +41,11 @@ I see a helpful message explaining if my email is not valid.
 
 As a user,
 so that I know if my password is valid,
-I see a helpful message highlighting the required length.
+I see a helpful message highlighting the required length of 6-10 characters.
 
 As a user,
 so that I know I have signed up successfully,
-I want to be redirected to a page confirming my sign up.
+I want to be redirected to my posts page with a sign up confirmation message.
 ```
 
 ```
@@ -57,13 +57,13 @@ I am redirected to the index page unless already signed in.
 
 As a user,
 so that I can sign in,
-I can see a link redirecting to a page where I am prompted to enter a email and password.
+I can see a 'sign in' link which redirects me to a sign in page where I am prompted to enter an email and password.
 
 As a user,
 so that I know I have entered my email correctly,
-I should receive an error message if my email is misspelt.
+I should receive an error message if my email is invalid.
 
 As a user,
 so that I know I have signed in successfully,
-I want to be redirected to my post page.
+I want to be redirected to my posts page.
 ```
