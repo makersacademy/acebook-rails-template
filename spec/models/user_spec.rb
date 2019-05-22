@@ -48,6 +48,26 @@ RSpec.describe User, type: :model do
 
   end
 
+  context 'email address conforms to valid format' do
 
+    it 'should be of the format name@site.domain' do
+      @user = User.new(first_name: "John", last_name: "Doe", email: "john@doe.com", password: "john123456")
+      valid_addresses = %w[user@example.com Falumpf123@swizzle.blorb Grok_1@omple.io]
+      valid_addresses.each do |valid_address|
+        @user.email = valid_address
+        assert @user.valid?, "#{valid_address.inspect} should be valid"
+      end
+    end
+
+    it 'should not judge an invalid email to be valid' do
+      @user = User.new(first_name: "John", last_name: "Doe", email: "john@doe.com", password: "john123456")
+      invalid_addresses = %w[ajnfakf128437 184856276402 asjbfbkaf.ajnff@lkasnf ajnfanfaf@aknjf,com ldaksfmdf£aksnf.com]
+      invalid_addresses.each do |invalid_address|
+        @user.email = invalid_address
+        assert !@user.valid?, "#{invalid_address.inspect} should not be valid"
+      end
+    end
+
+  end
 
 end
