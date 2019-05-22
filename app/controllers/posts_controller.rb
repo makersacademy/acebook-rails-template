@@ -1,10 +1,13 @@
 class PostsController < ApplicationController
+
   def new
-    @post = Post.new
+    @user = User.new(first_name:"Dave", last_name:"Jones", email:"dave@dave.com", password:"Dave")
+    session[:user_id] = @user.save
   end
 
   def create
-    @post = Post.create(post_params)
+    @user = User.find(session[:user_id])
+    @post = @user.posts.create(posts_params)
     redirect_to posts_url
   end
 
@@ -12,9 +15,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  private
+private
 
-  def post_params
+  def posts_params
     params.require(:post).permit(:message)
   end
+
+
 end
