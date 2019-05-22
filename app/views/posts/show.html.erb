@@ -1,0 +1,9 @@
+<div>
+  <p><%= h(@post.message).gsub(/\n/, '<br/>').html_safe %></p>
+  <p><%= @post.created_at.strftime("Created on %d/%m/%Y - %H:%M")%></p>
+</div><br>
+
+<%# button that routes to posts#id with a destroy action %>
+
+<%= button_to "Delete this Post", { action: 'destroy', id: @post.id },
+              method: :delete, data: { confirm: "Are you sure?"} %>
