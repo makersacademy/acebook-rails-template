@@ -1,8 +1,9 @@
-<div class="form-container">
+<div class="fb-body-posts">
   <%= form_for @post do |form| %>
-    <%= form.label :message %>
-    <%= form.text_field :message %>
-
-    <%= form.submit "Submit" %>
+    
+    <%= form.text_field :message, id: "namebox", placeholder: "What's on your mind?" %>
+    <br>
+      <%= form.submit "Submit", class: "button2" %>
   <% end %>
+  
 </div>

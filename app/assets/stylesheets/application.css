@@ -1,77 +1,213 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body{
+	background-image: url("grid.png");
+	height:750px;
+	
+}
+.fb-header-base{
+	width:100%;
+	height:90px;
+	position:absolute;
+	top:0;
+	left:0;
+	color:white;
+	z-index:7;
+	font-family:verdana;
+	-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+}
+.fb-header{
+	width:100%;
+	height:90px;
+	position:absolute;
+	background:#7eb6db;
+	top:0;
+	left:0;
+	color:white;
+	z-index:7;
+	font-family:verdana;
+	
+}
+#img1{
+	left:178px;
+	height:50px;
+	width:100px;
+	top:25px;
+}
+#form1{
+	left:750px;
+	height:60px;
+	width:180px;
+	top:20px;
+	font-family:verdana;
+	font-size:12px;
+}
+#form2{
+	left:940px;
+	height:60px;
+	width:250px;
+	top:20px;
+	font-family:verdana;
+	font-size:12px;
+}
+.submit1{
+	left:1130px;
+	top:35px;
+	background:#5b7bc0;
+	color:white;
+	position:fixed;
+	z-index:20;
+	height:22px;
+	width:50px;
+	cursor:pointer;
+	
+
+	
+}
+.fb-body{
+	position:absolute;
+	left:0px;
+	top:90px;
+	width:100%;
+	height:645px;
+	
+
+}
+.fb-body-login{
+  position:absolute;
+  /* align-content: center; */
+	/* left:0px; */
+	top:90px;
+	width:100%;
+	height:645px;
+	
+
+}
+.fb-body-posts{
+  position:absolute;
+  /* align-content: center; */
+	/* left:0px; */
+	top:90px;
+	width:100%;
+	height:645px;
+	
+
+}
 
 
-
- 
-body
-{
-text-align:center;
-width:100%;
-background-size: 100% 100%;
-/* background: linear-gradient(white, #D3D8E8); */
-margin:0 auto;
-padding:0px;
-font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+#intro1{
+	left:178px;
+	top:20px;
+	font-family:verdana;
+	font-size:20px;
+	color:white;
+	height:75px;
+	width:550px;
 }
-#header_wrapper
-{
-width:100%;
-min-width:980px;
-background-color:#4c66a4;
+#intro2{
+	left:750px;
+	top:20px;
+	font-family:verdana;
+	font-size:30px;
+	color:white;
+	font-weight:bold;
+	height:75px;
+	width:500px;
 }
-#header
-{
-width:980px;
-margin:0px auto;
-padding:0px;
-height:85px;
+#img2{
+	top:130px;
+	left:178px;
+	width:537px;
+	height:195px;
 }
-#header li
-{
-list-style-type:none;
-float:left;
-text-align:left;
-color:white;
+#intro3{
+	left:750px;
+	top:70px;
+	font-family:verdana;
+	font-size:18px;
+	color:white;
+	height:50px;
+	width:300px;
 }
-#header #sitename
-{
-margin-top:25px;
+#form3{
+	top:120px;
+	left:750px;
+	font-family:verdana;
+	font-size:20px;
+	color:#142170;
+	width:450px;
+	height:495px;
+	
 }
-#header #sitename a
-{
-color:white;
-text-decoration:none;
-font-size:60px;
-font-weight:900;
+#namebox{
+	width:200px;
+	height:40px;
+	border-radius:5px 5px 5px 5px;
+	background:white;
+	padding:10px;
+	font-size:18px;
+	margin-top:8px;
+	border-width: 1px;
+	border-style:solid;
+	border-color: gray;
 }
-.form-field {
-  border-radius: 2px;
-  border: 1px solid grey; 
-  width: 100%
+#mailbox{
+	width:408px;
+	height:40px;
+	border-radius:5px 5px 5px 5px;
+	background:white;
+	padding:10px;
+	font-size:18px;
+	margin-top:8px;
+	border-width: 1px;
+	border-style:solid;
+	border-color: gray;
 }
-.submit-button {
-  border-radius: 2px; 
-  background-color: #69a74e;
-  color: white;
-  width: 100%; 
-  padding: 5px
+#r-b{
+	font-size:12px;
+	height:15px;
+	width:15px;
 }
-.form-container {
-  max-width: 300px;
-  margin: auto;
+.button2{
+	width:250px;
+	height:40px;
+	left:750px;
+	top:625px;
+	background:green;
+	font-family:verdana;
+	font-size:18px;
+	color:white;
+	border-radius:5px 5px 5px 5px;
+	border-width: 1px;
+	border-style:solid;
+	border-color: gray;
+	cursor:pointer;
+	outline:none;
+	
 }
-
+#intro4{
+	font-family:verdana;
+	font-size:12px;
+	color:lightgray;
+	
+}
+#intro5{
+	font-family:verdana;
+	font-size:14px;
+	color:lightgray;
+	
+}
+.fb-body-footer{
+	width:100%;
+	position:absolute;
+	left:0px;
+	height:80px;
+	background:white;
+	top:700px;
+	
+}
+#fb-body-footer-base{
+	width:900px;
+	top:15px;
+	left:200px;
+	color:blue;
+	height:60px;
+}
