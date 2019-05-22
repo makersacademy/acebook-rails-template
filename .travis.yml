@@ -1,8 +1,4 @@
 ---
-addons:
-  code_climate:
-    repo_token:
-      secure: "cFMN9qprWjkYE85ibFokCoTAdq0LzmXj85QI2iqMIz1bMzZCyKxDJdswPN9vihveQ38TICgNtE1KWfHNjzgsglex5VRR/tzb5+KtqJhK18A5OK6ElHSWTsgkPbL 9pl4E19pClunCovNGKUXwV6OHrAbnjVaSV4H+gZ2OVdLVOtIkkN59vNCfESKIJDhYoJ/P36mqxh9rQDfinnhOFuBeOzLmoodbyuwpAZdNVFy0Sha1bdPABwMObtE0Z1wd999o9 wdlHaMP2VLDWmK0RryC2J9S5HYk1WFH9cpGTBqhZ4rOsHDGitVD4Xd3ZAyaeZ0gL1qyfF1Imy2PGpGuPfzoCnl3E0Jp1Xb5d6JQqTEVtRrZbZvlmVQYqydTA3Db3pbNWjfqyRy TJp3dZZDvRE8rIS6Ss3LdmaPjr6R+rOwQo6Ph5VdRgESV0pXbXriBahj+HOM/RW021jsHThmoev5ydt1dQa0mnsf+9GRwID3Yjy8ZS9CGkg5vdA4IBTvj6gMRG9QqLkV/dtuHQ REDv/Tvvf94HzhNOWSl0glG7EQ9SeWQifgcFTgFPCnDJBSFVZdseV9xOpxi420Or9qkjg5WEbL36TYHdFRYec1taOeCTnpbGy+qNBTqZEfTDRIrlVPHRChnvgZ08ZM/IPDVbJG y1weZIzq00IR8XpM7VyVk3HU="
 after_script:
   - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 before_install:
