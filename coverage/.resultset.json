@@ -7,7 +7,7 @@
         1,
         null
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/helpers/registration_helper.rb": [
+      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/helpers/users_helper.rb": [
         1,
         null
       ],
@@ -42,22 +42,6 @@
         1,
         null
       ],
-      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/controllers/registration_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
       "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/models/post.rb": [
         null,
         null,
@@ -73,6 +57,14 @@
       ],
       "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/models/user.rb": [
         1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
         null
       ],
       "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/mailers/application_mailer.rb": [
@@ -87,6 +79,19 @@
         null,
         null,
         0,
+        0
+      ],
+      "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/controllers/users_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
         0
       ],
       "/Users/jordan/Documents/Makers/GroupTasks/acebook-steam/app/controllers/welcome_controller.rb": [
@@ -113,6 +118,6 @@
         0
       ]
     },
-    "timestamp": 1558451903
+    "timestamp": 1558519780
   }
 }

@@ -3,10 +3,11 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts
+  resources :users
 
-  root "registration#signup"
-  get "registration/signup"
-  post "registration/new"
-  get "registration/index"
+  root "posts#new"
+  get "/signup", to: 'users#new'
+  
+
 
 end
