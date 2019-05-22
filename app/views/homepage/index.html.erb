@@ -1,12 +1,14 @@
-<h1>Sign Up</h1>
+<div class="form-container">
+   <h1>Create an account</h1>
 
-<%# change method to posts & set up redirect route %>
-<form action="/posts" method="get">
-<label for="Email">Email:</label>
-   <input type="text" name="Email" placeholder="example@example.com"><br>
-<label for="Password">Password:</label>
-   <input type="text" name="Password" placeholder="Between 6-10 characters"><br>
-  <input type="submit" value="Submit">
-</form>
+   <%# change method to posts & set up redirect route %>
+   <form action="/posts" method="get">
+   <%# <label for="Email">Email:</label> %>
+      <input class="form-field" type="text" name="Email" placeholder="Email address"><br>
+   <%# <label for="Password">Password:</label> %>
+      <input class="form-field" type="text" name="Password" placeholder="Password"><br>
+   <input class="submit-button" type="submit" value="Sign Up">
+   </form>
 
-<h1><a href="/homepage/login">Log In</a></h1>
+   <button><a href="/homepage/login">Log In</a></button>
+</div>

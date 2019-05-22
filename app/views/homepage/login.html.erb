@@ -1,8 +1,10 @@
-<h1>Log In</h1>
-<form action="/posts" method="get">
-<label for="Email">Email:</label>
-   <input type="text" name="Email" placeholder="example@example.com"><br>
-<label for="Password">Password:</label>
-   <input type="text" name="Password" placeholder="Between 6-10 characters"><br>
-  <input type="submit" value="Submit">
-</form>
+<div class="form-container">
+   <h1>Log In</h1>
+   <form action="/posts" method="get">
+   <%# <label for="Email">Email:</label> %>
+      <input class="form-field" type="text" name="Email" placeholder="example@example.com"><br>
+   <%# <label for="Password">Password:</label> %>
+      <input class="form-field" type="text" name="Password" placeholder="Between 6-10 characters"><br>
+   <input class="submit-button" type="submit" value="Submit">
+   </form>
+</div>
