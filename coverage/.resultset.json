@@ -391,6 +391,16 @@
         1,
         null
       ],
+      "/Users/nandinipatel/Projects/week8/Acebook-The-Brave-Bears/spec/features/user_can_log_in_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/nandinipatel/Projects/week8/Acebook-The-Brave-Bears/spec/features/user_can_submit_posts_spec.rb": [
         1,
         null,
@@ -490,6 +500,6 @@
         null
       ]
     },
-    "timestamp": 1558521376
+    "timestamp": 1558524580
   }
 }
