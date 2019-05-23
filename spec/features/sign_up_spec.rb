@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-RSpec.feature "Sign Up", type: :feature do
+RSpec.feature "Create an account", type: :feature do
 
   before(:each) do
     visit("/")
   end
 
-  scenario "Can see Sign Up form" do
-    expect(page).to have_content("Sign Up")
+  scenario "Can see Create an accound form" do
+    expect(page).to have_content("Create an account")
   end
 
-  scenario "Can fill out Sign Up form" do
+  scenario "Can fill out Create an accound form" do
     fill_in "Email", with: "test@email.com"
     fill_in "Password", with: "testpassword"
-    click_button "Submit"
-    expect(page).to have_content("Sign Up Successful!")
+    click_button "Create an account"
+    expect(page).to have_content("What a specimen")
   end
 end
