@@ -1,5 +1,7 @@
 # AceBook
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e7c8ece3816744cab65f463ab8cc5777)](https://app.codacy.com/app/CalumDarroch/acebook-FiveGuys?utm_source=github.com&utm_medium=referral&utm_content=CalumDarroch/acebook-FiveGuys&utm_campaign=Badge_Grade_Settings)
+
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
