@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
     redirect_to '/posts'
   else
-
+    flash.now[:error] = 'Incorrect email/password'
     render 'new'
-    flash.now[:success] = 'Incorrect email/password'
+
     end
   end
 end
