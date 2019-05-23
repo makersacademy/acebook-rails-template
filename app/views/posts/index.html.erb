@@ -8,4 +8,9 @@
     <%=@user.first_name%> <%=@user.last_name%></p>
   <p><%= post.created_at %></p>
 
+  <p>
+    <%= link_to 'Delete Post', post_path(post),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+
 <% end %>
