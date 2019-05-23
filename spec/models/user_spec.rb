@@ -45,7 +45,6 @@ RSpec.describe User, type: :model do
       @user2 = User.new(first_name: "John", last_name: "Doe", email: "john@doe.com", password: "john12456789")
       assert !@user2.valid?
     end
-
   end
 
   context 'email address conforms to valid format' do
@@ -67,7 +66,6 @@ RSpec.describe User, type: :model do
         assert !@user.valid?, "#{invalid_address.inspect} should not be valid"
       end
     end
-
   end
 
 end

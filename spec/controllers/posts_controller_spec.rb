@@ -35,7 +35,7 @@ RSpec.describe PostsController, type: :controller do
       post :create, params: { post: { message: "Hello, world!" } }
       post = Post.find_by(message: "Hello, world!")
       post.update(message: "Sup, dudes!")
-      expect(post.message).to eq  "Sup, dudes!"
+      expect(post.message).to eq "Sup, dudes!"
     end
   end
 

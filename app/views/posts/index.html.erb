@@ -4,7 +4,7 @@
   <h4>New post</h4>
 <% end %>
 <br>
-<% @posts.reverse.each do |post| %>
+<% @posts.sort_by(&:created_at).reverse.each do |post| %>
   <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
   <p><%= post.created_at.strftime("%d-%m-%Y")%>
   at <%= post.created_at.strftime("%I:%M %p")%></p>
