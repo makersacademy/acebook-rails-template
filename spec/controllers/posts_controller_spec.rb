@@ -30,6 +30,15 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
+  describe "PATCH /" do
+    it 'updates a post' do
+      post :create, params: { post: { message: "Hello, world!" } }
+      post = Post.find_by(message: "Hello, world!")
+      post.update(message: "Sup, dudes!")
+      expect(post.message).to eq  "Sup, dudes!"
+    end
+  end
+
   describe "GET /" do
     it "responds with 200" do
       get :index

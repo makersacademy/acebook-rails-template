@@ -12,18 +12,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def show
-    @post = Post.find(params[:id])
-  end
-
-
+  # def show
+  #   @post = Post.find(params[:id])
+  # end
 
   def create
     @post = Post.create(post_params)
     redirect_to posts_url
   end
-
-
 
   def destroy
     @post = Post.find(params[:id])
@@ -33,11 +29,8 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    #
-    # if @post.update(post_params)
-    # else
-    render 'edit'
-    # end
+    @post.update(post_params)
+    redirect_to posts_url
   end
 
   private

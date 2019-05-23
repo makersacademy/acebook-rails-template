@@ -1,6 +1,12 @@
+
+<h4>Edit Your Post</h4>
+
+<p><%= @post.message%></p>
+<p><%= @post.created_at%></p>
+
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
 
-  <%= form.submit "Submit" %>
+  <%= form.submit "Update" %>
 <% end %>
