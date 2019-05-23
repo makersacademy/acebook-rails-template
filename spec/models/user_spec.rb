@@ -32,7 +32,7 @@ RSpec.describe User, type: :model do
     it "checks that the email is not already in the database" do
       new_user = user.dup
       user.save
-      expect(new_user.valid?).to be(false) 
+      expect(new_user.valid?).to be(false)
     end
   end
 
