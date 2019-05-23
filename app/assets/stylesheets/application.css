@@ -54,7 +54,7 @@ body{
 	right:60px;
 	top:35px;
 	color:white;
-	position:fixed;
+	position:absolute;
 	z-index:20;
 	height:22px;
 	width:50px;
@@ -94,8 +94,8 @@ body{
 }
 
 #homepage-background{
-	height:100%;
-	width:100%;
+	background-image: url('beaut-globe.jpg');
+	background-size: cover;
 }
 
 #tagline{
