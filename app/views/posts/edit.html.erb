@@ -1,0 +1,12 @@
+<center>
+<h4>Edit Your Post</h4>
+
+<p><%= h(@post.message).gsub(/\n/, '<br/>').html_safe%></p>
+<p><%= @post.created_at%></p>
+
+<%= form_for @post do |form| %>
+  <%= form.label :message %>
+  <%= form.text_area :message %>
+
+  <%= form.submit "Update" %>
+<% end %>
