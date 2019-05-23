@@ -1,5 +1,7 @@
 {
   "name": "acebook",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "remark-stringify": "^6.0.4"
+  }
 }
