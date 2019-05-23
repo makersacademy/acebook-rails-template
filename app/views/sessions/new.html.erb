@@ -1,0 +1,19 @@
+<% provide(:title, "Login") %>
+<h1>Log in</h1>
+
+<% if flash[:danger] %>
+   <div class="login-notice"><%= flash[:danger] %></div>
+ <% end %>
+
+<%= form_for(:session, url: login_path) do |form| %>
+
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+
+  <%= form.submit "Log in" %>
+<% end %>
+
+<p>New bear? <%= link_to "Sign up now!", new_user_path %></p>
