@@ -13,3 +13,124 @@
  *= require_tree .
  *= require_self
  */
+
+/* General settings */
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  font-family: "Raleway", sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    rgb(47, 80, 250),
+    rgb(150, 170, 240)
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bear-icon {
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+/* Login Page settings */
+
+.sign_up_link {
+  margin-top: 40px;
+}
+
+.log-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.log-in h1 {
+  color: rgb(47, 80, 250);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding-bottom: 10px;
+}
+
+.log-in label,
+input {
+  margin-top: 8px;
+}
+
+/* Signup Page settings */
+
+.sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.sign-up h1 {
+  color: rgb(47, 80, 250);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding-bottom: 10px;
+}
+
+.sign-up label,
+input {
+  margin-top: 8px;
+}
+
+/* Form settings */
+
+form {
+  width: 60%;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
