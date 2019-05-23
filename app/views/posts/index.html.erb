@@ -1,10 +1,18 @@
+<center>
 <% @posts.each do |post| %>
   <div>
     <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
     <p><%= post.created_at.strftime("Created on %d/%m/%Y - %H:%M")%></p>
+    <%= button_to "Edit", { action: 'edit', id: post.id },
+                  method: :get %>
+    <%# button that routes to posts#id with a destroy action %>
+
+    <%= button_to "Delete this Post", { action: 'destroy', id: post.id },
+                  method: :delete, data: { confirm: "Are you sure?"} %>
   </div><br>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+</center>

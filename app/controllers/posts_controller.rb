@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'json'
+
 class PostsController < ApplicationController
   # GET request
   def new
@@ -12,6 +14,10 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def all
+    Post.all.to_json
+  end
+
   # GET request
   def index
     @posts = Post.all.order(created_at: :desc)
@@ -22,11 +28,22 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  #GET request
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   # DELETE request
   def destroy
     @posts = Post.destroy(params[:id])
   end
 
+  # PUT request
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to posts_url
+  end
 
   private
 
