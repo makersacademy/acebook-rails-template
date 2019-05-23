@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
   def destroy
     User.find_by(id:session["user_id"])
     session[:user_id] = nil
-    redirect_to login_url
+    redirect_to login_url notice: "logged out"
   end
 end
