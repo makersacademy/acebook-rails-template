@@ -1,20 +1,31 @@
 class PostsController < ApplicationController
+
   def new
-    @post = Post.new
   end
 
   def create
-    @post = Post.create(post_params)
+    @user = User.find(session[:user_id])
+    @post = @user.posts.create(posts_params)
     redirect_to posts_url
   end
 
   def index
     @posts = Post.all
+    @user = User.find(session[:user_id])
   end
 
-  private
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
 
-  def post_params
+    redirect_to posts_url
+  end
+
+private
+
+  def posts_params
     params.require(:post).permit(:message)
   end
+
+
 end
