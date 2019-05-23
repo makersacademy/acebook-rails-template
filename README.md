@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f151d00627cb43ad87d85c970d3baf63)](https://www.codacy.com/app/Hannah-Frost/acebook-Isambard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Hannah-Frost/acebook-Isambard&amp;utm_campaign=Badge_Grade) [![Travis Badge](https://img.shields.io/travis/com/Hannah-Frost/acebook-Isambard/master.svg)](https://travis-ci.com/Hannah-Frost/acebook-Isambard/builds/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f151d00627cb43ad87d85c970d3baf63)](https://www.codacy.com/app/Hannah-Frost/acebook-Isambard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Hannah-Frost/acebook-Isambard&amp;utm_campaign=Badge_Grade) [![Travis Badge](https://img.shields.io/travis/com/Hannah-Frost/acebook-Isambard/master.svg)](https://travis-ci.com/Hannah-Frost/acebook-Isambard)
 
 # AceBook
 
