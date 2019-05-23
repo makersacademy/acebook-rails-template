@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 
   # GET request
   def index
+    @post = Post.new
     @posts = Post.all.order(created_at: :desc)
   end
 
