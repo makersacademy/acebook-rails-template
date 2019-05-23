@@ -4,5 +4,5 @@ root 'welcome#index'
 
 
 
-  resources :posts
+  resources :posts, :users
 end
