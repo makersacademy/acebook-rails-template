@@ -1,7 +1,7 @@
 body{
-	background-image: url("grid.png");
-	height:750px;
-	
+	/* background-image: url("grid.png"); */
+	/* height:750px; */
+	margin: 0
 }
 .fb-header-base{
 	width:100%;
@@ -18,13 +18,15 @@ body{
 	width:100%;
 	height:90px;
 	position:absolute;
-	background:#7eb6db;
+	background:#365592;
+	font-size: 36px;
+  font-weight: bold;
 	top:0;
 	left:0;
 	color:white;
 	z-index:7;
 	font-family:verdana;
-	
+
 }
 #img1{
 	left:178px;
@@ -48,27 +50,26 @@ body{
 	font-family:verdana;
 	font-size:12px;
 }
-.submit1{
-	left:1130px;
+.login-link{
+	right:60px;
 	top:35px;
-	background:#5b7bc0;
 	color:white;
 	position:fixed;
 	z-index:20;
 	height:22px;
 	width:50px;
 	cursor:pointer;
-	
 
-	
+
+
 }
 .fb-body{
 	position:absolute;
-	left:0px;
+	/* left:0px; */
 	top:90px;
 	width:100%;
-	height:645px;
-	
+	height:100%;
+
 
 }
 .fb-body-login{
@@ -78,7 +79,7 @@ body{
 	top:90px;
 	width:100%;
 	height:645px;
-	
+
 
 }
 .fb-body-posts{
@@ -88,12 +89,16 @@ body{
 	top:90px;
 	width:100%;
 	height:645px;
-	
+
 
 }
 
+#homepage-background{
+	height:100%;
+	width:100%;
+}
 
-#intro1{
+#tagline{
 	left:178px;
 	top:20px;
 	font-family:verdana;
@@ -102,15 +107,21 @@ body{
 	height:75px;
 	width:550px;
 }
-#intro2{
-	left:750px;
-	top:20px;
+#signup-header{
+	/* left:750px; */
+	/* top:20px; */
 	font-family:verdana;
 	font-size:30px;
 	color:white;
 	font-weight:bold;
-	height:75px;
-	width:500px;
+	/* height:75px; */
+	/* width:500px; */
+}
+#login-header{
+	font-family:verdana;
+	font-size:30px;
+	color:black;
+	font-weight:bold;
 }
 #img2{
 	top:130px;
@@ -118,24 +129,20 @@ body{
 	width:537px;
 	height:195px;
 }
-#intro3{
-	left:750px;
-	top:70px;
+#signup-tagline{
 	font-family:verdana;
 	font-size:18px;
 	color:white;
-	height:50px;
-	width:300px;
 }
-#form3{
+#signup-form{
 	top:120px;
-	left:750px;
+	right:40px;
 	font-family:verdana;
 	font-size:20px;
 	color:#142170;
 	width:450px;
 	height:495px;
-	
+
 }
 #namebox{
 	width:200px;
@@ -171,29 +178,29 @@ body{
 	height:40px;
 	left:750px;
 	top:625px;
-	background:green;
+	background:linear-gradient(#589449, #335027);
 	font-family:verdana;
 	font-size:18px;
 	color:white;
 	border-radius:5px 5px 5px 5px;
 	border-width: 1px;
 	border-style:solid;
-	border-color: gray;
+	border-color: #335027;
 	cursor:pointer;
 	outline:none;
-	
+
 }
 #intro4{
 	font-family:verdana;
 	font-size:12px;
 	color:lightgray;
-	
+
 }
 #intro5{
 	font-family:verdana;
 	font-size:14px;
 	color:lightgray;
-	
+
 }
 .fb-body-footer{
 	width:100%;
@@ -202,7 +209,7 @@ body{
 	height:80px;
 	background:white;
 	top:700px;
-	
+
 }
 #fb-body-footer-base{
 	width:900px;
