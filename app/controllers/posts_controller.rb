@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
 
   def new
-    @user = User.new(first_name:"Dave", last_name:"Jones", email:"dave@dave.com", password:"Dave")
-    session[:user_id] = @user.save
   end
 
   def create
