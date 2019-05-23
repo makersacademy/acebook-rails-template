@@ -1,11 +1,11 @@
-
+<center>
 <br>
 <%= link_to new_post_path do %>
   <h4>New post</h4>
 <% end %>
 <br>
 <% @posts.reverse.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
   <p><%= post.created_at.strftime("%d-%m-%Y")%>
   at <%= post.created_at.strftime("%I:%M %p")%></p>
   <p><%= link_to 'Destroy', post_path(post),
