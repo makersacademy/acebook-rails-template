@@ -14,15 +14,15 @@
 2. Run `bundle install` in your command line to install all gems in the Gemfile.
 3. Run `bin/rails db:create` in your command line to create the required databases.
 4. Run `bin/rails db:migrate` in your command line to create the required tables in the databases.
-5. Start the server by running `bin/rails server` in the command line.
-6. -WIP-
+5. You can view through the url `http://localhost:3000/` by running `bin/rails server` in the command line to start the server.
+6. You can also view through `https://acebook-isambard.herokuapp.com/` (recommended).
 
 ### How to Run Tests
 
 `bundle exec rspec` in the command line will run the RSpec / Capybara tests.
 
 ## Model View Controller
-![alt text](https://github.com/Hannah-Frost/acebook-Isambard/blob/MVC/MVC.png)
+![alt text](https://github.com/Hannah-Frost/acebook-Isambard/blob/master/MVC.png)
 
 
 ## User Stories
