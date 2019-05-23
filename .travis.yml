@@ -3,8 +3,8 @@ before_install:
   - "gem update --system"
   - "gem install bundler"
 before_script:
-  - "bin/rails db:crate RAILS_ENV=test"
-  # - "bundle exec rails db:create RAILS_ENV=test"
+
+  - "bundle exec rails db:create RAILS_ENV=test"
   - "bundle exec rails db:migrate RAILS_ENV=test"
 deploy:
   provider: heroku
