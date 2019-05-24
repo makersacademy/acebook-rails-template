@@ -11,7 +11,6 @@ body {
     padding: 0;
     background-color: #a2a2a2;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     height: 100vh;
 }
@@ -40,10 +39,29 @@ button {
     font-weight: 500;
 }
 
+
+h5 {
+    text-align: center;
+    color: purple;
+}
+
+header {
+  text-align: center;
+}
+
 .post {
+    &-body {
+        margin: 0;
+        padding: 0;
+        background-color: #a2a2a2;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+    }
     &-card {
         border: 1px solid black;
-        max-width: 980px;
+        max-width: 500px;
         background-color: #fff;
         margin: 0 auto;
         box-shadow: $shadow;
@@ -62,49 +80,95 @@ button {
 
         &__message {
             margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
         }
 
-        button {
+        &__submit {
             margin-top: 10px;
             align-self: flex-end;
+            margin-bottom: 10px;
+            margin-left: 10px;
         }
-    &-hidden {
-        display: none;
+    }
+  }
+
+  .edit {
+      &-body {
+          margin: 0;
+          padding: 0;
+          background-color: #a2a2a2;
+          display: flex;
+          flex-direction: column;
+          height: 100vh;
+          justify-content: center;
+      }
+      &-card {
+          border: 1px solid black;
+          max-width: 500px;
+          background-color: #fff;
+          margin: 0 auto;
+          box-shadow: $shadow;
+      }
+      &-header {
+          text-align: center;
+          padding: 8px;
+          font-size: 14px;
+          font-weight: 700;
+          border-bottom: 1px solid black;
+      }
+      &-body {
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+
+          &__message {
+              margin-top: 10px;
+              margin-left: 10px;
+              margin-right: 10px;
+          }
+
+          &__submit {
+              margin-top: 10px;
+              align-self: flex-end;
+              margin-bottom: 10px;
+              margin-left: 10px;
+          }
       }
     }
 
-    .posts {
-        &-card {
-            border: 1px solid black;
-            max-width: 980px;
-            background-color: #fff;
-            margin: 0 auto;
-            box-shadow: $shadow;
-        }
-        &-header {
-            text-align: center;
-            padding: 8px;
-            font-size: 14px;
-            font-weight: 700;
-            border-bottom: 1px solid black;
-        }
-        &-body {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
+  .posts {
+    &-body {
+        margin: 0;
+        padding: 0;
+        background-color: #a2a2a2;
+        flex-direction: column;
+        height: 100vh;
+      }
+      &-card {
+          border: 1px solid black;
+          width: 500px;
+          background-color: #fff;
+          margin: 5 auto;
+          box-shadow: $shadow;
+      }
+      &-header {
+          text-align: center;
+          padding: 8px;
+          font-size: 14px;
+          font-weight: 700;
+          border-bottom: 1px solid black;
+      }
+      &-body {
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
 
-            &__message {
-                margin-top: 10px;
-            }
+          &__message {
+              margin-top: 10px;
 
-            button {
-                margin-top: 10px;
-                align-self: flex-end;
-            }
-        &-hidden {
-            display: none;
           }
-        }
 
-}
+      }
+
 }

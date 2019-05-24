@@ -1,12 +1,24 @@
-<center>
-<h4>Edit Your Post</h4>
 
-<p><%= h(@post.message).gsub(/\n/, '<br/>').html_safe%></p>
-<p><%= @post.created_at%></p>
 
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
+<!-- <p><%= h(@post.message).gsub(/\n/, '<br/>').html_safe%></p>
+<p><%= @post.created_at%></p> -->
 
-  <%= form.submit "Update" %>
-<% end %>
+<body class="edit-body">
+
+  <div class="edit-card">
+
+    <%= form_for @post do |form| %>
+      <div class="edit-header">
+        <%= form.label :message, "Edit" %>
+      </div>
+      <div class="edit-body__message">
+        <%= form.text_area :message %>
+      </div>
+      <div class="edit-body__submit">
+        <%= form.submit "Update" %>
+      </div>
+    <% end %>
+
+  </div>
+
+</body>

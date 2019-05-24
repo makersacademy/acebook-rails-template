@@ -1,14 +1,19 @@
-<div class="post-card">
+<body class="post-body">
 
-  <%= form_for @post do |form| %>
-    <div class="post-header">
-      <%= form.label :message, "New" %>
-    <!-- </div>
-    <div class="post-body__message"> -->
-      <%= form.text_area :message %>
-    </div>
-    <div class="post-body__submit">
-      <%= form.submit "Submit" %>
-    </div>
-  <% end %>
-</div>
+  <div class="post-card">
+
+    <%= form_for @post do |form| %>
+      <div class="post-header">
+        <%= form.label :message, "New" %>
+      </div>
+      <div class="post-body__message">
+        <%= form.text_area :message %>
+      </div>
+      <div class="post-body__submit">
+        <%= form.submit "Post" %>
+      </div>
+    <% end %>
+
+  </div>
+
+</body>
