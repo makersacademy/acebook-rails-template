@@ -6,12 +6,12 @@ RSpec.feature "Log in", type: :feature do
     visit("/")
   end
 
-  scenario "Can see Log in link" do
-    expect(page).to have_content("Login")
+  scenario "Can see Log in button" do
+    expect(page).to have_button("Log In")
   end
 
   scenario "Can fill out Log in form" do
-    click_link "Login"
+    click_button "Log In"
     fill_in "Email", with: "test@email.com"
     fill_in "Password", with: "testpassword"
     click_button "Submit"
