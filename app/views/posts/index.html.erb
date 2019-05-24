@@ -5,12 +5,13 @@
 <% @posts.reverse.each do |post| %>
   <p><%= simple_format(post.message) %>
 
-    <%=@user.first_name%> <%=@user.last_name%></p>
+    <%=post.user.first_name%> <%=post.user.last_name%></p>
   <p><%= post.created_at %></p>
 
   <p>
+ <% if post.user.id == @user.id%>
     <%= link_to 'Delete Post', post_path(post),
     method: :delete,
     data: { confirm: 'Are you sure?' } %>
-
+    <%end%>
 <% end %>
