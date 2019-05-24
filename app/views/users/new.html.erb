@@ -1,15 +1,16 @@
 <%= form_for @user do |form| %>
   <%= form.label :first_name %>
-  <%= form.text_field :first_name %>
+  <%= form.text_field :first_name, required: true %>
 
   <%= form.label :last_name %>
-  <%= form.text_field :last_name %>
+  <%= form.text_field :last_name, required: true %>
 
   <%= form.label :email %>
-  <%= form.text_field :email %>
+  <%= form.email_field :email, required: true %>
 
   <%= form.label :password %>
-  <%= form.text_field :password %>
+  <%= form.text_field :password, placeholder: "Between 6 and 10 characters", required: true, minlength: 6, maxlength: 10 %>
 
   <%= form.submit "Submit" %>
+  
 <% end %>
