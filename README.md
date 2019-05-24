@@ -3,6 +3,12 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e7c8ece3816744cab65f463ab8cc5777)](https://app.codacy.com/app/CalumDarroch/acebook-FiveGuys?utm_source=github.com&utm_medium=referral&utm_content=CalumDarroch/acebook-FiveGuys&utm_campaign=Badge_Grade_Settings)
 
 
+## Learning Documentation
+
+Please follow this link to google documentation to view our learning approach for the Acebook Project.
+
+[Learning Docs](https://docs.google.com/document/d/164kPOgYm0QIiJQL_IQuffxS5oDGqFm_QyReLmdOOxxU/edit?usp=sharing)
+
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
