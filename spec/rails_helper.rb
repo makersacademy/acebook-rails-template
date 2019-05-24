@@ -7,6 +7,7 @@ require File.expand_path('../config/environment', __dir__)
 abort('Rails environment is running in prod mode!') if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'json'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
