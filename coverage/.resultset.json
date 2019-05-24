@@ -1,22 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/stuartpethurst/Projects/acebook-steam/spec/controllers/posts_controller_spec.rb": [
+
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/helpers/application_helper.rb": [
         null,
         null,
         1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
+        null
+      ],
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/helpers/sessions_helper.rb": [
         1,
         null,
         null,
@@ -34,8 +26,12 @@
         null,
         null
       ],
-      "/Users/stuartpethurst/Projects/acebook-steam/spec/rails_helper.rb": [
-        null,
+
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/controllers/posts_controller.rb": [
         null,
         null,
         1,
@@ -95,8 +91,7 @@
         null,
         null
       ],
-      "/Users/stuartpethurst/Projects/acebook-steam/config/environment.rb": [
-        null,
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/controllers/application_controller.rb": [
         null,
         null,
         1,
@@ -127,9 +122,7 @@
         null,
         null
       ],
-      "/Users/stuartpethurst/Projects/acebook-steam/config/boot.rb": [
-        null,
-        null,
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/controllers/users_controller.rb": [
         1,
         null,
         1
@@ -138,11 +131,8 @@
         null,
         null,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
+
+        3,
         null,
         null,
         1,
@@ -151,11 +141,11 @@
         null,
         null,
         1,
+        2,
+        2,
+        2,
         null,
-        null,
-        1,
-        1,
-        null,
+        0,
         null,
         null,
         null,
@@ -167,7 +157,7 @@
         null,
         null,
         1,
-        1,
+        2,
         null,
         null,
         null,
@@ -181,20 +171,12 @@
         null,
         null
       ],
-      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/application_controller_renderer.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/models/post.rb": [
         null,
         null,
         null
       ],
-      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/assets.rb": [
-        null,
-        null,
-        null,
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/models/application_record.rb": [
         null,
         null,
         1,
@@ -209,74 +191,7 @@
         null,
         null
       ],
-      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/backtrace_silencers.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/cookies_serializer.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/filter_parameter_logging.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/inflections.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/mime_types.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/wrap_parameters.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/models/user.rb": [
         1,
         2,
         null,
@@ -314,7 +229,31 @@
         1,
         null
       ],
-      "/Users/stuartpethurst/Projects/acebook-steam/app/controllers/posts_controller.rb": [
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/mailers/application_mailer.rb": [
         null,
         null,
         1,
@@ -364,14 +303,14 @@
         null,
         null
       ],
-      "/Users/stuartpethurst/Projects/acebook-steam/app/controllers/application_controller.rb": [
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/jobs/application_job.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/stuartpethurst/Projects/acebook-steam/spec/controllers/user_controller_spec.rb": [
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/controllers/welcome_controller.rb": [
         null,
         null,
         1,
@@ -388,11 +327,19 @@
         1,
         0,
         0,
+
+        0
+      ],
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/channels/application_cable/connection.rb": [
         null,
         null,
         1,
         0,
         0,
+        0,
+        0
+      ],
+      "/Users/chrissongz/Desktop/Team Project/acebook-steam/app/channels/application_cable/channel.rb": [
         null,
         null,
         null,
@@ -553,6 +500,6 @@
         null
       ]
     },
-    "timestamp": 1558708199
+    "timestamp": 1558710292
   }
 }
