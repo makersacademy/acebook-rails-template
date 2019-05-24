@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
 
   include SessionsHelper
-  
-  before_action :logged_in_user, only: [:edit, :update]
+
+  before_action :logged_in_user, only: [:edit, :update, :destroy, :new]
 
   def index
     @posts = Post.all
