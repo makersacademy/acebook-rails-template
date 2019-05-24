@@ -1,23 +1,40 @@
-<center>
-  <% if logged_in? %>
-    <p>Welcome back, <%= current_user.first_name %></p>
-  <% else %>
-    <%= link_to 'Sign Up', new_user_path %>
-  <% end %>
-<br>
-<p><%= link_to 'Logout', logout_path,
+<body class="posts-body">
+  <header>
+    <br>
+     <div>
+    <% if logged_in? %>
+      <p>Welcome back, <%= current_user.first_name %></p>
+    <% else %>
+      <%= link_to 'Sign Up', new_user_path %>
+    <% end %>
+    </div>
+    <%= link_to 'Logout', logout_path,
   method: :delete,
-  data: { confirm: 'Are you sure?' } %></p>
-<%= link_to new_post_path do %>
-  <h4>New post</h4>
-<% end %>
+  data: { confirm: 'Are you sure?' } %>
+    <div>
+    <%= link_to new_post_path do %>
+      <h4>New post</h4>
+    <% end %>
+      </div>
+    <br>
+</<header>
 <br>
-<% @posts.sort_by(&:created_at).reverse.each do |post| %>
-  <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
-  <p><%= post.created_at.strftime("%d-%m-%Y")%>
-  at <%= post.created_at.strftime("%I:%M %p")%></p>
-  <p><%= link_to 'Destroy', post_path(post),
-    method: :delete,
-    data: { confirm: 'Are you sure?' } %></p>
-  <p><%= link_to 'Edit', edit_post_path(post) %></p>
-<% end %>
+
+  <% @posts.sort_by(&:created_at).reverse.each do |post| %>
+
+    <div class="post-card">
+      <div class="posts-header"
+        <h5><p><%= post.created_at.strftime("%d-%m-%Y")%>
+        at <%= post.created_at.strftime("%I:%M %p")%></p></h5>
+      </div>
+      <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
+
+      <p><%= link_to 'Delete', post_path(post),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_post_path(post) %></p>
+    </div>
+
+  <br>
+  <% end %>
+</body>
