@@ -41,6 +41,7 @@ group :test do
   gem 'simplecov', require: false, group: :test
   gem 'simplecov-console'
   gem 'travis'
+  gem 'json'
 end
 
 group :development do

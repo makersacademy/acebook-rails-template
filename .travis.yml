@@ -6,10 +6,12 @@ before_script:
   - "bundle exec rails db:create RAILS_ENV=test"
   - "bundle exec rails db:migrate RAILS_ENV=test"
 deploy:
+  provider: heroku
   api_key:
     secure: 6241042e-c771-4103-ae7a-f8974724b3b5
   app: steam-acebook
-  provider: heroku
+  on:
+    repo: stuartpet/acebook-steam
   true: ~
 language: ruby
 script:
