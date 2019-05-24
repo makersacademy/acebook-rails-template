@@ -15,6 +15,6 @@ RSpec.feature 'Flash Message', type: :feature do
     fill_in 'email', with: 't@email.com'
     fill_in 'password', with: 'testflash'
     click_button 'Login'
-    expect(page).to have_content('Login Invalid email or password')
+    expect(page).to have_content('Login page Invalid email or password')
   end
 end
