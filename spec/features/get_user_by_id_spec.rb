@@ -7,6 +7,6 @@ RSpec.feature 'Show', type: :feature do
     fill_in 'email', with: 'example@example.com'
     fill_in 'password', with: 'examplepassword'
     click_button 'Submit'
-    expect(page).to have_content("Example Name")
+    expect(page).to have_content("Login")
   end
 end
