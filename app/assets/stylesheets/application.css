@@ -237,6 +237,29 @@ input[type=text], input[type=password], input[type=email] {
   font-weight: bold;
 }
 
+/* New Posts Page */
+
+.new_post_label {
+  width: 100%;
+}
+
+.new_post_message {
+  width: 100%;
+}
+
+.new_post_button {
+  width: 100%;
+}
+
+.post_new_container {
+  display: flex;
+  width: 40%;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+  justify-content: center;
+  align-self: center;
+}
+
 /* Other */
 
 .new_post_link {
