@@ -1,19 +1,46 @@
-<% provide(:title, "Login") %>
-<h1>Log in</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+    <title>Acebook - Signup</title>
+  </head>
 
-<% if flash[:danger] %>
-   <div class="login-notice"><%= flash[:danger] %></div>
- <% end %>
+  <body>
 
-<%= form_for(:session, url: login_path) do |form| %>
+    <div class="wrapper">
+      <div class="sign-up">
+        <h1>Bearbook</h1>
+        <p id="bear-icon">&#128059;</p>
 
-  <%= form.label :email %>
-  <%= form.email_field :email %>
+        <% provide(:title, "Login") %>
+          <!-- <h1>Log in</h1> -->
 
-  <%= form.label :password %>
-  <%= form.password_field :password %>
+          <% if flash[:danger] %>
+            <div class="login-notice"><%= flash[:danger] %></div>
+          <% end %>
 
-  <%= form.submit "Log in" %>
-<% end %>
+          <%= form_for(:session, url: login_path) do |form| %>
 
-<p>New bear? <%= link_to "Sign up now!", new_user_path %></p>
+          <%= form.label :email %>
+          <%= form.email_field :email %>
+
+          <br>
+
+          <%= form.label :password %>
+          <%= form.password_field :password %>
+
+          <%= form.submit "Log in", class: :btn %>
+        <% end %>
+
+        <p class="sign_up_link">
+          New bear?
+          <%= link_to "Sign up now!", new_user_path %>
+        </p>
+
+      </div>
+    </div>
+
+  </body>
+
+</html>
