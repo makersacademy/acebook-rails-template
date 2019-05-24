@@ -68,8 +68,43 @@ button {
             margin-top: 10px;
             align-self: flex-end;
         }
-      &-hidden {
-          display: none;
-        }
+    &-hidden {
+        display: none;
+      }
     }
+
+    .posts {
+        &-card {
+            border: 1px solid black;
+            max-width: 980px;
+            background-color: #fff;
+            margin: 0 auto;
+            box-shadow: $shadow;
+        }
+        &-header {
+            text-align: center;
+            padding: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            border-bottom: 1px solid black;
+        }
+        &-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+
+            &__message {
+                margin-top: 10px;
+            }
+
+            button {
+                margin-top: 10px;
+                align-self: flex-end;
+            }
+        &-hidden {
+            display: none;
+          }
+        }
+
+}
 }
