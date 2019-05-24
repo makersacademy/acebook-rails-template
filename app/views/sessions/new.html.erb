@@ -1,9 +1,16 @@
-<span>Login</span>
+<span>Login page</span>
 <% if flash[:alert]%>
   <div>
     <%= flash[:alert]%>
   </div>
 <%end%>
+
+<% if flash[:notice]%>
+  <div>
+    <%=flash[:notice]%>
+  </div>
+<%end%>
+
 <%= form_for(:session, url: login_path) do |f|%>
   <%=f.email_field :email ,placeholder: "email"%>
   <%=f.password_field :password ,placeholder: "password"%>
