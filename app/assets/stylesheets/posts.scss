@@ -144,6 +144,7 @@ header {
         background-color: #a2a2a2;
         flex-direction: column;
         height: 100vh;
+
       }
       &-card {
           border: 1px solid black;
@@ -153,7 +154,7 @@ header {
           box-shadow: $shadow;
       }
       &-header {
-          text-align: center;
+          text-align: right;
           padding: 8px;
           font-size: 14px;
           font-weight: 700;
