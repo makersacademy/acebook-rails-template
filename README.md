@@ -17,7 +17,6 @@ Makers Academy week 8 Challenge: Building a Facebook clone
 * CICD: Travis (CI), Heroku (CD)
 * Analytics: Simplecov
 
-
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname`
@@ -28,6 +27,7 @@ REQUIRED INSTRUCTIONS:
 https://trello.com/b/MNhSxkJR/steam-rails-project
 
 ## How to contribute to this project
+
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Quickstart
@@ -80,4 +80,16 @@ I would like to be able to update and delete posts I have made to AceBook
 As a user
 So that I am up to date with what’s going on
 I would like to be able to be able to view the newest posts first
+=======
+As a user,
+so that I can have an account,
+I would like to sign up.
+
+As a user,
+so that I can keep track of my posts,
+I would like them to have a time stamp.
+
+As a user,
+so that I can see my newest posts first,
+I would like them to be displayed in descending order.
 ```
