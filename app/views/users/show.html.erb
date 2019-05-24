@@ -1,7 +1,11 @@
+
+<center>
 <% if flash[:notice]%>
  <div><%=flash[:notice]%></div>
- <%end%>
-<%= @user.name %> 
+ <%end%><br><br>
+<h1> Welcome, <%= @user.name %>!</h1><br><br>
 
-<%= link_to "Log out",logout_path, method: "delete"%>
+<%= link_to "Log out",logout_path, method: "delete"%><br><br>
 
+<%= link_to "Go to your timeline",posts_url%>
+</center>
