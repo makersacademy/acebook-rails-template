@@ -1,0 +1,20 @@
+<center>
+  <br>
+  <br>
+  <br>
+<%= form_for @post do |form| %>
+  <%= form.label :message %><br><br>
+  <%= form.text_area :message %><br><br>
+
+  <%= form.submit "Submit" %>
+<% end %>
+</center>
+
+
+<div>
+  <p><%= h(@post.message).gsub(/\n/, '<br/>').html_safe %></p>
+  <p><%= @post.created_at.strftime("Created on %d/%m/%Y - %H:%M")%></p>
+</div><br>
+
+
+# Update button

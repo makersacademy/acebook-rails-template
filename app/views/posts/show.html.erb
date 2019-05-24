@@ -1,0 +1,4 @@
+<div>
+  <p><%= h(@post.message).gsub(/\n/, '<br/>').html_safe %></p>
+  <p><%= @post.created_at.strftime("Created on %d/%m/%Y - %H:%M")%></p>
+</div><br>

@@ -1,0 +1,7 @@
+<% if flash[:notice]%>
+ <div><%=flash[:notice]%></div>
+ <%end%>
+<%= @user.name %> 
+
+<%= link_to "Log out",logout_path, method: "delete"%>
+
