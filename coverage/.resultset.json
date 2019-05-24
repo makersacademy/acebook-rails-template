@@ -13,6 +13,7 @@
         null
       ],
       "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/posts_controller.rb": [
+      ],
       "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/helpers/users_helper.rb": [
         1,
         null
@@ -124,6 +125,7 @@
         null
       ],
       "/Users/student/Projects/Makers/week-8/acebook-steam/app/models/post.rb": [
+      ],
 
       "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/models/post.rb": [
 
@@ -190,6 +192,7 @@
         null,
         null,
         null,
+      ],
 
       "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/models/user.rb": [
         1,
@@ -273,6 +276,7 @@
         0
       ],
       "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/welcome_controller.rb": [
+      ],
 
       "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/controllers/welcome_controller.rb": [
 
@@ -294,6 +298,7 @@
         0
       ],
       "/Users/student/Projects/Makers/week-8/acebook-steam/app/jobs/application_job.rb": [
+      ],
 
       "/Users/kiahhewitt/Desktop/Projects_Makers/week-8-9/acebook-rails-template/app/channels/application_cable/connection.rb": [
 
@@ -328,12 +333,14 @@
       "/Users/student/Projects/Makers/week-8/acebook-steam/app/models/user.rb": [
         0,
         0
-      ]
+      ],
     },
 
-    "timestamp": 1558450636
+    "timestamp": 1558450636 [
+    ],
 
-    "timestamp": 1558523370
+    "timestamp": 1558523370[
+    ],
 
   }
 }
