@@ -1,17 +1,71 @@
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
 
-<% @posts.reverse.each do |post| %>
-  <p><%= simple_format(post.message) %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+    <title>Acebook - Posts</title>
+  </head>
+  <body>
 
-    <%=post.user.first_name%> <%=post.user.last_name%></p>
-  <p><%= post.created_at %></p>
+    <div class="page_wrapper">
 
-  <p>
- <% if post.user.id == @user.id%>
-    <%= link_to 'Delete Post', post_path(post),
-    method: :delete,
-    data: { confirm: 'Are you sure?' } %>
-    <%end%>
-<% end %>
+      <div class="menu_container">
+
+        <div class="menu">
+
+          <div class="left-hand-side">
+            <div class="welcome">
+              Welcome <%= @user.first_name.capitalize %>
+            </div>
+          </div>
+
+          <div class="right-hand-side">
+            <div class="logout">
+              Logout
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="posts_wrapper">
+
+      <div class="new_post_link">
+        <%= link_to new_post_path do %>
+          New post
+        <% end %>
+      </div>
+
+      <% @posts.reverse.each do |post| %>
+        <div class="post_container">
+
+          <div class="bear_icon_post">&#128059;</div>
+
+          <div class="user_name_post"><%=post.user.first_name.capitalize%> <%=post.user.last_name.capitalize%></div>
+
+          <div class="user_content_post"><%= simple_format(post.message) %></div>
+
+          <div class="time_of_post"><%= post.created_at %></div>
+
+          <div class="delete_post">
+            <% if post.user.id == @user.id%>
+                <%= link_to 'Delete Post', post_path(post),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+            <%end%>
+          </div>
+
+        </div>
+
+      <% end %>
+
+    </div>
+
+
+  </body>
+</html>
