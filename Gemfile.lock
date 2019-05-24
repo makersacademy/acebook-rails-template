@@ -241,6 +241,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   jbuilder (~> 2.5)
+  json
   listen (>= 3.0.5, < 3.2)
   pg
   puma (~> 3.7)
