@@ -134,7 +134,7 @@
         null,
         1
       ],
-      "/Users/stuartpethurst/Projects/acebook-steam/config/environments/development.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/environments/test.rb": [
         null,
         null,
         1,
@@ -144,6 +144,22 @@
         null,
         null,
         null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
         1,
         null,
         null,
@@ -151,30 +167,6 @@
         null,
         null,
         1,
-        null,
-        null,
-        1,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
         1,
         null,
         null,
@@ -187,10 +179,6 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        1,
         null
       ],
       "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/application_controller_renderer.rb": [
@@ -565,6 +553,6 @@
         null
       ]
     },
-    "timestamp": 1558707709
+    "timestamp": 1558708199
   }
 }
