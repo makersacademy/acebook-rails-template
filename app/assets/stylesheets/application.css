@@ -1,37 +1,36 @@
 body{
-	/* background-image: url("grid.png"); */
-	/* height:750px; */
 	margin: 0
 }
 .fb-header-base{
 	width:100%;
 	height:90px;
+	/* change to 80px across the board */
 	position:absolute;
 	top:0;
 	left:0;
 	color:white;
 	z-index:7;
 	font-family:verdana;
-	-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+	border-bottom: 1px solid #133783
+	/* -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25); */
+
 }
 .fb-header{
 	width:100%;
 	height:90px;
-	position:absolute;
-	background:#365592;
-	font-size: 36px;
-  font-weight: bold;
-	top:0;
-	left:0;
-	color:white;
 	z-index:7;
-	font-family:verdana;
+	background-image:linear-gradient(#3b5d9e, #365592, #2e497d)
+	/* background:#365592; */
 
 }
 #img1{
-	left:178px;
-	height:50px;
-	width:100px;
+	/* fb-header-font */
+	font-family:verdana;
+	font-size: 36px;
+	font-weight: bold;
+	color:white;
+	position:absolute;
+	left:150px;
 	top:25px;
 }
 #form1{
@@ -50,7 +49,7 @@ body{
 	font-family:verdana;
 	font-size:12px;
 }
-.login-link{
+/* .login-link{
 	right:60px;
 	top:35px;
 	color:white;
@@ -59,13 +58,9 @@ body{
 	height:22px;
 	width:50px;
 	cursor:pointer;
-
-
-
-}
+} */
 .fb-body{
 	position:absolute;
-	/* left:0px; */
 	top:90px;
 	width:100%;
 	height:100%;
@@ -99,7 +94,7 @@ body{
 }
 
 #tagline{
-	left:178px;
+	left:150px;
 	top:20px;
 	font-family:verdana;
 	font-size:20px;
@@ -108,14 +103,10 @@ body{
 	width:550px;
 }
 #signup-header{
-	/* left:750px; */
-	/* top:20px; */
 	font-family:verdana;
 	font-size:30px;
 	color:white;
 	font-weight:bold;
-	/* height:75px; */
-	/* width:500px; */
 }
 #login-header{
 	font-family:verdana;
@@ -135,14 +126,14 @@ body{
 	color:white;
 }
 #signup-form{
-	top:120px;
-	right:40px;
+	position:absolute;
+  top: 40px;
+	right:120px;
 	font-family:verdana;
 	font-size:20px;
 	color:#142170;
-	width:450px;
+	width:430px;
 	height:495px;
-
 }
 #namebox{
 	width:200px;
@@ -156,14 +147,13 @@ body{
 	border-style:solid;
 	border-color: gray;
 }
-#mailbox{
+.signup-box{
 	width:408px;
-	height:40px;
 	border-radius:5px 5px 5px 5px;
 	background:white;
 	padding:10px;
 	font-size:18px;
-	margin-top:8px;
+	margin-top:12px;
 	border-width: 1px;
 	border-style:solid;
 	border-color: gray;
@@ -172,6 +162,23 @@ body{
 	font-size:12px;
 	height:15px;
 	width:15px;
+}
+.button-login{
+	right:100px;
+	top:35px;
+	color:white;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 2px 6px;
+	position:absolute;
+	z-index:20;
+	background-color: #365592;
+  border-radius: 2px;
+  border: 1px solid #29487d;
+	cursor:pointer;
+}
+.button-login:hover {
+  background-color: #4267b2;
 }
 .button2{
 	width:250px;
@@ -190,13 +197,13 @@ body{
 	outline:none;
 
 }
-#intro4{
+#signup-disclaimer{
 	font-family:verdana;
 	font-size:12px;
 	color:lightgray;
 
 }
-#intro5{
+#signup-form-footer{
 	font-family:verdana;
 	font-size:14px;
 	color:lightgray;

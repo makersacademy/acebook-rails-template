@@ -1,45 +1,29 @@
-<%# <div class="form-container">
-   <h1>Create an account</h1>
-
-   <form action="/posts" method="get">
-      <input class="form-field" type="text" name="Email" placeholder="Email address"><br>
-      <input class="form-field" type="text" name="Password" placeholder="Password"><br>
-   <input class="submit-button" type="submit" value="Sign Up">
-   </form>
-
-   <button><a href="/homepage/login">Log In</a></button>
-</div> %>
-
-
-
 </head>
 <body >
-   <div class="fb-header-base">
-   </div>
    <div>
-      <a href="/homepage/login" class="login-link">Login</a>
+      <form action="/homepage/login">
+        <input type="submit" class="button-login" value="Log In">
+      </form>
    </div>
 
    <div id="homepage-background" class="fb-body">
       <div id="tagline" class="fb-body">Acebook helps you connect and share with the <br>
       people in your life.</div>
 
-      <%# <%= image_tag "specimen.jpg", width: "50%", height: "100%", align: "right" %>
-      <%# <div id="img2" class="fb-body"><img src="https://unsplash.com/photos/Q1p7bh3SHj8" width="400px" height="400px"/></div> %>
-      <div id="signup-form" class="fb-body">
+      <div id="signup-form">
         <h3 id="signup-header">Create an account</h3>
         <h4 id="signup-tagline">It's free and always will be.</h4>
         <form action="/posts" method="get">
-          <input placeholder="Full Name" type="text" id="mailbox"  /> <br>
-          <input placeholder="Email" type="text" id="mailbox" /><br>
-          <input placeholder="Password" type="password" id="mailbox"  /><br>
-          <p id="intro4">By clicking Create an account, you agree to our Terms: that
+          <input placeholder="Username" type="text" class="signup-box"  /> <br>
+          <input placeholder="Email" type="text" class="signup-box" /><br>
+          <input placeholder="Password" type="password" class="signup-box"  /><br>
+          <p id="signup-disclaimer">By clicking Create an account, you agree to our Terms: that
          all software related work written by yourself shall from here on out be copyright of Max Roberts-Dear.</p>
           <input type="submit" class="button2" value="Create an account" />
          </form>
-         <br><hr>
-         <p id="intro5">Create a Page for a someone really cool. Maybe that person's name is Max..</p>
-
+         <br>
+         <hr>
+         <p id="signup-form-footer">Create a Page for a someone really cool. Maybe that person's name is Max..</p>
       </div>
 
    </div>
