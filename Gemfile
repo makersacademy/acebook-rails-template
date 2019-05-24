@@ -1,6 +1,5 @@
 # frozen_string_literal: false
 
-
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|

@@ -5,16 +5,10 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
-  root "posts#new"
+  root 'posts#new'
+  get 'registration/signup'
+  post 'registration/new'
+  get 'registration/index'
 
-
-  get "registration/signup"
-  post "registration/new"
-  get "registration/index"
-
-  get "/signup", to: 'users#new'
-  
-
-
-
+  get '/signup', to: 'users#new'
 end

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-
-
 class PostsController < ApplicationController
   # GET request
   def new
@@ -12,10 +10,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     redirect_to posts_url
-  end
-
-  def all
-    Post.all.to_json
   end
 
   # GET request
@@ -29,7 +23,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  #GET request
+  # GET request
   def edit
     @post = Post.find(params[:id])
   end

@@ -8,9 +8,9 @@ RSpec.feature 'Updating Posts', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
-    click_button 'Edit', :match => :first
+    click_button 'Edit', match: :first
     fill_in 'Message', with: 'Hello, planet!'
     click_button 'Submit'
-    expect(page).to have_content("Hello, planet")
+    expect(page).to have_content('Hello, planet')
   end
 end

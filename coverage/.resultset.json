@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Projects/Makers/week-8/acebook-steam/spec/controllers/posts_controller_spec.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/spec/controllers/posts_controller_spec.rb": [
         null,
         null,
         1,
@@ -29,74 +29,73 @@
         1,
         1,
         1,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/spec/rails_helper.rb": [
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
         1,
         null,
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/environment.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/spec/rails_helper.rb": [
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/stuartpethurst/Projects/acebook-steam/config/environment.rb": [
         null,
         null,
         null,
@@ -105,7 +104,7 @@
         null,
         1
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/application.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/application.rb": [
         null,
         null,
         1,
@@ -128,14 +127,14 @@
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/boot.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/boot.rb": [
         null,
         null,
         1,
         null,
         1
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/environments/development.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/environments/development.rb": [
         null,
         null,
         1,
@@ -194,7 +193,7 @@
         1,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/initializers/application_controller_renderer.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -204,7 +203,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/initializers/assets.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -222,7 +221,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/initializers/backtrace_silencers.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -235,7 +234,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/initializers/cookies_serializer.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
@@ -244,7 +243,7 @@
         null,
         1
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/initializers/filter_parameter_logging.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
@@ -252,7 +251,7 @@
         null,
         1
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/initializers/inflections.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -272,7 +271,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/initializers/mime_types.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/mime_types.rb": [
         null,
         null,
         null,
@@ -280,7 +279,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/initializers/wrap_parameters.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -299,7 +298,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/config/routes.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/config/routes.rb": [
         null,
         null,
         1,
@@ -308,32 +307,26 @@
         1,
         null,
         1,
-        null,
-        null,
         1,
         1,
         1,
         null,
         1,
-        null,
-        null,
-        null,
-        null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/app/helpers/application_helper.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/app/helpers/application_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/app/helpers/users_helper.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/app/helpers/users_helper.rb": [
+        null,
+        null,
         1,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/posts_controller.rb": [
-        null,
-        null,
+      "/Users/stuartpethurst/Projects/acebook-steam/app/controllers/posts_controller.rb": [
         null,
         null,
         1,
@@ -346,10 +339,6 @@
         1,
         7,
         7,
-        null,
-        null,
-        1,
-        0,
         null,
         null,
         null,
@@ -387,14 +376,16 @@
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/application_controller.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/app/controllers/application_controller.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/spec/controllers/user_controller_spec.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/spec/controllers/user_controller_spec.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -425,9 +416,10 @@
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/app/controllers/users_controller.rb": [
-        1,
+      "/Users/stuartpethurst/Projects/acebook-steam/app/controllers/users_controller.rb": [
         null,
+        null,
+        1,
         1,
         2,
         null,
@@ -448,30 +440,13 @@
         1,
         1,
         null,
-        null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/spec/features/get_user_by_id_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/spec/features/posts_can_be_edited_spec.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/spec/features/get_user_by_id_spec.rb": [
         null,
         null,
         1,
         null,
-        1,
-        1,
         1,
         1,
         1,
@@ -483,7 +458,25 @@
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/spec/features/posts_newest_first_spec.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/spec/features/posts_can_be_edited_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/stuartpethurst/Projects/acebook-steam/spec/features/posts_newest_first_spec.rb": [
         null,
         null,
         1,
@@ -505,20 +498,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/spec/features/posts_show_timestamp_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/spec/features/posts_show_timestamp_spec.rb": [
         null,
         null,
         1,
@@ -533,30 +513,46 @@
         null,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/spec/models/post_spec.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/spec/features/user_can_submit_posts_spec.rb": [
         null,
         null,
         1,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/stuartpethurst/Projects/acebook-steam/spec/models/post_spec.rb": [
+        null,
+        null,
+        1,
         null,
         1,
         2,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/app/models/post.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/app/models/post.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/app/models/application_record.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/app/models/application_record.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/student/Projects/Makers/week-8/acebook-steam/app/models/user.rb": [
+      "/Users/stuartpethurst/Projects/acebook-steam/app/models/user.rb": [
+        null,
+        null,
         1,
         1,
         null,
@@ -569,6 +565,6 @@
         null
       ]
     },
-    "timestamp": 1558703071
+    "timestamp": 1558707709
   }
 }
