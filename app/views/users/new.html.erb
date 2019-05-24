@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -12,6 +13,11 @@
       <div class="sign-up">
         <h1>Bearbook</h1>
          <p id="bear-icon">&#128059;</p>
+        
+        
+ <% if flash[:danger] %>
+   <div class="login-notice"><%= flash[:danger] %></div>
+ <% end %>
 
         <%= form_with scope: :user, url: users_path, local: true do |form| %>
 
@@ -44,3 +50,4 @@
   </body>
 
 </html>
+
