@@ -1,11 +1,13 @@
-<h1>Login</h1>
 
-<%= form_for (:session) do |form| %>
+<h1>Log In</h1>
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+<%= form_for :session do |form| %>
   <%= form.label :email %>
   <%= form.text_field :email %>
 
   <%= form.label :password %>
   <%= form.text_field :password %>
-
-  <%= form.submit "Login" %>
+  <%= form.submit "Submit" %>
 <% end %>
