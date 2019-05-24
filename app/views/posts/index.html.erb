@@ -1,7 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+  <title>Acebook</title>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  </head>
+  <body>
+    <div class="Cnt_Layout">
+      <header class="Menu">
+        <ul class="list_item">
+          <li class="item left"><i class="fab fa-facebook"></i></li>
+          <li class="item left">
+            <i class="fab fa-facebook-messenger"></i>
+            <span class="circle_notify"></span>
+          </li>
+
+          <li class="item middle">
+            <div class="cnt_search">
+              <input type="text" class="txt_search" placeholder="Search for a post..."/>
+              <i class="fa fa-search"></i>                       </div>
+          </li>
+          <li class="item right"><i class="fa fa-bell"></i></li>
+          <li class="item right"><i class="fas fa-comments"></i></li>
+          <li class="item right"><i class="fa fa-user-friends"></i></li>
+        </ul>
+      </header>
+      <div class="Containers">
+        <div class="Container Left">
+          <ul class="Sections Menu">
+            Menu
+          </ul>
+        </div>
+        <div class="Container Middle">
+          <div class="Sections Stories">
+            <h1 class="title">Friends</h1>
+            <ul class="Body">
+              <li class="img_avatar perfil_session" style="background-image: url(http://themes.themewaves.com/nuzi/wp-content/uploads/sites/4/2013/05/Team-Member-3.jpg);">
+                <span class="img_border">
+                  <button class="btn_open_sect">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </span>
+              </li>
+              <li class="img_avatar" style="background-image: url('/assets/henry.jpg')"><span class="img_border"></span></li>
+              <li class="img_avatar" style="background-image:url('/assets/gui.jpg')"><span class="img_border"></span></li>
+              <li class="img_avatar" style="background-image:url('/assets/Kiah.png')"><span class="img_border"></span></li>
+              <li class="img_avatar" style="background-image:url('/assets/Jordan.png')"><span class="img_border"></span></li>
+              <li class="img_avatar" style="background-image:url('/assets/sarp.png')"><span class="img_border"></span></li>
+            </ul>
+          </div>
+          <div class="Sections New_Post">
+            <div class="Body">
+              <div id="WritePost" class="cnt_write_post">
+                <div class="cnt_new_written">
+                  <form action="/posts" method="post">
+
+                  <div class="img_avatar post" style="background-image: url('/assets/stu.jpg');"></div>
+                  <%= form_with model: @post do |form| %>
+                    <%= form.text_area :message, class: :txt_post, placeholder: "Whats on your mind?"%><br><br>
+
+                    <%= form.submit "Submit", class: "btn submit" %>
+                  <% end %>
+
+                </form>
+
+                </div>
+
+                <div class="cnt_more_files_post">
+                  <div class="file_post palette_colors">
+                    <button id="BtnOpenClose_PaletteColors" class="btn add_more palette" onclick="BtnOpenClose_PaletteColors(this)" value="hide">
+                      <i class="fa fa-palette"></i>
+                    </button>
+                    <ul id="ListColorsPalette" class="list_colors_palette">
+                      <li id="ColorPaletteR1" class="option_color" onclick="SelectColorPalette(this)"></li>
+                      <li id="ColorPaletteR2" class="option_color" onclick="SelectColorPalette(this)"></li>
+                      <li id="ColorPaletteR3" class="option_color" onclick="SelectColorPalette(this)"></li>
+                      <li id="ColorPaletteR4" class="option_color" onclick="SelectColorPalette(this)"></li>
+                      <li id="ColorPaletteR5" class="option_color" onclick="SelectColorPalette(this)"></li>
+                    </ul>
+                  </div>
+                  <div class="file_post tag_friend">
+                    <button class="btn add_more">
+                    <i class="fa fa-user-plus"></i>
+                    <span class="bubble title">
+                      Etiqueta
+                    </span>
+                  </button>
+                  </div>
+                  <div class="file_post emoji_fellings">
+                  <button class="btn add_more">
+                    <i class="far fa-smile"></i>
+                    <span class="bubble title">
+                      Sentimientos
+                    </span>
+                  </button>
+                  </div>
+                  <div class="file_post image_video">
+                    <button class="btn add_more">
+                    <i class="fa fa-image"></i>
+                    <span class="bubble title">
+                      Imagen / Video
+                    </span>
+                  </button>
+                  </div>
+                  <div class="file_post live_transmition">
+                    <button class="btn add_more">
+                    <i class="fa fa-video"></i>
+                    <span class="bubble title">
+                      Live
+                    </span>
+                  </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Sections Feed">
+            <div class="Feed_Body"></div>
+          </div>
+        </div>
+        <div class="Container Right">
+          <div class="Sections Chat">
+            Chat
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+<center>
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <div>
+    <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
+    <p><%= post.created_at.strftime("Created on %d/%m/%Y - %H:%M")%></p>
+    <%= button_to "Edit", { action: 'edit', id: post.id },
+                  method: :get %>
+    <%# button that routes to posts#id with a destroy action %>
+
+    <%= button_to "Delete this Post", { action: 'destroy', id: post.id },
+                  method: :delete, data: { confirm: "Are you sure?"} %>
+  </div><br>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+</center>
