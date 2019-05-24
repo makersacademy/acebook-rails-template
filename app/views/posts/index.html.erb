@@ -1,6 +1,13 @@
 <center>
+  <% if logged_in? %>
   <p>Welcome back, <%= current_user.first_name %></p>
+  <% else %>
+    <%= link_to 'Sign Up', new_user_path %>
+    <% end %>
 <br>
+<p><%= link_to 'Logout', logout_path,
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %></p>
 <%= link_to new_post_path do %>
   <h4>New post</h4>
 <% end %>
