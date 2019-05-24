@@ -8,9 +8,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    @user.save
-    redirect_to login_path
+     @userdbcheck = User.find_by(email: user_params[:email])
+    if @userdbcheck == nil
+      @user = User.new(user_params)
+      @user.save
+      redirect_to login_path
+    else
+      flash.now[:danger] = 'Email has already been taken'
+      render 'new'
+    end
   end
 
   private
