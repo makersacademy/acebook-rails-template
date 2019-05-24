@@ -1,4 +1,6 @@
 <center>
+
+<%= current_user.first_name %>
 <h4>Edit Your Post</h4>
 
 <p><%= h(@post.message).gsub(/\n/, '<br/>').html_safe%></p>
