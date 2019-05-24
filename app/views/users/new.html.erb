@@ -1,4 +1,5 @@
 <%= form_for @user do | user | %>
+<%= render 'shared/error_messages'%>
 <%= user.label :name %>
 <%= user.text_field :name, placeholder: "name" %>
 <%= user.label :email %>
