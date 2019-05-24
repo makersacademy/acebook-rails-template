@@ -31,6 +31,7 @@ class PostsController < ApplicationController
   # DELETE request
   def destroy
     @posts = Post.destroy(params[:id])
+    redirect_to posts_url
   end
 
   # PUT request
