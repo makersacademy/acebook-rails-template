@@ -21,6 +21,12 @@ $shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
         background-color: #fff;
         margin: 0 auto;
         box-shadow: $shadow;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
     &-header {
         text-align: center;
@@ -41,10 +47,10 @@ $shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
         }
 
         &__submit {
-            margin-top: 10px;
-            align-self: right;
-            margin-bottom: 10px;
-            margin-right: 10px;
+          margin-top: 10px;
+          align-self: flex-end;
+          margin-bottom: 10px;
+          margin-left: 10px;
         }
     }
   }
