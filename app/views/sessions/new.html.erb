@@ -1,5 +1,10 @@
 
-<h1>Log In</h1>
+<div>
+  <h1>Log In</h1> <%= link_to 'Sign Up', new_user_path %>
+</div>
+
+<br>
+
 <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>

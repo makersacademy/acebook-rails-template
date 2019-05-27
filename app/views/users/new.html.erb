@@ -1,16 +1,34 @@
+<div class="header">
+  <h2>Welcome to Acebook</h2><%= link_to login_path do %><h4>Log in</h4><% end %>
+</div>
+
+<body class="signup-body">
+  <div class="signup-card">
+    <div class="signup-header">Sign up</div>
+
 <%= form_for @user do |form| %>
-  <%= form.label :first_name %>
-  <%= form.text_field :first_name, required: true %>
 
-  <%= form.label :last_name %>
-  <%= form.text_field :last_name, required: true %>
+    <div class="signup-body__message">
+      <div class="hidden"><%= form.label :first_name %></div>
+      <%= form.text_field :first_name, placeholder: "first name", required: true %>
+    </div>
+    <div class="signup-body__message">
+      <div class="hidden"><%= form.label :last_name %></div>
+      <%= form.text_field :last_name, placeholder: "last name", required: true %>
+    </div>
+    <div class="signup-body__message">
+      <div class="hidden"><%= form.label :email %></div>
+      <%= form.email_field :email, placeholder: "email", required: true %>
+    </div>
+    <div class="signup-body__message">
+      <div class="hidden"><%= form.label :password %></div>
+      <%= form.text_field :password, placeholder: "password", required: true, minlength: 6, maxlength: 10 %>
+    </div>
+    <div class="signup-body__submit">
+      <h6><%= form.submit "Submit" %></h6>
+    </div>
 
-  <%= form.label :email %>
-  <%= form.email_field :email, required: true %>
-
-  <%= form.label :password %>
-  <%= form.text_field :password, placeholder: "Between 6 and 10 characters", required: true, minlength: 6, maxlength: 10 %>
-
-  <%= form.submit "Submit" %>
-  
 <% end %>
+
+  </div>
+</body>

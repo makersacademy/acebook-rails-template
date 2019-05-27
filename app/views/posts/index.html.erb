@@ -23,9 +23,9 @@
   <% @posts.sort_by(&:created_at).reverse.each do |post| %>
 
     <div class="post-card">
-      <div class="posts-header"
-        <h5><p><%= post.created_at.strftime("%d-%m-%Y")%>
-        at <%= post.created_at.strftime("%I:%M %p")%></p></h5>
+      <div class="posts-header">
+        <h5><%= post.created_at.strftime("%d-%m-%Y")%>
+        at <%= post.created_at.strftime("%I:%M %p")%></h5>
       </div>
       <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
 
