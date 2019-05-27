@@ -1,6 +1,11 @@
-<div class="header">
-  <h2>Welcome to Acebook</h2><%= link_to login_path do %><h4>Log in</h4><% end %>
-</div>
+<body class="header">
+  <div class="header">
+    <h1>Acebook</h1>
+    <%= link_to login_path do %>
+      <h4>Log in</h4>
+    <% end %>
+  </div>
+</body>
 
 <body class="signup-body">
   <div class="signup-card">
@@ -25,7 +30,7 @@
       <%= form.text_field :password, placeholder: "password", required: true, minlength: 6, maxlength: 10 %>
     </div>
     <div class="signup-body__submit">
-      <h6><%= form.submit "Submit" %></h6>
+      <%= form.submit "Submit" %>
     </div>
 
 <% end %>

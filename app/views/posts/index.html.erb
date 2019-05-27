@@ -1,3 +1,12 @@
+<body class="header">
+  <div class="header">
+    <h1>Acebook</h1>
+    <%= link_to login_path do %>
+      <h4>Log in</h4>
+    <% end %>
+  </div>
+</body>
+
 <body class="posts-body">
   <header>
     <br>
@@ -22,7 +31,7 @@
 
   <% @posts.sort_by(&:created_at).reverse.each do |post| %>
 
-    <div class="post-card">
+    <div class="posts-card">
       <div class="posts-header">
         <h5><%= post.created_at.strftime("%d-%m-%Y")%>
         at <%= post.created_at.strftime("%I:%M %p")%></h5>

@@ -5,49 +5,6 @@ $shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
 
 * { font-family: 'Roboto', sans-serif; }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #a2a2a2;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-input, button, textarea {
-    border: 2px solid rgba(0, 0, 0, 0.6);
-    background-image:none;
-    background-color: #dadad3;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    padding: 5px;
-
-    &:focus {
-        outline: none;
-    }
-}
-
-textarea {
-    min-height: 50px;
-    resize:vertical;
-}
-
-button {
-    cursor: pointer;
-    font-weight: 500;
-}
-
-
-h5 {
-    text-align: center;
-    color: purple;
-}
-
-header {
-  text-align: center;
-}
-
 .login {
     &-body {
         margin: 0;
@@ -85,9 +42,9 @@ header {
 
         &__submit {
             margin-top: 10px;
-            align-self: flex-end;
+            align-self: right;
             margin-bottom: 10px;
-            margin-left: 10px;
+            margin-right: 10px;
         }
     }
   }
