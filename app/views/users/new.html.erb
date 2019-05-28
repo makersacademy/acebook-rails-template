@@ -1,3 +1,48 @@
+<%= stylesheet_link_tag "login" %>
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
+
+<div class="container">
+  <div class="left content-container">
+    <h1 class="title">facebook</h1>
+    <p class="intro">Connect with friends and the
+world around you.</p>
+    <div class="button-container">
+      <a href="#"><i class="fas fa-user"></i> Log In</i></a>
+      <a href="#"><i class="fas fa-question-circle"></i> Forgot Account?</i></a>
+    </div>
+  </div>
+  <div class="right content-container">
+    <h1 class="title">sign up</h1>
+    <div class="form-container">
+      <div class="top">
+        <input type='text' placeholder='First Name' id='fn'></input>
+      <input type='text' placeholder='Last Name' id='ln'></input>
+      </div>
+      <div class="middle">
+        <input type='text' placeholder='Mobile Number or Email' id='email'></input>
+  </div>
+      <div class="middle">
+        <input type='text' placeholder='Password' id='password'></input>
+  </div>
+      <div class="bottom">
+        <select id='month'>
+          <option value="March">March</option>
+          <option value="April">April</option>
+        </select>
+        <select id='day'>
+          <option value="6">6</option>
+          <option value="7">7</option>
+        </select>
+              <select id='year'>
+        <option value="1990">1990</option>
+        <option value="1991">1991</option>
+      </select>
+      </div>
+    </div>
+<a href="#" class='big-btn'>create account <i class="fas fa-caret-right"></i></a>
+  </div>
+</div>
+
 <%= form_for @user do | user | %>
 <%= render 'shared/error_messages'%>
 <%= user.label :name %>
