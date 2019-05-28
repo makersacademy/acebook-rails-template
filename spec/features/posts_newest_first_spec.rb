@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require "web_helper"
+require 'web_helper'
 # let!(:first_post) { Factory(:post) }
 # let!(:second_post) { Factory(:post) }
 

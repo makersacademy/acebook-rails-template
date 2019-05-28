@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require "web_helper"
+require 'web_helper'
 
 RSpec.feature 'Timeline', type: :feature do
   scenario 'posts show the date and the hour they were created' do

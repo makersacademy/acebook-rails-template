@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require "web_helper"
+require 'web_helper'
 
 RSpec.feature 'Updating Posts', type: :feature do
   scenario 'user can edit posts' do

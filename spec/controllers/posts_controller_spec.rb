@@ -11,7 +11,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   # 302 indecates the resource requested has been temp moved - we have
-  # redirected them to the login page causing a 302.  
+  # redirected them to the login page causing a 302.
 
   describe 'GET /' do
     it 'responds with 302' do
