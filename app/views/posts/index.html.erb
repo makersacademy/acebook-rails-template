@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
-    <title>Acebook - Posts</title>
+    <title>Bearbook - Posts</title>
   </head>
   <body>
 
@@ -59,8 +59,10 @@
           <div class="time_of_post"><%= post.created_at %></div>
 
           <div class="delete_post">
-            <% if post.user.id == @user.id%>
-                <%= link_to 'Delete Post', post_path(post),
+            <%= link_to 'Edit', edit_post_path(post) %>
+            <span>-</span>
+            <% if post.user.id == @user.id %>
+                <%= link_to 'Delete', post_path(post),
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %>
             <%end%>
