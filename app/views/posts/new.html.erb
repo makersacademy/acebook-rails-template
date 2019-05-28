@@ -34,22 +34,25 @@
     </div>
 
     <div class="posts_wrapper">
-      <div class="post_container">
 
-      <%= form_with scope: :post, url: posts_path, local: true do |form| %>
-      <div class="new_post_label">
-        <%= form.label :message %>
-      </div>
+      <div class="post_new_container">
+        <%= form_with scope: :post, url: posts_path, local: true do |form| %>
 
-      <div class="new_post_message">
-        <%= form.text_area :message %>
-      </div>
+          <div class="bear_icon_post_new">&nbsp; &#128059; &nbsp; <span id="special-text">Message</span></div>
 
-      <div class="new_post_button">
-        <%= form.submit "Submit" %>
-      </div>
+          <div class="new_post_label">
+            <%= form.label :message %>
+          </div>
 
-      <% end %>
+          <div class="new_post_message">
+            <%= form.text_area :message, placeholder: "What are the bear necessities..." %>
+          </div>
+
+          <div class="new_post_button">
+            <%= form.submit "Submit", class: :btn %>
+          </div>
+
+        <% end %>
       </div>
     </div>
 

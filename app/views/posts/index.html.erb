@@ -35,11 +35,15 @@
 
     <div class="posts_wrapper">
 
-      <div class="new_post_link">
-        <%= link_to new_post_path do %>
-          New post
-        <% end %>
+      <div class="new_post_link_button">
+        <div class="new_post_link">
+          <%= link_to new_post_path do %>
+            New post
+          <% end %>
+        </div>
       </div>
+
+
 
       <% @posts.reverse.each do |post| %>
         <div class="post_container">
