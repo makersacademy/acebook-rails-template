@@ -9,7 +9,6 @@ deploy:
   provider: heroku
   api_key:
     secure: 6241042e-c771-4103-ae7a-f8974724b3b5
-    skip_cleanup: true
   app: steam-acebook
   on:
     repo: stuartpet/acebook-steam
