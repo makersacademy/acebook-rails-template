@@ -14,10 +14,25 @@
         1,
         null
       ],
-      "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/controllers/homepage_controller.rb": [
+      "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/controllers/posts_controller.rb": [
+        1,
         1,
         1,
         null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        8,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
         null,
         null
       ],
@@ -39,28 +54,6 @@
         1,
         null
       ],
-      "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/controllers/posts_controller.rb": [
-        1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
       "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/models/post.rb": [
         1,
         null
@@ -72,6 +65,13 @@
         0
       ],
       "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/controllers/homepage_controller.rb": [
+        0,
+        0,
+        null,
         0,
         0
       ],
@@ -106,6 +106,6 @@
         0
       ]
     },
-    "timestamp": 1559042196
+    "timestamp": 1559044534
   }
 }
