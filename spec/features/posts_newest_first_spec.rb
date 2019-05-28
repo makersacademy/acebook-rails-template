@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-
+require "web_helper"
 # let!(:first_post) { Factory(:post) }
 # let!(:second_post) { Factory(:post) }
 
 RSpec.feature 'Timeline', type: :feature do
   scenario 'posts appear with newest post first' do
+    create_new_user
     visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'Hello!'
