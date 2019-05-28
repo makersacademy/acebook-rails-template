@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# require "devise"
 
 Rails.application.configure do
   # Settings specified here will take precedence
