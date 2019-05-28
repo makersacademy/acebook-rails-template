@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'devise'
+
 gem 'simplecov', '~> 0.16.1'
 
 ruby '2.5.0'

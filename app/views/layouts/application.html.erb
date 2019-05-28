@@ -11,6 +11,13 @@
   <body>
     <div class="fb-header-base"></div>
     <div class="fb-header"><span id="fb-header-font">Acebook</span></div>
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
