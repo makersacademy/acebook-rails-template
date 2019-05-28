@@ -10,8 +10,7 @@ class PostsController < ApplicationController
 
   # POST request
   def create
-    user = User.find(session[:user_id])
-    @post = user.posts.create([post_params])
+    @post = current_user.posts.create([post_params])
     redirect_to posts_url
   end
 

@@ -138,7 +138,7 @@
   <div>
     <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
     <p><%= post.created_at.strftime("Created on %d/%m/%Y - %H:%M")%></p>
-    <% if post.user_id == session[:user_id] %>
+    <% if post.user_id == current_user.id %>
       <%= button_to "Edit", { action: 'edit', id: post.id },
                     method: :get %>
       <%# button that routes to posts#id with a destroy action %>
