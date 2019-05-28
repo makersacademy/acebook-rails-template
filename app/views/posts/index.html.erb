@@ -17,7 +17,11 @@
     <h3><% if logged_in? %>
       Welcome back <%= current_user.first_name.capitalize %>!
     <% else %>
-      You need to sign up or log in to use Acebook
+    <script>
+
+  alert('Please Login OR Sign up to view posts');
+</script>
+<meta http-equiv="refresh" content="0; url= login" />
     <% end %></h3>
 
     <h4><%= link_to 'New post', new_post_path %></h4>
