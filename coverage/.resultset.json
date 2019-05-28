@@ -14,10 +14,32 @@
         1,
         null
       ],
+      "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        7,
+        null,
+        null
+      ],
+      "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/helpers/homepage_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
       "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/controllers/posts_controller.rb": [
         1,
         1,
-        1,
+        0,
         null,
         null,
         1,
@@ -34,24 +56,6 @@
         1,
         0,
         null,
-        null
-      ],
-      "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/helpers/homepage_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/helpers/users_helper.rb": [
-        1,
         null
       ],
       "/Users/hannahfrost/Projects/Weekly_Challenge/acebook-Isambard/app/models/post.rb": [
@@ -106,6 +110,6 @@
         0
       ]
     },
-    "timestamp": 1559044534
+    "timestamp": 1559053853
   }
 }
