@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   def new
+    @user = User.find(session[:user_id])
   end
 
   def create
