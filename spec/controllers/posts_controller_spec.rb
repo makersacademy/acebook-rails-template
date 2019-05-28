@@ -31,6 +31,41 @@ RSpec.describe PostsController, type: :controller do
       get :index
       expect(response).to have_http_status(200)
     end
+
+    it "edits a post" do
+      user = User.create!(first_name: 'Bob', last_name: 'Bear', email: 'bob@bear.com', password: 'bobby')
+      session[:user_id] = user.to_param
+      post :create, params: { post: { message: "Hello, world!" } }
+      expect(Post.find_by(message: "Hello, world!")).to be
+      @post = Post.find_by(message: "Hello, world!")
+      get :edit, params: {id: @post.id}
+      expect(Post.find_by(message: "Hello, world!")).to be
+
+    end
+  end
+
+  describe "PATCH /update" do
+    it "updates a post" do
+      user = User.create!(first_name: 'Bob', last_name: 'Bear', email: 'bob@bear.com', password: 'bobby')
+      session[:user_id] = user.to_param
+      post :create, params: { post: { message: "Hello, world!" } }
+      expect(Post.find_by(message: "Hello, world!")).to be
+      @post = Post.find_by(message: "Hello, world!")
+      get :edit, params: {id: @post.id}
+      put :update, params: { id: @post.id, post: { message: "Bye" } }
+      expect(Post.find_by(message: "Bye")).to be
+    end
+
+    it "redirects a post" do
+      user = User.create!(first_name: 'Bob', last_name: 'Bear', email: 'bob@bear.com', password: 'bobby')
+      session[:user_id] = user.to_param
+      post :create, params: { post: { message: "Hello, world!" } }
+      expect(Post.find_by(message: "Hello, world!")).to be
+      @post = Post.find_by(message: "Hello, world!")
+      get :edit, params: {id: @post.id}
+      put :update, params: { id: @post.id, post: { message: "Bye" } }
+      expect(response).to redirect_to(posts_url)
+    end
   end
 
   describe "DELETE /" do
@@ -54,7 +89,7 @@ RSpec.describe PostsController, type: :controller do
      @post = Post.find_by(message: "Hello, world!")
      delete :destroy, params: {id: @post.id}
 
-     expect(response).to redirect_to(posts_url) 
+     expect(response).to redirect_to(posts_url)
    end
   end
 end

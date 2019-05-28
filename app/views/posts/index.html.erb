@@ -5,8 +5,12 @@
 <% @posts.reverse.each do |post| %>
   <p><%= simple_format(post.message) %>
 
+
+
     <%=post.user.first_name%> <%=post.user.last_name%></p>
   <p><%= post.created_at %></p>
+<%= link_to 'Edit', edit_post_path(post) %>
+
 
   <p>
  <% if post.user.id == @user.id%>

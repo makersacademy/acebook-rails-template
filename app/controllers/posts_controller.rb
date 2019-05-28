@@ -9,6 +9,19 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def edit
+    @post = Post.find(params[:id])
+
+  end
+
+  def update
+    p posts_params
+    @post = Post.find(params[:id])
+    @post.update(posts_params)
+
+    redirect_to posts_url
+  end
+
   def index
     @posts = Post.all
     @user = User.find(session[:user_id])
