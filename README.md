@@ -69,3 +69,47 @@ As a user,
 so that I know I have signed in successfully,
 I want to be redirected to my posts page.
 ```
+
+```
+POSTS
+
+As a user, 
+so that I can keep up-to-date with the latest feed, 
+I want to see the most recent posts first.
+
+As a user, 
+so that I can format my posts, 
+I want to have the ability to add new lines to posts.
+
+As a user, 
+so that I can see when posts were submitted, 
+I want to see date that they were created.
+
+As a user, 
+so that I can have no regrets, 
+I want to delete posts.
+
+As a user, 
+so that I can have no regrets, 
+I want to update posts.
+
+As a user, 
+so that I can interact with friends, 
+I want to comment on their posts.
+
+As a user, 
+so that I can show my approval, 
+I want to like posts / comments via an emoji button.
+
+As a user, 
+who will soon have no friends, 
+I want to see the number of likes next to the like emoji.
+
+As a user, 
+so that I don't spam my friends with likes, 
+I want to be able to like each post / comment only once.
+
+As a user, 
+so that I have a seamless user experience, 
+I want the browser not to refresh when liking posts / comments.
+```
