@@ -1,6 +1,60 @@
-<%= form_with scope: :post, url: posts_path, local: true do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
 
-  <%= form.submit "Submit" %>
-<% end %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+    <title>Acebook - Posts</title>
+  </head>
+  <body>
+
+    <div class="page_wrapper">
+
+      <div class="menu_container">
+
+        <div class="menu">
+
+          <div class="left-hand-side">
+            <div class="welcome">
+              Welcome <%= @user.first_name.capitalize %>
+            </div>
+          </div>
+
+          <div class="right-hand-side">
+            <div class="logout">
+              Logout
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="posts_wrapper">
+
+      <div class="post_new_container">
+        <%= form_with scope: :post, url: posts_path, local: true do |form| %>
+
+          <div class="bear_icon_post_new">&nbsp; &#128059; &nbsp; <span id="special-text">Message</span></div>
+
+          <div class="new_post_label">
+            <%= form.label :message %>
+          </div>
+
+          <div class="new_post_message">
+            <%= form.text_area :message, placeholder: "What are the bear necessities..." %>
+          </div>
+
+          <div class="new_post_button">
+            <%= form.submit "Submit", class: :btn %>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+
+  </body>
+</html>
