@@ -1,3 +1,62 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
+
+* { font-family: 'Roboto', sans-serif; }
+
+.hidden{
+  display: none;
+}
+
+.signup {
+    &-body {
+        margin: 0;
+        padding: 0;
+        background-color: #a2a2a2;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        position: relative;
+
+    }
+    &-card {
+        border: 1px solid black;
+        max-width: 500px;
+        background-color: #fff;
+        margin: 0 auto;
+        box-shadow: $shadow;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    &-header {
+        text-align: center;
+        padding: 8px;
+        font-size: 14px;
+        font-weight: 700;
+        border-bottom: 1px solid black;
+    }
+    &-body {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+        &__message {
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        &__submit {
+            margin-top: 10px;
+            align-self: flex-end;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+    }
+  }

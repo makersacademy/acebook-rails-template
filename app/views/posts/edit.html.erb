@@ -1,6 +1,11 @@
-
-<!-- <p><%= h(@post.message).gsub(/\n/, '<br/>').html_safe%></p>
-<p><%= @post.created_at%></p> -->
+<body class="header">
+  <div class="header">
+    <h1>Acebook</h1>
+    <%= link_to posts_path do %>
+      <h4>Back</h4>
+    <% end %>
+  </div>
+</body>
 
 <body class="edit-body">
 

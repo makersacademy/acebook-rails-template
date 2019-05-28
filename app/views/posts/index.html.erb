@@ -1,40 +1,48 @@
+<body class="header">
+  <div class="header">
+    <h1>Acebook</h1>
+    <% if logged_in? %>
+      <h4><%= link_to 'Log out', logout_path,
+      method: :delete,
+      data: { confirm: 'Are you sure?' } %></h4>
+    <% else %>
+      <h4><%= link_to 'Sign up', new_user_path %></h4>
+    <% end %>
+  </div>
+</body>
+
 <body class="posts-body">
   <header>
-    <br>
-     <div>
-    <% if logged_in? %>
-      <p>Welcome back, <%= current_user.first_name %></p>
+
+    <h3><% if logged_in? %>
+      Welcome back <%= current_user.first_name.capitalize %>!
     <% else %>
-      <%= link_to 'Sign Up', new_user_path %>
-    <% end %>
-    </div>
-    <%= link_to 'Logout', logout_path,
-  method: :delete,
-  data: { confirm: 'Are you sure?' } %>
-    <div>
-    <%= link_to new_post_path do %>
-      <h4>New post</h4>
-    <% end %>
-      </div>
-    <br>
-</<header>
-<br>
+      You need to sign up or log in to use Acebook
+    <% end %></h3>
 
-  <% @posts.sort_by(&:created_at).reverse.each do |post| %>
+    <h4><%= link_to 'New post', new_post_path %></h4>
 
-    <div class="post-card">
-      <div class="posts-header"
-        <h5><p><%= post.created_at.strftime("%d-%m-%Y")%>
-        at <%= post.created_at.strftime("%I:%M %p")%></p></h5>
-      </div>
-      <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
-
-      <p><%= link_to 'Delete', post_path(post),
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %>
-        <%= link_to 'Edit', edit_post_path(post) %></p>
-    </div>
-
+  </header>
   <br>
-  <% end %>
+
+  <header>
+    <% @posts.sort_by(&:created_at).reverse.each do |post| %>
+
+      <div class="posts-card">
+        <div class="posts-header">
+            <h5><%= post.created_at.strftime("%d-%m-%Y")%>
+            at <%= post.created_at.strftime("%I:%M %p")%></h5>
+        </div>
+        <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
+
+        <h5><%= link_to 'Delete', post_path(post),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Edit', edit_post_path(post) %></h5>
+      </div>
+
+    <br>
+
+    <% end %>
+  </header>
 </body>
