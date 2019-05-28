@@ -34,6 +34,7 @@
             at <%= post.created_at.strftime("%I:%M %p")%></h5>
         </div>
         <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
+        <%= button_to 'Like', post_likes_path(post), method: :post %>
 
         <h5><%= link_to 'Delete', post_path(post),
           method: :delete,
