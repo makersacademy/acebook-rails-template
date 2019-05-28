@@ -3,6 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+
+
+  let (:user) { User.create(name: "test", email: "test@test.com", password: "1234") }
+
   describe 'GET /new ' do
     it 'responds with 302' do
       get :new
@@ -11,7 +15,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   # 302 indecates the resource requested has been temp moved - we have
-  # redirected them to the login page causing a 302.  
+  # redirected them to the login page causing a 302.
 
   describe 'GET /' do
     it 'responds with 302' do
