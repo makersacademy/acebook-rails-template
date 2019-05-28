@@ -22,7 +22,9 @@
 
           <div class="right-hand-side">
             <div class="logout">
-              Logout
+            <%= link_to logout_path, method: :delete do %>
+            Log out
+            <% end %>
             </div>
 
           </div>
