@@ -27,7 +27,7 @@
     </div>
     <div class="signup-body__message">
       <div class="hidden"><%= form.label :password %></div>
-      <%= form.text_field :password, placeholder: "password", required: true, minlength: 6, maxlength: 10 %>
+      <%= form.text_field :password, placeholder: "password", type: "password", required: true, minlength: 6, maxlength: 10 %>
     </div>
     <div class="signup-body__submit">
       <%= form.submit "Submit" %>
