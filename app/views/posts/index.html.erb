@@ -33,9 +33,14 @@
     <% @posts.sort_by(&:created_at).reverse.each do |post| %>
 
       <div class="posts-card">
-        <div class="posts-header">
-            <h5><%= post.created_at.strftime("%d-%m-%Y")%>
-            at <%= post.created_at.strftime("%I:%M %p")%></h5>
+        <div class="posts-header-container">
+          <div class="posts-header-left">
+              <h5><%= post.username %></h5>
+          </div>
+          <div class="posts-header-right">
+              <h5><%= post.created_at.strftime("%d-%m-%Y")%>
+              at <%= post.created_at.strftime("%I:%M %p")%></h5>
+          </div>
         </div>
         <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
         <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
@@ -45,14 +50,20 @@
          <%= button_to 'Like', post_likes_path(post), method: :post %>
         <% end %>        <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
-        <h5><%= link_to 'Delete', post_path(post),
-          method: :delete,
-          data: { confirm: 'Are you sure?' } %>
-          <%= link_to 'Edit', edit_post_path(post) %></h5>
+          <% if post.post_owner?(current_user.id) && post.within_ten_mins? %>
+              <h5><%= link_to 'Edit', edit_post_path(post) %>
+              <%= link_to 'Delete', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></h5>
+            <% elsif post.post_owner?(current_user.id)%>
+              <h5><%= link_to 'Delete', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></h5>
+            <% else %>
+            <% end %>
+
       </div>
-
     <br>
-
     <% end %>
   </header>
 </body>
