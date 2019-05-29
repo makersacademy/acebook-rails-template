@@ -17,7 +17,11 @@
     <h3><% if logged_in? %>
       Welcome back <%= current_user.first_name.capitalize %>!
     <% else %>
-      You need to sign up or log in to use Acebook
+    <script>
+
+  alert('Please Login OR Sign up to view posts');
+</script>
+<meta http-equiv="refresh" content="0; url= login" />
     <% end %></h3>
 
     <h4><%= link_to 'New post', new_post_path %></h4>
@@ -39,6 +43,12 @@
           </div>
         </div>
         <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
+        <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
+        <% if pre_like %>
+         <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+        <% else %>
+         <%= button_to 'Like', post_likes_path(post), method: :post %>
+        <% end %>        <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
           <% if post.post_owner?(current_user.id) && post.within_ten_mins? %>
               <h5><%= link_to 'Edit', edit_post_path(post) %>
