@@ -54,19 +54,19 @@ I want to be redirected to my posts page with a sign up confirmation message.
 USER SIGN-IN
 
 As a user,
-so that I don't forget to sign in,
-I am redirected to the index page unless already signed in.
+so that I don't forget to log in,
+I am redirected to the index page unless already logged in.
 
 As a user,
-so that I can sign in,
-I can see a 'sign in' link which redirects me to a sign in page where I am prompted to enter an email and password.
+so that I can log in,
+I can see a 'log in' link which redirects me to a log in page where I am prompted to enter an email and password.
 
 As a user,
 so that I know I have entered my email correctly,
 I should receive an error message if my email is invalid.
 
 As a user,
-so that I know I have signed in successfully,
+so that I know I have logged in successfully,
 I want to be redirected to my posts page.
 ```
 
