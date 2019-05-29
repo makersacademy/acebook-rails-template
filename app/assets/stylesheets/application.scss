@@ -176,7 +176,7 @@ body{
 }
 
 #login-background {
-	background-color: #e9ebee;
+	background-color: #dde0e4;
   padding-top: 100px;
 	width: 100%;
 	height: 100%;
@@ -212,4 +212,106 @@ body{
   border-radius: 3px;
   border: 1px solid #29487d;
   margin-top: 10px;
+}
+
+// styling for posts page
+
+#posts-page-background {
+	background-color: #dde0e4;
+	padding-top: 60px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	position: absolute;
+}
+
+#user-card-heading {
+	font-size: 18px;
+	font-weight: 400;
+	font-family:verdana;
+}
+
+.user-card-text {
+	font-family:verdana;
+	font-size: 12px;
+}
+
+.user-card {
+	width: 200px;
+  border-radius: 5px;
+  border: 1px solid #393d3f17;
+  background-color: #ffffff;
+  padding: 7px 12px;
+  margin-left: 10px;
+}
+
+#profile-image {
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	object-fit: cover;
+	object-position: top;
+}
+
+.news-feed {
+	background-color: #FFFFFF;
+	min-width: 500px;
+	margin: 0 auto 30px auto;
+	border-radius: 5px;
+}
+
+.post {
+  min-height: 150px;
+  font-size: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  padding: 7px 7px 7px 7px;
+}
+
+.post:hover {
+  background-color: #edeff199;
+}
+
+.post-content {
+	color: #14171a;
+	font-weight: 600;
+	letter-spacing: 0.3px;
+	line-height: 18px;
+	font-family:verdana;
+}
+
+.post-heading {
+	font-size: 12px;
+  color: #133783;
+	font-family:verdana;
+}
+
+.post-timestamp {
+	font-size: 10px;
+  color: #777777;
+	font-family:verdana;
+}
+
+#new-post-card {
+	padding: 7px 7px 0px 7px;
+}
+.new-post-button {
+	color: white;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 6px 9px;
+	background-color: #365592;
+	border-radius: 3px;
+	border: 1px solid #29487d;
+	width: 100%;
+	margin: 7px auto;
+}
+.new-post-link {
+	color: white;
+  text-decoration: none;
+}
+
+#new-post-tagline {
+	margin-bottom: 12px;
+	color: #777777;
+	font-family:verdana;
 }
