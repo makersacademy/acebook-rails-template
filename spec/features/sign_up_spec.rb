@@ -6,16 +6,23 @@ RSpec.feature "Create an account", type: :feature do
     visit("/users/sign_up")
   end
 
-  scenario "Can see 'Create an account' form" do
+  scenario "shows a 'Create an account' form" do
     expect(page).to have_content("Create an account")
   end
 
-  scenario "Can fill out 'Create an account' form" do
+  scenario "form throws error if email has already been taken" do
     create_user_test_email_dot_com_1234567
-    expect(page).to have_content("You have signed up successfully")
+    click_link "Logout"
+    click_link "Sign up"
+    create_user_test_email_dot_com_1234567
+    expect(page).to have_content("Email has already been taken")
   end
 
-  scenario "'Create an account' form throws error if password is shorter than 6 characters" do
+  xscenario "displays the required password length" do
+    expect(page).to have_content("6-10 characters")
+  end
+
+  scenario "form throws error if password is shorter than 6 characters" do
     fill_in "Username", with: "testName"
     fill_in "Email", with: "test@email.com"
     fill_in "Password", with: "123"
@@ -24,7 +31,7 @@ RSpec.feature "Create an account", type: :feature do
     expect(page).to have_content("Password is too short (minimum is 6 characters)")
   end
 
-  scenario "'Create an account' form throws error if password is longer than 10 characters" do
+  scenario "form throws error if password is longer than 10 characters" do
     fill_in "Username", with: "testName"
     fill_in "Email", with: "test@email.com"
     fill_in "Password", with: "12345678911"
@@ -33,11 +40,8 @@ RSpec.feature "Create an account", type: :feature do
     expect(page).to have_content("Password is too long (maximum is 10 characters)")
   end
 
-  scenario "'Create an account' form throws error if email has already been taken" do
+  scenario "form can be correctly filled out" do
     create_user_test_email_dot_com_1234567
-    click_link "Logout"
-    click_link "Sign up"
-    create_user_test_email_dot_com_1234567
-    expect(page).to have_content("Email has already been taken")
+    expect(page).to have_content("You have signed up successfully")
   end
 end
