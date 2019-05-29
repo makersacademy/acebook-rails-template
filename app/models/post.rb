@@ -23,4 +23,5 @@ class Post < ApplicationRecord
     lapsed_time < 600
   end
 
+  has_many :likes, dependent: :destroy
 end
