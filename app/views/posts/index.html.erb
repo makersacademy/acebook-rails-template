@@ -59,7 +59,7 @@
 
                   <div class="img_avatar post" style="background-image: url('/assets/stu.jpg');"></div>
                   <%= form_with model: @post do |form| %>
-                    <%= form.text_area :message, class: :txt_post, placeholder: "Whats on your mind?"%><br><br>
+                    <%= form.text_area :message, class: :txt_post, id: 'Message', placeholder: "Whats on your mind?"%><br><br>
 
                     <%= form.submit "Submit", class: "btn submit" %>
                   <% end %>
@@ -138,12 +138,14 @@
   <div>
     <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
     <p><%= post.created_at.strftime("Created on %d/%m/%Y - %H:%M")%></p>
-    <%= button_to "Edit", { action: 'edit', id: post.id },
-                  method: :get %>
-    <%# button that routes to posts#id with a destroy action %>
+    <% if post.user_id == current_user.id %>
+      <%= button_to "Edit", { action: 'edit', id: post.id },
+                    method: :get %>
+      <%# button that routes to posts#id with a destroy action %>
 
-    <%= button_to "Delete this Post", { action: 'destroy', id: post.id },
-                  method: :delete, data: { confirm: "Are you sure?"} %>
+      <%= button_to "Delete this Post", { action: 'destroy', id: post.id },
+                    method: :delete, data: { confirm: "Are you sure?"} %>
+    <% end %>
   </div><br>
 <% end %>
 
