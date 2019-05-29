@@ -283,12 +283,24 @@ body{
 	font-size: 12px;
   color: #133783;
 	font-family:verdana;
+	margin-bottom: 2px;
 }
 
 .post-timestamp {
 	font-size: 10px;
   color: #777777;
 	font-family:verdana;
+	margin-top: 0;
+}
+
+.like-button {
+	 padding: 4px 4px;
+	 border-radius: 5px;
+}
+
+#like-image {
+	height: 18px;
+	width: 18px;
 }
 
 #new-post-card {
