@@ -1,11 +1,28 @@
-<div class="fb-body-posts">
-  <div align="right">
-    <% @posts.each do |post| %>
-      <p><%= post.message %></p>
-    <% end %>
-
-    <%= link_to new_post_path do %>
+<%# <h1> Sign Up Successful! </h1> %>
+<div id="posts-page-background">
+  <section id="user-profile">
+    <div class="user-card">
+      <h1 id="user-card-heading"> What a specimen </h1>
+      <%= image_tag "specimen.jpg", height:"100%", id:"profile-image"%>
+      <p class="user-card-text" >Username</p>
+      <p class="user-card-text" >Bio</p>
+    </div>
+  </section>
+  <div class="news-feed">
+    <div id="new-post-card">
+    <p id="new-post-tagline">Share what's on your mind....</p>
+    <button class="new-post-button">
+    <%= link_to new_post_path, :class  => "new-post-link" do %>
       New post
+    <% end %>
+    </button>
+    </div>
+    <% @posts.each do |post| %>
+      <div class="post">
+        <h4 class="post-heading">Posted by Username</h4>
+        <p class="post-timestamp">Posted: <%= post.created_at.strftime("%e %B %Y at %H:%M") %></p>
+        <p class="post-content"><%= post.message %></p>
+      </div>
     <% end %>
   </div>
 </div>
