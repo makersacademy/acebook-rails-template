@@ -70,4 +70,3 @@ As a User,
 So I know that I have signed up successfully,
 I'd like to be redirected to a Post page with a welcome/successful message.
 ```
-.
