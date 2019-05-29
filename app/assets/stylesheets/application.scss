@@ -191,6 +191,7 @@ body{
   padding: 36px 32px;
   margin: 0 auto;
 	border: 1px solid lightgray;
+	text-align: center;
 }
 
 .form-field {
@@ -213,6 +214,18 @@ body{
   border-radius: 3px;
   border: 1px solid #29487d;
   margin-top: 10px;
+  display: inline-block;
+}
+
+#remember-me-container {
+	text-align: left;
+}
+
+#remember-me {
+	font-family: verdana;
+  font-size: 10px;
+  color: black;
+  font-weight: 500;
 }
 
 // styling for posts page
