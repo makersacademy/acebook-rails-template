@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f151d00627cb43ad87d85c970d3baf63)](https://www.codacy.com/app/Hannah-Frost/acebook-Isambard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Hannah-Frost/acebook-Isambard&amp;utm_campaign=Badge_Grade) [![Travis Badge](https://img.shields.io/travis/com/Hannah-Frost/acebook-Isambard/master.svg)](https://travis-ci.com/Hannah-Frost/acebook-Isambard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f151d00627cb43ad87d85c970d3baf63)](https://www.codacy.com/app/Hannah-Frost/acebook-Isambard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Hannah-Frost/acebook-Isambard&amp;utm_campaign=Badge_Grade) [![Travis Badge](https://img.shields.io/travis/com/Hannah-Frost/acebook-Isambard/master.svg)](https://travis-ci.com/Hannah-Frost/acebook-Isambard) [![Coverage Status](https://coveralls.io/repos/github/Hannah-Frost/acebook-Isambard/badge.svg?branch=master)](https://coveralls.io/github/Hannah-Frost/acebook-Isambard?branch=master)
 
 # AceBook
 
@@ -68,4 +68,48 @@ I should receive an error message if my email is invalid.
 As a user,
 so that I know I have signed in successfully,
 I want to be redirected to my posts page.
+```
+
+```
+POSTS
+
+As a user, 
+so that I can keep up-to-date with the latest feed, 
+I want to see the most recent posts first.
+
+As a user, 
+so that I can format my posts, 
+I want to have the ability to add new lines to posts.
+
+As a user, 
+so that I can see when posts were submitted, 
+I want to see date that they were created.
+
+As a user, 
+so that I can have no regrets, 
+I want to delete posts.
+
+As a user, 
+so that I can have no regrets, 
+I want to update posts.
+
+As a user, 
+so that I can interact with friends, 
+I want to comment on their posts.
+
+As a user, 
+so that I can show my approval, 
+I want to like posts / comments via an emoji button.
+
+As a user, 
+who will soon have no friends, 
+I want to see the number of likes next to the like emoji.
+
+As a user, 
+so that I don't spam my friends with likes, 
+I want to be able to like each post / comment only once.
+
+As a user, 
+so that I have a seamless user experience, 
+I want the browser not to refresh when liking posts / comments.
 ```
