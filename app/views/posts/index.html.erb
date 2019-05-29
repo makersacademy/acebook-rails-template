@@ -13,7 +13,8 @@
         <ul class="list_item">
           <li class="item left"><i class="fab fa-facebook"></i></li>
             <i class="fab fa-facebook-messenger"></i>
-
+            <span class="circle_notify"></span>
+          </li>
           <li class="item middle">
             <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
               <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
@@ -23,6 +24,10 @@
               <i class="fa fa-search"></i>
             </div> -->
           </li>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <li class="item right"><i class="fa fa-bell"></i></li>
+          <li class="item right"><i class="fas fa-comments"></i></li>
+          <li class="item right"><i class="fa fa-user-friends"></i></li>
         </ul>
       </header>
       <div class="Containers">
