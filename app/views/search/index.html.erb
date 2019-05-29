@@ -41,11 +41,18 @@
     <h1>Oop! No matching posts ...</h1>
   <% end %>
 <div class="">
-    <% @posts.each do |post|%>
-      <div class="">
-        <%= post.message %>
-      </div>
-    <% end %>
+  <% @posts.each do |post| %>
+    <div>
+      <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
+      <p><%= post.created_at.strftime("Created on %d/%m/%Y - %H:%M")%></p>
+      <% if post.user_id == current_user.id %>
+        <%= button_to "Edit", { action: 'edit', controller: 'posts', id: post.id },
+                      method: :get %>
+        <%= button_to "Delete this Post", { action: 'destroy', controller: 'posts', id: post.id },
+                      method: :delete, data: { confirm: "Are you sure?"} %>
+      <% end %>
+    </div><br>
+  <% end %>
   </div>
   </center>
 </div>
