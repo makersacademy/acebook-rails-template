@@ -18,9 +18,13 @@
           </li>
 
           <li class="item middle">
-            <div class="cnt_search">
-              <input type="text" class="txt_search" placeholder="Search for a post..."
-              <i class="fa fa-search"></i>                       </div>
+            <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
+              <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
+            <% end %>
+            <!-- <div class="cnt_search">
+              <input type="text" class="txt_search" placeholder="Search for a post..."/>
+              <i class="fa fa-search"></i>
+            </div> -->
           </li>
           <li class="item right"><i class="fa fa-bell"></i></li>
           <li class="item right"><i class="fas fa-comments"></i></li>
