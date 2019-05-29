@@ -15,7 +15,12 @@ class Post < ApplicationRecord
     self.user_id == current_user_id
   end
 
+  def lapsed_time
+    Time.now - self.created_at
+  end
 
-
+  def within_ten_mins?
+    lapsed_time < 600
+  end
 
 end

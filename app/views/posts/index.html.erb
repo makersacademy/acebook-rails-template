@@ -40,13 +40,17 @@
         </div>
         <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %></p>
 
-          <% if post.post_owner?(current_user.id) %>
-          <h5><%= link_to 'Delete', post_path(post),
-            method: :delete,
-            data: { confirm: 'Are you sure?' } %>
-            <%= link_to 'Edit', edit_post_path(post) %></h5>
-          <% else %>
-          <% end %>
+          <% if post.post_owner?(current_user.id) && post.within_ten_mins? %>
+              <h5><%= link_to 'Edit', edit_post_path(post) %>
+              <%= link_to 'Delete', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></h5>
+            <% elsif post.post_owner?(current_user.id)%>
+              <h5><%= link_to 'Delete', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></h5>
+            <% else %>
+            <% end %>
 
       </div>
     <br>
