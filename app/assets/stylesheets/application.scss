@@ -222,18 +222,17 @@ body{
 	width: 100%;
 	height: 100%;
 	display: flex;
-	position: absolute;
 }
 
 #user-card-heading {
-	font-size: 18px;
+	font-size: 22px;
 	font-weight: 400;
 	font-family:verdana;
 }
 
 .user-card-text {
 	font-family:verdana;
-	font-size: 12px;
+	font-size: 16px;
 }
 
 .user-card {
@@ -255,14 +254,14 @@ body{
 
 .news-feed {
 	background-color: #FFFFFF;
-	min-width: 500px;
+	width: 750px;
 	margin: 0 auto 30px auto;
 	border-radius: 5px;
 }
 
 .post {
   min-height: 150px;
-  font-size: 12px;
+  font-size: 16px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   padding: 7px 7px 7px 7px;
 }
@@ -273,21 +272,21 @@ body{
 
 .post-content {
 	color: #14171a;
-	font-weight: 600;
+	font-weight: 400;
 	letter-spacing: 0.3px;
 	line-height: 18px;
 	font-family:verdana;
 }
 
 .post-heading {
-	font-size: 12px;
+	font-size: 16px;
   color: #133783;
 	font-family:verdana;
 	margin-bottom: 2px;
 }
 
 .post-timestamp {
-	font-size: 10px;
+	font-size: 14px;
   color: #777777;
 	font-family:verdana;
 	margin-top: 0;
@@ -303,12 +302,18 @@ body{
 	width: 18px;
 }
 
+#like_number {
+	font-size: 16px;
+  color: #777777;
+	font-family:verdana;
+}
+
 #new-post-card {
 	padding: 7px 7px 0px 7px;
 }
 .new-post-button {
 	color: white;
-	font-size: 12px;
+	font-size: 16px;
 	font-weight: 600;
 	padding: 6px 9px;
 	background-color: #365592;
