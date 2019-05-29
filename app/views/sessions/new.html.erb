@@ -3,18 +3,20 @@
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
-    <title>Acebook - Signup</title>
+    <title>Bearbook - Login</title>
   </head>
 
   <body>
 
     <div class="wrapper">
+
       <div class="sign-up">
+
         <h1>Bearbook</h1>
+
         <p id="bear-icon">&#128059;</p>
 
         <% provide(:title, "Login") %>
-          <!-- <h1>Log in</h1> -->
 
           <% if flash[:danger] %>
             <div class="login-notice"><%= flash[:danger] %></div>
@@ -39,6 +41,7 @@
         </p>
 
       </div>
+
     </div>
 
   </body>

@@ -1,17 +1,17 @@
 require 'rails_helper'
 
 RSpec.feature "Sign-up", type: :feature do
+  let(:first_name) { 'Bob' }
+  let(:last_name) { 'Geldof' }
+  let(:email) { 'its.me@bobgeldof.com' }
+  let(:password) { 'bob123' }
+
   scenario "visit sign up page" do
     visit "/users/new"
     expect(page).to have_content("Signup")
   end
 
   scenario "can sign up" do
-    first_name = 'Bob'
-    last_name = 'Geldof'
-    email = 'its.me@bobgeldof.com'
-    password = 'bob123'
-
     visit "/users/new"
     fill_in('user[first_name]', with: first_name)
     fill_in('user[last_name]', with: last_name)
@@ -22,11 +22,6 @@ RSpec.feature "Sign-up", type: :feature do
   end
 
   scenario "can only sign up with unique email" do
-    first_name = 'Bob'
-    last_name = 'Geldof'
-    email = 'its.me@bobgeldof.com'
-    password = 'bob123'
-
     visit "/users/new"
     fill_in('user[first_name]', with: first_name)
     fill_in('user[last_name]', with: last_name)

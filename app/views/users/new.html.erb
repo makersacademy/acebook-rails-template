@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
-    <title>Acebook - Signup</title>
+    <title>Bearbook - Signup</title>
   </head>
 
   <body>
@@ -12,42 +11,40 @@
     <div class="wrapper">
       <div class="sign-up">
         <h1>Bearbook</h1>
-         <p id="bear-icon">&#128059;</p>
-        
-        
- <% if flash[:danger] %>
-   <div class="login-notice"><%= flash[:danger] %></div>
- <% end %>
+        <p id="bear-icon">&#128059;</p>
+
+        <% if flash[:danger] %>
+          <div class="login-notice"><%= flash[:danger] %></div>
+        <% end %>
 
         <%= form_with scope: :user, url: users_path, local: true do |form| %>
 
-            <%= form.label :first_name %><br>
-            <%= form.text_field :first_name %>
+        <%= form.label :first_name %><br>
+        <%= form.text_field :first_name %>
 
-            <br>
+        <br>
 
-            <%= form.label :last_name %><br>
-            <%= form.text_field :last_name %>
+        <%= form.label :last_name %><br>
+        <%= form.text_field :last_name %>
 
-            <br>
+        <br>
 
-            <%= form.label :email %><br>
-            <%= form.text_field :email %>
+        <%= form.label :email %><br>
+        <%= form.text_field :email %>
 
-            <br>
+        <br>
 
-            <%= form.label :password %><br>
-            <%= form.password_field :password %>
+        <%= form.label :password %><br>
+        <%= form.password_field :password %>
 
-            <br>
+        <br>
 
-            <%= form.submit "Signup", :class => 'btn' %>
+        <%= form.submit "Signup", :class => 'btn' %>
 
-        <% end %>
-      </div>
+      <% end %>
     </div>
+  </div>
 
-  </body>
+</body>
 
 </html>
-

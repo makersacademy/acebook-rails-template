@@ -16,17 +16,16 @@
 
           <div class="left-hand-side">
             <div class="welcome">
-              Welcome <%= @user.first_name.capitalize %>
+              Welcome
+              <%= @user.first_name.capitalize %>
             </div>
           </div>
 
           <div class="right-hand-side">
             <div class="logout">
-            <%= link_to logout_path, method: :delete do %>
-            Log out
+              <%= link_to logout_path, method: :delete do %>
+              Log out
             <% end %>
-            </div>
-
           </div>
 
         </div>
@@ -35,45 +34,43 @@
 
     </div>
 
-    <div class="posts_wrapper">
+  </div>
 
-      <div class="new_post_link_button">
-        <div class="new_post_link">
-          <%= link_to new_post_path do %>
-            New post
-          <% end %>
-        </div>
-      </div>
+  <div class="posts_wrapper">
 
-
-
-      <% @posts.reverse.each do |post| %>
-        <div class="post_container">
-
-          <div class="bear_icon_post">&#128059;</div>
-
-          <div class="user_name_post"><%=post.user.first_name.capitalize%> <%=post.user.last_name.capitalize%></div>
-
-          <div class="user_content_post"><%= simple_format(post.message) %></div>
-
-          <div class="time_of_post"><%= post.created_at %></div>
-
-          <div class="delete_post">
-            <%= link_to 'Edit', edit_post_path(post) %>
-            <span>-</span>
-            <% if post.user.id == @user.id %>
-                <%= link_to 'Delete', post_path(post),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %>
-            <%end%>
-          </div>
-
-        </div>
-
+    <div class="new_post_link_button">
+      <div class="new_post_link">
+        <%= link_to new_post_path do %>
+        New post
       <% end %>
+    </div>
+  </div>
+
+  <% @posts.reverse.each do |post| %>
+    <div class="post_container">
+
+      <div class="bear_icon_post">&#128059;</div>
+
+      <div class="user_name_post"><%=post.user.first_name.capitalize%>
+        <%=post.user.last_name.capitalize%></div>
+
+      <div class="user_content_post"><%= simple_format(post.message) %></div>
+
+      <div class="time_of_post"><%= post.created_at %></div>
+
+      <div class="delete_post">
+        <% if post.user.id == @user.id %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <span>-</span>
+          <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%end%>
+      </div>
 
     </div>
 
+  <% end %>
 
-  </body>
+</div>
+
+</body>
 </html>

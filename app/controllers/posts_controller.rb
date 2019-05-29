@@ -7,16 +7,15 @@ class PostsController < ApplicationController
   def create
     @user = User.find(session[:user_id])
     @post = @user.posts.create(posts_params)
+
     redirect_to posts_url
   end
 
   def edit
     @post = Post.find(params[:id])
-
   end
 
   def update
-    p posts_params
     @post = Post.find(params[:id])
     @post.update(posts_params)
 
@@ -35,11 +34,9 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-private
+  private
 
   def posts_params
     params.require(:post).permit(:message)
   end
-
-
 end
