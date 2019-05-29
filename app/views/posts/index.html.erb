@@ -1,13 +1,8 @@
-<div class="fb-body-posts">  
-  <%# <h1> Sign Up Successful! </h1> %>
-  <h1> What a specimen </h1>
-  
-  <%= image_tag "specimen.jpg", height:"100%" %>
+<div class="fb-body-posts">
   <div align="right">
     <% @posts.each do |post| %>
       <p><%= post.message %></p>
     <% end %>
-    
 
     <%= link_to new_post_path do %>
       New post
