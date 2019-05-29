@@ -4,8 +4,8 @@
     <div class="user-card">
       <h1 id="user-card-heading"> What a specimen </h1>
       <%= image_tag "specimen.jpg", height:"100%", id:"profile-image"%>
-      <p class="user-card-text" >Username</p>
-      <p class="user-card-text" >Bio</p>
+      <p class="user-card-text" ><%= current_user.username %></p>
+      <!-- <p class="user-card-text" >Bio</p> -->
     </div>
   </section>
   <div class="news-feed">
@@ -22,6 +22,9 @@
         <h4 class="post-heading">Posted by <%= User.find(post.user_id).username %> </h4>
         <p class="post-timestamp">Posted: <%= post.created_at.strftime("%e %B %Y at %H:%M") %></p>
         <p class="post-content"><%= post.message %></p>
+        <button class="like-button">
+        <%= image_tag "like.png", id:"like-image"%>
+        </button>
       </div>
     <% end %>
   </div>
