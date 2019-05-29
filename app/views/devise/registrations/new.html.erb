@@ -1,34 +1,38 @@
-<h2>Create an account</h2>
+<div id="homepage-background" class="fb-body">
+  <div id="tagline" class="fb-body">Acebook helps you connect and share with the <br>
+      people in your life.</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div id="signup-form">
+    <h3 id="signup-header">Create an account</h3>
+    <h4 id="signup-tagline">It's free and always will be.</h4>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+      <div>
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "signup-box", placeholder: 'Username'%>
+      </div>
+
+      <div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "signup-box", placeholder: 'Email' %>
+      </div>
+
+      <div>
+        <%= f.password_field :password, autocomplete: "new-password", class: "signup-box", placeholder: "Password (#{@minimum_password_length} to #{@maximum_password_length} characters) "%>
+      </div>
+
+      <div>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "signup-box", placeholder: 'Confirm password' %>
+      </div>
+
+      <p id="signup-disclaimer">By clicking Create an account, you agree to our Terms: that
+         all software related work written by yourself shall from here on out be copyright of Team Isambard.</p>
+
+      <div>
+        <%= f.submit "Create an account", class: 'button2' %>
+      </div>
+    <% end %>
+    <p id="signup-form-footer">Create a Page for a someone really cool. Maybe that person's name is Max..</p>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Create an account" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
