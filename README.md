@@ -1,7 +1,6 @@
 # AceBook
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e7c8ece3816744cab65f463ab8cc5777)](https://app.codacy.com/app/CalumDarroch/acebook-FiveGuys?utm_source=github.com&utm_medium=referral&utm_content=CalumDarroch/acebook-FiveGuys&utm_campaign=Badge_Grade_Settings)
-
+[![Build Status](https://travis-ci.com/CalumDarroch/acebook-FiveGuys.svg?branch=master)](https://travis-ci.com/CalumDarroch/acebook-FiveGuys)     [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e7c8ece3816744cab65f463ab8cc5777)](https://app.codacy.com/app/CalumDarroch/acebook-FiveGuys?utm_source=github.com&utm_medium=referral&utm_content=CalumDarroch/acebook-FiveGuys&utm_campaign=Badge_Grade_Settings)
 
 ## Learning Documentation
 
