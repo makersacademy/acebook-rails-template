@@ -53,6 +53,10 @@ Once the pull request is approved, Travis will automatically deploy on Heroku.
 
 During this project, we kept track of what we learned by documenting our meetings, discussions, and specific topics of research. We have recorded this process in this repository's [Wiki page](https://github.com/stuartpet/acebook-steam/wiki)
 
+## MVC Modelling
+
+<img src="./app/assets/config/images/diagram.png">
+
 ## How to contribute to this project
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
