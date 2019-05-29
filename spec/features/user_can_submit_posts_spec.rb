@@ -1,7 +1,8 @@
 require 'rails_helper'
+require 'dry_helper'
 
 RSpec.feature "Timeline", type: :feature do
-  scenario "Can submit posts and view them" do
+  xscenario "Can submit posts and view them" do
     visit "/posts"
     click_link "New post"
     fill_in "What's on your mind?", with: "Hello, world!"
