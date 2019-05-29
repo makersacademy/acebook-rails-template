@@ -22,6 +22,12 @@
         <h4 class="post-heading">Posted by <%= User.find(post.user_id).username %> </h4>
         <p class="post-timestamp">Posted: <%= post.created_at.strftime("%e %B %Y at %H:%M") %></p>
         <p class="post-content"><%= post.message %></p>
+        <span><button class="delete-button">
+        <%= image_tag "garbage.png", id:"delete-image"%>
+        </button></span>
+        <span><button class="edit-button">
+        <%= image_tag "edit.png", id:"edit-image"%>
+        </button></span>
         <button class="like-button">
         <%= image_tag "like.png", id:"like-image"%>
         </button>

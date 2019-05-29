@@ -308,6 +308,26 @@ body{
 	font-family:verdana;
 }
 
+.edit-button {
+	 padding: 4px 4px;
+	 border-radius: 5px;
+}
+
+#edit-image {
+	height: 18px;
+	width: 18px;
+}
+
+.delete-button {
+	 padding: 4px 4px;
+	 border-radius: 5px;
+}
+
+#delete-image {
+	height: 18px;
+	width: 18px;
+}
+
 #new-post-card {
 	padding: 7px 7px 0px 7px;
 }
