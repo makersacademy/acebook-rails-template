@@ -13,7 +13,6 @@ RSpec.feature "Create an account", type: :feature do
   scenario "form throws error if email has already been taken" do
     create_user_test_email_dot_com_1234567
     click_link "Logout"
-    click_link "Sign up"
     create_user_test_email_dot_com_1234567
     expect(page).to have_content("Email has already been taken")
   
@@ -36,7 +35,7 @@ RSpec.feature "Create an account", type: :feature do
     fill_in "Username", with: "testName"
     fill_in "Email", with: "test@email.com"
     fill_in "Password", with: "12345678911"
-    fill_in "Confirm Password", with: "12345678911"
+    fill_in "Confirm password", with: "12345678911"
     click_button "Create an account"
     expect(page).to have_content("Password is too long (maximum is 10 characters)")
   end
