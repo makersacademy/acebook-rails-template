@@ -17,10 +17,10 @@
     <% end %>
     </button>
     </div>
-    <% @posts.each do |post| %>
+    <% @posts.reverse.each do |post| %>
       <div class="post">
         <h4 class="post-heading">Posted by <%= User.find(post.user_id).username %> </h4>
-        <p class="post-timestamp">Posted: <%= post.created_at.strftime("%e %B %Y at %H:%M") %></p>
+        <p class="post-timestamp">Posted: <%= post.created_at.in_time_zone("Europe/London").strftime("%e %B %Y at %H:%M") %></p>
         <p class="post-content"><%= post.message %></p>
         <% if current_user.id == post.user_id %>
           <span><button class="icon-button" id="delete-button">
