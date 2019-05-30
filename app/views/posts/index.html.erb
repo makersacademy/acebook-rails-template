@@ -22,7 +22,6 @@
         <h4 class="post-heading">Posted by <%= User.find(post.user_id).username %> </h4>
         <p class="post-timestamp">Posted: <%= post.created_at.strftime("%e %B %Y at %H:%M") %></p>
         <p class="post-content"><%= post.message %></p>
-<<<<<<< HEAD
         <% if current_user.id == post.user_id %>
           <span><button class="icon-button" id="delete-button">
           <%= image_tag "garbage.png", class:"icon-image"%>
@@ -33,16 +32,6 @@
         <% end %>
         <button class="icon-button" id="like-button">
         <%= image_tag "like.png", class:"icon-image"%>
-=======
-        <span><button class="delete-button">
-        <%= image_tag "garbage.png", id:"delete-image"%>
-        </button></span>
-        <span><button class="edit-button">
-        <%= image_tag "edit.png", id:"edit-image"%>
-        </button></span>
-        <button class="like-button">
-        <%= image_tag "like.png", id:"like-image"%>
->>>>>>> 81538bbaebc63727853bca986299f9b9e2934d8d
         </button>
         <span id="like_number">0</span>
       </div>
