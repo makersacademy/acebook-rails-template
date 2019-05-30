@@ -2,10 +2,15 @@ require 'rails_helper'
 require 'dry_helper'
 
 RSpec.describe PostsController, type: :controller do
-   before(:each) do
-     user = User.create(username: "test", email: "test@example.com", password: "password")
-     allow(controller).to receive(:current_user).and_return(user)
-   end
+  before(:each) do
+    # user = double('user')
+    # allow(request.env['warden']).to receive(:authenticate!).and_return(user)
+    # allow(controller).to receive(:current_user).and_return(user)
+
+    user = User.create(username: "test", email: "test@example.com", password: "password")
+    allow(request.env['warden']).to receive(:authenticate!).and_return(user)
+    allow(controller).to receive(:current_user).and_return(user)
+  end
 
   describe "GET /new " do
     it "responds with 200" do
