@@ -10,7 +10,10 @@ body{
 	color:white;
 	z-index:7;
 	font-family:verdana;
-	border-bottom: 1px solid #133783
+	border-bottom: 1px solid #133783;
+	font-size:12px;
+	right: 10px;
+	text-align: right;
 	/* -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25); */
 }
 .fb-header{
@@ -44,6 +47,15 @@ body{
 	cursor:pointer;
 	text-decoration: none;
 }
+
+#logout-button{
+	right: 35px;
+}
+
+#logged-in-text{
+	margin-right: 35px;
+}
+
 .button-header:hover {
   background-color: #4267b2;
 }
@@ -307,8 +319,8 @@ body{
 }
 
 .icon-button {
-	 padding: 4px 4px;
-	 border-radius: 5px;
+	padding: 4px 4px;
+	border-radius: 5px;
 }
 
 .icon-image {
@@ -340,3 +352,5 @@ body{
 	color: #777777;
 	font-family:verdana;
 }
+
+
