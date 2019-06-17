@@ -81,6 +81,7 @@ In db/seeds.rb populate the database with *Post.create('message')*
 
 e.g.,
 
+```
 i = 0
 
 while i < 10 do
@@ -88,6 +89,9 @@ while i < 10 do
  Post.create(message: "I'm next")
  i +=1
 end
+```
 
-
-
+then run
+```
+rake db:seed
+```
