@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+i = 0
+
+while i < 10 do
+ Post.create(message: "Hello, world!")
+ Post.create(message: "I'm next")
+i +=1
+end
