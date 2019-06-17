@@ -68,10 +68,8 @@ CREATE DATABASE pgapp_test;
 ```
 This was enough, we didn't need to run migrations again because it's done while testing.
 
----
-### Deploying to Heroku
-
-Installed the Heroku CLI:
+After looking into the Rake commands, we are also able to setup the database automatically by running:
 ```
-brew tap heroku/brew && brew install heroku
+rake -T
+rake db:setup
 ```
