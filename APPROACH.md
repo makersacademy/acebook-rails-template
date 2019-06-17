@@ -73,3 +73,24 @@ After looking into the Rake commands, we are also able to setup the database aut
 rake -T
 rake db:setup
 ```
+
+*Populate the database*
+
+In db/seeds.rb populate the database with *Post.create('message')*
+
+e.g.,
+
+```
+i = 0
+
+while i < 10 do
+ Post.create(message: "Hello, world!")
+ Post.create(message: "I'm next")
+ i +=1
+end
+```
+
+then run
+```
+rake db:seed
+```
