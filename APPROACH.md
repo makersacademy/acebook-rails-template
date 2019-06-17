@@ -1,3 +1,5 @@
+## Sprints
+
 *First Sprint*
 Day one:
 * Familiarise ourselves with Rails
@@ -13,12 +15,16 @@ Day two:
 * Setup naming conventions
 * Develop features
 
+---
 
-*Setting up local databases*
+### Setting up local databases
+
+
+*Development Environment*
 
 We must manually create the local database for ActiveRecord:
 ```
-CREATE DATABASE pgapp_development
+CREATE DATABASE pgapp_development;
 ```
 We must run the migrations to set up what we want:
 ```
@@ -53,3 +59,13 @@ which told us we need to visit:
 ```
 http://localhost:9292/posts
 ```
+
+*Test Environment*
+
+Running rspec told us we need another database:
+```
+CREATE DATABASE pgapp_test;
+```
+This was enough, we didn't need to run migrations again because it's done while testing.
+
+---
