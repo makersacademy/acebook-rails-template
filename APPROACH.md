@@ -69,3 +69,9 @@ CREATE DATABASE pgapp_test;
 This was enough, we didn't need to run migrations again because it's done while testing.
 
 ---
+### Deploying to Heroku
+
+Installed the Heroku CLI:
+```
+brew tap heroku/brew && brew install heroku
+```
