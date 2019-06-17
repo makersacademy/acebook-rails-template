@@ -73,7 +73,6 @@ After looking into the Rake commands, we are also able to setup the database aut
 rake -T
 rake db:setup
 ```
----
 
 *Populate the database*
 
