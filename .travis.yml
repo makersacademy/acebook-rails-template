@@ -1,38 +1,38 @@
-# language: ruby
-# rvm:
-#  - 2.5.0
-#
-#  before_install:
-# #  - gem install bundler:1.16.6
-# #  - bundle update --bundler
-# cache: bundler
-#
-#  deploy:
-#    provider: heroku
-#    api_key:
-#      secure: "a1B2c3D4e5F6"
-#
-# services:
-#   - postgresql
-#
-#  before_script:
-#  - bundle exec rake db:create
-#  - bundle exec rake db:migrate
-#
-# script:
-#  - bundle exec rspec
-#
-# after_script:
-#  - bundle exec rake coveralls:push
-
-
 language: ruby
 rvm:
-- 2.5.0
-cache: bundler
+ - 2.5.0
+
+before_install:
+#  - gem install bundler:1.16.6
+  - bundle update --bundler
+  cache: bundler
+
+deploy:
+  provider: heroku
+  api_key:
+  secure: "a1B2c3D4e5F6"
+
 services:
   - postgresql
-before_script:
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-script: bundle exec rspec
+
+ before_script:
+ - bundle exec rake db:create
+ - bundle exec rake db:migrate
+
+script:
+ - bundle exec rspec
+
+after_script:
+ - bundle exec rake coveralls:push
+
+#
+# language: ruby
+# rvm:
+# - 2.5.0
+# cache: bundler
+# services:
+#   - postgresql
+# before_script:
+#   - bundle exec rake db:create
+#   - bundle exec rake db:migrate
+# script: bundle exec rspec
