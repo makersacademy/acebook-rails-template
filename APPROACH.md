@@ -94,3 +94,22 @@ then run
 ```
 rake db:seed
 ```
+
+### Deploying to Heroku
+
+Heroku is a hosting platform for the app to be publicly available.
+
+- Create a Heroku account
+- Make a new app project
+- In Heroku (settings/config vars) we set the environment variables referencing the database.
+- In the database.yml file we referenced the environment variables.
+- In the deployment tab, connect to the github repo and set to automatically deploy.  
+- We manually added the database in the Heroku console - (rake db:migrate) but can this
+be added to the Procfile?
+- Create a Procfile in the root directory and add `web: bundle exec rackup  -p $PORT` - This
+gives an instruction to Heroku to run the app with a dynamically set port.  
+- Visit https://acebook-spacebook.herokuapp.com/ 
+=======
+
+
+ 
