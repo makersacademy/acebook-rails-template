@@ -4,15 +4,17 @@
 
 REQUIRED INSTRUCTIONS:
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+1. Fork this repository `https://github.com/marbuthnott/acebook-d-railed`
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+2. The card wall is here: https://trello.com/b/IUMBFLqZ/d-railed-acebook
 
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+## Team D-Railed
+Lucy
+Magnus
+Vlad
+Ollie
+Edina
+Cosmin
 
 ## Quickstart
 
@@ -26,4 +28,3 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
- 
