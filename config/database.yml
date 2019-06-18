@@ -19,7 +19,7 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") {5} %>
 
 development:
   <<: *default
@@ -59,6 +59,7 @@ test:
   <<: *default
   database: pgapp_test
 
+
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -71,15 +72,21 @@ test:
 # On Heroku and other platform providers, you may have a full connection URL
 # available as an environment variable. For example:
 #
-#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
+# production:
+#   url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   url: <%= ENV['DATABASE_URL'] %>
+#   database: d3e0ju5m11itte
+#   username: pwbmuvmadaycci
+#   password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
-  database: pgapp_production
-  username: pgapp
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['PGAPP_DATABASE_USER'] %>
   password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
