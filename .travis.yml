@@ -5,7 +5,7 @@ rvm:
 
  before_install:
  - gem install bundler:1.16.6
- - bundle update --bundler
+#  - bundle update --bundler
 
  deploy:
    provider: heroku
