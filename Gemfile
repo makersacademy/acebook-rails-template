@@ -37,7 +37,15 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
   gem 'travis', '~> 1.8', '>= 1.8.10'
+
 end
+
+group :test do
+  gem 'coveralls', require: false
+  gem 'rspec'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+  end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
