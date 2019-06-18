@@ -1,0 +1,10 @@
+language: ruby
+
+rvm: '2.5.0'
+
+# cache: bundler
+
+# before_install: gem install bundler
+
+# script:
+#   - bundle exec rail
