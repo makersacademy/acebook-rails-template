@@ -94,4 +94,3 @@ then run
 ```
 rake db:seed
 ```
-lalaa
