@@ -2,7 +2,8 @@ language: ruby
 rvm:
  - 2.5.0
  - jruby
-# services:
-#   - postgresql
-#   before_script:
-#   - RAILS_ENV=test bundle exec rake db:create
+script:
+ — bundle install — jobs=3 — retry=3
+ — bundle exec rake db:create
+ — bundle exec rake db:migrate
+ — bundle exec rspec
