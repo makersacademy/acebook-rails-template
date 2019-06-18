@@ -15,4 +15,6 @@ deploy:
   provider: heroku
   api_key:
     secure: "bRBG0Rckv49xYRYCOok0U9iiqTZezpQOjYwuuIHjcu83TbIFYeuSZduA7yObABhPkHljhVFaKiF770gs5Oc3pumc0latsOS39KSnyR0w468qofwKELqOzuQSI/RlSlqswuFfY0dZEE+eJDDyLEjydvn6Tq4Apo/GtT/FgY9/UZNvHXlNB6dIfJGAXmNh6p4qqvfRUfkeJiiXEI3Kk/o+5RTR+zbXviPlhDZasteCV1XZ+tPzUMbK2y77DupKj80DyhCijo5LESp53GTAhIk+Yp44lzv3JsM13L4yA3zv1l9kGDjCVi0PrhLZn19rXphmrneO+ncVGbUfLybyrnDcynG1IbL1L1TnBJybiqqgekVx9e1QTj0etr11tXgM8baDglWeBgplaDkf3ReA+MKK8yFJCk2Y3/E0F4ePGWFSjqcLQwnIKVX37rK4keNkas3zbxPx/Q3Uwvj1HQom/QbknDvfEMEL8sovSrO/cHE2jRBJGQoXSaCPD1X7Q5S4T9o7DEywjMXzX8jBoHt+nsMNoOG23EmWbF397/SEnZo6+23z4ZYe1nRMR4hPlNGiI9bsfHkewANGnLHHqrqLV36+EcSYVv4JIb/LSAcvE/AELOzeGsh6Eypa1bjwqQFBKSjZtAZcHZr6aGTWAAkBNNnh1KvHcXqTjB2jElftKJThgZQ="
-    run: "rails db:migrate"
+    # run: "rails db:migrate"
+  on:
+    repo: marbuthnott/acebook-d-railed
