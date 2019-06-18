@@ -1,5 +1,7 @@
 # AceBook
 
+[![Build Status](https://travis-ci.org/marbuthnott/acebook-d-railed.svg?branch=master)](https://travis-ci.org/marbuthnott/acebook-d-railed)
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
