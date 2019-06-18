@@ -1,9 +1,11 @@
 language: ruby
 rvm:
  - 2.5.0
- - jruby
+services:
+ - postgresql
+ before_install:
+  — bundle install
 script:
- — bundle install 
  — bundle exec rake db:create RAILS_ENV=test
  — bundle exec rake db:migrate RAILS_ENV=test
- — bundle exec rspec
+ — bundle exec rake spec
