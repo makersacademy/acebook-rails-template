@@ -4,7 +4,7 @@ rvm:
  - jruby
 
  before_install:
- - gem install bundler 
+ - gem install bundler:1.16.6
  - bundle update --bundler
 
  deploy:
