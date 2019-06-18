@@ -22,4 +22,4 @@
 
 .byebug_history
 
-echo "coverage" >> .gitignore
+/coverage/*
