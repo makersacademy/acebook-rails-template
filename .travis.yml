@@ -1,21 +1,15 @@
 language: ruby
-
-rvm: '2.5.0'
-
+rvm: 2.5.0
 cache: bundler
-
 before_install: gem install bundler
-
 script:
-  - bundle exec rails db:create
-  - bundle exec rails db:migrate
-  - bundle exec rspec
-
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+- bundle exec rspec
 deploy:
   provider: heroku
   api_key:
-    secure: "bRBG0Rckv49xYRYCOok0U9iiqTZezpQOjYwuuIHjcu83TbIFYeuSZduA7yObABhPkHljhVFaKiF770gs5Oc3pumc0latsOS39KSnyR0w468qofwKELqOzuQSI/RlSlqswuFfY0dZEE+eJDDyLEjydvn6Tq4Apo/GtT/FgY9/UZNvHXlNB6dIfJGAXmNh6p4qqvfRUfkeJiiXEI3Kk/o+5RTR+zbXviPlhDZasteCV1XZ+tPzUMbK2y77DupKj80DyhCijo5LESp53GTAhIk+Yp44lzv3JsM13L4yA3zv1l9kGDjCVi0PrhLZn19rXphmrneO+ncVGbUfLybyrnDcynG1IbL1L1TnBJybiqqgekVx9e1QTj0etr11tXgM8baDglWeBgplaDkf3ReA+MKK8yFJCk2Y3/E0F4ePGWFSjqcLQwnIKVX37rK4keNkas3zbxPx/Q3Uwvj1HQom/QbknDvfEMEL8sovSrO/cHE2jRBJGQoXSaCPD1X7Q5S4T9o7DEywjMXzX8jBoHt+nsMNoOG23EmWbF397/SEnZo6+23z4ZYe1nRMR4hPlNGiI9bsfHkewANGnLHHqrqLV36+EcSYVv4JIb/LSAcvE/AELOzeGsh6Eypa1bjwqQFBKSjZtAZcHZr6aGTWAAkBNNnh1KvHcXqTjB2jElftKJThgZQ="
-    # run: "rails db:migrate"
+    secure: EFUInJTKgKF5kI6pchhl3a4oHF4vEa2tG1hJx2bu/hS6qtWNeXJjlHUSp0MP4A9070Rhs17C1AbPnyEi2HDjftbvorNqpinCn33g8sVJGIhnWuEp5L49kKh8zsL/DeT/0mM46JACRWaeJePYULVWf5OwS8hxfxJtJPuLYjPs0uRqMNuUxCzAWDN7VNBWrNWpQPk7Klx0HMdsXwl6jUT9GA10JX+t9WeelDsZEHsLPqXishQK0VtS2fiQN65bYW/CpQvrDGeZ4s5CIN24VyBCuiB3/nqKHlVQmzJUAv/5/w1C8kA/A/e83/VDEhdRVO+5yyuMW/qciyyQxzF6bwy6iMrFl1+kO+9oL0OcOg6EzgFMfJcfyksGlzIu5YcoCbPGA2M773wg0AM5lGjG3rJ3IBubk2sUfV4s4kTuVyRg24u44MQCXLiC/+THFnvI9aP0gpXd2Ro3/r4rfX1b4F6PRcNpTw08maKUGPGgIVFb9+LkaSnVsA69fQXz1Xg8WkzsLHgQHV84dIxp3V+tknToy3veA33Yzld4iyYMuxi3RachAhQn9grAhx5M0iWkb52e2flgxxbiIKiVKfVLyNLhFqHSaVX9V7im8+5nkqjJB64zzrVEnvWkqb4Owpzea600242wWSrCWjK7mQu5XVomKYI6J3eUo3TkDTvtxiNpd08=
   app: acebook-d-railed
   on:
     repo: marbuthnott/acebook-d-railed
