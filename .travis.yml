@@ -2,9 +2,11 @@ language: ruby
 
 rvm: '2.5.0'
 
-# cache: bundler
+cache: bundler
 
-# before_install: gem install bundler
+before_install: gem install bundler
 
-# script:
-#   - bundle exec rail
+script:
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
+  - bundle exec rspec
