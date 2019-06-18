@@ -5,5 +5,5 @@ rvm:
 services:
   - postgresql
   before_script:
-  - cp ./.travis.yml config/database.yml
+  - cp .travis.yml config/database.yml
   - RAILS_ENV=test bundle exec rake db:create
