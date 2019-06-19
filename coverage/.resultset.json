@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/spec/controllers/posts_controller_spec.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/spec/controllers/posts_controller_spec.rb": [
         1,
         null,
         1,
@@ -32,7 +32,7 @@
         null,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/spec/rails_helper.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -91,14 +91,14 @@
         null,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/environment.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/application.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/application.rb": [
         1,
         null,
         1,
@@ -118,12 +118,12 @@
         null,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/boot.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/environments/test.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/environments/test.rb": [
         1,
         null,
         null,
@@ -167,7 +167,7 @@
         null,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/initializers/application_controller_renderer.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -175,7 +175,7 @@
         null,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/initializers/assets.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -191,7 +191,7 @@
         null,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/initializers/backtrace_silencers.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -200,20 +200,20 @@
         null,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/initializers/cookies_serializer.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/initializers/inflections.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -231,13 +231,13 @@
         null,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/initializers/mime_types.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/initializers/wrap_parameters.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -253,18 +253,18 @@
         null,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/config/routes.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/config/routes.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/app/helpers/application_helper.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/app/controllers/posts_controller.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/app/controllers/posts_controller.rb": [
         1,
         1,
         2,
@@ -286,12 +286,12 @@
         null,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/app/controllers/application_controller.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/spec/features/user_can_submit_posts_spec.rb": [
         1,
         null,
         1,
@@ -304,23 +304,23 @@
         null,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/spec/models/post_spec.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/spec/models/post_spec.rb": [
         1,
         null,
         1,
         2,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/app/models/post.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/app/models/post.rb": [
         1,
         null
       ],
-      "/Users/francescachater/Projects/Makers/group_projects/acebook-Spacebook/app/models/application_record.rb": [
+      "/Users/francescachater/Projects/Makers/group_projects/acebook-spacebook/app/models/application_record.rb": [
         1,
         1,
         null
       ]
     },
-    "timestamp": 1560934809
+    "timestamp": 1560936379
   }
 }
