@@ -8,10 +8,8 @@
 
 i = 0
 
-messafes
-
 while i < 10 do
- Post.create(message: "Hello, world!")
- Post.create(message: "I'm next")
-i +=1
+  Post.create(message: "Hello, world!")
+  Post.create(message: "I'm next")
+  i += 1
 end
