@@ -3,6 +3,8 @@ rvm: 2.5.0
 cache: bundler 
 
 before_script:
+ - gem update --system
+ - gem install bundler
  - bundle exec rake db:create
  - bundle exec rake db:migrate
 
