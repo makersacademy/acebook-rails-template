@@ -21,7 +21,6 @@ deploy:
 after_script:
  - bundle exec rake coveralls:push
 
-#
 # language: ruby
 # rvm:
 # - 2.5.0
