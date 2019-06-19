@@ -10,6 +10,15 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe UsersHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+# RSpec.describe UsersHelper, type: :helper do
+#   pending "add some examples to (or delete) #{__FILE__}"
+# end
+
+def signup
+  visit "/"
+    fill_in "Name", with: "Amoeba Boyz"
+    fill_in "Email", with: "amoeba_boyz@amoeba.gov"
+    fill_in "Password", with: "1234"
+    fill_in "Confirm password", with: "1234"
+    click_button "Submit"
 end
