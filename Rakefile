@@ -7,8 +7,8 @@ Rails.application.load_tasks
 
 require 'rubygems'
 require 'rake'
-require 'rspec/core/rake_task'
-require 'coveralls/rake/task'
+# require 'rspec/core/rake_task'
+# require 'coveralls/rake/task'
 
 desc 'Run RSpec'
 RSpec::Core::RakeTask.new do |t|
@@ -17,4 +17,4 @@ end
 
 task default: :spec
 
-Coveralls::RakeTask.new
+# Coveralls::RakeTask.new
