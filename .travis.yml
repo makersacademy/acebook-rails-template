@@ -13,8 +13,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: Tn+RZ3pg1Q0ZLFvKW+ITV4ZNyRs21UeBtdk2d52/swrQL+fruVbba7s8CSSwlV0Cmt+FkOJ17VwKizbPEDKYmugjQJ005IAv4eBYAmlOeQ0AYE4tJeK0Bbb8ZWIsq1dtl866a0n39u/jvkMk+YlrWfyXy+jbVbHFiaFEY573EKWFrEgfHY5W73Sh6XwTgF+/lBcBAgo4/JQY4XY8Xu8KvB5TxUAOX0F6QIis+oro9vAunMMFzqCVfgsPcG+CfewBxUdKKDD1lZwYgZqX4um0d/qSYlUoLwkABz5AubnTupRaI3bBMMUiFkPKCdU2VjO222aiXeSYtuKJ277fA1jLE4lt1AdUie9S6WSUZGZaYXjlWNgcD7fvdPEtlPL16wBHtE9uhKU8/tU2wNRRjvQd3Mjp/vVJZJe4PxKJGuBpPWC3eEm/bPv5w4JiDWCE/ewBIVwzjJIHVL+l1ajeQhUlweVLfntVD0j0pdFt/Lahoz5c0TCMI18a39zqqhbCv+uRJb32mnwRalS2UinMeC52oHTo45DW3aPlQjZ/MKbPgdfgsTl7pQOSfG35hLjmgVNRg1Whi3IcilZ1YQbH9HLk+6sco5ktplPLBbdLqa8QaOAqDdZ8OOIJklgvDZJKKNheSY/9ao1c6kC3c5ZwuzGfremk0sEMygKCywKnM1N5AIM=
-  app: acebook-Spacebook
+    secure: 12345
   on:
     repo: fetc90/acebook-Spacebook
 
