@@ -1,19 +1,14 @@
-
-=======
 language: ruby
 rvm: 2.5.0
 cache: bundler
-
 
 before_script:
  - bundle exec rake db:create
  - bundle exec rake db:migrate
 
+script:
+ - bundle exec rspec
 
-# script:
-#  - bundle exec rspec
-
-=======
 deploy:
   provider: heroku
   api_key:
