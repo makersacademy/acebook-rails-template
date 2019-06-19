@@ -20,6 +20,7 @@ deploy:
   app: acebook-spacebook
   on:
     repo: fetc90/acebook-spacebook
+  skip_cleanup: true
 
 after_script:
  - bundle exec rake coveralls:push
