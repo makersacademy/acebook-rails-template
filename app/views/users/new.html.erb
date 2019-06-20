@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <h1>New User</h1>
+  </head>
+  <body>
+  <%=form_for @user, url: users_path do |form| %>
+  <p>
+    <%=form.label :name %> <br>
+    <%=form.text_field :name %> <br>
+    <%=form.label :email %> <br>
+    <%=form.text_field :email %> <br>
+    <%=form.label :password %> <br>
+    <%=form.text_field :password %> <br>
+    <%= form.submit "Sign up" %>
+  </p>
+  <% end %>
+
+
+  </body>
+</html>

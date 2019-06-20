@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
-  # def new
-  #   @user = User.new
-  # end
+  # def index
   #
-  # def create
-  # 
   # end
+
+  def new
+    @user = User.new
+  end
+  #
+  def create
+    render plain: params[:user].inspect
+  end
 end
