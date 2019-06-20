@@ -264,29 +264,29 @@
         1,
         null
       ],
-      "/Users/student/Projects/acebook-spacebook/app/helpers/users_helper.rb": [
+      "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/helpers/user_helper.rb": [
         1,
         null
       ],
-      "/Users/student/Projects/acebook-spacebook/app/controllers/posts_controller.rb": [
+      "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/controllers/posts_controller.rb": [
         1,
         1,
-        4,
-        null,
-        null,
-        1,
-        5,
         5,
         null,
         null,
         1,
-        7,
+        6,
+        6,
+        null,
+        null,
+        1,
+        8,
         null,
         null,
         1,
         null,
         1,
-        5,
+        6,
         null,
         null
       ],
@@ -319,7 +319,18 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook-spacebook/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/controllers/user_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/controllers/user_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/features/user_can_submit_posts_spec.rb": [
         1,
         null,
         1,
@@ -345,6 +356,34 @@
         null,
         1,
         null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/helpers/user_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
         null
       ],
       "/Users/student/Projects/acebook-spacebook/spec/features/users_can_signup_spec.rb": [
@@ -402,6 +441,6 @@
         null
       ]
     },
-    "timestamp": 1561022865
+    "timestamp": 1560957404
   }
 }
