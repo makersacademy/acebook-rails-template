@@ -12,7 +12,7 @@ The aim of this project was to use high quality processes to build a ruby on rai
 
 The requirement was to build a facebook clone where a user can signup, write, update, and delete posts, and view posts from all users. In addition to the web application's user stories we were required to approach the build with the Agile project management methodology.
 
-The project is provided by Makers Academy as week eight's group challenge; this provides the learning base for ruby on rails and the Agile project management process.
+The project is provided by Makers Academy as week eight's group challenge; this provides the learning base for Ruby on Rails and the Agile project management process.
 
 ## GETTING STARTED
 
@@ -127,9 +127,13 @@ I will see an error message if I try to delete another users post
 
 **Other programming languages:** *HTML/CSS* is used for styling in the browser.
 
+
+Bootstrap/Javascript section here?
+
+
 **Unit testing framework:** *RSpec* is a Behaviour Driven Development for Ruby, run from the command line.
 
-**Feature testing framework:** *Capybara* is used to test web applications by simulating how a real user would interact with your app. Runs off of RSpec commands in the terminal.
+**Feature testing framework:** *Capybara* is used to test web applications by simulating how a real user would interact with your app. Runs off RSpec commands in the terminal.
 
 **ORM:** *Active record* facilitates the creation and use of objects whose data requires persistent storage to a database.
 
