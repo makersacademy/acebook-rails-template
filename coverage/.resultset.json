@@ -487,6 +487,9 @@
         null,
         null
       ],
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/features/user_can_update_his_posts_spec.rb": [
+
+      ],
       "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/features/user_views_posts_in_reverse_chronological_order_spec.rb": [
         1,
         null,
@@ -582,6 +585,6 @@
         null
       ]
     },
-    "timestamp": 1561038762
+    "timestamp": 1561043939
   }
 }

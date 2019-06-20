@@ -6,5 +6,5 @@
 
 <% @posts.each do |post| %>
   <p class='post-text'><%= post.message %> [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]</p>
-  <%= button_to "Delete", post_path(:id => post.id), :method => :delete %>
+  <%= button_to "Delete", post_path(:id => post.id), :method => :delete, data: {confirm: 'Are you sure?'} %>
 <% end %>
