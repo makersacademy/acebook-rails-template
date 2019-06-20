@@ -1,21 +1,21 @@
 class UsersController < ApplicationController
-
-  def index
-  end
+  skip_before_action :require_login, only: [:new, :create]
 
   def new
+    @user = User.new
   end
 
   def create
-    user = User.new(signup_params)
+    @user = User.new(signup_params)
 
-    if user.valid?
-      user.save
-      session[:user_id] = user.id
+    if @user.valid?
+      @user.save
+      session[:user_id] = @user.id
+      flash[:success] = "Welcome to Acebook by D-Railed!"
 
       (redirect_to posts_path) && (return)
     else
-      (redirect_to root_path) && (return)
+      render :new
     end
   end
 
