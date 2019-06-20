@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/controllers/posts_controller_spec.rb": [
+      "/Users/student/Projects/acebook-spacebook/spec/controllers/posts_controller_spec.rb": [
         1,
         null,
         1,
@@ -32,7 +32,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/rails_helper.rb": [
+      "/Users/student/Projects/acebook-spacebook/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -91,14 +91,14 @@
         null,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/environment.rb": [
+      "/Users/student/Projects/acebook-spacebook/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/application.rb": [
+      "/Users/student/Projects/acebook-spacebook/config/application.rb": [
         1,
         null,
         1,
@@ -118,12 +118,12 @@
         null,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/boot.rb": [
+      "/Users/student/Projects/acebook-spacebook/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/environments/test.rb": [
+      "/Users/student/Projects/acebook-spacebook/config/environments/test.rb": [
         1,
         null,
         null,
@@ -167,7 +167,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/initializers/application_controller_renderer.rb": [
+      "/Users/student/Projects/acebook-spacebook/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -175,7 +175,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/initializers/assets.rb": [
+      "/Users/student/Projects/acebook-spacebook/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -191,7 +191,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/initializers/backtrace_silencers.rb": [
+      "/Users/student/Projects/acebook-spacebook/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -200,20 +200,20 @@
         null,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/initializers/cookies_serializer.rb": [
+      "/Users/student/Projects/acebook-spacebook/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/initializers/inflections.rb": [
+      "/Users/student/Projects/acebook-spacebook/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/student/Projects/acebook-spacebook/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -231,13 +231,13 @@
         null,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/initializers/mime_types.rb": [
+      "/Users/student/Projects/acebook-spacebook/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/initializers/wrap_parameters.rb": [
+      "/Users/student/Projects/acebook-spacebook/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -253,89 +253,180 @@
         null,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/config/routes.rb": [
+      "/Users/student/Projects/acebook-spacebook/config/routes.rb": [
         1,
         null,
         1,
+        null,
         1,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/helpers/application_helper.rb": [
+      "/Users/student/Projects/acebook-spacebook/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/controllers/posts_controller.rb": [
+      "/Users/student/Projects/acebook-spacebook/app/helpers/user_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/student/Projects/acebook-spacebook/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/student/Projects/acebook-spacebook/app/controllers/posts_controller.rb": [
         1,
         1,
-        4,
-        null,
-        null,
-        1,
-        5,
         5,
         null,
         null,
         1,
         6,
+        6,
+        null,
+        null,
+        1,
+        8,
         null,
         null,
         1,
         null,
         1,
-        5,
-        null,
-        null
-      ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/features/user_can_submit_posts_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
+        6,
         null,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/models/post_spec.rb": [
+      "/Users/student/Projects/acebook-spacebook/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/student/Projects/acebook-spacebook/spec/controllers/users_controller_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Projects/acebook-spacebook/app/controllers/users_controller.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Projects/acebook-spacebook/spec/features/user_can_submit_posts_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Projects/acebook-spacebook/spec/features/users_can_signup_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Projects/acebook-spacebook/spec/helpers/users_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Projects/acebook-spacebook/spec/models/post_spec.rb": [
         1,
         null,
         1,
         2,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/models/post.rb": [
+      "/Users/student/Projects/acebook-spacebook/app/models/post.rb": [
         1,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/models/application_record.rb": [
+      "/Users/student/Projects/acebook-spacebook/app/models/application_record.rb": [
         1,
+        1,
+        null
+      ],
+      "/Users/student/Projects/acebook-spacebook/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        null
+      ],
+      "/Users/student/Projects/acebook-spacebook/app/models/user.rb": [
         1,
         null
       ]
     },
-    "timestamp": 1560953958
+    "timestamp": 1561029340
   }
 }
