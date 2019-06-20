@@ -37,7 +37,6 @@ RSpec.feature "Timeline", type: :feature do
 
   scenario 'Users can delete posts' do
     visit '/posts'
-    
     click_link 'New post'
     fill_in 'Message', with: 'First line hello!'
     click_button 'Submit'
@@ -45,5 +44,17 @@ RSpec.feature "Timeline", type: :feature do
     expect(first('.box')).to have_content('First line hello!')
     click_link('Delete')
     expect(page).not_to have_content('First line hello!')
+  end
+
+  scenario 'Users can edit posts' do
+    visit '/posts'
+    click_link 'New post'
+    fill_in 'Message', with: 'First line hello!'
+    click_button 'Submit'
+
+    expect(first('.box')).to have_content('First line hello!')
+    click_link('Edit')
+    post_id = Post.all[0].id
+    expect(current_path).to eq("/posts/#{post_id}/edit")
   end
 end
