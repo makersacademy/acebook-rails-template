@@ -3,16 +3,16 @@
   <%= form.text_field :name %>
 
   <%= form.label :email %>
-  <%= form.text_field :email %>
+  <%= form.email_field :email %>
 
   <%= form.label :password %>
   <%= form.password_field :password %>
 
-  <%= form.label :confirm_password %>
-  <%= form.password_field :confirm_password %>
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation %>
 
 
   <%= form.submit "Submit" %>
 
-  
+
 <% end %>
