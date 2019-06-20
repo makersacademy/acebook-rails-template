@@ -34,4 +34,16 @@ RSpec.feature "Timeline", type: :feature do
     
     expect(first('.box')).to have_content(time)
   end
+
+  scenario 'Users can delete posts' do
+    visit '/posts'
+    
+    click_link 'New post'
+    fill_in 'Message', with: 'First line hello!'
+    click_button 'Submit'
+
+    expect(first('.box')).to have_content('First line hello!')
+    click_link('Delete')
+    expect(page).not_to have_content('First line hello!')
+  end
 end
