@@ -264,30 +264,45 @@
         1,
         null
       ],
+      "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/helpers/user_helper.rb": [
+        1,
+        null
+      ],
       "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/controllers/posts_controller.rb": [
         1,
         1,
-        4,
-        null,
-        null,
-        1,
-        5,
         5,
         null,
         null,
         1,
         6,
+        6,
+        null,
+        null,
+        1,
+        8,
         null,
         null,
         1,
         null,
         1,
-        5,
+        6,
         null,
         null
       ],
       "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/controllers/application_controller.rb": [
         1,
+        1,
+        null
+      ],
+      "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/controllers/user_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/controllers/user_controller.rb": [
         1,
         null
       ],
@@ -317,6 +332,34 @@
         null,
         1,
         null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/helpers/user_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
         null
       ],
       "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/models/post_spec.rb": [
@@ -336,6 +379,6 @@
         null
       ]
     },
-    "timestamp": 1560953958
+    "timestamp": 1560957404
   }
 }
