@@ -28,3 +28,11 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+
+
+
+
+
+co-authored-by: LisaMcCormack <lisamccormack85@gmail.com>
+co-authored-by: fetc90 <francescachater@gmail.com>
