@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/edinabolkeny/Projects/acebook-d-railed/spec/controllers/posts_controller_spec.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/controllers/posts_controller_spec.rb": [
         1,
         null,
         1,
@@ -9,7 +9,15 @@
         1,
         1,
         1,
+        1,
         null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         1,
@@ -18,12 +26,8 @@
         1,
         null,
         null,
-        1,
-        1,
-        1,
         null,
-        null,
-        null,
+        1,
         1,
         1,
         1,
@@ -32,7 +36,7 @@
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/spec/rails_helper.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -91,14 +95,14 @@
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/environment.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/application.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/application.rb": [
         1,
         null,
         1,
@@ -118,12 +122,12 @@
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/boot.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/environments/test.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/environments/test.rb": [
         1,
         null,
         null,
@@ -167,7 +171,7 @@
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/initializers/application_controller_renderer.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -175,7 +179,7 @@
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/initializers/assets.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -191,7 +195,7 @@
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/initializers/backtrace_silencers.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -200,20 +204,20 @@
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/initializers/cookies_serializer.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/initializers/inflections.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -231,13 +235,13 @@
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/initializers/mime_types.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/initializers/wrap_parameters.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -253,7 +257,7 @@
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/config/routes.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/config/routes.rb": [
         1,
         1,
         1,
@@ -267,75 +271,83 @@
         1,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/app/helpers/application_helper.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/app/helpers/users_helper.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/app/controllers/posts_controller.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/app/controllers/posts_controller.rb": [
         1,
-        1,
-        2,
-        null,
-        null,
-        1,
-        3,
-        3,
-        null,
-        null,
         1,
         5,
         null,
         null,
         1,
+        6,
+        6,
+        null,
         null,
         1,
-        3,
+        12,
         null,
-        null
-      ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/spec/controllers/users_controller_spec.rb": [
-        1,
         null,
         1,
         null,
         1,
-        1,
-        1,
-        1,
-        null,
-        null,
+        6,
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/app/controllers/users_controller.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/app/controllers/application_controller.rb": [
+        1,
+        1,
         1,
         null,
         1,
+        null,
+        1,
+        23,
         0,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/controllers/users_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/app/controllers/users_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        16,
         null,
         null,
         1,
         13,
         null,
+        13,
+        5,
+        5,
+        5,
         null,
-        1,
-        10,
-        null,
-        10,
-        2,
-        2,
-        2,
-        null,
-        2,
+        5,
         null,
         8,
         null,
@@ -344,11 +356,11 @@
         1,
         null,
         1,
-        10,
+        13,
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/spec/features/user_can_signup_spec.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/features/user_can_signup_spec.rb": [
         1,
         null,
         1,
@@ -427,14 +439,16 @@
         1,
         1,
         null,
+        1,
         1,
         null,
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/features/user_can_submit_posts_spec.rb": [
         1,
         null,
+        1,
         1,
         1,
         1,
@@ -445,7 +459,40 @@
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/spec/helpers/users_helper_spec.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/features/user_views_posts_in_reverse_chronological_order_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/features/user_views_posts_with_date_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/helpers/users_helper_spec.rb": [
         1,
         null,
         null,
@@ -462,30 +509,30 @@
         1,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/spec/models/post_spec.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/models/post_spec.rb": [
         1,
         null,
         1,
         2,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/app/models/post.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/app/models/post.rb": [
         1,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/spec/models/user_spec.rb": [
-        1,
-        null,
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/app/models/user.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/app/models/user.rb": [
         1,
         1,
         null,
@@ -499,7 +546,7 @@
         null,
         null
       ],
-      "/Users/edinabolkeny/Projects/acebook-d-railed/spec/views/users/new.html.erb_spec.rb": [
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/views/users/new.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -507,6 +554,6 @@
         null
       ]
     },
-    "timestamp": 1560958780
+    "timestamp": 1561035322
   }
 }

@@ -5,5 +5,5 @@
   <% end %>
 
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p class='post-text'><%= post.message %> [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]</p>
 <% end %>
