@@ -10,12 +10,13 @@ cache: bundler
 services:
   - postgresql
 before_script:
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate --trace
-# Code Climate
+  # Code Climate
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+  # DB migration
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate --trace
 script: bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
