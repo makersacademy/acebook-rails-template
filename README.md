@@ -1,4 +1,5 @@
 # AceBook
+[![Maintainability](https://api.codeclimate.com/v1/badges/7eaf70df077cfa819ea3/maintainability)](https://codeclimate.com/github/breycarr/acebook-rails-amoeba-boyz/maintainability)[![Test Coverage](https://api.codeclimate.com/v1/badges/7eaf70df077cfa819ea3/test_coverage)](https://codeclimate.com/github/breycarr/acebook-rails-amoeba-boyz/test_coverage)
 
 REQUIRED INSTRUCTIONS:
 
