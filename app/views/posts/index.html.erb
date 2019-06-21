@@ -1,9 +1,20 @@
-<%= flash[:success] %><br>
+
+<h2><%= flash[:success] %></h2><br>
 
 <%= link_to new_post_path do %>
   New post
-  <% end %>
+<% end %><br>
 
-<% @posts.each do |post| %>
-  <p class='post-text'><%= post.message %> [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]</p>
-<% end %>
+<%= flash[:liked] %>
+<div>
+  <% @posts.each do |post| %>
+    <ul>
+      <li>
+        <p class='post-text'><%= post.message %> [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]</p> 
+        <%= button_to Emoji.find_by_alias("smiley").raw, post_likes_path(post.id), method: :post %>
+        <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+      </li>
+    </ul>
+  <% end %>
+</div>
+
