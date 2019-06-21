@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
-  def new
+  def new  
   end
 
   def create
@@ -12,7 +12,8 @@ class SessionsController < ApplicationController
      (redirect_to posts_path) && (return)
 
    else
-     flash.now.alert = 'Email or password is invalid.'
+     flash[:invalid_details] = 'Email or password is invalid.'
+     redirect_to new_session_path
    end
   end
 

@@ -16,6 +16,7 @@ RSpec.feature "Signup", type: :feature do
     end
   end
 
+
   context "User must fill in a valid password" do
     scenario "user left password field empty" do
       sign_up(email: "test@test.com", password: "")
@@ -35,6 +36,17 @@ RSpec.feature "Signup", type: :feature do
 
       expect(page).to have_content("Password is too long (maximum is 10 characters)")
     end
+
+    scenario "user leaves password confirmation field blank" do
+      sign_up(email: "test@test.com", password: "12345678910")
+      expect(page).to have_content("Password confirmation doesn't match Password")
+    end
+
+    scenario "user fill in password confirmation with a different password" do
+      sign_up(email: "test@test.com", password: "12345678910")
+      expect(page).to have_content("Password confirmation doesn't match Password")
+    end
+
   end
 
   context "User must provide a valid email address" do
