@@ -259,6 +259,9 @@
         1,
         1,
         1,
+        1,
+        1,
+        null,
         null,
         null,
         null,
@@ -266,14 +269,8 @@
         1,
         1,
         null,
-        null,
-        null,
         1,
-        null
-      ],
-
-      "/Users/lucybarber/Documents/Makers/Weekly_challenges/acebook-d-railed/app/helpers/application_helper.rb": [
-        1,
+        null,
         null
       ],
       "/Users/lucybarber/Documents/Makers/Weekly_challenges/acebook-d-railed/app/helpers/likes_helper.rb": [
@@ -287,15 +284,38 @@
       "/Users/lucybarber/Documents/Makers/Weekly_challenges/acebook-d-railed/app/controllers/likes_controller.rb": [
         1,
         1,
+        8,
+        null,
         null,
         1,
-        3,
+        9,
+        null,
+        9,
+        null,
+        null,
+        1,
+        19,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+
         1,
         null,
         2,
         null,
-        null,
-        3,
+
+        1,
+        1,
+        1,
+        1,
+
         null,
         null,
         1,
@@ -306,7 +326,7 @@
         null,
         null,
         1,
-        6,
+        10,
         null,
         null,
         null
@@ -322,7 +342,7 @@
         null,
         1,
 
-        32,
+        39,
 
         0,
         null,
@@ -373,16 +393,22 @@
         1,
         null,
         1,
-        6,
-        6,
-        null,
-        null,
-        1,
+
         18,
         null,
         null,
-
         1,
+        15,
+        null,
+        15,
+        7,
+        7,
+        7,
+        null,
+        7,
+        null,
+        8,
+
         null,
         1,
 
@@ -392,7 +418,29 @@
         1,
         null,
         1,
-        6,
+
+        15,
+        null,
+        null
+      ],
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/features/user_can_delete_posts_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+
         null,
         null
       ],
@@ -538,6 +586,40 @@
         1,
         1,
         null,
+
+        null
+      ],
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/features/user_can_update_his_posts_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Google_Drive/environment/projects/acebook-d-railed/spec/features/user_views_posts_in_reverse_chronological_order_spec.rb": [
+
         1,
         null,
         null,
@@ -685,7 +767,7 @@
       ]
     },
 
-    "timestamp": 1561036018
+    "timestamp": 1561110662
 
   }
 }
