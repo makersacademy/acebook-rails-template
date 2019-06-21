@@ -1,3 +1,10 @@
+<% flash.keys.each do |type| %>
+  <div data-alert class=flash <%= type %> alert-box radius>
+    <%= flash[type] %>
+    <a href="$" class="close">&times;</a>
+  </div>
+ <% end %>
+ 
 <%= form_for @user do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
