@@ -25,4 +25,15 @@ RSpec.feature "Login", type: :feature do
     expect(page).to have_current_path("/posts")
     expect(page).to have_content("Welcome to Acebook by D-Railed!")
   end
+
+  scenario "User inputs wrong email and password in details" do
+    go_to_homepage
+    click_link("Sign in")
+    fill_in("Email", with: "test")
+    fill_in("Password", with: "pass")
+    click_button("Sign In")
+    expect(page).to have_current_path("/sessions/new")
+    expect(page).to have_content("Invalid email or password. ")
+  end
+
 end
