@@ -359,8 +359,7 @@
         null,
         null
       ],
-      "/Users/yems/Projects/acebook-spacebook/spec/features/user_can_submit_posts_spec.rb": [
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/features/edit_post_view_spec.rb": [
+      "/Users/yems/Projects/acebook-spacebook/spec/features/edit_post_view_spec.rb": [
         1,
         null,
         1,
@@ -378,7 +377,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/yems/Projects/acebook-spacebook/spec/features/user_can_submit_posts_spec.rb": [
         1,
         null,
         1,
@@ -443,7 +442,6 @@
       "/Users/yems/Projects/acebook-spacebook/spec/features/users_can_signup_spec.rb": [
         1,
         null,
-        1,
         1,
         1,
         1,
@@ -528,19 +526,8 @@
         1,
         1,
         null
-      ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/spec/models/user_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/student/Documents/Makers/Rails/acebook-rails-template/app/models/user.rb": [
-        1,
-        null
       ]
     },
-    "timestamp": 1561036828
+    "timestamp": 1561115533
   }
 }

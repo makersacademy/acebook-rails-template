@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    redirect_to users_path
+    redirect_to new_user_path
   end
 
 
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params) 
 
     @user.save
-    redirect_to @user
+    redirect_to users_path
   end
 
   private def user_params
