@@ -20,7 +20,7 @@ RSpec.feature "Likes", type: :feature do
     expect(page).to have_content('1')
   end
 
-  scenario "Can click the like emoji" do
+  scenario "Can only like a post once" do
     sign_up(email: "test@test.com", password: "password")
     visit "/posts"
     click_link "New post"
