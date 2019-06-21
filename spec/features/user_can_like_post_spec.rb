@@ -7,7 +7,7 @@ RSpec.feature "Likes", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
-    expect(page).to have_content(:smiley)
+    expect(page).to have_content(:thumbsup)
   end
 
   scenario "Can click the like emoji" do
@@ -16,8 +16,8 @@ RSpec.feature "Likes", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
-    click_button Emoji.find_by_alias("smiley").raw
-    expect(page).to have_content('1')
+    click_button Emoji.find_by_alias("thumbsup").raw
+    expect(page).to have_content('1 Like')
   end
 
   scenario "Can only like a post once" do
@@ -26,9 +26,8 @@ RSpec.feature "Likes", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
-    click_button Emoji.find_by_alias("smiley").raw
-    click_button Emoji.find_by_alias("smiley").raw
-    expect(page).to have_content('1')
-    expect(page).to have_content('You have already liked this post')
+    click_button Emoji.find_by_alias("thumbsup").raw
+    expect(page).to have_content('1 Like')
+    expect(page).to have_content(:thumbsdown)
   end
 end
