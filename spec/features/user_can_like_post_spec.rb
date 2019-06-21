@@ -18,16 +18,6 @@ RSpec.feature "Likes", type: :feature do
     click_button "Submit"
     click_button Emoji.find_by_alias("thumbsup").raw
     expect(page).to have_content('1 Like')
-  end
-
-  scenario "Can only like a post once" do
-    sign_up(email: "test@test.com", password: "password")
-    visit "/posts"
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
-    click_button Emoji.find_by_alias("thumbsup").raw
-    expect(page).to have_content('1 Like')
     expect(page).to have_content(:thumbsdown)
   end
 end
