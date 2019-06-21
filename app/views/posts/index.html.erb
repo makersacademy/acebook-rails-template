@@ -10,9 +10,11 @@
   <% @posts.each do |post| %>
     <ul>
       <li>
-        <%= post.message %> <%= button_to Emoji.find_by_alias("smiley").raw, post_likes_path(post.id), method: :post %>
+        <p class='post-text'><%= post.message %> [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]</p> 
+        <%= button_to Emoji.find_by_alias("smiley").raw, post_likes_path(post.id), method: :post %>
         <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
       </li>
     </ul>
   <% end %>
 </div>
+

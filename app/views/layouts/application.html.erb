@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <% if current_user %>
+      Logged in as <%= current_user.email %>.
+      <%= link_to "Sign out", session_path("current"), method: "delete" %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
