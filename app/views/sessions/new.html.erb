@@ -1,13 +1,18 @@
 <%= link_to "Sign Up", root_path %>
 <h1>Sign in to Acebook</h1>
+<%= flash[:invalid_details] %>
+<br>
 
 <%= form_tag sessions_path do %>
   <%= label_tag :email %><br />
-  <%= text_field_tag :email, params[:email] %>
+  <%= text_field_tag :email, params[:email] %><br>
 
   <%= label_tag :password %><br />
-  <%= password_field_tag :password %>
+  <%= password_field_tag :password %><br>
 
-  <%= submit_tag "Sign In" %>
+  <br><%= submit_tag "Sign In" %>
 
 <% end %>
+
+<br>
+

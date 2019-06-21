@@ -12,7 +12,8 @@ class SessionsController < ApplicationController
      (redirect_to posts_path) && (return)
 
    else
-     flash.now.alert = 'Email or password is invalid.'
+     flash[:invalid_details] = 'Invalid email or password.'
+     redirect_to new_session_path
    end
   end
 
