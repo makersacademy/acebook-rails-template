@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :can_edit, :only => [ :edit, :update, :destroy ]
+  
 
   def index
     @posts = Post.order("created_at DESC")
@@ -13,8 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    @post.user = current_user
+    @post = Post.create(post_params.merge(user_id: current_user.id))
     redirect_to posts_url
   end
 
@@ -40,4 +41,12 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
   end
+
+  def can_edit
+    @post = Post.find(params[:id])
+    unless @post and current_user and current_user.can_edit? @post
+      redirect_to posts_url
+    end
+  end
+  
 end

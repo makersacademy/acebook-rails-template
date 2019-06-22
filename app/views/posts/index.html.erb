@@ -10,7 +10,7 @@
   <% @posts.each do |post| %>
     <ul>
       <li>
-        <p class='post-text'><%= post.message %> [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]</p>
+        <p><%= post.message %> [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]</p>
 
         <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
         <% if pre_like %>
