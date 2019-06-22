@@ -17,3 +17,10 @@ def sign_in(email: 'test@test.com', password: 'password')
   fill_in('Password', with: password)
   click_button('Sign In')
 end
+
+def add_post(message:)
+  visit '/posts'
+  click_link 'New post'
+  fill_in 'Message', with: message
+  click_button 'Submit'
+end

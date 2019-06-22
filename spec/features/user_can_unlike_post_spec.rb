@@ -5,10 +5,8 @@ require 'rails_helper'
 RSpec.feature 'Unlike', type: :feature do
   scenario 'Can unlike a post' do
     sign_up(email: 'test@test.com', password: 'password')
-    visit '/posts'
-    click_link 'New post'
-    fill_in 'Message', with: 'Hello, world!'
-    click_button 'Submit'
+    add_post(message: 'Hello, world!')
+
     click_button Emoji.find_by_alias('thumbsup').raw
     click_button Emoji.find_by_alias('thumbsdown').raw
 

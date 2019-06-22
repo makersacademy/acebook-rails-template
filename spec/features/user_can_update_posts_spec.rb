@@ -5,9 +5,8 @@ require 'rails_helper'
 RSpec.feature 'Posts', type: :feature do
   scenario 'user can update posts' do
     sign_up(email: 'test@test.com', password: 'password')
-    visit '/posts/new'
-    fill_in 'Message', with: 'Post number one'
-    click_button 'Submit'
+    add_post(message: 'Post number one')
+
     first(:button, 'Edit').click
 
     post = Post.all[0]

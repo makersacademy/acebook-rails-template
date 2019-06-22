@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature 'Login', type: :feature do
+RSpec.feature 'Signin', type: :feature do
   before(:each) do
     sign_up(email: 'test@test.com', password: 'password')
     click_link('Sign out')
