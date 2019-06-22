@@ -1,0 +1,22 @@
+AllCops:
+  Exclude:
+    - 'app/assets/**/*'
+    - 'app/channels/**/*'
+    - 'bin/**/*'
+    - 'config/environments/**/*'
+    - 'config/initializers/**/*'
+    - 'config/locales/**/*'
+    - 'config/puma.rb'
+    - 'coverage/**/*'
+    - 'db/**/*'
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Documentation:
+  Enabled: false
