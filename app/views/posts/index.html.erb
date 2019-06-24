@@ -5,12 +5,14 @@
   New post
 <% end %><br>
 
+<br><%= flash[:created_at] %><br>
+
 <h2 id='error1'><%= flash[:liked] %></h2>
 <div>
   <% @posts.each do |post| %>
     <ul>
       <li>
-        <p><%= post.message %> [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]</p>
+        <p class='post-text'><%= post.message %> [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]</p>
         <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
         <% if pre_like %>
           <%= button_to Emoji.find_by_alias("thumbsdown").raw, post_like_path(post.id, pre_like.id), method: :delete %>
@@ -21,7 +23,7 @@
 
         <%= button_to "Edit", edit_post_path(post) %>
         <%= button_to "Delete", post_path(:id => post.id), :method => :delete, data: {confirm: 'Are you sure?'} %>
-        <br><%= flash[:created_at] %><br>
+
       </li>
     </ul>
   <% end %>
