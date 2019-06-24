@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-default navbar-fixed-top">
  <div class="container">
    <div class="navbar-header">
@@ -12,8 +14,16 @@
    <div class="collapse navbar-collapse" id="navbar-top">
      <ul class="nav navbar-nav navbar-right">
        <% if user_signed_in? %>
-         <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
-         <li><%= link_to 'Posts', posts_path %></li>
+       <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
+       <%= link_to 'New post', new_post_path %>
+       <h1>Your wall</h1>
+       <br>
+        <% @posts.each do |post| %>
+          <% if current_user.id == post.user_id %>
+            <li><%= simple_format(post.content) %>&nbsp;<%= post.created_at %></li>
+          <% end %>
+        <% end %>
+         <li><%= link_to 'All posts', posts_path %></li>
        <% else %>
          <li><%= link_to 'Sign up', new_user_registration_path %></li>
          <li><%= link_to 'Sign in', user_session_path %></li>

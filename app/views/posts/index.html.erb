@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<%= link_to "Ace-Book by AmoebaBoyz", root_url, class: "navbar-brand" %>
+<%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
 <h1>Posts</h1>
 
 <table>
@@ -15,7 +16,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.user.name %></td>
-        <td><%= post.content %></td>
+        <td><%= simple_format(post.content) %>&nbsp;<%= post.created_at %></td>
         <% if current_user.id == post.user_id %>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
@@ -28,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New post', new_post_path %>
