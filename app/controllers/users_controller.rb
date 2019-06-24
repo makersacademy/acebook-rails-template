@@ -2,10 +2,10 @@ class UsersController < ApplicationController
   def new
   end
 
-  def show
-    @user = User.find(params[:id])
-    redirect_to new_user_path
-  end
+  # def show
+  #   @user = User.find(params[:id])
+  #   redirect_to new_user_path
+  # end
 
 
   def create
