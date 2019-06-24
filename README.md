@@ -34,5 +34,7 @@ First, clone this repository. Then:
 
 
 
-co-authored-by: LisaMcCormack <lisamccormack85@gmail.com>
-co-authored-by: fetc90 <francescachater@gmail.com>
+Co-authored-by: LisaMcCormack <lisamccormack85@gmail.com>
+Co-authored-by: fetc90 <francescachater@gmail.com>
+Co-authored-by: LaurenceTaylor <ltaylorapp@gmail.com>
+Co-authored-by: hughbric <mhughes36@live.co.uk>
