@@ -1,0 +1,16 @@
+
+$color: rgb(17, 89, 117);
+@font-face {
+  font-family: "sans-serif";
+  src: asset-url('SPACEBOY.TTF') format('truetype');
+}
+$font: "SPACEBOY", ;
+
+.box {
+  width: 300px;
+  margin: 50px auto;
+  background: $color;
+  border: 4px solid #000000;
+  padding: 20px;
+  position:relative;
+}
