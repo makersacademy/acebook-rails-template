@@ -1,23 +1,23 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
   before_action :find_post
   before_action :find_like, only: [:destroy]
 
-  def show
-
-  end
+  def show; end
 
   def create
     if already_liked?
       flash[:liked] = 'You have already liked this post'
     else
-      @post.likes.create(user_id:  session[:user_id])
+      @post.likes.create(user_id: session[:user_id])
     end
 
     redirect_to posts_path
   end
 
   def destroy
-      @like.destroy
+    @like.destroy
 
     redirect_to posts_path
   end
@@ -35,5 +35,4 @@ class LikesController < ApplicationController
   def find_like
     @like = @post.likes.find(params[:id])
   end
-
 end

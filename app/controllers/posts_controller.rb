@@ -3,11 +3,11 @@ class PostsController < ApplicationController
   before_action :check_time!, only: [:edit, :update]
 
   def index
-    @posts = Post.order("created_at DESC")
+    @posts = Post.order('created_at DESC')
   end
-  
+
   def show
-    @post= Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
   end
 
   def new

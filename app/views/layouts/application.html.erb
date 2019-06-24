@@ -6,12 +6,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <% if current_user %>
-      Logged in as <%= current_user.email %>.
-      <%= link_to "Sign out", session_path("current"), method: "delete" %>
+      <%= link_to "Sign out", session_path("current"), method: "delete" %><br>
+      Logged in as <%= current_user.email %>.<br>
     <% end %>
 
     <%= yield %>
