@@ -3,18 +3,17 @@
 <%# <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>Welcome to Spacebook</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
   </head>
+  
   <body>
-   <div class="container">
-    <%= form_for @user do |form| %>
-    <%# <%= form.text_field :email %>
-  <div class="box">
+    <div class="box">
+    <%= button_to "Sign Up", new_user_path, method: 'get' %>
+    <%= button_to "Sign In", new_session_path, method: 'get' %>
+    </div>
+  </body>
+</html>
 
-  <%= button_to "Sign Up", new_user_path, method: 'get' %>
-  </div>
-  <%# </body>
-</html> %>
