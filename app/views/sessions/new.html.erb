@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title></title>
   </head>
+  <%= flash[:notice] %>
   <body>
     <%=form_tag sessions_path do |form| %>
     <p>
@@ -14,6 +15,5 @@
       <%=submit_tag "Sign In" %>
     </p>
     <% end %>
-
   </body>
 </html>

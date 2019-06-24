@@ -339,7 +339,9 @@
         1,
         1,
         1,
+        1,
         null,
+        0,
         0,
         null,
         null,
@@ -366,12 +368,7 @@
       ],
       "/Users/student/Projects/acebook-spacebook/app/controllers/users_controller.rb": [
         1,
-        null,
-        null,
-        null,
-        null,
         1,
-        null,
         null,
         null,
         1,
@@ -381,7 +378,6 @@
         null,
         null,
         1,
-        null,
         2,
         2,
         2,
@@ -619,6 +615,6 @@
         null
       ]
     },
-    "timestamp": 1561372777
+    "timestamp": 1561375495
   }
 }

@@ -1,10 +1,5 @@
 class UsersController < ApplicationController
-  # def index
-  #
-  # end
-
   def new
-    # @user = User.new
   end
 
   def show
@@ -14,7 +9,6 @@ class UsersController < ApplicationController
 
 
   def create
-    # render plain: params[:user].inspect
     @user = User.new(user_params)
     @user.save
     redirect_to users_path
