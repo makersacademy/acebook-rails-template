@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 #using bootstrap for styling
-gem 'bootstrap', '~> 4.3.1'
+# gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 group :development, :test do
