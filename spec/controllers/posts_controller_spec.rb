@@ -11,17 +11,19 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe 'POST /' do
-    it 'responds with 200' do
-      session[:user_id] = 1
-      post :create, params: { post: { message: 'Hello, world!' } }
+  describe "POST /" do
+    it "responds with 200" do
+      @user = User.create(email: "test@test.com", password: "password")
+      session[:user_id] = @user.id
+      post :create, params: { post: { message: "Hello, world!" } }
       expect(response).to redirect_to(posts_url)
     end
 
-    it 'creates a post' do
-      session[:user_id] = 1
-      post :create, params: { post: { message: 'Hello, world!' } }
-      expect(Post.find_by(message: 'Hello, world!')).to be
+    it "creates a post" do
+      @user = User.create(email: "test@test.com", password: "password")
+      session[:user_id] = @user.id
+      post :create, params: { post: { message: "Hello, world!" } }
+      expect(Post.find_by(message: "Hello, world!")).to be
     end
   end
 
@@ -33,3 +35,4 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 end
+  

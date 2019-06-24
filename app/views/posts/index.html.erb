@@ -5,6 +5,8 @@
   New post
 <% end %><br>
 
+<br><%= flash[:created_at] %><br>
+
 <h2 id='error1'><%= flash[:liked] %></h2>
 <div>
   <% @posts.each do |post| %>
