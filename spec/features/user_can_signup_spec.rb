@@ -49,7 +49,7 @@ RSpec.feature 'Signup', type: :feature do
     end
 
     scenario "user must provide passwords that match" do
-      sign_up(name: 'test', email: 'test@test.com', password: '', password_confirmation: '1234567')
+      sign_up(name: 'test', email: 'test@test.com', password: '1234567', password_confirmation: '7654321')
 
       expect(page).to have_content('Password confirmation doesn\'t match Password')
     end
