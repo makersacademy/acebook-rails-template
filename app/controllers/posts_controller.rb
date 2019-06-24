@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params.merge(user_id: current_user.id))
+    @post = Post.create(post_params.merge(user_id: session[:user_id]))
     redirect_to posts_url
   end
 
@@ -55,5 +55,5 @@ class PostsController < ApplicationController
       redirect_to posts_url
     end
   end
-  
+
 end
