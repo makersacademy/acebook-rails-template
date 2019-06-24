@@ -4,16 +4,18 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <%= flash[:notice] %>
-  <body>
+  <body class="bg">
+  <div class="box">
+    <%# <%= flash[:notice] %>
     <%=form_tag sessions_path do |form| %>
     <p>
-      <%=label_tag :email %> <br>
-      <%=text_field_tag :email, params[:email] %> <br>
-      <%=label_tag :password %> <br>
-      <%=password_field_tag :password %> <br>
-      <%=submit_tag "Sign In" %>
+      <%=label_tag :email %>: <br><br>
+      <%=text_field_tag :email, params[:email] %> <br><br>
+      <%=label_tag :password %>: <br><br>
+      <%=password_field_tag :password %> <br><br>
+      <%=submit_tag "Sign In", class: 'button' %>
     </p>
     <% end %>
+  </div>
   </body>
 </html>
