@@ -1,7 +1,7 @@
-
+<%= link_to "Ace-Book by AmoebaBoyz", root_url, class: "navbar-brand" %>
 <p>
   <strong>Content:</strong>
-  <%= @post.content %>
+  <%= simple_format(@post.content) %>
 </p>
 
 <p>

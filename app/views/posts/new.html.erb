@@ -1,3 +1,5 @@
+<%= link_to "Ace-Book by AmoebaBoyz", root_url, class: "navbar-brand" %>
+<%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
 <h1>New Post</h1>
 
 <%= render 'form', post: @post %>
