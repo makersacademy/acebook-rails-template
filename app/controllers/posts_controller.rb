@@ -1,11 +1,12 @@
-class PostsController < ApplicationController
+# frozen_string_literal: true
 
+class PostsController < ApplicationController
   def index
-    @posts = Post.order("created_at DESC")
+    @posts = Post.order('created_at DESC')
   end
-  
+
   def show
-    @post= Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
   end
 
   def new
