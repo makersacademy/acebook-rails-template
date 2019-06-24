@@ -10,15 +10,24 @@
   <% @posts.each do |post| %>
     <ul>
       <li>
-        <p class='post-text'><%= post.message %> [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]</p>
+        <div class='post-text'>
+          <blockquote>
+            <%= post.message %>
+            <div class='post-date'>
+              [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]
+            </div>
+          </blockquote>
+        </div>
 
         <% pre_like = post.likes.find { |like| like.user_id == current_user.id } %>
-        <% if pre_like %>
-          <%= button_to Emoji.find_by_alias("thumbsdown").raw, post_like_path(post.id, pre_like.id), method: :delete %>
-        <%else %>
-          <%= button_to Emoji.find_by_alias("thumbsup").raw, post_likes_path(post.id), method: :post %>
-        <% end %>
-        <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+        <div class='likes'>
+          <% if pre_like %>
+            <%= button_to Emoji.find_by_alias("thumbsdown").raw, post_like_path(post.id, pre_like.id), method: :delete %>
+          <%else %>
+            <%= button_to Emoji.find_by_alias("thumbsup").raw, post_likes_path(post.id), method: :post %>
+          <% end %>
+          <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+        </div>
         <%= button_to "Edit", edit_post_path(post) %>
         <%= button_to "Delete", post_path(:id => post.id), :method => :delete, data: {confirm: 'Are you sure?'} %>
       </li>
