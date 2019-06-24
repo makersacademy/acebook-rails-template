@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
   it "is not valid without a password" do
-    subject.password = nil
+    subject.password_digest = nil
     expect(subject).to_not be_valid
   end
 end

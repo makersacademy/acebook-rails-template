@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # end
 
   def new
-    @user = User.new
+    # @user = User.new
   end
 
   def show
@@ -15,13 +15,26 @@ class UsersController < ApplicationController
 
   def create
     # render plain: params[:user].inspect
-    @user = User.new(user_params) 
-
+    p '--------------------------------------'
+    p 'params'
+    p params
+    p '--------------------------------------'
+    p '--------------------------------------'
+    p 'user_params'
+    p user_params
+    p '--------------------------------------'
+    @user = User.new(user_params)
     @user.save
+    p '--------------------------------------'
+    p 'user'
+    p @user
+    p '--------------------------------------'
     redirect_to users_path
   end
 
-  private def user_params
+  private
+
+  def user_params
     params.require(:user).permit(:name, :email, :password)
   end
 end
