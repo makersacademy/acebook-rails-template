@@ -294,7 +294,7 @@
         null,
         null,
         1,
-        16,
+        17,
         null,
         null,
         1,
@@ -330,9 +330,7 @@
       ],
       "/Users/student/Projects/acebook-spacebook/app/controllers/sessions_controller.rb": [
         1,
-        null,
         1,
-        null,
         null,
         null,
         1,
@@ -341,7 +339,6 @@
         1,
         1,
         1,
-        null,
         null,
         0,
         null,
@@ -388,24 +385,12 @@
         2,
         2,
         2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
         null,
         null,
         1,
         null,
         1,
-        4,
+        2,
         null,
         null
       ],
@@ -634,6 +619,6 @@
         null
       ]
     },
-    "timestamp": 1561371446
+    "timestamp": 1561372777
   }
 }

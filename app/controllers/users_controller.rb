@@ -15,20 +15,8 @@ class UsersController < ApplicationController
 
   def create
     # render plain: params[:user].inspect
-    p '--------------------------------------'
-    p 'params'
-    p params
-    p '--------------------------------------'
-    p '--------------------------------------'
-    p 'user_params'
-    p user_params
-    p '--------------------------------------'
     @user = User.new(user_params)
     @user.save
-    p '--------------------------------------'
-    p 'user'
-    p @user
-    p '--------------------------------------'
     redirect_to users_path
   end
 

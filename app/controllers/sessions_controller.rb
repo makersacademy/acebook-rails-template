@@ -1,16 +1,13 @@
 class SessionsController < ApplicationController
-
   def new
-    # @session = Session.new
   end
 
   def create
     user = User.find_by_email(params[:email])
 
-    p params
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-
+      redirect_to posts_path
     else
       render "new"
     end
