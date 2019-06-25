@@ -6,7 +6,7 @@
   </head>
   <body class="bg">
   <div class="box">
-    <%# <%= flash[:notice] %>
+    <%= flash[:notice] %>
     <%=form_tag sessions_path do |form| %>
     <p>
       <%=label_tag :email %>: <br><br>

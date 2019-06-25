@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'Please sign in'
       redirect_to users_path
     else 
-      flash[:notice] = 'Password must be betwen 6-10 characters'
+      flash[:notice] = 'Invalid signup credentials'
       redirect_to new_user_path
     end
   end
@@ -22,6 +22,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
