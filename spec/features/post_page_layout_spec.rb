@@ -36,8 +36,3 @@ RSpec.feature "layout", type: :feature do
         goodbye #{date}")
     end
 end
-
-
-# Ace-Book by AmoebaBoyz Sign out Posts User Content Amoeba My god chris has ridiculous calves 2019-06-24 16:30:08 UTC Show Edit Destroy Amoeba 
-# blah blah hello bye 2019-06-24 16:30:08 UTC Show Edit Destroy Amoeba 
-# Hello, world! goodbye 2019-06-24 16:30:08 UTC Show Edit Destroy New post
