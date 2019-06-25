@@ -9,7 +9,7 @@ def sign_up(name: 'test', email: 'test@test.com', password: 'password', password
   fill_in('user[name]', with: name)
   fill_in('user[email]', with: email)
   fill_in('user[password]', with: password)
-  fill_in('user[password_confirmation]', with: password)
+  fill_in('user[password_confirmation]', with: password_confirmation)
   click_button('Signup')
 end
 
