@@ -14,9 +14,14 @@ class SessionsController < ApplicationController
       redirect_to new_session_path
     end
   end
+
+  def destroy
+    flash[:notice] = 'You have logged out'
+    redirect_to new_session_path
+  end
   
   # private
-  #
+
   # def user_params
   #   params.require(:user).permit(:name, :email, :password)
   # end

@@ -1,5 +1,6 @@
 <body class="bg bg_4">
   <div class="text-center box titleFont">
+  <%= flash[:notice] %>
   <%=form_for :user, url: users_path do |form| %>
   <p>
    <h1>New User</h1>
@@ -8,7 +9,8 @@
     <%=form.label :email %> <br>
     <%=form.text_field :email %> <br>
     <%=form.label :password %> <br>
-    <%=form.password_field :password %> <br><br>
+    <%=form.password_field :password %> <br>
+    <%=form.password_field :password_confirmation %> <br><br>
     <%= form.submit "Sign Up", class: 'button'%>
   </p>
   <% end %>
