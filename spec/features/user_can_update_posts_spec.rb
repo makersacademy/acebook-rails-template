@@ -19,7 +19,6 @@ RSpec.feature 'Posts', type: :feature do
     fill_in 'Message', with: 'This is an edited message!'
     click_button 'Update'
 
-    expect(current_path).to eq '/posts'
     expect(page).to have_content('This is an edited message!')
     expect(page).not_to have_content('Post number one')
     expect(page).to have_content(updated_time)

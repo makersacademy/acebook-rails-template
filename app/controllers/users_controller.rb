@@ -15,7 +15,6 @@ class UsersController < ApplicationController
       @user.save
       session[:user_id] = @user.id
       flash[:success] = 'Welcome to Acebook by D-Railed!'
-      
       (redirect_to user_posts_path(current_user)) && return
     else
       render :new

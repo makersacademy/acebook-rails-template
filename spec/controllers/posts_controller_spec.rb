@@ -10,11 +10,13 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe 'POST /' do
-    it 'responds with 200' do
+    it 'responds with 302' do
       @user = User.create(name: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
       session[:user_id] = @user.id
       post :create, params: { post: { message: 'Hello, world!' } }
-      expect(response).to redirect_to(posts_url)
+      # current_user = User.all[0]
+      # expect(response).to redirect_to(user_posts_path(current_user))
+      expect(response).to have_http_status(302)
     end
 
     it 'creates a post' do
