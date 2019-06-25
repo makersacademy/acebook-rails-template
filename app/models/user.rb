@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   validates_presence_of :name
 
-  validates :email, format: { with: /@/, on: :create }
+  validates :email, format: { with: /@/, on: :create }, uniqueness: true
 
   validates :password, :presence => true,
                        :confirmation => true,

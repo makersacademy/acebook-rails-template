@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = 'Please sign in'
+      # flash[:notice] = 'Please sign in'
       redirect_to users_path
     else 
       flash[:notice] = 'Invalid signup credentials'
