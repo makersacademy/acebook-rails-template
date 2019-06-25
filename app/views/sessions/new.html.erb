@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body class="bg">
-  <div class="box">
+
+  <body class="bg bg_3">
+  <div class="box titleFont">
     <%= flash[:notice] %>
     <%=form_tag sessions_path do |form| %>
     <p>
       <%=label_tag :email %>: <br><br>
-      <%=text_field_tag :email, params[:email] %> <br><br>
+      <%=text_field_tag :email, params[:email], class: 'notesFont'%> <br><br>
       <%=label_tag :password %>: <br><br>
       <%=password_field_tag :password %> <br><br>
       <%=submit_tag "Sign In", class: 'button' %>
@@ -18,4 +13,3 @@
     <% end %>
   </div>
   </body>
-</html>

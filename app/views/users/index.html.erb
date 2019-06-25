@@ -1,19 +1,7 @@
 
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Welcome to Spacebook!</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
-  </head>
-
-  <body>
+  <body class="bg bg_1">
     <div class="box">
-    <%= button_to "Sign Up", new_user_path, method: 'get' %>
-    <%= button_to "Sign In", new_session_path, method: 'get' %>
+      <%= button_to "Sign In", new_session_path, method: 'get', class: 'button'%><br>
+      <%= button_to "Sign Up", new_user_path, method: 'get', class: 'button'%>
     </div>
   </body>
-</html>
-

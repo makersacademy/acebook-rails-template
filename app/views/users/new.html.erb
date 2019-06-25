@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <title></title>
-  </head>
-  <body>
-
-  <div class="text-center box">
+<body class="bg bg_4">
+  <div class="text-center box titleFont">
   <%=form_for :user, url: users_path do |form| %>
   <p>
    <h1>New User</h1>
@@ -14,10 +8,9 @@
     <%=form.label :email %> <br>
     <%=form.text_field :email %> <br>
     <%=form.label :password %> <br>
-    <%=form.password_field :password %> <br>
-    <%= form.submit "Sign Up" %>
+    <%=form.password_field :password %> <br><br>
+    <%= form.submit "Sign Up", class: 'button'%>
   </p>
   <% end %>
   </div>
-  </body>
-</html>
+</body>
