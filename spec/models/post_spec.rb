@@ -13,7 +13,7 @@ RSpec.describe Post, type: :model do
   end
 
   it 'is valid with valid attributes' do
-    user = User.create('test', 'test@test.com', '123')
+    user = create_user
     subject.message = "Anything"
     subject.user_id = user.id
     expect(subject).to be_valid
