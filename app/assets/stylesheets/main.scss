@@ -1,0 +1,59 @@
+
+$color: rgb(72, 206, 240);
+
+@font-face {
+  font-family: "SPACEBOY";
+  src: asset-url('SPACEBOY.TTF') format('truetype');
+}
+
+
+$font: "SPACEBOY";
+
+body, html {
+  height: 100%
+}
+
+.bg {
+  background-image: asset-url("saturn.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  margin: 0;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+}
+
+.button {
+  font-family: $font;
+  font-size: 15px;
+  background-color: rgb(105, 1, 105);
+  color: rgb(255, 147, 165);
+  padding: 5px;
+}
+
+.box {
+  width: 300px;
+  margin: 0;
+  background: $color;
+  border: 4px solid #000000;
+  padding: 20px;
+  position: relative;
+  font-family: $font;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  text-align: center;
+}
+
+.message {
+  font-size: 50px;
+}
+
+.message_timestamp {
+  font-size: 15px;
+}
+
+.message_buttons {
+  font-size: 15px;
+}
