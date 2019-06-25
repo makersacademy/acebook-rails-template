@@ -1,7 +1,7 @@
 <%= flash[:notice] %>
-<%= link_to user_path do %>
-  Your Wall
-<% end %>
+
+<%= link_to('Your Wall', user_path(@user)) %>
+
 
 <% @posts.each do |post| %>
   <div class="box">

@@ -3,7 +3,7 @@ RSpec.feature 'Wall', type: :feature do
     sign_up_user
     sign_in_user
     visit('/posts')
-    click_button 'Your Wall'
+    click_link 'Your Wall'
     expect(page).to have_content("Yoyoyo")
   end
 end
