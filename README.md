@@ -2,19 +2,13 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/fetc90/acebook-Spacebook/badge.svg?branch=master)](https://coveralls.io/github/fetc90/acebook-Spacebook/?branch=master)
 
-# AceBook
+# Welcome to Spacebook
 
-REQUIRED INSTRUCTIONS:
+A clone of the Earthly Facebook.
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+## Screenshots
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+![sign-in-page](./app/assets/images/sign-up.png)
 
 ## Quickstart
 
@@ -29,15 +23,12 @@ First, clone this repository. Then:
 > bin/rails server # Start the server at localhost:3000
 ```
 
+## How to contribute to this project
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
-
-
-
-
-Co-authored-by: LisaMcCormack <lisamccormack85@gmail.com>
-Co-authored-by: fetc90 <francescachater@gmail.com>
-Co-authored-by: yem82 <yemiadebayo60@gmail.com>
-Co-authored-by: n3ttl3t <n3ttl3t@gmail.com>
-Co-authored-by: LaurenceTaylor <ltaylorapp@gmail.com>
-Co-authored-by: hughbric <mhughes36@live.co.uk>
-
+Co-authored-by: LisaMcCormack <lisamccormack85@gmail.com>  
+Co-authored-by: fetc90 <francescachater@gmail.com>  
+Co-authored-by: yem82 <yemiadebayo60@gmail.com>  
+Co-authored-by: n3ttl3t <n3ttl3t@gmail.com>  
+Co-authored-by: LaurenceTaylor <ltaylorapp@gmail.com>  
+Co-authored-by: hughbric <mhughes36@live.co.uk>  
