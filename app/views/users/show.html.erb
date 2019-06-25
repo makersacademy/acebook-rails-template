@@ -1,0 +1,10 @@
+<h1><%= @user.name%>'s Wall</h1>
+
+<% @posts.each do |post| %>
+    <% if @user.id == post.user_id %>
+    <li><%= simple_format(post.content) %>&nbsp;<%= post.created_at %></li>
+    <% end %>
+<% end %>
+
+
+
