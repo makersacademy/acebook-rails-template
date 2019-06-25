@@ -100,7 +100,8 @@ RSpec.feature 'Signup', type: :feature do
   scenario 'after completing the signup form it navigates to posts page' do
     sign_up(name: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
 
-    expect(page).to have_current_path('/posts')
+    user = User.all[0]
+    expect(page).to have_current_path("/users/#{user.id}/posts")
     expect(page).to have_content('Welcome to Acebook by D-Railed!')
   end
 end
