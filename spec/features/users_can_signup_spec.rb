@@ -34,4 +34,16 @@ RSpec.feature "Signup", type: :feature do
     expect(page).to have_content("Invalid signup credentials")
     expect(current_path).to eq('/users/new')
   end
+
+  scenario "email address does not have an @" do
+    visit '/users/new'
+    fill_in 'user_name', with: "Lisa"
+    fill_in "user_email", with: "lisaemail.com"
+    fill_in "user_password", with: "password"
+    fill_in "user_password_confirmation", with: "password"
+    click_button "Sign Up"
+    expect(page).to have_content("Invalid signup credentials")
+    expect(current_path).to eq('/users/new')
+  end
+
 end
