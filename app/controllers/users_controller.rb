@@ -10,8 +10,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to users_path
+    if @user.save
+      flash[:notice] = 'Please sign in'
+      redirect_to users_path
+    else 
+      flash[:notice] = 'Password must be betwen 6-10 characters'
+      redirect_to new_user_path
+    end
   end
 
   private
