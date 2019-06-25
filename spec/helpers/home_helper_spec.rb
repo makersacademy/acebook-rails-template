@@ -10,11 +10,11 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe HomeHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+# RSpec.describe HomeHelper, type: :helper do
+#   pending "add some examples to (or delete) #{__FILE__}"
+# end
 
-def signup 
+def signup
   visit('/')
   click_link('Sign up')
   fill_in 'Name', with: 'Amoeba'
@@ -22,4 +22,4 @@ def signup
   fill_in 'Password', with: 'amoeba123'
   fill_in 'Password confirmation', with: 'amoeba123'
   click_button 'Sign up'
-end 
+end
