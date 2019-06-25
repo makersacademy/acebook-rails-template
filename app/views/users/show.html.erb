@@ -1,1 +1,7 @@
-Yoyoyo
+<h1><%= @user.name %></h1>
+
+<% @posts.each do |post| %>
+  <div class="box">
+    <p class="message"><%= simple_format(post.message) %></p>
+  </div>
+<% end %>
