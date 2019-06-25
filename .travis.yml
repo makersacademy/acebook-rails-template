@@ -1,26 +1,21 @@
 language: ruby
-rvm: 
- - 2.5.0
-
+rvm:
+- 2.5.0
 before_install:
- - gem update --system
- - gem install bundler
-
+- gem update --system
+- gem install bundler
 before_script:
- - bundle exec rake db:create
- - bundle exec rake db:migrate
-
+- bundle exec rake db:create
+- bundle exec rake db:migrate
 script:
- - bundle exec rspec
-
+- bundle exec rspec
 deploy:
   provider: heroku
   api_key:
-    secure: Is/e56C/GyZidu+qOBSDUQNs086bGTrVryPkfRCQfQT5cMAYRnZNV+DnQDqib/BwbWsxcW+JbPqi8zhYoMW7dfGE1Pfy3cH2NlM//uCFTEkmLbpAZjs5fCjexq6EyL4XIv8J8tlFSqMDmifjdB/I/bK44kgfzKQQNs3R5Uq3siA3Psx2X0UBcSnsDvWSE3PZ/dXbEJclOsztxaobjHeysBgK2SnJLiV0GeuKWGibQ7Vqu6tgBur9mETUvn33E4xVM3kClASq/OL+Pf7JPCYKerC0YDvkOjSnP5UXKfCqyNLxpYInNB9EbKtW+QlPLBaKWoAEWSiH/m2SSuV0tAJ0KXLkPKRW060DsiLkV4bOj1aBrwBxh/BZbXGpVTkOeDzR/BcrUyQHQjtTPSYYqk6rbmchuioGohT99Bb+5L0TjQpRjD7ovurv7uRFEHf3A//YbnCIjZ5J6KTE/Nbx5xpML905CgTgPL938ogR4qh3qtoyWqhB0WV9HbAVFy9fCRzlVUXulby5k6fvrYl5jUdz2U4xyeEkaECRlaB3bbGUXfjWOA7zRdiIk9FO4PmOSJaDTQpunN23SXLdFJPjvCUx1i8a6iNSQ98MXxbT5fset+1Rw+c08abiswv6U/6so9ltgmBigkv7xdMAhGwVWx92n1xhItJDQXPF9Fifac+X+jM=
+    secure: naI92LIIfUw0Vl9F0MzpsxKT79PkZKcSUkc5352mRgw0fLlJMm8g0bVa30OiJbaEhChtdqzps5ELzXfcaVRVz82ubLHxEzd6mGJs0oVYjHXza1XkeBs5QptBJxyeRj1w5LLjjL7+CD3hWEYOvx0+2nYHa6QqJay781PL87ptuE4XNKUM3X0FE4b5YAgdpoHxbKlSA8EG5UpEz7LXkTK7fY5UNqvPXvta8SKQcuwDovRij7T+s5sMTpqsXsdPDF4/zL4mV09UZ6t7gJm4sqL/Jh58j2WMiNZF1TD5YvyUR1Q/MuwCgB22IFNEsQQwvSspogScRHRo9r+aAKy0gR/K1KhjmvFupRmDMfCNcx++pDnAwn/I8CJq616VfJKjz/8iYGQxQoGZkveKN4AgxAegkny6GXXEPDvUYb92MgRW6n6nIsSIgQJ+Egv3io2XxQlLk6N2ueeq/wxAglC4tIKNlPgdlgteTFkX/ZILEORytxa52RA/qeiW0v/AR0eRplXty/z9oT2fPFKQQt3gdUyZuI4SerhbZXEaRJf8nY2LRGPZrW6IS+Eb3KpU7oyoF7biES9Xcn2DjozLuTFBk8wVMbhy0DEIGT8xLg6db8Z63jT/csS6GaSI0iUq8Um9GsicLi7YjPocYCvdESKuGfRvVcCPGj4TVfnT0YNkBizlQmg=
   app: acebook-spacebook
   on:
     repo: fetc90/acebook-spacebook
   skip_cleanup: true
-
 after_script:
- - bundle exec rake coveralls:push
+- bundle exec rake coveralls:push
