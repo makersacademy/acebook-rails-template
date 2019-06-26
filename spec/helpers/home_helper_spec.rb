@@ -32,6 +32,7 @@ def signup3
  fill_in 'Password', with: 'amoeba123'
  fill_in 'Password confirmation', with: 'amoeba123'
  click_button 'Sign up'
+end
 
 def signup
   visit('/')
