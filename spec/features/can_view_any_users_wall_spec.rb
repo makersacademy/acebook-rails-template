@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
+
 #  scenario "A user can view any users wall" do
 #    signup3
 #    click_link "New post"
