@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'pry'
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :require_login
@@ -19,4 +21,3 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 end
- 

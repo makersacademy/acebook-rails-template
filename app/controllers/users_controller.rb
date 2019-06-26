@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'pry'
+
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
@@ -14,8 +16,7 @@ class UsersController < ApplicationController
       @user.save
       session[:user_id] = @user.id
       flash[:success] = 'Welcome to Acebook by D-Railed!'
-
-      (redirect_to posts_path) && return
+      (redirect_to user_posts_path(current_user)) && return
     else
       render :new
     end
@@ -24,7 +25,11 @@ class UsersController < ApplicationController
   private
 
   def signup_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(
+      :username,
+      :email,
+      :password,
+      :password_confirmation
+    )
   end
-
 end

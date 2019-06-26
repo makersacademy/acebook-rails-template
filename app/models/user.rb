@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_secure_password
   has_many :posts, dependent: :destroy
 
-
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   validates :username, presence: true,
                         uniqueness: { case_sensitive: true }
@@ -16,8 +15,7 @@ class User < ApplicationRecord
   validates :password, presence: true, confirmation: true,
                        length: { in: 6..10 }
 
-	def can_edit? post
-	    post.user_id == self.id
-	end
-
+  def can_edit?(post)
+    post.user_id == self.id
+  end
 end
