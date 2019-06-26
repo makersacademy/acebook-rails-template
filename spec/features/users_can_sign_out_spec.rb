@@ -8,7 +8,8 @@ RSpec.feature 'Signin', type: :feature do
    fill_in "email", with: "lisa@email.com"
    fill_in "password", with: "Password"
    click_button "Sign In"
-   expect(current_path).to eq('/posts')
+   user = User.find_by(email: 'lisa@email.com')
+   expect(current_path).to eq("/users/#{user.id}")
    click_button "Sign Out"
    expect(page).to have_content("You have logged out")
  end
