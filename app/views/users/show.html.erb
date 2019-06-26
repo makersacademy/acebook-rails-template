@@ -1,7 +1,9 @@
 <h1><%= @user.name %></h1>
 
-<% @posts.each do |post| %>
-  <div class="box">
-    <p class="message"><%= simple_format(post.message) %></p>
-  </div>
+
+
+<%= link_to new_post_path do %>
+  New post
 <% end %>
+
+<%= button_to "Sign Out", destroy_session_path, method: 'delete' %>

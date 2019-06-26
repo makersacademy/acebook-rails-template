@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  layout 'iteratethroughposts', only: [:index]
+
   def new
     @post = Post.new
     @user_id = session[:user_id]
