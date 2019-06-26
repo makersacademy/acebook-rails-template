@@ -1,7 +1,4 @@
-
 <h1>Here's your timeline, <%= @user.name %></h1>
-
-
 
 <%= link_to new_post_path do %>
   New post
@@ -9,4 +6,3 @@
 
 <%= button_to "Feed", posts_path, method: 'get' %>
 <%= button_to "Sign Out", destroy_session_path, method: 'delete' %>
-

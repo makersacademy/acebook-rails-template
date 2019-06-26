@@ -8,11 +8,6 @@ class PostsController < ApplicationController
     @user_id = session[:user_id]
   end
 
-  # def show
-  #   @post = Post.find(params[:id])
-  #   render ''
-  # end
-
   def create
     @post = Post.create(post_params)
     redirect_to posts_url

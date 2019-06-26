@@ -1,10 +1,7 @@
 <%= flash[:notice] %>
 Here's your feed, <%= @user.name %><br>
 
-
 <%= link_to('Your Wall', user_path(@user)) %>
-
-
 
 <%= link_to new_post_path do %>
   New post
