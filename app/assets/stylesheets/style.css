@@ -1,0 +1,106 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background-image: url('https://images8.alphacoders.com/459/thumb-1920-459947.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: new time roman;
+}
+
+
+
+.col-md-4{
+	margin: auto;
+	margin-top: 20px;
+	background: rgba(0, 0, 0, 0.5);
+	box-shadow: -1px 1px 30px 1-px black;
+	padding: 10px;
+	border-radius: 25px;
+}
+
+ul{
+	margin-bottom: 20px; 
+}
+
+ul a{
+	font-size: 29px;
+	color: white;
+}
+
+ul a:hover{
+	text-decoration: none;
+}
+
+h1{
+	font-family: Papyrus !important;
+	color: #C5834E !important;
+	text-align: center;
+	font-size: 70px !important;
+}
+
+.li{
+	color: #EC6282;
+	margin-top: 10px;
+}
+
+.label{
+	font-size: 20px;
+	color: #BACAE1;
+	font-weight: normal;
+}
+
+.a_signup{
+	border-bottom: 2px solid #CE9254;
+	padding: 10px;
+}
+
+.a_signin{
+	border-bottom: 2px solid #CE9254;
+	padding: 10px;
+}
+
+.form-control{
+	background: transparent !important;
+	border: 0px !important;
+	border-bottom: 2px solid #CE9254 !important;
+	font-size: 20px;
+	padding: 10px;
+}
+
+::placeholder{
+	color: #BACAE1;
+}
+
+.btn-info{
+	background-color: transparent !important;
+	border-bottom: 0px;
+	width: 345px;
+	border: 2px solid #CE9254 !important;
+	font-size: 20px;
+	border-radius: 0px;
+	margin-top: 20px;
+}
+
+.btn{
+	color: #ffffff !important;
+}
+
+.btn-info:hover{
+	background: #CE9254 !important;
+	border: 2px solid #CE9254 !important;
+}
+
+.footer{
+	text-align: center;
+	color: white;
+	margin-top: 20px;
+}
+
+.footer1{
+	text-align: center;
+	color: white;
+	margin-top: 175px;
+}

@@ -1,36 +1,55 @@
-<div class='sign-up-in-tile'>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ACEBOOK by D-Railed</title>
+</head>
+<body>
+  <h1>ACEBOOK</h1>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-2'></div>
+        <div class='col-md-4'>
+          <ul>
+            <a href='<%= new_session_path %>'>Sign in</a>
+            <a class='a_signup' href='<%= root_path %>'> / Sign up</a>
 
-<%= link_to "Sign in", new_session_path %>
+              <% if @user.errors.any? %>
+             <div id="error_explanation">
+              <div class='alert alert-danger'>
+                <%= pluralize(@user.errors.count, "error") %>
+              </div>
+                <ul>
+                 <% @user.errors.full_messages.each do |msg| %>
+                   <p class='li'><%= msg %></p>
+                 <% end %>
+               </ul>
+             </div>
+           <% end %>
+          <p class='li'><%= flash[:have_to_log_in_error] %></p>
+          </ul>
+          <%= form_for(@user, url: users_path) do |f| %>
 
-<h1>Sign up to Acebook</h1>
-<%= flash[:have_to_log_in_error] %>
+          <%= f.label :name, class:'label' %>
+          <%= f.text_field :name, class:'form-control', placeholder:'Name' %>
+         ​ 
+          <%= f.label :email, class:'label' %>
+          <%= f.text_field :email, class:'form-control', placeholder:'Email' %>
 
-  <% if @user.errors.any? %>
-     <div id="error_explanation">
-       <h3>
-         <%= pluralize(@user.errors.count, "error") %>
-       </h3>
-       <% @user.errors.full_messages.each do |msg| %>
-         <li><%= msg %></li>
-       <% end %>
-     </div>
-   <% end %>
+          <%= f.label :password, class:'label' %>
+          <%= f.password_field :password, class:'form-control', placeholder:'Password' %>
+         ​
+          <%= f.label :password_confirmation, class:'label' %>
+          <%= f.password_field :password_confirmation, class:'form-control', placeholder:'Password confirmation' %>        ​
+         <a href='<%= posts_path %>'><div class='btn btn-info'><%= f.submit "SIGN UP", class:'btn' %></div></a>
+           <% end %>
+        
+      </div>
+      <div class='col-md-2'></div>
+    </div>
 
-   <%= form_for(@user, url: users_path) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
-   ​
-    <%= f.label :email %>
-    <%= f.text_field :email %><br>
+    <footer class='footer'>
+      <p>Copyright &copy Acebook by D-Railed 2019</p>
+    </footer>
+  </body>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %><br>
-   ​
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %> <br>
-   ​
-    <%= f.submit "Signup" %>
-
-  <% end %>
-
-</div>
+</html>

@@ -13,10 +13,10 @@ RSpec.feature 'Signin', type: :feature do
     click_link('Sign in')
 
     expect(page).to have_current_path('/sessions/new')
-    expect(page).to have_content('Sign in to Acebook')
+    expect(page).to have_content('Acebook')
     expect(page).to have_field('Email')
     expect(page).to have_field('Password')
-    expect(page).to have_button('Sign In')
+    expect(page).to have_button('SIGN IN')
   end
 
   scenario 'User can sign in' do

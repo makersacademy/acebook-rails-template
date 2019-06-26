@@ -1,20 +1,40 @@
-<div class='sign-up-in-tile'>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ACEBOOK by D-Railed</title>
+</head>
+<body>
+  <h1>ACEBOOK</h1>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-2'></div>
+          <div class='col-md-4'>
+            <ul clas='ul'>
+              <a class='a_signin' href='<%= new_session_path %>'>Sign in</a>
+              <a href='<%= root_path %>'> / Sign up</a>
+            </ul>
+            
+  						<p class='li'><%= flash[:invalid_details] %></p>
 
-<%= link_to "Sign Up", root_path %>
+							<%= form_tag sessions_path do %>
+							<div class='label'>
+								<%= label_tag :email, 'Email' %>
+							</div>
+					    <%= text_field_tag :email, params[:email], class:'form-control', placeholder:'Email' %>
+					    <div class='label'>
+					    	<%= label_tag :password, 'Password' %>
+					    </div>
+					   	  <%= password_field_tag :password, params[:password], class:'form-control', placeholder:'Password' %>
 
-<h1>Sign in to Acebook</h1>
-<%= flash[:invalid_details] %>
-<br>
+					    <a href='<%= posts_path %>'><div class='btn btn-info'><%= submit_tag "SIGN IN", class:'btn' %></div></a><br>
+					  <% end %>
+      	</div>
+      <div class='col-md-2'></div>
+    </div>
+   </div>
 
-  <%= form_tag sessions_path do %>
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, params[:email] %><br>
-
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %><br>
-
-    <br><%= submit_tag "Sign In" %>
-
-  <% end %>
-
-</div>
+   <footer class='footer1'>
+      <p>Copyright &copy Acebook by D-Railed 2019</p>
+   </footer>
+  
+    
