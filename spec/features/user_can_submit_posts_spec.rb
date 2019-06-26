@@ -14,6 +14,16 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Hello, world!")
   end
 
+  scenario "Can post on another user's wall" do
+    new_post
+    sign_up_another_user
+    sign_in_another_user
+    # save_and_open_page
+    click_link('Lisa')
+    new_post_alt
+    click_link('Lisa')
+    expect(page).to have_content("Sugarcubes")
+  end
 
   scenario "Posts are ordered - newest at the top" do
     visit "/posts"
