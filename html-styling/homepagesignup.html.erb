@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang=“en” dir=“ltr”>
+ <head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <meta charset=“utf-8”>
+   <title></title>
+ </head>
+ <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Acebook Amoeba Boyz</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">All Posts</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Email" aria-label="Email">
+        <input class="form-control mr-sm-2" type="text" placeholder="Password" aria-label="Password">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log in</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container">
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h3 class="display-4">Your Wall</h3>
+    </div>
+  </div>
+
+  <% @posts.each do |post| %>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-1 d-flex align-items-center" align="center"><img style="width: 100%;"src="https://vignette.wikia.nocookie.net/powerpuff/images/d/d4/Amoeba_boys.png/revision/latest?cb=20150810212750" alt="ssss"></div>
+        <div class="col-sm-11 d-flex align-items-center" ><strong><td><%= post.user.name %></td></strong></div>
+        <br><br>
+        <div class="col-sm-12"><td><%= simple_format(post.content) %>&nbsp;<%= post.created_at %></td></div>
+        <br><br><br>
+        <div class="col-sm-12"><a href="#" class="btn btn-primary">Like</a></div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-1 d-flex align-items-center" align="center"><img style="width: 100%;"src="https://vignette.wikia.nocookie.net/powerpuff/images/d/d4/Amoeba_boys.png/revision/latest?cb=20150810212750" alt="ssss"></div>
+        <div class="col-sm-11 d-flex align-items-center" ><strong>Max</strong></div>
+        <br><br>
+        <div class="col-sm-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore nemo libero doloremque, ad, earum voluptatem asperiores vitae provident veniam, nihil eum a expedita. Cupiditate, natus quod. Voluptatem, facere hic.</div>
+        <br><br><br>
+        <div class="col-sm-12"><a href="#" class="btn btn-primary">Like</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-1 d-flex align-items-center" align="center"><img style="width: 100%;"src="https://vignette.wikia.nocookie.net/powerpuff/images/d/d4/Amoeba_boys.png/revision/latest?cb=20150810212750" alt="ssss"></div>
+        <div class="col-sm-11 d-flex align-items-center" ><strong>Ben</strong></div>
+        <br><br>
+        <div class="col-sm-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore nemo libero doloremque, ad, earum voluptatem asperiores vitae provident veniam, nihil eum a expedita. Cupiditate, natus quod. Voluptatem, facere hic.</div>
+        <br><br><br>
+        <div class="col-sm-12"><a href="#" class="btn btn-primary">Like</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-1 d-flex align-items-center" align="center"><img style="width: 100%;"src="https://vignette.wikia.nocookie.net/powerpuff/images/d/d4/Amoeba_boys.png/revision/latest?cb=20150810212750" alt="ssss"></div>
+        <div class="col-sm-11 d-flex align-items-center" ><strong>Carlton Banks</strong></div>
+        <br><br>
+        <div class="col-sm-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore nemo libero doloremque, ad, earum voluptatem asperiores vitae provident veniam, nihil eum a expedita. Cupiditate, natus quod. Voluptatem, facere hic.</div>
+        <br><br><br>
+        <div class="col-sm-12"><a href="#" class="btn btn-primary">Like</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+ </body>
+</html>
