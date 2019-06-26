@@ -26,5 +26,4 @@ RSpec.describe Post, type: :model do
     subject.wall_id = 1
     expect(subject).to be_valid
   end
-
 end
