@@ -1,4 +1,7 @@
 <%= flash[:notice] %>
+
+<%= link_to('Your Wall', user_path(@user)) %>
+
 <% @posts.each do |post| %>
   <div class="box">
     <p><strong><%= User.find(post.user_id).name %></strong></p>
