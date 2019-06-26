@@ -13,7 +13,7 @@
     <% if current_user %>
       <%= link_to "Sign out", session_path("current"), method: "delete" %><br>
       Logged in as <%= current_user.username %>.<br>
-      <%= wall_user %>'s wall.<br>
+      <%= wall.username %>'s wall.<br>
     <% end %>
 
     <%= yield %>
