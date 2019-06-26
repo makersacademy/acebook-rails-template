@@ -13,16 +13,15 @@ RSpec.describe PostsController, type: :controller do
     it 'responds with 302' do
       @user = User.create(name: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
       session[:user_id] = @user.id
-      post :create, params: { post: { message: 'Hello, world!' } }
-      # current_user = User.all[0]
-      # expect(response).to redirect_to(user_posts_path(current_user))
+      post :create, params: { post: { message: 'Hello, world!', recipient_id: session[:user_id]} }
+
       expect(response).to have_http_status(302)
     end
 
     it 'creates a post' do
       @user = User.create(name: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
       session[:user_id] = @user.id
-      post :create, params: { post: { message: 'Hello, world!' } }
+      post :create, params: { post: { message: 'Hello, world!', recipient_id: session[:user_id] } }
       expect(Post.find_by(message: 'Hello, world!')).to be
     end
   end

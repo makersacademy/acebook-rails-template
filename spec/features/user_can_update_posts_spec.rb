@@ -9,11 +9,9 @@ RSpec.feature 'Posts', type: :feature do
 
     first(:button, 'Edit').click
 
-    post = Post.all[0]
-
-    expect(current_path).to eq "/posts/#{post.id}/edit"
     expect(page).to have_content('Post number one')
 
+    post = Post.all[0]
     updated_time = post.updated_at.strftime('%Y-%m-%d, %H:%M')
 
     fill_in 'Message', with: 'This is an edited message!'

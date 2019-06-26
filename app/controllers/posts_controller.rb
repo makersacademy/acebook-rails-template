@@ -23,9 +23,10 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    @recipient_id = @post.recipient_id
     @post.destroy
 
-    redirect_to user_posts_path(current_user)
+    redirect_to user_posts_path(@recipient_id)
   end
 
   def edit
@@ -47,7 +48,7 @@ class PostsController < ApplicationController
   def can_edit
     @post = Post.find(params[:id])
     unless @post and current_user and current_user.can_edit? @post
-      redirect_to user_posts_path(current_user)
+      redirect_to user_post_path(current_user)
     end
   end
 

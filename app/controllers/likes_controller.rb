@@ -26,7 +26,7 @@ class LikesController < ApplicationController
 
   def get_recipient
     post_id = params[:post_id]
-    recipient = Post.find(post_id).recipient_id
+    Post.find(post_id).recipient_id
   end
 
   def find_post

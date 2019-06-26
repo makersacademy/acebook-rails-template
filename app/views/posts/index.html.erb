@@ -31,7 +31,7 @@
           <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
         </div>
         <%= button_to "Edit", edit_user_post_path(:user_id => post.recipient_id, :id => post.id) %>
-        <%= button_to "Delete", post_path(:id => post.id), :method => :delete, data: {confirm: 'Are you sure?'} %>
+        <%= button_to "Delete", user_post_path(:id => post.id), :method => :delete, data: {confirm: 'Are you sure?'} %>
       </li>
     </ul>
   <% end %>
