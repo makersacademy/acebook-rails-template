@@ -39,18 +39,31 @@
     </div>
   </div>
 
+  <% @posts.each do |post| %>
   <div class="card">
     <div class="card-body">
       <div class="row">
         <div class="col-sm-1 d-flex align-items-center" align="center"><img style="width: 100%;"src="https://vignette.wikia.nocookie.net/powerpuff/images/d/d4/Amoeba_boys.png/revision/latest?cb=20150810212750" alt="ssss"></div>
-        <div class="col-sm-11 d-flex align-items-center" ><strong>Ray</strong></div>
+        <div class="col-sm-11 d-flex align-items-center" ><strong><td><%= post.user.name %></td></strong></div>
         <br><br>
-        <div class="col-sm-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum tempore nemo libero doloremque, ad, earum voluptatem asperiores vitae provident veniam, nihil eum a expedita. Cupiditate, natus quod. Voluptatem, facere hic.</div>
+        <div class="col-sm-12"><td><%= simple_format(post.content) %>&nbsp;<%= post.created_at %></td></div>
         <br><br><br>
         <div class="col-sm-12"><a href="#" class="btn btn-primary">Like</a></div>
       </div>
     </div>
   </div>
+  <% end %>
+
+
+
+
+
+
+
+
+
+
+
 
   <div class="card">
     <div class="card-body">
