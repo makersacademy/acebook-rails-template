@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   validates :user_name, presence: true,
-                        uniqueness: { case_sensitive: false }
+                        uniqueness: { case_sensitive: true }
 
   validates :email, presence: true,
                     format: { with: VALID_EMAIL_REGEX },
