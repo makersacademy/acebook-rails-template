@@ -26,6 +26,7 @@ We used RSpec and Capybara as our testing framework and Coveralls to ensure a hi
 ```
 > bundle exec rspec # Run the tests to ensure it works
 ```
+hello
 
 ## Approach
 
