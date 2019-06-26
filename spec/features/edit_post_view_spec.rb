@@ -19,7 +19,6 @@ RSpec.feature 'Edit Post', type: :feature do
     sign_up_user
     sign_in_user
     click_button 'Feed'
-    save_and_open_page
     click_link 'Edit'
     expect(page).to have_content('You can only edit your own posts')
   end
