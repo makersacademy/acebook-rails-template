@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.feature 'Users Wall', type: :feature do
   scenario 'User land on their own wall after signup or login' do
     sign_up(
-      name: 'test',
+      username: 'test',
       email: 'test@test.com',
       password: 'password',
       password_confirmation: 'password'
