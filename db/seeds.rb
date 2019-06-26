@@ -13,3 +13,5 @@ while i < 10 do
   Post.create(message: "I'm next")
   i += 1
 end
+
+User.create(name: 'bob', email: 'bob@email.com', password: 'bobbob')
