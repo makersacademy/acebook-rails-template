@@ -15,7 +15,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.user.name %></td>
+        <td><%= link_to post.user.name, user_path(post.user_id)%></td>
         <td><%= simple_format(post.content) %>&nbsp;<%= post.created_at %></td>
         <% if current_user.id == post.user_id %>
         <td><%= link_to 'Show', post %></td>

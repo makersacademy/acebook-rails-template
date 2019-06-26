@@ -21,6 +21,11 @@ class PostsController < ApplicationController
   def edit
   end
 
+    # GET /posts/wall
+    def wall
+      @posts = Post.all.order(created_at: :desc)
+    end
+
   # POST /posts
   # POST /posts.json
   def create
