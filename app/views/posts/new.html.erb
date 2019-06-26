@@ -64,17 +64,11 @@
   <div class="d-flex justify-content-center">
 <form action="/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="mUNz5ng0So0M4FmXNcTt4QTUhLU7UG31aM4KcbxGK01jaY5XAdU6gCm9cFuGem85Hininvx8KiQCaF+p7gTNOg==" />
 
-  <div class="field">
-    <textarea id="post_content" name="post[content]">
-</textarea>
-  </div>
-  </div>
+<%= render 'form', post: @post %>
 
-  <div class="d-flex justify-content-center">
-  <div class="actions">
-  <button type="submit" class="btn btn-outline-success">Create Post</button>
-  </div>
-  </div>
+</div>
+
+
 </form>
 </div>
 
