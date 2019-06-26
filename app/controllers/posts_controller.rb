@@ -8,19 +8,18 @@ class PostsController < ApplicationController
     @user_id = session[:user_id]
   end
 
-  # def show
-  #   @post = Post.find(params[:id])
-  #   render ''
-  # end
-
   def create
     @post = Post.create(post_params)
     redirect_to posts_url
   end
 
   def index
-    @user = User.find(session[:user_id])
-    @posts = Post.order(created_at: :desc)
+    if session[:user_id].nil? 
+      redirect_to root_url
+    else 
+      @user = User.find(session[:user_id])
+      @posts = Post.order(created_at: :desc)
+    end
   end
 
   def destroy

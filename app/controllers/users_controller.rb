@@ -4,10 +4,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @posts = Post.where("user_id = #{@user.id}").order(created_at: :desc)
+    if session[:user_id].nil? 
+      redirect_to root_url
+    else 
+      @user = User.find(params[:id])
+      @posts = Post.where("user_id = #{@user.id}").order(created_at: :desc)
+    end
   end
-
 
   def create
     @user = User.new(user_params)

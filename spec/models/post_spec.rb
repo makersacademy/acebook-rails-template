@@ -18,6 +18,4 @@ RSpec.describe Post, type: :model do
     subject.user_id = user.id
     expect(subject).to be_valid
   end
-
-  it 'has a timestamp'
 end
