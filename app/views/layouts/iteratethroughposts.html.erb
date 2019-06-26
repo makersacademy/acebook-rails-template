@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spacebook</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <%= yield %>
+
+    <% @posts.each do |post| %>
+      <div class="box">
+        <p><strong><%= User.find(post.user_id).name %></strong></p>
+        <p class="message"><%= simple_format(post.message) %></p>
+        <p class="message_timestamp"><%= post.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+        <p class="message_buttons"><%= link_to 'Delete', post_path(post), method: :delete %>
+        <%= link_to 'Edit', edit_post_path(post) %></p>
+      </div>
+    <% end %>
+  </body>
+</html>

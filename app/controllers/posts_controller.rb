@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  layout 'iteratethroughposts', only: [:index]
 
   before_action :correct_user, only: [:edit, :update, :destroy]
 
