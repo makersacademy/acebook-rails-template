@@ -46,16 +46,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # def current_user?(user)
-  #   user == current_user
-  # endc
-
-  # def current_user
-  #   if(@user_id == session[:user_id])
-  #     @current_user ||= User.find_by(id: user_id)
-  #   end
-  # end
-
   private
   def post_params
     params.require(:post).permit(:message, :user_id)
