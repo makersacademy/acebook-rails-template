@@ -14,7 +14,7 @@ RSpec.describe PostsController, type: :controller do
   describe 'POST /' do
     it 'responds with 302' do
       @user = User.create(
-        name: 'test',
+        username: 'test',
         email: 'test@test.com',
         password: 'password',
         password_confirmation: 'password'
@@ -28,7 +28,7 @@ RSpec.describe PostsController, type: :controller do
 
     it 'creates a post' do
       @user = User.create(
-        name: 'test',
+        username: 'test',
         email: 'test@test.com',
         password: 'password',
         password_confirmation: 'password'
