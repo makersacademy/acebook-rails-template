@@ -1,4 +1,7 @@
 <%= flash[:notice] %>
+
+<%= link_to('Your Wall', user_path(@user)) %>
+
 <% @posts.each do |post| %>
   <div class="box">
     <p><strong><%= User.find(post.user_id).name %></strong></p>
@@ -12,3 +15,5 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+<%= button_to "Sign Out", destroy_session_path, method: 'delete' %>

@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/fetc90/acebook-Spacebook.svg?branch=master)](https://travis-ci.org/fetc90/acebook-Spacebook)
-
 [![Coverage Status](https://coveralls.io/repos/github/fetc90/acebook-Spacebook/badge.svg?branch=master)](https://coveralls.io/github/fetc90/acebook-Spacebook/?branch=master)
 
 # Welcome to Spacebook
