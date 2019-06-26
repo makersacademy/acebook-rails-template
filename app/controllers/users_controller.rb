@@ -18,9 +18,17 @@ class UsersController < ApplicationController
       # flash[:notice] = 'Please sign in'
       redirect_to users_path
     else
-      flash[:notice] = 'Invalid signup credentials'
-      redirect_to new_user_path
-    end
+      if @user.password.length < 6 || @user.password.length > 10
+        flash[:notice] = 'Password must be 6-10 characters'
+      elsif @user.password != @user.password_confirmation
+        flash[:notice] = 'Passwords do not match'
+      elsif !@user.email.include?("@")
+        flash[:notice] = 'Invalid email address'
+      else 
+        flash[:notice] = 'Invalid signup credentials'  
+      end
+        redirect_to new_user_path
+    end 
   end
 
   private
