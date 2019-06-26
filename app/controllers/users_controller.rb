@@ -1,12 +1,16 @@
 class UsersController < ApplicationController
+  layout 'iteratethroughposts', only: [:show]
   def new
   end
 
   def show
-    @user = User.find(params[:id])
-    @posts = Post.where("user_id = #{@user.id}")
+    if session[:user_id].nil? 
+      redirect_to root_url
+    else 
+      @user = User.find(params[:id])
+      @posts = Post.where("user_id = #{@user.id}").order(created_at: :desc)
+    end
   end
-
 
   def create
     @user = User.new(user_params)

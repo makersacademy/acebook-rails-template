@@ -10,9 +10,15 @@ RSpec.feature 'Edit Post', type: :feature do
   end
 
   scenario 'User can only edit their own posts' do
-    create_message
-    sign_up_user_2
-    sign_in_user_2
+    sign_up_another_user
+    sign_in_another_user
+    click_link 'New post'
+    fill_in "Message", with: 'Hello, space universe!'
+    click_button 'Submit'
+    visit('/users/new')
+    sign_up_user
+    sign_in_user
+    click_button 'Feed'
     click_link 'Edit'
     expect(page).to have_content('You can only edit or delete your own posts')
   end
