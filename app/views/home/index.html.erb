@@ -1,26 +1,28 @@
-<nav class="navbar navbar-default navbar-fixed-top">
- <div class="container">
-   <div class="navbar-header">
-     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-top">
-       <span class="sr-only">Toggle navigation</span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-     </button>
-     <%= link_to "Ace-Book by AmoebaBoyz", root_url, class: "navbar-brand" %>
-   </div>
-   <div class="collapse navbar-collapse" id="navbar-top">
+<!DOCTYPE html>
+<html lang=“en” dir=“ltr”>
+ <head>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+   <meta charset=“utf-8”>
+   <title></title>
+ </head>
+
+ <div class="jumbotron">
+  <h1 class="display-4">Acebook by Amoeba Boyz</h1>
+  <p class="lead">"I guess it's up to us to take care of business" - The Amoeba Boyz</p>
+  <hr class="my-4">
+  <p class="lead">
+    <a class="btn btn-success btn-lg" href="#" role="button">Sign Up</a>
+    <a class="btn btn-success btn-lg" href="#" role="button">Sign In</a>
+    <a class="btn btn-danger btn-lg" href="https://www.youtube.com/watch?v=zJDRLgAuxgA" role="button">Get Lost</a>
+  </p>
+</div>
+  
      <ul class="nav navbar-nav navbar-right">
        <% if user_signed_in? %>
        <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
        <%= link_to 'New post', new_post_path %>
-       <h1>Your wall</h1>
-       <br>
-        <% @posts.each do |post| %>
-          <% if current_user.id == post.user_id %>
-            <li><%= simple_format(post.content) %>&nbsp;<%= post.created_at %></li>
-          <% end %>
-        <% end %>
+     
          <li><%= link_to 'All posts', posts_path %></li>
        <% else %>
          <li><%= link_to 'Sign up', new_user_registration_path %></li>
@@ -29,4 +31,4 @@
      </ul>
    </div>
  </div>
-</nav>
+

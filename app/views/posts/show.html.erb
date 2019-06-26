@@ -1,13 +1,45 @@
-<%= link_to "Ace-Book by AmoebaBoyz", root_url, class: "navbar-brand" %>
-<p>
-  <strong>Content:</strong>
-  <%= simple_format(@post.content) %>
-</p>
+<!DOCTYPE html>
+<html lang=“en” dir=“ltr”>
+ <head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <meta charset=“utf-8”>
+   <title></title>
+ </head>
+ <body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Acebook Amoeba Boyz</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">All Posts</a>
+        </li>
+      </ul>
+      <button type="button" class="btn btn-outline-success"><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></button>
+      
+    </div>
+  </nav>
 
 <p>
-  <strong>User:</strong>
-  <%= @post.user.name %>
+<div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-1 d-flex align-items-center" align="center"><img style="width: 100%;"src="https://vignette.wikia.nocookie.net/powerpuff/images/d/d4/Amoeba_boys.png/revision/latest?cb=20150810212750" alt="ssss"></div>
+        <div class="col-sm-11 d-flex align-items-center" ><strong><td><%= @post.user.name %></td></strong></div>
+        <br><br>
+        <div class="col-sm-9" style="font-size:100%"><%= simple_format(@post.content) %>&nbsp;</div>
+      </div>
+    </div>
+</div>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<button type="button" class="btn btn-outline-success"><%= link_to 'Edit', edit_post_path(@post) %> </button>
+<button type="button" class="btn btn-outline-success"><%= link_to 'Back', posts_path %></button>

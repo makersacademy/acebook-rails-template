@@ -1,7 +1,86 @@
-<%= link_to "Ace-Book by AmoebaBoyz", root_url, class: "navbar-brand" %>
-<%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
-<h1>New Post</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Acebook</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="du8ZshZM0biiF5qMw2d1G2VQtKk+ywiV5ACKFNGlFVa55BANDAh33HAwBTIyUhQmvbWM20QkVV4F9i0FxXHdng==" />
 
-<%= render 'form', post: @post %>
+    <link rel="stylesheet" media="all" href="/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/scaffolds.self-b8085ff3d9f43161a2bc7e21b436534c8bd205ca9e754f5711134b71d92359fa.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/style.self-fdaebc0dfc9f6cefbb2c27de2f087bae921fa512949dbd2ea626525feddeaa8c.css?body=1" />
+<link rel="stylesheet" media="all" href="/assets/application.self-f0d704deea029cf000697e2c0181ec173a1b474645466ed843eb5ee7bb215794.css?body=1" />
+    <script src="/assets/rails-ujs.self-8944eaf3f9a2615ce7c830a810ed630e296633063af8bb7441d5702fbe3ea597.js?body=1"></script>
+<script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1"></script>
+<script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1"></script>
+<script src="/assets/home.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1"></script>
+<script src="/assets/posts.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1"></script>
+<script src="/assets/application.self-58b1eb225e13e3709a67ff1fd3579ba47e1509e0221833d7f486543e09ddef38.js?body=1"></script>
+   
+  </head>
 
-<%= link_to 'Back', posts_path %>
+  <body>
+
+    <p class="notice"></p>
+    <p class="alert"></p>
+    <!DOCTYPE html>
+<html lang=“en” dir=“ltr”>
+ <head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <meta charset=“utf-8”>
+   <title></title>
+ </head>
+ <body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Acebook Amoeba Boyz</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">All Posts</a>
+        </li>
+      </ul>
+      <button type="button" class="btn btn-outline-success"><a rel="nofollow" data-method="delete" href="/users/sign_out">Sign out</a></button>
+      
+    </div>
+  </nav>
+  
+
+  
+  <div class="jumbotron bg-transparent">
+    <h1 class="display-4">New Post</h1>
+  </div>
+
+
+  <div class="container-fluid">
+  <div class="d-flex justify-content-center">
+<form action="/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="mUNz5ng0So0M4FmXNcTt4QTUhLU7UG31aM4KcbxGK01jaY5XAdU6gCm9cFuGem85Hininvx8KiQCaF+p7gTNOg==" />
+
+  <div class="field">
+    <textarea id="post_content" name="post[content]">
+</textarea>
+  </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+  <div class="actions">
+  <button type="submit" class="btn btn-outline-success">Create Post</button>
+  </div>
+  </div>
+</form>
+</div>
+
+<div class="d-flex justify-content-center">
+<button type="button" class="btn btn-outline-success"><a href="/posts">Back</a></button>
+</div>
+</div>
+  </body>
+</html>
