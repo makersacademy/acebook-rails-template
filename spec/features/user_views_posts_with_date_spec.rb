@@ -12,4 +12,11 @@ RSpec.feature 'Posts', type: :feature do
     expect(page).to have_content('Hello, world!')
     expect(page).to have_content(time)
   end
+
+  scenario 'Can display username with post text' do
+    sign_up(username: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
+    add_post(message: 'Hello, world!')
+
+    expect(page).to have_content('test')
+  end
 end
