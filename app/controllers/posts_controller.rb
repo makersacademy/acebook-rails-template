@@ -1,10 +1,17 @@
 class PostsController < ApplicationController
   layout 'iteratethroughposts', only: [:index]
 
+  before_action :correct_user, only: [:edit, :update, :destroy]
+
   def new
     @post = Post.new
     @user_id = session[:user_id]
   end
+
+  # def show
+  #   @post = Post.find(params[:id])
+  #   render ''
+  # end
 
   def create
     @post = Post.create(post_params)
@@ -28,9 +35,16 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-
     @post.update(post_params)
     redirect_to posts_url
+  end
+
+  def correct_user
+    @post = Post.find(params[:id])
+    if session[:user_id] != @post.user_id
+      flash[:notice] = 'You can only edit your own posts'
+      redirect_to posts_url
+    end
   end
 
   private
