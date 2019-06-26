@@ -6,6 +6,16 @@
     <%= simple_format(post.content) %>&nbsp;<%= post.created_at %>
     <% end %>
 <% end %>
+
+<br>
+<br>
+
+<h1>Post on <%= @user.name%>'s Wall </h1>
+
+<form>
+<input type = "text">
+</form>
+
 <br>
 <br>
      <% if user_signed_in? %>
@@ -13,7 +23,6 @@
        <%= link_to 'New post', new_post_path %>
     <% end %>
 
+   
     <%= link_to 'Back', posts_path %>
-
-
 
