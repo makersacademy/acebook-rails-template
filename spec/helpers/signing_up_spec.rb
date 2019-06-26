@@ -12,5 +12,6 @@ def sign_up_user_2
   fill_in 'user_name', with: "Yemi"
   fill_in "user_email", with: "yemi@email.com"
   fill_in "user_password", with: "Password"
+  fill_in "user_password_confirmation", with: "Password"
   click_button "Sign Up"
 end
