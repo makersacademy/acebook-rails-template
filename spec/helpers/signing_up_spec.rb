@@ -15,3 +15,5 @@ def sign_up_another_user
   fill_in "user_password_confirmation", with: "Password"
   click_button "Sign Up"
 end
+
+
