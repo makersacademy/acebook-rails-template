@@ -21,11 +21,17 @@ class PostsController < ApplicationController
   def edit
   end
 
+    # GET /posts/wall
+    def wall
+      @posts = Post.all.order(created_at: :desc)
+    end
+
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(post_params)
     @post.user = current_user
+    # @post.recipient_id = current_url.split
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
