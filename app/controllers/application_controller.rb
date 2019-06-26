@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
   end
 
   def wall
+    p '##########'
+    p params
     @wall = User.find(params[:user_id])
   end
 
