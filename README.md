@@ -3,7 +3,8 @@
 
 # Welcome to Spacebook
 
-A clone of the Earthly Facebook.
+A clone of the Earthly Facebook. Follow the link to see our deployed app [on Heroku](https://acebook-spacebook.herokuapp.com/).
+
 
 ## Screenshots
 
@@ -11,19 +12,33 @@ A clone of the Earthly Facebook.
 
 ## Quickstart
 
-First, clone this repository. Then:
+First, clone this repository and navigate to the project root directory. Then:
 
 ```bash
 > bundle install
 > bin/rails db:create
 > bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+## Running Tests
+
+We used RSpec and Capybara as our testing framework and Coveralls to ensure a high test coverage throughout development.
+```
+> bundle exec rspec # Run the tests to ensure it works
+```
+
+## Approach
+
+We approached to this project in an agile way by doing 2-day sprints with standups in the morning and retros at the end of each sprint. We also documented our workflow throughout:
+- We also documented our approach in a [setup file](APPROACH.md).
+- We broke down our user stories into tickets on a [tream Trello](https://trello.com/b/qyOCSER0/acebook-spacebook) board and assigned ticket to pairs and made sure we rotated pairs halfway-through the day whilst keeping one member who is familiar with the codebase on the same ticket. This ensured that we all became familiar with the codebase.
+- We [recorded](https://docs.google.com/spreadsheets/d/1qxLmJjrPnSIZuI13EKJS4rV3SMt9_AptxTFiOTG-7GU/edit?usp=sharing) our standup and retros in an execl sheet to keep track of progress on the project.
+- We made a blog about our progress throughout this project. You can view that [here](https://medium.com/@spacebook3000).
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Authors' Details
 
 Co-authored-by: LisaMcCormack <lisamccormack85@gmail.com>  
 Co-authored-by: fetc90 <francescachater@gmail.com>  
