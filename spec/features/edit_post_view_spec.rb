@@ -14,6 +14,6 @@ RSpec.feature 'Edit Post', type: :feature do
     sign_up_user_2
     sign_in_user_2
     click_link 'Edit'
-    expect(page).to have_content('You can only edit your own posts')
+    expect(page).to have_content('You can only edit or delete your own posts')
   end
 end
