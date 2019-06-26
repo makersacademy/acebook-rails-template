@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :correct_user, only: [:edit, :update, :destroy]
+
   def new
     @post = Post.new
     @user_id = session[:user_id]
@@ -29,6 +32,29 @@ class PostsController < ApplicationController
     @post.update(post_params)
     redirect_to posts_url
   end
+
+  def correct_user
+
+    @post = Post.find(params[:id])
+    if  session[:user_id] != @post.user_id
+      p session[:user_id]
+      p @post.user_id
+      flash[:notice] = 'You can only edit your own posts'
+      redirect_to posts_url
+    else
+      render 'edit'
+    end
+  end
+
+  # def current_user?(user)
+  #   user == current_user
+  # endc
+
+  # def current_user
+  #   if(@user_id == session[:user_id])
+  #     @current_user ||= User.find_by(id: user_id)
+  #   end
+  # end
 
   private
   def post_params

@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   def new
   end
 
+  def index
+    current_user = User.find_by_id(session[:user_id])
+  end
+
   # def show
   #   @user = User.find(params[:id])
   #   redirect_to new_user_path

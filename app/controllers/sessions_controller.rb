@@ -13,8 +13,11 @@ class SessionsController < ApplicationController
       flash[:notice] = 'Invalid credentials'
       redirect_to new_session_path
     end
+
+
+
   end
-  
+
   # private
   #
   # def user_params
