@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :password, presence: true, confirmation: true,
                        length: { in: 6..10 }
 
-	def can_edit? post
-	  post.user_id == self.id
-	end
+  def can_edit?(post)
+    post.user_id == self.id
+  end
 end

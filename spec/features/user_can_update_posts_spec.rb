@@ -14,7 +14,7 @@ RSpec.feature 'Posts', type: :feature do
     post = Post.all[0]
     updated_time = post.updated_at.strftime('%Y-%m-%d, %H:%M')
 
-    fill_in 'Message', with: 'This is an edited message!'
+    fill_in('Message', with: 'This is an edited message!')
     click_button 'Update'
 
     expect(page).to have_content('This is an edited message!')

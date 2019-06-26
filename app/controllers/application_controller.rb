@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'pry'
 
 class ApplicationController < ActionController::Base
@@ -20,4 +21,3 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 end
- 
