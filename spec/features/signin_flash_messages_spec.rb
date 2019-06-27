@@ -7,7 +7,7 @@ RSpec.feature 'Flash message', type: :feature do
       fill_in "email", with: "lisa@email.com"
       fill_in "password", with: "Password"
       click_button "Sign In"
-      expect(page).to have_content("Here's your timeline, Lisa")
+      expect(page).to have_content("Lisa's Timeline")
   end
 
   scenario 'Displays a error message when user enters incorrect details' do

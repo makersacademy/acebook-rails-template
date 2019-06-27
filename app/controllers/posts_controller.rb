@@ -20,6 +20,7 @@ class PostsController < ApplicationController
     else
       @user = User.find(session[:user_id])
       @posts = Post.order(created_at: :desc)
+      @wall = Wall.find_by(user_id: @user.id)
     end
   end
 
@@ -58,6 +59,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:message, :user_id)
+    params.require(:post).permit(:message, :user_id, :wall_id)
   end
 end
