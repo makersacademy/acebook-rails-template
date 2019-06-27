@@ -15,14 +15,16 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can post on another user's wall" do
+    click_button 'Feed'
     new_post
     sign_up_another_user
     sign_in_another_user
     click_button 'Feed'
     click_link('Lisa')
-    new_post_alt
+    fill_in 'post_message', with: 'Sugarcubes megafan alert!'
+    click_button "Submit"
     click_link('Lisa')
-    expect(page).to have_content("Sugarcubes")
+    expect(page).to have_content("Sugarcubes megafan alert!")
   end
 
   scenario "Posts are ordered - newest at the top" do
@@ -74,8 +76,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario 'Post displays the name of the user who made it' do
-    click_link 'New post'
-    fill_in 'Message', with: 'First line hello!'
+    fill_in 'post_message', with: 'First line hello!'
     click_button 'Submit'
     expect(first('.box')).to have_content('Lisa')
   end

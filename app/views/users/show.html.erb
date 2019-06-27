@@ -1,7 +1,14 @@
 <h1>Here's your timeline, <%= @user.name %></h1>
 
-<%= link_to new_post_path do %>
+<!-- <%= link_to new_post_path do %>
   New post
+<% end %> -->
+
+<%= form_for :post, url: posts_path, html: {method: :post} do |f| %>
+  <%= f.text_area :message %>
+  <%= f.hidden_field :wall_id, value: @wall.id %>
+  <%= f.hidden_field :user_id, value: @signed_in_user.id %>
+  <%= f.submit 'Submit' %>
 <% end %>
 
 <%= button_to "Feed", posts_path, method: 'get' %>

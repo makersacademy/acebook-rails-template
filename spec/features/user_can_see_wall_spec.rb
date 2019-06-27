@@ -70,8 +70,7 @@ RSpec.feature 'Wall', type: :feature do
   end
 
   scenario 'Post displays the name of the user who made it' do
-    click_link 'New post'
-    fill_in 'Message', with: 'First line hello!'
+    fill_in 'post_message', with: 'First line hello!'
     click_button 'Submit'
 
     click_link 'Your Wall'

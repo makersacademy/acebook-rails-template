@@ -8,6 +8,7 @@ class UsersController < ApplicationController
       redirect_to root_url
     else
       @user = User.find(params[:id])
+      @signed_in_user = User.find(session[:user_id])
       @wall = Wall.find_by(user_id: @user.id)
       @posts = Post.where("user_id = #{@user.id}").order(created_at: :desc)
     end
@@ -25,11 +26,11 @@ class UsersController < ApplicationController
         flash[:notice] = 'Passwords do not match'
       elsif !@user.email.include?("@")
         flash[:notice] = 'Invalid email address'
-      else 
-        flash[:notice] = 'Invalid signup credentials'  
+      else
+        flash[:notice] = 'Invalid signup credentials'
       end
         redirect_to new_user_path
-    end 
+    end
   end
 
   private
