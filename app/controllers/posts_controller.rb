@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     else
       @user = User.find(session[:user_id])
       @posts = Post.order(created_at: :desc)
+      @wall = Wall.find_by(user_id: @user.id)
     end
   end
 

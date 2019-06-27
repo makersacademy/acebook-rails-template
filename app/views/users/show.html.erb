@@ -1,8 +1,4 @@
-<h1>Here's your timeline, <%= @user.name %></h1>
-
-<!-- <%= link_to new_post_path do %>
-  New post
-<% end %> -->
+<h1><%= @user.name %>'s Timeline</h1>
 
 <%= form_for :post, url: posts_path, html: {method: :post} do |f| %>
   <%= f.text_area :message %>
