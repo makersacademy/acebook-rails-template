@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ACEBOOK by D-Railed</title>
-</head>
-<body>
-  <h1>ACEBOOK</h1>
-  
-  <div class='container'>
-    <div class='row'>
-      <div class='col-md-2'></div>
-        <div class='col-md-4'>
-          <ul clas='ul'>
-            <a class='a_signin' href='<%= new_session_path %>'>Sign in</a>
-            <a href='<%= root_path %>'> / Sign up</a>
-          </ul>
-          
-						<p class='li'><%= flash[:invalid_details] %></p>
+  <head>
+    <title>ACEBOOK by D-Railed</title>
+  </head>
+  <body>
+    <h1>ACEBOOK</h1>    
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-2'></div>
+          <div class='col-md-4'>
+            <ul clas='ul'>
+              <a class='a_signin' href='<%= new_session_path %>'>Sign in</a>
+              <a href='<%= root_path %>'> / Sign up</a>
+            </ul>
+            
+  						<p class='li'><%= flash[:invalid_details] %></p>
 
-						<%= form_tag sessions_path do %>
-						<div class='label'>
-							<%= label_tag :email, 'Email' %>
-						</div>
-				    <%= text_field_tag :email, params[:email], class:'form-control', placeholder:'Email' %>
-				    <div class='label'>
-				    	<%= label_tag :password, 'Password' %>
-				    </div>
-				   	  <%= password_field_tag :password, params[:password], class:'form-control', placeholder:'Password' %>
+  						<%= form_tag sessions_path do %>
+  						<div class='label'>
+  							<%= label_tag :email, 'Email' %>
+  						</div>
+  				    <%= text_field_tag :email, params[:email], class:'form-control', placeholder:'Email' %>
+  				    <div class='label'>
+  				    	<%= label_tag :password, 'Password' %>
+  				    </div>
+  				   	  <%= password_field_tag :password, params[:password], class:'form-control', placeholder:'Password' %>
 
-				    <a href='<%= posts_path %>'><div class='btn btn-info'><%= submit_tag "SIGN IN", class:'btn' %></div></a><br>
-				  <% end %>
-      	</div>
-      <div class='col-md-2'></div>
+  				    <a href='<%= posts_path %>'><div class='btn btn-info'><%= submit_tag "SIGN IN", class:'btn' %></div></a><br>
+  				  <% end %>
+        	</div>
+        <div class='col-md-2'></div>
+      </div>
     </div>
-   </div>
+  </body>
+</html>
 
   
   
