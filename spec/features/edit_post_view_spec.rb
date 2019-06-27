@@ -12,8 +12,7 @@ RSpec.feature 'Edit Post', type: :feature do
   scenario 'User can only edit their own posts' do
     sign_up_another_user
     sign_in_another_user
-    click_link 'New post'
-    fill_in "Message", with: 'Hello, space universe!'
+    fill_in "post_message", with: 'Hello, space universe!'
     click_button 'Submit'
     visit('/users/new')
     sign_up_user

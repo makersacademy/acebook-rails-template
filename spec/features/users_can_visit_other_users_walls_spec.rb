@@ -5,7 +5,6 @@ feature "Clicking onto other user's walls" do
   end
 
   scenario "From the index, each post should have a link to that user's wall" do
-    click_link 'New post'
     fill_in 'post_message', with: 'Hello world'
     click_button 'Submit'
     sign_up_another_user
@@ -17,7 +16,6 @@ feature "Clicking onto other user's walls" do
   end
 
   scenario "From a wall, each post should have a link to that user's wall" do
-    click_link 'New post'
     fill_in 'post_message', with: 'Hello world'
     click_button 'Submit'
 

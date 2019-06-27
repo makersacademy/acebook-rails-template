@@ -4,18 +4,20 @@ class UsersController < ApplicationController
   end
 
   def show
-    if session[:user_id].nil? 
+    if session[:user_id].nil?
       redirect_to root_url
-    else 
+    else
       @user = User.find(params[:id])
-      @posts = Post.where("user_id = #{@user.id}").order(created_at: :desc)
+      @signed_in_user = User.find(session[:user_id])
+      @wall = Wall.find_by(user_id: @user.id)
+      @posts = Post.where("wall_id = #{@wall.id}").order(created_at: :desc)
     end
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      # flash[:notice] = 'Please sign in'
+      wall = Wall.create(user_id: @user.id)
       redirect_to users_path
     else
       if @user.password.length < 6 || @user.password.length > 10
@@ -24,11 +26,9 @@ class UsersController < ApplicationController
         flash[:notice] = 'Passwords do not match'
       elsif !@user.email.include?("@")
         flash[:notice] = 'Invalid email address'
-      else 
-        flash[:notice] = 'Invalid signup credentials'  
       end
-        redirect_to new_user_path
-    end 
+      redirect_to new_user_path
+    end
   end
 
   private
