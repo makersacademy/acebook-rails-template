@@ -16,13 +16,19 @@ class ApplicationController < ActionController::Base
   end
 
   def wall
-    p '##########'
-    p params
-    @wall = User.find(params[:user_id])
+    if User.all == []
+      @wall = nil
+    else
+      @wall ||= User.find(params[:user_id])
+    end
   end
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    if User.all == []
+      @current_user = nil
+    else
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
   end
 
   helper_method :current_user, :wall
