@@ -34,7 +34,7 @@ gem 'gemoji'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'pry'
 # setup rubocop
 gem 'rubocop'
 gem 'rubocop-rails'

@@ -13,16 +13,20 @@ class LikesController < ApplicationController
       @post.likes.create(user_id: session[:user_id])
     end
 
-    redirect_to posts_path
+    redirect_to user_posts_path(retrieve_recipient)
   end
 
   def destroy
     @like.destroy
-
-    redirect_to posts_path
+    redirect_to user_posts_path(retrieve_recipient)
   end
 
   private
+
+  def retrieve_recipient
+    post_id = params[:post_id]
+    Post.find(post_id).recipient_id
+  end
 
   def find_post
     @post = Post.find(params[:post_id])

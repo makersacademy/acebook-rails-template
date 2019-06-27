@@ -1,9 +1,9 @@
 <h1>Edit Post</h1>
 
-<%= form_for :post, url: posts_path(@post), :method => :patch do |form| %>
+<%= form_for :post, url: user_post_path(@post), :method => :patch do |form| %>
   <%= form.label :message %>
   <%= form.text_area :message %>
+  <%= form.hidden_field :recipient_id, :value => params[:user_id] %>
 
   <%= form.submit "Update" %>
 <% end %>
-

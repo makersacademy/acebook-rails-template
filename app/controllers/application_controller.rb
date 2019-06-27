@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'pry'
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :require_login
@@ -14,9 +16,12 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    if User.all == []
+      @current_user = nil
+    else
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
   end
 
   helper_method :current_user
 end
- 

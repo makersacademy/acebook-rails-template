@@ -47,6 +47,10 @@
       <div class='col-md-2'></div>
     </div>
 
-    
-
+   <%= form_for(@user, url: users_path) do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %><br>
+   ​
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
 </html>
