@@ -10,8 +10,6 @@ body{
 	font-family: new time roman;
 }
 
-
-
 .col-md-4{
 	margin: auto;
 	margin-top: 20px;
@@ -39,6 +37,7 @@ h1{
 	color: #C5834E !important;
 	text-align: center;
 	font-size: 70px !important;
+	margin-top: 30px !important;
 }
 
 .li{
@@ -70,10 +69,6 @@ h1{
 	padding: 10px;
 }
 
-::placeholder{
-	color: #BACAE1;
-}
-
 .btn-info{
 	background-color: transparent !important;
 	border-bottom: 0px;
@@ -84,23 +79,21 @@ h1{
 	margin-top: 20px;
 }
 
-.btn{
-	color: #ffffff !important;
-}
-
 .btn-info:hover{
 	background: #CE9254 !important;
 	border: 2px solid #CE9254 !important;
 }
 
-.footer{
-	text-align: center;
-	color: white;
-	margin-top: 20px;
+.btn{
+	background-color: transparent !important;
 }
 
-.footer1{
+.footer{
+
+	position: relative;
+	bottom: 0;
+	width: 100%;
 	text-align: center;
-	color: white;
-	margin-top: 175px;
+	color: white !important;
 }
+

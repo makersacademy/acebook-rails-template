@@ -3,7 +3,7 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300&display=swap" rel="stylesheet">
@@ -13,9 +13,13 @@
   </head>
 
   <body>
+    
+
     <% if current_user %>
+
       <%= link_to "Sign out", session_path("current"), method: "delete" %><br>
       Logged in as <%= current_user.email %>.<br>
+
     <% end %>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -24,9 +28,15 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
-    
+
     <%= yield %>
+    <div class='footer'>
+      <footer>
+        <p>Copyright &copy Acebook by D-Railed 2019</p>
+      </footer>
+    </div>
 
     
   </body>
+
 </html>
