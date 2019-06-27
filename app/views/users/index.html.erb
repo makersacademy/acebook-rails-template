@@ -1,0 +1,6 @@
+<h1>Acebook member list</h1>
+<div>
+  <% @users.each do |user| %>
+    <%= link_to user.username, user_posts_path(user) %><br>
+  <% end %>
+</div>

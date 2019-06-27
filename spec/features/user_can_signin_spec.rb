@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Signin', type: :feature do
   before(:each) do
-    sign_up(email: 'test@test.com', password: 'password')
+    sign_up(username: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
     click_link('Sign out')
   end
 
@@ -22,7 +22,8 @@ RSpec.feature 'Signin', type: :feature do
   scenario 'User can sign in' do
     sign_in(email: 'test@test.com', password: 'password')
 
-    expect(page).to have_current_path('/posts')
+    user = User.all[0]
+    expect(page).to have_current_path("/users/#{user.id}/posts")
     expect(page).to have_content('Welcome to Acebook by D-Railed!')
   end
 
