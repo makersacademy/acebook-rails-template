@@ -26,6 +26,7 @@ class UsersController < ApplicationController
         flash[:notice] = 'Passwords do not match'
       elsif !@user.email.include?("@")
         flash[:notice] = 'Invalid email address'
+
       end
       redirect_to new_user_path
     end

@@ -18,4 +18,15 @@ RSpec.describe Post, type: :model do
     subject.user_id = user.id
     expect(subject).to be_valid
   end
+
+  it 'only one post is created' do
+    user = create_user
+    subject.message = "Anything"
+    subject.user_id = user.id
+    subject.save
+    p "-------------------"
+    p Post.all
+    expect(Post.all.length).to eq(1)
+  end
+
 end
