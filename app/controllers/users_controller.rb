@@ -4,10 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    if session[:user_id].nil? 
+    if session[:user_id].nil?
       redirect_to root_url
-    else 
+    else
       @user = User.find(params[:id])
+      @wall = Wall.find_by(user_id: @user.id)
       @posts = Post.where("user_id = #{@user.id}").order(created_at: :desc)
     end
   end
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # flash[:notice] = 'Please sign in'
+      wall = Wall.create(user_id: @user.id)
       redirect_to users_path
     else
       flash[:notice] = 'Invalid signup credentials'

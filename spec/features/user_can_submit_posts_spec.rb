@@ -18,7 +18,7 @@ RSpec.feature "Timeline", type: :feature do
     new_post
     sign_up_another_user
     sign_in_another_user
-    # save_and_open_page
+    click_button 'Feed'
     click_link('Lisa')
     new_post_alt
     click_link('Lisa')
