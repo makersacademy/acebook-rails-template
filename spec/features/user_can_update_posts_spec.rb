@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Posts', type: :feature do
   scenario 'user can update posts' do
-    sign_up(email: 'test@test.com', password: 'password')
+    sign_up(username: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
     add_post(message: 'Post number one')
 
     first(:button, 'Edit').click

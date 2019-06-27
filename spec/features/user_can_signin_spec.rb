@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Signin', type: :feature do
   before(:each) do
-    sign_up(email: 'test@test.com', password: 'password')
+    sign_up(usernam: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
     click_link('Sign out')
   end
 

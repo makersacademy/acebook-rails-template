@@ -4,7 +4,7 @@ def go_to_homepage
   visit '/'
 end
 
-def sign_up(name: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
+def sign_up(username: 'test', email: 'test@test.com', password: 'password', password_confirmation: 'password')
   go_to_homepage
   fill_in('user[name]', with: name)
   fill_in('user[email]', with: email)
