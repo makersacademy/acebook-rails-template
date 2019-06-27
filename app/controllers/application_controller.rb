@@ -15,14 +15,6 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
-  def wall
-    if User.all == []
-      @wall = nil
-    else
-      @wall ||= User.find(params[:user_id])
-    end
-  end
-
   def current_user
     if User.all == []
       @current_user = nil
@@ -31,5 +23,5 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :current_user, :wall
+  helper_method :current_user
 end

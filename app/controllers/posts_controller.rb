@@ -65,5 +65,14 @@ class PostsController < ApplicationController
       redirect_to user_posts_path(current_user)
     end
   end
-  helper_method :get_username
+
+  def wall
+    if User.all == []
+      @wall = nil
+    else
+      @wall ||= User.find(params[:user_id])
+    end
+  end
+
+  helper_method :get_username, :wall
 end
