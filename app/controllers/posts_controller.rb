@@ -15,9 +15,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    if session[:user_id].nil? 
+    if session[:user_id].nil?
       redirect_to root_url
-    else 
+    else
       @user = User.find(session[:user_id])
       @posts = Post.order(created_at: :desc)
     end

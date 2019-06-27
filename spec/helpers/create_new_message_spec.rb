@@ -3,6 +3,6 @@ def create_message
     sign_in_user
     visit('/posts')
     click_link 'New post'
-    fill_in 'Message', with: 'Hello, world!'
+    fill_in 'Message', with: 'Hello!'
     click_button 'Submit'
 end

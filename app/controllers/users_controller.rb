@@ -4,9 +4,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    if session[:user_id].nil? 
+    if session[:user_id].nil?
       redirect_to root_url
-    else 
+    else
       @user = User.find(params[:id])
       @posts = Post.where("user_id = #{@user.id}").order(created_at: :desc)
     end
@@ -25,10 +25,10 @@ class UsersController < ApplicationController
       elsif !@user.email.include?("@")
         flash[:notice] = 'Invalid email address'
       else 
-        flash[:notice] = 'Invalid signup credentials'  
+        flash[:notice] = 'Invalid signup credentials'
       end
         redirect_to new_user_path
-    end 
+    end
   end
 
   private
