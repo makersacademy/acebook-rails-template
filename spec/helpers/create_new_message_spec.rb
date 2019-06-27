@@ -6,7 +6,3 @@ def create_message
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
 end
-
-def ten_mins
-  
-end
