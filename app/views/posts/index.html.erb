@@ -15,7 +15,9 @@
         <div class='post-text'>
           <blockquote>
             <%= post.message %>
+
             <div class='post-date'>
+              [<%= get_username(post.user_id) %>]
               [<%= post.updated_at.strftime("%Y-%m-%d, %H:%M")%>]
             </div>
           </blockquote>

@@ -43,6 +43,10 @@ class PostsController < ApplicationController
 
   private
 
+  def get_username(user_id)
+    User.find(user_id).username
+  end
+
   def post_params
     params.require(:post).permit(:message, :recipient_id)
   end
@@ -61,4 +65,5 @@ class PostsController < ApplicationController
       redirect_to user_posts_path(current_user)
     end
   end
+  helper_method :get_username
 end
