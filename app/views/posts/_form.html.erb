@@ -10,13 +10,14 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content, id: :post_content %>
+    <%= form.hidden_field :recipient_id, value: params[:recipient_id] %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>
