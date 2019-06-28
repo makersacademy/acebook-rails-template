@@ -69,4 +69,17 @@ RSpec.feature 'Wall', type: :feature do
     expect(first('.box')).to have_content('Lisa')
   end
 
+  scenario "Posts display the name of the user's wall that the post belongs to" do
+    fill_in 'post_message', with: 'First line hello!'
+    click_button 'Submit'
+    click_button 'Sign Out'
+    sign_up_another_user
+    sign_in_another_user
+    click_button 'Feed'
+    click_link 'Lisa'
+    fill_in 'post_message', with: 'Hi hi hiiiiiii!'
+    click_button 'Submit'
+    expect(first('.box')).to have_content('Test')
+  end
+
 end

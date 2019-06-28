@@ -22,6 +22,28 @@ First, clone this repository and navigate to the project root directory. Then:
 > bin/rails db:migrate
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## How to use
+
+- Click the sign up button to create a profile
+- Fill in your details and click submit
+
+- When you are redirected, click the sign in button
+
+- You can now:
+  - post on your own wall
+  - visit the main feed
+  - click on people's names to visit their wall
+  - leave posts on other user's wall
+  - edit posts you have created (within ten minutes)
+  - delete posts you created
+  - if you try and visit someone's wall by typing their id in the url, you are greeted with this friendly space citizen:
+
+
+
+  ![allen](https://media.giphy.com/media/fwth8Ilo2LJId4czY3/giphy.gif)
+
+
 ## Running Tests
 
 We used RSpec and Capybara as our testing framework and Coveralls to ensure a high test coverage throughout development.
