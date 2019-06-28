@@ -1,11 +1,24 @@
-<h1><%= @user.name %>'s Timeline</h1>
-
+<center>
+<div class="loginBox">
+<h2 class="titleFont" style= "color:purple"><%= @user.name %>'s Wall</h2>
+<br>
+<br>
+<h3>
 <%= form_for :post, url: posts_path, html: {method: :post} do |f| %>
-  <%= f.text_area :message %>
+  <p class="titleFont"><%= f.label :message %> </p>
+  <p class='circular-sb'>  
+  <%= f.text_area :message, class: 'textfield' %></p>
+  <p class='circle1'></p>
+  <p class='circle2'></p> 
+  </p>
   <%= f.hidden_field :wall_id, value: @wall.id %>
   <%= f.hidden_field :user_id, value: @signed_in_user.id %>
-  <%= f.submit 'Submit' %>
+  <%= f.submit 'Submit', class:'titleFont submit' %>
+</h3>
 <% end %>
-
-<%= button_to "Feed", posts_path, method: 'get' %>
-<%= button_to "Sign Out", destroy_session_path, method: 'delete' %>
+<br>
+<br>
+<h4><%= button_to "Feed", posts_path, method: 'get', class:'button titleFont' %></h4>
+<h4><%= button_to "Sign Out", destroy_session_path, method: 'delete', class:'button titleFont' %></h4>
+</div>
+</center>

@@ -13,19 +13,21 @@
   </head>
 
   <body class='bg bg_2'>
-    <%= yield %>
 
+    <%= yield %>
     <span id='url'></span>
 
     <% @posts.each do |post| %>
       <div class="box">
         <% user = User.find(post.user_id) %>
-        <p><strong><%= link_to(user.name, user_path(user)) %></strong></p>
-        <p class="message"><%= simple_format(post.message) %></p>
-        <p class="message_timestamp"><%= post.created_at.strftime("%Y-%m-%d %H:%M") %></p>
-        <p class="message_buttons"><%= link_to 'Delete', post_path(post), method: :delete %>
+        <p class="titleFont"><strong><%= link_to(user.name, user_path(user)) %></strong></p>
+        <p class="message titleFont"><%= post.message %></p>
+        <p class="message_timestamp titleFont"><%= post.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+        <p class="message_buttons titleFont"><%= link_to 'Delete', post_path(post), method: :delete %>
         <%= link_to 'Edit', edit_post_path(post) %></p>
       </div>
+       <br>
+       <br>
     <% end %>
   </body>
 </html>

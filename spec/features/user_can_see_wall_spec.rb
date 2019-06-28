@@ -6,7 +6,7 @@ RSpec.feature 'Wall', type: :feature do
 
   scenario 'User can view their own wall' do
     visit('/posts')
-    click_link 'Your Wall'
+    click_button 'Your Wall'
     expect(page).to have_content("Lisa")
   end
 
@@ -14,7 +14,7 @@ RSpec.feature 'Wall', type: :feature do
     visit "/posts"
     fill_in "post_message", with: "Hello, world!"
     click_button "Submit"
-    click_link 'Your Wall'
+    click_button 'Your Wall'
     expect(page).to have_content("Hello, world!")
   end
 
@@ -26,7 +26,7 @@ RSpec.feature 'Wall', type: :feature do
     fill_in "post_message", with: "Second, hello!"
     click_button "Submit"
 
-    click_link 'Your Wall'
+    click_button 'Your Wall'
     expect(first('.box')).to have_content("Second, hello!")
   end
 
@@ -36,7 +36,7 @@ RSpec.feature 'Wall', type: :feature do
     fill_in "post_message", with: "First, hello!"
     click_button "Submit"
     time = Post.all[0].created_at.strftime("%Y-%m-%d %H:%M")
-    click_link 'Your Wall'
+    click_button 'Your Wall'
     expect(first('.box')).to have_content(time)
   end
 
@@ -45,7 +45,7 @@ RSpec.feature 'Wall', type: :feature do
     fill_in 'post_message', with: 'First line hello!'
     click_button 'Submit'
 
-    click_link 'Your Wall'
+    click_button 'Your Wall'
     expect(first('.box')).to have_content('First line hello!')
     click_link('Delete')
     expect(page).not_to have_content('First line hello!')
@@ -56,7 +56,7 @@ RSpec.feature 'Wall', type: :feature do
     fill_in 'post_message', with: 'First line hello!'
     click_button 'Submit'
 
-    click_link 'Your Wall'
+    click_button 'Your Wall'
     expect(first('.box')).to have_content('First line hello!')
     click_link('Edit')
     post_id = Post.all[0].id
@@ -67,7 +67,7 @@ RSpec.feature 'Wall', type: :feature do
     fill_in 'post_message', with: 'First line hello!'
     click_button 'Submit'
 
-    click_link 'Your Wall'
+    click_button 'Your Wall'
     expect(first('.box')).to have_content('Lisa')
   end
 

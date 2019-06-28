@@ -1,5 +1,20 @@
+<center>
+<body class='bg_edit'>
+<div class="editBox">
+<h2 class="titleFont" style= "color:purple">Edit your post:</h2>
+<br>
+<br>
+<h3>
 <%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
-  <%= form.submit "Submit" %>
+  <p class="titleFont"><%= form.label :message %> </p>
+  <p class='circular-sb'>
+  <%= form.text_area :message, class: 'textfield' %></p>
+  <%= form.submit "Submit", class:'titleFont submit'  %>
+  <p class='circle1'></p>
+  <p class='circle2'></p>
 <% end %>
+</h3>
+<h4><%= button_to "back", posts_path, method: 'get', class:'button titleFont' %></h4>
+</div>
+</body>
+</center>

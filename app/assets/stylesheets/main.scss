@@ -10,10 +10,6 @@ $color: rgb(72, 206, 240);
   font-family: "Alien lines";
   src: asset-url('Alien_lines.ttf') format('truetype');
 }
-@font-face {
-  font-family: "Zilap";
-  src: asset-url('Zilap') format('truetype');
-}
 
 $titleFont: "SPACEBOY";
 $notesFont: "Alien lines";
@@ -48,12 +44,12 @@ body, html {
   background-image: asset-url("mirror.gif");
 }
 
-.titleFont {
-  font-family: $titleFont;
+.bg_edit {
+  background-image: asset-url("editpost.gif");
 }
 
-.notesFont {
-  font-family: $notesFont;
+.titleFont {
+  font-family: $titleFont;
 }
 
 .button {
@@ -61,6 +57,41 @@ body, html {
   background-color: rgb(105, 1, 105);
   color: rgb(255, 147, 165);
   padding: 5px;
+}
+
+.loginBox {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  min-height: 300px;
+  background: rgba(255, 255, 255, 0.459);
+  border-radius: 20px;
+  padding: 25px;
+}
+.flashBox {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  min-height: 300px;
+  background: rgba(255, 255, 255, 0.459);
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.editBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  min-height: 300px;
+  background: rgba(255, 255, 255, 0.575);
+  border-radius: 20px;
+  padding: 25px;
 }
 
 .box {
@@ -78,7 +109,7 @@ body, html {
 }
 
 .message {
-  font-size: 50px;
+  font-size: 15px;
 }
 
 .message_timestamp {
@@ -88,3 +119,34 @@ body, html {
 .message_buttons {
   font-size: 15px;
 }
+.circular-sb {
+  width: 250px;
+  border: 5px solid #00bfb6;
+  padding: 80px 0px;
+  margin: 30px auto;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: arial;
+  position: relative;
+  background: #0e0909;
+}
+
+.textfield {
+  width: 150px;
+  height: 150px;
+  font-size: 18px;
+}
+
+.submit {
+  background-color: rgba(138, 133, 133, 0.842);
+  padding: .5em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 6px;
+  color: rgb(111, 53, 129);
+  font-size: 18px;
+  text-decoration: none;
+  border: none;
+ }
