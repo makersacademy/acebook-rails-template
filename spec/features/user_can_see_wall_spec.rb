@@ -66,8 +66,6 @@ RSpec.feature 'Wall', type: :feature do
   scenario 'Post displays the name of the user who made it' do
     fill_in 'post_message', with: 'First line hello!'
     click_button 'Submit'
-
-    click_button 'Your Wall'
     expect(first('.box')).to have_content('Lisa')
   end
 

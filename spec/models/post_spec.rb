@@ -24,8 +24,6 @@ RSpec.describe Post, type: :model do
     subject.message = "Anything"
     subject.user_id = user.id
     subject.save
-    p "-------------------"
-    p Post.all
     expect(Post.all.length).to eq(1)
   end
 
