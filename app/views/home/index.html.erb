@@ -1,34 +1,21 @@
 <!DOCTYPE html>
-<html lang=“en” dir=“ltr”>
- <head>
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
-   <meta charset=“utf-8”>
-   <title></title>
- </head>
+<html lang="“en”" dir="“ltr”">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+    <meta charset="“utf-8”">
+    <title></title>
+  </head>
 
- <div class="jumbotron">
-  <h1 class="display-4">Acebook by Amoeba Boyz</h1>
-  <p class="lead">"I guess it's up to us to take care of business" - The Amoeba Boyz</p>
-  <hr class="my-4">
-  <p class="lead">
-    <a class="btn btn-success btn-lg" href="#" role="button">Sign Up</a>
-    <a class="btn btn-success btn-lg" href="#" role="button">Sign In</a>
-    <a class="btn btn-danger btn-lg" href="https://www.youtube.com/watch?v=zJDRLgAuxgA" role="button">Get Lost</a>
-  </p>
+  <div class="jumbotron">
+    <h1 class="display-4">Acebook by Amoeba Boyz</h1>
+    <p class="lead">"I guess it's up to us to take care of business" - The Amoeba Boyz</p>
+    <hr class="my-4">
+    <p class="lead">
+      <a class="btn btn-danger btn-lg" href="https://www.youtube.com/watch?v=zJDRLgAuxgA" role="button">Get Lost</a>
+    </p>
+  </div>
+  <ul class="nav navbar-nav navbar-right">
+  </ul>
 </div>
-  
-     <ul class="nav navbar-nav navbar-right">
-       <% if user_signed_in? %>
-       <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
-       <%= link_to 'New post', new_post_path %>
-     
-         <li><%= link_to 'All posts', posts_path %></li>
-       <% else %>
-         <li><%= link_to 'Sign up', new_user_registration_path %></li>
-         <li><%= link_to 'Sign in', user_session_path %></li>
-       <% end %>
-     </ul>
-   </div>
- </div>
-
+</div>
