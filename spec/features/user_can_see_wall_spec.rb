@@ -67,7 +67,6 @@ RSpec.feature 'Wall', type: :feature do
     fill_in 'post_message', with: 'First line hello!'
     click_button 'Submit'
 
-    click_link 'Your Wall'
     expect(first('.box')).to have_content('Lisa')
   end
 
