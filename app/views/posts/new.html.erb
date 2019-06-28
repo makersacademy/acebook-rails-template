@@ -12,7 +12,8 @@
     </div>
     <div class="text-center">
       <form action="/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;"/><input type="hidden" name="authenticity_token" value="mUNz5ng0So0M4FmXNcTt4QTUhLU7UG31aM4KcbxGK01jaY5XAdU6gCm9cFuGem85Hininvx8KiQCaF+p7gTNOg=="/>
-        <%= render 'form', post: @post, class: "form-group" %>
+        <% params[:recipient_id] ||= current_user.id %>
+        <%= render 'form', post: @post, recipient: params[:recipient_id], class: "form-group" %>
       </div>
       <br><br>
     <div class="d-flex justify-content-center">

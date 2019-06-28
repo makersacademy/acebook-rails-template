@@ -48,6 +48,8 @@ group :development do
 end
 
 group :test do
+  # Adds DatabaseCleaner to clear database before each test
+  gem 'database_cleaner'
   # Adds simplecov test coverage checker
   gem 'simplecov', require: false
 end

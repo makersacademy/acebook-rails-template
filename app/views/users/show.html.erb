@@ -1,28 +1,20 @@
+<h1><%= @user.name%>'s Profile</h1>
+<br>
+<h3>Posts:</h3>
+  <% @posts.each do |post| %>
+   <% if @user.id == post.user_id %>
+   <%= simple_format(post.content) %>&nbsp;<%= post.created_at %>
+  <% end %>
+<% end %>
 
-    <h1><%= @user.name%>'s Profile</h1>
-    <br>
-    <h3>Posts:</h3>
-    <% @posts.each do |post| %>
-        <% if @user.id == post.user_id %>
-        <%= simple_format(post.content) %>&nbsp;<%= post.created_at %>
-        <% end %>
-    <% end %>
+<br>
+<br>
+<% if current_user.id != request.original_url.split('/').last.to_i %>
+  <%= link_to "Post to #{@user.name}'s wall", new_post_path(:recipient_id => request.original_url.split('/').last)%>
+<% end %>
 
-    <br>
-    <br>
-
-    <h1>Post on <%= @user.name%>'s Wall </h1>
-
-    <form>
-    <input type = "text">
-    </form>
-
-    <br>
-    <br>
-         <% if user_signed_in? %>
-           <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
-           <%= link_to 'New post', new_post_path %>
-        <% end %>
-
-
-        <%= link_to 'Back', posts_path %>
+<br>
+<br>
+  <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
+  <%= link_to 'New post', new_post_path%>
+  <%= link_to 'Back', posts_path %>

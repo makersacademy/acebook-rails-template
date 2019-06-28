@@ -8,12 +8,13 @@
       <% post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-    </ul>
+      </ul>
   </div>
 <% end %>
 
 <div class="text-center">
   <%= form.text_area :content, id: :post_content %>
+  <%= form.hidden_field :recipient_id, value: params[:recipient_id] %>
   <br><br>
   <%= form.submit "Submit Post", class: 'btn btn-success' %>
 </div>

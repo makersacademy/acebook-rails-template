@@ -30,6 +30,8 @@
             </div>
             <br><br>
             <div class="col-sm-12" style="font-size:100%"><%= simple_format(post.content) %>&nbsp;</div>
+             <% @recipient_id = User.find(Post.last.recipient_id) %>
+            <div class="col-sm-12" style="font-size:100%"><%= @recipient_id.name %></div>
             <div class="col-sm-12"><%= post.created_at %></div>
             <br><br><br>
             <% if current_user.id == post.user_id %>
