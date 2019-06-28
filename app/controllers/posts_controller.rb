@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     def wall
       @posts = Post.all.order(created_at: :desc)
     end
-
+  # This is a test
   # POST /posts
   # POST /posts.json
   def create

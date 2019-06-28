@@ -1,40 +1,50 @@
-<p id="notice"><%= notice %></p>
-<%= link_to "Ace-Book by AmoebaBoyz", root_url, class: "navbar-brand" %>
-<%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
-<h1>Posts</h1>
+<!DOCTYPE html>
+<html lang="“en”" dir="“ltr”">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/style.css">
+    <meta charset="“utf-8”">
+    <title></title>
+  </head>
+  <body>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Content</th>
-      <th>Posted to</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h3 class="display-4">Your Newsfeed</h3>
+      </div>
+    </div>
 
-  <tbody>
+      <button type="button" class="btn btn-outline-success"><%= link_to 'New post', new_post_path %></button>
+    <br>
+    <br>
+
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to post.user.name, user_path(post.user_id)%></td>
-        <td><%= simple_format(post.content) %>&nbsp;<%= post.created_at %></td>
-        <td><% @recipient_id = User.find(Post.last.recipient_id) %>
-        <%= @recipient_id.name %></td>
-
-        <% if current_user.id == post.user_id %>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-        <% end %>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-1 d-flex align-items-center" align="center"><img style="width: 100%;" src="https://vignette.wikia.nocookie.net/powerpuff/images/d/d4/Amoeba_boys.png/revision/latest?cb=20150810212750" alt="ssss"></div>
+            <div class="col-sm-11 d-flex align-items-center">
+              <strong>
+                <td><%= link_to post.user.name, user_path(post.user_id) %></td>
+              </strong>
+            </div>
+            <br><br>
+            <div class="col-sm-12" style="font-size:100%"><%= simple_format(post.content) %>&nbsp;</div>
+             <% @recipient_id = User.find(Post.last.recipient_id) %>
+            <div class="col-sm-12" style="font-size:100%"><%= @recipient_id.name %></div>
+            <div class="col-sm-12"><%= post.created_at %></div>
+            <br><br><br>
+            <% if current_user.id == post.user_id %>
+              <div class="col-sm-6"></div>
+              <div class="col-sm-1"><%= link_to 'Show', post %></div>
+                <% if post.created_at + 10.minutes > Time.now %>
+                  <div class="col-sm-1"><%= link_to 'Edit', edit_post_path(post) %></div>
+                <% end %>
+              <div class="col-sm-1"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New post', new_post_path %>
-
-
-
-
+  </body>
+</html>
