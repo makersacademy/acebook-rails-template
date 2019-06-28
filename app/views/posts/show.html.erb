@@ -9,5 +9,13 @@
   <%= @post.user.name %>
 </p>
 
+<p>
+  <strong>Recipient:</strong>
+<% @recipient_id = User.find(Post.last.recipient_id) %>
+<%= @recipient_id.name %>
+</p>
+
+
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

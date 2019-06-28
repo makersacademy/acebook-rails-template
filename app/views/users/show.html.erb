@@ -2,7 +2,7 @@
 <br>
 <h3>Posts:</h3>
 <% @posts.each do |post| %>
-    <% if @user.id == post.user_id %>
+    <% if @user.id == post.recipient_id %>
     <%= simple_format(post.content) %>&nbsp;<%= post.created_at %>
     <% end %>
 <% end %>
@@ -18,3 +18,5 @@
   <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
   <%= link_to 'New post', new_post_path%>
   <%= link_to 'Back', posts_path %>
+
+

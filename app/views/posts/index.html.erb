@@ -8,6 +8,7 @@
     <tr>
       <th>User</th>
       <th>Content</th>
+      <th>Posted to</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,6 +18,9 @@
       <tr>
         <td><%= link_to post.user.name, user_path(post.user_id)%></td>
         <td><%= simple_format(post.content) %>&nbsp;<%= post.created_at %></td>
+        <td><% @recipient_id = User.find(Post.last.recipient_id) %>
+        <%= @recipient_id.name %></td>
+
         <% if current_user.id == post.user_id %>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
@@ -30,3 +34,7 @@
 <br>
 
 <%= link_to 'New post', new_post_path %>
+
+
+
+
