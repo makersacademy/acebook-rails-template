@@ -13,9 +13,10 @@
 <% end %>
 
 <div class="text-center">
+  <%= form.label :content %>
   <%= form.text_area :content, id: :post_content %>
   <%= form.hidden_field :recipient_id, value: params[:recipient_id] %>
   <br><br>
-  <%= form.submit "Submit Post", class: 'btn btn-success' %>
+  <%= form.submit "Create Post", class: 'btn btn-success' %>
 </div>
 <% end %>

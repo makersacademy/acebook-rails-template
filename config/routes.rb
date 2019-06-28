@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   # get 'users', to: 'views#show'
 
+  # namespace :user do
+  #   root :to => 'users#show'
+  # end
+
   root :to => 'home#index'
 
   get "/404", :to => "errors#not_found"

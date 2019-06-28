@@ -2,11 +2,53 @@
 <html lang="“en”" dir="“ltr”">
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+    <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/style.css">
     <meta charset="“utf-8”">
     <title></title>
   </head>
+  <body>
+<% if user_signed_in? %>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h3 class="display-4">Your Newsfeed</h3>
+      </div>
+    </div>
 
+      <button type="button" class="btn btn-outline-success"><%= link_to 'New post', new_post_path %></button>
+    <br>
+    <br>
+
+    <% @posts.each do |post| %>
+    <% if post.user_id == post.recipient_id %>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-1 d-flex align-items-center" align="center"><img style="width: 100%;" src="https://vignette.wikia.nocookie.net/powerpuff/images/d/d4/Amoeba_boys.png/revision/latest?cb=20150810212750" alt="ssss"></div>
+            <div class="col-sm-11 d-flex align-items-center">
+              <strong>
+                <td><%= link_to post.user.name, user_path(post.user_id) %></td>
+              </strong>
+            </div>
+            <br><br>
+            <div class="col-sm-12" style="font-size:100%"><%= simple_format(post.content) %>&nbsp;</div>
+
+            <div class="col-sm-12"><%= post.created_at %></div>
+            <br><br><br>
+            <% if current_user.id == post.user_id %>
+              <div class="col-sm-6"></div>
+              <div class="col-sm-1"><%= link_to 'Show', post %></div>
+                <% if post.created_at + 10.minutes > Time.now %>
+                  <div class="col-sm-1"><%= link_to 'Edit', edit_post_path(post) %></div>
+                <% end %>
+              <div class="col-sm-1"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% else %>
   <div class="jumbotron">
     <h1 class="display-4">Acebook by Amoeba Boyz</h1>
     <p class="lead">"I guess it's up to us to take care of business" - The Amoeba Boyz</p>
@@ -17,5 +59,9 @@
   </div>
   <ul class="nav navbar-nav navbar-right">
   </ul>
-</div>
-</div>
+  </div>
+  </div>
+  <% end %>
+  </body>
+</html>
+

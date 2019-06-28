@@ -11,9 +11,9 @@
 <div class="card">
     <div class="card-body">
       <div class="row">
-        <div class="col-sm-1 d-flex align-items-center" align="center"><img style="width: 100%;"src="https://vignette.wikia.nocookie.net/powerpuff/images/d/d4/Amoeba_boys.png/revision/latest?cb=20150810212750" alt="ssss"></div>
         <strong>Sender:</strong>
         <div class="col-sm-11 d-flex align-items-center" ><strong><td><%= @post.user.name %></td></strong></div>
+        <div class="col-sm-1 d-flex align-items-center" align="center"><img style="width: 100%;"src="https://vignette.wikia.nocookie.net/powerpuff/images/d/d4/Amoeba_boys.png/revision/latest?cb=20150810212750" alt="ssss"></div>
         <% @recipient_id = User.find(Post.last.recipient_id) %>
         <strong>Recipient:</strong>
         <div class="col-sm-11 d-flex align-items-center" ><strong><td><%= @recipient_id.name %></td></strong></div>

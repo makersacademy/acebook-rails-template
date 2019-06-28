@@ -19,6 +19,7 @@
     <br>
 
     <% @posts.each do |post| %>
+    <% if post.user_id == post.recipient_id %>
       <div class="card">
         <div class="card-body">
           <div class="row">
@@ -45,5 +46,6 @@
         </div>
       </div>
     <% end %>
+  <% end %>
   </body>
 </html>
