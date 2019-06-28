@@ -1,5 +1,4 @@
 require 'rails_helper'
-include ActiveSupport::Testing::TimeHelpers
 
 RSpec.feature "update function", type: :feature do
 
@@ -8,9 +7,10 @@ RSpec.feature "update function", type: :feature do
    click_link "New post"
    fill_in "Content", with: "Say hello to my little calves!"
    click_button "Create Post"
-   travel(597)
+   Timecop.freeze(Time.now.utc + 9.minutes)
    click_link "Back"
    expect(page).to have_content("Edit")
+   Timecop.return
  end
 
  scenario "A user cannot edit a post after 10 minutes" do
@@ -18,8 +18,9 @@ RSpec.feature "update function", type: :feature do
    click_link "New post"
    fill_in "Content", with: "Say hello to my little calves!"
    click_button "Create Post"
-   travel(700)
+   Timecop.freeze(Time.now.utc + 11.minutes)
    click_link "Back"
    expect(page).to_not have_content("Edit")
+   Timecop.return
  end
 end

@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 # devise gem install
 gem 'devise'
 
+# TimeCop gem install
+gem 'timecop'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'rubocop', require: false
