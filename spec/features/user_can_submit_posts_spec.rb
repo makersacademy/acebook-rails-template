@@ -22,7 +22,6 @@ RSpec.feature "Timeline", type: :feature do
     click_link('Lisa')
     fill_in 'post_message', with: 'Sugarcubes megafan alert!'
     click_button "Submit"
-    click_link('Lisa')
     expect(page).to have_content("Sugarcubes megafan alert!")
   end
 

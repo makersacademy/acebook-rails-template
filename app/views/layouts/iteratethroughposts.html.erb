@@ -20,7 +20,15 @@
     <% @posts.each do |post| %>
       <div class="box">
         <% user = User.find(post.user_id) %>
-        <p><strong><%= link_to(user.name, user_path(user)) %></strong></p>
+        <% wall = Wall.find(post.wall_id) %>
+        <% wall_owner = User.find(wall.user_id) %>
+
+
+        <% if user.name == wall_owner.name %>
+          <p><strong><%= link_to(user.name, user_path(user)) %></strong></p>
+        <% else %>
+          <p><strong><%= link_to(user.name, user_path(user)) %> --> <%= link_to(wall_owner.name, user_path(wall_owner)) %></strong></p>
+        <% end %>
         <p class="message"><%= simple_format(post.message) %></p>
         <p class="message_timestamp"><%= post.created_at.strftime("%Y-%m-%d %H:%M") %></p>
         <p class="message_buttons"><%= link_to 'Delete', post_path(post), method: :delete %>
