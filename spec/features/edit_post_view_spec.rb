@@ -9,7 +9,6 @@ RSpec.feature 'Edit Post', type: :feature do
   scenario 'Can edit a single post' do
     create_message
     expect(Post.all.length).to eq(1)
-    save_and_open_page
     click_link 'Edit'
     fill_in "Message", with: 'Hello, space universe!'
     click_button 'Submit'
