@@ -35,7 +35,9 @@
             <% if current_user.id == post.user_id %>
               <div class="col-sm-6"></div>
               <div class="col-sm-1"><%= link_to 'Show', post %></div>
-              <div class="col-sm-1"><%= link_to 'Edit', edit_post_path(post) %></div>
+                <% if post.created_at + 10.minutes > Time.now %>
+                  <div class="col-sm-1"><%= link_to 'Edit', edit_post_path(post) %></div>
+                <% end %>
               <div class="col-sm-1"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
             <% end %>
           </div>
