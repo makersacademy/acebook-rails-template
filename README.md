@@ -2,12 +2,12 @@
 
 REQUIRED INSTRUCTIONS:
 
-1. Fork this repository to `acebook-teamname` and customize
+1. Fork this repository to `acebook-livewire` and customize
 the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+2. The card wall is here: [Trello - Acebook Livewire](https://trello.com/b/5gfCOsG0/acebook-livewire)
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -24,3 +24,7 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+### Run tests
+
+In the command line, run `rspec` in order to see test passing and test coverage.
+Run `rubocop` to see any styling offences. 
