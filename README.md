@@ -25,7 +25,9 @@ First, clone this repository. Then:
 ### Code styling tests
 
 - Run `rubocop` in the command line to see any styling offences.
+### Code quality tests
 
+- Run `rubycritic` in the command line to see any code quality issues such as smells and high complexity lines. This report will open in the browser. To alternatively see the results in the console, run `rubycritic - f console` instead
 ## Technology
 
 - [Heroku](https://www.heroku.com/) - a cloud platform service
