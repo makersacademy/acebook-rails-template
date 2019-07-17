@@ -86,3 +86,5 @@ in scripts, add:
 **add tasks to Procfile for Heroku to execute:**
 
 `worker: bundle exec rake my:rake_task`
+
+(used with release: because our app is running on a single dyno so the web process might block any worker processes)
