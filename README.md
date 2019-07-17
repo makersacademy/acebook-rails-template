@@ -70,7 +70,7 @@ _Livewire_
 - Ruth Baker
 - Syed A. Shah
 
-## Liscence
+## Licence
 
 This project is licensed under the MIT License
 
