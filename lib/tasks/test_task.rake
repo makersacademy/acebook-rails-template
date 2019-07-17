@@ -4,4 +4,8 @@ namespace :test_task do
   task :only_run_when_told do
     puts "TRAVIS ONLY RUNS THIS TASK WHEN TOLD"
   end
+
+  task :do_not_run do
+    puts "TRAVIS SHOULD NOT EXECUTE THIS TASK"
+  end
 end
