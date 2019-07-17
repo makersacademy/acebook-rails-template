@@ -8,4 +8,10 @@ namespace :test_task do
   task :do_not_run do
     puts "TRAVIS SHOULD NOT EXECUTE THIS TASK"
   end
+
+  task :heroku_rake_test do
+    puts "THIS TASK SHOULD ONLY EXECUTE IN HEROKU"
+    puts "IF YOU SEE THIS MESSAGE ANYWHERE OUTSIDE HEROKU LOGS"
+    puts "GET IN TOUCH WITH YOUR SITE ADMIN"
+  end
 end
