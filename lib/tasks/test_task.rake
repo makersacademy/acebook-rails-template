@@ -4,4 +4,3 @@ namespace :test_task do
     var add = ["+", "-", ""].sample
     p "Rake gives you a #{score} #{add} for your build"
   end
-
