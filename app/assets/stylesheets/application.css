@@ -14,12 +14,74 @@
  *= require_self
  */
 
+ /* FONT STACK*/
+
+ @font-face {
+  font-family: 'Russo One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/russoone/v8/Z9XUDmZRWg6M1LvRYsHOz8mJvLuL9A.woff2) format('woff2');
+}
+
+ @font-face {
+  font-family: 'B612';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/b612/v4/3JnySDDxiSz36j6yGRqjQX0.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'B612';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:url(https://fonts.gstatic.com/s/b612/v4/3Jn9SDDxiSz34oWXDDeBTFcHXuA.woff2) format('woff2');
+}
+
+ @font-face {
+  font-family: 'B612';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/b612/v4/3Jn8SDDxiSz36juCGxCkY38NVg.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'B612';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/b612/v4/3Jn_SDDxiSz36juKoDWxTl0AfOJL0A.woff2) format('woff2');
+}
+
+
 /* COLOR PALETTE*/
  :root {
-
+   --smoky-black: #070707;
+   --gunmetal: #233541;
+   --steel: #465362;
+   --nickel: #727072;
+   --mint: #96BBBB;
+   --white-mint: #F1FFFA;
+   --coral: #FF6978;
+   --brick: #D14754;
  }
 
 body {
-
+  font-family: 'B612';
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 0.5rem;
+  background-color: var(--white-mint);
 }
 
+h1 {
+  font-family: 'Russo One';
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  text-align: center;
+  color: var(--gunmetal);
+}
