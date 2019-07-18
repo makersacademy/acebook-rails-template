@@ -82,7 +82,7 @@ h1 {
   font-family: 'Russo One';
   font-size: 5rem;
   font-weight: 400;
-  line-height: 1.5rem;
+  line-height: 3rem;
   text-align: center;
   color: var(--gunmetal);
 }
@@ -111,30 +111,35 @@ h1 {
 }
 
 .post {
-  /* align-self: flex-start;
-  flex-basis: content; */
   flex: 0 1 auto;
   width: 400px;
   height: fit-content;
   margin: 5px auto;
   font-size: 1.2rem;
   color: var(--smoky-black);
-  border: 1px solid var(--gunmetal);
+  border: 1px solid var(--mint);
   border-radius: 5px;
   padding: 5px 15px;
   line-height: 1.5rem;
+}
+
+.post .date {
+  text-align: right;
+  align-self: flex-end;
 }
 
 .date {
   color: var(--nickel);
   font-size: 0.8rem;
   line-height: 0.5rem;
+  text-align: right;
 }
 
 .new-post {
   padding: 20px 20px;
   position: absolute;
-  right: 10%;
+  right: 150px;
+  top: 89px;
   margin: auto;
   font-family: 'Russo One';
   font-size: 1.8rem;
