@@ -9,5 +9,6 @@ RSpec.feature "User signs up", type: :feature do
     fill_in "Password confirmation", with: "password"
     click_button "Sign up"
     expect(page).to have_current_path('/posts')
+    expect(page).to have_content('Welcome! You have signed up successfully.')
   end
 end
