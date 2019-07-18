@@ -122,13 +122,13 @@ h1 {
   border: 1px solid var(--gunmetal);
   border-radius: 5px;
   padding: 5px 15px;
-  line-height: 2rem;
+  line-height: 1.5rem;
 }
 
 .date {
   color: var(--nickel);
   font-size: 0.8rem;
-  line-height: 1rem;
+  line-height: 0.5rem;
 }
 
 .new-post {
@@ -146,4 +146,27 @@ h1 {
 .new-post:visited, .new-post:active {
   text-decoration: none;
   color: var(--coral);
+}
+
+.new_post {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  margin: auto;
+  text-align: center;
+  background-color: var(--mint);
+  width: 400px;
+  padding: 30px 30px;
+  border-radius: 12px;
+  font-family: 'Russo One';
+  font-size: 1.4rem;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  width: 150px;
+  height: 100px;
 }

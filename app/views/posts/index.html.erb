@@ -3,9 +3,11 @@
 New post</span>
 
 <% end %>
+<div class="postbox">
 <% @posts.each do |post| %>
 
-  <p class="post"><%= simple_format(post.message) %> <br><span class="date">updated on <%= post.updated_at.strftime("%d-%m-%Y") %></span></p>
+  <div class="post"><%= simple_format(post.message) %> <br><span class="date">updated on <%= post.updated_at.strftime("%d-%m-%Y") %></span></div>
 
 <% end %>
+</div>
 
