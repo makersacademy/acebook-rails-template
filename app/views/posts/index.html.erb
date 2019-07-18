@@ -4,6 +4,8 @@ New post</span>
 
 <% end %>
 <% @posts.each do |post| %>
-  <p class="post"><%= post.message %> <br><span class="date">updated on <%=post.updated_at.strftime("%d-%m-%Y")%></span></p>
+
+  <p class="post"><%= simple_format(post.message) %> <br><span class="date">updated on <%= post.updated_at.strftime("%d-%m-%Y") %></span></p>
+
 <% end %>
 
