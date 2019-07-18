@@ -1,7 +1,9 @@
+<%= link_to new_post_path do %>
+  <span class="new-post">
+New post</span>
+
+<% end %>
 <% @posts.each do |post| %>
-  <p><%= post.message %> updated on <%=post.updated_at.strftime("%d-%m-%Y")%></p>
+  <p class="post"><%= post.message %> <br><span class="date">updated on <%=post.updated_at.strftime("%d-%m-%Y")%></span></p>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>

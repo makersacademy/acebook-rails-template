@@ -74,6 +74,7 @@ body {
   font-style: normal;
   font-size: 1rem;
   line-height: 0.5rem;
+  margin: 0;
   background-color: var(--white-mint);
 }
 
@@ -84,4 +85,65 @@ h1 {
   line-height: 1.5rem;
   text-align: center;
   color: var(--gunmetal);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.postsbox {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--mint);
+  width: 400px;
+  padding: 30px 30px;
+  border-radius: 12px;
+  font-family: 'Russo One';
+  font-size: 1.4rem;
+  color: var(--smoky-black);
+}
+
+.post {
+  /* align-self: flex-start;
+  flex-basis: content; */
+  flex: 0 1 auto;
+  width: 400px;
+  height: fit-content;
+  margin: 5px auto;
+  font-size: 1.2rem;
+  color: var(--smoky-black);
+  border: 1px solid var(--gunmetal);
+  border-radius: 5px;
+  padding: 5px 15px;
+  line-height: 2rem;
+}
+
+.date {
+  color: var(--nickel);
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+
+.new-post {
+  padding: 20px 20px;
+  position: absolute;
+  right: 10%;
+  margin: auto;
+  font-family: 'Russo One';
+  font-size: 1.8rem;
+  color: var(--coral);
+  text-decoration: none;
+  line-height: 1rem;
+}
+
+.new-post:visited, .new-post:active {
+  text-decoration: none;
+  color: var(--coral);
 }
