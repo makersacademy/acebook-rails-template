@@ -10,7 +10,14 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+
+    if @post.save
+      redirect_to @post
+    else
+      render 'new'
+    end
+
+
   end
 
   def index
