@@ -175,3 +175,27 @@ textarea {
   width: 150px;
   height: 100px;
 }
+
+.lit-gif {
+  width:146px;
+  height:106px;
+  position: absolute;
+  top: 180px;
+  left: 30px;
+}
+
+.unicorn {
+  width:146px;
+  height:106px;
+  position: absolute;
+  top: 180px;
+  right: 75px;
+}
+
+.duck {
+  width: 60px;
+  height: 95px;
+  position: absolute;
+  top: 500px;
+  right: 600px;
+}
