@@ -4,11 +4,10 @@ class SessionsController < ApplicationController
 
   def create
 
-    puts 'test LONG LINE OF DASHES ///////////////////////////////////////////////////////////'
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_url, notice: "Logged in!"
+      redirect_to posts_url, notice: "Logged in!"
     else
       flash.now[:alert] = "Email or password is invalid"
       render "new"
