@@ -4,11 +4,14 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+                          
+  <h1>Ace Book</h1>
+  
     <p class="navbar-text pull-right">
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong>.
@@ -21,6 +24,8 @@
     </p>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+  
     <%= yield %>
+
   </body>
 </html>

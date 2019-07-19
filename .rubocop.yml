@@ -203,6 +203,8 @@ BlockDelimiters:
   Enabled: false
 BracesAroundHashParameters:
   Enabled: false
+Bundler/OrderedGems:
+  Enabled: false
 CaseEquality:
   Enabled: false
 CaseIndentation:

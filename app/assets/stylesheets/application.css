@@ -13,3 +13,165 @@
  *= require_tree .
  *= require_self
  */
+
+ /* FONT STACK*/
+
+ @font-face {
+  font-family: 'Russo One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/russoone/v8/Z9XUDmZRWg6M1LvRYsHOz8mJvLuL9A.woff2) format('woff2');
+}
+
+ @font-face {
+  font-family: 'B612';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/b612/v4/3JnySDDxiSz36j6yGRqjQX0.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'B612';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:url(https://fonts.gstatic.com/s/b612/v4/3Jn9SDDxiSz34oWXDDeBTFcHXuA.woff2) format('woff2');
+}
+
+ @font-face {
+  font-family: 'B612';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/b612/v4/3Jn8SDDxiSz36juCGxCkY38NVg.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'B612';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/b612/v4/3Jn_SDDxiSz36juKoDWxTl0AfOJL0A.woff2) format('woff2');
+}
+
+
+/* COLOR PALETTE*/
+ :root {
+   --smoky-black: #070707;
+   --gunmetal: #233541;
+   --steel: #465362;
+   --nickel: #727072;
+   --mint: #96BBBB;
+   --white-mint: #F1FFFA;
+   --coral: #FF6978;
+   --brick: #D14754;
+ }
+
+body {
+  font-family: 'B612';
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 0.5rem;
+  margin: 0;
+  background-color: var(--white-mint);
+}
+
+h1 {
+  font-family: 'Russo One';
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  text-align: center;
+  color: var(--gunmetal);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.postsbox {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--mint);
+  width: 400px;
+  padding: 30px 30px;
+  border-radius: 12px;
+  font-family: 'Russo One';
+  font-size: 1.4rem;
+  color: var(--smoky-black);
+}
+
+.post {
+  flex: 0 1 auto;
+  width: 400px;
+  height: fit-content;
+  margin: 5px auto;
+  font-size: 1.2rem;
+  color: var(--smoky-black);
+  border: 1px solid var(--mint);
+  border-radius: 5px;
+  padding: 5px 15px;
+  line-height: 1.5rem;
+}
+
+.post .date {
+  text-align: right;
+  align-self: flex-end;
+}
+
+.date {
+  color: var(--nickel);
+  font-size: 0.8rem;
+  line-height: 0.5rem;
+  text-align: right;
+}
+
+.new-post {
+  padding: 20px 20px;
+  position: absolute;
+  right: 150px;
+  top: 89px;
+  margin: auto;
+  font-family: 'Russo One';
+  font-size: 1.8rem;
+  color: var(--coral);
+  text-decoration: none;
+  line-height: 1rem;
+}
+
+.new-post:visited, .new-post:active {
+  text-decoration: none;
+  color: var(--coral);
+}
+
+.new_post {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  margin: auto;
+  text-align: center;
+  background-color: var(--mint);
+  width: 400px;
+  padding: 30px 30px;
+  border-radius: 12px;
+  font-family: 'Russo One';
+  font-size: 1.4rem;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  width: 150px;
+  height: 100px;
+}
