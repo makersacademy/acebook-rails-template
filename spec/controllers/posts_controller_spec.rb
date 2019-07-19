@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+  # before(:each) do
+  #   visit "/"
+  #   click_link "Sign up"
+  #   fill_in "Email", with: "tesymcemail@email.com"
+  #   fill_in "Password", with: "password"
+  #   fill_in "Password confirmation", with: "password"
+  #   click_button "Sign up"
+  # end
+
   describe "GET /new " do
     it "responds with 200" do
       get :new
