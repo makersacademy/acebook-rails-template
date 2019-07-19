@@ -3,6 +3,12 @@ require "date"
 
 RSpec.feature "Posts with dates in order", type: :feature do
   scenario "Can view posts with dates, in order" do
+    visit "/"
+    click_link "Sign up"
+    fill_in "Email", with: "tesymcemail@email.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Sign up"
     date = DateTime.now
     date = date.strftime("%d-%m-%Y")
     visit "/posts"
