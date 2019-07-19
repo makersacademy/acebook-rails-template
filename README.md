@@ -56,49 +56,6 @@ Visit https://immense-forest-38148.herokuapp.com/
 
 ---
 
-
-## Installation instructions for local development	
-
-### To set up the database
-
-Connect to `psql` and create pgapp_development and pgapp_test databases:
-
-```
-CREATE DATABASE pgapp_development;
-CREATE DATABASE pgapp_test;
-```
-
-### How to deploy the app	
-
-Fork/clone this repository using `git clone https://github.com/petraartep/acebook-rails-team-squirrel`
-
-Run in the terminal from the root directory
-
-```
-bundle install
-rails db:create
-rails db:migrate
-```
-
-Run the tests
-
-```
-rspec
-```
-
-
-Open your browser and navigate http://localhost:3000/
-```
-rails server 
-```
-
-## On Heroku
-
-Visit https://immense-forest-38148.herokuapp.com/
-
-
----
-
 ## User Stories
 
 ```
