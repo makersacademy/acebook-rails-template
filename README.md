@@ -1,6 +1,7 @@
 # AceBook
 
-[![Build Status](https://travis-ci.com/petraartep/acebook-rails-team-squirrel.svg?branch=newmaster)](https://travis-ci.com/petraartep/acebook-rails-team-squirrel)
+[![Build Status](https://travis-ci.com/petraartep/acebook-rails-team-squirrel.svg?branch=newmaster)](https://travis-ci.com/petraartep/acebook-rails-team-squirrel) [![Maintainability](https://api.codeclimate.com/v1/badges/7099a0f9513bc4f965f0/maintainability)](https://codeclimate.com/github/petraartep/acebook-rails-team-squirrel/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/7099a0f9513bc4f965f0/test_coverage)](https://codeclimate.com/github/petraartep/acebook-rails-team-squirrel/test_coverage)
+
 
 
 ## Team
