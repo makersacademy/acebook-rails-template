@@ -1,5 +1,12 @@
 class PostsController < ApplicationController
-
+  def current_user
+    if session[:user_id]
+      @current_user ||= User.find(session[:user_id])
+    else
+      @current_user = nil
+    end
+  end
+  
   def index
     @posts = Post.all.order('created_at DESC')
   end
@@ -42,7 +49,7 @@ class PostsController < ApplicationController
 
     redirect_to posts_path
   end
-  
+
   private
 
   def post_params
