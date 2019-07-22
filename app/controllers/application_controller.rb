@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
       redirect_to '/'
     end
   end
+
+  def after_sign_in_path_for(_resource)
+    '/posts'
+  end
+
 end
