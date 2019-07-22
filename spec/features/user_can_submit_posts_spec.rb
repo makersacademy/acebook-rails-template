@@ -32,7 +32,7 @@ RSpec.feature "New post", type: :feature do
     click_link "New post"
     fill_in "post[message]", with: "Post 1"
     click_button "Submit"
-    click_link "Back"
+    # click_link "Back"
     expect(page).to have_content("Post 1")
   end
 
@@ -41,7 +41,7 @@ RSpec.feature "New post", type: :feature do
     click_link "New post"
     fill_in "post[message]", with: "Post 1"
     click_button "Submit"
-    click_link "Back"
+
     click_link "Edit"
     fill_in "post[message]", with: "Post 2"
     click_button "Submit"
