@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-   skip_before_action :require_signup
+  skip_before_action :require_signup
 
   def new
   end

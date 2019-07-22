@@ -2,9 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_action :require_signup
 
-
-
-
   def current_user
     if session[:user_id]
       @current_user ||= User.find(session[:user_id])
@@ -12,6 +9,7 @@ class UsersController < ApplicationController
       @current_user = nil
     end
   end
+
   # GET /users
   # GET /users.json
   def index

@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
 private
 
   def require_signup
-    unless current_user
-      redirect_to signup_url
+    return false if current_user
+
+    redirect_to signup_url
     end
   end
-end
