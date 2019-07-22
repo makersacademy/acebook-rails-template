@@ -1,13 +1,9 @@
 require 'rails_helper'
+require 'sign_up_helper'
 
 RSpec.feature "Edit posts", type: :feature do
   scenario "Edit button only appears on user's own posts" do
-    visit "/"
-    click_link "Sign up"
-    fill_in "Email", with: "testemail@email.com"
-    fill_in "Password", with: "password"
-    fill_in "Password confirmation", with: "password"
-    click_button "Sign up"
+    sign_up
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
@@ -27,4 +23,6 @@ RSpec.feature "Edit posts", type: :feature do
     expect(first_post).not_to have_css('.edit')
     expect(second_post).to have_css('.edit')
   end
+
+
 end
