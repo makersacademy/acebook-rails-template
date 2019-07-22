@@ -6,8 +6,8 @@ class PostsController < ApplicationController
       @current_user = nil
     end
   end
-  
-  def index
+
+  def index    
     @posts = Post.all.order('created_at DESC')
   end
 
