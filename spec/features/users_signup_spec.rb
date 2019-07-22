@@ -1,8 +1,4 @@
 
-# passwords don't match
-# user successfully updated if new passwords match
-# email has already been taken if user tries to sign up again
-
 require 'rails_helper'
 
 RSpec.feature "Sign up", type: :feature do
@@ -31,5 +27,21 @@ RSpec.feature "Sign up", type: :feature do
     fill_in "user_password_confirmation", with: "notpassword"
     click_button "Create User"
     expect(page).to have_content("Password confirmation doesn't match Password")
+  end
+
+  scenario "can raise an error if email has been taken" do
+    visit "/"
+    fill_in "user_email", with: "email@email.com"
+    fill_in "user_password", with: "password1"
+    fill_in "user_password_confirmation", with: "password1"
+    click_button "Create User"
+    expect(page).to have_content("User was successfully created.")
+
+    visit "/"
+    fill_in "user_email", with: "email@email.com"
+    fill_in "user_password", with: "password1"
+    fill_in "user_password_confirmation", with: "password1"
+    click_button "Create User"
+    expect(page).to have_content("Email has already been taken")
   end
 end
