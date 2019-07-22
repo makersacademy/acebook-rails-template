@@ -10,11 +10,11 @@ RSpec.feature "User Sign In Redirection", type: :feature do
     fill_in "Password", with: "password"
     click_button "Log in"
     expect(page).to have_current_path '/posts'
-    end
-
-    scenario "User gets redirected to index when attempt to visit another URL when not logged in", type: :feature do
-      visit '/'
-      visit '/posts'
-      expect(page).to have_current_path '/'
-    end
   end
+
+  scenario "User gets redirected to index when attempt to visit another URL when not logged in", type: :feature do
+    visit '/'
+    visit '/posts'
+    expect(page).to have_current_path '/'
+  end
+end
