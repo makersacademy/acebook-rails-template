@@ -12,4 +12,15 @@ RSpec.feature "Users can delete their own posts", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Delete")
   end
+
+  scenario "user can delete their posts" do
+    sign_up
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "This is a message that can be removed"
+    click_button "Submit"
+    expect(page).to have_content("This is a message that can be removed")
+    click_link "Delete"
+    expect(page).not_to have_content("This is a message that can be removed")
+  end
 end
