@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/petraartep/acebook-rails-team-squirrel.svg?branch=newmaster)](https://travis-ci.com/petraartep/acebook-rails-team-squirrel) [![Maintainability](https://api.codeclimate.com/v1/badges/7099a0f9513bc4f965f0/maintainability)](https://codeclimate.com/github/petraartep/acebook-rails-team-squirrel/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/7099a0f9513bc4f965f0/test_coverage)](https://codeclimate.com/github/petraartep/acebook-rails-team-squirrel/test_coverage) [![GitHub issues](https://img.shields.io/github/issues/petraartep/acebook-rails-team-squirrel.svg)](https://github.com/petraartep/acebook-rails-team-squirrel/issues) [![Coverage Status](https://coveralls.io/repos/github/petraartep/acebook-rails-team-squirrel/badge.svg?branch=newmaster)](https://coveralls.io/github/petraartep/acebook-rails-team-squirrel?branch=newmaster)
 
 
-This is Team Squirrel's Acebook project, a Facebook style clone built using Ruby-on-Rails. A user can signup, write, update, and delete posts, and view posts from all users. 
+This is Team Squirrel's Acebook project, a Facebook style clone built using Ruby-on-Rails. A user can signup, write, update, and delete posts, and view posts from all users.
 
 
 ## Team
@@ -14,18 +14,19 @@ This is Team Squirrel's Acebook project, a Facebook style clone built using Ruby
 
 ---
 
-## Installation instructions for local development	
+## Installation instructions for local development
 
 ### To set up the database
 
 Connect to `psql` and create pgapp_development and pgapp_test databases:
 
+# Jake and Joe think the commands below double up db:create
 ```
 CREATE DATABASE pgapp_development;
 CREATE DATABASE pgapp_test;
 ```
 
-### How to deploy the app	
+### How to deploy the app
 
 Fork/clone this repository using `git clone https://github.com/petraartep/acebook-rails-team-squirrel`
 
@@ -46,7 +47,7 @@ rspec
 
 Open your browser and navigate http://localhost:3000/
 ```
-rails server 
+rails server
 ```
 
 ## On Heroku
@@ -106,6 +107,6 @@ I want to see an error when I try.
 https://github.com/petraartep/acebook-rails-team-squirrel/wiki
 
 
-## Contribution to our project	
+## Contribution to our project
 
 If you'd like to contribute to our project, fork the repo and create a new pull request.
