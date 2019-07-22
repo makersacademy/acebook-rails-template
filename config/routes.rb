@@ -5,9 +5,8 @@ Rails.application.routes.draw do
 
   root 'users#new'
 
-
   resources :users 
-    resources :posts
+  resources :posts
 
   resources :sessions, only: [:new, :create]
   get 'signup', to: 'users#new', as: 'signup'

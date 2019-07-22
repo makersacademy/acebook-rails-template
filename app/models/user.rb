@@ -7,10 +7,10 @@ class User < ApplicationRecord
 
   validates :password, :presence => true,
                       :confirmation => true,
-                      :length => {:within => 6..10},
+                      :length => { :within => 6..10 },
                       :on => :create
- validates :password, :confirmation => true,
-                      :length => {:within => 6..10},
-                      :allow_blank => true,
-                      :on => :update
+  validates :password, :confirmation => true,
+                       :length => { :within => 6..10 },
+                       :allow_blank => true,
+                       :on => :update
 end
