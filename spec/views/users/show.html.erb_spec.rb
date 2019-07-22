@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "users/show", type: :view do
   before(:each) do
     @user = assign(:user, User.create!(
-      :email => "Email",
-      :password => ""
+      :email => "test3@test3.com",
+      :password => "testopen"
     ))
   end
 
