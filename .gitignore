@@ -24,3 +24,5 @@
 .byebug_history
 coverage
 .coveralls.yml
+.DS_Store
+config/.DS_Store
