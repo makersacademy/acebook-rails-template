@@ -1,4 +1,5 @@
 <section class="section">
+<%= link_to 'Logout', logout_path %>
 <div class="container">
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
