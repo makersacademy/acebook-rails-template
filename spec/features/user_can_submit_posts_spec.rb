@@ -2,8 +2,13 @@ require 'rails_helper'
 
 RSpec.feature "New post", type: :feature do
   scenario "Can submit posts and view them" do
-    visit "/posts"
-    click_link "New post"
+    visit"/login"
+    fill_in :email, with: "me@me.com"
+    fill_in :password, with: "123456"
+    click_button "login"
+    current_path.should == posts_path
+    page.should have_selector('div#container')
+    click_on "New post"
     fill_in "post[message]", with: "Hello, world!"
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
