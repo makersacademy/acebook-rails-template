@@ -156,7 +156,7 @@ h1 {
   color: var(--coral);
 }
 
-.new_post {
+.new_post, .edit_post {
   display: inline-flex;
   flex-direction: row;
   align-items: center;

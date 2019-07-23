@@ -21,9 +21,9 @@ RSpec.feature "Edit posts", type: :feature do
 
     first_post = page.find('div.post', text: 'Hello, world')
     second_post = page.find('div.post', text: 'Hi, earth')
-    
-    expect(first_post).not_to have_css('.edit')
-    expect(second_post).to have_css('.edit')
+
+    expect(first_post).not_to have_button('Edit')
+    expect(second_post).to have_button('Edit')
   end
 
   scenario "User can edit post" do
@@ -34,11 +34,11 @@ RSpec.feature "Edit posts", type: :feature do
     click_button "Submit"
     find_button("Edit").click
 
-    expect(page).to have_selector("textarea[value='Hi, earth']")
+    expect(page).to have_content("Hi, earth!")
 
-    find("textarea.edit_post").set("Goodbye, planet!")
+    fill_in "post[message]", with: "Goodbye, planet!"
     click_button "Submit"
-
+    expect(page).to have_current_path('/posts')
     expect(page).not_to have_content("Hi, earth!")
     expect(page).to have_content("Goodbye, planet!")
   end

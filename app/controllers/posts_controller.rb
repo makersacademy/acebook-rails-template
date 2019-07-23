@@ -5,13 +5,24 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   def create
-    @post = current_user.post.create(post_params)
+    @post = current_user.posts.create(post_params)
     redirect_to posts_url
   end
 
   def index
     @posts = Post.all.order(updated_at: :desc)
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to(posts_url)
+    end
   end
 
   private

@@ -1,0 +1,14 @@
+<%= image_tag "flames.gif", alt: "lit message", class: "lit-gif" %>
+
+<%= image_tag "unicorn.gif", alt: "horse", class: "unicorn" %>
+<div class="main-container">
+  <div class="edit_post">
+    <%= form_for @post, remote: false do |form| %>
+      <%= form.label :message %>
+      <%= form.text_area :message %>
+
+      <%= form.submit "Submit" %>
+    <% end %>
+  </div>
+</div>
+<%= image_tag "duck.gif", alt: "duck", class: "duck" %>
