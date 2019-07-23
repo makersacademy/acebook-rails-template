@@ -7,7 +7,7 @@ RSpec.feature "User can only enter password between 6 - 10 characters inclusive"
     fill_in "Email", with: "tesymcemail@email.com"
     fill_in "Password", with: "pass"
     fill_in "Password confirmation", with: "pass"
-    click_button "Sign up"
+    click_button "Submit"
     expect(page).to have_content("Password is too short (minimum is 6 characters)")
   end
 
@@ -17,7 +17,7 @@ RSpec.feature "User can only enter password between 6 - 10 characters inclusive"
     fill_in "Email", with: "tesymcemail@email.com"
     fill_in "Password", with: "passwordwor"
     fill_in "Password confirmation", with: "passwordwor"
-    click_button "Sign up"
+    click_button "Submit"
     expect(page).to have_content("Password is too long (maximum is 10 characters)")
   end
 end

@@ -4,7 +4,7 @@ def seed_post
   fill_in "Email", with: "giraffe@email.com"
   fill_in "Password", with: "password"
   fill_in "Password confirmation", with: "password"
-  click_button "Sign up"
+  click_button "Submit"
   visit "/posts"
   click_link "New post"
   fill_in "Message", with: "Hello, giraffe!"

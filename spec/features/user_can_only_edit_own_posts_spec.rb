@@ -13,7 +13,7 @@ RSpec.feature "Edit posts", type: :feature do
     fill_in "Email", with: "differentemail@email.com"
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
-    click_button "Sign up"
+    click_button "Submit"
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hi, earth!"
