@@ -5,8 +5,12 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   def create
-    @post = current_user.post.create(post_params)
+    @post = current_user.posts.create(post_params)
     redirect_to posts_url
   end
 
@@ -19,6 +23,11 @@ class PostsController < ApplicationController
     @post.destroy
 
     redirect_to posts_url
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    redirect_to(posts_url) if @post.update(post_params)
   end
 
   private
