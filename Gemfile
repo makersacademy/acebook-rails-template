@@ -31,6 +31,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Devise to create code and routes required to create accounts, log in, log out etc.
 gem 'devise'
 
+# Commontator gem for comments and its associated gems
+gem 'commontator'
+gem 'jquery-rails'
+gem 'sassc-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
