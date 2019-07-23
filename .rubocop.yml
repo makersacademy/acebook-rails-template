@@ -53,6 +53,10 @@ Metrics/BlockLength:
     - 'spec/**/*'
     - 'test/**/*'
 
+Metrics/MethodLength:
+  Exclude:
+    - 'spec/seed_post_helper.rb'
+
 # Code Style
 # ==========
 #
