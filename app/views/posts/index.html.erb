@@ -9,12 +9,22 @@ New post</span>
 
   <div class="post">
     <%= simple_format(post.message) %> <br>
-    <span class="date">updated on <%= post.updated_at.strftime("%d-%m-%Y") %> </span>
-    <% if current_user.id == post.user_id %>
-      <button type="submit" name="button" class="edit">Edit</button>
+
+    <span class="date">
+       <% if post.created_at == post.updated_at %>
+          created on <%= post.created_at.strftime("%d-%m-%Y") %>
+       <% else %>
+          updated on <%= post.updated_at.strftime("%d-%m-%Y") %>
+       <% end %>
+
+
+      <% if current_user.id == post.user_id %>
+         <button type="submit" name="button" class="edit">Edit</button>
       <%= link_to 'Delete', post_url(post),
-          method: :delete %>
-    <% end %>
+         method: :delete %>
+      <% end %>
+    </span>
+
   </div>
 
 <% end %>

@@ -13,6 +13,6 @@ RSpec.feature "Posts with dates in reverse order", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Message 2"
     click_button "Submit"
-    expect(page).to have_content("Message 2 updated on #{date}\nMessage 1 updated on #{date}")
+    expect(page).to have_content("Message 2 created on #{date}\nMessage 1 created on #{date}")
   end
 end
