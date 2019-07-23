@@ -18,9 +18,11 @@ class PostsController < ApplicationController
     @posts = Post.all.order(updated_at: :desc)
   end
 
-  def update
+  def destroy
     @post = Post.find(params[:id])
-    redirect_to(posts_url) if @post.update(post_params)
+    @post.destroy
+
+    redirect_to posts_url
   end
 
   private
