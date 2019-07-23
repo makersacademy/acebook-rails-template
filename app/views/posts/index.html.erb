@@ -10,7 +10,9 @@ New post</span>
   <div class="post"><%= simple_format(post.message) %><br>
     <span class="date">updated on <%= post.updated_at.strftime("%d-%m-%Y") %></span>
     <% if current_user.id == post.user_id %>
-      <%= button_to 'Edit', edit_post_path(post), method: 'get' %>
+      <% if DateTime.now.to_i - post.created_at.to_i < 600 %>
+        <%= button_to 'Edit', edit_post_path(post), method: 'get' %>
+      <% end %>
     <% end %>
   </div>
 
