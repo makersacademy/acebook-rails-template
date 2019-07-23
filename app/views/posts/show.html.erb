@@ -1,0 +1,12 @@
+<%= image_tag "flames.gif", alt: "lit message", class: "lit-gif" %>
+
+<%= image_tag "unicorn.gif", alt: "horse", class: "unicorn" %>
+<div class="main-container">
+  <div class="show_post">
+      <%= @post.text %>
+      <%= @post.created_at %>
+    <% end %>
+      <%= commontator_thread(post)%>
+  </div>
+</div>
+<%= image_tag "duck.gif", alt: "duck", class: "duck" %>

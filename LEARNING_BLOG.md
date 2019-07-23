@@ -88,3 +88,7 @@ in scripts, add:
 `worker: bundle exec rake my:rake_task`
 
 (used with release: because our app is running on a single dyno so the web process might block any worker processes)
+
+## Adding comments
+
+Added [this gem](https://github.com/lml/commontator) going by [this tutorial](https://melvinchng.github.io/rails/AddCommentFeatureToAnyModel.html#12-install-and-configure-commontator-gem)
