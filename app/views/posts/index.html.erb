@@ -7,7 +7,16 @@ New post</span>
 <div class="postbox">
 <% @posts.each do |post| %>
 
-  <div class="post"><%= simple_format(post.message) %> <br><span class="date">created on <%= post.created_at.strftime("%d-%m-%Y") %></span></div>
+  <div class="post">
+    <%= simple_format(post.message) %> <br>
+    <span class="date">
+       <% if post.created_at == post.updated_at %>
+          created on <%= post.created_at.strftime("%d-%m-%Y") %>
+       <% else %>
+          updated on <%= post.updated_at.strftime("%d-%m-%Y") %>
+       <% end %>
+    </span>
+  </div>
 
 <% end %>
 </div>
