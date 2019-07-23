@@ -5,8 +5,10 @@ class ApplicationController < ActionController::Base
 private
 
   def require_signup
+    puts 'there'
     return false if current_user
 
+puts 'here'
     redirect_to signup_url
     end
   end

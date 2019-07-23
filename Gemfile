@@ -7,6 +7,7 @@ end
 
 gem 'bcrypt', '~> 3.1.7'
 # Use ActiveModel has_secure_password
+gem 'database_cleaner'
 gem 'rake', '~> 12.3', '>= 12.3.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -41,6 +42,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
+  gem 'pry'
 end
 
 group :development do

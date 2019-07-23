@@ -3,7 +3,7 @@ require './spec/features/user_spec_helper'
 RSpec.feature "New post", type: :feature do
   scenario "Can submit posts and view them" do
     create_user_and_log_in
-    visit "/posts/new"
+    click_link 'New Post'
     fill_in "post[message]", with: "Hello, world!"
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
@@ -12,7 +12,7 @@ RSpec.feature "New post", type: :feature do
 
   scenario "Can raise error message if less than 5 chars" do
     create_user_and_log_in
-    visit "/posts/new"
+    click_link 'New Post'
     fill_in "post[message]", with: "Hi"
     click_button "Submit"
     expect(page).to have_content("1 error prohibited this post from being saved:")
@@ -21,7 +21,7 @@ RSpec.feature "New post", type: :feature do
 
   scenario "Can raise error message if blank" do
     create_user_and_log_in
-    visit "/posts/new"
+    click_link 'New Post'
     fill_in "post[message]", with: ""
     click_button "Submit"
     expect(page).to have_content("2 errors prohibited this post from being saved:")
@@ -30,8 +30,7 @@ RSpec.feature "New post", type: :feature do
 
   scenario "Can create new post and view them in a list" do
     create_user_and_log_in
-    visit "/posts/new"
-
+    click_link 'New Post'
 
     fill_in "post[message]", with: "Post 1"
     click_button "Submit"
@@ -41,7 +40,7 @@ RSpec.feature "New post", type: :feature do
 
   scenario "Can create new post and edit it" do
     create_user_and_log_in
-    visit "/posts/new"
+    click_link 'New Post'
 
     fill_in "post[message]", with: "Post 1"
     click_button "Submit"
