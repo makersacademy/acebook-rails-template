@@ -22,7 +22,7 @@ RSpec.feature "Edit posts", type: :feature do
 
     first_post = page.find('div.post', text: 'Hello, world')
     second_post = page.find('div.post', text: 'Hi, earth')
-<<<<<<< HEAD
+
     expect(first_post).not_to have_button('Edit')
     expect(second_post).to have_button('Edit')
   end
@@ -38,14 +38,10 @@ RSpec.feature "Edit posts", type: :feature do
 
     first_post = page.find('div.post', text: 'Hi, earth!')
     expect(first_post).not_to have_button('Edit')
-=======
 
-    expect(first_post).not_to have_css('.edit')
-    expect(second_post).to have_css('.edit')
->>>>>>> master
   end
 
-  xscenario "User can edit post" do
+  scenario "User can edit post" do
     sign_up
     visit "/posts"
     click_link "New post"
