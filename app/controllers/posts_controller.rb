@@ -25,6 +25,11 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def update
+    @post = Post.find(params[:id])
+    redirect_to(posts_url) if @post.update(post_params)
+  end
+
   private
 
   def post_params

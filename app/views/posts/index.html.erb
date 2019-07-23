@@ -19,9 +19,10 @@ New post</span>
 
 
       <% if current_user.id == post.user_id %>
-         <button type="submit" name="button" class="edit">Edit</button>
-      <%= link_to 'Delete', post_url(post),
-         method: :delete %>
+        <% if DateTime.now.to_i - post.created_at.to_i < 600 %>
+          <%= button_to 'Edit', edit_post_path(post), method: 'get' %>
+        <% end %>
+        <%= link_to 'Delete', post_url(post), method: :delete %>
       <% end %>
     </span>
 
