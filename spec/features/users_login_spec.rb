@@ -13,7 +13,7 @@ RSpec.feature "Log in", type: :feature do
     fill_in "email", with: "email@email.com"
     fill_in "password", with: "password1"
     click_button "login"
-    expect(page).to redirect_to("/posts")
+    expect(current_path).to eq("/posts")
   end
 
   scenario "can raise an error if login details are incorrect" do
