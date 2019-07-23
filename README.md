@@ -16,17 +16,6 @@ This is Team Squirrel's Acebook project, a Facebook style clone built using Ruby
 
 ## Installation instructions for local development	
 
-### To set up the database
-
-Connect to `psql` and create pgapp_development and pgapp_test databases:
-
-```
-CREATE DATABASE pgapp_development;
-CREATE DATABASE pgapp_test;
-```
-
-### How to deploy the app	
-
 Fork/clone this repository using `git clone https://github.com/petraartep/acebook-rails-team-squirrel`
 
 Run in the terminal from the root directory
