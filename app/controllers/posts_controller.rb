@@ -14,10 +14,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def show
-    @post = Post.find(params[:id])
-  end
-
   def create
     @post = current_user.posts.create(post_params)
     redirect_to posts_url
