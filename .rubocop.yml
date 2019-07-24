@@ -45,6 +45,7 @@ AllCops:
   Exclude:
     - 'config/**/*'
     - 'db/**/*'
+  
 Metrics/LineLength:
   Exclude:
     - 'spec/**/*'
