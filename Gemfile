@@ -44,7 +44,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'database_cleaner'
   gem 'rspec-rails', '~> 3.5'
-  gem 'rubocop'
+  gem 'rubocop', '~> 0.73'
   gem 'rubycritic', require: false
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
