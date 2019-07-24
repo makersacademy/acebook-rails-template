@@ -53,6 +53,19 @@ RSpec.feature "Edit posts", type: :feature do
   end
 
   scenario "User cannot edit other users' posts" do
+    sign_up
+    post_hi_earth
+    click_button "Edit"
+    url = URI.parse(current_url).to_s[22..-1]
+    click_link "Logout"
+    click_link "Sign up"
+    fill_in "Email", with: "differentemail@email.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_button "Submit"
+    visit url
 
+    expect(page).to have_current_path("/posts")
+    expect(page).to have_content("Cheeky!")
   end
 end
