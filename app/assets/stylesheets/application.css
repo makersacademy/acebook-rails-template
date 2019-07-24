@@ -214,6 +214,24 @@ h2 {
   color: var(--smoky-black);
 }
 
+.comment_body {
+  font-family: 'B612';
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  color: var(--smoky-black);
+}
+
+.comment_timestamp {
+  font-family: 'B612';
+  color: var(--nickel);
+  font-size: 0.5rem;
+}
+
+.comment_commontator {
+  font-size: 0.6rem;
+  color: var(--steel);
+}
+
 .thread_hide {
   text-align: center;
 }
@@ -286,4 +304,10 @@ textarea {
 
 .thread_new_comment_link {
   padding-top: 15px;
+}
+
+.thread {
+  display: block;
+  width: 300px;
+  text-align: center;
 }
