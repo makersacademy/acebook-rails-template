@@ -162,7 +162,7 @@ h2 {
   color: var(--coral);
 }
 
-.new_post, .edit_post {
+.new_post, .edit_post, {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -311,4 +311,3 @@ textarea {
   width: 300px;
   text-align: center;
 }
-
