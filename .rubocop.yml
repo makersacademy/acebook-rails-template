@@ -41,24 +41,28 @@
 #
 # We want to encourage testing, but it can be verbose in the early stages.
 # So we'll give you a break. As you learn, try removing the next two sections.
-AllCops:
-  Exclude:
-    - 'config/**/*'
-    - 'db/**/*'
 Metrics/LineLength:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
+    - 'db/**/*'
   Max: 120
 
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
 
 Metrics/MethodLength:
   Exclude:
     - 'spec/seed_post_helper.rb'
+    - 'db/**/*'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'db/**/*'
 
 # Code Style
 # ==========
