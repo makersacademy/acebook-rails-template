@@ -162,7 +162,7 @@ h2 {
   color: var(--coral);
 }
 
-.new_post, .edit_post, .show_post {
+.new_post, .edit_post, {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -178,6 +178,45 @@ h2 {
   border-radius: 12px;
   font-family: 'Russo One';
   font-size: 1.4rem;
+}
+
+.show_post {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  margin: auto;
+  text-align: center;
+  width: 400px;
+  padding: 30px 30px;
+  border-radius: 12px;
+  border: solid 1px black;
+  /* font-family: 'Russo One'; */
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+
+}
+
+.comment-thread {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--mint);
+  width: 400px;
+  padding: 30px 30px;
+  border-radius: 12px;
+  font-family: 'Russo One';
+  font-size: 1.4rem;
+  color: var(--smoky-black);
+}
+
+.thread_hide {
+  font-size: 0.8rem;
+  text-align: right;
 }
 
 textarea {
@@ -225,4 +264,15 @@ textarea {
   padding: 10px 10px;
   line-height: 1rem;
   font-size: 0.7rem;
+}
+
+.comment_avatar {
+  display: none;
+}
+
+.comment {
+  padding: 10px;
+  line-height: 1rem;
+  font-size: 15px;
+  text-align: left;
 }
