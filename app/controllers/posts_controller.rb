@@ -7,9 +7,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if current_user.id != @post.user_id || DateTime.now.to_i - @post.created_at.to_i < 600
-      redirect_to(posts_url)
-    end
+    redirect_to(posts_url) unless current_user.id == @post.user_id && less_than_10_minutes_elapsed(@post)
   end
 
   def show
@@ -41,5 +39,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def less_than_10_minutes_elapsed(post)
+    DateTime.now.to_i - post.created_at.to_i < 600
   end
 end
