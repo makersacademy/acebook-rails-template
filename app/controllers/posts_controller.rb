@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    redirect_to(posts_url) unless current_user.id == @post.user_id && less_than_10_minutes_elapsed(@post)
+    redirect_to posts_url, alert: message(@post) unless current_user.id == @post.user_id && under_10_mins_elapsed(@post)
   end
 
   def show
@@ -41,7 +41,15 @@ class PostsController < ApplicationController
     params.require(:post).permit(:message)
   end
 
-  def less_than_10_minutes_elapsed(post)
+  def under_10_mins_elapsed(post)
     DateTime.now.to_i - post.created_at.to_i < 600
+  end
+
+  def message(post)
+    if current_user.id != post.user_id
+      "Unable to edit another user's posts"
+    elsif !under_10_mins_elapsed(post)
+      "Unable to edit post after 10 minutes"
+    end
   end
 end

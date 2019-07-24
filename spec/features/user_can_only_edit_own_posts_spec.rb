@@ -43,18 +43,6 @@ RSpec.feature "Edit posts", type: :feature do
       expect(second_post).to have_button('Edit')
     end
 
-    scenario "User can't edit posts after 10 minutes" do
-      time_11_mins = DateTime.now + (11.0 / (24 * 60))
-      allow(DateTime).to receive(:now).and_return(time_11_mins)
-
-      sign_up
-      post_hi_earth
-
-      first_post = page.find('div.post', text: 'Hi, earth!')
-      expect(first_post).not_to have_button('Edit')
-
-    end
-
     scenario "User cannot edit other users' posts" do
       sign_up
       post_hi_earth
@@ -69,7 +57,18 @@ RSpec.feature "Edit posts", type: :feature do
       visit url
 
       expect(page).to have_current_path("/posts")
-      expect(page).to have_content("Cheeky!")
+      expect(page).to have_content("Unable to edit another user's posts")
+    end
+
+    scenario "User can't edit posts after 10 minutes" do
+      time_11_mins = DateTime.now + (11.0 / (24 * 60))
+      allow(DateTime).to receive(:now).and_return(time_11_mins)
+
+      sign_up
+      post_hi_earth
+
+      first_post = page.find('div.post', text: 'Hi, earth!')
+      expect(first_post).not_to have_button('Edit')
     end
 
     scenario "User cannot edit own posts after 10 minutes" do
@@ -85,7 +84,7 @@ RSpec.feature "Edit posts", type: :feature do
       visit url
 
       expect(page).to have_current_path("/posts")
-      expect(page).to have_content("Cheeky!")
+      expect(page).to have_content("Unable to edit post after 10 minutes")
     end
   end
 
