@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  helper_method :current_user
+  skip_before_action :require_signup
 
-  # def current_user
-  #   if session[:user_id]
-  #     @current_user ||= User.find(session[:user_id])
-  #   else
-  #     @current_user = nil
-  #   end
-  # end
+  def current_user
+    if session[:user_id]
+      @current_user ||= User.find(session[:user_id])
+    else
+      @current_user = nil
+    end
+  end
+
   # GET /users
   # GET /users.json
   def index

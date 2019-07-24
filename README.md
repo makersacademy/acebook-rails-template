@@ -16,8 +16,6 @@ This is Team Squirrel's Acebook project, a Facebook style clone built using Ruby
 
 ## Installation instructions for local development
 
-# Jake and Joe think the commands below double up db:create
-
 Fork/clone this repository using `git clone https://github.com/petraartep/acebook-rails-team-squirrel`
 
 Run in the terminal from the root directory
