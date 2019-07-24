@@ -215,8 +215,7 @@ h2 {
 }
 
 .thread_hide {
-  font-size: 0.8rem;
-  text-align: right;
+  text-align: center;
 }
 
 textarea {
@@ -275,4 +274,16 @@ textarea {
   line-height: 1rem;
   font-size: 15px;
   text-align: left;
+}
+
+.thread_header {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  line-height: 1rem;
+  font-size: 15px;
+  text-align: center;
+}
+
+.thread_new_comment_link {
+  padding-top: 15px;
 }
