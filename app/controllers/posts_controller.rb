@@ -7,6 +7,9 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    if current_user.id != @post.user_id || DateTime.now.to_i - @post.created_at.to_i < 600
+      redirect_to(posts_url)
+    end
   end
 
   def show
