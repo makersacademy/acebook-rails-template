@@ -34,7 +34,6 @@ Commontator.configure do |config|
   # Default: ->(user) { I18n.t('commontator.anonymous') } (all users are anonymous)
   config.user_name_proc = ->(user) { user.email }
 
-
   # user_link_proc
   # Type: Proc
   # Arguments: a user (acts_as_commontator),
@@ -117,7 +116,6 @@ Commontator.configure do |config|
   # Default: :l
   config.comment_editing = :a
 
-
   # comment_deletion
   # Type: Symbol
   # Whether users can delete their own comments
@@ -128,7 +126,6 @@ Commontator.configure do |config|
   # Note: For moderators, see the next option
   # Default: :l
   config.comment_deletion = :a
-
 
   # moderator_permissions
   # Type: Symbol
