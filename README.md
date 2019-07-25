@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/petraartep/acebook-rails-team-squirrel.svg?branch=newmaster)](https://travis-ci.com/petraartep/acebook-rails-team-squirrel) [![Maintainability](https://api.codeclimate.com/v1/badges/7099a0f9513bc4f965f0/maintainability)](https://codeclimate.com/github/petraartep/acebook-rails-team-squirrel/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/7099a0f9513bc4f965f0/test_coverage)](https://codeclimate.com/github/petraartep/acebook-rails-team-squirrel/test_coverage) [![GitHub issues](https://img.shields.io/github/issues/petraartep/acebook-rails-team-squirrel.svg)](https://github.com/petraartep/acebook-rails-team-squirrel/issues) [![Coverage Status](https://coveralls.io/repos/github/petraartep/acebook-rails-team-squirrel/badge.svg?branch=newmaster)](https://coveralls.io/github/petraartep/acebook-rails-team-squirrel?branch=newmaster)
 
+https://travis-ci.com/petraartep/acebook-rails-team-squirrel.svg?branch=newmaster
 
 This is Team Squirrel's Acebook project, a Facebook style clone built using Ruby-on-Rails. A user can signup, write, update, and delete posts, and view posts from all users.
 
