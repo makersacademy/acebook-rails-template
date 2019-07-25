@@ -35,6 +35,12 @@ class PostsController < ApplicationController
     redirect_to(posts_url) if @post.update(post_params)
   end
 
+  def like
+    @post = Post.find(params[:id])
+    @post.liked_by current_user
+    render layout: false
+  end
+
   private
 
   def post_params
