@@ -41,6 +41,12 @@ class PostsController < ApplicationController
     render layout: false
   end
 
+  def unlike
+    @post = Post.find(params[:id])
+    @post.unliked_by current_user
+    render layout: false
+  end
+
   private
 
   def post_params

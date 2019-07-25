@@ -25,7 +25,9 @@ New post</span>
         <%= link_to 'Delete', post_url(post), method: :delete %>
       <% end %>
       <%= link_to 'Comment', post_url(post), method: :get %>
+      <% if current_user.likes post %>
       <%= link_to 'Like', like_post_path(post), method: :put, remote: true %>
+      <% end %>
 
     </span>
 
