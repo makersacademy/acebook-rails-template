@@ -1,0 +1,626 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+
+ */
+ /* FONT STACK*/
+
+
+ @font-face {
+  font-family: 'Russo One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/russoone/v8/Z9XUDmZRWg6M1LvRYsHOz8mJvLuL9A.woff2) format('woff2');
+}
+
+ @font-face {
+  font-family: 'B612';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/b612/v4/3JnySDDxiSz36j6yGRqjQX0.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'B612';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:url(https://fonts.gstatic.com/s/b612/v4/3Jn9SDDxiSz34oWXDDeBTFcHXuA.woff2) format('woff2');
+}
+
+ @font-face {
+  font-family: 'B612';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/b612/v4/3Jn8SDDxiSz36juCGxCkY38NVg.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'B612';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/b612/v4/3Jn_SDDxiSz36juKoDWxTl0AfOJL0A.woff2) format('woff2');
+}
+
+
+/* COLOR PALETTE*/
+ :root {
+   --smoky-black: #070707;
+   --gunmetal: #233541;
+   --steel: #465362;
+   --nickel: #727072;
+   --mint: #96BBBB;
+   --white-mint: #F1FFFA;
+   --coral: #FF6978;
+   --brick: #D14754;
+ }
+
+body {
+  font-family: 'B612';
+  font-style: normal;
+  font-size: 0.8rem;
+  line-height: 0.5rem;
+  margin: 0;
+  text-align: center;
+  background-color: var(--white-mint);
+    }
+
+h1 {
+  font-family: 'Russo One';
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  text-align: center;
+  color: var(--gunmetal);
+}
+
+h2 {
+  padding-top: 10px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.postsbox {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--mint);
+  width: 400px;
+  padding: 30px 30px;
+  border-radius: 12px;
+  font-family: 'Russo One';
+  font-size: 1.4rem;
+  color: var(--smoky-black);
+}
+
+.post {
+  text-align: left;
+  flex: 0 1 auto;
+  width: 400px;
+  height: fit-content;
+  margin: 5px auto;
+  font-size: 1.2rem;
+  color: var(--smoky-black);
+  border: 1px solid var(--mint);
+  border-radius: 5px;
+  padding: 5px 15px;
+  line-height: 1.5rem;
+  background: #B2FEFA;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #0ED2F7, #B2FEFA);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #0ED2F7, #B2FEFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+.post .date {
+  text-align: right;
+  align-self: flex-end;
+}
+
+.date {
+  color: var(--nickel);
+  font-size: 0.8rem;
+  line-height: 0.5rem;
+  text-align: right;
+}
+
+.new-post {
+  padding: 20px 20px;
+  position: absolute;
+  right: 150px;
+  top: 89px;
+  margin: auto;
+  font-family: 'Russo One';
+  font-size: 1.8rem;
+  color: var(--coral);
+  text-decoration: none;
+  line-height: 1rem;
+}
+
+.new-post:visited, .new-post:active {
+  text-decoration: none;
+  color: var(--coral);
+}
+
+.new_post, .edit_post, {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  margin: auto;
+  text-align: center;
+  background: #4568DC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 400px;
+  padding: 30px 30px;
+  border-radius: 12px;
+  font-family: 'Russo One';
+  font-size: 1.4rem;
+}
+
+.show_post {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  margin: auto;
+  text-align: center;
+  width: 400px;
+  padding: 30px 30px;
+  border-radius: 12px;
+  border: solid 1px black;
+  /* font-family: 'Russo One'; */
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+
+}
+
+.comment-thread {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--mint);
+  width: 400px;
+  padding: 30px 30px;
+  border-radius: 12px;
+  font-family: 'Russo One';
+  font-size: 1.4rem;
+  color: var(--smoky-black);
+}
+
+.comment_body {
+  font-family: 'B612';
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  color: var(--smoky-black);
+}
+
+.comment_timestamp {
+  font-family: 'B612';
+  color: var(--nickel);
+  font-size: 0.5rem;
+}
+
+.comment_commontator {
+  font-size: 0.6rem;
+  color: var(--steel);
+}
+
+.thread_hide {
+  text-align: center;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  width: 150px;
+  height: 100px;
+}
+
+.lit-gif {
+  width:146px;
+  height:106px;
+  position: absolute;
+  top: 180px;
+  left: 30px;
+}
+
+.unicorn {
+  width:146px;
+  height:106px;
+  position: absolute;
+  top: 180px;
+  right: 75px;
+}
+
+.duck {
+  width: 60px;
+  height: 95px;
+  position: absolute;
+  top: 500px;
+  right: 600px;
+}
+
+/* styles for the submit button once we know how to target them or insert class or id tag*/
+#submit {
+  background: #F0F2F0;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #000C40, #F0F2F0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #000C40, #F0F2F0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 60px;
+  height: 20px;
+  text-align: center;
+}
+
+.field, .new_user {
+  padding: 10px 10px;
+  line-height: 1rem;
+  font-size: 0.7rem;
+}
+
+.comment_avatar {
+  display: none;
+}
+
+.comment {
+  padding: 10px;
+  line-height: 1rem;
+  font-size: 15px;
+  text-align: left;
+}
+
+.thread_header {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  line-height: 1rem;
+  font-size: 15px;
+  text-align: center;
+}
+
+.thread_new_comment_link {
+  padding-top: 15px;
+}
+
+.thread {
+  display: block;
+  width: 300px;
+  text-align: center;
+}
+/*
+
+
+
+ */
+
+
+.mentions-input-box {
+  position: relative;
+  background: #fff;
+}
+
+.mentions-input-box textarea {
+  overflow: hidden;
+  background: transparent;
+  position: relative;
+  resize: none;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mentions-input-box .mentions-autocomplete-list {
+  display: none;
+  background: #fff;
+  border: 1px solid #b2b2b2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  margin-top: -2px;
+
+  border-radius:5px;
+  border-top-right-radius:0;
+  border-top-left-radius:0;
+
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.148438);
+     -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.148438);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.148438);
+}
+
+.mentions-input-box .mentions-autocomplete-list ul {
+    margin: 0;
+    padding: 0;
+}
+
+.mentions-input-box .mentions-autocomplete-list li {
+  background-color: #fff;
+  padding: 0 5px;
+  margin: 0;
+  width: auto;
+  border-bottom: 1px solid #eee;
+  height: 26px;
+  line-height: 26px;
+  overflow: hidden;
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.mentions-input-box .mentions-autocomplete-list li:last-child {
+  border-radius:5px;
+}
+
+.mentions-input-box .mentions-autocomplete-list li > img,
+.mentions-input-box .mentions-autocomplete-list li > div.icon {
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-top:5px;
+  margin-right: 5px;
+  -moz-background-origin:3px;
+
+  border-radius:3px;
+}
+
+.mentions-input-box .mentions-autocomplete-list li em {
+  font-weight: bold;
+  font-style: none;
+}
+
+.mentions-input-box .mentions-autocomplete-list li:hover,
+.mentions-input-box .mentions-autocomplete-list li.active {
+  background-color: #f2f2f2;
+}
+
+.mentions-input-box .mentions-autocomplete-list li b {
+  background: #ffff99;
+  font-weight: normal;
+}
+
+.mentions-input-box .mentions {
+  position: absolute;
+  left: 1px;
+  right: 0;
+  top: 1px;
+  bottom: 0;
+  padding: 9px;
+  color: #fff;
+  overflow: hidden;
+
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.mentions-input-box .mentions > div {
+  color: #fff;
+  white-space: pre-wrap;
+  width: 100%;
+}
+
+.mentions-input-box .mentions > div > strong {
+  font-weight:normal;
+  background: #d8dfea;
+}
+
+.mentions-input-box .mentions > div > strong > span {
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+.comment {
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+
+  border-top: 1px solid;
+  border-left: 1px solid;
+  
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  color: #000;
+  border-color: #DDD;
+  background-color: #FFF;
+  
+  clear: both;
+}
+
+.comment_actions {
+  float: right;
+}
+
+.comment_body {
+  padding-top: 3px;
+}
+
+.comment_body p {
+	margin: 0px;
+
+	overflow: hidden;
+}
+
+.comment_div {
+	clear: both;
+}
+
+.comment_form_actions {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.comment_form_field textarea {
+  padding: 0px;
+
+  width: 100%;
+}
+
+.comment_avatar {
+  float: left;
+
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.comment_timestamp {
+  color: #666;
+}
+
+.comment_votes {
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  text-align: center;
+}
+
+.comment_votes input,
+.comment_votes img {
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+  margin: 0px;
+}
+
+.comment_votes form {
+  margin: 0px;
+}
+
+.comment_upvote {
+  display: block;
+  height: 18px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.comment_downvote {
+  display: block;
+  height: 18px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.comment_like {
+  float: left;
+}
+
+.comment_like + .comment_vote_count {
+  float: right;
+}
+
+.comment_error_explanation {
+  margin-bottom: 10px;
+}
+
+.comment_error_explanation h3 {
+  margin-top: 5px;
+}
+
+.comment_error_explanation ul {
+  list-style-position: inside;
+}
+.thread {
+  display: block !important;
+}
+
+.thread .commontator_hidden {
+  display: none;
+}
+
+.thread_actions {
+  float: right;
+}
+
+.thread_header {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Modified from:
+http://www.strangerstudios.com/sandbox/pagination/diggstyle.php */
+.thread_page_entries_info {
+	margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.thread_will_paginate {
+	margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.thread_pagination a {
+	padding: 2px 5px 2px 5px;
+	margin-right: 4px;
+	border: 1px solid #999;
+	
+	text-decoration: none;
+	color: #666;
+}
+
+.thread_pagination a:hover,
+.thread_pagination a:active {
+	border: 1px solid #555;
+
+	color: #000;
+}
+
+.thread_pagination em {
+	padding: 2px 5px 2px 5px;
+	margin-right: 4px;
+  border: 1px solid #555;
+
+  font-weight: bold;
+  background-color: #555;
+  color: #FFF;
+}
+
+.thread_pagination span {
+  padding: 2px 5px 2px 5px;
+	margin-right: 4px;
+  border: 1px solid #EEE;
+
+  color: #DDD;
+}
+
+.thread .mentions-input-box .mentions {
+  left: -2px !important;
+  top: -2px !important;
+}
