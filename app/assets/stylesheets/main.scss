@@ -15,9 +15,10 @@ body{background: #4a4747;
 
 }
 
-// .navbar-nav {
-//     flex-direction: row;
-// }
+.navbar-nav {
+    flex-direction: row;
+}
+
 
 .main-container {
   background-size: cover;
@@ -38,7 +39,7 @@ body{background: #4a4747;
 }
 
 h1, h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Anton', sans-serif;
   padding: 30px;
   margin: 15px;
 }
