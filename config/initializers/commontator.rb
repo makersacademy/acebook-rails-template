@@ -1,3 +1,5 @@
+
+
 # Change the settings below to suit your needs
 # All settings are initially set to their default values
 
@@ -229,7 +231,7 @@ Commontator.configure do |config|
   #                   "#{thread.commontable.class.name} ##{thread.commontable.id}" }
   config.commontable_name_proc = ->(thread) {
     "#{thread.commontable.class.name} ##{thread.commontable.id}"
-  }                                 
+  }
 
   # comment_url_proc
   # Type: Proc

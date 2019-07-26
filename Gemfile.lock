@@ -290,7 +290,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts_as_votable
+  acts_as_votable (~> 0.12.0)
   byebug
   capybara (~> 2.13)
   commontator
