@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label :email  %>
     <%= form.text_field :email, id: :user_email %>
   </div>
 
@@ -27,6 +27,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+
+    <%= form.submit "Go!", :class => "button btn btn-primary btn-md"%>
   </div>
 <% end %>

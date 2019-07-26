@@ -1,3 +1,20 @@
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<div class="navbar-header">
+  <a class="navbar-brand" href="#">AceBook</a>
+</div>
+<ul class="nav navbar-nav">
+  <li><button type="button" class="btn btn-outline-dark"><%= link_to 'New Post',new_post_path %></button></li>
+  <li><button type="button" class="btn btn-outline-dark"><%= link_to 'Logout', logout_path %></button></li>
+  <li><button type="button" class="btn btn-outline-dark"><%= link_to 'My wall', posts_url %></button></li>
+  <!-- <button type="button" class="btn btn-outline-dark">Dark</button> -->
+
+</ul>
+</div>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -5,4 +22,7 @@
   <%= @user.email %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> | <%= link_to 'View all posts', posts_url %> | <%= link_to 'Logout', logout_path %>
+<%= link_to 'Edit my details', edit_user_path(@user) %> 
+
+</div>
+</div>

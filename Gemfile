@@ -4,6 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 
 gem 'bcrypt', '~> 3.1.7'
 # Use ActiveModel has_secure_password
