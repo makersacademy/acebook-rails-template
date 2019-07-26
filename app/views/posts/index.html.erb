@@ -1,22 +1,37 @@
-<section class="section">
-  <%= link_to 'New Post', new_user_post_path %>
-    <br>
-    <br>
-  <%= flash[:notice] %>
-  <%= link_to 'Logout', logout_path %>
-  <br>
-  <br>
-  <div class="container">
-    <% @posts.each do |post| %>
-      <p><%= post.message %></p>
-      <p><%= post.created_at %></p>
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<div class="navbar-header">
+  <a class="navbar-brand" href="#">AceBook</a>
+</div>
+<ul class="nav navbar-nav">
 
-        <%= link_to 'Edit', edit_user_post_path(current_user, post) %>
-        <%= link_to 'Delete', [current_user, post],
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+  <li><button type="button" class="btn btn-outline-dark"><%= link_to 'New Post', new_user_post_path %></button></li>
+  <li><button type="button" class="btn btn-outline-dark"><%= link_to 'Logout', logout_path %></button></li>
+  <!-- <button type="button" class="btn btn-outline-dark">Dark</button> -->
+
+</ul>
+</div>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+
+
+    <section class="section">
+  <%= flash[:notice] %>
+  <div class="container">
+  <% @posts.each do |post| %>
+    <p><%= post.message %></p>
+    <p><%= post.created_at.strftime("%d %b %Y, %H:%M") %></p>
+    <%= link_to 'Edit', edit_user_post_path(current_user, post), :class => "button btn btn-primary btn-md" %>
+    <%= link_to 'Delete', [current_user, post], :class => "button btn btn-primary btn-md",
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+
+  </div>
+  <br>
 
     <% end %>
   </div>
 </section>
-
+</div>
+</div>

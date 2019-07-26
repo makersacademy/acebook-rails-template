@@ -13,4 +13,5 @@ class User < ApplicationRecord
                        :length => { :within => 6..10 },
                        :allow_blank => true,
                        :on => :update
+
 end

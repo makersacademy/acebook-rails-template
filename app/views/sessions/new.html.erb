@@ -1,5 +1,8 @@
-<p id=”alert”><%= alert %></p>
-<h1>Welcome, please login</h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p id=”alert”><%= alert %></p>
+
+<h1>Log in</h1>
 <%= form_tag sessions_path do |form| %>
   <div class=”field”>
     <%= label_tag :email %>
@@ -10,6 +13,8 @@
     <%= password_field_tag :password %>
   </div>
   <div class=”actions”>
-    <%= submit_tag :login %>
+    <%= submit_tag :login, :class => "button btn btn-primary btn-md"%>
   </div>
 <% end %>
+</div>
+</div>

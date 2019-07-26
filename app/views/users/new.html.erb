@@ -1,5 +1,11 @@
-<h1>New User</h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+
+  <h1 class="display-4">Welcome to AceBook</h1>
+  <h2 class="display-10">Please sign in</h2>
 
 <%= render 'form', user: @user %>
-
-<%= link_to 'Already a user? Log in', login_path %>
+<br>
+<%= link_to 'Already a user? Log in', login_path, :class => "button btn btn-primary btn-md" %>
+  </div>
+</div>
