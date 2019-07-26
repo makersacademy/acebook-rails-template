@@ -1,4 +1,12 @@
-body{background:#000}
+body{background: #4a4747;
+  margin: 0;
+  padding: 0;
+}
+
+#jumbotron-welcome{
+  padding: 0;
+  margin: 20;
+}
 
 .jumbotron{
   min-height: 100px;
@@ -7,6 +15,30 @@ body{background:#000}
 
 }
 
-.navbar-nav {
-    flex-direction: row;
+// .navbar-nav {
+//     flex-direction: row;
+// }
+
+.main-container {
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80");
+  // background-position: center center;
+  text-align: center;
+  color: white;
+  opacity: 0.8;
+  height: 100vh;
+  width: 100%;
+}
+
+.display-4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1, h2 {
+  font-family: 'Oswald', sans-serif;
+  padding: 30px;
+  margin: 15px;
 }
