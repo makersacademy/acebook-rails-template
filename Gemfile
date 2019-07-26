@@ -49,6 +49,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'pry'
 end
 
 group :development do

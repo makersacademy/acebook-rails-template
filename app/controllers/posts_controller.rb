@@ -37,8 +37,17 @@ class PostsController < ApplicationController
 
   def like
     @post = Post.find(params[:id])
-    @post.liked_by current_user
-    render layout: false
+    if current_user.voted_for? @post
+      @post.unliked_by current_user
+      # respond_to do |format|
+      #   render: false
+      # end
+    else
+      @post.liked_by current_user
+      # respond_to do |format|
+      #   render: false
+      # end
+    end
   end
 
   # def unlike

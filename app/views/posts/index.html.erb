@@ -1,6 +1,6 @@
 <%= link_to new_post_path do %>
-  <span class="new-post">
-New post</span>
+
+New post
 
 <% end %>
 <div class="main-container">
@@ -25,14 +25,27 @@ New post</span>
         <%= link_to 'Delete', post_url(post), method: :delete %>
       <% end %>
       <%= link_to 'Comment', post_url(post), method: :get %>
-      <% if current_user.liked? post %>
-        <%= link_to 'Like', like_post_path(post), method: :put, remote: true %>
+
+      <% if current_user.voted_for? post %>
+        <%= link_to '🍦', like_post_path(post), id: "like_#{post.id}", class: "like", method: :put, :remote => true %>
+      <% else %>
+        <%= link_to '💩', like_post_path(post), id: "like_#{post.id}", class: "like", method: :put, :remote => true %>
       <% end %>
 
     </span>
 
   </div>
-
 <% end %>
+<script type="text/javascript">
+  function changeLike(like_link){
+    if(like_link.innerHTML === "💩") {
+      like_link.innerHTML = "🍦"
+    } else {
+      like_link.innerHTML = "💩"
+    }
+  }
+  const likes = document.querySelectorAll('.like')
+  likes.forEach(like => like.addEventListener('click', function () { changeLike(like) }));
+</script>
 </div>
 </div>

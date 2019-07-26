@@ -311,3 +311,8 @@ textarea {
   width: 300px;
   text-align: center;
 }
+
+.like {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
