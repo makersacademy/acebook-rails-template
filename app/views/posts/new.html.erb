@@ -4,7 +4,7 @@
   <a class="navbar-brand" href="#">AceBook</a>
 </div>
 <ul class="nav navbar-nav">
-  <li><button type="button" class="btn btn-outline-dark"><%= link_to 'Back', posts_path %>
+  <li><button type="button" class="btn btn-outline-dark"><%= link_to 'Back', user_posts_path(current_user) %>
 </button></li>
   <li><button type="button" class="btn btn-outline-dark"><%= link_to 'Logout', logout_path %>
 </button></li>

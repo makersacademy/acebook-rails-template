@@ -250,6 +250,7 @@ DEPENDENCIES
   rspec-rails (~> 3.5)
   rubocop
   sass-rails (~> 5.0)
+  sassc-rails (>= 2.1.0)
   selenium-webdriver
   simplecov
   tzinfo-data

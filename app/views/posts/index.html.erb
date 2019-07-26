@@ -5,7 +5,7 @@
 </div>
 <ul class="nav navbar-nav">
 
-  <li><button type="button" class="btn btn-outline-dark"><%= link_to 'New Post',new_post_path %></button></li>
+  <li><button type="button" class="btn btn-outline-dark"><%= link_to 'New Post', new_user_post_path %></button></li>
   <li><button type="button" class="btn btn-outline-dark"><%= link_to 'Logout', logout_path %></button></li>
   <!-- <button type="button" class="btn btn-outline-dark">Dark</button> -->
 
@@ -21,16 +21,20 @@
   <div class="container">
   <% @posts.each do |post| %>
     <p><%= post.message %></p>
-    <p><%= post.created_at %></p>
-    <%= link_to 'Show', post_path(post), :class => "btn btn-primary btn-xs" %>
-    <%= link_to 'Edit', edit_post_path(post), :class => "button btn btn-primary btn-md" %>
-    <%= link_to 'Delete', post_path(post),:class => "button btn btn-primary btn-md",
-          method: :delete,
-          data: { confirm: 'Are you sure?' } %>
-  <% end %>
-  </div>
-  <br>
+    <p><%= post.created_at.strftime("%d %b %Y, %H:%M") %></p>
 
+    <% if current_user.id == post.user_id %>
+
+      <%= link_to 'Edit', edit_user_post_path(current_user, post), :class => "button btn btn-primary btn-md" %>
+      <%= link_to 'Delete', [current_user, post], :class => "button btn btn-primary btn-md",
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>
+
+    </div>
+    <br>
+      <% end %>
+  </div>
 </section>
 </div>
 </div>
+    <% end %>

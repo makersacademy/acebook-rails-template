@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'sessions/create'
-
   root 'users#new'
 
-  resources :users 
-  resources :posts
+  resources :users do
+    resources :posts
+  end
 
   resources :sessions, only: [:new, :create]
   get 'signup', to: 'users#new', as: 'signup'

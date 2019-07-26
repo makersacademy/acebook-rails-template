@@ -1,11 +1,4 @@
 class PostsController < ApplicationController
-  def current_user
-    if session[:user_id]
-      @current_user ||= User.find(session[:user_id])
-    else
-      @current_user = nil
-    end
-  end
 
   def index    
     @posts = Post.all.order('created_at DESC')
@@ -13,11 +6,11 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    redirect_to posts_path
   end
 
   def new
-    @post = Post.new
+    @post = User.find(session[:user_id]).posts.new
+    @user = User.find(session[:user_id])
   end
 
   def edit
@@ -25,19 +18,22 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    
+    @user = User.find(session[:user_id])
+    @post = User.find(session[:user_id]).posts.create(post_params)
 
     if @post.save
-      redirect_to @post
+      redirect_to user_posts_path(@user)
     else
       render 'new'
     end
+    
   end
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
-      redirect_to @post
+    if @post.update(:message => (params[:post][:message]))
+      redirect_to [current_user, @post]
     else
       render 'edit'
     end
@@ -47,13 +43,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to posts_path
+    redirect_to user_posts_path
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
-
+  
 end
