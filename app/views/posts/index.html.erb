@@ -22,16 +22,19 @@
   <% @posts.each do |post| %>
     <p><%= post.message %></p>
     <p><%= post.created_at.strftime("%d %b %Y, %H:%M") %></p>
-    <%= link_to 'Edit', edit_user_post_path(current_user, post), :class => "button btn btn-primary btn-md" %>
-    <%= link_to 'Delete', [current_user, post], :class => "button btn btn-primary btn-md",
-          method: :delete,
-          data: { confirm: 'Are you sure?' } %>
 
-  </div>
-  <br>
+    <% if current_user.id == post.user_id %>
 
-    <% end %>
+      <%= link_to 'Edit', edit_user_post_path(current_user, post), :class => "button btn btn-primary btn-md" %>
+      <%= link_to 'Delete', [current_user, post], :class => "button btn btn-primary btn-md",
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>
+
+    </div>
+    <br>
+      <% end %>
   </div>
 </section>
 </div>
 </div>
+    <% end %>

@@ -9,7 +9,8 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = User.find(session[:user_id]).posts.new
+    @user = User.find(session[:user_id])
   end
 
   def edit
@@ -17,10 +18,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    
+    @user = User.find(session[:user_id])
+    @post = User.find(session[:user_id]).posts.create(post_params)
 
     if @post.save
-      redirect_to [current_user, @post]
+      redirect_to user_posts_path(@user)
     else
       render 'new'
     end
