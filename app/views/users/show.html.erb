@@ -4,9 +4,9 @@
   <a class="navbar-brand" href="#">AceBook</a>
 </div>
 <ul class="nav navbar-nav">
+  <li><button type="button" class="btn btn-outline-dark"><%= link_to 'My wall', users_path %></button></li>
   <li><button type="button" class="btn btn-outline-dark"><%= link_to 'New Post',new_post_path %></button></li>
   <li><button type="button" class="btn btn-outline-dark"><%= link_to 'Logout', logout_path %></button></li>
-  <li><button type="button" class="btn btn-outline-dark"><%= link_to 'My wall', posts_url %></button></li>
   <!-- <button type="button" class="btn btn-outline-dark">Dark</button> -->
 
 </ul>
@@ -22,7 +22,7 @@
   <%= @user.email %>
 </p>
 
-<%= link_to 'Edit my details', edit_user_path(@user) %> 
+<%= link_to 'Edit my details', edit_user_path(@user) %>
 
 </div>
 </div>
