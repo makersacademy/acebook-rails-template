@@ -1,19 +1,22 @@
 <section class="section">
+  <%= link_to 'New Post', new_user_post_path %>
+    <br>
+    <br>
   <%= flash[:notice] %>
   <%= link_to 'Logout', logout_path %>
-  <div class="container">
-  <% @posts.each do |post| %>
-    <p><%= post.message %></p>
-    <p><%= post.created_at %></p>
-    <%= link_to 'Show', post_path(post) %>
-    <%= link_to 'Edit', edit_post_path(post) %>
-    <%= link_to 'Delete', post_path(post),
-          method: :delete,
-          data: { confirm: 'Are you sure?' } %>
-  <% end %>
-  </div>
   <br>
-  <%= link_to 'New Post', new_post_path %>
+  <br>
+  <div class="container">
+    <% @posts.each do |post| %>
+      <p><%= post.message %></p>
+      <p><%= post.created_at %></p>
 
+        <%= link_to 'Edit', edit_user_post_path(current_user, post) %>
+        <%= link_to 'Delete', [current_user, post],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
 
+    <% end %>
+  </div>
 </section>
+

@@ -6,7 +6,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    redirect_to posts_path
   end
 
   def new
@@ -21,16 +20,17 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
 
     if @post.save
-      redirect_to @post
+      redirect_to [current_user, @post]
     else
       render 'new'
     end
+    
   end
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
-      redirect_to @post
+    if @post.update(:message => (params[:post][:message]))
+      redirect_to [current_user, @post]
     else
       render 'edit'
     end
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to posts_path
+    redirect_to user_posts_path
   end
 
   private
