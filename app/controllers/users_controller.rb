@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @user = User.find(session[:user_id])
   end
 
   def show
-    @user = User.find(params[:id])
-    p "params are: #{params[:id]}"
+    @user = User.find(session[:user_id])
   end
 
   def new
