@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'sessions/new'
+  # post 'signin', to: "sessions#create", as "signin"
 
   get 'users/index'
 

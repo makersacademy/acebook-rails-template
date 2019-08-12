@@ -1,2 +1,12 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h1>Welcome to Acebooky</h1>
+<%= form_for(:session, url: s, method: "POST") do |form| %>
+  <%= form.label :email %>
+  <%= form.text_field :email%>
+  <%= form.label :password %>
+  <%= form.text_field :password%>
+
+  <%= form.submit "Log in" %>
+
+<% end %>
+
+Don't have an account? <%= link_to "Sign up now!", new_user_path %>
