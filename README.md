@@ -42,5 +42,10 @@ I need to sign in
 As a user
 So I can update my status
 I need to be able to create posts
+```
+
+```bash
+As a user
+So I 
 
 ```
