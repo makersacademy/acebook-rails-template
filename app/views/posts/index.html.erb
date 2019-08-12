@@ -1,5 +1,9 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <div>
+    <%= post.message %>
+    <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?" } %>
+  </div>
+  
 <% end %>
 
 <%= link_to new_post_path do %>
