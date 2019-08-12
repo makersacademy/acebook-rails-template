@@ -1,9 +1,11 @@
-<% @posts.each do |post| %>
+<% @posts.reverse_each do |post| %>
   <p><%= post.message %>
     <%= post.created_at %>
     <%= link_to edit_post_path(post.id) do %>
-  Edit
-<% end %></p>
+      Edit
+    <% end %></p>
+
+    <%= link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %>
 <% end %>
 
 <%= link_to new_post_path do %>

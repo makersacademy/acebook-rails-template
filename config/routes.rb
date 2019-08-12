@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root "posts#index"
   root "posts#edit"
   root "posts#update"
+  root "posts#destroy"
 end
