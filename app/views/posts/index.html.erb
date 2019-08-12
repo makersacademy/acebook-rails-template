@@ -1,13 +1,26 @@
-<% @posts.reverse_each do |post| %>
-  <p><%= post.message %>
-    <%= post.created_at %>
-    <%= link_to edit_post_path(post.id) do %>
-      Edit
-    <% end %></p>
+<!DOCTYPE html>
 
-    <%= link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %>
-<% end %>
+<html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+      <body>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+        <% @posts.reverse_each do |post| %>
+      <p><%= post.message %>
+        <%= post.created_at %>
+        <%= link_to edit_post_path(post.id) do %>
+          Edit
+        <% end %></p>
+
+        <%= link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %>
+        <% end %>
+        <br>
+        <div>
+        <%= link_to new_post_path do %>
+          New post
+        <% end %>
+    </div>
+
+  </body>
+</html>
