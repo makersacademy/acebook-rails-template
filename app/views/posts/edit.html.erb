@@ -1,4 +1,4 @@
-<%= form_with model: @post do |form| %>
+<%= form_for @post,:url => @post_index_path do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message%>
 
