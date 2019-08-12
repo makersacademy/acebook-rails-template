@@ -17,10 +17,19 @@ class PostsController < ApplicationController
   end
 
   def update
-    p @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
     @post.update(post_params)
     redirect_to root_path
-    
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    p @post
+    @post.destroy
+    p @post
+    p 'testing'
+
+    redirect_to posts_path
   end
 
   private
