@@ -8,6 +8,9 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
+gem 'bootstrap-sass', '3.3.7'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'jquery-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
