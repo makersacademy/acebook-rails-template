@@ -23,9 +23,9 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "GET #edit" do
+  describe "GET #create" do
     it "returns http success" do
-      get :edit
+      get :create
       expect(response).to have_http_status(:success)
     end
   end
