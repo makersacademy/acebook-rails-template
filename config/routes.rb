@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'sessions/index'
+
+  get 'sessions/show'
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   get 'users/index'
 
   get 'users/show'
