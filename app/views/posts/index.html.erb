@@ -10,7 +10,6 @@
         <% @posts.reverse_each do |post| %>
       <p><%= post.message %>
       (posted <%= time_ago_in_words(post.created_at)%> ago)
-        <%= post.created_at %>
         <%= link_to edit_post_path(post.id) do %>
           Edit
         <% end %></p>
