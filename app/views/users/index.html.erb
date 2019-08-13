@@ -1,1 +1,13 @@
-<h1> Hello <%= @users[0].name %></h1>
+
+
+<% @users.each do |user| %>
+  <p><% user.name %></p>
+<% end %>
+
+<h1> Welcome <%= @user.name %>!</h1>
+
+
+
+<%= link_to new_user_path do %>
+  New user
+<% end %>
