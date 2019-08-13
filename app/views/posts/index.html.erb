@@ -5,7 +5,7 @@
       <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
       <body>
-
+        <%= notice %>
         <% @posts.reverse_each do |post| %>
       <p><%= post.message %>
         <%= post.created_at %>
