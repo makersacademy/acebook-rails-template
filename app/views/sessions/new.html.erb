@@ -1,5 +1,6 @@
-<h1>Welcome to Acebooky</h1>
-<%= form_for(:session, url: s, method: "POST") do |form| %>
+<h1>Sign in</h1>
+<%= flash[:danger] %>
+<%= form_for(:session, url: sessions_path, method: "POST") do |form| %>
   <%= form.label :email %>
   <%= form.text_field :email%>
   <%= form.label :password %>
