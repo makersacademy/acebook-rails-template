@@ -8,3 +8,4 @@
 
 
 User.create(name: 'Kaja', username: "KP", email: "kaja@hotmail.com", password: "123")
+Post.create(user_id: 1, message: "this is a test post")

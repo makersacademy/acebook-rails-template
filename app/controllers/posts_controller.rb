@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :current_post, only: [:show, :edit, :update, :destroy]
 
   def index
+    @user = User.find(session[:user_id])
     @posts = Post.all
   end
 
@@ -9,7 +10,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @user = User.find(session[:user_id])
+    @post = @user.posts.create(post_params)
     redirect_to posts_url
   end
 
