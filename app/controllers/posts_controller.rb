@@ -11,8 +11,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    
-    redirect_to root_path if session[:user_id] == nil 
+    redirect_to root_path if session[:user_id] == nil
     @posts = Post.all
   end
 
@@ -28,11 +27,15 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post
-    @post.destroy
-    @post
-
-    redirect_to posts_path
+    @user = User.find(session[:user_id])
+    if @post.user_id != @user.id
+      p "testing"
+      flash[:error] = "You can only delete your own posts"
+      redirect_to posts_path
+    else
+      @post.destroy
+      redirect_to posts_path
+    end
   end
 
   private
