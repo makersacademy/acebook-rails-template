@@ -4,8 +4,9 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
+  # #show is not currently in use
   # def show
-  #     @user = User.find(session[:user_id])
+  #   @user = User.find(session[:user_id])
   # end
 
   def new
