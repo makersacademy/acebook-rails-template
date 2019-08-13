@@ -24,3 +24,28 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+## User Stories
+
+```bash
+As a user
+So I can have an account
+I need to sign up
+```
+
+```bash
+As a user
+So I log in
+I need to sign in
+```
+
+```bash
+As a user
+So I can update my status
+I need to be able to create posts
+```
+
+```bash
+As a user
+So I 
+
+```
