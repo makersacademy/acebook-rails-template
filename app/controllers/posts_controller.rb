@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
+  before_action :current_post, only: [:show, :edit, :update, :destroy]
+
   def index
     @posts = Post.all
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def create
@@ -17,18 +18,15 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     @post.update(post_params)
 
     redirect_to posts_url
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_url
   end
@@ -37,5 +35,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def current_post
+    @post = Post.find(params[:id])
   end
 end
