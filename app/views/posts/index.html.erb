@@ -1,10 +1,10 @@
 <% @posts.each do |post| %>
- <div>
+ <div inline-flex>
     <%= link_to post.message, post_path(post) %>
     <%= @user.username%>
     <%= post.created_at.strftime("%b %e %Y %H:%M")%>
     <%= button_to "Edit", edit_post_path(post), method: "get"%>
-    <% if @user.id == post.user_id %>
+    <% if @user.id == post.user_id && (post.created_at - 10.minutes.ago) > 0   %>
       <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?"} %>
     <% end %>
  </div>
