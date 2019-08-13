@@ -7,8 +7,11 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with: "Hi"
     click_button "Submit"
     visit '/posts'
-    click_on "Update"
-    fill_in "Message", with: "Bye"
+    click_on "Edit"
+    p 'printing here'
+    p current_path
+    fill_in "post[message]", with: "Bye"
+    click_on "Update Post"
     expect(page).to have_content("Bye")
   end
 end
