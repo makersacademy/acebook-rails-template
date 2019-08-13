@@ -4,9 +4,10 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
-  def show
-    @user = User.find(session[:user_id])
-  end
+  # #show is not currently in use 
+  # def show
+  #   @user = User.find(session[:user_id])
+  # end
 
   def new
     @user = User.new
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
+    session[:user_id] = user.id
     redirect_to users_path
   end
 
