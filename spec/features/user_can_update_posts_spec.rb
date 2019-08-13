@@ -1,17 +1,19 @@
 require 'rails_helper'
+require 'timecop'
+require_relative './method_helpers'
 
 RSpec.feature "Timeline", type: :feature do
-  scenario "Can submit posts and view them" do
-    visit "/posts"
-    click_link "New post"
-    fill_in "Message", with: "Hi"
-    click_button "Submit"
-    visit '/posts'
-    click_on "Edit"
-    p 'printing here'
-    p current_path
-    fill_in "post[message]", with: "Bye"
-    click_on "Update Post"
+  scenario "can update posts" do
+    create_post
+    update_post
     expect(page).to have_content("Bye")
+  end
+  scenario "cannot update a post after ten minutes" do
+    create_post
+    t = Time.now
+    Timecop.freeze(t + 10) do
+      update_post
+      expect(page).to have_content("Error")
+    end
   end
 end
