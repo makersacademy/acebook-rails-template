@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
- <div inline-flex>
+ <div>
     <%= link_to post.message, post_path(post) %>
     <%= @user.username%>
     <%= post.created_at.strftime("%b %e %Y %H:%M")%>
