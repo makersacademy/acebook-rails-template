@@ -5,7 +5,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to posts_url
+    if @user.password.length < 6 || @user.password.length > 10
+      flash[:danger] = "Password needs to be between 6 - 10 characters"
+      render 'new'
+    else
+      redirect_to posts_url
+
+    end
   end
 end
 
