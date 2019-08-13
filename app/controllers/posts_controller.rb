@@ -29,7 +29,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
+    @user = User.find(session[:user_id])
+    if @user.id == @post.user_id
+      @post.destroy
+    end
     redirect_to posts_url
   end
 

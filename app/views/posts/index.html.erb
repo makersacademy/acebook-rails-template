@@ -4,7 +4,9 @@
     <%= @user.username%>
     <%= post.created_at.strftime("%b %e %Y %H:%M")%>
     <%= button_to "Edit", edit_post_path(post), method: "get"%>
-    <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?"} %>
+    <% if @user.id == post.user_id %>
+      <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?"} %>
+    <% end %>
  </div>
 <% end %>
 <%= link_to new_post_path do %>
