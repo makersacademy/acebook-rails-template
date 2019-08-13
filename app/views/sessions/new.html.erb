@@ -2,9 +2,9 @@
 <%= flash[:danger] %>
 <%= form_for(:session, url: sessions_path, method: "POST") do |form| %>
   <%= form.label :email %>
-  <%= form.text_field :email%>
+  <%= form.email_field :email%>
   <%= form.label :password %>
-  <%= form.text_field :password%>
+  <%= form.password_field :password%>
 
   <%= form.submit "Log in" %>
 
