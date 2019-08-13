@@ -1,8 +1,9 @@
 <% @posts.each do |post| %>
  <div>
-    <%= post.message %>
-     <%= button_to "Edit", edit_post_path(post), method: "get"%>
-     <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?"} %>
+    <%= link_to post.message, post_path(post) %>
+    <%= post.created_at.strftime("%H:%M")%>
+    <%= button_to "Edit", edit_post_path(post), method: "get"%>
+    <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?"} %>
  </div>
 <% end %>
 <%= link_to new_post_path do %>
