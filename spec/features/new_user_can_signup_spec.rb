@@ -1,6 +1,5 @@
 # require 'rails_helper'
 
-<<<<<<< HEAD
 RSpec.feature "Signup", type: :feature do
   scenario "Can singup and create a new account" do
     sign_up
