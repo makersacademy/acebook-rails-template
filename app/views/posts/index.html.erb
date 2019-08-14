@@ -2,7 +2,7 @@
   <% @posts.each do |post| %>
     <li>
     <div id=<=% post.id %>
-      <p><%= post.message %></p>
+      <p><%= simple_format(post.message) %></p>
       <p><% raw_post_time = Time.parse(post.created_at.to_s[0, post.created_at.to_s.length - 3]) %>
       <%post_time = raw_post_time +60*60%></p>
       <p> <%= post_time.strftime("%d/%m/%Y %H:%M") %> </p>
