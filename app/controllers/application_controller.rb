@@ -4,7 +4,8 @@ require_relative '../models/sessions.rb'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  p session[:current_session]
+  # include ::ActionController::Cookies
+  #
   #   before_action :require_login
   #
   #   private
