@@ -1,3 +1,61 @@
-body{
-  background-color: #c48bc3;
+h1 {
+  font-size: 20px;
+
+}
+  .myDiv {
+    z-index: 1;
+}
+
+.myDiv .bg {
+  background: url('https://cdn.pixabay.com/photo/2016/06/08/19/40/texture-1444488_960_720.jpg');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  background-position: center;
+  background-attachment: inherit;
+  background-repeat: repeat;
+  background-size: cover;
+  height: auto;
+  width: 100%;
+  height: auto;
+  min-width: 1024px;
+  margin-top: -20px;
+  min-height: -webkit-fill-available;
+}
+/*--- navigation bar ---*/
+.navbar {
+  background:#4C2969;
+}
+.nav-link,
+.navbar-brand {
+  color: #fff;
+  cursor: pointer;
+}
+.nav-link {
+  margin-right: 1em !important;
+  float: right;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+.navbar-nav {
+  list-style-type: none;
+  position: absolute;
+  right: 10px;
+}
+.navbar-nav>li {
+    float: right;
+}
+.navbar-brand-logo {
+  font-size: 24px;
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+li:hover {
+  background-color: f2f2f2;
 }
