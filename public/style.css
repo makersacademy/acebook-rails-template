@@ -25,6 +25,13 @@ h1 {
   overflow-y: scroll;
 }
 /*--- navigation bar ---*/
+
+@media (min-width: 768px) {
+  .navbar-acebook {
+    border-radius: 0px;
+  }
+}
+
 .navbar {
   background:#4C2969;
   border-radius: 0px;
@@ -92,6 +99,8 @@ li:hover {
   border-radius: 5px;
   margin-left: 300px;
   margin-right: 300px;
+  border-style: solid;
+  border-color:#251947;
 }
 
 .post-user {
@@ -119,7 +128,7 @@ li:hover {
 }
 
 .dropbtn {
-  background-color: white;
+  background: none;
   color: black;
   font-size: 19px;
   border: none;
