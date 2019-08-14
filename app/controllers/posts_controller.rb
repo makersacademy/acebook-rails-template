@@ -7,6 +7,8 @@ class PostsController < ApplicationController
   end
 
   def create
+    p 'session id under'
+    p session[:user_id]
     @post = Post.create(post_params)
       if @post.save
         redirect_to posts_url
@@ -25,6 +27,8 @@ class PostsController < ApplicationController
   end
 
   def index
+    p session[:current_user_id]
+    # @user = User.find(session[:current_user_id])
     @posts = Post.all
   end
 
