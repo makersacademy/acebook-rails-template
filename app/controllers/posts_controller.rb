@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def index
     p session[:current_session]
-    @posts = Post.all
+    @posts = Post.all.reverse
   end
 
   private
