@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-class PostsController < ApplicationController
-
-  before_filter: authenticate_user! 
+class PostsController < ApplicationController 
   
   def new
     @post = Post.new
