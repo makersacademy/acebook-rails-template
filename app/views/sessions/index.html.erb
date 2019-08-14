@@ -1,0 +1,7 @@
+<%= form_tag( '/sessions', method: 'post') do %>
+<%= label_tag(:Username, 'Enter a username') %>
+<%= text_field_tag(:Username) %>
+<%= label_tag(:Password, 'Enter your password') %>
+<%= password_field_tag(:Password) %>
+<%= submit_tag('Submit') %>
+<% end %>
