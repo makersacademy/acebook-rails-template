@@ -1,7 +1,8 @@
 language: ruby
 cache:
-- bundler
-
+  - bundler
+services:
+  - postgresql
 deploy:
   provider: heroku
   api_key:
