@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+
+  before_filter: authenticate_user! 
+  
   def new
     @post = Post.new
   end
@@ -11,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    p session[:current_session]
+    @current_session = session[:current_session]
     @posts = Post.all
   end
 

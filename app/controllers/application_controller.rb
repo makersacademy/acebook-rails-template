@@ -4,14 +4,14 @@ require_relative '../models/sessions.rb'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  # include ::ActionController::Cookies
-  #
-  #   before_action :require_login
-  #
-  #   private
-  #
-  #   current_session = session[:current_session]
-  #   def require_login
-  #     redirect_to login_url unless current_session
-  # end
+
+private
+def authenticate_user!
+  if user_signed_in?
+    super
+  else
+    redirect_to your_path, notice: "Please log in to view that page"
+  end
+end
+
 end
