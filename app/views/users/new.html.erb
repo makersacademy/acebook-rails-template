@@ -1,0 +1,14 @@
+<h1>Create your account below</h1>
+
+<%= form_for @user do |form| %>
+  <%= form.label :firstname %>
+  <%= form.text_field :firstname %>
+  <%= form.label :surname %>
+  <%= form.text_field :surname %>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+
+  <%= form.submit "Submit" %>
+<% end %>

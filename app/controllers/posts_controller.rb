@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
@@ -9,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    p session[:current_session]
     @posts = Post.all.reverse
   end
 
