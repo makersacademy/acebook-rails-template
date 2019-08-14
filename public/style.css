@@ -2,8 +2,9 @@ h1 {
   font-size: 20px;
 
 }
-  .myDiv {
+.myDiv {
     z-index: 1;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 .myDiv .bg {
@@ -26,11 +27,14 @@ h1 {
 /*--- navigation bar ---*/
 .navbar {
   background:#4C2969;
+  border-radius: 0px;
 }
 .nav-link,
 .navbar-brand {
   color: #fff;
   cursor: pointer;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 18px;
 }
 .nav-link {
   margin-right: 1em !important;
@@ -49,7 +53,7 @@ h1 {
     float: right;
 }
 .navbar-brand-logo {
-  font-size: 24px;
+  font-size: 28px;
   float: left;
   height: 50px;
   padding: 15px 15px;
@@ -65,6 +69,17 @@ li:hover {
   color: white;
   margin-bottom: 40px;
   margin-left: 20px;
+}
+
+.container {
+  background-color: white;
+  border-radius: 8px;
+  border-style: solid;
+  border-color:#251947;
+  width: 40%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
 }
 
 
