@@ -33,38 +33,36 @@
         <h1 class="welcome">Welcome to <span>&#9824;</span>cebook</h1>
         <%= notice %>
         <%= flash[:error]%>
-
+        <%=link_to new_post_path do %>
+        New Post
+        <% end %>
         <div id="all-posts">
         <% @posts.reverse_each do |post| %>
-        <center><div class="post" style="width: 90rem;">
-            <div class="shadow post-body">
-              <h2 class="post-title"><%= User.find(post.user_id).username %> </h2>
+        <div class="post">
+          <div class="dropdown">
+            <button class="dropbtn">...</button>
+            <div class="dropdown-content">
+              <a> <% link_to edit_post_path(post.id) do %>
+              Edit
+              <% end %> </a>
+              <a> <%=link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %> </a>
+            </div>
+          </div>
+            <div class="post-body">
+              <h2 class="post-user"><%= User.find(post.user_id).username %> </h2>
               <p class="posts-time">posted <%= time_ago_in_words(post.created_at)%> ago</p>
               <p class="post-text"> <%= post.message %> </p>
-                <a class="btn btn-primary">
-                  <%= link_to edit_post_path(post.id) do %>
-                  Edit
-                  <% end %>
-                </a>
-                <a class="btn btn-primary">
-                  <%=link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %>
-                </a>
             </div>
             <br>
         </div>
         <% end %>
-            <a class="btn btn-primary">
-              <%=link_to new_post_path do %>
-              New Post
-              <% end %>
-            </a>
-
-    <%= link_to "Log out",session_path(session), method: :delete %>
+        </div>
     </div>
+    <%= link_to "Log out",session_path(session), method: :delete %>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="../main.js"></script>
-    </div>
+
   </body>
 </html>

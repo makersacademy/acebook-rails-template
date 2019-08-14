@@ -67,8 +67,8 @@ li:hover {
 
 .welcome {
   color: white;
-  margin-bottom: 40px;
   margin-left: 20px;
+  margin-bottom: 25px;
 }
 
 .container {
@@ -88,16 +88,22 @@ li:hover {
 .post-body {
   background-color: white;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: 5px;
+  border-radius: 5px;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.post-user {
+  font-size: 16px;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 4px;
 }
 
 .post-text {
-  border-color: darkgrey;
-  border-style: solid;
-  padding: 10px;
-  margin-right: 30px;
-  margin-left: 30px;
-  text-align: center;
+  text-align: left;
+  font-size: 24px;
 }
 
 .shadow {
@@ -107,11 +113,53 @@ li:hover {
 }
 
 .posts-time {
-  font-size: 12px;
+  font-size: 14px;
+  color: grey;
+  text-align: left;
 }
+
+.dropbtn {
+  background-color: white;
+  color: black;
+  font-size: 19px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown, .dropup {
+  float: right;
+  margin-right: 311px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #E2A789;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #E2A789;}
 
 #all-posts {
   margin-top: 20px;
   overflow-y: scroll;
   height: 600px;
+  padding-bottom: 50px;
 }
