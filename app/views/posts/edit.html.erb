@@ -1,4 +1,6 @@
-<%= form_for @post do |form| %>
+<h1>Edit your post</h1>
+
+<%= form_with(model: @post, local: true) do |form| %>
 
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -11,24 +13,18 @@
           <li><%= msg %></li>
         <% end %>
       </ul>
-  </div>
+    </div>
   <% end %>
 
-
-
-  <%= form.label :message %>
+  <p>
+  <%= form.label :message %><br>
   <%= form.text_field :message %>
+</p>
 
-  <%= form.submit "Submit" %>
+<p>
+  <%= form.submit %>
+</p>
+
 <% end %>
 
-<!-- <script>
-  var form = document.getElementById("new_post").lastElementChild.addEventListener('click', doStuff);
-
-  function doStuff(e) {
-    console.log("this is working");
-  }
-
-  // console.log("hi");
-  // console.log(form);
-</script> -->
+<%= link_to 'Back', post_path %>
