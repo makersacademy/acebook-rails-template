@@ -39,20 +39,26 @@
                   <div class="col">
                   <%= form.text_field :username, placeholder: "username"%>
                   </div>
-                <div class="row>
-                  <div class="col">
-                    <p><%= form.label :email %>
-                  </div>
+                </div>
                 <div class="row">
                   <div class="col">
-                  <%= form.email_field :email, placeholder: "email"%>
-                  <div class="col-sm">
-                    <p><%= form.label :password %>
+                    <%= form.label :email %>
                   </div>
-                <%= form.password_field :password, placeholder: "password"%>
+                  <div class="col">
+                  <%= form.email_field :email, placeholder: "email"%>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <%= form.label :password %>
+                  </div>
+                  <div class="col">
+                    <%= form.password_field :password, placeholder: "password"%>
+                  </div>
                 <%= flash[:danger] %>
                 <p><%= form.submit "Submit" %>
               <% end %>
+            </div>
         </div>
     </div>
   </body>
