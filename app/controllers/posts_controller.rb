@@ -17,7 +17,6 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    raise 'Error' unless @post.created_at < 10.minutes.ago
     if @post.update(post_params)
       redirect_to @post
     else
