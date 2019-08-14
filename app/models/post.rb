@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
 
-  belongs_to :user
+  # belongs_to :user
 
   validate :more_than_10_minutes_ago, on: :after_create
 

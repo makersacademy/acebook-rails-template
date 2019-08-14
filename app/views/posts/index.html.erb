@@ -1,6 +1,6 @@
 <center><h1> Angels </h1>
 
-<p> Morning <%=@user.firstname%></p>
+<p> Morning <%= current_user %></p>
 
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
