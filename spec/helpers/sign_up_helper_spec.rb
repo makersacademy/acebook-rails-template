@@ -1,9 +1,8 @@
 
 def sign_up
-  visit "users/new"
-  fill_in "user[firstname]", with: "Zizi"
-  fill_in "user[surname]", with: "Dweng"
+  visit "users/sign_up"
   fill_in "user[email]", with: "zizidwengy@email.com"
-  fill_in "user[password]", with: "harryisthebest"
-  click_button "Submit"
+  fill_in "user[password]", with: "harrybest"
+  fill_in "user[password_confirmation]", with: "harrybest"
+  click_button "Sign up"
 end
