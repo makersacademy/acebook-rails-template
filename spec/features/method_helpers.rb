@@ -8,7 +8,7 @@ end
 def create_post_multi_line
   visit "/posts"
   click_link "New post"
-  fill_in "Message", with: "Line one \nLine Two"
+  fill_in "Message", with: "Line one\nLine Two"
   click_button "Submit"
 end
 
