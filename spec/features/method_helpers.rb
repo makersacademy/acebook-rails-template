@@ -5,6 +5,13 @@ def create_post
   click_button "Submit"
 end
 
+def create_post_multi_line
+  visit "/posts"
+  click_link "New post"
+  fill_in "Message", with: "Line one \nLine Two"
+  click_button "Submit"
+end
+
 def update_post
   visit '/posts'
   click_on "Edit"
