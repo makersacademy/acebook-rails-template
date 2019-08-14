@@ -1,6 +1,23 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Acebook</title>
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token"     content="Go+o3aOgauVS6WB2ddW8MYanUaVzVkWlVM3a7dUcnPilqiWsp6e4nWwEeakKJuzwLYBRJexCiI/bHSUIbDx8nw==" />
 
-  <%= form.submit "Submit" %>
-<% end %>
+    <link rel="stylesheet" media="all" href="/assets/application.self-f0d704deea029cf000697e2c0181ec173a1b474645466ed843eb5ee7bb215794.css?body=1" />
+    <script src="/assets/rails-ujs.self-8944eaf3f9a2615ce7c830a810ed630e296633063af8bb7441d5702fbe3ea597.js?body=1"></script>
+    <script src="/assets/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js?body=1"></script>
+    <script src="/assets/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js?body=1"></script>
+    <script src="/assets/application.self-58b1eb225e13e3709a67ff1fd3579ba47e1509e0221833d7f486543e09ddef38.js?body=1"></script>
+  </head>
+
+  <body>
+    <form class="new_post" id="new_post" action="/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="LTfZnNROMC3ie6Uni7g0V/y1qI0VY7IviMiSa1XV7r0dZkCiZZF0Y7JNSBtVSHe5zY89644TRxIvnOZgdj+P+w==" />
+  <label for="post_message">Message</label>
+  <textarea rows="8" cols="24" name="post[message]" id="post_message"></textarea>
+
+  <input id="post_button" type="submit" name="commit" value="Submit" data-disable-with="Submit" />
+</form>
+  </body>
+</html>
