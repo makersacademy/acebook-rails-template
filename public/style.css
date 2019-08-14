@@ -59,3 +59,21 @@ h1 {
 li:hover {
   background-color: f2f2f2;
 }
+
+.welcome {
+  color: white;
+}
+
+
+/*--- posts ---*/
+
+.post-body {
+  background-color: white;
+  padding: 10px;
+}
+
+.post-text {
+  border-color: darkgrey;
+  border-style: solid;
+  padding: 10px;
+}

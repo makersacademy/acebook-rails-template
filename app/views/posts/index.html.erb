@@ -31,23 +31,37 @@
         <!-- <header class="page-header header container-fluid">
         </header> -->
 
-        <h1>Welcome to <span>&#9824;</span>cebook</<h1>
+        <h1 class="welcome">Welcome to <span>&#9824;</span>cebook</h1>
         <%= notice %>
         <%= flash[:error]%>
 
         <% @posts.reverse_each do |post| %>
-      <p><h2><%= User.find(post.user_id).username %> <br><%= post.message %></h2>
-      (posted <%= time_ago_in_words(post.created_at)%> ago)
-        <%= link_to edit_post_path(post.id) do %>
-          Edit
-        <% end %></p>
-        <%=link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %>
+        <center><div class="post" style="width: 90rem;">
+            <div class="post-body">
+              <h2 class="post-title"><%= User.find(post.user_id).username %></h2>
+              <p class="post-text"> <%= post.message %> (posted <%= time_ago_in_words(post.created_at)%> ago)</p>
+                <a class="btn btn-primary">
+                  <%= link_to edit_post_path(post.id) do %>
+                  Edit
+                  <% end %>
+                </a>
+                <a class="btn btn-primary">
+                  <%=link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %>
+                </a>
+            </div>
+            <br>
+        </div></center>
         <% end %>
-        <br>
-        <div>
-        <%= link_to new_post_path do %>
-          New post
-        <% end %>
+            <a class="btn btn-primary">
+              <%=link_to new_post_path do %>
+              New Post
+              <% end %>
+            </a>
+
+
+
+
+
     </div>
     <%= link_to "Log out",session_path(session), method: :delete %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
