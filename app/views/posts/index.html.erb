@@ -1,15 +1,20 @@
-<center><h1> Angels </h1>
+<% require_relative './time_helper' %>
+
 
 <p> Morning <%= current_user %></p>
 
+<center><h1> Angels </h1>
+
 <% @posts.reverse.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= simple_format(post.message) %></p>
+  <%= "Created: #{time_since_post(post)}" %>
   <% if post.more_than_10_minutes_ago %>
+  <br>
     <%= link_to 'Edit', edit_post_path(post) %>
   <% end %>
   <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
 <%end%>
-
+<br>
 <%= link_to new_post_path do %>
   New post
 <% end %>
