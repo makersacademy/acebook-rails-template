@@ -5,6 +5,8 @@
   <% provide(:title, "Log in")%>
   <h1>Log in</h1>
 
+<<<<<<< HEAD
+=======
   <div class='errors'>
     <% if flash[:login_errors]%>
     <% flash[:login_errors].each do |error|%>
@@ -14,6 +16,7 @@
   </div>
 
 
+>>>>>>> b972c7f80d58a41a70503b11c254430984e6dab9
   <div class="row">
     <div class="col-mad 6 col-md-offset-3">
       <%= form_for(:session, url: login_path) do |f|%>
