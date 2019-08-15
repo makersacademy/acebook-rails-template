@@ -46,8 +46,10 @@ class PostsController < ApplicationController
 
   def correct_user
     @post = current_user.posts.find_by(id: params[:id])
-    flash[:danger] = "This isn't your post!"
-    redirect_to '/posts' if @post.nil?
+      if @post.nil?
+      flash[:danger] = "This isn't your post!"
+      redirect_to '/posts'
+      end
   end
 
   def post_params
