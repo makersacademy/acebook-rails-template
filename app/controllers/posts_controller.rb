@@ -4,9 +4,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find(session[:user_id])
+    p @user = User.find(session[:user_id])
     p @username = @user.username
-    @post = @user.posts.create(post_params)
+    p @post = @user.posts.create(post_params)
     redirect_to posts_url
   end
 
@@ -46,6 +46,8 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :user_id)
+    p params
+    p params.require(:post).permit(:message, :user_id, :post)
+
   end
 end

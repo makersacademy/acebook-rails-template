@@ -9,6 +9,14 @@
         <h1>Welcome to <span>&#9824;</span>cebook</<h1>
         <%= notice %>
         <%= flash[:error]%>
+
+        <%= form_for( :post, url: posts_path) do |form| %>
+          <%= form.label :message %>
+          <%= form.text_field :message %>
+          <%= form.submit "Submit" %>
+        <% end %>
+
+
         <% @posts.reverse_each do |post| %>
       <p><%= User.find(post.user_id).username %> <%= post.message %>
       (posted <%= time_ago_in_words(post.created_at)%> ago)
@@ -22,6 +30,7 @@
         <%= link_to new_post_path do %>
           New post
         <% end %>
+
     </div>
 
   </body>
