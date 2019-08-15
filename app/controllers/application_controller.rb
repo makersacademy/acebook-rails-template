@@ -1,17 +1,14 @@
 # frozen_string_literal: true
 
-require_relative '../models/sessions.rb'
-
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  # include ::ActionController::Cookies
-  #
-  #   before_action :require_login
-  #
-  #   private
-  #
-  #   current_session = session[:current_session]
-  #   def require_login
-  #     redirect_to login_url unless current_session
-  # end
+  before_action :authenticate_user!
+
+private
+def require_login
+  unless user_signed_in?
+    redirect_to new_user_session 
+  end
+end
+
 end
