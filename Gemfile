@@ -42,6 +42,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
 end
 
 group :development do
@@ -54,3 +55,4 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'bundler'
+gem 'rubocop', require: false
