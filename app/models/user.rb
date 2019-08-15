@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+<<<<<<< HEAD
    validates :name, :username, :email, :password, presence: true
    validates :password, length: { in: 8..20 }
    validates :email, uniqueness: true
@@ -8,4 +9,6 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
 
    has_secure_password
+=======
+>>>>>>> master
 end

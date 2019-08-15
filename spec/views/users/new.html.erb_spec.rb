@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+<<<<<<< HEAD
 RSpec.describe "users/new", type: :view do
   before(:each) do
     assign(:user, User.new(
@@ -25,4 +26,8 @@ RSpec.describe "users/new", type: :view do
     end
   end
 
+=======
+RSpec.describe "users/new.html.erb", type: :view do
+  pending "add some examples to (or delete) #{__FILE__}"
+>>>>>>> master
 end

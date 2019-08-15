@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+<<<<<<< HEAD
 
 RSpec.describe "users/index", type: :view do
   before(:each) do
@@ -27,4 +28,8 @@ RSpec.describe "users/index", type: :view do
     assert_select "tr>td", :text => "Password".to_s, :count => 2
   end
 
+=======
+RSpec.describe "users/index.html.erb", type: :view do
+  pending "add some examples to (or delete) #{__FILE__}"
+>>>>>>> master
 end
