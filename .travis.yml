@@ -1,0 +1,14 @@
+Language: ruby
+cache:
+- bundler
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rake assets:precompile
+deploy:
+  provider: heroku
+  api_key:
+    secure: "TRgG/azy51hTqd1HDuE3agycd1weVPREBJvu8dK95wXmRSquim+2+qQnBrRYlLHBwKNTyH+74XkRzH2lc4GFmy1VXBE1rNPoHt+Z8KIX9wVgMZju2HlaDSNWQvUYY+azruMyticJKrlHIF5YZfkS08GTUNPPEBtjYFgBEdagCMIYz4SIuRN8zaaUnbnHLcr2J9E+tXrPhGf1nHixXBNjLqZ9H4R/rKwZ6vGPTfSZZ89reLrFpHrr3SOkDmIuLe6stfAQnDZonjII2H5brePbzcb9ByivqB6xx0+jjT6EA9z9cYAQYNiAaajXlc+sGBds3Y5gSdIlppBUrTTssKJGbksJgbgD3l1QKI+9N3neix6yl70Nk6SSSzeA1zsfqwyOYNAsxoRcPQOYtG/SqfcDkqh8swADe5AKuTF7XBVfJE5s9PWY2D+9od1p7pqheD9A+X8zwZGdUEpgvuRdFlzuFcm3OaoWw8FwmRx+dGWb+tJBZ63tzhz65HmJBomNwHvDBZ8/dNPvTPORJbQlqjJPqUEIgDIOsKNw6IejEMJdZQ9FWlra/qcV6DPFgfuUmzA9lpAKZvYPsWqYxdZT1DYVQrIuBrEROqMuLpKYPAmCve6iV01uBsFPRtPjNfXW0NQWaQUBKnSzrLgAkIu9285L3lE2AKxoRCHdgGWM+POfWtw="
+  app: makers-bookface
+  on:
+    repo: hjdr/acebook-rails-template
