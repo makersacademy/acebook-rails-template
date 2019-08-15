@@ -1,17 +1,23 @@
 class SessionsController < ApplicationController
+
+  protect_from_forgery
+
   def new
   end
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    if user and user.authenticate(params[:session][:password])
-      p "to do next"
+    if user && user.authenticate(params[:session][:password])
+      log_in(user)
+      redirect_to posts_path
     else
-    render 'new'
+      flash[:login_errors] = ['Invalid email/password combination']
+      render 'new'
+    end
   end
 
-
-
   def destroy
+    log_out
+    redirect_to root_url
   end
 end
