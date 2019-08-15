@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   root "users#index"
 
   resources :posts
+  root "posts#new"
+  root "posts#create"
   root "posts#index"
   root "posts#edit"
   root "posts#update"
