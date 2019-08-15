@@ -18,7 +18,7 @@
 
 
         <% @posts.reverse_each do |post| %>
-      <p><%= User.find(post.user_id).username %> <%= post.message %> 
+      <p><%= User.find(post.user_id).username %> <%= best_in_place post, :message %> 
       (posted <%= time_ago_in_words(post.created_at)%> ago)
         <%= link_to edit_post_path(post.id) do %>
           Edit

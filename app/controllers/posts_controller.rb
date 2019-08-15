@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  respond_to? :html, :json
   def new
     @post = Post.new
   end
@@ -27,7 +28,13 @@ class PostsController < ApplicationController
       redirect_to posts_path
     else
       @post.update(post_params)
-      redirect_to posts_path
+      respond_to do |format|
+        format.html { redirect_to @post}
+        format.json { render json: @post }
+      end
+
+      # redirect_to posts_url
+      
     end
   end
 
