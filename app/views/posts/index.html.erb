@@ -1,6 +1,8 @@
 <% @posts.each do |post| %>
   <p><%= simple_format(post.message) %>
      <sub>Posted on: <%= post.created_at.strftime("%d-%m-%Y") %></sub></p>
+     <%= link_to "Delete", post, method: :delete,
+                                       data: { confirm: "You sure?" } %>
 <% end %>
 
 <%= link_to new_post_path do %>
