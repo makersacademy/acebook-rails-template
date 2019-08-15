@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user,   only: [:destroy, :edit]
 
   def new
     @post = Post.new
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
 
   def correct_user
     @post = current_user.posts.find_by(id: params[:id])
-    flash[:success] = "You can't delete another users post!"
+    flash[:danger] = "This isn't your post!"
     redirect_to '/posts' if @post.nil?
   end
 
