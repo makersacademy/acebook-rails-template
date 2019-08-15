@@ -309,24 +309,6 @@
         1,
         1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null
       ],
       "/Users/joshhemser/Makers/Projects/groupprojects/acebook-rails-template/app/controllers/application_controller.rb": [
@@ -779,6 +761,6 @@
         null
       ]
     },
-    "timestamp": 1565859636
+    "timestamp": 1565864746
   }
 }
