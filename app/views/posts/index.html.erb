@@ -1,10 +1,11 @@
 <center><h1> Angels </h1>
 
+<%= link_to "Log out", logout_path, method: :delete %>
 <p> Morning <%= current_user %></p>
 
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
-  <% if post.more_than_10_minutes_ago %>
+  <% if post.less_than_10_minutes_ago %>
     <%= link_to 'Edit', edit_post_path(post) %>
   <% end %>
   <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>

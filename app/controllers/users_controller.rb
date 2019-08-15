@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
+      log_in(@user)
       session[:current_user_id] = @user.id
       p 'PRINTING HERE'
       p session[:current_user_id]
