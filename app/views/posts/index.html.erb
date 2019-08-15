@@ -1,7 +1,26 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<ul id="wall">
+  <% @posts.each do |post| %>
+    <li>
+    <div id=<=% post.id %>
+      <p><%= simple_format(post.message) %></p>
+      <p><% raw_post_time = Time.parse(post.created_at.to_s[0, post.created_at.to_s.length - 3]) %>
+      <%post_time = raw_post_time +60*60%></p>
+      <p> <%= post_time.strftime("%d/%m/%Y %H:%M") %> </p>
+    </div>
+    </li>
+  <% end %>
+</ul>
 
 <%= link_to new_post_path do %>
   New post
+<% end %>
+
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path) %>
+  </li>
 <% end %>

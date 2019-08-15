@@ -24,3 +24,20 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## Project Governance
+
+### Everyday:
+Standup - 10am (15 mins)
+
+### Every other day:
+2-day sprint planning - 10:15am (1.20 hr)
+- 20 min retrospective
+- 20 mins per pair planning
+- group pairs assigned 
+
+### Pairing:
+Change pairs once a day
+
+### Trello:
+https://trello.com/b/uV5OEJNn/acebook

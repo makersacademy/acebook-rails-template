@@ -1,4 +1,7 @@
-class PostsController < ApplicationController
+# frozen_string_literal: true
+
+class PostsController < ApplicationController 
+  
   def new
     @post = Post.new
   end
@@ -9,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.reverse
   end
 
   private
