@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-<<<<<<< HEAD
 
 RSpec.describe "users/edit", type: :view do
   before(:each) do
@@ -27,8 +26,4 @@ RSpec.describe "users/edit", type: :view do
     end
   end
 
-=======
-RSpec.describe "users/edit.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
->>>>>>> master
 end
