@@ -7,11 +7,29 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def edit
+    @post = Post.find(params[:id])
+    # @post.update(post_params)
+  end
+
   def create
     @user = User.find(session[:user_id])
     @post = @user.posts.create(post_params)
     redirect_to posts_url
   end
+
+
+
+
+def update
+  @post = Post.find(params[:id])
+  if @post.update(post_params)
+  redirect_to @post
+else
+  render 'edit'
+end
+end
+
 
   def index
     @posts = Post.order(created_at: :desc)
