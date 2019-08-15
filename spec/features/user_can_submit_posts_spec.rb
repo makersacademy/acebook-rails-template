@@ -5,4 +5,9 @@ RSpec.feature "Timeline", type: :feature do
     create_post
     expect(page).to have_content("Hi")
   end
+
+  scenario "Can submit multi-line posts and view them" do
+    create_post_multi_line
+    expect(page.html).to include("Line one\n<br />Line Two")
+  end
 end
