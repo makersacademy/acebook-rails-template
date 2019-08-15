@@ -8,8 +8,13 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
-    # @post.update(post_params)
+    @post = Post.where("id = ? and created_at >= ?", params[:id], 10.minutes.ago).first
+    if @post.nil?
+      flash[:danger] = "You can't edit a post created more than 10mins ago"
+      redirect_to posts_url
+    else
+      @post
+    end
   end
 
   def create
@@ -18,18 +23,14 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-
-
-
-def update
-  @post = Post.find(params[:id])
-  if @post.update(post_params)
-  redirect_to @post
-else
-  render 'edit'
-end
-end
-
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to posts_url
+    else
+      render 'edit'
+    end
+  end
 
   def index
     @posts = Post.order(created_at: :desc)
