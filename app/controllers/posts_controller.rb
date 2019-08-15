@@ -7,10 +7,29 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def edit
+    @post = Post.where("id = ? and created_at >= ?", params[:id], 10.minutes.ago).first
+    if @post.nil?
+      flash[:danger] = "You can't edit a post created more than 10mins ago"
+      redirect_to posts_url
+    else
+      @post
+    end
+  end
+
   def create
     @user = User.find(session[:user_id])
     @post = @user.posts.create(post_params)
     redirect_to posts_url
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to posts_url
+    else
+      render 'edit'
+    end
   end
 
   def index
