@@ -8,7 +8,7 @@ RSpec.feature "Timeline", type: :feature do
     update_post
     expect(page).to have_content("Bye")
   end
-  scenario "cannot update a post after ten minutes" do
+  xscenario "cannot update a post after ten minutes" do
     create_post
     t = Time.now
     Timecop.freeze(t + 10) do
