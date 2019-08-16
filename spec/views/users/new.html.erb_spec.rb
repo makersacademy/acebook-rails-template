@@ -24,4 +24,5 @@ RSpec.describe "users/new", type: :view do
       assert_select "input[name=?]", "user[password]"
     end
   end
+
 end

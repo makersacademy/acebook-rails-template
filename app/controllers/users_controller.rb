@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -29,6 +30,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        log_in @user
         flash[:success] = "Welcome to the Sample App!"
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
@@ -73,4 +75,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :username, :password, :password_confirmation)
     end
+
 end
