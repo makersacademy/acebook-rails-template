@@ -50,7 +50,7 @@
           <div class="dropdown">
             <button class="dropbtn">...</button>
             <div class="dropdown-content">
-              <a> <% link_to edit_post_path(post.id) do %>
+              <a> <%= link_to edit_post_path(post.id) do %>
               Edit
               <% end %> </a>
               <a> <%=link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %> </a>
@@ -59,15 +59,11 @@
             <div class="post-body">
               <h2 class="post-user"><%= User.find(post.user_id).username %> </h2>
               <p class="posts-time">posted <%= time_ago_in_words(post.created_at)%> ago</p>
-              <p class="post-text"> <%= post.message %> <%= best_in_place post, :message %></p>
-              <%= link_to edit_post_path(post.id) do %>
-                Edit
-              <% end %>
+              <p class="post-text"> <%= post.message %></p>
             </div>
             <br>
         </div>
         <% end %>
-
         </div>
         <%= link_to "Log out",session_path(session), method: :delete %>
         </div>
