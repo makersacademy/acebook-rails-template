@@ -41,7 +41,12 @@ GEM
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
+
+    autoprefixer-rails (9.6.1)
+      execjs
+
     ast (2.4.0)
+
     backports (3.15.0)
     bcrypt (3.1.13)
     bindex (0.5.0)
@@ -104,6 +109,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
+    materialize-sass (1.0.0)
+      autoprefixer-rails (>= 6.0.3)
     method_source (0.9.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
@@ -256,6 +263,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  materialize-sass
   pg
   puma (~> 3.7)
   rails (~> 5.1.1)

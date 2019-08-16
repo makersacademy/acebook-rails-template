@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "materialize";
+
+
+.header-logo {
+  height:50px;
+  padding: 10px;
+}
