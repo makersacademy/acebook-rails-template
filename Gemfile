@@ -11,6 +11,7 @@ ruby '2.5.0'
 
 gem 'devise'
 gem 'travis'
+gem 'materialize-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
