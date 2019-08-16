@@ -79,7 +79,7 @@ li:hover {
   margin-bottom: 25px;
 }
 
-.container {
+.login-form {
   background-color: white;
   border-radius: 8px;
   border-style: solid;
@@ -185,3 +185,11 @@ li:hover {
   &:first-letter { text-transform: uppercase; }
 }
 
+.form-control {
+  border-radius: 8px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 30px;
+}

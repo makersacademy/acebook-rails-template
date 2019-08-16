@@ -12,7 +12,7 @@
 //
 //= require rails-ujs
 //= require_tree .
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
 //= require best_in_place
 
