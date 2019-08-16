@@ -1,38 +1,40 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= form_for(:session, url: login_path) do |f| %>
+      <% provide(:title, "Log in")%>
+      <h1>Log in</h1>
 
-<%= form_for(:session, url: login_path) do |f| %>
-  <% provide(:title, "Log in")%>
-  <h1>Log in</h1>
-
-<<<<<<< HEAD
-=======
-  <div class='errors'>
-    <% if flash[:login_errors]%>
-    <% flash[:login_errors].each do |error|%>
-        <p> <%=error%> </p>
-      <% end %>
-    <% end %>
-  </div>
-
-
->>>>>>> b972c7f80d58a41a70503b11c254430984e6dab9
-  <div class="row">
-    <div class="col-mad 6 col-md-offset-3">
-      <%= form_for(:session, url: login_path) do |f|%>
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form_control' %>
-
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
-
-        <%= f.submit "Log in", class: 'btn btn-primary' %>
-
+      <div class='errors'>
+        <% if flash[:login_errors]%>
+        <% flash[:login_errors].each do |error|%>
+            <p> <%=error%> </p>
+          <% end %>
         <% end %>
+      </div>
 
-        <p> New user? <%= link_to "Sign up now!", new_user_path %></p>
-    </div>
+      <div class="row">
+        <div class="col-mad 6 col-md-offset-3">
+          <%= form_for(:session, url: login_path) do |f|%>
+            <%= f.label :email %>
+            <%= f.email_field :email, class: 'form_control' %>
 
-  </div>
+            <%= f.label :password %>
+            <%= f.password_field :password, class: 'form-control' %>
 
-<% end %>
+            <%= f.submit "Log in", class: 'btn btn-primary' %>
+
+            <% end %>
+
+            <p> New user? <%= link_to "Sign up now!", new_user_path %></p>
+        </div>
+
+      </div>
+
+    <% end %>
+  </body>
+</html>
