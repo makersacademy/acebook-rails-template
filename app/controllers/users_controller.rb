@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   def show
     if logged_in?
       @user = User.find(params[:id])
+      session[:wall_id] = params[:id]
       @post = Post.new
     else
       redirect_to root_url

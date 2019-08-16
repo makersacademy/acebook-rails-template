@@ -25,6 +25,7 @@ class PostsController < ApplicationController
     if logged_in?
       @user = User.find(session[:user_id])
       @post = @user.posts.create(post_params)
+      @post.update_attributes(:wall_id => session[:wall_id])
       redirect_to posts_url
     else
       flash[:danger] = 'You must be logged in to create a post!'
@@ -66,6 +67,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:message, "wall_id" => :id)
+    params.require(:post).permit(:message)
   end
 end
