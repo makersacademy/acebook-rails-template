@@ -1,28 +1,31 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="card-panel light-blue darken-4">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+        <h2 class="white-text">Log in</h2>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email, class: "white-text" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: ["white-text", "input-field"] %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password, class: "white-text"  %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class: "white-text" %>
+          </div>
+
+
+          <div class="actions">
+            <%= f.submit "Log in", class: "btn waves-effect waves-light white" %>
+          </div>
+        <% end %>
+
+
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
-
-where is the gold?shared
+</div>
