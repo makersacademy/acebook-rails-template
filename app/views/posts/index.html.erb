@@ -10,6 +10,7 @@
     </head>
 
       <body>
+
         <nav class="navbar-acebook navbar navbar-expand-md" style="border-radius: 0px !important;">
           <div class="navbar-brand-logo" <span>&#9824;</span>cebook</div>
           <div class="collapse navbar-collapse" id="main-navigation">
@@ -31,10 +32,25 @@
         </header> -->
 
         <h1 class="welcome">Welcome to <span>&#9824;</span>cebook</h1>
-        <%= notice %>
+        
         <%= flash[:error]%>
-        <%=link_to new_post_path do %>
-        New Post
+
+
+        <%= form_for( :post, url: posts_path) do |form| %>
+          <%= form.label :message %>
+          <%= form.text_area :message %>
+          <%= form.submit "Submit" %>
+
+        <% end %>
+
+        <% @posts.reverse_each do |post| %>
+      <p><%= User.find(post.user_id).username %> <%= best_in_place post, :message %> 
+      (posted <%= time_ago_in_words(post.created_at)%> ago)
+        <%= link_to edit_post_path(post.id) do %>
+          Edit
+        <% end %></p>
+        <%=link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %>
+
         <% end %>
         <div id="all-posts">
         <% @posts.reverse_each do |post| %>
@@ -56,7 +72,9 @@
             <br>
         </div>
         <% end %>
+
         </div>
+
     </div>
     <%= link_to "Log out",session_path(session), method: :delete %>
     </div>
