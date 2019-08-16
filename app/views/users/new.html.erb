@@ -15,10 +15,10 @@
           <div class="collapse navbar-collapse" id="main-navigation">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="/login">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Log out</a>
+                <a class="nav-link" href="/logout">Log out</a>
               </li>
             </ul>
           </div>
@@ -29,32 +29,16 @@
 
         <center><h1 class="welcome">Welcome to <span>&#9824;</span>cebook</h1>
 
-      <div class="container">
+      <div class="login-form">
               <h2>Sign up</h2>
                 <%= form_for @user do |form| %>
-                <div class="row">
-                  <div class="col">
-                    <p><%= form.label :username %>
-                  </div>
-                  <div class="col">
-                  <%= form.text_field :username, placeholder: "username"%>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <%= form.label :email %>
-                  </div>
-                  <div class="col">
-                  <%= form.email_field :email, placeholder: "email"%>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <%= form.label :password %>
-                  </div>
-                  <div class="col">
-                    <%= form.password_field :password, placeholder: "password"%>
-                  </div>
+
+                  <p><%= form.text_field :username, placeholder: "username", class: 'form-control'%>
+
+                  <p><%= form.email_field :email, placeholder: "email", class: 'form-control'%>
+
+                    <p><%= form.password_field :password, placeholder: "password", class: 'form-control'%>
+                  <br>
                 <%= flash[:danger] %>
                 <p><%= form.submit "Submit" %>
               <% end %>
