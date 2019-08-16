@@ -9,7 +9,9 @@ class PostsController < ApplicationController
   def create
     p 'session id under'
     p session[:user_id]
-    @post = Post.create(post_params)
+    p current_user
+    @post = current_user.posts.build(post_params)
+    # @post = Post.create(post_params)
       if @post.save
         redirect_to posts_url
       else
@@ -53,4 +55,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
   end
-end 
+end

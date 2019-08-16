@@ -2,18 +2,20 @@
 
 
 <%= link_to "Log out", logout_path, method: :delete %>
-<p> Morning <%= current_user %></p>
+<p> Morning <%= current_user.firstname %></p>
 
 <center><h1> Angels </h1>
 
 <% @posts.reverse.each do |post| %>
   <p><%= simple_format(post.message) %></p>
   <%= "Created: #{time_since_post(post)}" %>
-  <% if post.more_than_10_minutes_ago %>
+  <% if current_user == (post.user) && post.less_than_10_minutes_ago %>
   <br>
     <%= link_to 'Edit', edit_post_path(post) %>
   <% end %>
+  <% if current_user == (post.user) %>
   <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
+  <%end%>
 <%end%>
 <br>
 <%= link_to new_post_path do %>
