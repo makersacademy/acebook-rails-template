@@ -41,6 +41,15 @@ form {
   left: 8rem;
   text-align: center;
 }
+
+table {
+  width: 85% !important;
+  margin: 5rem;
+}
+
+.row2 {
+  left: 12rem;
+}
 /* forms */
 input,
 select,
@@ -74,6 +83,19 @@ input {
 //     color: $state-danger-text;
 //   }
 // }
+
+
+.posts-div {
+  margin-bottom: 4rem;
+}
+
+.posts-row {
+  display: contents;
+}
+
+.top {
+  margin-top: 5rem;
+}
 
 $gray-medium-light: #eaeaea;
 
@@ -167,4 +189,5 @@ footer {
       margin-left: 15px;
     }
   }
-}
+
+
