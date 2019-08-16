@@ -32,29 +32,20 @@
         </header> -->
 
         <h1 class="welcome">Welcome to <span>&#9824;</span>cebook</h1>
-        
+
         <%= flash[:error]%>
 
-
+      <div id=new-post>
         <%= form_for( :post, url: posts_path) do |form| %>
           <%= form.label :message %>
           <%= form.text_area :message %>
           <%= form.submit "Submit" %>
-
         <% end %>
+      </div>
 
+      <div id="all-posts">
         <% @posts.reverse_each do |post| %>
-      <p><%= User.find(post.user_id).username %> <%= best_in_place post, :message %> 
-      (posted <%= time_ago_in_words(post.created_at)%> ago)
-        <%= link_to edit_post_path(post.id) do %>
-          Edit
-        <% end %></p>
-        <%=link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %>
-
-        <% end %>
-        <div id="all-posts">
-        <% @posts.reverse_each do |post| %>
-        <div class="post">
+          <div class="post">
           <div class="dropdown">
             <button class="dropbtn">...</button>
             <div class="dropdown-content">
@@ -67,17 +58,21 @@
             <div class="post-body">
               <h2 class="post-user"><%= User.find(post.user_id).username %> </h2>
               <p class="posts-time">posted <%= time_ago_in_words(post.created_at)%> ago</p>
-              <p class="post-text"> <%= post.message %> </p>
+              <p class="post-text"> <%= post.message %> <%= best_in_place post, :message %></p>
+              <%= link_to edit_post_path(post.id) do %>
+                Edit
+              <% end %>
+              <%=link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %>
             </div>
             <br>
         </div>
         <% end %>
 
         </div>
+        <%= link_to "Log out",session_path(session), method: :delete %>
+        </div>
+    </div>
 
-    </div>
-    <%= link_to "Log out",session_path(session), method: :delete %>
-    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="../main.js"></script>
