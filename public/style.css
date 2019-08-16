@@ -123,6 +123,9 @@ li:hover {
   bottom: 505px;
   right: 146px;
   width: 409px;
+  background-color: #8d80ac;
+  border-style: solid;
+  border-color:#251947;
 }
 
 .post-user {
