@@ -22,34 +22,24 @@ class PostsController < ApplicationController
   end
 
   def update
-  
+
     @post = Post.find(params[:id])
     @user = User.find(session[:user_id])
     time_diff = (Time.current - @post.created_at)
     elapsed_time = (time_diff / 1.minute).round
 
-
-    if @post.user_id != @user.id 
-
-      flash[:alert] = "You can only edit your own posts"
-      redirect_to posts_url, notice:"You can only edit your own posts"
-    
+    if @post.user_id != @user.id
+      flash[:error] = "You can only edit your own posts";
+      redirect_to posts_url
     elsif elapsed_time > 10
-      format.html {
-      flash[:error] = "It's too late to edit!"
-      
-      redirect_to posts_url}
-      format.json { respond_with_bip(@post)}
-
+      flash[:error] = "It's too late to edit!";
+      redirect_to posts_url
     else
       @post.update(post_params)
-      respond_to do |format|
-        format.html { redirect_to @post}
-        format.json { render json: @post }
-      end
-
-      # redirect_to posts_ur
+      flash[:error] = "Thanks for updating!";
+      redirect_to posts_url
     end
+
   end
 
   def destroy
