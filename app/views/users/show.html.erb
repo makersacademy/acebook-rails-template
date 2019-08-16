@@ -1,1 +1,8 @@
-hello world - <%= @user %>
+hello world - <%= @user.username %>
+
+<%= form_for @post do |form| %>
+    <%= form.label :message, "Type your message to #{@user.username}..." %>
+    <%= form.text_area :message %>
+  
+    <%= form.submit "Submit" %>
+  <% end %>
