@@ -4,7 +4,11 @@ class PostsController < ApplicationController
   before_action :correct_user,   only: [:destroy, :edit]
 
   def new
-    @post = Post.new
+    if logged_in?
+      @post = Post.new
+    else
+      redirect_to root_url
+    end 
   end
 
   def edit
@@ -38,7 +42,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.order(created_at: :desc)
+    if logged_in?
+      @posts = Post.order(created_at: :desc)
+    else
+      redirect_to root_url
+    end
   end
 
   def destroy
