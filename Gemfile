@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'jquery-rails'
 gem 'rails', '~> 5.1.1'
 gem 'sprockets-rails', require: 'sprockets/railtie'
+gem 'poltergeist'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
