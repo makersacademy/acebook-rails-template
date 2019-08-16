@@ -1,7 +1,7 @@
 <% @posts.reverse.each do |post| %>
   <div>
-    <%= link_to post.message, post_path(post) %>
-    <%= User.find(post.user_id).username%>
+    <%= link_to simple_format(post.message), post_path(post) %>
+    <%= "posted by #{User.find(post.user_id).username}"%>
 
     <%= post.created_at.strftime("%b %e %Y %H:%M")%>
     <% if session[:user_id] == post.user_id && (post.created_at - 10.minutes.ago) > 0   %>
