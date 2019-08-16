@@ -25,6 +25,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       session[:wall_id] = params[:id]
       @post = Post.new
+      # @wall_post =  Post.find_by(wall_id: @user.id)
     else
       redirect_to root_url
     end
