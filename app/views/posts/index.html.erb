@@ -8,7 +8,7 @@ New post
 <div class="center top">
   <% @posts.reverse.each do |post| %>
     <div class="row center posts-row">
-      <h1><%= link_to post.message, post_path(post) %></h1>
+      <h1><%= link_to simple_format(post.message), post_path(post) %></h1>
       <div class="posts-div">
         <b><%= User.find(post.user_id).username%>
         </b>
