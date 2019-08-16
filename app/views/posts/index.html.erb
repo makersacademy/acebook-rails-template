@@ -6,8 +6,12 @@
       <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
       <body>
+      
         <h1>Welcome to <span>&#9824;</span>cebook</<h1>
+
+
         <%= notice %>
+        
         <%= flash[:error]%>
 
         <%= form_for( :post, url: posts_path) do |form| %>

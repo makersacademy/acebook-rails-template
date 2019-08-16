@@ -51,5 +51,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jquery-rails', "~> 4.3"
-
-gem 'jquery_file_download-rails'
