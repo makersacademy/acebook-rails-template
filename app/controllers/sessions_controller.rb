@@ -3,6 +3,10 @@ class SessionsController < ApplicationController
   protect_from_forgery
 
   def new
+    if logged_in?
+      flash[:login_already] = ['you are already logged in']
+      redirect_to posts_path
+    end
   end
 
   def create

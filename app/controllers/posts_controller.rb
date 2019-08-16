@@ -25,7 +25,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    if logged_in?
+      @posts = Post.all
+    else
+      redirect_to sessions_new_url
+    end
   end
 
   def edit

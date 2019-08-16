@@ -9,7 +9,12 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    if logged_in?
+      flash[:register_already] = ['you already have an account']
+      redirect_to posts_path
+    else
+      @user = User.new
+    end
   end
 
   def create

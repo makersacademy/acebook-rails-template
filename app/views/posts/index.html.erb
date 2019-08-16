@@ -6,6 +6,22 @@
 
 <center><h1> Angels </h1>
 
+  <div class='error'>
+    <% if flash[:login_already]%>
+    <% flash[:login_already].each do |error|%>
+        <p> <%= "#{current_user.firstname} #{error}" %> </p>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class='error'>
+      <% if flash[:register_already]%>
+      <% flash[:register_already].each do |error|%>
+          <p> <%= "#{current_user.firstname} #{error}" %> </p>
+        <% end %>
+      <% end %>
+      </div>
+
 <% @posts.reverse.each do |post| %>
   <p><%= simple_format(post.message) %></p>
   <%= "Created: #{time_since_post(post)}" %>
