@@ -28,7 +28,7 @@ RSpec.feature 'Edit', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
-  
+
     visit '/'
     fill_in 'Username', with: 'Example2'
     fill_in 'Email', with: 'test@example2.com'
