@@ -93,6 +93,20 @@ li:hover {
 
 /*--- posts ---*/
 
+.new-post {
+  text-align: center;
+}
+
+#post_area {
+  border-style: solid;
+  border-color:#251947;
+  border-width: medium;
+  background-color: white;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
 .post-body {
   background-color: white;
   padding: 10px;
@@ -102,6 +116,13 @@ li:hover {
   margin-right: 300px;
   border-style: solid;
   border-color:#251947;
+}
+
+.submit-post {
+  position: fixed;
+  bottom: 505px;
+  right: 146px;
+  width: 409px;
 }
 
 .post-user {
@@ -184,4 +205,3 @@ li:hover {
   border: solid 2px #C66;
   &:first-letter { text-transform: uppercase; }
 }
-
