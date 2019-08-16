@@ -1,7 +1,8 @@
-
 <div class="center">
-<%= link_to new_post_path, class: "btn btn-success top" do %>
-New post
+  <%if session[:user_id] %>
+    <%= link_to new_post_path, class: "btn btn-success top" do %>
+    New post
+  <%end%>
 <% end %>
 </div>
 
@@ -18,7 +19,8 @@ New post
           <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
         <% end %>
       </div>
+    
 
-    </div>
-  <% end %>
+  </div>
+<% end %>
 </div>
