@@ -1,24 +1,25 @@
-
 <div class="center">
-<%= link_to new_post_path, class: "btn btn-success top" do %>
-New post
+  <%if session[:user_id] %>
+    <%= link_to new_post_path, class: "btn btn-success top" do %>
+    New post
+  <%end%>
 <% end %>
 </div>
 
 <div class="center top">
-  <% @posts.reverse.each do |post| %>
-    <div class="row center posts-row">
-      <h1><%= link_to post.message, post_path(post) %></h1>
-      <div class="posts-div">
-        <b><%= User.find(post.user_id).username%>
-        </b>
-        <p><%= post.created_at.strftime("%b %e %Y %H:%M")%></p>
-        <% if session[:user_id] == post.user_id && (post.created_at - 10.minutes.ago) > 0   %>
-          <%= button_to "Edit", edit_post_path(post), method: "get", class: "btn btn-primary"%>
-          <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
-        <% end %>
-      </div>
-
+<% @posts.reverse.each do |post| %>
+  <div class="row center posts-row">
+    <h1><%= link_to post.message, post_path(post) %></h1>
+    <div class="posts-div">
+      <b><%= User.find(post.user_id).username%>
+      </b>
+      <p><%= post.created_at.strftime("%b %e %Y %H:%M")%></p>
+      <% if session[:user_id] == post.user_id && (post.created_at - 10.minutes.ago) > 0   %>
+        <%= button_to "Edit", edit_post_path(post), method: "get", class: "btn btn-primary"%>
+        <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
+      <% end %>
     </div>
-  <% end %>
+
+  </div>
+<% end %>
 </div>
