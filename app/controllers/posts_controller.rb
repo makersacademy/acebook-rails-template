@@ -18,9 +18,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find(session[:user_id])
-    @post = @user.posts.create(post_params)
-    redirect_to posts_url
+    if logged_in?
+      @user = User.find(session[:user_id])
+      @post = @user.posts.create(post_params)
+      redirect_to posts_url
+    else
+      flash[:danger] = "You must be logged in to create a post!"
+      redirect_to posts_url
+    end
   end
 
   def update

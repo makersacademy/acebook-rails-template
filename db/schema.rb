@@ -17,12 +17,10 @@ ActiveRecord::Schema.define(version: 20190815100504) do
 
   create_table "posts", force: :cascade do |t|
     t.string "message"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
-    t.index ["users_id"], name: "index_posts_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,5 +33,4 @@ ActiveRecord::Schema.define(version: 20190815100504) do
   end
 
   add_foreign_key "posts", "users"
-  add_foreign_key "posts", "users", column: "users_id"
 end
