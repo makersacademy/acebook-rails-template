@@ -1,8 +1,8 @@
 def registration
   visit "/users/new"
-  fill_in "Firstname", with: "Test"
-  fill_in "Lastname", with: "Example"
-  fill_in "Email", with: "test@example.com"
-  fill_in "Password", with: "password123"
+  p fill_in "user[firstname]", with: "Test"
+  fill_in "user[lastname]", with: "Example"
+  fill_in "user[email]", with: "test@example.com"
+  fill_in "user[password]", with: "password"
   click_button "Submit"
 end
