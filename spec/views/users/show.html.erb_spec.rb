@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe "users/show", type: :view do
   before(:each) do
     @user = assign(:user, User.create!(
@@ -17,4 +18,5 @@ RSpec.describe "users/show", type: :view do
     expect(rendered).to match(/Username/)
     expect(rendered).to match(/Password/)
   end
+
 end
