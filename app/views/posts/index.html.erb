@@ -1,10 +1,28 @@
 <% require_relative './time_helper' %>
+<% require_relative './greeting_helper' %>
 
+<!-- Navigation bar. -->
 
-<%= link_to "Log out", logout_path, method: :delete %>
-<p> Morning <%= current_user.firstname %></p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/posts"><img src="halo.jpg" width="30" height="30" class="d-inline-block align-top"> Angels</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<center><h1> Angels </h1>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Log out", logout_path, method: :delete %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Navigation bar. -->
+
+<p> <%= current_Hour %> <%= current_user.firstname %></p>
+
+<center><div class="indexTitle"><h1> Angels </h1></div>
 
   <div class='error'>
     <% if flash[:login_already]%>
@@ -23,7 +41,7 @@
       </div>
 
 <% @posts.reverse.each do |post| %>
-  <p><%= simple_format(post.message) %></p>
+  <div class="container"><img src="wings.gif" class="halo"></div><p><%= simple_format(post.message) %></p>
   <div class="container">
           <!-- Button trigger modal -->
       <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
