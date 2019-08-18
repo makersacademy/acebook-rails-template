@@ -1,28 +1,25 @@
+body {
+  height: 100vh;
+}
+
 h1 {
   font-size: 20px;
-
 }
+
 .myDiv {
     z-index: 1;
     font-family: 'Nanum Gothic', sans-serif;
+    height: 100%;
 }
 
 .myDiv .bg {
   background: url('https://cdn.pixabay.com/photo/2016/06/08/19/40/texture-1444488_960_720.jpg');
   background-size: cover;
   background-position: center;
-  position: fixed;
-  background-position: center;
-  background-attachment: inherit;
-  background-repeat: repeat;
-  background-size: cover;
-  height: auto;
-  width: 100%;
-  height: auto;
-  min-width: 1024px;
-  margin-top: -20px;
-  min-height: -webkit-fill-available;
-  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 /*--- navigation bar ---*/
 
@@ -35,7 +32,9 @@ h1 {
 .navbar {
   background:#4C2969;
   border-radius: 0px;
+  margin-bottom: 0;
 }
+
 .nav-link,
 .navbar-brand {
   color: #fff;
@@ -43,6 +42,7 @@ h1 {
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 18px;
 }
+
 .nav-link {
   margin-right: 1em !important;
   float: right;
@@ -51,14 +51,17 @@ h1 {
 .navbar-collapse {
   justify-content: flex-end;
 }
+
 .navbar-nav {
   list-style-type: none;
   position: absolute;
   right: 10px;
 }
+
 .navbar-nav>li {
     float: right;
 }
+
 .navbar-brand-logo {
   font-size: 28px;
   float: left;
@@ -75,10 +78,12 @@ li:hover {
 
 .welcome {
   color: white;
-  margin-left: 20px;
   margin-bottom: 25px;
+  margin-top: 0;
+  padding-top: 20px;
   font-size: 30px;
   font-family: 'Nanum Gothic', sans-serif;
+  text-align: center;
 }
 
 .login-form {
@@ -86,7 +91,6 @@ li:hover {
   border-radius: 20px;
   border-style: solid;
   border-color:#251947;
-  width: 40%;
   height: auto;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -97,34 +101,35 @@ li:hover {
 
 .new-post {
   text-align: center;
-}
-
-#post_area {
   border-style: solid;
   border-color:#251947;
   border-width: medium;
   background-color: white;
   padding: 10px;
   margin-top: 5px;
-  border-radius: 5px;
+  border-radius: 18px;
+  width: 60%;
+}
+
+.new-post textarea {
+  width: 90%;
+}
+
+.post {
+  position: relative;
 }
 
 .post-body {
   background-color: white;
   padding: 10px;
   margin-top: 5px;
-  border-radius: 5px;
-  margin-left: 300px;
-  margin-right: 300px;
+  border-radius: 18px;
   border-style: solid;
-  border-color:#251947;
+  border-color: #251947;
 }
 
 .submit-post {
-  position: fixed;
-  bottom: 505px;
-  right: 146px;
-  width: 409px;
+  min-width: 50px;
 }
 
 .post-user {
@@ -137,6 +142,10 @@ li:hover {
 .post-text {
   text-align: left;
   font-size: 24px;
+}
+
+.edit-post-inline {
+  display: none;
 }
 
 .shadow {
@@ -159,18 +168,15 @@ li:hover {
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown, .dropup {
-  float: right;
-  margin-right: 311px;
+  position: absolute;
+  top: 5px;
+  right: 20px;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
+  right: 0px;
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -192,20 +198,12 @@ li:hover {
 
 #all-posts {
   margin-top: 20px;
-  overflow-y: scroll;
   height: 600px;
   padding-bottom: 50px;
-}
-
-.purr{
-  position: fixed;
-  top: 30px;
-  right: 100px;
-  width: 250px;
-  padding: 20px;
-  background-color: #FCC;
-  border: solid 2px #C66;
-  &:first-letter { text-transform: uppercase; }
+  border-radius: 18px;
+  width: 60%;
+  overflow-y: scroll;
+  overflow-x: visible;
 }
 
 .form-control {

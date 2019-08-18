@@ -1,0 +1,35 @@
+<div class="post">
+  <div class="dropdown">
+    <button class="dropbtn">...</button>
+    <div class="dropdown-content">
+      <a
+        href="#"
+        data-post-id="<%= post.id %>"
+        class="edit-post-inline-link"
+      >
+        Edit
+      </a>
+      <%= link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %>
+    </div>
+  </div>
+  <div class="post-body">
+    <h2 class="post-user"><%= User.find(post.user_id).username %> </h2>
+    <p class="posts-time">posted <%= time_ago_in_words(post.created_at)%> ago</p>
+    <p
+      class="post-text"
+      id="post-text-<%= post.id %>"
+    >
+      <%= post.message %>
+    </p>
+    <div
+      class="edit-post-inline"
+      id="edit-post-inline-<%= post.id %>"
+    >
+      <%= form_for post, url: @edit_post_path do |form| %>
+        <%= form.text_field :message%>
+
+        <%= form.submit "Submit" %>
+      <% end %>
+    </div>
+  </div>
+</div>
