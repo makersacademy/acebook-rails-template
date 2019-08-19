@@ -1,11 +1,11 @@
 <div class="center">
   <%if session[:user_id] %>
-    <%= link_to new_post_path, class: "btn btn-success top" do %>
+    <%= link_to new_post_path, id:'New post', class: "btn btn-success top" do %>
     New post
   <%end%>
 <% end %>
 </div>
- git push --set-upstream origin changing_index
+
 <div class="center top">
   <% @posts.reverse.each do |post| %>
     <div class="row center posts-row">
@@ -19,7 +19,7 @@
           <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
         <% end %>
       </div>
-    
+
 
   </div>
 <% end %>
