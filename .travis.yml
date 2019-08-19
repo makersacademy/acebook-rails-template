@@ -5,6 +5,9 @@ rvm:
 before_install:
   - gem install -v 1.17.3 bundler --no-rdoc --no-ri
 
+services:
+  - postgresql
+
 script:
   - bundle install
   - bundle exec rake db:create
