@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-16T09:52:05+01:00">2019-08-16T09:52:05+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-19T11:08:46+01:00">2019-08-19T11:08:46+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">93.33%</span></span>
+    (<span class="covered_percent"><span class="green">92.61%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.07
+         1.13
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>37</b> files in total.
-    <b>165</b> relevant lines. 
-    <span class="green"><b>154</b> lines covered</span> and
-    <span class="red"><b>11</b> lines missed </span>
+    <b>38</b> files in total.
+    <b>176</b> relevant lines. 
+    <span class="green"><b>163</b> lines covered</span> and
+    <span class="red"><b>13</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -67,7 +67,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -127,7 +127,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>2.3</td>
+        <td>2.5</td>
       </tr>
       
       <tr>
@@ -351,12 +351,22 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#c11c101a0a68b7aee7b356892a09635299594b4f" class="src_link" title="spec/helpers/login_helper_spec.rb">spec/helpers/login_helper_spec.rb</a></td>
-        <td class="red strong">18.18 %</td>
-        <td>19</td>
-        <td>11</td>
-        <td>2</td>
+        <td class="strong"><a href="#9fa769a3daf1668a81027fbaea52e2de8cd95b67" class="src_link" title="spec/features/user_has_own_space_spec.rb">spec/features/user_has_own_space_spec.rb</a></td>
+        <td class="red strong">75.0 %</td>
+        <td>14</td>
+        <td>12</td>
         <td>9</td>
+        <td>3</td>
+        <td>0.8</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#c11c101a0a68b7aee7b356892a09635299594b4f" class="src_link" title="spec/helpers/login_helper_spec.rb">spec/helpers/login_helper_spec.rb</a></td>
+        <td class="red strong">20.0 %</td>
+        <td>18</td>
+        <td>10</td>
+        <td>2</td>
+        <td>8</td>
         <td>0.2</td>
       </tr>
       
@@ -377,7 +387,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>1.8</td>
+        <td>2.7</td>
       </tr>
       
       <tr>
@@ -583,8 +593,8 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
           
           <code class="ruby">    @post = Post.new</code>
         </li>
@@ -607,14 +617,14 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="10">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="10">
+          <span class="hits">3</span>
           
           <code class="ruby">    @post = Post.create(post_params)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="11">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="11">
+          <span class="hits">3</span>
           
           <code class="ruby">    redirect_to posts_url</code>
         </li>
@@ -637,8 +647,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="15">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="15">
+          <span class="hits">7</span>
           
           <code class="ruby">    @posts = Post.all.reverse</code>
         </li>
@@ -673,8 +683,8 @@
           <code class="ruby">  def post_params</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="21">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="21">
+          <span class="hits">3</span>
           
           <code class="ruby">    params.require(:post).permit(:message)</code>
         </li>
@@ -931,8 +941,8 @@
           <code class="ruby">    # Regexp extracted from https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="11">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="11">
+          <span class="hits">8</span>
           
           <code class="ruby">    return if password.blank? || password =~ /^.{6,10}$/</code>
         </li>
@@ -5068,14 +5078,117 @@
 </div>
 
       
+        <div class="source_table" id="9fa769a3daf1668a81027fbaea52e2de8cd95b67">
+  <div class="header">
+    <h3>spec/features/user_has_own_space_spec.rb</h3>
+    <h4><span class="red">75.0 %</span> covered</h4>
+    <div>
+      <b>12</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.feature &quot;Own Wall&quot;, type: :feature do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &quot;logged in user can see posts on their own wall&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_up</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    url = URI.parse(current_url)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    p url.request_uri</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link &quot;New post&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in &quot;Message&quot;, with: &quot;test own wall post&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button &quot;Submit&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button &quot;logout&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="10">
+          
+          
+          <code class="ruby">    sign_up_second_user</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
+          
+          <code class="ruby">    visit urls</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">    expect(page).to have_content(&quot;test own wall post&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="c11c101a0a68b7aee7b356892a09635299594b4f">
   <div class="header">
     <h3>spec/helpers/login_helper_spec.rb</h3>
-    <h4><span class="red">18.18 %</span> covered</h4>
+    <h4><span class="red">20.0 %</span> covered</h4>
     <div>
-      <b>11</b> relevant lines. 
+      <b>10</b> relevant lines. 
       <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>9</b> lines missed.</span>
+      <span class="red"><b>8</b> lines missed.</span>
     </div>
   </div>
   
@@ -5091,85 +5204,85 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">def sign_up</code>
+          <code class="ruby">def sign_up_second_user</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="3">
           
           
-          <code class="ruby">    visit (&quot;/&quot;)</code>
+          <code class="ruby">    visit &quot;users/sign_up&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="4">
           
           
-          <code class="ruby">    click_link &#39;Sign up&#39;</code>
+          <code class="ruby">    fill_in &quot;user[email]&quot;, with: &quot;test@test.com&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="5">
           
           
-          <code class="ruby">    fill_in &quot;user[email]&quot;, with: &quot;test@test.com&quot;</code>
+          <code class="ruby">    fill_in &quot;user[password]&quot;, with: &quot;testing&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="6">
           
           
-          <code class="ruby">    fill_in &quot;user[password]&quot;, with: &quot;testing&quot;</code>
+          <code class="ruby">    fill_in &quot;user[password_confirmation]&quot;, with: &quot;testing&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="7">
           
           
-          <code class="ruby">    fill_in &quot;user[password_confirmation]&quot;, with: &quot;testing&quot;</code>
+          <code class="ruby">    click_button &quot;Sign up&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
-          
-          <code class="ruby">    click_button &quot;commit&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">def log_in</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
+        <li class="missed" data-hits="0" data-linenumber="11">
           
           
           <code class="ruby">    fill_in &quot;user_email&quot;, with: &quot;test@test.com&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
+        <li class="missed" data-hits="0" data-linenumber="12">
           
           
           <code class="ruby">    fill_in &quot;user_password&quot;, with: &quot;test@test.com&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
+        <li class="missed" data-hits="0" data-linenumber="13">
           
           
           <code class="ruby">    click_button &quot;submit&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
@@ -5185,12 +5298,6 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby"></code>
@@ -5336,32 +5443,32 @@
           <code class="ruby">def sign_up</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="3">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="3">
+          <span class="hits">3</span>
           
           <code class="ruby">  visit &quot;users/sign_up&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
           
           <code class="ruby">  fill_in &quot;user[email]&quot;, with: &quot;zizidwengy@email.com&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
           
           <code class="ruby">  fill_in &quot;user[password]&quot;, with: &quot;harrybest&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
           
           <code class="ruby">  fill_in &quot;user[password_confirmation]&quot;, with: &quot;harrybest&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="7">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="7">
+          <span class="hits">3</span>
           
           <code class="ruby">  click_button &quot;Sign up&quot;</code>
         </li>

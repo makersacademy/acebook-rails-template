@@ -617,7 +617,7 @@
         null,
         1,
         null,
-        7,
+        8,
         null,
         3,
         null,
@@ -643,17 +643,16 @@
       "/Users/harryriley/GoogleDrive/Harry/Python/makers/Projects/makers-course/week_8/acebook-rails-template/spec/helpers/sign_up_helper_spec.rb": [
         null,
         1,
-        2,
-        2,
-        2,
-        2,
-        2,
+        3,
+        3,
+        3,
+        3,
+        3,
         null
       ],
       "/Users/harryriley/GoogleDrive/Harry/Python/makers/Projects/makers-course/week_8/acebook-rails-template/spec/helpers/login_helper_spec.rb": [
         null,
         1,
-        0,
         0,
         0,
         0,
@@ -785,6 +784,22 @@
         null,
         null
       ],
+      "/Users/harryriley/GoogleDrive/Harry/Python/makers/Projects/makers-course/week_8/acebook-rails-template/spec/features/user_has_own_space_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
       "/Users/harryriley/GoogleDrive/Harry/Python/makers/Projects/makers-course/week_8/acebook-rails-template/spec/helpers/sessions_helper_spec.rb": [
         null,
         null,
@@ -825,22 +840,22 @@
         1,
         null,
         1,
-        2,
+        3,
         null,
         null,
         1,
-        2,
-        2,
+        3,
+        3,
         null,
         null,
         1,
-        5,
+        7,
         null,
         null,
         1,
         null,
         1,
-        2,
+        3,
         null,
         null
       ],
@@ -861,6 +876,6 @@
         null
       ]
     },
-    "timestamp": 1565945525
+    "timestamp": 1566209326
   }
 }
