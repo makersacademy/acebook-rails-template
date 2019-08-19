@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       session[:wall_id] = params[:id]
       @post = Post.new
-      @wall_posts =  Post.where("wall_id = #{@user.id}").order(created_at: :desc)
+      @wall_posts = Post.where("wall_id = #{@user.id}").order(created_at: :desc)
     else
       redirect_to root_url
     end

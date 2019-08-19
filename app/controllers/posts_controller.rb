@@ -11,8 +11,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def edit
     @post = Post.where('id = ? and created_at >= ?', params[:id], 10.minutes.ago).first
@@ -28,7 +27,7 @@ class PostsController < ApplicationController
     if logged_in?
       @user = User.find(session[:user_id])
       @post = @user.posts.create(post_params)
-      @post.update_attributes(:wall_id => session[:wall_id])
+      @post.update_attributes(wall_id: session[:wall_id])
       redirect_to request.referrer
     else
       flash[:danger] = 'You must be logged in to create a post!'
@@ -49,7 +48,7 @@ class PostsController < ApplicationController
     if logged_in?
       @post = Post.new
       session[:wall_id] = 0
-      @public_posts =  Post.where("wall_id = #{0}").order(created_at: :desc)
+      @public_posts = Post.where('wall_id = 0').order(created_at: :desc)
     else
       redirect_to root_url
     end
