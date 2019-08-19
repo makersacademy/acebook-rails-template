@@ -8,24 +8,14 @@ before_script:
 - bundle exec rake db:migrate
 - bundle exec rake assets:precompile
 deploy:
-- provider: s3
+  provider: s3
   access_key_id: AKIAWGNCK7DZTUS3P5E5
-  secret_access_key: &1
-    secure: RHyuIBznuZUAmkdL1ifmzu8d680njQKJFrsU3gFdmL/Me/VCLgg2ZorL5cj79VMPTLxMmfhmAx174zdSYcZ8r61N+SCQYBRNNBLCSor9u/s8Yi5my2KFsOwuSRLtsn1HnBL5g2EH2FuDJ5btwHhuTrB59SS7S2YJVp2Ygi7Pykva5hwKtuSTopwNPmdnhpuipfg8epgagrgcq9JndBsMfURZBJKWwExKob+yK9kgIa9eKmBMxaPmzbmwwL2UNJXrDOwVB469Ea9wMGT8PwM1TeRYQlelA5+Zl5YJigpyF6MxNSSUiJSzUemwe0NsuoQ9QkfZLmGd3MrXF2uGi+e+RJNyqVB61ly+1LEzH1s2q+mXMc4/G00aTrhjur/XhnyDAAvzXBd85Z6f8bKhS2YLj35qoqLeuiEXCAkX/2lcwV0PfSdp/wj0XoVAflhsMmuPN6wNnM2uJj/Ty5RWdViyAGb+WBcdHL7BmY8A5rFNkVwB7/l0vsM0/FVHweTBxiRZ1Z13t66E4/2PEKwyaRcekohBHQBiFOSrm8EOFuBfODMznwK8mM15DsL6Alom1SdK7fOx04awUthYn7YJfYE9HztT1bncur4Zpt3qvAxWj1ouOvTvZC1d2ZaHZY19Jv7eGABhtd4J/LSxqP2+Lv2ZMsbpfbLe1iR4o77GC3t7i08=
-  local_dir: dpl_cd_upload
-  skip_cleanup: true
-  on: &2
+  secret_access_key:
+    secure: GJIG6bWspkd5wX0CPxvx07V7VCiXB5wokTQ68BGVbc16TIXjLVNQ6UdkNJWjWqusKAfTwDijOkNhubbRSl7adhrEiz+jEnIc8kWjWBs6Y0VpMtmU1OWeFu+vlD9oD9GHtBQCvZlPQHlOBHFIWI8AMoqzKPo4ik60jEJfSict4C0ttCiGn1wl2kbf3j4ecNsCLCr9/lRSn3Pk529RTcNM32Xc4N75+BsRry0RblMJJZfcuY2lNmzCsulTDWFd/G2oF6faSfv0+Pc02BX4JJB5SjqVm3lzBKCoWSHFXIy/Tz+w0pj8s3P+ip/dLYAQovy3O3SsbP7Pkx0+NsYwWwIF7hflbIjGbbOR2z/bsN5Yx/8iS2NYiIrkDZZ72WfXACBAzqZ/iiQkD9ZymoolhejK3Gr3K0hFigdUBcGwYRNOm18DI8ApvrQSqpqjOyu4dhUQo+dtcluQgT43yP9/yhvj0bz5uhBaEkkliY1I2PboMLfzgQJ2qotfYt8rAiBXKy0coBpxcVprUMMwENXvF9O7qSSai/YrtKmdUT4Ni3xnev57EG+Ps8KCHrLdTuFFKU2AZKh9TNTVt5X8UsX3ajSf8aoh4JyauE5HpZZkuYPF51ckZ5QDUmGgcXUy4r6HBz9WqJkY+RMVK24lGgngjzhKBTIahf7p+8b/lgXAiVo1dFo=
+  bucket: s3
+  acl: bucket_owner_full_control
+  on:
     repo: hjdr/acebook-rails-template
-  bucket: s3
-- provider: codedeploy
-  access_key_id: AKIAWGNCK7DZTUS3P5E5
-  secret_access_key: *1
-  bucket: s3
-  key: key
-  bundle_type: master
-  application: acebook-rails-template
-  deployment_group: primary
-  on: *2
 before_deploy:
 - mkdir -p dpl_cd_upload
 - mv key dpl_cd_upload/key
