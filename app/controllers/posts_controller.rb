@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def index
     redirect_to root_path if session[:user_id] == nil
+    p "All the single ladies" if session[:user_id] == nil
     @posts = Post.all
   end
 
