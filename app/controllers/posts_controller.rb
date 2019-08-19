@@ -11,7 +11,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    render 'index'
+  end
 
   def edit
     @post = Post.where('id = ? and created_at >= ?', params[:id], 10.minutes.ago).first
@@ -38,7 +40,11 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to posts_url
+      if session[:wall_id] == 0
+        redirect_to '/posts'
+      else
+        redirect_to "/users/#{session[:wall_id]}"
+      end
     else
       render 'edit'
     end
