@@ -20,8 +20,17 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
   end
 
+  def edit
+    @user = User.find(session[:user_id])
+    if @user.id != @post.user_id
+      redirect_to posts_url
+      flash[:notice] = "This is not your post!"
+    end
+  end
+
   def update
-    @post.update(post_params)
+    @user = User.find(session[:user_id])
+    @post.update(post_params) if @user.id == @post.user_id
     redirect_to posts_url
   end
 

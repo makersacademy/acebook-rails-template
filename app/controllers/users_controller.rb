@@ -6,12 +6,15 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    redirect_to '/'
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-
+    if session[:user_id] != params[:id].to_i
+      redirect_to '/'
+    end
   end
 
   # GET /users/new
