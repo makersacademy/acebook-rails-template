@@ -1,8 +1,8 @@
-require 'rails_helper'
-
-RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+# require 'rails_helper'
+#
+# RSpec.describe User, type: :model do
+#   pending "add some examples to (or delete) #{__FILE__}"
+# end
 
 #
 # Instead, your tests around password handling should be more black box,
@@ -11,7 +11,7 @@ end
 #   super-long passwords and a string which matches the hashed password).
 
 
-# 
+#
 # login with password: "123456789"
 #
 # can't login password: "123456789"

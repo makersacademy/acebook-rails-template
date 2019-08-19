@@ -5,6 +5,9 @@ feature "User can log in" do
   scenario 'A user can login' do
     signup
     login
-    expect(session[:user_id]).to eq(user.id)
+    # expect(page).to have_current_path(users_path)
+    # p Users.all
+    # p Users.show
+    #
   end
 end
