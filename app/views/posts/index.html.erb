@@ -17,7 +17,7 @@
       <% if (post.created_at - 10.minutes.ago) > 0 %>
         <%= button_to "Edit", edit_post_path(post), method: "get", class: "btn btn-primary"%>
       <%end%>
-
+      
       <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
 
     </div>
