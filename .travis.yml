@@ -6,6 +6,7 @@ before_install:
   - gem install -v 1.17.2 bundler --no-rdoc --no-ri
 
 script:
-  — bundle exec rake db:create
-  — bundle exec rake db:migrate
-  — bundle exec rspec
+  - bundle install
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rspec
