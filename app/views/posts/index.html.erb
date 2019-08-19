@@ -25,13 +25,25 @@
       <% end %>
       </div>
 
+
 <% @posts.each do |post| %>
-  <div class="container"><img src="wings.gif" class="halo"></div><p><%= simple_format(post.message) %></p>
-  <div class="container">
+  <div class="well">
+  <div class="halo">
+    <%= post.user.firstname %>
+    <!-- <img src="wings.gif" class="halo"> -->
+  </div>
+    <p><%= simple_format(post.message) %></p>
+  <!-- <div class="container"> -->
           <!-- Button trigger modal -->
       <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
         read
       <a>
+        <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
+          Preach
+        <a>
+          <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
+            Praise
+          <a>
 
       <!-- Modal -->
       <div class="modal fade" id="<%=post.id%>ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -53,16 +65,21 @@
           </div>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
+  </div>
+
   <%= "Created: #{time_since_post(post)}" %>
   <% if current_user == (post.user) && post.less_than_10_minutes_ago %>
   <br>
+
     <%= link_to 'Edit', edit_post_path(post) %>
   <% end %>
   <% if current_user == (post.user) %>
   <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
   <%end%>
+
 <%end%>
+
 <br>
 <%= link_to new_post_path do %>
   New post
