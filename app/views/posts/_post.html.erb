@@ -5,6 +5,9 @@
       <a
         href="#"
         data-post-id="<%= post.id %>"
+        data-user-id="<%= post.user_id %>"
+        data-session-id="<%= session[:user_id] %>"
+        data-created-time="<%= post.created_at %>"
         class="edit-post-inline-link"
       >
         Edit
