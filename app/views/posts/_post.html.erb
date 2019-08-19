@@ -17,13 +17,13 @@
     <p class="posts-time">posted <%= time_ago_in_words(post.created_at)%> ago</p>
     <p
       class="post-text"
-      id="testing2"
+      id="post-text-<%= post.id %>"
     >
       <%= post.message %>
     </p>
     <div
       class="edit-post-inline"
-      id="testing"
+      id="edit-post-inline-<%= post.id %>"
     >
       <%= form_for post, url: @edit_post_path do |form| %>
         <%= form.text_field :message%>
