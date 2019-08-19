@@ -6,6 +6,6 @@ RSpec.feature "Timeline", type: :feature do
     signup
     newpost
     click_button "Remove"
-    expect(page).to have_no_content("Hello, world!")
+    expect(page).to have_no_content('Marvin Marvin')
   end
 end

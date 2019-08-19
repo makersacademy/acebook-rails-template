@@ -8,7 +8,6 @@ def signup
     fill_in 'password', with: "123456789"
     fill_in 'password_confirmation', with: "123456789"
     click_button "Create my account"
-    expect(page).to have_content("Marvin")
 end
 
 
@@ -17,7 +16,6 @@ def login
   fill_in 'email', with: "m@gmail.com"
   fill_in 'password', with: "123456789"
   click_button "Log in"
-  expect(page).to have_content("Marvin")
 end
 
 def newpost
