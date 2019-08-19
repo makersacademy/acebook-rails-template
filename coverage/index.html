@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-19T11:44:45+01:00">2019-08-19T11:44:45+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-19T12:34:52+01:00">2019-08-19T12:34:52+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.6
+         0.63
        </span>
     </span> hits/line)
   </h2>
@@ -97,7 +97,7 @@
         <td>12</td>
         <td>8</td>
         <td>4</td>
-        <td>0.7</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -203,7 +203,7 @@
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.67
+         0.72
        </span>
     </span> hits/line)
   </h2>
@@ -255,7 +255,7 @@
         <td>12</td>
         <td>8</td>
         <td>4</td>
-        <td>0.7</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -1175,26 +1175,26 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
           
           <code class="ruby">    user = User.find_by(email: params[:session][:email].downcase)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
           
           <code class="ruby">      if user &amp;&amp; user.authenticate(params[:session][:password])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
           <code class="ruby">        session[:user_id] = user.id</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
           
           <code class="ruby">        redirect_to posts_url, notice: &quot;Welcome to Acebook, #{user.username}!&quot;</code>
         </li>
