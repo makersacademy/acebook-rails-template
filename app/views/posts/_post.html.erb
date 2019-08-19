@@ -19,7 +19,7 @@
       class="post-text"
       id="post-text-<%= post.id %>"
     >
-      <%= post.message %>
+      <%= simple_format(post.message) %>
     </p>
     <div
       class="edit-post-inline"
