@@ -33,7 +33,7 @@
 
         <div class="new-post">
           <%= form_for( :post, url: posts_path) do |form| %>
-            <%= form.text_area :message, placeholder: "What's on your mind?", :id => "post_area", :rows => 4 %>
+            <%= form.text_area :message, placeholder: "What's on your mind Beyonce?", :id => "post_area", :rows => 4 %>
             <%= form.submit "Post", :class => 'submit-post'  %>
           <% end %>
         </div>
