@@ -2,15 +2,30 @@ Language: ruby
 cache:
 - bundler
 services:
-  - postgresql
+- postgresql
 before_script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
 - bundle exec rake assets:precompile
 deploy:
-  provider: heroku
-  api_key:
-    secure: "TRgG/azy51hTqd1HDuE3agycd1weVPREBJvu8dK95wXmRSquim+2+qQnBrRYlLHBwKNTyH+74XkRzH2lc4GFmy1VXBE1rNPoHt+Z8KIX9wVgMZju2HlaDSNWQvUYY+azruMyticJKrlHIF5YZfkS08GTUNPPEBtjYFgBEdagCMIYz4SIuRN8zaaUnbnHLcr2J9E+tXrPhGf1nHixXBNjLqZ9H4R/rKwZ6vGPTfSZZ89reLrFpHrr3SOkDmIuLe6stfAQnDZonjII2H5brePbzcb9ByivqB6xx0+jjT6EA9z9cYAQYNiAaajXlc+sGBds3Y5gSdIlppBUrTTssKJGbksJgbgD3l1QKI+9N3neix6yl70Nk6SSSzeA1zsfqwyOYNAsxoRcPQOYtG/SqfcDkqh8swADe5AKuTF7XBVfJE5s9PWY2D+9od1p7pqheD9A+X8zwZGdUEpgvuRdFlzuFcm3OaoWw8FwmRx+dGWb+tJBZ63tzhz65HmJBomNwHvDBZ8/dNPvTPORJbQlqjJPqUEIgDIOsKNw6IejEMJdZQ9FWlra/qcV6DPFgfuUmzA9lpAKZvYPsWqYxdZT1DYVQrIuBrEROqMuLpKYPAmCve6iV01uBsFPRtPjNfXW0NQWaQUBKnSzrLgAkIu9285L3lE2AKxoRCHdgGWM+POfWtw="
-  app: makers-bookface
-  on:
+- provider: s3
+  access_key_id: AKIAWGNCK7DZTUS3P5E5
+  secret_access_key: &1
+    secure: RHyuIBznuZUAmkdL1ifmzu8d680njQKJFrsU3gFdmL/Me/VCLgg2ZorL5cj79VMPTLxMmfhmAx174zdSYcZ8r61N+SCQYBRNNBLCSor9u/s8Yi5my2KFsOwuSRLtsn1HnBL5g2EH2FuDJ5btwHhuTrB59SS7S2YJVp2Ygi7Pykva5hwKtuSTopwNPmdnhpuipfg8epgagrgcq9JndBsMfURZBJKWwExKob+yK9kgIa9eKmBMxaPmzbmwwL2UNJXrDOwVB469Ea9wMGT8PwM1TeRYQlelA5+Zl5YJigpyF6MxNSSUiJSzUemwe0NsuoQ9QkfZLmGd3MrXF2uGi+e+RJNyqVB61ly+1LEzH1s2q+mXMc4/G00aTrhjur/XhnyDAAvzXBd85Z6f8bKhS2YLj35qoqLeuiEXCAkX/2lcwV0PfSdp/wj0XoVAflhsMmuPN6wNnM2uJj/Ty5RWdViyAGb+WBcdHL7BmY8A5rFNkVwB7/l0vsM0/FVHweTBxiRZ1Z13t66E4/2PEKwyaRcekohBHQBiFOSrm8EOFuBfODMznwK8mM15DsL6Alom1SdK7fOx04awUthYn7YJfYE9HztT1bncur4Zpt3qvAxWj1ouOvTvZC1d2ZaHZY19Jv7eGABhtd4J/LSxqP2+Lv2ZMsbpfbLe1iR4o77GC3t7i08=
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
     repo: hjdr/acebook-rails-template
+  bucket: s3
+- provider: codedeploy
+  access_key_id: AKIAWGNCK7DZTUS3P5E5
+  secret_access_key: *1
+  bucket: s3
+  key: key
+  bundle_type: master
+  application: acebook-rails-template
+  deployment_group: primary
+  on: *2
+before_deploy:
+- mkdir -p dpl_cd_upload
+- mv key dpl_cd_upload/key
