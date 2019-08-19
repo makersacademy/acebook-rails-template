@@ -4,6 +4,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = Post.where(user_id: @user.id)
+    10.times do
+      puts ""
+    end
+    p @user
+    p @posts
+    10.times do
+      puts ""
+    end
     # The below line starts a rails console which you can use for debugging
     # debugger
   end
