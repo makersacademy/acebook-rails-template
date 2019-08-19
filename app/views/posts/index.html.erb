@@ -1,13 +1,8 @@
 <% require_relative './time_helper' %>
 <% require_relative './greeting_helper' %>
 
-<!-- Navigation bar. -->
-
-<!-- Navigation bar. -->
-
-<p> <%= current_Hour %> <%= current_user.firstname %></p>
-
-<center><div class="indexTitle"><h1> Angels </h1></div>
+<div class="container">
+  <%= current_Hour %> <%= current_user.firstname %>
 
   <div class='error'>
     <% if flash[:login_already]%>
@@ -23,8 +18,19 @@
           <p> <%= "#{current_user.firstname} #{error}" %> </p>
         <% end %>
       <% end %>
-      </div>
+    </div>
 
+    <div class="col-8">
+      <center><div class="indexTitle"><h1> Angels </h1></div>
+        <% @posts.each do |post| %>
+          <div class="container">
+            <img src="wings.gif" class="halo">
+            <strong><%= simple_format(post.user.firstname) %></strong>
+            <%= simple_format(post.message) %>
+            <!-- Button trigger modal -->
+              <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
+                read
+              <a>
 
 <% @posts.each do |post| %>
   <div class="well">
