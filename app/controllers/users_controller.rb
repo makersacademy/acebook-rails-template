@@ -12,8 +12,6 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    p @user.id
-    p params[:id]
     if session[:user_id] != params[:id].to_i
       redirect_to '/'
     end
