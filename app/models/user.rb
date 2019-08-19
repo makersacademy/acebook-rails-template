@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_many :posts
+  has_one_attached :avatar
 
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -9,6 +10,7 @@ class User < ApplicationRecord
   validates :email, presence: true,
     uniqueness: { case_sensitive: false },
     format: { with: VALID_EMAIL_REGEX }
+  validates :avatar, presence: true
   has_secure_password
   validates :password, presence: true,
     length: { minimum: 6, maximum: 10}
