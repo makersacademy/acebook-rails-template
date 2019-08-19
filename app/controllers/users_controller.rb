@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = 'Welcome to MugManual!'
-      redirect_to posts_path
+      redirect_to "/users/#{session[:user_id]}"
     else
       render 'new'
     end
