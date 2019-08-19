@@ -30,11 +30,22 @@ $(document).ready(function() {
     const user_id = e.target.dataset.userId
     const session_id = e.target.dataset.sessionId
     console.log("testy")
+    console.log(user_id)
+    console.log(session_id)
+    console.log(e.target.dataset)
+
     if (user_id !== session_id) {
       console.log("testyif")
       $("#pop_up_cant_delete").addClass("active")
       $('#pop_up_cant_delete').click((e) => {
       $("#pop_up_cant_delete").removeClass("active")
       })
+    } else {
+      e.preventDefault()
+      const postId = e.target.dataset.postId
+      $(`#post-text-${postId}`).hide()
+      $(`#delete-confirmation-${postId}`).show()
     }
+  })
+
 })

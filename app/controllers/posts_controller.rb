@@ -47,10 +47,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @user = User.find(session[:user_id])
-    if @post.user_id != @user.id
-      # flash[:error] = "You can only delete your own posts"
-      redirect_to posts_path
-    else
+    if @post.user_id == @user.id
       @post.destroy
       redirect_to posts_path
     end
