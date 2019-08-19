@@ -36,7 +36,11 @@ class PostsController < ApplicationController
 
   def destroy
     @user = User.find(session[:user_id])
-    @post.destroy if @user.id == @post.user_id
+    if @user.id == @post.user_id
+        @post.destroy
+    else
+      flash[:notice] = "This is not your post!"
+    end
     redirect_to posts_url
  end
 
