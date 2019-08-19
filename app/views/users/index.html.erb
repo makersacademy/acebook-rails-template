@@ -1,0 +1,6 @@
+ this should be a list of all users
+
+<% @users.each do |user| %>
+  <p><%= simple_format(user.username) %>
+     <%= link_to "View Wall", "/users/#{user.id}" %>
+<% end %>

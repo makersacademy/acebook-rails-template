@@ -10,7 +10,6 @@ RSpec.feature 'Edit', type: :feature do
     fill_in 'Password', with: 'testing123'
     fill_in 'Confirmation', with: 'testing123'
     click_button 'Create my account'
-    click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
     click_link 'Edit'
@@ -25,10 +24,9 @@ RSpec.feature 'Edit', type: :feature do
     fill_in 'Password', with: 'testing123'
     fill_in 'Confirmation', with: 'testing123'
     click_button 'Create my account'
-    click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
-  
+
     visit '/'
     fill_in 'Username', with: 'Example2'
     fill_in 'Email', with: 'test@example2.com'

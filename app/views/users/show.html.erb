@@ -1,0 +1,14 @@
+<%= form_for @post do |form| %>
+    <%= form.label :message, "Type your message to #{@user.username}..." %>
+    <%= form.text_area :message %>
+
+    <%= form.submit "Submit" %>
+  <% end %>
+  <% @wall_posts.each do |wall_post| %>
+    <h4><%= User.find(wall_post.user_id).username %></h4>
+    <p><%= simple_format(wall_post.message) %>
+    <sub>Posted on: <%= wall_post.created_at.strftime("%d-%m-%Y") %></sub></p>
+    <%= link_to 'Edit', edit_post_path(wall_post) %>
+    <%= link_to "Delete", wall_post, method: :delete,
+                                      data: { confirm: "You sure?" } %>
+    <% end %>
