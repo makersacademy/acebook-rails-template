@@ -12,9 +12,20 @@
       >
         Edit
       </a>
-      <%= link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %>
+
+      <a
+        href="#"
+        data-post-id="<%= post.id %>"
+        data-user-id="<%= post.user_id %>"
+        data-session-id="<%= session[:user_id] %>"
+        class="delete-post"
+      >
+      <%= link_to 'Delete', post, method: :delete %>
+    </a>
     </div>
   </div>
+
+
   <div class="post-body">
     <h2 class="post-user"><%= User.find(post.user_id).username %> </h2>
     <p class="posts-time">posted <%= time_ago_in_words(post.created_at)%> ago</p>
@@ -24,6 +35,7 @@
     >
       <%= post.message %>
     </p>
+
     <div
       class="edit-post-inline"
       id="edit-post-inline-<%= post.id %>"
