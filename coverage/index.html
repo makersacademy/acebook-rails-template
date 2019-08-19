@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-16T17:12:16+01:00">2019-08-16T17:12:16+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-19T14:25:02+01:00">2019-08-19T14:25:02+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">91.08%</span></span>
+    (<span class="covered_percent"><span class="green">90.94%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.58
+         2.69
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>47</b> files in total.
-    <b>325</b> relevant lines. 
-    <span class="green"><b>296</b> lines covered</span> and
-    <span class="red"><b>29</b> lines missed </span>
+    <b>48</b> files in total.
+    <b>331</b> relevant lines. 
+    <span class="green"><b>301</b> lines covered</span> and
+    <span class="red"><b>30</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -171,6 +171,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#eddf919fb1cbf3f3e62080657da2bc4ba337273d" class="src_link" title="app/views/posts/greeting_helper.rb">app/views/posts/greeting_helper.rb</a></td>
+        <td class="red strong">80.0 %</td>
+        <td>9</td>
+        <td>5</td>
+        <td>4</td>
+        <td>1</td>
+        <td>10.4</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#f8c99a92619956d0c544e2ea81014f759e4a7db5" class="src_link" title="app/views/posts/time_helper.rb">app/views/posts/time_helper.rb</a></td>
         <td class="red strong">72.22 %</td>
         <td>22</td>
@@ -233,9 +243,9 @@
       <tr>
         <td class="strong"><a href="#4ef35f1b417e3be637bee2b8163ba7f25427772f" class="src_link" title="config/initializers/assets.rb">config/initializers/assets.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>3</td>
-        <td>3</td>
+        <td>16</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -1934,6 +1944,79 @@
 </div>
 
       
+        <div class="source_table" id="eddf919fb1cbf3f3e62080657da2bc4ba337273d">
+  <div class="header">
+    <h3>app/views/posts/greeting_helper.rb</h3>
+    <h4><span class="red">80.0 %</span> covered</h4>
+    <div>
+      <b>5</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">AFTERNOON = 12</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">def current_Hour</code>
+        </li>
+      
+        <li class="covered" data-hits="25" data-linenumber="4">
+          <span class="hits">25</span>
+          
+          <code class="ruby">  if Time.new.hour &lt; AFTERNOON</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="5">
+          
+          
+          <code class="ruby">    return &quot;Good morning&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  else</code>
+        </li>
+      
+        <li class="covered" data-hits="25" data-linenumber="7">
+          <span class="hits">25</span>
+          
+          <code class="ruby">    return &quot;Good afternoon&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="f8c99a92619956d0c544e2ea81014f759e4a7db5">
   <div class="header">
     <h3>app/views/posts/time_helper.rb</h3>
@@ -2629,8 +2712,8 @@
     <h3>config/initializers/assets.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2726,6 +2809,12 @@
           <span class="hits">1</span>
           
           <code class="ruby">Rails.application.config.assets.precompile += %w( login.css )</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">Rails.application.config.assets.precompile += %w( posts.css )</code>
         </li>
       
     </ol>
