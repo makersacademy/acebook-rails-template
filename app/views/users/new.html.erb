@@ -1,12 +1,9 @@
+<div class="container">
+  <h1 class="center">Sign up</h1>
 
-<% provide(:title, 'Sign up') %>
-
-  <div class="container">
-    <h1 class="center">Sign up</h1>
-
-    <div class="row center">
-      <div class="col-md-6 col-md-offset-3">
-        <div>
+  <div class="row center">
+    <div class="col-md-6 col-md-offset-3">
+      <div>
         <%= form_for(@user) do |f| %>
         <%= render 'shared/error_messages' %>
 
@@ -27,8 +24,7 @@
 
         <%= f.submit "Create my account", class: "btn btn-primary" %>
       <% end %>
-      </div>
-
     </div>
   </div>
+</div>
 </div>
