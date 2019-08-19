@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = 'Welcome to MugManual!'
-      redirect_to posts_path # needs changing to homepage
+      redirect_to posts_path
     else
       render 'new'
     end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       session[:wall_id] = params[:id]
       @post = Post.new
-      # @wall_post =  Post.find_by(wall_id: @user.id)
+      @wall_posts =  Post.where("wall_id = #{@user.id}").order(created_at: :desc)
     else
       redirect_to root_url
     end
