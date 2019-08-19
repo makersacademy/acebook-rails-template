@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Projects/acebook---CharliesAngels/spec/controllers/posts_controller_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/controllers/posts_controller_spec.rb": [
         1,
         1,
         null,
@@ -37,7 +37,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/rails_helper.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -96,14 +96,14 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/environment.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/application.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/application.rb": [
         1,
         null,
         1,
@@ -123,12 +123,12 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/boot.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/environments/test.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/environments/test.rb": [
         1,
         null,
         null,
@@ -172,7 +172,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/initializers/application_controller_renderer.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -180,7 +180,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/initializers/assets.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -195,9 +195,10 @@
         null,
         null,
         null,
+        1,
         1
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/initializers/backtrace_silencers.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -206,20 +207,20 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/initializers/cookies_serializer.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/initializers/inflections.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -237,13 +238,13 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/initializers/mime_types.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/initializers/wrap_parameters.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -259,7 +260,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/config/routes.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/config/routes.rb": [
         1,
         1,
         null,
@@ -275,11 +276,11 @@
         1,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/helpers/application_helper.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/helpers/sessions_helper.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/helpers/sessions_helper.rb": [
         1,
         1,
         8,
@@ -302,7 +303,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/helpers/users_helper.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/helpers/users_helper.rb": [
         1,
         null,
         1,
@@ -312,11 +313,11 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/helpers/welcome_helper.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/features/sign_up_helper.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/features/sign_up_helper.rb": [
         1,
         8,
         8,
@@ -326,7 +327,7 @@
         8,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/controllers/posts_controller.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/controllers/posts_controller.rb": [
         1,
         null,
         1,
@@ -383,13 +384,13 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/controllers/application_controller.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/controllers/application_controller.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/controllers/sessions_controller_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
         1,
@@ -404,7 +405,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/controllers/sessions_controller.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -433,14 +434,14 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/controllers/users_controller_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/controllers/users_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/controllers/users_controller.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -476,7 +477,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/controllers/welcome_controller_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/controllers/welcome_controller_spec.rb": [
         1,
         null,
         1,
@@ -490,13 +491,13 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/controllers/welcome_controller.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/controllers/welcome_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/features/user_can_delete_form_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/features/user_can_delete_post_spec.rb": [
         1,
         1,
         1,
@@ -513,7 +514,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/features/method_helpers.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/features/method_helpers.rb": [
         1,
         4,
         4,
@@ -535,7 +536,7 @@
         1,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/features/user_can_only_submit_valid_credentials_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/features/user_can_only_submit_valid_credentials_spec.rb": [
         1,
         null,
         1,
@@ -550,7 +551,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/features/user_can_sign_up_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/features/user_can_sign_up_spec.rb": [
         1,
         1,
         null,
@@ -561,7 +562,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/features/user_can_submit_posts_spec.rb": [
         1,
         1,
         null,
@@ -579,7 +580,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/features/user_can_update_posts_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/features/user_can_update_posts_spec.rb": [
         1,
         1,
         1,
@@ -614,7 +615,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/features/user_redirected_if_not_signed_in_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/features/user_redirected_if_not_signed_in_spec.rb": [
         1,
         1,
         null,
@@ -623,7 +624,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/features/user_redirected_if_signed_in_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/features/user_redirected_if_signed_in_spec.rb": [
         1,
         null,
         null,
@@ -643,24 +644,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/helpers/sessions_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/helpers/users_helper_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/helpers/sessions_helper_spec.rb": [
         1,
         null,
         null,
@@ -677,7 +661,7 @@
         1,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/helpers/welcome_helper_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/helpers/users_helper_spec.rb": [
         1,
         null,
         null,
@@ -694,18 +678,78 @@
         1,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/models/post_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/helpers/welcome_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/models/post_spec.rb": [
         1,
         null,
         1,
         2,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/models/post.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/models/post.rb": [
         1,
         null,
         1,
-        55,
+        68,
         null,
         1,
         null,
@@ -723,50 +767,77 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/models/application_record.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/models/user_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/models/user.rb": [
+        1,
+        null,
+        1,
+        null,
+        22,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/views/sessions/new.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/models/user.rb": [
-        1,
-        null,
-        1,
-        null,
-        17,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/views/sessions/new.html.erb_spec.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/spec/views/welcome/index.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/student/Projects/acebook---CharliesAngels/spec/views/welcome/index.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/student/Projects/acebook---CharliesAngels/app/views/posts/time_helper.rb": [
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/views/posts/time_helper.rb": [
         1,
         1,
         1,
@@ -787,10 +858,21 @@
         0,
         0,
         null,
+        null,
+        null
+      ],
+      "/Users/loicdewit/Desktop/acebook---CharliesAngels/app/views/posts/greeting_helper.rb": [
+        1,
+        null,
+        1,
+        25,
+        0,
+        null,
+        25,
         null,
         null
       ]
     },
-    "timestamp": 1565968999
+    "timestamp": 1566213574
   }
 }
