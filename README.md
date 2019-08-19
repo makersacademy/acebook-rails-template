@@ -31,3 +31,6 @@ Then visit localhost:3000.
 ## How to use the website
 
 
+
+![](https://user-images.githubusercontent.com/40341869/63258743-a2830080-c274-11e9-9737-e40f6600e07a.png)
+
