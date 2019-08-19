@@ -1,6 +1,9 @@
 <% require_relative './time_helper' %>
 <% require_relative './greeting_helper' %>
 
+<head>
+<script src="jquery.js"></script>
+</head>
 <!-- Navigation bar. -->
 
 <!-- Navigation bar. -->
@@ -68,10 +71,23 @@
   </div>
 
   <%= "Created: #{time_since_post(post)}" %>
-  <% if current_user == (post.user) && post.less_than_10_minutes_ago %>
   <br>
-    <%= link_to 'Edit', edit_post_path(post) %>
-  <% end %>
+  <button type="button" name="button" id="edit_button">Edito</button>
+  <script>
+    $("#edit_button").click(function() {
+
+     var edited_text = $('#edited_textbox').val()
+
+     $.post(`http://localhost:3000/posts/${ <%=post.id %> }`, edited_text,
+
+         function(data, status){
+           console.log(data + "THIS IS DATA")
+           console.log(status + "THIS IS STATUS")
+          }
+    );
+ });
+
+  </script>
   <% if current_user == (post.user) %>
   <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
   <%end%>
