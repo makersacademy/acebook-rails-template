@@ -40,8 +40,6 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      p 'look here'
-      p session[:wall_id]
       if session[:wall_id] == 0
         redirect_to '/posts'
       else
