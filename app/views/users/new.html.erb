@@ -11,19 +11,19 @@
         <%= render 'shared/error_messages' %>
 
         <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :name, id:"name", class: 'form-control' %>
 
         <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
+        <%= f.email_field :email, id:"email", class: 'form-control' %>
 
         <%= f.label :username %>
-        <%= f.text_field :username, class: 'form-control' %>
+        <%= f.text_field :username, id:"username", class: 'form-control' %>
 
         <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
+        <%= f.password_field :password, id:"password", class: 'form-control' %>
 
         <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <%= f.password_field :password_confirmation, id:"password_confirmation", class: 'form-control' %>
 
         <%= f.submit "Create my account", class: "btn btn-primary" %>
       <% end %>
