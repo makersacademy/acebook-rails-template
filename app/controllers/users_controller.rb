@@ -4,10 +4,13 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    redirect_to '/'
   end
 
   def show
-
+    if session[:user_id] != params[:id].to_i
+      redirect_to '/'
+    end
   end
 
   def new
