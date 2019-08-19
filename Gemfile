@@ -9,6 +9,7 @@ end
 
 ruby '2.5.0'
 
+gem 'timecop'
 gem 'devise'
 gem 'travis'
 gem 'materialize-sass'

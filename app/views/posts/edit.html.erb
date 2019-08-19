@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div>
+        <%= @post.message %>
+        </div>
+        <% time_diff = Time.now - @post.created_at %>
+        <% if time_diff < 600 %>
+       <%= form_for @post do |post| %> 
+       <p>
+        <%= post.label :message %><br>
+        <%= post.text_area :message %>
+       </p>
+        
+        <p>
+            <%= post.submit %>
+        </p>
+        <% end %>
+        <% else %>
+        <%= link_to('Return to posts', posts_url) %>
+        <% end %>
+    </body>
+</html>
