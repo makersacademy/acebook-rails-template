@@ -1,26 +1,36 @@
-# AceBook
+# AceBook - Team Rails Virgins
 
-REQUIRED INSTRUCTIONS:
+![](https://i2-prod.manchestereveningnews.co.uk/incoming/article16110362.ece/ALTERNATES/s810/0_East-Coast-Main-Line.jpg)
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+## Links for working on this project
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+The card wall with our to do list is here: https://trello.com/b/PFK2pnre/acebook
 
-2. The card wall is here: <please update>
+## How to get started with this oriject
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Quickstart
-
-First, clone this repository. Then:
+First, clone this repository. Move into it on the command line, then:
 
 ```bash
 > bundle install
 > bin/rails db:create
 > bin/rails db:migrate
-
+ ```
+ 
+ To run the tests:
+ 
+ ```
 > bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
 ```
+To start the server:
+
+```
+rails s
+```
+Then visit localhost:3000.
+
+## How to use the website
+
+
+
+![](https://user-images.githubusercontent.com/40341869/63258743-a2830080-c274-11e9-9737-e40f6600e07a.png)
+
