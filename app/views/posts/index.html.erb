@@ -40,7 +40,9 @@
 
         <div id="all-posts">
           <% @posts.reverse_each do |post| %>
+          <div class="testing">
             <%= render partial: 'post', locals: { post: post } %>
+          </div>
           <% end %>
         </div>
 

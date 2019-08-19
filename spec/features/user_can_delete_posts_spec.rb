@@ -12,5 +12,7 @@ RSpec.feature "Timeline", type: :feature do
 
     fill_in "post_area", with: "Hello, world!"
     first('.nav-link').first(:link, 'delete')
+
+    expect(page).not_to have_content("Hello, world!")
   end
 end
