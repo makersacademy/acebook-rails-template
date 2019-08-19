@@ -19,9 +19,12 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <%= link_to "Log out", logout_path, method: :delete %>
-          </li>
+            <% if current_user %>
+              <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item"  %>
+            <% else %>
+              <%= link_to "Sign up", new_user_path, method: :get, class: "dropdown-item"  %>
+                <%= link_to "Log in", root_url, method: :get, class: "dropdown-item"  %>
+            <% end %>
         </ul>
       </div>
     </nav>
