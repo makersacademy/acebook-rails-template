@@ -5,16 +5,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = Post.where(user_id: @user.id)
-    10.times do
-      puts ""
-    end
-    p @user
-    p @posts
-    10.times do
-      puts ""
-    end
-    # The below line starts a rails console which you can use for debugging
-    # debugger
   end
 
   def new
@@ -38,6 +28,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:firstname, :lastname, :email, :password)
+    params.require(:user).permit(:firstname, :lastname, :email, :password, :avatar)
   end
 end
