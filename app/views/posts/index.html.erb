@@ -6,6 +6,8 @@
       <p><% raw_post_time = Time.parse(post.created_at.to_s[0, post.created_at.to_s.length - 3]) %>
       <%post_time = raw_post_time +60*60%></p>
       <p> <%= post_time.strftime("%d/%m/%Y %H:%M") %> </p>
+      <%= link_to('Edit Post', edit_post_url(post)) %>
+      <%= link_to('Delete Post', post_url(post), method: :delete) %>
     </div>
     </li>
   <% end %>
