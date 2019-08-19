@@ -1,5 +1,22 @@
 <!DOCTYPE html>
 <html>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/posts"> <%= image_tag "halo.jpg", :style=> "height:30px; width:30px" %> Angels</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        <% if current_user %>
+          <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item"  %>
+        <% else %>
+          <%= link_to "Sign up", new_user_path, method: :get, class: "dropdown-item"  %>
+            <%= link_to "Log in", root_url, method: :get, class: "dropdown-item"  %>
+        <% end %>
+    </ul>
+  </div>
+</nav>
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
@@ -8,26 +25,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/posts"> <%= image_tag "halo.jpg", :style=> "height:30px; width:30px" %> Angels</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <% if current_user %>
-              <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item"  %>
-            <% else %>
-              <%= link_to "Sign up", new_user_path, method: :get, class: "dropdown-item"  %>
-                <%= link_to "Log in", root_url, method: :get, class: "dropdown-item"  %>
-            <% end %>
-        </ul>
-      </div>
-    </nav>
     <%= yield %>
     <%= debug(params) if Rails.env.development? %>
   </body>
