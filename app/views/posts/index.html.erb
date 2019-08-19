@@ -28,6 +28,7 @@
     <div class="myDiv">
       <div class="bg">
         <h1 class="welcome">Welcome to <span>&#9824;</span>cebook</h1>
+        <%= notice %>
 
         <h2 class="flash-error"><%= flash[:error]%></h2>
 
@@ -40,7 +41,9 @@
 
         <div id="all-posts">
           <% @posts.reverse_each do |post| %>
+          <div class="testing">
             <%= render partial: 'post', locals: { post: post } %>
+          </div>
           <% end %>
         </div>
 
