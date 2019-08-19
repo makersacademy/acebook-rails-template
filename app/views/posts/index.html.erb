@@ -1,8 +1,13 @@
 <% require_relative './time_helper' %>
 <% require_relative './greeting_helper' %>
 
-<div class="container">
-  <%= current_Hour %> <%= current_user.firstname %>
+<!-- Navigation bar. -->
+
+<!-- Navigation bar. -->
+
+<p> <%= current_Hour %> <%= current_user.firstname %></p>
+
+<center><div class="indexTitle"><h1> Angels </h1></div>
 
   <div class='error'>
     <% if flash[:login_already]%>
@@ -18,19 +23,7 @@
           <p> <%= "#{current_user.firstname} #{error}" %> </p>
         <% end %>
       <% end %>
-    </div>
-
-    <div class="col-8">
-      <center><div class="indexTitle"><h1> Angels </h1></div>
-        <% @posts.each do |post| %>
-          <div class="container">
-            <img src="wings.gif" class="halo">
-            <strong><%= simple_format(post.user.firstname) %></strong>
-            <%= simple_format(post.message) %>
-            <!-- Button trigger modal -->
-              <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
-                read
-              <a>
+      </div>
 
 <% @posts.each do |post| %>
   <div class="well">
@@ -77,16 +70,11 @@
   <%= "Created: #{time_since_post(post)}" %>
   <% if current_user == (post.user) && post.less_than_10_minutes_ago %>
   <br>
-
     <%= link_to 'Edit', edit_post_path(post) %>
   <% end %>
   <% if current_user == (post.user) %>
   <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
   <%end%>
-
 <%end%>
-
 <br>
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<%= link_to "New post", new_post_path %>
