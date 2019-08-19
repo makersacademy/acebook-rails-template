@@ -38,31 +38,6 @@
           <% end %>
         </div>
 
-<<<<<<< HEAD
-      <div id="all-posts">
-        <% @posts.reverse_each do |post| %>
-          <div class="post">
-          <div class="dropdown">
-            <button class="dropbtn">...</button>
-            <div class="dropdown-content">
-              <a> <%= link_to edit_post_path(post.id) do %>
-              Edit
-              <% end %> </a>
-              <a> <%=link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %> </a>
-            </div>
-          </div>
-            <div class="post-body">
-              <h2 class="post-user"><%= User.find(post.user_id).username %> </h2>
-              <p class="posts-time">posted <%= time_ago_in_words(post.created_at)%> ago</p>
-              <p class="post-text"> <%= post.message %></p>
-            </div>
-            <br>
-        </div>
-        <% end %>
-        </div>
-        <%= link_to "Log out",session_path(session), method: :delete %>
-        </div>
-=======
         <div id="all-posts">
           <% @posts.reverse_each do |post| %>
             <%= render partial: 'post', locals: { post: post } %>
@@ -70,7 +45,6 @@
         </div>
 
       </div>
->>>>>>> ac956dcc6bc0a22c90154ad0b13046980fc09968
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

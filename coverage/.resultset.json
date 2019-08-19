@@ -1,11 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/helpers/application_helper.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/helpers/sessions_helper.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/helpers/sessions_helper.rb": [
         1,
         1,
         0,
@@ -17,11 +17,11 @@
         null,
         null
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/helpers/users_helper.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/controllers/posts_controller.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/controllers/posts_controller.rb": [
         1,
         1,
         1,
@@ -31,43 +31,43 @@
         null,
         1,
         2,
-        0,
-        0,
-        0,
+        2,
+        2,
+        2,
         null,
         null,
         1,
-        4,
-        4,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        null,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        null,
+        3,
+        3,
         null,
         null,
         1,
         0,
+        null,
+        null,
+        1,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
         0,
         0,
         0,
@@ -81,27 +81,27 @@
         1,
         null,
         1,
-        0,
-        0,
+        2,
+        2,
         null,
         null,
         null
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/controllers/application_controller.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/controllers/sessions_controller.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
         null,
         0,
         0,
@@ -114,7 +114,7 @@
         null,
         null
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/controllers/users_controller.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/controllers/users_controller.rb": [
         1,
         1,
         1,
@@ -138,46 +138,46 @@
         0,
         null
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/models/post.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/models/post.rb": [
         1,
         1,
         null
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/models/application_record.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/models/user.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/models/user.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/mailers/application_mailer.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/jobs/application_job.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/channels/application_cable/connection.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/riannemccartney/Projects/acebook-rails-virgins/app/channels/application_cable/channel.rb": [
+      "/Users/kareem/Projects/acebook/acebook-rails-virgins/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1565966760
+    "timestamp": 1566211485
   }
 }

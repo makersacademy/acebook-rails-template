@@ -2,14 +2,14 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can edit posts and view updated post" do
-    visit "/posts"
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    User.create!(username: "yo man",email: "123@123.123", password: "1234567")
 
-    click_link "Edit"
-    fill_in "post[message]", with: "Hi, world!"
-    click_button "Submit"
-    expect(page).to have_content("Hi, world!")
-  end
+    visit "/"
+
+    fill_in "email", with: "123@123.123"
+    fill_in "password", with: "1234567"
+    p click_button("Log in")
+
+    fill_in "post_area", with: "Hello, world!"
+    first('.nav-link').first(:link, 'edit')
 end
