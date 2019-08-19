@@ -238,6 +238,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   best_in_place (~> 3.0.1)
+  bundler (~> 1.17)
   byebug
   capybara (~> 2.13)
   jbuilder (~> 2.5)
@@ -246,6 +247,7 @@ DEPENDENCIES
   pg
   puma (~> 3.7)
   rails (~> 5.1.1)
+  rake
   rspec-rails (~> 3.5)
   rubocop (= 0.56.0)
   sass-rails (~> 5.0)
