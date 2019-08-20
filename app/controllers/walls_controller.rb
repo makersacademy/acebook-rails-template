@@ -4,7 +4,7 @@ class WallsController < ApplicationController
   end
 
   def show
-    p @post = Post.find_by(id: params[:id])
+    @post = Post.find_by(id: session[:user_id])
   end
 
   def create
