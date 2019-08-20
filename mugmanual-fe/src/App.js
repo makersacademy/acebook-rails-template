@@ -4,8 +4,8 @@ import Posts from './components/Posts'
 function App() {
   return (
     <div>
-      hello world
-      <Posts />
+    hello world
+    <Posts />
     </div>
   );
 }
