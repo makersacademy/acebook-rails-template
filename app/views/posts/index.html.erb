@@ -1,23 +1,45 @@
-<div class="center">
+
+
+<div class="user-tabs">
+  <a class="tab active" href="">
+    <i class="fa fa-th"></i>
+    POSTS
+  </a>
+  <a class="tab" href="">
+    <i class="fa fa-tv"></i>
+    IGTV
+  </a>
+  <a class="tab" href="">
+    <i class="fa fa-bookmark"></i>
+    SAVED
+  </a>
+  <a class="tab" href="">
+    <i class="fa fa-tag"></i>
+    TAGGED
+  </a>
+</div>
+
+
+<div class="center big-pink">
   <%if session[:user_id] %>
-    <%= link_to new_post_path, id:'New post', class: "btn btn-success top" do %>
+    <%= link_to new_post_path, id:'New-post', class: "btn  btn-info btn-lg btn-block" do %>
     New post
   <%end%>
 <% end %>
 </div>
 
-<div class="center top">
+<div class="center top post-stories">
 <% @posts.reverse.each do |post| %>
   <div class="row center posts-row">
     <h1><%= link_to simple_format(post.message), post_path(post) %></h1>
     <div class="posts-div">
-      <b><%= User.find(post.user_id).username%>
+      <b><%= link_to User.find(post.user_id).username%>
       </b>
       <p><%= post.created_at.strftime("%b %e %Y %H:%M")%></p>
       <% if (post.created_at - 10.minutes.ago) > 0 %>
         <%= button_to "Edit", edit_post_path(post), method: "get", class: "btn btn-primary"%>
       <%end%>
-      
+
       <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
 
     </div>
