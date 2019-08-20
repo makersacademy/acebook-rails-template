@@ -5,13 +5,26 @@
       <a
         href="#"
         data-post-id="<%= post.id %>"
+        data-user-id="<%= post.user_id %>"
+        data-session-id="<%= session[:user_id] %>"
+        data-created-time="<%= post.created_at %>"
         class="edit-post-inline-link"
       >
         Edit
       </a>
-      <%= link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?"} %>
+      <a
+        href="#"
+        data-post-id="<%= post.id %>"
+        data-user-id="<%= post.user_id %>"
+        data-session-id="<%= session[:user_id] %>"
+        class="delete-post"
+      >
+        Delete
+      </a>
     </div>
   </div>
+
+
   <div class="post-body">
     <h2 class="post-user"><%= User.find(post.user_id).username %> </h2>
     <p class="posts-time">posted <%= time_ago_in_words(post.created_at)%> ago</p>
@@ -19,8 +32,9 @@
       class="post-text"
       id="post-text-<%= post.id %>"
     >
-      <%= post.message %>
+      <%= simple_format(post.message) %>
     </p>
+
     <div
       class="edit-post-inline"
       id="edit-post-inline-<%= post.id %>"
@@ -30,6 +44,13 @@
 
         <%= form.submit "Submit" %>
       <% end %>
+    </div>
+    <div
+      class="delete-confirmation"
+      id="delete-confirmation-<%= post.id %>"
+    >
+      Are you sure?
+      <%= link_to 'Delete', post, method: :delete %>
     </div>
   </div>
 </div>
