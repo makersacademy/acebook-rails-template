@@ -24,5 +24,4 @@ Rails.application.routes.draw do
   resources :posts
 
   resources :id, module:'posts'
-
 end
