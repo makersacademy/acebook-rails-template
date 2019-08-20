@@ -129,14 +129,14 @@ li:hover {
 }
 
 .submit-post {
-  position: fixed;
-  bottom: 512px;
-  right: 146px;
-  width: 409px;
+  position: relative;
+  border-radius: 15px;
+  width: 80px;
+  left: 207px;
+  height: 25px;
   background-color: #8d80ac;
   border-style: solid;
   border-color:#251947;
-  min-width: 50px;
 }
 
 .post-user {
