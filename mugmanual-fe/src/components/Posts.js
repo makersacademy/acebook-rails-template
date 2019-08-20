@@ -13,10 +13,9 @@ export class Posts extends Component {
     .then(res => this.setState({ posts: res.data }))
   }
  render() {
+  console.log("HELLO")
   console.log(this.state.posts)
-  return this.state.posts.map((post) => (
-    <PostItem key={post.id} post={post}/>
-  ));
+  return "hello"
  }
 }
 

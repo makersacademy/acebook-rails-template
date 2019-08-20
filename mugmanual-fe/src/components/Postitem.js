@@ -4,10 +4,10 @@ export class PostItem extends Component {
   render() {
     return (
       <div>
-          <h3>{this.props.post.user_id}</h3><br></br>
-          <p>{this.props.post.message}</p>
+          <h3>{this.props.data.user_id}</h3><br></br>
+          <p>{this.props.data.message}</p>
       <div className="w3-container">
-      <sub>{this.props.post.created_at}</sub>
+      <sub>{this.props.data.created_at}</sub>
       </div>
       </div>
     )
