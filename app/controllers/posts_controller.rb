@@ -12,16 +12,8 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-  def show
-    p "show called"
-    @user = User.find(params[:id])
-    p @user
-    @posts = @user.posts.all
-    p @posts
-    render "show.html.erb"
-  end
-
   def index
+    @user = User.find(session[:user_id])
     p "index called"
     redirect_to root_path if session[:user_id] == nil
     @posts = Post.all

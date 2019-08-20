@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="style.css" />
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
 
-      <body>
-        <nav class="navbar navbar-expand-md">
-          <div class="navbar-brand-logo" <span>&#9824;</span>cebook</div>
-          <div class="collapse navbar-collapse" id="main-navigation">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/sessions">Log out</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+  <body>
+    <nav class="navbar navbar-expand-md"><div class="navbar-brand-logo" <span>&#9824;</span>cebook</div>
+  <div class="collapse navbar-collapse" id="main-navigation">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/sessions">Log out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-        <div class="myDiv">
-        <div class="bg">
+<div class="myDiv">
+  <div class="bg">
 
-        <center><h1 class="welcome">Welcome to <span>&#9824;</span>cebook</</h1>
+    <center>
+      <h1 class="welcome">Welcome to
+        <span>&#9824;</span>cebook</</h1>
 
-          <h1></h1>
-          <!-- #deleting this messages up the page massively and i dont know why! -->
+      <h1></h1>
+      <!-- #deleting this messages up the page massively and i dont know why! -->
 
       <div class="login-form">
-        <h2> Sign in</h2>
-          <br>
-            <%= form_for(:session, url: sessions_path, method: "POST") do |form| %>
-            <p>
-            <%= form.email_field :email, placeholder: "email", class: 'form-control'%>
-            <p>
+        <h2>
+          Sign in</h2>
+        <br>
+        <%= form_for(:session, url: sessions_path, method: "POST") do |form| %>
+        <p>
+          <%= form.email_field :email, placeholder: "email", class: 'form-control'%>
+          <p>
             <%= form.password_field :password, placeholder: "password", class: 'form-control'%>
             <p><%= flash[:danger] %>
 
-            <p><%= form.submit "Log in" %>
-          <% end %>
-          <br>
-        Don't have an account? <%= link_to "Sign up now!", new_user_path %>
-    </div>
-    </div>
-  </body>
-</html>
+              <p><%= form.submit "Log in" %>
+              <% end %>
+              <br>
+              Don't have an account?
+              <%= link_to "Sign up now!", new_user_path %>
+            </div>
+          </div>
+        </body>
+      </html>
