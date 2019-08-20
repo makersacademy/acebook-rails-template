@@ -1,10 +1,25 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'walls/index'
+
+  get 'walls/show'
+
+  get 'walls/create'
+
+  get 'walls/new'
+
+  get 'walls/edit'
+
+  get 'walls/update'
+
+  get 'walls/destroy'
+
   get 'sessions/new'
   get 'sessions/new'
 
   resources :users
+  resources :walls
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'posts#index'

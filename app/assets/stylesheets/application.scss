@@ -15,6 +15,7 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "walls";
 
 body {
   background-color: #3b99ff
@@ -188,5 +189,20 @@ footer {
       float: left;
       margin-left: 15px;
     }
+  }
+}
+.user-edit-page{
+  display: flex;
+  margin-top: 60px;
+  min-height: 500px;
+
+  .actions{
+    width: 220px;
+    border: 1px solid #dbdbdb;
+  }
+  .details{
+    flex: 1;
+    border: 1px solid #dbdbdb;
+    border-left:none;
   }
 }
