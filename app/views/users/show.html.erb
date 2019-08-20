@@ -7,7 +7,7 @@
   <% @wall_posts.each do |wall_post| %>
     <h4><%= User.find(wall_post.user_id).username %></h4>
     <p><%= simple_format(wall_post.message) %>
-      <sub>Posted: <%= time_ago_in_words(post.created_at)%> ago</sub></p>
+      <sub>Posted: <%= time_ago_in_words(wall_post.created_at)%> ago</sub></p>
     <% if session[:user_id] == wall_post.user_id %>
     <%= link_to 'Edit', edit_post_path(wall_post) %>
     <%= link_to "Delete", wall_post, method: :delete,
