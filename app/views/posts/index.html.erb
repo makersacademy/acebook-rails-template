@@ -8,7 +8,7 @@
 <% @public_posts.each do |post| %>
   <h4><%= User.find(post.user_id).username %></h4>
   <p><%= simple_format(post.message) %>
-    <sub>Posted on: <%= post.created_at.strftime("%d-%m-%Y") %></sub></p>
+    <sub>Posted: <%= time_ago_in_words(post.created_at)%> ago</sub></p>
     <% if session[:user_id] == post.user_id %>
       <%= link_to 'Edit', edit_post_path(post) %>
       <%= link_to "Delete", post, method: :delete,
