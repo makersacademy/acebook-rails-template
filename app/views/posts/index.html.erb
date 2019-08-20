@@ -1,6 +1,10 @@
 <% require_relative './time_helper' %>
 <% require_relative './greeting_helper' %>
 
+<head>
+<!-- <script src="../assets/javascripts/users.js.coffee"></script> -->
+
+</head>
 <!-- Navigation bar. -->
 
 <!-- Navigation bar. -->
@@ -27,13 +31,21 @@
 
 <% @posts.each do |post| %>
   <div class="well">
-    <div class="halo">
-      <%= post.user.firstname %>
-      <!-- <img src="wings.gif" class="halo"> -->
-    </div>
-      <p><%= simple_format(post.message) %></p>
-    <!-- <div class="container"> -->
-            <!-- Button trigger modal -->
+  <div class="halo">
+    <%= post.user.firstname %>
+    <!-- <img src="wings.gif" class="halo"> -->
+  </div>
+  <% if current_user == post.user && post.less_than_10_minutes_ago  %>
+    <p><%= best_in_place post, :message  %></p>
+  <% else %>
+    <p><%= post.message %></p>
+  <% end %>
+  <!-- <div class="container"> -->
+          <!-- Button trigger modal -->
+      <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
+        read
+      <a>
+
         <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
           read
         <a>
@@ -68,10 +80,8 @@
   </div>
 
   <%= "Created: #{time_since_post(post)}" %>
-  <% if current_user == (post.user) && post.less_than_10_minutes_ago %>
   <br>
-    <%= link_to 'Edit', edit_post_path(post) %>
-  <% end %>
+  <!-- <button type="button" name="button" id="edit_button">Edito</button> -->
   <% if current_user == (post.user) %>
   <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
   <%end%>

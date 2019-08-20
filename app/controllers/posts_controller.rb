@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+  respond_to :html, :json
   protect_from_forgery
 
   def new
@@ -17,11 +18,8 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
-      redirect_to @post
-    else
-      render 'edit'
-    end
+    @post.update(post_params)
+    respond_with @post
   end
 
   def index
