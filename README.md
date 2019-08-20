@@ -1,26 +1,64 @@
-# AceBook
+# Charlie's Angels 'Acebook'
 
-REQUIRED INSTRUCTIONS:
+## Project Description
+This is the Carlie's Angels' attempt at the [Makers Academy](https://makers.tech/) weeks 8-9 [engineering project challenge](https://github.com/makersacademy/course/blob/master/engineering_projects/README.md)
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+## Useful links
+[Our Trello board - for project management](https://trello.com/b/Tw2CEvdT/acebook-charlies-angels)
+[Our Google Doc - for monitoring our learning](https://docs.google.com/document/d/15x8yE9Rd4o0w7JL5pWOROjeqIs4rt6D-Ndd3v0kMRf8/edit?usp=sharing)
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+## How to install and run the project
+* Go to your command line/terminal
+* Clone this repository
+```
+git clone git@github.com:Kaymo1990/acebook---CharliesAngels.git
+```
+* Run bundle install
+```
+bundle install
+```
+* Run:
+```
+rails db:migrate
+```
+* Run:
+```
+rails server
+```
+* In your browser visit http://localhost:3000
 
-2. The card wall is here: <please update>
+## How to run tests on the project
+* Having cloned the repo (see above), run:
+```
+rspec
+```
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+## Instructions on how to contribute to the project
+* Clone the repo (see above)
+* Submit a pull request on github.
 
-## Quickstart
+## Instructions on how to deploy the app
+* Visit https://intense-badlands-30370.herokuapp.com/
 
-First, clone this repository. Then:
+## Approach to the project
+* Our app was built with Ruby on Rails using TDD (Test Driven Development)
 
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
+## User Stories
 
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+```
+As a user
+So I can have an account
+I need to sign up
+```
+
+```
+As a user
+So I can use the site
+I need to sign in
+```
+
+```
+As a user
+So I can update my status
+I need to be able to create posts
 ```

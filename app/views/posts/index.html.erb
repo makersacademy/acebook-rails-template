@@ -1,7 +1,90 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<% require_relative './time_helper' %>
+<% require_relative './greeting_helper' %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<head>
+<!-- <script src="../assets/javascripts/users.js.coffee"></script> -->
+
+</head>
+<!-- Navigation bar. -->
+
+<!-- Navigation bar. -->
+
+<p> <%= current_Hour %> <%= current_user.firstname %></p>
+
+<center><div class="indexTitle"><h1> Angels </h1></div>
+
+  <div class='error'>
+    <% if flash[:login_already]%>
+    <% flash[:login_already].each do |error|%>
+        <p><%= "#{current_user.firstname} #{error}" %> </p>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class='error'>
+      <% if flash[:register_already]%>
+      <% flash[:register_already].each do |error|%>
+          <p> <%= "#{current_user.firstname} #{error}" %> </p>
+        <% end %>
+      <% end %>
+      </div>
+
+<% @posts.each do |post| %>
+  <div class="well">
+  <div class="halo">
+    <%= post.user.firstname %>
+    <!-- <img src="wings.gif" class="halo"> -->
+  </div>
+  <% if current_user == post.user && post.less_than_10_minutes_ago  %>
+    <p><%= best_in_place post, :message  %></p>
+  <% else %>
+    <p><%= post.message %></p>
+  <% end %>
+  <!-- <div class="container"> -->
+          <!-- Button trigger modal -->
+      <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
+        read
+      <a>
+
+        <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
+          read
+        <a>
+          <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
+            Preach
+          <a>
+            <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
+              Praise
+            <a>
+
+        <!-- Modal -->
+        <div class="modal fade" id="<%=post.id%>ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= post.message %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+  </div>
+
+  <%= "Created: #{time_since_post(post)}" %>
+  <br>
+  <!-- <button type="button" name="button" id="edit_button">Edito</button> -->
+  <% if current_user == (post.user) %>
+  <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
+  <%end%>
+<%end%>
+<br>
+<%= link_to "New post", new_post_path %>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login page</title>
+  </head>
+  <body>
+    <div class="login text-center">
+      <%= form_for(:session, url: login_path, html: {class: 'form-signin'})  do |f| %>
+      <% provide(:title, "Log in")%>
+      <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
+      <div class='error'>
+        <% if flash[:login_errors]%>
+        <% flash[:login_errors].each do |error|%>
+            <p> <%=error%> </p>
+          <% end %>
+        <% end %>
+        </div>
+          <%= f.label :email, for:'inputEmail', class: "sr-only" %>
+          <%= f.email_field :email, id: "inputEmail", class: 'form-control', placeholder: "Email address", required: true, autofocus: true%>
+          <%= f.label :password, for:'inputPassword', class: "sr-only"%>
+          <%= f.password_field :password, id: 'inputPassword', class: 'form-control', placeholder: "Password", required: true%>
+          <%= f.submit "Log in", class: 'btn btn-primary btn-block'%>
+        <p> New user? <%= link_to "Sign up now!", new_user_path %></p>
+      <% end %>
+    </div>
+  </body>
+</html>

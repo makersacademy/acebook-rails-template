@@ -1,0 +1,27 @@
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+
+  <%= form_for(@user) do |f| %>
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+
+    <%= f.label "Profile photo" %>
+    <%= f.file_field :avatar %><br>
+    
+    <%= f.submit "Submit" %>
+    <% end %>
+
+</div>
+
+<%= debug(params) if Rails.env.development? %>

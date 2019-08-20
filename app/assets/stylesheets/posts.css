@@ -1,0 +1,36 @@
+
+.indexTitle {
+  font-size: 20px;
+  font-family: cursive;
+}
+
+.halo {
+  margin: 0px 15px 15px 0px;
+  width: auto;
+  height: auto;
+  max-width: 60px;
+  max-height: 50px;
+  left: 20;
+  position: absolute
+
+}
+
+.well {
+  border: 1px;
+  background-color: #d8d8d8;
+  padding: 19px;
+  border-radius: 4px;
+  Width: 300px
+  /* padding-left: 12px;
+  padding-right: 12px;
+  position: relative; */
+}
+
+/* .halo {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid #73AD21;
+} */
