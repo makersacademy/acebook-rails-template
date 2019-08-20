@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def wall
-    @posts = Post.where("wall_id = '#{params[:id]}'")
+    @posts = Post.where("wall_id = '#{params[:id]}'").reverse
     @post = Post.new
     @user = User.find(params[:id])
   end
@@ -44,9 +44,8 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-  private
-
-  def post_params
-    params.require(:post).permit(:message)
+  def redirect
+    redirect_to "/wall/#{current_user.id}"
   end
+
 end

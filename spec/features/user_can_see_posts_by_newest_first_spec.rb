@@ -3,8 +3,6 @@ require 'rails_helper'
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts, shows times and dates" do
     sign_up
-    visit "/posts"
-    click_link "New post"
     fill_in "Message", with: "Hello, world! first post"
     click_button "Submit"
     fill_in "Message", with: "Hello, world! second post"

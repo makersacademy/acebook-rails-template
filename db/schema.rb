@@ -36,5 +36,4 @@ ActiveRecord::Schema.define(version: 20190819110628) do
   end
 
   add_foreign_key "posts", "users", column: "author_id"
-  add_foreign_key "posts", "users", column: "wall_id"
 end

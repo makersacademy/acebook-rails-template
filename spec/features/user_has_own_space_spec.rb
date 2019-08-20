@@ -3,10 +3,9 @@ RSpec.feature "Own Wall", type: :feature do
     sign_up
     url = URI.parse(current_url)
     url.request_uri
-    click_link "New post"
     fill_in "Message", with: "test own wall post"
     click_button "Submit"
-    click_button "logout"
+    click_link "Signout"
     sign_up_second_user
     visit url
     expect(page).to have_content("test own wall post")
