@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Documents/projects/acebook-MugManual/spec/controllers/posts_controller_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/controllers/posts_controller_spec.rb": [
         null,
         null,
         1,
@@ -9,7 +9,7 @@
         1,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/rails_helper.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/rails_helper.rb": [
         null,
         null,
         null,
@@ -71,7 +71,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/environment.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/environment.rb": [
         null,
         null,
         null,
@@ -80,7 +80,7 @@
         null,
         1
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/application.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/application.rb": [
         null,
         null,
         1,
@@ -102,14 +102,14 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/boot.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/boot.rb": [
         null,
         null,
         1,
         null,
         1
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/environments/test.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/environments/test.rb": [
         null,
         null,
         1,
@@ -155,7 +155,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/initializers/application_controller_renderer.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -165,7 +165,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/initializers/assets.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -183,7 +183,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/initializers/backtrace_silencers.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -194,16 +194,8 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/initializers/cookies_serializer.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
@@ -211,7 +203,15 @@
         null,
         1
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/initializers/inflections.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -231,7 +231,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/initializers/mime_types.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/initializers/mime_types.rb": [
         null,
         null,
         null,
@@ -239,7 +239,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/initializers/wrap_parameters.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -257,7 +257,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/config/routes.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/config/routes.rb": [
         null,
         null,
         1,
@@ -283,19 +283,19 @@
         1,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/app/helpers/application_helper.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/app/helpers/application_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/app/helpers/posts_helper.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/app/helpers/posts_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/app/helpers/sessions_helper.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/app/helpers/sessions_helper.rb": [
         null,
         null,
         1,
@@ -317,13 +317,13 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/app/helpers/users_helper.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/app/helpers/users_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/app/controllers/posts_controller.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/app/controllers/posts_controller.rb": [
         null,
         null,
         1,
@@ -396,6 +396,10 @@
         1,
         0,
         0,
+        0,
+        null,
+        null,
+        null,
         null,
         null,
         1,
@@ -413,7 +417,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/app/controllers/application_controller.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/app/controllers/application_controller.rb": [
         null,
         null,
         1,
@@ -421,7 +425,7 @@
         1,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/app/controllers/concerns/response.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/app/controllers/concerns/response.rb": [
         null,
         null,
         1,
@@ -430,7 +434,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/controllers/sessions_controller_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/controllers/sessions_controller_spec.rb": [
         null,
         null,
         1,
@@ -450,7 +454,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/app/controllers/sessions_controller.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/app/controllers/sessions_controller.rb": [
         null,
         null,
         1,
@@ -553,7 +557,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/controllers/users_controller_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/controllers/users_controller_spec.rb": [
         null,
         null,
         1,
@@ -567,7 +571,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/app/controllers/users_controller.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/app/controllers/users_controller.rb": [
         null,
         null,
         1,
@@ -609,7 +613,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/features/edit_post_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/features/edit_post_spec.rb": [
         null,
         null,
         1,
@@ -652,7 +656,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/features/user_can_login_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/features/user_can_login_spec.rb": [
         null,
         null,
         1,
@@ -677,7 +681,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/features/users_sign_up_error_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/features/users_sign_up_error_spec.rb": [
         null,
         null,
         1,
@@ -694,7 +698,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/features/users_sign_up_sucess_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/features/users_sign_up_sucess_spec.rb": [
         null,
         null,
         1,
@@ -711,26 +715,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/helpers/posts_helper_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/helpers/sessions_helper_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/helpers/posts_helper_spec.rb": [
         null,
         null,
         1,
@@ -749,7 +734,7 @@
         1,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/helpers/users_helper_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/helpers/sessions_helper_spec.rb": [
         null,
         null,
         1,
@@ -768,7 +753,26 @@
         1,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/models/post_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/helpers/users_helper_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/models/post_spec.rb": [
         null,
         null,
         1,
@@ -793,21 +797,21 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/app/models/post.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/app/models/post.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/app/models/application_record.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/app/models/application_record.rb": [
         null,
         null,
         1,
         1,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/models/user_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/models/user_spec.rb": [
         null,
         null,
         1,
@@ -888,7 +892,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/app/models/user.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/app/models/user.rb": [
         null,
         null,
         1,
@@ -905,7 +909,7 @@
         1,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/requests/users_logins_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/requests/users_logins_spec.rb": [
         null,
         null,
         1,
@@ -919,7 +923,7 @@
         null,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/views/sessions/new.html.erb_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/views/sessions/new.html.erb_spec.rb": [
         null,
         null,
         1,
@@ -928,7 +932,7 @@
         1,
         null
       ],
-      "/Users/student/Documents/projects/acebook-MugManual/spec/views/users/new.html.erb_spec.rb": [
+      "/Users/Ganney/Projects/Portfolio/week8/acebook-MugManual/spec/views/users/new.html.erb_spec.rb": [
         null,
         null,
         1,
@@ -938,6 +942,6 @@
         null
       ]
     },
-    "timestamp": 1566297295
+    "timestamp": 1566316185
   }
 }

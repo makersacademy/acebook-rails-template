@@ -68,8 +68,12 @@ class PostsController < ApplicationController
   end
 
   def post_api
-    @posts = Post.all
-    json_response(@posts)
+    @post = Post.all
+    @user = User.all 
+    render :json => {
+      :user => @user.as_json(:except => [:email, :password_digest]),
+      :post => @post.as_json
+    }
   end
 
   private
