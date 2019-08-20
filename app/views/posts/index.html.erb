@@ -33,6 +33,9 @@
   <br>
   <div class="well">
     <strong><%= post.user.firstname %></strong>
+    <div class="time_since_post"><%= time_since_post(post) %></div>
+    <br>
+
     <!-- <img src="wings.gif" class="halo"> -->
   <% if current_user == post.user && post.less_than_10_minutes_ago  %>
     <p><%= best_in_place post, :message  %></p>
@@ -68,10 +71,9 @@
             </div>
           </div>
         </div>
-      <div class="time_since_post"><%= "Created: #{time_since_post(post)}" %></div>
   </div>
   <% if current_user == (post.user) %>
-    <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
+    <%= link_to 'Delete', post_path(post), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?"} %>
     <br>
   <% else %>
     <br>

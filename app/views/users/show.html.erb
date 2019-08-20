@@ -14,21 +14,26 @@
             <%= image_tag(@user.avatar, :class => "avatar") %>
           <% end  %>
         </li>
-        <li>Name: <%= @user.firstname %></li>
-        <li>Lastname: <%= @user.lastname %></li>
-        <li>Email: <%= @user.email %></li>
-        <li>Member since: <%= @user.created_at.strftime("%d %B %Y") %></li>
-        <li>Last Updated: <%= @user.updated_at.strftime("%d %B %Y")%></li>
+        <li><strong>Name: </strong><%= @user.firstname %></li>
+        <li><strong>Lastname: </strong><%= @user.lastname %></li>
+        <li><strong>Email: </strong><%= @user.email %></li>
+        <li><strong>Member since: </strong><%= @user.created_at.strftime("%d %B %Y") %></li>
+        <li><strong>Last Updated: </strong><%= @user.updated_at.strftime("%d %B %Y")%></li>
         <br>
         <li><%= link_to "New post", new_post_path, type: "button", class: "btn btn-primary" %></li>
       </ul>
 
       <% @posts.each do |post| %>
          <div class="well">
-           <p><%= simple_format(post.message) %></p>
-           <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
-             Read
-           <a>
+           <div class="time_since_post"><%= "Created: #{time_since_post(post)}" %></div>
+
+           <% if current_user == post.user && post.less_than_10_minutes_ago  %>
+             <p><%= best_in_place post, :message  %></p>
+           <% else %>
+             <p><%= post.message %></p>
+           <% end %>
+
+           <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">Read<a>
             <div class="modal fade" id="<%=post.id%>ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
              <div class="modal-dialog modal-dialog-centered" role="document">
                <div class="modal-content">
@@ -49,15 +54,10 @@
              </div>
            </div>
        </div>
-           <%= "Created: #{time_since_post(post)}" %>
-           <% if current_user == (post.user) && post.less_than_10_minutes_ago %>
-            <br>
-             <%= link_to 'Edit', edit_post_path(post) %>
-           <% end %>
-           <% if current_user == (post.user) %>
-            <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
-           <%end%>
-         <%end%>
+       <% if current_user == (post.user) %>
+        <%= link_to 'Delete', post_path(post), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?"} %>
+       <%end%>
+     <%end%>
        <br>
      </div>
   </body>

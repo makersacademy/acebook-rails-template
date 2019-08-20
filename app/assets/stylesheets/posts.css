@@ -16,12 +16,12 @@
 }
 
 .well {
-  border: 1px;
   background-color: #d8d8d8;
   padding: 19px;
   border-radius: 4px;
   Width: 300px;
-  padding-bottom: 10px
+  margin-top: 15px;
+  margin-bottom: 5px;
   /* padding-left: 12px;
   padding-right: 12px;
   position: relative; */
@@ -41,5 +41,5 @@
 }
 
 .username {
-  font-size: 100px;  
+  font-size: 100px;
 }
