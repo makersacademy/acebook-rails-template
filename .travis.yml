@@ -2,15 +2,20 @@ Language: ruby
 cache:
 - bundler
 services:
-  - postgresql
+- postgresql
 before_script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
 - bundle exec rake assets:precompile
 deploy:
-  provider: heroku
-  api_key:
-    secure: "TRgG/azy51hTqd1HDuE3agycd1weVPREBJvu8dK95wXmRSquim+2+qQnBrRYlLHBwKNTyH+74XkRzH2lc4GFmy1VXBE1rNPoHt+Z8KIX9wVgMZju2HlaDSNWQvUYY+azruMyticJKrlHIF5YZfkS08GTUNPPEBtjYFgBEdagCMIYz4SIuRN8zaaUnbnHLcr2J9E+tXrPhGf1nHixXBNjLqZ9H4R/rKwZ6vGPTfSZZ89reLrFpHrr3SOkDmIuLe6stfAQnDZonjII2H5brePbzcb9ByivqB6xx0+jjT6EA9z9cYAQYNiAaajXlc+sGBds3Y5gSdIlppBUrTTssKJGbksJgbgD3l1QKI+9N3neix6yl70Nk6SSSzeA1zsfqwyOYNAsxoRcPQOYtG/SqfcDkqh8swADe5AKuTF7XBVfJE5s9PWY2D+9od1p7pqheD9A+X8zwZGdUEpgvuRdFlzuFcm3OaoWw8FwmRx+dGWb+tJBZ63tzhz65HmJBomNwHvDBZ8/dNPvTPORJbQlqjJPqUEIgDIOsKNw6IejEMJdZQ9FWlra/qcV6DPFgfuUmzA9lpAKZvYPsWqYxdZT1DYVQrIuBrEROqMuLpKYPAmCve6iV01uBsFPRtPjNfXW0NQWaQUBKnSzrLgAkIu9285L3lE2AKxoRCHdgGWM+POfWtw="
-  app: makers-bookface
+  provider: s3
+  access_key_id: AKIAWGNCK7DZTUS3P5E5
+  secret_access_key:
+    secure: GJIG6bWspkd5wX0CPxvx07V7VCiXB5wokTQ68BGVbc16TIXjLVNQ6UdkNJWjWqusKAfTwDijOkNhubbRSl7adhrEiz+jEnIc8kWjWBs6Y0VpMtmU1OWeFu+vlD9oD9GHtBQCvZlPQHlOBHFIWI8AMoqzKPo4ik60jEJfSict4C0ttCiGn1wl2kbf3j4ecNsCLCr9/lRSn3Pk529RTcNM32Xc4N75+BsRry0RblMJJZfcuY2lNmzCsulTDWFd/G2oF6faSfv0+Pc02BX4JJB5SjqVm3lzBKCoWSHFXIy/Tz+w0pj8s3P+ip/dLYAQovy3O3SsbP7Pkx0+NsYwWwIF7hflbIjGbbOR2z/bsN5Yx/8iS2NYiIrkDZZ72WfXACBAzqZ/iiQkD9ZymoolhejK3Gr3K0hFigdUBcGwYRNOm18DI8ApvrQSqpqjOyu4dhUQo+dtcluQgT43yP9/yhvj0bz5uhBaEkkliY1I2PboMLfzgQJ2qotfYt8rAiBXKy0coBpxcVprUMMwENXvF9O7qSSai/YrtKmdUT4Ni3xnev57EG+Ps8KCHrLdTuFFKU2AZKh9TNTVt5X8UsX3ajSf8aoh4JyauE5HpZZkuYPF51ckZ5QDUmGgcXUy4r6HBz9WqJkY+RMVK24lGgngjzhKBTIahf7p+8b/lgXAiVo1dFo=
+  bucket: s3
+  acl: bucket_owner_full_control
   on:
     repo: hjdr/acebook-rails-template
+before_deploy:
+- mkdir -p dpl_cd_upload
+- mv key dpl_cd_upload/key
