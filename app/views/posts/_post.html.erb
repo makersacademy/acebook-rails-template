@@ -26,22 +26,21 @@
 
 
   <div class="post-body">
-    <h2 class="post-user"><%= User.find(post.user_id).username %> </h2>
-    <p class="posts-time">posted <%= time_ago_in_words(post.created_at)%> ago</p>
-    <p
-      class="post-text"
-      id="post-text-<%= post.id %>"
-    >
+    <h2 class="post-user">
+      <%= link_to "#{User.find(post.user_id).username}", user_path(User.find(post.user_id).id), method: :get %>
+    </h2>
+    <p class="posts-time">posted
+      <%= time_ago_in_words(post.created_at)%>
+      ago</p>
+    <p class="post-text" id="post-text-<%= post.id %>">
       <%= simple_format(post.message) %>
     </p>
-
     <div
       class="edit-post-inline"
       id="edit-post-inline-<%= post.id %>"
     >
       <%= form_for post, url: @edit_post_path do |form| %>
-        <%= form.text_field :message%>
-
+      <%= form.text_field :message%>
         <%= form.submit "Submit" %>
       <% end %>
     </div>
@@ -73,4 +72,5 @@
     <% end %>
 
   </div>
+</div>
 </div>

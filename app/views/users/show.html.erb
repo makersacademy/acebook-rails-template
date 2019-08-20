@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./../style.css">
   </head>
 
   <body>
@@ -32,17 +32,8 @@
 
     <div class="myDiv">
       <div class="bg">
-        <div id="pop_up_wrong_user" class="pop_up_error_box"> You can't do that. </br></br>(you idiot)
-        </div>
-        <div id="pop_up_too_slow_motherfucker" class="pop_up_error_box"> Too slow! </br>10 minutes has passed.</br></br>(you idiot)
-        </div>
-        <div id="pop_up_cant_delete" class="pop_up_error_box"> No can do </br> doesn't belong to you.</br></br>(you idiot)
-        </div>
-
-        <h1 class="welcome">Welcome to <span>&#9824;</span>cebook</h1>
-        <%= notice %>
-
-        <h2 class="flash-error"><%= flash[:error]%></h2>
+        <h1 class="welcome">Welcome to
+          <span>&#9824;</span>cebook</h1>
 
         <div class="new-post">
           <%= form_for( :post, url: posts_path) do |form| %>
@@ -54,7 +45,7 @@
 
       <div id="all-posts">
         <% @posts.reverse_each do |post| %>
-          <%= render partial: 'post', locals: { post: post } %>
+          <%= render partial: "post", locals: { post: post } %>
         <% end %>
       </div>
 

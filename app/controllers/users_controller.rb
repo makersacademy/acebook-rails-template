@@ -13,7 +13,18 @@ class UsersController < ApplicationController
       redirect_to posts_url, notice: "You have successfully signed up, #{@user.username}!"
     end
   end
+
+  def show
+    p "show called"
+    @user = User.find(params[:id])
+    p @user
+    @posts = @user.posts.all
+    p @posts
+    render "show.html.erb"
+  end
+  
 end
+
 
 private
 

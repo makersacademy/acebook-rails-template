@@ -48,6 +48,11 @@ h1 {
   float: right;
 }
 
+.nav-link:hover {
+  color: #9cc2ff;
+  text-decoration: none;
+}
+
 .navbar-collapse {
   justify-content: flex-end;
 }
@@ -68,8 +73,13 @@ h1 {
   height: 50px;
   padding: 15px 15px;
   line-height: 20px;
-  color: #fff;
+  color: white;
   font-family: 'Nanum Gothic', sans-serif;
+}
+
+.navbar-brand-logo:hover {
+  color: white;
+  text-decoration: none;
 }
 
 li:hover {
@@ -129,14 +139,14 @@ li:hover {
 }
 
 .submit-post {
-  position: fixed;
-  bottom: 512px;
-  right: 146px;
-  width: 409px;
+  position: relative;
+  border-radius: 15px;
+  width: 80px;
+  height: 25px;
   background-color: #8d80ac;
   border-style: solid;
   border-color:#251947;
-  min-width: 50px;
+  z-index: 50;
 }
 
 .post-user {
