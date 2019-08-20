@@ -1,7 +1,7 @@
 # Charlie's Angels 'Acebook'
 
 ## Project Description
-This is the Carlie's Angels' attempt at the [Makers Academy](https://makers.tech/) weeks 8-9 [engineering project challenge](https://github.com/makersacademy/course/blob/master/engineering_projects/README.md)
+This is the Charlie's Angels' attempt at the [Makers Academy](https://makers.tech/) weeks 8-9 [engineering project challenge](https://github.com/makersacademy/course/blob/master/engineering_projects/README.md)
 
 ## Useful links
 [Our Trello board - for project management](https://trello.com/b/Tw2CEvdT/acebook-charlies-angels)

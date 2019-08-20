@@ -20,7 +20,8 @@
   background-color: #d8d8d8;
   padding: 19px;
   border-radius: 4px;
-  Width: 300px
+  Width: 300px;
+  padding-bottom: 10px
   /* padding-left: 12px;
   padding-right: 12px;
   position: relative; */
@@ -34,3 +35,11 @@
   height: 100px;
   border: 3px solid #73AD21;
 } */
+
+.time_since_post {
+  font-size: 12px;
+}
+
+.username {
+  font-size: 100px;  
+}
