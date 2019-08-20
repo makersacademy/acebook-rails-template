@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    p "show called"
     @user = User.find(params[:id])
     p @user
     @posts = @user.posts.all
@@ -21,6 +22,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    p "index called"
     redirect_to root_path if session[:user_id] == nil
     @posts = Post.all
   end
