@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     p "All the single ladies"
     p session[:user_id]
     redirect_to root_path if session[:user_id] == nil
+    p "All the single ladies" if session[:user_id] == nil
     @posts = Post.all
   end
 

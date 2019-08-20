@@ -17,7 +17,6 @@ class SessionsController < ApplicationController
     p "put your hands up"
     logout_url
     session[:user_id] = nil
-    p "up in the club, doing my thang"
     redirect_to root_url
   end
 end
