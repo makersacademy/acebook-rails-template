@@ -1,13 +1,12 @@
 language: ruby
 rvm:
 - 2.5.0
-bundler_args: --jobs=2
-script:
-script:
-  - bundle exec rake db:test:prepare
-  - bundle exec rake spec
-cache: bundler
+before_install:
+-gem install -v 1.17.3 bundler --no-rdoc --no-ri
 services:
   - postgresql
-addons:
-  postgresql: 11.4"
+script:
+ - bundle install
+ - bundle exec rake db:create
+ - bundle exec rake db:migrate
+ - bundle exec rspec
