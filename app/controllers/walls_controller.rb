@@ -1,12 +1,11 @@
 class WallsController < ApplicationController
   def new
-    @user = User.find_by(id: session[:user_id])
   end
 
 
   def show
+    @user = User.find_by(id: session[:user_id])
     @posts = Post.all
-    # @post = Post.find_by(id: session[:user_id])
   end
 
 

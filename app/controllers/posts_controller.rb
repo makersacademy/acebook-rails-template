@@ -4,6 +4,9 @@ class PostsController < ApplicationController
   before_action :current_post, only: %i[show edit update destroy]
   def new
     @post = Post.new
+    p "TESTING"
+    p session[:target_user]
+
   end
 
   def create
