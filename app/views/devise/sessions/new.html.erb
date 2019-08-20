@@ -7,9 +7,9 @@
         <h2 class="white-text">Log in</h2>
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="field">
+          <div class="field ">
             <%= f.label :email, class: "white-text" %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: ["white-text", "input-field"] %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "white-text validate" %>
           </div>
 
           <div class="field">
