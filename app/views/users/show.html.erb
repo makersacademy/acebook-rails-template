@@ -45,8 +45,14 @@
 
       <div id="all-posts">
         <% @posts.reverse_each do |post| %>
-          <% if post.user_id.to_s == session[:wall_id] || post.wall_id.to_s == session[:wall_id]  %>
-            <%= render partial: 'post', locals: { post: post } %>
+          <% if post.user_id.to_s == session[:wall_id] %>
+            <div class="status-update"
+              <%= render partial: 'post', locals: { post: post } %>
+            </div>
+          <% else post.wall_id.to_s == session[:wall_id]  %>
+            <div class="wall-post"
+              <%= render partial: 'post', locals: { post: post } %>
+            </div>
           <% end %>
         <% end %>
       </div>
