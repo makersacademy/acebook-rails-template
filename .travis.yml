@@ -4,9 +4,9 @@ rvm:
 before_install:
 -gem install -v 1.17.3 bundler --no-rdoc --no-ri
 services:
-  - postgresql
+- postgresql
 script:
- - bundle install
- - bundle exec rake db:create
- - bundle exec rake db:migrate
- - bundle exec rspec
+- bundle install
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rspec
