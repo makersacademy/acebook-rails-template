@@ -4,13 +4,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    10.times do
-      puts ""
-    end
-    p @user.avatar.attached?
-    10.times do
-      puts ""
-    end
     @posts = Post.where(user_id: @user.id)
   end
 

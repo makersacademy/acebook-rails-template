@@ -9,6 +9,8 @@ ruby "2.5.0"
 
 gem 'jquery-rails'
 
+# gem 'activestorage', '~> 0.1'
+
 gem 'bootstrap', '~> 4.0.0'
 
 gem 'bundler'
