@@ -14,6 +14,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    if !session[:user_id]
+      redirect_to '/login'
+    end
    end
 
   def show
