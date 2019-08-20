@@ -70,10 +70,10 @@ class PostsController < ApplicationController
   def post_api
     @post = Post.all
     @user = User.all 
-    render :json => {
+    render :json => [
       :user => @user.as_json(:except => [:email, :password_digest]),
       :post => @post.as_json
-    }
+    ]
   end
 
   private
