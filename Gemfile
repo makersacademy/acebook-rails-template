@@ -9,13 +9,15 @@ ruby "2.5.0"
 
 gem 'jquery-rails'
 
+# gem 'activestorage', '~> 0.1'
+
 gem 'bootstrap', '~> 4.0.0'
 
 gem 'bundler'
 
 gem 'timecop'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 6.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18.4'
 # Use Puma as the app server
