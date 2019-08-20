@@ -2,28 +2,14 @@
   <div class="dropdown">
     <button class="dropbtn">...</button>
     <div class="dropdown-content">
-      <a
-        href="#"
-        data-post-id="<%= post.id %>"
-        data-user-id="<%= post.user_id %>"
-        data-session-id="<%= session[:user_id] %>"
-        data-created-time="<%= post.created_at %>"
-        class="edit-post-inline-link"
-      >
+      <a href="#" data-post-id="<%= post.id %>" data-user-id="<%= post.user_id %>" data-session-id="<%= session[:user_id] %>" data-created-time="<%= post.created_at %>" class="edit-post-inline-link">
         Edit
       </a>
-      <a
-        href="#"
-        data-post-id="<%= post.id %>"
-        data-user-id="<%= post.user_id %>"
-        data-session-id="<%= session[:user_id] %>"
-        class="delete-post"
-      >
+      <a href="#" data-post-id="<%= post.id %>" data-user-id="<%= post.user_id %>" data-session-id="<%= session[:user_id] %>" class="delete-post">
         Delete
       </a>
     </div>
   </div>
-
 
   <div class="post-body">
     <h2 class="post-user">
@@ -35,42 +21,35 @@
     <p class="post-text" id="post-text-<%= post.id %>">
       <%= simple_format(post.message) %>
     </p>
-    <div
-      class="edit-post-inline"
-      id="edit-post-inline-<%= post.id %>"
-    >
+    <div class="edit-post-inline" id="edit-post-inline-<%= post.id %>">
       <%= form_for post, url: @edit_post_path do |form| %>
       <%= form.text_field :message%>
-        <%= form.submit "Submit" %>
-      <% end %>
-    </div>
-    <div
-      class="delete-confirmation"
-      id="delete-confirmation-<%= post.id %>"
-    >
-      Are you sure?
-      <%= link_to 'Delete', post, method: :delete %>
-    </div>
-
-    <% if post.comments %>
-      <% post.comments.each do |comment| %>
-        <div class="comment">
-          <div class="user-name">
-            <%= comment.user.username %>
-
-            <%= comment.content %>
-
-            <%= link_to 'Delete', post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
-
-        </div>
-        </div>
-      <% end %>
+      <%= form.submit "Submit" %>
     <% end %>
-
-    <%= form_for [post, post.comments.new] do |f| %>
-      <%= f.text_field :content, placeholder: 'Add a comment...' %>
-    <% end %>
-
   </div>
+  <div class="delete-confirmation" id="delete-confirmation-<%= post.id %>">
+    Are you sure?
+    <%= link_to 'Delete', post, method: :delete %>
+  </div>
+
+  <% if post.comments %>
+    <% post.comments.each do |comment| %>
+      <div class="comment">
+        <div class="user-name">
+          <%= comment.user.username %>
+
+          <%= comment.content %>
+
+          <%= link_to 'Delete', post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
+
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%= form_for [post, post.comments.new] do |f| %>
+  <%= f.text_field :content, placeholder: 'Add a comment...' %>
+<% end %>
+
 </div>
 </div>

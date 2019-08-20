@@ -21,7 +21,9 @@ Rails.application.routes.draw do
     resources :posts
   end
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
   resources :id, module:'posts'
 end
