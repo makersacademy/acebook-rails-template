@@ -1,5 +1,5 @@
 <%= form_for @post do |form| %>
-    <%= form.label :message, "Type your message to #{@user.username}..." %>
+    <%= form.label :message, "Post on #{@user.username}'s wall" %>
     <%= form.text_area :message %>
 
     <%= form.submit "Submit" %>
@@ -8,7 +8,9 @@
     <h4><%= User.find(wall_post.user_id).username %></h4>
     <p><%= simple_format(wall_post.message) %>
     <sub>Posted on: <%= wall_post.created_at.strftime("%d-%m-%Y") %></sub></p>
+    <% if session[:user_id] == wall_post.user_id %>
     <%= link_to 'Edit', edit_post_path(wall_post) %>
     <%= link_to "Delete", wall_post, method: :delete,
                                       data: { confirm: "You sure?" } %>
     <% end %>
+        <%end%>

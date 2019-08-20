@@ -10,7 +10,7 @@ RSpec.feature 'Edit posts', type: :feature do
     fill_in 'Password', with: 'testing123'
     fill_in 'Confirmation', with: 'testing123'
     click_button 'Create my account'
-    fill_in 'Type your message to Example...', with: 'Hello'
+    fill_in "Post on Example's wall", with: 'Hello'
     click_button 'Submit'
     click_link 'Edit'
     fill_in 'Message', with: 'Hello, world!'
@@ -26,7 +26,7 @@ RSpec.feature 'Edit posts', type: :feature do
     fill_in 'Confirmation', with: 'testing123'
     click_button 'Create my account'
     click_link 'Home'
-    fill_in 'Message', with: 'Hello, world!'
+    fill_in 'post_message', with: 'Hello, world!'
     click_button 'Submit'
     visit '/'
     fill_in 'Username', with: 'Example2'
@@ -35,8 +35,7 @@ RSpec.feature 'Edit posts', type: :feature do
     fill_in 'Confirmation', with: 'testing123'
     click_button 'Create my account'
     click_link 'Home'
-    click_link 'Edit'
-    expect(page).to have_content("This isn't your post!")
-    expect(page).to have_content('Hello, world!')
+    expect(page).to_not have_content('Edit')
+    expect(page).to_not have_content('Delete')
   end
 end
