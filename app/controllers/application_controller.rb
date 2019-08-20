@@ -5,10 +5,11 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
 private
-def require_login
-  unless user_signed_in?
-    redirect_to new_user_session 
+
+  def require_login
+    unless user_signed_in?
+      redirect_to new_user_session
+    end
   end
-end
 
 end

@@ -12,5 +12,5 @@ Rails.application.routes.draw do
 
   resources :posts
 
-
+  get '/wall/:id' => 'posts#wall'
 end
