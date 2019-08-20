@@ -17,7 +17,7 @@ class PostsController < ApplicationController
    end
 
   def show
-    @post = Post.find_by(id: params[:id])
+
   end
 
   def edit
@@ -51,6 +51,10 @@ class PostsController < ApplicationController
   end
 
   def current_post
-    @post = Post.find(params[:id])
+    begin
+      @post = Post.find(params[:id])
+    rescue
+      redirect_to '/'
+    end
   end
 end
