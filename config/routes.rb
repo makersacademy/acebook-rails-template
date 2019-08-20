@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   # # get '/login', to: "sessions#new"
   # post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
-
+  get '/:id', to: "users#show"
+  
   root 'sessions#new'
 
   get '/update', to: "posts#update"
@@ -25,5 +26,6 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :id, module:'posts'
+  # resources :id, path: '/users/id'
+
 end

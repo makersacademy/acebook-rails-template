@@ -15,14 +15,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    p "show called"
     @user = User.find(params[:id])
-    p @user
-    @posts = @user.posts.all
-    p @posts
-    render "show.html.erb"
+    if session[:user_id] == nil
+      redirect_to root_path
+    else
+      @posts = @user.posts.all
+      render "show.html.erb"
+    end
   end
-  
+
 end
 
 
