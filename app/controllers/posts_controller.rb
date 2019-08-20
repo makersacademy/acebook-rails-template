@@ -2,6 +2,7 @@
 
 class PostsController < ApplicationController
   before_action :correct_user,   only: %i[destroy edit]
+  include Response
 
   def new
     if logged_in?
@@ -64,6 +65,11 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:success] = 'Post deleted'
     redirect_to request.referrer || root_url
+  end
+
+  def post_api
+    @posts = Post.all
+    json_response(@posts)
   end
 
   private

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   root 'users#new'
   get '/update' => 'posts#update'
+  get '/post_api' => 'posts#post_api'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/help', to: 'static_pages#help'
