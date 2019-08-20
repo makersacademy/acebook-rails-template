@@ -4,11 +4,10 @@ rvm:
 bundler_args: --jobs=2
 script:
 script:
-  - gem install bundler
   - bundle exec rake db:setup
   - bundle exec rake spec
 cache: bundler
 services:
   - postgresql
 addons:
-  postgresql: "11.4"
+  postgresql: 11.4"
