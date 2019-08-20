@@ -1,28 +1,53 @@
+<div class="container center-align">
+  <%= link_to new_post_path, class: "btn waves-effect waves-light light-blue darken-4" do %>
+    New post
+  <% end %>
+</div>
+
+
 <ul id="wall">
   <% @posts.each do |post| %>
     <li>
     <div id=<=% post.id %>
-      <p><%= simple_format(post.message) %></p>
-      <p><% raw_post_time = Time.parse(post.created_at.to_s[0, post.created_at.to_s.length - 3]) %>
-      <%post_time = raw_post_time +60*60%></p>
-      <p> <%= post_time.strftime("%d/%m/%Y %H:%M") %> </p>
-      <%= link_to('Edit Post', edit_post_url(post)) %>
-      <%= link_to('Delete Post', post_url(post), method: :delete) %>
+      <div class="row">
+        <div class="col s12 m6 offset-m3">
+          <div class="card light-blue darken-4">
+            <div class="card-content white-text">
+              <span class="card-title">
+                  Name goes here @
+                  <% raw_post_time = Time.parse(post.created_at.to_s[0, post.created_at.to_s.length - 3]) %>
+                  <%post_time = raw_post_time +60*60%>
+                  <%= post_time.strftime("%d/%m/%Y %H:%M") %>
+              </span>
+              <p><%= simple_format(post.message) %></p>
+
+            </div>
+            <div class="card-action">
+              <%= link_to('Edit Post', edit_post_url(post)) %>
+              <%= link_to('Delete Post', post_url(post), method: :delete) %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
     </li>
   <% end %>
 </ul>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path) %>
-  </li>
-<% end %>
