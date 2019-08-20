@@ -54,23 +54,23 @@
     </div>
 
     <% if post.comments %>
-            <% post.comments.each do |comment| %>
-              <div class="comment">
-                <div class="user-name">
-                  <%= comment.user.username %>
+      <% post.comments.each do |comment| %>
+        <div class="comment">
+          <div class="user-name">
+            <%= comment.user.username %>
 
-                  <%= comment.content %>
-              
+            <%= comment.content %>
 
-                <% if comment.user == @user %>
-                  <%= link_to 'Delete', post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
-                <% end %>
-              </div>
-            <% end %>
-          <% end %>
+            <%= link_to 'Delete', post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
 
-          <%= form_for [post, post.comments.new] do |f| %>
-            <%= f.text_field :content, placeholder: 'Add a comment...' %>
-          <% end %>
+        </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <%= form_for [post, post.comments.new] do |f| %>
+      <%= f.text_field :content, placeholder: 'Add a comment...' %>
+    <% end %>
+
   </div>
 </div>

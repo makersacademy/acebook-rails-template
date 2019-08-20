@@ -6,15 +6,25 @@ class CommentsController < ApplicationController
     @user = User.find(session[:user_id])
     @comment = @post.comments.build(comment_params)
     @comment.user_id = @user.id
-    redirect_to posts_url
+
+    if @comment.save
+      flash[:success] = "Well done for doing your little comment!"
+      redirect_to posts_url
+    else
+      flash[:alert] = "You got a baddie, try again"
+      render posts_url
+    end
   end
 
   def destroy
     @comment = @post.comments.find(params[:id])
+    @user = User.find(session[:user_id])
 
-    @comment.destroy
-    flash[:success] = "Comment deleted :("
-    redirect_to root_path
+    if @comment.user_id == @user.id
+      @comment.destroy
+
+      redirect_to posts_url
+    end
 end
 
   private
