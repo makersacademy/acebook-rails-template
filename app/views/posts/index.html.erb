@@ -2,7 +2,6 @@
 <% require_relative './greeting_helper' %>
 
 <head>
-<!-- <script src="jquery.js"></script> -->
 <!-- <script src="../assets/javascripts/users.js.coffee"></script> -->
 
 </head>
@@ -36,7 +35,11 @@
     <%= post.user.firstname %>
     <!-- <img src="wings.gif" class="halo"> -->
   </div>
-    <p><%= simple_format(post.message) %></p>
+  <% if current_user == post.user && post.less_than_10_minutes_ago  %>
+    <p><%= best_in_place post, :message %></p>
+  <% else %>
+    <p><%= post.message %></p>
+  <% end %>
   <!-- <div class="container"> -->
           <!-- Button trigger modal -->
       <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
@@ -74,22 +77,7 @@
 
   <%= "Created: #{time_since_post(post)}" %>
   <br>
-  <button type="button" name="button" id="edit_button">Edito</button>
-  <script>
-    $("#edit_button").click(function() {
-
-     var edited_text = $('#edited_textbox').val()
-
-     $.post(`http://localhost:3000/posts/${ <%=post.id %> }`, edited_text,
-
-         function(data, status){
-           console.log(data + "THIS IS DATA")
-           console.log(status + "THIS IS STATUS")
-          }
-    );
- });
-
-  </script>
+  <!-- <button type="button" name="button" id="edit_button">Edito</button> -->
   <% if current_user == (post.user) %>
   <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
   <%end%>
