@@ -26,6 +26,12 @@
   </a>
 </div>
 
-<%= @post.message %>
-
-p <%= @posts %>
+<% @posts.each do |post| %>
+  <% if post.user_id == session[:user_id] %>
+  <div class="row center posts-row">
+  <div class="posts-div">
+    <h1><%= link_to simple_format(post.message), post_path(post) %></h1>
+  </div>
+  </div>
+  <% end %>
+<% end %>
