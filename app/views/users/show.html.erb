@@ -9,7 +9,11 @@
     <div class="container">
       <ul class="list-inline">
         <li><% provide(:title, @user.firstname) %></li>
-        <li><%= image_tag(@user.avatar, :class => "avatar") %></li>
+        <li>
+          <% if @user.avatar.attached? %>
+            <%= image_tag(@user.avatar, :class => "avatar") %>
+          <% end  %>
+        </li>
         <li>Name: <%= @user.firstname %></li>
         <li>Lastname: <%= @user.lastname %></li>
         <li>Email: <%= @user.email %></li>
