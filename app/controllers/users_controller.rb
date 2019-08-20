@@ -15,14 +15,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    p "show called"
     @user = User.find(params[:id])
-    p @user
-    @posts = @user.posts.all
-    p @posts
+    session[:wall_id] = params[:id]
+    @page_id = params[:id]
+    @posts = Post.all
     render "show.html.erb"
+    p "wall id"
+    p session[:wall_id]
+    p "first post"
+    p @posts[0]
   end
-  
+
 end
 
 
