@@ -24,6 +24,7 @@
   <%if session[:user_id] %>
     <%= link_to new_post_path, id:'New-post', class: "btn  btn-info btn-lg btn-block" do %>
     New post
+    <% session[:target_user] = nil %>
   <%end%>
 <% end %>
 </div>

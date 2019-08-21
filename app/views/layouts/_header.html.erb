@@ -4,7 +4,9 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "My Wall", '/walls/show' %></li>
+        <%if session[:user_id]%>
+          <li><%= link_to "My Wall", wall_path(session[:user_id]) %></li>
+        <%end%>
         <% if logged_in? %>
           <li><%= link_to "Users", '#' %></li>
           <li class="dropdown">
