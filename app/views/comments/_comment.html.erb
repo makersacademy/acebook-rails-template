@@ -1,6 +1,7 @@
 <div class="box">
   <article class="media">
-    <div class="media-content">
+    <div class="card comment-box"style="width: 18rem;">
+        <div class="card-body">
       <div class="content">
         <p>
           <strong><%= comment.name %>: </strong>
@@ -10,7 +11,7 @@
       </div>
 
       <%= link_to 'Delete', [comment.post, comment], method: :delete, class: "button is-danger", data: { confirm: "Are you sure?" } %>
-
+</div>
 
   </article>
 </div>
