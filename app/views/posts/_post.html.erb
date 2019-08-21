@@ -18,9 +18,9 @@
     <p class="posts-time">posted
       <%= time_ago_in_words(post.created_at)%>
       ago</p>
-    <p class="post-text" id="post-text-<%= post.id %>">
+    <div class="post-text" id="post-text-<%= post.id %>">
       <%= simple_format(post.message) %>
-    </p>
+    </div>
     <div class="edit-post-inline" id="edit-post-inline-<%= post.id %>">
       <%= form_for post, url: @edit_post_path do |form| %>
       <%= form.text_field :message%>
@@ -33,23 +33,40 @@
   </div>
 
   <% if post.comments %>
-    <% post.comments.each do |comment| %>
-      <div class="comment">
-        <div class="user-name">
-          <%= comment.user.username %>
 
-          <%= comment.content %>
+    <div class="comment-title"> <%= post.comments.length %> comments </div>
+      <div class="comment-list">
+      <% post.comments.each do |comment| %>
+        <div class="comment">
+          <div class="comment-box">
+            <div class="user-name">
+              <%= comment.user.username %>
+            </div>
+              <div class="comment-text" id="comment-text-<%= comment.id %>">
+                <%= comment.content %>
+              </div>
+            </div>
 
+            <div class="edit-comment-inline" id="edit-comment-inline-<%= comment.id %>">
+              <%= form_for comment, url: "/posts/#{post.id}/comments/#{comment.id}/" do |form| %>
+              <%= form.text_field :content%>
+              <%= form.submit "Submit" %>
+            <% end %>
+          </div>
+          <a href="#" data-comment-id="<%= comment.id %>" class="edit-comment-inline-link">
+            Edit
+          </a>
           <%= link_to 'Delete', post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
+          <br>
 
-        </div>
-      </div>
-    <% end %>
+    </div>
   <% end %>
-
-  <%= form_for [post, post.comments.new] do |f| %>
-  <%= f.text_field :content, placeholder: 'Add a comment...' %>
+</div>
 <% end %>
 
-</div>
+
+  <%= form_for [post, post.comments.new] do |f| %>
+  <%= f.text_field :content, class: "add-comment-link", placeholder: 'Add a comment...' %>
+  <% end %>
+
 </div>

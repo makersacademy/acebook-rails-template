@@ -1,5 +1,6 @@
-class CommentsController < ApplicationController
+# frozen_string_literal: true
 
+class CommentsController < ApplicationController
   before_action :set_post
 
   def create
@@ -8,11 +9,9 @@ class CommentsController < ApplicationController
     @comment.user_id = @user.id
 
     if @comment.save
-      flash[:success] = "Well done for doing your little comment!"
-      redirect_to posts_url
+      redirect_back fallback_location: "www.bbc.co.uk"
     else
-      flash[:alert] = "You got a baddie, try again"
-      render posts_url
+      redirect_back fallback_location: "www.bbc.co.uk"
     end
   end
 
@@ -23,9 +22,27 @@ class CommentsController < ApplicationController
     if @comment.user_id == @user.id
       @comment.destroy
 
-      redirect_to posts_url
+      redirect_back fallback_location: "www.bbc.co.uk"
     end
-end
+  end
+
+  def edit
+    @comment = @post.comments.find(params[:id])
+  end
+
+  def update
+
+    @comment = @post.comments.find(params[:id])
+    @user = User.find(session[:user_id])
+
+    if @comment.user_id != @user.id
+      redirect_back fallback_location: "www.bbc.co.uk"
+    else
+      @comment.update(comment_params)
+      redirect_back fallback_location: "www.bbc.co.uk"
+    end
+
+  end
 
   private
 
