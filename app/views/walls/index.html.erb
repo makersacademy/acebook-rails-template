@@ -1,2 +1,80 @@
-<h1>Walls#index</h1>
-<p>Find me in app/views/walls/index.html.erb</p>
+<div class="profile row">
+  <div class="col-md-4 avatar">
+    <!-- LEFT: AVATAR HERE -->
+  </div>
+  <div class="col-md-8 basic-info">
+    <!-- RIGHT: USER INFORMATION HERE -->
+  </div>
+</div>
+
+<div class="center top user-stories">
+<div class="user-profile">
+  <div class="profile row">
+    <div class="col-md-4 avatar">
+      <div class="wrapper">
+        <img src="https://pixabay.com/get/5ee0d44b4854b108f5d08460825668204022dfe055577248742872dc/pug-801826_1280.jpg" class="img-rounded" alt="Cinque Terre" width="140" height="120">
+      </div>
+    </div>
+
+    <div class="col-md-8 basic-info">
+      <div class="user-wrapper">
+        <h2 class="username">Marvin Marvin</h2>
+      </div>
+      <ul class="posts">
+        <li><span>12</span> posts</li>
+        <li><span>195</span> followers</li>
+        <li><span>345</span> following</li>
+      </ul>
+      <h2 class="name">Marvin Marvin</h2>
+      <a class="website">StayOnTrack.com</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="user-tabs">
+  <a class="tab active" href="">
+    <i class="fa fa-th"></i>
+    POSTS
+  </a>
+  <a class="tab" href="">
+    <i class="fa fa-tv"></i>
+    IGTV
+  </a>
+  <a class="tab" href="">
+    <i class="fa fa-bookmark"></i>
+    SAVED
+  </a>
+  <a class="tab" href="">
+    <i class="fa fa-tag"></i>
+    TAGGED
+  </a>
+</div>
+
+<div class="center big-pink">
+  <%if session[:user_id] %>
+    <%= link_to new_post_path, id:'New-post', class: "btn  btn-info btn-lg btn-block" do %>
+    New post
+  <%end%>
+<% end %>
+</div>
+
+<div class="center top post-stories">
+<% @posts.reverse.each do |post| %>
+  <div class="row center posts-row">
+    <h1><%= link_to simple_format(post.message), post_path(post) %></h1>
+    <div class="posts-div">
+      <b><%= link_to User.find(post.user_id).username%>
+      </b>
+      <p><%= post.created_at.strftime("%b %e %Y %H:%M")%></p>
+      <% if (post.created_at - 10.minutes.ago) > 0 %>
+        <%= button_to "Edit", edit_post_path(post), method: "get", class: "btn btn-primary"%>
+      <%end%>
+
+      <%= button_to "Remove", post_path(post), method: "delete", data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
+
+    </div>
+
+  </div>
+<% end %>
+</div>
