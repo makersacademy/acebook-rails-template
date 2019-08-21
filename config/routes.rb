@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   put '/update', to: "posts#update"
 
 
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :sessions
 
@@ -21,10 +22,15 @@ Rails.application.routes.draw do
     resources :posts
   end
 
+  # resources :users
+
   resources :posts do
     resources :comments
   end
 
   # resources :id, path: '/users/id'
+    # get '/:username', to: "users#show"
+    # get '/:id', to: "users#show"
+
 
 end
