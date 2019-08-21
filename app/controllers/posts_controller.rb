@@ -10,7 +10,12 @@ class PostsController < ApplicationController
   def create
     @user = User.find(session[:user_id])
     # @target_user
+    p "HERERERERERERERERERRERERRERE"
+    p session[:target_user]
     p @post = @user.posts.create(post_params)
+
+    p @post.update(target_user: session[:target_user])
+    p @post
     redirect_to posts_url
   end
 

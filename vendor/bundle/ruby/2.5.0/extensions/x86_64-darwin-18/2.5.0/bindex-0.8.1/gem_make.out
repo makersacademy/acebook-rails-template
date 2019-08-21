@@ -1,0 +1,15 @@
+current directory: /Users/student/Projects/acebook-Stay_on_Track/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/student/.rvm/rubies/ruby-2.5.0/bin/ruby -I /Users/student/.rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190820-24280-166xc0l.rb extconf.rb
+creating Makefile
+
+current directory: /Users/student/Projects/acebook-Stay_on_Track/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/student/Projects/acebook-Stay_on_Track/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/student/Projects/acebook-Stay_on_Track/vendor/bundle/ruby/2.5.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20190820-24280-1qedztl/skiptrace/internal
