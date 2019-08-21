@@ -21,6 +21,7 @@
         <li><strong>Email: </strong><%= @user.email %></li>
         <li><strong>Member since: </strong><%= @user.created_at.strftime("%d %B %Y") %></li>
         <li><strong>Last Updated: </strong><%= @user.updated_at.strftime("%d %B %Y")%></li>
+        <li> <%= File.basename(request.original_url) %> </li>
         <br>
         <li><%= link_to "New post", new_post_path, type: "button", class: "btn btn-primary" %></li>
       </ul>

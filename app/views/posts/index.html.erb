@@ -9,6 +9,7 @@
 <p> <%= current_Hour %> <%= current_user.firstname %></p>
 
 <center><div class="indexTitle"><h1> Angels </h1></div>
+  <%= File.basename(request.original_url) %>
   <br>
   <div class='error'>
     <% if flash[:login_already]%>
@@ -30,6 +31,7 @@
   <br>
 
 <% @posts.each do |post| %>
+<% if post.wall_id == File.basename(request.original_url) %>
   <br>
   <div class="well">
     <strong><%= post.user.firstname %></strong>
@@ -75,5 +77,6 @@
   <% else %>
     <br>
   <%end%>
+<%end%>
 <%end%>
 <br>
