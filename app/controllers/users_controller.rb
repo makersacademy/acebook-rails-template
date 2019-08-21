@@ -23,13 +23,14 @@ class UsersController < ApplicationController
       @page_id = params[:id]
       @posts = Post.all
       render "show.html.erb"
+    end
   end
-
-end
 
 
 private
 
 def user_params
   params.require(:user).permit(:username, :email, :password, :id)
+end
+
 end
