@@ -35,9 +35,15 @@ Rails.application.routes.draw do
 
 
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
+
 
   get '/login', to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+
+  get "*any", via: :all, to: "errors#not_found"
+
 end

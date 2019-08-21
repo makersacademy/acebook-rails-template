@@ -1,2 +1,17 @@
-
+<div>
+  <h1>
 <%=simple_format(@post.message) %>
+  <h1>
+</div>
+
+<div class="card comments">
+  <div class = "container">
+  <h1><%= @post.comments.count %> Comments</h1>
+  <%= render @post.comments %>
+  <div class="comment=form">
+    <hr />
+    <h3 class="subtitle is-3">Leave a Comment</h3>
+    <%= render 'comments/form' %>
+  </div>
+</div>
+</div>
