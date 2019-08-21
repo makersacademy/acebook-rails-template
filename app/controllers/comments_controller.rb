@@ -1,5 +1,6 @@
-class CommentsController < ApplicationController
+# frozen_string_literal: true
 
+class CommentsController < ApplicationController
   before_action :set_post
 
   def create
@@ -8,10 +9,10 @@ class CommentsController < ApplicationController
     @comment.user_id = @user.id
 
     if @comment.save
-      flash[:success] = "Well done for doing your little comment!"
+      flash[:success] = 'Well done for doing your little comment!'
       redirect_to posts_url
     else
-      flash[:alert] = "You got a baddie, try again"
+      flash[:alert] = 'You got a baddie, try again'
       render posts_url
     end
   end
@@ -25,7 +26,25 @@ class CommentsController < ApplicationController
 
       redirect_to posts_url
     end
-end
+  end
+
+  def edit
+    @comment = @post.comments.find(params[:id])
+  end
+
+  def update
+
+    @comment = @post.comments.find(params[:id])
+    @user = User.find(session[:user_id])
+
+    if @comment.user_id != @user.id
+      redirect_to posts_url
+    else
+      @comment.update(comment_params)
+      redirect_to users_url
+    end
+
+  end
 
   private
 
@@ -36,5 +55,4 @@ end
   def set_post
     @post = Post.find(params[:post_id])
   end
-
 end

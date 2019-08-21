@@ -25,6 +25,23 @@ $(document).ready(function() {
     }
   })
 
+  $('.edit-comment-inline-link').click((e) => {
+    const user_id = e.target.dataset.userId
+    const session_id = e.target.dataset.sessionId
+
+    if (user_id !== session_id) {
+      $("#pop_up_wrong_user").addClass("active")
+      $('#pop_up_wrong_user').click((e) => {
+        $("#pop_up_wrong_user").removeClass("active")
+      })
+    }
+    else {
+      e.preventDefault()
+      const commentId = e.target.dataset.commentId
+      $(`#comment-text-${commentId}`).hide()
+      $(`#edit-comment-inline-${commentId}`).show()
+    }
+  })
 
   $('.delete-post').click((e) => {
     const user_id = e.target.dataset.userId

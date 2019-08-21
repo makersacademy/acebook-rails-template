@@ -38,8 +38,17 @@
         <div class="user-name">
           <%= comment.user.username %>
 
+          <p class="comment-text" id="comment-text-<%= post.comment.id %>">
           <%= comment.content %>
+          </p>
 
+          <div class="edit-comment-inline" id="edit-comment-inline-<%= post.comment.id %>">
+            <%= form_for comment, url: @edit_post_comment_path do |form| %>
+            <%= form.text_field :content%>
+            <%= form.submit "Submit" %>
+            <% end %>
+          </div>
+          <a href"#" data-comment-id="<%= post.comment.id %>" class="edit-comment-inline-link"> Edit </a>
           <%= link_to 'Delete', post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
 
         </div>

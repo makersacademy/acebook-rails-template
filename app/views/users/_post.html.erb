@@ -38,18 +38,28 @@
         <div class="user-name">
           <%= comment.user.username %>
 
-          <%= comment.content %>
+          <div class="comment-text" id="comment-text-<%= comment.id %>">
+            <%= comment.content %>
+          </div>
 
-          <%= link_to 'Delete', post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
-
+          <div class="edit-comment-inline" id="edit-comment-inline-<%= comment.id %>">
+            <%= form_with(url: "/posts/#{post.id}/comments/#{comment.id}/edit", method: "GET") do %>
+              <%= text_field_tag(:content) %>
+              <%= submit_tag("Submit") %>
+            <% end %>
         </div>
-      </div>
-    <% end %>
-  <% end %>
+        <a href="#" data-comment-id="<%= comment.id %>" class="edit-comment-inline-link">
+          Edit
+        </a>
+        <%= link_to 'Delete', post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" } %>
 
-  <%= form_for [post, post.comments.new] do |f| %>
-  <%= f.text_field :content, placeholder: 'Add a comment...' %>
+      </div>
+    </div>
+  <% end %>
 <% end %>
 
-</div>
+<%= form_for [post, post.comments.new] do |f| %>
+<%= f.text_field :content, placeholder: 'Add a comment...' %>
+<% end %>
+
 </div>

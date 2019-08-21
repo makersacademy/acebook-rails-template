@@ -165,6 +165,10 @@ li:hover {
   display: none;
 }
 
+.edit-comment-inline {
+  display: none;
+}
+
 .delete-confirmation {
   display: none;
 }
