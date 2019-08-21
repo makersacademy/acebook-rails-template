@@ -227,26 +227,6 @@ li:hover {
   overflow-x: visible;
 }
 
-.status-update {
-  margin-top: 20px;
-  height: 600px;
-  padding-bottom: 50px;
-  border-radius: 18px;
-  width: 60%;
-  overflow-y: scroll;
-  overflow-x: visible;
-}
-
-.wall-post {
-  margin-top: 20px;
-  height: 600px;
-  padding-bottom: 50px;
-  border-radius: 18px;
-  width: 60%;
-  overflow-y: scroll;
-  overflow-x: visible;
-}
-
 .form-control {
   display: block;
   width: 60%;
