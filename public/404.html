@@ -4,6 +4,114 @@
   <title>404 user doesn't exist</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+
+  body {
+    height: 100vh;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .myDiv {
+      z-index: 1;
+      font-family: 'Nanum Gothic', sans-serif;
+      height: 100%;
+  }
+
+  .myDiv .bg {
+    background: url('https://cdn.pixabay.com/photo/2016/06/08/19/40/texture-1444488_960_720.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .navbar-acebook {
+      border-radius: 0px;
+    }
+  }
+
+  .navbar {
+    background:#4C2969;
+    border-radius: 0px;
+    margin-bottom: 0;
+  }
+
+  .nav-link,
+  .navbar-brand {
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 18px;
+  }
+
+  .nav-link {
+    margin-right: 1em !important;
+    float: right;
+  }
+
+  .nav-link:hover {
+    color: #9cc2ff;
+    text-decoration: none;
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+
+  .navbar-nav {
+    list-style-type: none;
+    position: absolute;
+    right: 10px;
+  }
+
+  .navbar-nav>li {
+      float: right;
+  }
+
+  .navbar-brand-logo {
+    font-size: 28px;
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    line-height: 20px;
+    color: white;
+    font-family: 'Nanum Gothic', sans-serif;
+  }
+
+  .navbar-brand-logo:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  li:hover {
+    background-color: f2f2f2;
+  }
+
+  .error-message {
+    font-family: 'Nanum Gothic', sans-serif;
+    text-align: center;
+  }
+
+  .error-body {
+    background-color: white;
+    padding: 10px;
+    margin-top: 250px;
+    border-radius: 18px;
+    border-style: solid;
+    border-color: #251947;
+    width: 683px;
+  }
+
+  .sad-picture {
+    text-align: center;
+    margin-top: 30px;
+  }
+
   .rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
@@ -54,11 +162,20 @@
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body>
+
+
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>user does not exist</h1>
+  <div class="myDiv">
+    <div class="bg">
+      <div class="error-body">
+        <div class="error-message">
+          <h1>Sorry, this user does not exist &#128580;</h1>
+        </div>
+        <div class="sad-picture">
+          <img src="https://p7.hiclipart.com/preview/747/290/552/tears-crying-internet-meme-happiness-super-sad-face-thumbnail.jpg">
+        </div>
+      </div>
     </div>
   </div>
 </body>
