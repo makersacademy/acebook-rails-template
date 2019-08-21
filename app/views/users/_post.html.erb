@@ -34,8 +34,8 @@
 
   <% if post.comments %>
 
-    <div class="comment-title"> <%= post.comments.length %> comments </div>
-      <div class="comment-list">
+    <div data-list-id="<%= post.id %>" class="comment-title"> <%= post.comments.length %> comments </div>
+      <div class="comment-list" id="comment-list-<%=post.id%>">
       <% post.comments.each do |comment| %>
         <div class="comment">
           <div class="comment-box">

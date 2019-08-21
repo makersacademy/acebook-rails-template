@@ -61,8 +61,10 @@ $(document).ready(function() {
   })
 
   $('.comment-title').click((e) => {
+    console.log(e.target.dataset.listId)
+    const list_id = e.target.dataset.listId
     e.preventDefault()
-    $('.comment-list').slideToggle()
+    $('#comment-list-' + list_id).slideToggle()
 
   })
 
