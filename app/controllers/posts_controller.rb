@@ -7,17 +7,9 @@ class PostsController < ApplicationController
 
   def create
     @user = User.find(session[:user_id])
-    p "user id"
-    p session[:user_id]
     @username = @user.username
-    p "post params"
-    p post_params
     @post = @user.posts.create(post_params)
-    p "wall id"
-    p session[:wall_id]
     @post.update_attribute(:wall_id, session[:wall_id])
-    p "post"
-    p @post
     redirect_to posts_url
   end
 
