@@ -68,7 +68,10 @@ class PostsController < ApplicationController
   end
 
   def post_api
-    @posts = Post.all
+    @posts = Post.find_by_sql("SELECT posts.*, users.username
+                               FROM posts INNER JOIN users
+                               ON posts.user_id = users.id")
+    logger.debug @posts
     json_response(@posts)
   end
 
