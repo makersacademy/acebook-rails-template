@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     10.times do
       puts ""
     end
-    p @user.avatar
     if @user.save
       log_in(@user)
       session[:current_user_id] = @user.id

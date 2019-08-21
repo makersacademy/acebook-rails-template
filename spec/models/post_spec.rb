@@ -31,7 +31,7 @@ RSpec.describe Post, type: :model do
       post = create_post
       new_params = {"message"=>"this is an updated message"}
       post_id = post.id
-      Post.update(post_id, new_params)
+      post.update(new_params)
       new_post = Post.find_by(id: post_id)
       expect(new_post.message).to eq "this is an updated message"
     end
