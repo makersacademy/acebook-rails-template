@@ -65,3 +65,5 @@ gem 'best_in_place'
 gem 'coffee-rails'
 
 gem 'responders'
+
+gem 'RedCloth'
