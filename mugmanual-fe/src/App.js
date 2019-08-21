@@ -14,17 +14,16 @@ class App extends Component {
   }
 
   // Delete Post
-  delTodo = (id) => {
+  delPost = (id) => {
     this.setState({ posts: [...this.state.posts.filter(post => post.id !== id)]});
   }
 
   // Add Post
   addPost = (message) => {
-    const newTodo ={
-      id: 4,
-      message,
-    }
-    this.setState({ posts: [...this.state.posts, newTodo] });
+    axios.post('https://mugmanual.herokuapp.com/posts', {
+      message
+    })
+    .then(res => this.setState({ posts: [...this.state.posts, res.data] }));
   }
 
   render() {
@@ -34,7 +33,7 @@ class App extends Component {
         <AddPost addPost={this.addPost} />
         <Posts
         posts={this.state.posts}
-        delPost={this.delTodo}/>
+        delPost={this.delPost}/>
       </div>
     );
   };
