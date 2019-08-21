@@ -19,9 +19,10 @@ class UsersController < ApplicationController
     if session[:user_id] == nil
       redirect_to root_path
     else
-      @posts = @user.posts.all
+      session[:wall_id] = params[:id]
+      @page_id = params[:id]
+      @posts = Post.all
       render "show.html.erb"
-    end
   end
 
 end
