@@ -5,13 +5,7 @@ import PostItem from './PostItem.js';
 
 export class Posts extends Component {
   state = {
-    posts: [],
-    users: []
-  }
-
-  componentDidMount() {
-    axios.get('https://mugmanual.herokuapp.com/post_api')
-    .then(res => this.setState({ users: res.data[0].user}))
+    posts: []
   }
 
   componentDidMount() {
@@ -20,9 +14,10 @@ export class Posts extends Component {
   }
 
   render() {
-    return this.state.posts.map((post) => (
-      <PostItem key={post.id} post={post}/>
+      return this.state.posts.map((post) => (
+      <PostItem key={post.id} post={post} />
     ));
+
   }
 }
 

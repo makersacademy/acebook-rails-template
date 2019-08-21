@@ -68,12 +68,11 @@ class PostsController < ApplicationController
   end
 
   def post_api
-    @post = Post.all
-    @user = User.all 
-    render :json => [
-      :user => @user.as_json(:except => [:email, :password_digest]),
-      :post => @post.as_json
-    ]
+    @posts = Post.find_by_sql("SELECT posts.*, users.username
+                               FROM posts INNER JOIN users
+                               ON posts.user_id = users.id")
+    logger.debug @posts
+    json_response(@posts)
   end
 
   private
