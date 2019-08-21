@@ -11,9 +11,11 @@ def time_since_post(post)
     "#{time_since} seconds ago"
   elsif time_since >= MINUTE_DIVISOR && time_since < 120
     "#{(time_since / MINUTE_DIVISOR).round} minute ago"
-  elsif time_since >= 120 && time_since < 3600
+  elsif time_since >= 120 && time_since < HOURS_DIVISOR
     "#{(time_since / MINUTE_DIVISOR).round} minutes ago"
-  elsif time_since >= HOURS_DIVISOR && time_since < 86400
+  elsif time_since >= HOURS_DIVISOR && time_since < 7200
+    "#{(time_since / HOURS_DIVISOR).round} hour ago"
+  elsif time_since >= HOURS_DIVISOR && time_since < DAYS_DIVISOR
     "#{(time_since / HOURS_DIVISOR).round} hours ago"
   elsif time_since >= DAYS_DIVISOR
     "#{(time_since / DAYS_DIVISOR).round} days ago"
