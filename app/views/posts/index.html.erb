@@ -35,13 +35,7 @@
     <strong><%= post.user.firstname %></strong>
     <div class="time_since_post"><%= time_since_post(post) %></div>
     <br>
-
-    <!-- <img src="wings.gif" class="halo"> -->
-  <% if current_user == post.user && post.less_than_10_minutes_ago  %>
-    <p><%= best_in_place post, :message  %></p>
-  <% else %>
-    <p><%= post.message %></p>
-  <% end %>
+    <p><%= simple_format(post.message) %></p>
     <a href="#" role="button" class="btn" data-toggle="modal" data-target="#<%=post.id%>ModalCenter">
       Read
     <a>
@@ -72,7 +66,10 @@
           </div>
         </div>
   </div>
-  <% if current_user == (post.user) %>
+  <% if current_user == (post.user) && post.less_than_10_minutes_ago %>
+    <%= link_to 'Edit', edit_post_path(post), class: "btn btn-info btn-sm" %>
+  <% end %>
+  <% if current_user == (post.user)%>
     <%= link_to 'Delete', post_path(post), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?"} %>
     <br>
   <% else %>
