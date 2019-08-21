@@ -4,11 +4,7 @@ export class PostItem extends Component {
   render() {
     return (
       <div>
-          <h3>{this.props.data.user_id}</h3><br></br>
-          <p>{this.props.data.message}</p>
-      <div className="w3-container">
-      <sub>{this.props.data.created_at}</sub>
-      </div>
+       <h1>{this.props.post.message}</h1>
       </div>
     )
   }
@@ -33,3 +29,9 @@ export default PostItem
 //                                        data: { confirm: "You sure?" } %>
 //     <%end%>
 // <% end %>
+
+{/* <h3>{this.props.data.user_id}</h3><br></br>
+<p>{this.props.data.message}</p>
+<div className="w3-container">
+<sub>{this.props.data.created_at}</sub>
+</div> */}
