@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    redirect_to '/'
+    # redirect_to '/'
   end
 
   def show
