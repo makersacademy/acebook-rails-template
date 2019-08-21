@@ -16,14 +16,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    session[:wall_id] = params[:id]
-    @page_id = params[:id]
-    @posts = Post.all
-    render "show.html.erb"
-    p "wall id"
-    p session[:wall_id]
-    p "first post"
-    p @posts[0]
+    if session[:user_id] == nil
+      redirect_to root_path
+    else
+      session[:wall_id] = params[:id]
+      @page_id = params[:id]
+      @posts = Post.all
+      render "show.html.erb"
   end
 
 end
