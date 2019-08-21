@@ -10,7 +10,8 @@ export class Posts extends Component {
 
   componentDidMount() {
     axios.get('https://mugmanual.herokuapp.com/post_api')
-    .then(res => this.setState({ posts: res.data[0].post}))
+    .then(res => this.setState({ posts: res.data}))
+    console.log(this.state.posts)
   }
 
   render() {
