@@ -2,7 +2,7 @@ language: ruby
 rvm:
 - 2.5.0
 bundler_args: --jobs=2
-script:
+before_script:
   - bundle install
   - bundle exec rake db:create
   - bundle exec rake db:migrate
