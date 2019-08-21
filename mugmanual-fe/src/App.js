@@ -11,7 +11,6 @@ class App extends Component {
   componentDidMount() {
     axios.get('https://mugmanual.herokuapp.com/post_api')
     .then(res => this.setState({ posts: res.data}))
-    console.log(this.state.posts)
   }
 
   // Delete Post
@@ -29,11 +28,11 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.posts) 
+    // console.log(this.state.posts)
     return (
       <div>
         <AddPost addPost={this.addPost} />
-        <Posts 
+        <Posts
         posts={this.state.posts}
         delPost={this.delTodo}/>
       </div>
