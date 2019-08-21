@@ -1,0 +1,6 @@
+<h2> Users registered on mugmanual:<h2>
+
+<% @users.each do |user| %>
+  <p><%= simple_format(user.username) %>
+     <%= link_to "View Wall", "/users/#{user.id}" %>
+<% end %>
