@@ -19,9 +19,9 @@ $(document).ready(function() {
     }
     else {
       e.preventDefault()
-      const postId = e.target.dataset.postId
-      $(`#post-text-${postId}`).hide()
-      $(`#edit-post-inline-${postId}`).show()
+      const postId = e.target.dataset.postId;
+      $(".post-text").hide();
+      $(`#edit-post-inline-${postId}`).fadeIn()
     }
   })
 

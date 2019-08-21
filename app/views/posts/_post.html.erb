@@ -18,9 +18,9 @@
     <p class="posts-time">posted
       <%= time_ago_in_words(post.created_at)%>
       ago</p>
-    <p class="post-text" id="post-text-<%= post.id %>">
+    <div class="post-text" id="post-text-<%= post.id %>">
       <%= simple_format(post.message) %>
-    </p>
+    </div>
     <div class="edit-post-inline" id="edit-post-inline-<%= post.id %>">
       <%= form_for post, url: @edit_post_path do |form| %>
       <%= form.text_field :message%>
