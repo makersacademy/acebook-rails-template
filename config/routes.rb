@@ -26,4 +26,5 @@ Rails.application.routes.draw do
   end
 
   resources :id, module:'posts'
+
 end
