@@ -30,6 +30,6 @@ Rails.application.routes.draw do
 
   # resources :id, path: '/users/id'
 
-    get '/:id', to: "users#show"
+#     get '/:id', to: "users#show"
 
 end
