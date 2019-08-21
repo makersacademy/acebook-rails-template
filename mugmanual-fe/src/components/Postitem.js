@@ -5,6 +5,7 @@ export class PostItem extends Component {
     return (
       <div>
        <h1>{this.props.post.message}</h1>
+
       </div>
     )
   }
