@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import Header from './components/layout/Header'
 import Posts from './components/Posts';
 import AddPost from './components/AddPost';
+import './App.css';
 import axios from 'axios';
 
 class App extends Component {
@@ -30,6 +32,7 @@ class App extends Component {
     // console.log(this.state.posts)
     return (
       <div>
+        <Header />
         <AddPost addPost={this.addPost} />
         <Posts
         posts={this.state.posts}

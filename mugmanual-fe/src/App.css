@@ -31,3 +31,142 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  box-sizing: border-box
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Dosis', sans-serif;
+  line-height: 1.6;
+  color: #666;
+  background: #F6F6F6;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  padding: 1.5rem 2.5rem;
+  background-image: linear-gradient(120deg, #2ddcfb 0%,#2d91fb 100%);
+  margin: 0 0 2rem 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+h3 {
+  text-align: left;
+  padding: 1.5rem 2.5rem;
+  background-image: linear-gradient(120deg, #cdf4fb 0%,#fbfbfb 100%);
+  margin: 0 0 2rem 0;
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+}
+
+ul {
+  list-style-type: upper-roman;
+  list-style-type: none
+}
+
+img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+}
+
+p {
+    padding: 20px;
+    background: #4cadc5;
+    width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 8px 8px -6px #333;
+}
+
+.myButton {
+	-moz-box-shadow: 3px 5px 24px 0px #383838;
+	-webkit-box-shadow: 3px 5px 24px 0px #383838;
+	box-shadow: 3px 5px 24px 0px #383838;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ada4ad), color-stop(1, #8c8787));
+	background:-moz-linear-gradient(top, #ada4ad 5%, #8c8787 100%);
+	background:-webkit-linear-gradient(top, #ada4ad 5%, #8c8787 100%);
+	background:-o-linear-gradient(top, #ada4ad 5%, #8c8787 100%);
+	background:-ms-linear-gradient(top, #ada4ad 5%, #8c8787 100%);
+	background:linear-gradient(to bottom, #ada4ad 5%, #8c8787 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ada4ad', endColorstr='#8c8787',GradientType=0);
+	background-color:#ada4ad;
+	-moz-border-radius:41px;
+	-webkit-border-radius:41px;
+	border-radius:41px;
+	border:2px solid #aba5a4;
+	display:inline-block;
+	cursor:pointer;
+	color:#050505;
+	font-family:Arial;
+	font-size:10px;
+	padding:0px 6px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #b8aab8;
+  margin-left: 50px
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #8c8787), color-stop(1, #ada4ad));
+	background:-moz-linear-gradient(top, #8c8787 5%, #ada4ad 100%);
+	background:-webkit-linear-gradient(top, #8c8787 5%, #ada4ad 100%);
+	background:-o-linear-gradient(top, #8c8787 5%, #ada4ad 100%);
+	background:-ms-linear-gradient(top, #8c8787 5%, #ada4ad 100%);
+	background:linear-gradient(to bottom, #8c8787 5%, #ada4ad 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8c8787', endColorstr='#ada4ad',GradientType=0);
+	background-color:#8c8787;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+/* .container {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+/* .card {
+  margin: 1rem;
+  background: white;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all .2s linear;
+} */
+
+.list:hover {
+  box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+  transform: translate3D(0, -2px, 0);
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33% - 2rem);
+  }
+}
+
+.card:nth-child(2n) h1 {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.card:nth-child(4n) h1 {
+  background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
+}
+
+.card:nth-child(5n) h1 {
+  background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);
+}

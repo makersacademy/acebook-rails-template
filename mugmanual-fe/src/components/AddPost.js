@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import Button from 'react-bootstrap/Button';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import Form from 'react-bootstrap/Form';
 
 export class AddPost extends Component {
   state = {
@@ -15,19 +18,19 @@ export class AddPost extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        <input 
-          type="text" 
+      <Form.Group controlId="exampleForm.ControlTextarea1">
+        <Form.Control as="textarea" rows="3" type="text" 
           name="message"
-          placeholder="Add Post ..."
+          placeholder="What's on your mind..."
+          onSubmit={this.onSubmit}
           value={this.state.message}
-          onChange={this.onChange}
-        />
-        <input 
-          type="submit" 
-          value="Submit" 
-        />
-      </form>
+          onChange={this.onChange} />
+          <ButtonToolbar>
+          <Button variant="primary" size="sm">
+          Post
+          </Button>
+          </ButtonToolbar>
+          </Form.Group>
     )
   }
 }
