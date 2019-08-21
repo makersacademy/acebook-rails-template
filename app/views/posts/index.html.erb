@@ -24,7 +24,7 @@
             <%= link_to "Home", posts_path, method: :get, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to "#{@user.username}", user_path(@user.id), method: :get, class: 'nav-link' %>
+            <%= link_to "#{@user.username}", id_path(@user.id), method: :get, class: 'nav-link' %>
           </li>
         </ul>
       </div>
@@ -53,7 +53,7 @@
       </div>
 
       <div id="all-posts">
-        <% @posts.each do |post| %>
+        <% @posts.reverse_each do |post| %>
           <% if !post.wall_id %>
             <%= render partial: 'post', locals: { post: post } %>
           <% end %>

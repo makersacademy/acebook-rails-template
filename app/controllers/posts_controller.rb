@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @user = User.find(session[:user_id])
     session[:wall_id] = nil
     redirect_to root_path if session[:user_id] == nil
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.all.order(:id)
   end
 
   def edit
