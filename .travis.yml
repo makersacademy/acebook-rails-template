@@ -1,11 +1,11 @@
 language: ruby
 rvm:
-- 2.5.0
-bundler_args: --jobs=2
-before_script:
-  - bundle install
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-  - bundle exec rspec
+- 2.5.0 
 services:
   - postgresql
+before_script:
+ - bundle install
+ - bundle exec rake db:create
+ - bundle exec rake db:migrate
+ - bundle exec rspec
+
