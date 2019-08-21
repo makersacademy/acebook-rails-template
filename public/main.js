@@ -19,12 +19,29 @@ $(document).ready(function() {
     }
     else {
       e.preventDefault()
-      const postId = e.target.dataset.postId
-      $(`#post-text-${postId}`).hide()
-      $(`#edit-post-inline-${postId}`).show()
+      const postId = e.target.dataset.postId;
+      $(".post-text").hide();
+      $(`#edit-post-inline-${postId}`).fadeIn()
     }
   })
 
+  $('.edit-comment-inline-link').click((e) => {
+    const user_id = e.target.dataset.userId
+    const session_id = e.target.dataset.sessionId
+
+    if (user_id !== session_id) {
+      $("#pop_up_wrong_user").addClass("active")
+      $('#pop_up_wrong_user').click((e) => {
+        $("#pop_up_wrong_user").removeClass("active")
+      })
+    }
+    else {
+      e.preventDefault()
+      const commentId = e.target.dataset.commentId
+      $(`#comment-text-${commentId}`).hide()
+      $(`#edit-comment-inline-${commentId}`).show()
+    }
+  })
 
   $('.delete-post').click((e) => {
     const user_id = e.target.dataset.userId
@@ -41,6 +58,12 @@ $(document).ready(function() {
       $(`#post-text-${postId}`).hide()
       $(`#delete-confirmation-${postId}`).show()
     }
+  })
+
+  $('.comment-title').click((e) => {
+    e.preventDefault()
+    $('.comment-list').slideToggle()
+
   })
 
 })
