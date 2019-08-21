@@ -46,7 +46,7 @@
 
         <div class="new-post">
           <%= form_for( :post, url: posts_path) do |form| %>
-          <%= form.text_area :message, placeholder: "What's on your mind Beyonce?", :id => "post_area", :rows => 4 %>
+          <%= form.text_area :message, placeholder: "What's on your mind babycakes?", :id => "post_area", :rows => 4 %>
           <br>
           <%= form.submit "Post", :class => 'submit-post' %>
         <% end %>
@@ -54,7 +54,9 @@
 
       <div id="all-posts">
         <% @posts.reverse_each do |post| %>
-          <%= render partial: 'post', locals: { post: post } %>
+          <% if !post.wall_id %>
+            <%= render partial: 'post', locals: { post: post } %>
+          <% end %>
         <% end %>
       </div>
 
