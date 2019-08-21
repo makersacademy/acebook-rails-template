@@ -6,11 +6,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    p @user = User.find(session[:user_id])
-    p @username = @user.username
-    p @post = @user.posts.create(post_params)
+    @user = User.find(session[:user_id])
+    @username = @user.username
+    @post = @user.posts.create(post_params)
+    @post.update_attribute(:wall_id, session[:wall_id])
+    p @post
     redirect_to posts_url
   end
+
 
   def index
     @user = User.find(session[:user_id])

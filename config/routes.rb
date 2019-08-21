@@ -7,11 +7,15 @@ Rails.application.routes.draw do
   # post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
 
+  # get '/:id', to: "users#show"
+
   root 'sessions#new'
 
   get '/update', to: "posts#update"
   post '/update', to: "posts#update"
   put '/update', to: "posts#update"
+
+  # get '/posts' => 'posts#index'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -21,9 +25,12 @@ Rails.application.routes.draw do
     resources :posts
   end
 
+  # resources :users
+
   resources :posts do
     resources :comments
   end
 
-  resources :id, module:'posts'
+  # resources :id, path: '/users/id'
+
 end

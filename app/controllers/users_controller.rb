@@ -15,19 +15,22 @@ class UsersController < ApplicationController
   end
 
   def show
-    p "show called"
+    p params[:id]
     @user = User.find(params[:id])
-    p @user
-    @posts = @user.posts.all
-    p @posts
-    render "show.html.erb"
+    if session[:user_id] == nil
+      redirect_to root_path
+    else
+      session[:wall_id] = params[:id]
+      @posts = Post.all
+      render "show.html.erb"
+    end
   end
-  
-end
 
 
 private
 
 def user_params
   params.require(:user).permit(:username, :email, :password, :id)
+end
+
 end
