@@ -60,4 +60,10 @@ $(document).ready(function() {
     }
   })
 
+  $('.comment-title').click((e) => {
+    e.preventDefault()
+    $('.comment-list').slideToggle()
+
+  })
+
 })
