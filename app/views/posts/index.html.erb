@@ -54,9 +54,7 @@
 
       <div id="all-posts">
         <% @posts.reverse_each do |post| %>
-          <% if !post.wall_id %>
-            <%= render partial: 'post', locals: { post: post } %>
-          <% end %>
+          <%= render partial: 'post', locals: { post: post } %>
         <% end %>
       </div>
 

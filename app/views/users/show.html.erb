@@ -38,7 +38,7 @@
         </div>
         <div id="pop_up_cant_delete" class="pop_up_error_box"> No can do </br> doesn't belong to you.</br></br>(you idiot)
         </div>
-        
+
         <h1 class="welcome">Welcome to
           <span>&#9824;</span>cebook</h1>
 
@@ -52,9 +52,7 @@
 
       <div id="all-posts">
         <% @posts.reverse_each do |post| %>
-          <% if post.user_id.to_s == session[:wall_id] %>
-              <%= render partial: 'post', locals: { post: post } %>
-          <% else post.wall_id.to_s == session[:wall_id]  %>
+          <% if post.user_id.to_s == session[:wall_id] || post.wall_id.to_s == session[:wall_id] %>
               <%= render partial: 'post', locals: { post: post } %>
           <% end %>
         <% end %>

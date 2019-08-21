@@ -9,11 +9,9 @@ class CommentsController < ApplicationController
     @comment.user_id = @user.id
 
     if @comment.save
-      flash[:success] = 'Well done for doing your little comment!'
-      redirect_to posts_url
+      redirect_back fallback_location: "www.bbc.co.uk"
     else
-      flash[:alert] = 'You got a baddie, try again'
-      render posts_url
+      redirect_back fallback_location: "www.bbc.co.uk"
     end
   end
 
@@ -24,7 +22,7 @@ class CommentsController < ApplicationController
     if @comment.user_id == @user.id
       @comment.destroy
 
-      redirect_to posts_url
+      redirect_back fallback_location: "www.bbc.co.uk"
     end
   end
 
@@ -38,10 +36,10 @@ class CommentsController < ApplicationController
     @user = User.find(session[:user_id])
 
     if @comment.user_id != @user.id
-      redirect_to posts_url
+      redirect_back fallback_location: "www.bbc.co.uk"
     else
       @comment.update(comment_params)
-      redirect_to users_url
+      redirect_back fallback_location: "www.bbc.co.uk"
     end
 
   end
@@ -55,4 +53,5 @@ class CommentsController < ApplicationController
   def set_post
     @post = Post.find(params[:post_id])
   end
+
 end

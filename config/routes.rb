@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   # # get '/login', to: "sessions#new"
   # post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
-  get '/:id', to: "users#show"
-  
+
   root 'sessions#new'
 
   get '/update', to: "posts#update"

@@ -43,10 +43,10 @@
           </div>
 
           <div class="edit-comment-inline" id="edit-comment-inline-<%= comment.id %>">
-            <%= form_with(url: "/posts/#{post.id}/comments/#{comment.id}/edit", method: "GET") do %>
-              <%= text_field_tag(:content) %>
-              <%= submit_tag("Submit") %>
-            <% end %>
+            <%= form_for comment, url: "/posts/#{post.id}/comments/#{comment.id}/" do |form| %>
+            <%= form.text_field :content%>
+            <%= form.submit "Submit" %>
+          <% end %>
         </div>
         <a href="#" data-comment-id="<%= comment.id %>" class="edit-comment-inline-link">
           Edit
