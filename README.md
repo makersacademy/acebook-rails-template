@@ -60,7 +60,7 @@ Then visit localhost:3000.
 
 ### 7. Adding a comment
 
-![Alt text](https://user-images.githubusercontent.com/40341869/63260939-2d1a2e80-c27a-11e9-9cb2-1ad04a9dce8a.png)
+![enter-comment](https://user-images.githubusercontent.com/45185594/63522855-00238100-c4f1-11e9-8b7f-fdd7d5d23a28.png)
 
 ### 8. Editing/Deleting a comment
 
