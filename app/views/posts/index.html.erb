@@ -39,10 +39,7 @@
         <div id="pop_up_cant_delete" class="pop_up_error_box"> No can do </br> doesn't belong to you.</br></br>(you idiot)
         </div>
 
-        <h1 class="welcome">Welcome to <span>&#9824;</span>cebook</h1>
-        <%= notice %>
 
-        <h2 class="flash-error"><%= flash[:error]%></h2>
 
         <div class="new-post">
           <%= form_for( :post, url: posts_path) do |form| %>
@@ -54,7 +51,7 @@
 
       <div id="all-posts">
         <% @posts.reverse_each do |post| %>
-          <% if !post.wall_id %>
+          <% if !post.wall_id || post.wall_id == session[:user_id] %>
             <%= render partial: 'post', locals: { post: post } %>
           <% end %>
         <% end %>
