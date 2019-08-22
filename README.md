@@ -58,7 +58,15 @@ Then visit localhost:3000.
 
 ![Alt text](https://user-images.githubusercontent.com/40341869/63260939-2d1a2e80-c27a-11e9-9cb2-1ad04a9dce8a.png)
 
-### 7. Logging out
+### 7. Adding a comment
+
+![Alt text](https://user-images.githubusercontent.com/40341869/63260939-2d1a2e80-c27a-11e9-9cb2-1ad04a9dce8a.png)
+
+### 8. Editing/Deleting a comment
+
+![Alt text](https://user-images.githubusercontent.com/40341869/63260939-2d1a2e80-c27a-11e9-9cb2-1ad04a9dce8a.png)
+
+### 8. Logging out
 
 ![Alt text](https://user-images.githubusercontent.com/40341869/63261107-8b471180-c27a-11e9-9f74-7fd2023c643b.png)
 
