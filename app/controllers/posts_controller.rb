@@ -10,15 +10,15 @@ class PostsController < ApplicationController
     @username = @user.username
     @post = @user.posts.create(post_params)
     @post.update_attribute(:wall_id, session[:wall_id])
-    p @post
-    redirect_to posts_url
+    redirect_back fallback_location: "www.bbc.co.uk"
   end
 
 
   def index
     @user = User.find(session[:user_id])
+    session[:wall_id] = nil
     redirect_to root_path if session[:user_id] == nil
-    @posts = Post.all
+    @posts = Post.all.order(:id)
   end
 
   def edit
@@ -32,15 +32,10 @@ class PostsController < ApplicationController
     time_diff = (Time.current - @post.created_at)
     elapsed_time = (time_diff / 1.minute).round
 
-    if @post.user_id != @user.id
-      flash[:error] = "You can only edit your own posts";
-      redirect_to posts_url
-    elsif elapsed_time > 10
-      flash[:error] = "It's too late to edit!";
-      redirect_to posts_url
+    if @post.user_id != @user.id || elapsed_time > 10
+      redirect_back fallback_location: "www.bbc.co.uk"
     else
       @post.update(post_params)
-      flash[:error] = "Thanks for updating!";
       redirect_to posts_url
     end
 
@@ -51,7 +46,7 @@ class PostsController < ApplicationController
     @user = User.find(session[:user_id])
     if @post.user_id == @user.id
       @post.destroy
-      redirect_to posts_path
+      redirect_back fallback_location: "www.bbc.co.uk"
     end
   end
 

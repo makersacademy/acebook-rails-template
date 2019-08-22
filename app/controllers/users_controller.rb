@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    p params[:id]
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
+
     if session[:user_id] == nil
       redirect_to root_path
     else
