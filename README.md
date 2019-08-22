@@ -64,7 +64,8 @@ Then visit localhost:3000.
 
 ### 8. Editing/Deleting a comment
 
-![Alt text](https://user-images.githubusercontent.com/40341869/63260939-2d1a2e80-c27a-11e9-9cb2-1ad04a9dce8a.png)
+![Edit:Delete-Comment](https://user-images.githubusercontent.com/45185594/63522995-3f51d200-c4f1-11e9-8b36-d4168524dd35.png)
+![Submit-edited-comment](https://user-images.githubusercontent.com/45185594/63522994-3f51d200-c4f1-11e9-8d2c-56a389c0bb8b.png)
 
 ### 8. Logging out
 
