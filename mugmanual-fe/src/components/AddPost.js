@@ -22,11 +22,12 @@ export class AddPost extends Component {
         <Form.Control as="textarea" rows="3" type="text" 
           name="message"
           placeholder="What's on your mind..."
-          onSubmit={this.onSubmit}
-          value={this.state.message}
-          onChange={this.onChange} />
+           />
           <ButtonToolbar>
-          <Button variant="primary" size="sm">
+          <Button onSubmit={this.onSubmit}
+          value={this.state.message}
+          onChange={this.onChange} 
+          variant="primary" size="sm">
           Post
           </Button>
           </ButtonToolbar>

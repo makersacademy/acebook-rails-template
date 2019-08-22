@@ -8,6 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'react-rails'
 gem 'bootstrap-sass', '3.3.7'
 gem 'jquery-rails'
 gem 'poltergeist'

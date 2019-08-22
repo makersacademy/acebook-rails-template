@@ -11,18 +11,20 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axios.get('https://mugmanual.herokuapp.com/post_api')
+    axios.get('http://localhost:3001/api/v1/posts')
     .then(res => this.setState({ posts: res.data}))
   }
 
   // Delete Post
   delPost = (id) => {
-    this.setState({ posts: [...this.state.posts.filter(post => post.id !== id)]});
+    axios.delete(`http://localhost:3001/api/v1/posts/${id}`).then(response => {
+      this.setState({ posts: [...this.state.posts.filter(post => post.id !== id)]})
+      })
   }
 
   // Add Post
   addPost = (message) => {
-    axios.post('https://mugmanual.herokuapp.com/posts', {
+    axios.post('http://localhost:3001/api/v1/posts', {
       message
     })
     .then(res => this.setState({ posts: [...this.state.posts, res.data] }));
