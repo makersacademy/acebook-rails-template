@@ -2,11 +2,31 @@
 
 ![](https://i2-prod.manchestereveningnews.co.uk/incoming/article16110362.ece/ALTERNATES/s810/0_East-Coast-Main-Line.jpg)
 
+## The Task
+
+To make our first full stack group project from scratch, a Facebook clone called Acebook!
+
+## Our Approach
+
+- This was full stack, and none of our team had ever used Rails before so getting up to speed with that framework took a fair amount of time.
+- The main objectives of this project were less product and more process.  So CI/CD, Agile and TDD were at the front of our minds to varying degrees of succes.
+
+
+## Techstack
+
+```
+Back-end >> Rails
+Front-end >> Javascript, Jquery, HTML, CSS
+Testing >> Rspec, CapyBara, Selenium-Webdriver
+CI >> Travis CI
+CD >> Heroku
+```
+
 ## Links for working on this project
 
 The card wall with our to do list is here: https://trello.com/b/PFK2pnre/acebook
 
-## How to get started with this oriject
+## How to get started with this project
 
 First, clone this repository. Move into it on the command line, then:
 
