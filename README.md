@@ -4,20 +4,19 @@
 
 ## The Task
 
-To make our first full stack group project from scratch, a Facebook clone called Acebook!
+To make our first full stack, 2-week, group project from scratch; a Facebook clone called Acebook!
 
 ## Our Approach
 
 - This was full stack, and none of our team had ever used Rails before so getting up to speed with that framework took a fair amount of time.
-- The main objectives of this project were less product and more process.  So CI/CD, Agile and TDD were at the front of our minds to varying degrees of succes.
-
+- The main objectives of this project were less product and more process.  So CI/CD, Agile and TDD were at the front of our minds, to varying degrees of success...
 
 ## Techstack
 
 ```
 Back-end >> Rails
 Front-end >> Javascript, Jquery, HTML, CSS
-Testing >> Rspec, CapyBara, Selenium-Webdriver
+Testing >> Rspec, CapyBara, Selenium-Webdriver, Rubocop, Simplecov
 CI >> Travis CI
 CD >> Heroku
 ```
@@ -91,4 +90,22 @@ Then visit localhost:3000.
 
 ![Alt text](https://user-images.githubusercontent.com/40341869/63261107-8b471180-c27a-11e9-9f74-7fd2023c643b.png)
 
+## Challenges
+
+- Getting the hang of Rails definitely took up a lot of headspace.  Most of us had only used Sinatra before, so having less visibility on routing was a little tricky, and generally the structre was quite overwhelming at first.  But we feel more on top of it now.
+- We ended up TDDing very little, mostly we think because we were learning a new technology, so the exploration/implementation phases were very muddled.
+-This meant that our CI was more reactive rather than proactive.  Getting our heads around Travis too a while.  But eventually we got it up and running.
+- Downstream again with CD we ran into the same problems.  Just remembering to follow all the processes was quite a challenge.
+- Our version control and git discpline was a little slack.  Much too much work directly onto the master branch, and there's plenty of orphaned branches lost into the ether.
+
+## Accomplishments
+
+- Our team worked together really well!  We had regular stand-ups every morning, follow by a quick planning and allocation.  We constantly communicated throughout, and had useful retros/merge parties at the end of the day.
+- We all feel a lot more confident with Rails.
+- We're all pretty pleased with the Front-End/aesthetics!  Turned out pretty well.  We were tempted to turn to a more sophistocated framework like React, but we're glad we didn't in the end as we had plenty on our plates already.
+
+## Future goals
+
+- None of us will probably revisit this project but if we did...  There are plenty more features we'd like to add.
+- Acebook is sorely lacking a like button, plus a many to many friends feature.
 
