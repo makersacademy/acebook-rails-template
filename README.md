@@ -1,26 +1,26 @@
-# AceBook
+# MugManual
 
-REQUIRED INSTRUCTIONS:
+Follow this link to our deployed app      - https://mugmanual.herokuapp.com/
+Follow this link to see our GitHub page   - https://github.com/hemser1/acebook-MugManual
+Follow this link to see our Trello Board  - https://trello.com/b/2i4JEjI7/mugmanual-trello
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+## What we do
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+MugManual is the modern alternative to facebook - built in Ruby on Rails 5.2, with hybrid React pages handling a general wall as a single page application. MugManual allows you to post on a general wall, or a specific users wall - including your own! You can delete your own posts, and edit them within the last 10 minutes!
 
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Quickstart
+## Local Quickstart
 
 First, clone this repository. Then:
 
-```bash
+> cd to acebook-MugManual
 > bundle install
-> bin/rails db:create
-> bin/rails db:migrate
+> rails db:create
+> rails db:migrate
+> rails s
+> navigate to http://localhost:3000/
 
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
-```
+## Contribution
+If you would like to contribute to this project, please submit a pull request at our github page.
+
+## Final Thoughts
+Freddie sucks.
