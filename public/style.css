@@ -12,6 +12,7 @@ h1 {
     height: 100%;
 }
 
+
 .myDiv .bg {
   background: url('https://cdn.pixabay.com/photo/2016/06/08/19/40/texture-1444488_960_720.jpg');
   background-size: cover;
@@ -20,6 +21,16 @@ h1 {
   flex-direction: column;
   align-items: center;
   height: 100%;
+}
+
+.ace {
+  transform: rotate(90deg);
+  display: inline-block;
+  /* -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); */
 }
 /*--- navigation bar ---*/
 
