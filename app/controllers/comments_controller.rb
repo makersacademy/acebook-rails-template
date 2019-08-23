@@ -39,7 +39,6 @@ class CommentsController < ApplicationController
       @comment.update(comment_params)
       redirect_back fallback_location: "www.bbc.co.uk"
     end
-    redirect_back fallback_location: "www.bbc.co.uk"
   end
 
   private
