@@ -13,6 +13,11 @@
 
   <div class="post-body">
     <h2 class="post-user">
+      <div class="profile-image">
+        <% if post.user.image.attached? %>
+                <%= image_tag post.user.image %>
+              <% end %>
+            </div>
       <%= link_to "#{User.find(post.user_id).username}", id_path(User.find(post.user_id).id), method: :get %>
     </h2>
     <p class="posts-time">posted

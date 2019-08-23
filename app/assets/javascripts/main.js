@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  console.log("running stuff")
   $('.edit-post-inline-link').click((e) => {
     const user_id = e.target.dataset.userId
     const session_id = e.target.dataset.sessionId
