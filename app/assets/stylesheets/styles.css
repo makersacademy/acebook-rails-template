@@ -367,9 +367,10 @@ span.wave {
 
 .profile-image,
 .profile-image img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  display: inline-block;
 }
 
 .edit-image,
@@ -387,28 +388,36 @@ span.wave {
   border-radius: 30%;
   margin-top: 20px;
   margin-bottom: 30px;
-  display: inline-grid;
+  display:block;
+  margin-right: 10px;
+
 }
 
-.profile .basic-info{
-  padding: 40px 0;
   .user-wrapper{
-    display: flex;
+    display: block;
+    padding-top: 50px;
+    padding-left: 16px;
   }
-  .username{
+  .username {
     font-size: 30px;
     line-height: 40px;
     font-weight: 200;
-    color: black;
+    color: white;
+    font-weight: bold;
+
+  }
+
+  .edit-button {
+    background-color: #e6e6e6;
   }
   .edit-profile{
     margin-left: 20px;
     margin-top: 5px;
   }
   .edit-profile button{
-    background-color: transparent;
+    background-color: #e6e6e6;
     border-radius: 5px;
-    border: 1px solid #dbdbdb;
+    border: 1px solid #5e6063;
     color: #262626;
     font-size: 14px;
     padding: 4px 10px;
@@ -475,8 +484,8 @@ span.wave {
   }
 
 
-  .username{
-    font-size: 20px;
+  .usernametwo{
+    font-size: 100px;
     line-height: 22px;
     margin-bottom: 0;
   }
