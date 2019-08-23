@@ -22,6 +22,8 @@ class CommentsController < ApplicationController
     if @comment.user_id == @user.id
       @comment.destroy
       redirect_back fallback_location: "www.bbc.co.uk"
+    else
+      redirect_back fallback_location: "www.bbc.co.uk"
     end
   end
 
