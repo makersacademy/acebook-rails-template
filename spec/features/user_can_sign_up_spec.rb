@@ -8,7 +8,7 @@ RSpec.feature "Users", type: :feature do
     fill_in "user_password", with: "password"
 
     click_button "Submit"
-    
-    expect(page).to have_content("You have successfully signed up, Bobby")
+
+    expect(page).to have_content("Bobby")
   end
 end
