@@ -9,6 +9,6 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "password", with: "1234567"
     p click_button("Log in")
 
-    expect(page).to have_content("Wall")
+    expect(page).to have_content("yo man")
   end
 end

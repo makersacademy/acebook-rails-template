@@ -187,6 +187,10 @@ li:hover {
   display: none;
 }
 
+.add-comment-link {
+  width: 200px
+}
+
 .edit-comment-inline {
   display: none;
 }
@@ -197,6 +201,11 @@ li:hover {
 
 .comment-list {
   display: none;
+  margin-left: 40px;
+}
+
+.comment-title {
+  margin-left: 20px;
 }
 
 .comment-title:hover {
