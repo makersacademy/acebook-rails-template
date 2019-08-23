@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  console.log("running stuff")
   $('.edit-post-inline-link').click((e) => {
     const user_id = e.target.dataset.userId
     const session_id = e.target.dataset.sessionId
@@ -61,8 +61,10 @@ $(document).ready(function() {
   })
 
   $('.comment-title').click((e) => {
+    console.log(e.target.dataset.listId)
+    const list_id = e.target.dataset.listId
     e.preventDefault()
-    $('.comment-list').slideToggle()
+    $('#comment-list-' + list_id).slideToggle()
 
   })
 

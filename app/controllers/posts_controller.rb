@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @user = User.find(session[:user_id])
     session[:wall_id] = nil
     redirect_to root_path if session[:user_id] == nil
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.all.order(:id)
   end
 
   def edit
@@ -47,14 +47,14 @@ class PostsController < ApplicationController
     if @post.user_id == @user.id
       @post.destroy
       redirect_back fallback_location: "www.bbc.co.uk"
+    else
+      redirect_back fallback_location: "www.bbc.co.uk"
     end
   end
 
   private
 
   def post_params
-    p params
-    p params.require(:post).permit(:message, :user_id, :post)
-
+    params.require(:post).permit(:message, :user_id, :post)
   end
 end

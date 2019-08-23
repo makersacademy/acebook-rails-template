@@ -28,9 +28,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  # resources :id, path: '/users/id'
+    get '/:id', to: 'users#show', as: 'id'
     # get '/:username', to: "users#show"
-    # get '/:id', to: "users#show"
 
 
 end

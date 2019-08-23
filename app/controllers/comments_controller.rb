@@ -21,7 +21,8 @@ class CommentsController < ApplicationController
 
     if @comment.user_id == @user.id
       @comment.destroy
-
+      redirect_back fallback_location: "www.bbc.co.uk"
+    else
       redirect_back fallback_location: "www.bbc.co.uk"
     end
   end
@@ -31,7 +32,6 @@ class CommentsController < ApplicationController
   end
 
   def update
-
     @comment = @post.comments.find(params[:id])
     @user = User.find(session[:user_id])
 
@@ -41,7 +41,6 @@ class CommentsController < ApplicationController
       @comment.update(comment_params)
       redirect_back fallback_location: "www.bbc.co.uk"
     end
-
   end
 
   private

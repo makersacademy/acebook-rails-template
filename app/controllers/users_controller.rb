@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
     @user = User.new
   end
@@ -26,11 +27,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(session[:user_id])
+  end
+
+  def update
+    @user = User.find(session[:user_id])
+    @user.update(user_params)
+    redirect_back fallback_location: "www.bbc.co.uk"
+  end
+
 
 private
 
 def user_params
-  params.require(:user).permit(:username, :email, :password, :id)
+  params.require(:user).permit(:username, :email, :password, :id, :image)
 end
 
 end

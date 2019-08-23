@@ -14,6 +14,10 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
 
+  # Tell Active Storage which service to use by setting Rails.application.config.active_storage.service.
+  # Because each environment will likely use a different service, it is recommended to do this on a per-environment basis.
+  # config.active_storage.service = :local
+
   # Attempt to read encrypted secrets from `config/secrets.yml.enc`.
   # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or
   # `config/secrets.yml.key`.

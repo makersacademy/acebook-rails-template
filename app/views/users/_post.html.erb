@@ -13,7 +13,17 @@
 
   <div class="post-body">
     <h2 class="post-user">
-      <%= link_to "#{User.find(post.user_id).username}", user_path(User.find(post.user_id).id), method: :get %>
+      <div class="profile-image">
+        <% if post.user.image.attached? %>
+          <%= image_tag post.user.image %>
+        <% end %>
+      </div>
+      <% if post.wall_id != nil && post.wall_id != session[:wall_id] && post.wall_id != post.user_id %>
+        <%= link_to "#{User.find(post.user_id).username}", id_path(User.find(post.user_id).id), method: :get %> <span class="ace">&#9824;</span>
+        <%= link_to "#{User.find(post.wall_id).username}", id_path(User.find(post.wall_id).id), method: :get %>
+      <% else %>
+        <%= link_to "#{User.find(post.user_id).username}", id_path(User.find(post.user_id).id), method: :get %>
+      <% end  %>
     </h2>
     <p class="posts-time">posted
       <%= time_ago_in_words(post.created_at)%>
@@ -34,8 +44,8 @@
 
   <% if post.comments %>
 
-    <div class="comment-title"> <%= post.comments.length %> comments </div>
-      <div class="comment-list">
+    <div data-list-id="<%= post.id %>" class="comment-title"> <%= post.comments.length %> comments </div>
+      <div class="comment-list" id="comment-list-<%=post.id%>">
       <% post.comments.each do |comment| %>
         <div class="comment">
           <div class="comment-box">
