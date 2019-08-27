@@ -33,7 +33,7 @@ rails db:migrate
 rails s -p 3001
 ```
 - navigate to http://localhost:3001/
-- go back to the terminal, create a new tab (leave localhost 3001 running) and run:)
+- go back to the terminal, create a new tab (leave localhost 3001 running) and run:
 
 ```console
 cd mugmanual-fe
@@ -41,8 +41,20 @@ npm install
 npm start
 ```
 
-- navigate to http://localhost:*whichever number it gives you*/
-- enjoy interacting with the homepage entirely in React
+- React will navigate you to (likely) http://localhost:3001/
+- enjoy interacting with the homepage entirely in React!
+
+## Problems with any of the above?
+
+- Should you have any trouble running the rails local host, run:
+
+```console
+sudo lsof -i :3001
+sudo kill *the PID numbers currently running*
+rails s -p 3001
+```
+- if asked to run on a different local host when booting up the React server, simply type 'Y'
+
 
 ## Contribution
 If you would like to contribute to this project, please submit a pull request at our github page.
