@@ -41,15 +41,15 @@ npm install
 npm start
 ```
 
-- React will navigate you to (likely) http://localhost:3001/
+- React will navigate you to (likely) http://localhost:3000/
 - enjoy interacting with the homepage entirely in React!
 
-## Problems with any of the above?
+## Troubleshooting
 
 - Should you have any trouble running the rails local host, run:
 
 ```console
-sudo lsof -i :3001
+sudo lsof -i :*the localhost number that won't run*
 sudo kill *the PID numbers currently running*
 rails s -p 3001
 ```
@@ -58,6 +58,3 @@ rails s -p 3001
 
 ## Contribution
 If you would like to contribute to this project, please submit a pull request at our github page.
-
-## Final Thoughts
-Freddie sucks.
