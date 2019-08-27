@@ -1,7 +1,17 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<%= form_for @post do |form| %>
+  <%= form.label :message, "What's on your mind..." %>
+  <%= form.text_area :message %>
+
+  <%= form.submit "Submit" %>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<% @public_posts.each do |post| %>
+  <h4><%= User.find(post.user_id).username %></h4>
+  <p><%= simple_format(post.message) %>
+    <sub>Posted: <%= time_ago_in_words(post.created_at)%> ago</sub></p>
+    <% if session[:user_id] == post.user_id %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+      <%= link_to "Delete", post, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <%end%>
 <% end %>
