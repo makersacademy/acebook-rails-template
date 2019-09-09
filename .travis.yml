@@ -12,9 +12,11 @@ script:
 deploy:
   provider: heroku
   api_key:
-    production:
-      secure: DGX3KMnr1aXmRvmpVD4/Ql++Jn38guwC+HUL7AjXug3RL+FPIEBlmXBM6N1VUkyvB26rXuQ4mCEMOXI2VuoBhemlcd3WRRpai/tC7qCQMW9vAdMRP93/YtTcgfGhkVSppR0j23VclDdG8RHhZ5lnKA/KZnImFRsv2CHwrJ8mr68/CSA7k549rztFWblWtmJ6CcmVG07CJBnjaX3hpDWg13Q38c7V4la017m4A6lDWQWktQbugvRUnUZv16hRaHZnABO5cn07i6wygDtHpAoqpIpndYt+mESw7aPAV8XyPvvAWBxBWO9Lkrbvl/wXT7MZZCvsHNFjd5Bj3+5wAapvkpO7ASVGNDMSKnNaZE6U4NiBobNcxg4zMvRTq3BYqfIJWBxfQ0b41/XJ5Fugpq8QEgOPJxAUz5ytqir/euBZbXLAcqhLYgD3mVWp64zyTSWw4YL9yw+gpFALpROSZR/HX+iJ4L551f49rv5APAmckh28VZz0nyeNOMJGxjnqlRXxC0esDZa5Cd/utf7sf75WUqWTrARp/mTLUXUileiT2tpVxD+SMSsGa3gJMMzCBjzK12ZcCL8PfCKQWBAo6YslY9ZguahdZTdEb88ULHp0NPkRAGLRi2wP1P8EvdiIz279z3olIcDiyJl/PNhS8Nf6EvysS+aDGYE/6kkBgacn3sM=
-  app:
-    production: stormy-cove-78155
-  on:
-    repo: dtrts/acebook-ConnectU
+    secure: DGX3KMnr1aXmRvmpVD4/Ql++Jn38guwC+HUL7AjXug3RL+FPIEBlmXBM6N1VUkyvB26rXuQ4mCEMOXI2VuoBhemlcd3WRRpai/tC7qCQMW9vAdMRP93/YtTcgfGhkVSppR0j23VclDdG8RHhZ5lnKA/KZnImFRsv2CHwrJ8mr68/CSA7k549rztFWblWtmJ6CcmVG07CJBnjaX3hpDWg13Q38c7V4la017m4A6lDWQWktQbugvRUnUZv16hRaHZnABO5cn07i6wygDtHpAoqpIpndYt+mESw7aPAV8XyPvvAWBxBWO9Lkrbvl/wXT7MZZCvsHNFjd5Bj3+5wAapvkpO7ASVGNDMSKnNaZE6U4NiBobNcxg4zMvRTq3BYqfIJWBxfQ0b41/XJ5Fugpq8QEgOPJxAUz5ytqir/euBZbXLAcqhLYgD3mVWp64zyTSWw4YL9yw+gpFALpROSZR/HX+iJ4L551f49rv5APAmckh28VZz0nyeNOMJGxjnqlRXxC0esDZa5Cd/utf7sf75WUqWTrARp/mTLUXUileiT2tpVxD+SMSsGa3gJMMzCBjzK12ZcCL8PfCKQWBAo6YslY9ZguahdZTdEb88ULHp0NPkRAGLRi2wP1P8EvdiIz279z3olIcDiyJl/PNhS8Nf6EvysS+aDGYE/6kkBgacn3sM=
+  app: stormy-cove-78155
+  on: production
+    branch: production
+  run:
+    - "rake db:migrate"
+    - restart
+  # repo: dtrts/acebook-ConnectU
