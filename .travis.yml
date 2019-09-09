@@ -16,3 +16,6 @@ deploy:
   app: stormy-cove-78155
   on:
     repo: dtrts/acebook-ConnectU
+  run:
+    - "rake db:migrate"
+    - restart
