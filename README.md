@@ -24,3 +24,14 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+
+## Travis CI
+Check deployment.
+https://docs.travis-ci.com/user/tutorial/
+https://docs.travis-ci.com/user/deployment/heroku/
+
+
+## Code Climate
+https://codeclimate.com/repos/5d7658b000ca3e0177007b30
+Reviews quality of repo
