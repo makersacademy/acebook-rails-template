@@ -49,9 +49,6 @@ Estimating:
   If there is a large range have a discussion. If still in doubt pick the higher number.
   The actual value isn't that important.
 
-
-
-
 ## Tech Choices
 Rails backend.
 
@@ -67,8 +64,6 @@ Team
 
 ## Deployment
 Doug's AWS Lightsail server.
-
-
 
 # Day 01
 
