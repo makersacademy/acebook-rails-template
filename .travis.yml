@@ -19,16 +19,13 @@
 #   - postgresql
 
 
-services:
-   - postgresql
-addons:
-   postgresql: '9.6'
-before_script:
-   - cp config/database.yml.travis config/database.yml
 language: ruby
-rvm:
-   - 2.5.0
+rvm: '2.6.3'
+services:
+ - postgresql
+before_script:
+ - bundle install
+ - bundle exec rake db:create db:schema:load
+ - RACK_ENV=test bundle exec rake db:seed
 script:
-   - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
-   - bundle exec rspec
-   - bundle exec rubocop --config .rubocop.yml
+- mkdir -p spec && bundle exec rspec spec
