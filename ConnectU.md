@@ -57,8 +57,12 @@ Rails backend.
 
 Deployment:
 Initially deploy to heroku.
+
 Additional challenge:
 Deploy to AWS using containerisation
+
+
+Team
 
 
 ## Deployment
@@ -74,3 +78,9 @@ Choosing two tickets to estimate.
 1. Add Test Coverage, Code Quality, and Code Style checks
 2-3 points.
 1 hours to half a day.
+
+2. AceBook should run on Heroku or AWS [MEDIUM]
+8 Points
+Half a day to full day.
+
+3. Add CI/CD [MEDIUM]
