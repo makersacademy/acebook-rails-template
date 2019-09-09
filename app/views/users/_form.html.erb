@@ -5,5 +5,5 @@
 
 <div class="password-field">
   <%= form.label :password %>
-  <%= form.password_field :password %>
+  <%= form.password_field :password , options = { maxlength: 10, minlength: 6} %>
 </div>
