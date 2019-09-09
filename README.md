@@ -32,6 +32,15 @@ https://docs.travis-ci.com/user/tutorial/
 https://docs.travis-ci.com/user/deployment/heroku/
 
 
+## Heroku
+```
+heroku create
+git push heroku master
+heroku rake db:migrate
+heroku open /posts
+```
+
+
 ## Code Climate
 https://codeclimate.com/repos/5d7658b000ca3e0177007b30
 Reviews quality of repo
