@@ -1,10 +1,13 @@
 language: ruby
-rvm: '2.6.3'
+rvm: 2.6.3
 services:
- - postgresql
+- postgresql
 before_script:
- - bundle install
- - bundle exec rake db:create db:schema:load
- - RACK_ENV=test bundle exec rake db:seed
+- bundle install
+- bundle exec rake db:create db:schema:load
+- RACK_ENV=test bundle exec rake db:seed
 script:
 - mkdir -p spec && bundle exec rspec spec
+deploy:
+  api_key:
+    secure: nFYpJRSNlcmLkdOcnzwLpWcasBZ1t8c6LMbppM6NLfgk5RAc0MQUt4oXwh+YTfRpgpFh6APPajFMNgA/kZ4USmIQrY4w2NvlhS6IdQ8e7BY1YrADlPFG4IXe0eWf+uiukC46LaIR+EJwBhpIaNy9m+sqlDYKiTxzlxhddBnEYKoEmX1ZIlJoMNWU2Ph00KeqtGwRJn63M9yNg2B7qACohj3nWDzGGoDmD0SY7peOGu8lK5NInExS4eT8wyitHoJp15L2rHja8hcWKJNvwjURSQ+dS32pGFfC3N6cslUEiLqVHSr6qYghJyATbdriHbvb/BpHwiJKXupea1heREk/P5C/Gki2550mq7ijPwuoArTmgG6zi+ee6NLh2lOm+cN7f7gmaozNvXr9qXQlq++EXf6AGGdp6Lg/yXEvIY8JbHktI9IJlN+vSYFga1jq+uWZMoa6dloepS5/wWnryBlZiIN7QsvLlf56pNC62ZF+Rm/r4zLNYRGjdCVh6yUWsys4lofNAqAXzM6kRaPHm6d9zB/QzCzaG4FDxxAwKO7Vtmcx5nNPZ9K9NO3IjNKsh3y9fXexpCo16mY9kcR6GYOgvMUOsfpf0+vhTK2NGk9Zh288xui3WFegIr8RK8KYM3IFTRbx+GV2DtBs65yR8t+mcv2OY66j0OnRlsM+TqXYBJA=
