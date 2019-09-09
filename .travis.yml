@@ -3,9 +3,9 @@ language: ruby
 cache:
 - bundler
 before_script:
- bundle install
- bin/rails db:create
- bin/rails db:migrate
+- bundle install
+- bin/rails db:create
+- bin/rails db:migrate
 deploy:
   provider: heroku
   api_key:
