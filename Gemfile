@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rubocop', require: false
+gem 'simplecov', require: false, group: :test
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
