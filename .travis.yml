@@ -16,7 +16,8 @@
 #  - bundle exec rails db:migrate RAILS_ENV=test
 #  - bundle exec rspec
 # services:
-#   - postgresql
+#  - postgresql
+
 
 
 language: ruby
