@@ -8,6 +8,7 @@ class UsersController < Clearance::UsersController
       flash[:message] = 'A helpful message to say you\'ve been signed in!'
       redirect_back_or url_after_create
     else
+      flash[:error] = 'Unable to create account'
       render template: 'users/new'
     end
   end
