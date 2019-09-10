@@ -51,28 +51,36 @@
         null
       ],
       "/Users/student/Projects/acebook-fantastic-four/app/mailers/application_mailer.rb": [
-        0,
-        0,
-        0,
-        0
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "/Users/student/Projects/acebook-fantastic-four/app/jobs/application_job.rb": [
-        0,
-        0
+        null,
+        null,
+        null,
+        null
       ],
       "/Users/student/Projects/acebook-fantastic-four/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "/Users/student/Projects/acebook-fantastic-four/app/channels/application_cable/channel.rb": [
-        0,
-        0,
-        0,
-        0
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1568112858
+    "timestamp": 1568115124
   }
 }
