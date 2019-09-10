@@ -1,7 +1,8 @@
 <h1> Create a post here ! </h1>
 
-<% @posts.each do |post| %>
+<% @posts.reverse_each do |post| %>
   <p><%= post.message %></p>
+  <p><%= post.created_at %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
