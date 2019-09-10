@@ -12,6 +12,7 @@
 
 lanugage: ruby
 rvm: '2.5.0'
+cache: bundler
 addons:
   postgresql: 9.6
 env:
@@ -30,3 +31,5 @@ deploy:
   app: good-guys
   on:
     repo: GuyCalloway/acebook-good-guys
+
+after_deploy: "echo 'deployed'"
