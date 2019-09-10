@@ -17,5 +17,10 @@ deploy:
   app: acebook-fantastic-four
   on:
     repo: krisswiltshire30/acebook-fantastic-four
+<<<<<<< HEAD
 run:
     - "rake db:migrate"
+=======
+ run:
+    - "rake db:migrate"
+>>>>>>> 15b9cebad05b6897af109ce76b49856309652894
