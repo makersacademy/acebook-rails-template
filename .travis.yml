@@ -6,7 +6,8 @@ services:
   - postgresql
 script:
   - bundle install
-  - rake db:create
+  - bin/rails db:create
+  - bin/rails db:migrate
   - bundle exec rspec
 
 deploy:
@@ -16,6 +17,3 @@ deploy:
   app: good-guys
   on:
     repo: GuyCalloway/acebook-good-guys
-run:
-  - 'rake db:migrate'
-  - restart
