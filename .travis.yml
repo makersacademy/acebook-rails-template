@@ -17,3 +17,6 @@ deploy:
   app: good-guys
   on:
     repo: GuyCalloway/acebook-good-guys
+run:
+- 'rake db:migrate'
+- restart
