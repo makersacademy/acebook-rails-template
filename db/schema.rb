@@ -3,9 +3,6 @@
 # incrementally modify your database, and then regenerate this schema definition.
 #
 # Note that this schema.rb definition is the authoritative source for your
-
-
-
 # database schema. If you need to create the application database on another
 # system, you should be using db:schema:load, not running all the migrations
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
@@ -13,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190910093748) do
+ActiveRecord::Schema.define(version: 20190910100859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,10 +28,10 @@ ActiveRecord::Schema.define(version: 20190910093748) do
     t.string "encrypted_password", limit: 128, null: false
     t.string "confirmation_token", limit: 128
     t.string "remember_token", limit: 128, null: false
-
+    t.string "username"
     t.index ["email"], name: "index_users_on_email"
-
     t.index ["remember_token"], name: "index_users_on_remember_token"
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end
