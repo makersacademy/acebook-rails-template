@@ -12,6 +12,12 @@ Rails.application.configure do
   # preloads Rails for running tests, you may have to set it to true.
   config.eager_load = false
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.middleware.use Clearance::BackDoor
+  config.middleware.use Clearance::BackDoor do |username|
+    Clearance.configuration.user_model.find_by(username: username)
+  end
+
+    # ...
   # Configure public file server for tests with Cache-Control for performance.
   config.public_file_server.enabled = true
   config.public_file_server.headers = {
