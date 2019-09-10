@@ -1,4 +1,3 @@
-dist: trusty
 services:
   - postgresql
 addons:
@@ -18,3 +17,5 @@ deploy:
   app: acebook-fantastic-four
   on:
     repo: krisswiltshire30/acebook-fantastic-four
+ run:
+    - "rake db:migrate"
