@@ -1,26 +1,11 @@
 # AceBook
 
-REQUIRED INSTRUCTIONS:
+MVP aims to have basic functionality:
+1. Users can make posts
+2. Users can see posts
+3. Users can edit posts
+4. Users can delete posts
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+Currently 1 and 2 are completed and 3 is in progression. Next step is to have posts that are edited, have their changes implemented. 
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Quickstart
-
-First, clone this repository. Then:
-
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
-```
+The app was deployed on the AWS server. http://production.ujbndkqft3.eu-west-2.elasticbeanstalk.com/

@@ -1,6 +1,35 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <%= form.submit "Submit" %>
-<% end %>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <h1 class="display-4">What'cha Up To?</h1>
+      <p class="lead">How about you make a post to tell the world your thoughts...</p>
+    </div>
+  </div>
+
+  <div class="create">
+    <center>
+      <div class="containter">
+        <%= form_for(@post) do |form| %>
+        <div class="field">
+          <h3><%= form.label :message %><br><h3>
+          <%= form.text_field :message %>
+        </div>
+        <div class="actions">
+          <%= form.submit "Post!" %>
+        </div>
+        <% end %>
+      </div>
+    </center>
+  </div>
+  
+</html>
