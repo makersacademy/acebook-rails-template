@@ -6,8 +6,7 @@ services:
   - postgresql
 script:
   - bundle install
-  - bin/rails db:create
-  - bin/rails db:migrate
+  - rake db:create
   - bundle exec rspec
 
 deploy:
