@@ -1,31 +1,14 @@
 
-# language: ruby
-# rvm:
-#   - 2.5.0
-# services:
-#   - postgresql
-# script:
-#   - bundle install
-#   - bin/rails db:create
-#   - bin/rails db:migrate
-#   - bundle exec rspec
-
-lanugage: ruby
-rvm: '2.5.0'
-cache:
-  cargo: true
-  directories:
-    - vendor/bundle
-addons:
-  postgresql: 9.6
-env:
-  - DB=pgsql
-before_script:
-  - bundle exec rake db:create
+language: ruby
+rvm:
+  - 2.5.0
+services:
+  - postgresql
 script:
-  - bundle exec rake db:migrate RAILS_ENV=test
+  - bundle install
+  - bin/rails db:create
+  - bin/rails db:migrate
   - bundle exec rspec
-
 
 deploy:
   provider: heroku
@@ -34,5 +17,6 @@ deploy:
   app: good-guys
   on:
     repo: GuyCalloway/acebook-good-guys
-
-after_deploy: "echo 'deployed'"
+run:
+  - 'rake db:migrate'
+  - restart
