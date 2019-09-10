@@ -1,5 +1,5 @@
 require_relative 'boot'
-
+require "devise"
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems

@@ -1,15 +1,28 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Projects/acebook-fantastic-four/app/helpers/application_helper.rb": [
+      "/Users/student/Desktop/week8-9/acebook-fantastic-four/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Desktop/week8-9/acebook-fantastic-four/app/models/application_record.rb": [
+        1,
         1,
         null
       ],
-      "/Users/student/Projects/acebook-fantastic-four/app/helpers/welcome_helper.rb": [
+      "/Users/student/Desktop/week8-9/acebook-fantastic-four/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/student/Projects/acebook-fantastic-four/app/controllers/posts_controller.rb": [
+      "/Users/student/Desktop/week8-9/acebook-fantastic-four/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/student/Desktop/week8-9/acebook-fantastic-four/app/controllers/posts_controller.rb": [
         1,
         1,
         2,
@@ -30,41 +43,27 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook-fantastic-four/app/controllers/application_controller.rb": [
+      "/Users/student/Desktop/week8-9/acebook-fantastic-four/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/student/Projects/acebook-fantastic-four/app/controllers/welcome_controller.rb": [
+      "/Users/student/Desktop/week8-9/acebook-fantastic-four/app/controllers/welcome_controller.rb": [
+        null,
         1,
         1,
         null,
-        null
-      ],
-      "/Users/student/Projects/acebook-fantastic-four/app/models/post.rb": [
         1,
-        null
-      ],
-      "/Users/student/Projects/acebook-fantastic-four/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/student/Projects/acebook-fantastic-four/app/mailers/application_mailer.rb": [
-        null,
-        null,
-        null,
+        0,
         null,
         null,
         null
       ],
-      "/Users/student/Projects/acebook-fantastic-four/app/jobs/application_job.rb": [
-        null,
-        null,
-        null,
+      "/Users/student/Desktop/week8-9/acebook-fantastic-four/app/models/post.rb": [
+        1,
         null
       ],
-      "/Users/student/Projects/acebook-fantastic-four/app/channels/application_cable/connection.rb": [
+      "/Users/student/Desktop/week8-9/acebook-fantastic-four/app/mailers/application_mailer.rb": [
         null,
         null,
         null,
@@ -72,7 +71,21 @@
         null,
         null
       ],
-      "/Users/student/Projects/acebook-fantastic-four/app/channels/application_cable/channel.rb": [
+      "/Users/student/Desktop/week8-9/acebook-fantastic-four/app/jobs/application_job.rb": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Desktop/week8-9/acebook-fantastic-four/app/channels/application_cable/connection.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Desktop/week8-9/acebook-fantastic-four/app/channels/application_cable/channel.rb": [
         null,
         null,
         null,
@@ -81,6 +94,6 @@
         null
       ]
     },
-    "timestamp": 1568115124
+    "timestamp": 1568128456
   }
 }
