@@ -42,7 +42,9 @@ to
 `resources :users, controller: 'users', only: [:create] do`
 
 
+!!!
 
+Added `require 'clearance/rspec'` to rails helper.
 
 ## Travis CI
 NB: There is a difference between .org and .com
