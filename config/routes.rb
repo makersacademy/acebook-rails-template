@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  get 'posts/index'
+
   root 'welcome#index'
 end
