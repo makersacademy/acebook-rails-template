@@ -12,28 +12,12 @@ jobs:
           command: bundle check || bundle install
 
       - run:
-          name: Get visability
-          command: |
-              echo 'Bundle install passed'
-
-      - run:
           name: Setup database
           command: rails db:schema:load --trace
 
       - run:
-          name: Get visability
-          command: |
-             echo 'DB setup passed'
-
-
-      - run:
           name: database migration
           command: bundle exec rake db:migrate
-
-      - run:
-          name: Get visability
-          command: |
-              echo 'DB Migration passed'
 
       - run:
           name: Run tests
