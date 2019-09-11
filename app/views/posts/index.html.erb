@@ -3,6 +3,9 @@
 <% @posts.reverse_each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
+  <% if post.created_at != post.updated_at %>
+    <p><%= post.updated_at %></p>
+    <% end %>
 <% end %>
 
 <%= link_to new_post_path do %>
