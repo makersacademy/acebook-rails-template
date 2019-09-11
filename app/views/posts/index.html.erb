@@ -2,13 +2,13 @@
 <p><%= post.message %></p>
 <p><%= post.get_time %></p>
 <% if post.user_id == current_user.id-%>
-<%= link_to edit_post_path(post) do %>
+<%= button_to edit_post_path(post), method: "get" do %>
 Edit Post
 <% end %>
 <% end -%>
 <% end %>
 
-<%= link_to new_post_path do %>
+<%= button_to new_post_path, method: "get" do %>
 New post
 <% end %>
 

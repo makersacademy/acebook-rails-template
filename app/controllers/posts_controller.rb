@@ -26,6 +26,7 @@ class PostsController < ApplicationController
       flash[:error] = "Cannot update post!"
       #redirects and produces flash error
     end
+    redirect_to posts_url
   end
 
   def edit
