@@ -22,7 +22,10 @@
             </td>
         </tr>
         <% end %>
-            <td>
-                <%= link_to 'back', root_path %>
-            </td>
+            <%= link_to new_post_path do %>
+                add new post
+                <% end %>
+                    <td>
+                        <%= link_to 'back', root_path %>
+                    </td>
 </table>
