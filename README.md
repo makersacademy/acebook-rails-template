@@ -109,3 +109,36 @@ require_relative './app/models/application_record.rb'
 require_relative './app/models/user.rb'
 require_relative './app/models/post.rb'
 ```
+
+## Rails Time Object, Freeze & Structure
+
+### Freeze
+
+For our testing framework we will need to freeze 'Time' be able to test effectively for posts being in order and timing out the ability to edit posts after 10 minutes have passed.
+
+To do this I found a native rails helper called 'travel_to'
+
+```ruby 
+
+travel_to Time.local(1994)
+
+``` 
+
+In the above example we are setting the Time for the test to just after midnight, January 1st 1994.
+
+### Beautifying Time
+
+On our post index view, we wanted to see the time a post was created at, however the Time object isn't exactly nice to look at. To fix this, we used an formatting tool found below;
+
+```ruby
+
+strftime("%I:%M %p, %d of %B")
+
+```
+
+This, when called on a time object, will return;
+
+`12:00 AM, 01 of January`
+
+Here is a [resource](https://www.rubyguides.com/2015/12/ruby-time/) for the Ruby Time object and how to interact with it.
+

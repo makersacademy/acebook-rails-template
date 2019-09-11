@@ -41,6 +41,6 @@ describe "Post Index" do
         click_link "New post"
         fill_in 'Message', with: "This\nis\na\nnew\npost"
         click_button 'Submit'
-        expect(page).to have_content("This\nis\na\nnew\npost")
+        expect(page).to have_content("This\ngit ais\na\nnew\npost")
     end
 end
