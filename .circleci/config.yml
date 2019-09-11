@@ -7,7 +7,7 @@ jobs:
     steps:
       - run:
           name: Install ruby dependencies
-          command: bundle install --path vendor/bundle
+          command: gem install bundler && bundle install
 
       - run:
           name: Setup database
