@@ -1,6 +1,11 @@
 <% @posts.each do |post| %>
 <p><%= post.message %></p>
 <p><%= post.get_time %></p>
+<% if post.user_id == current_user.id-%>
+<%= link_to edit_post_path(post) do %>
+Edit Post
+<% end %>
+<% end -%>
 <% end %>
 
 <%= link_to new_post_path do %>

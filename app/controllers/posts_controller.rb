@@ -13,8 +13,23 @@ class PostsController < ApplicationController
   end
 
   def index
-    ordered_posts = Post.order('created_at DESC')
+    ordered_posts = Post.order("created_at DESC")
     @posts = ordered_posts
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.user_id == current_user.id #checks if user owns post
+      @post.update(post_params)
+      #updates and changes the post
+    else
+      flash[:error] = "Cannot update post!"
+      #redirects and produces flash error
+    end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
   end
 
   private
