@@ -1,22 +1,26 @@
- version: 2
- jobs:
-   one:
-     docker:
-       - image: circleci/ruby:2.4.1
-     steps:
-       - checkout
-       - run: echo "A first hello"
-       - run: sleep 25
-   two:
-     docker:
-       - image: circleci/ruby:2.4.1
-     steps:
-       - checkout
-       - run: echo "A more familiar hi"
-       - run: sleep 15
- workflows:
-   version: 2
-   one_and_two:
-     jobs:
-       - one
-       - two
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.4.1
+
+    steps:
+      - run:
+          name: Install ruby dependencies
+          command: bundle install --path vendor/bundle
+
+      - run:
+          name: Setup database
+          command: bin/rails db:schema:load --trace
+
+      - run:
+          name: database migration
+          command: bundle exec rake db:migrate
+
+      - run:
+          name: Run tests
+          command: bundle exec rspec
+
+      - run:
+          name: run Rubocop
+          command: bundle exec rubocop
