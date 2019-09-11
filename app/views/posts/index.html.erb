@@ -1,6 +1,7 @@
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
-
+ <%= link_to 'Show', post_path(post)) %>
+     <%= link_to 'Edit', edit_post_path(post) %>
 <% end %>
 
 <%= link_to new_post_path do %>

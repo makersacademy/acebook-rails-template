@@ -8,14 +8,7 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-  def show
-    @post = Post.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.xml { render :xml => @post }
-    end
-  end
-
+ 
   def index
     @posts = Post.all
   end
@@ -23,23 +16,25 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
+  
+    def show
+      @post = Post.find(params[:id])
+    end
 
-  def update
-
-    @post = Post.find(params[:id])
-    
-    respond_to do |format|
-      if @post.update_attributes(params[:message])
-        
-        format.html { redirect_to(@post,
-                      :notice => 'Post was successfully updated.') }
-        format.xml  { head :ok }
+    def update
+      @post = Post.find(params[:id])
+      if @post.update(post_params)
+        redirect_to @post
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @post.errors,
-                      :status => :unprocessable_entity }
+        render 'edit'
       end
     end
+
+  def destroy
+    @post = Article.find(params[:id])
+    @post.destroy
+  
+    redirect_to posts_path
   end
 
   private
