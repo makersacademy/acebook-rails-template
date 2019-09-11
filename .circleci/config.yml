@@ -6,13 +6,12 @@ jobs:
 
     steps:
       - run:
-          name: Install ruby dependencies
-          command: bundle install --jobs=4 --retry=3 --path vendor/bundle
-                   bundle clean
-
-      - run:
           name: Setup database
           command: bin/rails db:schema:load --trace
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
 
       - run:
           name: database migration
