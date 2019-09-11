@@ -27,13 +27,10 @@ jobs:
           name: Check our user
           command:  'whoami'
 
-      - run:
-          name: which database tables and who owns them ?
-          command:  'psql -c "\l"'
 
       - run:
           name: Setup database
-          command: rails db:schema:load --trace
+          command: sudo - postgres ; rails db:schema:load --trace
 
       - run:
           name: database migration
