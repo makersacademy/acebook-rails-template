@@ -1,6 +1,9 @@
 class Post < ApplicationRecord
+
+    belongs_to :user
+
     def get_time
-        p self.created_at.strftime("%I:%M %p, %d of %B")
+        self.created_at.strftime("%I:%M %p, %d of %B")
     end
 
 end

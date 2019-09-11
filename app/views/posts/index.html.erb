@@ -1,9 +1,9 @@
 <% @posts.each do |post| %>
-<p><%= post.message %></p>
+<p style="white-space:pre-wrap"><%= post.message %></p>
+<p><%= post.get_time %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
 New post
 <% end %>
 
-Hello world.
