@@ -2,7 +2,7 @@
 
 <p>
   <b>Name: </b>
-  <%= @post.message %>
+  <%= simple_format(@post.message) %>
 </p>
 
 <%= link_to 'edit', edit_post_path(@post)%> |
