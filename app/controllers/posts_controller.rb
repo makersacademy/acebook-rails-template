@@ -8,8 +8,32 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+ 
   def index
     @posts = Post.all
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+  
+    def show
+      @post = Post.find(params[:id])
+    end
+
+    def update
+      @post = Post.find(params[:id])
+      if @post.update(post_params)
+        redirect_to posts_path
+      else
+        render 'edit'
+      end
+    end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
@@ -17,4 +41,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
   end
+
 end
