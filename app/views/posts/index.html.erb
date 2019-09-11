@@ -1,8 +1,12 @@
 <h1> Create a post here ! </h1>
 
 <% @posts.reverse_each do |post| %>
-  <p><%= post.message %></p>
+  <div class="post" id="post<%= post.id %>">
+  <% post.message.split("\n").each_with_index do |line, index| %>
+    <p><%= line %></p>
+  <% end %>
   <p><%= post.created_at %></p>
+  </div>
 <% end %>
 
 <%= link_to new_post_path do %>
