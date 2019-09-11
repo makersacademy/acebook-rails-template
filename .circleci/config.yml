@@ -28,6 +28,10 @@ jobs:
           command:  'whoami'
 
       - run:
+          name: Create CircleCI role
+          command:  sudo su - ; su - postgres ;  createuser -sd circleci ; exit ; exit
+
+      - run:
           name: Create Database
           command: rails db:create
 
