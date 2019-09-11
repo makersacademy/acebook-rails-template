@@ -24,16 +24,12 @@ jobs:
           command: bundle check || bundle install
 
       - run:
-          name: Check our user
-          command:  'whoami'
-
-#      - run:
-#          name: Create CircleCI role
-#          command:  "sudo su - postgres"
+          name: become root
+          command:  "sudo  -i"
 
       - run:
           name: Create Database
-          command: sudo -u postgres "rails db:create"
+          command: sudo -i -u postgres "rails db:create"
 
       - run:
           name: Setup Database
