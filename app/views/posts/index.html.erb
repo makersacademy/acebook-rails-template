@@ -1,3 +1,4 @@
+aceBook
 <% @posts.each do |post| %>
 <p style="white-space:pre-wrap"><%= post.message %></p>
 <p><%= post.get_time %></p>
@@ -6,4 +7,5 @@
 <%= link_to new_post_path do %>
 New post
 <% end %>
+
 
