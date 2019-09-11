@@ -22,12 +22,12 @@ RSpec.describe PostsController, type: :controller do
       expect(Post.find_by(message: 'Hello, world!')).to be
     end
 
-  #   it 'deletes a post' do
-  #     sign_in
-  #     post :create, params: { post: { message: 'Hello, world!' } }
-  #     delete :destroy
-  #     expect(Post.find_by(message: "Hello, world!")).not_to be
-  # end
+    it 'deletes a post' do
+      sign_in
+      post :create, params: { post: { message: 'Hello, world!' } }
+      delete :destroy, params: {id: Post.first.id, post: {message: 'Hello, world!'} }
+      expect(Post.find_by(message: "Hello, world!")).not_to be
+  end
 end
 
 
