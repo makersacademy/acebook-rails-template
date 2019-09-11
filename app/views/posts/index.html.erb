@@ -1,10 +1,13 @@
 <% @posts.each do |post| %>
 <p><%= post.message %></p>
 <p><%= post.get_time %></p>
+<%=link_to 'Delete post', post_path(post), method:delete=%>
 <% end %>
 
 <%= link_to new_post_path, id: "demo" do %>
 New post
 <% end %>
+
+
 
 Hello world.
