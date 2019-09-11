@@ -10,10 +10,10 @@ jobs:
           command: |
               echo 'Docker build passed'
 
-      - run:
-          name: find rails
-          command: |
-              which rails
+#      - run:
+#          name: find rails
+#          command: |
+#              which rails
 
       - run:
           name: Setup database
