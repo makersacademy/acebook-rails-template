@@ -9,8 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    ordered_posts = Post.order("created_at DESC")
-    @posts = ordered_posts
+    @posts = Post.order("created_at DESC")
   end
 
   private

@@ -19,4 +19,21 @@ describe "Post Index" do
         t = Time.now
         expect(page).to have_content("12:00 AM, 01 of January")
     end
+
+
+    it "displays the newest post first" do
+           sign_in
+        visit '/posts'
+        click_link "New post"
+        fill_in 'Message', with: "This is a new post"
+        click_button 'Submit'
+        travel_to Time.local(1995)
+        click_link "New post"
+        fill_in 'Message', with: "Hello"
+        click_button 'Submit'
+        post = Post.order("created_at DESC")
+        p post
+        expect(post[0].message).to eq("Hello")
+
+    end
 end
