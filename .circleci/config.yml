@@ -9,9 +9,9 @@ jobs:
           name: Check where we are at on docker host
           command: 'pwd'
 
-       - run:
-           name: Check where we are at on docker host
-            command: 'ls -l'
+      - run:
+          name: Check where we are at on docker host
+          command: 'ls -l'
 
       - run:
           name: Get visability
