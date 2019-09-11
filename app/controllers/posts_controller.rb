@@ -4,8 +4,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    # p post_params
-    # p current_user
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.save
@@ -19,12 +17,17 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    if @post.user_id != current_user.id
+    flash[:error] = "Calm down, you can only delete your own posts"
+    redirect_to posts_url
+    else
     @post.destroy
     redirect_to posts_url
   end
+  end
 
 
-  
+
 
   private
 
