@@ -19,10 +19,17 @@ jobs:
           name: Install, Configure & Start Postgres
           command: sudo apt-get install wget ca-certificates ; wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - ; sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list' ; sudo apt-get install postgresql postgresql-contrib ; sudo update-rc.d postgresql enable ; sudo service postgresql start
 
-
       - run:
           name: Bundle Install
           command: bundle check || bundle install
+
+      - run:
+          name: Check our user
+          command:  'whoami'
+
+      - run:
+          name: which database tables and who owns them ?
+          command:  'psql -c "\l"'
 
       - run:
           name: Setup database
