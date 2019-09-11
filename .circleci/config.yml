@@ -10,10 +10,18 @@ jobs:
           command: |
               echo 'Docker build passed'
 
-#      - run:
-#          name: find rails
-#          command: |
-#              which rails
+      - run:
+          name: Check ruby version
+          command: 'ruby -v'
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      - run:
+          name: Get visability
+          command: |
+              echo 'Bundle install passed'
 
       - run:
           name: Setup database
@@ -24,14 +32,6 @@ jobs:
           command: |
              echo 'DB setup passed'
 
-      - run:
-          name: Bundle Install
-          command: bundle check || bundle install
-
-      - run:
-          name: Get visability
-          command: |
-              echo 'Bundle install passed'
 
       - run:
           name: database migration
