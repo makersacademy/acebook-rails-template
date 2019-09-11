@@ -27,9 +27,11 @@ jobs:
           name: Check our user
           command:  'whoami'
 
+      - run:
+          name: Create Database
+          command: rails db:create
 
       - run:
-          user: postgres
           name: Setup Database
           command: rails db:schema:load --trace
 
