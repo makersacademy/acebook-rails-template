@@ -29,7 +29,7 @@ jobs:
 
       - run:
           name: Switch to postgres user database
-          command: su - postgres 
+          command: sudo su - postgres
 
       - run:
           name: Setup Database
