@@ -6,6 +6,13 @@ jobs:
 
     steps:
       - run:
+          name: Check where we are at on docker host
+          command: 'pwd'
+          command: 'ls -l'
+
+
+
+      - run:
           name: Get visability
           command: |
               echo 'Docker build passed'
