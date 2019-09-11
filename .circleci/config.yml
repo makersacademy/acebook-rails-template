@@ -6,22 +6,6 @@ jobs:
 
     steps:
       - checkout
-      - run:
-          name: Check where we are at on docker host
-          command: 'pwd'
-
-      - run:
-          name: Check where we are at on docker host
-          command: 'ls -l'
-
-      - run:
-          name: Get visability
-          command: |
-              echo 'Docker build passed'
-
-      - run:
-          name: Check ruby version
-          command: 'ruby -v'
 
       - run:
           name: Bundle Install
@@ -34,7 +18,7 @@ jobs:
 
       - run:
           name: Setup database
-          command: /bin/rails db:schema:load --trace
+          command: rails db:schema:load --trace
 
       - run:
           name: Get visability
