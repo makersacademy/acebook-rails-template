@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -17,7 +19,7 @@ Rails.application.configure do
     Clearance.configuration.user_model.find_by(username: username)
   end
 
-    # ...
+  # ...
   # Configure public file server for tests with Cache-Control for performance.
   config.public_file_server.enabled = true
   config.public_file_server.headers = {
