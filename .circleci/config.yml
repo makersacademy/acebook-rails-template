@@ -29,7 +29,7 @@ jobs:
 
       - run:
           name: Create CircleCI role
-          command:  sudo su - ; su - postgres ;  createuser -sd circleci ; exit ; exit
+          command:  sudo -i -u postgres "createuser -sd circleci"
 
       - run:
           name: Create Database
