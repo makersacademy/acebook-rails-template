@@ -7,7 +7,7 @@
     <% @posts.reverse.each do |post| %>
         <tr>
             <td>
-                <%= post.message %>
+                <%= post.message[0..15] %>
             </td>
             <td>
                 <%= link_to 'show', post_path(post) %>
