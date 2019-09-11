@@ -28,8 +28,12 @@ jobs:
           command:  'whoami'
 
       - run:
-          name: Setup database
-          command: su - postgres ; rails db:schema:load --trace
+          name: Switch to postgres user database
+          command: su - postgres 
+
+      - run:
+          name: Setup Database
+          command: rails db:schema:load --trace
 
       - run:
           name: database migration
