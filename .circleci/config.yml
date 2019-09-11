@@ -27,11 +27,9 @@ jobs:
           name: Check our user
           command:  'whoami'
 
-      - run:
-          name: Switch to postgres user database
-          command: sudo su - postgres
 
       - run:
+          user: postgres
           name: Setup Database
           command: rails db:schema:load --trace
 
