@@ -27,13 +27,13 @@ jobs:
           name: Check our user
           command:  'whoami'
 
-      - run:
-          name: Create CircleCI role
-          command:  "sudo su - postgres ; createuser -sd circleci ; cat /dev/null"
+#      - run:
+#          name: Create CircleCI role
+#          command:  "sudo su - postgres"
 
       - run:
           name: Create Database
-          command: rails db:create
+          command: sudo -u postgres "rails db:create"
 
       - run:
           name: Setup Database
