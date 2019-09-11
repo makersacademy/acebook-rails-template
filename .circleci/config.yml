@@ -9,7 +9,11 @@ jobs:
           name: Get visability
           command: |
               echo 'Docker build passed'
-              which rails
+
+          - run:
+              name: find rails
+              command: |
+                which rails
 
       - run:
           name: Setup database
