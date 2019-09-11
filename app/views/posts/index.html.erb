@@ -7,7 +7,7 @@
     <% @posts.reverse.each do |post| %>
         <tr>
             <td>
-                <%= post.message %>
+                <%= post.message.slice(0, 50) %>
             </td>
             <td>
                 <%= link_to 'show', post_path(post) %>
