@@ -3,6 +3,7 @@
 <p>
   <b>Name: </b>
   <%= simple_format(@post.message) %>
+    <p>Posted: <%= @post.created_at.strftime("%d/%m/%Y at %H:%M")  %> </p>
 </p>
 
 <%= link_to 'edit', edit_post_path(@post)%> |

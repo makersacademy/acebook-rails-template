@@ -21,4 +21,13 @@ RSpec.feature 'Timeline', type: :feature do
     click_button 'Submit'
     expect(page).to have_content 'world2'
   end
+
+  scenario 'posts have timestamp' do
+    visit '/posts'
+    click_link 'add new post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    click_link 'show'
+    expect(page).to have_content('Posted:')
+  end
 end
