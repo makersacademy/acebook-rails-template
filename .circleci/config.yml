@@ -5,6 +5,7 @@ jobs:
       - image: circleci/ruby:2.5.0
 
     steps:
+      - checkout
       - run:
           name: Check where we are at on docker host
           command: 'pwd'
