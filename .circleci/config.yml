@@ -8,6 +8,14 @@ jobs:
       - checkout
 
       - run:
+          name: Add Node.js PPA
+          command: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
+      -run:
+          name: Install Node.js
+          command:  sudo apt-get install nodejs
+
+      - run:
           name: Bundle Install
           command: bundle check || bundle install
 
