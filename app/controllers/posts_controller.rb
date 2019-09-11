@@ -9,7 +9,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    ordered_posts = Post.order("created_at DESC")
+    @posts = ordered_posts
   end
 
   private
