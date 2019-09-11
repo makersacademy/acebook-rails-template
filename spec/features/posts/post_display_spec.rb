@@ -32,8 +32,15 @@ describe "Post Index" do
         fill_in 'Message', with: "Hello"
         click_button 'Submit'
         post = Post.order("created_at DESC")
-        p post
         expect(post[0].message).to eq("Hello")
+    end
 
+    it "can have new lines being displayed" do 
+        sign_in
+        visit '/posts'
+        click_link "New post"
+        fill_in 'Message', with: "This\nis\na\nnew\npost"
+        click_button 'Submit'
+        expect(page).to have_content("This\nis\na\nnew\npost")
     end
 end

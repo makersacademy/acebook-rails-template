@@ -74,11 +74,11 @@ https://docs.travis-ci.com/user/deployment/heroku/
 
 
 ## Heroku
-```
+```bash
 brew install heroku
 ```
 Once you have a heroku account you can host your own via these commands:
-```
+```bash
 heroku create
 git push heroku master
 heroku rake db:migrate
@@ -101,7 +101,7 @@ If you need to play with the development database in IRB you can use these comma
 Make sure you have a database first!
 Add on any additional models if needed.
 
-```
+```ruby
 require 'active_record'
 require 'clearance'
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database:'pgapp_development')
