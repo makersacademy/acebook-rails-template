@@ -41,18 +41,6 @@ class PostsController < ApplicationController
   end
 
 
-  # def guard_post_length
-  #
-  #   if post_params[:message].length > 4000
-  #     flash[:error] = "Your post is too long."
-  #     redirect_to (new_post_path) and return
-  #   end
-  #
-  # end
-
-
-
-
   def destroy
     @post = Post.find(params[:id])
     if @post.user_id != current_user.id
