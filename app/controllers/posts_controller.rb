@@ -4,8 +4,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    # p post_params
-    # p current_user
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.save
@@ -13,10 +11,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    ordered_posts = Post.order("created_at DESC")
-    @posts = ordered_posts
+    @posts = Post.order("created_at DESC")
   end
-
+  
   def update
     @post = Post.find(params[:id])
     if @post.user_id == current_user.id #checks if user owns post
@@ -31,6 +28,20 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+  end
+
+
+
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.user_id != current_user.id
+      flash[:error] = "Calm down, you can only delete your own posts"
+      redirect_to posts_url
+    else
+      @post.destroy
+      redirect_to posts_url
+    end
   end
 
   private
