@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.order("created_at DESC")
   end
-  
+
   def update
     @post = Post.find(params[:id])
     if @post.user_id == current_user.id #checks if user owns post
@@ -29,9 +29,6 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
-
-
-
 
   def destroy
     @post = Post.find(params[:id])

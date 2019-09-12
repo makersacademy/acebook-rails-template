@@ -3,16 +3,14 @@
     background-color: #eeeff4;
   }
 </style>
+Welcome to ConnectU
 
-aceBook
-
-<%= button_to profile_index_url, method: "get" do %>
-Profile
-<% end %>
 <%= button_to new_post_path, method: "get" do %>
 New Post
 <% end %>
-
+<%= button_to posts_url, method: "get" do %>
+View Feed
+<% end %>
 <% @posts.each do |post| %>
 
 <div
