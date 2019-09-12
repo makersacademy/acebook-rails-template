@@ -5,10 +5,13 @@ body {
 </style>
 
 aceBook
-<% @posts.each do |post| %>
-<%= button_to new_post_path, method: "get" do %>
-New post
+
+ <%= button_to new_post_path, method: "get" do %>
+        New post
 <% end %>
+
+<% @posts.each do |post| %>
+   
 <div style="height:100px; width: 25%; margin-left: 33.5%; background-color: white; margin-bottom: 15px; border-radius: 5px; padding: 10px 10px;">
     <div style="height: 30px; width: 100%;"> 
         <div style="height: 100%; width: 30px; float: left;"> 
@@ -22,9 +25,9 @@ New post
     <div style="white-space:pre-wrap; width:75%;float:left;"><%= post.message %></div>
     <%=button_to 'Delete post', post_path(post), id: "delete", method: :delete %>
     <% if post.user_id == current_user.id-%>
-      <%= button_to edit_post_path(post), method: "get" do %>
-      Edit Post
+        <%= button_to edit_post_path(post), method: "get" do %>
+            Edit Post
+        <% end %>
     <% end %>
   </div>
 <% end %>
-
