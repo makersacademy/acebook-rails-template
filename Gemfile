@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'simplecov'
   gem 'simplecov-console'
+  gem 'rails-controller-testing'
 end
 
 group :development do

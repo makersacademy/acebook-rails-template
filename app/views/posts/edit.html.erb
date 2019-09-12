@@ -1,0 +1,10 @@
+<h2>Edit Message</h2>
+
+<%= form_for :post, url: post_path(@post), method: :patch do |form| %>
+  <%= form.label :message %>
+  <%= form.text_field :message %>
+
+  <%= form.submit "Submit" %>
+<% end %>
+
+<%= link_to 'Back', posts_path %>

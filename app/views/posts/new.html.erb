@@ -1,6 +1,8 @@
-<%= form_for @post do |form| %>
+<%= form_for :post, url: posts_path do |form| %>
   <%= form.label :message %>
   <%= form.text_area :message %>
 
   <%= form.submit "Submit" %>
 <% end %>
+
+<%= link_to 'Back', posts_path %>
