@@ -1,6 +1,23 @@
 # AceBook -- created by Team Derailed
 
-## SET UP TESTING:
+## Quickstart
+
+First, clone this repository. Then:
+
+```bash
+> bundle install
+> bin/rails db:create
+> bin/rails generate clearance:install
+```
+
+Running the last line will display in terminal a set of steps to set up the clearance gem.
+Do step 2 and step 3, ignore step 1 if email confirmation for signing up is not needed.
+
+```bash
+> bin/rails server # Start the server at localhost:3000
+```
+
+## Set up for testing
 
 1. Install `factory_bot_rails` and `rails-controller-testing` by adding the following to both development and test group in Gemfile
 
@@ -40,18 +57,4 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 end
-```
-
-## Quickstart
-
-First, clone this repository. Then:
-
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails generate clearance:install
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
 ```
