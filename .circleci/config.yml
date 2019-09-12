@@ -51,7 +51,7 @@ jobs:
 
       - run:
           name: run schema
-          command: rake db:schema
+          command: rake db:schema:load
         
       - run:
           name: Run tests
