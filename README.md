@@ -74,11 +74,11 @@ https://docs.travis-ci.com/user/deployment/heroku/
 
 
 ## Heroku
-```bash
+```
 brew install heroku
 ```
 Once you have a heroku account you can host your own via these commands:
-```bash
+```
 heroku create
 git push heroku master
 heroku rake db:migrate
@@ -101,7 +101,7 @@ If you need to play with the development database in IRB you can use these comma
 Make sure you have a database first!
 Add on any additional models if needed.
 
-```ruby
+```
 require 'active_record'
 require 'clearance'
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database:'pgapp_development')
@@ -110,35 +110,8 @@ require_relative './app/models/user.rb'
 require_relative './app/models/post.rb'
 ```
 
-## Rails Time Object, Freeze & Structure
+## Brief : Branch Merging
+Once a branch has been completed and all tests are passing, the merge a branch, first you need to create a pull request to the master branch. 
 
-### Freeze
-
-For our testing framework we will need to freeze 'Time' be able to test effectively for posts being in order and timing out the ability to edit posts after 10 minutes have passed.
-
-To do this I found a native rails helper called 'travel_to'
-
-```ruby 
-
-travel_to Time.local(1994)
-
-``` 
-
-In the above example we are setting the Time for the test to just after midnight, January 1st 1994.
-
-### Beautifying Time
-
-On our post index view, we wanted to see the time a post was created at, however the Time object isn't exactly nice to look at. To fix this, we used an formatting tool found below;
-
-```ruby
-
-strftime("%I:%M %p, %d of %B")
-
-```
-
-This, when called on a time object, will return;
-
-`12:00 AM, 01 of January`
-
-Here is a [resource](https://www.rubyguides.com/2015/12/ruby-time/) for the Ruby Time object and how to interact with it.
+The process first needs to pass the merge and any conflicts resolved, then once merged to master to deploy - .travis and CI process needs to pass which builds the app and if all tests pass the app is deployed. 
 
