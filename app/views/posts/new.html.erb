@@ -1,6 +1,17 @@
+<style>
+textarea {
+  outline:none;
+  resize:none;
+  width:400px;
+  height:100px;
+  font-size:1.4em;
+  }
+</style>
+
 <%= form_for @post do |form| %>
   <%= form.label :message %>
-  <%= form.text_area :message %>
-
+  <%= form.text_area :message , placeholder: "What's on your mind?"  %>
   <%= form.submit "Submit" %>
 <% end %>
+
+
