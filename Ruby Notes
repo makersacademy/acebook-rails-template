@@ -1,0 +1,21 @@
+Rails notes
+
+cd into firectory
+
+run budle install if directory 
+already has gemfile, if not create gemfile and 
+run
+
+check ruby version
+    ruby -ver
+
+check sqlite is installed
+    sqlite3 --version
+
+install rails 
+    gem install rails
+check version
+    rails --version
+
+create a new controller
+    rails generate controller Welcome index
