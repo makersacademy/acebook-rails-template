@@ -1,16 +1,26 @@
 # AceBook
 
-REQUIRED INSTRUCTIONS:
+## created by Team Derailed
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+SET UP TESTING:
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+1. Install `factory_bot_rails` and `rails-controller-testing` by adding the following to both development and test group in Gemfile
 
-2. The card wall is here: <please update>
+```
+>   gem 'rails-controller-testing'
+>   gem 'factory_bot_rails'
+```
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+2. Generate feature specs for Clearance in Rails. This will also generate necessary Factories in the project to support the testing. (What is factory? -- to be updated). Run the following:
+
+```bash
+rails generate clearance:specs
+```
+
+3. require "clearance/rspec" in:
+```
+<project_directory>/spec/rails_helper.rb
+```
 
 ## Quickstart
 
