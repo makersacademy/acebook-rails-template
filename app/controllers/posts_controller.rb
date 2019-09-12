@@ -4,17 +4,27 @@ class PostsController < ApplicationController
   end
 
   def create
+    if post_params[:message].length > 4000
+      flash[:error] = "Your post is too long."
+      redirect_to (new_post_path) and return
+    end
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.save
     redirect_to posts_url
+
   end
 
   def index
     @posts = Post.order("created_at DESC")
   end
-  
+
   def update
+
+    if post_params[:message].length > 4000
+      flash[:error] = "Your post is too long."
+      redirect_to (edit_post_path) and return
+    end
     @post = Post.find(params[:id])
     if @post.user_id == current_user.id #checks if user owns post
       @post.update(post_params)
@@ -29,6 +39,16 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
+
+
+  # def guard_post_length
+  #
+  #   if post_params[:message].length > 4000
+  #     flash[:error] = "Your post is too long."
+  #     redirect_to (new_post_path) and return
+  #   end
+  #
+  # end
 
 
 
@@ -47,7 +67,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    # p params
     params.require(:post).permit(:message)
   end
 end
