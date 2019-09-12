@@ -1,7 +1,31 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<table>
+    <tr>
+        <th>AceBook Wall</th>
+        <th></th>
+        <th colspan=“2”></th>
+    </tr>
+    <% @posts.reverse.each do |post| %>
+        <tr>
+            <td>
+                <%= post.message[0..30] %>
+            </td>
+            <td>
+                <%= link_to 'show', post_path(post) %>
+            </td>
+            <td>
+                <%= link_to 'edit', edit_post_path(post) %>
+            </td>
+            <td>
+                <%= link_to 'delete', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+            </td>
+        </tr>
+        <% end %>
+            <%= link_to new_post_path do %>
+                add new post
+                <% end %>
+                    <td>
+                        <%= link_to 'back', root_path %>
+                    </td>
+</table>
