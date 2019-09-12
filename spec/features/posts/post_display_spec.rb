@@ -13,7 +13,7 @@ describe "Post Index" do
     it "can have the time the post was created " do 
         sign_in
         visit '/posts'
-        click_link "New post"
+        click_button "New post"
         fill_in 'Message', with: "This is a new post"
         click_button 'Submit'
         t = Time.now
@@ -24,11 +24,11 @@ describe "Post Index" do
     it "displays the newest post first" do
            sign_in
         visit '/posts'
-        click_link "New post"
+        click_button "New post"
         fill_in 'Message', with: "This is a new post"
         click_button 'Submit'
         travel_to Time.local(1995)
-        click_link "New post"
+        click_button "New post"
         fill_in 'Message', with: "Hello"
         click_button 'Submit'
         post = Post.order("created_at DESC")
@@ -38,7 +38,7 @@ describe "Post Index" do
     it "can have new lines being displayed" do 
         sign_in
         visit '/posts'
-        click_link "New post"
+        click_button "New post"
         fill_in 'Message', with: "This\nis\na\nnew\npost"
         click_button 'Submit'
         expect(page).to have_content("This\nis\na\nnew\npost")
