@@ -5,15 +5,14 @@ jobs:
     docker:
       - image: circleci/ruby:2.5.0-node-browsers
         environment:
-          PGHOST: localhost
-          PGUSER: acebook-derailed-team
+          PGHOST: 127.0.0.1
+          PGUSER: root
           RAILS_ENV: test
 
-      - image: postgres:11.5
+      - image: circleci/postgres:9.6.2-alpine
         environment:
-          POSTGRES_USER: acebook-derailed-team
+          POSTGRES_USER: root
           POSTGRES_DB: acebook-derailed-team_test
-          POSTGRES_PASSWORD: ""
 
     steps:
       - checkout
@@ -31,31 +30,33 @@ jobs:
       #     command: sudo apt-get install wget ca-certificates ; wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - ; sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list' ; sudo apt-get install postgresql postgresql-contrib ; sudo update-rc.d postgresql enable ; sudo service postgresql start
 
       - run:
-        name: Bundle Install
-        command: bundle check || bundle install
+          name: Bundle Install
+          command: bundle check || bundle install
 
       # - run:
       #     name: become root
       #     command:  "sudo  -i"
 
-      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
-
-      # - run:
-      #   name: database migration
-      #   command: bundle exec rake db:migrate
+      # - run: dockerize -wait tcp://localhost:5432 -timeout 1m
 
       - run: cp .sample.env .env
 
       - run:
-        name: Setup Database
-        command: bundle exec rake db:create db:schema:load
-
-
+          name: Setup Database
+          command: bundle exec rake db:create 
 
       - run:
-        name: Run tests
-        command: bundle exec rspec
+          name: database migration
+          command: bundle exec rake db:migrate
 
       - run:
-        name: run Rubocop
-        command: bundle exec rubocop
+          name: run schema
+          command: rake db:schema
+        
+      - run:
+          name: Run tests
+          command: bundle exec rspec
+
+      - run:
+          name: run Rubocop
+          command: bundle exec rubocop
