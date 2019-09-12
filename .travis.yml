@@ -1,0 +1,21 @@
+language: ruby
+rvm:
+- 2.5.0
+services:
+- postgresql
+script:
+- bundle install
+- bin/rails db:create
+- bin/rails db:migrate
+- bundle exec rspec
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  api_key:
+    secure: oq/6pRuu49pfMOFtwM4OX4A1VoUQ6704Fm2DIn5P2zBXFBnrd4jgFu+lQ2V0zyp8j0EM4P6u1Bws8Zkdiuu+XMTyLiHUxZSG90iFnZXeklsm3V/GRw0Tm8AiuWe3CTZZNe3J1k3LFQzWKayeRbxbyuFPqkqMKXVSaLKMblUCBYcpRRqtd48OqmJd1cjzqv9liG6s2RxwFOwpJ2aqYYG3tzLZr4S9n1DTg7c+3X7W/eqIRP0aDhaAIBrYINQd9PiwLs/68mpvDdUJIXavBGxsIIUm0Ou3+sDiT8yHgljcU9yY6g4ISfSc/hn4czIRv1w+kUQszG635RuYAQ2LBgBDWLATS7ynC3J5PpEj6gB0p0lEWlM1HFaZG5SKfykbZnSS0RaOZg8RMZ6ZABREeUuu/3CIW3R0DwhjgZxE0Kog9gtkruSdKgz1WmRYLa76o+yta4e9U5ig0Ji6HWm0wL9oA6Ftg51ENOybyEfBI39EqMWk9mYtH4jU84qHa8mgOGRQwB3M0KbPLVXvutKZWMN68ek0c13YhuhfRs0gVt/yCD47ZJYk4uZNki/CW/OgT9vZMYrdofGtLO3C9fpyAuemiOmiubByNg4aNd7YmdMQWVUqS37HVEznWXV026jCma30eogGzJDYqVAx4VMTF5QiJf4H91wswt4TAJJxxf0EeFk=
+  app: acebook-connectu
+  on:
+    repo: dtrts/acebook-ConnectU
+  run:
+  - rake db:migrate
+  - restart
