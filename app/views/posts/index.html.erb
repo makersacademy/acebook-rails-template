@@ -6,7 +6,7 @@
 <br>
 <br>
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= simple_format(post.message) %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
