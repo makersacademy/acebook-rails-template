@@ -4,13 +4,13 @@ jobs:
     working_directory: ~/acebook-derailed-team
     docker:
       - image: circleci/ruby:2.5.0-node-browsers
-      environment:
-        PGHOST: localhost
-        PGUSER: acebook-derailed-team
-        RAILS_ENV: test
+        environment:
+          PGHOST: localhost
+          PGUSER: acebook-derailed-team
+          RAILS_ENV: test
 
-     - image: postgres:11.5
-       environment:
+      - image: postgres:11.5
+        environment:
           POSTGRES_USER: acebook-derailed-team
           POSTGRES_DB: acebook-derailed-team_test
           POSTGRES_PASSWORD: ""
@@ -31,8 +31,8 @@ jobs:
       #     command: sudo apt-get install wget ca-certificates ; wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - ; sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list' ; sudo apt-get install postgresql postgresql-contrib ; sudo update-rc.d postgresql enable ; sudo service postgresql start
 
       - run:
-          name: Bundle Install
-          command: bundle check || bundle install
+        name: Bundle Install
+        command: bundle check || bundle install
 
       # - run:
       #     name: become root
@@ -47,15 +47,15 @@ jobs:
       - run: cp .sample.env .env
 
       - run:
-          name: Setup Database
-          command: bundle exec rake db:create db:schema:load
+        name: Setup Database
+        command: bundle exec rake db:create db:schema:load
 
 
 
       - run:
-          name: Run tests
-          command: bundle exec rspec
+        name: Run tests
+        command: bundle exec rspec
 
       - run:
-          name: run Rubocop
-          command: bundle exec rubocop
+        name: run Rubocop
+        command: bundle exec rubocop
