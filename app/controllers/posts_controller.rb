@@ -6,7 +6,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    Post.create(post_params)
+    @post = current_user.posts.create(post_params)
     redirect_to posts_url
   end
 
@@ -15,7 +16,8 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    validate_user
+      @post = Post.find(params[:id])
   end
 
   def show
@@ -23,7 +25,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    validate_user
+    @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
       redirect_to posts_path
     else
@@ -32,6 +35,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    validate_user
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
@@ -39,7 +43,17 @@ class PostsController < ApplicationController
 
   private
 
+  def validate_user
+
+    @post = Post.find(params[:id]) || current_user.posts.find(params[:id])
+    @user_id_from_post = @post.user_id
+    if @user_id_from_post != current_user.id
+      flash[:notice] = "That's not your post"
+      redirect_to posts_path and return
+    end
+  end
+
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
 end
