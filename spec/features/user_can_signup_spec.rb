@@ -17,7 +17,7 @@ RSpec.feature "Sign up", type: :feature do
     fill_in "user[password]", with: "123456"
     fill_in "user[password_confirmation]", with: "123456"
     click_button "Sign up"
-    expect(page).to have_content("Email is invalid Email Password (6 characters minimum)")
+    expect(page).to have_content("Sign up")
   end
 
   scenario "Cannot Sign Up if password is < 6 characters" do
