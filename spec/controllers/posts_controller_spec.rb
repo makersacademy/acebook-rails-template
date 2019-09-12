@@ -57,7 +57,5 @@ RSpec.describe PostsController, type: :controller do
       all_post = Post.all
       expect(post.message).not_to be("Hello, world!")
     end
-
-
   end
 end
