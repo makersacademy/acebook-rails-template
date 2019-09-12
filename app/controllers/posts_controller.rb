@@ -16,8 +16,13 @@ class PostsController < ApplicationController
   end
 
   def edit
-    validate_user
+    @post = Post.find(params[:id])
+    @user_id_from_post = @post.user_id
+    if @user_id_from_post != current_user.id
+      redirect_to posts_path, notice: "Thats not your post!"
+    else
       @post = Post.find(params[:id])
+    end
   end
 
   def show
@@ -25,33 +30,35 @@ class PostsController < ApplicationController
   end
 
   def update
-    validate_user
+    @post = Post.find(params[:id])
+    @user_id_from_post = @post.user_id
+    if @user_id_from_post != current_user.id
+      redirect_to posts_path, notice: "Thats not your post!"
+    else
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
       redirect_to posts_path
     else
       render 'edit'
     end
+    end
   end
 
   def destroy
-    validate_user
+    @post = Post.find(params[:id])
+    @user_id_from_post = @post.user_id
+    if @user_id_from_post != current_user.id
+      redirect_to posts_path, notice: "Thats not your post!"
+    else
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
+    end
   end
 
   private
 
-  def validate_user
 
-    @post = Post.find(params[:id]) || current_user.posts.find(params[:id])
-    @user_id_from_post = @post.user_id
-    if @user_id_from_post != current_user.id
-      flash[:notice] = "That's not your post"
-      redirect_to posts_path and return
-    end
-  end
 
   def post_params
     params.require(:post).permit(:message, :user_id)
