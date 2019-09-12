@@ -16,12 +16,11 @@ aceBook
             <div style="width:100%;color:grey; font-size: 0.7em; margin-left: 12px;"><%= post.get_time %></div>
         </div>
     </div>
-    <div style="white-space:pre-wrap; width:75%;float:left;"><%= post.message %></div>    
+    <div style="white-space:pre-wrap; width:75%;float:left;"><%= post.message %></div>
+    <%=button_to 'Delete post', post_path(post), id: "delete", method: :delete %>
 </div>
 <% end %>
 
-<%= link_to new_post_path do %>
+<%= link_to new_post_path, id: "new_post" do %>
 New post
 <% end %>
-
-
