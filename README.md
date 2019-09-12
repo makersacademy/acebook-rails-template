@@ -142,3 +142,26 @@ This, when called on a time object, will return;
 
 Here is a [resource](https://www.rubyguides.com/2015/12/ruby-time/) for the Ruby Time object and how to interact with it.
 
+
+## Profile Creation
+
+After profile controller created and profile routes, in routes.rb, created by adding;
+
+```ruby
+
+resources :profile
+
+```
+
+Inside the profile controller we created;
+
+```ruby
+
+def index
+    @posts = Post.where(user_id: current_user.id)
+end
+
+```
+
+What we are doing here, is assigning the @posts instance variable with all Posts where the foriegn key of user_id matched the current logged in users id.
+This is using the one to many relationship we created inside the database and the model of the Post and User.
