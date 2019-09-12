@@ -10,6 +10,9 @@
                 <%= link_to 'add new post', new_post_path %>
             </td>
         </tr>
-        <%end%>
+    <% else %>
+                <%= link_to 'Sign up', sign_up_path %>  
+    <%end%>
+
 </table>
 <h1>Hello Acebook user!</h1>

@@ -30,7 +30,6 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe 'CRUD' do
-
     it 'creates a post' do
       post :create, params: { post: { message: 'Hello, world!' } }
       post = Post.find_by(message: 'Hello, world!').message
@@ -40,7 +39,7 @@ RSpec.describe PostsController, type: :controller do
     it 'edit a post' do
       post :create, params: { post: { message: 'Hello, world!' } }
       post = Post.find_by(message: 'Hello, world!')
-      patch :update, params: { id: post.id, post: {message: 'Hello, people!'} }
+      patch :update, params: { id: post.id, post: { message: 'Hello, people!' } }
       post_check = Post.find(post.id)
       expect(post_check.id).to eq(post.id)
       expect(post_check.message).to eq('Hello, people!')
@@ -55,7 +54,7 @@ RSpec.describe PostsController, type: :controller do
       # p post_check
       # p Post.all
       all_post = Post.all
-      expect(post.message).not_to be("Hello, world!")
+      expect(post.message).not_to be('Hello, world!')
     end
   end
 end
