@@ -5,7 +5,7 @@ RSpec.feature 'Delete posts', type: :feature do
     sign_in
 
     visit('/posts')
-    click_on 'New post'
+    click_on 'New pgitost'
     fill_in 'post_message', with: 'My new post'
     click_on 'Submit'
     click_button 'delete'
