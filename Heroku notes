@@ -1,0 +1,7 @@
+heroku --version
+
+will need git installed first
+check git --version
+
+- install heroku from terminal
+brew tap heroku/brew && brew install heroku

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :require_login
+
   def new
   end
 
@@ -14,6 +16,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+
   end
 
   def edit
@@ -30,6 +33,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
+
     params.require(:post).permit(:message)
   end
 end
