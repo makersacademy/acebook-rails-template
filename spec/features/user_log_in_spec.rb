@@ -15,4 +15,13 @@ RSpec.feature "Log in", type: :feature do
     expect(page).to have_current_path("/")
     expect(page).to have_content("Hello test@gmail.com! You are now signed in")
   end
+
+  scenario "Is redirected to login page if user does not exist" do
+    visit "/"
+    click_link "Log in"
+    fill_in "user_email", with: "test@gmail.com"
+    fill_in "user_password", with: "123456"
+    click_button "Log in"
+    expect(page).to have_current_path("/users/sign_in")
+  end
 end
