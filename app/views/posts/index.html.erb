@@ -25,10 +25,10 @@ New Post
   </div>
   <div style="white-space:pre-wrap; width:75%;float:left;"><%= post.message %></div>
   <%=button_to 'Delete post', post_path(post), id: "delete", method: :delete %>
-  <!-- <% if post.user_id == current_user.id-%> -->
   <%= button_to edit_post_path(post), method: "get" do %>
   Edit Post
   <% end %>
+  <!-- <% if post.user_id == current_user.id-%> -->
   <!-- <% end %> -->
 </div>
 <% end %>
