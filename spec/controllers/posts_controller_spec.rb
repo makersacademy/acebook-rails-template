@@ -35,6 +35,13 @@ RSpec.describe PostsController, type: :controller do
       delete :destroy, params: {id: Post.first.id, post: {message: 'Hello, world!'} }
       expect(Post.find_by(message: "Hello, world!")).not_to be
   end
+
+  it 'limits the number of characters in a post' do
+    sign_in
+    post :create, params: { post: { message: 'He' * 2001 } }
+    expect(Post.find_by(message: 'He' * 2001)).not_to be
+  end 
+
 end
 
 
