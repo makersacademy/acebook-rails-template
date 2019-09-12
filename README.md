@@ -1,16 +1,46 @@
-# AceBook
+# AceBook -- created by Team Derailed
 
-REQUIRED INSTRUCTIONS:
+## SET UP TESTING:
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+1. Install `factory_bot_rails` and `rails-controller-testing` by adding the following to both development and test group in Gemfile
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+```
+>   gem 'rails-controller-testing'
+>   gem 'factory_bot_rails'
+```
 
-2. The card wall is here: <please update>
+2. Update your bundle
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+```bash
+$ bundle
+```
+
+3. Generate feature specs for Clearance in Rails. This will also generate necessary Factories in the project to support the testing. (What is factory? -- to be updated). Run the following:
+
+```bash
+$ rails generate clearance:specs
+```
+
+4. require "clearance/rspec" in:
+```
+<project_directory>/spec/rails_helper.rb
+```
+
+5. Call `sign_in` helper method before your test so that the tests will not fail due to the authentication process. Example:
+
+```ruby
+RSpec.describe PostsController, type: :controller do
+  # call sign_in method to pass authentication
+  before(:each) { sign_in }
+
+  describe "GET /new " do
+    it "responds with 200" do
+      get :new
+      expect(response).to have_http_status(200)
+    end
+  end
+end
+```
 
 ## Quickstart
 
