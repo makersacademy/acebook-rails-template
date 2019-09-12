@@ -46,6 +46,12 @@ to
 !!!
 
 Added `require 'clearance/rspec'` to rails helper.
+This allows the clearance helper methods to be used.
+
+Added `require 'support/features/clearance_helpers'` to rails helper.
+This allows the clearance helper methods to be used even when the spec file is called individually (which wasn't happening before).tests
+This slows down rspec slightly.
+
 
 
 ###Testing
@@ -118,11 +124,11 @@ For our testing framework we will need to freeze 'Time' be able to test effectiv
 
 To do this I found a native rails helper called 'travel_to'
 
-```ruby 
+```ruby
 
 travel_to Time.local(1994)
 
-``` 
+```
 
 In the above example we are setting the Time for the test to just after midnight, January 1st 1994.
 
