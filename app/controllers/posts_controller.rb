@@ -13,8 +13,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
-
+    @user = User.find(current_user.id)
+    @posts = @user.posts
   end
 
   private
