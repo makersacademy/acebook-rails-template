@@ -4,12 +4,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(post_params.merge(user_id: current_user.id))
     redirect_to posts_url
   end
 
   def index
     @posts = Post.all
+    @user = User.all
   end
 
   private

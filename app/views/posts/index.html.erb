@@ -7,8 +7,9 @@
 <br>
 <% @posts.each do |post| %>
   <p><%= simple_format(post.message) %></p>
+  <p>Created at: <%= post.created_at %></p>
 <% end %>
 
-<%= link_to new_post_path do %>
+<%= link_to new_user_post_path(@user) do %>
   New post
 <% end %>
