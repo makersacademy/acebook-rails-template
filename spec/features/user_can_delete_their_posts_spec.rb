@@ -5,19 +5,18 @@ RSpec.feature 'Delete posts', type: :feature do
     sign_in
 
     visit('/posts')
-    click_on 'New pgitost'
+    click_button 'New Post'
     fill_in 'post_message', with: 'My new post'
     click_on 'Submit'
     click_button 'delete'
 
-     expect(page).not_to have_content('My new post')
+    expect(page).not_to have_content('My new post')
   end
-
 
   scenario 'A user cannot delete other peoples posts' do
     sign_in
     visit('/posts')
-    click_on 'New post'
+    click_on 'New Post'
     fill_in 'post_message', with: 'My new post'
     click_on 'Submit'
     sign_out
@@ -27,6 +26,6 @@ RSpec.feature 'Delete posts', type: :feature do
     click_button 'Sign up'
     click_button 'delete'
 
-     expect(page).to have_content("Calm down, you can only delete your own posts")
+    expect(page).to have_content('Calm down, you can only delete your own posts')
   end
 end
