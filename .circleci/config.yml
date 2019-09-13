@@ -1,22 +1,62 @@
- version: 2
- jobs:
-   one:
-     docker:
-       - image: circleci/ruby:2.4.1
-     steps:
-       - checkout
-       - run: echo "A first hello"
-       - run: sleep 25
-   two:
-     docker:
-       - image: circleci/ruby:2.4.1
-     steps:
-       - checkout
-       - run: echo "A more familiar hi"
-       - run: sleep 15
- workflows:
-   version: 2
-   one_and_two:
-     jobs:
-       - one
-       - two
+version: 2
+jobs:
+  build:
+    working_directory: ~/acebook-derailed-team
+    docker:
+      - image: circleci/ruby:2.5.0-node-browsers
+        environment:
+          PGHOST: 127.0.0.1
+          PGUSER: root
+          RAILS_ENV: test
+
+      - image: circleci/postgres:9.6.2-alpine
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_DB: acebook-derailed-team_test
+
+    steps:
+      - checkout
+
+      # - run:
+      #     name: Add Node.js PPA
+      #     command: 'curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -'
+
+      # - run:
+      #     name: Install Node.js
+      #     command:  'sudo apt-get install nodejs'
+
+      # - run:
+      #     name: Install, Configure & Start Postgres
+      #     command: sudo apt-get install wget ca-certificates ; wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - ; sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list' ; sudo apt-get install postgresql postgresql-contrib ; sudo update-rc.d postgresql enable ; sudo service postgresql start
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      # - run:
+      #     name: become root
+      #     command:  "sudo  -i"
+
+      # - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      # - run: cp .sample.env .env
+
+      - run:
+          name: Setup Database
+          command: bundle exec rake db:create 
+
+      - run:
+          name: database migration
+          command: bundle exec rake db:migrate
+
+      - run:
+          name: run schema
+          command: rake db:schema:load
+        
+      - run:
+          name: Run tests
+          command: bundle exec rspec
+
+      - run:
+          name: run Rubocop
+          command: bundle exec rubocop
