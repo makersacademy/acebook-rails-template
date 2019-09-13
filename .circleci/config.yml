@@ -28,11 +28,19 @@ jobs:
       # - run:
       #     name: Install, Configure & Start Postgres
       #     command: sudo apt-get install wget ca-certificates ; wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - ; sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list' ; sudo apt-get install postgresql postgresql-contrib ; sudo update-rc.d postgresql enable ; sudo service postgresql start
+      - restore_cache:
+          keys:
+            - acebook-derailed-{{ checksum "Gemfile.lock" }}
+            - acebook-derailed-
 
       - run:
           name: Bundle Install
-          command: bundle check || bundle install
+          command: bundle check --path vendor/bundle || bundle install --deployment
 
+      - save_cache:
+          key: acebook-derailed-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
       # - run:
       #     name: become root
       #     command:  "sudo  -i"
@@ -57,6 +65,6 @@ jobs:
           name: Run tests
           command: bundle exec rspec
 
-      - run:
-          name: run Rubocop
-          command: bundle exec rubocop
+      # - run:
+      #     name: run Rubocop
+      #     command: bundle exec rubocop
