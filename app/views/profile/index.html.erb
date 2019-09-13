@@ -39,9 +39,19 @@ View Feed
       </div>
     </div>
   </div>
+  
   <div id="post-message-container">
     <div id="post-message"><%= post.message %></div>
+    <%=button_to 'Delete post', post_path(post), id: "delete", method: :delete %>
+    <% if Time.now - post.created_at < 600 && post.user_id == current_user.id %>
+  <%= button_to edit_post_path(post), method: "get" do %>
+  Edit Post
+  <% end %>
+  <% end %>
+  <!-- <% if post.user_id == current_user.id-%> -->
+  <!-- <% end %> -->
   </div>
+
 </div>
 <% end %>
 </body>
