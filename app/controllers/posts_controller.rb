@@ -39,8 +39,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
-
-
+  
   def destroy
     @post = Post.find(params[:id])
     if @post.user_id != current_user.id
