@@ -5,8 +5,15 @@
   <% post.message.split("\n").each_with_index do |line, index| %>
     <p><%= line %></p>
   <% end %>
-  <p><%= post.created_at %></p>
+  <p>Created At: <%= post.created_at %></p>
+
+  <% if post.created_at != post.updated_at %>
+    <p>Last Updated : <%= post.updated_at %></p>
+    <% end %>
+
+  <%= link_to "edit", edit_post_path(post) %>
   </div>
+  
 <% end %>
 
 <%= link_to new_post_path do %>

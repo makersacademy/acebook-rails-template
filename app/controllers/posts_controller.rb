@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :require_login
 
   def new
-    @post = Post.new
   end
 
   def create
@@ -15,6 +14,17 @@ class PostsController < ApplicationController
   def index
     @user = User.find(current_user.id)
     @posts = @user.posts
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to posts_path
   end
 
   private
