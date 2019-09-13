@@ -6,8 +6,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    @post = current_user.posts.create(post_params)
+    if current_user
+      Post.create(post_params)
+      @post = current_user.posts.create(post_params)
+    end
+
     redirect_to posts_url
   end
 
@@ -16,10 +19,10 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     @user_id_from_post = @post.user_id
     if @user_id_from_post != current_user.id
-      redirect_to posts_path, notice: "Thats not your post!"
+      redirect_to posts_path, notice: 'Thats not your post!'
     else
       @post = Post.find(params[:id])
     end
@@ -30,17 +33,17 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     @user_id_from_post = @post.user_id
     if @user_id_from_post != current_user.id
-      redirect_to posts_path, notice: "Thats not your post!"
+      redirect_to posts_path, notice: 'Thats not your post!'
     else
-    @post = current_user.posts.find(params[:id])
-    if @post.update(post_params)
-      redirect_to posts_path
-    else
-      render 'edit'
-    end
+      @post = current_user.posts.find(params[:id])
+      if @post.update(post_params)
+        redirect_to posts_path
+      else
+        render 'edit'
+      end
     end
   end
 
@@ -48,17 +51,15 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user_id_from_post = @post.user_id
     if @user_id_from_post != current_user.id
-      redirect_to posts_path, notice: "Thats not your post!"
+      redirect_to posts_path, notice: 'Thats not your post!'
     else
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
+      @post = Post.find(params[:id])
+      @post.destroy
+      redirect_to posts_path
     end
   end
 
   private
-
-
 
   def post_params
     params.require(:post).permit(:message, :user_id)

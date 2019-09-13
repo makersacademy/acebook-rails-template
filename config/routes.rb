@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   resource :session, controller: 'clearance/sessions', only: [:create]
 
   resources :users, only: [:create] do
-
     resource :password,
              controller: 'clearance/passwords',
              only: %i[create edit update]
@@ -20,9 +19,5 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   root 'welcome#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  # get "posts/index" - Q&A see what this means?
-  # root "posts/#index" - "        "
   resources :posts
 end
