@@ -1,6 +1,12 @@
 require 'rails_helper'
+require "support/features/clearance_helpers"
 
 RSpec.feature "Post", type: :feature do
+
+  before(:each) do
+    sign_in
+  end
+
   scenario "Posts have a timestamps" do
     visit "/posts"
     click_link "New post"
@@ -20,4 +26,6 @@ RSpec.feature "Post", type: :feature do
     expect(page).to have_selector("p", text: "And another line.")
     expect(page).not_to have_selector("p", text: "Hello, world!\nThis is a new line\nAnd another line.")
   end
+
+  scenario ""
 end
