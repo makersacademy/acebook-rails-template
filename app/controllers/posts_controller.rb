@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
     @user_id_from_post = @post.user_id
     if @user_id_from_post != current_user.id
       redirect_to posts_path, notice: 'Thats not your post!'
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = current_user.posts.find(params[:id])
+    @post =  Post.find(params[:id])
     @user_id_from_post = @post.user_id
     if @user_id_from_post != current_user.id
       redirect_to posts_path, notice: 'Thats not your post!'
