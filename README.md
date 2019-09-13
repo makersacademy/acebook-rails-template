@@ -2,20 +2,21 @@
 
 To visit Acebook:
 
-'''
 https://acebook-derailed.herokuapp.com/
-'''
 
-## What Acebook can:
+## What Acebook can do:
 
-Authentication (Sign up, Log in, Log out),
-Create a new post,
-Edit existing posts,
-Existing posts can only be edited within 10 minutes after creation
+* Authentication (Sign up, Log in, Log out)
+
+* Create a new post
+
+* Edit existing posts
+
+* Existing posts can only be edited within 10 minutes after creation
 
 ## Features we are working on:
 
-Delete posts
+* Delete posts
 
 ## Quickstart
 
