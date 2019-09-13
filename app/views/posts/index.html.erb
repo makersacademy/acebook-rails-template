@@ -28,9 +28,7 @@ Hi, <%= current_user.email %>!
     </div>
     <div id="post-options-container">
       <div id="post-delete-button-container">
-        <% if post.user_id == current_user.id %>
           <%=button_to 'Delete post', post_path(post), id: "delete", method: :delete %>
-        <% end %>
       </div>
       <div id="post-edit-button-container">
         <% if ( Time.now - post.created_at ) < 600 && post.user_id == current_user.id %>

@@ -171,3 +171,14 @@ end
 
 What we are doing here, is assigning the @posts instance variable with all Posts where the foriegn key of user_id matched the current logged in users id.
 This is using the one to many relationship we created inside the database and the model of the Post and User.
+
+
+## Extracting style sheets
+
+To extract the inline styles to stylesheet.css files, we had to add the following to the config/initializers/assets.rb file;
+
+```ruby
+
+Rails.application.config.assets.precompile += %w( posts.css )
+
+```
