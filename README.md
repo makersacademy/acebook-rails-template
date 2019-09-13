@@ -1,4 +1,21 @@
-# AceBook -- created by Team Derailed 
+# AceBook -- created by Team Derailed
+
+To visit Acebook:
+
+'''
+https://acebook-derailed.herokuapp.com/
+'''
+
+## What Acebook can:
+
+Authentication (Sign up, Log in, Log out),
+Create a new post,
+Edit existing posts,
+Existing posts can only be edited within 10 minutes after creation
+
+## Features we are working on:
+
+Delete posts
 
 ## Quickstart
 
@@ -9,6 +26,7 @@ First, clone this repository. Then:
 > bin/rails db:create
 > bin/rails db:migrate
 ```
+Then:
 
 ```bash
 > bin/rails server # Start the server at localhost:3000
