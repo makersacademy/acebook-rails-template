@@ -7,11 +7,8 @@ First, clone this repository. Then:
 ```bash
 > bundle install
 > bin/rails db:create
-> bin/rails generate clearance:install
+> bin/rails db:migrate
 ```
-
-Running the last line will display in terminal a set of steps to set up the clearance gem.
-Do step 2 and step 3, ignore step 1 if email confirmation for signing up is not needed.
 
 ```bash
 > bin/rails server # Start the server at localhost:3000
