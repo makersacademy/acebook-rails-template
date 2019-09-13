@@ -17,6 +17,10 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Installing latest bundler
+          command: gem install bundler
+
       # - run:
       #     name: Add Node.js PPA
       #     command: 'curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -'
@@ -59,7 +63,7 @@ jobs:
 
       - run:
           name: run schema
-          command: rake db:schema:load
+          command: bundle exec rake db:schema:load
         
       - run:
           name: Run tests
