@@ -12,7 +12,6 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     @post.save
     redirect_to posts_url
-
   end
 
   def index
@@ -20,7 +19,6 @@ class PostsController < ApplicationController
   end
 
   def update
-
     if post_params[:message].length > 4000
       flash[:error] = "Your post is too long."
       redirect_to (edit_post_path) and return
@@ -29,6 +27,10 @@ class PostsController < ApplicationController
     if @post.user_id == current_user.id #checks if user owns post
       @post.update(post_params)
       #updates and changes the post
+    end
+
+    if Time.now - @post.created_at > 600
+      flash[:error] = "You can't edit your post after 10 mins foooool, gotta delete it mate"
     else
       flash[:error] = "Cannot update post!"
       #redirects and produces flash error
@@ -39,7 +41,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
-  
+
   def destroy
     @post = Post.find(params[:id])
     if @post.user_id != current_user.id
