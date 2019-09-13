@@ -26,7 +26,7 @@ New Post
       <div style="width:100%;color:grey; font-size: 0.7em; margin-left: 12px;"><%= post.get_time %></div>
     </div>
   </div>
-  <div style="white-space:pre-wrap; width:75%;float:left;"><%= post.message %></div>
+  <div style="white-space:pre-wrap; width:75%;float:left;"><%= post.message %></div>r
   <%=button_to 'Delete post', post_path(post), id: "delete", method: :delete %>
   <%= button_to edit_post_path(post), method: "get" do %>
   Edit Post
