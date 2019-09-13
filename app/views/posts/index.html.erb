@@ -7,10 +7,8 @@
     <% @posts.reverse.each do |post| %>
         <tr>
             <td>
-                <%= post.message[0..30] %>
-            </td>
-            <td>
-                <%= link_to 'show', post_path(post) %>
+                <%= simple_format(post.message) %>
+                <p>Posted: <%= post.created_at.strftime("%d/%m/%Y at %H:%M")  %> </p>
             </td>
             <td>
                 <%= link_to 'edit', edit_post_path(post) %>
