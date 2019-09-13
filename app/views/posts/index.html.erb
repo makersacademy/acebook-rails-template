@@ -23,27 +23,32 @@
       <div id="post-profile-picture-container">
         <div id="post-profile-picture"></div>
       </div>
+
       <div id="post-details-container">
         <div id="post-user-email"><%= post.user.email %></div>
         <div id="post-created-at"><%= post.get_time %></div>
       </div>
       <div id="post-options-container">
         <div id="post-delete-button-container">
+          <% if post.user_id == current_user.id %>
           <%=button_to 'Delete post', post_path(post), id: "delete", method: :delete %>
+          <% end %>
         </div>
+
         <div id="post-edit-button-container">
           <% if ( Time.now - post.created_at ) < 600 && post.user_id == current_user.id %>
           <%= button_to 'Edit Post', edit_post_path(post), method: "get", id: "edit" %>
           <% end %>
         </div>
+
+
+        <div id="post-message-container">
+          <div id="post-message"><%= post.message %></div>
+        </div>
+
       </div>
-    </div>
-
-    <div id="post-message-container">
-      <div id="post-message"><%= post.message %></div>
 
     </div>
-
   </div>
   <% end %>
 </body>

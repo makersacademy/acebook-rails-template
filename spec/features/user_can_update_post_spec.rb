@@ -36,4 +36,19 @@ RSpec.feature "Timeline", type: :feature do
     travel_to Time.local(1994) + 601
     expect(page).not_to have_selector("Edit Post")
   end
+
+  scenario "A user cannot edit other peoples posts" do
+    sign_in
+    visit("/posts")
+    click_on "New Post"
+    fill_in "post_message", with: "My new post"
+    click_on "Submit"
+    sign_out
+    visit "/sign_up"
+    fill_in "user_email", with: "test@test.com"
+    fill_in "user_password", with: "password"
+    click_button "Sign up"
+    visit "/posts"
+    expect(page).to have_no_button('Edit Post')
+  end 
 end
