@@ -30,11 +30,8 @@ Visit [AceBook](https://acebook-fantastic-four.herokuapp.com/) to see the app in
 ```bash
 > bin/rails server # Start the server at localhost:3000
 ```
-9. Updating the external server:
-```bash
-*****************************
-```
-10. [Use the Project Trello board to complete the tasks assigned to you by the Scrum Master.](https://trello.com/b/1NSTnYaN/fantastic-four-acebook)
+9. [Use the Project Trello board to complete the tasks assigned to you by the Scrum Master.](https://trello.com/b/1NSTnYaN/fantastic-four-acebook)
+10. If you are joining the team then please remove another member of the team or change the team name.
 
 ## Tech Stack
 
