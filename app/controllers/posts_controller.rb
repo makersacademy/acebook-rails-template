@@ -26,7 +26,9 @@ class PostsController < ApplicationController
       redirect_to (edit_post_path) and return
     end
     @post = Post.find(params[:id])
-    if @post.user_id == current_user.id #checks if user owns post
+    if Time.now - @post.created_at > 600
+      flash[:error] = "Cannot update post, time limit passed!"
+    elsif @post.user_id == current_user.id #checks if user owns post
       @post.update(post_params)
       #updates and changes the post
     else

@@ -1,37 +1,45 @@
-<style>
-  body {
-    background-color: #eeeff4;
-  }
-</style>
+<%= stylesheet_link_tag "profile" %>
+<body>
+<div id="page-header">
+  <div>
+  Welcome to ConnectU
+  </div>
+</div>
 
-aceBook
+Hi, <%= current_user.email %>!
 
-<%= button_to profile_index_url, method: "get" do %>
-Profile
-<% end %>
 <%= button_to new_post_path, method: "get" do %>
-New Post
+  New Post
+<% end %>
+<%= button_to profile_index_url, method: "get" do %>
+  Profile 
 <% end %>
 
 <% @posts.each do |post| %>
 
-<div
-  style="height:100px; width: 25%; margin-left: 33.5%; background-color: white; margin-bottom: 15px; border-radius: 5px; padding: 10px 10px;">
-  <div style="height: 30px; width: 100%;">
-    <div style="height: 100%; width: 30px; float: left;">
-      <div style="background-color: black; border-radius: 30px; height: 100%; width: 30px; float: left;"></div>
+<div id="post-container">
+  <div id="post-header-container">
+    <div id="post-profile-picture-container">
+      <div id="post-profile-picture"></div>
     </div>
-    <div style="height: 100%; width 50%; float: left;">
-      <div style="font-size: 1em; margin-left: 10px; color: #3b5999; font-weight: bold;"><%= post.user.email %></div>
-      <div style="width:100%;color:grey; font-size: 0.7em; margin-left: 12px;"><%= post.get_time %></div>
+    <div id="post-details-container">
+      <div id="post-user-email"><%= post.user.email %></div>
+      <div id="post-created-at"><%= post.get_time %></div>
+    </div>
+    <div id="post-options-container">
+      <div id="post-delete-button-container">
+          <%=button_to 'Delete post', post_path(post), id: "delete", method: :delete %>
+      </div>
+      <div id="post-edit-button-container">
+        <% if ( Time.now - post.created_at ) < 600 && post.user_id == current_user.id %>
+          <%= button_to 'Edit Post', edit_post_path(post), method: "get", id: "edit" %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div style="white-space:pre-wrap; width:75%;float:left;"><%= post.message %></div>
-  <%=button_to 'Delete post', post_path(post), id: "delete", method: :delete %>
-  <%= button_to edit_post_path(post), method: "get" do %>
-  Edit Post
-  <% end %>
-  <!-- <% if post.user_id == current_user.id-%> -->
-  <!-- <% end %> -->
+  <div id="post-message-container">
+    <div id="post-message"><%= post.message %></div>
+  </div>
 </div>
 <% end %>
+</body>
