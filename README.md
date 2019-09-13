@@ -80,11 +80,11 @@ https://docs.travis-ci.com/user/deployment/heroku/
 
 
 ## Heroku
-```bash
+```
 brew install heroku
 ```
 Once you have a heroku account you can host your own via these commands:
-```bash
+```
 heroku create
 git push heroku master
 heroku rake db:migrate
@@ -107,7 +107,7 @@ If you need to play with the development database in IRB you can use these comma
 Make sure you have a database first!
 Add on any additional models if needed.
 
-```ruby
+```
 require 'active_record'
 require 'clearance'
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database:'pgapp_development')
@@ -116,6 +116,10 @@ require_relative './app/models/user.rb'
 require_relative './app/models/post.rb'
 ```
 
+<<<<<<< HEAD
+## Brief : Branch Merging
+Once a branch has been completed and all tests are passing, the merge a branch, first you need to create a pull request to the master branch. 
+=======
 ## Rails Time Object, Freeze & Structure
 
 ### Freeze
@@ -145,8 +149,9 @@ strftime("%I:%M %p, %d of %B")
 This, when called on a time object, will return;
 
 `12:00 AM, 01 of January`
+>>>>>>> c039d4312bc1aa58ca79669df35b47c93ec4b4a3
 
-Here is a [resource](https://www.rubyguides.com/2015/12/ruby-time/) for the Ruby Time object and how to interact with it.
+The process first needs to pass the merge and any conflicts resolved, then once merged to master to deploy - .travis and CI process needs to pass which builds the app and if all tests pass the app is deployed. 
 
 
 ## Profile Creation
