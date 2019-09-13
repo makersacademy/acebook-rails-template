@@ -10,13 +10,13 @@ https://acebook-derailed.herokuapp.com/
 
 * Create a new post
 
-* Edit existing posts
+* Edit & Delete existing posts
 
 * Existing posts can only be edited within 10 minutes after creation
 
 ## Features we are working on:
 
-* Delete posts
+* TBC
 
 ## Quickstart
 
