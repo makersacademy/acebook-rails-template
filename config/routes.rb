@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   get '/posts' => 'posts#index'
   get '/posts/new' => 'posts#new'
+  post 'posts/update' => 'posts#update'
+  get '/posts/:id' => 'posts#update'
   post 'posts' => 'posts#create'
 
   resources :user, only: [:show] do
-    resources :posts, only: [:new, :create, :index]
+    resources :posts, only: [:new, :create, :index, :update]
   end
 
   devise_for :users
