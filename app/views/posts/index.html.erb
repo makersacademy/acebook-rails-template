@@ -5,13 +5,18 @@
   <% post.message.split("\n").each_with_index do |line, index| %>
     <p><%= line %></p>
   <% end %>
-  <p>Created At: <%= post.created_at %></p>
+    <% time_diff = Time.now.utc - post.created_at  %>
+
+    <p>Created At: <%= post.created_at %></p>
+    <p> <%= time_diff / 1.minute.round %> </p>
 
   <% if post.created_at != post.updated_at %>
     <p>Last Updated : <%= post.updated_at %></p>
     <% end %>
 
-  <%= link_to "edit", edit_post_path(post) %>
+  <% if time_diff / 1.minute.round < 10  %>
+    <%= link_to "edit", edit_post_path(post) %>
+      <% end %>
   </div>
   
 <% end %>
