@@ -1,6 +1,12 @@
 
   Metrics/LineLength:
     Max: 500
+  Metrics/MethodLength:
+    Max: 500
+  Metrics/AbcSize:
+    Max: 500
+
+
 
   Metrics/BlockLength:
   #  ExcludedMethods: [‘describe’, ‘context’]
@@ -13,7 +19,8 @@
      - 'app/models/application_record.rb'
      - 'db/schema.rb'
      - 'spec/features/user_signs_up_spec.rb'
-
+     - 'app/controllers/posts_controller.rb'
+     - 'spec/features/user_can_submit_posts_spec.rb'
 
   Style/Documentation:
     Include:
@@ -24,7 +31,7 @@
     Enabled: false
 
   AllCops:
-    Exclude: 
+    Exclude:
       - 'bin/setup'
       - 'bin/update'
 

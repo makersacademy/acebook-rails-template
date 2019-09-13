@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'clearance/rspec'
 
 RSpec.describe PostsController, type: :controller do
   before do
     @user = FactoryBot.create(:user)
+    sign_in_as(@user)
   end
 
   describe 'GET /new ' do
@@ -14,10 +16,22 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe 'POST /' do
-    it 'responds with 200' do
-      post :create, params: { post: { message: 'Hello, world!' } }
-      expect(response).to redirect_to(posts_url)
+  context 'there is a user logged in' do
+    describe 'POST /' do
+      it 'responds with 200' do
+        # TODO: log in user before trying to create post
+        post :create, params: { post: { message: 'Hello, world!' } }
+        expect(response).to redirect_to(posts_url)
+      end
+    end
+  end
+
+  context 'no user is logged in' do
+    describe 'POST /' do
+      it 'redirects to posts page' do
+        post :create, params: { post: { message: 'Hello, world!' } }
+        expect(response).to redirect_to(posts_url)
+      end
     end
   end
 
