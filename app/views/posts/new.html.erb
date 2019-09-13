@@ -10,8 +10,6 @@ textarea {
 
 <%= form_for @post do |form| %>
   <%= form.label :message %>
-  <%= form.text_area :message , placeholder: "What's on your mind?"  %>
+  <%= form.text_area :message , placeholder: "What's on your mind?", maxlength: 4000  %>
   <%= form.submit "Submit" %>
 <% end %>
-
-
