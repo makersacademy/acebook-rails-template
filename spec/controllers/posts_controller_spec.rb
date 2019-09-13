@@ -29,12 +29,26 @@ RSpec.describe PostsController, type: :controller do
       expect(Post.find_by(message: "Hello, Dream world")).to be
     end
 
+    it "does not let you update a post to more than 4000 characters" do
+      sign_in
+      post :create, params: { post: { message: "Hello, world!" } }
+      put :update, params: { id: Post.first.id, post: { message: "He" * 2001 } }
+      expect(Post.find_by(message: 'He' * 2001)).not_to be
+    end
+
     it 'deletes a post' do
       sign_in
       post :create, params: { post: { message: 'Hello, world!' } }
       delete :destroy, params: {id: Post.first.id, post: {message: 'Hello, world!'} }
       expect(Post.find_by(message: "Hello, world!")).not_to be
   end
+
+  it 'limits the number of characters in a post' do
+    sign_in
+    post :create, params: { post: { message: 'He' * 2001 } }
+    expect(Post.find_by(message: 'He' * 2001)).not_to be
+  end
+
 end
 
 
