@@ -10,13 +10,20 @@
 </head>
 
 <body>
-    <% if signed_in? %>
-        Signed in as:
-        <%= current_user.username %>
-            <%= button_to 'Sign out', sign_out_path, method: :delete %>
-                <% else %>
-                    <%= link_to 'Sign in', sign_in_path %>
-                        <% end %>
+    <div>
+
+        <div>
+        <% if signed_in? %>
+            <p class="text-muted" >
+            Signed in as:
+            <%= current_user.username %>
+            </p> 
+                <%= button_to 'Sign out', sign_out_path, method: :delete %>
+                     <% else %>
+                     <div class="jumbotron text-center">
+                         <%= link_to 'Sign in', sign_in_path %>
+                         <div>
+                            <% end %>
 
                             <div id="flash">
                                 <% flash.each do |key, value| %>
@@ -25,8 +32,10 @@
                                     </div>
                                     <% end %>
                             </div>
+                            </div>
                             <br>
                             <%= yield %>
+    </div>
 </body>
 
 </html>

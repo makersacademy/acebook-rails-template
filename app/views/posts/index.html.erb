@@ -1,6 +1,7 @@
-<table>
-    <tr>
-        <th>AceBook Wall</th>
+<div class="container">
+<table style="text-align: center" class="table">
+    <tr class="jumbotron text-center">
+        <th style="text-align: center">AceBook Wall</th>
         <th></th>
         <th colspan=“2”></th>
     </tr>
@@ -10,11 +11,11 @@
                 <%= simple_format(post.message) %>
                 <p>Posted: <%= post.created_at.strftime("%d/%m/%Y at %H:%M")  %> </p>
             </td>
-            <td>
-                <%= link_to 'edit', edit_post_path(post) %>
+            <td >
+                <%= link_to 'Edit', edit_post_path(post) %>
             </td>
-            <td>
-                <%= link_to 'delete', post_path(post),
+            <td > 
+                <%= link_to 'Delete', post_path(post),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
             </td>
@@ -23,7 +24,8 @@
             <%= link_to new_post_path do %>
                 add new post
                 <% end %>
-                    <td>
-                        <%= link_to 'back', root_path %>
+                    <td class="jumbotron text-center">
+                        <%= link_to 'Back', root_path %>
                     </td>
 </table>
+</div>
