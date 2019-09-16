@@ -40,6 +40,15 @@
           <%= button_to 'Edit Post', edit_post_path(post), method: "get", id: "edit" %>
           <% end %>
         </div>
+        <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+          <p>
+            <%= form.label :body %><br>
+            <%= form.text_area :body %>
+          </p>
+          <p>
+          <%= form.submit %>
+          </p>
+          <% end %>
 
 
         <div id="post-message-container">
