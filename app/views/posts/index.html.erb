@@ -2,25 +2,23 @@
 
 <% @posts.reverse_each do |post| %>
   <div class="post" id="post<%= post.id %>">
-  <% post.message.split("\n").each_with_index do |line, index| %>
-    <p><%= line %></p>
-  <% end %>
-
-  <p>Created At: <%= post.created_at %></p>
-
-  <% if post.created_at != post.updated_at %>
-    <p>Last Updated : <%= post.updated_at %></p>
+    <% post.message.split("\n").each_with_index do |line, index| %>
+      <p><%= line %></p>
     <% end %>
 
-  <%= link_to "Edit", edit_post_path(post) %>
-  </div>
-  
-  <p>
+    <p>Created At: <%= post.created_at %></p>
+
+    <% if post.created_at != post.updated_at %>
+      <p>Last Updated : <%= post.updated_at %></p>
+    <% end %>
+
+    <p>
+    <%= link_to 'Edit', edit_post_path(post) %>
     <%= link_to 'Delete', post_path(post),
         method: :delete,
         data: { confirm: 'Are you sure?' } %>
-  </p>
-</div>
+    </p>
+  </div>
 <% end %>
 
 <%= link_to new_post_path do %>
