@@ -40,6 +40,7 @@ group :development, :test do
   gem "rubocop-rails_config"
   gem "simplecov", require: false
   gem "simplecov-console", require: false
+  gem "orderly"
 end
 
 group :development do

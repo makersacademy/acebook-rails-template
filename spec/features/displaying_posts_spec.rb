@@ -14,7 +14,6 @@ RSpec.feature "Displaying Posts", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Hello, this is my second post"
     click_button "Submit"
-    #Look at this on monday, use regex to test order of content on webpage
-    expect(page).to have_content("Hello, this is my second post" +  + "Hello, this is my first post")
+    expect("Hello, this is my second post").to appear_before("Hello, this is my first post")
   end
 end
