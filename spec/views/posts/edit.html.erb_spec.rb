@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "posts/edit.html.erb", type: :view do
-
-  it "has has a message field and a submit link" do
+  it "has a message field and a submit link" do
 
     @post = FactoryBot.create(:post)
 
@@ -10,9 +9,4 @@ RSpec.describe "posts/edit.html.erb", type: :view do
     expect(rendered).to have_field("post[message]")
     expect(rendered).to have_button("Submit")
   end
-
-
-
-
-
 end
