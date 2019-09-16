@@ -1,12 +1,9 @@
 require "rails_helper"
+require "./spec/helpers/sign_up_helper"
 
 RSpec.feature "format post", type: :feature do
-  scenario "Postsshould be formatted with line breaks" do
-    visit "/users/sign_up"
-    fill_in "user[email]", with: "test@gmail.com"
-    fill_in "user[password]", with: "123456"
-    fill_in "user[password_confirmation]", with: "123456"
-    click_button "Sign up"
+  scenario "Posts should be formatted with line breaks" do
+    sign_up
     click_link "New post"
     fill_in "Message", with: "Hello, world
     this is a new line"
