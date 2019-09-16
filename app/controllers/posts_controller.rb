@@ -8,6 +8,11 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  # def delete
+  #
+  #   redirect_to posts_url
+  # end
+
   def index
     @posts = @current_user.posts.order('created_at DESC')
     @user = User.all

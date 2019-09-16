@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/posts' => 'posts#index'
+  delete '/posts' => 'posts#delete'
   get '/posts/new' => 'posts#new'
   post 'posts' => 'posts#create'
 
