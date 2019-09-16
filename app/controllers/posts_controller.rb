@@ -13,12 +13,23 @@ class PostsController < ApplicationController
     @user = User.all
   end
 
-  def update
+  def show
     @post = Post.find(params[:id])
   end
 
+  def update
+    @post = Post.find(params[:id])
+    puts @post
+    @post.update
+    redirect_to root_path
+    #   if @post.update_attributes(post_params)
+    #     redirect_to posts_url
+    #   else
+    #     render "edit"
+    # end
+  end
   private
     def post_params
-      params.require(:post).permit(:message)
+      params.require(:post).permit(:message, :id)
     end
 end
