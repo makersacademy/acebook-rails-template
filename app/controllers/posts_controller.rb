@@ -12,8 +12,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @user = User.find(current_user.id)
-    @posts = @user.posts
+    @posts = Post.all
   end
 
   def edit
@@ -28,8 +27,14 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
+
+    if @post.user_id == current_user.id
+      @post.destroy
+      
+      redirect_to posts_path
+    else
+      deny_access(flash_message = 'YOU DONT OWN THIS')
+    end
   end
 
   private
