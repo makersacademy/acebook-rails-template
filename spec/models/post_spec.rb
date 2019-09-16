@@ -8,6 +8,4 @@ RSpec.describe Post, type: :model do
       expect(post.lines).to eq ["Hello", "World"]
     end
   end
-  
-  it { is_expected.to be }
 end
