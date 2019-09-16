@@ -10,7 +10,4 @@ RSpec.feature "Routing", type: :feature do
     visit "/"
     expect(page).to have_content("New post")
   end
-
-  # scenario "If a user visits any page without signing in you are directed to sign up" do
-  # end
 end
