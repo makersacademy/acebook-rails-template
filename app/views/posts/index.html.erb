@@ -1,10 +1,12 @@
+
 <h1> Create a post here ! </h1>
 
 <% @posts.reverse_each do |post| %>
   <div class="post" id="post<%= post.id %>">
-    <% post.message.split("\n").each_with_index do |line, index| %>
-      <p><%= line %></p>
-    <% end %>
+  <% post.lines.each do | line | %>
+    <p><%= line %></p>
+  <% end %>
+
 
     <p>Created At: <%= post.created_at %></p>
 
