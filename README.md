@@ -1,3 +1,7 @@
+<a href="https://codeclimate.com/github/EvelinaClayton/acebook-derailed-team/maintainability"><img src="https://api.codeclimate.com/v1/badges/beaad211f76bb6d8c2c2/maintainability" /></a>
+
+<a href="https://codeclimate.com/github/EvelinaClayton/acebook-derailed-team/test_coverage"><img src="https://api.codeclimate.com/v1/badges/beaad211f76bb6d8c2c2/test_coverage" /></a>
+
 # AceBook -- created by Team Derailed
 
 To visit Acebook:
@@ -5,6 +9,8 @@ To visit Acebook:
 https://acebook-derailed.herokuapp.com/
 
 ## What Acebook can do:
+
+Acebook is a simplified version of Facebook, so far it has the following features:
 
 * Authentication (Sign up, Log in, Log out)
 
@@ -16,7 +22,9 @@ https://acebook-derailed.herokuapp.com/
 
 ## Features we are working on:
 
-* TBC
+* Password validation during signing up
+
+* Flash notice for successful signing in
 
 ## Quickstart
 
@@ -33,10 +41,8 @@ Then:
 > bin/rails server # Start the server at localhost:3000
 ```
 
-## Maintainability Badge from CodeClimate
+To test Acebook using Rspec:
 
-<a href="https://codeclimate.com/github/EvelinaClayton/acebook-derailed-team/maintainability"><img src="https://api.codeclimate.com/v1/badges/beaad211f76bb6d8c2c2/maintainability" /></a>
-
-## Test Coverage Badge from CodeClimate
-
-<a href="https://codeclimate.com/github/EvelinaClayton/acebook-derailed-team/test_coverage"><img src="https://api.codeclimate.com/v1/badges/beaad211f76bb6d8c2c2/test_coverage" /></a>
+```bash
+> rspec
+```
