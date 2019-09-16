@@ -26,9 +26,10 @@ class PostsController < ApplicationController
     if @post.update(params[:post].permit(:message))
       redirect_to posts_url
     else
-      render 'edit'
+      render "edit"
     end
   end
+
   private
     def post_params
       params.require(:post).permit(:message)

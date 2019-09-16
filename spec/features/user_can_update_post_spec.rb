@@ -1,5 +1,5 @@
 require "rails_helper"
-
+require "./spec/helpers/sign_up_helper"
 
 RSpec.feature "Update post", type: :feature do
   before do
@@ -7,11 +7,7 @@ RSpec.feature "Update post", type: :feature do
   end
 
   scenario "User CANNOT update post after ten minutes of creation" do
-    visit "/users/sign_up"
-    fill_in "user[email]", with: "test@gmail.com"
-    fill_in "user[password]", with: "123456"
-    fill_in "user[password_confirmation]", with: "123456"
-    click_button "Sign up"
+    sign_up
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
@@ -21,11 +17,7 @@ RSpec.feature "Update post", type: :feature do
   end
 
   scenario "User CAN update before ten minutes of creation" do
-    visit "/users/sign_up"
-    fill_in "user[email]", with: "test@gmail.com"
-    fill_in "user[password]", with: "123456"
-    fill_in "user[password_confirmation]", with: "123456"
-    click_button "Sign up"
+    sign_up
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
