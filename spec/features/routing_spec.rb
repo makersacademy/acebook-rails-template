@@ -7,5 +7,4 @@ RSpec.feature "Routing", type: :feature do
     visit "/"
     expect(page).to have_content("New post")
   end
-  
 end

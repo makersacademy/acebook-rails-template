@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'posts' => 'posts#create'
 
   resources :user, only: [:show] do
-    resources :posts, only: [:new, :create, :index, :update, :show, :edit]
+    resources :posts, only: [:new, :create, :index, :update, :edit]
   end
 
   devise_for :users
