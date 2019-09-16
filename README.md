@@ -47,3 +47,12 @@ require_relative './app/models/user.rb'
 require_relative './app/models/post.rb'
 ```
 
+## Running Tests
+
+We are using RSpec as our chosen testing framework for this projects; to run the suites, head to the main directory for the application and call the following command in your terminal;
+
+```bash
+rspec
+```
+
+You should, after a brief pause, see all of our suites, grouped by their feature followed by their descriptions and passes or fails.
