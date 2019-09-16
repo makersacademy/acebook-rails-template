@@ -36,4 +36,13 @@ RSpec.feature "Post", type: :feature do
     click_link "Delete"
     expect(page).not_to have_content("Delete me!")
   end
+
+  scenario 'User sees a successful login message on login' do
+    expect(page).to have_content "You have successfully logged in."
+  end
+
+  scenario 'Successful login message is not present on the next page' do
+    click_link "New post"
+    expect(page).not_to have_content "You have successfully logged in."
+  end
 end

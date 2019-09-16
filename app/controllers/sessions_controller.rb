@@ -5,7 +5,7 @@ class SessionsController < Clearance::SessionsController
 
     sign_in(@user) do |status|
       if status.success?
-        flash[:notice] = "You have logged in."
+        flash[:notice] = "You have successfully logged in."
         redirect_back_or url_after_create
       else
         flash.now.alert = status.failure_message
