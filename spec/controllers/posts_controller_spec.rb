@@ -4,14 +4,14 @@ RSpec.describe PostsController, type: :controller do
 
   before(:each) { sign_in }
 
-  describe "GET /new " do
+  describe "#new" do
     it "responds with 200" do
       get :new
       expect(response).to have_http_status(200)
     end
   end
 
-  describe "POST /" do
+  describe "#create" do
     it "responds with 200" do
       post :create, params: { post: { message: "Hello, world!" } }
       expect(response).to redirect_to(posts_url)
@@ -19,29 +19,49 @@ RSpec.describe PostsController, type: :controller do
 
     it "creates a post" do
       post :create, params: { post: { message: "Hello, world!" } }
-      expect(Post.find_by(message: "Hello, world!")).to be
-    end
-
-    it "edits a post" do
-    end
-
-    it "deletes a post" do
-    end
-
+      expect(Post.find_by(message: "Hello, world!")).to be_valid
+    end 
   end
 
-  describe "GET /" do
+  describe "#index" do
     it "responds with 200" do
       get :index
       expect(response).to have_http_status(200)
     end
-  end
 
-  describe "GET /" do
     it 'renders the index page' do
       get :index
       expect(response).to render_template(:index)
     end
+  end
 
+  describe '#edit' do
+    xit "edits a post" do
+      post :delete, params: { post: { message: "Hello, world!" } }
+      expect(Post.find_by(message: "Hello, world!")).to be_valid
+    end
+  end
+
+  describe '#update' do
+  end
+
+  describe "Destroy" do
+    it "deletes a post" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      expect(Post.all.count).to eq 1
+
+      post_id = Post.all.first.id
+
+      delete :destroy, params: { id: post_id }
+      expect(Post.all.count).to eq 0      
+    end
+
+    it "can delete its own submitted post" do
+
+    end
+
+    it "can't delete a post that doesn't belong to them" do
+
+    end
   end
 end
