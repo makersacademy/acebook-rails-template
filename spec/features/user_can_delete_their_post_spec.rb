@@ -1,27 +1,53 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
-require 'support/features/clearance_helpers'
+require 'clearance_helpers'
 
-# RSpec.feature 'CRUD', type: :feature do
+RSpec.feature 'Timeline', type: :feature do
 
-#   def add_message(message)
-#     fill_in "Message", with: message
-#     click_button "Submit"
-#   end
 
-#   def delete_post(message)
-#     click_link "Delete"
-#   end
+  before do
+    sign_up_with('username', 'test@mail.com', 'testing')
+  end
 
-#   before(:each) do
-#     sign_in
-#     visit '/posts'
-#     add_message('Post 1')
-#   end
+describe 'A User' do
+  scenario 'Can edit post' do
+    # sign_up_with('username', 'test@mail.com', 'testing')
+    # sign_in_with('test@mail.com', 'testing')
+    visit '/posts'
+    click_link 'add new post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    visit '/posts'
+    click_link 'Edit'
+    fill_in 'post[message]', with: 'Hello, world again!'
+    click_button 'Update Post'
+    expect(page).to have_content('Hello, world again!')
+  end
 
-#   scenario 'User can delete post' do
-#     delete_post('Post 1')
-#     expect(page).to_not have_content('Post 1')
-#   end
-# end
+  scenario 'A user Can delete post' do
+    # sign_up_with('username', 'test@mail.com', 'testing')
+    # sign_in_with('test@mail.com', 'testing')
+    visit '/posts'
+    click_link 'add new post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    visit '/posts'
+    click_link 'Delete'
+    expect(page).to_not have_content('Hello, world!')
+  end
+end
+
+  scenario "A diffente user can't delete other's posts" do
+    visit '/posts'
+    click_link 'add new post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    visit '/posts'
+    sign_out
+    click_link 'Sign up'
+    sign_up_with('otherusername', 'othertest@mail.com', 'othertesting')
+    click_link 'posts'
+    visit "/posts"
+    expect(page).not_to have_button("Delete")
+  end 
+
+end

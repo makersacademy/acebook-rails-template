@@ -12,12 +12,14 @@
                 <p>Posted: <%= post.created_at.strftime("%d/%m/%Y at %H:%M")  %> </p>
             </td>
             <td >
+                <% if current_user.id == post.user_id  %>
                 <%= link_to 'Edit', edit_post_path(post) %>
             </td>
             <td > 
                 <%= link_to 'Delete', post_path(post),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
+              <% end %>
             </td>
         </tr>
         <% end %>
