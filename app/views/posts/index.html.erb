@@ -52,15 +52,17 @@
 
           <h2>Comments</h2>
             <% post.comments.each do |comment| %>
-          <p>
-          <strong>Commenter:</strong>
-            <%= comment.post.user.email %>
-          </p>
+            <% if comment.user %>
+              <p>
+              <strong>Commenter:</strong>
+                <%= comment.user.email %>
+              </p>
 
-          <p>
-          <strong>Comment:</strong>
-          <%= comment.body %>
-          </p>
+              <p>
+              <strong>Comment:</strong>
+              <%= comment.body %>
+              </p>
+              <% end %>
           <% end %>
 
 
