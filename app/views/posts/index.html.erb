@@ -51,18 +51,17 @@
           <% end %>
 
           <h2>Comments</h2>
-          <%= @user %>
-<% post.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.user_id %>
-  </p>
+            <% post.comments.each do |comment| %>
+          <p>
+          <strong>Commenter:</strong>
+            <%= comment.post.user.email %>
+          </p>
 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-<% end %>
+          <p>
+          <strong>Comment:</strong>
+          <%= comment.body %>
+          </p>
+          <% end %>
 
 
         <div id="post-message-container">

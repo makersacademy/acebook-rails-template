@@ -5,11 +5,15 @@ class CommentsController < ApplicationController
     #@comment = @post.comments.create(comment_params)
     @comment.user_id = current_user.id
     @comment.save
+    p @comment.user.email
+    redirect_to posts_url
+  end
+
+  def index
     @user = User.find(@comment.user_id)
     @comment_owner = User.find(@comment.user_id)
-    p @comment_owner
+
     @email = @comment_owner.email
-    redirect_to posts_url
   end
 
   private
