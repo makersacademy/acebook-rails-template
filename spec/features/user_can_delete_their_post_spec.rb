@@ -10,8 +10,6 @@ RSpec.feature 'Timeline', type: :feature do
 
 describe 'A User' do
   scenario 'Can edit post' do
-    # sign_up_with('username', 'test@mail.com', 'testing')
-    # sign_in_with('test@mail.com', 'testing')
     visit '/posts'
     click_link 'add new post'
     fill_in 'Message', with: 'Hello, world!'
@@ -24,8 +22,6 @@ describe 'A User' do
   end
 
   scenario 'A user Can delete post' do
-    # sign_up_with('username', 'test@mail.com', 'testing')
-    # sign_in_with('test@mail.com', 'testing')
     visit '/posts'
     click_link 'add new post'
     fill_in 'Message', with: 'Hello, world!'
@@ -45,7 +41,7 @@ end
     sign_out
     click_link 'Sign up'
     sign_up_with('otherusername', 'othertest@mail.com', 'othertesting')
-    click_link 'posts'
+    click_link 'Posts'
     visit "/posts"
     expect(page).not_to have_button("Delete")
   end 
