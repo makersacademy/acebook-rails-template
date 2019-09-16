@@ -9,7 +9,7 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
   end
-  
+
   scenario "Users only view own posts on initial page" do
     visit "/users/sign_up"
     fill_in "user[email]", with: "test1@gmail.com"
