@@ -13,7 +13,7 @@ RSpec.feature "Post", type: :feature do
     fill_in "Message", with: "message before edit"
     click_button "Submit"
     expect(page).to have_content("message before edit")
-    click_link "edit"
+    click_link "Edit"
     fill_in "Message", with: "message after edit"
     click_button "Submit"
     expect(page).to have_content("message after edit")
