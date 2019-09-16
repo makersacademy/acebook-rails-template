@@ -7,4 +7,9 @@ FactoryBot.define do
     email
     password { "password" }
   end
+
+  factory :post do
+    user
+    message {"random message"}
+  end
 end
