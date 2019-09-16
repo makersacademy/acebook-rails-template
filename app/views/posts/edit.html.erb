@@ -1,4 +1,4 @@
-<h1>Edit post</h1>
+<h1 class="page-header text-center">Edit post</h1>
  
 <%= form_with(model: @post, local: true) do |form| %>
  
@@ -17,15 +17,19 @@
   <% end %>
  
  
-  <p>
+  <div class="jumbotron text-center">
     <%= form.label :message %><br>
     <%= form.text_area :message, cols: 50, rows: 10 %>
-  </p>
+  </div>
  
-  <p>
+  <div class="text-center">
     <%= form.submit %>
-  </p>
+  </div>
  
 <% end %>
- 
+<p>
+</p>
+
+<div class="page-footer text-center">
 <%= link_to 'Back', posts_path %>
+</div>

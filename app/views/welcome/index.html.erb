@@ -4,9 +4,9 @@
     <div class="jumbotron text-center">
         <% if signed_in? %>
 
-                <%= link_to 'posts', posts_path %>
-
-                <%= link_to 'add new post', new_post_path %>
+                <%= link_to 'Posts', posts_path %>
+                <l1 style="padding: 20px">  |  </l1>
+                <%= link_to 'Add New Post', new_post_path %>
         <% else %>
                 <%= link_to 'Sign up', sign_up_path %>  
         <%end%>
