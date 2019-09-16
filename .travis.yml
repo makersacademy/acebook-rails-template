@@ -8,6 +8,7 @@ before_script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
   - bundle exec rspec
+  - bundle exec rubocop
 deploy:
   provider: heroku
   api_key:
