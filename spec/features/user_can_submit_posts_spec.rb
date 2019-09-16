@@ -10,7 +10,7 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in 'user_password', with: 'password'
     click_button 'Sign up'
     visit '/posts'
-    click_link 'add new post'
+    click_link 'Add New Post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
     expect(page).to have_content('Signed in as: username Message')
@@ -39,7 +39,7 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in 'user_password', with: 'password'
     click_button 'Sign up'
     visit '/posts'
-    click_link 'add new post'
+    click_link 'Add New Post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
     expect(page).to have_content("Signed in as: username Message")
