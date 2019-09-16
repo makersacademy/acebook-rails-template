@@ -27,5 +27,13 @@ RSpec.feature "Post", type: :feature do
     expect(page).not_to have_selector("p", text: "Hello, world!\nThis is a new line\nAnd another line.")
   end
 
-  scenario ""
+  scenario "Posts can be deleted" do
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "Delete me!"
+    click_button "Submit"
+    expect(page).to have_content("Delete me!")
+    click_link "Delete"
+    expect(page).not_to have_content("Delete me!")
+  end
 end
