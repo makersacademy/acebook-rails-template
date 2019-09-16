@@ -50,6 +50,19 @@
           </p>
           <% end %>
 
+          <h2>Comments</h2>
+<% post.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.user_id %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
 
         <div id="post-message-container">
           <div id="post-message"><%= post.message %></div>
@@ -61,4 +74,3 @@
   </div>
   <% end %>
 </body>
-
