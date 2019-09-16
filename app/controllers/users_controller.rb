@@ -17,4 +17,9 @@ class UsersController < Clearance::UsersController
   def url_after_create
     "/profile"
   end
+
+  def show
+    p :user_id
+      @posts = Post.where(:user_id => params[:user_id] )
+  end
 end

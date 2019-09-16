@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :posts
   # root 'posts#index'
   resources :profile
+
+  get '/users/:user_id' => 'users#show'
   
   root "application#index"
 end
