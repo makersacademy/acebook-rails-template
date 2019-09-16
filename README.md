@@ -54,7 +54,8 @@ This slows down rspec slightly.
 
 
 
-###Testing
+### Testing
+
 Ran `rails generate clearance:specs` which added tests for user functionality (thanks clarence!)
 Unfortunately needed a factory gem.
 Ran `gem install factory_bot_rails`
@@ -76,22 +77,6 @@ https://travis-ci.com/dtrts/acebook-ConnectU
 
 https://docs.travis-ci.com/user/tutorial/
 https://docs.travis-ci.com/user/deployment/heroku/
-
-
-
-## Heroku
-```bash
-brew install heroku
-```
-Once you have a heroku account you can host your own via these commands:
-```bash
-heroku create
-git push heroku master
-heroku rake db:migrate
-heroku open /posts
-```
-
-Our app is deployyed at: acebook-connectu.herokuapp.com
 
 
 

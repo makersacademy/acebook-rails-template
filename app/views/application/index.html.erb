@@ -1,1 +1,20 @@
-Hello
+<%= stylesheet_link_tag "posts" %>
+<body>
+<div id="page-header">
+  <div id="page-title">
+    Welcome to ConnectU
+  </div>
+  <div id="page-name">
+    <%= current_user.email %>
+  </div>
+</div>
+
+<%= button_to posts_url, method: "get" do %>
+  All posts
+<% end %>
+<%= button_to profile_index_url, method: "get" do %>
+  Profile 
+<% end %>
+
+
+</body>
