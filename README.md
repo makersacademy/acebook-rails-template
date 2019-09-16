@@ -24,8 +24,6 @@ Acebook is a simplified version of Facebook, so far it has the following feature
 
 * Password validation during signing up
 
-* Flash notice for successful signing in
-
 ## Quickstart
 
 First, clone this repository. Then:
