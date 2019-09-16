@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
-  resource :session, controller: "clearance/sessions", only: [:create]
-
+  resource :session, controller: "sessions", only: [:create]
   resources :users, controller: "clearance/users", only: [:create] do
     resource :password,
       controller: "clearance/passwords",
@@ -18,6 +17,7 @@ Rails.application.routes.draw do
   resources :posts
 
   get 'posts/index'
+  post 'users/create'
 
   root 'posts#index'
 end
