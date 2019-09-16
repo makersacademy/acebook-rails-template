@@ -46,8 +46,8 @@ In order to learn a new technology the project was developed using the Ruby on R
 User Journey upon sign-up/sign-in:
 ![User Journey](./public/userJourney.png)
 
-AceBook Website Structure:
-![Website Structure](./public/Acebook_Website-Structure.png)
+AceBook MVC Structure:
+![MVC Structure](./public/Acebook-MVC-Model.png)
 
 
 <sub>_Image taken from http://img.hexus.net/v2/gaming/fantastic_4/f4_1.jpg_</sub>
