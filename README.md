@@ -35,14 +35,10 @@ Then:
 
 ## Maintainability Badge from CodeClimate (HTML):
 
-```bash
 <a href="https://codeclimate.com/github/EvelinaClayton/acebook-derailed-team/maintainability"><img src="https://api.codeclimate.com/v1/badges/beaad211f76bb6d8c2c2/maintainability" /></a>
-```
 
 ## Test Coverage Badge
 
-```bash
 <a href="https://codeclimate.com/github/EvelinaClayton/acebook-derailed-team/test_coverage"><img src="https://api.codeclimate.com/v1/badges/beaad211f76bb6d8c2c2/test_coverage" /></a>
 
 Or visit the main page here: https://codeclimate.com/github/EvelinaClayton/acebook-derailed-team 
-```
