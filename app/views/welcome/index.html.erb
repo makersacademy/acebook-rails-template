@@ -1,18 +1,48 @@
-<table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div class="jumbotron text-center">
+        <% if signed_in? %>
 
-
-    <% if signed_in? %>
-        <tr>
-            <td>
                 <%= link_to 'posts', posts_path %>
-            </td>
-            <td>
-                <%= link_to 'add new post', new_post_path %>
-            </td>
-        </tr>
-    <% else %>
-                <%= link_to 'Sign up', sign_up_path %>  
-    <%end%>
 
-</table>
-<h1>Hello Acebook user!</h1>
+                <%= link_to 'add new post', new_post_path %>
+        <% else %>
+                <%= link_to 'Sign up', sign_up_path %>  
+        <%end%>
+    </div>
+
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="jumbotron text-center">
+ <h1>Welcome To Acebook</h1>
+  <p>
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>About Us</h3>
+      <p>We are a small company based in London</p>
+      <p>We were started by 5 bright minded devs</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Our Mission</h3>
+      <p>We want to create the best possible environment for our users</p>
+      <p>To stop people having to tweet twice inorder to put a message through</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Contact Us</h3>        
+      <p>52, Commercial Street</p>
+      <p>London</p>
+      <p>E1 6LT</p>
+      <p>020700700700<p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
