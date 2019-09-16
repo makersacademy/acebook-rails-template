@@ -8,13 +8,15 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-  # def delete
-  #
-  #   redirect_to posts_url
-  # end
+  def delete
+    puts params
+    @post = Post.find(params[:format])
+    @post.delete
+    redirect_to posts_url
+  end
 
   def index
-    @posts = @current_user.posts.order('created_at DESC')
+    @posts = @current_user.posts.order("created_at DESC")
     @user = User.all
   end
 
