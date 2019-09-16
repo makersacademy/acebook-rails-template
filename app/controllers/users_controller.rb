@@ -19,7 +19,6 @@ class UsersController < Clearance::UsersController
   end
 
   def show
-    p :user_id
-      @posts = Post.where(:user_id => params[:user_id] )
+      @posts = Post.where(:user_id => params[:user_id]).order("created_at DESC")
   end
 end
