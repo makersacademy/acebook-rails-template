@@ -1,6 +1,4 @@
-<h1> update</h1>
-
-<%= form_for @post do |form| %>
+<%= form_for :post, url: edit_user_post_path(current_user.id), method: :update do |form| %>
   <%= form.label :message %>
   <%= form.text_area :message %>
   <%= form.submit "Submit" %>
