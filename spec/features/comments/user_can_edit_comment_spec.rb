@@ -26,11 +26,26 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     fill_in "comment[body]", with: "This is a comment"
     click_button "Create Comment"
-    
+
     click_button "Edit Comment"
     travel_to Time.local(1994) + 610
     click_button "Update Comment"
 
     expect(page).to have_content("You can't edit your comment after 10 mins foooool, gotta delete it mate")
   end
+
+  scenario "Can see a helpful message that the edit was successful" do
+    sign_in
+    visit "/posts"
+    click_button "New Post"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    fill_in "comment[body]", with: "This is a comment"
+    click_button "Create Comment"
+    click_button "Edit Comment"
+    fill_in "comment[body]", with: "This is the second comment"
+    click_button "Update Comment"
+    expect(page).to have_content("Edit successful")
+  end
+
 end
