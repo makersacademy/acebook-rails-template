@@ -8,8 +8,8 @@ FactoryBot.define do
     password { "password" }
   end
 
-  factory :post do
-    user
-    message {"random message"}
-  end
+  # factory :post do
+  #   user
+  #   message {"random message"}
+  # end
 end

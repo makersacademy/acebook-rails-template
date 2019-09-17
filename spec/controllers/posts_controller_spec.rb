@@ -23,7 +23,16 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to redirect_to(posts_path)
     end
 
+    it "update the entry in database" do
+      post = FactoryBot.create(:post)
+      patch :update, params: {id: post.id, post:{message: "random message after update"}}
+      updated_post = Post.find(post.id)
+      expect(updated_post.message).to eq("random message after update")
+    end
+
   end
+
+  #
 
   describe "GET /new " do
     it "responds with 200" do
