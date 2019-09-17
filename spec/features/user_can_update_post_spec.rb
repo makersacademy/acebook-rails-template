@@ -4,7 +4,6 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can edit posts and view them" do
     # TODO: add login helper method
     sign_in
-<<<<<<< HEAD
     visit '/posts'
     click_button '+'
     fill_in 'post[message]', with: 'Hello, world!'
@@ -13,16 +12,6 @@ RSpec.feature "Timeline", type: :feature do
     fill_in 'Message', with: 'Hello, Dream world!'
     click_button 'Submit'
     expect(page).to have_content('Hello, Dream world!')
-=======
-    visit "/posts"
-    click_button "New Post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
-    click_button "Edit Post"
-    fill_in "Message", with: "Hello, Dream world!"
-    click_button "Submit"
-    expect(page).to have_content("Hello, Dream world!")
->>>>>>> 4f89940cf94ef629110af2b48f08b5bb74239479
   end
   scenario "Can't edit post after 10 mins" do
     travel_to Time.local(1994)
