@@ -28,11 +28,11 @@ RSpec.feature 'Visitor signs up' do
     expect_user_to_be_signed_out
   end
 
-  scenario "sees a confirmation flash message that he has signed up" do
-    sign_up_with "valid@example.com", "password"
-    expect(page).to have_content "You are now registered to Acebook! Welcome!"
+  scenario 'sees a confirmation flash message that he has signed up' do
+    sign_up_with 'valid@example.com', 'password'
+    expect(page).to have_content 'You are now registered to Acebook! Welcome!'
 
-    click_link "New post"
-    expect(page).not_to have_content "You are now registered to Acebook! Welcome!"
+    click_link 'New post'
+    expect(page).not_to have_content 'You are now registered to Acebook! Welcome!'
   end
 end
