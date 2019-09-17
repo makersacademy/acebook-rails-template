@@ -20,6 +20,24 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
+  def update
+    @comment = Comment.find(params[:id])
+    if Time.now - @comment.created_at > 600
+      flash[:error] = "Cannot update comment, time limit passed!"
+    elsif @comment.user_id == current_user.id #checks if user owns post
+      @comment.update(comment_params)
+      #updates and changes the post
+    end
+
+        if Time.now - @comment.created_at > 600
+          flash[:error] = "You can't edit your comment after 10 mins foooool, gotta delete it mate"
+        else
+          flash[:error] = "Cannot update comment!"
+          #redirects and produces flash error
+        end
+        redirect_to posts_url
+      end
+
   private
 
   def comment_params
