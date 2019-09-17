@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   constraints Clearance::Constraints::SignedIn.new do
     root to: 'users#wall'
   end
+  constraints Clearance::Constraints::SignedOut.new do
+    root to: 'welcome#index'
+  end
   resources :users, only: [:create] do
     resource :password,
              controller: 'clearance/passwords',
@@ -19,9 +22,7 @@ Rails.application.routes.draw do
   get '/sign_in' => 'clearance/sessions#new', as: 'sign_in'
   delete '/sign_out' => 'clearance/sessions#destroy', as: 'sign_out'
   get '/sign_up' => 'clearance/users#new', as: 'sign_up'
-  get 'welcome/index'
 
-  root 'welcome#index'
   resources :posts
   resources :users,
             path_names: { show: 'wall' }
