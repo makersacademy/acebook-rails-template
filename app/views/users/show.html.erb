@@ -16,6 +16,11 @@
   Profile
   <% end %>
 
+
+  <%= render partial: "wall_post_form" %>
+
+
+
   <% @posts.each do |post| %>
 
   <div id="post-container">
@@ -52,4 +57,3 @@
   </div>
   <% end %>
 </body>
-
