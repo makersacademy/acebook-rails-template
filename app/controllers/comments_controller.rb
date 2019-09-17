@@ -2,10 +2,10 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
-  
+
     @comment.user_id = current_user.id
     @comment.save
-
+    flash[:notice] = "Your comment was posted successfully"
     redirect_to posts_url
   end
 
