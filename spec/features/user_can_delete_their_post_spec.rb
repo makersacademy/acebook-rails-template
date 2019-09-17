@@ -60,13 +60,17 @@ end
     expect(page).not_to have_button("Edit")
   end 
 
-    scenario 'can have the time the post was created ' do
-      visit '/posts'
-      click_link 'Add new post'
-      text = 'This is a new post'
-      fill_in 'Message', with: text
-      click_button 'Submit'
-      t = DateTime.now
-      expect(page).to have_text(t.strftime("Posted: %d/%m/%Y"))
-    end
+  scenario 'can have the time the post was created ' do
+    visit '/posts'
+    click_link 'Add new post'
+    text = 'This is a new post'
+    fill_in 'Message', with: text
+    click_button 'Submit'
+    t = DateTime.now
+    expect(page).to have_text(t.strftime("Posted: %d/%m/%Y"))
+  end
+
+  # scenario 'User can upload an avatar as a profile picture'
+  #   visit '/'
+  #   click_link
 end

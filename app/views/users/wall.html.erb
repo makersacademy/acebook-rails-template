@@ -2,14 +2,15 @@
     <l1 style="padding: 20px"> </l1>
     <%= link_to 'Add new post', new_post_path %>
         <div class=" text-center">
-        <div>
             <%= form_for current_user do |form| %>
+            <div>
                 <%= form.label :avatar %>
                 <%= form.file_field :avatar %>
                 <%= form.submit %>
             </div>
+            
         <%end%>
-        <%= current_user.avatar.attached? %>
+        
             <h1>Your wall:</h1>
             <p>
                 <br>

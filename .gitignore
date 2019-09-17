@@ -23,7 +23,7 @@
 .byebug_history
 
 /Gemfile.lock
-
+storage
 /vendor/bundle/
 /db/schema.rb
 

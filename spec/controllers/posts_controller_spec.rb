@@ -65,4 +65,18 @@ RSpec.describe PostsController, type: :controller do
       expect(post.message).not_to be('Hello, world!')
     end
   end
+
+  # describe 'user has an avatar' do
+  #   before do
+  #     @avatar_image = User.find.avatar
+  #   end
+
+  #   it 'has correct src' do
+  #     expect(@avatar_image[:src]).to eq("some_url")
+  #   end
+
+  #   it 'has correct alt text' do
+  #     expect(@avatar_image[:alt]).to eq("some_text")
+  #   end
+  # end
 end
