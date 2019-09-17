@@ -58,17 +58,29 @@ body {
     font-weight: bold; 
     text-align: center; 
     width: 100%;
+    flex-direction: row;
 }
 
-#page-name {
+#page-name-container {
     height: 100%;
     font-size: 1em;
+    margin-left: 10%;
     float: left;
-    margin-left: 5%;
 }
 #page-title {
     height: 100%;
     font-size: 1.5em;
     float: left;
-    padding-left: 40%;
+    margin-left: 35%;
 }
+
+#page-name {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 1em;
+    height: 40px;
+    outline: none;
+    float: right;
+}
+

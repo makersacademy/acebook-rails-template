@@ -7,18 +7,42 @@ body {
     margin: 0 auto;
 }
 
-#page-header {
-    background-color: #3b5999; 
-    height: 40px; 
-    color: white; 
-    font-weight: bold; 
-    text-align: center; 
-    width: 100%;
+.new-post-container {
+    width: 26%;
+    margin-left: 33.5%;
+    height: 100px;
+    margin-top: 30px;
 }
 
+textarea {
+    outline:none;
+    resize:none;
+    width: 80%;
+    height: 60px;
+    font-size:1em;
+    border: none;
+    font-weight: lighter; 
+    float: left;
+}
+
+#post-submit {
+    height: 64px;
+    background-color: white;
+    color:lightgrey;
+    border: none;
+    margin-bottom: 25px;
+    width: 19%;
+    float: left;
+    border-left: 1px lightgray solid;
+    outline: none;
+}
+
+::placeholder {
+    color:lightgrey;
+  }
 
 #post-container {
-    height:150px; 
+    height:300px; 
     width: 25%;
     margin-left: 33.5%; 
     background-color: white; 
@@ -68,7 +92,7 @@ body {
 
 #post-message-container {
     padding-top: 10px; 
-    height: 75%; 
+    height: 30%; 
     width: 100%;
 }
 
@@ -77,8 +101,7 @@ body {
     width:85%;
     float:left; 
     height: 100px; 
-    word-wrap: 
-    break-word; 
+    word-wrap: break-word; 
     overflow: hidden;
 }
 
@@ -115,4 +138,8 @@ body {
 #post-edit-button-container {
     margin-left: 30%; 
     width: 50%;
+}
+
+#comment-container {
+    background: white;
 }
