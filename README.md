@@ -1,16 +1,8 @@
-# AceBook
+# ConnectU
 
-REQUIRED INSTRUCTIONS:
+## Introduction
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+ConnectU is a brief 2 week project where we intend to create a social media style web application within Ruby on Rails, given a biref specification, our task is to have an index of all posts, users having their own walls where their posts and the posts of others on their wall can be seen and additionally comments on all those posts.
 
 ## Quickstart
 
@@ -24,6 +16,7 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
 
 ## Clearance
 Clearance is being used to manage User registration.
@@ -85,14 +78,30 @@ https://docs.travis-ci.com/user/deployment/heroku/
 https://codeclimate.com/repos/5d7658b000ca3e0177007b30
 Reviews quality of repo
 
+=======
+## Heroku
+```
+brew install heroku
+```
+Once you have a heroku account you can host your own via these commands:
+```
+heroku create
+git push heroku master
+heroku rake db:migrate
+heroku open /posts
+```
+
+Our app is deployyed at: acebook-connectu.herokuapp.com
+
 
 ## Database Development
+
 If you need to play with the development database in IRB you can use these commands to get stuck in with the orm.
 
 Make sure you have a database first!
 Add on any additional models if needed.
 
-```ruby
+```
 require 'active_record'
 require 'clearance'
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database:'pgapp_development')
@@ -101,69 +110,12 @@ require_relative './app/models/user.rb'
 require_relative './app/models/post.rb'
 ```
 
-## Rails Time Object, Freeze & Structure
+## Running Tests
 
-### Freeze
+We are using RSpec as our chosen testing framework for this projects; to run the suites, head to the main directory for the application and call the following command in your terminal;
 
-For our testing framework we will need to freeze 'Time' be able to test effectively for posts being in order and timing out the ability to edit posts after 10 minutes have passed.
-
-To do this I found a native rails helper called 'travel_to'
-
-```ruby
-
-travel_to Time.local(1994)
-
+```bash
+rspec
 ```
 
-In the above example we are setting the Time for the test to just after midnight, January 1st 1994.
-
-### Beautifying Time
-
-On our post index view, we wanted to see the time a post was created at, however the Time object isn't exactly nice to look at. To fix this, we used an formatting tool found below;
-
-```ruby
-
-strftime("%I:%M %p, %d of %B")
-
-```
-
-This, when called on a time object, will return;
-
-`12:00 AM, 01 of January`
-
-Here is a [resource](https://www.rubyguides.com/2015/12/ruby-time/) for the Ruby Time object and how to interact with it.
-
-
-## Profile Creation
-
-After profile controller created and profile routes, in routes.rb, created by adding;
-
-```ruby
-
-resources :profile
-
-```
-
-Inside the profile controller we created;
-
-```ruby
-
-def index
-    @posts = Post.where(user_id: current_user.id)
-end
-
-```
-
-What we are doing here, is assigning the @posts instance variable with all Posts where the foriegn key of user_id matched the current logged in users id.
-This is using the one to many relationship we created inside the database and the model of the Post and User.
-
-
-## Extracting style sheets
-
-To extract the inline styles to stylesheet.css files, we had to add the following to the config/initializers/assets.rb file;
-
-```ruby
-
-Rails.application.config.assets.precompile += %w( posts.css )
-
-```
+You should, after a brief pause, see all of our suites, grouped by their feature followed by their descriptions and passes or fails.
