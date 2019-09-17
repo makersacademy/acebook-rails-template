@@ -38,9 +38,22 @@ class CommentsController < ApplicationController
         redirect_to posts_url
       end
 
+  def destroy
+    @comment =  Comment.find(params[:id])
+    if @comment.user_id != current_user.id
+      flash[:error] = "Calm down, you can only delete your own comments"
+      redirect_to posts_url
+    else
+      @comment.destroy
+      redirect_to posts_url
+    end
+  end
+
   private
 
   def comment_params
     params.require(:comment).permit(:user_id, :body)
   end
+
+  
 end

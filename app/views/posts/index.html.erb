@@ -69,11 +69,15 @@
                 <%= button_to 'Edit Comment', edit_comment_path(comment), method: "get", id: "edit" %>
                 <% end %>
               </div>
-              <% end %>
+              
 
 
-
-
+        <div id="comment-delete-button-container">
+          <% if comment.user_id == current_user.id %>
+          <%=button_to 'Delete Comment', comment_path(comment), id: "delete", method: :delete %>
+          <% end %>
+        </div>
+        <% end %>
         <div id="post-message-container">
           <div id="post-message"><%= post.message %></div>
         </div>
