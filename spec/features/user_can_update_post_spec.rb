@@ -17,12 +17,12 @@ RSpec.feature "Timeline", type: :feature do
     travel_to Time.local(1994)
     sign_in
     visit "/posts"
-    click_button "New Post"
-    fill_in "Message", with: "Hello, world!"
+    click_button "+"
+    fill_in "post[message]", with: "Hello, world!"
     click_button "Submit"
     travel_to Time.local(1994) + 601
     click_button "Edit Post"
-    fill_in "Message", with: "Hello, Dream world!"
+    fill_in "post[message]", with: "Hello, Dream world!"
     click_button "Submit"
     expect(page).to have_content("You can't edit your post after 10 mins foooool, gotta delete it mate")
   end
@@ -30,8 +30,8 @@ RSpec.feature "Timeline", type: :feature do
     travel_to Time.local(1994)
     sign_in
     visit "/posts"
-    click_button "New Post"
-    fill_in "Message", with: "Hello, world!"
+    click_button "+"
+    fill_in "post[message]", with: "Hello, world!"
     click_button "Submit"
     travel_to Time.local(1994) + 601
     expect(page).not_to have_selector("Edit Post")
@@ -40,7 +40,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "A user cannot edit other peoples posts" do
     sign_in
     visit("/posts")
-    click_on "New Post"
+    click_on "+"
     fill_in "post_message", with: "My new post"
     click_on "Submit"
     sign_out
