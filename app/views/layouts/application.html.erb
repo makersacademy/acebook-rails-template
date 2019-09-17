@@ -16,6 +16,7 @@
         <% if signed_in? %>
             <p class="text-muted" >
             Signed in as:
+            <%= image_tag(current_user.avatar) %>
             <%= current_user.username.capitalize %>
             </p> 
                 <%= button_to 'Sign out', sign_out_path, method: :delete, data: { confirm: 'Are you sure?' }%>
