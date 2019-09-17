@@ -12,8 +12,9 @@ RSpec.feature "Post", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
+    post = Post.find_by(message: "Hello, world!")
     expect(page).to have_content("Hello, world!")
-    expect(page).to have_content("UTC")
+    expect(page).to have_content(post.created_at.strftime("%d %b - %I:%M %p"))
   end
 
   scenario "Posts with mutliple lines are displayed in multiple lines" do
