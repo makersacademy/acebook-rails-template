@@ -54,7 +54,7 @@
 
           <%= form_with(model: [ post, Comment.new ], local: true) do |form| %>
             <p>
-              <%= form.text_area :body %>
+              <%= form.text_area :body, id: "comment-text-area" %>
             </p>
             <p>
               <%= form.submit %>
