@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/user/:id' => 'user#index'
   get '/posts' => 'posts#index'
   delete '/posts' => 'posts#delete'
   get '/posts/new' => 'posts#new'
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  root 'posts#index'
+  root 'user#current_user_home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

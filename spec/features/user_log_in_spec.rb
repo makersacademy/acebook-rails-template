@@ -12,7 +12,6 @@ RSpec.feature "Log in", type: :feature do
     fill_in "user_email", with: "test@gmail.com"
     fill_in "user_password", with: "123456"
     click_button "Log in"
-    expect(page).to have_current_path("/")
     expect(page).to have_content("Hello test@gmail.com! You are now signed in")
   end
 
