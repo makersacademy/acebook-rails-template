@@ -6,4 +6,7 @@ class Post < ApplicationRecord
     (time_diff / 1.minute).round < 10
   end
 
+  def lines
+    message.split("\r\n")
+  end
 end

@@ -1,25 +1,41 @@
+
 <h1> Create a post here ! </h1>
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+
+<br><br>
 
 <% @posts.reverse_each do |post| %>
   <div class="post" id="post<%= post.id %>">
-  <% post.message.split("\n").each_with_index do |line, index| %>
+  <% post.lines.each do | line | %>
     <p><%= line %></p>
   <% end %>
+<<<<<<< HEAD
     <% time_diff = Time.now.utc - post.created_at  %>
 
     <p>Created At: <%= post.created_at %></p>
+=======
+>>>>>>> master
 
-  <% if post.created_at != post.updated_at %>
-    <p>Last Updated : <%= post.updated_at %></p>
+
+    <p>Created At: <%= post.created_at %></p>
+
+    <% if post.created_at != post.updated_at %>
+      <p>Last Updated : <%= post.updated_at %></p>
     <% end %>
 
+<<<<<<< HEAD
   <% if time_diff / 1.minute.round < 10  %>
     <%= link_to "edit", edit_post_path(post) %>
       <% end %>
+=======
+    <p>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Delete', post_path(post),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+>>>>>>> master
   </div>
-  
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
+  <br>
 <% end %>

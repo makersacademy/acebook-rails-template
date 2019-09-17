@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  it { is_expected.to be }
 
   describe '#Can_edit?' do
     it 'Checks if a post can be edited' do
@@ -13,7 +12,13 @@ RSpec.describe Post, type: :model do
     end
   end
 
-
+  describe '#lines' do
+    it 'returns an array of the lines in a posts message' do
+      post = Post.new(message: "Hello\r\nWorld")
+      expect(post.lines).to eq ["Hello", "World"]
+    end
+  end
+  
 end
 
 
