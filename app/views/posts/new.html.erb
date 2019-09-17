@@ -1,15 +1,29 @@
-<style>
-textarea {
-  outline:none;
-  resize:none;
-  width:400px;
-  height:100px;
-  font-size:1.4em;
-  }
-</style>
+<%= stylesheet_link_tag "posts" %>
+<body>
+<div id="page-header">
+  <div id="page-title">
+    Welcome to ConnectU
+  </div>
+  <div id="page-name">
+    <%= current_user.email %>
+  </div>
+</div>
 
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message , placeholder: "What's on your mind?", maxlength: 4000  %>
-  <%= form.submit "Submit" %>
+<%= button_to posts_url, method: "get" do %>
+  View Feed
 <% end %>
+<%= button_to profile_index_url, method: "get" do %>
+  Profile 
+<% end %>
+
+<div class="new-post-container">
+  <%= form_for @post do |form| %>
+    <div>
+      <%= form.text_area :message , placeholder: "What's on your mind?", maxlength: 4000  %>
+    </div>
+    <div>
+      <%= form.submit "Submit", id: "post-submit" %>
+    </div>
+    <% end %>
+</div>
+</body>
