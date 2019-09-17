@@ -1,0 +1,61 @@
+#form-title {
+    text-align: center;
+}
+
+#clearance {
+    width: 20%;
+    margin-left: 40%;
+}
+
+.text-field {
+    text-align: center;
+}
+
+.password-field {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#password-input {
+    width: 100%;
+    height: 20px;
+    outline: none;
+    margin-top: 5px;
+}
+
+#email-input {
+    width: 100%;
+    height: 20px;
+    outline: none;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.submit-field {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.other-links {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#sign-up {
+    text-decoration: none;
+    color: blue;
+    float: left;
+}
+
+#new-password {
+    text-decoration: none;
+    color: blue;
+    float: right;
+}
+
+#submit-sign-in {
+    background: transparent;
+    border: none;
+    font-size: 1em;
+    border: 1px gray solid;
+}

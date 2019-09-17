@@ -1,22 +1,24 @@
 <%= form_for :session, url: session_url do |form| %>
   <div class="text-field">
     <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
+    <br>
+    <%= form.text_field :email, type: 'email', id: "email-input", placeholder: "your@email.here"%>
   </div>
 
   <div class="password-field">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <br>
+    <%= form.password_field :password, id: "password-input" %>
   </div>
 
   <div class="submit-field">
-    <%= form.submit %>
+    <%= form.submit id: "submit-sign-in" %>
   </div>
 
   <div class="other-links">
     <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
+      <%= link_to t(".sign_up"), sign_up_path, id: "sign-up" %>
     <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
+    <%= link_to t(".forgot_password"), new_password_path, id: "new-password" %>
   </div>
 <% end %>
