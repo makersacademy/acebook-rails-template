@@ -3,9 +3,23 @@
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <!-- </div> -->
-  <%= form.text_area :message, cols: 50, rows: 5 %>
+  <br>
+  <%= form.text_area :message, cols: 50, rows: 5, maxlength: @maximum_length%>
+
+  <%# <p>Current character count: <span id="char-count">0</span> / 4000</p> %>
   <!-- <div style="hight: 50px"> -->
   <%= form.submit "Submit" %>
   <!-- </div>
 </div> -->
 <% end %>
+
+<%# <script type="text/javascript">
+  $(document).ready(function() {
+    $('#char-count').html($('#counted').val().length);
+  });
+ 
+  $('#counted').keyup(function() {
+    $('#char-count').html($('#counted').val().replace(/\n/g, "\n\r").length);
+  });
+</script> %>
+

@@ -3,12 +3,12 @@
 <head>
     <div class="jumbotron text-center">
         <% if signed_in? %>
-
-                <button><%= link_to 'Posts', posts_path %></button>
-
-               <button> <%= link_to 'Add new post', new_post_path %></button>
+              <button> <%= link_to 'Posts', posts_path %> </button>
+              <button> <%= link_to 'Add new post', new_post_path %></button>
         <% else %>
-                <%= link_to 'Sign up', sign_up_path %>  
+                <button> <%= link_to 'Sign up', sign_up_path %> </button>
+                <button> <%= link_to 'Sign in', sign_in_path %> </button>
+                <% yield %>
         <%end%>
     </div>
 

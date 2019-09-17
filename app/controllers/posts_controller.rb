@@ -3,13 +3,18 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
+    # @maximum_length = Post.validators_on( :message ).first.options[:maximum]
   end
 
   def create
-    if current_user
+    # if current_user
+      if post_params[:message].length > 4000
+        flash[:error] = "Your post is too long."
+        redirect_to (new_post_path) and return
+      end
       Post.create(post_params)
       @post = current_user.posts.create(post_params)
-    end
+    # end
 
     redirect_to posts_url
   end

@@ -11,7 +11,7 @@ RSpec.feature 'Timeline', type: :feature do
 describe 'A User' do
   scenario 'Can edit post' do
     visit '/posts'
-    click_link 'add new post'
+    click_link 'Add new post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
     visit '/posts'
@@ -23,7 +23,7 @@ describe 'A User' do
 
   scenario 'A user Can delete post' do
     visit '/posts'
-    click_link 'add new post'
+    click_link 'Add new post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
     visit '/posts'
@@ -32,9 +32,9 @@ describe 'A User' do
   end
 end
 
-  scenario "A diffente user can't delete other's posts" do
+  scenario "A diffent user can't delete other's posts" do
     visit '/posts'
-    click_link 'add new post'
+    click_link 'Add new post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
     visit '/posts'
@@ -46,4 +46,27 @@ end
     expect(page).not_to have_button("Delete")
   end 
 
+  scenario "A diffent user can't edit other's posts" do
+    visit '/posts'
+    click_link 'Add new post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    visit '/posts'
+    sign_out
+    click_link 'Sign up'
+    sign_up_with('otherusername', 'othertest@mail.com', 'othertesting')
+    click_link 'Posts'
+    visit "/posts"
+    expect(page).not_to have_button("Edit")
+  end 
+
+    scenario 'can have the time the post was created ' do
+      visit '/posts'
+      click_link 'Add new post'
+      text = 'This is a new post'
+      fill_in 'Message', with: text
+      click_button 'Submit'
+      t = DateTime.now
+      expect(page).to have_text(t.strftime("Posted: %d/%m/%Y"))
+    end
 end
