@@ -28,6 +28,18 @@ RSpec.feature 'Visitor signs up' do
     expect_user_to_be_signed_out
   end
 
+  scenario "tries with invalid password 1" do
+    sign_up_with "valid@example.com", "12"
+    expect(current_path).to eq(sign_up_path)
+    expect(page).to have_content("Password must be between 6 - 10 characters")
+  end
+
+  scenario "tries with invalid password 2" do
+    sign_up_with "valid@example.com", "12345678910"
+    expect(current_path).to eq(sign_up_path)
+    expect(page).to have_content("Password must be between 6 - 10 characters")
+  end
+
   scenario 'sees a confirmation flash message that he has signed up' do
     sign_up_with 'valid@example.com', 'password'
     expect(page).to have_content 'You are now registered to Acebook! Welcome!'
@@ -35,4 +47,5 @@ RSpec.feature 'Visitor signs up' do
     click_link 'New post'
     expect(page).not_to have_content 'You are now registered to Acebook! Welcome!'
   end
+  
 end
