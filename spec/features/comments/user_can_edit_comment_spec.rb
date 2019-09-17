@@ -6,8 +6,8 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can edit comments and view them" do
     sign_in
     visit "/posts"
-    click_button "New Post"
-    fill_in "Message", with: "Hello, world!"
+    click_button "+"
+    fill_in "post[message]", with: "Hello, world!"
     click_button "Submit"
     fill_in "comment[body]", with: "This is a comment"
     click_button "Create Comment"
@@ -21,8 +21,8 @@ RSpec.feature "Timeline", type: :feature do
     travel_to Time.local(1994)
     sign_in
     visit "/posts"
-    click_button "New Post"
-    fill_in "Message", with: "Hello, world!"
+    click_button "+"
+    fill_in "post[message]", with: "Hello, world!"
     click_button "Submit"
     fill_in "comment[body]", with: "This is a comment"
     click_button "Create Comment"
@@ -37,8 +37,8 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can see a helpful message that the edit was successful" do
     sign_in
     visit "/posts"
-    click_button "New Post"
-    fill_in "Message", with: "Hello, world!"
+    click_button "+"
+    fill_in "post[message]", with: "Hello, world!"
     click_button "Submit"
     fill_in "comment[body]", with: "This is a comment"
     click_button "Create Comment"
