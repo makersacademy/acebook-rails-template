@@ -1,6 +1,24 @@
 require "rails_helper"
 
 RSpec.describe PostsController, type: :controller do
+
+
+  describe 'POST wall create' do
+    it 'redirects to user wall' do
+      user = sign_in
+      post :wall_create, params: {user_id: user.id, post: {message: "This is a wall post on my own wall"}}
+      expect(response).to redirect_to(user_posts_url)
+    end
+
+    it 'makes a new post' do
+      user = sign_in
+      post :wall_create, params: {user_id: user.id, post: {message: "This is a wall post on my own wall"}}
+      expect(Post.find_by(message: "This is a wall post on my own wall")).to be
+    end
+
+  end
+
+
   describe "GET /new " do
     it "responds with 200" do
       sign_in

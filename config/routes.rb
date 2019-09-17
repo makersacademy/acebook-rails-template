@@ -20,11 +20,13 @@ Rails.application.routes.draw do
     resources :comments, shallow: true
   end
   # root 'posts#index'
-  resources :profile
+  resources :profile, only: [:index]
 
   # get '/users/:user_id' => 'users#show'
 
   resources :users, only: [:show] do
+    post :posts, to: 'posts#wall_create'
+    # resources :posts, controller: 'wall_post', as: 'wall_post', only: [:create]
   end
 
   root 'application#index'
