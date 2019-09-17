@@ -1,0 +1,8 @@
+<h5 class="card-title">WALL:</h5>
+<ul class="list-group">
+    <% @posts.each do |post|%>
+        <li class="list-group-item list-group-item-dark">
+            <%=post.message%>
+        </li>
+        <%end%>
+</ul>

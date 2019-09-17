@@ -2,8 +2,15 @@
 
 class UsersController < Clearance::UsersController
 
+
+
+def wall
+  @posts = current_user.posts.all
+  @albums = ['1','2','3']
+end
+
   def show
-    @posts = current_user.posts.all
+    @posts = Posts.all
   end
   private
 
