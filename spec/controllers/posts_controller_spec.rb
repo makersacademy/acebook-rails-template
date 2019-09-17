@@ -7,6 +7,8 @@ RSpec.describe PostsController, type: :controller do
   describe 'GET /edit' do
     it 'render the edit post page' do
       post = FactoryBot.create(:post)
+      puts "user id of the post: #{post.user_id}"
+      puts "id of the post: #{post.id}"
       get :edit, params: { id: post.id }
       expect(response).to render_template(:edit)
     end
@@ -44,7 +46,9 @@ RSpec.describe PostsController, type: :controller do
       get :index
       expect(response).to have_http_status(200)
     end
+  end
 
+  describe 'GET /' do
     it 'renders the index page' do
       get :index
       expect(response).to render_template(:index)
