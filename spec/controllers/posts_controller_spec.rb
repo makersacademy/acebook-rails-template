@@ -24,7 +24,6 @@ RSpec.describe PostsController, type: :controller do
     end
 
   end
-  #
 
   describe "GET /new " do
     it "responds with 200" do

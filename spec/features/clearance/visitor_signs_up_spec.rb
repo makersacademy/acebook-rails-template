@@ -27,4 +27,16 @@ RSpec.feature "Visitor signs up" do
 
     expect_user_to_be_signed_out
   end
+
+  scenario "tries with invalid password 1" do
+    sign_up_with "valid@example.com", "12"
+    expect(current_path).to eq(sign_up_path)
+    expect(page).to have_content("Password must be between 6 - 10 characters")
+  end
+
+  scenario "tries with invalid password 2" do
+    sign_up_with "valid@example.com", "12345678910"
+    expect(current_path).to eq(sign_up_path)
+    expect(page).to have_content("Password must be between 6 - 10 characters")
+  end
 end
