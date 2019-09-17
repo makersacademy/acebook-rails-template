@@ -26,12 +26,13 @@
       <div id="page-title">
         Welcome to ConnectU
       </div>
-      <div id="page-name">
+      <div id="page-name-container">
         <% if signed_in? -%>
-        <%= current_user.email %>
+          <%= button_to profile_index_url, method: "get", id: "page-name" do %>
+            <%= current_user.email %>
+          <%  end %>
         <% end %>
       </div>
-    
     </div>
 
     <div id="flash">

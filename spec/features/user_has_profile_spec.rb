@@ -9,7 +9,7 @@ RSpec.feature "Profile", type: :feature do
   scenario "User can add post and view it on their profile" do
     sign_in
     visit "/profile"
-    click_on "New Post"
+    click_on "+"
     fill_in "post_message", with: "My new post"
     click_on "Submit"
     visit "/profile"

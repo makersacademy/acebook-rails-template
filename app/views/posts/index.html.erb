@@ -37,39 +37,41 @@
           <%= button_to 'Edit Post', edit_post_path(post), method: "get", id: "edit" %>
           <% end %>
         </div>
-        <%= form_with(model: [ post, Comment.new ], local: true) do |form| %>
+      </div>
+    </div>
+
+    <div id="post-message-container">
+      <div id="post-message"><%= post.message %></div>
+    </div>
+    <hr>
+    <div id="comment-container" >
+        <% post.comments.each do |comment| %>
+          <div>
+            <strong><%= comment.user.email %></strong>
+            <%= comment.body %>
+          </div>
+          <div id="comment-edit-button-container">
+
+            <% if ( Time.now - comment.created_at ) < 600 && comment.user_id == current_user.id %>
+              <%= button_to 'Edit Comment', edit_comment_path(comment), method: "get", id: "edit" %>
+            <% end %>
+          </div>
+
+           <div id="comment-delete-button-container">
+            <% if comment.user_id == current_user.id %>
+              <%=button_to 'Delete Comment', comment_path(comment), id: "delete", method: :delete %>
+            <% end %>
+          </div>
+          <% end %>
+             <%= form_with(model: [ post, Comment.new ], local: true) do |form| %>
           <p>
-            <%= form.label :body %><br>
-            <%= form.text_area :body %>
+            <%= form.text_area :body, id: "comment-text-area" %>
           </p>
           <p>
           <%= form.submit %>
           </p>
           <% end %>
-
-          <h2>Comments</h2>
-            <% post.comments.each do |comment| %>
-
-              <p>
-              <strong>Commenter:</strong>
-                <%= comment.user.email %>
-              </p>
-
-              <p>
-              <strong>Comment:</strong>
-              <%= comment.body %>
-              </p>
-              <% end %>
-
-
-
-        <div id="post-message-container">
-          <div id="post-message"><%= post.message %></div>
-        </div>
-
       </div>
-
-    </div>
   </div>
   <% end %>
 </body>
