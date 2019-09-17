@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   def create
     # if current_user
-      if post_params[:message].length > 4000
+      if post_params[:message].length > 100
         flash[:error] = "Your post is too long."
         redirect_to (new_post_path) and return
       end
