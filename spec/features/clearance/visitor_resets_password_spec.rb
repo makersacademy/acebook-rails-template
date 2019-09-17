@@ -1,7 +1,7 @@
-require "rails_helper"
-require "support/features/clearance_helpers"
+require 'rails_helper'
+require 'support/features/clearance_helpers'
 
-# RSpec.feature "Visitor resets password" do
+# RSpec.feature 'Visitor resets password' do
 #   before { ActionMailer::Base.deliveries.clear }
 #
 #   around do |example|
@@ -11,15 +11,15 @@ require "support/features/clearance_helpers"
 #     ActiveJob::Base.queue_adapter = original_adapter
 #   end
 #
-#   scenario "by navigating to the page" do
+#   scenario 'by navigating to the page' do
 #     visit sign_in_path
 #
-#     click_link I18n.t("sessions.form.forgot_password")
+#     click_link I18n.t('sessions.form.forgot_password')
 #
 #     expect(current_path).to eq new_password_path
 #   end
 #
-#   scenario "with valid email" do
+#   scenario 'with valid email' do
 #     pending
 #     user = user_with_reset_password
 #
@@ -27,8 +27,8 @@ require "support/features/clearance_helpers"
 #     expect_reset_notification_to_be_sent_to user
 #   end
 #
-#   scenario "with non-user account" do
-#     reset_password_for "unknown.email@example.com"
+#   scenario 'with non-user account' do
+#     reset_password_for 'unknown.email@example.com'
 #
 #     expect_page_to_display_change_password_message
 #     expect_mailer_to_have_no_deliveries
@@ -40,13 +40,13 @@ require "support/features/clearance_helpers"
 #     expect(user.confirmation_token).not_to be_blank
 #     expect_mailer_to_have_delivery(
 #       user.email,
-#       "password",
+#       'password',
 #       user.confirmation_token,
 #     )
 #   end
 #
 #   def expect_page_to_display_change_password_message
-#     expect(page).to have_content I18n.t("passwords.create.description")
+#     expect(page).to have_content I18n.t('passwords.create.description')
 #   end
 #
 #   def expect_mailer_to_have_delivery(recipient, subject, body)

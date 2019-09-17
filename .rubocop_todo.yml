@@ -114,10 +114,16 @@ Style/StringLiterals:
     - 'bin/yarn'
     - 'config/environments/production.rb'
     - 'config/puma.rb'
+    - 'config/routes.rb'
     - 'db/schema.rb'
     - 'spec/controllers/posts_controller_spec.rb'
     - 'spec/features/user_can_submit_posts_spec.rb'
     - 'spec/rails_helper.rb'
+    - 'spec/models/post_spec.rb'
+
+Style/WordArray:
+  Exclude:
+    - 'spec/models/post_spec.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -139,4 +145,9 @@ Style/SymbolArray:
 # Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
 Metrics/LineLength:
-  Max: 112
+  Max: 140
+  Exclude:
+    - 'spec/views/posts/index.html.erb_spec.rb'
+
+Metrics/BlockLength:
+  Max: 45
