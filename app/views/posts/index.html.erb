@@ -40,7 +40,7 @@
           <%= button_to 'Edit Post', edit_post_path(post), method: "get", id: "edit" %>
           <% end %>
         </div>
-        <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+        <%= form_with(model: [ post, Comment.new ], local: true) do |form| %>
           <p>
             <%= form.label :body %><br>
             <%= form.text_area :body %>
@@ -52,7 +52,7 @@
 
           <h2>Comments</h2>
             <% post.comments.each do |comment| %>
-            <% if comment.user %>
+
               <p>
               <strong>Commenter:</strong>
                 <%= comment.user.email %>
@@ -63,7 +63,7 @@
               <%= comment.body %>
               </p>
               <% end %>
-          <% end %>
+
 
 
         <div id="post-message-container">
