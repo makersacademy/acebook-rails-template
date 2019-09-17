@@ -42,6 +42,6 @@ RSpec.feature 'Timeline', type: :feature do
     click_link 'Add New Post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
-    expect(page).to have_content("Signed in as: username Message")
+    expect(page).to have_content('Signed in as: username Message')
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -33,6 +35,6 @@ gem 'factory_bot_rails'
 gem 'materialize', '0.4.5'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'bootstrap-sass','~> 3.2.0'
 gem 'autoprefixer-rails'
-gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'sprockets-rails', require: 'sprockets/railtie'

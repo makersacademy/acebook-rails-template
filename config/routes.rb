@@ -4,8 +4,6 @@
 # (domain-specific language) that tells Rails how to connect incoming requests to controllers and actions.
 
 Rails.application.routes.draw do
-
-
   resources :passwords, controller: 'clearance/passwords', only: %i[create new]
   resource :session, controller: 'clearance/sessions', only: [:create]
 
@@ -23,11 +21,8 @@ Rails.application.routes.draw do
   get '/sign_up' => 'clearance/users#new', as: 'sign_up'
   get 'welcome/index'
 
-
   root 'welcome#index'
   resources :posts
   resources :users,
-  path_names: {show: 'wall'}
-
-
+            path_names: { show: 'wall' }
 end
