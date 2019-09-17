@@ -1,8 +1,30 @@
 require 'rails_helper'
 
 RSpec.describe 'posts/index.html.erb', type: :view do
-  let(:post1) { double(:post, id: 1, message: '1st post', lines: ['1st post'], created_at: DateTime.now, updated_at: DateTime.now, user_id: 1) }
-  let(:post2) { double(:post, id: 2, message: '2nd post', lines: ['2nd post'], created_at: DateTime.now, updated_at: DateTime.now, user_id: 1) }
+  let(:post1) do
+    double(
+      :post,
+      id: 1,
+      message: '1st post',
+      lines: ['1st post'],
+      can_edit?: true,
+      created_at: DateTime.now,
+      updated_at: DateTime.now,
+      user_id: 1
+    )
+  end
+  let(:post2) do
+    double(
+      :post,
+      id: 2,
+      message: '2nd post',
+      lines: ['2nd post'],
+      can_edit?: true,
+      created_at: DateTime.now,
+      updated_at: DateTime.now,
+      user_id: 1
+    )
+  end
   it 'has a link to the new post page' do
     assign(:posts, [])
     render

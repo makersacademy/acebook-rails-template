@@ -4,15 +4,12 @@
   New post
 <% end %>
 
-<br><br>
-
 <% @posts.reverse_each do |post| %>
   <div class="post" id="post<%= post.id %>">
-  <% post.lines.each do | line | %>
-    <p><%= line %></p>
-  <% end %>
-
-
+    <% post.lines.each do | line | %>
+      <p><%= line %></p>
+    <% end %>
+    
     <p>Created At: <%= post.created_at %></p>
 
     <% if post.created_at != post.updated_at %>
@@ -20,10 +17,12 @@
     <% end %>
 
     <p>
-    <%= link_to 'Edit', edit_post_path(post) %>
+    <% if post.can_edit? %>
+      <%= link_to 'Edit', edit_post_path(post)%>
+    <% end %>
     <%= link_to 'Delete', post_path(post),
         method: :delete,
         data: { confirm: 'Are you sure?' } %>
+    </p>
   </div>
-  <br>
 <% end %>
