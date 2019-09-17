@@ -1,5 +1,10 @@
 
 <h1> Create a post here ! </h1>
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+
+<br><br>
 
 <% @posts.reverse_each do |post| %>
   <div class="post" id="post<%= post.id %>">
@@ -19,14 +24,6 @@
     <%= link_to 'Delete', post_path(post),
         method: :delete,
         data: { confirm: 'Are you sure?' } %>
-    </p>
   </div>
-<% end %>
-
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
+  <br>
 <% end %>

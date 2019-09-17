@@ -47,6 +47,7 @@ group :development, :test do
   gem 'simplecov-console'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
+  gem 'pry'
   gem 'rspec-html-matchers'
 end
 

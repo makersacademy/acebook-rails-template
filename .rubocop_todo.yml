@@ -151,3 +151,8 @@ Metrics/LineLength:
 
 Metrics/BlockLength:
   Max: 45
+  Exclude:
+    - 'spec/controllers/*'
+    - 'spec/models/*' 
+    - 'spec/features/posts/*' 
+    - 'spec/views/*' 

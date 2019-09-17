@@ -44,4 +44,22 @@ RSpec.feature 'Post', type: :feature do
     click_link 'New post'
     expect(page).not_to have_content 'You have successfully logged in.'
   end
+
+  scenario 'Posts can be edited' do
+    visit '/posts'
+    click_link 'New post'
+    fill_in 'Message', with: 'Hello world!'
+    click_button 'Submit'
+    expect(page).to have_content('Hello world!')
+    click_link 'Edit'
+    fill_in 'Message', with: 'Hello!'
+    click_button 'Submit'
+    expect(page).to have_content('Hello!')
+  end
+
+  scenario "User cannot delete other user's posts" do
+  end
+
+  scenario "User cannot edit other user's posts" do
+  end
 end
