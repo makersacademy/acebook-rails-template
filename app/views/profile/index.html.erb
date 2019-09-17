@@ -22,6 +22,7 @@ View Feed
     <div id="post-profile-picture-container">
       <div id="post-profile-picture"></div>
     </div>
+
     <div id="post-details-container">
       <div id="post-user-email"><%= post.user.email %></div>
       <div id="post-created-at"><%= post.get_time %></div>
@@ -39,9 +40,11 @@ View Feed
       </div>
     </div>
   </div>
+  
   <div id="post-message-container">
     <div id="post-message"><%= post.message %></div>
   </div>
+
 </div>
 <% end %>
 </body>
