@@ -10,6 +10,20 @@ class UsersController < Clearance::UsersController
     @posts = Posts.all
   end
 
+  def create
+      @user = user_from_params
+      if @user.password.length < 6
+        flash[:notice] = "Password needs to be over 6 characters"
+        redirect_to sign_up_url
+        return
+      end
+      if @user.save
+        sign_in @user
+        redirect_back_or url_after_create
+      end
+
+    end
+
   private
 
   def user_params

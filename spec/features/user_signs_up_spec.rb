@@ -4,7 +4,7 @@ require 'rails_helper'
 require 'clearance_helpers'
 
 RSpec.feature 'Log in/out', type: :feature do
-  
+
   scenario 'Can Sign Up' do
     visit '/sign_up'
     fill_in 'user_username', with: 'username'
@@ -13,6 +13,15 @@ RSpec.feature 'Log in/out', type: :feature do
     click_button 'Sign up'
     expect(page).to have_content('Signed in as:')
   end
+
+  scenario 'Password should have over 6 characters' do
+     visit '/sign_up'
+     fill_in 'user_username', with: 'username'
+     fill_in 'user_email', with: 'test@test.com'
+     fill_in 'user_password', with: 'oioi'
+     click_button 'Sign up'
+     expect(page).to have_content('Password needs to be over 6 characters')
+   end
 
   scenario 'Can Log In When Already Signed Up' do
     visit '/sign_up'
