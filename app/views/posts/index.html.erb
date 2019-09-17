@@ -62,7 +62,15 @@
               <strong>Comment:</strong>
               <%= comment.body %>
               </p>
+
+              <div id="comment-edit-button-container">
+
+                <% if ( Time.now - comment.created_at ) < 600 && comment.user_id == current_user.id %>
+                <%= button_to 'Edit Comment', edit_comment_path(comment), method: "get", id: "edit" %>
+                <% end %>
+              </div>
               <% end %>
+
 
 
 

@@ -16,6 +16,10 @@ class CommentsController < ApplicationController
     @email = @comment_owner.email
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
   private
 
   def comment_params
