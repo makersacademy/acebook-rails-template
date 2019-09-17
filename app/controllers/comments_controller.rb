@@ -45,6 +45,7 @@ class CommentsController < ApplicationController
       redirect_to posts_url
     else
       @comment.destroy
+      flash[:error] = "Delete successful"
       redirect_to posts_url
     end
   end
@@ -55,5 +56,5 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:user_id, :body)
   end
 
-  
+
 end
