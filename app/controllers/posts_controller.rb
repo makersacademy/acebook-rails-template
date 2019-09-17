@@ -18,8 +18,9 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    flash[:error] = "Post's cannot be edited after 10mins!" unless @post.can_edit?
   end
-  # 
+  #
   # def show
   #   @post = Post.find(params[:id])
   # end
