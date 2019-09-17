@@ -18,15 +18,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    flash[:error] = "Post's cannot be edited after 10mins!" unless @post.can_edit?
+    edit_timeout_error unless @post.can_edit?
   end
-  #
-  # def show
-  #   @post = Post.find(params[:id])
-  # end
 
   def update
     @post = Post.find(params[:id])
+    edit_timeout_error unless @post.can_edit?
     @post.update(post_params)
     redirect_to posts_path
   end
@@ -42,5 +39,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def edit_timeout_error
+    flash[:error] = "Post's cannot be edited after 10mins!"
+    redirect_to posts_path
   end
 end

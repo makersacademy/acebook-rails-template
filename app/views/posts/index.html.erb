@@ -4,38 +4,25 @@
   New post
 <% end %>
 
-<br><br>
-
 <% @posts.reverse_each do |post| %>
   <div class="post" id="post<%= post.id %>">
-  <% post.lines.each do | line | %>
-    <p><%= line %></p>
-  <% end %>
-<<<<<<< HEAD
-    <% time_diff = Time.now.utc - post.created_at  %>
-
-    <p>Created At: <%= post.created_at %></p>
-=======
->>>>>>> master
-
-
+    <% post.lines.each do | line | %>
+      <p><%= line %></p>
+    <% end %>
+    
     <p>Created At: <%= post.created_at %></p>
 
     <% if post.created_at != post.updated_at %>
       <p>Last Updated : <%= post.updated_at %></p>
     <% end %>
 
-<<<<<<< HEAD
-  <% if time_diff / 1.minute.round < 10  %>
-    <%= link_to "edit", edit_post_path(post) %>
-      <% end %>
-=======
     <p>
-    <%= link_to 'Edit', edit_post_path(post) %>
+    <% if post.can_edit? %>
+      <%= link_to 'Edit', edit_post_path(post)%>
+    <% end %>
     <%= link_to 'Delete', post_path(post),
         method: :delete,
         data: { confirm: 'Are you sure?' } %>
->>>>>>> master
+    </p>
   </div>
-  <br>
 <% end %>

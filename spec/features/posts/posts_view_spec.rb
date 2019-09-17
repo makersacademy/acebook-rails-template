@@ -72,8 +72,8 @@ RSpec.feature 'Post', type: :feature do
       click_button 'Submit'
       current_time_plus11 = Time.now + 660
       allow(Time).to receive(:now).and_return(current_time_plus11)
-      first('.post').click_link('edit')
-      fill_in 'Message', with: 'Edited, This has been edited'
+      page.reset!
+      expect(page).not_to have_link 'Edit'
     end
 
     scenario "User cannot edit other user's posts"
