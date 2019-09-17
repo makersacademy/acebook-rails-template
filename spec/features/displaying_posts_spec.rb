@@ -18,7 +18,7 @@ RSpec.feature "Displaying Posts", type: :feature do
     expect("Hello, this is my second post").to appear_before("Hello, this is my first post")
   end
 
-  scenario "Once logged in, users redirected to page that shows own posts only" do
+  xscenario "Once logged in, users redirected to page that shows own posts only" do
     sign_up
     click_link "New post"
     fill_in "Message", with: "Hello, this is User 1's post"
