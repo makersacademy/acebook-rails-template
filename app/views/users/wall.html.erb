@@ -1,8 +1,19 @@
-<h5 class="card-title">WALL:</h5>
-<ul class="list-group">
-    <% @posts.each do |post|%>
-        <li class="list-group-item list-group-item-dark">
-            <%=post.message%>
-        </li>
-        <%end%>
-</ul>
+<%= link_to 'See all posts', posts_path %>
+    <l1 style="padding: 20px"> </l1>
+    <div class=" text-center">
+        <h1>Your wall:</h1>
+        <p>
+            <br>
+            <br>
+            <br>
+            <br>
+    </div>
+    <ul class="list-group">
+        <% @posts.each do |post|%>
+            <li class="list-group-item list-group-item-dark text-center">
+                <%=post.message%>
+            </li>
+            <br>
+            <br>
+            <%end%>
+    </ul>
