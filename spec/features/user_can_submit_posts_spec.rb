@@ -10,7 +10,7 @@ RSpec.feature "Submitting Posts", type: :feature do
     expect(page).to have_content("Hello, world!")
   end
 
-  xscenario "Users only view own posts on initial page" do
+  scenario "Users only view own posts on initial page" do
     sign_up
     click_link "New post"
     fill_in "Message", with: "Hello, this is user 1"
