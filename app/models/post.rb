@@ -3,7 +3,6 @@ class Post < ApplicationRecord
 
   def lines
     puts message
-    message.split( "\r\n" )
+    message.split("\r\n")
   end
-
 end
