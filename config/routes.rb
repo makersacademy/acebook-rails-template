@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :passwords, controller: 'clearance/passwords', only: %i[create new]
   resource :session, controller: 'clearance/sessions', only: [:create]
 
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: 'users#wall'
+  end
   resources :users, only: [:create] do
     resource :password,
              controller: 'clearance/passwords',
@@ -20,4 +23,6 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   resources :posts
+  resources :users,
+            path_names: { show: 'wall' }
 end

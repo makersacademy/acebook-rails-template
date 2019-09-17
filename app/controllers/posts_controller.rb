@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post =  Post.find(params[:id])
+    @post = Post.find(params[:id])
     @user_id_from_post = @post.user_id
     if @user_id_from_post != current_user.id
       redirect_to posts_path, notice: 'Thats not your post!'
