@@ -26,3 +26,5 @@
 
 /vendor/bundle/
 /db/schema.rb
+
+coverage/*

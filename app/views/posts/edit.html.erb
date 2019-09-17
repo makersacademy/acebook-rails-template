@@ -15,16 +15,15 @@
       </ul>
     </div>
   <% end %>
- 
- 
-  <div class="jumbotron text-center">
+
+
     <%= form.label :message %><br>
     <%= form.text_area :message, cols: 50, rows: 10 %>
-  </div>
- 
-  <div class="text-center">
-    <%= form.submit %>
-  </div>
+
+  <p>
+    <%= form.submit "Update Post" %>
+  </p>
+
  
 <% end %>
 <p>
