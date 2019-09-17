@@ -1,20 +1,17 @@
-<%= stylesheet_link_tag "profile" %>
 
-<body>
-  <div id="page-header">
+<%= stylesheet_link_tag "posts" %>
+
+<div class="new-post-container">
+  <%= form_for @post do |form| %>
     <div>
-      Welcome to ConnectU
+      <%= form.text_area :message , placeholder: "What's on your mind?", maxlength: 4000, id: "message" %>
     </div>
-  </div>
+    <div>
+      <%= form.submit "Submit", id: "post-submit" %>
+    </div>
+    <% end %>
+</div>
 
-  Hi, <%= current_user.email %>!
-
-  <%= button_to new_post_path, method: "get" do %>
-  New Post
-  <% end %>
-  <%= button_to profile_index_url, method: "get" do %>
-  Profile
-  <% end %>
 
   <% @posts.each do |post| %>
 

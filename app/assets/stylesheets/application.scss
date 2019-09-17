@@ -1,0 +1,74 @@
+// Place all the styles related to the Profile controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background-color: #eeeff4;
+    margin: 0 auto;
+}
+
+#sign-out-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1em;
+    float: right;
+    outline: none;
+    height: 40px;
+}
+
+#sign-in-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1em;
+    float: right;
+    outline: none;
+    height: 40px;
+}
+
+#new-post-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2em;
+    float: left;
+    outline: none;
+    height: 40px;
+    margin-top: -2px;
+    width: 40px;
+}
+
+#view-feed-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2em;
+    float: left;
+    outline: none;
+    height: 40px;
+    width: 40px;
+    margin-top: -2px;
+}
+
+#page-header {
+    background-color: #3b5999; 
+    height: 40px; 
+    color: white; 
+    font-weight: bold; 
+    text-align: center; 
+    width: 100%;
+}
+
+#page-name {
+    height: 100%;
+    font-size: 1em;
+    float: left;
+    margin-left: 5%;
+}
+#page-title {
+    height: 100%;
+    font-size: 1.5em;
+    float: left;
+    padding-left: 40%;
+}
