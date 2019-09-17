@@ -21,3 +21,10 @@
 /yarn-error.log
 
 .byebug_history
+
+/Gemfile.lock
+
+/vendor/bundle/
+/db/schema.rb
+
+coverage/*

@@ -1,7 +1,35 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<div class="container">
+<table style="text-align: center" class="table">
+    <tr class="jumbotron text-center">
+        <th style="text-align: center">AceBook Wall</th>
+        <th></th>
+        <th colspan=“2”></th>
+    </tr>
+    <% @posts.reverse.each do |post| %>
+        <tr>
+            <td>
+                <%= simple_format(post.message) %>
+                <p>Posted: <%= post.created_at.strftime("%d/%m/%Y") %> </p>
+            </td>
+            <td >
+                <% if current_user.id == post.user_id  %>
+                <%= link_to 'Edit', edit_post_path(post) %>
+            </td>
+            <td > 
+                <%= link_to 'Delete', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </td>
+        </tr>
+        <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+            <button> <%= link_to new_post_path do %>
+                Add new post </button>
+
+                <% end %>
+                    <td class="jumbotron text-center">
+                        <%= link_to 'Back', root_path %>
+                    </td>
+</table>
+</div>

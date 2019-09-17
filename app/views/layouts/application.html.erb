@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all' %>
+            <%= javascript_include_tag 'application' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+    <div>
+
+        <div>
+        <% if signed_in? %>
+            <p class="text-muted" >
+            Signed in as:
+            <%= current_user.username.capitalize %>
+            </p> 
+                <%= button_to 'Sign out', sign_out_path, method: :delete, data: { confirm: 'Are you sure?' }%>
+                     <% else %>
+                    
+                     <div class="jumbotron text-center">
+                         <div>
+                            <% end %>
+
+                            <div id="flash">
+                                <% flash.each do |key, value| %>
+                                    <div class="flash <%= key %>">
+                                        <%= value %>
+                                    </div>
+                                    <% end %>
+                            </div>
+                            </div>
+                            <br>
+                            <%= yield %>
+    </div>
+</body>
+
 </html>
