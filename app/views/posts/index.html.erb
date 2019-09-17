@@ -1,3 +1,4 @@
+
 <h1> Create a post here ! </h1>
 <%= link_to new_post_path do %>
   New post
@@ -7,16 +8,18 @@
 
 <% @posts.reverse_each do |post| %>
   <div class="post" id="post<%= post.id %>">
-    <% post.message.split("\n").each_with_index do |line, index| %>
-      <p><%= line %></p>
-    <% end %>
+  <% post.lines.each do | line | %>
+    <p><%= line %></p>
+  <% end %>
 
-    <p>Created At: <%= post.created_at.strftime("%d %b - %I:%M %p") %></p>
+
+    <p>Created At: <%= post.created_at %></p>
 
     <% if post.created_at != post.updated_at %>
-      <p>Last Updated : <%= post.updated_at.strftime("%d %b - %I:%M %p") %></p>
+      <p>Last Updated : <%= post.updated_at %></p>
     <% end %>
 
+    <p>
     <%= link_to 'Edit', edit_post_path(post) %>
     <%= link_to 'Delete', post_path(post),
         method: :delete,

@@ -1,21 +1,26 @@
 class PostsController < ApplicationController
   before_action :require_login
 
-  def new
-  end
+  # def new
+  # end
 
   def create
-    message = post_params["message"]
+    message = post_params['message']
     user_id = current_user.id
     @post = Post.create(message: message, user_id: user_id)
     redirect_to posts_url
   end
 
   def index
-    @posts = Post.all
+    @user = User.find(current_user.id)
+    @posts = @user.posts
   end
 
   def edit
+    @post = Post.find(params[:id])
+  end
+
+  def show
     @post = Post.find(params[:id])
   end
 
@@ -27,14 +32,9 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    @post.destroy
 
-    if @post.user_id == current_user.id
-      @post.destroy
-      
-      redirect_to posts_path
-    else
-      deny_access(flash_message = 'YOU DONT OWN THIS')
-    end
+    redirect_to posts_path
   end
 
   private
