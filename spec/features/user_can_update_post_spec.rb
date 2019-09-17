@@ -5,8 +5,8 @@ RSpec.feature 'Timeline', type: :feature do
     # TODO: add login helper method
     sign_in
     visit '/posts'
-    click_button 'New Post'
-    fill_in 'Message', with: 'Hello, world!'
+    click_button '+'
+    fill_in 'post[message]', with: 'Hello, world!'
     click_button 'Submit'
     click_button 'Edit Post'
     fill_in 'Message', with: 'Hello, Dream world!'

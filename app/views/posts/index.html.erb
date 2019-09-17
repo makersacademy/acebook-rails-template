@@ -3,7 +3,7 @@
 <div class="new-post-container">
   <%= form_for @post do |form| %>
     <div>
-      <%= form.text_area :message , placeholder: "What's on your mind?", maxlength: 4000  %>
+      <%= form.text_area :message , placeholder: "What's on your mind?", maxlength: 4000, id: "message" %>
     </div>
     <div>
       <%= form.submit "Submit", id: "post-submit" %>

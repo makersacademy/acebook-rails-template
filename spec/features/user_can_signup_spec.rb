@@ -17,16 +17,10 @@ RSpec.feature 'Log in/out', type: :feature do
   end
 
   scenario 'Can Log In When Already Signed Up' do
-    visit '/sign_up'
-    fill_in 'user_email', with: 'test@test.com'
-    fill_in 'user_password', with: 'password'
-    click_button 'Sign up'
+    sign_in
     click_button 'Sign out'
-    visit '/sign_in'
-    fill_in 'session_email', with: 'test@test.com'
-    fill_in 'session_password', with: 'password'
-    click_button 'Sign in'
-    expect(page).to have_content('Hello')
+    user = sign_in
+    expect(page).to have_content(user.email)
   end
 
   scenario 'Can request password reset email' do
@@ -37,11 +31,8 @@ RSpec.feature 'Log in/out', type: :feature do
   end
 
   scenario 'Can Log Out when Logged In' do
-    visit '/sign_up'
-    fill_in 'user_email', with: 'test@test.com'
-    fill_in 'user_password', with: 'password'
-    click_button 'Sign up'
+    sign_in
     click_button 'Sign out'
-    expect(page).to have_content('Sign in')
+    expect(page).to have_button('Sign in')
   end
 end

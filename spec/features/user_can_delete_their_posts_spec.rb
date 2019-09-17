@@ -5,7 +5,7 @@ RSpec.feature "Delete posts", type: :feature do
     sign_in
 
     visit("/posts")
-    click_button "New Post"
+    click_button "+"
     fill_in "post_message", with: "My new post"
     click_on "Submit"
     click_button "delete"
@@ -16,7 +16,7 @@ RSpec.feature "Delete posts", type: :feature do
   scenario "A user cannot delete other peoples posts" do
     sign_in
     visit("/posts")
-    click_on "New Post"
+    click_on "+"
     fill_in "post_message", with: "My new post"
     click_on "Submit"
     sign_out
