@@ -43,7 +43,6 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
 
     config.include RSpecHtmlMatchers
-
   end
 
   # rspec-mocks config goes here. You can use an alternate test double
