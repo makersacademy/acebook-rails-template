@@ -6,15 +6,26 @@ RSpec.describe PostsController, type: :controller do
   describe 'POST wall create' do
     it 'redirects to user wall' do
       user = sign_in
-      post :wall_create, params: {user_id: user.id, post: {message: "This is a wall post on my own wall"}}
+      post(:wall_create, params: {user_id: user.id, post: {message: "This is a wall post on my own wall"}})
       expect(response).to redirect_to(user_posts_url)
     end
 
     it 'makes a new post' do
       user = sign_in
-      post :wall_create, params: {user_id: user.id, post: {message: "This is a wall post on my own wall"}}
+      post(:wall_create, params: {user_id: user.id, post: {message: "This is a wall post on my own wall"}})
       expect(Post.find_by(message: "This is a wall post on my own wall")).to be
     end
+
+    it 'makes a new post on a different user wall' do
+      user0 = sign_in
+      sign_out
+      user1 = sign_in
+      post(:wall_create, params: {user_id: user0.id, post: {message: "This is a wall post on a diff wall"}})
+      post_new = Post.find_by(message: "This is a wall post on a diff wall")
+      expect(post_new.user_id).to eq(user1.id)
+      expect(post_new.to_user_id).to eq(user0.id)
+    end
+
 
   end
 
