@@ -10,10 +10,8 @@
     </div>
     <ul class="list-group">
         <% @posts.each do |post|%>
-            <li class="list-group-item list-group-item-dark text-center">
+            <li class="list-group-item list-group-item-dark text-center" style="padding: 20px; max-width: 50vw; margin: 0 auto">
                 <%=post.message%>
             </li>
-            <br>
-            <br>
             <%end%>
     </ul>
