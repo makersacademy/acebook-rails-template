@@ -55,7 +55,7 @@ jobs:
 
       - run:
           name: Setup Database
-          command: bundle exec rake db:create 
+          command: bundle exec rake db:create
 
       - run:
           name: database migration
@@ -64,11 +64,11 @@ jobs:
       - run:
           name: run schema
           command: bundle exec rake db:schema:load
-        
+
       - run:
           name: Run tests
           command: bundle exec rspec
 
-      # - run:
-      #     name: run Rubocop
-      #     command: bundle exec rubocop
+      - run:
+          name: run Rubocop
+          command: bundle exec rubocop
