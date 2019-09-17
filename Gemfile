@@ -11,7 +11,7 @@ gem 'clearance'
 gem 'jbuilder', '~> 2.5'
 gem 'pg'
 gem 'puma', '~> 3.7'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.2.0'
 gem 'rails-controller-testing'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
