@@ -15,10 +15,19 @@ class UsersController < Clearance::UsersController
 
   # protected
   def url_after_create
-    "/profile"
+    '/profile'
   end
 
   def show
-      @posts = Post.where(:user_id => params[:user_id]).order("created_at DESC")
+    unless User.exists?(params[:id])
+      flash[:error] = 'That user does not exist'
+      redirect_to posts_url
+      # redirect_back && return
+    end
+
+    @posts = Post.where(
+      "(user_id = '#{params[:id]}' and to_user_id is null) or to_user_id = '#{params[:id]}'"
+    ).order('created_at DESC')
+    @wall_post = Post.new
   end
 end

@@ -1,0 +1,10 @@
+<div class="new-post-container">
+  <%= form_for(@wall_post, url: user_posts_path(params[:id]),method: :post ) do |form| %>
+  <div>
+    <%= form.text_area :message , placeholder: "What's on your mind?", maxlength: 4000, id: "message" %>
+  </div>
+  <div>
+    <%= form.submit "Submit", id: "post-submit" %>
+  </div>
+  <% end %>
+</div>
