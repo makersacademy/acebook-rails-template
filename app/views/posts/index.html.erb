@@ -37,6 +37,7 @@
           <%= button_to 'Edit Post', edit_post_path(post), method: "get", id: "edit" %>
           <% end %>
         </div>
+<<<<<<< HEAD
         <%= form_with(model: [ post, Comment.new ], local: true) do |form| %>
           <p>
             <%= form.label :body %><br>
@@ -79,9 +80,32 @@
           <div id="post-message"><%= post.message %></div>
         </div>
 
+=======
+>>>>>>> d41be76f81318ce2575617e0c11b952a3cf487b7
       </div>
-
     </div>
+
+    <div id="post-message-container">
+      <div id="post-message"><%= post.message %></div>
+    </div>
+    <hr>
+    <div id="comment-container" >
+        <% post.comments.each do |comment| %>
+          <div>
+            <strong><%= comment.user.email %></strong>
+            <%= comment.body %>
+          </div>
+          <% end %>
+
+          <%= form_with(model: [ post, Comment.new ], local: true) do |form| %>
+            <p>
+              <%= form.text_area :body, id: "comment-text-area" %>
+            </p>
+            <p>
+              <%= form.submit %>
+            </p>
+          <% end %>
+      </div>
   </div>
   <% end %>
 </body>

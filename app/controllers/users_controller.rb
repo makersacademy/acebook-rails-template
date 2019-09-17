@@ -9,7 +9,7 @@ class UsersController < Clearance::UsersController
       redirect_back_or url_after_create
     else
       flash[:error] = "Unable to create account"
-      render template: "users/new"
+      redirect_to sign_up_path
     end
   end
 

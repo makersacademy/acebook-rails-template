@@ -26,7 +26,7 @@ RSpec.feature 'Timeline', type: :feature do
     click_button 'Submit'
     fill_in 'comment[body]', with: 'This is a comment'
     click_button 'Create Comment'
-    expect(page).to have_content('Commenter: test@test.com')
+    expect(page).to have_content('test@test.com')
   end
 
 

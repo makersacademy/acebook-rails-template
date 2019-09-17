@@ -1,6 +1,14 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message, maxlength: 4000 %>
+<%= stylesheet_link_tag "posts" %>
 
-  <%= form.submit "Submit" %>
-<% end %>
+
+<div class="new-post-container">
+  <%= form_for @post do |form| %>
+    <div>
+      <%= form.text_area :message , placeholder: "What's on your mind?", maxlength: 4000  %>
+    </div>
+    <div>
+      <%= form.submit "Submit", id: "post-submit" %>
+    </div>
+    <% end %>
+</div>
+</body>

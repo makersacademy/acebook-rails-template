@@ -35,7 +35,7 @@ class PostsController < ApplicationController
     if Time.now - @post.created_at > 600
       flash[:error] = "You can't edit your post after 10 mins foooool, gotta delete it mate"
     else
-      flash[:error] = "Cannot update post!"
+      flash[:error] = "Post updated!"
       #redirects and produces flash error
     end
     redirect_to posts_url
