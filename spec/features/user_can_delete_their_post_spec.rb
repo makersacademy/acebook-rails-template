@@ -41,7 +41,7 @@ end
     sign_out
     click_link 'Sign up'
     sign_up_with('otherusername', 'othertest@mail.com', 'othertesting')
-    click_link 'Posts'
+    click_link 'See all posts'
     visit "/posts"
     expect(page).not_to have_button("Delete")
   end 
@@ -55,7 +55,7 @@ end
     sign_out
     click_link 'Sign up'
     sign_up_with('otherusername', 'othertest@mail.com', 'othertesting')
-    click_link 'Posts'
+    click_link 'See all posts'
     visit "/posts"
     expect(page).not_to have_button("Edit")
   end 
