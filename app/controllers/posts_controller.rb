@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   end
 
   def delete
-    puts params
     @post = Post.find(params[:format])
     @post.delete
     redirect_to posts_url
