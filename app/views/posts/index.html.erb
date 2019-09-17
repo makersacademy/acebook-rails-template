@@ -8,7 +8,6 @@
     <% time_diff = Time.now.utc - post.created_at  %>
 
     <p>Created At: <%= post.created_at %></p>
-    <p> <%= time_diff / 1.minute.round %> </p>
 
   <% if post.created_at != post.updated_at %>
     <p>Last Updated : <%= post.updated_at %></p>
