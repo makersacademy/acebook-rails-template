@@ -15,10 +15,10 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = @current_user.posts.order("created_at DESC")
+    @posts = Post.all.order("created_at DESC")
     @user = User.all
   end
-
+  
   def edit
     @post = Post.find(params[:id])
   end
