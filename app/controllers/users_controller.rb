@@ -19,8 +19,14 @@ class UsersController < Clearance::UsersController
   end
 
   def show
+    unless User.exists?(params[:id])
+      flash[:error] = 'That user does not exist'
+      redirect_to posts_url
+      # redirect_back && return
+    end
+
     @posts = Post.where(
-      "user_id = '#{params[:id]}' or to_user_id = '#{params[:id]}'"
+      "(user_id = '#{params[:id]}' and to_user_id is null) or to_user_id = '#{params[:id]}'"
     ).order('created_at DESC')
     @wall_post = Post.new
   end
