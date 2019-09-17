@@ -1,0 +1,31 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="card-panel light-blue darken-4">
+
+        <h2 class="white-text">Log in</h2>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field ">
+            <%= f.label :email, class: "white-text" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "white-text validate" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password, class: "white-text"  %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class: "white-text" %>
+          </div>
+
+
+          <div class="actions">
+            <%= f.submit "Log in", class: "btn waves-effect waves-light white" %>
+          </div>
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -9,6 +9,22 @@
   </head>
 
   <body>
+    <nav>
+      <div class="nav-wrapper light-blue darken-4">
+        <a href="#" class="brand-logo right">
+          <%= image_tag ("bookface_white_bg"), :class => "header-logo" %>
+        </a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <%= render 'layouts/navbar_menu' %>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <p class="notice center-align light-blue-text text-darken-4"><%= notice %></p>
+      <p class="alert center-align light-blue-text text-darken-4"><%= alert %></p>
+    </div>
+
     <%= yield %>
   </body>
 </html>
