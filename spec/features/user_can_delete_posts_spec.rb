@@ -1,12 +1,8 @@
 require "rails_helper"
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Deleting Posts", type: :feature do
   scenario "Delete posts link exists" do
-    visit "/users/sign_up"
-    fill_in "user[email]", with: "test@gmail.com"
-    fill_in "user[password]", with: "123456"
-    fill_in "user[password_confirmation]", with: "123456"
-    click_button "Sign up"
+    sign_up
     click_link "New post"
     fill_in "Message", with: "Hello, this is message 1"
     click_button "Submit"
@@ -17,11 +13,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Deleting posts removes them from the feed" do
-    visit "/users/sign_up"
-    fill_in "user[email]", with: "test@gmail.com"
-    fill_in "user[password]", with: "123456"
-    fill_in "user[password_confirmation]", with: "123456"
-    click_button "Sign up"
+    sign_up
     click_link "New post"
     fill_in "Message", with: "Hello, this is message 1"
     click_button "Submit"
