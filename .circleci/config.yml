@@ -75,7 +75,7 @@ jobs:
 
       - run:
           name: notify codeclimate of pending report
-          command: cc-test-reporter before-build
+          command: before-build
 
       - run:
           name: Run tests
@@ -83,7 +83,7 @@ jobs:
 
       - run:
           name: close codeclimate report
-          command: cc-test-reporter after-build
+          command: after-build
 
       - run:
           name: run Rubocop
