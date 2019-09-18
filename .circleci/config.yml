@@ -74,17 +74,12 @@ jobs:
             chmod +x ./cc-test-reporter
 
       - run:
-          name: notify codeclimate of pending report
-          command: before-build
-
-      - run:
           name: Run tests
-          command: bundle exec rspec
-
-      - run:
-          name: close codeclimate report
-          command: after-build
-
+          command: | 
+            ./cc-test-reporter before-build
+            bundle exec rspec
+            ./cc-test-reporter after-build
+            
       - run:
           name: run Rubocop
           command: bundle exec rubocop
