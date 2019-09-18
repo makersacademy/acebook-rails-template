@@ -5,7 +5,11 @@ class UsersController < Clearance::UsersController
     if password_is_invalid?
       wrong_password_error
     elsif username_is_invalid?
-      wrong_username_error
+      username_length_error
+    elsif username_unique
+      username_unqiue_error
+    elsif email_unique
+      email_unqiue_error
     elsif @user.save
       login_and_welcome
     else
@@ -27,6 +31,15 @@ class UsersController < Clearance::UsersController
   end
 end
 
+  def username_unique
+    User.exists?(username: @user.username )
+  end
+
+  def email_unique
+    User.exists?(email: @user.email )
+  end
+
+
   def username_is_invalid?
     @user.username.length < 3 
   end
@@ -40,8 +53,18 @@ end
     redirect_to sign_up_url
   end
 
-  def wrong_username_error
+  def username_length_error
     flash[:notice] = 'Username must be at least 3 characters'
+    redirect_to sign_up_url
+  end
+
+  def username_unqiue_error
+    flash[:notice] = 'Username taken'
+    redirect_to sign_up_url
+  end
+
+  def email_unqiue_error
+    flash[:notice] = 'Email already exists'
     redirect_to sign_up_url
   end
 
