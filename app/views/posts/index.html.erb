@@ -9,11 +9,11 @@
             <%@user = User.find(post.user_id) %>
                 <tr>
                     <td>
-                        <%= simple_format(post.message) %>
+                        <%= simple_format(post.message.gsub('<', '< ') ) %>
                             <div>Posted:
 
                                 <%= post.created_at.strftime("%d/%m/%Y") %>
-                                     <div>
+                                    <div>
                                         <%= link_to @user.username, user_path(post.user_id)%>
                                             <%= link_to user_path(post.user_id) do %>
                                                 <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
