@@ -16,3 +16,19 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+.home_button {
+    position: absolute;
+    top: 15px;
+    right: 150px;
+}
+
+.text-muted {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    .username {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
