@@ -1,6 +1,7 @@
 class UserController < ApplicationController
   def index
-    @posts = current_user.posts.order("created_at DESC")
+    @user_class = User
     @user = User.find(params[:id])
+    @posts = @user.posts.order("created_at DESC")
   end
 end

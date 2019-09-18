@@ -8,20 +8,23 @@
   <br>
   <% @posts.each do |post| %>
   <div class="card">
-  <div class="card-body">
-    <%= simple_format(post.message, class: 'card-text') %>
-    <p>Created at: <%= post.created_at.strftime("%b %-d %Y, %H:%M") %></p>
-    <% if post.user_id == current_user.id %>  
-      <%= link_to 'Delete', posts_path(post), method: :delete, class: 'btn btn-primary' %> 
-    <% end %>
-    <% if Time.now <= post.created_at + 600 && post.user_id == current_user.id %>  
-      <%= link_to 'posts/' + post.id.to_s, class: 'btn btn-primary' do %>
-        Update
+    <div class="card-body">
+      <%= link_to user_path(post.user_id) do %>
+        <%= @user_class.find(post.user_id).email %>
+       <% end %>
+      <%= simple_format(post.message, class: 'card-text') %>
+      <p>Created at: <%= post.created_at.strftime("%b %-d %Y, %H:%M") %></p>
+      <% if post.user_id == current_user.id %>  
+        <%= link_to 'Delete', posts_path(post), method: :delete, class: 'btn btn-primary' %> 
       <% end %>
-    <% end %>
+      <% if Time.now <= post.created_at + 600 && post.user_id == current_user.id %>  
+        <%= link_to 'posts/' + post.id.to_s, class: 'btn btn-primary' do %>
+          Update
+        <% end %>
+      <% end %>
+      </div>
     </div>
-  </div>
-  <% end %>
+    <% end %>
 
   <%= link_to new_user_post_path(current_user.id) do %>
     New post
