@@ -4,7 +4,7 @@ class UsersController < Clearance::UsersController
   def wall
     @posts = current_user.posts.all
     @albums = %w[1 2 3]
-    
+
   end
 
   def update
@@ -14,7 +14,7 @@ class UsersController < Clearance::UsersController
   end
 
   def show
-    @posts = Posts.all
+    @user = User.find(params[:id])
   end
 
   def create
