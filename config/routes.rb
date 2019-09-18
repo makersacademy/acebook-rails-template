@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  # following routes are added for wall
+  get 'users/:user_id/wall' => 'users#wallindex', :as => :wallindex
+  #
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "sessions", only: [:create]
   resources :users, controller: "users", only: [:create] do
@@ -18,6 +22,5 @@ Rails.application.routes.draw do
 
   get 'posts/index'
   post 'users/create'
-
-  root 'posts#index'
+  root 'users#wallindex'
 end

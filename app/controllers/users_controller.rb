@@ -11,6 +11,12 @@ class UsersController < Clearance::UsersController
     end
 
     if @user.save
+
+      #create a wall instance for this user
+      @user.create_wall!
+      puts "DEBUG THIS PLACE IS VISITED"
+
+
       sign_in @user
       redirect_back_or url_after_create
     else
@@ -18,6 +24,13 @@ class UsersController < Clearance::UsersController
     end
   end
 
+  before_action :require_login
 
+  # display all posts belong to a wall
+  def wallindex
+    @user = User.find(current_user.id)
+    @wall = @user.wall
+    @posts = @wall.posts
+  end
 
 end

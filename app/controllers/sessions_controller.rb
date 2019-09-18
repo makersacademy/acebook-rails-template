@@ -14,6 +14,8 @@ class SessionsController < Clearance::SessionsController
     end
   end
 
-
+  # def url_after_create
+  #   "user#wallindex"
+  # end
 
 end
