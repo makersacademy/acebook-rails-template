@@ -8,6 +8,7 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: root
           RAILS_ENV: test
+          CC_TEST_REPORTER_ID: 0680bac98dcfb4576899d261630560de30fe55d58c3a36859766c4c0bb5a3b6c
 
       - image: circleci/postgres:9.6.2-alpine
         environment:
@@ -45,10 +46,7 @@ jobs:
           key: acebook-derailed-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-      # - run:
-      #     name: become root
-      #     command:  "sudo  -i"
-
+      
       # - run: dockerize -wait tcp://localhost:5432 -timeout 1m
 
       # - run: cp .sample.env .env
@@ -66,9 +64,18 @@ jobs:
           command: bundle exec rake db:schema:load
 
       - run:
-          name: Run tests
-          command: bundle exec rspec
+          name: Setup Code Climate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
 
+      - run:
+          name: Run tests
+          command: | 
+            ./cc-test-reporter before-build
+            bundle exec rspec
+            ./cc-test-reporter after-build
+            
       - run:
           name: run Rubocop
           command: bundle exec rubocop
