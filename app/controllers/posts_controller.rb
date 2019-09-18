@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @user_class = User
     @posts = Post.all.order("created_at DESC")
     @user = User.all
   end
