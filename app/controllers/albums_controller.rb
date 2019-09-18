@@ -1,7 +1,11 @@
 class AlbumsController < ApplicationController
 
   def show
+
     @album = Album.find(params[:id])
+    p params
+    p @album
+    @user = User.find(@album.user_id)
   end
 
   def create
@@ -31,6 +35,23 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     @album.destroy
     redirect_to albums_path
+  end
+
+  def update
+    def update
+      @album = Album.find(params[:id])
+      @user_id_from_album = @album.user_id
+      if @user_id_from_album != current_user.id
+        redirect_to albums_path, notice: 'Thats not your album!'
+      else
+        @album = current_user.albums.find(params[:id])
+        if @album.update(album_params)
+          redirect_to albums_path
+        else
+          render 'edit'
+        end
+      end
+    end
   end
 
   private

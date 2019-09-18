@@ -1,0 +1,33 @@
+<h1 class="page-header text-center">Edit Album</h1>
+
+<%= form_with(model: @album, local: true, format: :text) do |form| %>
+
+    <% if @album.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:
+            </h2>
+            <ul>
+                <% @album.errors.full_messages.each do |msg| %>
+                    <li>
+                        <%= msg %>
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
+        <% end %>
+
+
+            <%= form.label :title %><br>
+                <%= form.text_area :title %>
+
+                    <p>
+                        <%= form.submit "Update Album" %>
+                    </p>
+                    <% end %>
+                        <p>
+                        </p>
+
+                        <div class="page-footer text-center">
+                            <%= link_to 'Back', albums_path %>
+                        </div>
