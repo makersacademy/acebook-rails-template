@@ -8,6 +8,9 @@
   <br>
   <% @posts.each do |post| %>
   <div>
+    <%= link_to user_path(post.user_id) do %>
+      <%= @user_class.find(post.user_id).email %>
+    <% end %>
     <p><%= simple_format(post.message) %></p>
     <p>Created at: <%= post.created_at.strftime("%b %-d %Y, %H:%M") %></p>
     <% if post.user_id == current_user.id %>  
