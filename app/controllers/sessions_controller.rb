@@ -14,12 +14,7 @@ class SessionsController < Clearance::SessionsController
     end
   end
 
-  # def url_for_signed_in_users
-  #   'wall#index'
-  # end
-
   def url_after_create
-    puts "DEBUG URL_AFTER_CREATE #{user_wall_path(@user)}"
     user_wall_path(@user)
   end
 

@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :require_login
 
   def new
+    session[:return_to] = request.referer
   end
 
   def create
@@ -9,7 +10,8 @@ class PostsController < ApplicationController
     user_id = current_user.id
     wall_id = current_user.wall.id
     @post = Post.create(message: message, user_id: user_id, wall_id: wall_id)
-    redirect_to posts_url
+    # redirect_to posts_url
+    redirect_to session.delete(:return_to)
   end
 
   def index
@@ -18,19 +20,21 @@ class PostsController < ApplicationController
   end
 
   def edit
+    session[:return_to] = request.referer
     @post = Post.find(params[:id])
   end
 
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    redirect_to posts_path
+    # redirect_to posts_path
+    redirect_to session.delete(:return_to)
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path
+    redirect_to request.referer
   end
 
   private
@@ -38,4 +42,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
   end
+
 end
