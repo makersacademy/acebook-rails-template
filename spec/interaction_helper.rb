@@ -12,3 +12,13 @@ def create_wall_post(message, user_id)
   fill_in(:message, with: message)
   click_button 'post-submit'
 end
+
+def create_comment(body)
+  visit '/posts'
+  click_button :"new-post-button" # "New Post"
+  fill_in :post_message, with: 'Hello, world!'
+  click_button 'Submit'
+  fill_in 'comment[body]', with: body
+  click_button 'Create Comment'
+
+end
