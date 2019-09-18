@@ -3,17 +3,28 @@
     <%= link_to 'Add new post', new_post_path %>
         <div class=" text-center">
 
-            <h1>
-                <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
-                    <p>
-                        <%=@user.username%> wall:
-                    </p>
-            </h1>
-            <p>
-                <br>
-                <br>
-                <br>
-                <br>
+            <%if current_user.id == @user.id%>
+                <%= form_for current_user do |form| %>
+                    <div>
+                        <%= form.label :avatar %>
+                            <%= form.file_field :avatar %>
+                                <%= form.submit %>
+                    </div>
+
+                    <%end%>
+                        <%end%>
+
+                            <h1>
+                                <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
+                                    <p>
+                                        <%=@user.username%> wall:
+                                    </p>
+                            </h1>
+                            <p>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
         </div>
 
         <ul class="list-group">

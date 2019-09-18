@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resource :session, controller: 'clearance/sessions', only: [:create]
 
   constraints Clearance::Constraints::SignedIn.new do
-    root to: 'users#wall'
+    root to: 'posts#index'
   end
   constraints Clearance::Constraints::SignedOut.new do
     root to: 'welcome#index'
