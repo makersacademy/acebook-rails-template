@@ -12,8 +12,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @user = User.find(current_user.id)
-    @posts = @user.posts
+    @posts = Post.all
   end
 
   def edit

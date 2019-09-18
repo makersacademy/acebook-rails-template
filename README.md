@@ -2,6 +2,8 @@
 
 <a href="https://codeclimate.com/github/EvelinaClayton/acebook-derailed-team/test_coverage"><img src="https://api.codeclimate.com/v1/badges/beaad211f76bb6d8c2c2/test_coverage" /></a>
 
+[![CircleCI](https://circleci.com/gh/EvelinaClayton/acebook-derailed-team.svg?style=svg)](https://circleci.com/gh/EvelinaClayton/acebook-derailed-team)
+
 # AceBook -- created by Team Derailed
 
 To visit Acebook:
