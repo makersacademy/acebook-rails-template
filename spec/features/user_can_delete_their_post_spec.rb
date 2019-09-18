@@ -33,30 +33,28 @@ RSpec.feature 'Timeline', type: :feature do
   end
 
   scenario "A diffent user can't delete other's posts" do
-    visit '/posts'
+    url = URI.parse(current_url)
+    url.request_uri
     click_link 'Add new post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
-    visit '/posts'
+    visit url
     sign_out
     click_link 'Sign up'
     sign_up_with('otherusername', 'othertest@mail.com', 'othertesting')
-    click_link 'See all posts'
-    visit '/posts'
     expect(page).not_to have_button('Delete')
   end
 
   scenario "A diffent user can't edit other's posts" do
-    visit '/posts'
+    url = URI.parse(current_url)
+    url.request_uri
     click_link 'Add new post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
-    visit '/posts'
+    visit url
     sign_out
     click_link 'Sign up'
     sign_up_with('otherusername', 'othertest@mail.com', 'othertesting')
-    click_link 'See all posts'
-    visit '/posts'
     expect(page).not_to have_button('Edit')
   end
 
@@ -69,8 +67,4 @@ RSpec.feature 'Timeline', type: :feature do
     t = DateTime.now
     expect(page).to have_text(t.strftime('Posted: %d/%m/%Y'))
   end
-
-  # scenario 'User can upload an avatar as a profile picture'
-  #   visit '/'
-  #   click_link
 end
