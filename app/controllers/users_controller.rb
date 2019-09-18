@@ -4,6 +4,13 @@ class UsersController < Clearance::UsersController
   def wall
     @posts = current_user.posts.all
     @albums = %w[1 2 3]
+    
+  end
+
+  def update
+    p params
+    current_user.avatar.attach(params[:user][:avatar])
+     redirect_to root_url
   end
 
   def show
@@ -27,6 +34,6 @@ class UsersController < Clearance::UsersController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :avatar)
   end
 end
