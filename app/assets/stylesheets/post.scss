@@ -1,0 +1,25 @@
+@import "bootstrap";
+
+.card {
+  margin: 0 auto 1%;
+  text-align: center;
+  width: 50%;
+}
+.post-btn {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.btn-primary {
+  background-color: #9d9a9f;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #5c7c9f;
+  border: none;
+}
+
+a:visited {
+  color: #fff!important;
+}

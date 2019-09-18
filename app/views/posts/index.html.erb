@@ -7,17 +7,19 @@
   <br>
   <br>
   <% @posts.each do |post| %>
-  <div>
-    <p><%= simple_format(post.message) %></p>
+  <div class="card">
+  <div class="card-body">
+    <%= simple_format(post.message, class: 'card-text') %>
     <p>Created at: <%= post.created_at.strftime("%b %-d %Y, %H:%M") %></p>
     <% if post.user_id == current_user.id %>  
-      <%= link_to 'Delete', posts_path(post), method: :delete %> 
+      <%= link_to 'Delete', posts_path(post), method: :delete, class: 'btn btn-primary' %> 
     <% end %>
     <% if Time.now <= post.created_at + 600 && post.user_id == current_user.id %>  
-      <%= link_to 'posts/' + post.id.to_s do %>
+      <%= link_to 'posts/' + post.id.to_s, class: 'btn btn-primary' do %>
         Update
       <% end %>
     <% end %>
+    </div>
   </div>
   <% end %>
 
