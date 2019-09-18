@@ -36,4 +36,11 @@ RSpec.feature "Sign up", type: :feature do
     click_button "Sign up"
     expect(page).to have_content("Password is too long (maximum is 10 characters)")
   end
+
+  context "No user signed in" do
+    scenario "user is directed to a sign up form" do
+      visit "/posts/new"
+      expect(page).to have_current_path("/")
+    end
+  end
 end

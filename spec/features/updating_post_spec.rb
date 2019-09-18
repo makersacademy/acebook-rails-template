@@ -1,7 +1,7 @@
 require "rails_helper"
 require "./spec/helpers/sign_up_helper"
 
-RSpec.feature "Update post", type: :feature do
+RSpec.feature "Updating posts", type: :feature do
   before do
     Timecop.freeze(Time.local(2019, 9, 13, 10, 0, 0))
   end
