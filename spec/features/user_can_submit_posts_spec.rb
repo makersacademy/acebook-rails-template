@@ -45,6 +45,6 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
     t = DateTime.now
-    expect(page).to have_text(t.strftime("Posted: %d/%m/%Y"))
+    expect(page).to have_text(t.strftime('Posted: %d/%m/%Y'))
   end
 end
