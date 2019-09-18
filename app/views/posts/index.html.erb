@@ -4,7 +4,7 @@
   <%= link_to user_path(current_user.id), class: 'btn btn-primary' do %>
     My Posts
   <% end %>
-    <%= link_to new_user_post_path(current_user.id), class: 'btn btn-primary' do %>
+    <%= link_to "/posts/new", class: 'btn btn-primary' do %>
     New post
   <% end %>
   <br>
