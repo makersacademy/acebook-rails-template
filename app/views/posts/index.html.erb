@@ -1,77 +1,19 @@
-
 <%= stylesheet_link_tag "posts" %>
 
 <div class="new-post-container">
   <%= form_for @post do |form| %>
-    <div>
-      <%= form.text_area :message , placeholder: "What's on your mind?", maxlength: 4000, id: "message" %>
-    </div>
-    <div>
-      <%= form.submit "Submit", id: "post-submit" %>
-    </div>
-    <% end %>
+  <div>
+    <%= form.text_area :message , placeholder: "What's on your mind?", maxlength: 4000, id: "message" %>
+  </div>
+  <div>
+    <%= form.submit "Submit", id: "post-submit" %>
+  </div>
+  <% end %>
 </div>
 
 
-  <% @posts.each do |post| %>
 
-  <div id="post-container">
-    <div id="post-header-container">
-      <div id="post-profile-picture-container">
-        <div id="post-profile-picture"></div>
-      </div>
+<%= render partial: '/posts/posts' %>
 
-      <div id="post-details-container">
-        <div id="post-user-email"><%= post.user.email %></div>
-        <div id="post-created-at"><%= post.get_time %></div>
-      </div>
-      <div id="post-options-container">
-        <div id="post-delete-button-container">
-          <% if post.user_id == current_user.id %>
-          <%=button_to 'Delete post', post_path(post), id: "delete", method: :delete %>
-          <% end %>
-        </div>
 
-        <div id="post-edit-button-container">
-          <% if ( Time.now - post.created_at ) < 600 && post.user_id == current_user.id %>
-          <%= button_to 'Edit Post', edit_post_path(post), method: "get", id: "edit" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-    <div id="post-message-container">
-      <div id="post-message"><%= post.message %></div>
-    </div>
-    <hr>
-    <div id="comment-container" >
-        <% post.comments.each do |comment| %>
-          <div>
-            <strong><%= comment.user.email %></strong>
-            <%= comment.body %>
-          </div>
-          <div id="comment-edit-button-container">
-
-            <% if ( Time.now - comment.created_at ) < 600 && comment.user_id == current_user.id %>
-              <%= button_to 'Edit Comment', edit_comment_path(comment), method: "get", id: "edit" %>
-            <% end %>
-          </div>
-
-           <div id="comment-delete-button-container">
-            <% if comment.user_id == current_user.id %>
-              <%=button_to 'Delete Comment', comment_path(comment), id: "delete", method: :delete %>
-            <% end %>
-          </div>
-          <% end %>
-             <%= form_with(model: [ post, Comment.new ], local: true) do |form| %>
-          <p>
-            <%= form.text_area :body, id: "comment-text-area" %>
-          </p>
-          <p>
-          <%= form.submit %>
-          </p>
-          <% end %>
-      </div>
-  </div>
-  <% end %>
 </body>

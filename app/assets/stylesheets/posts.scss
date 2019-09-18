@@ -3,161 +3,161 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-    background-color: #eeeff4;
-    margin: 0 auto;
+  background-color: #eeeff4;
+  margin: 0 auto;
 }
 
 .new-post-container {
-    width: 26%;
-    margin-left: 33.5%;
-    height: 100px;
-    margin-top: 30px;
+  width: 26%;
+  margin-left: 33.5%;
+  height: 100px;
+  margin-top: 30px;
 }
 
 textarea {
-    outline:none;
-    resize:none;
-    width: 80%;
-    height: 60px;
-    font-size:1em;
-    border: none;
-    font-weight: lighter; 
-    float: left;
+  outline: none;
+  resize: none;
+  width: 80%;
+  height: 60px;
+  font-size: 1em;
+  border: none;
+  font-weight: lighter;
+  float: left;
 }
 
 #post-submit {
-    height: 64px;
-    background-color: white;
-    color:lightgrey;
-    border: none;
-    margin-bottom: 25px;
-    width: 19%;
-    float: left;
-    border-left: 1px lightgray solid;
-    outline: none;
+  height: 64px;
+  background-color: white;
+  color: lightgrey;
+  border: none;
+  margin-bottom: 25px;
+  width: 19%;
+  float: left;
+  border-left: 1px lightgray solid;
+  outline: none;
 }
 
 ::placeholder {
-    color:lightgrey;
-  }
+  color: lightgrey;
+}
 
-#post-container {
-    height:300px; 
-    width: 25%;
-    margin-left: 33.5%; 
-    background-color: white; 
-    margin-bottom: 15px; 
-    border-radius: 5px; 
-    padding: 10px 10px;
-    overflow: hidden;
+.post {
+  height: 300px;
+  width: 25%;
+  margin-left: 33.5%;
+  background-color: white;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding: 10px 10px;
+  overflow: hidden;
 }
 
 #post-header-container {
-    height: 30px; 
-    width: 100%;
+  height: 30px;
+  width: 100%;
 }
 
 #post-profile-picture-container {
-    height: 100%; 
-    width: 30px; 
-    float: left;
+  height: 100%;
+  width: 30px;
+  float: left;
 }
 
 #post-profile-picture {
-    background-color: black; 
-    border-radius: 30px; 
-    height: 100%; 
-    width: 30px; 
-    float: left;
+  background-color: black;
+  border-radius: 30px;
+  height: 100%;
+  width: 30px;
+  float: left;
 }
 
 #post-details-container {
-    height: 100%; 
-    width: 50%; 
-    float: left;
+  height: 100%;
+  width: 50%;
+  float: left;
 }
 
 #post-user-email {
-    font-size: 1em; 
-    margin-left: 10px; 
-    color: #3b5999; 
-    font-weight: bold;
+  font-size: 1em;
+  margin-left: 10px;
+  color: #3b5999;
+  font-weight: bold;
 }
 
 #post-created-at {
-    width:100%;
-    color:grey; 
-    font-size: 0.7em; 
-    margin-left: 12px;
+  width: 100%;
+  color: grey;
+  font-size: 0.7em;
+  margin-left: 12px;
 }
 
 #post-message-container {
-    padding-top: 10px; 
-    height: 40%; 
-    width: 100%;
+  padding-top: 10px;
+  height: 40%;
+  width: 100%;
 }
 
 #post-message {
-    white-space:pre-wrap; 
-    width:85%;
-    float:left; 
-    word-wrap: break-word; 
-    overflow: hidden;
+  white-space: pre-wrap;
+  width: 85%;
+  float: left;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 #delete {
-    background-color:transparent;
-    display:inline-block;
-    cursor:pointer;
-    color:#3b5999;
-    font-family:Arial;
-    font-size:0.6em;
-    text-decoration:none;
-}  
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  color: #3b5999;
+  font-family: Arial;
+  font-size: 0.6em;
+  text-decoration: none;
+}
 
 #edit {
-    background-color:transparent;
-    display:inline-block;
-    cursor:pointer;
-    color:#3b5999;
-    font-family:Arial;
-    font-size:0.6em;
-    text-decoration:none;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  color: #3b5999;
+  font-family: Arial;
+  font-size: 0.6em;
+  text-decoration: none;
 }
 
 #post-options-container {
-    width: 25%; 
-    float: right;
+  width: 25%;
+  float: right;
 }
 
-#post-delete-button-container{
-    margin-left: 30%; 
-    width: 50%;
+#post-delete-button-container {
+  margin-left: 30%;
+  width: 50%;
 }
 
 #post-edit-button-container {
-    margin-left: 30%; 
-    width: 50%;
+  margin-left: 30%;
+  width: 50%;
 }
 
 #comment-container {
-    background: white;
-    height: 40%;
-    word-wrap: break-word;
-    overflow:scroll;
-    width: 100%;
+  background: white;
+  height: 40%;
+  word-wrap: break-word;
+  overflow: scroll;
+  width: 100%;
 }
 
 #comment-text-area {
-    outline:none;
-    resize:none;
-    width: 90%;
-    height: 5%;
-    font-size:0.8em;
-    border: none;
-    font-weight: lighter; 
-    background-color: #eeeff4;
-    margin-left: 5%;
-    border-radius: 10px;
-    padding: 0 auto;
+  outline: none;
+  resize: none;
+  width: 90%;
+  height: 5%;
+  font-size: 0.8em;
+  border: none;
+  font-weight: lighter;
+  background-color: #eeeff4;
+  margin-left: 5%;
+  border-radius: 10px;
+  padding: 0 auto;
 }

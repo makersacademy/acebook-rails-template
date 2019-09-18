@@ -1,6 +1,7 @@
 <% @posts.each do |post| %>
 
-<div id="post-container">
+<div class="post" id="post-<%= post.id %>">
+
   <div id="post-header-container">
     <div id="post-profile-picture-container">
       <div id="post-profile-picture"></div>
@@ -31,5 +32,36 @@
     </div>
 
   </div>
+
+
+  <div id="comment-container">
+    <% post.comments.each do |comment| %>
+    <div>
+      <strong><%= comment.user.email %></strong>
+      <%= comment.body %>
+    </div>
+    <div id="comment-edit-button-container">
+
+      <% if ( Time.now - comment.created_at ) < 600 && comment.user_id == current_user.id %>
+      <%= button_to 'Edit Comment', edit_comment_path(comment), method: "get", id: "edit" %>
+      <% end %>
+    </div>
+
+    <div id="comment-delete-button-container">
+      <% if comment.user_id == current_user.id %>
+      <%=button_to 'Delete Comment', comment_path(comment), id: "delete", method: :delete %>
+      <% end %>
+    </div>
+    <% end %>
+    <%= form_with(model: [ post, Comment.new ], local: true) do |form| %>
+    <p>
+      <%= form.text_area :body, id: "comment-text-area" %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+    <% end %>
+  </div>
+
 </div>
 <% end %>
