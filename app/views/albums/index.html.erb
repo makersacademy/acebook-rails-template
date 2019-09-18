@@ -1,2 +1,7 @@
-
-<div>Albums:</div>
+<div>
+    Albums:</div>
+<% @albums.reverse.each do |album| %>
+    <p>
+        <%= album.title %>
+    </p>
+    <%end%>
