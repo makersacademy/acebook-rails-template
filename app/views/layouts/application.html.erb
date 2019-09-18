@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%= stylesheet_link_tag "application" %>
-    <%= csrf_meta_tag %>
-  </head>  
-  <body>
-    <div id="page-header">
-      <div>
-        <%= button_to new_post_path, method: "get", id: "new-post-button" do %>
-          +
-        <% end %>
-      </div>
-      <div>
-        <%= button_to posts_url, method: "get", id: "view-feed-button" do %>
-          [=]
-        <% end %>
-      </div>
-      <div id="sign-in-out-button-handler">
-        <% if signed_in? -%>
-          <%= button_to t(".sign_out"), sign_out_path, method: :delete, id: "sign-out-button"%>
-        <% else -%>
-          <%= button_to t(".sign_in"), sign_in_url, method: :get, id: "sign-in-button"%>
-        <% end -%>
-      </div>
-      <div id="page-title">
-        Welcome to ConnectU
-      </div>
-      <div id="page-name-container">
-        <% if signed_in? -%>
-          <%= button_to profile_index_url, method: "get", id: "page-name" do %>
-            <%= current_user.email %>
-          <%  end %>
-        <% end %>
-      </div>
-    </div>
 
-    <div id="flash">
-      <% flash.each do |key, value| -%>
-        <div id="flash_<%= key %>"><%=h value %></div>
+<head>
+  <%= stylesheet_link_tag "application" %>
+  <%= csrf_meta_tag %>
+</head>
+
+<body>
+  <div id="page-header">
+    <div>
+      <%= button_to new_post_path, method: "get", id: "new-post-button" do %>
+      +
       <% end %>
     </div>
+    <div>
+      <%= button_to posts_url, method: "get", id: "view-feed-button" do %>
+      [=]
+      <% end %>
+    </div>
+    <div id="sign-in-out-button-handler">
+      <% if signed_in? -%>
+      <%= button_to t(".sign_out"), sign_out_path, method: :delete, id: "sign-out-button"%>
+      <% else -%>
+      <%= button_to t(".sign_in"), sign_in_url, method: :get, id: "sign-in-button"%>
+      <% end -%>
+    </div>
+    <div id="page-title">
+      Welcome to ConnectU
+    </div>
+    <div id="page-name-container">
+      <% if signed_in? -%>
+      <%= button_to profile_index_url, method: "get", id: "page-name" do %>
+      <%= current_user.email %>
+      <%  end %>
+      <% end %>
+    </div>
+  </div>
 
-    <%= yield %>
-  </body>
+  <div id="flash">
+    <% flash.each do |key, value| -%>
+    <div id="flash_<%= key %>"><%=h value %></div>
+    <% end %>
+  </div>
+
+  <%= yield %>
+  <%= params %>
+</body>
+
 </html>

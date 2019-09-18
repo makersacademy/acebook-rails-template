@@ -35,8 +35,8 @@ class PostsController < ApplicationController
     if Time.now - @post.created_at > 600
       flash[:error] = "You can't edit your post after 10 mins foooool, gotta delete it mate"
     else
-      flash[:error] = "Post updated!"
-      #redirects and produces flash error
+      flash[:error] = 'Post updated!'
+      # redirects and produces flash error
     end
     redirect_to posts_url
   end
@@ -62,9 +62,6 @@ class PostsController < ApplicationController
       flash[:error] = 'Your post is too long.'
       redirect_to(user_posts_path) && return
     end
-
-    p 'wall create'
-    p wall_post_params
 
     Post.create(wall_post_params)
 
