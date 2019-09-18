@@ -1,6 +1,9 @@
 <% if user_signed_in? %>
   <h1>Hello <%= current_user.email %>! You are now signed in to your User Page!</h1>
-  <p><%= link_to('Logout', destroy_user_session_path, method: :delete) %></p>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary') %>
+<% end %>
+<%= link_to new_user_post_path(current_user.id), class: 'btn btn-primary' do %>
+  New post
 <% end %>
 <br>
 <br>
@@ -11,17 +14,13 @@
       <%= simple_format(post.message, class: 'card-text') %>
   <p>Created at: <%= post.created_at.strftime("%b %-d %Y, %H:%M") %></p>
   <% if post.user_id == current_user.id %>
-    <%= link_to 'Delete', posts_path(post), method: :delete %>
+    <%= link_to 'Delete', posts_path(post), method: :delete, class: 'btn btn-primary' %>
   <% end %>
   <% if Time.now <= post.created_at + 600 && post.user_id == current_user.id %>
-    <%= link_to 'posts/' + post.id.to_s do %>
+    <%= link_to 'posts/' + post.id.to_s, class: 'btn btn-primary' do %>
       Update
     <% end %>
   <% end %>
   </div>
 </div>
-<% end %>
-
-<%= link_to new_user_post_path(current_user.id) do %>
-  New post
 <% end %>
