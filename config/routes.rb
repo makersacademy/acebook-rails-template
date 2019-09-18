@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
 
-  # following routes are added for wall
-  get 'users/:user_id' => 'users#wallindex', :as => :wallindex
-  #
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "sessions", only: [:create]
   resources :users, controller: "users", only: [:create] do
     resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
+
+    get 'wall', to: 'wall#index'
   end
 
   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
@@ -19,8 +18,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :posts
-
-  get 'posts/index'
   post 'users/create'
-  root 'users#wallindex'
 end

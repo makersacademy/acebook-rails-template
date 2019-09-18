@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   def create
     message = post_params["message"]
     user_id = current_user.id
-    @post = Post.create(message: message, user_id: user_id)
+    wall_id = current_user.wall.id
+    @post = Post.create(message: message, user_id: user_id, wall_id: wall_id)
     redirect_to posts_url
   end
 
@@ -19,10 +20,6 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
-  # 
-  # def show
-  #   @post = Post.find(params[:id])
-  # end
 
   def update
     @post = Post.find(params[:id])

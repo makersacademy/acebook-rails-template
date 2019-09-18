@@ -23,14 +23,4 @@ class UsersController < Clearance::UsersController
       render template: "users/new"
     end
   end
-
-  before_action :require_login
-
-  # display all posts belong to a wall
-  def wallindex
-    @user = User.find(current_user.id)
-    @wall = @user.wall
-    @posts = @wall.posts
-  end
-
 end
