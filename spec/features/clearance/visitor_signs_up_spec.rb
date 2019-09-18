@@ -40,6 +40,20 @@ RSpec.feature 'Visitor signs up' do
     expect(page).to have_content('Password must be between 6 - 10 characters')
   end
 
+  scenario 'tries with an blank username' do
+    sign_up_with '', 'valid@example.com', 'password'
+    expect_user_to_be_signed_out
+    expect(page).to have_content('Username must be at least 3 characters')
+  end
+
+  scenario 'tries with an invalid username' do
+    sign_up_with 'asdfghjkl', 'valid2@example.com', 'password'
+    click_button 'Sign out'
+    click_link 'Sign up'
+    sign_up_with 'asdfghjkl', 'valid2@example.com', 'password'
+    expect_user_to_be_signed_out
+  end
+
   scenario 'sees a confirmation flash message that he has signed up' do
     sign_up_with 'example_username', 'valid@example.com', 'password'
     expect(page).to have_content 'You are now registered to Acebook! Welcome!'

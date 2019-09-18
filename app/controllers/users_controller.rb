@@ -4,6 +4,8 @@ class UsersController < Clearance::UsersController
 
     if password_is_invalid?
       wrong_password_error
+    elsif username_is_invalid?
+      wrong_username_error
     elsif @user.save
       login_and_welcome
     else
@@ -25,12 +27,21 @@ class UsersController < Clearance::UsersController
   end
 end
 
+  def username_is_invalid?
+    @user.username.length < 3 
+  end
+
   def password_is_invalid?
     @user.password.length < 6 || @user.password.length > 10
   end
 
   def wrong_password_error
     flash[:notice] = 'Password must be between 6 - 10 characters'
+    redirect_to sign_up_url
+  end
+
+  def wrong_username_error
+    flash[:notice] = 'Username must be at least 3 characters'
     redirect_to sign_up_url
   end
 
