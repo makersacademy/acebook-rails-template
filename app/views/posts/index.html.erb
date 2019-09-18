@@ -13,10 +13,17 @@
                 <tr>
                     <td>
                         <%= simple_format(post.message) %>
-                            <p>Posted:
+                            <div>Posted:
+
                                 <%= post.created_at.strftime("%d/%m/%Y") %>
-                                    <%= link_to @user.username, user_path(post.user_id)%>
-                            </p>
+                                    <div>
+                                        <%= link_to @user.username, user_path(post.user_id)%>
+                                            <%= link_to user_path(post.user_id) do %>
+                                                <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
+                                                    <% end %>
+
+                                    </div>
+                            </div>
                     </td>
                     <td>
                         <% if current_user.id == post.user_id  %>
