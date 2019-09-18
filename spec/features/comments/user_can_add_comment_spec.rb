@@ -13,14 +13,7 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in 'user_email', with: 'test@test.com'
     fill_in 'user_password', with: 'password'
     click_button 'Sign up'
-    visit '/posts'
-    # click_button 'New Post'
-    click_button :"new-post-button" # "New Post"
-    fill_in :post_message, with: 'Hello, world!'
-    # fill_in 'Message', with: 'Hello, world!'
-    click_button 'Submit'
-    fill_in 'comment[body]', with: 'This is a comment'
-    click_button 'Create Comment'
+    create_comment('This is a comment')
     expect(page).to have_content('test@test.com')
   end
 
@@ -30,12 +23,7 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in "user_email", with: "test@test.com"
     fill_in "user_password", with: "password"
     click_button "Sign up"
-    visit "/posts"
-    click_button "+"
-    fill_in "post[message]", with: "Hello, world!"
-    click_button "Submit"
-    fill_in "comment[body]", with: "This is a comment"
-    click_button "Create Comment"
+    create_comment('This is a comment')
     expect(page).to have_content("Your comment was posted successfully")
   end
 end
