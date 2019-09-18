@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   delete '/posts' => 'posts#delete'
   get '/posts/new' => 'posts#new'
   get '/posts/:id' => 'posts#edit'
+  get '/user/posts/:id' => 'posts#edit'
   post '/user/:user_id/posts/:id/edit' => 'posts#update'
   post 'posts' => 'posts#create'
 
