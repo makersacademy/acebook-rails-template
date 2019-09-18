@@ -2,14 +2,7 @@ class UsersController < Clearance::UsersController
   def create
     @user = user_from_params
 
-    if password_is_invalid?
-      wrong_password_error
-    elsif username_is_invalid?
-      username_length_error
-    elsif username_unique
-      username_unqiue_error
-    elsif email_unique
-      email_unqiue_error
+    if invalid_login_details
     elsif @user.save
       login_and_welcome
     else
@@ -19,29 +12,40 @@ class UsersController < Clearance::UsersController
 
   private
 
-  def user_from_params
-  email = user_params.delete(:email)
-  password = user_params.delete(:password)
-  username = user_params.delete(:username)
-
-  Clearance.configuration.user_model.new(user_params).tap do |user|
-    user.email = email
-    user.password = password
-    user.username = username
+  def invalid_login_details
+    if password_is_invalid?
+      wrong_password_error
+    elsif username_is_invalid?
+      username_length_error
+    elsif username_unique
+      username_unqiue_error
+    elsif email_unique
+      email_unqiue_error
+    end
   end
-end
+
+  def user_from_params
+    email = user_params.delete(:email)
+    password = user_params.delete(:password)
+    username = user_params.delete(:username)
+
+    Clearance.configuration.user_model.new(user_params).tap do |user|
+      user.email = email
+      user.password = password
+      user.username = username
+    end
+  end
 
   def username_unique
-    User.exists?(username: @user.username )
+    User.exists?(username: @user.username)
   end
 
   def email_unique
-    User.exists?(email: @user.email )
+    User.exists?(email: @user.email)
   end
 
-
   def username_is_invalid?
-    @user.username.length < 3 
+    @user.username.length < 3
   end
 
   def password_is_invalid?
