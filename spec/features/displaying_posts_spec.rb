@@ -23,4 +23,21 @@ RSpec.feature "Displaying Posts", type: :feature do
     sign_up_other_user
     expect(page).not_to have_content("Hello, this is User 1's post")
   end
+
+  feature "User Walls" do
+    scenario "A user can visit another user's wall and only that user's posts are displayed" do
+      sign_up
+      click_link "New post"
+      fill_in "Message", with: "Hello, this is User 1's post"
+      click_button "Submit"
+      click_link "Logout"
+      sign_up_other_user
+      click_link "New post"
+      fill_in "Message", with: "Hello, this is User 2's post"
+      click_button "Submit"
+      click_link "test@gmail.com"
+      expect(page).not_to have_content("Hello, this is User 2's post")
+      expect(page).to have_content("Hello, this is User 1's post")
+    end
+  end
 end

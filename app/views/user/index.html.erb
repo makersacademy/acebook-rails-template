@@ -1,26 +1,35 @@
-<% if user_signed_in? %>
-  <h1>Hello <%= current_user.email %>! You are now signed in to your User Page!</h1>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary') %>
+<% if current_user == @user %>
+    <h1>Hello <%= current_user.email %>! You are now signed in to your User Page!</h1>
+<% else %>
+  <h1>This is <%= @user.email %>'s wall</h1> 
 <% end %>
+
+<%= link_to posts_path do %>
+  All Posts
+<% end %>
+<%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary') %>
+
 <%= link_to new_user_post_path(current_user.id), class: 'btn btn-primary' do %>
   New post
 <% end %>
+
 <br>
 <br>
 <% @posts.each do |post| %>
-<div>
-<div class="card">
-  <div class="card-body">
+  <div class="card">
+    <div class="card-body">
+      <%= link_to user_path(post.user_id) do %>
+        <%= @user_class.find(post.user_id).email %>
+      <% end %>
       <%= simple_format(post.message, class: 'card-text') %>
-  <p>Created at: <%= post.created_at.strftime("%b %-d %Y, %H:%M") %></p>
-  <% if post.user_id == current_user.id %>
-    <%= link_to 'Delete', posts_path(post), method: :delete, class: 'btn btn-primary' %>
-  <% end %>
-  <% if Time.now <= post.created_at + 600 && post.user_id == current_user.id %>
-    <%= link_to 'posts/' + post.id.to_s, class: 'btn btn-primary' do %>
-      Update
-    <% end %>
-  <% end %>
+      <p>Created at: <%= post.created_at.strftime("%b %-d %Y, %H:%M") %></p>
+      <% if post.user_id == current_user.id %>
+          <%= link_to 'Delete', posts_path(post), method: :delete, class: 'btn btn-primary' %>
+      <% end %>
+      <% if Time.now <= post.created_at + 600 && post.user_id == current_user.id %>
+        <%= link_to 'posts/' + post.id.to_s, class: 'btn btn-primary' do %>
+          Update
+        <% end %>
+      <% end %>
   </div>
 </div>
-<% end %>
