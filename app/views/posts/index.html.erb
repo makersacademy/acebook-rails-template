@@ -9,7 +9,7 @@
             <%@user = User.find(post.user_id) %>
                 <tr>
                     <td>
-                        <%= simple_format(post.message) %>
+                        <%= simple_format(post.message.gsub('<','< ')) %>
                             <div>Posted:
 
                                 <%= post.created_at.strftime("%d/%m/%Y") %>
