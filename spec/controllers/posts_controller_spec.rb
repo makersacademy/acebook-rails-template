@@ -57,15 +57,13 @@ RSpec.describe PostsController, type: :controller do
       expect(Post.all.count).to eq 1
 
       post_id = Post.all.first.id
-
+      # allow(current_user).to receive(:id).and_return(1)
       delete :destroy, params: { id: post_id }
       expect(Post.all.count).to eq 0
     end
 
     it "can't delete a post that doesn't belong to them" do
-      pending("Waiting for user being able to see other's posts")
       post :create, params: { post: { message: "Hello, world!" } }
-      expect(Post.all.count).to eq 1
       sign_out
 
       post_id = Post.all.first.id

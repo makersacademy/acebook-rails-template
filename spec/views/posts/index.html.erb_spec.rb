@@ -72,5 +72,4 @@ RSpec.describe 'posts/index.html.erb', type: :view do
     expect(rendered).not_to have_link 'Delete'
     expect(rendered).to have_link 'Edit'
   end
-
 end

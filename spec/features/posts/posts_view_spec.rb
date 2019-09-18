@@ -5,7 +5,7 @@ RSpec.feature 'Post', type: :feature do
   before(:each) do
     sign_in
   end
-  
+
   scenario 'Posts have a timestamps' do
     visit '/posts'
     click_link 'New post'
@@ -38,13 +38,13 @@ RSpec.feature 'Post', type: :feature do
     end
 
     scenario "User cannot delete other user's posts" do
-      visit "/"
+      visit '/'
       click_link 'New post'
       fill_in 'Message', with: "Can't touch this!"
       click_button 'Submit'
       sign_out
       sign_in
-      expect(page).not_to have_link "Delete"
+      expect(page).not_to have_link 'Delete'
     end
   end
 
