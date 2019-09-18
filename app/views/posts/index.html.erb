@@ -2,7 +2,6 @@
     <table style="text-align: center" class="table">
         <tr class="jumbotron text-center">
             <th style="text-align: center">AceBook Wall</th>
-            <th></th>
             <th colspan=“2”></th>
         </tr>
         <% @posts.reverse.each do |post| %>
@@ -37,6 +36,7 @@
 
                     <button> <%= link_to new_post_path do %>
                 Add new post </button>
+               <button> <%= link_to 'Albums', albums_path %></button>
 
                     <% end %>
                         <td class="jumbotron text-center">

@@ -18,18 +18,15 @@
         <% end %>
 
 
-            <%= form.label :message %><br>
-                <%= form.text_area :message, cols: 50, rows: 10 %>
+        <%= form.label :message %><br>
+        <%= form.text_area :message, cols: 50, rows: 10 %>
+             <p>
+                 <%= form.submit "Update Post" %>
+             </p>
 
-                    <p>
-                        <%= form.submit "Update Post" %>
-                    </p>
 
-
-                    <% end %>
-                        <p>
-                        </p>
-
-                        <div class="page-footer text-center">
-                            <%= link_to 'Back', posts_path %>
-                        </div>
+<% end %>
+    <p></p>
+    <div class="page-footer text-center">
+        <%= link_to 'Back', posts_path %>
+    </div>
