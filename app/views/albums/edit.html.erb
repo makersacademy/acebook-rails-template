@@ -1,6 +1,6 @@
 <h1 class="page-header text-center">Edit Album</h1>
 
-<%= form_with(model: @album, local: true, format: :text) do |form| %>
+<%= form_with(model: @album, local: true) do |form| %>
 
     <% if @album.errors.any? %>
         <div id="error_explanation">
@@ -18,7 +18,7 @@
         <% end %>
 
 
-            <%= form.label :title %><br>
+            <%= form.label 'Title' %><br>
                 <%= form.text_area :title %>
 
                     <p>

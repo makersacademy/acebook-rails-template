@@ -28,7 +28,7 @@ class UsersController < Clearance::UsersController
       sign_in @user
       redirect_back_or url_after_create
     end
-    end
+  end
 
   private
 
