@@ -1,7 +1,7 @@
 require "rails_helper"
 require "./spec/helpers/sign_up_helper"
 
-RSpec.feature "format post", type: :feature do
+RSpec.feature "Formatting Post", type: :feature do
   scenario "Posts should be formatted with line breaks" do
     sign_up
     click_link "New post"
