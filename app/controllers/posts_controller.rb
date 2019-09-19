@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @user = current_user
   end
 
   def edit
@@ -29,8 +30,11 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-
+    if @post.user_id == current_user.id
+      @post.destroy
+    else
+      flash[:error] = "You don't own this post. Cannot be deleted."
+    end
     redirect_to posts_path
   end
 

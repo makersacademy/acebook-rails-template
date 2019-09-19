@@ -156,3 +156,4 @@ Metrics/BlockLength:
     - 'spec/models/*' 
     - 'spec/features/posts/*' 
     - 'spec/views/*' 
+    - 'spec/views/posts/*'

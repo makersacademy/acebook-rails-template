@@ -37,7 +37,15 @@ RSpec.feature 'Post', type: :feature do
       expect(page).not_to have_content('Delete me!')
     end
 
-    scenario "User cannot delete other user's posts"
+    scenario "User cannot delete other user's posts" do
+      visit '/'
+      click_link 'New post'
+      fill_in 'Message', with: "Can't touch this!"
+      click_button 'Submit'
+      sign_out
+      sign_in
+      expect(page).not_to have_link 'Delete'
+    end
   end
 
   context 'User logs in' do
