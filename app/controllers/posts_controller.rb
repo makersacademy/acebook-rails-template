@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def create
     message = post_params["message"]
     user_id = current_user.id
+    p params
     wall_id = User.find(params[:user_id]).wall.id
     @post = Post.create(message: message, user_id: user_id, wall_id: wall_id)
     # redirect_to posts_url

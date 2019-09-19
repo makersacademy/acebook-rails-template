@@ -2,7 +2,13 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
 
-  before(:each) { sign_in }
+
+  let(:user) { FactoryBot.create(:user) }
+  let(:wall) { FactoryBot.create(:wall) }
+
+  before(:each) {
+    sign_in
+  }
 
   # test controller for editing post
   describe "GET /edit" do
@@ -17,14 +23,23 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "PATCH /update" do
-    it "render the post index page" do
+    it "render the post index page when coming from post index" do
       post = FactoryBot.create(:post)
+      session[:return_to] = posts_path
       patch :update, params: {id: post.id, post: {message: "random message"}}
       expect(response).to redirect_to(posts_path)
     end
 
+    it "render the wall page when coming from wall" do
+      post = FactoryBot.create(:post)
+      session[:return_to] = user_wall_path(user)
+      patch :update, params: {id: post.id, post: {message: "random message"}}
+      expect(response).to redirect_to(user_wall_path(user))
+    end
+
     it "update the entry in database" do
       post = FactoryBot.create(:post)
+      session[:return_to] = posts_path
       patch :update, params: {id: post.id, post:{message: "random message after update"}}
       updated_post = Post.find(post.id)
       expect(updated_post.message).to eq("random message after update")
