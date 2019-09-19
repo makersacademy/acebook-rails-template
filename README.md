@@ -7,6 +7,9 @@ Visit [AceBook](https://acebook-fantastic-four.herokuapp.com/) to see the app in
 * You can see a list of past posts.
 * You can create a post and it will be displayed in a clear format.
 
+## CodeClimate Stats
+<a href="https://codeclimate.com/github/krisswiltshire30/acebook-fantastic-four/maintainability"><img src="https://api.codeclimate.com/v1/badges/31347d4c438f5024aec3/maintainability" /></a> <a href="https://codeclimate.com/github/krisswiltshire30/acebook-fantastic-four/test_coverage"><img src="https://api.codeclimate.com/v1/badges/31347d4c438f5024aec3/test_coverage" /></a>
+
 ## Instructions for new developers:
 
 1. Request to be added as a contributer to the project.
