@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'awesome_print'
 gem 'clearance', '~> 1.15'
 
 group :development, :test do
@@ -47,6 +47,7 @@ group :development, :test do
   gem 'simplecov-console'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
+  gem 'pry'
   gem 'rspec-html-matchers'
 end
 
