@@ -23,11 +23,11 @@ Then visit [here](http://localhost:3000) #localhost:3000
 
 ## Contributing
 This Facebook clone was made by:
-[Caroline](https://github.com/KierepkaE)
-[Guy](https://github.com/GuyCalloway)
-[Mario](https://github.com/jaitone)
-[Kat](https://github.com/KMaskell)
-[Said](https://github.com/sakmalov)
+[Caroline](https://github.com/KierepkaE),
+[Guy](https://github.com/GuyCalloway),
+[Mario](https://github.com/jaitone),
+[Kat](https://github.com/KMaskell),
+[Said](https://github.com/sakmalov),
 [Sonny](https://github.com/sonny-maan)
 
 ## License
