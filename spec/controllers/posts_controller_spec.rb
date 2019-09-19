@@ -14,9 +14,6 @@ RSpec.describe PostsController, type: :controller do
   describe "GET /edit" do
     it "render the edit post page" do
       post = FactoryBot.create(:post)
-
-      puts "user id of the post: #{post.user_id}"
-      puts "id of the post: #{post.id}"
       get :edit, params:{id: post.id}
       expect(response).to render_template(:edit)
     end
@@ -46,8 +43,6 @@ RSpec.describe PostsController, type: :controller do
     end
 
   end
-
-  #
 
   describe "GET /new " do
     it "responds with 200" do

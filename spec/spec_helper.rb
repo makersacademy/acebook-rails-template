@@ -25,7 +25,9 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # Want a nice code coverage website? Uncomment this next line!
   SimpleCov::Formatter::HTMLFormatter
 ])
-SimpleCov.start
+SimpleCov.start do
+  add_filter /helpers/
+end
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
