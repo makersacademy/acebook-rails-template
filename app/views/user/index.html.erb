@@ -15,6 +15,22 @@
 
 <br>
 <br>
+
+
+
+
+  <% @users.each do |user| %>
+    <% if user.id != current_user.id %>
+      <% if flash[:alert] %>
+      <%= user.id %>
+      <div class="alert"><%= flash[:alert] %></div>
+      <% else %>
+      <%= user.id %>
+      <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+      <% end %>
+    <% end %>
+  <% end %>
+
 <% @posts.each do |post| %>
   <div class="card">
     <div class="card-body">

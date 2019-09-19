@@ -3,7 +3,8 @@
   <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary') %>
   <%= link_to user_path(current_user.id), class: 'btn btn-primary' do %>
     My Posts
-  <% end %>
+  
+<% end %>
     <%= link_to new_user_post_path(current_user.id), class: 'btn btn-primary' do %>
     New post
   <% end %>
