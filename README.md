@@ -1,4 +1,4 @@
-# AceBook - Team Good Guys   [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome#readme)
+# AceBook - Team Good Guys   [![badge](https://img.shields.io/badge/made%20by-good--guys-red)](https://github.com/sindresorhus/awesome#readme)
 
 AceBook is a Facebook clone made by team good-guys
 
