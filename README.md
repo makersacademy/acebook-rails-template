@@ -21,7 +21,7 @@ bin/rails server
 
 Then visit [here](http://localhost:3000) #localhost:3000
 
-## Contributing
+## Contributors
 This Facebook clone was made by:
 [Caroline](https://github.com/KierepkaE),
 [Guy](https://github.com/GuyCalloway),
