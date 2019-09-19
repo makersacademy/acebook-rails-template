@@ -19,16 +19,61 @@
 .home_button {
     position: absolute;
     top: 15px;
-    right: 150px;
+    left: 332px;
+    font-size: 27px;
+    font-family: "Gill Sans", sans-serif;
+    color: white;
 }
 
 .text-muted {
     display: flex;
     flex-direction: row;
     align-content: space-around;
-    .username {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
+    font-family: "Gill Sans", sans-serif;
+}
+
+.username {
+    color: white;
+    position:absolute; 
+    top:14px; 
+    right:2px; 
+    font-size:17px;
+    font-family: "Gill Sans", sans-serif; 
+    font-weight: bold; 
+    text-transform: uppercase;
+    
+}
+
+.avatar {
+    position:absolute; 
+    top:20px; 
+    right:2px;
+    height: 31px;
+    width: 40px;
+}
+
+.button {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    font-weight: bold;
+    font-family: "Gill Sans", sans-serif; 
+}
+
+.span {
+    position:absolute;
+    top:8px; 
+    right:4px; 
+    font-size:18px;
+    font-family: "Gill Sans", sans-serif;
+}
+
+
+
+.body {
+    background-color: #EDF0F5;
+}
+
+.jumbotron {
+    background-color: #446DB0;
 }
