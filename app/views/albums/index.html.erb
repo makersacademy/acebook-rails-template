@@ -17,7 +17,7 @@
             <br>
             <br>
             <%album.images.each do |image|%>
-                <%= image_tag image, class: "album-image" %>
+                <%= link_to image_tag(image, class: "album-image"), image %>
                     <%end%>
 
         </div>
