@@ -25,19 +25,31 @@ RSpec.feature "Displaying Posts", type: :feature do
   end
 
   feature "User Walls" do
-    scenario "A user can visit another user's wall and only that user's posts are displayed" do
+    scenario "Posts are only displayed on the wall they are created on" do
+      sign_up
+      click_link "All Posts"
+      click_link "New post"
+      fill_in "Message", with: "Hello, this is a global post"
+      click_button "Submit"
+      click_link "My Posts"
+      click_link "New post"
+      fill_in "Message", with: "Hello, this is a post on my wall"
+      click_button "Submit"
+      expect(page).not_to have_content("Hello, this is a global post")
+      expect(page).to have_content("Hello, this is a post on my wall")
+    end
+
+    scenario "When posting on the main wall posts are only displayed there." do
       sign_up
       click_link "New post"
-      fill_in "Message", with: "Hello, this is User 1's post"
+      fill_in "Message", with: "Hello, this is on my wall"
       click_button "Submit"
-      click_link "Logout"
-      sign_up_other_user
+      click_link "All Posts"
       click_link "New post"
-      fill_in "Message", with: "Hello, this is User 2's post"
+      fill_in "Message", with: "Hello, this is on the global wall"
       click_button "Submit"
-      click_link "test@gmail.com"
-      expect(page).not_to have_content("Hello, this is User 2's post")
-      expect(page).to have_content("Hello, this is User 1's post")
+      expect(page).not_to have_content("Hello, this is on my wall")
+      expect(page).to have_content("Hello, this is on the global wall")
     end
   end
 end
