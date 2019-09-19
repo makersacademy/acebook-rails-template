@@ -26,7 +26,7 @@ RSpec.feature 'Post', type: :feature do
     expect(page).not_to have_selector('p', text: "Hello, world!\nThis is a new line\nAnd another line.")
   end
 
-  context "user creates a post" do
+  context 'user creates a post' do
     scenario "post on another user's wall" do
       user_b = FactoryBot.create(:user)
       user_b.create_wall!
@@ -39,10 +39,10 @@ RSpec.feature 'Post', type: :feature do
 
       visit "/users/#{user_b.id}/wall"
       expect(page).to have_content "Hello, user b's wall! - User a"
-      
+
       visit user_a_wall
       expect(page).not_to have_content "Hello, user b's wall! - User a"
-    end     
+    end
   end
 
   context 'user deletes a post' do

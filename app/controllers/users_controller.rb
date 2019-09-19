@@ -11,13 +11,12 @@ class UsersController < Clearance::UsersController
     end
   end
 
-
   private
-  
+
   def url_after_create
     user_wall_path(@user)
   end
-  
+
   def invalid_login_details
     if password_is_invalid?
       wrong_password_error

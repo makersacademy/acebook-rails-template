@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "sessions", only: [:create]
   resources :users, controller: "users", only: [:create] do
     resource :password,
-      controller: "clearance/passwords",
-      only: [:create, :edit, :update]
+             controller: "clearance/passwords",
+             only: [:create, :edit, :update]
 
     get 'wall', to: 'wall#index'
   end
