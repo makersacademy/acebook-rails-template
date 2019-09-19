@@ -15,20 +15,6 @@
 
 <br>
 <br>
- <% @users.each do |user| %>
-    <% if user.id != current_user.id %>
-      <% if current_user.friend_with?(user.id)%>
-       <p><%= user.id %> Already friends
-         <%= link_to "Remove Friend", friendship_path(user.id
-         ), :method => :delete %>
-      </p>
-      <% else %>
-      <p><%= user.id %>
-      <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
-      </p>
-      <% end %>
-    <% end %>
-  <% end %>
 
 <% @posts.each do |post| %>
   <div class="card">
