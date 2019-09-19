@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20190919123605) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.string "wall_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

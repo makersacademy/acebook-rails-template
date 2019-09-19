@@ -16,4 +16,5 @@ class User < ApplicationRecord
   def friend_with?( other )
     friendships.find_by(friend_id: other)
   end
+
 end
