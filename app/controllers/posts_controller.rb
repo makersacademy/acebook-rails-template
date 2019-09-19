@@ -8,14 +8,14 @@ class PostsController < ApplicationController
   def create
     message = post_params["message"]
     user_id = current_user.id
-    p params
-    wall_id = User.find(params[:user_id]).wall.id
+    wall_id = User.find(session[:host_user_id]).wall.id
     @post = Post.create(message: message, user_id: user_id, wall_id: wall_id)
     # redirect_to posts_url
     redirect_to session.delete(:return_to)
   end
 
   def index
+    session[:host_user_id] = current_user.id
     @user = User.find(current_user.id)
     @posts = @user.posts
   end
