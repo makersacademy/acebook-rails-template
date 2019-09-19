@@ -12,10 +12,12 @@
                         <div>Posted:
                             <%= post.created_at.strftime("%d/%m/%Y") %>
                             <div>
-                                <%= link_to @user.username, user_path(post.user_id)%>
+                                <%= link_to @user.username, user_path(post.user_id)%> <br>
+                                
                                 <%= link_to user_path(post.user_id) do %>
                                     <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
-                                <% end %>
+                                <% end %><br>
+                                <%= link_to 'Show comments', post_path(post) %>
                             </div>
                         </div>
                     </td>
@@ -25,7 +27,6 @@
                         
                         </p>
                         <p>
-                          <%= form.label :body %><br>
                           <%= form.text_area :body %>
                         </p>
                         <p>
@@ -33,13 +34,13 @@
                         </p>
                         <% end %>
                         <% if current_user.id == post.user_id  %>
-                            <%= link_to 'Edit', edit_post_path(post) %>
                     </td>
                     <td>
-                        <%= link_to 'Delete', post_path(post),
+                        <%= link_to 'Delete post', post_path(post),
                             method: :delete,
                             data: { confirm: 'Are you sure?' } %>
-                        <% end %>
+                        <% end %> <br>
+                        <%= link_to 'Edit post', edit_post_path(post) %>
                     </td>
                 </tr>
                         <% end %>
