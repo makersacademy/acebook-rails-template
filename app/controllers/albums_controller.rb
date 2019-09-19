@@ -51,6 +51,12 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def delete_image_attachment
+    @album_image = ActiveStorage::Blob.find_signed(params[:id])
+    @album_image.purge_later
+    redirect_back(fallback_location: albums_path)
+  end
+
   private
 
   def album_params

@@ -18,8 +18,11 @@
             <br>
             <%album.images.each do |image|%>
                 <%= link_to image_tag(image, class: "album-image"), image %>
-                    <%end%>
+                    <%= link_to 'delete', delete_image_attachment(image.id),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
 
         </div>
         <%end%>
-            <%= link_to 'Back', posts_path %>
+            <%end%>
+                <%= link_to 'Back', posts_path %>
