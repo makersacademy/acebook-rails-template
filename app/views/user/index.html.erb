@@ -1,7 +1,7 @@
 <% if current_user == @user %>
     <h1>Hello <%= current_user.email %>! You are now signed in to your User Page!</h1>
 <% else %>
-  <h1>This is <%= @user.email %>'s wall</h1> 
+  <h1>This is <%= @user.email %>'s wall</h1>
 <% end %>
 
 <%= link_to posts_path do %>
@@ -9,14 +9,14 @@
 <% end %>
 <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary') %>
 
-<%= link_to new_user_post_path(current_user.id), class: 'btn btn-primary' do %>
+<%= link_to new_user_post_path(@user.id), class: 'btn btn-primary' do %>
   New post
 <% end %>
 
 <br>
 <br>
 
-<% @posts.each do |post| %>
+<% @wall_posts.each do |post| %>
   <div class="card">
     <div class="card-body">
       <%= link_to user_path(post.user_id) do %>

@@ -3,6 +3,11 @@ class UserController < ApplicationController
     @user_class = User
     @users = User.all
     @user = User.find(params[:id])
-    @posts = @user.posts.order("created_at DESC")
+    @posts = Post.all.order("created_at DESC")
+    if @posts.first == nil
+      @wall_posts = @posts
+    else
+      @wall_posts = @posts.select { |post| post.wall_id == params[:id] }
+    end
   end
 end
