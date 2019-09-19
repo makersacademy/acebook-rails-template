@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.all.each do |user|
+  user.create_wall! unless !!user.wall
+  p user
+  wall_id = user.wall.id
+  user.posts.each do |post|
+    post.update(wall_id: wall_id)
+  end
+end
