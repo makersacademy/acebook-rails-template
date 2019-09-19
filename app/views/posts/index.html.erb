@@ -1,20 +1,50 @@
+
 <% if user_signed_in? %>
-  <h1>Hello <%= current_user.email %>! You are now signed in</h1>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary') %>
-  <%= link_to user_path(current_user.id), class: 'btn btn-primary' do %>
-    My Posts
-  <% end %>
-    <%= link_to "/posts/new", class: 'btn btn-primary' do %>
-    New post
-  <% end %>
-  <br>
-  <br>
+  <div class="top-nav">
+    <ul>
+      <li>
+        <%= link_to user_path(current_user.id), class: 'nav-link' do %>
+          My Wall
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/posts/new", class: 'nav-link' do %>
+          New post
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  <h3>Hello <%= current_user.email %>! You are now signed in</h3>
+   <div class="logout-link">
+   <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary logout') %>
+  </div>
+
+  <div class="friends-container">
+  <h2>Add More Friends</h2>
+  <%@users.each do |user|%>
+<% if user.id != current_user.id%>
+<% if current_user.friend_with?(user.id)%>
+<p><%= user.email %> <span>Already friends</span></p>
+<% else %>
+<p><%= user.email %>
+<%= link_to 'Add Friend', friendships_path(:friend_id => user), :method => :post%>
+</p>
+<% end %>
+<% end %>
+<% end %>
+</div>
+ <div class="all-cards">
   <% @wall_posts.each do |post| %>
   <div class="card">
     <div class="card-body">
       <%= link_to user_path(post.user_id) do %>
         <%= @user_class.find(post.user_id).email %>
        <% end %>
+
+      <% if post.user_id != current_user.id && !current_user.friend_with?(post.user_id)%>
+      <%= link_to 'Add Friend', friendships_path(:friend_id => post.user_id), :method => :post%>
+      <% end %>
+
       <%= simple_format(post.message, class: 'card-text') %>
       <p>Created at: <%= post.created_at.strftime("%b %-d %Y, %H:%M") %></p>
       <% if post.user_id == current_user.id %>
@@ -27,8 +57,9 @@
       <% end %>
       </div>
     </div>
-  </div>
+
   <% end %>
+  </div>
 <% else %>
   <h2>Sign up</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

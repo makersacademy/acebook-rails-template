@@ -18,6 +18,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @users = User.all
     @user_class = User
     @posts = Post.all.order("created_at DESC")
     if @posts.first == nil
