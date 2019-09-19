@@ -1,12 +1,17 @@
+<%= link_to 'New Album', new_album_path %>
+    <div>
+        Albums:
+    </div>
 
- <%= link_to 'New Album', new_album_path %>
-<div>
-    Albums:
-</div>
-<% @albums.reverse.each do |album| %>
-    <p>
-        <%= album.title %>
-        <%# <%= image_tag(album.images, style:'width:5% ') unless album.images.nil? %> 
-    </p>
-    <%end%>
-<%= link_to 'Back', posts_path %>
+
+
+    <% @albums.reverse.each do |album| %>
+        <p>
+            <%= album.title %>
+                <%album.images.each do |image|%>
+                    <%= image_tag image%>
+                        <%# <%= image_tag(album.images, style:'width:5% ') unless album.images.nil? %>
+                            <%end%>
+        </p>
+        <%end%>
+            <%= link_to 'Back', posts_path %>

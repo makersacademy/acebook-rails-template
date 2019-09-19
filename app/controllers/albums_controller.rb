@@ -20,6 +20,7 @@ class AlbumsController < ApplicationController
 
   def index
     @albums = current_user.albums.all
+
   end
 
   def edit
@@ -55,6 +56,6 @@ class AlbumsController < ApplicationController
   private
 
   def album_params
-    params.require(:album).permit(:images, :user_id, :title)
+    params.require(:album).permit( :user_id, :title,images:[])
   end
 end
