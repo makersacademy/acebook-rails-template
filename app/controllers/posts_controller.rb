@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   def new
+    @params_id = params[:user_id]
+    @current_user = current_user.id
     @post = Post.new
   end
 
