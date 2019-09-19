@@ -1,57 +1,34 @@
-# AceBook
+# AceBook - Team Good Guys   [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome#readme)
 
+AceBook is a Facebook clone made by team good-guys
 
+## Installation 
 
-## Quickstart
-
-First, clone this repository. Then:
+Clone from [here](https://github.com/GuyCalloway/acebook-good-guys).
 
 ```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+git clone git@github.com:GuyCalloway/acebook-good-guys.git
+bundle install 
+bin/rails db:create
+bin/rails db:migrate
 ```
 
-### User Stories ###
+## Usage
 
-As a user  
-So I can have a Acebook account  
-I want to be able to sign up
+```bash
+bin/rails server
+```
 
-As a user  
-So I can return to my account and posts
-I want to be able to log in
+Then visit [here](http://localhost:3000) #localhost:3000
 
-As a user  
-So I have time to play with my dog  
-I want to be able to log out
+## Contributing
+This Facebook clone was made by:
+[Caroline](https://github.com/KierepkaE)
+[Guy](https://github.com/GuyCalloway)
+[Mario](https://github.com/jaitone)
+[Kat](https://github.com/KMaskell)
+[Said](https://github.com/sakmalov)
+[Sonny](https://github.com/sonny-maan)
 
-As a user  
-So that I can share my thoughts with the world  
-I want to be able to post
-
-As a user  
-So that I can change my thoughts  
-I want to be able to amend a post
-
-As a user  
-So I can remove my controversial opinion about brexit  
-I want to be able to delete my post
-
-As a user  
-So I can view my posts chronologically  
-I want my posts to be sorted newest first
-
-
-
-
-### How to use the app ###
-
-* Ensure your Bundler is updated to 2.0
-* command line: rails s
-* in browser go to: localhost:3000
-
-
+## License
+[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
