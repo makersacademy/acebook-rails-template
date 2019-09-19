@@ -1,14 +1,15 @@
-class AlbumsController < ApplicationController
+# frozen_string_literal: true
 
+class AlbumsController < ApplicationController
   def show
-    p "---------------"
+    p '---------------'
     p params
     @album = Album.find(params[:id])
     @user = User.find(@album.user_id)
   end
 
   def create
-    p "---------------"
+    p '---------------'
     p params
     @album = current_user.albums.create(album_params)
     redirect_to albums_url
@@ -20,7 +21,6 @@ class AlbumsController < ApplicationController
 
   def index
     @albums = current_user.albums.all
-
   end
 
   def edit
@@ -35,7 +35,6 @@ class AlbumsController < ApplicationController
     @album.destroy
     redirect_to albums_path
   end
-
 
   def update
     @album = Album.find(params[:id])
@@ -52,10 +51,9 @@ class AlbumsController < ApplicationController
     end
   end
 
-
   private
 
   def album_params
-    params.require(:album).permit( :user_id, :title,images:[])
+    params.require(:album).permit(:user_id, :title, images: [])
   end
 end
