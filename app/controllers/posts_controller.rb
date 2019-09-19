@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
+    @wall_id = params[:user_id]
   end
 
   def create
-    @post = Post.create(post_params.merge(user_id: current_user.id))
+    @post = Post.create(post_params.merge(user_id: current_user.id, wall_id: params[:wall_id]))
     redirect_to posts_url
   end
 
@@ -18,6 +19,7 @@ class PostsController < ApplicationController
     @user_class = User
     @posts = Post.all.order("created_at DESC")
     @user = User.all
+    
   end
 
   def edit

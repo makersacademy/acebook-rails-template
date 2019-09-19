@@ -1,7 +1,7 @@
 <% if current_user == @user %>
     <h1>Hello <%= current_user.email %>! You are now signed in to your User Page!</h1>
 <% else %>
-  <h1>This is <%= @user.email %>'s wall</h1> 
+  <h1>This is <%= @user.email %>'s wall</h1>
 <% end %>
 
 <%= link_to posts_path do %>
@@ -15,7 +15,7 @@
 
 <br>
 <br>
-<% @posts.each do |post| %>
+<% @select_posts.each do |post| %>
   <div class="card">
     <div class="card-body">
       <%= link_to user_path(post.user_id) do %>

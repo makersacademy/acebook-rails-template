@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.feature "Deleting Posts", type: :feature do
   scenario "Delete posts link exists" do
     sign_up
+    click_link "All Posts"
     click_link "New post"
     fill_in "Message", with: "Hello, this is message 1"
     click_button "Submit"
