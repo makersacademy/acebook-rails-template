@@ -41,7 +41,6 @@ class PostsController < ApplicationController
     else
       flash[:error] = "You don't own this post. Cannot be deleted."
     end
-    puts "DEBUG REQUEST.REFERER #{request.referer}"
     redirect_to request.referer
   end
 

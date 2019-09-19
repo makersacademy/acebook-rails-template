@@ -27,6 +27,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start do
   add_filter /helpers/
+  add_filter /spec/
 end
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
