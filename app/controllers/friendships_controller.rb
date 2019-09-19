@@ -1,9 +1,6 @@
 class FriendshipsController < ApplicationController
   before_action :check_friendship, only: :create
   
-  def new
-    @friendship = Friendship.new
-  end
   def create
     @friendship = current_user.friendships.build(:friend_id => params[:friend_id])
     if @friendship.save
