@@ -2,18 +2,18 @@
     <table style="text-align: center" class="table">
         <tr class="jumbotron text-center">
             <th style="text-align: center">AceBook Wall</th>
-            <th></th>
             <th colspan=“2”></th>
         </tr>
         <% @posts.reverse.each do |post| %>
             <%@user = User.find(post.user_id) %>
                 <tr>
                     <td>
-                        <%= simple_format(post.message.gsub('<','< ')) %>
+
+                        <%= simple_format(post.message.gsub('<', '< ') ) %>
                             <div>Posted:
 
                                 <%= post.created_at.strftime("%d/%m/%Y") %>
-                                     <div>
+                                    <div>
                                         <%= link_to @user.username, user_path(post.user_id)%>
                                             <%= link_to user_path(post.user_id) do %>
                                                 <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
@@ -37,6 +37,7 @@
 
                     <button> <%= link_to new_post_path do %>
                 Add new post </button>
+               <button> <%= link_to 'Albums', albums_path %></button>
 
                     <% end %>
                         <td class="jumbotron text-center">

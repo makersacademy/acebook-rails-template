@@ -1,4 +1,4 @@
-/*
+                /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,22 +13,40 @@
  *= require_tree .
  *= require_self
  */
-
-@import "bootstrap-sprockets";
-@import "bootstrap";
-.home_button {
-    position: absolute;
-    top: 15px;
-    right: 150px;
-}
-
-.text-muted {
-    display: flex;
-    flex-direction: row;
-    align-content: space-around;
-    .username {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-}
+                
+                @import "bootstrap-sprockets";
+                @import "bootstrap";
+                .home_button {
+                    position: absolute;
+                    top: 15px;
+                    right: 150px;
+                }
+                
+                .text-muted {
+                    display: flex;
+                    flex-direction: row;
+                    align-content: space-around;
+                    .username {
+                        position: absolute;
+                        top: 20px;
+                        right: 20px;
+                    }
+                }
+                
+                .album-image {
+                    width: 250px;
+                    height: 250px;
+                    margin: 15px;
+                    justify-content: space-evenly;
+                }
+                
+                .image-wrapper {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: 25px;
+                }
+                
+                .album-title {
+                    width: 100vw;
+                    text-align: center;
+                }

@@ -1,0 +1,25 @@
+<%= link_to 'New Album', new_album_path %>
+    <br>
+    <div>
+        Albums:
+    </div>
+    <br>
+
+
+
+    <% @albums.reverse.each do |album| %>
+        <div class='image-wrapper'>
+            <div>
+                <h1 class='album-title'>
+                    <%= album.title %>
+                </h1>
+            </div>
+            <br>
+            <br>
+            <%album.images.each do |image|%>
+                <%= link_to image_tag(image, class: "album-image"), image %>
+                    <%end%>
+
+        </div>
+        <%end%>
+            <%= link_to 'Back', posts_path %>

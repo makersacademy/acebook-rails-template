@@ -1,34 +1,32 @@
 <h1 class="page-header text-center">Edit post</h1>
- 
-<%= form_with(model: @post, local: true) do |form| %>
- 
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@post.errors.count, "error") %> prohibited
-        this post from being saved:
-      </h2>
-      <ul>
-        <% @post.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+
+<%= form_with(model: @post, local: true, format: :text) do |form| %>
+
+    <% if @post.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:
+            </h2>
+            <ul>
+                <% @post.errors.full_messages.each do |msg| %>
+                    <li>
+                        <%= msg %>
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 
-    <%= form.label :message %><br>
-    <%= form.text_area :message, cols: 50, rows: 10 %>
+        <%= form.label :message %><br>
+        <%= form.text_area :message, cols: 50, rows: 10 %>
+             <p>
+                 <%= form.submit "Update Post" %>
+             </p>
 
-  <p>
-    <%= form.submit "Update Post" %>
-  </p>
 
- 
 <% end %>
-<p>
-</p>
-
-<div class="page-footer text-center">
-<%= link_to 'Back', posts_path %>
-</div>
+    <p></p>
+    <div class="page-footer text-center">
+        <%= link_to 'Back', posts_path %>
+    </div>

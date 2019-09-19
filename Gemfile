@@ -37,4 +37,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'mini_magick'
 gem 'sprockets-rails', require: 'sprockets/railtie'

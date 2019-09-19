@@ -1,0 +1,13 @@
+<p>
+    <h1>
+        <%= @user.username%>
+    </h1>
+    <%= @album.title%>
+</p>
+
+
+<%= form_with(model: @album, local: true) do |form|%>
+    <%= form.label :images %>
+        <%= form.file_field :images, multiple: true %>
+            <%= form.submit "Add photos" %>
+                <%end%>

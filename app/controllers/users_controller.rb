@@ -7,7 +7,6 @@ class UsersController < Clearance::UsersController
   end
 
   def update
-    p params
     current_user.avatar.attach(params[:user][:avatar])
     redirect_to root_url
   end
@@ -28,7 +27,7 @@ class UsersController < Clearance::UsersController
       sign_in @user
       redirect_back_or url_after_create
     end
-    end
+  end
 
   private
 

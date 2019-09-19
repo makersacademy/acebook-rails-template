@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/sign_up' => 'clearance/users#new', as: 'sign_up'
 
   resources :posts
+  resources :albums
   resources :users,
             path_names: { show: 'wall' }
 end
