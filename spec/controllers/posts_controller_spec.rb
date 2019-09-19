@@ -14,14 +14,14 @@ RSpec.describe PostsController, type: :controller do
     it "responds with 200" do
       user = User.create(email: "new@gmail.com", password: "password", password_confirmation: "password")
       sign_in user
-      post :create, params: { post: { message: "Hello, world!" } }
+      post :create, params: { post: { message: "Hello, world!" }, wall_id: "" }
       expect(response).to redirect_to(posts_url)
     end
 
     it "creates a post" do
       user = User.create(email: "new@gmail.com", password: "password", password_confirmation: "password")
       sign_in user
-      post :create, params: { post: { message: "Hello, world!" } }
+      post :create, params: { post: { message: "Hello, world!" }, wall_id: "" }
       expect(Post.find_by(message: "Hello, world!")).to be
     end
   end

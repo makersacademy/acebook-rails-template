@@ -25,4 +25,18 @@ RSpec.feature "Deleting Posts", type: :feature do
     expect(page).to have_content("Hello, this is message 1")
     expect(page).not_to have_content("Howdy, I'm message 2")
   end
+
+  scenario "Users can delete posts from the global wall" do
+    sign_up
+    click_link "All Posts"
+    click_link "New post"
+    fill_in "Message", with: "Hello, this is message 1"
+    click_button "Submit"
+    click_link "New post"
+    fill_in "Message", with: "Howdy, I'm message 2"
+    click_button "Submit"
+    click_link("Delete", match: :first)
+    expect(page).to have_content("Hello, this is message 1")
+    expect(page).not_to have_content("Howdy, I'm message 2")
+  end
 end

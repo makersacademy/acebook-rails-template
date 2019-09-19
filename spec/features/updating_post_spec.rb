@@ -24,6 +24,19 @@ RSpec.feature "Updating posts", type: :feature do
     expect(page).to have_selector(:link_or_button, "Update")
   end
 
+  scenario "User CAN update on the global wall" do
+    sign_up
+    click_link "All Posts"
+    click_link "New post"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    click_link "Update"
+    fill_in "Message", with: "Goodbye, world"
+    click_button "Submit"
+    expect(page).to have_content("Goodbye, world")
+    expect(page).not_to have_content("Hello, world")
+  end
+
   scenario "Users CAN only update their own post within limit of 10 minutes" do
     sign_up
     click_link "New post"

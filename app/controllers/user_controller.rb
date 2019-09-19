@@ -4,9 +4,9 @@ class UserController < ApplicationController
     @user = User.find(params[:id])
     @posts = Post.all.order("created_at DESC")
     if @posts.first == nil
-      @select_posts = @posts
+      @wall_posts = @posts
     else
-      @select_posts = @posts.select { |post| post.wall_id == params[:id]}
+      @wall_posts = @posts.select { |post| post.wall_id == params[:id] }
     end
   end
 end
