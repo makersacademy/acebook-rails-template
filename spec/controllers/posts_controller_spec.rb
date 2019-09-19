@@ -4,7 +4,7 @@ RSpec.describe PostsController, type: :controller do
 
 
   let(:user) { FactoryBot.create(:user) }
-  let(:wall) { FactoryBot.create(:wall) }
+  # let(:wall) { FactoryBot.create(:wall) }
 
   before(:each) {
     sign_in
@@ -79,17 +79,22 @@ RSpec.describe PostsController, type: :controller do
 
   describe "Destroy" do
     it "can delete its own submitted post" do
-      post :create, params: { post: { message: "Hello, world!" }, session: {host_user_id: user.id, return_to: posts_url} }
+      request.env['HTTP_REFERER'] = posts_url
+      user.create_wall!
+      post :create, params: { post: { message: "Hello, world!" }}, session: {host_user_id: user.id, return_to: posts_url}
       expect(Post.all.count).to eq 1
 
       post_id = Post.all.first.id
       # allow(current_user).to receive(:id).and_return(1)
+
       delete :destroy, params: { id: post_id }
       expect(Post.all.count).to eq 0
     end
 
     it "can't delete a post that doesn't belong to them" do
-      post :create, params: { post: { message: "Hello, world!" }, session: {host_user_id: user.id, return_to: posts_url} }
+      request.env['HTTP_REFERER'] = posts_url
+      user.create_wall!
+      post :create, params: { post: { message: "Hello, world!" }}, session: {host_user_id: user.id, return_to: posts_url}
       sign_out
 
       post_id = Post.all.first.id
