@@ -1,12 +1,9 @@
 <%= form_for @album do |form| %>
 
 
-  <%= form.label :title %>
+  <%= form.label "Album name"%>
+  <br>
   <%= form.text_field :title %>
-  
-<br>
-  <%= form.file_field :images %>
-
   <%= form.submit "Add" %>
 
 <% end %>
