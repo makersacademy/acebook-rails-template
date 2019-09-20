@@ -2,15 +2,11 @@
 
 class AlbumsController < ApplicationController
   def show
-    p '---------------'
-    p params
     @album = Album.find(params[:id])
     @user = User.find(@album.user_id)
   end
 
   def create
-    p '---------------'
-    p params
     @album = current_user.albums.create(album_params)
     redirect_to albums_url
   end
@@ -49,6 +45,14 @@ class AlbumsController < ApplicationController
         render 'edit'
       end
     end
+  end
+
+  def delete_image_attachment
+    @image = ActiveStorage::Blob.find(params[:id])
+    p '------------------'
+    # p @image
+    @image.purge_later
+    redirect_to albums_url
   end
 
   private

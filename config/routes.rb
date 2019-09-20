@@ -27,4 +27,11 @@ Rails.application.routes.draw do
   resources :albums
   resources :users,
             path_names: { show: 'wall' }
+
+
+  resources :albums do
+    member do
+        delete :delete_image_attachment
+      end 
+  end
 end
