@@ -29,7 +29,9 @@ RSpec.feature "Submitting Posts", type: :feature do
     click_link "Logout"
     sign_up_other_user
     click_link "All Posts"
+    within(".card-body") do
     click_link "test@gmail.com"
+    end
     click_link "New post"
     fill_in "Message", with: "This is user 2, posting on user 1's wall"
     click_button "Submit"

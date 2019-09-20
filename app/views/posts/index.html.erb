@@ -24,9 +24,10 @@
   <%@users.each do |user|%>
 <% if user.id != current_user.id%>
 <% if current_user.friend_with?(user.id)%>
-<p><%= user.email %> <span>Friends</span></p>
+ <p><%= link_to user.email, user_path(user.id), class: 'people-btn'%>
+  <span>Friends</span></p>
 <% else %>
-<p><%= user.email %>
+<p><%= link_to user.email, user_path(user.id), class: 'people-btn'%>
 <%= link_to 'Add Friend', friendships_path(:friend_id => user), :method => :post%>
 </p>
 <% end %>
@@ -37,7 +38,7 @@
   <% @wall_posts.each do |post| %>
   <div class="card">
     <div class="card-body">
-      <%= link_to user_path(post.user_id) do %>
+      <%= link_to user_path(post.user_id), class: 'posts-user-btn' do %>
         <%= @user_class.find(post.user_id).email %>
        <% end %>
 

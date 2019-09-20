@@ -35,6 +35,7 @@
       <%= link_to user_path(post.user_id) do %>
         <%= @user_class.find(post.user_id).email %>
       <% end %>
+  
       <%= simple_format(post.message, class: 'card-text') %>
       <p>Created at: <%= post.created_at.strftime("%b %-d %Y, %H:%M") %></p>
       <% if post.user_id == current_user.id %>
@@ -44,6 +45,9 @@
         <%= link_to 'posts/' + post.id.to_s, class: 'btn btn-primary' do %>
           Update
         <% end %>
+      <% end %>
+          <% if post.user_id != current_user.id && !current_user.friend_with?(post.user_id)%>
+        <%= link_to 'Add Friend', friendships_path(:friend_id => post.user_id), :method => :post, class: 'add-friends-btn'%>
       <% end %>
   </div>
 </div>
