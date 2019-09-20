@@ -38,14 +38,37 @@
                         <br>
 </div>
 
-<ul class="list-group">
-    <% @posts.each do |post|%>
-        <li class="list-group-item list-group-item-dark text-center" style="padding: 20px; max-width: 50vw; margin: 0 auto">
-            <%=post.message%>
-                <%= link_to 'Edit', edit_post_path(post) if current_user.id == post.user_id  %>
-                    <%= link_to 'Delete', post_path(post),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } if current_user.id == post.user_id%>
-                        <%= link_to 'Show comments', post_path(post) %>
+<div class="wall-container">
+    <ul class="list-group">
+        <% @posts.each do |post|%>
+            <li class="list-group-item list-group-item-dark text-center" style="padding: 20px; max-width: 50vw; margin: 0 auto">
+                <%=post.message%>
+                    <%= link_to 'Edit', edit_post_path(post) if current_user.id == post.user_id  %>
+                        <%= link_to 'Delete', post_path(post),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } if current_user.id == post.user_id%>
+                            <%= link_to 'Show comments', post_path(post) %>
+                                <h5>Comments</h5>
+                                <% post.comments.each do |comment| %>
+
+                                    <p>
+                                        <strong>Comment:</strong>
+                                        <%= comment.body %>
+                                    </p>
+                                    <% end %>
+                                        <%end%>
+    </ul>
+
+    <ul class="list-group">
+        <% @albums.each do |album|%>
+            <li class="list-group-item list-group-item-dark text-center" style="padding: 20px; max-width: 50vw; margin: 0 auto">
+                <%=album.title%>
+                    <%album.images.each do |image|%>
+                        <%= link_to image_tag(image, class: "album-image"), image %>
+
                             <%end%>
-</ul>
+
+                                <%end%>
+
+    </ul>
+</div>
