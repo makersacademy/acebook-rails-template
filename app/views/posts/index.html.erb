@@ -39,8 +39,9 @@
                         <%= link_to 'Delete post', post_path(post),
                             method: :delete,
                             data: { confirm: 'Are you sure?' } %>
+                            <%= link_to 'Edit post', edit_post_path(post) %>
                         <% end %> <br>
-                        <%= link_to 'Edit post', edit_post_path(post) %>
+                        
                     </td>
                 </tr>
                         <% end %>

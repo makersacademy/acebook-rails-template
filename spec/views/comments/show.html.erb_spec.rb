@@ -1,18 +1,21 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.describe "comments/show", type: :view do
-  before(:each) do
-    @comment = assign(:comment, Comment.create!(
-      :commenter => "Commenter",
-      :body => "MyText",
-      :post => nil
-    ))
-  end
+# require 'rails_helper'
 
-  it "renders attributes in <p>" do
-    render
-    expect(rendered).to match(/Commenter/)
-    expect(rendered).to match(/MyText/)
-    expect(rendered).to match(//)
-  end
-end
+# RSpec.describe "comments/show", type: :view do
+#   before(:each) do
+#     post :create, params: { post: { message: 'Hello, world!' } }
+#     @comment = assign(:comment, Comment.create!(
+#       :commenter => "Commenter",
+#       :body => "MyText",
+#       :post => nil
+#     ))
+#   end
+
+#   it "renders attributes in <p>" do
+#     render
+#     expect(rendered).to match(/Commenter/)
+#     expect(rendered).to match(/MyText/)
+#     expect(rendered).to match(//)
+#   end
+# end

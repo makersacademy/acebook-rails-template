@@ -5,7 +5,7 @@
      <button> <%= link_to 'Albums', albums_path %></button>
         <div class=" text-center">
             <%if current_user.id == @user.id%>
-                
+            
                 <%= form_for current_user do |form| %>
                     <div>
                         <%= form.label :avatar  %>
@@ -16,26 +16,26 @@
                     <%end%>
             <%end%>
 
-                            <h1>
-                                <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
-                                    <p>
-                                        <%=@user.username%> wall:
-                                    </p>
-                            </h1>
-                            <p>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
+        <h1><%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
+            <p>
+                <%=@user.username%> wall:
+            </p>
+        </h1>
+        <p>
+        <br>
+        <br>
+        <br>
+        <br>
         </div>
 
         <ul class="list-group">
             <% @posts.each do |post|%>
-                <li class="list-group-item list-group-item-dark text-center" style="padding: 20px; max-width: 50vw; margin: 0 auto">
-                    <%=post.message%>
-                        <%= link_to 'Edit', edit_post_path(post) if current_user.id == post.user_id  %>
-                            <%= link_to 'Delete', post_path(post),
-      method: :delete,
-      data: { confirm: 'Are you sure?' } if current_user.id == post.user_id%>
-                                <%end%>
+            <li class="list-group-item list-group-item-dark text-center" style="padding: 20px; max-width: 50vw; margin: 0 auto">
+            <%=post.message%>
+            <%= link_to 'Edit', edit_post_path(post) if current_user.id == post.user_id  %>
+            <%= link_to 'Delete', post_path(post),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } if current_user.id == post.user_id%>
+            <%= link_to 'Show comments', post_path(post) %>
+            <%end%>
         </ul>
