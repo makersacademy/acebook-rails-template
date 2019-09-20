@@ -39,3 +39,7 @@
 <div>
   <%= link_to 'Show all users', users_show_path%>
 </div>
+
+<div>
+  <%= link_to 'Go to my wall', user_wall_url(@current_user.id)%>
+</div>

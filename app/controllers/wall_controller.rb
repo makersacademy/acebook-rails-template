@@ -4,5 +4,6 @@ class WallController < ApplicationController
     session[:host_user_id] = params[:user_id]
     @user = User.find(params[:user_id])
     @posts = @user.wall.posts
+    @current_user = current_user
   end
 end

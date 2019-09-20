@@ -18,6 +18,7 @@ class PostsController < ApplicationController
     session[:host_user_id] = current_user.id
     @user = User.find(current_user.id)
     @posts = @user.posts
+    @current_user = current_user
   end
 
   def edit
