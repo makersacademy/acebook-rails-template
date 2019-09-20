@@ -47,6 +47,5 @@ RSpec.feature "Adding friends", type: :feature do
     within(".add-friends-btn") do
       expect(page).to have_content("Add Friend")
     end
-
   end
 end
