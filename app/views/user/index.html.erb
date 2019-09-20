@@ -20,7 +20,7 @@
 <p>My Friends <%= @user.friendships.count %></p>
   <% for friendship in @user.friendships%>
   <p><%=h friendship.friend.email%>
-  <%= link_to 'Unfollow', friendship, :method=>:delete%>
+  <%= link_to 'Remove Friend', friendship, :method=>:delete%>
   </p>
   <% end %>
 

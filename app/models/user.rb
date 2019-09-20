@@ -6,15 +6,9 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :friendships
-  has_many :friends, :through => :friendships
-  
-  scope :friend_with, ->( other ) do
-    other = other.id if other.is_a?( User )
-    where( '(friendships.user_id = users.id AND friendships.friend_id = ?) OR (friendships.user_id = ? AND friendships.friend_id = users.id)', other, other ).includes( :friendships )
-  end
+  has_many :friends, through: :friendships
 
-  def friend_with?( other )
+  def friend_with?(other)
     friendships.find_by(friend_id: other)
   end
-
 end

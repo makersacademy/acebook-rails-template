@@ -3,23 +3,27 @@
   text-align: center;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  img{    width: 8%;
+  background: #fff;
+  img{ width: 8%;
   }
 } 
   .logout-link {    float: right;
     display: block;
     width: 100%;}
-.top-nav {
-  float: right;
-  margin: 2% 0;
-  width: 100%;
-  display: block;
-  text-align: right;
-}
+    .top-nav {
+      float: left;
+      margin: 0% 0;
+      width: 100%;
+      display: block;
+      text-align: left;
+      background: #3e6167;
+      color: #fff;
+  }
 .nav-link {
   display: inline-block;
   font-size: 18px;
   text-transform: capitalize;}
+  .nav-link:visited {color: #fff;}
 a.nav-link:hover {
   color: #fff;
   background-color: #5c7c9f;
@@ -37,7 +41,7 @@ a.nav-link:hover {
       margin: 0 auto 1%;
       text-align: center;
       width: 80%;
-      border: 3px solid rgb(102, 176, 186);
+      border: 3px solid #3e6166;
     }
 }
 

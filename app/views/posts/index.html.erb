@@ -20,11 +20,11 @@
   </div>
 
   <div class="friends-container">
-  <h2>Add More Friends</h2>
+  <h2>People</h2>
   <%@users.each do |user|%>
 <% if user.id != current_user.id%>
 <% if current_user.friend_with?(user.id)%>
-<p><%= user.email %> <span>Already friends</span></p>
+<p><%= user.email %> <span>Friends</span></p>
 <% else %>
 <p><%= user.email %>
 <%= link_to 'Add Friend', friendships_path(:friend_id => user), :method => :post%>

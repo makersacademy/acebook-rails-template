@@ -1,15 +1,13 @@
 class FriendshipsController < ApplicationController
   before_action :check_friendship, only: :create
-  
+
   def create
-    @friendship = current_user.friendships.build(:friend_id => params[:friend_id])
+    @friendship = current_user.friendships.build(friend_id: params[:friend_id])
     if @friendship.save
-      redirect_to user_path(current_user.id)
-    else
-      redirect_to root_url
+      redirect_to request.referrer
     end
   end
-  
+
   def destroy
     @friendship = current_user.friendships.find(params[:id])
     @friendship.destroy
@@ -17,7 +15,7 @@ class FriendshipsController < ApplicationController
   end
 
   private
-  def check_friendship
-    redirect_to( current_user, alert: 'Already a friend' ) if current_user.friend_with?( params[ :friend_id ] )
-  end
+    def check_friendship
+      redirect_to(current_user, alert: "Already a friend") if current_user.friend_with?(params[ :friend_id ])
+    end
 end

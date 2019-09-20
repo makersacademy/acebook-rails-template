@@ -31,7 +31,7 @@ RSpec.feature "Displaying Posts", type: :feature do
       click_link "New post"
       fill_in "Message", with: "Hello, this is a global post"
       click_button "Submit"
-      click_link "My Posts"
+      click_link "My Wall"
       click_link "New post"
       fill_in "Message", with: "Hello, this is a post on my wall"
       click_button "Submit"
