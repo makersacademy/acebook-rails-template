@@ -46,11 +46,17 @@
                 </tr>
                         <% end %>
 
-                <button> <%= link_to new_post_path do %> 
-                Add new post </button>
-        <% end %>
-        <td class="jumbotron text-center">
-            <%= link_to 'Back', root_path %>
-        </td>
+
+                    <button> <%= link_to new_post_path do %>
+                    Add new post </button>
+                    <% end %>
+                        <button> <%= link_to 'See Albums', albums_path %></button>
+                        <button> <%= link_to 'Create New Album', '/albums/new' %></button>
+                        <div class=" text-center">
+                            <div class=" text-center">
+                                <td class="jumbotron text-center">
+                                    <%= link_to 'Back', root_path %>
+                                </td>
     </table>
-</div
+    </div
+

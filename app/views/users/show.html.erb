@@ -1,20 +1,29 @@
 <button><%= link_to 'See all posts', posts_path %></button>
-    <l1 style="padding: 20px"> </l1>
-    <button><%= link_to 'Add new post', new_post_path %></button>
-    <l1 style="padding: 20px"> </l1>
-     <button> <%= link_to 'Albums', albums_path %></button>
-        <div class=" text-center">
-            <%if current_user.id == @user.id%>
-            
-                <%= form_for current_user do |form| %>
-                    <div>
-                        <%= form.label :avatar  %>
-                        <%= form.file_field :avatar %>
-                        <%= form.submit %>
-                    </div>
 
-                    <%end%>
+<l1 style="padding: 20px"> </l1>
+<button><%= link_to 'Add new post', new_post_path %></button>
+<l1 style="padding: 20px"> </l1>
+<button> <%= link_to 'Albums', albums_path %></button>
+<div class=" text-center">
+    <%if current_user.id == @user.id%>
+
+        <%= form_for current_user do |form| %>
+            <div>
+                <h4 class='avatar-title'>
+                    <%= form.label 'Set your avatar:'  %>
+                </h4>
+
+                <%= form.file_field :avatar %>
+
+                    <p class="avatar-btn">
+                        <%= form.submit "Set avatar" %>
+                    </p>
+            </div>
+
+
             <%end%>
+                <%end%>
+
 
         <h1><%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
             <p>
@@ -39,3 +48,4 @@
             <%= link_to 'Show comments', post_path(post) %>
             <%end%>
         </ul>
+
