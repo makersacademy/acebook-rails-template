@@ -61,10 +61,6 @@ I want to be able to delete post
 As a user
 So I can view my posts chronologically
 I want my posts to be sorted newest first
-
-As a user
-So I can view my posts chronologically
-I want my posts to be sorted newest first
 ```
 **Feature - Wall**
 ```
