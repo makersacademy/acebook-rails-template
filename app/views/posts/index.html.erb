@@ -1,7 +1,7 @@
 <div class="container">
     <table style="text-align: center" class="table">
         <tr class="jumbotron text-center">
-            <th style="text-align: center">AceBook Wall</th>
+            <th style="text-align: center"><span class="wall">AceBook Wall</span></th>
             <th colspan=“2”></th>
         </tr>
         <% @posts.reverse.each do |post| %>
@@ -9,44 +9,44 @@
                 <tr>
                     <td>
                         <%= simple_format(post.message.gsub('<', '< ') ) %>
-                        <div>Posted:
-                            <%= post.created_at.strftime("%d/%m/%Y") %>
-                            <div>
-                                <%= link_to @user.username, user_path(post.user_id)%> <br>
-                                
-                                <%= link_to user_path(post.user_id) do %>
-                                    <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
-                                <% end %><br>
-                                <%= link_to 'Show comments', post_path(post) %>
+                            <div>Posted:
+                                <%= post.created_at.strftime("%d/%m/%Y") %>
+                                    <div>
+                                        <%= link_to @user.username, user_path(post.user_id)%> <br>
+
+                                            <%= link_to user_path(post.user_id) do %>
+                                                <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
+                                                    <% end %><br>
+                                                        <%= link_to 'Show comments', post_path(post) %>
+                                    </div>
                             </div>
-                        </div>
                     </td>
                     <td>
                         <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-                        <p>
-                        
-                        </p>
-                        <p>
-                          <%= form.text_area :body %>
-                        </p>
-                        <p>
-                          <%= form.submit %>
-                        </p>
-                        <% end %>
-                        <% if current_user.id == post.user_id  %>
+                            <p>
+
+                            </p>
+                            <p>
+                                <%= form.text_area :body %>
+                            </p>
+                            <p>
+                                <%= form.submit %>
+                            </p>
+                            <% end %>
+                                <% if current_user.id == post.user_id  %>
                     </td>
                     <td>
-                       
+
                         <%= link_to 'Delete post', post_path(post),
                             method: :delete,
                             data: { confirm: 'Are you sure?' } %>
                             <%= link_to 'Edit post', edit_post_path(post) %>
-                        <% end %> <br>
-                      
-                        
+                                <% end %> <br>
+
+
                     </td>
                 </tr>
-                        <% end %>
+                <% end %>
 
 
                     <button> <%= link_to new_post_path do %>
@@ -61,4 +61,3 @@
                                 </td>
     </table>
     </div
-
