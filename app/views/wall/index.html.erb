@@ -1,0 +1,31 @@
+<h1>Wall#index</h1>
+
+<% @posts.reverse_each do |post| %>
+  <div class="post" id="post<%= post.id %>">
+  <% post.lines.each do | line | %>
+    <p><%= line %></p>
+  <% end %>
+
+
+    <p>Created At: <%= post.created_at %></p>
+
+    <% if post.created_at != post.updated_at %>
+      <p>Last Updated : <%= post.updated_at %></p>
+    <% end %>
+
+    <p>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Delete', post_path(post),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+    </p>
+  </div>
+<% end %>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= link_to new_post_path do %>
+  New post
+<% end %>

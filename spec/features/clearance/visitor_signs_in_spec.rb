@@ -30,7 +30,9 @@ RSpec.feature 'Visitor signs in' do
   private
 
   def create_user(email, password)
-    FactoryBot.create(:user, email: email, password: password)
+    user = FactoryBot.create(:user, email: email, password: password)
+    user.create_wall!
+    user
   end
 
   def expect_page_to_display_sign_in_error

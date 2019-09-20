@@ -11,4 +11,8 @@ class SessionsController < Clearance::SessionsController
       end
     end
   end
+
+  def url_after_create
+    user_wall_path(@user)
+  end
 end

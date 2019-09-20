@@ -4,6 +4,7 @@ class UsersController < Clearance::UsersController
 
     if invalid_login_details
     elsif @user.save
+      @user.create_wall!
       login_and_welcome
     else
       render template: 'users/new'
@@ -11,6 +12,10 @@ class UsersController < Clearance::UsersController
   end
 
   private
+
+  def url_after_create
+    user_wall_path(@user)
+  end
 
   def invalid_login_details
     if password_is_invalid?
