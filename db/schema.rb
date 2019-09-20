@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20_190_919_135_443) do
+ActiveRecord::Schema.define(version: 2019_09_19_135443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,37 +36,36 @@ ActiveRecord::Schema.define(version: 20_190_919_135_443) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-
-  create_table 'albums', force: :cascade do |t|
-    t.string 'title'
-    t.bigint 'user_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['user_id'], name: 'index_albums_on_user_id'
+  create_table "albums", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
-  create_table 'comments', force: :cascade do |t|
-    t.string 'commenter'
-    t.text 'body'
-    t.bigint 'post_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['post_id'], name: 'index_comments_on_post_id'
+  create_table "comments", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.bigint "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
-  create_table 'images', force: :cascade do |t|
-    t.bigint 'album_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['album_id'], name: 'index_images_on_album_id'
+  create_table "images", force: :cascade do |t|
+    t.bigint "album_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_images_on_album_id"
   end
 
-  create_table 'posts', force: :cascade do |t|
-    t.string 'message'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.bigint 'user_id'
-    t.index ['user_id'], name: 'index_posts_on_user_id'
+  create_table "posts", force: :cascade do |t|
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -83,11 +81,9 @@ ActiveRecord::Schema.define(version: 20_190_919_135_443) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-
-  add_foreign_key 'active_storage_attachments', 'active_storage_blobs', column: 'blob_id'
-  add_foreign_key 'albums', 'users'
-  add_foreign_key 'comments', 'posts'
-  add_foreign_key 'images', 'albums'
-  add_foreign_key 'posts', 'users'
-
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "albums", "users"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "images", "albums"
+  add_foreign_key "posts", "users"
 end
