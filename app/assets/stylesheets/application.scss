@@ -16,6 +16,16 @@
                 
                 @import "bootstrap-sprockets";
                 @import "bootstrap";
+                .logo-wrapper {
+                    width: 100wv;
+                    text-align: center;
+                    .logo {
+                        margin: 0 auto;
+                        width: 60vw;
+                        min-height: 20vh;
+                    }
+                }
+                
                 .home_button {
                     position: absolute;
                     top: 15px;
