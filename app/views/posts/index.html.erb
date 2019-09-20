@@ -9,8 +9,8 @@
     <% post.lines.each do | line | %>
       <p><%= line %></p>
     <% end %>
-    
-    <p>Created At: <%= post.created_at %></p>
+
+    <p>Created by <%=post.user.username%> At: <%= post.created_at %></p>
 
     <% if post.created_at != post.updated_at %>
       <p>Last Updated : <%= post.updated_at %></p>
