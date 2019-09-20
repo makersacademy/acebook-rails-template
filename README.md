@@ -21,14 +21,13 @@ bin/rails server
 
 Then visit [here](http://localhost:3000) #localhost:3000
 
-## Contributors
+## Team
 This Facebook clone was made by:
-[Caroline](https://github.com/KierepkaE),
-[Guy](https://github.com/GuyCalloway),
-[Mario](https://github.com/jaitone),
-[Kat](https://github.com/KMaskell),
-[Said](https://github.com/sakmalov),
-[Sonny](https://github.com/sonny-maan)
+
+| Caroline |  Guy | Mario | Kat | Said | Sonny |
+| :-----: | :-------:  | :------:  | :------:  | :------:  |:-------: |
+|<a href='https://github.com/KierepkaE'><img src='https://user-images.githubusercontent.com/23095774/60434119-56192e00-9bfe-11e9-8156-26105b51e0d7.png' width='40'></a>|<a href='https://github.com/GuyCalloway'><img src='https://user-images.githubusercontent.com/23095774/60434119-56192e00-9bfe-11e9-8156-26105b51e0d7.png' width='40'></a>|<a href='https://github.com/jaitone'><img src='https://user-images.githubusercontent.com/23095774/60434119-56192e00-9bfe-11e9-8156-26105b51e0d7.png' width='40'></a>|<a href='https://github.com/KMaskell'><img src='https://user-images.githubusercontent.com/23095774/60434119-56192e00-9bfe-11e9-8156-26105b51e0d7.png' width='40'></a>|<a href='https://github.com/sakmalov'><img src='https://user-images.githubusercontent.com/23095774/60434119-56192e00-9bfe-11e9-8156-26105b51e0d7.png' width='40'></a>|<a href='https://github.com/sonny-maan'><img src='https://user-images.githubusercontent.com/23095774/60434119-56192e00-9bfe-11e9-8156-26105b51e0d7.png' width='40'></a>|
+
 
 ## License
 [![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
