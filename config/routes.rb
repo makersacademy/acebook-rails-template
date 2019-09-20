@@ -27,13 +27,12 @@ Rails.application.routes.draw do
   resources :users,
             path_names: { show: 'wall' }
 
-
   resources :posts do
     resources :comments, except: :show
   end
   resources :albums do
     member do
-        delete :delete_image_attachment
-      end 
+      delete :delete_image_attachment
+    end
   end
 end

@@ -36,7 +36,7 @@ gem 'materialize', '0.4.5'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'autoprefixer-rails'
+gem 'aws-sdk-s3', require: false
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'mini_magick'
 gem 'sprockets-rails', require: 'sprockets/railtie'
-gem 'aws-sdk-s3', require: false
