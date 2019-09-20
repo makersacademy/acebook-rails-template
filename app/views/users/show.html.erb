@@ -48,7 +48,15 @@
                     method: :delete,
                     data: { confirm: 'Are you sure?' } if current_user.id == post.user_id%>
                             <%= link_to 'Show comments', post_path(post) %>
-                                <%end%>
+                                <h5>Comments</h5>
+                                <% post.comments.each do |comment| %>
+
+                                    <p>
+                                        <strong>Comment:</strong>
+                                        <%= comment.body %>
+                                    </p>
+                                    <% end %>
+                                        <%end%>
     </ul>
 
     <ul class="list-group">
