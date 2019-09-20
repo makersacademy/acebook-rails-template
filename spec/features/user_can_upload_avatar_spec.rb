@@ -1,16 +1,39 @@
 # frozen_string_literal: true
 
-# # frozen_string_literal: true
+require 'rails_helper'
+require 'clearance_helpers'
 
-# require 'rails_helper'
-# require 'clearance_helpers'
+RSpec.feature 'User', type: :feature do
+  before do
+    sign_up_with('username', 'test@mail.com', 'testing')
+  end
 
-# RSpec.feature 'User', type: :feature do
+  scenario 'User has an album' do
+    visit '/albums/new'
+    fill_in "album_title", with: "Album title"
+    click_button "Add"
+    expect(page).to have_content('Album title')
+  end
 
-#   scenario 'can upload a profile picture' do
-#     visit '/'
-#     page.attach_file("post_image", Rails.root + 'app/assets/images/imagename.jpg')
-#     click_button "Update User"
-#     expect(page).to have_content("post_image")
-#   end
-# end
+  scenario 'User is able to see all albums' do
+    visit '/albums/new'
+    fill_in "album_title", with: "Album title"
+    click_button "Add"
+    click_link "New Album"
+    fill_in "album_title", with: "Album title 2"
+    click_button "Add"
+    expect(page).to have_content('Album title')
+    expect(page).to have_content('Album title 2')
+  end
+
+  scenario 'User is able to see all albums' do
+    visit '/albums/new'
+    fill_in "album_title", with: "Album title"
+    click_button "Add"
+    click_link "New Album"
+    fill_in "album_title", with: "Album title 2"
+    click_button "Add"
+    expect(page).to have_content('Album title')
+    expect(page).to have_content('Album title 2')
+  end
+end
