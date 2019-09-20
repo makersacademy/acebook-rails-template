@@ -79,7 +79,7 @@ To let people know I appreciate their photos
 I want to be able to comment on a photo
 ```
 ## Other Links
-App hosted on Heroku [here](http://good-guys.herokuapp.com/).
+App hosted on Heroku [here](http://good-guys.herokuapp.com/).   
 Group Trello board [here](https://trello.com/b/5L6RpKGD/team-good-guys).
 
 ## License
