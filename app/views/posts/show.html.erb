@@ -3,8 +3,17 @@
 </p>
 
 <p>
-    <b>Name: </b>
-    <%= simple_format(@post.message) %>
+    <h1> <%= @post.message %> </h1>
 </p>
-    <%= link_to 'Edit', edit_post_path(@post)%> |
-    <%= link_to 'Back', posts_path %>
+    
+<h2>Comments</h2>
+<% @post.comments.each do |comment| %>
+ 
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
+<% end %>
+ 
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
