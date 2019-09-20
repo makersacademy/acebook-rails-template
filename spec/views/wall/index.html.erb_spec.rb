@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'wall/index.html.erb', type: :view do
-  let(:post1){FactoryBot.create(:post, message: 'msg 1')}
-  let(:post2){FactoryBot.create(:post, message: 'msg 2')}
-  let(:post3){FactoryBot.create(:post, message: 'msg 3')}
-  let(:user1){FactoryBot.create(:user)}
-  let(:user2){FactoryBot.create(:user)}
+  let(:post1) { FactoryBot.create(:post, message: 'msg 1') }
+  let(:post2) { FactoryBot.create(:post, message: 'msg 2') }
+  let(:post3) { FactoryBot.create(:post, message: 'msg 3') }
+  let(:user1) { FactoryBot.create(:user) }
+  let(:user2) { FactoryBot.create(:user) }
 
-  before(:each){sign_in}
+  before(:each) { sign_in }
   # let(:post1) do
   #   double(
   #     :post,

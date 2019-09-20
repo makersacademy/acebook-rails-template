@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'posts/index.html.erb', type: :view do
-  let(:post1){FactoryBot.create(:post, message: 'msg 1')}
-  let(:post2){FactoryBot.create(:post, message: 'msg 2')}
-  let(:post3){FactoryBot.create(:post, message: 'msg 3')}
-  let(:user1){FactoryBot.create(:user)}
-  let(:user2){FactoryBot.create(:user)}
+  let(:post1) { FactoryBot.create(:post, message: 'msg 1') }
+  let(:post2) { FactoryBot.create(:post, message: 'msg 2') }
+  let(:post3) { FactoryBot.create(:post, message: 'msg 3') }
+  let(:user1) { FactoryBot.create(:user) }
+  let(:user2) { FactoryBot.create(:user) }
   # let(:post1) do
   #   double(
   #     :post,
@@ -47,7 +47,7 @@ RSpec.describe 'posts/index.html.erb', type: :view do
 
   # let(:user1) { double(:user, id: 1) }
   # let(:user2) { double(:user, id: 2) }
-  before(:each){ sign_in }
+  before(:each) { sign_in }
 
   it 'has a link to the new post page' do
     @current_user = FactoryBot.create(:user)

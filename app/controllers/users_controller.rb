@@ -12,7 +12,7 @@ class UsersController < Clearance::UsersController
   end
 
   def show
-    @users = User.all 
+    @users = User.all
   end
 
   private
