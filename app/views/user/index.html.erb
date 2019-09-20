@@ -1,0 +1,59 @@
+<% if current_user == @user %>
+    <h3>Hello <%= current_user.email %>! You are now signed in to your User Page!</h3>
+<% else %>
+  <h3>This is <%= @user.email %>'s wall</h3>
+<% end %>
+
+<%= link_to posts_path, class: 'btn btn-primary' do %>
+  All Posts
+<% end %>
+
+<%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary') %>
+
+<%= link_to new_user_post_path(@user.id), class: 'btn btn-primary' do %>
+  New post
+<% end %>
+<br>
+<br>
+
+<% if current_user == @user %>
+<p>My Friends:  <%= @user.friendships.count %></p>
+  <% for friendship in @user.friendships%>
+  <p><%=h friendship.friend.email%>
+  <%= link_to 'Remove Friend', friendship, :method=>:delete%>
+  </p>
+  <% end %>
+  <% elsif @user.id != current_user.id && !current_user.friend_with?(@user.id)%>
+    <p>Friends:  <%= @user.friendships.count %></p>
+  <% for friendship in @user.friendships%>
+  <p><%=h friendship.friend.email%>
+  </p>
+  <% end %>
+      <%= link_to 'Add me as a friend', friendships_path(:friend_id => @user.id), :method => :post%>
+<% end %>
+
+<div class="user-cards">
+<% @wall_posts.each do |post| %>
+  <div class="card">
+    <div class="card-body">
+      <%= link_to user_path(post.user_id) do %>
+        <%= @user_class.find(post.user_id).email %>
+      <% end %>
+  
+      <%= simple_format(post.message, class: 'card-text') %>
+      <p>Created at: <%= post.created_at.strftime("%b %-d %Y, %H:%M") %></p>
+      <% if post.user_id == current_user.id %>
+          <%= link_to 'Delete', posts_path(post), method: :delete, class: 'btn btn-primary' %>
+      <% end %>
+      <% if Time.now <= post.created_at + 600 && post.user_id == current_user.id %>
+        <%= link_to 'posts/' + post.id.to_s, class: 'btn btn-primary' do %>
+          Update
+        <% end %>
+      <% end %>
+          <% if post.user_id != current_user.id && !current_user.friend_with?(post.user_id)%>
+        <%= link_to 'Add Friend', friendships_path(:friend_id => post.user_id), :method => :post, class: 'add-friends-btn'%>
+      <% end %>
+  </div>
+</div>
+<% end %>
+</div>

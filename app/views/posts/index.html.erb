@@ -1,7 +1,92 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<% if user_signed_in? %>
+  <div class="top-nav">
+    <ul>
+      <li>
+        <%= link_to user_path(current_user.id), class: 'nav-link' do %>
+          My Wall
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "/posts/new", class: 'nav-link' do %>
+          New post
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  <h3>Hello <%= current_user.email %>! You are now signed in</h3>
+   <div class="logout-link">
+   <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary logout') %>
+  </div>
+
+  <div class="friends-container">
+  <h2>People</h2>
+  <%@users.each do |user|%>
+<% if user.id != current_user.id%>
+<% if current_user.friend_with?(user.id)%>
+ <p><%= link_to user.email, user_path(user.id), class: 'people-btn'%>
+  <span>Friends</span></p>
+<% else %>
+<p><%= link_to user.email, user_path(user.id), class: 'people-btn'%>
+<%= link_to 'Add Friend', friendships_path(:friend_id => user), :method => :post%>
+</p>
+<% end %>
+<% end %>
+<% end %>
+</div>
+ <div class="all-cards">
+  <% @wall_posts.each do |post| %>
+  <div class="card">
+    <div class="card-body">
+      <%= link_to user_path(post.user_id), class: 'posts-user-btn' do %>
+        <%= @user_class.find(post.user_id).email %>
+       <% end %>
+
+      <% if post.user_id != current_user.id && !current_user.friend_with?(post.user_id)%>
+      <%= link_to 'Add Friend', friendships_path(:friend_id => post.user_id), :method => :post%>
+      <% end %>
+
+      <%= simple_format(post.message, class: 'card-text') %>
+      <p>Created at: <%= post.created_at.strftime("%b %-d %Y, %H:%M") %></p>
+      <% if post.user_id == current_user.id %>
+        <%= link_to 'Delete', posts_path(post), method: :delete, class: 'btn btn-primary' %>
+      <% end %>
+      <% if Time.now <= post.created_at + 600 && post.user_id == current_user.id %>
+        <%= link_to 'posts/' + post.id.to_s, class: 'btn btn-primary' do %>
+          Update
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+
+  <% end %>
+  </div>
+<% else %>
+  <h2>Sign up</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <em>(6 characters minimum)</em>
+    <br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+    <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+  <%= link_to new_user_session_path do %>
+    Log in
+  <% end %>
+<% end %>
 <% end %>
