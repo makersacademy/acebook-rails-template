@@ -29,7 +29,7 @@ Then visit [here](http://localhost:3000) #localhost:3000
 
 ## User Stories
 
-```bash
+```
 As a user
 So I can have a Acebook Account
 I want to be able to sign up
