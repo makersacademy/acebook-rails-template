@@ -15,7 +15,7 @@
 #     click_button 'Submit'
 #     expect(page).to have_content('Hello, world!')
 #   end
-# 
+#
 #   scenario 'Can submit posts and view them in correct order' do
 #     visit '/posts'
 #     click_link 'Add new post'

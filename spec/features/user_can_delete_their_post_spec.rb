@@ -62,7 +62,7 @@ RSpec.feature 'Timeline', type: :feature do
     url = URI.parse(current_url)
     url.request_uri
     click_link 'Add new post'
-    fill_in "post_message", with: 'This is a new post'
+    fill_in 'post_message', with: 'This is a new post'
     click_button 'Submit'
     visit url
     t = DateTime.now
