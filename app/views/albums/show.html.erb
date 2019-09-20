@@ -8,6 +8,6 @@
 
 <%= form_with(model: @album, local: true) do |form|%>
     <%= form.label :images %>
-        <%= form.file_field :images, multiple: true %>
+        <%= form.file_field :images, multiple: true,direct_upload: true %>
             <%= form.submit "Add photos" %>
                 <%end%>

@@ -24,13 +24,15 @@
 
                         <div class='avatar'>
                             <%= image_tag(current_user.avatar, class:"avatar") if current_user.avatar.attached?%>
-                                <% end %>
                         </div>
+                    <% end %>
+                        
                         
                 </p>
                 <div class='button'>
                 <%= button_to 'Sign out ', sign_out_path, method: :delete, data: { confirm: 'Are you sure? ' }%>
                 </div>
+
                     <% else %>
 
                         <div class="jumbotron text-center">
@@ -48,19 +50,17 @@
                                             <% end %>
                                     </div>
                             </div>
-                            <br>
+             <br>
                             <div class="logo-wrapper">
                                 <img src="https://previews.dropbox.com/p/thumb/AAjYMifrFi4bg25OmStBKY_AyaM48Ku634V6uPogwP3A-t9uEGHFkK0rXUiU_xKkJd4WN9s7qVBoBIHyFxdIZDkmU1fvEvZzLNJdyIpvTDJE8-d1vDXbh-avv7Z52J0FfyWt6j7vznq8GmBaJE7jHMSFxly-EsCBo8V7IJX45yaNc1LzjmjQpm3X6U9BGeHds9UlNkNLE7D5-JyHOU0MfXlNf-LJsu5yGQAfaQA1I-LGF-wJMyPh1RUErpUbs_wlgjW7a9-mSX7l4fdFnMeuNTq7QfBhY-MtRJ0I5wRqMydZaPHqMyVyC1IANz9RwHmWMylDzsipc6xqcK3eB3rj6gI6Qq3lyGk-m5eQSrrKh2yM4Q/p.png?fv_content=true&size_mode=5"
                                     alt="good guys logo" class='logo'>
                             </div>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-
+                </div>
                             <%= yield %>
-                        </div>
+        </div>
+        
+    </div>
 
-</body>
+    </body>
 
 </html>
