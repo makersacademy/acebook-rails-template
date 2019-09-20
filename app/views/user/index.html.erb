@@ -17,15 +17,19 @@
 <br>
 
 <% if current_user == @user %>
-<p>My Friends <%= @user.friendships.count %></p>
+<p>My Friends:  <%= @user.friendships.count %></p>
   <% for friendship in @user.friendships%>
   <p><%=h friendship.friend.email%>
   <%= link_to 'Remove Friend', friendship, :method=>:delete%>
   </p>
   <% end %>
-
   <% elsif @user.id != current_user.id && !current_user.friend_with?(@user.id)%>
-      <%= link_to 'Add Friend', friendships_path(:friend_id => @user.id), :method => :post%>
+    <p>Friends:  <%= @user.friendships.count %></p>
+  <% for friendship in @user.friendships%>
+  <p><%=h friendship.friend.email%>
+  </p>
+  <% end %>
+      <%= link_to 'Add me as a friend', friendships_path(:friend_id => @user.id), :method => :post%>
 <% end %>
 
 <div class="user-cards">

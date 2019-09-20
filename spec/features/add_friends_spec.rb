@@ -27,7 +27,7 @@ RSpec.feature "Adding friends", type: :feature do
     click_link "Add Friend"
     click_link "My Wall"
     click_link "Remove Friend"
-    expect(page).to have_content("My Friends 0")
+    expect(page).to have_content("My Friends: 0")
     expect(page).not_to have_content("My Friends 1")
   end
 
