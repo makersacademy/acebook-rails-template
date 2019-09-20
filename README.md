@@ -1,12 +1,10 @@
 # AceBook - [![badge](https://img.shields.io/badge/made%20by-good--guys-red)](https://github.com/sindresorhus/awesome#readme)
-
-AceBook is a Facebook clone made by team good-guys
-
+Acebook is a Facebook clone team project
 ## The good-guys
 
 | Caroline |  Guy | Mario | Kat | Said | Sonny |
 | :-----: | :-------:  | :------:  | :------:  | :------:  |:-------: |
-|<a href='https://github.com/KierepkaE'><img src='https://user-images.githubusercontent.com/23095774/60434119-56192e00-9bfe-11e9-8156-26105b51e0d7.png' width='40'></a>|<a href='https://github.com/GuyCalloway'><img src='https://user-images.githubusercontent.com/23095774/60434119-56192e00-9bfe-11e9-8156-26105b51e0d7.png' width='40'></a>|<a href='https://github.com/jaitone'><img src='https://user-images.githubusercontent.com/23095774/60434119-56192e00-9bfe-11e9-8156-26105b51e0d7.png' width='40'></a>|<a href='https://github.com/KMaskell'><img src='https://user-images.githubusercontent.com/23095774/60434119-56192e00-9bfe-11e9-8156-26105b51e0d7.png' width='40'></a>|<a href='https://github.com/sakmalov'><img src='https://user-images.githubusercontent.com/23095774/60434119-56192e00-9bfe-11e9-8156-26105b51e0d7.png' width='40'></a>|<a href='https://github.com/sonny-maan'><img src='https://user-images.githubusercontent.com/23095774/60434119-56192e00-9bfe-11e9-8156-26105b51e0d7.png' width='40'></a>|
+|<a href='https://github.com/KierepkaE'><img src='https://avatars3.githubusercontent.com/u/39698754?s=460&v=4' width='100'></a>|<a href='https://github.com/GuyCalloway'><img src='https://avatars3.githubusercontent.com/u/51092029?s=460&v=4' width='100'></a>|<a href='https://github.com/jaitone'><img src='https://avatars0.githubusercontent.com/u/51136692?s=460&v=4' width='100'></a>|<a href='https://github.com/KMaskell'><img src='https://avatars1.githubusercontent.com/u/43371948?s=460&v=4' width='100'></a>|<a href='https://github.com/sakmalov'><img src='https://avatars2.githubusercontent.com/u/50984335?s=460&v=4' width='100'></a>|<a href='https://github.com/sonny-maan'><img src='https://avatars2.githubusercontent.com/u/42817066?s=460&v=4' width='100'></a>|
 
 ## Installation 
 
