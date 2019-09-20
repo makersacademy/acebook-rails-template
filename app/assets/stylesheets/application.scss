@@ -78,7 +78,7 @@
 .home_button {
     position: absolute;
     top: 15px;
-    left: 332px;
+    right: 675px;
     font-size: 27px;
     font-family: "Gill Sans", sans-serif;
     color: white;
@@ -130,9 +130,16 @@
 
 
 .body {
-    background-color: #446DB0;
+    background-color: burlywood;
 }
 
 .jumbotron {
     background-color: white;
 }
+
+.message {
+    position: absolute;
+    top: 440px;
+    left: 535px;
+}
+
