@@ -36,7 +36,8 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     @user_id_from_album = @album.user_id
     if @user_id_from_album != current_user.id
-      redirect_to albums_path, notice: 'Thats not your album!'
+      flash[:error] = "That's not your album!"
+      redirect_to albums_path
     else
       @album = current_user.albums.find(params[:id])
       if @album.update(album_params)

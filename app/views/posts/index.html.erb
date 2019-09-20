@@ -8,32 +8,44 @@
             <%@user = User.find(post.user_id) %>
                 <tr>
                     <td>
-
                         <%= simple_format(post.message.gsub('<', '< ') ) %>
-                            <div>Posted:
-
-                                <%= post.created_at.strftime("%d/%m/%Y") %>
-                                    <div>
-                                        <%= link_to @user.username, user_path(post.user_id)%>
-                                            <%= link_to user_path(post.user_id) do %>
-                                                <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
-                                                    <% end %>
-
-                                    </div>
+                        <div>Posted:
+                            <%= post.created_at.strftime("%d/%m/%Y") %>
+                            <div>
+                                <%= link_to @user.username, user_path(post.user_id)%> <br>
+                                
+                                <%= link_to user_path(post.user_id) do %>
+                                    <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
+                                <% end %><br>
+                                <%= link_to 'Show comments', post_path(post) %>
                             </div>
+                        </div>
                     </td>
                     <td>
+                        <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+                        <p>
+                        
+                        </p>
+                        <p>
+                          <%= form.text_area :body %>
+                        </p>
+                        <p>
+                          <%= form.submit %>
+                        </p>
+                        <% end %>
                         <% if current_user.id == post.user_id  %>
-                            <%= link_to 'Edit', edit_post_path(post) %>
                     </td>
                     <td>
-                        <%= link_to 'Delete', post_path(post),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-                            <% end %>
+                        <%= link_to 'Delete post', post_path(post),
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' } %>
+                            <%= link_to 'Edit post', edit_post_path(post) %>
+                        <% end %> <br>
+                        
                     </td>
                 </tr>
-                <% end %>
+                        <% end %>
+
 
                     <button> <%= link_to new_post_path do %>
                     Add new post </button>
@@ -47,3 +59,4 @@
                                 </td>
     </table>
     </div
+
