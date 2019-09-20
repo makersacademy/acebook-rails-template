@@ -5,15 +5,21 @@ class CommentsController < ApplicationController
 
   def index
     @comments = Comment.all
+    redirect_to posts_path
   end
 
-  def show; end
+  def show
+    redirect_to posts_path
+  end
 
   def new
     @comment = Comment.new
+    redirect_to posts_path
   end
 
-  def edit; end
+  def edit
+    redirect_to post_path(@post)
+  end
 
   def create
     p params

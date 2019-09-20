@@ -1,20 +1,23 @@
 <div class="jumbotron text-center">
 <div class="h3" style="padding-right: 270px">
-<%= form_for @post do |form| %>
-
-
-  <%= form.label "Message" %>
+    <%= form_for @post do |form| %>
+       <%= form.label :message %>
+       <%= form.text_area :message, cols: 30, rows: 5, maxlength: @maximum_length%>
+       <%= form.submit "Submit" %>
+       <% end %>
  </div>
   <br>
-  <%= form.text_area :message, cols: 50, rows: 5%>
+  <p>Current character count: <span id="char-count">0</span> / <%=@maximum_length%></p>
 
-
-
-  <%# <p>Current character count: <span id="char-count">0</span> / <%=@maximum_length%>
-  <div style="hight: 50px"> 
-    <%= form.submit "Submit" %>
-  </div>
 </div> 
-<% end %>
 
 
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#char-count').html($('#counted').val().length);
+  });
+ 
+  $('#counted').keyup(function() {
+    $('#char-count').html($('#counted').val().replace(/\n/g, "\n\r").length);
+  });
+</script>
