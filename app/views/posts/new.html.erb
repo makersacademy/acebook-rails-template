@@ -2,8 +2,9 @@
 <div class="h3" style="padding-right: 270px">
 <%= form_for @post do |form| %>
 
-
+  <div class="message">
   <%= form.label "Message" %>
+  </div>
  </div>
   <br>
   <%= form.text_area :message, cols: 50, rows: 5%>
