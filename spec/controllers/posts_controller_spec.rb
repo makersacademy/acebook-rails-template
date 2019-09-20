@@ -19,7 +19,6 @@ RSpec.describe PostsController, type: :controller do
   context 'there is a user logged in' do
     describe 'POST /' do
       it 'responds with 200' do
-        # TODO: log in user before trying to create post
         post :create, params: { post: { message: 'Hello, world!' } }
         expect(response).to redirect_to(posts_url)
       end
@@ -65,18 +64,4 @@ RSpec.describe PostsController, type: :controller do
       expect(post.message).not_to be('Hello, world!')
     end
   end
-
-  # describe 'user has an avatar' do
-  #   before do
-  #     @avatar_image = User.find.avatar
-  #   end
-
-  #   it 'has correct src' do
-  #     expect(@avatar_image[:src]).to eq("some_url")
-  #   end
-
-  #   it 'has correct alt text' do
-  #     expect(@avatar_image[:alt]).to eq("some_text")
-  #   end
-  # end
 end
