@@ -1,10 +1,12 @@
 <div class="jumbotron text-center">
 <div class="h3" style="padding-right: 270px">
+
     <%= form_for @post do |form| %>
        <%= form.label :message %>
        <%= form.text_area :message, cols: 30, rows: 5, maxlength: @maximum_length%>
        <%= form.submit "Submit" %>
        <% end %>
+
  </div>
   <br>
   <p>Current character count: <span id="char-count">0</span> / <%=@maximum_length%></p>

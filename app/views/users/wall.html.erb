@@ -1,11 +1,9 @@
+<div class="username">
 <%= link_to 'See all posts', posts_path %>
     <l1 style="padding: 20px"> </l1>
     <%= link_to 'Add new post', new_post_path %>
         <%= link_to 'Albums', albums_path %>
-            <div class=" text-center">
-                <div class=" text-center">
                     <%= form_for current_user do |form| %>
-                        <div>
                             <%= form.label :avatar %>
                                 <%= form.file_field :avatar %>
                                     <%= form.submit %>
@@ -19,14 +17,16 @@
                                 <br>
                                 <br>
                                 <br>
-                </div>
+
                 <ul class="list-group">
                     <% @posts.each do |post|%>
                         <li class="list-group-item list-group-item-dark text-center" style="padding: 20px; max-width: 50vw; margin: 0 auto">
                             <%=post.message%>
+                            <div class="jumbotron">
                                 <%= link_to 'Edit', edit_post_path(post) if current_user.id == post.user_id  %>
                                     <%= link_to 'Delete', post_path(post),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
                                         <%end%>
+                                        </div>
                 </ul>
