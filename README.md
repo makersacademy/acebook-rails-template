@@ -1,4 +1,4 @@
-# AceBook - [![badge](https://img.shields.io/badge/made%20by-good--guys-red)](https://github.com/sindresorhus/awesome#readme) [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+<a href='http://good-guys.herokuapp.com'><img src='https://files.slack.com/files-pri/T03ALA7H4-FNMBS9Z0F/log-good-guys.png' width='250'></a>   [  ![badge](https://img.shields.io/badge/made%20by-good--guys-red)](https://github.com/sindresorhus/awesome#readme) [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 Acebook is a Facebook clone team project
 ## The good-guys
 
