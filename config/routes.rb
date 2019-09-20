@@ -18,5 +18,6 @@ Rails.application.routes.draw do
 
   resources :posts
   post 'users/create'
+  get 'users/show'
   root 'posts#index'
 end

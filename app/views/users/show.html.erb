@@ -1,0 +1,12 @@
+<h2> User list </h2>
+
+<% @users.reverse_each do |user| %>
+  <div class="user" id="user<%= user.id %>">
+    <%= link_to "#{user.username} (#{user.email})", user_wall_url(user.id) %>
+
+  </div>
+<% end %>
+
+<div>
+  <%= link_to 'Go to my wall', user_wall_path(current_user.id)%>
+</div>

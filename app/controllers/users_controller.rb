@@ -11,6 +11,10 @@ class UsersController < Clearance::UsersController
     end
   end
 
+  def show
+    @users = User.all 
+  end
+
   private
 
   def url_after_create
