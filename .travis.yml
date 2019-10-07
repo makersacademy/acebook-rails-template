@@ -1,3 +1,5 @@
+
+
 before_install:
  - gem update --system
  - gem install bundler
@@ -5,3 +7,6 @@ rvm:
  - 2.5.0
 script:
  - bundle exec rspec spec
+
+services:
+  - postgresql
