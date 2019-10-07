@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="rspec" tests="6" skipped="0" failures="1" errors="0" time="0.398331" timestamp="2019-10-07T15:43:23+01:00" hostname="Mackenzies-MacBook-Pro.local">
+<properties>
+<property name="seed" value="32364"/>
+</properties>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET /new  responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.024877"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.011412"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / creates a post" file="./spec/controllers/posts_controller_spec.rb" time="0.009033"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.006055"></testcase>
+<testcase classname="spec.features.user_can_submit_posts_spec" name="Timeline Can submit posts and view them" file="./spec/features/user_can_submit_posts_spec.rb" time="0.343128"><failure message="expected to find text &quot;Hello, world!&quot; in &quot;Hello, xworld! New post&quot;" type="RSpec::Expectations::ExpectationNotMetError">Failure/Error: expect(page).to have_content(&quot;Hello, world!&quot;)
+  expected to find text &quot;Hello, world!&quot; in &quot;Hello, xworld! New post&quot;
+./spec/features/user_can_submit_posts_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
+<testcase classname="spec.models.post_spec" name="Post should be" file="./spec/models/post_spec.rb" time="0.001134"></testcase>
+</testsuite>
