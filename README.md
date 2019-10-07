@@ -1,5 +1,16 @@
 # AceBook
 
+*** HEROKU setup instructions ***
+
+To install Heroku, use brew : brew tap heroku/brew && brew install heroku
+
+Log in by typing 'heroku login -i' on terminal.
+
+email - maria_cuffaro@hotmail.com
+Log in - m4k3rs@g1l
+
+
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
