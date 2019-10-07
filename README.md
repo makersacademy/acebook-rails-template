@@ -12,10 +12,11 @@ the below**
 
 https://trello.com/b/IbAlAAMg/acebook-railz-rude-boyz
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 3. Heroku App - [Mighty Woodlands](https://mighty-woodland-36916.herokuapp.com/posts)
+
+## How to contribute to this project
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Quickstart
 
