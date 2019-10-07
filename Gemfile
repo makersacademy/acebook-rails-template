@@ -36,6 +36,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem 'rubocop', '0.56.0'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
   gem 'rspec_junit_formatter'
 end
 
