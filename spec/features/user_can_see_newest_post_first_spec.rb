@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'test_database_helper'
 
 RSpec.feature "Timeline order", type: :feature do
   scenario "shows newest post first" do
