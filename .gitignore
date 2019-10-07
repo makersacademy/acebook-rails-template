@@ -5,7 +5,10 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
+# test
 /.bundle
+/Gemfile.lock
+Gemfile.lock
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -21,3 +24,4 @@
 /yarn-error.log
 
 .byebug_history
+coverage
