@@ -1,5 +1,10 @@
 # AceBook
 
+## Team MEME (Mark, Eithel, Mike, Elsie)
+
+Our team workflow process is administered using this Trello board:
+https://trello.com/b/LngJ2uHN/acebook-team-meme
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
