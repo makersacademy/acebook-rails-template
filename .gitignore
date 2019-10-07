@@ -8,6 +8,8 @@
 # test
 /.bundle
 /Gemfile.lock
+Gemfile.lock
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
