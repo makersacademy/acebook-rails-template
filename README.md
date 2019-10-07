@@ -24,3 +24,7 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+************
+TRELLO BOARD
+************
+Our task lists can be found on this url: https://trello.com/b/m4vnb7m8/acebook-off-the-rails
