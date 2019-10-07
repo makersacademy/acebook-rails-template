@@ -1,9 +1,17 @@
 # AceBook
 
+[![Build Status](https://travis-ci.com/etelish/acebook-Team-Meme.svg?branch=master)](https://travis-ci.com/etelish/acebook-Team-Meme)
+
+
 ## Team MEME (Mark, Eithel, Mike, Elsie)
 
 Our team workflow process is administered using this Trello board:
 https://trello.com/b/LngJ2uHN/acebook-team-meme
+
+
+See detailed project updates on our [wiki](https://github.com/etelish/acebook-Team-Meme/wiki).
+
+<br>
 
 REQUIRED INSTRUCTIONS:
 
