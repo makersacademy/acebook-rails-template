@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "User Page", type: :feature do
   scenario "Can submit posts and view them" do
     visit "/users/new"
     fill_in "user[username]", with: "NewUser123"
