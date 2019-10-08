@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="9" skipped="1" failures="0" errors="0" time="0.379641" timestamp="2019-10-08T17:10:06+01:00" hostname="Mackenzies-MacBook-Pro.local">
+<testsuite name="rspec" tests="9" skipped="1" failures="0" errors="0" time="0.305482" timestamp="2019-10-08T17:13:36+01:00" hostname="Makerss-MacBook-Pro-6.local">
 <properties>
-<property name="seed" value="60051"/>
+<property name="seed" value="37233"/>
 </properties>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET /new  responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.025082"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.011102"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / creates a post" file="./spec/controllers/posts_controller_spec.rb" time="0.008363"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.005778"></testcase>
-<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline Can sign up got Acebook" file="./spec/features/user_can_sign_up_spec.rb" time="0.259235"></testcase>
-<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register twice with the same email" file="./spec/features/user_can_sign_up_spec.rb" time="0.040281"></testcase>
-<testcase classname="spec.features.user_can_submit_posts_spec" name="Timeline Can submit posts and view them" file="./spec/features/user_can_submit_posts_spec.rb" time="0.026055"></testcase>
-<testcase classname="spec.helpers.welcome_helper_spec" name="WelcomeHelper add some examples to (or delete) /Users/mackenziedixon/Projects/acebook-agil/spec/helpers/welcome_helper_spec.rb" file="./spec/helpers/welcome_helper_spec.rb" time="0.000010"><skipped/></testcase>
-<testcase classname="spec.models.post_spec" name="Post should be" file="./spec/models/post_spec.rb" time="0.001084"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET /new  responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.025664"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.012708"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / creates a post" file="./spec/controllers/posts_controller_spec.rb" time="0.006272"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.004522"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline Can sign up got Acebook" file="./spec/features/user_can_sign_up_spec.rb" time="0.197467"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register twice with the same email" file="./spec/features/user_can_sign_up_spec.rb" time="0.028791"></testcase>
+<testcase classname="spec.features.user_can_submit_posts_spec" name="Timeline Can submit posts and view them" file="./spec/features/user_can_submit_posts_spec.rb" time="0.021019"></testcase>
+<testcase classname="spec.helpers.welcome_helper_spec" name="WelcomeHelper add some examples to (or delete) /Users/student/Projects/Group-Challenges/acebook-agil/spec/helpers/welcome_helper_spec.rb" file="./spec/helpers/welcome_helper_spec.rb" time="0.000012"><skipped/></testcase>
+<testcase classname="spec.models.post_spec" name="Post should be" file="./spec/models/post_spec.rb" time="0.000782"></testcase>
 </testsuite>
