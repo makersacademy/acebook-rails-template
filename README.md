@@ -9,6 +9,10 @@ As a user
 I want to view post in desc date order
 So that I can see newest posts first
 
+As a user
+I want to view the date a post was created
+So that I can see how old it is
+
 ```
 # AceBook
 
@@ -17,10 +21,6 @@ So that I can see newest posts first
 To install Heroku, use brew : brew tap heroku/brew && brew install heroku
 
 Log in by typing 'heroku login -i' on terminal.
-
-email - maria_cuffaro@hotmail.com
-Log in - m4k3rs@g1l
-
 
 
 REQUIRED INSTRUCTIONS:
