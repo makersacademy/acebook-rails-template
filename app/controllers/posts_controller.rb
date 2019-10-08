@@ -1,14 +1,18 @@
+require 'LineBreaks.rb'
 class PostsController < ApplicationController
+  include LineBreaks
   def new
     @post = Post.new
   end
 
   def create
+    # puts post_params['message'].encode('utf-8')
     @post = Post.create(post_params)
     redirect_to posts_url
   end
 
   def index
+
     @posts = Post.all
   end
 
