@@ -26,17 +26,3 @@ I would like to be able to delete my posts.
 As a user, 
 So that I can see things as they happen
 I would like to posts to be displayed most-recent first
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
