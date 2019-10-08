@@ -1,0 +1,9 @@
+<h2>Registration Page</h2>
+
+<%= form_for @user do |form| %>
+  <%= form.label :Login %>
+  <%= form.text_field :email %>
+  <%= form.text_field :password %>
+
+  <%= form.submit "Submit" %>
+<% end %>
