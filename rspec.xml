@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="9" skipped="1" failures="0" errors="0" time="0.277675" timestamp="2019-10-08T16:58:19+01:00" hostname="Rafaelas-MacBook-Pro.local">
+<testsuite name="rspec" tests="9" skipped="1" failures="0" errors="0" time="0.326699" timestamp="2019-10-08T17:07:30+01:00" hostname="Makerss-MacBook-Pro-5.local">
 <properties>
-<property name="seed" value="60092"/>
+<property name="seed" value="64573"/>
 </properties>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET /new  responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.022013"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.008854"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / creates a post" file="./spec/controllers/posts_controller_spec.rb" time="0.006282"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.004221"></testcase>
-<testcase classname="spec.features.user_can_submit_posts_spec" name="Timeline Can submit posts and view them" file="./spec/features/user_can_submit_posts_spec.rb" time="0.179987"></testcase>
-<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can view posts reverse chronological order" file="./spec/features/user_can_view_posts_spec.rb" time="0.023248"></testcase>
-<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can see date of posts " file="./spec/features/user_can_view_posts_spec.rb" time="0.029625"></testcase>
-<testcase classname="spec.helpers.welcome_helper_spec" name="WelcomeHelper add some examples to (or delete) /Users/rafaela/Makers/week_8/acebook-agil/spec/helpers/welcome_helper_spec.rb" file="./spec/helpers/welcome_helper_spec.rb" time="0.000013"><skipped/></testcase>
-<testcase classname="spec.models.post_spec" name="Post should be" file="./spec/models/post_spec.rb" time="0.000896"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET /new  responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.072581"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.022890"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / creates a post" file="./spec/controllers/posts_controller_spec.rb" time="0.008677"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.004871"></testcase>
+<testcase classname="spec.features.user_can_submit_posts_spec" name="Timeline Can submit posts and view them" file="./spec/features/user_can_submit_posts_spec.rb" time="0.171488"></testcase>
+<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can view posts reverse chronological order" file="./spec/features/user_can_view_posts_spec.rb" time="0.026500"></testcase>
+<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can see date of posts " file="./spec/features/user_can_view_posts_spec.rb" time="0.015879"></testcase>
+<testcase classname="spec.helpers.welcome_helper_spec" name="WelcomeHelper add some examples to (or delete) /Users/student/Projects/week8/acebook-agil/spec/helpers/welcome_helper_spec.rb" file="./spec/helpers/welcome_helper_spec.rb" time="0.000015"><skipped/></testcase>
+<testcase classname="spec.models.post_spec" name="Post should be" file="./spec/models/post_spec.rb" time="0.000898"></testcase>
 </testsuite>
