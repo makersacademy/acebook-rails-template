@@ -1,6 +1,5 @@
-require 'LineBreaks.rb'
 class PostsController < ApplicationController
-  include LineBreaks
+
   def new
     @post = Post.new
   end
