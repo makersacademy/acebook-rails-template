@@ -1,3 +1,15 @@
+
+# User Stories
+```
+As a user
+I want to signup to AceBook
+So I can login and use the app  
+
+As a user
+I want to view post in desc date order
+So that I can see newest posts first
+
+```
 # AceBook
 
 *** HEROKU setup instructions ***
