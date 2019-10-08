@@ -270,22 +270,22 @@
       "/Users/rafaela/Makers/week_8/acebook-agil/app/controllers/posts_controller.rb": [
         1,
         1,
-        4,
-        null,
-        null,
-        1,
-        5,
         5,
         null,
         null,
         1,
         6,
+        6,
+        null,
+        null,
+        1,
+        8,
         null,
         null,
         1,
         null,
         1,
-        5,
+        6,
         null,
         null
       ],
@@ -334,6 +334,15 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/rafaela/Makers/week_8/acebook-agil/spec/helpers/welcome_helper_spec.rb": [
@@ -370,6 +379,6 @@
         null
       ]
     },
-    "timestamp": 1570540879
+    "timestamp": 1570542829
   }
 }
