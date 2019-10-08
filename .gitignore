@@ -16,9 +16,9 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+git
+/coverage/*
 /node_modules
 /yarn-error.log
-/coverage
 
 .byebug_history

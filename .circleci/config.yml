@@ -65,3 +65,7 @@ jobs: # a collection of steps
       - run:
           name: Deploy Master to HEROKU
           command: git push https://heroku:9023db60-15ef-4cbe-9b54-82477e610f8d@git.heroku.com/hidden-ocean-16005.git master
+          filters:
+            branches:
+              only: master
+
