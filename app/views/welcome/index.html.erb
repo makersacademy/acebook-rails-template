@@ -1,2 +1,17 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="jumbotron">
+  <h1>Acebook</h1>
+  <p>Welcome to Acebook</p>
+</div>
+<%= form_with do %>
+<label>Email</label>
+<%= email_field(:user, :address) %>
+<label>Password</label>
+<%= password_field_tag(:password) %>
+<%= submit_tag(:LogIn) %>
+<% end %>
+
+<div>
+<%= form_with do %>
+<%= submit_tag(:SignUp) %>
+<% end %>
+</div>
