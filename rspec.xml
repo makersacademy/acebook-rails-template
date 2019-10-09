@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="12" skipped="2" failures="0" errors="0" time="0.311950" timestamp="2019-10-09T12:48:41+01:00" hostname="Makerss-MacBook-Pro-6.local">
+<testsuite name="rspec" tests="14" skipped="2" failures="0" errors="0" time="0.672323" timestamp="2019-10-09T14:53:26+01:00" hostname="Mackenzies-MacBook-Pro.local">
 <properties>
-<property name="seed" value="13131"/>
+<property name="seed" value="64000"/>
 </properties>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET /new  responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.017852"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.008074"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / creates a post" file="./spec/controllers/posts_controller_spec.rb" time="0.006099"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.004294"></testcase>
-<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline Can sign up got Acebook" file="./spec/features/user_can_sign_up_spec.rb" time="0.150185"></testcase>
-<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register twice with the same email" file="./spec/features/user_can_sign_up_spec.rb" time="0.048710"></testcase>
-<testcase classname="spec.features.user_can_submit_posts_spec" name="Timeline Can submit posts and view them" file="./spec/features/user_can_submit_posts_spec.rb" time="0.020210"></testcase>
-<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can view posts reverse chronological order" file="./spec/features/user_can_view_posts_spec.rb" time="0.026179"></testcase>
-<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can see date of posts " file="./spec/features/user_can_view_posts_spec.rb" time="0.021508"></testcase>
-<testcase classname="spec.helpers.welcome_helper_spec" name="WelcomeHelper add some examples to (or delete) /Users/student/Projects/week8/acebook-agil/spec/helpers/welcome_helper_spec.rb" file="./spec/helpers/welcome_helper_spec.rb" time="0.000013"><skipped/></testcase>
-<testcase classname="spec.models.post_spec" name="Post add some examples to (or delete) /Users/student/Projects/week8/acebook-agil/spec/models/post_spec.rb" file="./spec/models/post_spec.rb" time="0.000004"><skipped/></testcase>
-<testcase classname="spec.unit_tests.users_password_is_encrypted_spec" name=".create hashes the password using BCrypt" file="./spec/unit_tests/users_password_is_encrypted_spec.rb" time="0.005654"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET /new  responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.077100"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.056552"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / creates a post" file="./spec/controllers/posts_controller_spec.rb" time="0.044032"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.006860"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline Can sign up got Acebook" file="./spec/features/user_can_sign_up_spec.rb" time="0.286881"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register twice with the same email" file="./spec/features/user_can_sign_up_spec.rb" time="0.042984"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register if email is invalid" file="./spec/features/user_can_sign_up_spec.rb" time="0.021714"></testcase>
+<testcase classname="spec.features.user_can_submit_posts_spec" name="Timeline Can submit posts and view them" file="./spec/features/user_can_submit_posts_spec.rb" time="0.025102"></testcase>
+<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can view posts reverse chronological order" file="./spec/features/user_can_view_posts_spec.rb" time="0.032061"></testcase>
+<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can see date of posts " file="./spec/features/user_can_view_posts_spec.rb" time="0.020616"></testcase>
+<testcase classname="spec.helpers.welcome_helper_spec" name="WelcomeHelper add some examples to (or delete) /Users/mackenziedixon/Projects/acebook-agil/spec/helpers/welcome_helper_spec.rb" file="./spec/helpers/welcome_helper_spec.rb" time="0.000016"><skipped/></testcase>
+<testcase classname="spec.models.post_spec" name="Post add some examples to (or delete) /Users/mackenziedixon/Projects/acebook-agil/spec/models/post_spec.rb" file="./spec/models/post_spec.rb" time="0.000005"><skipped/></testcase>
+<testcase classname="spec.unit_tests.user_cannot_enter_invalid_email_spec" name="User should validate email format of :email with message &quot;is not looking good&quot;" file="./spec/unit_tests/user_cannot_enter_invalid_email_spec.rb" time="0.004668"></testcase>
+<testcase classname="spec.unit_tests.users_password_is_encrypted_spec" name=".create hashes the password using BCrypt" file="./spec/unit_tests/users_password_is_encrypted_spec.rb" time="0.049830"></testcase>
 </testsuite>

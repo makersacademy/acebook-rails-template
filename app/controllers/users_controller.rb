@@ -2,7 +2,11 @@ class UsersController < ApplicationController
   def create
     begin
       @user = User.create(post_params)
-      flash[:returnMessage] = "User successfully registered"
+      if @user.valid?
+        flash[:returnMessage] = "User successfully registered"
+      else
+        flash[:returnMessage] = "Invalid Email"
+      end
     rescue ActiveRecord::RecordNotUnique
       flash[:returnMessage] = "User already exists"
     rescue Exception
