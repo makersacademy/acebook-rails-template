@@ -14,9 +14,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to posts_url
+    if params[:delete_button]
+      destroy
+    else
+      @post = Post.find(params[:id])
+      @post.update(post_params)
+      redirect_to posts_url
+    end
   end
 
   def destroy

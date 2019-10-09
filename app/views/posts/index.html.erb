@@ -4,11 +4,11 @@
     <%= post.created_at.strftime("%d/%m/%Y, %l:%M%P") %>
     <%if post.created_at.to_i/60 >= (Time.new.to_i/60)-10%>
       <%= form.text_field :message%>
-      <%= form.submit "Save" %>
+      <%= submit_tag 'Save', :name => 'save_button' %>
     <% else %>
       <%= form.text_field :message, readonly: true %>
     <% end %>
-    <%= button_to 'Remove Post', posts_path(post), method: 'delete', data: { confirm: 'Are you sure?'}%> 
+    <%= submit_tag 'Delete', :name => 'delete_button' %>
   </p>
  <% end %>
 <% end %>
