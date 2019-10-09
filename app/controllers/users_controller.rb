@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
+
+  def new
+    @user = User.new
+  end
+
   def create
     begin
       @user = User.create(post_params)
+      p @user
       if @user.errors.messages[:email][0]
         flash[:returnMessage] = @user.errors.messages[:email][0]
       end
@@ -14,15 +20,15 @@ class UsersController < ApplicationController
         flash[:returnMessage] = "User successfully registered"
         redirect_to posts_url
       else
-        redirect_to root_url
+        redirect_to users_url
       end
 
       rescue ActiveRecord::RecordNotUnique
         flash[:returnMessage] = "User already exists"
-        redirect_to root_url
+        redirect_to users_url
       rescue Exception
         flash[:returnMessage] = "Something horrible happened"
-        redirect_to root_url
+        redirect_to users_url
       end
 
   end

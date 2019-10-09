@@ -5,6 +5,9 @@ Password : <input type="password">
 <br/>
 <button>Log In</button>
 <br/>
-<a href="users/">Register</a>
+<%= link_to new_user_path do %>
+  Register
+<% end %>
+<%# <a href="users/">Register</a>
 <br/>
 <%= flash[:returnMessage] %>
