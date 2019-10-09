@@ -1,19 +1,18 @@
-# require 'controller_macros.rb'
-#
-# require 'rails_helper'
-# require 'test_database_helper'
+require 'rails_helper'
+require 'test_database_helper'
 
-# RSpec.feature "Timeline order", type: :feature do
-#   scenario "shows newest post first" do
-#     visit "/posts"
-#     click_link "New post"
-#     fill_in "Message", with: "Hello, world!"
-#     click_button "Submit"
-#     visit "/posts"
-#     click_link "New post"
-#     fill_in "Message", with: "Newest message"
-#     click_button "Submit"
-#
-#     expect(page.find('p:nth-child(3)')).to have_content "Newest message"
-#   end
-# end
+RSpec.feature "Timeline order", type: :feature do
+  login_user
+  scenario "shows newest post first" do
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "Newest message"
+    click_button "Submit"
+
+    expect(page.find('p:nth-child(3)')).to have_content "Newest message"
+  end
+end

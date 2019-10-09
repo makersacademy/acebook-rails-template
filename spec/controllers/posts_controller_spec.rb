@@ -1,5 +1,3 @@
-# require 'controller_macros.rb'
-
 require 'rails_helper'
 
 describe PostsController do

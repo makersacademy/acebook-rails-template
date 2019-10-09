@@ -1,6 +1,8 @@
 require 'simplecov'
 SimpleCov.start
-# require './controller_macros.rb'
+RSPEC_ROOT = File.dirname __FILE__
+require "#{RSPEC_ROOT}/features/controller_macros.rb"
+ p RSPEC_ROOT
 
 
 
