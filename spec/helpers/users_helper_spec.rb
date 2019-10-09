@@ -10,19 +10,8 @@ require 'rails_helper'
 #     end
 #   end
 # end
-def add_user
-  feature "User Sign Up", type: :feature do
-    scenario "signing up" do
-      visit "/users/sign_up"
-      fill_in "user[email]", with: "dan@dan.com"
-      fill_in "user[password]", with: "1234567"
-      fill_in "user[password_confirmation]", with: "1234567"
-      click_button
-    end
-  end
-end
 
-# RSpec.describe UsersHelper, type: :helper do
-#   # pending "add some examples to (or delete) #{__FILE__}"
-#
-# end
+RSpec.describe UsersHelper, type: :helper do
+  # pending "add some examples to (or delete) #{__FILE__}"
+
+end

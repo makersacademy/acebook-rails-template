@@ -1,5 +1,5 @@
 require 'rails_helper'
-require_relative '../helpers/users_helper_spec.rb'
+
 RSpec.describe UsersController, type: :controller do
 
   describe "GET /" do
