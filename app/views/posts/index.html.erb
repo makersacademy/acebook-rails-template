@@ -1,5 +1,12 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <% @post = post %>
+  <p><%= post.message %></br>Posted on: <%= post.created_at %></p>
+  <p><%= link_to 'Show', post_path(post),
+              method: :get %>
+  <%= link_to 'Edit', edit_post_path(post),
+              method: :get %>
+  <%= link_to 'Delete', post_path(post), class: "#{post.id}",
+              method: :delete %> </p>
 <% end %>
 
 <%= link_to new_post_path do %>

@@ -1,0 +1,9 @@
+<p><%= @post.message %></p>
+<p><%= @post.id %></p>
+
+
+<%= form_for @post do |form| %>
+  <%= form.label :update_post %>
+  <%= form.text_field :message %>
+  <%= form.submit "Submit" %>
+<% end %>
