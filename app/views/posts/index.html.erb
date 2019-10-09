@@ -8,7 +8,7 @@
     <% else %>
       <%= form.text_field :message, readonly: true %>
     <% end %>
-    <%= submit_tag 'Delete', :name => 'delete_button' %>
+    <%= submit_tag 'Delete', :name => 'delete_button', data: { confirm: 'Are you sure?' }  %>
   </p>
  <% end %>
 <% end %>
