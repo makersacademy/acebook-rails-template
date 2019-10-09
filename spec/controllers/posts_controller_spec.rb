@@ -18,7 +18,22 @@ RSpec.describe PostsController, type: :controller do
       post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be
     end
+
+    it "deletes a post" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      Post.find_by(message: "Hello, world!").destroy
+      expect(Post.find_by(message: "Hello, world!")).not_to be
+    end
+
+    it "updates a post" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      @post = Post.find_by(message: "Hello, world!")
+      @post.update( { message: "Hello, universe!"} )
+      expect(Post.find_by(message: "Hello, universe!")).to be
+    end
   end
+
+
 
   describe "GET /" do
     it "responds with 200" do
