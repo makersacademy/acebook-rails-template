@@ -20,15 +20,15 @@ class UsersController < ApplicationController
         flash[:returnMessage] = "User successfully registered"
         redirect_to posts_url
       else
-        redirect_to users_url
+        redirect_to new_user_path
       end
 
       rescue ActiveRecord::RecordNotUnique
         flash[:returnMessage] = "User already exists"
-        redirect_to users_url
+        redirect_to new_user_path
       rescue Exception
         flash[:returnMessage] = "Something horrible happened"
-        redirect_to users_url
+        redirect_to new_user_path
       end
 
   end
