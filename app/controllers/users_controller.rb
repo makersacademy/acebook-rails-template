@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     rescue ActiveRecord::RecordNotUnique
       flash[:returnMessage] = "User already exists"
     rescue Exception
-      flash[:returnMessage] = "Something horrible happened" 
+      flash[:returnMessage] = "Something horrible happened"
     end
 
     redirect_to root_url

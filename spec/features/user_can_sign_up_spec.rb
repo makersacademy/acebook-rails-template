@@ -20,7 +20,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "user[password]", with: "123456"
     click_button('Submit')
     expect(page).to have_content("User already exists")
-
   end
+  
 
 end
