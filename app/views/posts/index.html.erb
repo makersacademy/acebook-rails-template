@@ -9,7 +9,11 @@
     </p>
 
     <%= link_to edit_post_path(post.id) do %>
-    Edit
+      Edit
+    <% end %>
+
+    <%= link_to post_path(post.id) do %>
+      Delete
     <% end %>
   
 
