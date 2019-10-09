@@ -8,6 +8,7 @@
     <% else %>
       <%= form.text_field :message, readonly: true %>
     <% end %>
+    <%= button_to 'Remove Post', posts_path(post), method: 'delete', data: { confirm: 'Are you sure?'}%> 
   </p>
  <% end %>
 <% end %>
