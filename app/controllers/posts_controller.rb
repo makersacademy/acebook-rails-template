@@ -10,8 +10,13 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order(created_at: :desc)
+    @post = @posts[0];
   end
 
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+  end
   private
 
   def post_params
