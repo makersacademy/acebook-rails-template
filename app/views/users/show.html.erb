@@ -1,9 +1,25 @@
 <h1>Asians vs Caucasians</h1>
 
-<p>Welcome <%= @user.username %>!</p>
-
-<p>You have a strong ethnicity, <%= @user.ethnicity %></p>
-
+<p>Welcome <%= current_user.email %>!</p>
+<div>
+  <h2>Add new post </h2>
+<%= form_with(model: [@user, @user.posts.build], local: true) do |form| %>
 <p>
-<%= @user.ethnicity == 'asian' ? 'DEATH TO THE WEST' : 'DEATH TO THE EAST' %>
+<%= form.label :message %>
+<%= form.text_field :message %>
 </p>
+<p>
+<%= form.submit "Submit" %>
+</p>
+<% end %>
+</div>
+
+<div>
+  <h2>Your Posts</h2>
+  <% @user.posts.reverse.each do |post| %>
+  <p>
+    <%= post.updated_at.to_s.slice(0,19) %><br>
+    <%= post.message %>
+  </p>
+<% end %>
+</div>
