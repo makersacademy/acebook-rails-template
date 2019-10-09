@@ -2,16 +2,16 @@
   <h1>Acebook</h1>
   <p>Welcome to Acebook</p>
 </div>
-<%= form_with do %>
-<label>Email</label>
-<%= email_field(:user, :address) %>
-<label>Password</label>
-<%= password_field_tag(:password) %>
-<%= submit_tag(:LogIn) %>
+<%= form_with scope: :session, url: sessions_path, local: true do %>
+  <%= label :email, "Email" %>
+  <%= email_field(:user, :address) %>
+  <%= label :password, "Password" %>
+  <%= password_field_tag(:password) %>
+  <%= submit_tag "Log In" %>
 <% end %>
 
 <div>
 <%= form_with do %>
-<%= button_to "Sign Up" %>
+  <%= button_to "Sign Up" %> 
 <% end %>
 </div>
