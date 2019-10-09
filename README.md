@@ -5,7 +5,7 @@ As a user
 I want to signup to AceBook
 So I can login and use the app  
 
-As a user 
+As a user
 I want to enter my email and password on the signup page
 So that I can create a user account
 
@@ -63,4 +63,5 @@ First, clone this repository. Then:
 
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
+
 ```

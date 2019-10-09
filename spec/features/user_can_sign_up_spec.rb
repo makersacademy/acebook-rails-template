@@ -26,7 +26,10 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("is too long (maximum is 10 characters)")
   end
 
+  scenario "user is redirected to posts page upon successful signup" do
+    signup("mac@gmail.com", "123456")
+    expect(current_path).to eq('/posts')
+  end
 
-  
 
 end
