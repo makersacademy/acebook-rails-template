@@ -1,1 +1,18 @@
 <h1>Create an account</h1>
+
+<div>
+  <%= form_with scope: :user, url: users_path do |f| %>
+
+  <%= f.text_field :firstname, placeholder: "First Name" %>
+
+    <%= f.text_field :lastname, placeholder: "Last Name" %>
+
+    <%= f.email_field :email, placeholder: "Email" %>
+
+    <%= f.password_field :password, placeholder: "Password" %>
+
+    <%= f.password_field :confirmpassword, placeholder: "Confirm Password" %>
+
+    <%= f.submit "Sign Up" %>
+  <% end %>
+</div>
