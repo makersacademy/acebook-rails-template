@@ -1,5 +1,8 @@
 <% @posts.each do |post| %>
-  <p><%= post.created_at.strftime("%d/%m/%Y") %> <%= post.message %>  </p>
+  <p id="<%=post.id%>"">
+    <%= post.created_at.strftime("%d/%m/%Y") %> <%= post.message %>
+    <button onclick="editPost(<%=post.id%>, '<%=post.message%>')"> Edit </button> 
+  </p>
 
 <% end %>
 
