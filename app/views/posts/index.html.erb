@@ -1,5 +1,7 @@
 <% @posts.reverse.each do |post| %>
-    <p><%= post.message %>: posted at <%= post.created_at.strftime('%H:%M on %d-%b-%y') %></p>
+    <p><%= post.message %>: posted at <%= post.created_at.strftime('%H:%M on %d-%b-%y') %>
+      <input type="button" value="Edit">
+    </p>
 <% end %>
 
 <%= link_to new_post_path do %>
