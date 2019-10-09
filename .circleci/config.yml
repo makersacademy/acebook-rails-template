@@ -51,7 +51,7 @@ jobs: # a collection of steps
           
       - run:
           name: Database migrate
-          command: bin/rails db:migrate
+          command: bin/rails db:migrate:reset db:seed
 
       - run:
           name: Run rspec in parallel
