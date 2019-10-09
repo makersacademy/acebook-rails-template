@@ -1,9 +1,13 @@
 <% @posts.each do |post| %>
   <%= form_for post do |form| %>
   <p id="<%=post.id%>">
-    <%= @post.created_at.strftime("%d/%m/%Y") %>
-    <%= form.text_field :message,:readonly => true %>
-    <%= form.submit "Save" %>
+    <%= post.created_at.strftime("%d/%m/%Y, %l:%M%P") %>
+    <%if post.created_at.to_i/60 >= (Time.new.to_i/60)-10%>
+      <%= form.text_field :message%>
+      <%= form.submit "Save" %>
+    <% else %>
+      <%= form.text_field :message, readonly: true %>
+    <% end %>
   </p>
  <% end %>
 <% end %>
