@@ -8,6 +8,14 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require "#{::Rails.root}/spec/support/controller_macros.rb"
+
+
+RSpec.configure do |config|
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+  config.extend ControllerMacros, :type => :controller
+end
 # require 'test_database_helper'
 # Add additional requires below this line. Rails is not loaded until this point!
 # comment
