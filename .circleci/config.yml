@@ -48,6 +48,10 @@ jobs: # a collection of steps
       - run:
           name: Database setup
           command: bin/rails db:schema:load --trace
+          
+      - run:
+          name: Database migrate
+          command: bin/rails db:migrate
 
       - run:
           name: Run rspec in parallel
