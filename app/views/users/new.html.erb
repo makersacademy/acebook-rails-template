@@ -3,6 +3,21 @@
 <div>
   <%= form_for(:user, url: signup_path) do |f| %>
 
+    <% if @user.errors.any? %>
+    <div id="error_explaination">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %>
+        prohibited this account from being created:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
   <%= f.text_field :first_name, placeholder: "First Name" %>
 
     <%= f.text_field :last_name, placeholder: "Last Name" %>
