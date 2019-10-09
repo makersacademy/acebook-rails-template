@@ -16,6 +16,9 @@ jobs: # a collection of steps
           POSTGRES_USER: acebook-agil
           POSTGRES_DB: pgapp_test
           POSTGRES_PASSWORD: ""
+    branches:
+      only:
+        - master
     steps: # a collection of executable commands
       - checkout # special step to check out source code to working directory
 
@@ -48,11 +51,10 @@ jobs: # a collection of steps
       - run:
           name: Database setup
           command: bin/rails db:schema:load --trace
-          
+
       - run:
           name: Database migrate
-          command: bin/rails db:migrate:reset db:seed
-
+          command: rake db:migrate
       - run:
           name: Run rspec in parallel
           command: |
