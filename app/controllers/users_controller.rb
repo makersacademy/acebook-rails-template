@@ -1,17 +1,23 @@
 class UsersController < ApplicationController
   def new
+    @user = User.new
   end
 
   def create
     # render plain: params[:user][:email].inspect
     @user = User.new(user_params)
 
-    if @user.save
-      # handle a successful save
-      redirect_to  '/'
-    else
-      render 'new'
+    begin
+      if @user.save
+        flash[:success] = 'You have signed up!'
+        redirect_to '/login' and return
+      end
+    rescue ActiveRecord::RecordNotUnique
+      flash.now[:danger] = 'Email already exists!'
+      render 'new' and return
     end
+
+    render 'new'
   end
 
   private
