@@ -40,7 +40,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', '~> 0.75.0', require: false
   gem 'travis'
-  gem "factory_bot_rails"
+  gem 'factory_bot_rails'
+  gem 'timecop'
 end
 
 group :development do

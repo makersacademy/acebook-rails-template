@@ -7,6 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   GET /resource/sign_up
   def new
     super
+    user.confirm
   end
 
 
@@ -14,6 +15,7 @@ POST /resource
   def create
     super do |resource|
       BackgroundWorker.trigger(resource)
+    user.confirm
   end
 end
 

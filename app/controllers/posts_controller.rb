@@ -29,11 +29,20 @@ class PostsController < ApplicationController
   def show
     a = params[:id]
     @post = Post.find_by(id: a)
-    @post.destroy
+    if time_difference
+      then @post.destroy
+    else
+      flash[:notice] = 'You were too late! Delete faster (10 mins limit)!'
+    end
     redirect_to posts_url
-  end 
+  end
 
   private
+
+  def time_difference
+    Time.now - @post.created_at <= 600
+  end
+
 
   def post_params
     params.require(:post).permit(:message)
