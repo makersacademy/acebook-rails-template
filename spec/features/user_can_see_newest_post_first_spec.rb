@@ -14,6 +14,6 @@ RSpec.feature "Timeline order", type: :feature do
     fill_in "Message", with: "Newest message"
     click_button "Submit"
 
-    expect(page.find('p:nth-child(5)')).to have_content "Newest message"
+    expect(page.find('p:nth-child(7)')).to have_content "Newest message"
   end
 end
