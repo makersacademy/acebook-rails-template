@@ -5,13 +5,19 @@ class UsersController < ApplicationController
   def create
     # render plain: params[:user][:email].inspect
     @user = User.new(user_params)
-    @user.save
-    redirect_to  '/'
+
+    if @user.save
+      # handle a successful save
+      redirect_to  '/'
+    else
+      render 'new'
+    end
   end
 
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email)
+    params.require(:user).permit(:first_name, :last_name, :email,
+                                :password, :password_confirmation)
 
   end
 
