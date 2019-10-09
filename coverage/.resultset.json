@@ -5,6 +5,7 @@
         1,
         null,
         1,
+        null,
         1,
         1,
         1,
@@ -215,16 +216,14 @@
         null,
         null
       ],
-
-      "/Users/student/Desktop/PROJECTS /acebook-Team-Meme/config/initializers/clearance.rb": [
+      "/Users/michael/Projects/acebook-Team-Meme/config/initializers/clearance.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/student/Desktop/PROJECTS /acebook-Team-Meme/config/initializers/cookies_serializer.rb": [
-
+      "/Users/michael/Projects/acebook-Team-Meme/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
@@ -285,7 +284,6 @@
         1,
         1,
         null,
-
         null,
         null,
         null,
@@ -308,6 +306,8 @@
       "/Users/michael/Projects/acebook-Team-Meme/app/controllers/posts_controller.rb": [
         1,
         1,
+        null,
+        1,
         4,
         null,
         null,
@@ -317,7 +317,7 @@
         null,
         null,
         1,
-        9,
+        13,
         null,
         null,
         1,
@@ -350,6 +350,76 @@
       "/Users/michael/Projects/acebook-Team-Meme/app/controllers/application_controller.rb": [
         1,
         1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/michael/Projects/acebook-Team-Meme/spec/features/login_feature_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/michael/Projects/acebook-Team-Meme/spec/feature_helpers.rb": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/michael/Projects/acebook-Team-Meme/spec/features/user_can_delete_posts_spec.rb": [
@@ -360,9 +430,12 @@
         1,
         1,
         1,
+        1,
+        1,
+        null,
         null
       ],
-      "/Users/student/Desktop/PROJECTS /acebook-Team-Meme/spec/features/user_can_sign_up_spec.rb": [
+      "/Users/michael/Projects/acebook-Team-Meme/spec/features/user_can_sign_up_spec.rb": [
         1,
         null,
         1,
@@ -424,13 +497,28 @@
         1,
         null
       ],
-      "/Users/student/Desktop/PROJECTS /acebook-Team-Meme/app/models/user.rb": [
+      "/Users/michael/Projects/acebook-Team-Meme/app/models/user.rb": [
         1,
         1,
         null
+      ],
+      "/Users/michael/Projects/acebook-Team-Meme/app/controllers/users_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        6,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1570607740
-
+    "timestamp": 1570624848
   }
 }
