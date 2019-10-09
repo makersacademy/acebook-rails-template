@@ -3,9 +3,9 @@
 <div>
   <%= form_for(:user, url: signup_path) do |f| %>
 
-  <%= f.text_field :firstname, placeholder: "First Name" %>
+  <%= f.text_field :first_name, placeholder: "First Name" %>
 
-    <%= f.text_field :lastname, placeholder: "Last Name" %>
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
 
     <%= f.email_field :email, placeholder: "Email" %>
 
