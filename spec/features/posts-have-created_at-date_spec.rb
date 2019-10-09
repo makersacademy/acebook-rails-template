@@ -3,6 +3,8 @@ require 'test_database_helper'
 
 RSpec.feature "Posts show date", type: :feature do
   scenario "shows the date" do
+    user = FactoryBot.create(:user)
+    login_as(user, :scope => :user)
     t = Time.now
     populate_test_database("Hello it is Gabriel here")
     visit "/posts"
