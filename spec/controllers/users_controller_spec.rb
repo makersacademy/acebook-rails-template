@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
 
   describe "GET /" do
-    it "responds with 200" do
+    it "responds with 302 and redirects to sign_in page" do
       get :new
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(302)
+      expect(response['Location']).to eq("http://test.host/users/sign_in")
     end
   end
 
