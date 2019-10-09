@@ -1,13 +1,6 @@
 require 'rails_helper'
 
-describe PostsController do
-  login_user
-  it "should have a current_user" do
-    expect(subject.current_user).to_not eq(nil)
-  end
-end
-
-  describe PostsController, type: :controller do
+describe PostsController, type: :controller do
   describe "GET /new " do
     login_user
     it "responds with 200" do

@@ -10,11 +10,17 @@ require 'spec_helper'
 require 'rspec/rails'
 require "#{::Rails.root}/spec/support/controller_macros.rb"
 
-
 RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
   config.extend ControllerMacros, :type => :controller
+  config.include Warden::Test::Helpers
+end
+
+RSpec.configure do |config|
+ config.after :each do
+   Warden.test_reset!
+ end
 end
 # require 'test_database_helper'
 # Add additional requires below this line. Rails is not loaded until this point!

@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
-  login_user
   scenario "Can submit posts and view them" do
+    user = FactoryBot.create(:user)
+    login_as(user, :scope => :user)
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
