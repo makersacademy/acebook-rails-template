@@ -1,4 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  p validates :email, :email_format => { :message => 'is not looking good' }
+  validates :email, :email_format => { :message => 'Invalid Email' }
+  validates :password, length: 6..10
+
 end

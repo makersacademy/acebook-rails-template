@@ -41,6 +41,7 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'rspec_junit_formatter'
+  gem 'shoulda-matchers'
 end
 
 group :development do

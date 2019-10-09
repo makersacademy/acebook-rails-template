@@ -15,6 +15,18 @@ RSpec.feature "Timeline", type: :feature do
     signup("mac@g", "123456")
     expect(page).to have_content("Invalid Email")
   end
+
+  scenario "user can't register if password is less than 6 characters" do
+    signup("mac@gmail.com", "1234")
+    expect(page).to have_content("is too short (minimum is 6 characters)")
+  end
+
+  scenario "user can't register if password is greater than 10 characters" do
+    signup("mac@gmail.com", "12345678999")
+    expect(page).to have_content("is too long (maximum is 10 characters)")
+  end
+
+
   
 
 end
