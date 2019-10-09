@@ -10,10 +10,10 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "POST /" do
-    it "posts new user info on sign up" do
-      post :create, params: { user: { username: "Dan123", email: "dan@dan.com", password: "1234567", ethnicity: "asian" } }
-      expect(response).to redirect_to(users_path + "/#{assigns(:user).id}" )
+  describe "POST /users/sign_in" do
+    it "posts new user info on sign in" do
+      post :create, params: { user: { email: "dan@dan.com", password: "1234567"} }
+      expect(response.request["user"].values).to include("dan@dan.com", "1234567")
     end
   end
 
