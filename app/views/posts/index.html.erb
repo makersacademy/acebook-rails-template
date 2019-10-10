@@ -10,6 +10,8 @@
       <%= form.text_field :message, readonly: true %>
     <% end %>
     <%= submit_tag 'Delete', :name => 'delete_button', data: { confirm: 'Are you sure?' }  %>
+    Number of Likes: <%=post.likes %>
+    <%= submit_tag 'Like', :name => 'like_button'%>
   </p>
  <% end %>
 <% end %>
