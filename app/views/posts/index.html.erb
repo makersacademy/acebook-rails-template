@@ -3,8 +3,9 @@
 <h1>Posts</h1>
 
 <table>
+
   <tbody>
-    <% @posts.each do |post| %>
+    <% @posts.to_a.reverse.each do |post| %>
       <tr>
         <td style="border: 1px solid black;"><%= simple_format(post.message) %></td>
         <td><%= link_to 'Show', post %></td>
