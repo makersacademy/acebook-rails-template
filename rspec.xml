@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="20" skipped="2" failures="0" errors="0" time="0.935160" timestamp="2019-10-09T17:26:45+01:00" hostname="Mackenzies-MacBook-Pro.local">
+<testsuite name="rspec" tests="20" skipped="2" failures="0" errors="0" time="1.278026" timestamp="2019-10-10T10:22:10+01:00" hostname="Mackenzies-MacBook-Pro.local">
 <properties>
-<property name="seed" value="60582"/>
+<property name="seed" value="59722"/>
 </properties>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET /new  responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.080246"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.042756"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / creates a post" file="./spec/controllers/posts_controller_spec.rb" time="0.041828"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.007142"></testcase>
-<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline Can sign up got Acebook" file="./spec/features/user_can_sign_up_spec.rb" time="0.381753"></testcase>
-<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register twice with the same email" file="./spec/features/user_can_sign_up_spec.rb" time="0.065789"></testcase>
-<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register if email is invalid" file="./spec/features/user_can_sign_up_spec.rb" time="0.026815"></testcase>
-<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register if password is less than 6 characters" file="./spec/features/user_can_sign_up_spec.rb" time="0.031943"></testcase>
-<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register if password is greater than 10 characters" file="./spec/features/user_can_sign_up_spec.rb" time="0.037552"></testcase>
-<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user is redirected to posts page upon successful signup" file="./spec/features/user_can_sign_up_spec.rb" time="0.066284"></testcase>
-<testcase classname="spec.features.user_can_submit_posts_spec" name="Timeline Can submit posts and view them" file="./spec/features/user_can_submit_posts_spec.rb" time="0.032467"></testcase>
-<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can view posts reverse chronological order" file="./spec/features/user_can_view_posts_spec.rb" time="0.035533"></testcase>
-<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can see date of posts " file="./spec/features/user_can_view_posts_spec.rb" time="0.020504"></testcase>
-<testcase classname="spec.helpers.welcome_helper_spec" name="WelcomeHelper add some examples to (or delete) /Users/mackenziedixon/Projects/acebook-agil/spec/helpers/welcome_helper_spec.rb" file="./spec/helpers/welcome_helper_spec.rb" time="0.000017"><skipped/></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET /new  responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.160329"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.069922"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / creates a post" file="./spec/controllers/posts_controller_spec.rb" time="0.037229"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.023028"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline Can sign up got Acebook" file="./spec/features/user_can_sign_up_spec.rb" time="0.559048"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register twice with the same email" file="./spec/features/user_can_sign_up_spec.rb" time="0.078685"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register if email is invalid" file="./spec/features/user_can_sign_up_spec.rb" time="0.029040"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register if password is less than 6 characters" file="./spec/features/user_can_sign_up_spec.rb" time="0.035530"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register if password is greater than 10 characters" file="./spec/features/user_can_sign_up_spec.rb" time="0.070675"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user is redirected to posts page upon successful signup" file="./spec/features/user_can_sign_up_spec.rb" time="0.035652"></testcase>
+<testcase classname="spec.features.user_can_submit_posts_spec" name="Timeline Can submit posts and view them" file="./spec/features/user_can_submit_posts_spec.rb" time="0.036711"></testcase>
+<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can view posts reverse chronological order" file="./spec/features/user_can_view_posts_spec.rb" time="0.046423"></testcase>
+<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can see date of posts " file="./spec/features/user_can_view_posts_spec.rb" time="0.024537"></testcase>
+<testcase classname="spec.helpers.welcome_helper_spec" name="WelcomeHelper add some examples to (or delete) /Users/mackenziedixon/Projects/acebook-agil/spec/helpers/welcome_helper_spec.rb" file="./spec/helpers/welcome_helper_spec.rb" time="0.000010"><skipped/></testcase>
 <testcase classname="spec.models.post_spec" name="Post add some examples to (or delete) /Users/mackenziedixon/Projects/acebook-agil/spec/models/post_spec.rb" file="./spec/models/post_spec.rb" time="0.000005"><skipped/></testcase>
-<testcase classname="spec.unit_tests.user_cannot_enter_invalid_email_spec" name="User should validate email format of :email with message &quot;Invalid Email&quot;" file="./spec/unit_tests/user_cannot_enter_invalid_email_spec.rb" time="0.005110"></testcase>
-<testcase classname="spec.unit_tests.user_cannot_enter_invalid_email_spec" name="User Should be valid if the password is between 6-10 characters" file="./spec/unit_tests/user_cannot_enter_invalid_email_spec.rb" time="0.002682"></testcase>
-<testcase classname="spec.unit_tests.user_cannot_enter_invalid_email_spec" name="User Should not be valid if the password is less than 6 characters" file="./spec/unit_tests/user_cannot_enter_invalid_email_spec.rb" time="0.002971"></testcase>
-<testcase classname="spec.unit_tests.user_cannot_enter_invalid_email_spec" name="User Should not be valid if the password is more than 10 characters" file="./spec/unit_tests/user_cannot_enter_invalid_email_spec.rb" time="0.002807"></testcase>
-<testcase classname="spec.unit_tests.users_password_is_encrypted_spec" name=".create hashes the password using BCrypt" file="./spec/unit_tests/users_password_is_encrypted_spec.rb" time="0.045902"></testcase>
+<testcase classname="spec.unit_tests.user_cannot_enter_invalid_email_spec" name="User should validate email format of :email with message &quot;Invalid Email&quot;" file="./spec/unit_tests/user_cannot_enter_invalid_email_spec.rb" time="0.005945"></testcase>
+<testcase classname="spec.unit_tests.user_cannot_enter_invalid_email_spec" name="User Should be valid if the password is between 6-10 characters" file="./spec/unit_tests/user_cannot_enter_invalid_email_spec.rb" time="0.003221"></testcase>
+<testcase classname="spec.unit_tests.user_cannot_enter_invalid_email_spec" name="User Should not be valid if the password is less than 6 characters" file="./spec/unit_tests/user_cannot_enter_invalid_email_spec.rb" time="0.003271"></testcase>
+<testcase classname="spec.unit_tests.user_cannot_enter_invalid_email_spec" name="User Should not be valid if the password is more than 10 characters" file="./spec/unit_tests/user_cannot_enter_invalid_email_spec.rb" time="0.003541"></testcase>
+<testcase classname="spec.unit_tests.users_password_is_encrypted_spec" name=".create hashes the password using BCrypt" file="./spec/unit_tests/users_password_is_encrypted_spec.rb" time="0.048958"></testcase>
 </testsuite>

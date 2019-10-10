@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   end
 
   def create
+
+  
     begin
       @user = User.create(post_params)
       p @user
@@ -32,9 +34,11 @@ class UsersController < ApplicationController
       end
 
   end
+
   def index
     @user = User.new
   end
+
   def post_params
     params.require(:user).permit(:email, :password)
   end
