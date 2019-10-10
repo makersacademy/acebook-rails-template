@@ -37,7 +37,7 @@ gem 'capybara'
 gem 'selenium-webdriver'
 gem 'rails-controller-testing'
 gem 'rake'
-gem 'rspec-rails'
+gem 'rspec-rails', '~> 4.0.0.beta2'
 gem 'simplecov', require: false
 gem 'simplecov-console', require: false
 gem 'rubocop'

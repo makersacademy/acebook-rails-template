@@ -4,6 +4,8 @@ module ControllerMacros
       @request.env["devise.mapping"] = Devise.mappings[:user]
       @user = FactoryBot.create(:user)
       sign_in @user
+      p @user
     end
+
   end
 end
