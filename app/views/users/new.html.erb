@@ -1,1 +1,33 @@
 <h1>Create an account</h1>
+
+<div>
+  <%= form_for(:user, url: signup_path) do |f| %>
+
+    <% if @user.errors.any? %>
+    <div id="error_explaination">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %>
+        prohibited this account from being created:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= f.text_field :first_name, placeholder: "First Name" %>
+
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
+
+    <%= f.email_field :email, placeholder: "Email" %>
+
+    <%= f.password_field :password, placeholder: "Password" %>
+
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+
+    <%= f.submit "Sign Up" %>
+  <% end %>
+</div>
