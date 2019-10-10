@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-
+ root 'users#show'
   devise_for :users
   authenticated :user do
-    root :to => 'users#show'
     resources :posts
   end
 
