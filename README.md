@@ -1,32 +1,24 @@
-# AceBook
+# README
 
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-REQUIRED INSTRUCTIONS:
+Things you may want to cover:
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+* Ruby version
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+* System dependencies
 
-2. The card wall is here:
+* Configuration
 
-https://trello.com/b/IbAlAAMg/acebook-railz-rude-boyz
+* Database creation
 
+* Database initialization
 
-3. Heroku App - [Mighty Woodlands](https://mighty-woodland-36916.herokuapp.com/posts)
+* How to run the test suite
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+* Services (job queues, cache servers, search engines, etc.)
 
-## Quickstart
+* Deployment instructions
 
-First, clone this repository. Then:
-
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
-```
+* ...
