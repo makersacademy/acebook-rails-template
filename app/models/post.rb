@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  belongs_to :user
 
   def time_stamp
     if self.created_at.strftime("%x") == Time.now.strftime("%x")
