@@ -4,21 +4,24 @@
 </div>
 
 <div>
-  <%= form_for(:session, url: login_path) do |f| %>
-    <h4>Log in to your account:</h4>
-    <%# <%= f.label :email, "Email" %>
-    <%= f.email_field :email, placeholder: "Email" %>
-
-    <%# <%= f.label :password, "Password" %>
-    <%= f.password_field :password, placeholder: "Password" %>
-
-    <%= f.submit "Log In" %>
-  <% end %>
+  <form accept-charset="UTF-8" action="/login" method="post">
+   <input name="utf8" type="hidden" value="&#x2713;" />
+   <input name="authenticity_token" type="hidden"
+          value="" />
+   <label for="session_email">Email</label>
+   <input class="form-control" id="session_email"
+          name="session[email]" type="text" />
+   <label for="session_password">Password</label>
+   <input id="session_password" name="session[password]"
+          type="password" />
+   <input class="btn btn-primary" name="commit" type="submit"
+        value="Log in" />
+ </form>
 </div>
 
 <div>
   <h4>Not a member yet?</h4>
   <%= form_with do %>
-    <%= link_to 'Join Now', signup_path, class: 'button alt' %>
+    <%= link_to 'Join Now', signup_path, class: 'button alt', name:'join_now' %>
   <% end %>
 </div>
