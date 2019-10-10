@@ -33,6 +33,10 @@ As a user
 I want to view the date a post was created
 So that I can see how old it is
 
+As a user
+I only want to view my posts
+So that I can see how many posts i have done
+
 ```
 
 # AceBook
