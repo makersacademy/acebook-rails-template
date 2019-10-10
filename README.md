@@ -58,6 +58,7 @@ First, clone this repository. Then:
 
 ```bash
 > bundle install
+> bin/rails db:drop # Only needed if the database has changed since the app was last installed
 > bin/rails db:create
 > bin/rails db:migrate
 

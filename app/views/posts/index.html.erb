@@ -1,6 +1,17 @@
 <%= flash[:returnMessage] %>
 <% @posts.each do |post| %>
-  <p><%= post.created_at.strftime("%d/%m/%Y") %> <%= post.message %>  </p>
+  <%= form_for post do |form| %>
+  <p id="<%=post.id%>">
+    <%= post.created_at.strftime("%d/%m/%Y, %l:%M%P") %>
+    <%if post.created_at.to_i/60 >= (Time.new.to_i/60)-10%>
+      <%= form.text_field :message%>
+      <%= submit_tag 'Save', :name => 'save_button' %>
+    <% else %>
+      <%= form.text_field :message, readonly: true %>
+    <% end %>
+    <%= submit_tag 'Delete', :name => 'delete_button', data: { confirm: 'Are you sure?' }  %>
+  </p>
+ <% end %>
 <% end %>
 <%= link_to new_post_path do %>
   New post
