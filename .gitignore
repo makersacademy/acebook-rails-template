@@ -22,4 +22,4 @@ git
 /yarn-error.log
 
 .byebug_history
-.rspec.xml
+rspec.xml
