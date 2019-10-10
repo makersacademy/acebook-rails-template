@@ -1,0 +1,19 @@
+
+language: ruby
+rvm:
+  - 2.6.3
+
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - yarn install --check-file
+  - gem update --system
+  - gem install bundler
+
+services:
+  - postgresql
+
+script:
+  - bundle install
+  - bundle exec bin/rails db:create
+  - bundle exec bin/rails db:migrate
+  - bundle exec rspec
