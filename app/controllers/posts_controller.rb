@@ -6,16 +6,20 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    current_user.posts.create(post_params)
     redirect_to posts_url
+    p current_user.posts
   end
 
   def index
     p ENV['RAILS_ENV']
     @posts = Post.all.sort_by(&:created_at).reverse
+    @users = User.all
   end
 
   def show
+    # @posts = current_user.posts
+    # ^^ promising way to show one user's posts
     @post = Post.find(params[:id])
   end
 
@@ -38,6 +42,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
 end
