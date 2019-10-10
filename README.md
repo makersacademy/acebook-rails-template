@@ -6,6 +6,10 @@ I want to signup to AceBook
 So I can login and use the app  
 
 As a user
+I want to login to AceBook
+So that I can access my posts
+
+As a user
 I want to enter my email and password on the signup page
 So that I can create a user account
 
