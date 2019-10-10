@@ -1,7 +1,19 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<div class="jumbotron">
+  <p style="font-size:45px; font-weight:900">Acebook</p>
+  <h2>Your posts</h2>
+</div>
+
+   <div class="container">
+     <% @posts.each do |post| %>
+      <div class="alert alert-primary" role="alert">
+       <p style="font-size:18px"><%= post.message %></p>
+       <p>Date: <%= post.time_stamp %></p>
+       </div>
+     <% end %>
+
+
+     <%= link_to new_post_path do %>
+       New post
+     <% end %>
+     </div>
