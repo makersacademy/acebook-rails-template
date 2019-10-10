@@ -2,21 +2,19 @@ require 'rails_helper'
 
 RSpec.feature "User Sign Up", type: :feature do
   scenario "Anyone can Sign Up" do
-    visit "/users/new"
-    fill_in "user[username]", with: "NewUser123"
+    visit "/users/sign_up"
     fill_in "user[email]", with: "newuser123@gmail.com"
     fill_in "user[password]", with: "password1"
-    choose('user[ethnicity]', option: "asian")
-    click_button "Sign Up"
-    expect(page).to have_content("Welcome NewUser123!")
+    fill_in "user[password_confirmation]", with: "password1"
+    click_button
+    expect(page).to have_content("Welcome newuser123@gmail.com!")
   end
 
-  scenario "Requires all fields" do
-    visit "/users/new"
-    fill_in "user[username]", with: "NewUser123"
+  scenario "Requires password confirmation to match" do
+    visit "/users/sign_up"
     fill_in "user[email]", with: "newuser123@gmail.com"
     fill_in "user[password]", with: "password1"
-    click_button "Sign Up"
-    expect(page).to have_content("Ethnicity can't be blank")
+    click_button
+    expect(page).to have_content("Password confirmation doesn't match Password Email")
   end
 end
