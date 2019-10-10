@@ -6,8 +6,13 @@
               method: :get %>
   <%= link_to 'Edit', edit_post_path(post),
               method: :get %>
-  <%= link_to 'Delete', post_path(post), class: "#{post.id}",
-              method: :delete %> </p>
+              <% if @user_id == current_user.id %>
+                <%= link_to 'Delete', post_path(post), class: "#{post.id}",
+                          method: :delete %>
+              <% else %>
+                      <%=flash[:notice] = "Check yourself before you wreck yourself!!"%></p>
+              <% end %>
+
 <% end %>
 
 <%= link_to new_post_path do %>
