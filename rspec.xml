@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="11" skipped="1" failures="0" errors="0" time="0.375240" timestamp="2019-10-09T10:06:00+01:00" hostname="Makerss-MacBook-Pro-6.local">
+<testsuite name="rspec" tests="13" skipped="1" failures="0" errors="0" time="0.340057" timestamp="2019-10-09T17:26:25+01:00" hostname="Makerss-MacBook-Pro-8.local">
 <properties>
-<property name="seed" value="62808"/>
+<property name="seed" value="17412"/>
 </properties>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET /new  responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.027301"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.015662"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / creates a post" file="./spec/controllers/posts_controller_spec.rb" time="0.012160"></testcase>
-<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.007515"></testcase>
-<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline Can sign up got Acebook" file="./spec/features/user_can_sign_up_spec.rb" time="0.203502"></testcase>
-<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register twice with the same email" file="./spec/features/user_can_sign_up_spec.rb" time="0.037463"></testcase>
-<testcase classname="spec.features.user_can_submit_posts_spec" name="Timeline Can submit posts and view them" file="./spec/features/user_can_submit_posts_spec.rb" time="0.025745"></testcase>
-<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can view posts reverse chronological order" file="./spec/features/user_can_view_posts_spec.rb" time="0.026356"></testcase>
-<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can see date of posts " file="./spec/features/user_can_view_posts_spec.rb" time="0.015034"></testcase>
-<testcase classname="spec.helpers.welcome_helper_spec" name="WelcomeHelper add some examples to (or delete) /Users/student/Projects/Group-Challenges/acebook-agil/spec/helpers/welcome_helper_spec.rb" file="./spec/helpers/welcome_helper_spec.rb" time="0.000009"><skipped/></testcase>
-<testcase classname="spec.models.post_spec" name="Post should be" file="./spec/models/post_spec.rb" time="0.000742"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET /new  responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.019076"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.007996"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController POST / creates a post" file="./spec/controllers/posts_controller_spec.rb" time="0.005619"></testcase>
+<testcase classname="spec.controllers.posts_controller_spec" name="PostsController GET / responds with 200" file="./spec/controllers/posts_controller_spec.rb" time="0.004687"></testcase>
+<testcase classname="spec.features.user_can_create_delete_posts_spec" name="Timeline Can create and delete a single post" file="./spec/features/user_can_create_delete_posts_spec.rb" time="0.136712"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline Can sign up got Acebook" file="./spec/features/user_can_sign_up_spec.rb" time="0.046910"></testcase>
+<testcase classname="spec.features.user_can_sign_up_spec" name="Timeline user can&apos;t register twice with the same email" file="./spec/features/user_can_sign_up_spec.rb" time="0.025086"></testcase>
+<testcase classname="spec.features.user_can_submit_posts_spec" name="Timeline Can submit posts and view them" file="./spec/features/user_can_submit_posts_spec.rb" time="0.014450"></testcase>
+<testcase classname="spec.features.user_can_update_posts_spec" name="Timeline Can create and update a single post" file="./spec/features/user_can_update_posts_spec.rb" time="0.023108"></testcase>
+<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can view posts reverse chronological order" file="./spec/features/user_can_view_posts_spec.rb" time="0.025391"></testcase>
+<testcase classname="spec.features.user_can_view_posts_spec" name="Timeline Can see date of posts " file="./spec/features/user_can_view_posts_spec.rb" time="0.027700"></testcase>
+<testcase classname="spec.helpers.welcome_helper_spec" name="WelcomeHelper add some examples to (or delete) /Users/student/Projects/Group-Challenges/acebook-agil/spec/helpers/welcome_helper_spec.rb" file="./spec/helpers/welcome_helper_spec.rb" time="0.000008"><skipped/></testcase>
+<testcase classname="spec.models.post_spec" name="Post should be" file="./spec/models/post_spec.rb" time="0.000796"></testcase>
 </testsuite>
