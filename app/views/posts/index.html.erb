@@ -3,18 +3,17 @@
      <h1>Acebook</h1>
      <h4>Your Posts</h4>
    </div>
-  
+
    <div class="container">
      <% @posts.each do |post| %>
       <div class="alert alert-primary" role="alert">
        <p><%= post.message %></p>
-       <p>Date: <%= post.created_at.strftime("%A %d %b") %></p>
+       <p>Date: <%= post.time_stamp %></p>
        </div>
      <% end %>
-    
+
 
      <%= link_to new_post_path do %>
        New post
      <% end %>
      </div>
-   
