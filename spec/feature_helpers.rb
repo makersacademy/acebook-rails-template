@@ -1,4 +1,4 @@
-def sign_up
+def register
     visit '/sign_up'
     fill_in "user_firstname", with: "Toast"
     fill_in "user_surname", with: "Thorn"
@@ -7,9 +7,9 @@ def sign_up
     fill_in "user_email", with: "toast@example.com"
     fill_in "user_password", with: "1234"
     click_button "Sign up"
-end 
+end
 
-def sign_in
+def log_in
     visit "/sign_in"
     fill_in "Email", with: "toast@example.com"
     fill_in "Password", with: "1234"
