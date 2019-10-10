@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    
     redirect_to posts_url
   end
 
@@ -16,9 +17,12 @@ class PostsController < ApplicationController
   def update
     if params[:delete_button]
       destroy
+    elsif params[:like_button]
+      like
     else
       @post = Post.find(params[:id])
       @post.update(post_params)
+
       redirect_to posts_url
     end
   end
@@ -26,6 +30,15 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+
+    redirect_to posts_url
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    count = @post.likes
+    @post.update(:likes => (count + 1))
+
     redirect_to posts_url
   end
   private
