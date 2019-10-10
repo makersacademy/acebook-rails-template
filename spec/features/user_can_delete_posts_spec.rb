@@ -1,5 +1,6 @@
 RSpec.feature "Timeline", type: :feature do
     scenario "Can delete posts" do
+      register()
       visit "/posts"
       click_link "New post"
       fill_in "Message", with: "Hello, world!"

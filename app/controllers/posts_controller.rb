@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :require_login
+
   def new
     @post = Post.new
   end
@@ -9,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    p ENV['RAILS_ENV']
     @posts = Post.all.sort_by(&:created_at).reverse
   end
 
