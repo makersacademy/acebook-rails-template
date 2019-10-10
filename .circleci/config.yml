@@ -53,8 +53,17 @@ jobs: # a collection of steps
           command: bin/rails db:schema:load --trace
 
       - run:
+          name: Database drop
+          command: rake db:drop --trace
+
+      - run:
+          name: Database create
+          command: rake db:create --trace
+
+      - run:
           name: Database migrate
           command: rake db:migrate
+          
       - run:
           name: Run rspec in parallel
           command: |
