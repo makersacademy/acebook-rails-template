@@ -52,6 +52,7 @@ class UsersController < ApplicationController
   def user_validation
     if @user.valid?
       flash[:returnMessage] = "User successfully registered"
+      session[:user_id] = @user.id
       redirect_to posts_url
     else
       redirect_to new_user_path

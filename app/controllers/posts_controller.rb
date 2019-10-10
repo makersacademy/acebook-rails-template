@@ -8,9 +8,13 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  # def index
+  #   @posts = Post.all.order(created_at: :desc)
+  #   @post = @posts[0];
+  # end
+
   def index
-    @posts = Post.all.order(created_at: :desc)
-    @post = @posts[0];
+      @posts = Post.where(user_id: session[:user_id]).order(created_at: :desc)
   end
 
   def update
@@ -31,6 +35,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
 end
