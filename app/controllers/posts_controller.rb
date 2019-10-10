@@ -4,18 +4,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    params[:post][:user_id] = current_user.id
-    @post = Post.create(post_params)
+    current_user.posts.create(post_params)
     redirect_to posts_url
-    p current_user
-    p params[:post][:user_id]
+    p current_user.posts
   end
 
   def index
     @posts = Post.all.sort_by(&:created_at).reverse
+    @users = User.all
   end
 
   def show
+    # @posts = current_user.posts
+    # ^^ promising way to show one user's posts
     @post = Post.find(params[:id])
   end
 
