@@ -15,7 +15,6 @@ def log_in
     fill_in "Password", with: "1234"
     click_button "Sign in"
 end
-
 def register_2
     visit '/sign_up'
     fill_in "user_firstname", with: "Bagel"
