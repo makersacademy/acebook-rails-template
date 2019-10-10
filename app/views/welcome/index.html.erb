@@ -1,10 +1,8 @@
-<h2>Hello World V5</h2>
+<%= link_to users_url do %>
+  Log In
+<% end %>
 
-Email Address : <input type="email">
-Password : <input type="password">
 <br/>
-<button>Log In</button>
-<br/>
-<a href="users/">Register</a>
-<br/>
-<%= flash[:returnMessage] %>
+<%= link_to new_user_path do %>
+  Register
+<% end %>

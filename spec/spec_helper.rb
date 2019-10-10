@@ -1,6 +1,7 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'features/signup_helper'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -108,3 +109,4 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+

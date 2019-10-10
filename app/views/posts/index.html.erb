@@ -1,3 +1,4 @@
+<%= flash[:returnMessage] %>
 <% @posts.each do |post| %>
   <%= form_for post do |form| %>
   <p id="<%=post.id%>">
@@ -12,7 +13,6 @@
   </p>
  <% end %>
 <% end %>
-
 <%= link_to new_post_path do %>
   New post
 <% end %>

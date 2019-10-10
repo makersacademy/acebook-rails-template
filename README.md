@@ -6,6 +6,22 @@ I want to signup to AceBook
 So I can login and use the app  
 
 As a user
+I want to enter my email and password on the signup page
+So that I can create a user account
+
+As a user
+I want a helpful message if I enter incorrect login details
+So that I can see what I have done wrong
+
+As a user
+I want to be redirected to the posts page after login
+So that I can see my posts
+
+As a user
+I want to be redirected to the login page if I am not logged in
+So that I can sign in and see my posts
+
+As a user
 I want to view post in desc date order
 So that I can see newest posts first
 
@@ -14,6 +30,7 @@ I want to view the date a post was created
 So that I can see how old it is
 
 ```
+
 # AceBook
 
 *** HEROKU setup instructions ***
@@ -47,4 +64,5 @@ First, clone this repository. Then:
 
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
+
 ```
