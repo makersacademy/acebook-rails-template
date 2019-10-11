@@ -34,6 +34,7 @@ gem 'activestorage'
 gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 # Adds support for Capybara system testing and selenium driver
 gem 'capybara'
+gem 'image_processing', '~> 1.2'
 gem 'selenium-webdriver'
 gem 'rails-controller-testing'
 gem 'rake'
