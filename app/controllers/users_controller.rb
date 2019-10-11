@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # render plain: params[:user][:email].inspect
     @user = User.new(user_params)
 
     begin
