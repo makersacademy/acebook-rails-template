@@ -2,7 +2,7 @@
   <h1 style="text-align:center;"><%= @user.email %> </h1>
   <h5>Chatroom</h5>
   <div class="well" id="chatbox" style="height:250px; border: solid 1px #222222; overflow-y: scroll;">
-    <% @messages.each do |message| %>
+    <% @messages.reverse.each do |message| %>
       <%= render 'messages/message', message: message %>
     <% end %>
   </div>
