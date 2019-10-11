@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <p style="font-size:45px; font-weight:900">Acebook</p>
+  <h2>All Users</h2>
+</div>
+
+  <div class="container">
+    <% @users.each do |user| %>
+      <div class="alert alert-primary" role="alert">
+      <p style="font-size:18px"><span>First Name: </span><%= user.first_name%></p>
+      <p style="font-size:18px">Last Name: <%= user.last_name%></p>
+       <p style="font-size:18px">Email Address: <%= user.email%></p>
+       <p><button type="button" class="btn btn-light" href= >Visit Profile</button></p>
+    </div>
+     <% end %>
+  </div>
