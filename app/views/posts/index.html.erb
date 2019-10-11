@@ -5,6 +5,16 @@
 </div>
 
    <div class="container">
+   <div class="row">
+   <%= link_to new_post_path do %>
+    <div class="btn btn-info btn-lg">
+     New post
+     </div>
+   <% end %>
+   </div>
+
+  
+
      <% @posts.each do |post| %>
       <div class="alert alert-primary" role="alert">
        <p style="font-size:18px"><%= post.message %></p>
@@ -15,9 +25,5 @@
             data: { confirm: 'Are you sure?' } %>
        </div>
      <% end %>
-
-
-     <%= link_to new_post_path do %>
-       New post
-     <% end %>
      </div>
+     

@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    @users = User.all
+  end
+
   def create
     # render plain: params[:user][:email].inspect
     @user = User.new(user_params)
@@ -18,6 +22,12 @@ class UsersController < ApplicationController
     end
 
     render 'new'
+  end
+
+  def show
+    @user = User.find(params[:id])
+    render 'show'
+
   end
 
   private
