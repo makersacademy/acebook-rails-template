@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def show
+    @user = User.find(params[:id])
+  end
+
   def new
     @user = User.new
   end
@@ -8,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # render plain: params[:user][:email].inspect
     @user = User.new(user_params)
 
     begin
