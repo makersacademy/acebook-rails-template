@@ -1,9 +1,9 @@
 <h1>hi <%= @user.email %></h1>
 
-<div>
+<div style='margin-left: 3rem;'>
 <br style='line-height: 3;'>
 <% if @user.avatar.attached? %>
-<%= image_tag @user.avatar %>
+<%= image_tag @user.avatar.variant(resize: "275x275").processed %>
 <% end %>
 <br style='line-height: 3;'>
 </div>
