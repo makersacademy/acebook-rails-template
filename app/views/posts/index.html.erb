@@ -1,28 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
-
-<table>
-
-  <tbody>
+<h1 style="text-align:center;">Posts</h1>
     <% @posts.to_a.reverse.each do |post| %>
-      <tr style="border:1px solid black;vertical-align: middle;">
-        <td> <p style="vertical-align: middle;"><%= simple_format(post.message) %></p></td>
-        <td colspan="2" style='text-align: center;'><p style="vertical-align: middle"><i style='font-size: 9px'><%= simple_format(post.updated_at.to_s.slice(0,10)) %></i></p></td>
-      </tr>
+        <div class="card" style="width: 30rem;">
+        <div class="card-body">
+          <h5 class="card-title">Post</h5>
+          <h6 class="card-subtitle mb-2 text-muted"><i><%= simple_format(post.updated_at.to_s.slice(0,10)) %></i></h6>
+          <p class="card-text"><%= simple_format(post.message) %></p>
+          <%= link_to 'Show', post, class:"card-link" %>
+          <%= link_to 'Edit', edit_post_path(post), class:"card-link" %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-link" %>
+          <!-- <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a> -->
+        </div>
+      </div>
 
-      <tr>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-
-      <tr>
-        <td></td>
-      </tr>
     <% end %>
-  </tbody>
-</table>
 
 <br>
 

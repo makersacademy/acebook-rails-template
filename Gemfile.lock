@@ -60,11 +60,17 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
     ast (2.4.0)
+    autoprefixer-rails (9.6.4)
+      execjs
     backports (3.15.0)
     bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    bootstrap (4.3.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.29.0)
@@ -90,6 +96,7 @@ GEM
     erubi (1.9.0)
     ethon (0.12.0)
       ffi (>= 1.3.0)
+    execjs (2.7.0)
     factory_bot (5.1.1)
       activesupport (>= 4.2.0)
     factory_bot_rails (5.1.1)
@@ -115,6 +122,10 @@ GEM
     jaro_winkler (1.5.3)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    jquery-rails (4.3.5)
+      rails-dom-testing (>= 1, < 3)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
     json (2.2.0)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -148,6 +159,7 @@ GEM
     parser (2.6.5.0)
       ast (~> 2.4.0)
     pg (1.1.4)
+    popper_js (1.14.5)
     public_suffix (4.0.1)
     puma (3.12.1)
     pusher-client (0.6.2)
@@ -235,9 +247,20 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (2.2.1)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (3.142.6)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    simple_form (5.0.1)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     simplecov (0.17.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -260,6 +283,8 @@ GEM
       sprockets (>= 3.0.0)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
+    tether-rails (1.4.0)
+      rails (>= 3.1)
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -309,11 +334,13 @@ PLATFORMS
 DEPENDENCIES
   activestorage
   bootsnap (>= 1.4.2)
+  bootstrap
   byebug
   capybara
   devise
   factory_bot_rails
   jbuilder (~> 2.7)
+  jquery-rails
   listen (>= 3.0.5, < 3.2)
   pg
   puma (~> 3.11)
@@ -324,10 +351,12 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5)
   selenium-webdriver
+  simple_form
   simplecov
   simplecov-console
   spring
   spring-watcher-listen (~> 2.0.0)
+  tether-rails
   travis
   turbolinks (~> 5)
   tzinfo-data
