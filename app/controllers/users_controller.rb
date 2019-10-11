@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  def show
-    @user = User.find(params[:id])
-  end
+  # def show
+  #   @user = User.find(params[:id])
+  # end
 
   def new
     @user = User.new
@@ -28,11 +28,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    p params
-    @user = User.find_by(params[:id])
-    p @user
-    redirect_to user_path(:id)
-    
+    @user = User.find_by(id: session[:user_id]) 
   end
 
   private
