@@ -7,4 +7,8 @@ class Post < ApplicationRecord
     end
   end
 
+  def editable?
+    self.created_at + 10.minutes < Time.now ? false : true
+  end
+
 end

@@ -9,11 +9,12 @@
       <div class="alert alert-primary" role="alert">
        <p style="font-size:18px"><%= post.message %></p>
        <p>Date: <%= post.time_stamp %></p>
-       <%= link_to 'Edit', edit_post_path(post) %>
+       <% if post.editable? %>
+        <%= link_to 'Edit', edit_post_path(post) %>
+       <% end %>
        </div>
-     <% end %>
-
-
+   <% end %>
+   
      <%= link_to new_post_path do %>
        New post
      <% end %>
