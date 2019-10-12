@@ -1,27 +1,25 @@
-
 <div class="jumbotron">
   <p style="font-size:45px; font-weight:900">Acebook</p>
   <h2>Your posts</h2>
 </div>
 
-   <div class="container">
-   <div class="row">
-   <%= link_to new_post_path do %>
+<div class="container">
+  <%= link_to new_post_path do %>
     <div class="btn btn-info btn-lg">
-     New post
-     </div>
-   <% end %>
-   </div>
+      New post
+    </div>
+  <% end %>
+</div>
+<br>
 
-  
-
-     <% @posts.each do |post| %>
-      <div class="alert alert-primary" role="alert">
-       <p style="font-size:18px"><%= post.message %></p>
-       <p>Date: <%= post.time_stamp %></p>
-       <% if post.editable? %>
-        <%= link_to 'Edit', edit_post_path(post) %>
-       <% end %>
-       </div>
-   <% end %>
+<% @posts.each do |post| %>
+  <div class="alert alert-primary" role="alert">
+    <p style="font-size:18px"><%= post.message %></p>
+    <% user = User.find_by(id: post.user_id) %>
+    <p><%= user.first_name %>: <%= post.time_stamp %></p>
+    <% if post.editable? %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+    <% end %>
+  </div>
+<% end %>
      
