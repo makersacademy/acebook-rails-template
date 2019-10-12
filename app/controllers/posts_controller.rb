@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    p session[:user_id]
     @posts = Post.all.order(created_at: :desc)
   end
 
@@ -20,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(message: post_params["message"], user_id: session[:user_id])
     redirect_to posts_url
   end
 
