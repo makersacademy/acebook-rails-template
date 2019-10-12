@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-  end 
+  end
 
   def new
     @post = Post.new
@@ -13,6 +13,10 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    if !@post.editable?
+      redirect_to posts_url
+      flash[:danger] = 'This post is no longer editable'
+    end
   end
 
   def create

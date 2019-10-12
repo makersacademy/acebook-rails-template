@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users
   get    'signup' =>  'users#new'
   post   'signup' =>  'users#create'
+  get 'user', to: 'users#show'
 
   root 'sessions#new'
 

@@ -4,21 +4,25 @@
   <h2>Your posts</h2>
 </div>
 
-<p>
-  <%= form_with do %>
-    <%= link_to 'New Post', new_post_path, class: 'btn btn-primary' %>
-  <% end %>
-</p>
-
 <div class="container">
-    <% @posts.each do |post| %>
-      <div class="alert alert-primary" role="alert">
-        <p style="font-size:18px"><%= simple_format(post.message) %></p>
-        <p>Date: <%= post.time_stamp %></p>
-        <%= link_to 'Edit', edit_post_path(post), expires_in: Time.now - 1 %>
-        <%= link_to 'Delete', post_path(post),
-            method: :delete,
-            data: { confirm: 'Are you sure?' } %>
-      </div>
-    <% end %>
+  <%= link_to new_post_path do %>
+  <div class="btn btn-info btn-lg">
+   New post
+   </div>
+  <% end %>
 </div>
+
+  
+
+<% @posts.each do |post| %>
+  <div class="alert alert-primary" role="alert">
+    <p style="font-size:18px"><%= post.message %></p>
+    <p>Date: <%= post.time_stamp %></p>
+    <% if post.editable? %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+    <% end %>
+    <%= link_to 'Delete', post_path(post),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+  </div>
+ <% end %>

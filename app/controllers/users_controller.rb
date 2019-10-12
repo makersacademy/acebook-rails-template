@@ -1,10 +1,17 @@
 class UsersController < ApplicationController
+  # def show
+  #   @user = User.find(params[:id])
+  # end
+
   def new
     @user = User.new
   end
 
+  def index
+    @users = User.all
+  end
+
   def create
-    # render plain: params[:user][:email].inspect
     @user = User.new(user_params)
 
     begin
@@ -20,9 +27,13 @@ class UsersController < ApplicationController
     render 'new'
   end
 
+  def show
+    @user = User.find_by(id: session[:user_id]) 
+  end
+
   private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email,
+    params.require(:user).permit(:id, :first_name, :last_name, :email,
                                 :password, :password_confirmation)
 
   end
