@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  # def show
-  #   @user = User.find(params[:id])
-  # end
+  def show
+    @user = User.find_by(id: session[:user_id])
+  end
 
   def new
     @user = User.new
@@ -25,10 +25,6 @@ class UsersController < ApplicationController
     end
 
     render 'new'
-  end
-
-  def show
-    @user = User.find_by(id: session[:user_id]) 
   end
 
   private
