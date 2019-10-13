@@ -4,4 +4,6 @@
 
 <p>
   <%= simple_format(post.message) %>
+  <% user = User.find_by(id: post.user_id) %>
+  <p><%= user.first_name %> <%= user.last_name %>: <%= post.time_stamp %></p>
 </p>

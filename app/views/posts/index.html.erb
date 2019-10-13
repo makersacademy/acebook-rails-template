@@ -16,7 +16,7 @@
   <div class="alert alert-primary" role="alert">
     <p style="font-size:18px"><%= post.message %></p>
     <% user = User.find_by(id: post.user_id) %>
-    <p><%= user.first_name %>: <%= post.time_stamp %></p>
+    <p><%= user.first_name %> <%= user.last_name %>: <%= post.time_stamp %></p>
     <% if post.editable? %>
       <%= link_to 'Edit', edit_post_path(post) %>
     <% end %>
