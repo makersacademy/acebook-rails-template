@@ -1,4 +1,7 @@
 Rails.application.configure do
+  config.action_cable.mount_path = '/cable'
+  config.web_socket_server_url = "wss://mighty-woodland-36916.herokuapp.com/cable"
+  config.action_cable.allowed_request_origin = ['https://mighty-woodland-36916.herokuapp.com', 'http://mighty-woodland-36916.herokuapp.com']
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
