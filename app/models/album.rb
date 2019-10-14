@@ -1,8 +1,10 @@
 class Album < ApplicationRecord
+  belongs_to :user
   has_many_attached :images
-  validates :title, presence: true, unless: -> {ENV['RAILS_ENV'] ||= 'test'}
-  validates :body, presence: true, unless: ->{ENV['RAILS_ENV'] ||= 'test'}
-  validate :image_type, unless: ->{ENV['RAILS_ENV'] ||= 'test'}
+  
+  validates :title, presence: true
+  validates :body, presence: true
+  validate :image_type
 
   def thumbnail(index)
     return self.images[index].variant(resize: '300x300!')

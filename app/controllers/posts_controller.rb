@@ -8,7 +8,6 @@ class PostsController < ApplicationController
   def create
     current_user.posts.create(post_params)
     redirect_to posts_url
-    p current_user.posts
   end
 
   def index

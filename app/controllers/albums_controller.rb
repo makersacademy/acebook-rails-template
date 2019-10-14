@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
-
+  before_action :require_login
   # GET /albums
   # GET /albums.json
   def index
@@ -25,7 +25,7 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(album_params)
+    current_user.albums.create(album_params)
 
     respond_to do |format|
       if @album.save
@@ -62,11 +62,6 @@ class AlbumsController < ApplicationController
     end
   end
 
-  def delete_image_attachment
-    @image = ActiveStorage::Attachment.find(params[:id])
-    @image.purge
-    redirect_back(fallback_location:albums_path)
-end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album
@@ -75,6 +70,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:title, :body, images: [])
+      params.require(:album).permit(:title, :body, :user_id, images: [])
     end
 end
