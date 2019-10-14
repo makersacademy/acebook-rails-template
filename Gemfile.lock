@@ -178,12 +178,6 @@ GEM
       tilt (>= 1.1, < 3)
     sassc (2.2.1)
       ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     selenium-webdriver (3.11.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
@@ -229,7 +223,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
-  bootstrap-sass (~> 3.4.1)
+  bootstrap-sass
   bootstrap_form (~> 4.0)
   byebug
   capybara (~> 2.13)
@@ -242,7 +236,6 @@ DEPENDENCIES
   rubocop
   rubocop-rails
   sass-rails (~> 5.0)
-  sassc-rails (>= 2.1.0)
   selenium-webdriver
   simplecov-console
   simplecov-teamcity-summary
