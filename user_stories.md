@@ -46,4 +46,3 @@ I would like to be able to edit and delete my own photos.
 As a user, 
 So that I can see what my friends are up to, 
 I would like to see their albums. 
-

@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
   <% @user_id = post.user_id.to_i %>
-  <p><%= post.message %></br>Posted on: <%= post.created_at %>
+  <p><%= simple_format post.message %></br>Posted on: <%= post.created_at %>
   by <%= User.find_by(id: @user_id).firstname + " " + User.find_by(id: @user_id).surname %></p>
   <p><%= link_to 'Show', post_path(post),
               method: :get %>
