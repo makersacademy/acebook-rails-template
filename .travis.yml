@@ -4,6 +4,7 @@ rvm:
   - 2.6.3
 
 before_install:
+  - sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"  - brew install ImageMagick
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - yarn install --check-file
   - gem update --system

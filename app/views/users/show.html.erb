@@ -1,3 +1,4 @@
+
 <div class="jumbotron">
   <h1 style="text-align:center;"><%= @user.email %> </h1>
   <h5>Chatroom</h5>
@@ -14,4 +15,13 @@
       </div>
     </div>
   <% end %>
+
+<h1>hi <%= @user.email %></h1>
+
+<div style='margin-left: 3rem;'>
+<br style='line-height: 3;'>
+<% if @user.avatar.attached? %>
+<%= image_tag @user.avatar.variant(resize: "275x275").processed %>
+<% end %>
+<br style='line-height: 3;'>
 </div>
