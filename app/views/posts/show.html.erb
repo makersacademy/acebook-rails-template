@@ -1,7 +1,3 @@
-<div class="jumbotron">
-  <p style="font-size:45px; font-weight:900">Acebook</p>
-</div>
-
 <p>
   <%= simple_format(post.message) %>
   <% user = User.find_by(id: post.user_id) %>
