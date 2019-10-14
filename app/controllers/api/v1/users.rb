@@ -11,7 +11,7 @@ module API
        params do
          requires :email, type: String, desc: "email of the user"
        end
-       get ":email" do
+       post "" do
          User.where(email: permitted_params[:email]).first!
        end
      end

@@ -18,6 +18,7 @@
 !/tmp/.keep
 git
 /coverage/*
+/acebook-react/node_modules
 /node_modules
 /yarn-error.log
 

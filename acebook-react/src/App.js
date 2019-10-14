@@ -3,7 +3,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Test from './components/test/Test';
-import Login from './components/test/Login';
+import Login from './components/Login';
 
 
 
