@@ -5,8 +5,8 @@
   <%= @album.post %>
 </p>
 
-<% @album.images.each do |image| %>
-<%= image_tag(image, height: '500') %>
+<% (0...@album.images.count).each do |image| %>
+<%= image_tag(@album.thumbnail(image)) %>
 <% end %>
 
 <p>
