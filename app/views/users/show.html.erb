@@ -8,7 +8,7 @@
   </div>
   <%= form_with model: @message do |f| %>
     <div class="input-group mb-3">
-      <%= f.text_field :body, placeholder: "Type a message", class: "form-control" %>
+      <%= f.text_field :body, placeholder: "Type a message", class: "form-control", id: "message_body" %>
       <div class="input-group-append">
         <%= f.submit "Send", class: "btn btn-secondary" %>
       </div>
