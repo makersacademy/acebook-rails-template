@@ -39,3 +39,7 @@ def post_something
   fill_in "Message", with: "Hello, world!"
   click_button "Submit"
 end
+
+# def upload_photo
+#   attach_file("Choose Files", Rails.root + "spec/Krispy_creme.jpeg")
+# end

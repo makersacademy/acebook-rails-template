@@ -7,6 +7,7 @@
 
 <% (0...@album.images.count).each do |image| %>
 <%= image_tag(@album.thumbnail(image)) %>
+<%= link_to "Remove", delete_image_attachment_album_url(@album.images[image]), method: :delete, data: {confirm: "Are you sure?"} %>
 <% end %>
 
 <p>
