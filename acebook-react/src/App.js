@@ -3,6 +3,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Test from './components/test/Test';
+import Login from './components/test/Login';
+
 
 
 class App extends React.Component {
@@ -13,6 +15,7 @@ class App extends React.Component {
         <Router>
        <Switch>
           <Route exact path="/" component={Test} />
+          <Route exact path="/login" component={Login} />
         </Switch>
         </Router>
       </div>
