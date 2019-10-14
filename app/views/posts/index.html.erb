@@ -1,20 +1,41 @@
 <% @posts.each do |post| %>
-  <% @user_id = post.user_id.to_i %>
-  <p><%= simple_format post.message %></br>Posted on: <%= post.created_at %>
+<% @user_id = post.user_id.to_i %>
+<p><%= simple_format post.message %></br>Posted on: <%= post.created_at %>
   by <%= User.find_by(id: @user_id).firstname + " " + User.find_by(id: @user_id).surname %></p>
   <p><%= link_to 'Show', post_path(post),
-              method: :get %>
-  <%= link_to 'Edit', edit_post_path(post),
-              method: :get %>
-  <% if @user_id == current_user.id %>
-    <%= link_to 'Delete', post_path(post), class: "#{post.id}",
-                method: :delete %>
-  <% else %>
-    <%=flash[:notice] = "Check yourself before you wreck yourself!!"%></p>
-  <% end %>
+    method: :get %>
+    <%= link_to 'Edit', edit_post_path(post),
+    method: :get %>
+    <% if @user_id == current_user.id %>
+      <%= link_to 'Delete', post_path(post), class: "#{post.id}",
+      method: :delete %>
+    <% else %>
+      <%=flash[:notice] = "Check yourself before you wreck yourself!!"%></p>
+    <% end %>
+
+    <h2>Commments:</h2>
+    <% post.comments.each do |comment| %>
+       <p><%= comment.commenter %> commented: <%= comment.body %></p><br>
+    <% end %>
+
+    <h2>Add a comment:</h2>
+    <%= form_with(model: [ post, post.comments.build ], local: true) do
+      |form| %>
+      <p>
+        <%= form.label :commenter %><br>
+        <%= form.text_field :commenter %>
+      </p>
+      <p>
+        <%= form.label :body %><br>
+        <%= form.text_area :body %>
+      </p>
+      <p>
+        <%= form.submit %>
+      </p>
+    <% end %>
 
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+    <%= link_to new_post_path do %>
+    New post
+    <% end %>
