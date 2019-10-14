@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
+
   post 'messages', to: 'messages#create'
  root 'users#show'
   devise_for :users
