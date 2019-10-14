@@ -3,16 +3,18 @@ module API
     class Users < Grape::API
       include API::V1::Defaults
       resource :users do
-        desc "Return all users"
-        get "" do
-          User.all
-        end
         desc "Return a user from email"
         params do
           requires :email, type: String, desc: "email of the user"
+          requires :password, type: String, desc: "password of the new user"
         end
         post "" do
-          User.where(email: permitted_params[:email]).first!
+          user = User.where(email: permitted_params[:email]).first!
+          if !user.authenticate(permitted_params[:password])
+            raise 'invalid user'
+          else
+            user
+          end
         end
         desc "Create a new user"
         params do
