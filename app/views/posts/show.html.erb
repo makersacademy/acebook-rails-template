@@ -1,3 +1,5 @@
+<%= render 'layouts/navbar' %>
+
 <p>
   <%= simple_format(post.message) %>
   <% user = User.find_by(id: post.user_id) %>
