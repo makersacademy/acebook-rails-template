@@ -1,3 +1,21 @@
+
+<div class="jumbotron">
+  <h1 style="text-align:center;"><%= @user.email %> </h1>
+  <h5>Chatroom</h5>
+  <div class="well" id="chatbox" style="height:250px; border: solid 1px #222222; overflow-y: scroll;">
+    <% @messages.reverse.each do |message| %>
+      <%= render 'messages/message', message: message %>
+    <% end %>
+  </div>
+  <%= form_with model: @message do |f| %>
+    <div class="input-group mb-3">
+      <%= f.text_field :body, placeholder: "Type a message", class: "form-control", id: "message_body" %>
+      <div class="input-group-append">
+        <%= f.submit "Send", class: "btn btn-secondary" %>
+      </div>
+    </div>
+  <% end %>
+
 <h1>hi <%= @user.email %></h1>
 
 <div style='margin-left: 3rem;'>
