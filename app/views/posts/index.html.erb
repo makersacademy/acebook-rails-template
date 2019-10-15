@@ -5,13 +5,15 @@
         <div class="card" style="width: 30rem;">
         <div class="card-body">
           <% if post.user.avatar.attached? %>
-          <h5 class="card-title"><p><br><%= image_tag post.user.avatar.variant(resize_to_limit: [50, 50], ).processed %>
+          <h5 class="card-title"><p><br><%= image_tag post.user.avatar.variant(resize: "50x50").processed %>
           <% end %> </p></h5>
           <h6 class="card-subtitle mb-2 text-muted"><i><%= simple_format(post.updated_at.to_s.slice(0,10)) %></i></h6>
           <p class="card-text"><%= simple_format(post.message) %></p>
           <%= link_to 'Show', post, class:"card-link" %>
+          <% if post.user.id == current_user.id %>
           <%= link_to 'Edit', edit_post_path(post), class:"card-link" %>
           <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-link" %>
+          <% end %>
         </div>
       </div>
     <% end %>
