@@ -1,8 +1,12 @@
 <div class="card fixed-bottom ml-auto" style="width: 30rem;">
   <div class="card-header">
-    CHAT
+    <div class="card-header" id="headingOne">
+        <button class="btn btn-secondary btn-block" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          CHATBOX
+        </button>
   </div>
-    <div class="card-body well" id="chatbox" style="height: 45rem; border: solid 1px #222222; overflow-y: scroll;">
+  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne">
+    <div class="card-body well" id="chatbox" style="height: 45rem; overflow-y: scroll;">
       <% @messages.reverse.each do |message| %>
         <%= render 'messages/message', message: message %>
       <% end %>
@@ -15,4 +19,6 @@
         </div>
       </div>
     <% end %>
+    </div>
+  </div>
 </div>
