@@ -5,6 +5,8 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import Posts from './components/Posts';
+import Header from './components/layout/Header'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
   render(){
@@ -12,6 +14,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
+        <Header />
        <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
