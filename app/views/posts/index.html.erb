@@ -7,6 +7,9 @@
 
   <p><%= simple_format post.message %></br>Posted on: <%= post.created_at %>
   by <%= User.find_by(id: @user_id).firstname + " " + User.find_by(id: @user_id).surname %>
+  <% if User.find_by(id: @user_id).profile_picture.attached? %>
+  <%= image_tag User.find_by(id: @user_id).profile_picture.variant(resize: '100x100!'), :style => "border-radius: 50%" %>
+  <% end %>
   </p>
 
   <p><%= link_to 'Show', post_path(post),

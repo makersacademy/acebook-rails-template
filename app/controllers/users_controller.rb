@@ -9,6 +9,7 @@ class UsersController < Clearance::UsersController
       :surname,
       :birthday,
       :gender,
+      :profile_picture
     )
   end
 end
