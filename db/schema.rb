@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_10_14_145731) do
     t.bigint "user_id", null: false
     t.bigint "friend_id", null: false
     t.boolean "confirmed", default: false
+    t.integer "requester"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["friend_id"], name: "index_friendships_on_friend_id"
