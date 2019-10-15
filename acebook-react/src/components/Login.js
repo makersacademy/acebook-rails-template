@@ -8,7 +8,8 @@ class Login extends React.Component {
   }
 
   state = {
-    redirect: false
+    redirect: false,
+    error: ''
   }
 
   setRedirect = () => {
@@ -30,27 +31,27 @@ class Login extends React.Component {
       method: 'POST',
       body: data,
     })
-    .then(response => response.json()).then(data => {
-      this.setRedirect()
-      this.renderRedirect()
-    }).catch(error => {
-        document.getElementById("Error").innerHTML = "Password or Email Invalid"
-    });
+      .then(response => response.json()).then(data => {
+        this.setRedirect()
+        this.renderRedirect()
+      }).catch(error => {
+        this.setState({ error: 'Invalid Email/Password' })
+      });
   }
 
   render() {
     return (
       <div>
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="email">Enter your email</label>
-        <input id="email" name="email" type="email" />
-        <label htmlFor="email">Enter your password</label>
-        <input id="password" name="password" type="password" />
-        {this.renderRedirect()}
-        <button>Login</button>
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="email">Enter your email</label>
+          <input id="email" name="email" type="email" />
+          <label htmlFor="email">Enter your password</label>
+          <input id="password" name="password" type="password" />
+          {this.renderRedirect()}
+          <button>Login</button>
 
-      </form>
-      <p id="Error"></p>
+        </form>
+        <p>">{this.state.error}</p>
       </div>
     );
   }
