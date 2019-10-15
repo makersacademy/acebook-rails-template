@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1 style="text-align:center;">Posts</h1>
-    <% @posts.to_a.reverse.each do |post| %>
+
+
+<%= render 'form', post: @post %>
+
+    <% @posts.find_each.reverse_each do |post| %>
         <div class="card" style="width: 30rem;">
         <div class="card-body">
           <% if post.user.avatar.attached? %>
