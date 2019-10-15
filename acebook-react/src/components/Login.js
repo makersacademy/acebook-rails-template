@@ -29,16 +29,18 @@ class Login extends React.Component {
     fetch('http://localhost:3000/api/v1/users', {
       method: 'POST',
       body: data,
-    }
-    ).then(response => response.json()).then(data => {
-      console.log(data)
+    })
+    .then(response => response.json()).then(data => {
       this.setRedirect()
       this.renderRedirect()
+    }).catch(error => {
+        document.getElementById("Error").innerHTML = "Password or Email Invalid"
     });
   }
 
   render() {
     return (
+      <div>
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="email">Enter your email</label>
         <input id="email" name="email" type="email" />
@@ -48,6 +50,8 @@ class Login extends React.Component {
         <button>Login</button>
 
       </form>
+      <p id="Error"></p>
+      </div>
     );
   }
 }

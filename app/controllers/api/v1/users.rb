@@ -9,11 +9,13 @@ module API
           requires :password, type: String, desc: "password of the new user"
         end
         post "" do
-          user = User.where(email: permitted_params[:email]).first!
-          if !user.authenticate(permitted_params[:password])
+          @user = User.find_by(email: params[:email])
+          if @user && @user.authenticate(permitted_params[:password])
+            return @user 
+          elsif !@user
             raise 'invalid user'
           else
-            user
+            raise "invalid password"
           end
         end
         desc "Create a new user"
