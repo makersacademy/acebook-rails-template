@@ -6,22 +6,8 @@
   <% user = User.find_by(id: @post.user_id) %>
   <p> <%= user.first_name %> <%= user.last_name %>: <%= @post.time_stamp %></p>
 
-  <h2>Comments</h2>
-  <div>
-    <% @post.comments.each do |comment| %>
-      <p> <%= comment.body  %> </p>
-      <% commenter = User.find_by(id: comment.user_id) %>
-
-      <p> Commented by: <%=commenter.first_name%> <%=commenter.last_name%></p>
-      <p> <%= comment.created_at  %></p>
-    <% end %>
-  </div>
-
-<%= link_to 'Back', post_path %>
-
   <h2>Add your comment:</h2>
-  <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
-      <% p @post.comments.build %>
+    <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
     <p>
       <%= form.text_area :body %>
     </p>
@@ -29,3 +15,15 @@
       <%= form.submit %>
     </p>
   <% end %>
+
+  <h2>Comments</h2>
+  <div>
+    
+    <% @post.comments.select(&:persisted?).each do |comment| %>
+      <p> <%= comment.body %> </p>    
+      <% commenter = User.find_by(id: comment.user_id) %>
+      <p> Commented by: <%= commenter.first_name %> <%= commenter.last_name %> at <%= comment.created_at  %></p>
+    <% end %>
+  </div>
+
+<%= link_to 'Back', post_path %>
