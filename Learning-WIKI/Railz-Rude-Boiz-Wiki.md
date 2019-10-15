@@ -1,6 +1,7 @@
 # Acebook - Dream Journal/Learnings
 
 [Link to Trello Board](https://trello.com/b/IbAlAAMg/acebook)
+[Link to Heroku App](https://mighty-woodland-36916.herokuapp.com/users/sign_in)
 
 ## Day 1
 
@@ -71,9 +72,84 @@
 
 #### Learnings
 
+- We came up against some Heroku quirks, where active storage/minimagick dependencies weren't being loaded into Heroku, and also Heroku didn't know where to store uploaded profile pictures. We got around this by disabling eager-load in config, and then making sure that the config/environments/production.rb file told Heroku where to store files (:local, in this case.)
+- Image manipulation in-situ is DIFFICULT when retrieving from Active Storage. We decided to use Mini-Magick to give the option in views to resize/manipulate images with a bunch of different options.
+
 #### Plan For Tomorrow
 
+- Implement chat feature
+- Smooth out bugs for image processes
+
 ## Day 5
+
+#### Objectives
+
+- Implement chat feature
+- Smooth out bugs for image processes
+- Look to implement further features - friends etc.
+
+#### Learnings
+
+- Use ActionCable gem to generate chatbox/messenger
+- Use JSON to update page and refresh when a new message is posted
+
+#### Plan For Tomorrow
+
+- Implement Friends feature
+
+## Day 6
+
+#### Objectives
+
+- Users have many friends
+- Have reciprocal friend relationship
+
+#### Learnings
+
+- Using a fairly simple model to create reciprocal friends when you #create a friend means that a relationship applies to both users.
+- The syntax is a bit fiddly, finding friends that aren't your friends already, but also aren't you, from within the user database. Naming is important!!!
+
+#### Plan For Tomorrow
+
+- Implement friend requests!
+
+## Day 7
+
+#### Objectives
+
+- Be able to see users who are not your friends
+- Be able to invite those users to be your friend
+- That user to be able to confirm/reject request
+
+#### Learnings
+
+- Can just use patch/delete routes to confirm/reject, much easier than creating a custom route!
+- You can just set a 'confirmed' column in your friendship migration to false by default. When the user accepts, you set it to true, when they reject you, delete the record.
+
+#### Plan For Tomorrow
+
+- Implement comments on posts
+- Improve front-end
+
+## Day 8
+
+#### Objectives
+
+#### Learnings
+
+#### Plan For Tomorrow
+
+
+## Day 9
+
+#### Objectives
+
+#### Learnings
+
+#### Plan For Tomorrow
+
+
+## Day 10
 
 #### Objectives
 
