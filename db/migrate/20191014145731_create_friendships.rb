@@ -5,6 +5,7 @@ class CreateFriendships < ActiveRecord::Migration[6.0]
       t.references :friend, null: false
 
       t.boolean :confirmed, default: false
+      t.integer :requester
       t.timestamps
     end
   end
