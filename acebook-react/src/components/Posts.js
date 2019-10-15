@@ -20,13 +20,17 @@ class Posts extends React.Component {
 
       console.log(posts)
       return (
-        <ul>
-         {posts.map(post => (
-           <li key={post.id}>
-             {post.message}
-           </li>
-         ))}
-       </ul>
+        <div>
+          <h1>Posts</h1>
+          
+          <ul>
+          {posts.map(post => (
+            <li key={post.id}>
+              {post.message}
+            </li>
+          ))}
+        </ul>
+       </div>
       );
   }
  }
