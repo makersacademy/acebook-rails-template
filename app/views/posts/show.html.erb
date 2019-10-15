@@ -17,13 +17,14 @@
   <% end %>
 
   <h2>Comments</h2>
-  <div>
-    
-    <% @post.comments.select(&:persisted?).each do |comment| %>
-      <p> <%= comment.body %> </p>    
-      <% commenter = User.find_by(id: comment.user_id) %>
-      <p> Commented by: <%= commenter.first_name %> <%= commenter.last_name %> at <%= comment.created_at  %></p>
-    <% end %>
-  </div>
+    <div>
+      <% @post.comments.select(&:persisted?).each do |comment| %>
+        <div>
+          <p> <%= comment.body %> </p>    
+          <% commenter = User.find_by(id: comment.user_id) %>
+          <p> Commented by: <%= commenter.first_name %> <%= commenter.last_name %> at <%= comment.created_at  %></p>
+        </div>
+      <% end %>
+    </div>
 
-<%= link_to 'Back', post_path %>
+<%= link_to 'Back', posts_path %>
