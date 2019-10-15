@@ -1,0 +1,16 @@
+<h1 style="text-align:center;">Add New Friends!</h1>
+<% @non_friends.each do |user| %>
+<div class="card" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+      <p><br>
+      <% if user.avatar.attached? %>
+      <%= image_tag user.avatar.variant(resize_to_limit: [50, 50] ).processed %>
+      <% end %>
+    </p>
+    </h5>
+    <p class="card-text"><%= user.email %></p>
+    <%= link_to 'Add Friend', friendships_path(user_id: current_user.id, friend_id: user.id), method: :post, class:"card-link" %>
+  </div>
+</div>
+<% end %>
