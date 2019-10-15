@@ -14,6 +14,7 @@ RSpec.feature "Post on Wall", type: :feature do
     fill_in "Email", with: "superman@gmail.com"
     fill_in "Password", with: "password"
     click_button "Log in"
+    
     expect(page).to have_content("Profile Page")
   end
 end
