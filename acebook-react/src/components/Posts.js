@@ -6,6 +6,7 @@ class Posts extends React.Component {
     posts: []
     }
   }
+
   componentDidMount() {
     fetch('http://localhost:3000/api/v1/posts/', {
       method: 'GET',
@@ -15,22 +16,32 @@ class Posts extends React.Component {
        isLoaded: true,
        posts: data}))
   }
+  handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    console.log(event);
+    fetch('http://localhost:3000/api/v1/posts/', {
+      method: 'DELETE',
+      body: data,
+    }
+    ).then(response => response.json())
+  }
+
+
   render() {
     const {posts} = this.state;
-
       console.log(posts)
       return (
         <div>
           <h1>Posts</h1>
-          
-          <ul>
           {posts.map(post => (
-            <li key={post.id}>
+            <form key={post.id} onSubmit={this.handleSubmit}>
               {post.message}
-            </li>
+              <input id="id" name="id" value={post.id} type="text" readOnly hidden/>
+              <button>delete</button>
+            </form>
           ))}
-        </ul>
-       </div>
+        </div>
       );
   }
  }
