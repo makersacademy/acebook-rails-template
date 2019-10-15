@@ -7,10 +7,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "POSTS", posts_url, class:"nav-link" %>
+        <%= link_to "Posts", posts_url, class:"nav-link" %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <li class="nav-item active">
+        <%= link_to "Friend Requests", users_nonfriends_url, class:"nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Update Profile", edit_user_registration_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
@@ -22,10 +28,11 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Home", root_path, class: "dropdown-item" %>
             <%= link_to "Posts", posts_path, class: "dropdown-item" %>
+            <%= link_to "Friend Requests", users_nonfriends_url, class:"dropdown-item" %>
             <!-- <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a> -->
             <div class="dropdown-divider"></div>
-            <%= link_to "Edit Account", edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Update Profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
