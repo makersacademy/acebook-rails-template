@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   before_action :require_login
 
   def new
@@ -13,6 +14,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.sort_by(&:created_at).reverse
     @users = User.all
+    respond_to :js, :html, :json
   end
 
   def show
@@ -33,6 +35,15 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_url
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    if params[:format] == 'like'
+      @post.liked_by current_user
+    elsif params[:format] == 'unlike'
+      @post.unliked_by current_user
+    end
   end
 
   private
