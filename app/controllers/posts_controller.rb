@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.where(user_id: current_user.id)
+    # @messages = Message.all
+    # @message = Message.new
   end
 
   # GET /posts/1
