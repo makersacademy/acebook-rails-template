@@ -12,6 +12,13 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+
+  end
+
+  def post_options
+      respond_to do |format|
+        format.js
+    end
   end
 
   # GET /posts/new
