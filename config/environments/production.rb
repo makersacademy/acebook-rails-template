@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.active_storage.service = :local
   config.action_cable.mount_path = '/cable'
   config.web_socket_server_url = "wss://mighty-woodland-36916.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://mighty-woodland-36916.herokuapp.com', 'http://mighty-woodland-36916.herokuapp.com']
