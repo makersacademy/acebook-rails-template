@@ -10,11 +10,10 @@ RSpec.feature "Post on Wall", type: :feature do
     fill_in "Password", with: "password"
     fill_in "Confirm Password", with: "password"
     click_button "Sign Up"
-    visit login_path
-    fill_in "Email", with: "superman@gmail.com"
-    fill_in "Password", with: "password"
-    click_button "Log in"
+    # fill_in "Email", with: "superman@gmail.com"
+    # fill_in "Password", with: "password"
+    # click_button "Log in"
     
-    expect(page).to have_content("Profile Page")
+    expect(page).to have_content("You have signed up!")
   end
 end
