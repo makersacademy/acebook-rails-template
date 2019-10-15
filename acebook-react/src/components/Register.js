@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom';
 
-class Login extends React.Component {
+class Register extends React.Component {
   constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,12 +26,11 @@ class Login extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.target);
-    fetch('http://localhost:3000/api/v1/users', {
+    fetch('http://localhost:3000/api/v1/users/new', {
       method: 'POST',
       body: data,
     }
     ).then(response => response.json()).then(data => {
-      console.log(data)
       this.setRedirect()
       this.renderRedirect()
     });
@@ -52,4 +51,5 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default Register;
+
