@@ -3,7 +3,7 @@ class Posts extends React.Component {
   constructor() {
     super();
     this.state = {
-      posts: null,
+    posts: []
     }
   }
   componentDidMount() {
@@ -11,29 +11,23 @@ class Posts extends React.Component {
       method: 'GET',
     }
     ).then(response => response.json())
-     .then(data => this.setState({posts: data}))
+     .then(data => this.setState({
+       isLoaded: true,
+       posts: data}))
   }
   render() {
     const {posts} = this.state;
-//     const items = this.state.cart.map((item, key) =>
-//     <li key={item.id}>{item.name}</li>
-// );
-   
-    console.log(posts)
-    if (!posts){
-      return (
-        <div>pending</div>
-      );
-    }else{
-      return (
-        <form>
-          <label htmlFor="hello">Hello World</label>
-          <div>{posts[0].id}{posts[0].message}</div>
-          <div>{posts[1].id}{posts[1].message}</div>
-        </form>
 
+      console.log(posts)
+      return (
+        <ul>
+         {posts.map(post => (
+           <li key={post.id}>
+             {post.message}
+           </li>
+         ))}
+       </ul>
       );
-    }
   }
  }
  export default Posts;
