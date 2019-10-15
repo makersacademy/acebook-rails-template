@@ -1,0 +1,19 @@
+<h1 style="text-align:center;">Friend Requests</h1>
+<% @friend_requests.each do |friendship| %>
+<% @index = 0 %>
+<div class="card" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+      <p><br>
+        <% if @request_user_models[@index].avatar.attached? %>
+        <%= image_tag @request_user_models[@index].avatar.variant(resize_to_limit: [50, 50] ).processed %>
+        <% end %>
+      </p>
+    </h5>
+    <p class="card-text"><%= @request_user_models[@index].email %></p>
+    <%= link_to 'Confirm Friend Request', friendship_path(friendship), method: :patch, class:"card-link" %>
+    <%= link_to 'Reject Friend Request', friendship_path(friendship), method: :delete, class:"card-link" %>
+  </div>
+</div>
+<% @index += 1 %>
+<% end %>
