@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :albums do
+    member do
+      delete :delete_image_attachment
+    end
+  end
+
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 

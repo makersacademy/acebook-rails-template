@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @album.post %>
+</p>
+
+<% (0...@album.images.count).each do |image| %>
+<%= image_tag(@album.thumbnail(image)) %>
+<%= link_to "Remove", delete_image_attachment_album_url(@album.images[image]), method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @album.body %>
+</p>
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>
