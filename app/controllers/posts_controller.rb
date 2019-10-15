@@ -11,7 +11,6 @@ class PostsController < ApplicationController
   end
 
   def index
-    p ENV['RAILS_ENV']
     @posts = Post.all.sort_by(&:created_at).reverse
     @users = User.all
   end
