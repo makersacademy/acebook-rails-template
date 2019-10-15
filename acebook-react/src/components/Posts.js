@@ -15,8 +15,9 @@ class Posts extends React.Component {
   }
   render() {
     const {posts} = this.state;
-    // const items = this.state.cart.map((item, key) =>
-    // <li key={item.id}>{item.name}</li>);
+//     const items = this.state.cart.map((item, key) =>
+//     <li key={item.id}>{item.name}</li>
+// );
    
     console.log(posts)
     if (!posts){
