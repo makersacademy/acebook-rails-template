@@ -9,6 +9,7 @@ gem 'tether-rails'
 gem 'simple_form'
 
 gem 'devise'
+gem 'mini_magick'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 # Use sqlite3 as the database for Active Record
@@ -41,7 +42,6 @@ gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 # Adds support for Capybara system testing and selenium driver
 gem 'capybara'
 gem 'image_processing', '~> 1.2'
-gem 'mini_magick'
 gem 'selenium-webdriver'
 gem 'rails-controller-testing'
 gem 'rake'
