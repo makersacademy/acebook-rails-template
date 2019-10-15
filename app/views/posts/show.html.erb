@@ -18,7 +18,7 @@
 
   <h2>Comments</h2>
     <div>
-      <% @post.comments.select(&:persisted?).each do |comment| %>
+      <% @comments.each do |comment| %>
         <div>
           <p> <%= comment.body %> </p>    
           <% commenter = User.find_by(id: comment.user_id) %>

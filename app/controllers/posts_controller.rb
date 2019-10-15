@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = Comment.where("post_id = #{@post.id}").order(:created_at).reverse_order
   end
 
   def new
