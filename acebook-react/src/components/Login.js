@@ -20,7 +20,7 @@ class Login extends React.Component {
 
   renderRedirect = () => {
     if (this.state.redirect) {
-      return <Redirect to='/home' />
+      return <Redirect to='/posts' />
     }
   }
 
@@ -32,6 +32,7 @@ class Login extends React.Component {
       body: data,
     })
       .then(response => response.json()).then(data => {
+        localStorage.setItem('user', data.email)
         this.setRedirect()
         this.renderRedirect()
       }).catch(error => {
@@ -51,7 +52,7 @@ class Login extends React.Component {
           <button>Login</button>
 
         </form>
-        <p>">{this.state.error}</p>
+        <p>{this.state.error}</p>
       </div>
     );
   }
