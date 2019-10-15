@@ -41,6 +41,7 @@ gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 # Adds support for Capybara system testing and selenium driver
 gem 'capybara'
 gem 'image_processing', '~> 1.2'
+gem 'mini_magick'
 gem 'selenium-webdriver'
 gem 'rails-controller-testing'
 gem 'rake'
