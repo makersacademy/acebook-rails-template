@@ -1,10 +1,6 @@
+<%= render 'layouts/navbar' %>
 
-<div class="jumbotron">
-  <p style="font-size:45px; font-weight:900">Acebook</p>
-</div>
-
-<h1>Edit post</h1>
-
+<h2>Edit post</h2>
 <%= form_with(model: @post, local: true) do |form| %>
 <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -21,8 +17,9 @@
   <% end %>
 
   <%= form.label :message %>
+  <br>
   <%= form.text_area :message %>
-
+  <br>
   <%= form.submit "Submit" %>
 <% end %>
 

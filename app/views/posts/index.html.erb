@@ -1,7 +1,4 @@
-<div class="jumbotron">
-  <p style="font-size:45px; font-weight:900">Acebook</p>
-  <h2>Your posts</h2>
-</div>
+<%= render 'layouts/navbar' %>
 
 <div class="container">
   <%= link_to new_post_path do %>
@@ -20,8 +17,13 @@
     <% if post.editable? %>
       <%= link_to 'Edit', edit_post_path(post) %>
     <% end %>
-    <%= link_to 'Delete', post_path(post),
-        method: :delete,
-        data: { confirm: 'Are you sure?' } %>
+    <% if session[:user_id] == post.user_id %>
+      <%= link_to 'Delete', post_path(post),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+    <% else %>
+      <%= link_to 'Delete', post_path(post),
+          method: :delete %>
+    <% end %>
   </div>
 <% end %>

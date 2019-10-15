@@ -1,0 +1,42 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#logo {
+  float: left;
+  font-size: 20px;
+  color: rgb(55, 55, 55);
+  letter-spacing: -1px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: rgb(55, 55, 55);
+  text-decoration: none;
+}
+
+#logo_home {
+  float: left;
+  font-size: 45px;
+  color: rgb(55, 55, 55);
+  letter-spacing: -1px;
+  padding-top: 0px;
+  font-weight: bold;
+}
+
+.jumbotron {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+body {
+  padding-top: 90px;
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+  padding-left: 10px;
+}

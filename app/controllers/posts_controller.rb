@@ -14,6 +14,10 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    if not_authenticated?
+      redirect_to posts_url
+      flash[:danger] = 'You can only update your own posts'
+    end
     if !@post.editable?
       redirect_to posts_url
       flash[:danger] = 'This post is no longer editable'
@@ -36,13 +40,23 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-
-    redirect_to posts_path
+  
+    if not_authenticated?
+      redirect_to posts_path
+      flash[:danger] = 'You can only delete your own posts'
+    else
+      @post.destroy
+      redirect_to posts_path
+    end
   end
+
   private
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def not_authenticated?
+    session[:user_id] != @post.user_id
   end
 end
