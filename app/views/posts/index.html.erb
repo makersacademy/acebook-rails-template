@@ -15,14 +15,13 @@
 
     <h2>Commments:</h2>
     <% post.comments.each do |comment| %>
-       <p><%= current_user %><%= current_user.id %><%= comment.user_id %> commented: <%= comment.body %></p><br>
+       <p><%= User.find_by(id: comment.user_id).firstname %> commented: <%= comment.body %></p><br>
     <% end %>
 
     <h2>Add a comment:</h2>
     <%= form_with(model: [ post, post.comments.build ], local: true) do
       |form| %>
       <p>
-        <%= form.label :body %><br>
         <%= form.text_area :body %>
       </p>
       <p>
