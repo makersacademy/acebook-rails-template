@@ -4,7 +4,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(user_id: current_user.id)
+    @my_posts = Post.where(user_id: current_user.id)
+    @current_friend_ids = Friendship.where(user_id: current_user.id, confirmed: true).map { |x| x.friend_id }
+    @friend_posts = Post.where(user_id: @current_friend_ids)
+    @posts = @my_posts + @friend_posts
   end
 
   # GET /posts/1
