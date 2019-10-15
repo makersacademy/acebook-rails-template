@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   def index
-    p session[:user_id]
     @posts = Post.all.order(created_at: :desc)
   end
 
