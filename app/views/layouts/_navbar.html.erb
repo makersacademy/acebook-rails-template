@@ -13,6 +13,9 @@
         <%= link_to "Find Friends", users_nonfriends_url, class:"nav-link" %>
       </li>
       <li class="nav-item active">
+      <%= link_to "Friend Requests", friendships_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item active">
         <%= link_to "Update Profile", edit_user_registration_path, class:"nav-link" %>
       </li>
       <li class="nav-item active">
@@ -29,6 +32,7 @@
             <%= link_to "Home", root_path, class: "dropdown-item" %>
             <%= link_to "Posts", posts_path, class: "dropdown-item" %>
             <%= link_to "Find Friends", users_nonfriends_url, class:"dropdown-item" %>
+            <%= link_to "Friend Requests", friendships_path, class:"dropdown-item" %>
             <!-- <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a> -->
             <div class="dropdown-divider"></div>
