@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/neilcam4/acebook-offtherails.svg?branch=master)](https://travis-ci.org/neilcam4/acebook-offtherails)
+
 # AceBook
 
 REQUIRED INSTRUCTIONS:
