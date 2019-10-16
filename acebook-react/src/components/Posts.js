@@ -34,6 +34,7 @@ fetchData() {
   posts: data
 }))
 }
+
 handleSubmit(event) {
   event.preventDefault();
   const data = new FormData(event.target);
@@ -46,6 +47,19 @@ handleSubmit(event) {
 ).then(data => this.fetchData())
 }
 
+handleUpdate(event) {
+  event.preventDefault();
+  const data = new FormData(event.target);
+  fetch('http://localhost:3000/api/v1/posts/', {
+    method: 'PUT',
+    body: data,
+  }
+).then(response => response.json()
+).then(data => this.fetchData())
+document.getElementById(`${event.target[0].value}`).value="";
+console.log(document.getElementById(`${event.target[0].value}`))
+}
+
 render() {
   const { posts } = this.state;
   console.log(posts)
@@ -53,14 +67,21 @@ render() {
     <div>
     <h1>Posts</h1>
     {posts.map(post => (
-      <form key={post.id} onSubmit={this.handleDelete.bind(this)}>
-      {post.message}
-      <input id="id" name="id" value={post.id} type="text" readOnly hidden />
-      <button>delete</button>
+      <div key={post.id}>
+      <form onSubmit={this.handleDelete.bind(this)}>
+        {post.message}
+        <input id="id" name="id" value={post.id} type="text" readOnly hidden />
+        <button>delete</button>
       </form>
+      <form onSubmit={this.handleUpdate.bind(this)}>
+        <input id="id" name="id" value={post.id} type="text" readOnly hidden />
+        <input id={post.id} name="message" type="text"/>
+        <button>update</button>
+      </form>
+    </div>
     ))}
     <form onSubmit={this.handleSubmit.bind(this)}>
-    <input id="newMessage" name="message" type="text"/><br/>
+      <input id="newMessage" name="message" type="text"/><br/>
     <button type="submit">Add Post</button>
     </form>
     </div>

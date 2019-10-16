@@ -11,7 +11,7 @@ module API
         post "" do
           @user = User.find_by(email: params[:email])
           if @user && @user.authenticate(permitted_params[:password])
-            return @user 
+            return @user
           elsif !@user
             raise 'invalid user'
           else
@@ -24,7 +24,6 @@ module API
           requires :password, type: String, desc: "password of the new user"
         end
         post "/new" do
-          p "here"
           User.create(permitted_params)
         end
       end
