@@ -1,33 +1,14 @@
 <%= render 'layouts/navbar' %>
 
-<header>
-  <h2><%=@user.first_name %>'s Profile Page!</h2>
-</header>
 
-<div class="card-deck">
-  <div class="card">
-    <img class="card-img-top" src="https://images.unsplash.com/photo-1556115908-233c785befbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
-    <div class="card-body">
-    <h5 class="card-title">Author: <%=@user.first_name %></h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+<h2><%= @user.first_name %>'s Wall!</h2>
+
+<div class="container">
+  <%= link_to new_post_path do %>
+    <div class="btn btn-info btn-lg">
+      New post
     </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="https://images.unsplash.com/photo-1554366347-897a5113f6ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Author: <%=@user.first_name %></h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="https://images.unsplash.com/photo-1543863012-0c0e81014e92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
-    <div class="card-body">
-    <h5 class="card-title">Author: <%=@user.first_name %></h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
+  <% end %>
 </div>
+<br>
 
