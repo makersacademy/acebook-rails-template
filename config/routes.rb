@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :profile_pictures
   resources :albums do
     member do
       delete :delete_image_attachment
@@ -22,8 +23,8 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   resources :posts
+  resources :users
 
   # root '/'
-  # resources :posts
 
 end

@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Post:</strong>
-  <%= @album.post %>
+  <strong>Created by: </strong>
+  <%= User.find_by(id: @album.user_id).firstname + " " + User.find_by(id: @album.user_id).surname %>
 </p>
 
 <% (0...@album.images.count).each do |image| %>
-<%= image_tag(@album.thumbnail(image)) %>
-<%= link_to "Remove", delete_image_attachment_album_url(@album.images[image]), method: :delete, data: {confirm: "Are you sure?"} %>
+  <%= image_tag(@album.thumbnail(image)) %>
+  <% if @album.user_id == current_user.id %>
+    <%= link_to "Remove", delete_image_attachment_album_url(@album.images[image]), method: :delete, data: {confirm: "Are you sure?"} %>
+  <% end %>
 <% end %>
 
 <p>
@@ -16,9 +18,11 @@
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>Description:</strong>
   <%= @album.body %>
 </p>
 
-<%= link_to 'Edit', edit_album_path(@album) %> |
+<% if @album.user_id == current_user.id %>
+  <%= link_to 'Edit', edit_album_path(@album) %>
+<% end %>
 <%= link_to 'Back', albums_path %>
