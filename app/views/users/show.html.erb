@@ -1,14 +1,50 @@
 <%= render 'layouts/navbar' %>
 
-
-<h2><%= @user.first_name %>'s Wall!</h2>
+<h2 class="center"><%= @user.first_name %>'s wall</h2>
 
 <div class="container">
-  <%= link_to new_post_path do %>
-    <div class="btn btn-info btn-lg">
-      New post
-    </div>
+  <%= form_with scope: :post, url: posts_path, local: true do |form| %>
+    <p>
+      <%= form.label :message %><br>
+      <%= form.text_area :message, placeholder: "Post on #{@user.first_name}'s wall"%><br>
+    </p>
+    <p>
+      <%= form.submit "Submit" %>
+    </p>
   <% end %>
+  <br>
+  <h4>All posts</h4>
+  <div>
+    <% @posts.each do |post| %>
+      <div>
+        <p> <%= post.body %> </p>    
+        <% sender = User.find_by(id: post.user_id) %>
+        <p><%= link_to "#{sender.first_name + ' ' + sender.last_name}",
+                user_path(sender) %>: <%= post.time_stamp %></p>   
+        <% if post.editable? %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+        <% end %>
+        <% if session[:user_id] == post.user_id || session[:user_id] == post.recipient_id %>
+          <%= link_to 'Delete', post_path(post),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        <%= link_to 'Comment', post_path(post) %>
+      </div>
+    <% end %>
+  </div>
 </div>
-<br>
+
+</div>
+
+
+
+<%# <div class="container">
+  <%= link_to new_post_path do %>
+    <%# <div class="btn btn-info btn-lg"> %>
+      <%# New post %>
+    <%# </div> %>
+  <%# <% end %> 
+<%# </div> %>
+<%# <br> %>
 
