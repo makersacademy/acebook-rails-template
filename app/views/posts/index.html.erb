@@ -10,29 +10,31 @@
 </div>
 
 <% @posts.to_a.reverse.each do |post| %>
-  <div class="card" style="width: 50rem;">
-    <div class="card-body">
-      <table>
-        <tr>
-          <td style="vertical-align: middle; padding-bottom: 1em">
-            <% if post.user.avatar.attached? %>
-              <h5 class="card-title">
-                <%= image_tag post.user.avatar.variant(resize: "50x50").processed, class: "rounded-circle" %>
-              </h5>
-            <% end %>
-          </td>
-          <td style="vertical-align: middle">
-            <h6 class="card-subtitle mb-2 text-muted">
-              <%= simple_format(post.user.email) %>
-            </h6>
-            <h6 class="card-subtitle mb-2 text-muted">
-              <%= simple_format(post.updated_at.to_s.slice(0, 10)) %></i>
-            </h6>
-          </td>
-        </tr>
-      </table>
+  <div class="post-box">
+    <div class="container">
+      <div class="box blue">
 
-      <p class="card-text" id="card-text-<%= post.id %>"><%= post.message %></p>
+
+
+                <% if post.user.avatar.attached? %>
+                  <h5 class="card-title">
+                    <%= image_tag post.user.avatar.variant(resize: "50x50").processed, class: "rounded-circle" %>
+                  </h5>
+                <% end %>
+
+        <div class="header">
+          <a> <class="date"> %= post.user.email %></a>
+          <div class="date"><i><%= time_ago_in_words(post.updated_at) %> ago</i></div>
+        </div>
+
+
+
+
+
+
+
+
+          <div class="body"><%= simple_format(post.message) %></div>
 
       <div id="edit-post-<%= post.id %>" class="edit-options">
 
@@ -80,6 +82,9 @@
       </div>
 
     </div>
+  </div>
+    </div>
+  </div>
   </div>
 
 <% end %>
