@@ -1,0 +1,14 @@
+class Notelist
+  def initialize
+    @list = []
+  end
+
+  def add_note(string)
+    @list << string
+  end
+
+  def view
+    puts "Notes:"
+    @list.each{ |x| puts x }
+  end
+end

@@ -1,60 +1,81 @@
-<% @posts.each do |post| %>
 
-<span class='parent-likes'>
-  <span class="like_count" <% post.id %> >
-    <%= post.get_likes.size %> &#128077
-  </span>
-
-  <a>
-    <% if current_user.liked? post %>
-      <div> <%= link_to like_post_path(post, 'toggle'), class: "liked-button",
-      method: :put, remote: :true do %> Liked </div>
-      <% end %>
-    <% else %>
-      <div> <%= link_to like_post_path(post, 'toggle'), class: "like-button",
-        method: :put, remote: :true do %> Like </div>
-        <% end %>
-    <% end %>
-  </a>
-</span>
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+<%= link_to edit_user_path(current_user.id) do %>
+  Update profile
+<% end %>
+<%= link_to albums_path do %>
+  View photo albums
+<% end %>
+     
+                                      
+ <% @posts.each do |post| %>
 
     <% @post_creator_id = post.user_id.to_i %>
     <% @post_creator = User.find_by(id: @post_creator_id) %>
+                                      
+                                      
+    <p><% if @post_creator.profile_picture.attached? %>
+          <%= image_tag @post_creator.profile_picture.variant(resize: '100x100!'), :style => "border-radius: 50%" %>
 
-    <p><%= simple_format post.message %></br>Posted on: <%= post.created_at %>
-      by <%= @post_creator.firstname + " " + @post_creator.surname %></p>
-      <p><%= link_to 'Show', post_path(post),
-        method: :get %>
-        <%= link_to 'Edit', edit_post_path(post),
-        method: :get %>
-
-        <% if @post_creator_id == current_user.id %>
-        <%= link_to 'Delete', post_path(post), class: "#{post.id}",
-        method: :delete %>
         <% else %>
-        <%=flash[:notice] = "Check yourself before you wreck yourself!!"%></p>
+          <%= image_tag('totally_normal_human_dude.jpg', size: '100x100', style: "border-radius: 50%") %>
         <% end %>
+       
+        <%= simple_format post.message %></br>Posted on: <%= post.created_at %>
+        by <%= @post_creator.firstname + " " + @post_creator.surname %>
+     </p>
 
-        <h2>Commments:</h2>
-        <% post.comments.each do |comment| %>
-        <% @comment_creator = User.find_by(id: comment.user_id) %>
-        <p><%= @comment_creator.firstname + ' ' +  @comment_creator.surname %>
-          commented: <%= comment.body %> on <%= comment.created_at %></p><br>
-          <% end %>
 
-          <h2>Add a comment:</h2>
-          <%= form_with(model: [ post, post.comments.build ], local: true) do
-          |form| %>
-          <p>
-            <%= form.text_area :body %>
-          </p>
-          <p>
-            <%= form.submit %>
-          </p>
-          <% end %>
 
-          <% end %>
 
-          <%= link_to new_post_path do %>
-          New post
+    <span class='parent-likes'>
+      <span class="like_count" <% post.id %> >
+        <%= post.get_likes.size %> &#128077
+      </span>
+
+      <a>
+        <% if current_user.liked? post %>
+          <div> <%= link_to like_post_path(post, 'toggle'), class: "liked-button",
+          method: :put, remote: :true do %> Liked </div>
           <% end %>
+        <% else %>
+          <div> <%= link_to like_post_path(post, 'toggle'), class: "like-button",
+            method: :put, remote: :true do %> Like </div>
+            <% end %>
+        <% end %>
+      </a>
+    </span>
+
+
+
+  <p><%= link_to 'Show', post_path(post),
+    method: :get %>
+    <% if @post_creator_id == current_user.id %>
+      <%= link_to 'Edit', edit_post_path(post),
+      method: :get %>
+    <%= link_to 'Delete', post_path(post), class: "#{post.id}",
+      method: :delete %>
+    <% end %>
+  </p>
+
+  <h2>Commments:</h2>
+    <% post.comments.each do |comment| %>
+      <% @comment_creator = User.find_by(id: comment.user_id) %>
+      <p><%= @comment_creator.firstname + ' ' +  @comment_creator.surname %>
+        commented: <%= comment.body %> on <%= comment.created_at %></p><br>
+      <% end %>
+
+  <h2>Add a comment:</h2>
+    <%= form_with(model: [ post, post.comments.build ], local: true) do
+      |form| %>
+      <p>
+      <%= form.text_area :body %>
+      </p>
+      <p>
+      <%= form.submit %>
+      </p>
+    <% end %>
+
+  <% end %>

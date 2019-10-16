@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Albums</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @albums.each do |album| %>
+    <% @user_id = album.user_id.to_i %>
+      <tr>
+        <td><%= album.post %></td>
+        <td><%= album.title %></td>
+        <td><%= album.body %></td>
+        <td><%= link_to 'Show', album %></td>
+        <% if @user_id == current_user.id %>
+        <td><%= link_to 'Edit', edit_album_path(album) %></td>
+        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Album', new_album_path %>
