@@ -1,12 +1,13 @@
 <%= render 'layouts/navbar' %>
 
 
-<h1>Post</h1>
-  <%= simple_format(@post.message) %>
-  <% user = User.find_by(id: @post.user_id) %>
-  <p> <%= user.first_name %> <%= user.last_name %>: <%= @post.time_stamp %></p>
-
-  <h2>Add your comment:</h2>
+<h3>Post</h3>
+<%= simple_format(@post.message) %>
+<% user = User.find_by(id: @post.user_id) %>
+<p> <%= user.first_name %> <%= user.last_name %>: <%= @post.time_stamp %></p>
+<br>
+<div>
+  <h4>Add your comment:</h4>
     <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
     <p>
       <%= form.text_area :body %>
@@ -15,16 +16,28 @@
       <%= form.submit %>
     </p>
   <% end %>
-
-  <h2>Comments</h2>
-    <div>
-      <% @comments.each do |comment| %>
-        <div>
-          <p> <%= comment.body %> </p>    
-          <% commenter = User.find_by(id: comment.user_id) %>
-          <p> Commented by: <%= commenter.first_name %> <%= commenter.last_name %> at <%= comment.created_at  %></p>
-        </div>
-      <% end %>
-    </div>
+</div>
+<br>
+<div>
+  <h4>Comments</h4>
+  <div>
+    <% @comments.each do |comment| %>
+      <div>
+        <p> <%= comment.body %> </p>    
+        <% commenter = User.find_by(id: comment.user_id) %>
+        <p><%= link_to "#{commenter.first_name + ' ' + commenter.last_name}",
+                user_path(commenter) %>: <%= comment.comment_time_stamp %></p>   
+        <% if comment.editable? %>
+          <%= link_to 'Edit', edit_post_comment_path(@post) %>
+        <% end %>
+        <% if session[:user_id] == comment.user_id || session[:id] == @post.recipient_id %>
+          <%= link_to 'Delete', [comment.post, comment],
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'Back', posts_path %>
