@@ -3,11 +3,9 @@
 
 <h1 style="text-align:center;">Posts</h1>
 
-<div class="card" style="width: 50rem;">
-  <div class="card-body">
+
     <%= render 'form', post: @post %>
-  </div>
-</div>
+
 
 <% @posts.to_a.reverse.each do |post| %>
   <div class="post-box">
@@ -23,7 +21,7 @@
                 <% end %>
 
         <div class="header">
-          <a> <class="date"> %= post.user.email %></a>
+           <%= post.user.email %>
           <div class="date"><i><%= time_ago_in_words(post.updated_at) %> ago</i></div>
         </div>
 
