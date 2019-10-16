@@ -26,9 +26,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(message: post_params["message"],
-                        user_id: session[:user_id], recipient_id: return_recipient_id)
-    user = User.find_by(id: params[:id])
-    redirect_to user
+                        user_id: session[:user_id], recipient_id: post_params["recipient_id"])
+    user = User.find_by(id: post_params["recipient_id"])
+    redirect_to user_path(user)
   end
 
   def update
@@ -55,7 +55,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :recipient_id)
   end
 
   def path_params
