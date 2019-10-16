@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 # custom gems for action cable
-gem 'bootstrap'
+# gem 'bootstrap'
 gem 'jquery-rails'
 gem 'tether-rails'
 gem 'simple_form'
@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>=2.1.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

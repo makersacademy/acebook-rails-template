@@ -1,0 +1,28 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar, .dropdown-menu {
+ background-color: #3b5998;
+}
+
+#logo {
+ float: left;
+ font-size: 1.7em;
+ color: white;
+ text-transform: lowercase;
+ letter-spacing: -1px;
+ font-weight: bold;
+}
+#logo:hover {
+ color: magenta;
+ text-decoration: none;
+}
+
+nav .navbar-nav li a {
+  color: white !important;
+}
+
+nav .navbar-nav li a:hover {
+  color: black !important;
+}
