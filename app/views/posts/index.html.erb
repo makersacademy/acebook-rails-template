@@ -17,19 +17,23 @@
       <h6 class="card-subtitle mb-2 text-muted"><i><%= simple_format(post.updated_at.to_s.slice(0,10)) %></i></h6>
 
       <p class="card-text"><%= post.message%></p>
+
 <!--      update form-->
-      <%= form_with model: @post , url: "/posts/#{post.id}/", method: :patch, local: true do |form| %>
-        <p>
-          <%= form.label :update_post  %>
-          <%= form.text_field :body %>
+      <div id="edit-post-<%=post.id%>" class="edit-options">
 
-        </p>
-        <p>
-          <%= form.submit "Update"%>
+        <%= form_with model: @post , url: "/posts/#{post.id}/", method: :patch, local: true do |form| %>
+          <p>
+            <%= form.text_field :message, value: post.message %>
+
+          </p>
+          <p>
+            <%= form.submit "Update"%>
 
 
-        </p>
-      <% end %>
+          </p>
+        <% end %>
+
+      </div>
 
 <!--      update form end-->
 
@@ -40,7 +44,12 @@
         <%= link_to 'Show', post, class:"card-link" %>
 
         <% if post.user.id == current_user.id %>
-          <%= link_to 'Edit', edit_post_path(post), class:"card-link" %>
+
+          <%#= link_to 'Edit', edit_post_path(post), class:"card-link" %>
+<!--          new edit button-->
+          <%= link_to "Edit","#", class: "edit-button", id: "edit-button-#{post.id}" %>
+
+<!--          new edit button end-->
           <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-link" %>
         <% end %>
 

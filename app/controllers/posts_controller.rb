@@ -24,6 +24,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit_options
+    respond_to do |format|
+      format.js
+    end
+  end
+
   # GET /posts/new
   def new
     @post = Post.new
@@ -54,7 +60,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to posts_path, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
