@@ -9,12 +9,19 @@
       <li class="nav-item active">
         <%= link_to "Posts", posts_url, class:"nav-link" %>
       </li>
-      <li class="nav-item active">
-        <%= link_to "Find Friends", users_nonfriends_url, class:"nav-link" %>
+
+      <li class="nav-item dropdown">
+        <a style='color: black;'class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Friends
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Find Friends", users_nonfriends_url, class:"dropdown-item" %>
+          <%= link_to "Friend Requests", friendships_path, class:"dropdown-item" %>
+          <%= link_to "Manage Friends", '/friendships/managefriends/', class:"dropdown-item" %>
+        </div>
       </li>
-      <li class="nav-item active">
-      <%= link_to "Friend Requests", friendships_path, class:"nav-link" %>
-      </li>
+
       <li class="nav-item active">
         <%= link_to "Update Profile", edit_user_registration_path, class:"nav-link" %>
       </li>

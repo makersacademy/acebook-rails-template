@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'messages', to: 'messages#create'
  root 'users#show'
  get '/users/nonfriends', :controller => 'users', :action => 'nonfriends'
-
+ get '/friendships/managefriends', :controller => 'friendships', action: 'managefriends'
 
   devise_for :users
   authenticated :user do

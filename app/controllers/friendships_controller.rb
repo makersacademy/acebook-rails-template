@@ -26,7 +26,7 @@ class FriendshipsController < ApplicationController
   def destroy
     @friendship_obj = Friendship.find(params[:id])
     if Friendship.destroy_reciprocal_for_ids(current_user.id, @friendship_obj.friend_id)
-      flash[:notice] = "Friend Request Rejected"
+      flash[:notice] = "Friend Rejected/Removed"
     end
     redirect_to friendships_url
   end
@@ -36,5 +36,14 @@ class FriendshipsController < ApplicationController
     Friendship.confirm(current_user.id, @friendship_obj.friend_id)
     flash[:notice] = "Friend Confirmed"
     redirect_to friendships_url
+  end
+
+  def managefriends
+    @current_friends = Friendship.where(user_id: current_user.id, confirmed: true)
+    p @current_friends
+    @friend_ids = @current_friends.map { |friendship| 
+    friendship.friend_id
+    }
+    @user_models = User.where(id: @friend_ids)
   end
 end
