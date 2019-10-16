@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   end
   
   def create
-    @comment = Comment.new(message: params["message"], post_id: params[:post_id], user_id: current_user.id)
+    @comment = Comment.new(message: params["message"], post_id: params[:post_id], user_id: current_user.id, email: current_user.email)
     if @comment.save
       redirect_to posts_path
       flash[:notice] = "Comment Added!"

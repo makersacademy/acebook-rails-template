@@ -9,7 +9,7 @@
           <% end %> </p></h5>
           <h6 class="card-subtitle mb-2 text-muted"><i><%= simple_format(post.updated_at.to_s.slice(0,10)) %></i></h6>
           <p class="card-text"><%= simple_format(post.message) %></p>
-          <%= link_to 'Show', post, class:"card-link" %>
+          <%= link_to 'Show', post, class:"card-link" %><br><br>
 
           <%= form_with model: @comments, url: '/posts/' + post.id.to_s + '/comments', method: "post",  local: true do |form| %>
           <div class="input-group mb-3">
@@ -24,8 +24,13 @@
           <% if post.user.id == current_user.id %>
           <%= link_to 'Edit', edit_post_path(post), class:"card-link" %>
           <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-link" %><br><br>
-          
           <% end %>
+          <br><br>
+          <% post.comments.to_a.reverse.each do |comment| %>
+          <% p comment %>
+          <p class="card-text"><%= simple_format(comment.message) %></p>
+          <p class="card-text"><%= simple_format(comment.email) %></p>
+          <% end %> 
         </div>
       </div>
     <% end %>

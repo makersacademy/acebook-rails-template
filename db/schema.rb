@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_10_15_144619) do
     t.string "message", null: false
     t.bigint "user_id", null: false
     t.bigint "post_id", null: false
+    t.string "email", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
