@@ -117,13 +117,16 @@ nav .navbar-nav li a:hover {
 }
 
 .post-box {
-  body {
+  .body {
     font: 14px/20px 'Proxima Nova', 'Helvetica Neue', arial, sans-serif;
-    background: #E9EAED;
-    padding: 50px;
+    //background: #E9EAED;
+
+    padding-top: 10px;
+    padding-left: 4px;
+    padding-right: 10px;
   }
   .container {
-    width: 400px;
+    width: 70rem;
     margin: 0 auto;
   }
 

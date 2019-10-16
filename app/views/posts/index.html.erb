@@ -4,7 +4,7 @@
 <h1 style="text-align:center;">Posts</h1>
 
 
-    <%= render 'form', post: @post %>
+<%= render 'form', post: @post %>
 
 
 <% @posts.to_a.reverse.each do |post| %>
@@ -12,76 +12,78 @@
     <div class="container">
       <div class="box blue">
 
+        <table style="width: 100%">
+          <tr class="header">
+            <td style="width: 15%">
+              <% if post.user.avatar.attached? %>
+                <%= image_tag post.user.avatar.variant(resize: "50x50").processed %>
+              <% end %>
+            </td>
+            <td>
+              <div>
+                <%= post.user.email %><br>
+                <i><small><%= time_ago_in_words(post.updated_at) %> ago</small></i>
+              </div>
+            </td>
+          </tr>
+        </table>
 
 
-                <% if post.user.avatar.attached? %>
-                  <h5 class="card-title">
-                    <%= image_tag post.user.avatar.variant(resize: "50x50").processed, class: "rounded-circle" %>
-                  </h5>
-                <% end %>
-
-        <div class="header">
-           <%= post.user.email %>
-          <div class="date"><i><%= time_ago_in_words(post.updated_at) %> ago</i></div>
+        <div class="body">
+          <div id="card-text-<%= post.id %>"> <%= simple_format(post.message) %></div>
         </div>
 
+        <div id="edit-post-<%= post.id %>" class="edit-options">
 
-
-
-
-
-
-
-          <div class="body"><%= simple_format(post.message) %></div>
-
-      <div id="edit-post-<%= post.id %>" class="edit-options">
-
-        <%= form_with model: @post, url: "/posts/#{post.id}/", method: :patch, local: true do |form| %>
-          <div class="input-group mb-3">
-            <%= form.text_field :message, value: post.message, class: "form-control" %>
-            <div class="input-group-append">
-              <%= form.submit "Update", class: "btn btn-secondary" %>
+          <%= form_with model: @post, url: "/posts/#{post.id}/", method: :patch, local: true do |form| %>
+            <div class="input-group mb-3">
+              <%= form.text_field :message, value: post.message, class: "form-control" %>
+              <div class="input-group-append">
+                <%= form.submit "Update", class: "btn btn-secondary" %>
+              </div>
             </div>
+
+          <% end %>
+
+        </div>
+
+        <div class="footer">
+
+          <%= link_to "Actions", "#", class: "actions-button", id: "action-button-#{post.id}" %>
+
+          <div id="post-options-<%= post.id %>" class="post-options">
+            <%= link_to 'Show', post, class: "card-link" %>
+
+            <% if post.user.id == current_user.id %>
+              <%= link_to "Edit", "#", class: "edit-button", id: "edit-button-#{post.id}" %>
+              <%= link_to 'Destroy', post, method: :delete, data: {confirm: 'Are you sure?'}, class: "card-link" %>
+            <% end %>
+
+            <%= form_with model: @comments, url: '/posts/' + post.id.to_s + '/comments', method: "post", local: true do |form| %>
+              <div class="input-group mb-3">
+                <%= form.text_field :message, placeholder: "Type a comment", class: "form-control", id: "message_body" %>
+                <% p params %>
+                <div class="input-group-append">
+                  <%= form.submit "Send", class: "btn btn-secondary" %>
+                </div>
+              </div>
+            <% end %>
+
+
+
+            <% post.comments.to_a.reverse.each do |comment| %>
+              <% p comment %>
+              <p class="card-text"><%= simple_format(comment.message) %></p>
+              <p class="card-text"><%= simple_format(comment.email) %></p>
+            <% end %>
           </div>
 
-        <% end %>
+
+        </div>
 
       </div>
-
-      <%= link_to "Actions", "#", class: "actions-button", id: "action-button-#{post.id}" %>
-
-      <div id="post-options-<%= post.id %>" class="post-options">
-        <%= link_to 'Show', post, class: "card-link" %>
-
-        <% if post.user.id == current_user.id %>
-          <%= link_to "Edit", "#", class: "edit-button", id: "edit-button-#{post.id}" %>
-          <%= link_to 'Destroy', post, method: :delete, data: {confirm: 'Are you sure?'}, class: "card-link" %>
-        <% end %>
-
-        <%= form_with model: @comments, url: '/posts/' + post.id.to_s + '/comments', method: "post", local: true do |form| %>
-          <div class="input-group mb-3">
-            <%= form.text_field :message, placeholder: "Type a comment", class: "form-control", id: "message_body" %>
-            <% p params %>
-            <div class="input-group-append">
-              <%= form.submit "Send", class: "btn btn-secondary" %>
-            </div>
-          </div>
-        <% end %>
-
-
-
-        <% post.comments.to_a.reverse.each do |comment| %>
-          <% p comment %>
-          <p class="card-text"><%= simple_format(comment.message) %></p>
-          <p class="card-text"><%= simple_format(comment.email) %></p>
-        <% end %>
-
-
-      </div>
-
     </div>
   </div>
-    </div>
   </div>
   </div>
 
