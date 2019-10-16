@@ -1,14 +1,17 @@
 require 'rails_helper'
+require 'spec_helper'
 
 RSpec.feature "Login", type: :feature do
   scenario "Can Sign Up" do
-    visit signup_path
-    fill_in "First Name", with: "Superman"
-    fill_in "Last Name", with:" Kent"
-    fill_in "Email", with: "superman@gmail.com"
-    fill_in "Password", with: "password"
-    fill_in "Confirm Password", with: "password" 
+    visit '/'
+    click_link 'Join Now'
+    fill_in "First Name", with: ""
+    fill_in "Last Name", with: ""
+    fill_in "Email", with: ""
+    fill_in "Password", with: ""
+    fill_in "Confirm Password", with: "" 
     click_button "Sign Up"
-    expect(page).to have_content("You have signed up")
+    save_and_open_page
+    expect(page).to have_content("7 errors prohibited this account")
   end
 end

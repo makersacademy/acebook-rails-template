@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+ 
   end
 
   def index
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+  
     begin
       if @user.save
         flash[:success] = 'You have signed up!'
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:id, :first_name, :last_name, :email,
                                 :password, :password_confirmation)
-
+                                
   end
 
 end
