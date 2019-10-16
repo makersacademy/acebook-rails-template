@@ -1,4 +1,4 @@
 <div class="well">
-  [<%= message.created_at.strftime("%I:%M:%S %P") %>] <%= message.user.email %>:
+  [<%= message.created_at.strftime("%I:%M:%S %P") %>] <%= message.user.email.split('@')[0] %>:
   <%= message.body %>
 </div>
