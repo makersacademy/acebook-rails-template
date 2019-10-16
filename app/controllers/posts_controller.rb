@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   def index
-    p session[:user_id]
     @posts = Post.all.order(created_at: :desc)
   end
 
   def show
     @post = Post.find(params[:id])
+    @comments = Comment.where("post_id = #{@post.id}").order(:created_at).reverse_order
   end
 
   def new
@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if not_authenticated?
+    if !authenticated?
       redirect_to posts_url
       flash[:danger] = 'You can only update your own posts'
     end
@@ -25,8 +25,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(message: post_params["message"], user_id: session[:user_id])
-    redirect_to user_path(session[:user_id])
+    @post = Post.create(message: post_params["message"],
+                        user_id: session[:user_id], recipient_id: params[:id])
+    redirect_to posts_url
   end
 
   def update
@@ -40,8 +41,8 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-
-    if not_authenticated?
+  
+    if !authenticated?
       redirect_to posts_path
       flash[:danger] = 'You can only delete your own posts'
     else
@@ -56,7 +57,4 @@ class PostsController < ApplicationController
     params.require(:post).permit(:message)
   end
 
-  def not_authenticated?
-    session[:user_id] != @post.user_id
-  end
 end
