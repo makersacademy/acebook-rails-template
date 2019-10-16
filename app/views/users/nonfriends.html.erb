@@ -5,7 +5,7 @@
     <h5 class="card-title">
       <p><br>
       <% if user.avatar.attached? %>
-      <%= image_tag user.avatar.variant(resize: "50X50" ).processed %>
+      <%= image_tag user.avatar.variant(resize: "50X50" ).processed, class: "rounded-circle" %>
       <% end %>
     </p>
     </h5>

@@ -10,7 +10,7 @@
     <div class="card-body">
 
       <% if post.user.avatar.attached? %>
-        <h5 class="card-title"><p><br><%= image_tag post.user.avatar.variant(resize: "50x50").processed %>
+        <h5 class="card-title"><p><br><%= image_tag post.user.avatar.variant(resize: "50x50").processed, class: "rounded-circle" %>
       <% end %> </p></h5>
 
       <h6 class="card-subtitle mb-2 text-muted"><i><%= simple_format(post.updated_at.to_s.slice(0, 10)) %></i></h6>

@@ -6,7 +6,7 @@
     <h5 class="card-title">
       <p><br>
         <% if @request_user_models[@index].avatar.attached? %>
-        <%= image_tag @request_user_models[@index].avatar.variant(resize: "50X50" ).processed %>
+        <%= image_tag @request_user_models[@index].avatar.variant(resize: "50X50" ).processed, class: "rounded-circle" %>
         <% end %>
       </p>
     </h5>
