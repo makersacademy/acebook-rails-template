@@ -7,11 +7,11 @@
 
   <a>
     <% if current_user.liked? post %>
-      <div> <%= link_to like_post_path(post), class: "liked-button",
+      <div> <%= link_to like_post_path(post, 'toggle'), class: "liked-button",
       method: :put, remote: :true do %> Liked </div>
       <% end %>
     <% else %>
-      <div> <%= link_to like_post_path(post), class: "like-button",
+      <div> <%= link_to like_post_path(post, 'toggle'), class: "like-button",
         method: :put, remote: :true do %> Like </div>
         <% end %>
     <% end %>

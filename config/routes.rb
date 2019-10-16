@@ -23,5 +23,4 @@ Rails.application.routes.draw do
 
   # root '/'
   # resources :posts
-
 end
