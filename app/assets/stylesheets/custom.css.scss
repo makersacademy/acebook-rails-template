@@ -52,20 +52,22 @@ nav .navbar-nav li a:hover {
 	box-shadow: 0 1px #5670A4 inset, 0 0 10px 5px rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 	width: 360px;
-	height: 450px;
+	height: auto;
 	margin: 60px auto;
-	padding: 50px 30px 0 30px;
+	padding: 10px 30px 30px 30px;
 	text-align: center;
 
 	h1 {
-		margin: 0 0 50px 0;
-		padding: 0;
+		// margin: 0 0 50px 0;
+		// padding: 0;
 		font-size: 26px;
 		color: #fff;
 	}
+
 	h5 {
 		margin-top: 40px;
 	}
+  
 	h5 > a {
 		font-size: 14px;
 		color: #fff;

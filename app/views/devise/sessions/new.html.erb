@@ -10,22 +10,21 @@
       </div>
 
       <div align="left" class="form">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "current-password" %></br>
+        </br><%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "current-password" %>
       </div>
 
-      <div align="left">
+      <div align="left" class="form">
         <% if devise_mapping.rememberable? %>
-          <div class="form">
+
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me %>
-          </div>
         <% end %>
       </div>
 
 
       <div class="form">
-        <%= f.submit "Log in" %>
+        <%= f.submit "log in" %>
 
         <% end %>
         <h6 align="left">
