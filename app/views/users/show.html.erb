@@ -1,11 +1,14 @@
 <%= render 'layouts/navbar' %>
 
-<header>
-  <h2><%=@user.first_name %>'s wall!</h2>
-</header>
 
-<%= link_to new_post_path do %>
-  <div class="btn btn-info btn-lg">
-    New post
-  </div>
-<% end %>
+<h2><%= @user.first_name %>'s Wall!</h2>
+
+<div class="container">
+  <%= link_to new_post_path do %>
+    <div class="btn btn-info btn-lg">
+      New post
+    </div>
+  <% end %>
+</div>
+<br>
+

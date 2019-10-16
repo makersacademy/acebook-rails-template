@@ -23,7 +23,6 @@ class UsersController < ApplicationController
       flash.now[:danger] = 'Email already exists!'
       render 'new' and return
     end
-
     render 'new'
   end
 
