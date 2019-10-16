@@ -26,6 +26,5 @@ Rails.application.routes.draw do
   resources :users
 
   # root '/'
-  # resources :posts
 
 end
