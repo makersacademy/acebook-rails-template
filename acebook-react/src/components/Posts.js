@@ -56,7 +56,7 @@ handleUpdate(event) {
   }
 ).then(response => response.json()
 ).then(data => this.fetchData())
-document.getElementById(`${event.target[0].value}`).value="";
+document.getElementById(`${event.target[0].value}`).text="";
 console.log(document.getElementById(`${event.target[0].value}`))
 }
 
