@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if not_authenticated?
+    if !authenticated?
       redirect_to posts_url
       flash[:danger] = 'You can only update your own posts'
     end
@@ -25,7 +25,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(message: post_params["message"], user_id: session[:user_id])
+    @post = Post.create(message: post_params["message"],
+                        user_id: session[:user_id], recipient_id: params[:id])
     redirect_to posts_url
   end
 
@@ -41,7 +42,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
   
-    if not_authenticated?
+    if !authenticated?
       redirect_to posts_path
       flash[:danger] = 'You can only delete your own posts'
     else
@@ -56,7 +57,4 @@ class PostsController < ApplicationController
     params.require(:post).permit(:message)
   end
 
-  def not_authenticated?
-    session[:user_id] != @post.user_id
-  end
 end
