@@ -35,3 +35,5 @@ yarn-debug.log*
 .yarn-integrity
 
 coverage/
+.idea/
+package-lock.json
