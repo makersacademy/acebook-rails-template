@@ -1,0 +1,16 @@
+$('.liked-btn').on('ajax:success', function() {
+  $(this).parent().parent().find('.like_count')
+  .html('<% @post.get_likes.size %> &#128077');
+  $(this).closest('.liked-btn').html('.Like');
+});
+
+$('.like-btn').on('ajax:success', function() {
+  console.log("hello")
+  $(this).parent().parent().find('.like_count')
+  .html('<%= @post.get_likes.size %> &#128077');
+  $(this).closest('.like-btn').html('.Liked');
+});
+
+$(this).find('#test_element').mouse_over(function() {
+  $(this).find('#test_element').html('CHANGED')
+});
