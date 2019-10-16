@@ -6,7 +6,10 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
 
-    @posts = Post.where(user_id: current_user.id)
+    @my_posts = Post.where(user_id: current_user.id)
+    @current_friend_ids = Friendship.where(user_id: current_user.id, confirmed: true).map { |x| x.friend_id }
+    @friend_posts = Post.where(user_id: @current_friend_ids)
+    @posts = @my_posts + @friend_posts
   end
 
   # GET /posts/1
@@ -16,8 +19,8 @@ class PostsController < ApplicationController
   end
 
   def post_options
-      respond_to do |format|
-        format.js
+    respond_to do |format|
+      format.js
     end
   end
 
@@ -71,13 +74,13 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:message)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:message)
+  end
 end

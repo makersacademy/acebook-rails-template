@@ -13,20 +13,22 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
-    <br>
-    <div class="container">
-      <%= render 'layouts/alerts' %>
-      <%= yield %>
-    </div>
-    <footer>
+      <%= render 'layouts/navbar' %>
+      <br>
       <div class="container">
+<<<<<<< HEAD
         <br style='line-height: 5;'>
         <p><% if user_signed_in? %>Logged in as <strong><%= current_user.email %></strong> <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %> <%= link_to "Sign_up", new_user_registration_path %> | <%= link_to "Login", new_user_session_path %> <% end %></p>
         ACEBOOK <%= Time.now.year %>
+=======
+        <%= render 'layouts/alerts' %>
+        <%= yield %>
+>>>>>>> master
       </div>
-    </footer>
+      <% if user_signed_in? %>
+   <%= render 'layouts/chatbox' %>
+   <% end %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
   </body>
