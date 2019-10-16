@@ -32,7 +32,7 @@ class Login extends React.Component {
       body: data,
     })
       .then(response => response.json()).then(data => {
-        localStorage.setItem('user', data.email)
+        localStorage.setItem('id', data.id)
         this.setRedirect()
         this.renderRedirect()
       }).catch(error => {
