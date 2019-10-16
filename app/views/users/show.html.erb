@@ -1,14 +1,14 @@
 <%= render 'layouts/navbar' %>
-
-
 <h2><%= @user.first_name %>'s Wall!</h2>
 
-<div class="container">
-  <%= link_to new_post_path do %>
-    <div class="btn btn-info btn-lg">
-      New post
-    </div>
-  <% end %>
+
+<% @post.each do |post| %>
+  <div id="holder">
+<%= simple_format(post.message) %>
+<% user = User.find_by(id: post.user_id) %>
+<p> <%= user.first_name %> <%= user.last_name %>: <%= post.time_stamp %></p>
 </div>
-<br>
+<% end %>
+
+
 

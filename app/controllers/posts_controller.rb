@@ -26,8 +26,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(message: post_params["message"],
-                        user_id: session[:user_id], recipient_id: params[:id])
-    redirect_to posts_url
+    user_id: session[:user_id], recipient_id: params[:id])
+    redirect_to user_path(session[:user_id])
   end
 
   def update

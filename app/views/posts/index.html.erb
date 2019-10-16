@@ -10,7 +10,7 @@
 <br>
 
 <% @posts.each do |post| %>
-  <div class="alert alert-primary" role="alert">
+
     <p style="font-size:18px"><%= simple_format(post.message) %></p>
     <% user = User.find_by(id: post.user_id) %>
     <p><%= link_to "#{user.first_name + ' ' + user.last_name}", user_path(user) %>: <%= post.time_stamp %></p>
@@ -23,5 +23,5 @@
           data: { confirm: 'Are you sure?' } %>
     <% end %>
     <%= link_to 'Comment', post_path(post) %>
-  </div>
+  
 <% end %>

@@ -3,8 +3,8 @@
   <div class="container">
     <%= link_to "Acebook", root_path, id: "logo" %>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", posts_path %></li>
+      <ul class="nav navbar-nav navbar-right" id="nav">
+        <li style="color:white"><%= link_to "Home", posts_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Users", users_path %></li>
           <li class="dropdown">
