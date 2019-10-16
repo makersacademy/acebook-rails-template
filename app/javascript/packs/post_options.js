@@ -12,6 +12,8 @@ $(document).ready(function() {
         event.preventDefault();
         let buttonID = this.id.replace("edit-button-", "");
         $(`#edit-post-${buttonID}`).toggle();
+        $(`#card-text-${buttonID}`).toggle();
+
     });
 
 
