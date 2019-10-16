@@ -5,25 +5,27 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= action_cable_meta_tag %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
   </head>
 
   <body>
-      <%= render 'layouts/navbar' %>
-      <br>
-      <div class="container">
-        <%= render 'layouts/alerts' %>
-        <%= yield %>
-      </div>
+
+    <%= render 'layouts/newnav' %>
+    <div class="container">
+      <%= render 'layouts/alerts' %>
+      <%= yield %>
+    </div>
+
+
       <% if user_signed_in? %>
    <%= render 'layouts/chatbox' %>
    <% end %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
+
   </body>
 
 
