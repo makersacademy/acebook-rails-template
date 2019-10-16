@@ -2,6 +2,7 @@
 
 <h1 style="text-align:center;">Posts</h1>
 
+
 <%= render 'form', post: @post %>
 
 <% @posts.to_a.reverse.each do |post| %>
@@ -32,10 +33,32 @@
 
       <div id="post-options-<%= post.id %>" class="post-options">
         <%= link_to 'Show', post, class: "card-link" %>
+
         <% if post.user.id == current_user.id %>
           <%= link_to "Edit", "#", class: "edit-button", id: "edit-button-#{post.id}" %>
           <%= link_to 'Destroy', post, method: :delete, data: {confirm: 'Are you sure?'}, class: "card-link" %>
         <% end %>
+
+        <%= form_with model: @comments, url: '/posts/' + post.id.to_s + '/comments', method: "post",  local: true do |form| %>
+          <div class="input-group mb-3">
+            <%= form.text_field :message, placeholder: "Type a comment", class: "form-control", id: "message_body" %>
+            <% p params %>
+            <div class="input-group-append">
+              <%= form.submit "Send", class: "btn btn-secondary" %>
+            </div>
+          </div>
+        <% end %>
+
+
+
+        <% post.comments.to_a.reverse.each do |comment| %>
+          <% p comment %>
+          <p class="card-text"><%= simple_format(comment.message) %></p>
+          <p class="card-text"><%= simple_format(comment.email) %></p>
+        <% end %>
+
+
+
       </div>
 
     </div>
