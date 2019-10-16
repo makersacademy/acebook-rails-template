@@ -25,7 +25,7 @@ class Posts extends React.Component {
   }
 
   fetchData() {
-    fetch('http://localhost:3000/api/v1/posts/14', {
+    fetch(`http://localhost:3000/api/v1/posts/${localStorage.getItem('id')}`, {
       method: 'GET',
     }
     ).then(response => response.json())
