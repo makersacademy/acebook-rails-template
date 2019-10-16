@@ -5,8 +5,8 @@ module API
       resource :posts do
         desc "Return all posts"
         get "" do
-          Post.all
-        end
+          Post.all.order(created_at: :desc)
+      end
         desc "Delete posts"
         params do
           requires :id, type: String, desc: "id of the post"
