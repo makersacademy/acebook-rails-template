@@ -4,6 +4,9 @@
 <%= link_to edit_user_path(current_user.id) do %>
   Update profile
 <% end %>
+<%= link_to albums_path do %>
+  View photo albums
+<% end %>
 
 <% @posts.each do |post| %>
   <% @user_id = post.user_id.to_i %>
