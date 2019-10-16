@@ -43,37 +43,37 @@ class Login extends React.Component {
   render() {
     return (
       <div className="row">
-      <div className="col-sm-4 offset-md-4 text-center">
-        <div className="card border-0" style={{width: 350 + 'px'}}>
-        <div className="card-body">
+        <div className="col-sm-4 offset-md-4 text-center">
+          <div className="card border-0" style={{ width: 350 + 'px' }}>
+            <div className="card-body">
 
-      <form onSubmit={this.handleSubmit}>
-        <h1 className="display-6">
-               Acebook
+              <form onSubmit={this.handleSubmit}>
+                <h1 className="display-6">
+                  Acebook
         </h1>
 
-        <p className="display-6">
-               Discover the new social media sensation 
-               acebook - 
-               developed by TEAM A.G.I.L
+                <p className="display-6">
+                  Discover the new social media sensation
+                  acebook -
+                  developed by TEAM A.G.I.L - The Best Team Around
         </p>
 
-        <br />
-        <input id="email" name="email" type="email" placeholder="Email Address" style={{border: 0+ 'px', width: 300 + 'px'}}/><br/>
-        <br />
-        <input id="password" name="password" type="password" placeholder="Password" style={{border: 0+ 'px', width: 300 + 'px'}}/>
-        <br/>
-        <br />
-        {this.renderRedirect()}
-        <div className="text-center">
-        <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                <br />
+                <input id="email" name="email" type="email" placeholder="Email Address" style={{ border: 0 + 'px', width: 300 + 'px' }} /><br />
+                <br />
+                <input id="password" name="password" type="password" placeholder="Password" style={{ border: 0 + 'px', width: 300 + 'px' }} />
+                <br />
+                <br />
+                {this.renderRedirect()}
+                <div className="text-center">
+                  <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                </div>
+              </form>
+              <p>{this.state.error}</p>
+            </div>
+          </div>
         </div>
-      </form>
-      <p>{this.state.error}</p>
       </div>
-      </div>
-     </div>
-     </div>
     );
   }
 }
