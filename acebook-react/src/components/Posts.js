@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 class Posts extends React.Component {
   constructor() {
     super();
@@ -19,36 +20,51 @@ class Posts extends React.Component {
       method: 'DELETE',
       body: data,
     }
-    ).then(response => response.json()
-    ).then(data => this.fetchData())
-  }
+  ).then(response => response.json()
+).then(data => this.fetchData())
+}
 
-  fetchData() {
-    fetch('http://localhost:3000/api/v1/posts/', {
-      method: 'GET',
-    }
-    ).then(response => response.json())
-      .then(data => this.setState({
-        isLoaded: true,
-        posts: data
-      }))
+fetchData() {
+  fetch('http://localhost:3000/api/v1/posts/', {
+    method: 'GET',
   }
+).then(response => response.json())
+.then(data => this.setState({
+  isLoaded: true,
+  posts: data
+}))
+}
+handleSubmit(event) {
+  event.preventDefault();
+  const data = new FormData(event.target);
+  console.log(event);
+  fetch('http://localhost:3000/api/v1/posts/', {
+    method: 'POST',
+    body: data,
+  }
+).then(response => response.json()
+).then(data => this.fetchData())
+}
 
-  render() {
-    const { posts } = this.state;
-    console.log(posts)
-    return (
-      <div>
-        <h1>Posts</h1>
-        {posts.map(post => (
-          <form key={post.id} onSubmit={this.handleDelete.bind(this)}>
-            {post.message}
-            <input id="id" name="id" value={post.id} type="text" readOnly hidden />
-            <button>delete</button>
-          </form>
-        ))}
-      </div>
-    );
-  }
+render() {
+  const { posts } = this.state;
+  console.log(posts)
+  return (
+    <div>
+    <h1>Posts</h1>
+    {posts.map(post => (
+      <form key={post.id} onSubmit={this.handleDelete.bind(this)}>
+      {post.message}
+      <input id="id" name="id" value={post.id} type="text" readOnly hidden />
+      <button>delete</button>
+      </form>
+    ))}
+    <form onSubmit={this.handleSubmit.bind(this)}>
+    <input id="newMessage" name="message" type="text"/><br/>
+    <button type="submit">Add Post</button>
+    </form>
+    </div>
+  );
+}
 }
 export default Posts;
