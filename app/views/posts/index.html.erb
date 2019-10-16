@@ -10,9 +10,21 @@
           <h6 class="card-subtitle mb-2 text-muted"><i><%= simple_format(post.updated_at.to_s.slice(0,10)) %></i></h6>
           <p class="card-text"><%= simple_format(post.message) %></p>
           <%= link_to 'Show', post, class:"card-link" %>
+
+          <%= form_with model: @comments, url: '/posts/' + post.id.to_s + '/comments', method: "post",  local: true do |form| %>
+          <div class="input-group mb-3">
+            <%= form.text_field :message, placeholder: "Type a comment", class: "form-control", id: "message_body" %>
+            <% p params %>
+            <div class="input-group-append">
+              <%= form.submit "Send", class: "btn btn-secondary" %>
+            </div>
+          </div>
+          <% end %>
+          
           <% if post.user.id == current_user.id %>
           <%= link_to 'Edit', edit_post_path(post), class:"card-link" %>
-          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-link" %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-link" %><br><br>
+          
           <% end %>
         </div>
       </div>

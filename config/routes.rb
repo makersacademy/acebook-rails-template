@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   authenticated :user do
-    resources :posts
+    resources :posts do
+      resources :comments
+    end
     resources :friendships do
       post 'create'
     end
