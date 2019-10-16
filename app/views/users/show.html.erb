@@ -7,17 +7,18 @@
     <p>
       <%= form.label :message %><br>
       <%= form.text_area :message, placeholder: "Post on #{@user.first_name}'s wall"%><br>
+      <%= form.hidden_field :recipient_id, :value => params[:id] %>
     </p>
     <p>
       <%= form.submit "Submit" %>
     </p>
   <% end %>
   <br>
-  <h4>All posts</h4>
+  <h4>All messages</h4>
   <div>
     <% @posts.each do |post| %>
       <div>
-        <p> <%= post.body %> </p>    
+        <p> <%= post.message %> </p>    
         <% sender = User.find_by(id: post.user_id) %>
         <p><%= link_to "#{sender.first_name + ' ' + sender.last_name}",
                 user_path(sender) %>: <%= post.time_stamp %></p>   
