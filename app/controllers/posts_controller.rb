@@ -18,18 +18,6 @@ class PostsController < ApplicationController
 
   end
 
-  def post_options
-    respond_to do |format|
-      format.js
-    end
-  end
-
-  def edit_options
-    respond_to do |format|
-      format.js
-    end
-  end
-
   # GET /posts/new
   def new
     @post = Post.new
@@ -89,4 +77,18 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
   end
+
+  # Javascript helper methods
+  def post_options
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def edit_options
+    respond_to do |format|
+      format.js
+    end
+  end
+
 end
