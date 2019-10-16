@@ -9,5 +9,7 @@ class AddCachedLikesToPosts < ActiveRecord::Migration[5.2]
       t.integer :cached_weighted_total, default: 0
       t.float :cached_weighted_average, default: 0.0
     end
+
+    Post.find_each(&:update_cached_votes)
   end
 end

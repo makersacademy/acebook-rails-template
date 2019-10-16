@@ -1,16 +1,15 @@
-$('.liked-btn').on('ajax:success', function() {
-  $(this).parent().parent().find('.like_count')
-  .html('<% @post.get_likes.size %> &#128077');
-  $(this).closest('.liked-btn').html('.Like');
-});
-
-$('.like-btn').on('ajax:success', function() {
-  console.log("hello")
+$('.liked-button').on('ajax:success', function() {
+  console.log("trigger change to like")
   $(this).parent().parent().find('.like_count')
   .html('<%= @post.get_likes.size %> &#128077');
-  $(this).closest('.like-btn').html('.Liked');
+  $(this).closest('.liked-button').html('Like');
+  $(this).closest('.liked-button').addClass('like-button').removeClass('liked-button');
 });
 
-$(this).find('#test_element').mouse_over(function() {
-  $(this).find('#test_element').html('CHANGED')
+$('.like-button').on('ajax:success', function() {
+  console.log("trigger change to liked")
+  $(this).parent().parent().find('.like_count')
+  .html('<%= @post.get_likes.size %> &#128077');
+  $(this).closest('.like-button').html('Liked');
+  $(this).closest('.like-button').addClass('liked-button').removeClass('like-button');
 });

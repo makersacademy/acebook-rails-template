@@ -1,3 +1,4 @@
+
 <%= link_to new_post_path do %>
   New post
 <% end %>
@@ -7,37 +8,46 @@
 <%= link_to albums_path do %>
   View photo albums
 <% end %>
+     
+                                      
+ <% @posts.each do |post| %>
 
-<% @posts.each do |post| %>
-
-  <% @post_creator_id = post.user_id.to_i %>
-  <% @post_creator = User.find_by(id: @post_creator_id) %>
-
-  <p><% if @post_creator.profile_picture.attached? %>
+    <% @post_creator_id = post.user_id.to_i %>
+    <% @post_creator = User.find_by(id: @post_creator_id) %>
+                                      
+                                      
+    <p><% if @post_creator.profile_picture.attached? %>
           <%= image_tag @post_creator.profile_picture.variant(resize: '100x100!'), :style => "border-radius: 50%" %>
+
         <% else %>
           <%= image_tag('totally_normal_human_dude.jpg', size: '100x100', style: "border-radius: 50%") %>
         <% end %>
+       
         <%= simple_format post.message %></br>Posted on: <%= post.created_at %>
         by <%= @post_creator.firstname + " " + @post_creator.surname %>
-  </p>
+     </p>
 
-  <span class='parent-likes'>
-    <span class="like_count" <% post.id %> >
-      <%= post.get_likes.size %> &#128077
-    </span>
-    <a>
-      <% if current_user.liked? post %>
-          <div> <%= link_to like_post_path(post, 'unlike'), class: "liked-btn",
-            method: :put, remote: :true do %> Liked </div>
-            <% end %>
-      <% else %>
-        <div> <%= link_to like_post_path(post, 'like'), class: "like-btn",
-          method: :put, remote: :true do %> Like </div>
+
+
+
+    <span class='parent-likes'>
+      <span class="like_count" <% post.id %> >
+        <%= post.get_likes.size %> &#128077
+      </span>
+
+      <a>
+        <% if current_user.liked? post %>
+          <div> <%= link_to like_post_path(post, 'toggle'), class: "liked-button",
+          method: :put, remote: :true do %> Liked </div>
           <% end %>
-      <% end %>
-    </a>
-  </span>
+        <% else %>
+          <div> <%= link_to like_post_path(post, 'toggle'), class: "like-button",
+            method: :put, remote: :true do %> Like </div>
+            <% end %>
+        <% end %>
+      </a>
+    </span>
+
 
 
   <p><%= link_to 'Show', post_path(post),
