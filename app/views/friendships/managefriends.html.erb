@@ -1,0 +1,18 @@
+<h1 style="text-align:center;">Manage your Friends!</h1>
+<% @index = 0 %>
+<% @current_friends.each do |user| %>
+<div class="card" style="width: 30rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+      <p><br>
+        <% if @user_models[@index].avatar.attached? %>
+        <%= image_tag @user_models[@index].avatar.variant(resize: "50X50" ).processed %>
+        <% end %>
+      </p>
+    </h5>
+    <p class="card-text"><%= @user_models[@index].email %></p>
+    <%= link_to 'Remove Friend', '/friendships/' + user.id.to_s, method: :delete, class:"card-link" %>
+  </div>
+</div>
+<% @index += 1 %>
+<% end %>
