@@ -20,6 +20,7 @@ class FriendshipsController < ApplicationController
         @new_friendships = Friendship.create_reciprocal_for_ids(current_user.id, f_id)
       end
     end
+    flash[:notice] = "Friend Request Sent"
     redirect_to '/'
   end
 
