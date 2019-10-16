@@ -42,10 +42,10 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div class="row">
-      <div class="col-sm-4 offset-md-4 text-center">
-        <div class="card border-0" style={{width: 350 + 'px'}}>
-        <div class="card-body">
+      <div className="row">
+      <div className="col-sm-4 offset-md-4 text-center">
+        <div className="card border-0" style={{width: 350 + 'px'}}>
+        <div className="card-body">
 
       <form onSubmit={this.handleSubmit}>
         <h1 className="display-6">
@@ -65,10 +65,11 @@ class Login extends React.Component {
         <br/>
         <br />
         {this.renderRedirect()}
-        <div class="text-center">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <div className="text-center">
+        <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
         </div>
       </form>
+      <p>{this.state.error}</p>
       </div>
       </div>
      </div>
