@@ -45,6 +45,8 @@ class Posts extends React.Component {
     }
     ).then(response => response.json()
     ).then(data => this.fetchData())
+    document.getElementById(`newMessage`).value = "";
+
   }
 
   handleUpdate(event) {
