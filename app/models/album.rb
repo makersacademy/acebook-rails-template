@@ -1,13 +1,13 @@
 class Album < ApplicationRecord
   belongs_to :user
   has_many_attached :images
-  
+
   validates :title, presence: true
   validates :body, presence: true
   validate :image_type
 
   def thumbnail(index)
-    return self.images[index].variant(resize: '300x300!')
+    return self.images[index].variant(resize: '300x300')
   end
 
   private
