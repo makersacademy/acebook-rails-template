@@ -3,20 +3,15 @@ class Posts extends React.Component {
   constructor() {
     super();
     this.state = {
-    posts: []
+      posts: []
     }
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/api/v1/posts/', {
-      method: 'GET',
-    }
-    ).then(response => response.json())
-     .then(data => this.setState({
-       isLoaded: true,
-       posts: data}))
+    this.fetchData()
   }
-  handleSubmit(event) {
+
+  handleDelete(event) {
     event.preventDefault();
     const data = new FormData(event.target);
     console.log(event);
@@ -24,25 +19,36 @@ class Posts extends React.Component {
       method: 'DELETE',
       body: data,
     }
-    ).then(response => response.json())
+    ).then(response => response.json()
+    ).then(data => this.fetchData())
   }
 
+  fetchData() {
+    fetch('http://localhost:3000/api/v1/posts/', {
+      method: 'GET',
+    }
+    ).then(response => response.json())
+      .then(data => this.setState({
+        isLoaded: true,
+        posts: data
+      }))
+  }
 
   render() {
-    const {posts} = this.state;
-      console.log(posts)
-      return (
-        <div>
-          <h1>Posts</h1>
-          {posts.map(post => (
-            <form key={post.id} onSubmit={this.handleSubmit}>
-              {post.message}
-              <input id="id" name="id" value={post.id} type="text" readOnly hidden/>
-              <button>delete</button>
-            </form>
-          ))}
-        </div>
-      );
+    const { posts } = this.state;
+    console.log(posts)
+    return (
+      <div>
+        <h1>Posts</h1>
+        {posts.map(post => (
+          <form key={post.id} onSubmit={this.handleDelete.bind(this)}>
+            {post.message}
+            <input id="id" name="id" value={post.id} type="text" readOnly hidden />
+            <button>delete</button>
+          </form>
+        ))}
+      </div>
+    );
   }
- }
- export default Posts;
+}
+export default Posts;
