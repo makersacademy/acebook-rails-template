@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find_by(id: params[:id])q
+    @user = User.find_by(id: params[:id])
     @posts = Post.where("recipient_id = #{@user.id}").order(:created_at).reverse_order
   end
 
