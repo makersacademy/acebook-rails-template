@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Post:</strong>
-  <%= @album.post %>
+  <strong>Created by: </strong>
+  <%= User.find_by(id: @album.user_id).firstname + " " + User.find_by(id: @album.user_id).surname %>
 </p>
 
 <% (0...@album.images.count).each do |image| %>
@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>Description:</strong>
   <%= @album.body %>
 </p>
 

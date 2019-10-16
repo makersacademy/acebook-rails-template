@@ -62,6 +62,12 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+    redirect_to albums_url
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album
