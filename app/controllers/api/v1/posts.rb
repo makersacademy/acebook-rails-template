@@ -3,10 +3,18 @@ module API
     class Posts < Grape::API
       include API::V1::Defaults
       resource :posts do
-        desc "Return all posts"
+      desc "Return all posts for given user"
+        params do
+          requires :user_id, type: String, desc: "user_id"
+        end
+        get "/:user_id" do
+          p permitted_params
+          Post.where(user_id: permitted_params[:user_id]).order(created_at: :desc)
+        end
+      desc "Return all posts"
         get "" do
-          Post.all.order(created_at: :desc)
-      end
+            Post.all.order(created_at: :desc)
+        end
         desc "Delete posts"
         params do
           requires :id, type: String, desc: "id of the post"
@@ -18,6 +26,7 @@ module API
         desc "Add post"
         params do
           requires :message, type: String, desc: "message"
+          requires :user_id, type: String, desc: "user_id"
         end
         post "" do
           Post.create(permitted_params)

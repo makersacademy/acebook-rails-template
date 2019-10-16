@@ -25,7 +25,7 @@ class Posts extends React.Component {
   }
 
   fetchData() {
-    fetch('http://localhost:3000/api/v1/posts/', {
+    fetch('http://localhost:3000/api/v1/posts/14', {
       method: 'GET',
     }
     ).then(response => response.json())
@@ -84,6 +84,7 @@ class Posts extends React.Component {
         ))}
         <form onSubmit={this.handleSubmit.bind(this)}>
           <input id="newMessage" name="message" type="text" /><br />
+          <input id="id" name="user_id" value={localStorage.getItem('id')} type="text" readOnly hidden />
           <button type="submit">Add Post</button>
         </form>
       </div>
