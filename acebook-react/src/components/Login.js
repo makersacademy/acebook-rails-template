@@ -8,7 +8,8 @@ class Login extends React.Component {
   }
 
   state = {
-    redirect: false
+    redirect: false,
+    error: ''
   }
 
   setRedirect = () => {
@@ -19,7 +20,7 @@ class Login extends React.Component {
 
   renderRedirect = () => {
     if (this.state.redirect) {
-      return <Redirect to='/home' />
+      return <Redirect to='/posts' />
     }
   }
 
@@ -29,12 +30,14 @@ class Login extends React.Component {
     fetch('http://localhost:3000/api/v1/users', {
       method: 'POST',
       body: data,
-    }
-    ).then(response => response.json()).then(data => {
-      console.log(data)
-      this.setRedirect()
-      this.renderRedirect()
-    });
+    })
+      .then(response => response.json()).then(data => {
+        localStorage.setItem('user', data.email)
+        this.setRedirect()
+        this.renderRedirect()
+      }).catch(error => {
+        this.setState({ error: 'Invalid Email/Password' })
+      });
   }
 
   render() {
@@ -70,8 +73,6 @@ class Login extends React.Component {
       </div>
      </div>
      </div>
-
-
     );
   }
 }

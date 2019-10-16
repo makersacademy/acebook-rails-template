@@ -3,12 +3,18 @@ import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
   render() {
-    return (
-      <div>
-        <Link to="/register">Register</Link><br />
-        <Link to="/login">Login</Link>
-      </div>
-    );
+    if (!localStorage.getItem('user')) {
+      return (
+        <div>
+          <Link to="/register">Register</Link><br />
+          <Link to="/login">Login</Link>
+        </div>
+      );
+    } else {
+      return (
+        <p>You are logged in</p>
+      )
+    }
   }
- }
- export default Login;
+}
+export default Login;
