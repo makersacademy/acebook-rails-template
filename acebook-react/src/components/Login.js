@@ -42,18 +42,37 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="email">Enter your email</label>
-          <input id="email" name="email" type="email" />
-          <label htmlFor="email">Enter your password</label>
-          <input id="password" name="password" type="password" />
-          {this.renderRedirect()}
-          <button>Login</button>
+      <div class="row">
+      <div class="col-sm-4 offset-md-4 text-center">
+        <div class="card border-0" style={{width: 350 + 'px'}}>
+        <div class="card-body">
 
-        </form>
-        <p>{this.state.error}</p>
+      <form onSubmit={this.handleSubmit}>
+        <h1 className="display-6">
+               Acebook
+        </h1>
+
+        <p className="display-6">
+               Discover the new social media sensation 
+               acebook - 
+               developed by TEAM A.G.I.L
+        </p>
+
+        <br />
+        <input id="email" name="email" type="email" placeholder="Email Address" style={{border: 0+ 'px', width: 300 + 'px'}}/><br/>
+        <br />
+        <input id="password" name="password" type="password" placeholder="Password" style={{border: 0+ 'px', width: 300 + 'px'}}/>
+        <br/>
+        <br />
+        {this.renderRedirect()}
+        <div class="text-center">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        </div>
+      </form>
       </div>
+      </div>
+     </div>
+     </div>
     );
   }
 }

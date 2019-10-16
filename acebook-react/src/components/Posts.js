@@ -3,7 +3,7 @@ class Posts extends React.Component {
   constructor() {
     super();
     this.state = {
-      posts: null,
+    posts: []
     }
   }
 
@@ -12,29 +12,37 @@ class Posts extends React.Component {
       method: 'GET',
     }
     ).then(response => response.json())
-      .then(data => this.setState({ posts: data }))
+     .then(data => this.setState({
+       isLoaded: true,
+       posts: data}))
   }
+  handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    console.log(event);
+    fetch('http://localhost:3000/api/v1/posts/', {
+      method: 'DELETE',
+      body: data,
+    }
+    ).then(response => response.json())
+  }
+
 
   render() {
-    const { posts } = this.state;
-    //     const items = this.state.cart.map((item, key) =>
-    //     <li key={item.id}>{item.name}</li>
-    // );
-
-    console.log(posts)
-    if (!posts) {
+    const {posts} = this.state;
+      console.log(posts)
       return (
-        <div>pending</div>
+        <div>
+          <h1>Posts</h1>
+          {posts.map(post => (
+            <form key={post.id} onSubmit={this.handleSubmit}>
+              {post.message}
+              <input id="id" name="id" value={post.id} type="text" readOnly hidden/>
+              <button>delete</button>
+            </form>
+          ))}
+        </div>
       );
-    } else {
-      return (
-        <form>
-          <label htmlFor="hello">Hello World</label>
-          <div>{posts[0].id}{posts[0].message}</div>
-          <div>{posts[1].id}{posts[1].message}</div>
-        </form>
-      );
-    }
   }
-}
-export default Posts;
+ }
+ export default Posts;
