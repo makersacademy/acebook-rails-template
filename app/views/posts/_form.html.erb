@@ -15,12 +15,17 @@
   <%= form_with(model: @post, local: true) do |form| %>
 
 
-    <div class="input-group mb-3">
+    <div class="post-box">
+      <div class="container">
+        <div class="box blue">
       <%= form.text_field :message, placeholder: "Write a post...", class: "form-control", size: "60x10" %>
 
-      <div class="input-group-append">
+      <div >
         <%= form.submit "Post!", class: "btn btn-secondary" %>
       </div>
     </div>
+      </div>
+    </div>
+
 
   <% end %>
