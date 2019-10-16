@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
+    @posts = Post.where("recipient_id = #{@user.id}").order(:created_at).reverse_order
   end
 
   def new
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
   
     begin
       if @user.save
-        flash[:success] = 'You have signed up!'
+        flash[:success] = 'You have signed up! Please log in to continue.'
         redirect_to '/login' and return
       end
     rescue ActiveRecord::RecordNotUnique
