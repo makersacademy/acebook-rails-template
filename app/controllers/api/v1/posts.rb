@@ -8,13 +8,22 @@ module API
           requires :user_id, type: String, desc: "user_id"
         end
         get "/:user_id" do
-          p permitted_params
           Post.where(user_id: permitted_params[:user_id]).order(created_at: :desc)
         end
       desc "Return all posts"
         get "" do
             Post.all.order(created_at: :desc)
         end
+        
+      desc "Delete posts with passed id"
+       params do
+         requires :id, type: String, desc: "id of the post"
+       end
+       delete "/:id" do
+         post = Post.where(id: permitted_params[:id]).first!
+         post.destroy
+      end
+
         desc "Delete posts"
         params do
           requires :id, type: String, desc: "id of the post"
