@@ -15,6 +15,7 @@ class PostsController < ApplicationController
     @posts = Post.all.sort_by(&:created_at).reverse
     @users = User.all
     respond_to :js, :html, :json
+    p ENV["AWS_BUCKET"]
   end
 
   def show
@@ -39,10 +40,10 @@ class PostsController < ApplicationController
 
   def like
     @post = Post.find(params[:id])
-    
-    if current_user.liked? @post 
+
+    if current_user.liked? @post
       @post.unliked_by current_user
-    else 
+    else
       @post.liked_by current_user
     end
   end
