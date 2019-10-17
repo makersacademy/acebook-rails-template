@@ -2,7 +2,9 @@ class UsersController < ApplicationController
   def show
     login_required
     @user = User.find_by(id: params[:id])
+
     @posts = Post.where("recipient_id = #{@user.id}").order(:created_at).reverse_order
+
   end
 
   def new

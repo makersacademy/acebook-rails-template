@@ -1,6 +1,9 @@
 <%= render 'layouts/navbar' %>
 
 
+<div class="btn btn-info btn-lg">
+      New post!!
+    </div>
 <h3>Post</h3>
 <%= simple_format(@post.message) %>
 <% user = User.find_by(id: @post.user_id) %>
@@ -22,7 +25,7 @@
   <h4>Comments</h4>
   <div>
     <% @comments.each do |comment| %>
-      <div>
+
         <p> <%= comment.body %> </p>    
         <% commenter = User.find_by(id: comment.user_id) %>
         <p><%= link_to "#{commenter.first_name + ' ' + commenter.last_name}",
@@ -35,7 +38,7 @@
           method: :delete,
           data: { confirm: 'Are you sure?' } %>
         <% end %>
-      </div>
+    </div>
     <% end %>
   </div>
 </div>
