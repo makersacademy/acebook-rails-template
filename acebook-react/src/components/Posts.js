@@ -15,7 +15,6 @@ class Posts extends React.Component {
   handleDelete(event) {
     event.preventDefault();
     const data = new FormData(event.target);
-    console.log(event);
     fetch('http://localhost:3000/api/v1/posts/', {
       method: 'DELETE',
       body: data,
@@ -38,7 +37,6 @@ class Posts extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.target);
-    console.log(event);
     fetch('http://localhost:3000/api/v1/posts/', {
       method: 'POST',
       body: data,
@@ -59,12 +57,10 @@ class Posts extends React.Component {
     ).then(response => response.json()
     ).then(data => this.fetchData())
     document.getElementById(`${event.target[0].value}`).value = "";
-    console.log(document.getElementById(`${event.target[0].value}`))
   }
 
   render() {
     const { posts } = this.state;
-    console.log(posts)
     return (
       <div>
         <h1>Posts</h1>

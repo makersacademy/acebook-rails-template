@@ -37,11 +37,7 @@ module API
           requires :message, type: String, desc: "message"
         end
         put "" do
-          p "here"
-          p permitted_params
           post = Post.where(id: permitted_params[:id]).first!
-          p 'post'
-          p post
           post.update(permitted_params)
         end
       end
