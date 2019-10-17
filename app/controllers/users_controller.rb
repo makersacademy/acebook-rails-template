@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def index
     login_required
-    @users = User.all
+    @users = User.all.order(last_name: :asc)
   end
 
   def create
