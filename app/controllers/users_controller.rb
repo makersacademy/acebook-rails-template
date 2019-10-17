@@ -22,9 +22,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # if user_params[:profile_photo] != nil
-    #   @user.profile_photo.attach(params[:profile_photo])
-    #   end
 
     begin
       if @user.save
