@@ -17,4 +17,8 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def authenticated?
+    session[:user_id] == @post.user_id || session[:user_id] == @post.recipient_id
+  end
 end
