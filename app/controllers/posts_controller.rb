@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(message: post_params["message"],
-                        user_id: session[:user_id], recipient_id: post_params["recipient_id"])
+    user_id: session[:user_id], recipient_id: post_params["recipient_id"])
     user = User.find_by(id: post_params["recipient_id"])
     redirect_to user_path(user)
   end
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-  
+
     if !authenticated?
       redirect_to posts_path
       flash[:danger] = 'You can only delete your own posts'
