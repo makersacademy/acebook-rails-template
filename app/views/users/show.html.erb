@@ -1,9 +1,9 @@
 <%= render 'layouts/navbar' %>
 
+<div class="center">
+  <image src="<%=(@profile_photo)%>" class="img-circle" width="200px" height="200px" style="border: 5px solid green">
+</div>
 <h2 class="center"><%= @user.first_name %> <%= @user.last_name %>'s wall</h2>
-<% if @user.profile_photo.attached? %>
-  <image src="<%=(url_for(@user.profile_photo)) %>">
-<% end %>
 
 <div class="container">
   <%= form_with scope: :post, url: posts_path, local: true do |form| %>
