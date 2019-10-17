@@ -8,6 +8,7 @@
 
 
 <% @posts.to_a.reverse.each do |post| %>
+
   <div class="post-box">
     <div class="container">
       <div class="box blue">
@@ -70,7 +71,6 @@
             <% end %>
 
 
-
             <% post.comments.to_a.reverse.each do |comment| %>
               <% p comment %>
               <p class="card-text"><%= simple_format(comment.message) %></p>
@@ -79,13 +79,32 @@
           </div>
 
 
-        </div>
 
+      <div>
+        <%= link_to (image_tag("thumbs-up-circle-blue-512.png", :style => 'max-width:100%;max-height: 17px;')), post_like_path(post.id, current_user.id), :method=> :patch %>
+        <% @like_count = 0 %>
+        <% post.likes.to_a.each do |like| %>
+        <% @like_count += 1 %>
+        <% end %>
+        <%= @like_count %>
       </div>
+
+
+
+
+
     </div>
+
   </div>
+
   </div>
   </div>
 
 <% end %>
+
+
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
 
