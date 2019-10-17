@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     member do
       delete :delete_image_attachment
     end
+
+    member do
+      put "like" => "posts#like"
+    end
   end
 
 
