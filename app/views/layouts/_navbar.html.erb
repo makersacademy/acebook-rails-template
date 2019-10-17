@@ -8,7 +8,10 @@
       <%= link_to "Acebook", root_path, id: "logo" %>
     <% end %>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
+
+      <ul class="nav navbar-nav navbar-right" id="nav">
+        <li style="color:white"><%= link_to "Home", posts_path %></li>
+
         <% if logged_in? %>
           <% user = User.find_by(id: session[:user_id]) %>
           <li><%= link_to "Home", user_path(user) %></li>

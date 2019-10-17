@@ -3,24 +3,27 @@
 <div class="center">
   <image src="<%=(@profile_photo)%>" class="img-circle" width="200px" height="200px" style="border: 5px solid green">
 </div>
+
 <h2 class="center"><%= @user.first_name %> <%= @user.last_name %>'s wall</h2>
 
-<div class="container">
+<div class="form-group">
   <%= form_with scope: :post, url: posts_path, local: true do |form| %>
     <p>
       <%= form.label 'Add a Post' %><br>
-      <%= form.text_area :message %><br>
+      <div id="textarea">
+      <%= form.text_area :message, class: "form-control width: 50%" %><br>
+      </div>
       <%= form.hidden_field :recipient_id, :value => params[:id] %>
     </p>
     <p>
-      <%= form.submit "Post!" %>
+      <%= form.submit "Post!", class: "btn btn-info" %>
     </p>
   <% end %>
   <br>
-  <h4>All Posts</h4>
+  <h4 id="title">All Posts</h4>
   <div>
     <% @posts.each do |post| %>
-      <div>
+      <div id="holder">
         <p> <%= post.message %> </p>
         <% sender = User.find_by(id: post.user_id) %>
         <p><%= link_to "#{sender.first_name + ' ' + sender.last_name}",
@@ -35,11 +38,13 @@
         <% end %>
         <%= link_to "Comments (#{post.comments.length})", post_path(post) %>
       </div>
+      <br>
     <% end %>
   </div>
 </div>
 
 </div>
+
 
 
 
