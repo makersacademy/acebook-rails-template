@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   before_save { self.email = email.downcase }
-  has_many :posts
-  has_many :comments
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_one_attached :profile_photo
 
   validates :first_name, presence: true, length: { maximum: 50 }
   validates :last_name, presence: true, length: { maximum: 50 }
@@ -11,6 +12,7 @@ class User < ApplicationRecord
   validates :password, presence: true,
                       confirmation: true,
                       length: { minimum: 6, maximum: 10 }
+  validates :profile_photo, presence: true
 
   has_secure_password
 
