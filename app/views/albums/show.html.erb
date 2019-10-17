@@ -30,7 +30,7 @@
       <a>
         <% if current_user.liked? @album %>
           <div> <%= link_to like_album_path(@album, 'toggle'), class: "liked-button",
-          method: :put, remote: :true do %> Liked </div>
+          method: :put, remote: :true do %> Unlike </div>
           <% end %>
         <% else %>
           <div> <%= link_to like_album_path(@album, 'toggle'), class: "like-button",

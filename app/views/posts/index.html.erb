@@ -35,7 +35,7 @@
         <a>
           <% if current_user.liked? post %>
             <div> <%= link_to like_post_path(post, 'toggle'), class: "liked-button",
-            method: :put, remote: :true do %> Liked </div>
+            method: :put, remote: :true do %> Unlike </div>
             <% end %>
           <% else %>
             <div> <%= link_to like_post_path(post, 'toggle'), class: "like-button",
