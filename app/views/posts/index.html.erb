@@ -66,9 +66,15 @@
 
           </div>
 
-        </div>
+
 
           <div id="comment-options-<%= post.id %>" class="comment-options">
+
+            <% post.comments.find_each do |comment| %>
+              <% p comment %>
+              <p><%= comment.message %></p>
+              <p><%= time_ago_in_words(post.updated_at) %> ago<%= comment.email %>, </p>
+            <% end %>
 
 
 
@@ -82,12 +88,9 @@
               </div>
             <% end %>
 
-            <% post.comments.to_a.reverse.each do |comment| %>
-              <% p comment %>
-              <p class="card-text"><%= simple_format(comment.message) %></p>
-              <p class="card-text"><%= simple_format(comment.email) %></p>
-            <% end %>
+
           </div>
+      </div>
 
         </div>
       </div>
