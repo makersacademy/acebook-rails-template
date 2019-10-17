@@ -47,11 +47,11 @@
             <% post.likes.to_a.each do %>
               <% @like_count += 1 %>
             <% end %>
-            <%= @like_count %>
+            <%= @like_count == 0 ? "" : @like_count %>
           </div>
 
           <div id="post-comments" style="flex:auto">
-            <%= link_to "Comments", "#", class: "comment-button", id: "comment-button-#{post.id}" %>
+            <%= link_to "#{post.comments.count != 0 ? pluralize(post.comments.count, 'comment'): 'comment'}", "#", class: "comment-button", id: "comment-button-#{post.id}" %>
           </div>
 
           <% if post.user.id == current_user.id %>
@@ -71,9 +71,8 @@
           <div id="comment-options-<%= post.id %>" class="comment-options">
 
             <% post.comments.find_each do |comment| %>
-              <% p comment %>
               <p><%= comment.message %></p>
-              <p><%= time_ago_in_words(post.updated_at) %> ago<%= comment.email %>, </p>
+              <p><small><i><%= time_ago_in_words(post.updated_at) %> ago by <%= comment.email %></i></small></p>
             <% end %>
 
 
