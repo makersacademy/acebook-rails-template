@@ -12,7 +12,9 @@
           <tr class="header">
             <td style="width: 5%">
               <% if post.user.avatar.attached? %>
-                <%= image_tag post.user.avatar.variant(resize: "50x50").processed %>
+                <%= image_tag post.user.avatar.variant(resize: "30x30").processed %>
+              <% else %>
+                <%= image_tag("default_profile_pic.png", :style => 'max-width:30px;max-height:30px;') %>
               <% end %>
             </td>
             <td>
