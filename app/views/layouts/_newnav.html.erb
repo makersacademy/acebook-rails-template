@@ -12,26 +12,33 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
+    <% if current_user %>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "posts", posts_url%></li>
-        <li><%= link_to "Find Friends", users_nonfriends_url %></li>
-        <li><%= link_to "Friend Requests", friendships_path %></li>
-        <!-- <li><%= link_to "Update Profile", edit_user_registration_path %></li> -->
-        <!-- <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li> -->
+        <li><%= link_to "timeline", posts_url%></li>
+        <li class="dropdown">
+          <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">friends <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a><%= link_to "find friends", users_nonfriends_url %></a></li>
+            <li><a><%= link_to "friend requests", friendships_path %></a></li>
+            <li><a><%= link_to "manage friends", '/friendships/managefriends/', class:"dropdown-item" %></a></li>
+          </ul>
+        </li>
       </ul>
+      <% end %>
+
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
         <li class="dropdown">
-          <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %><span class="caret"></span></a>
+          <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a><%= link_to "Home", root_path %></a></li>
-            <li><a><%= link_to "Posts", posts_path %></a></li>
-            <li><a><%= link_to "Find Friends", users_nonfriends_url %></a></li>
-            <li><a><%= link_to "Friend Requests", friendships_path %></a></li>
+            <li><a><%= link_to "home", root_path %></a></li>
+            <li><a><%= link_to "timeline", posts_path %></a></li>
+            <li><a><%= link_to "find friends", users_nonfriends_url %></a></li>
+            <li><a><%= link_to "friend requests", friendships_path %></a></li>
             <li role="separator" class="divider"></li>
-            <li><a><%= link_to "Update Profile", edit_user_registration_path %></a></li>
-            <li><a><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></a></li>
+            <li><a><%= link_to "update profile", edit_user_registration_path %></a></li>
+            <li><a><%= link_to "sign out", destroy_user_session_path, method: :delete %></a></li>
           </ul>
         </li>
         <% else %>
