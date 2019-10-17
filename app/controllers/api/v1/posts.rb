@@ -35,7 +35,7 @@ module API
         desc "Add post"
         params do
           requires :message, type: String, desc: "message"
-          requires :user_id, type: String, desc: "user_id"
+          # requires :user_id, type: String, desc: "user_id"
         end
         post "" do
           Post.create(permitted_params)
