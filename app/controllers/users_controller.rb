@@ -16,7 +16,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-  
+    if user_params[:profile_photo] != nil
+      @user.profile_photo.attach(params[:profile_photo])
+      end
+
     begin
       if @user.save
         flash[:success] = 'You have signed up! Please log in to continue'
@@ -32,8 +35,8 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:id, :first_name, :last_name, :email,
-                                :password, :password_confirmation)
-                                
+                                :password, :password_confirmation, :profile_photo )
+
   end
 
 end
