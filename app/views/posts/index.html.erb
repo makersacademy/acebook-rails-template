@@ -27,28 +27,23 @@
         by <%= @post_creator.firstname + " " + @post_creator.surname %>
      </p>
 
+      <span class='parent-likes'>
+        <span class="like_count" <% post.id %> >
+          <%= post.get_likes.size %> &#128077
+        </span>
 
-
-
-    <span class='parent-likes'>
-      <span class="like_count" <% post.id %> >
-        <%= post.get_likes.size %> &#128077
-      </span>
-
-      <a>
-        <% if current_user.liked? post %>
-          <div> <%= link_to like_post_path(post, 'toggle'), class: "liked-button",
-          method: :put, remote: :true do %> Liked </div>
-          <% end %>
-        <% else %>
-          <div> <%= link_to like_post_path(post, 'toggle'), class: "like-button",
-            method: :put, remote: :true do %> Like </div>
+        <a>
+          <% if current_user.liked? post %>
+            <div> <%= link_to like_post_path(post, 'toggle'), class: "liked-button",
+            method: :put, remote: :true do %> Liked </div>
             <% end %>
-        <% end %>
-      </a>
-    </span>
-
-
+          <% else %>
+            <div> <%= link_to like_post_path(post, 'toggle'), class: "like-button",
+              method: :put, remote: :true do %> Like </div>
+              <% end %>
+          <% end %>
+        </a>
+      </span>
 
   <p><%= link_to 'Show', post_path(post),
     method: :get %>

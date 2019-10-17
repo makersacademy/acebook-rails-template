@@ -11,6 +11,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1.json
   def show
     @album = Album.find(params[:id])
+    respond_to :js, :html, :json
   end
 
   # GET /albums/new

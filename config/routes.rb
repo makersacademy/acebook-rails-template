@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
 
     member do
-      put "like" => "posts#like"
+      put "like" => "albums#like"
     end
   end
 
