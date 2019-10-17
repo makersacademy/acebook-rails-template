@@ -69,7 +69,7 @@
         </div>
 
           <div id="comment-options-<%= post.id %>" class="comment-options">
-            <%= link_to 'Show', post, class: "card-link" %>
+
 
 
             <%= form_with model: @comments, url: '/posts/' + post.id.to_s + '/comments', method: "post", local: true do |form| %>
@@ -88,6 +88,7 @@
               <p class="card-text"><%= simple_format(comment.email) %></p>
             <% end %>
           </div>
+
         </div>
       </div>
     </div>
