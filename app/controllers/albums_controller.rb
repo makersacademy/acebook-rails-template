@@ -68,6 +68,16 @@ class AlbumsController < ApplicationController
     redirect_to albums_url
   end
 
+  def like
+    @album = Album.find(params[:id])
+
+    if current_user.liked? @album
+      @album.unliked_by current_user
+    else
+      @album.liked_by current_user
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album
