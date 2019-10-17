@@ -2,6 +2,8 @@ class Album < ApplicationRecord
   belongs_to :user
   has_many_attached :images
 
+  acts_as_votable
+
   validates :title, presence: true
   validates :body, presence: true
   validate :image_type
