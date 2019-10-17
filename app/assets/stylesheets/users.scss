@@ -3,6 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .jumbotron{
-    background-color: lightseagreen;
+    background-color: rgb(175, 189, 212);
+}
 
+#textarea {
+width: 50%
+}
+
+#post {
+  border-radius: 10px;
+  color: red;
 }
