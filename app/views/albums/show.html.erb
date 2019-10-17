@@ -22,6 +22,10 @@
   <%= @album.body %>
 </p>
 
+
+
+
+
 <% if @album.user_id == current_user.id %>
   <%= link_to 'Edit', edit_album_path(@album) %>
 <% end %>
