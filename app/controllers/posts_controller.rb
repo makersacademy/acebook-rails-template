@@ -80,7 +80,7 @@ class PostsController < ApplicationController
   end
 
   # Javascript helper methods
-  def post_options
+  def comment_options
     respond_to do |format|
       format.js
     end

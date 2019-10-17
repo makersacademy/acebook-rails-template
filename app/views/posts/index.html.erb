@@ -39,11 +39,9 @@
           <% end %>
         </div>
 
-        <div class="footer">
+        <div id="footer-top-container" style="display:flex; align-items: center; justify-content: center; ">
 
-          <%= link_to "Actions", "#", class: "actions-button", id: "action-button-#{post.id}" %>
-
-          <div>
+          <div id="post-likes" style="flex:auto " >
             <%= link_to(image_tag("thumbs-up-circle-blue-512.png", :style => 'max-width:100%;max-height: 17px;'), post_like_path(post.id, current_user.id), :method => :patch) %>
             <% @like_count = 0 %>
             <% post.likes.to_a.each do %>
@@ -52,13 +50,27 @@
             <%= @like_count %>
           </div>
 
-          <div id="post-options-<%= post.id %>" class="post-options">
+          <div id="post-comments" style="flex:auto">
+            <%= link_to "Comments", "#", class: "comment-button", id: "comment-button-#{post.id}" %>
+          </div>
+
+          <% if post.user.id == current_user.id %>
+            <div style="flex:auto">
+            <%= link_to "Edit", "#", class: "edit-button", id: "edit-button-#{post.id}" %>
+            </div>
+
+            <div style="flex:auto">
+            <%= link_to 'Destroy', post, method: :delete, data: {confirm: 'Are you sure?'}, class: "card-link" %>
+            </div>
+          <% end %>
+
+          </div>
+
+        </div>
+
+          <div id="comment-options-<%= post.id %>" class="comment-options">
             <%= link_to 'Show', post, class: "card-link" %>
 
-            <% if post.user.id == current_user.id %>
-              <%= link_to "Edit", "#", class: "edit-button", id: "edit-button-#{post.id}" %>
-              <%= link_to 'Destroy', post, method: :delete, data: {confirm: 'Are you sure?'}, class: "card-link" %>
-            <% end %>
 
             <%= form_with model: @comments, url: '/posts/' + post.id.to_s + '/comments', method: "post", local: true do |form| %>
               <div class="input-group mb-3">
