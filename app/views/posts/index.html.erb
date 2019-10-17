@@ -44,7 +44,7 @@
           <%= link_to "Actions", "#", class: "actions-button", id: "action-button-#{post.id}" %>
 
           <div>
-            <%= link_to (image_tag("thumbs-up-circle-blue-512.png", :style => 'max-width:100%;max-height: 17px;')), post_like_path(post.id, current_user.id), :method => :patch %>
+            <%= link_to(image_tag("thumbs-up-circle-blue-512.png", :style => 'max-width:100%;max-height: 17px;'), post_like_path(post.id, current_user.id), :method => :patch) %>
             <% @like_count = 0 %>
             <% post.likes.to_a.each do |like| %>
               <% @like_count += 1 %>
