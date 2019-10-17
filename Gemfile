@@ -6,7 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 gem 'acts_as_votable'
+gem "aws-sdk-s3", require: false
 gem 'clearance', '~> 1.17.0'
+gem "figaro"
 gem 'jquery-rails'
 gem 'rake'
 gem 'rubocop', '0.71.0'
