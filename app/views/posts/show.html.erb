@@ -1,9 +1,5 @@
 <%= render 'layouts/navbar' %>
 
-
-<div class="btn btn-info btn-lg">
-      New post!!
-    </div>
 <h3>Post</h3>
 <%= simple_format(@post.message) %>
 <% user = User.find_by(id: @post.user_id) %>

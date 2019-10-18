@@ -13,6 +13,10 @@ class UsersController < ApplicationController
   end
 
   def new
+    if logged_in?
+      redirect_to user_path(current_user)
+    end
+
     @user = User.new
   end
 
@@ -36,11 +40,28 @@ class UsersController < ApplicationController
     render 'new'
   end
 
+  def edit
+    login_required
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    if @user.update_attributes(user_params)
+      flash[:success] = "You profile has been updated!"
+    else
+      render 'edit'
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:id, :first_name, :last_name, :email,
                                 :password, :password_confirmation, :profile_photo )
+  end
 
+  def update_params
+    params.require(:user).permit(:first_name, :last_name, :email, :profile_photo)
   end
 
 end
