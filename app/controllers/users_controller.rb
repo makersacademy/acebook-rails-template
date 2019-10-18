@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(user_params)
-      flash[:success] = "You profile has been updated!"
+      flash.now[:success] = "You profile has been updated!"
     else
       render 'edit'
     end
