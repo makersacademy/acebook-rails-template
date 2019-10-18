@@ -1,7 +1,8 @@
-# Acebook - Dream Journal/Learnings
+# Acebook - Log & Learnings
 
-[Link to Trello Board](https://trello.com/b/IbAlAAMg/acebook)
-[Link to Heroku App](https://mighty-woodland-36916.herokuapp.com/users/sign_in)
+- [Link to Trello Board](https://trello.com/b/IbAlAAMg/acebook)
+- [Link to Heroku App](https://mighty-woodland-36916.herokuapp.com/users/sign_in)
+- [Link to ActiveStorage Blog Post](https://medium.com/@daniel.gyi/integrating-active-storage-with-your-existing-devise-framework-rails-bf9fc65a43c1)
 
 ## Day 1
 
