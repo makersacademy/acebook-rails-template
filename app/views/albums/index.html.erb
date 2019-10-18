@@ -16,7 +16,6 @@
     <% @albums.each do |album| %>
     <% @user_id = album.user_id.to_i %>
       <tr>
-        <td><%= album.post %></td>
         <td><%= album.title %></td>
         <td><%= album.body %></td>
         <td><%= link_to 'Show', album %></td>
