@@ -10,6 +10,6 @@ $('.like-button').on('ajax:success', function() {
   console.log("trigger change to liked")
   $(this).parent().parent().find('.like_count')
   .html('<%= @post.get_likes.size %> &#128077');
-  $(this).closest('.like-button').html('Liked');
+  $(this).closest('.like-button').html('Unlike');
   $(this).closest('.like-button').addClass('liked-button').removeClass('like-button');
 });

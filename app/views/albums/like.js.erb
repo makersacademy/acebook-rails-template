@@ -1,0 +1,15 @@
+$('.liked-button').on('ajax:success', function() {
+  console.log("trigger change to like")
+  $(this).parent().parent().find('.like_count')
+  .html('<%= @album.get_likes.size %> &#128077');
+  $(this).closest('.liked-button').html('Like');
+  $(this).closest('.liked-button').addClass('like-button').removeClass('liked-button');
+});
+
+$('.like-button').on('ajax:success', function() {
+  console.log("trigger change to liked")
+  $(this).parent().parent().find('.like_count')
+  .html('<%= @album.get_likes.size %> &#128077');
+  $(this).closest('.like-button').html('Unlike');
+  $(this).closest('.like-button').addClass('liked-button').removeClass('like-button');
+});

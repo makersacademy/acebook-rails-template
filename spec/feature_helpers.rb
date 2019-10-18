@@ -40,6 +40,12 @@ def post_something
   click_button "Submit"
 end
 
-# def upload_photo
-#   attach_file("Choose Files", Rails.root + "spec/Krispy_creme.jpeg")
-# end
+def create_album
+  visit "/albums"
+  click_link "New Album"
+  fill_in "album[name]", with: "POTATE"
+  fill_in "album[title]", with: "a few potates"
+  fill_in "album[body]", with: "yep"
+  attach_file("album[images][]", Rails.root + "spec/fixtures/potate.jpg")
+  click_button "Create Album"
+end

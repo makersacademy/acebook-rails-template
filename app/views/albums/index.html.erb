@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Post</th>
       <th>Title</th>
       <th>Body</th>
       <th colspan="3"></th>
@@ -16,7 +15,6 @@
     <% @albums.each do |album| %>
     <% @user_id = album.user_id.to_i %>
       <tr>
-        <td><%= album.post %></td>
         <td><%= album.title %></td>
         <td><%= album.body %></td>
         <td><%= link_to 'Show', album %></td>
@@ -24,6 +22,7 @@
         <td><%= link_to 'Edit', edit_album_path(album) %></td>
         <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
+        <td><%= album.get_likes.size %> &#128077</td>
       </tr>
     <% end %>
   </tbody>
@@ -32,3 +31,4 @@
 <br>
 
 <%= link_to 'New Album', new_album_path %>
+<%= link_to 'Back', posts_path %>
