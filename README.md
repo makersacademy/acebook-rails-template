@@ -1,29 +1,47 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/d34d8b3ddc9bac34bbe4/maintainability)](https://codeclimate.com/github/DanGyi23/acebook-rails-template-railz-rude-boiz/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d34d8b3ddc9bac34bbe4/test_coverage)](https://codeclimate.com/github/DanGyi23/acebook-rails-template-railz-rude-boiz/test_coverage)
+# Acebook - READEME
 
-(we need to remove coverage from GitIgnore to show test coverage for code climate above)
+An original social networking application developed in rails
 
+## Getting Started
 
-# README
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Prerequisites
 
-Things you may want to cover:
+Ruby version 2.6.3 is used. To check which version of Ruby you have installed
+```
+$ ruby -v
+```
 
-* Ruby version
+Rails version 6.0.0 is used. To check which version of Rails you have installed
+```
+$ rails -v
+```
 
-* System dependencies
+### Installing
 
-* Configuration
+To get a development env running:
 
-* Database creation
+Install ImageMagick to handle profile images in the program
+```
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"  - brew install ImageMagick
+```
 
-* Database initialization
+Install gems
 
-* How to run the test suite
+```
+$ bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Create local database with postgresql
+```
+$ rails db:migrate
+```
 
-* Deployment instructions
+Start local server and visit localhost:3000 in browser to view Acebook homepage
+```
+$ rails server
+```
 
-* ...
+![homepage](app/assets/images/homepage.png "homepage")
