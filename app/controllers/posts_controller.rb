@@ -19,11 +19,11 @@ class PostsController < ApplicationController
     login_required
     @post = Post.find(params[:id])
     if !authenticated?
-      redirect_to posts_url
+      redirect_to user_path(current_user)
       flash[:danger] = 'You can only update your own posts'
     end
     if !@post.editable?
-      redirect_to posts_url
+      redirect_to user_path(current_user)
       flash[:danger] = 'This post is no longer editable'
     end
   end
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
     login_required
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to posts_url
+      redirect_to user_path(current_user)
     else
       render 'edit'
     end
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if !authenticated?
-      redirect_to posts_path
+      redirect_to user_path(current_user)
       flash[:danger] = 'You can only delete your own posts'
     else
       @post.destroy
