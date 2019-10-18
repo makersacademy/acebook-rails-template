@@ -1,5 +1,20 @@
 
 
+ <!-- Need below doctype etc -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ <!-- Need put our own css file below this bootstrap link above ^^ -->
+    <link rel="stylesheet" href="posts-index.css">
+  </head>
+
+
+
+
 <!-- <div class ="container"> -->
 <div class="container-fluid gedf-wrapper">
   <div class="row">
@@ -34,8 +49,12 @@
     </div>
 
 
-    <div class="card gedf-card">
-      <% @posts.each do |post| %>
+    <div class="card-container">  
+    <% @posts.each do |post| %>
+
+    <div class="card mb-4 box-shadow">      
+
+
       <% @post_creator_id = post.user_id.to_i %>
       <% @post_creator = User.find_by(id: @post_creator_id) %>
       <div class="card-header">
@@ -61,24 +80,15 @@
 
       <div class="card-body">
 
-        <a class="card-link" >
+
           <h5 class="card-title"><%= simple_format post.message %></h5>
-        </a>
+
 
 
       </div>
 
 
-
-
-
-
-
-
-
-
-
-
+      <div class='container'>
 
       <span class='parent-likes'>
         <span class="like_count" <% post.id %> >
@@ -110,26 +120,58 @@
             <% end %>
           </p>
 
-          <h2>Commments:</h2>
-          <% post.comments.each do |comment| %>
-          <% @comment_creator = User.find_by(id: comment.user_id) %>
-          <p><%= @comment_creator.firstname + ' ' +  @comment_creator.surname %>
-            commented: <%= comment.body %> on <%= comment.created_at %></p><br>
-            <% end %>
 
-            <h2>Add a comment:</h2>
-            <%= form_with(model: [ post, post.comments.build ], local: true) do
-            |form| %>
-            <p>
-              <%= form.text_area :body %>
-            </p>
-            <p>
-              <%= form.submit %>
-            </p>
-            <% end %>
+
+<h4>Commments:</h4>
+         <% post.comments.each do |comment| %>
+         <% @comment_creator = User.find_by(id: comment.user_id) %>
+         <div class="row">
+
+
+<div class="col-sm-1">
+<div class="thumbnail">
+
+
+                <% if @comment_creator.profile_picture.attached? %>
+                <%= image_tag @comment_creator.profile_picture.variant(resize: '30x30'), :style => "border-radius: 50%" %>
+                <% else %>
+                <%= image_tag('totally_normal_human_dude.jpg', size: '30x30', style: "border-radius: 50%") %>
+                <% end %>
+</div><!-- /thumbnail -->
+</div><!-- /col-sm-1 -->
+</div>
+<div class="col-sm-5">
+<div class="panel panel-default">
+<div class="panel-heading">
+<strong><%= @comment_creator.firstname + ' ' +  @comment_creator.surname %> <%= comment.created_at %>
+</strong>
+</div>
+<div class="panel-body">
+ commented: <%= comment.body %>
+</div><!-- /panel-body -->
+</div><!-- /panel panel-default -->
+</div><!-- /col-sm-5 -->
+          <% end %>
+
+ <h5>Add a comment:</h5>
+                  <%= form_with(model: [ post, post.comments.build ], local: true) do
+                  |form| %>
+                  <p>
+                    <%= form.text_area :body %>
+                  </p>
+                  <p>
+                    <%= form.submit %>
+                  </p>
+
 
             <% end %>
 
           </div>
-          <div>
+          </div>
+
+ 
+          <% end %>
+          </div>
+
+
 <!-- </div> -->

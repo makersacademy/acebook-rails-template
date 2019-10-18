@@ -4,7 +4,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can update their profile" do
     register
     visit "/posts"
-    click_link "Update profile"
+    click_link "Update Profile"
     fill_in "Email", with: "post-toast@example.com"
     fill_in "Password", with: "1234"
     click_button "Update User"
