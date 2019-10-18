@@ -2,8 +2,13 @@ class UsersController < ApplicationController
   def show
     login_required
     @user = User.find_by(id: params[:id])
-
     @posts = Post.where("recipient_id = #{@user.id}").order(:created_at).reverse_order
+    
+    @profile_photo = nil
+    if @user.profile_photo.attached?
+      @profile_photo = url_for(@user.profile_photo)
+    else @profile_photo = "/anonymous_profile_phot.jpg"
+    end
 
   end
 
@@ -13,12 +18,12 @@ class UsersController < ApplicationController
 
   def index
     login_required
-    @users = User.all
+    @users = User.all.order(last_name: :asc)
   end
 
   def create
     @user = User.new(user_params)
-  
+
     begin
       if @user.save
         flash[:success] = 'You have signed up! Please log in to continue'
@@ -34,8 +39,8 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:id, :first_name, :last_name, :email,
-                                :password, :password_confirmation)
-                                
+                                :password, :password_confirmation, :profile_photo )
+
   end
 
 end
