@@ -6,11 +6,7 @@
 
 Welcome to Acebook!  A social media extravaganza of amazing features including:
 
-Posts
-Comments
-Profile Pictures
-Users who can log in and out
-Some other stuff!
+Posts, comments, profile pictures, users who can log in and out and some other stuff!
 
 All created with the help of Ruby on Rails, Heroku, Travic CI, Capybara, Rspec, Rubocop and Simplecov.
 
