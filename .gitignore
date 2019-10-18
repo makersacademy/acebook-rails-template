@@ -20,4 +20,12 @@
 /node_modules
 /yarn-error.log
 
+/coverage
+
+/storage
+
 .byebug_history
+
+/notes
+
+.DS_Store

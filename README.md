@@ -1,5 +1,19 @@
 # AceBook
 
+[![Build Status](https://travis-ci.com/etelish/acebook-Team-Meme.svg?branch=master)](https://travis-ci.com/etelish/acebook-Team-Meme)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a59816c38f3b0ddeee33/test_coverage)](https://codeclimate.com/github/etelish/acebook-Team-Meme/test_coverage)
+
+
+## Team MEME (Mark, Eithel, Mike, Elsie)
+
+Our team workflow process is administered using this Trello board:
+https://trello.com/b/LngJ2uHN/acebook-team-meme
+
+
+See detailed project updates on our [wiki](https://github.com/etelish/acebook-Team-Meme/wiki).
+
+<br>
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
