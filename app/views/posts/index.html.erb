@@ -1,28 +1,26 @@
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-<%= link_to edit_user_path(current_user.id) do %>
-  Update profile
-<% end %>
-<%= link_to albums_path do %>
-  View photo albums
-<% end %>
-     
-                                      
+
+<!-- <div class ="container"> -->
+<table>
+
+  
+  <tbody>
+      <tr>
+        <th scope="row">1</th>
+
  <% @posts.each do |post| %>
 
     <% @post_creator_id = post.user_id.to_i %>
     <% @post_creator = User.find_by(id: @post_creator_id) %>
-                                      
-                                      
+
+
     <p><% if @post_creator.profile_picture.attached? %>
           <%= image_tag @post_creator.profile_picture.variant(resize: '100x100!'), :style => "border-radius: 50%" %>
 
         <% else %>
           <%= image_tag('totally_normal_human_dude.jpg', size: '100x100', style: "border-radius: 50%") %>
         <% end %>
-       
+
         <%= simple_format post.message %></br>Posted on: <%= post.created_at %>
         by <%= @post_creator.firstname + " " + @post_creator.surname %>
      </p>
@@ -79,3 +77,6 @@
     <% end %>
 
   <% end %>
+  </tr>
+  </table>
+<!-- </div> -->

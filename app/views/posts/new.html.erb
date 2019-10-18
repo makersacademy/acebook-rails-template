@@ -1,5 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+<h3>Message</h3>
+
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_area :message %>
   <%= form.submit "Submit" %>
 <% end %>
+</body>
+</html>

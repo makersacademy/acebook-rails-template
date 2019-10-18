@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'acts_as_votable'
+gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-sass'
 gem 'clearance', '~> 1.17.0'
 gem 'jquery-rails'
 gem 'rake'
