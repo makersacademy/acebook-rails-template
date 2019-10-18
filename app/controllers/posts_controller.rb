@@ -15,7 +15,6 @@ class PostsController < ApplicationController
     @posts = Post.all.sort_by(&:created_at).reverse
     @users = User.all
     respond_to :js, :html, :json
-    p ENV["AWS_BUCKET"]
   end
 
   def show

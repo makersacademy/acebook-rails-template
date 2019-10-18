@@ -11,6 +11,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1.json
   def show
     @album = Album.find(params[:id])
+    respond_to :js, :html, :json
   end
 
   # GET /albums/new
@@ -66,6 +67,16 @@ class AlbumsController < ApplicationController
     @image = ActiveStorage::Attachment.find(params[:id])
     @image.purge
     redirect_to albums_url
+  end
+
+  def like
+    @album = Album.find(params[:id])
+
+    if current_user.liked? @album
+      @album.unliked_by current_user
+    else
+      @album.liked_by current_user
+    end
   end
 
   private

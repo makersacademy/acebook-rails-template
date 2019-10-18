@@ -22,6 +22,26 @@
   <%= @album.body %>
 </p>
 
+    <span class='parent-likes'>
+      <span class="like_count" <% @album.id %> >
+        <%= @album.get_likes.size %> &#128077
+      </span>
+
+      <a>
+        <% if current_user.liked? @album %>
+          <div> <%= link_to like_album_path(@album, 'toggle'), class: "liked-button",
+          method: :put, remote: :true do %> Unlike </div>
+          <% end %>
+        <% else %>
+          <div> <%= link_to like_album_path(@album, 'toggle'), class: "like-button",
+            method: :put, remote: :true do %> Like </div>
+            <% end %>
+        <% end %>
+      </a>
+    </span>
+
+    <br>
+
 <% if @album.user_id == current_user.id %>
   <%= link_to 'Edit', edit_album_path(@album) %>
 <% end %>
