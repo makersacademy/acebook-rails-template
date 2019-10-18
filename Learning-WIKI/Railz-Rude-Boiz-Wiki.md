@@ -135,24 +135,40 @@
 
 #### Objectives
 
+- Comments on posts
+- Update front end so buttons aren't buggy, and cards aren't all over the place
+
 #### Learnings
+
+- Comments are very similar to posts, in that they have a many to many relationship, and you can use a simple rails CRUD framework to implement. We actually decided to use JQuery to update the page for both comments and posts, so that the page reloads using JQuery. We had to set up controller/migrations/model for comments.
 
 #### Plan For Tomorrow
 
+- Likes! (y)
 
 ## Day 9
 
 #### Objectives
 
+- Implement likes on posts
+
 #### Learnings
+
+- We came up with a really cool way of customising the update (patch) route in rails, by creating private methods. Each like was made user-specific, and toggled as create/delete, depending on whether the user-post-like association already existed in the database we created. Example [here](https://github.com/DanGyi23/acebook-rails-template-railz-rude-boiz/blob/master/app/controllers/likes_controller.rb).
 
 #### Plan For Tomorrow
 
+- Test deployment on Heroku and update readme/tidy up some front end elements
 
 ## Day 10
 
 #### Objectives
 
+- Make sure Heroku S3 file storage for active storage is working.
+- If we have time, implement a feature that creates a notification on new chat messages
+
 #### Learnings
 
-#### Plan For Tomorrow
+- Implementing codeclimate was a pleasant surprise, we had good coverage and maintainability!
+- For a 2 week project we managed to get a bunch of features implemented fairly quickly with rails, but without a lot of the action modules, we'd have spent a load of time configuring the functionality. We also found that devise had its limitations with regards to customisation, as did active storage.
+- For quickly creating apps, rails is cool, but limited.

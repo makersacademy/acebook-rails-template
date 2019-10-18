@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
-gem "aws-sdk-s3", require: false
+gem "aws-sdk-s3"
 # custom gems for action cable
 # gem 'bootstrap'
 gem 'jquery-rails'
