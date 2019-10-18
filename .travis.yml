@@ -1,6 +1,6 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=00d7c4b3b6dc5d82b6acec8a801381c5c2652c0326dbc3407c147799f0e7757f
+    - CC_TEST_REPORTER_ID=a08074f983022ffbb6f627f4e062fd4ec7b19f56f93034f468198c8bb7f26848
     
 before_script:
   - psql -c "CREATE DATABASE pgapp_test;" -U postgres

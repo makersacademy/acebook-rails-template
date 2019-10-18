@@ -1,0 +1,5 @@
+# Add configuration values here, as shown below.
+
+AWS_ACCESS_KEY_ID: "AKIAT3AUDYFNLEMMNHEG"
+AWS_SECRET_ACCESS_KEY: "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"
+AWS_BUCKET: "acebook-team-meme"
