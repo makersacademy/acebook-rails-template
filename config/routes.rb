@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   resources :users
   get    'signup' =>  'users#new'
   post   'signup' =>  'users#create'
-  get    'profile' => 'users#show'
+  get    'profile' => 'users#edit'
+  post    'profile' => 'users#update'
 
   root 'sessions#new'
 
