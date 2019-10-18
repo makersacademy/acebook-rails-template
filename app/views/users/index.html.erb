@@ -1,13 +1,14 @@
 <%= render 'layouts/navbar' %>
 
 <h1 style="font-size:28px" class="center">User Directory</h1>
-
-  <div class="container">
-    <% @users.each do |user| %>
-      <div class="alert alert-primary" role="alert">
-      <p style="font-size:14px">Name: <%= user.first_name%> <%= user.last_name%></p>
-       <p style="font-size:12px">Email: <%= user.email%></p>
-       <%= link_to 'Visit Wall', user_path(user) %>
-    </div>
-     <% end %>
+<br>
+<div class="container">
+  <% @users.each do |user| %>
+  <div id="holder">
+    <p style="font-size:14px">Name: <%= user.first_name%> <%= user.last_name%></p>
+    <p style="font-size:12px">Email: <%= user.email%></p>
+    <%= link_to 'Visit Wall', user_path(user) %>
   </div>
+  <br>
+  <% end %>
+</div>
