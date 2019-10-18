@@ -36,11 +36,9 @@
 
         <div id="edit-post-<%= post.id %>" class="edit-options">
           <%= form_with model: @post, url: "/posts/#{post.id}/", method: :patch, local: true do |form| %>
-            <div class="input-group mb-3">
+            <div class="form-inline">
               <%= form.text_field :message, value: post.message, class: "form-control" %>
-              <div class="input-group-append">
-                <%= form.submit "Update", class: "btn btn-secondary" %>
-              </div>
+              <%= form.submit "Update", class: "btn btn-secondary" %>
             </div>
           <% end %>
         </div>
@@ -95,17 +93,13 @@
 
 
             <%= form_with model: @comments, url: '/posts/' + post.id.to_s + '/comments', method: "post", local: true do |form| %>
-              <div class="input-group mb-3">
+              <div class="form-inline">
+                </br>
                 <%= form.text_field :message, placeholder: "Type a comment", class: "form-control", id: "message_body" %>
-                <% p params %>
-                <div class="input-group-append">
-                  <%= form.submit "Send", class: "btn btn-secondary" %>
-                </div>
+                <%= form.submit "Send", class: "btn btn-secondary" %>
               </div>
             <% end %>
           </div>
-
-
         </div>
       </div>
 
