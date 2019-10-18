@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
   post 'messages', to: 'messages#create'
-  root 'users#show'
+  root 'posts#index'
   get '/users/nonfriends', controller: 'users', action: 'nonfriends'
   get '/friendships/managefriends', controller: 'friendships', action: 'managefriends'
 
