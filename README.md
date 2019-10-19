@@ -1,6 +1,7 @@
 # AceBook
 
 [![Build Status](https://travis-ci.com/etelish/acebook-Team-Meme.svg?branch=master)](https://travis-ci.com/etelish/acebook-Team-Meme)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a59816c38f3b0ddeee33/test_coverage)](https://codeclimate.com/github/etelish/acebook-Team-Meme/test_coverage)
 
 
 ## Team MEME (Mark, Eithel, Mike, Elsie)
