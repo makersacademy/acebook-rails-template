@@ -57,7 +57,7 @@ class PostsController < ApplicationController
       flash[:danger] = 'You can only delete your own posts'
     else
       @post.destroy
-      redirect_to posts_path
+      redirect_to user_path
     end
   end
 
