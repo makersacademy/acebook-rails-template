@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def index
       if !current_user
-          redirect_to log_in
+          redirect_to sign_in
           else
     @posts = Post.all
     end
