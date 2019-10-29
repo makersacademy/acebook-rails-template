@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-
+  devise_scope :user do
+  match '/sign_up' => "devise/sessions#new", :as => :login, :via => [:get, :post]
+end
 end
