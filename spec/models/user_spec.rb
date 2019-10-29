@@ -1,6 +1,7 @@
-# require 'rails_helper'
-#
-# RSpec.describe User, type: :model do
-#     validates_email_realness_of :email
-#   pending "add some examples to (or delete) #{__FILE__}"
-# end
+require 'rails_helper'
+require "validates_email_format_of/rspec_matcher"
+
+RSpec.describe User, type: :model do
+
+     it { should validate_email_format_of(:email).with_message('is not looking good') }
+   end
