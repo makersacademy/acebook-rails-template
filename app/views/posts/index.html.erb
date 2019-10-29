@@ -1,5 +1,10 @@
+
+<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+
+
 <% @posts.reverse_each do |post| %>
   <p><%= post.message %> <%= post.updated_at %></p>
+
 <% end %>
 
 <%= link_to new_post_path do %>
