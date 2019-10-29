@@ -1,3 +1,6 @@
+[![Codeship Status for adamheffer/acebook-StrattonMakemont](https://app.codeship.com/projects/a048fe80-dbcc-0137-d75e-5e8489b72046/status?branch=master)](https://app.codeship.com/projects/371486)
+
+
 # AceBook
 
 REQUIRED INSTRUCTIONS:
