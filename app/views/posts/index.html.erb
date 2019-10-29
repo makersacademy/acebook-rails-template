@@ -1,9 +1,11 @@
-<h1> This is the homepage </h1>
+<h1> Welcome to the Acebook Avengers homepage</h1>
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
 
+<% if current_user %>
 <%= link_to new_post_path do %>
   New post
+  <% end %>
 <% end %>
