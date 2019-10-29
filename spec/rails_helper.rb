@@ -58,5 +58,10 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-
+  def new_user_sign_in
+    connection = PG.connect(dbname: 'pgapp_test')
+    connection.exec("TRUNCATE users;")
+    user = User.create(email: 'tsest@test.com', password: "password", password_confirmation: "password")
+    sign_in user
+  end
 end
