@@ -4,16 +4,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    if user_signed_in?
       @post = Post.create(post_params)
-    else
-      redirect_to '/'
-    end
       redirect_to posts_url
   end
 
   def index
-    @posts = Post.all if user_signed_in?
+    @posts = Post.all
   end
 
   private
