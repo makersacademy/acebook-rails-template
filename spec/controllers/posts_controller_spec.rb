@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+
+  before :each do
+      allow(controller).to receive(:authenticate_user!).and_return(true)
+    end
+
   describe "GET /new " do
     it "responds with 200" do
       get :new
