@@ -9,11 +9,8 @@ class PostsController < ApplicationController
   end
 
   def index
-      if !current_user
-          redirect_to sign_in
-          else
+   
     @posts = Post.all
-    end
   end
 
   private
