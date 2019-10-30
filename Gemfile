@@ -52,3 +52,4 @@ gem 'validates_email_format_of'
 gem 'rails-helper', '~> 0.1.0'
 gem 'pry'
 gem "launchy"
+gem "orderly"

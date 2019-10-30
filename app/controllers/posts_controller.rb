@@ -11,13 +11,13 @@ class PostsController < ApplicationController
   end
 
   def index
-   
-    @posts = Post.all
+
+    @posts = Post.all.reverse
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :time)
   end
 end
