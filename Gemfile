@@ -49,3 +49,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'validates_email_format_of'
+gem 'rails-helper', '~> 0.1.0'
+gem 'pry'
+gem "launchy"
