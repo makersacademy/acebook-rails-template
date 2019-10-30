@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, :email_format => {:message => 'is not looking good'}
+
 end
