@@ -3,6 +3,8 @@
 <% @posts.each do |post| %>
   <p><%= simple_format(post.message)%></p>
   <p><%= post.created_at%></p>
+  <p><%= link_to "delete", "/posts/#{@post}",:data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
 <% end %>
 
 <% if current_user %>
