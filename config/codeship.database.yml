@@ -27,4 +27,4 @@ default: &default
 
 test:
   <<: *default
-  database: test  
+  database: pgapp_test  

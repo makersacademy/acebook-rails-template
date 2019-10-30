@@ -41,8 +41,8 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
-    bcrypt (3.1.13)
     ast (2.4.0)
+    bcrypt (3.1.13)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.1)
@@ -189,9 +189,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.8)
       execjs (>= 0.3.0, < 3)
+    unicode-display_width (1.6.0)
     warden (1.2.7)
       rack (>= 1.0)
-    unicode-display_width (1.6.0)
     web-console (3.5.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -209,8 +209,8 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara (~> 2.13)
-  devise
   cowsay
+  devise
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   parser
