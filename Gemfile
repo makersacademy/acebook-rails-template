@@ -53,3 +53,4 @@ gem 'rails-helper', '~> 0.1.0'
 gem 'pry'
 gem "launchy"
 gem "orderly"
+gem 'simple_form', '~> 3.5'
