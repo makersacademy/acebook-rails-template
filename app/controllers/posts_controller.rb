@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
  # before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :find_post, only: [:edit, :update]
- 
 
-class PostsController < ApplicationController # rubocop:todo Style/Documentation
+
+class PostsController < ApplicationController
   def new
     @post = Post.new
   end
@@ -11,6 +11,14 @@ class PostsController < ApplicationController # rubocop:todo Style/Documentation
   def create
     @post = Post.create(post_params)
     redirect_to posts_url
+  end
+
+  def create
+   if post.likes.create(user: current_user)
+     redirect_to post_redirect(post), :notice => 'Liked!'
+   else
+     redirect_to post_redirect(post), :alert => 'An error prevented you from liking this post!'
+   end
   end
 
   def index
