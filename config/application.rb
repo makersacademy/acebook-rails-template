@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -8,7 +10,7 @@ require 'simple_form'
 Bundler.require(*Rails.groups)
 
 module Acebook
-  class Application < Rails::Application
+  class Application < Rails::Application # rubocop:todo Style/Documentation
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
     config.assets.initialize_on_precompile = false

@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
  # before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :find_post, only: [:edit, :update]
+ 
 
+class PostsController < ApplicationController # rubocop:todo Style/Documentation
   def new
     @post = Post.new
   end
