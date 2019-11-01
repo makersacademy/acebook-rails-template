@@ -1,0 +1,22 @@
+<section class="section">
+	<div class="container">
+		<nav class="level">
+		  <!-- Left side -->
+		  <div class="level-left">
+		    <p class="level-item">
+		        <strong>Actions</strong>
+		    </p>
+		  </div>
+		  <!-- Right side -->
+		  <div class="level-right">
+		  	<p class="level-item">
+		    	<%= link_to "Edit", edit_post_path(@post), class:"button" %>
+		  	</p>
+		  	<p class="level-item">
+				<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
+				</p>
+		  </div>
+		</nav>
+		<hr/>
+
+</section>
