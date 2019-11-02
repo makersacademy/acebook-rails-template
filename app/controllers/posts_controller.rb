@@ -6,7 +6,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    # @post.user linked to the current_user
+    @post = current_user.posts.build(post_params)
+    @post.save
     redirect_to posts_url
   end
 
@@ -17,13 +19,12 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-
     redirect_to posts_path
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
 end

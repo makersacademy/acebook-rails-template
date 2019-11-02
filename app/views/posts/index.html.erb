@@ -4,8 +4,10 @@
 
 <% @posts.reverse_each do |post| %>
   <span style="white-space: pre-line">  <p><%= post.message %> <br><%= post.updated_at %></p></span>
-  <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
- <% end %>
+  <% if current_user == (post.user) %>
+    <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
+  <% end %>
+<% end %>
 
 <%= link_to new_post_path do %>
   New post
