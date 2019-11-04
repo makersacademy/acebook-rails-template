@@ -60,8 +60,9 @@ RSpec.configure do |config|
 
   def new_user_sign_in
     connection = PG.connect(dbname: 'test')
-    connection.exec("TRUNCATE users;")
-    user = User.create(email: 'tsest@test.com', password: "password", password_confirmation: "password")
+    connection.exec('TRUNCATE users, posts;')
+
+    user = User.create(email: 'tsest@test.com', password: 'password', password_confirmation: 'password')
     sign_in user
   end
 
@@ -73,4 +74,5 @@ RSpec.configure do |config|
     fill_in 'Password confirmation', with: 'qwerty'
     click_button 'Sign up'
   end
+
 end
