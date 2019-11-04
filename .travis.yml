@@ -2,7 +2,7 @@ language: ruby
 rvm: 
   - 2.5.0
 services: postgresql
+install: gem install rails
+
 script:
-  — bin/rails db:create
-  — bin/rails db:migrate
   - bundle exec rspec spec
