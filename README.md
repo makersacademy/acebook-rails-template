@@ -29,3 +29,14 @@ First, clone this repository. Then:
 - Pamela Mezue: https://github.com/Mezela
 - Jess Lonsdale: https://github.com/jlonsdale
 - Duncan Skinner: https://github.com/Duncan9099
+
+User Stories:
+
+- Users can sign up
+- Users get errors for incorrect sign ins
+- Users can log in with a username and password
+
+- Users can make posts 
+- Users can view posts and see who made them
+- Users can delete their own posts
+- Users can like posts once
