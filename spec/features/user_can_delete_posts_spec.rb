@@ -1,12 +1,17 @@
 require 'rails_helper'
 
+
 RSpec.feature 'Delete', type: :feature do
   scenario 'user can delete their posts' do
     signing_up
     click_link "New post"
     fill_in "Message", with: "Hello Guys!"
-    click_button "delete"
-
-    expect(page). to have_content "This post was successfully deleted"
+    click_button "Submit"
+    expect(page).to have_content('Hello Guys!')
+    click_link "Delete"
+    accept_confirm do
+      click_link 'OK'
+    end
+    expect(page).to_not have_content "Hello Guys!"
   end
 end
