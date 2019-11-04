@@ -34,6 +34,7 @@ MVP User Stories: (have this working by the end of wednesday)
 
 - Users can sign up
 - Users get errors for incorrect sign ins
+- Users can view profile pages
 - Users can log in with a username and password and log out
 
 - Users can make posts 
@@ -41,12 +42,19 @@ MVP User Stories: (have this working by the end of wednesday)
 - Users can delete their own posts
 - Users can edit posts
 
+- Users can make comments on posts
+- Users can view comments
+
 User Table
 
-ID|Username|Password|Profile|Email|Full Name|Lizard Species|Birthday|
+ID|username|password|profile|email|full_name|lizard_species|birthday|
   
 Post Table
 
-ID|Contents|User ID|Created at|Updated at|
+ID|contents|userID|created_at|updated_at|
+
+Comment Table
+
+ID|postID|contents|userID(the person who made the comment)|created_at|updated_at
  
 
