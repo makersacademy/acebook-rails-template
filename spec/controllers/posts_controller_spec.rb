@@ -35,4 +35,14 @@ RSpec.describe PostsController, type: :controller do
       expect(Post.find_by(content: "Goodbye, world!")).to be
     end
   end
+
+  describe "DELETE /" do
+    it "deletes a post" do
+      post :create, params: { post: { content: "Hello, world!" } }
+      expect(Post.find_by(content: "Hello, world!")).to be
+      postid = Post.find_by(content: "Hello, world!").id
+      delete :destroy, params: { id: postid }
+      expect(Post.find_by(content: "Hello, world!")).to be nil
+    end
+  end
 end
