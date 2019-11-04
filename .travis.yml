@@ -13,7 +13,6 @@ before_script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
   - bundle exec rspec
-  - bundle exec rubocop
 
 script:  
  — bundle exec rspec
