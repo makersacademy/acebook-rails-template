@@ -39,6 +39,5 @@ MVP User Stories:
 - Users can make posts 
 - Users can view posts and see who made them
 - Users can delete their own posts
-- Users can like posts once
 - Users can edit posts
 
