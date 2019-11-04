@@ -1,0 +1,42 @@
+<h1>Create an account</h1>
+
+<%= form_with scope: :user,url: users_path , local: true do |form| %>
+  <p>
+    <%= form.label :username %><br>
+    <%= form.text_field :username %>
+  </p>
+
+  <p>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %>
+  </p>
+
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_field :email%>
+  </p>
+
+  <p>
+    <%= form.label :full_name%><br>
+    <%= form.text_field :full_name%>
+  </p>
+
+  <p>
+    <%= form.label :lizard_species%><br>
+    <%= form.select :lizard_species, ['Bearded Dragon', 'Gecko', 'Chameleon', 'Basilisk', 'Toad']%>
+  </p>
+
+  <p>
+    <%= form.label :birthday%><br>
+    <%= form.date_field :birthday%>
+  </p>
+
+  <p>
+    <%= form.label :profile_picture%><br>
+    <%= form.url_field :profile_picture%>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
