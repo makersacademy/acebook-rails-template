@@ -73,5 +73,6 @@ RSpec.configure do |config|
     fill_in 'Password', with: 'qwerty'
     fill_in 'Password confirmation', with: 'qwerty'
     click_button 'Sign up'
- end
+  end
+
 end
