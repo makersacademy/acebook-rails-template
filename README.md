@@ -1,4 +1,5 @@
-# AceBook
+AceBook [![Maintainability](https://api.codeclimate.com/v1/badges/8faf39ca13c0930be61a/maintainability)](https://codeclimate.com/github/melvinlau/acebook-facebuzz/maintainability)
+==========
 
 REQUIRED INSTRUCTIONS:
 
