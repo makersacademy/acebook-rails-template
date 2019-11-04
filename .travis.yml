@@ -1,5 +1,8 @@
 language: ruby
 rvm: 
   - 2.5.0
+services: postgresql
+addons:
+  postgresql: "11.5"
 script:
   - bundle exec rspec spec
