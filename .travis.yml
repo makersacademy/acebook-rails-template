@@ -9,8 +9,8 @@ before_install:
   - gem install bundler
 
 before_script:
-  - rake db:migrate
-  - rake db:test:prepare
+  - bundle exec rake db:migrate
+  - bundle exec rake db:test:prepare
 
 script:  
  — bundle exec rspec
