@@ -34,7 +34,7 @@ MVP User Stories:
 
 - Users can sign up
 - Users get errors for incorrect sign ins
-- Users can log in with a username and password
+- Users can log in with a username and password and log out
 
 - Users can make posts 
 - Users can view posts and see who made them
