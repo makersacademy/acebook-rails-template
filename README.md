@@ -30,7 +30,7 @@ First, clone this repository. Then:
 - Jess Lonsdale: https://github.com/jlonsdale
 - Duncan Skinner: https://github.com/Duncan9099
 
-MVP User Stories:
+MVP User Stories: (have this working by the end of wednesday)
 
 - Users can sign up
 - Users get errors for incorrect sign ins
