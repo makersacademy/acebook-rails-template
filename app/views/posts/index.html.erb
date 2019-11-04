@@ -3,7 +3,7 @@
 
 
 <% @posts.reverse_each do |post| %>
-<span style="white-space: pre-line">  <p> <% post.id %><%= post.message %> <br><%= post.updated_at %> <br><%= link_to "Delete", "posts/#{post.id}", method: :delete %></p>
+<span style="white-space: pre-line">  <p> <% post.id %><%= post.message %> <br><%= post.updated_at %> <br><%= link_to "Delete", "posts/#{post.id}", method: :delete %> <%= link_to "Edit", "/posts/#{post.id}", class:"button" %> </p>
 </span>
 
 

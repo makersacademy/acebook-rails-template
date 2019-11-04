@@ -11,6 +11,7 @@ gem 'cowsay'
 gem 'devise'
 gem 'parser'
 gem 'rubocop'
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
