@@ -30,7 +30,7 @@ First, clone this repository. Then:
 - Jess Lonsdale: https://github.com/jlonsdale
 - Duncan Skinner: https://github.com/Duncan9099
 
-User Stories:
+MVP User Stories:
 
 - Users can sign up
 - Users get errors for incorrect sign ins
@@ -40,3 +40,5 @@ User Stories:
 - Users can view posts and see who made them
 - Users can delete their own posts
 - Users can like posts once
+- Users can edit posts
+
