@@ -5,6 +5,9 @@
 ## Card Wall:
 https://trello.com/b/ODg1c9f4/lizardbook-by-team-lizard
 
+## Team Blog:
+https://medium.com/team-lizard
+
 ## Quickstart
 
 First, clone this repository. Then:
