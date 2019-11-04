@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    flash[:notice] = "Post was updated"
+    flash[:notice] = 'Post was updated'
     redirect_to posts_url
   end
 
@@ -39,5 +39,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message, :user_id)
   end
-
 end

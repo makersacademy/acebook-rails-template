@@ -9,9 +9,6 @@ RSpec.feature 'Delete', type: :feature do
     click_button "Submit"
     expect(page).to have_content('Hello Guys!')
     click_link "Delete"
-    accept_confirm do
-      click_link 'OK'
-    end
     expect(page).to_not have_content "Hello Guys!"
   end
 end
