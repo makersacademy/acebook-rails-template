@@ -41,3 +41,12 @@ MVP User Stories: (have this working by the end of wednesday)
 - Users can delete their own posts
 - Users can edit posts
 
+User Table
+
+ID|Username|Password|Profile|Email|Full Name|Lizard Species|Birthday|
+  
+Post Table
+
+ID|Contents|User ID|Created at|Updated at|
+ 
+
