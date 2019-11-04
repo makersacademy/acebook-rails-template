@@ -3,6 +3,6 @@ rvm:
   - 2.5.0
 services: postgresql
 script:
-  — bundle exec rake db:create
-  — bundle exec rake db:migrate
+  — bin/rails db:create
+  — bin/rails db:migrate
   - bundle exec rspec spec
