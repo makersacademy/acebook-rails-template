@@ -12,9 +12,24 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    # @post.update(content: params[:post][:content])
+    @post.update(update_params)
+    redirect_to posts_url
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:content)
+  end
+
+  def update_params
+    params.require(:post).permit(:content)
   end
 end

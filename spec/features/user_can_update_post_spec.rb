@@ -7,5 +7,10 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Content", with: "Hello, world!"
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
+    click_link "Edit"
+    fill_in "Content", with: "Goodbye, world!"
+    click_button "Submit"
+    expect(page).to have_content("Goodbye, world!")
   end
 end
+
