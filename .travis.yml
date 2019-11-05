@@ -1,5 +1,5 @@
 language: ruby
-rvm: 
+rvm:
   - 2.5.0
 services: postgresql
 before_install:
@@ -9,3 +9,4 @@ script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
   - bundle exec rspec spec
+  - bundle exec rubocop
