@@ -11,19 +11,22 @@
   <body>
   <nav id="navbar">
   <div>
-   <a href="/"> <img id="nav-logo" src=assets/Distinguished-Ferret.png></a>
+   <a href="/"> <img id="nav-logo" src=./assets/Distinguished-Ferret.png></a>
     <%# <% if current_user %>
-    <%# <span class='welcome'> Welcome <%= current_user.username %>  
+    <%# <span class='welcome'> Welcome <%= current_user.username %>
     <%# <form class='sign-out' action="/sessions/destroy" method="post"> %>
       <%# <input type="submit" value="Sign out"> %>
     <%# </form> %>
-    <%# <% end %> 
+    <%# <% end %>
   </div>
   <div id="n-list">
     <ul class="nav-list">
       <a class="nav-link" href="/"><li>Homepage</li></a>
       <a class="nav-link" href="#"><li>Login</li></a>
      <a class="nav-link" href="#"><li>Sign Up</li></a>
+     <% if current_user %>
+     <span class = 'nav_link'><%= link_to "Logout", destroy_user_session_path, :method => :delete %></span>
+     <% end %>
     </ul>
   </div>
 </nav>
