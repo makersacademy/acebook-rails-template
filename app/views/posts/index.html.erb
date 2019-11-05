@@ -1,3 +1,4 @@
+<h5>Welcome, <%= User.find_by(id: session[:user_id]).full_name %>!</h5>
 <% @posts.reverse.each do |post| %>
   <div style="border: 1px solid black; border-radius: 15px">
     <p><%= simple_format post.content %></p>
