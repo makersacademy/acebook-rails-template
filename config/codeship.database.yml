@@ -1,0 +1,30 @@
+# development:
+#   adapter: postgresql
+#   host: localhost
+#   encoding: unicode
+#   pool: 10
+#   username: <%= ENV['PGUSER'] %>
+#   template: template1
+#   password: <%= ENV['PGPASSWORD'] %>
+#   database: development<%= ENV['TEST_ENV_NUMBER'] %>
+#   port: 5432
+#   sslmode: disable
+# test:
+#   adapter: postgresql
+#   host: localhost
+#   encoding: unicode
+#   pool: 10
+#   username: pgapp
+#   password: <%= ENV['PGAPP_PASSWORD'] %>
+#   database: test<%= ENV['TEST_ENV_NUMBER'] %>
+#   port: 5432
+#   sslmode: disable
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+test:
+  <<: *default
+  database: test  
