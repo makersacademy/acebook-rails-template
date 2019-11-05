@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_secure_password
 
   include BCrypt
-
+  mount_uploader :avatarImage, ImageUploader
   def self.encrypt(password)
     BCrypt::Password.create(password)
   end
