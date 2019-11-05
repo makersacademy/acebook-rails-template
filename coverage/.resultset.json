@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/controllers/comments_controller_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/controllers/comments_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/rails_helper.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -67,14 +67,14 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/environment.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/application.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/application.rb": [
         1,
         null,
         1,
@@ -94,12 +94,12 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/boot.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/environments/test.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/environments/test.rb": [
         1,
         null,
         null,
@@ -143,7 +143,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/initializers/application_controller_renderer.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -151,7 +151,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/initializers/assets.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -167,7 +167,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/initializers/backtrace_silencers.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -176,20 +176,20 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/initializers/cookies_serializer.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/initializers/inflections.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -207,13 +207,13 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/initializers/mime_types.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/initializers/wrap_parameters.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -229,7 +229,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/config/routes.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/config/routes.rb": [
         1,
         null,
         null,
@@ -247,27 +247,27 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/helpers/application_helper.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/helpers/comments_helper.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/helpers/comments_helper.rb": [
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/helpers/home_helper.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/helpers/home_helper.rb": [
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/helpers/sessions_helper.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/helpers/users_helper.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/controllers/comments_controller.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/controllers/comments_controller.rb": [
         1,
         null,
         1,
@@ -294,12 +294,12 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/controllers/application_controller.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/controllers/home_controller_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/controllers/home_controller_spec.rb": [
         1,
         null,
         1,
@@ -313,13 +313,13 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/controllers/home_controller.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/controllers/home_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/controllers/posts_controller_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/controllers/posts_controller_spec.rb": [
         1,
         null,
         1,
@@ -369,7 +369,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/controllers/posts_controller.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/controllers/posts_controller.rb": [
         1,
         1,
         5,
@@ -412,7 +412,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/controllers/sessions_controller_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
         1,
@@ -440,7 +440,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/controllers/sessions_controller.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
@@ -463,7 +463,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/controllers/users_controller_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/controllers/users_controller_spec.rb": [
         1,
         null,
         1,
@@ -477,7 +477,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/controllers/users_controller.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/controllers/users_controller.rb": [
         1,
         1,
         null,
@@ -495,7 +495,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/features/user_can_delete_posts_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/features/user_can_delete_posts_spec.rb": [
         1,
         null,
         1,
@@ -523,7 +523,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/features/user_can_submit_posts_spec.rb": [
         1,
         null,
         1,
@@ -542,7 +542,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/features/user_can_update_post_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/features/user_can_update_post_spec.rb": [
         1,
         null,
         1,
@@ -572,7 +572,7 @@
         null,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/helpers/comments_helper_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/helpers/comments_helper_spec.rb": [
         1,
         null,
         null,
@@ -589,7 +589,7 @@
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/helpers/sessions_helper_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/helpers/sessions_helper_spec.rb": [
         1,
         null,
         null,
@@ -606,56 +606,56 @@
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/models/comment_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/models/comment_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/models/comment.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/models/comment.rb": [
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/models/application_record.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/models/post_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/models/post_spec.rb": [
         1,
         null,
         1,
         2,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/models/post.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/models/post.rb": [
         1,
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/views/sessions/create.html.erb_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/views/sessions/create.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/views/sessions/destroy.html.erb_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/views/sessions/destroy.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/spec/views/sessions/new.html.erb_spec.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/views/sessions/new.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/jessielonsdale/acebook--LizardBook-/app/models/user.rb": [
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/models/user.rb": [
         1,
         1,
         1,
@@ -668,6 +668,6 @@
         null
       ]
     },
-    "timestamp": 1572964888
+    "timestamp": 1572967386
   }
 }
