@@ -12,7 +12,7 @@ before_action :find_post, only: [:edit, :destroy, :show, :update]
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
 
   def index_by_user
