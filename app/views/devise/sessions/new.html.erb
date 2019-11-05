@@ -1,7 +1,5 @@
 <h2>Log in</h2>
 
-<%= flash[:alert]%>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -12,6 +10,9 @@
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
+  
+  <%= flash[:alert]%>
+  <br>
 
   <% if devise_mapping.rememberable? %>
     <div class="field">
