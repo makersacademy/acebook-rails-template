@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = [
-  {first_name: 'John', last_name: 'Doe', email: 'john.doe@test.com', password_digest: 'pass'}
-  {first_name: 'Anne', last_name: 'Other', email: 'anne.other@test.com', password_digest: 'pass'}
-]
+users = User.create([
+  {first_name: 'John', last_name: 'Doe', email: 'john.doe@test.com', password: 'password'},
+  {first_name: 'Anne', last_name: 'Other', email: 'anne.other@test.com', password: 'password'}
+])
 
-users.each do |user|
-  new_user = User.create(user)
-end
+# users.each do |user|
+#   new_user = User.create(user)
+# end
