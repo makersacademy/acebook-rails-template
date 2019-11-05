@@ -14,5 +14,5 @@ test:
 production:
   <<: *default
   database: pgapp_production
-  username: pgapp
-  password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
+  # username: pgapp
+  # password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
