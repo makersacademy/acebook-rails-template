@@ -1,13 +1,17 @@
 <h5>Welcome, <%= User.find_by(id: session[:user_id]).full_name %>!</h5>
+
 <% @posts.reverse.each do |post| %>
   <div style="border: 1px solid black; border-radius: 15px">
+
+    <img src="<%= post.user.profile_picture %>" width="100" height="100" ><br>
+    <%= post.user.username %> <br>
     <p><%= simple_format post.content %></p>
 
     <% if post.created_at != post.updated_at %>
     edited: <% end %>
     <%= time_ago_in_words(post.updated_at) %> ago<br>
 
-
+    
     <%= post.created_at.strftime("%H:%M %a %e %b %Y") %>
     <br>
     <% if post.user_id == session[:user_id] %>
