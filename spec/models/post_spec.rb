@@ -6,7 +6,7 @@ end
 
 describe 'Creating a post' do
   it 'is owned by a user' do
-    user = create_test_user
+    user = FactoryBot.create(:user)
     post = Post.new
     post.message = 'Like a cheap suit'
     post.user_id = user.id
