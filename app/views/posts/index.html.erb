@@ -1,18 +1,22 @@
-<p>Your user id is: <%= session[:user_id] %></p>
-
 <% @posts.reverse.each do |post| %>
-  <p><%= simple_format post.content %></p>
+  <div style="border: 1px solid black; border-radius: 15px">
+    <p><%= simple_format post.content %></p>
 
-  <% if post.created_at != post.updated_at %>
-  edited: <% end %>
-  <%= time_ago_in_words(post.updated_at) %> ago<br>
-  
+    <% if post.created_at != post.updated_at %>
+    edited: <% end %>
+    <%= time_ago_in_words(post.updated_at) %> ago<br>
 
-  <%= post.created_at.strftime("%H:%M %a %e %b %Y") %>
+
+    <%= post.created_at.strftime("%H:%M %a %e %b %Y") %>
+    <br>
+    <% if post.user_id == session[:user_id] %>
+      <%= link_to "Edit", edit_post_path(post) %>
+      <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
+    <% end %>
+  </div>
   <br>
-  <%= link_to "Edit", edit_post_path(post) %>
-  <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
 <% end %>
+
 
 <br>
 <br>
