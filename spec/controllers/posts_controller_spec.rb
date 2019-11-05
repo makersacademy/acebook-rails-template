@@ -42,7 +42,7 @@ RSpec.describe PostsController, type: :controller do
       expect(Post.find_by(content: "Hello, world!")).to be
       postid = Post.find_by(content: "Hello, world!").id
       delete :destroy, params: { id: postid }
-      expect(Post.find_by(content: "Hello, world!")).to be nil
+      expect(Post.find_by(content: "Hello, world!")).not_to be
     end
   end
 end
