@@ -47,6 +47,7 @@ AllCops:
     - 'bin/*'
     - 'config/**/*'
     - 'vendor/bundle/**/*'
+    - 'db/**/*'
 
 Metrics/LineLength:
   Exclude:
