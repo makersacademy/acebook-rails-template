@@ -1,6 +1,7 @@
 require 'rails_helper'
+require 'timecop'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Edit post", type: :feature do
   scenario "Can edit posts and view them" do
     visit "/posts"
     create_post

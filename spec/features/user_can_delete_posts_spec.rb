@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Delete post", type: :feature do
   scenario "Can delete posts" do
     visit "/posts"
     create_post
