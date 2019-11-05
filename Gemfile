@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Rubocop to analyse code style
 gem 'rubocop'
 
+# Use Devise for authentication solution
+gem 'devise'
 
 
 group :development, :test do
