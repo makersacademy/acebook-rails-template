@@ -1,7 +1,13 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<% @posts.reverse.each do |post| %>
+  <p><%= simple_format post.content %></p>
+  <%= post.created_at.strftime("%H:%M %a %e %b %Y") %>
+  <br>
+  <%= link_to "Edit", edit_post_path(post) %>
+  <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
 <% end %>
 
+<br>
+<br>
 <%= link_to new_post_path do %>
   New post
 <% end %>
