@@ -1,10 +1,11 @@
 
 <h1>Listing Comments</h1>
-
+<%= link_to 'New comment', new_comment_path %>
 <table>
   <tr>
     <th>Title</th>
     <th>Text</th>
+    <th colspan="3"></th>
     <th></th>
   </tr>
 
@@ -13,6 +14,10 @@
       <td><%= comment.title %></td>
       <td><%= comment.text %></td>
       <td><%= link_to 'Show', comment_path(comment) %></td>
+      <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+      <td><%= link_to 'Delete', comment_path(comment),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
