@@ -1,29 +1,43 @@
 
 <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+<p>
+  <% @posts.each do |post| %>
+
+    <%= post.message %>
+
+  <br>
+    -
+<br>
+      Created: <%= post.created_at.strftime("%B %d, %l:%M%P") %>
+      Updated: <%= post.updated_at.strftime("%B %d, %l:%M%P")%>
+    <br>
+    -
+  <p>
 
 
-<% @posts.each do |post| %>
 
-  <span style="white-space: pre-line; color:red;">
-    <p><%= post.message %>  </span>
-      <span style="white-space: pre-line; color:black;">
-      Created: <%= post.created_at.strftime("%B %d, %l:%M%P") %> - Updated: <%= post.updated_at.strftime("%B %d, %l:%M%P")%>
-    </p>
+  <span class='parent-likes'>
+    <span class="like_count" <%=post.id%>>
+    <%= post.get_likes.size %> &#128077
+    </span>
+<br>
+    <a>
+      <%= link_to like_post_path(post), class:"like", method: :put do %>
+      <button type='button' size='large' class='btn btn-info'>Like</button>
+        <span class="badge">
+          <% end %>  <%= link_to unlike_post_path(post), class:"unlike", method: :put do %>
+            <button type='button' class='btn btn-info'>Unlike</button>
+              <span class="badge">
+                <% end %>
+
+    </a>
   </span>
-<span class='parent-likes'>
-  <span class="like-count" <%=post.id%>'>
-    This post has been liked <%= post.get_likes.size %> times.
-  </span>
-  <a>
-    <% if current_user.liked? post %>
-      <div> <%= link_to like_post_path(post, 'unlike'), class: "preached-btn", method: :put, remote: :true do %> Thumbs Up! </div>
-        <% end%>
-        <% else %>
-      <div> <%= link_to like_post_path(post, 'like'), class: "preach-btn", method: :put, remote: :true do %> Preach </div>
-        <% end%>
-        <% end%>
-        <a>
-        </span><% end %>
+<p>
+  <% end %>
+
+
+
 <%= link_to new_post_path do %>
+
   New post
-<% end %>&#128077
+    <% end %>
