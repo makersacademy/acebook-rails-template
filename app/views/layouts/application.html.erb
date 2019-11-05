@@ -11,6 +11,7 @@
   <body>
   <nav id="navbar">
   <div>
+   <a href="/"> <img id="nav-logo" src=assets/Distinguished-Ferret.png></a>
     <%# <% if current_user %>
     <%# <span class='welcome'> Welcome <%= current_user.username %>  
     <%# <form class='sign-out' action="/sessions/destroy" method="post"> %>
@@ -26,6 +27,8 @@
     </ul>
   </div>
 </nav>
+      <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>`
     <%= yield %>
   </body>
 </html>
