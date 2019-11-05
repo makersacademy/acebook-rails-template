@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+before_action :find_post, only: [:edit, :destroy, :show, :update]
+
   def new
     @post = Post.new
   end
@@ -17,12 +19,11 @@ class PostsController < ApplicationController
 
   end
 
-  def edit#GET
-    @post = Post.find(params[:id])
+  def edit
+
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_url
   end
@@ -31,8 +32,7 @@ class PostsController < ApplicationController
 
   end
 
-  def update #POST
-    @post = Post.find(params[:id])
+  def update
     if @post.update(post_params)
       redirect_to posts_url
     else
@@ -44,5 +44,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def find_post
+    @post = Post.find(params[:id])
   end
 end
