@@ -10,6 +10,9 @@
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
+  <div>
+    <%= link_to "sign in with Github", @user.github_omniauth_authorize_path %>
+    </div>
 
   <% if devise_mapping.rememberable? %>
     <div class="field">

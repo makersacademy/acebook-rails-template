@@ -36,6 +36,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'dotenv-rails'
+  gem 'omniauth-github', github: 'intridea/omniauth-github'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop'
   gem 'selenium-webdriver'
