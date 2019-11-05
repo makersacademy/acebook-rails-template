@@ -9,6 +9,23 @@
   </head>
 
   <body>
+  <nav id="navbar">
+  <div>
+    <%# <% if current_user %>
+    <%# <span class='welcome'> Welcome <%= current_user.username %>  
+    <%# <form class='sign-out' action="/sessions/destroy" method="post"> %>
+      <%# <input type="submit" value="Sign out"> %>
+    <%# </form> %>
+    <%# <% end %> 
+  </div>
+  <div id="n-list">
+    <ul class="nav-list">
+      <a class="nav-link" href="/"><li>Homepage</li></a>
+      <a class="nav-link" href="#"><li>Login</li></a>
+     <a class="nav-link" href="#"><li>Sign Up</li></a>
+    </ul>
+  </div>
+</nav>
     <%= yield %>
   </body>
 </html>
