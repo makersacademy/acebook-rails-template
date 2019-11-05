@@ -27,3 +27,14 @@ require 'rails_helper'
 #     end
 #   end
 # end
+
+RSpec.describe PostsController, type: :controller do
+  describe "DELETE/:id" do
+    it "deletes a post" do
+      user = create_test_user
+      post = Post.create(message: "Hello, world!", user_id: user.id)
+      delete post_url(post)
+      expect(post.all.length).to be 0
+    end
+  end
+end

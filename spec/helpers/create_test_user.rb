@@ -1,4 +1,4 @@
-def new_user
+def create_test_user
   user = User.new
   user.email = 'test@example.com'
   user.password = 'password'

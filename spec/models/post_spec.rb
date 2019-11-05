@@ -6,7 +6,7 @@ end
 
 describe 'Creating a post' do
   it 'is owned by a user' do
-    user = new_user
+    user = create_test_user
     post = Post.new
     post.message = 'Like a cheap suit'
     post.user_id = user.id
