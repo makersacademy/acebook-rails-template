@@ -1,5 +1,11 @@
 <% @posts.reverse.each do |post| %>
   <p><%= simple_format post.content %></p>
+
+  <% if post.created_at != post.updated_at %>
+  edited: <% end %>
+  <%= time_ago_in_words(post.updated_at) %> ago<br>
+  
+
   <%= post.created_at.strftime("%H:%M %a %e %b %Y") %>
   <br>
   <%= link_to "Edit", edit_post_path(post) %>
