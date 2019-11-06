@@ -58,6 +58,7 @@
                   <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
                 <% end %>
               </div>
+              <%= render template: "comments/new" %>
               <% post.comments.each do |comment| %>
                 <tr>
 
