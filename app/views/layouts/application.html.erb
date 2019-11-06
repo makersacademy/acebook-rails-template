@@ -27,8 +27,14 @@
     </ul>
   </div>
 </nav>
+<div class="page-wrapper">
+  <div class="alert alert-success alert-dismissible" id="myAlert">
       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>`
-    <%= yield %>
+      <!-- <a href="#" class="close">&times;</a> -->
+       <p class="alert"><%= alert %></p>
+       <!-- <a href="#" class="close">&times;</a> -->
+  </div>
+      <%= yield %>
+    </div>
   </body>
 </html>
