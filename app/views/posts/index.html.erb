@@ -6,7 +6,9 @@
         <%= f.submit "Delete Post" %>
       <% end %>
 
-      <% if post.created_at > Time.now - 600 %>
+      <% if post.created_at > Time.now - 600 && post.user_id = current_user.id%>
+      <%= post.user_id %>
+        <%= current_user.id %>
         <%= link_to edit_post_path(post) do %>
         Edit post<br>
         <% end %>
