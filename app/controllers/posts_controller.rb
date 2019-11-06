@@ -9,7 +9,9 @@ class PostsController < ApplicationController
   end
 
   def index
+    no_current_user
     @posts = Post.all
+    @comments = Comment.all
   end
 
   def edit
@@ -18,7 +20,6 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    # @post.update(content: params[:post][:content])
     @post.update(update_params)
     redirect_to posts_url
   end

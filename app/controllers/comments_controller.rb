@@ -21,15 +21,8 @@ end
     post_id = params[:id]
     @comment = Comment.new(comment_params)
 
-    @comment.save
-    redirect_to @comment
-  end
-
-  def create
-    @comment = Comment.new(comment_params)
-
     if @comment.save
-      redirect_to @comment
+      redirect_to '/posts'
     else
       render 'new'
     end
