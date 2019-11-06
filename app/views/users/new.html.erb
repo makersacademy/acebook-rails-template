@@ -1,7 +1,7 @@
 <h3>Create an account</h3>
 
 <% if flash[:alert] %>
-    <div class="alert"><%= flash[:alert] %></div>
+    <div class="alert alert-danger"><%= flash[:alert] %></div>
 <% end %>
 
 <%= form_with scope: :user,url: users_path , local: true do |form| %>

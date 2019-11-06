@@ -1,16 +1,22 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
+
     <h1>Welcome to LizardBook</h1>
+
+    <% if flash[:notice] %>
+     <div class="alert alert-danger"><%= flash[:notice] %></div>
+   <% end %>
 
     <%= render template: "sessions/new" %>
 
     dont have an account?, create one now!
-
 
     <form action="/users/new">
       <input type="submit" value="Create Account" class="btn btn-info">

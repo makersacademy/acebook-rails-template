@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+
+  attr_reader :error
+
   def new
   end
 
@@ -8,7 +11,9 @@ class SessionsController < ApplicationController
      session[:user_id] = user.id
      redirect_to '/posts', notice: "Logged in!"
    else
-     redirect_to '/', alert: "Email or password is invalid"
+
+     redirect_to '/'
+     flash.notice = "Email or password is invalid"
    end
   end
 
