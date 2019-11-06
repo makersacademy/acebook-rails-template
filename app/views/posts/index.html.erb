@@ -30,6 +30,7 @@
   <% if session[:user_id] == true %>
     <h5>Welcome, <%= User.find_by(id: session[:user_id]).full_name %>!</h5>
   <% end %>
+
   <%= link_to new_post_path do %>
     New post
   <% end %>
@@ -55,7 +56,6 @@
                 <% if post.user_id == session[:user_id] %>
                   <%= link_to "Edit", edit_post_path(post) %> |
                   <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>  |
-                  <%= link_to 'Comment', post %>
                 <% end %>
               </div>
               <% post.comments.each do |comment| %>
