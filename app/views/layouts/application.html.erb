@@ -21,7 +21,7 @@
      <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'nav-link'%>
      <% else %>
      <a class="nav-link" href="/"><li>Homepage</li></a>
-     <a class="nav-link" href="users/sign_in"><li>Login</li></a>
+     <%= link_to 'Login', new_user_session_path, :class => 'nav-link'%>
     <%= link_to 'Sign Up', new_user_registration_path, :class => 'nav-link'%>
      <% end %>
 
