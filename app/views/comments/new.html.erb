@@ -1,19 +1,13 @@
-
 <h1>New Comment</h1>
 
-
 <%= form_with scope: :comment, url: comments_path, local: true do |form| %>
-
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-
+<%=p params[:id] %> 
+<%=p session[:user_id] %>
   <p>
     <%= form.label :text %><br>
     <%= form.text_area :text %>
-  </p>
-
+    <%= form.hidden_field :user_id, :value =>  session[:user_id] %>
+    <%= form.hidden_field :post_id, :value =>  params[:id] %>
   <p>
     <%= form.submit %>
   </p>
