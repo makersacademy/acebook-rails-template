@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -12,6 +14,7 @@ user.user_name = 'Namast-Jay'
 user.password = 'jaysmells'
 user.email = 'jay@mail.com'
 user.save!
+
 
 user = User.new
 user.user_name = 'JessRocksSocks'
