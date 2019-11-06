@@ -22,4 +22,40 @@ RSpec.feature 'Sign_up', type: :feature do
 
     expect(page).to have_content('You have signed up successfully')
   end
+
+  scenario 'Will not create an account if password is too short' do
+    visit '/'
+    click_link 'Sign Up'
+    fill_in 'user[user_name]', with: 'HomerSimpson'
+    fill_in 'user[email]', with: 'test@test.com'
+    fill_in 'user[password]', with: 'abc12'
+    fill_in 'user[password_confirmation]', with: 'abc12'
+    click_button 'Sign up'
+
+    expect(page).to have_content('Password is too short (minimum is 6 characters)')
+  end
+
+  scenario 'Will not create an account if password is too long' do
+    visit '/'
+    click_link 'Sign Up'
+    fill_in 'user[user_name]', with: 'HomerSimpson'
+    fill_in 'user[email]', with: 'test@test.com'
+    fill_in 'user[password]', with: 'abcdef123456'
+    fill_in 'user[password_confirmation]', with: 'abcdef123456'
+    click_button 'Sign up'
+
+    expect(page).to have_content('Password is too long (maximum is 10 characters)')
+  end
+
+  scenario 'Will not create an account if email is already registered' do
+    visit '/'
+    create_user
+    click_link 'Sign Up'
+    fill_in 'user[user_name]', with: 'NotHomerSimpson'
+    fill_in 'user[email]', with: 'test@test.com'
+    fill_in 'user[password]', with: 'password'
+    fill_in 'user[password_confirmation]', with: 'password'
+    click_button 'Sign up'
+    expect(page).to have_content('Email has already been taken')
+  end
 end
