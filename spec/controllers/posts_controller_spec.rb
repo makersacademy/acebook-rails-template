@@ -16,6 +16,7 @@ RSpec.describe PostsController, type: :controller do
 
     it "creates a post" do
       post :create, params: { post: { content: "Hello, world!" } }
+      p Post.all 
       expect(Post.find_by(content: "Hello, world!")).to be
     end
   end

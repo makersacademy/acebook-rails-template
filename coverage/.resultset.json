@@ -339,6 +339,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         null,
@@ -572,56 +573,6 @@
         null,
         null
       ],
-      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/helpers/comments_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/helpers/sessions_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/models/comment_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/models/comment.rb": [
-        1,
-        null
-      ],
-      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
       "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/models/post_spec.rb": [
         1,
         null,
@@ -634,23 +585,7 @@
         1,
         null
       ],
-      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/views/sessions/create.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/views/sessions/destroy.html.erb_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/views/sessions/new.html.erb_spec.rb": [
-        1,
-        null,
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/app/models/application_record.rb": [
         1,
         1,
         null
@@ -668,6 +603,6 @@
         null
       ]
     },
-    "timestamp": 1572967386
+    "timestamp": 1573032664
   }
 }

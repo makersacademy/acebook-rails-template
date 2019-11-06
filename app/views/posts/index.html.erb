@@ -10,17 +10,9 @@
     background-color: #f2f2f2;
   }
 
-  .post {
-    border-radius: 5px;
-    border: 1px solid darkgrey;
-    box-shadow: 1px 3px #888888;
-    box-sizing: border-box;
-    padding: 25px;
-  }
-
   .profilepic {
-    width: 150px;
-    height: 150px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
   }
 
@@ -35,6 +27,7 @@
 
   .edit-delete {
     text-align: right;
+    font-size: 0.7em;
   }
 </style>
 
@@ -50,11 +43,13 @@
     </div>
     <div class="col-8">
 
+    <ul class="list-group list-group-flush">
+
     <% @posts.reverse.each do |post| %>
-      <div class="post">
-    
+      
+      <li class="list-group-item">
         <img class="profilepic" src="<%= post.user.profile_picture %>" width="100" height="100" ><br>
-        <div class="username"><%= post.user.username %> <br></div>
+        <div class="username"><a href="/" ><%= post.user.username %></a> <br></div>
         <p><%= simple_format post.content %></p>
         <div class="time">
         <% if post.created_at != post.updated_at %>
@@ -63,15 +58,19 @@
         <%= post.created_at.strftime("%H:%M %a %e %b %Y") %>
         </div>
         <br>
+
         <div class="edit-delete">
         <% if post.user_id == session[:user_id] %>
           <%= link_to "Edit", edit_post_path(post) %> |
           <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
         <% end %>
         </div>
-      </div>
-      <br>
+
+      </li>
+      
+      
     <% end %>
+    </ul>
     
     </div>
     
