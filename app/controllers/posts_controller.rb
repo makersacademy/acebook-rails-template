@@ -9,8 +9,8 @@ class PostsController < ApplicationController
     @post = Post.where(id: params[:id]).first
     if !@post
       redirect_to root_path
-    else
-      @post.update(views: @post.views+1)
+    # else
+    #   @post.update(@post.views+1)
     end
   end
 
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     else
       if @post.update(message: params[:post][:message])
         flash[:notice] = 'Successfully updated the post!'
-        redirect_to posts_url
+       redirect_to posts_url
       else
         flash[:alert] = 'Couldn’t edit the post...'
         render :edit
@@ -54,10 +54,10 @@ class PostsController < ApplicationController
     else
       if @post.destroy
         flash[:notice] = 'Successfully deleted the post!'
-        redirect_to root_path
+        redirect_to posts_url
       else
         flash[:alert] = 'Couldn’t delete the post...'
-        redirect_to show_post_path(id: @post.id)
+        redirect_to posts_url
       end
     end
   end
