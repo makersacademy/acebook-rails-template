@@ -9,10 +9,10 @@ class UsersController < ApplicationController
     if @user.valid?
       redirect_to '/'
     else @user.invalid?
-      p @user.errors.messages.values.join(" ")
-      # flash[:notice] = @user.errors.messages.first
-      redirect_to '/signup', alert: @user.errors.messages.first.join(" ")
+      signin_error = @user.errors.messages.first.flatten.join(" ")
+      redirect_to '/signup', alert: signin_error
     end
+
   end
 
   def show
@@ -23,6 +23,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :email, :full_name, :desired_attribute, :birthday, :profile_picture)
+    params.require(:user).permit(:username, :password, :email, :full_name, :lizard_species, :birthday, :profile_picture)
   end
 end

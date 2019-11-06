@@ -1,5 +1,9 @@
 <h3>Create an account</h3>
 
+<% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+<% end %>
+
 <%= form_with scope: :user,url: users_path , local: true do |form| %>
   <p>
     <%= form.label :username %><br>
