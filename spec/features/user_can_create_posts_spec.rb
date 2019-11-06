@@ -9,6 +9,7 @@ RSpec.feature "Create post", type: :feature do
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
+    expect(page).to have_content("by John Doe")
   end
 
   scenario "User can submit posts and view them" do
