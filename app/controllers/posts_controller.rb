@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    no_current_user
     @posts = Post.all
   end
 
