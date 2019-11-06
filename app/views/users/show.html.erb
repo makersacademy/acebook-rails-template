@@ -19,6 +19,7 @@
         <h5 class="card-header">What's on your mind?</h5>
         <div class="card-body">
           <%= render template: "posts/new" %>
+
         </div>
       </div>
       <br><h5 style="padding-left:10px">Recent Posts</h5><br>
@@ -34,6 +35,7 @@
               <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"}, style: "font-size:12px" %>
             <% end %>
             </div>
+            <% @post_id = post.id %>
             <%= render template: "comments/new" %>
             <% post.comments.each do |comment| %>
               <tr>

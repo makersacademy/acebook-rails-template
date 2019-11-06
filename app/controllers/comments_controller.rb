@@ -18,7 +18,10 @@ end
 
   def create
     current_user = session[:user_id]
-    post_id = params[:id]
+    post_id = params[:post_id]
+    p "----------------------"
+    p post_id
+    p "----------------------"
     @comment = Comment.new(comment_params)
 
     if @comment.save
