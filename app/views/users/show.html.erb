@@ -16,11 +16,12 @@
     </div>
     <div class="col-8">
       <div class="card">
-        <h5 class="card-header">What's on your mind?</h5>
-        <div class="card-body">
-          <%= render template: "posts/new" %>
-
-        </div>
+        <% if @user.id == session[:user_id] %>
+          <h5 class="card-header">What's on your mind?</h5>
+          <div class="card-body">
+            <%= render template: "posts/new" %>
+          </div>
+        <% end %>
       </div>
       <br><h5 style="padding-left:10px">Recent Posts</h5><br>
       <ul class="list-group list-group-flush">
@@ -31,6 +32,7 @@
             <div style="text-align:right">
             <div style="font-size:12px; color:grey; text-align:right"><%= time_ago_in_words(post.updated_at) %> ago</div>
             <% if post.user_id == session[:user_id] %>
+              <% session[:path] = request.path %>
               <%= link_to "Edit", edit_post_path(post), style: "font-size:12px" %> <span style="color:grey">|</span>
               <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"}, style: "font-size:12px" %>
             <% end %>
@@ -40,7 +42,7 @@
             <% post.comments.each do |comment| %>
               <tr>
 
-                <td><%= comment.user.username %>: <%= comment.text %></td>
+                <td><%= comment.user.username %>: <b><%= comment.text %></b></td> |
                   <% if comment.created_at != comment.updated_at %>
                   edited: <% end %>
                   <%= time_ago_in_words(comment.updated_at) %> ago |
