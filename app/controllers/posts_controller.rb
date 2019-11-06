@@ -12,13 +12,21 @@ class PostsController < ApplicationController
     @posts = Post.all.reverse
   end
 
-  def destroy
-    Post.destroy(params[:id])
-    redirect_to posts_url
+  def edit
+    @post = Post.find(params[:id])
   end
 
   def update
-    Post.update(update_params)
+      @post = Post.find(params[:id])
+      if @post.update(edit_params)
+        redirect_to posts_url
+      else
+        render 'edit'
+      end
+    end
+
+  def destroy
+    Post.destroy(params[:id])
     redirect_to posts_url
   end
 
@@ -28,7 +36,8 @@ class PostsController < ApplicationController
     params.require(:post).permit(:message).merge(user_id: current_user.id)
   end
 
-  def update_params
-    params.require(:post).permit(:message).merge(user_id: current_user.id)
+  def edit_params
+    params.require(:post).permit(:message)
   end
+
 end

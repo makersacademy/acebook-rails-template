@@ -6,7 +6,7 @@ RSpec.feature "Timeline", type: :feature do
     submit_post("I'm prime for editing - post 1")
     submit_post("I'm prime for editing - post 2")
     first(:button,'Edit Post')
-    fill_in "Message", with: "post 2 edited"
+    fill_in 'Message', with: "post 2 edited"
     click_button "Edit Post"
     expect(page).not_to have_content "I'm prime for editing - post 2"
     expect(page).to have_content "post 2 edited"
