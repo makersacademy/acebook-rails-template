@@ -6,9 +6,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'devise'
+gem 'devise', '~> 4.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 6.0', '>= 6.0.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 # for better forms
-gem 'simple_form', '~> 3.5'
+gem 'simple_form', '~> 4.0.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
