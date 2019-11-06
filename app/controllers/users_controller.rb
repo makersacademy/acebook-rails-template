@@ -8,6 +8,11 @@ class UsersController < ApplicationController
     redirect_to '/'
   end
 
+  def show
+    @user = User.find_by(id: session[:user_id])
+    @post = Post.new
+  end
+
   private
 
   def user_params
