@@ -2,9 +2,16 @@
     <p class='post'><%= post.message %></p>
     <p><%= post.created_at.to_s(:long_ordinal) %></p>
     <%= form_for(post, :html => { :method => :delete }) do |f| %>
-    
-    <%= f.submit "Delete Post" %>
-  <% end %>
+
+      <%= f.submit "Delete Post" %>
+    <% end %>
+
+    <%= form_for(post, :html => { :method => :patch }) do |f| %>
+    <%= f.label :message %>
+    <%= f.text_field :message %>
+      <%= f.submit "Edit Post" %>
+    <% end %>
+
 <% end %>
 
 <%= link_to new_post_path do %>
