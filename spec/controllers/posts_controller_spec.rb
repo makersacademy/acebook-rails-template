@@ -3,7 +3,11 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :controller do
 
   login_user
-
+  
+  it "should have a current_user" do
+    expect(subject.current_user).to_not eq(nil)
+  end
+  
   describe "GET /new " do
     it "responds with 200" do
       get :new
@@ -11,12 +15,9 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-    it "should have a current_user" do
-    # note the fact that you should remove the "validate_session" parameter if this was a scaffold-generated controller
-    expect(subject.current_user).to_not eq(nil)
-  end
 
   describe "POST /" do
+
     it "responds with 200" do
       post :create, params: { post: { message: "Hello, world!", user_id: 1} }
       expect(response).to redirect_to(posts_url)

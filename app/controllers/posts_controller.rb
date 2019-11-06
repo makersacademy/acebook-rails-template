@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-# before_action :authenticate_user!, except: [:index, :show]
-before_action :find_post, only: [:edit, :destroy, :show, :update]
+
+  before_action :find_post, only: [:edit, :destroy, :show, :update]
 
   def new
     @post = current_user.posts.new

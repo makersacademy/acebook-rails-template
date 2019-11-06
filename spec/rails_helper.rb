@@ -1,25 +1,26 @@
 # Simplecov needs to be loaded before the app, hence at very top of this file
 require 'simplecov'
 require 'simplecov-console'
+
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
   # SimpleCov::Formatter::HTMLFormatter
-  ])
-  SimpleCov.start
+])
+SimpleCov.start
   
-  # This file is copied to spec/ when you run 'rails generate rspec:install'
-  ENV['RAILS_ENV'] ||= 'test'
-  require File.expand_path('../../config/environment', __FILE__)
-  # Prevent database truncation if the environment is production
-  abort("The Rails environment is running in production mode!") if Rails.env.production?
-  require 'spec_helper'
-  require 'rspec/rails'
-  require 'devise'
-  require 'support/factory_bot'
-  require_relative 'support/controller_macros'
-  require 'helpers/posts_helpers'
-  require 'web_helpers'
+# This file is copied to spec/ when you run 'rails generate rspec:install'
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../config/environment', __dir__)
+# Prevent database truncation if the environment is production
+abort("The Rails environment is running in production mode!") if Rails.env.production?
+require 'spec_helper'
+require 'rspec/rails'
+require 'devise'
+require 'support/factory_bot'
+require_relative 'support/controller_macros'
+require 'helpers/posts_helpers'
+require 'web_helpers'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

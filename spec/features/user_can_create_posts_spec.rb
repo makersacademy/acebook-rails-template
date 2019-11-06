@@ -12,9 +12,9 @@ RSpec.feature "Create post", type: :feature do
   end
 
   scenario "User can submit posts and view them" do
-    time = Time.utc(2019, 11, 05, 14, 58, 10 )
+    time = Time.utc(2019, 11, 05, 14, 58, 10)
     Timecop.freeze(time)
-    Post.create(message:"Timecop post")
+    Post.create(message: "Timecop post")
     create_user
     login_user
     visit '/posts'
@@ -23,3 +23,4 @@ RSpec.feature "Create post", type: :feature do
     Timecop.return
   end
 end
+
