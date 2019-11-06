@@ -2,7 +2,6 @@
 <%= simple_form_for @post do |f| %>
   <%= f.input :message, as: :text%>
   <%= f.file_field :image, accept: 'image/png,image/jpeg' %>
-  <%# f.input :file_field, :photo, accept: 'image/png,image/jpeg', inline_label: 'image' %>
   <br><br>
   <%= f.button :submit, 'Submit' %>
 
