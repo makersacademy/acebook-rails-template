@@ -1,10 +1,19 @@
 <% @posts.each do |post| %>
-    <p class='post'><%= post.message %></p>
-    <p><%= post.created_at.to_s(:long_ordinal) %></p>
-    <%= form_for(post, :html => { :method => :delete }) do |f| %>
-    
+<p class='post'><%= post.message %></p>
+<p><%= post.created_at.to_s(:long_ordinal) %></p>
+  <%= form_for(post, :html => { :method => :delete }) do |f| %>
     <%= f.submit "Delete Post" %>
   <% end %>
+  
+
+  <%= form_for [post, Comment.new] do |form| %>
+    <%= form.label :message %>
+    <%= form.text_field :message %>
+
+    <%= form.submit "Comment" %>
+  <% end %>
+
+
 <% end %>
 
 <%= link_to new_post_path do %>
