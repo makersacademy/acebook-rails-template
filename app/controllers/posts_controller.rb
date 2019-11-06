@@ -3,11 +3,11 @@ class PostsController < ApplicationController
 before_action :find_post, only: [:edit, :destroy, :show, :update]
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = current_user.posts.build(post_params)
     redirect_to posts_url
   end
 
