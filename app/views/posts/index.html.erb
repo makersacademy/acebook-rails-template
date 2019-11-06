@@ -11,7 +11,11 @@
   <%= button_to "Edit", edit_post_path(post.id), :method => :get%>
   <%= button_to "Delete", post_path(post.id), :method => :delete,
   data: {confirm: 'Are you sure you want to delete this post?'}%>
+  <%= button_to "Buzz", like_post_path(post.id), :method => :put %>
+  <p>Likes: <%= post.get_upvotes.size%></p>
 <% end %>
+
+
 
 <%= link_to new_post_path do %>
   New post
