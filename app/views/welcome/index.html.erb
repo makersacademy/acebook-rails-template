@@ -1,4 +1,5 @@
 <html>
+
 <center>
 <img class="main-image" src=assets/Distinguished-Ferret.png>
 <% if current_user %>
@@ -8,9 +9,11 @@
 <% end %>
 
 <p>
-  The time is now <%=Time.now%>
-  </p>
-  </center>
+  <%=Time.now.strftime('%H:%M')%>
+  <br>
+  <%=Time.now.strftime('%d:%m:%Y')%>
+</p>
+</center>
 
 
 </html>
