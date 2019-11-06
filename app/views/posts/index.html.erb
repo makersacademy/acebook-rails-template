@@ -1,16 +1,17 @@
 <% @posts.each do |post| %>
     <p class='post'><%= post.message %></p>
     <p><%= post.created_at.to_s(:long_ordinal) %></p>
+
     <%= form_for(post, :html => { :method => :delete }) do |f| %>
+        <%= f.submit "Delete Post" %>
+      <% end %>
 
-      <%= f.submit "Delete Post" %>
+      <% if post.created_at > Time.now - 600 %>
+        <%= link_to edit_post_path(post) do %>
+        Edit post<br>
+        <% end %>
     <% end %>
-
-    <%= link_to edit_post_path(post) do %>
-    Edit post
-  <% end %>
-
-  <% end %>
+<% end %>
 
 <%= link_to new_post_path do %>
   New post
