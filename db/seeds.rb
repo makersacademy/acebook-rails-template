@@ -7,11 +7,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-users = [
-  {user_name: 'Namast-Jay', email: 'jay@mail.com', encrypted_password: 'jesssmells'},
-  {user_name: 'JessRocksSocks', email: 'jess@mail.com', encrypted_password: 'jaysmells'}
-  ]
+user = User.new
+user.user_name = 'Namast-Jay'
+user.password = 'jaysmells'
+user.email = 'jay@mail.com'
+user.save!
 
-users.each do |user|
-  User.create(user)
-end
+user = User.new
+user.user_name = 'JessRocksSocks'
+user.password = 'jesssmells'
+user.email = 'jess@mail.com'
+user.save!
+
+post = Post.new
+post.message = "This is my awesome message about messages"
+post.user_id = 1
+post.save!
+
+post = Post.new
+post.message = "Second awesome message about messages"
+post.user_id = 2
+post.save!
