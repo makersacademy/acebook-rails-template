@@ -1,9 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+
+  before(:each) do
+    @user = FactoryBot.create(:user)
+    @request.session[:user_id] = @user.id
+  end
+
   describe "GET /new " do
     it "responds with 200" do
       get :new
+      expect(@user).to be_valid
       expect(response).to have_http_status(200)
     end
   end
@@ -15,8 +22,8 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "creates a post" do
+      session["user_id"] = @user.id
       post :create, params: { post: { content: "Hello, world!" } }
-      p Post.all 
       expect(Post.find_by(content: "Hello, world!")).to be
     end
   end
