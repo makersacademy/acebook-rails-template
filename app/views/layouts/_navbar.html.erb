@@ -12,7 +12,7 @@
         <a class="nav-link" href="/posts">Newsfeed <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/user">
+        <a class="nav-link" href="/users/<%=session[:user_id]%>">
         <% if session[:user_id] %>
         <%= User.find_by(id: session[:user_id]).full_name %>
         <%end %>
