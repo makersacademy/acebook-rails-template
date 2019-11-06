@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   def index
     no_current_user
     @posts = Post.all
+    @comments = Comment.all
   end
 
   def edit
