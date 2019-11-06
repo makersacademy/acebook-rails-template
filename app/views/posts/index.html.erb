@@ -3,6 +3,8 @@
     <p><%= post.message %></p>
     <p><%= post.user.user_name %></p>
     <p><%= post.created_at %></p>
+    <p><%= link_to 'Edit', edit_post_path(post) %></p>
+    <p><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     <p>-------------------------<p>
   <% end %>
 
