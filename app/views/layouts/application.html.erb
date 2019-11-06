@@ -11,24 +11,31 @@
   <body>
   <nav id="navbar">
   <div>
-   <a href="/"> <img id="nav-logo" src=assets/Distinguished-Ferret.png></a>
-    <%# <% if current_user %>
-    <%# <span class='welcome'> Welcome <%= current_user.username %>  
-    <%# <form class='sign-out' action="/sessions/destroy" method="post"> %>
-      <%# <input type="submit" value="Sign out"> %>
-    <%# </form> %>
-    <%# <% end %> 
+   <a href="/"> <img id="nav-logo" src=/assets/Distinguished-Ferret.png></a>
   </div>
   <div id="n-list">
     <ul class="nav-list">
-      <a class="nav-link" href="/"><li>Homepage</li></a>
-      <a class="nav-link" href="#"><li>Login</li></a>
-     <a class="nav-link" href="#"><li>Sign Up</li></a>
+     <% if current_user %>
+     <a class="nav-link" href="/"><li>Homepage</li></a>
+     <a  class="nav-link" href="#">Profile</a>
+     <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'nav-link'%>
+     <% else %>
+     <a class="nav-link" href="/"><li>Homepage</li></a>
+     <%= link_to 'Login', new_user_session_path, :class => 'nav-link'%>
+    <%= link_to 'Sign Up', new_user_registration_path, :class => 'nav-link'%>
+     <% end %>
+
     </ul>
   </div>
 </nav>
+<div class="page-wrapper">
+  <div class="alert alert-success alert-dismissible" id="myAlert">
       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>`
-    <%= yield %>
+      <!-- <a href="#" class="close">&times;</a> -->
+       <p class="alert"><%= alert %></p>
+       <!-- <a href="#" class="close">&times;</a> -->
+  </div>
+      <%= yield %>
+    </div>
   </body>
 </html>
