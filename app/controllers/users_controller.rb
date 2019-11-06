@@ -9,8 +9,8 @@ class UsersController < ApplicationController
     if @user.valid?
       redirect_to '/'
     else @user.invalid?
-      signin_error = @user.errors.messages.first.flatten.join(" ")
-      redirect_to '/signup', alert: signin_error
+      signup_error = @user.errors.messages.first.flatten.join(" ")
+      redirect_to '/signup', alert: signup_error
     end
 
   end
