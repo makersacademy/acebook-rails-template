@@ -3,7 +3,9 @@ require 'timecop'
 
 RSpec.feature "Edit post", type: :feature do
   scenario "Can edit posts and view them" do
-    visit "/posts"
+    create_user
+    login_user
+    visit '/posts'
     create_post
     click_button "Edit"
     fill_in "Message", with: "Hello again, world!"

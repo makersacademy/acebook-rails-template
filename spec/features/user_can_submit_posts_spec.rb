@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "Create post", type: :feature do
   scenario "Can submit posts and view them" do
-    visit "/posts"
+    create_user
+    login_user
+    visit '/posts'
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
