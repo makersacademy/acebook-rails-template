@@ -46,6 +46,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Use SimpleCov to analyse code coverage
   gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
 end
 
 group :development do

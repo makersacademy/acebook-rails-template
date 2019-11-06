@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 require 'simplecov'
+require 'simplecov-console'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+  # Want a nice code coverage website? Uncomment this next line!
+  # SimpleCov::Formatter::HTMLFormatter
+])
 SimpleCov.start 'rails'
 # To see details info about test coverage for every file in your project:
 # 1. Run 'open coverage/index.html' in your terminal

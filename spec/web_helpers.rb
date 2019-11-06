@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 def create_user
-  User.create(user_name: 'HomerSimpson', email: 'test@test.com', password: 'password')
+  User.create(username: 'HomerSimpson', email: 'test@test.com', password: 'password')
 end
 
 def login_user
