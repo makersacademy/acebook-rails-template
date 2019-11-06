@@ -51,29 +51,29 @@
               <div class="col-lg-3">
                 <h2><%=@user.first_name%>'s Profile</h2>
               </div>
+              <% @posts.each do |post| %>
               <div class="col-lg-9">
-                Two of two columns
                 <div class="media">
                   <a class="pull-left" href="#">
                     <img class="d-flex mr-3 img-fluid rounded-circle media-object img-responsive" src="../../../public/poki-2.jpeg" class="mr-3" height="50" width="50">
                   </a>
                     <div class="media-body">
-                      <h5 class="mt-0">Media heading</h5>
-                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
+                      <h5 class="mt-0"><%=@user.first_name%> says</h5>
+                      <%=post.message%>
                       <div class="media mt-3">
                         <a class="mr-3" href="#">
                           <img class="media-object img-responsive" src="../../../public/poki-3.jpeg" class="mr-3" height="50" width="50">
                         </a>
                         <div class="media-body">
-                          <h5 class="mt-0">Media heading</h5>
-                          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                          <h6 class="mt-0">Comments</h6>
+                          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
                         </div>
+                        <p style="color:#cccccc;"> <%= time_ago_in_words(post.created_at)%> ago</p>
                       </div>
                     </div>
                   </div>
               </div>
-
+              <% end %>
             </div>
           </div>
 

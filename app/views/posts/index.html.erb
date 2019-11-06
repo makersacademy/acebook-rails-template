@@ -1,6 +1,13 @@
 <% @posts.each do |post| %>
+
+
+  <div style="width:500px; height:auto;"><%= image_tag(post.image, style:"width:100%") if post.image.attached? %></div>
+
   <p><%= post.message %></p>
   <p style="color:#cccccc;"> <%= time_ago_in_words(post.created_at)%> ago</p>
+  <% @first_name = User.where(id: post.user_id).first&.send(:first_name) %>
+  <% @last_name = User.where(id: post.user_id).first&.send(:last_name) %>
+  <p><%= "by #{@first_name} #{@last_name}"%></p>
   <%= button_to "Edit", edit_post_path(post.id), :method => :get%>
   <%= button_to "Delete", post_path(post.id), :method => :delete,
   data: {confirm: 'Are you sure you want to delete this post?'}%>
