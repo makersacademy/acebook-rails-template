@@ -5,11 +5,16 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
 
-  get 'devise/registrations'
-  root 'devise#registrations'
+  controller :posts do
+    get '/new_post' => :new, as: 'new_post'
+    get '/post/:id' => :show, as: 'show_post'
+    get '/post/:id/edit' => :edit, as: 'edit_post'
+    patch '/post/:id/update' => :update, as: 'update_post'
+    delete '/post/:id/delete' => :destroy, as: 'destroy_post'
+  end
+  # Lots of comments...
 
-  # get 'welcome/signup'
-  # root 'welcome#signup'
+ 
 
   resources :posts
 end
