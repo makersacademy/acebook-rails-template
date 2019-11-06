@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
 
+
   get 'home/index'
   root 'home#index'
 
   resources :users
   resources :posts
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions
   resources :comments
 
   get "signup", to: "users#new", as: "signup"

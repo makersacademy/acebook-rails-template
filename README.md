@@ -32,17 +32,17 @@ First, clone this repository. Then:
 
 MVP User Stories: (have this working by the end of wednesday)
 
-- Users can sign up
-- Users get errors for incorrect sign ins
-- Users can view profile pages
-- Users can log in with a username and password and log out
+- Users can sign up [done]
+- Users get errors for incorrect sign ins [done]
+- Users can view profile pages [done]
+- Users can log in with a username and password and log out [done]
 
-- Users can make posts 
-- Users can view posts and see who made them
-- Users can delete their own posts
-- Users can edit posts
+- Users can make posts [done]
+- Users can view posts and see who made them [done]
+- Users can delete their own posts [done]
+- Users can edit posts [done]
 
-- Users can make comments on posts
+- Users can make comments on posts [done]
 - Users can view comments
 
 User Table
