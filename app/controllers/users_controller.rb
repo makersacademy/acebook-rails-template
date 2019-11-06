@@ -5,7 +5,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.save
-    redirect_to '/'
+
+    if @user.valid?
+      redirect_to '/'
+    else @user.invalid?
+      p @user.errors.messages.values.join(" ")
+      # flash[:notice] = @user.errors.messages.first
+      redirect_to '/signup', alert: @user.errors.messages.first.join(" ")
+    end
   end
 
   def show
