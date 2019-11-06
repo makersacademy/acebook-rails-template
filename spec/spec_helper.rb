@@ -2,6 +2,7 @@ require 'simplecov'
 require 'simplecov-console'
 require_relative 'features/web_helpers/submit_post'
 require_relative 'features/web_helpers/log_in_test_user'
+require_relative 'helpers/init'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                  SimpleCov::Formatter::Console,
                                                                  SimpleCov::Formatter::HTMLFormatter
