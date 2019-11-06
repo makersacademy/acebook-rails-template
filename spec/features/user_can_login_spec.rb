@@ -15,7 +15,7 @@ RSpec.feature 'Login', type: :feature do
     visit '/'
     create_user
     login_user
-    expect(page).to have_content('Welcome HomerSimpson')
+    expect(page).to have_content('Signed in successfully.')
   end
 
   scenario 'user must enter correct password' do
@@ -48,5 +48,12 @@ RSpec.feature 'Login', type: :feature do
     click_link 'Forgot your password?'
     expect(current_path).to eq('/users/password/new')
     expect(page).to have_content('Forgot your password?')
+  end
+
+  scenario 'user taken to posts page after login' do
+    visit '/'
+    create_user
+    login_user
+    expect(current_path).to eq('/posts')
   end
 end
