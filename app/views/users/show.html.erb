@@ -40,20 +40,18 @@
             <% post.comments.each do |comment| %>
               <tr>
 
-                  <td><%= comment.text %></td>
-                  <td><%= link_to 'Show full comment', comment_path(comment) %><br>
+                <td><%= comment.user.username %>: <%= comment.text %></td>
                   <% if comment.created_at != comment.updated_at %>
                   edited: <% end %>
-                  <%= time_ago_in_words(comment.updated_at) %> ago<br>
-                  <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %>
-                  <br>
-                <br></td>
-                  <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+                  <%= time_ago_in_words(comment.updated_at) %> ago |
+                  <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %> |
+                  <td><%= link_to 'Edit', edit_comment_path(comment) %></td> |
                   <td><%= link_to 'Delete', comment_path(comment),
                           method: :delete,
                           data: { confirm: 'Are you sure?' } %></td>
 
               </tr>
+              <br>
             <% end %>
           </li>
         <% end %>

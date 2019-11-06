@@ -21,11 +21,8 @@ end
     post_id = params[:post_id]
     @comment = Comment.new(comment_params)
     redirect_path = params.require(:comment).permit(:redirect_path)[:redirect_path]
-    if @comment.save
-      redirect_to redirect_path
-    else
-      render 'new'
-    end
+    @comment.save
+    redirect_to redirect_path
   end
 
   def update
