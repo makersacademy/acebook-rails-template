@@ -1,6 +1,6 @@
 <%= form_for @post do |form| %>
-  <%= form.label :content %>
-  <%= form.text_area :content %>
+  <%= form.label :content %><br>
+  <%= form.text_area :content, style: "width:100%; border: 1px solid rgba(211,211,211, 0.7)" %><br>
 
-  <%= form.submit "Submit" %>
+  <%= form.submit "Submit", class: "btn btn-outline-primary"%>
 <% end %>
