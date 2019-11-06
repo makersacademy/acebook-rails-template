@@ -5,12 +5,13 @@
 
       <%= f.submit "Delete Post" %>
     <% end %>
+<%= form_for(post, :html => { :method => :patch }) do |f| %>
+<%= f.label :message %>
+<%= f.text_field :message %>
+  <%= f.submit "Edit Post" %>
+<% end %>
 
-    <%= form_for(post, :html => { :method => :patch }) do |f| %>
-    <%= f.label :message %>
-    <%= f.text_field :message %>
-      <%= f.submit "Edit Post" %>
-    <% end %>
+
 
 <% end %>
 
