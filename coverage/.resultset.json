@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/controllers/comments_controller_spec.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/controllers/comments_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/rails_helper.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -67,14 +67,14 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/environment.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/application.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/application.rb": [
         1,
         null,
         1,
@@ -94,12 +94,12 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/boot.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/environments/test.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/environments/test.rb": [
         1,
         null,
         null,
@@ -143,7 +143,7 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/initializers/application_controller_renderer.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -151,7 +151,7 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/initializers/assets.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -167,7 +167,7 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/initializers/backtrace_silencers.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -176,20 +176,20 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/initializers/cookies_serializer.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/initializers/inflections.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -207,13 +207,13 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/initializers/mime_types.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/initializers/wrap_parameters.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -229,7 +229,7 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/factories.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/factories.rb": [
         1,
         null,
         1,
@@ -249,7 +249,7 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/config/routes.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/config/routes.rb": [
         1,
         null,
         null,
@@ -268,29 +268,29 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/helpers/application_helper.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/helpers/application_helper.rb": [
         1,
         null,
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/helpers/comments_helper.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/helpers/comments_helper.rb": [
         1,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/helpers/home_helper.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/helpers/home_helper.rb": [
         1,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/helpers/sessions_helper.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/helpers/users_helper.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/support/capybara.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/support/capybara.rb": [
         1,
         1,
         1,
@@ -308,13 +308,13 @@
         1,
         null,
         1,
-        21,
+        22,
         null,
         1,
         null,
         null,
-        8,
-        8,
+        9,
+        9,
         null,
         null,
         null,
@@ -323,19 +323,19 @@
         null,
         null,
         1,
-        21,
+        22,
         null,
         1,
-        21,
+        22,
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/support/factory_bot.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/support/factory_bot.rb": [
         1,
         1,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/controllers/comments_controller.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/controllers/comments_controller.rb": [
         1,
         null,
         1,
@@ -392,22 +392,22 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/controllers/application_controller.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/controllers/application_controller.rb": [
         1,
         1,
         null,
         1,
-        18,
+        20,
         0,
         null,
         null,
         null,
         1,
-        18,
+        20,
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/controllers/home_controller_spec.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/controllers/home_controller_spec.rb": [
         1,
         null,
         1,
@@ -421,13 +421,13 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/controllers/home_controller.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/controllers/home_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/controllers/posts_controller_spec.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/controllers/posts_controller_spec.rb": [
         1,
         null,
         1,
@@ -485,31 +485,25 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/controllers/posts_controller.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/controllers/posts_controller.rb": [
         1,
         1,
-        7,
-        null,
-        null,
-        1,
-        10,
-        10,
+        8,
         null,
         null,
         1,
-        18,
-        18,
-        18,
+        11,
+        11,
+        null,
+        null,
+        1,
+        20,
+        20,
+        20,
         null,
         null,
         1,
         1,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
         null,
         null,
         1,
@@ -519,9 +513,15 @@
         null,
         null,
         1,
+        2,
+        2,
+        2,
+        null,
         null,
         1,
-        10,
+        null,
+        1,
+        11,
         null,
         null,
         1,
@@ -529,7 +529,7 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/controllers/sessions_controller_spec.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
         1,
@@ -557,58 +557,58 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/controllers/sessions_controller.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
         null,
+        1,
+        null,
+        null,
+        1,
+        12,
+        12,
+        10,
+        10,
+        null,
+        null,
+        2,
+        2,
+        null,
+        null,
+        null,
+        1,
+        3,
+        3,
+        3,
+        null,
+        null
+      ],
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/controllers/users_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/controllers/users_controller.rb": [
+        1,
         1,
         null,
         null,
         1,
         11,
         11,
-        9,
-        9,
         null,
-        null,
-        2,
-        2,
-        null,
-        null,
-        null,
-        1,
-        3,
-        3,
-        3,
-        null,
-        null
-      ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/controllers/users_controller_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/controllers/users_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        1,
-        10,
-        10,
-        null,
-        10,
-        10,
+        11,
+        11,
         0,
         0,
         0,
@@ -624,64 +624,13 @@
         1,
         null,
         1,
-        10,
+        11,
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/features/user_can_delete_posts_spec.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/features/user_can_delete_posts_spec.rb": [
         1,
         null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/features/user_can_submit_posts_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/features/user_can_update_post_spec.rb": [
-        1,
-        null,
-        1,
-        1,
         1,
         1,
         1,
@@ -707,7 +656,72 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/features/users_can_sign_in_spec.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/features/user_can_submit_comments_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/features/user_can_submit_posts_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/features/user_can_update_post_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/features/users_can_sign_in_spec.rb": [
         1,
         null,
         null,
@@ -733,7 +747,7 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/spec/models/post_spec.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/spec/models/post_spec.rb": [
         1,
         null,
         1,
@@ -748,19 +762,19 @@
         null,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/models/post.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/models/post.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/models/application_record.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/models/user.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/models/user.rb": [
         1,
         1,
         1,
@@ -773,13 +787,13 @@
         1,
         null
       ],
-      "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/models/comment.rb": [
+      "/Users/heli/Projects/acebook2--Lizardbook-/acebook--LizardBook-/app/models/comment.rb": [
         1,
         1,
         1,
         null
       ]
     },
-    "timestamp": 1573051034
+    "timestamp": 1573052411
   }
 }
