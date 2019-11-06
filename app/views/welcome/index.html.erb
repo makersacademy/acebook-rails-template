@@ -2,11 +2,11 @@
 <center>
 <img class="main-image" src=assets/Distinguished-Ferret.png>
 <% if current_user %>
-<h2 class ="acebook">Welcome <%=current_user.email%>!</h2>
+<h2 class ="acebook">Welcome <%=current_user.user_name%>!</h2>
 <% else %>
-<h2 class ="acebook">Welcome to test!</h2>
+<h2 class ="acebook">Welcome to Acebook!</h2>
 <% end %>
-<%= p current_user %>
+
 <p>
   The time is now <%=Time.now%>
   </p>
