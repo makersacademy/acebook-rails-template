@@ -1,29 +1,101 @@
+<head>
+  <title> Listings</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<style>
+  body {
+    background-color: #f2f2f2;
+  }
+
+  .profilepic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .username {
+    font-weight: bold;
+  }
+
+  .time {
+    font-size: 0.7em;
+    text-align: right;
+  }
+
+  .edit-delete {
+    text-align: right;
+    font-size: 0.7em;
+  }
+</style>
+
 <h5>Welcome, <%= User.find_by(id: session[:user_id]).full_name %>!</h5>
 
-<% @posts.reverse.each do |post| %>
-  <div style="border: 1px solid black; border-radius: 15px">
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
 
     <img src="<%= post.user.profile_picture %>" width="100" height="100" style="border-radius:10px" ><br>
     <%= post.user.username %> <br>
     <p><%= simple_format post.content %></p>
 
-    <% if post.created_at != post.updated_at %>
-    edited: <% end %>
-    <%= time_ago_in_words(post.updated_at) %> ago<br>
+
+    <ul class="list-group list-group-flush">
+
+
+    <% @posts.reverse.each do |post| %>
+      
+      <li class="list-group-item">
+        <img class="profilepic" src="<%= post.user.profile_picture %>" width="100" height="100" ><br>
+        <div class="username"><a href="/" ><%= post.user.username %></a> <br></div>
+        <p><%= simple_format post.content %></p>
+        <div class="time">
+        <% if post.created_at != post.updated_at %>
+        edited: <% end %>
+        <%= time_ago_in_words(post.updated_at) %> ago<br>
+        <%= post.created_at.strftime("%H:%M %a %e %b %Y") %>
+        </div>
+        <br>
+
+        <div class="edit-delete">
+        <% if post.user_id == session[:user_id] %>
+          <%= link_to "Edit", edit_post_path(post) %> |
+          <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
+        <% end %>
+        </div>
+
+      </li>
+      
+      
+    <% end %>
+    </ul>
+    
+    </div>
+    
 
     <%= post.created_at.strftime("%H:%M %a %e %b %Y") %>
+
     <br>
-    <% if post.user_id == session[:user_id] %>
-      <%= link_to "Edit", edit_post_path(post) %>
-      <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
-    <% end %>
+    <br>
+
+
+    </div>
+    <div class="col-2">
+    </div>
   </div>
-  <br>
-<% end %>
+  </div>
+<div class="posts">
 
 
-<br>
-<br>
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+
+
+</body>
