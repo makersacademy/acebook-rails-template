@@ -19,13 +19,10 @@ end
   def create
     current_user = session[:user_id]
     post_id = params[:post_id]
-    p "----------------------"
-    p post_id
-    p "----------------------"
     @comment = Comment.new(comment_params)
-
+    redirect_path = params.require(:comment).permit(:redirect_path)[:redirect_path]
     if @comment.save
-      redirect_to '/posts'
+      redirect_to redirect_path
     else
       render 'new'
     end
