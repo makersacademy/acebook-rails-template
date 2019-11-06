@@ -48,6 +48,7 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'rubocop'
+  gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
 end
 
 group :development do

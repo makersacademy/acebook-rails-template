@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Create post", type: :feature do
-  scenario "Can submit posts and view them" do
+  scenario "User can create posts and view them" do
     create_user
     login_user
     visit '/posts'
@@ -11,12 +11,14 @@ RSpec.feature "Create post", type: :feature do
     expect(page).to have_content("Hello, world!")
   end
 
-  scenario "Can submit posts and view them" do
+  scenario "User can submit posts and view them" do
     time = Time.utc(2019, 11, 05, 14, 58, 10 )
     Timecop.freeze(time)
     Post.create(message:"Timecop post")
-
-    visit "/posts"
+    create_user
+    login_user
+    visit '/posts'
+    create_post
     expect(page).to have_content "less than a minute ago "
     Timecop.return
   end
