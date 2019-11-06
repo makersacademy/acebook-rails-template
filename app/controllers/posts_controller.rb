@@ -17,13 +17,13 @@ class PostsController < ApplicationController
   end
 
   def update
-      @post = Post.find(params[:id])
-      if @post.update(edit_params)
-        redirect_to posts_url
-      else
-        render 'edit'
-      end
+    @post = Post.find(params[:id])
+    if @post.update(edit_params)
+      redirect_to posts_url
+    else
+      render 'edit'
     end
+  end
 
   def destroy
     Post.destroy(params[:id])
