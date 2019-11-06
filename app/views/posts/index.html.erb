@@ -4,6 +4,7 @@
     <p><%= post.message %></p>
     <p><%= post.user.user_name %></p>
     <p><%= post.created_at %></p>
+
     <% if  post.user == current_user %>
     <p><%= link_to 'Edit', edit_post_path(post) %></p>
     <p><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
