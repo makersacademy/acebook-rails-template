@@ -19,24 +19,24 @@
       <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
-              <!-- <li>
-                 <img src="../../../public/facebuzz Logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-              </li> -->
               <li class="nav-item">
-                  <a class="badge badge-pill badge-secondary text-light" href="#">Account Settings</a>
+                  <a class="badge badge-pill badge-secondary text-light" href="/users/edit">Account Settings</a>
               </li>
             </ul>
         </div>
         <div class="mx-auto order-0">
           <div class="navbar-brand mx-auto">
               <a class="badge badge-pill badge-secondary text-light" href="#">
-                  <img src="../../../public/facebuzz Logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                  <img src="../../public/facebuzzLogo.png" width="30" height="30" class="d-inline-block align-top" alt="">
                   faceBuzz
                 </a>
           </div>
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="badge badge-pill badge-secndary text-light" href="/users/<%=current_user.id%>">Profile</a>
+                </li>
                 <li class="nav-item">
                     <a class="badge badge-pill badge-secondary text-light" href="#">Logout</a>
                 </li>
@@ -49,8 +49,7 @@
             <div class="container">
             <div class="row row-no-gutters">
               <div class="col-lg-3">
-                One of two columns
-
+                <h2><%=@user.first_name%>'s Profile</h2>
               </div>
               <div class="col-lg-9">
                 Two of two columns

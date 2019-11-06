@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+before_action :signed_in
+
 before_action :find_post, only: [:edit, :destroy, :show, :update]
 
   def new
@@ -49,4 +51,9 @@ before_action :find_post, only: [:edit, :destroy, :show, :update]
   def find_post
     @post = Post.find(params[:id])
   end
+
+  def signed_in 
+    redirect_to new_session_path(User) if !user_signed_in?
+  end
+
 end

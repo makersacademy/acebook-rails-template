@@ -1,19 +1,14 @@
 Rails.application.routes.draw do
-  # get 'welcome/index'
+  get 'welcome/index'
 
-  devise_for :users, controllers: {
-        sessions: 'users/sessions'}
+  devise_for :users
 
-  devise_scope :user do
-    get 'users/profile', to: 'users/sessions#profile'
-  end
+  get 'users/:id' => 'users#profile'
+
+  resources :posts
 
   root 'welcome#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  resources :posts
-
-  # root to: "welcome#index"
 
 end
