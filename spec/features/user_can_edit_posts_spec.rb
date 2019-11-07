@@ -26,4 +26,31 @@ RSpec.feature "Edit post", type: :feature do
     expect(page).to have_no_button "Edit"
     Timecop.return
   end
+
+  scenario "User cannot edit another user's post" do
+    create_user
+    login_user
+    visit '/posts'
+    create_post
+    logout_user
+
+    create_user_two
+    login_user_two
+    visit '/posts'
+    expect(page).to have_no_button("Edit")
+  end
+
+  scenario "User cannot delete another user's post" do
+    create_user
+    login_user
+    visit '/posts'
+    create_post
+    logout_user
+
+    create_user_two
+    login_user_two
+    visit '/posts'
+    expect(page).to have_no_button("Delete")
+  end
+
 end

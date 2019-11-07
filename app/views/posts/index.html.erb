@@ -9,10 +9,12 @@
   <% @last_name = User.where(id: post.user_id).first&.send(:last_name) %>
   <p><%= "by #{@first_name} #{@last_name}"%></p>
 
-  <%= button_to "Edit", edit_post_path(post.id), :method => :get if (Time.now - post.created_at) / 60 <= 10%>
-  
-  <%= button_to "Delete", post_path(post.id), :method => :delete,
-  data: {confirm: 'Are you sure you want to delete this post?'}%>
+  <% if current_user.id == post.user_id %>
+    <%= button_to "Edit", edit_post_path(post.id), :method => :get if (Time.now - post.created_at) / 60 <= 10%>
+    <%= button_to "Delete", post_path(post.id), :method => :delete,
+    data: {confirm: 'Are you sure you want to delete this post?'} %>
+  <% end %>
+
   <%= button_to "Buzz", like_post_path(post.id), :method => :put %>
   <p>Likes: <%= post.get_upvotes.size%></p>
 <% end %>
