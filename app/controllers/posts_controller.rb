@@ -10,11 +10,13 @@ before_action :find_post, only: [:edit, :destroy, :show, :update]
 
   def create
     @post = Post.create(post_params.merge(user_id: current_user.id))
+    
     redirect_to posts_url
   end
 
   def index
     @posts = Post.all.order("created_at DESC")
+    p @posts.first
   end
 
   def index_by_user
