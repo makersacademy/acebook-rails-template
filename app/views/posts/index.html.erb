@@ -2,12 +2,12 @@
   <% @posts.reverse.each do |post| %>
     <p><%= post.message %></p>
     <p><%= post.user.username %></p>
-    <p><%= post.created_at %></p>
+    <p><%= post.created_at.strftime('Posted %d-%m-%Y at %H:%M') %></p>
 
     <% if  post.user == current_user %>
       <p><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>  
       <% if Time.now - post.created_at < 600 %>
-      <p><%= link_to 'Edit', edit_post_path(post) %></p>
+        <p><%= link_to 'Edit', edit_post_path(post) %></p>
       <% end %>
     <% end %>
       <p>-------------------------<p>
