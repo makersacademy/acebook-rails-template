@@ -1,5 +1,5 @@
 FactoryBot.define do
-  
+
   factory :user do
     first_name { "Test" }
     last_name { "Test" }
@@ -7,4 +7,5 @@ FactoryBot.define do
     password { "123456" }
     id { "1" }
   end
+
 end

@@ -20,7 +20,7 @@ RSpec.feature "Create post", type: :feature do
     login_user
     visit '/posts'
     create_post
-    expect(page).to have_content "less than a minute ago "
+    expect(page).to have_content "5 Nov 2019 at 14:58"
     Timecop.return
   end
 end
