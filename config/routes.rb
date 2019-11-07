@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
   get 'posts' => 'posts#index', as: :user_root
 
+  get 'users/:id' => 'users#profile'
+
   devise_for :users
 
   resources :posts do
