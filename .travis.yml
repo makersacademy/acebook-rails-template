@@ -6,6 +6,7 @@ rvm: '2.6.3'
 
 addons:
   firefox: "69.0.1"
+  postgresql: "10"
 
 script:
   - mkdir -p spec && bundle exec rspec spec
