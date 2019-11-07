@@ -13,7 +13,7 @@ script:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install dbus-x11
-  - sudo apt-get install -qq postgresql-server-dev-11.5
+  - sudo apt-get install -qq postgresql-server-dev-10
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
