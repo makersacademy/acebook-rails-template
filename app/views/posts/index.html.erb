@@ -82,6 +82,7 @@
                     edited: <% end %>
                     <%= time_ago_in_words(comment.updated_at) %> ago |
                     <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %> |
+
                     <% session[:path] = request.path %>
 
                     <% if((Time.now-comment.updated_at)<600) %>
