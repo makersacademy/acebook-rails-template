@@ -23,7 +23,12 @@ user.email = 'jess@mail.com'
 user.save!
 
 post = Post.new
-post.message = "This is my awesome message about messages"
+post.message = "Jays message 1"
+post.user_id = 1
+post.save!
+
+post = Post.new
+post.message = "Jays message 2"
 post.user_id = 1
 post.save!
 
