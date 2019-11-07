@@ -18,6 +18,7 @@
     <p class="comments">
       <%= comment.message %>
     </p>
+    <%= render partial: 'likes/form', locals: { likeable: comment } %>
     <% end %>
 
     <%= form_for [post, Comment.new] do |form| %>

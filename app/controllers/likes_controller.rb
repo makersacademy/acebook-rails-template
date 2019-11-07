@@ -12,10 +12,12 @@ class LikesController < ApplicationController
 
   def upvote
     @likeable.liked_by current_user
+    redirect_to posts_url
   end
 
   def downvote
     @likeable.disliked_by current_user
+    redirect_to posts_url
   end
 
   private
