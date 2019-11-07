@@ -9,6 +9,11 @@ class CommentsController < ApplicationController
     puts @comment
   end
 
+  def destroy
+    Comment.destroy(params[:id])
+    redirect_to posts_url
+  end
+
   private
 
   def comment_params

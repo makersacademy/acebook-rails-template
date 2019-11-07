@@ -1,4 +1,4 @@
-<div  class='post'><%= simple_format post.message %>
+<div class='post'><%= simple_format post.message %>
   <p><%= post.created_at.to_s(:long_ordinal) %></p>
     <% if post.user_id == current_user.id %>
       <%= form_for(post, :html => { :method => :delete }) do |f| %>
@@ -13,11 +13,18 @@
           Edit post<br>
       <% end %>
     <% end %>
-
+    
     <% post.comments.each do |comment| %>
-    <p class="comments">
+    <p>
       <%= comment.message %>
     </p>
+
+      <% if comment.user_id == current_user.id %>
+        <%= form_for([post, comment], :html => { :method => :delete }) do |f| %>
+          <%= f.submit "Delete Comment" %>
+        <% end %>
+      <% end %>
+
     <% end %>
 
     <%= form_for [post, Comment.new] do |form| %>
