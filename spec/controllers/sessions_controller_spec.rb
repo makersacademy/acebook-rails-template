@@ -7,7 +7,7 @@ RSpec.describe Users::SessionsController, type: :controller do
     pending
     it 'welcomes user back with username' do
       @request.env["devise.mapping"] = Devise.mappings[:user]
-      post :create, params: {username: "Tan", email: "tan@test.com"}
+      post :create, params: { username: "Tan", email: "tan@test.com" }
       # p user.username
       # expect(subject.welcome_message).to eq "Welcome back Tan"
       # p response.welcome_message
