@@ -23,8 +23,10 @@ RSpec.feature "Timeline", type: :feature do
     click_link "LogOut"
     signup_as_new_user("James")
     login_as_user("James")
+    click_link "Delete"
     expect(page).to have_current_path('/posts')
     expect(page).to have_content("Hello, world!")
-    expect(page).not_to have_content("Delete")
+
+
   end
 end
