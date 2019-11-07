@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-
-    <h1>Welcome to LizardBook</h1>
-
     <% if flash[:notice] %>
      <div class="alert alert-danger"><%= flash[:notice] %></div>
    <% end %>
-
-    <%= render template: "sessions/new" %>
-
-    dont have an account?, create one now!
-
-    <form action="/users/new">
-      <input type="submit" value="Create Account" class="btn btn-info">
-    </form>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-4" id="light_grey_container" style="padding-top:50px; margin-top:65px; border-radius:5%">
+          <div style="margin-top:65px">
+            <%= render template: "sessions/new" %>
+            <p id="light_grey_container">Don't have an account? Create one now!</p>
+          </div>
+          <form action="/users/new">
+            <input type="submit" value="Create Account" class="btn btn-info">
+          </form>
+        </div>
+        <div class="col-8">
+          <h1 style="text-align:center; margin-top:50px">Welcome to LizardBook</h1>
+          <img src="https://animals.net/wp-content/uploads/2017/02/Lizard-9_Collared-Lizard-1280x720.jpg" style="border-radius:50%; margin-left:120px; margin-top:50px" height="400px" width="500px">
+        </div>
+      </div>
+    </div>
   </body>
 </html>
