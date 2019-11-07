@@ -8,6 +8,7 @@ RSpec.feature 'Logout', type: :feature do
     login_user
     expect(page).to have_link 'Logout'
     click_link 'Logout'
-    expect(current_path).to eq('/users/sign_in')
+    expect(current_path).to eq('/')
+    expect(page).to have_content('Signed out successfully.')
   end
 end
