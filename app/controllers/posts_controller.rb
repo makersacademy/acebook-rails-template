@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(content: post_params["content"], user_id: session[:user_id])
-    redirect_path = params.require(:post).permit(:redirect_path)[:redirect_path]
+    redirect_path = params.require(:post).permit(:redirect_path)[:redirect_path] || '/posts'
     redirect_to redirect_path
   end
 
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   end
 
   def redirect_to_previous_page
-    redirect = session[:path]
+    redirect = session[:path] || '/posts'
     session[:path] = nil
     redirect_to redirect
   end

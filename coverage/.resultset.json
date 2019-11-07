@@ -365,24 +365,25 @@
         null,
         1,
         0,
-        null,
         0,
         0,
-        null,
-        0,
-        null,
         null,
         null,
         1,
         0,
         0,
-        null,
         0,
         null,
         null,
         1,
         1,
         1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
         null,
         null
       ],
@@ -482,10 +483,11 @@
       "/Users/jamesclark/Coding/makers-course/week8/acebook-rails-template/app/controllers/posts_controller.rb": [
         1,
         1,
-        8,
+        1,
         null,
         null,
         1,
+        11,
         11,
         11,
         null,
@@ -494,6 +496,7 @@
         21,
         21,
         21,
+        21,
         null,
         null,
         1,
@@ -520,6 +523,12 @@
         null,
         1,
         2,
+        null,
+        null,
+        1,
+        4,
+        4,
+        4,
         null,
         null
       ],
@@ -788,6 +797,6 @@
         null
       ]
     },
-    "timestamp": 1573053512
+    "timestamp": 1573123813
   }
 }
