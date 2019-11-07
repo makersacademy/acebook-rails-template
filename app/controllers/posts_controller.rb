@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
   end
@@ -23,8 +24,9 @@ class PostsController < ApplicationController
       redirect_to posts_url
       flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
      else
-      return if @post
-      redirect_to root_path
+       return if @post
+      
+       redirect_to root_path
     end
   end
 
