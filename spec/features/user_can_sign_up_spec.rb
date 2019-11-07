@@ -14,7 +14,7 @@ RSpec.feature 'Sign_up', type: :feature do
   scenario 'Can create a new user account' do
     visit '/'
     click_link 'Sign Up'
-    fill_in 'user[user_name]', with: 'HomerSimpson'
+    fill_in 'user[username]', with: 'HomerSimpson'
     fill_in 'user[email]', with: 'test@test.com'
     fill_in 'user[password]', with: 'password'
     fill_in 'user[password_confirmation]', with: 'password'
@@ -26,7 +26,7 @@ RSpec.feature 'Sign_up', type: :feature do
   scenario 'Will not create an account if password is too short' do
     visit '/'
     click_link 'Sign Up'
-    fill_in 'user[user_name]', with: 'HomerSimpson'
+    fill_in 'user[username]', with: 'HomerSimpson'
     fill_in 'user[email]', with: 'test@test.com'
     fill_in 'user[password]', with: 'abc12'
     fill_in 'user[password_confirmation]', with: 'abc12'
@@ -38,7 +38,7 @@ RSpec.feature 'Sign_up', type: :feature do
   scenario 'Will not create an account if password is too long' do
     visit '/'
     click_link 'Sign Up'
-    fill_in 'user[user_name]', with: 'HomerSimpson'
+    fill_in 'user[username]', with: 'HomerSimpson'
     fill_in 'user[email]', with: 'test@test.com'
     fill_in 'user[password]', with: 'abcdef123456'
     fill_in 'user[password_confirmation]', with: 'abcdef123456'
@@ -51,11 +51,44 @@ RSpec.feature 'Sign_up', type: :feature do
     visit '/'
     create_user
     click_link 'Sign Up'
-    fill_in 'user[user_name]', with: 'NotHomerSimpson'
+    fill_in 'user[username]', with: 'NotHomerSimpson'
     fill_in 'user[email]', with: 'test@test.com'
     fill_in 'user[password]', with: 'password'
     fill_in 'user[password_confirmation]', with: 'password'
     click_button 'Sign up'
     expect(page).to have_content('Email has already been taken')
+  end
+
+  scenario 'Will not create an account if username has been taken' do
+    create_user
+    visit '/'
+    click_link 'Sign Up'
+    fill_in 'user[username]', with: 'HomerSimpson'
+    fill_in 'user[email]', with: 'test2@test.com'
+    fill_in 'user[password]', with: 'password'
+    fill_in 'user[password_confirmation]', with: 'password'
+    click_button 'Sign up'
+    expect(page).to have_content('Username has already been taken')
+  end
+
+  scenario 'Will not create an account if username is left blank' do
+    visit '/'
+    click_link 'Sign Up'
+    fill_in 'user[email]', with: 'test2@test.com'
+    fill_in 'user[password]', with: 'password'
+    fill_in 'user[password_confirmation]', with: 'password'
+    click_button 'Sign up'
+    expect(page).to have_content("Username can't be blank")
+  end
+
+  scenario 'Will not create an account if passwords do not match' do
+    visit '/'
+    click_link 'Sign Up'
+    fill_in 'user[username]', with: 'HomerSimpson'
+    fill_in 'user[email]', with: 'test2@test.com'
+    fill_in 'user[password]', with: 'abc123'
+    fill_in 'user[password_confirmation]', with: '123abc'
+    click_button 'Sign up'
+    expect(page).to have_content("Password confirmation doesn't match Password")
   end
 end

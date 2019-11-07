@@ -10,14 +10,14 @@
 
 
 user = User.new
-user.user_name = 'Namast-Jay'
+user.username = 'Namast-Jay'
 user.password = 'jaysmells'
 user.email = 'jay@mail.com'
 user.save!
 
 
 user = User.new
-user.user_name = 'JessRocksSocks'
+user.username = 'JessRocksSocks'
 user.password = 'jesssmells'
 user.email = 'jess@mail.com'
 user.save!
