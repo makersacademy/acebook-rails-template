@@ -1,4 +1,10 @@
 FactoryBot.define do
+  factory :setting do
+    user_id { nil }
+    font { "MyString" }
+    background_colour { "MyString" }
+  end
+
 
   factory :user do
     id { "1" }
