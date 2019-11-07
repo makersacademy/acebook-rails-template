@@ -55,7 +55,12 @@
               <br>
               <div class="edit-delete">
                 <% @post_id = post.id %>
-                <%= render template: "likes/new" %>
+                <% unless @like = Like.exists?(post.id, session[:user_id]) %>
+                  <%= render template: "likes/new" %>
+                <% else %>
+                  <%= link_to '👎🏻', @like, :method => :delete, class: "btn btn-outline-primary" %>
+                  <br>
+                <% end %>
                 <% if post.user_id == session[:user_id] %>
                   <% session[:path] = request.path %>
                   <%= link_to "Edit", edit_post_path(post) %> |
@@ -63,6 +68,10 @@
                 <% end %>
               </div>
               LICKS: <%= post.likes.length %>
+              <br>
+              <% unless post.likes.length == 0 %>
+                LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %>
+              <% end %>
               <br><br>
               <% @post_id = post.id %>
               <%= render template: "comments/new" %>
