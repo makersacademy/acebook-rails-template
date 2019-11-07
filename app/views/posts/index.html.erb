@@ -85,6 +85,7 @@
 
                     <% session[:path] = request.path %>
 
+
                     <% if((Time.now-comment.updated_at)<600) %>
                     <%= link_to 'Edit', edit_comment_path(comment)%> |
                     <% else %>
@@ -92,6 +93,7 @@
                     <% end %>
 
                     <td><%= link_to 'Delete', comment_path(comment),
+
                             method: :delete,
                             data: { confirm: 'Are you sure?' } %></td>
                 </tr>
