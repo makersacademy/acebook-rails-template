@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-# TEST FAILING - NEEDS TO BE COMPLETED 
+# TEST FAILING - NEEDS TO BE COMPLETED
 
 RSpec.describe Users::SessionsController, type: :controller do
   describe 'POST #create' do
@@ -12,7 +12,6 @@ RSpec.describe Users::SessionsController, type: :controller do
       # expect(subject.welcome_message).to eq "Welcome back Tan"
       # p response.welcome_message
       p @params
-
     end
   end
 end
