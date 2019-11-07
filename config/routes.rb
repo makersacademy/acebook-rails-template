@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     patch '/post/:id/update' => :update, as: 'update_post'
     delete '/post/:id/delete' => :destroy, as: 'destroy_post'
   end
-  # Lots of comments...
+
 
  
 
