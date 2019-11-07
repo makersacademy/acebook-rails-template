@@ -8,7 +8,7 @@ RSpec.feature 'Sign_up', type: :feature do
     click_link 'Sign Up'
     expect(page).to have_content('Sign up')
     expect(page).to have_content('Email')
-    expect(page).to have_content('Password (6 characters minimum)')
+    expect(page).to have_content('Password (6 - 10 characters)')
   end
 
   scenario 'Can create a new user account' do
