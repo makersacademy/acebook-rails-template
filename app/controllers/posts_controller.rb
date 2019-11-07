@@ -1,13 +1,14 @@
 class PostsController < ApplicationController
 
-before_action :find_post, only: [:edit, :destroy, :show, :update]
+  before_action :find_post, only: [:edit, :destroy, :show, :update, :upvote]
+  # before_action :authenticate_user!, except: [:index, :show]
 
   def new
-    @post = Post.new
+    @post = current_user.posts.new
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(post_params.merge(user_id: current_user.id))
     redirect_to posts_url
   end
 
@@ -40,10 +41,16 @@ before_action :find_post, only: [:edit, :destroy, :show, :update]
     end
   end
 
+  def upvote
+    @post.upvote_by current_user
+    # redirect_to :back
+    redirect_to posts_url
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :image)
   end
 
   def find_post

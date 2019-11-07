@@ -1,0 +1,149 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: #ffffff;
+  color: #222222;
+  font-size: 16px;
+}
+
+.fill-height {
+  min-height: 80vh;
+}
+
+nav {
+  background-color: #222222;
+  border-radius: 10px;
+}
+
+nav a:link,
+nav a:visited {
+  color: #77a6f7;
+  font-weight: 700;
+}
+
+nav a:hover {
+  color: #8cb6ff;
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: #77a6f7;
+}
+a:hover {
+  color: #8cb6ff;
+  text-decoration: none;
+}
+
+btn-buzz {
+  background-color: #77a6f7;
+}
+
+/* Headings */
+h1 {
+  font-size: 1.6em;
+  margin-bottom: 24px;
+}
+
+/* Sign Up */
+
+.sign-up-form .first-name,
+.sign-up-form .last-name {
+  width: 49%;
+}
+.sign-up-form .first-name {
+  margin-right: 6px;
+}
+
+.sign-up-form input {
+  width: 100%;
+}
+
+/* Sidebar */
+
+.profile-name {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #77a6f7;
+}
+
+.profile-photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  border: solid 1px #dddddd;
+}
+
+/* Post */
+
+.avatar-small {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: solid 1px #dddddd;
+}
+
+.post-container {
+  background-color: #eeeeee;
+  border: solid 1px #dddddd;
+  border-radius: 10px;
+}
+
+.post-content {
+  font-size: 1.2em;
+}
+
+.post-author,
+.comment-author {
+  font-weight: 700;
+}
+
+.post-meta,
+.comment-meta {
+  font-size: 0.8em;
+  color: #cccccc;
+}
+
+.create-post-message {
+  width: 100%;
+  resize: none;
+}
+
+.comment-container {
+  background-color: #dddddd;
+  border-radius: 5px;
+  padding: 10px 12px;
+}
+
+input,
+textarea {
+  font-size: 1rem;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  border: solid 1px #dddddd;
+  border-radius: 5px;
+  background-color: #eeeeee;
+  color: #222222;
+}
+
+/* Placeholder */
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #bbbbbb;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #bbbbbb;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #bbbbbb;
+}
+
+.footer {
+  color: #222222;
+}
