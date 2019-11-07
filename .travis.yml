@@ -13,12 +13,10 @@ services:
   - postgresql
 
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
   - psql -c 'create database pgapp_test;' -U postgres
 
 script:
+  - xvfb-run make test
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
   - bundle exec rspec spec/
