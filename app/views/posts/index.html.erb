@@ -54,6 +54,8 @@
               </div>
               <br>
               <div class="edit-delete">
+                <% @post_id = post.id %>
+                <%= render template: "likes/new" %>
                 <% if post.user_id == session[:user_id] %>
                   <% session[:path] = request.path %>
                   <%= link_to "Edit", edit_post_path(post) %> |
