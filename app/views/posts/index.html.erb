@@ -4,7 +4,7 @@
   <div style="width:500px; height:auto;"><%= image_tag(post.image, style:"width:100%") if post.image.attached? %></div>
 
   <%= simple_format(post.message) %>
-  <p style="color:#cccccc;"> <%= post.created_at.strftime("%-d %b %Y at %H:%M") %> ago</p>
+  <p style="color:#cccccc;"> <%= post.created_at.strftime("%-d %b %Y at %H:%M") %></p>
   <% @first_name = User.where(id: post.user_id).first&.send(:first_name) %>
   <% @last_name = User.where(id: post.user_id).first&.send(:last_name) %>
   <p><%= "by #{@first_name} #{@last_name}"%></p>
@@ -15,8 +15,27 @@
     data: {confirm: 'Are you sure you want to delete this post?'} %>
   <% end %>
 
-  <p><span>⚡️ <%= link_to "Buzz", like_post_path(post.id), :method => :put %></span></p>
-  <p>Buzzes: <%= post.get_upvotes.size%></p>
+  <div class="buzz">
+
+    <% if user_signed_in? %>
+      <% if current_user.voted_up_on? post %>
+        <%= link_to unbuzz_post_path(post.id), method: :put, class: "unbuzz_post" do %>
+          <span>⚡️ Buzz</span>
+          <%# <span class="icon"><i class="fa fa-heart has-text-primary"></i></span> %>
+        <% end %>
+          <span class="vote_count"><%= "Buzzes: #{post.get_upvotes.size}" %></span>
+      <% else %>
+        <%= link_to buzz_post_path(post.id), method: :put, class: "buzz_post" do %>
+          <span>⚡️ Buzz</span>
+          <%# <span class="icon"><i class="fa fa-heart"></i></span> %>
+        <% end %>
+          <span class="vote_count"><%= "Buzzes: #{post.get_upvotes.size}" %></span>
+      <% end %>
+    <% end %>
+
+  </div>
+
+
 <% end %>
 
 

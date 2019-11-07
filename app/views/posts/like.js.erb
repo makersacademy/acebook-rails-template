@@ -1,0 +1,6 @@
+$('.like_joke').bind('ajax:success', function(){
+   $(this).parent().parent().find('.vote_count').html('<%= escape_javascript     @joke.votes_for.size.to_s %>');
+   $(this).closest('.like_joke').hide();
+   $(this).closest('.votes').html(' <%= link_to "Unlike",  unlike_joke_path(@joke), remote: true, method: :get, class: 'unlike_joke' %>');
+});
+

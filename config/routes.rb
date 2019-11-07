@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   resources :posts do
     member do
-      put "like", to: "posts#upvote"
+      put "buzz", to: "posts#upvote"
+      put "unbuzz", to: "posts#downvote"
     end
   end
   
