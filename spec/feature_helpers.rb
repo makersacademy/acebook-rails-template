@@ -1,6 +1,5 @@
 def create_new_post(post)
-  click_link "New post"
-  fill_in "Content", with: post
+  fill_in "post[content]", with: post
   click_button "Submit"
 end
 

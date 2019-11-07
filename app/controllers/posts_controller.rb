@@ -5,11 +5,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(content: post_params["content"], user_id: session[:user_id])
-    redirect_to posts_url
+    redirect_path = params.require(:post).permit(:redirect_path)[:redirect_path] || '/posts'
+    redirect_to redirect_path
   end
 
   def index
     no_current_user
+    @post = Post.new
     @posts = Post.all
     @comments = Comment.all
   end
@@ -21,13 +23,13 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(update_params)
-    redirect_to posts_url
+    redirect_to_previous_page
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_url
+    redirect_to_previous_page
   end
 
   private
@@ -38,5 +40,11 @@ class PostsController < ApplicationController
 
   def update_params
     params.require(:post).permit(:content)
+  end
+
+  def redirect_to_previous_page
+    redirect = session[:path] || '/posts'
+    session[:path] = nil
+    redirect_to redirect
   end
 end
