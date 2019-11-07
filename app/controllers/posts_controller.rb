@@ -33,7 +33,7 @@ class PostsController < ApplicationController
       flash[:alert] = 'Couldn’t edit the post...'
       render :edit
     end
-  end  
+  end
 
   def destroy
     @post = Post.where(id: params[:id]).first
@@ -52,7 +52,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    
     params.require(:post).permit(:message)
   end
 

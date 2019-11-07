@@ -1,5 +1,5 @@
 <body>
-  <% @posts.reverse do |post| %>
+  <% @posts.reverse.each do |post| %>
     <p><%= post.message %></p>
     <p><%= post.user.username %></p>
     <p><%= post.created_at %></p>
