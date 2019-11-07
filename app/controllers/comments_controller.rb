@@ -9,6 +9,13 @@ class CommentsController < ApplicationController
     puts @comment
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+  # def update
+  # end
+
   def destroy
     Comment.destroy(params[:id])
     redirect_to posts_url

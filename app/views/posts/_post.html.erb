@@ -25,6 +25,10 @@
         <% end %>
       <% end %>
 
+      <%= link_to edit_post_comment_path(post, comment) do %>
+        Edit comment
+      <% end %>
+
     <% end %>
 
     <%= form_for [post, Comment.new] do |form| %>
