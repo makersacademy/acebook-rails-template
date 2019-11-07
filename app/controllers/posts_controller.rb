@@ -43,6 +43,12 @@ before_action :find_post, only: [:edit, :destroy, :show, :update]
     end
   end
 
+  def upvote
+    @post.upvote_by current_user
+    # redirect_to :back
+    redirect_to posts_url
+  end
+
   private
 
   def post_params

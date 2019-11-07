@@ -30,6 +30,9 @@ gem 'bcrypt', '~> 3.1.7'
 # for better forms
 gem 'simple_form', '~> 4.0.1'
 
+# likes and upvotes
+gem 'acts_as_votable', '~> 0.10.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
