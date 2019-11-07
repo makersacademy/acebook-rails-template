@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :signed_in
   before_action :find_post, only: [:edit, :destroy, :show, :update, :upvote, :downvote]
-  # before_action :authenticate_user!, except: [:index, :show]
 
   def new
     @post = current_user.posts.new
@@ -68,4 +68,9 @@ class PostsController < ApplicationController
   def find_post
     @post = Post.find(params[:id])
   end
+
+  def signed_in
+    redirect_to '/' if !user_signed_in?
+  end
+
 end
