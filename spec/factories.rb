@@ -1,8 +1,9 @@
 FactoryBot.define do
-  factory :setting do
-    user_id { nil }
-    font { "MyString" }
-    background_colour { "MyString" }
+    
+  factory :like do
+    user_id { 1 }
+    post_id { 1 }
+
   end
 
 

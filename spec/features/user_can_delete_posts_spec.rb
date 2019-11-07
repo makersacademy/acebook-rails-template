@@ -7,20 +7,26 @@ RSpec.feature "Timeline", type: :feature do
     create_new_post("Hello, world!")
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Delete")
+    expect(page).to have_current_path('/posts')
     click_link "Delete"
-    expect(page).not_to have_content("Goodbye, world!")
+    expect(page).to have_current_path('/posts')
+    expect(page).not_to have_content("Hello, world!")
   end
 
   scenario "Cannot delete posts and view them if you are not the author" do
     signup_as_new_user("Pam")
     login_as_user("Pam")
     create_new_post("Hello, world!")
+    expect(page).to have_current_path('/posts')
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Delete")
     click_link "LogOut"
     signup_as_new_user("James")
     login_as_user("James")
+    click_link "Delete"
+    expect(page).to have_current_path('/posts')
     expect(page).to have_content("Hello, world!")
-    expect(page).not_to have_content("Delete")
+
+
   end
 end
