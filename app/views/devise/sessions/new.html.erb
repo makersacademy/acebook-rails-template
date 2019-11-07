@@ -10,9 +10,6 @@
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
-  
-  <%= flash[:alert]%>
-  <br>
 
   <% if devise_mapping.rememberable? %>
     <div class="field">
