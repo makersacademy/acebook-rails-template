@@ -1,81 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
-  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+    <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+  </head>
 
-</head>
-
-<body>
-  <header>
-
+  <body>
+    <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                  <a class="badge badge-pill badge-secondary text-light" href="/users/edit">Account Settings</a>
-              </li>
-            </ul>
+        <div
+          class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"
+        >
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a
+                class="badge badge-pill badge-secondary text-light"
+                href="/users/edit"
+                >Account Settings</a
+              >
+            </li>
+          </ul>
         </div>
         <div class="mx-auto order-0">
           <div class="navbar-brand mx-auto">
-              <a class="badge badge-pill badge-secondary text-light" href="#">
-                  <img src="../../public/facebuzzLogo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                  faceBuzz
-                </a>
+            <a class="badge badge-pill badge-secondary text-light" href="#">
+              <img
+                src="../img/facebuzzLogo.png"
+                width="30"
+                height="30"
+                class="d-inline-block align-top"
+                alt=""
+              />
+              faceBuzz
+            </a>
           </div>
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="badge badge-pill badge-secndary text-light" href="/users/<%=current_user.id%>">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="badge badge-pill badge-secondary text-light" href="#">Logout</a>
-                </li>
-            </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a
+                class="badge badge-pill badge-secndary text-light"
+                href="/users/<%=current_user.id%>"
+                >Profile</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="badge badge-pill badge-secondary text-light" href="#"
+                >Logout</a
+              >
+            </li>
+          </ul>
         </div>
-    </nav>
+      </nav>
+    </header>
 
-  </header>
+    <div class="container">
+      <div class="row row-no-gutters">
+        <div class="col-lg-3">
+          <h2><%=@user.first_name%>'s Profile</h2>
+          <br /><br />
+          <img
+            src="../img/poki (1).jpeg"
+            alt="..."
+            class="img-thumbnail"
+            height="150"
+            width="150"
+          />
+          <br />
+          <label for="validationCustom01">First name</label>
+          <input
+            type="text"
+            id="validationCustom01"
+            placeholder="First name"
+            value="Mark"
+            required
+          />
+          <label for="validationCustom01">Last name</label>
+          <input
+            type="text"
+            id="validationCustom01"
+            placeholder="First name"
+            value="Markerson"
+            required
+          />
+        </div>
 
-            <div class="container">
-            <div class="row row-no-gutters">
-              <div class="col-lg-3">
-                <h2><%=@user.first_name%>'s Profile</h2>
-              </div>
-              <% @posts.each do |post| %>
-              <div class="col-lg-9">
-                <div class="media">
-                  <a class="pull-left" href="#">
-                    <img class="d-flex mr-3 img-fluid rounded-circle media-object img-responsive" src="../../../public/poki-2.jpeg" class="mr-3" height="50" width="50">
-                  </a>
-                    <div class="media-body">
-                      <h5 class="mt-0"><%=@user.first_name%> says</h5>
-                      <%=post.message%>
-                      <div class="media mt-3">
-                        <a class="mr-3" href="#">
-                          <img class="media-object img-responsive" src="../../../public/poki-3.jpeg" class="mr-3" height="50" width="50">
-                        </a>
-                        <div class="media-body">
-                          <h6 class="mt-0">Comments</h6>
-                          <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                        </div>
-                        <p style="color:#cccccc;"> <%= time_ago_in_words(post.created_at)%> ago</p>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              <% end %>
+        <div class="col-lg-9">
+          <% @posts.each do |post| %>
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img
+                class="media-object img-responsive rounded-circle border img-responsive"
+                src="../img/poki-2.jpeg"
+                class="mr-3"
+                height="50"
+                width="50"
+              />
+            </a>
+            <div class="media-body">
+              <h5 class="mt-0"><%=@user.first_name%> says</h5>
+              <%=post.message%>
+              <p style="color:#cccccc;">
+                <%= time_ago_in_words(post.created_at)%> ago
+              </p>
             </div>
           </div>
-
-</body>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

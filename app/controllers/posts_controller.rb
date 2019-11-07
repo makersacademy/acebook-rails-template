@@ -15,6 +15,7 @@ before_action :find_post, only: [:edit, :destroy, :show, :update]
 
   def index
     @posts = Post.all.order("created_at DESC")
+    p @posts
   end
 
   def index_by_user

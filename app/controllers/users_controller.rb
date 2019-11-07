@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   #users_controller.rb
   def profile
     @user = User.find(params[:id])
-    @posts = Post.where(user_id: params[:id])
-    p @posts 
+    @posts = Post.where(user_id: params[:id]).order("created_at DESC")
+    p @posts
   end
 
   private
