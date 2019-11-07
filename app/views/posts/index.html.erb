@@ -3,34 +3,32 @@
   <link rel="stylesheet" href="/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<style>
-  body {
-    background-color: #F2F2F2;
-  }
-  .profilepic {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  }
-  .username {
-    font-weight: bold;
-  }
-  .time {
-    font-size: 0.7em;
-    text-align: right;
-  }
-  .edit-delete {
-    text-align: right;
-    font-size: 0.7em;
-  }
-</style>
+  <style>
+    body {
+      background-color: #F2F2F2;
+    }
+    .profilepic {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .username {
+      font-weight: bold;
+    }
+    .time {
+      font-size: 0.7em;
+      text-align: right;
+    }
+    .edit-delete {
+      text-align: right;
+      font-size: 0.7em;
+    }
+  </style>
 </head>
 <body>
   <% if session[:user_id] == true %>
     <h5>Welcome, <%= User.find_by(id: session[:user_id]).full_name %>!</h5>
   <% end %>
-
   <div class="container">
     <div class="row">
       <div class="col-2">
@@ -47,14 +45,11 @@
               <div class="username"><a href="users/<%= post.user.id %>" ><%= post.user.username %></a> <br></div>
               <p><%= simple_format post.content %></p>
               <div class="time">
-
                 <% if post.created_at != post.updated_at %>
-                edited: <% end %>
-
+                  edited:
+                <% end %>
                 <%= time_ago_in_words(post.updated_at) %> ago<br>
                 <%= post.created_at.strftime("%H:%M %a %e %b %Y") %>
-
-
               </div>
               <br>
               <div class="edit-delete">
@@ -67,21 +62,18 @@
                 <% end %>
                 <% if post.user_id == session[:user_id] %>
                   <% session[:path] = request.path %>
-                  
                   <% if((Time.now-post.updated_at)<600) %>
-
-
-                  <%= link_to "Edit", edit_post_path(post) %> |
+                    <%= link_to "Edit", edit_post_path(post) %> |
                   <% else %>
-                  This post is older than 10 mins, you can't edit it buddy |
+                    This post is older than 10 mins, you can't edit it buddy |
                   <% end %>
                   <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
+                <% else %>
+                  <% if((Time.now-post.updated_at)<600) %>
+                    <a href="#" onclick="alert('Cant do that!');">Edit</a> |
                   <% else %>
-                    <% if((Time.now-post.updated_at)<600) %>
-                      <a href="#" onclick="alert('Cant do that!');">Edit</a> |
-                    <% else %>
-                      This post is older than 10 mins, you can't edit it buddy |
-                    <% end %>
+                    This post is older than 10 mins, you can't edit it buddy |
+                  <% end %>
                   <a href="#" onclick="alert('Cant do that!');">Delete</a>
                 <% end %>
               </div>
@@ -95,25 +87,22 @@
               <%= render template: "comments/new" %>
               <% post.comments.each do |comment| %>
                 <tr>
-                    <td><%= comment.user.username %>: <b><%= comment.text %></b></td> |
-                    <% if comment.created_at != comment.updated_at %>
-                    edited: <% end %>
-                    <%= time_ago_in_words(comment.updated_at) %> ago |
-                    <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %> |
-
-                    <% session[:path] = request.path %>
-
-                    <% if comment.user.id == session[:user_id] %>
-                      <% if((Time.now-comment.updated_at)<600) %>
-                        <%= link_to 'Edit Comment', edit_comment_path(comment)%> |
-                      <% else %>
-                        This comment is older than 10 mins, you can't edit it buddy |
-                      <% end %>
-
-                      <td><%= link_to 'Delete Comment', comment_path(comment),
-                              method: :delete,
-                              data: { confirm: 'Are you sure?' } %></td>
-                            </tr>
+                  <td><%= comment.user.username %>: <b><%= comment.text %></b></td> |
+                  <% if comment.created_at != comment.updated_at %>
+                    edited:
+                  <% end %>
+                  <%= time_ago_in_words(comment.updated_at) %> ago |
+                  <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %> |
+                  <% session[:path] = request.path %>
+                  <% if comment.user.id == session[:user_id] %>
+                    <% if((Time.now-comment.updated_at)<600) %>
+                      <%= link_to 'Edit Comment', edit_comment_path(comment)%> |
+                    <% else %>
+                      This comment is older than 10 mins, you can't edit it buddy |
+                    <% end %>
+                    <td><%= link_to 'Delete Comment', comment_path(comment),
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' } %></td>
                   <% else %>
                     <% if((Time.now-post.updated_at)<600) %>
                       <a href="#" onclick="alert('Cant do that!');">Edit Comment</a> |
@@ -122,15 +111,15 @@
                     <% end %>
                     <a href="#" onclick="alert('Cant do that!');">Delete Comment</a>
                   <% end %>
-                <br>
+                  <br>
+                </tr>
               <% end %>
-              </li>
+            </li>
           <% end %>
         </ul>
       </div>
-      </div>
-      <div class="col-2">
-      </div>
     </div>
-  <div class="posts">
+    <div class="col-2">
+    </div>
+  </div>
 </body>

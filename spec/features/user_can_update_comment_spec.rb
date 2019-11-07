@@ -17,4 +17,3 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Great post again!")
   end
 end
-
