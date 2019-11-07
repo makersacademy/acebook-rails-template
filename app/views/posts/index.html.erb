@@ -31,14 +31,15 @@
     <h5>Welcome, <%= User.find_by(id: session[:user_id]).full_name %>!</h5>
   <% end %>
 
-  <%= link_to new_post_path do %>
-    New post
-  <% end %>
   <div class="container">
     <div class="row">
       <div class="col-2">
       </div>
       <div class="col-8">
+        <h5 class="card-header">What's on your mind?</h5>
+        <div class="card-body">
+          <%= render template: "posts/new" %>
+        </div>
         <ul class="list-group list-group-flush">
           <% @posts.reverse.each do |post| %>
             <li class="list-group-item">
@@ -54,6 +55,7 @@
               <br>
               <div class="edit-delete">
                 <% if post.user_id == session[:user_id] %>
+                  <% session[:path] = request.path %>
                   <%= link_to "Edit", edit_post_path(post) %> |
                   <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
                 <% end %>
@@ -62,16 +64,17 @@
               <%= render template: "comments/new" %>
               <% post.comments.each do |comment| %>
                 <tr>
-                    <td><%= comment.user.username %>: <%= comment.text %></td>
+                    <td><%= comment.user.username %>: <b><%= comment.text %></b></td> |
                     <% if comment.created_at != comment.updated_at %>
                     edited: <% end %>
                     <%= time_ago_in_words(comment.updated_at) %> ago |
                     <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %> |
-                    <td><%= link_to 'Edit comment', edit_comment_path(comment) %></td> |
+
+                    <% session[:path] = request.path %>
+                    <td><%= link_to 'Edit', edit_comment_path(comment) %></td> |
                     <td><%= link_to 'Delete', comment_path(comment),
                             method: :delete,
                             data: { confirm: 'Are you sure?' } %></td>
-
                 </tr>
                 <br>
               <% end %>
