@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
   def current_user
     session[:user_id]
   end
+
+  def user_not_signed_in
+    if !current_user
+      redirect_to "/"
+    end
+  end
 end
