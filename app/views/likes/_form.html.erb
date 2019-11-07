@@ -1,0 +1,13 @@
+<% if current_user.liked? likeable %>
+  <%= form_tag post_unlike_path(likable_type: likeable.class.to_s, likable_id: likeable.id), method: :post do %>
+    <% button_tag class: 'btn btn-block liked' do %>
+      <%= fa_icon 'thumbs-up' %> unlike
+    <% end %>
+  <% end %>
+<% else %>
+  <%= form_tag post_likes_path(likable_type: likeable.class.to_s, likable_id: likeable.id, post_id: likeable.id), method: :post do %>
+    <% button_tag class: 'btn btn-block liked' do %>
+      <%= fa_icon 'thumbs-up' %> like
+    <% end %>
+  <% end %>
+<% end %>
