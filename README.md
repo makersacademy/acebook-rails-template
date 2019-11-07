@@ -25,53 +25,43 @@ Completed Stories:
 As a developer,
 So I have my project set up well,
 I want to install TravisCI, CodeClimate, Rubocop and Simplecov.  
-```
-```
+
 As a developer,
 So I can check out my project online,
 I want to be able to run my project on Heroku.
-```
-```
+
 As a user,
 So I can be trendy and cool,
 I want to sign up to Acebook with a unique email, username and password.
-```
-```
+
 As a user,
 So I can continue using Acebook,
 I want to be able to login.
-```
-```
+
 As a user,
 So I can give myself a break from Acebook,
 I want to be able to logout.
-```
-```
+
 As a user,
 So I can keep up to date with my ferret friends,
 I want to view all posts made on Acebook.
-```
-```
+
 As a user,
 So I can share my favourite ferret jokes,
 I want to be able to post a comment on Acebook.
-```
-```
+
 As a user,
 So I can know which posts are a bit outdated,
 I want to be see the date the post was made and see the newest ones first.
-```
-```
+
 As a user,
 So I can remove some of my terrible jokes,
 I want to be able to delete a post that I made.
-```
-```
+
 As a user,
 So I can make my jokes even better,
 I want to be able to edit a post that I made.
-```
-```
+
 As a user,
 So I can only regret my post a bit,
 I only want to be able to edit my post for up to 10 minutes after I made it.
