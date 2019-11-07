@@ -21,7 +21,7 @@ The goal of the two-week project is to use high-quality processes to build a pro
 
 ## User Stories
 Completed Stories:
-```
+
 As a developer,
 So I have my project set up well,
 I want to install TravisCI, CodeClimate, Rubocop and Simplecov.  
@@ -69,7 +69,6 @@ I only want to be able to edit my post for up to 10 minutes after I made it.
 As a user,
 So I can write lines and lines in my posts,
 I want line breaks added to my posts.
-```
 
 ## How to Install and Run
 ```bash
