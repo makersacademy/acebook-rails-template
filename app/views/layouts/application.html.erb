@@ -17,7 +17,7 @@
     <ul class="nav-list">
      <% if current_user %>
      <a class="nav-link" href="/"><li>Homepage</li></a>
-     <a  class="nav-link" href="#"><%=current_user.username%></a>
+     <a  class="nav-link" href="#"><%=current_user.user_name%></a>
      <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'nav-link'%>
      <% else %>
      <a class="nav-link" href="/"><li>Homepage</li></a>
