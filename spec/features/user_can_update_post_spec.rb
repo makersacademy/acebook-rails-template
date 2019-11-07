@@ -22,6 +22,7 @@ RSpec.feature "Timeline", type: :feature do
     click_link "LogOut"
     signup_as_new_user("James")
     login_as_user("James")
+    visit('/posts')
     click_link "Edit"
     expect(page).to have_content("Hello, world!")
   end

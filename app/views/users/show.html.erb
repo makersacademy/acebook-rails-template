@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
+
+
   <body>
     <div class="container" style="padding-top:20px">
       <div class="row">
@@ -54,6 +57,10 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
     <% end %>
         <% if post.user_id == session[:user_id] %>
       <% session[:path] = request.path %>
+
+      <%= post.created_at.strftime("%H:%M %a %e %b %Y") %><br>
+      <% if((Time.now-post.updated_at)<600) %>
+
       <%= link_to "Edit", edit_post_path(post), style: "font-size:12px" %> <span style="color:grey">|</span>
       <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"}, style: "font-size:12px" %>
     <% end %>

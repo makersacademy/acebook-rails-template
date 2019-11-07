@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    user_not_signed_in
     @user = User.find_by(id: params[:id])
     @post = Post.new
   end
