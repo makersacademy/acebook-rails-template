@@ -9,10 +9,9 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "comment[text]", with: "Great post!"
     click_button "Save Comment"
     expect(page).to have_content("Great post!")
-    # expect(page).to have_content("Edit comment")
-    click_link "Edit comment"
+    click_link "Edit Comment"
     fill_in "comment[text]", with: "Great post again!"
-    click_button "Update comment"
+    click_button "Update Comment"
     expect(page).to have_content("Great post again!")
   end
 end
