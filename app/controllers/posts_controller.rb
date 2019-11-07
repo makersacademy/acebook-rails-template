@@ -29,9 +29,9 @@ class PostsController < ApplicationController
     Post.destroy(params[:id])
     redirect_to posts_url
   end
-
+  
   private
-
+  
   def post_params
     params.require(:post).permit(:message).merge(user_id: current_user.id)
   end

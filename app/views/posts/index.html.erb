@@ -1,19 +1,31 @@
 <% @posts.each do |post| %>
-    <p class='post'><%= post.message %></p>
-    <p><%= post.created_at.to_s(:long_ordinal) %></p>
-    <% if post.user_id == current_user.id %>
+<p class='post'><%= post.message %></p>
+<p><%= post.created_at.to_s(:long_ordinal) %></p>
+  <% if post.user_id == current_user.id %>
     <%= form_for(post, :html => { :method => :delete }) do |f| %>
-        <%= f.submit "Delete Post" %>
-      <% end %>
-      <% end %>
-
-      <% if post.created_at > Time.now - 600 && post.user_id == current_user.id%>
-      <%= post.user_id %>
-        <%= current_user.id %>
-        <%= link_to edit_post_path(post) do %>
-        Edit post<br>
-        <% end %>
+      <%= f.submit "Delete Post" %>
     <% end %>
+  <% end %>
+  
+  <% if post.created_at > Time.now - 600 && post.user_id == current_user.id%>
+    <%= post.user_id %>
+    <%= current_user.id %>
+    <%= link_to edit_post_path(post) do %>
+        Edit post<br>
+    <% end %>
+  <% end %>
+
+  <% post.comments.each do |comment| %>
+  <p class="comments">
+    <%= comment.message %>
+  </p>
+  <% end %>
+
+  <%= form_for [post, Comment.new] do |form| %>
+    <%= form.text_field :message %>
+
+    <%= form.submit "Add comment" %>
+  <% end %>
 <% end %>
 
 <%= link_to new_post_path do %>
