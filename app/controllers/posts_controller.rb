@@ -1,20 +1,20 @@
 class PostsController < ApplicationController
   def new
-    p params[:user_id]
-    # p @wall_id = post_params[:user_id]
+    # @@wall_id = params[:id]
     @post = Post.new
   end
 
   def create
-    # @wall_id = params[:user_id]
-    @post = Post.create(post_params)
-    redirect_to posts_url
-    # p @wall_id
+    # @@wall_id = params[:id]
+    # $wall_id = params[:id]
+    @post = Post.create(post_params(@@wall_id))
+    # redirect_to posts_url
+    redirect_to "/users/#{current_user.id}"
   end
 
   def index
-    # p @wall_id = params[:id]
-    @posts = Post.all
+    @@wall_id = params[:id]
+    @posts = Post.where(wall_id: params[:id])
   end
 
   def destroy
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 
   private
 
-  def post_params
-    params.require(:post).permit(:message).merge(user_id: current_user.id, wall_id: current_user.id )
+  def post_params(wall_id)
+    params.require(:post).permit(:message).merge(user_id: current_user.id, wall_id: wall_id )
   end
 end

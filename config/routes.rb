@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :posts
   # resources :users
 devise_scope :user do
-  get 'users/:id' => 'users#show', as: 'user'
+  # get 'users/:id' => 'users#show', as: 'user'
+  # get 'users/:id' => 'posts#index', as: 'user'
+  get 'users/:id' => 'posts#index', as: 'user'
 end
+
 
 end
