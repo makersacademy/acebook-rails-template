@@ -1,6 +1,7 @@
 
 require 'rails_helper'
 
+
 RSpec.feature "Timeline", type: :feature do
   scenario "User can update comment" do
     signup_as_new_user("Pam")

@@ -14,10 +14,11 @@ def signup_as_new_user(user)
   fill_in "user[birthday]", with: "01/01/2019"
   fill_in "user[profile_picture]", with: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
   click_button "Create Account"
+  click_link "LogOut"
 end
 
 def login_as_user(user)
-  fill_in "Email", with: "#{user}@lizard.com"
+  fill_in "email", with: "#{user}@lizard.com"
   fill_in "Password", with: "password"
   click_button "Login"
 end

@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'settings/new'
+
   get 'home/index'
   root 'home#index'
 
@@ -9,6 +11,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :sessions
   resources :comments
+  resources :likes
+
 
   get "signup", to: "users#new", as: "signup"
   get "login", to: "sessions#new", as: "login"

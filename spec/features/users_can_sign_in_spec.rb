@@ -5,7 +5,7 @@ RSpec.feature "Sign In", type: :feature do
 
     scenario "Successful sign in" do
       signup_as_new_user('jess')
-      fill_in "Email", with: "jess@lizard.com"
+      fill_in "email", with: "jess@lizard.com"
       fill_in "Password", with: "password"
       click_button "Login"
       expect(page).to have_content "Dr jess Lizard"
@@ -15,7 +15,7 @@ RSpec.feature "Sign In", type: :feature do
 
     scenario "Unsuccessful sign in" do
       signup_as_new_user('jess')
-      fill_in "Email", with: "jess@lizard.com"
+      fill_in "email", with: "jess@lizard.com"
       fill_in "Password", with: "wrong password aaaaa"
       click_button "Login"
       expect(page).to have_content "Email or password is invalid"

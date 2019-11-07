@@ -7,7 +7,9 @@ class UsersController < ApplicationController
     @user.save
 
     if @user.valid?
-      redirect_to '/'
+      session[:user_id] = @user.id
+      redirect_to "/users/#{session[:user_id]}"
+      flash.notice = "You have successfully signed up #{@user.username}"
     else @user.invalid?
       signup_error = @user.errors.messages.first.flatten.join(" ")
       redirect_to '/signup', alert: signup_error
