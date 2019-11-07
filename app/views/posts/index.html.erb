@@ -3,7 +3,7 @@
 
   <div style="width:500px; height:auto;"><%= image_tag(post.image, style:"width:100%") if post.image.attached? %></div>
 
-  <p><%= post.message %></p>
+  <%= simple_format(post.message) %>
   <p style="color:#cccccc;"> <%= time_ago_in_words(post.created_at)%> ago</p>
   <% @first_name = User.where(id: post.user_id).first&.send(:first_name) %>
   <% @last_name = User.where(id: post.user_id).first&.send(:last_name) %>
