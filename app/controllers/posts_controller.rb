@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
   end
@@ -19,9 +20,14 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.where(id: params[:id]).first
-    return if @post
-
-    redirect_to root_path
+    if (Time.now - @post.created_at) > 600
+      redirect_to posts_url
+      flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
+     else
+       return if @post
+      
+       redirect_to root_path
+    end
   end
 
   def update
