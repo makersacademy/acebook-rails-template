@@ -58,6 +58,13 @@
               </div>
               <br>
               <div class="edit-delete">
+                <% @post_id = post.id %>
+                <% unless @like = Like.exists?(post.id, session[:user_id]) %>
+                  <%= render template: "likes/new" %>
+                <% else %>
+                  <%= link_to '👎🏻', @like, :method => :delete, class: "btn btn-outline-primary" %>
+                  <br>
+                <% end %>
                 <% if post.user_id == session[:user_id] %>
                   <% session[:path] = request.path %>
                   <% if((Time.now-post.updated_at)<600) %>
@@ -75,6 +82,12 @@
                   <a href="#" onclick="alert('Cant do that!');">Delete</a>
                 <% end %>
               </div>
+              LICKS: <%= post.likes.length %>
+              <br>
+              <% unless post.likes.length == 0 %>
+                LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %>
+              <% end %>
+              <br><br>
               <% @post_id = post.id %>
               <%= render template: "comments/new" %>
               <% post.comments.each do |comment| %>

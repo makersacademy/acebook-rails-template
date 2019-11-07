@@ -44,13 +44,34 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
     <p style="margin-top:20px; margin-bottom:20px"><%= simple_format post.content %></p>
     <div style="text-align:right">
     <div style="font-size:12px; color:grey; text-align:right"><%= time_ago_in_words(post.updated_at) %> ago</div>
-    <% if post.user_id == session[:user_id] %>
+    <% @post_id = post.id %>
+    <% unless @like = Like.exists?(post.id, session[:user_id]) %>
+      <%= render template: "likes/new" %>
+    <% else %>
+      <%= link_to '👎🏻', @like, :method => :delete, class: "btn btn-outline-primary" %>
+      <br>
+    <% end %>
+        <% if post.user_id == session[:user_id] %>
       <% session[:path] = request.path %>
+
       <% if((Time.now-post.updated_at)<600) %>
+
       <%= link_to "Edit", edit_post_path(post), style: "font-size:12px" %> <span style="color:grey">|</span>
     <% else %>
       This post is older than 10 mins, you can't edit it buddy
     <% end %>
+    </div>
+    LICKS: <%= post.likes.length %>
+    <br>
+    <% unless post.likes.length == 0 %>
+      LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %>
+    <% end %>
+    <% @post_id = post.id %>
+    <%= render template: "comments/new" %>
+      <% post.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.user.username %>: <b><%= comment.text %></b></td>
+  <% if comment.created_at != comment.updated_at %>
     <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"}, style: "font-size:12px" %>
   <% else %>
     <% if((Time.now-post.updated_at)<600) %>
@@ -68,6 +89,7 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
 <tr>
 <td><%= comment.user.username %>: <b><%= comment.text %></b></td>
 <% if comment.created_at != comment.updated_at %>
+
   edited: <% end %>
   <%= time_ago_in_words(comment.updated_at) %> ago |
   <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %> |
@@ -79,6 +101,7 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
       This comment is older than 10 mins, you can't edit it buddy |
     <% end %>
     <td><%= link_to 'Delete Comment', comment_path(comment),
+
           method: :delete,
           data: { confirm: 'Are you sure?' } %></td>
         </tr>
