@@ -23,7 +23,6 @@ class LikesController < ApplicationController
   private
 
   def find_likeable
-    p params[:likeable_type]
     @likeable_type = params[:likeable_type].camelize
     @likeable = @likeable_type.constantize.find(params[:likeable_id])
   end
