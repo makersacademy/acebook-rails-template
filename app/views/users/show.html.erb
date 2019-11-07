@@ -74,8 +74,8 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
   <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %> |
   <% session[:path] = request.path %>
 
-  <td><%= link_to 'Edit', edit_comment_path(comment) %></td> |
-  <td><%= link_to 'Delete', comment_path(comment),
+  <td><%= link_to 'Edit comment', edit_comment_path(comment) %></td> |
+  <td><%= link_to 'Delete comment', comment_path(comment),
           method: :delete,
           data: { confirm: 'Are you sure?' } %></td>
         </tr>
