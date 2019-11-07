@@ -50,7 +50,6 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'timecop'
-  gem 'selenium-webdriver'
 end
 
 group :development do

@@ -38,24 +38,7 @@ RSpec.feature "Edit post", type: :feature do
     login_user_two
     visit '/posts'
     click_button 'Edit'
-    a = page.driver.browser.switch_to.alert
-    expect(a.text).to eq 'Permission denied'
-  end
-
-  scenario "User cannot delete another user's post" do
-    create_user
-    login_user
-    visit '/posts'
-    create_post
-    logout_user
-
-    create_user_two
-    login_user_two
-    visit '/posts'
-    click_button 'Delete'
-    a = page.driver.browser.switch_to.alert
-    expect(a.text).to eq 'Permission denied'
-
+    expect(page).to have_content "Hello, world!"
   end
 
 end

@@ -23,11 +23,6 @@ require 'helpers/posts_helpers'
 require 'web_helpers'
 # Add additional requires below this line. Rails is not loaded until this point!
 
-require 'capybara'
-require 'selenium-webdriver'
-Capybara.default_driver = :selenium
-
-
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -53,10 +48,6 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.extend ControllerMacros, type: :controller
   # config.include FactoryBot::Syntax::Methods
-
-  config.include Capybara::DSL
-
-
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
