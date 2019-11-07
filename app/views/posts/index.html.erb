@@ -20,13 +20,13 @@
     <% if user_signed_in? %>
       <% if current_user.voted_up_on? post %>
         <%= link_to unbuzz_post_path(post.id), method: :put, class: "unbuzz_post" do %>
-          <span>⚡️ </span>
+          <span>⚡️ Like </span>
           <%# <span class="icon"><i class="fa fa-heart has-text-primary"></i></span> %>
         <% end %>
           <span class="vote_count"><%= post.get_upvotes.size %></span>
       <% else %>
         <%= link_to buzz_post_path(post.id), method: :put, class: "buzz_post" do %>
-          <span>⚡️ </span>
+          <span>⚡️ Like </span>
           <%# <span class="icon"><i class="fa fa-heart"></i></span> %>
         <% end %>
         <% if post.get_upvotes.size > 0%>
