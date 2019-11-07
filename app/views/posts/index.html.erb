@@ -60,9 +60,7 @@
               <div class="edit-delete">
                 <% if post.user_id == session[:user_id] %>
                   <% session[:path] = request.path %>
-                  <% if comment.created_at != comment.updated_at %>
-                  edited: <% end %>
-                  <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %> |
+                  
                   <% if((Time.now-post.updated_at)<600) %>
 
 
