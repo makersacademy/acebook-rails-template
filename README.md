@@ -75,8 +75,7 @@ I want to be able to edit a post that I made.
 As a user,
 So I can only regret my post a bit,
 I only want to be able to edit my post for up to 10 minutes after I made it.
-```
-```
+
 As a user,
 So I can write lines and lines in my posts,
 I want line breaks added to my posts.
