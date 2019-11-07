@@ -13,8 +13,8 @@ class CommentsController < ApplicationController
   end
 
   def edit
-  @comment = Comment.find(params[:id])
-end
+    @comment = Comment.find(params[:id])
+  end
 
   def create
     current_user = session[:user_id]
