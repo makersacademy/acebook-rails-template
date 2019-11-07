@@ -14,10 +14,10 @@ The goal of the two-week project is to use high-quality processes to build a pro
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
 ## Trello
-https://trello.com/b/vN4cu4v1/short-ferret-midnight
+[Link to our Trello board](https://trello.com/b/vN4cu4v1/short-ferret-midnight)
 
 ## Documented Learning
-https://medium.com/@shortferretmignight
+[View our daily blog posts here](https://medium.com/@shortferretmignight)
 
 ## User Stories
 Completed Stories:
