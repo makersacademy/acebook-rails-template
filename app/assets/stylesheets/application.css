@@ -14,8 +14,17 @@
  *= require_self
  */
 
- .body {
-  /* font-family: 'Roboto', sans-serif; */
-  font-family: 'McLaren', cursive;
-  background-color: aqua;
+ body {
+   font-family: "LightIkaros";
+ }
+ h1, h2, h3, h4, h5, h6 {
+   font-family: "LightIkaros"
+ }
+ p {
+   font-family: "LightIkaros"
+ }
+ #light_grey_container {
+   background-color: rgba(0,0,0,.1)
+ }
+ #profile_thumbnail {
  }
