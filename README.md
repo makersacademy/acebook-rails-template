@@ -36,6 +36,22 @@ So I can use Acebook
 I want to be able to sign up to Acebook
 
 As a User
+So I can sign-up for Acebook
+I want to goto to sign-up page when I use any url
+
+As a User
+So my user account has a valid email address
+I want to be prompted if the email entered is invalid
+
+As an User
+So I can ensure I have a strong password
+I want validation criteria to inform me that passwords not between 6 & 10 characters are invalid 
+
+As a User
+So that I can quickly see posts after creating an account
+I'd like to be redirected  the posts page after signing up
+
+As a User
 So that I can use Acebook
 I'd like to log in
 
@@ -69,25 +85,5 @@ I'd like to see the author of a post
 As a User
 So that I can appreciate the content of a post
 I'd like to see text content including any line breaks of a post
-
-
-NICE TO HAVES (TO CONSIDER LATER)
-
-As a User
-So I can see who's on Acebook
-I'd like to see a list of people on Acebook
-
-As a User
-So I can connect with people
-I'd like to add friends
-
-As a User
-So that I can change my mind about what I share
-I'd like to edit a post I have created
-
-As a User
-So that I can change my mind about what I share
-I'd like to delete a post I have created
-
 
 ```
