@@ -62,6 +62,8 @@
                   <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
                 <% end %>
               </div>
+              LICKS: <%= post.likes.length %>
+              <br><br>
               <% @post_id = post.id %>
               <%= render template: "comments/new" %>
               <% post.comments.each do |comment| %>
