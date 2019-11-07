@@ -1,0 +1,143 @@
+<%= render './partials/wrapper-top' %>
+<title>Acebook - My profile</title>
+<%= render './partials/header' %> 
+
+<div class="container">
+    <!-- Start of main content -->
+    <div class="main-content row fill-height">
+      <div class="sidebar col-4 p-2">
+
+        <div class="profile p-2">
+          <div>
+            <img src="john_avatar.jpeg" alt="John" class="profile-photo">
+          </div>
+        </div>
+
+        <div class="profile-name p-2">
+          John Dennehy
+        </div>
+
+      </div>
+      <div class="main col-8 p-2">
+        <div id="create-post" class="row">
+          <div class="col-12">
+            <div class="create-post-container p-2 mb-2">
+              <form>
+                <textarea name="message" class="create-post-message" rows="3" placeholder="What are you up to?"></textarea>
+                <div class="text-right">
+                  <button class="btn btn-sm btn-primary">Post</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Start of a post -->
+        <div id="post" class="row">
+          <div class="col-1">
+            <div class="avatar my-3">
+              <img src="john_avatar.jpeg" alt="John" class="avatar-small">
+            </div>
+          </div>
+          <div class="col-11">
+            <div class="post-container my-3 p-3">
+              <div class="post-author">
+                <a href="#">John Dennehy</a>
+              </div>
+              <div class="post-content mb-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+              <div class="post-meta">
+                5 Nov 2019 5:00pm
+              </div>
+              <!-- Start of comment -->
+              <div class="comment-container my-1 mt-3">
+                <div class="row">
+                  <div class="col-1">
+                    <img src="melvin_avatar.jpeg" alt="Melvin" class="avatar-small">
+                  </div>
+                  <div class="col-11">
+                    <div class="comment-author px-2">
+                      <a href="#">Melvin Lau</a>
+                    </div>
+                    <div class="comment-body px-2 mb-2">
+                      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos
+                    </div>
+                    <div class="comment-meta px-2">
+                      5 Nov 2019 5:05pm
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End of comment -->
+              <!-- Start of comment -->
+              <div class="comment-container my-1 mt-3">
+                <div class="row">
+                  <div class="col-1">
+                    <img src="olly_avatar.jpeg" alt="Olly" class="avatar-small">
+                  </div>
+                  <div class="col-11">
+                    <div class="comment-author px-2">
+                      <a href="#">Olly Holovchenko</a>
+                    </div>
+                    <div class="comment-body px-2 mb-2">
+                      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos
+                    </div>
+                    <div class="comment-meta px-2">
+                      5 Nov 2019 5:05pm
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End of comment -->
+            </div>
+          </div>
+        </div>
+        <!-- End of post -->
+
+        <!-- Start of a post -->
+        <div id="post" class="row">
+          <div class="col-1">
+            <div class="avatar my-3">
+              <img src="alec_avatar.png" alt="Alec" class="avatar-small">
+            </div>
+          </div>
+          <div class="col-11">
+            <div class="post-container my-3 p-3">
+              <div class="post-author">
+                <a href="#">Alec Walker</a>
+              </div>
+              <div class="post-content mb-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+              <div class="post-meta">
+                5 Nov 2019 5:00pm
+              </div>
+              <div class="comment-container my-1 mt-3">
+                <div class="row">
+                  <div class="col-1">
+                    <img src="vijay_avatar.jpeg" alt="Vijay" class="avatar-small">
+                  </div>
+                  <div class="col-11">
+                    <div class="comment-author px-2">
+                      <a href="#">Vijay Kurian</a>
+                    </div>
+                    <div class="comment-body px-2 mb-2">
+                      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos
+                    </div>
+                    <div class="comment-meta px-2">
+                      5 Nov 2019 5:05pm
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of post -->
+    <!-- End of main content -->
+      </div>
+    </div>
+</div>
+
+<%= render './partials/footer' %> 
+<%= render './partials/wrapper-bottom' %>
