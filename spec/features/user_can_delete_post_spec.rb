@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature "Delete", type: :feature do
@@ -10,4 +12,3 @@ RSpec.feature "Delete", type: :feature do
     expect(page).not_to have_content('Hello world')
   end
 end
-
