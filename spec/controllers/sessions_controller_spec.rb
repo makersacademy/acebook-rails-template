@@ -12,8 +12,6 @@ RSpec.describe Users::SessionsController, type: :controller do
       # expect(subject.welcome_message).to eq "Welcome back Tan"
       # p response.welcome_message
       p @params
-
-
     end
   end
 end
