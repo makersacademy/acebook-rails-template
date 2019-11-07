@@ -8,7 +8,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
-  
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
@@ -22,6 +22,11 @@ require_relative 'support/controller_macros'
 require 'helpers/posts_helpers'
 require 'web_helpers'
 # Add additional requires below this line. Rails is not loaded until this point!
+
+require 'capybara'
+require 'selenium-webdriver'
+Capybara.default_driver = :selenium
+
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -48,6 +53,9 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.extend ControllerMacros, type: :controller
   # config.include FactoryBot::Syntax::Methods
+
+  config.include Capybara::DSL
+
 
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your

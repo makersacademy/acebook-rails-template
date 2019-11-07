@@ -26,9 +26,12 @@ RSpec.feature "Sign_up", type: :feature do
     click_button 'Sign up'
     expect(page).to have_content("Email")
     expect(page).to have_content("Password (between 6 and 10 characters)")
-    expect(page).to have_content (
-      "error prohibited this user from being saved: Email is invalid"
-      )
+    message =
+      page.find("#user_email").native.attribute("validationMessage")
+    expect(message).to include "Please enter an email address."
+    # expect(page).to have_content (
+    #   "error prohibited this user from being saved: Email is invalid"
+    #   )
   end
 
   scenario "can't sign up with a password shorter than 6 characters" do
