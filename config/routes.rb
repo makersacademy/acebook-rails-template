@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'settings/new'
+
   get 'home/index'
   root 'home#index'
 
