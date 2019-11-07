@@ -36,11 +36,26 @@
               <%= link_to "Edit", edit_post_path(post), style: "font-size:12px" %> <span style="color:grey">|</span>
               <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"}, style: "font-size:12px" %>
             <% end %>
+
             </div>
-            <% @post_id = post.id %>
-            <%= render template: "comments/new" %>
-            <% post.comments.each do |comment| %>
-              <tr>
+          </div>
+          <br><h5 style="padding-left:10px">Recent Posts</h5><br>
+          <ul class="list-group list-group-flush">
+            <% @user.posts.reverse.each do |post| %>
+              <li class="list-group-item">
+                <img src="<%= @user.profile_picture %>" height="50px" width="50px" style="border-radius:50%; margin-top:15px; margin-bottom:15px"><span style="text-decoration:underline"><a href="/users/<%= @user.id %>" style="color:rgba(47,79,79,0.8); margin-left:10px; font-weight:bold"><%= post.user.username %></a></span>
+                <p style="margin-top:20px; margin-bottom:20px"><%= post.content %></p>
+                <div style="text-align:right">
+                <div style="font-size:12px; color:grey; text-align:right"><%= time_ago_in_words(post.updated_at) %> ago</div>
+                <% if post.user_id == session[:user_id] %>
+                  <%= link_to "Edit", edit_post_path(post), style: "font-size:12px" %> <span style="color:grey">|</span>
+                  <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"}, style: "font-size:12px" %>
+                <% end %>
+                </div>
+                <% @post_id = post.id %>
+                <%= render template: "comments/new" %>
+                <% post.comments.each do |comment| %>
+                  <tr>
 
                 <td><%= comment.user.username %>: <b><%= comment.text %></b></td> |
                   <% if comment.created_at != comment.updated_at %>
@@ -52,12 +67,15 @@
                           method: :delete,
                           data: { confirm: 'Are you sure?' } %></td>
 
-              </tr>
-              <br>
+
+                  </tr>
+                  <br>
+                <% end %>
+              </li>
             <% end %>
-          </li>
-        <% end %>
-      </ul>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </body>
+</html>
