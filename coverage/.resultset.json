@@ -308,13 +308,13 @@
         1,
         null,
         1,
-        24,
+        25,
         null,
         1,
         null,
         null,
-        11,
-        11,
+        12,
+        12,
         null,
         null,
         null,
@@ -323,10 +323,10 @@
         null,
         null,
         1,
-        24,
+        25,
         null,
         1,
-        24,
+        25,
         null,
         null
       ],
@@ -392,13 +392,19 @@
         1,
         null,
         1,
-        29,
+        0,
         0,
         null,
         null,
         null,
         1,
-        29,
+        30,
+        null,
+        null,
+        1,
+        30,
+        1,
+        null,
         null,
         null
       ],
@@ -493,10 +499,11 @@
         null,
         null,
         1,
-        29,
-        29,
-        29,
-        29,
+        null,
+        30,
+        30,
+        30,
+        30,
         null,
         null,
         1,
@@ -766,6 +773,17 @@
         null,
         null
       ],
+      "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/features/user_does_not_sign_in_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/student/Documents/Projects/Week8/acebook/acebook--LizardBook-/spec/features/users_can_sign_in_spec.rb": [
         1,
         null,
@@ -839,6 +857,6 @@
         null
       ]
     },
-    "timestamp": 1573131349
+    "timestamp": 1573136966
   }
 }
