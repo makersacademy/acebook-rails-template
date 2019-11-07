@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-    <p class='post'><%= post.message %></p>
+    <div  class='post'><%= simple_format post.message %>
     <p><%= post.created_at.to_s(:long_ordinal) %></p>
     <% if post.user_id == current_user.id %>
     <%= form_for(post, :html => { :method => :delete }) do |f| %>
@@ -14,6 +14,7 @@
         Edit post<br>
         <% end %>
     <% end %>
+    </div>
 <% end %>
 
 <%= link_to new_post_path do %>
