@@ -10,7 +10,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    no_current_user
+    # no_current_user
+    user_not_signed_in
     @post = Post.new
     @posts = Post.all
     @comments = Comment.all
