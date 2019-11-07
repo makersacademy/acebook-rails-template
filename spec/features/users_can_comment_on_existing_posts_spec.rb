@@ -5,8 +5,8 @@ RSpec.feature 'Comments' do
     log_in_test_user
     Post.create()
     submit_post('A Test Post')
-    fill_in 'Comment', with: 'Test Comment'
-    click_on 'Comment'
+    fill_in 'comment_message', with: 'Test Comment'
+    click_on 'Add comment'
     expect(page).to have_content 'Test Comment'
   end
 end
