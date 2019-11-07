@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.feature "Sign_up", type: :feature do
+
+  scenario "gets redirected to index/welcome page if not already signed up" do
+    visit "/posts"
+    expect(current_path).to eq '/'
+  end
+
   scenario "can access sign up page" do
     visit "/"
     click_link "Sign Up"
