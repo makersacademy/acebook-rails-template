@@ -35,7 +35,7 @@ def create_post
 end
 
 def create_comment
-  click_link "Show Comments ()"
+  click_link "Show Comments (0)"
   click_link "New Comment"
   fill_in 'comment[body]', with: 'A comment'
   click_button 'Post Comment'
@@ -52,5 +52,3 @@ def delete_comment
   click_link "Delete"
   page.accept_alert
 end
-  
-  
