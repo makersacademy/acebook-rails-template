@@ -28,9 +28,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-4" style="background-color: rgba(0,0,0,.1); padding-bottom:15px">
-          <br>
-          <h5 style="text-align:center">Profile Information</h5><br>
+
+
+        <!-- user information section -->
+        <div class="col-4"  style="background-color: rgba(0,0,0,.1); padding-bottom:15px">
+          <br><h5 style="text-align:center">Profile Information</h5><br>
+
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><img src="<%= @user.profile_picture %>" height="150px" style="display:block; margin-left:auto;
 margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:15px"></li>
@@ -60,6 +63,8 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
           </ul>
         </div>
         <div class="col-8">
+
+          <!-- post on user's wall form -->
           <div class="card">
             <h5 class="card-header">What's on your mind?</h5>
             <div class="card-body">
@@ -67,67 +72,107 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
 
             </div>
           </div>
-          <br>
-          <h5 style="padding-left:10px">Recent Posts</h5><br>
+
+
+          <!-- list of posts -->
+          <br><h5 style="padding-left:10px">Recent Posts</h5><br>
+
           <ul class="list-group list-group-flush">
             <% @user.posts.reverse.each do |post| %>
+
+              <!-- single post html starts here -->
               <li class="list-group-item">
-                <img src="<%= @user.profile_picture %>" height="50px" width="50px" style="border-radius:50%; margin-top:15px; margin-bottom:15px">
-                <span style="text-decoration:underline">
-                  <a href="/users/<%= @user.id %>" style="color:rgba(47,79,79,0.8); margin-left:10px; font-weight:bold"><%= post.user.username %></a>
-                </span>
+
+                <img src="<%= @user.profile_picture %>" height="50px" width="50px" style="border-radius:50%; margin-top:15px; margin-bottom:15px"><span style="text-decoration:underline"><a href="/users/<%= @user.id %>" style="color:rgba(47,79,79,0.8); margin-left:10px; font-weight:bold"><%= post.user.username %></a></span>
                 <p style="margin-top:20px; margin-bottom:20px"><%= simple_format post.content %></p>
                 <div style="text-align:right">
-                  <div style="font-size:12px; color:grey; text-align:right"><%= time_ago_in_words(post.updated_at) %>
-                    ago</div>
-                  <% if post.user_id == session[:user_id] %>
-                    <% session[:path] = request.path %>
-
-                      <% if((Time.now-post.updated_at)<600) %>
-                        <%= link_to "Edit", edit_post_path(post), style: "font-size:12px" %>
-                        <span style="color:grey">|</span>
-                      <% else %>
-                        This post is older than 10 mins, you can't edit it buddy
-                      <% end %>
-
-                      <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"}, style: "font-size:12px" %>
-                    <% end %>
+                  <div style="font-size:12px; color:grey; text-align:right">
+                    <%= time_ago_in_words(post.updated_at) %> ago <br>
+                    <%= post.created_at.strftime("%H:%M %a %e %b %Y") %> <br>
                   </div>
+
+                  <!-- like button -->
                   <% @post_id = post.id %>
-                    <%= render template: "comments/new" %>
-                    <% post.comments.each do |comment| %>
-                      <tr>
-                        <td><%= comment.user.username %>:
-                          <b><%= comment.text %></b>
-                        </td>
+                  <% unless @like = Like.exists?(post.id, session[:user_id]) %>
+                    <%= render template: "likes/new" %>
+                  <% else %>
+                    <%= link_to '👎', @like, :method => :delete, class: "btn btn-outline-primary" %>
+                    <br>
+                  <% end %>
+
+                  <!-- edit and delete controls -->
+                  <% session[:path] = request.path %>
+                  <% if post.user_id == session[:user_id] && Time.now - post.updated_at < 600 %>
+                    <%= link_to "Edit", edit_post_path(post) %> |
+                  <% elsif Time.now - post.updated_at < 600 %>
+                    <a href="#" onclick="alert('Cant do that, this post does not belong to you!');">Edit</a> |
+                  <% else %>
+                    Cannot Edit |
+                  <% end %>
+                  <% if post.user_id == session[:user_id] %>
+                    <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
+                  <% else %>
+                    <a href="#" onclick="alert('Cant do that, this post does not belong to you!');">Delete</a>
+                  <% end %>
+                </div>
+
+                <!-- like information -->
+                LICKS: <%= post.likes.length %>
+                <br>
+                <% unless post.likes.length == 0 %>
+                  LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %>
+                <% end %>
+
+                <!-- comment section starts here (starts with input box) -->
+                <% @post_id = post.id %>
+                <%= render template: "comments/new" %>
+
+                <!-- list of comments for current post -->
+                <ul style="list-style-type:none">
+                  <% post.comments.each do |comment| %>
+                    <li class="com-div">
+                      <%= comment.user.username %>: <b><%= comment.text %></b>
+
+                      <!-- comment likes and unlikes -->
+                      | Licks: <%= comment.comment_likes.length %> |
+                      <% unless @comment_like = CommentLike.exists?(comment.id, session[:user_id]) %>
+                        <%= link_to 'Lick', new_comment_like_path(comment_id: comment.id.to_s, redirect: request.path) %>
+                      <% else %>
+                        <%= link_to 'Unlick', @comment_like, :method => :delete %>
+                      <% end %>
+                      <br>
+
+                      <!-- comment information and edit controls -->
+                      <p style="font-size:13px">
                         <% if comment.created_at != comment.updated_at %>
                           edited:
                         <% end %>
-                        <%= time_ago_in_words(comment.updated_at) %>
-                        ago |
-                        <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %>
-                        |
-                        <% session[:path] = request.path %>
-
-                          <% if comment.user.id == session[:user_id] %>
-                            <% if((Time.now-comment.updated_at)<60) %>
-
-                              <td><%= link_to 'Edit Comment', edit_comment_path(comment) %></td>
-                              |
-                            <% else %>
-                              This comment is older than 10 mins, you can't edit it buddy |
-                            <% end %>
-
-                            <td><%= link_to 'Delete Comment', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                          </tr>
+                        <%= time_ago_in_words(comment.updated_at) %> ago |
+                        <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %> |
+                        <% if comment.user.id == session[:user_id] && Time.now - comment.updated_at < 600 %>
+                          <%= link_to 'Edit Comment', edit_comment_path(comment)%> |
+                        <% elsif Time.now - comment.updated_at < 600 %>
+                          <a href="#" onclick="alert('Cant do that, this comment does not belong to you!');">Edit Comment</a> |
+                        <% else %>
+                          Cannot Edit |
                         <% end %>
-                        <br>
-                      <% end %>
+                        <% if comment.user.id == session[:user_id] %>
+                          <%= link_to 'Delete Comment', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+                        <% else %>
+                          <a href="#" onclick="alert('Cant do that, this comment does not belong to you!');">Delete Comment</a>
+                        <% end %>
+                      </p>
                     </li>
                   <% end %>
                 </ul>
-              </div>
-            </div>
-          </div>
-        </body>
-      </html>
+              </li>
+              <!-- single post html ends above this line -->
+            <% end %>
+            <!-- list of posts ends above this line -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

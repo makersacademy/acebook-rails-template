@@ -1,4 +1,8 @@
 FactoryBot.define do
+  factory :comment_like do
+    belongsto { "MyString" }
+  end
+
     
   factory :like do
     user_id { 1 }

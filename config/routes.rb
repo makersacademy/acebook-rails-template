@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :sessions
   resources :comments
   resources :likes
+  resources :comment_likes
+
 
 
   get "signup", to: "users#new", as: "signup"
