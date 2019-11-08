@@ -10,7 +10,6 @@ class PostsController < ApplicationController
       @post = Post.new(post_params) do |post|
       post.user = current_user
     end
-
     if @post.save
       redirect_to posts_url
     else
@@ -20,12 +19,13 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.where(id: params[:id]).first
-    not_curr_user?
-    flash[:alert] = "10 minutes exceeded: you can no longer edit the post." if @post.not_editable?
-      
-    redirect_to posts_url
+    if not_curr_user?
+      flash[:alert] = "Sorry! You can't edit someone else's post."
+    elsif @post.not_editable?
+      flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
+     end
+     
     return if @post
-
     redirect_to root_path
   end
 
@@ -43,14 +43,11 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.where(id: params[:id]).first
-    if current_user != @post.user
+    if not_curr_user?
       flash[:alert] = "Sorry! You can't delete someone else's post."
     elsif @post.destroy
       flash[:notice] = 'Successfully deleted the post!'
-    else
-      flash[:alert] = 'Couldn’t delete the post...'
     end
-    redirect_to posts_url
   end
 
   def index
@@ -64,8 +61,8 @@ class PostsController < ApplicationController
   end
 
   def not_curr_user?
-    current_user != @post.user
-    flash[:alert] = "Sorry! You can't edit someone else's post."
+    if current_user != @post.user
+      redirect_to posts_url
+    end
   end
-
 end
