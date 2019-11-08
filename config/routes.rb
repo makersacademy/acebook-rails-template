@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
-    omniauth_callbacks: 'usrs/omniauth_callbacks'
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
   get 'users/:id' => 'users#profile'
@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       put "unlike", to: "posts#downvote"
     end
   end
+
+  get 'users/:user_id/posts/new' => 'posts#new'
 
   root to: "welcome#index"
 
