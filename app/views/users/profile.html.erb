@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+        <div
+          class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"
+        >
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a
+                class="badge badge-pill badge-secondary text-light"
+                href="/users/edit"
+                >Account Settings</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="mx-auto order-0">
+          <div class="navbar-brand mx-auto">
+            <a class="badge badge-pill badge-secondary text-light" href="#">
+              <img
+                src="../img/facebuzzLogo.png"
+                width="30"
+                height="30"
+                class="d-inline-block align-top"
+                alt=""
+              />
+              faceBuzz
+            </a>
+          </div>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a
+                class="badge badge-pill badge-secndary text-light"
+                href="/users/<%=current_user.id%>"
+                >Profile</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="badge badge-pill badge-secondary text-light" data-method="delete" href="/users/sign_out"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="row row-no-gutters">
+        <div class="col-lg-3">
+          <h2><%=@user.first_name%>'s Profile</h2>
+          <br /><br />
+          <img
+            src="../img/poki (1).jpeg"
+            alt="..."
+            class="img-thumbnail"
+            height="150"
+            width="150"
+          />
+          <br />
+          <label for="validationCustom01">First name</label>
+          <input
+            type="text"
+            id="validationCustom01"
+            placeholder="First name"
+            value="Mark"
+            required
+          />
+          <label for="validationCustom01">Last name</label>
+          <input
+            type="text"
+            id="validationCustom01"
+            placeholder="First name"
+            value="Markerson"
+            required
+          />
+        </div>
+
+        <div class="col-lg-9">
+          <% @posts.each do |post| %>
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img
+                class="media-object img-responsive rounded-circle border img-responsive"
+                src="../img/poki-2.jpeg"
+                class="mr-3"
+                height="50"
+                width="50"
+              />
+            </a>
+            <div class="media-body">
+              <h5 class="mt-0"><%=@user.first_name%> says</h5>
+              <%=post.message%>
+              <p style="color:#cccccc;">
+                <%= time_ago_in_words(post.created_at)%> ago
+              </p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
