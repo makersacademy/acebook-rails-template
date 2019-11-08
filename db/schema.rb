@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20191108141107) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,6 +63,8 @@ ActiveRecord::Schema.define(version: 20191108141107) do
     t.string "profile_picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "font_family", default: "LightIkaros"
+    t.string "background_colour", default: "#DEB887"
   end
 
 end
