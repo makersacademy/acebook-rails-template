@@ -40,5 +40,4 @@ RSpec.feature "Edit post", type: :feature do
     click_button 'Edit'
     expect(page).to have_content "Hello, world!"
   end
-
 end

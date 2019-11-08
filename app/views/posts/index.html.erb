@@ -1,13 +1,15 @@
+<div class="col">
 <% @posts.each do |post| %>
+  <div style="width:500px; height:auto;" class="bg-light p-2 my-3">
+  <%= image_tag(post.image, style:"width:100%") if post.image.attached? %></div>
 
-
-  <div style="width:500px; height:auto;"><%= image_tag(post.image, style:"width:100%") if post.image.attached? %></div>
-
+  <div class="py-2">
   <%= simple_format(post.message) %>
-  <p style="color:#cccccc;"> <%= post.created_at.strftime("%-d %b %Y at %H:%M") %> ago</p>
+  <p style="color:#cccccc;"> <%= post.created_at.strftime("%-d %b %Y at %H:%M") %></p>
   <% @first_name = User.where(id: post.user_id).first&.send(:first_name) %>
   <% @last_name = User.where(id: post.user_id).first&.send(:last_name) %>
   <p><%= "by #{@first_name} #{@last_name}"%></p>
+  </div>
 
   <% if current_user.id == post.user_id %>
     <%= button_to "Edit", edit_post_path(post.id), :method => :get if (Time.now - post.created_at) / 60 <= 10%>
@@ -18,12 +20,32 @@
     <%= button_to "Delete", posts_url, method: :get, data: { confirm: 'Permission denied' } %>
   <% end %>
 
-  <%= button_to "Buzz", like_post_path(post.id), :method => :put %>
-  <p>Likes: <%= post.get_upvotes.size%></p>
+  <div class="like">
+
+    <% if user_signed_in? %>
+      <% if current_user.voted_up_on? post %>
+        <%= link_to unlike_post_path(post.id), method: :put, class: "unlike_post" do %>
+          <span>⚡️ Like </span>
+          <%# <span class="icon"><i class="fa fa-heart has-text-primary"></i></span> %>
+        <% end %>
+          <span class="vote_count"><%= post.get_upvotes.size %></span>
+      <% else %>
+        <%= link_to like_post_path(post.id), method: :put, class: "like_post" do %>
+          <span>⚡️ Like </span>
+          <%# <span class="icon"><i class="fa fa-heart"></i></span> %>
+        <% end %>
+        <% if post.get_upvotes.size > 0%>
+          <span class="vote_count"><%= post.get_upvotes.size %></span>
+        <% end%>
+      <% end %>
+    <% end %>
+
+  </div>
 
 <% end %>
-
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+</div>
