@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    redirect_to_previous_page if edit_not_verify?
   end
 
   def update
@@ -47,5 +48,9 @@ class PostsController < ApplicationController
     redirect = session[:path] || '/posts'
     session[:path] = nil
     redirect_to redirect
+  end
+
+  def edit_not_verify?
+    Time.now-@post.updated_at > 600 || session[:user_id] != @post.user_id
   end
 end
