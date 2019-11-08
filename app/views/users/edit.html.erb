@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= form_for @user do |user| %>
+      <%= user.label :font_family %>
+      <%= user.select(:font_family, [['Arial'], ['Helvetica'], ['Calibri']]) %>
+
+      <%= user.label :background_colour %>
+      <%= user.select(:background_colour, [['green'], ['blue'], ['yellow']]) %>
+
+      <%= user.submit "Submit" %>
+    <% end %>
+  </body>
+</html>
