@@ -44,20 +44,20 @@
           <% @posts.reverse.each do |post| %>
             <% if post.receiver_id == nil %>
 
-<!-- this is the html for a single post -->
-              <li class="list-group-item">
-                <img class="profilepic" src="<%= post.user.profile_picture %>" width="100" height="100" ><br>
-                <div class="username"><a href="users/<%= post.user.id %>" ><%= post.user.username %></a> <br></div>
-                <p><%= simple_format post.content %></p>
-                <div class="time">
-                  <% if post.created_at != post.updated_at %>
-                    edited:
-                  <% end %>
-                  <%= time_ago_in_words(post.updated_at) %> ago<br>
-                  <%= post.created_at.strftime("%H:%M %a %e %b %Y") %>
-                </div>
-                <br>
-                <div class="edit-delete">
+            <!-- this is the html for a single post -->
+            <li class="list-group-item">
+              <img class="profilepic" src="<%= post.user.profile_picture %>" width="100" height="100" >
+              <span class="username" style="margin-left:15px"><a href="users/<%= post.user.id %>" ><%= post.user.username %></a> <br></span>
+              <p style="margin-top:45px"><%= simple_format post.content %></p>
+              <div class="time">
+                <% if post.created_at != post.updated_at %>
+                  edited:
+                <% end %>
+                <%= time_ago_in_words(post.updated_at) %> ago<br>
+                <%= post.created_at.strftime("%H:%M %a %e %b %Y") %>
+              </div>
+              <br>
+              <div class="edit-delete">
 
 <!-- like button -->
                   <% @post_id = post.id %>
@@ -84,11 +84,13 @@
                   <% end %>
                 </div>
 
+
 <!-- like information -->
                 LICKS: <%= post.likes.length %>
+                <span style="color:grey"><%= post.likes.length %> licks</span>
                 <br>
                 <% unless post.likes.length == 0 %>
-                  LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %>
+                  <span style="color:grey">LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %></span>
                 <% end %>
 
 <!-- comment section starts here (starts with input box) -->
@@ -102,7 +104,7 @@
                     <%= comment.user.username %>: <b><%= comment.text %></b>
 
                     <!-- comment likes and unlikes -->
-                    | Licks: <%= comment.comment_likes.length %> |
+                    |<span style="color:grey"><%= comment.comment_likes.length %> licks |</span>
                     <% unless @comment_like = CommentLike.exists?(comment.id, session[:user_id]) %>
                       <%= link_to 'Lick', new_comment_like_path(comment_id: comment.id.to_s, redirect: request.path) %>
                     <% else %>

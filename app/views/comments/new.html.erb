@@ -1,11 +1,11 @@
 <%= form_with scope: :comment, url: comments_path, local: true do |form| %>
 
   <p>
-    <%= form.text_area :text, placeholder: "Type comment here..." %>
+    <%= form.text_area :text, placeholder: "Type comment here...", style: "width:100%" %>
     <%= form.hidden_field :user_id, :value => session[:user_id] %>
     <%= form.hidden_field :post_id, :value => @post_id %>
     <%= form.hidden_field :redirect_path, :value => request.path %>
     <br>
-    <%= form.submit %>
+    <%= form.submit "Save Comment", class: "btn btn-outline-primary" %>
   </p>
 <% end %>
