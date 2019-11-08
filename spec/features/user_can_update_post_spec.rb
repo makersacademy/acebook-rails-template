@@ -16,6 +16,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Cannot update posts and view them if you are not the author" do
     signup_as_new_user("Pam")
     login_as_user("Pam")
+    click_link "Newsfeed"
     create_new_post("Hello, world!")
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Edit")
@@ -23,6 +24,7 @@ RSpec.feature "Timeline", type: :feature do
     signup_as_new_user("James")
     login_as_user("James")
     visit('/posts')
+    click_link "Newsfeed"
     click_link "Edit"
     expect(page).to have_content("Hello, world!")
   end

@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     user_not_signed_in
     @user = User.find_by(id: params[:id])
     @post = Post.new
+    @posts = Post.all
   end
 
   private
