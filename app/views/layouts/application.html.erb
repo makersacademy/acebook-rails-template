@@ -10,11 +10,7 @@
   <body>
     <%= render 'partials/header' %>
     <div class="container">
-      <div class="row">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
-      </div>
+      <%= yield %>
     </div>
     <%= render 'partials/footer' %>
     <%= render 'partials/scripts' %>
