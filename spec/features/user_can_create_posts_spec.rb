@@ -24,4 +24,3 @@ RSpec.feature "Create post", type: :feature do
     Timecop.return
   end
 end
-

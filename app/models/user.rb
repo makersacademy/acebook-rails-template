@@ -1,12 +1,11 @@
 class User < ApplicationRecord
-
+  acts_as_voter
   # Include default devise modules. Others available are:
    #:confirmable, :lockable, :timeoutable, :trackable and
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[github]
 
-  has_many :posts
-  # has_many :posts, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   def self.from_onmniauth(auth)
     where(provider: auth.provider, uid: auth.id).first_or_create do |user|
@@ -26,5 +25,4 @@ class User < ApplicationRecord
       end
     end
   end
-
 end

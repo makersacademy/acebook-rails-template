@@ -37,20 +37,7 @@ RSpec.feature "Edit post", type: :feature do
     create_user_two
     login_user_two
     visit '/posts'
-    expect(page).to have_no_button("Edit")
+    click_button 'Edit'
+    expect(page).to have_content "Hello, world!"
   end
-
-  scenario "User cannot delete another user's post" do
-    create_user
-    login_user
-    visit '/posts'
-    create_post
-    logout_user
-
-    create_user_two
-    login_user_two
-    visit '/posts'
-    expect(page).to have_no_button("Delete")
-  end
-
 end
