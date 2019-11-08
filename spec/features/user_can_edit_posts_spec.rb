@@ -52,5 +52,4 @@ RSpec.feature "Edit post", type: :feature do
     visit '/posts'
     expect(page).to have_no_button("Delete")
   end
-
 end
