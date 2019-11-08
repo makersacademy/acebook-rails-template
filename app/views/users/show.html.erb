@@ -30,7 +30,8 @@
       <div class="row">
 
 
-        <!-- user information section -->
+<!-- user information section -->
+
         <div class="col-4"  style="background-color: rgba(0,0,0,.1); padding-bottom:15px">
           <br><h5 style="text-align:center">Profile Information</h5><br>
 
@@ -64,7 +65,7 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
         </div>
         <div class="col-8">
 
-          <!-- post on user's wall form -->
+<!-- post on user's wall form -->
           <div class="card">
             <h5 class="card-header">What's on your mind?</h5>
             <div class="card-body">
@@ -74,58 +75,70 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
           </div>
 
 
-          <!-- list of posts -->
+<!-- list of posts -->
+
           <br><h5 style="padding-left:10px">Recent Posts</h5><br>
 
           <ul class="list-group list-group-flush">
-            <% @user.posts.reverse.each do |post| %>
 
-              <!-- single post html starts here -->
-              <li class="list-group-item">
 
-                <img src="<%= @user.profile_picture %>" height="50px" width="50px" style="border-radius:50%; margin-top:15px; margin-bottom:15px"><span style="text-decoration:underline"><a href="/users/<%= @user.id %>" style="color:rgba(47,79,79,0.8); margin-left:10px; font-weight:bold"><%= post.user.username %></a></span>
+<!-- post list starts here -->
+            <% @posts.reverse.each do |post| %>
+
+              <% if post.receiver_id == @user.id %>
+                <!-- this is the html for a single post -->
+                <li class="list-group-item">
+                <img src="<%= post.user.profile_picture %>" height="50px" width="50px" style="border-radius:50%; margin-top:15px; margin-bottom:15px"><span style="text-decoration:underline">
+                    <a href="/users/<%= post.user.id %>" style="color:rgba(47,79,79,0.8); margin-left:10px; font-weight:bold"><%= post.user.username %></a></span>
                 <p style="margin-top:20px; margin-bottom:20px"><%= simple_format post.content %></p>
                 <div style="text-align:right">
                   <div style="font-size:12px; color:grey; text-align:right">
                     <%= time_ago_in_words(post.updated_at) %> ago <br>
                     <%= post.created_at.strftime("%H:%M %a %e %b %Y") %> <br>
+
+                  </div>
+                  <br>
+                  <div class="edit-delete">
+
+<!-- like button -->
+                    <% @post_id = post.id %>
+                    <% unless @like = Like.exists?(post.id, session[:user_id]) %>
+                      <%= render template: "likes/new" %>
+                    <% else %>
+                      <%= link_to '👎', @like, :method => :delete, class: "btn btn-outline-primary" %>
+                      <br>
+                    <% end %>
+
+
+<!-- edit and delete controls -->
+                    <% session[:path] = request.path %>
+                    <% if post.user_id == session[:user_id] && Time.now - post.updated_at < 600 %>
+                      <%= link_to "Edit", edit_post_path(post) %> |
+                    <% elsif Time.now - post.updated_at < 600 %>
+                      <a href="#" onclick="alert('Cant do that, this post does not belong to you!');">Edit</a> |
+                    <% else %>
+                      Cannot Edit |
+                    <% end %>
+                    <% if post.user_id == session[:user_id] %>
+                      <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
+                    <% else %>
+                      <a href="#" onclick="alert('Cant do that, this post does not belong to you!');">Delete</a>
+                    <% end %>
                   </div>
 
-                  <!-- like button -->
+<!-- like information -->
+                  LICKS: <%= post.likes.length %>
+                  <br>
+                  <% unless post.likes.length == 0 %>
+                    LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %>
+                  <% end %>
+
+<!-- comment section starts here (starts with input box) -->
                   <% @post_id = post.id %>
-                  <% unless @like = Like.exists?(post.id, session[:user_id]) %>
-                    <%= render template: "likes/new" %>
-                  <% else %>
-                    <%= link_to '👎', @like, :method => :delete, class: "btn btn-outline-primary" %>
-                    <br>
-                  <% end %>
+                  <%= render template: "comments/new" %>
 
-                  <!-- edit and delete controls -->
-                  <% session[:path] = request.path %>
-                  <% if post.user_id == session[:user_id] && Time.now - post.updated_at < 600 %>
-                    <%= link_to "Edit", edit_post_path(post) %> |
-                  <% elsif Time.now - post.updated_at < 600 %>
-                    <a href="#" onclick="alert('Cant do that, this post does not belong to you!');">Edit</a> |
-                  <% else %>
-                    Cannot Edit |
-                  <% end %>
-                  <% if post.user_id == session[:user_id] %>
-                    <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
-                  <% else %>
-                    <a href="#" onclick="alert('Cant do that, this post does not belong to you!');">Delete</a>
-                  <% end %>
-                </div>
 
-                <!-- like information -->
-                LICKS: <%= post.likes.length %>
-                <br>
-                <% unless post.likes.length == 0 %>
-                  LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %>
-                <% end %>
-
-                <!-- comment section starts here (starts with input box) -->
-                <% @post_id = post.id %>
-                <%= render template: "comments/new" %>
+<!-- single post html ends above this line -->
 
                 <!-- list of comments for current post -->
                 <ul style="list-style-type:none">
@@ -167,8 +180,9 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
                 </ul>
               </li>
               <!-- single post html ends above this line -->
+
             <% end %>
-            <!-- list of posts ends above this line -->
+<!-- list of posts ends above this line -->
           </ul>
         </div>
       </div>
