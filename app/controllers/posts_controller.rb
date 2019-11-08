@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     elsif @post.not_editable?
       flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
      end
-     
+
     return if @post
     redirect_to root_path
   end
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
     @post = Post.where(id: params[:id]).first
     if not_curr_user?
       flash[:alert] = "Sorry! You can't delete someone else's post."
-    elsif @post.destroy
+    elsif curr_user? && @post.can_destroy?
       flash[:notice] = 'Successfully deleted the post!'
     end
   end
@@ -60,9 +60,16 @@ class PostsController < ApplicationController
     params.require(:post).permit(:message)
   end
 
+  def curr_user?
+    current_user == @post.user
+    redirect_to posts_url
+  end
+
   def not_curr_user?
-    if current_user != @post.user
+    if
+      current_user != @post.user
       redirect_to posts_url
     end
   end
+
 end

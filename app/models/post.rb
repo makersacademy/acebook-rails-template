@@ -5,8 +5,12 @@ class Post < ApplicationRecord
 
   def not_editable?
    if (Time.now - self.created_at) > 600
-   redirect_to posts_url
+     redirect_to posts_url
+   end
   end
-end
-  
+
+  def can_destroy?
+    self.destroy
+  end
+
 end
