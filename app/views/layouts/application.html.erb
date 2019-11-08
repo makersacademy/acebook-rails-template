@@ -10,18 +10,22 @@
   </head>
 
   <body>
+
+
     <%= render 'partials/header' %> 
     <div class="container">
       <div class="row">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= yield %>
-        <%= link_to('Log Out', destroy_user_session_path, method: :delete) %>  <%#  TODO add to a header partial %>
+        <a class="badge badge-pill badge-secondary text-light" data-method="delete" href="/users/sign_out"
+                >Log Out</a>
       </div>
     </div>
 
     <%= render 'partials/footer' %> 
     <%= render 'partials/footer_links' %> 
+
   </body>
 </html>
 
