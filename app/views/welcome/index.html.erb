@@ -1,9 +1,44 @@
-<div class="col">
-<h1>Welcome</h1>
-<br />
-<%= link_to "Sign Up", new_registration_path(User) %><br /><br />
+  <div class="col-7">
+    <%= image_tag("welcome2.png", alt: "welcome", style: "width: 600px;") %>
+  </div>
+      <div class="col-5">
+ 
+            <div class="sign-up-form p-4 mb-2">
+              <h1 >Join the buzz gang!</h1>
+              <form>
+                <div class="form-row pt-3">
+                  <div class="form-group mr-2 col">
+                    <input type="text" placeholder="First Name" class="form-control" >
+                  </div>
+                  <div class="form-group col">
+                    <input type="text" placeholder="Last Name" class="form-control" >
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group mr-2 col">
+                    <input type="text" placeholder="Username" class="form-control" >
+                  </div>
+                  <div class="form-group col">
+                    <input type="email" placeholder="Email Address" class="form-control" >
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group mr-2 col">
+                    <input type="password" placeholder="Password" class="form-control" >
+                  </div>
+                  <div class="form-group col">
+                    <input type="password" placeholder="Confirm Password" class="form-control">
+                  </div>
+                </div>
 
-<%= link_to "Log In", new_session_path(User) %><br /><br />
+                <button class="btn btn-primary">Sign Up</button>
+
+              </form>
+   
+        </div>
+      </div>
 
 
-<div>
+<%# link_to "Sign Up", new_registration_path(User) %><br /><br />
+
+<%# link_to "Log In", new_session_path(User) %><br /><br />
