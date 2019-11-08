@@ -1,24 +1,27 @@
-  <!-- End of Top Wrapper – DON'T DELETE! -->
-  </head>
-  <body>
-  <!-- Start of header -->
-  <header>
-    <div class="container">
-      <div class="header row">
-        <div class="col-12 my-3">
-          <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/">FaceBuzz</a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto"> &nbsp; </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control my-2 mx-1" type="text" placeholder="Email Address">
-                <input class="form-control my-2 ml-1 mr-3" type="password" placeholder="Password">
-                <button class="btn btn-sm btn-primary">Log In</button>
-              </form>
-            </div>
-          </nav>
-        </div>
+<header>
+  <div class="container">
+    <div class="header row">
+      <div class="col-12 my-3">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="/">AceBook</a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              &nbsp;
+              <!-- Don't delete this ul! -->
+              <!-- It ensures that elements that follow after it are aligned right -->
+              <!-- Contents of this ul are aligned left, next to the logo -->
+            </ul>
+            <!-- Conditional rendering depending if user is logged in or not -->
+            <!-- TODO -->
+            <form class="form-inline my-2 my-lg-0">
+              <button class="btn btn-sm btn-primary">Log In</button>
+              <a class="badge badge-pill badge-secondary text-light" data-method="delete" href="/users/sign_out"
+                      >Log Out</a>
+            </form>
+            <!-- End of conditional rendering -->
+          </div>
+        </nav>
       </div>
     </div>
-  </header>
-  <!-- End of header -->
+  </div>
+</header>
