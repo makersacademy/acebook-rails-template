@@ -20,19 +20,23 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.where(id: params[:id]).first
-    if current_user != @post.user
-      flash[:alert] = "Sorry! You can't edit someone else's post."
+    if (Time.now - @post.created_at) > 600
+      if current_user != @post.user
+        flash[:alert] = "Sorry! You can't edit someone else's post."
+      else
+        flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
+      end
+
       redirect_to posts_url
     end
     return if @post
 
     redirect_to root_path
-
   end
 
   def update
     @post = Post.where(id: params[:id]).first
-    
+
     if @post.update(message: params[:post][:message])
       flash[:notice] = 'Successfully updated the post!'
       redirect_to posts_url
@@ -45,7 +49,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.where(id: params[:id]).first
     if current_user != @post.user
-      flash[:alert] = "Sorry! You can't delete someone else's post." 
+      flash[:alert] = "Sorry! You can't delete someone else's post."
     elsif @post.destroy
       flash[:notice] = 'Successfully deleted the post!'
     else
