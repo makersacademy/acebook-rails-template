@@ -33,4 +33,17 @@ RSpec.feature "Edit", type: :feature do
     expect(page).to have_content("Hello, world!\nI am edited.\nI'm on a new line.")
   end
 
+  scenario "Cannot edit a post by another user" do
+    visit('/')
+    create_user
+    login_user
+    create_post
+    logout_user
+    create_user_two
+    login_user_two
+    click_link 'Edit'
+    expect(page).to have_content("Sorry! You can't edit someone else's post.")
+    expect(page).to have_content('Hello, world!')
+  end
+
 end
