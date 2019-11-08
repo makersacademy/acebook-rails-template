@@ -33,4 +33,15 @@ RSpec.feature "Edit", type: :feature do
     expect(page).to have_content("Hello, world!\nI am edited.\nI'm on a new line.")
   end
 
+  scenario "Posts cannot be edited after 10 minutes" do
+    visit('/')
+    create_user
+    login_user
+    create_post
+    Timecop.freeze(Time.now + 601.seconds)
+    click_link 'Edit'
+    expect(page).to have_content('10 minutes exceeded: you can no longer edit the post.')
+    expect(page).to have_content('Hello, world!')
+  end
+
 end
