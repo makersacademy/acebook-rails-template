@@ -46,7 +46,7 @@ RSpec.feature "Edit", type: :feature do
     expect(page).to have_content('Hello, world!')
   end
 
-  scenario "Edit button not visible after 10 after page refresh" do
+  scenario "Edit button not visible after 10 minutes and page refresh" do
     visit('/')
     create_user
     login_user
@@ -57,7 +57,7 @@ RSpec.feature "Edit", type: :feature do
     expect(page).to have_content('Hello, world!')
   end
 
-  scenario "Edit button not visible after 10 after page refresh" do
+  scenario "Posts cannot be edited after 10 minutes" do
     visit('/')
     create_user
     login_user
