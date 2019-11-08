@@ -6,8 +6,8 @@ RSpec.feature 'Comments', type: :feature do
     submit_post("Hello")
     add_comment
     click_link "Edit comment"
-    expect(current_path).to eq '/posts'
-    fill_in "[post, comment]", with: "comment edited"
+    expect(current_path).to include('/comments')
+    fill_in "Message", with: "comment edited"
     click_button "Update Comment"
     expect(page).not_to have_content "Test Comment"
     expect(page).to have_content "comment edited"
