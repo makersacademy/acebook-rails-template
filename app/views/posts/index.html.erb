@@ -40,8 +40,9 @@
         </div>
         <ul class="list-group list-group-flush">
 
-          <!-- post list starts here -->
+<!-- post list starts here -->
           <% @posts.reverse.each do |post| %>
+            <% if post.receiver_id == nil %>
 
             <!-- this is the html for a single post -->
             <li class="list-group-item">
@@ -58,41 +59,43 @@
               <br>
               <div class="edit-delete">
 
-                <!-- like button -->
+<!-- like button -->
+                  <% @post_id = post.id %>
+                  <% unless @like = Like.exists?(post.id, session[:user_id]) %>
+                    <%= render template: "likes/new" %>
+                  <% else %>
+                    <%= link_to '👎', @like, :method => :delete, class: "btn btn-outline-primary" %>
+                    <br>
+                  <% end %>
+
+<!-- edit and delete controls -->
+                  <% session[:path] = request.path %>
+                  <% if post.user_id == session[:user_id] && Time.now - post.updated_at < 600 %>
+                    <%= link_to "Edit", edit_post_path(post) %> |
+                  <% elsif Time.now - post.updated_at < 600 %>
+                    <a href="#" onclick="alert('Cant do that, this post does not belong to you!');">Edit</a> |
+                  <% else %>
+                    Cannot Edit |
+                  <% end %>
+                  <% if post.user_id == session[:user_id] %>
+                    <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
+                  <% else %>
+                    <a href="#" onclick="alert('Cant do that, this post does not belong to you!');">Delete</a>
+                  <% end %>
+                </div>
+
+
+<!-- like information -->
+                LICKS: <%= post.likes.length %>
+                <span style="color:grey"><%= post.likes.length %> licks</span>
+                <br>
+                <% unless post.likes.length == 0 %>
+                  <span style="color:grey">LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %></span>
+                <% end %>
+
+<!-- comment section starts here (starts with input box) -->
                 <% @post_id = post.id %>
-                <% unless @like = Like.exists?(post.id, session[:user_id]) %>
-                  <%= render template: "likes/new" %>
-                <% else %>
-                  <%= link_to '👎', @like, :method => :delete, class: "btn btn-outline-primary" %>
-                  <br>
-                <% end %>
-
-                <!-- edit and delete controls -->
-                <% session[:path] = request.path %>
-                <% if post.user_id == session[:user_id] && Time.now - post.updated_at < 600 %>
-                  <%= link_to "Edit", edit_post_path(post) %> |
-                <% elsif Time.now - post.updated_at < 600 %>
-                  <a href="#" onclick="alert('Cant do that, this post does not belong to you!');">Edit</a> |
-                <% else %>
-                  Cannot Edit |
-                <% end %>
-                <% if post.user_id == session[:user_id] %>
-                  <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"} %>
-                <% else %>
-                  <a href="#" onclick="alert('Cant do that, this post does not belong to you!');">Delete</a>
-                <% end %>
-              </div>
-
-              <!-- like information -->
-              <span style="color:grey"><%= post.likes.length %> licks</span>
-              <br>
-              <% unless post.likes.length == 0 %>
-                <span style="color:grey">LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %></span>
-              <% end %>
-
-              <!-- comment section starts here (starts with input box) -->
-              <% @post_id = post.id %>
-              <%= render template: "comments/new" %>
+                <%= render template: "comments/new" %>
 
               <!-- list of comments for current post -->
               <ul style="list-style-type:none">
@@ -134,8 +137,10 @@
               </ul>
             </li>
             <!-- single post html ends above this line -->
+
           <% end %>
-          <!-- list of posts ends above this line -->
+          <% end %>
+<!-- list of posts ends above this line -->
         </ul>
       </div>
     </div>
