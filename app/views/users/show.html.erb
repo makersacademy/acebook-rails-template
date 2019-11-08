@@ -2,31 +2,53 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+
+    <style>
+      * {
+        font-family: <%= @user.font_family %>
+      }
+
+      body {
+        background-color: <%= @user.background_colour %>
+      }
+    </style>
+
     <title></title>
   </head>
-  <body>
+  <body style=>
     <div class="container" style="padding-top:20px">
       <div class="row">
         <div class="col-12" style="padding-right:25px; margin-bottom:35px">
           <div class="card" style="width: 100%; height:400px">
             <img class="card-img-top" src="https://www.tnaqua.org/images/uploads/blog/Madagascar_Giant_Day_Gecko_002_blog_image.jpg">
             <div class="card-body">
-              <h2 class="card-text"><%= @user.full_name %></h2>
+              <h2 class="card-text" style="font-family:<%= @user.font_family %>"><%= @user.full_name %></h2>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-4"  style="background-color: rgba(0,0,0,.1); padding-bottom:15px">
-          <br><h5 style="text-align:center">Profile Information</h5><br>
+        <div class="col-4" style="background-color: rgba(0,0,0,.1); padding-bottom:15px">
+          <br>
+          <h5 style="text-align:center">Profile Information</h5><br>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><img src="<%= @user.profile_picture %>" height="150px" style="display:block; margin-left:auto;
-            margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:15px"></li>
-            <li class="list-group-item"><b>Name:</b> <%= @user.full_name %></li>
-            <li class="list-group-item"><b>Username:</b> <%= @user.username %></li>
-            <li class="list-group-item"><b>Email:</b> <%= @user.email %></li>
-            <li class="list-group-item"><b>Birthday:</b> <%= @user.birthday %></li>
-            <li class="list-group-item"><b>Species:</b> <%= @user.lizard_species %></li>
+margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:15px"></li>
+            <li class="list-group-item">
+              <b>Name:</b>
+              <%= @user.full_name %></li>
+            <li class="list-group-item">
+              <b>Username:</b>
+              <%= @user.username %></li>
+            <li class="list-group-item">
+              <b>Email:</b>
+              <%= @user.email %></li>
+            <li class="list-group-item">
+              <b>Birthday:</b>
+              <%= @user.birthday %></li>
+            <li class="list-group-item">
+              <b>Species:</b>
+              <%= @user.lizard_species %></li>
           </ul>
         </div>
         <div class="col-8">
@@ -34,60 +56,70 @@
             <h5 class="card-header">What's on your mind?</h5>
             <div class="card-body">
               <%= render template: "posts/new" %>
+
             </div>
           </div>
-          <br><h5 style="padding-left:10px">Recent Posts</h5><br>
+          <br>
+          <h5 style="padding-left:10px">Recent Posts</h5><br>
           <ul class="list-group list-group-flush">
             <% @user.posts.reverse.each do |post| %>
               <li class="list-group-item">
-                <img src="<%= @user.profile_picture %>" height="50px" width="50px" style="border-radius:50%; margin-top:15px; margin-bottom:15px"><span style="text-decoration:underline"><a href="/users/<%= @user.id %>" style="color:rgba(47,79,79,0.8); margin-left:10px; font-weight:bold"><%= post.user.username %></a></span>
-                <p style="margin-top:20px; margin-bottom:20px"><%= post.content %></p>
+                <img src="<%= @user.profile_picture %>" height="50px" width="50px" style="border-radius:50%; margin-top:15px; margin-bottom:15px">
+                <span style="text-decoration:underline">
+                  <a href="/users/<%= @user.id %>" style="color:rgba(47,79,79,0.8); margin-left:10px; font-weight:bold"><%= post.user.username %></a>
+                </span>
+                <p style="margin-top:20px; margin-bottom:20px"><%= simple_format post.content %></p>
                 <div style="text-align:right">
-                  <div style="font-size:12px; color:grey; text-align:right">
-                    <%= time_ago_in_words(post.updated_at) %> ago <br>
-                    <%= post.created_at.strftime("%H:%M %a %e %b %Y") %> <br>
-                  </div>
-                  <% @post_id = post.id %>
-                  <% unless @like = Like.exists?(post.id, session[:user_id]) %>
-                    <%= render template: "likes/new" %>
-                  <% else %>
-                    <%= link_to '👎🏻', @like, :method => :delete, class: "btn btn-outline-primary" %>
-                    <br>
-                  <% end %>
+                  <div style="font-size:12px; color:grey; text-align:right"><%= time_ago_in_words(post.updated_at) %>
+                    ago</div>
                   <% if post.user_id == session[:user_id] %>
                     <% session[:path] = request.path %>
-                    <%= link_to "Edit", edit_post_path(post), style: "font-size:12px" %> <span style="color:grey">|</span>
-                    <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"}, style: "font-size:12px" %>
-                  <% end %>
-                </div>
-                LICKS: <%= post.likes.length %>
-                <br>
-                <% unless post.likes.length == 0 %>
-                  LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %>
-                <% end %>
-                <% @post_id = post.id %>
-                <%= render template: "comments/new" %>
-                <% post.comments.each do |comment| %>
-                  <tr>
-                    <td><%= comment.user.username %>: <b><%= comment.text %></b></td>
-                    <% if comment.created_at != comment.updated_at %>
-                    edited:
+
+                      <% if((Time.now-post.updated_at)<600) %>
+                        <%= link_to "Edit", edit_post_path(post), style: "font-size:12px" %>
+                        <span style="color:grey">|</span>
+                      <% else %>
+                        This post is older than 10 mins, you can't edit it buddy
                       <% end %>
-                    <%= time_ago_in_words(comment.updated_at) %> ago |
-                    <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %> |
-                    <% session[:path] = request.path %>
-                    <td><%= link_to 'Edit Comment', edit_comment_path(comment) %></td> |
-                    <td><%= link_to 'Delete Comment', comment_path(comment),
-                          method: :delete,
-                          data: { confirm: 'Are you sure?' } %></td>
-                  </tr>
-                  <br>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+
+                      <%= link_to 'Delete', post, :method => :delete, data: {:confirm => "Are you sure?"}, style: "font-size:12px" %>
+                    <% end %>
+                  </div>
+                  <% @post_id = post.id %>
+                    <%= render template: "comments/new" %>
+                    <% post.comments.each do |comment| %>
+                      <tr>
+                        <td><%= comment.user.username %>:
+                          <b><%= comment.text %></b>
+                        </td>
+                        <% if comment.created_at != comment.updated_at %>
+                          edited:
+                        <% end %>
+                        <%= time_ago_in_words(comment.updated_at) %>
+                        ago |
+                        <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %>
+                        |
+                        <% session[:path] = request.path %>
+
+                          <% if comment.user.id == session[:user_id] %>
+                            <% if((Time.now-comment.updated_at)<60) %>
+
+                              <td><%= link_to 'Edit Comment', edit_comment_path(comment) %></td>
+                              |
+                            <% else %>
+                              This comment is older than 10 mins, you can't edit it buddy |
+                            <% end %>
+
+                            <td><%= link_to 'Delete Comment', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                          </tr>
+                        <% end %>
+                        <br>
+                      <% end %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </body>
+      </html>
