@@ -23,7 +23,4 @@ RSpec.feature "Delete", type: :feature do
     expect(page).to have_content("Sorry! You can't delete someone else's post.")
     expect(page).to have_content('Hello, world!')
   end
-
-
-
 end
