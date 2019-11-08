@@ -25,7 +25,8 @@ body {
 /* Sidebar */
 
 .sidebar {
-  background-color: #CCC:
+  background-color: #EEEEEE;
+  border-radius: 10px;
 }
 
 .profile-name {
@@ -48,7 +49,7 @@ body {
 }
 
 .post-container {
-  background-color: #eeeeee;
+  background-color: #EEEEEE;
   border-radius: 10px;
 }
 
