@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-      @post = Post.new(post_params) do |post|
+    @post = Post.new(post_params) do |post|
       post.user = current_user
     end
     if @post.save
@@ -23,9 +23,9 @@ class PostsController < ApplicationController
       flash[:alert] = "Sorry! You can't edit someone else's post."
     elsif @post.not_editable?
       flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
-     end
-
+    end
     return if @post
+
     redirect_to root_path
   end
 
@@ -61,15 +61,15 @@ class PostsController < ApplicationController
   end
 
   def curr_user?
-    current_user == @post.user
+    @post.user
+
     redirect_to posts_url
   end
 
   def not_curr_user?
-    if
-      current_user != @post.user
-      redirect_to posts_url
-    end
+    return unless current_user != @post.user
+
+    redirect_to posts_url
   end
 
 end
