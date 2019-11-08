@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
 
-before_action :signed_in
-
-before_action :find_post, only: [:edit, :destroy, :show, :update]
+  before_action :signed_in
+  before_action :find_post, only: [:edit, :destroy, :show, :update, :upvote, :downvote]
 
   def new
     @post = current_user.posts.new
@@ -44,8 +43,20 @@ before_action :find_post, only: [:edit, :destroy, :show, :update]
 
   def upvote
     @post.upvote_by current_user
-    # redirect_to :back
-    redirect_to posts_url
+    respond_to do |format|
+      format.html { redirect_back fallback_location: posts_url }
+      format.js { render layout:false }
+    end
+    # redirect_to posts_url
+  end
+
+  def downvote
+    @post.downvote_by current_user
+    respond_to do |format|
+      format.html { redirect_back fallback_location: posts_url }
+      format.js { render layout:false }
+    end
+    # redirect_to posts_url
   end
 
   private

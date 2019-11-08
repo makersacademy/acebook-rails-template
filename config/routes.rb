@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/profile'
   get 'welcome/index'
   get 'posts' => 'posts#index', as: :user_root
 
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   resources :posts do
     member do
       put "like", to: "posts#upvote"
+      put "unlike", to: "posts#downvote"
     end
   end
 

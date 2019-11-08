@@ -4,14 +4,28 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
 
+    <%= render 'partials/header_links' %> 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+
+
+    <%= render 'partials/header' %> 
+    <div class="container">
+      <div class="row">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+        <a class="badge badge-pill badge-secondary text-light" data-method="delete" href="/users/sign_out"
+                >Log Out</a>
+      </div>
+    </div>
+
+    <%= render 'partials/footer' %> 
+    <%= render 'partials/footer_links' %> 
+
   </body>
 </html>
 
