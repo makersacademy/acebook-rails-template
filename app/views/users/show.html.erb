@@ -49,6 +49,14 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
             <li class="list-group-item">
               <b>Species:</b>
               <%= @user.lizard_species %></li>
+            </ul>
+
+            <ul style="margin-top: 25px" class="list-group list-group-flush">
+            <li class="list-group-item">
+
+            <b>Settings:</b><br>
+            
+            <%= render template: "/users/edit"%></li>
           </ul>
         </div>
         <div class="col-8">
