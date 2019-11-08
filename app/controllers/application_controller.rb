@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def after_sign_in_path_for(_resource)
-    "/users/#{current_user.id}"
+    "/#{current_user.id}"
   end
 
   def after_sign_out_path_for(_resource)
