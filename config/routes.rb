@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
-      
+
   get 'welcome/index'
   root 'welcome#index'
 
@@ -16,8 +16,9 @@ Rails.application.routes.draw do
     delete '/post/:id/delete' => :destroy, as: 'destroy_post'
   end
 
+  mount Commontator::Engine => '/commontator'
 
- 
+
 
   resources :posts
 end
