@@ -7,11 +7,11 @@ RSpec.feature "User setting", type: :feature do
     signup_as_new_user("Pam")
     login_as_user("Pam")
     save_and_open_page
-    select 'green', from: "Background colour"
+    select '#9E764D', from: "Background colour"
     click_button "Lizardify me!"
         save_and_open_page
     within('body') do
-    page.body.should have_content ('background-color: green')
+    page.body.should have_content ('background-color: #9E764D')
 
     end
   end
