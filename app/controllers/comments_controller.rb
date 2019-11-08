@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    redirect_to_previous_page if edit_not_verify?
   end
 
   def create
@@ -46,5 +47,9 @@ private
     redirect = session[:path]
     session[:path] = nil
     redirect_to redirect
+  end
+
+  def edit_not_verify?
+    Time.now-@comment.updated_at > 600 || session[:user_id] != @comment.user_id
   end
 end
