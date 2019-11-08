@@ -1,0 +1,87 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+}
+
+.fill-height {
+  min-height: 80vh;
+}
+
+/* Sign Up */
+
+.sign-up-form .first-name,
+.sign-up-form .last-name {
+  width: 49%;
+}
+.sign-up-form .first-name {
+  margin-right: 6px;
+}
+
+.sign-up-form input {
+  width: 100%;
+}
+
+/* Sidebar */
+
+.profile-name {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.profile-photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+/* Post */
+
+.avatar-small {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.post-container {
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
+
+.post-content {
+  font-size: 1.2em;
+}
+
+.post-author,
+.comment-author {
+  font-weight: 700;
+}
+
+.post-meta,
+.comment-meta {
+  font-size: 0.8em;
+  color: #999999;
+}
+
+.create-post-message {
+  width: 100%;
+  resize: none;
+}
+
+.comment-container {
+  background-color: #dddddd;
+  border-radius: 5px;
+  padding: 10px 12px;
+}
+
+input,
+textarea {
+  font-size: 1rem;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  border-radius: 5px;
+}
+
+.footer {
+  color: #9b9b9b;
+}
