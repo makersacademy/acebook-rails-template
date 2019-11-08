@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   get 'welcome/index'
   get 'posts' => 'posts#index', as: :user_root
 
-  devise_for :users, controllers: { omniauth_callbacks: 'usrs/omniauth_callbacks' }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   get 'users/:id' => 'users#profile'
+  get 'users/:username' => 'users#profile'
 
   resources :posts do
     member do
