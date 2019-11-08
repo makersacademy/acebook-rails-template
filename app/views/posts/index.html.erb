@@ -95,36 +95,47 @@
                 <% @post_id = post.id %>
                 <%= render template: "comments/new" %>
 
-<!-- list of comments for current post -->
-                <ul style="list-style-type:none">
-                  <% post.comments.each do |comment| %>
-                    <li class="com-div">
-                      <%= comment.user.username %>: <b><%= comment.text %></b> <br>
-                      <p style="font-size:13px">
-                        <% if comment.created_at != comment.updated_at %>
-                          edited:
-                        <% end %>
-                        <%= time_ago_in_words(comment.updated_at) %> ago |
-                        <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %> |
-                        <% if comment.user.id == session[:user_id] && Time.now - comment.updated_at < 600 %>
-                          <%= link_to 'Edit Comment', edit_comment_path(comment)%> |
-                        <% elsif Time.now - comment.updated_at < 600 %>
-                          <a href="#" onclick="alert('Cant do that, this comment does not belong to you!');">Edit Comment</a> |
-                        <% else %>
-                          Cannot Edit |
-                        <% end %>
-                        <% if comment.user.id == session[:user_id] %>
-                          <%= link_to 'Delete Comment', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-                        <% else %>
-                          <a href="#" onclick="alert('Cant do that, this comment does not belong to you!');">Delete Comment</a>
-                        <% end %>
-                      </p>
-                    </li>
-                  <% end %>
-                </ul>
-              </li>
-<!-- single post html ends above this line -->
-            <% end %>
+              <!-- list of comments for current post -->
+              <ul style="list-style-type:none">
+                <% post.comments.each do |comment| %>
+                  <li class="com-div">
+                    <%= comment.user.username %>: <b><%= comment.text %></b>
+
+                    <!-- comment likes and unlikes -->
+                    | Licks: <%= comment.comment_likes.length %> |
+                    <% unless @comment_like = CommentLike.exists?(comment.id, session[:user_id]) %>
+                      <%= link_to 'Lick', new_comment_like_path(comment_id: comment.id.to_s, redirect: request.path) %>
+                    <% else %>
+                      <%= link_to 'Unlick', @comment_like, :method => :delete %>
+                    <% end %>
+                    <br>
+
+                    <!-- comment information and edit controls -->
+                    <p style="font-size:13px">
+                      <% if comment.created_at != comment.updated_at %>
+                        edited:
+                      <% end %>
+                      <%= time_ago_in_words(comment.updated_at) %> ago |
+                      <%= comment.created_at.strftime("%H:%M %a %e %b %Y") %> |
+                      <% if comment.user.id == session[:user_id] && Time.now - comment.updated_at < 600 %>
+                        <%= link_to 'Edit Comment', edit_comment_path(comment)%> |
+                      <% elsif Time.now - comment.updated_at < 600 %>
+                        <a href="#" onclick="alert('Cant do that, this comment does not belong to you!');">Edit Comment</a> |
+                      <% else %>
+                        Cannot Edit |
+                      <% end %>
+                      <% if comment.user.id == session[:user_id] %>
+                        <%= link_to 'Delete Comment', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+                      <% else %>
+                        <a href="#" onclick="alert('Cant do that, this comment does not belong to you!');">Delete Comment</a>
+                      <% end %>
+                    </p>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+            <!-- single post html ends above this line -->
+
           <% end %>
 <!-- list of posts ends above this line -->
         </ul>

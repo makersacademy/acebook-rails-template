@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191107175249) do
+
+ActiveRecord::Schema.define(version: 20191108141107) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+
+  create_table "comment_likes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_comment_likes_on_comment_id"
+    t.index ["user_id"], name: "index_comment_likes_on_user_id"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "text"
@@ -51,6 +63,8 @@ ActiveRecord::Schema.define(version: 20191107175249) do
     t.string "profile_picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "font_family", default: "LightIkaros"
+    t.string "background_colour", default: "#DEB887"
   end
 
 end

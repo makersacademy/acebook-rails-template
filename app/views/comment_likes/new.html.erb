@@ -1,0 +1,5 @@
+<%= form_for CommentLike.new do |form| %>
+  <%= form.hidden_field :comment_id, :value => @comment_id.to_s %>
+  <%= form.hidden_field :redirect_path, :value => request.path %>
+  <%= form.submit "Lick", class: "btn btn-outline-primary"%>
+<% end %>

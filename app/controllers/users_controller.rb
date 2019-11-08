@@ -24,9 +24,35 @@ class UsersController < ApplicationController
     @posts = Post.all
   end
 
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    if @user.update(update_params)
+      redirect_to "/users/#{@user.id}"
+    else
+      Rails.logger.info(@user.errors.messages.inspect)
+      render :action => 'edit'
+    end
+    # p "--------------------------"
+    # p @user
+    # @user.update(update_params)
+    # p "***************************"
+    # p @user.update(update_params)
+    # p "$$$$$$$$$$$$$$$$$$$$$$$$$$"
+    # p update_params
+    # redirect_to "/users/#{@user.id}"
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:username, :password, :email, :full_name, :lizard_species, :birthday, :profile_picture)
+  end
+
+  def update_params
+    params.require(:user).permit(:font_family, :background_colour)
   end
 end
