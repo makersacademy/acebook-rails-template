@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
   end
@@ -26,6 +27,7 @@ class PostsController < ApplicationController
     return if @post
 
     redirect_to root_path
+
   end
 
   def update
