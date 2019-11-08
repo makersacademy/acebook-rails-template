@@ -15,6 +15,9 @@
     <%= button_to "Edit", edit_post_path(post.id), :method => :get if (Time.now - post.created_at) / 60 <= 10%>
     <%= button_to "Delete", post_path(post.id), :method => :delete,
     data: {confirm: 'Are you sure you want to delete this post?'} %>
+  <% else %>
+    <%= button_to "Edit", posts_url, method: :get, data: { confirm: 'Permission denied' } if (Time.now - post.created_at) / 60 <= 10%>
+    <%= button_to "Delete", posts_url, method: :get, data: { confirm: 'Permission denied' } %>
   <% end %>
 
   <div class="like">
