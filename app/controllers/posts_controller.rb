@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params) do |post|
+      @post = Post.new(post_params) do |post|
       post.user = current_user
     end
 
@@ -18,21 +18,15 @@ class PostsController < ApplicationController
     end
   end
 
-  def not_editable?
-    if current_user != @post.user
-      flash[:alert] = "Sorry! You can't edit someone else's post."
-    elsif (Time.now - @post.created_at) > 600
-      flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
-    end
-  end
-
   def edit
     @post = Post.where(id: params[:id]).first
-    if not_editable?
-      redirect_to posts_url
-  else
+    not_curr_user?
+    flash[:alert] = "10 minutes exceeded: you can no longer edit the post." if @post.not_editable?
+      
+    redirect_to posts_url
     return if @post
-    end
+
+    redirect_to root_path
   end
 
   def update
@@ -67,6 +61,11 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def not_curr_user?
+    current_user != @post.user
+    flash[:alert] = "Sorry! You can't edit someone else's post."
   end
 
 end
