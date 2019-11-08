@@ -34,7 +34,8 @@ RSpec.describe PostsController, type: :controller do
 
   describe "DELETE/:id" do
     it "deletes a post" do
-      post = Post.create(message: "Hello, world!", user_id: @user.id)
+      wall_id = 1
+      post = Post.create(message: "Hello, world!", user_id: @user.id, wall_id: wall_id )
       params = { id: post.id }
       delete :destroy, params: params
       expect(Post.all.length).to eq 0

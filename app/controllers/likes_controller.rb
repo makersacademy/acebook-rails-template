@@ -12,14 +12,26 @@ class LikesController < ApplicationController
 
   def upvote
     @likeable.liked_by current_user
-    @post = Post.where(id: params[:post_id])
-    @@wall_id = @post.first.wall_id
-    redirect_to "/#{@@wall_id}"
+    likeable_type = params[:likeable_type].constantize
+    if likeable_type == Post
+      @@wall_id = Post.where(id: params[:likeable_id]).first.wall_id
+    elsif likeable_type == Comment
+      post_id = Comment.where(id: params[:likeable_id]).first.post_id
+      @@wall_id = Post.where(id: post_id).first.wall_id
+    end
+      redirect_to "/#{@@wall_id}"
   end
 
   def downvote
     @likeable.disliked_by current_user
-    redirect_to "/#{@@wall_id}"
+    likeable_type = params[:likeable_type].constantize
+    if likeable_type == Post
+      @@wall_id = Post.where(id: params[:likeable_id]).first.wall_id
+    elsif likeable_type == Comment
+      post_id = Comment.where(id: params[:likeable_id]).first.post_id
+      @@wall_id = Post.where(id: post_id).first.wall_id
+    end
+      redirect_to "/#{@@wall_id}"
   end
 
   private

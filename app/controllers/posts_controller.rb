@@ -27,8 +27,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    wall_id = params.require(:post).permit(:receiver)[:receiver]
     Post.destroy(params[:id])
-    redirect_to "/#{current_user.id}"
+    redirect_to "/#{wall_id}"
   end
 
   private

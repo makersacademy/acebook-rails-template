@@ -2,6 +2,7 @@
   <p><%= post.created_at.to_s(:long_ordinal) %></p>
     <% if post.user_id == current_user.id %>
       <%= form_for(post, :html => { :method => :delete }) do |f| %>
+      <%= f.hidden_field :receiver, :value => params[:id] %>
         <%= f.submit "Delete Post" %>
       <% end %>
     <% end %>
