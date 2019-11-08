@@ -98,7 +98,18 @@
               <ul style="list-style-type:none">
                 <% post.comments.each do |comment| %>
                   <li class="com-div">
-                    <%= comment.user.username %>: <b><%= comment.text %></b> <br>
+                    <%= comment.user.username %>: <b><%= comment.text %></b>
+
+                    <!-- comment likes and unlikes -->
+                    | Licks: <%= comment.comment_likes.length %> |
+                    <% unless @comment_like = CommentLike.exists?(comment.id, session[:user_id]) %>
+                      <%= link_to 'Lick', new_comment_like_path(comment_id: comment.id.to_s, redirect: request.path) %>
+                    <% else %>
+                      <%= link_to 'Unlick', @comment_like, :method => :delete %>
+                    <% end %>
+                    <br>
+
+                    <!-- comment information and edit controls -->
                     <p style="font-size:13px">
                       <% if comment.created_at != comment.updated_at %>
                         edited:
