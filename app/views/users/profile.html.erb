@@ -34,6 +34,9 @@
               </div>
               <div class="post-content mb-2">
                 <%=post.message%>
+                <div class="post-image my-3">
+                  <%= image_tag(post.image, style:"width:100%") if post.image.attached? %>
+                </div>
               </div>
               <div class="post-meta">
                 <%= post.created_at.strftime("%-d %b %Y at %H:%M") %>

@@ -70,6 +70,25 @@ body {
 .create-post-message {
   width: 100%;
   resize: none;
+  font-size: 1em;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  border-radius: 5px;
+}
+
+.file-uploader input {
+  color:#fff;
+  background-color: #007bff;
+  border-color:#007bff;
+  border-radius:.2rem;
+  padding:.25rem .5rem;
+  font-size:.875rem;
+  line-height:1.5;
+}
+
+.create-post-container {
+  background-color: #EEEEEE;
+  border-radius: 10px;
 }
 
 .comment-container {
@@ -80,13 +99,6 @@ body {
 
 input,
 textarea {
-  font-size: 1rem;
-  padding: 10px;
-  margin: 0 0 10px 0;
-  border-radius: 5px;
-}
-
-.textarea {
   font-size: 1rem;
   padding: 10px;
   margin: 0 0 10px 0;
