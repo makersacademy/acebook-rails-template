@@ -4,13 +4,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(content: post_params["content"], user_id: session[:user_id])
-    redirect_path = params.require(:post).permit(:redirect_path)[:redirect_path] || '/posts'
-    redirect_to redirect_path
+    receiver = params.require(:post).permit(:receiver)[:receiver]
+    @post = Post.create(content: post_params["content"], user_id: session[:user_id], receiver_id: receiver)
+    redirect_back(fallback_location: root_path)
   end
 
   def index
-    # no_current_user
     user_not_signed_in
     @post = Post.new
     @posts = Post.all
@@ -48,4 +47,5 @@ class PostsController < ApplicationController
     session[:path] = nil
     redirect_to redirect
   end
+
 end
