@@ -2,17 +2,30 @@
 <html>
   <head>
     <%= csrf_meta_tags %>
-    <%= render 'partials/header_links' %>
+
+    <%= render 'partials/header_links' %> 
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <title>Acebook</title>
   </head>
   <body>
-    <%= render 'partials/header' %>
+
+    <%= render 'partials/header' %> 
     <div class="container">
-      <%= yield %>
+    <%= render 'partials/flash-notice' %> 
+      <div class="row">
+        <p class="alert"><%= alert %></p>
+      </div>
     </div>
-    <%= render 'partials/footer' %>
-    <%= render 'partials/scripts' %>
+    <div class="container">
+
+      
+        <%= yield %>
+
+    </div>
+    <%= render 'partials/footer' %> 
+    <%= render 'partials/footer_links' %> 
   </body>
 </html>
+

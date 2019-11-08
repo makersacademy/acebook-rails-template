@@ -47,7 +47,6 @@ class PostsController < ApplicationController
       format.html { redirect_back fallback_location: posts_url }
       format.js { render layout:false }
     end
-    # redirect_to posts_url
   end
 
   def downvote
@@ -56,7 +55,6 @@ class PostsController < ApplicationController
       format.html { redirect_back fallback_location: posts_url }
       format.js { render layout:false }
     end
-    # redirect_to posts_url
   end
 
   private
