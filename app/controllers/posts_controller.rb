@@ -23,6 +23,8 @@ class PostsController < ApplicationController
       flash[:alert] = "Sorry! You can't edit someone else's post."
     elsif @post.not_editable?
       flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
+
+      redirect_to posts_url
     end
     return if @post
 
