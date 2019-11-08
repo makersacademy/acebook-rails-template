@@ -51,7 +51,7 @@
                   <% unless @like = Like.exists?(post.id, session[:user_id]) %>
                     <%= render template: "likes/new" %>
                   <% else %>
-                    <%= link_to '👎🏻', @like, :method => :delete, class: "btn btn-outline-primary" %>
+                    <%= link_to '👎', @like, :method => :delete, class: "btn btn-outline-primary" %>
                     <br>
                   <% end %>
                   <% if post.user_id == session[:user_id] %>
