@@ -13,8 +13,8 @@ script:
 - bundle exec rspec spec
 deploy:
   provider: heroku
+  app: acebook-winkleface
+  on:
+    repo: nateg101/acebook-by-WinkleFace
   api_key:
     secure: wzBxs81DmlZo+033YFYnbKtLnZnSIdHkdoueMMmAXTTPBYvJ77LHor/E2ifItqtVntFALJTCGeEO0COZYFlU+gOO4NzoRGb42f+YQqFsO2ULQMGjMlpdYHiJKmZ/nU+EB1hPOPOM0hD3uqljT6XF/wToVDvDmLxtHiZB02TgrZL3avUsejsUePw8xFt0Jp5S4yjm7DgPODPz/M4Nrik/ZXXu9AmIfZ+AnIrvxfavMLP4cghylQHyzC6GCvac3w5i8/tR/EMnbahE8MMRwapN4gq/bE7Wj43ZaVrVo3zYJY2DC36xRD0x9TwBUFxJ+IpNW/yigkgdPD46A52mAwDS0DVAROhA5ImyT0F53HhdFPuUH9miG1L4wEJ2EMFYysMm8kVLJjx730/WaMHV/Gts7lLaDtnq1sdvlXXjHRNrUDf+hbXIfJQe4lxoBQSYLsQCO83hFugETMivRMXt03FFS2DbyhqdsTxZiT1d+wSWesxCLeta+TBB6RyK+bbtYPchG4Drilah1UxVOHRDF+FvdM4zzF1VsiRDnnfDvkSb1hM+RRyalQrIv4g0pWftGm+f/5HRpKHuKygIX+YHs7v78X1iECET61leRgT3VswOWULteqXUhNLcjfz5x6wZr0IQbjWFtF9PQOA23OtU+mJoKdRzMjkxuZWVNdU09KvRAEg=
-    app: acebook-winkleface
-    on:
-      repo: nateg101/acebook-by-WinkleFace

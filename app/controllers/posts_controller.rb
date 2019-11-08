@@ -13,6 +13,19 @@ class PostsController < ApplicationController
     @posts = Post.where(wall_id: params[:id]).reverse
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(edit_params)
+      redirect_to "/#{@post.wall_id}"
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     Post.destroy(params[:id])
     redirect_to "/#{current_user.id}"
@@ -23,4 +36,9 @@ class PostsController < ApplicationController
   def post_params(wall_id)
     params.require(:post).permit(:message).merge(user_id: current_user.id, wall_id: wall_id )
   end
+
+  def edit_params
+    params.require(:post).permit(:message)
+  end
+
 end
