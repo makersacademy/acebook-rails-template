@@ -16,6 +16,8 @@ First, clone this repository. Then:
 > bundle install
 > bin/rails db:create
 > bin/rails db:migrate
+    bin/rails db:migrate RAILS_ENV=development
+    bin/rails db:migrate RAILS_ENV=test
 
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
@@ -48,7 +50,7 @@ MVP User Stories: (have this working by the end of wednesday)
 User Table
 
 ID|username|password|profile|email|full_name|lizard_species|birthday|
-  
+
 Post Table
 
 ID|contents|userID|created_at|updated_at|
@@ -56,5 +58,3 @@ ID|contents|userID|created_at|updated_at|
 Comment Table
 
 ID|postID|contents|userID(the person who made the comment)|created_at|updated_at
- 
-
