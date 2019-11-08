@@ -1,8 +1,15 @@
+<div id="create-post" class="row">
+  <div class="col-12">
+    <div class="create-post-container mb-2 pt-2 px-2">
 
-<%= simple_form_for @post do |f| %>
-  <%= f.input :message, as: :text%>
-  <%= f.file_field :image, accept: 'image/png,image/jpeg' %>
-  <br><br>
-  <%= f.button :submit, 'Submit' %>
+      <%= simple_form_for(@post, method: :post, url: posts_path) do |f| %>
+        <%= f.text_area :message, placeholder: 'What are you up to?', class: 'create-post-message' %>
+        <%= f.file_field :image, accept: 'image/png,image/jpeg', class: 'file-uploader' %>
+        <div class="text-right">
+          <%= f.button :submit, 'Post', class: 'btn btn-sm btn-primary' %>
+        </div>
+      <% end %>
 
-<% end %>
+    </div>
+  </div>
+</div>

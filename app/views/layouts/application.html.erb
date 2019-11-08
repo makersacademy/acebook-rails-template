@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acebook</title>
     <%= csrf_meta_tags %>
+
     <%= render 'partials/header_links' %> 
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <title>Acebook</title>
   </head>
-
   <body>
+
     <%= render 'partials/header' %> 
     <div class="container">
     <%= render 'partials/flash-notice' %> 
@@ -17,10 +19,10 @@
       </div>
     </div>
     <div class="container">
-      <div class="row">
+
       
         <%= yield %>
-      </div>
+
     </div>
     <%= render 'partials/footer' %> 
     <%= render 'partials/footer_links' %> 

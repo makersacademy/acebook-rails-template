@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.find(params[:id])
+    @post = Post.new
     @posts = Post.where(user_id: params[:id]).order("created_at DESC")
   end
+
 end
