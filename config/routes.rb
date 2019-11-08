@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   get 'users/:id' => 'users#profile'
-  get 'users/:username' => 'users#profile'
+  get ':username' => 'users#profile'
 
   resources :posts do
     member do

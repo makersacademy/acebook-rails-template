@@ -3,9 +3,14 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:profile]
 
   def profile
-    @user = User.find(params[:id])
+    if params[:id]
+      @user = User.find(params[:id])
+    elsif params[:username]
+      @user = User.where(username: params[:username]).first
+    end
     @posts = Post.where(user_id: params[:id]).order("created_at DESC")
   end
+
   
   def index
 

@@ -1,10 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   #:confirmable, :lockable, :timeoutable, :trackable and
-  extend FriendlyId
   acts_as_voter
-  friendly_id :name, use: :slugged
-
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[github]
 
