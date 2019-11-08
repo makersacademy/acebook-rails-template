@@ -1,13 +1,15 @@
+<div class="col">
 <% @posts.each do |post| %>
+  <div style="width:500px; height:auto;" class="bg-light p-2 my-3">
+  <%= image_tag(post.image, style:"width:100%") if post.image.attached? %></div>
 
-
-  <div style="width:500px; height:auto;"><%= image_tag(post.image, style:"width:100%") if post.image.attached? %></div>
-
+  <div class="py-2">
   <%= simple_format(post.message) %>
   <p style="color:#cccccc;"> <%= post.created_at.strftime("%-d %b %Y at %H:%M") %></p>
   <% @first_name = User.where(id: post.user_id).first&.send(:first_name) %>
   <% @last_name = User.where(id: post.user_id).first&.send(:last_name) %>
   <p><%= "by #{@first_name} #{@last_name}"%></p>
+  </div>
 
   <% if current_user.id == post.user_id %>
     <%= button_to "Edit", edit_post_path(post.id), :method => :get if (Time.now - post.created_at) / 60 <= 10%>
@@ -42,3 +44,5 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+</div>
