@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.where(id: params[:id]).first
+    set_post
     if not_curr_user?
       flash[:alert] = "Sorry! You can't edit someone else's post."
     elsif @post.not_editable?
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.where(id: params[:id]).first
+    set_post
 
     if @post.update(message: params[:post][:message])
       flash[:notice] = 'Successfully updated the post!'
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.where(id: params[:id]).first
+    set_post
     if not_curr_user?
       flash[:alert] = "Sorry! You can't delete someone else's post."
     elsif curr_user? && @post.can_destroy?
@@ -55,6 +55,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def set_post
+    @post = Post.where(id: params[:id]).first
+  end
 
   def post_params
     params.require(:post).permit(:message)
