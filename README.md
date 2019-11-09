@@ -1,5 +1,7 @@
 # LizardBook
 
+https://lizardbook.herokuapp.com
+
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
 ## Card Wall:
