@@ -5,11 +5,11 @@
       <%= simple_form_for(@post, method: :post, url: posts_path) do |f| %>
         <%= f.text_area :message, placeholder: 'What are you up to?', class: 'create-post-message' %>
         <div class="float-right">
-          <%= f.button :submit, 'Post', class: 'btn btn-sm btn-primary' %>
+          <%= f.button :submit, 'Create Post', class: 'btn btn-sm btn-primary' %>
         </div>
 
         <div class="ml-2">
-          Attach an photo
+          Attach a photo
           <%= f.file_field :image, accept: 'image/png,image/jpeg', class: 'file-uploader' %>
         </div>
 

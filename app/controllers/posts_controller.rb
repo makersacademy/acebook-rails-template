@@ -9,10 +9,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params.merge(user_id: current_user.id))
-    redirect_to users_profile_url(id: @post.user_id) 
+    redirect_to users_profile_url(id: @post.user_id)
   end
 
   def index
+    @post = Post.new
     @posts = Post.all.order("created_at DESC")
   end
 
