@@ -4,15 +4,21 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :destroy, :show, :update, :upvote, :downvote]
 
   def new
+    if params[:user_id] 
+      @wall_id = params[:user_id]
+    else 
+      @wall_id = current_user.id
+    end
     @post = current_user.posts.new
   end
 
   def create
-    @post = Post.create(post_params.merge(user_id: current_user.id, wall_id: current_user.id))
-    redirect_to posts_url
+    @post = Post.create(post_params.merge(user_id: current_user.id))
+    redirect_to users_profile_url(id: @post.user_id)
   end
 
   def index
+    @post = Post.new
     @posts = Post.all.order("created_at DESC")
   end
 
@@ -21,7 +27,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-
+    if params[:user_id] 
+      @wall_id = params[:user_id]
+    else 
+      @wall_id = current_user.id
+    end
   end
 
   def destroy
@@ -47,7 +57,6 @@ class PostsController < ApplicationController
       format.html { redirect_back fallback_location: posts_url }
       format.js { render layout:false }
     end
-    # redirect_to posts_url
   end
 
   def downvote
@@ -56,13 +65,12 @@ class PostsController < ApplicationController
       format.html { redirect_back fallback_location: posts_url }
       format.js { render layout:false }
     end
-    # redirect_to posts_url
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message, :image)
+    params.require(:post).permit(:wall_id, :message, :image)
   end
 
   def find_post

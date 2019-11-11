@@ -9,7 +9,10 @@ class UsersController < ApplicationController
     elsif (@user = User.find(params[:id])).present?
       @user
     end
-    @posts = Post.where(user_id: params[:id]).order("created_at DESC")
+
+    @post = Post.new
+
+    @posts = Post.where(wall_id: params[:id]).order("created_at DESC")
   end
 
   
@@ -38,4 +41,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:avatarImage, :username, :first_name, :last_name, :password, :email)
   end
+
 end

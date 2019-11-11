@@ -1,24 +1,24 @@
-  <!-- End of Top Wrapper – DON'T DELETE! -->
-  </head>
-  <body>
-  <!-- Start of header -->
-  <header>
-    <div class="container">
-      <div class="header row">
-        <div class="col-12 my-3">
-          <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/">FaceBuzz</a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto"> &nbsp; </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control my-2 mx-1" type="text" placeholder="Email Address">
-                <input class="form-control my-2 ml-1 mr-3" type="password" placeholder="Password">
-                <button class="btn btn-sm btn-primary">Log In</button>
-              </form>
-            </div>
-          </nav>
-        </div>
+<!-- Start of header -->
+<header>
+  <div class="container">
+    <div class="header row">
+      <div class="col-12 my-3">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="/posts"><strong>Acebook</strong></a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"> &nbsp; </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <%# <button class="btn btn-sm btn-secondary">Log In</button> %>
+              <% if user_signed_in? %>
+              <%= link_to('My Profile', "/users/#{current_user.id}", method: :get) %> &nbsp;&nbsp;
+              <%= link_to('Log Out', destroy_user_session_path, method: :delete) %>
+            <% else %>
+              <%= link_to "Log In", new_session_path(User) %>
+            <% end %>
+            </form>
+          </div>
+        </nav>
       </div>
     </div>
-  </header>
-  <!-- End of header -->
+  </div>
+</header>
