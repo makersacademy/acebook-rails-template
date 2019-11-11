@@ -12,11 +12,12 @@
       <% end %>
     <% end %>
 
+    <%= render partial: 'likes/form', locals: { likeable: post } %>
+
     <% post.comments.each do |comment| %>
     <p>
       <%= comment.message %>
     </p>
-
       <% if comment.user_id == current_user.id %>
         <%= form_for([post, comment], :html => { :method => :delete }) do |f| %>
           <%= f.submit "Delete Comment" %>
@@ -26,7 +27,7 @@
       <%= link_to edit_post_comment_path(post, comment) do %>
         Edit comment
       <% end %>
-
+    <%= render partial: 'likes/form', locals: { likeable: comment } %>
     <% end %>
 
     <%= form_for [post, Comment.new] do |form| %>
