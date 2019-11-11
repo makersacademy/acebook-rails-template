@@ -5,7 +5,7 @@
   <a href="#user-content-team-blog">Team Blog</a> •
   <a href="#user-content-quickstart">Quickstart</a> •
   <a href="#user-content-authors">Authors</a> •
-  <a href="#user-content-user-stoies">User Stories</a> •
+  <a href="#user-content-user-stories">User Stories</a> •
   <a href="#user-content-database-tables">Database Tables</a> •
   <a href="#user-content-technologies-used">Technologies Used</a>
 </p>
