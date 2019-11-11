@@ -1,3 +1,4 @@
+FactoryBot.define do
   factory :comment do
     
   end
@@ -19,4 +20,5 @@
   #   post_id { 1 }
   # end
 
+# end
 end
