@@ -4,6 +4,9 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.find(params[:id])
+
+    @post = Post.new
+
     @posts = Post.where(wall_id: params[:id]).order("created_at DESC")
   end
   
@@ -43,4 +46,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:avatarImage, :username, :first_name, :last_name, :password, :email)
   end
+
 end

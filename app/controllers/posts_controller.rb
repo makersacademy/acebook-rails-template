@@ -14,10 +14,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params.merge(user_id: current_user.id))
-    redirect_to posts_url
+    redirect_to users_profile_url(id: @post.user_id)
   end
 
   def index
+    @post = Post.new
     @posts = Post.all.order("created_at DESC")
   end
 
@@ -56,7 +57,6 @@ class PostsController < ApplicationController
       format.html { redirect_back fallback_location: posts_url }
       format.js { render layout:false }
     end
-    # redirect_to posts_url
   end
 
   def downvote
@@ -65,7 +65,6 @@ class PostsController < ApplicationController
       format.html { redirect_back fallback_location: posts_url }
       format.js { render layout:false }
     end
-    # redirect_to posts_url
   end
 
   private
