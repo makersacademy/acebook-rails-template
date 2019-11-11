@@ -29,6 +29,7 @@
   <% if session[:user_id] == true %>
     <h5>Welcome, <%= User.find_by(id: session[:user_id]).full_name %>!</h5>
   <% end %>
+  <div id="testjq" name="testname" value="testvalue"> TEST STUFF </div>
   <div class="container">
     <div class="row">
       <div class="col-2">
@@ -38,7 +39,7 @@
         <div class="card-body">
           <%= render template: "posts/new" %>
         </div>
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush" >
 
 <!-- post list starts here -->
           <% @posts.reverse.each do |post| %>
@@ -60,13 +61,10 @@
               <div class="edit-delete">
 
 <!-- like button -->
-                  <% @post_id = post.id %>
-                  <% unless @like = Like.exists?(post.id, session[:user_id]) %>
-                    <%= render template: "likes/new" %>
-                  <% else %>
-                    <%= link_to '👎', @like, :method => :delete, class: "btn btn-outline-primary" %>
-                    <br>
-                  <% end %>
+              <% Like.exists?(post.id, session[:user_id]) ? (emoji = '👎') : (emoji = '👅') %>
+              <%= link_to emoji, new_like_path(post_id: post.id.to_s, redirect: request.path), remote: true, class: "btn btn-outline-primary", id: "postlike-#{post.id}", value: post.id %>
+              <br>
+
 
 <!-- edit and delete controls -->
                   <% session[:path] = request.path %>

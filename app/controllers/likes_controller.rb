@@ -1,21 +1,23 @@
 class LikesController < ApplicationController
 
   def new
-    @like = Like.new
+    create(params[:post_id], params[:redirect])
   end
 
-  def create
-    unless Like.find_by(post_id: post_params["post_id"], user_id: session[:user_id])
-      @like = Like.create(post_id: post_params["post_id"], user_id: session[:user_id])
+  def create(post_id, redirect_path)
+    unless Like.find_by(post_id: post_id, user_id: session[:user_id])
+      @like = Like.create(post_id: post_id, user_id: session[:user_id])
+    else
+      destroy(post_id, redirect_path)
     end
-    redirect_path = params.require(:like).permit(:redirect_path)[:redirect_path] || '/posts'
-    redirect_to redirect_path
+    path = redirect_path || '/posts'
+    redirect_to path
   end
 
-  def destroy
-    @like = Like.find(params[:id])
+  def destroy(post_id, redirect_path)
+    @like = Like.find_by(post_id: post_id, user_id: session[:user_id])
     @like.destroy
-    redirect_to_previous_page
+    redirect_to redirect_path || '/posts'
   end
 
   private
