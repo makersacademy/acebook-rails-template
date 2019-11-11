@@ -5,8 +5,13 @@
       <%= simple_form_for(@post, method: :post, url: posts_path) do |f| %>
         <%= hidden_field_tag "post[wall_id]", "#{@wall_id}" %>
         <%= f.text_area :message, placeholder: 'What are you up to?', class: 'create-post-message' %>
+
         <div class="float-right">
-          <%= f.button :submit, 'Create Post', class: 'btn btn-sm btn-primary' %>
+          <% if request.original_url.include?('edit') %>
+            <%= f.button :submit, 'Update Post', class: 'btn btn-sm btn-primary' %>
+          <% else %>
+            <%= f.button :submit, 'Create Post', class: 'btn btn-sm btn-primary' %>
+          <% end %>
         </div>
 
         <div class="ml-2">

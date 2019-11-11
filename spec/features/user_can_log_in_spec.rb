@@ -4,9 +4,9 @@ RSpec.feature 'user login', type: :feature do
   scenario 'user can access login page' do
     visit "/"
     click_link "Log In"
-    expect(page).to have_content("Email")
-    expect(page).to have_content("Password")
-    expect(page).to have_content("Log in")
+    expect(page).to have_field("user[email]")
+    expect(page).to have_field("user[password]")
+    expect(page).to have_button("Log in")
   end
 
   scenario 'user can login' do
@@ -26,14 +26,14 @@ RSpec.feature 'user login', type: :feature do
     login_user
     expect(current_path).to eq ("/users/#{user.id}")
     visit "/users/#{user_2.id}"
-    expect(page).to have_content("Jonny's Profile")
+    expect(page).to have_content("Jonny")
   end
 
   scenario "user cannot access another user's wall if they are not signed in" do
     user = create_user
     user_2 = create_user_two
     visit "/users/#{user_2.id}"
-    expect(page).not_to have_content("Jonny's Profile")
+    expect(page).not_to have_content("Jonny")
   end
 
 end

@@ -5,11 +5,10 @@ RSpec.feature "Create post", type: :feature do
     create_user
     login_user
     visit '/posts'
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    fill_in "post[message]", with: "Hello, world!"
+    click_button "Create Post"
     expect(page).to have_content("Hello, world!")
-    expect(page).to have_content("by John Doe")
+    expect(page).to have_content("John Doe")
   end
 
   scenario "User can submit posts and view them" do
@@ -29,7 +28,10 @@ RSpec.feature "Create post", type: :feature do
     user_2 = create_user_two
     login_user
     visit "/users/#{user_2.id}"
+    save_and_open_page
     create_post
-    expect(page).to have_content "New post"
+    expect(page).to have_content "Hello, world!"
+    visit "/users/#{user.id}"
+    expect(page).not_to have_content "Hello, world!"
   end
 end

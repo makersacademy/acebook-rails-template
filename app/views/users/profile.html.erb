@@ -30,7 +30,8 @@
           <div class="col-11">
             <div class="post-container my-3 p-3">
               <div class="post-author">
-                <%= link_to "#{@user.first_name} #{@user.last_name}", "/users/#{@user.id}" %>
+                <% @poster = User.where(id: post.user_id).first %>
+                <%= link_to "#{@poster.first_name} #{@poster.last_name}", "/users/#{@poster.id}" %>
               </div>
               <div class="post-content mb-2">
                 <%= simple_format(post.message) %>
@@ -73,7 +74,7 @@
             </div>
           </div>
 
-          <% end %>
+          
           <a href="/users/<%=@user.id%>/posts/new">New post</a>
           
         </div>
