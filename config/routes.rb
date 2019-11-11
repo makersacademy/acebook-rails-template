@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'settings/new'
 
   get 'home/index'
+  get 'likes/getinfo'
+  post 'likes/postinfo'
+
   root 'home#index'
 
   resources :users

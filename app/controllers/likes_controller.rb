@@ -1,34 +1,33 @@
 class LikesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
 
   def new
-    create(params[:post_id], params[:redirect])
+    create(params[:post_id])
   end
 
-  def create(post_id, redirect_path)
+  def create(post_id)
     unless Like.find_by(post_id: post_id, user_id: session[:user_id])
       @like = Like.create(post_id: post_id, user_id: session[:user_id])
     else
-      destroy(post_id, redirect_path)
+      destroy(post_id)
     end
-    path = redirect_path || '/posts'
-    redirect_to path
   end
 
-  def destroy(post_id, redirect_path)
+  def destroy(post_id)
     @like = Like.find_by(post_id: post_id, user_id: session[:user_id])
     @like.destroy
-    redirect_to redirect_path || '/posts'
   end
 
-  private
-
-  def post_params
-    params.require(:like).permit(:post_id)
+  def postinfo
+    session[:last_liked_post] = params[:post_id]
   end
 
-  def redirect_to_previous_page
-    redirect = session[:path] || '/posts'
-    session[:path] = nil
-    redirect_to redirect
+  def getinfo
+    @post = Post.find(session[:last_liked_post])
+    session[:last_liked_post] = nil
+    respond_to do |format|
+      format.json { render json: { likecount: @post.likes.length, likedby: @post.users.map { |x| x.username }.join(", ") } }
+    end
   end
 end

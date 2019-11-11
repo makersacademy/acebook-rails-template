@@ -29,7 +29,6 @@
   <% if session[:user_id] == true %>
     <h5>Welcome, <%= User.find_by(id: session[:user_id]).full_name %>!</h5>
   <% end %>
-  <div id="testjq" name="testname" value="testvalue"> TEST STUFF </div>
   <div class="container">
     <div class="row">
       <div class="col-2">
@@ -62,7 +61,7 @@
 
 <!-- like button -->
               <% Like.exists?(post.id, session[:user_id]) ? (emoji = '👎') : (emoji = '👅') %>
-              <%= link_to emoji, new_like_path(post_id: post.id.to_s, redirect: request.path), remote: true, class: "btn btn-outline-primary", id: "postlike-#{post.id}", value: post.id %>
+              <%= link_to emoji, new_like_path(post_id: post.id.to_s), remote: true, class: "btn btn-outline-primary", id: "postlike-#{post.id}", value: post.id %>
               <br>
 
 
@@ -84,11 +83,9 @@
 
 
 <!-- like information -->
-                <span style="color:grey"><%= post.likes.length %> licks</span>
+                <span style="color:grey"><span id="postlikecount-<%= post.id %>"><%= post.likes.length %> </span>licks</span>
                 <br>
-                <% unless post.likes.length == 0 %>
-                  <span style="color:grey">LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %></span>
-                <% end %>
+                <span style="color:grey">LICKED BY: <span id="postlikedby-<%= post.id %>"> <%= post.users.map { |x| x.username }.join(", ") %></span></span>
 
 <!-- comment section starts here (starts with input box) -->
                 <% @post_id = post.id %>
