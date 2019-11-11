@@ -5,14 +5,19 @@
     <title></title>
   </head>
   <body>
+
+    <% if((session[:user_id]).to_i==(params[:id]).to_i)%>
     <%= form_for @user do |user| %>
       <%= user.label :font_family %>
       <%= user.select(:font_family, [['Times New Roman'], ['Times'], ['Courier New'], ['Verdana'], ['Courier'], ['Arial Narrow'], ['Candara'], ['Geneva'], ['Calibri'], ['Optima'], ['Cambria'], ['Garamond'], ['Arial Narrow'], ['Perpetua'], ['Monaco'], ['Didot'], ['Brush Script MT'], ['Lucidia Bright'], ['Copperplate']]) %>
 
       <%= user.label :background_colour %>
-      <%= user.select(:background_colour, [['#F3FCF2'], ['#D5E3D5'], ['#E86FE2'], ['#F2FCFC'], ['#FCFBF2'], ['#FFFAF5'], ['#FCDAB8'], ['#9E764D'], ['#F5F5F5']])%>
+      <%= user.select(:background_colour, [['Aquamarine'],['PaleVioletRed'],['PapayaWhip'],['SpringGreen'],['WhiteSmoke'],['LightGreen'],['LawnGreen'],['LightSeaGreen']])%>
 
-      <%= user.submit "Lizardify me!" %> 
+      <%= user.submit "Lizardify me!" %>
+    <% end %>
+    <%else%>
+    not your account, cant edit settings
     <% end %>
   </body>
 </html>
