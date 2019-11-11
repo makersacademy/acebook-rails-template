@@ -1,0 +1,20 @@
+<% if current_user.liked? likeable %>
+  <%= form_tag unlike_post_path(likeable_type: likeable.class.to_s, likeable_id: likeable.id, post_id: likeable.id), method: :post do %>
+    <% button_tag class: 'btn btn-block liked' do %>
+    <%= hidden_field :receiver, :value => params[:id] %>
+      <%= fa_icon 'thumbs-down' %> unlike
+
+    <% end %>
+  <% end %>
+  <%= likeable.get_likes.size %>
+<% else %>
+  <%= form_tag like_post_path(likeable_type: likeable.class.to_s, likeable_id: likeable.id, post_id: likeable.id), method: :post do %>
+
+    <% button_tag class: 'btn btn-block liked' do %>
+    <%= hidden_field :receiver, :value => params[:id] %>
+      <%= fa_icon 'thumbs-up' %> like
+
+    <% end %>
+  <% end %>
+  <%= likeable.get_likes.size %>
+<% end %>
