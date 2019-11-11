@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
       redirect_to "/"
     end
   end
+
+  def content_not_found
+    render file: "#{Rails.root}/public/custom_404.html", layout: true, status: :not_found
+  end
 end
