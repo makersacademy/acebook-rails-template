@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  
+  rescue_from ActiveRecord::RecordNotFound, :with => :user_not_found  
+
   before_action :authenticate_user!, only: [:profile]
 
   def profile
@@ -7,8 +8,6 @@ class UsersController < ApplicationController
       @user
     elsif (@user = User.find(params[:id])).present?
       @user
-    else
-      user_not_found
     end
     @posts = Post.where(user_id: params[:id]).order("created_at DESC")
   end

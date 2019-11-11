@@ -16,11 +16,7 @@ RSpec.feature 'User profile', type: :feature do
     user = User.create(first_name: 'John', last_name: 'Doe', email: 'test@test.com', password: 'password', username: 'john')
     visit "/"
     login_user
-    p user
-    p user.username
     visit "/johns"
     expect(page).to have_content("User doesn't exist")
   end
-
-
 end
