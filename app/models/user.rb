@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  acts_as_voter
   # Include default devise modules. Others available are:
-   #:confirmable, :lockable, :timeoutable, :trackable and
+  #:confirmable, :lockable, :timeoutable, :trackable and
+  acts_as_voter
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[github]
 
