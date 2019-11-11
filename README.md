@@ -1,9 +1,20 @@
-# LizardBook
+<h1 align="center">🦎 LizardBook</h1>
 
-https://lizardbook.herokuapp.com
+<p align="center">
+  <a href="#user-content-card-wall">Card Wall</a> •
+  <a href="#user-content-team-blog">Team Blog</a> •
+  <a href="#user-content-quickstart">Quickstart</a> •
+  <a href="#user-content-authors">Authors</a> •
+  <a href="#user-content-user-stoies">User Stories</a> •
+  <a href="#user-content-database-tables">Database Tables</a> •
+  <a href="#user-content-technologies-used">Technologies Used</a>
+</p>
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+A team based project, working to a client's brief, to create a social media platform.  
+<a href="https://lizardbook.herokuapp.com">Click here to view the app online!</a>
 
+![Screenshot](https://github.com/Mezela/acebook--LizardBook-/blob/master/Screenshot%202019-11-11%20at%2015.22.31.png?raw=true)
+------------
 ## Card Wall:
 https://trello.com/b/ODg1c9f4/lizardbook-by-team-lizard
 
@@ -24,39 +35,64 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
-
 ------
-### Authors
+## Authors
 - Heli Sivunen: https://github.com/PacificRebel
 - Josh Davies: https://github.com/JoshDavies
 - James Clark: https://github.com/jmhc22
 - Pamela Mezue: https://github.com/Mezela
 - Jess Lonsdale: https://github.com/jlonsdale
 - Duncan Skinner: https://github.com/Duncan9099
+--------
+## User Stories
 
-MVP User Stories: (have this working by the end of wednesday)
+✅ Users can sign up with an encrypted password and unique username.  
+✅ Users get errors for incorrect sign ins.    
+✅ Users can log in with a username and log out.  
+✅ Users can view profile pages.  
+✅ Users can make posts. (with timestamp)  
+✅ Users can view posts and see who made them. (newest first)  
+✅ Users can only delete their own posts.  
+✅ Users can make, edit & delete comments on any post.  
+✅ Users can only edit their own comments or posts, up-to 10 minutes after posting.  
+✅ Users can post to another users profile OR to the main newsfeed.  
+✅ Users can customise their own profile font & background colour.  
+✅ Users can 'like' a post or comment.  
+✅ Users can undo a 'like' on a post or comment.  
+✅ Custom (404) This user does not exist
 
-- Users can sign up [done]
-- Users get errors for incorrect sign ins [done]
-- Users can view profile pages [done]
-- Users can log in with a username and password and log out [done]
+----------
+## Database Tables
 
-- Users can make posts [done]
-- Users can view posts and see who made them [done]
-- Users can delete their own posts [done]
-- Users can edit posts [done]
+User Table  
+ID | username | password | email | full_name | lizard_species | birthday | profile_picture | created_at | updated_at | font_family | background_colour |  
 
-- Users can make comments on posts [done]
-- Users can view comments
+Post Table  
+ID | content | created_at | updated_at | user_id | receiver_id |
 
-User Table
+Comment Table  
+ID | text | created_at | updated_at | user_id | post_id |
 
-ID|username|password|profile|email|full_name|lizard_species|birthday|
+Likes Table  
+ID | user_id | post_id |
 
-Post Table
+Comment_Likes Table  
+ID | user_id | post_id |
 
-ID|contents|userID|created_at|updated_at|
+### Domain Relationships
+- | User |------≡| Posts |
+- | User |------≡| Comments |
+- | User |------≡| Likes |
+- | User |------≡| Comment_Likes |
 
-Comment Table
+- | Post |------≡| Comments |
+- | Post |------≡| Likes |
 
-ID|postID|contents|userID(the person who made the comment)|created_at|updated_at
+- | Comment |------≡| Comment_Likes |
+----------------
+### Technologies used:
+- Ruby
+- Rails
+- Bcrypt
+- RSpec
+- Capybara
