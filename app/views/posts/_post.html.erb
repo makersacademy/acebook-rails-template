@@ -1,5 +1,6 @@
 <div  class='post'><%= simple_format post.message %>
-  <p><%= post.created_at.to_s(:long_ordinal) %></p>
+  <p><small>posted by <strong><a href="/users/<%= post.user.id %>"><%= post.user.email %></a></strong></small></br>
+   <small><%= post.created_at.to_s(:long_ordinal) %></small></p>
     <% if post.user_id == current_user.id %>
       <%= form_for(post, :html => { :method => :delete }) do |f| %>
       <%= f.hidden_field :receiver, :value => params[:id] %>
@@ -7,24 +8,24 @@
       <% end %>
     <% end %>
 
-    <% if post.created_at > Time.now - 600 && post.user_id == current_user.id%>
-      <%= link_to edit_post_path(post) do %>
-          Edit post<br>
-      <% end %>
+
+  <% if post.created_at > Time.now - 600 && post.user_id == current_user.id%>
+    <%= link_to edit_post_path(post) do %>
+        Edit post<br>
     <% end %>
+  <% end %>
 
-    <%= render partial: 'likes/form', locals: { likeable: post } %>
+  <%= render partial: 'likes/form', locals: { likeable: post } %>
 
+  <div class='comments'>
     <% post.comments.each do |comment| %>
-    <p class="comments">
-      <%= comment.message %>
-    </p>
-    <%= render partial: 'likes/form', locals: { likeable: comment } %>
+      <%= render partial: 'comments/comment', locals: { post: post, comment: comment } %>
     <% end %>
+  </div>
 
-    <%= form_for [post, Comment.new] do |form| %>
-      <%= form.text_field :message %>
+  <%= form_for [post, Comment.new] do |form| %>
+    <%= form.text_field :message %>
 
-      <%= form.submit "Add comment" %>
-    <% end %>
+    <%= form.submit "Add comment" %>
+  <% end %>
 </div>

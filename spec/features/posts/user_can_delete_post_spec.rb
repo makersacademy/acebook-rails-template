@@ -19,4 +19,13 @@ RSpec.feature "Timeline", type: :feature do
     log_in_test_user_2
     expect(page).not_to have_button "Delete Post"
   end
+
+  scenario "User deletes a post and its comments" do
+    log_in_test_user
+    submit_post("I'm prime for deletion")
+    add_comment
+    click_on 'Delete Post'
+    expect(page).not_to have_content "Test Comment"
+  end
+
 end

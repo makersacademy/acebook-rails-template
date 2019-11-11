@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Comments' do
+RSpec.feature 'Comments', type: :feature do
   scenario 'user comments on existing post' do
     log_in_test_user
     # Post.create()

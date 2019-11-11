@@ -32,11 +32,29 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
+  describe 'GET :id/edit' do
+    it 'goes to the edit page' do
+      post = Post.create(message: "Hello", user_id: @user.id)
+      params = { id: post.id }
+      get :edit, params: params
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe 'PATCH/:id' do
+    it 'updates the post' do
+      post = Post.create(message: "Hello, world!", user_id: @user.id)
+      params = { :post => { message: "Bye" }, id: post.id }
+      patch :update, params: params
+      expect(Post.all.first.message).to eq "Bye"
+    end
+  end
+
   describe "DELETE/:id" do
     it "deletes a post" do
       wall_id = 1
       post = Post.create(message: "Hello, world!", user_id: @user.id, wall_id: wall_id )
-      params = { id: post.id }
+      params = { :post => {receiver: wall_id }, id: post.id}
       delete :destroy, params: params
       expect(Post.all.length).to eq 0
     end
