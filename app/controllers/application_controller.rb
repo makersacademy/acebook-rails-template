@@ -1,5 +1,11 @@
 class ApplicationController < ActionController::Base
+  rescue_from ActiveRecord::RecordNotFound, :with => :user_not_found
   protect_from_forgery with: :exception
+
+  def user_not_found
+    render :template => "errors/error_404_user", :status => 404
+  end
+
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 

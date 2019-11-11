@@ -1,5 +1,5 @@
 def create_user
-  User.create(first_name: 'John', last_name: 'Doe', email: 'test@test.com', password: 'password')
+  User.create(first_name: 'John', last_name: 'Doe', email: 'test@test.com', password: 'password', username: 'john')
 end
 
 def login_user
