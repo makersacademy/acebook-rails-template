@@ -23,4 +23,13 @@ RSpec.feature "Create post", type: :feature do
     expect(page).to have_content "5 Nov 2019 at 14:58"
     Timecop.return
   end
+
+  scenario "User can see option to post on another users wall" do
+    user = create_user
+    user_2 = create_user_two
+    login_user
+    visit "/users/#{user_2.id}"
+    create_post
+    expect(page).to have_content "New post"
+  end
 end

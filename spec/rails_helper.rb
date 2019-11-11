@@ -20,7 +20,7 @@ require 'devise'
 require 'support/factory_bot'
 require_relative 'support/controller_macros'
 require 'helpers/posts_helpers'
-require 'web_helpers'
+require 'helpers/web_helpers'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

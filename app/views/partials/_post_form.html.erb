@@ -1,5 +1,6 @@
 
 <%= simple_form_for @post do |f| %>
+  <%= hidden_field_tag "post[wall_id]", "#{@wall_id}" %>
   <%= f.input :message, as: :text%>
   <%= f.file_field :image, accept: 'image/png,image/jpeg' %>
   <br><br>
