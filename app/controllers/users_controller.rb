@@ -19,10 +19,16 @@ class UsersController < ApplicationController
 
   def show
     user_not_signed_in
-    @user = User.find_by(id: params[:id])
-    @post = Post.new
-    @posts = Post.all
+
+    if @user = User.find_by(id: params[:id]).present?
+      @user = User.find_by(id: params[:id])
+      @post = Post.new
+      @posts = Post.all
+    else
+      content_not_found
+    end
   end
+
 
   def edit
     @user = User.find_by(id: params[:id])
