@@ -1,0 +1,8 @@
+<div class='comment'>
+  <p class="comments">
+    <%= comment.message %>
+    <p><small><strong><a href="/users/<%= comment.user.id %>"><%= comment.user.email %></a></strong> replied</small></br>
+    <small><%= comment.created_at.to_s(:long_ordinal) %></small></p>
+    <%= render partial: 'likes/form', locals: { likeable: comment } %>
+  </p>
+</div>
