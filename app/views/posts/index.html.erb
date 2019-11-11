@@ -13,7 +13,11 @@
         <p><%= link_to 'Edit', edit_post_path(post) %></p>
       <% end %>
       <div id="comments">
-        <%= post.comments.count %> Comments
+        <% if post.comments.count == 1 %>
+          <%= post.comments.count %> Comment
+        <% else %>
+          <%= post.comments.count %> Comments
+        <% end %>
         <%= render post.comments %>
         <%= render "comments/form" %>
       </div>
