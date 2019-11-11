@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by(slug: params[:id])
+    @user = User.find_by(id: params[:id])
     if @user.update(update_params)
       redirect_to "/users/#{@user.id}"
     else

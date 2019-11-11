@@ -392,7 +392,6 @@
       "/Users/student/Documents/Projects/Week8/acebook-4/acebook--LizardBook-/app/controllers/application_controller.rb": [
         1,
         1,
-        1,
         null,
         1,
         0,
@@ -413,13 +412,6 @@
         1,
         1,
         null,
-        null,
-        null,
-        null,
-        1,
-        354,
-        354,
-        354,
         null,
         null
       ],
@@ -1258,7 +1250,6 @@
         1,
         1,
         null,
-        null,
         1,
         1,
         1,
@@ -1272,25 +1263,6 @@
         1,
         1,
         1,
-        null,
-        1,
-        88,
-        null,
-        null,
-        1,
-        708,
-        708,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        88,
-        88,
-        88,
-        null,
         null,
         1,
         null,
@@ -1329,6 +1301,6 @@
         null
       ]
     },
-    "timestamp": 1573487379
+    "timestamp": 1573487599
   }
 }
