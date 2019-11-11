@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191108141107) do
+ActiveRecord::Schema.define(version: 20191111125238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20191108141107) do
     t.datetime "updated_at", null: false
     t.string "font_family", default: "LightIkaros"
     t.string "background_colour", default: "#DEB887"
+    t.string "slug"
   end
 
 end

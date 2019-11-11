@@ -7,6 +7,7 @@ RSpec.feature "User setting", type: :feature do
     signup_as_new_user("Pam")
     login_as_user("Pam")
     select '#9E764D', from: "Background colour"
+    # save_and_open_page
     click_button "Lizardify me!"
     within('body') do
     page.body.should have_content ('background-color: #9E764D')

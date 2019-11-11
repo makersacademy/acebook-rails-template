@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  around_action :disable_override_to_param_user
 
   def no_current_user
     if !current_user
@@ -19,5 +20,13 @@ class ApplicationController < ActionController::Base
 
   def content_not_found
     render file: "#{Rails.root}/public/custom_404.html", layout: true, status: :not_found
+  end
+
+  # private
+
+  def disable_override_to_param_user
+    User.toggle_override_to_param(false)
+    yield
+    User.toggle_override_to_param(true)
   end
 end

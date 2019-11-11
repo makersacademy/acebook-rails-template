@@ -19,9 +19,10 @@ class UsersController < ApplicationController
 
   def show
     user_not_signed_in
-
-    if @user = User.find_by(id: params[:id]).present?
-      @user = User.find_by(id: params[:id])
+    unless @user = User.find_by(id: params[:id])
+      @user = User.find_by(slug: params[:id])
+    end
+    if @user
       @post = Post.new
       @posts = Post.all
     else
@@ -29,13 +30,12 @@ class UsersController < ApplicationController
     end
   end
 
-
   def edit
     @user = User.find_by(id: params[:id])
   end
 
   def update
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by(slug: params[:id])
     if @user.update(update_params)
       redirect_to "/users/#{@user.id}"
     else
