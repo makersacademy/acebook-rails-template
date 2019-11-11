@@ -18,7 +18,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
+  def edit 
+    @previous_wall_id = params['previous_wall_id']
+
     @post = Post.where(id: params[:id]).first
     if current_user != @post.user
       flash[:alert] = "Sorry! You can't edit someone else's post."
@@ -27,7 +29,6 @@ class PostsController < ApplicationController
     return if @post
 
     redirect_to root_path
-
   end
 
   def update
@@ -35,7 +36,7 @@ class PostsController < ApplicationController
     
     if @post.update(message: params[:post][:message])
       flash[:notice] = 'Successfully updated the post!'
-      redirect_to posts_url
+      redirect_to "/users/#{params['previous_wall_id']}"
     else
       flash[:alert] = 'Couldn’t edit the post...'
       render :edit
@@ -55,6 +56,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @wall_id = params['id']
     @posts = Post.all
   end
 

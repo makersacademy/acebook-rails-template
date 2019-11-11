@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   end
 
 
- 
+  devise_scope :user do
+    get 'users/:id' => 'posts#index', as: 'user'
+  end
 
   resources :posts
 end
