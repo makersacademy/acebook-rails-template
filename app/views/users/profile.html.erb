@@ -14,7 +14,7 @@
   <!-- Start of main -->
   <div class="main col-8 p-2">
     <!-- Start of create-post form -->
-    <%= render './partials/post_form'%>
+    <%= render './partials/create_post_form'%>
     <!-- End of create-post form -->
 
     <!-- Start of wall -->
@@ -74,9 +74,9 @@
             </div>
           </div>
 
-          
+
           <a href="/users/<%=@user.id%>/posts/new">New post</a>
-          
+
         </div>
         <!-- End of post -->
       <% end %>

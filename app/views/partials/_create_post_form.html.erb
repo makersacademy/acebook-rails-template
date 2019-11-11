@@ -1,0 +1,22 @@
+<div id="create-post" class="row">
+  <div class="col-12">
+    <div class="create-post-container mb-2 pt-2 px-2">
+
+      <%= simple_form_for(@post, method: :post, url: posts_path) do |f| %>
+        <%= hidden_field_tag "post[wall_id]", "#{@wall_id}" %>
+        <%= f.text_area :message, placeholder: 'What are you up to?', class: 'create-post-message' %>
+
+        <div class="float-right">
+          <%= f.button :submit, 'Create Post', class: 'btn btn-sm btn-primary' %>
+        </div>
+
+        <div class="ml-2">
+          Attach a photo
+          <%= f.file_field :image, accept: 'image/png,image/jpeg', class: 'file-uploader' %>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

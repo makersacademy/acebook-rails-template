@@ -4,12 +4,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :destroy, :show, :update, :upvote, :downvote]
 
   def new
-    # if params[:user_id] 
-    #   @wall_id = params[:user_id]
-    # else 
-    #   @wall_id = current_user.id
-    # end
-    @post = current_user.posts.new
+    @post = Post.new
   end
 
   def create
@@ -28,9 +23,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    if params[:user_id] 
+    if params[:user_id] # User ID from the URL
       @wall_id = params[:user_id]
-    else 
+    else
       @wall_id = current_user.id
     end
   end
