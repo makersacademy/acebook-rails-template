@@ -42,14 +42,6 @@ class UsersController < ApplicationController
       Rails.logger.info(@user.errors.messages.inspect)
       render :action => 'edit'
     end
-    # p "--------------------------"
-    # p @user
-    # @user.update(update_params)
-    # p "***************************"
-    # p @user.update(update_params)
-    # p "$$$$$$$$$$$$$$$$$$$$$$$$$$"
-    # p update_params
-    # redirect_to "/users/#{@user.id}"
   end
 
   private
