@@ -1,50 +1,38 @@
-
-
 <div class="row">
-<div class="col-7">
+  <div class="col-7">
     <%= image_tag("welcome2.png", alt: "welcome", style: "width: 600px;") %>
   </div>
-      <div class="col-5">
- 
-            <div class="sign-up-form p-4 mb-2">
-              <h1 >Join the buzz gang!</h1>
-
+<div class="col-5">
+<div class="sign-up-form p-4 mb-2">
+  <h1 >Join the buzz gang!</h1>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="form-row pt-3">
     <div class="form-group mr-2 col">
-                    <%# <input type="text" placeholder="First Name" class="form-control" > %>
     <%= f.text_field :first_name, autofocus: true, autocomplete: "first name", placeholder:"First name", class: "form-control" %>
     </div>
     <div class="form-group col">
-    <%# <input type="text" placeholder="Last Name" class="form-control" > %>
       <%= f.text_field :last_name, autofocus: true, autocomplete: "last name", placeholder:"Last name", class: "form-control" %>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group mr-2 col">
-      <%# <input type="text" placeholder="Username" class="form-control" > %>
       <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder:"Username", class: "form-control" %>
     </div>
     <div class="form-group col">
-    <%# <input type="email" placeholder="Email Address" class="form-control" > %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class: "form-control" %>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group mr-2 col">
-      <%# <input type="password" placeholder="Password" class="form-control" > %>
       <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password: 6-10 chars", class: "form-control" %>
     </div>
     <div class="form-group col">
-        <%# <input type="password" placeholder="Confirm Password" class="form-control"> %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm password", class: "form-control" %>
     </div>
   </div>
     <%= f.submit "Sign up", class:"btn btn-primary", style: "width: auto;" %>
   <% end %>
-  <%# render "devise/shared/links" %>
-
         </div>
       </div>
 </div>
