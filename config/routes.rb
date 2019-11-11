@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'users/profile'
-  get 'welcome/index'
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -16,8 +15,6 @@ Rails.application.routes.draw do
       put "unlike", to: "posts#downvote"
     end
   end
-
-  get 'users/:user_id/posts/new' => 'posts#new'
 
   root to: "welcome#index"
 
