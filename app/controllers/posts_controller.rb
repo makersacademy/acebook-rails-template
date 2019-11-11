@@ -23,11 +23,8 @@ class PostsController < ApplicationController
   end
 
   def edit
-    if params[:user_id] # User ID from the URL
-      @wall_id = params[:user_id]
-    else
-      @wall_id = current_user.id
-    end
+    @post = Post.find(params[:id])
+    @wall_id = @post.wall_id
   end
 
   def destroy
