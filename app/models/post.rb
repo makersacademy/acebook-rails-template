@@ -2,7 +2,7 @@
 
 class Post < ApplicationRecord
   belongs_to :user
-  acts_as_commontable
+  has_many :comments
 
   def not_editable?
     (Time.now - created_at) > 600
