@@ -4,6 +4,11 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :destroy, :show, :update, :upvote, :downvote]
 
   def new
+    if params[:user_id] 
+      @wall_id = params[:user_id]
+    else 
+      @wall_id = current_user.id
+    end
     @post = current_user.posts.new
   end
 
@@ -22,7 +27,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-
+    if params[:user_id] 
+      @wall_id = params[:user_id]
+    else 
+      @wall_id = current_user.id
+    end
   end
 
   def destroy
@@ -61,7 +70,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :image)
+    params.require(:post).permit(:wall_id, :message, :image)
   end
 
   def find_post
