@@ -86,7 +86,6 @@
 
 
 <!-- like information -->
-                LICKS: <%= post.likes.length %>
                 <span style="color:grey"><%= post.likes.length %> licks</span>
                 <br>
                 <% unless post.likes.length == 0 %>
@@ -104,7 +103,7 @@
                     <%= comment.user.username %>: <b><%= comment.text %></b>
 
                     <!-- comment likes and unlikes -->
-                    |<span style="color:grey"><%= comment.comment_likes.length %> licks |</span>
+                    | <span style="color:grey"><%= comment.comment_likes.length %> licks |</span>
                     <% unless @comment_like = CommentLike.exists?(comment.id, session[:user_id]) %>
                       <%= link_to 'Lick', new_comment_like_path(comment_id: comment.id.to_s, redirect: request.path) %>
                     <% else %>

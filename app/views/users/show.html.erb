@@ -125,24 +125,20 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
                       <a href="#" onclick="alert('Cant do that, this post does not belong to you!');">Delete</a>
                     <% end %>
                   </div>
+                </div>
 
-<!-- like information -->
-                  LICKS: <%= post.likes.length %>
+  <!-- like information -->
+                  <span style="color:grey"><%= post.likes.length %> licks</span>
                   <br>
                   <% unless post.likes.length == 0 %>
-                    LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %>
+                    <span style="color:grey">LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %></span>
                   <% end %>
 
 <!-- comment section starts here (starts with input box) -->
                   <% @post_id = post.id %>
                   <%= render template: "comments/new" %>
 
-<!-- like information -->
-                <span style="color:grey"><%= post.likes.length %> licks</span>
-                <br>
-                <% unless post.likes.length == 0 %>
-                  <span style="color:grey">LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %></span>
-                <% end %>
+
 
 
 <!-- single post html ends above this line -->
@@ -187,7 +183,7 @@ margin-right:auto; width:50%; border-radius:50%; margin-top:15px; margin-bottom:
                 </ul>
               </li>
               <!-- single post html ends above this line -->
-            
+
             <% end %>
             <% end %>
 <!-- list of posts ends above this line -->
