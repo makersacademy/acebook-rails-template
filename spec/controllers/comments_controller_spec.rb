@@ -12,10 +12,11 @@ RSpec.describe CommentsController, type: :controller do
   end
 
   describe "POST /" do
-    it 'reponds with 200' do
+    it 'reponds with 302' do
       post1 = Post.create(message: "Hello, world!", user_id: @user.id)
       post :create, params: { comment: { message: "Comment" }, post_id: post1.id }
-      expect(response).to redirect_to(posts_url)
+      expect(response).to have_http_status(302)
+
     end
 
     it 'creates a comment' do

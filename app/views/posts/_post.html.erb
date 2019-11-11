@@ -1,12 +1,13 @@
-<div  class='post'>
-  <%= simple_format post.message %>
+<div  class='post'><%= simple_format post.message %>
   <p><small>posted by <strong><a href="/users/<%= post.user.id %>"><%= post.user.email %></a></strong></small></br>
-  <small><%= post.created_at.to_s(:long_ordinal) %></small></p>
-  <% if post.user_id == current_user.id %>
-    <%= form_for(post, :html => { :method => :delete }) do |f| %>
-      <%= f.submit "Delete Post" %>
+   <small><%= post.created_at.to_s(:long_ordinal) %></small></p>
+    <% if post.user_id == current_user.id %>
+      <%= form_for(post, :html => { :method => :delete }) do |f| %>
+      <%= f.hidden_field :receiver, :value => params[:id] %>
+        <%= f.submit "Delete Post" %>
+      <% end %>
     <% end %>
-  <% end %>
+
 
   <% if post.created_at > Time.now - 600 && post.user_id == current_user.id%>
     <%= link_to edit_post_path(post) do %>
