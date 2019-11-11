@@ -22,4 +22,18 @@ RSpec.feature "Votes", type: :feature do
     expect(page).to have_content('Hedgehog 1')
     expect(page).to have_content('Badger 0')
   end
+
+  scenario "Additional users can add an upvote to a post" do
+    visit('/')
+    create_user
+    login_user
+    create_post
+    click_link 'Hedgehog'
+    logout_user
+    create_user_two
+    login_user_two
+    click_link 'Hedgehog'
+    expect(page).to have_content('Hedgehog 2')
+    expect(page).to have_content('Badger 0')
+  end
 end
