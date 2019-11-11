@@ -33,3 +33,22 @@ def create_post
   fill_in "Message", with: "Hello, world!"
   click_button "Submit"
 end
+
+def create_comment
+  click_link "Show Comments (0)"
+  click_link "New Comment"
+  fill_in 'comment[body]', with: 'A comment'
+  click_button 'Post Comment'
+end
+
+def edit_comment
+  click_link "Show Comments (1)"
+  click_link 'Edit'
+  fill_in 'comment[body]', with: 'An edited comment'
+  click_button 'Modify Comment'
+end
+
+def delete_comment
+  click_link "Delete"
+  page.accept_alert
+end
