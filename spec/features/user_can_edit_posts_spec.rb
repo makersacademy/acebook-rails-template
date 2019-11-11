@@ -7,9 +7,9 @@ RSpec.feature "Edit post", type: :feature do
     login_user
     visit '/posts'
     create_post
-    click_button "Edit"
-    fill_in "Message", with: "Hello again, world!"
-    click_button "Submit"
+    click_link "Edit"
+    fill_in "post[message]", with: "Hello again, world!"
+    click_button "Update Post"
     expect(page).to have_content("Hello again, world!")
   end
 
@@ -37,7 +37,7 @@ RSpec.feature "Edit post", type: :feature do
     create_user_two
     login_user_two
     visit '/posts'
-    click_button 'Edit'
+    click_link 'Edit'
     expect(page).to have_content "Hello, world!"
   end
 end

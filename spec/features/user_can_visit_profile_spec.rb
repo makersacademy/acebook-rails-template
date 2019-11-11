@@ -6,10 +6,8 @@ RSpec.feature 'User profile', type: :feature do
     user = User.create(first_name: 'John', last_name: 'Doe', email: 'test@test.com', password: 'password', username: 'john')
     visit "/"
     login_user
-    p user
-    p user.username
     visit "/john"
-    expect(page).to have_content("John's Profile")
+    expect(page).to have_content("John Doe")
   end
 
   scenario 'visiting link with wrong username redirects to 404' do

@@ -8,16 +8,16 @@ RSpec.feature "Sign_up", type: :feature do
   end
 
   scenario "can access sign up page" do
-    visit "/"
-    click_link "Sign Up"
-    expect(page).to have_content("Sign up")
-    expect(page).to have_content("Email")
-    expect(page).to have_content("Password (between 6 and 10 characters)")
+    visit "/users/sign_up"
+    expect(page).to have_button("Sign up")
+    expect(page).to have_field("user[email]")
+    expect(page).to have_field("user[password]")
+    expect(page).to have_field("user[first_name]")
+    expect(page).to have_field("user[last_name]")
   end
 
   scenario "can't sign up with invalid email address 'testtest.com'" do
-    visit "/"
-    click_link "Sign Up"
+    visit "/users/sign_up"
     fill_in 'user[first_name]', with: 'John'
     fill_in 'user[last_name]', with: 'Doe'
     fill_in 'user[email]', with: 'testtest.com'
@@ -32,8 +32,7 @@ RSpec.feature "Sign_up", type: :feature do
   end
 
   scenario "can't sign up with a password shorter than 6 characters" do
-    visit "/"
-    click_link "Sign Up"
+    visit "/users/sign_up"
     fill_in 'user[first_name]', with: 'John'
     fill_in 'user[last_name]', with: 'Doe'
     fill_in 'user[email]', with: 'test@test.com'
@@ -49,8 +48,7 @@ RSpec.feature "Sign_up", type: :feature do
   end
 
   scenario "can't sign up with a password longer than 10 characters" do
-    visit "/"
-    click_link "Sign Up"
+    visit "/users/sign_up"
     fill_in 'user[first_name]', with: 'John'
     fill_in 'user[last_name]', with: 'Doe'
     fill_in 'user[email]', with: 'test@test.com'
@@ -66,8 +64,7 @@ RSpec.feature "Sign_up", type: :feature do
   end
 
   scenario 'Can create a new user account' do
-    visit "/"
-    click_link "Sign Up"
+    visit "/users/sign_up"
     fill_in 'user[first_name]', with: 'John'
     fill_in 'user[last_name]', with: 'Doe'
     fill_in 'user[email]', with: 'test@test.com'

@@ -4,20 +4,16 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :destroy, :show, :update, :upvote, :downvote]
 
   def new
-    if params[:user_id] 
-      @wall_id = params[:user_id]
-    else 
-      @wall_id = current_user.id
-    end
-    @post = current_user.posts.new
+    @post = Post.new
   end
 
   def create
     @post = Post.create(post_params.merge(user_id: current_user.id))
-    redirect_to users_profile_url(id: @post.user_id)
+    redirect_to users_profile_url(id: @post.wall_id)
   end
 
   def index
+    @wall_id = current_user.id
     @post = Post.new
     @posts = Post.all.order("created_at DESC")
   end
@@ -27,9 +23,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    if params[:user_id] 
+    if params[:user_id] # User ID from the URL
       @wall_id = params[:user_id]
-    else 
+    else
       @wall_id = current_user.id
     end
   end
