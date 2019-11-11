@@ -38,7 +38,7 @@
         <div class="card-body">
           <%= render template: "posts/new" %>
         </div>
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush" >
 
 <!-- post list starts here -->
           <% @posts.reverse.each do |post| %>
@@ -60,13 +60,10 @@
               <div class="edit-delete">
 
 <!-- like button -->
-                  <% @post_id = post.id %>
-                  <% unless @like = Like.exists?(post.id, session[:user_id]) %>
-                    <%= render template: "likes/new" %>
-                  <% else %>
-                    <%= link_to '👎', @like, :method => :delete, class: "btn btn-outline-primary" %>
-                    <br>
-                  <% end %>
+              <% Like.exists?(post.id, session[:user_id]) ? (emoji = '👎') : (emoji = '👅') %>
+              <%= link_to emoji, new_like_path(post_id: post.id.to_s), remote: true, class: "btn btn-outline-primary", id: "postlike-#{post.id}", value: post.id %>
+              <br>
+
 
 <!-- edit and delete controls -->
                   <% session[:path] = request.path %>
@@ -86,11 +83,9 @@
 
 
 <!-- like information -->
-                <span style="color:grey"><%= post.likes.length %> licks</span>
+                <span style="color:grey"><span id="postlikecount-<%= post.id %>"><%= post.likes.length %> </span>licks</span>
                 <br>
-                <% unless post.likes.length == 0 %>
-                  <span style="color:grey">LICKED BY: <%= post.users.map { |x| x.username }.join(", ") %></span>
-                <% end %>
+                <span style="color:grey">LICKED BY: <span id="postlikedby-<%= post.id %>"> <%= post.users.map { |x| x.username }.join(", ") %></span></span>
 
 <!-- comment section starts here (starts with input box) -->
                 <% @post_id = post.id %>

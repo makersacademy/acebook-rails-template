@@ -1,5 +1,9 @@
-<%= form_for Like.new do |form| %>
+<%= form_for Like.new, remote: true, html: {id: "post-like-#{@post_id}"} do |form| %>
   <%= form.hidden_field :post_id, :value => @post_id.to_s %>
   <%= form.hidden_field :redirect_path, :value => request.path %>
-  <%= form.submit "👅", class: "btn btn-outline-primary"%>
+  <% unless @like = Like.exists?(@post_id, session[:user_id]) %>
+    <%= form.submit "👅", class: "btn btn-outline-primary"%>
+  <% else %>
+    <%= form.submit "👎", class: "btn btn-outline-primary"%>
+  <% end %>
 <% end %>
