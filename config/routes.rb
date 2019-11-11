@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/profile'
-
+  
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
-
-  get 'users/:id' => 'users#profile'
 
   resources :posts do
     member do
@@ -18,9 +15,7 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
 
-  # devise_scope :user do
-  #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-  # end
+  get 'users/:id' => 'users#profile', as: :users_profile
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

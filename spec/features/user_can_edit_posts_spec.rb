@@ -10,6 +10,7 @@ RSpec.feature "Edit post", type: :feature do
     click_link "Edit"
     fill_in "post[message]", with: "Hello again, world!"
     click_button "Update Post"
+    expect(page).not_to have_content("Hello, world!")
     expect(page).to have_content("Hello again, world!")
   end
 
