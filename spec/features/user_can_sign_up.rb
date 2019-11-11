@@ -25,7 +25,6 @@ RSpec.feature "sign up", type: :feature do
     fill_in "user[birthday]", with: "01/01/2019"
     fill_in "user[profile_picture]", with: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
     click_button "Create Account"
-
     expect(current_path).to eq("/signup")
     expect(page).to have_content("password is too short (minimum is 6 characters)")
   end
@@ -41,14 +40,12 @@ RSpec.feature "sign up", type: :feature do
     fill_in "user[birthday]", with: "01/01/2019"
     fill_in "user[profile_picture]", with: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
     click_button "Create Account"
-
     expect(current_path).to eq("/signup")
     expect(page).to have_content("password is too long (maximum is 10 characters)")
   end
 
   scenario "users creating account with duplicate email throws error message" do
     signup_as_new_user("Duncan")
-
     visit "/"
     click_button "Create Account"
     fill_in "user[username]", with: "Lizard"
@@ -59,12 +56,11 @@ RSpec.feature "sign up", type: :feature do
     fill_in "user[birthday]", with: "01/01/2019"
     fill_in "user[profile_picture]", with: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
     click_button "Create Account"
-
     expect(current_path).to eq("/signup")
     expect(page).to have_content("email has already been taken")
   end
 
-  scenario "users creating account with duplicate email throws error message" do
+  scenario "users creating a new account must provide a username" do
     visit "/"
     click_button "Create Account"
     fill_in "user[password]", with: "password"
@@ -74,7 +70,6 @@ RSpec.feature "sign up", type: :feature do
     fill_in "user[birthday]", with: "01/01/2019"
     fill_in "user[profile_picture]", with: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
     click_button "Create Account"
-
     expect(current_path).to eq("/signup")
     expect(page).to have_content("username can't be blank")
   end
