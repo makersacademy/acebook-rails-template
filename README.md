@@ -64,31 +64,32 @@ First, clone this repository. Then:
 ----------
 ## Database Tables
 
-User Table  
+1. **User Table**  
 ID | username | password | email | full_name | lizard_species | birthday | profile_picture | created_at | updated_at | font_family | background_colour |  
 
-Post Table  
+2. **Post Table**  
 ID | content | created_at | updated_at | user_id | receiver_id |
 
-Comment Table  
+3. **Comment Table**  
 ID | text | created_at | updated_at | user_id | post_id |
 
-Likes Table  
+4. **Likes Table**  
 ID | user_id | post_id |
 
-Comment_Likes Table  
+5. **Comment_Likes Table**  
 ID | user_id | post_id |
 
 ### Domain Relationships
-- | User |------≡| Posts |
-- | User |------≡| Comments |
-- | User |------≡| Likes |
-- | User |------≡| Comment_Likes |
+1.| User |------≡| Posts |  
+1.| User |------≡| Comments |  
+1.| User |------≡| Likes |  
+1.| User |------≡| Comment_Likes |  
 
-- | Post |------≡| Comments |
-- | Post |------≡| Likes |
+2.| Post |------≡| Comments |  
+2.| Post |------≡| Likes |
 
-- | Comment |------≡| Comment_Likes |
+3.| Comment |------≡| Comment_Likes |
+
 ----------------
 ### Technologies used:
 - Ruby
