@@ -31,6 +31,7 @@ RSpec.feature "Create post", type: :feature do
     create_post
     expect(page).to have_content "Hello, world!"
     visit "/users/#{user.id}"
+    expect(current_path).to eq "/users/#{user.id}"
     expect(page).not_to have_content "Hello, world!"
   end
 end

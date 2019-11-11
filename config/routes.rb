@@ -13,10 +13,9 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: "welcome#index"
+root to: "welcome#index"
 
-  get 'users/:id' => 'users#profile', as: :users_profile
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+get ':username' => 'users#profile'
+get 'users/:id' => 'users#profile'
 
 end

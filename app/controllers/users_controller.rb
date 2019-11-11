@@ -1,13 +1,19 @@
 class UsersController < ApplicationController
-  
+  rescue_from ActiveRecord::RecordNotFound, :with => :user_not_found  
+
   before_action :authenticate_user!, only: [:profile]
 
   def profile
-    @user = User.find(params[:id])
-    @wall_id = params[:id]
+    if (@user = User.where(username: params[:username]).first).present?
+      @user
+    elsif (@user = User.find(params[:id])).present?
+      @user
+    end
+    @wall_id = @user.id
     @post = Post.new
-    @posts = Post.where(wall_id: params[:id]).order("created_at DESC")
+    @posts = Post.where(wall_id: @wall_id).order("created_at DESC")
   end
+
   
   def index
 
@@ -27,17 +33,6 @@ class UsersController < ApplicationController
     p user_params
     @user.save!
     p @user.avatarImage.url
-    # respond_to do |format|
-    #   if @user.save
-    #     format.html do
-    #       redirect_to @user
-    #     end
-    #   format.json {render json: @reservation.to_json}
-    # else
-    #   format.html {render 'new'}
-    #   format.json {render kson:@user.errors}
-    # end
-  #end
   end
 
   private

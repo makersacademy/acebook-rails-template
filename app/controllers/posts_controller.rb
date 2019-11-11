@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params.merge(user_id: current_user.id))
-    redirect_to users_profile_url(id: @post.wall_id)
+    redirect_to request.referrer
   end
 
   def index
@@ -23,16 +23,13 @@ class PostsController < ApplicationController
   end
 
   def edit
-    if params[:user_id] # User ID from the URL
-      @wall_id = params[:user_id]
-    else
-      @wall_id = current_user.id
-    end
+    @post = Post.find(params[:id])
+    @wall_id = @post.wall_id
   end
 
   def destroy
     @post.destroy
-    redirect_to posts_url
+    redirect_to request.referrer
   end
 
   def show
@@ -41,7 +38,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to posts_url
+      redirect_to request.referrer
     else
       render 'edit'
     end
