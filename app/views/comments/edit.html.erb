@@ -1,0 +1,7 @@
+<%= form_for([@post, @comment], :html => { :method => :patch}) do |form| %>
+<p>
+    <%= form.label :message %><br>
+    <%= form.text_area :message %>
+  </p>
+  <%= form.submit %>
+<% end %>

@@ -16,9 +16,11 @@
 
   <%= render partial: 'likes/form', locals: { likeable: post } %>
 
-  <% post.comments.each do |comment| %>
-    <%= render partial: 'comments/comment', locals: { comment: comment } %>
-  <% end %>
+  <div class='comments'>
+    <% post.comments.each do |comment| %>
+      <%= render partial: 'comments/comment', locals: { post: post, comment: comment } %>
+    <% end %>
+  </div>
 
   <%= form_for [post, Comment.new] do |form| %>
     <%= form.text_field :message %>
