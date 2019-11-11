@@ -15,7 +15,7 @@ def logout_user
 end
 
 def create_user_two
-  User.create(first_name: 'Jonny', last_name: 'Doe', email: 'test23@test.com', password: 'password')
+  User.create(first_name: 'Jonny', last_name: 'Doe', email: 'test23@test.com', password: 'password', username: 'jonny')
 end
 
 def login_user_two
