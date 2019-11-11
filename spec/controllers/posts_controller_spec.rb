@@ -44,7 +44,7 @@ RSpec.describe PostsController, type: :controller do
   describe 'PATCH/:id' do
     it 'updates the post' do
       post = Post.create(message: "Hello, world!", user_id: @user.id)
-      params = { :post => {message: "Bye"}, id: post.id }
+      params = { :post => { message: "Bye" }, id: post.id }
       patch :update, params: params
       expect(Post.all.first.message).to eq "Bye"
     end

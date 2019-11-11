@@ -14,13 +14,13 @@ RSpec.describe CommentsController, type: :controller do
   describe "POST /" do
     it 'reponds with 200' do
       post1 = Post.create(message: "Hello, world!", user_id: @user.id)
-      post :create, params: { comment: {message: "Comment"}, post_id: post1.id }
+      post :create, params: { comment: { message: "Comment" }, post_id: post1.id }
       expect(response).to redirect_to(posts_url)
     end
 
     it 'creates a comment' do
       post1 = Post.create(message: "Hello, world!", user_id: @user.id)
-      post :create, params: { comment: {message: "Comment"}, post_id: post1.id }
+      post :create, params: { comment: { message: "Comment" }, post_id: post1.id }
       expect(Comment.find_by(message: "Comment")).to be
     end
   end
@@ -39,7 +39,7 @@ RSpec.describe CommentsController, type: :controller do
     it 'edits a comment' do
       post = Post.create(message: "Hello, world!", user_id: @user.id)
       comment = Comment.create(message: "Comment", user_id: @user.id, post_id: post.id)
-      params = { :comment => {message: "Edited comment"}, id: comment.id, post_id: post.id }
+      params = { :comment => { message: "Edited comment" }, id: comment.id, post_id: post.id }
       patch :update, params: params
       expect(Comment.all.first.message).to eq "Edited comment"
     end
@@ -49,7 +49,7 @@ RSpec.describe CommentsController, type: :controller do
     it 'deletes a comment' do
       post = Post.create(message: "Hello, world!", user_id: @user.id)
       comment = Comment.create(message: "Comment", user_id: @user.id, post_id: post.id)
-      params = {id: comment.id, post_id: post.id }
+      params = { id: comment.id, post_id: post.id }
       delete :destroy, params: params
       expect(Comment.all.length).to eq 0
     end
