@@ -19,13 +19,15 @@ RSpec.describe PostsController, type: :controller do
   describe "POST /" do
 
     it "responds with 200" do
+      request.env['HTTP_REFERER'] = '/posts'
       post :create, params: { post: { message: "Hello, world!", user_id: 1, wall_id: 1} }
-      expect(response).to redirect_to users_profile_url(id: 1)
+      expect(response).to redirect_to request.referer
     end
 
     it "creates a post" do
+      request.env['HTTP_REFERER'] = '/posts'
       post :create, params: { post: { message: "Hello, world!", user_id: 1, wall_id: 1} }
-      expect(Post.find_by(message: "Hello, world!")).to be
+      expect(Post.find_by(message: "Hello, world!")).to be 
     end
   end
 
