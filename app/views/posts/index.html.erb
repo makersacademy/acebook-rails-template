@@ -20,11 +20,8 @@
       <p><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
       <% if Time.now - post.created_at < 600 %>
         <p><%= link_to 'Edit', edit_post_path(post) %></p>
-      <% end %>
-<<<<<<< HEAD
-      <p>-------------------------<p>
+     <% end %>
 =======
->>>>>>> fcb07f0685423e982ae344243012f62465b580b9
     <% end %>
 
 </body>
