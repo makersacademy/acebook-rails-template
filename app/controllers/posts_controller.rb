@@ -7,14 +7,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params) do |post|
+
+    @post = Post.new(post_params(@@wall_id)) do |post|
       post.user = current_user
     end
 
     if @post.save
-      redirect_to posts_url
-    else
-      redirect_to root_path, notice: @post.errors.full_messages.first
+      p "hello"
+      p @post
+      redirect_to "/users/#{@post.wall_id}"
+    # else
+    #   redirect_to root_path, notice: @post.errors.full_messages.first
     end
   end
 
@@ -56,7 +59,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @wall_id = params['id']
+    @@wall_id = params['id']
     @posts = Post.all
   end
 
@@ -64,6 +67,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def post_params(wall_id)
+    params.require(:post).permit(:message).merge(user_id: current_user.id, wall_id: wall_id)
   end
 
 end
