@@ -14,8 +14,8 @@
               <%= link_to('Log Out', destroy_user_session_path, method: :delete) %>
             <% else %>
               <%= link_to "Log In", new_session_path(User) %>
-              &nbsp; &nbsp;
-              <%= link_to "Sign Up", new_user_registration_path %>
+              <%# &nbsp; &nbsp; %>
+              <%# link_to "Sign Up", new_user_registration_path %>
             <% end %>
             </form>
           </div>
