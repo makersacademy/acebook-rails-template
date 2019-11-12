@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/profile'
-
+  
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
@@ -14,12 +13,12 @@ Rails.application.routes.draw do
     # end
 
 
-resources :posts do
-  member do
-    put "like", to: "posts#upvote"
-    put "unlike", to: "posts#downvote"
+  resources :posts do
+    member do
+      put "like", to: "posts#upvote"
+      put "unlike", to: "posts#downvote"
+    end
   end
-end
 
 # root to: "welcome#index"
 
