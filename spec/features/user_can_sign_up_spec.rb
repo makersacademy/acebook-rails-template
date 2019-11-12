@@ -24,8 +24,8 @@ RSpec.feature "Sign_up", type: :feature do
     fill_in 'user[password]', with: 'password'
     fill_in 'user[password_confirmation]', with: 'password'
     click_button 'Sign up'
-    expect(page).to have_content("Email")
-    expect(page).to have_content("Password (between 6 and 10 characters)")
+    expect(page).to have_content("Join the buzz gang!")
+    expect(page).to have_css("input", :count => 7)
     expect(page).to have_content (
       "error prohibited this user from being saved: Email is invalid"
       )
@@ -39,8 +39,8 @@ RSpec.feature "Sign_up", type: :feature do
     fill_in 'user[password]', with: 'pass'
     fill_in 'user[password_confirmation]', with: 'pass'
     click_button 'Sign up'
-    expect(page).to have_content("Email")
-    expect(page).to have_content("Password (between 6 and 10 characters)")
+    expect(page).to have_content("Join the buzz gang!")
+    expect(page).to have_css("input", :count => 7)
     expect(page).to have_content (
       "error prohibited this user from being saved:
       Password is too short (minimum is 6 characters)"
@@ -55,8 +55,8 @@ RSpec.feature "Sign_up", type: :feature do
     fill_in 'user[password]', with: 'passwordpass'
     fill_in 'user[password_confirmation]', with: 'passwordpass'
     click_button 'Sign up'
-    expect(page).to have_content("Email")
-    expect(page).to have_content("Password (between 6 and 10 characters)")
+    expect(page).to have_content("Join the buzz gang!")
+    expect(page).to have_css("input", :count => 7)
     expect(page).to have_content (
       "error prohibited this user from being saved:
       Password is too long (maximum is 10 characters)"
