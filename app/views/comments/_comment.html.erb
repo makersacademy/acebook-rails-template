@@ -1,0 +1,10 @@
+<div class="comment clearfix">
+  <div class="comment_content">
+    <p class="comment_body"><%= simple_format(comment.body) %> </p>
+    <p class="comment_user">Comment by <%= comment.user.username %> </p>
+    <p><%= link_to 'Delete comment', post_comment_path(comment.post, comment), method: :delete %></p>
+    <% if Time.now - comment.created_at < 600 %>
+      <p><%= link_to 'Edit comment', edit_post_comment_path(comment.post, comment) %></p>
+    <% end %>
+  </div>
+</div>
