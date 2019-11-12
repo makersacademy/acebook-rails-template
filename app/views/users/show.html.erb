@@ -7,7 +7,7 @@
     <h2><%= simple_format(post.message) %></h2>
     <h5>Posted by <%= post.user.username %> on <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></h5>
      <p><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
-      <% if Time.now - post.created_at < 10 %>
+      <% if Time.now - post.created_at < 600 %>
         <p><%= link_to 'Edit', edit_post_path(post) %></p>
       <% end %>
       <p>-------------------------<p>
