@@ -1,5 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  comment = Comment.create
+
+  it { is_expected.to be }
+
+  describe '#can_destroy?' do
+    it 'returns true if a comment can be destroyed' do
+      expect(comment.can_destroy?).to eq comment
+    end
+  end
+
+  # COULD add test for not_editable? once check on post one 
 end
