@@ -10,4 +10,5 @@ class User < ApplicationRecord
   validates_confirmation_of :password
   has_many :posts
 
+  acts_as_commontator
 end
