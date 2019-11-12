@@ -13,6 +13,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Post user name links to user wall" do
+    pending
     visit('/')
     create_user
     login_user
