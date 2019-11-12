@@ -13,9 +13,11 @@ class PostsController < ApplicationController
 
   def edit 
     @post = Post.find(params[:id])
-    if current_user != @post.user
-      flash[:alert] = "Sorry! You can't edit someone else's post."
-    end
+    return unless current_user != @post.user
+
+    # if current_user != @post.user
+    flash[:alert] = "Sorry! You can't edit someone else's post."
+    # end
   end
   
   def upvote
@@ -67,9 +69,9 @@ class PostsController < ApplicationController
     @post = Post.where(id: params[:id]).first
   end
 
-  def post_params
-    params.require(:post).permit(:message)
-  end
+  # def post_params
+  #   params.require(:post).permit(:message)
+  # end
 
   def post_params(wall_id)
     params.require(:post).permit(:message).merge(user_id: current_user.id, wall_id: wall_id)
@@ -77,11 +79,13 @@ class PostsController < ApplicationController
 
   def curr_user?
     @post.user
+
     redirect_to "/users/#{@post.wall_id}"
   end
 
   def not_curr_user?
     return unless current_user != @post.user
+
     redirect_to posts_url
   end
 
