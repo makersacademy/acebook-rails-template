@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   controller :posts do
+    
     get '/new_post' => :new, as: 'new_post'
     get 'users/:id' => 'users#show', as: 'user_post'
     get '/post/:id/edit' => :edit, as: 'edit_post'
@@ -17,7 +18,6 @@ Rails.application.routes.draw do
   end
 
   mount Commontator::Engine => '/commontator'
-
 
 
   resources :posts

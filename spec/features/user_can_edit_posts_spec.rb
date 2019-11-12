@@ -41,6 +41,7 @@ RSpec.feature "Edit", type: :feature do
     logout_user
     create_user_two
     login_user_two
+    visit('/posts')
     click_link 'Edit'
     expect(page).to have_content("Sorry! You can't edit someone else's post.")
     expect(page).to have_content('Hello, world!')
