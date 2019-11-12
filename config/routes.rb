@@ -19,12 +19,16 @@ Rails.application.routes.draw do
   mount Commontator::Engine => '/commontator'
 
   resources :posts do
+    # resources :comments
     member do
       put "Like", to: "posts#upvote"
       put "Dislike", to: "posts#downvote"
     end
   end
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end 
+
   resources :users, :only => [:show]
 end

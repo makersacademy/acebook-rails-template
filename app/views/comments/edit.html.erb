@@ -1,0 +1,6 @@
+<h1>Edit Comment</h1>
+<%= form_for([@current_post, @comment]) do |f| %>
+  <%= f.text_area :body, :placeholder => "Enter comment" %>
+  <%= f.submit "Edit" %>
+<% end %>
+<%= link_to 'Back to Feed', posts_url %>

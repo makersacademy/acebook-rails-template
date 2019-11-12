@@ -36,3 +36,9 @@ post = Post.new
 post.message = "Second awesome message about messages"
 post.user_id = 2
 post.save!
+
+comment = Comment.new
+comment.body = "This is a test comment"
+comment.post_id = 1
+comment.user_id = 2
+comment.save! 
