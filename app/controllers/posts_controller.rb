@@ -21,8 +21,8 @@ class PostsController < ApplicationController
     redirect_to "/users/#{@post.wall_id}"
   end
 
-  def edit 
-    @post = Post.find(params[:id])
+  def edit
+    set_post
     return unless current_user != @post.user
 
     # if current_user != @post.user
@@ -97,7 +97,7 @@ class PostsController < ApplicationController
   def not_curr_user?
     return unless current_user != @post.user
 
-    redirect_to posts_url
+    redirect_to "/users/#{@post.wall_id}"
   end
 
 end

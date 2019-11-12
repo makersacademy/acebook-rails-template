@@ -8,7 +8,7 @@ class Users::SessionsController < Devise::SessionsController
   # private
 
   def welcome_message
-    flash[:notice] = "Welcome back #{current_user.username}"
+    flash[:notice] = "Welcome back, #{current_user.username}"
   end
   # GET /resource/sign_in
   # def new

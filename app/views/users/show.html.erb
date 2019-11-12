@@ -1,17 +1,14 @@
 <center>
 <h1><%= @user.username %>'s Timeline</h1>
 <br>
- <%= link_to 'new post', new_post_path(wall_user_id: @user.id.to_s) %>
+ <%= link_to 'New post', new_post_path(wall_user_id: @user.id.to_s) %>
 
-  <% session[:request_page] = request.path %>
 <% @posts.reverse.each do |post| %>
     <h2><%= simple_format(post.message) %></h2>
     <h5>Posted by <%= post.user.username %> on <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></h5>
-    <% if current_user == post.user%>
      <p><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
-      <% if Time.now - post.created_at < 600 %>
+      <% if Time.now - post.created_at < 10 %>
         <p><%= link_to 'Edit', edit_post_path(post) %></p>
-      <% end %>
       <% end %>
       <p>-------------------------<p>
     <%end%>
