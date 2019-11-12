@@ -4,21 +4,16 @@ require 'rails_helper'
 
 RSpec.feature "Wall", type: :feature do
   scenario "Users can't see walls when not logged in" do
-    pending
-    visit('/')
     create_user
     login_user
     create_post
     logout_user
     visit('/users/1')
     expect(page).not_to have_content('Hello, world!')
-    expect(page).to have_content('Log in')
-    expect(page).to have_content('Email')
-    expect(page).to have_content('Password')
+    expect(page).to have_content('You need to sign in or sign up before continuing.')
   end
 
   scenario "Users can see their wall" do
-    pending
     visit('/')
     create_user
     login_user
@@ -28,7 +23,6 @@ RSpec.feature "Wall", type: :feature do
   end
 
   scenario "Users can see other's walls" do
-    pending
     visit('/')
     create_user
     login_user

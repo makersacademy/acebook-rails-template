@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
-    pending
     visit('/')
     create_user
     login_user
@@ -13,7 +12,6 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Post user name links to user wall" do
-    pending
     visit('/')
     create_user
     login_user

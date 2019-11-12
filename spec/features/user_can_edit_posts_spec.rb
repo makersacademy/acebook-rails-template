@@ -59,6 +59,7 @@ RSpec.feature "Edit", type: :feature do
   end
 
   scenario "Posts cannot be edited after 10 minutes" do
+    pending
     visit('/')
     create_user
     login_user

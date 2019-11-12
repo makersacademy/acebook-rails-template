@@ -3,21 +3,12 @@
 class PostsController < ApplicationController
 
   def new
-    p '------------------------'
-    p session[:request_page]
-    p params
-    p params['wall_user_id']
-    p '------------------------'
     @wall_id = params['wall_user_id']
-    p @wall_id
     @post = Post.new
   end
 
   def create
     @post = Post.create(post_params(params['wall']))
-    p @post
-    p "inside  post create, #{@post.wall_id}"
-    p session[:request_page]
     redirect_to "/users/#{@post.wall_id}"
   end
 
