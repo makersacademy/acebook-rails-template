@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191111144156) do
+ActiveRecord::Schema.define(version: 20191111155510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,15 +68,6 @@ ActiveRecord::Schema.define(version: 20191111144156) do
     t.index ["commontable_type", "commontable_id"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.bigint "post_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_likes_on_post_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string "message"
     t.datetime "created_at", null: false
@@ -113,6 +104,4 @@ ActiveRecord::Schema.define(version: 20191111144156) do
   add_foreign_key "commontator_comments", "commontator_comments", column: "parent_id", on_update: :restrict, on_delete: :cascade
   add_foreign_key "commontator_comments", "commontator_threads", column: "thread_id", on_update: :cascade, on_delete: :cascade
   add_foreign_key "commontator_subscriptions", "commontator_threads", column: "thread_id", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "likes", "posts"
-  add_foreign_key "likes", "users"
 end
