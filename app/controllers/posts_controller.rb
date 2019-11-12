@@ -7,35 +7,34 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params(@@wall_id)) do |post|
-    post.user = current_user
-    if @post.save
-      redirect_to "/users/#{@post.wall_id}"
-    end
+    @post = Post.create(post_params(@@wall_id))
+    redirect_to "/users/#{@post.wall_id}"
   end
 
-  def edit
-     @previous_wall_id = params['previous_wall_id']
-    set_post
-    if not_curr_user?
+  def edit 
+    @post = Post.find(params[:id])
+    if current_user != @post.user
       flash[:alert] = "Sorry! You can't edit someone else's post."
-    elsif @post.not_editable?
-      flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
-      redirect_to posts_url
     end
-    return if @post
-    redirect_to root_path
+    # return if @post
+    # redirect_to root_path
   end
 
   def update
-    set_post
+    @post = Post.find(params[:id])
     if @post.update(message: params[:post][:message])
-      flash[:notice] = 'Successfully updated the post!'
-      redirect_to "/users/#{params['previous_wall_id']}"
+      redirect_to "/users/#{@post.wall_id}"
     else
-      flash[:alert] = 'Couldn’t edit the post...'
-      render :edit
+      render 'edit'
     end
+    # @post = Post.where(id: params[:id]).first
+    # if @post.update(message: params[:post][:message])
+    #   flash[:notice] = 'Successfully updated the post!'
+    #   redirect_to "/users/#{params['previous_wall_id']}"
+    # else
+    #   flash[:alert] = 'Couldn’t edit the post...'
+    #   render :edit
+    # end
   end
 
   def destroy
@@ -68,7 +67,7 @@ class PostsController < ApplicationController
 
   def curr_user?
     @post.user
-    redirect_to posts_url
+    redirect_to "/users/#{@post.wall_id}"
   end
 
   def not_curr_user?
