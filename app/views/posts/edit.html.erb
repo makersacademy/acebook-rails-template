@@ -6,6 +6,7 @@
 </ul>
 <%= form_for @post, url: update_post_path, method: :patch do |f| %>
   <br/>
+  <input type='hidden' name='previous_wall_id' value='<%= @previous_wall_id %>'></input>
   <%= f.text_area :message %>
   <br/>
   <%= f.submit %>

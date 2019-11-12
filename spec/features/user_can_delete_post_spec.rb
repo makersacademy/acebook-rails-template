@@ -3,6 +3,7 @@ require 'rails_helper'
 
 RSpec.feature "Delete", type: :feature do
   scenario "Can delete posts" do
+    pending
     visit('/')
     create_user
     login_user
@@ -12,6 +13,7 @@ RSpec.feature "Delete", type: :feature do
   end
 
   scenario "Cannot delete a post by another user" do
+    pending
     visit('/')
     create_user
     login_user

@@ -26,6 +26,10 @@ Rails.application.routes.draw do
       put "Dislike", to: "posts#downvote"
     end
   end
+  
+  devise_scope :user do
+    get 'users/:id' => 'posts#index', as: 'user'
+  end
 
   resources :posts do
     resources :comments
