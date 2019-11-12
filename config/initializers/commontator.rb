@@ -140,7 +140,7 @@ Commontator.configure do |config|
   #   :l (only if it's the latest comment)
   #   :n (never)
   # Default: :l
-  config.comment_editing = :l
+  config.comment_editing = :a
 
   # comment_deletion
   # Type: Symbol
@@ -151,7 +151,7 @@ Commontator.configure do |config|
   #   :n (never)
   # Note: For moderators, see the next option
   # Default: :l
-  config.comment_deletion = :l
+  config.comment_deletion = :a
 
   # moderator_permissions
   # Type: Symbol
@@ -212,7 +212,7 @@ Commontator.configure do |config|
   #   :t (always present in the thread's page)
   #   :l (link to the form, which appears in the same location the new comment will appear)
   # Default: :l
-  config.new_comment_style = :l
+  config.new_comment_style = :t
 
   # comment_reply_style
   # Type: Symbol
