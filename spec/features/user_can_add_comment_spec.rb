@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Comment", type: :feature do
   scenario "Users can add comments to posts" do
+    pending
     visit('/')
     create_user
     login_user
