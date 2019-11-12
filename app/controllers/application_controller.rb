@@ -24,6 +24,10 @@ class ApplicationController < ActionController::Base
   # }
   end
 
+  def content_not_found
+    render file: "#{Rails.root}/public/404", layout: true, status: :not_found
+  end
+
   def after_sign_in_path_for(_resource)
     user_post_path(id: current_user.id)
   end
