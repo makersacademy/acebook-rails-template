@@ -7,16 +7,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params) do |post|
-      post.user = current_user
-    end
-    if @post.save
-      redirect_to posts_url
-    else
-      redirect_to root_path, notice: @post.errors.full_messages.first
-    end
+    @post = Post.create(post_params(@@wall_id))
+    redirect_to "/users/#{@post.wall_id}"
   end
 
+  def edit 
+    @post = Post.find(params[:id])
+    return unless current_user != @post.user
+
+    # if current_user != @post.user
+    flash[:alert] = "Sorry! You can't edit someone else's post."
+    # end
+  end
+  
   def upvote
     @post = Post.find(params[:id])
     @post.upvote_by current_user
@@ -28,31 +31,22 @@ class PostsController < ApplicationController
     @post.downvote_by current_user
     redirect_to posts_url
   end
-
-  def edit
-    set_post
-    if not_curr_user?
-      flash[:alert] = "Sorry! You can't edit someone else's post."
-    elsif @post.not_editable?
-      flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
-
-      redirect_to posts_url
-    end
-    return if @post
-
-    redirect_to root_path
-  end
-
+    
   def update
-    set_post
-
+    @post = Post.find(params[:id])
     if @post.update(message: params[:post][:message])
-      flash[:notice] = 'Successfully updated the post!'
-      redirect_to posts_url
+      redirect_to "/users/#{@post.wall_id}"
     else
-      flash[:alert] = 'Couldn’t edit the post...'
-      render :edit
+      render 'edit'
     end
+    # @post = Post.where(id: params[:id]).first
+    # if @post.update(message: params[:post][:message])
+    #   flash[:notice] = 'Successfully updated the post!'
+    #   redirect_to "/users/#{params['previous_wall_id']}"
+    # else
+    #   flash[:alert] = 'Couldn’t edit the post...'
+    #   render :edit
+    # end
   end
 
   def destroy
@@ -65,6 +59,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @@wall_id = params['id']
     @posts = Post.all
   end
 
@@ -74,14 +69,18 @@ class PostsController < ApplicationController
     @post = Post.where(id: params[:id]).first
   end
 
-  def post_params
-    params.require(:post).permit(:message)
+  # def post_params
+  #   params.require(:post).permit(:message)
+  # end
+
+  def post_params(wall_id)
+    params.require(:post).permit(:message).merge(user_id: current_user.id, wall_id: wall_id)
   end
 
   def curr_user?
     @post.user
 
-    redirect_to posts_url
+    redirect_to "/users/#{@post.wall_id}"
   end
 
   def not_curr_user?

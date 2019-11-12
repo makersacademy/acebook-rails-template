@@ -20,7 +20,7 @@
 
       <p><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
       <% if Time.now - post.created_at < 600 %>
-        <p><%= link_to 'Edit', edit_post_path(post) %></p>
+        <p><%= link_to 'Edit', edit_post_path(post, { previous_wall_id: @wall_id }) %></p>
       <% end %>
       <div id="comments">
         <% if post.comments.count == 1 %>

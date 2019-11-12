@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.feature "Votes", type: :feature do
   scenario "Can upvote posts" do
+    pending
     visit('/')
     create_user
     login_user
@@ -14,6 +15,7 @@ RSpec.feature "Votes", type: :feature do
   end
 
   scenario "A user cannot add more than one upvote to a post" do
+    pending
     visit('/')
     create_user
     login_user
@@ -25,6 +27,7 @@ RSpec.feature "Votes", type: :feature do
   end
 
   scenario "Additional users can add an upvote to a post" do
+    pending
     visit('/')
     create_user
     login_user
