@@ -45,6 +45,7 @@ GEM
     backports (3.15.0)
     bcrypt (3.1.13)
     bindex (0.8.1)
+    brakeman (4.7.1)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (2.18.0)
@@ -277,6 +278,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  brakeman
   byebug
   capybara (~> 2.13)
   commontator
