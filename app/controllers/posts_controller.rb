@@ -62,6 +62,7 @@ class PostsController < ApplicationController
     @@wall_id = params['id']
     @posts = Post.all
   end
+  
 
   private
 

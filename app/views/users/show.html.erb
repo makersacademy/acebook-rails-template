@@ -1,6 +1,9 @@
 <center>
 <h1><%= @user.username %>'s Timeline</h1>
 <br>
+ <%= link_to new_post_path do %>
+    <h3>New post</h3>
+  <% end %>
 <% @posts.reverse.each do |post| %>
     <h2><%= simple_format(post.message) %></h2>
     <h5>Posted by <%= post.user.username %> on <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></h5>
@@ -10,7 +13,6 @@
         <p><%= link_to 'Edit', edit_post_path(post) %></p>
       <% end %>
       <% end %>
-      <%= commontator_thread(post) %>
       <p>-------------------------<p>
     <%end%>
     </center>

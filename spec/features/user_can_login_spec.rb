@@ -50,10 +50,10 @@ RSpec.feature 'Login', type: :feature do
     expect(page).to have_content('Forgot your password?')
   end
 
-  scenario 'user taken to posts page after login' do
+  scenario 'user taken to their wall after login' do
     visit '/'
     create_user
     login_user
-    expect(current_path).to eq('/posts')
+    expect(current_path).to eq('/users/1')
   end
 end

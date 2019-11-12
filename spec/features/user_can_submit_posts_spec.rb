@@ -11,4 +11,18 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
   end
+
+  scenario "Post user name links to user wall" do
+    pending
+    visit('/')
+    create_user
+    login_user
+    create_post
+    logout_user
+    create_user_two
+    login_user_two
+    visit('/posts')
+    click_link "HomerSimpson"
+    expect(current_path).to eq('/users/1')
+  end
 end
