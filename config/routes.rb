@@ -21,6 +21,11 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end 
+    member do
+      put "Like", to: "posts#upvote"
+      put "Dislike", to: "posts#downvote"
+    end
+  end
 
   resources :users, :only => [:show]
 end
