@@ -16,10 +16,20 @@ class PostsController < ApplicationController
     if current_user != @post.user
       flash[:alert] = "Sorry! You can't edit someone else's post."
     end
-    # return if @post
-    # redirect_to root_path
+  end
+  
+  def upvote
+    @post = Post.find(params[:id])
+    @post.upvote_by current_user
+    redirect_to posts_url
   end
 
+  def downvote
+    @post = Post.find(params[:id])
+    @post.downvote_by current_user
+    redirect_to posts_url
+  end
+    
   def update
     @post = Post.find(params[:id])
     if @post.update(message: params[:post][:message])

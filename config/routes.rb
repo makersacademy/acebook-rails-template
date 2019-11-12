@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   controller :posts do
     get '/new_post' => :new, as: 'new_post'
-    # get '/post/:id' => :show, as: 'show_post'
+    get 'users/:id' => 'users#show', as: 'user_post'
     get '/post/:id/edit' => :edit, as: 'edit_post'
     patch '/post/:id/update' => :update, as: 'update_post'
     delete '/post/:id/delete' => :destroy, as: 'destroy_post'
@@ -18,11 +18,21 @@ Rails.application.routes.draw do
 
   mount Commontator::Engine => '/commontator'
 
-
+  resources :posts do
+    # resources :comments
+    member do
+      put "Like", to: "posts#upvote"
+      put "Dislike", to: "posts#downvote"
+    end
+  end
+  
   devise_scope :user do
     get 'users/:id' => 'posts#index', as: 'user'
   end
 
+  resources :posts do
+    resources :comments
+  end 
 
-  resources :posts
+  resources :users, :only => [:show]
 end
