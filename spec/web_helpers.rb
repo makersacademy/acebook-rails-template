@@ -35,20 +35,16 @@ def create_post
 end
 
 def create_comment
-  click_link "Show Comments (0)"
-  click_link "New Comment"
   fill_in 'comment[body]', with: 'A comment'
-  click_button 'Post Comment'
+  click_button "Add Comment"
 end
 
 def edit_comment
-  click_link "Show Comments (1)"
-  click_link 'Edit'
+  click_link "Edit comment"
   fill_in 'comment[body]', with: 'An edited comment'
-  click_button 'Modify Comment'
+  click_button 'Edit'
 end
 
 def delete_comment
-  click_link "Delete"
-  page.accept_alert
+  click_link "Delete comment"
 end
