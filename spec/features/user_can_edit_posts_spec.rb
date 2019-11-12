@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.feature "Edit", type: :feature do
   scenario "Can edit posts" do
-    pending
     visit('/')
     create_user
     login_user
@@ -12,7 +11,6 @@ RSpec.feature "Edit", type: :feature do
   end
 
   scenario "Can edit posts and view them" do
-    pending
     visit('/')
     create_user
     login_user
@@ -25,7 +23,6 @@ RSpec.feature "Edit", type: :feature do
   end
 
   scenario "Can edit post and view with line breaks" do
-    pending
     visit('/')
     create_user
     login_user
@@ -37,7 +34,6 @@ RSpec.feature "Edit", type: :feature do
   end
 
   scenario "Cannot edit a post by another user" do
-    pending
     visit('/')
     create_user
     login_user
@@ -51,17 +47,17 @@ RSpec.feature "Edit", type: :feature do
     expect(page).to have_content('Hello, world!')
   end
 
-  scenario "Edit button not visible after 10 minutes and page refresh" do
-    pending
-    visit('/')
-    create_user
-    login_user
-    create_post
-    Timecop.freeze(Time.now + 601.seconds)
-    visit current_path
-    expect(page).not_to have_link("Edit")
-    expect(page).to have_content('Hello, world!')
-  end
+  # scenario "Edit button not visible after 10 minutes and page refresh" do
+  #   pending
+  #   visit('/')
+  #   create_user
+  #   login_user
+  #   create_post
+  #   Timecop.freeze(Time.now + 601.seconds)
+  #   visit current_path
+  #   expect(page).not_to have_link("Edit")
+  #   expect(page).to have_content('Hello, world!')
+  # end
 
   scenario "Posts cannot be edited after 10 minutes" do
     pending

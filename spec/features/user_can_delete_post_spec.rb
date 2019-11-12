@@ -3,7 +3,6 @@ require 'rails_helper'
 
 RSpec.feature "Delete", type: :feature do
   scenario "Can delete posts" do
-    pending
     visit('/')
     create_user
     login_user
@@ -13,7 +12,6 @@ RSpec.feature "Delete", type: :feature do
   end
 
   scenario "Cannot delete a post by another user" do
-    pending
     visit('/')
     create_user
     login_user
@@ -21,7 +19,7 @@ RSpec.feature "Delete", type: :feature do
     logout_user
     create_user_two
     login_user_two
-    visit('/posts')
+    visit('/users/1')
     click_link 'Delete'
     expect(page).to have_content("Sorry! You can't delete someone else's post.")
     expect(page).to have_content('Hello, world!')

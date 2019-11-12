@@ -3,16 +3,17 @@
 class PostsController < ApplicationController
 
   def new
+    @wall_id = params['wall_user_id']
     @post = Post.new
   end
 
   def create
-    @post = Post.create(post_params(@@wall_id))
+    @post = Post.create(post_params(params['wall']))
     redirect_to "/users/#{@post.wall_id}"
   end
 
-  def edit 
-    @post = Post.find(params[:id])
+  def edit
+    set_post
     return unless current_user != @post.user
 
     # if current_user != @post.user
@@ -59,7 +60,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @@wall_id = params['id']
+  
     @posts = Post.all
   end
   
@@ -87,7 +88,7 @@ class PostsController < ApplicationController
   def not_curr_user?
     return unless current_user != @post.user
 
-    redirect_to posts_url
+    redirect_to "/users/#{@post.wall_id}"
   end
 
 end

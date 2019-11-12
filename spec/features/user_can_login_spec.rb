@@ -15,7 +15,7 @@ RSpec.feature 'Login', type: :feature do
     visit '/'
     create_user
     login_user
-    expect(page).to have_content('Welcome back HomerSimpson')
+    expect(page).to have_content('Welcome back, HomerSimpson')
   end
 
   scenario 'user must enter correct password' do

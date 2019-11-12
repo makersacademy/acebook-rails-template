@@ -29,6 +29,7 @@ def login_user_two
 end
 
 def create_post
+  visit '/users/1'
   click_link "New post"
   fill_in "Message", with: "Hello, world!"
   click_button "Submit"

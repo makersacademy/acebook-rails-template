@@ -25,16 +25,19 @@ user.save!
 post = Post.new
 post.message = "Jays message 1"
 post.user_id = 1
+post.wall_id = 1
 post.save!
 
 post = Post.new
 post.message = "Jays message 2"
 post.user_id = 1
+post.wall_id = 1
 post.save!
 
 post = Post.new
 post.message = "Second awesome message about messages"
 post.user_id = 2
+post.wall_id = 1
 post.save!
 
 comment = Comment.new

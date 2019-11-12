@@ -1,5 +1,6 @@
 <%= form_for @post do |form| %>
   <%= form.label :message %>
+  <input type='hidden' name='wall' value= <%=@wall_id%> ></input>
   <%= form.text_field :message %>
 
   <%= form.submit "Submit" %>
