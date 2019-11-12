@@ -7,16 +7,10 @@ class PostsController < ApplicationController
   end
 
   def create
-
     @post = Post.new(post_params(@@wall_id)) do |post|
-      post.user = current_user
-    end
+    post.user = current_user
     if @post.save
-      p "hello"
-      p @post
       redirect_to "/users/#{@post.wall_id}"
-    # else
-    #   redirect_to root_path, notice: @post.errors.full_messages.first
     end
   end
 
@@ -27,17 +21,14 @@ class PostsController < ApplicationController
       flash[:alert] = "Sorry! You can't edit someone else's post."
     elsif @post.not_editable?
       flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
-
       redirect_to posts_url
     end
     return if @post
-
     redirect_to root_path
   end
 
   def update
     set_post
-
     if @post.update(message: params[:post][:message])
       flash[:notice] = 'Successfully updated the post!'
       redirect_to "/users/#{params['previous_wall_id']}"
@@ -71,20 +62,17 @@ class PostsController < ApplicationController
     params.require(:post).permit(:message)
   end
 
-  
   def post_params(wall_id)
     params.require(:post).permit(:message).merge(user_id: current_user.id, wall_id: wall_id)
+  end
 
-    
   def curr_user?
     @post.user
-
     redirect_to posts_url
   end
 
   def not_curr_user?
     return unless current_user != @post.user
-
     redirect_to posts_url
   end
 
