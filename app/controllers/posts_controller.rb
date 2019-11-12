@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     @wall_id = @post.wall_id
+    session[:request] = request.referrer
   end
 
   def destroy
@@ -38,7 +39,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to request.referrer
+      redirect_to session[:request]
     else
       render 'edit'
     end
