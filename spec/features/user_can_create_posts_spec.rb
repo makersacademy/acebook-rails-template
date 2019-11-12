@@ -28,10 +28,10 @@ RSpec.feature "Create post", type: :feature do
     user_2 = create_user_two
     login_user
     visit "/users/#{user_2.id}"
-    save_and_open_page
     create_post
     expect(page).to have_content "Hello, world!"
     visit "/users/#{user.id}"
+    expect(current_path).to eq "/users/#{user.id}"
     expect(page).not_to have_content "Hello, world!"
   end
 end
