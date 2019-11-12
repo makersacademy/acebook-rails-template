@@ -33,4 +33,38 @@ RSpec.feature "Edit", type: :feature do
     expect(page).to have_content("Hello, world!\nI am edited.\nI'm on a new line.")
   end
 
+  scenario "Cannot edit a post by another user" do
+    visit('/')
+    create_user
+    login_user
+    create_post
+    logout_user
+    create_user_two
+    login_user_two
+    click_link 'Edit'
+    expect(page).to have_content("Sorry! You can't edit someone else's post.")
+    expect(page).to have_content('Hello, world!')
+  end
+
+  scenario "Edit button not visible after 10 minutes and page refresh" do
+    visit('/')
+    create_user
+    login_user
+    create_post
+    Timecop.freeze(Time.now + 601.seconds)
+    visit current_path
+    expect(page).not_to have_link("Edit")
+    expect(page).to have_content('Hello, world!')
+  end
+
+  scenario "Posts cannot be edited after 10 minutes" do
+    visit('/')
+    create_user
+    login_user
+    create_post
+    Timecop.freeze(Time.now + 601.seconds)
+    click_link 'Edit'
+    expect(page).to have_content('10 minutes exceeded: you can no longer edit the post.')
+    expect(page).to have_content('Hello, world!')
+  end
 end

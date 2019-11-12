@@ -5,13 +5,13 @@
 
   <% @posts.reverse.each do |post| %>
     <p><%= simple_format(post.message) %></p>
-    <p>Posted by <%= link_to(post.user.username) %> on <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></p>
-    
+    <p>Posted by <%= post.user.username %> on <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></p>
+
       <p><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
       <% if Time.now - post.created_at < 600 %>
         <p><%= link_to 'Edit', edit_post_path(post, { previous_wall_id: @wall_id }) %></p>
       <% end %>
-
+      <%= commontator_thread(post) %>
       <p>-------------------------<p>
     <% end %>
 
