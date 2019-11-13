@@ -12,13 +12,12 @@
  *
  *= require_tree .
  *= require_self
- *= require commontator/application
  */
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,800,800i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
   background-color: lavender;
+  font-family: 'Poppins', sans-serif;
 }
 
 #main-nav {
@@ -118,11 +117,11 @@ body {
   color: inherit;
 }
 
-.btn-default.active,
-.btn-default:active,
-.btn-default:focus,
 .btn-default:hover,
-.open > .dropdown-toggle.btn-default {
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open>.dropdown-toggle.btn-default {
   background-color: #343A40;
   border-color: #DDDDDD;
   color: white;
@@ -131,26 +130,4 @@ body {
 
 .form-control {
   background-color: lavender;
-}
-
-.post-link {
-  text-decoration: none;
-  color: black;
-}
-
-.comment-avatar img {
-  width: 40px;
-  margin-right: 5px;
-}
-
-.comment-text {
-  background-color: #DDDDDD;
-  border-radius: 17px;
-  padding-left: 19px;
-  padding-top: 5px;
-  padding-bottom: 4px;
-}
-
-.vote-pic {
-  width: 40px;
 }
