@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
       :username,
       :email,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :avatar
       )
 
     end
