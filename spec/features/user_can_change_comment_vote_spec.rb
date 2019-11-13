@@ -7,8 +7,8 @@ RSpec.feature "Votes", type: :feature do
     visit('/')
     create_user
     login_user
-    visit('/posts')
     create_post
+    visit('/posts')
     create_comment
     click_link 'Snake'
     expect(page).to have_content('Snake 1')
