@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require commontator/application
  */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,800,800i,900,900i&display=swap');
 
@@ -53,7 +52,7 @@ body {
   overflow: hidden;
 }
 
-#navbar:before {
+#navbar:before{
   content: "";
   position: absolute;
   top: 0;
