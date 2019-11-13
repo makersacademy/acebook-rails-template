@@ -20,7 +20,11 @@
    background-color: lavender;
  }
 
-.main-image{
+ #main-nav {
+  margin: 20px;
+}
+
+.ferret-image{
   height: 200px;
   width: 200px;
   text-align: center;
@@ -76,6 +80,49 @@
   font-size: 15px;
 }
 
-.page-wrapper {
-  padding-top: 100px;
+.panel-heading {
+  background-color: #343A40;
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: white;
+}
+
+.panel {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.panel-default {
+  border-color: #ddd;
+}
+
+.panel-body {
+  padding: 15px;
+  background-color: white;
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open>.dropdown-toggle.btn-default {
+  background-color: #343A40;
+  border-color: #DDDDDD;
+  color: white;
+  /*set the color you want here*/
+}
+
+.form-control {
+  background-color: lavender;
 }
