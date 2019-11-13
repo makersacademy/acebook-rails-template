@@ -37,7 +37,6 @@ RSpec.describe CommentsController, type: :controller do
       expect(response).to have_http_status(302)
     end
 
-
     it "won't let you edit after 10 minutes" do
       post = Post.create(message: "Hello, world!", user_id: @user.id)
       comment = Comment.create(body: "Comment", user_id: @user.id, post_id: post.id)
