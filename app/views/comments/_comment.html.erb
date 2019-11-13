@@ -3,6 +3,16 @@
       <b><%= comment.user.username %></b>
     <p class="comment_body"><%= simple_format(comment.body) %> </p>
   </div>
-    <% if Time.now - comment.created_at < 600 %><%= link_to 'Edit comment', edit_post_comment_path(comment.post, comment) %>
+  <%= link_to Like_comment_path(comment), method: :put do %>
+Rabbit
+<%= comment.get_upvotes.size %>
+<% end %>
+ -
+<%= link_to Dislike_comment_path(comment), method: :put do %>
+Snake
+<%= comment.get_downvotes.size %>
+<% end %>
+ - 
+<% if Time.now - comment.created_at < 600 %><%= link_to 'Edit comment', edit_post_comment_path(comment.post, comment) %>
      - <% end %><%= link_to 'Delete comment', post_comment_path(comment.post, comment), method: :delete %>
 </div>
