@@ -1,4 +1,5 @@
 # AceBook
+[![Build Status](https://travis-ci.org/Yasmineral/acebook-short-ferret-midnight.svg?branch=master)](https://travis-ci.org/Yasmineral/acebook-short-ferret-midnight)
 
 ## Project Outline
 Team Short Ferret Midnight consisted of:
@@ -13,6 +14,9 @@ The goal of the two-week project is to use high-quality processes to build a pro
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
+## Live Web App
+Click [here](https://salty-peak-83707.herokuapp.com/) to visit our Acebook app.
+
 ## Trello
 [Link to our Trello board](https://trello.com/b/vN4cu4v1/short-ferret-midnight)
 
@@ -20,27 +24,17 @@ The goal of the two-week project is to use high-quality processes to build a pro
 [View our daily blog posts here](https://medium.com/@shortferretmignight)
 
 ## User Stories
-Completed Stories:
-
-As a developer,
-So I have my project set up well,
-I want to install TravisCI, CodeClimate, Rubocop and Simplecov.  
-
-As a developer,
-So I can check out my project online,
-I want to be able to run my project on Heroku.
-
 As a user,
 So I can be trendy and cool,
 I want to sign up to Acebook with a unique email, username and password.
 
 As a user,
 So I can continue using Acebook,
-I want to be able to login.
+I want to be able to login and logout.
 
 As a user,
-So I can give myself a break from Acebook,
-I want to be able to logout.
+So that I can protect my privacy,
+I only want other Acebook users to be able to see posts.
 
 As a user,
 So I can keep up to date with my ferret friends,
@@ -48,36 +42,35 @@ I want to view all posts made on Acebook.
 
 As a user,
 So I can share my favourite ferret jokes,
-I want to be able to post a comment on Acebook.
+I want to be able to make a post on Acebook and the post is dated.
 
 As a user,
-So I can know which posts are a bit outdated,
-I want to be see the date the post was made and see the newest ones first.
+So I can judge my ferret friends harshly,
+I want to be able to add a comment on and like or dislike a post/comment.
 
 As a user,
-So I can remove some of my terrible jokes,
-I want to be able to delete a post that I made.
+So I can remove or improve some of my terrible ferret jokes,
+I want to be able to edit and delete a post or comment that I made.
 
 As a user,
-So I can make my jokes even better,
-I want to be able to edit a post that I made.
+So I can compare myself with my friends,
+I want to have my own wall and be able to visit other users' walls.
 
 As a user,
-So I can only regret my post a bit,
-I only want to be able to edit my post for up to 10 minutes after I made it.
-
-As a user,
-So I can write lines and lines in my posts,
-I want line breaks added to my posts.
+So I know if the user id doesn't exist,
+I want to be routed to a 404 Error page if the user doesn't exist.
 
 ## How to Install and Run
 ```bash
+> git clone https://github.com/Yasmineral/acebook-short-ferret-midnight.git
 > bundle install
-> bin/rails db:create
-> bin/rails db:migrate
+> rake db:create  
+> rake db:migrate
 
-> bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
-
 ## How to Run Tests
+```bash
+> rspec # Run the tests to ensure it works
+> rubocop # Check code quality
+```
