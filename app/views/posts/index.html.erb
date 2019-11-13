@@ -16,7 +16,7 @@
             <div class="row">
               <div class="col-sm-2">
                 <div class="text-center">
-                  <%= post.user.username %>
+                  <%= link_to post.user.username, user_post_path(id: post.user.id), :class => 'post-link'%>
                 </div>
               </div>
               <!-- col-sm-2-end -->
@@ -35,14 +35,14 @@
                 <!-- bubble-end -->
                 <p class='post-actions'>
                   <%= link_to Like_post_path(post), method: :put do %>
-                  Hedgehog
-                  <%= post.get_upvotes.size %>
+                  <img class="vote-pic" src="https://bit.ly/2O8Y7A3" alt="Hedgehog">
                 <% end %>
+                <%= post.get_upvotes.size %>
                 <span>-</span>
                 <%= link_to Dislike_post_path(post), method: :put do %>
-                Badger
-                <%= post.get_downvotes.size %>
+                <img class="vote-pic" src="https://bit.ly/36YX5zv" alt="Badger">
               <% end %>
+              <%= post.get_downvotes.size %>
               -
               <% if Time.now - post.created_at < 600 %><%= link_to 'Edit', edit_post_path(post, { previous_wall_id: @wall_id })%>
                 -<% end %>
