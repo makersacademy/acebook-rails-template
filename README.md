@@ -24,6 +24,7 @@ Click [here](https://salty-peak-83707.herokuapp.com/) to visit our Acebook app.
 [View our daily blog posts here](https://medium.com/@shortferretmignight)
 
 ## User Stories
+```
 As a user,
 So I can be trendy and cool,
 I want to sign up to Acebook with a unique email, username and password.
@@ -59,6 +60,7 @@ I want to have my own wall and be able to visit other users' walls.
 As a user,
 So I know if the user id doesn't exist,
 I want to be routed to a 404 Error page if the user doesn't exist.
+```
 
 ## How to Install and Run
 ```bash
