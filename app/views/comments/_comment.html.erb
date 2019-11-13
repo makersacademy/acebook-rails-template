@@ -1,18 +1,20 @@
 <div class="comment">
   <div class="comment-text">
-      <b><%= comment.user.username %></b>
-    <p class="comment_body"><%= simple_format(comment.body) %> </p>
+    <b><%= comment.user.username %></b>
+    <p class="comment_body"><%= simple_format(comment.body) %>
+    </p>
   </div>
   <%= link_to Like_comment_path(comment), method: :put do %>
-Rabbit
-<%= comment.get_upvotes.size %>
+  <img src="https://bit.ly/34UJcAc" alt="Rabbit">
+  <%= comment.get_upvotes.size %>
 <% end %>
- -
+-
 <%= link_to Dislike_comment_path(comment), method: :put do %>
-Snake
+<img src="https://bit.ly/2rHl1XS" alt="Snake">
 <%= comment.get_downvotes.size %>
 <% end %>
- - 
+-
 <% if Time.now - comment.created_at < 600 %><%= link_to 'Edit comment', edit_post_comment_path(comment.post, comment) %>
-     - <% end %><%= link_to 'Delete comment', post_comment_path(comment.post, comment), method: :delete %>
+-
+<% end %><%= link_to 'Delete comment', post_comment_path(comment.post, comment), method: :delete %>
 </div>

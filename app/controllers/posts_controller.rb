@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   def new
     @wall_id = params['wall_user_id']
     @post = Post.new
-    p @post
   end
 
   def create
