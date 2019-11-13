@@ -5,12 +5,12 @@
     </p>
   </div>
   <%= link_to Like_comment_path(comment), method: :put do %>
-  <img src="https://bit.ly/34UJcAc" alt="Rabbit">
+  <img class="vote-pic" src="https://bit.ly/34UJcAc" alt="Rabbit">
   <%= comment.get_upvotes.size %>
 <% end %>
 -
 <%= link_to Dislike_comment_path(comment), method: :put do %>
-<img src="https://bit.ly/2rHl1XS" alt="Snake">
+<img class="vote-pic" src="https://bit.ly/2rHl1XS" alt="Snake">
 <%= comment.get_downvotes.size %>
 <% end %>
 -
