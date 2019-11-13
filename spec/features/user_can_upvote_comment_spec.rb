@@ -8,6 +8,7 @@ RSpec.feature "Comment", type: :feature do
     visit('/')
     create_user
     login_user
+    visit('/posts')
     create_post
     create_comment
     click_link 'Rabbit'
@@ -18,6 +19,7 @@ RSpec.feature "Comment", type: :feature do
     visit('/')
     create_user
     login_user
+    visit('/posts')
     create_post
     create_comment
     click_link 'Rabbit'
@@ -30,12 +32,14 @@ RSpec.feature "Comment", type: :feature do
     visit('/')
     create_user
     login_user
+    visit('/posts')
     create_post
     create_comment
     click_link 'Rabbit'
     logout_user
     create_user_two
     login_user_two
+    visit('/posts')
     click_link 'Rabbit'
     expect(page).to have_content('Rabbit 2')
     expect(page).to have_content('Snake 0')

@@ -7,6 +7,7 @@ RSpec.feature "Votes", type: :feature do
     visit('/')
     create_user
     login_user
+    visit('/posts')
     create_post
     create_comment
     click_link 'Snake'
