@@ -1,4 +1,7 @@
 <center>
+<%if current_user.avatar.attached? %>
+    <%= image_tag current_user.avatar, size: '100x100'%>
+<%end%>
 <h1><%= @user.username %>'s Timeline</h1>
 <br>
  <%= link_to 'New post', new_post_path(wall_user_id: @user.id.to_s) %>

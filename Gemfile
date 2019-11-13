@@ -10,7 +10,7 @@ end
 gem 'acts_as_votable'
 gem 'travis'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server

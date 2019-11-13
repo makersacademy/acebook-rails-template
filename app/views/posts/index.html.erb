@@ -1,24 +1,32 @@
 <body>
-
+<center>
   <% @posts.reverse.each do |post| %>
   <% @current_post = post %>
     <p><%= simple_format(post.message) %></p>
     <p>Posted by <%= link_to post.user.username, user_post_path(id: post.user.id) %> on <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></p>
 
+<ul><li style="display:inline-block;"> 
     <%= link_to Like_post_path(post), method: :put do %>
     Hedgehog
     <%= post.get_upvotes.size %>
     <% end %>
-
+    </li>
+<li style="display:inline-block;" > 
     <%= link_to Dislike_post_path(post), method: :put do %>
     Badger
     <%= post.get_downvotes.size %>
     <% end %>
-
+    </li>
+    <br>
+<li style="display:inline-block;"> 
       <p><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
+      </li>
+      <li style="display:inline-block;"> 
       <% if Time.now - post.created_at < 600 %>
         <p><%= link_to 'Edit', edit_post_path(post, { previous_wall_id: @wall_id }) %></p>
+        </li>
       <% end %>
+      </ul>
       <div id="comments">
         <% if post.comments.count == 1 %>
           <%= post.comments.count %> Comment
@@ -32,4 +40,5 @@
 
     <% end %>
     <% session[:request_page] = request.path %>
+    </center>
 </body>
