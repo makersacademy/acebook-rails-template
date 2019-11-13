@@ -15,11 +15,22 @@ user.password = 'jaysmells'
 user.email = 'jay@mail.com'
 user.save!
 
-
 user = User.new
 user.username = 'JessRocksSocks'
 user.password = 'jesssmells'
 user.email = 'jess@mail.com'
+user.save!
+
+user = User.new
+user.username = 'Homer Simpson'
+user.password = 'password'
+user.email = 'homer@mail.com'
+user.save!
+
+user = User.new
+user.username = 'Marge Simpson'
+user.password = 'password'
+user.email = 'marge@mail.com'
 user.save!
 
 post = Post.new
@@ -40,8 +51,20 @@ post.user_id = 2
 post.wall_id = 1
 post.save!
 
+post = Post.new
+post.message = "Hi Homer this is Marge"
+post.user_id = 4
+post.wall_id = 3
+post.save!
+
+post = Post.new
+post.message = "Hi Marge this is Homer"
+post.user_id = 3
+post.wall_id = 4
+post.save!
+
 comment = Comment.new
 comment.body = "This is a test comment"
 comment.post_id = 1
 comment.user_id = 2
-comment.save! 
+comment.save!
