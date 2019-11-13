@@ -5,8 +5,6 @@ class Users::SessionsController < Devise::SessionsController
 
   after_action :welcome_message, only: :create
 
-  # private
-
   def welcome_message
     flash[:notice] = "Welcome back, #{current_user.username}"
   end
@@ -14,7 +12,7 @@ class Users::SessionsController < Devise::SessionsController
   # def new
   #   super
   # end
-  
+
   # POST /resource/sign_in
   # def create
   #   super
