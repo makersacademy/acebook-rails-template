@@ -10,9 +10,9 @@ RSpec.feature "Votes", type: :feature do
     create_post
     visit('/posts')
     click_link 'Badger'
-    expect(page).to have_content('0 - 1')
+    expect(page).to have_content('Hedgehog 0 Badger 1')
     click_link 'Hedgehog'
-    expect(page).to have_content('1 - 0')
-    expect(page).not_to have_content('0 - 1')
+    expect(page).to have_content('Hedgehog 1 Badger 0')
+    expect(page).not_to have_content('Hedgehog 0 Badger 1')
   end
 end
