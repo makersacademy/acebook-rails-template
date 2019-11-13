@@ -14,23 +14,25 @@
  *= require_self
  *= require commontator/application
  */
- @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
- body{
-   font-family: 'Poppins', sans-serif;
-   background-color: lavender;
- }
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
- #main-nav {
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: lavender;
+}
+
+#main-nav {
   margin: 20px;
 }
 
-.ferret-image{
+.ferret-image {
   height: 200px;
   width: 200px;
   text-align: center;
-  padding-top: 200px
+  padding-top: 200px;
 }
-.acebook{
+
+.acebook {
   font-size: 70px;
 }
 
@@ -50,7 +52,8 @@
   background: inherit;
   overflow: hidden;
 }
-#navbar:before{
+
+#navbar:before {
   content: "";
   position: absolute;
   top: 0;
@@ -63,9 +66,11 @@
   margin: -20px;
   z-index: -1;
 }
+
 #nav-logo {
   height: 59px;
 }
+
 .nav-list {
   list-style: none;
   display: flex;
@@ -73,6 +78,7 @@
   width: 433px;
   padding-right: 23px;
 }
+
 .nav-link {
   text-decoration: none;
   color: black;
@@ -112,11 +118,11 @@
   color: inherit;
 }
 
-.btn-default:hover,
-.btn-default:focus,
-.btn-default:active,
 .btn-default.active,
-.open>.dropdown-toggle.btn-default {
+.btn-default:active,
+.btn-default:focus,
+.btn-default:hover,
+.open > .dropdown-toggle.btn-default {
   background-color: #343A40;
   border-color: #DDDDDD;
   color: white;
@@ -135,4 +141,12 @@
 .comment-avatar img {
   width: 40px;
   margin-right: 5px;
+}
+
+.comment-text {
+  background-color: grey;
+  border-radius: 17px;
+  padding-left: 19px;
+  padding-top: 5px;
+  padding-bottom: 4px;
 }

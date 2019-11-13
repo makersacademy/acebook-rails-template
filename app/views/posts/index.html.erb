@@ -1,123 +1,79 @@
-<body>
+<div class="row">
+  <div class="col-md-10">
 
-  <% @posts.reverse.each do |post| %>
-    <% @current_post = post %>
-      <p><%= simple_format(post.message) %></p>
-      <p>Posted by
-        <%= link_to post.user.username, user_post_path(id: post.user.id) %>
-        on
-        <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></p>
-
-      <%= link_to Like_post_path(post), method: :put do %>
-      Hedgehog
-      <%= post.get_upvotes.size %>
-    <% end %>
-
-    <%= link_to Dislike_post_path(post), method: :put do %>
-    Badger
-    <%= post.get_downvotes.size %>
-  <% end %>
-
-  <p><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
-    <% if Time.now - post.created_at < 600 %>
-      <p><%= link_to 'Edit', edit_post_path(post, { previous_wall_id: @wall_id }) %></p>
-    <% end %>
-    <div id="comments">
-      <% if post.comments.count == 1 %>
-        <%= post.comments.count %>
-        Comment
-      <% else %>
-        <%= post.comments.count %>
-        Comments
-      <% end %>
-      <%= render post.comments %>
-      <%= render "comments/form" %>
+    <div class="panel panel-default">
+      <!-- start of add new post -->
+      <div class="panel-heading">
+        <h3 class="panel-title">All Posts</h3>
+      </div>
     </div>
-    <p>-------------------------<p>
+    <!-- end of add new post -->
 
-      <% end %>
-      <% session[:request_page] = request.path %>
-      </body>
-
-      <!-- NEW THEME -->
-      <div class="row">
-        <div class="col-md-10">
-
-          <div class="panel panel-default">
-            <!-- start of add new post -->
-            <div class="panel-heading">
-              <h3 class="panel-title">All Posts</h3>
-            </div>
-          </div>
-          <!-- end of add new post -->
-
-          <% @posts.reverse.each do |post| %>
-          <% @current_post = post %>
-            <div class="panel panel-default post">
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-sm-2">
-                    <div class="text-center">
-                      <%= post.user.username %>
-                    </div>
-                  </div>
-                  <!-- col-sm-2-end -->
-                  <div class="col-sm-10">
-                    <div class="bubble">
-                      <div class="pointer">
-                        <p><%= simple_format(post.message) %></p>
-                        <br>
-                        <i>Posted by
-                          <%= link_to post.user.username, user_post_path(id: post.user.id), :class => 'post-link'%>
-                          on
-                          <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></i>
-                      </div>
-                      <div class="pointer-border"></div>
-                    </div>
-                    <!-- bubble-end -->
-                    <p class='post-actions'>
-                      <%= link_to Like_post_path(post), method: :put do %>
-                      Hedgehog
-                      <%= post.get_upvotes.size %> <% end %>
-                      <span>-</span>
-                      <%= link_to Dislike_post_path(post), method: :put do %>
-                      Badger
-                      <%= post.get_downvotes.size %> <% end %>
-                  -
-                  <% if Time.now - post.created_at < 600 %><%= link_to 'Edit', edit_post_path(post, { previous_wall_id: @wall_id })%>
-                    -
-                    <%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
-                  <% end %>
-                </p>
-                <!-- add comment stuff below -->
-                <div class="comment-form">
-                  <% if post.comments.count == 1 %>
-                    <%= post.comments.count %>
-                    Comment
-                  <% else %>
-                    <%= post.comments.count %>
-                    Comments
-                  <% end %>
-                  <%= render "comments/form" %>
-                </div>
-                <!-- comment-form-end -->
-                <div class="clearfix"></div>
-
-                <div class="comments">
-                  <div class="comment">
-                    <a class="comment-avatar pull-left" href="#"><img src="https://bit.ly/32vxMRQ" alt="avatar"></a>
-                    <div class="comment-text">
-                    </div>
-                  </div>
-                  <div class="clearfix"></div>
-
+    <% @posts.reverse.each do |post| %>
+      <% @current_post = post %>
+        <div class="panel panel-default post">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-2">
+                <div class="text-center">
+                  <%= post.user.username %>
                 </div>
               </div>
+              <!-- col-sm-2-end -->
+              <div class="col-sm-10">
+                <div class="bubble">
+                  <div class="pointer">
+                    <p><%= simple_format(post.message) %></p>
+                    <br>
+                    <i>Posted by
+                      <%= link_to post.user.username, user_post_path(id: post.user.id), :class => 'post-link'%>
+                      on
+                      <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></i>
+                  </div>
+                  <div class="pointer-border"></div>
+                </div>
+                <!-- bubble-end -->
+                <p class='post-actions'>
+                  <%= link_to Like_post_path(post), method: :put do %>
+                  Hedgehog
+                  <%= post.get_upvotes.size %>
+                <% end %>
+                <span>-</span>
+                <%= link_to Dislike_post_path(post), method: :put do %>
+                Badger
+                <%= post.get_downvotes.size %>
+              <% end %>
+              -
+              <% if Time.now - post.created_at < 600 %><%= link_to 'Edit', edit_post_path(post, { previous_wall_id: @wall_id })%>
+                -<% end %>
+              <%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
+            </p>
+            <!-- add comment stuff below -->
+            <div class="comment-form">
+              <% if post.comments.count == 1 %>
+                <%= post.comments.count %>
+                Comment
+              <% else %>
+                <%= post.comments.count %>
+                Comments
+              <% end %>
+            </div>
+            <!-- comment-form-end -->
+            <div class="clearfix"></div>
+            <div class="comments">
+              <div class="comment">
+                  <%= render post.comments %>
+              </div>
+            </div>
+            <div class="comment-form">
+              <%= render "comments/form" %>
             </div>
           </div>
         </div>
-      <% end %>
+      </div>
     </div>
-    <!-- end of col-md-10 -->
-  </div>
-  <!-- end of row -->
+  <% end %>
+</div>
+<!-- end of col-md-10 -->
+</div>
+<!-- end of row -->
