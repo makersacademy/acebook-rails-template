@@ -4,12 +4,33 @@
  <%= link_to 'New post', new_post_path(wall_user_id: @user.id.to_s) %>
 
 <% @posts.reverse.each do |post| %>
+  <% @current_post = post %>
     <h2><%= simple_format(post.message) %></h2>
     <h5>Posted by <%= link_to post.user.username, user_post_path(id: post.user.id) %> on <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></h5>
      <p><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
       <% if Time.now - post.created_at < 600 %>
         <p><%= link_to 'Edit', edit_post_path(post) %></p>
       <% end %>
+    <div>
+    <%= link_to Like_post_path(post), method: :put do %>
+    Hedgehog
+    <%= post.get_upvotes.size %>
+    <% end %>
+
+    <%= link_to Dislike_post_path(post), method: :put do %>
+    Badger
+    <%= post.get_downvotes.size %>
+    <% end %>
+    <div id="comments">
+        <% if post.comments.count == 1 %>
+          <%= post.comments.count %> Comment
+        <% else %>
+          <%= post.comments.count %> Comments
+        <% end %>
+        <%= render post.comments %>
+        <%= render "comments/form" %>
+      </div>
       <p>-------------------------<p>
     <%end%>
+    <% session[:request_page] = request.path %>
     </center>

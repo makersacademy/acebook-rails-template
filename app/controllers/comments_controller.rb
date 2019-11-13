@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
     else
       flash[:notice] = "Your comment could not be added"
     end
-    redirect_to posts_url
+    redirect_to "/users/#{@current_post.wall_id}"
   end
 
   def show
@@ -34,11 +34,11 @@ class CommentsController < ApplicationController
     elsif @comment.not_editable?
       flash[:alert] = "10 minutes exceeded: you can no longer edit the comment."
 
-      redirect_to posts_url
+      redirect_to "/users/#{@current_post.wall_id}"
     end
     return if @comment
 
-    redirect_to posts_url
+    redirect_to "/users/#{@current_post.wall_id}"
   end
 
   def update
@@ -46,7 +46,7 @@ class CommentsController < ApplicationController
     if @comment.update(comment_params)
       flash[:notice] = "Successfully updated the comment"
 
-      redirect_to posts_url
+      redirect_to "/users/#{@current_post.wall_id}"
     else
       flash[:alert] = "Couldn't update the comment"
       render :edit
@@ -65,12 +65,14 @@ class CommentsController < ApplicationController
   def upvote
     @comment = Comment.find(params[:id])
     @comment.upvote_by current_user
+    # Redirect to stay on current wall
     redirect_to posts_url
   end
 
   def downvote
     @comment = Comment.find(params[:id])
     @comment.downvote_by current_user
+    # Redirect to stay on current wall
     redirect_to posts_url
   end
 

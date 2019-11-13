@@ -26,13 +26,13 @@ class PostsController < ApplicationController
   def upvote
     @post = Post.find(params[:id])
     @post.upvote_by current_user
-    redirect_to posts_url
+    redirect_to "/users/#{@post.wall_id}"
   end
 
   def downvote
     @post = Post.find(params[:id])
     @post.downvote_by current_user
-    redirect_to posts_url
+    redirect_to "/users/#{@post.wall_id}"
   end
     
   def update
