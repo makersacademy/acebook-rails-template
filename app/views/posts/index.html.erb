@@ -33,3 +33,51 @@
     <% end %>
     <% session[:request_page] = request.path %>
 </body>
+
+
+
+
+<div class="row">
+  <div class="col-md-10">
+
+    <div class="panel panel-default"> <!-- start of  add new post -->
+      <div class="panel-heading">
+        <h3 class="panel-title">All Posts</h3>
+        </div>
+        <div class="panel-body">
+        <%= render template: "posts/new" %>
+        </div>
+    </div> <!-- end of add new post -->
+
+
+
+
+  <% @posts.reverse.each do |post| %>
+  <div class="panel panel-default post">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="text-center">
+          <%= post.user.username %>
+          </div>
+          <div class="likes text-center">7 likes</div>
+        </div> <!-- col-sm-2-end -->
+        <div class="col-sm-10">
+          <div class="bubble">
+            <div class="pointer">
+              <p><%= simple_format(post.message) %></p>
+              <br>
+              <i>Posted by <%= post.user.username %> on <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></i>
+            </div>
+            <div class="pointer-border"></div>
+          </div> <!-- bubble-end -->
+          <p class='post-actions'><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %><% if Time.now - post.created_at < 600 %>
+                - <%= link_to 'Edit', edit_post_path(post, { previous_wall_id: @wall_id })%>
+              <% end %></p><!-- add comment stuff below -->
+        </div>
+      </div>
+    </div>
+  </div>
+    <% end %>
+  </div> <!-- end of col-md-10 -->
+</div> <!-- end of row -->
