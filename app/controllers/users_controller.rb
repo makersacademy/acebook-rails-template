@@ -8,4 +8,8 @@ class UsersController < ApplicationController
       content_not_found
     end
   end
+  private
+  def user_params
+    params.require(:user).permit(:avatar, :username)
+  end
 end
