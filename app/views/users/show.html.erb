@@ -4,6 +4,7 @@
  <%= link_to 'New post', new_post_path(wall_user_id: @user.id.to_s) %>
 
 <% @posts.reverse.each do |post| %>
+  <% @current_post = post %>
     <h2><%= simple_format(post.message) %></h2>
     <h5>Posted by <%= post.user.username %> on <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></h5>
      <p><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
@@ -20,7 +21,15 @@
     Badger
     <%= post.get_downvotes.size %>
     <% end %>
-    </div>
+    <div id="comments">
+        <% if post.comments.count == 1 %>
+          <%= post.comments.count %> Comment
+        <% else %>
+          <%= post.comments.count %> Comments
+        <% end %>
+        <%= render post.comments %>
+        <%= render "comments/form" %>
+      </div>
       <p>-------------------------<p>
     <%end%>
     </center>
