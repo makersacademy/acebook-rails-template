@@ -31,6 +31,13 @@ Rails.application.routes.draw do
     get 'users/:id' => 'posts#index', as: 'user'
   end
 
+  resources :comments do
+    member do
+      put "Like", to: "comments#upvote"
+      put "Dislike", to: "comments#downvote"
+    end
+  end
+
   resources :posts do
     resources :comments
   end 
