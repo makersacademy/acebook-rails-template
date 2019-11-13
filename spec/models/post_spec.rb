@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
 
-  post = Post.create
+  post = Post.create(id: 1, message: 'test', created_at: '2019-11-13 11:05:00.470532', user_id: 1, wall_id: 1)
 
   it { is_expected.to be }
 
@@ -15,15 +15,8 @@ RSpec.describe Post, type: :model do
   end
 
   describe '#not_editable?' do
-    # NEED TO SPEAK TO COACH ABOUT THESE TESTS 
     it 'returns true edit function has timed out' do
-      pending
-      expect(post.not_editable?).to eq nil
-    end
-
-    it 'directs to posts_url' do
-      pending
-      expect(post.not_editable?).to redirect_to(posts_url)
+      expect(post.not_editable?).to eq true
     end
   end
 end
