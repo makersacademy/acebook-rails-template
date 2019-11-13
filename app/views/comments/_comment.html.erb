@@ -2,12 +2,12 @@
   <div class="comment_content">
     <p class="comment_body"><%= simple_format(comment.body) %> </p>
       <%= link_to Like_comment_path(comment), method: :put do %>
-    Hedgehog
+    Rabbit
     <%= comment.get_upvotes.size %>
     <% end %>
 
     <%= link_to Dislike_comment_path(comment), method: :put do %>
-    Badger
+    Snake
     <%= comment.get_downvotes.size %>
     <% end %>
     <p class="comment_user">Comment by <%= comment.user.username %> </p>
