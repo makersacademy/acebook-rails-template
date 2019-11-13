@@ -57,7 +57,6 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-
   private
 
   def set_post
