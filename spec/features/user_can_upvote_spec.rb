@@ -36,6 +36,6 @@ RSpec.feature "Votes", type: :feature do
     login_user_two
     visit('/posts')
     click_link 'Hedgehog'
-    expect(page).to have_content('2 - 0')
+    expect(page).to have_content('Hedgehog 2 Badger 0')
   end
 end
