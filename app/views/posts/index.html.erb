@@ -45,7 +45,6 @@
         <h3 class="panel-title">All Posts</h3>
         </div>
         <div class="panel-body">
-        <%= render template: "posts/new" %>
         </div>
     </div> <!-- end of add new post -->
 
@@ -67,13 +66,17 @@
             <div class="pointer">
               <p><%= simple_format(post.message) %></p>
               <br>
-              <i>Posted by <%= post.user.username %> on <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></i>
+              <i>Posted by <%= link_to post.user.username, user_post_path(id: post.user.id), :class => 'post-link'%> on <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></i>
             </div>
             <div class="pointer-border"></div>
           </div> <!-- bubble-end -->
           <p class='post-actions'><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %><% if Time.now - post.created_at < 600 %>
                 - <%= link_to 'Edit', edit_post_path(post, { previous_wall_id: @wall_id })%>
               <% end %></p><!-- add comment stuff below -->
+              <div class="comment-form">
+                <%= render "comments/form" %>
+              </div> <!-- comment-form-end -->
+              <div class="clearfix"></div>
         </div>
       </div>
     </div>
