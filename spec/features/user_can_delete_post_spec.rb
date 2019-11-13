@@ -19,6 +19,7 @@ RSpec.feature "Delete", type: :feature do
     logout_user
     create_user_two
     login_user_two
+    visit('/users/1')
     click_link 'Delete'
     expect(page).to have_content("Sorry! You can't delete someone else's post.")
     expect(page).to have_content('Hello, world!')

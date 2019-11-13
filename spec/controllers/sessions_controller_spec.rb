@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 # TEST FAILING - NEEDS TO BE COMPLETED

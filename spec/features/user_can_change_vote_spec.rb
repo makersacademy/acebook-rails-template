@@ -1,9 +1,10 @@
-# frozen_string_literal: true
+# # frozen_string_literal: true
 
-require 'rails_helper'
+# require 'rails_helper'
 
 RSpec.feature "Votes", type: :feature do
   scenario "A user can switch their vote on a post" do
+    pending
     visit('/')
     create_user
     login_user

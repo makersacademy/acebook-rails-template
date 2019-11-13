@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 def create_user
-  User.create(username: 'HomerSimpson', email: 'test@test.com', password: 'password')
+  User.create(username: 'HomerSimpson', email: 'test@test.com', password: 'password', id: 1)
 end
 
 def login_user
@@ -17,7 +17,7 @@ def logout_user
 end
 
 def create_user_two
-  User.create(username: 'BartSimpson', email: 'test2@test.com', password: 'password')
+  User.create(username: 'BartSimpson', email: 'test2@test.com', password: 'password', id: 2)
 end
 
 def login_user_two
@@ -29,6 +29,7 @@ def login_user_two
 end
 
 def create_post
+  visit '/users/1'
   click_link "New post"
   fill_in "Message", with: "Hello, world!"
   click_button "Submit"

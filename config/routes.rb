@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   controller :posts do
+    
     get '/new_post' => :new, as: 'new_post'
     get 'users/:id' => 'users#show', as: 'user_post'
     get '/post/:id/edit' => :edit, as: 'edit_post'
@@ -24,6 +25,10 @@ Rails.application.routes.draw do
       put "Like", to: "posts#upvote"
       put "Dislike", to: "posts#downvote"
     end
+  end
+  
+  devise_scope :user do
+    get 'users/:id' => 'posts#index', as: 'user'
   end
 
   resources :comments do
