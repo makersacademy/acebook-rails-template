@@ -44,8 +44,6 @@
       <div class="panel-heading">
         <h3 class="panel-title">All Posts</h3>
         </div>
-        <div class="panel-body">
-        </div>
     </div> <!-- end of add new post -->
 
 
@@ -70,10 +68,24 @@
             </div>
             <div class="pointer-border"></div>
           </div> <!-- bubble-end -->
-          <p class='post-actions'><%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %><% if Time.now - post.created_at < 600 %>
-                - <%= link_to 'Edit', edit_post_path(post, { previous_wall_id: @wall_id })%>
+          <p class='post-actions'>
+            <%= link_to Like_post_path(post), method: :put do %>
+          Hedgehog
+          <%= post.get_upvotes.size %>
+           <span>-</span>
+          <%= link_to Dislike_post_path(post), method: :put do %>
+          Badger
+          <%= post.get_downvotes.size %>
+          <% end %>
+          <% end %> - <% if Time.now - post.created_at < 600 %><%= link_to 'Edit', edit_post_path(post, { previous_wall_id: @wall_id })%>
+              - <%= link_to 'Delete', destroy_post_path(id: post.id), method: :delete %>
               <% end %></p><!-- add comment stuff below -->
               <div class="comment-form">
+                <% if post.comments.count == 1 %>
+                  <%= post.comments.count %> Comment
+                <% else %>
+                  <%= post.comments.count %> Comments
+                <% end %>
                 <%= render "comments/form" %>
               </div> <!-- comment-form-end -->
               <div class="clearfix"></div>
