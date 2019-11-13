@@ -1,14 +1,14 @@
 # # frozen_string_literal: true
 
-# require 'rails_helper'
+require 'rails_helper'
 
 RSpec.feature "Votes", type: :feature do
   scenario "A user can switch their vote on a post" do
-    pending
     visit('/')
     create_user
     login_user
     create_post
+    visit('/posts')
     click_link 'Badger'
     expect(page).to have_content('Badger 1')
     expect(page).to have_content('Hedgehog 0')
