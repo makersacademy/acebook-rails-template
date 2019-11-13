@@ -25,10 +25,10 @@
                   <div class="pointer">
                     <p><%= simple_format(post.message) %></p>
                     <br>
-                    <i>Posted by
+                    <p>Posted by
                       <%= link_to post.user.username, user_post_path(id: post.user.id), :class => 'post-link'%>
                       on
-                      <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></i>
+                      <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></p>
                   </div>
                   <div class="pointer-border"></div>
                 </div>

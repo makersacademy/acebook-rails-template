@@ -1,6 +1,6 @@
 <div class="comment">
   <div class="comment-text">
-      <i class="comment_user"><%= comment.user.username %></i>
+      <b><%= comment.user.username %></b>
     <p class="comment_body"><%= simple_format(comment.body) %> </p>
   </div>
     <% if Time.now - comment.created_at < 600 %><%= link_to 'Edit comment', edit_post_comment_path(comment.post, comment) %>

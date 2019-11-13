@@ -14,7 +14,7 @@
  *= require_self
  *= require commontator/application
  */
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,800,800i,900,900i&display=swap');
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -144,7 +144,7 @@ body {
 }
 
 .comment-text {
-  background-color: grey;
+  background-color: #DDDDDD;
   border-radius: 17px;
   padding-left: 19px;
   padding-top: 5px;
