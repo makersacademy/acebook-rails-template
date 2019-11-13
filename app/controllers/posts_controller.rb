@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params(params['wall']))
-    redirect_to "/users/#{@post.wall_id}"
+    redirect_to "/users/#{@wall_id}"
   end
 
   def edit
