@@ -5,7 +5,6 @@ RSpec.feature "Timeline", type: :feature do
     visit('/')
     create_user
     login_user
-    click_link "New post"
     fill_in 'post[message]', with: "Hello, world!"
     click_button "Post"
     expect(page).to have_content("Hello, world!")

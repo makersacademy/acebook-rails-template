@@ -30,7 +30,6 @@ end
 
 def create_post
   visit '/users/1'
-  click_link "New post"
   fill_in 'post[message]', with: "Hello, world!"
   click_button "Post"
 end
