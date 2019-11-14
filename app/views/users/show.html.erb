@@ -1,5 +1,14 @@
+<div class="hero_image">
+
+  <%if @user.avatar.attached? %>
+  <%= image_tag @user.avatar, class: 'prof_image' %>
+  <% else %>
+  <img class="prof_image" src="http://blog.ferretcard.com/wp-content/uploads/2012/07/Mystery-Ferret.png">
+  <% end %>
+
+</div>
 <div class="row">
-  <div class="col-md-10">
+  <div class="col-md-12">
 
     <div class="panel panel-default">
       <!-- start of add new post -->
@@ -17,7 +26,7 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-2">
-                <%= link_to user_post_path(id: post.user.id), :class => 'post-link' do %>
+                <%= link_to user_post_path(id: post.user.id), :class => 'avatar-link' do %>
                 <%if post.user.avatar.attached? %>
                 <%= image_tag post.user.avatar, size: '100x100'%>
                 <%end%>
