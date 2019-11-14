@@ -9,6 +9,7 @@ RSpec.describe Users::SessionsController, type: :controller do
       allow_any_instance_of(Users::SessionsController).
         to receive_message_chain(:flash, :[]=).
           with(:success, "Welcome back Jay")
+      expect(response).to have_http_status(200)
     end
   end
 end
