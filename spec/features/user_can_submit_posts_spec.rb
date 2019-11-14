@@ -5,9 +5,8 @@ RSpec.feature "Timeline", type: :feature do
     visit('/')
     create_user
     login_user
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    fill_in 'post[message]', with: "Hello, world!"
+    click_button "Post"
     expect(page).to have_content("Hello, world!")
   end
 
@@ -20,7 +19,7 @@ RSpec.feature "Timeline", type: :feature do
     create_user_two
     login_user_two
     visit('/posts')
-    click_link "HomerSimpson"
+    click_link('HomerSimpson', match: :first)
     expect(current_path).to eq('/users/1')
   end
 end

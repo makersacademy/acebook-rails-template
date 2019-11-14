@@ -1,4 +1,6 @@
-<%= form_for([@current_post, @current_post.comments.build]) do |f| %>
-  <%= f.text_field :body, :placeholder => "Enter comment" %>
-  <%= f.submit "Add Comment" %>
+<%= form_for([@current_post, @current_post.comments.build], :html => {:class => "form-inline" }) do |f| %>
+<div class="form-group">
+  <%= f.text_field :body, :placeholder => "Enter comment", :class => 'form-control' %>
+</div>
+<%= f.submit "Add Comment", :class => 'btn btn-default' %>
 <% end %>

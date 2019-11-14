@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       flash[:alert] = "10 minutes exceeded: you can no longer edit the post."
     end
   end
-  
+
   def upvote
     @post = Post.find(params[:id])
     @post.upvote_by current_user
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     @post.downvote_by current_user
     redirect_to "/users/#{@post.wall_id}"
   end
-    
+
   def update
     @post = Post.find(params[:id])
     if @post.update(message: params[:post][:message])
@@ -56,7 +56,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
   end
-  
 
   private
 

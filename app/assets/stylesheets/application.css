@@ -16,8 +16,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,800,800i,900,900i&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
   background-color: lavender;
+  font-family: 'Poppins', sans-serif;
 }
 
 #main-nav {
@@ -52,7 +52,7 @@ body {
   overflow: hidden;
 }
 
-#navbar:before{
+#navbar:before {
   content: "";
   position: absolute;
   top: 0;
@@ -117,11 +117,11 @@ body {
   color: inherit;
 }
 
-.btn-default.active,
-.btn-default:active,
-.btn-default:focus,
 .btn-default:hover,
-.open > .dropdown-toggle.btn-default {
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open>.dropdown-toggle.btn-default {
   background-color: #343A40;
   border-color: #DDDDDD;
   color: white;
