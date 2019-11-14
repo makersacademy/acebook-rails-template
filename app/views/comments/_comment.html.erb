@@ -6,13 +6,17 @@
   </div>
   <%= link_to Like_comment_path(comment), method: :put do %>
   <img class="vote-pic" src="https://bit.ly/34UJcAc" alt="Rabbit">
-  <%= comment.get_upvotes.size %>
 <% end %>
+<span class="upvote">
+<%= comment.get_upvotes.size %>
+</span>
 -
 <%= link_to Dislike_comment_path(comment), method: :put do %>
 <img class="vote-pic" src="https://bit.ly/2rHl1XS" alt="Snake">
-<%= comment.get_downvotes.size %>
 <% end %>
+<span class="downvote">
+  <%= comment.get_downvotes.size %>
+</span>
 -
 <% if Time.now - comment.created_at < 600 %><%= link_to 'Edit comment', edit_post_comment_path(comment.post, comment) %>
 -

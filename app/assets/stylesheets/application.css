@@ -157,3 +157,11 @@ body {
 .custom-file {
   width: 27%
 }
+
+.upvote {
+  color: green
+}
+
+.downvote {
+  color: red
+}

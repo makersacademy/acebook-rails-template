@@ -44,12 +44,16 @@
                   <%= link_to Like_post_path(post), method: :put do %>
                   <img class="vote-pic" src="https://bit.ly/2O8Y7A3" alt="Hedgehog">
                 <% end %>
+                <span class="upvote">
                 <%= post.get_upvotes.size %>
+                </span>
                 <span>-</span>
                 <%= link_to Dislike_post_path(post), method: :put do %>
                 <img class="vote-pic" src="https://bit.ly/36YX5zv" alt="Badger">
               <% end %>
+              <span class="downvote">
               <%= post.get_downvotes.size %>
+              </span>
               -
               <% if Time.now - post.created_at < 600 %><%= link_to 'Edit', edit_post_path(post, { previous_wall_id: @wall_id })%>
                 -<% end %>
