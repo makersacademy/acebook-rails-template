@@ -10,8 +10,7 @@ RSpec.feature "Votes", type: :feature do
     create_post
     visit('/posts')
     click_link 'Hedgehog'
-    expect(page).to have_content('Hedgehog 1')
-    expect(page).to have_content('Badger 0')
+    expect(page).to have_content('Hedgehog 1 Badger 0')
   end
 
   scenario "A user cannot add more than one upvote to a post" do
@@ -22,8 +21,7 @@ RSpec.feature "Votes", type: :feature do
     visit('/posts')
     click_link 'Hedgehog'
     click_link 'Hedgehog'
-    expect(page).to have_content('Hedgehog 1')
-    expect(page).to have_content('Badger 0')
+    expect(page).to have_content('Hedgehog 1 Badger 0')
   end
 
   scenario "Additional users can add an upvote to a post" do
@@ -38,7 +36,6 @@ RSpec.feature "Votes", type: :feature do
     login_user_two
     visit('/posts')
     click_link 'Hedgehog'
-    expect(page).to have_content('Hedgehog 2')
-    expect(page).to have_content('Badger 0')
+    expect(page).to have_content('Hedgehog 2 Badger 0')
   end
 end

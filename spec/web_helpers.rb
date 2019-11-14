@@ -30,8 +30,8 @@ end
 
 def create_post
   visit '/users/1'
-  fill_in "Message", with: "Hello, world!"
-  click_button "Submit"
+  fill_in 'post[message]', with: "Hello, world!"
+  click_button "Post"
 end
 
 def create_comment
