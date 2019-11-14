@@ -17,6 +17,11 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-2">
+                <%= link_to user_post_path(id: post.user.id), :class => 'post-link' do %>
+                <%if post.user.avatar.attached? %>
+                <%= image_tag post.user.avatar, size: '100x100'%>
+                <%end%>
+                <% end %>
                 <div class="text-center">
                   <%= link_to post.user.username, user_post_path(id: post.user.id), :class => 'post-link'%>
                 </div>
