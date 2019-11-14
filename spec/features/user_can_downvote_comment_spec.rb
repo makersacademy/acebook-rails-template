@@ -12,7 +12,7 @@ RSpec.feature "Comment", type: :feature do
     visit('/posts')
     create_comment
     click_link 'Snake'
-    expect(page).to have_content 'Snake 1'
+    expect(page).to have_content '0 - 1'
   end
 
   scenario "A user cannot add more than one dislike to a comment" do
@@ -24,8 +24,7 @@ RSpec.feature "Comment", type: :feature do
     create_comment
     click_link 'Snake'
     click_link 'Snake'
-    expect(page).to have_content('Snake 1')
-    expect(page).to have_content('Rabbit 0')
+    expect(page).to have_content('0 - 1')
   end
 
   scenario "Additional users can add an dislike to a comment" do
@@ -41,8 +40,7 @@ RSpec.feature "Comment", type: :feature do
     login_user_two
     visit('/posts')
     click_link 'Snake'
-    expect(page).to have_content('Snake 2')
-    expect(page).to have_content('Rabbit 0')
+    expect(page).to have_content('0 - 2')
   end
 
 end

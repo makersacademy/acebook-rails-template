@@ -6,6 +6,7 @@
 <br>
  <%= link_to 'New post', new_post_path(wall_user_id: @user.id.to_s) %>
 
+
 <% @posts.reverse.each do |post| %>
   <% @current_post = post %>
     <h2><%= simple_format(post.message) %></h2>
@@ -35,5 +36,4 @@
       </div>
       <p>-------------------------<p>
     <%end%>
-    <% session[:request_page] = request.path %>
     </center>

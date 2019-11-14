@@ -4,38 +4,59 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-  <nav id="navbar">
-  <div>
-   <a href="/"> <img id="nav-logo" src=http://blog.ferretcard.com/wp-content/uploads/2012/07/Distinguished-Ferret-300x300.png></a>
-  </div>
-  <div id="n-list">
-    <ul class="nav-list">
-     <% if current_user %>
-     <a class="nav-link" href="/"><li>Homepage</li></a>
-     <%= link_to current_user.username, current_user, :class => 'nav-link' %>
-     <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'nav-link'%>
-     <% else %>
-     <a class="nav-link" href="/"><li>Homepage</li></a>
-     <%= link_to 'Login', new_user_session_path, :class => 'nav-link'%>
-    <%= link_to 'Sign Up', new_user_registration_path, :class => 'nav-link'%>
-     <% end %>
+    <header class="sticky-top" id='#myTab'>
+      <div id="main-nav">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mt-5">
+          <a href="/" class="navbar-brand">
+            <img id="nav-logo" src=/assets/Distinguished-Ferret.png height="28" alt="Ferret-logo">
+          </a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-    </ul>
-  </div>
-</nav>
-<div class="page-wrapper">
-  <div class="alert alert-success alert-dismissible" id="myAlert">
-      <p class="notice"><%= notice %></p>
-      <!-- <a href="#" class="close">&times;</a> -->
-       <p class="alert"><%= alert %></p>
-       <!-- <a href="#" class="close">&times;</a> -->
-  </div>
-      <%= yield %>
-    </div>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <% if current_user %>
+              <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link active">Homepage</a>
+                <%= link_to current_user.username, current_user, :class => 'nav-link' %>
+              </div>
+              <div class="navbar-nav ml-auto">
+                <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'nav-item nav-link'%>
+              </div>
+            <% else %>
+              <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link active">Homepage</a>
+                <%= link_to 'Sign Up', new_user_registration_path, :class => 'nav-item nav-link'%>
+              </div>
+              <div class="navbar-nav ml-auto">
+                <%= link_to 'Login', new_user_session_path, :class => 'nav-item nav-link'%>
+              </div>
+            <% end %>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <div class="" id="myAlert">
+          <p class="notice"><%= notice %></p>
+          <!-- <a href="#" class="close">&times;</a> -->
+          <p class="alert"><%= alert %></p>
+          <!-- <a href="#" class="close">&times;</a> -->
+        </div>
+        <%= yield %>
+      </div>
+    </section>
   </body>
 </html>
