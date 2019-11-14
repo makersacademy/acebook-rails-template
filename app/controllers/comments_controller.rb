@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
       flash[:alert] = "Sorry! You can't edit someone else's comment."
     elsif @comment.not_editable?
       flash[:alert] = "10 minutes exceeded: you can no longer edit the comment."
-
+      p @current_post.wall_id
       redirect_to "/users/#{@current_post.wall_id}"
     end
     return if @comment
@@ -65,15 +65,13 @@ class CommentsController < ApplicationController
   def upvote
     @comment = Comment.find(params[:id])
     @comment.upvote_by current_user
-    # Redirect to stay on current wall
-    redirect_to posts_url
+    redirect_to "/users/#{@comment.post.wall_id}"
   end
 
   def downvote
     @comment = Comment.find(params[:id])
     @comment.downvote_by current_user
-    # Redirect to stay on current wall
-    redirect_to posts_url
+    redirect_to "/users/#{@comment.post.wall_id}"
   end
 
 private
@@ -93,13 +91,13 @@ private
   def curr_user?
     @comment.user
 
-    redirect_to posts_url
+    redirect_to "/users/#{@comment.post.wall_id}"
   end
 
   def not_curr_user?
     return unless current_user != @comment.user
 
-    redirect_to posts_url
+    redirect_to "/users/#{@comment.post.wall_id}"
   end
 
   def comment_params
