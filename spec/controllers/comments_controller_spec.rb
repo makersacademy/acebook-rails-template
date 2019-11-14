@@ -40,7 +40,6 @@ RSpec.describe CommentsController, type: :controller do
     it "won't let you edit after 10 minutes" do
       post = Post.create(message: "Hello, world!", user_id: @user.id)
       comment = Comment.create(body: "Comment", user_id: @user.id, post_id: post.id)
-      p comment
       Timecop.freeze(Time.now + 601.seconds)
       params = { post_id: post.id, id: comment.id }
       get :edit, params: params
