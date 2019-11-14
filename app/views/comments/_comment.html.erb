@@ -1,6 +1,6 @@
 <div class="comment">
   <div class="comment-text">
-    <b><%= comment.user.username %></b>
+    <b><%= link_to comment.user.username, user_post_path(id: comment.user.id), :class => "post-link" %></b>
     <p class="comment_body"><%= simple_format(comment.body) %>
     </p>
   </div>
