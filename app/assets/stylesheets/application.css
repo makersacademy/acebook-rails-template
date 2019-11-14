@@ -113,7 +113,7 @@ body {
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 35px;
   color: inherit;
 }
 
@@ -152,4 +152,36 @@ body {
 
 .vote-pic {
   width: 40px;
+}
+
+.custom-file {
+  width: 27%
+}
+
+.upvote {
+  color: green
+}
+
+.downvote {
+  color: red
+}
+
+.comment {
+  width: 90%
+}
+
+.prof_image {
+  width: 400px;
+  border-radius: 50%;
+  text-align: center;
+  border: 5px solid black;
+}
+
+.hero_image {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.avatar-link {
+  padding-left: 22px;
 }

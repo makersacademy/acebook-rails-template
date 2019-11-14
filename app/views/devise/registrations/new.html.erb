@@ -26,13 +26,18 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <%= f.label "Profile Photo" %>
-  <%= f.file_field :avatar %>
+  <br>
 
+  <div class="custom-file">
+    <%= f.file_field :avatar, class: "custom-file-input", id: "customFile" %>
+    <%= f.label "Choose Profile Photo", class: "custom-file-label", for: "customFile" %>
+  </div>
+
+  <br>
+  <br>
 
   <a class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+    <%= f.submit "Sign up", class: "btn btn-default" %>
 <% end %>
 
 <%= render "devise/shared/links" %>

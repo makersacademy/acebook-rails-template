@@ -1,7 +1,7 @@
 <%= form_for @post do |form| %>
 <div class="form-group">
   <input type='hidden' name='wall' value=<%=@wall_id%>></input>
-  <%= form.text_field :message, :class => 'form-control', :placeholder => "Write on wall" %>
+  <%= form.text_area :message, :class => 'form-control', :placeholder => "Write on wall" %>
 
   <%= form.submit "Post", :class => 'btn btn-default' %>
 </div>
