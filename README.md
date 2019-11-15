@@ -6,34 +6,32 @@
 
 ## Team MEME (Mark, Eithel, Mike, Elsie)
 
-Our team workflow process is administered using this Trello card wall:
-https://trello.com/b/LngJ2uHN/acebook-team-meme
-
-
-See detailed project updates on our [wiki](https://github.com/etelish/acebook-Team-Meme/wiki).
+<img src="https://github.com/etelish/acebook-Team-Meme/blob/master/docs/wall.png" width=60%>
 
 <br>
+Hosted here on Heroku: https://serene-oasis-58904.herokuapp.com/
+<br>
 
-## How to install and run this project
-
+## How to install and run
 
 1. Clone this repository and navigate to the root folder.
 
-2. In config/environments/development.rb, change this line
+2. Image storage is configured to use Amazon S3. For testing, we recommend changing to use local storage instead: 
+
+In config/environments/development.rb, change this line
 
 ```
 config.active_storage.service = :amazon
 ```
-to read as follows:
+to read:
 ```
 config.active_storage.service = :local
 ```
+...then repeat for config/environments/production.rb.
 
-3. Repeat the above step in config/environments/production.rb.
+3. Download and install Image Magic from here: https://imagemagick.org/script/download.php
 
-4. Download and install Image Magic from here: https://imagemagick.org/script/download.php
-
-5. In your command line, run the following commands:
+4. In the command line, run:
 
 ```bash
 > bundle install
@@ -45,30 +43,43 @@ config.active_storage.service = :local
 ```
 <br>
 
-## Technologies used in this project
 
+## Technologies used 
 
 | **Technology** | **Role** |
-| -------------- |: ------: |
+| -- | -- |
 | Ruby 2.5.0 | Backend programming language |
 | Rails | Model-View-Controller web application framework |
-| Postgresql | Database for Active Record |
 | Active Record | ORM |
-| Acts as votable gem | Voting on models (implementing 'likes'/'unlikes') |
 | HTML | Front end markup language |
-| CSS | Styling |
 | Bootstrap | CSS framework (styling) |
-| AWS SDK S3 | File storage (for photos) |
+| Postgresql | Database |
+| Acts as votable gem | Voting on models (implementing 'likes'/'unlikes') 
 | Clearance gem | Authentication with email and password |
-| Figaro | Managing environment variables (enabling storage of AWS key) |
 | JQuery-Rails | Ajax requests (implementing 'likes'/'unlikes') |
 | Mini Magick | Image manipulation (resizing) |
 | Capybara | Testing framework |
 | RSpec-Rails | Testing framework |
 | Simplecov | Test coverage |
-| Travis | CI (build and test prior to merging on Github)|
+| Travis | CI |
 | Code Climate | CI (test coverage)|
 | Git | Version control |
-| Github | Git hosting and collaborative tools |
 | Puma | Web server for local deployment |
+| AWS S3 | File storage (for photos) |
+| Figaro gem | Managing environment variables (for AWS) |
 | Heroku | Cloud deployment |
+
+## Our approach
+
+<em>See detailed project notes in this repo's Wiki!</em>
+
+- We worked in 2-day sprints, with daily morning stand-ups
+- We paired on the major part of the code, with some individual workload depending on requirements for the day
+- We managed tickets using a Trello card wall
+- We focused on Capybara feature tests to drive design 
+- The majority of pull requests were peer reviewed, meaning any merge conflicts were relatively straightforward to resolve
+
+<em>Trello card wall</em>
+
+<img src="https://github.com/etelish/acebook-Team-Meme/blob/master/docs/trello.png" width=25%>
+
