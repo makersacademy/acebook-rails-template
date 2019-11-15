@@ -7,8 +7,11 @@
   </head>
   <body>
     <% if flash[:notice] %>
-     <div class="alert alert-danger"><%= flash[:notice] %></div>
+     <div class="alert alert-success"><%= flash[:notice] %></div>
    <% end %>
+   <% if flash[:alert] %>
+    <div class="alert alert-danger"><%= flash[:alert] %></div>
+  <% end %>
     <div class="container">
       <div class="row">
         <div class="col-4" id="light_grey_container" style="padding-top:50px; margin-top:65px; border-radius:5%">

@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
    else
 
      redirect_to '/'
-     flash.notice = "Email or password is invalid"
+     flash.alert = "Email or password is invalid"
    end
   end
 
