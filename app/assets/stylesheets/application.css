@@ -185,3 +185,7 @@ body {
 .avatar-link {
   padding-left: 22px;
 }
+
+.wall-avatar {
+  border-radius: 20%
+}
