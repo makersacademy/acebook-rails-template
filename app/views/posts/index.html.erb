@@ -14,8 +14,15 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-2">
+                <%= link_to user_post_path(id: post.user.id), :class => 'avatar-link' do %>
+                <%if post.user.avatar.attached? %>
+                <%= image_tag post.user.avatar, size: '100x100', :class => 'wall-avatar' %>
+                <% else %>
+                <img class="wall-avatar" src="http://blog.ferretcard.com/wp-content/uploads/2012/07/Mystery-Ferret.png" width="100" height="100" >
+                <%end%>
+                <% end %>
                 <div class="text-center">
-                  <%= link_to post.user.username, user_post_path(id: post.user.id), :class => 'post-link'%>
+                <%= link_to post.user.username, user_post_path(id: post.user.id), :class => 'post-link'%>
                 </div>
               </div>
               <!-- col-sm-2-end -->
@@ -24,9 +31,7 @@
                   <div class="pointer">
                     <p><%= simple_format(post.message) %></p>
                     <br>
-                    <p>Posted by
-                      <%= link_to post.user.username, user_post_path(id: post.user.id), :class => 'post-link'%>
-                      on
+                    <p>Posted on:
                       <%= post.created_at.strftime('%d-%m-%Y at %H:%M') %></p>
                   </div>
                   <div class="pointer-border"></div>
@@ -76,4 +81,3 @@
 <!-- end of col-md-10 -->
 </div>
 <!-- end of row -->
-
