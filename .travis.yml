@@ -1,0 +1,26 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=a08074f983022ffbb6f627f4e062fd4ec7b19f56f93034f468198c8bb7f26848
+    
+before_script:
+  - psql -c "CREATE DATABASE pgapp_test;" -U postgres
+
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+before_install:
+ - gem update --system
+ - gem install bundler
+
+rvm:
+ - 2.5.0
+
+script:
+ - bundle exec rspec spec
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+services:
+  - postgresql
