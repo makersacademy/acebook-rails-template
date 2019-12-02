@@ -2,20 +2,8 @@
 
 REQUIRED INSTRUCTIONS:
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Quickstart
-
-First, clone this repository. Then:
-
+1. Fork this repository and clone this repository.
+2. Install the following in command line:
 ```bash
 > bundle install
 > bin/rails db:create
@@ -24,3 +12,5 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+3. Run `rspec` in command line to see full test coverage
+4. Open simplecov coverage by typing `open coverage/index.html`
