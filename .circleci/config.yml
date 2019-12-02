@@ -14,4 +14,9 @@ jobs:
       - run:
           name: run tests
           command: |
-            bundle exec rspec
+            bundle exec rspec \
+              --format progress \
+              --format RspecJunitFormatter \
+              --out /tmp/test-results/rspec.xml \
+              --format progress \
+              $TEST_FILES
