@@ -15,6 +15,7 @@ jobs:
           name: run tests
           command: |
             gem install bundler
+            gem install rake
             gem install rspec
             bundle exec rspec \
               --format progress \
