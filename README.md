@@ -13,6 +13,22 @@ the below**
 [engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
 2. The card wall is here: https://trello.com/invite/b/26fYLxYl/499918c770f541d5f22c05bff8186244/greenboook-group
+# Heroku
+Our app is deployed at: https://greenbook2019.herokuapp.com/
+
+- To visit the app, simply go to the URL above.
+- To host our `acebook-greenbook` on your own:
+```
+brew install heroku
+```
+Sign up to Heroku, once you have an Heroku account you can run below commands:
+```
+heroku create 
+git push heroku master
+heroku rake db:migrate
+heroku open
+```
+
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
