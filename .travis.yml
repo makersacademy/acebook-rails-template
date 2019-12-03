@@ -1,21 +1,21 @@
 services:
-  postgresql
+  - postgresql
 
 before_install:
-  gem install -v 1.17.3 bundler
+  - gem install -v 1.17.3 bundler
 
 
 before_script:
-  psql -c 'create database pgapp_test;' -U postgres
+  - psql -c 'create database pgapp_test;' -U postgres
 
 script:
-  bundle install --jobs=3 --retry=3
-  bundle exec rake db:create
-  bundle exec rake db:migrate
-  bundle exec rspec
+  - bundle install --jobs=3 --retry=3
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rspec
 
 language: ruby
 
 rvm:
- — 2.5.0
+  - 2.5.0
 
