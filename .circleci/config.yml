@@ -35,7 +35,7 @@ jobs:
       # Note the YAML heredoc '|' for nicer formatting
       - run:
           name: install-bundler
-          command: gem install bundler
+          command: bundle check || bundle install
 
       - run:
           name: setup-db
