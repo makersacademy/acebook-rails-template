@@ -8,7 +8,12 @@ addons:
       GY0J3f7QGeQ+h66oBcqxuE85S6/DviEpH1lIjTB0JwEwPC+cBuvhst1U3sXiFeVcnrxt5dQMKQOcfm9KJFV7MCaoLUAWRUsTW02RIY+5PvDTDSWiri15CBj6mWFo1Iz+3VBJpNxebY2dl363HzhlkMKwMHPPDyjU9z1+E+Y
       qoZVgHshwQQpqku2iSFSK/O3Lc="
 
+
 after_success: codeclimate-test-reporter
+
+before_install:
+  - gem install bundler
+
 
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
