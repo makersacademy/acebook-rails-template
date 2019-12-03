@@ -1,3 +1,12 @@
+<link href="https://fonts.googleapis.com/css?family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="base.css">
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#create">Create</a>
+<a href="#friends">Friends</a>
+</div>
+
 <%= form_for @post do |form| %>
   <%= form.label :name %>
   <%= form.text_field :username %><p>
@@ -17,4 +26,3 @@
 
 <% end %>
 </ul>
-
