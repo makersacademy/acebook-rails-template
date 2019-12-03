@@ -8,21 +8,20 @@
 </div>
 
 <%= form_for @post do |form| %>
-<%= form.label :name %>
-<%= form.text_field :username %><p>
+  <%= form.label :username %>
+  <%= form.text_field :username %><p>
   <%= form.label :message %>
   <%= form.text_field :message %>
 
   <%= form.submit "Submit" %>
 <% end %>
 
-<ul>
 <% @posts.each do |post| %>
-
-  <li><p><%= post.message %></p>
-  <p><%= post.username %></p>
-  <p></p>
-   </li>
-
+  <ul>
+  <b><p><li><%= post.username %></li></p></b>
+      <p><%= post.message %></p>
+      <p><%= post.created_at %></p>
+      <p></p>
+      <br>
+  </ul>
 <% end %>
-</ul>
