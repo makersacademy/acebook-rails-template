@@ -1,1 +1,5 @@
 <h1>Welcome</h1>
+
+<%= form_with scope: :posts, local: true, url: destroy_user_session_path, method: "delete" do |form| %>
+  <%= form.submit "Sign out"%>
+<% end %>
