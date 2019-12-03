@@ -1,7 +1,12 @@
+<ul>
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
 
-<%= link_to new_post_path do %>
-  New post
+  <li><p><%= post.message %></p>
+  <p><%= post.username %></p>
+  <p></p>
+   </li>
+
 <% end %>
+</ul>
+
+<%= link_to 'New Post', new_post_path %>
