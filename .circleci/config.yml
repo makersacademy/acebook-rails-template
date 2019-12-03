@@ -33,9 +33,9 @@ jobs:
 
       # Create Postgres users and database
       # Note the YAML heredoc '|' for nicer formatting
-      - run: |
-          sudo -u root createuser -h localhost --superuser ubuntu &&
-          sudo createdb -h localhost test_db
+      - run:
+          name: setup-db
+          command: bundle exec rake db:drop db:create db:migrate
 
       - restore_cache:
           keys:
