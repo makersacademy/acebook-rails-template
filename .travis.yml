@@ -8,6 +8,11 @@ after_success: codeclimate-test-reporter
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
 
+script:
+  - bundle install - jobs=3 - retry=3
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rspec
 
 language: ruby
 rvm:
