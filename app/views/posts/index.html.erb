@@ -1,7 +1,20 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<%= form_for @post do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :username %><p>
+  <%= form.label :message %>
+  <%= form.text_field :message %>
+
+  <%= form.submit "Submit" %>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<ul>
+<% @posts.each do |post| %>
+
+  <li><p><%= post.message %></p>
+  <p><%= post.username %></p>
+  <p></p>
+   </li>
+
 <% end %>
+</ul>
+
