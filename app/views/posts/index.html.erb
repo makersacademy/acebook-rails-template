@@ -1,7 +1,16 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<%@sorted_posts = @posts.sort_by {|sorted| sorted[:created_at]}.reverse! %> 
+
+<% @sorted_posts.each do |post| %>
+<p><%= post.message %>: Posted on: 
+<%= post.created_at.strftime("%l:%M%P, %d %B %Y") %> 
+
+
+</p>
 <% end %>
+
+
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
