@@ -34,6 +34,10 @@ jobs:
       # Create Postgres users and database
       # Note the YAML heredoc '|' for nicer formatting
       - run:
+          name: install-bundler
+          command: gem install bundler
+
+      - run:
           name: setup-db
           command: bundle exec rake db:drop db:create db:migrate
 
