@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+ font-family: 'Tenor Sans', sans-serif;
+ background-color:  	#f7f7f7;
+ }
+
+ 
+
+ /* Add a green background colour for nav background */
+ .topnav {
+ background-color: #008000;
+ overflow: hidden;
+ }
+
+ /* Style the links inside the navbar */
+ .topnav a {
+   float: left;
+   color: #f2f2f2;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: 17px;
+ }
+
+ /* Change the colour of the links on hover */
+ .topnav a:hover {
+   background-color: #006400;
+   color: white;
+ }
+
+ /* Add a colour to the active/current link */
+ .topnav a.active {
+   background-color: #4CAF50;
+   color: white;
+ }

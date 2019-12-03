@@ -1,3 +1,12 @@
+<link href="https://fonts.googleapis.com/css?family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="base.css">
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#create">Create</a>
+<a href="#friends">Friends</a>
+</div>
+
 <%= form_for @post do |form| %>
 <%= form.label :name %>
 <%= form.text_field :username %><p>
@@ -5,13 +14,15 @@
   <%= form.text_field :message %>
 
   <%= form.submit "Submit" %>
-  <% end %>
-  <% @posts.each do |post| %>
-  <ul>
-  <b><p><li><%= post.username %></li></p></b>
-      <p><%= post.message %></p>
-      <p><%= post.created_at %></p>
-      <p></p>
-      <br>
-  </ul>
-  <% end %>
+<% end %>
+
+<ul>
+<% @posts.each do |post| %>
+
+  <li><p><%= post.message %></p>
+  <p><%= post.username %></p>
+  <p></p>
+   </li>
+
+<% end %>
+</ul>
