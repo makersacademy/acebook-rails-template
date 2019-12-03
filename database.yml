@@ -1,3 +1,4 @@
 test:
   adapter: postgresql
-  database: travis_ci_test
+  database: myapp_test
+  username: postgres
