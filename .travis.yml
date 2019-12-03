@@ -1,3 +1,14 @@
+addons:
+  postgresql: 11.5
+  code_climate:
+    repo_token: d5f865c7a3369d6d781e0728d2ca7240d46e8ec53f05c41e620e7b607061ab50
+
+after_success: codeclimate-test-reporter
+
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+
+
 language: ruby
 rvm:
   - 2.5.0
