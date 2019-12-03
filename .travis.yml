@@ -1,8 +1,8 @@
 language: ruby
 rvm:
-- 1.9.3
-- jruby-19mode
-- rbx-2
+# - 1.9.3
+# - jruby-19mode
+# - rbx-2
 script:
 — bundle install 
 # — jobs=3 — retry=3
