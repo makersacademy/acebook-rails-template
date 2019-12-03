@@ -12,7 +12,8 @@ addons:
 after_success: codeclimate-test-reporter
 
 before_install:
-  - gem install bundler
+  - gem install -v 1.17.3 bundler
+  - bundle _1_17.3_ install
 
 
 before_script:
