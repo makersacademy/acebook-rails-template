@@ -1,6 +1,8 @@
 # AceBook
 
-2. Install the following in command line:
+## Install Instructions
+
+Install the following in command line:
 ```bash
 > bundle install
 > bin/rails db:create
