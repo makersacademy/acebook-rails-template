@@ -646,6 +646,17 @@
         null,
         null
       ],
+      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/log_in_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/password_conforms_spec.rb": [
         1,
         null,
@@ -663,6 +674,17 @@
         1,
         1,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/sign_up_spec.rb": [
+        1,
+        null,
         1,
         1,
         1,
@@ -732,6 +754,6 @@
         null
       ]
     },
-    "timestamp": 1575455627
+    "timestamp": 1575459156
   }
 }
