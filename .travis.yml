@@ -1,0 +1,23 @@
+language: ruby
+
+
+# addons:
+#   - code_climate:
+#       report_token:
+#         secure: "token_goes_here_encrypted"
+
+after_success:
+  - bundle exec codeclimate-test-reporter
+
+before_script:
+  - cp config/database.yml.travis config/datbase.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
+
+
+script:
+  - bundle exec rails db:migrate RAILS_ENV=test
+  - bundle exec rspec
+
+
+services:
+  - postgresql
