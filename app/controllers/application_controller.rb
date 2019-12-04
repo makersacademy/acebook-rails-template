@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
       redirect_to welcome_index_url
     end
   end
+
+  def after_sign_in_path_for(resource)
+    :posts
+  end
+  
 end

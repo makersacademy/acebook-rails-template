@@ -8,7 +8,7 @@ RSpec.feature "Passwords", type: :feature do
     fill_in "user_password_confirmation", with: "123"
     click_button "Sign up"
     expect(page).to have_content("1 error prohibited this user from being saved")
-    expect(page).to have_content("6 characters minimum")
+    expect(page).to have_content("minimum is 6 characters")
   end
 
   scenario "must be no longer than 10 characters" do
