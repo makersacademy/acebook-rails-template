@@ -10,11 +10,6 @@ addons:
 
 after_success: codeclimate-test-reporter
 
-
-
-
-
-
 language: ruby
 rvm:
   - 2.5.0
