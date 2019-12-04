@@ -1,4 +1,6 @@
 language: ruby
+cache: bundler
+
 # addons:
 #   - code_climate:
 #       report_token:
@@ -7,8 +9,8 @@ language: ruby
 before_install:
     - gem install bundler
 
-after_success:
-  - bundle exec codeclimate-test-reporter
+# after_success:
+  # - bundle exec codeclimate-test-reporter
 
 before_script:
   - cp config/database.yml.travis config/database.yml
