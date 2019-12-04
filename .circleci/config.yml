@@ -72,7 +72,8 @@ jobs:
             - rails-demo-bundle-v2-
       - run:
           name: Bundle Install
-          command: bundle check || bundle install
+          command: |
+            bundle check || bundle install
       # - restore_cache:
       #     keys:
       #       - rails-demo-yarn-{{ checksum "yarn.lock" }}
@@ -94,6 +95,10 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+      - run:
+          name: Run Tests
+          command: |
+            bundle exec rspec
 
 workflows:
   version: 2
