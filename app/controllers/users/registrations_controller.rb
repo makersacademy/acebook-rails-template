@@ -12,7 +12,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    p resource_name
   end
 
   # GET /resource/edit

@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+
+  before(:each) do
+    allow(subject).to receive(:redirect_if_user_is_not_signed_in).and_return(nil)
+  end
+
   describe "GET /new " do
     it "responds with 200" do
       get :new

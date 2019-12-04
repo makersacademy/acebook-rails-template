@@ -1,5 +1,9 @@
 <h1>Acebook</h1>
 
-<form class="signUpButton" action="/users/sign_up" method="get">
-  <input type="submit" name="Sign Up" value="Sign Up">
-</form>
+<% if !user_signed_in? %>
+  <form class="signUpButton" action="/users/sign_up" method="get">
+    <input type="submit" name="Sign Up" value="Sign Up">
+  </form>
+<% else %>
+  <p> Welcome <%= current_user.first_name + " " + current_user.surname %> </p>
+<% end %>
