@@ -1,4 +1,4 @@
-# test:
-#   adapter: postgresql
-#   database: myapp_test
-#   username: postgres
+test:
+  adapter: postgresql
+  database: pgapp_test
+  username: postgres
