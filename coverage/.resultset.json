@@ -646,7 +646,22 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/andrewjones/dev/acebook-AceofBaseBook/spec/features/password_conforms_spec.rb": [
+=======
+      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/log_in_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/password_conforms_spec.rb": [
+>>>>>>> bb6266945a84dcb06a6b7cd2a551f4fbf00793fd
         1,
         null,
         1,
@@ -671,7 +686,22 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/andrewjones/dev/acebook-AceofBaseBook/spec/features/user_can_submit_posts_spec.rb": [
+=======
+      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/sign_up_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/user_can_submit_posts_spec.rb": [
+>>>>>>> bb6266945a84dcb06a6b7cd2a551f4fbf00793fd
         1,
         null,
         1,
@@ -732,6 +762,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1575457664
+=======
+    "timestamp": 1575459340
+>>>>>>> bb6266945a84dcb06a6b7cd2a551f4fbf00793fd
   }
 }
