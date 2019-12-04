@@ -1,6 +1,4 @@
 language: ruby
-
-
 # addons:
 #   - code_climate:
 #       report_token:
@@ -17,11 +15,9 @@ branches:
     only:
       - travis
 
-
 script:
   - bundle exec rails db:migrate RAILS_ENV=test
   - bundle exec rspec
-
 
 services:
   - postgresql
