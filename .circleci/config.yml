@@ -74,11 +74,6 @@ jobs:
           name: Bundle Install
           command: |
             bundle check || bundle install
-
-      - run:
-          name: Tests
-          command: |
-            bundle exec rspec
       # - restore_cache:
       #     keys:
       #       - rails-demo-yarn-{{ checksum "yarn.lock" }}
