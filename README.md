@@ -18,3 +18,4 @@ Install the following in command line:
 
 * [Day 1 Blog by Liat](https://medium.com/@acebook.makers/creation-of-acebook-5345aa4ef6ab)
 * [Day 2 Blog by Topher](https://medium.com/@acebook.makers/setting-up-ci-discovering-devise-103044c0415e)
+ 
