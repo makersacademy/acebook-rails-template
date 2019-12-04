@@ -1,3 +1,5 @@
+<p> Welcome <%= current_user.first_name + " " + current_user.surname %> </p>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>

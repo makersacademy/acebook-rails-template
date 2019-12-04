@@ -1,6 +1,9 @@
 <h1>Acebook</h1>
 
 <% if !user_signed_in? %>
+  <form class="signInButton" action="/users/sign_in" method="get">
+    <input type="submit" name="Sign In" value="Sign In">
+  </form>
   <form class="signUpButton" action="/users/sign_up" method="get">
     <input type="submit" name="Sign Up" value="Sign Up">
   </form>
