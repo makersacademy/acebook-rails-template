@@ -21,3 +21,7 @@
 /yarn-error.log
 
 .byebug_history
+
+# Ignoring files that update on bundle and rspec run
+Gemfile.lock
+coverage/.resultset.json
