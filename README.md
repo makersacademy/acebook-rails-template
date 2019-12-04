@@ -16,5 +16,5 @@ Install the following in command line:
 
 [User Requirements on Trello](https://trello.com/b/fyDiPy6k/acebook-letta)
 
-[Day 1 Blog by Liat](https://medium.com/@acebook.makers/creation-of-acebook-5345aa4ef6ab)
-Day 2 Blog by Topher
+* [Day 1 Blog by Liat](https://medium.com/@acebook.makers/creation-of-acebook-5345aa4ef6ab)
+* [Day 2 Blog by Topher](https://medium.com/@acebook.makers/setting-up-ci-discovering-devise-103044c0415e)
