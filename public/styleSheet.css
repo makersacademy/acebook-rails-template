@@ -1,0 +1,38 @@
+.button {
+  background-color: firebrick;
+  font-size: 18px;
+  color: #010101;
+  border-radius: 12px;
+  margin: 3px;
+  font-family: 'Neucha', cursive;
+}
+body {
+  background-color: gold;
+  font-family: 'Neucha', cursive;
+  text-align: center;
+}
+.audio {
+  color: gold;
+}
+.property {
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 300px;
+  margin: auto;
+  padding: 10px;
+}
+.space {
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 300px;
+  margin: auto;
+  padding: 10px;
+}
+.welcome {
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 600px;
+  margin: auto;
+  padding: 5px;
+}
+.logout {
+  text-align: right;
+  padding: 10px;
+}
