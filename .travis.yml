@@ -1,30 +1,29 @@
+env:
+  global:
+    - CC_TEST_REPORT_ID= "hak/NB3+VhI8R7dzF8SDUHo6yaY4Yt5QVJ6RVsZR0uYmtM6XVZIKI6Bg4SjuAWyfrpsftNKNiS0kWo8OiUbhFTwFaf7BCra3uWN5MVO/o+uU9W9O1k8wlskviLXnsrpwtYVU66EwkzfaLqJBIij7uDm4gAE2gKRio4K6nRgKw2m+5/TuZqnY9ygcGpUBlzld7vis3+qQhvX0IrQ1rgqIsZeWbdo2O6x7/WOo7tG8t3CNDX5ifJh2nxK7JFxOknZecj5Yn0po4euiCIO84rpG80zOwQPAJ0Uf6WkWr/76b3mdY3WQbtcYeBZdvYB90g4LZOqd7SKo1ImkqgAcuwTHvbcqZf5kumxbetvliL9TLkpvysmC6d6Wk0FEMMvbgQjPw0vyNZclx3w9pE1XVkMUekCCgzQlW04PRTtxmiO8+LRSLSDmJGzs8m8d2ZqvO3dlaQmWg9+Lv0UfApIjElYhTvYPuWSFTfd0hIpZ/8MGnFTIJtruOGVM3bL/GnCTQJlc4MDvWmwko+FvJGJlqWAr3zVgjqd74JL3gHjyYtDQrEo0EMMJMnXTljX1HVi+J/PVNNoxZupV0mfKr0ANUKIza4tC8owsKf/R0CjW2F9Mfpei0c12NF4QUggkfnPzf5Zx+x9vzgNXQsok/7ttpZdkKNPUickgVKjLIBeaZnJkUYk="
+
 language: ruby
 rvm:
-   - 2.6.0
-cache: bundler
+  - 2.6.0
 
-# addons:
-#   - code_climate:
-#       report_token:
-#         secure: "token_goes_here_encrypted"
+cache: bundler
+branches:
+  only:
+  - travis
 
 before_install:
-    - gem install bundler
-
-# after_success:
-  # - bundle exec codeclimate-test-reporter
-
+  - gem install bundler
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
-
-branches:
-    only:
-      - travis
-
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ../cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
   - bundle exec rails db:migrate RAILS_ENV=test
   - bundle exec rspec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 services:
-  - postgresql
+- postgresql
