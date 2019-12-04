@@ -9,7 +9,7 @@ rvm:
 cache: bundler
 branches:
   only:
-  - travis
+  - master
 
 before_install:
   - gem install bundler
