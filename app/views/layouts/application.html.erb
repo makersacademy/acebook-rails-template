@@ -3,12 +3,18 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="base.css">
   </head>
-
   <body>
+    <header>
+      <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#post">Post</a>
+      <a href="#friends">Friends</a>
+      </div>
+    </header>
     <%= yield %>
   </body>
-</html>
