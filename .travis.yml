@@ -13,6 +13,10 @@ before_script:
   - cp config/database.yml.travis config/datbase.yml
   - psql -c 'create database travis_ci_test;' -U postgres
 
+branches:
+    only:
+      - travis
+
 
 script:
   - bundle exec rails db:migrate RAILS_ENV=test
