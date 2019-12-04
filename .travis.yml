@@ -40,8 +40,7 @@ rvm:
 
 cache: bundler
 
-services:
-  - postgresql
+services: postgresql
 
 before_install:
   - gem update --system
@@ -49,7 +48,6 @@ before_install:
 
 
 script:
-- bundle exec rake db:create
-- bundle exec rake db:migrate
-- bundle exec rubocop
-- bundle exec rspec spec
+ - bundle exec rake db:migrate
+ - bundle exec rubocop
+ - bundle exec rspec spec
