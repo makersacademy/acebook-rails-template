@@ -28,3 +28,5 @@ First, clone this repository. Then:
 *Travis CI build status (master):*
 
 [![Build Status](https://travis-ci.org/SevenSecrets/acebook-rails-template.svg?branch=master)](https://travis-ci.org/SevenSecrets/acebook-rails-template)
+
+sdhdkxdbgdkjbkdnfgkdnfkbjne
