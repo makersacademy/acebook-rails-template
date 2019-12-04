@@ -7,26 +7,48 @@
 #       IrmeVHfhkgurXSSl0NjwVk01N/UtCYsChBYYQXTd8KrxiKi+txFf57acdbRbXNScigapIAhXZbpZGUIjyW9UMLkJ6QU11zGJfed2DLkl+c/oF4W6a6x4AihV7NjS+VEZRePQhXvMADL95+l7xoZfnHW56AR3jE7MKZpykzE
 #       GY0J3f7QGeQ+h66oBcqxuE85S6/DviEpH1lIjTB0JwEwPC+cBuvhst1U3sXiFeVcnrxt5dQMKQOcfm9KJFV7MCaoLUAWRUsTW02RIY+5PvDTDSWiri15CBj6mWFo1Iz+3VBJpNxebY2dl363HzhlkMKwMHPPDyjU9z1+E+Y
 #       qoZVgHshwQQpqku2iSFSK/O3Lc="
-
-services:
-  - postgresql
+# 
+# services:
+#   - postgresql
 
 # after_success: codeclimate-test-reporter
 
-before_install:
-  - gem install -v 1.17.3 bundler
-  - bundle _1.17.3_ install
+# before_install:
+#   - gem install -v 1.17.3 bundler
+#   - bundle _1.17.3_ install
+#
+#
+# before_script:
+#   - psql -c 'create database pgapp_test;' -U postgres
+#
+# script:
+#   - bundle install - jobs=3 - retry=3
+#   - bundle exec rake db:create
+#   - bundle exec rake db:migrate
+#   - bundle exec rspec
+#
+# language: ruby
+# rvm:
+#   - 2.5.0
 
 
-before_script:
-  - psql -c 'create database pgapp_test;' -U postgres
-
-script:
-  - bundle install - jobs=3 - retry=3
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-  - bundle exec rspec
 
 language: ruby
 rvm:
   - 2.5.0
+
+cache: bundler
+
+services:
+  - postgresql
+
+before_install:
+  - gem update --system
+  - gem install bundler
+
+
+  script:
+    - bundle exec rake db:create
+    - bundle exec rake db:migrate
+    - bundle exec rubocop
+    - bundle exec rspec spec
