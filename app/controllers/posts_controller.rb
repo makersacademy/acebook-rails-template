@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :redirect_if_user_is_not_signed_in
+
   def new
     @post = Post.new
   end
