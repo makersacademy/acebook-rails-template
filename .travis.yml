@@ -4,6 +4,9 @@ language: ruby
 #       report_token:
 #         secure: "token_goes_here_encrypted"
 
+before install:
+    - gem install bundler
+
 after_success:
   - bundle exec codeclimate-test-reporter
 
