@@ -48,8 +48,8 @@ before_install:
   - gem install bundler
 
 
-  script:
-    - bundle exec rake db:create
-    - bundle exec rake db:migrate
-    - bundle exec rubocop
-    - bundle exec rspec spec
+script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rubocop
+- bundle exec rspec spec
