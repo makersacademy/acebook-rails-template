@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>Sign p</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -19,6 +19,16 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.first_name_field :first_name, autofocus: true, autocomplete: "first-name" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :surname %><br />
+    <%= f.surname_field :surname, autofocus: true, autocomplete: "surname" %>
   </div>
 
   <div class="actions">
