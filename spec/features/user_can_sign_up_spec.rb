@@ -7,9 +7,9 @@ RSpec.feature "Sign Up", type: :feature do
     fill_in "Email", with: "gandolf@middleearth.org"
     fill_in "Password", with: "shadowfangs"
     fill_in "Password confirmation", with: "shadowfangs"
-    fill_in "First Name", with: "Gandolf"
+    fill_in "First name", with: "Gandolf"
     fill_in "Surname", with: "The Grey"
-    click_button "Create Account"
+    click_button "Sign up"
     expect(page).to have_content("Welcome Gandolf The Grey")
   end
 end
