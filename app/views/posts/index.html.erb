@@ -1,9 +1,8 @@
-<p> Welcome <%= current_user.first_name + " " + current_user.surname %> </p>
-<% all_posts = @posts.sort_by { |sorted| sorted[:created_at] }.reverse! %>
+<h2> Welcome <%= current_user.first_name + " " + current_user.surname %> </h2>
+
 <p>
-<% all_posts.each do |post| %>
-  <% sort_posts = post.message.split("\r\n") %>
-  <% sort_posts.each do |sortpost| %>
+<% @posts.each do |post| %>
+  <% post.linebreak.each do |sortpost| %>
     <%= sortpost %> <br>
   <% end %>
   <%= post.created_at.strftime("Posted at: %H:%M on %A %d %B, %y") %>
