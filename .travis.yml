@@ -1,0 +1,29 @@
+addons:
+  code_climate:
+    repo_token:
+      secure: "JHL+ecVebP8AYCeVvmmUewhbJAduENI/Lko68WKRo4yFYrS0ncCft3Vwa1qHds3vAuhNlwWJLRkfP1LWiN95YokMLcLGSmAddQqUc3spwbouGjbbbnYeBm1adSDe/niEywRVXrJ2lXqw6DZGsL/xxZfqYWbQ
+      exUeaVoGxJxfBKjFqzyyxK23OrzKuzpQDGNUKot0Ix9/g+fvldV7DqxgNHXKcpCQXqbwi0kOYKN8tox1RaozWYk2OQJgdGMrteA0f0xKfCuWrIDeU8P1Iiwi8PlzU+RHJ6luz9/06kHCl/N0LM/yFIW386Vnb3Gpr9MuffP
+      IrmeVHfhkgurXSSl0NjwVk01N/UtCYsChBYYQXTd8KrxiKi+txFf57acdbRbXNScigapIAhXZbpZGUIjyW9UMLkJ6QU11zGJfed2DLkl+c/oF4W6a6x4AihV7NjS+VEZRePQhXvMADL95+l7xoZfnHW56AR3jE7MKZpykzE
+      GY0J3f7QGeQ+h66oBcqxuE85S6/DviEpH1lIjTB0JwEwPC+cBuvhst1U3sXiFeVcnrxt5dQMKQOcfm9KJFV7MCaoLUAWRUsTW02RIY+5PvDTDSWiri15CBj6mWFo1Iz+3VBJpNxebY2dl363HzhlkMKwMHPPDyjU9z1+E+Y
+      qoZVgHshwQQpqku2iSFSK/O3Lc="
+
+
+after_success: codeclimate-test-reporter
+
+language: ruby
+rvm:
+  - 2.5.0
+
+cache: bundler
+
+services: postgresql
+
+before_install:
+  - gem update --system
+  - gem install bundler
+
+
+script:
+ - bundle exec rake db:create
+ - bundle exec rake db:migrate
+ - bundle exec rspec spec
