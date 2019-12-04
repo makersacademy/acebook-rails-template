@@ -1,0 +1,21 @@
+<header>
+  <%= render 'layouts/header' %>
+</header>
+
+<div class="container">
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+      <br>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+      <br>
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+    <br>
+    <p>New user? <%= link_to "Join Now", signup_path %></p>
+  </div>
+</div>
+
