@@ -757,8 +757,8 @@
         null,
         null,
         null,
-        1,
-        1,
+        null,
+        null,
         null
       ],
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/models/post_spec.rb": [
@@ -775,18 +775,18 @@
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/models/user_spec.rb": [
         1,
         null,
-        1,
-        1,
+        null,
+        null,
         null
       ],
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/views/welcome/index.html.erb_spec.rb": [
         1,
         null,
-        1,
-        1,
+        null,
+        null,
         null
       ]
     },
-    "timestamp": 1575470634
+    "timestamp": 1575471586
   }
 }
