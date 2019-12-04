@@ -4,7 +4,7 @@ language: ruby
 #       report_token:
 #         secure: "token_goes_here_encrypted"
 
-before install:
+before_install:
     - gem install bundler
 
 after_success:
