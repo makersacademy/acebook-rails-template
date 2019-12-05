@@ -5,9 +5,8 @@
 <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
 
 <% @posts.each do |post| %>
+  <p><%= (post.created_at).strftime("%l:%M%P %-d-%B-%Y") %></p>
   <p class="post" ><%= post.message %></p>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<%= button_to "New posts", new_post_path, :method => :get %>
