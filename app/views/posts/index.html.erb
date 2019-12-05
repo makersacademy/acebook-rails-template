@@ -5,7 +5,6 @@
   <title>Posts Dashboard</title>
 </head>
 <body>
-<div class = "bg">
   
   <h2> Welcome <%= current_user.first_name + " " + current_user.surname %> </h2>
 
@@ -52,10 +51,16 @@
         <div class = "post-created-at">
         <%= post.created_at.strftime("Posted at: %H:%M on %A %d %B, %y") %>
         </div>
+      
+      <div class = "Post-buttons">
+        <%= link_to 'Update', "https://www.spotify.com/uk/" %>
+        <button>Delete</button>
+      </div>
+      
       </p>
       <% end %>
     </div>
-</div>
+
 
 </body>
 </html>

@@ -4,8 +4,10 @@
   <meta charset="utf-8">
   <title></title>
 </head>
-<body bgcolor="gray">
-  <nav class="navbar navbar-default navbar-light bg-light">
+
+<body>
+
+  <nav class="navbar navbar-default navbar-light">
     <div class="container">
       <div class="navbar-header">
         <button id='navdropdown' type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-top">
@@ -15,6 +17,7 @@
         <%= link_to "Home", root_url, class: "navbar-brand" %>
         <%= link_to "Posts", "/posts", class: "navbar-brand" %>
       </div>
+
       <div class="collapse navbar-collapse" id="navbar-top">
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
@@ -27,9 +30,12 @@
       </div>
     </div>
   </nav>
+ 
   <h1>Snazziest of Books</h1>
+  
   <% if user_signed_in? %>
   <p> Welcome <%= current_user.first_name + " " + current_user.surname %> </p>
   <% end %>
+
 </body>
 </html>
