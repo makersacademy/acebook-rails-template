@@ -5,10 +5,8 @@ RSpec.describe Post, type: :model do
 
   context '#sortedbymostrecent' do
     it "returns posts in reverse chronological order" do
-      post1 = Post.create(message: "hello")
-      post2 = Post.create(message: "world")
-      post3 = Post.create(message: "Bye")
-      expect(Post.sortedbymostrecent).to eq([post3, post2, post1])
+      add_posts_to_database
+      expect(Post.sortedbymostrecent).to eq(Post.all.reverse)
     end
   end
 
