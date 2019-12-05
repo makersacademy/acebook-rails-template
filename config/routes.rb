@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   resources :posts
   root 'posts#index'
 
+  # get 'users/:id/posts' => 'users#posts', :as => :user_posts
+
+
 end
