@@ -7,6 +7,8 @@ require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'devise'
+#load the db/seed data before each test
+Rails.application.load_seed
 require 'simplecov'
 SimpleCov.start
 
