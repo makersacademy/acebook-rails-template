@@ -1,7 +1,11 @@
+<head>
+  <link rel="stylesheet" type="text/css" rel="posts.css">
+</head>
+
 <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
 
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p class="post" ><%= post.message %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
