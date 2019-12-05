@@ -1,6 +1,7 @@
 <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
 
 <% @posts.each do |post| %>
+  <p><%= (post.created_at).strftime("%l:%M%P %-d-%B-%Y") %></p>
   <p><%= post.message %></p>
 <% end %>
 
