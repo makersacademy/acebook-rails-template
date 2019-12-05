@@ -11,10 +11,32 @@
   <body>
     <header>
       <div class="topnav">
-        <a class="active" href="#home">Home</a>
+        <a class="active" href="/">Home</a>
+        <% if user_signed_in? %>
+          Logged in as <strong><%= current_user.email %></strong>.
+          <%= link_to 'Edit profile', edit_user_registration_path %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path%>
+          <%= link_to "Login", new_user_session_path  %>
+        <% end %>
+
+        <!-- <a class="active" href='/users/sign_up'>Sign up</a>
+        <a class="active" href='/users/sign_in'>Log in</a> -->
+<!--
         <a href="#post">Post</a>
-      <a href="#friends">Friends</a>
+      <a href="#friends">Friends</a> -->
       </div>
+
+
     </header>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
+
   </body>
