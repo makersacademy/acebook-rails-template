@@ -19,9 +19,10 @@
       <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" <%= link_to('Sign out', destroy_user_session_path, method: :delete) %> </a>
   </nav>
 
+    <center><p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p></center>
+
     <%= yield %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
   </html>
