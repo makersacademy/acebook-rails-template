@@ -5,7 +5,10 @@
 <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
 
 <% @posts.each do |post| %>
-  <p class="post" ><%= post.message %></p>
+<% if current_user.id == post.user.id && %>
+  <p>EDIT</p>
+<% end %>
+  <p class="post" ><%= post.message %> (<%= post.user.email %>)</p>
 <% end %>
 
 <%= link_to new_post_path do %>
