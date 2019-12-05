@@ -11,7 +11,14 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  #Devise methods
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :surname])
   end
+
+  def after_sign_in_path_for(resource)
+   :posts
+  end
+  #end of devise methods
+
 end
