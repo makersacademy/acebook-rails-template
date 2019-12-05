@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
+  get 'welcome/index'
 
-  resources :posts
+
+  # Resource routing allows you to quickly declare all of the common routes for a given resourceful controller. 
+  # Instead of declaring separate routes for your index, show, new, edit, create, update and destroy actions, 
+  # a resourceful route declares them in a single line of code.
+  resources :posts, :users
+
+  # delete 'users/sign_out'
+  root 'welcome#index'
+
 end
