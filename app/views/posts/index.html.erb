@@ -5,12 +5,14 @@
 <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
 
 <% @posts.each do |post| %>
-<% if current_user.id == post.user.id && %>
-  <p>EDIT</p>
-<% end %>
-  <p class="post" ><%= post.message %> (<%= post.user.email %>)</p>
+
+<% if current_user == post.user.id %>
+<p>EDIT</p>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<p><%= (post.created_at).strftime("%l:%M%P %-d-%B-%Y") %></p>
+<p class="post" ><%= post.message %> (<%= post.user.email %>)</p>
+
 <% end %>
+
+<%= button_to "New posts", new_post_path, :method => :get %>
