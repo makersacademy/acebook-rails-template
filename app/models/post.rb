@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-  # belongs_to :user #BREAKS POSTING FOR SOME REASON
+  belongs_to :user 
 end
