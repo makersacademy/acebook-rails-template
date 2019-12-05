@@ -2,6 +2,7 @@
 
 <p>
 <% @posts.each do |post| %>
+<%= post.linebreak %>
   <% post.linebreak.each do |sortpost| %>
     <%= sortpost %> <br>
   <% end %>

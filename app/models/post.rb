@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
 
   def self.sortedbymostrecent
-    self.all.sort_by { |sorted| sorted[:created_at] }.reverse!
+    self.all.sort_by { |post| post[:created_at] }.reverse
   end
 
   def linebreak
