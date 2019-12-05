@@ -2,7 +2,7 @@
   <%= form.label :username %>
   <%= form.text_field :username %><p>
   <%= form.label :message %>
-  <%= form.text_field :message %>
+  <%= form.text_area :message %>
 
   <%= form.submit "Submit" %>
 <% end %>
@@ -10,7 +10,7 @@
 <% @posts.each do |post| %>
   <ul>
   <b><p><li><%= post.username %></li></p></b>
-      <p><%= post.message %></p>
+      <p><%= simple_format(post.message) %></p>
       <p><%= post.created_at %></p>
       <p></p>
       <br>
