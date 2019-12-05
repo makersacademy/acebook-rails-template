@@ -37,3 +37,19 @@
   background-color: #A8B8D6;
   color: #563d7c;
 }
+
+.signup-page {
+  text-align: center;
+}
+
+.signin-page {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+h2 {
+  font-family: 'Permanent Marker', cursive;
+}
