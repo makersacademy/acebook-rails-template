@@ -1,12 +1,16 @@
 
 <html>
 <head>
+
   <title>Posts Dashboard</title>
 </head>
 <body>
+<div class = "bg">
+  
   <h2> Welcome <%= current_user.first_name + " " + current_user.surname %> </h2>
 
-  <nav class="navbar navbar-default navbar-light bg-light">
+<div class = "nav">
+  <nav class="navbar navbar-default navbar-light">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-top">
@@ -15,7 +19,10 @@
         </button>
         <%= link_to "Home", root_url, class: "navbar-brand" %>
         <%= link_to "Posts", "/posts", class: "navbar-brand" %>
+        <%= link_to "New Post", "/posts/new", class: "navbar-brand" %>
+
       </div>
+      
       <div class="collapse navbar-collapse" id="navbar-top">
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
@@ -28,23 +35,28 @@
       </div>
     </div>
   </nav>
-  <p> Welcome <%= current_user.first_name + " " + current_user.surname %> </p>
-  <% all_posts = @posts.sort_by { |sorted| sorted[:created_at] }.reverse! %>
-  <p>
-    <% @posts.each do |post| %>
-    <% post.linebreak.each do |sortpost| %>
-    <%= sortpost %> <br>
-    <% end %>
-    <%= post.created_at.strftime("Posted at: %H:%M on %A %d %B, %y") %>
-  </p>
-  <% end %>
+</div>
 
 
-  <%= link_to new_post_path do %>
-  New post
-  <% end %>
-  <br>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+<h2>Posts</h2>
+  
+    <div class = "post"> 
+      <% all_posts = @posts.sort_by { |sorted| sorted[:created_at] }.reverse! %>
+        <% @posts.each do |post| %>
+      <p class = "single-post">
+        <% post.linebreak.each do |sortpost| %>
+      <div class = "post-text">
+        <%= sortpost %> <br>
+      </div>
+        <% end %>
+        <div class = "post-created-at">
+        <%= post.created_at.strftime("Posted at: %H:%M on %A %d %B, %y") %>
+        </div>
+      </p>
+      <% end %>
+    </div>
+</div>
+
 </body>
 </html>
 
