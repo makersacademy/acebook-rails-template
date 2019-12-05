@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body bgcolor="gray">
+  <nav class="navbar navbar-default navbar-light bg-light">
+    <div class="container">
+      <div class="navbar-header">
+        <button id='navdropdown' type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-top">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <%= link_to "Home", root_url, class: "navbar-brand" %>
+        <%= link_to "Posts", "/posts", class: "navbar-brand" %>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-top">
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+          <li id='Sign out'><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
+          <% else %>
+          <li id='Sign up'><%= link_to 'Sign up', new_user_registration_path %></li>
+          <li id='Sign in'><%= link_to 'Sign in', user_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <h1>Snazziest of Books</h1>
+  <% if user_signed_in? %>
+  <p> Welcome <%= current_user.first_name + " " + current_user.surname %> </p>
+  <% end %>
+</body>
+</html>

@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :redirect_if_user_is_not_signed_in
+
   def new
     @post = Post.new
   end
@@ -9,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.sortedbymostrecent
   end
 
   private
