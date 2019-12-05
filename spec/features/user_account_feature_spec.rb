@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Sign Up", type: :feature do
+RSpec.feature "User Account Features", type: :feature do
   scenario "Can sign up" do
     sign_up
     expect(page).to have_content("Welcome Gandalf The Grey")
@@ -15,6 +15,15 @@ RSpec.feature "Sign Up", type: :feature do
     click_on "Log in"
     expect(page).to have_content("Welcome Gandalf The Grey")
   end
+
+  scenario "if no user if signed in you will always be redirected to home page" do
+    visit '/posts'
+    expect(page).to have_button("Sign Up")
+    visit '/posts/new'
+    expect(page).to have_button("Sign Up")
+  end
+
+
 
 
 end
