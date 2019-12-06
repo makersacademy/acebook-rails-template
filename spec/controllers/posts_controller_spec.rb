@@ -1,17 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  describe "POST /" do
-    before(:all) do
-      FactoryBot.define do
-        factory :user do
-          email { "test@email.com" }
-          password  { "testtest" }
-          username { "testusername" }
-        end
+
+  before(:all) do
+    FactoryBot.define do
+      factory :user do
+        email { "test@email.com" }
+        password  { "testtest" }
+        username { "testusername" }
       end
     end
+  end
 
+  describe "POST /" do
     before(:each) do
       user = create(:user)
       sign_in user
@@ -35,5 +36,16 @@ RSpec.describe PostsController, type: :controller do
       get :index
       expect(response).to have_http_status(302)
     end
+
+    it "index responds with 200 when logged in" do
+      user = create(:user)
+      sign_in user
+
+      get :index
+      expect(response).to have_http_status(200)
+    end
+
   end
+
+
 end
