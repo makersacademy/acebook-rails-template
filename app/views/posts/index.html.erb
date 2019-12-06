@@ -1,7 +1,9 @@
 
 <% @posts.each do |post| %>
-  <p><%= (post.created_at).strftime("%l:%M%P %-d-%B-%Y") %></p>
-  <p class="post" ><%= post.message %></p>
+  <div class="container">
+  <p class="datetime"><%= (post.created_at).strftime("%l:%M%P %-d-%B-%Y") %></p>
+  <p class="post"><%= post.message %></p>
+  </div>
 <% end %>
 
-<%= button_to "New posts", new_post_path, :method => :get %>
+<center><%= button_to "New post", new_post_path, :method => :get %></center>

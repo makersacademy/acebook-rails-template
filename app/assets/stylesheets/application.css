@@ -53,3 +53,13 @@ h1 {
 h2 {
   font-family: 'Permanent Marker', cursive;
 }
+
+.container {
+  background-color: white;
+  opacity: 65%;
+  width: 500px;
+}
+
+.new-post {
+  align: center;
+}

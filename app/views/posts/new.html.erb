@@ -1,10 +1,13 @@
-
-
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-
-  <%= form.submit "Submit" %>
-<% end %>
-
-<%= button_to "View posts", posts_path, :method => :get %>
+<center>
+  <%= form_for @post do |form| %>
+    <h2><%= form.label :message %></h2>
+    <br>
+    <div class="text_field">
+    <%= form.text_field :message, :size=>"75" %>
+    </div>
+    <br><br>
+    <%= form.submit "Submit" %>
+  <% end %>
+  <br>
+  <%= button_to "View posts", posts_path, :method => :get %>
+</center>
