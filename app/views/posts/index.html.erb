@@ -54,7 +54,7 @@
 
       <div class = "Post-buttons">
         <%= link_to 'Update', "" %>
-        <button>Delete</button>
+        <%= link_to('Delete', "/posts/#{post.id}", url_options = {method: "delete"}) %>
       </div>
 
     </p>
