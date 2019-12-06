@@ -3,11 +3,11 @@ class PostsController < ApplicationController
   before_action :redirect_if_user_is_not_signed_in
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = current_user.posts.create(post_params)
     redirect_to posts_url
   end
 

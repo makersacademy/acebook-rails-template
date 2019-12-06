@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  belongs_to :user
 
   def self.sortedbymostrecent
     self.all.sort_by { |sorted| sorted[:created_at] }.reverse!
