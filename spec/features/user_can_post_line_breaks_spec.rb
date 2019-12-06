@@ -2,12 +2,15 @@
 
 require 'rails_helper'
 
-
-
 RSpec.feature "Post", type: :feature do
-
-  before(:all) do
+  before(:each) do
     Capybara.current_driver = :selenium
+  end
+
+  RSpec.configure do |config|
+    config.before(:each, type: :system) do
+      driven_by :selenium, using: :chrome, options: {args: ["headless", "disable-gpu", "no-sandbox"]}
+    end
   end
 
   scenario "Can submit posts with line breaks" do
@@ -15,8 +18,6 @@ RSpec.feature "Post", type: :feature do
     fill_in "post_username", with: "Test Robot"
     fill_in "post_message", with: "Hello\n world!"
     click_button "Submit"
-    # expect(page.html).to include('Hello')
-    # expect(page.html).to include('<br> world!')
     expect(page.html).to match(/Hello\s*<br>\s*world!/)
   end
 
