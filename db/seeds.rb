@@ -5,8 +5,8 @@ User.destroy_all
 Post.destroy_all
 
 
-user1 = User.create({email: 'elfi@test.com', password: '1234567'})
-user2 = User.create({email: 'angela@test.com', password: 'password'})
+user1 = User.create({email: 'elfi@test.com', password: '1234567', username: "elfi"})
+user2 = User.create({email: 'angela@test.com', password: 'password', username: "angela"})
 # user3 = User.create({username: 'sam', email: 'sam@test.com', password: 'password'})
 
 posts = [

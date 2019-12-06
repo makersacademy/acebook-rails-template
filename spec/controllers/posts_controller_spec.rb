@@ -8,9 +8,10 @@ RSpec.describe PostsController, type: :controller do
 
     it "redirects to index" do
       #trying to sign in for tests
-      @request.env['devise.mapping'] = Devise.mappings[:user]
-      sign_in @user, scope: :admin
-      
+      # @request.env['devise.mapping'] = Devise.mappings[:user]
+      sign_in user1 
+      # scope: :admin
+
       post :create, params: { post: { message: "Hello, world!", username: "Jo33" } }
       get :index
       expect(response).to redirect_to(posts_url)

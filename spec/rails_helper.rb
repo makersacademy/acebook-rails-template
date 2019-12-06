@@ -9,6 +9,7 @@ require 'rspec/rails'
 require 'devise'
 #load the db/seed data before each test
 Rails.application.load_seed
+# require_relative '../db/seeds'
 require 'simplecov'
 SimpleCov.start
 
