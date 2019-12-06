@@ -18,4 +18,5 @@ Install the following in command line:
 
 * [Day 1 Blog by Liat](https://medium.com/@acebook.makers/creation-of-acebook-5345aa4ef6ab)
 * [Day 2 Blog by Topher](https://medium.com/@acebook.makers/setting-up-ci-discovering-devise-103044c0415e)
-* [Day 3 by Ellie](https://medium.com/@acebook.makers/day-3-rail-up-for-the-magical-mystery-tour-3a377fbd683b)
+* [Day 3 Blog by Ellie](https://medium.com/@acebook.makers/day-3-rail-up-for-the-magical-mystery-tour-3a377fbd683b)
+* [Day 4 Blog by Alex](https://medium.com/@acebook.makers/please-keep-your-arms-and-legs-inside-the-rollercoaster-at-all-times-enjoy-the-ride-8b7948e5a807)
