@@ -22,3 +22,13 @@ RSpec.describe Post, type: :model do
     end
   end
 end
+
+
+
+<% @posts.each do |post| %>
+  <% post.linebreak.each do |sortpost| %>
+    <%= sortpost %> <br>
+  <% end %>
+  <%= post.created_at.strftime("Posted at: %H:%M on %A %d %B, %y") %>
+  <br>
+<% end %>
