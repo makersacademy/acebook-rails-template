@@ -1,18 +1,14 @@
-<head>
-  <link rel="stylesheet" type="text/css" rel="posts.css">
-</head>
-
-<%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
 
 <% @posts.each do |post| %>
-
+  <div class="container">
 <p><%= (post.created_at).strftime("%l:%M%P %-d-%B-%Y") %></p>
 <p class="post" ><%= post.message %> (<%= post.user.email %>)</p>
 <% if current_user.id == post.user.id %>
 <%= link_to 'Edit Post', edit_post_path(post) %>
 <%= link_to 'Delete', post, method: :delete, data: {confirm: "Are you sure?"} %>
 <% end %>
+  </div>
 
 <% end %>
 
-<%= button_to "New posts", new_post_path, :method => :get %>
+<center><%= button_to "New post", new_post_path, :method => :get %></center>
