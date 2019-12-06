@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-before_action :set_post, only: [:show, :edit, :destroy]
+before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def new
     @post = current_user.posts.build
@@ -18,6 +18,21 @@ before_action :set_post, only: [:show, :edit, :destroy]
   end
 
   def edit
+  end
+
+  def update
+  @post = Post.find(params[:id])
+  p @post
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
