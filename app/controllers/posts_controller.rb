@@ -22,22 +22,16 @@ class PostsController < ApplicationController
   def show
     @posts = Post.all.reverse
     render 'index'
-    flash[:success] = "Post updated!"
   end
 
   def destroy
     post.destroy
-    flash[:success] = "Post successfully deleted."
     redirect_to root_url
   end
 
   def update
-    if post.update_attributes(post_params)
-      flash[:success] = "Post updated!"
-      redirect_to post
-    else
-      render 'edit'
-    end
+    post.update_attributes(post_params)
+    redirect_to post
   end
 
   private
