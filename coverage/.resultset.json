@@ -81,12 +81,16 @@
       ],
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/environment.rb": [
         null,
+        null,
+        null,
         1,
         null,
         null,
         1
       ],
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/application.rb": [
+        null,
+        null,
         1,
         null,
         1,
@@ -107,11 +111,15 @@
         null
       ],
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/boot.rb": [
+        null,
+        null,
         1,
         null,
         1
       ],
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/environments/test.rb": [
+        null,
+        null,
         1,
         null,
         null,
@@ -161,9 +169,13 @@
         null,
         null,
         null,
+        null,
+        null,
         null
       ],
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/assets.rb": [
+        null,
+        null,
         null,
         null,
         null,
@@ -186,9 +198,13 @@
         null,
         null,
         null,
+        null,
+        null,
         null
       ],
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/cookies_serializer.rb": [
+        null,
+        null,
         null,
         null,
         null,
@@ -500,9 +516,12 @@
         null,
         null,
         null,
+        null,
         1
       ],
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/inflections.rb": [
+        null,
+        null,
         null,
         null,
         null,
@@ -524,9 +543,13 @@
         null,
         null,
         null,
+        null,
+        null,
         null
       ],
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/wrap_parameters.rb": [
+        null,
+        null,
         null,
         null,
         null,
@@ -543,6 +566,8 @@
         null
       ],
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/routes.rb": [
+        null,
+        null,
         1,
         1,
         null,
@@ -839,6 +864,6 @@
         null
       ]
     },
-    "timestamp": 1575642029
+    "timestamp": 1575645071
   }
 }
