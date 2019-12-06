@@ -24,15 +24,8 @@ before(:all) do
 end
 
   before(:each) do
-<<<<<<< HEAD
     sign_in user
     user_post = create(:post, user_id: user.id)
-=======
-    current_user = double('user')
-    allow(request.env['warden']).to receive(:authenticate!).and_return(current_user)
-    allow(controller).to receive(:current_user).and_return(current_user)
-    allow(current_user).to receive(:posts)
->>>>>>> e3b3cbf51fb14e235f0b3de054d8711cdc5e8a54
   end
 
   describe 'GET #edit' do
@@ -57,7 +50,6 @@ end
     end
   end
 
-<<<<<<< HEAD
 
   describe "POST /" do
     it "creates a post" do
@@ -65,19 +57,6 @@ end
       expect(Post.find_by(message: "Hello, world!")).to be
     end
   end
-=======
-  # describe "POST /" do
-  #   it "responds with 200" do
-  #     post :create, params: { post: { message: "Hello, world!" } }
-  #     expect(response).to redirect_to(posts_url)
-  #   end
-  #
-  #   it "creates a post" do
-  #     post :create, params: { post: { message: "Hello, world!" } }
-  #     expect(Post.find_by(message: "Hello, world!")).to be
-  #   end
-  # end
->>>>>>> e3b3cbf51fb14e235f0b3de054d8711cdc5e8a54
 
     describe 'when edit post info is valid' do
       it 'updates the post' do
