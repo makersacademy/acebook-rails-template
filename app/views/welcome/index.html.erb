@@ -1,5 +1,7 @@
 <h1>Welcome</h1>
 
-<%= form_with scope: :posts, local: true, url: destroy_user_session_path, method: "delete" do |form| %>
-  <%= form.submit "Sign out"%>
+<% if user_signed_in? %>
+<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+<% else %>
+<%= link_to('Login', new_user_session_path) %>
 <% end %>

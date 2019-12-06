@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+before_action :set_post, only: [:show, :edit, :update, :destroy]
+
   def new
     @post = current_user.posts.build
   end
@@ -9,10 +11,35 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = current_user.posts.order(created_at: :desc)
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+  @post = Post.find(params[:id])
+  p @post
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:id, :message, :user_id)
