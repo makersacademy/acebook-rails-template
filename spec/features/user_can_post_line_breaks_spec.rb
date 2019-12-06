@@ -8,7 +8,6 @@ RSpec.feature "Post", type: :feature do
   end
   scenario "Can submit posts with line breaks" do
     visit "/"
-    fill_in "post_username", with: "Test Robot"
     fill_in "post_message", with: "Hello\n world!"
     click_button "Submit"
     expect(page.html).to match(/Hello\s*<br>\s*world!/)
