@@ -11,6 +11,6 @@ RSpec.feature "Sign Up", type: :feature do
     fill_in "First name", with: "Gandalf"
     fill_in "Surname", with: "The Grey"
     click_button "Sign up"
-    expect(page).to have_content("Welcome Gandalf The Grey")
+    expect(page).to have_content("Posts")
   end
 end

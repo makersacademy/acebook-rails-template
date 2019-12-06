@@ -4,7 +4,7 @@ require 'web_helpers'
 RSpec.feature "User Account Features", type: :feature do
   scenario "Can sign up" do
     sign_up
-    expect(page).to have_content("Welcome Gandalf The Grey")
+    expect(page).to have_content("Posts")
   end
 
   scenario "Can sign in" do
@@ -16,7 +16,7 @@ RSpec.feature "User Account Features", type: :feature do
     fill_in "Email", with: "gandalf@middleearth.org"
     fill_in "Password", with: "shadowfax"
     click_on "Log in"
-    expect(page).to have_content("Gandalf The Grey")
+    expect(page).to have_content("Posts")
   end
 
   # scenario "if no user if signed in you will always be redirected to home page" do
