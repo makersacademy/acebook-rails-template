@@ -33,6 +33,20 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+
+  def destroy
+    @post = Post.find(params[:id])
+    if current_user == @post.user
+      @post.destroy
+      redirect_to posts_url
+    else
+      flash[:alert] = "Error, you can't delete this post"
+      redirect_to post_url
+    end
+  end
+
+
+
   private
 
   def post_params
