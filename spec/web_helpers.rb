@@ -2,7 +2,7 @@ def sign_up
   visit "/"
   click_button "navdropdown"
   click_link "Sign up"
-  fill_in "Email", with: "gandolf@middleearth.org"
+  fill_in "Email", with: "gandalf@middleearth.org"
   fill_in "Password", with: "shadowfax"
   fill_in "Password confirmation", with: "shadowfax"
   fill_in "First name", with: "Gandalf"

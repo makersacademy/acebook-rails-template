@@ -8,12 +8,14 @@ RSpec.feature "Sign Up", type: :feature do
 
   scenario "Can sign in" do
     sign_up
-    click_on "Logout"
-    click_on "Sign In"
+    click_on "navdropdown"
+    click_on "Sign out"
+    click_on "navdropdown"
+    click_on "Sign in"
     fill_in "Email", with: "gandalf@middleearth.org"
-    fill_in "Password", with: "shadowfangs"
+    fill_in "Password", with: "shadowfax"
     click_on "Log in"
-    expect(page).to have_content("Welcome Gandalf The Grey")
+    expect(page).to have_content("Gandalf The Grey")
   end
 
 
