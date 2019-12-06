@@ -1,12 +1,45 @@
-<h1>Acebook</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
 
-<% if !user_signed_in? %>
-  <form class="signInButton" action="/users/sign_in" method="get">
-    <input type="submit" name="Sign In" value="Sign In">
-  </form>
-  <form class="signUpButton" action="/users/sign_up" method="get">
-    <input type="submit" name="Sign Up" value="Sign Up">
-  </form>
-<% else %>
+<body>
+
+  <div class = "nav">
+    <nav class="navbar navbar-default navbar-light">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-top" id="navdropdown">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <%= link_to "Home", root_url, class: "navbar-brand" %>
+          <%= link_to "Posts", "/posts", class: "navbar-brand" %>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-top">
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+            <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
+            <% else %>
+            <li><%= link_to 'Sign up', new_user_registration_path %></li>
+            <li><%= link_to 'Sign in', user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <br>
+  <br>
+  <br>
+  <h1>Snazziest of Books</h1>
+
+  <% if user_signed_in? %>
   <p> Welcome <%= current_user.first_name + " " + current_user.surname %> </p>
-<% end %>
+  <% end %>
+
+</body>
+</html>
