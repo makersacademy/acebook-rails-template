@@ -23,6 +23,7 @@ Our team includes:
 
 ## Install Instructions
 
+Fork and clone this repository.
 Install the following in command line:
 ```bash
 > bundle install
