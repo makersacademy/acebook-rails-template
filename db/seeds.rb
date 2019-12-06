@@ -9,8 +9,8 @@ user1 = User.create({email: 'elfi@test.com', password: '1234567', username: "elf
 user2 = User.create({email: 'angela@test.com', password: 'password', username: "angela"})
 
 posts = [
-  {message: 'What do sprinters eat before a race? Nothing, they fast!', username: "elfi", user_id: user1.id},
-  {message: 'Why did the scarecrow win an award? Because he was outstanding in his field!',username: "angela", user_id: user2.id}
+  {message: 'What do sprinters eat before a race? Nothing, they fast!', user_id: user1.id},
+  {message: 'Why did the scarecrow win an award? Because he was outstanding in his field!', user_id: user2.id}
  ]
 
 posts.each do |post|
