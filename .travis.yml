@@ -4,8 +4,9 @@ env:
 
 addons:
     apt:
-      - google-chrome-stable
+    #   - google-chrome-stable
       - chromium-chromedriver
+    chrome: stable
 
 
 language: ruby
