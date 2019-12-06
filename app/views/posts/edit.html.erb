@@ -1,7 +1,5 @@
 <h1>Edit Post</h1>
-  <% if flash[:alert] %>
-    <div class="notice"><%= flash[:alert] %></div>
-  <% end %>
+  
 <%= form_with(model: @post, local: true) do |form|%>
 
   <%= form.label :message %>

@@ -558,6 +558,7 @@
         null,
         1,
         null,
+        1,
         null
       ],
       "/Users/fayhussein/acebook-AceofBaseBook/app/models/application_record.rb": [
@@ -614,12 +615,12 @@
         1,
         1,
         1,
-        1,
+        0,
         null,
         null,
         1,
         1,
-        1,
+        0,
         null,
         null,
         null,
@@ -640,8 +641,27 @@
         null,
         null,
         1,
+        0,
+        null,
+        null,
+        1,
         3,
-        3,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
         null,
         null,
         1,
@@ -776,6 +796,8 @@
       ],
       "/Users/fayhussein/acebook-AceofBaseBook/app/models/post.rb": [
         1,
+        1,
+        null,
         null
       ],
       "/Users/fayhussein/acebook-AceofBaseBook/spec/models/user_spec.rb": [
@@ -793,6 +815,6 @@
         null
       ]
     },
-    "timestamp": 1575557703
+    "timestamp": 1575641256
   }
 }

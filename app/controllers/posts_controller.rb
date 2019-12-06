@@ -20,7 +20,8 @@ class PostsController < ApplicationController
       @post.update(post_params)
       redirect_to posts_url
     else
-      flash[:alert] = "Can't update, not post owner."
+      flash[:alert] = "Error, this is not your post"
+      redirect_to post_url
     end
   end
 
