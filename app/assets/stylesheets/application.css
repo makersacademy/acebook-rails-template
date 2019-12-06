@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+
+ /* checking for solutions to be able to include line breaks in posts */
+/* white-space: pre-line; */

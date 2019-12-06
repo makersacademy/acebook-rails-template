@@ -259,6 +259,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  backports
   byebug
   capybara (~> 2.13)
   devise
