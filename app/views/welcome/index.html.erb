@@ -1,5 +1,6 @@
 
 <header>
+  <div class="container">
   <nav class='site_nav'>
     <ul>
       <li><%= link_to('Sign up', new_user_registration_path, :method => 'get') %></li>
@@ -7,6 +8,7 @@
       <li><%= link_to('Sign out',  destroy_user_session_path, :method => 'delete') %></li>
     </ul>
   </nav>
+  </div>
 </header>
 
 
