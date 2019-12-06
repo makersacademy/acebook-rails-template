@@ -1,6 +1,7 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %> by
-  <%= post.user.first %></p>
+  <p><%= post.message %> posted by
+<%= post.user.first %> at
+    <%= post.created_at %> </p>
 
 <% end %>
 

@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = current_user.posts
+    @posts = current_user.posts.order(created_at: :desc)
   end
 
   private
