@@ -2,18 +2,24 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   describe "POST /" do
-    # before do
-    #   sign_in @user
-    # end
+    before(:all) do
+      FactoryBot.define do
+        factory :user do
+          email { "test@email.com" }
+          password  { "testtest" }
+          username { "testusername" }
+        end
+      end
+    end
+
+    before(:each) do
+      user = create(:user)
+      sign_in user
+    end
+
 
     it "redirects to index" do
-      #trying to sign in for tests
-      # @request.env['devise.mapping'] = Devise.mappings[:user]
-      sign_in user1 
-      # scope: :admin
-
       post :create, params: { post: { message: "Hello, world!", username: "Jo33" } }
-      get :index
       expect(response).to redirect_to(posts_url)
     end
 
