@@ -7,6 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'simplecov'
+require 'capybara'
 SimpleCov.start
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -36,6 +37,12 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+  # This block configures Caypbara's driver to use Selenium
+  # It makes it use the chrome browser, but can also be
+  #  configured to user Firefox, etc.
+  Capybara.register_driver :selenium do |app|
+    Capybara::Selenium::Driver.new(app, browser: :chrome)
+  end
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
