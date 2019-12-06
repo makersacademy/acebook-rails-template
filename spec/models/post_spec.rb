@@ -1,13 +1,16 @@
 require 'rails_helper'
 
+
 RSpec.describe Post, type: :model do
 
+#factory bot
 
   context '#sortedbymostrecent' do
     it "returns posts in reverse chronological order" do
-      post1 = Post.create(message: "hello")
-      post2 = Post.create(message: "world")
-      post3 = Post.create(message: "Bye")
+      user = create(:user)
+      post1 = user.posts.create(message: "hello")
+      post2 = user.posts.create(message: "world")
+      post3 = user.posts.create(message: "Bye")
       expect(Post.sortedbymostrecent).to eq([post3, post2, post1])
     end
   end

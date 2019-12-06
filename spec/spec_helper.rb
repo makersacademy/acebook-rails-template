@@ -19,6 +19,8 @@
 require 'rubocop'
 require 'simplecov'
 require 'simplecov-console'
+require_relative 'web_helpers'
+require_relative 'db_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
