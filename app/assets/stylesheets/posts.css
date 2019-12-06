@@ -1,72 +1,73 @@
 
 .post{
-    background-color: White;
-    /* position: relative; */
+  background-color: White;
+  margin: 10px;
+  width: 500px;
+  text-align: center;
+  margin: auto;
+}
 
-    margin: 10px;
-    width: 500px;
-    /* box-shadow: 10px 10px purple; */
-    text-align: center;
-    margin: auto;
+.field{
+  background-color: DarkOrchid;
+  width: 25%;
+  margin-left: 10px;
+}
 
+.actions{
+  margin-left: 10px;
+  background-color: DarkOrchid;
+  width: 25%;
 }
 
 h2{
-    background-color: purple;
-    top: 0.5;
-    margin-top: 10px  ;
-    width: 100%;
-    /* position: fixed; */
-    /* margin: auto; */
+  background-color: DarkOrchid;
+  top: 0.5;
+  width: 25%;
+  margin: 10px;
+}
 
+h1{
+  background-color: DarkOrchid;
+  top: 0.5;
+  width: 25%;
+  margin: 10px;
 }
 
 .nav {
-    background-color: purple;
-
-    top: 0;
-    width: 100%;
-    position: fixed;
+  background-color: DarkOrchid;
+  top: 0;
+  width: 100%;
+  position: fixed;
 }
 
 .single-post {
-    /* position: relative; */
- 
-    width: 500px;
-    border-bottom: 4px solid purple;
-    /* border-radius: 5px; */
-    text-align: center;
+  width: 500px;
+  border-bottom: 4px solid DarkOrchid;
+  text-align: center;
 }
 
 
 .post-created-at{
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .post-text{
- 
-    font-size: 20px;
-
-    background: purple;
-    -webkit-border-radius: 4px;
-            border-radius: 4px;
-    font-size: 1.2rem;
-    line-height: 1.3;
-    margin: 0 auto 40px;
-    max-width: 400px;
-    padding: 15px;
-    position: relative;
- 
-    /* #efefef */
+  font-size: 20px;
+  background: DarkOrchid;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin: 0 auto 40px;
+  max-width: 400px;
+  padding: 15px;
+  position: relative;
 }
 
 body {
-    background-image: url("colorful-galaxy-digital-art.jpg");
-    
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    background-size: cover;
-    /* opacity: 0.75; */
-    height: 100%
+  background-image: url("cloud.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%
 }
