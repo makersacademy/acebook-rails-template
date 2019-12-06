@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-
   before(:each) do
     user = double('user')
     allow(request.env['warden']).to receive(:authenticate!).and_return(user)
