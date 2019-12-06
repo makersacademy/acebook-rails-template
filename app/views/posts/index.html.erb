@@ -46,8 +46,12 @@
       <td><%= post.user.first %>
           <%= post.user.last %></td>
       <td><%= post.created_at %></td>
+      <% created_at = post.created_at%>
+      <% current_time = Time.now %>
+      <% if current_time - created_at < 600 %>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <% end %>
       <td><%= link_to 'Show', post_path(post) %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
       <td><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
