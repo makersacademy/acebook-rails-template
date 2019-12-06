@@ -1,17 +1,66 @@
-<h2> Welcome <%= current_user.first_name + " " + current_user.surname %> </h2>
 
-<p>
-<% @posts.each do |post| %>
-  <% post.linebreak.each do |sortpost| %>
-    <%= sortpost %> <br>
-  <% end %>
-  <%= post.created_at.strftime("Posted at: %H:%M on %A %d %B, %Y") %>
-  </p>
-<% end %>
+<html>
+<head>
+
+  <title>Posts Dashboard</title>
+</head>
+<body>
+
+  <h2> Welcome <%= current_user.first_name + " " + current_user.surname %> </h2>
+
+  <div class = "nav">
+    <nav class="navbar navbar-default navbar-light">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-top" id="navdropdown">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <%= link_to "Home", root_url, class: "navbar-brand" %>
+          <%= link_to "Posts", "/posts", class: "navbar-brand" %>
+          <%= link_to "New Post", "/posts/new", class: "navbar-brand" %>
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-top">
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+            <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
+            <% else %>
+            <li><%= link_to 'Sign up', new_user_registration_path %></li>
+            <li><%= link_to 'Sign in', user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <br>
+  <h2>Posts</h2>
+
+  <div class = "post">
+    <% all_posts = @posts.sort_by { |sorted| sorted[:created_at] }.reverse! %>
+    <% @posts.each do |post| %>
+    <p class = "single-post">
+      <% post.linebreak.each do |sortpost| %>
+      <div class = "post-text">
+        <%= sortpost %> <br>
+      </div>
+      <% end %>
+      <div class = "post-created-at">
+        <%= post.created_at.strftime("Posted at: %H:%M on %A %d %B, %y") %>
+      </div>
+
+      <div class = "Post-buttons">
+        <%= link_to 'Update', "" %>
+        <button>Delete</button>
+      </div>
+
+    </p>
+    <% end %>
+  </div>
 
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-<br>
-<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+</body>
+</html>
