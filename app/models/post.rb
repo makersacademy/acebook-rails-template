@@ -9,8 +9,4 @@ class Post < ApplicationRecord
     self.message.split("\r\n")
   end
 
-  def edit(edited_message)
-    self.message = edited_message
-  end
-
 end
