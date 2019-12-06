@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.configure do |config|
-  config.before(:each, type: :system) do
+  config.before(:each, type: :feature) do
     driven_by :selenium, using: :chrome, options: {args: ["headless", "disable-gpu", "no-sandbox", "disable-dev-shm-usage"]}
   end
 end
