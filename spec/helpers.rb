@@ -4,6 +4,7 @@ def sign_up_user
   fill_in "Email", with: "beep@robot.com"
   fill_in "Password", with: "cyberdog"
   fill_in "Password confirmation", with: "cyberdog"
+  fill_in "Username", with: "Robot"
   click_button "Sign up"
 
 end
@@ -11,7 +12,6 @@ end
 def make_post
 
   visit '/'
-  fill_in "Username", with: "Robot"
   fill_in "Message", with: "Beep beep"
   click_button "Submit"
 

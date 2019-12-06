@@ -9,12 +9,13 @@ class PostsController < ApplicationController
 
   def index
     @post = current_user.posts.new
+    @username = current_user.username
     @posts = Post.all.order(created_at: :desc)
   end
 
   def show
+    @username = current_user.username
     @posts = current_user.posts.all.order(created_at: 'DESC')
-    p 'heloooooooooooo'
   end
 
   private

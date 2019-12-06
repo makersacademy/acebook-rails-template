@@ -20,14 +20,14 @@ RSpec.describe PostsController, type: :controller do
 
 
     it "redirects to index" do
-      post :create, params: { post: { message: "Hello, world!", username: "Jo33" } }
+      post :create, params: { post: { message: "Hello, world!" } }
       expect(response).to redirect_to(posts_url)
     end
 
     it "creates an entry in the database" do
-      post :create, params: { post: { message: "Hello, world!", username: "Jo33" } }
+      post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be
-      expect(Post.find_by(username: "Jo33")).to be
+      expect(User.find_by(username: "testusername")).to be
     end
   end
 
