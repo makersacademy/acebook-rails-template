@@ -13,7 +13,6 @@ RSpec.feature "Post", type: :feature do
     sign_up_user
     make_post
 
-    fill_in "Username", with: "Robot"
     fill_in "Message", with: "A later beep beep"
     click_button "Submit"
 
