@@ -22,7 +22,6 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def update
   @post = Post.find(params[:id])
-  p @post
     if @post.update(post_params)
       redirect_to @post
     else

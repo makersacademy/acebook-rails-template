@@ -18,15 +18,17 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
               </li>
+              <% if !user_signed_in? %>
                 <li class="nav-item">
                   <a class="nav-link" href="/users/sign_in">Login</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/users/sign_up">Sign Up</a>
                 </li>
-                <li class="nav-item float-left">
-                     <a class="nav-link" data-method="delete" href="/users/sign_out">Log Out</a>
-                </li>
+              <% end %>
+              <li class="nav-item float-left">
+                    <a class="nav-link" data-method="delete" href="/users/sign_out">Log Out</a>
+              </li>
             </ul>
           </div>
         </nav>
@@ -42,12 +44,20 @@
 
     <% @posts.each do |post| %>
     <tr>
+    <%day = Date.new(post.created_at.wday + 1).strftime("%a")%>
+    <% time_array = (post.created_at.to_s.split(" ")[1]).split(":") %>
+    <% time_string = "#{time_array[0]}:#{time_array[1]}" %>
+    <% date_string = "#{day} at #{time_string}" %>
      <td><%= (post.message.gsub("\r\n", '<br/>')).html_safe %></td>
       <td><%= post.user.first %>
           <%= post.user.last %></td>
-      <td><%= post.created_at %></td>
+      <td><%= date_string %></td>
+      <% created_at = post.created_at%>
+      <% current_time = Time.now %>
+      <% if current_time - created_at < 600 %>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <% end %>
       <td><%= link_to 'Show', post_path(post) %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
       <td><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
