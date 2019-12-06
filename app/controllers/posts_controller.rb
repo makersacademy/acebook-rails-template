@@ -1,8 +1,5 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
-
-
 
   def new
     @post = Post.new
@@ -19,10 +16,12 @@ class PostsController < ApplicationController
 
   def update
     @post =  Post.find(params[:id])
-
-    @post.update(post_params)
-    redirect_to posts_url
-
+    if current_user == @post.user
+      @post.update(post_params)
+      redirect_to posts_url
+    else
+      flash[:alert] = "Can't update, not post owner."
+    end
   end
 
   def show

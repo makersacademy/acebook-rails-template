@@ -1,9 +1,7 @@
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at.strftime("Posted on %d/%m/%Y") %></p>
-  <% if current_user == post.user %>
-    <p><%= link_to 'Edit', edit_post_path(post) %></p>
-  <% end %>
+  <p><%= link_to 'Edit', edit_post_path(post) %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
