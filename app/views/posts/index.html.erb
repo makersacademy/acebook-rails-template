@@ -1,7 +1,8 @@
 <% @posts.each do |post| %>
   <p><%= post.message %> posted by
-<%= post.user.first %> at
-    <%= post.created_at %> </p>
+<%= post.user.first %> <%= post.user.last %> at
+    <%= post.created_at %>
+  <%= link_to 'Show', post_path(post) %></p>
 
 <% end %>
 
