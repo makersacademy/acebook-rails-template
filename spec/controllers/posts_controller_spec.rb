@@ -1,7 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+
+  before(:all) do
+    FactoryBot.define do
+      factory :user do
+        email { "test@email.com" }
+        password  { "testtest" }
+        username { "testusername" }
+      end
+    end
+  end
+
   describe "POST /" do
+    before(:each) do
+      user = create(:user)
+      sign_in user
+    end
+
+
     it "redirects to index" do
       post :create, params: { post: { message: "Hello, world!", username: "Jo33" } }
       expect(response).to redirect_to(posts_url)
@@ -15,9 +32,20 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "GET /" do
-    it "index responds with 200" do
+    it "index responds with 302 (redirect) when not logged in" do
+      get :index
+      expect(response).to have_http_status(302)
+    end
+
+    it "index responds with 200 when logged in" do
+      user = create(:user)
+      sign_in user
+
       get :index
       expect(response).to have_http_status(200)
     end
+
   end
+
+
 end

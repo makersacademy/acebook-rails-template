@@ -1,12 +1,20 @@
 class PostsController < ApplicationController
+  #force the user to redirect to the login page if the user was not logged in
+  before_action :authenticate_user!
+
   def create
-    @post = Post.create(post_params)
+    @post = current_user.posts.create(post_params)
     redirect_to posts_url
   end
 
   def index
-    @post = Post.new
+    @post = current_user.posts.new
     @posts = Post.all.order(created_at: :desc)
+  end
+
+  def show
+    @posts = current_user.posts.all.order(created_at: 'DESC')
+    p 'heloooooooooooo'
   end
 
   private
