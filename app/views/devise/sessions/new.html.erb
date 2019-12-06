@@ -1,25 +1,14 @@
-<html>
-
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Neucha&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css">
-  <style>
-
-  </style>
-</head>
-
-<body>
-
+<div class="signin-page">
   <h1 class='welcome'>Welcome to Acebook</h1>
 
-  <h2 class='welcome'>Log in</h2>
-
+  <h2>Log in</h2>
+  <br>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
+  <br>
   <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
@@ -36,8 +25,6 @@
     <%= f.submit "Log in" %>
   </div>
   <% end %>
-
+  <br>
   <%= render "devise/shared/links" %>
-
-</body>
-</html>
+</div>
