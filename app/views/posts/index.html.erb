@@ -9,7 +9,7 @@
 
 <% @posts.each do |post| %>
 <tr>
-  <td><%= post.message %></td>
+ <td><%= (post.message.gsub("\r\n", '<br/>')).html_safe %></td>
   <td><%= post.user.first %>
       <%= post.user.last %></td>
   <td><%= post.created_at %></td>
