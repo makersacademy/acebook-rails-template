@@ -49,13 +49,15 @@
       </div>
       <% end %>
       <div class = "post-created-at">
-        <%= post.created_at.strftime("Posted at: %H:%M on %A %d %B, %y") %>
+        <%= post.created_at.strftime("Posted at: %H:%M on %A %d %b, %Y") %>
       </div>
 
+      <% if post.user_id == current_user.id %>
       <div class = "Post-buttons">
-        <%= link_to 'Update', "" %>
-        <button>Delete</button>
+        <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
+        <%= link_to('Delete', "/posts/#{post.id}", url_options = {method: "delete"}) %>
       </div>
+      <% end %>
 
     </p>
     <% end %>

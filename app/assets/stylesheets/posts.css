@@ -11,6 +11,7 @@
   background-color: DarkOrchid;
   width: 25%;
   margin-left: 10px;
+  color: white;
 }
 
 #new_post {
@@ -19,12 +20,14 @@
   margin: 10px;
   text-align: center;
   height: 250px;
+  color: white;
 }
 
 .actions{
   margin-left: 10px;
   background-color: DarkOrchid;
   width: 25%;
+  color: white;
 }
 
 h2{
@@ -33,6 +36,7 @@ h2{
   width: 25%;
   margin: 10px;
   text-align: center;
+  color: white;
 }
 
 h1{
@@ -41,6 +45,7 @@ h1{
   width: 25%;
   margin: 10px;
   text-align: center;
+  color: white;
 }
 
 .nav {
@@ -48,6 +53,7 @@ h1{
   top: 0;
   width: 100%;
   position: fixed;
+  color: white;
 }
 
 .single-post {
@@ -72,6 +78,7 @@ h1{
   max-width: 400px;
   padding: 15px;
   position: relative;
+  color: white;
 }
 
 body {
@@ -79,5 +86,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  height: 100%
+  height: 100%;
+  color: white;
 }
