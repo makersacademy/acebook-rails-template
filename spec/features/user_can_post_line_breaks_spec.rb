@@ -2,17 +2,10 @@
 
 require 'rails_helper'
 
-RSpec.configure do |config|
-  config.before(:each, type: :feature) do
-    driven_by :selenium, using: :chrome, options: {args: ["headless", "disable-gpu", "no-sandbox", "disable-dev-shm-usage"]}
-  end
-end
-
 RSpec.feature "Post", type: :feature do
   before(:each) do
-    Capybara.current_driver = :selenium
+    Capybara.current_driver= :selenium_chrome_headless
   end
-
   scenario "Can submit posts with line breaks" do
     visit "/"
     fill_in "post_username", with: "Test Robot"
