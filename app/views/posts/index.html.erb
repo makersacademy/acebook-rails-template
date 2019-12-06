@@ -1,13 +1,12 @@
 <h2> Welcome <%= current_user.first_name + " " + current_user.surname %> </h2>
 
-<p>
+
 <% @posts.each do |post| %>
-<%= post.linebreak %>
   <% post.linebreak.each do |sortpost| %>
     <%= sortpost %> <br>
   <% end %>
   <%= post.created_at.strftime("Posted at: %H:%M on %A %d %B, %y") %>
-  </p>
+  <br>
 <% end %>
 
 
