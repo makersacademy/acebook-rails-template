@@ -20,7 +20,7 @@ branches:
 before_install:
   - gem install bundler
 before_script:
-  - ln -s /usr/lib/chromium-browser/chromedriver -/bin/chromedriver
+  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
