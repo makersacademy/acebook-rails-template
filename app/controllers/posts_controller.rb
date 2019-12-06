@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def show
     @posts = current_user.posts.all.order(created_at: 'DESC')
-
+    p 'heloooooooooooo'
   end
 
   private
