@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :users
 
@@ -7,6 +9,5 @@ Rails.application.routes.draw do
 
   resources :posts
 
-  root "welcome#index"
-
+  root 'welcome#index'
 end
