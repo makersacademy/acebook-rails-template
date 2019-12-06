@@ -13,12 +13,14 @@ How to Install and Run
 
 2) In the command line, run:
 
+```
 >  bundle install
 >  bin/rails db:create
 >  bin/rails db:migrate
 >
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000.
+```
 
 Technologies Used:
 
