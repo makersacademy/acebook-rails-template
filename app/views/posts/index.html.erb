@@ -8,11 +8,11 @@
 <% end %>
 
 <% @posts.each do |post| %>
-  <ul>
-  <b><p><li><%= post.username %></li></p></b>
-      <p><%= simple_format(post.message) %></p>
-      <p><%= post.created_at %></p>
-      <p></p>
-      <br>
-  </ul>
+<div>
+        <b><p></p><li><%= post.username %></li><p></p></b>
+    <div id="post_1" contenteditable data-name="custom-text">
+       <p id="1" class="clickable-text"><%= simple_format(post.message) %></p>
+    </div>
+        <p><%= post.created_at %></p>
+</div>
 <% end %>

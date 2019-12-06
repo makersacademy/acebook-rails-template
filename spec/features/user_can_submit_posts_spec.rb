@@ -7,8 +7,8 @@ RSpec.feature "Post", type: :feature do
     fill_in "post_username", with: "Alistair Phipps"
     fill_in "post_message", with: "Hello, world!"
     click_button "Submit"
-    expect(page).to have_css("ul", text: "Hello, world!")
-    expect(page).to have_css("ul", text: "Alistair Phipps")
+    expect(page).to have_content("Hello, world!")
+    expect(page).to have_content("Alistair Phipps")
 
   end
 
