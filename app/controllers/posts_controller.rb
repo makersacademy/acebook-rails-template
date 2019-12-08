@@ -4,6 +4,12 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def update
+    @post = Post.find(params[:id])
+    @post = Post.update(:message)
+    redirect_to posts_url
+  end
+
   def index
     @post = Post.new
     @posts = Post.all.order(created_at: :desc)

@@ -32,12 +32,20 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit your post</h4>
       </div>
+
+      <%= form_for @post do |form| %>
+        <%= form.label :message %>
+        <%= form.text_area :message %>
+
+
+      <% end %>
       <form id="editForm" action="/posts/" method="patch">
       <div class="md-form mb-5">
           <input type="textfield" id="post-edit-form" class="form-control validate">
 
         </div>
       <div class="modal-footer">
+        <%= form.submit "Submit" %>
         <button type="Submit" class="btn btn-default" data-dismiss="modal">Save</button>
       </div>
       </form>
