@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user
 
+  acts_as_votable
+
   def self.sortedbymostrecent
     self.all.sort_by { |post| post[:created_at] }.reverse
   end

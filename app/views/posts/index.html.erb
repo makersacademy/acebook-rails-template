@@ -63,6 +63,22 @@
         <br>
       </div>
 
+      <div class="number-of-likes">
+      <%= post.get_upvotes.size %> likes
+      </div>
+
+      <div class="like_button">
+        <%= link_to like_post_path(post), method: :put do %>
+            Like
+        <% end %>
+      </div>
+
+      <div class="unlike_button">
+      <%= link_to unlike_post_path(post), method: :put do %>
+      Unlike
+      <% end %>
+      </div>
+
       <div class = "Post-buttons">
         <%if post.update_valid? %>
           <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
@@ -73,4 +89,3 @@
     </div>
     <% end %>
   </div>
-
