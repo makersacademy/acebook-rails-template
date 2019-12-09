@@ -1,19 +1,17 @@
-<center><h2>Welcome to <%= current_user.email %>'s Wall</h2></center>
-<br>
+Welcome to <%=current_user.id%>s page
 
 <% @posts.each do |post| %>
 <% if current_user.id == post.user.id %>
-
 <div class="container">
   <p><%= (post.created_at).strftime("%l:%M%P %-d-%B-%Y") %></p>
   <p class="post" ><%= post.message %> (<%= post.user.email %>)</p>
-  <% if post.created_at > 10.minutes.ago
+  <% if current_user.id == post.user.id &&  post.created_at > 10.minutes.ago
 %>
   <%= link_to 'Edit', edit_post_path(post) %>
   |
   <%= link_to 'Delete', post, method: :delete, data: {confirm: "Are you sure?"} %>
-  <br>
   <% end %>
+  <br>
 
     <span class="like-count"><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></span>
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
@@ -24,9 +22,10 @@
       <div><%= button_to 'Like', post_likes_path(post), class: "like-button", method: :post %></div>
     <% end %>
     <br>
+
 </div>
-<br>
 <% end %>
+<br>
 
 <% end %>
 <br>
