@@ -14,6 +14,10 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
     @posts = current_user.posts.order(created_at: :desc)
   end
 
+  def newsfeed
+    @posts = Post.all
+  end
+
   def show
   end
 
