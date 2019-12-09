@@ -1,13 +1,14 @@
 env:
   global:
     - CC_TEST_REPORTER_ID=c39d42b51fc5baa1f9244feea61f6485c80b5d6fb27dc640a95c89952dd3da07
+    - MOZ_HEADLESS=1
 
 addons:
     apt:
     #   - google-chrome-stable
-      - chromium-chromedriver
-    chrome: stable
-
+      # - chromium-chromedriver
+    # chrome: stable
+    firefox: latest
 
 language: ruby
 rvm:
