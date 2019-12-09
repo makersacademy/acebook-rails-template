@@ -1,3 +1,4 @@
+
 <div class = "nav">
   <nav class="navbar navbar-default navbar-light">
     <div class="container">
@@ -29,6 +30,13 @@
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <% if flash.alert %>
+   <div class=”error_explanation”. style="background-color:white", align="center">
+     <font face="verdana" color="red">
+     <%= flash.alert %>
+     </font>
+   </div>
+  <% end %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
