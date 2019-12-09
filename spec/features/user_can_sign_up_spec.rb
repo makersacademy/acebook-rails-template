@@ -7,7 +7,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "user_password", with: "123456"
     fill_in "user_password_confirmation", with: "123456"
 
-    click_on "Sign up" #syntax problem
+    click_button "Sign up" #syntax problem
     expect(page).to have_content("Welcome! You have signed up successfully.")
   end
 end
