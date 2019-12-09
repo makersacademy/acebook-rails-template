@@ -4,10 +4,6 @@ env:
     - MOZ_HEADLESS=1
 
 addons:
-    apt:
-    #   - google-chrome-stable
-      # - chromium-chromedriver
-    # chrome: stable
     firefox: latest
 
 language: ruby
@@ -15,10 +11,10 @@ rvm:
   - 2.6.0
 
 cache: bundler
+
 branches:
   only:
   - master
-  - line_break_test
 
 before_install:
   - gem install bundler
@@ -26,17 +22,21 @@ before_install:
   - mkdir geckodriver
   - tar -xzf geckodriver-v0.26.0-linux64.tar.gz -C geckodriver
   - export PATH=$PATH:$PWD/geckodriver
+
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+
 script:
   - export MOZ_HEADLESS=1
   - bundle exec rails db:migrate RAILS_ENV=test
   - bundle exec rspec
+
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
 services:
 - postgresql
