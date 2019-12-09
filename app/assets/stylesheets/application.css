@@ -25,21 +25,31 @@
  }
 
 .navbar {
+  margin: 0;
+  font-size: 15px;
   background-color: #563d7c;
   color: #A8B8D6;
 }
 
 .navbar-nav {
+  text-transform: uppercase;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
   color: #A8B8D6;
+}
+
+a {
+  color: #A8B8D6;
+}
+
+a:hover {
+  font-weight: 1000;
+  color: white;
 }
 
 .navbar-toggler {
   color: #A8B8D6;
-}
-
-.btn {
-  background-color: #A8B8D6;
-  color: #563d7c;
 }
 
 .signup-page {
