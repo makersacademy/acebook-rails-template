@@ -5,8 +5,8 @@ RSpec.feature "Post", type: :feature do
 
     sign_up_user
     make_post
-    expect(page).to have_css("ul", text: "Beep beep")
-    expect(page).to have_css("ul", text: "Robot")
+    expect(page).to have_content("Beep beep")
+    expect(page).to have_content("Robot")
   end
 
   scenario "Posts are displayed in the correct order" do
