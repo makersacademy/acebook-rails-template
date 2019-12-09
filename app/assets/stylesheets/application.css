@@ -45,12 +45,13 @@ a {
 
 a:hover {
   font-weight: 1000;
-  color: white;
+  color: gray;
 }
 
 .navbar-toggler {
   color: #A8B8D6;
 }
+
 
 .signup-page {
   text-align: center;
