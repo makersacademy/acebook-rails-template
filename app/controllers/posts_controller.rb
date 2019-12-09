@@ -14,16 +14,64 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  # def update
+  # @post =  Post.find(params[:id])
+  # if (current_user == @post.user) && @post.created_at < 10.minutes.ago
+  #   @post.update(post_params)
+  #   redirect_to posts_url
+  # elsif @current_user != @post.user
+  #   flash[:alert] = "Error! this is not your post"
+  #   redirect_to post_url
+  # elsif @post.created_at > 10.minutes.ago
+  #   flash[:alert] = "Post cannot be edited - created more than 10 mins ago"
+  #   redirect_to post_url
+  #   #  @post.created_at > 10.minutes.ago
+  #   #   flash[:alert] = "Post cannot be edited - created more than 10 mins ago"
+  #   #   redirect_to post_url
+  #   # else
+  #   #   flash[:alert] = "Error! this is not your post"
+  #   #   redirect_to post_url
+  #   end
+  # end
+  #
+  # def update
+  #   p "---------------------------"
+  #   @post =  Post.find(params[:id])
+  #   if current_user != @post.user
+  #     flash[:alert] = "Error! this is not your post"
+  #     redirect_to post_url
+  #   elsif @post.created_at > 10.minutes.ago
+  #     p 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+  #     p 'post was created more than 10 mins ago'
+  #     flash[:alert] = "Post cannot be edited - created more than 10 mins ago"
+  #     redirect_to post_url
+  #   else
+  #     @post.update(post_params)
+  #     redirect_to posts_url
+  #   end
+  # end
+
+
   def update
-    @post =  Post.find(params[:id])
-    if current_user == @post.user
-      @post.update(post_params)
-      redirect_to posts_url
+  @post =  Post.find(params[:id])
+  if (current_user == @post.user) && @post.created_at > 10.minutes.ago
+    @post.update(post_params)
+    redirect_to posts_url
+  else
+    if @post.created_at < 10.minutes.ago
+      flash[:alert] = "Post cannot be edited - created more than 10 mins ago"
+      redirect_to post_url
     else
-      flash[:alert] = "Error, this is not your post"
+      flash[:alert] = "Error! this is not your post"
       redirect_to post_url
     end
   end
+end
+
+
+
+
+
 
   def show
     @post = Post.find(params[:id])
