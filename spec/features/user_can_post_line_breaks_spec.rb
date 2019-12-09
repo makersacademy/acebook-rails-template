@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.feature "Post", type: :feature do
   before(:each) do
-    Capybara.current_driver= :selenium_chrome
+    Capybara.current_driver= :selenium
   end
   scenario "Can submit posts with line breaks" do
     visit "/"
