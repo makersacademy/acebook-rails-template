@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-<div class="container">
+<div class="container" id='<%= post.id %>'>
   <p><%= (post.created_at).strftime("%l:%M%P %-d-%B-%Y") %></p>
   <p class="post" ><%= post.message %> (<%= post.user.email %>)</p>
   <% if current_user.id == post.user.id &&  post.created_at > 10.minutes.ago
@@ -9,7 +9,7 @@
   <%= link_to 'Delete', post, method: :delete, data: {confirm: "Are you sure?"} %>
   <% end %>
   <br>
-
+    <div class="likes-count-js" data-likes="<%=post.likes.count%>"></div>
     <span class="like-count"><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></span>
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
 
