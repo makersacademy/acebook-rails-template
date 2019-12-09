@@ -30,7 +30,6 @@ RSpec.describe Post, type: :model do
     end
 
     it "cant update after 10 mins" do
-
       post = user.posts.create(message: "Can you update me")
       allow(post).to receive(:created_at).and_return(Time.now - 650)
       expect(post.update_valid?).to be_falsey
