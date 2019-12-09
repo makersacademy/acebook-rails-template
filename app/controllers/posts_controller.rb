@@ -5,10 +5,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    p "params"
-    puts post_params
-    p "id"
-    puts params[:id]
+    @user = current_user
     @post = Post.find(params[:id])
     @post.update(post_params)
     redirect_to posts_url

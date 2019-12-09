@@ -6,7 +6,7 @@ $(document).ready(function() {
     let post_edit_url = "/posts/" + post_id[2] + "/edit"
     //update modal form to new path and prepopulate wih exisiting value
     $("#editForm").attr("action",post_edit_url)
-    $("#editTextField").attr("value",$(post_div_id).text())
+    $(".form-control").val($(post_div_id).text())
 
   });
 
