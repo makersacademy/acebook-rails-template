@@ -5,6 +5,7 @@
 $(document).ready(function() {
 
   $('.like-button').on('click', function() {
-    alert("Hello");
+    // console.log(this.parent)
+    $(document).find('.like-count').text('<%= post.likes.count %>');
   })
 })
