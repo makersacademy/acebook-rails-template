@@ -21,10 +21,10 @@ branches:
 
 before_install:
   - gem install bundler
-  # - wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
-  # - mkdir geckodriver
-  # - tar -xzf geckodriver-v0.26.0-linux64.tar.gz -C geckodriver
-  # - export PATH=$PATH:$PWD/geckodriver
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+  - mkdir geckodriver
+  - tar -xzf geckodriver-v0.26.0-linux64.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
