@@ -1,3 +1,12 @@
+.flash {
+  text-align: center;
+  background-color: white;
+  color: red;
+  margin: 10px;
+  width: 500px;
+  margin: auto;
+}
+
 
 .post{
   background-color: White;

@@ -16,7 +16,6 @@
           <%= link_to "Home", root_url, class: "navbar-brand" %>
           <%= link_to "Posts", "/posts", class: "navbar-brand" %>
           <%= link_to "New Post", "/posts/new", class: "navbar-brand" %>
-
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-top">
@@ -31,12 +30,19 @@
         </div>
       </div>
     </nav>
-  </div>
 
+  </div>
   <br>
   <br>
   <br>
-  <h2>Posts</h2>
+  <div>
+    <h2>Posts</h2>
+    <% flash.each do |key, value| %>
+      <br>
+      <%= content_tag :div, value, class: "flash #{key}" %>
+      <br>
+    <% end %>
+  </div>
 
   <div class = "post">
     <% all_posts = @posts.sort_by { |sorted| sorted[:created_at] }.reverse! %>
@@ -53,20 +59,12 @@
         <br>
       </div>
 
-      <% if post.user_id == current_user.id %>
       <div class = "Post-buttons">
         <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
         <%= link_to('Delete', "/posts/#{post.id}", url_options = {method: "delete"}) %>
       </div>
-      <% end %>
 
     </div>
     <% end %>
   </div>
 
-
-<p style="margin: 20px;">
-  <%= link_to 'New post', new_post_path %>
-  <br>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-</p>
