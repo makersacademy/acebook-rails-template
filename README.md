@@ -1,5 +1,7 @@
 # SpaceBook
 
+Imagine if Facebook but in space
+
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
