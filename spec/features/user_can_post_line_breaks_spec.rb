@@ -7,7 +7,7 @@ RSpec.feature "Post", type: :feature do
     Capybara.current_driver= :selenium
   end
   scenario "Can submit posts with line breaks" do
-    visit "/"
+    sign_up_user
     fill_in "post_message", with: "Hello\n world!"
     click_button "Submit"
     expect(page.html).to match(/Hello\s*<br>\s*world!/)
