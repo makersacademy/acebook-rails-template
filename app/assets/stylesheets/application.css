@@ -105,13 +105,13 @@ input[type="submit"],
 }
 
 #error_explanation {
-  position: absolute;
-  margin: 5% auto;
-  background: #FFF;
+  position: relative;
+  margin: 1% auto;
+  background: #E74C3C;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   box-sizing: content-box;
   padding: 20px;
-  width: 100%;
+  width: 30%;
   /* height: 400px; */
 }
