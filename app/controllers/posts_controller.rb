@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user!
+  respond_to :html, :xml, :json
 
   def new
     @post = Post.new
@@ -13,6 +14,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order('created_at DESC')
+    respond_with(@posts)
   end
 
   def edit
