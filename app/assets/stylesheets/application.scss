@@ -15,13 +15,32 @@
  */
 
 // @import "bootstrap";
-.form-container {
-  margin: 30px;
+:root {
+  --color-1: #dff6f0;
+  --color-2: #46b3e6;
+  --color-3: #4d80e4;
+  --color-4: #2e279d;
+  --color-5: #b6d2ff;
+  --color-6: #b4defe;
+}
+.form-div {
   text-align: center;
 }
+
+.form-container {
+  padding: 20px;
+  display: inline-block;
+  width: 400px;
+  border: solid;
+  border-color: var(--color-5);
+  border-radius: 1.3em;
+  margin-top: 100px !important;
+  text-align: center;
+}
+
 .img-logo {
-  height: 80px;
-  width: 60px;
+  height: 40px;
+  width: 40px;
   margin: 0px;
 }
 
@@ -32,17 +51,18 @@
 .sign-up-form {
   margin-top: 30px !important;
   margin: 0 auto;
+  text-align: center;
   display: inline-block
- 
 }
 
 nav {
+  background-image: linear-gradient(120deg, #b6d2ff 0%, #b4defe 100%);
   max-height: 100px;
   padding-top: 0px !important; 
   padding-bottom: 0px !important; 
   box-shadow: 0px 3px 6px;;
   border-bottom: solid;
-  border-width: 2px;
-  border-color: rgba(0, 183, 255, 0.3);
+  border-width: 4px;
+  border-color: rgba(0, 183, 255, 0.16);
   margin-bottom: 5px;
 }
