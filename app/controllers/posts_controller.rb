@@ -4,9 +4,13 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-  def update
+  def edit
+    p "params"
+    puts post_params
+    p "id"
+    puts params[:id]
     @post = Post.find(params[:id])
-    @post = Post.update(:message)
+    @post.update(post_params)
     redirect_to posts_url
   end
 
@@ -18,6 +22,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :username)
+    params.require(:post).permit( :message, :username)
   end
 end

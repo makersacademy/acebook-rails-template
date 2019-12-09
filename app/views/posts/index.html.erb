@@ -19,37 +19,37 @@
 </div>
 <% end %>
 
+  <form id="editForm" action="/posts/1/edit" method="get">
+    <input type="textfield" id="post_message" name="post[message]">
+    <input type="Submit" value="Submit" >
+
+  </form
+
 <!-- Trigger the modal with a button -->
 
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<!-- Modal
+<!-- <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <!-- <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit your post</h4>
       </div>
-
-      <%= form_for @post do |form| %>
-        <%= form.label :message %>
-        <%= form.text_area :message %>
-
-
-      <% end %>
       <form id="editForm" action="/posts/" method="patch">
       <div class="md-form mb-5">
           <input type="textfield" id="post-edit-form" class="form-control validate">
+          <input type="Submit" class="btn btn-default" data-dismiss="modal">Save>
 
         </div>
       <div class="modal-footer">
-        <%= form.submit "Submit" %>
         <button type="Submit" class="btn btn-default" data-dismiss="modal">Save</button>
       </div>
       </form>
-    </div>
+    </div> -->
 
-  </div>
+  <!-- </div>
 </div>
+ -->
