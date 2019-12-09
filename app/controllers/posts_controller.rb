@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.reverse
+    @posts = Post.all.order('created_at DESC')
   end
 
   def edit
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts = Post.all.reverse
+    @posts = Post.all.order('created_at DESC')
     render 'index'
   end
 
