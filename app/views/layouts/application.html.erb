@@ -28,10 +28,12 @@
             <li class="nav-item">
               <a class="nav-link" href="/users/sign_up">Sign Up</a>
             </li>
-          <% end %>
-          <li class="nav-item float-left">
+          <% else %>
+           <li class="nav-item float-left">
                 <a class="nav-link" data-method="delete" href="/users/sign_out">Log Out</a>
           </li>
+          <% end %>
+         
         </ul>
       </div>
     </nav>
