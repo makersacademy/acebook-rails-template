@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/controllers/app_controller_spec.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/controllers/app_controller_spec.rb": [
         null,
         null,
         1,
@@ -15,7 +15,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/rails_helper.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/rails_helper.rb": [
         null,
         null,
         null,
@@ -78,7 +78,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/config/environment.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/environment.rb": [
         null,
         null,
         null,
@@ -87,13 +87,9 @@
         null,
         1
       ],
-<<<<<<< HEAD
-      "/Users/fayhussein/acebook-AceofBaseBook/config/application.rb": [
-=======
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/application.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/application.rb": [
         null,
         null,
->>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         null,
         1,
@@ -113,24 +109,16 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fayhussein/acebook-AceofBaseBook/config/boot.rb": [
-=======
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/boot.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/boot.rb": [
         null,
         null,
->>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         null,
         1
       ],
-<<<<<<< HEAD
-      "/Users/fayhussein/acebook-AceofBaseBook/config/environments/test.rb": [
-=======
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/environments/test.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/environments/test.rb": [
         null,
         null,
->>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         null,
         null,
@@ -174,7 +162,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/application_controller_renderer.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -184,7 +172,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/assets.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -202,7 +190,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/backtrace_silencers.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -213,7 +201,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/cookies_serializer.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
@@ -222,7 +210,7 @@
         null,
         1
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/devise.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/initializers/devise.rb": [
         null,
         null,
         null,
@@ -523,7 +511,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/filter_parameter_logging.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
@@ -531,7 +519,7 @@
         null,
         1
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/inflections.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -551,7 +539,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/mime_types.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/initializers/mime_types.rb": [
         null,
         null,
         null,
@@ -559,7 +547,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/wrap_parameters.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -577,13 +565,9 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fayhussein/acebook-AceofBaseBook/config/routes.rb": [
-=======
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/routes.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/config/routes.rb": [
         null,
         null,
->>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         1,
         null,
@@ -596,13 +580,9 @@
         1,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fayhussein/acebook-AceofBaseBook/app/models/user.rb": [
-=======
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/models/user.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/app/models/user.rb": [
         null,
         null,
->>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         null,
         null,
@@ -611,44 +591,28 @@
         1,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fayhussein/acebook-AceofBaseBook/app/models/application_record.rb": [
-=======
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/models/application_record.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/app/models/application_record.rb": [
         null,
         null,
->>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         1,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fayhussein/acebook-AceofBaseBook/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/fayhussein/acebook-AceofBaseBook/app/helpers/welcome_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/fayhussein/acebook-AceofBaseBook/app/controllers/application_controller.rb": [
-=======
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/helpers/application_helper.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/app/helpers/application_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/helpers/welcome_helper.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/app/helpers/welcome_helper.rb": [
         null,
         null,
         1,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/controllers/application_controller.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/app/controllers/application_controller.rb": [
         null,
         null,
->>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         1,
         null,
@@ -667,7 +631,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/controllers/posts_controller_spec.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/controllers/posts_controller_spec.rb": [
         null,
         null,
         1,
@@ -707,13 +671,9 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fayhussein/acebook-AceofBaseBook/app/controllers/posts_controller.rb": [
-=======
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/controllers/posts_controller.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/app/controllers/posts_controller.rb": [
         null,
         null,
->>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         1,
         null,
@@ -778,7 +738,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/controllers/welcome_controller_spec.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/controllers/welcome_controller_spec.rb": [
         null,
         null,
         1,
@@ -792,19 +752,15 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fayhussein/acebook-AceofBaseBook/app/controllers/welcome_controller.rb": [
-=======
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/controllers/welcome_controller.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/app/controllers/welcome_controller.rb": [
         null,
         null,
->>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         1,
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/line_breaks_in_posts_spec.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/features/line_breaks_in_posts_spec.rb": [
         null,
         null,
         1,
@@ -824,7 +780,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/log_in_spec.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/features/log_in_spec.rb": [
         null,
         null,
         1,
@@ -837,7 +793,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/password_conforms_spec.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/features/password_conforms_spec.rb": [
         null,
         null,
         1,
@@ -864,7 +820,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/redirect_to_home_spec.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/features/redirect_to_home_spec.rb": [
         null,
         null,
         1,
@@ -876,7 +832,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/sign_up_spec.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/features/sign_up_spec.rb": [
         null,
         null,
         1,
@@ -889,7 +845,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/update_spec.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/features/update_spec.rb": [
         null,
         null,
         null,
@@ -897,45 +853,6 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/user_can_submit_posts_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/helpers/welcome_helper_spec.rb": [
-        null,
-        null,
-        1,
         null,
         null,
         null,
@@ -951,7 +868,46 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/models/post_spec.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/features/user_can_submit_posts_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/helpers/welcome_helper_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/models/post_spec.rb": [
         null,
         null,
         1,
@@ -960,19 +916,15 @@
         2,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fayhussein/acebook-AceofBaseBook/app/models/post.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/app/models/post.rb": [
+        null,
+        null,
         1,
-=======
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/models/post.rb": [
-        null,
-        null,
->>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/models/user_spec.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/models/user_spec.rb": [
         null,
         null,
         1,
@@ -981,7 +933,7 @@
         null,
         null
       ],
-      "/Users/fayhussein/acebook-AceofBaseBook/spec/views/welcome/index.html.erb_spec.rb": [
+      "/Users/amybalmforth/Projects/makers/week8/acebook-rails-template/spec/views/welcome/index.html.erb_spec.rb": [
         null,
         null,
         1,
@@ -991,10 +943,6 @@
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1575903971
-=======
-    "timestamp": 1575891691
->>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
+    "timestamp": 1575906895
   }
 }
