@@ -9,7 +9,7 @@ RSpec.feature "Edit/update posts", type: :feature do
       fill_in "Message", with: "Hello, world!"
       click_button "Submit"
     Timecop.return # "turn off" Timecop
-
+    page.refresh
     expect(page).to_not have_link("Update")
   end
 end
