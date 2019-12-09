@@ -10,46 +10,37 @@
 
 <% @posts.each do |post| %>
 <div>
-        <b><p></p><li><%= post.username %></li><p></p></b>
+        <p><%= post.username %></p>
+        <p><%= post.created_at %></p>
     <div id="post_<%=post.id%>" data-name="custom-text">
-       <p class="clickable-text"><%= simple_format(post.message) %></p>
+       <div id="post_text_<%=post.id%>"><%= simple_format(post.message) %></div>
        <button type="button" id="post_edit_<%=post.id%>" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Edit</button>
     </div>
-        <p><%= post.created_at %></p>
+
 </div>
 <% end %>
 
-  <form id="editForm" action="/posts/1/edit" method="get">
-    <input type="textfield" id="post_message" name="post[message]">
-    <input type="Submit" value="Submit" >
-
-  </form
-
-<!-- Trigger the modal with a button -->
-
-
-<!-- Modal
-<!-- <div id="myModal" class="modal fade" role="dialog">
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <!-- <div class="modal-content">
+    <!-- Modal content -->
+    <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit your post</h4>
       </div>
-      <form id="editForm" action="/posts/" method="patch">
       <div class="md-form mb-5">
-          <input type="textfield" id="post-edit-form" class="form-control validate">
-          <input type="Submit" class="btn btn-default" data-dismiss="modal">Save>
-
+        <form id="editForm" action="" method="get">
+        <input id="editTextField" type="textfield" id="post_message" name="post[message]">
+        <input type="Submit" value="Submit"  >
+        </form>
+        <!-- <input type="Submit" value="Submit" > -->
         </div>
       <div class="modal-footer">
-        <button type="Submit" class="btn btn-default" data-dismiss="modal">Save</button>
+        <!-- <button type="Submit" value="Submit" form="editForm" class="btn btn-default" data-dismiss="modal">Save</button> -->
       </div>
-      </form>
-    </div> -->
 
-  <!-- </div>
+    </div>
+
 </div>
- -->
