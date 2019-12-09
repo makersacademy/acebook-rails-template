@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-
   before(:each) do
     user = double('user')
     allow(user).to receive(:id).and_return(1)
