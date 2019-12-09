@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.5.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record
@@ -23,6 +25,7 @@ gem 'devise'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'factory_bot_rails'
+gem 'timecop'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'

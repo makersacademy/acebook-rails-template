@@ -27,11 +27,18 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
-    if @post.user_id != current_user.id
-      flash[:error] = "You cannot update other people's posts"
+    
+    if Post.find(params[:id]).update_valid?
+      @post = Post.find(params[:id])
+      if @post.user_id != current_user.id
+        flash[:error] = "You cannot update other people's posts"
+        redirect_to posts_url
+      end
+    else
+      flash[:error] = "You cannot update this post"
       redirect_to posts_url
     end
+   
   end
 
   def update

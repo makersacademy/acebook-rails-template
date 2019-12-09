@@ -9,4 +9,8 @@ class Post < ApplicationRecord
     self.message.split("\r\n")
   end
 
+  def update_valid?
+    self.created_at + 600 > Time.now
+  end
+
 end

@@ -1,6 +1,5 @@
 <html>
 <head>
-
   <title>Posts Dashboard</title>
 </head>
 <body>
@@ -54,13 +53,20 @@
         <%= sortpost %> <br>
       <% end %>
       </div>
+      <div class = "post-created-by">
+        Post user is: <%= post.user_id %>
+        <br>
+      </div>
+
       <div class = "post-created-at">
         <%= post.created_at.strftime("Posted at: %H:%M on %A %d %b, %Y") %>
         <br>
       </div>
 
       <div class = "Post-buttons">
-        <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
+        <%if post.update_valid? %>
+          <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
+        <%end%>
         <%= link_to('Delete', "/posts/#{post.id}", url_options = {method: "delete"}) %>
       </div>
 
