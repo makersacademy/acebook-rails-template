@@ -18,6 +18,7 @@ cache: bundler
 branches:
   only:
   - master
+  - line_break_test
 
 before_install:
   - gem install bundler
