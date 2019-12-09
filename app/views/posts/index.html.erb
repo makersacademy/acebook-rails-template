@@ -42,11 +42,11 @@
     <% all_posts = @posts.sort_by { |sorted| sorted[:created_at] }.reverse! %>
     <% @posts.each do |post| %>
     <div class = "single-post">
-      <% post.linebreak.each do |sortpost| %>
       <div class = "post-text">
+      <% post.linebreak.each do |sortpost| %>
         <%= sortpost %> <br>
-      </div>
       <% end %>
+      </div>
       <div class = "post-created-at">
         <%= post.created_at.strftime("Posted at: %H:%M on %A %d %b, %Y") %>
         <br>
@@ -64,8 +64,8 @@
   </div>
 
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-<br>
-<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+<p style="margin: 20px;">
+  <%= link_to 'New Post', new_post_path %>
+  <br>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+</p>
