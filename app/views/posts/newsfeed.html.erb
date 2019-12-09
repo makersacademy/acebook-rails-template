@@ -1,8 +1,7 @@
-    <h1> My wall </h1>
-
-
+<h1>News Feed</h1>
 
     <% @posts.each do |post| %>
+    <div class="post-container">
       <div class="user-post">
         <%day = Date.new(post.created_at.wday + 1).strftime("%a")%>
         <% time_array = (post.created_at.to_s.split(" ")[1]).split(":") %>
@@ -21,10 +20,5 @@
           <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
       </div>
-
-
-    <% end %>
-
-    <%= link_to new_post_path do %>
-      New post
-    <% end %>
+    </div>
+    <%end%>
