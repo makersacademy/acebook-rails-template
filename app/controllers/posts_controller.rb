@@ -35,6 +35,7 @@ class PostsController < ApplicationController
         redirect_to posts_url
       end
     else
+      # the message below would only appear if the user tries to update from url instead of from button
       flash[:error] = "You cannot update this post"
       redirect_to posts_url
     end

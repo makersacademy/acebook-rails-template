@@ -26,7 +26,7 @@
 <br>
 <br>
 <br>
-<%= form_for @post do |form| %>
+<%= form_for @post, method: :put do |form| %>
 <%= form.label :message %>
 <p> <%= form.text_area :message, size: "24x6" %> </p>
 
