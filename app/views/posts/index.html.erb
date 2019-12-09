@@ -54,7 +54,9 @@
 
       <% if post.user_id == current_user.id %>
       <div class = "Post-buttons">
-        <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
+        <%if post.update_valid? %>
+          <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
+        <%end%>
         <%= link_to('Delete', "/posts/#{post.id}", url_options = {method: "delete"}) %>
       </div>
       <% end %>
