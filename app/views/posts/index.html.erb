@@ -8,7 +8,7 @@
   <%= link_to 'Delete', post, method: :delete, data: {confirm: "Are you sure?"} %>
   <% end %>
   <br>
-  <span class="parent-likes">
+
     <span class="like-count"><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></span>
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
 
@@ -18,7 +18,7 @@
       <div><%= button_to 'Like', post_likes_path(post), class: "like-button", method: :post %></div>
     <% end %>
     <br>
-</span>
+
 </div>
 <br>
 
