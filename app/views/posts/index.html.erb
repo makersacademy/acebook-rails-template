@@ -3,7 +3,8 @@
 <div class="container">
   <p><%= (post.created_at).strftime("%l:%M%P %-d-%B-%Y") %></p>
   <p class="post" ><%= post.message %> (<%= post.user.email %>)</p>
-  <% if current_user.id == post.user.id %>
+  <% if current_user.id == post.user.id &&  post.created_at > 10.minutes.ago
+%>
   <%= link_to 'Edit', edit_post_path(post) %>
   |
   <%= link_to 'Delete', post, method: :delete, data: {confirm: "Are you sure?"} %>
