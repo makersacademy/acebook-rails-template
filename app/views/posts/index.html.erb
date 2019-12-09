@@ -54,7 +54,8 @@
       <% end %>
       </div>
       <div class = "post-created-by">
-        Post user is: <%= post.user_id %>
+        <% poster = User.find(post.user_id) %>
+        Posted by: <%= poster.first_name + " " + poster.surname %>
         <br>
       </div>
 

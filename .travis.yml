@@ -3,7 +3,7 @@ env:
     CC_TEST_REPORTER_ID=62fd8988f6c5240ad960e154042c4cb6a1caee937653942c4c39561db7dadeff
 language: ruby
 rvm:
-- 2.5.0
+- 2.6.3
 services:
 - postgresql
 before_install:
