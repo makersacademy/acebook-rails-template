@@ -27,7 +27,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    
     if Post.find(params[:id]).update_valid?
       @post = Post.find(params[:id])
       if @post.user_id != current_user.id
@@ -39,7 +38,6 @@ class PostsController < ApplicationController
       flash[:error] = "You cannot update this post"
       redirect_to posts_url
     end
-   
   end
 
   def update
