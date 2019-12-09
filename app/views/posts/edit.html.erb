@@ -1,0 +1,15 @@
+<h1>Edit Post</h1>
+
+<%= form_with(model: @post, local: true) do |form|%>
+
+  <%= form.label :message %>
+  <%= form.text_field :message %>
+
+  <%= form.submit "Submit" %>
+<% end %>
+
+  <p><%= link_to 'Delete post', post_path(@post),
+    method: :delete,
+    data: { confirm: 'Are you sure? '}%></p>
+
+<%= link_to 'Back', posts_path %>

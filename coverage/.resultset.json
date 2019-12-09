@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/controllers/app_controller_spec.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/controllers/app_controller_spec.rb": [
         null,
         null,
         1,
@@ -15,7 +15,7 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/rails_helper.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/rails_helper.rb": [
         null,
         null,
         null,
@@ -78,7 +78,7 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/environment.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/config/environment.rb": [
         null,
         null,
         null,
@@ -87,9 +87,13 @@
         null,
         1
       ],
+<<<<<<< HEAD
+      "/Users/fayhussein/acebook-AceofBaseBook/config/application.rb": [
+=======
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/application.rb": [
         null,
         null,
+>>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         null,
         1,
@@ -109,16 +113,24 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/fayhussein/acebook-AceofBaseBook/config/boot.rb": [
+=======
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/boot.rb": [
         null,
         null,
+>>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         null,
         1
       ],
+<<<<<<< HEAD
+      "/Users/fayhussein/acebook-AceofBaseBook/config/environments/test.rb": [
+=======
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/environments/test.rb": [
         null,
         null,
+>>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         null,
         null,
@@ -162,7 +174,7 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/application_controller_renderer.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -172,7 +184,7 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/assets.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -190,7 +202,7 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/backtrace_silencers.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -201,7 +213,7 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/cookies_serializer.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
@@ -210,7 +222,7 @@
         null,
         1
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/devise.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/devise.rb": [
         null,
         null,
         null,
@@ -511,7 +523,7 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/filter_parameter_logging.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
@@ -519,7 +531,7 @@
         null,
         1
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/inflections.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -539,7 +551,7 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/mime_types.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/mime_types.rb": [
         null,
         null,
         null,
@@ -547,7 +559,7 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/initializers/wrap_parameters.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -565,9 +577,13 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/fayhussein/acebook-AceofBaseBook/config/routes.rb": [
+=======
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/config/routes.rb": [
         null,
         null,
+>>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         1,
         null,
@@ -580,23 +596,43 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/Users/fayhussein/acebook-AceofBaseBook/app/models/user.rb": [
+=======
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/models/user.rb": [
         null,
         null,
+>>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         null,
         null,
         1,
         null,
+        1,
         null
       ],
+<<<<<<< HEAD
+      "/Users/fayhussein/acebook-AceofBaseBook/app/models/application_record.rb": [
+=======
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/models/application_record.rb": [
         null,
         null,
+>>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         1,
         null
       ],
+<<<<<<< HEAD
+      "/Users/fayhussein/acebook-AceofBaseBook/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/fayhussein/acebook-AceofBaseBook/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/fayhussein/acebook-AceofBaseBook/app/controllers/application_controller.rb": [
+=======
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/helpers/application_helper.rb": [
         null,
         null,
@@ -612,6 +648,7 @@
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/controllers/application_controller.rb": [
         null,
         null,
+>>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         1,
         null,
@@ -630,13 +667,14 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/controllers/posts_controller_spec.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/controllers/posts_controller_spec.rb": [
         null,
         null,
         1,
         null,
         1,
         1,
+        4,
         4,
         4,
         4,
@@ -669,9 +707,13 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/fayhussein/acebook-AceofBaseBook/app/controllers/posts_controller.rb": [
+=======
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/controllers/posts_controller.rb": [
         null,
         null,
+>>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         1,
         null,
@@ -680,14 +722,55 @@
         null,
         null,
         1,
+        0,
+        null,
+        null,
+        1,
         4,
         4,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
         null,
         null,
         1,
         7,
         null,
         null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         null,
         1,
@@ -695,7 +778,7 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/controllers/welcome_controller_spec.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/controllers/welcome_controller_spec.rb": [
         null,
         null,
         1,
@@ -709,100 +792,19 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/fayhussein/acebook-AceofBaseBook/app/controllers/welcome_controller.rb": [
+=======
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/controllers/welcome_controller.rb": [
         null,
         null,
+>>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
         1,
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/line_breaks_in_posts_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/log_in_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/password_conforms_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/redirect_to_home_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/sign_up_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/line_breaks_in_posts_spec.rb": [
         null,
         null,
         1,
@@ -822,7 +824,115 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/helpers/welcome_helper_spec.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/log_in_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/password_conforms_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/redirect_to_home_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/sign_up_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/update_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/features/user_can_submit_posts_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/helpers/welcome_helper_spec.rb": [
         null,
         null,
         1,
@@ -841,7 +951,7 @@
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/models/post_spec.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/models/post_spec.rb": [
         null,
         null,
         1,
@@ -850,22 +960,28 @@
         2,
         null
       ],
+<<<<<<< HEAD
+      "/Users/fayhussein/acebook-AceofBaseBook/app/models/post.rb": [
+        1,
+=======
       "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/app/models/post.rb": [
         null,
         null,
+>>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
         1,
-        null
-      ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/models/user_spec.rb": [
-        null,
-        null,
-        1,
-        null,
-        null,
         null,
         null
       ],
-      "/Users/student/projects/weekly-challenges/acebook-AceofBaseBook/spec/views/welcome/index.html.erb_spec.rb": [
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/models/user_spec.rb": [
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/fayhussein/acebook-AceofBaseBook/spec/views/welcome/index.html.erb_spec.rb": [
         null,
         null,
         1,
@@ -875,6 +991,10 @@
         null
       ]
     },
+<<<<<<< HEAD
+    "timestamp": 1575903971
+=======
     "timestamp": 1575891691
+>>>>>>> 3f417c886649c639c252d9322fd095ff07983f09
   }
 }
