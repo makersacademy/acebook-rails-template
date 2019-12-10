@@ -14,9 +14,9 @@
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
 
     <% if pre_like %>
-      <div><button class='toggle-like'>Unlike</button></div>
+      <div><button class='toggle-like'>&#128052</button></div>
     <% else %>
-      <div><button class='toggle-like'>Like</button></div>
+      <div><button class='toggle-like'>&#x1f984;</button></div>
     <% end %>
     <br>
 

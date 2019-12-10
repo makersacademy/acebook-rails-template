@@ -11,7 +11,7 @@ $(document).ready(function() {
       url: `/api/posts/${postID}/likes`,
       type: 'DELETE',
       success: function() {
-        $post.find('.toggle-like').text('Like');
+        $post.find('.toggle-like').html('&#x1f984;');
         $.get(`/api/posts/${postID}/likes`, function(response) {
           let likesCount = response.length
           let likeOrLikes = (likesCount == 1) ? 'Like' : 'Likes'
@@ -25,7 +25,7 @@ $(document).ready(function() {
     let $post = $(`#${postID}`);
 
     $.post(`/api/posts/${postID}/likes`, function() {
-      $post.find('.toggle-like').text('Unlike');
+      $post.find('.toggle-like').html('🐴');
       $.get(`/api/posts/${postID}/likes`, function(response) {
         let likesCount = response.length
         let likeOrLikes = (likesCount == 1) ? 'Like' : 'Likes'
@@ -38,7 +38,7 @@ $(document).ready(function() {
     event.preventDefault();
     let $button = $(this);
     let postID = $button.parent().parent().attr('id')
-    if ($button.text() === 'Unlike') {
+    if ($button.html() === '🐴') {
       unlikePost(postID);
     } else {
       likePost(postID);
