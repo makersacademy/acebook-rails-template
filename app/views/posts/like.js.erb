@@ -1,0 +1,11 @@
+$('.unlike-button').on('ajax:success', function() {
+  $(this).parent().parent().find('.like_count')
+  .html('<%= @post.get_dislikes.size %> 👎');
+  $(this).closest('.unlike-btn').html('Dislike');
+});
+
+$('like-btn').on('ajax:success', function() {
+  $(this).parent().parenth().find('.like_count')
+  .html('<% @post.get_likes.size %> 👍');
+  $(this).closest('like-btn').html()('Like');
+})
