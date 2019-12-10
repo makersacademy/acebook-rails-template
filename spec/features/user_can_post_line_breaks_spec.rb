@@ -4,8 +4,9 @@ require 'rails_helper'
 
 RSpec.feature "Post", type: :feature do
   before(:each) do
-    Capybara.current_driver= :selenium
+    Capybara.current_driver = :selenium
   end
+
   scenario "Can submit posts with line breaks" do
     sign_up_user
     fill_in "post_message", with: "Hello\n world!"

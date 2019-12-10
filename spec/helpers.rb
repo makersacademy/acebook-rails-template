@@ -9,6 +9,17 @@ def sign_up_user
 
 end
 
+def sign_up_second_user
+
+  visit "/users/sign_up"
+  fill_in "user_email", with: "bang@robot.com"
+  fill_in "user_username", with: "Bang bang"
+  fill_in "user_password", with: "robotron"
+  fill_in "user_password_confirmation", with: "robotron"
+  click_button "Sign up"
+
+end
+
 def make_post
 
   visit '/'
