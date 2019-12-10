@@ -46,6 +46,7 @@
   <div class = "post">
     <% all_posts = @posts.sort_by { |sorted| sorted[:created_at] }.reverse! %>
     <% @posts.each do |post| %>
+
     <div class = "single-post">
       <br>
       <div class = "post-text">
@@ -82,7 +83,25 @@
         <%end%>
         <%= link_to('Delete', "/posts/#{post.id}", url_options = {method: "delete"}) %>
       </div>
+      <div class="listComments">
+        <% post.comments.each do |comment| %>
+        <% user = User.find(comment.user_id)%>
+          <%=user.first_name + " " + user.surname  %> :
+          <%= comment.message %>
+          <br>
+          <%end%>
+          <div class="addComment">
 
+            <%= form_with model: post.comments.build, url: "/comments", local: true do |form| %>
+            <%= form.label :comment%>
+            <p> <%= form.text_area :message %> </p>
+            <%= hidden_field_tag :post, post.id %>
+
+            <%= form.submit "Add Comment" %>
+            <%end%>
+
+          </div>
+      </div>
     </div>
     <% end %>
   </div>
