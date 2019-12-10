@@ -59,7 +59,8 @@
 html, body {
   margin: 0;
   height: 100%;
-  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background-color: #e9f1fa;
+  background-image: linear-gradient(to top, #e9f1fa 0%, #ffffff 100%);
   background-repeat: no-repeat;
 }
 
@@ -72,4 +73,10 @@ nav {
   border-width: 4px;
   border-color: rgba(0, 183, 255, 0.056);
   margin-bottom: 5px;
+}
+
+.header {
+  position: relative;
+  top: 0px;
+  margin-bottom: 50px;
 }

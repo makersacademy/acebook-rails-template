@@ -1,5 +1,4 @@
 <h1>News Feed</h1>
-
     <% @posts.each do |post| %>
     <div class="post-container">
       <div class="user-post">
@@ -15,7 +14,6 @@
             method: :put, remote: :true do%> 👎 <%= post.get_likes.size %> </div> <% end %>
           </a>
         </span>
-        
         <div class="post-info">
           <% created_at = post.created_at%>
           <% current_time = Time.now %>
@@ -28,4 +26,4 @@
         </div>
       </div>
     </div>
-    <%end%>
+<%end%>
