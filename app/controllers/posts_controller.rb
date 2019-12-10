@@ -4,12 +4,16 @@ class PostsController < ApplicationController
   respond_to :html, :xml, :json
 
   def new
+    @wall_user_id = params[:wallUserID]
+    @user = User.find_by(id: params[:id])
+    @user = current_user if @user.nil?
     @post = Post.new
   end
 
   def create
     @post = current_user.posts.create(post_params)
-    redirect_to posts_url
+    redirect_to controller: 'users', action: 'show', id: params[:wallUserID]
+
   end
 
   def index
@@ -33,7 +37,7 @@ class PostsController < ApplicationController
 
   def update
     post.update_attributes(post_params)
-    redirect_to post
+    redirect_to user_session_path
   end
 
   private
