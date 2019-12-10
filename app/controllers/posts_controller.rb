@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :redirect_if_user_is_not_signed_in
+  respond_to :js, :html, :json
 
   def new
     @post = current_user.posts.build
@@ -26,6 +27,7 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+
   def edit
     if Post.find(params[:id]).update_valid?
       @post = Post.find(params[:id])
@@ -38,6 +40,7 @@ class PostsController < ApplicationController
       flash[:error] = "You cannot update this post"
       redirect_to posts_url
     end
+
   end
 
   def update
@@ -49,6 +52,24 @@ class PostsController < ApplicationController
       flash[:error] = "You cannot update other people's posts"
     end
     redirect_to posts_url
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    @post.liked_by current_user
+    respond_to do |format|
+      format.html { redirect_back fallback_location: posts_url }
+      format.js { render layout:false }
+    end
+  end
+
+  def unlike
+    @post = Post.find(params[:id])
+    @post.unliked_by current_user
+    respond_to do |format|
+      format.html { redirect_back fallback_location: posts_url }
+      format.js { render layout:false }
+    end
   end
 
   private
