@@ -20,10 +20,10 @@ def sign_up_second_user
 
 end
 
-def make_post
+def make_post(message)
 
   visit '/'
-  fill_in "post_message", with: "Beep beep"
+  fill_in "post_message", with: message
   click_button "Submit"
 
 end
