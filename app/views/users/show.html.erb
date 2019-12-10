@@ -1,18 +1,25 @@
 <%= link_to 'User Wall', user_session_path(@users) %>
 
-<div class="user">
-  <h2>Welcome to <%=@user.email %>'s wall</h2>
+  <center><h2>Welcome to <%=@user.email %>'s wall</h2></center>
+
   <br>
-  <br>
-  <%= link_to new_post_path(id: @user.id) do %>
-  New post
-  <% end %>
+  <p>
   <% @usersposts.reverse.each do |post| %>
-  <p><%= post.message %>: posted at <%= post.created_at.strftime('%l:%M%P %-d-%B-%Y') %>
-  </p>
+  <div class="container">
+
+  <p><%= post.created_at.strftime('%l:%M%P %-d-%B-%Y') %></p>
+  <p class="post" ><%= post.message %> (<%= post.user.email %>)</p>
+    <br>
+    <% if post.created_at > 10.minutes.ago
+  %>
   <%= link_to 'Edit', edit_post_path(post) %>
   |
   <%= link_to 'Delete', post, method: :delete, data: {confirm: "Are you sure?"} %>
+  <br>
   <% end %>
-
 </div>
+<br>
+
+<% end %>
+
+<center><%= button_to "New post", new_post_path, :method => :get %></center>
