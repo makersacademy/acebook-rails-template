@@ -10,7 +10,7 @@
   <p><%= post.created_at.strftime('%l:%M%P %-d-%B-%Y') %></p>
   <p class="post" ><%= post.message %> (<%= post.user.email %>)</p>
     <br>
-    <% if post.created_at > 10.minutes.ago
+    <% if current_user.id == @user.id && post.created_at > 10.minutes.ago
   %>
   <%= link_to 'Edit', edit_post_path(post) %>
   |
