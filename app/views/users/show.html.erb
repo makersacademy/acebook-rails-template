@@ -1,3 +1,5 @@
+<% link_to 'User Wall', user_session_path(@users) %>
+
 Hello, <%= @user.email %>
 <br>
 <% @userposts.reverse.each do |post| %>
