@@ -1,9 +1,6 @@
-$('like-btn').on('ajax:success', function() {
-  $(this).parent().parenth().find('.like_count')
-  .html('<% @post.get_likes.size %> 👍');
-  $(this).closest('like-btn').html()('Like');
-})
 
-$("a").on('click', function(e) {
-  $("a").hide()
-})
+$(document).ready(function(){
+  $('.like-btn').click(function(event) {
+    $(event.target).html('0');
+  });
+});
