@@ -11,6 +11,9 @@
         <p> <%= (post.message.gsub("\r\n", '<br/>')).html_safe %></p>
         <p>Posted by: <%= post.user.first %>  <%= post.user.last %></p>
           Posted at: <%= date_string %>
+        <div>
+          <%= link_to "Add Comment", new_comment_path(post_id: post.id) %>
+        </div>
         <div class="post-info">
           <% created_at = post.created_at%>
           <% current_time = Time.now %>
