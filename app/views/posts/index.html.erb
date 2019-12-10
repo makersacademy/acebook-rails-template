@@ -92,10 +92,10 @@
           <%end%>
           <div class="addComment">
 
-            <%= form_with model: post.comments.build, url: "/comments", local: true do |form| %>
+            <%= form_for :comment, url: "/comments" do |form| %>
             <%= form.label :comment%>
             <p> <%= form.text_area :message %> </p>
-            <%= hidden_field_tag :post, post.id %>
+            <%= form.hidden_field 'post', post %>
 
             <%= form.submit "Add Comment" %>
             <%end%>
