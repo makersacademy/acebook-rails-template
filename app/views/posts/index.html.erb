@@ -46,7 +46,7 @@
   <div class = "post">
     <% all_posts = @posts.sort_by { |sorted| sorted[:created_at] }.reverse! %>
     <% @posts.each do |post| %>
-    <div class = "single-post">
+    <div class = "single-post" id="post_<%= post.id %>">
       <br>
       <div class = "post-text">
       <% post.linebreak.each do |sortpost| %>
