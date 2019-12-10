@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :posts
+  resources :posts do
+    member do
+      get 'wall_create'
+  end
+end
+
+  get '/:user_name' => "posts#create_wall"
   root 'posts#index'
 end

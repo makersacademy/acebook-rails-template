@@ -27,6 +27,12 @@ class PostsController < ApplicationController
     @posts = current_user.posts.all.order(created_at: 'DESC')
   end
 
+  def wall_create
+    # redirect_to(user_path(params[:user_id]))
+    # redirect_to(user_path(@user_id])
+     "whataaa"
+  end
+
   private
 
   def post_params
