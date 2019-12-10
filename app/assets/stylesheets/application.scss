@@ -10,9 +10,14 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
  /* checking for solutions to be able to include line breaks in posts */
 /* white-space: pre-line; */
+/*
+
+
+
+//custom bootstrap styles must be imported before bootstrap */
+
+@import "bootstrap";

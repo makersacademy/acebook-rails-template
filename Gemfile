@@ -11,8 +11,12 @@ end
 
 # required as part of adding Heroku
 gem 'backports'
+# adding bootstrap for styling
+gem 'bootstrap', '~> 4.0.0'
 # as suggested in Trello board by Makers coaches
 gem 'devise'
+# jquery rails gem needed for bootstrap
+gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record
