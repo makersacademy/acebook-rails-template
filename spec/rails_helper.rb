@@ -58,7 +58,10 @@ RSpec.configure do |config|
     Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
   end
 
-  Capybara.javascript_driver = :selenium
+  # To set a different driver for javascript, uncomment the below (and change
+  # :selenium to chosen driver)
+  # Capybara.javascript_driver = :selenium
+
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.

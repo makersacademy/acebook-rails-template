@@ -12,10 +12,10 @@ end
 def sign_up_second_user
 
   visit "/users/sign_up"
-  fill_in "Email", with: "bang@robot.com"
-  fill_in "Password", with: "robotron"
-  fill_in "Password confirmation", with: "robotron"
-  fill_in "Username", with: "Bang bang"
+  fill_in "user_email", with: "bang@robot.com"
+  fill_in "user_username", with: "Bang bang"
+  fill_in "user_password", with: "robotron"
+  fill_in "user_password_confirmation", with: "robotron"
   click_button "Sign up"
 
 end
