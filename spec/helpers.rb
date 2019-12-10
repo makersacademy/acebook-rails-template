@@ -12,7 +12,7 @@ end
 def make_post
 
   visit '/'
-  fill_in "Message", with: "Beep beep"
+  fill_in "post_message", with: "Beep beep"
   click_button "Submit"
 
 end
