@@ -15,11 +15,17 @@
  */
 
  body {
- font-family: 'Tenor Sans', sans-serif;
- background-color:  	#f7f7f7;
+ font-family: 'Roboto', sans-serif;
+ background-color: #f7f7f7;
+ font-size: 16px;
+ color: #222;
+ font-weight: 300;
+ margin: 0;
+ padding: 0;
  }
 
- 
+
+
 
  /* Add a green background colour for nav background */
  .topnav {
@@ -48,3 +54,64 @@
    background-color: #4CAF50;
    color: white;
  }
+
+#login-box {
+  position: relative;
+  margin: 5% auto;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  padding: 20px;
+  width: 286px;
+  height: 400px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input[type="submit"],
+#log_in {
+  margin-top: 28px;
+  width: 120px;
+  height: 32px;
+  background: #4CAF50;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+#signup-title {
+  font-weight: 300;
+}
+
+#error_explanation {
+  position: relative;
+  margin: 1% auto;
+  background: #E74C3C;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  box-sizing: content-box;
+  padding: 20px;
+  width: 30%;
+  /* height: 400px; */
+}
