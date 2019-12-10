@@ -4,43 +4,45 @@
 //
 $(document).ready(function() {
 
-  // var likesCount = $(".likes-count-js").data("likes");
+  function unlikePost(postID) {
+    let $post = $(`#${postID}`);
 
-  $('.like-button').on('click', function(event) {
-    event.preventDefault();
-    let postID = $(this).parent().parent().parent().attr('id')
-    $.post(`/api/posts/${postID}/likes`, function() {
-      let $post = $(`#${postID}`);
-      $post.find('.like-button').attr('value', 'Unlike')
-      $post.find('.like-button').switchClass('like-button', 'unlike-button')
-      let currentLikesCount = $post.find('.like-count').text().split()[0]
-      let updatedLikesCountText = `${currentLikesCount + 1} Likes`
-      $post.find('.like-count').text(updatedLikesCountText);
-    })
-  })
-
-  $('.unlike-button').on('click', function(event) {
-    event.preventDefault();
-    let postID = $(this).parent().parent().parent().attr('id')
     $.ajax({
-    url: `/posts/${postID}/likes/42`,
-    type: 'DELETE',
-    success: function(result) {
-        $('.unlike-button').attr('value', 'Like')
-        $('.unlike-button').switchClass('unlike-button', 'like-button')
-        // $(document).find('.like-count').html((likesCount - 1) + ' Likes');
+      url: `/api/posts/${postID}/likes`,
+      type: 'DELETE',
+      success: function() {
+        $post.find('.toggle-like').text('Like');
+        $.get(`/api/posts/${postID}/likes`, function(response) {
+          let likesCount = response.length
+          let likeOrLikes = (likesCount == 1) ? 'Like' : 'Likes'
+          $post.find('.like-count').text(`${likesCount} ${likeOrLikes}`)
+        })
       }
     })
+  }
+
+  function likePost(postID) {
+    let $post = $(`#${postID}`);
+
+    $.post(`/api/posts/${postID}/likes`, function() {
+      $post.find('.toggle-like').text('Unlike');
+      $.get(`/api/posts/${postID}/likes`, function(response) {
+        let likesCount = response.length
+        let likeOrLikes = (likesCount == 1) ? 'Like' : 'Likes'
+        $post.find('.like-count').text(`${likesCount} ${likeOrLikes}`)
+      })
+    })
+  }
+
+  $('.toggle-like').on('click', function(event) {
+    event.preventDefault();
+    let $button = $(this);
+    let postID = $button.parent().parent().attr('id')
+    if ($button.text() === 'Unlike') {
+      unlikePost(postID);
+    } else {
+      likePost(postID);
+    }
   })
 
-
-//   $('.like-button').on('click', function() {
-//     $(document).find('.like-button').attr('value', 'Unlike')
-//     $(document).find('.like-count').html(likesCount + 1 + ' Likes');
-//   })
-//
-//   $('.unlike-button').on('click', function() {
-//     $(document).find('.unlike-button').attr('value', 'Like')
-//     $(document).find('.like-count').html(likesCount - 1 + ' Likes');
-//   })
 })

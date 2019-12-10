@@ -14,9 +14,9 @@
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
 
     <% if pre_like %>
-      <div><%= button_to 'Unlike', post_like_path(post, pre_like), class: "unlike-button", method: :delete %></div>
+      <div><button class='toggle-like'>Unlike</button></div>
     <% else %>
-      <div><%= button_to 'Like', post_likes_path(post), class: "like-button", method: :post %></div>
+      <div><button class='toggle-like'>Like</button></div>
     <% end %>
     <br>
 

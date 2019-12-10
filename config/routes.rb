@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
+  delete '/api/posts/:post_id/likes/', :to => 'api/likes#destroy'
+
 
 
 #   root 'welcome#index'
