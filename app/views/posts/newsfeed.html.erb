@@ -1,0 +1,28 @@
+<h1>News Feed</h1>
+    <% @posts.each do |post| %>
+    <div class="post-container">
+      <div class="user-post">
+        <%day = Date.new(post.created_at.wday + 1).strftime("%a")%>
+        <% time_array = (post.created_at.to_s.split(" ")[1]).split(":") %>
+        <% time_string = "#{time_array[0]}:#{time_array[1]}" %>
+        <% date_string = "#{day} at #{time_string}" %>
+        <p> <%= (post.message.gsub("\r\n", '<br/>')).html_safe %></p>
+        <p>Posted by: <%= post.user.first %>  <%= post.user.last %></p>
+          Posted at: <%= date_string %>
+          <a>
+            <div> <%= link_to like_post_path(post, 'like'), class: "like-btn",
+            method: :put, remote: :true do%> 👎 <%= post.get_likes.size %> </div> <% end %>
+          </a>
+        </span>
+        <div class="post-info">
+          <% created_at = post.created_at%>
+          <% current_time = Time.now %>
+          <% if current_time - created_at < 600 %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <% end %>
+          <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% link_to %>
+        </div>
+      </div>
+    </div>
+<%end%>

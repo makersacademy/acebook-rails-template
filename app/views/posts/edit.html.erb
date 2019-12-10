@@ -1,0 +1,10 @@
+<%= form_with(model: @post, local: true) do |form| %>
+<p>
+  <%= form.label :message %>
+  <%= form.text_area :message %>
+
+  <%= form.submit "Submit" %>
+<% end %>
+</p>
+
+<%= link_to 'Back', posts_path %>
