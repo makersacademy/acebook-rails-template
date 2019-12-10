@@ -6,7 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'devise'
-
+gem 'bootstrap'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -35,9 +36,10 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
+
+  gem 'capybara', '~> 3.13'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
-  gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop'

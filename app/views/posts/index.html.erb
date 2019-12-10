@@ -5,12 +5,43 @@
   <%= form.submit "Submit" %>
 <% end %>
 
+
 <% @posts.each do |post| %>
-  <ul>
-  <b><p><li><%= @username %></li></p></b>
-      <p><%= simple_format(post.message) %></p>
-      <p><%= post.created_at %></p>
-      <p></p>
-      <br>
-  </ul>
+<div>
+        <p><%= @username %></p>
+        <p><%= post.created_at %></p>
+    <div id="post_<%=post.id%>" data-name="custom-text">
+       <div id="post_text_<%=post.id%>"><%= simple_format(post.message) %></div>
+       <% if (@user.id = post.user_id) %>
+       <button type="button" id="post_edit_<%=post.id%>" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Edit</button>
+       <% end %>
+    </div>
+
+</div>
 <% end %>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit your post</h4>
+      </div>
+      <div class="md-form mb-5">
+        <form id="editForm" action="" method="get">
+          <div class="form-group">
+            <textarea class="form-control" rows="3" id="edit_message" name="post[message]"></textarea>
+          </div>
+          <input id="SaveUpdate" type="Submit" value="Update">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="Submit" value="Submit" form="editForm" class="btn btn-default" data-dismiss="modal">Save</button> -->
+      </div>
+
+    </div>
+
+  </div>
