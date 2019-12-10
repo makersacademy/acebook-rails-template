@@ -1,8 +1,5 @@
 # AceBook
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/2c4d396d61b44f9d4d46/maintainability)](https://codeclimate.com/github/mattfreeman-london/acebook-AceofBaseBook/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/2c4d396d61b44f9d4d46/test_coverage)](https://codeclimate.com/github/mattfreeman-london/acebook-AceofBaseBook/test_coverage)
-
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
