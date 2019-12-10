@@ -17,9 +17,15 @@
  .toggle-like {
    font-size: 50px;
    padding: 0;
-    border: none;
-    background: none;
+   border: none;
+   background: none;
  }
+
+ .toggle-like-container {
+    text-align: center;
+ }
+
+ button:focus { outline:0 !important; }
 
  body {
    background-color: #A8B8D6;
