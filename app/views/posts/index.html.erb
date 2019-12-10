@@ -37,9 +37,9 @@
   <div>
     <h2>Posts</h2>
     <% flash.each do |key, value| %>
-      <br>
-      <%= content_tag :div, value, class: "flash #{key}" %>
-      <br>
+    <br>
+    <%= content_tag :div, value, class: "flash #{key}" %>
+    <br>
     <% end %>
   </div>
 
@@ -49,9 +49,9 @@
     <div class = "single-post">
       <br>
       <div class = "post-text">
-      <% post.linebreak.each do |sortpost| %>
+        <% post.linebreak.each do |sortpost| %>
         <%= sortpost %> <br>
-      <% end %>
+        <% end %>
       </div>
       <div class = "post-created-by">
         <% poster = User.find(post.user_id) %>
@@ -64,25 +64,21 @@
         <br>
       </div>
 
-      <div class="number-of-likes">
       <%= post.get_upvotes.size %> likes
-      </div>
-
-      <div class="like_button">
-        <%= link_to like_post_path(post), method: :put do %>
-            Like
-        <% end %>
-      </div>
-
-      <div class="unlike_button">
-      <%= link_to unlike_post_path(post), method: :put do %>
-      Unlike
-      <% end %>
-      </div>
 
       <div class = "Post-buttons">
+        <div class="like_and_unlike">
+          <%= link_to like_post_path(post), method: :put do %>
+          Like
+          <% end %>
+
+          <%= link_to unlike_post_path(post), method: :put do %>
+          Unlike
+          <% end %>
+        </div>
+
         <%if post.update_valid? %>
-          <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
+        <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
         <%end%>
         <%= link_to('Delete', "/posts/#{post.id}", url_options = {method: "delete"}) %>
       </div>
