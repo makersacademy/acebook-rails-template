@@ -2,7 +2,6 @@
 <br>
 
 <% @posts.each do |post| %>
-<% if current_user.id == post.user.id %>
 
 <div class="container">
   <p><%= (post.created_at).strftime("%l:%M%P %-d-%B-%Y") %></p>
