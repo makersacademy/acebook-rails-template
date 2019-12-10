@@ -10,6 +10,12 @@
         <p> <%= (post.message.gsub("\r\n", '<br/>')).html_safe %></p>
         <p>Posted by: <%= post.user.first %>  <%= post.user.last %></p>
           Posted at: <%= date_string %>
+          <a>
+            <div> <%= link_to like_post_path(post, 'like'), class: "like-btn",
+            method: :put, remote: :true do%> 👎 <%= post.get_likes.size %> </div> <% end %>
+          </a>
+        </span>
+        
         <div class="post-info">
           <% created_at = post.created_at%>
           <% current_time = Time.now %>
@@ -18,6 +24,7 @@
           <% end %>
           <%= link_to 'Show', post_path(post) %>
           <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% link_to %>
         </div>
       </div>
     </div>

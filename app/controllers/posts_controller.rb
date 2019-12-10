@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  respond_to :js, :html, :json
+
 
   def new
     @post = current_user.posts.build
@@ -36,6 +38,15 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
   def destroy
     @post.destroy
     redirect_to posts_path
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    if params[:format] == 'like'
+      @post.liked_by current_user
+    elsif params[:format] == 'unlike'
+      @post.unliked_by current_user
+    end
   end
 
   private
