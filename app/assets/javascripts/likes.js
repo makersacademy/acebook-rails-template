@@ -10,10 +10,10 @@ $(document).ready(function() {
     event.preventDefault();
     let postID = $(this).parent().parent().parent().attr('id')
     $.post(`/posts/${postID}/likes`, function(res) {
-      $('.like-button').attr('value', 'Unlike')
-      $('.like-button').addClass('unlike-button')
-      $('.like-button').removeClass('like-button')
-      $(document).find('.like-count').html((likesCount + 1) + ' Likes');
+      $(`#${postID}`).find('.like-button').attr('value', 'Unlike')
+      $(`#${postID}`).find('.like-button').addClass('unlike-button')
+      $(`#${postID}`).find('.like-button').removeClass('like-button')
+      $(`#${postID}`).find('.like-count').html((likesCount + 1) + ' Likes');
     })
   })
 
