@@ -22,7 +22,8 @@
  }
 
  .toggle-like-container {
-    text-align: center;
+    text-align: left;
+    height: 50px;
  }
 
  button:focus { outline:0 !important; }
