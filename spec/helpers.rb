@@ -1,10 +1,10 @@
 def sign_up_user
 
   visit "/users/sign_up"
-  fill_in "Email", with: "beep@robot.com"
-  fill_in "Password", with: "cyberdog"
-  fill_in "Password confirmation", with: "cyberdog"
-  fill_in "Username", with: "Robot"
+  fill_in "user_email", with: "beep@robot.com"
+  fill_in "user_username", with: "Robot"
+  fill_in "user_password", with: "cyberdog"
+  fill_in "user_password_confirmation", with: "cyberdog"
   click_button "Sign up"
 
 end
