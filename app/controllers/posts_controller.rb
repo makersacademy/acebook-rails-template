@@ -37,7 +37,7 @@ class PostsController < ApplicationController
 
   def update
     post.update_attributes(post_params)
-    redirect_to user_session_path
+    redirect_to controller: 'users', action: 'show', id: params[:wallUserID]
   end
 
   private
