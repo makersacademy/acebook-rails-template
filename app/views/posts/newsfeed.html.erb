@@ -7,7 +7,7 @@
         <% time_array = (post.created_at.to_s.split(" ")[1]).split(":") %>
         <% time_string = "#{time_array[0]}:#{time_array[1]}" %>
         <% date_string = "#{day} at #{time_string}" %>
-        <p> <%= (post.message.gsub("\r\n", '<br/>')).html_safe %></p>
+        <p><%= (post.message.gsub("\r\n", '<br/>')).html_safe %></p>
         <p>Posted by: <%= post.user.first %>  <%= post.user.last %></p>
           Posted at: <%= date_string %>
         <div class="post-info">
