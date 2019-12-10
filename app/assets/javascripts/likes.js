@@ -4,16 +4,18 @@
 //
 $(document).ready(function() {
 
-  var likesCount = $(".likes-count-js").data("likes");
+  // var likesCount = $(".likes-count-js").data("likes");
 
   $('.like-button').on('click', function(event) {
     event.preventDefault();
     let postID = $(this).parent().parent().parent().attr('id')
-    $.post(`/posts/${postID}/likes`, function(res) {
-      $(`#${postID}`).find('.like-button').attr('value', 'Unlike')
-      $(`#${postID}`).find('.like-button').addClass('unlike-button')
-      $(`#${postID}`).find('.like-button').removeClass('like-button')
-      $(`#${postID}`).find('.like-count').html((likesCount + 1) + ' Likes');
+    $.post(`/api/posts/${postID}/likes`, function() {
+      let $post = $(`#${postID}`);
+      $post.find('.like-button').attr('value', 'Unlike')
+      $post.find('.like-button').switchClass('like-button', 'unlike-button')
+      let currentLikesCount = $post.find('.like-count').text().split()[0]
+      let updatedLikesCountText = `${currentLikesCount + 1} Likes`
+      $post.find('.like-count').text(updatedLikesCountText);
     })
   })
 
@@ -25,9 +27,8 @@ $(document).ready(function() {
     type: 'DELETE',
     success: function(result) {
         $('.unlike-button').attr('value', 'Like')
-        $('.unlike-button').addClass('like-button')
-        $('.unlike-button').removeClass('unlike-button')
-        $(document).find('.like-count').html((likesCount - 1) + ' Likes');
+        $('.unlike-button').switchClass('unlike-button', 'like-button')
+        // $(document).find('.like-count').html((likesCount - 1) + ' Likes');
       }
     })
   })
