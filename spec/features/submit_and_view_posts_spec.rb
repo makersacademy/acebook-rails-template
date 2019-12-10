@@ -26,7 +26,6 @@ RSpec.feature "Post", type: :feature do
     sign_up_second_user
     make_post("second")
 
-    save_and_open_page
     expect(page).to have_css("div#post_1", text: "Robot")
     expect(page).to have_css("div#post_1", text: "first")
 
