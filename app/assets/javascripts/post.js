@@ -1,9 +1,9 @@
 $(document).ready(function() {
   $( "[id^=post_edit]" ).click(function() {
     // get id from div above
-    let post_id = this.id.split("_");
-    let post_div_id = "#post_text_" + post_id[2];
-    let post_edit_url = "/posts/" + post_id[2] + "/edit"
+    var post_id = this.id.split("_");
+    var post_div_id = "#post_text_" + post_id[2];
+    var post_edit_url = "/posts/" + post_id[2] + "/edit"
     //update modal form to new path and prepopulate wih exisiting value
     $("#editForm").attr("action",post_edit_url)
     $(".form-control").val($(post_div_id).text())
