@@ -19,12 +19,12 @@ RSpec.feature "User Account Features", type: :feature do
     expect(page).to have_content("Posts")
   end
 
-  # scenario "if no user if signed in you will always be redirected to home page" do
-  #   visit '/posts'
-  #   expect(page).to have_button("Sign Up")
-  #   visit '/posts/new'
-  #   expect(page).to have_button("Sign Up")
-  # end
+  scenario "if no user if signed in you will always be redirected to home page" do
+    visit '/posts'
+    expect(current_url).to eq("http://www.example.com/")
+    visit '/posts/new'
+    expect(current_url).to eq("http://www.example.com/")
+  end
 
 
 

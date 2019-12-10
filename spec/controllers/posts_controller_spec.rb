@@ -16,7 +16,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe "POST /" do
     it "responds with 200" do
-      post :create, params: { post: { message: "Hello, world!", user_id: 2} }
+      post :create, params: { post: { message: "Hello, world!", user_id: 1} }
       expect(response).to redirect_to(posts_url)
     end
 
@@ -32,4 +32,22 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "PUT / :id " do
+
+    it 'verify the PUT request url' do
+      post = create(:post, id: 4, message: "Hello, world!", user_id: 1)
+      post.update(message: "hello")
+      expect(put: 'posts/4').to route_to(controller: 'posts', action: 'update', id: "4")
+    end
+
+    it 'updates a post' do
+      post = create(:post, id: 4, message: "Hello, world!", user_id: 1)
+      post.update(message: "hello")
+      expect(post.message).to eq("hello")
+      expect(Post.find_by(message: "hello")).to be
+    end
+
+  end
+
 end
