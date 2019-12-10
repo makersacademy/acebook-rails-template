@@ -84,12 +84,11 @@ RSpec.configure do |config|
 
   # reset database after each test iteration
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.strategy = :truncation, { reset_ids: true }
   end
 
   config.before(:each) do
-    DatabaseCleaner.start
+    DatabaseCleaner.clean
   end
 
   config.after(:each) do
