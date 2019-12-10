@@ -53,8 +53,9 @@ RSpec.configure do |config|
   # It makes it use the chrome browser, but can also be
   #  configured to user Firefox, etc.
   Capybara.register_driver :selenium do |app|
-    # options = Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox headless disable-gpu disable-dev-shm-usage])
-    Capybara::Selenium::Driver.new(app, browser: :firefox)
+    options = Selenium::WebDriver::Firefox::Options.new
+    options.add_argument('-headless')
+    Capybara::Selenium::Driver.new(app, browser: :firefox, options: options)
   end
 
   Capybara.javascript_driver = :selenium
