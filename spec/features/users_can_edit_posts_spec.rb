@@ -47,8 +47,8 @@ RSpec.feature "Edit/update posts", type: :feature do
     click_on "Sign out"
     sign_up_second_user
     post = Post.find_by(message: "Hello, this is my first post" )
-    find("#post_#{post.id}").click_link "Update"
-    expect(page).to have_css('.header', text: "You cannot update other people's posts")
+    visit "posts/#{post.id}/edit"
+    expect(page).to have_css('.header', text: "You cannot update other people's posts" )
     expect(page).to have_css('.post', text: "Hello, this is my first post")
   end
 

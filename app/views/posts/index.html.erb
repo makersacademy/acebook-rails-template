@@ -4,6 +4,9 @@
 </head>
 <body>
   <br>
+<br>
+<% content_for :field, flush: true do %>
+  <br>
   <br>
   <div class = "header">
     <h2>Posts</h2>
@@ -48,7 +51,7 @@
           <% end %>
         </div>
 
-        <%if post.update_valid? %>
+        <%if post.update_valid? && post.user_id == current_user.id %>
         <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
         <%end%>
         <%= link_to('Delete', "/posts/#{post.id}", url_options = {method: "delete"}) %>
@@ -57,3 +60,4 @@
     </div>
     <% end %>
   </div>
+<% end %>
