@@ -10,9 +10,15 @@
         <p>Posted by: <%= post.user.first %>  <%= post.user.last %></p>
           Posted at: <%= date_string %>
           <a>
+          <% if current_user.liked? post %>
+            <div> <%= link_to like_post_path(post, 'unlike'), class: "like-btn",
+            method: :put, remote: :true do%> 👎 <%= post.get_likes.size %> </div> <% end %>
+          <% else %>
             <div> <%= link_to like_post_path(post, 'like'), class: "like-btn",
             method: :put, remote: :true do%> 👎 <%= post.get_likes.size %> </div> <% end %>
           </a>
+          <div class = 'test'> <a><p>This should disappear</p></a></div>
+          <% end %>
         </span>
         <div class="post-info">
           <% created_at = post.created_at%>
