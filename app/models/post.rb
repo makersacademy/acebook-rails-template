@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   def self.sortedbymostrecent
     self.all.sort_by { |post| post[:created_at] }.reverse
