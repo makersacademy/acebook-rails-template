@@ -1,8 +1,8 @@
 <h1> Comments </h1>
-<%= form_with model: @post, local: true do |form| %>
+
+<%= form_for @comment do |form| %>
 <%= form.label :comment %>
 <%= form.text_area :body %>
-<%# <%= form.hidden_field @post.id %> %>
+<%= form.hidden_field :post_id, :value => params[:post_id] %>
 <%= form.submit %>
-<%= p params[:post_id] %>
 <% end %>

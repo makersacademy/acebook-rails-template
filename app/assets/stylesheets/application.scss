@@ -56,6 +56,13 @@
   display: inline-block
 }
 
+html, body {
+  margin: 0;
+  height: 100%;
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background-repeat: no-repeat;
+}
+
 nav {
   background-image: linear-gradient(120deg, #b6d2ff 0%, #b4defe 100%);
   padding-top: 0px !important; 

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
   get 'welcome/index'
   get 'posts/newsfeed'
+  post '/comments' => 'comments#create'
 
 
   # Resource routing allows you to quickly declare all of the common routes for a given resourceful controller.
