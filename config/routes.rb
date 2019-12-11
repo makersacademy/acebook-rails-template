@@ -13,12 +13,9 @@ Rails.application.routes.draw do
  # end
 # resources :posts, only: :create_wall, param: :user_id
 
-
-controller 'posts' do
-  get '/:user_id'=> "posts#index"
-end
-
-
-
   root 'posts#index'
+
+  controller 'posts' do
+    get '/:user_id'=> "posts#index"
+  end
 end

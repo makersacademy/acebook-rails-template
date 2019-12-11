@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @user_id = current_user.id
     @username = current_user.username
     @posts = Post.all.order(created_at: :desc)
-    # redirect_to(user_posts_path(@user_id))
+    redirect_to(user_path(user_id: current_user.id))
   end
 
   def show
