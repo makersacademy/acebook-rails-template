@@ -20,6 +20,10 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if current_user.id != @post.user_id
+      flash[:notice] = "You cannot edit this content"
+      redirect_to posts_newsfeed_path
+    end
   end
 
   def update
@@ -32,8 +36,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    redirect_to posts_path
+    if current_user.id != @post.user_id
+      flash[:notice] = "You cannot delete this content"
+      redirect_to posts_newsfeed_path
+    else
+      @post.destroy
+      redirect_to posts_newsfeed_path
+      end
   end
 
   def like

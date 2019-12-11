@@ -6,12 +6,12 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:comment][:post_id])
-    @comment = @post.comments.create(body: params[:comment][:body], user_id: current_user.id)
+    @comment = current_user.comments.create(comment_params)
     redirect_to posts_url
   end
 
   private
     def comment_params
-      params.require(:comment).permit(:body)
+      params.require(:comment).permit(:body, :user_id, :post_id)
     end
 end
