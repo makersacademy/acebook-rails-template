@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def newsfeed
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def edit
