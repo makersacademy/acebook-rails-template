@@ -3,35 +3,9 @@
   <title>Posts Dashboard</title>
 </head>
 <body>
-
-  <div class = "nav">
-    <nav class="navbar navbar-default navbar-light">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-top" id="navdropdown">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <%= link_to "Home", root_url, class: "navbar-brand" %>
-          <%= link_to "Posts", "/posts", class: "navbar-brand" %>
-          <%= link_to "New Post", "/posts/new", class: "navbar-brand" %>
-        </div>
-
-        <div class="collapse navbar-collapse" id="navbar-top">
-          <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-            <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
-            <% else %>
-            <li><%= link_to 'Sign up', new_user_registration_path %></li>
-            <li><%= link_to 'Sign in', user_session_path %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-  </div>
   <br>
+<br>
+<% content_for :field, flush: true do %>
   <br>
   <br>
   <div class = "header">
@@ -46,8 +20,7 @@
   <div class = "post">
     <% all_posts = @posts.sort_by { |sorted| sorted[:created_at] }.reverse! %>
     <% @posts.each do |post| %>
-
-    <div class = "single-post">
+    <div class = "single-post" id="post_<%= post.id %>">
       <br>
       <div class = "post-text">
         <% post.linebreak.each do |sortpost| %>
@@ -78,10 +51,13 @@
           <% end %>
         </div>
 
-        <%if post.update_valid? %>
-        <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
+        <%if post.user_id == current_user.id %>
+          <%if post.update_valid?%>
+            <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
+          <%end%>
+          <%= link_to('Delete', "/posts/#{post.id}", url_options = {method: "delete"}) %>
         <%end%>
-        <%= link_to('Delete', "/posts/#{post.id}", url_options = {method: "delete"}) %>
+
       </div>
       <div class="listComments">
         <% post.comments.each do |comment| %>
@@ -94,7 +70,7 @@
 
             <%= form_with model: post.comments.build, local: true do |form| %>
             <%= form.label :comment%>
-            
+
             <p> <%= form.text_area :message %> </p>
             <%= form.hidden_field :post_id %>
 
@@ -106,3 +82,4 @@
     </div>
     <% end %>
   </div>
+<% end %>

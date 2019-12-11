@@ -1,62 +1,38 @@
+<% content_for :field, flush: true do %>
 
-<div class = "nav">
-  <nav class="navbar navbar-default navbar-light">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-top" id="navdropdown">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <%= link_to "Home", root_url, class: "navbar-brand" %>
-        <%= link_to "Posts", "/posts", class: "navbar-brand" %>
-      </div>
+  <br>
+  <br>
+  <h2>Log in</h2>
 
-      <div class="collapse navbar-collapse" id="navbar-top">
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-          <li><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></li>
-          <% else %>
-          <li><%= link_to 'Sign up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign in', user_session_path %></li>
-          <% end %>
-        </ul>
-      </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <% if flash.alert %>
+    <div class=”error_explanation”. style="background-color:white", align="center">
+      <font face="verdana" color="red">
+      <%= flash.alert %>
+      </font>
     </div>
-  </nav>
-</div>
-<br>
-<br>
-<br>
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <% if flash.alert %>
-   <div class=”error_explanation”. style="background-color:white", align="center">
-     <font face="verdana" color="red">
-     <%= flash.alert %>
-     </font>
-   </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+    <% end %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Log in" %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+  <%= render "users/shared/links" %>
 <% end %>
-
-<%= render "users/shared/links" %>
