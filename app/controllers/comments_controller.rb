@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
 
     @post = Post.find(comment_params[:post_id])
     @post.comments.create(message:comment_params[:message], user_id: current_user.id)
+    flash[:notice] = "Your comment has been added"
     redirect_to posts_url
   end
 
