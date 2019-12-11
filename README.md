@@ -1,16 +1,18 @@
 # AceBook
 
-REQUIRED INSTRUCTIONS:
+You can find our blog posts about the making of the app at [DashBook Wiki](https://github.com/mattfreeman-london/acebook-AceofBaseBook/wiki). 
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+[The engineering project outline is here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+2. The Trello card wall is here, showing the tickets we opened, who worked on them, and our progress: [AceofBaseBook Trello Board](https://trello.com/b/1n7U2LI3/aceofbasebook)
 
-2. The card wall is here: [AceofBaseBook Trello Board](https://trello.com/b/1n7U2LI3/aceofbasebook)
+## Technologies used:
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+Rails
+Devise
+Bootstrapper
+Javascript
+HTML
 
 ## Quickstart
 
@@ -24,3 +26,6 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## How to contribute to this project
+See [CONTRIBUTING.md](CONTRIBUTING.md)
