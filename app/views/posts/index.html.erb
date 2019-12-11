@@ -66,14 +66,14 @@
           <%= comment.message %>
           <br>
           <%end%>
-          
+
           <div class="addComment">
 
             <%= form_with model: post.comments.build, local: true do |form| %>
-            <%= form.label :comment%> 
+            <%= form.label :comment%>
 
             <p> <%= form.text_area :message %> </p>
-            <%= form.hidden_field :post_id %>
+            <%= form.hidden_field :post_id%>
 
             <%= form.submit "Add Comment" %>
             <br>
