@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :authenticate_user!
 
   def index
     @userposts = Post.where(user_id: current_user.id)
@@ -6,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def users
+    # before_action :authenticate_user!
     redirect_to user_path(current_user)
   end
 
