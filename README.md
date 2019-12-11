@@ -8,11 +8,11 @@ You can find our blog posts about the making of the app at [DashBook Wiki](https
 
 ## Technologies used:
 
-Rails
-Devise
-Bootstrapper
-Javascript
-HTML
+1. Rails
+2. Devise
+3. Bootstrapper
+4. Javascript
+5. HTML
 
 ## Quickstart
 
