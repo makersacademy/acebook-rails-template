@@ -1,13 +1,17 @@
 <% link_to 'User Wall', user_session_path(@users) %>
 
-<p class="hello">Hello, <%= @user.email %></p>
+<p>Hello, <%= @user.email %></p>
 
-<p><%= link_to new_post_path do %>
-  Want to write a new post - click here
-<% end %></p>
+<p>
+  <img src="/newpost.png" alt="New post" height="150" width="150">
+  <%= link_to new_post_path do %>
+  Want to write a new post? Click here!<% end %>
+</p>
 
+<div class="container">
 <% @userposts.reverse.each do |post| %>
-  <p><%= simple_format(post.message) %></p>
-  <p><%= post.created_at.strftime("Posted on %d/%m/%Y") %></p>
-  <p><%= link_to 'Edit', edit_post_path(post) %></p>
+  <%= simple_format(post.message) %>
+  <%= post.created_at.strftime("Posted on %d/%m/%Y") %>
+  <%= link_to 'Edit', edit_post_path(post) %>
 <% end %>
+</div>
