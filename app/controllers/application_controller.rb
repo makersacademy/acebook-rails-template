@@ -1,9 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-
-
-
   def redirect_if_user_is_not_signed_in
     if !user_signed_in?
       redirect_to root_url
