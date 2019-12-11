@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users
-  resources :comments
+  resources :comments, only: [:create, :destroy]
   root 'home#index'
 
 end

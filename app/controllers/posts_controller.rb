@@ -5,10 +5,13 @@ class PostsController < ApplicationController
 
   def new
     @post = current_user.posts.build
+    @test = params[:test]
+  
   end
-
+  
   def create
     @post = current_user.posts.create(post_params)
+    
     redirect_to posts_url
   end
 

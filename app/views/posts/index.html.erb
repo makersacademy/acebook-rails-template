@@ -67,18 +67,35 @@
           <br>
           <%end%>
 
+
           <div class="addComment">
 
             <%= form_with model: post.comments.build, local: true do |form| %>
             <%= form.label :comment%>
 
+
             <p> <%= form.text_area :message %> </p>
             <%= form.hidden_field :post_id%>
 
+     
             <%= form.submit "Add Comment" %>
             <br>
             <br>
-            <%end%>
+
+
+             <div class = "Comment-buttons">
+
+          <%# <%= link_to('Delete' "/comments/#{post.comment.id}", {method: delete} %> %>
+
+      <% post.comments.each do |comment| %>
+      <%= comment.id %>
+          <%= link_to('Delete', "/comments/#{comment.id}", url_options = {method: "delete"}) %>
+
+      
+      <%end %>
+      </div>
+
+          <%end%>
 
           </div>
       </div>
