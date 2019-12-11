@@ -13,6 +13,7 @@
         </p>
           <% post.comments.each do |comment| %>
             <p>
+              <%= User.find(comment.user_id).first %> heckled
               <%= comment.body %>
             </p>
           <% end %>
