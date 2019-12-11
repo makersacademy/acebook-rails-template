@@ -29,11 +29,12 @@
             <div class="post-info">
               <% created_at = post.created_at%>
               <% current_time = Time.now %>
-              <% if current_time - created_at < 600 %>
-              <%= link_to 'Edit', edit_post_path(post) %>
+              <% if current_user.id == post.user_id %>
+                <% if current_time - created_at < 600 %>
+                <%= link_to 'Edit', edit_post_path(post) %>
+                <% end %>
+                <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
-              <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% link_to %>
             </div>
           </div>
         </div>
