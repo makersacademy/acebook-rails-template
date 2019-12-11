@@ -14,6 +14,20 @@
  *= require_self
  */
 
+ .toggle-like {
+   font-size: 50px;
+   padding: 0;
+   border: none;
+   background: none;
+ }
+
+ .toggle-like-container {
+    text-align: left;
+    height: 50px;
+ }
+
+ button:focus { outline:0 !important; }
+
  body {
    background-color: #A8B8D6;
    font-family: 'Kalam', cursive;
