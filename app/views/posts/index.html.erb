@@ -40,8 +40,7 @@
 
       <%= post.get_upvotes.size %> likes
 
-      <div class = "Post-buttons">
-        <div class="like_and_unlike">
+      <div class="like_and_unlike">
           <%= link_to like_post_path(post), method: :put do %>
           Like
           <% end %>
@@ -49,17 +48,40 @@
           <%= link_to unlike_post_path(post), method: :put do %>
           Unlike
           <% end %>
-        </div>
+      </div>
 
+      <div class = "Post-buttons">
         <%if post.user_id == current_user.id %>
           <%if post.update_valid?%>
             <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
           <%end%>
           <%= link_to('Delete', "/posts/#{post.id}", url_options = {method: "delete"}) %>
         <%end%>
-
       </div>
 
+      <div class="listComments">
+        <% post.comments.each do |comment| %>
+        <% user = User.find(comment.user_id)%>
+          <%=user.first_name + " " + user.surname  %>:
+          <%= comment.message %>
+          <br>
+          <%end%>
+          
+          <div class="addComment">
+
+            <%= form_with model: post.comments.build, local: true do |form| %>
+            <%= form.label :comment%> 
+
+            <p> <%= form.text_area :message %> </p>
+            <%= form.hidden_field :post_id %>
+
+            <%= form.submit "Add Comment" %>
+            <br>
+            <br>
+            <%end%>
+
+          </div>
+      </div>
     </div>
     <% end %>
   </div>

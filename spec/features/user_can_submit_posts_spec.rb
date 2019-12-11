@@ -7,5 +7,5 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     expect(page).to have_css('.post', text: "Hello, world!" && "Posted by: Gandalf The Grey")
-  end  
+  end
 end
