@@ -29,9 +29,12 @@ class PostsController < ApplicationController
 
   def create_wall
     p current_user
+    p current_user.id
+    # p current_user.posts.user_id
     # @user_id = current_user.posts.user_id
     # redirect_to(user_path(params[:user_id]))
     # redirect_to(user_path(@user_id])
+
      render "posts/create_wall"
   end
 
