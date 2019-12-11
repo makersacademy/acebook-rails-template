@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users do
-    resources :posts, shallow:true
+    resources :posts, shallow:false
   end
  #  resources :posts do
  #    # get '/:user_id', on: :collection, action: :create_wall
@@ -13,10 +13,10 @@ Rails.application.routes.draw do
  # end
 # resources :posts, only: :create_wall, param: :user_id
 
-#
-# controller 'posts' do
-#   get '/:user_id'=> "posts#create_wall"
-# end
+
+controller 'posts' do
+  get '/:user_id'=> "posts#index"
+end
 
 
 

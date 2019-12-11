@@ -4,21 +4,25 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
-    redirect_to posts_url
+    redirect_to user_posts_url
   end
 
   def edit
     @user = current_user
     @post = Post.find(params[:id])
     @post.update(post_params)
-    redirect_to posts_url
+    redirect_to user_posts_url
   end
 
   def index
+    p current_user
+    p current_user.id
     @post = current_user.posts.new
     @user = current_user
+    @user_id = current_user.id
     @username = current_user.username
     @posts = Post.all.order(created_at: :desc)
+    # redirect_to(user_posts_path(@user_id))
   end
 
   def show
