@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
  end
 
  def after_sign_in_path_for(resource)
-    user_posts_path(user_id: current_user.id)
+    # user_posts_path(user_id: current_user.id)
+    user_path(id: current_user.id)
  end
 end

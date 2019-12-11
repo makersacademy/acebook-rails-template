@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
+    # redirect_to posts_url
     redirect_to user_posts_url
   end
 
@@ -22,7 +23,7 @@ class PostsController < ApplicationController
     @user_id = current_user.id
     @username = current_user.username
     @posts = Post.all.order(created_at: :desc)
-    redirect_to(user_path(user_id: current_user.id))
+    # redirect_to(user_path(user_id: current_user.id))
   end
 
   def show
