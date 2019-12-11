@@ -1,5 +1,7 @@
 # AceBook
 
+[![Build Status](https://travis-ci.org/mattfreeman-london/acebook-AceofBaseBook.svg?branch=master)](https://travis-ci.org/mattfreeman-london/acebook-AceofBaseBook)
+
 You can find our blog posts about the making of the app at [DashBook Wiki](https://github.com/mattfreeman-london/acebook-AceofBaseBook/wiki). 
 
 [The engineering project outline is here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
