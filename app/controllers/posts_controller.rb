@@ -16,31 +16,17 @@ class PostsController < ApplicationController
   end
 
   def index
-    p current_user
-    p current_user.id
     @post = current_user.posts.new
     @user = current_user
     @user_id = current_user.id
     @username = current_user.username
     @posts = Post.all.order(created_at: :desc)
-    # redirect_to(user_path(user_id: current_user.id))
   end
 
   def show
     @username = current_user.username
     @user = current_user
     @posts = current_user.posts.all.order(created_at: 'DESC')
-  end
-
-  def create_wall
-    p current_user
-    p current_user.id
-    # p current_user.posts.user_id
-    # @user_id = current_user.posts.user_id
-    # redirect_to(user_path(params[:user_id]))
-    # redirect_to(user_path(@user_id])
-
-     render "posts/create_wall"
   end
 
   private
