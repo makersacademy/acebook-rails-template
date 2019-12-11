@@ -7,21 +7,13 @@ class CommentsController < ApplicationController
   end
 
 
-
-  # def show 
-  # @id = "HI I am a PARAM"
-
-  # end 
-
   def destroy
-    # @comment = Post.comments.find(params[:id])
         # if @comment.user_id === current_user.id
-    # @comment.destroy
         # flash[:notice] = "Your Comment has been deleted"
         # elsif @comment.user_id != current_user.id
         # flash[:error] = "You cannot delete other people's posts"
         # end
-   @comments = Post.comments.destroy(Comment.find(1))
+   @comments = current_user.comments.destroy(params[:id])
 
          redirect_to posts_url
   end

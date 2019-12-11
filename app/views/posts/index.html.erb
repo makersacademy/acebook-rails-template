@@ -88,9 +88,8 @@
           <%# <%= link_to('Delete' "/comments/#{post.comment.id}", {method: delete} %> %>
 
       <% post.comments.each do |comment| %>
-      <%= comment.id %>
-          <%= link_to('Delete', "/comments/#{comment.id}", url_options = {method: "delete"}) %>
 
+          <%= link_to('Delete', "/comments/#{comment.id}", url_options = {method: "delete"}) %>
       
       <%end %>
       </div>
