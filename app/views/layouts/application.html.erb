@@ -9,11 +9,14 @@
   </head>
   <body>
 
-    <style>
 
+    <style>
+      .navbar-brand a{
+      color: white !important;
+     }
       .glow {
         font-size: 80px;
-        color: #fff;
+        color: #ffffff;
         text-align: center;
         -webkit-animation: glow 1s ease-in-out infinite alternate;
         -moz-animation: glow 1s ease-in-out infinite alternate;
@@ -30,7 +33,7 @@
         }
 
       body {font-family: sans-serif;
-        background-color: powderblue;
+        background-color: 	thistle;
         color: black;
         text-align: center;}
 
@@ -43,7 +46,9 @@
     </style>
 
     <div class="container-fluid">
-      <nav class="navbar fixed-top navbar-light bg-dark" role="navigation">
+      <!-- <nav class="navbar fixed-top navbar-light bg-dark" role="navigation"> -->
+        <nav class="navbar fixed-top navbar-dark" style="background-color: #624E62; role="navigation">
+
         <ul>
           <li class="navbar-brand"><%= link_to('Home', welcome_index_path, :method => 'get') %></li>
           <li class="navbar-brand"><%= link_to('Sign up', new_user_registration_path, :method => 'get') %></li>
@@ -51,6 +56,7 @@
           <li class="navbar-brand"><%= link_to('Sign out', destroy_user_session_path, :method => 'delete') %></li>
           <li class="navbar-brand"><%= link_to('New post', new_post_path, :method => 'get') %></li>
           <li class="navbar-brand"><%= link_to('All posts', posts_path, :method => 'get') %></li>
+
         </ul>
       </nav>
       <br>
