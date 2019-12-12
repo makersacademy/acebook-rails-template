@@ -6,7 +6,16 @@ Rails.application.routes.draw do
   # get 'posts/create'
   get 'users/:id/', to: 'users#show'
 
-  #   root 'welcome#index'
+
+  namespace :api do
+    resources :posts do
+      resources :likes
+    end
+  end
+
+  delete '/api/posts/:post_id/likes/', :to => 'api/likes#destroy'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
