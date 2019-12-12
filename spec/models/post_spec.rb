@@ -8,3 +8,4 @@ RSpec.describe Post, type: :model do
       expect(post.parse_date).to eq 'Thursday at 11:53'
     end
   end
+end

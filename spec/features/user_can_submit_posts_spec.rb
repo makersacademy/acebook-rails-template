@@ -9,7 +9,8 @@ RSpec.feature "Timeline", type: :feature do
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
     click_button 'Sign up'
-    click_link "New post"
+    page.find("//button[@class='navbar-toggler']").click
+    page.find("//nav//a[text() = 'New Post']").click
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
