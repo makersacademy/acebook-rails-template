@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get 'posts/create'
+  # get 'posts/create'
+  get 'users/:id/', to: 'users#show'
+
 
   namespace :api do
     resources :posts do
@@ -14,8 +16,6 @@ Rails.application.routes.draw do
   delete '/api/posts/:post_id/likes/', :to => 'api/likes#destroy'
 
 
-
-#   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
@@ -23,5 +23,7 @@ Rails.application.routes.draw do
     resources :likes
   end
 
-  root 'posts#index'
+  # root 'posts#index'
+  root 'users#show'
+
 end

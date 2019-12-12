@@ -7,10 +7,9 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "user_password", with: "123456"
     fill_in "user_password_confirmation", with: "123456"
     click_button "Sign up"
-    visit "/posts"
-    click_button "New post"
+    click_on "New post"
     fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    click_on "Submit"
     expect(page).to have_content("Hello, world!")
   end
 end

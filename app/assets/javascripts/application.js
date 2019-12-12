@@ -14,3 +14,8 @@
 //= require jquery2
 //= require jquery_ujs
 // = require_tree .
+
+// let userID = $(this).attr('id')
+//     $.post(`/user/${userID}`, function(res) {
+//       $(document).find('.like-count').html((likesCount + 1) + ' Likes');
+//     })
