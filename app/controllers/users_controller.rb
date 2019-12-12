@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @usersposts = Post.where(user_id: current_user.id)
+    @usersposts = Post.where(user_id: post.recipient_id)
     @user = User.find_by(id: current_user.id)
   end
 

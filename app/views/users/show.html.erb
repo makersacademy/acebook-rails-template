@@ -5,7 +5,7 @@
   <% @usersposts.reverse.each do |post| %>
 
   <div class="container">
-
+    
   <p><%= post.created_at.strftime('%l:%M%P %-d-%B-%Y') %></p>
   <p class="post" ><%= post.message %> (<%= post.user.email %>)</p>
     <br>

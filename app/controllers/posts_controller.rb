@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   respond_to :html, :xml, :json
 
   def new
-    @wall_user_id = params[:wallUserID]
+    @recipient = params[:wallUserID]
     @user = User.find_by(id: params[:id])
     @user = current_user if @user.nil?
     @post = Post.new
@@ -13,7 +13,6 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.create(post_params)
     redirect_to controller: 'users', action: 'show', id: params[:wallUserID]
-
   end
 
   def index
@@ -43,10 +42,10 @@ class PostsController < ApplicationController
   private
 
   def post
-    @post ||= Post.find(params[:id])
+    @post ||= Post.find(params[:wallUserID])
   end
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :recipient_id).merge(user_id: post.recipient_id)
   end
 end
