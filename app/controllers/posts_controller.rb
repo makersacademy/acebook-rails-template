@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
   def destroy
     post.destroy
-    redirect_to root_url
+    redirect_to controller: 'users', action: 'show', id: params[:wallUserID]
   end
 
   def update

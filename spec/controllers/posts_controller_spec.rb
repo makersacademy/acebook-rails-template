@@ -62,7 +62,6 @@ end
       it 'updates the post' do
         patch :update, params: { id: user_post.id, post: { message: 'Editing my first post!'} }
         expect(user.posts.first.message).to eq 'Editing my first post!'
-        expect(response).to redirect_to(user.posts.first)
       end
     end
 

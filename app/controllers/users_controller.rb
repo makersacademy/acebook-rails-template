@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @usersposts = Post.where(user_id: post.recipient_id)
     @user = User.find_by(id: current_user.id)
   end
 
@@ -12,7 +11,6 @@ class UsersController < ApplicationController
     else
       @user = User.find(params[:id])
     end
-    @recipientPosts = Post.where(recipient_id: params[:id])
+    @recipient_posts = Post.where(recipient_id: params[:id]).order('created_at DESC')
   end
-
 end
