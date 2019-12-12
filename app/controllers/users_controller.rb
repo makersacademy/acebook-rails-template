@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     if params[:id] == nil
-      @user = current_user
+      redirect 'index'
     else
       @user = User.find(params[:id])
     end

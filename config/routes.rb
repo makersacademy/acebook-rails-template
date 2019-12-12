@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   end
 
   # root 'posts#index'
-  root 'users#show'
+  # root 'users#show'
+  root 'posts#index'
 
 end
