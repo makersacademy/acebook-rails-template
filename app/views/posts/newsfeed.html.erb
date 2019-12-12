@@ -8,11 +8,7 @@
         <% date_string = post.parse_date() %>
           <p> <%= keep_line_break(post) %></p>
           <p>Posted by: <%= post.user.first %>  <%= post.user.last %> on <%= date_string %></p>
-            <% if current_user.liked? post %>
-              <% like_status = 'unlike'%>
-            <% else %>
-              <% like_status = 'like'%>
-            <% end %>
+            <% like_status = check_if_liked(post, current_user) %>
               <div><%= link_to like_post_path(post, like_status),
                 class: "like-btn-#{post.id}", method: :put, remote: :true,
                 onclick: "getNumLikes(#{post.id})" do%>
@@ -21,11 +17,10 @@
               </div>
             <% end %>
         <div class="post-info">
-          <% if Time.now - post.created_at < 600 %>
-          <%= link_to 'Edit', edit_post_path(post) %>
+          <% if older_than_10_mins?(post) %>
+            <%= link_to 'Edit', edit_post_path(post) %>
           <% end %>
           <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% link_to %>
         </div>
         </div>
       </div>
