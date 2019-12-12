@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   get 'posts/newsfeed'
   post '/comments' => 'comments#create'
-  get 'posts/:id/' => 'posts#like_count'
+  get 'posts/likes/:id/' => 'posts#like_count'
 
 
   # Resource routing allows you to quickly declare all of the common routes for a given resourceful controller.

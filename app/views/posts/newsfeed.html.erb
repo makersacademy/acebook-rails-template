@@ -1,15 +1,11 @@
 <body>
   <h1>News Feed</h1>
     <% @posts.each do |post| %>
-    <% uri = URI.parse("http://localhost:3000/posts/#{post.id}") %>
+    <% uri = URI.parse("http://localhost:3000/posts/likes/#{post.id}") %>
     <% like_count = JSON.parse(Net::HTTP.get(uri)) %>
       <div class="post-container">
         <div class="user-post">
-        <% day = Date.new(post.created_at.wday).strftime("%a") %>
-        <% time_array = (post.created_at.to_s.split(" ")[1]).split(":") %>
-        <% time_string = "#{time_array[0]}:#{time_array[1]}" %>
-        <% date_string = "#{day} at #{time_string}" %>
-           
+        <%= date_string = post.parse_date() %>
           <p> <%= (post.message.gsub("\r\n", '<br/>')).html_safe %></p>
           <p>Posted by: <%= post.user.first %>  <%= post.user.last %> on <%= date_string %></p>
             <% if current_user.liked? post %>
