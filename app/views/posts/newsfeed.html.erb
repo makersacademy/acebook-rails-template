@@ -5,7 +5,7 @@
     <% like_count = JSON.parse(Net::HTTP.get(uri)) %>
       <div class="post-container">
         <div class="user-post">
-        <%= date_string = post.parse_date() %>
+        <% date_string = post.parse_date() %>
           <p> <%= (post.message.gsub("\r\n", '<br/>')).html_safe %></p>
           <p>Posted by: <%= post.user.first %>  <%= post.user.last %> on <%= date_string %></p>
             <% if current_user.liked? post %>
@@ -13,12 +13,12 @@
             <% else %>
               <% like_status = 'like'%>
             <% end %>
-              <div><%= link_to like_post_path(post, like_status), 
-                class: "like-btn-#{post.id}", method: :put, remote: :true, 
+              <div><%= link_to like_post_path(post, like_status),
+                class: "like-btn-#{post.id}", method: :put, remote: :true,
                 onclick: "getNumLikes(#{post.id})" do%>
-                <span class="like-emoji">👎</span> 
-                <p class=<%="like-number-#{post.id}"%>> <%= post.get_likes.size %> </p> 
-              </div> 
+                <span class="like-emoji">👎</span>
+                <p class=<%="like-number-#{post.id}"%>> <%= post.get_likes.size %> </p>
+              </div>
             <% end %>
         <div class="post-info">
           <% if Time.now - post.created_at < 600 %>
