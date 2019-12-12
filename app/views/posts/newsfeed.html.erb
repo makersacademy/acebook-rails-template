@@ -6,7 +6,7 @@
       <div class="post-container">
         <div class="user-post">
         <% date_string = post.parse_date() %>
-          <p> <%= (post.message.gsub("\r\n", '<br/>')).html_safe %></p>
+          <p> <%= keep_line_break(post) %></p>
           <p>Posted by: <%= post.user.first %>  <%= post.user.last %> on <%= date_string %></p>
             <% if current_user.liked? post %>
               <% like_status = 'unlike'%>

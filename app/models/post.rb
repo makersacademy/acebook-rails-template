@@ -11,5 +11,4 @@ class Post < ApplicationRecord
     time_string = "#{time_array[0]}:#{time_array[1]}"
     date_string = "#{date} at #{time_string}"
   end
-
-end
+end 
