@@ -1,0 +1,33 @@
+class Api::LikesController < ApplicationController
+
+  def index
+    @likes = Post.find(params[:post_id]).likes
+    respond_to do |format|
+      format.json { render :json => @likes }
+    end
+  end
+
+  def create
+    @post = Post.find(params[:post_id])
+    @like = @post.likes.create(user_id: current_user.id)
+    respond_to do |format|
+      format.json { render :json => @like }
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:post_id])
+    @likes = @post.likes.select { |like| like.user_id == current_user.id }
+    @like = @likes.first
+    respond_to do |format|
+      format.json { render :json => @like.destroy }
+    end
+  end
+
+  private
+
+  def already_liked?
+    Like.where(user_id: current_user.id, post_id:
+    params[:post_id]).exists?
+  end
+end
