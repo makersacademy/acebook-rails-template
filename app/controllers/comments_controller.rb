@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   def destroy
         
   Comment.find(params[:id]).destroy
-        #  @comments = current_user.comments.destroy(params[:id])
+
         # if current_user.comments.user_id === current_user.id
           flash[:notice] = "Your Comment has been deleted"
           # elsif @comment.user_id != current_user.id
