@@ -54,6 +54,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def like_count
+    @post = Post.find(params[:id])
+    @likecount = @post.get_likes.size
+    render json: @likecount
+  end
+
   private
 
   def set_post

@@ -1,41 +1,37 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>News Feed</h1>
-        <% @posts.each do |post| %>
-        <div class="post-container">
-          <div class="user-post">
-            <%day = Date.new(post.created_at.wday + 1).strftime("%a")%>
-            <% time_array = (post.created_at.to_s.split(" ")[1]).split(":") %>
-            <% time_string = "#{time_array[0]}:#{time_array[1]}" %>
-            <% date_string = "#{day} at #{time_string}" %>
-            <p> <%= (post.message.gsub("\r\n", '<br/>')).html_safe %></p>
-            <p>Posted by: <%= post.user.first %>  <%= post.user.last %></p>
-              Posted at: <%= date_string %>
-              <a>
-              <% if current_user.liked? post %>
-                <div> <%= link_to like_post_path(post, 'unlike'), class: "like-btn",
-                method: :put, remote: :true do%> 👎 <span class = 'like-number'> <%= post.get_likes.size %> <span> </div> <% end %>
-              <% else %>
-                <div> <%= link_to like_post_path(post, 'like'), class: "like-btn",
-                method: :put, remote: :true do%> 👎 <span class = 'like-number'> <%= post.get_likes.size %> <span> </div> <% end %>
-              </a>
-              <% end %>
-
-            <div class="post-info">
-              <% created_at = post.created_at%>
-              <% current_time = Time.now %>
-                <% if current_time - created_at < 600 %>
-                <%= link_to 'Edit', edit_post_path(post) %>
-                <% end %>
-                <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-          </div>
+<body>
+  <h1>News Feed</h1>
+    <% @posts.each do |post| %>
+    <% uri = URI.parse("http://localhost:3000/posts/#{post.id}") %>
+    <% like_count = JSON.parse(Net::HTTP.get(uri)) %>
+      <div class="post-container">
+        <div class="user-post">
+        <% day = Date.new(post.created_at.wday).strftime("%a") %>
+        <% time_array = (post.created_at.to_s.split(" ")[1]).split(":") %>
+        <% time_string = "#{time_array[0]}:#{time_array[1]}" %>
+        <% date_string = "#{day} at #{time_string}" %>
+           
+          <p> <%= (post.message.gsub("\r\n", '<br/>')).html_safe %></p>
+          <p>Posted by: <%= post.user.first %>  <%= post.user.last %> on <%= date_string %></p>
+            <% if current_user.liked? post %>
+              <% like_status = 'unlike'%>
+            <% else %>
+              <% like_status = 'like'%>
+            <% end %>
+              <div><%= link_to like_post_path(post, like_status), 
+                class: "like-btn-#{post.id}", method: :put, remote: :true, 
+                onclick: "getNumLikes(#{post.id})" do%>
+                <span class="like-emoji">👎</span> 
+                <p class=<%="like-number-#{post.id}"%>> <%= post.get_likes.size %> </p> 
+              </div> 
+            <% end %>
+        <div class="post-info">
+          <% if Time.now - post.created_at < 600 %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <% end %>
+          <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% link_to %>
         </div>
+        </div>
+      </div>
     <%end%>
-  </body>
-</html>
+</body>
