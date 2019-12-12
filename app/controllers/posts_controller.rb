@@ -42,10 +42,10 @@ class PostsController < ApplicationController
   private
 
   def post
-    @post ||= Post.find(params[:wallUserID])
+    @post ||= Post.find(params[:id])
   end
 
   def post_params
-    params.require(:post).permit(:message, :recipient_id).merge(user_id: post.recipient_id)
+    params.require(:post).permit(:message, :recipient_id).merge(user_id: current_user.id)
   end
 end

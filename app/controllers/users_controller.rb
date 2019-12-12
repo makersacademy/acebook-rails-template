@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     else
       @user = User.find(params[:id])
     end
-    @usersposts = Post.where(user_id: @user.id)
+    @recipientPosts = Post.where(recipient_id: params[:id])
   end
 
 end
