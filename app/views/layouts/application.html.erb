@@ -7,21 +7,56 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
 
+    <style>
+
+      .glow {
+        font-size: 80px;
+        color: #fff;
+        text-align: center;
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @-webkit-keyframes glow {
+          from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+          }
+          to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+          }
+        }
+
+      body {font-family: sans-serif;
+        background-color: powderblue;
+        color: black;
+        text-align: center;}
+
+      div.container {opacity: 50%;
+        width: 500px;
+        background-color: white;
+        border: 5px solid darkblue;
+        padding: 30px;)
+
+    </style>
+
     <div class="container-fluid">
-      <nav class="navbar fixed-top navbar-light bg-light" role="navigation">
+      <nav class="navbar fixed-top navbar-light bg-dark" role="navigation">
         <ul>
+          <li class="navbar-brand"><%= link_to('Home', welcome_index_path, :method => 'get') %></li>
           <li class="navbar-brand"><%= link_to('Sign up', new_user_registration_path, :method => 'get') %></li>
           <li class="navbar-brand"><%= link_to('Log in', new_user_session_path, :method => 'get') %></li>
           <li class="navbar-brand"><%= link_to('Sign out', destroy_user_session_path, :method => 'delete') %></li>
+          <li class="navbar-brand"><%= link_to('New post', new_post_path, :method => 'get') %></li>
+          <li class="navbar-brand"><%= link_to('All posts', posts_path, :method => 'get') %></li>
         </ul>
       </nav>
       <br>
 
     </div>
-    
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
