@@ -1,0 +1,10 @@
+<% content_for :field, flush: true do %>
+    <br>
+    <br>
+    <%= form_for @post, method: :put do |form| %>
+    <%= form.label :message %>
+    <p> <%= form.text_area :message, size: "24x6" %> </p>
+
+    <%= form.submit("Submit") %>
+    <% end %>
+<% end %>

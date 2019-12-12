@@ -1,7 +1,106 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<html>
+<head>
+  <title>Posts Dashboard</title>
+</head>
+<body>
+  <br>
+<br>
+<% content_for :field, flush: true do %>
+  <br>
+  <br>
+  <div class = "header">
+    <h2>Posts</h2>
+    <% flash.each do |key, value| %>
+    <br>
+    <%= content_tag :div, value, class: "flash #{key}" %>
+    <br>
+    <% end %>
+  </div>
 
-<%= link_to new_post_path do %>
-  New post
+  <div class = "post">
+    <% all_posts = @posts.sort_by { |sorted| sorted[:created_at] }.reverse! %>
+    <% @posts.each do |post| %>
+    <div class = "single-post" id="post_<%= post.id %>">
+      <br>
+      <div class = "post-text">
+        <% post.linebreak.each do |sortpost| %>
+        <%= sortpost %> <br>
+        <% end %>
+      </div>
+      <div class = "post-created-by">
+        <% poster = User.find(post.user_id) %>
+        Posted by: <%= poster.first_name + " " + poster.surname %>
+        <br>
+      </div>
+
+      <div class = "post-created-at">
+        <%= post.created_at.strftime("Posted at: %H:%M on %A %d %b, %Y") %>
+        <br>
+      </div>
+
+      <%= post.get_upvotes.size %> likes
+
+      <div class="like_and_unlike">
+          <%= link_to like_post_path(post), method: :put do %>
+          Like
+          <% end %>
+
+          <%= link_to unlike_post_path(post), method: :put do %>
+          Unlike
+          <% end %>
+      </div>
+
+      <div class = "Post-buttons">
+        <%if post.user_id == current_user.id %>
+          <%if post.update_valid?%>
+            <%= link_to('Update', "/posts/#{post.id}/edit", url_options = {method: "get"}) %>
+          <%end%>
+          <%= link_to('Delete', "/posts/#{post.id}", url_options = {method: "delete"}) %>
+        <%end%>
+      </div>
+
+      <div class="listComments">
+        <% post.comments.each do |comment| %>
+        <% user = User.find(comment.user_id)%>
+          <%=user.first_name + " " + user.surname  %>:
+          <%= comment.message %>
+          <br>
+          <br>
+
+          <%= link_to('Delete', "/comments/#{comment.id}", url_options = {method: "delete"}) %>
+
+          <%end%>
+
+
+          <div class="addComment">
+
+            <%= form_with model: post.comments.build, local: true do |form| %>
+            <%= form.label :comment%>
+
+
+            <p> <%= form.text_area :message %> </p>
+            <%= form.hidden_field :post_id%>
+
+     
+            <%= form.submit "Add Comment" %>
+            <br>
+            <br>
+
+
+             <div class = "Comment-buttons">
+
+
+      <%# <% post.comments.each do |comment| %>
+
+      
+      <%# <%end %> 
+      </div>
+
+          <%end%>
+
+          </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
 <% end %>

@@ -1,13 +1,6 @@
-# AceBook
+# SpaceBook
 
-REQUIRED INSTRUCTIONS:
-
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
+Imagine if Facebook but in space
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -24,3 +17,11 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+*OR*
+
+Visit us [here](https://spaciest-of-books.herokuapp.com/)
+
+*Travis CI build status (master):*
+
+[![Build Status](https://travis-ci.org/SevenSecrets/acebook-rails-template.svg?branch=master)](https://travis-ci.org/SevenSecrets/acebook-rails-template)
