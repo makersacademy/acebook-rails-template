@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   def update
   @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to posts_newsfeed_path
     else
       render 'edit'
     end
@@ -52,6 +52,12 @@ class PostsController < ApplicationController
     elsif params[:format] == 'unlike'
       @post.unliked_by current_user
     end
+  end
+
+  def like_count
+    @post = Post.find(params[:id])
+    @likecount = @post.get_likes.size
+    render json: @likecount
   end
 
   private
