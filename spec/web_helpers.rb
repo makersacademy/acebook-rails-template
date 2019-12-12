@@ -27,3 +27,8 @@ def sign_up_and_go_to_new_post
   visit "/posts"
   click_link "New Post"
 end
+
+def sign_up_and_go_to_new_comment
+  sign_up 
+  visit "/posts"
+  click_
