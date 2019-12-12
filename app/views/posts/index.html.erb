@@ -65,6 +65,10 @@
           <%=user.first_name + " " + user.surname  %>:
           <%= comment.message %>
           <br>
+          <br>
+
+          <%= link_to('Delete', "/comments/#{comment.id}", url_options = {method: "delete"}) %>
+
           <%end%>
 
 
@@ -86,11 +90,10 @@
              <div class = "Comment-buttons">
 
 
-      <% post.comments.each do |comment| %>
+      <%# <% post.comments.each do |comment| %>
 
-          <%= link_to('Delete', "/comments/#{comment.id}", url_options = {method: "delete"}) %>
       
-      <%end %>
+      <%# <%end %> 
       </div>
 
           <%end%>
