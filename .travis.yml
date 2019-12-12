@@ -1,1 +1,5 @@
 language: ruby
+
+before_script:
+  rake db:migrations
+  
