@@ -1,7 +1,43 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+    <h1 class="header"> My wall </h1>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+    <% if user_signed_in? %>
+      <h4> what's on your mind? </h4>
+      <%= form_for current_user.posts.build do |form| %>
+        <%= form.label :message %>
+        <%= form.text_area :message %>
+        <%= form.submit "Submit" %>
+      <% end %>
+    <% end %>
+    <br>
+    <% @posts.each do |post| %>
+      <div class="user-post">
+        <%day = Date.new(post.created_at.wday + 1).strftime("%a")%>
+        <% time_array = (post.created_at.to_s.split(" ")[1]).split(":") %>
+        <% time_string = "#{time_array[0]}:#{time_array[1]}" %>
+        <% date_string = "#{day} at #{time_string}" %>
+        <p> <strong> <%= (post.message.gsub("\r\n", '<br/>')).html_safe %></strong></p>
+        <p>
+         <%= post.user.first %> <%= post.user.last %>
+         posted at <%= date_string %>
+        </p>
+          <% post.comments.each do |comment| %>
+            <p>
+              <%= User.find(comment.user_id).first %> heckled
+              <%= comment.body %>
+            </p>
+          <% end %>
+        <div>
+          <%= link_to "Add Comment", new_comment_path(post_id: post.id) %>
+        </div>
+        <div class="post-info">
+          <% created_at = post.created_at%>
+          <% current_time = Time.now %>
+          <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% if current_time - created_at < 600 %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <% end %>
+        </div>
+        <br>
+      </div>
+
+    <% end %>
