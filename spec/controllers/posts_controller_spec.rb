@@ -6,6 +6,8 @@ RSpec.describe PostsController, type: :controller do
   before(:each) do
     user = double('user')
     allow(user).to receive(:id).and_return(1)
+    post = double('post')
+    allow(post).to receive(:id).and_return(1)
     allow(request.env['warden']).to receive(:authenticate!).and_return(user)
     allow(controller).to receive(:current_user).and_return(user)
   end
@@ -35,4 +37,5 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
 end
