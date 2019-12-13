@@ -13,10 +13,13 @@ class PostsController < ApplicationController
 
   def index
     @posts = current_user.posts.order(created_at: :desc)
+    @title = "Welcome #{current_user.first}!"
+    render :template => 'posts/newsfeed.html.erb'
   end
 
   def newsfeed
     @posts = Post.all.order(created_at: :desc)
+    @title = "News Feed"
   end
 
   def edit

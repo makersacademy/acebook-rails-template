@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
   get 'welcome/index'
-  get 'posts/newsfeed'
+  get 'posts/newsfeed' => 'posts#newsfeed'
   post '/comments' => 'comments#create'
   get 'posts/likes/:id/' => 'posts#like_count'
 
