@@ -24,6 +24,15 @@
   --color-6: #b4defe;
 }
 
+.post-container {
+  border : solid;
+  border-color: var(--color-2);
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 5px !important;
+  padding: 5px;
+}
+
 .form-div {
   text-align: center;
 }
