@@ -48,9 +48,17 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
+      <% if user_signed_in? %>
+        <p> what's on your mind?
+      <%= form_for current_user.posts.build do |form| %>
+        <%= form.label :message %>
+        <%= form.text_area :message %>
+
+        <%= form.submit "Submit" %>
+      <% end %>
+      <% end %>
+      </p>
     <%= javascript_include_tag 'application' %>
-
-
 
     <%= yield %>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -63,6 +71,6 @@
           var p_div = $(`.like-number-${post_id}`).html(res)
         })
       }
-    </script> 
+    </script>
   </body>
 </html>
