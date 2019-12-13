@@ -1,5 +1,14 @@
     <h1 class="header"> My wall </h1>
 
+    <% if user_signed_in? %>
+      <h4> what's on your mind? </h4>
+      <%= form_for current_user.posts.build do |form| %>
+        <%= form.label :message %>
+        <%= form.text_area :message %>
+        <%= form.submit "Submit" %>
+      <% end %>
+    <% end %>
+    <br>
     <% @posts.each do |post| %>
       <div class="user-post">
         <%day = Date.new(post.created_at.wday + 1).strftime("%a")%>

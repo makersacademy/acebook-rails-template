@@ -22,9 +22,6 @@
           <li class="nav-item">
             <a class="nav-link" href="/posts/newsfeed">News Feed</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/posts/new">New Post</a>
-          </li>
           <% end %>
         </ul>
 
@@ -48,16 +45,6 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 
-      <% if user_signed_in? %>
-        <p> what's on your mind?
-      <%= form_for current_user.posts.build do |form| %>
-        <%= form.label :message %>
-        <%= form.text_area :message %>
-
-        <%= form.submit "Submit" %>
-      <% end %>
-      <% end %>
-      </p>
     <%= javascript_include_tag 'application' %>
 
     <%= yield %>

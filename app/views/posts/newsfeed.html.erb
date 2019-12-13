@@ -1,5 +1,15 @@
 <body>
   <h1>News Feed</h1>
+
+  <% if user_signed_in? %>
+    <h4> what's on your mind? </h4>
+  <%= form_for current_user.posts.build do |form| %>
+    <%= form.label :message %>
+    <%= form.text_area :message %>
+    <%= form.submit "Submit" %>
+  <% end %>
+  <% end %>
+
     <% @posts.each do |post| %>
     <% uri = URI.parse("http://localhost:3000/posts/likes/#{post.id}") %>
     <% like_count = JSON.parse(Net::HTTP.get(uri)) %>
@@ -13,9 +23,17 @@
                 class: "like-btn-#{post.id}", method: :put, remote: :true,
                 onclick: "getNumLikes(#{post.id})" do%>
                 <span class="like-emoji">👎</span>
-                <p class=<%="like-number-#{post.id}"%>> <%= post.get_likes.size %> </p>
+                <span class=<%="like-number-#{post.id}"%>> <%= post.get_likes.size %> </span>
               </div>
             <% end %>
+
+            <% post.comments.each do |comment| %>
+                <%= User.find(comment.user_id).first %> heckled
+                <%= comment.body %>
+            <% end %>
+            <br>
+            <%= link_to "Add Comment", new_comment_path(post_id: post.id) %>
+
         <div class="post-info">
           <% if older_than_10_mins?(post) %>
             <%= link_to 'Edit', edit_post_path(post) %>
