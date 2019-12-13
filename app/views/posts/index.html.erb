@@ -1,7 +1,35 @@
+<center><h2>Welcome to <%= current_user.email %>'s partydino</h2></center>
+<br>
+
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+
+<div class="container" id='<%= post.id %>'>
+  <p><%= (post.created_at).strftime("%l:%M%P %-d-%B-%Y") %></p>
+  <p class="post" ><%= post.message %> (<%= post.user.email %>)</p>
+  <% if current_user.id == post.user_id && post.created_at > 10.minutes.ago
+%>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  |
+  <%= link_to 'Delete', post, method: :delete, data: {confirm: "Are you sure?"} %>
+  <br>
+
+  <% end %>
+
+
+    <div class="likes-count-js" data-likes="<%=post.likes.count%>"></div>
+
+    <span class="like-count"><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></span>
+    <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+
+    <% if pre_like %>
+      <div class="toggle-like-container"><button class='toggle-like'>&#128052</button></div>
+    <% else %>
+      <div class="toggle-like-container"><button class='toggle-like'>&#x1f984;</button></div>
+    <% end %>
+    <br>
+</div>
+<br>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<br>
+<center><%= button_to "New post", new_post_path, :method => :get %></center>

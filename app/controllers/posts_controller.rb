@@ -1,20 +1,51 @@
 class PostsController < ApplicationController
+
+  before_action :authenticate_user!
+  respond_to :html, :xml, :json
+
   def new
+    @recipient = params[:wallUserID]
+    @user = User.find_by(id: params[:id])
+    @user = current_user if @user.nil?
     @post = Post.new
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    @post = current_user.posts.create(post_params)
+    redirect_to controller: 'users', action: 'show', id: params[:wallUserID]
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order('created_at DESC')
+    respond_with(@posts)
+  end
+
+  def edit
+    post
+  end
+
+  def show
+    @posts = Post.all.order('created_at DESC')
+    render 'index'
+  end
+
+  def destroy
+    post.destroy
+    redirect_to controller: 'users', action: 'show', id: params[:wallUserID]
+  end
+
+  def update
+    post.update_attributes(post_params)
+    redirect_to controller: 'users', action: 'show', id: params[:wallUserID]
   end
 
   private
 
+  def post
+    @post ||= Post.find(params[:id])
+  end
+
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :recipient_id).merge(user_id: current_user.id)
   end
 end
