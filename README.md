@@ -1,7 +1,5 @@
 # AceBook - 409ers
 
-[Trello board](https://trello.com/b/AcoArqAG/409ers-board)
-
 ## Contributing to the Project
 ### Setting Up Local Environment
 
