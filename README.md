@@ -32,7 +32,7 @@ Start the server at localhost:3000 to confirm:
 bin/rails server
 ```
 
-### How to Run Tests
+### How to Run Tests
 
 To run all tests once manually: 
 
