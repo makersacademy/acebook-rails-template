@@ -16,7 +16,6 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-
   def update
   @post =  Post.find(params[:id])
   if (current_user == @post.user) && @post.created_at > 10.minutes.ago
@@ -33,8 +32,6 @@ class PostsController < ApplicationController
   end
 end
 
-
-
   def show
     @post = Post.find(params[:id])
   end
@@ -42,7 +39,6 @@ end
   def index
     @posts = Post.all
   end
-
 
   def destroy
     @post = Post.find(params[:id])
@@ -54,8 +50,6 @@ end
       redirect_to post_url
     end
   end
-
-
 
   private
 
