@@ -1,0 +1,57 @@
+<body>
+  <h1 class="text-center"><%= @title %></h1>
+
+  <div class = "text-center col-4 m-auto">
+    <% if user_signed_in? %>
+      <h4 class=""> Whats On Your Mind?</h4>
+      <h5>You Dont Have To Tell Us!</h5>
+    <%= form_for current_user.posts.build do |form| %>
+      <%= form.text_area :message, cols: "40", rows: "3" %>
+      <div>
+        <%= form.submit "Post" %>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+
+    <% @posts.each do |post| %>
+    <% uri = URI.parse("http://localhost:3000/posts/likes/#{post.id}") %>
+    <% like_count = JSON.parse(Net::HTTP.get(uri)) %>
+
+      <div class = "row">
+        <div class="post-container col-md-4">
+          <div class="details">
+            <% date_string = post.parse_date() %>
+            <p><%= post.user.first %> <%= post.user.last %> on <%= date_string %></p>
+          </div>
+          <div class="user-post">
+            <%= keep_line_break(post) %>
+              <% like_status = check_if_liked(post, current_user) %>
+                <div>
+                  <%= link_to like_post_path(post, like_status),
+                  class: "like-btn-#{post.id}", method: :put, remote: :true,
+                  onclick: "getNumLikes(#{post.id})" do%>
+                  <span class="like-emoji">👎</span>
+                  <span class=<%="like-number-#{post.id}"%>> <%= post.get_likes.size %> </span>
+                </div>
+              <% end %>
+              <div class="post-info">
+                <%= link_to "Add Comment", new_comment_path(post_id: post.id) %>
+                <% if older_than_10_mins?(post) %>
+                  <%= link_to 'Edit', edit_post_path(post) %>
+                <% end %>
+                <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+              <div class='comment-section'>
+              <% post.comments.each do |comment| %>
+                <% print comment.user_id %>
+                <%= User.find(comment.user_id).first %>: <%= comment.body %>
+                <br>
+              <% end %>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    <%end%>
+</body>

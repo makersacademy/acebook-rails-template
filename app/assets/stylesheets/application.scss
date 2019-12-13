@@ -1,0 +1,110 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+// @import "bootstrap";
+:root {
+  --color-1: #dff6f0;
+  --color-2: #46b3e6;
+  --color-3: #4d80e4;
+  --color-4: #2e279d;
+  --color-5: #b6d2ff;
+  --color-6: #b4defe;
+}
+
+.details {
+  font-size: 12px;
+  color: grey;
+}
+
+.comment-section {
+  background-color: var(--color-1);
+  font-size: 15px;
+}
+
+.post-container {
+  border : solid;
+  border-color: var(--color-2);
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 5px !important;
+  padding: 5px;
+}
+
+.form-div {
+  text-align: center;
+}
+
+// .navbar-nav.right{
+//   float: right !important;
+// }
+
+// .navbar-nav.left {
+//   float: left !important;
+// }
+
+.form-container {
+  padding: 20px;
+  display: inline-block;
+  width: 400px;
+  border: solid;
+  border-color: var(--color-5);
+  border-radius: 1.3em;
+  margin-top: 100px !important;
+  text-align: center;
+  box-shadow: 0px 3px 6px #0a204d85;
+}
+
+.img-logo {
+  height: 40px;
+  width: 40px;
+  margin: 0px;
+}
+
+.sign-up-header {
+  text-align: center;
+}
+
+.sign-up-form {
+  margin-top: 30px !important;
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: #e9f1fa;
+  background-image: linear-gradient(to top, #e9f1fa 0%, #ffffff 100%);
+  background-repeat: no-repeat;
+}
+
+nav {
+  background-image: linear-gradient(120deg, #b6d2ff 0%, #b4defe 100%);
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.434);
+  border-bottom: solid;
+  border-width: 4px;
+  border-color: rgba(0, 183, 255, 0.056);
+  margin-bottom: 5px;
+}
+
+.header {
+  position: relative;
+  top: 0px;
+  margin-bottom: 50px;
+}
