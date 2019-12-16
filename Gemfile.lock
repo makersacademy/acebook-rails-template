@@ -205,6 +205,7 @@ DEPENDENCIES
   pg
   puma (~> 3.7)
   rails (~> 5.1.1)
+  rake
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   selenium-webdriver

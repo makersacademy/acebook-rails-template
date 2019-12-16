@@ -1,8 +1,10 @@
 
+# source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
+  # repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+ # "https://github.com/#{repo_name}.git"
+"https://github.com/Riz1702/acebook-rails-template.git"
 end
 
 gem 'devise'
@@ -12,6 +14,8 @@ gem 'gravtastic'
 #gem 'sqlite3'
 #database app
 gem 'carrierwave'
+
+gem 'rake', '~> 13.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
