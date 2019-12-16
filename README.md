@@ -1,30 +1,47 @@
 # AceBook - 409ers
 
-[Trello board](https://trello.com/b/AcoArqAG/409ers-board)
+## Contributing to the Project
+### Setting Up Local Environment
 
+First, clone the repository. 
 
-
-REQUIRED INSTRUCTIONS:
-
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-## Quickstart
-
-First, clone this repository. Then:
+Install Gems:
 
 ```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+bundle install
 ```
+
+Set up databases:
+
+```bash
+bin/rails db:create
+bin/rails db:migrate
+```
+
+Run tests to ensure setup succeeded:
+
+```bash
+bundle exec rspec
+```
+
+Start the server at localhost:3000 to confirm:
+
+```bash
+bin/rails server
+```
+
+### How to Run Tests
+
+To run all tests once manually: 
+
+```bash
+bundle exec rspec
+```
+
+To run tests using guard on watch mode:
+
+```bash
+bundle exec guard --clear
+```
+
+This will start guard, which will run tests automatically as changes are made to code.
