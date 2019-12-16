@@ -4,7 +4,7 @@ services:
   - postgresql
 
 script:
-  - bundle exec rails db:create
-  - bundle exec rails db:migrate
+  - bin/rails db:create
+  - bin/rails db:migrate
   - bundle exec rspec
   
