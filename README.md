@@ -37,3 +37,25 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+<!-- ------------------ User Stories ------------------------ -->
+
+As a User
+So that I can login and view my account
+I would like to have a login page.
+
+As a User
+So that I can see all my information
+I would like to have a profile page.
+
+As a User
+So that I can see posts
+I would like to have a homepage.
+
+As a User
+So that I can let my feelings known
+I would like to post my thoughts.
+
+As a User
+So that I see all my pictures in one place
+I would like to have a gallery.
