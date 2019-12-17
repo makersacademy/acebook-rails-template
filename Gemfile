@@ -9,7 +9,7 @@ gem 'devise'
 #Adding authentication with this gem
 gem 'gravtastic'
 # Adding images via Gravtastic
-gem 'sqlite3'
+# gem 'sqlite3'
 #database app
 gem 'carrierwave'
 
