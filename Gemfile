@@ -15,7 +15,7 @@ gem 'gravtastic'
 #database app
 gem 'carrierwave'
 
-# gem 'rake', '~> 13.0.1'
+gem 'rake', '~> 13.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
