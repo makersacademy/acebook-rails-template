@@ -4,8 +4,6 @@ require 'rails_helper'
 require_relative './login_helper'
 
 RSpec.feature 'Timeline', type: :feature do
-  scenario ''
-
   scenario 'Can submit posts and view them' do
     sign_up_user
     visit '/posts'
