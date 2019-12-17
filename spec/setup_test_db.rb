@@ -1,9 +1,7 @@
-require 'pg'
+# frozen_string_literal: true
 
 def setup_test_db
-  p "Setting up test database..."
+  puts 'Setting up test database...'
 
-  connection = PG.connect(dbname: 'pgapp_test')
-
-  connection.exec('TRUNCATE users;')
+  User.delete_all
 end
