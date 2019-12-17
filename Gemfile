@@ -1,10 +1,10 @@
 
-# source 'https://rubygems.org'
+source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
   # repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
  # "https://github.com/#{repo_name}.git"
-"https://github.com/Riz1702/acebook-rails-template.git"
+# "https://github.com/Riz1702/acebook-rails-template.git"
 end
 
 gem 'devise'
