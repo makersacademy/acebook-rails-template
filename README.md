@@ -1,10 +1,7 @@
 "Acebook - Runtime TError
 
 1. Updated README with team name, project link and card wall links.
-<<<<<<< HEAD
-2.  Use Rails Girls Guide
-=======
->>>>>>> 11dd77494c992258e3478da632bec265dc3f2489
+
 
 
 ** User Stories **
