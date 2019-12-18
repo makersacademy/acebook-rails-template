@@ -23,7 +23,7 @@ gem 'rails', '~> 5.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 
-
+gem 'travis'
 
 
 gem 'puma', '~> 3.7' 

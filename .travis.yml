@@ -1,13 +1,16 @@
-
-
-
-env: 
--DB=postgres
--SH=bash
--PACKAGE_VERSION="12.1"
-
 language: ruby
-script: 'true'
+
+services:
+  - postgresql
+
+before_script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate RACK_ENV=test
+  # - psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
+
+script:
+  — bundle exec rspec
+
 deploy:
   provider: heroku
   api_key: 0T6byIQTYpVk1Fs9nz4Cxw
