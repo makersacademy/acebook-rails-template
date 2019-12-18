@@ -1,5 +1,4 @@
-{
-  i:wq
+
 
 
 env: 
@@ -9,4 +8,9 @@ env:
 
 language: ruby
 script: 'true'
-
+deploy:
+  provider: heroku
+  api_key: 0T6byIQTYpVk1Fs9nz4Cxw
+  app:
+    master: https://github.com/Riz1702/acebook-rails-template
+    production: https://desolate-atoll-44314.herokuapp.com/users/sign_in
