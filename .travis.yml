@@ -1,4 +1,4 @@
-{
+oii{
   "os": [
     "macOS"
   ],
@@ -9,9 +9,7 @@
     "jruby",
     "truffleruby"
   ],
-  "install": [
-    "gem install rails"
-  ],
+ 
   "language": "ruby"
 
   "services":["postgresql"]
