@@ -1,7 +1,7 @@
 "Acebook - Runtime TError
 
 1. Updated README with team name, project link and card wall links.
-2.  
+2.  Use Rails Girls Guide
 
 
 
