@@ -1,21 +1,12 @@
-oii{
-  "os": [
-    "macOS"
-  ],
-  "rvm": [
-    "2.2",
-    "2.5",
-    "2.6",
-    "jruby",
-    "truffleruby"
-  ],
- 
-  "language": "ruby"
+{
+  i:wq
 
-  "services":["postgresql"]
-}
 
 env: 
 -DB=postgres
 -SH=bash
 -PACKAGE_VERSION="12.1"
+
+language: ruby
+script: 'true'
+
