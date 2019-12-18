@@ -1,9 +1,23 @@
-language: ruby
-rvm:
- - 2.2
- - 2.5
- - 2.6
- - jruby
- - truffleruby
+{
+  "os": [
+    "macOS"
+  ],
+  "rvm": [
+    "2.2",
+    "2.5",
+    "2.6",
+    "jruby",
+    "truffleruby"
+  ],
+  "install": [
+    "gem install rails"
+  ],
+  "language": "ruby"
 
-install: gem install rails
+  "services":["postgresql"]
+}
+
+env: 
+-DB=postgres
+-SH=bash
+-PACKAGE_VERSION="12.1"
