@@ -1,14 +1,33 @@
 "Acebook - Runtime TError
 
 1. Updated README with team name, project link and card wall links.
-2.  
-
-
 
 
 ** User Stories **
 
+```
+As a User
+So that I can login and view my account
+I would like to have a login page.
+```
 
+User can view the login page at:
+https://desolate-atoll-44314.herokuapp.com/users/sign_in
+
+```
+As a User
+So that I can see all my information
+I would like to have a profile page.
+```
+
+Profile page has password change option, and other edit options at:
+https://desolate-atoll-44314.herokuapp.com/users/edit
+
+```
+As a User
+So that I can see posts
+I would like to have a homepage.
+```
 
 
 # AceBook
