@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+  - 2.5
+services:
+ - postgresql
+before_script:
+ - bundle exec rails db:create
+ - bundle exec rails db:migrate
+ 
+deploy:
+  provider: heroku
+  app: hidden-cliffs-27554
+  on:
+    repo: ajbacon/acebook-true-GrIT
+  run:
+    - bundle exec rails db:migrate
+  api_key:
+    secure: ekyOsLcAD1T7WHdMhSRL8cj3l4LUbkYswG100MziM7Ypimqldtexgt82ctNbBBuQERSpQcBoggzw9XjM9JnVavSB0D158XOuiFNfMs8Qy26ZvIgjE26u/tfVeiFrTcvvm5RcrXdWyETEEHnpZHD4Iwd/TsMJQrVn8bkZ2Ryyl2k9kuUFdCxck2rIAUy91zGc12DZvp4YsvcCNLYjZb6ol8E3fJ4tU/OCb7T9XiM6zHWtYQVLaJ3TsuvkrZWNDqwgj3PSiE6rNrkpUxh4xy1Tit0Ovvyxr3UF2sktL8iBsVEmcab355V0X0+xvYC6prT71pTF0FURxQyLTitpYjR0LCmMoqfvytY2phruMVNxqe+QQWm3g0hqZlh8dDEquLIwHJCrBnJHJ9Nb0Jbj6pp0GquQ+Tu8SDGOlyTW7o5Rn8/xo0PlPsPP3NIssd3fv41iLKf0Mrv3WCdkdaJwXqBAO3FfRDyjquisYBQjmxSqsasus7GoLRzxEYLPvdDE6udeoJ8YUmQItNul9hfHMvLlfOyf6pjCeBz4kRl6ViyWXPwribtEv+P2d9cl5cd6ATe3h4Eu2KpMWMZObOSgvukUiLS1wU94SEmVbxkf2UxNrZyG/XkajupGHjseFXJLhf/w9pH3i35Sa1nfKCceHckMCvdnqwPhY/cr0VxXkdJgPoo=
