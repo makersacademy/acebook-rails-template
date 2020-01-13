@@ -10,4 +10,5 @@ before_script:
   - bundle exec rails db:migrate RAILS_ENV=test
 
 script:
+  - bundle exec rspec
   - bundle exec rubocop -c .rubocop.yml .

@@ -41,6 +41,13 @@
 #
 # We want to encourage testing, but it can be verbose in the early stages.
 # So we'll give you a break. As you learn, try removing the next two sections.
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
 
 Metrics/LineLength:
   Exclude:
@@ -394,6 +401,8 @@ BinaryOperatorParameterName:
 OptionHash:
   Enabled: false
 OptionalArguments:
+  Enabled: false
+OrderedGems:
   Enabled: false
 ParallelAssignment:
   Enabled: false
