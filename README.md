@@ -28,3 +28,4 @@ First, clone this repository. Then:
 ## Technologies
 
 * rubocop (makers scaffolint)
+* simpleCov
