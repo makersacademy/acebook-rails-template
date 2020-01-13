@@ -18,7 +18,14 @@ gem 'puma', '~> 3.7'
 gem 'rubocop', '~> 0.71.0', require: false
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Use Simplecov for test coverage
+gem 'simplecov', require: false, group: :test
 # Use Uglifier as compressor for JavaScript assets
+gem 'sqlite3'
+# Use Travis CI for continuous integration
+gem 'travis'
+gem 'travis-lint'
+
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
