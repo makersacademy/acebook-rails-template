@@ -21,7 +21,6 @@ gem 'sass-rails', '~> 5.0'
 # Use Simplecov for test coverage
 gem 'simplecov', require: false, group: :test
 # Use Uglifier as compressor for JavaScript assets
-gem 'sqlite3'
 # Use Travis CI for continuous integration
 gem 'travis'
 gem 'travis-lint'
