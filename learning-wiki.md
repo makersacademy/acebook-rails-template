@@ -15,8 +15,18 @@ Acebook - Team Luckerberg
 
 ## <a name="Dawid">Dawid Szpener</a>
 
-   <p>How does this look like?<br>
-   does it add a break like?</p> 
+##  <p>Day1:<br>
+   <li>Happy with my team</li>
+   <li>Abit too excited???</li>
+   <li>Everything seemed overwhelming</li>
+   <li>Felt like theres no chance of doing most of the specifications</li>
+   </p> 
+   <p>Day2:<br>
+   <li>Ready to crack on early in the morning</li>
+   <li>Reading some documentation</li>
+   <li>Super suprised how quickly we implemented things</li>
+   <li>Best day since christmas break by far</li>
+   </p> 
 
 ## <a name="Eve">Eve Noirault</a>
 
