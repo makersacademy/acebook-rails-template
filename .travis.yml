@@ -3,7 +3,7 @@ dist: bionic
 language: ruby
 
 rvm:
-  -2.6.5
+  -2.6.3
 
 services:
   -postgresql
