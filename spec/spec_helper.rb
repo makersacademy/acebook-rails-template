@@ -1,9 +1,20 @@
 require 'simplecov'
+
+ENV['RACK_ENV'] = 'test'
+
 SimpleCov.start 'rails' do
   add_filter '/bin/'
   add_filter '/db/'
   add_filter '/spec/'
   add_filter '/test/'
+end
+
+RSpec.configure do |config|
+  config.before(:each) do
+    ActiveRecord::Base.connection.execute("TRUNCATE posts, users;")
+  end
+
+  config.backtrace_exclusion_patterns = [/gem/]
 end
 
 
