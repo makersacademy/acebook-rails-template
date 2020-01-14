@@ -11,7 +11,7 @@ script:
 - bundle exec rubocop
 deploy:
   provider: heroku
-  app: acebook-luckerberg
+  app: acebook-november2019
   on:
     repo: Hyan18/acebook-luckerberg
     branch: add-test-coverage
