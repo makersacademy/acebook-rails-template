@@ -1,0 +1,69 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/controllers/posts_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        3,
+        3,
+        null,
+        null,
+        1,
+        3,
+        null,
+        null,
+        1,
+        null,
+        1,
+        3,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/models/post.rb": [
+        1,
+        null
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1578994006
+  }
+}
