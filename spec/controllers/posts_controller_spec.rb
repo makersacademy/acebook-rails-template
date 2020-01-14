@@ -26,4 +26,11 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  it "contains all the posts objects" do
+    post :create, params: { post: {message: "First posted messege!"  } }
+    post :create, params: { post: {message: "Second posted messege!" } }
+    expect(Post.all[0].message).to eq("First posted messege!")
+    expect(Post.all[1].message).to eq("Second posted messege!")
+  end
 end
