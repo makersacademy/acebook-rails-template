@@ -9,7 +9,6 @@ RSpec.feature "Timeline", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Second messege!"
     click_button "Submit"
-    p(page)
     expect(page).to have_content("date:2020-01-14 post -- Second messege! date:2020-01-14 post -- First messege! New post")
   end
 end
