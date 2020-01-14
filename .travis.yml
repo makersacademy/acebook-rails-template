@@ -1,6 +1,8 @@
 dist: bionic
 
 language: ruby
+cache:
+  - bundler
 
 rvm:
   - 2.6.3
@@ -16,14 +18,27 @@ env:
 addons:
   firefox: latest
 
-sudo: required
-
 before_script:
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
   - tar -xzf geckodriver-v0.26.0-linux64.tar.gz
-  - sudo cp geckodriver /usr/bin
-  - bin/rails db:create
-  - bin/rails db:migrate
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rake assets:precompile
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "VYziKn+U+DF1dJaXa7CsGzjStX/Ogr/L5Am9FfW75YVCj6zbqT57D9L2MgN5JkSv3FCYSGYjECEG/8ky+bN
+7p0miW41dpMZzZHESn9aM8wCrFgL5FlNSw3AU+sywxJWo30I104/o/m14eeF0SmQUsT3Q2URrW43JBm8RJKcWO4phOrFLK
+q9KjOkyp/96mklyXuhvDew6OTH3vi6CDfrx95RyeUYKpkU96Zrwmf5DvtQS0R7vPlEWThWhh6BfXwdnK3Rs7WhQObxbJLv
+chuf62f9pZqD9cIr2AX0FsJVXeiebpp5Dz6O0ePO7twtohUhQu8CI/dY6eWMEG/KjvIsAyNVsVeQOAZqbiMwYXb5joBoKu
+5IG4t6QEuxpmW46U06H335TGtmgUU3FEybEARvXwZa6vrTpaX4BsxXhpsC4ZA8pFFqC2rknDSwOsXeASZe9FtvOTvZI1wq
+ABFy42B9ccPvUIYcNXB9fMj5n5XEBQHr3RYscftQRV5SKOgn/CqWL650RTL4eVbRoCbJomLs3flCexeWNfx/vk0uFoxSjk
+ngf4qRJ0/2AFJ5qDvMAtydKJOIggGaGjVThU1VptlGwhBaY48EpyuQ4JYgW32zjNumj3svZD1hQpfGFIt/8ktwZw7fsIuU
+R6wUAhSBisLq/KxgZ1mOBcFdtt8Dg7EKel9k="
+    app: warm-everglades-53164
+    on:
+      repo: denriquem/acebook--TeamFavouriteFreindLove-
 
 script:
   - xvfb-run -a bundle rspec
