@@ -15,7 +15,7 @@ Acebook - Team Luckerberg
 
 ## <a name="Dawid">Dawid Szpener</a>
 
-   <p>How does this look like?
+   <p>How does this look like?<br>
    does it add a break like?</p> 
 
 ## <a name="Eve">Eve Noirault</a>
