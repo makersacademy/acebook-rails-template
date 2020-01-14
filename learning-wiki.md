@@ -14,11 +14,9 @@ Acebook - Team Luckerberg
 ## <a name="Ben">Ben Sheridan-Edwards</a>
 
 ## <a name="Dawid">Dawid Szpener</a>
+
    <p>How does this look like?</p> 
-   <li>and how this looks like</li>
-   <ul>and this
-   <li>now this is inside ul and li</li>
-   </ul>
+
 ## <a name="Eve">Eve Noirault</a>
 
 ## <a name="Julie">Julie Cheng</a>
