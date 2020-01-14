@@ -15,13 +15,14 @@ Acebook - Team Luckerberg
 
 ## <a name="Dawid">Dawid Szpener</a>
 
-##  <p>Day1:<br>
+####  <p>Day1:<br>
    <li>Happy with my team</li>
    <li>Abit too excited???</li>
    <li>Everything seemed overwhelming</li>
    <li>Felt like theres no chance of doing most of the specifications</li>
    </p> 
-   <p>Day2:<br>
+   
+####   <p>Day2:<br>
    <li>Ready to crack on early in the morning</li>
    <li>Reading some documentation</li>
    <li>Super suprised how quickly we implemented things</li>
