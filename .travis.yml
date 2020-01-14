@@ -18,7 +18,7 @@ deploy:
   provider: heroku
   app: acebook-luckerberg
   on:
-    repo: acebook-luckerberg
+    repo: Hyan18/acebook-luckerberg
   run:
     - bundle exec rails db:create
     - bundle exec rails db:migrate
