@@ -1,19 +1,14 @@
 language: ruby
 rvm:
 - 2.5
-
 services:
-  - postgresql
-
+- postgresql
 before_script:
-  # - psql -c 'create database pgapp_test;' -U postgres
-  - bundle exec rails db:create
-  - bundle exec rails db:migrate RAILS_ENV=test
-
+- bundle exec rails db:create
+- bundle exec rails db:migrate RAILS_ENV=test
 script:
-  - bundle exec rspec
-  - bundle exec rubocop
-  
+- bundle exec rspec
+- bundle exec rubocop
 deploy:
   provider: heroku
   app: acebook-luckerberg
@@ -21,7 +16,7 @@ deploy:
     repo: Hyan18/acebook-luckerberg
     branch: add-test-coverage
   run:
-    - bundle exec rails db:create
-    - bundle exec rails db:migrate
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
   api-key:
-    secure: "VoAO50J01DyXGeziX/bcHeCczYVVZQRaUuLGOwJHX0Ssovlq0CMddMnOz3c3s2c0qvFkEM4rg9YYNyTPLU7ow5afExk9D3EmgDN7szWjmNkki4OFjdPod1CEEqKuJ7SPeh68ddtJ3Upq09V7PrJeFTSkJ+F1OKMw8ZYPW5o9z3HzLJLie2Z1qB4PZnZOjXtSKJqo34xLO+Xo3eIRx5Pyu6xdTBW4RxYhaaAY+EEHmQDpx0TAj5sr5qZsmawwIoOW+tRop44bkkkMPWzAt4m4yJQsBcck7erPwjCVDBdGUJ3RVKAtI+BiwTMFrUJ5uUH+BBIPOOnCZgJ3phVDA5ebsLxOs8ANr8+2cN4PyZSkk+4r/zmptlKz6YpchGD1Ttpo1ve0cpTPxHWM2SjgOTcaUUSckaDgPy5rNW6IcZoFtmuiqEMknHkYzwgeLNVPCZ/3EIUe/c/3E1MOV/xYF9sD0ioe4He2H2HtYYfV4GuyrJrZFBDV8fY2Z0gcTbZ6tpILlCWXadRkAxAZNnMCZBS/1Nt7eLYYxLLl8ajWTeuelmCYyGAinMBvB8Q8cAjcew374IDzGUMEUeT7mN/wrjC4hNniS1/c2kzqyYTF7pbIXWSxb5Mlpbt+Do1I1no3ZXXu5U84A/Kbs4wVUXbU84WWRE3TrR6PyYuavW9itodEq8I="
+    - secure: IgN37qSASz4ixWDwrBDWoV/x3gPPZKspFj8fVQwDz4bxSkHjLTqa54otbNPtqZgrv5KUWlKhb6BiNcOTBof+M/xIs2DOgHiLdSOwEqIAg0ZWgWZDkvQhHwg+fpvOFuw0izlFF+hmLSnSREcPphrBjO0rET9ZitujHS7IyVF5iR7sLDqlqF6qQGnnA0GqCvsop+W/qH30mD+W8SSso11ABG/n5Nq3X0Vt4bPGeT0EyZVWCyn9WI4onEEZgyjX5gX1VDKBGGkb+2Gp3hj29iNx9J8I5RG3DJwn6uc5tfe5rCAhLn2F58kgnW3oGBmPusLt0dywRoDeUGzHW15D6hSEf48iE4wCtVJ6QgdN6dNjo73oNRK6svSG9NSmm9GB4IWQmFsRH9OWBgmGQVr2gw7h6WLwu9rSL4tX5xu3PFNHVIChV/5j7hvF4afkVFk11cFPfisP2ZtNQi7p3CWOXZ1gXyijVlUrc8bpDffCcCGIJSvwV7In0HZfHrnbXrAbOzyu15zyYKnhg7ZBeTPIoDZnkyWwQ9tkwnZp62HkIidvIfQth6q/x9RHmyTFF7bJXOpWNpnONEbtFI5nUySmPq9uDJyxzaXoQEphbrsVnC/ATDPU5hLIEuK8eX7KNp4XtlPnjIvfxMR0ru3ADD2Fp+PyMbsPE16N6n2/81lNGcatlU0=
