@@ -5,30 +5,38 @@
         1,
         null
       ],
+      "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
       "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/controllers/posts_controller.rb": [
         1,
         1,
-        2,
+        5,
         null,
         null,
         1,
-        3,
-        3,
+        8,
+        8,
         null,
         null,
         1,
-        3,
+        8,
         null,
         null,
         1,
         null,
         1,
-        3,
+        8,
         null,
         null
       ],
       "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/controllers/application_controller.rb": [
         1,
+        1,
+        null
+      ],
+      "/Users/student/Documents/Eve/Projects/Week_8/acebook-luckerberg/app/controllers/welcome_controller.rb": [
         1,
         null
       ],
@@ -64,6 +72,6 @@
         0
       ]
     },
-    "timestamp": 1578994006
+    "timestamp": 1579020534
   }
 }

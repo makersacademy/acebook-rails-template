@@ -2,15 +2,12 @@
 
 REQUIRED INSTRUCTIONS:
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+1. Acebook luckerberg
+Find the app [here](https://acebook-november2019.herokuapp.com/).
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+2. The card wall is [here](https://trello.com/b/0LloZrOg/acebook-luckerberg).
 
 ## Quickstart
 
@@ -24,3 +21,7 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## Versioning
+acebook uses ruby version 2.5.0p0. To change ruby versions run
+```rvm install ruby-2.5.0p0``` in terminal.
