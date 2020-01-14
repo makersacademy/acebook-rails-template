@@ -44,10 +44,15 @@ GEM
     arel (8.0.0)
     ast (2.4.0)
 <<<<<<< HEAD
+<<<<<<< HEAD
     bcrypt (3.1.13)
 =======
     backports (3.15.0)
 >>>>>>> origin/master
+=======
+    bcrypt (3.1.13)
+    backports (3.15.0)
+>>>>>>> 185934c759b9942b5369bb75d4eea643394c4e14
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.1)
