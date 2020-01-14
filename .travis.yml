@@ -19,6 +19,7 @@ deploy:
   app: acebook-luckerberg
   on:
     repo: Hyan18/acebook-luckerberg
+    branch: add-test-coverage
   run:
     - bundle exec rails db:create
     - bundle exec rails db:migrate
