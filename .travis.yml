@@ -3,7 +3,7 @@ env:
     - CC_TEST_REPORTER_ID=449a24264feeaf228f1814df231e18bfd169910b8d0b10df65996431d37cc625 # Code Climate Test Coverage
 language: ruby
 rvm:
-- 2.5.0
+- 2.5
 services:
 - postgresql
 before_script:
