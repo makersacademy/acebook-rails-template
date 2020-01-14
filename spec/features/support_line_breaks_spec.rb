@@ -6,8 +6,6 @@ RSpec.feature "Timeline", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Hello,\nworld!"
     click_button "Submit"
-    # p(page)
-    p(page.html)
     expect(page.html).to include("Hello,\r<br>world!")
   end
 end
