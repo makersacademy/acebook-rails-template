@@ -6,9 +6,61 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:500&display=swap" rel="stylesheet">
   </head>
+  <nav style="opacity: 0.5; box-shadow: 2px 2px 8px rgba(227, 227, 227);" class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
 
-  <body>
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">View Posts</a>
+        </li>
+
+        <% if @user %>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts/new">Add new Post</a>
+        </li>
+        <% end %>
+      </ul>
+
+
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <% if !@user %>
+        <li class="nav-item">
+          <a href="/sign-up" name="sign_up" class="nav-link waves-effect waves-light pr-2">
+            Sign Up
+          </a>
+        </li>
+  			<li class="nav-item">
+         	<a href="/login/new" class="nav-link waves-effect waves-light">
+           	Login
+          </a>
+        </li>
+        <% else %>
+
+  		 	<li class="nav-item">
+  				<a href="#" class="nav-link waves-effect waves-light">
+          Signed in as <%= @user.name %>
+  				</a>
+  		 	</li>
+  		   <li class="nav-item">
+         	 <a href="/login/destroy" name="logout" class="nav-link waves-effect waves-light">
+             Logout
+         	 </a>
+         </li>
+         <% end %>
+      </ul>
+    </div>
+   </div>
+  </nav>
+
+  <div class="container">
     <%= yield %>
-  </body>
+  </div>
 </html>
