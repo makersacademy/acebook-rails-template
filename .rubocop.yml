@@ -279,6 +279,8 @@ EndOfLine:
   Enabled: false
 EvenOdd:
   Enabled: false
+ExpandPathArguments:
+  Enabled: false
 FirstArrayElementLineBreak:
   Enabled: false
 FirstHashElementLineBreak:
@@ -346,6 +348,8 @@ MissingRespondToMissing:
 MissingElse:
   Enabled: false
 MixinGrouping:
+  Enabled: false
+MixinUsage:
   Enabled: false
 ModuleFunction:
   Enabled: false

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :controller do
   describe "GET /new " do
     xit "responds with 200" do
-      post :new, params: { user: {email: "test_user1@test.com", password: "pass1234", password_confirmation: "pass1234"}}
+      post :new, params: { user: { email: "test_user1@test.com", password: "pass1234", password_confirmation: "pass1234" } }
       get :new
       expect(response).to have_http_status(200)
     end
