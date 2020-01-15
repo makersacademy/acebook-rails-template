@@ -13,7 +13,7 @@ services:
 env:
   global:
     - MOZ_HEADLESS=1
-    - CC_TEST_REPORTER_ID=
+    - CC_TEST_REPORTER_ID=59c9ecfc93beafa930ea8169ace46ecb771db3d298e08602179b62c0fdb4f177
 
 addons:
   firefox: latest
