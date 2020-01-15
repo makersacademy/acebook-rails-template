@@ -12,7 +12,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "posts are ordered reverse chronologically" do
-    visit "/posts"
+    sign_up("email@test.com", "pass12", "pass12")
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
