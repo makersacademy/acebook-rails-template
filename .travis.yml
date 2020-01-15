@@ -9,7 +9,6 @@ rvm:
 
 services:
   - postgresql
-  - xvfb
 
 env:
   global:
@@ -41,5 +40,5 @@ R6wUAhSBisLq/KxgZ1mOBcFdtt8Dg7EKel9k="
       repo: denriquem/acebook--TeamFavouriteFreindLove-
 
 script:
-  - xvfb-run -a bundle rspec
+  - bundle exec rspec
   - bundle exec rubocop -c .rubocop.yml .
