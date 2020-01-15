@@ -7,5 +7,5 @@ feature 'sign up' do
     expect(page).to have_current_path '/'
     expect(page).to have_content 'Hello World'
     expect(page).to have_content 'Signed in as: dan@test.com'
-  end 
+  end
 end
