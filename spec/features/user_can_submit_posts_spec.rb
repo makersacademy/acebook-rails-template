@@ -10,4 +10,17 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%F at %H:%M')}")
   end
+
+  scenario "posts are ordered reverse chronologically" do
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+
+    click_link "New post"
+    fill_in "Message", with: "Hello again, world!"
+    click_button "Submit"
+
+    expect(first('.post')).to have_content "Hello again, world!"
+  end
 end
