@@ -2,17 +2,12 @@ require_relative '../helpers/web_helpers'
 
 RSpec.feature "Post order", type: :feature do
   scenario "Posts should be shown in a reverse chronological order" do
-    sign_up
-    visit "/posts"
-    click_link "New post"
-    fill_in "Message", with: "First post"
-    click_button "Submit"
+    sign_up('Harry', 'Mumford', 'harry_mumford@hotmail.co.uk', 'password123')
+    new_post('First post')
 
-    sleep(1.2)
+    sleep(1)
 
-    click_link "New post"
-    fill_in "Message", with: "Second post"
-    click_button "Submit"
+    new_post('Second post')
 
     expect(page.body.index('First post')).to be > page.body.index('Second post')
   end
