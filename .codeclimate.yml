@@ -1,0 +1,5 @@
+exclude_patterns:
+    - "app/mailers/application_mailer.rb"
+    - "app/channels/application_cable/connection.rb"
+    - "app/jobs/application_job.rb"
+    - "app/channels/application_cable/channel.rb"
