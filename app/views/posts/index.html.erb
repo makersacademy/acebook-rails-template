@@ -4,7 +4,8 @@
   <div id='<%=post.id%>'>
   <p><%= post.message %></p>
   <p><%= (post.created_at).to_s.slice(11...16) %></p>
-  <%= link_to 'Delete', post_path(post.id), method: :delete %>
+  <%= link_to 'Delete', post_path(post), method: :delete %>
+  <%= link_to 'Edit', edit_post_path(post) %>
   </div>
 <% end %>
 

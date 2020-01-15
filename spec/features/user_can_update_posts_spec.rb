@@ -8,7 +8,7 @@ RSpec.feature "Delete", type: :feature do
     post_id = Post.first.id
     
     within("div##{post_id}") do
-      click_link "Update"
+      click_link "Edit"
     end
     
     expect(page.current_path).to eq("/posts/update##{post_id}")

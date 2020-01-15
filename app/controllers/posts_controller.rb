@@ -6,6 +6,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   def create
     @post = Post.create(post_params)
     redirect_to posts_url
@@ -16,6 +20,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    p params[:id]
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_url
@@ -23,6 +28,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+  end
+
+  def update
+    Post.update(params[:id], :message => params[:post_message])
   end
 
   private
