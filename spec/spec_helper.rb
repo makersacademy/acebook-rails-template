@@ -1,6 +1,7 @@
 require 'simplecov'
 
 'test'
+'another test'
 
 ENV['RACK_ENV'] = 'test'
 
