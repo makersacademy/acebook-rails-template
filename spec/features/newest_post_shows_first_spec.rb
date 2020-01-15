@@ -1,5 +1,8 @@
+require_relative '../helpers/web_helpers'
+
 RSpec.feature "Post order", type: :feature do
   scenario "Posts should be shown in a reverse chronological order" do
+    sign_up
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "First post"

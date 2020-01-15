@@ -1,3 +1,5 @@
+<h2>Feed</h2>
+
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
   <p><%= (post.created_at).to_s.slice(11...16) %></p>
