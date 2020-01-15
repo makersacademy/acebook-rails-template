@@ -12,6 +12,11 @@ class PostsController < ApplicationController
     @posts = Post.all.order("updated_at DESC")
   end
 
+  def update(user_id, text)
+    post = Post.find_by(id: "#{user_id}")
+    post.update(messege: "#{text}") 
+  end
+
   private
 
   def post_params

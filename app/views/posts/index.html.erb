@@ -2,6 +2,9 @@
   <p>date:<%= post.created_at.strftime("%Y-%m-%d") %>
   <p></p>
     post:<%= post.message.gsub(/\n/, '<br>').html_safe %></p>
+    <form action="/posts/update" method="get">
+    <input type="submit" value="Update" name="Submit" id="#{@current_user.id}" />
+    </form>
 <% end %>
 
 <%= link_to new_post_path do %>
