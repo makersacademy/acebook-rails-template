@@ -1,7 +1,10 @@
 require 'rails_helper'
 
+
+
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
+    signup
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
