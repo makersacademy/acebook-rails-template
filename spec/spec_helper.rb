@@ -5,7 +5,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console
 ])
 SimpleCov.start 'rails' do
-  add_filter "/app/"
 end
 
 RSpec.configure do |config|
