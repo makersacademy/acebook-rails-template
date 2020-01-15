@@ -1,4 +1,5 @@
 require 'simplecov'
+require 'helpers/web_helpers'
 
 ENV['RACK_ENV'] = 'test'
 

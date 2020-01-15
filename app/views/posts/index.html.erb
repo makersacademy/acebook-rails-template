@@ -1,8 +1,11 @@
 <h2>Feed</h2>
 
 <% @posts.reverse.each do |post| %>
+  <div id='<%=post.id%>'>
   <p><%= post.message %></p>
   <p><%= (post.created_at).to_s.slice(11...16) %></p>
+  <%= link_to 'Delete', post_path(post.id), method: :delete %>
+  </div>
 <% end %>
 
 <%= link_to new_post_path do %>
