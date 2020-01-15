@@ -1,5 +1,9 @@
 # AceBook
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability) [![Coverage](https://ajbacon.github.io/REPO/badge.svg)](https://github.com/ajbacon/acebook-true-GrIT) [![Build Status](https://travis-ci.com/ajbacon/acebook-true-GrIT.svg?branch=master)](https://travis-ci.com/ajbacon/acebook-true-GrIT)
+
+
+
 Building and deploying a Facebook clone in Rails. Working as an Agile team and practising Scrum.
 
 To visit the web app as a real world user, visit https://hidden-cliffs-27554.herokuapp.com/.
