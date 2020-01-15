@@ -54,9 +54,41 @@ Acebook uses ruby version 2.5.0. To change ruby versions run ```rvm install ruby
 
 ## User stories
 
+
 ```
-Add user stories
+As a user   
+So that I can let friends know what I'm doing   
+I want to post a message to Acebook.
 ```
+```
+As a user   
+So that I can see what others are saying   
+I want to see their messages in reverse chronological order.     
+```
+
+```
+As a user   
+So that I can better appreciate the context of a post   
+I want to see the time at which it was made.    
+```
+
+```
+As a user   
+So that I can post messages on Acebook as me   
+I want to sign up to Acebook.   
+```
+
+```
+As a user   
+So that I can post messages on Acebook as me   
+I want to log in to Acebook.   
+```
+```
+As a user   
+So that I can avoid other posting messages on Acebook as me   
+I want to log out of Acebook.   
+```
+
 
 ## Domain modelling
 
