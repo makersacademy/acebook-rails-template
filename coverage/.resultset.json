@@ -9,16 +9,15 @@
         1,
         null
       ],
-      "/Users/bensheridanedwards/Documents/2019/Makers/Main-Course/Week-8&9/Acebook - Luckerberg/acebook-luckerberg/app/helpers/user_helper.rb": [
-        1,
-        null
-      ],
       "/Users/bensheridanedwards/Documents/2019/Makers/Main-Course/Week-8&9/Acebook - Luckerberg/acebook-luckerberg/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
       "/Users/bensheridanedwards/Documents/2019/Makers/Main-Course/Week-8&9/Acebook - Luckerberg/acebook-luckerberg/app/controllers/posts_controller.rb": [
         1,
+        null,
+        1,
+        null,
         1,
         5,
         null,
@@ -29,7 +28,7 @@
         null,
         null,
         1,
-        11,
+        14,
         null,
         null,
         1,
@@ -46,11 +45,11 @@
         1,
         null,
         1,
-        0,
+        86,
         null,
         null,
         1,
-        0,
+        15,
         null,
         null
       ],
@@ -61,12 +60,17 @@
         null,
         1,
         1,
+        1,
+        null,
+        null,
+        1,
+        1,
         null,
         1,
         1,
         1,
         null,
-        null,
+        0,
         0,
         null,
         null,
@@ -81,14 +85,14 @@
       "/Users/bensheridanedwards/Documents/2019/Makers/Main-Course/Week-8&9/Acebook - Luckerberg/acebook-luckerberg/app/controllers/user_controller.rb": [
         1,
         1,
-        3,
+        7,
         null,
         null,
         1,
-        2,
-        2,
-        2,
-        2,
+        6,
+        6,
+        6,
+        6,
         null,
         0,
         null,
@@ -97,7 +101,7 @@
         1,
         null,
         1,
-        2,
+        6,
         null,
         null,
         null
@@ -128,8 +132,27 @@
         null,
         null,
         null
+      ],
+      "/Users/bensheridanedwards/Documents/2019/Makers/Main-Course/Week-8&9/Acebook - Luckerberg/acebook-luckerberg/app/helpers/user_helper.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1579089544
+    "timestamp": 1579105945
   }
 }
