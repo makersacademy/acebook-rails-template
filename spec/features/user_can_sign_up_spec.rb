@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Sign up", type: :feature do
   scenario "Can create an account" do
-    visit "/"
-    click_on "Sign in"
-    click_on "Sign up"
+    visit "/sign_up"
     fill_in "First name", with: "David"
     fill_in "Surname", with: "Bacall"
     fill_in "Email", with: "dbacall@hotmail.co.uk"
