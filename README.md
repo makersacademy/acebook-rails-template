@@ -15,6 +15,8 @@ REQUIRED INSTRUCTIONS:
 
 2. The card wall is [here](https://trello.com/b/0LloZrOg/acebook-luckerberg).
 
+3. Learning wiki is [here](https://github.com/Hyan18/acebook-luckerberg/blob/update-readme/learning-wiki.md)
+
 ## Quickstart
 
 First, clone this repository. Then:
