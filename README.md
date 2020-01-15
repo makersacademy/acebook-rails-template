@@ -29,3 +29,15 @@ First, clone this repository. Then:
 
 * rubocop (makers scaffolint)
 * simpleCov
+
+## Trello board
+
+* https://trello.com/b/qeOv6Ec6
+
+## Code Quality
+
+* <a href="https://codeclimate.com/github/denriquem/acebook--TeamFavouriteFriendLove-/test_coverage"><img src="https://api.codeclimate.com/v1/badges/884d5e66a36e030c967d/test_coverage" /></a>
+* <a href="https://codeclimate.com/github/denriquem/acebook--TeamFavouriteFriendLove-/maintainability"><img src="https://api.codeclimate.com/v1/badges/884d5e66a36e030c967d/maintainability" /></a>
+
+## Heroku page
+* https://murmuring-harbor-96724.herokuapp.com
