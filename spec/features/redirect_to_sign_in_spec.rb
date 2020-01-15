@@ -5,6 +5,6 @@ RSpec.feature "Redirect to home" do
     visit '/posts'
    
     expect(page).not_to have_content("Feed")
-    expect(page).to have_content("Home")
+    expect(page).to have_content("Forgot password")
   end
 end
