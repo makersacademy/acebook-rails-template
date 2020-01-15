@@ -1,4 +1,4 @@
-feature 'sign in' do 
+feature 'sign in' do
   scenario ' user enters wrong username' do
     visit '/sign_in'
     fill_in 'session_email', with: 'daniel@test.com'
@@ -7,5 +7,5 @@ feature 'sign in' do
 
     expect(page).to have_content 'Bad email or password'
     expect(page).to have_current_path '/session'
-  end 
-end 
+  end
+end
