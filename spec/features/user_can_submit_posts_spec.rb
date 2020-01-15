@@ -8,7 +8,7 @@ RSpec.feature "Timeline", type: :feature do
     post_time = Time.now
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
-    expect(page).to have_content("Date posted: #{post_time.strftime('%F at %H:%M')}")
+    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %I:%M %p')}")
   end
 
   scenario "posts are ordered reverse chronologically" do
