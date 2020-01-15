@@ -13,6 +13,7 @@ services:
 env:
   global:
     - MOZ_HEADLESS=1
+    - CC_TEST_REPORTER_ID=
 
 addons:
   firefox: latest
@@ -23,6 +24,9 @@ before_script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
   - bundle exec rake assets:precompile
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 deploy:
   provider: heroku
@@ -42,3 +46,6 @@ R6wUAhSBisLq/KxgZ1mOBcFdtt8Dg7EKel9k="
 script:
   - bundle exec rspec
   # - bundle exec rubocop -c .rubocop.yml .
+  
+after_script:
+- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
