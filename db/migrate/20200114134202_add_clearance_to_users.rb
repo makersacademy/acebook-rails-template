@@ -7,7 +7,10 @@ class AddClearanceToUsers < ActiveRecord::Migration[5.1]
       t.string :confirmation_token, limit: 128
       t.string :remember_token, limit: 128
     end
+    up_helper
+  end
 
+  def self.up_helper
     add_index :users, :email
     add_index :users, :remember_token
 
@@ -21,7 +24,7 @@ class AddClearanceToUsers < ActiveRecord::Migration[5.1]
       SQL
     end
   end
-
+  
   def self.down
     change_table :users do |t|
       t.remove :encrypted_password, :confirmation_token, :remember_token

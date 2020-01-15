@@ -14,3 +14,4 @@ RSpec.feature "Delete", type: :feature do
     expect(page).to have_content("Second post")
   end
 end
+

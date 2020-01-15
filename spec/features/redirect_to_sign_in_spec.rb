@@ -8,4 +8,3 @@ RSpec.feature "Redirect to home" do
     expect(page).to have_content("Home")
   end
 end
-
