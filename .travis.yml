@@ -41,4 +41,4 @@ R6wUAhSBisLq/KxgZ1mOBcFdtt8Dg7EKel9k="
 
 script:
   - bundle exec rspec
-  - bundle exec rubocop -c .rubocop.yml .
+  # - bundle exec rubocop -c .rubocop.yml .
