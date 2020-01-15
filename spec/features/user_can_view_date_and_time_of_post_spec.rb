@@ -8,6 +8,6 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     now = DateTime.now
 
-    expect(page).to have_content(now.strftime("%C%y-%m-%d %l:%M:%S"))
+    expect(page).to have_content(now.strftime("%C%y-%m-%d %H:%M:%S"))
   end
 end
