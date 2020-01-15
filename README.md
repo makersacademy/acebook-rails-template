@@ -1,7 +1,5 @@
 # AceBook
 
-test
-
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
@@ -27,3 +25,8 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > rails server # Start the server at localhost:3000
 ```
+
+## Code Climate Badges
+[![Maintainability](https://api.codeclimate.com/v1/badges/7fda849bdfddf3bc3ed5/maintainability)](https://codeclimate.com/github/EManifold/acebook-zuckermen/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/7fda849bdfddf3bc3ed5/test_coverage)](https://codeclimate.com/github/EManifold/acebook-zuckermen/test_coverage)

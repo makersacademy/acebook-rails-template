@@ -1,8 +1,5 @@
 require 'simplecov'
 
-'test'
-'another test'
-
 ENV['RACK_ENV'] = 'test'
 
 SimpleCov.start 'rails' do
