@@ -1,6 +1,20 @@
+require 'simplecov'
+require 'simplecov-console'
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+  # Want a nice code coverage website? Uncomment this next line!
+  # SimpleCov::Formatter::HTMLFormatter
+])
+
+SimpleCov.start 'rails' do
+  add_filter '/jobs/'
+  add_filter '/channels/'
+  add_filter '/mailers/'
+end
+SimpleCov.start 'rails'
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'

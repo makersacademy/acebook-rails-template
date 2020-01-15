@@ -4,12 +4,11 @@ RSpec.feature "Timeline", type: :feature do
   scenario "User sees posts in descending order" do
     visit "/posts"
     click_link "New post"
-    fill_in "Message", with: "First messege!"
+    fill_in "Message", with: "First message!"
     click_button "Submit"
     click_link "New post"
-    fill_in "Message", with: "Second messege!"
+    fill_in "Message", with: "Second message!"
     click_button "Submit"
-    p(page)
-    expect(page).to have_content("date:2020-01-14 post -- Second messege! date:2020-01-14 post -- First messege! New post")
+    expect(page).to have_content("date:2020-01-15 post:Second message! date:2020-01-15 post:First message! New post")
   end
 end
