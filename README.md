@@ -7,17 +7,24 @@ Acebook - Team Luckerberg
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
 
-REQUIRED INSTRUCTIONS:
+## Team members
+- [Dawid Szpener](https://github.com/DawidSzpener)
+- [Ben Sheridan-Edwards](https://github.com/BenSheridanEdwards)
+- [Eve Noirault](https://github.com/even13)
+- [Harrison Yan](https://github.com/Hyan18/)
+- [Julie Cheng](https://github.com/jj49411)
 
-1. Find the app [here](https://acebook-november2019.herokuapp.com/).
+## App and card wall
+1. Acebook
+Find the app [here](https://acebook-november2019.herokuapp.com/).
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is [here](https://trello.com/b/0LloZrOg/acebook-luckerberg).
+2. Our trello board is [here](https://trello.com/b/0LloZrOg/acebook-luckerberg).
 
 3. Learning wiki is [here](https://github.com/Hyan18/acebook-luckerberg/blob/update-readme/learning-wiki.md)
 
-## Quickstart
+## How to install and run
 
 First, clone this repository. Then:
 
@@ -29,7 +36,11 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
-
+## How to run tests
+```bash
+> rspec # Run the tests
+> rubocop # Check code quality
+```
 ## Versioning
 Acebook uses ruby version 2.5.0p0. To change ruby versions run
 ```rvm install ruby-2.5.0p0``` in the terminal.

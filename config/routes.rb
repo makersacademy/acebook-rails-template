@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'posts' => 'posts#index'
   delete 'logout' => 'sessions#destroy'
   # get 'logout' => 'sessions#destory'
+  delete 'posts' => 'posts#delete'
   # root :to => 'user#new'
   resources :users
   resources :user
