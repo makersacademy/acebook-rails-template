@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.feature "Delete", type: :feature do
-  scenario "Can delete specific posts" do
-    sign_up('Harry', 'Mumford', 'harry_mumford@hotmail.co.uk', 'password123')
+RSpec.feature "Update", type: :feature do
+  scenario "Can update specific posts" do
+    sign_up('Harry', 'Mumford', 'harry_mumford@hotmail.co.uk', 'password')
     new_post('First post')
     new_post('Second post')
     
