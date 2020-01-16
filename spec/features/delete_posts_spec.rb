@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can delete posts" do
-    singup
+    signup
     login
     visit "/posts"
     click_link "New post"
