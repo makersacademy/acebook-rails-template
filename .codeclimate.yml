@@ -3,3 +3,5 @@ exclude_patterns:
     - "app/channels/application_cable/connection.rb"
     - "app/jobs/application_job.rb"
     - "app/channels/application_cable/channel.rb"
+    - "app/helpers/application_helper.rb"  
+    - "app/helpers/welcome_helper.rb"

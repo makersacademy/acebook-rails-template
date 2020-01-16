@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit a post with a line break and view it on the post page" do
     sign_up
