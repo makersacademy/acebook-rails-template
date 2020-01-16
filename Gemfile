@@ -7,6 +7,7 @@ end
 
 gem 'devise'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'factory_bot_rails'
 gem 'jbuilder', '~> 2.5'
 # Use postgresql as the database for Active Record
 gem 'pg'
