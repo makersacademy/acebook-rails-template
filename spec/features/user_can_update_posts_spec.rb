@@ -11,10 +11,9 @@ RSpec.feature "Delete", type: :feature do
       click_link "Edit"
     end
     
-    expect(page.current_path).to eq("/posts/update##{post_id}")
+    expect(page.current_path).to eq("/posts/#{post_id}/edit")
 
-    click_on "Edit"
-    fill_in "Post", with: "Updated first post"
+    fill_in "Message", with: "Updated first post"
     click_on "Submit"
 
     visit '/posts'
