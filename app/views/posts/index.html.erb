@@ -1,5 +1,5 @@
 <% @posts.sort_by{ |post| post.created_at }.reverse.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= post.message.gsub("\n", "<br>").html_safe%></p>
   <p><%= post.created_at.strftime("%C%y-%m-%d %H:%M:%S") %></p>
 <% end %>
 

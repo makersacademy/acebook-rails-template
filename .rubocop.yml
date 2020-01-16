@@ -45,7 +45,7 @@
 AllCops:
   Exclude:
     - 'bin/**/*'
-
+    - 'db/schema.rb'
 
 Metrics/LineLength:
   Exclude:
