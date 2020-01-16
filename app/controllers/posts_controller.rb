@@ -26,6 +26,12 @@ class PostsController < ApplicationController
     @posts = Post.all.order("updated_at DESC")
   end
 
+  def delete
+    @post = Post.find(params[:format])
+    @post.destroy
+    redirect_to posts_url
+  end
+
   private
 
   def post_params
