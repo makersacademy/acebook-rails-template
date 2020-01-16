@@ -5,8 +5,8 @@ RSpec.feature "Sign up", type: :feature do
     visit "/signup"
     fill_in "Name", with: "Ben"
     fill_in "Email", with: "ben@gmail.com"
-    fill_in "Password", with: "1234"
-    fill_in "Confirm Password", with: "1234"
+    fill_in "Password", with: "123456"
+    fill_in "Confirm Password", with: "123456"
     click_button "Sign up"
     expect(page).to have_content("New post")
   end
