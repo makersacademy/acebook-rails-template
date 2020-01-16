@@ -33,7 +33,7 @@
       <ul class="navbar-nav ml-auto nav-flex-icons">
         <% if current_user == nil %>
         <li class="nav-item">
-          <a href="/signup" name="sign_up" class="nav-link waves-effect waves-light pr-2">
+          <a href="/signup" name="sign_up" id="sign_up" class="nav-link waves-effect waves-light pr-2">
             Sign Up
           </a>
         </li>
@@ -50,7 +50,7 @@
   				</a>
   		 	</li>
   		   <li class="nav-item">
-         	 <a href="/sessions/destroy" name="logout" class="nav-link waves-effect waves-light">
+         	 <a href="/sessions/destroy" name="logout" id="logout" class="nav-link waves-effect waves-light">
              Logout
          	 </a>
          </li>
