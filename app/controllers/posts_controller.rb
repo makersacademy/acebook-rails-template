@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :require_login, only: [:index, :show]
+
   def new
     @post = Post.new
   end
