@@ -13,9 +13,7 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Updated message")
   end
-end
-
-RSpec.feature "Timeline", type: :feature do
+  
   scenario "Cannot update posts they did not create" do
     signup
     expect(current_path).to eq("/posts")
