@@ -2,6 +2,20 @@ require 'rails_helper'
 
 RSpec.describe UserController, type: :controller do
 
+  describe 'Posts' do
+    describe "GET posts#index" do
+      context "when the user is logged in" do
+        it "should render posts#index" do
+        end
+      end
+
+      context "when the user is logged out" do
+        it "should redirect to the login page" do
+        end
+      end
+    end
+  end
+
   describe "GET #new" do
     it "returns http success" do
       get :new
@@ -11,6 +25,7 @@ RSpec.describe UserController, type: :controller do
 
   # describe "create" do
   #   it "creates a user" do
+  #     get :new
   #     post :create, params: { name: "Ben", email: "ben@gmail.com", password: "1234", password_confirmation: "1234"}
   #     expect(User.find_by(email: "ben@gmail.com")).to be
   #   end
