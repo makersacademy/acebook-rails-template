@@ -32,4 +32,15 @@ RSpec.feature "Sign up", type: :feature do
     click_button "Sign up"
     expect(page).to have_content("Password must be at least 6 characters and no more than 10")
   end
+
+  scenario "When a user enters wrong confirmation password" do
+    visit "/signup"
+    fill_in "Name", with: "Ben"
+    fill_in "Email", with: "ben@example.com"
+    fill_in "Password", with: "123456"
+    fill_in "Confirm Password", with: "1234567"
+    click_button "Sign up"
+    expect(page).to have_content("Please confirm your password again")
+  end
+
 end

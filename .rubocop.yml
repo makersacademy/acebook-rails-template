@@ -65,6 +65,10 @@ Metrics/AbcSize:
   Exclude:
     - 'app/controllers/user_controller.rb'
 
+Metrics/MethodLength:
+  Exclude:
+    - 'app/controllers/user_controller.rb'
+
 # Code Style
 # ==========
 #

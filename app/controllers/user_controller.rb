@@ -9,6 +9,8 @@ class UserController < ApplicationController
       redirect_to '/login', notice: "Already a user, please log in"
     elsif user_params[:password].length < 6 || user_params[:password].length > 10
       redirect_to '/signup', notice: "Password must be at least 6 characters and no more than 10"
+    elsif user_params[:password] != user_params[:password_confirmation]
+      redirect_to '/signup', notice: "Please confirm your password again"
     elsif @user.save
       session[:user_id] = @user.id
       redirect_to '/posts', notice: "Signed up!"
