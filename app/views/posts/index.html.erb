@@ -2,8 +2,7 @@
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
 
-  <form action="/post">
-    <input type="Submit" value="Update">
+ <p><%= link_to 'Edit', edit_post_path(post) %></p>
 
 <% end %>
 

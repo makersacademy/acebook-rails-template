@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
-  before_action :redirect_to_index_if_not_signed_in
-  
+  before_action :require_login
+
   def new
     @post = Post.new
   end
@@ -9,6 +9,21 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     redirect_to posts_url
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+
+    if @post = Post.update(post_params)
+      redirect_to posts_url
+    else
+      render 'edit'
+    end
+
   end
 
   def index

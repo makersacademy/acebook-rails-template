@@ -6,7 +6,7 @@ RSpec.feature "Timeline", type: :feature do
     sign_up
     new_post
     now = DateTime.now
-    expect(oage).to have_current_path '/posts'
+    expect(page).to have_current_path '/posts'
     expect(page).to have_content(now.strftime("%C%y-%m-%d %H:%M:%S"))
   end
 end
