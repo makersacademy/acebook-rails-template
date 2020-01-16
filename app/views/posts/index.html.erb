@@ -2,6 +2,8 @@
   <p class="post"><%= post.message %>
     <br>
     Date posted: <%= post.created_at.strftime('%d %B %Y at %I:%M %p') %>
+    <br>
+    Posted by <%= User.find(post.user_id).email %>
   </p>
 <% end %>
 
