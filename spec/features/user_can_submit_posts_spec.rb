@@ -12,7 +12,7 @@ RSpec.feature "Timeline", type: :feature do
     post_time = Time.now
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
-    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %I:%M %p')}")
+    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
     expect(page).to have_content("Posted by email@example.com")
   end
 

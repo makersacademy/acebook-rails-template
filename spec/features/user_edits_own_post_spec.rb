@@ -9,7 +9,7 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
 
     expect(page).to have_content("Hello, world!")
-    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %I:%M %p')}")
+    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
     expect(page).to have_content("Posted by email@example.com")
     expect(page).to have_link('Edit')
 
@@ -18,7 +18,7 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Update Post"
 
     expect(page).to have_content("Goodbye, world!")
-    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %I:%M %p')}")
+    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
     expect(page).to have_content("Posted by email@example.com")
     expect(page).to have_current_path("/posts")
   end
