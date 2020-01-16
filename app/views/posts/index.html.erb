@@ -1,5 +1,6 @@
 <% @posts.each do |post| %>
-  <p class="post"><%= post.message %>
+  <p class="post"><%= h(post.message).gsub(/\r\n/, '<br>').html_safe %>
+    <br>
     <br>
     Date posted: <%= post.created_at.strftime('%d %B %Y at %I:%M %p') %>
     <br>
