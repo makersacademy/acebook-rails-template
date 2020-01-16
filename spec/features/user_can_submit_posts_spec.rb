@@ -1,9 +1,13 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
-  scenario "Can submit posts and view them" do
+
+  before do
     sign_up("email@example.com", "pass12", "pass12")
     click_link "New post"
+  end
+
+  scenario "Can submit posts and view them" do
     fill_in "Message", with: "Hello, world!"
     post_time = Time.now
     click_button "Submit"
@@ -13,8 +17,6 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "posts are ordered reverse chronologically" do
-    sign_up("email@example.com", "pass12", "pass12")
-    click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
 
