@@ -9,7 +9,7 @@ class UserController < ApplicationController
       session[:user_id] = @user.id
       redirect_to '/posts', notice => "Signed up!"
     else
-      redirect_to '/posts'
+      render :action => :new
     end
   end
 

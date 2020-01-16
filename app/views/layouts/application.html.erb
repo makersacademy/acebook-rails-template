@@ -22,7 +22,7 @@
           <a class="nav-link" href="/posts">View Posts</a>
         </li>
 
-        <% if @user %>
+        <% if current_user %>
         <li class="nav-item">
           <a class="nav-link" href="/posts/new">Add new Post</a>
         </li>
@@ -31,7 +31,7 @@
 
 
       <ul class="navbar-nav ml-auto nav-flex-icons">
-        <% if !@user %>
+        <% if current_user == nil %>
         <li class="nav-item">
           <a href="/signup" name="sign_up" class="nav-link waves-effect waves-light pr-2">
             Sign Up
@@ -46,11 +46,11 @@
 
   		 	<li class="nav-item">
   				<a href="#" class="nav-link waves-effect waves-light">
-          Signed in as <%= @user.name %>
+          Signed in as <%= current_user.name.capitalize %>
   				</a>
   		 	</li>
   		   <li class="nav-item">
-         	 <a href="/login/destroy" name="logout" class="nav-link waves-effect waves-light">
+         	 <a href="/sessions/destroy" name="logout" class="nav-link waves-effect waves-light">
              Logout
          	 </a>
          </li>

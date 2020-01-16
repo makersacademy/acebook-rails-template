@@ -1,2 +1,3 @@
-module UserHelper
-end
+ module UserHelper
+ end
+ 
