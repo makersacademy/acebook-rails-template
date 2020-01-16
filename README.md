@@ -40,4 +40,4 @@ First, clone this repository. Then:
 * <a href="https://codeclimate.com/github/denriquem/acebook--TeamFavouriteFriendLove-/maintainability"><img src="https://api.codeclimate.com/v1/badges/884d5e66a36e030c967d/maintainability" /></a>
 
 ## Heroku page
-* https://murmuring-harbor-96724.herokuapp.com
+* https://enigmatic-atoll-87552.herokuapp.com
