@@ -5,7 +5,13 @@
     Date posted: <%= post.created_at.strftime('%d %B %Y at %I:%M %p') %>
     <br>
     Posted by <%= User.find(post.user_id).email %>
+    <%= link_to 'Edit', edit_post_path(post)%>
+    
+    
   </p>
+
+  
+
 <% end %>
 
 <%= link_to new_post_path do %>
