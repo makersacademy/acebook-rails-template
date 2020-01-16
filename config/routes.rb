@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   get 'posts' => 'posts#index'
   delete 'logout' => 'sessions#destroy'
-  # get 'logout' => 'sessions#destory'
+  get 'logout' => 'sessions#destory'
   delete 'posts' => 'posts#delete'
   # root :to => 'user#new'
   resources :users

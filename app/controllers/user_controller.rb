@@ -11,7 +11,7 @@ class UserController < ApplicationController
       redirect_to '/signup', notice: "Password must be at least 6 characters and no more than 10"
     elsif @user.save
       session[:user_id] = @user.id
-      redirect_to '/posts', notice => "Signed up!"
+      redirect_to '/posts', notice: "Signed up!"
     end
   end
 

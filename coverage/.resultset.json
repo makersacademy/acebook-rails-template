@@ -109,6 +109,7 @@
         1,
         null,
         null,
+        null,
         null
       ],
       "/Users/yizhong/Projects/week8/acebook-luckerberg/app/controllers/user_controller.rb": [
@@ -164,6 +165,6 @@
         null
       ]
     },
-    "timestamp": 1579188216
+    "timestamp": 1579194376
   }
 }

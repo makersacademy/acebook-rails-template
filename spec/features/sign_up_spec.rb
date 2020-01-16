@@ -4,7 +4,7 @@ RSpec.feature "Sign up", type: :feature do
   scenario "Can create an account" do
     visit "/signup"
     fill_in "Name", with: "Ben"
-    fill_in "Email", with: "ben@gmail.com"
+    fill_in "Email", with: "ben@example.com"
     fill_in "Password", with: "123456"
     fill_in "Confirm Password", with: "123456"
     click_button "Sign up"
@@ -16,7 +16,7 @@ RSpec.feature "Sign up", type: :feature do
     click_on "Logout"
     visit "/signup"
     fill_in "Name", with: "Ben"
-    fill_in "Email", with: "ben@gmail.com"
+    fill_in "Email", with: "ben@example.com"
     fill_in "Password", with: "123456"
     fill_in "Confirm Password", with: "123456"
     click_button "Sign up"
@@ -26,7 +26,7 @@ RSpec.feature "Sign up", type: :feature do
   scenario "When a user enters invalid password" do
     visit "/signup"
     fill_in "Name", with: "Ben"
-    fill_in "Email", with: "ben@gmail.com"
+    fill_in "Email", with: "ben@example.com"
     fill_in "Password", with: "1222"
     fill_in "Confirm Password", with: "1222"
     click_button "Sign up"

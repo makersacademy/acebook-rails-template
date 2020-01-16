@@ -20,7 +20,8 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to '/login'
+    redirect_to '/login', notice: 'Logged out' if session[:user_id].nil?
   end
   
+   
 end
