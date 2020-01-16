@@ -26,7 +26,7 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Edit")
     click_on "Logout"
 
-    signup_user("Dawid","Dawid@example.com","password123")
+    signup_user("Dawid", "Dawid@example.com", "password123")
     expect(current_path).to eq("/posts")
     expect(page).to_not have_content("Edit")
   end
