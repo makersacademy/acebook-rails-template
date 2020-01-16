@@ -3,9 +3,11 @@
     <li>
       <p>date:<%= post.created_at.strftime("%Y-%m-%d") %></p>
       <p>post:<%= post.message.gsub(/\n/, '<br>').html_safe %></p>
-
-      <td><%= button_to 'Destroy', posts_path(post),
-              method: :delete %></td></li>
+      <% p @current_user %>
+      <% if @current_user == nil %>
+        <td><%= button_to 'Destroy', posts_path(post),
+        method: :delete %></td></li>
+      <% end %>
   <% end %>
 </ul>
 
