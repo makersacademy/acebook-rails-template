@@ -23,6 +23,12 @@ require_relative './features/web_helper.rb'
 
 RSpec.configure do |config|
 
+  RSpec::Matchers.define :appear_before do |later_content|
+    match do |earlier_content|
+      page.body.index(earlier_content) < page.body.index(later_content)
+    end
+  end  
+
   config.include UserHelper, :type => :feature
 
   config.before(:each) do
