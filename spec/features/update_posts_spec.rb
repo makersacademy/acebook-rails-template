@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-RSpec.feature "Update", type: :feature do
+RSpec.feature "Timeline", type: :feature do
   scenario "Can update posts they have created" do
-    visit "/posts"
+    signup
+    expect(current_path).to eq("/posts")
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
