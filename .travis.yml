@@ -19,6 +19,7 @@ after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 deploy:
   provider: heroku
+  skip_cleanup: true
   app: acebook-november2019
   on:
     repo: Hyan18/acebook-luckerberg
