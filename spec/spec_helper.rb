@@ -1,5 +1,7 @@
 require 'simplecov'
 require 'simplecov-console'
+require 'rails_helper'
+require 'test_helper'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console

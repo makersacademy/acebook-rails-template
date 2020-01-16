@@ -10,4 +10,11 @@ RSpec.feature "Timeline", type: :feature do
     click_on 'Update Post'
     expect(page).to have_content('Updated message')
   end
+
+  # scenario 'unable to edit post more than 10 minutes after creation' do
+  #   sign_up
+  #   new_post
+  #   time_of_creation = Time.now
+  #   time_of_editing = Time.now + 11
+  #   expect(page).not_to have_content()
 end
