@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Update", type: :feature do
   scenario "Can update posts they have created" do
+    signup
+    login
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
