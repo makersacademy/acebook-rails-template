@@ -21,7 +21,6 @@ require_relative './features/web_helper.rb'
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-
 RSpec.configure do |config|
 
   config.include UserHelper, :type => :feature
