@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200115170900) do
+ActiveRecord::Schema.define(version: 20200117142131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,5 +35,14 @@ ActiveRecord::Schema.define(version: 20200115170900) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "walls", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "user_id"
+    t.index ["post_id"], name: "index_walls_on_post_id"
+    t.index ["user_id"], name: "index_walls_on_user_id"
+  end
+
   add_foreign_key "posts", "users"
+  add_foreign_key "walls", "posts"
+  add_foreign_key "walls", "users"
 end
