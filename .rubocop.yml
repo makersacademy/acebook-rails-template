@@ -86,7 +86,7 @@ EmptyLines:
 ExtraSpacing:
   Enabled: true
 GuardClause:
-  Enabled: true
+  Enabled: false
 IdenticalConditionalBranches:
   Enabled: true
 InverseMethods:
