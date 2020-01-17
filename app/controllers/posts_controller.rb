@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     owned_post(@post)
+    time_out(@post)
   end
 
   def update
@@ -44,4 +45,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def time_out(post)
+    if (Time.now - post.created_at) > 600
+      flash[:alert] = "Timed out - you cannot edit this post"
+      redirect_to posts_url
+    end
+  end
 end
