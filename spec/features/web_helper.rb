@@ -13,3 +13,12 @@ def login
   fill_in "Password", with: "123456"
   click_button "Log in"
 end
+
+def signup_user(name, email, password)
+  click_on "sign_up"
+  fill_in "Name", with: name
+  fill_in "Email", with: email
+  fill_in "Password", with: password
+  fill_in "Confirm Password", with: password
+  click_button "Sign up"
+end
