@@ -1,7 +1,11 @@
-<ul>
+
+<center>
+<%= link_to new_post_path do %>
+  New post
+<% end %>
   <% @posts.each do |post| %>
     <li> 
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 23rem;">
         <span class="border border-dark">
         <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%Y-%m-%d") %></div>
           <div class="card-body">
@@ -10,13 +14,9 @@
             <%= link_to 'Edit', edit_post_path(post) %>
             <%= button_to 'Destroy', posts_path(post), method: :delete %>
           <% end %>
-        </div>
+          </div>
         </span>
       </div>
     </li>
   <% end %> 
-</ul>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+</center>
