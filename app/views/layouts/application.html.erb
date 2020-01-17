@@ -60,6 +60,12 @@
    </div>
   </nav>
 
+  <% flash.each do |type, message|%>
+    <div class="alert alert-info" style="text-align: center;">
+      <%= message %>
+    </div>
+  <% end %>
+
   <div class="container">
     <%= yield %>
   </div>
