@@ -9,11 +9,14 @@ RSpec.feature "Timeline", type: :feature do
   end
 end
 
-RSpec.feature "Timestamp", type: :feature do
-  scenario "Can see the time the post was made" do
+RSpec.feature "Time and date", type: :feature do
+  scenario "Can see the time and the date of the post that was made" do
     sign_up('Harry', 'Mumford', 'harry_mumford@hotmail.co.uk', 'password')
-    t = Time.new.strftime("%k:%M") 
+    time = Time.new.strftime("%k:%M")
+    date = Time.new.strftime('%d %B %Y')
     new_post('First post')
-    expect(page).to have_content(t)
+    expect(page).to have_content("#{date} at #{time}")
   end
 end
+
+
