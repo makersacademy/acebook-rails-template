@@ -8,6 +8,8 @@ Building and deploying a Facebook clone in Rails. Working as an Agile team and p
 
 To visit the web app as a real world user, visit https://hidden-cliffs-27554.herokuapp.com/.
 
+To find out more about our building process and first foray into Rails, please visit our blog: https://medium.com/true-grit.
+
 ## Table of contents
 - [Required Instructions](#required-instructions)
 - [How to contribute to this project](#how-to-contribute-to-this-project)
