@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Edit post", type: :feature do
   scenario "Can edit a post if it belongs to the user" do
     sign_up("email@example.com", "pass12", "pass12")
     click_link "New post"
