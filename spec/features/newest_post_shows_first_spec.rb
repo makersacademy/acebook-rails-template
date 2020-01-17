@@ -6,9 +6,8 @@ RSpec.feature "Post order", type: :feature do
     new_post('First post')
 
     sleep(1)
-
+    
     new_post('Second post')
-
-    expect(page.body.index('First post')).to be > page.body.index('Second post')
+    ('Second post').should appear_before('First post')
   end
 end
