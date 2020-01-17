@@ -21,7 +21,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     expect(current_path).to eq("/posts")
-    expect(page).to have_content("Edit")
+    expect(page).to have_button("Edit")
     click_on "Logout"
 
     signup_user("Dawid", "Dawid@example.com", "password1")
