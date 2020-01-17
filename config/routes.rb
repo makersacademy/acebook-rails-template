@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   resources :users, only: [:create] do
     resource :password,
     controller: "clearance/passwords",
-    only: [:edit, 
-          :update]
+    only: [:edit, :update]
   end
 
   resources :posts
+
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: 'posts#index', as: :posts_root
+  end
 
   get "/sign_in" => "clearance/sessions#new"
   get "/wall" => "users#wall", as: "wall"

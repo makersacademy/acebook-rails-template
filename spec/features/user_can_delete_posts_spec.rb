@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.feature "Update", type: :feature do
   scenario "Can update specific posts" do
 
@@ -9,8 +8,6 @@ RSpec.feature "Update", type: :feature do
     new_post('First post')
     new_post('Second post')
  
-    
-    
     within("div##{Post.first.id}") do
       click_link "Delete"
     end
@@ -19,4 +16,3 @@ RSpec.feature "Update", type: :feature do
     expect(page).to have_content("Second post")
   end
 end
-
