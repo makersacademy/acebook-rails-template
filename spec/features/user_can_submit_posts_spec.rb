@@ -26,4 +26,11 @@ RSpec.feature "Timeline", type: :feature do
 
     expect(first('.post')).to have_content "Hello again, world!"
   end
+
+  scenario "posts render line breaks correctly" do
+    fill_in "Message", with: "Hello, world!\r\nNew Line"
+    click_button "Submit"
+
+    expect(page).to have_text "Hello, world!\nNew Line"
+  end
 end
