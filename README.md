@@ -20,7 +20,6 @@ First, clone this repository. Then:
 > bundle install
 > rake db:create
 > rake db:schema:load
-> rake db:migrate
 
 > bundle exec rspec # Run the tests to ensure it works
 > rails server # Start the server at localhost:3000

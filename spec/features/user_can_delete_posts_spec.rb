@@ -8,11 +8,11 @@ RSpec.feature "Update", type: :feature do
     new_post('First post')
     new_post('Second post')
  
-    within("div##{Post.first.id}") do
+    within(first(".post")) do
       click_link "Delete"
     end
     
-    expect(page).not_to have_content("First post")
-    expect(page).to have_content("Second post")
+    expect(page).to have_content("First post")
+    expect(page).not_to have_content("Second post")
   end
 end

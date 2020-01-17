@@ -11,7 +11,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @user = current_user
+    @post = @user.posts.new(post_params)
     @post.save ? (redirect_to posts_url) : (render 'new')
   end
 
@@ -22,6 +23,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @user = current_user
     @posts = Post.all
   end
 
