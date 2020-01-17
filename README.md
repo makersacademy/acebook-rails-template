@@ -26,7 +26,10 @@ First, clone this repository. Then:
 > rails server # Start the server at localhost:3000
 ```
 
-## Code Climate Badges
+## Code Climate
 [![Maintainability](https://api.codeclimate.com/v1/badges/7fda849bdfddf3bc3ed5/maintainability)](https://codeclimate.com/github/EManifold/acebook-zuckermen/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/7fda849bdfddf3bc3ed5/test_coverage)](https://codeclimate.com/github/EManifold/acebook-zuckermen/test_coverage)
+
+## Travis
+[![Build Status](https://travis-ci.org/EManifold/acebook-zuckermen.svg?branch=master)](https://travis-ci.org/EManifold/acebook-zuckermen)
