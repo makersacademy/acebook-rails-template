@@ -1,17 +1,22 @@
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <p>date:<%= post.created_at.strftime("%Y-%m-%d") %></p>
-      <p>post:<%= post.message.gsub(/\n/, '<br>').html_safe %></p>
-      <% if @current_user.id == post.user_id %>
-      <p><%= link_to 'Edit', edit_post_path(post) %></p>
-      <p><%= button_to 'Destroy', posts_path(post),
-              method: :delete %></p>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
 
-<%= link_to new_post_path do %>
+<center>
+<%= button_to new_post_path, :class => "button", :method => :get do %>
   New post
 <% end %>
+  <% @posts.each do |post| %>
+    <li> 
+      <div class="card" style="width: 23rem;">
+        <span class="border border-dark">
+        <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%Y-%m-%d") %></div>
+          <div class="card-body">
+          <p class="card-text"><%= post.message.gsub(/\n/, '<br>').html_safe %></p>
+          <% if @current_user.id == post.user_id %>
+            <%= button_to 'Edit', edit_post_path(post), :class => "button", :method => :get %>
+            <%= button_to 'Destroy', posts_path(post), method: :delete %>
+          <% end %>
+          </div>
+        </span>
+      </div>
+    </li>
+  <% end %> 
+</center>

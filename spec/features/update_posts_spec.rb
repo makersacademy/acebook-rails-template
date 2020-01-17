@@ -4,7 +4,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can update posts they have created" do
     signup
     expect(current_path).to eq("/posts")
-    click_link "New post"
+    click_on "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     expect(current_path).to eq("/posts")
@@ -17,11 +17,11 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Cannot update posts they did not create" do
     signup
     expect(current_path).to eq("/posts")
-    click_link "New post"
+    click_on "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     expect(current_path).to eq("/posts")
-    expect(page).to have_content("Edit")
+    expect(page).to have_button("Edit")
     click_on "Logout"
 
     signup_user("Dawid", "Dawid@example.com", "password1")
