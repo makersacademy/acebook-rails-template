@@ -1,6 +1,6 @@
 <% @posts.sort_by{ |post| post.created_at }.reverse.each do |post| %>
   <p><%= post.message.gsub("\n", "<br>").html_safe%></p>
-  <p><%= post.created_at.strftime("%C%y-%m-%d %H:%M:%S") %></p>
+  <p><%= post.created_at.strftime("%d %b %C%y %H:%M:%S") %></p>
   <p>
     <%= link_to 'Edit', edit_post_path(post) %>
     <%= link_to 'Delete', post, :confirm => "Are you sure?", :method => :delete%>
