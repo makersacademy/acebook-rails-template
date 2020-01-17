@@ -49,3 +49,33 @@ Andrea:
 David:
 - Wasted a bit of time getting frustrated about understanding rails, could have found a useful article quicker instead of just staring at it.
 - Understand much more now than before.
+
+
+## Sprint 2
+
+### Sprint goals
+- Finish off the requirements from the first sprint 
+- Be more accurate with predicted workload 
+
+### Blockers
+- Travis CI
+- Heroku deployments issues because of database migrations
+- Clearance gem brings up bugs that constantly have to be fixed
+
+### Learning Resources
+Travis CI blog written by another student, Jade:
+https://medium.com/true-grit/travis-ci-a-love-hate-relationship-38f19d92a52f
+
+Rails Docs:
+https://guides.rubyonrails.org/
+
+### What has gone well
+    - Overcome some challenges with Rails
+    - Learning a lot through the struggles 
+    - Communication has been good 
+### What could've gone better
+    - Been blocked a lot, improving debugging process
+    - Stricter time-boxing
+    
+    
+    
