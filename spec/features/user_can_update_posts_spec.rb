@@ -6,7 +6,6 @@ RSpec.feature "Delete", type: :feature do
 
     new_post('First post')
 
-
     post_id = Post.first.id
     
     within("div##{post_id}") do

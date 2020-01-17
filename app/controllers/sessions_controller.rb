@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def create
-    p 'hello'
+    # p 'hello'
     @user = authenticate(params)
     sign_in(@user) do |status|
       if status.success?
@@ -13,11 +13,8 @@ class SessionsController < ApplicationController
     end
   end
 
-  # def show
-  #   p 'hello'
-  # end
+  def new
+    render template: "sessions/new"
+  end
 
-  # def wall
-  #   p user_from_params
-  # end
 end

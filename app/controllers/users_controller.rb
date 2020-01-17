@@ -6,22 +6,23 @@ class UsersController < Clearance::UsersController
     if params[:user][:password].length < 6 || params[:user][:password].length > 10
       flash[:alert] = "Password must be 6-10 characters!"
       redirect_to '/sign_up'
-    elsif  @user.save
+    elsif @user.save
       sign_in @user
-      redirect_to '/wall'
+      redirect_to posts_path
     else
       render template: "users/new"
     end
    
   end
 
-  def wall
-    @user = current_user
-  end
+  # def wall
+  #   @user = current_user
+  # end
 
   private
 
   def user_params
     params.require(:user).permit(:first_name, :surname, :email, :password)
   end
+  
 end
