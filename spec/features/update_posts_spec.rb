@@ -40,15 +40,14 @@ RSpec.feature "Timeline", type: :feature do
   end
   scenario "Cannot update posts after 10 minutes" do
     signup
-    p(Time.now)
     expect(current_path).to eq("/posts")
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     expect(current_path).to eq("/posts")
 
-    Timecop.travel(11.minutes)
-    p(Time.now)
-    expect(page).to_not have_content("Edit")
+    Timecop.travel(601)
+    click_on "Edit"
+    expect(current_path).to eq("/posts")
   end
 end
