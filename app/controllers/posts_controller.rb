@@ -19,11 +19,17 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
-      redirect_to posts_url
+      redirect_to posts_url, :notice => "Successfully edited the message"
     else
       render 'edit'
     end
 
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_url, :notice => "Your post has been deleted"
   end
 
   def index

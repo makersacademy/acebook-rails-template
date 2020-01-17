@@ -1,6 +1,3 @@
-require 'rails_helper'
-require 'test_helper'
-
 RSpec.feature "Timeline", type: :feature do
   scenario "Can view date and time of post" do
     sign_up
