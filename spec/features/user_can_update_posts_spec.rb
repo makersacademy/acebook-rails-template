@@ -6,7 +6,6 @@ RSpec.feature "Update", type: :feature do
 
     new_post('First post')
 
-    p Post.all
     post_id = Post.first.id
     
     within("div##{post_id}") do

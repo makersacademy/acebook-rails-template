@@ -1,7 +1,6 @@
 class SessionsController < Clearance::SessionsController
 
   def create
-    p 'hello create'
     @user = authenticate(params)
     sign_in(@user) do |status|
       if status.success?
