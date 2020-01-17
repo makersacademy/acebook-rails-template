@@ -3,7 +3,7 @@ class UsersController < Clearance::UsersController
   def create
     @user = user_from_params
 
-    if params[:user][:password].length < 6 || params[:user][:password].length > 10
+    if password_length_checker
       flash[:alert] = "Password must be 6-10 characters!"
       redirect_to '/sign_up'
     elsif @user.save
@@ -25,4 +25,8 @@ class UsersController < Clearance::UsersController
     params.require(:user).permit(:first_name, :surname, :email, :password)
   end
   
+  def password_length_checker
+    params[:user][:password].length < 6 || params[:user][:password].length > 10
+  end
+
 end
