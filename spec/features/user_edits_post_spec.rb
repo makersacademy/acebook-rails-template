@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Edit post", type: :feature do
   scenario "Can edit a post if it belongs to the user" do
     sign_up("email@example.com", "pass12", "pass12")
-    click_link "New post"
+    click_button "New post"
     fill_in "Message", with: "Hello, world!"
     post_time = Time.now
     click_button "Submit"
@@ -13,7 +13,7 @@ RSpec.feature "Edit post", type: :feature do
     expect(page).to have_content("Posted by email@example.com")
     expect(page).to have_link('Edit')
 
-    click_link('Edit')
+    click_link 'Edit'
     fill_in "Message", with: "Goodbye, world!"
     click_button "Update Post"
 
@@ -25,7 +25,7 @@ RSpec.feature "Edit post", type: :feature do
 
   scenario "Cannot edit post if it does not belong to the user" do
     sign_up("email@example.com", "pass12", "pass12")
-    click_link "New post"
+    click_button "New post"
     fill_in "Message", with: "Hello, world!"
     post_time = Time.now
     click_button "Submit"

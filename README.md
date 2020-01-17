@@ -8,6 +8,8 @@ Building and deploying a Facebook clone in Rails. Working as an Agile team and p
 
 To visit the web app as a real world user, visit https://hidden-cliffs-27554.herokuapp.com/.
 
+To find out more about our building process and first foray into Rails, please visit our blog: https://medium.com/true-grit.
+
 ## Table of contents
 - [Required Instructions](#required-instructions)
 - [How to contribute to this project](#how-to-contribute-to-this-project)
@@ -19,11 +21,10 @@ To visit the web app as a real world user, visit https://hidden-cliffs-27554.her
 - [Features](#features)
 - [Code style](#code-style)
 - [Tech used](#tech-used)
-- [Database setup](#database-setup)
-- [Test database setup](#test-database-setup)
 - [Test coverage](#test-coverage)
   - [Feature tests](#feature-tests)
   - [Unit tests](#unit-tests)
+- [Contributors](#Contributors)
 - [Credits](#credits)
 
 ## REQUIRED INSTRUCTIONS:
@@ -135,7 +136,9 @@ user_id | user_name | user_handle | email | password | created_at |
 
 - Rails
 - Rspec  
-- BCrypt
+- Devise
+- Travis CI
+- FactoryBot
 - ActiveRecord
 - PostgreSQL
 - Capybara
@@ -146,24 +149,16 @@ user_id | user_name | user_handle | email | password | created_at |
 - SimpleCov
 - Heroku
 
-## Database setup
-
-- Connect to ```psql```
-- Create the database using the ```psql``` command ```CREATE DATABASE name-of-database;```  
-- Connect to the database using the ```pqsl``` command ```\c name-of-database;```  
-- Run all the queries we have saved in the folder ```db\migrations\```  
-
-## Test database setup
-
-- Connect to ```psql```
-- Create the database using the ```psql``` command ```CREATE DATABASE name-of-test-database;```  
-- Connect to the database using the ```pqsl``` command ```\c name-of-test-database;```  
-- Run all the queries we have saved in the folder ```db\migrations\```  
-
 ## Test coverage  
 #### Feature tests
 
 #### Unit tests
 
+## Contributors
+
+* [Andrew Bacon](https://github.com/ajbacon)
+* [Jade Beresford](https://github.com/JKBero)
+* [Raluca Ciucu](https://github.com/IngramCapa)
+* [Charlie Paterson](https://github.com/CpaterCodes)
 
 ## Credits

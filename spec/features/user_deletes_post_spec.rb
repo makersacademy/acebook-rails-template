@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Delete post", type: :feature do
   scenario "Can delete a post if it belongs to the user" do
     sign_up("email@example.com", "pass12", "pass12")
-    click_link "New post"
+    click_button "New post"
     fill_in "Message", with: "Hello, world!"
     post_time = Time.now
     click_button "Submit"
@@ -22,7 +22,7 @@ RSpec.feature "Delete post", type: :feature do
 
   scenario "Cannot delete a post if it does not belong to the user" do
     sign_up("email@example.com", "pass12", "pass12")
-    click_link "New post"
+    click_button "New post"
     fill_in "Message", with: "Hello, world!"
     post_time = Time.now
     click_button "Submit"

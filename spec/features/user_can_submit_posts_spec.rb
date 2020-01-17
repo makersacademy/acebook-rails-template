@@ -4,7 +4,7 @@ RSpec.feature "Timeline", type: :feature do
 
   before do
     sign_up("email@example.com", "pass12", "pass12")
-    click_link "New post"
+    click_button "New post"
   end
 
   scenario "Can submit posts and view them" do
@@ -20,7 +20,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
 
-    click_link "New post"
+    click_button "New post"
     fill_in "Message", with: "Hello again, world!"
     click_button "Submit"
 

@@ -5,7 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'devise'
+gem 'jquery-rails'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'factory_bot_rails'
 gem 'jbuilder', '~> 2.5'
@@ -23,6 +26,7 @@ gem 'travis'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Use Uglifier as compressor for JavaScript assets
+gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 # Use Redis adapter to run Action Cable in production
