@@ -21,7 +21,6 @@ To visit the web app as a real world user, visit https://hidden-cliffs-27554.her
 - [Tech used](#tech-used)
 - [Database setup](#database-setup)
 - [Test database setup](#test-database-setup)
-- [Running the tests](#running-the-tests)
 - [Test coverage](#test-coverage)
   - [Feature tests](#feature-tests)
   - [Unit tests](#unit-tests)
@@ -93,6 +92,17 @@ So that I can avoid other posting messages on Acebook as me
 I want to log out of Acebook.   
 ```
 
+```
+As a user   
+So that I can delete a post I no longer like   
+I want to delete the post I've made   
+```
+
+```
+As a user   
+So that I can update a post I have second thoughts on   
+I want to edit the post I've made   
+```
 
 ## Domain modelling
 
@@ -151,11 +161,7 @@ user_id | user_name | user_handle | email | password | created_at |
 - Connect to the database using the ```pqsl``` command ```\c name-of-test-database;```  
 - Run all the queries we have saved in the folder ```db\migrations\```  
 
-## Running the tests  
-
-You can run tests by running ```rspec``` in the terminal in the root directory.
-
-### Test coverage  
+## Test coverage  
 #### Feature tests
 
 #### Unit tests
