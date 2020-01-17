@@ -4,6 +4,6 @@ RSpec.feature "Timeline", type: :feature do
     new_post
     now = DateTime.now
     expect(page).to have_current_path '/posts'
-    expect(page).to have_content(now.strftime("%C%y-%m-%d %H:%M:%S"))
+    expect(page).to have_content(now.strftime("%d %b %C%y %H:%M:%S"))
   end
 end
