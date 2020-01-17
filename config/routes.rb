@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'sessions#index'
+  
+  resources :posts
+  resources :users
+  resources :sessions
+
+
   get 'signup' => 'user#new'  
   post 'signup' => 'user#create'  
   get 'login' => 'sessions#new'
@@ -9,12 +17,10 @@ Rails.application.routes.draw do
   patch 'posts' => 'posts#edit'
   delete 'posts' => 'posts#delete'
   # root :to => 'user#new'
-  resources :users
-  resources :user
-  resources :sessions
+  
 
   root 'user#new'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
 
-  resources :posts
+  
 end
