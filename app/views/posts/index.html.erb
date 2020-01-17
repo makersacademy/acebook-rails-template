@@ -1,7 +1,8 @@
 <h2>Feed</h2>
 
 <% @posts.reverse.each do |post| %>
-  <div id='<%=post.id%>'>
+  <div class='post' id='<%=post.id%>'>
+  <p><%= "#{@user.first_name} #{@user.surname}" %></p>
   <p><%= post.message %></p>
   <p><%= (post.created_at).to_s.slice(11...16) %></p>
   <%= link_to 'Delete', post_path(post), method: :delete %>
