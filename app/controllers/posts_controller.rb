@@ -18,10 +18,15 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update(post_params)
-      redirect_to posts_url
+    if Time.now.utc < (@post.created_at.utc + 10.minutes).utc
+      if @post.update(post_params)
+        redirect_to posts_url
+      else
+        render 'edit'
+      end
+
     else
-      render 'edit'
+      redirect_to posts_path, flash: { error: "Unable to edit post over 10 mins after creation" }
     end
 
   end
@@ -35,4 +40,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
   end
+
 end
