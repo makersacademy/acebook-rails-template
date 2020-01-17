@@ -6,6 +6,8 @@ services:
 before_script:
 - bundle exec rails db:create
 - bundle exec rails db:migrate
+script:
+- bundle exec rubocop -DESP
 deploy:
   provider: heroku
   app: hidden-cliffs-27554
