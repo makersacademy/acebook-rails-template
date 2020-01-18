@@ -4,19 +4,20 @@
   New post
 <% end %>
   <% @posts.each do |post| %>
-    <li> 
-      <div class="card" style="width: 23rem;">
-        <span class="border border-dark">
-        <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%d/%m/%Y") %></div>
-          <div class="card-body">
-          <p class="card-text"><%= post.message.gsub(/\n/, '<br>').html_safe %></p>
+
+    <div class="card" style="width: 23rem;">
+      <span class="border border-dark">
+      <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%d/%m/%Y") %></div>
+        <div class="card-body">
+        <p class="card-text"><%= post.message.gsub(/\n/, '<br>').html_safe %></p>
+          <div class="card-buttons">
           <% if @current_user.id == post.user_id %>
             <%= button_to 'Edit', edit_post_path(post), :class => "button", :method => :get %>
-            <%= button_to 'Destroy', posts_path(post), method: :delete %>
+            <%= button_to 'Delete', posts_path(post), :class => "button", method: :delete %>
           <% end %>
           </div>
-        </span>
-      </div>
-    </li>
+        </div>
+      </span>
+    </div>
   <% end %> 
 </center>
