@@ -7,7 +7,7 @@
     <li> 
       <div class="card" style="width: 23rem;">
         <span class="border border-dark">
-        <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%Y-%m-%d") %></div>
+        <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%d/%m/%Y") %></div>
           <div class="card-body">
           <p class="card-text"><%= post.message.gsub(/\n/, '<br>').html_safe %></p>
           <% if @current_user.id == post.user_id %>
