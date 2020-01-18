@@ -12,11 +12,11 @@
           <p class="card-text"><%= post.message.gsub(/\n/, '<br>').html_safe %></p>
           <% if @current_user.id == post.user_id %>
             <%= button_to 'Edit', edit_post_path(post), :class => "button", :method => :get %>
-            <%= button_to 'Destroy', posts_path(post), method: :delete %>
+            <%= button_to 'Delete', posts_path(post), :class => "button", method: :delete %>
           <% end %>
           </div>
-        </span>
-      </div>
-    </li>
+        </div>
+      </span>
+    </div>
   <% end %> 
 </center>
