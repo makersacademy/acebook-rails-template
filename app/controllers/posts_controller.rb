@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order("updated_at DESC")
+    @posts = Post.all.order("created_at DESC")
   end
 
   def find_user(post_id)
