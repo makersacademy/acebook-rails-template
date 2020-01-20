@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   patch 'posts' => 'posts#edit'
   delete 'posts' => 'posts#delete'
   # root :to => 'user#new'
+  
   resources :users
   resources :user
   resources :sessions
