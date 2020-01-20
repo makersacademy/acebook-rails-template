@@ -15,7 +15,7 @@ Acebook - Team Luckerberg
 - [Julie Cheng](https://github.com/jj49411)
 
 ## App and card wall
-1. Acebook
+1. Acebook app    
 Find the app [here](https://acebook-luckerberg.herokuapp.com/).
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
