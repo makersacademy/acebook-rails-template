@@ -1,7 +1,7 @@
 <h1>Timeline</h1>
-
-<%= button_to "New post", new_post_path, :method => :get, :form_class => "btn" %>
-
+<div class="new-post-btn-container">
+  <%= button_to "New post", new_post_path, :method => :get, :form_class => "btn" %>
+</div>
 <% @posts.each do |post| %>
   <p class="post"><%= h(post.message).gsub(/\r\n/, '<br>').html_safe %>
     <br>

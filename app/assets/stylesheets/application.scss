@@ -33,7 +33,7 @@
    text-align: center;
    background-color: orange;
    opacity: 0.83;
-   font-size: 90px;
+   font-size: 45px;
    font-family: "Lucida Console", Monaco, monospace;
    border-top: 10px solid black;
    border-bottom: 10px solid black;
@@ -42,7 +42,7 @@
   h2 {
     letter-spacing: 6px;
     text-align: center;
-    font-size: 60px;
+    font-size: 25px;
     font-weight: bolder;
     background-color: orange;
     padding: 10px;
@@ -68,8 +68,14 @@
     color: orange;
   }
 
+  .new-post-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .btn {
-    margin-left: 610px;
+    // margin-left: 610px;
     color: orange;
     font-family: Impact, sans-serif;
     font-size: 30px;
@@ -98,7 +104,9 @@
 textarea{
   background-color: black;
   color: orange;
+  width: 90%;
   opacity: 0.6;
+
 }
 textarea:hover {
   background-color: orange;
