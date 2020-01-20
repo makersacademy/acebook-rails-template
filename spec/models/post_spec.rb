@@ -13,18 +13,18 @@ RSpec.describe Post, type: :model do
   it 'returns true if post created within 10mins' do
     post = @user.posts.create(message: 'I am a post')
 
-    expect(post.recent?).to be(true)
+    expect(post.not_recent?).to be(false)
   end
 
   it 'returns false if post created after 10mins' do
     post_time = Time.local(2020, 1, 1, 0, 0, 0)
     Timecop.freeze(post_time)
-                
+
     post = @user.posts.create(message: 'I am a post')
 
     edit_time = Time.local(2020, 1, 1, 0, 10, 0)
     Timecop.freeze(edit_time)
 
-    expect(post.recent?).to be(false)
+    expect(post.not_recent?).to be(true)
   end
 end

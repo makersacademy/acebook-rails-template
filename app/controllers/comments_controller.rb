@@ -21,10 +21,13 @@ class CommentsController < ApplicationController
   def edit
     @post = Post.new
     respond_to do |format|
-      if !@comment.recent?
-        format.html { redirect_to posts_path, notice: 'You can only edit the comment for 10 minutes after posting' }
+      if !recent_comment?
+        format.html {
+          redirect_to posts_path,
+          notice: 'You can only edit the comment for 10 minutes after posting'
+        }
         format.json { render :index, status: :created, location: @comment }
-      elsif current_user.id != @comment.user_id
+      elsif !correct_user?
         format.html { redirect_to posts_path, notice: 'You can only edit your own comments' }
         format.json { render :index, status: :created, location: @comment }
       else
@@ -67,7 +70,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     respond_to do |format|
-      if current_user.id != @comment.user_id
+      if !correct_user?
         format.html { redirect_to posts_path, notice: 'You can only delete your own comments' }
         format.json { render :index, status: :created, location: @comment }
       else
@@ -79,13 +82,21 @@ class CommentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def comment_params
-      params.require(:comment).permit(:message, :post_id, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def comment_params
+    params.require(:comment).permit(:message, :post_id, :user_id)
+  end
+
+  def correct_user?
+    current_user.id == @comment.user_id
+  end
+
+  def recent_comment?
+    Comment.recent?(@comment)
+  end
 end
