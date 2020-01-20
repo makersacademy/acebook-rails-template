@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+.card {
+  margin: 15px;
+ }
+.card-buttons {
+  float: right;
+  display: flex;
+  margin-right:5px;
+}
+.button {
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 10;
+  margin: 3px;
+  padding: 5px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+ }
+
+.button:hover {
+  background: red;
+}

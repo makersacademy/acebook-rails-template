@@ -30,7 +30,12 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order("updated_at DESC")
+    @posts = Post.all.order("created_at DESC")
+  end
+
+  def find_user(post_id)
+    @this = Post.find_by_user_id(post_id).user_id
+    @post_owner = User.find_by_id(@this)
   end
 
   def delete
