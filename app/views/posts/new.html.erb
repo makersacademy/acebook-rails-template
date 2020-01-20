@@ -1,6 +1,6 @@
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_area(:message, size: "50x10")%>
-
+  <%= form.hidden_field(:recipient_id, :value => @recipient_id) %>
   <%= form.submit "Submit" %>
 <% end %>

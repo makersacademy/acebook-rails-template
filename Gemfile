@@ -10,7 +10,6 @@ gem 'devise'
 gem 'jquery-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'factory_bot_rails'
 gem 'jbuilder', '~> 2.5'
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -42,6 +41,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', '0.71.0'
   gem 'selenium-webdriver'
