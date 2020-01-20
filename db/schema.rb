@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(version: 20200117154912) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "walls", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "user_id"
+    t.index ["post_id"], name: "index_walls_on_post_id"
+    t.index ["user_id"], name: "index_walls_on_user_id"
+  end
+
   add_foreign_key "posts", "users"
   add_foreign_key "posts", "users", column: "recipient_id"
+<<<<<<< HEAD
+=======
+  add_foreign_key "walls", "posts"
+  add_foreign_key "walls", "users"
+>>>>>>> b793dc34ab9f2b354ca5354bdf610f6075923e68
 end
