@@ -17,11 +17,13 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
-      return redirect_to posts_url, :notice => "Successfully edited the message"
+    if above_10_mins_post
+      redirect_to posts_path, flash: { error: "Unable to edit post over 10 mins after creation" }
+    elsif @post.update(post_params)
+      redirect_to posts_url, :notice => "Successfully edited the message"
+    else
+      render 'edit'
     end
-    
-    render 'edit'
   end
 
   def destroy
