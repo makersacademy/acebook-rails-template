@@ -222,6 +222,7 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    timecop (0.9.1)
     travis (1.8.10)
       backports
       faraday (~> 0.9)
@@ -270,6 +271,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   simplecov
+  timecop
   travis
   travis-lint
   tzinfo-data
