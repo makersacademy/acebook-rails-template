@@ -13,30 +13,45 @@
   @import "bootstrap";
 
  .post {
-   border: 4px solid black;
+   border: 8px solid black;
    margin: 20px;
-   margin-left: 520px;
-   font-family: "Lucida Console", Monaco, monospace;
-   width: 30%;
-   font-weight: bold;
- }
-
- h1 {
-   text-align: center;
+   margin-left: 420px;
    background-color: black;
    color: orange;
+   opacity: 0.7;
+   font-family: "Lucida Console", Monaco, monospace;
+   width: 40%;
+   font-weight: bold;
+ }
+.post:hover {
+  opacity: 0.8;
+  background-color: orange;
+  color: black;
+}
+ h1 {
+   letter-spacing: 7px;
+   text-align: center;
+   background-color: black;
+   opacity: 0.83;
+   color: orange;
    font-size: 90px;
-   font-family: Impact, sans-serif;
+   font-family: "Lucida Console", Monaco, monospace;
  }
 
   h2 {
-    color: orange;
-    font-size: 40px;
-    font-family: Impact, sans-serif;
+    letter-spacing: 6px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bolder;
+    background-color: orange;
+    padding-bottom: 10px;
+    opacity: 0.85;
+    border-bottom: 7px;
+    font-family: "Lucida Console", Monaco, monospace;
   }
 
   body {
-    background-color: grey;
+    background-image: url("https://i.stack.imgur.com/pTnJr.jpg");
     align-items: center;
     justify-content: center;
   }
@@ -51,12 +66,17 @@
   }
 
   .btn {
-    margin-left: 660px;
-    background-color: orange;
+    margin-left: 610px;
     color: orange;
     font-family: Impact, sans-serif;
     font-size: 30px;
   }
   div {
+    padding-bottom: 10px;
+    text-align: center;
      font-family: Lucida, Courier, monospace;
+     color: orange;
+     font-weight: bold;
+     background-color: black;
+     opacity: 0.75;
   }
