@@ -1,48 +1,21 @@
-dist: bionic
-
 language: ruby
-cache:
-  - bundler
-
 rvm:
-  - 2.6.3
-
+- 2.6.3
 services:
-  - postgresql
-
-env:
-  global:
-    - MOZ_HEADLESS=1
-    - CC_TEST_REPORTER_ID=59c9ecfc93beafa930ea8169ace46ecb771db3d298e08602179b62c0fdb4f177
-
-addons:
-  firefox: latest
-
+- postgresql
 before_script:
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
-  - tar -xzf geckodriver-v0.26.0-linux64.tar.gz
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-  - bundle exec rake assets:precompile
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+script:
+- bundle exec rspec
+- bundle exec rubocop
 deploy:
   provider: heroku
+  app: warm-everglades-53164
+  on:
+    repo: denriquem/acebook--TeamFavouriteFreindLove-
+  run:
+    - bundle exec rails db:create
+    - bundle exec rails db:migrate
   api_key:
-    secure: l0HmSf2sT6VcufkChrqO511hjrM8lT7lWMcYEIGOQEBkBx7M7ZOn2VNbNssGb6BF71mkxRbHSQm64SZTNt4zk7KpL1y0pIiAlQOLDZOj2qruwx80RMGQr84Kph39uHb3zqUZireJrs
-GRRA/fUvuXCJlSlUIkjpwrOI2h366v9Bo24cYOukdovl1J+zzZV7i5nD9ii4d//QsbWHiJcWOXmh0IqaA1WkYpQLxTN/2UtRMglNB3H9qAJQIvUflSPO2ouUyGFZIvPz0DssBOKHCxgWL+TBR01jx
-wkj1LX+7PvG1tyrwP6AzNUZKB6TJGxm2qah9T05rgA5GnSGALAyvfI3lRifADAZyJ36DkedfsfjZOYPbg2r05LYlNgNh0ZMe4L1cQ9LtoWSSKwU7Wi3jlwliw9qHMGvAjATBTGyNjUK+mDJf4xFwn
-Xp6fwna6XdIbXDc68TZssC5xfPD8NQUv9EMuNcv4XGGsS2sMoGeBbiLLV9W4mR7g5JEGs3m5S6uT1DttqeLJgGapEj7djvMANqwmbwSZQBPxfjslvAs/BZwo/XACQgpjCTm2ttjGEkmrSM78wI1Cz
-lo1OGE/ZFGuo7TRMdq5fQqy17HqDGsoyWGYl2OcrkapZd2yV5FEoOrK2iJx6irWaXvfX3+PSo6za2v1aynsQVenedFia66Gpe4=
-    app: warm-everglades-53164
-    on:
-      repo: denriquem/acebook--TeamFavouriteFreindLove-
-
-script:
-  - bundle exec rspec
-  - bundle exec rubocop
-
-after_script:
-- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+    secure: XeNHFuWU4HeYOXitNqVapJKBfZaAx4cbOSK9Ak0/ZlTuaiAwmTX1bklMjULt7poEbIq3vYq533hOi+wfdQBzHXDkxTPp/GfpJlB5IB2ynXzO0tgxM/c03J46Ngn6TIyrma/t7wWF9E33GR14pXTPhFiVVhl3OYYQwwHzZY332W7AUBIVHw1QJWWxva7T6fq7pBBTSaME+s40x+61CgW1jUQ6tabkMTjRf6QeeITBDqOTBA8/BX2ou3IxYNW97EK0Zrd6lYJlozRzwSm0NdfnUtUHgAbXLwULfAoIRRaqwEAxPka2msmWSptv2+bKjnqnVnl4P+uCr99Dx1WGTgQQ43x8uNWPm6nrAdBYvNKCVmrpmfqxVhEbY3Ij5HxFSfp2MOLKIQWlhsU0/pDlL24b8+BEwI5gCV8cdNjRjn9qeuxhZywA7qbNQl+e3k4qlSfZyD+VLT37OSM9mCjSckhckBtKsf7qTvcPlawoo+hMEb7odxE9rNEnet4nfQkH7s38lYpfy8qfnhEIAYhREiXdqnzggKLie9/wv6ZD0sYAIGuN6nBms4BT6HQYqlpORBd//HWSkYaeLcMvxDraGc/HM+zP05mc59Ds1hmPUE6vYfpn1+yfWO4aq6ldfSPQT83pkeQA96v7j8zzo1390xAIsiPnMlFy/L5Ip3yVY0mM6xE=
