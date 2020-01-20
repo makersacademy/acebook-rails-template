@@ -17,6 +17,7 @@ deploy:
   on:
     repo: EManifold/acebook-zuckermen
   run:
+  - bundle exec rails db:reset
   - bundle exec rails db:create
   - bundle exec rails db:migrate
   api_key:
