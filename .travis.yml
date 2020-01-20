@@ -42,7 +42,7 @@ lo1OGE/ZFGuo7TRMdq5fQqy17HqDGsoyWGYl2OcrkapZd2yV5FEoOrK2iJx6irWaXvfX3+PSo6za2v1a
 
 script:
   - bundle exec rspec
-  - bundle exec rubocop -c .rubocop.yml .
+  - bundle exec rubocop
 
 after_script:
 - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
