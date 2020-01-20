@@ -1,29 +1,16 @@
-dist: bionic
-
 language: ruby
-cache:
-  - bundler
-
 rvm:
   - 2.6.3
-
 services:
   - postgresql
 
 env:
   global:
-    - MOZ_HEADLESS=1
     - CC_TEST_REPORTER_ID=59c9ecfc93beafa930ea8169ace46ecb771db3d298e08602179b62c0fdb4f177
 
-addons:
-  firefox: latest
-
 before_script:
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
-  - tar -xzf geckodriver-v0.26.0-linux64.tar.gz
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-  - bundle exec rake assets:precompile
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
