@@ -1,4 +1,3 @@
-require_relative '../helpers/web_helpers'
 require 'rails_helper'
 
 RSpec.feature "Post order", type: :feature do
