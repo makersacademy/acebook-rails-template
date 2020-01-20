@@ -46,7 +46,9 @@ AllCops:
   Exclude:
     - 'bin/**/*'
     - 'db/schema.rb'
-    - '**/vendor/**/*'
+
+Metrics/AbcSize:
+  Max: 20
 
 Metrics/LineLength:
   Exclude:
