@@ -2,7 +2,7 @@ RSpec.feature "block edit", type: :feature do
 
   before do
     sign_up("email@example.com", "pass12", "pass12")
-    click_button "New post"
+    click_link "New post"
   end
 
   scenario "it should block edit if expired time over 10mins" do

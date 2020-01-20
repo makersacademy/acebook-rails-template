@@ -1,31 +1,40 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "User walls", type: :feature do
 
-  before do
-    sign_up("email@example.com", "pass12", "pass12")
-  end
+  let(:user) { create(:user) }
 
   scenario "User can see their own wall after sign up" do
-    expect(page).to have_current_path('/')
+    sign_up("email@example.com", "pass12", "pass12")
     expect(page).to have_content "Account: email@example.com"
   end
 
   scenario "User can see their own wall after sign in" do
+    sign_in("#{user.email}", "hey12345")
 
-    click_on "Sign out"
-    sign_in("email@example.com", "pass12")
-    expect(page).to have_current_path('/')
-    expect(page).to have_content "Account: email@example.com"
+    expect(page).to have_current_path("/users/#{user.id}")
+    expect(page).to have_content "Account: #{user.email}"
   end
 
   scenario "User can see another person's wall" do
+    sign_up("email@example.com", "pass12", "pass12")
+    visit "/users/#{user.id}"
 
-    click_on "Sign out"
-    sign_up("hello@example.com", "pass12", "pass12")
-
-    visit "/users/100"
-
-    expect(page).to have_content "Account: email@example.com"
+    expect(page).to have_content "Account: #{user.email}"
   end
+
+  scenario "User is redirected to 404 error page if trying to visit user page that does not exist" do
+    sign_in("#{user.email}", "hey12345")
+    visit "/users/#{user.id + 1}"
+
+    expect(page).to have_current_path("/error")
+    expect(page).to have_content "The user you were looking for doesn't exist (404)"
+  end
+
+  scenario "User is redirected to sign up page if trying to view a user page without logging in" do
+    visit "/users/#{user.id}"
+
+    expect(page).to have_current_path new_user_registration_path
+  end
+
 end
