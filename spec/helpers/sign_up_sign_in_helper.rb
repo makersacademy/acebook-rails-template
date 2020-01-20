@@ -7,3 +7,12 @@ def sign_up(email, pass, conf_pass)
   click_button "Sign up"
 
 end
+
+def sign_in(email, pass)
+
+  visit new_user_registration_path
+  click_on "Log in"
+  fill_in "user_email", with: email
+  fill_in "user_password", with: pass
+  click_button "Log in"
+end

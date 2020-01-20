@@ -4,15 +4,6 @@ RSpec.describe PostsController, type: :controller do
 
   let(:user) { create(:user) }
 
-  before(:all) do
-    FactoryBot.define do
-      factory :user do
-        email { "test@example.com" }
-        password { "hey12345" }
-      end
-    end
-  end
-
   before(:each) do
     sign_in user
   end
