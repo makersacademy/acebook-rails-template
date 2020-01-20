@@ -1,27 +1,23 @@
 language: ruby
 rvm:
-  - 2.5.0
-
+- 2.5.0
 env:
   global:
-    - CC_TEST_REPORTER_ID=85ca9dd8683abc577230481be6e37304a287904bd1897db53b2715984a1bdd66
-
+  - CC_TEST_REPORTER_ID=85ca9dd8683abc577230481be6e37304a287904bd1897db53b2715984a1bdd66
 services:
-  - postgresql
-
+- postgresql
 before_script:
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-
+- bundle exec rake db:create
+- bundle exec rake db:migrate
 script:
-  - bundle exec rspec
-
-# deploy:
-#   provider: heroku
-#   app: intense-stream-74805
-#   on:
-#     repo: EManifold/acebook-zuckermen
-#   run:
-#     - bundle exec rails db:migrate
-#   api_key:
-#     secure: df0e7ecc-c802-440d-9a28-9f15bddcfee2
+- bundle exec rspec
+deploy:
+  provider: heroku
+  app: intense-stream-74805
+  on:
+    repo: EManifold/acebook-zuckermen
+  run:
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
+  api_key:
+    secure: est/SOsO80F5v8IE1I8GzIBDyFNG7yUW2R8TwIQFYXlSlx8lQPc+LtSynSU8dKVm+Uqci35ImWoBpbfMmHS04lrGO+2q0lQPPKv1VrYxcIoOqTgv2EfyZQTTuFSOg3Ghh3lkKdSG9kespcpjS+dBbS6iaAsGAFqBwuzFC3relWUGt1NWCh5/WbfaSJTD1YiokV/JBYtojJzvVS9xzWd884YKFfNCpsYAK1EaOE+C0b8c8xaoHD0ezrGp7HyG5y6OaWN90NayOHuTcoa9pCipcaI0sRhkwWFuCqFMpfxRyKA12m+YouEEjdmFkhdCOuUqGLtkpXZxIAFZpOQOZvOfs2OPO6fNwGnCoXsAE6q3FRG5ybGkmit17U4DAZLVEBpiARlQ7ojbbiULN6wsn5VU2WgS2NomjNsBYL7Jq1EVW/vefLmycrO3u/NC0/EveUooppxpIHp/RFtVpPBU7dkZikui6Nw14sImnSAw1EXuQ13uMmKbcorBpjCLRGtAaGM65T8E84fhT4p8n3di/byfDnT352cslaErSBw52Lxey1DUxS/Ie2UAQ/VByBbOzeSv7ejlvP+Xe7o1b51Dhx5Swy5CcbqPEFDBzkcGI+4p4TYPp+ePDUWJOsviB1dEEkymESZqoAjF2drgWdwvnfdsRAorE2lF4PvFwOpF0rufZuw=
