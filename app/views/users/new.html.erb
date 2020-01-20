@@ -3,7 +3,8 @@
 
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
-
+    <label for='confirmation-password'>Confirmation password</label>
+    <input type='password' name='confirmation-password'>
     <div class="submit-field">
       <%= form.submit %>
     </div>
