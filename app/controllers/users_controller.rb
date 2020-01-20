@@ -15,10 +15,6 @@ class UsersController < Clearance::UsersController
    
   end
 
-  # def wall
-  #   @user = current_user
-  # end
-
   private
 
   def user_params
