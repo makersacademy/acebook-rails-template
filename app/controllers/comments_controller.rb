@@ -7,14 +7,14 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = @post.comment.build
+    @comment = @post.comments.build
   end
 
   def create
-    @comment = @post.comment.build(comment_params)
+    @comment = @post.comments.build(comment_params)
     @comment.user_id = session[:user_id]
-    if @pcomment.save
-      redirect_to posts_url
+    if @comment.save
+      redirect_to post_comments_path(@post)
     else
       render :new
     end
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   private
 
   def fetch_post
-    @post = Post.find_by_id(params[post_id])
+    @post = Post.find(params[:post_id])
   end
 
   def comment_params
