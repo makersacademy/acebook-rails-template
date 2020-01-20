@@ -13,6 +13,96 @@
   @import "bootstrap";
 
  .post {
-   border: 1px solid black;
-   margin: 20px;
+   border: 6px solid black;
+   margin: auto;
+   margin-bottom: 5px;
+   background-color: black;
+   color: orange;
+   opacity: 0.7;
+   font-family: "Lucida Console", Monaco, monospace;
+   width: 40%;
+   font-weight: bold;
  }
+.post:hover {
+  opacity: 0.8;
+  background-color: orange;
+  color: black;
+}
+ h1 {
+   letter-spacing: 7px;
+   text-align: center;
+   background-color: orange;
+   opacity: 0.83;
+   font-size: 90px;
+   font-family: "Lucida Console", Monaco, monospace;
+   border-top: 10px solid black;
+   border-bottom: 10px solid black;
+ }
+
+  h2 {
+    letter-spacing: 6px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bolder;
+    background-color: orange;
+    padding: 10px;
+    opacity: 0.85;
+    border-top: 10px solid black;
+    border-bottom: 10px solid black;
+    font-family: "Lucida Console", Monaco, monospace;
+  }
+
+  body {
+    background-image: url("https://i.stack.imgur.com/pTnJr.jpg");
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    margin: auto;
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+  }
+  a:hover {
+    color: orange;
+  }
+
+  .btn {
+    margin-left: 610px;
+    color: orange;
+    font-family: Impact, sans-serif;
+    font-size: 30px;
+  }
+  .field {
+    padding-bottom: 10px;
+    text-align: center;
+     font-family: "Lucida Console", Monaco, monospace;
+     color: orange;
+     font-weight: bold;
+     background-color: black;
+     opacity: 0.75;
+  }
+
+.post-box {
+  font-family: "Lucida Console", Monaco, monospace;
+  margin: auto;
+  text-align: center;
+  background-color: black;
+  color: orange;
+  width: 45%;
+  opacity: 0.85;
+  border: 5px solid black;
+}
+
+textarea{
+  background-color: black;
+  color: orange;
+  opacity: 0.6;
+}
+textarea:hover {
+  background-color: orange;
+  color: black;
+  opacity: 0.9;
+
+}
