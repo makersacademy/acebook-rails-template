@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    
     if above_10_mins_post
       redirect_to posts_path, flash: { error: "Unable to edit post over 10 mins after creation" }
     elsif @post.update(post_params)
@@ -24,7 +25,6 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
-
   end
 
   def destroy
