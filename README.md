@@ -18,9 +18,17 @@ First, clone this repository. Then:
 
 ```bash
 > bundle install
-> bin/rails db:create
-> bin/rails db:migrate
+> rake db:create
+> rake db:schema:load
 
 > bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+> rails server # Start the server at localhost:3000
 ```
+
+## Code Climate
+[![Maintainability](https://api.codeclimate.com/v1/badges/7fda849bdfddf3bc3ed5/maintainability)](https://codeclimate.com/github/EManifold/acebook-zuckermen/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/7fda849bdfddf3bc3ed5/test_coverage)](https://codeclimate.com/github/EManifold/acebook-zuckermen/test_coverage)
+
+## Travis
+[![Build Status](https://travis-ci.org/EManifold/acebook-zuckermen.svg?branch=master)](https://travis-ci.org/EManifold/acebook-zuckermen)
