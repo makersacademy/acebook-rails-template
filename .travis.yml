@@ -21,15 +21,19 @@ script:
 
 deploy:
   provider: heroku
+  app: warm-everglades-53164
+  on:
+    repo: denriquem/acebook--TeamFavouriteFreindLove-
+  run:
+    - bundle exec rails db:create
+    - bundle exec rails db:migrate
   api_key:
     secure: ZOV89CZhJsfnhgFCINwGC4C2+bTI4wOohDQFJDe5StUemCriQjXa9XOQp/j9b/ljgVtWwHGcajtK6wE2LM8VS3kDgWw7pCvGzlNkpdGeXpMvT7aChhC9dlc9CiC6k1LP
 CntJSP+3ixx2MvAj2PeP0CidNuCFKUtkJGIWs6NTlZ59l81+uw7M6rM6hTFWxCPhpThQ8g1INBz+I0frKWzbWo9e7wByTwdW0p/qIbvkgVQT0Is1b/uYCI3wEwGaN5M7E7yfI2AY8/J
 jP5yEbEg80XldKuXc3HDnLqRBEG7GxbDnDyYdBcjKapHG1NSbMSMoP2fLMCuy8rNkNmowowL7YmmeXSdIXIm40f7Ow75Gl8zXh3o2DPg42cs3jPCgyeQ6gJht8vDOiMkBoOntBS7w/Z
 Ht+9AzHeEgCZ46btmh2XGEa2PHVPKEmTHgpPRspChFMiUq3DizMEUr6f+BTvD7akKJhcZi+gVxY9spcZt8fq6Dp35npVO1ImtEeqV2CfmEljHb56OB+5VR/OmoP4ks9hmAvsDhdRFme
 C19oTx0jdZNyKQACTF8HAuuY3IBS8cB7Uv2wrEqxSIUKZLJA/pf2/lwzNFZCLjpZrSSLpWvRdc+5t8yzBo6ZO8IiFOv+nHVRNl3kqtgTNX4w6weVbBt54x+062EtudQlrkqLYVgp6g=
-    app: warm-everglades-53164
-    on:
-      repo: denriquem/acebook--TeamFavouriteFreindLove-
+
 
 # after_script:
 # - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
