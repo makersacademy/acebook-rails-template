@@ -4,6 +4,7 @@
 <% end %>
 
 <% @posts.each do |post| %>
+<div class="container">
   <div class="card" style="width: 23rem;">
     <span class="border border-dark">
     <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%d/%m/%Y") %></div>
@@ -20,5 +21,11 @@
         </div>
       </span>
     </div>
-  <% end %>
+  </div>
+  <div class="card" style="width: 23rem;">
+  <span class="border border-dark">
+    <%= render partial: 'posts/comment', collection: post.comments.reverse %>
+  </div>
+  </div>
+<% end %>
 </center>

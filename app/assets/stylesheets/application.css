@@ -13,9 +13,15 @@
  *= require_tree .
  *= require_self
  */
-.card {
+.container {
   margin: 15px;
  }
+
+.card {
+  margin: -2.5px;
+ }
+
+
 .card-buttons {
   float: right;
   display: flex;
