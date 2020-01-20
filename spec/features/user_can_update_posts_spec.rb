@@ -34,6 +34,7 @@ RSpec.feature "Update", type: :feature do
     end
 
     expect(page).to have_content('You can only edit the post for 10 minutes after posting')
+    expect(page.current_path).to eq('/posts')
 
     Timecop.return
   end

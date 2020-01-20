@@ -8,7 +8,10 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    flash[:alert] = "You can only edit the post for 10 minutes after posting" unless @post.recent?
+    unless @post.recent?
+      flash[:alert] = "You can only edit the post for 10 minutes after posting" 
+      redirect_to posts_url
+    end
   end
 
   def create
