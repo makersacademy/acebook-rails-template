@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    try_edit(@post)
   end
 
   def create
@@ -25,10 +26,11 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
+
   end
 
   def index
-    @posts = Post.all.order("updated_at DESC")
+    @posts = Post.all.order("created_at DESC")
   end
 
   def find_user(post_id)
@@ -47,4 +49,13 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
   end
+
+  def try_edit(post)
+    if Time.now - @post.created_at > 600
+      redirect_to '/posts', notice: "Cannot edit post after 10 minutes"
+    else
+      edit_post_path(post)
+    end
+  end
+
 end

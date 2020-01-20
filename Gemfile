@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rubocop', '~> 0.71.0', require: false
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'timecop'
 end
 
 group :development do

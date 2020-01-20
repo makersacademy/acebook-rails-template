@@ -16,7 +16,7 @@ Acebook - Team Luckerberg
 
 ## App and card wall
 1. Acebook
-Find the app [here](https://acebook-november2019.herokuapp.com/).
+Find the app [here](https://acebook-luckerberg.herokuapp.com/).
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 

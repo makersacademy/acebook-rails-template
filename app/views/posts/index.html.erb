@@ -1,22 +1,24 @@
-
 <center>
 <%= button_to new_post_path, :class => "button", :method => :get do %>
   New post
 <% end %>
   <% @posts.each do |post| %>
-    <li> 
-      <div class="card" style="width: 23rem;">
-        <span class="border border-dark">
-        <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%Y-%m-%d") %></div>
-          <div class="card-body">
-          <p class="card-text"><%= post.message.gsub(/\n/, '<br>').html_safe %></p>
+
+    <div class="card" style="width: 23rem;">
+      <span class="border border-dark">
+      <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%d/%m/%Y") %></div>
+        <div class="card-body">
+        <p class="card-text"><%= post.message.gsub(/\n/, '<br>').html_safe %></p>
+          <div class="card-buttons">
           <% if @current_user.id == post.user_id %>
-            <%= button_to 'Edit', edit_post_path(post), :class => "button", :method => :get %>
-            <%= button_to 'Destroy', posts_path(post), method: :delete %>
+            <% if (Time.now - post.created_at) < 600 %>
+              <%= button_to 'Edit', edit_post_path(post), :class => "button", :method => :get %>
+            <% end %>
+            <%= button_to 'Delete', posts_path(post), :class => "button", method: :delete %>
           <% end %>
           </div>
-        </span>
-      </div>
-    </li>
-  <% end %> 
+        </div>
+      </span>
+    </div>
+  <% end %>
 </center>
