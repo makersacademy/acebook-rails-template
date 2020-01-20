@@ -13,6 +13,49 @@
   @import "bootstrap";
 
  .post {
-   border: 1px solid black;
+   border: 4px solid black;
    margin: 20px;
+   margin-left: 520px;
+   font-family: Lucida, Courier, monospace;
+   width: 30%;
  }
+
+ h1 {
+   text-align: center;
+   background-color: black;
+   color: orange;
+   font-size: 90px;
+   font-family: Impact, sans-serif;
+  }
+
+  h2 {
+    color: orange;
+    font-size: 40px;
+    font-family: Impact, sans-serif;
+  }
+
+  body {
+    background-color: grey;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+  }
+  a:hover {
+    color: orange;
+  }
+
+  .btn {
+    margin-left: 660px;
+    background-color: orange;
+    color: orange;
+    font-family: Impact, sans-serif;
+    font-size: 30px;
+  }
+  div {
+     font-family: Lucida, Courier, monospace;
+  }
