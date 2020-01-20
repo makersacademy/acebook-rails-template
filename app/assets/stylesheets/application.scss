@@ -59,6 +59,7 @@
   }
 
   a {
+    margin: auto;
     color: white;
     background-color: black;
     border: 2px solid black;
@@ -73,12 +74,35 @@
     font-family: Impact, sans-serif;
     font-size: 30px;
   }
-  div {
+  .field {
     padding-bottom: 10px;
     text-align: center;
-     font-family: Lucida, Courier, monospace;
+     font-family: "Lucida Console", Monaco, monospace;
      color: orange;
      font-weight: bold;
      background-color: black;
      opacity: 0.75;
   }
+
+.post-box {
+  font-family: "Lucida Console", Monaco, monospace;
+  margin: auto;
+  text-align: center;
+  background-color: black;
+  color: orange;
+  width: 45%;
+  opacity: 0.85;
+  border: 5px solid black;
+}
+
+textarea{
+  background-color: black;
+  color: orange;
+  opacity: 0.6;
+}
+textarea:hover {
+  background-color: orange;
+  color: black;
+  opacity: 0.9;
+
+}
