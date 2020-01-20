@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  
+
   before_action :redirect_to_index_if_not_signed_in
 
   def new
@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   def index
     @user = current_user
     @posts = Post.all
+    @comment = Comment.new
   end
 
   def update
