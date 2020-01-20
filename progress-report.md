@@ -76,6 +76,29 @@ https://guides.rubyonrails.org/
 ### What could've gone better
     - Been blocked a lot, improving debugging process
     - Stricter time-boxing
-    
+
+
+## Sprint 3
+
+### Sprint goals
+- Complete commenting section
+- Finish core requirements 
+
+### Blockers
+- Heroku & Travis
+- Line break can't use method, has to be used on views
+
+### Learning Resources
+Rails scaffolding:
+https://www.youtube.com/watch?v=fVtGy3QL9xg
+
+### What has gone well
+    - Been productive, focused
+    - Got lots of features done
+    - Weren't all stuck on the same problem
+    - Got past our blockers and have achieved our goals
+### What could've gone better
+    - Not much, good sprint
+    - Timeblocks for Heroku early on in sprint
     
     
