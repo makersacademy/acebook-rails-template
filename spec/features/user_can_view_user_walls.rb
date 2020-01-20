@@ -37,4 +37,31 @@ RSpec.feature "User walls", type: :feature do
     expect(page).to have_current_path new_user_registration_path
   end
 
+  scenario "Can submit posts on their own user page and view them" do
+    sign_up("email@example.com", "pass12", "pass12")
+    click_button "New post"
+    fill_in "Message", with: "Hello, world!"
+    post_time = Time.now
+    click_button "Submit"
+
+    expect(page).to have_content("Hello, world!")
+    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
+    expect(page).to have_content("Posted by email@example.com")
+  end
+
+  scenario "Can submit posts on another user's page and view them" do
+    sign_up("email@example.com", "pass12", "pass12")
+    visit "/users/#{user.id}"
+
+    click_button "New post"
+    fill_in "Message", with: "Hello, world!"
+    post_time = Time.now
+    click_button "Submit"
+
+    expect(page).to have_current_path "/users/#{user.id}"
+    expect(page).to have_content("Hello, world!")
+    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
+    expect(page).to have_content("Posted by email@example.com")
+  end
+
 end

@@ -2,15 +2,12 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
 
-  let(:user) { build(:user) }
-
-  before(:each) do
-    sign_in user
-  end
+  let(:user) { create(:user) }
 
   describe "GET /users/:id" do
     it "responds with 200" do
-      get :show
+      sign_in user
+      get :show, params: { id: user.id }
       expect(response).to have_http_status(200)
     end
   end
