@@ -9,14 +9,14 @@ before_script:
 script:
 - bundle exec rspec
 - bundle exec rubocop
-# deploy:
-#   provider: heroku
-#   app: warm-everglades-53164
-#   on:
-#     repo: denriquem/acebook--TeamFavouriteFreindLove-
-#   run:
-#     - bundle exec rails db:create
-#     - bundle exec rails db:migrate
+deploy:
+  provider: heroku
+  app: warm-everglades-53164
+  on:
+    repo: denriquem/acebook--TeamFavouriteFreindLove-
+  run:
+    - bundle exec rails db:create
+    - bundle exec rails db:migrate
 #   api_key:
 #     secure: ZOV89CZhJsfnhgFCINwGC4C2+bTI4wOohDQFJDe5StUemCriQjXa9XOQp/j9b/ljgVtWwHGcajtK6wE2LM8VS3kDgWw7pCvGzlNkpdGeXpMvT7aChhC9dlc9CiC6k1LP
 # CntJSP+3ixx2MvAj2PeP0CidNuCFKUtkJGIWs6NTlZ59l81+uw7M6rM6hTFWxCPhpThQ8g1INBz+I0frKWzbWo9e7wByTwdW0p/qIbvkgVQT0Is1b/uYCI3wEwGaN5M7E7yfI2AY8/J
