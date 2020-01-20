@@ -23,9 +23,15 @@
     </div>
   </div>
   <div class="card" style="width: 23rem;">
-  <span class="border border-dark">
-    <%= render partial: 'posts/comment', collection: post.comments.reverse %>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Comments
+    </button>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <%= render partial: 'posts/comment', collection: post.comments.reverse %>
+      </div>
+    </div>
   </div>
-  </div>
+</div>
 <% end %>
 </center>
