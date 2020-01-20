@@ -8,6 +8,14 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    unless @post.user == current_user
+      flash[:alert] = "You can only edit your own posts" 
+      redirect_to posts_url
+    end
+    unless @post.recent?
+      flash[:alert] = "You can only edit the post for 10 minutes after posting" 
+      redirect_to posts_url
+    end
   end
 
   def create
