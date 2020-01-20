@@ -1,7 +1,15 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<h2>Feed</h2>
 
 <%= link_to new_post_path do %>
   New post
+<% end %>
+
+<% @posts.reverse.each do |post| %>
+  <div class='post' id='<%=post.id%>'>
+  <p><%= "#{@user.first_name} #{@user.surname}" %></p>
+  <p><%= post.message %></p>
+  <p><%= post.created_at.strftime('%d %B %Y at %k:%M') %></p>
+  <%= link_to 'Delete', post_path(post), method: :delete %>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  </div>
 <% end %>
