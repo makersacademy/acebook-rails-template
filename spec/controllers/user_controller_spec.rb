@@ -7,7 +7,7 @@ RSpec.describe UserController, type: :controller do
       post :create, params: { user: { name: 'Ben', email: 'ben@example.com', password: "123456", password_confirmation: "123456" } }
       expect(User.find_by({ email: 'ben@example.com' })).to be
       expect(response).to redirect_to('/posts')
-    # expect(response).to redirect_to('/wall/Ben')
+    # expect(response).to redirect_to('/wall/ben')
     end
 
     it 'redirects back to users/new if no name is provided' do
