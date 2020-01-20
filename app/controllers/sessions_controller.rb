@@ -23,4 +23,3 @@ class SessionsController < ApplicationController
     redirect_to '/login', notice: 'Logged out!' if session[:user_id].nil?
   end
 end
-
