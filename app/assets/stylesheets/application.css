@@ -15,18 +15,27 @@
  */
 .container {
   margin: 15px;
+  display: flex;
+ }
+
+ .post-container {
+   flex: 1;
  }
 
 .card {
   margin: -2.5px;
  }
 
-
 .card-buttons {
   float: right;
   display: flex;
   margin-right:5px;
 }
+
+.comment-form {
+  width: 200px;
+}
+
 .button {
   border: none;
   background: #404040;

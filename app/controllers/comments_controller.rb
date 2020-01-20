@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user_id = session[:user_id]
     if @comment.save
-      redirect_to post_comments_path(@post)
+      redirect_to posts_path
     else
       render :new
     end
