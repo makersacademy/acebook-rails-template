@@ -9,7 +9,13 @@ RSpec.feature "Comments", type: :feature do
     click_on "Comment"
     within ".comment" do
       expect(page).to have_content 'Test comment'
+    end
+
+    within ".comment-user" do
       expect(page).to have_content 'Harry Mumford'
+    end
+
+    within ".comment-time" do
       expect(page).to have_content Comment.all[0].created_at.strftime('%d %B %Y at %k:%M')
     end
   end
