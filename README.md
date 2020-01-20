@@ -8,9 +8,8 @@ the below**
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
 2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+  
+## [Live Demo](https://intense-stream-74805.herokuapp.com/)
 
 ## Quickstart
 
@@ -32,3 +31,10 @@ First, clone this repository. Then:
 
 ## Travis
 [![Build Status](https://travis-ci.org/EManifold/acebook-zuckermen.svg?branch=master)](https://travis-ci.org/EManifold/acebook-zuckermen)
+
+## [Trello Board](https://trello.com/b/36aeqHBo/zuckermen-acebook)
+
+## [Progress Report](https://github.com/EManifold/acebook-zuckermen/blob/master/progress-report.md)
+
+## How to contribute to this project
+See [CONTRIBUTING.md](CONTRIBUTING.md)
