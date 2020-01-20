@@ -15,25 +15,26 @@
  */
 .container {
   margin: 15px;
-  display: flex;
  }
 
- .post-container {
-   flex: 1;
- }
+.post-container {
+display: inline-block;
+}
 
 .card {
   margin: -2.5px;
+ }
+
+ .comment-form {
+  display: inline-block;
+  max-height: 320px;
+  width: 200px;
  }
 
 .card-buttons {
   float: right;
   display: flex;
   margin-right:5px;
-}
-
-.comment-form {
-  width: 200px;
 }
 
 .button {
