@@ -116,13 +116,17 @@ I want to delete a post I have made
 
 **Table: users**
 
-user_id | user_name | user_handle | email | password | created_at |
-| ----- | --------- | ----------- | ----- | -------- | ---------- |
+| id | email | encrypted_password | reset_password_token | reset_password_sent_at | remember_created_at | created_at | updated_at |
+| ----- | --------- | ----------- | ----- | -------- | ---------- | ----------- | ------ |
 
 **Table: posts**   
 
-| id | content | created_at | user_id |
-| -- | ------- | ---------- | ------- |
+| id | message | created_at | updated_at | user_id |
+| -- | ------- | ---------- | ------- | ----- |
+
+**Table: wall**
+| id | user_id | post_id |
+| ----- | ------ | ----- |
 
 ## Features
 

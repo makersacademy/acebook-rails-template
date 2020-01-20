@@ -17,15 +17,14 @@ RSpec.describe PostsController, type: :controller do
     sign_in user
   end
 
-  describe "GET /new " do
+  describe "GET /posts/new " do
     it "responds with 200" do
-
       get :new
       expect(response).to have_http_status(200)
     end
   end
 
-  describe "POST /" do
+  describe "POST /posts" do
     it "responds with 200" do
 
       post :create, params: { post: { message: "Hello, world!" } }
@@ -39,11 +38,12 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe "GET /" do
+  describe "GET /posts" do
     it "responds with 200" do
 
       get :index
       expect(response).to have_http_status(200)
     end
   end
+
 end
