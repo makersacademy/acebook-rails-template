@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
-    
+
   end
 
   def destroy
@@ -41,5 +41,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def above_10_mins_post
+    Time.now.utc > (@post.created_at.utc + 10.minutes).utc
   end
 end
