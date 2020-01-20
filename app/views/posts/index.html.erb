@@ -11,5 +11,13 @@
   <p><%= post.created_at.strftime('%d %B %Y at %k:%M') %></p>
   <%= link_to 'Delete', post_path(post), method: :delete %>
   <%= link_to 'Edit', edit_post_path(post) %>
+  <%= render 'comments_form', comment: @comment, post: post %>
+  <% Comment.where(post_id: post.id).reverse.each do |comment| %>
+    <% user = User.where(id: comment.user_id)[0] %>
+    <p class="comment-user"> <%= user.first_name %> <%= user.surname %> </p>
+    <p class="comment"> <%= comment.message %> </p>
+    <p class="comment-time"> <%= comment.created_at.strftime('%d %B %Y at %k:%M') %> </p>
+  <% end %>
+
   </div>
 <% end %>
