@@ -1,0 +1,24 @@
+<%= form_with(model: @comment, local: true) do |form| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_area :message, class: :comment_message %>
+  </div>
+
+  <%= hidden_field_tag "comment[user_id]", "#{current_user.id}" %>
+  <%= hidden_field_tag "comment[post_id]", "#{post.id}" %>
+
+  <div class="actions">
+    <%= form.submit "Comment" %>
+  </div>
+<% end %>
