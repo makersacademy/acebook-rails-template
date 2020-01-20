@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :message %>
-    <%= form.text_area :message, id: :comment_message %>
+    <%= form.text_area :message, class: :comment_message %>
   </div>
 
   <%= hidden_field_tag "comment[user_id]", "#{current_user.id}" %>

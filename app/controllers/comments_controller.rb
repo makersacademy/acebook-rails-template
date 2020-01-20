@@ -19,6 +19,18 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    @post = Post.new
+    respond_to do |format|
+      if !@comment.recent?
+        format.html { redirect_to posts_path, notice: 'You can only edit the comment for 10 minutes after posting' }
+        format.json { render :index, status: :created, location: @comment }
+      elsif current_user.id != @comment.user_id
+        format.html { redirect_to posts_path, notice: 'You can only edit your own comments' }
+        format.json { render :index, status: :created, location: @comment }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   # POST /comments
@@ -42,7 +54,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to posts_path, notice: 'Comment was successfully updated.' }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }

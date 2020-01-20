@@ -5,9 +5,8 @@ RSpec.feature "Comments", type: :feature do
     sign_up('Harry', 'Mumford', 'harry_mumford@hotmail.co.uk', 'password')
     new_post('First post')
 
-    fill_in 'Message', with: 'Test comment'
-    click_on "Comment"
-    within ".comment" do
+    new_comment('Test comment')
+    within ".comment-message" do
       expect(page).to have_content 'Test comment'
     end
 
