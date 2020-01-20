@@ -14,10 +14,14 @@
   <%= render 'comments_form', comment: @comment, post: post %>
   <% Comment.where(post_id: post.id).reverse.each do |comment| %>
     <% user = User.where(id: comment.user_id)[0] %>
-    <p class="comment-user"> <%= user.first_name %> <%= user.surname %> </p>
-    <p class="comment"> <%= comment.message %> </p>
-    <p class="comment-time"> <%= comment.created_at.strftime('%d %B %Y at %k:%M') %> </p>
+    <div class="comment">
+      <p class="comment-user"> <%= user.first_name %> <%= user.surname %> </p>
+      <p class="comment-message"> <%= comment.message %> </p>
+      <p class="comment-time"> <%= comment.created_at.strftime('%d %B %Y at %k:%M') %> </p>
+      <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+    </div>
   <% end %>
+
 
   </div>
 <% end %>

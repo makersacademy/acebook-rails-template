@@ -25,3 +25,9 @@ def new_post(message)
   fill_in "Message", with: message
   click_button "Submit"
 end
+
+def new_comment(message)
+  visit('/posts')
+  fill_in "comment[message]", with: message
+  click_on "Comment"
+end
