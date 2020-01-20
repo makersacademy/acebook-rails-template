@@ -15,14 +15,16 @@ Acebook - Team Luckerberg
 - [Julie Cheng](https://github.com/jj49411)
 
 ## App and card wall
-1. Acebook app    
-Find the app [here](https://acebook-luckerberg.herokuapp.com/).
+1. Find our Acebook app [here](https://acebook-luckerberg.herokuapp.com/).
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
 2. Our trello board is [here](https://trello.com/b/0LloZrOg/acebook-luckerberg).
 
 3. Learning wiki is [here](https://github.com/Hyan18/acebook-luckerberg/blob/update-readme/learning-wiki.md)
+
+## User stories  
+
 
 ## How to install and run
 
