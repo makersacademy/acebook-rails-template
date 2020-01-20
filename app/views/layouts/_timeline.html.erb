@@ -1,0 +1,20 @@
+<h1>Timeline</h1>
+
+<%= button_to "New post", new_post_path, :method => :get, :form_class => "btn" %>
+
+<% @posts.each do |post| %>
+  <p class="post"><%= h(post.message).gsub(/\r\n/, '<br>').html_safe %>
+    <br>
+    <br>
+    Date posted: <%= post.created_at.strftime('%d %B %Y at %l:%M %p') %>
+    <br>
+    Posted by <%= User.find(post.user_id).email %>
+    <% if (post.user.id === current_user.id) %>
+      <%= link_to 'Edit', edit_post_path(post)%> |
+      <%= link_to 'Delete', post_path(post),
+        method: :delete,
+        data: { confirm: 'Are you sure?' }
+        %>
+    <% end %>
+  </p>
+<% end %>
