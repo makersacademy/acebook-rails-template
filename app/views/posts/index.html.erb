@@ -3,10 +3,6 @@
   <p><%= post.created_at.strftime("%d %b %C%y %H:%M:%S") %></p>
     <%= link_to 'Edit', edit_post_path(post) %>
     <%= link_to 'Delete', post, :confirm => "Are you sure?", :method => :delete%>
-  </p>
-  <% @user.each do |user| %>
-  <p><%= user.email %></p>
-<% end %>
 <% end %>
 
 <%= link_to new_post_path do %>
