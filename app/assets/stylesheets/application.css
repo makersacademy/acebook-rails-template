@@ -18,11 +18,20 @@
  }
 
 .post-container {
-display: inline-block;
-}
+  display: inline-block;
+  }
 
 .card {
   margin: -2.5px;
+ }
+
+ .card-body {
+  align-items: center;
+  padding: 0px;
+ }
+
+ .card.card-body {
+  align-items: center;
  }
 
  .comment-form {
@@ -32,7 +41,7 @@ display: inline-block;
  }
 
 .card-buttons {
-  float: right;
+  justify-content: center;
   display: flex;
   margin-right:5px;
 }
@@ -52,3 +61,4 @@ display: inline-block;
 .button:hover {
   background: red;
 }
+

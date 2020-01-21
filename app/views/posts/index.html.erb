@@ -1,7 +1,7 @@
 <center>
-<%= button_to new_post_path, :class => "button", :method => :get do %>
+<!-- <%= button_to new_post_path, :class => "button", :method => :get do %>
   New post
-<% end %>
+<% end %> -->
 
 <% @posts.each do |post| %>
   <div class="container">
@@ -18,7 +18,6 @@
                 <% end %>
                 <%= button_to 'Delete', posts_path(post), :class => "button", method: :delete %>
               <% end %>
-              <%= button_to 'New comment', new_post_comment_path(post), :class => "button", method: :get %>
             </div>
           </span>
         </div>
@@ -31,12 +30,12 @@
         <div class="collapse" id="<%= post.id %>_comments">
           <div class="card card-body">
             <%= render partial: 'posts/comment', collection: post.comments.reverse %>
+            <div id="<%= post.id %>_comment_form" class="comment-form">
+              <%= render partial: 'comments/form', locals: {post: post, comment: post.comments.build} %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="<%= post.id %>_comment_form" class="comment-form">
-      <%= render partial: 'comments/form', locals: {post: post, comment: post.comments.build} %>
     </div>
   </div>
 <% end %>
