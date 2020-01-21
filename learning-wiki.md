@@ -15,19 +15,16 @@ Acebook - Team Luckerberg
 
 ## <a name="Dawid">Dawid Szpener</a>
 
-####  <p>Day1:<br>
-   <li>Happy with my team</li>
-   <li>Abit too excited???</li>
-   <li>Everything seemed overwhelming</li>
-   <li>Felt like theres no chance of doing most of the specifications</li>
-   </p> 
-   
-####   <p>Day2:<br>
-   <li>Ready to crack on early in the morning</li>
-   <li>Reading some documentation</li>
-   <li>Super suprised how quickly we implemented things</li>
-   <li>Best day since christmas break by far</li>
-   </p> 
+  #####Week 1
+  The learning curve was kind of slow, too many new things to learn.
+  Despite this fact we managed to do well, both in terms of specifications and team-work.
+  Few things I learned on week 1:
+  ⋅⋅* Rails folder structure
+  ⋅⋅* Rails commands for creating modules, controllers and migrations
+  ⋅⋅* Setting up heroku
+  ⋅⋅* Using github comfortably
+  ⋅⋅* How to co-operate better in team environment
+
 
 ## <a name="Eve">Eve Noirault</a>
 
