@@ -16,6 +16,7 @@ class UserController < ApplicationController
     elsif @user.save
       @user = User.find_by_email(params[:user][:email])
       session[:user_id] = @user.id
+      @wall = @user.create_wall(user_id: session[:user_id])
       redirect_to '/posts', notice: "Signed up!"
     # redirect_to "/wall/@user.name.downcase", notice: "Signed up!"
     end
