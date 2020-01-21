@@ -19,4 +19,12 @@ RSpec.feature "Comments", type: :feature do
     end
   end
 
+  scenario "shows error if don't fill in comment field" do
+    sign_up('Harry', 'Mumford', 'harry_mumford@hotmail.co.uk', 'password')
+    new_post('First post')
+
+    new_comment('')
+
+    expect(page).to have_content "Message can't be blank"
+  end
 end

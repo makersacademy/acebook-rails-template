@@ -19,6 +19,20 @@ RSpec.feature "Update", type: :feature do
     expect(page).to have_content("Updated comment")
   end
 
+  scenario "shows error if don't fill in comment field" do
+    new_post('First post')
+    new_comment('Test comment')
+
+    within('.comment') do
+      click_link "Edit"
+    end
+
+    fill_in "comment[message]", with: ""
+    click_on "Update Comment"
+
+    expect(page).to have_content "Message can't be blank"
+  end
+
   scenario "Cannot update a post after 10 minutes" do
     new_post('First post')
 
