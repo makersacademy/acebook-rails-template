@@ -21,7 +21,7 @@ Acebook - Team Luckerberg
 
 2. Our trello board is [here](https://trello.com/b/0LloZrOg/acebook-luckerberg).
 
-3. Learning wiki is [here](https://github.com/Hyan18/acebook-luckerberg/blob/update-readme/learning-wiki.md)
+3. Learning wiki is [here](https://github.com/Hyan18/acebook-luckerberg/blob/master/learning-wiki.md)
 
 ## User stories  
 ```
