@@ -30,7 +30,7 @@ So I can use Acebook
 I want to sign up.  
 ```  
 ```
-As a user
+As a User
 So I can come back to Acebook  
 I want to log in.  
 ```  
@@ -77,7 +77,7 @@ I want to be able to publish posts on people's walls as well as my own.
 ```
 
 ```
-As a user
+As a User
 So I can give my opinion
 I want to leave comments on posts.
 ```
