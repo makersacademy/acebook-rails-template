@@ -9,7 +9,7 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(current_path).to eq("/posts")
 
-    click_on "New comment"
+    click_on "Comments"
 
     fill_in :comment_text, with: "New comment"
     click_on "Submit"
