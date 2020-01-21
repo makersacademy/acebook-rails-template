@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   #   message.gsub(/\r\n/, "<br>").html_safe
   # end
 
-  def not_recent?
-    (Time.now - self.created_at) >= 600
+  def recent?
+    (Time.now - created_at) < 600
   end
 end
