@@ -46,4 +46,6 @@ ActiveRecord::Schema.define(version: 20200117154912) do
 
   add_foreign_key "posts", "users"
   add_foreign_key "posts", "users", column: "recipient_id"
+  add_foreign_key "walls", "posts"
+  add_foreign_key "walls", "users"
 end

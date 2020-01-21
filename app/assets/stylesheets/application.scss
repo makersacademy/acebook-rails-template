@@ -59,16 +59,23 @@
   }
 
   a {
-    margin: auto;
     color: white;
     background-color: black;
-    border: 2px solid black;
+    display: inline-block;
+    border: 3px solid black;
   }
   a:hover {
     color: orange;
+    text-decoration: none;
   }
 
   .new-post-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .actions {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,5 +119,11 @@ textarea:hover {
   background-color: orange;
   color: black;
   opacity: 0.9;
+
+}
+
+.app-links {
+  align-text: center;
+  font-size: 25px;
 
 }
