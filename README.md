@@ -96,8 +96,8 @@ I'd like users to only be able to edit and delete their own posts.
 
 Here is a list of the external resources we used to help our learning:
 
-[rails home page](https://edgeguides.rubyonrails.org/)
-[signing-up on the app](https://www.learnenough.com/ruby-on-rails-4th-edition-tutorial/sign_up#sec-showing_users)
-[ActiveRecord rails migrations](https://edgeguides.rubyonrails.org/active_record_migrations.html)
-[Video for deleting posts](https://www.youtube.com/watch?time_continue=89&v=wdXgDwk6UO8&feature=emb_title)
+[rails home page](https://edgeguides.rubyonrails.org/)<br>
+[signing-up on the app](https://www.learnenough.com/ruby-on-rails-4th-edition-tutorial/sign_up#sec-showing_users)<br>
+[ActiveRecord rails migrations](https://edgeguides.rubyonrails.org/active_record_migrations.html)<br>
+[Video for deleting posts](https://www.youtube.com/watch?time_continue=89&v=wdXgDwk6UO8&feature=emb_title)<br>
 [clearance gem for rails](https://github.com/thoughtbot/clearance)
