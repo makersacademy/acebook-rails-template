@@ -7,11 +7,13 @@ end
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'devise'
+gem 'figaro'
 gem 'jquery-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use postgresql as the database for Active Record
+gem 'omniauth-github'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

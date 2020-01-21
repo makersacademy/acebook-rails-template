@@ -9,6 +9,8 @@
   </head>
 
   <body>
+    <h1>Spacebook</h1>
+
     <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>

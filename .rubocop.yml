@@ -53,6 +53,7 @@ Metrics/BlockLength:
     - 'spec/**/*'
     - 'test/**/*'
     - 'db/**/*'
+    - 'config/environments/*'
 
 # Code Style
 # ==========
