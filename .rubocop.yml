@@ -48,8 +48,8 @@ AllCops:
     - 'db/schema.rb'
     - '**/vendor/**/*'
 
-Metrics/AbcSize:
-  Max: 100
+# Metrics/AbcSize:
+#   Max: 100
 
 Metrics/LineLength:
   Exclude:
