@@ -19,8 +19,8 @@ class PostsController < ApplicationController
 
   def create
     @user = current_user
-    # post_params[:message] = Post.line_break(post_params[:message])
     @post = @user.posts.new(post_params)
+    @post.line_break
     @post.save ? (redirect_to posts_url) : (render 'new')
   end
 

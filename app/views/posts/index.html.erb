@@ -6,22 +6,22 @@
 
 <% @posts.reverse.each do |post| %>
   <div class='post' id='<%=post.id%>'>
-    <% @user = User.where(id: post.user_id)[0] %> 
-    <p class='post-user'><%= "#{@user.first_name} #{@user.surname}" %></p>
-    <p><%= post.message.gsub(/\r\n/, "<br>").html_safe %></p>
-    <p><%= post.created_at.strftime('%d %B %Y at %k:%M') %></p>
-    <%= link_to 'Delete', post_path(post), method: :delete %>
-    <%= link_to 'Edit', edit_post_path(post) %>
-    <%= render 'comments_form', comment: @comment, post: post %>
-    <% Comment.where(post_id: post.id).reverse.each do |comment| %>
-      <% user = User.where(id: comment.user_id)[0] %>
-      <div class="comment">
-        <p class="comment-user"> <%= user.first_name %> <%= user.surname %> </p>
-        <p class="comment-message"> <%= comment.message %> </p>
-        <p class="comment-time"> <%= comment.created_at.strftime('%d %B %Y at %k:%M') %> </p>
-        <%= link_to 'Edit', edit_comment_path(comment) %>
-        <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
-    <% end %>
+  <% @user = User.where(id: post.user_id)[0] %> 
+  <p><%= "#{@user.first_name} #{@user.surname}" %></p>
+  <p><%= post.message.html_safe %></p>
+  <p><%= post.created_at.strftime('%d %B %Y at %k:%M') %></p>
+  <%= link_to 'Delete', post_path(post), method: :delete %>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  <%= render 'comments_form', comment: @comment, post: post %>
+  <% Comment.where(post_id: post.id).reverse.each do |comment| %>
+    <% user = User.where(id: comment.user_id)[0] %>
+    <div class="comment">
+      <p class="comment-user"> <%= user.first_name %> <%= user.surname %> </p>
+      <p class="comment-message"> <%= comment.message %> </p>
+      <p class="comment-time"> <%= comment.created_at.strftime('%d %B %Y at %k:%M') %> </p>
+      <%= link_to 'Edit', edit_comment_path(comment) %>
+      <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
   </div>
 <% end %>
