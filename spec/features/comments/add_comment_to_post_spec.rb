@@ -25,6 +25,6 @@ RSpec.feature "Comments", type: :feature do
 
     new_comment('')
 
-    expect(page).to have_content "Message can't be blank"
+    expect(page).to have_content "Comment must not be blank."
   end
 end
