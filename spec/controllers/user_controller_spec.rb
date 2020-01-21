@@ -4,11 +4,23 @@ RSpec.describe UserController, type: :controller do
 
   describe 'POST #create' do
 
-    it 'creates a user and redirects them their posts/wall page' do
-      post :create, params: { user: { name: 'Ben', email: 'ben@example.com', password: "123456", password_confirmation: "123456" } }
-      expect(User.find_by({ email: 'ben@example.com' })).to be
-      expect(response).to redirect_to('/posts')
-    # expect(response).to redirect_to('/wall/ben')
+    context 'When a user successfully signs up' do
+      before(:each) do 
+        post :create, params: { user: { name: 'Ben', email: 'ben@example.com', password: "123456", password_confirmation: "123456" } }
+      end
+
+      it 'creates a user' do
+        expect(User.find_by({ email: 'ben@example.com' })).to be
+      end
+
+      it 'redirects them to their posts/wall page' do
+        expect(response).to redirect_to('/posts')
+      # expect(response).to redirect_to('/wall/ben')
+      end
+
+      it "displays a notice, letting the user know they've signed up" do
+        expect(flash[:notice]).to match('Signed up')
+      end
     end
 
     context "When a user already has an account" do
