@@ -58,12 +58,20 @@
     justify-content: center;
   }
 
+  .navbar {
+    background-image: url("http://www.talencia.cat/mypics/max/1/16113_stars-backgrounds.png");
+  }
+
+  .navbar-brand {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 2em;
+    font-family: "Righteous";
+  }
+
   a {
     color: white;
-    background-color: black;
-    display: inline-block;
-    border: 3px solid black;
   }
+
   a:hover {
     color: orange;
     text-decoration: none;
@@ -83,10 +91,17 @@
 
   .btn {
     // margin-left: 610px;
-    color: orange;
+    color: white;
     font-family: Impact, sans-serif;
     font-size: 30px;
+    background-color: inherit;
+    border: none;
   }
+
+  .btn:hover {
+    color: orange;
+  }
+
   .field {
     padding-bottom: 10px;
     text-align: center;
@@ -125,5 +140,7 @@ textarea:hover {
 .app-links {
   align-text: center;
   font-size: 25px;
-
+  background-color: black;
+  display: inline;
+  border: 3px solid black;
 }
