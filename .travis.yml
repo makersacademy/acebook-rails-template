@@ -1,0 +1,10 @@
+language: ruby
+
+services:
+  - postgresql
+
+script:
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
+  - bundle exec rspec
+  
