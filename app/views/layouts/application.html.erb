@@ -9,64 +9,71 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:500&display=swap" rel="stylesheet">
   </head>
-  <nav style="opacity: 0.5; box-shadow: 2px 2px 8px rgba(227, 227, 227);" class="navbar navbar-expand-md navbar-light bg-light">
+  <body>
+    <nav style="opacity: 0.5; box-shadow: 2px 2px 8px rgba(227, 227, 227);" class="navbar navbar-expand-md navbar-light bg-light">
+      <div class="container">
+
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/posts">View Posts</a>
+          </li>
+
+          <% if current_user %>
+          <li class="nav-item">
+            <a class="nav-link" id="New post" href="/posts/new">New post</a>
+          </li>
+          <% end %>
+        </ul>
+
+
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+          <% if current_user == nil %>
+          <li class="nav-item">
+            <a href="/signup" name="sign_up" id="sign_up" class="nav-link waves-effect waves-light pr-2">
+              Sign Up
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/login" class="nav-link waves-effect waves-light">
+              Login
+            </a>
+          </li>
+          <% else %>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link waves-effect waves-light">
+<!--        <a href="/wall/<%= current_user.name %>" class="nav-link waves-effect waves-light"> -->
+            Signed in as <%= current_user.name.capitalize %>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/sessions/destroy" name="logout" id="logout" class="nav-link waves-effect waves-light">
+              Logout
+            </a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+
+    </div>
+    </nav>
+
+    <% flash.each do |type, message|%>
+      <div class="alert alert-info" style="text-align: center;">
+        <%= message %>
+      </div>
+    <% end %>
+
     <div class="container">
-
-    <a class="navbar-brand" href="/">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/posts">View Posts</a>
-        </li>
-
-        <% if current_user %>
-        <li class="nav-item">
-          <a class="nav-link" href="/posts/new">Add new Post</a>
-        </li>
-        <% end %>
-      </ul>
-
-
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-        <% if current_user == nil %>
-        <li class="nav-item">
-          <a href="/signup" name="sign_up" id="sign_up" class="nav-link waves-effect waves-light pr-2">
-            Sign Up
-          </a>
-        </li>
-  			<li class="nav-item">
-         	<a href="/login" class="nav-link waves-effect waves-light">
-           	Login
-          </a>
-        </li>
-        <% else %>
-
-  		 	<li class="nav-item">
-  				<a href="/wall/<%= current_user.name %>" class="nav-link waves-effect waves-light">
-          Signed in as <%= current_user.name.capitalize %>
-  				</a>
-  		 	</li>
-  		   <li class="nav-item">
-         	 <a href="/sessions/destroy" name="logout" id="logout" class="nav-link waves-effect waves-light">
-             Logout
-         	 </a>
-         </li>
-         <% end %>
-      </ul>
+      <%= yield %>
     </div>
-   </div>
-  </nav>
-
-  <% flash.each do |type, message|%>
-    <div class="alert alert-info" style="text-align: center;">
-      <%= message %>
-    </div>
-  <% end %>
-
-  <div class="container">
-    <%= yield %>
-  </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
 </html>
