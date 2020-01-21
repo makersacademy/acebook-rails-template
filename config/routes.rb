@@ -15,13 +15,13 @@ Rails.application.routes.draw do
   end
 
   get "/sign_in" => "sessions#new"
-  get "/wall" => "users#wall", as: "wall"
   delete "/sign_out" => "sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
+  get "/:id" => "posts#wall", as: "user_wall"
 
   post "/posts/:id/edit" => "posts#update"
   root 'sessions#new#title'
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end

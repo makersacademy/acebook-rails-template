@@ -12,7 +12,7 @@ class UsersController < Clearance::UsersController
     else
       render template: "users/new"
     end
-   
+
   end
 
   private
@@ -20,7 +20,7 @@ class UsersController < Clearance::UsersController
   def user_params
     params.require(:user).permit(:first_name, :surname, :email, :password)
   end
-  
+
   def password_length_checker
     params[:user][:password].length < 6 || params[:user][:password].length > 10
   end
