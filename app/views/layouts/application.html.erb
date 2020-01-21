@@ -9,11 +9,15 @@
   </head>
 
   <body>
+
+  <h1>Spacebook</h1>
+  
     <div class="app-links">
       <center>
         <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
       </center>
     </div>
+    
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>

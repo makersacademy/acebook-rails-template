@@ -7,11 +7,13 @@ end
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'devise'
+gem 'figaro'
 gem 'jquery-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use postgresql as the database for Active Record
+gem 'omniauth-github'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -41,14 +43,15 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'database_cleaner'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', '0.71.0'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'timecop'
-
 end
 
 group :development do
