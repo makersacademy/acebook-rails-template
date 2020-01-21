@@ -15,7 +15,7 @@ RSpec.feature "Edit post", type: :feature do
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
     expect(page).to have_content("Posted by #{user.email}")
     expect(page).to have_link('Edit')
-    expect(page).to have_current_path("/users/#{user.id}")
+    expect(page).to have_current_path("/#{user.id}")
 
     click_link 'Edit'
     fill_in "Message", with: "Goodbye, world!"
@@ -24,7 +24,7 @@ RSpec.feature "Edit post", type: :feature do
     expect(page).to have_content("Goodbye, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
     expect(page).to have_content("Posted by #{user.email}")
-    expect(page).to have_current_path("/users/#{user.id}")
+    expect(page).to have_current_path("/#{user.id}")
   end
 
   scenario "Cannot edit post if it does not belong to the user" do
@@ -42,7 +42,7 @@ RSpec.feature "Edit post", type: :feature do
     click_link "Sign out"
     sign_up("test2@example.com", "test1234", "test1234")
 
-    visit "/users/#{user.id}"
+    visit "/#{user.id}"
 
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")

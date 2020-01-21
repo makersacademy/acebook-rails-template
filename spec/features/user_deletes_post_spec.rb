@@ -21,7 +21,7 @@ RSpec.feature "Delete post", type: :feature do
     expect(page).not_to have_content("Hello, world!")
     expect(page).not_to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
     expect(page).not_to have_content("Posted by email@example.com")
-    expect(page).to have_current_path "/users/#{user.id}"
+    expect(page).to have_current_path "/#{user.id}"
   end
 
   scenario "Cannot delete a post if it does not belong to the user" do
@@ -39,7 +39,7 @@ RSpec.feature "Delete post", type: :feature do
     click_link "Sign out"
     sign_up("test2@example.com", "test1234", "test1234")
 
-    visit "#{user.id}"
+    visit "/#{user.id}"
 
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
