@@ -13,6 +13,6 @@ class FriendshipsController < ApplicationController
   private
 
   def post_params
-    params_require(:friendship).permit(:friend_id)
+    params.require(:friendship).permit(:friend_id)
   end
 end

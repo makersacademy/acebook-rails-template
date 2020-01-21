@@ -3,11 +3,13 @@
         <div class='user'>
             <p>
             <%= user.email %>
-            <%= link_to "Add friend" %>
+            <%= link_to '/friendships', :friend_id => user.id, :method => :post do %>
+                Add Friend
+            <% end %>
             <p>
         </div>        
     <% end %>
 </div>
 
 
-// , friendships_path(:friend_id => user), method=> :post
+// , friendships_path(:friend_id => user.id), method=> :post
