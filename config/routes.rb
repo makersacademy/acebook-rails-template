@@ -8,13 +8,12 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
 
-  post '/sessions/new' => 'sessions#create'
   get 'signup' => 'user#new'  
-  post 'signup' => 'user#create'  
+  post 'signup' => 'user#create'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  get 'logout' => 'sessions#destroy'
+  get '/wall/:name' => 'wall#show'
   get 'posts' => 'posts#index'
   patch 'posts' => 'posts#edit'
   delete 'posts' => 'posts#delete'
