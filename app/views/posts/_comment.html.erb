@@ -2,3 +2,6 @@
   <p id="comment-header">Comment by <%= comment.name %></p>
   <p class="comment"><%= comment.text %></p>
 </div>
+<% if current_user && current_user.id == comment.user_id %>
+<%= button_to 'Delete', [@post, comment] , remote: true, :method => :delete, data: { confirm: 'Are you sure?' }, :class => "button_comments" %>
+<% end %>

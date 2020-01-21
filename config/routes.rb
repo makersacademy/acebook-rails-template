@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get 'posts' => 'posts#index'
   patch 'posts' => 'posts#edit'
   delete 'posts' => 'posts#delete'
+  delete 'comment' => 'comments#delete'
 end

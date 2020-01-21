@@ -31,7 +31,7 @@
           <div class="card card-body">
             <div id="<%= post.id %>_partial">
               <%= render partial: 'posts/comment', collection: post.comments.reverse %>
-            </div>
+            </div>  
             <div id="<%= post.id %>_comment_form" class="comment-form">
               <%= render partial: 'comments/form', locals: {post: post, comment: post.comments.build} %>
             </div>

@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :require_login, only: [:index, :show]
-  before_action :fetch_post
+  before_action :fetch_post, only: [:index, :show, :create]
   
   def create
     @comment = @post.comments.build(comment_params)
@@ -14,6 +14,24 @@ class CommentsController < ApplicationController
     end
   end
 
+  def delete
+    @comment = Comment.find(params[:format])
+    if @comment.destroy
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    if @comment.destroy
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
+  
   private
 
   def fetch_post
