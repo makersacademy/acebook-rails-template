@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  include CommentsHelper
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /comments
@@ -19,17 +20,12 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
-    @post = Post.new
+    # @post = Post.new
     respond_to do |format|
       if !recent_comment?
-        format.html {
-          redirect_to posts_path,
-          notice: 'You can only edit the comment for 10 minutes after posting'
-        }
-        format.json { render :index, status: :created, location: @comment }
+        render_10_min_error(format)
       elsif !correct_user?
-        format.html { redirect_to posts_path, notice: 'You can only edit your own comments' }
-        format.json { render :index, status: :created, location: @comment }
+        render_only_edit_own_comment_error(format)
       else
         format.html { render :edit }
       end
@@ -46,7 +42,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to posts_path, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :new }
+        format.html { redirect_to posts_path, notice: 'Comment must not be blank.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

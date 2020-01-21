@@ -1,0 +1,10 @@
+.post {
+  text-align: center;
+  border: 1px solid black;
+}
+.comment {
+  background-color: rgb(220, 220, 220);
+}
+.comment-user, .post-user {
+  font-weight: bold;
+}
