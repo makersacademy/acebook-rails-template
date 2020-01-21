@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   get '/users' => "users#index", as: :user_root
   get '/error', to: 'errors#404'
+  # post '/friendships' => 'friendships#create', as: :friendships_path
+
 
   resources :users
   resources :posts
+  resources :friendships
 end

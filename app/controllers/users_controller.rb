@@ -9,4 +9,8 @@ class UsersController < ApplicationController
     redirect_to error_path
   end
 
+  def index
+    @users = User.all
+  end  
+
 end
