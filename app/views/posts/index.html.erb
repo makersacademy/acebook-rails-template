@@ -8,7 +8,7 @@
   <div class='post' id='<%=post.id%>'>
   <% @user = User.where(id: post.user_id)[0] %> 
   <p><%= "#{@user.first_name} #{@user.surname}" %></p>
-  <p><%= post.message.gsub(/\r\n/, "<br>").html_safe %></p>
+  <p><%= post.message.html_safe %></p>
   <p><%= post.created_at.strftime('%d %B %Y at %k:%M') %></p>
   <%= link_to 'Delete', post_path(post), method: :delete %>
   <%= link_to 'Edit', edit_post_path(post) %>
