@@ -1,0 +1,46 @@
+<%= render 'layouts/navbar' %>
+
+
+<div class="btn btn-info btn-lg">
+      New post!!
+    </div>
+<h3>Post</h3>
+<%= simple_format(@post.message) %>
+<% user = User.find_by(id: @post.user_id) %>
+<p> <%= user.first_name %> <%= user.last_name %>: <%= @post.time_stamp %></p>
+<br>
+<div>
+  <h4>Add your comment:</h4>
+    <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
+    <p>
+      <%= form.text_area :body %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+</div>
+<br>
+<div>
+  <h4>Comments</h4>
+  <div>
+    <% @comments.each do |comment| %>
+
+        <p> <%= comment.body %> </p>    
+        <% commenter = User.find_by(id: comment.user_id) %>
+        <p><%= link_to "#{commenter.first_name + ' ' + commenter.last_name}",
+                user_path(commenter) %>: <%= comment.comment_time_stamp %></p>   
+        <% if comment.editable? %>
+          <%= link_to 'Edit', edit_post_comment_path(@post) %>
+        <% end %>
+        <% if session[:user_id] == comment.user_id || session[:id] == @post.recipient_id %>
+          <%= link_to 'Delete', [comment.post, comment],
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+        <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'Back', posts_path %>

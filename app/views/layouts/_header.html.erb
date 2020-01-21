@@ -1,0 +1,12 @@
+<header class="navbar navbar-fixed-top">
+<div class="jumbotron">
+  <div class="container">
+        <% if logged_in? %>
+      <% user = User.find_by(id: session[:user_id]) %>
+      <%= link_to "Acebook", user_path(user), id: "logo_home" %>
+    <% else %>
+      <%= link_to "Acebook", root_path, id: "logo_home" %>
+    <% end %>
+    </div>
+  </div>
+</header>
