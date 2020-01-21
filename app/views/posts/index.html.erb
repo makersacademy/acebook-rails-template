@@ -29,7 +29,9 @@
         </button>
         <div class="collapse" id="<%= post.id %>_comments">
           <div class="card card-body">
-            <%= render partial: 'posts/comment', collection: post.comments.reverse %>
+            <div id="<%= post.id %>_partial">
+              <%= render partial: 'posts/comment', collection: post.comments.reverse %>
+            </div>
             <div id="<%= post.id %>_comment_form" class="comment-form">
               <%= render partial: 'comments/form', locals: {post: post, comment: post.comments.build} %>
             </div>

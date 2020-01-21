@@ -6,7 +6,9 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user_id = session[:user_id]
     if @comment.save
-      redirect_to posts_path
+      respond_to do |format|
+        format.js
+      end
     else
       render :new
     end
