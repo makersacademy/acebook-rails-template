@@ -7,5 +7,6 @@ class User < ApplicationRecord
   validates :password, :length => { :within => 6..10 }
   
   has_secure_password
-  
+
+  has_one :wall
 end
