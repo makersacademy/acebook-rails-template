@@ -9,4 +9,5 @@ class UsersController < ApplicationController
     redirect_to error_path
   end
 
+ 
 end
