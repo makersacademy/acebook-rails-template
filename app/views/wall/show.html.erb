@@ -1,0 +1,6 @@
+<center>
+  <p>Welcome to <%= @wall_owner.name %>'s page </p>
+  <%= button_to new_post_path, :class => "button", :method => :get do %>
+    New post
+  <% end %>
+</center>
