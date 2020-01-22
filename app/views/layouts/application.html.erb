@@ -5,19 +5,54 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'application', "https://fonts.googleapis.com/css?family=Righteous&display=swap" %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <h1>Spacebook</h1>
 
-    <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
+    <nav class="navbar navbar-dark bg-dark">
+
+      <a class="navbar-brand" href="/">SPACEBOOK</a>
+
+      <form class="form-inline">
+        <% if current_user %>
+          <button class="btn btn-dark" type="button">
+            <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>
+          </button>
+
+        <div style="padding-left: 10px;">
+          <button class="btn btn-dark" type="button">
+            <%= link_to('My Profile', user_wall_path(current_user.id)) %>
+          </button>
+        </div>
+
+        <div style="padding-left: 10px;">
+          <button class="btn btn-dark" type="button">
+            <%= link_to('Communal Board', root_path) %>
+          </button>
+        </div>
+
+        <% else %>
+
+          <%- if controller_name != 'sessions' %>
+          <button class="btn btn-dark" type="button">
+            <%= link_to('Log in', new_session_path(resource_name)) %>
+          </button>
+          <% end %>
+
+        <% end %>
+      </form>
+
+    </nav>
+
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+
     <%= yield %>
   </body>
 </html>

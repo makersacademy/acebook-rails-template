@@ -29,7 +29,7 @@ RSpec.feature "User Sign Up", type: :feature do
 
   scenario "cannot sign up 2 accounts with the same email address" do
     sign_up("email@example.com", "pass123456", "pass123456")
-    click_on 'Sign out'
+    click_link 'Sign out'
     expect(page).to have_content("Sign up")
 
     sign_up("email@example.com", "pass123456", "pass123456")

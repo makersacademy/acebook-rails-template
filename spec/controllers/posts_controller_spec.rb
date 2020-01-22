@@ -19,7 +19,7 @@ RSpec.describe PostsController, type: :controller do
     it "responds with 200" do
 
       post :create, params: { post: { message: "Hello, world!" } }
-      expect(response).to redirect_to(users_path + "/")
+      expect(response).to redirect_to(root_path)
     end
 
     it "creates a post" do

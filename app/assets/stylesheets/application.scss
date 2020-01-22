@@ -58,14 +58,23 @@
     justify-content: center;
   }
 
-  a {
-    margin: auto;
-    color: white;
-    background-color: black;
-    border: 2px solid black;
+  .navbar {
+    background-image: url("http://www.talencia.cat/mypics/max/1/16113_stars-backgrounds.png");
   }
+
+  .navbar-brand {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 2em;
+    font-family: "Righteous";
+  }
+
+  a {
+    color: white;
+  }
+
   a:hover {
     color: orange;
+    text-decoration: none;
   }
 
   .new-post-btn-container {
@@ -74,12 +83,25 @@
     justify-content: center;
   }
 
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .btn {
     // margin-left: 610px;
-    color: orange;
+    color: white;
     font-family: Impact, sans-serif;
     font-size: 30px;
+    background-color: inherit;
+    border: none;
   }
+
+  .btn:hover {
+    color: orange;
+  }
+
   .field {
     padding-bottom: 10px;
     text-align: center;
@@ -113,4 +135,12 @@ textarea:hover {
   color: black;
   opacity: 0.9;
 
+}
+
+.app-links {
+  align-text: center;
+  font-size: 25px;
+  background-color: black;
+  display: inline;
+  border: 3px solid black;
 }
