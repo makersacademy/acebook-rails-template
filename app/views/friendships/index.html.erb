@@ -5,7 +5,9 @@
             <p>
             <%= user.email %>
             <% if @user.id == current_user.id %>
-                <%= link_to "Remove"%>
+                <%= link_to "Remove", friendships_path(friendship), 
+                method: :delete
+                %>
             <% end %> 
             <p>
         </div>        

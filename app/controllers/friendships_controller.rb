@@ -16,6 +16,12 @@ class FriendshipsController < ApplicationController
     @non_friends = User.all - @friends - [@user]
   end 
 
+  def destroy
+    @friendship = Friendship.find(user_id: params[:user_id], friend_id: params[:friend_id])
+    @friendship.destroy
+    redirect_to friendships_path
+  end
+
   private
 
   def post_params
