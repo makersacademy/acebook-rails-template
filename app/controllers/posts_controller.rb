@@ -30,7 +30,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order('created_at DESC')
+    session.delete(:recipient_id)
+    @posts = Post.where(recipient_id: [nil, ""]).order('created_at DESC')
   end
 
   private
