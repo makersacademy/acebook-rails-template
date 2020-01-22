@@ -5,7 +5,7 @@ RSpec.feature "User walls", type: :feature do
   let(:user) { create(:user) }
 
   scenario "User can see their own wall after sign up" do
-    sign_up("email@example.com", "pass12", "pass12")
+    sign_up("Example1", "email@example.com", "pass12", "pass12")
     expect(page).to have_content "Account: email@example.com"
   end
 
@@ -17,7 +17,7 @@ RSpec.feature "User walls", type: :feature do
   end
 
   scenario "User can see another person's wall" do
-    sign_up("email@example.com", "pass12", "pass12")
+    sign_up("Example1", "email@example.com", "pass12", "pass12")
     visit "/#{user.id}"
 
     expect(page).to have_content "Account: #{user.email}"
@@ -38,7 +38,7 @@ RSpec.feature "User walls", type: :feature do
   end
 
   scenario "Can submit posts on their own user page and view them" do
-    sign_up("email@example.com", "pass12", "pass12")
+    sign_up("Example1", "email@example.com", "pass12", "pass12")
     click_button "New post"
     fill_in "Message", with: "Hello, world!"
     post_time = Time.now
@@ -50,7 +50,7 @@ RSpec.feature "User walls", type: :feature do
   end
 
   scenario "Can submit posts on another user's page and view them" do
-    sign_up("email@example.com", "pass12", "pass12")
+    sign_up("Example1", "email@example.com", "pass12", "pass12")
     visit "/#{user.id}"
 
     click_button "New post"

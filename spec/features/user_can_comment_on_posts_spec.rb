@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Comments", type: :feature do
 
   before do
-    sign_up("email@example.com", "pass12", "pass12")
+    sign_up("Example1", "email@example.com", "pass12", "pass12")
     post("Hello, world!")
   end
 

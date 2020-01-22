@@ -40,7 +40,7 @@ RSpec.feature "Edit post", type: :feature do
     expect(page).to have_link('Edit')
 
     click_link "Sign out"
-    sign_up("test2@example.com", "test1234", "test1234")
+    sign_up("Example1", "test2@example.com", "test1234", "test1234")
 
     visit "/#{user.id}"
 

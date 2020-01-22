@@ -3,7 +3,7 @@ RSpec.feature "Friend List", type: :feature do
   let(:user) { create(:user) }
 
   before do
-    sign_up("test@example.com", "pass123", "pass123")
+    sign_up("Example1", "test@example.com", "pass123", "pass123")
     click_link "Sign out"
   end
 

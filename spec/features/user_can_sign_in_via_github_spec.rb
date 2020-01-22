@@ -14,7 +14,7 @@ RSpec.feature "GitHub sign in", type: :feature do
 
     expect(page).to have_content("Account: test@example.com")
     expect(page).to have_content("Sign out")
-    
+
     OmniAuth.config.mock_auth[:github] = nil
   end
 

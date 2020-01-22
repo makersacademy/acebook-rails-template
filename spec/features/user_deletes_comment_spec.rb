@@ -32,7 +32,7 @@ RSpec.feature "Delete comment", type: :feature do
   scenario "Cannot delete a comment if it does not belong to the user" do
 
     click_link "Sign out"
-    sign_up("test2@example.com", "test1234", "test1234")
+    sign_up("Example1", "test2@example.com", "test1234", "test1234")
 
     visit "/#{user.id}"
 
