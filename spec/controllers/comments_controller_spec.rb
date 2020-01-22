@@ -18,13 +18,13 @@ RSpec.describe CommentsController, type: :controller do
   describe "POST /comments" do
     it "responds with 200" do
 
-      post :create, params: { post: { message: "Excellent post!" } }
+      post :create, params: { post: { message: "Excellent post!", post_id: 2 } }
       expect(response).to redirect_to(root_path)
     end
 
     it "creates a post" do
 
-      post :create, params: { post: { message: "Excellent post!" } }
+      post :create, params: { post: { message: "Excellent post!", post_id: 3 } }
       expect(Comment.find_by(message: "Excellent post!")).to be
     end
   end

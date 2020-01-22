@@ -32,6 +32,7 @@ class PostsController < ApplicationController
   def index
     session.delete(:recipient_id)
     @posts = Post.where(recipient_id: [nil, ""]).order('created_at DESC')
+    @comments = Comment.all.order('created_at DESC')
   end
 
   private
