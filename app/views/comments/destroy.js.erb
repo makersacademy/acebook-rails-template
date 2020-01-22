@@ -1,1 +1,6 @@
-$("#<%= @post.id %>_partial").html("<%= escape_javascript(render partial: 'posts/comment', collection: @post.comments.reverse ) %>");
+$("#<%= @post.id %>_partial").html("<%= escape_javascript(render partial: 'posts/comment',  collection: @post.comments.reverse ) %>");
+$(function myFunction() {
+    var popup = document.getElementById("pop");
+    popup.classList.toggle("show");
+})
+  

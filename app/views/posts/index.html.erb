@@ -10,6 +10,8 @@
         <span class="border border-dark">
         <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%d/%m/%Y") %></div>
           <div class="card-body">
+            <div class="popuptext">
+            </div>
             <p class="card-text"><%= post.message.gsub(/\n/, '<br>').html_safe %></p>
             <div class="card-buttons">
               <% if @current_user.id == post.user_id %>
