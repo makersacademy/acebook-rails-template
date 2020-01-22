@@ -10,7 +10,6 @@ class FriendshipsController < ApplicationController
     redirect_to friendships_path
   end
 
-
   def index
     @user = User.find(session[:recipient_id])
     @friends = @user.friends + @user.inverse_friends
