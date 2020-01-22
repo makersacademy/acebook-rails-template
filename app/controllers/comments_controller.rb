@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.create(post_params)
+    flash[:notice] = "Comment successful. Far out!"
     redirect_to "/#{session[:recipient_id]}"
   end
 

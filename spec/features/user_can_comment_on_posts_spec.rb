@@ -17,6 +17,7 @@ RSpec.feature "Comments", type: :feature do
     comment_time = Time.now
     click_button "Submit"
 
+    expect(page).to have_content("Comment successful. Far out!")
     expect(page).to have_content("Excellent post!")
     expect(page).to have_content("Date: #{comment_time.strftime('%d %B %Y at %l:%M %p')}")
     expect(page).to have_content("Posted by email@example.com")
