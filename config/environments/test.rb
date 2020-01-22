@@ -1,13 +1,14 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # in config/environments/test.rb
-  
+
   OmniAuth.config.test_mode = true
 
   OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
       'provider' => 'github',
       'uid' => '123545',
       'info' => {
+        'username' => 'Test24',
         'email' => 'test@example.com',
         'password' => 'test1234'
       },
