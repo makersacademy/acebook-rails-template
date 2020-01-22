@@ -16,19 +16,40 @@ RSpec.feature "User walls", type: :feature do
     expect(page).to have_content "Account: #{user.username}"
   end
 
-  scenario "User can see another person's wall" do
-    sign_up("Example1", "email@example.com", "pass12", "pass12")
-    visit "/#{user.id}"
+  context "when searching with /:id url" do
 
-    expect(page).to have_content "Account: #{user.username}"
+    scenario "User can see another person's wall" do
+      sign_up("Example1", "email@example.com", "pass12", "pass12")
+      visit "/#{user.id}"
+
+      expect(page).to have_content "Account: #{user.username}"
+    end
+
+    scenario "User is redirected to 404 error page if trying to visit user page that does not exist" do
+      sign_in("#{user.email}", "hey12345")
+      visit "/#{user.id + 1}"
+
+      expect(page).to have_current_path("/error")
+      expect(page).to have_content "The user you were looking for doesn't exist (404)"
+    end
   end
 
-  scenario "User is redirected to 404 error page if trying to visit user page that does not exist" do
-    sign_in("#{user.email}", "hey12345")
-    visit "/#{user.id + 1}"
+  context "when searching with /:username url" do
 
-    expect(page).to have_current_path("/error")
-    expect(page).to have_content "The user you were looking for doesn't exist (404)"
+    scenario "User can see another person's wall" do
+      sign_up("Example1", "email@example.com", "pass12", "pass12")
+      visit "/#{user.username}"
+
+      expect(page).to have_content "Account: #{user.username}"
+    end
+
+    scenario "User is redirected to 404 error page if trying to visit user page that does not exist" do
+      sign_in("#{user.email}", "hey12345")
+      visit "/bob"
+
+      expect(page).to have_current_path("/error")
+      expect(page).to have_content "The user you were looking for doesn't exist (404)"
+    end
   end
 
   scenario "User is redirected to sign up page if trying to view a user page without logging in" do
