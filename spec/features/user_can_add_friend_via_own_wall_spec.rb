@@ -12,7 +12,7 @@ RSpec.feature "Friend List", type: :feature do
     expect(page).to have_link("Friend List")
     click_link "Friend List"
 
-    expect(page).to have_current_path "/users"
+    expect(page).to have_current_path "/friendships"
     expect(page).to have_css('div.non-friend')
     expect(page).to have_no_css("div.friend")
     expect(page).to have_content("test@example.com")

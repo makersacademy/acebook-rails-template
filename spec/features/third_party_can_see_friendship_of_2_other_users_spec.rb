@@ -5,7 +5,11 @@ RSpec.feature "Friend List", type: :feature do
   let(:userC) { create(:user, :email => "testc@example.com", :password => "pass12C", :id => 3) }
 
   scenario "Third party can see others' friendship without editing options" do
+    userA
+    userB
+    userC
     sign_in("testb@example.com", "pass12B")
+    expect(page).to have_content("testb@example.com")
     click_link "Sign out"
 
     sign_in("testa@example.com", "pass12A")

@@ -9,9 +9,5 @@ class UsersController < ApplicationController
     redirect_to error_path
   end
 
-  def index
-    @user = User.find(session[:recipient_id])
-    @friends = @user.friends + @user.inverse_friends
-    @non_friends = User.all - @friends - [@user]
-  end  
+ 
 end
