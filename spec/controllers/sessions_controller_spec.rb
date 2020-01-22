@@ -16,7 +16,7 @@ RSpec.describe SessionsController, type: :controller do
         email: 'ben@example.com', 
         password: "123456",
         password_confirmation: "123456")
-        post :create, params: { user: { email: "ben@example.com", password: "123456"} }
+        post :create, params: { user: { email: "ben@example.com", password: "123456" } }
       end
 
       it "sets the session to the user's id" do
