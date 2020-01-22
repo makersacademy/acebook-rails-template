@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/error', to: 'errors#404'
   get '/:id', to: "users#show", as: :user_wall
 
-  resources :users, :posts
+  resources :users, :posts, :comments
 end
