@@ -22,6 +22,7 @@ RSpec.feature "Delete comment", type: :feature do
 
     within(".comment") { click_link('Delete') }
 
+    expect(page).to have_content("Comment vapourised.")
     expect(page).not_to have_content("You think the depths will harbour you JON?")
     expect(page).not_to have_content("Date: #{@comment_time.strftime('%d %B %Y at %l:%M %p')}")
     expect(page).not_to have_content("Posted by email@example.com")
