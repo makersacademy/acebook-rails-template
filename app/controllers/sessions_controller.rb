@@ -2,10 +2,10 @@ class SessionsController < ApplicationController
   def new
   end
 
-  def show
-    session[:user_id] = nil
-    redirect_to '/login'
-  end
+  # def show
+  #   session[:user_id] = nil
+  #   redirect_to '/login'
+  # end
 
   def create
     @user = User.find_by({ email: params[:user][:email] })
@@ -20,6 +20,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
-    redirect_to '/login', notice: 'Logged out!' if session[:user_id].nil?
+    redirect_to '/login', notice: 'Logged out'
   end
 end
