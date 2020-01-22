@@ -1,4 +1,4 @@
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Friend List", type: :feature do
 
   let(:user) { create(:user) }
 

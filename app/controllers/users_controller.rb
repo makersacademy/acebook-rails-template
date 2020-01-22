@@ -10,8 +10,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    user = User.find(session[:recipient_id])
-    @friends = user.friends + user.inverse_friends
-    @non_friends = User.all - @friends - [user]
+    @user = User.find(session[:recipient_id])
+    @friends = @user.friends + @user.inverse_friends
+    @non_friends = User.all - @friends - [@user]
   end  
 end

@@ -4,20 +4,24 @@
         <div class='friend'>
             <p>
             <%= user.email %>
-            <%= link_to "Remove"%>
+            <% if @user.id == current_user.id %>
+                <%= link_to "Remove"%>
+            <% end %> 
             <p>
         </div>        
     <% end %>
 </div>
 
-<div class='non-friends'>
-    <h3>People you haven't met...</h3>
-    <% @non_friends.each do |user| %>
-        <div class='non-friend'>
-            <p>
-            <%= user.email %>
-            <%= link_to "Add friend", friendships_path(:friend_id => user.id), :method=> :post %>
-            <p>
-        </div>        
-    <% end %>
-</div>
+<% if @user.id == current_user.id %>
+    <div class='non-friends'>
+        <h3>People you haven't met...</h3>
+        <% @non_friends.each do |user| %>
+            <div class='non-friend'>
+                <p>
+                <%= user.email %>
+                <%= link_to "Add friend", friendships_path(:friend_id => user.id), :method=> :post, :id=> "add_friend_user#{user.id}"   %>
+                <p>
+            </div>        
+        <% end %>
+    </div>
+<% end %>
