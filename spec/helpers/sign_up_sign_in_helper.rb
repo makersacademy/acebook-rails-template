@@ -11,8 +11,8 @@ end
 def sign_in(email, pass)
 
   visit new_user_registration_path
-  click_on "Log in"
+  click_link "Log in"
   fill_in "user_email", with: email
   fill_in "user_password", with: pass
-  click_button "Log in"
+  click_on "Log in"
 end
