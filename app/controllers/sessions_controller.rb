@@ -4,8 +4,6 @@ class SessionsController < Clearance::SessionsController
     @user = authenticate(params)
     sign_in(@user) do |status|
       if status.success?
-        # redirect_to action: "show", id: @user.id
-        p params
         redirect_to user_wall_path(@user)
       else
         flash.now.alert = status.failure_message
