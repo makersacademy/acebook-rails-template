@@ -14,8 +14,7 @@ RSpec.feature "User", type: :feature do
     fill_in "comment_text", with: "Some comment"
     click_button "Submit"
     expect(page.html).to include("Some comment")
-
-    visit "/signup"
+    
     visit "/posts"
     click_button "Comments"
     
