@@ -39,6 +39,10 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
 
+  def wall
+    @user = User.find(params[:id])
+  end
+
   def update
     @post = Post.find(params[:id])
     @post.update(post_params) ? (redirect_to posts_url) : (render 'edit')

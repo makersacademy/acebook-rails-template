@@ -5,7 +5,8 @@ class SessionsController < Clearance::SessionsController
     sign_in(@user) do |status|
       if status.success?
         # redirect_to action: "show", id: @user.id
-        redirect_back_or url_after_create
+        p params
+        redirect_to user_wall_path(@user)
       else
         flash.now.alert = status.failure_message
         render template: "sessions/new", status: :unauthorized
@@ -13,7 +14,7 @@ class SessionsController < Clearance::SessionsController
     end
   end
 
-  def new 
+  def new
     render template: "sessions/new"
   end
 
