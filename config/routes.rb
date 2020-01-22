@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post 'signup' => 'user#create'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
+  get 'logout' => 'sessions#destroy'
   get '/:user_id' => 'wall#show'
   get 'posts' => 'posts#index'
   patch 'posts' => 'posts#edit'
