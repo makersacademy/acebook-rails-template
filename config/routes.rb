@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   get 'posts' => 'posts#index'
   patch 'posts' => 'posts#edit'
   delete 'posts' => 'posts#delete'
+
+  %w( 404 ).each do |code|
+    get code, :to => "errors#show", :code => code
+  end
 end
