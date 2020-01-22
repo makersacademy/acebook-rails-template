@@ -12,7 +12,8 @@ RSpec.feature "block edit", type: :feature do
     Timecop.freeze(Time.now + 610)
     click_link "Edit"
 
-    expect(page).to have_content "Timeline"
+    expect(page).to have_content "Timed out - you cannot edit this post"
+    expect(page).to have_content "Hello again, world!"
 
     Timecop.return
   end
