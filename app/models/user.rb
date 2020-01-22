@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[github]
 
   has_many :posts
+
+  has_many :comments
   has_many :friendships
   has_many :friends, :through => :friendships
   

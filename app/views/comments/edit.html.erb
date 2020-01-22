@@ -1,0 +1,10 @@
+<div class="post-box">
+  <%= form_for @comment do |form| %>
+  <%= form.label :message %><br>
+  <%= form.text_area(:message, size: "50x10") %>
+  <br>
+  <%= form.submit%>
+<% end %>
+
+<%= link_to "Back", posts_url%>
+</div>
