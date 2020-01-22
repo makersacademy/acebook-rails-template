@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :require_login, only: [:index, :show]
-  before_action :fetch_post, only: [:index, :show, :create]
+  before_action :fetch_post
   
   def create
     @comment = @post.comments.build(comment_params)
