@@ -12,7 +12,7 @@
           <div class="card-body">
             <p class="card-text"><%= post.message.gsub(/\n/, '<br>').html_safe %></p>
             <div class="card-buttons">
-              <% if @current_user.id == post.user_id %>
+              <% if current_user.id == post.user_id %>
                 <% if (Time.now - post.created_at) < 600 %>
                   <%= button_to 'Edit', edit_post_path(post), :class => "button", :method => :get %>
                 <% end %>
