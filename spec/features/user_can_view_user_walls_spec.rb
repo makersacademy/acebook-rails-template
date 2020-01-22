@@ -34,23 +34,23 @@ RSpec.feature "User walls", type: :feature do
     end
   end
 
-  context "when searching with /:username url" do
-
-    scenario "User can see another person's wall" do
-      sign_up("Example1", "email@example.com", "pass12", "pass12")
-      visit "/#{user.username}"
-
-      expect(page).to have_content "Account: #{user.username}"
-    end
-
-    scenario "User is redirected to 404 error page if trying to visit user page that does not exist" do
-      sign_in("#{user.email}", "hey12345")
-      visit "/bob"
-
-      expect(page).to have_current_path("/error")
-      expect(page).to have_content "The user you were looking for doesn't exist (404)"
-    end
-  end
+  # context "when searching with /:username url" do
+  # 
+  #   scenario "User can see another person's wall" do
+  #     sign_up("Example1", "email@example.com", "pass12", "pass12")
+  #     visit "/#{user.username}"
+  #
+  #     expect(page).to have_content "Account: #{user.username}"
+  #   end
+  #
+  #   scenario "User is redirected to 404 error page if trying to visit user page that does not exist" do
+  #     sign_in("#{user.email}", "hey12345")
+  #     visit "/bob"
+  #
+  #     expect(page).to have_current_path("/error")
+  #     expect(page).to have_content "The user you were looking for doesn't exist (404)"
+  #   end
+  # end
 
   scenario "User is redirected to sign up page if trying to view a user page without logging in" do
     visit "/#{user.id}"
