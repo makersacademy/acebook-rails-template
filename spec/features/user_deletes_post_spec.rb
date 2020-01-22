@@ -13,14 +13,14 @@ RSpec.feature "Delete post", type: :feature do
 
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-    expect(page).to have_content("Posted by #{user.email}")
+    expect(page).to have_content("Posted by #{user.username}")
     expect(page).to have_link('Delete')
 
     click_link('Delete')
 
     expect(page).not_to have_content("Hello, world!")
     expect(page).not_to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-    expect(page).not_to have_content("Posted by email@example.com")
+    expect(page).not_to have_content("Posted by Example1")
     expect(page).to have_current_path "/#{user.id}"
   end
 
@@ -33,7 +33,7 @@ RSpec.feature "Delete post", type: :feature do
 
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-    expect(page).to have_content("Posted by #{user.email}")
+    expect(page).to have_content("Posted by #{user.username}")
     expect(page).to have_link('Delete')
 
     click_link "Sign out"
@@ -43,7 +43,7 @@ RSpec.feature "Delete post", type: :feature do
 
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-    expect(page).to have_content("Posted by #{user.email}")
+    expect(page).to have_content("Posted by #{user.username}")
     expect(page).not_to have_link "Delete"
   end
 end

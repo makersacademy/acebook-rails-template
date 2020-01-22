@@ -6,21 +6,21 @@ RSpec.feature "User walls", type: :feature do
 
   scenario "User can see their own wall after sign up" do
     sign_up("Example1", "email@example.com", "pass12", "pass12")
-    expect(page).to have_content "Account: email@example.com"
+    expect(page).to have_content "Account: Example1"
   end
 
   scenario "User can see their own wall after sign in" do
     sign_in("#{user.email}", "hey12345")
 
     expect(page).to have_current_path("/#{user.id}")
-    expect(page).to have_content "Account: #{user.email}"
+    expect(page).to have_content "Account: #{user.username}"
   end
 
   scenario "User can see another person's wall" do
     sign_up("Example1", "email@example.com", "pass12", "pass12")
     visit "/#{user.id}"
 
-    expect(page).to have_content "Account: #{user.email}"
+    expect(page).to have_content "Account: #{user.username}"
   end
 
   scenario "User is redirected to 404 error page if trying to visit user page that does not exist" do
@@ -46,7 +46,7 @@ RSpec.feature "User walls", type: :feature do
 
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-    expect(page).to have_content("Posted by email@example.com")
+    expect(page).to have_content("Posted by Example1")
   end
 
   scenario "Can submit posts on another user's page and view them" do
@@ -61,7 +61,7 @@ RSpec.feature "User walls", type: :feature do
     expect(page).to have_current_path "/#{user.id}"
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-    expect(page).to have_content("Posted by email@example.com")
+    expect(page).to have_content("Posted by Example1")
   end
 
 end

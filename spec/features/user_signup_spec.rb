@@ -59,6 +59,12 @@ RSpec.feature "User Sign Up", type: :feature do
     expect(page).to have_content("Password confirmation doesn't match Password")
   end
 
+  scenario "displays an error message if the username is invalid" do
+    sign_up("Example1@", "email", "pass123", "pass123")
+    expect(page).to have_content("Username is invalid  ")
+    expect(page).to have_current_path('/users')
+  end
+
   scenario "displays an error message if the email is invalid (email)" do
     sign_up("Example1", "email", "pass123", "pass123")
     expect(page).to have_content("Email is invalid  ")

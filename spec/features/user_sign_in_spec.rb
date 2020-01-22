@@ -15,7 +15,7 @@ RSpec.feature "User Sign In", type: :feature do
       fill_in "user_password", with: "pass12"
       click_button("Log in")
       expect(page).to have_content("Signed in successfully.")
-      expect(page).to have_content("Account: email@example.com")
+      expect(page).to have_content("Account: Example1")
     end
 
     scenario "can sign in when email is in all caps" do
@@ -23,7 +23,7 @@ RSpec.feature "User Sign In", type: :feature do
       fill_in "user_password", with: "pass12"
       click_button("Log in")
       expect(page).to have_content("Signed in successfully.")
-      expect(page).to have_content("Account: email@example.com")
+      expect(page).to have_content("Account: Example1")
     end
 
     scenario "displays an error message when the email address is incorrect" do
@@ -51,7 +51,7 @@ RSpec.feature "User Sign In", type: :feature do
       fill_in "user_password", with: "pass12"
       click_button("Log in")
       expect(page).to have_content("Signed in successfully.")
-      expect(page).to have_content("Account: email@example.com")
+      expect(page).to have_content("Account: Example1")
     end
 
     scenario "can sign in when username is in all caps" do
@@ -59,7 +59,7 @@ RSpec.feature "User Sign In", type: :feature do
       fill_in "user_password", with: "pass12"
       click_button("Log in")
       expect(page).to have_content("Signed in successfully.")
-      expect(page).to have_content("Account: email@example.com")
+      expect(page).to have_content("Account: Example1")
     end
 
     scenario "displays an error message when the username is incorrect" do

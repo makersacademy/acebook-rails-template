@@ -13,7 +13,7 @@ RSpec.feature "Edit post", type: :feature do
 
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-    expect(page).to have_content("Posted by #{user.email}")
+    expect(page).to have_content("Posted by #{user.username}")
     expect(page).to have_link('Edit')
     expect(page).to have_current_path("/#{user.id}")
 
@@ -23,7 +23,7 @@ RSpec.feature "Edit post", type: :feature do
 
     expect(page).to have_content("Goodbye, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-    expect(page).to have_content("Posted by #{user.email}")
+    expect(page).to have_content("Posted by #{user.username}")
     expect(page).to have_current_path("/#{user.id}")
   end
 
@@ -36,7 +36,7 @@ RSpec.feature "Edit post", type: :feature do
 
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-    expect(page).to have_content("Posted by #{user.email}")
+    expect(page).to have_content("Posted by #{user.username}")
     expect(page).to have_link('Edit')
 
     click_link "Sign out"
@@ -46,7 +46,7 @@ RSpec.feature "Edit post", type: :feature do
 
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-    expect(page).to have_content("Posted by #{user.email}")
+    expect(page).to have_content("Posted by #{user.username}")
     expect(page).not_to have_link "Edit"
   end
 end
