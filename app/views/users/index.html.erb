@@ -1,6 +1,19 @@
-<div class='users'>
-    <% @users.each do |user| %>
-        <div class='user'>
+<div class='friends'>
+    <h3>Friends...</h3>
+    <% @friends.each do |user| %>
+        <div class='friend'>
+            <p>
+            <%= user.email %>
+            <%= link_to "Remove"%>
+            <p>
+        </div>        
+    <% end %>
+</div>
+
+<div class='non-friends'>
+    <h3>People you haven't met...</h3>
+    <% @non_friends.each do |user| %>
+        <div class='non-friend'>
             <p>
             <%= user.email %>
             <%= link_to "Add friend", friendships_path(:friend_id => user.id), :method=> :post %>
