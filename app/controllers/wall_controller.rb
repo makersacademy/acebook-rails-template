@@ -31,12 +31,12 @@ class WallController < ApplicationController
   #   session[:return_to] ||= request.referer
   # end
 
-  private 
+  # private 
 
-  def post_params
-    # params.require(:post).permit(:message)
-    { message: params[:post][:message], 
-    user_id: session[:user_id], 
-    wall_id: params[:post][:wall_id] }
-  end
+  # def post_params
+  #   # params.require(:post).permit(:message)
+  #   { message: params[:post][:message], 
+  #   user_id: session[:user_id], 
+  #   wall_id: params[:post][:wall_id] }
+  # end
 end
