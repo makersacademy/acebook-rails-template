@@ -1,6 +1,6 @@
 
 <div class="profile">
-  <img id='profile-pic' src='https://i.pinimg.com/originals/55/fd/2b/55fd2b7c992845d96a8069022152ccb9.jpg'>
+  <%= image_tag("alium.jpg", :id => "profile-pic")%>
   <%= link_to "Friend List", friendships_path %>
 </div>
 <div class="profile"> <%= @user.username %> </div>
