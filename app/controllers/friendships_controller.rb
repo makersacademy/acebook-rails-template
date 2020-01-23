@@ -12,7 +12,6 @@ class FriendshipsController < ApplicationController
 
   def index
     @user = User.find(session[:recipient_id])
-    p "friendships index"
     @friendships = @user.friendships
     @inverse_friendships = @user.inverse_friendships
 
