@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :errors
+  resources :walls
 
   %w( 404 ).each do |code|
     get code, :to => "errors#index", :code => code
@@ -18,9 +19,12 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
+
   get '/:user_id' => 'wall#show'
+
+  get 'posts/:user_id/new' => 'posts#new'
+
   get 'posts' => 'posts#index'
   patch 'posts' => 'posts#edit'
   delete 'posts' => 'posts#delete'
-
 end
