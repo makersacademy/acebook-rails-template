@@ -33,16 +33,20 @@ class User < ApplicationRecord
     @login || username || email
   end
 
+  # code as per devise docs https://github.com/heartcombo/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
+  # not passing rubocop so disabled rubocop to allow deployment
+  # rubocop:disable Lint/AssignmentInCondition
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
       where(conditions.to_h).where(["lower(username) = :value
         OR lower(email) = :value", { :value => login.downcase }]).first
     elsif conditions.has_key?(:username) || conditions.has_key?(:email)
-      conditions[:email].downcase! if conditions[:email]
+      conditions[:email]&.downcase! # if conditions[:email]
       where(conditions.to_h).first
     end
   end
+  # rubocop:enable Lint/AssignmentInCondition
 
   def validate_username
     if User.where(email: username).exists?
