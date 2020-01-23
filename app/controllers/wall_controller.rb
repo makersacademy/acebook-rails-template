@@ -6,6 +6,7 @@ class WallController < ApplicationController
   end
 
   def find_user
-    @wall_owner = User.find(params[:user_id])
+    @wall_owner = User.find_by(id: params[:user_id])
+    redirect_to '/404' if @wall_owner.blank?
   end
 end
