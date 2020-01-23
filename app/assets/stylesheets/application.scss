@@ -126,11 +126,19 @@
      opacity: 0.75;
   }
 
-#add-friend {
-  text-align: center;
+#profile {
   font-size: 25px;
   font-family: "Righteous";
   background-color: black;
+  display: flex;
+  opacity: 0.9;
+}
+
+#profile-pic {
+  width: 10%;
+  height: 10%;
+  padding: 10px;
+  opacity: 1;
 }
 
 .post-box {
