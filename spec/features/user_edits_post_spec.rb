@@ -16,7 +16,7 @@ RSpec.feature "Edit post", type: :feature do
 
     expect(page).to have_content("Hello, world!")
 
-    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
+    expect(page).to have_content("Date posted: #{@post_time.strftime('%d %B %Y at %l:%M %p')}")
     expect(page).to have_content("Posted by #{user.username}")
     expect(page).to have_link('Edit')
     expect(page).to have_current_path("/#{user.id}")
@@ -26,7 +26,7 @@ RSpec.feature "Edit post", type: :feature do
     click_button "Update Post"
 
     expect(page).to have_content("Goodbye, world!")
-    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
+    expect(page).to have_content("Date posted: #{@post_time.strftime('%d %B %Y at %l:%M %p')}")
     expect(page).to have_content("Posted by #{user.username}")
     expect(page).to have_current_path("/#{user.id}")
   end
@@ -34,7 +34,7 @@ RSpec.feature "Edit post", type: :feature do
   scenario "Cannot edit post if it does not belong to the user" do
 
     expect(page).to have_content("Hello, world!")
-    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
+    expect(page).to have_content("Date posted: #{@post_time.strftime('%d %B %Y at %l:%M %p')}")
     expect(page).to have_content("Posted by #{user.username}")
     expect(page).to have_link('Edit')
 
@@ -44,7 +44,7 @@ RSpec.feature "Edit post", type: :feature do
     visit "/#{user.id}"
 
     expect(page).to have_content("Hello, world!")
-    expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
+    expect(page).to have_content("Date posted: #{@post_time.strftime('%d %B %Y at %l:%M %p')}")
     expect(page).to have_content("Posted by #{user.username}")
     expect(page).not_to have_link "Edit"
   end
