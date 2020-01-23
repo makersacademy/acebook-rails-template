@@ -19,7 +19,6 @@
 
 #     find('a', id: "add_friend_user2").click
 
-
 #     expect(page).to have_content("testb@example.com")
 
 #     expect(page).to have_selector(:css, 'a[href="actual link"]')
