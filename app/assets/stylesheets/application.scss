@@ -22,12 +22,26 @@
    font-family: "Lucida Console", Monaco, monospace;
    width: 40%;
    font-weight: bold;
- }
-.post:hover {
+}
+
+.post:hover, .comment:hover {
   opacity: 0.8;
   background-color: orange;
   color: black;
 }
+
+.comment {
+  padding: 2px;
+  margin: auto;
+  margin-bottom: 5px;
+  background-color: #404040;
+  color: orange;
+  opacity: 0.7;
+  font-family: "Lucida Console", Monaco, monospace;
+  width: 35%;
+  font-weight: bold;
+}
+
  h1 {
    letter-spacing: 7px;
    text-align: center;
@@ -112,6 +126,13 @@
      opacity: 0.75;
   }
 
+#add-friend {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Righteous";
+  background-color: black;
+}
+
 .post-box {
   font-family: "Lucida Console", Monaco, monospace;
   margin: auto;
@@ -124,7 +145,7 @@
 }
 
 textarea{
-  background-color: black;
+  background-color: #404040;
   color: orange;
   width: 90%;
   opacity: 0.6;
@@ -143,4 +164,38 @@ textarea:hover {
   background-color: black;
   display: inline;
   border: 3px solid black;
+}
+
+.friends {
+  float:left;
+}
+
+.non-friends {
+  float:right;
+}
+
+.friends, .non-friends {
+  text-align:center;
+  opacity: 1;
+  background-color: black;
+  border: solid black 6px;
+  height: 100%;
+}
+
+.friend:hover, .non-friend:hover {
+  background-color:orange;
+  color: black;
+}
+.friendlist {
+  margin-top: 5px;
+  font-family: "Lucida Console", Monaco, monospace;
+  opacity: 0.8;
+  color: orange;
+  overflow: hidden;
+  margin: auto;
+  width: 50%;
+}
+
+h3 {
+  font-family: "Righteous";
 }
