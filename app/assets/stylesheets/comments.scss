@@ -42,23 +42,11 @@ transition: all 0.3s ease 0s;
   margin-left: -80px;
 }
 
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
 /* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
+  animation: fadeIn 1s;
 }
 
 /* Add animation (fade in the popup) */

@@ -1,13 +1,6 @@
 <%= form_with model: [post, comment], format: :js, remote: true do |form| %>
   <%= form.text_area :text, id: "comment_text" %>
-  <div class="popup" onclick="myFunction()">
+  <div class="popup" onclick="addPopup()">
     <%= form.submit "Submit" %>
-    <span class="popuptext" id="myPopup">Comment added</span>
   </div>
 <% end %>
-<script>
-function myFunction() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
-</script>

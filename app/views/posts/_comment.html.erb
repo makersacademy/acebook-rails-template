@@ -3,7 +3,7 @@
   <p class="comment"><%= comment.text %></p>
 </div>
 <% if current_user && current_user.id == comment.user_id %>
-<div class="popup" ><%= button_to ' Delete ', "/posts/#{comment.post_id}/comments/#{comment.id}", format: :js, remote: true, :method => :delete, :class => "button_comments" %>
-    <span class="popuptext" id="pop">Comment deleted</span>
-</div>
+  <div class="popup" onclick="deletePopup()">
+    <%= button_to ' Delete ', "/posts/#{comment.post_id}/comments/#{comment.id}", format: :js, remote: true, :method => :delete, :class => "button_comments" %>
+  </div>
 <% end %>

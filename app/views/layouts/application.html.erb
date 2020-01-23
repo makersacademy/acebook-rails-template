@@ -63,6 +63,33 @@
     </div>
     </nav>
 
+    <script>
+    function deletePopup() {
+      var popup = document.getElementById("myPopupDelete");
+      popup.classList.toggle("show");
+    }
+    function addPopup() {
+      var popup = document.getElementById("myPopupAdd");
+      popup.classList.toggle("show");
+    }
+    function editPopup() {
+      var popup = document.getElementById("myPopupEdit");
+      popup.classList.toggle("show");
+    }
+    function hidePopupDelete() {
+      var popup = document.getElementById("myPopupDelete");
+      popup.classList.toggle("show");
+    }
+    function hidePopupAdd() {
+      var popup = document.getElementById("myPopupAdd");
+      popup.classList.toggle("show");
+    }
+    function hidePopupEdit() {
+      var popup = document.getElementById("myPopupEdit");
+      popup.classList.toggle("show");
+    }
+    </script>
+
     <% flash.each do |type, message|%>
       <div class="alert alert-info" style="text-align: center;">
         <%= message %>

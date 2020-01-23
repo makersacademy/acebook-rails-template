@@ -30,6 +30,9 @@
           Comments
         </button>
         <div class="collapse" id="<%= post.id %>_comments">
+          <div class="popup" onclick="hidePopupDelete()"><span class="popuptext" id="myPopupDelete">Comment deleted</span></div>
+          <div class="popup" onclick="hidePopupEdit()"><span class="popuptext" id="myPopupEdit">Comment Edited</span></div>
+          <div class="popup" onclick="hidePopupAdd()"><span class="popuptext" id="myPopupAdd">Comment Added</span></div>
           <div class="card card-body">
             <div id="<%= post.id %>_partial">
               <%= render partial: 'posts/comment', collection: post.comments.reverse %>
