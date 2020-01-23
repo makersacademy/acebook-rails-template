@@ -33,7 +33,7 @@
         </div>
         <div class="card card-body">
           <div id="<%= post.id %>_partial">
-            <%= render partial: 'posts/comment.html', locals: { post: post }, collection: post.comments.order("created_at DESC") %>
+            <%= render partial: 'posts/comment.html', collection: post.comments.order("created_at DESC") %>
           </div>
           <div id="<%= post.id %>_comment_form" class="comment-form">
             <%= render partial: 'comments/form.html', locals: { post: post, comment: post.comments.build } %>
