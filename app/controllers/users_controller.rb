@@ -9,6 +9,4 @@ class UsersController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     redirect_to error_path
   end
-
- 
 end

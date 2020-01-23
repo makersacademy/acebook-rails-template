@@ -8,7 +8,7 @@
     <br>
     Date posted: <%= post.created_at.strftime('%d %B %Y at %l:%M %p') %>
     <br>
-    Posted by <%= User.find(post.user_id).email %>
+    Posted by <%= User.find(post.user_id).username %>
     <% if (post.user.id === current_user.id) %>
       <%= link_to 'Edit', edit_post_path(post)%> |
       <%= link_to 'Delete', post_path(post),
@@ -26,7 +26,7 @@
         <br>
         Date: <%= comment.created_at.strftime('%d %B %Y at %l:%M %p') %>
         <br>
-        Posted by <%= User.find(comment.user_id).email %>
+        Posted by <%= User.find(comment.user_id).username %>
         <% if (comment.user.id === current_user.id) %>
           <%= link_to 'Edit', edit_comment_path(comment)%> |
           <%= link_to 'Delete', comment_path(comment),

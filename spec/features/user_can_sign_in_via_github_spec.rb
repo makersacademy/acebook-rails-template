@@ -12,9 +12,9 @@ RSpec.feature "GitHub sign in", type: :feature do
     expect(page).to have_content("Sign in with GitHub")
     click_link "Sign in with GitHub"
 
-    expect(page).to have_content("Account: test@example.com")
+    expect(page).to have_content("Account: Test24")
     expect(page).to have_content("Sign out")
-    
+
     OmniAuth.config.mock_auth[:github] = nil
   end
 

@@ -26,7 +26,7 @@ RSpec.feature "Edit comment", type: :feature do
     within(".comment") do
       expect(page).to have_content("How poetic!")
       expect(page).to have_content("Date: #{@comment_time.strftime('%d %B %Y at %l:%M %p')}")
-      expect(page).to have_content("Posted by #{user.email}")
+      expect(page).to have_content("Posted by #{user.username}")
     end
 
     expect(page).to have_content("Comment updated. Gnarly!")
@@ -36,7 +36,7 @@ RSpec.feature "Edit comment", type: :feature do
   scenario "Cannot edit comment if it does not belong to the user" do
 
     click_link "Sign out"
-    sign_in("#{recipient.email}", "test1234")
+    sign_up("Example1", "test2@example.com", "test1234", "test1234")
 
     visit "/#{user.id}"
 
@@ -45,7 +45,7 @@ RSpec.feature "Edit comment", type: :feature do
     within(".comment") do
       expect(page).to have_content("You think the depths will harbour you JON?")
       expect(page).to have_content("Date: #{@comment_time.strftime('%d %B %Y at %l:%M %p')}")
-      expect(page).to have_content("Posted by #{user.email}")
+      expect(page).to have_content("Posted by #{user.username}")
       expect(page).not_to have_link "Edit"
     end
   end
