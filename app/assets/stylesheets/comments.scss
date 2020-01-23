@@ -30,7 +30,7 @@
   transition: all 0.3s ease 0s;
 }
 #edit_comment_text{
-  width: 100%;
+  width: 315px;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -48,10 +48,10 @@
 }
 
 #comment_text{
+  max-height: 230px;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  margin-top: 1.5cm;
   box-sizing: border-box;
   border: 2px solid saddlebrown;
   border-radius: 4px;
