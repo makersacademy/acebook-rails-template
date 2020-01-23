@@ -1,0 +1,9 @@
+<div>
+  <%= form_with model: [@post, @comment], format: :js, remote: true do |form| %>
+    <%= form.text_area :text %>
+
+    <div>
+    <%= form.submit "Submit" %>
+    </div>
+  <% end %>
+</div>

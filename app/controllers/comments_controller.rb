@@ -7,11 +7,31 @@ class CommentsController < ApplicationController
     @comment.user_id = session[:user_id]
     if @comment.save
       respond_to do |format|
-        format.js
+        format.js { render 'comments/create.js' }
       end
     else
       render :new
     end
+  end
+
+  def edit
+    @comment = Comment.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+
+    if @comment.update(comment_params)
+      respond_to do |format|
+        format.js
+      end
+    else
+      render 'edit'
+    end
+
   end
 
   private

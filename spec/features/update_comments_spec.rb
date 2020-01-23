@@ -10,8 +10,16 @@ RSpec.feature "Timeline", type: :feature do
     expect(current_path).to eq("/posts")
 
     click_on "Comments"
-
     fill_in :comment_text, with: "My comment"
+    click_on "Submit"
+    expect(page).to have_content("My comment")
+    
+    visit('/posts')
+
+    click_on "Comments"
+    click_on "edit_comment"
+    sleep(5)
+    fill_in :comment_text, with: "Edited comment"
     click_on "Submit"
 
     expect(page).to have_content("My comment")

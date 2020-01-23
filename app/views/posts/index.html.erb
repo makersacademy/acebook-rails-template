@@ -30,10 +30,10 @@
         <div class="collapse" id="<%= post.id %>_comments">
           <div class="card card-body">
             <div id="<%= post.id %>_partial">
-              <%= render partial: 'posts/comment', collection: post.comments.reverse %>
+              <%= render partial: 'posts/comment.html', locals: { post: post }, collection: post.comments.order("created_at DESC") %>
             </div>
             <div id="<%= post.id %>_comment_form" class="comment-form">
-              <%= render partial: 'comments/form', locals: {post: post, comment: post.comments.build} %>
+              <%= render partial: 'comments/form.html', locals: { post: post, comment: post.comments.build } %>
             </div>
           </div>
         </div>
