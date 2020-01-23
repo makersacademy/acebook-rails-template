@@ -1,0 +1,1 @@
+$("#<%= @post.id %>_partial").html("<%= escape_javascript(render partial: 'posts/comment', collection: @post.comments.reverse ) %>");

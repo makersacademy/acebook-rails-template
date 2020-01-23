@@ -6,12 +6,23 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user_id = session[:user_id]
     if @comment.save
-      redirect_to posts_path
+      respond_to do |format|
+        format.js
+      end
     else
       render :new
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    respond_to do |format|
+      format.js { render "comments/destroy.js" }
+      format.html
+    end
+  end
+  
   private
 
   def fetch_post
