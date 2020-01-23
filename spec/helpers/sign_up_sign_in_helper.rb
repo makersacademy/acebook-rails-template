@@ -1,6 +1,7 @@
-def sign_up(email, pass, conf_pass)
+def sign_up(username, email, pass, conf_pass)
 
   visit new_user_registration_path
+  fill_in "user_username", with: username
   fill_in "user_email", with: email
   fill_in "user_password", with: pass
   fill_in "user_password_confirmation", with: conf_pass
@@ -12,7 +13,7 @@ def sign_in(email, pass)
 
   visit new_user_registration_path
   click_link "Log in"
-  fill_in "user_email", with: email
+  fill_in "user_login", with: email
   fill_in "user_password", with: pass
   click_on "Log in"
 end

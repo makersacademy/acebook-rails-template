@@ -18,7 +18,7 @@ class FriendshipsController < ApplicationController
 
     @friends = @user.friends + @user.inverse_friends
     @non_friends = User.all - @friends - [@user]
-  end 
+  end
 
   def destroy
     @friendship = Friendship.find(params[:id])

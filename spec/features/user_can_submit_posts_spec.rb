@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Timeline on main wall", type: :feature do
 
   before do
-    sign_up("email@example.com", "pass12", "pass12")
+    sign_up("Example1", "email@example.com", "pass12", "pass12")
     click_button "New post"
   end
 
@@ -16,7 +16,7 @@ RSpec.feature "Timeline on main wall", type: :feature do
 
       expect(page).to have_content("Hello, world!")
       expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-      expect(page).to have_content("Posted by email@example.com")
+      expect(page).to have_content("Posted by Example1")
     end
 
     scenario "posts are ordered reverse chronologically" do
@@ -50,7 +50,7 @@ RSpec.feature "Timeline on main wall", type: :feature do
 
       expect(page).to have_content("Hello, world!")
       expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-      expect(page).to have_content("Posted by email@example.com")
+      expect(page).to have_content("Posted by Example1")
     end
 
     scenario "posts submitted to a user's wall do not show on the posts wall" do
@@ -61,12 +61,12 @@ RSpec.feature "Timeline on main wall", type: :feature do
 
       expect(page).to have_content("Hello, world!")
       expect(page).to have_content("Date posted: #{post_time.strftime('%d %B %Y at %l:%M %p')}")
-      expect(page).to have_content("Posted by email@example.com")
+      expect(page).to have_content("Posted by Example1")
 
       visit root_path
 
       expect(page).not_to have_content("Hello, world!")
-      expect(page).not_to have_content("Posted by email@example.com")
+      expect(page).not_to have_content("Posted by Example1")
     end
   end
 

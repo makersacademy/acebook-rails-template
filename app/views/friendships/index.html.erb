@@ -1,9 +1,11 @@
-<div class='friends'>
+<div class='friendlist'>
+  <div class='friends'>
     <h3>Friends...</h3>
     <% @friendships.each do |friendship| %>
         <div class='friend'>
             <p>
-            <%= friendship.friend.email %>
+
+            <%= friendship.friend.username %>
             <% if @user.id == current_user.id %>
                 <%= link_to "Remove", friendship, :method => :delete%>
             <% end %> 
@@ -13,14 +15,15 @@
     <% @inverse_friendships.each do |friendship| %>
         <div class='friend'>
             <p>
-            <%= friendship.user.email %>
+            <%= friendship.user.username %>
             <% if @user.id == current_user.id %>
                 <%= link_to "Remove", friendship, :method => :delete%>
             <% end %> 
+
             <p>
-        </div>        
+        </div>
     <% end %>
-</div>
+  </div>
 
 <% if @user.id == current_user.id %>
     <div class='non-friends'>
@@ -28,10 +31,11 @@
         <% @non_friends.each do |user| %>
             <div class='non-friend'>
                 <p>
-                <%= user.email %>
+                <%= user.username %>
                 <%= link_to "Add friend", friendships_path(:friend_id => user.id), :method=> :post, :id=> "add_friend_user#{user.id}"   %>
                 <p>
-            </div>        
+            </div>
         <% end %>
     </div>
 <% end %>
+</div>
