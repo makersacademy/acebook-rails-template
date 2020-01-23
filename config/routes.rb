@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :sessions
+  resources :errors
+
+  %w( 404 ).each do |code|
+    get code, :to => "errors#index", :code => code
+  end
 
   get 'signup' => 'user#new'  
   post 'signup' => 'user#create'
@@ -17,4 +22,5 @@ Rails.application.routes.draw do
   get 'posts' => 'posts#index'
   patch 'posts' => 'posts#edit'
   delete 'posts' => 'posts#delete'
+
 end

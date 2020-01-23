@@ -16,7 +16,7 @@
             <div class="card-buttons">
               <% if current_user.id == post.user_id %>
                 <% if (Time.now - post.created_at) < 600 %>
-                  <%= button_to 'Edit', edit_post_path(post), :class => "button", :method => :get %>
+                  <%= button_to 'Edit', edit_post_path(post, format: :js), :class => "button", :method => :get %>
                 <% end %>
                 <%= button_to 'Delete', posts_path(post), :class => "button", method: :delete %>
               <% end %>
@@ -35,10 +35,10 @@
           <div class="popup" onclick="hidePopupAdd()"><span class="popuptext" id="myPopupAdd">Comment Added</span></div>
           <div class="card card-body">
             <div id="<%= post.id %>_partial">
-              <%= render partial: 'posts/comment', collection: post.comments.reverse %>
-            </div>  
+              <%= render partial: 'posts/comment.html', locals: { post: post }, collection: post.comments.order("created_at DESC") %>
+            </div>
             <div id="<%= post.id %>_comment_form" class="comment-form">
-              <%= render partial: 'comments/form', locals: {post: post, comment: post.comments.build} %>
+              <%= render partial: 'comments/form.html', locals: { post: post, comment: post.comments.build } %>
             </div>
           </div>
         </div>

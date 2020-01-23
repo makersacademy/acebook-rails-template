@@ -1,9 +1,17 @@
-<div class="comment-div">
+<div class="comment-div" id="<%= comment.id %>_comment">
   <p id="comment-header">Comment by <%= comment.name %></p>
-  <p class="comment"><%= comment.text %></p>
+  <p class="comment"><%= comment.text.gsub(/\n/, '<br>').html_safe %></p>
+  <p></p>
+  <div class="card-buttons">
+    <% if current_user && current_user.id == comment.user_id %>
+      <% if (Time.now - comment.created_at) < 600 %>
+        <%= button_to 'Edit', edit_post_comment_path(post, comment), format: :js, id: "edit_comment", class: "button_comments_edit", remote: true, method: :get %>
+      <% end %>
+    <% end %>
+    <% if current_user && current_user.id == comment.user_id %>
+      <div class="popup" onclick="deletePopup()">
+        <%= button_to ' Delete ', "/posts/#{comment.post_id}/comments/#{comment.id}", format: :js, remote: true, :method => :delete, :class => "button_comments_delete" %>
+      </div>
+    <% end %>
+    </div>
 </div>
-<% if current_user && current_user.id == comment.user_id %>
-  <div class="popup" onclick="deletePopup()">
-    <%= button_to ' Delete ', "/posts/#{comment.post_id}/comments/#{comment.id}", format: :js, remote: true, :method => :delete, :class => "button_comments" %>
-  </div>
-<% end %>

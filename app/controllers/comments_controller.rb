@@ -5,13 +5,27 @@ class CommentsController < ApplicationController
   def create
     @comment = @post.comments.build(comment_params)
     @comment.user_id = session[:user_id]
-    if @comment.save
-      respond_to do |format|
-        format.js
-      end
-    else
-      render :new
+    @comment.save
+    respond_to do |format|
+      format.js { render 'comments/create.js' }
     end
+  end
+
+  def edit
+    @comment = Comment.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+
+    @comment.update(comment_params)
+    respond_to do |format|
+      format.js
+    end
+
   end
 
   def destroy
