@@ -17,7 +17,9 @@
   border: solid;
 }
 .comment-div{
+  width: 350px;
   padding: 0.5cm;
+  margin-bottom: 20px;
 }
 .container {
   margin: 15px;
@@ -60,9 +62,10 @@
 }
 
 .comment-form {
-  display: inline-block;
+  min-height: 100px;
   max-height: 320px;
-  width: 200px;
+  max-width: 300px;
+  width: 300px;
 }
 
 .card-buttons {

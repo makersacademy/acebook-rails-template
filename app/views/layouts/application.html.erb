@@ -65,26 +65,23 @@
     function deletePopup() {
       var popup = document.getElementById("myPopupDelete");
       popup.classList.toggle("show");
+      setTimeout(function() {
+        popup.classList.toggle("show");
+      }, 1000);
     }
     function addPopup() {
       var popup = document.getElementById("myPopupAdd");
       popup.classList.toggle("show");
+      setTimeout(function() {
+        popup.classList.toggle("show");
+      }, 1000);
     }
     function editPopup() {
       var popup = document.getElementById("myPopupEdit");
       popup.classList.toggle("show");
-    }
-    function hidePopupDelete() {
-      var popup = document.getElementById("myPopupDelete");
-      popup.classList.toggle("show");
-    }
-    function hidePopupAdd() {
-      var popup = document.getElementById("myPopupAdd");
-      popup.classList.toggle("show");
-    }
-    function hidePopupEdit() {
-      var popup = document.getElementById("myPopupEdit");
-      popup.classList.toggle("show");
+      setTimeout(function() {
+        popup.classList.toggle("show");
+      }, 1000);
     }
     </script>
 
