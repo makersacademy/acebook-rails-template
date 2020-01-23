@@ -12,13 +12,18 @@ class FriendshipsController < ApplicationController
 
   def index
     @user = User.find(session[:recipient_id])
+    p "friendships index"
+    @friendships = @user.friendships
+    @inverse_friendships = @user.inverse_friendships
+
     @friends = @user.friends + @user.inverse_friends
     @non_friends = User.all - @friends - [@user]
   end 
 
   def destroy
-    @friendship = Friendship.find(user_id: params[:user_id], friend_id: params[:friend_id])
+    @friendship = current_user.friendships.find(params[:id])
     @friendship.destroy
+    flash[:notice] = "removed friendship"
     redirect_to friendships_path
   end
 
