@@ -166,15 +166,20 @@ textarea:hover {
   border: 3px solid black;
 }
 
-.friends{
-  text-align:center;
+.friends {
   float:left;
-  opacity: 1;
 }
+
 .non-friends {
-  text-align:center;
   float:right;
+}
+
+.friends, .non-friends {
+  text-align:center;
   opacity: 1;
+  background-color: black;
+  border: solid black 6px;
+  height: 100%;
 }
 
 .friend:hover, .non-friend:hover {
@@ -183,9 +188,7 @@ textarea:hover {
 }
 .friendlist {
   margin-top: 5px;
-  border: solid black 6px;
   font-family: "Lucida Console", Monaco, monospace;
-  background-color:black;
   opacity: 0.8;
   color: orange;
   overflow: hidden;
