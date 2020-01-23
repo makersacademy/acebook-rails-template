@@ -1,12 +1,47 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
+.comment {
+  word-break: break-all;
+}
+#comment-header{
+  font: medium;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.comments_button:hover {
+  background: sienna;
+  border-radius: 20px;
+}
+.comments_button:focus{
+  outline: none !important;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+.comments_button {
+  width: 3cm;
+  background-color: saddlebrown;
+  height: auto;
+  border: none;
+  color: #ffffff !important;
+  font-weight: 10;
+  padding: 3px;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+}
 #edit_comment_text{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #007BFF;
+  border-radius: 4px;
+}
+#comment_header{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  margin-top: 1.5cm;
   box-sizing: border-box;
   border: 2px solid #007BFF;
   border-radius: 4px;
@@ -17,7 +52,7 @@
   margin: 8px 0;
   margin-top: 1.5cm;
   box-sizing: border-box;
-  border: 2px solid #007BFF;
+  border: 2px solid saddlebrown;
   border-radius: 4px;
 }
 .button_comments_submit_edit:hover {
@@ -68,7 +103,7 @@
 }
 .button_comments_submit {
   border: none;
-  background: #007BFF;
+  background: saddlebrown;
   color: #ffffff !important;
   font-weight: 10;
   margin: 3px;

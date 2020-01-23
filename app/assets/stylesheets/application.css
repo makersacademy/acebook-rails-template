@@ -24,14 +24,24 @@
 }
 .post-container {
   display: inline-block;
+  margin-bottom: 1.5cm;
 }
+
 .cards {
   border: solid;
-  border-color: #007BFF;
+  border-color: saddlebrown;
   border-radius: 10px;
   margin: -2.5px;
 }
 .card-header {
+  font-size: 17px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.card-text {
+  word-break: break-all;
+  height: auto;
+  font-size: 17px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .card-body {
   margin: -2.5px;
@@ -40,8 +50,10 @@
 }
 
 .card.card-body {
+  width: 370px;
+  max-width: 370px;
   align-items: center;
-  border-color: #007BFF;
+  border-color: saddlebrown;
   border-radius: 10px;
   border-width: 3px;
   margin-bottom: 2cm;
@@ -58,11 +70,18 @@
   display: flex;
   margin-right:5px;
 }
-
+.button:focus{
+  outline: none !important;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
 .button {
+  outline: none;
+  height: auto;
   border: none;
-  background: #404040;
-  color: #ffffff !important;
+  background: saddlebrown;
+  color: #ffffff ;
   font-weight: 10;
   margin: 3px;
   padding: 3px;
@@ -77,4 +96,7 @@
 
 .button:hover {
   background: red;
+}
+#button_edit_post:hover{
+  background: forestgreen;
 }
