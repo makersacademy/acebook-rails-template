@@ -1,9 +1,9 @@
 <div>
-  <%= form_with model: [@post, @comment], format: :js, remote: true do |form| %>
-    <%= form.text_area :text %>
+  <%= form_with model: [@post, @comment], html: {id: "edit_comment_form" }, format: :js, remote: true do |form| %>
+    <%= form.text_area :text, id: "edit_comment_text" %>
 
     <div>
-    <%= form.submit "Submit" %>
+    <%= form.submit "Submit", id: "edit_comment_submit" %>
     </div>
   <% end %>
 </div>

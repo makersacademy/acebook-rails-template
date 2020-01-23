@@ -1,7 +1,16 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
-  scenario "Can submit comments on posts and view them" do
+RSpec.feature "Timeline", js: true, type: :feature do
+  before do
+    Capybara.current_driver = :selenium
+  end
+
+  after do
+    Capybara.use_default_driver
+  end
+
+  scenario "Can submit comments on posts and edit them" do
+
     signup
     visit "/posts"
     click_on "New post"
@@ -13,15 +22,10 @@ RSpec.feature "Timeline", type: :feature do
     fill_in :comment_text, with: "My comment"
     click_on "Submit"
     expect(page).to have_content("My comment")
-    
-    visit('/posts')
-
-    click_on "Comments"
     click_on "edit_comment"
-    sleep(5)
-    fill_in :comment_text, with: "Edited comment"
-    click_on "Submit"
+    fill_in :edit_comment_text, with: "Edited comment"
+    click_on "edit_comment_submit"
 
-    expect(page).to have_content("My comment")
+    expect(page).to have_content("Edited comment")
   end
 end
