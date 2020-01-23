@@ -13,20 +13,26 @@
  *= require_tree .
  *= require_self
  */
+.card {
+  border: solid;
+}
 .comment-div{
   padding: 0.5cm;
 }
 .container {
   margin: 15px;
 }
-
 .post-container {
   display: inline-block;
 }
-.card {
+.cards {
+  border: solid;
+  border-color: #007BFF;
+  border-radius: 10px;
   margin: -2.5px;
 }
-
+.card-header {
+}
 .card-body {
   margin: -2.5px;
   align-items: center;
@@ -36,6 +42,9 @@
 .card.card-body {
   align-items: center;
   border-color: #007BFF;
+  border-radius: 10px;
+  border-width: 3px;
+  margin-bottom: 2cm;
 }
 
 .comment-form {
