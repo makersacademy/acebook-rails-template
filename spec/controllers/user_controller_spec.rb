@@ -13,9 +13,8 @@ RSpec.describe UserController, type: :controller do
         expect(User.find_by({ email: 'ben@example.com' })).to be
       end
 
-      it 'redirects them to their posts/wall page' do
-        expect(response).to redirect_to('/posts')
-      # expect(response).to redirect_to('/wall/ben')
+      it 'redirects them to their wall page' do
+        expect(response).to redirect_to("/#{my_user_id('ben@example.com')}")
       end
 
       it "displays a notice, letting the user know they've signed up" do
@@ -86,7 +85,6 @@ RSpec.describe UserController, type: :controller do
       end
     end
   end
-
     # it 'redirects back to users/new if no name is provided' do
     #   post :create, params: { user: { name: '', email: 'ben@example.com', password: "123456", password_confirmation: "123456" } }
     #   expect(User.find_by({ email: 'ben@example.com' })).not_to be
