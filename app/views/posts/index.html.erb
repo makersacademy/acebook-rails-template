@@ -7,7 +7,6 @@
   <div class="container">
     <div class="post-container">
       <div class="card" style="width: 23rem;">
-        <span class="border border-dark">
         <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%d/%m/%Y") %></div>
           <div class="card-body">
             <div class="popuptext">
@@ -21,7 +20,6 @@
                 <%= button_to 'Delete', posts_path(post), :class => "button", method: :delete %>
               <% end %>
             </div>
-          </span>
         </div>
       </div>
   
@@ -30,9 +28,11 @@
           Comments
         </button>
         <div class="collapse" id="<%= post.id %>_comments">
-          <div class="popup" onclick="hidePopupDelete()"><span class="popuptext" id="myPopupDelete">Comment deleted</span></div>
-          <div class="popup" onclick="hidePopupEdit()"><span class="popuptext" id="myPopupEdit">Comment Edited</span></div>
-          <div class="popup" onclick="hidePopupAdd()"><span class="popuptext" id="myPopupAdd">Comment Added</span></div>
+          <div class="popups-container">
+            <div class="popup" onclick="hidePopupDelete()"><span class="popuptext-delete" id="myPopupDelete">Comment deleted</span></div>
+            <div class="popup" onclick="hidePopupEdit()"><span class="popuptext-edit" id="myPopupEdit">Comment Edited</span></div>
+            <div class="popup" onclick="hidePopupAdd()"><span class="popuptext-add" id="myPopupAdd">Comment Added</span></div>
+          </div>
           <div class="card card-body">
             <div id="<%= post.id %>_partial">
               <%= render partial: 'posts/comment.html', locals: { post: post }, collection: post.comments.order("created_at DESC") %>
