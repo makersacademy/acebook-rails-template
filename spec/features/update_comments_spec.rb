@@ -10,7 +10,6 @@ RSpec.feature "Timeline", js: true, type: :feature do
   end
 
   scenario "Can submit comments on posts and edit them" do
-
     signup
     visit "/posts"
     click_on "New post"
