@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "User", type: :feature do
   scenario "Can submit comments on posts and view them" do
     signup
     visit "/posts"

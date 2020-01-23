@@ -52,11 +52,15 @@
   color: #ffffff !important;
   font-weight: 10;
   margin: 3px;
-  padding: 5px;
+  padding: 3px;
   border-radius: 6px;
   display: inline-block;
   transition: all 0.3s ease 0s;
  }
+
+ .button_comments:hover {
+  background: red;
+}
 
 .button:hover {
   background: red;

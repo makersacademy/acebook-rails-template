@@ -10,9 +10,11 @@
         <span class="border border-dark">
         <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%d/%m/%Y") %></div>
           <div class="card-body">
+            <div class="popuptext">
+            </div>
             <p class="card-text"><%= post.message.gsub(/\n/, '<br>').html_safe %></p>
             <div class="card-buttons">
-              <% if @current_user.id == post.user_id %>
+              <% if current_user.id == post.user_id %>
                 <% if (Time.now - post.created_at) < 600 %>
                   <%= button_to 'Edit', edit_post_path(post), :class => "button", :method => :get %>
                 <% end %>
@@ -30,8 +32,13 @@
         <div class="collapse" id="<%= post.id %>_comments">
           <div class="card card-body">
             <div id="<%= post.id %>_partial">
+<<<<<<< HEAD
               <%= render partial: 'posts/comment.html', locals: { post: post }, collection: post.comments.order("created_at DESC") %>
             </div>
+=======
+              <%= render partial: 'posts/comment', collection: post.comments.reverse %>
+            </div>  
+>>>>>>> 7616746e7d10958cb91b2b94c42f6dd4fbc07b39
             <div id="<%= post.id %>_comment_form" class="comment-form">
               <%= render partial: 'comments/form.html', locals: { post: post, comment: post.comments.build } %>
             </div>
