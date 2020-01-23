@@ -1,14 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", js: true, type: :feature do
-  before do
-    Capybara.current_driver = :selenium
-  end
-
-  after do
-    Capybara.use_default_driver
-  end
-
   scenario "Can submit comments on posts and edit them" do
     signup
     visit "/posts"

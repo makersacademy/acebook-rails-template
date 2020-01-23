@@ -1,14 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "User", type: :feature do
-  before do
-    Capybara.current_driver = :selenium
-  end
-
-  after do
-    Capybara.use_default_driver
-  end
-
+RSpec.feature "Timeline", js: true, type: :feature do
   scenario "Can delete comments" do
     signup
     visit "/posts"
