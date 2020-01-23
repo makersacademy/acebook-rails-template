@@ -1,13 +1,25 @@
 <div class='friendlist'>
   <div class='friends'>
     <h3>Friends...</h3>
-    <% @friends.each do |user| %>
+    <% @friendships.each do |friendship| %>
         <div class='friend'>
             <p>
-            <%= user.username %>
+
+            <%= friendship.friend.username %>
             <% if @user.id == current_user.id %>
-                <%= link_to "Remove"%>
-            <% end %>
+                <%= link_to "Remove", friendship, :method => :delete%>
+            <% end %> 
+            <p>
+        </div>        
+    <% end %>
+    <% @inverse_friendships.each do |friendship| %>
+        <div class='friend'>
+            <p>
+            <%= friendship.user.username %>
+            <% if @user.id == current_user.id %>
+                <%= link_to "Remove", friendship, :method => :delete%>
+            <% end %> 
+
             <p>
         </div>
     <% end %>
