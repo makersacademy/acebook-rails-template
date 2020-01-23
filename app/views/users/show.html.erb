@@ -1,8 +1,7 @@
 
-<div id="profile">
+<div class="profile">
   <img id='profile-pic' src='https://i.pinimg.com/originals/55/fd/2b/55fd2b7c992845d96a8069022152ccb9.jpg'>
-  <%= link_to "Friend List", friendships_path %>  
+  <%= link_to "Friend List", friendships_path %>
 </div>
-<h1> Account: <%= @user.username %> </h1>
-
+<div class="profile"> <%= @user.username %> </div>
 <%= render 'layouts/timeline' %>

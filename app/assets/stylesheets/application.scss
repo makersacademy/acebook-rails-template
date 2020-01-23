@@ -126,19 +126,20 @@
      opacity: 0.75;
   }
 
-#profile {
+.profile {
   font-size: 25px;
   font-family: "Righteous";
   background-color: black;
+  color: white;
   display: flex;
   opacity: 0.9;
 }
 
 #profile-pic {
-  width: 10%;
-  height: 10%;
-  padding: 10px;
+  width: 12%;
+  height: 12%;
   opacity: 1;
+  border: 6px solid orange;
 }
 
 .post-box {
