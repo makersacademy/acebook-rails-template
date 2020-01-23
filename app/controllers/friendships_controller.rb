@@ -14,7 +14,7 @@ class FriendshipsController < ApplicationController
     @user = User.find(session[:recipient_id])
     @friends = @user.friends + @user.inverse_friends
     @non_friends = User.all - @friends - [@user]
-  end 
+  end
 
   private
 
