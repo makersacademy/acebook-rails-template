@@ -13,7 +13,7 @@ RSpec.feature "Timeline", js: true, type: :feature do
     click_button "Add"
     expect(page).to have_content("Some comment")
     
-    click_on "delete_comment"
+    click_on("delete_comment", :match => :first)
     expect(page.html).to_not have_content("Some comment")
   end
 end
