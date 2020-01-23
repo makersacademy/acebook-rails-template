@@ -13,10 +13,14 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    @post.user_id = session[:user_id]
-    @post.wall_id = session[:wall_id]
+    @post.user_id = current_user[:id]
     @post.save
-    redirect_to posts_url
+    
+    if @post.wall_id
+      redirect_to '/' + "#{@post.wall_id}" 
+    else
+      redirect_to '/posts'
+    end
   end
 
   def update
@@ -44,7 +48,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :wall_id)
   end
 
   def try_edit(post)
@@ -53,6 +57,10 @@ class PostsController < ApplicationController
     else
       edit_post_path(post)
     end
+  end
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
 end
