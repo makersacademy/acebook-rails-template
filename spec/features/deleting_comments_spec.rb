@@ -19,10 +19,10 @@ RSpec.feature "User", type: :feature do
     click_button "Comments"
     fill_in "comment_text", with: "Some comment"
     click_button "Submit"
-    expect(page.html).to include("Some comment")
+    expect(page).to have_content("Some comment")
     
     
     click_on "delete_comment"
-    expect(page.html).to_not include("Some comment")
+    expect(page.html).to_not have_content("Some comment")
   end
 end
