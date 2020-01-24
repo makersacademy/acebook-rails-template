@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'user#new'
-  
+
   resources :posts do
     resources :comments
   end
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get code, :to => "errors#index", :code => code
   end
 
-  get 'signup' => 'user#new'  
+  get 'signup' => 'user#new'
   post 'signup' => 'user#create'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   get 'posts' => 'posts#index'
   patch 'posts' => 'posts#edit'
   delete 'posts' => 'posts#delete'
+
+  get '/user/index' => 'user#index'
 end

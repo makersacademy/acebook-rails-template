@@ -1,13 +1,12 @@
-require 'rails_helper'
+# require 'rails_helper'
 
 RSpec.feature "Timeline", js: true, type: :feature do
   scenario "Can submit comments on posts and edit them" do
     signup
-    visit "/posts"
-    click_on "New post"
+    click_on "New Post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
-    expect(current_path).to eq("/posts")
+    expect(current_path).to eq("/#{my_user_id('ben@example.com')}")
 
     click_on "Comments"
     fill_in :comment_text, with: "My comment"

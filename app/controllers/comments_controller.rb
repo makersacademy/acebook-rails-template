@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :require_login, only: [:index, :show]
   before_action :fetch_post
-  
+
   def create
     @comment = @post.comments.build(comment_params)
     @comment.user_id = session[:user_id]
@@ -35,7 +35,7 @@ class CommentsController < ApplicationController
       format.js
     end
   end
-  
+
   private
 
   def fetch_post
