@@ -9,7 +9,7 @@ RSpec.feature "Timeline", type: :feature do
     expect(current_path).to eq "/#{my_user_id("ben@example.com")}"
     expect(page).to have_content "Ben's wall post"
     visit '/posts'
-    expect(page).to have_content 'Ben posted on'
+    expect(page).to have_content 'Ben'
     expect(page).to have_content "Ben's wall post"
   end
 end
