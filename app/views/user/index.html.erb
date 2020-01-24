@@ -1,0 +1,17 @@
+<center>
+
+<h1>List of users</h1>
+
+<% @users.each do |user| %>
+
+    <div class="user-container">
+      <div class="cards" style="width: 27rem;">
+        <div class="card-body">
+          <p class="card-text" style="font-size: 30px;"><a href="/<%= user.id %>"><%= user.name %></a></p>
+        </div>
+      </div>
+    </div>
+
+<% end %>
+
+</center>

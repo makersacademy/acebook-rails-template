@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   get 'posts' => 'posts#index'
   patch 'posts' => 'posts#edit'
   delete 'posts' => 'posts#delete'
+
+  get '/user/index' => 'user#index'
 end
