@@ -19,21 +19,13 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     @post.user_id = current_user[:id]
     @post.save
-
-    if @post.wall_id
-      redirect_to '/' + "#{@post.wall_id}"
-    else
-      redirect_to '/posts'
-    end
+    
+    redirect_to '/' + "#{@post.wall_id}" if @post.wall_id
   end
 
   def update
     @post = Post.find(params[:id])
     redirect_to "/#{@post.wall_id}" if @post.update(post_params)
-  end
-
-  def index
-    @posts = Post.all.order("created_at DESC")
   end
 
   def find_user(post_id)

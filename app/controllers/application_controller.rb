@@ -11,13 +11,12 @@ class ApplicationController < ActionController::Base
 
   def find_name(user_id)
     @user = User.find_by({ id: user_id })
-    p @user
     return @user.name
   end
 
   private
 
   def require_login
-    redirect_to root_path unless current_user 
+    redirect_to root_path unless current_user
   end
 end
