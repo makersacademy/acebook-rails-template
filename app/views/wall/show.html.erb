@@ -6,10 +6,6 @@
 </center>
 
 <center>
-<!-- <%= button_to new_post_path, :class => "button", :method => :get do %>
-  New post
-<% end %> -->
-
 <% @posts.each do |post| %>
   <div class="container">
     <div class="post-container">
@@ -31,7 +27,7 @@
           </span>
         </div>
       </div>
-  
+
       <div class="card" style="width: 23rem;">
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#<%= post.id %>_comments" aria-expanded="false" aria-controls="collapseExample">
           Comments
