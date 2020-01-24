@@ -32,8 +32,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     respond_to do |format|
-      format.js { render "comments/destroy.js" }
-      format.html
+      format.js
     end
   end
   

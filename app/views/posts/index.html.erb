@@ -6,9 +6,8 @@
 <% @posts.each do |post| %>
   <div class="container">
     <div class="post-container">
-      <div class="card" style="width: 23rem;">
-        <span class="border border-dark">
-        <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%d/%m/%Y") %></div>
+      <div class="cards" style="width: 27rem;">
+        <div class="card-header"><%= find_user(post.user_id).name.capitalize %> posted on <%= post.created_at.strftime("%d/%m/%Y") %></div>
           <div class="card-body">
             <div class="popuptext">
             </div>
@@ -16,27 +15,28 @@
             <div class="card-buttons">
               <% if current_user.id == post.user_id %>
                 <% if (Time.now - post.created_at) < 600 %>
-                  <%= button_to 'Edit', edit_post_path(post, format: :js), :class => "button", :method => :get %>
+                  <%= button_to 'Edit', edit_post_path(post, format: :js), :class => "button", :id => "button_edit_post", :method => :get %>
                 <% end %>
-                <%= button_to 'Delete', posts_path(post), :class => "button", method: :delete %>
+                <%= button_to 'Delete post', posts_path(post), :class => "button", method: :delete %>
               <% end %>
             </div>
-          </span>
         </div>
       </div>
-  
-      <div class="card" style="width: 23rem;">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#<%= post.id %>_comments" aria-expanded="false" aria-controls="collapseExample">
-          Comments
-        </button>
-        <div class="collapse" id="<%= post.id %>_comments">
-          <div class="card card-body">
-            <div id="<%= post.id %>_partial">
-              <%= render partial: 'posts/comment.html', locals: { post: post }, collection: post.comments.order("created_at DESC") %>
-            </div>
-            <div id="<%= post.id %>_comment_form" class="comment-form">
-              <%= render partial: 'comments/form.html', locals: { post: post, comment: post.comments.build } %>
-            </div>
+      <button class="comments_button" type="button" data-toggle="collapse" data-target="#<%= post.id %>_comments" aria-expanded="false" >
+        Comments
+      </button>
+      <div class="collapse" id="<%= post.id %>_comments">
+        <div class="popups-container">
+          <div class="popup"><span class="popuptext-delete" id="myPopupDelete">Comment deleted &#x2713</span></div>
+          <div class="popup"><span class="popuptext-edit" id="myPopupEdit">Comment Edited  &#x2713</span></div>
+          <div class="popup"><span class="popuptext-add" id="myPopupAdd">Comment Added &#x2713</span></div>
+        </div>
+        <div class="card card-body">
+          <div id="<%= post.id %>_comment_form" class="comment-form">
+            <%= render partial: 'comments/form.html', locals: { post: post, comment: post.comments.build } %>
+          </div>
+          <div id="<%= post.id %>_partial">
+            <%= render partial: 'posts/comment.html', collection: post.comments.order("created_at DESC") %>
           </div>
         </div>
       </div>

@@ -9,13 +9,13 @@
 #     click_button "Submit"
 #     expect(current_path).to eq("/posts")
 
-#     click_on "Comments"
-#     fill_in :comment_text, with: "My comment"
-#     click_on "Submit"
-#     expect(page).to have_content("My comment")
-#     click_on "edit_comment"
-#     fill_in :edit_comment_text, with: "Edited comment"
-#     click_on "edit_comment_submit"
+    # click_on "Comments"
+    # fill_in :comment_text, with: "My comment"
+    # click_on "Add"
+    # expect(page).to have_content("My comment")
+    # click_on "edit_comment"
+    # fill_in :edit_comment_text, with: "Edited comment"
+    # click_on "edit_comment_submit"
 
 #     expect(page).to have_content("Edited comment")
 #   end
