@@ -50,7 +50,9 @@
   align-items: center;
   padding: 0px;
 }
-
+#comment-header {
+  color: saddlebrown;
+}
 .card.card-body {
   width: 370px;
   max-width: 370px;

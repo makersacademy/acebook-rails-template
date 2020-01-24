@@ -1,6 +1,6 @@
 <div class="comment-div" id="<%= comment.id %>_comment">
-  <p id="comment-header">Comment by <%= comment.name %></p>
-  <p class="comment"><%= comment.text.gsub(/\n/, '<br>').html_safe %></p>
+  
+  <p class="comment"><a id="comment-header" href="/<%=comment.user_id%>"><%= comment.name %>  </a><%= comment.text.gsub(/\n/, '<br>').html_safe %></p>
   <p></p>
   <div class="card-buttons">
     <% if current_user && current_user.id == comment.user_id %>
