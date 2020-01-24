@@ -13,6 +13,18 @@ Acebook - Team Luckerberg
 
 ## <a name="Ben">Ben Sheridan-Edwards</a>
 
+#####Week 1
+
+- Learned rails folder structure
+- Learned about active record and how to set up migrations
+- Learned user authenication from scratch and the potential of using devise and clearance gems.
+- Learned about Heroku deployment
+
+#####Week 2
+
+- Learned how to setup a custom 404 page
+- Learned how to look over and implement other peoples code when helpping to create the user walls. 
+
 ## <a name="Dawid">Dawid Szpener</a>
 
   #####Week 1
