@@ -29,6 +29,10 @@
   margin-bottom: 1.5cm;
 }
 
+.user-container {
+  margin-top: 0.5cm;
+}
+
 .cards {
   border: solid;
   border-color: saddlebrown;
