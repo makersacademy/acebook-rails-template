@@ -12,7 +12,7 @@ RSpec.feature "User", type: :feature do
     click_on "Comments"
 
     fill_in :comment_text, with: "My comment"
-    click_on "Submit"
+    click_on "Add"
 
     expect(page).to have_content("My comment")
   end

@@ -11,7 +11,7 @@ RSpec.feature "Timeline", js: true, type: :feature do
 
     click_on "Comments"
     fill_in :comment_text, with: "My comment"
-    click_on "Submit"
+    click_on "Add"
     expect(page).to have_content("My comment")
     click_on "edit_comment"
     fill_in :edit_comment_text, with: "Edited comment"

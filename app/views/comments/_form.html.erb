@@ -1,4 +1,6 @@
 <%= form_with model: [post, comment], format: :js, remote: true do |form| %>
   <%= form.text_area :text, id: "comment_text" %>
-  <%= form.submit "Submit" %>
+  <div class="popup" onclick="addPopup()">
+    <%= form.submit "Add", class: "button_comments_submit" %>
+  </div>
 <% end %>
