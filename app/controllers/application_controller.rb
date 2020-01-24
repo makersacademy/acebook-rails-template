@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def find_name(user_id)
     @user = User.find_by({ id: user_id })
-    return @user.name
+    return @user.name.capitalize
   end
 
   private
