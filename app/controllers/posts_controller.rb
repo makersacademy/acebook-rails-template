@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user[:id]
     @post.save
     
-    redirect_to '/' + "#{@post.wall_id}" if @post.wall_id
+    redirect_to "/#{@post.wall_id}" if @post.wall_id
   end
 
   def update
@@ -35,8 +35,9 @@ class PostsController < ApplicationController
 
   def delete
     @post = Post.find(params[:format])
+    @wall_id = @post.wall_id
     @post.destroy
-    redirect_to '/' + "#{@post.wall_id}"
+    redirect_to "/#{@wall_id}"
   end
 
   private
@@ -47,7 +48,7 @@ class PostsController < ApplicationController
 
   def try_edit(post)
     if Time.now - @post.created_at > 600
-      redirect_to '/' + "#{@post.wall_id}", notice: "Cannot edit post after 10 minutes"
+      redirect_to "/#{@post.wall_id}", notice: "Cannot edit post after 10 minutes"
     else
       edit_post_path(post)
     end
