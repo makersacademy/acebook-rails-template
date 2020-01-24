@@ -2,15 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment {
+  text-align: left;
+  padding-top: 30px;
+  padding-left: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   word-break: break-all;
 }
 #comment-header{
   font: medium;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .comments_button:hover {
-  background: sienna;
-  border-radius: 20px;
+  background: #97C1D3;
 }
 .comments_button:focus{
   outline: none !important;
@@ -19,8 +22,10 @@
   box-shadow: none !important;
 }
 .comments_button {
+  margin-bottom: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 3cm;
-  background-color: saddlebrown;
+  background-color: #3B95B7;
   height: auto;
   border: none;
   color: #ffffff !important;
@@ -30,6 +35,8 @@
   transition: all 0.3s ease 0s;
 }
 #edit_comment_text{
+  font-size: 17px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 315px;
   padding: 12px 20px;
   margin: 8px 0;
@@ -38,7 +45,7 @@
   border-radius: 4px;
 }
 #comment_header{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -49,13 +56,12 @@
 }
 
 #comment_text{
+  font-size: 17px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   max-height: 230px;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid saddlebrown;
-  border-radius: 4px;
 }
 .button_comments_submit_edit:hover {
   background: forestgreen;
@@ -71,50 +77,62 @@
 }
 
 .button_comments_submit_edit {
+  margin-bottom: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 3cm;
+  background-color: #3B95B7;
+  height: auto;
   border: none;
-  background: #007BFF;
   color: #ffffff !important;
   font-weight: 10;
-  margin: 3px;
   padding: 3px;
-  border-radius: 6px;
   display: inline-block;
   transition: all 0.3s ease 0s;
 }
 .button_comments_delete {
+
+  margin-bottom: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 3cm;
+  background-color: #3B95B7;
+  height: auto;
   border: none;
-  background: #007BFF;
   color: #ffffff !important;
   font-weight: 10;
-  margin: 3px;
   padding: 3px;
-  border-radius: 6px;
   display: inline-block;
   transition: all 0.3s ease 0s;
 }
 .button_comments_edit {
+  margin-right: 5px;
+  margin-bottom: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 3cm;
+  background-color: #3B95B7;
+  height: auto;
   border: none;
-  background: #007BFF;
   color: #ffffff !important;
   font-weight: 10;
-  margin: 3px;
   padding: 3px;
-  border-radius: 6px;
   display: inline-block;
   transition: all 0.3s ease 0s;
 }
 .button_comments_submit {
+  
+  margin-bottom: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 3cm;
+  background-color: #3B95B7;
+  height: auto;
   border: none;
-  background: saddlebrown;
   color: #ffffff !important;
   font-weight: 10;
-  margin: 3px;
   padding: 3px;
-  border-radius: 6px;
   display: inline-block;
   transition: all 0.3s ease 0s;
 }
 #edit_comment_form {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   float: left;
   align-items: center;
   margin-bottom: 1cm;
@@ -191,4 +209,9 @@
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity:1 ;}
+}
+
+#comment-header_a {
+  float: left;
+  font-size: 17px;
 }

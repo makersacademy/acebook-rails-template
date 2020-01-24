@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:500&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div style="background-color: white">
     <nav style="opacity: 0.5; box-shadow: 2px 2px 8px rgba(227, 227, 227);" class="navbar navbar-expand-md navbar-light bg-light">
       <div class="container">
-
       <a class="navbar-brand" href="/posts">Home</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -61,6 +61,7 @@
       </div>
     </div>
     </nav>
+    </div>
 
     <script>
     function deletePopup() {
@@ -95,7 +96,11 @@
     <div class="container">
       <%= yield %>
     </div>
-
+    <style>
+    body {
+      background-color: RGB(242, 250, 244);
+    }
+    </style>
     <script
 			  src="https://code.jquery.com/jquery-3.4.1.js"
 			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
