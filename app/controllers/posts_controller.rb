@@ -2,6 +2,10 @@ class PostsController < ApplicationController
 
   before_action :require_login, only: [:index, :show]
 
+  def index
+    @posts = Post.all.order("created_at DESC")
+  end
+
   def new
     @post = Post.new
   end
@@ -25,9 +29,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-
-    redirect_to posts_url if @post.update(post_params)
-
+    redirect_to "/#{@post.wall_id}" if @post.update(post_params)
   end
 
   def index

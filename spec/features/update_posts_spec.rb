@@ -4,10 +4,10 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can update posts they have created" do
     signup
     expect(current_path).to eq("/#{my_user_id('ben@example.com')}")
-    visit("/posts/new")
+    click_button 'New Post'
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
-    expect(current_path).to eq("/posts")
+    expect(current_path).to eq("/#{my_user_id('ben@example.com')}")
     click_on "Edit"
     fill_in "Message", with: "Updated message"
     click_button "Submit"

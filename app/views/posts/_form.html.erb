@@ -1,0 +1,5 @@
+<%= form_with model: post, url: "/#{params[:user_id]}", method: :get do |form| %>
+  <%= form.text_area :message %>
+  <%= form.hidden_field :wall_id, :value => "#{params[:user_id]}" %>
+  <%= form.submit "Submit"%>
+<% end %>
