@@ -16,10 +16,6 @@ class WallController < ApplicationController
   #   session[:return_to] ||= request.referer
   # end
 
-  # def index
-  #   @posts = Post.where(wall_id: nil).order("created_at DESC")
-  # end
-
   # def show
   #   @c_user = User.find(params[:user_id])
   #   @current_user_posts = Post.where({ user_id: @c_user.id })
