@@ -16,11 +16,11 @@ class PostsController < ApplicationController
     @post.user_id = current_user[:id]
     @post.save
 
-    if @post.wall_id
-      redirect_to '/' + "#{@post.wall_id}"
-    else
-      redirect_to '/posts'
-    end
+
+      redirect_to '/' + "#{@post.wall_id}" if @post.wall_id
+    # else
+    #   redirect_to '/posts'
+    # end
   end
 
   def update

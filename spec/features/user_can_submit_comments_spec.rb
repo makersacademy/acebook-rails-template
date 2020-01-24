@@ -16,4 +16,5 @@ RSpec.feature "User", type: :feature do
 
     expect(page).to have_content("My comment")
   end
+
 end
