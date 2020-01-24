@@ -1,44 +1,53 @@
 <center>
-  <p>Welcome to <%= @wall_owner.name.capitalize %>'s page </p>
-  <%= button_to "posts/#{params[:user_id]}/new", :class => "button", :method => :get do %>
-    New Post
-  <% end %>
+  <div class="header_wall">
+    <p id="headline">Welcome to <%= @wall_owner.name.capitalize %>'s page </p>
+    <%= button_to "posts/#{params[:user_id]}/new", :class => "button", :id => "new_post", :method => :get do %>
+      New Post
+    <% end %>
+  </div>
 </center>
 
 <center>
+<!-- <%= button_to new_post_path, :class => "button", :method => :get do %>
+  New post
+<% end %> -->
+
 <% @posts.each do |post| %>
-  <div class="container">
+  <div class="containerr">
     <div class="post-container">
-      <div class="card" style="width: 23rem;">
-        <span class="border border-dark">
-        <div class="card-header"><%= find_name(post.user_id) %> - <%= post.created_at.strftime("%d/%m/%Y") %></div>
+      <div class="cards" style="width: 27rem;">
+        <div class="card-headerr"><p id="post_owner_name"><%= find_name(post.user_id) %></p><p id="post_owner_date"><%= post.created_at.strftime("%d/%m/%Y") %></p></div>
           <div class="card-body">
             <div class="popuptext">
             </div>
             <p class="card-text"><%= post.message.gsub(/\n/, '<br>').html_safe %></p>
-            <div class="card-buttons">
-              <% if current_user.id == post.user_id %>
-                <% if (Time.now - post.created_at) < 600 %>
-                  <%= button_to 'Edit', edit_post_path(post, format: :js), :class => "button", :method => :get %>
-                <% end %>
-                <%= button_to 'Delete', posts_path(post), :class => "button", method: :delete %>
-              <% end %>
-            </div>
-          </span>
         </div>
+        <div class="card-buttons">
+              <% if current_user.id == post.user_id %>
+                <%= button_to 'Delete', posts_path(post), :class => "button", method: :delete %>
+                <% if (Time.now - post.created_at) < 600 %>
+                  <%= button_to 'Edit', edit_post_path(post, format: :js), :class => "button", :id => "button_edit_post", :method => :get %>
+                <% end %>
+              <% end %>
+              <button class="comments_button" type="button" data-toggle="collapse" data-target="#<%= post.id %>_comments" aria-expanded="false" >
+                Comments
+              </button>
+            </div>
       </div>
-
-      <div class="card" style="width: 23rem;">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#<%= post.id %>_comments" aria-expanded="false" aria-controls="collapseExample">
-          Comments
-        </button>
-        <div class="collapse" id="<%= post.id %>_comments">
-          <div class="card card-body">
+      
+      <div class="collapse" id="<%= post.id %>_comments">
+        <div class="popups-container">
+          <div class="popup"><span class="popuptext-delete" id="myPopupDelete">Comment deleted &#x2713</span></div>
+          <div class="popup"><span class="popuptext-edit" id="myPopupEdit">Comment Edited  &#x2713</span></div>
+          <div class="popup"><span class="popuptext-add" id="myPopupAdd">Comment Added &#x2713</span></div>
+        </div>
+        <div class="card card-body">
+          <div id="<%= post.id %>_comment_form" class="comment-form">
+            <%= render partial: 'comments/form.html', locals: { post: post, comment: post.comments.build } %>
+          </div>
+          <div class="entire_comment">
             <div id="<%= post.id %>_partial">
               <%= render partial: 'posts/comment.html', locals: { post: post }, collection: post.comments.order("created_at DESC") %>
-            </div>
-            <div id="<%= post.id %>_comment_form" class="comment-form">
-              <%= render partial: 'comments/form.html', locals: { post: post, comment: post.comments.build } %>
             </div>
           </div>
         </div>

@@ -1,11 +1,13 @@
-<h1>Log In</h1>
-<div class="row">	
-  <div class="span6 offset3">
-    <%= form_for :user, url: login_path do |f| %>
-      <%= f.email_field :email, :placeholder => "Email" %>
-      <%= f.password_field :password, :placeholder => "Password" %>
-      <%= f.submit "Log in", class: "btn btn-large btn-primary" %>
-    <% end %>
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-  </div>	
-</div>
+<center>
+  <div class="sign_up"><h1>Log In</h1></div>
+  <div class="row_loggin">	
+    <div class="span6 offset3">
+      <%= form_for :user, url: login_path do |f| %>
+        <%= f.email_field :email, :placeholder => "Email" %>
+        <%= f.password_field :password, :placeholder => "Password" %>
+        <%= f.submit "Log in", class: "btn btn-large btn-primary" %>
+      <% end %>
+      <div class="new_user"><p>New user? <%= link_to "Sign up now!", signup_path %></p></div>
+    </div>	
+  </div>
+</center>

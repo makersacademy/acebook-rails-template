@@ -58,8 +58,10 @@
 
 }
 #comment-header {
+  font-size: 17px;
+  color: #3B95B7;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: black;
+
 }
 .card.card-body {
   width: 370px;
@@ -128,4 +130,33 @@
 #post_owner_name{
   margin-left: 10px;
   float: left;
+}
+
+.header_image {
+  margin-right: 85px;
+}
+
+#user_email {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+#user_password_confirmation {
+  margin-bottom: 5px;
+}
+.row {
+  width: 15%;
+  margin-top: 50px;
+}
+.sign_up{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.new_user{
+  margin-top: 20px;
+}
+.header_wall{
+  margin-top: 30px;
+}
+#new_post{
+  background-color: #1D314C;
 }

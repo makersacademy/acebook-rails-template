@@ -2,15 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment {
+  font-size: 17px;
   text-align: left;
   padding-top: 30px;
   padding-left: 5px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   word-break: break-all;
-}
-#comment-header{
-  font: medium;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .comments_button:hover {
   background: #97C1D3;
@@ -41,7 +38,7 @@
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 2px solid #007BFF;
+  border: 2px solid #3B95B7;
   border-radius: 4px;
 }
 #comment_header{
@@ -64,23 +61,23 @@
   margin: 8px 0;
 }
 .button_comments_submit_edit:hover {
-  background: forestgreen;
+  background: #EFEFEE;
 }
 .button_comments_submit:hover {
-  background: forestgreen;
+  background: #EFEFEE;
 }
 .button_comments_delete:hover {
-  background: red;
+  background: #EFEFEE;
 }
 .button_comments_edit:hover {
-  background: forestgreen;
+  background: #EFEFEE;
 }
 
 .button_comments_submit_edit {
   margin-bottom: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 3cm;
-  background-color: #3B95B7;
+  background-color: #C6C7C4;
   height: auto;
   border: none;
   color: #ffffff !important;
@@ -94,7 +91,7 @@
   margin-bottom: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 3cm;
-  background-color: #3B95B7;
+  background-color: #C6C7C4;
   height: auto;
   border: none;
   color: #ffffff !important;
@@ -108,7 +105,7 @@
   margin-bottom: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 3cm;
-  background-color: #3B95B7;
+  background-color: #C6C7C4;
   height: auto;
   border: none;
   color: #ffffff !important;
@@ -122,7 +119,7 @@
   margin-bottom: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 3cm;
-  background-color: #3B95B7;
+  background-color: #C6C7C4;
   height: auto;
   border: none;
   color: #ffffff !important;
@@ -212,6 +209,7 @@
 }
 
 #comment-header_a {
+  color: #3B95B7;
   float: left;
   font-size: 17px;
 }

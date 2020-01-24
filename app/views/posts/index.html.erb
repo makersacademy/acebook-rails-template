@@ -7,7 +7,7 @@
   <div class="containerr">
     <div class="post-container">
       <div class="cards" style="width: 27rem;">
-        <div class="card-headerr"><p id="post_owner_name"><%= find_user(post.user_id).name.capitalize %></p><p id="post_owner_date"><%= post.created_at.strftime("%d/%m/%Y") %></p></div>
+        <div class="card-headerr"><p id="post_owner_name"><%= find_name(post.user_id) %></p><p id="post_owner_date"><%= post.created_at.strftime("%d/%m/%Y") %></p></div>
           
           <div class="card-body">
             <div class="popuptext">
@@ -40,7 +40,7 @@
           </div>
           <div class="entire_comment">
             <div id="<%= post.id %>_partial">
-              <%= render partial: 'posts/comment.html', collection: post.comments.order("created_at DESC") %>
+              <%= render partial: 'posts/comment.html', locals: { post: post }, collection: post.comments.order("created_at DESC") %>
             </div>
           </div>
         </div>
