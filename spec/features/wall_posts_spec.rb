@@ -28,5 +28,4 @@ RSpec.feature "Wall Posts", type: :feature do
     expect(page).not_to have_content "This posts on Eve's wall!"
   end
 
-
 end

@@ -7,7 +7,7 @@ RSpec.feature "Timeline", type: :feature do
     visit("/posts/new")
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
-    expect(current_path).to eq("/#{my_user_id('ben@example.com')}")
+    expect(current_path).to eq("/posts")
     click_on "Edit"
     fill_in "Message", with: "Updated message"
     click_button "Submit"
@@ -20,7 +20,7 @@ RSpec.feature "Timeline", type: :feature do
     visit("/posts/new")
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
-    expect(current_path).to eq("/#{my_user_id('ben@example.com')}")
+    expect(current_path).to eq("/posts")
     expect(page).to have_button("Edit")
     click_on "Logout"
     signup_user("Dawid", "Dawid@example.com", "password1")
