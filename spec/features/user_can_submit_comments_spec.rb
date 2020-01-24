@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.feature "User", type: :feature do
   scenario "Can submit comments on posts and view them" do
     signup
-    visit "/posts"
+    visit "/#{my_user_id('ben@example.com')}"
     click_on "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
-    expect(current_path).to eq("/posts")
+    expect(current_path).to eq("/#{my_user_id('ben@example.com')}")
 
     click_on "Comments"
 
@@ -16,4 +16,5 @@ RSpec.feature "User", type: :feature do
 
     expect(page).to have_content("My comment")
   end
+
 end

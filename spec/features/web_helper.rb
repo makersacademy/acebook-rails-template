@@ -21,7 +21,7 @@ def my_user_id(email)
 end
 
 def signup_user(name, email, password)
-  click_on "sign_up"
+  visit "/signup"
   fill_in "Name", with: name
   fill_in "Email", with: email
   fill_in "Password", with: password

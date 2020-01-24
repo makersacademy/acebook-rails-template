@@ -1,0 +1,2 @@
+$("#<%= @post.id %>_partial").html("<%= j render partial: 'posts/comment.html', locals: { post: @post }, collection: @post.comments.reverse %>");
+$("#<%= @post.id %>_comment_form").html("<%= j render partial: 'comments/form.html', locals: { post: @post, comment: @post.comments.build } %>");

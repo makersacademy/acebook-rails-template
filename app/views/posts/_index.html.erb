@@ -1,17 +1,9 @@
-<center>
-  <p>Welcome to <%= @wall_owner.name.capitalize %>'s page </p>
-  <%= button_to "posts/#{params[:user_id]}/new", :class => "button", :method => :get do %>
-    New Post
-  <% end %>
-</center>
-
-<center>
-<% @posts.each do |post| %>
+<% posts.each do |post| %>
   <div class="container">
     <div class="post-container">
       <div class="card" style="width: 23rem;">
         <span class="border border-dark">
-        <div class="card-header"><%= find_name(post.user_id) %> - <%= post.created_at.strftime("%d/%m/%Y") %></div>
+        <div class="card-header"><%= find_user(post.user_id).name.capitalize %> - <%= post.created_at.strftime("%d/%m/%Y") %></div>
           <div class="card-body">
             <div class="popuptext">
             </div>
@@ -27,7 +19,7 @@
           </span>
         </div>
       </div>
-
+  
       <div class="card" style="width: 23rem;">
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#<%= post.id %>_comments" aria-expanded="false" aria-controls="collapseExample">
           Comments
@@ -46,4 +38,3 @@
     </div>
   </div>
 <% end %>
-</center>
