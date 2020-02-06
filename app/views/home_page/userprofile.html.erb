@@ -1,0 +1,41 @@
+<h1>Your Profile</h1>
+<p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
+
+
+<% if user_signed_in? %>
+  <div>Signed in with... <%= current_user.email %></div>
+<% end %>
+
+<div class="profile_contrainer">
+  <% if current_user.avatar != "" %>
+    <img src=<%= current_user.avatar %> width="150" height="150" class="avatar">
+  <% end %>
+
+  <div>
+    <p>Nick Name: <%= current_user.user_name %> </p>
+    <p>Birth Day: <%= current_user.birthday %></p>
+    <p>Occupation: <%= current_user.occupation %></p>
+  </div>
+
+</div>
+
+<%= form_tag "/userprofile", method: :get do %>
+  <%= label_tag :user_name %>
+  <%= text_field_tag :user_name %>
+  <br>
+  <%= label_tag :birthday %>
+  <%= text_field_tag :birthday %>
+  <br>
+  <%= label_tag :occupation %>
+  <%= text_field_tag :occupation %>
+  <br>
+  <%= label_tag :avatar %>
+  <%= text_field_tag :avatar %>
+  <br>
+
+
+  <%= submit_tag "Submit" %>
+<% end %>
+
+<p> ---- </p>
+
