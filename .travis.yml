@@ -9,7 +9,7 @@ services:
 
 before_script:
  — bundle exec rake db:create
- - bundle exec rails db:migrate 
+ - bundle exec rake db:migrate 
 
 script:
  — bundle exec rspec
