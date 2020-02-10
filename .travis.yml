@@ -14,6 +14,3 @@ deploy:
   app: acebook-u-jakd
   api_key:
     secure: B92wZpVWorDqqpndEcay7zJTsfQXimnEtW7Fi6Zp/rsNc3Ut4Jdb/+ke9nmfc2BqYDcff1AnYsIUd6oIzUFoMIq8wXSQmtGgpVVyBOrur8otwECw3p8XZJL/LmOp6OYgUI3jTwU5+K7ZtQsuoQgUOQCYs+p6Y1NqXL5HRlJRd3IFMCaF6CL/8xdGBk7FXGyLw5QV/Sx1qO4LhXvjvvn9/bt86jw89alRqIGtD2r/CJFDuaYj3rqUljzykrcrt5t7EL8jJJNwET/7BexsHLAgGbRb4uKkChVg203icZ1jlaE3VOQUwYetYfK8U+JlJ1Fcz/DBGl3J6j67FScHYe92bU4aFK49LBSGgFgmpxRFqi+uLhL3Cw6wyYugRJYh0zPDBG4fP+A2DU+9dx90epdZyzTW0AQClcXgtcOTzEecfwK0bUzUl805KeJuen0cIkyspdZE79oQq8A+5eMdF43nsYSR+1Ts1gHWO+rmOGir/Az49+I/6E/58yGrS20YKSQCpG/1DRv+oJTF2sYcsyyAuFr7GDonVpeGQputrZk8OHKehEe6Rohpyc1jEPcDk/Y7SaA595BdhKwRAuZrsSjQLJvpK1YXCZKjXVxEVFtA6qoNXXfmyCEy95DSK3hxg0WhIG+rGVX50wjTQ9hofYaCUADFkaNwRmHOyJTlkC79NE8=
- run:
- - bundle exec rails db:create
- - bundle exec rails db:migrate
