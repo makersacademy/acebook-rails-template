@@ -4,12 +4,16 @@ dist: trusty
 rvm: 
   - 2.6.0
 
+env:
+  - DB=pgsql
+
 services: 
   -postgresql
 
-before_script:
- — bundle exec rake db:create
- - bundle exec rake db:migrate 
+# before_script:
+#  - bundle exec rake db:migrate 
 
 script:
- — bundle exec rspec
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
