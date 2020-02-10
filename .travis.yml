@@ -14,4 +14,4 @@ services:
 #  - bundle exec rake db:migrate 
 
 script:
- — bundle exec rspec
+ — bundle exec rspec spec
