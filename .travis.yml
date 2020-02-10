@@ -1,15 +1,11 @@
 language: ruby
 dist: trusty
-
 rvm: 
   - 2.6.0
-
 services: 
   -postgresql
-
 before_script:
  - bundle exec rake db:create
  - bundle exec rake db:migrate 
-
 script:
  — bundle exec rspec

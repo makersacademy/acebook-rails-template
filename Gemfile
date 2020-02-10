@@ -8,6 +8,7 @@ end
 gem 'rubocop'
 gem 'simplecov'
 gem 'simplecov-console'
+gem 'rspec'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
