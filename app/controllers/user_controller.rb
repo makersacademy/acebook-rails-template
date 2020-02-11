@@ -3,7 +3,7 @@ class UserController < ApplicationController
   end 
 
   def create
-    
+    @user = User.new
     @user = User.create(user_params)
     redirect_to posts_url
   end 
