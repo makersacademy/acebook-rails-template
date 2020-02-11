@@ -3,9 +3,20 @@
 <h3>Click Below to Sign Up<h3>
 <%= button_to "Sign Up", new_user_path, method: :get %>
 
-<h3>Sign In<h3>
-<form action="/posts" method="post">
-  <input type="text" placeholder="Username">
-  <input type="password" placeholder="Password">
-  <input type="submit" value="Sign In">
-</form>
+
+<h3>Fill out the below to Sign In</h3>
+<%= form_for :welcome  do |f| %>
+  <p>
+    <%= f.label :Username %><br>
+    <%= f.text_field :Username%>
+  </p>
+
+  <p>
+    <%= f.label :Password %><br>
+    <%= f.text_field :Password%>
+  </p>
+
+  <p>
+    <%= f.submit "Sign In" %>
+  </p>
+<% end %>
