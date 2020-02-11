@@ -1,5 +1,3 @@
-require 'bcrypt'
-
 class UsersController < ApplicationController
   def new
     @user = User.new
