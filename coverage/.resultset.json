@@ -1,19 +1,25 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Desktop/onedrive/makers/week8/acebook-U-JAKD/app/helpers/application_helper.rb": {
+      "/Users/student/acebook/acebook-U-JAKD/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/Desktop/onedrive/makers/week8/acebook-U-JAKD/app/helpers/users_helper.rb": {
+      "/Users/student/acebook/acebook-U-JAKD/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/Desktop/onedrive/makers/week8/acebook-U-JAKD/app/controllers/posts_controller.rb": {
+      "/Users/student/acebook/acebook-U-JAKD/app/helpers/welcome_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/student/acebook/acebook-U-JAKD/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           1,
@@ -37,39 +43,78 @@
           null
         ]
       },
-      "/Users/student/Desktop/onedrive/makers/week8/acebook-U-JAKD/app/controllers/application_controller.rb": {
+      "/Users/student/acebook/acebook-U-JAKD/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/student/Desktop/onedrive/makers/week8/acebook-U-JAKD/app/controllers/users_controller.rb": {
+      "/Users/student/acebook/acebook-U-JAKD/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          6,
+          null,
+          null,
+          1,
+          6,
+          null,
+          6,
+          2,
+          2,
+          null,
+          4,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          6,
+          null,
+          null
+        ]
+      },
+      "/Users/student/acebook/acebook-U-JAKD/app/controllers/welcome_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/acebook/acebook-U-JAKD/app/models/post.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/Desktop/onedrive/makers/week8/acebook-U-JAKD/app/models/post.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/student/Desktop/onedrive/makers/week8/acebook-U-JAKD/app/models/application_record.rb": {
+      "/Users/student/acebook/acebook-U-JAKD/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/student/Desktop/onedrive/makers/week8/acebook-U-JAKD/app/models/user.rb": {
+      "/Users/student/acebook/acebook-U-JAKD/app/models/user.rb": {
         "lines": [
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
           1,
           null
         ]
       },
-      "/Users/student/Desktop/onedrive/makers/week8/acebook-U-JAKD/app/mailers/application_mailer.rb": {
+      "/Users/student/acebook/acebook-U-JAKD/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -79,7 +124,7 @@
         "branches": {
         }
       },
-      "/Users/student/Desktop/onedrive/makers/week8/acebook-U-JAKD/app/jobs/application_job.rb": {
+      "/Users/student/acebook/acebook-U-JAKD/app/jobs/application_job.rb": {
         "lines": [
           0,
           0
@@ -87,7 +132,7 @@
         "branches": {
         }
       },
-      "/Users/student/Desktop/onedrive/makers/week8/acebook-U-JAKD/app/channels/application_cable/connection.rb": {
+      "/Users/student/acebook/acebook-U-JAKD/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -97,7 +142,7 @@
         "branches": {
         }
       },
-      "/Users/student/Desktop/onedrive/makers/week8/acebook-U-JAKD/app/channels/application_cable/channel.rb": {
+      "/Users/student/acebook/acebook-U-JAKD/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -108,6 +153,6 @@
         }
       }
     },
-    "timestamp": 1581421208
+    "timestamp": 1581435341
   }
 }
