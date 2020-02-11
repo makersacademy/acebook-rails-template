@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
   <p><%= post.message %><br>
-  <%= "iluvcatz123" %>
-  <%= Time.now.strftime("%m/%d/%Y, %H:%M") %>
+  <%= "iluvcatz123" %><br>
+  <%= post.created_at.strftime("%m/%d/%Y, %H:%M") %>
   </p>
 <% end %>
 
