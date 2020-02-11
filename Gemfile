@@ -41,6 +41,10 @@ gem 'figaro'
 # Rake for raking
 gem 'rake'
 
+# Rubocop for ensuring the code abides by the LAW
+gem 'rubocop'
+gem 'rubocop-rails'
+
 # =======================================================
 
 group :development, :test do
