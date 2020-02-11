@@ -284,9 +284,14 @@
       "/Users/student/Desktop/Week-Challenges/acebook-catbook-inc/config/routes.rb": {
         "lines": [
           1,
+          1,
           null,
           null,
           1,
+          1,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -296,7 +301,6 @@
           null
         ]
       },
-      "/Users/student/Desktop/Week-Challenges/acebook-catbook-inc/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           1,
@@ -327,7 +331,6 @@
           null
         ]
       },
-      "/Users/student/Desktop/Week-Challenges/acebook-catbook-inc/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -344,7 +347,6 @@
           null
         ]
       },
-      "/Users/student/Desktop/Week-Challenges/acebook-catbook-inc/spec/models/post_spec.rb": {
         "lines": [
           1,
           null,
@@ -366,8 +368,32 @@
           1,
           null
         ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/models/user.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/views/welcome/index.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1581437559
+
   }
 }
