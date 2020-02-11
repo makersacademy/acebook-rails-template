@@ -1,3 +1,4 @@
+ruby '2.5.0'
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -36,6 +37,10 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem 'rubocop', require: false
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+  gem 'timecop'
 end
 
 group :development do
