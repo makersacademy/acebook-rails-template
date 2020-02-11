@@ -1,0 +1,19 @@
+<h1>User Log In</h1>
+<%= form_with scope: :session, url: sessions_path, local: true do |form| %>
+
+
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </p>
+  <p>
+    <%= form.label :password %><br>
+    <%= form.text_field :password %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+  <% end %>
+
+<%= link_to 'Homepage', welcome_index_path %>
