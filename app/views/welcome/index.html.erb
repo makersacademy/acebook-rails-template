@@ -1,9 +1,7 @@
 <h1>Welcome to AceBook<h1>
 
 <h3>Click Below to Sign Up<h3>
-<form action='/signup' method="post">
-  <input type="submit" value="Sign Up">
-</form>
+<%= button_to "Sign Up", new_user_path, method: :get %>
 
 <h3>Sign In<h3>
 <form action="/posts" method="post">
