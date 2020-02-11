@@ -1,0 +1,9 @@
+# Add enviroment variables here
+
+POSTGRES_USER: <your-username>
+POSTGRES_PASSWORD: <your-password>
+POSTGRES_HOST: <localhost>
+
+POSTGRES_DEVELOPMENT_DB: acebook_development
+POSTGRES_TEST_DB: acebook_test
+POSTGRES_DB: acebook
