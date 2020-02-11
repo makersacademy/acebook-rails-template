@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :pictures
-  resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'homepage/index'
 
+  resources :users
   resources :posts
+  
+  root 'homepage#index' 
 end
