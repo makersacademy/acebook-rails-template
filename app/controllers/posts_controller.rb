@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    p @post.created_at
     redirect_to posts_url
   end
 
@@ -13,6 +14,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def time_format
+    
+  end
 
   def post_params
     params.require(:post).permit(:message)
