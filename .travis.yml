@@ -1,11 +1,14 @@
 language: ruby
 dist: trusty
-cache:
-- bundler
+rvm:
+- 2.5.0
+services:
+- postgresql
 before_script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
-- bundle exec rake assets:precompile
+script:
+- bundle exec rspec
 deploy:
   provider: heroku
   api_key:
