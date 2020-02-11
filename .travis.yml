@@ -1,14 +1,21 @@
 language: ruby
 dist: trusty
 rvm:
-  - 2.6
-  - truffleruby
-
+- 2.6
+- truffleruby
 services:
-  - postgresql
+- postgresql
 
-script:
- — bundle install — jobs=3 — retry=3
- — bundle exec rake db:create
- — bundle exec rake db:migrate
- — bundle exec rspec
+before: 
+— bundle exec rake db:create 
+— bundle exec rake db:migrate 
+
+script: 
+— bundle install — jobs=3 — retry=3 
+
+— bundle exec rspec
+deploy:
+  provider: heroku
+  app: acebook-404
+  api_key:
+    secure: PbKNEW8UJXQWE/eESgyUUjU9VZn4zyqF/mIa7WHAK7tGUYreq8T9Xdny0aHy7mcfdt2uOKTkcpDMU02aG3E5rcs5N2HNlZ0PIqlWtwt/eZs7jqZqKJURR6KTdRujSrXjd203GQqBUmiPwfDyXV1BWcTJ4P1JWopN/Y/khhu+2uz07dW/eTmKG66OJTfXI0cLlqRkYxo8osyO5czwYbIJcrLcnFomDB2jlza8QtdGcK4sfwqUIUyTuhW0oIWzU5XSKy19TnVTn5nZhrrhfO3e71U784/Lw1slXPXzqsda5eQQasX95I+qjK+EyJFfJmmZhBnkZDhoIX6qaFn8dnrYys4cXDXFrLemouul2+rbTyLUZAgBsEryCjQ67UEt48BKFHOwcTZAawlpiTA5UlHEA2/VaUc8NXiCUYaOZBajB8m9FQ0cgwhA8TeDf3jP8oFtdFqt3DMcDhMJ9mgJjCkn4nLGFhAqW1JU6/EHhdThCUpQuInqwz5PNvTCF3V/O9dSJxka0Vxub5kmV4evm+GeixSOtp1DRG2VT9DcchB9tFRA9UQ+11vbS0ozIlrvN8BUhkYvtx1gg8Ahng2sVo/1JGPuoq8ZwgwKAJHHxnXNrTBoTXfR+NPoT1uJP3XcDasr8/c90Ruy2zkPYJXfXgjzVrbrYBPxBZX4Av9oy17FfZ4=
