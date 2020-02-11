@@ -38,6 +38,9 @@ gem 'travis'
 # Use figaro for managing environment variables
 gem 'figaro'
 
+# Rake for raking
+gem 'rake'
+
 # =======================================================
 
 
