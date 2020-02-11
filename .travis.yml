@@ -2,7 +2,6 @@ language: ruby
 dist: trusty
 rvm:
 - 2.6.0
-- truffleruby
 services:
 - postgresql
 before_script:
