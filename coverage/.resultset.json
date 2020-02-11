@@ -284,13 +284,30 @@
       "/Users/meghanmccue/projects/acebook-catbook-inc/config/routes.rb": {
         "lines": [
           1,
+          1,
           null,
           null,
           1,
+          1,
+          null,
+          1,
+          null,
           null
         ]
       },
       "/Users/meghanmccue/projects/acebook-catbook-inc/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/helpers/user_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
@@ -327,6 +344,84 @@
           null
         ]
       },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/controllers/user_controller_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/controllers/welcome_controller_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/controllers/welcome_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/features/user_can_sign_up_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/meghanmccue/projects/acebook-catbook-inc/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
           1,
@@ -339,6 +434,44 @@
           1,
           1,
           null,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/helpers/user_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/helpers/welcome_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
           null
         ]
       },
@@ -363,8 +496,32 @@
           1,
           null
         ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/models/user.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/views/welcome/index.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1581427109
+    "timestamp": 1581441908
   }
 }
