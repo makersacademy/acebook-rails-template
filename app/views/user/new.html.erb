@@ -3,30 +3,35 @@
 <%= form_for :user, :url => { :action => "create" } do |f| %>
   <p>
     <%= f.label :Username %><br>
-    <%= f.text_field :Username %>
+    <%= f.text_field :username, id: "username"%>
+  </p>
+
+   <p>
+    <%= f.label :Email %><br>
+    <%= f.text_field :email, id: "email" %>
   </p>
 
   <p>
-    <% f.label :FirstName %>First Name<br>
-    <%= f.text_field :FirstName %>
+    <%= f.label "First Name" %><br>
+    <%= f.text_field :firstname, id: "firstname" %>
   </p>
 
   <p>
-    <% f.label :LastName %>Last Name<br>
-    <%= f.text_field :LastName %>
+    <%= f.label "Last Name" %><br>
+    <%= f.text_field :lastname, id: "lastname" %>
   </p>
 
   <p>
     <%= f.label :Password %><br>
-    <%= f.text_field :Password %>
+    <%= f.text_field :password, id: "password"%>
   </p>
 
   <p>
-    <% f.label :DateOfBirth %> Date Of Birth <br>
-    <%= f.text_field :DateOfBirth %>
+    <%= f.label "Date Of Birth" %><br>
+    <%= f.date_field :dateofbirth, id: "dateofbirth", as: :date, value: f.object.try(:strftime, "%d/%m/%Y"), class: 'form-control' %>
   </p>
 
-  <p>
+  <p> 
   <%= f.submit "Create Account!" %>
   </p>
 <% end %>
