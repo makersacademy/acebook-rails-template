@@ -1,0 +1,32 @@
+<h1>Fill in the Below to Create your Account<h1>
+
+<%= form_for :user, :url => { :action => "create" } do |f| %>
+  <p>
+    <%= f.label :Username %><br>
+    <%= f.text_field :Username %>
+  </p>
+
+  <p>
+    <% f.label :FirstName %>First Name<br>
+    <%= f.text_field :FirstName %>
+  </p>
+
+  <p>
+    <% f.label :LastName %>Last Name<br>
+    <%= f.text_field :LastName %>
+  </p>
+
+  <p>
+    <%= f.label :Password %><br>
+    <%= f.text_field :Password %>
+  </p>
+
+  <p>
+    <% f.label :DateOfBirth %> Date Of Birth <br>
+    <%= f.text_field :DateOfBirth %>
+  </p>
+
+  <p>
+  <%= f.submit "Create Account!" %>
+  </p>
+<% end %>
