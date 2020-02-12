@@ -7,6 +7,12 @@
           null
         ]
       },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/helpers/sessions_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/helpers/users_helper.rb": {
         "lines": [
           1,
@@ -19,31 +25,22 @@
           null
         ]
       },
-      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/users_controller.rb": {
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
-          7,
+          1,
           null,
           null,
           1,
-          7,
-          null,
-          7,
           3,
           3,
-          null,
-          4,
-          null,
-          null,
-          null,
-          1,
-          4,
-          null,
-          null,
           1,
           1,
-          7,
+          null,
+          2,
+          2,
+          null,
           null,
           null
         ]
@@ -52,12 +49,55 @@
         "lines": [
           1,
           1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          8,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          9,
+          null,
+          null,
+          1,
+          9,
+          null,
+          9,
+          5,
+          5,
+          null,
+          4,
+          null,
+          null,
+          null,
+          1,
+          7,
+          null,
+          null,
+          1,
+          1,
+          9,
+          null,
           null
         ]
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
+          1,
+          null,
           1,
           null,
           null
@@ -160,6 +200,6 @@
         }
       }
     },
-    "timestamp": 1581504754
+    "timestamp": 1581524626
   }
 }
