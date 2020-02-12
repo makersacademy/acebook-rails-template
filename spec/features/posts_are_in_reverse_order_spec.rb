@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'posts are in reverse chronological order' do
   scenario 'user see the post in a reverse chronological order on posts homepage' do
     sign_up

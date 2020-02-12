@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def sign_up
   visit('/')
   click_link('Sign Up')
@@ -8,5 +10,5 @@ end
 
 def create_post
   fill_in 'post[message]', with: 'test message'
-  click_button 'Create Post' 
+  click_button 'Create Post'
 end
