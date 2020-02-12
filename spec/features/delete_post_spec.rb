@@ -8,7 +8,6 @@ RSpec.feature 'Timeline', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'Hello, test!'
     click_button 'Submit'
-    
     click_link 'Destroy'
     expect(page).to have_no_content('Hello, test!')
   end
