@@ -11,5 +11,5 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe PostsHelper, type: :helper do
-  pending "add some examples to (or delete)"
+  pending 'add some examples to (or delete)'
 end
