@@ -5,7 +5,12 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Forma
 SimpleCov.start 'rails' do
   add_filter '/bin/'
   add_filter '/db/'
-  add_filter '/spec/' # for rspec
+  add_filter '/spec/'
+  # below excluded until better understanding of directories gained
+  add_filter '/app/assets/'
+  add_filter '/app/channels/'
+  add_filter '/app/jobs/'
+  add_filter '/app/mailers/'
 end
 
 RSpec.configure do |config|

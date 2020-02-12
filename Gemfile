@@ -45,10 +45,9 @@ gem 'rake'
 gem 'rubocop'
 gem 'rubocop-rails'
 
-group :test do
-  gem 'simplecov', require: false
-  gem 'simplecov-console', require: false
-end
+# Gotta cover them all
+gem 'simplecov', require: false, group: :test
+gem 'simplecov-console', require: false, group: :test
 
 # =======================================================
 
