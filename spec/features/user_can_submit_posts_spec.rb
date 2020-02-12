@@ -8,9 +8,9 @@ RSpec.feature 'Timeline', type: :feature do
     click_link('Sign Up')
     fill_in 'user[email]', with: 'userone@gmail.com'
     fill_in 'user[password]', with: 'secret'
-    click_button 'Save User'
+    click_button 'Register'
     fill_in 'post[message]', with: 'Hello, world!'
-    click_button 'Create Post'
+    click_button 'Add post'
     expect(page).to have_content('Hello, world!')
   end
 end
