@@ -2,15 +2,15 @@
 
 <h2>Please Signup</h2>
 
-<%= form_with scope: :article, local: true do |form| %>
+<%= form_with scope: :users, local: true do |form| %>
   <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
   </p>
  
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.label :password %><br>
+    <%= form.text_area :password %>
   </p>
  
   <p>
