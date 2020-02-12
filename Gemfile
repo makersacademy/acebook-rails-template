@@ -3,10 +3,9 @@ ruby '2.6.5'
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -31,7 +30,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
 # =======================================================
 
 # Use Travis CI for continuous integration
@@ -43,10 +41,11 @@ gem 'figaro'
 # Rake for raking
 gem 'rake'
 
-
+# Rubocop for ensuring the code abides by the LAW
+gem 'rubocop'
+gem 'rubocop-rails'
 
 # =======================================================
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
