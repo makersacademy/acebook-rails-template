@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def index
     @posts = Post.all
   end
@@ -14,5 +13,4 @@ class PostsController < ApplicationController
     @post.save
     redirect_to posts_path
   end
-
 end
