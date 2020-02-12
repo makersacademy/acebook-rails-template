@@ -12,9 +12,14 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  # def show_post
+  #   @post = Post.find(params[:id])
+    
+  # end
+
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :time)
   end
 end

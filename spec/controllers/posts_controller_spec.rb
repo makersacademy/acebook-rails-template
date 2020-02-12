@@ -26,4 +26,9 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  # describe "GET /" do
+  #   it "test that messages is returned" do
+  #     get :
+  # end
 end
