@@ -2,7 +2,7 @@
 <%= form_with scope: :user, url: users_path, local: true do |form| %>
 
   <% if @user.errors.any? %>
-    <div id='error_explanation'>
+    <div class="alert alert-danger">
       <h2>
         <%= pluralize(@user.errors.count, 'error') %> prohibited this user from being saved:
       </h2>
@@ -17,16 +17,14 @@
 
   <p>
     <%= form.label :email %><br>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: 'form-control' %>
   </p>
   <p>
     <%= form.label :password %><br>
-    <%= form.text_field :password %>
+    <%= form.text_field :password, class: 'form-control' %>
   </p>
 
   <p>
-    <%= form.submit %>
+    <%= form.submit 'Register', class: 'btn btn-primary' %>
   </p>
   <% end %>
-
-<%= link_to 'Homepage', welcome_index_path %>

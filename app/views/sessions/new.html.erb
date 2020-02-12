@@ -1,23 +1,19 @@
 <h1>User Log In</h1>
+<div class="alert alert-danger">
 <% if alert %>
   <%= alert %>
 <% end %>
-
+</div>
 <%= form_with scope: :session, url: sessions_path, local: true do |form| %>
-
-
   <p>
     <%= form.label :email %><br>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: 'form-control' %>
   </p>
   <p>
     <%= form.label :password %><br>
-    <%= form.text_field :password %>
+    <%= form.text_field :password, class: 'form-control' %>
   </p>
-
   <p>
-    <%= form.submit %>
+    <%= form.submit 'Sign In', class: 'btn btn-primary' %>
   </p>
-  <% end %>
-
-<%= link_to 'Homepage', welcome_index_path %>
+<% end %>
