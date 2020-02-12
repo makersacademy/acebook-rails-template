@@ -5,7 +5,7 @@ RSpec.feature "User", type: :feature do
     visit "/"
     click_button "Sign Up"
     fill_in "Name", with: "Mr Meow"
-    fill_in "Username", with: "@cat123"
+    fill_in "Username", with: "cat123"
     fill_in "Email", with: "cats@cats.com"
     fill_in "Password", with: "cats"
     click_button "Submit"
