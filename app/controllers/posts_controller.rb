@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @current_user = session[:user_id]
     @posts = Post.all
   end
 
