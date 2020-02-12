@@ -3,30 +3,40 @@
     "coverage": {
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/helpers/application_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/helpers/sessions_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/helpers/users_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/helpers/welcome_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/sessions_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -47,6 +57,8 @@
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/application_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -54,7 +66,7 @@
           1,
           null,
           1,
-          8,
+          27,
           0,
           null,
           null,
@@ -64,37 +76,43 @@
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/users_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
           1,
+          13,
+          null,
+          null,
+          1,
+          13,
+          null,
+          13,
           9,
-          null,
-          null,
-          1,
           9,
-          null,
-          9,
-          5,
-          5,
           null,
           4,
           null,
           null,
           null,
           1,
-          7,
+          17,
+          17,
           null,
           null,
           1,
+          null,
           1,
-          9,
+          13,
           null,
           null
         ]
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/welcome_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -105,6 +123,8 @@
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/models/post.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
@@ -112,6 +132,8 @@
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/models/application_record.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
@@ -119,6 +141,7 @@
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/models/user.rb": {
         "lines": [
+          null,
           null,
           1,
           null,
@@ -134,72 +157,78 @@
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/posts_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          7,
+          7,
+          7,
+          null,
+          null,
           1,
           0,
           null,
           null,
           1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
+          3,
           null,
           null,
           1,
           null,
           1,
-          1,
+          7,
           null,
           null
         ]
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/mailers/application_mailer.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
+          null,
+          null,
+          null,
+          null,
+          null
         ],
         "branches": {
         }
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/jobs/application_job.rb": {
         "lines": [
-          0,
-          0
+          null,
+          null,
+          null
         ],
         "branches": {
         }
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/channels/application_cable/connection.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
+          null,
+          null,
+          null,
+          null,
+          null
         ],
         "branches": {
         }
       },
       "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/channels/application_cable/channel.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
+          null,
+          null,
+          null,
+          null,
+          null
         ],
         "branches": {
         }
       }
     },
-    "timestamp": 1581524626
+    "timestamp": 1581525484
   }
 }
