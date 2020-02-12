@@ -41,6 +41,7 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'rubocop', require: false
+  gem 'timecop'
 end
 
 group :development do
