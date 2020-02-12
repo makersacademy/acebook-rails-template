@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
+  skip_before_action :require_login, :only=>[:new, :create]
+
   def new
     @user = User.new
   end
@@ -16,9 +20,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.order(created_at: :desc)
   end
 
   private
+
   def article_params
     params.require(:user).permit(:email, :password)
   end

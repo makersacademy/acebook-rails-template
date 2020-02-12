@@ -1,8 +1,8 @@
+All Posts
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p>
+    <strong><%= post.user.email %>:</strong>
+    <%= simple_format(post.message) %>
+    <%= post.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
+  </p>
 <% end %>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-Hello
