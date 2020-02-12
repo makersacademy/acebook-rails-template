@@ -1,7 +1,12 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %><%= post.created_at.strftime(" Posted at %a %I:%M%p")%></p>
-<% end %>
-
+<h1>Posts shown below</h1>
+<p>To add a new post click link:
 <%= link_to new_post_path do %>
   New post
+<% end %>
+</p>
+<p>---------------------------------------------</p>
+<% @posts.reverse_each do |post| %>
+  <p><%= post.message %></p>
+  <p><%= post.created_at.strftime(" Posted at %a %I:%M%p") %></p>
+  <p>---------------------------------------------</p>
 <% end %>
