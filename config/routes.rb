@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :sessions
-  resources :posts, only: :index
+  resources :posts
 
   root 'welcome#index'
 end
