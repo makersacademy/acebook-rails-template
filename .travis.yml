@@ -1,6 +1,17 @@
 language: ruby
+dist: trusty
 rvm:
-- 2.0.0
-- 1.9.3
-- jruby-19mode
-- rbx-2
+- 2.5.0
+services:
+- postgresql
+before_script:
+- bundle exec rake db:test:prepare
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+script:
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: joHjBf3aJ/BNxkAh03WRXtiFoMvkdKVMSfc7oDCGgCqhzIv2qfjG8P+H3Pq8WkuhlBgy84toFcIJ6minzpctxQtqsWFBZRTHEWavx4CpHMve/1fMc2UKfsCtOssCb3rLXbK5a1N0YL7xmDMj4Q5sHHPpFvFiFTfgj9+47+K0cLrNa/zA21MDAeNo/i9VDU1ooVLJuRNJGThlvY7/+rUr3vkxG0ZfokkHOa4zseYIXB/iuP6Z+TPpmXBpqMiyAQ9tv1R7Q6nVh8qPPvTIutbQGat1WcqvqJc2A9zKResQP1qkaNrUSbKIpgAEm+JC/3wrSSaXQTgIxa+gjAk8b/JKfxx+WFDM0yrhU3+p7kp6Q+0bxxI88AOgygvUXKwf/CWPBs5cbJEomVjeg8MFzxTx6RjNaxIZWOVaePN+fzjlakfMYBl8A9F9YSYBubkkA5qGejBsa2vNB0GwP59TGdRKSJhcBNsJqhQAlv0IzmQb4QEo1RHwyhLRYWE1pPxcLN1Qsu3yAYKIns/CljsioBPRd8uxKA+HKqkOxTpcvm7IDjAHy2LCzt+THw6EMtKDNLHHCxhiiYNGYFw9VCPgYK6QbuVirmLARUevFQG4fVk/UlURbF3carky/bozN9LpQZoeRn0yJORldgi+k31YdtMyiKxy9EgazmT+o+0+GkfIaVQ=
+    develop: acebook-rails-template
