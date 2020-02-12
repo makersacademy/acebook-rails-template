@@ -1,0 +1,165 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/helpers/welcome_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          7,
+          null,
+          null,
+          1,
+          7,
+          null,
+          7,
+          3,
+          3,
+          null,
+          4,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          1,
+          7,
+          null,
+          null
+        ]
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/welcome_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/models/post.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/models/user.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/controllers/posts_controller.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/asiaellis/Projects/week-8/acebook-U-JAKD/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1581504754
+  }
+}
