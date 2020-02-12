@@ -12,6 +12,7 @@ AllCops:
     - 'config/application.rb'
     - 'db/migrate/20170526114520_create_posts.rb'
     # one below is failing due to size of line
-    # but line size 
+    # but line size
     # is needed for rspec test to function will look into
     - 'spec/features/show_post_time_spec.rb'
+    - vendor/bundle/**/*
