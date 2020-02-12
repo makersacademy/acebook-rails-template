@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './spec/web_helper.rb'
 
 feature 'user log in' do

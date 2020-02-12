@@ -2,12 +2,13 @@
   Welcome <%= @user.email %>
 </p>
 
-<% @user.posts.each do |post| %>
+<% @posts.each do |post| %>
   <p>
     <strong>Posts:</strong>
     <%= post.message %>
   </p>
 <% end %>
+
 <h2>Add a post:</h2>
 <%= form_with(model: [ @user, @user.posts.build ], local: true) do |form| %>
 
@@ -19,3 +20,5 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+<%= link_to 'home', posts_path%>
