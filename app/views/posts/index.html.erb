@@ -1,4 +1,4 @@
-<h1> Hello <%= @current_user %> </h1>
+<h1> Hello <%= session[:user_id] %> </h1>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
