@@ -1,6 +1,6 @@
 <h1>All Posts</h1>
 <% @posts.each do |post| %>
-  <div class="container p-3 my-3 border">
+  <div class="container p-3 my-3 border shadow">
     <strong><%= post.user.email %>:</strong>
     <%= simple_format(post.message) %>
     <%= post.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
