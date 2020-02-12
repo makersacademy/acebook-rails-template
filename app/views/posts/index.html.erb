@@ -1,8 +1,8 @@
 All Posts
 <% @posts.each do |post| %>
   <p>
-    <strong><%= post.user.email %>: </strong>
-    <%= post.message %> 
-      <%= post.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
+    <strong><%= post.user.email %>:</strong>
+    <%= simple_format(post.message) %>
+    <%= post.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
   </p>
 <% end %>
