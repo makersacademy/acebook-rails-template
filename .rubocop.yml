@@ -15,4 +15,5 @@ AllCops:
     # but line size
     # is needed for rspec test to function will look into
     - 'spec/features/show_post_time_spec.rb'
-    - vendor/bundle/**/*
+    - 'vendor/bundle/**/*'
+    - 'db/schema.rb'
