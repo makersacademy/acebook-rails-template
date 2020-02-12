@@ -3,6 +3,7 @@
   <%= f.label :username%><br>
   <%= f.text_field :username%><br>
   <%= f.label :password%><br>
-  <%= f.password_field :password%><br>
+  <%= f.password_field :password, placeholder: "Enter Password", :minlength => 6 %><br>
   <%= f.submit %>
 <%end%>
+
