@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
   <p><%= post.message %><br>
-  <%= "iluvcatz123" %><br>
+  <%= @current_user.username %><br>
   <%= post.created_at.strftime("%m/%d/%Y, %H:%M") %>
   </p>
 <% end %>

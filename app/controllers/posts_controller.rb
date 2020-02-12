@@ -10,6 +10,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @users = User.all
+    @current_user = @users.last
   end
 
   private
