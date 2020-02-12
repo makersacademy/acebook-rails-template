@@ -1,2 +1,8 @@
-<h1>Sessions#login</h1>
-<p>Find me in app/views/sessions/login.html.erb</p>
+<h1>Login</h1>
+<%= form_for :session do |f|%>
+  <%= f.label :email%><br>
+  <%= f.text_field :email%><br>
+  <%= f.label :password%><br>
+  <%= f.password_field :password%><br>
+  <%= f.submit "Login"%>
+<%end%>
