@@ -1,3 +1,21 @@
 <p>
   Welcome <%= @user.email %>
 </p>
+
+<% @user.posts.each do |post| %>
+  <p>
+    <strong>Posts:</strong>
+    <%= post.message %>
+  </p>
+<% end %>
+<h2>Add a post:</h2>
+<%= form_with(model: [ @user, @user.posts.build ], local: true) do |form| %>
+
+  <p>
+    <%= form.label :message %><br>
+    <%= form.text_area :message %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
