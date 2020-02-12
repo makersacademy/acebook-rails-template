@@ -1,4 +1,8 @@
 <h1>User Log In</h1>
+<% if alert %>
+  <%= alert %>
+<% end %>
+
 <%= form_with scope: :session, url: sessions_path, local: true do |form| %>
 
 
