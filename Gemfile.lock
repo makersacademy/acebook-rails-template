@@ -44,6 +44,7 @@ GEM
     arel (8.0.0)
     ast (2.4.0)
     bcrypt (3.1.13)
+    bcrypt (3.1.13-java)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.1)
@@ -163,6 +164,8 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-rspec (1.38.0)
+      rubocop (>= 0.68.1)
     ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
@@ -240,6 +243,7 @@ DEPENDENCIES
   rails (~> 5.1.1)
   rspec-rails (~> 3.5)
   rubocop
+  rubocop-rspec
   sass-rails (~> 5.0)
   selenium-webdriver
   simplecov

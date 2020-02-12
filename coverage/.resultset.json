@@ -1,6 +1,301 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/controllers/posts_controller_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/rails_helper.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/environment.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/application.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/boot.rb": {
+        "lines": [
+          1,
+          null,
+          1
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/environments/test.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/initializers/application_controller_renderer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/initializers/assets.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/initializers/backtrace_silencers.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/initializers/cookies_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          1
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/initializers/mime_types.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/initializers/wrap_parameters.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/config/routes.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/helpers/application_helper.rb": {
         "lines": [
           1,
@@ -61,6 +356,15 @@
           null
         ]
       },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/controllers/sessions_controller_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
@@ -84,6 +388,15 @@
           1,
           1,
           0,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/controllers/user_controller_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
           null,
           null
         ]
@@ -112,6 +425,22 @@
           null
         ]
       },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/controllers/welcome_controller_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
@@ -122,6 +451,146 @@
           null,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/features/create_user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/features/home_page_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/features/user_can_submit_posts_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/features/user_sign_up_page_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/helpers/sessions_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/helpers/user_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/helpers/welcome_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/models/post_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
           null
         ]
       },
@@ -139,51 +608,32 @@
           null
         ]
       },
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
       "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/models/user.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/mailers/application_mailer.rb": {
+      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/spec/views/welcome/index.html.erb_spec.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1581506905
+    "timestamp": 1581507724
   }
 }
