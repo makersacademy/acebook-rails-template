@@ -10,13 +10,10 @@
 <% end %>
 <h2>Add a post:</h2>
 <%= form_with(model: [ @user, @user.posts.build ], local: true) do |form| %>
+
   <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
+    <%= form.label :message %><br>
+    <%= form.text_area :message %>
   </p>
   <p>
     <%= form.submit %>

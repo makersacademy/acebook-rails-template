@@ -4,9 +4,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @post = @user.posts.create(post_params)
-    redirect_to article_path(@user)
+    redirect_to user_path(@user)
   end
 
   def show
