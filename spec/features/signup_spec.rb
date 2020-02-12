@@ -9,7 +9,7 @@ feature 'user can sign up' do
     click_button 'Save User'
     expect(page).to have_content('Welcome userone@gmail.com')
   end
-  
+
   scenario 'wrong email address' do
     visit('/')
     click_link('Sign Up')
