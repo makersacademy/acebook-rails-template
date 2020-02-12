@@ -1,0 +1,17 @@
+language: ruby
+dist: trusty
+rvm:
+- 2.5.0
+services:
+- postgresql
+before_script:
+- bundle exec rake db:test:prepare
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+script:
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key: 
+    secure: 
+    develop: acebook-rails-template
