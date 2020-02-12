@@ -5,3 +5,8 @@ def sign_up
   fill_in 'user[password]', with: 'password'
   click_button 'Save User'
 end
+
+def create_post
+  fill_in 'post[message]', with: 'test message'
+  click_button 'Create Post' 
+end

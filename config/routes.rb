@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   
   resources :sessions
+  resources :posts, only: :index
 
   root 'welcome#index'
 end
