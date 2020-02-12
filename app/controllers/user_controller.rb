@@ -1,4 +1,8 @@
+require 'bcrypt'
+
 class UserController < ApplicationController
+  include BCrypt
+  
   def new
   end 
 
