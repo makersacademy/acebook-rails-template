@@ -1,6 +1,19 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+
+
+  def index
+    authenticate_user
+  end
+
+  private
+
+  def authenticate_user
+    if !user_signed_in?
+      redirect_to '/'
+    end
+  end
 
   # def new
   #   @user = User.new

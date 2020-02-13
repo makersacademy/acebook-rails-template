@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    authenticate_user
     @posts = Post.all
   end
 
@@ -17,4 +18,11 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
   end
+
+  def authenticate_user
+    if !user_signed_in?
+      redirect_to '/'
+   end
+  end
+
 end

@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view posts, date, time and username" do
+    sign_up
+    
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
@@ -12,6 +14,8 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Cannot submit posts with messages over 500 characters" do
+    sign_up
+
     @long_text =  'i'*501
     @short_text = 'i'*500
     visit "/posts"
