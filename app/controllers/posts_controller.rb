@@ -6,7 +6,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    p @post.created_at
     redirect_to posts_url
   end
 
