@@ -18,8 +18,14 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
+    if @post.user_id == session[:user_id]
+      @post.destroy
+      redirect_to posts_path
+    else
+      flash.now.alert = 'Apologies, this is not your post to delete!'
+      @posts = Post.order(created_at: :desc)
+      render 'posts/index'
+    end
   end
 
   private

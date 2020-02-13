@@ -25,15 +25,28 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(session[:user_id])
+    @owner = User.find(session[:user_id])
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to user_path(@user)
+    @user = User.find(@post.user_id)
+    if @post.user_id == session[:user_id]
+      @post.destroy
+      redirect_to user_path(@owner)
+    else
+      delete_alert
+    end
   end
 
   private
 
   def article_params
     params.require(:user).permit(:email, :password)
+  end
+
+  def delete_alert
+    @post = Post.find(params[:id])
+    @user = User.find(@post.user_id)
+    flash.now.alert = 'Apologies, this is not your post to delete!'
+    @posts = @user.posts.order(created_at: :desc)
+    render 'show'
   end
 end

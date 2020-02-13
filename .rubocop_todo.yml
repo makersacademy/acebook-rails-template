@@ -14,6 +14,10 @@ AllCops:
     - 'db/schema.rb'
     - 'vendor/bundle/**/*'
 
+Metrics/AbcSize:
+  Max: 20
+
+
 Metrics/BlockLength:
   Max: 100
 
