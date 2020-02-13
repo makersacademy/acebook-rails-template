@@ -17,18 +17,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <% if current_user %>
             <li class="nav-item">
-              <%= link_to 'Home', posts_path , controller: 'posts', class: 'nav-link' %>
+              <%= link_to 'Home', home_path, class: "nav-link" %>
             </li>
-          <% else %>
-            <li class="nav-item">
-            <%= link_to 'Home', home_path, class: "nav-link" %>
-            </li>
-          <% end %>
         </ul>
         <ul class="navbar-nav navbar-right">
           <% if current_user %>
+            <li class="nav-item">
+              <span class="nav-link active"><%= current_user.email %><span>
+            <li>
             <li class="nav-item">
               <%= link_to 'Sign Out', logout_path , controller: 'sessions', method: :delete, class: 'nav-link' %>
             </li>

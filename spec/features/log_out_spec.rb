@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'log out' do
   scenario 'a signed in user can log out' do
     sign_up
