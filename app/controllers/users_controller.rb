@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   def index
     @user = User.all
   end
-  
-  def new; 
+
+  def new
     @user = User.new
   end
 
@@ -15,8 +15,9 @@ class UsersController < ApplicationController
       session[:user] = @user
       redirect_to(posts_path, notice: 'Congratulations You Have Signed Up to AceBook')
     rescue StandardError => e
-      puts e
-      if e.message.include?('Email is invalid')
+      if e.message.include?('Password')
+        notice = 'Password length incorrect, please enter a password between 6 and 10 charaters'
+      elsif e.message.include?('Email is invalid')
         notice = 'Email format invaild, please enter valid email'
       elsif e.message.include?('Email has already been taken')
         notice = 'Email already taken, please chose another'

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
   validates :email, uniqueness: true
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates_with EmailDomainValidator
+  validates :password, length: { within: 6..10 }
 end
