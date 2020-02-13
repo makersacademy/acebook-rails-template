@@ -6,6 +6,9 @@
     <strong><%= post.user.email %>:</strong>
     <%= simple_format(post.message) %>
     <%= post.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
+    <%= link_to 'Delete', user_path(post),
+    method: :delete %>
+  </p>
   </div>
 <% end %>
 <h2 class="h3 mb-3 font-weight-normal">Add a post:</h2>

@@ -8,10 +8,10 @@ Rails.application.routes.draw do
     resources :posts
   end
 
+  resources :sessions
+  resources :posts
   resources :sessions, only: [:new, :create]
-
   delete '/logout' => 'sessions#destroy'
   resources :posts, only: :index
-
   root 'welcome#index'
 end
