@@ -1,6 +1,11 @@
 <h1>
   Welcome <%= @user.email %>
 </h1>
+<% if alert %>
+      <div class="alert alert-danger">
+        <%= alert %>
+      </div>
+    <% end %>
 <% @posts.each do |post| %>
   <div class="container p-3 my-3 border shadow">
     <strong><%= post.user.email %>:</strong>
