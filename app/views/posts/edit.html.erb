@@ -1,9 +1,9 @@
 <h1>Edit message</h1>
 
-<%= form_with(modle: @post, local: true) do |form| %>
+<%= form_with(model: @post, local: true) do |form| %>
   <p>
     <%= form.label :message %><br>
-    <%= form.text_field :message, :value => "sting that works" %>
+    <%= form.text_field :message, :value => Post.find(params[:id]).message %>
   </p>
 
   <p>
@@ -11,6 +11,4 @@
   </p>
 <%end%>
 
-  <%= link_to 'Back', posts_path %>
-
-
+<%= link_to 'Back', posts_path %>
