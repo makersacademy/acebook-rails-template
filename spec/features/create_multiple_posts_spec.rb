@@ -18,6 +18,5 @@ RSpec.feature 'Users can create a post', type: :feature do
     expect(page).to have_content('Hey again')
     expect(page).to have_content(post_time)
     expect(find('table#posts td', match: :first)).to have_content('Hey again')
-
   end
 end
