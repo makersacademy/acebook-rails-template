@@ -1,0 +1,16 @@
+<h1>Edit Posts</h1>
+ 
+<%= form_with(model: @post, local: true) do |form| %>
+ 
+
+    <%= form.label :message %><br>
+    <%= form.text_field :message, :maxlength => 500, :size => 40 %>
+
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', posts_path %>
