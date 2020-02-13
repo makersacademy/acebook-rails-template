@@ -16,7 +16,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     click_button "Delete"
-    accept_alert {"Are you sure?"}
+    # accept_alert {"Are you sure?"}
     # page.driver.browser.switch_to.alert.accept
 
     expect(page).not_to have_content("Hello, world!")
