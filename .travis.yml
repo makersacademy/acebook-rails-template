@@ -6,6 +6,7 @@ rvm:
 services:
   - postgresql
 before_install:
+  - gem install selenium-webdriver
   - sudo apt-get update
   - sudo apt-get install dbus-x11
   - export DISPLAY=:99.0
