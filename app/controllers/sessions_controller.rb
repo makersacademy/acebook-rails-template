@@ -2,6 +2,7 @@
 
 class SessionsController < ApplicationController
   skip_before_action :require_login
+  skip_before_action :authenticated_user, only: :destroy
   def new; end
 
   def create
