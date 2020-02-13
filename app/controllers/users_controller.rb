@@ -23,6 +23,13 @@ class UsersController < ApplicationController
     @posts = @user.posts.order(created_at: :desc)
   end
 
+  def destroy
+    @user = User.find(session[:user_id])
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to user_path(@user)
+  end
+
   private
 
   def article_params

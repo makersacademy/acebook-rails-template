@@ -22,12 +22,18 @@
           </li>
         </ul>
         <ul class="navbar-nav navbar-right">
-          <li class="nav-item">
-            <%= link_to 'Sign Up', new_user_path, controller: 'users', class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Sign In', login_path, controller: 'sessions', class: 'nav-link' %>
-          </li>
+          <% if current_user %>
+            <li class="nav-item">
+              <%= link_to 'Sign Out', logout_path , controller: 'sessions', method: :delete, class: 'nav-link' %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to 'Sign Up', new_user_path, controller: 'users', class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Sign In', login_path, controller: 'sessions', class: 'nav-link' %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </nav>
