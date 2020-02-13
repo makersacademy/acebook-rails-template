@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
@@ -9,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    authenticate_user
     @posts = Post.all
   end
 
@@ -16,5 +19,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def authenticate_user
+    redirect_to '/' unless user_signed_in?
   end
 end
