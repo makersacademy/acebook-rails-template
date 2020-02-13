@@ -9,7 +9,13 @@ class UserController < ApplicationController
   def create
     @user = User.create(user_params)
     session[:user_id] = @user.id
-    redirect_to posts_url
+    if @user.valid?
+      redirect_to posts_url
+    else
+      flash[:alert] = "Email or Password not valid"
+      redirect_to '/'
+    end
+   
   end 
 
   private
