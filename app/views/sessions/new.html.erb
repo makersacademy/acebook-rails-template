@@ -6,12 +6,12 @@
       </div>
     <% end %>
     <%= form_with scope: :session, url: sessions_path, local: true, class: 'form-signin' do |form| %>
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in:</h1>
       <%= form.label :email %>
-      <%= form.text_field :email, placeholder: 'email', class: 'form-control' %>
+      <%= form.text_field :email, placeholder: 'example@acebook.com', class: 'form-control' %>
       <br>
       <%= form.label :password %>
-      <%= form.password_field :password, placeholder: 'password', class: 'form-control' %>
+      <%= form.password_field :password, placeholder: 'Password', class: 'form-control' %>
       <br>
       <%= form.submit 'Sign in', class: 'btn btn-lg btn-primary' %>
     <% end %>

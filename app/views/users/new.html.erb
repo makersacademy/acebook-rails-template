@@ -15,12 +15,12 @@
   </div>
   <div class="w-25">
   <%= form_with scope: :user, url: users_path, local: true do |form| %>
-    <h1 class="h3 mb-3 font-weight-normal">Create new user</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Create new user:</h1>
     <%= form.label :email %><br>
-    <%= form.text_field :email, class: 'form-control' %>
+    <%= form.text_field :email, placeholder: 'example@acebook.com', class: 'form-control' %>
     <br>
     <%= form.label :password %><br>
-    <%= form.password_field :password, class: 'form-control' %>
+    <%= form.password_field :password, placeholder: 'Password', class: 'form-control' %>
     <br>
     <%= form.submit 'Register', class: 'btn btn-lg btn-primary' %>
   <% end %>
