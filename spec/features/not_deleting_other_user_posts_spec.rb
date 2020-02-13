@@ -1,5 +1,7 @@
-feature "A user cannot delete another users post" do
-  scenario "it gives the user a prompt" do
+# frozen_string_literal: true
+
+feature 'A user cannot delete another users post' do
+  scenario 'it gives the user a prompt' do
     sign_up
     create_post
     click_link 'Sign Out'

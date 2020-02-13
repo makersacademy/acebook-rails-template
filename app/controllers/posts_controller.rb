@@ -25,12 +25,11 @@ class PostsController < ApplicationController
       @posts = Post.order(created_at: :desc)
       render 'posts/index'
     end
-  end 
+  end
 
   private
 
   def post_params
     params.require(:post).permit(:message)
   end
-  
 end

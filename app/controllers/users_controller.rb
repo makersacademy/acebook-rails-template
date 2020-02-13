@@ -31,9 +31,7 @@ class UsersController < ApplicationController
       @post.destroy
       redirect_to user_path(@owner)
     else
-      flash.now.alert = 'Apologies, this is not your post to delete!'
-      @posts = @user.posts.order(created_at: :desc)
-      render 'show' 
+      delete_alert
     end
   end
 
@@ -41,5 +39,13 @@ class UsersController < ApplicationController
 
   def article_params
     params.require(:user).permit(:email, :password)
+  end
+
+  def delete_alert
+    @post = Post.find(params[:id])
+    @user = User.find(@post.user_id)
+    flash.now.alert = 'Apologies, this is not your post to delete!'
+    @posts = @user.posts.order(created_at: :desc)
+    render 'show'
   end
 end
