@@ -12,6 +12,7 @@
 AllCops:
   Exclude:
     - 'db/schema.rb'
+    - 'vendor/bundle/**/*'
 
 Metrics/BlockLength:
   Max: 100
