@@ -26,6 +26,7 @@ Style/IfUnlessModifier:
 # Offense count: 2
 Style/MixinUsage:
   Exclude:
+    - 'db/schema.rb'
     - 'bin/setup'
     - 'bin/update'
 
