@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = current_user.posts.create(post_params)
     redirect_to posts_url
   end
 
@@ -27,7 +29,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :time)
+    params.require(:post).permit(:message, :time, :user_id)
   end
 
   def delete_params
