@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
@@ -20,9 +22,6 @@ class PostsController < ApplicationController
   end
 
   def authenticate_user
-    if !user_signed_in?
-      redirect_to '/'
-   end
+    redirect_to '/' unless user_signed_in?
   end
-
 end

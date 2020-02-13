@@ -1,7 +1,7 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-
   # before_action :authenticate_user!
-
 
   def index
     authenticate_user
@@ -10,9 +10,7 @@ class UsersController < ApplicationController
   private
 
   def authenticate_user
-    if !user_signed_in?
-      redirect_to '/'
-    end
+    redirect_to '/' unless user_signed_in?
   end
 
   # def new
@@ -34,5 +32,4 @@ class UsersController < ApplicationController
   # def post_params
   #   params.require(:user).permit(:username)
   # end
-
 end
