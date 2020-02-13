@@ -2,6 +2,7 @@
   <p><%= post.message %><br>
   <%= "iluvcatz123" %><br>
   <%= post.created_at.strftime("%m/%d/%Y, %H:%M") %>
+  <%= link_to 'Destroy', post, :method => :delete, :confirm => "Are you sure?" %>
   </p>
 <% end %>
 
