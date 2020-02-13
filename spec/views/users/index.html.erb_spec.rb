@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'users/index', type: :view do
   before(:each) do
     assign(:users, [
-             User.create!(email: 'a@a.com'),
-             User.create!(email: 'b@a.com')
+             User.create!(email: 'a@gmail.com'),
+             User.create!(email: 'b@gmail.com')
            ])
   end
 
