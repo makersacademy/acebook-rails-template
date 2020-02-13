@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    redirect_to(posts_path, notice: 'You cannot signup while logged in') if session[:user]
     @user = User.new
   end
 
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
       elsif e.message.include?('Email is invalid')
         notice = 'Email format invaild, please enter valid email'
       elsif e.message.include?('Email has already been taken')
-        notice = 'Email already taken, please chose another'
+        notice = 'Email already taken, please choose another'
       end
       redirect_to('/signup', notice: notice)
     end

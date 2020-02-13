@@ -8,17 +8,13 @@ RSpec.feature 'Users can signup to site', type: :feature do
   end
 
   scenario 'User cannot sign up with email which is already taken' do
+    User.create!(email: 'test@test.com', password: 'password').save
     visit('/')
     click_on('Signup')
     fill_in('users[email]', with: 'test@test.com')
     fill_in('users[password]', with: 'password')
     click_on('Signup')
-    visit('/')
-    click_on('Signup')
-    fill_in('users[email]', with: 'test@test.com')
-    fill_in('users[password]', with: 'password')
-    click_on('Signup')
-    expect(page).to have_content('Email already taken, please chose another')
+    expect(page).to have_content('Email already taken, please choose another')
   end
 
   scenario 'User cannot sign up with invalid email' do
