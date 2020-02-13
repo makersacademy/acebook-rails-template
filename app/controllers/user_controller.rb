@@ -1,14 +1,9 @@
 require 'bcrypt'
 
 class UserController < ApplicationController
-<<<<<<< HEAD
-  include BCrypt
-  
-=======
 
   skip_before_action :redirect_if_not_logged_in, only: [:new, :create]
 
->>>>>>> post_noGecko
   def new
     @user = User.new
   end 

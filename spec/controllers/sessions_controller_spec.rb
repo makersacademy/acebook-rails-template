@@ -2,8 +2,6 @@ require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
 
-<<<<<<< HEAD
-=======
   # describe "GET #new" do
   #   it "returns http success" do
   #     get :new
@@ -32,5 +30,4 @@ RSpec.describe SessionsController, type: :controller do
     end
   end
 
->>>>>>> post_noGecko
 end
