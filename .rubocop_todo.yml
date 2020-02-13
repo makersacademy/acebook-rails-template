@@ -9,6 +9,10 @@
 # Offense count: 2
 # Configuration parameters: CountComments, ExcludedMethods.
 # ExcludedMethods: refine
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+
 Metrics/BlockLength:
   Max: 100
 
