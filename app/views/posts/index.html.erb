@@ -1,6 +1,7 @@
 <h1> Hello <%= session[:users_id] %> </h1>
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <% @user = User.find(post.users_id) %>
+  <p><%= post.message %>  ( created on:     <%= post.created_at %> )    ( created by:     <%=@user.username%>) </p>
 <% end %>
 
 <%= link_to new_post_path do %>
