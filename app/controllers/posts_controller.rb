@@ -4,17 +4,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(message: params["post"]["message"], users_id: session[:users_id])
     redirect_to posts_url
   end
 
   def index
-    @posts = Post.all
-  end
-
-  private
-
-  def post_params
-    params.require(:post).permit(:message)
+    @current_user = session[:users_id]
+    @posts = Post.order(created_at: :desc)
   end
 end
