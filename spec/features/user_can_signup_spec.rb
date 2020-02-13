@@ -14,8 +14,8 @@ RSpec.feature 'Users can signup to site', type: :feature do
     click_on('Signup')
     visit('/')
     click_on('Signup')
-    fill_in('Email', with: 'test@test.com')
-    fill_in('Password', with: 'password')
+    fill_in('users[email]', with: 'test@test.com')
+    fill_in('users[password]', with: 'password')
     click_on('Signup')
     expect(page).to have_content('Email already taken, please chose another')
   end
