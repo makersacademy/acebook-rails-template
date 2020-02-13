@@ -14,7 +14,7 @@ class UserController < ApplicationController
     if @user.valid?
       redirect_to posts_url, notice: "You've successfully signed up!"
     else
-      flash[:alert] = "Email or Password not valid"
+      flash[:alert] = "Email or Password not valid. Password must be 6-10 characters long."
       redirect_to '/'
     end
   end 

@@ -10,7 +10,7 @@
 <% @posts.reverse.each do |post| %>
   <div>
     <p><%= post.message %></p>
-    <p><%= post.created_at %></p>
+    <p><%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
     <td><%= link_to 'Update', edit_post_path(post) %></td>
     <td><button id="delete-button"><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure' }%></button></td>
   </div>
