@@ -1,23 +1,19 @@
-<h1>User Log In</h1>
-<% if alert %>
-  <%= alert %>
-<% end %>
-
-<%= form_with scope: :session, url: sessions_path, local: true do |form| %>
-
-
-  <p>
-    <%= form.label :email %><br>
-    <%= form.text_field :email %>
-  </p>
-  <p>
-    <%= form.label :password %><br>
-    <%= form.password_field :password %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-  <% end %>
-
-<%= link_to 'Homepage', welcome_index_path %>
+<div class="text-center d-flex justify-content-center">
+  <div class="w-25">
+    <% if alert %>
+      <div class="alert alert-danger">
+        <%= alert %>
+      </div>
+    <% end %>
+    <%= form_with scope: :session, url: sessions_path, local: true, class: 'form-signin' do |form| %>
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in:</h1>
+      <%= form.label :email %>
+      <%= form.text_field :email, placeholder: 'example@acebook.com', class: 'form-control' %>
+      <br>
+      <%= form.label :password %>
+      <%= form.password_field :password, placeholder: 'Password', class: 'form-control' %>
+      <br>
+      <%= form.submit 'Sign in', class: 'btn btn-lg btn-primary' %>
+    <% end %>
+  </div>
+</div>

@@ -6,7 +6,7 @@ feature 'user can sign up' do
     click_link('Sign Up')
     fill_in 'user[email]', with: 'userone@gmail.com'
     fill_in 'user[password]', with: 'secret'
-    click_button 'Save User'
+    click_button 'Register'
     expect(page).to have_content('Welcome userone@gmail.com')
   end
 
@@ -15,15 +15,15 @@ feature 'user can sign up' do
     click_link('Sign Up')
     fill_in 'user[email]', with: 'usertwo@@gmail.com'
     fill_in 'user[password]', with: 'secret'
-    click_button 'Save User'
-    expect(page).to have_content('prohibited this user from being saved:')
+    click_button 'Register'
+    expect(page).to have_content('error encountered:')
   end
 
   scenario 'return error if no password is inserted' do
     visit('/')
     click_link('Sign Up')
     fill_in 'user[email]', with: 'userone@gmail.com'
-    click_button 'Save User'
+    click_button 'Register'
     expect(page).to have_content('error')
   end
 
@@ -32,7 +32,7 @@ feature 'user can sign up' do
     click_link('Sign Up')
     fill_in 'user[email]', with: 'userone@gmail.com'
     fill_in 'user[password]', with: 'passwordistoolong'
-    click_button('Save User')
+    click_button('Register')
     expect(page).to have_content('error')
   end
 
@@ -41,12 +41,12 @@ feature 'user can sign up' do
     click_link('Sign Up')
     fill_in 'user[email]', with: 'userone@gmail.com'
     fill_in 'user[password]', with: 'secret'
-    click_button('Save User')
-    visit('/')
+    click_button('Register')
+    click_link 'Sign Out'
     click_link('Sign Up')
     fill_in 'user[email]', with: 'userone@gmail.com'
     fill_in 'user[password]', with: 'diff'
-    click_button('Save User')
+    click_button('Register')
     expect(page).to have_content('error')
   end
 end

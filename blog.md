@@ -7,6 +7,10 @@ Today we were randomly assigned into the U-Jakd team! We first discussed when we
 
 
 # Tuesday 11th February 2020 (Asia)
+
+Today was the second day of the project and time to start Rails. We started the day learning about Rails and how to use it, attending the Rails surgery and then spending the rest of the morning working independently. We then separated into a pair and a three and divided the tasks between the us. Umberto and Jack worked on getting the user sign up and login working whilst the rest of us connected the posting to the users. Connecting the two databases proved harder than we thought, but once we generated the foreign key it all worked smoothly. 
+
+
 # Wednesday 12th February 2020 (Jack)
 
 

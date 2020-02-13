@@ -1,19 +1,15 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  def new
-    # @post = Post.new
-  end
+  def new; end
 
   def create
     @user = User.find(params[:user_id])
     @post = @user.posts.create(post_params)
     redirect_to user_path(@user)
   end
- 
-  def show
-    @post = Post.find(params[:id])
-  end
+
+  def show; end
 
   def index
     @posts = Post.order(created_at: :desc)

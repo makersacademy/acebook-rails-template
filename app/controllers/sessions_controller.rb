@@ -2,8 +2,7 @@
 
 class SessionsController < ApplicationController
   skip_before_action :require_login
-  def new
-  end
+  def new; end
 
   def create
     @user = User.find_by(email: params[:session][:email])
@@ -14,5 +13,10 @@ class SessionsController < ApplicationController
       flash.now.alert = 'Incorrect email or password'
       render 'new'
     end
+  end
+
+  def destroy
+    session.delete(:user_id)
+    redirect_to welcome_index_path
   end
 end
