@@ -4,7 +4,7 @@ feature 'log out' do
     expect(page).not_to have_content('Sign In')
     click_link 'Sign Out'
     visit('/posts')
-    expect(page).to have_current_path('/welcome/index')
+    expect(page).to have_current_path('/home')
   end
 
   scenario 'a signed out user can not log out' do

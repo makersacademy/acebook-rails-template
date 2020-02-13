@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   private
 
   def require_login
-    redirect_to welcome_index_path unless session[:user_id]
+    redirect_to home_path unless session[:user_id]
   end
 end
