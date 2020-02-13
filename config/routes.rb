@@ -1,13 +1,26 @@
 Rails.application.routes.draw do
+
   get 'posts/index'
-  get 'users/new'
+  
+  get 'posts/new', to: 'posts#new', as: 'new_post'
+  
+  get 'users/new', as: 'signup'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :posts
-  resources :users
   
+  resources :users do
+    resources :posts
+  end
 
+  resources :posts, only: [:index]
+  
+  resources :sessions, only: [:login, :login_attempt, :logout]
+
+
+  get "login", to: "sessions#login", as: 'login'
+  post "login", to: "sessions#login_attempt"
  
-  root 'users#new'
+  root 'welcome#index'
 end
