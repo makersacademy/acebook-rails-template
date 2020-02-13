@@ -20,6 +20,7 @@ Style/Documentation:
 # Cop supports --auto-correct.
 Style/IfUnlessModifier:
   Exclude:
+    - 'db/schema.rb'
     - 'spec/rails_helper.rb'
 
 # Offense count: 2
