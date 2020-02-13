@@ -17,3 +17,13 @@ AllCops:
     - 'spec/features/show_post_time_spec.rb'
     - 'vendor/bundle/**/*'
     - 'db/schema.rb'
+    - 'spec/rails_helper.rb'
+
+Layout/LineLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false

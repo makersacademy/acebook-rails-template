@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class UserController < ApplicationController
-  def index
-  end
+  def index; end
 
   def new
     @user = User.new
