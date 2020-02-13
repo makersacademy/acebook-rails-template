@@ -5,10 +5,10 @@ def sign_up
   click_link('Sign Up')
   fill_in 'user[email]', with: 'umberto@acebook.com'
   fill_in 'user[password]', with: 'password'
-  click_button 'Save User'
+  click_button 'Register'
 end
 
 def create_post
   fill_in 'post[message]', with: 'test message'
-  click_button 'Create Post'
+  click_button 'Add post'
 end

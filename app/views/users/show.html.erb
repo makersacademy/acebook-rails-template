@@ -1,25 +1,17 @@
-<p>
+<h1>
   Welcome <%= @user.email %>
-</p>
-
+</h1>
 <% @posts.each do |post| %>
-  <p>
+  <div class="container p-3 my-3 border shadow">
     <strong><%= post.user.email %>:</strong>
     <%= simple_format(post.message) %>
     <%= post.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
-  </p>
+  </div>
 <% end %>
-
-<h2>Add a post:</h2>
+<h2 class="h3 mb-3 font-weight-normal">Add a post:</h2>
 <%= form_with(model: [ @user, @user.posts.build ], local: true) do |form| %>
-
-  <p>
-    <%= form.label :message %><br>
-    <%= form.text_area :message %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  <%= form.label :message %><br>
+  <%= form.text_area :message, class: 'form-control' %>
+  <br>
+  <%= form.submit 'Add post', class: 'btn btn-lg btn-primary' %>
 <% end %>
-
-<%= link_to 'home', posts_path%>
