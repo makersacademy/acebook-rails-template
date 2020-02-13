@@ -11,14 +11,14 @@
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
       <img src="/ace-of-spades.svg" height="27" hspace="10">
-      <%= link_to 'Acebook', welcome_index_path, class: "navbar-brand" %>
+      <%= link_to 'Acebook', home_path, class: "navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to 'Home', welcome_index_path, class: "nav-link" %>
+            <%= link_to 'Home', home_path, class: "nav-link" %>
           </li>
         </ul>
         <ul class="navbar-nav navbar-right">
@@ -26,7 +26,7 @@
             <%= link_to 'Sign Up', new_user_path, controller: 'users', class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Sign In', new_session_path, controller: 'sessions', class: 'nav-link' %>
+            <%= link_to 'Sign In', login_path, controller: 'sessions', class: 'nav-link' %>
           </li>
         </ul>
       </div>
