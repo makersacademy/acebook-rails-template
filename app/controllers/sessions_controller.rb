@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email])
     if @user&.authenticate(params[:session][:password])
       session[:user_id] = @user.id
+      flash[:notice] = "Welcome back #{@user.email}"
       redirect_to @user
     else
       flash.now.alert = 'Incorrect email or password'
