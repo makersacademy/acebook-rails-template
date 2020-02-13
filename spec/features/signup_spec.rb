@@ -7,7 +7,7 @@ feature 'user can sign up' do
     fill_in 'user[email]', with: 'userone@gmail.com'
     fill_in 'user[password]', with: 'secret'
     click_button 'Register'
-    expect(page).to have_content('Welcome userone@gmail.com')
+    expect(page).to have_content('Welcome to Acebook userone@gmail.com')
   end
 
   scenario 'wrong email address' do

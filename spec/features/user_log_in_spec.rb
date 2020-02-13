@@ -10,7 +10,7 @@ feature 'user log in' do
     fill_in 'session[email]', with: 'umberto@acebook.com'
     fill_in 'session[password]', with: 'password'
     click_button 'Sign in'
-    expect(page).to have_content('Welcome umberto@acebook.com')
+    expect(page).to have_content('Welcome back umberto@acebook.com')
   end
 
   scenario 'wrong or not existing email' do
