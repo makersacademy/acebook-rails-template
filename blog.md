@@ -7,14 +7,6 @@ Today we were randomly assigned into the U-Jakd team! We first discussed when we
 
 
 # Tuesday 11th February 2020 (Asia)
-
-
-
-
-
-
-
-
 # Wednesday 12th February 2020 (Jack)
 
 

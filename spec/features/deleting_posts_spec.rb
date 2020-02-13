@@ -1,5 +1,5 @@
-feature   'user can delete posts' do 
- scenario  'user can delete posts from the homepage' do 
+feature 'user can delete posts' do 
+ scenario 'from the timeline' do 
   sign_up
   create_post
   click_link 'home'
