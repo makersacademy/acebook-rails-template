@@ -18,9 +18,14 @@ AllCops:
     - 'vendor/bundle/**/*'
     - 'db/schema.rb'
     - 'spec/rails_helper.rb'
+    - 'config/environments/production.rb'
+    - 'config/initializers/devise.rb'
+    - 'spec/features/user_must_sign_in_spec.rb'
+    - 'db/migrate/20200213100303_devise_create_users.rb'
 
-Layout/LineLength:
-  Enabled: false
+
+# Layout/LineLength:
+#   Enabled: false
 
 Style/Documentation:
   Enabled: false
