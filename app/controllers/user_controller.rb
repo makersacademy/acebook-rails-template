@@ -9,7 +9,7 @@ class UserController < ApplicationController
   def create
     @user = User.create(user_params)
     session[:user_id] = @user.id
-    redirect_to posts_url
+    # redirect_to posts_url # not to link to login
   end 
 
   private
