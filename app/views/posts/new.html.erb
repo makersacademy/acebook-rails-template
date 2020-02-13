@@ -1,6 +1,6 @@
 <h1> Hello <%= session[:users_id] %> </h1>
 <%= form_for @post do |form| %>
   <%= form.label :message %>
-  <%= form.text_field :message %>
+  <textarea cols="60" rows="10" > <%= form.text_field :message %></textarea>
   <%= form.submit "Submit" %>
 <% end %>
