@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 class UserController < ApplicationController
 
   skip_before_action :redirect_if_not_logged_in, only: [:new, :create]
@@ -15,7 +17,6 @@ class UserController < ApplicationController
       flash[:alert] = "Email or Password not valid"
       redirect_to '/'
     end
-   
   end 
 
   private
