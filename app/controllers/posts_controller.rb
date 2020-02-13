@@ -11,8 +11,12 @@ class PostsController < ApplicationController
   end
 
   def index
+    p "before"
     authenticate_user
+    p "after"
     @posts = Post.all
+    p "posts"
+    p @posts
   end
 
   private
@@ -25,3 +29,4 @@ class PostsController < ApplicationController
     redirect_to '/' unless user_signed_in?
   end
 end
+
