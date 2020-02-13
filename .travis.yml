@@ -5,9 +5,11 @@ rvm:
 services:
 - postgresql
 before_script:
+- bundle exec rubocop -a
 - bundle exec rake db:create
 - bundle exec rake db:migrate
 script:
+- bundle exec rubocop
 - bundle exec rspec
 deploy:
   provider: heroku
