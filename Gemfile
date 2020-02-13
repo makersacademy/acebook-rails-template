@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 
 # =======================================================
 
+# Keep all of our dirty secrets safe
+gem 'bcrypt'
+
 # Cleaning up the mistakes we make in testing
 gem 'database_cleaner-active_record', group: :test
 
