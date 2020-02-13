@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to posts_url, notice: "Your are Logged in!"
     else 
       flash.now[:alert] = "Email or Password not valid"
-      render "login"
+      # render "login"
     end 
   end
 
