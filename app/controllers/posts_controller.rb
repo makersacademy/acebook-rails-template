@@ -1,15 +1,25 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  def new
-    @post = Post.new
-  end
+  skip_before_action  :authenticated_user
+  def new; end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    @user = User.find(params[:user_id])
+    @post = @user.posts.create(post_params)
+    redirect_to user_path(@user)
   end
 
+  def show; end
+
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   private

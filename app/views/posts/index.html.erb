@@ -1,7 +1,11 @@
+<h1>All Posts</h1>
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
+  <div class="container p-3 my-3 border shadow">
+    <strong><%= post.user.email %>:</strong>
+    <%= simple_format(post.message) %>
+    <%= post.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
+    <%= link_to 'Delete', post_path(post),
+    method: :delete %>
+  </p>
+  </div>
 <% end %>
