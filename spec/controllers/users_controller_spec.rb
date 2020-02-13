@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
+  describe '#new' do
+    it 'redirects to posts page if signed in' do
+      get(:new, session: { user: true })
+      expect(response).to redirect_to('/posts')
+    end
+  end
   describe '#create' do
     it 'creates new user and saves to database' do
       get :new
@@ -9,6 +15,7 @@ RSpec.describe UsersController, type: :controller do
       allow(controller).to receive(:redirect_to).and_return(nil)
       subject.create
     end
+
     it 'creates new user in the database' do
       get :new
       allow(controller).to receive(:params).and_return(ActionController::Parameters.new(users: { email: 'test@email.com', password: 'password' }))
