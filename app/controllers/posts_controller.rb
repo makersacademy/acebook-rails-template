@@ -4,22 +4,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    p "user"
-    p @current_user = session[:user_id]
-    @post = Post.create(post_params)
+    @post = Post.create(message: params["post"]["message"], users_id: session[:users_id])
     redirect_to posts_url
   end
 
   def index
-    @current_user = session[:user_id]
+    @current_user = session[:users_id]
     @posts = Post.all
-  end
-
-  private
-
-  def post_params
-    p 'params'
-    p params[:id] = @current_user
-    p params.require(:post).permit(:message, :id)
   end
 end

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   
   def create
     @current_user = User.create(params.require(:user).permit(:username, :password))
-    session[:user_id] = @current_user.id
+    session[:users_id] = @current_user.id
     redirect_to '/posts/index'
   end
 end
