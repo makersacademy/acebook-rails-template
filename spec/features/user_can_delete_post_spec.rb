@@ -16,9 +16,12 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     # Capybara.using_wait_time(2000) 
-    page.accept_confirm do
-      click_button 'Delete'
-    end
+    # page.accept_confirm do
+    #   click_button 'Delete'
+    # end
+    click_button 'Delete'
+    accept_alert {"Are you sure?"}
+    sleep(2)
     
     # accept_alert {"Are you sure?"}
     # page.driver.browser.switch_to.alert.accept
