@@ -7,16 +7,14 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    @current_user = current_user
+    @post = @current_user.posts.create(post_params)
     redirect_to posts_url
   end
 
   def index
-    p "before"
     authenticate_user
-    p "after"
     @posts = Post.all
-    p "posts"
-    p @posts
   end
 
   private
