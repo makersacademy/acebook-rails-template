@@ -16,10 +16,12 @@
   </p>
   </div>
 <% end %>
-<h2 class="h3 mb-3 font-weight-normal">Add a post:</h2>
-<%= form_with(model: [ @user, @user.posts.build ], local: true) do |form| %>
-  <%= form.label :message %><br>
-  <%= form.text_area :message, class: 'form-control' %>
-  <br>
-  <%= form.submit 'Add post', class: 'btn btn-lg btn-primary' %>
+<% if @user.id == session[:user_id] %>
+  <h2 class="h3 mb-3 font-weight-normal">Add a post:</h2>
+  <%= form_with(model: [ @user, @user.posts.build ], local: true) do |form| %>
+    <%= form.label :message %><br>
+    <%= form.text_area :message, class: 'form-control' %>
+    <br>
+    <%= form.submit 'Add post', class: 'btn btn-lg btn-primary' %>
+  <% end %>
 <% end %>
