@@ -11,6 +11,7 @@ before_install:
   - sudo apt-get install dbus-x11
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
+  - sh -c 'sudo apt-add-repository -y ppa:ubuntu-sdk-team/ppa && sudo apt-get update && sudo apt-get install libqt5webkit5-dev qtdeclarative5-dev'
   - export CHROME_BIN=/usr/bin/google-chrome
   - sudo apt-get install -y libappindicator1 fonts-liberation
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
