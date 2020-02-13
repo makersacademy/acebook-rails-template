@@ -2,7 +2,7 @@
 
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :require_login
+  before_action :require_login, :authenticated_user
   helper_method :current_user
 
   def current_user
@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
   private
 
   def require_login
-    redirect_to welcome_index_path unless session[:user_id]
+    redirect_to home_path unless session[:user_id]
+  end
+
+  def authenticated_user
+    redirect_to posts_path if session[:user_id]
   end
 end

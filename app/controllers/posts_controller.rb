@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  skip_before_action  :authenticated_user
   def new; end
 
   def create
