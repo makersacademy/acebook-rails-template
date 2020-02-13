@@ -46,3 +46,6 @@ Style/Documentation:
 
 Metrics/BlockLength:
   Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false

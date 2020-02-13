@@ -1,5 +1,8 @@
+require 'database_cleaner/active_record'
 require 'simplecov'
 require 'simplecov-console'
+
+DatabaseCleaner.strategy = :transaction
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::Console])
 SimpleCov.start 'rails' do
@@ -15,6 +18,14 @@ end
 
 RSpec.configure do |config|
   # rspec-expectations config goes here.
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true

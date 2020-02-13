@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 
 # =======================================================
 
+# Cleaning up the mistakes we make in testing
+gem 'database_cleaner-active_record', group: :test
+
 # Use Travis CI for continuous integration
 gem 'travis'
 
