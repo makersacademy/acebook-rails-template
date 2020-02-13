@@ -11,6 +11,7 @@
     <p><%= post.created_at.strftime(" Posted at %a %I:%M%p") %></p>
     <p><%= link_to 'Destroy', post, :confirm => 'Are you sure?',
                                     :method => :delete %></td>
+    <p> <%= link_to 'Update', edit_post_path(post) %> </p>
     <p>---------------------------------------------</p>
   </div>
 <% end %>
