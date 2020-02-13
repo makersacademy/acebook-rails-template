@@ -1,5 +1,10 @@
 <%# <h1>Sessions#welcome</h1>
 <p>Find me in app/views/sessions/welcome.html.erb</p> %>
+<% if !!flash[:alert] %>
+  <% flash.each do |type, message| %>
+    <p><%= message %></p> <br>
+  <% end %>
+<% end %>
 
 <h1>Welcome</h1>
 
