@@ -9,10 +9,10 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to posts_url, notice: "Your are Logged in!"
-    else 
-      flash[:alert] = "Email or Password not valid"
-      render :welcome
+      redirect_to posts_url
+    # else 
+    #   flash[:alert] = "Email or Password not valid"
+    #   render :welcome
     end 
   end
 

@@ -10,7 +10,7 @@ class UserController < ApplicationController
     @user = User.create(user_params)
     session[:user_id] = @user.id
     if @user.valid?
-      redirect_to posts_url
+      redirect_to posts_url, notice: "You've successfully signed up!"
     else
       flash[:alert] = "Email or Password not valid"
       redirect_to '/'

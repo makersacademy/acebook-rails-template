@@ -1,3 +1,9 @@
+<% if !!flash[:notice] %>
+  <% flash.each do |type, message| %>
+    <p><%= message %></p> <br>
+  <% end %>
+<% end %>
+
 <h4>Welcome to Acebook you are logged in as: <%= current_user.email %></h4>
 
 <% @posts.reverse.each do |post| %>
