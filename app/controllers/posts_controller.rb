@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class PostsController < ApplicationController
   def new
     @post = Post.new
@@ -12,9 +13,24 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+    @post = Post.find(params[:id])
+
+  end
+
+  def destroy
+    Post.find(delete_params).destroy
+    # @post.destroy
+    redirect_to posts_url
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :time)
   end
-end
+
+  def delete_params
+    params.require(:id)
+  end
+end 
