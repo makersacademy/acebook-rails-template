@@ -6,6 +6,13 @@
         <%= alert %>
       </div>
     <% end %>
+  <h2 class="h3 mb-3 font-weight-normal">Add a post:</h2>
+  <%= form_with(model: [ current_user, current_user.posts.build ], local: true) do |form| %>
+    <%= form.label :message %><br>
+    <%= form.text_area :message, class: 'form-control' %>
+    <br>
+    <%= form.submit 'Add post', class: 'btn btn-lg btn-primary' %>
+  <% end %>
 <% @posts.each do |post| %>
   <div class="container p-3 my-3 border shadow">
     <strong><%= link_to "#{post.user.email}", user_path(post.user.id), controller: 'users', style: "color: black;" %>:</strong>
