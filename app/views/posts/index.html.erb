@@ -1,6 +1,8 @@
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
+  <td><%= link_to 'Update', edit_post_path(post) %></td>
+  <td><button id="delete-button"><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure' }%></button></td>
 <% end %>
 
 <%= link_to new_post_path do %>

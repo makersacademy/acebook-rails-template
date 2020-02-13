@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def new
     @post = Post.new
   end
@@ -11,6 +12,18 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+  end
+
+  def destroy
+    p "i am destroy"
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_path
+  end
+
+  def edit
+    @post = Post.find(params[:id])
   end
 
   private

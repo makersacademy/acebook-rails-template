@@ -1,20 +1,27 @@
 require 'bcrypt'
 
 class UserController < ApplicationController
+<<<<<<< HEAD
   include BCrypt
   
+=======
+
+  skip_before_action :redirect_if_not_logged_in, only: [:new, :create]
+
+>>>>>>> post_noGecko
   def new
+    @user = User.new
   end 
 
   def create
-    @user = User.new
     @user = User.create(user_params)
-    redirect_to posts_url
+    session[:user_id] = @user.id
+    # redirect_to posts_url # not to link to login
   end 
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :firstname, :lastname, :password, :dateofbirth)
+    params.require(:user).permit(:email, :password)
   end 
 end
