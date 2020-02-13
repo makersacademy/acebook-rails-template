@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def require_login
-    unless session[:user]
-      redirect_to(root_path)
-    end
+    redirect_to(root_path) unless session[:user]
   end
 end
