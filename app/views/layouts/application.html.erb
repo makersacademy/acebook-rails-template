@@ -17,9 +17,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
+            <% if current_user %>
+            <li class="nav-item">
+              <%= link_to 'Home', posts_path , controller: 'posts', class: 'nav-link' %>
+            </li>
+          <% else %>
+            <li class="nav-item">
             <%= link_to 'Home', home_path, class: "nav-link" %>
-          </li>
+            </li>
+          <% end %>
         </ul>
         <ul class="navbar-nav navbar-right">
           <% if current_user %>
