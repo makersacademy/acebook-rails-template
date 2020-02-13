@@ -15,9 +15,8 @@ RSpec.feature "Timeline", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
-    find("#delete-button").click
     # Capybara.using_wait_time(2000) 
-    # click_button "Delete"
+    click_button "Delete"
     # accept_alert {"Are you sure?"}
     # page.driver.browser.switch_to.alert.accept
 
