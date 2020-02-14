@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'Timeline', type: :feature do
@@ -11,5 +13,4 @@ RSpec.feature 'Timeline', type: :feature do
     click_button 'Update Post'
     expect(page).to have_content('Updated Text')
   end
-
 end
