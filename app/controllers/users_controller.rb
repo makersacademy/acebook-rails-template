@@ -26,14 +26,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @owner = User.find(session[:user_id])
     @post = Post.find(params[:id])
     @user = User.find(@post.user_id)
     if @post.user_id == session[:user_id]
       @post.destroy
-      redirect_to user_path(@owner)
+      redirect_to user_path(current_user)
     else
-      delete_alert
+      delete_alert(@user)
     end
   end
 
@@ -43,11 +42,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :password)
   end
 
-  def delete_alert
-    @post = Post.find(params[:id])
-    @user = User.find(@post.user_id)
+  def delete_alert(user)
     flash.now.alert = 'Apologies, this is not your post to delete!'
-    @posts = @user.posts.order(created_at: :desc)
+    @posts = user.posts.order(created_at: :desc)
     render 'show'
   end
 end
