@@ -5,6 +5,12 @@ class UsersController < ApplicationController
     authenticate_user
   end
 
+  def new
+  end
+
+  def create
+  end
+
   private
 
   def authenticate_user
