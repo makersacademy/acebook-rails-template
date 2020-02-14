@@ -2,13 +2,13 @@ require 'rails_helper'
 require 'web_helpers'
 
 RSpec.feature "Timeline", type: :feature do
-  scenario "Can view delete button" do
-    sign_up
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+  # scenario "Can view delete button" do
+  #   sign_up
+  #   click_link "New post"
+  #   fill_in "Message", with: "Hello, world!"
+  #   click_button "Submit"
 
-    expect(page).to have_button("Delete")
+  #   expect(page).to have_button("Delete")
   end
 
   # travis doesn't like the "accept_alert"
@@ -29,4 +29,4 @@ RSpec.feature "Timeline", type: :feature do
   #   expect(page).not_to have_content(Time.now.strftime("%Y-%m-%d %H:%M:%S").to_s)
   # end
 
-end
+# end

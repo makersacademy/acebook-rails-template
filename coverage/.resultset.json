@@ -34,6 +34,10 @@
         "lines": [
           0,
           null,
+          0,
+          0,
+          0,
+          null,
           0
         ],
         "branches": {
@@ -44,13 +48,17 @@
           0,
           0,
           null,
+          null,
           0,
           0,
           0,
           0,
           0,
           0,
-          0,
+          null,
+          null,
+          null,
+          null,
           0
         ],
         "branches": {
@@ -158,6 +166,10 @@
           0,
           0,
           0,
+          0,
+          0,
+          null,
+          0,
           null,
           0,
           null,
@@ -172,14 +184,6 @@
       "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/controllers/posts_controller.rb": {
         "lines": [
           0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
           0,
           null,
           0,
@@ -189,7 +193,11 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
           null,
+          0,
           0,
           0,
           null,
@@ -203,10 +211,12 @@
           0,
           0,
           0,
-          0,
+          null,
           0,
           0,
           null,
+          0,
+          0,
           0,
           0,
           0,
@@ -275,6 +285,6 @@
         }
       }
     },
-    "timestamp": 1581675354
+    "timestamp": 1581700013
   }
 }
