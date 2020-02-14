@@ -1,13 +1,15 @@
-<h1>Welcome to AceBook<h1>
+<body>
+  <h1>Welcome to AceBook<h1>
 
-<h3>Click Below to Sign Up<h3>
-<%= button_to "Sign Up", new_user_path, method: :get %>
+  <h3>Click Below to Sign Up<h3>
+  <%= button_to "Sign Up", new_user_path, method: :get %>
 
 
-<h3>Fill out the below to Sign In</h3>
-  <form action='/sessions' method="POST">
-    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-    <input type="email" name="login[email]", placeholder="email">
-    <input type="password" name="login[password]" placeholder="password">
-    <input type="submit" name="Log In" class="submit">
-  </form>
+  <h3>Fill out the below to Sign In</h3>
+    <form action='/sessions' method="POST">
+      <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+      <input type="email" name="login[email]", placeholder="email">
+      <input type="password" name="login[password]" placeholder="password">
+      <input type="submit" name="Log In" class="submit">
+    </form>
+</body>

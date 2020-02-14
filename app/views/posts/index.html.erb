@@ -1,3 +1,4 @@
+<body>
 <% if !!flash[:notice] %>
   <% flash.each do |type, message| %>
     <p><%= message %></p> <br>
@@ -5,7 +6,6 @@
 <% end %>
 
 <h4>Welcome to Acebook you are logged in as: <%= current_user.email %></h4>
-<div style="position: absolute; width:800px; margin:centre;">
   <% @posts.reverse.each do |post| %>
     <div>
       <div class="post" >
@@ -15,21 +15,21 @@
           <%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
         </small>
         <% if post.created_at > 10.minutes.ago %> 
-            <td><button class="button" id="update-button"><%= link_to 'Update', edit_post_path(post) %></button></td>
+            <td><div class="button" id="update-button"><%= button_to 'Update', edit_post_path(post) %></div></td>
         <% end %>
-        <td><button id="delete-button"><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure' }%></button></td>
+        <td><div class="button" id="delete-button"><%= button_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure' }%></div></td>
       </div>
     </div>
     <br>
     <br>
   <% end %>
-<div>
 <br>
 <br>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+</body>
 
 
 
