@@ -1,3 +1,4 @@
+require 'time'
 class PostsController < ApplicationController
   
   def new # action in the browser localhost:3000/posts/new
@@ -34,11 +35,6 @@ class PostsController < ApplicationController
     else
       render 'edit' # render the edit.html.erb view
     end
-  end
-
-  def ten_minutes_difference(updated_at) # method to allow
-    @post = Post.find(params[:id])
-    return Time.now - updated_at # says what time the post was posts
   end
 
   private
