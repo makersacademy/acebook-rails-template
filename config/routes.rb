@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :posts
+  # resources :posts
   
   resources :users do
     resources :posts
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   get "login", to: "sessions#login", as: 'login'
   post "login", to: "sessions#login_attempt"
+  get "logout", to: "sessions#logout", as: 'logout'
  
   root 'welcome#index'
 end

@@ -1,8 +1,17 @@
+<p id=”notice”><%= flash[:notice] %></p>
 <h1>Log In</h1>
+<div class='form'>
 <%= form_for :sessions do |f|%>
+<div class=”field”>
   <%= f.label :username%><br>
   <%= f.text_field :username%><br>
+</div>
+<div class=”field”>
   <%= f.label :password%><br>
   <%= f.password_field :password%><br>
+</div>
+ <div class=”actions”>
   <%= f.submit 'Log In'%>
+  </div>
 <%end%>
+</div>
