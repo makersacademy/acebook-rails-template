@@ -10,6 +10,6 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe PostsHelper, type: :helper do
-  pending 'add some examples to (or delete)'
-end
+# RSpec.describe PostsHelper, type: :helper do
+#   pending 'add some examples to (or delete)'
+# end
