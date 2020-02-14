@@ -206,14 +206,14 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    simplecov (0.18.1)
+    simplecov (0.18.2)
       docile (~> 1.1)
-      simplecov-html (~> 0.11.0)
+      simplecov-html (~> 0.11)
     simplecov-console (0.6.0)
       ansi
       simplecov
       terminal-table
-    simplecov-html (0.11.0)
+    simplecov-html (0.12.0)
     simplecov-small-badge (0.2.4)
       repo-small-badge (~> 0.2.7)
       simplecov (~> 0.17)
