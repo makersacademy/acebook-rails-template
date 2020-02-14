@@ -1,0 +1,8 @@
+<h1>Edit Posts</h1>
+ 
+<%= form_for @post do |form| %>
+  <%= form.label :message %>
+  <%= form.text_field :message, :maxlength => 500, :size => 40 %>
+
+  <%= form.submit %>
+<% end %>

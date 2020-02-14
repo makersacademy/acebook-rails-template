@@ -5,6 +5,20 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to '/posts'
+    else
+      render 'edit'
+    end
+  end
+
   def create
     @current_user = current_user
     @post = @current_user.posts.create(post_params)
@@ -32,4 +46,5 @@ class PostsController < ApplicationController
   def authenticate_user
     redirect_to '/' unless user_signed_in?
   end
+
 end
