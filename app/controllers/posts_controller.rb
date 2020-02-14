@@ -1,3 +1,4 @@
+require 'time'
 class PostsController < ApplicationController
   
   def new
@@ -32,11 +33,6 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
-  end
-
-  def ten_minutes_difference(updated_at)
-    @post = Post.find(params[:id])
-    return Time.now - updated_at
   end
 
   private
