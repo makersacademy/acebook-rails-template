@@ -25,6 +25,7 @@
     <%= post.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
     <%= link_to 'Delete', user_path(post),
     method: :delete %>
+    <%= link_to 'Edit', edit_post_path(post), controller: 'posts'%>
   </p>
 </div>
 <% end %>

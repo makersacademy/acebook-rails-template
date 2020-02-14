@@ -4,10 +4,24 @@ class PostsController < ApplicationController
   skip_before_action  :authenticated_user
   def new; end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   def create
     @user = User.find(params[:user_id])
     @post = @user.posts.create(post_params)
     redirect_back(fallback_location: home_path)
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params) && @post.user_id == session[:user_id]
+      redirect_to posts_path
+    else
+      flash.now.alert = 'Apologies, this is not your post to update!'
+      render 'edit'
+    end
   end
 
   def show; end
