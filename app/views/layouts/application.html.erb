@@ -10,12 +10,18 @@
 
   <body>
   <div class=banner>
-  <h1><a href=
-  <%= session[:user_id] ? '/posts/index' : '/'  %>
-  >
-  acebook
-  </a></h1>
-  <%= link_to 'logout', logout_path %>
+    <div class='logo'>
+      <h1><a href=
+      <%= session[:user_id] ? '/posts/index' : '/'  %>
+      >
+      acebook
+      </a></h1>
+    </div>
+    <div class='banner_items'>
+    <% if session[:user_id] %>
+      <h2><%= link_to 'logout', logout_path %></h2>
+    <%end%>
+    </div>
   </div>
     <%= yield %>
   </body>

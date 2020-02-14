@@ -16,8 +16,8 @@
     <footer class='post-footer'>
       <span>&#x1F9E1 0<span>
       <p>
-        posted at
-        <time datetime= <%= post.created_at %> ></time>
+        posted at <%= post.created_at %>
+        <time datetime='<%= post.created_at %>' ></time>
         by <a href='/users/<%= @user.id%>'><%= @user.email %>.</a>
       </p>
     </footer>
