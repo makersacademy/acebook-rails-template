@@ -15,7 +15,6 @@ class SessionsController < ApplicationController
 
     # check if user logged in
 
-
     # log in
     session[:user] = user
 

@@ -10,12 +10,12 @@ RSpec.describe SessionsController, type: :controller do
 
   describe '#create' do
     it 'redirects if entered email not found' do
-      get(:create, params: {login: {email: 'test', password: 'password'}})
+      get(:create, params: { login: { email: 'test', password: 'password' }})
       expect(response).to redirect_to(login_path)
     end
     it 'redirects if entered password is incorrect' do
       User.create!(email: 'test@test.com', password: 'password')
-      get(:create, params: {login: {email: 'test@test.com', password: 'passrd'}})
+      get(:create, params: { login: { email: 'test@test.com', password: 'passrd' }})
       expect(response).to redirect_to(login_path)
     end
   end
