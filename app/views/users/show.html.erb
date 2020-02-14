@@ -8,7 +8,7 @@
   <h2 class="h3 mb-3 font-weight-normal">Add a post:</h2>
   <%= form_with(model: [ @user, @user.posts.build ], local: true) do |form| %>
     <%= form.label :message %><br>
-    <%= form.text_area :message, class: 'form-control' %>
+    <%= form.text_area :message, class: 'form-control', required: true%>
     <br>
     <%= form.submit 'Add post', class: 'btn btn-lg btn-primary' %>
   <% end %>

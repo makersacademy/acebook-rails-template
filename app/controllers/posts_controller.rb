@@ -2,6 +2,7 @@
 
 class PostsController < ApplicationController
   skip_before_action  :authenticated_user
+
   def new; end
 
   def edit
