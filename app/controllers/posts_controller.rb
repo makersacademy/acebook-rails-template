@@ -14,7 +14,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    p "i am destroy"
     @post = Post.find(params[:id])
     @post.destroy
 
@@ -25,11 +24,22 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  private
+  def update
+    @post = Post.find(params[:id])
 
-  def time_format
-    
+    if @post.update(params[:post].permit(:message))
+      redirect_to posts_url
+    else
+      render 'edit'
+    end
   end
+
+  def ten_minutes_difference(updated_at)
+    @post = Post.find(params[:id])
+    return Time.now - updated_at
+  end
+
+  private
 
   def post_params
     params.require(:post).permit(:message)
