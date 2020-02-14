@@ -1,4 +1,4 @@
-<%= form_with(model: post, local: true) do |form| %>
+<%= form_with(scope: post, local: true) do |form| %>
   <p>
     <%= form.label :email %><br>
     <%= form.text_field :email, autofocus: true, placeholder: 'Email' %>
@@ -6,10 +6,10 @@
  
   <p>
     <%= form.label :password %><br>
-    <%= form.password_field :password, autocomplete: 'off', placeholder: 'Password' %>
+    <%= form.password_field :password, autocomplete: 'on', placeholder: 'Password' %>
   </p>
  
   <p>
-    <%= form.submit 'Signup' %>
+    <%= form.submit 'Login' %>
   </p>
 <% end %>

@@ -1,6 +1,7 @@
 require 'database_cleaner/active_record'
 require 'simplecov'
 require 'simplecov-console'
+require 'rails_helper'
 
 DatabaseCleaner.strategy = :transaction
 

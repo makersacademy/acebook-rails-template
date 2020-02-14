@@ -11,12 +11,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params = params.require(:users).permit(:email, :password)
+    user_params = params.require(:user).permit(:email, :password)
     @user = User.new(user_params)
     begin
       @user.save!
       session[:user] = @user
-      redirect_to(posts_path, notice: 'Congratulations You Have Signed Up to AceBook')
+      redirect_to(posts_path, notice: "Congratulations #{@user['email']}, You Have Signed Up to AceBook!")
     rescue StandardError => e
       if e.message.include?('Password')
         notice = 'Password length incorrect, please enter a password between 6 and 10 charaters'
