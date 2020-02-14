@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     session[:user] = user
 
     # add login record
-    Session.new(user_id: user.id).save
+    Session.new(user_id: user.id).save!
 
     # redirect to posts
     redirect_to(posts_path, notice: "Welcome back #{user.email}!")
