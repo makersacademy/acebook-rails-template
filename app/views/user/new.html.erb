@@ -1,0 +1,16 @@
+<h1>Fill in the Below to Create your Account<h1>
+
+<%= form_for :user, :url => { :action => "create" } do |f| %>
+   <p>
+    <%= f.label :Email %><br>
+    <%= f.text_field :email, id: "email" %>
+  </p>
+
+  <p>
+    <%= f.label :Password %><br>
+    <%= f.password_field :password, id: "password"%>
+  </p>
+  <p> 
+  <%= f.submit "Create Account!" %>
+  </p>
+<% end %>

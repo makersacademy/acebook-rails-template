@@ -1,3 +1,6 @@
+/* Starting Styling */
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +16,12 @@
  *= require_tree .
  *= require_self
  */
+
+ .container {
+   width: 45px
+  }
+
+  .post {
+    border: solid, blue, 2px;
+    border-width: 45px;
+  }
