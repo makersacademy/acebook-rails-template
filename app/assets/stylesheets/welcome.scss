@@ -10,7 +10,7 @@ body {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 ul {
@@ -37,10 +37,17 @@ li a:hover {
   background-color: #4267b28e;
 }
 
-.fa {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.catbook-logo {
+  display: flex;
+  float: center;
+  font-size: 100px;
+  padding: 50px;
 }
+
+// .fa {
+//   display: block;
+//   color: white;
+//   text-align: center;
+//   padding: 14px 16px;
+//   text-decoration: none;
+// }
