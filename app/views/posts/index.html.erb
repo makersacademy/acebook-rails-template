@@ -9,8 +9,9 @@
   <div id = "<%=post.id %>">
     <p><%= post.message %></p>
     <p><%= post.created_at.strftime(" Posted at %a %I:%M%p") %></p>
-    <p><%= link_to 'Destroy', post, :confirm => 'Are you sure?',
+    <p><%= link_to 'Delete', post, :confirm => 'Are you sure?',
                                     :method => :delete %></td>
+    <p> <%= link_to 'Edit', edit_post_path(post) %> </p>
     <p>---------------------------------------------</p>
   </div>
 <% end %>
