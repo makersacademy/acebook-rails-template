@@ -18,7 +18,7 @@
       <p>
         posted at
         <time datetime= <%= post.created_at %> ></time>
-        by <a href='users/<%=@user.id%>'><%= @user.email %>.</a>
+        by <a href='/users/<%= @user.id%>'><%= @user.email %>.</a>
       </p>
     </footer>
     

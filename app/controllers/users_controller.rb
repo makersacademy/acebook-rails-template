@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "You signed up successfully"
       flash[:color]= "valid"
-      redirect_to 'posts/index'
+      session[:user_id] = @user.id
+      redirect_to '/posts/index'
     else
       flash[:notice] = "Form is invalid"
       flash[:color]= "invalid"
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find_by(email: params[:email])
+
   end
 
 private
