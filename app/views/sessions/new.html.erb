@@ -1,2 +1,8 @@
-
-New.html.erb
+<h1>Login</h1>
+<%= form_tag '/login' do %>
+  <%= label_tag :email%><br>
+  <%= text_field_tag :email%><br>
+  <%= label_tag :password%><br>
+  <%= password_field_tag :password%><br>
+  <%= submit_tag "Login"%>
+<%end%>
