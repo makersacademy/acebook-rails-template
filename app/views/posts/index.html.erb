@@ -10,6 +10,7 @@
   <div>
     <div class="post" >
       <%= post.message %><br>
+      Posted by: <%= current_user.email %>
       <%= post.updated_at.strftime("%Y/%m/%d %H:%M:%S") %>
       <td><button class="button" id="update-button"><%= link_to 'Update', edit_post_path(post) %></button></td>
       <td><button id="delete-button"><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure' }%></button></td>
