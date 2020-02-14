@@ -16,3 +16,12 @@
  *= require_tree .
  *= require_self
  */
+
+ .container {
+   width: 45px
+  }
+
+  .post {
+    border: solid, blue, 2px;
+    border-width: 45px;
+  }

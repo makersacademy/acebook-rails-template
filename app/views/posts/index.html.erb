@@ -1,3 +1,6 @@
+
+<%= stylesheet_link_tag "application" %>
+
 <% if !!flash[:notice] %>
   <% flash.each do |type, message| %>
     <p><%= message %></p> <br>
@@ -5,15 +8,17 @@
 <% end %>
 
 <h4>Welcome to Acebook you are logged in as: <%= current_user.email %></h4>
-
+<div class="container">
 <% @posts.reverse.each do |post| %>
-  <div style="border:solid">
-    <li class="post" >
+ 
+    <div class="post" >
+      Posted by: <%= current_user.email%>
       <%= post.message %><br>
+      <%= User.find(post.user_id).email%><br>
       <%= post.updated_at.strftime("%Y/%m/%d %H:%M:%S") %>
       <td><button class="button" id="update-button"><%= link_to 'Update', edit_post_path(post) %></button></td>
       <td><button id="delete-button"><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure' }%></button></td>
-     </li>
+</div>
   </div>
 <% end %>
 <br>
