@@ -16,9 +16,10 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
+    if @post.update(post_params) && @post.user_id == session[:user_id]
       redirect_to posts_path
     else
+      flash.now.alert = 'Apologies, this is not your post to update!'
       render 'edit'
     end
   end
@@ -29,7 +30,6 @@ class PostsController < ApplicationController
     @posts = Post.order(created_at: :desc)
   end
 
-  
   def destroy
     @post = Post.find(params[:id])
     if @post.user_id == session[:user_id]
