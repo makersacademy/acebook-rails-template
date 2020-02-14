@@ -1,5 +1,13 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= post.message %><br>
+  Posted by <%= User.find(post.user_id).email %><br>
+  <%= post.created_at.strftime("%m/%d/%Y, %H:%M") %>
+
+  <%= link_to 'Edit', edit_post_path(post) %>
+
+  <%= link_to 'Delete', post, :method => :delete %>
+
+  </p>
 <% end %>
 
 <%= link_to new_post_path do %>
