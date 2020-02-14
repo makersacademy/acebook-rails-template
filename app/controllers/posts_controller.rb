@@ -30,6 +30,13 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_url
+  end
+
   private
 
   def post_params
@@ -39,4 +46,5 @@ class PostsController < ApplicationController
   def authenticate_user
     redirect_to '/' unless user_signed_in?
   end
+
 end
