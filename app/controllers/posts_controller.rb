@@ -1,20 +1,35 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
   end
 
   def create
-    @post = Post.create(post_params)
+    @current_user = current_user
+    @post = @current_user.posts.create(post_params)
     redirect_to posts_url
   end
 
   def index
+    authenticate_user
     @posts = Post.all
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_url
   end
 
   private
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def authenticate_user
+    redirect_to '/' unless user_signed_in?
   end
 end
