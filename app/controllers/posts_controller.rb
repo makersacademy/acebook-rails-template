@@ -5,23 +5,21 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  # def edit
-  #   @post = Post.find(params[:id])
-  # end
+  def edit
+    @post = Post.find(params[:id])
+  end
 
   def update
-    @current_user = current_user
-    @post = @current_user.posts.find(params[:id])
-   
+    @post = Post.find(params[:id])
+
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to '/posts'
     else
       render 'edit'
     end
   end
   
-  def show
-  end
+
 
   def create
     @current_user = current_user

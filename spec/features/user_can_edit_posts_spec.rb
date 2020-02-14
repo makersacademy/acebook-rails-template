@@ -7,10 +7,9 @@ RSpec.feature 'Timeline', type: :feature do
 
     visit '/posts'
     click_link 'Edit'
-    fill_in 'message', with: 'Updated Text'
-    click_button 'Save'
-    click_link 'Back'
-    expect(page).to have_content('Updated Text!')
+    fill_in 'Message', with: 'Updated Text'
+    click_button 'Update Post'
+    expect(page).to have_content('Updated Text')
   end
 
 end
