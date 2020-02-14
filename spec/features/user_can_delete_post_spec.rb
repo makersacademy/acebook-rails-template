@@ -20,8 +20,8 @@ RSpec.feature "Timeline", type: :feature do
     #   click_button 'Delete'
     # end
     first('.post').click_button 'Delete'
-    accept_alert {"Are you sure?"}
-    # page.driver.browser.switch_to.alert.accept
+    # accept_alert {"Are you sure?"}
+    page.driver.browser.switch_to.alert.accept
 
     expect(page).not_to have_content("Hello, world!")
     expect(page).not_to have_content(Time.now.strftime("%Y-%m-%d %H:%M:%S").to_s)
