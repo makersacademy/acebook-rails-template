@@ -2,7 +2,9 @@
   <h1><%= @user.email %> wall</h1>
 </div>
 <% if notice %>
-  <%= notice %>
+  <div class="alert alert-success">
+   <%= notice %>
+  </div>
 <% end %>
 <% if @user.id == session[:user_id] %>
   <h2 class="h3 mb-3 font-weight-normal">Add a post:</h2>
