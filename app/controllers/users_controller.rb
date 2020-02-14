@@ -13,9 +13,5 @@ class UsersController < ApplicationController
     user = User.find_by(username: params[:username])
   end
 
-  private
 
-  def self.is_email(email)
-    email =~ URI::MailTo::EMAIL_REGEXP
-  end
 end
