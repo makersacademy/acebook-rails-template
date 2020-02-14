@@ -7,7 +7,13 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
 
-  resources :users
+  get 'posts', to: 'posts#posts_all'
+
+
+  resources :users do
+    resources :posts
+  end
+
   resources :posts
 
   root 'homepage#index'

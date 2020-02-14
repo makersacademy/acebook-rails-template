@@ -3,9 +3,13 @@ class ApplicationController < ActionController::Base
 
   before_action :require_login
 
+
+  
   protected
 
   def require_login
     redirect_to(root_path) unless session[:user]
   end
+
+
 end
