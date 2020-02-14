@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
-  scenario "Can view delete button" do
-    visit "/posts"
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+  # scenario "Can view delete button" do
+  #   visit "/posts"
+  #   click_link "New post"
+  #   fill_in "Message", with: "Hello, world!"
+  #   click_button "Submit"
 
-    expect(page).to have_button("Delete")
-  end
+  #   expect(page).to have_button("Delete")
+  # end
 
   # travis doesn't like the "accept_alert"
   # scenario "Can delete post" do
