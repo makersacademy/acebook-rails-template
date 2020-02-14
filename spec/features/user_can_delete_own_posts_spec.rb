@@ -4,7 +4,7 @@ RSpec.feature 'Timeline', type: :feature do
   scenario 'Can submit posts and view posts, date, time and username' do
     sign_up
     new_post
-    click_link 'Destroy'
+    click_link 'Delete'
     expect(page).not_to have_content('Hello, world!')
   end
 end
