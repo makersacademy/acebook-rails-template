@@ -18,26 +18,5 @@ RSpec.describe UsersController, type: :controller do
       expect(session[:user].email).to eq('test@email.com')
       expect(session[:user].password).not_to eq(nil)
     end
-
-    it 'user cant sign up if email already taken' do
-      User.create!(email: 'test@test.com', password: 'password')
-      get(:create, params: { user: { email: 'test@test.com', password: 'password' }})
-      expect(response).to redirect_to(signup_path)
-    end
-
-    it 'user cant sign up if email invalid' do
-      get(:create, params: { user: { email: 'test@testcom', password: 'password' }})
-      expect(response).to redirect_to(signup_path)
-    end
-
-    it 'user cant sign up if password less than 6 charaters' do
-      get(:create, params: { user: { email: 'test@test.com', password: 'passq' }})
-      expect(response).to redirect_to(signup_path)
-    end
-
-    it 'user cant sign up if password more than 10 charaters' do
-      get(:create, params: { user: { email: 'test@test.com', password: 'password10c' }})
-      expect(response).to redirect_to(signup_path)
-    end
   end
 end
