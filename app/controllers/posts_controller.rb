@@ -34,10 +34,11 @@ class PostsController < ApplicationController
     end
   end
 
-  def ten_minutes_difference(updated_at)
-    @post = Post.find(params[:id])
-    return Time.now - updated_at
-  end
+  # def ten_minutes_difference
+  #   @post = Post.find(params[:id])
+  #   updated_at = 
+  #   return Time.now - updated_at
+  # end
 
   private
 
