@@ -1,9 +1,11 @@
 <p id=”notice”><%= flash[:notice] %></p>
-<h1> Hello <%= session[:users_id] %> </h1>
+<h1><%= User.find(session[:user_id]).username %>'s profile </h1>
 
 <div class='posts-body'>
 <article class='posts'>
-<% @posts.each do |post| %>
+<%
+=begin%>
+ <% @posts.each do |post| %>
   <% @user = User.find(post.users_id) %>
   <article class="post" id='<%= post.id %>'>
       <header>
@@ -21,7 +23,9 @@
   </article>
   
   
-<% end %>
+<% end %> 
+<%
+=end%>
 </article>
 </div>
 <%= link_to new_post_path do %>
