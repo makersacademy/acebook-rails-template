@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
     # log in
     session[:user] = user
-    
+
     # add login record
     Session.new(user_id: user.id).save
 
