@@ -16,7 +16,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     sleep(5) 
-    click_button 'Update'
+    first('.post').click_button 'Update'
     fill_in "Message", with: "Hello, Acebook Insane!"
     click_button 'Save Post'
 

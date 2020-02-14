@@ -3,9 +3,11 @@
 <% end %>
 
 <% @posts.reverse.each do |post| %>
-  <p><%= post.message %></p>
-  <p><%= post.updated_at %></p>
-  <td><button class="button" id="update-button"><%= link_to 'Update', edit_post_path(post) %></button></td>
-  <td><button class="button" id="delete-button"><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure' }%></button></td>
+  <li class="post" >
+    <%= post.message %><br>
+    <%= post.updated_at %><br>
+    <td><button class="button" id="update-button"><%= link_to 'Update', edit_post_path(post) %></button></td>
+    <td><button class="button" id="delete-button"><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure' }%></button></td>
+  </li>
 <% end %>
 
