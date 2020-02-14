@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   end 
 
   def redirect_if_not_logged_in
-    # redirect_to '/' unless logged_in? //not link to login
+    redirect_to '/' unless logged_in? 
   end 
 end
