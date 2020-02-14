@@ -17,10 +17,10 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if time_passed?(@post) && @post.update(post_params) && @post.user_id == session[:user_id]
+    if time_passed?(@post) && @post.update(post_params) && post_owner?(@post)
       flash.now.alert = 'Apologies, you can only update your posts within 10 minutes!'
       render 'edit'
-    elsif @post.update(post_params) && @post.user_id == session[:user_id]
+    elsif @post.update(post_params) && post_owner?(@post)
       redirect_to posts_path
     else
       flash.now.alert = 'Apologies, this is not your post to update!'
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.user_id == session[:user_id]
+    if post_owner?(@post)
       @post.destroy
       redirect_to posts_path
     else
@@ -50,6 +50,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def post_owner?(post)
+    post.user_id == session[:user_id]
   end
 
   def time_passed?(post)
