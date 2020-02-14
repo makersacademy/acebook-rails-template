@@ -2,10 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :authenticate_user, :save_login_state, :is_email
 
-  def is_email(email)
-    email =~ URI::MailTo::EMAIL_REGEXP
-  end
-
   protected 
 
   def authenticate_user

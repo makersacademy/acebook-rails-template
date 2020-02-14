@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
     
     def login_attempt
       p params
-      user = User.find_by(username: params[:sessions][:username])
+      user = User.find_by(email: params[:sessions][:email])
       if user && user.authenticate(params[:sessions][:password])
-        flash[:notice] = "Wow Welcome again, you logged in as #{user.username}"
+        flash[:notice] = "Welcome back, you are logged in as #{user.email}"
         session[:user_id] = user.id
         p user
         redirect_to('/posts/index')
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
 
     def logout
       session[:user_id] = nil
-      flash[:notice] = "Successfully logged out, fuck off"
+      flash[:notice] = "Successfully logged out"
       redirect_to :action => 'login'
     end
 

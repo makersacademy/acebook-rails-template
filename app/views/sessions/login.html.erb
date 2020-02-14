@@ -1,10 +1,12 @@
 <p id=”notice”><%= flash[:notice] %></p>
+<div>
 <h1>Log In</h1>
+</div>
 <div class='form'>
 <%= form_for :sessions do |f|%>
 <div class=”field”>
-  <%= f.label :username%><br>
-  <%= f.text_field :username%><br>
+  <%= f.label :email%><br>
+  <%= f.text_field :email%><br>
 </div>
 <div class=”field”>
   <%= f.label :password%><br>
@@ -15,3 +17,4 @@
   </div>
 <%end%>
 </div>
+

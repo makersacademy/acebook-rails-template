@@ -1,29 +1,31 @@
 <p id=”notice”><%= flash[:notice] %></p>
-<h1> Hello <%= session[:users_id] %> </h1>
+<h1> Hello <%= User.find(session[:user_id]).email %> </h1>
 
 <div class='posts-body'>
+
+<%= link_to new_post_path do %>
+  New post
+<% end %>
 <article class='posts'>
 <% @posts.each do |post| %>
   <% @user = User.find(post.users_id) %>
   <article class="post" id='<%= post.id %>'>
-      <header>
-        <p> <%= post.message %> </p>
-      </header>
-      <footer class='post-footer'>
-        <span>&#x1F9E1 0<span>
-        <p>
-          posted at
-          <time datetime= <%= post.created_at %> ></time>
-          by <a href='users/<%=@user.id%>'><%= @user.username %>.</a>
-        </p>
+    <header>
+      <p> <%= post.message %> </p>
+    </header>
+    <footer class='post-footer'>
+      <span>&#x1F9E1 0<span>
+      <p>
+        posted at
+        <time datetime= <%= post.created_at %> ></time>
+        by <a href='users/<%=@user.id%>'><%= @user.email %>.</a>
+      </p>
     </footer>
     
   </article>
   
-  
 <% end %>
 </article>
 </div>
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+
+
