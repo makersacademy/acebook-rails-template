@@ -8,10 +8,10 @@
 <% @posts.reverse_each do |post| %>
   <div id = "<%=post.id %>">
     <p><%= post.message %></p>
-    <p><%= post.created_at.strftime(" Posted at %a %I:%M%p") %></p>
+    <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p>
+     <p> By <%= post.user.email %></p>
     <p><%= link_to 'Delete', post, :confirm => 'Are you sure?',
-                                    :method => :delete %></td>
-    <p> <%= link_to 'Edit', edit_post_path(post) %> </p>
+                                    :method => :delete %> <%= link_to 'Edit', edit_post_path(post) %> </p>
     <p>---------------------------------------------</p>
   </div>
 <% end %>

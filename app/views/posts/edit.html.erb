@@ -3,12 +3,9 @@
 <%= form_with(model: @post, local: true) do |form| %>
   <p>
     <%= form.label :message %><br>
-    <%= form.text_field :message, :value => Post.find(params[:id]).message %>
+    <%= form.text_area :message, :value => Post.find(params[:id]).message, size: "30x30" %>
   </p>
 
-  <p>
-    <%= form.submit %>
-  </p>
+  <p><%= form.submit %> <%= link_to 'Back', posts_path %></p>
 <%end%>
 
-<%= link_to 'Back', posts_path %>
