@@ -20,7 +20,8 @@ class PostsController < ApplicationController
     if time_passed?(@post) && @post.update(post_params) && post_owner?(@post)
       flash.now.alert = 'Apologies, you can only update your posts within 10 minutes!'
       render 'edit'
-    elsif @post.update(post_params) && post_owner?(@post)
+    elsif post_owner?(@post)
+      @post.update(post_params)
       redirect_to posts_path
     else
       flash.now.alert = 'Apologies, this is not your post to update!'

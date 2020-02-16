@@ -21,5 +21,6 @@ feature 'User can update a post' do
     fill_in 'post[message]', with: 'updated message'
     click_button 'Update'
     expect(page).to have_content('Apologies, this is not your post to update!')
+    expect(page).not_to have_content('updated message')
   end
 end
