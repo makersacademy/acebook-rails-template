@@ -10,5 +10,6 @@ feature 'time check' do
     fill_in 'post[message]', with: 'edited message'
     click_button 'Update'
     expect(page).to have_content('Apologies, you can only update your posts within 10 minutes!')
+    expect(page).not_to have_content('edited message')
   end
 end

@@ -21,6 +21,9 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Max: 100
 
+Metrics/MethodLength:
+  Max: 15
+
 # Offense count: 17
 Style/Documentation:
   Enabled: false

@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if time_passed?(@post) && @post.update(post_params) && post_owner?(@post)
+    if time_passed?(@post) && post_owner?(@post)
       flash.now.alert = 'Apologies, you can only update your posts within 10 minutes!'
       render 'edit'
     elsif post_owner?(@post)
