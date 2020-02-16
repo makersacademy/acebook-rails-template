@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   resources :posts, only: :index
   root 'welcome#index'
+
+  get "/auth/:provider/callback" => "sessions#create_oauth"
+
 end
