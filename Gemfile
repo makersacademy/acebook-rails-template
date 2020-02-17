@@ -11,8 +11,8 @@ gem 'rubocop-rails', require: false
 
 gem 'devise'
 gem 'rubocop'
-gem 'simplecov', require: false, group: :test
-gem 'simplecov-console'
+gem 'simplecov', :require => false, group: :test
+gem 'simplecov-console', :require => false 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
