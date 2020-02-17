@@ -11,7 +11,7 @@
   <% @user = User.find(post.users_id) %>
   <article class="post" id='<%= post.id %>'>
     <header>
-      <p> <%= post.message %> </p>
+      <p class='post-message'> <%= post.message %> </p>
     </header>
     <footer class='post-footer'>
       <span>&#x1F9E1 0<span>
