@@ -9,7 +9,7 @@ RSpec.feature 'Timeline', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
-    actual_time = Post.all[0].created_at.strftime('Posted at %a %I:%M%p').to_s
-    expect(page).to have_content(actual_time)
+    time = Post.all[0].created_at.strftime('Posted on %d %B %a %I:%M%p').to_s
+    expect(page).to have_content(time)
   end
 end
