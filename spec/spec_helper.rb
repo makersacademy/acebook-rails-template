@@ -1,3 +1,22 @@
+require 'simplecov'
+require 'simplecov-console'
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+  # Want a nice code coverage website? Uncomment this next line!
+  # SimpleCov::Formatter::HTMLFormatter
+])
+SimpleCov.start do
+  add_filter '/bin/'
+  add_filter '/db/'
+  add_filter '/spec/'
+  # below excluded until better understanding of directories gained
+  add_filter '/app/assets/'
+  add_filter '/app/channels/'
+  add_filter '/app/jobs/'
+  add_filter '/app/mailers/'
+  add_filter '/app/helpers/'
+end
+
 # frozen_string_literal: true
 
 require './spec/helpers/sign_up_helper.rb'
