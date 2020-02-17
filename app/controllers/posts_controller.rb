@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def create # method to create a post
     @post = Post.create(post_params) # crud method
-    @post.user = User.first
+    @post.user_id = current_user.id
     @post.save
     redirect_to posts_url # redirect to the posts page
   end

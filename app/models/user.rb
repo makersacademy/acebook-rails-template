@@ -9,6 +9,7 @@ class User < ApplicationRecord
     :maximum => 10,
   }, :on => :create
 
+  has_many :posts, dependent: :destroy
   
   
 
