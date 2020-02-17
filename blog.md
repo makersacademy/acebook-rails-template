@@ -24,3 +24,19 @@ The meetings go smoothly, our client is happy, and nothing has to be changed to 
 This leaves us with time to implement optional functionality as the GitHub login.
 On the technical side, everything was linear, there's a ton of rails documentation and that made our journey really easy.
 There's nothing else to do, other than wait for more user stories from our new client Sophie.
+
+
+
+# Monday 17th February 2020 (Katie)
+
+
+# Tuesday 18th February 2020 (Umberto)
+
+
+# Wednesday 19th February 2020 (Asia)
+
+
+# Thursday 20th February 2020 (Jack)
+
+
+# Friday 21st February 2020 (David)
