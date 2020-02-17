@@ -16,23 +16,16 @@ class SessionsController < ApplicationController
     return redirect_to(login_path, notice: 'Login not found') unless user
     password_ok = BCrypt::Password.new(user.password) == params[:login][:password]
     return redirect_to(login_path, notice: 'Login not found') unless password_ok
-
-    # check if user logged in
-
+    
     # log in
     session[:user] = user
-
-    # add login record
-    user_session = Session.new(user_id: user.id)
-    user_session.save!
 
     # redirect to posts
     redirect_to(posts_path, notice: "Welcome back #{user.email}!")
   end
 
   def destroy
-    user_session = Session.where(user_id: session[:user]['id'], logged_out: nil)
-    user_session.update(logged_out: Time.zone.now)
+    # Log user out
     session[:user] = nil
     redirect_to(root_path, notice: 'You have been logged out')
   end

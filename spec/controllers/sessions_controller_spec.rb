@@ -7,11 +7,6 @@ RSpec.describe SessionsController, type: :controller do
   end
 
   describe '#create' do
-    it 'creates new session log and saves to database' do
-      User.create!(email: 'test@email.com', password: 'password')
-      expect_any_instance_of(Session).to receive(:save!)
-      get(:create, params: { login: { email: 'test@email.com', password: 'password' }})
-    end
     it 'it saves logged in user to session' do
       User.create!(email: 'test@email.com', password: 'password')
       get(:create, params: { login: { email: 'test@email.com', password: 'password' }})
