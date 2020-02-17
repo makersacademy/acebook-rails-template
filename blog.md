@@ -15,7 +15,7 @@ Today was the second day of the project and time to start Rails. We started the 
 
 
 # Thursday 13th February 2020 (Katie)
-
+Today was an extremely productive day with both exisiting code being refactored and improved but also lots of new features implemented. We acheived this through both pairing and mobbing when required. Because our group is working so well, we has to pace ourselves a little and really explore our code and revisit it to ensure that we did not run out of things to do! Highlights of the day include; clicking the home button shows all posts from all users, email links to individual pages/posts and a lot of functional refactoring.
 
 # Friday 14th February 2020 (Umberto)
 
