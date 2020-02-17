@@ -27,4 +27,12 @@ class SessionsController < ApplicationController
     # redirect to posts
     redirect_to(posts_path, notice: "Welcome back #{user.email}!")
   end
+
+  def destroy
+    user_session = Session.find_by(user_id: session[:user][:id], logged_out: nil)
+    user_session.update(logged_out: Time.now)
+    user_session.save!
+    session[:user] = nil
+    redirect_to(root_path, action: 'You have been logged out')
+  end
 end
