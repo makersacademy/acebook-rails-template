@@ -28,4 +28,15 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content("Posted by #{User.all.first.email}")
     expect(page).to have_content(Time.now.strftime('%m/%d/%Y, %H:%M'))
   end
+
+  scenario 'Can submit posts with line breaks' do
+    sign_up
+    visit '/posts'
+    click_link 'New post'
+    fill_in "area", with: "Hey
+    I'm a cat
+    Meow"
+    click_button 'Submit'
+    expect(page).to have_content("Hey\nI'm a cat\nMeow")
+  end
 end
