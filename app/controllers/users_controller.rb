@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    redirect_to(user_posts_path(user_id: session[:user]['id']), notice: 'You cannot signup while logged in') if session[:user]
+    redirect_to(user_posts_path(user_id: session[:user_id]), notice: 'You cannot signup while logged in') if session[:user_id]
   end
 
   def create
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     begin
       @user.save!
-      session[:user] = @user
+      session[:user_id] = @user.id
       redirect_to(posts_path, notice: "Congratulations #{@user['email']}, You Have Signed Up to AceBook!")
     rescue StandardError
       redirect_to('/signup', notice: @user.errors.messages.values[0][0])

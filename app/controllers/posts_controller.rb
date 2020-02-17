@@ -8,26 +8,26 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = User.find(session[:user]['id'])
+    # @user = User.find(session[:user]['id'])
     @post = @user.posts.new
   end
 
   def create
     post_params = params.require(:post).permit(:post_content)
-    post_params[:user_id] = session[:user]['id']
-    @post = User.find(session[:user]['id']).posts.create(post_params)
+    post_params[:user_id] = session[:user_id]
+    @post = User.find(session[:user_id]).posts.create(post_params)
     @post.save
-    redirect_to user_posts_path(session[:user]['id'])
+    redirect_to user_posts_path(session[:user_id])
   end
 
   def destroy
-    @post = User.find(session[:user]['id']).posts.find(params[:id])
+    @post = User.find(session[:user_id]).posts.find(params[:id])
     @post.destroy
-    redirect_to user_posts_path(session[:user]['id'])
+    redirect_to user_posts_path(session[:user_id])
   end
 
   def edit
-    @user = User.find(session[:user]['id'])
+    # @user = User.find(session[:user]['id'])
     @post = @user.posts.find(params[:id])
   end
 
