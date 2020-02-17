@@ -15,10 +15,16 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
-      redirect_to posts_url
+    if @post.created_at > 10.minute.ago
+      if @post.update(post_params)
+        redirect_to posts_url
+      else
+        render "edit"
+      end
     else
-      render "edit"
+      flash[:notice] = "You can only edit messages for a maximum of 10 minutes after creation."
+      flash[:color] = "invalid"
+      redirect_to posts_url
     end
   end
    
@@ -26,6 +32,14 @@ class PostsController < ApplicationController
     # @current_user = session[:users_id]
     @posts = Post.order(created_at: :desc)
   end
+
+
+def destroy
+  @post = Post.find(params[:id])
+  @post.destroy
+ 
+  redirect_to posts_url
+end
 
   private 
 

@@ -9,24 +9,11 @@ RSpec.describe SessionsController, type: :controller do
     end
   end
 
-  describe "GET #home," do
+  describe "GET #logout," do
     it "returns http success" do
-      get :home
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET #profile," do
-    it "returns http success" do
-      get :profile
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET #setting" do
-    it "returns http success" do
-      get :setting
-      expect(response).to have_http_status(:success)
+      get :logout
+      expect(response).to have_http_status(302)
+      expect(session[:user_id]).to eq(nil)
     end
   end
 
