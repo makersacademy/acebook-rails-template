@@ -15,6 +15,7 @@ We running all the files through Travis via the git hub account to make sure the
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
+We completed this project in as a group of 4 working with a combination of pair programming individual work and mobbing through the requirements laid out in our user stories. Through the 2 weeks this project took to complete we strenghtend our abillity to work in a team enviroment and built on our fundamental understanding of ruby and rails to build the app. 
 
 # Prerequisites
 There is a list of gems in the Gemfile that need to be installed to run the file so be careful to run the below command in the command line.
