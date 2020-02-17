@@ -22,5 +22,11 @@ class SessionsController < ApplicationController
   def welcome # action - links to localhost:3000/welcome
   end
 
+  def destroy
+    session[:user_id] = nil
+    flash[:success] = "You have logged out"
+    redirect_to '/'
+  end
+
 
 end
