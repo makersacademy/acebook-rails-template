@@ -19,6 +19,7 @@
         posted at <%= post.created_at %>
         <time datetime='<%= post.created_at %>' ></time>
         by <a href='/users/<%= @user.id%>'><%= @user.email %>.</a>
+        <%= link_to "Edit", edit_post_path(post)%>
       </p>
     </footer>
     

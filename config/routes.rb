@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   get 'users/new', as: 'signup'
 
-  get '/posts/:id/edit', to: 'posts#edit', as: 'post'
+  # get '/posts/:id/edit', to: 'posts#edit', as: 'post'
 
   get 'users/new'
 

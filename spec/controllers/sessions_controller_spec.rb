@@ -4,21 +4,21 @@ RSpec.describe SessionsController, type: :controller do
 
   describe "GET #login," do
     it "returns http success" do
-      get :login,
+      get :login
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #home," do
     it "returns http success" do
-      get :home,
+      get :home
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET #profile," do
     it "returns http success" do
-      get :profile,
+      get :profile
       expect(response).to have_http_status(:success)
     end
   end
