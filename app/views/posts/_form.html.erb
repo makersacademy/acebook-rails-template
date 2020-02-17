@@ -1,7 +1,7 @@
-<%= form_with(model: [ @user, @user.posts.build ], local: true) do |form| %>
+<%= form_with(model: @post, local: true) do |form| %>
 
   <p>
-    <%= form.text_field :post_content %>
+    <%= form.text_area :post_content %>
   </p>
 
 
