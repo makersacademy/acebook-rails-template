@@ -12,8 +12,10 @@
 
 <% @posts.reverse.each do |post| %>
   <div>
-    <div class="post" >
+    <div class="post">
+    <div id="postheader">
       <%= post.message.gsub(/\n/, '<br/>').html_safe %><br>
+    </div>
       <small>
         <%= User.find(post.user_id).email%><br>
         Updated <%= time_ago_in_words(post.updated_at) %> ago, <br>
