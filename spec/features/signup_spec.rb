@@ -72,4 +72,3 @@ feature 'user can sign up' do
     expect(page).to have_content('error')
   end
 end
-
