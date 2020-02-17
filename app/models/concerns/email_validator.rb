@@ -13,7 +13,7 @@ class EmailValidator < ActiveModel::Validator
   private
 
   def format(user)
-    ok = user.email.match?(EMAIL_REGEXP )
+    ok = user.email.match?(EMAIL_REGEXP)
     user.errors.add(:email, 'Email format invaild, please enter valid email') unless ok
   end
 
