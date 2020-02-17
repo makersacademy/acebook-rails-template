@@ -24,10 +24,15 @@ class PostsController < ApplicationController
       flash[:notice] = "Thats not your post to delete"
     end
     redirect_to posts_path # redirect to the posts page - localhost:3000/posts
+
   end
 
   def edit #action - localhost:3000/action
     @post = Post.find(params[:id]) # find/grab the post by its id
+    if @post.user_id != current_user.id
+      flash[:notice] = "This is not your post to update"
+      redirect_to posts_path
+    end
   end
 
   def update # CRUD method to update/edit a post
