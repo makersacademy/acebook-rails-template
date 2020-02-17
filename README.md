@@ -16,11 +16,11 @@ We running all the files through Travis via the git hub account to make sure the
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
 
-#Prerequisites
+# Prerequisites
 There is a list of gems in the Gemfile that need to be installed to run the file so be careful to run the below command in the command line.
 - bundle install 
 
-#File set up for third party use 
+# File set up for third party use 
 First, clone this repository. Then:
 ```bash
 > bundle install
@@ -33,25 +33,25 @@ First, clone this repository. Then:
 
 
 
-##Testing Criteria 
+## Testing Criteria 
 Run tests through rspec in the terminal
 - Make sure test coverage is over 90%
 - Every feature from user prospective 
 - 
 
-#Cabybara tests
+# Cabybara tests
 
 
 
 
 
 
-#Acknowledgments
+# Acknowledgments
 - Flat cap Josh
 - Normal Josh
 
 
-#Learning resource 
+# Learning resource 
 
 
 
