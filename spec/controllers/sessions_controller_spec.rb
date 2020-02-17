@@ -19,14 +19,14 @@ RSpec.describe SessionsController, type: :controller do
       expect(session[:user].email).to eq('test@email.com')
       expect(session[:user].password).not_to eq(nil)
     end
+  end
 
   describe '#destroy' do
     it 'it removes user from session' do
       User.create!(email: 'test@email.com', password: 'password')
       get(:create, params: { login: { email: 'test@email.com', password: 'password' }})
       get(:destroy)
-      expect(session[:user]).not be(nil)
+      expect(session[:user]).to be(nil)
     end
-  end
   end
 end
