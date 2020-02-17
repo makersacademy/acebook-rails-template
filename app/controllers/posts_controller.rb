@@ -23,8 +23,12 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(user_id: session[:user_id], id: params[:id])
     if @post
-      message = 'Post deleted'
-      @post.destroy
+      if @post.created_at + 600 > Time.now
+        message = 'Post deleted'
+        @post.destroy
+      else
+        message = 'Not authorized to delete this post'
+      end
     else
       message = 'Not authorized to delete this post'
     end
