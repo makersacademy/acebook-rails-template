@@ -6,10 +6,10 @@ RSpec.feature 'Posts', type: :feature do
 
     visit '/posts'
     click_link 'New post'
-    fill_in 'Message', with: 'Meow one'
+    fill_in "area", with: 'Meow one'
     click_button 'Submit'
     click_link 'New post'
-    fill_in 'Message', with: 'Meow two'
+    fill_in "area", with: 'Meow two'
     click_button 'Submit'
     expect(page).to have_content("
     Meow two

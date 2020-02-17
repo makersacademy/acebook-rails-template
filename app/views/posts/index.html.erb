@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %><br>
+  <p><%= simple_format(post.message, {}, wrapper_tag: "br") %>
   Posted by <%= User.find(post.user_id).email %><br>
   <%= post.created_at.strftime("%m/%d/%Y, %H:%M") %>
 
