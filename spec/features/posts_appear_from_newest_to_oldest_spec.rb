@@ -12,12 +12,14 @@ RSpec.feature 'Posts', type: :feature do
     fill_in "area", with: 'Meow two'
     click_button 'Submit'
     expect(page).to have_content("
+    cats@cats.com 
+    #{Time.now.strftime('%m/%d/%Y, %H:%M')}
+    Edit Delete
     Meow two
-    Posted by cats@cats.com
-    #{Time.now.strftime('%m/%d/%Y, %H:%M')} Edit Delete
-    
-    Meow one
-    Posted by cats@cats.com
-    #{Time.now.strftime('%m/%d/%Y, %H:%M')} Edit Delete")
+     
+    cats@cats.com 
+    #{Time.now.strftime('%m/%d/%Y, %H:%M')} 
+    Edit Delete
+    Meow one")
   end
 end
