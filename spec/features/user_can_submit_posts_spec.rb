@@ -8,7 +8,7 @@ RSpec.feature 'Timeline', type: :feature do
 
     visit '/posts'
     click_link 'New post'
-    fill_in 'Message', with: 'Hello, world!'
+    fill_in "area", with: 'Hello, world!'
     click_button 'Submit'
     expect(page).to have_content('Hello, world!')
     expect(page).to have_content("Posted by #{User.all.first.email}")
@@ -22,7 +22,7 @@ RSpec.feature 'Timeline', type: :feature do
     @short_text = 'i' * 500
     visit '/posts'
     click_link 'New post'
-    fill_in 'Message', with: @long_text
+    fill_in "area", with: @long_text
     click_button 'Submit'
     expect(page).to have_content(@short_text)
     expect(page).to have_content("Posted by #{User.all.first.email}")
