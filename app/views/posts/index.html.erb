@@ -7,7 +7,7 @@
 <p>---------------------------------------------</p>
 <% @posts.reverse_each do |post| %>
   <div id = "<%=post.id %>">
-    <p><%= post.message %></p>
+    <p><%= simple_format(post.message.gsub(/\n/, '<br/>')) %></p>
     <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p>
      <p> By <%= post.user.email %></p>
     <p>
