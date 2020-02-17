@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.feature 'Users can create a post', type: :feature do
   scenario 'User creates a second post' do
     visit('/')
@@ -16,7 +14,7 @@ RSpec.feature 'Users can create a post', type: :feature do
     post_time = Post.all[1].created_at
     expect(page).to have_content('Hey there')
     expect(page).to have_content('Hey again')
-    expect(page).to have_content(post_time)
+    expect(page).to have_content(post_time.to_s(:rfc822)[17..21])
     expect(find('table#posts td', match: :first)).to have_content('Hey again')
   end
 end

@@ -13,30 +13,20 @@ gem 'rails', '~> 5.1.1'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+# boostrap to help....with the CSS
+gem 'bootstrap-sass', '~> 3.3.6'
+# Lets use jQuery!!!!
+gem 'jquery-rails'
+gem 'sassc-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 # =======================================================
 
 # Keep all of our dirty secrets safe
 gem 'bcrypt'
-
-# Cleaning up the mistakes we make in testing
-gem 'database_cleaner-active_record', group: :test
 
 # Use Travis CI for continuous integration
 gem 'travis'
@@ -47,24 +37,11 @@ gem 'figaro'
 # Rake for raking
 gem 'rake'
 
-# Rubocop for ensuring the code abides by the LAW
-gem 'rubocop'
-gem 'rubocop-rails'
-
-# Gotta cover them all
-gem 'simplecov', require: false, group: :test
-gem 'simplecov-console', require: false, group: :test
-gem 'simplecov-small-badge', require: false
-
 # =======================================================
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-  gem 'rspec-rails', '~> 3.5'
+group :test do
+  # Cleaning up the mistakes we make in testing
+  gem 'database_cleaner-active_record'
 end
 
 group :development do
@@ -73,5 +50,31 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.5'
+
+  # For super snappy tests and loads - DO NOT INSTALL ON PRODUCTION
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'spring-commands-rubocop'
+
+  # Gotta cover them all
+  gem 'simplecov'
+  gem 'simplecov-console'
+  gem 'simplecov-small-badge'
+
+  # Rubocop for ensuring the code abides by the LAW
+  gem 'rubocop'
+  gem 'rubocop-rails'
+end
+
+group :production do
+  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+end

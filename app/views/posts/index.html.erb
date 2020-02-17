@@ -11,7 +11,7 @@
     <% @user.posts.reverse.each do |post| %>
       <tr>
         <td><%=post.post_content%></td>
-        <td><%=post.created_at%></td>
+          <td><%=post.created_at.to_s(:rfc822)[17..21]%>  <%=post.created_at.to_s(:rfc822)[0..2]%> <%=post.created_at.to_s(:rfc822)[4..15]%></td>
         <td><%=User.find(post.user_id).email%></td>
         <td><%= link_to 'Edit', edit_user_post_path(@user, post) %></td>
         <td><%= link_to 'Delete', post, method: :delete %></td>
