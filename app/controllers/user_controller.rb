@@ -17,7 +17,7 @@ class UserController < ApplicationController
       redirect_to posts_url, notice: "You've successfully signed up!" # redirect to localhost:3000/posts and show a pop-up message
     else # otherwise show another pop-up message 
       "i'm in else"
-      flash[:alert] = "Email or Password not valid. Password must be 6-10 characters long."
+      redirect_to '/', alert: "Email or Password not valid. Password must be 6-10 characters long."
     end 
     p "leaving method"
     #redirect_to '/' 

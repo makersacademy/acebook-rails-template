@@ -1,8 +1,18 @@
-<h1>Login</h1>
-<%= form_tag '/login' do %>
-  <%= label_tag :email%><br>
-  <%= text_field_tag :email%><br>
-  <%= label_tag :password%><br>
-  <%= password_field_tag :password%><br>
-  <button class="log-in-button"><%= submit_tag "Login"%></button>
-<%end%>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>🦁 Acebook</title>
+  </head>
+
+  <body>
+    <h1>Login</h1>
+    <%= form_tag '/login' do %>
+      <%= label_tag :email%><br>
+      <%= text_field_tag :email%><br>
+      <%= label_tag :password%><br>
+      <%= password_field_tag :password%><br>
+      <button class="log-in-button"><%= submit_tag "Login"%></button>
+    <%end%>
+
+  </body>
+</html>
