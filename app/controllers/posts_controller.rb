@@ -32,15 +32,10 @@ class PostsController < ApplicationController
 
   def update # CRUD method to update/edit a post
     @post = Post.find(params[:id])  # find /grab the method by its id
-    if @post.user_id == current_user.id
-      if @post.update(params[:post].permit(:message))
-        redirect_to posts_url # redirect to localhost:3000/posts
-      else
-        render 'edit' # render the edit.html.erb view
-      end
-    else 
-      redirect_to posts_url
-      flash[:notice] = "This is not your post to update"
+    if @post.update(params[:post].permit(:message))
+      redirect_to posts_url # redirect to localhost:3000/posts
+    else
+      render 'edit' # render the edit.html.erb view
     end
   end
 

@@ -36,7 +36,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can’t delete other users post" do
     post
     sign_up
-    click_button(“Delete”)
+    click_button("Delete")
     expect(page).to have_content("Thats not your post to delete")
   end
 
