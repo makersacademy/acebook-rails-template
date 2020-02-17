@@ -16,6 +16,8 @@ class UsersController < ApplicationController
     begin
       @user.save!
       session[:user] = @user
+      user_session = Session.new(user_id: @user.id)
+      user_session.save!
       redirect_to(posts_path, notice: "Congratulations #{@user['email']}, You Have Signed Up to AceBook!")
     rescue StandardError
       redirect_to('/signup', notice: @user.errors.messages.values[0][0])
