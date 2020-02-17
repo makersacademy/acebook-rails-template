@@ -1,5 +1,7 @@
 <%= form_with(model: @post, local: true) do |form| %>
 
+<p id="notice"><%= notice %></p>
+
   <p>
     <%= form.text_area :post_content %>
   </p>

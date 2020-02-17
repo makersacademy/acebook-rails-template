@@ -14,7 +14,7 @@ RSpec.feature 'Users can edit a post that has been created', type: :feature do
     click_on 'Edit'
     fill_in 'post[post_content]', with: 'Hey there'
     click_on 'Update Post'
-    expect(page).to have_content('Post was successfully updated.')
+    expect(page).to have_content('Post was successfully updated')
     click_on 'Back'
     expect(page).to have_content('Hey there')
   end

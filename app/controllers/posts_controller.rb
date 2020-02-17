@@ -21,20 +21,30 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = User.find(session[:user_id]).posts.find(params[:id])
-    @post.destroy
-    redirect_to user_posts_path(session[:user_id])
+    @post = Post.find_by(user_id: session[:user_id], id: params[:id])
+    if @post
+      message = 'Post deleted'
+      @post.destroy
+    else
+      message = 'Not authorized to delete this post'
+    end
+    redirect_to(user_posts_path(session[:user_id]), notice: message)
   end
 
   def edit
-    # @user = User.find(session[:user]['id'])
-    @post = @user.posts.find(params[:id])
+    @post = Post.find_by(user_id: session[:user_id], id: params[:id])
+    redirect_to(user_posts_path(session[:user_id]), notice: 'Not authorized to update this post') unless @post
   end
 
   def update
-    @post = Post.find(params[:id])
-    @post.update(post_params)
-    redirect_to(@post, notice: 'Post was successfully updated.')
+    @post = Post.find_by(user_id: session[:user_id], id: params[:id])
+    if @post
+      message = 'Post was successfully updated'
+      @post.update(post_params)
+    else
+      message = 'Not authorized to update this post'
+    end
+    redirect_to(@post, notice: message)
   end
 
   private
