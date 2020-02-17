@@ -13,7 +13,7 @@ RSpec.feature 'Timeline', type: :feature do
     new_post
     visit '/'
     click_link 'Logout'
-    sign_up_two 
+    sign_up_two
     visit '/posts'
     click_link 'Delete'
     expect(page).to have_content('Sorry you cannot delete another User\'s posts')
