@@ -42,10 +42,6 @@ Run tests through rspec in the terminal
 # Cabybara tests
 
 
-
-
-
-
 # Acknowledgments
 - Flat cap Josh
 - Normal Josh
@@ -53,9 +49,9 @@ Run tests through rspec in the terminal
 
 # Learning resource 
 
-
-
-
+https://stackoverflow.com/
+Rails documentation > https://guides.rubyonrails.org/
+Multiple coaches at Makers Academy
 
 
 
