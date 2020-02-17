@@ -5,8 +5,5 @@ RSpec.feature "HomePage", type: :feature do
     visit "/"
      expect(page).to have_button("Sign Up")
      expect(page).to have_button("Login")
-    # expect(page).to have_field("username")
-    # expect(page).to have_field("password")
-    # expect(page).to have_selector(:link_or_button, "Sign In")
    end
 end 
