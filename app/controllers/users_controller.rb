@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    redirect_to(posts_path, notice: 'You cannot signup while logged in') if session[:user]
+    redirect_to(user_posts_path(user_id: session[:user]['id']), notice: 'You cannot signup while logged in') if session[:user]
     @user = User.new
   end
 
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     begin
       @user.save!
       session[:user] = @user
-      redirect_to(posts_path, notice: "Congratulations #{@user['email']}, You Have Signed Up to AceBook!")
+      redirect_to(user_posts_path(user_id: session[:user]['id']), notice: "Congratulations #{@user['email']}, You Have Signed Up to AceBook!")
     rescue StandardError => e
       if e.message.include?('Password')
         notice = 'Password length incorrect, please enter a password between 6 and 10 charaters'
