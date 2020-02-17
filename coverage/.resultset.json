@@ -1,6 +1,7 @@
 {
   "RSpec": {
     "coverage": {
+
       "/Users/student/Projects/acebook-inSANE/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           null,
@@ -661,6 +662,7 @@
           null
         ]
       },
+
       "/Users/student/Projects/acebook-inSANE/spec/features/user_logout_spec.rb": {
         "lines": [
           1,
@@ -674,6 +676,7 @@
           null
         ]
       },
+
       "/Users/student/Projects/acebook-inSANE/spec/helpers/sessions_helper_spec.rb": {
         "lines": [
           1,
@@ -693,6 +696,7 @@
           null
         ]
       },
+
       "/Users/student/Projects/acebook-inSANE/spec/helpers/user_helper_spec.rb": {
         "lines": [
           1,
@@ -712,6 +716,7 @@
           null
         ]
       },
+
       "/Users/student/Projects/acebook-inSANE/spec/helpers/welcome_helper_spec.rb": {
         "lines": [
           1,
@@ -721,6 +726,7 @@
           null,
           null,
           null,
+          0,
           null,
           null,
           null,
@@ -731,6 +737,7 @@
           null
         ]
       },
+
       "/Users/student/Projects/acebook-inSANE/spec/models/post_spec.rb": {
         "lines": [
           1,
@@ -740,6 +747,7 @@
           null
         ]
       },
+
       "/Users/student/Projects/acebook-inSANE/app/models/post.rb": {
         "lines": [
           1,
@@ -787,6 +795,7 @@
           null
         ]
       },
+
       "/Users/student/Projects/acebook-inSANE/spec/views/sessions/create.html.erb_spec.rb": {
         "lines": [
           1,
@@ -796,6 +805,7 @@
           null
         ]
       },
+
       "/Users/student/Projects/acebook-inSANE/spec/views/sessions/login.html.erb_spec.rb": {
         "lines": [
           1,
@@ -832,6 +842,7 @@
           null
         ]
       },
+
       "/Users/student/Projects/acebook-inSANE/app/controllers/posts_controller.rb": {
         "lines": [
           1,

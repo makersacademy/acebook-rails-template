@@ -18,8 +18,11 @@ class PostsController < ApplicationController
 
   def destroy # CRUD method to delete post
     @post = Post.find(params[:id]) # find the post by its id
-    @post.destroy  # delete the id
-
+    if @post.user_id == current_user
+      @post.destroy  # delete the id
+    else
+      flash[:notice] = "Thats not your post to delete"
+    end
     redirect_to posts_path # redirect to the posts page - localhost:3000/posts
   end
 
@@ -29,7 +32,6 @@ class PostsController < ApplicationController
 
   def update # CRUD method to update/edit a post
     @post = Post.find(params[:id])  # find /grab the method by its id
-
     if @post.update(params[:post].permit(:message))
       redirect_to posts_url # redirect to localhost:3000/posts
     else

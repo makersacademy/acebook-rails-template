@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang='en'>
   <head>
@@ -17,32 +18,29 @@
     <%= link_to new_post_path do %>
       New post
     <% end %>
-
-    <% @posts.reverse.each do |post| %>
-    <div>
-      <div class="post">
-      <div id="postheader">
-        <%= post.message.gsub(/\n/, '<br/>').html_safe %><br>
+<% @posts.reverse.each do |post| %>
+  <div>
+    <div class="post" >
+      <%= post.message %><br>
+      <small>
+        <%= User.find(post.user_id).email%><br>
+        Updated <%= time_ago_in_words(post.updated_at) %> ago, <br>
+        <%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
+      </small>
+      <div>
+        <% if post.created_at > 10.minutes.ago %> 
+            <td><button class="button" id="update-button"><%= link_to 'Update', edit_post_path(post) %></button></td>
+        <% end %>
+        <td><button class="button" id="delete-button"><%= button_to 'Delete', post_path(post), method: :delete %></button></td>
       </div>
-        <small>
-          <%= User.find(post.user_id).email%><br>
-          Updated <%= time_ago_in_words(post.updated_at) %> ago, <br>
-          <%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
-        </small>
-            <div>
-              <% if post.created_at > 10.minutes.ago %> 
-                  <td><button class="button" id="update-button"><%= link_to 'Update', edit_post_path(post) %></button></td>
-              <% end %>
-              <td><button class="button" id="delete-button"><%= button_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure' }%></button></td>
-            </div>
-          </div>
-        </div>
-        <br>
-        <br>
-      <% end %>
-      <br>
-      <br>
-  </body>
+    </div>
+  </div>
+  <br>
+  <br>
+<% end %>
+<br>
+<br>
+</body>
 </html>
 
 
