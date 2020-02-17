@@ -9,11 +9,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(article_params)
+    @user = User.new(user_details)
 
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Welcome to Acebook #{@user.email}"
+      flash[:notice] = "Welcome to Acebook #{@user.username}"
       redirect_to @user
     else
       render 'new'
@@ -38,8 +38,8 @@ class UsersController < ApplicationController
 
   private
 
-  def article_params
-    params.require(:user).permit(:email, :password)
+  def user_details
+    params.require(:user).permit(:email, :password, :username)
   end
 
   def delete_alert(user)

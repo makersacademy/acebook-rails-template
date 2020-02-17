@@ -5,6 +5,7 @@ require 'uri'
 class User < ApplicationRecord
   has_many :posts
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :username, presence: true, uniqueness: true
   validates :password, length: { in: 6..10,
                                  wrong_length: 'Please insert a password between 6 to 10 characters long' }
 
@@ -15,6 +16,7 @@ class User < ApplicationRecord
       user.provider = auth['provider']
       user.uid = auth['uid']
       user.email = auth['info']['email']
+      user.username = auth['info']['username']
       user.password = SecureRandom.urlsafe_base64(7)
     end
   end

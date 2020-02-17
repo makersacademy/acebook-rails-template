@@ -15,7 +15,7 @@ feature 'Show all posts on page' do
     create_post
     Timecop.return
     visit('/posts')
-    expect(page).to have_content('umberto@acebook.com')
+    expect(page).to have_content('uvalente')
     expect(page).to have_content(test_time)
   end
 end

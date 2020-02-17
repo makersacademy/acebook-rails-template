@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email])
     if @user&.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      flash[:notice] = "Welcome back #{@user.email}"
+      flash[:notice] = "Welcome back #{@user.username}"
       redirect_to @user
     else
       flash.now.alert = 'Incorrect email or password'
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
     auth = request.env['omniauth.auth']
     @user = User.find_by_provider_and_uid(auth['provider'], auth['uid']) || User.create_with_omniauth(auth)
     session[:user_id] = @user.id
-    flash[:notice] = "Welcome back #{@user.email}"
+    flash[:notice] = "Welcome back #{@user.username}"
     redirect_to @user
   end
 end
