@@ -11,12 +11,18 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-
-    if @post.update(post_params)
-      redirect_to '/posts'
+    
+    if users_post(@post)
+      if @post.update(post_params)
+        redirect_to posts_url
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      redirect_to posts_url
+      flash[:alert] = "Sorry you cannot edit another User\'s posts"
     end
+
   end
 
   def create
