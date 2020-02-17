@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1><%= @user.email %> wall</h1>
+  <h1><%= @user.username %> wall</h1>
 </div>
 <% if notice %>
   <div class="alert alert-success">
@@ -22,7 +22,7 @@
 <% end %>
 <% @posts.each do |post| %>
   <div class="container p-3 my-3 border shadow">
-    <strong><%= post.user.email %>:</strong>
+    <strong><%= post.user.username %>:</strong>
     <%= simple_format(post.message) %>
     <%= post.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
     <%= link_to 'Delete', user_path(post),

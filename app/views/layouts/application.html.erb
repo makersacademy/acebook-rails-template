@@ -24,7 +24,7 @@
         <ul class="navbar-nav navbar-right">
           <% if current_user %>
             <li class="nav-item">
-              <%= link_to "#{current_user.email}", user_path(current_user.id) , controller: 'users', class: 'active nav-link' %>
+              <%= link_to "#{current_user.username}", user_path(current_user.id) , controller: 'users', class: 'active nav-link' %>
             <li>
             <li class="nav-item">
               <%= link_to 'Sign Out', logout_path , controller: 'sessions', method: :delete, class: 'nav-link' %>
