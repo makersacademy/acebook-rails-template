@@ -1,38 +1,46 @@
-<% if !!flash[:notice] %>
-  <% flash.each do |type, message| %>
-    <p><%= message %></p> <br>
-  <% end %>
-<% end %>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>🦁 Acebook</title>
+  </head>
 
-<h4>Welcome to Acebook you are logged in as: <%= current_user.email %></h4>
+    <body>
+    
+      <% if !!flash[:notice] %>
+      <% flash.each do |type, message| %>
+        <p><%= message %></p> <br>
+      <% end %>
+    <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+    <h4>Welcome to Acebook you are logged in as: <%= current_user.email %></h4>
 
-<% @posts.reverse.each do |post| %>
-  <div>
-    <div class="post" >
-      <%= post.message.gsub(/\n/, '<br/>').html_safe %><br>
-      <small>
-        <%= User.find(post.user_id).email%><br>
-        Updated <%= time_ago_in_words(post.updated_at) %> ago, <br>
-        <%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
-      </small>
+    <%= link_to new_post_path do %>
+      New post
+    <% end %>
+
+    <% @posts.reverse.each do |post| %>
       <div>
-        <% if post.created_at > 10.minutes.ago %> 
-            <td><button class="button" id="update-button"><%= link_to 'Update', edit_post_path(post) %></button></td>
-        <% end %>
-        <td><button class="button" id="delete-button"><%= button_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure' }%></button></td>
+        <div class="post" >
+          <%= post.message.gsub(/\n/, '<br/>').html_safe %><br>
+          <small>
+            <%= User.find(post.user_id).email%><br>
+            Updated <%= time_ago_in_words(post.updated_at) %> ago, <br>
+            <%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
+          </small>
+          <div>
+            <% if post.created_at > 10.minutes.ago %> 
+                <td><button class="button" id="update-button"><%= link_to 'Update', edit_post_path(post) %></button></td>
+            <% end %>
+            <td><button class="button" id="delete-button"><%= button_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure' }%></button></td>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <br>
-  <br>
-<% end %>
-<br>
-<br>
-</body>
-
+      <br>
+      <br>
+    <% end %>
+    <br>
+    <br>
+  </body>
+</html>
 
 
