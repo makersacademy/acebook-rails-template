@@ -22,17 +22,17 @@ class SessionsController < ApplicationController
     session[:user] = user
 
     # add login record
-    Session.new(user_id: user.id).save!
+    user_session = Session.new(user_id: user.id)
+    user_session.save!
 
     # redirect to posts
     redirect_to(posts_path, notice: "Welcome back #{user.email}!")
   end
 
   def destroy
-    user_session = Session.find_by(user_id: session[:user][:id], logged_out: nil)
-    user_session.update(logged_out: Time.now)
-    user_session.save!
+    user_session = Session.where(user_id: session[:user]['id'], logged_out: nil)
+    user_session.update(logged_out: Time.zone.now)
     session[:user] = nil
-    redirect_to(root_path, action: 'You have been logged out')
+    redirect_to(root_path, notice: 'You have been logged out')
   end
 end
