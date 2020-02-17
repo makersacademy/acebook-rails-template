@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
     end
     
     def login_attempt
-      p params
       user = User.find_by(email: params[:sessions][:email])
       if user&.authenticate(params[:sessions][:password])
         flash[:notice] = "Welcome back, you are logged in as #{user.email}"
