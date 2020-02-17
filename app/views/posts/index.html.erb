@@ -38,7 +38,7 @@
 
       <div id='likes'>
         <%= button_to 'Like', post_likes_path(post), method: :post %>
-        <%= post.likes.count %> like
+        <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %>
       </div>
   
     </div>

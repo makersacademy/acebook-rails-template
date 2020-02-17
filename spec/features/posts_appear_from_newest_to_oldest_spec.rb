@@ -16,12 +16,12 @@ RSpec.feature 'Posts', type: :feature do
     #{Time.now.strftime('%m/%d/%Y, %H:%M')}
     Edit Delete
     Meow two
-    0 likes
+    0 Likes
      
     cats@cats.com 
     #{Time.now.strftime('%m/%d/%Y, %H:%M')} 
     Edit Delete
     Meow one
-    0 likes")
+    0 Likes")
   end
 end
