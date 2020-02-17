@@ -1,7 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-
       "/Users/student/Projects/acebook-inSANE/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           null,
@@ -141,6 +140,7 @@
           1,
           null,
           null,
+          1,
           null,
           null,
           null,
@@ -335,6 +335,26 @@
           null
         ]
       },
+      "/Users/student/Projects/acebook-inSANE/spec/factories/posts.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Projects/acebook-inSANE/spec/factories/users.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
       "/Users/student/Projects/acebook-inSANE/config/routes.rb": {
         "lines": [
           1,
@@ -409,9 +429,8 @@
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
           null,
@@ -428,15 +447,15 @@
           1,
           null,
           1,
-          60,
+          80,
           null,
           null,
           1,
-          50,
+          63,
           null,
           null,
           1,
-          16,
+          21,
           null,
           null
         ]
@@ -459,28 +478,25 @@
           1,
           null,
           1,
-          7,
+          9,
           null,
           null,
           1,
-          7,
-          7,
-          7,
-          7,
-          6,
-          6,
+          9,
+          null,
+          9,
+          9,
+          8,
           null,
           null,
           1,
-          null,
-          7,
           null,
           null,
           null,
           1,
           null,
           1,
-          14,
+          9,
           null,
           null
         ]
@@ -555,6 +571,41 @@
           null
         ]
       },
+      "/Users/student/Projects/acebook-inSANE/spec/features/logout_flash_message_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Projects/acebook-inSANE/spec/web_helpers.rb": {
+        "lines": [
+          null,
+          1,
+          8,
+          8,
+          8,
+          8,
+          8,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/student/Projects/acebook-inSANE/spec/features/sign_up_failure_spec.rb": {
         "lines": [
           1,
@@ -592,6 +643,10 @@
           1,
           1,
           1,
+          2,
+          null,
+          1,
+          1,
           1,
           1,
           1,
@@ -599,27 +654,32 @@
           1,
           null,
           null,
-          null
-        ]
-      },
-      "/Users/student/Projects/acebook-inSANE/spec/web_helpers.rb": {
-        "lines": [
-          null,
-          1,
-          6,
-          6,
-          6,
-          6,
-          6,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           1,
           1,
           1,
           1,
-          1,
-          1,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -652,17 +712,46 @@
           1,
           1,
           1,
+          null,
+          1,
+          1,
+          1,
           1,
           1,
           null,
           1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null,
           null
         ]
       },
-
       "/Users/student/Projects/acebook-inSANE/spec/features/user_logout_spec.rb": {
         "lines": [
           1,
@@ -676,7 +765,6 @@
           null
         ]
       },
-
       "/Users/student/Projects/acebook-inSANE/spec/helpers/sessions_helper_spec.rb": {
         "lines": [
           1,
@@ -696,7 +784,6 @@
           null
         ]
       },
-
       "/Users/student/Projects/acebook-inSANE/spec/helpers/user_helper_spec.rb": {
         "lines": [
           1,
@@ -716,7 +803,6 @@
           null
         ]
       },
-
       "/Users/student/Projects/acebook-inSANE/spec/helpers/welcome_helper_spec.rb": {
         "lines": [
           1,
@@ -726,7 +812,6 @@
           null,
           null,
           null,
-          0,
           null,
           null,
           null,
@@ -737,7 +822,6 @@
           null
         ]
       },
-
       "/Users/student/Projects/acebook-inSANE/spec/models/post_spec.rb": {
         "lines": [
           1,
@@ -747,7 +831,6 @@
           null
         ]
       },
-
       "/Users/student/Projects/acebook-inSANE/app/models/post.rb": {
         "lines": [
           1,
@@ -789,13 +872,13 @@
           null,
           null,
           null,
+          1,
           null,
           null,
           null,
           null
         ]
       },
-
       "/Users/student/Projects/acebook-inSANE/spec/views/sessions/create.html.erb_spec.rb": {
         "lines": [
           1,
@@ -805,7 +888,6 @@
           null
         ]
       },
-
       "/Users/student/Projects/acebook-inSANE/spec/views/sessions/login.html.erb_spec.rb": {
         "lines": [
           1,
@@ -842,7 +924,6 @@
           null
         ]
       },
-
       "/Users/student/Projects/acebook-inSANE/app/controllers/posts_controller.rb": {
         "lines": [
           1,
@@ -860,23 +941,25 @@
           null,
           null,
           1,
-          10,
+          13,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          null,
+          1,
+          null,
+          1,
           null,
           null,
           1,
           0,
-          0,
-          null,
-          0,
           null,
           null,
           1,
           0,
-          null,
-          null,
-          1,
-          0,
-          null,
           0,
           0,
           null,
@@ -893,6 +976,6 @@
         ]
       }
     },
-    "timestamp": 1581959819
+    "timestamp": 1581964409
   }
 }
