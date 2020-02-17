@@ -39,6 +39,12 @@ Once i have signed up, i am redirected to my home page,
 With a prompt saying 'Welcome'
 ```
 
+```
+As a user,
+So that login details are more personal,
+I would like to add a username when signing up
+```
+
 __Users can Sign In/Sign Out__
 
 ```
@@ -191,7 +197,75 @@ If i try to delete another users post,
 I will receive a helpul error message stopping me
 ```
 
+__User Walls__
 
+```
+As a user,
+So that I can chat to other users directly,
+I want to be able to post on another users wall and it only appear on their wall
+```
+
+```
+As a user,
+If I go to a url that doesn't exist,
+I will be greeted with a 404 page
+```
+
+```
+As a user,
+So that I know who's page I am on,
+The users username/id will show in the url
+```
+
+```
+As a user,
+So that I can personalise my wall
+I was to be able to choose between different fonts and background colours for their wall
+```
+
+__Comments__
+
+```
+As a user,
+So I can let other users know what I think of their posts
+I would like to be able to comment on them
+```
+
+```
+As a user,
+So that I know that my comment has been successfully posted
+I would like a helpful message
+```
+
+```
+As a user,
+So I can change my mind on what I have commented
+I would like to be able to edit my comments
+```
+
+```
+As a user,
+So that I know that my comment has been successfully edited
+I would like a helpful message
+```
+
+```
+As a user,
+In case I change my mind on the comment
+I would like to be able to delete comments
+```
+
+```
+As a user,
+So that I know that my comment has been successfully deleted
+I would like a helpful message
+```
+
+```
+As a user,
+So I can see my comment straight away
+I don't want to refresh the page to see my comment
+```
 
 
 
