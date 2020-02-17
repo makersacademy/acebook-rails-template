@@ -55,7 +55,7 @@ body {
     border: none;
     background-color: inherit;
     padding: 14px 28px;
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
     display: inline-block;
 }
@@ -65,11 +65,15 @@ body {
     background-color: rgb(255, 255, 255);
     text-align: center;
     line-height: 75px;
-    font-size: 30px;
+    font-size: 16px;
     padding: 10px 20px;
     border-radius: 25px;
     color: black;
     border: 2px solid rgb(190, 189, 189);
+}
+
+#postheader {
+    font-size: 25px;
 }
 
 #delete-button,
@@ -77,10 +81,18 @@ body {
     border: none;
     background-color: inherit;
     padding: 14px 28px;
-    font-size: 16px;
+    font-size: 12px;
     cursor: pointer;
     display: inline-block;
     position: relative;
     justify-content: flex-end;
     display: flex;
+}
+
+.navbar {
+    background-color: pink;
+}
+
+form {
+    font-size: 16px;
 }

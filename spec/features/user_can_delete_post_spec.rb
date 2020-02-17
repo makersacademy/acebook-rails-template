@@ -40,4 +40,5 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Thats not your post to delete")
   end
 
+
 end

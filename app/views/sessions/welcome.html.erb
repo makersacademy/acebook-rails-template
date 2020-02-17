@@ -1,12 +1,25 @@
-<div class="welcome-header">
-  <% if !!flash[:alert] %>
-    <% flash.each do |type, message| %>
-      <p><%= message %></p> <br>
-    <% end %>
-  <% end %>
+<!DOCTYPE html>
 
-  <h1>AceBook</h1>
+<html lang='en'>
+  <head>
+    <title> &#129409; Acebook</title>
+  </head>
 
-  <div class="log-in-button"><%= button_to "Login", '/login', method: :get %></div>
-  <div class="sign-up-button"><%= button_to "Sign Up", '/user/create', method: :get%></div>
-<div>
+  <body>
+    <div class="welcome-header">
+      <% if !!flash[:alert] %>
+        <% flash.each do |type, message| %>
+          <p><%= message %></p> <br>
+        <% end %>
+      <% end %>
+
+      <h1>AceBook</h1>
+        <br>
+        <br>
+      <div class="log-in-button"><%= button_to "Login", '/login', method: :get %></div>
+        <br>
+        <br>
+      <div class="sign-up-button"><%= button_to "Sign Up", '/user/create', method: :get%></div>
+    <div>
+  </body>
+</html>
