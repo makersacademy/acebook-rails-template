@@ -19,6 +19,13 @@ Today was the second day of the project and time to start Rails. We started the 
 
 # Friday 14th February 2020 (Umberto)
 
+We are fairly confident going in, we met all our goals and are able to present an MVP.
+The meetings go smoothly, our client is happy, and nothing has to be changed to achieve the user stories.
+This leaves us with time to implement optional functionality as the GitHub login.
+On the technical side, everything was linear, there's a ton of rails documentation and that made our journey really easy.
+There's nothing else to do, other than wait for more user stories from our new client Sophie.
+
+
 
 # Monday 17th February 2020 (Katie)
 
