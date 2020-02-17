@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.feature 'Users can only view their own posts', type: :feature do
   scenario 'User creates a post and can only see their post' do
-    
     user = User.create!(email: 'test@abc.com', password: 'password')
     Post.create!(user_id: user.id, post_content: 'test message')
 

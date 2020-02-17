@@ -6,9 +6,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    if session[:user]
-      redirect_to(user_posts_path(user_id: session[:user]['id']), notice: 'You cannot signup while logged in')
-    end
+    redirect_to(user_posts_path(user_id: session[:user]['id']), notice: 'You cannot signup while logged in') if session[:user]
     @user = User.new
   end
 
@@ -31,5 +29,3 @@ class UsersController < ApplicationController
     end
   end
 end
-
-

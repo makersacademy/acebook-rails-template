@@ -7,7 +7,6 @@ class PostsController < ApplicationController
     @user = User.find(session[:user]['id'])
   end
 
-
   def create
     post_params = params.require(:post).permit(:post_content)
     post_params[:user_id] = session[:user]['id']
@@ -21,5 +20,4 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to user_posts_path(session[:user]['id'])
   end
-
 end
