@@ -12,10 +12,10 @@ class User < ApplicationRecord
 
   def self.create_with_omniauth(auth)
     create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.email = auth["info"]["email"]
-      user.password = SecureRandom.urlsafe_base64(n=7)
+      user.provider = auth['provider']
+      user.uid = auth['uid']
+      user.email = auth['info']['email']
+      user.password = SecureRandom.urlsafe_base64(7)
     end
   end
 end

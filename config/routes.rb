@@ -19,6 +19,5 @@ Rails.application.routes.draw do
   resources :posts, only: :index
   root 'welcome#index'
 
-  get "/auth/:provider/callback" => "sessions#create_oauth"
-
+  get '/auth/:provider/callback' => 'sessions#create_oauth'
 end
