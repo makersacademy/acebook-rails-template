@@ -13,8 +13,10 @@
         <td><%=simple_format(post.post_content)%></td>
           <td><%=post.created_at.to_s(:rfc822)[17..21]%>  <%=post.created_at.to_s(:rfc822)[0..2]%> <%=post.created_at.to_s(:rfc822)[4..15]%></td>
         <td><%=User.find(post.user_id).email%></td>
-        <td><%= link_to 'Edit', edit_user_post_path(session[:user]['id'], post) %></td>
-        <td><%= link_to 'Delete', post, method: :delete %></td>
+        
+          <td><%= link_to 'Edit', edit_user_post_path(session[:user]['id'], post) %></td>
+          <td><%= link_to 'Delete', post, method: :delete %></td>
+       
       </tr>
     <% end %>
   </tbody>

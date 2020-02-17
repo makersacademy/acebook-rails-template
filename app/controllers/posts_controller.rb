@@ -21,9 +21,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = User.find(session[:user]['id']).posts.find(params[:id])
-    @post.destroy
-    redirect_to user_posts_path(session[:user]['id'])
+    @post = Post.find_by(user_id: session[:user]['id'], id: params[:id])
+    if @post
+      message = "Post deleted"
+      @post.destroy
+    else
+      message = "Not authorized to delete this post"
+    end
+    redirect_to(user_posts_path(session[:user]['id']), notice: message)
   end
 
   def edit
