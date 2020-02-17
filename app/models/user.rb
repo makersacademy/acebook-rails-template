@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'uri'
-# require 'securerandom'
 
 class User < ApplicationRecord
   has_many :posts
