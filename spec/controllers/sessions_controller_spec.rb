@@ -1,7 +1,8 @@
 RSpec.describe SessionsController, type: :controller do
   describe '#new' do
     it 'redirects to posts page if signed in' do
-      get(:new, session: { user: true })
+      test_user = User.create!(email: 'test@abc.com', password: 'password')
+      get(:new, session: { user_id: test_user.id })
       expect(response).to redirect_to('/posts')
     end
   end
@@ -10,9 +11,7 @@ RSpec.describe SessionsController, type: :controller do
     it 'it saves logged in user to session' do
       User.create!(email: 'test@email.com', password: 'password')
       get(:create, params: { login: { email: 'test@email.com', password: 'password' }})
-      expect(session[:user].id).not_to eq(nil)
-      expect(session[:user].email).to eq('test@email.com')
-      expect(session[:user].password).not_to eq(nil)
+      expect(session[:user_id]).not_to eq(nil)
     end
   end
 
@@ -21,7 +20,7 @@ RSpec.describe SessionsController, type: :controller do
       User.create!(email: 'test@email.com', password: 'password')
       get(:create, params: { login: { email: 'test@email.com', password: 'password' }})
       get(:destroy)
-      expect(session[:user]).to be(nil)
+      expect(session[:user_id]).to be(nil)
     end
   end
 end
