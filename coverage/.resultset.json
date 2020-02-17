@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/Rakefile": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/Rakefile": {
         "lines": [
           null,
           null,
@@ -11,7 +11,7 @@
           1
         ]
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/mailers/application_mailer.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -21,7 +21,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/models/application_record.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/models/application_record.rb": {
         "lines": [
           0,
           0,
@@ -30,7 +30,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/models/post.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/models/post.rb": {
         "lines": [
           0,
           null,
@@ -43,7 +43,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/models/user.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/models/user.rb": {
         "lines": [
           0,
           0,
@@ -56,6 +56,7 @@
           0,
           0,
           null,
+          0,
           null,
           null,
           null,
@@ -64,7 +65,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/jobs/application_job.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/jobs/application_job.rb": {
         "lines": [
           0,
           0
@@ -72,7 +73,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/controllers/application_controller.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/controllers/application_controller.rb": {
         "lines": [
           0,
           0,
@@ -97,7 +98,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/controllers/sessions_controller.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/controllers/sessions_controller.rb": {
         "lines": [
           0,
           0,
@@ -117,21 +118,6 @@
           0,
           0,
           null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/controllers/welcome_controller.rb": {
-        "lines": [
-          0,
           0,
           0,
           null,
@@ -144,7 +130,22 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/controllers/user_controller.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/controllers/welcome_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/controllers/user_controller.rb": {
         "lines": [
           0,
           null,
@@ -181,7 +182,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/controllers/posts_controller.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/controllers/posts_controller.rb": {
         "lines": [
           0,
           0,
@@ -232,7 +233,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/helpers/welcome_helper.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/helpers/welcome_helper.rb": {
         "lines": [
           0,
           0
@@ -240,7 +241,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/helpers/sessions_helper.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/helpers/sessions_helper.rb": {
         "lines": [
           0,
           0
@@ -248,7 +249,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/helpers/user_helper.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/helpers/user_helper.rb": {
         "lines": [
           0,
           0
@@ -256,7 +257,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/helpers/application_helper.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/helpers/application_helper.rb": {
         "lines": [
           0,
           0
@@ -264,7 +265,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/channels/application_cable/connection.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -274,7 +275,7 @@
         "branches": {
         }
       },
-      "/Users/nicolasraffray/Desktop/Makers_Course/acebook-inSANE/app/channels/application_cable/channel.rb": {
+      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -285,6 +286,6 @@
         }
       }
     },
-    "timestamp": 1581700013
+    "timestamp": 1581960500
   }
 }

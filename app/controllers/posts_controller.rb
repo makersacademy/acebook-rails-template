@@ -18,8 +18,11 @@ class PostsController < ApplicationController
 
   def destroy # CRUD method to delete post
     @post = Post.find(params[:id]) # find the post by its id
-    @post.destroy  # delete the id
-
+    if @post.user_id == current_user
+      @post.destroy  # delete the id
+    else
+      flash[:notice] = "Thats not your post to delete"
+    end
     redirect_to posts_path # redirect to the posts page - localhost:3000/posts
   end
 
