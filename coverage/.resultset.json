@@ -1,36 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/controllers/posts_controller_spec.rb": {
+      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/controllers/likes_controller_spec.rb": {
         "lines": [
-          null,
           1,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null
         ]
@@ -655,6 +630,12 @@
           null
         ]
       },
+      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/helpers/likes_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/student/Projects/week8/acebook-catbook-ink-1/app/helpers/welcome_helper.rb": {
         "lines": [
           null,
@@ -690,6 +671,61 @@
           5,
           5,
           5,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/controllers/likes_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          13,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/controllers/posts_controller_spec.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -760,21 +796,6 @@
           1,
           42,
           null,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          13,
           null,
           null
         ]
@@ -1019,6 +1040,26 @@
           null
         ]
       },
+      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/helpers/likes_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/helpers/welcome_helper_spec.rb": {
         "lines": [
           null,
@@ -1038,6 +1079,23 @@
           null,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/models/like_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/models/like.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -1083,6 +1141,6 @@
         ]
       }
     },
-    "timestamp": 1581953222
+    "timestamp": 1581958812
   }
 }
