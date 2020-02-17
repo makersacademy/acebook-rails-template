@@ -11,6 +11,15 @@ class UsersController < ApplicationController
   def create
   end
 
+  def show
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.html 
+      format.xml { render :xml => @user }
+    end
+  end
+
   private
 
   def authenticate_user

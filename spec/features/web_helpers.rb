@@ -25,3 +25,13 @@ def new_post
   click_button 'Submit'
 end
 
+def log_in
+  sign_up
+  visit '/'
+  click_link 'Logout'
+  click_link 'Login'
+  fill_in 'Email', with: 'cats@cats.com'
+  fill_in 'Password', with: 'cats1234'
+  click_button 'Log in'
+end
+
