@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = User.find(session[:user]['id'])
+    # @user = User.find(session[:user]['id'])
     @post = @user.posts.new
   end
 

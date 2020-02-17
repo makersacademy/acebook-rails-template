@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   skip_before_action :require_login
 
   def new
-    redirect_to(posts_path, notice: 'You cannot login while logged in') if session[:user]
+    redirect_to(posts_path, notice: 'You cannot login while logged in') if session[:user_id]
   end
 
   def create
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     return redirect_to(login_path, notice: 'Login not found') unless password_ok
 
     # log in
-    session[:user] = user
+    session[:user_id] = user.id
 
     # redirect to posts
     redirect_to(posts_path, notice: "Welcome back #{user.email}!")
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
 
   def destroy
     # Log user out
-    session[:user] = nil
+    session[:user_id] = nil
     redirect_to(root_path, notice: 'You have been logged out')
   end
 end
