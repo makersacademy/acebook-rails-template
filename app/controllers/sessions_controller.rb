@@ -7,6 +7,9 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # check email validity
+    return redirect_to(login_path, notice: 'Email format invaild, please enter valid email') unless EmailValidator.validate?(params[:login][:email])
+
     # check credentials
     user = User.find_by(email: params[:login][:email])
     return redirect_to(login_path, notice: 'Login not found') unless user
