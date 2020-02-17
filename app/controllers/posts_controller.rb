@@ -33,21 +33,8 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html do
-          redirect_to(@post,
-                      notice: 'Post was successfully updated.')
-        end
-        format.xml  { head :ok }
-      else
-        format.html { render action: 'edit' }
-        format.xml  do
-          render xml: @post.errors,
-                 status: :unprocessable_entity
-        end
-      end
-    end
+    @post.update(post_params)
+    redirect_to(@post, notice: 'Post was successfully updated.')
   end
 
   private
