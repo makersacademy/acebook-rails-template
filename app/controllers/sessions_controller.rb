@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     return redirect_to(login_path, notice: 'Login not found') unless user
     password_ok = BCrypt::Password.new(user.password) == params[:login][:password]
     return redirect_to(login_path, notice: 'Login not found') unless password_ok
-    
+
     # log in
     session[:user] = user
 

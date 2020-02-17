@@ -57,4 +57,7 @@ Style/ZeroLengthPredicate:
   Enabled: false
 
 Metrics/AbcSize:
-    Enabled: false
+  Enabled: false
+
+Rails/ReversibleMigration:
+  Enabled: false
