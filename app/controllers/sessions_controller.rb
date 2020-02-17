@@ -1,4 +1,5 @@
 require 'bcrypt'
+
 class SessionsController < ApplicationController
   skip_before_action :require_login
 
@@ -7,21 +8,25 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # check email validity
+    return redirect_to(login_path, notice: 'Email format invaild, please enter valid email') unless EmailValidator.validate?(params[:login][:email])
+
     # check credentials
     user = User.find_by(email: params[:login][:email])
     return redirect_to(login_path, notice: 'Login not found') unless user
     password_ok = BCrypt::Password.new(user.password) == params[:login][:password]
     return redirect_to(login_path, notice: 'Login not found') unless password_ok
 
-    # check if user logged in
-
     # log in
     session[:user] = user
 
-    # add login record
-    Session.new(user_id: user.id).save!
-
     # redirect to posts
     redirect_to(posts_path, notice: "Welcome back #{user.email}!")
+  end
+
+  def destroy
+    # Log user out
+    session[:user] = nil
+    redirect_to(root_path, notice: 'You have been logged out')
   end
 end
