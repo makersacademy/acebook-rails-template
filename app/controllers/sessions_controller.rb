@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
       if user&.authenticate(params[:sessions][:password])
         flash[:notice] = "Welcome back, you are logged in as #{user.email}"
         session[:user_id] = user.id
-        p user
         redirect_to('/posts/index')
       else
         flash[:notice] = "Invalid Username or Password"

@@ -1,4 +1,3 @@
-<p id=”notice”><%= flash[:notice] %></p>
 <h1> Hello <%= User.find(session[:user_id]).email %> </h1>
 
 <div class='posts-body'>
@@ -19,7 +18,12 @@
         posted at <%= post.created_at %>
         <time datetime='<%= post.created_at %>' ></time>
         by <a href='/users/<%= @user.id%>'><%= @user.email %>.</a>
-        <%= link_to "Edit", edit_post_path(post)%>
+        <% if session[:user_id] == post.users_id %>
+          <% if post.created_at > 10.minute.ago%>
+            <%= link_to "Edit", edit_post_path(post)%>
+          <% end %>
+          <%= link_to "Destroy", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </p>
     </footer>
     
