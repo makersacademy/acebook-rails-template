@@ -1,11 +1,15 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(session[:user]['id'])
-    # comment
+    @posts = if params[:user_id]
+               User.find(params[:user_id]).posts
+             else
+               Post.all
+             end
   end
 
   def new
     @user = User.find(session[:user]['id'])
+    @post = @user.posts.new
   end
 
   def create
@@ -23,7 +27,8 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @user = User.find(session[:user]['id'])
+    @post = @user.posts.find(params[:id])
   end
 
   def update
