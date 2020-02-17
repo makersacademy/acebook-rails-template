@@ -10,6 +10,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record
+gem 'dotenv-rails', groups: %i[development test]
+
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -26,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'travis'
 
 # Use Capistrano for deployment
