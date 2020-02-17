@@ -39,7 +39,7 @@ RSpec.feature 'Users can signup to site', type: :feature do
     fill_in('user[email]', with: 'test@test.com')
     fill_in('user[password]', with: 'passw')
     click_on('Signup')
-    expect(page).to have_content('Password length incorrect, please enter a password between 6 and 10 charaters')
+    expect(page).to have_content('The password must have at least 6 characters')
   end
 
   scenario 'User cannot sign up password more than 10 charaters' do
@@ -48,6 +48,6 @@ RSpec.feature 'Users can signup to site', type: :feature do
     fill_in('user[email]', with: 'test@test.com')
     fill_in('user[password]', with: 'password10c')
     click_on('Signup')
-    expect(page).to have_content('Password length incorrect, please enter a password between 6 and 10 charaters')
+    expect(page).to have_content('The password must have no more than 10 characters')
   end
 end

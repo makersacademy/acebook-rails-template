@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   end
 
   def new
-    redirect_to(posts_path, notice: 'You cannot signup while logged in') if session[:user]
     @user = User.new
+    redirect_to(posts_path, notice: 'You cannot signup while logged in') if session[:user]
   end
 
   def create
@@ -17,15 +17,8 @@ class UsersController < ApplicationController
       @user.save!
       session[:user] = @user
       redirect_to(posts_path, notice: "Congratulations #{@user['email']}, You Have Signed Up to AceBook!")
-    rescue StandardError => e
-      if e.message.include?('Password')
-        notice = 'Password length incorrect, please enter a password between 6 and 10 charaters'
-      elsif e.message.include?('Email is invalid')
-        notice = 'Email format invaild, please enter valid email'
-      elsif e.message.include?('Email has already been taken')
-        notice = 'Email already taken, please choose another'
-      end
-      redirect_to('/signup', notice: notice)
+    rescue
+      redirect_to('/signup', notice: @user.errors.messages.values[0][0])
     end
   end
 end
