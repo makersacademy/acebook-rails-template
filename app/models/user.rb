@@ -16,7 +16,7 @@ class User < ApplicationRecord
       user.provider = auth['provider']
       user.uid = auth['uid']
       user.email = auth['info']['email']
-      user.username = auth['info']['username']
+      user.username = auth['info']['nickname']
       user.password = SecureRandom.urlsafe_base64(7)
     end
   end
