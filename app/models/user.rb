@@ -10,7 +10,6 @@ class User < ApplicationRecord
     message: 'Email already taken, please choose another'
   }
   validates_with EmailValidator
-  puts 'made it out'
 
   after_validation(on: :create) do
     self.password = BCrypt::Password.create(password)
