@@ -18,3 +18,18 @@ Today was the second day of the project and time to start Rails. We started the 
 
 
 # Friday 14th February 2020 (Umberto)
+
+
+# Monday 17th February 2020 (Katie)
+
+
+# Tuesday 18th February 2020 (Umberto)
+
+
+# Wednesday 19th February 2020 (Asia)
+
+
+# Thursday 20th February 2020 (Jack)
+
+
+# Friday 21st February 2020 (David)

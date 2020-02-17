@@ -39,7 +39,7 @@ Once i have signed up, i am redirected to my home page,
 With a prompt saying 'Welcome'
 ```
 
-__Users can Sign In__
+__Users can Sign In/Sign Out__
 
 ```
 As a user,
@@ -64,6 +64,34 @@ As a user,
 When i submit my details in the log in page,
 I am redirected to my homepage
 ```
+
+```
+As a user,
+For convenience I would like to use my github login,
+To log in to Acebook
+```
+
+```
+As a user,
+So that I can keep my account secure,
+I would like to be able to log out
+```
+
+
+__As a user logged in__
+
+```
+As a user,
+So I know that I am logged in,
+It will display my email with a link to my page
+```
+
+```
+As a user,
+So that I can't sign in or up twice,
+once I am logged in I don't want to see the sign in or up buttons
+```
+
 
 __POSTS (as a user logged in)__
 
