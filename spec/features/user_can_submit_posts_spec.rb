@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "test index" do
+feature "test new post" do
  scenario "Can submit posts and view them" do
     visit '/'
     click_button "Sign Up"

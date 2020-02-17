@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature "test index" do
- scenario "Can submit posts and view them" do
+feature "test sign up" do
+ scenario "Can Sign up and see posts page with Hello on it" do
     visit '/'
     click_button "Sign Up"
     fill_in "Email", with: "ben@gmail.com"
