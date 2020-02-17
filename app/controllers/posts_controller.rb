@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(session[:user]['id'])
+    #comment
   end
 
   def new
