@@ -9,7 +9,7 @@ RSpec.feature 'Timeline', type: :feature do
 
     visit '/posts'
     click_link 'Edit'
-    fill_in 'Message', with: 'Updated Text'
+    fill_in "area", with: 'Updated Text'
     click_button 'Update Post'
     expect(page).to have_content('Updated Text')
   end
@@ -22,7 +22,7 @@ RSpec.feature 'Timeline', type: :feature do
     sign_up_two
     visit '/posts'
     click_link 'Edit'
-    fill_in 'Message', with: 'Updated Text'
+    fill_in "area", with: 'Updated Text'
     click_button 'Update Post'
     expect(page).to have_content('Sorry you cannot edit this post')
     expect(page).to have_content('Hello, world!')
@@ -33,7 +33,7 @@ RSpec.feature 'Timeline', type: :feature do
     new_post
     visit '/posts'
     click_link 'Edit'
-    fill_in 'Message', with: 'Updated Text'
+    fill_in "area", with: 'Updated Text'
     Timecop.travel(Time.now + 11.minutes) do
       click_button 'Update Post'
       expect(page).to have_content('Sorry you cannot edit this post')
