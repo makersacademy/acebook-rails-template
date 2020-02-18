@@ -66,6 +66,8 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   # configure the driver to run in headless mode
   Capybara.server = :puma, { Silent: true }
+
+  config.include ActiveSupport::Testing::TimeHelpers
   
 end
 
