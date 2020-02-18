@@ -11,14 +11,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params = params.require(:user).permit(:email, :password)
-    @user = User.new(user_params)
+    p user_params = params.require(:user).permit(:email, :password)
+    p @user = User.new(user_params)
     begin
-      @user.save!
-      session[:user_id] = @user.id
-      redirect_to(posts_path, notice: "Congratulations #{@user['email']}, You Have Signed Up to AceBook!")
+    p  @user.save!
+    p  session[:user_id] = @user.id
+    p  redirect_to(posts_path, notice: "Congratulations #{@user['email']}, You Have Signed Up to AceBook!")
     rescue StandardError
-      redirect_to('/signup', notice: @user.errors.messages.values[0][0])
+    p  redirect_to('/signup', notice: @user.errors.messages.values[0][0])
     end
   end
 end
