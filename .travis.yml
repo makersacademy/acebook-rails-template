@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+  - 2.6.5
+
+services:
+  - postgresql
+
+env:
+  - POSTGRES_USER=travis POSTGRES_PASSWORD=password POSTGRES_HOST=localhost POSTGRES_DEVELOPMENT_DB=acebook_development POSTGRES_TEST_DB=acebook_test POSTGRES_DB=acebook
+
+before_script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+
+script:
+  - bundle exec rspec
+  - bundle exec rubocop
