@@ -1,5 +1,4 @@
 RSpec.feature 'Users can delete a post once created', type: :feature do
-
   scenario 'User deletes their own post' do
     visit '/'
     click_on 'Signup'
@@ -9,7 +8,6 @@ RSpec.feature 'Users can delete a post once created', type: :feature do
     click_on 'New Post'
     fill_in 'post[post_content]', with: 'Hey there'
     click_on 'Create Post'
-    save_and_open_page
     expect(page).to have_content('Hey there')
     click_on 'Delete'
     expect(page).not_to have_content('Hey there')
