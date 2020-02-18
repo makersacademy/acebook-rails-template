@@ -11,7 +11,8 @@ gem 'rubocop-rails', require: false
 
 gem 'devise'
 gem 'rubocop'
-
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'bootstrap-sass'
 
 gem 'simplecov', require: false, group: :test
