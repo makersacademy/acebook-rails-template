@@ -1,16 +1,11 @@
-# AceBook
+# AceBook Derailed
+The anti-social network
 
-REQUIRED INSTRUCTIONS:
-
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+# Created by
+Bassel Al-Sayed,
+Ben Auld,
+Ilias Grigoropoulos,
+Vish Mayer,
 
 ## Quickstart
 
@@ -24,3 +19,11 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+## Useful links
+
+http://acebookderailed.herokuapp.com/
+https://trello.com/b/scpE1rNZ/acebook-project
+https://github.com/basselalsayed/acebook-derailed
+
+
+
