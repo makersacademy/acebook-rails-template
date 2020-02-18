@@ -65,8 +65,10 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
   # configure the driver to run in headless mode
+  Capybara.server = :puma, { Silent: true }
   
 end
+
 
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
