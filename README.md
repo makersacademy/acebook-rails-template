@@ -169,6 +169,10 @@ REQUIRED INSTRUCTIONS:
 
 3. Link to deployed app: https://acebook-insane.herokuapp.com/
 
+## Learning Documents 
+
+Please see Learning Documents column on Trello board: https://trello.com/b/JUaLZHFH/insane
+
 ## How to contribute to this project
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
