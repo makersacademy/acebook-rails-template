@@ -1,23 +1,23 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/benauld/Projects/acebook-derailed/app/helpers/application_helper.rb": [
+      "/Users/macbook/Projects/acebook-rails-template/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/helpers/sessions_helper.rb": [
+      "/Users/macbook/Projects/acebook-rails-template/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/helpers/users_helper.rb": [
+      "/Users/macbook/Projects/acebook-rails-template/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/helpers/welcome_helper.rb": [
+      "/Users/macbook/Projects/acebook-rails-template/app/helpers/welcome_helper.rb": [
         1,
         null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/controllers/sessions_controller.rb": [
+      "/Users/macbook/Projects/acebook-rails-template/app/controllers/sessions_controller.rb": [
         1,
         1,
         1,
@@ -46,7 +46,7 @@
         null,
         null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/controllers/application_controller.rb": [
+      "/Users/macbook/Projects/acebook-rails-template/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -73,7 +73,7 @@
         null,
         null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/controllers/posts_controller.rb": [
+      "/Users/macbook/Projects/acebook-rails-template/app/controllers/posts_controller.rb": [
         1,
         1,
         null,
@@ -124,7 +124,7 @@
         null,
         null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/controllers/users_controller.rb": [
+      "/Users/macbook/Projects/acebook-rails-template/app/controllers/users_controller.rb": [
         1,
         1,
         1,
@@ -158,21 +158,21 @@
         null,
         null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/controllers/welcome_controller.rb": [
+      "/Users/macbook/Projects/acebook-rails-template/app/controllers/welcome_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/models/post.rb": [
+      "/Users/macbook/Projects/acebook-rails-template/app/models/post.rb": [
         1,
         null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/models/application_record.rb": [
+      "/Users/macbook/Projects/acebook-rails-template/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/models/user.rb": [
+      "/Users/macbook/Projects/acebook-rails-template/app/models/user.rb": [
         1,
         1,
         1,
@@ -180,29 +180,29 @@
         1,
         null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/mailers/application_mailer.rb": [
-        0,
-        0,
-        0,
-        0
+      "/Users/macbook/Projects/acebook-rails-template/app/mailers/application_mailer.rb": [
+        null,
+        null,
+        null,
+        null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/jobs/application_job.rb": [
-        0,
-        0
+      "/Users/macbook/Projects/acebook-rails-template/app/jobs/application_job.rb": [
+        null,
+        null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
+      "/Users/macbook/Projects/acebook-rails-template/app/channels/application_cable/connection.rb": [
+        null,
+        null,
+        null,
+        null
       ],
-      "/Users/benauld/Projects/acebook-derailed/app/channels/application_cable/channel.rb": [
-        0,
-        0,
-        0,
-        0
+      "/Users/macbook/Projects/acebook-rails-template/app/channels/application_cable/channel.rb": [
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1582024043
+    "timestamp": 1582029032
   }
 }
