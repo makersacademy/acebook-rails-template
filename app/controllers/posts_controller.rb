@@ -18,7 +18,9 @@ class PostsController < ApplicationController
 
   def destroy # CRUD method to delete post
     @post = Post.find(params[:id]) # find the post by its id
-    if @post.user_id == current_user
+    p @post.user_id
+    p current_user.id
+    if @post.user_id == current_user.id
       @post.destroy  # delete the id
     else
       flash[:notice] = "Thats not your post to delete"
