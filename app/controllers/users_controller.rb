@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -11,14 +13,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = 'You signed up successfully'
-      flash[:color] = 'valid'
       session[:user_id] = @user.id
-      redirect_to '/posts/index'
+      successful
     else
-      flash[:notice] = 'Form is invalid'
-      flash[:color] = 'invalid'
-      render 'new'
+      unsuccessful
     end
   end
 
@@ -28,5 +26,17 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password)
+  end
+
+  def successful
+    flash[:notice] = 'You signed up successfully'
+    flash[:color] = 'valid'
+    redirect_to '/posts/index'
+  end
+
+  def unsuccessful
+    flash[:notice] = 'Form is invalid'
+    flash[:color] = 'invalid'
+    render 'new'
   end
 end

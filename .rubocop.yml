@@ -10,9 +10,32 @@
 # See https://github.com/rubocop-hq/rubocop/blob/master/manual/configuration.md
 require: rubocop-rspec
 
+RSpec/DescribeClass:
+  Exclude: 
+    - 'spec/features/*'
+
+RSpec/Be:
+  Enabled: false
+
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 30
+
+Metrics/LineLength:
+  Max: 100
+
+RSpec/MultipleExpectations:
+  Max: 2
+
 AllCops:
   Exclude:
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
     - 'vendor/**/*'
+    - 'bin/**/*'

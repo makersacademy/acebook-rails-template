@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -38,9 +40,9 @@ group :development, :test do
   gem 'rubocop', '0.71.0'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
+  gem 'selenium-webdriver'
   gem 'simplecov', '0.15.0'
   gem 'simplecov-console', require: false
-  gem 'selenium-webdriver'
 end
 
 group :development do
