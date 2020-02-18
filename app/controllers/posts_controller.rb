@@ -28,13 +28,9 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if @post.user_id != current_user.id
-      flash[:notice] = "This is not your post to update"
-      redirect_to posts_path
-    end   
-    # flash[:notice] = "This is not your post to update" unless @post.user_id == current_user.id
-    # redirect_to posts_path unless @post.user_id == current_user.id
- end
+    logic = @post.user_id == current_user.id
+    redirect_to posts_path, notice: "This is not your post to update" unless logic
+  end
 
   def update
     @post = Post.find(params[:id])
