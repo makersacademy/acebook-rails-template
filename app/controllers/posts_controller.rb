@@ -13,7 +13,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find_by(user_id: session[:user_id], id: params[:id])
-    redirect_to(user_posts_path(session[:user_id]), notice: 'Not authorized to update this post') unless @post
+    if @post.nil?
+      message = 'Not authorized to update this post'
+    elsif @post.created_at + 600 < Time.zone.now
+      message = 'Not authorized to update this post'
+    end
+    redirect_to(user_posts_path(session[:user_id]), notice: message) if message
   end
 
   def create
@@ -36,16 +41,6 @@ class PostsController < ApplicationController
       message = 'Not authorized to update this post'
     end
     redirect_to(user_posts_path(session[:user_id]), notice: message)
-  end
-
-  def edit
-    @post = Post.find_by(user_id: session[:user_id], id: params[:id])
-    if @post.nil?
-      message = 'Not authorized to update this post'
-    elsif @post.created_at + 600 < Time.zone.now
-      message = 'Not authorized to update this post'
-    end
-    redirect_to(user_posts_path(session[:user_id]), notice: message) if message
   end
 
   def destroy
