@@ -45,6 +45,8 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'timecop'
+  gem 'webdrivers', '~> 3.7', '>= 3.7.2'
+  gem 'capybara-selenium', '~> 0.0.6'
 end
 
 group :development do
