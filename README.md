@@ -7,6 +7,32 @@ Ben Auld,
 Ilias Grigoropoulos,
 Vish Mayer,
 
+### Learning documentation
+
+## Database Setup
+To set up a migration:
+* `rails generate migration [NameOfMigrationInCamelCase]`
+* `rails db:reset`
+* `rails db:migrate`
+* add validations as necessary to the models
+  * for example: `validates :email, presence: true, uniqueness: true, format: EMAIL_REGEX`
+
+## Controller Set up
+* `rails g controller [name] [route]`
+* `rails g controller post index create show destroy`
+
+## Model set up
+* `rails g controller [name] [attribute:type]`
+* `rails g model post message:text` 
+  
+## Rails scaffold to create MVC all in one
+* `rails g scaffold [name] [model attribute:type]`
+* `rails g scaffold post message:text`
+
+## User authentication 
+* In the future, devise gem can be used to set up authentication quickly
+* In our project, a sessions controller was manually generated using the above methods, it uses a session variable (cookie) to redirect to the relevant page dependent on whether a user is logged in or not
+
 ## Quickstart
 
 First, clone this repository. Then:
