@@ -37,6 +37,5 @@ deploy:
     app:
       develop: acebook-inSANE
     on:
-      repo: nicolasraffray/acebook-inSANE
       branch: master
   
