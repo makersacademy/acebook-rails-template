@@ -14,7 +14,7 @@
       <img src="./assets/0.11.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-02-17T18:28:27+00:00">2020-02-17T18:28:27+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-02-18T11:20:32+00:00">2020-02-18T11:20:32+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.34%
+  99.35%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.15
+         2.14
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>304</b> relevant lines,
-    <span class="green"><b>302</b> lines covered</span> and
+    <b>308</b> relevant lines,
+    <span class="green"><b>306</b> lines covered</span> and
     <span class="red"><b>2</b> lines missed. </span>
     (<span class="green">
-  99.34%
+  99.35%
 </span>
 )
   </div>
@@ -501,9 +501,9 @@
         <tr class="t-file">
           <td class="strong t-file__name"><a href="#88bccddbab9a11c676242da36e94b336735de95c" class="src_link" title="spec/models/like_spec.rb">spec/models/like_spec.rb</a></td>
           <td class="green strong t-file__coverage">100.0 %</td>
-          <td>5</td>
-          <td>3</td>
-          <td>3</td>
+          <td>12</td>
+          <td>8</td>
+          <td>8</td>
           <td>0</td>
           <td>1.0</td>
           
@@ -513,10 +513,10 @@
           <td class="strong t-file__name"><a href="#00b48ad0c55b86471d1636ea53f1e41458262539" class="src_link" title="spec/models/post_spec.rb">spec/models/post_spec.rb</a></td>
           <td class="green strong t-file__coverage">100.0 %</td>
           <td>7</td>
-          <td>3</td>
-          <td>3</td>
+          <td>2</td>
+          <td>2</td>
           <td>0</td>
-          <td>1.33</td>
+          <td>1.0</td>
           
         </tr>
       
@@ -11857,8 +11857,8 @@
     
 
     <div class="t-line-summary">
-      <b>3</b> relevant lines.
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>8</b> relevant lines.
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -11909,12 +11909,89 @@
 
             
 
-            <code class="ruby">  &quot;add some examples to (or delete) #{__FILE__}&quot;</code>
+            <code class="ruby">  context &quot;with 2 or more likes&quot; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &quot;tallies them&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      user = User.create({:email =&gt; &quot;example@example.com&quot;, :password =&gt; &quot;example&quot;})</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      post = user.posts.create({:message =&gt; &quot;Meow&quot;})</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      like = post.likes.create(user_id: user.id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(post.likes[0]).to eq(like)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -11943,8 +12020,8 @@
     
 
     <div class="t-line-summary">
-      <b>3</b> relevant lines.
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>2</b> relevant lines.
+      <span class="green"><b>2</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -12011,13 +12088,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="6">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="6">
+            
             
 
             
 
-            <code class="ruby">  it { is_expected.to be }</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
