@@ -3,7 +3,11 @@
 class CommentsController < ApplicationController
   skip_before_action :authenticated_user
 
-  def index; end
+  def edit
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+  end
+ 
 
   def create
     @post = Post.find(params[:post_id])
@@ -12,6 +16,23 @@ class CommentsController < ApplicationController
     @comment.save
     redirect_back(fallback_location: home_path)
   end
+
+  def update
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    if comment_owner?(@comment)
+      @comment.update(comment_params)
+      redirect_to posts_path
+    else
+      flash.now.alert = 'Apologies, this is not your post to update!'
+      render 'edit'
+    end
+  end
+
+  def show
+  end
+
+  def index; end
 
   def destroy
     @comment = Comment.find(params[:id])
@@ -24,6 +45,8 @@ class CommentsController < ApplicationController
       render 'posts/index'
     end
   end
+
+  
 
   private
 

@@ -1,0 +1,11 @@
+<% if alert %>
+  <div class="alert alert-danger">
+    <%= alert %>
+  </div>
+<% end %>
+<h2 class="h3 mb-3 font-weight-normal">Edit a comment:</h2>
+<%= form_with(model: [ @post, @comment ], local: true) do |form| %>
+  <%= form.text_area :body, class: 'form-control', required: true %>
+<br>
+  <%= form.submit "Update comment", class: 'btn btn-lg btn-primary' %>
+<% end %>
