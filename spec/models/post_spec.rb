@@ -12,6 +12,9 @@ RSpec.describe Post, type: :model do
       end
     end
 
-
+    it 'should return true if post created less than 10 mins ago' do 
+      post = Post.new({:message => 'Hello world', :created_at => Time.now})
+      expect(subject.under_ten_mins(post)).to eq true
+    end 
   end
 end
