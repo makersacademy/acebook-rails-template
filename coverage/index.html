@@ -14,7 +14,7 @@
       <img src="./assets/0.11.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-02-18T15:36:25+00:00">2020-02-18T15:36:25+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-02-18T15:55:51+00:00">2020-02-18T15:55:51+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.38%
+  99.4%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.19
+         2.15
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>322</b> relevant lines,
-    <span class="green"><b>320</b> lines covered</span> and
+    <b>333</b> relevant lines,
+    <span class="green"><b>331</b> lines covered</span> and
     <span class="red"><b>2</b> lines missed. </span>
     (<span class="green">
-  99.38%
+  99.4%
 </span>
 )
   </div>
@@ -171,11 +171,11 @@
         <tr class="t-file">
           <td class="strong t-file__name"><a href="#fe9dbb78475198e61edb52d4d871cce0f55c4f2a" class="src_link" title="app/models/post.rb">app/models/post.rb</a></td>
           <td class="green strong t-file__coverage">100.0 %</td>
-          <td>6</td>
-          <td>3</td>
-          <td>3</td>
+          <td>10</td>
+          <td>5</td>
+          <td>5</td>
           <td>0</td>
-          <td>1.0</td>
+          <td>1.2</td>
           
         </tr>
       
@@ -512,9 +512,9 @@
         <tr class="t-file">
           <td class="strong t-file__name"><a href="#6428732b6ceb4b5e1cdd5d2615c49f7b14491365" class="src_link" title="spec/models/post_spec.rb">spec/models/post_spec.rb</a></td>
           <td class="green strong t-file__coverage">100.0 %</td>
-          <td>7</td>
-          <td>2</td>
-          <td>2</td>
+          <td>20</td>
+          <td>11</td>
+          <td>11</td>
           <td>0</td>
           <td>1.0</td>
           
@@ -2204,8 +2204,8 @@
     
 
     <div class="t-line-summary">
-      <b>3</b> relevant lines.
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>5</b> relevant lines.
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -2273,6 +2273,50 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def under_ten_mins(post)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="8">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    (Time.now - post.created_at) &lt; 600</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
             
             
 
@@ -12229,8 +12273,8 @@
     
 
     <div class="t-line-summary">
-      <b>2</b> relevant lines.
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>11</b> relevant lines.
+      <span class="green"><b>11</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -12297,7 +12341,95 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &#39;#under_ten_mins&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;should return false if post created more than 10 mins ago&#39; do </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      post = Post.new({:message =&gt; &#39;Hello world&#39;, :created_at =&gt; Time.now})#, created_at: nil, updated_at: nil, user_id: nil, wall_id: nil})</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      p post</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      Timecop.travel(Time.now + 11.minutes) do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(subject.under_ten_mins(post)).to eq false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
             
             
 
@@ -12308,7 +12440,62 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;should return true if post created less than 10 mins ago&#39; do </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      post = Post.new({:message =&gt; &#39;Hello world&#39;, :created_at =&gt; Time.now})</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(subject.under_ten_mins(post)).to eq true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">    end </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
