@@ -6,11 +6,4 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to redirect_to('/users/' + test_user.id.to_s + '/posts')
     end
   end
-
-  describe '#create' do
-    it 'creates new user and saves to database' do
-      expect_any_instance_of(User).to receive(:save!)
-      get(:create, params: { user: { email: 'test@email.com', password: 'password' }})
-    end
-  end
 end
