@@ -1,5 +1,7 @@
 # AceBook
 
+
+
 ## Overview
 
 Makers Academy Engineering Group Project to make a Facebook Clone (Acebook)
@@ -163,7 +165,7 @@ REQUIRED INSTRUCTIONS:
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: https://trello.com/b/JUaLZHFH/insane
+2. The card wall is here: <please update>
 
 ## How to contribute to this project
 
