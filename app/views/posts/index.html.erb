@@ -22,6 +22,19 @@
     <%= link_to 'Delete', post_path(post),
     method: :delete %>
     <%= link_to 'Edit', edit_post_path(post) %>
-  </p>
+  <div>
+  <h2 class="h5 mb-3 font-weight-normal">Comments:</h2>
+  <% post.comments.each do |comment| %>
+      <%= comment.body%>
+      <br>
+      <% end %>
+      <br>
+    <h2 class="h5 mb-3 font-weight-normal">Add a comment:</h2>
+    <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+      <%= form.text_area :body %><br>
+ 
+    <%= form.submit 'Add post',  class: 'btn btn-lg btn-primary' %>
+    <% end %>
+  </div>
   </div>
 <% end %>

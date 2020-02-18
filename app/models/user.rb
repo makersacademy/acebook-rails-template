@@ -4,6 +4,7 @@ require 'uri'
 
 class User < ApplicationRecord
   has_many :posts
+  has_many :comments, through: :posts
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :username, presence: true, uniqueness: true
   validates :password, length: { in: 6..10,
