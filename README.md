@@ -1,4 +1,4 @@
-http://inch-ci.org/github/basselalsayed/acebook-derailed.svg?branch=master
+[![Inline docs](http://inch-ci.org/github/basselalsayed/acebook-derailed.svg?branch=master)](http://inch-ci.org/github/basselalsayed/acebook-derailed)
 
 # AceBook Derailed
 The anti-social network
