@@ -17,12 +17,21 @@ To set up a migration:
 * add validations as necessary to the models
   * for example: `validates :email, presence: true, uniqueness: true, format: EMAIL_REGEX`
 
+## Heroku set up
+* set up online account
+* install CLI interace via homebrew using `brew tap heroku/brew && brew install heroku`
+* log into heroku on command line using `heroku login`
+* cd into project directory and initialise using `heroku create`
+* set up continuous deployment (if CI passes) via heroku pipeline/settings page online
+
 ## Travis integration with heroku
 * set up online accounts with heroku and travis
-* install CLI interfaces
+* install CLI interface by adding `gem 'travis'` to your gemfile
+* connect travis with heroku by running `travis setup heroku --org -r <repo_slug>`
+* in our case: `travis setup heroku --org -r basselalsayed/acebook-derailed`
 * set up continuous deployment (if CI passes) via heroku pipeline/settings page online
 * `travis encrypt $(heroku auth:token) --add deploy.api_key`
-* 
+  
 ## Controller Set up
 * `rails g controller [name] [route]`
 * `rails g controller post index create show destroy`
