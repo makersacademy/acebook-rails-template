@@ -2,12 +2,7 @@ require 'rails_helper'
 
 feature "test new post" do
  scenario "Can submit posts and view them" do
-    visit '/'
-    click_button "Sign Up"
-    fill_in "Email", with: "ben@gmail.com"
-    fill_in "Password", with: "Password"
-    click_button "create"
-
+    sign_up
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
