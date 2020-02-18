@@ -8,9 +8,7 @@ class EmailValidator < ActiveModel::Validator
   end
 
   def validate(user)
-    puts 'validate format'
     return if format(user)
-    puts 'validate domain'
     domain(user)
   end
 
@@ -22,13 +20,9 @@ class EmailValidator < ActiveModel::Validator
   end
 
   def domain(user)
-    puts 'before regex'
     domain = user.email.match(/(?<=@)(.+)/)[0]
-    puts 'after regex'
-    p mx = Resolv::DNS.open { |dns| dns.getresources(domain, Resolv::DNS::Resource::IN::MX) }
-    puts 'resolv'
+    mx = Resolv::DNS.open { |dns| dns.getresources(domain, Resolv::DNS::Resource::IN::MX) }
     ok = mx.size > 0
     user.errors.add(:email, 'Email format invaild, please enter valid email') unless ok
-    puts 'finishes domain'
   end
 end
