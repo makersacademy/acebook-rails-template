@@ -9,7 +9,7 @@ RSpec.feature 'Users can delete a post once created', type: :feature do
     fill_in 'post[post_content]', with: 'Hey there'
     click_on 'Create Post'
     expect(page).to have_content('Hey there')
-    x = Time.now + 660
+    x = Time.zone.now + 660
     travel_to(x)
     click_on 'Delete'
     expect(page).to have_content('Hey there')

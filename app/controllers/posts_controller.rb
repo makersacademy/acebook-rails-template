@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(user_id: session[:user_id], id: params[:id])
     if @post
-      if @post.created_at + 600 > Time.now
+      if @post.created_at + 600 > Time.zone.now
         message = 'Post deleted'
         @post.destroy
       else
@@ -37,10 +37,10 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find_by(user_id: session[:user_id], id: params[:id])
-    if @post == nil
-      message = "Not authorized to update this post"
-    elsif @post.created_at + 600 < Time.now 
-      message = "Not authorized to update this post"
+    if @post.nil?
+      message = 'Not authorized to update this post'
+    elsif @post.created_at + 600 < Time.zone.now
+      message = 'Not authorized to update this post'
     end
     redirect_to(user_posts_path(session[:user_id]), notice: message) if message
   end
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(user_id: session[:user_id], id: params[:id])
     if @post
-      if @post.created_at + 600 > Time.now 
+      if @post.created_at + 600 > Time.zone.now
         message = 'Post was successfully updated'
         @post.update(post_params)
       else
