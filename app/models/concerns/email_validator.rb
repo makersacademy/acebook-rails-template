@@ -6,7 +6,9 @@ class EmailValidator < ActiveModel::Validator
   end
 
   def validate(user)
+    puts 'validate format'
     return if format(user)
+    puts 'validate domain'
     domain(user)
   end
 
