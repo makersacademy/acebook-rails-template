@@ -50,6 +50,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    p post_params[:id]
     @post = Post.find_by(user_id: session[:user_id], id: params[:id])
     if @post
       if @post.created_at + 600 > Time.zone.now
@@ -58,7 +59,6 @@ class PostsController < ApplicationController
       else
         message = 'Not authorized to update this post'
       end
-
     else
       message = 'Not authorized to delete this post'
     end

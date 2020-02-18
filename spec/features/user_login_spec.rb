@@ -10,7 +10,7 @@ RSpec.feature 'Users can login to site', type: :feature do
     click_on('Login')
     fill_in('login[email]', with: 'test@testcom')
     fill_in('login[password]', with: 'password')
-    click_on('Login')
+    click_on('HERRNNNGGGHHHHH')
     expect(page).to have_content('Email format invaild, please enter valid email')
   end
 
@@ -19,7 +19,7 @@ RSpec.feature 'Users can login to site', type: :feature do
     click_on('Login')
     fill_in('login[email]', with: 'test@test.com')
     fill_in('login[password]', with: 'password')
-    click_on('Login')
+    click_on('HERRNNNGGGHHHHH')
     expect(page).to have_content('Login not found')
   end
 
@@ -29,7 +29,7 @@ RSpec.feature 'Users can login to site', type: :feature do
     click_on('Login')
     fill_in('login[email]', with: 'test@test.com')
     fill_in('login[password]', with: 'notmine')
-    click_on('Login')
+    click_on('HERRNNNGGGHHHHH')
     expect(page).to have_content('Login not found')
   end
 
@@ -39,7 +39,7 @@ RSpec.feature 'Users can login to site', type: :feature do
     click_on('Login')
     fill_in('login[email]', with: 'test@test.com')
     fill_in('login[password]', with: 'password')
-    click_on('Login')
+    click_on('HERRNNNGGGHHHHH')
     expect(page).to have_content('Welcome back test@test.com!')
   end
 end

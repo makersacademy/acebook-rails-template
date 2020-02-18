@@ -6,7 +6,7 @@ RSpec.feature 'Users can edit a post that has been created', type: :feature do
     click_on('Signup')
     fill_in('user[email]', with: 'test@example.com')
     fill_in('user[password]', with: 'password')
-    click_on('Signup')
+    click_on('Join the Rebel Alliance')
     click_on 'New Post'
     fill_in 'post[post_content]', with: 'Hesyy thesareasdf'
     click_on 'Create Post'
