@@ -2,6 +2,8 @@
 
 A Facebook clone by Catbook, Inc. The program allows users to **sign up**, **log in/out**, **post** to a timeline, and **delete/update** their own posts.
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/1cdf45b157d192f356f6/maintainability)](https://codeclimate.com/github/meghaniankov/acebook-catbook-inc/maintainability)
+
 ## The Team
 
 [Niki Manoledaki](https://github.com/nikimanoledaki), Senior Executive Vice-President, Catbook Inc.
