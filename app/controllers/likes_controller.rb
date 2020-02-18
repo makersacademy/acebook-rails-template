@@ -1,14 +1,21 @@
 class LikesController < ApplicationController
+  before_action :find_like, only: [:destroy]
 
   def create
     @post = Post.find(params[:post_id])
-    if liked?
-      flash[:notice] = "You can only like posts once"
-    else
-      @post.likes.create(user_id: current_user.id)
-    end
+    @post.likes.create(user_id: current_user.id)
     redirect_to posts_url
   end
+
+  def destroy
+    @like.destroy
+    redirect_to posts_url
+  end
+
+  def find_like
+    @post = Post.find(params[:post_id])
+    @like = @post.likes.find(params[:id])
+ end
 
   def liked?
     Like.where(user_id: current_user.id, post_id: params[:post_id]).exists?

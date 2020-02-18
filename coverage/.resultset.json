@@ -681,19 +681,26 @@
       "/Users/student/Projects/week8/acebook-catbook-ink-1/app/controllers/likes_controller.rb": {
         "lines": [
           1,
-          null,
-          1,
-          5,
-          5,
           1,
           null,
+          1,
+          4,
+          4,
           4,
           null,
-          5,
+          null,
+          1,
+          1,
+          1,
           null,
           null,
           1,
-          5,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
           null,
           null,
           null
@@ -995,6 +1002,8 @@
           1,
           1,
           1,
+          1,
+          1,
           null,
           null
         ]
@@ -1204,6 +1213,6 @@
         ]
       }
     },
-    "timestamp": 1582025436
+    "timestamp": 1582028304
   }
 }
