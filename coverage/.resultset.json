@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/acebook-2/acebook-404/app/models/user.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -14,7 +14,7 @@
           null
         ]
       },
-      "/Users/student/acebook-2/acebook-404/app/models/application_record.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -23,7 +23,7 @@
           null
         ]
       },
-      "/Users/student/acebook-2/acebook-404/app/controllers/user_controller.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/controllers/user_controller.rb": {
         "lines": [
           null,
           null,
@@ -48,7 +48,7 @@
           null
         ]
       },
-      "/Users/student/acebook-2/acebook-404/app/controllers/application_controller.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -57,7 +57,7 @@
           null
         ]
       },
-      "/Users/student/acebook-2/acebook-404/app/models/post.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/models/post.rb": {
         "lines": [
           null,
           null,
@@ -66,7 +66,7 @@
           null
         ]
       },
-      "/Users/student/acebook-2/acebook-404/app/controllers/posts_controller.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           1,
@@ -123,6 +123,6 @@
         ]
       }
     },
-    "timestamp": 1582021595
+    "timestamp": 1582029760
   }
 }
