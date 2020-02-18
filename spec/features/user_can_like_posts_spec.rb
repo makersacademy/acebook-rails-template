@@ -19,4 +19,13 @@ RSpec.feature 'Timeline', type: :feature do
     click_button 'Like'
     expect(page).to have_content('2 Likes')
   end
+
+  scenario 'User can only like a post once' do
+    sign_up
+    new_post
+    click_button 'Like'
+    expect(page).to have_content('1 Like')
+    click_button 'Like'
+    expect(page).to have_content('You can only like posts once')
+  end
 end
