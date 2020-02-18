@@ -32,6 +32,7 @@ RSpec.feature 'Users can edit a post that has been created', type: :feature do
     fill_in 'user[email]', with: 'test2@test.com'
     fill_in 'user[password]', with: 'password'
     click_on 'Join the Rebel Alliance'
+    visit '/posts'
     click_on 'Edit'
     expect(page).to have_content('Not authorized to update this post')
   end
