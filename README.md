@@ -17,6 +17,12 @@ To set up a migration:
 * add validations as necessary to the models
   * for example: `validates :email, presence: true, uniqueness: true, format: EMAIL_REGEX`
 
+## Travis integration with heroku
+* set up online accounts with heroku and travis
+* install CLI interfaces
+* set up continuous deployment (if CI passes) via heroku pipeline/settings page online
+* `travis encrypt $(heroku auth:token) --add deploy.api_key`
+* 
 ## Controller Set up
 * `rails g controller [name] [route]`
 * `rails g controller post index create show destroy`
