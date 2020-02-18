@@ -4,7 +4,7 @@ RSpec.feature 'Users can create a post', type: :feature do
     click_on('Signup')
     fill_in('user[email]', with: 'test@test.com')
     fill_in('user[password]', with: 'password')
-    click_on('Signup')
+    click_on('Join the Rebel Alliance')
     click_on 'New Post'
     fill_in 'post[post_content]', with: 'Hey there'
     click_on 'Create Post'
