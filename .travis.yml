@@ -1,0 +1,19 @@
+language: ruby
+dist: trusty
+rvm:
+- 2.5.0
+services:
+- postgresql
+before_script:
+- bundle exec rake db:test:prepare
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+script:
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: DK23+3rPctVmdBY92LIwYqsStvXBr2DMv8VtkgkJSIyyPJ9Oh4KTgMPdFUE7EUdBP0AGJKGTeeny36jA3SwUQqpqYSViG6grrVIf5iW0Rh2SIl5AUz9pfWqRnUzuZCEj8EKfroVcLEGXRFEBtGmYnA48g3Uv19XX+7TsfFzJTJPhlrcinwgUlFVKQj3gKwY/9Wn4A4FgBQqMVfih3PG7LzYJnIdUDxTJwOYNRGfajduhJz4GCeOnqtU8LcgX4TpWoxFZUdb5D7o9ElzGPMlEb8AKbBA/OPf9ncLEMppSttc0RZgCaL2ncx0OQkReEtRTmxVIuootqgdEZeuf6/o1ljF7FUqk/Ef3pO5Higc54cv7uJfYEraPNFz8HNMyXcyvJKvCkgoD9h1fEIrQNSkkPLbQbC8UqQVX/dRrV90qXsvOIJWPU8lwFiB04+6QgLA1s3EjG+iLT+W+4xkLppODv3T4vtP+J4MEDoIIJ/A0lVNB52FINjSsXA54/75/gEMn6493UuOdMFx2iuhOfA3ftm9LgOKjmdXM+nZcr8ksi5IRDEhMuNNK6NnEadV+sFPZ02wBckkuhfSwd1Yt5q7AjbIVMl/PBg+IDu2ZGUH/9DtWqwTkCcrvMFuX7ZMGB4VGl/C1OWRFqkCtq16dmhQZYOyxtftWs99YsWLWjQKUFOI=
+  app: acebook-derailed
+  on:
+    repo: basselalsayed/acebook-derailed
