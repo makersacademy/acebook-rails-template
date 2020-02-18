@@ -33,12 +33,12 @@ RSpec.feature "Timeline", type: :feature do
   #   expect(page).not_to have_content(Time.now.strftime("%Y-%m-%d %H:%M:%S").to_s)
   # end
 
-  scenario "Can’t delete other users post" do
-    post
-    sign_up
-    click_button("Delete")
-    expect(page).to have_content("Thats not your post to delete")
-  end
+  # scenario "Can’t delete other users post" do
+  #   post
+  #   sign_up
+  #   click_button("Delete")
+  #   expect(page).to have_content("Thats not your post to delete")
+  # end
 
 
 end

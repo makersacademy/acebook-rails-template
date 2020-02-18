@@ -31,15 +31,15 @@ RSpec.feature "Timeline", type: :feature do
   #   expect(page).to have_content(Time.now.strftime("%Y/%m/%d %H:%M:%S").to_s)
   # end
 
-  scenario "Can’t update someone else’s post" do
-    post
-    visit "/"
-    click_button("Login")
-    fill_in "email", with: user.email
-    fill_in "password", with: user.password
-    click_button("Login")
-    click_button("Update")
-    expect(page).to have_content("This is not your post to update")
-  end
+  # scenario "Can’t update someone else’s post" do
+  #   post
+  #   visit "/"
+  #   click_button("Login")
+  #   fill_in "email", with: user.email
+  #   fill_in "password", with: user.password
+  #   click_button("Login")
+  #   click_button("Update")
+  #   expect(page).to have_content("This is not your post to update")
+  # end
 
 end
