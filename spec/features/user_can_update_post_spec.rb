@@ -39,4 +39,20 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("This is not your post to update")
   end
 
+  scenario "Can't update posts after ten minutes" do
+    sign_up
+    click_link "New post"
+    fill_in "Message", with: "Hello, world!"
+    time = Time.utc(2020, 02, 18, 17, 27, 20)
+    Timecop.travel(time)
+    click_button "Submit"
+    new_time = Time.utc(2020, 02, 18, 17, 40)
+    Timecop.travel(new_time)
+    visit '/posts'
+    expect(page).not_to have_link "Update"
+    Timecop.return
+  end
+
+  
+
 end

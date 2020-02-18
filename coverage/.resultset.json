@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/controllers/posts_controller_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           null,
           null,
@@ -35,7 +35,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/controllers/sessions_controller_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/controllers/sessions_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -72,7 +72,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/rails_helper.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -108,27 +108,16 @@
           null,
           null,
           null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
           null,
           null,
           null,
           null,
           1,
           null,
+          1,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          1,
           null,
           null,
           null,
@@ -136,8 +125,25 @@
           1,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           null,
+          null,
+          1,
+          null,
+          null,
+          1,
           null,
           1,
           null,
@@ -165,7 +171,7 @@
           1
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/environment.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -174,7 +180,7 @@
           1
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/application.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/application.rb": {
         "lines": [
           1,
           null,
@@ -196,14 +202,14 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/boot.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/boot.rb": {
         "lines": [
           1,
           null,
           1
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/environments/test.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -249,7 +255,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/initializers/application_controller_renderer.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -259,7 +265,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/initializers/assets.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -277,7 +283,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/initializers/backtrace_silencers.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -288,7 +294,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/initializers/cookies_serializer.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -297,7 +303,7 @@
           1
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/initializers/filter_parameter_logging.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -305,7 +311,7 @@
           1
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/initializers/inflections.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -325,7 +331,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/initializers/mime_types.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -333,7 +339,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/initializers/wrap_parameters.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -351,7 +357,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/factories/posts.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/factories/posts.rb": {
         "lines": [
           1,
           1,
@@ -361,7 +367,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/factories/users.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/factories/users.rb": {
         "lines": [
           1,
           1,
@@ -371,7 +377,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/config/routes.rb": {
+      "/Users/student/Projects/acebook-inSANE/config/routes.rb": {
         "lines": [
           1,
           null,
@@ -394,31 +400,31 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/helpers/application_helper.rb": {
+      "/Users/student/Projects/acebook-inSANE/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/helpers/sessions_helper.rb": {
+      "/Users/student/Projects/acebook-inSANE/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/helpers/user_helper.rb": {
+      "/Users/student/Projects/acebook-inSANE/app/helpers/user_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/helpers/welcome_helper.rb": {
+      "/Users/student/Projects/acebook-inSANE/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/controllers/sessions_controller.rb": {
+      "/Users/student/Projects/acebook-inSANE/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -452,7 +458,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/controllers/application_controller.rb": {
+      "/Users/student/Projects/acebook-inSANE/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -462,20 +468,20 @@
           1,
           null,
           1,
-          114,
+          129,
           null,
           null,
           1,
-          86,
+          97,
           null,
           null,
           1,
-          34,
+          39,
           null,
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/controllers/user_controller_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/controllers/user_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -484,39 +490,39 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/controllers/user_controller.rb": {
+      "/Users/student/Projects/acebook-inSANE/app/controllers/user_controller.rb": {
         "lines": [
           1,
           null,
           1,
-          null,
-          1,
-          null,
-          1,
-          9,
-          null,
-          null,
-          1,
-          9,
-          null,
-          9,
-          9,
-          8,
-          1,
-          1,
-          1,
-          null,
-          null,
           null,
           1,
           null,
           1,
           10,
           null,
+          null,
+          1,
+          10,
+          null,
+          10,
+          10,
+          9,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          11,
+          null,
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/controllers/welcome_controller_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/controllers/welcome_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -532,7 +538,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/controllers/welcome_controller.rb": {
+      "/Users/student/Projects/acebook-inSANE/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           1,
@@ -544,7 +550,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/features/home_page_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/features/home_page_spec.rb": {
         "lines": [
           1,
           null,
@@ -557,69 +563,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/features/login_failure_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/features/login_success_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/features/logout_flash_message_spec.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/web_helpers.rb": {
-        "lines": [
-          1,
-          8,
-          8,
-          8,
-          8,
-          8,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/features/sign_up_failure_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/features/login_failure_spec.rb": {
         "lines": [
           1,
           null,
@@ -635,7 +579,69 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/features/sign_up_success_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/features/login_success_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Projects/acebook-inSANE/spec/features/logout_flash_message_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Projects/acebook-inSANE/spec/web_helpers.rb": {
+        "lines": [
+          1,
+          9,
+          9,
+          9,
+          9,
+          9,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/student/Projects/acebook-inSANE/spec/features/sign_up_failure_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Projects/acebook-inSANE/spec/features/sign_up_success_spec.rb": {
         "lines": [
           1,
           null,
@@ -648,7 +654,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/features/user_can_delete_post_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/features/user_can_delete_post_spec.rb": {
         "lines": [
           1,
           1,
@@ -695,7 +701,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
           1,
           1,
@@ -714,8 +720,9 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/features/user_can_update_post_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/features/user_can_update_post_spec.rb": {
         "lines": [
+          1,
           1,
           1,
           null,
@@ -760,10 +767,30 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/features/user_logout_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/features/user_logout_spec.rb": {
         "lines": [
           1,
           1,
@@ -776,45 +803,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/helpers/sessions_helper_spec.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/helpers/user_helper_spec.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/helpers/welcome_helper_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/helpers/sessions_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -833,44 +822,82 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/models/post_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/helpers/user_helper_spec.rb": {
         "lines": [
           1,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
-          2,
+          null,
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/models/post.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/helpers/welcome_helper_spec.rb": {
         "lines": [
           1,
           null,
-          1,
-          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           null,
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/models/user_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/models/post_spec.rb": {
         "lines": [
           1,
           null,
           1,
           2,
+          null
+        ]
+      },
+      "/Users/student/Projects/acebook-inSANE/app/models/post.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/models/user.rb": {
+      "/Users/student/Projects/acebook-inSANE/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/student/Projects/acebook-inSANE/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Projects/acebook-inSANE/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -887,7 +914,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/views/sessions/create.html.erb_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/views/sessions/create.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -896,7 +923,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/views/sessions/login.html.erb_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/views/sessions/login.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -905,7 +932,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/views/sessions/new.html.erb_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/views/sessions/new.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -914,7 +941,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/views/sessions/welcome.html.erb_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/views/sessions/welcome.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -923,7 +950,7 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/spec/views/welcome/index.html.erb_spec.rb": {
+      "/Users/student/Projects/acebook-inSANE/spec/views/welcome/index.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -932,24 +959,24 @@
           null
         ]
       },
-      "/Users/student/Documents/Projects/week8-acebook-app/acebook-inSANE/app/controllers/posts_controller.rb": {
+      "/Users/student/Projects/acebook-inSANE/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           1,
           null,
           1,
-          5,
+          6,
           null,
           null,
           1,
-          5,
-          5,
-          5,
-          5,
+          6,
+          6,
+          6,
+          6,
           null,
           null,
           1,
-          19,
+          22,
           null,
           null,
           1,
@@ -980,12 +1007,13 @@
           1,
           null,
           1,
-          5,
+          6,
           null,
           null
         ]
       }
     },
+
     "timestamp": 1582038855
   }
 }
