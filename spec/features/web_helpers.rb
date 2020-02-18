@@ -25,6 +25,13 @@ def new_post
   click_button 'Submit'
 end
 
+def new_post_two
+  visit '/posts'
+  click_link 'New post'
+  fill_in "area", with: 'Howdy, world!'
+  click_button 'Submit'
+end
+
 def log_in
   sign_up
   visit '/'
