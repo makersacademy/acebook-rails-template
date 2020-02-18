@@ -4,7 +4,7 @@
   <%= f.label :email%><br>
   <%= f.text_field :email%><br>
   <%= f.label :password%><br>
-  <%= f.password_field :password%><br>
+  <%= f.password_field :password, minlength: 6 %><br>
   <%= f.submit 'create'%>
 <%end%>
 <% if @user.errors.any? %>
