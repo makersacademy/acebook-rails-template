@@ -13,7 +13,6 @@ class UserController < ApplicationController
     
     session[:user_id] = @user.id
     if @user.valid? 
-      p 'if statement'
       redirect_to posts_url, notice: "You've successfully signed up!"
     elsif !!user_params
       flash[:notice] = "Email or Password not valid. Password must be 6-10 characters long."

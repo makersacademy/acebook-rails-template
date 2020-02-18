@@ -1,52 +1,53 @@
 require 'time'
 class PostsController < ApplicationController
   
-  def new # action in the browser localhost:3000/posts/new
+  def new
     @post = Post.new
   end
 
-  def create # method to create a post
-    @post = Post.create(post_params) # crud method
+  def create
+    @post = Post.create(post_params)
     @post.user_id = current_user.id
     @post.save
-    redirect_to posts_url # redirect to the posts page
+    redirect_to posts_url
   end
 
-  def index # action - in the browser  localhost:30000/posts/index
+  def index
     @posts = Post.all
   end
 
-  def destroy # CRUD method to delete post
-    @post = Post.find(params[:id]) # find the post by its id
+  def destroy
+    @post = Post.find(params[:id])
     if @post.user_id == current_user.id
-      @post.destroy  # delete the id
+      @post.destroy
     else
       flash[:notice] = "Thats not your post to delete"
     end
-    redirect_to posts_path # redirect to the posts page - localhost:3000/posts
-
+    redirect_to posts_path
   end
 
-  def edit #action - localhost:3000/action
-    @post = Post.find(params[:id]) # find/grab the post by its id
+  def edit
+    @post = Post.find(params[:id])
     if @post.user_id != current_user.id
       flash[:notice] = "This is not your post to update"
       redirect_to posts_path
-    end
-  end
+    end   
+    # flash[:notice] = "This is not your post to update" unless @post.user_id == current_user.id
+    # redirect_to posts_path unless @post.user_id == current_user.id
+ end
 
-  def update # CRUD method to update/edit a post
-    @post = Post.find(params[:id])  # find /grab the method by its id
+  def update
+    @post = Post.find(params[:id])
     if @post.update(params[:post].permit(:message))
-      redirect_to posts_url # redirect to localhost:3000/posts
+      redirect_to posts_url
     else
-      render 'edit' # render the edit.html.erb view
+      render 'edit'
     end
   end
 
   private
 
-  def post_params # helper linked to the create method - means that the post requires the text
+  def post_params
     params.require(:post).permit(:message)
   end
 end

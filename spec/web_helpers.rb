@@ -1,4 +1,3 @@
-
 def sign_up
   visit '/'
   click_button('Sign Up')

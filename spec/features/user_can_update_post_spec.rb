@@ -2,9 +2,9 @@ require 'rails_helper'
 require 'web_helpers'
 
 RSpec.feature "Timeline", type: :feature do
-  let(:user){create(:user)}
-  let(:user1){create(:user)}
-  let(:post){create(:post)}
+  let(:user) { create(:user) }
+  let(:user1) { create(:user) }
+  let(:post) { create(:post) }
   
   scenario "Can view update button" do
     sign_up
@@ -28,7 +28,7 @@ RSpec.feature "Timeline", type: :feature do
     click_button 'Save Post'
 
     expect(page).to have_content("Hello, Acebook Insane!")
-    expect(page).to have_content(Time.now.strftime("%Y/%m/%d %H:%M:%S").to_s)
+    expect(page).to have_content(Time.zone.now.strftime("%Y/%m/%d %H:%M:%S").to_s)
   end
 
   scenario "Can’t update someone else’s post" do
