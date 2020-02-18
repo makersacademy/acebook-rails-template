@@ -805,10 +805,6 @@
           null,
           1,
           null,
-          null,
-          null,
-          null,
-          null,
           1,
           5,
           null,
@@ -1223,6 +1219,6 @@
         ]
       }
     },
-    "timestamp": 1582041883
+    "timestamp": 1582042021
   }
 }

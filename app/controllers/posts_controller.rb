@@ -46,10 +46,6 @@ class PostsController < ApplicationController
 
   private
 
-  # def under_ten_mins(post)
-  #   (Time.now - post.created_at) < 600
-  # end
-
   def users_post(post)
     post.user_id == current_user.id
   end
