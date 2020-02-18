@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
   get 'posts/index'
 
-  get '/posts/:id/edit', to: 'posts#edit', as: 'patch'
+  get '/posts/:id/edit', to: 'posts#edit'
 
-  get 'posts/new', to: 'posts#new', as: 'new_post'
 
-  get 'users/new', as: 'signup'
-
-  # get '/posts/:id/edit', to: 'posts#edit', as: 'post'
-
-  get 'users/new'
+  # change name of route users/new to /signup in the address bar
+  get 'signup', to: 'users#new'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -23,9 +19,9 @@ Rails.application.routes.draw do
 
   resources :sessions, only: %i[login login_attempt logout]
 
-  get 'login', to: 'sessions#login', as: 'login'
+  get 'login', to: 'sessions#login'
   post 'login', to: 'sessions#login_attempt'
-  get 'logout', to: 'sessions#logout', as: 'logout'
+  get 'logout', to: 'sessions#logout'
 
   root 'welcome#index'
 end
