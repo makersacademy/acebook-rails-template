@@ -1,8 +1,6 @@
 # CatBook
 
-Facebook clone by Catbook, Inc
-
-The program allows users to **sign up**, **log in/out**, **post** to a timeline, and **delete/update** their own posts.
+A Facebook clone by Catbook, Inc. The program allows users to **sign up**, **log in/out**, **post** to a timeline, and **delete/update** their own posts.
 
 ## The Team
 
@@ -16,7 +14,9 @@ The program allows users to **sign up**, **log in/out**, **post** to a timeline,
 
 ## Our Learnings
 
-https://medium.com/@catbookinc
+[Blog](https://medium.com/@catbookinc)
+
+[Trello Board](https://trello.com/b/MUHm5tsw/catbook-inc)
 
 ## Deployed App
 
@@ -31,10 +31,6 @@ bin/rails db:migrate
 ```
 
 ## Running the program
-
-### On Heroku
-
-https://acebook-catbook-inc.herokuapp.com/posts
 
 ### Start Server
 
