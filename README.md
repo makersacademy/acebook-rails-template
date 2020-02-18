@@ -2,26 +2,32 @@
 
 This project is designed to act as a social media site where users can sign up/ sign in and post content to their own or other users pages.
 
-REQUIRED INSTRUCTIONS:
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
-
 ## Quickstart
 
-First, clone this repository. Then:
+First, clone this repository. 
+
+Then:
 
 ```bash
 > bundle install
 > bin/rails db:create
 > bin/rails db:migrate
 
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+> bundle exec rspec 
+> rails server
+
+This will ensure that:
+- All the gems are installed
+- Databases are created
+- Tests are working
+- Finally, spins up the server for you to look at the project via http://localhost:3000/
+
+## Outline & Contribution
+
+[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+
+See [CONTRIBUTING.md](CONTRIBUTING.md)
+
 ```
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
