@@ -36,17 +36,7 @@ deploy:
       secure: ljT4lJtqNLSBIvQlm/8Uk+h0d5kuthfeHrhRDf8pXjJVLq+Nfof0PNjtcSIaMrKcNCEac4QjpoFuqbsmdoiqx4fyYTEKXrGZ9EOxATdZiXjgPZvnUeiYyZ/si5mf3GQS6Fe86kW+524FJDTh+UK4hb5BmyfT2ksJPAvHSV2idyUAWvzAyFwjefU/lBA/hBOG9pRO/I+7VIyIr2fuLs6N8Vnp/38RpKlQJznTFWDgMJBmAzp8l/6UF3vQP5r2fRD5M42CulfhUF7/NAqTDugaAPClbIvJM+2a2KCzxAX40R9fg0zOR8cUdo1bUmLXkEKx1dYfH4QgrDCD7chrahazKIlVKcOwPVvC9XY9sQfY0HQ+tsbCvh5pr9zZaIF4qE8O03co6ZMcxzFWa8DB/SwWvZ3HLpUR9VD/uwDJHuYbhh7QPEZoxkG/hd1pgflVCfXA3hPaWDy6f5Y0gYJq0G1MeKg1pBBjuPGnFFhsfmapv/w32E5Q284bKOCELgVFnumlZGmbDYl26xdLmAmwvcEEIe3eBmeFoEwFmY+f05LHlMALyRWsrRvc947HzZLgqoVvLHgKmYIqgWrmKuYh7nmRWRINZ7zWlgQD52IDH7mxgIlz1pzlTd71z2/LXnju5bs0ZR5rtLMejBLvfSD4DPKZ+EN08NovMasEg7iTKDSBlgY=
     app:
       develop: acebook-inSANE
-    env: "dev"
-    on:
-      branch: develop
-  
-
-  - provider: heroku
-    api_key:
-      secure: ljT4lJtqNLSBIvQlm/8Uk+h0d5kuthfeHrhRDf8pXjJVLq+Nfof0PNjtcSIaMrKcNCEac4QjpoFuqbsmdoiqx4fyYTEKXrGZ9EOxATdZiXjgPZvnUeiYyZ/si5mf3GQS6Fe86kW+524FJDTh+UK4hb5BmyfT2ksJPAvHSV2idyUAWvzAyFwjefU/lBA/hBOG9pRO/I+7VIyIr2fuLs6N8Vnp/38RpKlQJznTFWDgMJBmAzp8l/6UF3vQP5r2fRD5M42CulfhUF7/NAqTDugaAPClbIvJM+2a2KCzxAX40R9fg0zOR8cUdo1bUmLXkEKx1dYfH4QgrDCD7chrahazKIlVKcOwPVvC9XY9sQfY0HQ+tsbCvh5pr9zZaIF4qE8O03co6ZMcxzFWa8DB/SwWvZ3HLpUR9VD/uwDJHuYbhh7QPEZoxkG/hd1pgflVCfXA3hPaWDy6f5Y0gYJq0G1MeKg1pBBjuPGnFFhsfmapv/w32E5Q284bKOCELgVFnumlZGmbDYl26xdLmAmwvcEEIe3eBmeFoEwFmY+f05LHlMALyRWsrRvc947HzZLgqoVvLHgKmYIqgWrmKuYh7nmRWRINZ7zWlgQD52IDH7mxgIlz1pzlTd71z2/LXnju5bs0ZR5rtLMejBLvfSD4DPKZ+EN08NovMasEg7iTKDSBlgY=
-    app:
-      develop: acebook-inSANE
     env: "prod"
     on:
-      branch: develop
+      branch: master
   
