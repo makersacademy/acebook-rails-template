@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user, :only => [:new, :create, :index]
+  before_action :authenticate_user
+
   def new
     @post = Post.new
   end
 
   def create
-    @post = Post.create(message: params["post"]["message"], users_id: @current_user.id)
+    @post = Post.create(message: params['post']['message'], users_id: @current_user.id)
     redirect_to posts_url
   end
 
@@ -19,29 +20,28 @@ class PostsController < ApplicationController
       if @post.update(post_params)
         redirect_to posts_url
       else
-        render "edit"
+        render 'edit'
       end
     else
-      flash[:notice] = "You can only edit messages for a maximum of 10 minutes after creation."
-      flash[:color] = "invalid"
+      flash[:notice] = 'You can only edit messages for a maximum of 10 minutes after creation.'
+      flash[:color] = 'invalid'
       redirect_to posts_url
     end
   end
-   
+
   def index
     # @current_user = session[:users_id]
     @posts = Post.order(created_at: :desc)
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
 
-def destroy
-  @post = Post.find(params[:id])
-  @post.destroy
- 
-  redirect_to posts_url
-end
+    redirect_to posts_url
+  end
 
-  private 
+  private
 
   def post_params
     params[:post].permit(:message, :users_id)

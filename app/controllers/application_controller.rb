@@ -1,26 +1,25 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :authenticate_user, :save_login_state, :is_email
+  helper_method :authenticate_user, :save_login_state
 
-  protected 
+  protected
 
   def authenticate_user
     if session[:user_id]
       @current_user = User.find(session[:user_id])
-      return true	
+      true
     else
-      redirect_to('login')
-      return false
+      redirect_to('/')
+      false
     end
   end
 
   def save_login_state
     if session[:user_id]
       redirect_to('/posts/index')
-      return false
+      false
     else
-      return true
+      true
     end
   end
-  
 end
