@@ -165,7 +165,9 @@ REQUIRED INSTRUCTIONS:
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+2. The card wall is here:  https://trello.com/b/JUaLZHFH/insane
+
+3. Link to deployed app: https://acebook-insane.herokuapp.com/
 
 ## How to contribute to this project
 
