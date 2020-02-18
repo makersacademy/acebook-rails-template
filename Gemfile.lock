@@ -183,6 +183,9 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-rails (2.4.2)
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
     rubocop-rspec (1.38.0)
       rubocop (>= 0.68.1)
     ruby-progressbar (1.10.1)
@@ -270,6 +273,7 @@ DEPENDENCIES
   rails (~> 5.1.1)
   rspec-rails (~> 3.5)
   rubocop
+  rubocop-rails
   rubocop-rspec
   sass-rails (>= 3.2)
   selenium-webdriver (~> 3.5.1)
