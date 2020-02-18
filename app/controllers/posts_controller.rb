@@ -24,16 +24,17 @@ class PostsController < ApplicationController
       flash[:notice] = "Thats not your post to delete"
     end
     redirect_to posts_path
-
   end
 
   def edit
     @post = Post.find(params[:id])
-    unless @post.user_id == current_user.id
+    if @post.user_id != current_user.id
       flash[:notice] = "This is not your post to update"
       redirect_to posts_path
-    end
-  end
+    end   
+    # flash[:notice] = "This is not your post to update" unless @post.user_id == current_user.id
+    # redirect_to posts_path unless @post.user_id == current_user.id
+ end
 
   def update
     @post = Post.find(params[:id])
