@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   def show; end
 
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.where('location_id = user_id').order(created_at: :desc)
   end
 
   def destroy
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :location_id)
   end
 
   def post_owner?(post)
