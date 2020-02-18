@@ -11,8 +11,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to posts_url
     else 
-      flash[:alert] = "Email or Password not valid"
-      render :welcome # renders the welcome page
+      flash[:notice] = "Email or Password not valid"
+      render 'new' # renders the welcome page
     end 
   end
 
