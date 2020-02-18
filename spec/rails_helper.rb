@@ -64,9 +64,28 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
+  # configure the driver to run in headless mode
+  Capybara.server = :puma, { Silent: true }
+  
 end
 
-# brew install chromedriver
-# brew services start chromedriver
-# Capybara.default_driver = :selenium_chrome
-Capybara.default_driver = :selenium
+
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.register_driver :headless_chrome do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+    chromeOptions: {
+      args: %w[headless enable-features=NetworkService,NetworkServiceInProcess]
+    }
+  )
+
+  Capybara::Selenium::Driver.new app,
+    browser: :chrome,
+    desired_capabilities: capabilities
+end
+
+Capybara.default_driver = :headless_chrome
+Capybara.javascript_driver = :headless_chrome
+
