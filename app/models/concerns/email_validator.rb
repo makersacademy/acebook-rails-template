@@ -1,3 +1,5 @@
+require 'resolv'
+
 class EmailValidator < ActiveModel::Validator
   EMAIL_REGEXP = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
 
