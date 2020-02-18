@@ -36,7 +36,7 @@
     <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
       <%= form.text_area :body, class: 'form-control' %><br>
  
-    <%= form.submit 'Add post',  class: 'btn btn-lg btn-primary' %>
+    <%= form.submit 'Add Comment',  class: 'btn btn-lg btn-primary' %>
     <% end %>
   </div>
   </div>
