@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.feature 'Posts', type: :feature do
   scenario 'Posts are shown from newest to oldest' do
     sign_up
-
     visit '/posts'
     click_link 'New post'
     fill_in "area", with: 'Meow one'

@@ -12,12 +12,12 @@ RSpec.feature 'User', type: :feature do
   scenario 'Redirected to user\'s wall after sign up' do
     visit '/'
     sign_up
-    expect(current_path).to eql(`/users/#{User.all.first.id}`)
+    expect(current_path).to eql(user_page_path(User.all.first.id))
   end
 
   scenario 'Redirected to user\'s wall after log in' do
     visit '/'
     log_in
-    expect(current_path).to eql(`/#{User.all.first.id}`)
+    expect(current_path).to eql(user_page_path(User.all.first.id))
   end
 end

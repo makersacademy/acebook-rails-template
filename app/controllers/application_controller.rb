@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(_resource)
-    '/posts'
+    user_page_path(_resource)
   end
 end
