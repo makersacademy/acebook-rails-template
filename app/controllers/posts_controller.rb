@@ -7,20 +7,18 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-  end
-
-  def update
-    @post = Post.find(params[:id])
     if users_post(@post) && under_ten_mins(@post)
-      if @post.update(post_params)
-        redirect_to posts_url
-      else
-        render 'edit'
-      end
+      render 'edit'
     else
       redirect_to posts_url
       flash[:alert] = "Sorry you cannot edit this post"
     end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to posts_url
   end
 
   def create
@@ -62,5 +60,4 @@ class PostsController < ApplicationController
   def authenticate_user
     redirect_to '/' unless user_signed_in?
   end
-
 end

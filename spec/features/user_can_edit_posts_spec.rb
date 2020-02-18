@@ -22,8 +22,6 @@ RSpec.feature 'Timeline', type: :feature do
     sign_up_two
     visit '/posts'
     click_link 'Edit'
-    fill_in "area", with: 'Updated Text'
-    click_button 'Update Post'
     expect(page).to have_content('Sorry you cannot edit this post')
     expect(page).to have_content('Hello, world!')
   end
@@ -32,10 +30,8 @@ RSpec.feature 'Timeline', type: :feature do
     sign_up
     new_post
     visit '/posts'
-    click_link 'Edit'
-    fill_in "area", with: 'Updated Text'
     Timecop.travel(Time.now + 11.minutes) do
-      click_button 'Update Post'
+      click_link 'Edit'
       expect(page).to have_content('Sorry you cannot edit this post')
       expect(page).to_not have_content('Updated Text')
     end
