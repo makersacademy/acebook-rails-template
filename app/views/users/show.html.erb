@@ -34,6 +34,23 @@
     <%= link_to 'Delete', user_path(post),
     method: :delete %>
     <%= link_to 'Edit', edit_post_path(post), controller: 'posts'%>
-  </p>
+  <div class='comment-container'>
+  <h2 class="h5 mb-3 font-weight-bold">Comments:</h2>
+  <% post.comments.each do |comment| %>
+  <% user = User.find(comment.user_id).username %>
+  <strong><%= link_to "#{user}", user_path(post.user.id), controller: 'users', style: "color: black;" %>:</strong><br>
+      <%= simple_format(comment.body)%>
+      <%= comment.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
+      <br>
+      <br>
+      <% end %>
+      <br>
+    <h2 class="h5 mb-3 font-weight-normal">Add a comment:</h2>
+    <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+      <%= form.text_area :body, class: 'form-control' %><br>
+ 
+    <%= form.submit 'Add Comment',  class: 'btn btn-lg btn-primary' %>
+    <% end %>
+  </div>
 </div>
 <% end %>
