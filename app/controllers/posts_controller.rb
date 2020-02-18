@@ -60,7 +60,7 @@ class PostsController < ApplicationController
   end
 
   def authenticate_user
-    redirect_to '/' unless user_signed_in?
+    redirect_to '/users/sign_in' unless user_signed_in?
   end
 
 end

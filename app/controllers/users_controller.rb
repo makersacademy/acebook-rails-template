@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    authenticate_user
     @user = User.find(params[:id])
     @posts = @user.posts
   end
@@ -19,6 +20,6 @@ class UsersController < ApplicationController
   private
 
   def authenticate_user
-    redirect_to '/' unless user_signed_in?
+    redirect_to '/users/sign_in' unless user_signed_in?
   end
 end
