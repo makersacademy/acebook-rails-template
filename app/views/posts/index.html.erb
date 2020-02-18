@@ -21,11 +21,12 @@
     <%= link_to 'Delete', post_path(post),
     method: :delete %>
     <%= link_to 'Edit', edit_post_path(post) %>
-  <div>
+  <div class='comment-container'>
   <br>
   <h2 class="h5 mb-3 font-weight-bold">Comments:</h2>
   <% post.comments.each do |comment| %>
-  <strong><%= link_to "#{current_user.username}", user_path(post.user.id), controller: 'users', style: "color: black;" %>:</strong><br>
+  <% user = User.find(comment.user_id).username %>
+  <strong><%= link_to "#{user}", user_path(post.user.id), controller: 'users', style: "color: black;" %>:</strong><br>
       <%= simple_format(comment.body)%>
       <%= comment.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
       <br>
