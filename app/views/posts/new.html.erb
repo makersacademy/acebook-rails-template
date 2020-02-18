@@ -2,8 +2,13 @@
   <%= form.label :message %><br>
   <%= form.text_area :message, size: "30x30" %>
 
-  <%= form.submit "Submit" %>
+<%# <%= form.label :description %>
+<%# <%= form.text_area :description %> 
+<%= form.label :image %>
+<%= form.file_field :image %>
+<%= form.submit "Submit" %>
 <% end %>
 
 
 <%= link_to 'Back', posts_path %>
+

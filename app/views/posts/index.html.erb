@@ -24,9 +24,10 @@
       <div class="shadow p-2 mb-4 bg-grey rounded">
         <div class="container" style="width: 100rem;">
           <div class="col-md-20 col-sm-30">
-            <h5 class="card-title"> <%=post.message[(0..8)].capitalize%></h5>
+            <h5 class="card-title"> <%=post.message[(0..20)].capitalize%></h5>
             <p class="card-text">    
               <p><%= simple_format(post.message.gsub(/\n/, '<br/>')) %></p>
+              <p><%= image_tag post.image_url(:thumb) unless post.image.blank?%><p>
               <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p>
               <p> By <%= post.user.email %></p>
               <p>
