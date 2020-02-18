@@ -3,7 +3,6 @@ require 'simplecov-console'
 require 'capybara/rspec'
 SimpleCov.start 'rails'
 
-
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   SimpleCov::Formatter::HTMLFormatter
