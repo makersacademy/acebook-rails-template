@@ -1,25 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1>Whats Happening On Kashyyyk?</h1>
 
-<table id='posts'>
-  <thead>
+<h2><%= link_to 'New Post', new_user_post_path(session[:user_id]) %></h2>
 
-  </thead>
-
-  <tbody>
-    <% @posts.reverse.each do |post| %>
-      <tr>
-        <td><%=simple_format(post.post_content)%></td>
-          <td><%=post.created_at.to_s(:rfc822)[17..21]%>  <%=post.created_at.to_s(:rfc822)[0..2]%> <%=post.created_at.to_s(:rfc822)[4..15]%></td>
-        <td><%=User.find(post.user_id).email%></td>
-        <td><%= link_to 'Edit', edit_user_post_path(session[:user_id], post) %></td>
-        <td><%= link_to 'Delete', post, method: :delete %></td>
-      </tr>
+      <% @posts.reverse.each do |post| %>
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title"><%=User.find(post.user_id).email%> says...</h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%=post.created_at.to_s(:rfc822)[17..21]%>  <%=post.created_at.to_s(:rfc822)[0..2]%> <%=post.created_at.to_s(:rfc822)[4..15]%></h6>
+            <p class="card-text"><%=simple_format(post.post_content)%></p>
+            <a><%= link_to 'Edit', edit_user_post_path(session[:user_id], post) %></a>
+            <a><%= link_to 'Delete', post, method: :delete %></a>
+          </div>
+        </div>
     <% end %>
-  </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Post', new_user_post_path(session[:user_id]) %>
