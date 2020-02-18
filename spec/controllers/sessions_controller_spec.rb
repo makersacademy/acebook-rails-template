@@ -9,7 +9,7 @@ RSpec.describe SessionsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-    describe 'DELETE #logout,' do
+    describe 'DELETE #destroy,' do
       it 'returns http success' do
         delete :destroy
         expect(response).to have_http_status(302)
