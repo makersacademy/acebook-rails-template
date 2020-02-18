@@ -1,3 +1,8 @@
+# Badges
+
+* [![Maintainability](https://api.codeclimate.com/v1/badges/00ec3fafb62856d2dc37/maintainability)](https://codeclimate.com/github/basselalsayed/acebook-derailed/maintainability)
+* [![Test Coverage](https://api.codeclimate.com/v1/badges/00ec3fafb62856d2dc37/test_coverage)](https://codeclimate.com/github/basselalsayed/acebook-derailed/test_coverage)
+  
 * 'Documentation' [![Inline docs](http://inch-ci.org/github/basselalsayed/acebook-derailed.svg?branch=master)](http://inch-ci.org/github/basselalsayed/acebook-derailed)
 
 * 'Continuous Integration' [![Build Status](https://travis-ci.org/github/basselalsayed/acebook-derailed.png?branch=master)](https://travis-ci.org/github/basselalsayed/acebook-derailed)
