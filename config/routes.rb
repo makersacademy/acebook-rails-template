@@ -1,5 +1,13 @@
-Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+# frozen_string_literal: true
 
-  resources :posts
+Rails.application.routes.draw do
+  devise_for :users
+  get 'welcome/index'
+
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :posts do
+    resources :likes
+  end
+
+  root 'welcome#index'
 end

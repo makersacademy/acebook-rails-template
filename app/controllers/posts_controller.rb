@@ -1,20 +1,60 @@
+# frozen_string_literal: true
+require_relative '../models/post'
+
 class PostsController < ApplicationController
   def new
     @post = Post.new
   end
 
+  def edit
+    @post = Post.find(params[:id])
+    if users_post(@post) && Post.under_ten_mins(@post)
+      render 'edit'
+    else
+      redirect_to posts_url
+      flash[:alert] = "Sorry you cannot edit this post"
+    end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to posts_url
+  end
+
   def create
-    @post = Post.create(post_params)
+    @current_user = current_user
+    @post = @current_user.posts.create(post_params)
     redirect_to posts_url
   end
 
   def index
-    @posts = Post.all
+    authenticate_user
+    @posts = Post.all.reverse_order
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if users_post(@post)
+      @post.destroy
+      redirect_to posts_url
+    else
+      redirect_to posts_url
+      flash[:alert] = "Sorry you cannot delete another User\'s posts"
+    end
   end
 
   private
 
+  def users_post(post)
+    post.user_id == current_user.id
+  end
+
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def authenticate_user
+    redirect_to '/' unless user_signed_in?
   end
 end

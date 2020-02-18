@@ -1,0 +1,124 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "font-awesome";
+
+html,
+body {
+  height: 100%;
+  background-color: #ebecee;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #4267b2;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #4267b28e;
+}
+
+.catbook-logo {
+  display: flex;
+  float: center;
+  font-size: 100px;
+  padding: 50px;
+}
+
+div.card {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  background-color: white;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: 1px;
+}
+
+#top {
+  height: 20px;
+  padding: 15px;
+  display: flexbox;
+
+}
+
+#top-left {
+  float: left;
+  text-align: left;
+}
+
+#post-user {
+  font-size: 14px;
+  color: #385898;
+  font-weight: 800;
+}
+
+#post-date {
+  font-size: 10px;
+  color: grey
+}
+
+#post-links {
+  float: right;
+}
+
+#post-message {
+  padding: 5px 15px 15px 15px;
+  text-align: left;
+  font-size: 14;
+}
+
+#post-links a {
+  font-size: 11px;
+  color: lightgrey;
+  text-decoration: none;
+  display: inline;
+  margin-right: 1px;
+}
+
+#post-links a:hover {
+  color: grey;
+}
+
+#post-spacer {
+  height: 10px;
+}
+
+#new-post-link {
+  width: 50%;
+  height: 40px;
+  text-align: center;
+  margin: auto;
+  background-color: white;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: 1px;
+  padding-top: 15px;
+}
+
+#new-post-link a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #385898;
+  font-weight: 800;
+  padding-top: 5px;
+}

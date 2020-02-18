@@ -1,6 +1,20 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
+<!DOCTYPE html>
+<html>
+<body>
+  <%= form_for @post do |form| %>
+    <%= form.label :message %>
+    <%= form.text_area :message, :maxlength => 500, :size => 40, :id => "area" %>
 
-  <%= form.submit "Submit" %>
-<% end %>
+    <%= form.submit "Submit" %>
+  <% end %>
+
+  <script>
+    var area = document.getElementById("area");
+    document.getElementById("new_post").addEventListener('keydown', function (event) {
+      if (event.keyCode === 13 && event.target !== area) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
