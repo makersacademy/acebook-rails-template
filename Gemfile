@@ -11,6 +11,9 @@ gem 'rubocop-rails', require: false
 
 gem 'devise'
 gem 'rubocop'
+
+gem 'bootstrap-sass'
+
 gem 'simplecov', require: false, group: :test
 gem 'simplecov-console', require: false
 

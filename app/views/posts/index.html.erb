@@ -1,23 +1,56 @@
-<h1>Posts shown below</h1>
-<p>To add a new post click link:
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-</p>
-<p>---------------------------------------------</p>
-<% @posts.reverse_each do |post| %>
-  <div id = "<%=post.id %>">
-    <p><%= simple_format(post.message.gsub(/\n/, '<br/>')) %></p>
-    <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p>
-     <p> By <%= post.user.email %></p>
-    <p>
-      <% if current_user && current_user == post.user %>
-        <%= link_to 'Delete', post, :confirm => 'Are you sure?',
-                                    :method => :delete %> <%= link_to 'Edit', edit_post_path(post) %> </p>
-        <% end %>
 
-    <p>---------------------------------------------</p>
-  </div>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+  <!-- Latest compiled and minified JavaScript -->
+</head>
+
+
+  <body>
+    <h1>Posts shown below</h1>
+    <p>To add a new post click link:
+    <%= link_to new_post_path do %>
+      New post
+    <% end %>
+    </p>
+    <% @posts.reverse_each do |post| %>
+      <div class="shadow p-2 mb-4 bg-grey rounded">
+        <div class="container" style="width: 100rem;">
+          <div class="col-md-20 col-sm-30">
+            <h5 class="card-title"> <%=post.message[(0..8)].capitalize%></h5>
+            <p class="card-text">    
+              <p><%= simple_format(post.message.gsub(/\n/, '<br/>')) %></p>
+              <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p>
+              <p> By <%= post.user.email %></p>
+              <p>
+              <% if current_user && current_user == post.user %>
+                <%= link_to 'Delete', post, :confirm => 'Are you sure?',
+                                            :method => :delete %> <%= link_to 'Edit', edit_post_path(post) %> </p>
+              <% end %></p><br>
+          </div>
+        </div>
+      </div>
+      <div id = "<%=post.id %>">
+    
+      </div>
+    <% end %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
