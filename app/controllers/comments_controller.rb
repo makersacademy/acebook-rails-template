@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if comment_owner?(@comment)
       @comment.destroy 
-      redirect_to posts_path
+      redirect_back(fallback_location: home_path)
     else
       flash.now.alert = 'Apologies, this is not your comment to delete!'
       @posts = Post.order(created_at: :desc)
