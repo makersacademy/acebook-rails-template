@@ -6,4 +6,9 @@ feature 'log out' do
     visit('/posts')
     expect(page).to have_current_path('/')
   end
+
+  scenario 'a signed out user can not log out' do
+    visit('/')
+    expect(page).not_to have_content('Sign Out')
+  end
 end 
