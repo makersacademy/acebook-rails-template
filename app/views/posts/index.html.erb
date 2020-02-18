@@ -1,7 +1,36 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<h1> Hello <%= User.find(session[:user_id]).email %> </h1>
+
+<div class='posts-body'>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+<article class='posts'>
+<% @posts.each do |post| %>
+  <% @user = User.find(post.users_id) %>
+  <article class="post" id='<%= post.id %>'>
+    <header>
+      <p class='post-message'> <%= post.message %> </p>
+    </header>
+    <footer class='post-footer'>
+      <span>&#x1F9E1 0<span>
+      <p>
+        posted at <%= post.created_at %>
+        <time datetime='<%= post.created_at %>' ></time>
+        by <a href='/users/<%= @user.id%>'><%= @user.email %>.</a>
+        <% if session[:user_id] == post.users_id %>
+          <% if post.created_at > 10.minute.ago%>
+            <%= link_to "Edit", edit_post_path(post)%>
+          <% end %>
+          <%= link_to "Destroy", post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </p>
+    </footer>
+    
+  </article>
+  
+<% end %>
+</article>
+</div>
+
+
