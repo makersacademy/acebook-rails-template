@@ -295,3 +295,6 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/f80975119045477ddf79/maintainability)](https://codeclimate.com/github/asiaellis5/acebook-U-JAKD/maintainability)
