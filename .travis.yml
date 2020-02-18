@@ -38,4 +38,5 @@ deploy:
       develop: acebook-inSANE
     on:
       all_branches: true
+    skip_cleanup: true
       
