@@ -1,7 +1,7 @@
-require_relative 'spec_test_helper'
-require 'web_helpers'
 require 'simplecov'
 require 'simplecov-console'
+require_relative 'spec_test_helper'
+require 'web_helpers'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
   SimpleCov::Formatter::Console,
