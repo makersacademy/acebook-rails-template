@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require_relative '../models/post'
 
 class PostsController < ApplicationController
   def new
@@ -7,7 +8,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if users_post(@post) && under_ten_mins(@post)
+    if users_post(@post) && Post.under_ten_mins(@post)
       render 'edit'
     else
       redirect_to posts_url
@@ -45,9 +46,9 @@ class PostsController < ApplicationController
 
   private
 
-  def under_ten_mins(post)
-    (Time.now - post.created_at) < 600
-  end
+  # def under_ten_mins(post)
+  #   (Time.now - post.created_at) < 600
+  # end
 
   def users_post(post)
     post.user_id == current_user.id

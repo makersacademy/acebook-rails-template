@@ -8,12 +8,12 @@ RSpec.describe Post, type: :model do
     
     it 'should return false if post created > 10 mins ago' do
       Timecop.travel(Time.now + 11.minutes) do
-        expect(subject.under_ten_mins(post)).to eq false
+        expect(Post.under_ten_mins(post)).to eq false
       end
     end
 
     it 'should return true if post created < 10 mins ago' do
-      expect(subject.under_ten_mins(post)).to eq true
+      expect(Post.under_ten_mins(post)).to eq true
     end
   end
 end

@@ -758,6 +758,7 @@
       "/Users/bengittins/Projects/Makers/week_8/acebook-catbook-inc/app/controllers/posts_controller.rb": {
         "lines": [
           null,
+          1,
           null,
           1,
           1,
@@ -804,8 +805,8 @@
           null,
           1,
           null,
-          1,
-          2,
+          null,
+          null,
           null,
           null,
           1,
@@ -818,6 +819,20 @@
           null,
           1,
           58,
+          null,
+          null
+        ]
+      },
+      "/Users/bengittins/Projects/Makers/week_8/acebook-catbook-inc/app/models/post.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          4,
           null,
           null
         ]
@@ -1172,30 +1187,16 @@
           1,
           1,
           1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/bengittins/Projects/Makers/week_8/acebook-catbook-inc/app/models/post.rb": {
-        "lines": [
-          null,
           null,
           1,
           1,
           1,
           null,
+          null,
+          null,
           1,
-          2,
+          1,
+          null,
           null,
           null
         ]
@@ -1222,6 +1223,6 @@
         ]
       }
     },
-    "timestamp": 1582041532
+    "timestamp": 1582041883
   }
 }
