@@ -29,6 +29,7 @@
   <strong><%= link_to "#{user}", user_path(post.user.id), controller: 'users', style: "color: black;" %>:</strong><br>
       <%= simple_format(comment.body)%>
       <%= comment.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
+      <%= link_to 'Delete', [comment.post, comment], method: :delete %>
       <br>
       <br>
       <% end %>
