@@ -1,3 +1,5 @@
+http://inch-ci.org/github/basselalsayed/acebook-derailed.svg?branch=master
+
 # AceBook Derailed
 The anti-social network
 
