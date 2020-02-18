@@ -1,6 +1,4 @@
-require 'rails_helper'
-
-RSpec.feature "HomePage", type: :feature do 
+feature "HomePage" do 
   scenario "Can See a sign in and fields for it and sign up link" do 
     visit "/"
     expect(page).to have_button("Sign Up")
