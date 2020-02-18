@@ -64,11 +64,11 @@
         null,
         null,
         1,
-        2,
+        12,
         0,
         0,
         null,
-        2,
+        12,
         null,
         null,
         null
@@ -127,6 +127,8 @@
       "/Users/bsas/Dropbox/projects/makers/week8/acebook-rails-template/app/controllers/users_controller.rb": [
         1,
         1,
+        null,
+        1,
         2,
         null,
         null,
@@ -159,6 +161,7 @@
         null
       ],
       "/Users/bsas/Dropbox/projects/makers/week8/acebook-rails-template/app/controllers/welcome_controller.rb": [
+        1,
         1,
         1,
         null
@@ -203,6 +206,6 @@
         null
       ]
     },
-    "timestamp": 1582035265
+    "timestamp": 1582039492
   }
 }
