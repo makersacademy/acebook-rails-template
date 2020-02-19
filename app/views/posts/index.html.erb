@@ -8,8 +8,9 @@
 
       <% @posts.reverse.each do |post| %>
         <div class="card text-center" style="size 50x50;">
-          <img class="card-img-top" style="width: 50px; height: auto"
-          <%= image_tag(User.find(post.user_id).profile_picture)%>
+          <img class="card-img-top" style="width: 50px; height: auto" alt=" "
+          <%img_url = User.find(post.user_id).profile_picture %>
+          <%= image_tag(User.find(post.user_id).profile_picture) if img_url.attached?%>          
             <div class="card-body">
             <h5 class="card-title"><%=User.find(post.user_id).email%> says...</h5>
             <h6 class="card-subtitle mb-2 text-muted"><%=post.created_at.to_s(:rfc822)[17..21]%>  <%=post.created_at.to_s(:rfc822)[0..2]%> <%=post.created_at.to_s(:rfc822)[4..15]%></h6>

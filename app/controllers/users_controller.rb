@@ -12,9 +12,6 @@ class UsersController < ApplicationController
 
   def create
     user_params = params.require(:user).permit(:email, :password, :profile_picture)
-    p "lookie here"
-    p user_params
-    p @user
     @user = User.new(user_params)
     begin
       @user.save!
