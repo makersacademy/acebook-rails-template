@@ -2,6 +2,10 @@ require 'database_cleaner/active_record'
 require 'simplecov'
 require 'simplecov-console'
 require 'rails_helper'
+require 'webdrivers'
+
+Capybara.default_driver = :rack_test
+Capybara.javascript_driver = :selenium_chrome_headless
 
 DatabaseCleaner.strategy = :transaction
 
@@ -21,12 +25,20 @@ end
 RSpec.configure do |config|
   # rspec-expectations config goes here.
 
+  config.before(:all) do
+    User.create(id: 0, email: '.', password: '.').save(validate: false)
+  end
+
   config.before(:each) do
     DatabaseCleaner.start
   end
 
   config.after(:each) do
     DatabaseCleaner.clean
+  end
+
+  config.after(:all) do
+    User.destroy(0)
   end
 
   config.expect_with :rspec do |expectations|

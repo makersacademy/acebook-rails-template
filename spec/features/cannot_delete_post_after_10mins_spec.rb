@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.feature 'Users can delete a post once created', type: :feature do
   scenario 'User creates a second post' do
     visit('/')

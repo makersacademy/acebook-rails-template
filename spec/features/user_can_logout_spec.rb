@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.feature 'User can logout', type: :feature do
   scenario 'User can logout' do
     User.create!(email: 'test@test.com', password: 'password').save
