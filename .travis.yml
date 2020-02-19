@@ -6,6 +6,7 @@ rvm:
 services:
 - postgresql
 before_script:
+- bundle exec rake db:test:prepare
 - bundle exec rake db:create
 - bundle exec rake db:migrate
 script:
@@ -16,4 +17,3 @@ deploy:
   app: acebook-inSANE
   api_key:
     secure: quDRF0GGsveakinC9N2/YN9b+8fwr5naiDG6uduOZ7KvP2OSJJQwgvOY1irph/nnyZXgdfoYKUbz1ujuKEspPF593kibsyf9fF/OcmHe5cxUdXoOtWMeO8YhRugCO7WJGEA8AyXq7gyX/dI4FBoFQ0CcuH72TuioHs93T2GMvud5/0xkOYRNFHh7wUTqwoSV96PRCccP9RxX/nor89H8G4vZu81qoQM3qQfmRwXEwaogr7gXlCY2WF82dLLazbPUzezHgy8r+kIEVMZ8ebyRLDmfhMGhZsKBfrWJ4nvUYup0KqIGx0CBBppLIm/JnWFv1jotNEQt3AGszL9R2PVVBzcTB59X5FJCMz79BgXsT+9n/YsinNz7z0rJaI3hE1WoFda0q3hTjW7flVWaSCwEdwIayiGOch0k7NRxRdLwQb+r5t5o/aMZr8X4pELJsPc/cXWDgWEJoFZyvnCQ/k/a5BXDCDW6HBIcyrPVF2Hu+DFErV4t1G36vHmsP64LTQZd74rlsyHjIYcj2AogeaKtdQMTjC/s8kWpT1q1ZPQuV5HVqF7sOxQjyspwKLT9CZ27+j9w0V1GLUfoyBfYKEx9iAzHJ2h6+mTBD8DoVMytTPYfvSeaR4zYyeWp30ZxVy1EAAntcZ/8NS3Gxqy79E3uKuiDRtmZDoEaFoHBsHLk/N4=
-  skip_cleanup: true
