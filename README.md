@@ -34,6 +34,11 @@ To set up a migration:
 * Since we renamed our repo mid project, I had to access the .git/config file and edit: `[travis]
   slug = basselalsayed/acebook-derailed`
   
+## Code Climate
+* Register for an online account by signing in with github
+* Check whether travis was initialised at travis-ci.com or travis-ci.org
+* Update the Travis.yml file to install and include code climate, and to push the results to code climate upon completion
+  
 ## Controller Set up
 * `rails g controller [name] [route]`
 * `rails g controller post index create show destroy`
