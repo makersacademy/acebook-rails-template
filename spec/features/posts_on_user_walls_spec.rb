@@ -5,15 +5,17 @@ RSpec.feature 'User', type: :feature do
   scenario 'Users wall contains posts they posted on their own wall' do
     visit '/'
     sign_up
-    new_post_on_own_wall
+    new_post_on_own_wall('Post to Myself')
+    new_post_on_own_wall('Another message')
     visit user_page_path(User.all.first.id)
     expect(page).to have_content('Post to Myself')
+    expect(page).to have_content('Another message')
   end
 
   scenario 'Posts Index contains posts a user posted on their own wall' do
     visit '/'
     sign_up
-    new_post_on_own_wall
+    new_post_on_own_wall('Post to Myself')
     visit '/posts'
     expect(page).to have_content('Post to Myself')
   end

@@ -16,8 +16,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = []
 
-    User.all.find do |user| 
-      user.posts.find do |post| 
+    User.all.each do |user| 
+      user.posts.each do |post|
         if post.wall_id == @user.id
           @posts.append(post)
         elsif (post.wall_id == nil) && (post.user_id == @user.id)

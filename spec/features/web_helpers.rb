@@ -25,10 +25,10 @@ def new_post
   click_button 'Submit'
 end
 
-def new_post_on_own_wall
+def new_post_on_own_wall(message)
   visit user_page_path(User.all.first.id)
   click_link 'New post'
-  fill_in "area", with: 'Post to Myself'
+  fill_in "area", with: message
   click_button 'Submit'
 end
 
