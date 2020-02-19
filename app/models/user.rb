@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :restrict_with_exception
+  has_one_attached :profile_picture
   validates :password, length: {
     minimum: 6,
     maximum: 10,
