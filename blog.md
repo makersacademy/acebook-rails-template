@@ -15,6 +15,7 @@ Today was the second day of the project and time to start Rails. We started the 
 
 
 # Thursday 13th February 2020 (Katie)
+
 Today was an extremely productive day with both exisiting code being refactored and improved but also lots of new features implemented. We acheived this through both pairing and mobbing when required. Because our group is working so well, we has to pace ourselves a little and really explore our code and revisit it to ensure that we did not run out of things to do! Highlights of the day include; clicking the home button shows all posts from all users, email links to individual pages/posts and a lot of functional refactoring.
 
 # Friday 14th February 2020 (Umberto)
@@ -29,9 +30,17 @@ There's nothing else to do, other than wait for more user stories from our new c
 
 # Monday 17th February 2020 (Katie)
 
+Today we had the pleasure of meeting our new product manager/ client. She looked over the project and had a few suggestions on changes to make. We started to implement a few, such as making it so that posts on users walls did not duplicate on the homepage. We also started working on allowing users to comment on posts. We went for a team lunch where we (tried) to not discuss the project which was great for team bonding. We had a fair few moments of feeling completly stuck however we combatted this by mobbing. Mobbing helped on several occasions as it enabled a fresh pair of eyes to look at a problem- which once had been a minor typo!
 
 # Tuesday 18th February 2020 (Umberto)
 
+The day started on a good note, we were able to resolve all the problems that blocked us the day before.
+User comments were quickly sorted out introducing a many to one user relationship through post, this was the missing key piece of information from yesterday.
+We then improved our test coverage and introduced a custom 404 page for user not found.
+Comments edit and delete were tackled by the team and almost finished.
+On a branch we now display the username of the user in the url, implementing this with the minimum amount of change to the code has been a challenging feat.
+We ended up overwriting one of the ActiveRecords method too accept different kind of input while returning the same results.
+Once comments are deployed we will integrate this change to the master.
 
 # Wednesday 19th February 2020 (Asia)
 
