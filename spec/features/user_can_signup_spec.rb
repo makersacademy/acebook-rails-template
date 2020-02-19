@@ -10,8 +10,11 @@ RSpec.feature 'Users can signup to site', type: :feature do
     click_on('Signup')
     fill_in('user[email]', with: 'test@test.com')
     fill_in('user[password]', with: 'password')
+    page.select('Kashyyyk', from: 'user[planet]')
     click_on('Join the Rebel Alliance')
     expect(page).to have_content('Congratulations test@test.com, You Have Signed Up to AceBook!')
+    expect(page).to have_content('Planet: Kashyyyk')
+    expect(page).to have_content("test@test.com's wall")
   end
 
   scenario 'User cannot sign up with email which is already taken' do
@@ -20,6 +23,7 @@ RSpec.feature 'Users can signup to site', type: :feature do
     click_on('Signup')
     fill_in('user[email]', with: 'test@test.com')
     fill_in('user[password]', with: 'password')
+    page.select('Kashyyyk', from: 'user[planet]')
     click_on('Join the Rebel Alliance')
     expect(page).to have_content('Email already taken, please choose another')
   end
@@ -29,6 +33,7 @@ RSpec.feature 'Users can signup to site', type: :feature do
     click_on('Signup')
     fill_in('user[email]', with: 'test@testcom')
     fill_in('user[password]', with: 'password')
+    page.select('Kashyyyk', from: 'user[planet]')
     click_on('Join the Rebel Alliance')
     expect(page).to have_content('Email format invaild, please enter valid email')
   end
@@ -38,6 +43,7 @@ RSpec.feature 'Users can signup to site', type: :feature do
     click_on('Signup')
     fill_in('user[email]', with: 'test@domain.nahhh')
     fill_in('user[password]', with: 'password')
+    page.select('Kashyyyk', from: 'user[planet]')
     click_on('Join the Rebel Alliance')
     expect(page).to have_content('Email format invaild, please enter valid email')
   end
@@ -47,6 +53,7 @@ RSpec.feature 'Users can signup to site', type: :feature do
     click_on('Signup')
     fill_in('user[email]', with: 'test@test.com')
     fill_in('user[password]', with: 'passw')
+    page.select('Kashyyyk', from: 'user[planet]')
     click_on('Join the Rebel Alliance')
     expect(page).to have_content('The password must have at least 6 characters')
   end
@@ -56,6 +63,7 @@ RSpec.feature 'Users can signup to site', type: :feature do
     click_on('Signup')
     fill_in('user[email]', with: 'test@test.com')
     fill_in('user[password]', with: 'password10c')
+    page.select('Kashyyyk', from: 'user[planet]')
     click_on('Join the Rebel Alliance')
     expect(page).to have_content('The password must have no more than 10 characters')
   end
