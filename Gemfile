@@ -11,8 +11,7 @@ gem 'rubocop-rails', require: false
 
 gem 'devise'
 gem 'rubocop'
-gem 'carrierwave'
-gem 'mini_magick'
+
 gem 'bootstrap-sass'
 
 gem 'simplecov', require: false, group: :test
@@ -30,7 +29,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'carrierwave'
+gem 'mini_magick'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production

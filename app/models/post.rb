@@ -4,7 +4,7 @@
 # mount_uploader :image, ImageUploader
 
 class Post < ApplicationRecord
-  belongs_to :user
   mount_uploader :image, ImageUploader
+  belongs_to :user
 
 end
