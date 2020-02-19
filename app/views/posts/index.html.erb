@@ -29,7 +29,7 @@
       <br>    
       <br>
       <br>
-        <%= User.find(post.user_id).username%><br>
+        <%= link_to User.find(post.user_id).username, user_page_path(User.find(post.user_id))%><br>
         Updated <%= time_ago_in_words(post.updated_at) %> ago, <br>
         <%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
       </small>
