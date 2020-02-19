@@ -6,6 +6,6 @@ describe 'test cannot access posts' do
   it "Can't access posts/index" do
     visit '/posts/index'
 
-    expect(page).to have_button('Sign Up')
+    expect(page).to have_link('Sign Up')
   end
 end
