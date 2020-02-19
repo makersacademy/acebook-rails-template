@@ -4,13 +4,26 @@ rvm:
 - 2.5.0
 services:
 - postgresql
+# addons:
+#   code_climate:
+#     repo_token:
+#       secure: "csjYAIA5RYfzE2RbS5sfzZkxDpYIA2h/EgW5VRjVqLVG+WQTbVibGrX8bRWFxrQ+7PxlMIImGb/OT8+fZkYW/wLRkfEmPJ4j0xjOnvMxGO7/v7seqavvUj3KsqTwk7yfdzLl9Ot72+WE9COBfWefF+N6an27RejQkIk1e5BY6z3Ue1PM6KFDzZGYMGtaUzrpEIGv7Mc2PZJG8DvyBbruabaLXoSDfUZuVMxjvtSZRc2TivSlMTK6nFEYqIGW5Pjq9d1gdwVJ/aTyapzhVwUWgri++jR+2ms5J5Axx3PEhoqG6QpMn2mfPoh6EnaYtMU/G6oQRSSYcv0vAmAKMIX5diKWfdrQuzCZII2CQUElL+GJx+IrRa1LuYYqoQNQsEKo1yCHdqdYGBcFM6Imuqj6QiaU4JumafqbkZ7B5HNtRZOV4tgFWjmQwp1wbwpkHZ7jGH1btElogF6vGubeKP2+JX2x6Ejs/EwsJV6Ly6OC43A4sT/zu5Y/CEQrNEVnKieSgefd4fg2PAk+W8ONqrBJ48lpEv2VMUt1IHJmpVPPSkL6vlDcX5Hji0nzA/tMtAXojS8Tk5tCDMvpU9gnnTm64rVDg/yjzaWhpPEqVr+RzW8xKlsJHm0MNEKg7SWtoD02qzYZIP9i6/Vo79qsa1E9mQFnV+5d/yN23Yyqbzn2dio="
+env:
+  global:
+    CC_TEST_REPORTER_ID=6dc1522b4344fa94cb327359009aa386080f3a38d88056b146b340e62a19ddd1
+before_install:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+
 before_script:
-- bundle exec rake db:test:prepare
-- bundle exec rake db:create
-- bundle exec rake db:migrate
+  - bundle exec rake db:test:prepare
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
 script:
-- bundle exec rspec
-- bundle exec rubocop
+  - bundle exec rspec
+  - bundle exec rubocop
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT # Upload coverage/codeclimate.json
 deploy:
   provider: heroku
   api_key:
