@@ -6,9 +6,7 @@ RSpec.feature 'Profile', type: :feature do
   scenario 'shows user posts on their profile' do
     sign_up
     visit '/'
-    click_link 'New post'
-    fill_in 'Message', with: 'Hello, world!'
-    click_button 'Submit'
+    fill_in
     click_link 'Profile'
     expect(page).to have_content('Hello, world!')
   end
@@ -23,9 +21,7 @@ RSpec.feature 'Profile', type: :feature do
   scenario 'when view profile of another user it shows their email' do
     sign_up
     visit '/'
-    click_link 'New post'
-    fill_in 'Message', with: 'Hello, world!'
-    click_button 'Submit'
+    fill_in
     click_link 'Sign out'
     sign_up_2
     visit '/'
