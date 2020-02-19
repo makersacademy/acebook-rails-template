@@ -19,11 +19,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.created_at > 10.minute.ago
-      if @post.update(post_params)
-        redirect_to posts_url
-      else
-        render 'edit'
-      end
+      redirect_to posts_url if @post.update(post_params)
     else
       update_over_time_limit
     end
