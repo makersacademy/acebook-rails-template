@@ -21,7 +21,7 @@ script:
   - bundle exec rspec
   - bundle exec rubocop
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT# Upload coverage/codeclimate.json
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT # Upload coverage/codeclimate.json
 deploy:
   provider: heroku
   api_key:
