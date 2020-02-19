@@ -20,11 +20,11 @@ class UsersController < ApplicationController
       user.posts.find do |post| 
         if post.wall_id == @user.id
           @posts.append(post)
+        elsif (post.wall_id == nil) && (post.user_id == @user.id)
+          @posts.append(post)
         end
       end
     end
-
-    # @posts = @user.posts
   end
 
   private

@@ -32,6 +32,8 @@ class PostsController < ApplicationController
   def index
     authenticate_user
     @posts = Post.all.reverse_order
+
+    
   end
 
   def destroy

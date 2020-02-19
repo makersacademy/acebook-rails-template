@@ -25,12 +25,27 @@ def new_post
   click_button 'Submit'
 end
 
+def new_post_on_own_wall
+  visit user_page_path(User.all.first.id)
+  click_link 'New post'
+  fill_in "area", with: 'Post to Myself'
+  click_button 'Submit'
+end
+
+def new_post_on_other_users_wall
+  visit user_page_path(User.all.first.id)
+  click_link 'New post'
+  fill_in "area", with: 'Post to My Friend'
+  click_button 'Submit'
+end
+
 def new_post_two
   visit '/posts'
   click_link 'New post'
   fill_in "area", with: 'Howdy, world!'
   click_button 'Submit'
 end
+
 
 def log_in
   sign_up
