@@ -1,4 +1,5 @@
 # AceBook
+[![Maintainability](https://api.codeclimate.com/v1/badges/f80975119045477ddf79/maintainability)](https://codeclimate.com/github/asiaellis5/acebook-U-JAKD/maintainability)
 
 This project is designed to act as a social media site where users can sign up/ sign in and post content to their own or other users pages.
 
@@ -12,15 +13,25 @@ Then:
 > bundle install
 > bin/rails db:create
 > bin/rails db:migrate
-
-> bundle exec rspec 
-> rails server
+```
 
 This will ensure that:
 - All the gems are installed
-- Databases are created
-- Tests are working
-- Finally, spins up the server for you to look at the project via http://localhost:3000/
+- Databases are created and updated
+
+To run the test use:
+
+```
+> bundle exec rspec
+```
+
+To run the server use:
+
+```
+> rails server
+```
+
+Finally, enjoy Acebook via http://localhost:3000/
 
 ## Outline & Contribution
 
@@ -28,16 +39,13 @@ This will ensure that:
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
-```
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
 ## User Stories
 
-As we work and receive new requirements from the client, we are updating our userstories.md document.
-We also copy these user stories onto Trello https://trello.com/ujakd making sure to update the status of each user story into the relevant column.
+As we work and receive new requirements from the client, we are updating our [userstories.md](userstories.md) document.
+
+We also copy these user stories onto Trello https://trello.com/b/M4b8WWOm/u-jakd making sure to update the status of each user story into the relevant column.
 
 ## Live app
 
 The current production version of the app gets automatically deployed with changes made into the master branch and can be found hosted on Heroku at https://acebook-u-jakd.herokuapp.com
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/f80975119045477ddf79/maintainability)](https://codeclimate.com/github/asiaellis5/acebook-U-JAKD/maintainability)
