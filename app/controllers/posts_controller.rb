@@ -24,7 +24,6 @@ class PostsController < ApplicationController
     post_params[:user_id] = session[:user_id]
     @post = User.find(session[:user_id]).posts.create(post_params)
     @post.save
-    p post_params
     redirect_to user_posts_path(user_id: post_params[:location_id_fk])
   end
 

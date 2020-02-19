@@ -4,8 +4,7 @@
 
 
   <p>
-    <%= form.text_area :post_content %>
-    <% p @location %>
+    <%= form.text_area :post_content, id: 'post_text'%>
     <%= form.hidden_field :location_id_fk, :value => @location %>
   </p>
 
