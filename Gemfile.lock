@@ -309,6 +309,7 @@ DEPENDENCIES
   pg
   puma (~> 3.7)
   rails (~> 5.2.4.1)
+
   rake
   rspec-rails (~> 3.5)
   rubocop
