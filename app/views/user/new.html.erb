@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>🦁 Acebook</title>
+  </head>
+
+  <body>
+
+  
+    <div>
+      <h1>Fill in the Below to Create your Account<h1>
+
+      <%= form_for :user, :url => { :action => "create" } do |f| %>
+        <p>
+          <%= f.label :Email %><br>
+          <%= f.text_field :email, id: "email" %>
+        </p>
+
+        <p>
+          <%= f.label :Password %><br>
+          <%= f.password_field :password, id: "password"%>
+        </p>
+        <p> 
+        <button class="sign-up-button"><%= f.submit "Create Account!" %></button>
+        </p>
+      <% end %>
+    </div>
+
+    <div class="welcome-header">
+      <% if !!flash[:notice] %>
+        <% flash.each do |type, message| %>
+          <p><%= message %></p> <br>
+        <% end %>
+      <% end %>
+    </div>
+  </body>
+</html>

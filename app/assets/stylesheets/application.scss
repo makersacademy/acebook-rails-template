@@ -1,0 +1,98 @@
+// @import "boostrap-sprockets";
+@import "bootstrap";
+
+/* Starting Styling */
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+
+@import url("https://fonts.googleapis.com/css?family=Exo+2&display=swap");
+.welcome-header {
+    display: inline-block;
+    vertical-align: bottom;
+    min-height: 810px;
+    width: 100%;
+    padding: 10px 2px;
+    background: rgba(247, 247, 247, 0);
+    top: 0px;
+}
+
+body {
+    text-align: center;
+    font-family: "Exo 2", sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fgifs%2Fwhoa-hd-tim-and-eric-xT0xeJpnrWC4XWblEk&psig=AOvVaw2-7IC6n9f-iDsZZzZOVtOa&ust=1581784267615000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPjqrdy70ecCFQAAAAAdAAAAABAD");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.log-in-button,
+.sign-up-button {
+    top: 20px;
+    right: 10px;
+}
+
+.button {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.post {
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 75px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: black;
+    border: 2px solid rgb(190, 189, 189);
+}
+
+#postheader {
+    font-size: 25px;
+}
+
+#delete-button,
+#update-button {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.navbar {
+    background-color: pink;
+}
+
+form {
+    font-size: 16px;
+}
