@@ -5,6 +5,9 @@ rvm:
 - 2.5.0
 services:
 - postgresql
+install:
+ - gem install bundler
+ - bundle install
 before_script:
 - bundle exec rake db:test:prepare
 - bundle exec rake db:create
