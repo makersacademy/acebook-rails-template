@@ -21,8 +21,14 @@
 <% @posts.reverse.each do |post| %>
   <div>
     <div class="post" >
-      <%= post.message.gsub(/\n/, '<br/>').html_safe %><br>
+      <div id="postmessage">
+      <strong><%= post.message.gsub(/\n/, '<br/>').html_safe %></strong>
+      </div>
+      <br>
       <small>
+      <br>    
+      <br>
+      <br>
         <%= User.find(post.user_id).email%><br>
         Updated <%= time_ago_in_words(post.updated_at) %> ago, <br>
         <%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
