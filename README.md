@@ -31,6 +31,8 @@ To set up a migration:
 * in our case: `travis setup heroku --org -r basselalsayed/acebook-derailed`
 * set up continuous deployment (if CI passes) via heroku pipeline/settings page online
 * `travis encrypt $(heroku auth:token) --add deploy.api_key`
+* Since we renamed our repo mid project, I had to access the .git/config file and edit: `[travis]
+  slug = basselalsayed/acebook-derailed`
   
 ## Controller Set up
 * `rails g controller [name] [route]`
