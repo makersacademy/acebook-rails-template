@@ -6,4 +6,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :validatable
   has_many :posts
+
+  def self.reverse_posts(posts)
+    posts.sort { |a, b| b.updated_at <=> a.updated_at }
+  end
+
 end

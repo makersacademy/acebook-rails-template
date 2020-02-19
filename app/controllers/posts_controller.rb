@@ -31,7 +31,6 @@ class PostsController < ApplicationController
 
   def index
     authenticate_user
-    # @posts = Post.all.reverse_order
     @posts = []
     Post.all.reverse_order.each do |post|
       if (post.wall_id == nil) || (post.user_id == post.wall_id)

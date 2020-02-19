@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class UsersController < ApplicationController  
+
   def index
     authenticate_user
   end
@@ -14,17 +15,20 @@ class UsersController < ApplicationController
   def show
     authenticate_user
     @user = User.find(params[:id])
-    @posts = []
-
+    @results = []
+    
     User.all.each do |user| 
       user.posts.each do |post|
         if post.wall_id == @user.id
-          @posts.append(post)
+          @results.append(post)
         elsif (post.wall_id == nil) && (post.user_id == @user.id)
-          @posts.append(post)
+          @results.append(post)
         end
       end
     end
+
+    @posts = User.reverse_posts(@results)
+
   end
 
   private
