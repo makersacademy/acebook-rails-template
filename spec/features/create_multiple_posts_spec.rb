@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.feature 'Users can create multiple posts', type: :feature do
   scenario 'User creates a second post' do
     visit('/')
