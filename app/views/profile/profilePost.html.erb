@@ -17,7 +17,7 @@
 
     <h2>New Post</h2>
 
-      <%= form_for @post do |form| %>
+      <%= form_with(model: @profiles, url: profile_path(profile[:id]) local: true) do |form| %>
         <%= form.label :message %><br>
         <%= form.text_area :message, size: "30x10" %>
 
