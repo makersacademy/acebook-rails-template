@@ -8,6 +8,7 @@ feature 'user can delete comments' do
     create_comment
     click_link 'Delete comment'
     expect(page).not_to have_content('test comment')
+    expect(page).to have_content('Your comment has been successfully deleted.')
   end
 
   scenario 'from the user homepage' do
@@ -16,6 +17,7 @@ feature 'user can delete comments' do
     create_comment
     click_link 'Delete comment'
     expect(page).not_to have_content('test comment')
+    expect(page).to have_content('Your comment has been successfully deleted.')
   end
 
   scenario 'it throws an error when not your comment to delete' do

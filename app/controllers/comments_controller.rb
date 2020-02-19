@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params)
     @comment.user_id = current_user.id
     @comment.save
+    flash[:notice] = 'Your comment has been successfully added.'
     redirect_back(fallback_location: home_path)
   end
 
@@ -21,6 +22,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
     if comment_owner?(@comment)
       @comment.update(comment_params)
+      flash[:notice] = 'Your comment has been successfully edited.'
       redirect_to session[:url]
     else
       flash.now.alert = 'Apologies, this is not your comment to update!'
@@ -34,6 +36,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if comment_owner?(@comment)
       @comment.destroy
+      flash[:notice] = 'Your comment has been successfully deleted.'
       redirect_back(fallback_location: home_path)
     else
       flash.now.alert = 'Apologies, this is not your comment to delete!'

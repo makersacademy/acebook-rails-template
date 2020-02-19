@@ -3,47 +3,47 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe "#create_with_omniauth" do
-    let(:auth) {
+  describe '#create_with_omniauth' do
+    let(:auth) do
       {
-        "provider" => "github",
-        "info" => {
-          "email" => "jamie.davies@intercom.io",
-          "nickname" => "Jamie Davies"
+        'provider' => 'github',
+        'info' => {
+          'email' => 'jamie.davies@intercom.io',
+          'nickname' => 'Jamie Davies'
         }
       }
-    }
+    end
 
-    let(:auth1) {
+    let(:auth1) do
       {
-        "provider" => "github",
-        "info" => {
-          "email" => "jamie.davies1@intercom.io",
-          "nickname" => "Jamie Daviess"
+        'provider' => 'github',
+        'info' => {
+          'email' => 'jamie.davies1@intercom.io',
+          'nickname' => 'Jamie Daviess'
         }
       }
-    }
-    
-    it "creates a user" do
-      expect {
+    end
+
+    it 'creates a user' do
+      expect do
         User.create_with_omniauth(auth)
-      }.to change {
+      end.to change {
         User.count
       }.by(1)
     end
-  
-    it "creates a random password" do
+
+    it 'creates a random password' do
       user1 = User.create_with_omniauth(auth)
       user2 = User.create_with_omniauth(auth1)
       expect(user1.password).to_not eql user2.password
     end
 
-    it "sets the rest of the user properties" do
+    it 'sets the rest of the user properties' do
       user1 = User.create_with_omniauth(auth)
-      expect(user1.username).to eq auth["info"]["nickname"]
-      expect(user1.email).to eq auth["info"]["email"]
+      expect(user1.username).to eq auth['info']['nickname']
+      expect(user1.email).to eq auth['info']['email']
     end
-    
+
     it 'github authentication' do
       auth = { 'provider' => 'github', 'uid' => '999', 'info' => { 'email' => 'email@example.com', 'nickname' => 'uvalente' } }
       user = User.create_with_omniauth(auth)
