@@ -2,25 +2,23 @@ language: ruby
 cache: bundler
 dist: trusty
 rvm:
-  - 2.5.0
+- 2.5.0
 services:
-  - postgresql
-
+- postgresql
 before_script:
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
+- bundle exec rake db:create
+- bundle exec rake db:migrate
 script:
-  - bundle exec rspec
-  - bundle exec rubocop
-
+- bundle exec rspec
+- bundle exec rubocop
 deploy:
+  matrix:
   - provider: heroku
     api_key:
-      secure: ljT4lJtqNLSBIvQlm/8Uk+h0d5kuthfeHrhRDf8pXjJVLq+Nfof0PNjtcSIaMrKcNCEac4QjpoFuqbsmdoiqx4fyYTEKXrGZ9EOxATdZiXjgPZvnUeiYyZ/si5mf3GQS6Fe86kW+524FJDTh+UK4hb5BmyfT2ksJPAvHSV2idyUAWvzAyFwjefU/lBA/hBOG9pRO/I+7VIyIr2fuLs6N8Vnp/38RpKlQJznTFWDgMJBmAzp8l/6UF3vQP5r2fRD5M42CulfhUF7/NAqTDugaAPClbIvJM+2a2KCzxAX40R9fg0zOR8cUdo1bUmLXkEKx1dYfH4QgrDCD7chrahazKIlVKcOwPVvC9XY9sQfY0HQ+tsbCvh5pr9zZaIF4qE8O03co6ZMcxzFWa8DB/SwWvZ3HLpUR9VD/uwDJHuYbhh7QPEZoxkG/hd1pgflVCfXA3hPaWDy6f5Y0gYJq0G1MeKg1pBBjuPGnFFhsfmapv/w32E5Q284bKOCELgVFnumlZGmbDYl26xdLmAmwvcEEIe3eBmeFoEwFmY+f05LHlMALyRWsrRvc947HzZLgqoVvLHgKmYIqgWrmKuYh7nmRWRINZ7zWlgQD52IDH7mxgIlz1pzlTd71z2/LXnju5bs0ZR5rtLMejBLvfSD4DPKZ+EN08NovMasEg7iTKDSBlgY=
+      secure: F/uUec4cVPubZ741W7oC3guKt0x3goIs4YxJ5sUvyq6ruG8v1KANvd+u2qDyu3FLcJTIL1BT9zRqfh2WzBD1PZbqKLX1MQ2/zYQ8LaedS07uVFlOOsIzc1SOvncv2qR3bPrggSX/LD+k89vJ0j3t5RSzOPlsvfdxphA1J0G9QjTEo3OL2J2XkhwtfMiGCM4Ve4smkweo7WK9/QeEHB/J/PlENI6tyA32QI8JkcdayRqTBt37L8CQNj0k2w0ykE3s1n1/adtFCcEH2OPpUTRE71ct3qtyHyzc44iyDOuDcnLXSDfqs9BQ8NxlwFaHv54W2sPVs34u3j3wnYchRhLFaBdDYw+fRVfH7L5VZVuudHtQ5xtmI48qODsw3A5gPP3FGih6Z3uAauT66ByCY55jfXWoah/YN9zBuxOMGrfqzBUsC7T7sTsIcByqsMKy8K6/LpleYCxff8aTTv/T1HACjMguoUmga7GN3Y51jif1foJ7rySs5IIIen0S62Br2heXS8HudF+nCxCRgD5lC37xJBL0DpFD7vQNCNQwTUKs+kEm8mTMG1BC5pzUTGdWUnLC8/KyjGPnAiXKL3skIKeQMlL5RgsZ2dq7WxYKg91WXFcsRDnzB9kRpq50Z9Ei7FWIZku1nbs8oBQ0tVlYLw0gXeII1lYyWBUgw5JleZAKiMc=
     app:
       develop: acebook-inSANE
     skip_cleanup: true
     on:
       repo: nicolasraffray/acebook-inSANE
       branch: master
-  
