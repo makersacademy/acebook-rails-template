@@ -34,6 +34,10 @@ To set up a migration:
 * Since we renamed our repo mid project, I had to access the .git/config file and edit: `[travis]
   slug = basselalsayed/acebook-derailed`
   
+## Rubocop
+* Use `Exclude:` to exclude certain folders from rubocop
+* Install gem `rubocop-rspec` for specific rspec linting
+  
 ## Code Climate
 * Register for an online account by signing in with github
 * Check whether travis was initialised at travis-ci.com or travis-ci.org
