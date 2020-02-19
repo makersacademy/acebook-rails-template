@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20200218092616) do
     t.bigint "user_id"
     t.bigint "location_id"
     t.index ["location_id"], name: "index_posts_on_location_id"
-    t.index ["user_id"], name: "index_posts_on_user_id"
+    t.index ["user_id"], name: "index_posts_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|

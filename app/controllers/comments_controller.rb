@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params)
     @comment.user_id = current_user.id
     @comment.save
+    flash[:notice] = 'Your comment has been successfully added.'
     redirect_back(fallback_location: home_path)
   end
 
