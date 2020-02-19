@@ -15,6 +15,11 @@
 
   <body>
     <h1>Posts shown below</h1>
+    <p>To view profile:
+    <%= link_to profile_path(current_user) do %>
+      Profile
+    <% end %>
+    </p>
     <p>To add a new post click link:
     <%= link_to new_post_path do %>
       New post
