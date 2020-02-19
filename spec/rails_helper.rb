@@ -9,6 +9,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'timecop'
 require 'capybara'
+require 'web_helpers'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 

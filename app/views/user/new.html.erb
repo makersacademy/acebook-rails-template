@@ -12,6 +12,12 @@
 
       <%= form_for :user, :url => { :action => "create" } do |f| %>
         <p>
+          <%= f.label :Username %><br>
+          <%= f.text_field :username, id: "username"%>
+
+        </p>
+       
+        <p>
           <%= f.label :Email %><br>
           <%= f.text_field :email, id: "email" %>
         </p>
