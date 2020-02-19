@@ -15,8 +15,7 @@ deploy:
   provider: heroku
     api_key:
       secure: F/uUec4cVPubZ741W7oC3guKt0x3goIs4YxJ5sUvyq6ruG8v1KANvd+u2qDyu3FLcJTIL1BT9zRqfh2WzBD1PZbqKLX1MQ2/zYQ8LaedS07uVFlOOsIzc1SOvncv2qR3bPrggSX/LD+k89vJ0j3t5RSzOPlsvfdxphA1J0G9QjTEo3OL2J2XkhwtfMiGCM4Ve4smkweo7WK9/QeEHB/J/PlENI6tyA32QI8JkcdayRqTBt37L8CQNj0k2w0ykE3s1n1/adtFCcEH2OPpUTRE71ct3qtyHyzc44iyDOuDcnLXSDfqs9BQ8NxlwFaHv54W2sPVs34u3j3wnYchRhLFaBdDYw+fRVfH7L5VZVuudHtQ5xtmI48qODsw3A5gPP3FGih6Z3uAauT66ByCY55jfXWoah/YN9zBuxOMGrfqzBUsC7T7sTsIcByqsMKy8K6/LpleYCxff8aTTv/T1HACjMguoUmga7GN3Y51jif1foJ7rySs5IIIen0S62Br2heXS8HudF+nCxCRgD5lC37xJBL0DpFD7vQNCNQwTUKs+kEm8mTMG1BC5pzUTGdWUnLC8/KyjGPnAiXKL3skIKeQMlL5RgsZ2dq7WxYKg91WXFcsRDnzB9kRpq50Z9Ei7FWIZku1nbs8oBQ0tVlYLw0gXeII1lYyWBUgw5JleZAKiMc=
-    app:
-      develop: acebook-inSANE
+    app: acebook-inSANE
     skip_cleanup: true
     on:
       repo: nicolasraffray/acebook-inSANE
