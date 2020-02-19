@@ -34,6 +34,13 @@
     <%= link_to 'Delete', user_path(post),
     method: :delete %>
     <%= link_to 'Edit', edit_post_path(post), controller: 'posts'%>
+    <% pre_like = post.likes.find { |like| like.user_id == current_user.id}%>
+      <% if pre_like %>
+      <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+      <% else %>
+    <%= button_to 'Like', post_likes_path(post), method: :post%>
+    <% end %>
+    <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
   <div class='comment-container'>
   <h2 class="h5 mb-3 font-weight-bold">Comments:</h2>
   <% post.comments.each do |comment| %>
