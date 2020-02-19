@@ -3,6 +3,9 @@
   <p id="notice"><%= notice %></p>
 
   <p>
+    <%= form.label :profile_picture%>
+    <%= form.file_field :profile_picture%>
+  <p>
     <%= form.label :email %><br>
     <%= form.text_field :email, autofocus: true, placeholder: 'Email' %>
   </p>

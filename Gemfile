@@ -37,6 +37,8 @@ gem 'figaro'
 # Rake for raking
 gem 'rake'
 
+gem 'aws-sdk-s3', require: false
+
 # =======================================================
 
 group :test do

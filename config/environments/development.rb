@@ -37,6 +37,12 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
+  # Makes active storage store files locally
+  config.active_storage.service = :local
+
+  # Can make active storage store files on Amazon S3 (remember to uncomment out the correct storage.yml part)
+  # config.active_storage.service = :amazon
+
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
