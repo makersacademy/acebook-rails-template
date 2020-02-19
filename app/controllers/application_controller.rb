@@ -3,10 +3,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :require_login, :authenticated_user
-  helper_method :current_user
+  helper_method :current_user, :render_404
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def render_404
+    render file: '/public/404-user.html', status: 404
   end
 
   private
