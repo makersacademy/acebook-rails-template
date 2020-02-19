@@ -18,3 +18,4 @@ deploy:
   app:
     develop: acebook-inSANE
   skip_cleanup: true
+  on: master
