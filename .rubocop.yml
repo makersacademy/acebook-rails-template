@@ -17,6 +17,9 @@ RSpec/DescribeClass:
 RSpec/Be:
   Enabled: false
 
+RSpec/ExampleLength:
+  Max: 12
+  
 RSpec/EmptyExampleGroup:
   Enabled: false
 
