@@ -2,8 +2,11 @@
 
 <p id="notice"><%= notice %></p>
 
+
   <p>
     <%= form.text_area :post_content %>
+    <% p @location %>
+    <%= form.hidden_field :location_id_fk, :value => @location %>
   </p>
 
 

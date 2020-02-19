@@ -1,14 +1,13 @@
 class PostsController < ApplicationController
   def index
-    @posts = if params[:user_id]
-               User.find(params[:user_id]).posts
-             else
-               Post.all
-             end
+    location = params[:user_id] || 0
+    @posts = Post.where({location_id_fk: location})
+    @location = location
   end
 
   def new
     @post = @user.posts.new
+    @location = params[:user_id]
   end
 
   def edit
@@ -25,7 +24,8 @@ class PostsController < ApplicationController
     post_params[:user_id] = session[:user_id]
     @post = User.find(session[:user_id]).posts.create(post_params)
     @post.save
-    redirect_to user_posts_path(session[:user_id])
+    p post_params
+    redirect_to user_posts_path(user_id: post_params[:location_id_fk])
   end
 
   def update
@@ -61,6 +61,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:post_content)
+    params.require(:post).permit(:post_content, :location_id_fk)
   end
 end

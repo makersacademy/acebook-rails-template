@@ -2,7 +2,7 @@
 
 <h1>Whats Happening On Kashyyyk?</h1>
 
-<h2><%= link_to 'New Post', new_user_post_path(session[:user_id]) %></h2>
+<h2><%= link_to 'New Post', new_user_post_path(user_id: @location) %></h2>
 
       <% @posts.reverse.each do |post| %>
         <div class="card text-center">
