@@ -15,20 +15,8 @@ class UsersController < ApplicationController
   def show
     authenticate_user
     @user = User.find(params[:id])
-    @results = []
-    
-    User.all.each do |user| 
-      user.posts.each do |post|
-        if post.wall_id == @user.id
-          @results.append(post)
-        elsif (post.wall_id == nil) && (post.user_id == @user.id)
-          @results.append(post)
-        end
-      end
-    end
-
+    @results = User.filter(User.all, @user)
     @posts = User.reverse_posts(@results)
-
   end
 
   private

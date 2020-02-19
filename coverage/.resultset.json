@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/controllers/posts_controller_spec.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           null,
           1,
@@ -35,7 +35,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/rails_helper.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/rails_helper.rb": {
         "lines": [
           null,
           null,
@@ -101,7 +101,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/environment.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -112,7 +112,7 @@
           1
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/application.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/application.rb": {
         "lines": [
           null,
           null,
@@ -136,7 +136,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/boot.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/boot.rb": {
         "lines": [
           null,
           null,
@@ -145,7 +145,7 @@
           1
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/environments/test.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/environments/test.rb": {
         "lines": [
           null,
           null,
@@ -193,7 +193,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/initializers/application_controller_renderer.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -204,7 +204,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/initializers/assets.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -224,7 +224,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/initializers/backtrace_silencers.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -236,7 +236,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/initializers/cookies_serializer.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -247,7 +247,7 @@
           1
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/initializers/devise.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/initializers/devise.rb": {
         "lines": [
           null,
           null,
@@ -550,7 +550,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/initializers/filter_parameter_logging.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -560,7 +560,7 @@
           1
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/initializers/inflections.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -581,7 +581,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/initializers/mime_types.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -590,7 +590,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/initializers/wrap_parameters.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -610,7 +610,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/config/routes.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/config/routes.rb": {
         "lines": [
           null,
           null,
@@ -628,7 +628,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/models/user.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -643,10 +643,26 @@
           41,
           null,
           null,
+          1,
+          38,
+          null,
+          38,
+          46,
+          14,
+          9,
+          5,
+          1,
+          null,
+          null,
+          null,
+          38,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/models/application_record.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -655,7 +671,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/helpers/application_helper.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -663,7 +679,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/helpers/welcome_helper.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/helpers/welcome_helper.rb": {
         "lines": [
           null,
           null,
@@ -671,7 +687,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/features/web_helpers.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/features/web_helpers.rb": {
         "lines": [
           null,
           null,
@@ -734,7 +750,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/controllers/posts_controller.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
@@ -809,7 +825,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/controllers/application_controller.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -824,7 +840,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/controllers/user_controller_spec.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/controllers/user_controller_spec.rb": {
         "lines": [
           null,
           null,
@@ -841,7 +857,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/controllers/welcome_controller_spec.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/controllers/welcome_controller_spec.rb": {
         "lines": [
           null,
           null,
@@ -857,7 +873,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/controllers/welcome_controller.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/controllers/welcome_controller.rb": {
         "lines": [
           null,
           null,
@@ -866,7 +882,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/features/posts_appear_from_newest_to_oldest_spec.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/features/posts_appear_from_newest_to_oldest_spec.rb": {
         "lines": [
           1,
           null,
@@ -911,7 +927,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/features/posts_on_user_walls_spec.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/features/posts_on_user_walls_spec.rb": {
         "lines": [
           1,
           null,
@@ -945,32 +961,6 @@
           null,
           1,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/features/user_can_delete_posts_spec.rb": {
-        "lines": [
-          1,
-          null,
           1,
           1,
           1,
@@ -993,7 +983,33 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/features/user_can_edit_posts_spec.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/features/user_can_delete_posts_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/features/user_can_edit_posts_spec.rb": {
         "lines": [
           null,
           null,
@@ -1040,7 +1056,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/features/user_can_sign_up_spec.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/features/user_can_sign_up_spec.rb": {
         "lines": [
           null,
           null,
@@ -1069,7 +1085,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
           null,
           null,
@@ -1115,7 +1131,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/features/user_redirected_spec.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/features/user_redirected_spec.rb": {
         "lines": [
           null,
           null,
@@ -1151,7 +1167,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/helpers/welcome_helper_spec.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/helpers/welcome_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -1173,7 +1189,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/models/post_spec.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/models/post_spec.rb": {
         "lines": [
           null,
           null,
@@ -1184,7 +1200,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/models/post.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/models/post.rb": {
         "lines": [
           null,
           null,
@@ -1193,18 +1209,43 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/models/user_spec.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/models/user_spec.rb": {
         "lines": [
           null,
           1,
           null,
           1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
           1,
           1,
           1,
           1,
           1,
+          null,
+          null,
           1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/meghanmccue/projects/acebook-catbook-inc/spec/views/welcome/index.html.erb_spec.rb": {
+        "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -1212,18 +1253,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/spec/views/welcome/index.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Projects/week8/acebook-catbook-ink-1/app/controllers/users_controller.rb": {
+      "/Users/meghanmccue/projects/acebook-catbook-inc/app/controllers/users_controller.rb": {
         "lines": [
           null,
           null,
@@ -1243,19 +1273,7 @@
           37,
           37,
           37,
-          null,
           37,
-          45,
-          11,
-          7,
-          4,
-          1,
-          null,
-          null,
-          null,
-          null,
-          37,
-          null,
           null,
           null,
           1,
@@ -1267,6 +1285,6 @@
         ]
       }
     },
-    "timestamp": 1582128143
+    "timestamp": 1582130049
   }
 }
