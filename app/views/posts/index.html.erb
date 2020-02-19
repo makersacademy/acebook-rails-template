@@ -13,7 +13,7 @@
       <% end %>
     <% end %>
 
-    <h4>Welcome to Acebook you are logged in as: <%= current_user.email %></h4>
+    <h4>Welcome to Acebook you are logged in as: <%= current_user.username %></h4>
 
     <%= link_to new_post_path do %>
       New post
@@ -29,7 +29,7 @@
       <br>    
       <br>
       <br>
-        <%= User.find(post.user_id).email%><br>
+        <%= User.find(post.user_id).username%><br>
         Updated <%= time_ago_in_words(post.updated_at) %> ago, <br>
         <%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
       </small>
