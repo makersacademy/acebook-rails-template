@@ -35,6 +35,7 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "email", with: user.email
     fill_in "password", with: user.password
     click_button("Login")
+    click_link("See All Posts")
     click_link("Update")
     expect(page).to have_content("This is not your post to update")
   end
