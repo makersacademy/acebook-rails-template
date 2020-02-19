@@ -2,11 +2,14 @@
 
 <h1>Whats Happening On Kashyyyk?</h1>
 
+
+
 <h2><%= link_to 'New Post', new_user_post_path(session[:user_id]) %></h2>
 
       <% @posts.reverse.each do |post| %>
-        <div class="card text-center">
-          <div class="card-body">
+        <div class="card text-center" style="size 50x50;">
+          <img class="card-img-top" style="size 50x50"><%= image_tag(User.find(post.user_id).profile_picture)%>
+            <div class="card-body">
             <h5 class="card-title"><%=User.find(post.user_id).email%> says...</h5>
             <h6 class="card-subtitle mb-2 text-muted"><%=post.created_at.to_s(:rfc822)[17..21]%>  <%=post.created_at.to_s(:rfc822)[0..2]%> <%=post.created_at.to_s(:rfc822)[4..15]%></h6>
             <p class="card-text"><%=simple_format(post.post_content)%></p>
