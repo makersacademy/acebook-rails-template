@@ -5,7 +5,7 @@ require 'rails_helper'
 describe 'can edit a post' do
   it 'create new post then immediately edit it' do
     # create a new post
-    new_post 
+    new_post
     # edit the message text
     click_link 'Edit'
     # change time by 10 minutes
