@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
   before_action :authenticate_user, only: %i[home profile setting]
   before_action :save_login_state, only: %i[login login_attempt]
@@ -9,13 +11,9 @@ class SessionsController < ApplicationController
   def login_attempt
     user = User.find_by(email: params[:sessions][:email])
     if user&.authenticate(params[:sessions][:password])
-      flash[:notice] = "Welcome back, you are logged in as #{user.email}"
-      session[:user_id] = user.id
-      redirect_to('/posts/index')
+      successful_login(user)
     else
-      flash[:notice] = 'Invalid Username or Password'
-      flash[:color] = 'invalid'
-      render 'login'
+      unsuccessful_login
     end
   end
 
@@ -23,5 +21,19 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = 'Successfully logged out'
     redirect_to action: 'login'
+  end
+
+  private
+
+  def successful_login(user)
+    flash[:notice] = "Welcome back, you are logged in as #{user.email}"
+    session[:user_id] = user.id
+    redirect_to('/posts/index')
+  end
+
+  def unsuccessful_login
+    flash[:notice] = 'Invalid Username or Password'
+    flash[:color] = 'invalid'
+    render 'login'
   end
 end

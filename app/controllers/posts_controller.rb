@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :authenticate_user
 
@@ -23,9 +25,7 @@ class PostsController < ApplicationController
         render 'edit'
       end
     else
-      flash[:notice] = 'You can only edit messages for a maximum of 10 minutes after creation.'
-      flash[:color] = 'invalid'
-      redirect_to posts_url
+      update_over_time_limit
     end
   end
 
@@ -45,5 +45,11 @@ class PostsController < ApplicationController
 
   def post_params
     params[:post].permit(:message, :users_id)
+  end
+
+  def update_over_time_limit
+    flash[:notice] = 'You can only edit messages for a maximum of 10 minutes after creation.'
+    flash[:color] = 'invalid'
+    redirect_to posts_url
   end
 end

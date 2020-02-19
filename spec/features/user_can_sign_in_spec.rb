@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-feature 'test sign in' do
-  scenario 'Sign up / logout and then sign in' do
+describe 'test sign in' do
+  it 'Sign up / logout and then sign in' do
     # First Sign Up so ther user exists in the system
 
     sign_up

@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   get '/posts/:id/edit', to: 'posts#edit'
 
-
   # change name of route users/new to /signup in the address bar
   get 'signup', to: 'users#new'
 
