@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @user = User.find(@post.user_id)
     if @post.user_id == session[:user_id]
       @post.destroy
-      redirect_to user_path(current_user)
+      redirect_to session[:url]
     else
       delete_alert(@user)
     end
