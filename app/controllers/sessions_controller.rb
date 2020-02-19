@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to posts_url
+      redirect_to user_page_path(user.id)
     else 
       flash[:notice] = "Email or Password not valid"
       render 'new'
