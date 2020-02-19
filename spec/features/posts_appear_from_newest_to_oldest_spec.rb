@@ -13,13 +13,15 @@ RSpec.feature 'Posts', type: :feature do
     expect(page).to have_content("
     cats@cats.com 
     #{Time.now.strftime('%m/%d/%Y, %H:%M')}
-    Edit Delete
-    Meow two
+    Edit Delete 
+    Meow two 
+    ♡ 0 Likes
      
     cats@cats.com 
     #{Time.now.strftime('%m/%d/%Y, %H:%M')} 
-    Edit Delete
-    Meow one")
+    Edit Delete 
+    Meow one 
+    ♡ 0 Likes")
   end
 
   scenario 'On User Walls, posts are shown from newest to oldest' do

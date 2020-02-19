@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require_relative '../models/post'
 
 class PostsController < ApplicationController
   def new
@@ -7,20 +8,18 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-  end
-
-  def update
-    @post = Post.find(params[:id])
-    if users_post(@post) && under_ten_mins(@post)
-      if @post.update(post_params)
-        redirect_to posts_url
-      else
-        render 'edit'
-      end
+    if users_post(@post) && Post.under_ten_mins(@post)
+      render 'edit'
     else
       redirect_to posts_url
       flash[:alert] = "Sorry you cannot edit this post"
     end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to posts_url
   end
 
   def create
@@ -52,10 +51,6 @@ class PostsController < ApplicationController
 
   private
 
-  def under_ten_mins(post)
-    (Time.now - post.created_at) < 600
-  end
-
   def users_post(post)
     post.user_id == current_user.id
   end
@@ -67,5 +62,4 @@ class PostsController < ApplicationController
   def authenticate_user
     redirect_to '/users/sign_in' unless user_signed_in?
   end
-
 end

@@ -6,6 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :validatable
   has_many :posts
+  has_many :likes, dependent: :destroy
 
   def self.reverse_posts(posts)
     posts.sort { |a, b| b.updated_at <=> a.updated_at }
@@ -25,6 +26,5 @@ class User < ApplicationRecord
     end
     @results
   end
-
 
 end
