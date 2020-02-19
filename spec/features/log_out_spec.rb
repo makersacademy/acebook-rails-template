@@ -11,6 +11,6 @@ describe 'log out' do
 
   it 'a signed out user can not log out' do
     visit('/')
-    expect(page).not_to have_content('Sign Out')
+    expect(page).not_to have_content('logout')
   end
 end
