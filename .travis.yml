@@ -21,6 +21,8 @@ script:
   - bundle exec rspec
   - bundle exec rubocop
 after_script:
+  - require 'simplecov'
+  - require 'codeclimate-test-reporter'
   - CodeClimate::TestReporter::Formatter.new.format(SimpleCov.result) # Upload coverage/codeclimate.json
 deploy:
   provider: heroku
