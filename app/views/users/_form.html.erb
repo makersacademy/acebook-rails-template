@@ -5,6 +5,7 @@
   <p>
     <%= form.label :profile_picture%>
     <%= form.file_field :profile_picture%>
+  </p>
   <p>
     <%= form.label :email %><br>
     <%= form.text_field :email, autofocus: true, placeholder: 'Email' %>
@@ -14,7 +15,11 @@
     <%= form.label :password %><br>
     <%= form.password_field :password, autocomplete: 'off', placeholder: 'Password' %>
   </p>
- 
+  <p>
+    <%= form.label :planet%><br>
+    <%= form.select :planet, ['Kashyyyk', 'Naboo', 'Tatooine'] %>
+  </p>
+  <br>
   <p>
     <%= form.submit 'Join the Rebel Alliance' %>
   </p>
