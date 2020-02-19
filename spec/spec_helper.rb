@@ -2,6 +2,7 @@ require 'simplecov'
 require 'simplecov-console'
 require_relative 'spec_test_helper'
 require 'web_helpers'
+require 'active_support/testing/time_helpers'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
   SimpleCov::Formatter::Console,
@@ -27,6 +28,7 @@ SimpleCov.start 'rails'
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.include ActiveSupport::Testing::TimeHelpers
   config.include SpecTestHelper, type: :controller
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
