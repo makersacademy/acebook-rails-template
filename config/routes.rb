@@ -22,5 +22,5 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#login_attempt'
   get 'logout', to: 'sessions#logout'
 
-  root 'welcome#index'
+  root 'sessions#login'
 end

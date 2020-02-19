@@ -1,20 +1,29 @@
-<p id=”notice”><%= flash[:notice] %></p>
-<div>
-<h1>Log In</h1>
-</div>
-<div class='form'>
-<%= form_for :sessions do |f|%>
-<div class=”field”>
-  <%= f.label :email%><br>
-  <%= f.text_field :email%><br>
-</div>
-<div class=”field”>
-  <%= f.label :password%><br>
-  <%= f.password_field :password%><br>
-</div>
- <div class=”actions”>
-  <%= f.submit 'Log In'%>
+<div class="sidenav">
+  <div class="login-main-text">
+    <h2> Login Page</h2>
+    <p>Login here to access.</p>
   </div>
-<%end%>
 </div>
-
+<div class="main">
+  <div class="col-md-6 col-sm-12">
+    <div class="login-form">
+      <p id=”notice”><%= flash[:notice] %></p>
+      <div>
+      </div>
+        <%= form_for :sessions do |f|%>
+        <div class=”field”>
+          <%= f.label :email%><br>
+          <%= f.text_field :email%><br><br>
+        </div>
+        <div class=”field”>
+          <%= f.label :password%><br>
+          <%= f.password_field :password%><br><br>
+        </div>
+        <div class=”actions”>
+          <%= f.submit 'Log In'%>
+        </div>
+      <%end%>
+     
+    </div>
+  </div>
+</div>
