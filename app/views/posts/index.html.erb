@@ -21,6 +21,8 @@
     <%= link_to 'Delete', post_path(post),
     method: :delete %>
     <%= link_to 'Edit', edit_post_path(post) %>
+    <%= button_to 'Like', post_likes_path(post), method: :post%>
+    <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
   <div class='comment-container'>
   <br>
   <h2 class="h5 mb-3 font-weight-bold">Comments:</h2>

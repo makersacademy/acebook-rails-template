@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :sessions
   resources :posts do
     resources :comments
+    resources :likes
   end
   resources :sessions, only: %i[new create]
   delete '/logout' => 'sessions#destroy'
