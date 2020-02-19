@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
   skip_before_action :authenticated_user
   before_action :find_post
@@ -9,13 +11,13 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    if !(already_liked?)
-      flash.now.alert = "Apologies, you cannot unlike this"
-    else 
+    if !already_liked?
+      flash.now.alert = 'Apologies, you cannot unlike this'
+    else
       @like.destroy
-    end 
+    end
     redirect_to session[:url]
-  end 
+  end
 
   private
 
@@ -29,6 +31,5 @@ class LikesController < ApplicationController
 
   def find_like
     @like = @post.likes.find(params[:id])
-  end 
-
+  end
 end
