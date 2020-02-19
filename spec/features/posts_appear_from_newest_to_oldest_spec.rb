@@ -14,14 +14,14 @@ RSpec.feature 'Posts', type: :feature do
     expect(page).to have_content("
     cats@cats.com 
     #{Time.now.strftime('%m/%d/%Y, %H:%M')}
-    Edit Delete
-    Meow two
-    0 Likes
+    Edit Delete 
+    Meow two 
+    👍 0 Likes
      
     cats@cats.com 
     #{Time.now.strftime('%m/%d/%Y, %H:%M')} 
-    Edit Delete
-    Meow one
-    0 Likes")
+    Edit Delete 
+    Meow one 
+    👍 0 Likes")
   end
 end
