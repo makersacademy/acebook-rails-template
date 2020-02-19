@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
     if comment_owner?(@comment)
       @comment.update(comment_params)
-      redirect_to posts_path
+      redirect_to session[:url]
     else
       flash.now.alert = 'Apologies, this is not your comment to update!'
       render 'edit'

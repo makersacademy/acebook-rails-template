@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       render 'edit'
     elsif post_owner?(@post)
       @post.update(post_params)
-      redirect_to posts_path
+      redirect_to session[:url]
     else
       flash.now.alert = 'Apologies, this is not your post to update!'
       render 'edit'
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.where('location_id = user_id').order(created_at: :desc)
+    session[:url] = request.original_fullpath
   end
 
   def destroy
