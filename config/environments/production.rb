@@ -80,7 +80,7 @@ Rails.application.configure do
   config.active_record.migration_error = :page_load
 
   # Makes active storage store files locally
-  config.active_storage.service = :test
+  config.active_storage.service = :local
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
