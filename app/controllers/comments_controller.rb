@@ -36,6 +36,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     if comment_owner?(@comment)
       @comment.destroy
+      flash[:notice] = 'Your comment has been successfully deleted.'
       redirect_back(fallback_location: home_path)
     else
       flash.now.alert = 'Apologies, this is not your comment to delete!'
