@@ -2,9 +2,9 @@
 
 <div class='posts-body'>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<%# <%= link_to new_post_path do %>
+  
+
 <article class='posts'>
 <% @posts.each do |post| %>
   <% @user = User.find(post.users_id) %>
