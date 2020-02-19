@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body>
+
+  <%= params[:wall_id] %>
   <%= form_for @post do |form| %>
     <%= form.label :message %>
     <%= form.text_area :message, :maxlength => 500, :size => 40, :id => "area" %>
-
+    <%= form.hidden_field :wall_id, value: params[:wall_id] %>
+    
     <%= form.submit "Submit" %>
   <% end %>
 

@@ -2,9 +2,7 @@
   </div>
   
   <div id='new-post-link'>
-    <%= link_to new_post_path do %>
-      New post
-    <% end %>
+    <%= link_to new_post_path(:wall_id => params[:id]) do %>New post<% end %>
   </div>
   
   <div id='post-spacer'>

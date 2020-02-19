@@ -14,7 +14,17 @@ class UsersController < ApplicationController
   def show
     authenticate_user
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @posts = []
+
+    User.all.find do |user| 
+      user.posts.find do |post| 
+        if post.wall_id == @user.id
+          @posts.append(post)
+        end
+      end
+    end
+
+    # @posts = @user.posts
   end
 
   private
