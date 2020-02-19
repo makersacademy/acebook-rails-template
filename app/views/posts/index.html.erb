@@ -28,7 +28,8 @@
             <h5 class="card-title"> <%= post.message[(0..20)].capitalize%></h5>
              <p class="card-text">     
               <p><%= simple_format(post.message.gsub(/\n/, '<br/>'))%></p>
-              <p><%= image_tag(post.image_url.to_s, alt: 'Image') if post.image?%></p>
+              <p><%= image_tag(post.images_urls[0].to_s, alt: 'Image') if post.images?%></p>
+              <%# we need to add loop logic here to display multi image or no? %>
               <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p>
               <p> By <%= post.user.email %></p>
               <p>

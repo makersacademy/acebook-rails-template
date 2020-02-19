@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :time, :user_id, :image)
+    params.require(:post).permit(:message, :time, :user_id, {images: []})
   end
 
   def delete_params
