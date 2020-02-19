@@ -3,15 +3,12 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
+
 require 'spec_helper'
 require 'rspec/rails'
+require 'capybara/rails'
 require 'timecop'
-
-# add capybara setup
 require 'capybara'
-require 'capybara/dsl'
-require 'capybara/rspec'
-require "selenium-webdriver"
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -35,6 +32,23 @@ require "selenium-webdriver"
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+
+  # Capybara.register_driver :chrome do |app|
+  #   Capybara::Selenium::Driver.new(app, browser: :chrome)
+  # end
+  
+  # Capybara.register_driver :headless_chrome do |app|
+  #   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+  #     chromeOptions: {
+  #       args: %w[headless enable-features=NetworkService,NetworkServiceInProcess]
+  #     }
+  #   )
+  
+  #   Capybara::Selenium::Driver.new app,
+  #                                  browser: :chrome,
+  #                                  desired_capabilities: capabilities
+  # end
+  
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -65,27 +79,10 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
   # configure the driver to run in headless mode
-  Capybara.server = :puma, { Silent: true }
-
   config.include ActiveSupport::Testing::TimeHelpers
+
   
 end
 
-Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
-end
-
-Capybara.register_driver :headless_chrome do |app|
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: {
-      args: %w[headless enable-features=NetworkService,NetworkServiceInProcess]
-    }
-  )
-
-  Capybara::Selenium::Driver.new app,
-                                 browser: :chrome,
-                                 desired_capabilities: capabilities
-end
-
-Capybara.default_driver = :headless_chrome
-Capybara.javascript_driver = :headless_chrome
+# Capybara.default_driver = :headless_chrome
+# Capybara.javascript_driver = :headless_chrome

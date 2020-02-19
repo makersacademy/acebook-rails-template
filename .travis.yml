@@ -1,42 +1,23 @@
-sudo: required
 language: ruby
 cache: bundler
 dist: trusty
 rvm:
-  - 2.5.0
+- 2.5.0
 services:
-  - postgresql
-before_install:
-  - gem install selenium-webdriver
-  - sudo apt-get update
-  - sudo apt-get install dbus-x11
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - export CHROME_BIN=/usr/bin/google-chrome
-  - sudo apt-get install -y libappindicator1 fonts-liberation
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - sudo dpkg -i google-chrome*.deb
-  - wget https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip
-  - sudo cp chromedriver /usr/bin
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.20.1/geckodriver-v0.20.1-linux64.tar.gz
-  - tar -xzf geckodriver-v0.20.1-linux64.tar.gz
-  - sudo cp geckodriver /usr/bin
+- postgresql
+install:
+ - gem install bundler
+ - bundle install
 before_script:
-  - bundle exec rake db:test:prepare
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
+- bundle exec rake db:test:prepare
+- bundle exec rake db:create
+- bundle exec rake db:migrate
 script:
-  - bundle exec rspec
-  - bundle exec rubocop
-
+- bundle exec rspec
+- bundle exec rubocop
 deploy:
-  - provider: heroku
-    api_key:
-      secure: ljT4lJtqNLSBIvQlm/8Uk+h0d5kuthfeHrhRDf8pXjJVLq+Nfof0PNjtcSIaMrKcNCEac4QjpoFuqbsmdoiqx4fyYTEKXrGZ9EOxATdZiXjgPZvnUeiYyZ/si5mf3GQS6Fe86kW+524FJDTh+UK4hb5BmyfT2ksJPAvHSV2idyUAWvzAyFwjefU/lBA/hBOG9pRO/I+7VIyIr2fuLs6N8Vnp/38RpKlQJznTFWDgMJBmAzp8l/6UF3vQP5r2fRD5M42CulfhUF7/NAqTDugaAPClbIvJM+2a2KCzxAX40R9fg0zOR8cUdo1bUmLXkEKx1dYfH4QgrDCD7chrahazKIlVKcOwPVvC9XY9sQfY0HQ+tsbCvh5pr9zZaIF4qE8O03co6ZMcxzFWa8DB/SwWvZ3HLpUR9VD/uwDJHuYbhh7QPEZoxkG/hd1pgflVCfXA3hPaWDy6f5Y0gYJq0G1MeKg1pBBjuPGnFFhsfmapv/w32E5Q284bKOCELgVFnumlZGmbDYl26xdLmAmwvcEEIe3eBmeFoEwFmY+f05LHlMALyRWsrRvc947HzZLgqoVvLHgKmYIqgWrmKuYh7nmRWRINZ7zWlgQD52IDH7mxgIlz1pzlTd71z2/LXnju5bs0ZR5rtLMejBLvfSD4DPKZ+EN08NovMasEg7iTKDSBlgY=
-    app:
-      develop: acebook-inSANE
-    env: "prod"
-    on:
-      branch: master
-  
+  provider: heroku
+  app: acebook-insane
+  api_key:
+    secure: quDRF0GGsveakinC9N2/YN9b+8fwr5naiDG6uduOZ7KvP2OSJJQwgvOY1irph/nnyZXgdfoYKUbz1ujuKEspPF593kibsyf9fF/OcmHe5cxUdXoOtWMeO8YhRugCO7WJGEA8AyXq7gyX/dI4FBoFQ0CcuH72TuioHs93T2GMvud5/0xkOYRNFHh7wUTqwoSV96PRCccP9RxX/nor89H8G4vZu81qoQM3qQfmRwXEwaogr7gXlCY2WF82dLLazbPUzezHgy8r+kIEVMZ8ebyRLDmfhMGhZsKBfrWJ4nvUYup0KqIGx0CBBppLIm/JnWFv1jotNEQt3AGszL9R2PVVBzcTB59X5FJCMz79BgXsT+9n/YsinNz7z0rJaI3hE1WoFda0q3hTjW7flVWaSCwEdwIayiGOch0k7NRxRdLwQb+r5t5o/aMZr8X4pELJsPc/cXWDgWEJoFZyvnCQ/k/a5BXDCDW6HBIcyrPVF2Hu+DFErV4t1G36vHmsP64LTQZd74rlsyHjIYcj2AogeaKtdQMTjC/s8kWpT1q1ZPQuV5HVqF7sOxQjyspwKLT9CZ27+j9w0V1GLUfoyBfYKEx9iAzHJ2h6+mTBD8DoVMytTPYfvSeaR4zYyeWp30ZxVy1EAAntcZ/8NS3Gxqy79E3uKuiDRtmZDoEaFoHBsHLk/N4=
+  skip_cleanup: true
