@@ -1,10 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature 'Users can only view their own posts', type: :feature do
-  scenario 'User creates a post and can only see their post' do
-    user = User.create!(email: 'test@abc.com', password: 'password')
-    Post.create!(user_id: user.id, post_content: 'test message')
-
+RSpec.feature 'Posts to a wall are only visible on that particular wall', type: :feature do
+  scenario 'Posts to a wall are only visible on that particular wall' do
     visit('/')
     click_on('Signup')
     fill_in('user[email]', with: 'test@test.com')
@@ -15,7 +12,8 @@ RSpec.feature 'Users can only view their own posts', type: :feature do
     click_on 'Create Post'
     expect(page).to have_content('Hey there')
     expect(page).to have_content('test@test.com')
-    expect(page).not_to have_content('test message')
-    expect(page).not_to have_content('test@abc.com')
+    click_on 'wookiebook'
+    expect(page).not_to have_content('Hey there')
+    expect(page).not_to have_content('test@test.com')
   end
 end

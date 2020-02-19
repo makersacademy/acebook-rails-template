@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.feature 'Users can signup to site', type: :feature do
   scenario 'Can visit Signup Page' do
     visit('/')

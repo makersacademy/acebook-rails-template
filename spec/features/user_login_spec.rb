@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.feature 'Users can login to site', type: :feature do
   scenario 'Can visit login page' do
     visit('/')

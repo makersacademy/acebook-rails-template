@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.feature 'Users can visit Homepage', type: :feature do
   scenario 'Can visit homepage' do
     visit '/'

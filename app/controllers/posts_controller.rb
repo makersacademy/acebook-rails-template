@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     location = params[:user_id] || 0
-    @posts = Post.where({location_id_fk: location})
+    @posts = Post.where(location_id_fk: location)
     @location = location
   end
 
@@ -17,10 +17,12 @@ class PostsController < ApplicationController
     elsif @post.created_at + 600 < Time.zone.now
       message = 'Not authorized to update this post'
     end
-    redirect_to(user_posts_path(session[:user_id]), notice: message) if message
+    @location = params[:location]
+    redirect_to(user_posts_path(user_id: @location), notice: message) if message
   end
 
   def create
+    post_params = params.require(:post).permit(:post_content, :location_id_fk)
     post_params[:user_id] = session[:user_id]
     @post = User.find(session[:user_id]).posts.create(post_params)
     @post.save
@@ -28,6 +30,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    post_params = params.require(:post).permit(:post_content)
     @post = Post.find_by(user_id: session[:user_id], id: params[:id])
     if @post
       if @post.created_at + 600 > Time.zone.now
@@ -39,11 +42,12 @@ class PostsController < ApplicationController
     else
       message = 'Not authorized to update this post'
     end
-    redirect_to(user_posts_path(session[:user_id]), notice: message)
+    redirect_to(user_posts_path(user_id: params[:post][:location_id_fk]), notice: message)
   end
 
   def destroy
     @post = Post.find_by(user_id: session[:user_id], id: params[:id])
+    @location = Post.find(params[:id]).location_id_fk
     if @post
       if @post.created_at + 600 > Time.zone.now
         message = 'Post deleted'
@@ -54,12 +58,6 @@ class PostsController < ApplicationController
     else
       message = 'Not authorized to delete this post'
     end
-    redirect_to(user_posts_path(session[:user_id]), notice: message)
-  end
-
-  private
-
-  def post_params
-    params.require(:post).permit(:post_content, :location_id_fk)
+    redirect_to(user_posts_path(@location), notice: message)
   end
 end
