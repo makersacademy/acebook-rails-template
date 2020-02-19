@@ -78,8 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: pgapp_production
-  username: pgapp
-  password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: pgapp_production
+#   username: pgapp
+#   password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
