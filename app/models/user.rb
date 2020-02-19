@@ -3,6 +3,7 @@ class User < ApplicationRecord
   
   validates :email, format: { :with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
   validates :email, uniqueness: true
+  validates :username, uniqueness: true 
   validates :password, :length => {
     :minimum => 6,
     :maximum => 10,
