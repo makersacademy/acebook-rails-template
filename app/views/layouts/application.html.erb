@@ -19,14 +19,16 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Acebook De-Railed</a>
+      <a class="navbar-brand" href="/posts">Acebook De-Railed</a>
     
     <ul class="nav navbar-nav">
       <%# <li class="active"><a href="#">Home</a></li> %>
       
        <% if session[:user_id] %>
        <%# <div class="logout-btn"> %>
+       <li><%= link_to 'New post', new_post_path %></li>
        <li><%= link_to 'logout', logout_path %></li>
+       
        <%# </div> %>
         <%else%>
       <li><%= link_to 'Sign Up', signup_path, :method => 'get' %></li>
