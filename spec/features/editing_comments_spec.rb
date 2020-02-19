@@ -10,6 +10,7 @@ feature 'user can update comments' do
     edit_comment
     expect(page).not_to have_content('test comment')
     expect(page).to have_content('Test comment 1')
+    expect(page).to have_content('Your comment has been successfully edited.')
   end
 
   scenario 'from the user page' do
@@ -20,6 +21,7 @@ feature 'user can update comments' do
     edit_comment
     expect(page).not_to have_content('test comment')
     expect(page).to have_content('Test comment 1')
+    expect(page).to have_content('Your comment has been successfully edited.')
   end
 
   scenario 'it throws an error when not your comment to update' do

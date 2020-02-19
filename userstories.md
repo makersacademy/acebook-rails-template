@@ -267,4 +267,42 @@ So I can see my comment straight away
 I don't want to refresh the page to see my comment
 ```
 
+__CHAT (as a user logged in)__
+
+```
+As a user, 
+so I can communicate quickly with others, 
+I would like to be able to join a chat room with all other logged in users
+```
+
+```
+As a user, 
+so I can see messages quickly, 
+I want to be able to see messages in real time
+```
+
+```
+As a user, 
+So I can reply to messages, 
+I want to be able to share messages to the chat
+```
+
+__FRIENDS (as a user logged in)__
+
+```
+As user, 
+So I know how many friends I have, 
+I would like to see a list of my friends
+```
+
+```
+As a user, 
+So I can keep up to date, 
+I would like to request to be friends with others
+```
+
+
+
+
+
 

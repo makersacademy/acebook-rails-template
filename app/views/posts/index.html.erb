@@ -6,6 +6,11 @@
         <%= alert %>
       </div>
     <% end %>
+ <% if notice %>
+    <div class="alert alert-success">
+    <%= notice %>
+    </div>
+<% end %>
   <h2 class="h3 mb-3 font-weight-normal">Add a post:</h2>
   <%= form_with(model: [ current_user, current_user.posts.build ], local: true) do |form| %>
     <%= form.text_area :message, class: 'form-control', required: true%>
