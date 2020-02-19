@@ -9,7 +9,7 @@ addons:
     repo_token:
       secure: "csjYAIA5RYfzE2RbS5sfzZkxDpYIA2h/EgW5VRjVqLVG+WQTbVibGrX8bRWFxrQ+7PxlMIImGb/OT8+fZkYW/wLRkfEmPJ4j0xjOnvMxGO7/v7seqavvUj3KsqTwk7yfdzLl9Ot72+WE9COBfWefF+N6an27RejQkIk1e5BY6z3Ue1PM6KFDzZGYMGtaUzrpEIGv7Mc2PZJG8DvyBbruabaLXoSDfUZuVMxjvtSZRc2TivSlMTK6nFEYqIGW5Pjq9d1gdwVJ/aTyapzhVwUWgri++jR+2ms5J5Axx3PEhoqG6QpMn2mfPoh6EnaYtMU/G6oQRSSYcv0vAmAKMIX5diKWfdrQuzCZII2CQUElL+GJx+IrRa1LuYYqoQNQsEKo1yCHdqdYGBcFM6Imuqj6QiaU4JumafqbkZ7B5HNtRZOV4tgFWjmQwp1wbwpkHZ7jGH1btElogF6vGubeKP2+JX2x6Ejs/EwsJV6Ly6OC43A4sT/zu5Y/CEQrNEVnKieSgefd4fg2PAk+W8ONqrBJ48lpEv2VMUt1IHJmpVPPSkL6vlDcX5Hji0nzA/tMtAXojS8Tk5tCDMvpU9gnnTm64rVDg/yjzaWhpPEqVr+RzW8xKlsJHm0MNEKg7SWtoD02qzYZIP9i6/Vo79qsa1E9mQFnV+5d/yN23Yyqbzn2dio="
 before_install:
-  - nvm-install-latest-npm # Install node version from .nvmrc
+  - nvm-install -latest-npm # Install node version from .nvmrc
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
 
