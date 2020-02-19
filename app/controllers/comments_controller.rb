@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
   end
- 
 
   def create
     @post = Post.find(params[:post_id])
@@ -24,7 +23,7 @@ class CommentsController < ApplicationController
       @comment.update(comment_params)
       redirect_to posts_path
     else
-      flash.now.alert = 'Apologies, this is not your post to update!'
+      flash.now.alert = 'Apologies, this is not your comment to update!'
       render 'edit'
     end
   end
@@ -34,7 +33,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     if comment_owner?(@comment)
-      @comment.destroy 
+      @comment.destroy
       redirect_back(fallback_location: home_path)
     else
       flash.now.alert = 'Apologies, this is not your comment to delete!'
@@ -42,8 +41,6 @@ class CommentsController < ApplicationController
       render 'posts/index'
     end
   end
-
-  
 
   private
 
@@ -54,5 +51,4 @@ class CommentsController < ApplicationController
   def comment_owner?(comment)
     comment.user_id == session[:user_id]
   end
-
 end

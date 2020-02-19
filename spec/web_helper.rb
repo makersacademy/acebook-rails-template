@@ -28,3 +28,7 @@ def create_comment
   click_button 'Add Comment'
 end
 
+def edit_comment
+  fill_in 'comment[body]', with: 'Test comment 1'
+  click_button 'Update comment'
+end
