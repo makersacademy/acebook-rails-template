@@ -19,4 +19,17 @@ RSpec.feature 'Profile', type: :feature do
     click_link 'Profile'
     expect(page).to have_content('ria@testing.com')
   end
+
+  scenario 'when view profile of another user it shows their email' do
+    sign_up
+    visit '/'
+    click_link 'New post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    click_link 'Sign out'
+    sign_up_2
+    visit '/'
+    click_link 'View Profile'
+    expect(page).to have_content('ria@testing.com')
+  end
 end
