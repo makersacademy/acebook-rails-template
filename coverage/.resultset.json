@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/shadikhazaei/Documents/Projects/acebook-404/app/models/user.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -15,7 +15,7 @@
           null
         ]
       },
-      "/Users/shadikhazaei/Documents/Projects/acebook-404/app/models/application_record.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -24,7 +24,7 @@
           null
         ]
       },
-      "/Users/shadikhazaei/Documents/Projects/acebook-404/app/controllers/user_controller.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/controllers/user_controller.rb": {
         "lines": [
           null,
           null,
@@ -49,7 +49,7 @@
           null
         ]
       },
-      "/Users/shadikhazaei/Documents/Projects/acebook-404/app/controllers/application_controller.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -62,7 +62,7 @@
           null
         ]
       },
-      "/Users/shadikhazaei/Documents/Projects/acebook-404/app/models/post.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/models/post.rb": {
         "lines": [
           null,
           null,
@@ -71,7 +71,7 @@
           null
         ]
       },
-      "/Users/shadikhazaei/Documents/Projects/acebook-404/app/models/profile.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/models/profile.rb": {
         "lines": [
           null,
           null,
@@ -81,7 +81,7 @@
           null
         ]
       },
-      "/Users/shadikhazaei/Documents/Projects/acebook-404/app/controllers/posts_controller.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           1,
@@ -137,7 +137,7 @@
           null
         ]
       },
-      "/Users/shadikhazaei/Documents/Projects/acebook-404/app/controllers/profile_controller.rb": {
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/controllers/profile_controller.rb": {
         "lines": [
           null,
           null,
@@ -145,13 +145,57 @@
           1,
           null,
           1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
           14,
           14,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
           null,
           null
         ]
       }
     },
-    "timestamp": 1582128373
+    "timestamp": 1582135062
   }
 }
