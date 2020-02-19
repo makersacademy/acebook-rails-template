@@ -13,6 +13,27 @@
   </p>
  
   <p>
-    <%= form.submit 'HERRNNNGGGHHHHH' %>
+    <%= form.submit 'HERRNNNGGGHHHHH', id: 'submitBtn' %>
   </p>
+
+  <%= audio_tag "chewbacca.mp3", id: "chewbaccaPlay", preload: "true" %>
+
+  <% content_for :page_scripts do %>
+    <script>
+      window.addEventListener('load', function() {
+        audio = document.querySelector('#chewbaccaPlay')
+        clickHandler = function(event) {
+          event.preventDefault()
+          self = this
+          audio.addEventListener('ended', function() {
+            self.removeEventListener('click', clickHandler)
+            self.click()
+          })
+          audio.play()
+        }
+        document.querySelector('#submitBtn').addEventListener('click', clickHandler)
+      })
+    </script>
+  <% end %>
+
 <% end %>
