@@ -19,5 +19,4 @@ RSpec.feature 'Profile', type: :feature do
     click_link 'Profile'
     expect(page).to have_content('ria@testing.com')
   end
-
 end
