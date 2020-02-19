@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login
 
-  def index
-    @user = User.all
-  end
-
   def new
     @user = User.new
     redirect_to(user_posts_path(user_id: session[:user_id]), notice: 'You cannot signup while logged in') if session[:user_id]
