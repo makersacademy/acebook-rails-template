@@ -13,6 +13,17 @@ RSpec.feature 'Comment', type: :feature do
     expect(page).to have_content('Updated Comment')
   end
 
+  scenario 'User cannot edit another users comment' do
+    sign_up
+    new_post
+    comment_on_post
+    click_link 'Logout'
+    sign_up_two
+    visit '/posts'
+    click_link 'Edit Comment'
+    expect(page).to have_content('Sorry you cannot edit this comment')
+  end
+
   scenario 'User sees a message if updating the comment was successful' do
     sign_up
     new_post
