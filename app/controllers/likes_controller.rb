@@ -1,5 +1,9 @@
 class LikesController < ApplicationController
   before_action :find_like, only: [:destroy]
+  
+  def index
+    redirect_to '/'
+  end
 
   def create
     @post = Post.find(params[:post_id])

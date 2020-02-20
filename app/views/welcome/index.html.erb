@@ -2,3 +2,47 @@
 <div class="catbook-logo">
   <i class="fa fa-paw fa-lg" title="meow"></i>catbook
 </div>
+
+<div id='posts'>
+
+  <% @posts.each do |post| %>
+    <div class="card">
+      <div id='top'> 
+        <div id='top-left'>
+          <div id='post-user'>
+            <%= User.find(post.user_id).email %>
+          </div>
+
+          <div id='post-date'> 
+          <%= post.created_at.strftime("%m/%d/%Y, %H:%M") %>
+          </div>
+        </div>
+
+        <div id='post-links'> 
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <%= link_to 'Delete', post, :method => :delete %>
+        </div>
+
+      </div>
+
+      <div id='post-message'>
+        <%= simple_format(post.message, {}, wrapper_tag: "div") %>
+      </div>
+
+      <div id='likes'>
+      <% pre_like = post.likes.find { |like| like.user_id == current_user.id }%>
+        <% if pre_like %>
+          <%= link_to '♥️', post_like_path(post, pre_like), method: :delete %>
+        <% else %>
+          <%= link_to '♡', post_likes_path(post), method: :post %>
+        <% end %>
+        <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %>
+      </div>
+  
+    </div>
+    <div id='post-spacer'>
+    </div>
+  <% end %>
+
+</div>
+
