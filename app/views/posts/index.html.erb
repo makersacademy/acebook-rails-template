@@ -15,21 +15,19 @@
 
 <% @posts.reverse.each do |post| %>
   <div class="card">
-    <img class="card-img-top" style="width: 50px; height: auto" alt=" "
+    <img class="card-img-top" style="width:200px; height: auto" alt=" "
     <%img_url = User.find(post.user_id).profile_picture %>
     <%= image_tag(User.find(post.user_id).profile_picture) if img_url.attached?%>
     <div class="card-body">
       <h5 class="card-title">
         <a><%= link_to User.find(post.user_id).username, user_posts_path(user_id: User.find(post.user_id)) %></a> says...
       </h5>
+      <h4 class="card-text"><%=simple_format(post.post_content)%></h4>
       <h6 class="card-subtitle mb-2 text-muted"><%=post.created_at.to_s(:rfc822)[17..21]%>  <%=post.created_at.to_s(:rfc822)[0..2]%> <%=post.created_at.to_s(:rfc822)[4..15]%></h6>
-      <p class="card-text"><%=simple_format(post.post_content)%></p>
       <a><%= link_to 'Edit', edit_user_post_path(user_id: session[:user_id], id: post, location: @location) %></a>
       <a><%= link_to 'Delete', post, method: :delete %></a>
     </div>
   </div>
-  <br>
-  <br>
 <% end %>
 </table>
 <br>

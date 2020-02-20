@@ -26,17 +26,18 @@
 .profile-picture {
   position: absolute;
   z-index: 1;
-  top: 185px;
+  top: 170px;
   height: 250px;
   width: 250px;
   left: 40px;
+  overflow: hidden;
+  border: 3px solid white;
 }
 
 #profile-pic {
   position: relative;
-  width: 100%;
+  right: 40%;
   height: 100%;
-  border: 3px solid white;
 }
 
 #planet {
@@ -60,6 +61,12 @@
   position: relative;
   top: 500px;
   left: 42%;
+}
+
+.card-body{
+  position: relative;
+  left: 250px;
+  top: -110px;
 }
 
 .new-post {
