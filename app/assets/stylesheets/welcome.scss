@@ -129,14 +129,7 @@ div.card {
 
 #new-post-form {
   padding: 15px;
-  // display: flex;
 }
-
-
-
-// border-style: solid;
-// border-color: lightgrey;
-// border-width: 1px;
 
 #form-header {
 
@@ -184,4 +177,26 @@ textarea {
   color: #385898;
   padding: 15px;
   font-weight: 800;
+}
+
+#devise-form-header{
+  font-size: 20px;
+  color: #385898;
+  font-family: 'Open Sans';
+  font-weight: 500;
+}
+
+#devise-form-container {
+  // display: flexbox;
+}
+
+#devise-form-right {
+  width: 50%;
+  margin: auto;
+}
+
+#devise-form-left {
+  width: 50%;
+  margin: auto;
+  text-align: center;
 }
