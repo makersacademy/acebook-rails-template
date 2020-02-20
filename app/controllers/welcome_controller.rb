@@ -6,5 +6,4 @@ class WelcomeController < ApplicationController
       @posts = Post.show
     end
   end
-
 end
