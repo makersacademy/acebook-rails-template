@@ -7,55 +7,90 @@
   <% end %>
 
   <% if user_signed_in? %>
-    <div id='post-spacer'></div>
+    <div id='post-spacer'>
+    </div>
+      
     <div id='new-post-link'>
       <%= link_to new_post_path do %>
         New post
       <% end %>
     </div>
-    <div id='post-spacer'></div>
-
-  <div id='posts'>
-
-    <% @posts.each do |post| %>
-      <div class="card">
-        <div id='top'> 
-          <div id='top-left'>
-            <div id='post-user'>
-              <%= User.find(post.user_id).email %>
-            </div>
-
-            <div id='post-date'> 
-            <%= post.created_at.strftime("%m/%d/%Y, %H:%M") %>
-            </div>
-          </div>
-
-          <div id='post-links'> 
-            <%= link_to 'Edit', edit_post_path(post) %>
-            <%= link_to 'Delete', post, :method => :delete %>
-          </div>
-
-        </div>
-
-        <div id='post-message'>
-          <%= simple_format(post.message, {}, wrapper_tag: "div") %>
-        </div>
-
-        <div id='likes'>
-        <% pre_like = post.likes.find { |like| like.user_id == current_user.id }%>
-          <% if pre_like %>
-            <%= link_to '♥️', post_like_path(post, pre_like), method: :delete %>
-          <% else %>
-            <%= link_to '♡', post_likes_path(post), method: :post %>
-          <% end %>
-          <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %>
-        </div>
-    
-      </div>
-      <div id='post-spacer'>
-      </div>
-    <% end %>
+      
+    <div id='post-spacer'>
     </div>
+
+    <div id='posts'>
+
+      <% @posts.each do |post| %>
+        <div class="card">
+          <div id='top'> 
+            <div id='top-left'>
+              <div id='post-user'>
+              <a href=<%= user_page_path(User.find(post.user_id))%>><%= User.find(post.user_id).email  %></a>
+              </div>
+
+              <div id='post-date'> 
+              <%= post.created_at.strftime("%m/%d/%Y, %H:%M") %>
+              </div>
+            </div>
+
+            <div id='post-links'> 
+              <%= link_to 'Edit', edit_post_path(post) %>
+              <%= link_to 'Delete', post, :method => :delete %>
+            </div>
+
+          </div>
+
+          <div id='post-message'>
+            <%= simple_format(post.message, {}, wrapper_tag: "div") %>
+          </div>
+
+          <div id='likes'>
+          <% pre_like = post.likes.find { |like| like.user_id == current_user.id }%>
+            <% if pre_like %>
+              <%= link_to '♥️', post_like_path(post, pre_like), method: :delete %>
+            <% else %>
+              <%= link_to '♡', post_likes_path(post), method: :post %>
+            <% end %>
+            <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %>
+          </div>
+
+          <div id='post-comments'>
+          <% post.comments.each do |comment| %>
+            <div id='post-comment'>
+                <div id='post-comment-user'>
+                <a href=<%= user_page_path(User.find(comment.user_id))%>><%= User.find(comment.user_id).email  %></a>
+                </div>
+
+                <div id='post-comment-text'>
+                  <%= simple_format(comment.body, {}, wrapper_tag: "div") %>
+                </div>
+
+
+                <div id='comment-links'> 
+                  <%= link_to 'Edit Comment', edit_post_comment_path(post, comment) %>
+                  <%= link_to 'Delete Comment', [comment.post, comment], :method => :delete %>
+                </div>
+                
+              </div>
+          <% end %>
+        </div> 
+
+
+          <div id='add-post-comment'>
+            <div id='add-post-container'>
+              <a href=<%=post_path(post)%>><i class="fa fa-comments"></i></a>
+              <%= link_to 'Add Comment', post_path(post) %>
+            </div>
+          </div>
+      
+        </div>
+        <div id='post-spacer'>
+        </div>
+      <% end %>
+
+    </div>
+
   <% end %>
 </body>
 </html>
