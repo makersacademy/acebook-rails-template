@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :friends
   get 'posts/index'
 
   get '/posts/:id/edit', to: 'posts#edit'
