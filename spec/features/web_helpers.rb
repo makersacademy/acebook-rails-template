@@ -25,3 +25,35 @@ def new_post
   click_button 'Submit'
 end
 
+def new_post_on_own_wall(message)
+  visit user_page_path(User.all.first.id)
+  click_link 'New post'
+  fill_in "area", with: message
+  click_button 'Submit'
+end
+
+def new_post_on_other_users_wall
+  visit user_page_path(User.all.first.id)
+  click_link 'New post'
+  fill_in "area", with: 'Post to My Friend'
+  click_button 'Submit'
+end
+
+def new_post_two
+  visit '/posts'
+  click_link 'New post'
+  fill_in "area", with: 'Howdy, world!'
+  click_button 'Submit'
+end
+
+
+def log_in
+  sign_up
+  visit '/'
+  click_link 'Logout'
+  click_link 'Login'
+  fill_in 'Email', with: 'cats@cats.com'
+  fill_in 'Password', with: 'cats1234'
+  click_button 'Log in'
+end
+

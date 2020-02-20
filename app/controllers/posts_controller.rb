@@ -30,7 +30,12 @@ class PostsController < ApplicationController
 
   def index
     authenticate_user
-    @posts = Post.all.reverse_order
+    @posts = []
+    Post.all.reverse_order.each do |post|
+      if (post.wall_id == nil) || (post.user_id == post.wall_id)
+        @posts.append(post)
+      end
+    end
   end
 
   def destroy
@@ -51,10 +56,10 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :wall_id)
   end
 
   def authenticate_user
-    redirect_to '/' unless user_signed_in?
+    redirect_to '/users/sign_in' unless user_signed_in?
   end
 end
