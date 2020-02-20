@@ -6,6 +6,17 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def create
+    @current_user = current_user
+    @post = @current_user.posts.create(post_params)
+    redirect_to posts_url
+  end
+
+  def index
+    authenticate_user
+    @posts = Post.show
+  end
+
   def edit
     @post = Post.find(params[:id])
     if users_post(@post) && Post.under_ten_mins(@post)
@@ -20,22 +31,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.update(post_params)
     redirect_to posts_url
-  end
-
-  def create
-    @current_user = current_user
-    @post = @current_user.posts.create(post_params)
-    redirect_to posts_url
-  end
-
-  def index
-    authenticate_user
-    @posts = []
-    Post.all.reverse_order.each do |post|
-      if (post.wall_id == nil) || (post.user_id == post.wall_id)
-        @posts.append(post)
-      end
-    end
   end
 
   def destroy
