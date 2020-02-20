@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class AlbumsController < ApplicationController
-  before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :set_album, only: %i[show edit update destroy]
 
   # GET /albums
   # GET /albums.json
@@ -9,8 +11,7 @@ class AlbumsController < ApplicationController
 
   # GET /albums/1
   # GET /albums/1.json
-  def show
-  end
+  def show; end
 
   # GET /albums/new
   def new
@@ -18,21 +19,20 @@ class AlbumsController < ApplicationController
   end
 
   # GET /albums/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /albums
   # POST /albums.json
   def create
     @album = Album.new(album_params)
 
-    respond_to do |format|
+    respond_to do |f|
       if @album.save
-        format.html { redirect_to @album, notice: 'Album was successfully created.' }
-        format.json { render :show, status: :created, location: @album }
+        f.html { redirect_to @album, notice: 'Album created.' }
+        f.json { render :show, status: :created, location: @album }
       else
-        format.html { render :new }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+        f.html { render :new }
+        f.json { render json: @album.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -40,13 +40,13 @@ class AlbumsController < ApplicationController
   # PATCH/PUT /albums/1
   # PATCH/PUT /albums/1.json
   def update
-    respond_to do |format|
+    respond_to do |form|
       if @album.update(album_params)
-        format.html { redirect_to @album, notice: 'Album was successfully updated.' }
-        format.json { render :show, status: :ok, location: @album }
+        form.html { redirect_to @album, notice: 'Album was updated.' }
+        form.json { render :show, status: :ok, location: @album }
       else
-        format.html { render :edit }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+        form.html { render :edit }
+        form.json { render json: @album.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,19 +56,19 @@ class AlbumsController < ApplicationController
   def destroy
     @album.destroy
     respond_to do |format|
-      format.html { redirect_to albums_url, notice: 'Album was successfully destroyed.' }
+      format.html { redirect_to albums_url, notice: 'Album annihilated' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_album
-      @album = Album.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def album_params
-      params.require(:album).permit(:title, {images: [] })
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_album
+    @album = Album.find(params[:id])
+  end
+
+  def album_params
+    params.require(:album).permit(:title, images: [])
+  end
 end
