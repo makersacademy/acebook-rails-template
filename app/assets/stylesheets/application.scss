@@ -14,3 +14,7 @@
 
 @import 'bootstrap-sprockets';
 @import "bootstrap";
+
+html, label, select, input {
+  cursor: url(asset_path('lightsabergreen.cur')), auto;
+}
