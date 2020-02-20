@@ -36,20 +36,15 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
-
-      <div class="actions">
-        <%= f.button "Log in", type: 'submit' %>
-      </div>
       
       <div class="/users/sign_up">
         <%= f.button "Sign Up", type: 'submit' %>
-        
       </div>
     <% end %>
 
- <!--    <form action='/users/sign_up'>
-      <input type='submit' value='Sign Up'> -->
-
+    <form action='/users/sign_in'>
+      <button action='submit'>Return to login</button>
+    </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
