@@ -23,6 +23,22 @@
   right: 0px;
 }
 
+.profile-picture {
+  position: absolute;
+  z-index: 1;
+  top: 185px;
+  height: 250px;
+  width: 250px;
+  left: 40px;
+}
+
+#profile-pic {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 3px solid white;
+}
+
 #planet {
   position: relative;
   width: 100%;
