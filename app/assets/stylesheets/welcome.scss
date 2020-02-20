@@ -187,7 +187,8 @@ textarea {
 }
 
 #devise-form-container {
-  // display: flexbox;
+  width: 90%;
+  text-align: center;
 }
 
 #devise-form-right {
@@ -199,4 +200,24 @@ textarea {
   width: 50%;
   margin: auto;
   text-align: center;
+}
+
+.actions {
+  padding: 5px 0 14px 0;
+  font-size: 15px;
+}
+
+.actions input[type=submit] {
+  background-color: #769e49;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#devise-links a{
+  color: #385898;
+  font-weight: 600;
+  padding: 14px;
 }
