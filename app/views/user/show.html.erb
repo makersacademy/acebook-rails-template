@@ -1,0 +1,13 @@
+<h3 align="center">  <%= @user.username%>'s wall</h3>
+<div align="center" id="wall_id">
+<p>
+
+</p>
+</div>
+
+<div align="center" id="links">
+
+<%= link_to 'See All Posts', posts_path %>
+
+<%= render 'shared/post', obj: @posts %>
+</div>
