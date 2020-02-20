@@ -26,7 +26,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.id == session[:user_id]
+    if User.find_by_username(params[:user][:username])
+      flash.now.alert = 'Apologies, this username is already taken'
+      render 'edit'
+    elsif @user.id == session[:user_id]
       @user.update_attribute(:username, params[:user][:username])
       redirect_to session[:url]
     else
