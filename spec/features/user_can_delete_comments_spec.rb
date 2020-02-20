@@ -23,4 +23,12 @@ RSpec.feature 'Comment', type: :feature do
     expect(page).to have_content('First Comment')
   end
 
+  scenario 'User sees a message if deleting the comment was successful' do
+    sign_up
+    new_post
+    comment_on_post
+    click_link 'Delete Comment'
+    expect(page).to have_content('Comment deleted successfully')
+  end
+
 end

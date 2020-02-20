@@ -39,6 +39,7 @@ class CommentsController < ApplicationController
     if users_own(@comment)
       @comment.destroy
       redirect_to posts_url
+      flash[:alert] = "Comment deleted successfully"
     else
       redirect_to posts_url
       flash[:alert] = "Sorry you cannot delete this comment"
