@@ -4,12 +4,12 @@
     <title>🦁 Acebook</title>
   </head>
 
-  <body>
-
-  
-    <div>
-      <h1>Fill in the Below to Create your Account<h1>
-
+  <div class="container" id="sign-up-form">
+  <div class="row">
+      <h2>Sign up <small>it's free!</small></h2>
+      <h3>Fill in the Below to Create your Account</h3>
+      
+      
       <%= form_for :user, :url => { :action => "create" } do |f| %>
         <p>
           <%= f.label :Username %><br>
@@ -27,7 +27,7 @@
           <%= f.password_field :password, id: "password"%>
         </p>
         <p> 
-        <button class="sign-up-button"><%= f.submit "Create Account!" %></button>
+          <%= f.submit "Create Account!", class: 'btn sign-up-button' %>
         </p>
       <% end %>
     </div>

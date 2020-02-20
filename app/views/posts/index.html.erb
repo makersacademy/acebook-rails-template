@@ -6,47 +6,44 @@
   </head>
 
   <body>
-    
     <% if !!flash[:notice] %>
       <% flash.each do |type, message| %>
         <p><%= message %></p> <br>
       <% end %>
     <% end %>
 
-    <h4>Welcome to Acebook you are logged in as: <%= current_user.username %></h4>
+    <h3>Welcome to Acebook you are logged in as: <%= current_user.username %></h3>
 
-    <%= link_to new_post_path do %>
-      New post
+    <h4>
+      <%= link_to new_post_path do %>
+        New post
+      <% end %>
+    </h4>
+  
+    <% @posts.reverse.each do |post| %>
+        <div class="post-card" >
+          <strong><%= post.message.gsub(/\n/, '<br/>').html_safe %></strong>
+          <small>
+            <br>    
+            <%= link_to User.find(post.user_id).username, user_page_path(User.find(post.user_id))%><br>
+            Updated <%= time_ago_in_words(post.updated_at) %> ago, <br>
+            Created at <%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
+          </small>
+          <div>
+            <% if post.created_at > 10.minutes.ago %> 
+              <td><button class="button" id="update-button"><%= link_to 'Update', edit_post_path(post) %></button></td>
+            <% end %>
+            <td><%= button_to 'Delete', post_path(post), method: :delete %></td>
+          </div>
+          <br>
+        </div>
+      <br>
+      <br>
     <% end %>
-<% @posts.reverse.each do |post| %>
-  <div>
-    <div class="post" >
-      <div id="postmessage">
-      <strong><%= post.message.gsub(/\n/, '<br/>').html_safe %></strong>
-      </div>
-      <br>
-      <small>
-      <br>    
-      <br>
-      <br>
-        <%= link_to User.find(post.user_id).username, user_page_path(User.find(post.user_id))%><br>
-        Updated <%= time_ago_in_words(post.updated_at) %> ago, <br>
-        <%= post.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
-      </small>
-      <div>
-        <% if post.created_at > 10.minutes.ago %> 
-            <td><button class="button" id="update-button"><%= link_to 'Update', edit_post_path(post) %></button></td>
-        <% end %>
-        <td><button class="button" id="delete-button"><%= button_to 'Delete', post_path(post), method: :delete %></button></td>
-      </div>
-    </div>
-  </div>
   <br>
   <br>
-<% end %>
-<br>
-<br>
-</body>
+
+  </body>
 </html>
 
 
