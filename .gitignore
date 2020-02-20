@@ -32,3 +32,4 @@ coverage/**
 # Ignore local storage
 storage/*
 storage/**
+public/assets/*
