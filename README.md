@@ -29,6 +29,8 @@ To set up a migration:
 #### Create a migration for a second foreign key referencing the same table (for wall post functionality)
 * This creates the column: `add_reference :posts, :recipient, index: true, null: false` 
   This adds the foriegn key: `add_foreign_key :posts, :users, column: :recipient_id`
+#### Add validation using inclusion to only accept certain values
+* Column `type` only accepts `wall` or `public` `validates :type, inclusion: { in: %w(wall public) }`
 
 ## Heroku set up
 * set up online account
