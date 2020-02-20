@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.feature 'User can logout', type: :feature do
   scenario 'User can logout' do
     User.create!(email: 'test@test.com', password: 'password').save
@@ -9,6 +7,6 @@ RSpec.feature 'User can logout', type: :feature do
     fill_in('login[password]', with: 'password')
     click_on('HERRNNNGGGHHHHH')
     click_on('Logout')
-    expect(page).to have_content('Welcome to Acebook')
+    expect(page).to have_content('Welcome to wookiebook')
   end
 end

@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.feature 'Users can edit a post that has been created', type: :feature do
   scenario 'User edits a post' do
     visit('/')

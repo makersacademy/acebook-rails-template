@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.feature 'User can click on a username and be directed to user wall', type: :feature do
   scenario 'User clicks on a username' do
     visit '/'

@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.feature 'Users can delete a post once created', type: :feature do
   scenario 'User deletes their own post' do
     visit '/'

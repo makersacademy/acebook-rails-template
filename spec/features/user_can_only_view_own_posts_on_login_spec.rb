@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.feature 'Posts to a wall are only visible on that particular wall', type: :feature do
   scenario 'Posts to a wall are only visible on that particular wall' do
     visit('/')
