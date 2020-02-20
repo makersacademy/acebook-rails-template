@@ -58,7 +58,6 @@ div.card {
   height: 20px;
   padding: 15px;
   display: flexbox;
-
 }
 
 #top-left {
@@ -129,6 +128,7 @@ div.card {
   text-decoration: none;
 }
 
+
 #post-comments {
   padding: 10px 0 5px 20px;
   font-size: 12px;
@@ -190,4 +190,99 @@ div.card {
   border: 1px solid lightgrey;
   padding: 5px 0 5px 10px;
   background-color: #eceaea;
+
+#new-post-form {
+  padding: 15px;
+}
+
+#form-header {
+
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  font-weight: 800;
+  background-color: #ebecee;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: 1px;
+  border-bottom-style: none;
+  height: 30px;
+  padding: 10px 0 0 0;
+}
+
+
+#form-text-area[input] {
+  float: left;
+  // border-style: none;
+}
+
+textarea { 
+  border-style: none; 
+  border-color: Transparent; 
+  resize: vertical;
+  overflow: auto;   
+  width: 90%;     
+  height: 50px;
+}
+
+#new-post-header {
+  font-size: 20px;
+  color: #385898;
+  padding: 15px;
+  font-weight: 800;
+}
+
+#form-submit-btn {
+  height: 30px;
+}
+
+#wall-owner {
+  font-size: 20px;
+  color: #385898;
+  padding: 15px;
+  font-weight: 800;
+}
+
+#devise-form-header{
+  font-size: 20px;
+  color: #385898;
+  font-family: 'Open Sans';
+  font-weight: 500;
+}
+
+#devise-form-container {
+  width: 90%;
+  text-align: center;
+}
+
+#devise-form-right {
+  width: 50%;
+  margin: auto;
+}
+
+#devise-form-left {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.actions {
+  padding: 5px 0 14px 0;
+  font-size: 15px;
+}
+
+.actions input[type=submit] {
+  background-color: #769e49;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#devise-links a{
+  color: #385898;
+  font-weight: 600;
+  padding: 14px;
+
 }
