@@ -15,9 +15,9 @@ RSpec.feature 'Users can signup to site', type: :feature do
     fill_in('user[password]', with: 'password')
     page.select('Kashyyyk', from: 'user[planet]')
     click_on('Join the Rebel Alliance')
-    expect(page).to have_content('Congratulations user1, You Have Signed Up to AceBook!')
+    expect(page).to have_content('Congratulations user1, You Have Signed Up to wookiebook!')
     expect(page).to have_content('Planet: Kashyyyk')
-    expect(page).to have_content("user1's wall")
+    expect(page).to have_content("user1")
   end
 
   scenario 'User cannot sign up with email which is already taken' do

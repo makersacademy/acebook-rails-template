@@ -4,7 +4,7 @@
 
 <div class ='user-details'>
 <h1 align="center"><%=User.find(@location).username if User.find(@location).username%></h1>
-<h2 align="center"><%= "Planet:" + User.find(@location).planet.to_s if User.find(@location).username%></h2>
+<h2 align="center"><%= "Planet: " + User.find(@location).planet.to_s if User.find(@location).username%></h2>
 </div>
 <br>
 
