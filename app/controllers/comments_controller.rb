@@ -10,6 +10,19 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @comment.save
     redirect_to posts_url
+    flash[:alert] = "Comment posted successfully"
+  end
+
+  def edit
+    @comment = Comment.find(params[:id])
+    @post = Post.find(params[:post_id])
+  end
+
+  def update
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
+    redirect_to posts_url
   end
 
   private

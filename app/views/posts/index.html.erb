@@ -45,7 +45,7 @@
         <% end %>
         <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %>
       </div>
-      
+
       <div id='post-comments'>
       <% post.comments.each do |comment| %>
         <div id='post-comment'>
@@ -56,6 +56,12 @@
             <div id='post-comment-text'>
               <%= comment.body %>
             </div>
+
+
+            <div id='comment-links'> 
+              <%= link_to 'Edit Comment', edit_post_comment_path(post, comment) %>
+            </div>
+            
           </div>
       <% end %>
     </div> 
