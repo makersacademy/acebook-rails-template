@@ -23,6 +23,93 @@
           null
         ]
       },
+      "/Users/student/acebook-2/acebook-404/app/controllers/albums_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/student/acebook-2/acebook-404/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/student/acebook-2/acebook-404/app/controllers/user_controller.rb": {
         "lines": [
           null,
@@ -48,10 +135,8 @@
           null
         ]
       },
-      "/Users/student/acebook-2/acebook-404/app/controllers/application_controller.rb": {
+      "/Users/student/acebook-2/acebook-404/app/models/album.rb": {
         "lines": [
-          null,
-          null,
           1,
           1,
           null
@@ -101,7 +186,7 @@
           null,
           null,
           1,
-          17,
+          16,
           null,
           null,
           1,
@@ -111,7 +196,7 @@
           1,
           1,
           null,
-          1,
+          0,
           null,
           null,
           1,
@@ -127,6 +212,6 @@
         ]
       }
     },
-    "timestamp": 1582197759
+    "timestamp": 1582205188
   }
 }

@@ -15,6 +15,11 @@
 
   <body>
     <h1>Posts shown below</h1>
+      <p> To view Albums and Upload:
+      <%= link_to albums_path do %>
+      Albums
+      <% end %>
+      </p>
   <p>To add a new post click link:
   <%= link_to new_post_path do %>
   New post
@@ -36,21 +41,20 @@
                       <%= link_to 'Delete', post, :confirm => 'Are you sure?',
                                             :method => :delete %> <%= link_to 'Edit', edit_post_path(post)%></p>
                     <% end %>
-                <% post.images.each do |image| %>
-                  <%= image_tag image.url %>
-                  <p><%= image_tag(post.images_urls[0].to_s, alt: 'Image') if post.images?%></p>
+                <%# <% post.images.each do |image| %>
+                  <%# <%= image_tag image.url %> 
+                  <%# <p><%= image_tag(post.images_urls[0].to_s, alt: 'Image') if post.images?%></p> 
                   <%# we need to add loop logic here to display multi image %>
                   <%# <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p> 
-                  <%# <p> By <%= post.user.email %>
-                  </p> 
+                  <%# <p> By <%= post.user.email %></p> 
                   <p>
-                    <% if current_user && current_user == post.user || post.image %>
-                      <%= link_to 'Delete', post, :confirm => 'Are you sure?',
-                                            :method => :delete %> <%= link_to 'Edit', edit_post_path(post)%></p>
-                    <% end %>
+                    <%# <% if current_user && current_user == post.user || post.image %> 
+                      <%# <%= link_to 'Delete', post, :confirm => 'Are you sure?', %>
+                                            <%# :method => :delete <%= link_to 'Edit', edit_post_path(post)%></p>  
+                    <%# <% end %> 
                   </p>
                   <br>
-                <% end %>
+                <%# <% end %>
               </td>
           </div>
         </div>
