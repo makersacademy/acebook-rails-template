@@ -1,3 +1,4 @@
+<!-- frozen_string_literal: true -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +12,30 @@
 
   <!-- Latest compiled and minified JavaScript -->
 </head>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">404Book</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#"><%= link_to 'My Profile' ,profile_path(current_user)%></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></a>
+        </li>
+        <li class="nav-item dropdown">
+        </li>
+      </ul>
+
+    </div>
+  </nav>
 
 
   <body>
-    <h1>Posts shown below</h1>
+    <h3>Posts shown below</h3>
     <p>To view Your profile:
     <%= link_to profile_path(current_user) do %>
       My Profile
@@ -70,7 +91,6 @@
       </div>
       </div>
     <% end %>
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body> 
