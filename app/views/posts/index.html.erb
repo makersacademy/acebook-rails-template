@@ -1,4 +1,5 @@
-<div class = 'planet-image'> <%= image_tag(User.find(@location).planet.to_s + '.jpg', id:'planet') if User.find(@location).username%> </div>
+<div class = 'planet-image'> <%= image_tag(User.find(@location).planet.to_s + '.jpg', id:'planet')%> </div>
+<div class = 'main-wall-title'><h1><%= 'Connect With Wookies Across The Galaxy' unless User.find(@location).username%></h1></div>
 <div class = 'profile-picture'>
   <% prof_url = User.find(@location).profile_picture %>
   <%= image_tag(prof_url, id:'profile-pic') if prof_url.attached? %>
@@ -9,8 +10,6 @@
   <h2><%= "Planet: " + User.find(@location).planet.to_s if User.find(@location).username%></h2>
 </div>
 <br>
-
-
 
 
 <% @posts.reverse.each do |post| %>
@@ -34,3 +33,14 @@
 <div class='new-post'
 <h4 align="center"><%= link_to 'New Post', new_user_post_path(user_id: @location) %></h4>
 </div>
+
+<script>
+  window.addEventListener('load', function() {
+    loc = window.location.pathname
+    profilePicture = document.querySelector('.profile-picture')
+    if (loc == '/users/0/posts' || loc == '/') {
+      profilePicture.style.display = 'none'
+    }
+  })
+ 
+</script>
