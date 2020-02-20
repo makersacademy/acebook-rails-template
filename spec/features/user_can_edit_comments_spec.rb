@@ -13,6 +13,16 @@ RSpec.feature 'Comment', type: :feature do
     expect(page).to have_content('Updated Comment')
   end
 
+  scenario 'User sees a message if updating the comment was successful' do
+    sign_up
+    new_post
+    comment_on_post
+    click_link 'Edit Comment'
+    fill_in 'comment[body]', with: 'Updated Comment'
+    click_button 'Save'
+    expect(page).to have_content('Comment updated successfully')
+  end
+
   scenario 'User cannot edit their own comment after 10 mins' do
     sign_up
     new_post

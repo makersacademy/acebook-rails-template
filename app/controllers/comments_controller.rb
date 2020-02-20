@@ -30,6 +30,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.update(comment_params)
     redirect_to posts_url
+    flash[:alert] = "Comment updated successfully"
   end
 
   private
