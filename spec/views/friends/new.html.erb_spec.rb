@@ -1,18 +1,20 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.describe "friends/new", type: :view do
-  before(:each) do
-    assign(:friend, Friend.new(
-      :confirmed_status => false
-    ))
-  end
+# require 'rails_helper'
 
-  it "renders new friend form" do
-    render
+# RSpec.describe "friends/new", type: :view do
+#   before(:each) do
+#     assign(:friend, Friend.new(
+#       :confirmed_status => false
+#     ))
+#   end
 
-    assert_select "form[action=?][method=?]", friends_path, "post" do
+#   it "renders new friend form" do
+#     render
 
-      assert_select "input[name=?]", "friend[confirmed_status]"
-    end
-  end
-end
+#     assert_select "form[action=?][method=?]", friends_path, "post" do
+
+#       assert_select "input[name=?]", "friend[confirmed_status]"
+#     end
+#   end
+# end

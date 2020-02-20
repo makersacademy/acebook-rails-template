@@ -1,4 +1,4 @@
-<h1> Hello <%= session[:users_id] %>  , would you like to edit the message?</h1>
+<h1> Edit Post </h1>
 <%= form_with(model: @post, local: true) do |form| %>
   <%= form.label :message %>
   <%= form.text_area :message, :size => "60x10", :value => @post.message %>

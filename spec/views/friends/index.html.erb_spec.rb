@@ -1,19 +1,21 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "friends/index", type: :view do
-  before(:each) do
+RSpec.describe 'friends/index', type: :view do
+  before do
     assign(:friends, [
-      Friend.create!(
-        :confirmed_status => false
-      ),
-      Friend.create!(
-        :confirmed_status => false
-      )
-    ])
+             Friend.create!(
+               confirmed_status: false
+             ),
+             Friend.create!(
+               confirmed_status: false
+             )
+           ])
   end
 
-  it "renders a list of friends" do
+  it 'renders a list of friends' do
     render
-    assert_select "tr>td", :text => false.to_s, :count => 2
+    assert_select 'tr>td', text: false.to_s, count: 2
   end
 end

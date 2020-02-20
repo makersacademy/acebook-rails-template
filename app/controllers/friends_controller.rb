@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class FriendsController < ApplicationController
-  before_action :set_friend, only: [:show, :edit, :update, :destroy]
+  before_action :set_friend, only: %i[show edit update destroy]
   before_action :authenticate_user
 
   # GET /friends
@@ -10,8 +12,7 @@ class FriendsController < ApplicationController
 
   # GET /friends/1
   # GET /friends/1.json
-  def show
-  end
+  def show; end
 
   # GET /friends/new
   def new
@@ -21,21 +22,19 @@ class FriendsController < ApplicationController
   end
 
   # GET /friends/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /friends
   # POST /friends.json
   def create
-
     @friend = Friend.new(friend_id: @current_user.id, recipient_friend_id: params['friend']['recipient_friend_id'], confirmed_status: false)
 
     respond_to do |format|
       if @friend.save
-        format.html { redirect_to posts_url, notice: 'Friend Request was successfully created.' }
+        format.html { redirect_to posts_url, notice: 'Friend Request sent.' }
         format.json { render :show, status: :created, location: @friend }
       else
-        format.html { redirect_to posts_url, notice: 'Friend Request already created.' }
+        format.html { redirect_to posts_url, notice: 'Friend Request already sent.' }
         format.json { render :show, status: :created, location: @friend }
       end
     end
@@ -60,7 +59,7 @@ class FriendsController < ApplicationController
   def destroy
     @friend.destroy
     respond_to do |format|
-      format.html { redirect_to friends_url, notice: 'Friend was successfully destroyed.' }
+      format.html { redirect_to friends_url, notice: 'Friend was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -70,17 +69,17 @@ class FriendsController < ApplicationController
     p params
     @friend.update(confirmed_status: true)
     redirect_to friends_url
-  end 
+  end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_friend
-      @friend = Friend.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def friend_params
-      params.require(:friend).permit(:confirmed_status)
-    end
-    
+  # Use callbacks to share common setup or constraints between actions.
+  def set_friend
+    @friend = Friend.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def friend_params
+    params.require(:friend).permit(:confirmed_status)
+  end
 end

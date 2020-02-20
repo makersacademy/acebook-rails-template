@@ -25,13 +25,15 @@
         <td><%= friend.confirmed_status %></td>
         <td><%= @user_friend.email %></td>
         <td><%= @user_recipient.email %></td>
+
         <%if @user_recipient.id == session[:user_id]%>
-        <td><%= link_to 'Confirm', confirm_path(id: friend.id), method: :patch, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Confirm Friend Request', confirm_path(id: friend.id), method: :patch, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
         <td><%= link_to 'Decline', friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
     <% end %>
+     
   </tbody>
 </table>
 
