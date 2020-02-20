@@ -10,12 +10,23 @@ class PostsController < ApplicationController
 
   end
 
+  def create
+    @current_user = current_user
+    @post = @current_user.posts.create(post_params)
+    redirection(@post)
+  end
+
+  def index
+    authenticate_user
+    @posts = Post.show
+  end
+
   def edit
     @post = Post.find(params[:id])
     if users_post(@post) && Post.under_ten_mins(@post)
       render 'edit'
     else
-      redirect_to posts_url
+      redirection(@post)
       flash[:alert] = "Sorry you cannot edit this post"
     end
   end
@@ -23,32 +34,16 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
-    redirect_to posts_url
-  end
-
-  def create
-    @current_user = current_user
-    @post = @current_user.posts.create(post_params)
-    redirect_to posts_url
-  end
-
-  def index
-    authenticate_user
-    @posts = []
-    Post.all.reverse_order.each do |post|
-      if (post.wall_id == nil) || (post.user_id == post.wall_id)
-        @posts.append(post)
-      end
-    end
+    redirection(@post)
   end
 
   def destroy
     @post = Post.find(params[:id])
     if users_post(@post)
       @post.destroy
-      redirect_to posts_url
+      redirection(@post)
     else
-      redirect_to posts_url
+      redirection(@post)
       flash[:alert] = "Sorry you cannot delete another User\'s posts"
     end
   end
@@ -58,6 +53,14 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def redirection(post)
+    if users_post(post)
+      redirect_to "/#{post.wall_id}"
+    else 
+      redirect_to '/'
+    end 
+  end
 
   def users_post(post)
     post.user_id == current_user.id
