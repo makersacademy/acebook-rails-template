@@ -7,6 +7,28 @@ RSpec.feature 'Comment', type: :feature do
     click_link 'Add Comment'
     fill_in 'comment[body]', with: 'First Comment'
     click_on 'Save'
-    expect(page).not_to have_content('First Comment')
+    expect(page).to have_content('First Comment')
   end
+
+  scenario 'user can see comments after posting' do
+    sign_up
+    new_post
+    click_link 'Add Comment'
+    fill_in 'comment[body]', with: 'First Comment'
+    click_on 'Save'
+    visit '/posts'
+    expect(page).to have_content('First Comment')
+  end
+
+  scenario 'user can see comments on page when adding a new comment' do
+    sign_up
+    new_post
+    click_link 'Add Comment'
+    fill_in 'comment[body]', with: 'First Comment'
+    click_on 'Save'
+    visit '/posts'
+    click_link 'Add Comment'
+    expect(page).to have_content('First Comment')
+  end
+
 end 
