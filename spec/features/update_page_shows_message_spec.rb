@@ -10,7 +10,6 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in 'Message', with: 'Hello, there!'
     click_button 'Submit'
     # save_and_open_page
-    
     click_link 'Edit'
     # fill_in 'post[message]', with: 'Hello, there!'
     # click_button 'Update Post'
