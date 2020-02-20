@@ -9,6 +9,7 @@ AllCops:
     - 'app/models/application_record.rb'
     - 'bin/setup'
     - 'bin/update'
+    - 'app/uploaders/image_uploader.rb'
     - 'config/application.rb'
     - 'db/migrate/20170526114520_create_posts.rb'
     - 'spec/controllers/post_controllers_spec.rb'
@@ -22,7 +23,9 @@ AllCops:
     - 'spec/features/user_must_sign_in_spec.rb'
     - 'db/migrate/20200213100303_devise_create_users.rb'
     - 'Gemfile'
-
+    - 'config/initializers/carrier_wave.rb'
+    - 'spec/routing/albums_routing_spec.rb'
+    - 'spec/controllers/albums_controller_spec.rb'
 
 # Layout/LineLength:
 #   Enabled: false

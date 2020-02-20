@@ -8,13 +8,13 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
-    
     redirect_to posts_url
   end
 
   def update
     @post = Post.find(params[:id])
-      if @post.update_attributes(params.require(:post).permit(:message))
+      if @post.update_attributes(post_params)
+        # .require(:post).permit(:message, :image)
           redirect_to action: :index
           flash[:notice] = 'post was updated.'
       else

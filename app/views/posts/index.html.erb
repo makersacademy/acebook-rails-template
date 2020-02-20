@@ -19,43 +19,61 @@
     <%= link_to profile_path(current_user) do %>
       My Profile
     <% end %>
-    </p>
-    <p>To add a new post click link:
-    <%= link_to new_post_path do %>
-      New post
-    <% end %>
+    Albums
+      <p> To view Albums and Upload:
+      <%= link_to albums_path do %>
+      Albums
+      <% end %>
+      </p>
+  <p>To add a new post click link:
+  <%= link_to new_post_path do %>
+  New post
+  <% end %>
+
     </p>
     <% @posts.reverse_each do |post| %>
+      <div id = "<%=post.id %>">
       <div class="shadow p-2 mb-4 bg-grey rounded">
         <div class="container" style="width: 100rem;">
           <div class="col-md-20 col-sm-30">
-            <h5 class="card-title"> <%=post.message[(0..8)].capitalize%></h5>
-            <p class="card-text">    
-              <p><%= simple_format(post.message.gsub(/\n/, '<br/>')) %></p>
-              <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p>
-              <p> By <%= post.user.email %> <%= link_to profile_path(post.user) do %>
+            <h5 class="card-title"> <%= post.message[(0..20)].capitalize%></h5>
+             <p class="card-text"> 
+              <td> 
+              <p><%= simple_format(post.message.gsub(/\n/, '<br/>'))%></p>
+                  <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p> 
+                   <p> By <%= link_to profile_path(post.user) do %>
                 View Profile
-                      <% end %></p>
-              <p>
-              <% if current_user && current_user == post.user %>
-                <%= link_to 'Delete', post, :confirm => 'Are you sure?',
-                                            :method => :delete %> <%= link_to 'Edit', edit_post_path(post) %> </p>
-              <% end %></p><br>
+                      <% end %></p>post.user.email %></p>
+
+               <% if current_user && current_user == post.user %>
+                      <%= link_to 'Delete', post, :confirm => 'Are you sure?',
+                                            :method => :delete %> <%= link_to 'Edit', edit_post_path(post)%></p>
+                    <% end %>
+                <%# <% post.images.each do |image| %>
+                  <%# <%= image_tag image.url %> 
+                  <%# <p><%= image_tag(post.images_urls[0].to_s, alt: 'Image') if post.images?%></p> 
+                  <%# we need to add loop logic here to display multi image %>
+                  <%# <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p> 
+                  <%# <p> By <%= post.user.email %></p> 
+                  <p>
+                    <%# <% if current_user && current_user == post.user || post.image %> 
+                      <%# <%= link_to 'Delete', post, :confirm => 'Are you sure?', %>
+                                            <%# :method => :delete <%= link_to 'Edit', edit_post_path(post)%></p>  
+                    <%# <% end %> 
+                  </p>
+                  <br>
+                <%# <% end %>
+              </td>
           </div>
         </div>
       </div>
-      <div id = "<%=post.id %>">
-    
+      </div>
       </div>
     <% end %>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
-
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </body>
+  </body> 
 </html>
 
 
