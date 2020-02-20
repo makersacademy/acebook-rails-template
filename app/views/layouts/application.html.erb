@@ -23,9 +23,13 @@
         </ul>
         <ul class="navbar-nav navbar-right">
           <% if current_user %>
-            <li class="nav-item">
-              <%= link_to "#{current_user.username}", user_path(current_user.id) , controller: 'users', class: 'active nav-link' %>
-            <li>
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle active" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.username %></a>
+               <div class="dropdown-menu" aria-labelledby="dropdown03">
+              <%= link_to "Your Wall", user_path(current_user.id) , controller: 'users', class: "dropdown-item"%>
+              <%= link_to "Update Account", edit_user_path(current_user.id) , controller: 'users', class: "dropdown-item"%>
+               </div>
+             </li>
             <li class="nav-item">
               <%= link_to 'Sign Out', logout_path , controller: 'sessions', method: :delete, class: 'nav-link' %>
             </li>
