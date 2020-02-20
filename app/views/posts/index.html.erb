@@ -45,6 +45,21 @@
         <% end %>
         <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %>
       </div>
+      
+      <div id='post-comments'>
+      <% post.comments.each do |comment| %>
+        <div id='post-comment'>
+            <div id='post-comment-user'>
+              <%= User.find(comment.user_id).email %>
+            </div>
+
+            <div id='post-comment-text'>
+              <%= comment.body %>
+            </div>
+          </div>
+      <% end %>
+    </div> 
+
 
       <div id='add-posts-comment'>
         <%= link_to 'Add Comment', post_path(post) %>
