@@ -24,8 +24,8 @@ AllCops:
     - 'db/migrate/20200213100303_devise_create_users.rb'
     - 'Gemfile'
     - 'config/initializers/carrier_wave.rb'
-    - 'spec/controllers/albums_controller_spec.rb'
     - 'spec/routing/albums_routing_spec.rb'
+    - 'spec/controllers/albums_controller_spec.rb'
 
 # Layout/LineLength:
 #   Enabled: false
