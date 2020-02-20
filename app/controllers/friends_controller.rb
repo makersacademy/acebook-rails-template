@@ -1,5 +1,6 @@
 class FriendsController < ApplicationController
   before_action :set_friend, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user
 
   # GET /friends
   # GET /friends.json
@@ -15,6 +16,8 @@ class FriendsController < ApplicationController
   # GET /friends/new
   def new
     @friend = Friend.new
+    p params
+    @user_friend = User.find(params[:format])
   end
 
   # GET /friends/1/edit
@@ -24,15 +27,16 @@ class FriendsController < ApplicationController
   # POST /friends
   # POST /friends.json
   def create
-    @friend = Friend.new(friend_params)
+
+    @friend = Friend.new(friend_id: @current_user.id, recipient_friend_id: params['friend']['recipient_friend_id'], confirmed_status: false)
 
     respond_to do |format|
       if @friend.save
-        format.html { redirect_to @friend, notice: 'Friend was successfully created.' }
+        format.html { redirect_to posts_url, notice: 'Friend Request was successfully created.' }
         format.json { render :show, status: :created, location: @friend }
       else
-        format.html { render :new }
-        format.json { render json: @friend.errors, status: :unprocessable_entity }
+        format.html { redirect_to posts_url, notice: 'Friend Request already created.' }
+        format.json { render :show, status: :created, location: @friend }
       end
     end
   end
