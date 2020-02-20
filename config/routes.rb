@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-   # error pages
-  %w( 404 422 500 503 ).each do |code|
-    get code, :to => "errors#show"
-  end
+  
+  get '404', to: "errors#show", :via => :all
 
   get 'homepage/index'
 
