@@ -46,16 +46,8 @@
         <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %>
       </div>
 
-      <div id='add-comment-container'>
-        <div id='add-comment-form'>
-          <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
-              <%= form.label 'Add Comment' %><br>
-              <%= form.text_area :body %>
-            <p>
-              <%= form.submit 'Add Comment' %>
-            </p>
-          <% end %>
-        </div>
+      <div id='add-posts-comment'>
+        <%= link_to 'Add Comment', post_path(post) %>
       </div>
   
     </div>

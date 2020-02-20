@@ -744,6 +744,24 @@
       "/Users/bengittins/Projects/Makers/week_8/acebook-catbook-inc/app/controllers/comments_controller.rb": {
         "lines": [
           1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -866,11 +884,11 @@
           null,
           null,
           1,
-          54,
-          54,
-          54,
-          41,
-          38,
+          55,
+          55,
+          55,
+          42,
+          39,
           null,
           null,
           null,
@@ -884,6 +902,10 @@
           1,
           1,
           null,
+          null,
+          null,
+          1,
+          1,
           null,
           null,
           1,
@@ -897,7 +919,7 @@
           null,
           null,
           1,
-          54,
+          55,
           null,
           null
         ]
@@ -1071,9 +1093,9 @@
           1,
           1,
           1,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -1501,6 +1523,6 @@
         ]
       }
     },
-    "timestamp": 1582198087
+    "timestamp": 1582200191
   }
 }

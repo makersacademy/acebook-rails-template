@@ -15,13 +15,13 @@ RSpec.feature 'Posts', type: :feature do
     #{Time.now.strftime('%m/%d/%Y, %H:%M')}
     Edit Delete 
     Meow two 
-    ♡ 0 Likes
+    ♡ 0 Likes Add Comment
      
     cats@cats.com 
     #{Time.now.strftime('%m/%d/%Y, %H:%M')} 
     Edit Delete 
     Meow one 
-    ♡ 0 Likes")
+    ♡ 0 Likes Add Comment")
   end
 
   scenario 'On User Walls, posts are shown from newest to oldest' do

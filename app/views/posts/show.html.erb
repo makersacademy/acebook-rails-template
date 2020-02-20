@@ -1,0 +1,58 @@
+<div id='post-spacer'>
+  </div>
+  
+  <div id='post-spacer'>
+  </div>
+
+<div id='posts'>
+    <div class="card">
+      <div id='top'> 
+        <div id='top-left'>
+          <div id='post-user'>
+            <%= User.find(@post.user_id).email %>
+          </div>
+
+          <div id='post-date'> 
+          <%= @post.created_at.strftime("%m/%d/%Y, %H:%M") %>
+          </div>
+        </div>
+
+        <div id='post-links'> 
+          <%= link_to 'Edit', edit_post_path(@post) %>
+          <%= link_to 'Delete', @post, :method => :delete %>
+        </div>
+
+      </div>
+
+      <div id='post-message'>
+        <%= simple_format(@post.message, {}, wrapper_tag: "div") %>
+      </div>
+
+      <div id='likes'>
+      <% pre_like = @post.likes.find { |like| like.user_id == current_user.id }%>
+        <% if pre_like %>
+          <%= link_to '♥️', post_like_path(@post, pre_like), method: :delete %>
+        <% else %>
+          <%= link_to '♡', post_likes_path(@post), method: :post %>
+        <% end %>
+        <%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes' %>
+      </div>
+
+      <div id='add-comment-container'>
+        <div id='add-comment-form'>
+          <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
+              <%= form.label 'Add Comment' %><br>
+              <%= form.text_area :body %>
+            <p>
+              <%= form.submit 'Save' %>
+            </p>
+            <% end %>
+        </div>
+      </div>
+  
+    </div>
+    <div id='post-spacer'>
+    </div>
+
+
+</div>
