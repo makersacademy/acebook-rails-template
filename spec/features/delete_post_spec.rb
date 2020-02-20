@@ -18,6 +18,7 @@ RSpec.feature 'Users can delete a post once created', type: :feature do
     click_on 'Signup'
     fill_in('user[username]', with: 'user1')
     fill_in 'user[email]', with: 'test@test.com'
+    page.select('Kashyyyk', from: 'user[planet]')
     fill_in 'user[password]', with: 'password'
     click_on 'Join the Rebel Alliance'
     click_on 'wookiebook'
@@ -28,6 +29,7 @@ RSpec.feature 'Users can delete a post once created', type: :feature do
     click_on 'Signup'
     fill_in('user[username]', with: 'user2')
     fill_in 'user[email]', with: 'test2@test.com'
+    page.select('Kashyyyk', from: 'user[planet]')
     fill_in 'user[password]', with: 'password'
     click_on 'Join the Rebel Alliance'
     click_on 'wookiebook'
