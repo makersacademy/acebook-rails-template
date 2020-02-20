@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  
   def index
     location = params[:user_id] || 0
     @posts = Post.where(location_id_fk: location)
@@ -34,7 +33,7 @@ class PostsController < ApplicationController
     post_params = params.require(:post).permit(:post_content)
     @post = Post.find_by(user_id: session[:user_id], id: params[:id])
     message = 'Not authorized to update this post'
-    if @post 
+    if @post
       if @post.created_at + 600 > Time.zone.now
         message = 'Post was successfully updated'
         @post.update(post_params)
@@ -55,5 +54,4 @@ class PostsController < ApplicationController
     end
     redirect_to(user_posts_path(@location), notice: message)
   end
-
 end
