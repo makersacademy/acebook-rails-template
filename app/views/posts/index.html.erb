@@ -26,17 +26,25 @@
         <div class="container" style="width: 100rem;">
           <div class="col-md-20 col-sm-30">
             <h5 class="card-title"> <%= post.message[(0..20)].capitalize%></h5>
-             <p class="card-text">     
+             <%# <p class="card-text">      %>
               <p><%= simple_format(post.message.gsub(/\n/, '<br/>'))%></p>
-              <p><%= image_tag(post.images_urls[0].to_s, alt: 'Image') if post.images?%></p>
-              <%# we need to add loop logic here to display multi image or no? %>
-              <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p>
-              <p> By <%= post.user.email %></p>
-              <p>
-              <% if current_user && current_user == post.user %>
-                <%= link_to 'Delete', post, :confirm => 'Are you sure?',
+              <td> 
+                <% p post.images %>
+                <% post.images.each do |image| %>
+                  <%= image_tag image.url %>
+                  <p><%= image_tag(post.images_urls[0].to_s, alt: 'Image') if post.images?%></p>
+                  <%# we need to add loop logic here to display multi image %>
+                  <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p>
+                  <p> By <%= post.user.email %></p>
+                  <p>
+                    <% if current_user && current_user == post.user %>
+                      <%= link_to 'Delete', post, :confirm => 'Are you sure?',
                                             :method => :delete %> <%= link_to 'Edit', edit_post_path(post) %> </p>
-              <% end %></p><br>
+                    <% end %>
+                  </p>
+                  <br>
+                <% end %>
+              </td>
           </div>
         </div>
       </div>
