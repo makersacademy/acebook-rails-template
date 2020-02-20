@@ -33,6 +33,15 @@ class CommentsController < ApplicationController
     flash[:alert] = "Comment updated successfully"
   end
 
+  def destroy
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    if users_own(@comment)
+      @comment.destroy
+      redirect_to posts_url
+    end
+  end
+
   private
 
   def comment_params
