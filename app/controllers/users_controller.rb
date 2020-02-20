@@ -24,6 +24,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.update_attribute(:username, params[:user][:username])
+    redirect_to session[:url]
+  end
+
   def show
     @user = User.find_by_id(params[:id]) || render_404
     @posts = Post.where(location_id: params[:id]).order(created_at: :desc)
