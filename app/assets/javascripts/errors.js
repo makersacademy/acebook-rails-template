@@ -6,6 +6,7 @@ onLoad = function() {
   audio.addEventListener('ended', function() {
     window.location.href = "/";
   })
+  audio.currentTime = 0;
   audio.play()
 }
 
