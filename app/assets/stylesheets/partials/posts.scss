@@ -1,0 +1,28 @@
+.post-card {
+  text-align: center;
+  font-family: "Exo 2", sans-serif;
+  padding-bottom: 0px;
+  min-height: 135px;
+  // max-height: 135px;
+  max-width: 300px;
+  margin: auto;
+  box-shadow: 1px 1px 4px rgba(0,0,0, 0.3);
+  color: black;
+  transition: border 0.1s, background 0.5s;
+  .post-text {
+    overflow: hidden;
+  }
+  a, a:active, a:hover {
+    color: black;
+  }
+  &:hover {
+    cursor: pointer;
+    background: white;
+    box-shadow: none;
+    border-radius: 1%;
+  }
+}
+
+.post-content {
+  display: none;
+}

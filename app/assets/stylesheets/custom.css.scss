@@ -1,0 +1,43 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+$navbar-default-bg: rgb(89, 36, 67);
+
+#logo {
+ float: left;
+ font-size: 1.7em;
+ color: white;
+ text-transform: uppercase;
+ letter-spacing: -1px;
+ font-weight: bold;
+}
+#logo:hover {
+ color: #fff;
+ text-decoration: none;
+}
+.post-actions {
+ border-top: 1px solid #eaeaea;
+ padding-top: 5px;
+}
+.post-title {
+ font-weight: bold;
+ font-size: 1.5em;
+}
+.post-body {
+ border-top: 1px solid #eaeaea;
+ padding-top: 15px;
+ padding-bottom: 15px;
+}
+.post-meta-details {
+ border-top: 1px solid #eaeaea;
+ margin-top: 15px;
+}
+.description {
+ margin-top: 0;
+}
+.listing {
+ list-style: none;
+ padding-left: 0;
+}

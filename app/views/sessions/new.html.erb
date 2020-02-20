@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>🦁 Acebook</title>
+  </head>
+
+  <div class="container" id="log-in-form">
+    <div class="row">
+      <div class="welcome-header">
+        <% if !!flash[:notice] %>
+          <% flash.each do |type, message| %>
+            <p><%= message %></p> <br>
+          <% end %>
+        <% end %>
+      </div>
+
+    <h2 class="text-center">Log in</h2>
+      <%= form_tag '/login' do %>
+        <%= label_tag :email%><br>
+        <%= text_field_tag :email%><br>
+        <%= label_tag :password%><br>
+        <%= password_field_tag :password%><br>
+        <div class="log-in-button"><%= submit_tag "Login" %></div>
+      <%end %>
+
+    </div>
+  </div>
+</html>
+
