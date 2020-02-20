@@ -17,14 +17,14 @@
 
     <h2>New Post</h2>
 
-      <%= form_for @post do |form| %>
+      <%= form_for @profile do |form| %>
         <%= form.label :message %><br>
         <%= form.text_area :message, size: "30x10" %>
 
         <%= form.submit "Submit" %>
       <% end %>
 
-      <%= link_to 'Back', posts_path %>
+      <%= link_to 'Back', profile_path[:id] %>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 

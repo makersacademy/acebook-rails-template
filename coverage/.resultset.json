@@ -11,6 +11,7 @@
           1,
           null,
           1,
+          1,
           null
         ]
       },
@@ -28,22 +29,22 @@
           null,
           null,
           1,
-          1,
-          null,
-          1,
-          0,
           null,
           null,
-          1,
-          0,
-          0,
-          0,
           null,
           null,
-          1,
           null,
-          1,
-          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -54,6 +55,10 @@
           null,
           1,
           1,
+          null,
+          1,
+          11,
+          null,
           null
         ]
       },
@@ -66,6 +71,16 @@
           null
         ]
       },
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/models/profile.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/controllers/posts_controller.rb": {
         "lines": [
           null,
@@ -73,13 +88,13 @@
           1,
           null,
           1,
-          4,
+          6,
           null,
           null,
           1,
-          4,
+          6,
           null,
-          4,
+          6,
           null,
           null,
           1,
@@ -97,7 +112,7 @@
           null,
           null,
           1,
-          17,
+          16,
           null,
           null,
           1,
@@ -113,7 +128,7 @@
           1,
           null,
           1,
-          4,
+          6,
           null,
           null,
           1,
@@ -121,8 +136,24 @@
           null,
           null
         ]
+      },
+      "/Users/lukeboat/Documents/Programing/AceBook_404/AceBook_404/acebook-404/app/controllers/profile_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          14,
+          14,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1582029760
+    "timestamp": 1582205663
   }
 }
