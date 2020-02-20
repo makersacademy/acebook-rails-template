@@ -1,10 +1,11 @@
-<div class = 'planet_image'> <%= image_tag(User.find(@location).planet.to_s + '.jpg', id:'planet') if User.find(@location).username%> </div>
+<div class = 'planet-image'> <%= image_tag(User.find(@location).planet.to_s + '.jpg', id:'planet') if User.find(@location).username%> </div>
 
 <p id="notice"><%= notice %></p>
 
-<h1 align="center"><%=User.find(@location).username%><%= "'s wall" if User.find(@location).username%></h1>
+<div class ='user-details'>
+<h1 align="center"><%=User.find(@location).username if User.find(@location).username%></h1>
 <h2 align="center"><%= "Planet:" + User.find(@location).planet.to_s if User.find(@location).username%></h2>
-
+</div>
 <br>
 
 <% @posts.reverse.each do |post| %>
@@ -25,4 +26,6 @@
 <% end %>
 </table>
 <br>
+<div class='new-post'
 <h4 align="center"><%= link_to 'New Post', new_user_post_path(user_id: @location) %></h4>
+</div>
