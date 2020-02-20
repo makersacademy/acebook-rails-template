@@ -1,7 +1,9 @@
+<div class = 'planet_image'> <%= image_tag(User.find(@location).planet.to_s + '.jpg', id:'planet') if User.find(@location).username%> </div>
+
 <p id="notice"><%= notice %></p>
 
 <h1 align="center"><%=User.find(@location).username%><%= "'s wall" if User.find(@location).username%></h1>
-<h2 align="center">Planet: <%=User.find(@location).planet%></h2>
+<h2 align="center"><%= "Planet:" + User.find(@location).planet.to_s if User.find(@location).username%></h2>
 
 <br>
 
