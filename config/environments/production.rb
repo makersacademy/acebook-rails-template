@@ -43,7 +43,7 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain
   config.action_cable.mount_path = '/cable'
-  config.web_socket_server_url = "wss://acebook-u-jakd.herokuapp.com/cable" 
+  config.web_socket_server_url = 'wss://acebook-u-jakd.herokuapp.com/cable'
   config.action_cable.allowed_request_origins = ['https://acebook-u-jakd.herokuapp.com', 'http://acebook-u-jakd.herokuapp.com']
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
