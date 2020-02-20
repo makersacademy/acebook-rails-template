@@ -46,7 +46,7 @@
             </div>
   
             <div id='post-comment-text'>
-              <%= comment.body %>
+              <%= simple_format(comment.body, {}, wrapper_tag: "div") %>
             </div>
           </div>
       <% end %>
