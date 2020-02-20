@@ -43,7 +43,7 @@
                   <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p> 
                    <p> By <%= link_to profile_path(post.user) do %>
                 View Profile
-                      <% end %></p>post.user.email %></p>
+                      <% end %></p><%= post.user.email %></p>
 
                <% if current_user && current_user == post.user %>
                       <%= link_to 'Delete', post, :confirm => 'Are you sure?',
