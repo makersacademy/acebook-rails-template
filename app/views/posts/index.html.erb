@@ -15,7 +15,7 @@
 
 <% @posts.reverse.each do |post| %>
   <div class="card">
-    <img class="card-img-top" style="width: 50px; height: auto" alt=" "
+    <img class="card-img-top" style="width:250px; height: auto" alt=" "
     <%img_url = User.find(post.user_id).profile_picture %>
     <%= image_tag(User.find(post.user_id).profile_picture) if img_url.attached?%>
     <div class="card-body">
