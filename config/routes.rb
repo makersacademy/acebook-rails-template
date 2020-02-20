@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+   # error pages
+  %w( 404 422 500 503 ).each do |code|
+    get code, :to => "errors#show"
+  end
+
   get 'homepage/index'
 
   get 'signup', to: 'users#new'

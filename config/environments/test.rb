@@ -42,4 +42,6 @@ Rails.application.configure do
 
   # Forces Active Storage to use a local tempory directory
   config.active_storage.service = :test
+  config.exceptions_app = self.routes
+
 end
