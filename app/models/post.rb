@@ -3,6 +3,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent :destroy
 
   def self.under_ten_mins(post)
     (Time.now - post.created_at) < 600
