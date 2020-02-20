@@ -16,6 +16,13 @@ class CommentsController < ApplicationController
   def edit
     @comment = Comment.find(params[:id])
     @post = Post.find(params[:post_id])
+
+    if users_own(@comment) && Comment.under_ten_mins(@comment)
+      render 'edit'
+    else
+      redirect_to posts_url
+      flash[:alert] = "Sorry you cannot edit this comment"
+    end
   end
 
   def update
@@ -29,5 +36,9 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:body)
+  end
+
+  def users_own(comment)
+    comment.user_id == current_user.id
   end
 end
