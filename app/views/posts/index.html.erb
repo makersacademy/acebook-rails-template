@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1 align="center"><%=User.find(@location).email%><%= "'s wall" if User.find(@location).email%></h1>
+<h1 align="center"><%=User.find(@location).username%><%= "'s wall" if User.find(@location).username%></h1>
 <h2 align="center">Planet: <%=User.find(@location).planet%></h2>
 
 <br>
@@ -12,7 +12,7 @@
     <%= image_tag(User.find(post.user_id).profile_picture) if img_url.attached?%>          
     <div class="card-body">
       <h5 class="card-title">
-        <a><%= link_to User.find(post.user_id).email, user_posts_path(user_id: User.find(post.user_id)) %></a> says...
+        <a><%= link_to User.find(post.user_id).username, user_posts_path(user_id: User.find(post.user_id)) %></a> says...
       </h5>
       <h6 class="card-subtitle mb-2 text-muted"><%=post.created_at.to_s(:rfc822)[17..21]%>  <%=post.created_at.to_s(:rfc822)[0..2]%> <%=post.created_at.to_s(:rfc822)[4..15]%></h6>
       <p class="card-text"><%=simple_format(post.post_content)%></p>
