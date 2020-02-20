@@ -66,10 +66,11 @@ div.card {
   text-align: left;
 }
 
-#post-user {
+#post-user a {
   font-size: 14px;
   color: #385898;
   font-weight: 800;
+  text-decoration: none;
 }
 
 #post-date {
@@ -126,4 +127,67 @@ div.card {
 #likes a {
   font-size: 20px;
   text-decoration: none;
+}
+
+#post-comments {
+  padding: 10px 0 5px 20px;
+  font-size: 12px;
+}
+
+#post-comment-user {
+  float: left;
+  text-align: left;
+  padding: 0 5px 0 0;
+}
+
+#post-comment-user a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #385898;
+}
+
+#post-comment-text {
+  float: right;
+  text-align: left;
+}
+
+#add-post-comment {
+  text-align: left;
+  padding: 10px 10px 10px 10px;
+}
+
+#add-post-comment a {
+  color: grey;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#post-comment {
+  width: 100%;
+  display: flex;
+}
+
+#comment-links {
+  float: right;
+  padding: 0 0 0 5px;
+}
+
+#comment-links a {
+  font-size: 11px;
+  color: lightgrey;
+  text-decoration: none;
+  display: inline;
+  margin-right: 1px;
+}
+
+#comment-links a:hover {
+  color: grey;
+}
+
+#add-post-container {
+  border-radius: 25px;
+  border: 1px solid lightgrey;
+  padding: 5px 0 5px 10px;
+  background-color: #eceaea;
 }
