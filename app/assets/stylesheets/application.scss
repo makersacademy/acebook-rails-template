@@ -19,7 +19,6 @@
   position: absolute;
   top: 50px;
   height: 400px;
-  z-index: -1;
   left: 0px;
   right: 0px;
 }
@@ -30,18 +29,50 @@
   height: 100%;
 }
 
+#notice-after-login {
+  position: absolute;
+  top: 460px;
+  left: 38%;
+}
+
 .user-details {
   position: absolute;
   top: 460px;
-  left: 100px;
+}
+
+.card {
+  position: relative;
+  top: 500px;
+  left: 42%;
 }
 
 .new-post {
   position: absolute;
-  top: 500px;
-  left: 50%
+  top: 510px;
+  left: 42%
 }
 
 html, label, select, input {
   cursor: url(asset_path('lightsabergreen.cur')), auto;
+}
+
+h1 {
+  position: relative;
+  left: 38%;
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+}
+
+h2 {
+  position: relative;
+  left: 38%;
+  font-weight: bold;
+  font-size: 25px;
+  color: black;
+}
+
+.form {
+  position: absolute;
+  left: 38%
 }
