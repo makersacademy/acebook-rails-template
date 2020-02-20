@@ -20,23 +20,20 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/posts">Acebook De-Railed</a>
-    
-    <ul class="nav navbar-nav">
-      <%# <li class="active"><a href="#">Home</a></li> %>
-      
-       <% if session[:user_id] %>
-       <%# <div class="logout-btn"> %>
-       <li><%= link_to 'New post', new_post_path %></li>
-       <li><%= link_to 'logout', logout_path %></li>
-       
-       <%# </div> %>
-        <%else%>
-      <li><%= link_to 'Sign Up', signup_path, :method => 'get' %></li>
-      <li><%= link_to 'Log In', login_path, :method => 'get' %></li>
-      <ul>
-       <%end%>
+    </div>
+    <ul class="nav navbar-nav navbar-left">
+      <% if session[:user_id] %>
+        <li><%= link_to 'New post', new_post_path %></li>
+      <%end%>
+    </ul>
 
-      
+    <ul class="nav navbar-nav navbar-right">
+      <% if session[:user_id] %>
+        <li><%= link_to 'logout', logout_path %></li>
+      <%else%>
+        <li><%= link_to 'Sign Up', signup_path, :method => 'get' %></li>
+        <li><%= link_to 'Log In', login_path, :method => 'get' %></li>
+      <%end%>
     </ul>
   </div>
 </nav>

@@ -1,3 +1,77 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+.main-head {
+	height: 150px;
+	background: #fff;
+}
+
+.sidenav {
+	margin-left: 33px;
+	margin-top: 84px;
+	height: 100%;
+	background-color: rgb(36, 36, 36);
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
+.main {
+	padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.login-form {
+		margin-top: 10%;
+	}
+
+	.register-form {
+		margin-top: 10%;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.main {
+		margin-left: 40%;
+	}
+
+	.sidenav {
+		width: 35%;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+
+	.login-form {
+		margin-top: 47%;
+	}
+
+	.register-form {
+		margin-top: 20%;
+	}
+}
+
+.login-main-text {
+	margin-top: 20%;
+	padding: 60px;
+	color: #fff;
+}
+
+.login-main-text h2 {
+	font-weight: 300;
+}
+
+.btn-black {
+	background-color: #000 !important;
+	color: #fff;
+}

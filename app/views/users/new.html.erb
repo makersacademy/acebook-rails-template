@@ -1,17 +1,26 @@
-<div class='posts-body'>
-<h1>Sign Up</h1>
-<%= form_for @user do |f|%>
-  <%= f.label :email%><br>
-  <%= f.text_field :email%><br>
-  <%= f.label :password%><br>
-  <%= f.password_field :password, minlength: 6 %><br>
-  <%= f.submit 'create'%>
-<%end%>
-<% if @user.errors.any? %>
-    <ul class="Signup_Errors">
-    <% for message_error in @user.errors.full_messages %>
-      <li>* <%= message_error %></li>
-    <% end %>
-    </ul>
-  <% end %>
+<div class="sidenav">
+  <div class="login-main-text">
+    <h2> Sign Up Page</h2>
+    <p>Sign Up here to access.</p>
   </div>
+</div>
+<div class="main">
+  <div class="col-md-6 col-sm-12">
+    <div class="login-form">
+      <%= form_for @user do |f|%>
+        <%= f.label :email%><br>
+        <%= f.text_field :email%><br><br>
+        <%= f.label :password%><br>
+        <%= f.password_field :password, minlength: 6 %><br><br>
+        <%= f.submit 'create'%>
+      <%end%>
+      <% if @user.errors.any? %>
+          <ul class="Signup_Errors">
+            <% for message_error in @user.errors.full_messages %>
+            <li>* <%= message_error %></li>
+            <% end %>
+          </ul>
+        <% end %>
+    </div>
+  </div>
+</div>
