@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Edit Posts</h1>
- 
-  <%= form_for @post do |form| %>
-    <%= form.label :message %>
-    <%= form.text_area :message, :maxlength => 500, :size => 40, :id => "area" %>
 
-    <%= form.submit %>
-  <% end %>
+<div id='post-spacer'>
+</div>
+<div class="card">
+  <div id='new-post-header'>
+      EDIT POST
+  </div>
+</div>
+<div id='post-spacer'>
+</div>
+
+<div id='new-post-form'>
+
+<%= form_for @post do |form| %>
+    <div id='form-header'>
+      <%= form.label :message %>
+    </div>
+  <div class="card">
+  <div id='form-text-area'>
+    <%= form.text_area :message, :maxlength => 500, :size => 40, :id => "area" %>
+  </div>
+  <div id='form-submit-btn'>
+    <%= form.submit "Submit" %>
+  </div>
+  </div>
+<% end %>
 
   <script>
     var area = document.getElementById("area");

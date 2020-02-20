@@ -3,7 +3,11 @@ require_relative '../models/post'
 
 class PostsController < ApplicationController
   def new
+    # if params[:wall_id] != nil
+    #   @user = User.find(params[:wall_id])
+    # end
     @post = Post.new
+
   end
 
   def edit

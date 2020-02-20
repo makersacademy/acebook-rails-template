@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
 <body>
+  <div id='post-spacer'>
+  </div>
+  <div class="card">
+    <div id='new-post-header'>
+      <% if params[:wall_id] != nil %>
+        <%= User.find(params[:wall_id]).email %>'s Wall
+      <% else %>
+        NEW POST
+      <% end %>
+    </div>
+  </div>
 
-  <%= params[:wall_id] %>
-  <%= form_for @post do |form| %>
-    <%= form.label :message %>
-    <%= form.text_area :message, :maxlength => 500, :size => 40, :id => "area" %>
-    <%= form.hidden_field :wall_id, value: params[:wall_id] %>
-    
-    <%= form.submit "Submit" %>
-  <% end %>
+  <div id='post-spacer'>
+  </div>
+
+
+
+    <div id='new-post-form'>
+
+      <%= form_for @post do |form| %>
+          <div id='form-header'>
+            <%= form.label :message %>
+          </div>
+        <div class="card">
+        <div id='form-text-area'>
+          <%= form.text_area :message, :maxlength => 500, :size => 40, :id => "area" %>
+        </div>
+        <%= form.hidden_field :wall_id, value: params[:wall_id] %>
+        <div id='form-submit-btn'>
+          <%= form.submit "Submit" %>
+        </div>
+        </div>
+      <% end %>
+
+
 
   <script>
     var area = document.getElementById("area");

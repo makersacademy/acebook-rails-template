@@ -58,7 +58,6 @@ div.card {
   height: 20px;
   padding: 15px;
   display: flexbox;
-
 }
 
 #top-left {
@@ -126,4 +125,63 @@ div.card {
 #likes a {
   font-size: 20px;
   text-decoration: none;
+}
+
+#new-post-form {
+  padding: 15px;
+  // display: flex;
+}
+
+
+
+// border-style: solid;
+// border-color: lightgrey;
+// border-width: 1px;
+
+#form-header {
+
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  font-weight: 800;
+  background-color: #ebecee;
+  border-style: solid;
+  border-color: lightgrey;
+  border-width: 1px;
+  border-bottom-style: none;
+  height: 30px;
+  padding: 10px 0 0 0;
+}
+
+
+#form-text-area[input] {
+  float: left;
+  // border-style: none;
+}
+
+textarea { 
+  border-style: none; 
+  border-color: Transparent; 
+  resize: vertical;
+  overflow: auto;   
+  width: 90%;     
+  height: 50px;
+}
+
+#new-post-header {
+  font-size: 20px;
+  color: #385898;
+  padding: 15px;
+  font-weight: 800;
+}
+
+#form-submit-btn {
+  height: 30px;
+}
+
+#wall-owner {
+  font-size: 20px;
+  color: #385898;
+  padding: 15px;
+  font-weight: 800;
 }
