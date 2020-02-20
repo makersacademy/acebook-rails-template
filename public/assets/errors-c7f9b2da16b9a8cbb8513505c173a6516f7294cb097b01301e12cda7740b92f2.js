@@ -4,10 +4,10 @@
 onLoad = function() {
   audio = document.querySelector('#not_found_audio')
   audio.addEventListener('ended', function() {
-    audio.currentTime = 0
     window.location.href = "/"
   })
+  audio.currentTime = 0
   audio.play()
 }
 
-page.addEventListener('load', onLoad)
+window.addEventListener('load', onLoad);
