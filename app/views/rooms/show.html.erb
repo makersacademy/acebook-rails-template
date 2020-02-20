@@ -1,6 +1,6 @@
 <div class='chat'>
-  <h1>Chat</h1>
-  <div class='inner-chat' id='chatbox' style='height: 400px; overflow-y: scroll'>
+  <h1 class='text-center'>Acebook Chat</h1>
+  <div class='inner-chat' id='chatbox' style='height: 70vh; overflow-y: scroll'>
     <% @messages.each do |message| %>
       <%= render 'messages/message', message: message %>
     <% end %>
