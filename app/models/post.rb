@@ -4,6 +4,5 @@
 # mount_uploader :image, ImageUploader
 
 class Post < ApplicationRecord
-  mount_uploaders :images, ImageUploader
   belongs_to :user
 end

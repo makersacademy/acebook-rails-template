@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div>
+<% @album.images.each do |image| %>
+<%= image_tag(image.url) %>
+<% end %>
 <p>
   <strong>Title:</strong>
   <%= @album.title %>

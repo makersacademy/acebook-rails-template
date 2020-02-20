@@ -37,7 +37,7 @@
                   <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p> 
                    <p> By <%= post.user.email %></p>
 
-               <% if current_user && current_user == post.user || post.image %>
+               <% if current_user && current_user == post.user %>
                       <%= link_to 'Delete', post, :confirm => 'Are you sure?',
                                             :method => :delete %> <%= link_to 'Edit', edit_post_path(post)%></p>
                     <% end %>
