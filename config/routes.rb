@@ -8,10 +8,10 @@ Rails.application.routes.draw do
 
   get 'posts/index'
 
-  root 'posts#index'
-
   resources :posts do
     resources :users
   end
   resources :profile
+
+  root 'posts#index'
 end
