@@ -15,8 +15,11 @@
           <% if post.created_at > 10.minutes.ago %> 
             <td><button class="button" id="update-button"><%= link_to 'Update', edit_post_path(post) %></button></td>
           <% end %>
-          <td><button class="button" id="delete-button"><%= button_to 'Delete', post_path(post), method: :delete %></button></td>
+          <td><%= button_to 'Delete', post_path(post), method: :delete %></td>
+          <br>
         </div>
+        <br>
+        <br>
       </div>
     <% end %>  
 
