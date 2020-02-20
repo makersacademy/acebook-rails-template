@@ -45,4 +45,15 @@ RSpec.feature 'Comment', type: :feature do
     end
   end
 
+  scenario 'User can edit their own comment on a users wall' do
+    sign_up
+    new_post
+    comment_on_post
+    visit user_page_path(User.all.first.id)
+    click_link 'Edit Comment'
+    fill_in 'comment[body]', with: 'Updated Comment'
+    click_button 'Save'
+    expect(page).to have_content('Updated Comment')
+  end
+
 end

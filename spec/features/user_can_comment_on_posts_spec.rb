@@ -40,4 +40,14 @@ RSpec.feature 'Comment', type: :feature do
     expect(page).to have_content('Comment posted successfully')
   end
 
+  scenario 'user can comment on a post on a users wall' do
+    sign_up
+    new_post
+    visit user_page_path(User.all.first.id)
+    click_link 'Add Comment'
+    fill_in 'comment[body]', with: 'First Comment'
+    click_on 'Save'
+    expect(page).to have_content('First Comment')
+  end
+
 end 

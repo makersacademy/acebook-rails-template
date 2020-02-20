@@ -31,4 +31,13 @@ RSpec.feature 'Comment', type: :feature do
     expect(page).to have_content('Comment deleted successfully')
   end
 
+  scenario 'User can delete their own comment on a users wall' do
+    sign_up
+    new_post
+    comment_on_post
+    visit user_page_path(User.all.first.id)
+    click_link 'Delete Comment'
+    expect(page).to_not have_content('First Comment')
+  end
+
 end

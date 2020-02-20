@@ -34,10 +34,12 @@ RSpec.feature 'Posts', type: :feature do
     #{Time.now.strftime('%m/%d/%Y, %H:%M')}
     Edit Delete
     I'm up here!
+    ♡ 0 Likes Add Comment
      
     cats@cats.com 
     #{Time.now.strftime('%m/%d/%Y, %H:%M')} 
     Edit Delete
-    Hello, meOW")
+    Hello, meOW
+    ♡ 0 Likes Add Comment")
   end
 end
