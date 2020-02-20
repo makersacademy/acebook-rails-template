@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :posts
+    get 'image', to: 'users#image_form'
+    patch 'image', to: 'users#image'
+    get 'show_images'
   end
 
   resources :posts
