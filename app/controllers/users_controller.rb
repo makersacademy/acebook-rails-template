@@ -7,12 +7,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params = params.require(:user).permit(:email, :password, :profile_picture, :planet)
+    user_params = params.require(:user).permit(:email, :password, :profile_picture, :planet, :username)
     @user = User.new(user_params)
     begin
       @user.save!
       session[:user_id] = @user.id
-      redirect_to(user_posts_path(user_id: @user.id), notice: "Congratulations #{@user['email']}, You Have Signed Up to AceBook!")
+      redirect_to(user_posts_path(user_id: @user.id), notice: "Congratulations #{@user['username']}, You Have Signed Up to AceBook!")
     rescue ActiveRecord::RecordInvalid
       redirect_to('/signup', notice: @user.errors.messages.values[0].first)
     end
