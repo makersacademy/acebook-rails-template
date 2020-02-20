@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :validatable
   has_many :posts
   has_many :likes, dependent: :destroy
-  has_many :comments, dependent :destroy
+  has_many :comments
 
   def self.reverse_posts(posts)
     posts.sort { |a, b| b.updated_at <=> a.updated_at }
