@@ -7,4 +7,3 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.new(id: 0, password: nil, email: nil).save(validate: false)
-User.new(id: 1, password: 'password', email: 'admin@example.com').save
