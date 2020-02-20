@@ -1,0 +1,12 @@
+<% if alert %>
+  <div class="alert alert-danger">
+    <%= alert %>
+  </div>
+<% end %>
+<h2 class="h3 mb-3 font-weight-normal">Edit your account:</h2>
+<%= form_with(model: @user, local: true) do |form| %>
+  <%= form.label :username %>
+  <%= form.text_field :username, class: 'form-control', required: true %>
+<br>
+  <%= form.submit "Update account", class: 'btn btn-lg btn-primary' %>
+<% end %>

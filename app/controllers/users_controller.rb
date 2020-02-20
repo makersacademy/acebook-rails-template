@@ -8,6 +8,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.new(user_details)
 
@@ -17,6 +21,17 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       render 'new'
+    end
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.id == session[:user_id]
+      @user.update_attribute(:username, params[:user][:username])
+      redirect_to session[:url]
+    else
+      flash.now.alert = 'Apologies, this is not your account to update!'
+      render 'edit'
     end
   end
 
