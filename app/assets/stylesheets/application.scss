@@ -23,6 +23,14 @@
   right: 0px;
 }
 
+
+.main-wall-title {
+  position: relative;
+  top: 300px;
+  color: white;
+  left: -120px;
+}
+
 .profile-picture {
   position: absolute;
   z-index: 1;
@@ -84,7 +92,6 @@ h1 {
   left: 38%;
   font-weight: bold;
   font-size: 30px;
-  color: black;
 }
 
 h2 {
@@ -92,7 +99,6 @@ h2 {
   left: 38%;
   font-weight: bold;
   font-size: 25px;
-  color: black;
 }
 
 .form {

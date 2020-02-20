@@ -26,7 +26,7 @@ RSpec.configure do |config|
   # rspec-expectations config goes here.
 
   config.before(:all) do
-    User.create(id: 0, email: '.', password: '.').save(validate: false)
+    User.create(id: 0, email: '.', password: '.', planet: 'Galaxy').save(validate: false)
   end
 
   config.before(:each) do

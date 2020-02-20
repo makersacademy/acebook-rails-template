@@ -5,6 +5,7 @@ RSpec.feature 'User can click on a username and be directed to user wall', type:
     fill_in('user[username]', with: 'user1')
     fill_in 'user[email]', with: 'test@test.com'
     fill_in 'user[password]', with: 'password'
+    page.select('Kashyyyk', from: 'user[planet]')
     click_on 'Join the Rebel Alliance'
     click_on 'New Post'
     fill_in 'post[post_content]', with: 'Post on my wall'
@@ -18,6 +19,7 @@ RSpec.feature 'User can click on a username and be directed to user wall', type:
     fill_in('user[username]', with: 'user2')
     fill_in 'user[email]', with: 'test2@test.com'
     fill_in 'user[password]', with: 'password'
+    page.select('Kashyyyk', from: 'user[planet]')
     click_on 'Join the Rebel Alliance'
     click_on 'wookiebook'
     click_on 'user1'

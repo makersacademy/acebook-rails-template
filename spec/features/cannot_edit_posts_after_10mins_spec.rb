@@ -3,6 +3,7 @@ RSpec.feature 'Users can edit a post that has been created', type: :feature do
     visit('/')
     click_on('Signup')
     fill_in('user[username]', with: 'user1')
+    page.select('Kashyyyk', from: 'user[planet]')
     fill_in('user[email]', with: 'test@example.com')
     fill_in('user[password]', with: 'password')
     click_on('Join the Rebel Alliance')
