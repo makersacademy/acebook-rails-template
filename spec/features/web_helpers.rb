@@ -57,3 +57,9 @@ def log_in
   click_button 'Log in'
 end
 
+def comment_on_post
+  click_link 'Add Comment'
+  fill_in 'comment[body]', with: 'First Comment'
+  click_on 'Save'
+end
+

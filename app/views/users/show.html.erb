@@ -42,6 +42,42 @@
       <div id='post-message'>
         <%= simple_format(post.message, {}, wrapper_tag: "div") %>
       </div>
+
+      <div id='likes'>
+      <% pre_like = post.likes.find { |like| like.user_id == current_user.id }%>
+        <% if pre_like %>
+          <%= link_to '♥️', post_like_path(post, pre_like), method: :delete %>
+        <% else %>
+          <%= link_to '♡', post_likes_path(post), method: :post %>
+        <% end %>
+        <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %>
+      </div>
+
+      <div id='post-comments'>
+      <% post.comments.each do |comment| %>
+        <div id='post-comment'>
+            <div id='post-comment-user'>
+              <%= User.find(comment.user_id).email %>
+            </div>
+
+            <div id='post-comment-text'>
+              <%= comment.body %>
+            </div>
+
+
+            <div id='comment-links'> 
+              <%= link_to 'Edit Comment', edit_post_comment_path(post, comment) %>
+              <%= link_to 'Delete Comment', [comment.post, comment], :method => :delete %>
+            </div>
+            
+          </div>
+      <% end %>
+    </div> 
+
+
+      <div id='add-posts-comment'>
+        <%= link_to 'Add Comment', post_path(post) %>
+      </div>
   
     </div>
     <div id='post-spacer'>
