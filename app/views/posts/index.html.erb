@@ -20,7 +20,7 @@
   <% end %>
 <% @posts.each do |post| %>
   <div class="container p-3 my-3 border shadow">
-    <strong><%= link_to "#{post.user.username}", user_path(post.user.id), controller: 'users', style: "color: black;" %>:</strong>
+    <strong><%= link_to "#{post.user.username}", user_path(post.user), controller: 'users', style: "color: black;" %>:</strong><br>
     <%= simple_format(post.message) %>
     <%= post.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
     <%= link_to 'Delete', post_path(post),
@@ -37,8 +37,8 @@
   <br>
   <h2 class="h5 mb-3 font-weight-bold">Comments:</h2>
   <% post.comments.each do |comment| %>
-  <% user = User.find(comment.user_id).username %>
-  <strong><%= link_to "#{user}", user_path(comment.user_id), controller: 'users', style: "color: black;" %>:</strong><br>
+  <% user = User.find(comment.user_id) %>
+  <strong><%= link_to "#{user.username}", user_path(user), controller: 'users', style: "color: black;" %>:</strong><br>
       <%= simple_format(comment.body)%>
       <%= comment.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
       <%= link_to 'Delete comment', [comment.post, comment], method: :delete %>
