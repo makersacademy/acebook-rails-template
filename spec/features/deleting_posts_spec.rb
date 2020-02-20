@@ -14,7 +14,7 @@ feature 'user can delete posts' do
     create_post
     create_comment
     click_link 'Delete'
-    expect(page).not_to have_content('test message') 
+    expect(page).not_to have_content('test message')
     expect(page).not_to have_content('test comment')
   end
 end
