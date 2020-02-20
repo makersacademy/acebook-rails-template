@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,19 +14,21 @@
   <!-- Latest compiled and minified JavaScript -->
 </head>
   <body>
+
     <h2>New Post</h2>
-<%= form_for @post do |form| %>
-  <%= form.label :message %><br>
-  <%= form.text_area :message, size: "30x30" %>
-<%# <%= form.label :description %>
-<%# <%= form.text_area :description %> 
-<%= form.submit "Submit" %>
-<% end %>
-      <%= link_to 'Back', posts_path %>
+
+      <%= form_for @profile do |form| %>
+        <%= form.label :message %><br>
+        <%= form.text_area :message, size: "30x10" %>
+
+        <%= form.submit "Submit" %>
+      <% end %>
+
+      <%= link_to 'Back', profile_path[:id] %>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
-
-<%= link_to 'Back', posts_path %>
 

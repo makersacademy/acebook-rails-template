@@ -15,6 +15,11 @@
 
   <body>
     <h1>Posts shown below</h1>
+    <p>To view Your profile:
+    <%= link_to profile_path(current_user) do %>
+      My Profile
+    <% end %>
+    Albums
       <p> To view Albums and Upload:
       <%= link_to albums_path do %>
       Albums
@@ -24,6 +29,7 @@
   <%= link_to new_post_path do %>
   New post
   <% end %>
+
     </p>
     <% @posts.reverse_each do |post| %>
       <div id = "<%=post.id %>">
@@ -35,7 +41,9 @@
               <td> 
               <p><%= simple_format(post.message.gsub(/\n/, '<br/>'))%></p>
                   <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p> 
-                   <p> By <%= post.user.email %></p>
+                   <p> By <%= link_to profile_path(post.user) do %>
+                View Profile
+                      <% end %></p>post.user.email %></p>
 
                <% if current_user && current_user == post.user %>
                       <%= link_to 'Delete', post, :confirm => 'Are you sure?',

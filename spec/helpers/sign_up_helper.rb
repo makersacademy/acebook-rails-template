@@ -10,3 +10,12 @@ def sign_up
   fill_in 'user[password_confirmation]', with: 'password'
   click_on 'Sign Up'
 end
+
+def sign_up_2
+  visit '/'
+  click_on 'Sign Up'
+  fill_in 'user[email]', with: 'shadi@testing.com'
+  fill_in 'user[password]', with: 'password'
+  fill_in 'user[password_confirmation]', with: 'password'
+  click_on 'Sign Up'
+end

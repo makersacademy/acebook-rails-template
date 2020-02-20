@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 20200220115108) do
     t.integer "user_id"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "message"
+    t.bigint "posts_id"
+    t.bigint "users_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "profile_message"
+    t.index ["posts_id"], name: "index_profiles_on_posts_id"
+    t.index ["users_id"], name: "index_profiles_on_users_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -41,4 +52,6 @@ ActiveRecord::Schema.define(version: 20200220115108) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "profiles", "posts", column: "posts_id"
+  add_foreign_key "profiles", "users", column: "users_id"
 end
