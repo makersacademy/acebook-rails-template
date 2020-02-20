@@ -1,0 +1,16 @@
+<div class='chat'>
+  <h1 class='text-center'>Acebook Chat</h1>
+  <div class='inner-chat' id='chatbox' style='height: 70vh; overflow-y: scroll'>
+    <% @messages.each do |message| %>
+      <%= render 'messages/message', message: message %>
+    <% end %>
+  </div>
+  <%= form_with model: @message do |form| %>
+    <div class='input-group mb-3'>
+      <%= form.text_field :body, placeholder: 'Say something...', class: 'form-control', id: 'message-body' %>
+      <div class='input-group-append'>
+        <%= form.submit 'Send', class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>

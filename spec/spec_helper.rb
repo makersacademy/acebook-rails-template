@@ -3,7 +3,12 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-SimpleCov.start 'rails'
+SimpleCov.start 'rails' do
+  SimpleCov.add_filter 'app/channels'
+  SimpleCov.add_filter 'app/jobs'
+  SimpleCov.add_filter 'app/mailers'
+  SimpleCov.add_filter 'app/models/message'
+end
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                  SimpleCov::Formatter::HTMLFormatter,
