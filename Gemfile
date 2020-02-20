@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.4.1'
+gem 'bootstrap_form'
 gem 'factory_bot_rails'
 gem 'jquery-rails'
 gem 'travis'

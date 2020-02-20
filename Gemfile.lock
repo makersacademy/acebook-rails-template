@@ -52,6 +52,9 @@ GEM
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
+    bootstrap_form (4.3.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     builder (3.2.3)
     byebug (10.0.1)
     capybara (2.18.0)
@@ -306,6 +309,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.4.1)
+  bootstrap_form
   byebug
   capybara (~> 2.13)
   factory_bot_rails

@@ -21,7 +21,7 @@ RSpec.feature "Timeline", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
-    first('.post').click_button 'Delete'
+    first('.post-card').click_button 'Delete'
     expect(page).not_to have_content("Hello, world!")
     expect(page).not_to have_content(Time.zone.now.strftime("%Y-%m-%d %H:%M:%S").to_s)
   end

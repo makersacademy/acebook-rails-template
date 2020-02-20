@@ -4,25 +4,26 @@
     <title>🦁 Acebook</title>
   </head>
 
-  <body>
-    <div>
-      <h1>Login</h1>
+  <div class="container" id="log-in-form">
+    <div class="row">
+      <div class="welcome-header">
+        <% if !!flash[:notice] %>
+          <% flash.each do |type, message| %>
+            <p><%= message %></p> <br>
+          <% end %>
+        <% end %>
+      </div>
+
+    <h2 class="text-center">Log in</h2>
       <%= form_tag '/login' do %>
         <%= label_tag :email%><br>
         <%= text_field_tag :email%><br>
         <%= label_tag :password%><br>
         <%= password_field_tag :password%><br>
-        <button class="log-in-button"><%= submit_tag "Login"%></button>
-      <%end%>
-    </div>
+        <div class="log-in-button"><%= submit_tag "Login" %></div>
+      <%end %>
 
-    <div class="welcome-header">
-      <% if !!flash[:notice] %>
-        <% flash.each do |type, message| %>
-          <p><%= message %></p> <br>
-        <% end %>
-      <% end %>
     </div>
-
-  </body>
+  </div>
 </html>
+
