@@ -29,6 +29,7 @@
 
     <ul class="nav navbar-nav navbar-right">
       <% if session[:user_id] %>
+        <li><%= link_to 'Friends', friends_path %></li>
         <li><%= link_to 'logout', logout_path %></li>
       <%else%>
         <li><%= link_to 'Sign Up', signup_path, :method => 'get' %></li>

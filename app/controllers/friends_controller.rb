@@ -5,7 +5,7 @@ class FriendsController < ApplicationController
   # GET /friends
   # GET /friends.json
   def index
-    @friends = Friend.all
+    @friends = Friend.order(updated_at: :asc)
   end
 
   # GET /friends/1
@@ -65,6 +65,13 @@ class FriendsController < ApplicationController
     end
   end
 
+  def confirm
+    @friend = Friend.find_by(id: params[:id])
+    p params
+    @friend.update(confirmed_status: true)
+    redirect_to friends_url
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_friend
@@ -75,4 +82,5 @@ class FriendsController < ApplicationController
     def friend_params
       params.require(:friend).permit(:confirmed_status)
     end
+    
 end
