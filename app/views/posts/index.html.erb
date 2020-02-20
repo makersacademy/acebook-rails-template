@@ -36,3 +36,12 @@
 <div class='new-post'
 <h4 align="center"><%= link_to 'New Post', new_user_post_path(user_id: @location) %></h4>
 </div>
+<<<<<<< HEAD
+=======
+
+<% @posts.reverse.each do |post| %>
+    <%img_url = User.find(post.user_id).profile_picture %>
+<% end %>
+
+
+>>>>>>> e100e661dd232321fc23743293ab08bde752c42c
