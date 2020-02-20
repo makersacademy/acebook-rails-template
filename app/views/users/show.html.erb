@@ -23,7 +23,7 @@
       <div id='top'> 
         <div id='top-left'>
           <div id='post-user'>
-            <%= User.find(post.user_id).email %>
+          <a href=<%= user_page_path(User.find(post.user_id))%>><%= User.find(post.user_id).email  %></a>
           </div>
 
           <div id='post-date'> 
@@ -57,7 +57,7 @@
       <% post.comments.each do |comment| %>
         <div id='post-comment'>
             <div id='post-comment-user'>
-              <%= User.find(comment.user_id).email %>
+              <a href=<%= user_page_path(User.find(comment.user_id))%>><%= User.find(comment.user_id).email  %></a>
             </div>
 
             <div id='post-comment-text'>
@@ -75,14 +75,18 @@
     </div> 
 
 
-      <div id='add-posts-comment'>
-        <%= link_to 'Add Comment', post_path(post) %>
+      <div id='add-post-comment'>
+        <div id='add-post-container'>
+          <a href= <%=post_path(post)%>><i class="fa fa-comments"></i></a>
+          <%= link_to 'Add Comment', post_path(post) %>
+        </div>
       </div>
   
     </div>
     <div id='post-spacer'>
     </div>
   <% end %>
+  
 
 </div>
 

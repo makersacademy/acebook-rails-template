@@ -9,7 +9,7 @@
       <div id='top'> 
         <div id='top-left'>
           <div id='post-user'>
-            <%= User.find(@post.user_id).email %>
+          <a href=<%= user_page_path(User.find(@post.user_id))%>><%= User.find(@post.user_id).email  %></a>
           </div>
 
           <div id='post-date'> 
@@ -42,7 +42,7 @@
       <% @post.comments.each do |comment| %>
         <div id='post-comment'>
             <div id='post-comment-user'>
-              <%= User.find(comment.user_id).email %>
+            <a href=<%= user_page_path(User.find(comment.user_id))%>><%= User.find(comment.user_id).email  %></a>
             </div>
   
             <div id='post-comment-text'>
@@ -52,7 +52,6 @@
       <% end %>
     </div> 
   
-
       <div id='add-comment-container'>
         <div id='add-comment-form'>
           <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
