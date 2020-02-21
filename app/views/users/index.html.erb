@@ -1,0 +1,15 @@
+<h1> Hello <%= User.find(session[:user_id]).email %> </h1>
+
+<div class='posts-body'>
+  <article class='posts'>
+    <% @users.each do |user| %>
+      <article class="post" id='<%= user.id %>'>
+        <header>
+          <a href='/users/<%= user.id%>'><%= user.email %></a>
+        </header>
+      </article>
+    <% end %>   
+  </article>
+</div>
+
+

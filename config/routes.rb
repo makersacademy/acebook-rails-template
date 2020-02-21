@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   # change name of route users/new to /signup in the address bar
   get 'signup', to: 'users#new'
+  # get 'search', to: 'users#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
