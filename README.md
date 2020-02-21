@@ -1,16 +1,8 @@
-# AceBook
+The individual of dosdosdynamicosdesperados are pleased to present
 
-REQUIRED INSTRUCTIONS:
+# woookiebook
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+## A place for the more hairy individuals of Kashyyyk to share
 
 ## Quickstart
 
@@ -26,3 +18,12 @@ First, clone this repository. Then:
 ## Additional Resources 
 
 How it was made - https://medium.com/@thomas.w.walker/dosdosdesperadosdynamicos-acebook-not-a-copy-of-facebook-honest-f9e53b543aee
+
+Github Repo - https://github.com/cpcwood/acebook-dosdosdesperadosdynamicos
+
+Team Members 
+
+Tom W - https://github.com/Walker-TW
+Chris - https://github.com/cpcwood
+Tom R - https://github.com/ratcliffetj
+Imraan A - https://github.com/Immers23
