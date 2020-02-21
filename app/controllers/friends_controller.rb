@@ -17,7 +17,6 @@ class FriendsController < ApplicationController
   # GET /friends/new
   def new
     @friend = Friend.new
-    p params
     @user_friend = User.find(params[:format])
   end
 
@@ -27,15 +26,15 @@ class FriendsController < ApplicationController
   # POST /friends
   # POST /friends.json
   def create
-    @friend = Friend.new(friend_id: @current_user.id, recipient_friend_id: params['friend']['recipient_friend_id'], confirmed_status: false)
+    p = params['friend']['recipient_friend_id']
+    c = @current_user.id
+    @friend = Friend.new(friend_id: c, recipient_friend_id: p, confirmed_status: false)
 
     respond_to do |format|
       if @friend.save
         format.html { redirect_to posts_url, notice: 'Friend Request sent.' }
-        format.json { render :show, status: :created, location: @friend }
       else
         format.html { redirect_to posts_url, notice: 'Friend Request already sent.' }
-        format.json { render :show, status: :created, location: @friend }
       end
     end
   end
@@ -46,10 +45,8 @@ class FriendsController < ApplicationController
     respond_to do |format|
       if @friend.update(friend_params)
         format.html { redirect_to @friend, notice: 'Friend was successfully updated.' }
-        format.json { render :show, status: :ok, location: @friend }
       else
         format.html { render :edit }
-        format.json { render json: @friend.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -60,13 +57,11 @@ class FriendsController < ApplicationController
     @friend.destroy
     respond_to do |format|
       format.html { redirect_to friends_url, notice: 'Friend was successfully deleted.' }
-      format.json { head :no_content }
     end
   end
 
   def confirm
     @friend = Friend.find_by(id: params[:id])
-    p params
     @friend.update(confirmed_status: true)
     redirect_to friends_url
   end

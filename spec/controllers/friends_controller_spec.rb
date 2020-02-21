@@ -42,9 +42,15 @@ RSpec.describe FriendsController, type: :controller do
   # FriendsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  before do
+    user = User.create!(email: 'test@abc.com', password: 'password')
+    login(user)
+    Post.create!(users_id: user.id, message: 'test message')
+  end
+
   describe 'GET #index' do
     it 'returns a success response' do
-      friend = Friend.create! valid_attributes
+      Friend.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -52,15 +58,18 @@ RSpec.describe FriendsController, type: :controller do
 
   describe 'GET #show' do
     it 'returns a success response' do
-      friend = Friend.create! valid_attributes
-      get :show, params: { id: friend.to_param }, session: valid_session
+      Friend.create! valid_attributes
+      get :show, params: { format: user.id }, session: valid_session
       expect(response).to be_success
     end
   end
 
   describe 'GET #new' do
     it 'returns a success response' do
-      get :new, params: {}, session: valid_session
+      user = User.create!(email: 'test2@abc.com', password: 'password')
+      login(user)
+      Post.create!(users_id: user.id, message: 'test message')
+      get :new, params: { format: user.id }, session: valid_session
       expect(response).to be_success
     end
   end
@@ -109,16 +118,16 @@ RSpec.describe FriendsController, type: :controller do
       end
 
       it 'redirects to the friend' do
-        friend = Friend.create! valid_attributes
-        put :update, params: { id: friend.to_param, friend: valid_attributes }, session: valid_session
+        f = Friend.create! valid_attributes
+        put :update, params: { id: f.to_param, friend: valid_attributes }, session: valid_session
         expect(response).to redirect_to(friend)
       end
     end
 
     context 'with invalid params' do
       it "returns a success response (i.e. to display the 'edit' template)" do
-        friend = Friend.create! valid_attributes
-        put :update, params: { id: friend.to_param, friend: invalid_attributes }, session: valid_session
+        f = Friend.create! valid_attributes
+        put :update, params: { id: f.to_param, friend: invalid_attributes }, session: valid_session
         expect(response).to be_success
       end
     end

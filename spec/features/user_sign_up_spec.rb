@@ -4,9 +4,9 @@ require 'rails_helper'
 
 describe 'Sign Up' do
   describe 'test sign up' do
-    it 'Can Sign up and see posts page with Hello on it' do
+    it 'Can Sign up and see posts page with logout on it' do
       sign_up
-      expect(page).to have_content('Hello')
+      expect(page).to have_content('logout')
     end
   end
 
