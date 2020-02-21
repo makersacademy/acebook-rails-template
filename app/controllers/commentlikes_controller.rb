@@ -33,5 +33,4 @@ class CommentlikesController < ApplicationController
   end
 
 end
-  
-end
+
