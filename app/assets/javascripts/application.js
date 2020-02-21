@@ -14,3 +14,20 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+
+window.addEventListener('load', function() {
+  logoutAudio = document.querySelector('.logoutAudio')
+
+  clickHandler = function(event) {
+    event.preventDefault()
+    self = this
+    logoutAudio.addEventListener('ended', function() {
+      self.removeEventListener('click', clickHandler)
+      self.click()
+    })
+    logoutAudio.currentTime = 0
+    logoutAudio.play()
+  }
+  
+  document.querySelector('#logoutBtn').addEventListener('click', clickHandler)
+})

@@ -12,6 +12,7 @@
 
   <body>
     <%= render 'layouts/navigation'%>
+    <%= audio_tag("log_out.mp3", class: "logoutAudio", preload: "true") %>
     <%= yield %>
   </body>
 </html>

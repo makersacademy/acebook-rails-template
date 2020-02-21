@@ -1,9 +1,43 @@
-<div id='error_status'>
-  <h1> This is not the page you're looking for </h1>
+
+<div class='error-container'>
+
+  <br> 
+
+  <div class='error_status'>
+    <h1> This is not the page you're looking for... </h1>
+  </div>
+
+  <br>
+
+  <div class='not_found_div'>
+    <%= image_tag('not_found_wookie.jpg', class:'not_found_pic') %>
+  </div>
 </div>
 
-<div id='not_found_div'>
-  <%= image_tag('not_found_wookie.jpg', id:'not_found_pic') %>
-</div>
+<%= audio_tag("not_found_audio.mp3", class: "not_found_audio") %>
 
-<%= audio_tag("not_found_audio.mp3", id: "not_found_audio") %>
+<script>
+  window.addEventListener('load', function() {
+    audio = document.querySelector('.not_found_audio')
+    audio.addEventListener('ended', function() {
+      audio.currentTime = 0
+      window.location.href = "/"
+    })
+
+    document.addEventListener('click', function() {
+      audio.currentTime = 0
+      var promise = audio.play()
+      if (promise !== undefined) {
+        promise.then(_ => {
+          console.log('// Autoplay started!')
+        }).catch(error => {
+          console.log('// Autoplay was prevented.')
+        });
+      }
+    })
+    
+    audio.currentTime = 0
+    audio.play()
+
+  })
+</script>
