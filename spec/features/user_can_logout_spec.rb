@@ -7,6 +7,6 @@ RSpec.feature 'User can logout', type: :feature do
     fill_in('login[password]', with: 'password')
     click_on('HERRNNNGGGHHHHH')
     click_on('Logout')
-    expect(page).to have_content('Welcome to wookiebook')
+    expect(page).to have_content('Welcome to THE wookiebook')
   end
 end
