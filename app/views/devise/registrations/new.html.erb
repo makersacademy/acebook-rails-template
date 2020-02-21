@@ -42,8 +42,8 @@
   </nav>
 
   <body>
-    <h3>Please enter you details below to sign up</h3>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <center><h3>Please enter you details below to sign up</h3></center>
+    <center><%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
@@ -67,11 +67,11 @@
       <div class="/users/sign_up">
         <%= f.button "Sign Up", type: 'submit' %>
       </div>
-    <% end %>
+    <% end %></center>
 
-    <form action='/users/sign_in'>
+    <center><form action='/users/sign_in'>
       <button action='submit'>Return to login</button>
-    </form>
+    </form></center>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
