@@ -6,9 +6,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= yield :page_scripts %>
+    <%= favicon_link_tag asset_path('wookie.png') %>
   </head>
 
   <body>
+    <%= render 'layouts/navigation'%>
+    <%= audio_tag("log_out.mp3", class: "logoutAudio", preload: "true") %>
     <%= yield %>
   </body>
 </html>

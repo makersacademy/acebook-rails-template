@@ -1,0 +1,15 @@
+<%= form_with(model: @post, local: true) do |form| %>
+
+<p id="notice"><%= notice %></p>
+
+
+  <p>
+    <%= form.text_area :post_content, id: 'post_text'%>
+    <%= form.hidden_field :location_id_fk, :value => @location %>
+  </p>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

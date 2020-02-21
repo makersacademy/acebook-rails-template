@@ -1,0 +1,57 @@
+<%= form_with(model: post, local: true) do |form| %>
+
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <%= form.label :username%><br>
+    <%= form.text_field :username, autofocus: true, placeholder: 'Username'%>
+  </p>
+
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_field :email, autofocus: true, placeholder: 'Email' %>
+  </p>
+ 
+  <p>
+    <%= form.label :password %><br>
+    <%= form.password_field :password, autocomplete: 'off', placeholder: 'Password' %>
+  </p>
+  <p>
+    <%= form.label :planet%><br>
+    <%= form.select :planet, ['Kashyyyk', 'Naboo', 'Tatooine'] %>
+  </p>
+  <p>
+    <%= form.label :profile_picture%>
+    <%= form.file_field :profile_picture%>
+  </p>
+  <br>
+  <p>
+    <%= form.submit 'Join the Rebel Alliance', id: 'submitBtn' %>
+  </p>
+
+  <%= audio_tag("chewbacca.mp3", id: "chewbaccaPlay", preload: "true") %>
+  <%= audio_tag("identification.mp3", id: "identification", preload: "true") %>
+<% end %>
+
+<script>
+
+  window.addEventListener('load', function() {
+    id_audio = document.querySelector('#identification')
+    chewyAudio = document.querySelector('#chewbaccaPlay')
+    id_audio.currentTime = 0
+    id_audio.play()
+
+    clickHandler = function(event) {
+      event.preventDefault()
+      self = this
+      chewyAudio.addEventListener('ended', function() {
+        self.removeEventListener('click', clickHandler)
+        self.click()
+      })
+      chewyAudio.currentTime = 0
+      chewyAudio.play()
+    }
+    
+    document.querySelector('#submitBtn').addEventListener('click', clickHandler)
+  })
+</script>
