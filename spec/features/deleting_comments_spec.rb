@@ -3,8 +3,8 @@
 feature 'user can delete comments' do
   scenario 'from the timeline' do
     sign_up
-    create_post
     click_link 'Home'
+    create_post
     create_comment
     click_link 'Delete comment'
     expect(page).not_to have_content('test comment')
@@ -22,6 +22,7 @@ feature 'user can delete comments' do
 
   scenario 'it throws an error when not your comment to delete' do
     sign_up
+    click_link 'Home'
     create_post
     create_comment
     click_link 'Sign Out'

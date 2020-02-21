@@ -3,8 +3,8 @@
 feature 'user can update comments' do
   scenario 'from the timeline' do
     sign_up
-    create_post
     click_link 'Home'
+    create_post
     create_comment
     click_link 'Edit comment'
     edit_comment
@@ -26,6 +26,7 @@ feature 'user can update comments' do
 
   scenario 'it throws an error when not your comment to update' do
     sign_up
+    click_link 'Home'
     create_post
     create_comment
     click_link 'Sign Out'

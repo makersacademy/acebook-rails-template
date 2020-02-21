@@ -4,6 +4,8 @@ feature 'user can comment on other peoples posts' do
   scenario 'from the timeline' do
     sign_up
     create_post
+    click_link 'Home'
+    create_post
     click_link 'Sign Out'
     sign_up_two
     click_link 'Home'
@@ -17,6 +19,8 @@ feature 'user can comment on other peoples posts' do
 
   scenario 'from a user homepage' do
     sign_up
+    create_post
+    click_link 'Home'
     create_post
     click_link 'Sign Out'
     sign_up_two

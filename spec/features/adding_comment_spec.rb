@@ -3,8 +3,8 @@
 feature 'user can comment on post' do
   scenario 'from the timeline' do
     sign_up
-    create_post
     click_link 'Home'
+    create_post
     fill_in 'comment[body]', with: 'Hello'
     click_button 'Add Comment'
     within('div.comment-container') do
