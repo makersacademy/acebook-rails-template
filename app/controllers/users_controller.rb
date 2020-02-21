@@ -7,10 +7,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # def create
-  #   @user = User.create(params.require(:email).permit(:email, :password))
-  #   redirect_to '/posts/index'
-  # end
+  def index
+    @users = User.search(params[:search])
+  end
 
   def create
     @user = User.new(user_params)
@@ -22,9 +21,18 @@ class UsersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    # p params['id']
+    # @posts = Post.find_by(recipient_id: params['id'], post_type: 'wall' ).to_a
+    @posts = Post.where(recipient_id: params['id'], post_type: 'wall' )
+  
+  end
 
   private
+
+  def search_params
+    params.permit(:search)
+  end
 
   def user_params
     params.require(:user).permit(:email, :password)

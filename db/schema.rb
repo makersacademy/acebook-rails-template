@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20200220112906) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "users_id", null: false
-    t.string "type", null: false
+    t.string "post_type", null: false
     t.bigint "recipient_id", null: false
     t.index ["recipient_id"], name: "index_posts_on_recipient_id"
     t.index ["users_id"], name: "index_posts_on_users_id"

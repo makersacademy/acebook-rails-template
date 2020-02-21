@@ -19,6 +19,9 @@ Vish Mayer,
 
 ### Learning documentation
 
+## Create a HTML5 compatible search bar
+*  `= text_field_tag('search', params[:search], options = {:type => 'search'}`
+  
 ## Database Setup
 To set up a migration:
 * `rails generate migration [NameOfMigrationInCamelCase]`

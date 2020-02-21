@@ -26,7 +26,6 @@
         <li><%= link_to 'New post', new_post_path %></li>
       <%end%>
     </ul>
-
     <ul class="nav navbar-nav navbar-right">
       <% if session[:user_id] %>
         <li><%= link_to 'logout', logout_path %></li>
@@ -34,6 +33,11 @@
         <li><%= link_to 'Sign Up', signup_path, :method => 'get' %></li>
         <li><%= link_to 'Log In', login_path, :method => 'get' %></li>
       <%end%>
+    </ul>
+        <ul class="nav navbar-nav navbar-right">
+      <%= form_tag users_path, :method => 'get', html: {id: :search} do %>
+        <%= text_field_tag :search, params[:search], options = {:type => 'search'} %>
+      <% end %>
     </ul>
   </div>
 </nav>
