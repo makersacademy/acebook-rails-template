@@ -1,0 +1,33 @@
+<%= form_with(model: post, local: true) do |form| %>
+
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <%= form.label :username%><br>
+    <%= form.text_field :username, autofocus: true, placeholder: 'Username'%>
+  </p>
+
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_field :email, autofocus: true, placeholder: 'Email' %>
+  </p>
+ 
+  <p>
+    <%= form.label :password %><br>
+    <%= form.password_field :password, autocomplete: 'off', placeholder: 'Password' %>
+  </p>
+  <p>
+    <%= form.label :planet%><br>
+    <%= form.select :planet, ['Kashyyyk', 'Naboo', 'Tatooine'] %>
+  </p>
+  <p>
+    <%= form.label :profile_picture%>
+    <%= form.file_field :profile_picture%>
+  </p>
+  <br>
+  <p>
+    <%= form.submit 'Join the Rebel Alliance' %>
+  </p>
+<% end %>
+
+</div>

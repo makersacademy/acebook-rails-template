@@ -1,0 +1,14 @@
+<%= form_for(@user, url: {action: 'image'}) do |form| %>
+
+  <p id="notice"><%= notice %></p>
+
+  <div class="field>">
+    <%= form.label :images%>
+    <%= form.file_field :images, multiple: true%>
+  </div>
+  </p>
+  <br>
+  <p>
+    <%= form.submit 'Show me Your Wookie' %>
+  </p>
+<% end %>
