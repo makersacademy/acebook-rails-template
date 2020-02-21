@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
   def create
     # check email validity
-    return redirect_to(login_path, notice: 'Email format invaild, please enter valid email') unless EmailValidator.validate?(params[:login][:email])
+    return redirect_to(login_path, notice: 'Email format invalid, please enter valid email') unless EmailValidator.validate?(params[:login][:email])
 
     # check credentials
     user = User.find_by(email: params[:login][:email])
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
 
     # redirect to posts
-    redirect_to(posts_path, notice: "Welcome back #{user.email}!")
+    redirect_to(posts_path, notice: "Welcome back #{user.username}!")
   end
 
   def destroy

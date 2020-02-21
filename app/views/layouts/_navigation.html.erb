@@ -1,5 +1,5 @@
-<nav class="navbar navbar-inverse" style="height:20px;">
-  <div class=".col-container-fluid">
+<nav class="navbar navbar-inverse navbar-static-top" style="height:20px">
+  <div class=".col-container-fluid"></div>
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -15,9 +15,9 @@
           <%= image_tag("wookie.png", size: '40x40', class: "img-responsive center-block") %>
         </li>
         
-        <li><a href="/users/0/posts">wookiebook</a></li>
+        <li><a href="/users/0/posts" style="font-size:20px">wookiebook</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" style="position:absolute; right:20px; font-size:16px">
         <% if session[:user_id] %>
           <li><%= link_to 'Logout', logout_path, :method => :delete, id: 'logoutBtn' %></li>
         <% end %>

@@ -1,21 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<h1 align="center"><%=User.find(@location).email%><%= "'s wall" if User.find(@location).email%></h1>
-<h2 align="center">Planet: <%=User.find(@location).planet%></h2>
-
+<div class = 'planet-image'> <%= image_tag(User.find(@location).planet.to_s + '.jpg', id:'planet')%> </div>
+<div class = 'main-wall-title'><h1><%= 'Connect With Wookies Across The Galaxy' unless User.find(@location).username%></h1></div>
+<div class = 'profile-picture'>
+  <% prof_url = User.find(@location).profile_picture %>
+  <%= image_tag(prof_url, id:'profile-pic') if prof_url.attached? %>
+</div>
+<p id="notice-after-login"><%= notice %></p>
+<div class ='user-details'>
+  <h1><%=User.find(@location).username if User.find(@location).username%></h1>
+  <h2><%= "Planet: " + User.find(@location).planet.to_s if User.find(@location).username%></h2>
+</div>
 <br>
 
+
 <% @posts.reverse.each do |post| %>
-  <div class="card text-center" style="size 50x50;">
-    <img class="card-img-top" style="width: 50px; height: auto" alt=" "
+  <div class="card">
+    <img class="card-img-top" style="width:200px; height: auto" alt=" "
     <%img_url = User.find(post.user_id).profile_picture %>
-    <%= image_tag(User.find(post.user_id).profile_picture) if img_url.attached?%>          
+    <%= image_tag(User.find(post.user_id).profile_picture) if img_url.attached?%>
     <div class="card-body">
       <h5 class="card-title">
-        <a><%= link_to User.find(post.user_id).email, user_posts_path(user_id: User.find(post.user_id)) %></a> says...
+        <a><%= link_to User.find(post.user_id).username, user_posts_path(user_id: User.find(post.user_id)) %></a> says...
       </h5>
+      <h4 class="card-text"><%=simple_format(post.post_content)%></h4>
       <h6 class="card-subtitle mb-2 text-muted"><%=post.created_at.to_s(:rfc822)[17..21]%>  <%=post.created_at.to_s(:rfc822)[0..2]%> <%=post.created_at.to_s(:rfc822)[4..15]%></h6>
-      <p class="card-text"><%=simple_format(post.post_content)%></p>
       <a><%= link_to 'Edit', edit_user_post_path(user_id: session[:user_id], id: post, location: @location) %></a>
       <a><%= link_to 'Delete', post, method: :delete %></a>
     </div>
@@ -23,4 +30,17 @@
 <% end %>
 </table>
 <br>
+<div class='new-post'
 <h4 align="center"><%= link_to 'New Post', new_user_post_path(user_id: @location) %></h4>
+</div>
+
+<script>
+  window.addEventListener('load', function() {
+    loc = window.location.pathname
+    profilePicture = document.querySelector('.profile-picture')
+    if (loc == '/users/0/posts' || loc == '/') {
+      profilePicture.style.display = 'none'
+    }
+  })
+ 
+</script>
