@@ -15,6 +15,6 @@ describe 'test sign in' do
 
     log_in
 
-    expect(page).to have_content('Hello')
+    expect(page).to have_content('logout')
   end
 end

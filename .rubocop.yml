@@ -11,34 +11,35 @@
 require: rubocop-rspec
 
 RSpec/DescribeClass:
-  Exclude: 
-    - 'spec/features/*'
+    Exclude:
+        - 'spec/features/*'
 
 RSpec/Be:
-  Enabled: false
+    Enabled: false
 
 RSpec/ExampleLength:
-  Max: 12
-  
+    Max: 12
+
 RSpec/EmptyExampleGroup:
-  Enabled: false
+    Enabled: false
 
 Documentation:
-  Enabled: false
+    Enabled: false
 
 Metrics/BlockLength:
-  Max: 40
+
+    Max: 120
 
 Metrics/LineLength:
-  Max: 100
+    Max: 100
 
 RSpec/MultipleExpectations:
-  Max: 2
+    Max: 2
 
 AllCops:
-  Exclude:
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'script/**/*'
-    - 'vendor/**/*'
-    - 'bin/**/*'
+    Exclude:
+        - 'db/**/*'
+        - 'config/**/*'
+        - 'script/**/*'
+        - 'vendor/**/*'
+        - 'bin/**/*'

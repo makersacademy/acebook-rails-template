@@ -1,0 +1,9 @@
+<h1> Hello <%= User.find(session[:user_id]).email %> </h1>
+<h1>Create New Friend Request</h1>
+<h1> Friend Email <%= @user_friend.email %> </h1>
+<%= form_for @friend do |form| %>
+  <%= form.hidden_field(:recipient_friend_id, :value => @user_friend.id) %>
+  <%= form.submit "Send request" %>
+<% end %>
+
+<%= link_to 'Back', friends_path %>

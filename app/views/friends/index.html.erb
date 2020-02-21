@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<% @current_user = User.find(session[:user_id]) %>
+<h1> Hello <%= @current_user.email %></h2>
+
+<h1>Friend requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Confirmed status</th>
+       <th>Sent by</th>
+       <th>Recipient</th>
+       <th>Actions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @friends.each do |friend| %>
+     <% @user_recipient = User.find(friend.recipient_friend_id) %>
+     <% @user_friend = User.find(friend.friend_id) %>
+
+     <%if @user_recipient.id == session[:user_id] || @user_friend.id == session[:user_id]%>
+      <tr>
+        <td><%= friend.confirmed_status %></td>
+        <td><%= @user_friend.email %></td>
+        <td><%= @user_recipient.email %></td>
+
+        <%if @user_recipient.id == session[:user_id]%>
+        <td><%= link_to 'Confirm Friend Request', confirm_path(id: friend.id), method: :patch, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+        <td><%= link_to 'Decline', friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    <% end %>
+     
+  </tbody>
+</table>
+

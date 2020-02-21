@@ -15,11 +15,15 @@
   <!DOCTYPE html>
 <html lang="en">
 <body>
+<h2>Acebook De-Railed</h2>
 
+<div class="navbar">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/posts">Acebook De-Railed</a>
+    <% if session[:user_id] %>
+      <a class="navbar-brand" href="/posts"><%= User.find(session[:user_id]).email %></a>
+      <%end%>
     </div>
     <ul class="nav navbar-nav navbar-left">
       <% if session[:user_id] %>
@@ -28,6 +32,8 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if session[:user_id] %>
+        <li><%= link_to 'Home', posts_path %></li>
+        <li><%= link_to 'Friends', friends_path %></li>
         <li><%= link_to 'logout', logout_path %></li>
       <%else%>
         <li><%= link_to 'Sign Up', signup_path, :method => 'get' %></li>
@@ -41,6 +47,8 @@
     </ul>
   </div>
 </nav>
+</div>
+
 
   <p id=”notice”><%= flash[:notice] %></p>
     <%= yield %>
