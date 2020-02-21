@@ -20,7 +20,6 @@ class CommentlikesController < ApplicationController
   private
 
   def find_comment
-    # @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:comment_id])
   end
 
