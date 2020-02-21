@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  
-  get '404', to: "errors#show", :via => :all
+  get '404', to: 'errors#show', via: :all
 
   get 'homepage/index'
 
