@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :comments, through: :posts
   has_many :messages
   has_many :likes, through: :posts
+  has_many :commentlikes, through: :comments
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :username, presence: true, uniqueness: true
   validates :password, length: { in: 6..10,
