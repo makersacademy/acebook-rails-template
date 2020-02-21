@@ -50,3 +50,5 @@ The day started with half of us implementing the chat feature and the others wor
 
 
 # Friday 21st February 2020 (David)
+
+Today was the final day of the project. I spent the morning with Asia making the last changes to the likes feature avaliable for comments this time (instead of posts). We initally tried to use the Like controller as an extension to the comments, but this quickly became complicated and we realised that the likes would increment on comments and posts together. We generated a new model that would only be associated with comments and would therefore be independant. We then spent the rest of the morning tidying up some tests and DRY-ing out some code, and then spending some time preparing some final styling points ahead of the presentation.
