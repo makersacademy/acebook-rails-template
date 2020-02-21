@@ -27,7 +27,7 @@ Documentation:
   Enabled: false
 
 Metrics/BlockLength:
-  Max: 30
+  Max: 40
 
 Metrics/LineLength:
   Max: 100
