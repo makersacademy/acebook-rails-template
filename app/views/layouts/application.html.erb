@@ -30,8 +30,9 @@
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle active" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.username %></a>
                <div class="dropdown-menu" aria-labelledby="dropdown03">
-              <%= link_to "Your Wall", user_path(current_user.id) , controller: 'users', class: "dropdown-item"%>
-              <%= link_to "Update Account", edit_user_path(current_user.id) , controller: 'users', class: "dropdown-item"%>
+                <%= link_to "Your Wall", user_path(current_user.id) , controller: 'users', class: "dropdown-item"%>
+                <%= link_to "Your Friends", friendship_path(current_user) , controller: 'friendships', class: "dropdown-item"%>
+                <%= link_to "Update Account", edit_user_path(current_user.id) , controller: 'users', class: "dropdown-item"%>
                </div>
              </li>
             <li class="nav-item">

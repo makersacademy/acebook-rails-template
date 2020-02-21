@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :posts
   end
 
+  resources :friendships
+
   resources :sessions
 
   resources :posts do
@@ -28,7 +30,7 @@ Rails.application.routes.draw do
   resources :comments do
     resources :commentlikes
   end
-  
+
   resources :sessions, only: %i[new create]
 
   delete '/logout' => 'sessions#destroy'
