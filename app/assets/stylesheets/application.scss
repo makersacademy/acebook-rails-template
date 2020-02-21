@@ -87,6 +87,39 @@ html, label, select, input {
   cursor: url(asset_path('lightsabergreen.cur')), auto;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  top: 50px;
+  width: 100%;
+  height: auto;
+}
+
+.error_status {
+  display: block;
+  text-align: center;
+  left: 0px;
+  right: 0px;
+}
+
+.not_found_div {
+  display: block;
+}
+
+.not_found_pic {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  max-height: 100%;
+  max-width: 100%;
+}
+
 h1 {
   position: relative;
   left: 38%;

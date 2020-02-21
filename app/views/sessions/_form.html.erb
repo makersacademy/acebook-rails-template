@@ -15,24 +15,31 @@
     <%= form.submit 'HERRNNNGGGHHHHH', id: 'submitBtn' %>
   </p>
 
-  <%= audio_tag "chewbacca.mp3", id: "chewbaccaPlay", preload: "true" %>
-
-  <% content_for :page_scripts do %>
-    <script>
-      window.addEventListener('load', function() {
-        audio = document.querySelector('#chewbaccaPlay')
-        clickHandler = function(event) {
-          event.preventDefault()
-          self = this
-          audio.addEventListener('ended', function() {
-            self.removeEventListener('click', clickHandler)
-            self.click()
-          })
-          audio.play()
-        }
-        document.querySelector('#submitBtn').addEventListener('click', clickHandler)
-      })
-    </script>
-  <% end %>
+  <%= audio_tag("chewbacca.mp3", id: "chewbaccaPlay", preload: "true") %>
+  <%= audio_tag("identification.mp3", id: "identification", preload: "true") %>
 
 <% end %>
+
+<script>
+
+  window.addEventListener('load', function() {
+    id_audio = document.querySelector('#identification')
+    chewy_audio = document.querySelector('#chewbaccaPlay')
+    id_audio.currentTime = 0
+    id_audio.play()
+
+    clickHandler = function(event) {
+      event.preventDefault()
+      self = this
+      chewy_audio.addEventListener('ended', function() {
+        self.removeEventListener('click', clickHandler)
+        self.click()
+      })
+      chewy_audio.currentTime = 0
+      chewy_audio.play()
+    }
+    
+    document.querySelector('#submitBtn').addEventListener('click', clickHandler)
+  })
+
+</script>

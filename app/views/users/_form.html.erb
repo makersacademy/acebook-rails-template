@@ -26,8 +26,32 @@
   </p>
   <br>
   <p>
-    <%= form.submit 'Join the Rebel Alliance' %>
+    <%= form.submit 'Join the Rebel Alliance', id: 'submitBtn' %>
   </p>
+
+  <%= audio_tag("chewbacca.mp3", id: "chewbaccaPlay", preload: "true") %>
+  <%= audio_tag("identification.mp3", id: "identification", preload: "true") %>
 <% end %>
 
-</div>
+<script>
+
+  window.addEventListener('load', function() {
+    id_audio = document.querySelector('#identification')
+    chewyAudio = document.querySelector('#chewbaccaPlay')
+    id_audio.currentTime = 0
+    id_audio.play()
+
+    clickHandler = function(event) {
+      event.preventDefault()
+      self = this
+      chewyAudio.addEventListener('ended', function() {
+        self.removeEventListener('click', clickHandler)
+        self.click()
+      })
+      chewyAudio.currentTime = 0
+      chewyAudio.play()
+    }
+    
+    document.querySelector('#submitBtn').addEventListener('click', clickHandler)
+  })
+</script>
