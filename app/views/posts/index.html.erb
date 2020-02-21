@@ -35,6 +35,8 @@
 
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <h3>Posts shown below</h3>
     <p>To view Your profile:
     <%= link_to profile_path(current_user) do %>
@@ -62,14 +64,14 @@
               <td> 
               <p><%= simple_format(post.message.gsub(/\n/, '<br/>'))%></p>
                   <p><%= post.created_at.strftime(" Posted on %d %B %a %I:%M%p") %> </p> 
-                   <p> By <%= link_to profile_path(post.user) do %>
+                   <p><%= post.user.email %><%= link_to profile_path(post.user) do %>
                 View Profile
-                      <% end %></p><%= post.user.email %></p>
+                      <% end %>
 
-               <% if current_user && current_user == post.user %>
+                <p><% if current_user && current_user == post.user %>
                       <%= link_to 'Delete', post, :confirm => 'Are you sure?',
                                             :method => :delete %> <%= link_to 'Edit', edit_post_path(post)%></p>
-                    <% end %>
+                    <% end %></p>
                 <%# <% post.images.each do |image| %>
                   <%# <%= image_tag image.url %> 
                   <%# <p><%= image_tag(post.images_urls[0].to_s, alt: 'Image') if post.images?%></p> 

@@ -37,6 +37,8 @@
   </nav>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <h2>New Post</h2>
 <%= form_for @post do |form| %>
   <%= form.label :message %><br>

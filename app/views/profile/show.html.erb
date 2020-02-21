@@ -12,17 +12,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+
   <!-- Latest compiled and minified JavaScript -->
 </head>
+  <div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">404Book</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a href="#" class="navbar-brand">404Book</a>
+    
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="#"><%= link_to 'My Profile' ,profile_path(current_user)%></span></a>
         </li>
         <li class="nav-item">
@@ -33,15 +32,18 @@
         <li class="nav-item">
           <a class="nav-link" href="#"> <%= link_to 'Back to Posts', posts_path %></a>
         </li>
- 
+
       </ul>
 
     </div>
   </nav>
 
-
-
+  
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+
     <h3> Profile Page of <%= @user.email%> </h3>
     <h4>Posts shown below</h4>
     <p>Back to Posts

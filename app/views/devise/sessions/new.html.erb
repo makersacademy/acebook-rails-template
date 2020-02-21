@@ -31,10 +31,12 @@
 
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <center><h3>Please Log in below</h3></center>
+    
 
-    <h3>Please Log in below</h3>
-
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <center><%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -49,10 +51,10 @@
         <%= f.button "Log in", type: 'submit' %>
       </div>
 
-    <% end %>
+    <% end %></center>
 
-    <form action='/users/sign_up'>
-      <input type='submit' value='Sign Up'>
+    <center><form action='/users/sign_up'>
+      <input type='submit' value='Sign Up'></center>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 
