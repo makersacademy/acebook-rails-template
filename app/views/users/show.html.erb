@@ -6,6 +6,14 @@
    <%= notice %>
   </div>
 <% end %>
+<% if alert %>
+  <div class="alert alert-danger">
+    <%= alert %>
+  </div>
+<% end %>
+
+<%= button_to 'Add friend', friendships_path(:friend_id => @user), :method => :post, class: 'btn btn-primary btn-sm' %>
+<br>
 
 
   <h2 class="h3 mb-3 font-weight-normal">Add a post:</h2>
@@ -21,11 +29,7 @@
 
 
 
-<% if alert %>
-  <div class="alert alert-danger">
-    <%= alert %>
-  </div>
-<% end %>
+
 <% @posts.each do |post| %>
   <div class="container p-3 my-3 border shadow">
     <strong><%= link_to "#{post.user.username}", user_path(post.user), controller: 'users', style: "color: black;" %>:</strong><br>
@@ -51,6 +55,13 @@
       <%= comment.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
       <%= link_to 'Delete comment', [comment.post, comment], method: :delete %>
       <%= link_to 'Edit comment', edit_post_comment_path(post, comment) %>
+      <% pre_commentlike = comment.commentlikes.find { |commentlike| commentlike.user_id == current_user.id} %>
+        <% if pre_commentlike %>
+          <%= button_to 'Unlike Comment', comment_commentlike_path(comment, pre_commentlike), method: :delete %>
+        <% else %>
+          <%= button_to 'Like Comment', comment_commentlikes_path(comment), method: :post %>
+        <% end %>
+      <%= comment.commentlikes.count%> <%= (comment.commentlikes.count) == 1 ? 'Like' : 'Likes' %>
       <br>
       <br>
       <% end %>
