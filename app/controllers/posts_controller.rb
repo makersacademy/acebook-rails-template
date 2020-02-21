@@ -41,7 +41,11 @@ class PostsController < ApplicationController
 
   def post_params
     defaults = { users_id: @current_user.id }
-    params.require(:post).permit(:message, :users_id, :recipient_id, :post_type).reverse_merge(defaults)
+    params.require(:post).permit(:message,
+                                 :users_id,
+                                 :recipient_id,
+                                 :post_type)
+          .reverse_merge(defaults)
   end
 
   def update_over_time_limit

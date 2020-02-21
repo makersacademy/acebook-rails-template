@@ -7,7 +7,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: EMAIL_REGEX
 
   def self.search(search)
-    search ? @users = User.where('email LIKE ?',"%#{search}%") : @users = User.all
+    @users = search ? User.where('email LIKE ?', "%#{search}%") : User.all
   end
-  
 end
