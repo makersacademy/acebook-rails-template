@@ -6,6 +6,14 @@
    <%= notice %>
   </div>
 <% end %>
+<% if alert %>
+  <div class="alert alert-danger">
+    <%= alert %>
+  </div>
+<% end %>
+
+<%= button_to 'Add friend', friendships_path(:friend_id => @user), :method => :post, class: 'btn btn-primary btn-sm' %>
+<br>
 
 
   <h2 class="h3 mb-3 font-weight-normal">Add a post:</h2>
@@ -21,11 +29,7 @@
 
 
 
-<% if alert %>
-  <div class="alert alert-danger">
-    <%= alert %>
-  </div>
-<% end %>
+
 <% @posts.each do |post| %>
   <div class="container p-3 my-3 border shadow">
     <strong><%= link_to "#{post.user.username}", user_path(post.user), controller: 'users', style: "color: black;" %>:</strong><br>

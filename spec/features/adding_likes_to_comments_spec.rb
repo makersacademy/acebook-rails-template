@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 feature 'user can like a comment' do
   scenario 'from another users homepage' do
     sign_up
@@ -23,13 +24,3 @@ feature 'user can like a comment' do
     expect(page).to have_selector(:link_or_button, 'Unlike Comment')
   end
 end
-
-
-
-
-
-
-
-
-
-

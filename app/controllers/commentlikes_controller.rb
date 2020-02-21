@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentlikesController < ApplicationController
   skip_before_action :authenticated_user
   before_action :find_comment
@@ -30,6 +32,4 @@ class CommentlikesController < ApplicationController
   def find_commentlike
     @commentlike = @comment.commentlikes.find(params[:id])
   end
-
 end
-

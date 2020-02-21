@@ -2,22 +2,22 @@
   <h1>The Wall</h1>
 </div>
 <% if alert %>
-      <div class="alert alert-danger">
-        <%= alert %>
-      </div>
-    <% end %>
- <% if notice %>
-    <div class="alert alert-success">
-    <%= notice %>
-    </div>
+  <div class="alert alert-danger">
+    <%= alert %>
+  </div>
 <% end %>
-  <h2 class="h3 mb-3 font-weight-normal">Add a post:</h2>
-  <%= form_with(model: [ current_user, current_user.posts.build ], local: true) do |form| %>
-    <%= form.text_area :message, class: 'form-control', required: true%>
-    <%= form.hidden_field :location_id, value: current_user.id %>
-    <br>
-    <%= form.submit 'Add post', class: 'btn btn-lg btn-primary' %>
-  <% end %>
+<% if notice %>
+  <div class="alert alert-success">
+    <%= notice %>
+  </div>
+<% end %>
+<h2 class="h3 mb-3 font-weight-normal">Add a post:</h2>
+<%= form_with(model: [ current_user, current_user.posts.build ], local: true) do |form| %>
+  <%= form.text_area :message, class: 'form-control', required: true%>
+  <%= form.hidden_field :location_id, value: current_user.id %>
+  <br>
+  <%= form.submit 'Add post', class: 'btn btn-lg btn-primary' %>
+<% end %>
 <% @posts.each do |post| %>
   <div class="container p-3 my-3 border shadow">
     <strong><%= link_to "#{post.user.username}", user_path(post.user), controller: 'users', style: "color: black;" %>:</strong><br>
@@ -26,42 +26,39 @@
     <%= link_to 'Delete', post_path(post),
     method: :delete %>
     <%= link_to 'Edit', edit_post_path(post) %>
-     <% pre_like = post.likes.find { |like| like.user_id == current_user.id}%>
-      <% if pre_like %>
+    <% pre_like = post.likes.find { |like| like.user_id == current_user.id}%>
+    <% if pre_like %>
       <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
-      <% else %>
-    <%= button_to 'Like', post_likes_path(post), method: :post%>
+    <% else %>
+      <%= button_to 'Like', post_likes_path(post), method: :post%>
     <% end %>
     <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
-  <div class='comment-container'>
-  <br>
-  <h2 class="h5 mb-3 font-weight-bold">Comments:</h2>
-  <% post.comments.each do |comment| %>
-  <% user = User.find(comment.user_id) %>
-  <strong><%= link_to "#{user.username}", user_path(user), controller: 'users', style: "color: black;" %>:</strong><br>
-      <%= simple_format(comment.body)%>
-      <%= comment.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
-      <%= link_to 'Delete comment', [comment.post, comment], method: :delete %>
-      <%= link_to 'Edit comment', edit_post_comment_path(post, comment) %>
-
-      <% pre_commentlike = comment.commentlikes.find { |commentlike| commentlike.user_id == current_user.id} %>
+    <div class='comment-container'>
+      <br>
+      <h2 class="h5 mb-3 font-weight-bold">Comments:</h2>
+      <% post.comments.each do |comment| %>
+        <% user = User.find(comment.user_id) %>
+        <strong><%= link_to "#{user.username}", user_path(user), controller: 'users', style: "color: black;" %>:</strong><br>
+        <%= simple_format(comment.body)%>
+        <%= comment.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
+        <%= link_to 'Delete comment', [comment.post, comment], method: :delete %>
+        <%= link_to 'Edit comment', edit_post_comment_path(post, comment) %>
+        <% pre_commentlike = comment.commentlikes.find { |commentlike| commentlike.user_id == current_user.id} %>
         <% if pre_commentlike %>
           <%= button_to 'Unlike Comment', comment_commentlike_path(comment, pre_commentlike), method: :delete %>
         <% else %>
           <%= button_to 'Like Comment', comment_commentlikes_path(comment), method: :post %>
         <% end %>
-      <%= comment.commentlikes.count%> <%= (comment.commentlikes.count) == 1 ? 'Like' : 'Likes' %>
-      
-      <br>
-      <br>
+        <%= comment.commentlikes.count%> <%= (comment.commentlikes.count) == 1 ? 'Like' : 'Likes' %>
+        <br>
+        <br>
       <% end %>
       <br>
-    <h2 class="h5 mb-3 font-weight-normal">Add a comment:</h2>
-    <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-      <%= form.text_area :body, class: 'form-control' %><br>
- 
-    <%= form.submit 'Add Comment',  class: 'btn btn-lg btn-primary' %>
-    <% end %>
-  </div>
+      <h2 class="h5 mb-3 font-weight-normal">Add a comment:</h2>
+      <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
+        <%= form.text_area :body, class: 'form-control' %><br>
+        <%= form.submit 'Add Comment',  class: 'btn btn-lg btn-primary' %>
+      <% end %>
+    </div>
   </div>
 <% end %>
