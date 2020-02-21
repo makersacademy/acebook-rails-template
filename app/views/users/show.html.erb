@@ -40,9 +40,9 @@
     <%= link_to 'Edit', edit_post_path(post), controller: 'posts'%>
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id}%>
       <% if pre_like %>
-      <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+      <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete, class: "btn btn-primary btn-sm" %>
       <% else %>
-    <%= button_to 'Like', post_likes_path(post), method: :post%>
+    <%= button_to 'Like', post_likes_path(post), method: :post, class: "btn btn-primary btn-sm"%>
     <% end %>
     <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
   <div class='comment-container'>
@@ -57,9 +57,9 @@
       <%= link_to 'Edit comment', edit_post_comment_path(post, comment) %>
       <% pre_commentlike = comment.commentlikes.find { |commentlike| commentlike.user_id == current_user.id} %>
         <% if pre_commentlike %>
-          <%= button_to 'Unlike Comment', comment_commentlike_path(comment, pre_commentlike), method: :delete %>
+          <%= button_to 'Unlike Comment', comment_commentlike_path(comment, pre_commentlike), method: :delete, class: "btn btn-primary btn-sm" %>
         <% else %>
-          <%= button_to 'Like Comment', comment_commentlikes_path(comment), method: :post %>
+          <%= button_to 'Like Comment', comment_commentlikes_path(comment), method: :post, class: "btn btn-primary btn-sm" %>
         <% end %>
       <%= comment.commentlikes.count%> <%= (comment.commentlikes.count) == 1 ? 'Like' : 'Likes' %>
       <br>
