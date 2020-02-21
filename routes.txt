@@ -1,0 +1,33 @@
+        Prefix Verb   URI Pattern                              Controller#Action
+   posts_index GET    /posts/index(.:format)                   posts#index
+               GET    /posts/:id/edit(.:format)                posts#edit
+        signup GET    /signup(.:format)                        users#new
+         posts GET    /posts(.:format)                         posts#index
+               POST   /posts(.:format)                         posts#create
+      new_post GET    /posts/new(.:format)                     posts#new
+     edit_post GET    /posts/:id/edit(.:format)                posts#edit
+          post GET    /posts/:id(.:format)                     posts#show
+               PATCH  /posts/:id(.:format)                     posts#update
+               PUT    /posts/:id(.:format)                     posts#update
+               DELETE /posts/:id(.:format)                     posts#destroy
+    user_posts GET    /users/:user_id/posts(.:format)          posts#index
+               POST   /users/:user_id/posts(.:format)          posts#create
+ new_user_post GET    /users/:user_id/posts/new(.:format)      posts#new
+edit_user_post GET    /users/:user_id/posts/:id/edit(.:format) posts#edit
+     user_post GET    /users/:user_id/posts/:id(.:format)      posts#show
+               PATCH  /users/:user_id/posts/:id(.:format)      posts#update
+               PUT    /users/:user_id/posts/:id(.:format)      posts#update
+               DELETE /users/:user_id/posts/:id(.:format)      posts#destroy
+         users GET    /users(.:format)                         users#index
+               POST   /users(.:format)                         users#create
+      new_user GET    /users/new(.:format)                     users#new
+     edit_user GET    /users/:id/edit(.:format)                users#edit
+          user GET    /users/:id(.:format)                     users#show
+               PATCH  /users/:id(.:format)                     users#update
+               PUT    /users/:id(.:format)                     users#update
+               DELETE /users/:id(.:format)                     users#destroy
+               GET    /posts(.:format)                         posts#index
+         login GET    /login(.:format)                         sessions#login
+               POST   /login(.:format)                         sessions#login_attempt
+        logout GET    /logout(.:format)                        sessions#logout
+          root GET    /                                        sessions#login

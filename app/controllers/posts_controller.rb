@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(message: params['post']['message'], users_id: @current_user.id)
+    @post = Post.create(post_params)
     redirect_to posts_url
   end
 
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def index
     # @current_user = session[:users_id]
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.where('post_type = ?', 'public').order(created_at: :desc)
   end
 
   def destroy
@@ -40,7 +40,12 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params[:post].permit(:message, :users_id)
+    defaults = { users_id: @current_user.id }
+    params.require(:post).permit(:message,
+                                 :users_id,
+                                 :recipient_id,
+                                 :post_type)
+          .reverse_merge(defaults)
   end
 
   def update_over_time_limit

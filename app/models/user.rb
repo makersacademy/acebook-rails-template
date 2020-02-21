@@ -5,4 +5,8 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :email, presence: true, uniqueness: true, format: EMAIL_REGEX
+
+  def self.search(search)
+    @users = search ? User.where('email LIKE ?', "%#{search}%") : User.all
+  end
 end
