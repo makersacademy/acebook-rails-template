@@ -45,7 +45,10 @@ RSpec.describe FriendsController, type: :controller do
   before do
     user = User.create!(email: 'test@abc.com', password: 'password')
     login(user)
-    Post.create!(users_id: user.id, message: 'test message', post_type: 'public', recipient_id: user.id)
+    Post.create!(users_id: user.id,
+                 message: 'test message',
+                 post_type: 'public',
+                 recipient_id: user.id)
   end
 
   describe 'GET #index' do
@@ -68,7 +71,10 @@ RSpec.describe FriendsController, type: :controller do
     it 'returns a success response' do
       user = User.create!(email: 'test2@abc.com', password: 'password')
       login(user)
-      Post.create!(users_id: user.id, message: 'test message', post_type: 'public', recipient_id: user.id)
+      Post.create!(users_id: user.id,
+                   message: 'test message',
+                   post_type: 'public',
+                   recipient_id: user.id)
       get :new, params: { format: user.id }, session: valid_session
       expect(response).to be_success
     end
