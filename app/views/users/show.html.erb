@@ -35,14 +35,14 @@
     <strong><%= link_to "#{post.user.username}", user_path(post.user), controller: 'users', style: "color: black;" %>:</strong><br>
     <%= simple_format(post.message) %>
     <%= post.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
-    <%= link_to 'Delete', user_path(post),
+    <%= link_to '🗑', user_path(post),
     method: :delete %>
-    <%= link_to 'Edit', edit_post_path(post), controller: 'posts'%>
+    <%= link_to '♻️', edit_post_path(post), controller: 'posts'%>
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id}%>
       <% if pre_like %>
-      <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete, class: "btn btn-primary btn-sm" %>
+      <%= link_to '💔', post_like_path(post, pre_like), method: :delete%>
       <% else %>
-    <%= button_to 'Like', post_likes_path(post), method: :post, class: "btn btn-primary btn-sm"%>
+    <%= link_to '❤️', post_likes_path(post), method: :post%>
     <% end %>
     <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
   <div class='comment-container'>
@@ -53,13 +53,13 @@
   <strong><%= link_to "#{user.username}", user_path(user), controller: 'users', style: "color: black;" %>:</strong><br>
       <%= simple_format(comment.body)%>
       <%= comment.created_at.strftime("%H:%M:%S - %d/%m/%Y") %>
-      <%= link_to 'Delete comment', [comment.post, comment], method: :delete %>
-      <%= link_to 'Edit comment', edit_post_comment_path(post, comment) %>
+      <%= link_to '🗑', [comment.post, comment], method: :delete %>
+      <%= link_to '♻️', edit_post_comment_path(post, comment) %>
       <% pre_commentlike = comment.commentlikes.find { |commentlike| commentlike.user_id == current_user.id} %>
         <% if pre_commentlike %>
-          <%= button_to 'Unlike Comment', comment_commentlike_path(comment, pre_commentlike), method: :delete, class: "btn btn-primary btn-sm" %>
+     <%= link_to '💔' , comment_commentlike_path(comment, pre_commentlike), method: :delete %>
         <% else %>
-          <%= button_to 'Like Comment', comment_commentlikes_path(comment), method: :post, class: "btn btn-primary btn-sm" %>
+        <%= link_to '❤️', comment_commentlikes_path(comment), method: :post%>
         <% end %>
       <%= comment.commentlikes.count%> <%= (comment.commentlikes.count) == 1 ? 'Like' : 'Likes' %>
       <br>
