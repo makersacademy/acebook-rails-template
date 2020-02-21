@@ -13,6 +13,7 @@ feature 'User can update a post' do
 
   scenario 'user receives an error if trying to update another users post' do
     sign_up
+    click_link 'Home'
     create_post
     click_link 'Sign Out'
     sign_up_two

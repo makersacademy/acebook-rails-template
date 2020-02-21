@@ -3,6 +3,7 @@
 feature 'A user cannot delete another users post' do
   scenario 'from the wall - it gives the user a prompt' do
     sign_up
+    click_link 'Home'
     create_post
     click_link 'Sign Out'
     sign_up_two
@@ -14,6 +15,8 @@ feature 'A user cannot delete another users post' do
 
   scenario 'from the user homepage - it gives the user a prompt' do
     sign_up
+    create_post
+    click_link 'Home'
     create_post
     click_link 'Sign Out'
     sign_up_two

@@ -3,6 +3,7 @@
 feature 'user can like a comment' do
   scenario 'from another users homepage' do
     sign_up
+    create_post
     click_link 'Home'
     create_post
     click_link 'Sign Out'

@@ -3,6 +3,7 @@
 feature 'posts are in reverse chronological order' do
   scenario 'user see the post in a reverse chronological order on posts Homepage' do
     sign_up
+    click_link 'Home'
     fill_in 'post[message]', with: 'Post 1'
     click_button 'Add post'
     fill_in 'post[message]', with: 'Post 2'

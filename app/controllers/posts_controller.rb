@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   def show; end
 
   def index
-    @posts = Post.where('location_id = user_id').order(created_at: :desc)
+    @posts = Post.where('location_id IS NULL').order(created_at: :desc)
     session[:url] = request.original_fullpath
   end
 

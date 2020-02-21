@@ -3,6 +3,7 @@
 feature 'users can create a friendship' do
   scenario 'from the users page' do
     sign_up
+    click_link 'Home'
     create_post
     click_link 'Sign Out'
     sign_up_two
