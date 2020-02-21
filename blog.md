@@ -39,11 +39,12 @@ User comments were quickly sorted out introducing a many to one user relationshi
 We then improved our test coverage and introduced a custom 404 page for user not found.
 Comments edit and delete were tackled by the team and almost finished.
 On a branch we now display the username of the user in the url, implementing this with the minimum amount of change to the code has been a challenging feat.
-We ended up overwriting one of the ActiveRecords method too accept different kind of input while returning the same results.
+We ended up overwriting one of the ActiveRecords method to accept different kind of input while returning the same results.
 Once comments are deployed we will integrate this change to the master.
 
 # Wednesday 19th February 2020 (Asia)
 
+The day started with half of us implementing the chat feature and the others working on an update username. It all went smoothly and we had both these features working by lunchtime. After a quick game of team Table Tennis we started the afternoon, switching up the pairs and starting on adding friends and adding likes to comments. Both groups hit some bumps but were able to overcome these through a bit of mobbing and googling and the adding friends feature was added. After a few attempts at adding the likes to comments we decided to call it a day and have a look at it with fresh eyes in the morning.
 
 # Thursday 20th February 2020 (Jack)
 
