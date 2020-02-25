@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <p style="font-size:45px">Acedbook</p>
+  <h2>Welcome to Acebook</h2>
+</div>
+<%= form_with scope: :session, url: sessions_path, local: true do %>
+  <%= label :email, "Email" %>
+  <%= email_field(:user, :address) %>
+  <%= label :password, "Password" %>
+  <%= password_field_tag(:password) %>
+  <%= submit_tag "Log In" %>
+<% end %>
+
+<div>
+<%= form_with do %>
+  <%= button_to "Sign Up" %>
+<% end %>
+</div>

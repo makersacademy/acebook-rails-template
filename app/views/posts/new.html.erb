@@ -1,6 +1,15 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
+<%= render 'layouts/navbar' %>
 
-  <%= form.submit "Submit" %>
+<%= form_with model: @post, local: true do |form| %>
+  
+  <p>
+    <%= form.label :message %><br>
+    <%= form.text_area :message %><br>
+  </p>
+
+  <p>
+    <%= form.submit "Submit" %>
+  </p>
 <% end %>
+
+

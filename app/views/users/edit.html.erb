@@ -1,0 +1,42 @@
+<%= render 'layouts/navbar' %>
+
+<h3 class="center">Update Profile</h3>
+<br>
+<%= form_for @user, url: profile_path(@user), action: :update, method: :post, local: true do |f| %>
+
+
+  <div>
+      <div class="form-group col-md-4 col-md-offset-4">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %></div>
+      </div>
+      <div class="form-group col-md-4 col-md-offset-4">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %></div>
+      </div>
+      <div class="form-group col-md-4 col-md-offset-4">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+      </div>
+      <div class="form-group col-md-4 col-md-offset-4">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+      </div>
+      <div class="form-group col-md-4 col-md-offset-4">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
+      </div>
+      <div class="form-group col-md-4 col-md-offset-4">
+        <%= f.label "Update profile photo" %>
+        <%= f.file_field :profile_photo %> 
+      </div>
+
+      <div class="form-group col-md-4 col-md-offset-4">
+        <%= f.submit "Confirm Update", class: "btn btn-primary" %>
+      </div>
+    </div>
+<% end %>
+
+<div class="form-group col-md-4 col-md-offset-4">
+  <%= link_to 'Back', user_path(current_user) %>
+</div>
