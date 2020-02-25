@@ -13,3 +13,216 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,800,800i,900,900i&display=swap');
+
+body {
+  background-color: lavender;
+  font-family: 'Poppins', sans-serif;
+}
+
+#main-nav {
+  margin: 20px;
+}
+
+.ferret-image {
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  margin-top: 122px;
+}
+
+.acebook {
+  font-size: 70px;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: fixed;
+  background-color: #F2F7FE;
+  width: 100%;
+  top: 4px;
+  left: -2px;
+  z-index: 1;
+  background: inherit;
+  overflow: hidden;
+}
+
+#navbar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  box-shadow: inset 0 20px 200px rgba(255, 255, 255, 0.5);
+  filter: blur(30px);
+  margin: -20px;
+  z-index: -1;
+}
+
+#nav-logo {
+  height: 59px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 433px;
+  padding-right: 23px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.panel-heading {
+  background-color: #343A40;
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: white;
+}
+
+.panel {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.panel-default {
+  border-color: #ddd;
+}
+
+.panel-body {
+  padding: 15px;
+  background-color: white;
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 35px;
+  color: inherit;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open>.dropdown-toggle.btn-default {
+  background-color: #343A40;
+  border-color: #DDDDDD;
+  color: white;
+  /*set the color you want here*/
+}
+
+.form-control {
+  background-color: lavender;
+}
+
+.post-link {
+  text-decoration: none;
+  color: black;
+}
+
+.comment-avatar img {
+  width: 40px;
+  margin-right: 5px;
+}
+
+.comment-text {
+  background-color: #DDDDDD;
+  border-radius: 17px;
+  padding-left: 19px;
+  padding-top: 5px;
+  padding-bottom: 4px;
+}
+
+.vote-pic {
+  width: 40px;
+}
+
+.custom-file {
+  width: 27%
+}
+
+.upvote {
+  color: green
+}
+
+.downvote {
+  color: red
+}
+
+.comment {
+  width: 90%
+}
+
+.prof_image {
+  width: 400px;
+  border-radius: 50%;
+  text-align: center;
+  border: 5px solid black;
+}
+
+.hero_image {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.avatar-link {
+  padding-left: 22px;
+}
+
+.wall-avatar {
+  border-radius: 20%
+}
+
+#button {
+  display: inline-block;
+  background-color: #343A40;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s,
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}

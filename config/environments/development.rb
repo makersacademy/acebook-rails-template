@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -31,12 +33,17 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # Defines default URL options in dev environment
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
+
+  config.active_storage.service = :local
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
