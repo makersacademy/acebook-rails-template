@@ -1,0 +1,31 @@
+env:
+  global:
+  - CC_TEST_REPORTER_ID=449a24264feeaf228f1814df231e18bfd169910b8d0b10df65996431d37cc625
+language: ruby
+rvm:
+- 2.5
+services:
+- postgresql
+before_script:
+- bundle exec rails db:create
+- bundle exec rails db:migrate RAILS_ENV=test
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
+script:
+- bundle exec rspec
+- bundle exec rubocop
+after_script:
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  app: acebook-luckerberg
+  on:
+    repo: Hyan18/acebook-luckerberg
+  run:
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
+  api_key:
+    secure: LD7Ht0lhRuMBW+1EsdhCC0tdlrOr7Y8dfXo44ddJbX7bM29n4e3kg6uY0Rhye/90LnSonoQcrgeCnIKM3uFlZx8bU2RV9NnW5WdEd1CHJenM/K3bh42xkxh5wdWvOeDHjm5rO9RZfL6b956JdUEI660hXCnx5EwMFikm7jFfcxmhH7LrQxbxiRwZu5oTAtDL36Hiub9FiBG//RhiVnWfS5mePAh2w9lbHUeftyYQXql17ovN/+zjZfkPijvp2K9JQe0HAIa8z2T6/AdA5ndwQpDR87oBz1lO5yrLtNo8E+QuwDlqk1Xjg4yiqkTGFrbXLtCm9kHd6JkYkCzgyBIedVT0LdE+btKpTocxeiOJkCPR6Zy1g6EH1trpcYbru0/je+vUmsbAodR6kJWJ53DwbzLYxfNjaogUSrCsp1A+xFd9n97koO3IULYWYJ7zpS6ZwsM4kQgWT+zhImLEc0maJ6ePhHm2QS89oJui2dULecFIpdE5F51VXgPpAWO++MPyJqAATpsdtRW4zwvTJZddj6Vub4k3MdwtJDNjnNkTZJD4kSfSMaEEW+jzmjdcwK8mFXYylv9NgsnnOjS/d+dwPVthD9kZkwb/ujXYDXSGIvShE33doqwQ0QSAo70n0C2cIDqk2zCyN+IEnBQ+ckyeZN8aG2b0JtIw2kBfEucRHA8=

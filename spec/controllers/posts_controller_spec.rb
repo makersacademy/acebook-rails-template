@@ -21,9 +21,16 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "GET /" do
-    it "responds with 200" do
+    it "responds with 302 because it's redirected to the login page" do
       get :index
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(302)
     end
+  end
+
+  it "contains all the posts objects" do
+    post :create, params: { post: { message: "First posted messege!"  } }
+    post :create, params: { post: { message: "Second posted messege!" } }
+    expect(Post.all[0].message).to eq("First posted messege!")
+    expect(Post.all[1].message).to eq("Second posted messege!")
   end
 end
