@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :controller do
   describe "GET /new " do
     it "responds with 200" do
+      new_user_sign_in
       get :new
       expect(response).to have_http_status(200)
     end
@@ -10,11 +11,13 @@ RSpec.describe PostsController, type: :controller do
 
   describe "POST /" do
     it "responds with 200" do
+      new_user_sign_in
       post :create, params: { post: { message: "Hello, world!" } }
       expect(response).to redirect_to(posts_url)
     end
 
     it "creates a post" do
+      new_user_sign_in
       post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be
     end
@@ -23,7 +26,8 @@ RSpec.describe PostsController, type: :controller do
   describe "GET /" do
     it "responds with 200" do
       get :index
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(302)
+      #changed this test to have status 302 not 200 as we do actually want to redirect in this instance
     end
   end
 end
