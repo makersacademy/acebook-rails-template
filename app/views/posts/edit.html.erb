@@ -1,6 +1,8 @@
+Edit post
+
 <%= form_for @post do |form| %>
   <%= form.label :content %>
-  <%= form.text_area :content %>
-
+  <%= form.text_field :content %>
+  
   <%= form.submit "Submit" %>
 <% end %>

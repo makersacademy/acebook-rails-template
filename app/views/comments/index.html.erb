@@ -1,0 +1,18 @@
+
+<h1>Listing Comments</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+
+  <% @comments.each do |comment| %>
+    <tr>
+      <td><%= comment.title %></td>
+      <td><%= comment.text %></td>
+      <td><%= link_to 'Show', comment_path(comment) %></td>
+    </tr>
+  <% end %>
+</table>
