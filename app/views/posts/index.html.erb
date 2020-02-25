@@ -1,7 +1,14 @@
+
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <div class="container">
+<p><%= (post.created_at).strftime("%l:%M%P %-d-%B-%Y") %></p>
+<p class="post" ><%= post.message %> (<%= post.user.email %>)</p>
+<% if current_user.id == post.user.id %>
+<%= link_to 'Edit Post', edit_post_path(post) %>
+<%= link_to 'Delete', post, method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>
+  </div>
+
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<center><%= button_to "New post", new_post_path, :method => :get %></center>
