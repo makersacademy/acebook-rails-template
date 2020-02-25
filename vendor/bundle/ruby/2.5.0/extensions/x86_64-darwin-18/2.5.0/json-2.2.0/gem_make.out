@@ -1,0 +1,13 @@
+current directory: /Users/student/Projects/acebook-Stay_on_Track/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
+/Users/student/.rvm/rubies/ruby-2.5.0/bin/ruby -I /Users/student/.rvm/rubies/ruby-2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190820-24280-154oyuo.rb extconf.rb
+creating Makefile
+
+current directory: /Users/student/Projects/acebook-Stay_on_Track/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/student/Projects/acebook-Stay_on_Track/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/student/Projects/acebook-Stay_on_Track/vendor/bundle/ruby/2.5.0/gems/json-2.2.0/ext/json
+make "DESTDIR=" install
