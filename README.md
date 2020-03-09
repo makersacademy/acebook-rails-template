@@ -1,4 +1,10 @@
-# AceBook
+# AceBook 🐱🚪
+
+Team Catflap is made up of these crazy cats:
+- Haydon
+- Emily
+- Ellie
+- Jason 
 
 REQUIRED INSTRUCTIONS:
 
@@ -7,7 +13,7 @@ the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+2. The card wall is here: https://trello.com/b/MYsYPyed/acebook-catflap
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
