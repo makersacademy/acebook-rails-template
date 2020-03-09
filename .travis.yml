@@ -2,6 +2,5 @@ language: ruby
 rvm: 
   - 2.5
 
-script:
-  - bundle exec rake build
-  - bundle exec rake builddoc
+env:
+  - RAILS_ENV='test'
