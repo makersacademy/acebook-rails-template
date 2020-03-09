@@ -1,10 +1,10 @@
 # AceBook 🐱🚪
 
 Team Catflap is made up of these crazy cats:
-- Haydon
-- Emily
-- Ellie
-- Jason 
+- [Haydon](https://github.com/Kefuri)
+- [Emily](https://github.com/EWright212)
+- [Ellie](https://github.com/EllieRichardsonJones)
+- [Jason](https://github.com/jasylwong) 
 
 REQUIRED INSTRUCTIONS:
 
