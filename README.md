@@ -1,6 +1,6 @@
 ### [Makers Academy](http://www.makersacademy.com) - Week 8 group project
 
-Contibutors: [Josh Blumberg](https://github.com/jlblumberg) | [Chris Eadie](https://github.com/saidbyced) | [Richard Pattinson](https://github.com/richardpattinson)
+Contributors: [Josh Blumberg](https://github.com/jlblumberg) | [Peter Dean](https://github.com/Peter2-71828) | [Joe Ellingworth](https://github.com/blu3skies) | [Dafna Libman](https://github.com/Dlibmanw) | [Liz Daly](https://github.com/lookupdaily) | [Jack Overton](https://github.com/Ovy95)
 __________________________________________________________________________________________________________________
 
 [Outline](#Outline) | [Specifications](#Specifications) | [User Stories](#User_Stories) | [Installation Instructions](#Installation_Instructions) | [Tech stack](#Tech_stack) | [Examples](#Examples) | [Future work](#Future_work)
@@ -15,14 +15,14 @@ Specifications and original wireframe mockup [here](https://github.com/makersaca
 
 ## User Stories
 
-We derived the following user stories from the specifications and test drove them into creation. 
+We derived the following user stories from the specifications and test drove them into creation.
 
 ```
 As a user,
 so I can list a space,
 I want to sign up with an email and a password.
 
-As a signed-up user, 
+As a signed-up user,
 so I can list a space or book a space,
 I want to be able to sign in.
 
@@ -38,7 +38,7 @@ As a user with a listed space,
 so I can make my listings more specific,
 I want to be able to add a short description and price per night.
 
-As a user, 
+As a user,
 so I can choose where I want to stay,
 I want to see a list of all available spaces.
 
@@ -46,16 +46,16 @@ As a user,
 so I can see more details on a space,
 I want to see a spaces’ details.
 
-As a user, 
+As a user,
 so I can manage my spaces,
 I want to see a list of all my spaces.
 
-As a user, 
-so that I can log out, 
+As a user,
+so that I can log out,
 I want to have a log-out button that will do so.
 
-As a user, 
-so that I can’t do illegal things, 
+As a user,
+so that I can’t do illegal things,
 I want to only be able to visit the site's pages if i'm logged in.
 
 As a user who wants to book,
@@ -70,13 +70,13 @@ As a user with a listing,
 so that I don’t try to fit too many people on my property,
 I want only allow people to book specified days.
 
-As a user looking to book, 
-so that I can proceed with the booking, 
+As a user looking to book,
+so that I can proceed with the booking,
 I want to be able to submit a booking request.
 
-As a user who has made a booking, 
-so that I can keep track of what I’ve done, 
-I want to see what bookings I’ve requested. 
+As a user who has made a booking,
+so that I can keep track of what I’ve done,
+I want to see what bookings I’ve requested.
 
 ```
 
@@ -136,7 +136,7 @@ You can click on more details to view all the details of a space and to submit a
 
 ![More-details](https://i.imgur.com/1j3vdbM.png)
 
-It will only let you book if the space is available: 
+It will only let you book if the space is available:
 
 ![Warning](https://i.imgur.com/J0Gw0WM.png)
 
