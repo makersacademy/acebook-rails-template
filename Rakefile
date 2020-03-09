@@ -9,5 +9,4 @@ desc "builds the database, migrates and populates"
 task :build_db do
   Rake::Task["db:create"].invoke
   Rake::Task["db:migrate"].invoke
-  Rake::Task["db:seed"].invoke
 end
