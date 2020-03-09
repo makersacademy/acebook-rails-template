@@ -1,0 +1,22 @@
+language: ruby
+rvm:
+  - 2.5
+
+
+services:
+  - postgresql
+
+
+
+before_script:
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+
+#   - psql -U postgres -c 'CREATE DATABASE peep_manager_test;'
+#   - psql -d peep_manager_test -U postgres -f db/migrations/03_create_tables.sql
+
+script:
+  - bundle
+  - bundle exec rspec
+  - bundle exec rubocop
+
