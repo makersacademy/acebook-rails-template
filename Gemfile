@@ -39,7 +39,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
-
+  gem 'travis'
 end
 
 group :development do
