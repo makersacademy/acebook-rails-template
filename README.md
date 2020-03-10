@@ -1,4 +1,7 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Build Status](https://travis-ci.org/davmcgregor/acebook-OfftheRails
+.svg?branch=master)](https://travis-ci.org/davmcgregor/acebook-OfftheRails)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f5bf98cd33614e91f9a0/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f5bf98cd33614e91f9a0/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
 
 # AceBook
 
