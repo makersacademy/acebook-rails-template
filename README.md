@@ -1,6 +1,8 @@
 # AceBook 🐱🚪
 
-#### Technologies: Ruby, Ruby on Rails, Heroku App, JavaScript, ActiveRecord, Postgresql, HTML, CSS, Rubocop, ESLint
+[![Build Status](https://travis-ci.org/Kefuri/acebook-catflap.svg?branch=master)](https://travis-ci.org/Kefuri/acebook-catflap)
+
+#### Technologies: Ruby, Ruby on Rails, Heroku App, JavaScript, ActiveRecord, Postgresql, HTML, CSS, Rubocop, ESLint, TravisCI
 
 [Task](#Task) | [Collaborators](#Collaborators) | [Installation Instructions](#Installation) | [Headline Specifications](#Headline_Specifications) |
 
