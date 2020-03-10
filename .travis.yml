@@ -1,6 +1,4 @@
 language: ruby
- - 2.5.0
-Cache: bundler
 
 services: 
 - postgreSQL
