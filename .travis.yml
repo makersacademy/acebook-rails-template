@@ -1,6 +1,10 @@
 language: ruby
 rvm: 
   - 2.5
-
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rake db:migrate RACK_ENV=test
+- bundle exec rake assets:precompile
 env:
   - RAILS_ENV='test'
