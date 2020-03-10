@@ -1,10 +1,11 @@
 language: ruby
+
 rvm: 
   - 2.5
+
 services: 
   - postgresql
-# env:
-#   - RAILS_ENV='test'
+
 before_script:
 - bundle exec rails db:create
 - bundle exec rails db:migrate
