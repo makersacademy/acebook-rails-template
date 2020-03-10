@@ -9,7 +9,7 @@ services:
 before install:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-darwin-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+  # - ./cc-test-reporter before-build
 
 #Set up databases before script
 before_script:
