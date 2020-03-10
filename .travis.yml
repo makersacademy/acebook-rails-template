@@ -1,9 +1,20 @@
 language: ruby
+
 rvm: 
   - 2.5
 
-env:
-  - RAILS_ENV='test'
+services: 
+  - postgresql
+
+before_script:
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+
+script: 
+  - bundle
+  - bundle exec rspec
+  - bundle exec rubocop
+
 deploy:
   provider: heroku
   api_key:
