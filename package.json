@@ -1,5 +1,13 @@
 {
   "name": "acebook",
+  "version": "1.0.0",
+  "description": "acebook-chal-engineering-challenge",
   "private": true,
-  "dependencies": {}
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davmcgregor/acebook-off-the-rails/"
+  },
+  "author": "David McGregor",
+  "license": "ISC",
+  "homepage": "https://github.com/davmcgregor/acebook-off-the-rails/",
 }
