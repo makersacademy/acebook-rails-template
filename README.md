@@ -1,5 +1,7 @@
 # AceBook
 
+Collaborators: Chris (saidbyced)
+
 help me travis
 
 REQUIRED INSTRUCTIONS:
