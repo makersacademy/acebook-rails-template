@@ -1,26 +1,55 @@
-# AceBook
+### [Makers Academy](http://www.makersacademy.com) - Week 8 group project
 
-REQUIRED INSTRUCTIONS:
+Contributors: [Josh Blumberg](https://github.com/jlblumberg) | [Peter Dean](https://github.com/Peter2-71828) | [Joe Ellingworth](https://github.com/blu3skies) | [Dafna Libman](https://github.com/Dlibmanw) | [Liz Daly](https://github.com/lookupdaily) | [Jack Overton](https://github.com/Ovy95)
+__________________________________________________________________________________________________________________
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+[Outline](#Outline) | [Specifications](#Specifications) | [User Stories](#User_Stories) | [Installation Instructions](#Installation_Instructions) | [Tech stack](#Tech_stack) | [Examples](#Examples) | [Future work](#Future_work)
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+## <a name="Outline">Outline</a>
 
-2. The card wall is here: <please update>
+Work in a team of six to build a functional clone of Facebook.
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+## Specifications
 
-## Quickstart
+The project outline is [here](https://github.com/makersacademy/course/tree/master/engineering_projects/rails).
 
-First, clone this repository. Then:
+## User Stories
 
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
+## <a name="Installation_Instructions">Installation Instructions</a>
 
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+### Prerequisite setup:
+- Clone this repo to your local machine and cd into it
+- Run the command `gem install bundle` (if you don't have bundle already) and then `bundle install`
+
+### Database setup:
+
+To set up the databases, run the following commands:
+
 ```
+bin/rails db:create
+bin/rails db:migrate
+```
+
+### Running the site
+- Run the server with command `bin/rails server`
+- Visit `localhost:3000` to use the site
+
+### Testing
+- Tests can be run using Rspec. Run the command `rspec`
+
+## <a name="Tech_stack">Tech stack</a>
+
+Front-end:
+- HTML & CSS
+
+Back-end:
+- Ruby
+- Ruby On Rails
+
+Testing:
+- RSpec
+- SimpleCov
+
+## <a name="Examples">Examples</a>
+
+## <a name="Future_work">Future work</a>
