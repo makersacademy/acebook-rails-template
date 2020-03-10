@@ -35,6 +35,6 @@ after_script:
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=[fbd92c09a20442b8c75a4597cce05c69aede2bc91a584717fb56a678d6ab515b]
+    - CC_TEST_REPORTER_ID=fbd92c09a20442b8c75a4597cce05c69aede2bc91a584717fb56a678d6ab515b
     - CF_RUN_PERM_SPECS=false
 
