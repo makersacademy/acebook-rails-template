@@ -1,4 +1,7 @@
 require 'rails_helper'
+require 'web_helpers'
+require 'capybara'
+
 
 RSpec.describe PostsController, type: :controller do
   describe "GET /new " do
