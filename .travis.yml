@@ -6,6 +6,10 @@ rvm:
 services:
   - postgresql
 
+before install:
+  before_install:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
 
 #Set up databases before script
 before_script:
