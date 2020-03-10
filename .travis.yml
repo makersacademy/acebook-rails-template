@@ -1,4 +1,15 @@
 language: ruby
 
 rvm:
-  - 2.5
+  - 2.7.0
+
+services:
+- postgresql
+
+before_script:
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+
+script:
+- bundle exec rspec
+- bundle exec rubocop -DESP
