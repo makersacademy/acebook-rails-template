@@ -9,6 +9,7 @@ services:
 before install:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 #Set up databases before script
 before_script:
@@ -30,4 +31,9 @@ after_script:
   - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info  # Format frontend coverage
   - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2                  # Sum both coverage parts into coverage/codeclimate.json
   - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi  # Upload coverage/codeclimate.json
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=[fbd92c09a20442b8c75a4597cce05c69aede2bc91a584717fb56a678d6ab515b]
+    - CF_RUN_PERM_SPECS=false
 
