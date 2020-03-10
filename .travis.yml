@@ -12,3 +12,5 @@ before_script:
 
 script: 
   - bundle
+  - bundle exec rspec
+  - bundle exec rubocop
