@@ -1,6 +1,7 @@
 # AceBook 🐱🚪
 
-[![Build Status](https://travis-ci.org/Kefuri/acebook-catflap.svg?branch=master)](https://travis-ci.org/Kefuri/acebook-catflap)
+[![Build Status](https://travis-ci.org/Kefuri/acebook-catflap.svg?branch=master)](https://travis-ci.org/Kefuri/acebook-catflap) 
+[![Maintainability](https://api.codeclimate.com/v1/badges/403805e02ed7553d09a4/maintainability)](https://codeclimate.com/github/Kefuri/acebook-catflap/maintainability)
 
 #### Technologies: Ruby, Ruby on Rails, Heroku App, JavaScript, ActiveRecord, Postgresql, HTML, CSS, Rubocop, ESLint, TravisCI
 
