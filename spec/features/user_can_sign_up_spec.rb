@@ -2,6 +2,11 @@ require 'rails_helper'
 
 RSpec.feature "Sign up", type: :feature do
 
+  scenario "Non-signed up user can't visit any page other than sign_in" do
+    visit('/posts')
+    expect(current_path).to eq('/users/sign_in')
+  end
+  
   scenario 'User can sign up' do
     visit('/users/sign_up')
     fill_in "user_email", with: "test@example.com"
