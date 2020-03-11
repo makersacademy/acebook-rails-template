@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-10T17:54:27+00:00">2020-03-10T17:54:27+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-11T09:30:36+00:00">2020-03-11T09:30:36+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.3
+         1.25
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>37</b> relevant lines,
-    <span class="green"><b>37</b> lines covered</span> and
+    <b>44</b> relevant lines,
+    <span class="green"><b>44</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -106,9 +106,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#cbbe493a591da022332019f37a1f6426bd1423be" class="src_link" title="spec/features/user_can_sign_up_spec.rb">spec/features/user_can_sign_up_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">9</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">16</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -546,8 +546,8 @@
     
 
     <div class="t-line-summary">
-      <b>9</b> relevant lines.
-      <span class="green"><b>9</b> lines covered</span> and
+      <b>16</b> relevant lines.
+      <span class="green"><b>16</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -592,13 +592,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="4">
+            
             
 
             
 
-            <code class="ruby">  scenario &#39;User can sign up&#39; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -609,7 +609,7 @@
 
             
 
-            <code class="ruby">    visit(&#39;/users/sign_up&#39;)</code>
+            <code class="ruby">  scenario &#39;User can sign up&#39; do</code>
           </li>
         </div>
       
@@ -620,7 +620,7 @@
 
             
 
-            <code class="ruby">    fill_in &quot;user_email&quot;, with: &quot;test@example.com&quot;</code>
+            <code class="ruby">    visit(&#39;/users/sign_up&#39;)</code>
           </li>
         </div>
       
@@ -631,7 +631,7 @@
 
             
 
-            <code class="ruby">    fill_in &quot;user_password&quot;, with: &quot;example&quot;</code>
+            <code class="ruby">    fill_in &quot;user_email&quot;, with: &quot;test@example.com&quot;</code>
           </li>
         </div>
       
@@ -642,7 +642,7 @@
 
             
 
-            <code class="ruby">    fill_in &quot;user_password_confirmation&quot;, with: &quot;example&quot;</code>
+            <code class="ruby">    fill_in &quot;user_password&quot;, with: &quot;example&quot;</code>
           </li>
         </div>
       
@@ -653,7 +653,7 @@
 
             
 
-            <code class="ruby">    click_button(&quot;Sign up&quot;)</code>
+            <code class="ruby">    fill_in &quot;user_password_confirmation&quot;, with: &quot;example&quot;</code>
           </li>
         </div>
       
@@ -664,12 +664,23 @@
 
             
 
+            <code class="ruby">    click_button(&quot;Sign up&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">    expect(current_path).to eq(&#39;/&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -680,7 +691,117 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  scenario &quot;User can&#39;t sign up with something other than an email address&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    visit(&#39;/users/sign_up&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    fill_in &quot;user_email&quot;, with: &quot;testexample.com&quot; # invalid, not am email</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    fill_in &quot;user_password&quot;, with: &quot;example&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    fill_in &quot;user_password_confirmation&quot;, with: &quot;example&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="19">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    click_button(&quot;Sign up&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;Email is invalid&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
             
             
 
