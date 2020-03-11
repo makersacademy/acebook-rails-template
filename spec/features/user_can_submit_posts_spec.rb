@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
-    visit("/posts") # should redirect to sign_in
-    click_link("Sign up")
+    visit("/posts") # all pages redirect to sign_in b/c user isn't signed up
+    click_link("Sign up") # go to sign_up
     fill_in "user_email", with: "test@example.com"
     fill_in "user_password", with: "example"
     fill_in "user_password_confirmation", with: "example"
