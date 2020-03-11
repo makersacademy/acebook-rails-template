@@ -4,7 +4,7 @@ rvm:
 
 env:
   global:
-    - CC_TEST_REPORTER_ID=fbd92c09a20442b8c75a4597cce05c69aede2bc91a584717fb56a678d6ab515b
+    - CC_TEST_REPORTER_ID=a3bcf45568aae3bfeb4394dfd199730402aaf53ebbf211c02fd7fea2b03983ec
 
 #List of services in use for the project
 services:
