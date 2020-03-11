@@ -2,10 +2,18 @@ language: ruby
 rvm:
   - 2.5
 
+env:
+  global:
+    - CC_TEST_REPORTER_ID=a3bcf45568aae3bfeb4394dfd199730402aaf53ebbf211c02fd7fea2b03983ec
+
 #List of services in use for the project
 services:
   - postgresql
 
+before install:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-darwin-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 #Set up databases before script
 before_script:
@@ -20,4 +28,14 @@ script:
   - bundle
   - bundle exec rspec
   - bundle exec rubocop
+
+# Pipe the coverage data to Code Climate
+after_script:
+#   - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json # Format backend coverage
+#   - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info  # Format frontend coverage
+#   - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2                  # Sum both coverage parts into coverage/codeclimate.json
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+#   - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi  # Upload coverage/codeclimate.json
+
+
 
