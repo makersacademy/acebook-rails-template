@@ -5,6 +5,7 @@ require File.join(__FILE__, '../../config/environment')
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
+require 'devise'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'simplecov'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -61,4 +62,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # to include helpers in tests
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  
 end
