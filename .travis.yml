@@ -5,21 +5,23 @@ rvm:
 env:
   global:
     - CC_TEST_REPORTER_ID=a3bcf45568aae3bfeb4394dfd199730402aaf53ebbf211c02fd7fea2b03983ec
+  
+  matrix:
+    - COVERAGE=true
 
 #List of services in use for the project
 services:
   - postgresql
 
-
-before install:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  # - ./cc-test-reporter before-build
-
 #Set up databases before script
 before_script:
-- bundle exec rails db:create
-- bundle exec rails db:migrate
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - "./cc-test-reporter before-build"
+
+
 
 #   - psql -U postgres -c 'CREATE DATABASE peep_manager_test;'
 #   - psql -d peep_manager_test -U postgres -f db/migrations/03_create_tables.sql
@@ -32,12 +34,8 @@ script:
 
 # Pipe the coverage data to Code Climate
 after_script:
-#   - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json # Format backend coverage
-#   - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info  # Format frontend coverage
-#   - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2                  # Sum both coverage parts into coverage/codeclimate.json
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-#   - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi  # Upload coverage/codeclimate.json
-
+  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+  
 deploy:
   provider: heroku
   skip_cleanup: true
@@ -49,7 +47,6 @@ deploy:
   - bundle exec rails db:migrate
   api_key:
     secure: hoOtNsEgZnkK81l0rge6xxxaqUXArIDQsmxDKlRgxnSseqgtHHH6bhAqF8RtojHvrap7+TC4RG01XJfGI2u9KGud9ajV1/67DgbUgV/IC6F0FhoIbNQYxDbc+wKDjF6vWuXDaG0pFxmrLgq9v4EeUwd37EyPw5yoL06/A8NnOzk+BGk6z7Ecv/aDfF8XNEz6qBTYFVp4LI18mvaQC44CEI3MArvV400ZmY/N7DriLjKbcDxlCuJ6MJZ63uWTIdp1xWYyQd/aod71Y0wJoz4THcxkajN92md2EkTOuCC40FJZvjvaRi3V3TdwGQUG+xWJneZx8r9MhATDTJhEIQOFdo2CSzjsbRJ0rLaGQW8idt50tEzrpHz1wxoNi0mwl7t2QEitm7VDLS6TRiEqM/wmLx3vjd6abaAgJs0vB7KP3Gq9LKflMYqWNFkQTmmWS4NTLm/wU14RG27lHmzi/JJC45d8ZBHEA5hgnRznBhI3zgpT4KFCx67df+cxAXP2/c7ZKDS5RR53Q9K2K4usePgfdbPNpGdxGmKTKe5gqt3Yz1AYU/Arq1cu5zUzmecM9tGceIiaFu1Hgu21yAm9zi7YfDOnBeMsuY97OUDCI6DWE+5/gTU0fNUq8EP6WXkM4SzUR1/Mx/xxoBDkI+SjdJXvBM79ONl479gqGZ+uiHKHJ70=
-
 
 
 
