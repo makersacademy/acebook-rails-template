@@ -37,5 +37,18 @@ after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 #   - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi  # Upload coverage/codeclimate.json
 
+deploy:
+  provider: heroku
+  # skip_cleanup: true
+  # app: acebook-catflap
+  # on:
+  #   repo: Hyan18/acebook-luckerberg
+  run:
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
+  api_key:
+    secure: hoOtNsEgZnkK81l0rge6xxxaqUXArIDQsmxDKlRgxnSseqgtHHH6bhAqF8RtojHvrap7+TC4RG01XJfGI2u9KGud9ajV1/67DgbUgV/IC6F0FhoIbNQYxDbc+wKDjF6vWuXDaG0pFxmrLgq9v4EeUwd37EyPw5yoL06/A8NnOzk+BGk6z7Ecv/aDfF8XNEz6qBTYFVp4LI18mvaQC44CEI3MArvV400ZmY/N7DriLjKbcDxlCuJ6MJZ63uWTIdp1xWYyQd/aod71Y0wJoz4THcxkajN92md2EkTOuCC40FJZvjvaRi3V3TdwGQUG+xWJneZx8r9MhATDTJhEIQOFdo2CSzjsbRJ0rLaGQW8idt50tEzrpHz1wxoNi0mwl7t2QEitm7VDLS6TRiEqM/wmLx3vjd6abaAgJs0vB7KP3Gq9LKflMYqWNFkQTmmWS4NTLm/wU14RG27lHmzi/JJC45d8ZBHEA5hgnRznBhI3zgpT4KFCx67df+cxAXP2/c7ZKDS5RR53Q9K2K4usePgfdbPNpGdxGmKTKe5gqt3Yz1AYU/Arq1cu5zUzmecM9tGceIiaFu1Hgu21yAm9zi7YfDOnBeMsuY97OUDCI6DWE+5/gTU0fNUq8EP6WXkM4SzUR1/Mx/xxoBDkI+SjdJXvBM79ONl479gqGZ+uiHKHJ70=
+
+
 
 
