@@ -28,7 +28,7 @@ RSpec.feature "Sign up", type: :feature do
   scenario "User can't sign up with something with password less than 6 (inclusive) characters" do
     visit('/users/sign_up')
     fill_in "user_email", with: "test@example.com" 
-    fill_in "user_password", with: "12345" #not a valid password
+    fill_in "user_password", with: "12345" # not a valid password
     fill_in "user_password_confirmation", with: "12345"
     click_button("Sign up")
     expect(page).to have_content("Password is too short")
