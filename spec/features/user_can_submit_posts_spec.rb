@@ -36,4 +36,5 @@ RSpec.feature "Timeline", type: :feature do
     expect("First").to appear_before("Middle")
     expect("Middle").to appear_before("Last")
   end
+
 end
