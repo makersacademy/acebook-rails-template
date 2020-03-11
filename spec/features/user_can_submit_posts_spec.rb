@@ -6,7 +6,6 @@ RSpec.feature "Timeline", type: :feature do
     click_link("Sign up") # go to sign_up
     fill_in "user_email", with: "test@example.com"
     fill_in "user_password", with: "example"
-    fill_in "user_password_confirmation", with: "example"
     click_button("Sign up")
     expect(current_path).to eq('/posts')
     click_link "New post"

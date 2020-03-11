@@ -11,7 +11,6 @@ RSpec.feature "Sign up", type: :feature do
     visit('/users/sign_up')
     fill_in "user_email", with: "test@example.com"
     fill_in "user_password", with: "example"
-    fill_in "user_password_confirmation", with: "example"
     click_button("Sign up")
     expect(current_path).to eq('/')
   end
@@ -20,7 +19,6 @@ RSpec.feature "Sign up", type: :feature do
     visit('/users/sign_up')
     fill_in "user_email", with: "testexample.com" # invalid, not an email
     fill_in "user_password", with: "example"
-    fill_in "user_password_confirmation", with: "example"
     click_button("Sign up")
     expect(page).to have_content("Email is invalid")
   end
@@ -29,7 +27,6 @@ RSpec.feature "Sign up", type: :feature do
     visit('/users/sign_up')
     fill_in "user_email", with: "test@example.com" 
     fill_in "user_password", with: "12345" # not a valid password
-    fill_in "user_password_confirmation", with: "12345"
     click_button("Sign up")
     expect(page).to have_content("Password is too short")
   end
@@ -38,7 +35,6 @@ RSpec.feature "Sign up", type: :feature do
     visit('/users/sign_up')
     fill_in "user_email", with: "test@example.com" 
     fill_in "user_password", with: "123456" # password is valid
-    fill_in "user_password_confirmation", with: "123456"
     click_button("Sign up")
     expect(current_path).to eq('/')
   end
@@ -47,7 +43,6 @@ RSpec.feature "Sign up", type: :feature do
     visit('/users/sign_up')
     fill_in "user_email", with: "test@example.com" 
     fill_in "user_password", with: "12345678910" # not a valid password
-    fill_in "user_password_confirmation", with: "12345678910"
     click_button("Sign up")
     expect(page).to have_content("Password is too long")
   end
