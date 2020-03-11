@@ -55,4 +55,10 @@ RSpec.feature "Sign up", type: :feature do
     click_button("Sign up")
     expect(page).to have_content("Password confirmation doesn't match Password ")
   end
+
+  scenario "User can't visit anypage unless he's signed up" do
+    visit('/posts/new')
+    expect(current_path).to have_content('/')
+  end
+
 end
