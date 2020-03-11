@@ -1,5 +1,9 @@
 language: ruby
 
+env:
+  global:
+    - CC_TEST_REPORTER_ID=808b625841bd445e56f4cf9b78a68718507d8135b7c74d7430cd9dcc2d70a41a
+
 install:
   - gem uninstall bundler
   - gem install bundler --version '1.16.3'
