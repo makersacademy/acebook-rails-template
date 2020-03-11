@@ -1,6 +1,7 @@
 {
   "RSpec": {
     "coverage": {
+
       "/Users/student/Projects/acebook-off-the-rails/app/models/user.rb": [
         1,
         null,
