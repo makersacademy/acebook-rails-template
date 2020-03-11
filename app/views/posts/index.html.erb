@@ -1,9 +1,11 @@
+<div>
 <% @posts.order(created_at: :desc).each do |post| %>
 
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
+  
 <% end %>
-
+</div>
 <%= link_to new_post_path do %>
   New post
 <% end %>
