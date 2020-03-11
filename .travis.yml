@@ -2,11 +2,16 @@ language: ruby
 rvm:
   - 2.5
 
+env:
+  global:
+    - CC_TEST_REPORTER_ID=fbd92c09a20442b8c75a4597cce05c69aede2bc91a584717fb56a678d6ab515b
+
 #List of services in use for the project
 services:
   - postgresql
 
 before install:
+  - nvm install
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-darwin-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   # - ./cc-test-reporter before-build
@@ -33,8 +38,5 @@ after_script:
   - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2                  # Sum both coverage parts into coverage/codeclimate.json
   - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi  # Upload coverage/codeclimate.json
 
-env:
-  global:
-    - CC_TEST_REPORTER_ID=fbd92c09a20442b8c75a4597cce05c69aede2bc91a584717fb56a678d6ab515b
-    - CF_RUN_PERM_SPECS=false
+
 
