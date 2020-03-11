@@ -10,10 +10,11 @@ env:
 services:
   - postgresql
 
+
 before install:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+  # - ./cc-test-reporter before-build
 
 #Set up databases before script
 before_script:
@@ -39,10 +40,10 @@ after_script:
 
 deploy:
   provider: heroku
-  # skip_cleanup: true
-  # app: acebook-catflap
-  # on:
-  #   repo: Hyan18/acebook-luckerberg
+  skip_cleanup: true
+  app: catflap-acebook
+  on:
+    repo: Kefuri/acebook-catflap
   run:
   - bundle exec rails db:create
   - bundle exec rails db:migrate
