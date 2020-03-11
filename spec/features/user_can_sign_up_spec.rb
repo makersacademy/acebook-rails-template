@@ -20,4 +20,13 @@ RSpec.feature "Sign up", type: :feature do
     expect(page).to have_content("Email is invalid")
   end
 
+  scenario "User can't sign up with something other a password between 6 and 10 (inclusive) characters" do
+    visit('/users/sign_up')
+    fill_in "user_email", with: "test@example.com" # invalid, not am email
+    fill_in "user_password", with: "12345"
+    fill_in "user_password_confirmation", with: "12345"
+    click_button("Sign up")
+    expect(page).to have_content("Password is invalid")
+  end
+
 end
