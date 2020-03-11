@@ -1,7 +1,6 @@
 <h1>Welcome to Catflap</h1>
 <h2>Please Sign Up!</h2>
 
-<%# <%= form_with scope: :signup, url: signups_path, local: true do |form|%>
   <p>
   <%= form_for @user do |form| %> 
     <%= form.label :email %> <br>
@@ -12,7 +11,7 @@
     <%= form.label :password %> <br>
     <%= form.text_field :password %>
   </p>
-  
+
   <p>
     <%= form.submit "Submit" %>
   </p>
