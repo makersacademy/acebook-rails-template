@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/app/controllers/posts_controller.rb": {
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           1,
@@ -25,7 +25,7 @@
           null
         ]
       },
-      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/app/controllers/application_controller.rb": {
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -33,7 +33,7 @@
           null
         ]
       },
-      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/spec/features/user_can_sign_up_spec.rb": {
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/features/user_can_sign_up_spec.rb": {
         "lines": [
           1,
           null,
@@ -101,7 +101,7 @@
           null
         ]
       },
-      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -116,7 +116,7 @@
           null
         ]
       },
-      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/spec/models/post_spec.rb": {
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/models/post_spec.rb": {
         "lines": [
           1,
           null,
@@ -125,13 +125,13 @@
           null
         ]
       },
-      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/app/models/post.rb": {
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/app/models/post.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/spec/models/user_spec.rb": {
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -141,6 +141,6 @@
         ]
       }
     },
-    "timestamp": 1583926541
+    "timestamp": 1583926694
   }
 }
