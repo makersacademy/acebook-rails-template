@@ -28,14 +28,4 @@ RSpec.feature "Timeline", type: :feature do
     expect("Middle").to appear_before("Last")
   end
 
-  scenario "Posts appear in reverse chronological order" do
-    visit "/posts"
-    click_link "New post"
-    fill_in "Message", with: "Last\nThis is a newline"
-    click_button "Submit"
-    save_and_open_page
-    expect(page.text).to have_content("Last<br>This is a newline")
-    
-  end
-
 end
