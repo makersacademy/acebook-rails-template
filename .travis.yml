@@ -1,29 +1,24 @@
 language: ruby
-
+rvm:
+- 2.7.0
 env:
   global:
-    - CC_TEST_REPORTER_ID=808b625841bd445e56f4cf9b78a68718507d8135b7c74d7430cd9dcc2d70a41a
-
-
-install:
-  - gem uninstall bundler
-  - gem install bundler --version '1.16.3'
-  - bundle install
-rvm:
-  - 2.7.0
-
+  - CC_TEST_REPORTER_ID=808b625841bd445e56f4cf9b78a68718507d8135b7c74d7430cd9dcc2d70a41a
 services:
-- postgresql
-
+  - postgresql
 before_script:
-- bin/rails db:create
-- bin/rails db:migrate
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
-- ./cc-test-reporter before-build
-
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
-- bundle exec rspec spec
-
+  - bundle exec rspec
 after_script:
-- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT --debug
+  - ./cc-test-reporter after-build -t simplecov --exit-code $TRAVIS_TEST_RESULT
+# deploy:
+#   provider: heroku
+#   app: acebook-offtherails
+#   on:
+#     repo: davmcgregor/acebook-off-the-rails
+
