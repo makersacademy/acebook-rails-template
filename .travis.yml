@@ -39,10 +39,10 @@ after_script:
 
 deploy:
   provider: heroku
-  # skip_cleanup: true
-  # app: acebook-catflap
-  # on:
-  #   repo: Hyan18/acebook-luckerberg
+  skip_cleanup: true
+  app: catflap-acebook
+  on:
+    repo: Kefuri/acebook-catflap
   run:
   - bundle exec rails db:create
   - bundle exec rails db:migrate
