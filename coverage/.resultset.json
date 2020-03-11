@@ -1,130 +1,130 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/app/controllers/posts_controller.rb": {
+      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           1,
-          0,
+          1,
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/spec/features/user_can_sign_up_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/spec/features/user_can_submit_posts_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/spec/models/post_spec.rb": {
+        "lines": [
+          1,
           null,
           1,
           2,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
           null
         ]
       },
-      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/features/user_can_sign_up_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/features/user_can_submit_posts_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/models/post_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          2,
-          null
-        ]
-      },
-      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/app/models/post.rb": {
+      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/app/models/post.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/models/user_spec.rb": {
+      "/Users/student/Desktop/week8-9/AceBook/aceBook-PingPong/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -134,6 +134,6 @@
         ]
       }
     },
-    "timestamp": 1583929143
+    "timestamp": 1583929676
   }
 }
