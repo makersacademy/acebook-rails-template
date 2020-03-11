@@ -35,10 +35,14 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', '0.71.0'
   gem 'selenium-webdriver'
+end
+
+group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'travis'
 end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
