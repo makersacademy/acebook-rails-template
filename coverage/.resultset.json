@@ -1,125 +1,57 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/tobydawson/Projects/acebook-off-the-rails/app/models/user.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/tobydawson/Projects/acebook-off-the-rails/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/tobydawson/Projects/acebook-off-the-rails/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/tobydawson/Projects/acebook-off-the-rails/app/controllers/posts_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          8,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/tobydawson/Projects/acebook-off-the-rails/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/tobydawson/Projects/acebook-off-the-rails/app/models/post.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/tobydawson/Projects/acebook-off-the-rails/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/tobydawson/Projects/acebook-off-the-rails/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/tobydawson/Projects/acebook-off-the-rails/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/tobydawson/Projects/acebook-off-the-rails/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      }
+
+      "/Users/student/Projects/acebook-off-the-rails/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Projects/acebook-off-the-rails/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/student/Projects/acebook-off-the-rails/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/student/Projects/acebook-off-the-rails/app/controllers/posts_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        8,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Projects/acebook-off-the-rails/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/student/Projects/acebook-off-the-rails/app/models/post.rb": [
+        1,
+        null
+      ]
     },
-    "timestamp": 1583944803
+    "timestamp": 1583944978
   }
 }

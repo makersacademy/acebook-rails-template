@@ -22,12 +22,12 @@ This challenge is the second team programming challenge at [Makers Academy](http
 
 ## <a name="Collaborators">Collaborators</a>
 
-[Elena Beccaro](https://github.com/elebecca)
-[Richard Pattinson](https://github.com/richardpattinson)
-[Ziad Soobratty](https://github.com/zsoobratty)
-[Toby Dawson](https://github.com/tobydawson1)
-[David Stewart](https://github.com/DavidStewartLDN)
-[David McGregor](https://github.com/davmcgregor)
+* [Elena Beccaro](https://github.com/elebecca)
+* [Richard Pattinson](https://github.com/richardpattinson)
+* [Ziad Soobratty](https://github.com/zsoobratty)
+* [Toby Dawson](https://github.com/tobydawson1)
+* [David Stewart](https://github.com/DavidStewartLDN)
+* [David McGregor](https://github.com/davmcgregor)
 
 ## <a name="Installation">Installation Instructions</a>
 
