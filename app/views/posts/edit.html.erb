@@ -1,4 +1,5 @@
-<%= form_for @post do |form| %>
+<h1> Edit posts </h1>
+<%= form_for :post, url: post_path(@post), method: :patch do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
 

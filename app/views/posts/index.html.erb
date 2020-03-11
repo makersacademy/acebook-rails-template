@@ -1,5 +1,11 @@
+<h1> Your posts </h1>
+
 <% @posts.each do |post| %>
+  <div>
   <p><%= post.message %></p>
+  <%= link_to "Read More", post_path(post), :class => 'btn btn-default' %>
+  <%= link_to "Update", edit_post_path(post), :class => 'btn btn-default' %>
+  </div>
 <% end %>
 
 <%= link_to new_post_path do %>
