@@ -30,7 +30,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # gem required to add user authentication
-gem 'devise'
 
 
 group :development, :test do
