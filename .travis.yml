@@ -5,20 +5,22 @@ rvm:
 env:
   global:
     - CC_TEST_REPORTER_ID=a3bcf45568aae3bfeb4394dfd199730402aaf53ebbf211c02fd7fea2b03983ec
+  
+  matrix:
+    - COVERAGE=true
 
 #List of services in use for the project
 services:
   - postgresql
 
-before install:
-
 #Set up databases before script
 before_script:
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
-- "./cc-test-reporter before-build"
-- bundle exec rails db:create
-- bundle exec rails db:migrate
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - "./cc-test-reporter before-build"
+
 
 #   - psql -U postgres -c 'CREATE DATABASE peep_manager_test;'
 #   - psql -d peep_manager_test -U postgres -f db/migrations/03_create_tables.sql
