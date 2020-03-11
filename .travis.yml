@@ -16,8 +16,8 @@ script:
   - bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build -t simplecov --exit-code $TRAVIS_TEST_RESULT
-deploy:
-  provider: heroku
-  app: acebook-offtherails
-  on:
-    repo: davmcgregor/acebook-off-the-rails
+# deploy:
+#   provider: heroku
+#   app: acebook-offtherails
+#   on:
+#     repo: davmcgregor/acebook-off-the-rails
