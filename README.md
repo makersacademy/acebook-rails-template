@@ -1,7 +1,5 @@
 # AceBook
 
-help me travis
-
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
@@ -26,3 +24,6 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+Technologies:
+
