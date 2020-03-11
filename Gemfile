@@ -13,6 +13,7 @@ gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
+gem 'rubocop', '~> 0.71.0', require: false
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -25,7 +26,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'simplecov', '0.17.1', require: false, group: :test
+gem 'simplecov-console', require: false
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -39,8 +41,6 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
-  gem 'simplecov'
-  gem 'simplecov-console'
 end
 
 group :development do
