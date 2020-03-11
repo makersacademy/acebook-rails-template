@@ -58,7 +58,7 @@ RSpec.feature "Sign up", type: :feature do
 
   scenario "User can't visit anypage unless he's signed up" do
     visit('/posts/new')
-    expect(current_path).to have_content('/')
+    expect(current_path).to be('/')
   end
 
 end
