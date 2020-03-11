@@ -1,0 +1,18 @@
+<h1>Welcome to Catflap</h1>
+<h2>Please Sign Up!</h2>
+
+  <p>
+  <%= form_for @user do |form| %> 
+    <%= form.label :email %> <br>
+    <%= form.email_field :email %>
+  </p>
+
+  <p>
+    <%= form.label :password %> <br>
+    <%= form.password_field :password %>
+  </p>
+
+  <p>
+    <%= form.submit "Submit" %>
+  </p>
+<% end %>
