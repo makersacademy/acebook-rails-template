@@ -9,6 +9,7 @@ env:
 #List of services in use for the project
 services:
   - postgresql
+  
 
 before install:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-darwin-amd64 > ./cc-test-reporter
