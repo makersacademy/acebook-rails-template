@@ -38,6 +38,9 @@ Under construction...
 ### Wireframes
 Under construction...
 
+### Project management
+Trello: [Acebook-on-rails}(https://trello.com/b/0B2v6FNT/acebook-on-rails)
+
 ## Acknowledgements
 Everyone. But especially [LOLcats](http://www.lolcats.com/).
 Also under construction...
