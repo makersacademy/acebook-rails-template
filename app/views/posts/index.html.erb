@@ -1,7 +1,11 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<div>
+<% @posts.order(created_at: :desc).each do |post| %>
 
+  <p><%= post.message %></p>
+  <p><%= post.created_at.strftime('%e %B at %H:%M') %></p>
+  
+<% end %>
+</div>
 <%= link_to new_post_path do %>
   New post
 <% end %>

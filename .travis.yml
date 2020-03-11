@@ -14,3 +14,12 @@ script:
   - bundle
   - bundle exec rspec
   - bundle exec rubocop
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "dn8jv5RNux5uQJLN/Zu/oJwW/Kc5igqu2LNjIoTat6uDtCcLdjl9doxGzUilM/p1fi0YINhV1z9qAByar/C7t2hVOC1wpi2xidokWAxmpmhPF461d1LyTGQjWLnJqoS8JE4ZDHTfGKaCEoalvtSGOg3S9oK5f4V83jQRsMOLBxkOCTZKOw9nTqtkOQVYQMLRDONAQWGUauIeQo/EF7V8GcdPKXZKCqCr4Bdu70aqwL0/957UxdblEtiuj4JRGbGJ/EIGmsHe0CdOmB6x0BR2ZNB5tIemhKIILx6yVvdZiChLDo/oXvxANOnjaUxSIxJP+Lp3p73xy3RCDuqVd8N6q8CXghqEr/GNB7rotWFPilrg1e0l998DZj/RcbW5eZxTDcyN/Py6TysiVMtn0jP0YC158vceqqyzmXwXXSaV1nRqV8m2URObpXS43dAarJ0iSRRFAtWXCPHyBCHjVZRx2ItPRrzhU3y2IkB1BIGYt/gXt7h8X+MpTurCNW6E8HDKTZhRjHYS7SkeaOQyg9e3Ng9wJgV8fcLSZVprnQGhfBb6vUQRcv8i+zTVNNKubgFYr0d9l2KXmjP0qBDtiPM3kWrpO3F5wdUJjKShpM6hIrWygEezjXo5EsICR2upR9UvINOy0INZ35mjRTkpPwQXwu2lLuIbfgsPnW+uMYQDjgw="
+  app: acebook-pingpong
+  on:
+    repo: Peter2-71828/aceBook-PingPong
+
