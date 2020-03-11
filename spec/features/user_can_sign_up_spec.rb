@@ -47,18 +47,4 @@ RSpec.feature "Sign up", type: :feature do
     expect(page).to have_content("Password is too long")
   end
 
-  scenario "User can't sign up if the two passwords don't match" do
-    visit('/users/sign_up')
-    fill_in "user_email", with: "test@example.com" 
-    fill_in "user_password", with: "1234569" # not a valid password
-    fill_in "user_password_confirmation", with: "1234567"
-    click_button("Sign up")
-    expect(page).to have_content("Password confirmation doesn't match Password ")
-  end
-
-  scenario "User can't visit anypage unless he's signed up" do
-    visit('/posts/new')
-    expect(current_path).to be('/')
-  end
-
 end
