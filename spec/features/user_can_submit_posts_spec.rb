@@ -9,7 +9,6 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "user_password_confirmation", with: "example"
     click_button("Sign up")
     expect(current_path).to eq('/posts')
-    # visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
