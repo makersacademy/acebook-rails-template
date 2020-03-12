@@ -34,8 +34,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop-rails'
   gem 'selenium-webdriver'
-  gem 'simplecov'
-  gem 'simplecov-console'
 end
 
 group :development do
@@ -44,6 +42,11 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'travis'
   gem 'web-console', '>= 3.3.0'
+end
+
+group :test do
+  gem 'simplecov', '0.17.1', require: false
+  gem 'simplecov-console', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
