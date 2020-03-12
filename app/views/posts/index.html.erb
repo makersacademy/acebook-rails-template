@@ -12,7 +12,7 @@
   <div class='d-flex justify-content-end'>
   <p><%= post.created_at.strftime("%b %e, %l:%M %p") %></p>
   <%= link_to "Read More", post_path(post), :class => 'btn btn-outline-primary btn-sm' %>
-  <%= link_to "Update", edit_post_path(post), :class => 'btn btn-outline-primary btn-sm' %>
+  <%= link_to "Update", edit_post_path(post), :class => 'btn btn-outline-primary btn-sm', :name => "Update" %>
   <%= link_to "Delete", post_path(post), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-outline-danger btn-sm' %>
   </div>
   </div>
