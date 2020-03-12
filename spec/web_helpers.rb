@@ -14,6 +14,12 @@ def sign_in
     click_button "Log in"
 end
 
+def make_test_post
+    visit ('/')
+    click_link "New post"
+    fill_in 'post_message', with: "this is a unique test post"
+    click_button "Submit"
+end
 def sign_up_2
     visit('/users/sign_up')
     fill_in "Email", with: "test2@example.com"
