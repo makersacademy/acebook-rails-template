@@ -24,12 +24,15 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-
-    if(@post.update(post_params))
-        redirect_to @post
-    else
-      render 'edit'
-
+    if @post.created_at > 10.minutes.ago
+      if(@post.update(post_params))
+          redirect_to @post
+      else
+        render 'edit'
+      end
+    else 
+      flash[:alert] = "Posts can only be updated within 10 minutes of creation"
+      redirect_to @post
     end
   end
 
