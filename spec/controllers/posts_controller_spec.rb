@@ -3,9 +3,8 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :controller do
   before(:each) do
     @user = User.create!({
-        :email => 'test@test.com',
+      :email => 'test@test.com',
       :password => 'password',
-      :password_confirmation => 'password'
       })
     sign_in @user
   end
