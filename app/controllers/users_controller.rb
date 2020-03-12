@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    session[:current_user_id] = @user.id
     redirect_to '/posts/yours'
   end
 

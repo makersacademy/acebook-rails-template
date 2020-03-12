@@ -8,5 +8,4 @@ Rails.application.routes.draw do
   get "/posts/yours", to: "posts#yours"
   resources :posts
 
-  
 end
