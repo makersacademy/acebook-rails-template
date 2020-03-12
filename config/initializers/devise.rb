@@ -8,7 +8,9 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
+  # rubocop:disable LineLength
   # config.secret_key = '7803f9223af64eaf044813167d6f274393e75588b8cac5bdd0a95aefcc8d1fdb2412da8c351a568d61244f2928b68522278a479d6c202e81a229db5822cf4178'
+  # rubocop:enable LineLength
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
