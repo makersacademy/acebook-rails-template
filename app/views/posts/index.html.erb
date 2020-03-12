@@ -11,10 +11,12 @@ welcome to Acebook</h1>
   </li>
 <% end %>
 
+<div id="posts">
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <p><%= post.created_at %></p>
 <% end %>
+</div>
 
 <%= link_to new_post_path do %>
   New post
