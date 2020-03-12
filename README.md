@@ -6,7 +6,7 @@
 
 # AceBook 👍
 
-[![Go to App]https://offtherails-acebook.herokuapp.com/
+[![Go to App](https://offtherails-acebook.herokuapp.com/)
 
 #### Technologies: Ruby, Rspec, Capybara, Rails, HTML, CSS, TravisCI, CodeClimate
 
