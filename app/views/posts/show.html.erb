@@ -1,3 +1,4 @@
+<h5><%=User.find(@post.user_id).email%></h5>
 <h2><%= simple_format @post.message %></h2>
 <p><%= @post.created_at.strftime("%b %e, %l:%M %p") %></p>
 
