@@ -1,19 +1,22 @@
 <h1> Your posts </h1>
 
 <div class='d-fex flex-column -bd-highlight mb-3'>
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
   <div class="list-group">
-    <div class='p-2 bd- hinglight'>
-    <h3><%= post.message %></h3>
-    <div class='d-flex justify-content-end'>
-    <%= link_to "Read More", post_path(post), :class => 'btn btn-outline-primary btn-sm' %>
-    <%= link_to "Update", edit_post_path(post), :class => 'btn btn-outline-primary btn-sm'  %>
-    </div>
-    </div>
-    </div>
-  <% end %>
+  <div class='p-2 bd- hinglight'>
+  <h3><%= simple_format post.message %></h3>
+  <div class='d-flex justify-content-end'>
+  <p><%= post.created_at.strftime("%b %e, %l:%M %p") %></p>
+  <%= link_to "Read More", post_path(post), :class => 'btn btn-outline-primary btn-sm' %>
+  <%= link_to "Update", edit_post_path(post), :class => 'btn btn-outline-primary btn-sm' %>
+  <%= link_to "Delete", post_path(post), method: :delete, 
+                                          data: {confirm: 'Are you sure?'},
+                                          :class => 'btn btn-outline-danger btn-sm' %>
 </div>
-
+</div>
+</div>
+<% end %>
+</div>
 
 <%= link_to new_post_path do %>
   New post
