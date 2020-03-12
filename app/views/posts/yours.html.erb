@@ -1,4 +1,7 @@
-<h1>Sign Up successful!</h1>
+
+<% if flash[:notice] %>
+  <div class="sign_up_notice"> <%= flash[:notice] %> </div>
+<% end %>
 
 <% if @posts.length == 0 %>
   <%="You have no posts... :("%>
