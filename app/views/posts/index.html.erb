@@ -7,6 +7,7 @@
   <div class="list-group">
   <div class="shadow-sm p-3 mb-5 bg-white rounded">
   <div class='p-2 bd- hinglight'>
+  <h5><%=User.find(post.user_id).email%> says:</h5>
   <h3><%= simple_format post.message %></h3>
   <div class='d-flex justify-content-end'>
   <p><%= post.created_at.strftime("%b %e, %l:%M %p") %></p>
