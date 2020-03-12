@@ -20,3 +20,17 @@ def make_test_post
     fill_in 'post_message', with: "this is a unique test post"
     click_button "Submit"
 end
+def sign_up_2
+    visit('/users/sign_up')
+    fill_in "Email", with: "test2@example.com"
+    fill_in "Password", with: 'double'
+    fill_in "Password confirmation", with: 'double'
+    click_button "Sign up"
+end
+
+def sign_in_2
+    visit('/users/sign_in')
+    fill_in "Email", with: "test2@example.com"
+    fill_in "Password", with: "double"
+    click_button "Log in"
+end
