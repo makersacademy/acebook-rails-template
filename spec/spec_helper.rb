@@ -1,6 +1,7 @@
 require 'simplecov'
 require 'simplecov-console'
-require_relative './custom_helpers/user_sign_up_helper.rb'
+require_relative './web_helper/user_sign_up_helper.rb'
+require_relative './web_helper/user_log_in_helper.rb'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(
  [
