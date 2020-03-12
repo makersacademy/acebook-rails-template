@@ -1,6 +1,6 @@
 <h1> Your posts </h1>
 
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
   <div>
   <p><%= simple_format post.message %></p>
   <p><%= post.created_at.strftime("%b %e, %l:%M %p") %></p>
