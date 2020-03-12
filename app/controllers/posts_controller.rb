@@ -21,5 +21,6 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
     message = params[:post][:message]
+    return message
   end
 end

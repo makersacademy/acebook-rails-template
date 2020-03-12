@@ -20,7 +20,7 @@ RSpec.feature "View Your Posts", type: :feature do
     fill_in "Message", with: "On my momma I be breathing"
     click_button "Submit"
     expect(page).to have_content("On my momma I be breathing")
-    visit"/posts/yours"
+    visit "/posts/yours"
     expect(page).to have_content("On my momma I be breathing")
     expect(page).not_to have_content("You have no posts... :(")
   end
