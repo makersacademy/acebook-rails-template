@@ -1,41 +1,26 @@
 language: ruby
 rvm:
-  - 2.5
-
+- 2.5
 env:
   global:
-    - CC_TEST_REPORTER_ID=a3bcf45568aae3bfeb4394dfd199730402aaf53ebbf211c02fd7fea2b03983ec
-  
+  - CC_TEST_REPORTER_ID=a3bcf45568aae3bfeb4394dfd199730402aaf53ebbf211c02fd7fea2b03983ec
   matrix:
-    - COVERAGE=true
-
-#List of services in use for the project
+  - COVERAGE=true
 services:
-  - postgresql
-
-#Set up databases before script
+- postgresql
 before_script:
-  - bundle exec rails db:create
-  - bundle exec rails db:migrate
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - "./cc-test-reporter before-build"
-
-
-
-#   - psql -U postgres -c 'CREATE DATABASE peep_manager_test;'
-#   - psql -d peep_manager_test -U postgres -f db/migrations/03_create_tables.sql
-
-#Script to run tests
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
-  - bundle
-  - bundle exec rspec
-  - bundle exec rubocop
-
-# Pipe the coverage data to Code Climate
+- bundle
+- bundle exec rspec
+- bundle exec rubocop
 after_script:
-  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
-  
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 deploy:
   provider: heroku
   skip_cleanup: true
@@ -46,7 +31,4 @@ deploy:
   - bundle exec rails db:create
   - bundle exec rails db:migrate
   api_key:
-    secure: hoOtNsEgZnkK81l0rge6xxxaqUXArIDQsmxDKlRgxnSseqgtHHH6bhAqF8RtojHvrap7+TC4RG01XJfGI2u9KGud9ajV1/67DgbUgV/IC6F0FhoIbNQYxDbc+wKDjF6vWuXDaG0pFxmrLgq9v4EeUwd37EyPw5yoL06/A8NnOzk+BGk6z7Ecv/aDfF8XNEz6qBTYFVp4LI18mvaQC44CEI3MArvV400ZmY/N7DriLjKbcDxlCuJ6MJZ63uWTIdp1xWYyQd/aod71Y0wJoz4THcxkajN92md2EkTOuCC40FJZvjvaRi3V3TdwGQUG+xWJneZx8r9MhATDTJhEIQOFdo2CSzjsbRJ0rLaGQW8idt50tEzrpHz1wxoNi0mwl7t2QEitm7VDLS6TRiEqM/wmLx3vjd6abaAgJs0vB7KP3Gq9LKflMYqWNFkQTmmWS4NTLm/wU14RG27lHmzi/JJC45d8ZBHEA5hgnRznBhI3zgpT4KFCx67df+cxAXP2/c7ZKDS5RR53Q9K2K4usePgfdbPNpGdxGmKTKe5gqt3Yz1AYU/Arq1cu5zUzmecM9tGceIiaFu1Hgu21yAm9zi7YfDOnBeMsuY97OUDCI6DWE+5/gTU0fNUq8EP6WXkM4SzUR1/Mx/xxoBDkI+SjdJXvBM79ONl479gqGZ+uiHKHJ70=
-
-
-
+    secure: C13H9yad7kpWTYWext9dp/WE+jHIb2B3VrpWAxyiyuPb+QPPIRx/iAtxTF/FhbgBPKWVHVd2aSAqg40khPcHD8M2aJc9tBIk+OgMafzRKwAKW+Fq6/AMjZqd6wJQU6uJSFwxjTArXqZgqgD/SWNsIQdeXEIoR0g5qBcLa2knWn9fDb61RV1gRuY1aVeUA8O/WQY1JpMZ9No8c8jiiRgsfkq3DpDjWr4Zos7XW/jpTIBMm6JRmcvlM0xiuaDldJ7UqBnyJ39YlPISzLqeqXO9Qj15XVDTQEewDXsacrtETivmVMC7iQiBYM3CmmadfaH4XFLat8CMrGPqVl8O1Kif3dI6r1eRP9j6zLyCQorCzqVGPXFrUESfrfjfUrx5x7jvMTDiPU/OaTDX++X9KkAOuUmGKtjUdILzMiKFnd56z4grZS8iiWncapeb0c2fMBqxQeMzJQaRHoGpIhqUZUoVrCT4qDI4k2Jql3/zYLD3XweP+MOu5zFv4hYhdtgmJKzDsInUDn/6v4Ve6HRmYYSakdao5naCcoT56cGhKVho4i3Rvl1lFtwmKvNnk2Rgu6qNPptVgRWXr9PECZfJvtqH/+ZxG3opIONM8DPra3kw0RlrCccTfxhjvdMvv6+YXMN9PTwqw7F3dFI0B4n8mbuO6EeDFoPwfXlnU/3Gm1SDTPA=
