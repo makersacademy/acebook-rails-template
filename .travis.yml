@@ -1,35 +1,29 @@
 language: ruby
-
-rvm: 
-  - 2.5
-
+rvm:
+- 2.5
 env:
   global:
   - CC_TEST_REPORTER_ID=18fcb1674448a0f6f36c0b849ca7bb1f7e9c1fa72688fce866e1add6044cd073
-
-services: 
-  - postgresql
-
+services:
+- postgresql
 before_script:
 - bundle exec rails db:create
 - bundle exec rails db:migrate
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
 - chmod +x ./cc-test-reporter
-- ./cc-test-reporter before-build
-
-script: 
-  - bundle
-  - bundle exec rspec
-  - bundle exec rubocop
-
+- "./cc-test-reporter before-build"
+script:
+- bundle
+- bundle exec rspec
+- bundle exec rubocop
 after_script:
-  - ./cc-test-reporter after-build -t simplecov --exit-code $TRAVIS_TEST_RESULT
-
+- "./cc-test-reporter after-build -t simplecov --exit-code $TRAVIS_TEST_RESULT"
 deploy:
   provider: heroku
   skip_cleanup: true
   api_key:
-    secure: dn8jv5RNux5uQJLN/Zu/oJwW/Kc5igqu2LNjIoTat6uDtCcLdjl9doxGzUilM/p1fi0YINhV1z9qAByar/C7t2hVOC1wpi2xidokWAxmpmhPF461d1LyTGQjWLnJqoS8JE4ZDHTfGKaCEoalvtSGOg3S9oK5f4V83jQRsMOLBxkOCTZKOw9nTqtkOQVYQMLRDONAQWGUauIeQo/EF7V8GcdPKXZKCqCr4Bdu70aqwL0/957UxdblEtiuj4JRGbGJ/EIGmsHe0CdOmB6x0BR2ZNB5tIemhKIILx6yVvdZiChLDo/oXvxANOnjaUxSIxJP+Lp3p73xy3RCDuqVd8N6q8CXghqEr/GNB7rotWFPilrg1e0l998DZj/RcbW5eZxTDcyN/Py6TysiVMtn0jP0YC158vceqqyzmXwXXSaV1nRqV8m2URObpXS43dAarJ0iSRRFAtWXCPHyBCHjVZRx2ItPRrzhU3y2IkB1BIGYt/gXt7h8X+MpTurCNW6E8HDKTZhRjHYS7SkeaOQyg9e3Ng9wJgV8fcLSZVprnQGhfBb6vUQRcv8i+zTVNNKubgFYr0d9l2KXmjP0qBDtiPM3kWrpO3F5wdUJjKShpM6hIrWygEezjXo5EsICR2upR9UvINOy0INZ35mjRTkpPwQXwu2lLuIbfgsPnW+uMYQDjgw=
+    secure: rkFL1f9nHhXQsrn8sO3ll6Y3DFXaSsnrk2bLpPcNC2f6nOV5HyxGaKch8nv3b2hcxz6QKpAU2c4mmTUVyqVxGtTwUZdeBqrVo10OZLQIYjgFZVRmRPeA8eNPBFc4kDPVsSWpgl/+M3vKXEUVJOVdE2hwSp7MafBWzB8qFCO6RqUKTJt9YpoLTsLJpGFCkEUbGZJ1XEUJRacoxUl8IsMCP3lGxER4vC0LgsxOWSkKR40MRU8xKG9B8eoewixZmyGtnW4tNuHTNPNk0jG2QcCuY7a7XAZfTezJ4Eee6mfNf6Sifozgi/Cy92SHPlxtUyRvFDRrJs0lPoO/ZoJhWsfCjR04VsLTvwbILWDsg/f4Cu0070B2Sk6/WTDqC4aZCechLc5jHpCdQfs4j8UIOTGJKkALQiVM6QbAMe02OvgsQiMs2KOykFjKWBqPgJgsYMKV/edt1NSIX1Bj+SUsbkEdrzpyD2JbdakxgysmzOz8xuCGnEZ7CLGBP+Tap5HIlb7MGwE+Hiutw12Apeynzdgh2X/GIw0YBc4P2xJf1WQ4hOs2jbUMltv9jqoJJehAa3E6AZgqIWxIicDP0cXYTu2sJnTjUP73TFPjWTORj18y/VfaFZhiJFMQPlfFBt5tmi+OfLCOeEg04Hp9IHNRiJELm3tkpXFdw8rX3zIVbb058Uc=
   app: acebook-pingpong
   on:
     repo: Peter2-71828/aceBook-PingPong
