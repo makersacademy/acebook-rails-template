@@ -1,28 +1,39 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# feature 'User signs up' do
-#   scenario 'with valid email and password' do
-#     user_sign_up 'valid@example.com', 'password'
+RSpec.feature "Sign up", type: :feature do
 
-#     expect(page).to have_content('Sign out')
-#   end
+  scenario "Non-signed up user can't visit any page other than sign_in" do
+    visit('/posts')
+    expect(current_path).to eq('/users/sign_in')
+  end
+  
+  scenario 'User can sign up' do
+    user_sign_up
+    expect(current_path).to eq('/')
+  end
 
-#   scenario 'with invalid email' do
-#     user_sign_up 'invalid_email', 'password'
+  scenario "User can only sign up with a email address" do
+    user_sign_up('test.com')
 
-#     expect(page).to have_content('Sign in')
-#   end
+    expect(page).to have_content("Email is invalid")
+  end
 
-#   scenario 'with blank password' do
-#     user_sign_up 'valid@example.com', ''
+  scenario "User can't sign up with a password less than 6 (inclusive) characters" do
+    user_sign_up("testing@test.com", "12345")
 
-#     expect(page).to have_content('Sign in')
-#   end
+    expect(page).to have_content("Password is too short")
+  end
 
-#   # def sign_up_with(email, password)
-#   #   visit "/users/sign_up"
-#   #   fill_in 'Email', with: email
-#   #   fill_in 'Password', with: password
-#   #   click_button 'Sign up'
-#   # end
-# end
+  scenario "User can signup with a valid password (6 characters)" do
+    user_sign_up("testing@test.com", "123456")
+
+    expect(current_path).to eq('/')
+  end
+
+  scenario "User can't sign up with something with password more than 10 (inclusive) characters" do
+    user_sign_up("testing@test.com", "12345678910")
+
+    expect(page).to have_content("Password is too long")
+  end
+
+end
