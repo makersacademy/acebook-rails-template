@@ -1,5 +1,9 @@
 ### [Makers Academy](http://www.makersacademy.com) - Week 8 group project
 
+[![Build Status](https://travis-ci.com/Peter2-71828/aceBook-PingPong.svg?branch=master)](https://travis-ci.com/Peter2-71828/aceBook-PingPong)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4f0cfbe1fc185ef34e2c/maintainability)](https://codeclimate.com/github/Peter2-71828/aceBook-PingPong/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/4f0cfbe1fc185ef34e2c/test_coverage)](https://codeclimate.com/github/Peter2-71828/aceBook-PingPong/test_coverage)
+
 Contributors: [Josh Blumberg](https://github.com/jlblumberg) | [Peter Dean](https://github.com/Peter2-71828) | [Joe Ellingworth](https://github.com/blu3skies) | [Dafna Libman](https://github.com/Dlibmanw) | [Liz Daly](https://github.com/lookupdaily) | [Jack Overton](https://github.com/Ovy95)
 __________________________________________________________________________________________________________________
 
