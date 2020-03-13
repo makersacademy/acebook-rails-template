@@ -1,4 +1,5 @@
-# AceBook
+# AceBook  
+
 A clone of a well known posts-based website by team {undefined}. Created as part of Weeks 8&9 at [Makers](https://makers.tech/).
 
 ## Usage
@@ -16,6 +17,7 @@ First, clone this repository. Then:
 Alternately, you can use/view the project on Heroku [here](#nowhere).
 
 ## Technologies:
+- Travis CI   [![Build Status](https://travis-ci.org/Megscode/acebook_undefined.svg?branch=master)](https://travis-ci.org/Megscode/acebook_undefined)
 - Ruby
   (incl. postgresql, ActiveRecord, Rails, Bootstrap and Devise gems)
 - Javascript
