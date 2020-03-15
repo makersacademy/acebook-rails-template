@@ -13,7 +13,7 @@
         null,
         null,
         1,
-        8,
+        9,
         null,
         null,
         1,
@@ -32,7 +32,7 @@
         1,
         null,
         1,
-        24,
+        32,
         null,
         null,
         null
@@ -79,6 +79,40 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/joeellingworth/Projects/Makers/group_projects/aceBook-PingPong/spec/features/user_can_signin_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
         1,
         1,
         1,
@@ -150,6 +184,6 @@
         null
       ]
     },
-    "timestamp": 1584098181
+    "timestamp": 1584282674
   }
 }
