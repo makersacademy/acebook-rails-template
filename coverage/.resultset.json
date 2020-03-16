@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Desktop/week8-9/2nd group project/aceBook-PingPong/app/controllers/posts_controller.rb": [
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/app/controllers/posts_controller.rb": [
         1,
         1,
         4,
@@ -23,7 +23,7 @@
         null,
         null
       ],
-      "/Users/student/Desktop/week8-9/2nd group project/aceBook-PingPong/app/controllers/application_controller.rb": [
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -37,7 +37,7 @@
         null,
         null
       ],
-      "/Users/student/Desktop/week8-9/2nd group project/aceBook-PingPong/spec/features/user_can_sign_up_spec.rb": [
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/features/user_can_sign_up_spec.rb": [
         1,
         null,
         1,
@@ -74,7 +74,7 @@
         null,
         null
       ],
-      "/Users/student/Desktop/week8-9/2nd group project/aceBook-PingPong/spec/features/user_can_signin_spec.rb": [
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/features/user_can_signin_spec.rb": [
         1,
         null,
         1,
@@ -104,7 +104,7 @@
         null,
         null
       ],
-      "/Users/student/Desktop/week8-9/2nd group project/aceBook-PingPong/spec/features/user_can_submit_posts_spec.rb": [
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/features/user_can_submit_posts_spec.rb": [
         1,
         null,
         1,
@@ -113,8 +113,9 @@
         1,
         1,
         1,
-        1,
-        1,
+        null,
+        null,
+        null,
         1,
         1,
         null,
@@ -131,18 +132,18 @@
         null,
         null
       ],
-      "/Users/student/Desktop/week8-9/2nd group project/aceBook-PingPong/spec/models/post_spec.rb": [
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/models/post_spec.rb": [
         1,
         null,
         1,
         2,
         null
       ],
-      "/Users/student/Desktop/week8-9/2nd group project/aceBook-PingPong/app/models/post.rb": [
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/app/models/post.rb": [
         1,
         null
       ],
-      "/Users/student/Desktop/week8-9/2nd group project/aceBook-PingPong/spec/models/user_spec.rb": [
+      "/Users/student/makers_stuff/projects/week_8/aceBook-PingPong/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -150,6 +151,6 @@
         null
       ]
     },
-    "timestamp": 1584357879
+    "timestamp": 1584357977
   }
 }

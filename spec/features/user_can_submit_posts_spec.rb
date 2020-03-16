@@ -5,9 +5,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them with the time they were posted at." do
     visit("/posts") # all pages redirect to sign_in b/c user isn't signed up
     sign_up("test@example.com","example")
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    create_post("Hello, world!")
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content(DateTime.now.strftime('%e %B at %H:%M'))
   end
