@@ -14,26 +14,11 @@
  *= require_self
  */
  body{
-  background-image: url("wood1.jpg");
-  /* background-color: goldenrod; */
+ 
+  background-color: goldenrod; 
 }
 
 .alert {
   position: fixed;
   bottom: 0
-}
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-#navbar{
-  position: fixed;
-  top: 0px;
-  margin: 0;
-  padding: 0;
-  left: 0;
-  
 }
