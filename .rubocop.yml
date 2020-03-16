@@ -489,3 +489,7 @@ WordArray:
   Enabled: false
 ZeroLengthPredicate:
   Enabled: false
+
+AllCops:
+  Exclude:
+    - './db/schema.rb'
