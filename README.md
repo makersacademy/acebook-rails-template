@@ -126,32 +126,32 @@ I would like to be abe to make posts using line breaks
 
 ```
 As a user,
-I need  to login 
-So I can creating/updating/deleting records
+So I can create, update and delete records,
+I need to be able to login 
 ```
 ```
 As a user,
-If ’m not signed in
-I want see a message explaining that I’m not signed in
+To see if I'm signed in,
+I want see a message alerting me if my signin authenitication failed
 ```
 ```
 As a user,
-When I’m signed in 
-I want to /posts and submit new posts without the page refreshing
+To interact with my Acebook when signed in,
+I want to go to /posts and submit new posts without the page refreshing
 ```
 ```
 As a user,
-When I’m signed in 
+To interact with my Acebook when signed in,
 I want go to /posts and comment on posts without the page refreshing
 ```
 ```
 As user,
-When I’m signed in 
+To interact with my Acebook when signed in,
 I want go to /posts and like a post or comment without the page refreshing
 ```
 ```
 As user,
-When I’m signed in 
+To interact with my Acebook when signed in,
 I can only update/delete my own posts/comments.
 ```
 
