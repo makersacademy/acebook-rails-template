@@ -59,6 +59,8 @@ To run tests:
 
 ## <a name="User_Stories">User Stories</a>
 
+### MVP 
+
 ```
 As a user,
 So I can log into Acebook,
@@ -118,6 +120,57 @@ I would like to see the most recent posts first
 As a user,
 So that my posts are easy to read,
 I would like to be abe to make posts using line breaks
+```
+
+### Additional features
+
+```
+As a user,
+So I can see my wall,
+I want be redirected to my wall when I log in
+```
+```
+As a user,
+So I can see other user’s walls,
+I want to be able to access other user's walls
+```
+```
+As a user,
+So I need to prove that I’ve an account, 
+I can’t see other user’s walls if I don’t log in
+```
+```
+As a user,
+So I can see others users walls,
+I need to be logged in to see other user’s walls
+```
+```
+As a user,
+So I can post on any user’s wall,
+I want that post to appear only on that user’s wall
+```
+```
+As a user,
+So anyone can’t change a post, 
+I can’t update or delete posts or comments that are not mine.
+```
+
+### Bonus features
+
+```
+As a user,
+If I don’t have an account,
+I want to be redirected to a custom 404 page with a message saying that the user doesn't exist.
+```
+```
+As a user,
+To access my account,
+I want my username be used to form the URL 
+```
+```
+As a user,
+So I can personalize my wall,
+I want be able to choose between two or more different fonts and background colors
 ```
 
 ## <a name="Mockup">Mockup</a>
