@@ -28,10 +28,7 @@ RSpec.feature "Sign up", type: :feature do
   end
 
   scenario "User can't sign up with something with password more than 10 (inclusive) characters" do
-    visit('/users/sign_up')
-    fill_in "user_email", with: "test@example.com" 
-    fill_in "user_password", with: "12345678910" # not a valid password
-    click_button("Sign up")
+    sign_up("test@example.com","12345678910")
     expect(page).to have_content("Password is too long")
   end
 

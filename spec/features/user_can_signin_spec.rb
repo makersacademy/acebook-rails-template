@@ -3,12 +3,11 @@ require 'rails_helper'
 RSpec.feature "Sign in", type: :feature do 
 
   scenario "Existing User can sign in" do 
-    login("signin_test@example.com", "123456")
-    # User.create(name: 'Test Name', email: 'signin_test@example.com', password: '123456')
-    # visit('/posts')
-    # fill_in "user_email", with: "signin_test@example.com"
-    # fill_in "user_password", with: "123456"
-    # click_button("Log in")
+    User.create(name: 'Test Name', email: 'signin_test@example.com', password: '123456')
+    visit('/posts')
+    fill_in "user_email", with: "signin_test@example.com"
+    fill_in "user_password", with: "123456"
+    click_button("Log in")
     expect(current_path).to eq('/posts')
   end 
 
