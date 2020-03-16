@@ -23,10 +23,7 @@ RSpec.feature "Sign up", type: :feature do
   end
 
   scenario "User should be able to signup with a valid password (6 characters)" do
-    visit('/users/sign_up')
-    fill_in "user_email", with: "test@example.com" 
-    fill_in "user_password", with: "123456" # password is valid
-    click_button("Sign up")
+    sign_up("test@example.com","123456")
     expect(current_path).to eq('/')
   end
 
