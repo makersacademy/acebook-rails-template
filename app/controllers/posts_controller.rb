@@ -1,4 +1,9 @@
 class PostsController < ApplicationController
+
+  def index
+    @posts = Post.all
+  end
+
   def new
     @post = Post.new
   end
@@ -8,6 +13,7 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+<<<<<<< HEAD
   def edit
     @post = Post.find(params[:id])
   end
@@ -19,6 +25,17 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+=======
+  def destroy 
+    @post = Post.find(params[:id])
+    if @post.user_id === current_user.id
+      @post.destroy
+    else 
+      flash[:alert] = "Error: can't delete posts by other users"
+    end 
+    redirect_to posts_path
+
+>>>>>>> master
   end
 
   private

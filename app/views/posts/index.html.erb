@@ -5,9 +5,11 @@
       <p><%= User.find_by(id: post.user_id).name %></p>
       <p><%= post.created_at.strftime('%e %B at %H:%M') %></p>
       <%= link_to 'Update', edit_post_path(post.id)%>
+      <%= button_to "Delete", post_path(post), method: :delete, data:{}, :class => 'btn btn-default' %>
     </div>
   <% end %>
 </div>
+
 <%= link_to new_post_path do %>
   New post
 <% end %>
