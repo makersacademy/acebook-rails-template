@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order(created_at: :desc)
   end
-  
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
@@ -21,6 +21,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
 end
