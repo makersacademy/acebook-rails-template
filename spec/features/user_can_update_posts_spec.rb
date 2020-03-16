@@ -22,7 +22,7 @@ RSpec.feature "Post Managment", type: :feature do
   scenario "Cannot update posts after 10 minutes" do
     sign_up('test@example.com', 'password')
     create_post('Hello, world!')
-    Timecop.travel(Time.now + 10*60)
+    Timecop.travel(Time.current + 660)
     first(".post").click_on "Update"
     expect(page).to have_content("Error: can't update posts after 10 minutes")
   end

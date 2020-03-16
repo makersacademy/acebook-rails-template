@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-16T21:12:48+00:00">2020-03-16T21:12:48+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-16T21:23:52+00:00">2020-03-16T21:23:52+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.72
+         1.73
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>10</b> files in total.
-    <b>157</b> relevant lines. 
-    <span class="green"><b>157</b> lines covered</span> and
+    <b>155</b> relevant lines. 
+    <span class="green"><b>155</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -73,11 +73,11 @@
       <tr>
         <td class="strong"><a href="#b7568ca63b1ae250d80720e99ea2512e9fedb4b9" class="src_link" title="app/models/post.rb">app/models/post.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>12</td>
-        <td>7</td>
-        <td>7</td>
+        <td>10</td>
+        <td>5</td>
+        <td>5</td>
         <td>0</td>
-        <td>2.0</td>
+        <td>2.4</td>
       </tr>
       
       <tr>
@@ -394,7 +394,7 @@
         <li class="covered" data-hits="2" data-linenumber="21">
           <span class="hits">2</span>
           
-          <code class="ruby">    elsif (Time.now - post.created_at) &gt;= 600 </code>
+          <code class="ruby">    elsif !post.within_time?(10) </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="22">
@@ -575,8 +575,8 @@
     <h3>app/models/post.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -626,31 +626,19 @@
           <code class="ruby">  def within_time?(minutes)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="8">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    p &quot;time = #{Time.current}&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="9">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    p created_at</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="10">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="8">
+          <span class="hits">4</span>
           
           <code class="ruby">    (Time.current - created_at) &lt;= (minutes * 60)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">end</code>
@@ -1534,7 +1522,7 @@
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    Timecop.travel(Time.now + 10*60)</code>
+          <code class="ruby">    Timecop.travel(Time.current + 660)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">

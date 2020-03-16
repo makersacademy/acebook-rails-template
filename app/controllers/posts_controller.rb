@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     if !post.by_user?(current_user)
       flash[:alert] = "Error: can't update posts by other users"
       redirect_to posts_url
-    elsif (Time.now - post.created_at) >= 600 
+    elsif !post.within_time?(10) 
       flash[:alert] = "Error: can't update posts after 10 minutes"
       redirect_to posts_url
     else 
