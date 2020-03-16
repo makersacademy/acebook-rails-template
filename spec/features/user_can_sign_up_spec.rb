@@ -8,7 +8,7 @@ RSpec.feature "Sign up", type: :feature do
   end
   
   scenario 'User can sign up' do
-    sign_up("test@example.com","example")
+    sign_up("test@example.com", "example")
     expect(current_path).to eq('/')
   end
 
@@ -18,17 +18,17 @@ RSpec.feature "Sign up", type: :feature do
   end
 
   scenario "User can't sign up with something with password less than 6 (inclusive) characters" do
-    sign_up("test@example.com","12345")
+    sign_up("test@example.com", "12345")
     expect(page).to have_content("Password is too short")
   end
 
   scenario "User should be able to signup with a valid password (6 characters)" do
-    sign_up("test@example.com","123456")
+    sign_up("test@example.com", "123456")
     expect(current_path).to eq('/')
   end
 
   scenario "User can't sign up with something with password more than 10 (inclusive) characters" do
-    sign_up("test@example.com","12345678910")
+    sign_up("test@example.com", "12345678910")
     expect(page).to have_content("Password is too long")
   end
 
