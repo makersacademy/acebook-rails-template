@@ -49,10 +49,13 @@ Front-end:
 Back-end:
 - Ruby
 - Ruby On Rails
+- PostgreSQL
 
 Testing:
 - RSpec
 - SimpleCov
+- Code Climate
+- Travis CI
 
 ## <a name="Examples">Examples</a>
 
