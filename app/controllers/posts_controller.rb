@@ -15,11 +15,14 @@ class PostsController < ApplicationController
 
   def edit
     post = Post.find(params[:id])
-    if post.user_id === current_user.id
-      @post = post
-    else 
-      flash[:alert] = "Error: can't delete posts by other users"
+    if post.user_id != current_user.id
+      flash[:alert] = "Error: can't update posts by other users"
       redirect_to posts_url
+    elsif (Time.now - post.created_at) > 600 
+      flash[:alert] = "Error: can't update posts after 10 minutes"
+      redirect_to posts_url
+    else 
+      @post = post
     end
   end
 

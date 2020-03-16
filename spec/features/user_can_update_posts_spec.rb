@@ -16,7 +16,15 @@ RSpec.feature "Post Managment", type: :feature do
     Post.create(message: "Can't update test", user_id: 1)
     sign_up("test@example.com", "123456")
     first(".post").click_on "Update"
-    expect(page).to have_content("Error: can't delete posts by other users")
+    expect(page).to have_content("Error: can't update posts by other users")
+  end
+
+  scenario "Cannot update posts after 10 minutes" do
+    sign_up('test@example.com', 'password')
+    create_post('Hello, world!')
+    Timecop.travel(Time.now + 10*60)
+    first(".post").click_on "Update"
+    expect(page).to have_content("Error: can't update posts after 10 minutes")
   end
 
 end
