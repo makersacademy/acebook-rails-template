@@ -217,10 +217,22 @@
         null,
         1,
         2,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/lizdaly/projects/Makers/week-8/aceBook-PingPong/app/models/post.rb": [
         1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/lizdaly/projects/Makers/week-8/aceBook-PingPong/spec/models/user_spec.rb": [
@@ -231,6 +243,6 @@
         null
       ]
     },
-    "timestamp": 1584382869
+    "timestamp": 1584387115
   }
 }
