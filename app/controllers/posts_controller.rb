@@ -14,7 +14,13 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    post = Post.find(params[:id])
+    if post.user_id === current_user.id
+      @post = post
+    else 
+      flash[:alert] = "Error: can't delete posts by other users"
+      redirect_to posts_url
+    end
   end
 
   def update

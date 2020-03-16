@@ -10,4 +10,13 @@ RSpec.feature "Post Managment", type: :feature do
     expect(page).to have_content "This is a different message"
     expect(page).not_to have_content "Hello, world!"
   end
+
+  scenario "Cannot update other users posts" do 
+    User.create(id: 1, name: 'Test Name', email: 'signin_test@example.com', password: '123456')
+    Post.create(message: "Can't update test", user_id: 1)
+    sign_up("test@example.com", "123456")
+    first(".post").click_on "Update"
+    expect(page).to have_content("Error: can't delete posts by other users")
+  end
+
 end
