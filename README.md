@@ -26,6 +26,7 @@ Alternately, you can use/view the project on Heroku [here](#nowhere).
   (incl. jQuery)
 
 ## Collaborators
+* [Barri](https://github.com/BarriF13)
 * [Chris](https://github.com/saidbyced)
 * [Hansa](https://github.com/hansa-lallu)
 * [Megan](https://github.com/Megscode)
@@ -43,7 +44,7 @@ Under construction...
 Under construction...
 
 ### Project management
-Trello: [Acebook-on-rails}(https://trello.com/b/0B2v6FNT/acebook-on-rails)
+Trello: [Acebook-on-rails](https://trello.com/b/0B2v6FNT/acebook-on-rails)
 
 ## Acknowledgements
 Everyone. But especially [LOLcats](http://www.lolcats.com/).
