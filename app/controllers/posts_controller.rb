@@ -16,9 +16,7 @@ class PostsController < ApplicationController
 
   def index
     # @posts = Post.all
-    @posts = Post.where(user_id: current_user.id)
-    
-    
+    @posts = Post.where(wall_id: current_user.id)  
   end
 
   def edit
@@ -48,7 +46,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :user_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:message, :user_id, :wall_id).merge(user_id: current_user.id)
   end
 
 

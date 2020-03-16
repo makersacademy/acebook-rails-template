@@ -2,6 +2,7 @@
   <%= form.label :message %>
   <%= form.text_area :message %>
   <%= form.hidden_field :user_id, :value => current_user.id %>
+  <%= form.hidden_field :wall_id, :value => params[:wall_id]%>
   <%= form.submit "Submit" %>
 <% end %>
 
