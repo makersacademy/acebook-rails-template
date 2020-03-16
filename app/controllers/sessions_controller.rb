@@ -3,12 +3,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.password == params[:session][:password]
-      # log the user in
-    else
-      render 'new'
-    end
+    # user = User.find_by(email: params[:session][:email].downcase)
+    # if user && user.password == params[:session][:password]
+    #   # log the user in
+    # else
+    #   render 'new'
+    # end
   end
 
   def destroy
