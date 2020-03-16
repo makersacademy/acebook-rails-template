@@ -1,9 +1,25 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <div>
+    <%= post.message %></br>
+    <div class='post-actions'>
+      <i class="fa fa-heart post-like"></i></br></br>
+    </div>
+  </div>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
 
-<h1>test</h1>
+
+<script type="text/javascript">
+  $(function() {
+    $('.post-like').on('click', function() {
+      var post_id = $(this).data('id');
+
+      $(this).toggleClass('active')
+
+
+    })
+  })
+</script>
