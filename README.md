@@ -29,6 +29,16 @@ This challenge is the second team programming challenge at [Makers Academy](http
 * [David Stewart](https://github.com/DavidStewartLDN)
 * [David McGregor](https://github.com/davmcgregor)
 
+## <a name="Commands following Pull Request">Pull Request Instructions</a>
+
+After pulling from the maser repository. If there are database changes then:
+
+```bash
+> bin/rails db:drop
+> bin/rails db:create
+> bin/rails db:migrate
+```
+
 ## <a name="Installation">Installation Instructions</a>
 
 First, clone this repository. Then:
