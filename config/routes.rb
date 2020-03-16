@@ -4,8 +4,3 @@ Rails.application.routes.draw do
   root  'posts#index'
   resources :posts
 end
-
-devise_for :users, skip: [:sessions]
-as :user do
-  get 'site-admin/login', to: 'devise/sessions#new', as: :new_user_session
-end
