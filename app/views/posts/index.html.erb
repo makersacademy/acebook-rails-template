@@ -1,23 +1,29 @@
-<h1>hello Megan & Myrtle & Chris & Hansa & Paulo & Barri!! <br>
-welcome to Acebook</h1>
-
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path) %>  
-  </li>
-<% end %>
+<h2>hello Megan & Myrtle & Chris & Hansa & Paulo & Barri!! <br><br>
+welcome to Acebook</h2>
 
 <div id="posts">
-<% @posts.each do |post| %>
+  <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <p><%= post.created_at %></p>
+  <p>created at <%= post.created_at %> 
+  <p><%= link_to "Edit this post", edit_post_path(post) %></p>
+
+  
+  <%= link_to "Delete this post", post_path(post), 
+  method: :delete, data: {confirm: 'Are you sure?'}, 
+  :class => 'btn btn-outline-danger btn-sm' %>
+</p>
 <% end %>
 </div>
-
+<div>
 <%= link_to new_post_path do %>
   New post
 <% end %>
+</div>
+<br>
+<div>
+<% if user_signed_in? %>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+<% else %>
+  <%= link_to('Login', new_user_session_path) %>  
+<% end %>
+</div>
