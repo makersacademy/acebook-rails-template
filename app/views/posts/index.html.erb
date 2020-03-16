@@ -1,12 +1,12 @@
 <div>
-<% @posts.order(created_at: :desc).each do |post| %>
-
-  <p><%= render partial: "line_breaks", locals: {post: post} %></p>
-  <p><%= User.find_by(id: post.user_id).name %></p>
-  <p><%= post.created_at.strftime('%e %B at %H:%M') %></p>
-  <%= link_to 'Update', edit_post_path(post.id)%>
-
-<% end %>
+  <% @posts.order(created_at: :desc).each do |post| %>
+    <div class="post">
+      <p><%= render partial: "line_breaks", locals: {post: post} %></p>
+      <p><%= User.find_by(id: post.user_id).name %></p>
+      <p><%= post.created_at.strftime('%e %B at %H:%M') %></p>
+      <%= link_to 'Update', edit_post_path(post.id)%>
+    </div>
+  <% end %>
 </div>
 <%= link_to new_post_path do %>
   New post
