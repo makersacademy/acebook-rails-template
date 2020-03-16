@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-16T16:48:07+00:00">2020-03-16T16:48:07+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-16T16:50:36+00:00">2020-03-16T16:50:36+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.63
+         1.64
        </span>
     </span> hits/line)
   </h2>
@@ -53,11 +53,11 @@
       <tr>
         <td class="strong"><a href="#c0e5f86ed241695fd17544d80994f9a4e84495c8" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>14</td>
-        <td>7</td>
-        <td>7</td>
+        <td>13</td>
+        <td>6</td>
+        <td>6</td>
         <td>0</td>
-        <td>4.7</td>
+        <td>4.8</td>
       </tr>
       
       <tr>
@@ -67,7 +67,7 @@
         <td>15</td>
         <td>15</td>
         <td>0</td>
-        <td>2.6</td>
+        <td>2.9</td>
       </tr>
       
       <tr>
@@ -294,8 +294,8 @@
         <td class="strong"><a href="#f40152c768651f46cd675e1ef3b8d6f669c956ce" class="src_link" title="spec/controllers/posts_controller_spec.rb">spec/controllers/posts_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>37</td>
-        <td>24</td>
-        <td>24</td>
+        <td>25</td>
+        <td>25</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -441,8 +441,8 @@
     <h3>app/controllers/application_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -501,34 +501,28 @@
         <li class="covered" data-hits="24" data-linenumber="9">
           <span class="hits">24</span>
           
-          <code class="ruby">    unless session[:current_user_id]</code>
+          <code class="ruby">    redirect_to &#39;/users/new&#39; unless session[:current_user_id]</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="10">
-          <span class="hits">4</span>
-          
-          <code class="ruby">      redirect_to &#39;/users/new&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">  end  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">end</code>
@@ -595,14 +589,14 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="8">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="8">
+          <span class="hits">4</span>
           
           <code class="ruby">    @post = Post.create(message: post_params, users_id: session[:current_user_id])</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="9">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="9">
+          <span class="hits">4</span>
           
           <code class="ruby">    redirect_to posts_url</code>
         </li>
@@ -685,20 +679,20 @@
           <code class="ruby">  def post_params</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="23">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="23">
+          <span class="hits">4</span>
           
           <code class="ruby">    params.require(:post).permit(:message)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="24">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="24">
+          <span class="hits">4</span>
           
           <code class="ruby">    message = params[:post][:message]</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="25">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="25">
+          <span class="hits">4</span>
           
           <code class="ruby">    return message</code>
         </li>
@@ -2337,8 +2331,8 @@
     <h3>spec/controllers/posts_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>24</b> relevant lines. 
-      <span class="green"><b>24</b> lines covered</span> and
+      <b>25</b> relevant lines. 
+      <span class="green"><b>25</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2484,10 +2478,10 @@
           <code class="ruby">      User.create(email: &quot;test@example.com&quot;, password: &quot;123456&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # session[:current_user_id] = User.last.id</code>
+          <code class="ruby">      session[:current_user_id] = User.last.id</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
