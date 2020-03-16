@@ -4,3 +4,4 @@ def sign_up(email, password)
   fill_in "user_password", with: password
   click_button("Sign up")
 end
+
