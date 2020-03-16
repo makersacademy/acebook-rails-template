@@ -8,7 +8,7 @@ RSpec.describe PostsController, type: :controller do
       fill_in "Email", with: "test@example.com"
       fill_in "Password", with: "password"
       click_button "Submit"
-      get :new
+      visit
       expect(response).to have_http_status(200)
     end
   end
