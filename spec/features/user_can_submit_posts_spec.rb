@@ -25,4 +25,14 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).not_to have_content("Hello, England!")
   end
 
+  scenario "Can submit posts and view them" do
+    sign_up
+    visit "/posts"
+    click_link "New post"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    expect(page).to have_content("test@example.com says")
+  end
+
+
 end
