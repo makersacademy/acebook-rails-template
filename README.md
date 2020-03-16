@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Megscode/acebook_undefined.svg?branch=master)](https://travis-ci.com/Megscode/acebook_undefined) <a href="https://codeclimate.com/github/Megscode/acebook_undefined/maintainability"><img src="https://api.codeclimate.com/v1/badges/f9806e6844b093009c3a/maintainability" /></a> <a href="https://codeclimate.com/github/Megscode/acebook_undefined/test_coverage"><img src="https://api.codeclimate.com/v1/badges/f9806e6844b093009c3a/test_coverage" /></a>
+
 # AceBook  
 
 A clone of a well known posts-based website by team {undefined}. Created as part of Weeks 8&9 at [Makers](https://makers.tech/).
