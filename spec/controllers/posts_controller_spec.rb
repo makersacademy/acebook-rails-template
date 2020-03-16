@@ -8,7 +8,6 @@ RSpec.describe PostsController, type: :controller do
       fill_in "Email", with: "test@example.com"
       fill_in "Password", with: "password"
       click_button "Submit"
-      visit
       expect(response).to have_http_status(200)
     end
   end
@@ -29,6 +28,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET /" do
     it "responds with 200" do
+      sign_up
       get :index
       expect(response).to have_http_status(200)
     end
