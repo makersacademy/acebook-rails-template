@@ -13,12 +13,4 @@
  *= require_tree .
  *= require_self
  */
- body{
- 
-  background-color: goldenrod; 
-}
 
-.alert {
-  position: fixed;
-  bottom: 0
-}
