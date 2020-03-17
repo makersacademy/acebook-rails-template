@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'simplecov', '0.17.1', require: false, group: :test
 gem 'simplecov-console', require: false
+gem 'sass-rails' (~> 5.0)
+gem 'web-console' (>= 3.3.0)
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
