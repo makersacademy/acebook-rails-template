@@ -3,7 +3,7 @@ welcome to Acebook</h2>
 
 <div id="posts">
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= simple_format(post.message) %></p>
   <p>created at <%= post.created_at %> 
   <br> by <%= post.user.email %>  <br>
   <%= link_to "Delete this post", post_path(post), 
