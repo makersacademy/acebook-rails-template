@@ -10,3 +10,5 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
+
+<%= link_to "Log out", logout_path, method: :delete %>
