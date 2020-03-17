@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  
+
   get 'welcome/index'
+
+  get 'sessions/new'
+  delete '/logout', to: 'sessions#destroy'
 
   resources :users
 
