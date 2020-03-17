@@ -13,4 +13,10 @@ RSpec.describe Post, type: :model do
     post = Post.create(message: "hey", created_at: date)
     expect(post.created_at).to eq(date)
   end
+
+  it 'checks post is associated to a user' do
+    user = User.new
+    post = Post.create(message: "hey", user: user)
+    expect(post.user).to eq(user)
+  end
 end
