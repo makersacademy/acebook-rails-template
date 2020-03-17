@@ -34,7 +34,15 @@ This challenge is the second team programming challenge at [Makers Academy](http
 in order to update the Heroku db after changing a migration please run the following command:
 
 $ heroku run rails db:reset -a offtherails-acebook DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+## <a name="Commands following Pull Request">Pull Request Instructions</a>
 
+After pulling from the maser repository. If there are database changes then:
+
+```bash
+> bin/rails db:drop
+> bin/rails db:create
+> bin/rails db:migrate
+```
 ## <a name="Installation">Installation Instructions</a>
 
 First, clone this repository. Then:
@@ -54,6 +62,8 @@ To run tests:
 ```
 
 ## <a name="User_Stories">User Stories</a>
+
+### MVP 
 
 ```
 As a user,
@@ -114,6 +124,39 @@ I would like to see the most recent posts first
 As a user,
 So that my posts are easy to read,
 I would like to be abe to make posts using line breaks
+```
+
+### Additional features
+
+```
+As a user,
+So I can create, update and delete records,
+I need to be able to login 
+```
+```
+As a user,
+To see if I'm signed in,
+I want see a message alerting me if my signin authenitication failed
+```
+```
+As a user,
+To interact with my Acebook when signed in,
+I want to go to /posts and submit new posts without the page refreshing
+```
+```
+As a user,
+To interact with my Acebook when signed in,
+I want go to /posts and comment on posts without the page refreshing
+```
+```
+As user,
+To interact with my Acebook when signed in,
+I want go to /posts and like a post or comment without the page refreshing
+```
+```
+As user,
+To interact with my Acebook when signed in,
+I can only update/delete my own posts/comments.
 ```
 
 ## <a name="Mockup">Mockup</a>
