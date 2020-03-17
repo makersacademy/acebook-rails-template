@@ -8,7 +8,7 @@
 /.bundle
 
 # Ignore coverage files.
-/coverage/
+/coverage/*
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
