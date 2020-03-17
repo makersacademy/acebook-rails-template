@@ -14,6 +14,7 @@ module Api
 
       def show
         @post = Post.find(params[:id])
+        render json: @post
       end
 
       def index
