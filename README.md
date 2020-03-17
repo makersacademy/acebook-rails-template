@@ -29,6 +29,11 @@ This challenge is the second team programming challenge at [Makers Academy](http
 * [David Stewart](https://github.com/DavidStewartLDN)
 * [David McGregor](https://github.com/davmcgregor)
 
+## <a name="Troubleshooting">Troubleshooting
+
+in order to update the Heroku db after changing a migration please run the following command:
+
+$ heroku run rails db:reset -a offtherails-acebook DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 ## <a name="Commands following Pull Request">Pull Request Instructions</a>
 
 After pulling from the maser repository. If there are database changes then:
@@ -38,7 +43,6 @@ After pulling from the maser repository. If there are database changes then:
 > bin/rails db:create
 > bin/rails db:migrate
 ```
-
 ## <a name="Installation">Installation Instructions</a>
 
 First, clone this repository. Then:

@@ -1,6 +1,6 @@
 <br>
 <br>
-<h1> posts </h1>
+<h1><%=current_user.email%> wall </h1>
 <br>
 <div class='d-fex flex-column -bd-highlight mb-3'>
 <% @posts.reverse.each do |post| %>
@@ -21,6 +21,6 @@
 <% end %>
 </div>
 
-<%= link_to new_post_path do %>
+<%= link_to new_post_path(wall_id: current_user.id) do %>
   New post
 <% end %>
