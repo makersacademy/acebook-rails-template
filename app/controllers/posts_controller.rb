@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
   end
@@ -23,4 +24,5 @@ class PostsController < ApplicationController
     message = params[:post][:message]
     return message
   end
+
 end

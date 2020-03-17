@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get "/posts/yours", to: "posts#yours"
   resources :posts
 
+  get '*path' => redirect('/users/new')
 end
