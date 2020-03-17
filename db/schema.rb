@@ -10,52 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200317143300) do
+ActiveRecord::Schema.define(version: 20200317164746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comment_likes", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "comments_id"
+    t.bigint "user_id"
+    t.bigint "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["comments_id"], name: "index_comment_likes_on_comments_id"
-    t.index ["users_id"], name: "index_comment_likes_on_users_id"
+    t.index ["comment_id"], name: "index_comment_likes_on_comment_id"
+    t.index ["user_id"], name: "index_comment_likes_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
     t.string "comment"
-    t.bigint "users_id"
-    t.bigint "posts_id"
+    t.bigint "user_id"
+    t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["posts_id"], name: "index_comments_on_posts_id"
-    t.index ["users_id"], name: "index_comments_on_users_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "post_likes", force: :cascade do |t|
-    t.bigint "posts_id"
-    t.bigint "users_id"
+    t.bigint "post_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["posts_id"], name: "index_post_likes_on_posts_id"
-    t.index ["users_id"], name: "index_post_likes_on_users_id"
+    t.index ["post_id"], name: "index_post_likes_on_post_id"
+    t.index ["user_id"], name: "index_post_likes_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "message"
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "cached_votes_total", default: 0
-    t.integer "cached_votes_score", default: 0
-    t.integer "cached_votes_up", default: 0
-    t.integer "cached_votes_down", default: 0
-    t.integer "cached_weighted_score", default: 0
-    t.integer "cached_weighted_total", default: 0
-    t.float "cached_weighted_average", default: 0.0
-    t.index ["users_id"], name: "index_posts_on_users_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,11 +70,11 @@ ActiveRecord::Schema.define(version: 20200317143300) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
-  add_foreign_key "comment_likes", "comments", column: "comments_id"
-  add_foreign_key "comment_likes", "users", column: "users_id"
-  add_foreign_key "comments", "posts", column: "posts_id"
-  add_foreign_key "comments", "users", column: "users_id"
-  add_foreign_key "post_likes", "posts", column: "posts_id"
-  add_foreign_key "post_likes", "users", column: "users_id"
-  add_foreign_key "posts", "users", column: "users_id"
+  add_foreign_key "comment_likes", "comments"
+  add_foreign_key "comment_likes", "users"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "post_likes", "posts"
+  add_foreign_key "post_likes", "users"
+  add_foreign_key "posts", "users"
 end

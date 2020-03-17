@@ -2,32 +2,31 @@
   <div>
     <%= post.message %></br>
     <div class='post-actions'>
-      <i class="fa fa-heart post-like"></i></br></br>
+      <i class="fa fa-heart post-like"></i>
     </div>
   </div>
   <span class='parent-likes'>
     <span class="like_count">
-      <%= post.get_upvotes.size %> &#128591
+      <%= post.get_upvotes.size %> &#128568
     </span>
-    
-    <a>
-      <% if @user.liked? post %>
+      <% if current_user.liked? post %>
         <div> 
           <%= link_to unlike_post_path(post), class: "liked-btn", method: :put, remote: :true do %>
-          Liked 
+            Liked 
+          <% end %>
         </div>
-        <% end %>
       <% else %>
         <div> 
           <%= link_to like_post_path(post), class: "like-btn", method: :put, remote: :true do %>
-          Like
+            Like
+          <% end %>
         </div>
-        <% end %>
       <% end %>
+    </span>
+  </div></br>
 <% end %>
 
-
-
+</br>
 <%= link_to new_post_path do %>
   New post
 <% end %>
@@ -35,7 +34,7 @@
 </br>
 <%= link_to "Log out", logout_path, method: :delete %>
 
-<%# <script type="text/javascript">
+<script type="text/javascript">
   $(function() {
     $('.post-like').on('click', function() {
       var post_id = $(this).data('id');
@@ -43,4 +42,4 @@
       $(this).toggleClass('active')
     }) 
   })
-</script> %>
+</script>
