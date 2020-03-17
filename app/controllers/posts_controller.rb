@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  # respond_to :js, :html, :json
+
   def new
     @post = Post.new
   end
@@ -15,6 +17,15 @@ class PostsController < ApplicationController
 
   def yours
     @posts = Post.where users_id: session[:current_user_id]
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    if params[:format] == 'like'
+      @post.liked_by @current_user
+    elsif params[:format] == 'unlike'
+      @post.unliked_by @current_user
+    end
   end
 
   private
