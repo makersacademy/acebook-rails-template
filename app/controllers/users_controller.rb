@@ -5,10 +5,13 @@ class UsersController < ApplicationController
   end
 
   def create
+
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id
-      redirect_to posts_url
+      @user = User.create(user_params)
+      session[:current_user_id] = @user.id
+      flash[:notice] = "Sign Up successful!"
+      redirect_to '/posts/yours'
     else
       render 'new'
     end
