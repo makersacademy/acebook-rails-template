@@ -18,7 +18,10 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comments = Comment.all
     @post = Post.find(params[:id])
+    session[:current_post_view] = @post.id
+    @comment = Comment.new
   end
 
   private
