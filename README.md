@@ -32,6 +32,7 @@ Alternately, you can use/view the project on Heroku [here](#nowhere).
 * [Megan](https://github.com/Megscode)
 * [Myrtle](https://github.com/Mrtly)
 * [Paulo](https://github.com/Pazoia)
+* [Barri](https://github.com/BarriF13)
 
 ## Project details
 
