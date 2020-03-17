@@ -5,6 +5,7 @@ welcome to Acebook</h2>
 <% @posts.each do |post| %>
   <p><%= simple_format(post.message) %></p>
   <p>created at <%= post.created_at %> 
+  <br> by <%= post.user.email %>  <br>
   <%= link_to "Delete this post", post_path(post), 
   method: :delete, data: {confirm: 'Are you sure?'}, 
   :class => 'btn btn-outline-danger btn-sm' %>
