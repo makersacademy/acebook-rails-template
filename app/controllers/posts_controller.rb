@@ -1,8 +1,18 @@
 class PostsController < ApplicationController
-  respond_to :js, :html, :json
+  # respond_to :js, :html, :json
   
   def new
     @post = Post.new
+    # respond_to do |format|
+    #   if @post.save
+    #     format.html { redirect post_path(@post) }
+    #     format.json { render json: @post.to_json }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @post.errors.to_json }
+    #   end
+    # end
+    # # @post.save
   end
 
   def create

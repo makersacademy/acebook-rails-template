@@ -10,8 +10,15 @@ RSpec.feature "Liking posts", type: :feature do
     click_button "Submit"
     expect(current_path).to eq('/posts')
     expect(page).to have_link('Like')
-    page.find_by_id('like-btn').click
-    # click_link('Like')
+  
+    # find('Like').click
+    # find('#like-btn')
+    this = page.find_by_id('like')
+    this.click
+    # page.find_by_id('like-btn').click
     # expect(page).to have_content('Liked')
+
+    # click_link('Like')  
+    expect(page).to have_content('Liked')
   end
 end
