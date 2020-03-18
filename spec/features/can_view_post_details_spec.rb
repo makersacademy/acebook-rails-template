@@ -21,7 +21,7 @@ RSpec.feature "View post details", type: :feature do
     fill_in "Message", with: "Cat Flap!"
     click_button "Submit"
     first(:link, "Post Details").click
-    expect(page).to have_content("Hello, world!")
-    expect(page).not_to have_content("Cat Flap!")
+    expect(page).to have_content("Cat Flap!")
+    expect(page).not_to have_content("Hello, world!")
   end
 end

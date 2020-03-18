@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts.order! 'created_at DESC'
   end
 
   def yours
@@ -18,9 +19,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = Comment.all
-    @comments.order! 'created_at DESC'
     @post = Post.find(params[:id])
+    @comments = Comment.where posts_id: @post.id
+    @comments.order! 'created_at DESC'
     session[:current_post_view] = @post.id
     @comment = Comment.new
   end
