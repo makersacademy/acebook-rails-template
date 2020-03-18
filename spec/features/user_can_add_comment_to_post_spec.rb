@@ -10,8 +10,10 @@ RSpec.feature "Adding a comment", type: :feature do
     first(:link, "Post Details").click
     fill_in "Comment", with: "Hello, Earth!"
     click_button "Submit"
+    
     expect(page).to have_content("Comment posted successfully")
     expect(page).to have_content("Hello, Earth!")
+   
   end
   scenario "User creates a post and comments blank on their own post" do
     sign_up

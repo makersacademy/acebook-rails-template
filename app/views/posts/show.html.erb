@@ -15,7 +15,10 @@
 
 <div class="comments">
   <% @comments.each do |comment| %>
-    <%= comment.comment %>
+    <%= comment.comment %><br>
+    <div class="comment_details">
+      <%= comment.created_at %>
+    </div>
     <br><br>
   <% end %>
 </div>
