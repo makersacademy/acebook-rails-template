@@ -11,13 +11,13 @@
     </span>
       <% if current_user.liked? post %>
         <div> 
-          <%= link_to unlike_post_path(post), class: "liked-btn", method: :put, remote: :true do %>
+          <%= link_to unlike_post_path(post), class: "liked-btn", id: 'liked-btn', method: :put, remote: :true do %>
             Liked 
           <% end %>
         </div>
       <% else %>
         <div> 
-          <%= link_to like_post_path(post), class: "like-btn", method: :put, remote: :true do %>
+          <%= link_to like_post_path(post), class: "like-btn",  id: 'like-btn', method: :put, remote: :true do %>
             Like
           <% end %>
         </div>
