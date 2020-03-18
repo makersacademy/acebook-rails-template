@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  
+  skip_before_action :require_login
+  
   def new
   end
 
@@ -14,6 +17,6 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:current_user_id)
     flash[:success] = 'You have successfully logged out. Don\'t let the flap hit you on the way out.'
-    redirect_to root_url
+    redirect_to login_url
   end
 end
