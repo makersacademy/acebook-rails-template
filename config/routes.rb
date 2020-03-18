@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   root 'users#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/posts/yours", to: "posts#yours"
+  get "posts/new", to: "posts#new"
+  get "/posts/:id", to: "posts#show", as: 'post'
   resources :posts
+  resources :comments, only: [:create]
 
   get '*path' => redirect('/users/new')
 end

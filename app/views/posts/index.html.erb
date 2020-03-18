@@ -2,7 +2,7 @@
   <div>
     <%= post.message %></br>
     <div class='post-actions'>
-      <i class="fa fa-heart post-like"></i></br></br>
+      <i class="fa fa-heart post-like"></i> <%= link_to 'Post Details', post_path(post) %></br></br>
     </div>
   </div>
 <% end %>
