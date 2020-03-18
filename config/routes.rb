@@ -19,5 +19,10 @@ Rails.application.routes.draw do
     end
   end
 
+  get "posts/new", to: "posts#new"
+  get "/posts/:id", to: "posts#show", as: 'post'
+
+  resources :comments, only: [:create]
+
   get '*path' => redirect('/users/new')
 end

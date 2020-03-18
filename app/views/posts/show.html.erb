@@ -1,0 +1,24 @@
+<%= flash[:success] %>
+<%= flash[:danger] %>
+<br><br>
+<%= @post.message %>
+
+
+<div class="comment-box">
+  <%= form_for @comment do |comment| %>
+    <%= comment.hidden_field :posts_id, :value => @post.id %>
+    <%= comment.label :comment %>
+    <%= comment.text_field :comment, placeholder: "Add your comment here" %>
+    <%= comment.submit "Submit"%>
+  <% end %>
+</div>
+
+<div class="comments">
+  <% @comments.each do |comment| %>
+    <%= comment.comment %><br>
+    <div class="comment_details">
+      <%= comment.created_at %>
+    </div>
+    <br><br>
+  <% end %>
+</div>
