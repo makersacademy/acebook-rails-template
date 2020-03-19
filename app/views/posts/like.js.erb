@@ -1,0 +1,14 @@
+$('.liked-btn').on('ajax:success', function(){
+  console.log('unliked')
+  $(this).parent().parent().find('.like_count')
+  .html('<%= @post.get_upvotes.size %> &#128568');
+  
+  window.location.reload()
+});
+$('.like-btn').on('ajax:success', function(){
+  console.log('liked')
+  $(this).parent().parent().find('.like_count')
+  .html('<%= @post.get_upvotes.size %> &#128568');
+
+  window.location.reload()
+});

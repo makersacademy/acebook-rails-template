@@ -15,12 +15,19 @@ Rails.application.routes.draw do
   get "/posts/yours", to: "posts#yours"
   get "posts/new", to: "posts#new"
   get "/posts/:id", to: "posts#show", as: 'post'
-
   
+  resources :posts do
+    member do
+      put "like" => "posts#like"
+      put "unlike" => "posts#unlike"
+    end
+  end
   
-
-  resources :posts
-  resources :comments, only: [:create]
-
+  resources :comments, only: [:create] do
+    member do
+      put "like" => "comments#like"
+      put "unlike" => "comments#unlike"
+    end
+  end
   get '*path' => redirect('/users/new')
 end
