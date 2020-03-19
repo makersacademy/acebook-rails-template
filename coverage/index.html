@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-19T12:21:30+00:00">2020-03-19T12:21:30+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-19T14:15:49+00:00">2020-03-19T14:15:49+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.96%</span></span>
+    (<span class="covered_percent"><span class="green">99.5%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.09
+         2.13
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>57</b> files in total.
-    <b>386</b> relevant lines. 
-    <span class="green"><b>382</b> lines covered</span> and
-    <span class="red"><b>4</b> lines missed </span>
+    <b>403</b> relevant lines. 
+    <span class="green"><b>401</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -57,7 +57,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>14.0</td>
+        <td>15.2</td>
       </tr>
       
       <tr>
@@ -72,12 +72,12 @@
       
       <tr>
         <td class="strong"><a href="#22cb88b088b3764a28cf3d33c5546446ede3ca7d" class="src_link" title="app/controllers/posts_controller.rb">app/controllers/posts_controller.rb</a></td>
-        <td class="yellow strong">85.71 %</td>
-        <td>48</td>
+        <td class="green strong">92.86 %</td>
+        <td>47</td>
         <td>28</td>
-        <td>24</td>
-        <td>4</td>
-        <td>6.8</td>
+        <td>26</td>
+        <td>2</td>
+        <td>7.4</td>
       </tr>
       
       <tr>
@@ -97,7 +97,7 @@
         <td>15</td>
         <td>15</td>
         <td>0</td>
-        <td>11.1</td>
+        <td>11.7</td>
       </tr>
       
       <tr>
@@ -147,7 +147,7 @@
         <td>4</td>
         <td>4</td>
         <td>0</td>
-        <td>4.0</td>
+        <td>4.5</td>
       </tr>
       
       <tr>
@@ -443,9 +443,9 @@
       <tr>
         <td class="strong"><a href="#379f2714d636563f1a8276b6a924a9ee85cf7d08" class="src_link" title="spec/features/user_can_like_posts_spec.rb">spec/features/user_can_like_posts_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>12</td>
-        <td>2</td>
-        <td>2</td>
+        <td>17</td>
+        <td>13</td>
+        <td>13</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -583,9 +583,9 @@
       <tr>
         <td class="strong"><a href="#e7f82995cd7110187330b76a475e6344145773cf" class="src_link" title="spec/rails_helper.rb">spec/rails_helper.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>59</td>
-        <td>12</td>
-        <td>12</td>
+        <td>71</td>
+        <td>18</td>
+        <td>18</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -698,8 +698,8 @@
           <code class="ruby">  def require_login</code>
         </li>
       
-        <li class="covered" data-hits="79" data-linenumber="9">
-          <span class="hits">79</span>
+        <li class="covered" data-hits="86" data-linenumber="9">
+          <span class="hits">86</span>
           
           <code class="ruby">    redirect_to &#39;/users/new&#39; unless session[:current_user_id]</code>
         </li>
@@ -869,11 +869,11 @@
         <div class="source_table" id="22cb88b088b3764a28cf3d33c5546446ede3ca7d">
   <div class="header">
     <h3>app/controllers/posts_controller.rb</h3>
-    <h4><span class="yellow">85.71 %</span> covered</h4>
+    <h4><span class="green">92.86 %</span> covered</h4>
     <div>
       <b>28</b> relevant lines. 
-      <span class="green"><b>24</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="green"><b>26</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -898,8 +898,8 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="4">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="11" data-linenumber="4">
+          <span class="hits">11</span>
           
           <code class="ruby">    @post = Post.new</code>
         </li>
@@ -922,14 +922,14 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="8">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="8">
+          <span class="hits">13</span>
           
           <code class="ruby">    @post = Post.create(message: post_params, users_id: session[:current_user_id])</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="9">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="9">
+          <span class="hits">13</span>
           
           <code class="ruby">    redirect_to posts_url</code>
         </li>
@@ -952,14 +952,14 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="13">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="22" data-linenumber="13">
+          <span class="hits">22</span>
           
           <code class="ruby">    @posts = Post.all</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="14">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="22" data-linenumber="14">
+          <span class="hits">22</span>
           
           <code class="ruby">    @posts.order! &#39;created_at DESC&#39;</code>
         </li>
@@ -982,8 +982,8 @@
           <code class="ruby">  def yours</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="18">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="19" data-linenumber="18">
+          <span class="hits">19</span>
           
           <code class="ruby">    @posts = Post.where users_id: session[:current_user_id]</code>
         </li>
@@ -1048,121 +1048,115 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
           <code class="ruby">  def like</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
-          
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
           
           <code class="ruby">    @post = Post.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="32">
-          
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
           
           <code class="ruby">    @post.liked_by User.find_by(id: session[:current_user_id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
           <code class="ruby">  def unlike</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
+        <li class="missed" data-hits="0" data-linenumber="35">
           
           
           <code class="ruby">    @post = Post.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="37">
+        <li class="missed" data-hits="0" data-linenumber="36">
           
           
           <code class="ruby">    @post.unliked_by User.find_by(id: session[:current_user_id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
           <code class="ruby">  def post_params</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="43">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="42">
+          <span class="hits">13</span>
           
           <code class="ruby">    params.require(:post).permit(:message)</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="44">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="43">
+          <span class="hits">13</span>
           
           <code class="ruby">    message = params[:post][:message]</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="45">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="44">
+          <span class="hits">13</span>
           
           <code class="ruby">    return message</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">end</code>
@@ -1350,8 +1344,8 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="6">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="6">
+          <span class="hits">22</span>
           
           <code class="ruby">    @user = User.new</code>
         </li>
@@ -1380,38 +1374,38 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="11">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="20" data-linenumber="11">
+          <span class="hits">20</span>
           
           <code class="ruby">    @user = User.new(user_params)</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="12">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="20" data-linenumber="12">
+          <span class="hits">20</span>
           
           <code class="ruby">    if @user.save</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="13">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="13">
+          <span class="hits">17</span>
           
           <code class="ruby">      @user = User.create(user_params)</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="14">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="14">
+          <span class="hits">17</span>
           
           <code class="ruby">      session[:current_user_id] = @user.id</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="15">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="15">
+          <span class="hits">17</span>
           
           <code class="ruby">      flash[:notice] = &quot;Sign Up successful!&quot;</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="16">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="16">
+          <span class="hits">17</span>
           
           <code class="ruby">      redirect_to &#39;/posts/yours&#39;</code>
         </li>
@@ -1464,8 +1458,8 @@
           <code class="ruby">  def user_params</code>
         </li>
       
-        <li class="covered" data-hits="35" data-linenumber="25">
-          <span class="hits">35</span>
+        <li class="covered" data-hits="37" data-linenumber="25">
+          <span class="hits">37</span>
           
           <code class="ruby">    params.require(:user).permit(:email, :password)</code>
         </li>
@@ -1667,8 +1661,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="6">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="15" data-linenumber="6">
+          <span class="hits">15</span>
           
           <code class="ruby">    @current_user ||= User.find_by(id: session[:current_user_id]) if session[:current_user_id]</code>
         </li>
@@ -4298,8 +4292,8 @@
     <h3>spec/features/user_can_like_posts_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>13</b> relevant lines. 
+      <span class="green"><b>13</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4325,55 +4319,85 @@
           <code class="ruby">RSpec.feature &quot;Liking posts&quot;, type: :feature do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # scenario &quot;User can like posts&quot; do</code>
+          <code class="ruby">  scenario &quot;User can like posts&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #   visit &quot;/posts/&quot;</code>
+          <code class="ruby">    sign_up</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #   fill_in &quot;Email&quot;, with: &quot;test@example.com&quot;</code>
+          <code class="ruby">    expect(page).to have_content(&quot;You have no posts... :(&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #   fill_in &quot;Password&quot;, with: &quot;password&quot;</code>
+          <code class="ruby">    visit &quot;/posts&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #   click_button &quot;Submit&quot;</code>
+          <code class="ruby">    click_link &quot;New post&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #   click_button &quot;Log out&quot;</code>
+          <code class="ruby">    fill_in &quot;Message&quot;, with: &quot;On my momma I be breathing&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #   expect(current_path).to eq(&#39;/sign&#39;)</code>
+          <code class="ruby">    click_button &quot;Submit&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # end</code>
+          <code class="ruby">    expect(current_path).to eq(&#39;/posts&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">    # expect(page).to have_link(&#39;&amp;#128568&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    this = page.find_by_id(&#39;like&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    this.click</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content(&quot;\n1\n😸&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">end</code>
@@ -5848,8 +5872,8 @@
     <h3>spec/rails_helper.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>12</b> relevant lines. 
-      <span class="green"><b>12</b> lines covered</span> and
+      <b>18</b> relevant lines. 
+      <span class="green"><b>18</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -5914,298 +5938,370 @@
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"># Capybara.register_driver :chrome do |app|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby"># Requires supporting ruby files with custom matchers and macros, etc, in</code>
+          <code class="ruby">  # Capybara::Selenium::Driver.new(app, browser: :chrome)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby"># spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are</code>
+          <code class="ruby"># end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby"># run as spec files by default. This means that files in spec/support that end</code>
+          <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># in _spec.rb will both be required and run as specs, causing the specs to be</code>
+          <code class="ruby">Capybara.register_driver :headless_chrome do |app|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># run twice. It is recommended that you do not name files matching this glob to</code>
+          <code class="ruby">  browser_options = ::Selenium::WebDriver::Chrome::Options.new</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby"># end with _spec.rb. You can configure this pattern with the --pattern</code>
+          <code class="ruby">  # headless means don&#39;t open browser window when running rspec</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># option on the command line or in ~/.rspec, .rspec or `.rspec-local`.</code>
+          <code class="ruby">  browser_options.headless!</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#</code>
+          <code class="ruby">  Capybara::Selenium::Driver.new(app, browser: :chrome, options: browser_options)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby"># The following line is provided for convenience purposes. It has the downside</code>
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby"># of increasing the boot-up time by auto-requiring all files in the support</code>
+          <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># directory. Alternatively, in the individual `*_spec.rb` files, manually</code>
+          <code class="ruby">Capybara.javascript_driver = :headless_chrome</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># require only the support files necessary.</code>
+          <code class="ruby">Capybara.default_driver = :headless_chrome</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby"># Requires supporting ruby files with custom matchers and macros, etc, in</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby"># Dir[Rails.root.join(&#39;spec/support/**/*.rb&#39;)].each { |f| require f }</code>
+          <code class="ruby"># spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"># run as spec files by default. This means that files in spec/support that end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby"># Checks for pending migration and applies them before tests are run.</code>
+          <code class="ruby"># in _spec.rb will both be required and run as specs, causing the specs to be</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby"># If you are not using ActiveRecord, you can remove this line.</code>
+          <code class="ruby"># run twice. It is recommended that you do not name files matching this glob to</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="28">
           
-          <code class="ruby">ActiveRecord::Migration.maintain_test_schema!</code>
+          
+          <code class="ruby"># end with _spec.rb. You can configure this pattern with the --pattern</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"># option on the command line or in ~/.rspec, .rspec or `.rspec-local`.</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="30">
           
-          <code class="ruby">RSpec.configure do |config|</code>
+          
+          <code class="ruby">#</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="31">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="31">
           
-          <code class="ruby">  config.include Capybara::DSL</code>
+          
+          <code class="ruby"># The following line is provided for convenience purposes. It has the downside</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby">  # Remove this line if you&#39;re not using ActiveRecord or ActiveRecord fixtures</code>
+          <code class="ruby"># of increasing the boot-up time by auto-requiring all files in the support</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="33">
           
-          <code class="ruby">  config.fixture_path = &quot;#{::Rails.root}/spec/fixtures&quot;</code>
+          
+          <code class="ruby"># directory. Alternatively, in the individual `*_spec.rb` files, manually</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"># require only the support files necessary.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby">  # If you&#39;re not using ActiveRecord, or you&#39;d prefer not to run each of your</code>
+          <code class="ruby">#</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby">  # examples within a transaction, remove the following line or assign false</code>
+          <code class="ruby"># Dir[Rails.root.join(&#39;spec/support/**/*.rb&#39;)].each { |f| require f }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby">  # instead of true.</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="38">
           
-          <code class="ruby">  config.use_transactional_fixtures = true</code>
+          
+          <code class="ruby"># Checks for pending migration and applies them before tests are run.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"># If you are not using ActiveRecord, you can remove this line.</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # RSpec Rails can automatically mix in different behaviours to your tests</code>
+          <code class="ruby">ActiveRecord::Migration.maintain_test_schema!</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">  # based on their file location, for example enabling you to call `get` and</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # `post` in specs under `spec/controllers`.</code>
+          <code class="ruby">RSpec.configure do |config|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #</code>
+          <code class="ruby">  config.include Capybara::DSL</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby">  # You can disable this behaviour by removing the line below, and instead</code>
+          <code class="ruby">  # Remove this line if you&#39;re not using ActiveRecord or ActiveRecord fixtures</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  # explicitly tag your specs with their type, e.g.:</code>
+          <code class="ruby">  config.fixture_path = &quot;#{::Rails.root}/spec/fixtures&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
           
           
-          <code class="ruby">  #</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
           
           
-          <code class="ruby">  #     RSpec.describe UsersController, :type =&gt; :controller do</code>
+          <code class="ruby">  # If you&#39;re not using ActiveRecord, or you&#39;d prefer not to run each of your</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby">  #       # ...</code>
+          <code class="ruby">  # examples within a transaction, remove the following line or assign false</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby">  #     end</code>
+          <code class="ruby">  # instead of true.</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #</code>
+          <code class="ruby">  config.use_transactional_fixtures = true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">  # The different available types are documented in the features, such as in</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">  # https://relishapp.com/rspec/rspec-rails/docs</code>
+          <code class="ruby">  # RSpec Rails can automatically mix in different behaviours to your tests</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="53">
           
-          <code class="ruby">  config.infer_spec_type_from_file_location!</code>
+          
+          <code class="ruby">  # based on their file location, for example enabling you to call `get` and</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="54">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # `post` in specs under `spec/controllers`.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="55">
           
           
-          <code class="ruby">  # Filter lines from Rails gems in backtraces.</code>
+          <code class="ruby">  #</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="56">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="56">
           
-          <code class="ruby">  config.filter_rails_from_backtrace!</code>
+          
+          <code class="ruby">  # You can disable this behaviour by removing the line below, and instead</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby">  # arbitrary gems may also be filtered via:</code>
+          <code class="ruby">  # explicitly tag your specs with their type, e.g.:</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
-          <code class="ruby">  # config.filter_gems_from_backtrace(&quot;gem name&quot;)</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">  #     RSpec.describe UsersController, :type =&gt; :controller do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">  #       # ...</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">  #     end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">  #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">  # The different available types are documented in the features, such as in</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">  # https://relishapp.com/rspec/rspec-rails/docs</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="65">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  config.infer_spec_type_from_file_location!</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">  # Filter lines from Rails gems in backtraces.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="68">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  config.filter_rails_from_backtrace!</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">  # arbitrary gems may also be filtered via:</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">  # config.filter_gems_from_backtrace(&quot;gem name&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">end</code>
