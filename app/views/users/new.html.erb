@@ -10,7 +10,9 @@
 
 
 <%= form_for @user do |form| %> 
+  <div>
     <%= render 'shared/error_messages' %>
+  </div>
   <p>
     <%= form.label :email %> <br>
     <%= form.email_field :email %>

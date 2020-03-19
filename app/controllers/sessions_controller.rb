@@ -6,12 +6,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # user = User.find_by(email: params[:session][:email].downcase)
-    # if user && user.password == params[:session][:password]
-    #   # log the user in
-    # else
-    #   render 'new'
-    # end
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.password == params[:session][:password]
+      session[:current_user_id] = user.id
+      flash[:notice] = "Log in successful!"
+      redirect_to '/posts/yours'
+    else
+      flash.now[:danger] = 'Invalid email/password combination'
+      render 'new'
+    end
   end
 
   def destroy

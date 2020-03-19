@@ -1,6 +1,7 @@
 <% @posts.each do |post| %>
   <div>
     <%= post.message %></br>
+    <%= post.created_at %>
     <div class='post-actions'>
       <i class="fa fa-heart post-like"></i> <%= link_to 'Post Details', post_path(post) %></br></br>
     </div>
