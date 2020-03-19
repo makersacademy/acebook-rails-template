@@ -2,7 +2,8 @@
   <div>
     <%= post.message %></br>
     <div class='post_date'>
-      <%= post.created_at %>
+      <%= post.created_at %></br>
+      <%= User.find_by(id: post.users_id).email %>
     </div><br>
     <div class='post-actions'>
       <%= link_to 'Post Details', post_path(post) %></br></br>
