@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  
+  include SessionsHelper
+
   skip_before_action :require_login
   
   def new
@@ -8,9 +9,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.password == params[:session][:password]
-      session[:current_user_id] = user.id
-      flash[:notice] = "Log in successful!"
-      redirect_to '/posts/yours'
+      successful_session(user)
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
