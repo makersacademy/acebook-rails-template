@@ -11,6 +11,16 @@ class CommentsController < ApplicationController
     end
   end
 
+  def like
+    @comment = Comment.find(params[:id])
+    @comment.liked_by User.find_by(id: session[:current_user_id])
+  end
+
+  def unlike
+    @comment = Comment.find(params[:id])
+    @comment.unliked_by User.find_by(id: session[:current_user_id])
+  end
+
   private
 
   def comment_params
