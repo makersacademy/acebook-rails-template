@@ -26,6 +26,16 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
 
+  def like
+    @post = Post.find(params[:id])
+    @post.liked_by User.find_by(id: session[:current_user_id])
+  end
+
+  def unlike
+    @post = Post.find(params[:id])
+    @post.unliked_by User.find_by(id: session[:current_user_id])
+  end
+
   private
 
   def post_params

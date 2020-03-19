@@ -2,13 +2,38 @@
   <div>
     <%= post.message %></br>
     <div class='post_date'>
-      <%= post.created_at %>
+      <%= post.created_at %></br>
+      <%= User.find_by(id: post.users_id).email %>
     </div><br>
     <div class='post-actions'>
-      <i class="fa fa-heart post-like"></i> <%= link_to 'Post Details', post_path(post) %></br></br>
+      <%= link_to 'Post Details', post_path(post) %></br></br>
     </div>
   </div>
+
+  <span class='parent-likes'>
+    <span class="like_count">
+      <%= post.get_upvotes.size %> 
+    </span>
+      <% if current_user.liked? post %>
+        <div>
+          <%= link_to unlike_post_path(post), class: "liked-btn", id: 'liked', method: :put, remote: :true do %>
+            &#128568
+          <% end %>
+        </div>
+      <% else %>
+        <div>
+          <%= link_to like_post_path(post), class: "like-btn",  id: 'like', method: :put, remote: :true do %>
+            &#128568
+          <% end %>
+        </div>
+      <% end %>
+    </span>
+  </div></br>
+  
 <% end %>
+
+
+
 
 <%= link_to new_post_path do %>
   New post
