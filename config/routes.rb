@@ -21,7 +21,11 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :comments, only: [:create]
-
+  resources :comments, only: [:create] do
+    member do
+      put "like" => "comments#like"
+      put "unlike" => "comments#unlike"
+    end
+  end
   get '*path' => redirect('/users/new')
 end

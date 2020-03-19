@@ -19,6 +19,26 @@
     <div class="comment_details">
       <%= comment.created_at %>
     </div>
-    <br><br>
+    <br>
+    <span class='parent-likes'>
+      <span class="like_count">
+        <%= comment.get_upvotes.size %> 
+      </span>
+        <% if current_user.liked? comment %>
+          <div>
+           <%= link_to unlike_comment_path(comment), class: "liked-btn", id: 'liked', method: :put, remote: :true do %>
+            &#128568
+           <% end %>
+          </div>
+        <% else %>
+          <div>
+            <%= link_to like_comment_path(comment), class: "like-btn",  id: 'like', method: :put, remote: :true do %>
+            &#128568
+            <% end %>
+          </div>
+        <% end %>
+      </span>
+  </div></br>
+    <br>
   <% end %>
 </div>
