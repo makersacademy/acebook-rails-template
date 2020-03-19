@@ -8,7 +8,31 @@
       <i class="fa fa-heart post-like"></i> <%= link_to 'Post Details', post_path(post) %></br></br>
     </div>
   </div>
+
+  <span class='parent-likes'>
+    <span class="like_count">
+      <%= post.get_upvotes.size %> &#128568
+    </span>
+      <% if current_user.liked? post %>
+        <div>
+          <%= link_to unlike_post_path(post), class: "liked-btn", id: 'liked', method: :put, remote: :true do %>
+            Liked
+          <% end %>
+        </div>
+      <% else %>
+        <div>
+          <%= link_to like_post_path(post), class: "like-btn",  id: 'like', method: :put, remote: :true do %>
+            Like
+          <% end %>
+        </div>
+      <% end %>
+    </span>
+  </div></br>
+  
 <% end %>
+
+
+
 
 <%= link_to new_post_path do %>
   New post

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :posts do
     member do
       put "like" => "posts#like"
+      put "unlike" => "posts#unlike"
     end
   end
   
