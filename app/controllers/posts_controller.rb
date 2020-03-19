@@ -26,6 +26,13 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
 
+
+  def like
+  end
+
+  def unlike
+  end
+
   private
 
   def post_params
