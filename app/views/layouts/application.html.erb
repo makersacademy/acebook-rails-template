@@ -4,11 +4,44 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
     <script src="https://use.fontawesome.com/7070838073.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <nav class="navbar bg-light">
+
+      <div>
+        <a class="navbar-brand text-dark" href="/">
+          <img src="/images/catflap.png" width="40" height="40" alt="Cat logo">
+          Catflap
+        </a>
+      </div>
+
+      <div>
+        <ul class="nav nav-pills justify-content-end">
+          <% if session[:current_user_id] != nil %>
+            <li class="nav-item">
+              <a class="nav-link active btn-primary" href="/posts/new">New Post</a>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Log out", logout_path, class:"nav-link text-primary", method: :delete %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="/users/new">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="/login">Log In</a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+    </nav>
+
+
     <%= yield %>
   </body>
 </html>
