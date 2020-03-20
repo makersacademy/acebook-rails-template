@@ -1,14 +1,27 @@
-
 <% if flash[:notice] %>
   <div class="sign_up_notice"> <%= flash[:notice] %> </div>
 <% end %>
+</br>
 
-<% if @posts.length == 0 %>
-  <%="You have no posts... :("%>
-<% end %>
+<div>
+  <% if @posts.length == 0 %>
+    <%="You have no posts... :("%>
+  <% end %>
+</div>
+</br>
 
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p>
+    <%= post.message %></br>
+    <%= post.created_at %>
+  </p>
+  
 <% end %>
 
-<%= link_to "Log out", logout_path, method: :delete %>
+<div>
+  <%= link_to "Create a post", new_post_path, method: :get %>
+</div>
+
+<div>
+  <%= link_to "Log out", logout_path, method: :delete %>
+</div>

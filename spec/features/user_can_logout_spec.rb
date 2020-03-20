@@ -7,6 +7,6 @@ RSpec.feature "Log out", type: :feature do
     fill_in "Password", with: "password"
     click_button "Submit"
     click_on "Log out"
-    expect(current_path).to eq('/')
+    expect(current_path).to eq('/login')
   end
 end
