@@ -1,16 +1,32 @@
-# AceBook
+# AceBook 🐱🚪
 
-REQUIRED INSTRUCTIONS:
+[![Build Status](https://travis-ci.org/Kefuri/acebook-catflap.svg?branch=master)](https://travis-ci.org/Kefuri/acebook-catflap) 
+[![Maintainability](https://api.codeclimate.com/v1/badges/403805e02ed7553d09a4/maintainability)](https://codeclimate.com/github/Kefuri/acebook-catflap/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/403805e02ed7553d09a4/test_coverage)](https://codeclimate.com/github/Kefuri/acebook-catflap/test_coverage)
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+#### Technologies: Ruby, Ruby on Rails, Heroku App, JavaScript, ActiveRecord, Postgresql, HTML, CSS, Rubocop, ESLint, TravisCI
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+[Task](#Task) | [Collaborators](#Collaborators) | [Installation Instructions](#Installation) | [Headline Specifications](#Headline_Specifications) |
 
-2. The card wall is here: <please update>
+## <a name="Task">The Task</a>
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+This proejct involves working in teams to produce a social media platform - 'acebook'.
+
+## <a name="Collaborators">Collaborators</a>
+
+Team Catflap is made up of these crazy cats:
+- [Haydon](https://github.com/Kefuri)
+- [Emily](https://github.com/EWright212)
+- [Ellie](https://github.com/EllieRichardsonJones)
+- [Jason](https://github.com/jasylwong) 
+
+## <a name="Installation">Installation Instructions</a>
+
+1. Fork this repository, clone to your local machine and change into the directory:
+```
+$ git clone git@github.com:kefuri/acebook-catflap.git
+$ cd acebook-catflap
+```
 
 ## Quickstart
 
@@ -24,3 +40,12 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## <a name="Headline_Specifications">Headline Specifications</a>
+
+* Users can sign up.
+* Users can sign in.
+* Users can update and delete their own posts.
+* Posts show the date they were posted, and who posted.
+* Posts appear with newest post first.
+* Posts can have line breaks in them.
