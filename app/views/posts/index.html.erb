@@ -1,7 +1,26 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<br>
+<br>
+<h1><%=current_user.email%> wall </h1>
+<br>
+<div class='d-fex flex-column -bd-highlight mb-3'>
+<% @posts.reverse.each do |post| %>
+  <div class="list-group">
+  <div class="shadow-sm p-3 mb-5 bg-white rounded">
+  <div class='p-2 bd- hinglight'>
+  <h5><%=User.find(post.user_id).email%> says:</h5>
+  <h3><%= simple_format post.message %></h3>
+  <div class='d-flex justify-content-end'>
+  <p><%= post.created_at.strftime("%b %e, %l:%M %p") %></p>
+  <%= link_to "Read More", post_path(post), :class => 'btn btn-outline-primary btn-sm' %>
+  <%= link_to "Update", edit_post_path(post), :class => 'btn btn-outline-primary btn-sm', :name => "Update" %>
+  <%= link_to "Delete", post_path(post), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-outline-danger btn-sm' %>
+  </div>
+  </div>
+  </div>
+  </div>
 <% end %>
+</div>
 
-<%= link_to new_post_path do %>
+<%= link_to new_post_path(wall_id: current_user.id) do %>
   New post
 <% end %>
