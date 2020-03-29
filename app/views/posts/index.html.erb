@@ -11,6 +11,7 @@
                         <%= simple_format(post.message.gsub('<', '< ') ) %>
                             <div>Posted:
                                 <%= post.created_at.strftime("%d/%m/%Y") %>
+                                <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
                                     <div>
                                         <%= link_to @user.username, user_path(post.user_id)%> <br>
 
