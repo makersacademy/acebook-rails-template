@@ -14,11 +14,8 @@
                                 <% if post.updated_at != post.created_at %>
                                     <p>(edited)</p>
                                 <% end %>
-                                
-                                
                                     <div>
                                         <%= link_to @user.username, user_path(post.user_id), class: "user-colour" %> <br>
-
                                             <%= link_to user_path(post.user_id) do %>
                                                 <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
                                                     <% end %><br>
@@ -29,7 +26,6 @@
                     <td>
                         <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
                             <p>
-
                             </p>
                             <p>
                                 <%= form.text_area :body %>
@@ -37,32 +33,28 @@
                             <p>
                                 <%= form.submit %>
                             </p>
-                            <% end %>
-                                <% if current_user.id == post.user_id  %>
+                          <% end %>
                     </td>
+                    <% if current_user.id == post.user_id  %>
                     <td>
-
                         <%= link_to 'Delete post |', post_path(post),
                             method: :delete,
                             data: { confirm: 'Are you sure?' } %>
                             <%= link_to 'Edit post', edit_post_path(post) %>
-                                <% end %> <br>
-
-
+                    <% end %> <br>
                     </td>
                 </tr>
                 <% end %>
 
-
-                    <button> <%= link_to new_post_path do %>
-                    Add new post </button>
-                    <% end %>
-                        <button> <%= link_to 'See Albums', albums_path %></button>
-                        <button> <%= link_to 'Create New Album', '/albums/new' %></button>
-                        <div class=" text-center">
-                            <div class=" text-center">
-                                <td class="jumbotron text-center">
-                                    <%= link_to 'Back', root_path %>
-                                </td>
+                <button> <%= link_to new_post_path do %>
+                  Add new post </button>
+                <% end %>
+                <button> <%= link_to 'See Albums', albums_path %></button>
+                <button> <%= link_to 'Create New Album', '/albums/new' %></button>
+                <div class=" text-center">
+                    <div class=" text-center">
+                        <td class="jumbotron text-center">
+                            <%= link_to 'Back', root_path %>
+                        </td>
     </table>
     </div

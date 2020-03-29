@@ -1,8 +1,10 @@
+<div align="center">
 <button><%= link_to 'See all posts', posts_path %></button>
 <l1 style="padding: 20px"> </l1>
 <button><%= link_to 'Add new post', new_post_path %></button>
 <l1 style="padding: 20px"> </l1>
 <button> <%= link_to 'Albums', albums_path %></button>
+</div>
 <div class="text-center">
     <%if current_user.id == @user.id && !@user.avatar.attached? %> 
         <%= form_for current_user do |form| %>
@@ -21,16 +23,16 @@
     <%end%>
           
     <h1>
-        <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
-            <p>
-                <%=@user.username%> wall:
-            </p>
+      <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
+        <p>
+            <%=@user.username%> wall:
+        </p>
     </h1>
     <p>
-        <br>
-        <br>
-        <br>
-        <br>
+      <br>
+      <br>
+      <br>
+      <br>
 </div>
 
 <div class="wall-container">
