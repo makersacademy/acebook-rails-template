@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments, except: :show
+    resources :likes
   end
   resources :albums do
     member do

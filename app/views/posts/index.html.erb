@@ -11,13 +11,14 @@
                         <%= simple_format(post.message.gsub('<', '< ') ) %>
                             <div>Posted:
                                 <%= post.created_at.strftime("%d/%m/%Y") %>
+                                <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
                                     <div>
                                         <%= link_to @user.username, user_path(post.user_id)%> <br>
 
                                             <%= link_to user_path(post.user_id) do %>
                                                 <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
                                                     <% end %><br>
-                                                        <%= link_to 'Show comments', post_path(post) %>
+                                                        <%= link_to 'See Post', post_path(post) %>
                                     </div>
                             </div>
                     </td>
