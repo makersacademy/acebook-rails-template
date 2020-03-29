@@ -4,7 +4,12 @@
 
 <p>
     <h1> <%= @post.message %> </h1>
-    <%= button_to 'Like', post_likes_path(@post), method: :post %>
+    <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+    <% if pre_like %>
+      <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+    <% else %>
+      <%= button_to 'Like', post_likes_path(@post), method: :post %>
+    <% end %>
 </p>
     
 <h2>Comments</h2>
