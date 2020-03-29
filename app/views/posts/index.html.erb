@@ -8,7 +8,12 @@
             <%@user = User.find(post.user_id) %>
                 <tr>
                     <td>
-                        <%= simple_format(post.message.gsub('<', '< ') ) %>
+                        <% if post.message.length > 30%>
+                          <%= simple_format(post.message.gsub('<', '< ')[0..30] )%><%= link_to '. . . . ', post_path(post) %>
+                          <%# check if can create pop up here if greater than 50 %>
+                         <%else%>
+                           <%= simple_format(post.message.gsub('<', '< '))%>
+                         <%end%>
                             <div class="greyv">Posted:
                                 <%= post.created_at.strftime("%d/%m/%Y") %><%=" | "%><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
                                 <% if post.updated_at != post.created_at %>

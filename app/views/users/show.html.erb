@@ -10,13 +10,12 @@
         <%= form_for current_user do |form| %>
             <div>
                 <h4 class='avatar-title'>
-                    <%= form.label 'Set your avatar:'  %>
+                  <%= form.label 'Set your avatar:'  %>
                 </h4>
 
                 <%= form.file_field :avatar, direct_upload: true %>
-
                     <p class="avatar-btn">
-                        <%= form.submit "Set avatar" %>
+                      <%= form.submit "Set avatar" %>
                     </p>
             </div>
         <%end%>
