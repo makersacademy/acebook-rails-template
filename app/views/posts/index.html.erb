@@ -13,7 +13,7 @@
                                 <%= post.created_at.strftime("%d/%m/%Y") %>
                                 <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
                                     <div>
-                                        <%= link_to @user.username, user_path(post.user_id)%> <br>
+                                        <%= link_to @user.username, user_path(post.user_id), class: "user-colour" %> <br>
 
                                             <%= link_to user_path(post.user_id) do %>
                                                 <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
