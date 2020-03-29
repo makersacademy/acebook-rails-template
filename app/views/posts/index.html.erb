@@ -9,9 +9,13 @@
                 <tr>
                     <td>
                         <%= simple_format(post.message.gsub('<', '< ') ) %>
-                            <div>Posted:
-                                <%= post.created_at.strftime("%d/%m/%Y") %>
-                                <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+                            <div class="greyv">Posted:
+                                <%= post.created_at.strftime("%d/%m/%Y") %><%=" | "%><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+                                <% if post.updated_at != post.created_at %>
+                                    <p>(edited)</p>
+                                <% end %>
+                                
+                                
                                     <div>
                                         <%= link_to @user.username, user_path(post.user_id), class: "user-colour" %> <br>
 
