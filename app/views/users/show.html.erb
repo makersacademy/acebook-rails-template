@@ -5,8 +5,7 @@
 <l1 style="padding: 20px"> </l1>
 <button> <%= link_to 'Albums', albums_path %></button>
 <div class=" text-center">
-    <%if current_user.id == @user.id%>
-
+    <%if current_user.id == @user.id && @user.avatar.record.created_at == @user.avatar.record.updated_at %> 
         <%= form_for current_user do |form| %>
             <div>
                 <h4 class='avatar-title'>
@@ -20,9 +19,9 @@
                     </p>
             </div>
 
-
+             <%end%>
             <%end%>
-                <%end%>
+          
 
 
                     <h1>

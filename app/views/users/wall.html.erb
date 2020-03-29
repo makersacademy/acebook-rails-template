@@ -1,15 +1,20 @@
 <div class="username">
 <%= link_to 'See all posts', posts_path %>
     <l1 style="padding: 20px"> </l1>
-    <%= link_to 'Add new post', new_post_path %>
-        <%= link_to 'Albums', albums_path %>
-                    <%= form_for current_user do |form| %>
-                            <%= form.label :avatar %>
-                                <%= form.file_field :avatar %>
-                                    <%= form.submit %>
-                        </div>
 
-                        <%end%>
+    <%= link_to 'Add new post', new_post_path %>
+          <%= link_to 'Albums', albums_path %>
+
+                    
+                      <%=p "in blcok"%>
+                      <%= form_for current_user do |form| %>
+                              <%= form.label :avatar %>
+                                  <%= form.file_field :avatar %>
+                                      <%= form.submit %>
+                          </div>
+
+                          <%end%>
+                        
 
                             <h1>Your wall:</h1>
                             <p>
