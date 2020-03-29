@@ -2,7 +2,11 @@ class LikesController < ApplicationController
   before_action :find_post
 
   def create
-    @post.likes.create(user_id: current_user.id)
+    if already_liked?
+      flash[:notice] = "You have already liked this post"
+    else
+      @post.likes.create(user_id: current_user.id)
+    end
     redirect_to post_path(@post)
   end
 
