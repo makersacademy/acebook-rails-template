@@ -22,6 +22,9 @@
 <% end %>
  
  <div class="jumbotron">
-<%= link_to 'Edit', edit_post_path(@post) %> |
+
+ <% if @post.user_id == current_user.id %>
+   <%= link_to 'Edit', edit_post_path(@post) %> |
+ <% end %>
 <%= link_to 'Back', posts_path %>
 </div>
