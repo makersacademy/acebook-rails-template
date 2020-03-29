@@ -4,9 +4,9 @@
 
 <p>
     <h1> <%= @post.message %> </h1>
-    <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
-    <% if pre_like %>
-      <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+    <% like_check = @post.likes.find { |like| like.user_id == current_user.id} %>
+    <% if like_check %>
+      <%= button_to 'Unlike', post_like_path(@post, like_check), method: :delete %>
     <% else %>
       <%= button_to 'Like', post_likes_path(@post), method: :post %>
     <% end %>
