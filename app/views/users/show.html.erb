@@ -1,11 +1,10 @@
 <button><%= link_to 'See all posts', posts_path %></button>
-
 <l1 style="padding: 20px"> </l1>
 <button><%= link_to 'Add new post', new_post_path %></button>
 <l1 style="padding: 20px"> </l1>
 <button> <%= link_to 'Albums', albums_path %></button>
 <div class="text-center">
-    <%if current_user.id == @user.id && @user.avatar.record.created_at == @user.avatar.record.updated_at %> 
+    <%if current_user.id == @user.id && !@user.avatar.attached? %> 
         <%= form_for current_user do |form| %>
             <div>
                 <h4 class='avatar-title'>
@@ -18,23 +17,20 @@
                         <%= form.submit "Set avatar" %>
                     </p>
             </div>
-
-             <%end%>
-            <%end%>
+        <%end%>
+    <%end%>
           
-
-
-                    <h1>
-                        <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
-                            <p>
-                                <%=@user.username%> wall:
-                            </p>
-                    </h1>
-                    <p>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+    <h1>
+        <%= image_tag(@user.avatar, style:'width:5%') if @user.avatar.attached?%>
+            <p>
+                <%=@user.username%> wall:
+            </p>
+    </h1>
+    <p>
+        <br>
+        <br>
+        <br>
+        <br>
 </div>
 
 <div class="wall-container">
@@ -54,8 +50,8 @@
                                         <strong>Comment:</strong>
                                         <%= comment.body %>
                                     </p>
-                                    <% end %>
-                                        <%end%>
+                    <% end %>
+          <%end%>
     </ul>
 
     <ul class="list-group">
@@ -64,10 +60,7 @@
                 <%=album.title%>
                     <%album.images.each do |image|%>
                         <%= link_to image_tag(image, class: "album-image"), image %>
-
-                            <%end%>
-
-                                <%end%>
-
+                    <%end%>
+          <%end%>
     </ul>
 </div>
