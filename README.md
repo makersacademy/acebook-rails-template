@@ -24,13 +24,6 @@ First, clone this repository. Then:
 > bin/rails server # Start the server at localhost:3000
 ```
 
+##Link to our app
 
-Creating a database for this app. 
-Run the following commands in your terminal, once setting up rails for your computer
-```
-$ rails db:create
-```
-
-```
-$ rails db:migrate
-```
+https://acebook-return-to-sleep.herokuapp.com
