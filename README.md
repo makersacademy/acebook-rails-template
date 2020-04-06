@@ -4,7 +4,7 @@
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+Trello board is [here](https://trello.com/b/6R2ilHJE/acebook-untitled-team)
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
