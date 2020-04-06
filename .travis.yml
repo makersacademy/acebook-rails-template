@@ -1,4 +1,9 @@
-language: ruby
-rvm:
- - 2.5.0
- - jruby
+services:
+  - postgresql
+
+before_script:
+  - rails db:create
+  - rails db:migrate
+
+script:
+  - bundle exec rspec
