@@ -4,7 +4,7 @@
 ## Monday 6th April 2020
 
 
-### Written by Jara
+**Written by Jara**
 
 <br>
 
@@ -20,7 +20,7 @@ blahblah
 
 blahblah
 
-Written by **Sophia**
+**Written by Sophia**
 
 <br>
 
@@ -28,7 +28,7 @@ Written by **Sophia**
 
 blahblah
 
-Written by **Rafa**
+**Written by Rafa**
 
 <br>
 
@@ -36,14 +36,14 @@ Written by **Rafa**
 
 blahblah
 
-Written by **Jara**
+**Written by Jara**
 
 <br>
 
 ## Monday 13th April 2020
 
 
-Written by **Nima**
+**Written by Nima**
 
 <br>
 
@@ -51,7 +51,7 @@ Written by **Nima**
 
 blahblah
 
-Written by **Sophia**
+**Written by Sophia**
 
 <br>
 
@@ -59,7 +59,7 @@ Written by **Sophia**
 
 blahblah
 
-Written by **Rafa**
+**Written by Rafa**
 
 <br>
 
@@ -67,7 +67,7 @@ Written by **Rafa**
 
 blahblah
 
-Written by **Jara**
+**Written by Jara**
 
 <br>
 
@@ -75,4 +75,4 @@ Written by **Jara**
 
 blahblah
 
-Written by **Nima**
+**Written by Nima**
