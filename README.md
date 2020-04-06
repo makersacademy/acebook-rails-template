@@ -1,18 +1,26 @@
-# AceBook
+# AceBook - The Undefined Method
 
-REQUIRED INSTRUCTIONS:
+## Makers Academy - Week 8 (group project)
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+Contributors: Jara Santamaria Martinez, Sophia Bell, Rafa Hernandez, Nima Soufiani
+
+[Outline](#Outline) | [Specifications](#Specifications) | [Planning](#planning) | [Installation Instructions](#install) | [Tech stack](#tech) | [Challenges](#challenges)
+
+## [Outline](#Outline) 
+
+Work as a team to build a clone of Facebook
+
+## [Specifications](#Specifications)
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+## [Planning](#planning)
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+**Day 1**
+- Setting up of our group and responsibilities. Including our [Trello board](https://trello.com/b/zUEWU1Jk/the-undefined-method-acebook).
 
-## Quickstart
+
+## (Installation Instructions)[#install]
 
 First, clone this repository. Then:
 
@@ -24,3 +32,26 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## [Tech stack](#tech) 
+
+Back-end:
+
+* Ruby
+
+Front-end:
+* CSS/HTML
+* Javascript
+* JQuery
+
+Testing:
+
+* Capybara
+* RSpec
+* SimpleCov
+
+Linting:
+
+* Rubocop
+
+## [Challenges](#challenges)
