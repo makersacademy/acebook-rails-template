@@ -2,8 +2,7 @@
 
 REQUIRED INSTRUCTIONS:
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+1. Our Trello board can be found here: https://trello.com/b/Hwsirgqz/acebook
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
