@@ -4,7 +4,7 @@
 
 Contributors: [Jara Santamaria Martinez](https://github.com/jarasmar), [Sophia Bell](https://github.com/Kittaru87), [Rafa Hernandez](https://github.com/rafahg), [Nima Soufiani](https://github.com/Nimzyow)
 
-[Outline](#-outline) | [Specifications](#-specifications) | [Planning](#-planning) | [Installation Instructions](#-installation-instructions) | [Tech stack](#-tech-stack) | [Challenges](#-challenges)
+[Outline](#outline) | [Specifications](#specifications) | [Planning](#planning) | [Installation Instructions](#installation-instructions) | [Tech stack](#tech-stack) | [Challenges](#challenges)
 
 ## Outline
 
