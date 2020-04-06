@@ -2,25 +2,26 @@
 
 ## Makers Academy - Week 8 (group project)
 
-Contributors: Jara Santamaria Martinez, Sophia Bell, Rafa Hernandez, Nima Soufiani
+Contributors: [Jara Santamaria Martinez](https://github.com/jarasmar), [Sophia Bell](https://github.com/Kittaru87), [Rafa Hernandez](https://github.com/rafahg), [Nima Soufiani](https://github.com/Nimzyow)
 
-[Outline](#Outline) | [Specifications](#Specifications) | [Planning](#planning) | [Installation Instructions](#install) | [Tech stack](#tech) | [Challenges](#challenges)
+[Outline](#-outline) | [Specifications](#-specifications) | [Planning](#-planning) | [Installation Instructions](#-installation-instructions) | [Tech stack](#-tech-stack) | [Challenges](#-challenges)
 
-## [Outline](#Outline) 
+## Outline
 
 Work as a team to build a clone of Facebook
 
-## [Specifications](#Specifications)
+## Specifications
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-## [Planning](#planning)
+## Planning
 
 **Day 1**
-- Setting up of our group and responsibilities. Including our [Trello board](https://trello.com/b/zUEWU1Jk/the-undefined-method-acebook).
+
+- Setting up of our group and responsibilities, including our [Trello board](https://trello.com/b/adiRFheq/the-undefined-method) and [daily blog](https://github.com/Kittaru87/acebook-theUndefinedMethod/blob/master/Blog.md)
 
 
-## (Installation Instructions)[#install]
+## Installation Instructions
 
 First, clone this repository. Then:
 
@@ -33,11 +34,11 @@ First, clone this repository. Then:
 > bin/rails server # Start the server at localhost:3000
 ```
 
-## [Tech stack](#tech) 
+## Tech stack
 
 Back-end:
 
-* Ruby
+* Ruby/Rails
 
 Front-end:
 * CSS/HTML
@@ -54,4 +55,4 @@ Linting:
 
 * Rubocop
 
-## [Challenges](#challenges)
+## Challenges
