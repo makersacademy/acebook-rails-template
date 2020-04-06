@@ -1,6 +1,7 @@
 os: osx
 before_script:
- - rake db:migrate
+ - bin/rails db:create
+ - bin/rails db:migrate
 language: ruby
 rvm:
  - 2.5.0
