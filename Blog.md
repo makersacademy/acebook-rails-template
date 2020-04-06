@@ -1,5 +1,9 @@
 # DAILY BLOG
 
+- Problems faced during the day and how we solved them
+- Achievements
+- Thoughts for the future (ways to improve)
+- Personal opinion/reflection
 
 ## Monday 6th April 2020
 
