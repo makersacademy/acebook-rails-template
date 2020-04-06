@@ -23,3 +23,14 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+
+Creating a database for this app. 
+Run the following commands in your terminal, once setting up rails for your computer
+```
+$ rails db:create
+```
+
+```
+$ rails db:migrate
+```
