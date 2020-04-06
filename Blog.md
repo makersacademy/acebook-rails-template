@@ -4,7 +4,7 @@
 ## Monday 6th April 2020
 
 
-Written by **Jara**
+###Written by Jara###
 
 <br>
 
@@ -12,7 +12,7 @@ Written by **Jara**
 
 blahblah
 
-Written by **Nima**
+**Written by Nima**
 
 <br>
 
