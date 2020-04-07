@@ -3,6 +3,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 #require 'simplecov'
 require 'coveralls'
+ENV["COVERALLS_NOISY"] = "true"
 Coveralls.wear!
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)

@@ -20,22 +20,22 @@ class PostsController < ApplicationController
 
   def destroy
     Post.find(params[:id]).destroy
-    redirect_to :action => 'index'
+    redirect_to action: 'index'
   end
 
   def show
-      @post = Post.find(params[:id])
-   end
+    @post = Post.find(params[:id])
+  end
 
   def update
     @post = Post.find(params[:id])
 
-      if @post.update_attributes(post_params)
-         redirect_to :action => 'index', :id => @post
-      else
-         # @subjects = Subject.all
-         render :action => 'edit'
-      end
+    if @post.update_attributes(post_params)
+      redirect_to action: 'index', id: @post
+    else
+      # @subjects = Subject.all
+      render action: 'edit'
+    end
   end
 
   private
