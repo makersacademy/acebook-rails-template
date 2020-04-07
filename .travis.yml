@@ -2,10 +2,13 @@ language: ruby
 rvm:
   - 2.5.0
 
+services: 
+  -postgresql
+  
 before_script:
   - bundle install
-  - psql -c 'create database pgapp_test;' -u postgres
-  - bin/rails db:migrate 
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate 
 
 dist: trusty
 
@@ -13,7 +16,5 @@ dist: trusty
 script:
   - bundle exec rspec
 
-services: 
-  -postgresql
 
 
