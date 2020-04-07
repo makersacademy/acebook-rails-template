@@ -11,6 +11,8 @@ class UsersController < ApplicationController
       flash.now[:alert] = "invalid email or password" 
       render :new
     end
+    session[:user_id] = @user.id
+    session[:username] = @user.name
   end
 
   private

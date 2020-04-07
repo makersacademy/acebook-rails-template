@@ -1,3 +1,5 @@
+Welcome <%= session[:username] %>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
