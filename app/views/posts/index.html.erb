@@ -1,7 +1,17 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    </head>
+    <body>
+      <% @posts.each do |post| %>
+        <p><%= post.content %></p>
+        posted by <% @user %>
+      <% end %>
+      <br>
+      <br>
+      <%= link_to new_post_path do %>
+        Make A New Post
+      <% end %>
+</body>
+</html>
