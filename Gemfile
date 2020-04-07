@@ -13,6 +13,9 @@ group :development do
   gem 'sqlite3'
 end
 
+gem 'travis'
+
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
