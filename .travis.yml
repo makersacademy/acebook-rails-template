@@ -7,7 +7,7 @@ services:
 
 
 before_install:
-  - bundle install
+  - bundle
 
 before_script:
   - bin/rails db:create    
