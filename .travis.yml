@@ -2,14 +2,11 @@ language: ruby
 rvm:
   - 2.5.0
 
-services:
-  - postgresql
-
 before_script:
   - bin/rails db:create    
   - bin/rails db:migrate 
 
 script:
-  - rspec
+  - bundle exec rspec
 
 
