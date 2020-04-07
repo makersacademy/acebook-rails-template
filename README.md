@@ -11,7 +11,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Quickstart
 
-Clone this repository, then:
+Clone this repository, then
 
 ```bash
 > bundle install
