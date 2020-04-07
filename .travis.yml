@@ -1,4 +1,17 @@
+# language: ruby
+# rvm: 
+#   - ruby 2.5.0
+
+# before_script:
+# - bundle exec rake db:create
+# - bundle exec rake db:migrate
+# script:
+# - bundle exec rspec
+
+
 language: ruby
+os: osx
+dist: trusty
 rvm: 
   - ruby 2.5.0
 
@@ -7,3 +20,11 @@ before_script:
 - bundle exec rake db:migrate
 script:
 - bundle exec rspec
+deploy:
+  provider: heroku
+  strategy: api
+  api_key:
+    secure: "AsSk17VcMktB0V4Abyx+7GSzFfNlQk2L8dH1azbEDCApcncWLRSHhw0PP5+0Ae8 UdlxmCgG84PBt7Ao84nZb6Fg4P1J8s6f+AvMFwJIc06JBz1Ulg/9/sL95TyvnjlicwM76a4UCp onaZSddO8adSwhEPlt3i544lC4Aki8I/UqL4DEV75wzLVZ4zS+hZNMlP7GbKk3i94T+XZBaqy0 4TDudYwxHT9pKaWKPG5QxkbylpDvnycnrkSa6QJ4wPNTOHBTH/HzL9/ME2ADAMHIHaQibzg3z3 GZ3rbNBziwzS7jzKQoi0GOuZRpPuhYCgQ8dO6jzCotYdqMJ8mW0SdSWMTPEJW1QFJAkARMxPop ZpFn778NCnOvQLcCrjy+oefCqG8JUtLC/4OtAzu2v8+w3XkrzIoIsiZFqABrIi3zLnyBt2jymJ 0wQT14tyyr13wJe/d5jhBDvJvCGGDxs1HybvUZ4+LQLE10CFczjnjSLSBPs85/r0TIGA6/5aT1 47Sogj7I8f8mo86vmVLBs18fgGxNOm8ysRZQ1LFHiKkqVEPzOXMgCLOdRze2DPtkpq0lxmAUi6 mzRFPeoLFoXiIlDEbDvXyPcwoF+mUYphI/jXjZM1/XS8bq612ocRDd4Bq1PlFWBGZ1g3wDU3aH 56RP9bJ1zrAAr53uIqB4LBFL/gfY="
+  app: byteu
+  on:
+    repo: sgneha/acebook-byteU
