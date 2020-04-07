@@ -5,10 +5,6 @@ rvm:
 services:
   - postgresql
 
-before_install:
-
-  - bundle install
-
 before_script:
   - bin/rails db:create    
   - bin/rails db:migrate 
