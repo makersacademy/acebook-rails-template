@@ -1,5 +1,8 @@
 os: osx
-cache: bundler
+cache: 
+ bundler: true
+ directories:
+     - /home/travis/.rvm/
 before_script:
  - pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
  - bin/rails db:create
