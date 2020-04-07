@@ -12,7 +12,6 @@ class UsersController < ApplicationController
       render :new
     end
     session[:user_id] = @user.id
-    session[:username] = @user.name
   end
 
   private
