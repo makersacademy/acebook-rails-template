@@ -1,13 +1,17 @@
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<div class="post-container">
+  <%= link_to new_post_path do %>
+    <button>New post</button>
+  <% end %>
+</div>
 
 <div class="post-container">
-<% @posts.reverse.each do |post| %>
-  <div class="post-style">
-  <p><%= simple_format(post.message) %>
-  <%= post.created_at.strftime("%H:%M, %d-%m-%Y") %></p>
-  </div>
-<% end %>
+  <% @posts.reverse.each do |post| %>
+    <div class="post-style">
+      <p><%= simple_format(post.message) %>
+      <%= post.created_at.strftime("%H:%M, %d-%m-%Y") %></p>
+      <button>Edit</button>
+      <button>Delete</button>
+    </div>
+  <% end %>
 </div>
 
