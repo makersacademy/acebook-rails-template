@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+require 'simplecov'
 require 'coveralls'
 Coveralls.wear!
 ENV['RAILS_ENV'] ||= 'test'
