@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "/", to: "welcome#index"
   get "/posts", to: "posts#index"
   get "/posts/new", to: "posts#new"
-  post "/test", to: "posts#create"
+  post "/addpost", to: "posts#create"
 
   
   resources :posts

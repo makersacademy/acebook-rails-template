@@ -18,5 +18,18 @@ class Post < ApplicationRecord
     result = connect.exec("INSERT INTO posts(poster_id, content, time) VALUES ('#{poster_id}', '#{content}', '#{time}') RETURNING id, poster_id, content, time;")
     Post.new(id: result[0]['id'], poster_id: result[0]['poster_id'], content: result[0]['content'], time: result[0]['time'])
   end
+
+  def self.all
+    if ENV['RAILS_ENV'] == 'test'
+      connect = PG.connect(dbname: "pgapp_test")
+    else
+      connect = PG.connect(dbname: "pgapp_development")
+    end
+    result = connect.exec("SELECT * FROM posts;")
+    result.map do |post|
+      Post.new(id: post["id"], poster_id: post["poster_id"], content: post["content"], time: post["time"])
+    end
+  end
+
 end
 

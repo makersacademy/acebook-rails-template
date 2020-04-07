@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     </head>
     <body>
-      <!-- <% @posts.each do |post| %>
+      <% @posts.each do |post| %>
         <p><%= post.content %></p>
-      <% end %> -->
-
-      <!-- <%= link_to new_post_path do %>
-        New post
-      <% end %> -->
+        posted by <% @user %>
+      <% end %>
+      <br>
+      <br>
+      <%= link_to new_post_path do %>
+        Make A New Post
+      <% end %>
 </body>
 </html>

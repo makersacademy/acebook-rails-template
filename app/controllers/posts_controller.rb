@@ -13,5 +13,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    # @post = Post.create(poster_id: "1", content: params[:message], time: Time.now)
   end
 end
