@@ -1,0 +1,14 @@
+addons:
+  postgresql: 12.2
+before_script:
+  - bundle install
+  - bin/rails db:create
+  - bin/rails db:migrate
+  # - cp config/database.yml.travis config/database.yml
+  # - psql -c 'create database travis_ci_test;' -U postgres
+dist: trusty
+language: ruby
+rvm:
+  - 2.6.5
+script:
+  - bundle exec rspec
