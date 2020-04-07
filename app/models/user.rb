@@ -19,11 +19,15 @@ class User
     else
       connect = PG.connect(dbname: "pgapp_development")
     end
-    # check = connect.exect("SELECT * FROM users WHERE email = '#{email}';")
-    # return if check.any?
-    # encrypted_password = BCrypt::Password.create(password)
-    result = connect.exec("INSERT INTO users(name, dob, cob, mob, email, password) VALUES ('#{name}', '#{dob}', '#{cob}', '#{mob}', '#{email}', '#{password}') RETURNING id, name, dob, cob, mob, email, password;")
-    User.new(id: result[0]['id'], name: result[0]['name'], dob: result[0]['dob'], cob: result[0]['cob'], mob: result[0]['mob'], email: result[0]['email'], password: result[0]['password'])
+    check = connect.exec("SELECT * FROM users WHERE email = '#{email}';")
+    
+    if check.any? 
+      raise "E-mail address already exists"
+    else
+      # encrypted_password = BCrypt::Password.create(password)
+      result = connect.exec("INSERT INTO users(name, dob, cob, mob, email, password) VALUES ('#{name}', '#{dob}', '#{cob}', '#{mob}', '#{email}', '#{password}') RETURNING id, name, dob, cob, mob, email, password;")
+      User.new(id: result[0]['id'], name: result[0]['name'], dob: result[0]['dob'], cob: result[0]['cob'], mob: result[0]['mob'], email: result[0]['email'], password: result[0]['password'])
+    end
   end
 
 end
