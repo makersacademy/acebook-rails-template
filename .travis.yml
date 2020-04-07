@@ -1,5 +1,5 @@
-addons:
-  postgresql: 12.2
+services:
+  - postgresql
 before_script:
   - bundle install
   # - cp config/database.yml.travis config/database.yml
