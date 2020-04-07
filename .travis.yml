@@ -3,8 +3,8 @@ rvm:
   - 2.5.0
 
 services: 
-  -postgresql
-  
+  - postgresql
+
 before_script:
   - bundle install
   - bundle exec rails db:create
