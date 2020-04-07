@@ -1,6 +1,7 @@
 # byteU
 
 A Facebook clone.
+:-)
 
 
 ## Team Members
