@@ -17,6 +17,12 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
+
+  def destroy
+    Post.find(params[:id]).destroy
+    redirect_to :action => 'index'
+  end
+
   def show
       @post = Post.find(params[:id])
    end
