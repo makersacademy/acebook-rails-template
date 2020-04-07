@@ -1,6 +1,16 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
 
-  <%= form.submit "Submit" %>
-<% end %>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Please enter a new Post 
+  <form action="/addpost" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="text" id="message" name="message">
+  <input type="submit" name="Post">
+  </form>
+</body>
+</html>
