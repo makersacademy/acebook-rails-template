@@ -5,8 +5,8 @@ rvm:
 services:
   - postgresql
 
-
 before_install:
+
   - bundle install
 
 before_script:
