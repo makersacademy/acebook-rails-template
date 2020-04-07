@@ -23,10 +23,11 @@ ActiveRecord::Schema.define(version: 20200406143240) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "dob"
+    t.date "dob"
     t.string "cob"
     t.integer "mob"
     t.string "email"
+    t.string "password"
   end
 
 end
