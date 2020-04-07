@@ -1,10 +1,20 @@
 language: ruby
 rvm:
-  - 2.5
+  - 2.5.0
 
-before_install:
-  - gem install bundler
+services: 
+  - postgresql
 
-gemfile: 
-  - Gemfile
+before_script:
+  - bundle install
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate 
+
+dist: trusty
+
+
+script:
+  - bundle exec rspec
+
+
 
