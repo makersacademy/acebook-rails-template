@@ -12,6 +12,9 @@ gem 'rails', '~> 5.1.1'
 group :development do
   gem 'sqlite3'
 end
+
+gem 'travis'
+
 gem 'pg'
 # Use Puma as the app server
 gem 'devise'
@@ -43,6 +46,10 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'simplecov', require: false, group: :test
 end
+
+# group :production do
+#   gem 'pg'
+# end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

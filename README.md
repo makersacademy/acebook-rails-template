@@ -14,6 +14,29 @@ Work as a team to build a clone of Facebook
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
+### User stories
+```
+As an unregistered user
+So that I can see the latest posts quickly
+I want the newest posts to show first
+
+As an unregistered user
+So that I know a bit more about a post
+I want to see the date it was posted and who posted it
+
+As an unregistered user
+So that I can make a post
+I want to be able to create an account
+
+As a registered user
+So that I can use my account
+I want to be able to log in
+
+As a registered user
+So I can share my experiences
+I want to be able to make a post
+```
+
 ## Planning
 
 **Day 1**
@@ -32,6 +55,8 @@ First, clone this repository. Then:
 
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
+
+gem install bundler # for the latest bundler
 ```
 
 ## Tech stack
