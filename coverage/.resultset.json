@@ -255,8 +255,8 @@
       ],
       "/Users/dariathompson/Desktop/Projects/week-8/acebook-5Makerteers/config/routes.rb": [
         1,
-        1,
-        1,
+        null,
+        null,
         null,
         1,
         null,
@@ -288,6 +288,8 @@
         null,
         null,
         1,
+        3,
+        3,
         3,
         null,
         null,
@@ -331,6 +333,16 @@
         null,
         1,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
         0,
         null,
         null
@@ -390,6 +402,11 @@
       ],
       "/Users/dariathompson/Desktop/Projects/week-8/acebook-5Makerteers/app/models/user.rb": [
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/dariathompson/Desktop/Projects/week-8/acebook-5Makerteers/spec/views/user/index.html.erb_spec.rb": [
@@ -400,6 +417,6 @@
         null
       ]
     },
-    "timestamp": 1586257776
+    "timestamp": 1586267759
   }
 }
