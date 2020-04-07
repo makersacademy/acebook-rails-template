@@ -1,8 +1,7 @@
 os: osx
-addons:
-  postgresql: "12.2"
-# dist: trusty
+#services:
 before_script:
+ - brew services start postgresql
  - bin/rails db:create
  - bin/rails db:migrate
 language: ruby
