@@ -12,7 +12,7 @@ gem 'rails', '~> 5.1.1'
 group :development do
   gem 'sqlite3'
 end
-gem 'pg'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -41,6 +41,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', require: false
   gem 'simplecov', require: false, group: :test
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :development do
