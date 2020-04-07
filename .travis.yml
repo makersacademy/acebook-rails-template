@@ -2,4 +2,11 @@ language: ruby
 rvm:
   - 2.5.0
 
-script: 'true'
+before_script:
+  - bin/rails db:create    
+  - bin/rails db:migrate 
+
+script:
+  - bundle exec rspec
+
+
