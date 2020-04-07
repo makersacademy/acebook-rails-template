@@ -4,12 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    p "start"
-    p params
-    p "Hellooo Patrick"
-    p user_params
     @user = User.create(user_params)
-    redirect_to posts_url
+    if @user.valid?
+      redirect_to posts_url
+    else
+      flash.now[:alert] = "invalid email or password" 
+      render :new
+    end
   end
 
   private
