@@ -1,13 +1,6 @@
 language: ruby
 rvm:
-  - 2.5.0
-  - rails
-
-gemfile: 
-  - Gemfile
-
-before_install:
-  - gem install bundler
+  - 2.5
 
 before_script:
   - bin/rails db:create    
