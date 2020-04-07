@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.5
 
-before_script:
+before_install:
   - ./bin/rails db:create    
   - ./bin/rails db:migrate 
 
