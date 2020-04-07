@@ -1,8 +1,13 @@
-<% @posts.reverse.each do |post| %>
-  <p><%= simple_format(post.message) %></p>
-  <p><%= post.created_at.strftime("%H:%M, %d-%m-%Y") %></p>
-<% end %>
-
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+<div class="post-container">
+<% @posts.reverse.each do |post| %>
+  <div class="post-style">
+  <p><%= simple_format(post.message) %>
+  <%= post.created_at.strftime("%H:%M, %d-%m-%Y") %></p>
+  </div>
+<% end %>
+</div>
+
