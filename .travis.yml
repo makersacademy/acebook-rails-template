@@ -8,3 +8,5 @@ before_install:
 gemfile: 
   - Gemfile
 
+script:
+  - bundle exec rspec
