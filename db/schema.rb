@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20200407131518) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "dob"
+    t.date "dob"
     t.string "cob"
     t.integer "mob"
     t.string "email"
