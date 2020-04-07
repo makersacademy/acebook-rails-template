@@ -40,7 +40,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'selenium-webdriver'
   gem 'simplecov'
-  gem 'coveralls'
+  gem 'coveralls', '~> 0.8.23'
 end
 
 group :development do
