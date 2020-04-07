@@ -1,7 +1,6 @@
 os: osx
-#services:
+services: postgresql
 before_script:
- - brew services start postgresql
  - bin/rails db:create
  - bin/rails db:migrate
 language: ruby
