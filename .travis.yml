@@ -1,17 +1,16 @@
 services:
-  - postgresql
+- postgresql
 before_script:
-  - bundle install
-  # - cp config/database.yml.travis config/database.yml
-  - psql -c 'create database pgapp_test;' -U postgres
-  - bin/rails db:migrate
+- bundle install
+- psql -c 'create database pgapp_test;' -U postgres
+- bin/rails db:migrate
 dist: trusty
 language: ruby
 rvm:
-  - 2.6.5
+- 2.6.5
 script:
-  - bundle exec rspec
+- bundle exec rspec
 deploy:
   provider: heroku
   api_key:
-    secure: "f8KVMqFppLX4OaZc3s0B6rbrSy/gccv9G3s2rCW+mfodak+7nTH6E0+LcAbCUW+duxnVaeto2BY1MALuHSx4MA6bvG5Xwqah4kNFHXZS8EqyOsZtXXJuzIEAU0LYTIwDgM5VsGJdFz5GIK2pUvhbjQ24x8c/uI56kIifACE60BIMBZ53/FTnEiNCtqh/QG0xNTAh8iFpVKAd+C/npbXb936MAeApMRoVqKKqQcQUYKc30XBo65PGg17SrFVm6e0oyOuGV4DS2RYYeoQmqAhdLiPOTbKESw2wG29/TN5W3PWD7tQvmpSivNb5duZ2/LrXuGsEVcUPhQR0NOdfh0GzDuRroQDoZCbL5bdQDxeNd6Rhb6ZvoG42fb8TRA9S+/JUeu9st9EYceRtzS2hGXcK7SpoxioscxmMIcR4CjN/lVDWifPoUFIyfxCs4gBqT2G7DKZO58sjcTsZ7xiXrjU3rggpM8lXs6VVAPCi4ARXuSbeNxuLYia2CgGYxhW+SgifzzyFH6L+7GSO6bOMdP/m79CTcDK7qo3/T2fYkWoL1wGC242JAZ8MWQPDscSFbkn+WjgmbVkmCs26niJKqNu0mlt+8rs3BO/DJ76lTJq1s4QP0PE/noGl5B8JB5DC6VhQOPjlSz7iKbvahn+bncYntVJxHTkbqSYsOIyACM2EJEQ="
+    secure: LNGZdY2Pwlwsco9blGyBIynBKRI7OHYKAXH/h8sHdqZ8yi82RHyotg9FquQJOK30nLkObRknfMOsnWNzjCCPgkaWKhflbh5uNAz5ngsVEPZRYGkWYayLu9iWDi1iOLE2j61NYNtb3rPxkClryA+JbwknLIKTc7Vu9KI2lVcbEBEZfFTy4eY20PUvPQUq/VU9R/KyCbHSur/DIvTaOR1iBDucPIRD5Fbx0GV4Pqt/VPd1cGJ7gUHwWs9pPMJ5ZrR7LNuWZKuJCfToW1W6PA26xNIRoU6w0KoEFDx+1BxufOBjXVnmoFi5ZzYBYyI4Hb6xHXG7wUIA7vu05WTg2FXMggN1uR5Jlo6FsgVIxoLS1gLECZVe8A8TbjB3MhXd1Cxmhbr2BCFEAB+gddLezbnNlLqV85quvkktCVtT1kiWpDfkp0kxNgTeRqssMa0uXeJdGNYeW8KZOtdYqohx82+SIqMS77+oZl+jGgz/lwnY+MGuDbRmagyLp3HGnWgM/fX478RkwMyR0tkHQ5pNIhg4Z5tDMgGW5/Mc8lDeApDiC6ocl8OvTDOggkuwdgu2YXsc6lrq11daGohN5+8kdbhxHLO18SaM2x2zhoP8iUFxt1qcOf0F3oAIbPNUCVFI276Svx22PgQCN9/CWagndszdyLe7jNbTTB3ELvPcnwXYiYs=
