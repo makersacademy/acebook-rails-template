@@ -19,8 +19,11 @@ describe User do
   end
 
   describe "#login" do
-    it 'returns true if email and password are a match in the database' do
+    it 'truth if email and password are a match in the database' do
       expect(User.login(email: 'test@test.com', password: 'password')).to be_truthy
+    end
+    it 'falsy if email and password are a match in the database' do
+      expect(User.login(email: 'test@test.comm', password: 'password')).to be_falsy
     end
   end
 
