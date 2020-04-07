@@ -3,8 +3,8 @@ rvm:
   - 2.5
 
 before_script:
-  - bin/rails db:create    
-  - bin/rails db:migrate 
+  - ./bin/rails db:create    
+  - ./bin/rails db:migrate 
 
 script:
   - bundle exec rspec
