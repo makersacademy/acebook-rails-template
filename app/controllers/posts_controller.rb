@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   def index
+    @user = User.find(session[:current_user])
     @posts = Post.all
   end
 
@@ -18,7 +19,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create({
-      poster_id: "1",
+      poster_id: session[:current_user],
       content: params[:message],
       time: Time.now
   })
