@@ -1,18 +1,40 @@
 class PostsController < ApplicationController
 
-#   def new
-#     @post = Post.new
-#   end
+  def index
+    @posts = Post.all
+  end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def new
+    @post = Post.new
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
 
   def create
-    #Please look at sessions
-    @user = User.create(name: 'testing', dob: '04/04/20', cob: 'england', mob: 999, email: 'test@test.com', password: 'password')
-    @post = Post.create(poster_id: @user.id, content: params[:message], time: Time.now)
+    @post = Post.create({
+      poster_id: "1",
+      content: params[:message],
+      time: Time.now
+  })
     redirect_to posts_url
   end
 
-  def index
-    @posts = Post.all
-    # @post = Post.create(poster_id: "1", content: params[:message], time: Time.now)
+  def update
+    @post = Post.find(params[:id])
+    @post.update(params.require(:post).permit(:content))
+    redirect_to posts_url
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:success] = 'Post successfully deleted'
+    redirect_to posts_url
   end
 end
