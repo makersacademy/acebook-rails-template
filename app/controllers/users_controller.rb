@@ -5,16 +5,19 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to user_url
+    redirect_to posts_url
   end
 
   def index
-    @users = User.all
   end
+
+  # def current_user
+  #   @user = User.find_by[:id]
+  # end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:id, :name, :email, :password)
   end
 end
