@@ -47,6 +47,7 @@ I want to be able to make a post
 
 **Day 3**
 
+**Day 4**
 
 ## Installation Instructions
 
