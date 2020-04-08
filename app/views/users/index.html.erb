@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+</head>
+<body>
+  
+  <% if @user != nil %>
+  <h1>Hello <%= @user.name %></h1>
+  <form action="/log-out" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" name="log_out" value="Log Out">
+  </form>
+  <form action="/users/<%= @user.id %>/edit" method="get">
+    <input type="submit" name="edit" value="Edit my profile">
+  </form>
+  <% else %>
+  <form action="/sign-up" method="get">
+    <input type="submit" name="sign_up" value="Sign Up">
+  </form>
+  
+  <form action="/" method="get">
+    <input type="submit" name="log_in" value="Log In">
+  </form>
+  <% end %>
+  
+  <% @users.each do |user| %>
+    <%= user.name %>
+  <% end %>
+</body>
+</html>
