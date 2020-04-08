@@ -5,6 +5,11 @@
   <title>Index</title>
 </head>
 <body>
-  
+  <% @users.each do |user| %>
+  <%= user.name %>
+  <% end %>
+  <form action="/sign-up" method="get">
+  <input type="submit" name="sign_up" value="Sign Up">
+  </form>
 </body>
 </html>

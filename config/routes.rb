@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get "/posts", to: "posts#index"
   get "/posts/new", to: "posts#new"
   post "/addpost", to: "posts#create"
-
-  
+    # User Routes
+  get '/users', to: "users#index"
+  get '/sign-up', to: 'users#new_user'
+  post '/users', to: 'users#create_a_user'
   resources :posts
 end
