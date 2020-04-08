@@ -1,11 +1,11 @@
 
-<h1>Listing Articles</h1>
+<h1>byteU Feed</h1>
 
 
 <table>
   <tr>
     <th>Title</th>
-    <th>Text</th>
+    <th>Post</th>
     <th></th>
   </tr>
   <% @posts.each do |post| %>
@@ -13,9 +13,9 @@
   <tr>
       <td><%= post.title %></td>
       <td><%= post.text %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <td><%= link_to 'Update', edit_post_path(post) %></td>
-      <td><%= link_to 'Delete', post_path(post),
+      <td><%= link_to '<button type="button">Show</button>'.html_safe, post_path(post) %></td>
+      <td><%= link_to '<button type="button">Update</button>'.html_safe, edit_post_path(post) %></td>
+      <td><%= link_to '<button type="button">Delete</button>'.html_safe, post_path(post),
               method: :delete,
               data: { confirm: 'Are you sure you want to delete?' } %></td>
 
@@ -25,4 +25,4 @@
 </table>
 
 
-<%= link_to 'Write a new post', new_post_path %>
+<%= link_to '<button type="button">Write a new post</button>'.html_safe, new_post_path %>
