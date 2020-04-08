@@ -4,14 +4,16 @@
     <meta charset="utf-8">
     </head>
     <body>
-      <% @posts.each do |post| %>
-        <p><%= post.content %></p>
-        posted by <% @user %>
-      <% end %>
-      <br>
-      <br>
+      <h1>New Posts!</h1>
       <%= link_to new_post_path do %>
         Make A New Post
       <% end %>
+      <ul>
+      <% @posts.reverse.each do |post| %>
+        <p><%= post.content %>
+        <%= link_to 'Edit', edit_post_path(post) %>
+        <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
+      </ul>
 </body>
 </html>
