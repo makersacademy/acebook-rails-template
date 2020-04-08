@@ -43,6 +43,10 @@ I want to be able to make a post
 
 - Setting up of our group and responsibilities, including our [Trello board](https://trello.com/b/adiRFheq/the-undefined-method) and [daily blog](https://github.com/Kittaru87/acebook-theUndefinedMethod/blob/master/Blog.md)
 
+**Day 2**
+
+**Day 3**
+
 
 ## Installation Instructions
 
