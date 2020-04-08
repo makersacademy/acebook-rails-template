@@ -1,5 +1,6 @@
 class HomepageController < ApplicationController
     def index
-    end         
+      # redirect_to new_user_path
+    end
 
 end
