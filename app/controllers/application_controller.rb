@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   end
+
+  def create_session(id)
+    session[:user_id] = id
+  end
   
-  helper_method :current_user
+  helper_method :current_user, :create_session
 end
