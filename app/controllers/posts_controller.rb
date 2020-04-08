@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   def index
     @user = User.find(session[:current_user])
     @posts = Post.all
+    @comments = Comment.all
   end
 
   def show
@@ -38,4 +39,5 @@ class PostsController < ApplicationController
     flash[:success] = 'Post successfully deleted'
     redirect_to posts_url
   end
+  
 end

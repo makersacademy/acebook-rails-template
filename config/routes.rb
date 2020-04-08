@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   post '/log-out', to: 'users#logout'
   get '/users/:id/edit', to: 'users#edit'
   patch '/users', to: 'users#update_user'
-  resources :posts do
-    resources :comment
-  end
+  post '/posts/:id/comments/new', to: 'comments#create'
+  resources :posts
 
 end
