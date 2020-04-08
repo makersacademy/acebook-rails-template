@@ -1,19 +1,10 @@
-# language: ruby
-# rvm: 
-#   - ruby 2.5.0
-
-# before_script:
-# - bundle exec rake db:create
-# - bundle exec rake db:migrate
-# script:
-# - bundle exec rspec
-
 
 language: ruby
-os: osx
 dist: trusty
 rvm: 
   - ruby 2.5.0
+  services: 
+   - postgresql
 
 before_script:
 - bundle exec rake db:create
