@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-    # validates :message, presense: true,
+    # validates :content, presense: true
 
     # belongs_to :user
 
