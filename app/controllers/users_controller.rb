@@ -6,6 +6,25 @@ class UsersController < ApplicationController
   def new_user
   end
 
+  def auth
+
+    if User.exists?(email: params[:email])
+      user = User.find_by email: params[:email]
+      if params[:password] == user.password
+        session[:current_user] = user.id
+        redirect_to '/users'
+      else
+        flash[:notice] = "Wrong email or password, you silly fool!"
+      redirect_to '/'
+      end
+    else
+      flash[:notice] = "Wrong email or password, you silly fool!"
+      redirect_to '/'
+    end
+   
+    
+  end
+
   def create_a_user
     user = User.create({
       name: params[:fullname],

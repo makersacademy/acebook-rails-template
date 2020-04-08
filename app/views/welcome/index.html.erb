@@ -1,20 +1,16 @@
 <h1>Welcome to AceBook</h1>
 <h3>Log In</h3>
-<form action="/sign-in" method="POST">
-  <label>Enter Your Username</label><br>
-  <input type="text" id="email"><br>
-  <label>Enter Your Password</label><br>
-  <input type="password" id="password"><br>  
-  <input type="submit" name="submit" id="submit_sign_in" value="Sign In">
-</form>
+<form action="/authentication" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Enter Your Email Address</label><br>
+    <input type="email" name="email"><br>
+    <label>Enter Your Password</label><br>
+    <input type="password" name="password"><br>  
+    <input type="submit" name="submit" id="submit_sign_in" value="Sign In">
+    <p><%= flash[:notice] %></p>
+ </form> 
 
 <h3>Sign Up</h3>
-<form action="/sign-up" method="post">
-<label>Enter A Username</label><br>
-<input type="text" id="username"><br>
-<label>Enter A Password</label><br>
-<input type="password" id="password"><br>  
-<label>Please Confirm Your Password</label><br>
-<input type="password" id="password"><br>  
+<form action="/sign-up" method="get">
   <input type="submit" name="submit" id="submit_sign_up" value="Sign Up">
 </form>
