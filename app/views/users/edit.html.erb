@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit my profile</title>
+</head>
+<body>
+  <form action="/users" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="PATCH">
+    <p>Enter your full name</p> 
+    <input type="text" name="fullname" value="<%= @user.name %>"> <br>
+    <p>Enter your date of birth</p> 
+    <input type="date" name="dob" value="<%= @user.dob %>"> <br>
+    <p>Enter your country of birth</p> 
+    <input type="text" name="cob" value="<%= @user.cob %>"> <br>
+    <p>Enter your mobile number</p> 
+    <input type="number" name="mob" value="<%= @user.mob %>"> <br>
+    <p>Enter your email</p> 
+    <input type="email" name="email" value="<%= @user.email %>"> <br>
+    <p>Enter your password</p> 
+    <input type="password" name="password"> <br>
+    <input type="submit" name="submit" value="Update">
+  </form>
+</body>
+</html>
