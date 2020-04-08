@@ -13,5 +13,9 @@ Rails.application.routes.draw do
   get '/users/:id/edit', to: 'users#edit'
   patch '/users', to: 'users#update_user'
   delete '/users/:id', to: 'users#destroy_user'
+  get '/users/:id/timeline', to: 'users#timeline'
+  # Homepage routes
+  get '/home', to: 'homepage#index'
+
   resources :posts
 end

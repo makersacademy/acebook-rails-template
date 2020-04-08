@@ -31,7 +31,6 @@ class UsersController < ApplicationController
       redirect_to '/'
     end
    
-    
   end
 
   def create_a_user
@@ -72,6 +71,13 @@ class UsersController < ApplicationController
     user.destroy
     session[:current_user] = nil
     redirect_to '/'
+  end
+
+  def timeline
+    @user = User.find(params[:id])
+    @posts = Post.where(:poster_id => @user.id)
+    
+    # @posts = Post.all
   end
 
 end

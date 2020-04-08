@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <% @posts.reverse.each do |post| %>
+            <p><%= post.content %>
+            post created by <%= @user.name %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+            <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+    </ul>
+</body>
+</html>
