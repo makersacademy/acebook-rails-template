@@ -16,3 +16,11 @@ dist: trusty
 script:
   - bundle exec rspec
 
+  deploy:
+  provider: heroku
+  api_key:
+    secure: KEY
+  app: https://undefinedmethodbook.herokuapp.com/
+  on:
+    repo: Kittaru87/acebook-theUndefinedMethod
+
