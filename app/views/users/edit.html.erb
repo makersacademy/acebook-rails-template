@@ -22,5 +22,11 @@
     <input type="password" name="password"> <br>
     <input type="submit" name="submit" value="Update">
   </form>
+
+  <form action="/users/<%= @user.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" name="delete" value="Delete my account">
+  </form>
 </body>
 </html>

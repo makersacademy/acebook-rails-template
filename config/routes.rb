@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   post '/log-out', to: 'users#logout'
   get '/users/:id/edit', to: 'users#edit'
   patch '/users', to: 'users#update_user'
+  delete '/users/:id', to: 'users#destroy_user'
   resources :posts
 end
