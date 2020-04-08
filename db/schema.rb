@@ -15,20 +15,26 @@ ActiveRecord::Schema.define(version: 20200407131518) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "comments", force: :cascade do |t|
+    t.string "post_id"
+    t.integer "commentor_id"
+    t.string "content"
+    t.string "time"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "poster_id"
     t.string "content"
     t.string "time"
   end
 
-
   create_table "users", force: :cascade do |t|
-    t.string :name
-    t.date :dob
-    t.string :cob
-    t.integer :mob
-    t.string :email
-    t.string :password
+    t.string "name"
+    t.date "dob"
+    t.string "cob"
+    t.integer "mob"
+    t.string "email"
+    t.string "password"
   end
 
 end

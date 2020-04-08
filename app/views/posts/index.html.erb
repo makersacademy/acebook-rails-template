@@ -12,9 +12,19 @@
       <% @posts.reverse.each do |post| %>
         <p><%= post.content %>
           post created by <%= @user.name %>
+          <% @comments.each do |comment| %>
+          <% if (comment.post_id.to_i == post.id) %>
+          <%= comment.content%>
+          <% end %>
+          <% end %>
+          <form action="/posts/<%= post.id %>/comments/new" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <textarea name="comment" id="" cols="30" rows="10"></textarea>
+      <input type="submit" name="Submit" value="Submit"></form>
         <%= link_to 'Edit', edit_post_path(post) %>
         <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
       <% end %>
       </ul>
+      
 </body>
 </html>
