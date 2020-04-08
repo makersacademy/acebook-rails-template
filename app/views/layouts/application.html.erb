@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" charset="utf-8"></script>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
 
@@ -9,6 +10,7 @@
   </head>
 
   <body>
+    <%= render 'layouts/messages' %>
     <%= yield %>
   </body>
 </html>
