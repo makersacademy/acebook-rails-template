@@ -46,6 +46,7 @@ I want to be able to make a post
 **Day 2**
 
 **Day 3**
+- Deployment of [Heroku app](https://the-undefined-method.herokuapp.com/)
 
 **Day 4**
 
