@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aceBook</title>
+</head>
+<body>
+    <% if @user != nil %>
+        <h1>Hello <a href="/users/<%=@user.id%>/timeline"><%= @user.name %></a></h1>
+        <form action="/log-out" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="submit" name="log_out" value="Log Out">
+        </form>
+        <form action="/users/<%= @user.id %>/edit" method="get">
+            <input type="submit" name="edit" value="Edit my profile">
+        </form>
+
+        <ul>
+            <% @posts.reverse.each do |post| %>
+              <p><%= post.content %>
+                post created by <%= User.find(post.poster_id).name %>
+              <%= link_to 'Edit', edit_post_path(post) %>
+              <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+            <% end %>
+        </ul>
+    <% else %>
+    <h3>Log in to view posts</h3>
+        <form action="/sign-up" method="get">
+            <input type="submit" name="sign_up" value="Sign Up">
+        </form>
+        
+        <form action="/" method="get">
+            <input type="submit" name="log_in" value="Log In">
+        </form>
+  <% end %>
+  
+</body>
+</html>

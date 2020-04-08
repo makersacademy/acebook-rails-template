@@ -11,7 +11,7 @@
       <ul>
       <% @posts.reverse.each do |post| %>
         <p><%= post.content %>
-          post created by <%= @user.name %>
+          post created by <%= User.find(post.poster_id).name %>
           <% @comments.each do |comment| %>
           <% if (comment.post_id.to_i == post.id) %>
           <%= comment.content%>
