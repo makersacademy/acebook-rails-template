@@ -1,7 +1,20 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<p id=”notice”><%= notice %></p>
+
+<% if current_user %>
+  Welcome <%= current_user.name %>
+  <br>
+ <%= link_to "Logout", logout_path %>
+<br>
+<% else %>
+  <%= link_to "Sign Up!", signup_path %>
+<br>
+  <%= link_to "Log In", login_path %>
+<br>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<% @posts.each do |post| %>
+  <p> <%=post.created_at %><br><%= simple_format(post.message) %></p>
 <% end %>
+
+<%= link_to "New Post", new_post_path %>
+
