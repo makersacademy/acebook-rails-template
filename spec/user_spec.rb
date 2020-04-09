@@ -12,17 +12,6 @@ describe User do
       # expect(@user.dob).to eq "Sat, 04 Apr 2020"
       expect(@user.cob).to eq 'england'
     end
-
-   
-  end
-
-  describe "#login" do
-    it 'truth if email and password are a match in the database' do
-      expect(User.login(email: 'test@test.com', password: 'password')).to be_truthy
-    end
-    it 'falsy if email and password are a match in the database' do
-      expect(User.login(email: 'test@test.comm', password: 'password')).to be_falsy
-    end
   end
 
 end

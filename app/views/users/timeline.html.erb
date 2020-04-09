@@ -1,17 +1,45 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Timeline</title>
 </head>
 <body>
-    <ul>
+  <h1><%= User.find(params[:id]).name %>'s Timeline</h1>
+  <a href="/posts/new">Write a new post</a> <br>
+  <h1>Post on <%= User.find(params[:id]).name %>'s Timeline</h1>
+  <form action="/home/<%= params[:id] %>/timeline-post" method="post">
+    THIS WILL NOT WORK YET
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <textarea name="post_to_timeline" id="" cols="80" rows="5"></textarea> <br>
+        <input type="submit" name="Submit" value="Post to <%= User.find(params[:id]).name %>'s Timeline">
+    </form>
+  <ul>
         <% @posts.reverse.each do |post| %>
-            <p><%= post.content %>
-            post created by <%= @user.name %>
-            <%= link_to 'Edit', edit_post_path(post) %>
-            <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
-        <% end %>
-    </ul>
+        <% if (post.poster_id == params[:id]) %>
+          <h3><%= post.content %></h3> <br> 
+          post created by <%= User.find(post.poster_id).name %> <br>
+          <% @comments.each do |comment| %>
+            <% if (comment.post_id.to_i == post.id) %>
+              <%= comment.content%>
+            <% end %>
+          <% end %>
+          <form action="/home/<%= post.id %>/comments" method="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <textarea name="comment" id="" cols="60" rows="5"></textarea>
+        <input type="submit" name="Submit" value="Submit">
+      </form>
+        <form action="/posts/<%= post.id %>/edit"" method="get">
+          <input type="submit" value="Edit this post">
+        </form>
+        <form action="/posts/<%= post.id %>" method="POST">
+          <input type="hidden" name="authenticity_token" id="<%= form_authenticity_token %>">
+          <input type="hidden" name="_method" id="DELETE">
+          <input type="submit" value="Delete this post">
+        </form>
+      <% end %>
+    <% end %>
+  </ul>
+  
 </body>
 </html>
