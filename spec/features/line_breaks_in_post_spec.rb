@@ -1,4 +1,5 @@
 require 'rails_helper'
+require_relative '../support/helpers.rb'
 
 RSpec.feature 'Timeline', type: :feature do
   scenario 'Posts can render line breaks' do

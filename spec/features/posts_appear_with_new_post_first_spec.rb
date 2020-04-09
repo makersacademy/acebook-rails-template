@@ -1,11 +1,9 @@
 require 'rails_helper'
+require_relative '../support/helpers.rb'
 
 RSpec.feature 'Timeline', type: :feature do
   scenario 'Posts appear in chronological order' do
-    visit '/posts'
-    click_link 'New post'
-    fill_in 'Message', with: 'Hello, world!'
-    click_button 'Submit'
+    addPost("Hello, world!")
     click_link 'New post'
     fill_in 'Message', with: "Hello again world"
     click_button 'Submit'
