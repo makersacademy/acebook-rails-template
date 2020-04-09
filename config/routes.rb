@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/users/:id/edit', to: 'users#edit'
   patch '/users', to: 'users#update_user'
   post '/posts/:id/comments/new', to: 'comments#create'
-  resources :posts
+  resources :posts do
+    resources :likes
+  end
 
 end
