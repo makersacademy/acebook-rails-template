@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   resources :posts, :users
 
-  root to: "homepage#index"
+  root to: "posts#index"
 
 end
