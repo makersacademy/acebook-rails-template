@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post '/home/:id/comments', to: 'comments#create'
   resources :posts do
     resources :likes
+    resources :dislikes
   end
 
 
