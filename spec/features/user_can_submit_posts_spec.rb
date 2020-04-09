@@ -5,7 +5,7 @@ require_relative '../support/helpers.rb'
 
 RSpec.feature 'Timeline', type: :feature do
   scenario 'Can submit posts and view them' do
-    addPost("Hello, world!")
+    add_post('Hello, world!')
     expect(page).to have_content('Hello, world!')
   end
 end
