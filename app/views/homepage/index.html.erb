@@ -25,12 +25,7 @@
         <ul>
             <% @posts.reverse.each do |post| %>
               <p><%= post.content %> <br> post created by <%= User.find(post.poster_id).name %> <br> <br>
-                <% @comments.each do |comment| %>
-                  <% if (comment.post_id.to_i == post.id) %> 
-                    <%= comment.content%> <br>
-                    Comment by <%= User.find(comment.commentor_id).name%> <br>
-                  <% end %>
-                <% end %>
+               
                 <form action="/home/<%= post.id %>/comments" method="post">
                   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                     <textarea name="comment" id="" cols="60" rows="5"></textarea>
