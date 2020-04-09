@@ -17,13 +17,6 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  # describe 'GET /edit ' do
-  #   it 'responds with 200' do
-  #     post :create, params: { post: { message: 'Hello, world!', id: 1 } }
-  #     get :posts/1/edit
-  #     expect(response).to have_http_status(200)
-  #   end
-  # end
   describe "GET #edit" do
     it "returns a success response" do
       post = Post.create(message: "hi")
