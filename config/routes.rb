@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   # Homepage routes
   get '/home', to: 'homepage#index'
   post '/posts/:id/comments/new', to: 'comments#create'
-
-  resources :posts
+  resources :posts do
+    resources :likes
+  end
 
 end
