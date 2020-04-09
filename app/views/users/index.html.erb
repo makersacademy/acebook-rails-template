@@ -7,7 +7,7 @@
 <body>
   
   <% if @user != nil %>
-  <h1>Hello <%= @user.name %></h1>
+  <h1>Hello <a href="/users/<%=@user.id%>/timeline"><%= @user.name %></a></h1>
   <form action="/log-out" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="submit" name="log_out" value="Log Out">

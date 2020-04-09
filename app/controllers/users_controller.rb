@@ -24,14 +24,13 @@ class UsersController < ApplicationController
         redirect_to '/users'
       else
         flash[:notice] = "Wrong email or password, you silly fool!"
-      redirect_to '/'
+        redirect_to '/'
       end
     else
       flash[:notice] = "Wrong email or password, you silly fool!"
       redirect_to '/'
     end
    
-    
   end
 
   def create_a_user
@@ -48,13 +47,11 @@ class UsersController < ApplicationController
     
   end
 
-  def destroy_user
-  end
-
+  
   def edit
     @user = User.find(session[:current_user])
   end
-
+  
   def update_user
     user = User.find(session[:current_user])
     user.update({
@@ -67,6 +64,20 @@ class UsersController < ApplicationController
     })
     user.save
     redirect_to '/users'
+  end
+  
+  def destroy_user
+    user = User.find(session[:current_user])
+    user.destroy
+    session[:current_user] = nil
+    redirect_to '/'
+  end
+
+  def timeline
+    @user = User.find(params[:id])
+    @posts = Post.where(:poster_id => @user.id)
+    
+    # @posts = Post.all
   end
 
 end

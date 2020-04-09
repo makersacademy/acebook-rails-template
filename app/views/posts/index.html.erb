@@ -11,6 +11,7 @@
       <ul>
       <% @posts.reverse.each do |post| %>
         <p><%= post.content %>
+
           post created by <%= @user.name %>
           <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
           <p><% pre_like = post.likes.find { |like| like.user_id == session[:current_user] }%>
