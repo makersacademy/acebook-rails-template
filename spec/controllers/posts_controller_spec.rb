@@ -31,7 +31,7 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to be_success
     end
   end
-  describe "POST #edit" do
+  describe "POST #update" do
     it "updates the requested user" do
        post = Post.create(message: "hi")
        put :update, params: {id: post.to_param, post: {message: "hello"}}, session: valid_session
