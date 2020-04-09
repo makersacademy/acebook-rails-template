@@ -1,14 +1,18 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/isabelleben/Projects/teamProjects/acebook-smooth-railing/app/helpers/application_helper.rb": {
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/helpers/application_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
-      "/Users/isabelleben/Projects/teamProjects/acebook-smooth-railing/app/controllers/posts_controller.rb": {
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/controllers/posts_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           2,
@@ -31,28 +35,36 @@
           null
         ]
       },
-      "/Users/isabelleben/Projects/teamProjects/acebook-smooth-railing/app/controllers/application_controller.rb": {
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/controllers/application_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
         ]
       },
-      "/Users/isabelleben/Projects/teamProjects/acebook-smooth-railing/app/models/post.rb": {
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/models/post.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
-      "/Users/isabelleben/Projects/teamProjects/acebook-smooth-railing/app/models/application_record.rb": {
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/models/application_record.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
         ]
       },
-      "/Users/isabelleben/Projects/teamProjects/acebook-smooth-railing/app/mailers/application_mailer.rb": {
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/mailers/application_mailer.rb": {
         "lines": [
+          null,
+          null,
           0,
           0,
           0,
@@ -61,16 +73,20 @@
         "branches": {
         }
       },
-      "/Users/isabelleben/Projects/teamProjects/acebook-smooth-railing/app/jobs/application_job.rb": {
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/jobs/application_job.rb": {
         "lines": [
+          null,
+          null,
           0,
           0
         ],
         "branches": {
         }
       },
-      "/Users/isabelleben/Projects/teamProjects/acebook-smooth-railing/app/channels/application_cable/connection.rb": {
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/channels/application_cable/connection.rb": {
         "lines": [
+          null,
+          null,
           0,
           0,
           0,
@@ -79,8 +95,10 @@
         "branches": {
         }
       },
-      "/Users/isabelleben/Projects/teamProjects/acebook-smooth-railing/app/channels/application_cable/channel.rb": {
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/channels/application_cable/channel.rb": {
         "lines": [
+          null,
+          null,
           0,
           0,
           0,
@@ -90,6 +108,6 @@
         }
       }
     },
-    "timestamp": 1586189706
+    "timestamp": 1586438079
   }
 }
