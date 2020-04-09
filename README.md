@@ -11,6 +11,9 @@ REQUIRED INSTRUCTIONS:
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
+3. Link to our app:
+https://secret-beach-41388.herokuapp.com
+
 ## Quickstart
 
 First, clone this repository. Then:
