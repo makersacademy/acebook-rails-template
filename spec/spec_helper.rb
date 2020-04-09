@@ -20,7 +20,8 @@
 
 require 'simplecov'
 require 'simplecov-console'
-
+require_relative './support/log_in_helper.rb'
+require_relative './support/sign_up_helper.rb'
 SimpleCov.start 'rails'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                  SimpleCov::Formatter::Console
@@ -33,7 +34,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 # SimpleCov.start 'rails'
 #   puts "required simplecov"
 # end
-
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -67,6 +67,8 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
   # The settings below are suggested to provide a good initial experience
+  config.include LogInHelper, type: :feature
+  config.include SignUpHelper, type: :feature
   # with RSpec, but feel free to customize to your heart's content.
   #   # This allows you to limit a spec run to individual examples or groups
   #   # you care about by tagging them with `:focus` metadata. When nothing
