@@ -32,12 +32,11 @@ RSpec.describe PostsController, type: :controller do
   describe 'DELETE /posts/:id' do
     it 'deletes a post' do
       post :create, params: { post: { message: 'Hello, world!' } }
-      expect(Post.find_by(message: 'Hello, world!')).to be
+      post = Post.find_by(message: 'Hello, world!')
+      expect(post).to be
 
-      delete :destroy, params: { post: { message: 'Hello, world!' } }
+      delete :destroy, params: { id: post.id }
       expect(Post.find_by(message: 'Hello, world!')).to_not be
     end
-
-end
-
+  end
 end
