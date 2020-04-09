@@ -11,7 +11,16 @@
       <ul>
       <% @posts.reverse.each do |post| %>
         <p><%= post.content %>
-          post created by <%= User.find(post.poster_id).name %>
+
+          post created by <%= @user.name %>
+          <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+          <p><% pre_like = post.likes.find { |like| like.user_id == session[:current_user] }%>
+          <% if pre_like %>
+            <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+          <% else %> 
+            <%= button_to 'Like',post_likes_path(post), method: :post %>
+          <% end %></p>
+          <%= flash[:notice] %>
           <% @comments.each do |comment| %>
           <% if (comment.post_id.to_i == post.id) %>
           <%= comment.content%>
