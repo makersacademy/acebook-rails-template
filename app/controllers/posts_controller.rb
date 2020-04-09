@@ -11,11 +11,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    # if user_signed_in?
       @posts = Post.all
-    # else
-    #   redirect_to homepages_url
-    # end
   end
 
   private
