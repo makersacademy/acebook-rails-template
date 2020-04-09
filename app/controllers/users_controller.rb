@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       user = User.find_by email: params[:email]
       if params[:password] == user.password
         session[:current_user] = user.id
-        redirect_to '/users'
+        redirect_to '/home'
       else
         flash[:notice] = "Wrong email or password, you silly fool!"
         redirect_to '/'
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
       })
       user.save
       session[:current_user] = user.id
-      redirect_to '/users'
+      redirect_to '/home'
     end
   end
 
@@ -68,7 +68,7 @@ class UsersController < ApplicationController
       password: params[:password]
     })
     user.save
-    redirect_to '/users'
+    redirect_to '/home'
   end
   
   def destroy_user

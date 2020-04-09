@@ -8,7 +8,7 @@ class LikesController < ApplicationController
     else
         @post.likes.create(user_id: session[:current_user])
     end
-    redirect_to '/posts'
+    redirect_to '/home'
     end
 
     def destroy

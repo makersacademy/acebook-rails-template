@@ -22,9 +22,15 @@
             <input type="submit" name="edit" value="Edit my profile">
         </form>
         <a href="/posts/new">Write a new post</a>
+        <div class="signed_up_users_card">
+            <h1>all signed up users:</h1> 
+            <% @users.each do |user| %>
+                <%= user.name %> <br>
+            <% end %>
+        </div>
         <ul>
             <% @posts.reverse.each do |post| %>
-              <p><%= post.content %> <br> post created by <%= User.find(post.poster_id).name %> <br> <br>
+              <h3><%= post.content %></h3> <br> post created by <%= User.find(post.poster_id).name %> <br>
                 <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
                 <p><%= post.dislikes.count %> <%= (post.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p>
       
@@ -34,14 +40,14 @@
                   <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
                 <% else %> 
                   <%= button_to 'Like',post_likes_path(post), method: :post %>
-                <% end %></p>
+                <% end %>
                 
                 <% pre_dislike = post.dislikes.find{|dislike| dislike.user_id == session[:current_user]}%>
                 <%if pre_dislike%>
                   <%= button_to 'Undislike', post_dislike_path(post, pre_dislike), method: :delete%>
                 <%else%>
                   <%= button_to 'Dislike', post_dislikes_path(post), method: :post%>
-                <%end%>
+                <%end%></p>
                 <%= flash[:notice] %>      
                 <% @comments.each do |comment| %>
                     <% if (comment.post_id.to_i == post.id) %>
