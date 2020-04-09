@@ -16,9 +16,10 @@ Rails.application.routes.draw do
   get '/users/:id/timeline', to: 'users#timeline'
   # Homepage routes
   get '/home', to: 'homepage#index'
-  post '/posts/:id/comments/new', to: 'comments#create'
+  post '/home/:id/comments', to: 'comments#create'
   resources :posts do
     resources :likes
   end
+
 
 end

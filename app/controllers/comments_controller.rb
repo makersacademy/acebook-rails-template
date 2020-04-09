@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     # @comment = @post.comments.create(comment_params)
     @comment = Comment.new({post_id: params[:id], commentor_id: session[:current_user], content: params[:comment], time: Time.now})
     @comment.save
-    redirect_to "/posts"
+    redirect_to "/home"
   end
 
   def update

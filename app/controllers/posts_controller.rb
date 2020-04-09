@@ -24,7 +24,7 @@ class PostsController < ApplicationController
       content: params[:message],
       time: Time.now
   })
-    redirect_to posts_url
+    redirect_to '/home'
   end
 
   def update

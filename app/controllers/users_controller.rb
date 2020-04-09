@@ -34,17 +34,22 @@ class UsersController < ApplicationController
   end
 
   def create_a_user
-    user = User.create({
-      name: params[:fullname],
-      dob: params[:dob],
-      cob: params[:cob],
-      mob: params[:mob],
-      email: params[:email],
-      password: params[:password]
-    })
-    user.save
-    redirect_to '/users'
-    
+    if User.exists?(email: params[:email])
+      flash[:notice] = 'An account with that email already exists'
+      redirect_to '/sign-up'
+    else
+      user = User.create({
+        name: params[:fullname],
+        dob: params[:dob],
+        cob: params[:cob],
+        mob: params[:mob],
+        email: params[:email],
+        password: params[:password]
+      })
+      user.save
+      session[:current_user] = user.id
+      redirect_to '/users'
+    end
   end
 
   
@@ -76,8 +81,7 @@ class UsersController < ApplicationController
   def timeline
     @user = User.find(params[:id])
     @posts = Post.where(:poster_id => @user.id)
-    
-    # @posts = Post.all
+    @comments = Comment.all
   end
 
 end

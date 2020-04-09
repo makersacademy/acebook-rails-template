@@ -10,7 +10,7 @@ RSpec.feature "Homepage", type: :feature do
         fill_in 'mob', with: 112
         fill_in 'email', with: "stephan@test.com"
         fill_in 'password', with: "password"
-        click_button 'Sign up'
-        expect(page).to have_content("What kind of nincompoop tries to register twice?")
+        click_button 'Sign Up!'
+        expect(page).to have_content("An account with that email already exists")
     end
 end
