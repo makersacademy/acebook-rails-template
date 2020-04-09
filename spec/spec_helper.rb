@@ -22,6 +22,8 @@ require 'simplecov'
 require 'simplecov-console'
 require_relative './support/log_in_helper.rb'
 require_relative './support/sign_up_helper.rb'
+require_relative './support/helpers'
+
 SimpleCov.start 'rails'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                  SimpleCov::Formatter::Console
@@ -65,6 +67,7 @@ RSpec.configure do |config|
   # inherited by the metadata hash of host groups and examples, rather than
   # triggering implicit auto-inclusion in groups with matching metadata.
   config.shared_context_metadata_behavior = :apply_to_host_groups
+  config.include PostHelper, type: :feature
 
   # The settings below are suggested to provide a good initial experience
   config.include LogInHelper, type: :feature

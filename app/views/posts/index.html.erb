@@ -1,5 +1,8 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<div>
+  <%= simple_format post.message %>
+  <p><%=  post.created_at %></p>
+  </div>
 <% end %>
 
 <% if user_signed_in? %>

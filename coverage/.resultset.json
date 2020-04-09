@@ -22,6 +22,7 @@
 
       "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/controllers/posts_controller.rb": {
 
+      "/Users/student/Documents/projects/acebook-smooth-railing/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
@@ -52,12 +53,24 @@
           null,
           null,
           null,
+          6,
+          null,
+          null,
+          1,
+          7,
+          7,
+          null,
+          null,
+          1,
+          10,
           null,
           null,
           null,
           null,
           null,
           0,
+          1,
+          7,
           null,
           null
         ]
@@ -67,6 +80,7 @@
 
       "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/controllers/application_controller.rb": {
 
+      "/Users/student/Documents/projects/acebook-smooth-railing/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -101,6 +115,7 @@
           null,
 
       "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/models/post.rb": {
+      "/Users/student/Documents/projects/acebook-smooth-railing/app/models/post.rb": {
         "lines": [
           null,
           null,
@@ -126,6 +141,10 @@
 
           1,
           null,
+      "/Users/student/Documents/projects/acebook-smooth-railing/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
           1,
           null
         ]
@@ -139,6 +158,7 @@
         ]
       },
       "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/mailers/application_mailer.rb": {
+      "/Users/student/Documents/projects/acebook-smooth-railing/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -151,6 +171,7 @@
         }
       },
       "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/jobs/application_job.rb": {
+      "/Users/student/Documents/projects/acebook-smooth-railing/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
@@ -178,6 +199,10 @@
         "lines": [
           null,
           null,
+      "/Users/student/Documents/projects/acebook-smooth-railing/app/channels/application_cable/connection.rb": {
+        "lines": [
+          null,
+          null,
           0,
           0,
           0,
@@ -187,6 +212,7 @@
         }
       },
       "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/channels/application_cable/channel.rb": {
+      "/Users/student/Documents/projects/acebook-smooth-railing/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -204,5 +230,6 @@
 
     "timestamp": 1586438079
 
+    "timestamp": 1586420670
   }
 }
