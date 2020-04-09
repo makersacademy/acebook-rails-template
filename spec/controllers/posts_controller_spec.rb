@@ -36,7 +36,7 @@ RSpec.describe PostsController, type: :controller do
        post = Post.create(message: "hi")
        put :update, params: {id: post.to_param, post: {message: "hello"}}, session: valid_session
        post.reload
-       expect(post.message).to_not eq "hi"
+       expect(post.message).to eq "hello"
      end
    end
 
