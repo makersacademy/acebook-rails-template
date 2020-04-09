@@ -1,8 +1,14 @@
 {
   "RSpec": {
     "coverage": {
+
       "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/models/user.rb": {
+
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/helpers/application_helper.rb": {
+
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -11,7 +17,11 @@
           null
         ]
       },
+
       "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/models/application_record.rb": {
+
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/controllers/posts_controller.rb": {
+
         "lines": [
           null,
           null,
@@ -52,8 +62,14 @@
           null
         ]
       },
+
       "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/helpers/homepage_helper.rb": {
+
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/controllers/application_controller.rb": {
+
         "lines": [
+          null,
+          null,
           1,
           null
         ]
@@ -64,6 +80,7 @@
           null
         ]
       },
+
       "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/controllers/posts_controller.rb": {
         "lines": [
           null,
@@ -82,6 +99,11 @@
           1,
           null,
           null,
+
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/models/post.rb": {
+        "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -90,11 +112,18 @@
           null
         ]
       },
+
       "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
           1,
+
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+
           1,
           null,
           1,
@@ -131,8 +160,14 @@
         "branches": {
         }
       },
+
       "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/controllers/users_controller.rb": {
+
+      "/Users/student/Documents/projects/week_8/acebook-smooth-railing/app/jobs/application_job.rb": {
+
         "lines": [
+          null,
+          null,
           0,
           0
         ],
@@ -164,6 +199,10 @@
         }
       }
     },
+
     "timestamp": 1586433337
+
+    "timestamp": 1586438079
+
   }
 }
