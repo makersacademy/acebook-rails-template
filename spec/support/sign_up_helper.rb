@@ -1,10 +1,11 @@
 module SignUpHelper
 
-  def sign_up 
+  def sign_up
     visit '/'
-    fill_in 'email', with: 'ruby@rails.com'
-    fill_in 'password', with: 'Password'
-    fill_in 'password_confirmation', with: 'Password'
+    click_link 'Sign up'
+    fill_in 'user_email', with: 'ruby@rails.com'
+    fill_in 'user_password', with: 'Password'
+    fill_in 'user_password_confirmation', with: 'Password'
     click_button 'Sign up'
   end
 

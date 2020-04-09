@@ -1,9 +1,9 @@
 module LogInHelper
 
-  def log_in 
+  def log_in
     visit '/'
-    fill_in 'email', with: 'ruby@rails.com'
-    fill_in 'password', with: 'Password'
+    fill_in 'user_email', with: 'ruby@rails.com'
+    fill_in 'user_password', with: 'Password'
     click_button 'Log in'
   end
 
