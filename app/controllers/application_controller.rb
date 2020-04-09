@@ -16,7 +16,10 @@ class ApplicationController < ActionController::Base
 
   def require_login
      redirect_to ('/') unless current_user
+  end
 
+  def require_no_user
+     flash.now[:danger] = 'You are already logged in' if current_user
   end
 
   helper_method :current_user, :create_session
