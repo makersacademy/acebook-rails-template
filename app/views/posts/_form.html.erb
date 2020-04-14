@@ -1,5 +1,7 @@
+<div class="form-group">
 <%= form_with model: @post, local: true do |form| %>
-    <p><%= form.label :content %><br>
+    <p class="form-control"><%= form.label :content %><br>
        <%= form.text_area :content %></p>
-    <p><%= form.submit %></p>
+    <p class="btn btn-primary"><%= form.submit %></p>
 <% end %>
+</div>
