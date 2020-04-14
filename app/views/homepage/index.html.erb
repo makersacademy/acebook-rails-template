@@ -26,6 +26,19 @@
             <h1>all signed up users:</h1> 
             <% @users.each do |user| %>
                 <%= user.name %> <br>
+                <% current_user = User.find(session[:current_user])%>
+                <% if current_user.id != user.id%>
+                  <% if !current_user.following?(user) %>
+                  <%= form_for(current_user.active_relationships.build) do |f| %>
+                    <div><%= hidden_field_tag :followed_id, user.id %></div>
+                    <%= f.submit "Follow" %>
+                  <% end %>
+                <% else %>
+                  <%= form_for(current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }) do |f| %>
+                    <%= f.submit "Unfollow" %>
+                  <% end %>
+                <% end %>
+                <% end %>
             <% end %>
         </div>
         <ul>
