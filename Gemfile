@@ -43,6 +43,7 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'travis'
+  gem 'factory_bot_rails'
 end
 
 group :development do

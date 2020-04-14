@@ -20,6 +20,8 @@
 
 require 'simplecov'
 require 'simplecov-console'
+require 'factory_bot'
+require_relative './factories.rb'
 require_relative './support/log_in_helper.rb'
 require_relative './support/sign_up_helper.rb'
 require_relative './support/helpers'
@@ -68,6 +70,8 @@ RSpec.configure do |config|
   # triggering implicit auto-inclusion in groups with matching metadata.
   config.shared_context_metadata_behavior = :apply_to_host_groups
   config.include PostHelper, type: :feature
+
+  config.include FactoryBot::Syntax::Methods
 
   # The settings below are suggested to provide a good initial experience
   config.include LogInHelper, type: :feature
