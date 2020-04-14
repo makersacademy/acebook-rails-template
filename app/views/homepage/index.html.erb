@@ -12,14 +12,10 @@
     <title>aceBook</title>
 </head>
 <body>
-<% if @user.images.attached? %>
-<div style="width:400px; height:auto">
-<%= image_tag @user.images%>
-</div>
-<%end%>
+<%= link_to 'new album', new_album_path %>
 
 <div class="container">
-<%= link_to "New Image", new_image_path %>
+
   <% if @user != nil %>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">

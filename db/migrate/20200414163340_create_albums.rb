@@ -1,6 +1,6 @@
-class CreateImages < ActiveRecord::Migration[5.2]
+class CreateAlbums < ActiveRecord::Migration[5.2]
   def change
-    create_table :images do |t|
+    create_table :albums do |t|
       t.text :caption
       t.references :user, foreign_key: true
 

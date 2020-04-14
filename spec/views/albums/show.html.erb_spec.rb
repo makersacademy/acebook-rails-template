@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "images/show", type: :view do
+RSpec.describe "albums/show", type: :view do
   before(:each) do
-    @image = assign(:image, Image.create!(
+    @album = assign(:album, Album.create!(
       :caption => "MyText",
       :user => nil
     ))
