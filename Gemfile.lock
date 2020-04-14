@@ -242,7 +242,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler
+  bundler (~> 2.1.2)
   byebug
   capybara (~> 2.13)
   jbuilder (~> 2.5)

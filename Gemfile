@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'nokogiri', '~> 1.8.2'
 gem 'rubocop', require: false
 gem 'travis'
-gem 'bundler' '~> 2.1.2'
+gem 'bundler', '~> 2.1.2'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
