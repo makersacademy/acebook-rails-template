@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
   def destroy
     Post.find(params[:id]).destroy
-    redirect_to action: 'index'
+    redirect_to posts_url
   end
 
   def show

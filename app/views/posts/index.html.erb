@@ -1,5 +1,5 @@
 <% @posts.sort{ |a,b| b.created_at <=> a.created_at}.each do |post| %>
-  <p><%= post.message %>
+  <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %>
   <% if post.user != nil%>
     <i>by <b><%= link_to post.user.name, post.user %></b> on <b><%= post.created_at.strftime("%d/%m/%Y at %I:%M%p") %></b></i>
   <% else %>
@@ -11,9 +11,7 @@
     <%= link_to "Delete", post, method: :delete %>
   <% end %>
 </p>
-
 <% end %>
-
 <%= link_to new_post_path do %>
 New post
 <% end %>
