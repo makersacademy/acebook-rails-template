@@ -8,7 +8,7 @@ class DislikesController < ApplicationController
         else
             @post.dislikes.create(user_id: session[:current_user])
         end
-        redirect_to "/posts"
+        redirect_to "/home"
     end
 
     def destroy
@@ -17,7 +17,7 @@ class DislikesController < ApplicationController
         else
             @dislike.destroy
         end
-        redirect_to "/posts"
+        redirect_to "/home"
     end
 
     private

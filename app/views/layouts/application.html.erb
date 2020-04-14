@@ -14,7 +14,7 @@
     
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 </head>
 
@@ -32,14 +32,15 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
+            
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="/posts/new">Make a new post</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <a class="nav-link" href="/users/<%=session[:current_user]%>/edit">Edit profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="/log-out">Logout</a>
             </li>
           </ul>
         </div>

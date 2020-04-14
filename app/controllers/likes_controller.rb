@@ -17,7 +17,7 @@ class LikesController < ApplicationController
         else
             @like.destroy
         end
-        redirect_to '/posts'
+        redirect_to '/home'
     end
 
     private
