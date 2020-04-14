@@ -26,7 +26,18 @@ require_relative './support/log_in_helper.rb'
 require_relative './support/sign_up_helper.rb'
 require_relative './support/helpers'
 
-SimpleCov.start 'rails'
+
+SimpleCov.start 'rails' do
+  add_filter '/bin/'
+  add_filter '/db/'
+  add_filter '/spec/' # for rspec
+  add_filter '/test/' # for minitest
+  add_filter '/app/jobs' # for rails files
+  add_filter '/app/mailers'
+  add_filter '/app/channels'
+  add_filter '/app/helpers'
+end
+
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                  SimpleCov::Formatter::Console
                                                                  # Want a nice code coverage website? Uncomment this next line!

@@ -8,6 +8,8 @@ end
 
 require 'spec_helper'
 require 'rspec/rails'
+require 'devise'
+require_relative 'support/posts_controller_macros.rb'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -37,6 +39,9 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+  config.include FactoryBot::Syntax::Methods
+
+  config.extend PostsControllerMacros, :type => :controller
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
