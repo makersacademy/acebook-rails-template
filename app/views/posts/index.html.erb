@@ -1,9 +1,15 @@
 <% @posts.each do |post| %>
   <p><%= post.message %>
-  <i>by <%= link_to post.user == nil ? "anonymous" : post.user.name %></i>
-  <br>
-  <%= link_to edit_post_path(id: post.id) do %>Edit Post<% end %>
-  <%= link_to "Delete", post, method: :delete %>
+  <% if post.user != nil%>
+    <i>by <%= link_to post.user.name, post.user %></i>
+  <% else %>
+    <i>anonymous</i>
+  <% end %>
+    <br>
+  <% if post.user == current_user %>
+    <%= link_to edit_post_path(id: post.id) do %>Edit<% end %>
+    <%= link_to "Delete", post, method: :delete %>
+  <% end %>
 </p>
 
 <% end %>
