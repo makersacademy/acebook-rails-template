@@ -21,11 +21,12 @@ RSpec.describe PostsController, type: :controller do
       #put :update, params: {id: post.to_param, post: {message: "hello"}}, session: valid_session
       #post.reload
       post = Post.create(message: "hi")
-       post = Post.update(post.id, message: 'hello')
-       expect(post.message).to eq "hello"
-     end
-   end
-
+      p post
+      post = Post.update(post.id, message: 'hello')
+      p post
+      expect(post.message).to eq "hello"
+    end
+  end
 
   describe 'POST /' do
     it 'creates a post' do
