@@ -13,6 +13,10 @@
     <p class="alert"><%= alert %></p>
     <%# yield on ln 14 is a bootstrap element https://www.sitepoint.com/devise-authentication-in-depth/ %>
     <%= yield %>
-  <p>do I exist?</p>
+
+    <% if current_user %>
+      <%= link_to 'Sign out', destroy_user_session_path,
+      method: :delete %>
+    <% end %>
   </body>
 </html>

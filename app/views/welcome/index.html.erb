@@ -1,4 +1,12 @@
 <h1>Welcome, stranger to byteU!</h1>
-<%= link_to 'My Posts', controller: 'posts' %>
 
 
+<% if current_user %>
+  <%= link_to 'Sign out', destroy_user_session_path,
+  method: :delete %>
+<%else%>
+  <%= link_to 'Sign up', new_user_registration_path %>
+  <%= link_to 'Sign In', new_user_session_path%>
+<%end%>
+      
+<%= link_to 'Posts', controller: 'posts'%>
