@@ -242,7 +242,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 2.1.2)
+  bundler
   byebug
   capybara (~> 2.13)
   jbuilder (~> 2.5)
@@ -262,4 +262,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   2.1.2
+   2.1.4
