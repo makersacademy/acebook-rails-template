@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %><%= link_to edit_post_path(id: post.id) do %>Edit Post<% end %><%= link_to "Delete", post, method: :delete %>
+  <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %><%= link_to edit_post_path(id: post.id) do %>Edit Post<% end %><%= link_to "Delete", post, method: :delete %>
 </p>
 
 <% end %>
