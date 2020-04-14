@@ -1,5 +1,5 @@
 module SessionsHelper
-  def login_as_new_user
+  def sign_up_as_new_user
     sign_up('Bob', 'bob@bob.com', 'password')
   end
 
