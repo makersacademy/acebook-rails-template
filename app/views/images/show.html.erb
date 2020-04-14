@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<strong>Image:</strong>
+<div style="width:400px; height:auto">
+<%= image_tag(@image)%>
+</div>
+</p>
+<p>
+  <strong>Caption:</strong>
+  <%= @image.caption %>
+</p>
+
+<p>
+  <strong>Posted By:</strong>
+  <%= @image.user.name %>
+</p>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>
