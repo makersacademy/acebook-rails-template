@@ -7,7 +7,19 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    @post.user = current_user
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to posts_url, notice: 'Post was successfully created.' }
+        #format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+        #format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+
+    # redirect_to posts_url
   end
 
   def index

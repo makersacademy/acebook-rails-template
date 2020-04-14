@@ -1,5 +1,4 @@
 # AceBook
-
 [![Build Status](https://travis-ci.org/Untitled-Team-Acebook/acebook-Untitled-Team.svg?branch=master)](https://travis-ci.org/Untitled-Team-Acebook/acebook-Untitled-Team) [![Coverage Status](https://coveralls.io/repos/github/Untitled-Team-Acebook/acebook-Untitled-Team/badge.svg)](https://coveralls.io/github/Untitled-Team-Acebook/acebook-Untitled-Team)
 
 ### [Visit Acebook Here ›](https://acebook-untitled-team.herokuapp.com/)
@@ -21,5 +20,5 @@ Clone this repository, then
 > bin/rails db:migrate
 
 > bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+> bundle exec puma -C config/puma.rb  # Start the server at localhost:3000
 ```
