@@ -1,4 +1,4 @@
-<% @posts.each do |post| %>
+<% @posts.sort{ |a,b| b.created_at <=> a.created_at}.each do |post| %>
   <p><%= post.message %>
   <% if post.user != nil%>
     <i>by <b><%= link_to post.user.name, post.user %></b> on <b><%= post.created_at.strftime("%d/%m/%Y at %I:%M%p") %></b></i>
