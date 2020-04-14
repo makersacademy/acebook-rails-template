@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
   <p><%= post.message %>
   <% if post.user != nil%>
-    <i>by <%= link_to post.user.name, post.user %></i>
+    <i>by <b><%= link_to post.user.name, post.user %></b> on <b><%= post.created_at.strftime("%d/%m/%Y at %I:%M%p") %></b></i>
   <% else %>
     <i>anonymous</i>
   <% end %>
