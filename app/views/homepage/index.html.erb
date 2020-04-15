@@ -12,8 +12,10 @@
     <title>aceBook</title>
 </head>
 <body>
+<%= link_to 'new album', new_album_path %>
 
 <div class="container">
+
   <% if @user != nil %>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
@@ -53,7 +55,7 @@
       <%end%>
     </div>
     </p>
-  
+   
   <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapseComment" aria-expanded="false" aria-controls="collapseComment">
     Comment
   </button>
@@ -175,10 +177,6 @@
     </div>
   </div>
 </div>
-
-   
-  
-  
 </body>
 </html>
 </body>

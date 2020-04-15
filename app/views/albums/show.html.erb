@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <div style="width:200px; height:auto">
+    <%= link_to image_tag(@album.image, style:'width:100%'), album_path %> <br>
+  </div>
+</p>
+<p>
+  <strong>Caption:</strong>
+  <%= @album.caption %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @album.user.name %>
+</p>
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>
