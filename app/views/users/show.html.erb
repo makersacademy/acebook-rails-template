@@ -9,7 +9,7 @@
         <%= image_tag post.photo.url(:medium) %>
       <% end %>
       <br>
-      <%= "at #{post.created_at.strftime("%d/%m/%Y at %I:%M%p")}" %>
+      <%= "on #{post.created_at.strftime("%d/%m/%Y at %I:%M%p")}" %>
     </p>
     <hr>
   <% end %>

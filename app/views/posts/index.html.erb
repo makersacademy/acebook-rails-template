@@ -5,6 +5,7 @@
     <% if post.photo.present? %>
       <p><%= image_tag post.photo.url(:medium) %></p>
     <% end %>
+    <br>
     <% if post.user != nil%>
       <i>by
         <b><%= link_to post.user.name, post.user %></b>
