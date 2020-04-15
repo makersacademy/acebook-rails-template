@@ -13,12 +13,14 @@
 
   <tbody>
     <% @users.each do |user| %>
+    <%if user != current_user%>
       <tr>
         <td><%= link_to user.name, user %></td>
         <td><%= user.email %></td>
-        <% if user != current_user %>
+        <%# <% if user != current_user %> 
         <td><%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %></td>
-        <% else %>
+        <%# <% else %> 
+        <%# <% end %>
         
       </tr>
       <% end %>
