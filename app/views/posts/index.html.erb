@@ -19,6 +19,9 @@
     <% end %>
   </p>
 <% end %>
+<%= link_to "Make Friends", users_path %>
+
+<%= link_to "My Friends", { :controller => "users", :action => "show", :id => current_user } %>
 <%= link_to new_post_path do %>
 New post
 <% end %>

@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<% @user.friendships.sort{ |a,b| b.created_at <=> a.created_at}.each do |friendship| %>
+  <p><%= friendship.friend.name %></p>
+  <td><%= link_to "Unfriend", friendship, method: :delete %></td>
+  <%end%>
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
