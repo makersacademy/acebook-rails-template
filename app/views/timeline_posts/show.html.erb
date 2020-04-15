@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @timeline_post.content %>
+</p>
+
+<p>
+  <strong>Poster:</strong>
+  <%= @timeline_post.poster %>
+</p>
+
+<p>
+  <strong>Posted:</strong>
+  <%= @timeline_post.posted %>
+</p>
+
+<%= link_to 'Edit', edit_timeline_post_path(@timeline_post) %> |
+<%= link_to 'Back', timeline_posts_path %>
