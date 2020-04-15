@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     respond_to do |format|
-      if @post.save
+       if @post.save
         format.html { redirect_to posts_url, notice: 'Post was successfully created.' }
         #format.json { render :show, status: :created, location: @post }
       else
