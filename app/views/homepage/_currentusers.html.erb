@@ -9,7 +9,9 @@
 
         <% @users.each do |user| %>
                 <div class="list-group-item list-group-item-action">
-                 <h3><%= user.name %></h3>
+                 <a href="/users/<%= user.id %>/timeline">
+                  <h3><%= user.name %></h3>
+                </a>
                 <% current_user = User.find(session[:current_user])%>
                 <% if current_user.id != user.id%>
                   <% if !current_user.following?(user) %>

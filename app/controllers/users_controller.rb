@@ -89,6 +89,7 @@ class UsersController < ApplicationController
     @timeline_post.each{ | post | @complete_timeline_posts << post}
     @timeline_posts = TimelinePost.new
     @comments = Comment.all
+    @albums = Album.where(:user_id => @user.id)
     begin
       @profilepicture = Profilepicture.find(params[:id])
     rescue ActiveRecord::RecordNotFound => e
