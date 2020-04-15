@@ -1,5 +1,8 @@
 <% @posts.sort{ |a,b| b.created_at <=> a.created_at}.each do |post| %>
   <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %>
+    <% if post.photo.present? %>
+      <p><%= image_tag post.photo.url(:medium) %></p>
+    <% end %>
     <% if post.user != nil%>
       <i>by
         <b><%= link_to post.user.name, post.user %></b>
@@ -8,9 +11,6 @@
       </i>
     <% else %>
       <i>anonymous</i>
-    <% end %>
-    <% if post.photo.present? %>
-      <p><%= image_tag post.photo.url(:medium) %></p>
     <% end %>
     <p>
       <% if post.user == current_user %>
