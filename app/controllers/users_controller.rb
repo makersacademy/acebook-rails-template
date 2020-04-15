@@ -82,6 +82,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = Post.where(:poster_id => @user.id)
     @comments = Comment.all
+    @profilepicture = Profilepicture.last
   end
 
 end
