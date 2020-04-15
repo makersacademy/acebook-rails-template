@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <div style="width:200px; height:auto">
-    <%= link_to image_tag(@album.images, style:'width:100%'), album_path %> <br>
-  </div>
+  <% @album.images.each do |image| %>
+  <p>
+    
+    <div style="width:200px; height:auto">
+      <%= link_to image_tag(image, style:'width:100%'), image %> <br>
+    </div>
+  </p>
+  <% end %>
 </p>
 <p>
   <strong>Caption:</strong>

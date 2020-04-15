@@ -79,9 +79,11 @@ class UsersController < ApplicationController
   end
 
   def timeline
+    @current_user = User.find(session[:current_user])
     @user = User.find(params[:id])
     @posts = Post.where(:poster_id => @user.id)
     @comments = Comment.all
+    @profilepicture = Profilepicture.last
   end
 
 end

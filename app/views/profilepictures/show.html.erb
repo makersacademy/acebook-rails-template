@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div style="width:200px; height:auto">
+  <%= image_tag(@profilepicture.image, style:'width:100%') %> <br>
+</div>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @profilepicture.caption %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profilepicture.user %>
+</p>
+
+<%= link_to 'Edit', edit_profilepicture_path(@profilepicture) %> |
+<%= link_to 'Back', profilepictures_path %>

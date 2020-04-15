@@ -6,6 +6,21 @@
 </head>
 <body>
   <h1><%= User.find(params[:id]).name %>'s Timeline</h1>
+  <% if @profilepicture != nil %>
+    <div style="width:200px; height:auto">
+      <%= image_tag(@profilepicture.image, style:'width:100%') %> <br>
+    </div>
+    <% if @current_user %>
+    <%= link_to 'Edit', edit_profilepicture_path %>
+    <%= link_to 'Destroy', @profilepicture, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Change your profile picture', new_profilepicture_path %>
+    <% end %>
+  <% else %>
+    <%= link_to 'Upload a new profile picture!', new_profilepicture_path %>
+    <div style="width:200px; height:auto">
+      <img src="https://merriam-webster.com/assets/mw/images/article/art-wap-landing-mp-lg/egg-3442-4c317615ec1fd800728672f2c168aca5@1x.jpg" style="width:100%">
+    </div>
+  <% end %>
   <a href="/posts/new">Write a new post</a> <br>
   <h1>Post on <%= User.find(params[:id]).name %>'s Timeline</h1>
   <form action="/home/<%= params[:id] %>/timeline-post" method="post">
