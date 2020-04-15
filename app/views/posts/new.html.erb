@@ -1,16 +1,10 @@
-
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  Please enter a new Post 
+<div class="mx-auto" style="width: 300px;">
+<br>
+<p>Please enter your new post... do it now!</p>
   <form action="/addpost" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="text" id="message" name="message">
-  <input type="submit" id="Post" name="Post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <textarea id="message" name="message" class="form-control text-center"></textarea>
+    <br>
+    <input type="submit" value="Submit Post" id="Post" name="Post" class="btn btn-primary">
   </form>
-</body>
-</html>
+</div>

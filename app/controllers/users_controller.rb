@@ -80,6 +80,7 @@ class UsersController < ApplicationController
 
   def timeline
     @complete_timeline_posts = []
+    @current_user = User.find(session[:current_user])
     @user = User.find(params[:id])
     @posts = Post.where(:poster_id => @user.id)
     @posts.each{ | post | @complete_timeline_posts << post}
@@ -87,7 +88,7 @@ class UsersController < ApplicationController
     @timeline_post.each{ | post | @complete_timeline_posts << post}
     @timeline_posts = TimelinePost.new
     @comments = Comment.all
-
+    @profilepicture = Profilepicture.last
   end
 
 end

@@ -1,32 +1,43 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit my profile</title>
-</head>
-<body>
-  <form action="/users" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name="_method" value="PATCH">
-    <p>Enter your full name</p> 
-    <input type="text" name="fullname" value="<%= @user.name %>"> <br>
-    <p>Enter your date of birth</p> 
-    <input type="date" name="dob" value="<%= @user.dob %>"> <br>
-    <p>Enter your country of birth</p> 
-    <input type="text" name="cob" value="<%= @user.cob %>"> <br>
-    <p>Enter your mobile number</p> 
-    <input type="number" name="mob" value="<%= @user.mob %>"> <br>
-    <p>Enter your email</p> 
-    <input type="email" name="email" value="<%= @user.email %>"> <br>
-    <p>Enter your password</p> 
-    <input type="password" name="password"> <br>
-    <input type="submit" name="submit" value="Update">
-  </form>
 
-  <form action="/users/<%= @user.id %>" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" name="delete" value="Delete my account">
-  </form>
-</body>
-</html>
+<br>
+<form action="/users" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH">
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="fullname">Name</label>
+    <input type="text" class="form-control" name="fullname" value="<%= @user.name %>">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="dob">Date of birth</label>
+    <input type="date" class="form-control" name="dob" value="<%= @user.dob %>">
+  </div>
+</div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="mob">Country of birth</label>
+      <input type="text" class="form-control" name="cob" value="<%= @user.cob %>">
+    </div>
+    
+    <div class="form-group col-md-6">
+      <label for="mob">Mobile number</label>
+      <input type="number" class="form-control" name="mob" value="<%= @user.mob %>">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" name="email" value="<%= @user.email %>">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" name="password">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+<br>
+<%= button_to 'Delete', user_path(@user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-dark" %>
+
