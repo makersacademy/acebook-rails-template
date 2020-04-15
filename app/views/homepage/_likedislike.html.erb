@@ -1,0 +1,28 @@
+<p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%> / <%= post.dislikes.count %> <%= (post.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p> 
+
+<div class="btn-group">
+    <% pre_like = post.likes.find { |like| like.user_id == session[:current_user] }%>
+    <% if pre_like %>
+        <%= button_to post_like_path(post, pre_like), class: 'btn btn-success btn-sm', method: :delete do%>
+        Unlike
+        <%end%>
+        
+    <% else %> 
+        <%= button_to post_likes_path(post), class: 'btn btn-success btn-sm', method: :post  do%>
+        <%=fa_icon "thumbs-up"%> Like
+        <%end%>
+    <% end %>
+
+    &nbsp;
+   
+    <% pre_dislike = post.dislikes.find{|dislike| dislike.user_id == session[:current_user]}%>
+    <%if pre_dislike%>
+        <%= button_to post_dislike_path(post, pre_dislike), method: :delete, class: 'btn btn-danger btn-sm' do%>
+            Undislike
+        <%end%>
+    <%else%>
+        <%= button_to post_dislikes_path(post), method: :post, class: 'btn btn-danger btn-sm' do%>
+        <%=fa_icon "thumbs-down"%> Dislike
+        <%end%>
+    <%end%>
+</div>
