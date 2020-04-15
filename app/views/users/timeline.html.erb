@@ -36,7 +36,7 @@
   
   <% end %>
   <ul>
-    <% @complete_timeline_posts.sort_by{ | post | post.time }.each do |post| %>
+    <% @posts.sort_by{ | post | post.time }.each do |post| %>
         <% if (post.poster_id == params[:id]) %>
           <h3><%= post.content %></h3> <br> 
           post created by <%= User.find(post.poster_id).name %> <br>
