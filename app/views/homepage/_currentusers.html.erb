@@ -1,9 +1,32 @@
 <div class="signed_up_users_card">
     <h5>Current Users:</h5> 
-
+<br>
     <div class="list-group">
+        
+
+        
+
+
         <% @users.each do |user| %>
-            <a href="#" class="list-group-item list-group-item-action"><%= user.name %></a>
-        <% end %>
+                <div class="list-group-item list-group-item-action">
+                 <h3><%= user.name %></h3>
+                <% current_user = User.find(session[:current_user])%>
+                <% if current_user.id != user.id%>
+                  <% if !current_user.following?(user) %>
+                  <%= form_for(current_user.active_relationships.build) do |f| %>
+                    <div><%= hidden_field_tag :followed_id, user.id %></div>
+                     
+                     <%= f.button fa_icon("user-plus", text: "Follow"), class: "btn btn-primary btn-sm" %>
+                  <% end %>
+                <% else %>
+                  <%= form_for(current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }) do |f| %>
+                    <%= f.button fa_icon("user-times", text: "Unfollow"), class: "btn btn-primary btn-sm" %>
+                  <% end %>
+                <% end %>
+                <% end %>
+                
+                </div>
+            <% end %>
+
     </div>
 </div>

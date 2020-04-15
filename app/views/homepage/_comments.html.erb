@@ -1,11 +1,11 @@
 <div>
     <div>
-        <a class="btn btn-primary" data-toggle="collapse" href="#comments" role="button" aria-expanded="false" aria-controls="comments">
+        <a class="btn btn-primary" data-toggle="collapse" href="#comments<%=post.id%>" role="button" aria-expanded="false" aria-controls="comments">
             Comments
         </a>
     </div>
     <br>
-    <div class="collapse" id="comments">
+    <div class="collapse" id="comments<%=post.id%>">
         <div>
             <% @comments.each do |comment| %>
                 <% if (comment.post_id.to_i == post.id) %>

@@ -20,18 +20,25 @@
                     <%= render 'comments', post: post %>
                 </div>
                 <br>
-                <div>
-                    <form action="/posts/<%= post.id %>/edit" method="get" class="form-group">
-                        <input type="submit" value="Edit this post" class="btn btn-primary">
-                    </form>
-                </div>
-                <br>
-                <div>
-                <%= button_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-dark" %>
+                <div class = "row">
+                    <div class="col-4"></div>
+                    <div class="col-2">
+                        <form action="/posts/<%= post.id %>/edit" method="get" class="form-group">
+                            <input type="submit" value="Edit this post" class="btn btn-primary">
+                        </form>
+                    </div>
+                    <div class="col-2">
+                        <%= button_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-dark" %>
+                    </div>
+                    <div class="col-4"></div>
                 </div>
                 <div>
                     <%= flash[:notice] %>      
                 </div>
+                
+            </div>
+            <div class="card-footer text-muted">
+                <%= post.time %>
             </div>
         </div>
         <br>
