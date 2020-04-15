@@ -7,8 +7,8 @@ Rails.application.configure do
   :s3_host_name => "s3.eu-west-2.amazonaws.com",
   :s3_protocol => :https,
   :s3_credentials => {
-    :access_key_id => 'AKIAJHV5O75FN7HN7OOQ',
-    :secret_access_key => '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',
+    :access_key_id => ENV['S3_KEY'],
+    :secret_access_key => ENV['S3_SECRET'],
     :s3_region => "eu-west-2"
   },
   :bucket => 'acebook-untitled'
