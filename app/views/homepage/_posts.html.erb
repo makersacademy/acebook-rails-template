@@ -26,11 +26,7 @@
                 </div>
                 <br>
                 <div>
-                    <form action="/posts/<%= post.id %>" method="POST" class="form-group">
-                        <input type="hidden" name="authenticity_token" id="<%= form_authenticity_token %>">
-                        <input type="hidden" name="_method" id="DELETE">
-                        <input type="submit" value="Delete this post" class="btn btn-dark">
-                    </form>
+                <%= button_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-dark" %>
                 </div>
                 <div>
                     <%= flash[:notice] %>      
