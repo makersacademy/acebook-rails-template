@@ -21,4 +21,5 @@ Clone this repository, then
 
 > bundle exec rspec # Run the tests to ensure it works
 > bundle exec puma -C config/puma.rb  # Start the server at localhost:3000
+> brew install imagemagick
 ```
