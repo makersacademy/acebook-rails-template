@@ -1,4 +1,5 @@
-<% if @user != nil %>
+
+
     <% @posts.reverse.each do |post| %>
         <div class="card text-center">
             <div class="card-header">
@@ -31,31 +32,9 @@
                 <div>
                     <%= flash[:notice] %>      
                 </div>
+            </div>
+        </div>
+        <br>
     <% end %>
         
-<% else %>
 
-                <div>   
-                    <h3>Log in to view posts</h3>
-                    <form action="/sign-up" method="get">
-                        <input type="submit" name="sign_up" value="Sign Up">
-                    </form>
-                </div>
-            </div>
-
-            <div class="card-footer text-muted">
-                <%= post.time %>
-            </div>
-
-        </div>
-    <div>      
-        <h3>Log in to view posts</h3>
-        <form action="/sign-up" method="get" class="form-group">
-            <input type="submit" name="sign_up" value="Sign Up" class="form-control">
-        </form>
-    
-        <form action="/" method="get" class="form-group">
-            <input type="submit" name="log_in" value="Log In" class="btn btn-primary">
-        </form>
-    </div>
-<% end %>
