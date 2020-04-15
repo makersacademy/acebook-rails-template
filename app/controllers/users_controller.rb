@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def new_user
+    @profilepicture = Profilepicture.new
   end
 
   def logout
@@ -88,7 +89,11 @@ class UsersController < ApplicationController
     @timeline_post.each{ | post | @complete_timeline_posts << post}
     @timeline_posts = TimelinePost.new
     @comments = Comment.all
-    @profilepicture = Profilepicture.last
+    begin
+      @profilepicture = Profilepicture.find(params[:id])
+    rescue ActiveRecord::RecordNotFound => e
+      @profilepicture = nil
+    end
   end
 
 end
