@@ -2,7 +2,17 @@
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_host_name => "s3.eu-west-2.amazonaws.com",
+  :s3_protocol => :https,
+  :s3_credentials => {
+    :access_key_id => ENV['S3_KEY'],
+    :secret_access_key => ENV['S3_SECRET'],
+    :s3_region => "eu-west-2"
+  },
+  :bucket => 'acebook-untitled'
+}
   # Code is not reloaded between requests.
   config.cache_classes = true
 

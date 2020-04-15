@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-     redirect_to ('/') unless current_user
+     redirect_to ('/posts') unless current_user
   end
 
   def require_no_user

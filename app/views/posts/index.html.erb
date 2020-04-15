@@ -1,16 +1,23 @@
 <% @posts.sort{ |a,b| b.created_at <=> a.created_at}.each do |post| %>
   <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %>
-  <% if post.user != nil%>
-    <i>by <b><%= link_to post.user.name, post.user %></b> on <b><%= post.created_at.strftime("%d/%m/%Y at %I:%M%p") %></b></i>
-  <% else %>
-    <i>anonymous</i>
-  <% end %>
-    <br>
-  <% if post.user == current_user %>
-    <%= link_to edit_post_path(id: post.id) do %>Edit<% end %>
-    <%= link_to "Delete", post, method: :delete %>
-  <% end %>
-</p>
+    <% if post.photo.present? %>
+      <p><%= image_tag post.photo.url(:medium) %></p>
+    <% end %>
+    <% if post.user != nil%>
+      <i>by
+        <b><%= link_to post.user.name, post.user %></b>
+        on
+        <b><%= post.created_at.strftime("%d/%m/%Y at %I:%M%p") %></b>
+      </i>
+    <% else %>
+      <i>anonymous</i>
+    <% end %>
+    <p>
+      <% if post.user == current_user %>
+        <%= link_to edit_post_path(id: post.id) do %>Edit<% end %>
+      <%= link_to "Delete", post, method: :delete %>
+    <% end %>
+  </p>
 <% end %>
 <%= link_to "Make Friends", users_path %>
 
