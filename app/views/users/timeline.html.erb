@@ -10,9 +10,11 @@
     <div style="width:200px; height:auto">
       <%= image_tag(@profilepicture.image, style:'width:100%') %> <br>
     </div>
+    <% if @current_user %>
     <%= link_to 'Edit', edit_profilepicture_path %>
     <%= link_to 'Destroy', @profilepicture, method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Change your profile picture', new_profilepicture_path %>
+    <% end %>
   <% else %>
     <%= link_to 'Upload a new profile picture!', new_profilepicture_path %>
     <div style="width:200px; height:auto">
