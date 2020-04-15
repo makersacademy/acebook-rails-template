@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         create_session(@user.id)
+        # redirect_to ('/posts')
         format.html { redirect_to posts_url, notice: 'User was successfully created.' }
         #format.html { redirect_to @user, notice: 'User was successfully created.' }
         #format.json { render :show, status: :created, location: @user }

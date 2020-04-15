@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       create_session(user.id)
-      redirect_to user
+      redirect_to ('/posts')
     else
       flash.now[:danger] = 'Bad email/password combination. Try again.'
       render 'new'
