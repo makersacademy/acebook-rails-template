@@ -108,6 +108,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
     mimemagic (0.3.4)
+    mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
@@ -267,6 +268,7 @@ DEPENDENCIES
   coveralls (~> 0.8.23)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  mini_magick
   paperclip
   pg
   puma (~> 3.7)
