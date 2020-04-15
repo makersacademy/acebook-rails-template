@@ -24,6 +24,17 @@
   <a href="/posts/new">Write a new post</a> <br>
   <h1>Post on <%= User.find(params[:id]).name %>'s Timeline</h1>
   <%= render "timeline_posts/form" %>
+  <% @albums.each do | album | %>
+  
+  <p>    
+    <h3>Click album to view all photos</h3>
+    <div style="width:200px; height:auto">
+      <%= link_to image_tag(album.images[0], style:'width:100%'), album_path%> <br>
+    </div>
+    + <%= album.images.length%> more photos
+  </p>
+  
+  <% end %>
   <ul>
     <% @complete_timeline_posts.sort_by{ | post | post.time }.each do |post| %>
         <% if (post.poster_id == params[:id]) %>
