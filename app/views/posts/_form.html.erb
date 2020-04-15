@@ -1,7 +1,8 @@
-<div class="form-group">
-<%= form_with model: @post, local: true do |form| %>
-    <p class="form-control"><%= form.label :content %><br>
-       <%= form.text_area :content %></p>
-    <p class="btn btn-primary"><%= form.submit %></p>
-<% end %>
+<div class="mx-auto" style="width: 300px;">
+    <%= form_with model: @post, local: true do |form| %>
+        <%= form.label "Your Post" %><br>
+        <%= form.text_area :content, class: "form-control text-center" %></p>
+        <%= form.submit class: "btn btn-primary" %></p>
+    <% end %>
 </div>
+

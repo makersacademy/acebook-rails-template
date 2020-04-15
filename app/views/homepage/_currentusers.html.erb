@@ -1,0 +1,9 @@
+<div class="signed_up_users_card">
+    <h5>Current Users:</h5> 
+
+    <div class="list-group">
+        <% @users.each do |user| %>
+            <a href="#" class="list-group-item list-group-item-action"><%= user.name %></a>
+        <% end %>
+    </div>
+</div>

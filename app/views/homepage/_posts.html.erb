@@ -1,0 +1,65 @@
+<% if @user != nil %>
+    <% @posts.reverse.each do |post| %>
+        <div class="card text-center">
+            <div class="card-header">
+                <%= User.find(post.poster_id).name %>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    <%= post.content %>
+                </p>
+          
+                <!--Like/Dislike-->
+                <div>
+                <%= render 'likedislike', post: post %>
+                </div>
+                <br>
+                <!--Comments-->
+                <div>
+                    <%= render 'comments', post: post %>
+                </div>
+                <br>
+                <div>
+                    <form action="/posts/<%= post.id %>/edit" method="get" class="form-group">
+                        <input type="submit" value="Edit this post" class="btn btn-primary">
+                    </form>
+                </div>
+                <br>
+                <div>
+                    <form action="/posts/<%= post.id %>" method="POST" class="form-group">
+                        <input type="hidden" name="authenticity_token" id="<%= form_authenticity_token %>">
+                        <input type="hidden" name="_method" id="DELETE">
+                        <input type="submit" value="Delete this post" class="btn btn-dark">
+                    </form>
+                </div>
+                <div>
+                    <%= flash[:notice] %>      
+                </div>
+    <% end %>
+        
+<% else %>
+
+                <div>   
+                    <h3>Log in to view posts</h3>
+                    <form action="/sign-up" method="get">
+                        <input type="submit" name="sign_up" value="Sign Up">
+                    </form>
+                </div>
+            </div>
+
+            <div class="card-footer text-muted">
+                <%= post.time %>
+            </div>
+
+        </div>
+    <div>      
+        <h3>Log in to view posts</h3>
+        <form action="/sign-up" method="get" class="form-group">
+            <input type="submit" name="sign_up" value="Sign Up" class="form-control">
+        </form>
+    
+        <form action="/" method="get" class="form-group">
+            <input type="submit" name="log_in" value="Log In" class="btn btn-primary">
+        </form>
+    </div>
+<% end %>

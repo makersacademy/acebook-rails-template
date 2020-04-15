@@ -30,14 +30,14 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(params.require(:post).permit(:content))
-    redirect_to posts_url
+    redirect_to '/home'
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
     flash[:success] = 'Post successfully deleted'
-    redirect_to posts_url
+    redirect_to '/home'
   end
   
 end

@@ -12,7 +12,7 @@
     <title>aceBook</title>
 </head>
 <body>
-<%= link_to 'new album', new_album_path %>
+
 
 <div class="container">
 
@@ -24,159 +24,33 @@
       </div>
     </div>
   <%end%>
-  <div class="row">
-  <!--Posts-->
-    <div class="col-10">
-      <% if @user != nil %>
-         <% @posts.reverse.each do |post| %>
-        <div class="card text-center">
-          <div class="card-header">
-            <%= User.find(post.poster_id).name %>
-          </div>
-      <div class="card-body">
-        <p class="card-text">
-        <%= post.content %>
-        </p>
-        <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%> / <%= post.dislikes.count %> <%= (post.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p> 
-    <!--Like/Dislike-->
-        <div class="btn-group">
-          <% pre_like = post.likes.find { |like| like.user_id == session[:current_user] }%>
-            <% if pre_like %>
-        <%= button_to 'Unlike', post_like_path(post, pre_like), class: 'btn btn-success btn-sm', method: :delete %>
-      <% else %> 
-        <%= button_to 'Like',post_likes_path(post), class: 'btn btn-success btn-sm', method: :post  %>
-      <% end %>
-      &nbsp;
-      <% pre_dislike = post.dislikes.find{|dislike| dislike.user_id == session[:current_user]}%>
-      <%if pre_dislike%>
-        <%= button_to 'Undislike', post_dislike_path(post, pre_dislike), method: :delete, class: 'btn btn-danger btn-sm'%>
-      <%else%>
-        <%= button_to 'Dislike', post_dislikes_path(post), method: :post, class: 'btn btn-danger btn-sm'%>
-      <%end%>
-    </div>
-    </p>
-   
-  <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#collapseComment" aria-expanded="false" aria-controls="collapseComment">
-    Comment
-  </button>
-  </p>
-  <div class="collapse" id="collapseComment">
-    <form action="/home/<%= post.id %>/comments" method="post" class="form-group">
-          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <textarea name="comment" id=""  rows="3" class="form-control"></textarea>
-          <input type="submit" name="Comment" value="Submit Comment" class="btn btn-success">
-        </form>
-    </div>
-    
-    <div>
-      <form action="/posts/<%= post.id %>/edit" method="get" class="form-group">
-          <input type="submit" value="Edit this post" class="btn btn-primary">
-        </form>
-      </div>
-      <div>
-        <form action="/posts/<%= post.id %>" method="POST" class="form-group">
-          <input type="hidden" name="authenticity_token" id="<%= form_authenticity_token %>">
-          <input type="hidden" name="_method" id="DELETE">
-          <input type="submit" value="Delete this post" class="btn btn-dark">
+</div>
 
-        <a href="/posts/new">Write a new post</a>
-        <div class="signed_up_users_card">
-            <h1>all signed up users:</h1> 
-            <% @users.each do |user| %>
-                <%= user.name %> <br>
-                <% current_user = User.find(session[:current_user])%>
-                <% if current_user.id != user.id%>
-                  <% if !current_user.following?(user) %>
-                  <%= form_for(current_user.active_relationships.build) do |f| %>
-                    <div><%= hidden_field_tag :followed_id, user.id %></div>
-                    <%= f.submit "Follow" %>
-                  <% end %>
-                <% else %>
-                  <%= form_for(current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }) do |f| %>
-                    <%= f.submit "Unfollow" %>
-                  <% end %>
-                <% end %>
-                <% end %>
-            <% end %>
-        </div>
-        <ul>
-            <% @posts.reverse.each do |post| %>
-              <h3><%= post.content %></h3> <br> post created by <%= User.find(post.poster_id).name %> <br>
-                <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-                <p><%= post.dislikes.count %> <%= (post.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p>
-      
-                <p><% pre_like = post.likes.find { |like| like.user_id == session[:current_user] }%>
-                
-                <% if pre_like %>
-                  <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
-                <% else %> 
-                  <%= button_to 'Like',post_likes_path(post), method: :post %>
-                <% end %>
-                
-                <% pre_dislike = post.dislikes.find{|dislike| dislike.user_id == session[:current_user]}%>
-                <%if pre_dislike%>
-                  <%= button_to 'Undislike', post_dislike_path(post, pre_dislike), method: :delete%>
-                <%else%>
-                  <%= button_to 'Dislike', post_dislikes_path(post), method: :post%>
-                <%end%></p>
-                <%= flash[:notice] %>      
-                <% @comments.each do |comment| %>
-                    <% if (comment.post_id.to_i == post.id) %>
-                    <%= comment.content%>
-                    <% end %>
-                <% end %>
-                <form action="/home/<%= post.id %>/comments" method="post">
-                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                    <textarea name="comment" id="" cols="60" rows="5"></textarea>
-                  <input type="submit" name="Submit" value="Submit">
-                </form>
-                <form action="/posts/<%= post.id %>/edit"" method="get">
-                  <input type="submit" value="Edit this post">
-                </form>
-                <form action="/posts/<%= post.id %>" method="POST">
-                  <input type="hidden" name="authenticity_token" id="<%= form_authenticity_token %>">
-                  <input type="hidden" name="_method" id="DELETE">
-                  <input type="submit" value="Delete this post">
-                </form>
-            <% end %>
-        </ul>
-    <% else %>
-    <h3>Log in to view posts</h3>
-        <form action="/sign-up" method="get">
-            <input type="submit" name="sign_up" value="Sign Up">
-        </form>
-        </div>
-  </div>
-  <div class="card-footer text-muted">
-    <%= post.time %>
-  </div>
-</div>
-              <% end %>
-        
-      <% else %>
-      <h3>Log in to view posts</h3>
-          <form action="/sign-up" method="get" class="form-group">
-              <input type="submit" name="sign_up" value="Sign Up" class="form-control">
-          </form>
-          
-          <form action="/" method="get" class="form-group">
-              <input type="submit" name="log_in" value="Log In" class="btn btn-primary">
-          </form>
-    <% end %>
+
+<div class="container">
+  <!---Row starts--->
+  <div class="row">
+    <div class="col-2 float-right">
+        <%= render 'currentusers'%>
     </div>
+    <div class="col-10">
+    <!--Posts-->
+      <%= render 'posts'%>
+    </div>
+
+
+
     <!--Current users-->
-    <div class="col-2">
-      <div class="signed_up_users_card">
-          <h5>Current Users:</h5> 
-          <div class="list-group">
-            <% @users.each do |user| %>
-                <a href="#" class="list-group-item list-group-item-action"><%= user.name %></a>
-            <% end %>
-          </div>
-      </div>
-    </div>
+     
+
   </div>
+
+ 
+
+  
 </div>
+
+
 </body>
 </html>
 </body>
