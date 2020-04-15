@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <% @posts.sort{ |a,b| b.created_at <=> a.created_at}.each do |post| %>
   <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %>
     <% if post.photo.present? %>
