@@ -9,7 +9,8 @@
         <div>
             <% @comments.each do |comment| %>
                 <% if (comment.post_id.to_i == post.id) %>
-                    <p><%= comment.content%></p>
+                    <h5><%= comment.content%></h5>
+                    <p class="text-right"><small>Commented by: <%=User.find(comment.commentor_id).name%></small></p>
                     <hr>
                 <% end %>
             <% end %>
