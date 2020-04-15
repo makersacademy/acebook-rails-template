@@ -27,6 +27,7 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     @album.user = User.find(session[:current_user])
+    # @album.images.attach(params[:images])
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
@@ -70,6 +71,6 @@ class AlbumsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def album_params
-      params.require(:album).permit(:caption, :image)
+      params.require(:album).permit(:caption, images: [])
     end
 end
