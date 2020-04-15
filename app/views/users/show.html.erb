@@ -19,21 +19,19 @@
   <% end %>
   <h4>Friends</h4>
   <% @user.friendships.sort{ |a,b| b.created_at <=> a.created_at}.each do |friendship| %>
-    <td><%= link_to friendship.friend.name, friendship.friend %></td> -
+    <td><%= link_to friendship.friend.name, friendship.friend %></td>
+    —
     <td><%= link_to "Unfriend", friendship, method: :delete %></td>
     <br>
     <br>
 
-
   <%end%>
-
 
   <% if current_user == @user %>
     <%= link_to 'Edit', edit_user_path(@user) %>
-    |
-    <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    |
+    —
+    <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+    —
   <% end %>
-
 
   <%= link_to 'Back', users_path %>

@@ -24,9 +24,10 @@
 <% end %>
 <%= link_to "Make Friends", users_path %>
 <% if current_user != nil %>
+  —
   <%= link_to "My Friends", { :controller => "users", :action => "show", :id => current_user } %>
 <% end %>
-
+—
 <%= link_to new_post_path do %>
 New post
 <% end %>
