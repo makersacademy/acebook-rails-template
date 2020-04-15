@@ -17,12 +17,23 @@
     </p>
     <hr>
   <% end %>
+  <h4>Friends</h4>
   <% @user.friendships.sort{ |a,b| b.created_at <=> a.created_at}.each do |friendship| %>
-    <h4>friends</h4>
-    <p><%= link_to friendship.friend.name, friendship.friend %></p>
+    <td><%= link_to friendship.friend.name, friendship.friend %></td> -
     <td><%= link_to "Unfriend", friendship, method: :delete %></td>
+    <br>
+    <br>
+
+
   <%end%>
 
-  <%= link_to 'Edit', edit_user_path(@user) %>
-  |
+
+  <% if current_user == @user %>
+    <%= link_to 'Edit', edit_user_path(@user) %>
+    |
+    <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    |
+  <% end %>
+
+
   <%= link_to 'Back', users_path %>
