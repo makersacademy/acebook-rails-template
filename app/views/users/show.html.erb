@@ -7,7 +7,7 @@
     </h4>
   <% end %>
   <% @user.posts.sort{ |a,b| b.created_at <=> a.created_at}.each do |post|%>
-    <p><%= post.message %>
+    <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %>
       <br>
       <% if post.photo.present? %>
         <%= image_tag post.photo.url(:medium) %>
