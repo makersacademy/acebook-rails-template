@@ -5,23 +5,24 @@
   <% else %>
     <h4><%= "#{@user.name}'s posts "%><%= "(#{@user.posts.count})" %>
     </h4>
-    <% @user.posts.sort{ |a,b| b.created_at <=> a.created_at}.each do |post|%>
-      <p><%= post.message %>
-        <br>
-        <% if post.photo.present? %>
-          <%= image_tag post.photo.url(:medium) %>
-        <% end %>
-        <br>
-        <%= "on #{post.created_at.strftime("%d/%m/%Y at %I:%M%p")}" %>
-      </p>
-      <hr>
-    <% end %>
-    <% @user.friendships.sort{ |a,b| b.created_at <=> a.created_at}.each do |friendship| %>
-      <h4>friends</h4>
-      <p><%= link_to friendship.friend.name, friendship.friend %></p>
-      <td><%= link_to "Unfriend", friendship, method: :delete %></td>
-    <%end%>
+  <% end %>
+  <% @user.posts.sort{ |a,b| b.created_at <=> a.created_at}.each do |post|%>
+    <p><%= post.message %>
+      <br>
+      <% if post.photo.present? %>
+        <%= image_tag post.photo.url(:medium) %>
+      <% end %>
+      <br>
+      <%= "on #{post.created_at.strftime("%d/%m/%Y at %I:%M%p")}" %>
+    </p>
+    <hr>
+  <% end %>
+  <% @user.friendships.sort{ |a,b| b.created_at <=> a.created_at}.each do |friendship| %>
+    <h4>friends</h4>
+    <p><%= link_to friendship.friend.name, friendship.friend %></p>
+    <td><%= link_to "Unfriend", friendship, method: :delete %></td>
+  <%end%>
 
-    <%= link_to 'Edit', edit_user_path(@user) %>
-    |
-    <%= link_to 'Back', users_path %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
+  |
+  <%= link_to 'Back', users_path %>
