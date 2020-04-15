@@ -58,8 +58,9 @@ ActiveRecord::Schema.define(version: 20200415124928) do
 
   create_table "timeline_posts", force: :cascade do |t|
     t.text "content"
-    t.integer "poster"
-    t.integer "posted"
+    t.integer "poster_id"
+    t.integer "posted_id"
+    t.string "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

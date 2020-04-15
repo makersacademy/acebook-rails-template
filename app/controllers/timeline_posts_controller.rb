@@ -25,8 +25,9 @@ class TimelinePostsController < ApplicationController
   # POST /timeline_posts.json
   def create
     @timeline_post = TimelinePost.new(timeline_post_params)
-    @timeline_post.poster = session[:current_user]
-    @timeline_post.posted = params[:timeline_post][:id].to_i
+    @timeline_post.poster_id = session[:current_user]
+    @timeline_post.posted_id = params[:timeline_post][:id].to_i
+    @timeline_post.time = Time.now
     respond_to do |format|
       if @timeline_post.save
         format.html { redirect_to '/users/' + session[:current_user].to_s + '/timeline', notice: 'Timeline post was successfully created.' }
