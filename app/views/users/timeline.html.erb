@@ -8,12 +8,7 @@
   <h1><%= User.find(params[:id]).name %>'s Timeline</h1>
   <a href="/posts/new">Write a new post</a> <br>
   <h1>Post on <%= User.find(params[:id]).name %>'s Timeline</h1>
-  <form action="/home/<%= params[:id] %>/timeline-post" method="post">
-    THIS WILL NOT WORK YET
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <textarea name="post_to_timeline" id="" cols="80" rows="5"></textarea> <br>
-        <input type="submit" name="Submit" value="Post to <%= User.find(params[:id]).name %>'s Timeline">
-    </form>
+  <%= render "timeline_posts/form" %>
   <ul>
         <% @posts.reverse.each do |post| %>
         <% if (post.poster_id == params[:id]) %>

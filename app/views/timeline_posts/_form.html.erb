@@ -1,0 +1,24 @@
+<%= form_with(model: @timeline_posts, local: true) do |form| %>
+  <% if @timeline_posts.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@timeline_posts.errors.count, "error") %> prohibited this timeline_post from being saved:</h2>
+
+      <ul>
+      <% @timeline_posts.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :id, value: params[:id] %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :timeline_post_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

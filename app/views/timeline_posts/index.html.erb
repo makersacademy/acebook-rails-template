@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Timeline Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Poster</th>
+      <th>Posted</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timeline_posts.each do |timeline_post| %>
+      <tr>
+        <td><%= timeline_post.content %></td>
+        <td><%= timeline_post.poster %></td>
+        <td><%= timeline_post.posted %></td>
+        <td><%= link_to 'Show', timeline_post %></td>
+        <td><%= link_to 'Edit', edit_timeline_post_path(timeline_post) %></td>
+        <td><%= link_to 'Destroy', timeline_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Timeline Post', new_timeline_post_path %>
