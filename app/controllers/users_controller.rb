@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = current_user
+    @posts = current_user.posts
   end
 
   # GET /users/new
