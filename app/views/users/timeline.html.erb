@@ -10,7 +10,7 @@
     <div style="width:200px; height:auto">
       <%= image_tag(@profilepicture.image, style:'width:100%') %> <br>
     </div>
-    <% if @current_user %>
+    <% if @profilepicture.user == @current_user %>
     <%= link_to 'Edit', edit_profilepicture_path %>
     <%= link_to 'Destroy', @profilepicture, method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Change your profile picture', new_profilepicture_path %>
@@ -29,7 +29,7 @@
   <p>    
     <h3>Click album to view all photos</h3>
     <div style="width:200px; height:auto">
-      <%= link_to image_tag(album.images[0], style:'width:100%'), album_path%> <br>
+      <a href="/albums/<%= album.id%>"><%= image_tag(album.images[0], style:'width:100%') %></a>
     </div>
     + <%= album.images.length%> more photos
   </p>

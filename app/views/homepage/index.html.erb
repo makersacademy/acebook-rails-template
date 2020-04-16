@@ -26,6 +26,7 @@
   <%end%>
 </div>
 
+<% if @user != nil %>
 
 <div class="container">
   <!---Row starts--->
@@ -35,7 +36,6 @@
     </div>
     <div class="col-10">
     
-    <% if @user != nil %>
     
     <!--Posts-->
       <%= render 'posts'%>
@@ -47,10 +47,6 @@
               <form action="/sign-up" method="get">
                   <input type="submit" name="sign_up" value="Sign Up">
                 </form>
-        </div>
-            
-        <div class="card-footer text-muted">
-              <%= post.time %>
         </div>
 
           <div>      
