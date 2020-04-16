@@ -14,6 +14,9 @@ language: ruby
 rvm:
 - 2.5.0
 deploy:
+  run:
+    - brew install imagemagick
+    - bundle exec figaro install
   provider: heroku
   strategy: git
   api_key:
