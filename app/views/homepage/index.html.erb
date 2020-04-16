@@ -31,41 +31,34 @@
 <div class="container">
   <!---Row starts--->
   <div class="row">
-    <div class="col-2 float-right">
+  <!--Current users-->
+    <div class="col-3 float-right">
         <%= render 'currentusers'%>
     </div>
-    <div class="col-10">
+    <div class="col-9">
     
     
     <!--Posts-->
       <%= render 'posts'%>
 
     <% else %>
-
-        <div>   
+<!-- not logged in -->
+        <div class="container">
+        <br>   
             <h3>Log in to view posts</h3>
+            <br>
               <form action="/sign-up" method="get">
-                  <input type="submit" name="sign_up" value="Sign Up">
-                </form>
+                <input type="submit" name="sign_up" value="Sign Up" class="btn btn-primary">
+              </form>
         </div>
-
+          <br>
           <div>      
-            <h3>Log in to view posts</h3>
-            <form action="/sign-up" method="get" class="form-group">
-                <input type="submit" name="sign_up" value="Sign Up" class="form-control">
-            </form>
-        
             <form action="/" method="get" class="form-group">
                 <input type="submit" name="log_in" value="Log In" class="btn btn-primary">
             </form>
           </div>
     <% end %>
     </div>
-
-
-
-    <!--Current users-->
-     
 
   </div>
 

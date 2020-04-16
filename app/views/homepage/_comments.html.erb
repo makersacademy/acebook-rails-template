@@ -21,13 +21,13 @@
                 New Comment
             </button>
         </div>
-
+<br>
 
             
         <div class="collapse" id="collapseComment">
             <form action="/home/<%= post.id %>/comments" method="post" class="form-group">
                 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                <textarea name="comment" id=""  rows="3" class="form-control"></textarea>
+                <textarea name="comment" id=""  rows="3" class="form-control"></textarea><br>
                 <input type="submit" name="Comment" value="Submit Comment" class="btn btn-success">
             </form>
         </div>
