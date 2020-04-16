@@ -91,5 +91,6 @@ max_friends_count.times do
   # unless already friends or friend is yourself
   unless a == b || Friendship.find_by(user_id: a, friend_id: b) != nil || Friendship.find_by(user_id: b, friend_id: a) != nil
     Friendship.create( user_id: a, friend_id: b)
+    Friendship.create( user_id: b, friend_id: a)
   end
 end

@@ -13,8 +13,10 @@ class FriendshipsController < ApplicationController
 
   def destroy
     friendship = Friendship.find(params[:id])
-    Friendship.find_by(user_id: friendship.user_id, friend_id: friendship.friend_id).destroy
-    Friendship.find_by(user_id: friendship.friend_id, friend_id: friendship.user_id).destroy
+    a = Friendship.find_by(user_id: friendship.user_id, friend_id: friendship.friend_id)
+    b = Friendship.find_by(user_id: friendship.friend_id, friend_id: friendship.user_id)
+    a.destroy
+    b.destroy
     flash[:notice] = "Successfully unfriended friend"
     redirect_to current_user
   end
