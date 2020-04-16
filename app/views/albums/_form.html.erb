@@ -1,27 +1,29 @@
-<%= form_with(model: album, local: true) do |form| %>
-  <% if album.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(album.errors.count, "error") %> prohibited this album from being saved:</h2>
+<div class="mx-auto" style="width: 300px;">
+  <%= form_with(model: album, local: true) do |form| %>
+    <% if album.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(album.errors.count, "error") %> prohibited this album from being saved:</h2>
 
-      <ul>
-      <% album.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% album.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :caption %>
+      <%= form.text_area :caption, class: "form-control text-center"%>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :images %>
+      <%= form.file_field :images, multiple: true, class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: "btn btn-primary"%>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :caption %>
-    <%= form.text_area :caption %>
-  </div>
-
-  <div class="field">
-    <%= form.label :images %>
-    <%= form.file_field :images, multiple: true %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
