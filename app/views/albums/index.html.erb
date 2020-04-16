@@ -3,33 +3,28 @@
 <h1>Albums</h1>
 <% if @current_user != nil %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Caption</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @albums.each do |album| %>
-      <tr>
-        <td><%= album.caption %></td>
-        <td><%= album.user.name %></td>
-        <td><%= link_to 'Show', album %></td>
-        <% if album.user.id == @current_user.id %>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>        
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      <h3>Click album to view all photos</h3>
+        <% @albums.each do | album | %>
+          <h4><%= album.caption %></h4>
+          <p>    
+            <div style="width:200px; height:auto" class="mx-auto">
+              <a href="/albums/<%= album.id%>"><%= image_tag(album.images[0], style:'width:100%') %></a>
+            </div>
+            + <%= album.images.length%> more photos
+          </p>
+          <p>Album by: <%= album.user.name %></p>
+          <% if album.user.id == @current_user.id %>
+            <%= link_to 'Edit', edit_album_path(album) %> | 
+            <%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+        <%end%>
+        <br>
+        <h6><%= link_to 'New Album', new_album_path %></h6>
+        <% else %>
+          <h1>Please log in or sign up to view or add photo albums</h1>
         <% end %>
-      </tr>
-    <% end %>
-    <%= link_to 'New Album', new_album_path %>
-    <% else %>
-      <h1>Please log in or sign up to view or add photo albums</h1>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+
 

@@ -1,85 +1,44 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Timeline</title>
-</head>
-<body>
-  <h1><%= User.find(params[:id]).name %>'s Timeline</h1>
-  <% if @profilepicture != nil %>
-    <div style="width:200px; height:auto">
-      <%= image_tag(@profilepicture.image, style:'width:100%') %> <br>
-    </div>
-    <% if @profilepicture.user == @current_user %>
-    <%= link_to 'Edit', edit_profilepicture_path %>
-    <%= link_to 'Destroy', @profilepicture, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= link_to 'Change your profile picture', new_profilepicture_path %>
-    <% end %>
-  <% else %>
-    <%= link_to 'Upload a new profile picture!', new_profilepicture_path %>
-    <div style="width:200px; height:auto">
-      <img src="https://merriam-webster.com/assets/mw/images/article/art-wap-landing-mp-lg/egg-3442-4c317615ec1fd800728672f2c168aca5@1x.jpg" style="width:100%">
-    </div>
-  <% end %>
-  <a href="/posts/new">Write a new post</a> <br>
-  <h1>Post on <%= User.find(params[:id]).name %>'s Timeline</h1>
-  <%= render "timeline_posts/form" %>
-  <% @albums.each do | album | %>
-  
-  <p>    
-    <h3>Click album to view all photos</h3>
-    <div style="width:200px; height:auto">
-      <a href="/albums/<%= album.id%>"><%= image_tag(album.images[0], style:'width:100%') %></a>
-    </div>
-    + <%= album.images.length%> more photos
-  </p>
-  
-  <% end %>
-  <ul>
-    <% @posts.sort_by{ | post | post.time }.each do |post| %>
-        <% if (post.poster_id == params[:id]) %>
-          <h3><%= post.content %></h3> <br> 
-          post created by <%= User.find(post.poster_id).name %> <br>
-                    <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-          <p><%= post.dislikes.count %> <%= (post.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p>
 
-          <p><% pre_like = post.likes.find { |like| like.user_id == session[:current_user] }%>
-          
-          <% if pre_like %>
-            <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
-          <% else %> 
-            <%= button_to 'Like',post_likes_path(post), method: :post %>
-          <% end %></p>
-          
-          <% pre_dislike = post.dislikes.find{|dislike| dislike.user_id == session[:current_user]}%>
-          <%if pre_dislike%>
-            <%= button_to 'Undislike', post_dislike_path(post, pre_dislike), method: :delete%>
-          <%else%>
-            <%= button_to 'Dislike', post_dislikes_path(post), method: :post%>
-          <%end%>
-          <%= flash[:notice] %>
-          
-          <% @comments.each do |comment| %>
-            <% if (comment.post_id.to_i == post.id) %>
-              <%= comment.content%>
-            <% end %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><%= User.find(params[:id]).name %>'s Profile</h1>
+  </div>
+</div>
+
+ <div class="container">
+    <div class="row">
+      <div class="col-3">
+       <% profilepicture = Profilepicture.where(:user_id => User.find(params[:id]))%>
+        <% if @profilepicture != nil %>
+          <%= image_tag(@profilepicture.image, style:'width:100%') %>
+        <% else %>
+          <img src="https://merriam-webster.com/assets/mw/images/article/art-wap-landing-mp-lg/egg-3442-4c317615ec1fd800728672f2c168aca5@1x.jpg" style="width:100%">
+        <%end%>
+        <br>
+        <% if @profilepicture != nil %>
+          <% if @profilepicture.user == @current_user %>
+            <%= link_to 'Edit', edit_profilepicture_path %>
+            <%= link_to 'Destroy', @profilepicture, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
-          <form action="/home/<%= post.id %>/comments" method="post">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-          <textarea name="comment" id="" cols="60" rows="5"></textarea>
-        <input type="submit" name="Submit" value="Submit">
-      </form>
-        <form action="/posts/<%= post.id %>/edit"" method="get">
-          <input type="submit" value="Edit this post">
-        </form>
-        <form action="/posts/<%= post.id %>" method="POST">
-          <input type="hidden" name="authenticity_token" id="<%= form_authenticity_token %>">
-          <input type="hidden" name="_method" id="DELETE">
-          <input type="submit" value="Delete this post">
-        </form>
-      <% end %>
-    <% end %>
-  </ul>
+        <% else %>
+          <%= link_to 'Upload a new profile picture!', new_profilepicture_path %>
+       <% end %>
+      </div>
+      <div class="col-9">
+       <h3>Click album to view all photos</h3>
+        <% @albums.each do | album | %>
+        <h4><%= album.caption %></h4>
+        <p>    
+          <div style="width:200px; height:auto" class="mx-auto">
+            <a href="/albums/<%= album.id%>"><%= image_tag(album.images[0], style:'width:100%') %></a>
+          </div>
+          + <%= album.images.length%> more photos
+        </p>
+        
+        <% end %>
+ 
+      </div>
+    </div>
+ </div>
   
-</body>
-</html>

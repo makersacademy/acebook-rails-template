@@ -28,7 +28,7 @@ class ProfilepicturesController < ApplicationController
     @profilepicture.user = User.find(session[:current_user])
     respond_to do |format|
       if @profilepicture.save
-        format.html { redirect_to '/users/'+ session[:current_user].to_s + '/timeline', notice: 'Profilepicture was successfully created.' }
+        format.html { redirect_to '/users/'+ session[:current_user].to_s + '/timeline' }
         format.json { render :show, status: :created, location: @profilepicture }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ProfilepicturesController < ApplicationController
   def update
     respond_to do |format|
       if @profilepicture.update(profilepicture_params)
-        format.html { redirect_to '/users/'+ session[:current_user].to_s + '/timeline', notice: 'Profilepicture was successfully updated.' }
+        format.html { redirect_to '/users/'+ session[:current_user].to_s + '/timeline' }
         format.json { render :show, status: :ok, location: @profilepicture }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ProfilepicturesController < ApplicationController
   def destroy
     @profilepicture.destroy
     respond_to do |format|
-      format.html { redirect_to '/users/'+ session[:current_user].to_s + '/timeline', notice: 'Profilepicture was successfully destroyed.' }
+      format.html { redirect_to '/users/'+ session[:current_user].to_s + '/timeline'}
       format.json { head :no_content }
     end
   end
