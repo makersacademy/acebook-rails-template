@@ -11,6 +11,12 @@
         <b><%= link_to post.user.name, post.user %></b>
         on
         <b><%= post.created_at.strftime("%d/%m/%Y at %I:%M%p") %></b>
+        <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+          <% if pre_like %>
+      <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+          <% else %>
+      <%= button_to 'Like', post_likes_path(post), method: :post %>
+      <% end %><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
       </i>
     <% else %>
       <i>anonymous</i>
@@ -31,3 +37,4 @@
 <%= link_to new_post_path do %>
 New post
 <% end %>
+        

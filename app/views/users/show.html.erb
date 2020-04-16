@@ -14,7 +14,13 @@
       <% end %>
       <br>
       <%= "on #{post.created_at.strftime("%d/%m/%Y at %I:%M%p")}" %>
-    </p>
+       <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+        <% if pre_like %>
+        <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+        <% else %>
+        <%= button_to 'Like', post_likes_path(post), method: :post %>
+        <% end %> 
+        <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
     <hr>
   <% end %>
   <h4>Friends</h4>

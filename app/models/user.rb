@@ -3,6 +3,7 @@ class User < ApplicationRecord
     has_many :posts, dependent: :destroy
     has_many :friendships
     has_many :friends, :through => :friendships
+    has_many :likes, dependent: :destroy
 
     validates :name, presence: true
     EMAIL_FORMAT = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

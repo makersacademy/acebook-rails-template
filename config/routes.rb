@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   resources :friendships
+  resources :posts do
+    resources :likes
+  end
 end
