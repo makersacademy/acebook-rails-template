@@ -6,11 +6,13 @@ class AlbumsController < ApplicationController
   # GET /albums.json
   def index
     @albums = Album.all
+    @current_user = User.find(session[:current_user])
   end
 
   # GET /albums/1
   # GET /albums/1.json
   def show
+    @current_user = User.find(session[:current_user])
   end
 
   # GET /albums/new
@@ -66,6 +68,7 @@ class AlbumsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album
+      # @album = Album.where(:user.id => params[:id])
       @album = Album.find(params[:id])
     end
 
