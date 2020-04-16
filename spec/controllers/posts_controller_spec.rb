@@ -21,9 +21,7 @@ RSpec.describe PostsController, type: :controller do
       #put :update, params: {id: post.to_param, post: {message: "hello"}}, session: valid_session
       #post.reload
       post = Post.create(message: "hi")
-      p post
       post = Post.update(post.id, message: 'hello')
-      p post
       expect(post.message).to eq "hello"
     end
   end
@@ -39,13 +37,16 @@ RSpec.describe PostsController, type: :controller do
   describe 'GET /' do
     it 'responds with 200' do
       get :index
-      expect(response).to have_http_status(302)
+      expect(response).to have_http_status(200)
     end
   end
 
   describe 'DELETE /posts/:id' do
     it 'deletes a post' do
-      post = Post.create(message: "Hello, world!")
+      user = User.create!(email: 'bob@bob.com', name: 'bob', password: '123456')
+      p user
+      post = Post.create!(message: "Hello, world!")
+      p post
       Post.destroy(post.id)
 #      post :create, params: { post: { message: 'Hello, world!' } }
 #      delete :destroy, params: { id: post.id }
