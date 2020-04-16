@@ -28,5 +28,9 @@ class ApplicationController < ActionController::Base
      flash.now[:danger] = 'You are already logged in' if current_user
   end
 
-  helper_method :current_user, :create_session
+  def friends_of(id)
+    Friendship.where(user_id: id)
+  end
+
+  helper_method :current_user, :create_session, :friends_of
 end
