@@ -3,25 +3,35 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
     <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
   </head>
 
   <body>
-  <header>
-    <% if current_user %>
-    Welcome, <%= current_user.name %>
-    —
-    <%= link_to 'Log out', logout_path, method: :delete %>
-    <% else %>
-    <%= link_to 'Log in', login_path %>
-    —
-    <%= link_to 'Sign up', new_user_path %>
-    <% end %>
-  </header>
+    <header>
+      <% if current_user %>
+        Welcome,
+        <%= current_user.name %>
+        —
+        <%= link_to 'Log out', logout_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Log in', login_path %>
+        —
+        <%= link_to 'Sign up', new_user_path %>
+      <% end %>
+      —
+      <%= link_to 'Users', users_url %>
+      —
+      <%= link_to 'Posts', posts_url %>
+      <% if current_user %>
+        —
+        <%= link_to 'My Posts and Friends', current_user %>
+      <% end %>
+
+    </header>
     <%= yield %>
   </body>
 </html>

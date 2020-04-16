@@ -15,7 +15,13 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-     redirect_to ('/') unless current_user
+     # redirect_to ('/login') unless current_user
+     if current_user == nil
+       flash[:danger] = 'You must create an account or log in before accessing this'
+       redirect_to ('/login')
+     end
+
+       # format.html { redirect_to ('/login'), notice: 'You must create an account or log in before accessing this' }
   end
 
   def require_no_user

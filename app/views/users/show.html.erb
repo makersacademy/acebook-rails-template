@@ -1,4 +1,37 @@
 <p id="notice"><%= notice %></p>
+<% @user = User.find(params[:id]) %>
+  <% if current_user == @user %>
+    <h4><%= 'your posts ' %><%= "(#{current_user.posts.count})" %></h4>
+  <% else %>
+    <h4><%= "#{@user.name}'s posts "%><%= "(#{@user.posts.count})" %>
+    </h4>
+  <% end %>
+  <% @user.posts.sort{ |a,b| b.created_at <=> a.created_at}.each do |post|%>
+    <p><%= h(post.message).gsub(/\n/, '<br/>').html_safe %>
+      <br>
+      <% if post.photo.present? %>
+        <%= image_tag post.photo.url(:medium) %>
+      <% end %>
+      <br>
+      <%= "on #{post.created_at.strftime("%d/%m/%Y at %I:%M%p")}" %>
+    </p>
+    <hr>
+  <% end %>
+  <h4>Friends</h4>
+  <% @user.friendships.sort{ |a,b| b.created_at <=> a.created_at}.each do |friendship| %>
+    <td><%= link_to friendship.friend.name, friendship.friend %></td>
+    —
+    <td><%= link_to "Unfriend", friendship, method: :delete %></td>
+    <br>
+    <br>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <%end%>
+
+  <% if current_user == @user %>
+    <%= link_to 'Edit', edit_user_path(@user) %>
+    —
+    <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+    —
+  <% end %>
+
+  <%= link_to 'Back', users_path %>
