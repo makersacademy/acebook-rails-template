@@ -6,7 +6,11 @@ class AlbumsController < ApplicationController
   # GET /albums.json
   def index
     @albums = Album.all
-    @current_user = User.find(session[:current_user])
+    begin
+      @current_user = User.find(session[:current_user])
+    rescue ActiveRecord::RecordNotFound => e
+      @current_user = nil
+    end
   end
 
   # GET /albums/1
