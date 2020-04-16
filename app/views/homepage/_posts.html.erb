@@ -1,47 +1,52 @@
 
 
     <% @posts.reverse.each do |post| %>
-        <div class="card text-center">
-            <div class="card-header">
-                <h3><%= User.find(post.poster_id).name %></h3>
+        <% profilepicture = Profilepicture.where(:user_id => post.poster_id.to_i)%>
+        <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                
+                <%= image_tag(profilepicture.last.image)%>    
+               
             </div>
+            <div class="col-md-8">
             <div class="card-body">
+                <h5 class="card-title"><%= User.find(post.poster_id).name %></h5>
                 <p class="card-text">
-                    <h4><%= post.content %></h4>
+                    <%= post.content %>
+                    <div>
+                        <%= render 'likedislike', post: post %>
+                    </div>
+                    <br>
+                    <!--Comments-->
+                    <div>
+                        <%= render 'comments', post: post %>
+                    </div>
+                    
+                    <div class = "row">
+                        <div class="col-2"></div>
+                        <div class="col-4">
+                            <form action="/posts/<%= post.id %>/edit" method="get" class="form-group">
+                                <input type="submit" value="Edit this post" class="btn btn-primary">
+                            </form>
+                        </div>
+                        <div class="col-4">
+                            <%= button_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-dark" %>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                    <div>
+                        <%= flash[:notice] %>      
+                    </div>
                 </p>
-          
-                <!--Like/Dislike-->
-                <div>
-                <%= render 'likedislike', post: post %>
-                </div>
-                <br>
-                <!--Comments-->
-                <div>
-                    <%= render 'comments', post: post %>
-                </div>
-                
-                <div class = "row">
-                    <div class="col-4"></div>
-                    <div class="col-2">
-                        <form action="/posts/<%= post.id %>/edit" method="get" class="form-group">
-                            <input type="submit" value="Edit this post" class="btn btn-primary">
-                        </form>
-                    </div>
-                    <div class="col-2">
-                        <%= button_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-dark" %>
-                    </div>
-                    <div class="col-4"></div>
-                </div>
-                <div>
-                    <%= flash[:notice] %>      
-                </div>
-                
+                <p class="card-text"><small class="text-muted"> <%= post.time %></small></p>
             </div>
-            <div class="card-footer text-muted">
-                <%= post.time %>
             </div>
         </div>
-        <br>
+        </div>
     <% end %>
         
+
+
+
 
