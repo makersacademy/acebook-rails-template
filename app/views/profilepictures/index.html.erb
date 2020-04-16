@@ -17,8 +17,11 @@
         <td><%= profilepicture.caption %></td>
         <td><%= profilepicture.user %></td>
         <td><%= link_to 'Show', profilepicture %></td>
-        <td><%= link_to 'Edit', edit_profilepicture_path(profilepicture) %></td>
-        <td><%= link_to 'Destroy', profilepicture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if profilepicture.user.id == @current_user.id %>       
+          <td><%= link_to 'Edit', edit_profilepicture_path(profilepicture) %></td>
+          <td><%= link_to 'Destroy', profilepicture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
