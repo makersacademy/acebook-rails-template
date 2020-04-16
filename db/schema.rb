@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_091125) do
     t.string "name"
     t.date "dob"
     t.string "cob"
-    t.integer "mob"
+    t.bigint "mob"
     t.string "email"
     t.string "password"
   end
