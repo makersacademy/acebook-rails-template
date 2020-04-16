@@ -1,4 +1,7 @@
 os: osx
+branches:
+  only:
+  - master
 cache:
   bundler: true
   directories:
@@ -17,7 +20,7 @@ deploy:
     secure: jBRLt/1a6auASWJp62O0Fa52sGCJ3aT8x94AQfFbQro61ijOf+85jMg39MKIEf2g5xWZfNs4nGzkqF6WSAZ2QqQNL7D2sUs3FnBW91jtT6WZFCb4VOdzrtB7w9P8JLmrp8a+T8vz7S6L7IgP7rIULzef3CNQW8DUMKVlP6EirO0ldOx6IUDO6FInja/AVkD/mHN9yYsi2h9Naca0NSGiaWYtVLtUIadYMdraoA83oEhwRZhTjFAtcigvs/sQhmSKpJ9FCXAWquWZ9p7ZX0v93ysA56MpLWuR1vuUsgX56q7IwZl2gdgqEEgX2FoLK866XZDZo3mBYiKLO+8LkefY+CKwBQG7Z4GKINYkIXpTZQQGcEtJDJpwJcejwUlBOtOkrt+KA8VoJxZ7Qsd3Qxcezvp7q+WqcFvwHgn7cAzk5UKtNjOX+7ekPWUXFaE1ptHaTt3WPFDUAxhpWc5We3vJ4BWMZ8D59fORJyEeJSGqcHWdz1YizNhB1Z03u8tCCne3Yvxj+X+03AhpqPMFPDBI/TSrAd2wyc8gAqe1TMHc4rQ2m4hTwBMY0wPlcPg+z38H+mSUcviB/TC45X3VE741LGtZ7FNSQ3P8/dqj0phi9L4zJ5sbBD89JPq0FAkC6s6QQi/HkjLvGMKqFeUucxp26VhlsArRcUwcbvDdu0TeDIk=
   app: acebook-untitled-team
   on:
-    all_branches: true
+    all_branches: false
     repo: Untitled-Team-Acebook/acebook-Untitled-Team
 
 # Sometimes you want to restart your Heroku application between or after commands. You can easily do so by adding a “restart” command:
