@@ -22,6 +22,8 @@
             <%= link_to 'Destroy', @profilepicture.last, method: :delete, data: { confirm: 'Are you sure?' } %>
             <%= link_to 'Upload a new profile picture!', new_profilepicture_path %>
           <% end %>
+        <% else %>
+          <%= link_to 'Upload a new profile picture!', new_profilepicture_path %>
        <% end %>
       </div>
       <div class="col-9">
