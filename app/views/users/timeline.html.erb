@@ -10,13 +10,13 @@
     <div class="row">
       <div class="col-3">
        <% profilepicture = Profilepicture.where(:user_id => User.find(params[:id]))%>
-        <% if profilepicture.last != nil %>
+        <% if profilepicture.last != [] %>
           <%= image_tag(profilepicture.last.image, style:'width:100%', class:"rounded") %>
         <% else %>
           <img src="https://merriam-webster.com/assets/mw/images/article/art-wap-landing-mp-lg/egg-3442-4c317615ec1fd800728672f2c168aca5@1x.jpg" style="width:100%">
         <%end%>
         <br>
-        <% if @profilepicture != nil %>
+        <% if @profilepicture != [] %>
           <% if @profilepicture.user.id == @current_user.id %>
             <%= link_to 'Edit', edit_profilepicture_path %>
             <%= link_to 'Destroy', @profilepicture, method: :delete, data: { confirm: 'Are you sure?' } %>
