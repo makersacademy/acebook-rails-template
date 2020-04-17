@@ -23,9 +23,6 @@
       <div class="container">
         <% if session[:current_user] %>
         <a class="navbar-brand" href="/home">Acebook</a>
-        <% else %>
-        <a class="navbar-brand" href="/">Acebook</a>
-        <% end %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -53,6 +50,21 @@
               <a class="nav-link" href="/log-out">Logout</a>
             </li>
           </ul>
+        <% else %>
+        <a class="navbar-brand" href="/">Acebook</a>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Sign in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sign-up">Sign up</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/home">Posts</a>
+          </li>
+        </ul>
+        <% end %>
         </div>
       </div>
     </nav>

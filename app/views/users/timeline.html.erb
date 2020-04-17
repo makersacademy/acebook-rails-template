@@ -33,7 +33,7 @@
           <div style="width:200px; height:auto" class="mx-auto">
             <a href="/albums/<%= album.id%>"><%= image_tag(album.images[0], style:'width:100%') %></a>
           </div>
-          + <%= album.images.length%> more photos
+          + <%= album.images.length - 1%> more..
         </p>
         
         <% end %>
