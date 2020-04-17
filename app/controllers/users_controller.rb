@@ -91,7 +91,7 @@ class UsersController < ApplicationController
     @comments = Comment.all
     @albums = Album.where(:user_id => @user.id)
     begin
-      @profilepicture = Profilepicture.find(params[:id])
+      @profilepicture = Profilepicture.where(:user_id => params[:id] )
     rescue ActiveRecord::RecordNotFound => e
       @profilepicture = nil
     end
