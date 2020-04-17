@@ -7,7 +7,7 @@
         <div class="row no-gutters">
             <div class="col-md-4">
                 
-                <% if profilepicture != nil %>
+                <% if profilepicture != [] %>
                     <%= image_tag(profilepicture.last.image, :style => "width: 300px")%>    
                 <%else%>
                     <img src="https://merriam-webster.com/assets/mw/images/article/art-wap-landing-mp-lg/egg-3442-4c317615ec1fd800728672f2c168aca5@1x.jpg" style="width:100%">

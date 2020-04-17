@@ -17,7 +17,7 @@
         <%end%>
         <br>
         <% if @profilepicture != nil %>
-          <% if @profilepicture.user == @current_user.id %>
+          <% if @profilepicture.user.id == @current_user.id %>
             <%= link_to 'Edit', edit_profilepicture_path %>
             <%= link_to 'Destroy', @profilepicture, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
