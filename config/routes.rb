@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :timeline_posts
-  resources :profilepictures
-  resources :albums
+ 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/", to: "welcome#index"
   get "/posts", to: "posts#index"
@@ -30,6 +28,9 @@ Rails.application.routes.draw do
     member do
       get :following, :followers
     end
+    resources :timeline_posts
+    resources :profilepictures
+    resources :albums
   end
   resources :relationships
 
