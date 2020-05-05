@@ -1,3 +1,11 @@
 <h1>Sign-up</h1>
-<p>Freakin Heroku</p>
-<p>how about now?</p>
+
+<%= form_with scope: :user, url: users_path,  local: true do |form| %>
+  <p> 
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.submit 'Sign up' %>
+  </p>
+<% end %>

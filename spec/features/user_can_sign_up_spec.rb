@@ -6,10 +6,10 @@ RSpec.feature "Sign-up", type: :feature do
     expect(page).to have_content("Sign-up")
   end
 
-  xscenario "User can sign up with their name" do
+  scenario "User can sign up with their name" do
     visit "/"
-    fill_in "name", with: "Gina"
-    click "sign-up"
+    fill_in "user[name]", with: "Gina"
+    click_on "Sign up"
     expect(page).to have_content("Welcome Gina!")
   end
 end
