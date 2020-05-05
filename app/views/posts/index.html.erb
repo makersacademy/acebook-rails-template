@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
   <ul class="post">
     <li><%= post.formatted_time %></li>
-    <li><%= post.message %></li>
+    <li class="message"><%= post.message %></li>
   </ul>
 <% end %>
 
