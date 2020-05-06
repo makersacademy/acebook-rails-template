@@ -489,6 +489,4 @@ Style/WordArray:
 Style/ZeroLengthPredicate:
   Enabled: false
 
-AllCops:
-  Exclude:
-    - 'config/environments/production.rb'
+
