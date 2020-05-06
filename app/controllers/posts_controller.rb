@@ -27,6 +27,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     @post.update(post_params)
+    puts "turtle"
+    puts post_params
     redirect_to posts_path
   end
 
