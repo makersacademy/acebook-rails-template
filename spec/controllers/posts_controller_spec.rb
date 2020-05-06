@@ -26,4 +26,13 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "DELETE /" do
+    it "deletes a post" do
+      post :create, params: { post: { message: "Hello, world!" } }
+      found_post = Post.find_by(message: "Hello, world!")
+      delete :destroy, params: { id: found_post.id  }
+      expect(Post.find_by(message: "Hello, world!")).not_to be
+    end
+  end
 end
