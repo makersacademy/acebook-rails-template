@@ -2,6 +2,7 @@
   <ul class="post">
     <li><%= post.formatted_time %></li>
     <li class="message"><%= post.message %></li>
+    <li><%= link_to 'Edit', edit_post_path(post) %></li>
   </ul>
 <% end %>
 
