@@ -50,3 +50,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development, :test do
   gem "rubocop", "0.79.0"
 end
+
+gem 'simplecov', :require => false, :group => :test
