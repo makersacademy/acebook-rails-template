@@ -48,6 +48,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem "rubocop", "0.79.0"
+  gem 'rubocop-rails', require: false
   gem 'simplecov',  require: false
   gem "rubycritic", require: false
 end
