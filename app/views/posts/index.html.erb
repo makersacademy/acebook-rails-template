@@ -1,5 +1,8 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <ul class="post">
+    <li><%= post.formatted_time %></li>
+    <li><%= post.message %></li>
+  </ul>
 <% end %>
 
 <%= link_to new_post_path do %>
