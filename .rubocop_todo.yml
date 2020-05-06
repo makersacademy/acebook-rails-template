@@ -78,10 +78,6 @@ Style/Documentation:
     - 'db/migrate/20170526114520_create_posts.rb'
 
 
-AllCops:
-  Exclude:
-    - 'config/**/*'
-
 
 # Offense count: 1
 # Cop supports --auto-correct.
