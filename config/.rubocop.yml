@@ -1,8 +1,6 @@
-AllCops:
-  Exclude:
-    - './config/environments/production.rb'
 
-inherit_from:
-  - https://raw.githubusercontent.com/makersacademy/scaffolint/v1.1.0/.rubocop.yml
+
+# inherit_from:
+#   - https://raw.githubusercontent.com/makersacademy/scaffolint/v1.1.0/.rubocop.yml
 
 
