@@ -4,7 +4,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them, with the time!" do
 
     time = Time.new()
-    formatted_time = time.strftime("%-dth %b,%l:%M%P")
+    formatted_time = time.strftime("%-dth %b, %l:%M%P")
 
     visit "/posts"
     click_link "New post"
