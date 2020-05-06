@@ -83,3 +83,4 @@ production:
   database: pgapp_production
   username: pgapp
   password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
+
