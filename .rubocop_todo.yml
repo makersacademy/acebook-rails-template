@@ -156,9 +156,3 @@ Style/StringLiteralsInInterpolation:
 Style/SymbolArray:
   EnforcedStyle: brackets
 
-# Offense count: 25
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
-# URISchemes: http, https
-Layout/LineLength:
-  Max: 112

@@ -2,7 +2,17 @@ inherit_from: .rubocop_todo.yml
 
 AllCops:
   Exclude:
-    - 'config/**/*'
+   # - 'config/**/*'
+    - 'db/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+    - 'gapag1/**/*'
+
+
+Layout/LineLength:
+  Max: 112
+
+
 
 
 Layout/AccessModifierIndentation:
