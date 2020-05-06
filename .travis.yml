@@ -7,7 +7,7 @@ services:
   - postgresql
 
 before_install:
-- export TZ=GMT
+- export TZ='Europe/London'
 
 before_script:
 - bundle exec rails db:create
