@@ -42,6 +42,7 @@
 # We want to encourage testing, but it can be verbose in the early stages.
 # So we'll give you a break. As you learn, try removing the next two sections.
 
+
 Layout/LineLength:
   Exclude:
     - 'spec/**/*'
@@ -52,6 +53,8 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
+
+
 
 # Code Style
 # ==========
@@ -485,3 +488,7 @@ Style/WordArray:
   Enabled: false
 Style/ZeroLengthPredicate:
   Enabled: false
+
+AllCops:
+  Exclude:
+    - 'config/environments/production.rb'
