@@ -201,8 +201,6 @@ Style/BlockComments:
   Enabled: false
 Style/BlockDelimiters:
   Enabled: false
-Style/BracesAroundHashParameters:
-  Enabled: false
 Style/CaseEquality:
   Enabled: false
 Layout/CaseIndentation:
@@ -451,7 +449,7 @@ Style/SymbolArray:
   Enabled: false
 Style/SymbolProc:
   Enabled: false
-Layout/Tab:
+Layout/IndentationStyle:
   Enabled: false
 Style/TernaryParentheses:
   Enabled: false
