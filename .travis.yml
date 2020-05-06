@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+  - 2.5.0
+
+
+services:
+  - postgresql
+
+before_script:
+  - bundle install
+  - rails db:create
+  - rails db:create
+
+script:
+  - bundle exec rspec
