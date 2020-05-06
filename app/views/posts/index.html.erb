@@ -1,10 +1,10 @@
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+
 <% @posts.each do |post| %>
   <ul class="post">
     <li><%= post.formatted_time %></li>
     <li class="message"><%= post.message %></li>
   </ul>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
 <% end %>
