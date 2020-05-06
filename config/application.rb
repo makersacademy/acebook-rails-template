@@ -14,7 +14,7 @@ module Acebook
 
     # Use GMT
     config.time_zone = 'Europe/London'
-    config.active_record.default_timezone = :local
+    # config.active_record.default_timezone = :local
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
