@@ -17,9 +17,8 @@ script:
   - bundle exec rspec
 
 deploy:
-provider: heroku
-api_key:
-  secure: "c39bd31d-97a8-4aa2-b1fe-9a3f34fa307e"
-on:
-    all_branches: true
-run: "rake db:migrate"
+  provider: heroku
+  api_key: "c39bd31d-97a8-4aa2-b1fe-9a3f34fa307e"
+    on:
+      all_branches: true
+  run: "rake db:migrate"
