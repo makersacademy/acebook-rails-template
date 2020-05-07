@@ -1,8 +1,11 @@
 <h1>Welcome <%=@user_name %>! </h1>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <p><%= button_to "Delete post", post_path(post), method: :delete %></p>
+  
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
