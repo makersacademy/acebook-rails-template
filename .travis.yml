@@ -1,4 +1,7 @@
 language: ruby
-rvm: 2.5.0
-script: bundle exec rake spec
-
+rvm:
+  - 2.5.0
+install:
+- gem uninstall bundler
+- gem install bundler --version '1.7.4'
+script: "rake"
