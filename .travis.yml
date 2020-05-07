@@ -1,17 +1,20 @@
 language: ruby
 rvm:
-  - 2.5.0
-
-
+- 2.5.0
 services:
-  - postgresql
-
+- postgresql
 before_install:
 - export TZ='Europe/London'
-
 before_script:
 - bundle exec rails db:create
 - bundle exec rails db:migrate
-
 script:
-  - bundle exec rspec
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: Eqh2y6Pt4/eCXAmoofNfdGuv8+WGcV3D7JQ8O+g/1zq/YGOwmhkLq1nNvfnoU20wqMlaiEv4QF80eHMFWJ618mtX09YR5BL4APxM9qIrcKhTDYjYpjkSD9lPol2cz3wNMJd5f+i9yNYvmsddKclPuAdq8eSOjWxrM8Y07aKCIywjAch0IBQFxpOFKwNfZh+iywVvBJwXht9v2lFtSdzi7973iWMvRimnmdUfq3gR61IaSu3YGDkwkr6snBsvsNG2ZY8ugzjnDtqdAfx73PJY7yzLNinoMqcmdGafq8hCNqmLKCuHW7LHrt555qC4/lRiclWIvirTxwkp13V6WvsU+xaxfWByNzQq8K0RBQrFWRLGRXU1FV7ADsZJIPW8VGS7J4cs1DCXC/C1LOCbXlMOK6+IBSxq1ymQ/CCCdWpgosKss3lrYqXaomjfHboLDRKXWAjJgGkFWXAiFUlT6vkYC1bs40D7UWmVowON5UAbh8yp7lj4PDfLh1ZxCzk39I0AtD+a6JLeTJ5iMqMS3782W9pd1gtf6gpV7b+iQprRrOctVu6EPe4tevMVdNwpuBOGPQIk4BW3vxqeMx0oxdON2ojzVa+JOoYXds/DHf4t6GuukZMiX3Q9rxu4bKHPo5PpzT1VktfCvksUf+Lf1phxYL5mE23Zg3CvFyLqXk5CQ0c=
+  app: acebook-myspace
+  on:
+    repo: Steven-Klavins/acebook-myspace
+  skip_cleanup: 'true'
