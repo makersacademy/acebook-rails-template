@@ -2,6 +2,7 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <p><%= button_to "Delete post", post_path(post), method: :delete %></p>
+  <p><%= button_to "Edit post", edit_post_path(post), method: :get%></p>
   
 <% end %>
 
