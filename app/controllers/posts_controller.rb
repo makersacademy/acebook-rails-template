@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  attr_reader :user_name
+  
   def new
     @post = Post.new
   end
@@ -28,6 +31,10 @@ class PostsController < ApplicationController
 
     @post.update(post_params)
     redirect_to posts_path
+  end
+
+  def user? 
+    @user_name != nil
   end
 
   private
