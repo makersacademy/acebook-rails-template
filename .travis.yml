@@ -17,5 +17,4 @@ deploy:
   app: acebook-myspace
   on:
     repo: Steven-Klavins/acebook-myspace
-    branch: travis-CD
   skip_cleanup: 'true'
