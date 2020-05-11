@@ -69,11 +69,3 @@ RSpec.describe User, type: :model do
     end
   end
 end
-
-
-# specify "a user's password should not be readable when they are loaded from the database" do
-#   my_password = 'foobar22'
-#   u = User.create :password => my_password, :password_confirmation => my_password
-#   u.reload
-#   u.password.should_not == my_password
-# end
