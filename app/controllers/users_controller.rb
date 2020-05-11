@@ -3,19 +3,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    p params
-    @user = User.new(user_params)
-    
-    p @user.save
-    p @user
-    @this_user = User.find(@user.id)
-    p @this_user
-    render plain: @user.inspect
+    @user = User.create(user_params)
+    session[:user_id] = @user.id
+    redirect_to posts_path
   end
 
   private
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password)
-      p 'Hello!'
-    end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password)
+  end
 end
