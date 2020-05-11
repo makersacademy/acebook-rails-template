@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   validates :name, presence: true 
-  validates :email, presence: true
+  VALID_EMAIL_REGEX = /\w\S*@[a-z]*\.[a-z]{2,30}([a-z]|\.[a-z]{2,30})/i
+  validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}
   validates :password_digest, presence: true
 end

@@ -35,12 +35,19 @@ RSpec.describe User, type: :model do
       expect(user).to_not be_valid
     end 
 
-    it "user name invalid if already exists" do
+    it "user email invalid if already exists" do
       user = User.create(name: "Gina", email:"gina@example.com", password_digest: "12345")
       user2 = User.new(name: "Alexa", email:"gina@example.com", password_digest: "12345")
-
       expect { user2.save validate: false}.to raise_error(ActiveRecord::RecordNotUnique)
     end
+
+    it "user email needs to  have a valid format" do
+      invalid_emails = ["gina.example", '23567b', '@google.com']
+      invalid_emails.each do |invalid_email| 
+        user = User.new(name: "Gina", email: invalid_email, password_digest: "12345")
+        expect(user).to_not be_valid 
+      end 
+    end 
   end 
 
   describe 'valid user password:' do
