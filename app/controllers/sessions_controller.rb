@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
       redirect_to posts_path
     else 
+      flash[:warning] = "Incorrect email/password"
       render 'new'
     end
 
