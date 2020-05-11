@@ -6,7 +6,7 @@ RSpec.feature "Sign-up", type: :feature do
     expect(page).to have_content("Sign-up")
   end
 
-  scenario "User can sign up with their name, email and password" do
+  xscenario "User can sign up with their name, email and password" do
     visit "/"
     fill_in "user[name]", with: "Gina"
     fill_in "user[email]", with: "gina@example.com"
