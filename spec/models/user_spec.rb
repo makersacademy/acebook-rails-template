@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
     end
 
     it "user name invalid if already exists" do
-      user = User.create(name: "Gina", email:"gina@example.com", password: "12345")
+      user = User.create(name: "Gina", email:"gina@example.com", password_digest: "12345")
       user2 = User.new(name: "Gina", email:"smiley@example.com", password: "12345")
 
       expect { user2.save validate: false}.to raise_error(ActiveRecord::RecordNotUnique)
@@ -62,11 +62,21 @@ RSpec.describe User, type: :model do
       user.reload
       expect(user.password_digest).to_not eq password
     end 
-    it 'password is between 6 to 10 characters' do 
+    it 'password under 6 characters is not valid' do 
       short_password = 'a' * 5
       user = User.create(name: "Gina", email: "gina@example.com", password: short_password)
       expect(user).to_not be_valid
     end 
+    it 'password is above 10 characters is not valid' do 
+      long_password = 'a' * 11
+      user = User.create(name: "Gina", email: "gina@example.com", password: long_password)
+      expect(user).to_not be_valid
+    end 
+    it 'password between 6 and 10 characters is valid' do
+      valid_password = 'a' * 9
+      user = User.create(name: "Gina", email: "gina@example.com", password: valid_password)
+      expect(user).to be_valid
+    end
   end
 end
 
