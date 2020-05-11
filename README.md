@@ -1,4 +1,5 @@
 # AceBook MySpace
+[![Build Status](https://travis-ci.com/Steven-Klavins/acebook-myspace.svg?branch=master)](https://travis-ci.com/Steven-Klavins/acebook-myspace)
 
 ## [Medium Blog](https://medium.com/acebook-myspace)
 
