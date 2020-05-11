@@ -20,6 +20,13 @@ RSpec.describe User, type: :model do
       user = User.new(name: nil, email: "gina@example.com", password_digest: "12345")
       expect(user).to_not be_valid
     end
+
+    it "user name invalid if already exists" do
+      user = User.create(name: "Gina", email:"gina@example.com", password_digest: "12345")
+      user2 = User.new(name: "Gina", email:"smiley@example.com", password_digest: "12345")
+
+      expect { user2.save validate: false}.to raise_error(ActiveRecord::RecordNotUnique)
+    end
   end
 
   describe 'valid user email:' do
@@ -27,6 +34,13 @@ RSpec.describe User, type: :model do
       user = User.new(name: 'Gina', email: nil, password_digest: "12345")
       expect(user).to_not be_valid
     end 
+
+    it "user name invalid if already exists" do
+      user = User.create(name: "Gina", email:"gina@example.com", password_digest: "12345")
+      user2 = User.new(name: "Alexa", email:"gina@example.com", password_digest: "12345")
+
+      expect { user2.save validate: false}.to raise_error(ActiveRecord::RecordNotUnique)
+    end
   end 
 
   describe 'valid user password:' do
