@@ -1,0 +1,11 @@
+<h1>Sign In</h1>
+<% if flash[:warning] %>
+<h2> <%= flash[:warning] %></h2>
+<% end %>
+<%= form_with scope: :user, url: sessions_path, local: true do |f|%>
+  <%= f.label :email%><br>
+  <%= f.email_field :email%><br>
+  <%= f.label :password%><br>
+  <%= f.password_field :password%><br>
+  <%= f.submit "Submit"%>
+<%end%> 
