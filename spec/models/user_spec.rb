@@ -61,7 +61,11 @@ RSpec.describe User, type: :model do
       user = User.create(name: "Gina", email: "gina@example.com", password: password)
       user.reload
       expect(user.password_digest).to_not eq password
-
+    end 
+    it 'password is between 6 to 10 characters' do 
+      short_password = 'a' * 5
+      user = User.create(name: "Gina", email: "gina@example.com", password: short_password)
+      expect(user).to_not be_valid
     end 
   end
 end
