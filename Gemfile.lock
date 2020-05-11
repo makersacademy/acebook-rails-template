@@ -48,8 +48,6 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     bindex (0.5.0)
     builder (3.2.3)
-    bundle (0.0.1)
-      bundler
     byebug (10.0.1)
     capybara (2.18.0)
       addressable
@@ -257,7 +255,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundle
   byebug
   capybara (~> 2.13)
   jbuilder (~> 2.5)
@@ -265,6 +262,7 @@ DEPENDENCIES
   pg
   puma (~> 3.7)
   rails (~> 5.1.1)
+  rake
   rspec-rails (~> 3.5)
   rubocop (= 0.79.0)
   rubocop-rails
