@@ -10,7 +10,7 @@
 
   <body>
     <% if logged_in_user %>
-      <h1> <%= "Welcome #{logged_in_user.name}!" %> </h1>
+      <h1> <%= "Welcome #{logged_in_user.name}!" %> <%= link_to "Log out", sessions_path, method: :delete %> </h1>
     <% end %>
     <%= yield %>
   </body>
