@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <% if logged_in_user %>
+      <h1> <%= "Welcome #{logged_in_user.name}!" %> </h1>
+    <% end %>
     <%= yield %>
   </body>
 </html>
