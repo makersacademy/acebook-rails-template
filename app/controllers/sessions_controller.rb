@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       puts  session[:user_id]
       redirect_to user_path(user.id)
-      # redirect to user/user.id
+    end
   end
 
   def destroy
