@@ -8,6 +8,7 @@ RSpec.feature "Edit Post", type: :feature do
     fill_in "session[name]", with: "Gina"
     fill_in "session[password]", with: "123456"
     click_on "Log in"
+    visit "/posts"
     click_button "Edit post"
     fill_in "post[message]", with: "I'm a new message"
     click_button "Update Post"
