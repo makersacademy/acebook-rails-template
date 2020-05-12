@@ -36,7 +36,8 @@ class Api::V1::PostsController < ApplicationController
 
   def show
     render json: @post
-
+  end
+  
   def destroy
     @post.destroy
   end
