@@ -7,6 +7,6 @@ RSpec.feature "Log-in", type: :feature do
     fill_in "session[name]", with: "Gina"
     fill_in "session[password]", with: "123456"
     click_on "Log in"
-    expect(page).to have_content("Welcome Gina!")
+    expect(page).to have_content("Welcome to your wall, Gina!")
   end
 end
