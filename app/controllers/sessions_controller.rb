@@ -9,4 +9,9 @@ class SessionsController < ApplicationController
       redirect_to posts_path
     end
   end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to sessions_new_path
+  end
 end
