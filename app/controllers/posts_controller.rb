@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  before_action :redirect_null_user
   attr_reader :user_name
   
   def new
