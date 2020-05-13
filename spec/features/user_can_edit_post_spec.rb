@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Edit Post", type: :feature do
-  scenario "user can edit existing post" do
+  xscenario "user can edit existing post" do
     User.create(name: "Gina", password: "123456", email: "gina@example.com")
     post = Post.create!(message: "Hello World!")
     visit "/sessions/new"
