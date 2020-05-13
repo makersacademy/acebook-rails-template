@@ -8,22 +8,19 @@
   <p> 
   <%= form.label :email %>
   <%= form.text_field :email %>
-</p>
-<p> 
-<%= form.label :password %>
-<%= form.password_field :password %>
-</p>
+  </p>
+  <p> 
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </p>
   <p>
     <%= form.submit 'Sign up' %>
   </p>
-<% if @user.errors.any? %>
-<% @user.errors.full_messages.each do |message| %>
-  <p>
-    <%= message %>
-  </p>
-
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message| %>
+      <p>
+        <%= message %>
+      </p>
+    <% end %>
   <% end %>
-
-<% end %>
-
 <% end %>
