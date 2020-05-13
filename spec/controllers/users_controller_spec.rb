@@ -14,4 +14,13 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to redirect_to posts_path
     end
   end
+  
+  # describe 'GET /user/1' do
+  #   it 'responds with 200' do
+  #     User.create(name: "Gina", password: "123456", email: "gina@example.com")
+  #     post :create, params: { session: { name: "Gina", password: "123456" } }
+  #     # get :show
+  #     expect(response).to have_http_status(200)
+  #   end 
+  # end 
 end
