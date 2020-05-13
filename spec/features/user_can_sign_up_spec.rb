@@ -24,7 +24,19 @@ RSpec.feature "Sign-up", type: :feature do
     fill_in "user[password]", with: "1234"
     click_on "Sign up"
     expect(page).to have_content("Name has already been taken")
-    expect(page).to have_content("Not a valid email address")
-    expect(page).to have_content("Password too short")
+    expect(page).to have_content("Email is invalid")
+    expect(page).to have_content("Password is too short (minimum is 6 characters)")
+  end
+
+  scenario "error message for invalid credentials (password too long, email taken)" do
+    User.create(name: "Gina", email: "gina@example.com", password: "123456")
+    visit "/"
+    fill_in "user[name]", with: "Gina"
+    fill_in "user[email]", with: "gina@example.com"
+    fill_in "user[password]", with: "12345678910"
+    click_on "Sign up"
+    expect(page).to have_content("Name has already been taken")
+    expect(page).to have_content("Email has already been taken")
+    expect(page).to have_content("Password is too long (maximum is 10 characters)")
   end
 end
