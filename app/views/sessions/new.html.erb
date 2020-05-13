@@ -12,4 +12,9 @@
   <p>
     <%= form.submit 'Log in' %>
   </p>
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
 <% end %>

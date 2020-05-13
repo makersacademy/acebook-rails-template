@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       redirect_to user_path(user.id)
+    else
+      redirect_to sessions_new_path, alert: "Name and/or Password is incorrect"
     end
   end
 
