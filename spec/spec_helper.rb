@@ -1,5 +1,6 @@
 require 'simplecov'
 require 'simplecov-console'
+require 'httparty'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -115,3 +116,19 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+class TestParty
+  include HTTParty
+  base_uri "http://localhost:3000"
+
+  #set if you want to assert redirects as successful outcomes
+  #may lead to faster tests - server won't be hit on the follow
+  no_follow true 
+  
+  #optional proxy support
+  if proxy = ENV['PROXY'] #http://localhost:8888
+    proxy = URI.parse(proxy)
+    http_proxy proxy.host, proxy.port
+  end
+end
+
