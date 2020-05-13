@@ -1,17 +1,14 @@
 require 'spec_helper'
 describe "registrations" do
-    it "should redirect to /account_created given valid data" do
-      data = {
-        "user[username]" => "boarse",
-        "user[password]" => "Pa55word",
-        "user[password_confirmation]" => "Pa55word"
-      }
-  
+    it "should return a json created" do
+ 
       begin
-        response = TestParty.post('/registrations', :body => data)
+        response = TestParty.post('/registrations?email=q@a.com(opens in new tab)&first_name=a&last_name=a&password=password')
       rescue HTTParty::RedirectionTooDeep => redirection  #strange, but prescribed approach
         redirection.response.code.should == "302"
         redirection.response.header["Location"].should == ""
       end
+      result = JSON.parse(response.body)
+      expect(result['status']).to eq('created')
     end
   end
