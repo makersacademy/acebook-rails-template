@@ -15,9 +15,7 @@ class PostsController < ApplicationController
     #@post = user.posts.build(post_params)
     @post.user = logged_in_user
     @post.save
-    # p logged_in_user
-    p " "
-    p @post.user.id
+    p @post
     redirect_to user_path(@post.user.id)
   end
 
