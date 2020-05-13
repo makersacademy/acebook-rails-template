@@ -8,11 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    p user.posts.find_by(user_id: logged_in_user.id)
-    @posts = Post.all.find_by(user_id: logged_in_user.id)
+    @posts = logged_in_user.posts
   end 
-
-  #@post.user = logged_in_user
 
   private
 

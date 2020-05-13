@@ -29,6 +29,9 @@ RSpec.feature "See my posts on wall", type: :feature do
     fill_in "session[name]", with: 'Alex'
     fill_in "session[password]", with: "abcdef"
     click_on "Log in"
+    click_link "New post"
+    fill_in "Message", with: "Hi I'm Alex"
+    click_button "Submit"
     expect(page).not_to have_content("Hi I'm Gina")
   end
 end
