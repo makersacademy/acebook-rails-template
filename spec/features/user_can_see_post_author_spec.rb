@@ -8,7 +8,6 @@ RSpec.feature "You can see post authors", type: :feature do
     fill_in "session[name]", with: "Gina"
     fill_in "session[password]", with: "123456"
     click_on "Log in"
-    #visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
