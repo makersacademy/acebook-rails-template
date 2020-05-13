@@ -1,6 +1,11 @@
 <h1>Welcome to your wall, <%= logged_in_user.name %>!</h1>
 
 
-<%= link_to new_post_path do %>
+<p><%= link_to new_post_path do %>
   New post
-<% end %>
+<% end %></p>
+
+<p><%= link_to posts_path do %>
+  Home
+<% end %></p>
+
