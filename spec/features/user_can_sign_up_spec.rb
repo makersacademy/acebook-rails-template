@@ -7,10 +7,11 @@ RSpec.feature "Sign-up", type: :feature do
   end
 
   xscenario "User can sign up with their name, email and password" do
+    #will change test when we redirect after sign up
     visit "/"
     fill_in "user[name]", with: "Gina"
     fill_in "user[email]", with: "gina@example.com"
-    fill_in "user[password]", with: "12345"
+    fill_in "user[password]", with: "123456"
     click_on "Sign up"
     expect(page).to have_content("Welcome Gina!")
   end
