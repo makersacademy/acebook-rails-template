@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :posts, :users
   get 'sessions/new'
   post 'sessions', to: 'sessions#create'
+  get 'sessions/show'
   delete 'sessions', to: 'sessions#destroy' 
   root 'users#new'
 end
