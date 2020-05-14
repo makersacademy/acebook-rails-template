@@ -14,7 +14,7 @@ class Api::V1::PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     if @post.save
-      render json: @post, location: app_v1_post_url(@post) 
+      render json: @post, location: api_v1_post_url(@post)
     else
       render json: @post.errors, status: :unprocessable_entity
     end
@@ -49,6 +49,6 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:message)
+    params.permit(:message)
   end
 end
