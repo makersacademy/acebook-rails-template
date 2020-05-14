@@ -5,4 +5,15 @@ module Helpers
     fill_in "session[password]", with: "123456"
     click_on "Log in"
   end
+
+  
+  def send_post_hello
+    click_on "New post"
+    fill_in "Message", with: "Hello"
+    click_on "Submit"
+  end  
+  
+  
+
+
 end

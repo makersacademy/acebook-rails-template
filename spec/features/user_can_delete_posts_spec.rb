@@ -4,9 +4,7 @@ RSpec.feature "Delete post", type: :feature do
     scenario "user can delete a post" do
         User.create(name: "Gina", password: "123456", email: "gina@example.com")
         log_in_gina
-        click_on "New post"
-        fill_in "Message", with: "Hello"
-        click_on "Submit"
+        send_post_hello
         click_on "Delete post"
         expect(page).not_to have_content("Hello")
     end
