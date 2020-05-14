@@ -1,4 +1,8 @@
+<% if @wall_user.id == logged_in_user.id %>
 <h1>Welcome to your wall, <%= logged_in_user.name %>!</h1>
+<% else %>
+<h1><%= @wall_user.name%>'s Wall</h1>
+<% end %>
 
 
 <p><%= link_to new_post_path do %>

@@ -17,7 +17,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @posts = logged_in_user.posts
+    @wall_user = User.find(params[:id])
+    @posts = @wall_user.posts
+    
   end 
 
   private
