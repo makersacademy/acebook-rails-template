@@ -1,5 +1,5 @@
 require 'rails_helper'
-=begin
+
 RSpec.feature "Edit Post", type: :feature do
   xscenario "user can edit existing post" do
     User.create(name: "Gina", password: "123456", email: "gina@example.com")
@@ -16,5 +16,3 @@ RSpec.feature "Edit Post", type: :feature do
     expect(page).not_to have_content("Hello World!")
   end
 end
-=end
-

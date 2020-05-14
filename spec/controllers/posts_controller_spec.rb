@@ -36,14 +36,14 @@ RSpec.describe PostsController, type: :controller do
     it "deletes a post" do
       post :create, params: { post: { message: "Hello, world!" } }
       found_post = Post.find_by(message: "Hello, world!")
-      delete :destroy, params: { id: found_post.id  }
+      delete :destroy, params: { id: found_post.id }
       expect(Post.find_by(message: "Hello, world!")).not_to be
     end
   end
 
   describe "PATCH /" do
     it "updates a post" do
-      post :create, params: { post: { message: "Big Turtle"} }
+      post :create, params: { post: { message: "Big Turtle" } }
       found_post = Post.find_by(message: "Big Turtle")
       patch :update, params: { id: found_post.id, post: { message: "New Turtle" } }
       expect(Post.find_by(message: "New Turtle")).to be
