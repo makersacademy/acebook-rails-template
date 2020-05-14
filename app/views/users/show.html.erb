@@ -1,0 +1,24 @@
+<% if @wall_user.id == logged_in_user.id %>
+<h1>Welcome to your wall, <%= logged_in_user.name %>!</h1>
+<% else %>
+<h1><%= @wall_user.name%>'s Wall</h1>
+<% end %>
+
+
+<p><%= link_to new_post_path do %>
+  New post
+<% end %></p>
+
+  <% @posts.each do |post| %>
+  <p><%= post.message %></p>
+  <p><%= post.created_at.strftime("%I:%M%p on %m/%d/%Y") %></p>
+  <% if post.user.id == logged_in_user.id %>
+  <p><%= button_to "Delete post", post_path(post), method: :delete %></p>
+  <p><%= button_to "Edit post", edit_post_path(post), method: :get %></p>
+  <% end %>
+  <% end %>
+
+<p><%= link_to posts_path do %>
+  Home
+<% end %></p>
+
