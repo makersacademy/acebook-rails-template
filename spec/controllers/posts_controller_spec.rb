@@ -24,6 +24,7 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
+  
   describe "GET /" do
     it "responds with 200" do
       get :index
