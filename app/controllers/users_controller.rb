@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @posts = logged_in_user.posts
   end 
 
   private

@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = logged_in_user
     @post.save
-    redirect_to posts_url
+    redirect_to user_path(@post.user.id)
   end
 
   def index
