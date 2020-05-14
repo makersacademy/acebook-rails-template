@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :redirect_null_user, only: [:show]
+
   def new
     @user = User.new
   end
