@@ -1,8 +1,10 @@
 <h1>GAPAGbook</h1>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <% if post.user.id == logged_in_user.id %>
   <p><%= button_to "Delete post", post_path(post), method: :delete %></p>
   <p><%= button_to "Edit post", edit_post_path(post), method: :get%></p>
+  <% end %>
   
   
 <% end %>
