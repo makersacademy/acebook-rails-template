@@ -1,20 +1,37 @@
-# AceBook
+# GAPAC BOOK 
 
-REQUIRED INSTRUCTIONS:
+## A project description.
+- This project enables **users** to post **posts** 
+- Users can view all the posts on the posts home page
+- Users have their own  wall where they can view only thier own posts  
+- Users can go to others users wall by clicking on another user's tag in the main page 
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+This project was built using rails.
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+### Mockup  
+![](readme_pictures/mockup.png)
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+### Tables 
+![](readme_pictures/tables.png)
 
 ## Quickstart
 
-## Quality control 
+
+## how to install and run it.
+First, clone this repository. Then:
+
+```bash
+> bundle install
+> bin/rails db:create
+> bin/rails db:migrate
+> bundle exec rspec # Run the tests to ensure it works
+> bin/rails server # Start the server at localhost:3000
+```
+
+## How to run tests  
+- rspec 
+  - run `rspec`
 - simplecov 
   - connected to rspec
 - rubocop 
@@ -22,13 +39,5 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 - rubycritic 
   - run `rubocritic`
 
-First, clone this repository. Then:
 
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
 
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
-```
