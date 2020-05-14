@@ -3,7 +3,7 @@ describe "registrations" do
     it "should return a json created" do
  
       begin
-        response = TestParty.post('/api/v1/registrations?email=rr@a.com&first_name=a&last_name=a&password=password')
+        response = TestParty.post('/api/v1/registrations?email=rrdf@a.com&first_name=a&last_name=a&password=password')
       rescue HTTParty::RedirectionTooDeep => redirection  #strange, but prescribed approach
         redirection.response.code.should == "302"
         redirection.response.header["Location"].should == ""
