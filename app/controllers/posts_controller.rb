@@ -35,10 +35,6 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
-  def user? 
-    @user_name != nil
-  end
-
   private
 
   def post_params

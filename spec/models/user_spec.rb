@@ -22,23 +22,23 @@ RSpec.describe User, type: :model do
     end
 
     it "user name invalid if already exists" do
-      user = User.create(name: "Gina", email:"gina@example.com", password: "12345678")
-      user2 = User.new(name: "Gina", email:"smiley@example.com", password: "12345678")
+      User.create(name: "Gina", email: "gina@example.com", password: "12345678")
+      user2 = User.new(name: "Gina", email: "smiley@example.com", password: "12345678")
 
-      expect { user2.save validate: false}.to raise_error(ActiveRecord::RecordNotUnique)
+      expect { user2.save validate: false }.to raise_error(ActiveRecord::RecordNotUnique)
     end
   end
 
   describe 'valid user email:' do
-    it  "if no email is entered user is invalid" do
+    it "if no email is entered user is invalid" do
       user = User.new(name: 'Gina', email: nil, password: "12345678")
       expect(user).to_not be_valid
     end 
 
     it "user email invalid if already exists" do
-      user = User.create(name: "Gina", email:"gina@example.com", password: "123456")
-      user2 = User.new(name: "Alexa", email:"gina@example.com", password: "123456")
-      expect { user2.save validate: false}.to raise_error(ActiveRecord::RecordNotUnique)
+      User.create(name: "Gina", email: "gina@example.com", password: "123456")
+      user2 = User.new(name: "Alexa", email: "gina@example.com", password: "123456")
+      expect { user2.save validate: false }.to raise_error(ActiveRecord::RecordNotUnique)
     end
 
     it "user email needs to  have a valid format" do
