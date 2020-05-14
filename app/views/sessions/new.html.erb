@@ -1,0 +1,20 @@
+<h1>Log in</h1>
+
+<%= form_with scope: :session, url: sessions_path,  local: true do |form| %>
+  <p> 
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+  <p> 
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+  </p>
+  <p>
+    <%= form.submit 'Log in' %>
+  </p>
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+<% end %>
