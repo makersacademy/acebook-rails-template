@@ -1,0 +1,17 @@
+<h1>Edit Post</h1>
+
+<%= form_with(model: @post, local: true) do |form| %>
+
+  <p>
+    <%= form.label :message %><br>
+    <%= form.text_field :message %>
+  </p>
+
+
+
+  <p>
+    <%= form.submit%>
+  </p>
+
+<% end %>
+
