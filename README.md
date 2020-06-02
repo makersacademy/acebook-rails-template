@@ -88,4 +88,18 @@ I want to be able to delete my profile
 ```
 
 ## Entity Relationship Diagram
+### Relationships
+```
+User has many Posts
+User has many Likes
+```
+```
+Post has one User
+Post has many Likes
+```
+```
+Like has one User
+Post has one User
+```
+
 ![ERD](https://i.ibb.co/qr3GJGh/Screenshot-2020-06-02-at-13-52-13.png)
