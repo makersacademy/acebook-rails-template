@@ -103,3 +103,8 @@ Like has one Post
 ```
 
 ![ERD](https://i.ibb.co/qr3GJGh/Screenshot-2020-06-02-at-13-52-13.png)
+
+
+## Workflow Diagram
+
+![Diagram Workflow](https://github.com/cmb84scd/acebook-HoneyBunnies/blob/master/images/Untitled%20Diagram-2.png)
