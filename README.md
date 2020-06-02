@@ -88,4 +88,4 @@ I want to be able to delete my profile
 ```
 
 ## Entity Relationship Diagram
-![alt text](https://ibb.co/LSN640Q)
+![ERD](https://i.ibb.co/K6K7C5N/Screenshot-2020-06-02-at-13-42-40.png)
