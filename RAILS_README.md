@@ -559,14 +559,492 @@ Create a file called `list.html.erb` and save it to `app/views/book`.
 
 The code to be executed is to check whether the `@books` array has any objects in it.
 
-The `.blank?` method returns `true` if the array is empty, and `false` if it contains any objects. This `@books` object was created in controller inside the list method.
+The `.blank?` method returns `true` if the array is empty, and `false` if it contains any objects.
 
-The code between the `<%= %>` tags is a link_to method call.
+The code between the `<%= %>` tags is a `link_to` method call.
 
-The first parameter of `link_to` is the text to be displayed between the <a> tags.
+The first parameter of `link_to` is the text to be displayed between the `<a>` tags.
 
-The second parameter is what action is called when the link is clicked. In this case, it is the show method.
+The second parameter is what action is called when the link is clicked - `show` method.
 
-The final parameter is the id of the book that is passed via the params object.
+The final parameter is the `id` of the book that is passed via the params object.
 
-Now, try refreshing your browser and you should get the following screen because we don't have any book in our library.
+#### `Creating View File for new Method`
+
+Create a file called `new.html.erb` and save it to `app/views/book`.
+
+```rb
+<h1>Add new book</h1>
+
+<%= form_tag :action => 'create' do %>
+<p><label for = "book_title">Title</label>:
+
+<%= text_field 'books', 'title' %></p>
+<p><label for = "book_price">Price</label>:
+
+<%= text_field 'books', 'price' %></p>
+<p><label for = "book_subject_id">Subject</label>:
+
+<%= collection_select(:books, :subject_id, @subjects, :id, :name, prompt: true) %></p>
+<p><label for = "book_description">Description</label><br/>
+
+<%= text_area 'books', 'description' %></p>
+<%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>
+```
+
+Here `form_tag` method interprets the Ruby code into a regular HTML `<form>` tag using all the information supplied to it. This tag, for example, outputs the following HTML:
+
+```
+<form action = "/book/create" method = "post">
+```
+
+Next method is `text_field` that outputs an `<input>` text field. The parameters for `text_field` are object and field name. In this case, the **object** is `book` and the **name** is `title`.
+
+Rails method called `collection_select`, creates an HTML `select menu` built from an array, such as the @books one. There are five parameters, which are as follows −
+
+  * `:book` − The object you are manipulating. In this case, it's a `book` object.
+
+  * `:subject_id` − The field that is populated when the `book` is saved.
+
+  * `@books` − The array you are working with.
+
+  * `:id` − The value that is stored in the database. In terms of HTML, this is the `<option>` tag's value parameter.
+
+  * `:name` − The output that the user sees in the pull-down menu. This is the value between the `<option>` tags.
+
+The next used is `submit_tag`, which outputs an `<input>` button that submits the form.
+
+Finally, there is the `end` method that simply translates into `</form>`.
+
+When you click the `Create` button, it will call the `create` method.
+
+#### `Creating View File for show Method`
+
+Create a `show.html.erb` file under `app/views/book`:
+
+```rb
+<h1><%= @book.title %></h1>
+
+<p>
+   <strong>Price: </strong> $<%= @book.price %><br />
+   <strong>Subject :</strong> <%= @book.subject.name %><br />
+   <strong>Created Date:</strong> <%= @book.created_at %><br />
+</p>
+
+<p><%= @book.description %></p>
+
+<hr />
+
+<%= link_to 'Back', {:action => 'list'} %>
+```
+
+This is the first time you have taken the full advantage of associations, which enable you to easily pull data from related objects.
+
+The format used is**` @variable.relatedObject.column`**.
+
+In this instance, you can pull the subject's name value through the `@book` variable using the `belongs_to` associations.
+
+#### `Creating View File for edit Method`
+
+Create a new file called `edit.html.erb` and save it in `app/views/book`:
+
+```rb
+<h1>Edit Book Detail</h1>
+
+<%= form_for @book, :url =>{:action => "update", :id =>@book} do |f| %>
+
+<p>Title: <%= f.text_field 'title' %></p>
+<p>Price: <%= f.text_field  'price' %></p>
+<p>Subject: <%= f.collection_select :subject_id, Subject.all, :id, :name %></p>
+<p>Description<br/>
+
+<%= f.text_area 'description' %></p>
+<%= f.submit "Save changes" %>
+<% end %>
+
+<%= link_to 'Back', {:action => 'list' } %>
+```
+
+In this scenario, we used `form_for` tag for the form action.
+
+It will perform better than `form_tag`, because it will create interaction with the **Model** easily.
+
+Therefore it is better to use `form_for` tag whenever you need interaction between the **model** and the **form fields**.
+
+At this point, we need some modification in the `list method`'s view file.
+
+```rb
+<li>
+   <%= link_to c.title, {:action => "show", :id => c.id} -%>
+   <b> <%= link_to 'Edit', {:action => "edit",
+   :id => c.id} %></b>
+</li>
+```
+
+Now, you edit this information and then click the `Save Changes` button.
+
+This will result in a call to `update` method available in the controller file and it will update all the changed attribute.
+
+Notice that the `update` method does not need any view file because it's using either `show` or `edit` methods to show its results.
+
+#### `Creating View File for delete Method`
+
+You do not need to write any **view code** for the `delete` method because this method is using `list` method to display the result.
+
+Modify `list.html.erb` again and add a `delete` link.
+
+```rb
+<li>
+   <%= link_to c.title, {:action => 'show', :id => c.id} -%>
+   <b> <%= link_to 'Edit', {:action => 'edit', :id => c.id} %></b>
+   <b> <%= link_to "Delete", {:action => 'delete', :id => c.id},
+      :confirm => "Are you sure you want to delete this item?" %></b>
+</li>
+```
+
+The `:confirm` parameter presents a JavaScript confirmation box asking if you really want to perform the action. If the user clicks OK, the action proceeds, and the item is deleted.
+
+#### `Creating View File for show_subjects Method`
+
+Create a new file, `show_subjects.html.erb`, in the `app/views/book` directory:
+
+```rb
+<h1><%= @subject.name -%></h1>
+
+<ul>
+   <% @subject.books.each do |c| %>
+   <li><%= link_to c.title, :action => "show", :id => c.id -%></li>
+   <% end %>
+</ul>
+```
+
+Now modify the Subject: line of `show.html.erb` so that the subject listing shows a link.
+
+```rb
+<strong>Subject: </strong> <%= link_to @book.subject.name,
+:action => "show_subjects", :id => @book.subject.id %><br />
+```
+
+This will output a list of subject on the index page, so that users can access them directly.
+
+Modify `list.html.erb` to add the following to the top of the file:
+
+```rb
+<ul id = "subjects">
+   <% Subject.find(:all).each do |c| %>
+   <li><%= link_to c.name, :action => "show_subjects", :id => c.id %></li>
+   <% end %>
+</ul>
+```
+
+## `Layouts`
+
+The process involves defining a `layout template` and then letting the controller know that it exists and to use it.
+
+Add a new file called `standard.html.erb` to `app/views/layouts`.
+
+You let the controllers know what template to use by the name of the file.
+
+Add the following code to the new `standard.html.erb` file and save your changes:
+
+```rb
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+
+   <head>
+      <meta http-equiv = "Content-Type" content = "text/html; charset = iso-8859-1" />
+      <meta http-equiv = "Content-Language" content = "en-us" />
+      <title>Library Info System</title>
+      <%= stylesheet_link_tag "style" %>
+   </head>
+
+   <body id = "library">
+      <div id = "container">
+
+         <div id = "header">
+            <h1>Library Info System</h1>
+            <h3>Library powered by Ruby on Rails</h3>
+         </div>
+
+         <div id = "content">
+            <%= yield -%>
+         </div>
+
+         <div id = "sidebar"></div>
+
+      </div>
+   </body>
+
+</html>
+```
+
+The `stylesheet_link_tag` helper method outputs a stylesheet `<link>`. In this instance, we are linking `style.css` style sheet.
+
+The `yield` command lets Rails know that it should put the `html.erb` for the method called here.
+
+Now open `book_controller.rb` and add the following line just below the first line:
+
+```rb
+class BookController < ApplicationController
+layout 'standard'
+def list
+@books = Book.all
+end
+...................
+```
+
+It instructs the controller that we want to use a layout available in the `standard.html.erb` file.
+
+## `Adding Style Sheet`
+
+Till now, we have not created any style sheet, so Rails is using the `default style sheet`.
+
+Now let's create a new file called` style.css` and save it in `/public/stylesheets`.
+
+```cs
+body {
+   font-family: Helvetica, Geneva, Arial, sans-serif;
+   font-size: small;
+   font-color: #000;
+   background-color: #fff;
+}
+
+a:link, a:active, a:visited {
+   color: #CD0000;
+}
+
+input {
+   margin-bottom: 5px;
+}
+
+p {
+   line-height: 150%;
+}
+
+div#container {
+   width: 760px;
+   margin: 0 auto;
+}
+
+div#header {
+   text-align: center;
+   padding-bottom: 15px;
+}
+
+div#content {
+   float: left;
+   width: 450px;
+   padding: 10px;
+}
+
+div#content h3 {
+   margin-top: 15px;
+}
+
+ul#books {
+   list-style-type: none;
+}
+
+ul#books li {
+   line-height: 140%;
+}
+
+div#sidebar {
+   width: 200px;
+   margin-left: 480px;
+}
+
+ul#subjects {
+   width: 700px;
+   text-align: center;
+   padding: 5px;
+   background-color: #ececec;
+   border: 1px solid #ccc;
+   margin-bottom: 20px;
+}
+
+ul#subjects li {
+   display: inline;
+   padding-left: 5px;
+}
+```
+
+## `Send Emails`
+
+`Action Mailer` is the Rails component that enables applications to send and receive emails.
+
+
+#### `Action Mailer - Configuration`
+
+Go to the `config` folder of your project and open `environment.rb` file and add the following line at the bottom of this file.
+
+```rb
+config.action_mailer.delivery_method = :smtp
+```
+
+It tells `ActionMailer` that you want to use the SMTP server.
+
+You can also set it to be `:sendmail` if you are using a Unix-based operating system such as Mac OS X or Linux.
+
+Add the following lines of code at the bottom of your environment.rb as well.
+
+```rb
+config.action_mailer.smtp_settings = {
+   address:              'smtp.gmail.com',
+   port:                 587,
+   domain:               'example.com',
+   user_name:            '<username>',
+   password:             '<password>',
+   authentication:       'plain',
+   enable_starttls_auto: true  
+}
+```
+
+Replace each hash value with proper settings for your Simple Mail Transfer Protocol (SMTP) server.
+
+You don't need to change `port number 25` and `authentication type` if you are using a standard SMTP server.
+
+If you prefer to send email in HTML instead of plain text format, add the following line to `config/environment.rb` as well:
+
+```rb
+ActionMailer::Base.default_content_type = "text/html"
+```
+
+`ActionMailer::Base.default_content_type` could be set to "text/plain", "text/html", and "text/enriched".
+
+The next step will be to create a mailer.
+
+#### `Generate a Mailer`
+
+Use the following command to generate a mailer as follows −
+
+```rb
+tp> cd emails
+emails> rails generate mailer Usermailer
+```
+
+This will create a file `user_mailer.rb` in the `app\mailer` directory.
+
+```rb
+class Emailer < ActionMailer::Base
+end
+```
+
+Let's create one method as follows:
+
+```rb
+class UserMailer < ApplicationMailer
+   default from: 'notifications@example.com'
+
+   def welcome_email(user)
+      @user = user
+      @url  = 'http://www.gmail.com'
+      mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+   end
+
+end
+```
+
+  * **default Hash** − This is a hash of default values for any email you send from this mailer. In this case we are setting the `:from header` to a value for all messages in this class.
+
+  * **mail** − The actual email message, we are passing the `:to` and `:subject` headers in.
+
+Create a file called `welcome_email.html.erb` in `app/views/user_mailer/`.
+
+```html
+<html>
+
+   <head>
+      <meta content = 'text/html; charset = UTF-8' http-equiv = 'Content-Type' />
+   </head>
+
+   <body>
+      <h1>Welcome to example.com, <%= @user.name %></h1>
+
+      <p>
+         You have successfully signed up to example.com,your username is:
+         <%= @user.login %>.<br>
+      </p>
+
+      <p>
+         To login to the site, just follow this link:
+         <%= @url %>.
+      </p>
+
+      <p>Thanks for joining and have a great day!</p>
+
+   </body>
+</html>
+```
+
+Next we will create a text part for this application as follow:
+
+```t
+Welcome to example.com, <%= @user.name %>
+===============================================
+
+You have successfully signed up to example.com,
+your username is: <%= @user.login %>.
+
+To login to the site, just follow this link: <%= @url %>.
+
+Thanks for joining and have a great day!
+```
+
+#### `Calling the Mailer`
+
+First, let's create a simple `User scaffold`
+
+```
+$ bin/rails generate scaffold user name email login
+$ bin/rake db:migrate
+```
+
+`Action Mailer` is nicely integrated with `Active Job` so you can send emails outside of the request-response cycle, so the user doesn't have to wait on it:
+
+```rb
+class UsersController < ApplicationController
+   # POST /users
+   # POST /users.json
+   def create
+   @user = User.new(params[:user])
+
+      respond_to do |format|
+         if @user.save
+            # Tell the UserMailer to send a welcome email after save
+            UserMailer.welcome_email(@user).deliver_later
+
+            format.html { redirect_to(@user, notice: 'User was successfully created.') }
+            format.json { render json: @user, status: :created, location: @user }
+         else
+            format.html { render action: 'new' }
+            format.json { render json: @user.errors, status: :unprocessable_entity }
+         end
+
+      end
+
+   end
+end
+```
+
+Now, test your application by using http://127.0.0.1:3000/users/new.
+
+This will send your message and will display the text message "Message sent successfully" and output as follow:
+
+```t
+sent mail to kittuprasad700@gmail.com (2023.Sms)
+[ActiveJob] [ActionMailler::DeliveryJob] [2cfde3c-260e-4a33-1a6ada13a9b] Date: Thu, 09 Jul 2015 11:44:05 +0530
+From: notification@example.com
+To: kittuprasad700@gmail.com
+Message-Id: <559e112d63c57_f1031e7f23467@kiranPro.mail>
+Subject: Welcome to My Awesome Site
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+boundary="--mimepart_559e112d601c8_f1031e7f20233f5";
+charset=UTF-8
+Content-Transfer-Encoding:7bit
+```
