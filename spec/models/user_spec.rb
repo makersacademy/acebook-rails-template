@@ -16,6 +16,21 @@ RSpec.describe User, type: :model do
     expect(user).to_not be_valid
   end
 
+  it "User's lname is nil" do
+    user = User.create(fname: 'Joe', lname: nil, email: 'john.doe@example.com', password: 'password')
+    expect(user).to_not be_valid
+  end
+
+  it "User's email is nil" do
+    user = User.create(fname: 'Joe', lname: 'Doe', email: nil, password: 'password')
+    expect(user).to_not be_valid
+  end
+
+  it "User's password is nil" do
+    user = User.create(fname: 'Joe', lname: 'Doe', email: 'john.doe@example.com', password: nil)
+    expect(user).to_not be_valid
+  end
+
   it "User's email is unique" do
     userOne = User.create(fname: 'John', lname: 'Doe', email: 'john.doe@example.com', password: 'password')
     userTwo = User.create(fname: 'Ben', lname: 'Dover', email: 'john.doe@example.com', password: 'password')
