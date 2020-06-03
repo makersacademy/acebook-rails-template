@@ -12,7 +12,7 @@ feature 'User account registration', type: :feature do
     fill_in 'user[password]', with: 'password'
     find('[name=commit]').click
 
-    expect(current_path).to eq '/users/new'
+    expect(current_path).to eq '/sessions/new'
     expect(page).to have_content 'Welcome John Doe'
   end
 end
