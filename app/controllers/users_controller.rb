@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    p params
     @user = User.create(user_params)
     redirect_to '/sessions/new'
   end
