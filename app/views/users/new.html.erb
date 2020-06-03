@@ -1,6 +1,6 @@
 <h1>Create account</h1>
 
-<%= form_for :user, :url => {:controller => 'users', :action => 'create'} do |f| %>
+<%= form_for @user, :url => {:controller => 'users', :action => 'create'} do |f| %>
 
   <%= f.label :fname %>
   <%= f.text_field :fname %> <br />
