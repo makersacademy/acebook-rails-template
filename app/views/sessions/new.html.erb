@@ -1,6 +1,9 @@
-# <h1>Sessions#new</h1>
-# <p>Find me in app/views/sessions/new.html.erb</p>
-# <h1>Welcome <%= @user.fname %> <%= @user.lname %></h1>
+<h1>Welcome <%= @user.fname %> <%= @user.lname %></h1>
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
 <h1>Log in</h1>
 
 <%= form_for @user, url: sessions_path, method: :post do |f| %>
