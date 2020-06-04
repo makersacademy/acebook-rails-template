@@ -1,7 +1,23 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<h2>
+  <% if logged_in? %>
+  Welcome <%= current_user.first_name %>
+  <% else %>
+  Who dis?
+  <% end %>
+</h2>
+
 
 <%= link_to new_post_path do %>
-  New post
+New post
+<% end %>
+
+<% @posts.each do |post| %>
+<ul class="post">
+  <li><%= post.formatted_time %></li>
+  <li class="message"><%= post.message %></li>
+  <li><%= link_to 'Edit', edit_post_path(post) %></li>
+  <li><%=link_to 'Delete', post_path(post),
+    method: :delete,
+    data: { confirm: 'Are you sure?'} %></li>
+</ul>
 <% end %>

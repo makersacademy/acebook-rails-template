@@ -1,18 +1,24 @@
-# AceBook
+# AceBook MySpace
+[![Build Status](https://travis-ci.com/Steven-Klavins/acebook-myspace.svg?branch=master)](https://travis-ci.com/Steven-Klavins/acebook-myspace)
 
-REQUIRED INSTRUCTIONS:
+## [Medium Blog](https://medium.com/acebook-myspace)
+
+## [Trello Wall](https://trello.com/b/ig2kAuJ5/myspace-acebook)
+
+## Setup Instructions
 
 1. Fork this repository to `acebook-teamname` and customize
 the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+2. The card wall is [here](https://trello.com/b/ig2kAuJ5/myspace-acebook)
 
-## How to contribute to this project
+### How to contribute to this project
+
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
-## Quickstart
+### Quickstart
 
 First, clone this repository. Then:
 

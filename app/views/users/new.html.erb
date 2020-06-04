@@ -1,0 +1,15 @@
+<h1>Sign Up</h1>
+<% if flash[:warning] %>
+<h2> <%= flash[:warning] %></h2>
+<% end %>
+<%= form_with scope: :user, url: users_create_path, local: true do |f|%>
+  <%= f.label :first_name%><br>
+  <%= f.text_field :first_name%><br>
+  <%= f.label :last_name%><br>
+  <%= f.text_field :last_name%><br>
+  <%= f.label :email%><br>
+  <%= f.email_field :email%><br>
+  <%= f.label :password%><br>
+  <%= f.password_field :password%><br>
+  <%= f.submit "Submit"%>
+<%end%> 
