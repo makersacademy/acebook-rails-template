@@ -3,15 +3,14 @@
 # <h1>Welcome <%= @user.fname %> <%= @user.lname %></h1>
 <h1>Log in</h1>
 
-<%= form_for @user, :url => {:controller => 'sessions', :action => 'create'} do |f| %>
+<%= form_for @user, url: sessions_path, method: :post do |f| %>
 
     <%= f.label :email %>
     <%= f.text_field :email %> <br />
-  
+
     <%= f.label :password %>
     <%= f.password_field :password %> <br />
-  
+
     <%= f.submit "Sign in" %>
-  
+
   <% end %>
-  

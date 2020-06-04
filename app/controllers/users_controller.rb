@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     redirect_to '/sessions/new'
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   private
 
   def user_params
