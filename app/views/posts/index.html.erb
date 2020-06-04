@@ -1,7 +1,8 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <p><%= post.created_at.to_time.strftime('%B %e at %l:%M %p')
- %></p>
+  <p><%= post.created_at.to_time.strftime('%B %e at %l:%M %p') %></p>
+  <%= button_to "Delete Post", {:controller => :posts,
+      :action => 'destroy', :id => post.id }, :method => :delete %>
 <% end %>
 
 <%= link_to new_post_path do %>
