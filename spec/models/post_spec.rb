@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  it { is_expected.to be }
 
   it 'User post input not to be nil' do
     post = Post.create(message: 'This is a new message!')

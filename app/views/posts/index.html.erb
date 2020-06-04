@@ -1,5 +1,7 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <p><%= post.created_at.to_time.strftime('%B %e at %l:%M %p')
+ %></p>
 <% end %>
 
 <%= link_to new_post_path do %>

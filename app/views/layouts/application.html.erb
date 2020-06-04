@@ -10,5 +10,12 @@
 
   <body>
     <%= yield %>
+
+    <div class='card-header'>
+      <%= params %>
+      <%= User.find_by_id(session[:user_id]) %>
+      <%# <%= debug session %> %>
+    </div>
+
   </body>
 </html>
