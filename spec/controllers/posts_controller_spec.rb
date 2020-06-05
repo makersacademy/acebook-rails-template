@@ -32,8 +32,8 @@ RSpec.describe PostsController, type: :controller do
       post = Post.create(message: 'Hello, world!')
       # post.destroy
       delete :destroy
-      expect(response).to redirect_to(posts_url)
-      # expect(response).to have_http_status(200)
+      # expect(response).to redirect_to(posts_url)
+      expect(response).to have_http_status(200)
     end
 
     it 'Able to delete a post' do
