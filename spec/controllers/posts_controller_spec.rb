@@ -28,12 +28,6 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe 'DELETE /' do
-    # it 'responds with 200' do
-    #   post = Post.create(message: 'Hello, world!')
-    #   delete :destroy
-    #   expect(response).to have_http_status(200)
-    # end
-
     it 'Able to delete a post' do
       post = Post.create(message: 'Hello, world!')
       post.destroy
@@ -42,11 +36,6 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe 'UPDATE /' do
-    # it 'responds with 200' do
-    #   put :update
-    #   expect(response).to have_http_status(200)
-    # end
-
     it 'Able to update a post' do
       post = Post.create(message: 'Hello, world!')
       post.update(message: 'Updated message!')
