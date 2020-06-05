@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    puts params
     @user = User.find_by(email: params[:user][:email].downcase)
-    if @user && @user.authenticate(@user.password) == params[:user][:password]
+    # If user exsists and the correct password has been entered then login
+    if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       redirect_to "/users/#{@user.id}"
     else
