@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     puts params
     @user = User.find_by(email: params[:user][:email].downcase)
     if @user && @user.password == params[:user][:password]
+      session[:user_id] = @user.id
       redirect_to "/users/#{@user.id}"
     else
       # flash[:alert] = 'Email and/or password is incorrect'
