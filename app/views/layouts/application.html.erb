@@ -8,9 +8,17 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
+    
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-info">
+        <%= msg %>
+      </div>
+    <% end %>
+  
     <%= render 'layouts/navigation'%>
     <div class='container my-3'>
       <%= yield %>
     </div>
+
   </body>
 </html>

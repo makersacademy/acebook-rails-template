@@ -6,13 +6,22 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to '/sessions/new'
+    # If user does not meet the coniditions user.id will be nil
+    if @user.id != nil
+      redirect_to '/sessions/new'
+    else
+      redirect_to '/', notice: 'Email and/or password are/is not meeting the requirements'
+    end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:fname, :lname, :email, :password)
+    params.require(:user).permit(:fname, :lname, :email, :password, :password_confirmation)
   end
 
 end
