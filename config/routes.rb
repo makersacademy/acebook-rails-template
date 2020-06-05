@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root 'users#new'
   get '/sessions/new', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
-  get '/sessions/destroy'
+  get '/sessions/destroy', to: 'sessions#destroy'
   get '/users/:id', to: 'users#show'
   post '/users', to: 'users#create'
+
   #resources :sessions, only: [:new, :destroy]
   resources :posts
 end
