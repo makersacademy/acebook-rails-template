@@ -2,20 +2,15 @@
 <html>
   <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title>Honey Bunnies</title>
+    <title>acebook</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
-    <%= yield %>
-
-    <div class='card-header'>
-      <%= params %>
-      <%= User.find_by_id(session[:user_id]) %>
-      <%# <%= debug session %> %>
+    <%= render 'layouts/navigation'%>
+    <div class='container my-3'>
+      <%= yield %>
     </div>
-
   </body>
 </html>

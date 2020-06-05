@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/sessions/new', to: 'sessions#new'
   post '/users', to: 'users#create'
   #resources :sessions, only: [:new, :destroy]
+  post '/posts/:id', to: 'posts#update'
   resources :posts
 end
