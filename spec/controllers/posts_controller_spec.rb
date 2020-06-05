@@ -45,7 +45,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe 'UPDATE /' do
     it 'responds with 200' do
-      post :update
+      put :update
       expect(response).to have_http_status(200)
     end
 
