@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user && @user.id != nil
       redirect_to '/sessions/new'
     else
-      redirect_to '/'
+      redirect_to '/', notice: 'Email and/or password are/is not meeting the requirements'
     end
     p params
   end
