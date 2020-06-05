@@ -4,7 +4,6 @@ RSpec.feature 'Update Post', type: :feature do
   scenario 'User able to update post' do
     visit '/posts'
 
-    click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
 

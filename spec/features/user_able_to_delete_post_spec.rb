@@ -4,7 +4,6 @@ RSpec.feature 'Delete Post', type: :feature do
   scenario 'User able to delete post' do
     visit '/posts'
 
-    click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
 
