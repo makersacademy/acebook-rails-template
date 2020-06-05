@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def new
-    @post = Post.new
+    @post = new_post
   end
 
   def create
@@ -8,13 +8,34 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update_attributes(post_params)
+    redirect_to posts_url
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_url
+  end
+
   def index
+    @new_post = new_post
     @posts = Post.all
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id) # Need to fix it !
+  end
+
+  def new_post
+    Post.new
   end
 end
