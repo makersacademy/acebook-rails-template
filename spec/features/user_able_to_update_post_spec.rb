@@ -7,7 +7,7 @@ RSpec.feature 'Update Post', type: :feature do
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
 
-    click_button 'Update Post'
+    click_link 'Update Post'
     fill_in 'Message', with: 'New Message!'
     click_button 'Submit'
 

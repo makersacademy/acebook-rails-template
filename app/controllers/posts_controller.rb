@@ -8,8 +8,14 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-  def update
+  def edit
+    @post = Post.find(params[:id])
+  end
 
+  def update
+    @post = Post.find(params[:id])
+    @post.update_attributes(post_params)
+    redirect_to posts_url
   end
 
   def destroy

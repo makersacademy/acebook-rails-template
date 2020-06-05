@@ -50,8 +50,8 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it 'Able to update a post' do
-      post = Post.create(message: 'Updated message!')
-      post.update
+      post = Post.create(message: 'Hello, world!')
+      post.update(message: 'Updated message!')
       expect(Post.find_by(message: 'Updated message!')).to be
     end
   end
