@@ -10,8 +10,8 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     session[:user_id] = @user.id
     # If user does not meet the coniditions user.id will be nil
-    if user.id != nil
-      redirect_to '/sessions/new', notice: `Welcome #{user.fname} #{user.lname}`
+    if @user.id != nil
+      redirect_to '/sessions/new', notice: `Welcome #{@user.fname} #{@user.lname}`
     else
       redirect_to '/', notice: 'Email and/or password are/is not meeting the requirements'
     end
