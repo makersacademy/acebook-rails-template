@@ -4,6 +4,7 @@ feature 'User can login', type: :feature do
   scenario 'a user can login' do
     #signs the user in
     user = User.create(fname: 'Jon', lname: 'Doe', email: 'john.doe@example.com', password: 'password')
+
     visit '/sessions/new'
 
     expect(page).to have_content 'Log in'

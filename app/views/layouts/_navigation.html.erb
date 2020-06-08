@@ -1,22 +1,16 @@
 <nav class='navbar navbar-light bg-primary'>
-  <div>
-    <a href="/posts" class="badge text-white"><h2>acebook</h2></a>
+  <div class="row">
+    <a href="/" class="badge text-white"><h2>acebook</h2></a>
   </div>
-
-  <div>
-    <form>
-      <div class="row">
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Email">
-        </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Password">
-        </div>
+  <div class="row">
+    <% if session[:user_id] %>
+      <div class="col">
+        <%= link_to "Sign Out", "/sessions/destroy", style: "color: white;" %>
       </div>
-    </form>
-  </div>
-
-  <div>
-    <a href='#' class='btn btn-success btn-sm' role='button'>Log In</a>
+    <% else %>
+      <div class="col">
+        <%= link_to "Sign In", "/sessions/new", style: "color: white;" %>
+      </div>
+    <% end %>
   </div>
 </nav>
