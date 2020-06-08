@@ -32,9 +32,9 @@ RSpec.describe User, type: :model do
   end
 
   it "User's email is unique" do
-    userOne = User.create(fname: 'John', lname: 'Doe', email: 'john.doe@example.com', password: 'password')
-    userTwo = User.create(fname: 'Ben', lname: 'Dover', email: 'john.doe@example.com', password: 'password')
-    expect(userTwo).to_not be_valid
+    User.create(fname: 'John', lname: 'Doe', email: 'john.doe@example.com', password: 'password')
+    user_two = User.create(fname: 'Ben', lname: 'Dover', email: 'john.doe@example.com', password: 'password')
+    expect(user_two).to_not be_valid
   end
 
   it "Users email is valid" do

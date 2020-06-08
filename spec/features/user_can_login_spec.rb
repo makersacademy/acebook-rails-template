@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User can login', type: :feature do
   scenario 'a user can login' do
-    #signs the user in
+    # signs the user in
     user = User.create(fname: 'Jon', lname: 'Doe', email: 'john.doe@example.com', password: 'password')
 
     visit '/sessions/new'

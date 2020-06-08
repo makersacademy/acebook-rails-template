@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Delete Post', type: :feature do
   scenario 'User able to delete post' do
-    user = User.create(fname: 'Jon', lname: 'Doe', email: 'john.doe@example.com', password: 'password')
+    User.create(fname: 'Jon', lname: 'Doe', email: 'john.doe@example.com', password: 'password')
     visit '/sessions/new'
 
     fill_in 'user[email]', with: 'john.doe@example.com'

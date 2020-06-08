@@ -1,9 +1,9 @@
 class User < ApplicationRecord
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   has_secure_password
-  validates_presence_of :fname, :lname, :email, :password
-  validates_uniqueness_of :email
-  validates_length_of :password, :minimum => 5
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :fname, :lname, :email, :password, presence: true
+  # validates_uniqueness_of :email
+  validates :password, length: { minimum: 5 }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 end
