@@ -1,22 +1,29 @@
-<h1>Create account</h1>
+<% if session[:user_id] %>
+  <h2>Welcome to acebook</h2>
 
-<%= form_for @user, :url => {:controller => 'users', :action => 'create'} do |f| %>
+<% else %>
 
-  <%= f.label 'First Name' %>
-  <%= f.text_field :fname %> <br />
+  <h1>Create account</h1>
 
-  <%= f.label 'Last Name' %>
-  <%= f.text_field :lname %> <br />
+  <%= form_for @user, :url => {:controller => 'users', :action => 'create'} do |f| %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %> <br />
+    <%= f.label 'First Name' %>
+    <%= f.text_field :fname %> <br />
 
-  <%= f.label :password %>
-  <%= f.password_field :password %> <br />
+    <%= f.label 'Last Name' %>
+    <%= f.text_field :lname %> <br />
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %> <br />
+    <%= f.label :email %>
+    <%= f.text_field :email %> <br />
 
-  <%= f.submit "Create account" %>
+    <%= f.label :password %>
+    <%= f.password_field :password %> <br />
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %> <br />
+
+    <%= f.submit "Create account" %>
+
+  <% end %>
 
 <% end %>
