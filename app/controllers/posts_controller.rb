@@ -4,7 +4,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    p '***************'
+    p params
+    @post = Post.new(post_params)
+    @post.user_id = session[:user_id]
+    @post.save
     redirect_to posts_url
   end
 
@@ -32,7 +36,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :user_id) # Need to fix it !
+    params.require(:post).permit(:message)
   end
 
   def new_post

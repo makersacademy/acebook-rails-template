@@ -17,7 +17,8 @@
       <p><%= post.message %></p>
     </div>
     <div class='row'>
-      <p>Posted at: <%= post.created_at.to_time.strftime('%B %e at %l:%M %p') %></p>
+      <p>Posted at: <%= post.created_at.to_time.strftime('%B %e at %l:%M %p') %></p></br>
+      User ID: <%= post.user_id %>
     </div>
     <div class='row'>
       <%= button_to 'Delete Post', {:controller => :posts,
@@ -31,3 +32,5 @@
 <div class='container my-3'>
   <a href='/posts/new' class='btn btn-primary btn-sm' role='button'>New Posts</a>
 </div>
+
+USER ID <%= session[:user_id] %>

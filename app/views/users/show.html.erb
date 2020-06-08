@@ -4,3 +4,5 @@
 <%= form_for @user, url: "/sessions/destroy", method: :get do |f| %>
     <%= f.submit "Sign out" %>
   <% end %>
+
+ User ID <%= session[:user_id] %>
