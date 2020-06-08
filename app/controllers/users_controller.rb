@@ -5,10 +5,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    user = User.create(user_params)
     # If user does not meet the coniditions user.id will be nil
-    if @user.id != nil
-      redirect_to '/sessions/new'
+    if user.id != nil
+      redirect_to '/sessions/new', notice: `Welcome #{user.fname} #{user.lname}`
     else
       redirect_to '/', notice: 'Email and/or password are/is not meeting the requirements'
     end

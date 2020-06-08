@@ -2,6 +2,8 @@ require 'rails_helper'
 
 feature 'User account registration', type: :feature do
   scenario 'a user can register with an account' do
+    user = User.create(fname: 'John', lname: 'Doe', email: 'john.doe@example.com', password: 'password')
+
     visit '/'
 
     expect(page).to have_content 'Create account'
@@ -14,6 +16,6 @@ feature 'User account registration', type: :feature do
     find('[name=commit]').click
 
     expect(current_path).to eq '/sessions/new'
-    expect(page).to have_content 'Welcome John Doe'
+    expect(page).to have_content `Welcome #{user.fname} #{user.lname}`
   end
 end

@@ -1,13 +1,16 @@
 <h1>Log in</h1>
 
-<%= form_for @user, url: sessions_path, method: :post do |f| %>
+<div class="container">
+  <div class="row">
+    <%= form_for @user, url: sessions_path, method: :post do |f| %>
+        <div class="col">
+          <%= f.text_field :email, placeholder: "Email", id: "first_email" %> <br />
+        </div>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %> <br />
-
-    <%= f.label :password %>
-    <%= f.password_field :password %> <br />
-
-    <%= f.submit "Sign in" %>
-
-  <% end %>
+        <div class="col">
+          <%= f.password_field :password, placeholder: "Password", id: "first_password" %> <br />
+        </div>
+        <%= f.submit "Sign in", class: "btn btn-success btn-sm" %>
+      <% end %>
+  </div>
+</div>
