@@ -1,6 +1,6 @@
 <nav class='navbar navbar-light bg-primary'>
   <div>
-    <a href="/posts" class="badge text-white"><h2>acebook</h2></a>
+    <a href="/" class="badge text-white"><h2>acebook</h2></a>
     <% if session[:user_id] %>
       <div class="col">
         <%= link_to "Sign Out", "/sessions/destroy", style: "color: white;" %>
