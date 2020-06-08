@@ -1,6 +1,8 @@
 <nav class='navbar navbar-light bg-primary'>
-  <div>
+  <div class="row">
     <a href="/" class="badge text-white"><h2>acebook</h2></a>
+  </div>
+  <div class="row">
     <% if session[:user_id] %>
       <div class="col">
         <%= link_to "Sign Out", "/sessions/destroy", style: "color: white;" %>
@@ -10,10 +12,5 @@
         <%= link_to "Sign In", "/sessions/new", style: "color: white;" %>
       </div>
     <% end %>
-
-  <div>
-  </div>
-
-  <div>
   </div>
 </nav>
