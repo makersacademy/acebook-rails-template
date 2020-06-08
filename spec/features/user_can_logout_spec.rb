@@ -12,7 +12,7 @@ feature 'User can logout', type: :feature do
       expect(current_path).to eq "/users/#{user.id}"
       expect(page).to have_content "Welcome #{user.fname} #{user.lname}"
 
-      click_button 'Sign out'
+      click_link 'Sign Out'
       expect(current_path).to eq "/"
   end
 end

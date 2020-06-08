@@ -1,13 +1,15 @@
 <nav class='navbar navbar-light bg-primary'>
   <div>
     <a href="/posts" class="badge text-white"><h2>acebook</h2></a>
-
-    <div class="row">
-      <%= form_tag do |f| %>
-        <% f %>
-      <% end %>
-    </div>
-  </div>
+    <% if session[:user_id] %>
+      <div class="col">
+        <%= link_to "Sign Out", "/sessions/destroy", style: "color: white;" %>
+      </div>
+    <% else %>
+      <div class="col">
+        <%= link_to "Sign In", "/sessions/new", style: "color: white;" %>
+      </div>
+    <% end %>
 
   <div>
   </div>

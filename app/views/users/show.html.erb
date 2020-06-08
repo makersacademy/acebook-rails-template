@@ -1,6 +1,1 @@
 <h1>Welcome <%= @user.fname %> <%= @user.lname %></h1>
-
-
-<%= form_for @user, url: "/sessions/destroy", method: :get do |f| %>
-    <%= f.submit "Sign out" %>
-  <% end %>
