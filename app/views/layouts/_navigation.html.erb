@@ -1,15 +1,19 @@
-<nav class='navbar navbar-light bg-primary'>
-  <div class="row">
+<% if session[:user_id] %>
+  <nav class='navbar navbar-light bg-dark'>
+ <% else %>
+  <nav class='navbar navbar-light bg-primary'>
+<% end %>
+  <div class="row container">
     <a href="/" class="badge text-white"><h2>acebook</h2></a>
   </div>
   <div class="row">
     <% if session[:user_id] %>
       <div class="col">
-        <%= link_to "Sign Out", "/sessions/destroy", style: "color: white;" %>
+        <%= link_to "Sign Out", "/sessions/destroy", class: 'btn btn-light' %>
       </div>
     <% else %>
       <div class="col">
-        <%= link_to "Sign In", "/sessions/new", style: "color: white;" %>
+        <%= link_to "Sign In", "/sessions/new", class: 'btn btn-light' %>
       </div>
     <% end %>
   </div>
