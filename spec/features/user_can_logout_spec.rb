@@ -9,7 +9,7 @@ feature 'User can logout', type: :feature do
       fill_in 'user[password]', with: 'password'
       click_button 'Sign in'
 
-      expect(current_path).to eq "/users/#{user.id}"
+      expect(current_path).to eq "/posts"
       expect(page).to have_content "Welcome #{user.fname} #{user.lname}"
 
       click_link 'Sign Out'

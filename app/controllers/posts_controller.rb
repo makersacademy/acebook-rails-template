@@ -4,8 +4,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    p '***************'
-    p params
     @post = Post.new(post_params)
     @post.user_id = session[:user_id]
     @post.save
@@ -31,6 +29,7 @@ class PostsController < ApplicationController
   def index
     @new_post = new_post
     @posts = Post.all
+    @user = User.find_by(id: session[:user_id])
   end
 
   private

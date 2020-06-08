@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
 
   it 'User post input not to be nil' do
-    post = Post.create(message: 'This is a new message!')
+    user = User.create(fname: 'jon', lname: 'doe', email: 'john.doe@example.com', password: 'password')
+    post = Post.create(message: 'This is a new message!', user_id: user.id)
     expect(post).to be_valid
   end
 

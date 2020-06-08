@@ -15,7 +15,8 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it 'creates a post' do
-      post :create, params: { post: { message: 'Hello, world!' } }
+      user = User.create(fname: 'jon', lname: 'doe', email: 'john.doe@example.com', password: 'password')
+      Post.create(message: 'Hello, world!', user_id: user.id)
       expect(Post.find_by(message: 'Hello, world!')).to be
     end
   end
@@ -37,7 +38,8 @@ RSpec.describe PostsController, type: :controller do
 
   describe 'UPDATE /' do
     it 'Able to update a post' do
-      post = Post.create(message: 'Hello, world!')
+      user = User.create(fname: 'jon', lname: 'doe', email: 'john.doe@example.com', password: 'password')
+      post = Post.create(message: 'Hello, world!', user_id: user.id)
       post.update(message: 'Updated message!')
       expect(Post.find_by(message: 'Updated message!')).to be
     end
