@@ -4,9 +4,6 @@ rvm:
 services:
   - postgresql
 
-before_script:
-  - cp config/database.yml
-
 script:
  — bundle install — jobs=3 — retry=3
  — bundle exec rake db:create
