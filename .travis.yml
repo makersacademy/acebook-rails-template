@@ -2,10 +2,9 @@ language: ruby
 rvm:
   - 2.7.1
 
+before_script:
+-bundle install
+-bin/rails db:create
+-bin/rails db:migrate
 script:
- — bundle install
- — bundle exec rake db:create
- — bundle exec rake db:migrate
- — bundle exec rspec
-
-dist: trusty
+-bundle exec rspec
