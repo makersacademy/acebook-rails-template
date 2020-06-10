@@ -4,7 +4,7 @@ rvm:
 
 before_script:
 - bundle install
+script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
-script:
 - bundle exec rspec
