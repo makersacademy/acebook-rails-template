@@ -1,4 +1,6 @@
-<%= form_for @post do |form| %>
+<h1>Edit Article</h1>
+
+<%= form_with(model: @posts, local: true) do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
   <%= form.submit "Submit" %>
