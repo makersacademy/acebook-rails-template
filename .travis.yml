@@ -1,10 +1,14 @@
 language: ruby
 rvm:
-- 2.7.1
+  - 2.7.
+services:
+  - postgresql
 
 before_script:
-- bundle install
-- bundle exec rake db:create
-- bundle exec rake db:migrate
+  - cp config/database.yml
+
 script:
-- bundle exec rspec
+ — bundle install — jobs=3 — retry=3
+ — bundle exec rake db:create
+ — bundle exec rake db:migrate
+ — bundle exec rspec
