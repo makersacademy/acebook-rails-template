@@ -1,12 +1,15 @@
 language: ruby
-rvm:
-  - 2.7.1
+cache:
+- bundler
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rake assets:precompile
+deploy:
+  provider: heroku
+  api_key:
+    secure: KEY
+  app: freight-train-2-railsville
 
-script:
- - bundle config set deployment 'true'
- — bundle install 
- — bundle exec rake db:create
- — bundle exec rake db:migrate
- — bundle exec rspec
-
-dist: trusty
+  on:
+    repo: george-bit/acebook-freight-train-to-railsville
