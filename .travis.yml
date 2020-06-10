@@ -1,10 +1,12 @@
 language: ruby
-rvm:
-- 2.7.1
-
-before_script:
-- bundle install
+bundler_args: --jobs=2
 script:
-- bundle exec rake db:create
-- bundle exec rake db:migrate
-- bundle exec rspec
+  - bundle exec rake db:setup
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rake spec
+cache: bundler
+services:
+  - postgresql
+addons:
+  postgresql: "12.3"
