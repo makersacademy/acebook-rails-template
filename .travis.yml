@@ -1,16 +1,14 @@
-addons:
-  postgresql: 12.3
-before_install:
-  - sudo apt-get update
-  - sudo apt-get --yes remove postgresql\*
-  - sudo apt-get install -y postgresql-12 postgresql-client-12
-  - sudo cp /etc/postgresql/{9.6,12}/main/pg_hba.conf
-  - sudo service postgresql restart 12  
-before_script:
-  - cp ./config/database.yml.travis ./config/database.yml
-  - psql -c 'create database travis_ci_test;' -U postgres
-dist: trusty
 language: ruby
+install:
+  - gem uninstall bundler
+  - gem install bundler --version '1.16.3'
+  - bundle install
+rvm:
+  - 2.7.0
+services:
+- postgresql
+before_script:
+- bin/rails db:create
+- bin/rails db:migrate
 script:
-  - bundle exec rails db:migrate RAILS_ENV=test
-  - bundle exec rspec
+- bundle exec rspec
