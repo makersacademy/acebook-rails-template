@@ -4,8 +4,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.new(post_params)
+    @post.user = current_user
+    @post.save
     redirect_to posts_url
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   def index
@@ -14,7 +20,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-   
+    @posts = Post.all
     if @post.update(post_params)
       redirect_to posts_path
     else
@@ -22,11 +28,8 @@ class PostsController < ApplicationController
     end
   end
 
-  def destroy
+  def edit
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
-    flash[:notice] = "You have successfully deleted the Post"
   end
   
   private

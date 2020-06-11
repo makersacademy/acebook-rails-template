@@ -1,12 +1,11 @@
-<h1>HELLO WORLDS!</h1>
-<div>
-  <% @posts.each do |post| %>
-    <p><%= post.message %></p>
-  <% end %>
-</div>
+<% @posts.each do |post| %>
+  <p><%= post.message %>  <%= link_to 'Edit', edit_post_path(post) %></p>
+<% end %>
 
-<div>
-  <%= link_to new_post_path do %>
-    New post
-  <% end %>
-</div>
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+
+<%= link_to "Sign out", destroy_user_session_path,
+              method: :get,
+              data: { confirm: 'Are you sure?' } %>
