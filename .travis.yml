@@ -12,6 +12,7 @@ before_script:
 - bin/rails db:migrate
 script:
 - bundle exec rspec
+after_success:
 - bundle config set deployment 'true'
 # deploy:
 #   provider: heroku
