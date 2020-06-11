@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @posts = Post.all
-    
+
     if @post.validate_is_editable
       render 'edit'
 

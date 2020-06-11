@@ -5,3 +5,9 @@
   <%= form.text_field :message %>
   <%= form.submit "Submit" %>
 <% end %>
+
+<% if @post.errors.any? %>
+  <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  <% end %>
+<% end %>
