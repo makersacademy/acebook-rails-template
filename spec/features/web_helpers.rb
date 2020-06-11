@@ -12,3 +12,9 @@ def add_post
   fill_in "Message", with: "Hello, world!"
   click_button "Submit"
 end
+
+def login
+  fill_in "Email", with: "test@example.com"
+  fill_in "Password", with: "test1234"
+  click_button "Log in"
+end
