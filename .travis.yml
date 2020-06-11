@@ -12,7 +12,11 @@ before_script:
 - bin/rails db:migrate
 script:
 - bundle exec rspec
+- bundle config set deployment 'true'
 deploy:
   provider: heroku
+  api_key:
+    secure: fc4872d8-7dad-4388-8bc1-a919d89f0294
   app: freight-train-2-railsville
-    repo: acebook-freight-train-to-railsville
+  on:
+    repo: george-bit/acebook-freight-train-to-railsville
