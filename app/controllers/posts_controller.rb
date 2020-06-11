@@ -22,17 +22,20 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @posts = Post.all
-    if @post.update(post_params)
-      redirect_to posts_path
-    else
+    
+    if @post.validate_is_editable
       render 'edit'
+
+    elsif @post.update(post_params)
+      redirect_to posts_path
+
     end
   end
 
   def edit
     @post = Post.find(params[:id])
   end
-  
+
   private
 
   def post_params
