@@ -16,4 +16,8 @@ RSpec.feature "Posts", type: :feature do
     click_button 'Submit'
     expect(page).to have_content("Goodbye, world!")
   end
+
+  scenario "Signed in user can edit posts, only if its their post"
+    sign_up
+    click_link "Edit"
 end

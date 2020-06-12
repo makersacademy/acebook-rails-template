@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+
   let(:user) { create(:user) }
 
   describe "GET index" do
@@ -46,7 +47,7 @@ RSpec.describe PostsController, type: :controller do
         post :create, params: { post: { message: "Hello, world!" } }
         expect(response).to redirect_to(posts_url)
       end
-      
+
       it "creates a post" do
         post :create, params: { post: { message: "Hello, world!" } }
         expect(Post.find_by(message: "Hello, world!")).to be
