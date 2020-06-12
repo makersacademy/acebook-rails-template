@@ -54,4 +54,15 @@ RSpec.describe PostsController, type: :controller do
       end
     end
   end
+
+    # let(:user) { User.create(email: "testie@test.com", password: "hello42") }
+    # let(:user2){ User.create(email: "testie2@test.com", password: "hello43")}
+    # let(:post) { Post.create(message: "A new post", user: user)}
+    # context "User won't able to" do
+    #   it "cannot access a post that isn't theirs" do
+    #     sign_in user2
+    #     get :edit, params: {id: post.id}
+    #     expect(response).not_to render_template :edit
+    # end
+    # end
 end
