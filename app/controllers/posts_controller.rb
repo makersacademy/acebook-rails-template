@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# posts controller
 class PostsController < ApplicationController
   def new
     @post = Post.new
