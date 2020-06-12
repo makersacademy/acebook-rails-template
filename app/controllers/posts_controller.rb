@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   def new
     @post = Post.new
   end
