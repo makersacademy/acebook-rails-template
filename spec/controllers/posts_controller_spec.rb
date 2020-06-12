@@ -41,10 +41,12 @@ RSpec.describe PostsController, type: :controller do
   describe "POST /" do
     context "signing in" do
       before { sign_in user }
+
       it "responds with 200" do
         post :create, params: { post: { message: "Hello, world!" } }
         expect(response).to redirect_to(posts_url)
       end
+      
       it "creates a post" do
         post :create, params: { post: { message: "Hello, world!" } }
         expect(Post.find_by(message: "Hello, world!")).to be
