@@ -1,5 +1,7 @@
 {
   "name": "acebook",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.5"
+  }
 }
