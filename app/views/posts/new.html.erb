@@ -1,6 +1,14 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-
-  <%= form.submit "Submit" %>
+<% if user_signed_in? %>
+Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <%= form_for @post do |form| %>
+    <%= form.label :message %>
+    <%= form.text_field :message %>
+    <%= form.submit "Submit" %>
+  <% end %>
+<% else %>
+<p>Please sign up or login to use Acebook!</p>
+<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
