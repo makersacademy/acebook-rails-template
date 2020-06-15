@@ -12,3 +12,6 @@
 //
 //= require rails-ujs
 //= require_tree .
+//= require flash_timeout
+//= require jquery3
+//= require bootstrap

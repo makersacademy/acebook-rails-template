@@ -1,0 +1,9 @@
+inherit_gem:
+  rubocop-rails_config:
+    - config/rails.yml
+
+StringLiterals:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

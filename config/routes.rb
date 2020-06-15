@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, :controllers => {:registrations => "registrations"}
 
-  resources :posts
+  devise_scope :user do
+    root to: "devise/registrations#new"
+    get 'signup', to: 'devise/registrations#new'
+    get 'login', to: 'devise/sessions#new'
+  end
+
+  get "users/:id", to: "users#show", as: 'user'
+
+  resources :posts do
+    resources :likes
+    resources :comments
+  end
 end
