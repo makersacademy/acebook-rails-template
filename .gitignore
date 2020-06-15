@@ -20,4 +20,10 @@
 /node_modules
 /yarn-error.log
 
+/coverage
+
 .byebug_history
+coverage/
+
+log/test.log
+log/development.log

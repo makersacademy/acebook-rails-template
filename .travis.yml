@@ -1,0 +1,22 @@
+language: ruby
+addons:
+  firefox: '66.0'
+rvm:
+- 2.5.0
+- jruby
+before_install:
+- gem install bundler
+- gem update bundler
+- rvm install ruby-2.5.0
+- bundle install
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rake assets:precompile
+deploy:
+  provider: heroku
+  api_key:
+    secure: P3zUpUY0yMxjhY72mnWj+ygCN9dozqRWOhrAYbs7KdzPBMn+jAegnyR39l0qmj3+j4ZQ1HxtTNoOQZgR9+Ob8FkdNhf7dcUbRV/msPp2iJs5lLLQ/kMiRVcMP/vStZ32jw3sMMfdM/FgwIB+XCPxzBKlxvnAeMeja6dyDIQQDghk4W4e+psPv6iDEVOouLKgIR6PMw+t+PnBw/8b/FrA6rrSdIaTUovjkw6iiypBD9c0nqWjwO5SrdUWZxe4SRyUAOref2iNnqS8HXleXsZ6EybsyPfypAh/ujjMlRaue9cZftHG2/NS0u1fLb1TE2th61UDYV8qxnLZ40KcNrGK843Za5qZ8oQRerYqgktXAFJJLoV9wU3Ejr0NDM3zD8hnD42/AcifJI2rZwlgEelYygo717wjsjxlAU8h4mPG2i42cA8WMZb64YBWOC1GufZWwoE/P1WAiQLZ2v4MV0jLgavS/2cueLcNiPxTLAXytr/OrlsA7MTKGJc6z1z1Z9LbVKQuIdb/MdsINOqT27WJnH/+Lsdb5nsblIMUbJQ3TNb6ifT2ljGetqTfAJLnK/1NRv0NdoDWUU5z0mzX0jZgl+qooBxngOIzpOl26MNCWLu6PAFuyz20EvIGbmNZbnF+U30ZIA+dP3KWf6lYDjIA6IDybTfyGA6LRurmvd4va7A=
+  app: makers-acebook-creators
+  on:
+    repo: matthewwhitaker/acebook-creators

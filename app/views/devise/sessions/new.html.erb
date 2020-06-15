@@ -1,0 +1,52 @@
+<div class="login-container">
+<h2>Connect with people in your life.</h2>
+<%= image_tag("download.png", alt: "hand") %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<% if !flash[:alert].blank? %>
+    <% if flash[:alert][/The email address and password you entered do not match our records/] %>
+      <div class="flashNotice col last">
+        <%= t('devise.failure.not_found_in_database', resource_name: "#{params[:user][:email]}").html_safe %>
+      </div>
+    <% else %>
+      <div class="flashNotice col last"><%= flash[:alert]%></div>
+    <% end %>
+<% end %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+<footer class="container footer">
+      <nav class="navbar d-flex">
+        <ul>
+          <li>ABOUT US
+          </li>
+          <li>PRIVACY</li>
+          <li>TERMS</li>
+          <li>PROFILES</li>
+          <li>HASHTAGS</li>
+          <li>LANGUAGE</li>
+        </ul>
+        <p> Acebook © 2019  </p>
+      </nav>
+    </footer>
+</div>

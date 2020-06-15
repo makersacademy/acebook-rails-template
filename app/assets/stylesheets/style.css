@@ -1,0 +1,93 @@
+div[class="post"] {
+  text-align: center;
+}
+
+div[class="post-container"]{
+  text-align: center;
+}
+
+div[class="card-body"] {
+width: 50%;
+text-align: center;
+align-self: center;
+justify-content: center;
+display:inline-block;
+}
+
+div[class="card"] {
+  width: 50%;
+  text-align: center;
+  align-self: center;
+  justify-content: center;
+  display:inline-block;
+}
+
+div[class="new-post-button"]{
+  text-align: center;
+}
+
+ div[class="header"]{
+  overflow: hidden;
+  font-size: 30px;
+  font-family: "roboto";
+  font-weight: bold;
+  color: white;
+}
+
+div[class="header-title"]{
+  text-align: center;
+}
+
+body{
+  background-color: #f7f7f7;
+}
+
+div[class="login-container"]{
+  padding-top: 50px;
+  text-align: right;
+  position: relative;
+  padding-right: 25%;
+}
+
+div[class="error-message"]{
+  color:red;
+}
+
+div[id="alert"]{
+  color:red;
+}
+
+h2{
+  text-align: left;
+  padding-left: 20%;
+}
+
+.footer{
+  font-size: 12px;
+  padding-top: 60px;
+  padding-right: 15px;
+  color: #003569;
+  }
+
+li {
+    display: inline;
+  }
+
+img {
+   float: left;
+   padding-left: 20%;
+   padding-top: 20px;
+ }
+
+ .message{
+   padding-top: 30px;
+ }
+
+ .sign_up{
+   text-align: center;
+ }
+
+ .sign_up h2{
+   padding-top: 20px;
+   padding-left: 30px;
+ }
