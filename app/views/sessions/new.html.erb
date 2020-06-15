@@ -1,0 +1,28 @@
+<div class="container" align="center">
+  <br>
+  <br>
+  <%= form_for(:session, url: login_path) do |form| %>
+  <%= form.label :email %>
+  <!-- <br> -->
+  <%= form.text_field :email %>
+
+  <br>
+  <%= form.label :password %>
+  <!-- <br> -->
+  <%= form.password_field :password %>
+  <br>
+
+  New user?
+  <%= link_to new_user_path do %>
+  Register
+  <% end %>
+
+  <br>
+  <%= form.submit "Log in" %>
+  <% end %>
+
+  <%= flash[:danger] %>
+
+
+
+  </div>
