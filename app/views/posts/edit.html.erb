@@ -11,12 +11,12 @@
 
   <div class="container-fluid">
     <div class="jumbotron">
-      <h1 class="display-4">What'cha Up To?</h1>
-      <p class="lead">How about you make a post to tell the world your thoughts...</p>
+      <h1 class="display-4">Made a mistake??</h1>
+      <p class="lead">How about you try again...</p>
     </div>
   </div>
 
-  <div class="create">
+  <div class="edit">
     <center>
       <div class="containter">
         <%= form_for(@post) do |form| %>
@@ -25,11 +25,11 @@
           <%= form.text_field :message %>
         </div>
         <div class="actions">
-          <%= form.submit "Post!" %>
+          <%= form.submit "Edit" %>
         </div>
         <% end %>
       </div>
     </center>
   </div>
-  
+
 </html>
