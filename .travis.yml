@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.5.1
+cache:
+- bundler
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+deploy:
+  provider: heroku
+  api_key:
+    secure: "GkwW/ivNN8qTg4S/20s/Zc0zZJzgR7kEaDvVFDaCnciVOpcgv/azOFErdPs3BRPXw1N+uOoa7tD88nuiIeTMbIm6naEBFl6xSyTMGmJH6ygKMyvGuDH4faeO+Q2yimT9Vc2J/5t13L7A/kEIEpmFANe4ABvw3twO70UIJvmRtJkGudz/cKRl8Nys2rO/zNpeGQLsFi4mCKxWzZD0R76qPGgXyLADq3aNjC6SZ6U4k3vv439VWhmhmXpbPZqxW5FI6amuq9Ja3wsgLksuPrpgJh/8sLzmW8lAdsCsNs4T8ZE3QfQuF02f+Vo4YwNZ0PSePASeO4b3MVvqWkF3K0KOAnZ8AkJ2HG8BEVw8eVyIZoUdBqtzpS7PAVbweY5qxFmEqRapfU9tvvOKK1JWImXMqTIUhSyjk1aLhEfZlZ9owLYSgP6T+0m6c8f0HW87tU9ds2NXQirsnP71q39MLtnEmmz8CkielscxtjBXARm6lEcvSwvd8K2mf6hzITqDow2UozBIfgF+aitwQ/vjtsKpc0XrbPSqzHsBzS+oh0qwIf5USBTiicjJq0fZhHuYccHENTt7szg2k8fDQBC5xKUafUwKI8S6j2Pa6RTqchcOf9g0u0pDurChwpQhRH/UdPLbxsP+6wN7Qpy1sJO9SBNtwtBdeV9cRihpKWdHjaiVt2A="
+  app: team-tela
+  on:
+    repo: emmaalbury/Team-Tela
