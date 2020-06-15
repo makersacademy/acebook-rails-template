@@ -1,0 +1,31 @@
+<% if @post.comments.count > 0 %>
+
+<div class="eachcomment">
+
+  <div class="createdby">
+    <small>Commented by:</small><br>
+
+    <% @users = User.all %>
+    <% @users.each do |user| %>
+      <% if user.id == comment.commenter_id %>
+        <% if user.user_name %>
+          <%= user.user_name %>
+        <% else %>
+          <%= user.email %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= comment.body %><br><br>
+
+  <div class="buttons">
+    <% if current_user.id == comment.commenter_id %>
+    <%= link_to 'Delete', [comment.post, comment], :class => 'btn btn-secondary btn-sm',
+                 method: :delete,
+                 data: { confirm: 'Are you sure?' } %>
+    <%end%>
+  </div>
+</div>
+<% end %>
+<br>
