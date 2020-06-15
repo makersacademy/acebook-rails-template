@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<div id = "Logout">
+  <%= link_to "Log Out", logout_path, method: :delete %>
+  </div>
+  <div id = "ViewAllUser">
+    <%= link_to "View All Acers", users_path %>
+    </div>
+<style>
+p {background-color: lightgrey;
+  width: 75px;
+  border: 25px solid green;
+  padding: 25px;
+  margin: 25px;
+}
+</style>
+<body>
+  <h1> Welcome <%=@user.username%>!</h1>
+</body>
+<p>
+  User Photo
+</p>
+<div>
+  Add Photo(button in future)
+</div>
+<div>
+ <%= link_to "New Post", new_post_url  %>
+<div>
+  <h2> Posts </h2>
+
+ <% @user.posts.reverse.each do |post| %>
+   <div>
+     <h5><%= post.created_at.strftime("%H:%M:%S - %d/%m/%y")%></h5>
+     <a href="/posts/<%=post.id%>"><%=post.message%> </a>
+   <br>
+<% end %>
+
+
+</div>
+
+</html>
