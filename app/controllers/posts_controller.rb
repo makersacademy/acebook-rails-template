@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# posts controller
 class PostsController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
@@ -17,7 +20,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def update

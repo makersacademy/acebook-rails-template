@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# user class for one to many relationship
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -5,5 +8,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
-
 end

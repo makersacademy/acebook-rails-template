@@ -1,13 +1,29 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-
-<% if current_user == post.user %>
-      <td class='edit'><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td class='delete'><%= link_to 'Delete', post_path(post),
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Message</th>
+      <th scope="col">Created at</th>
+      <th scope="col">User</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @posts.each do |post| %>
+    <tr>
+        <td><%= simple_format(post.message) %></td>
+        <td><%= post.created_at %></td>
+        <td>User</td>
+  <% if current_user == post.user %>
+        <td class='edit'><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td class='delete'><%= link_to 'Delete', post_path(post)
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-<% end %>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
 
 <p>
 <%= link_to new_post_path do %>
