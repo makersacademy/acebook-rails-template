@@ -1,0 +1,424 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html{
+ padding: 0;
+ margin: 0;
+}
+
+body{
+ background: #fafafa;
+}
+
+header.Menu{
+ z-index: 2;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+}
+
+ul.list_item{
+ background: #fff;
+ padding: 10px 20px 10px;
+ text-align: center;
+ background: rgba(78, 113, 179 ,1);
+ box-shadow: 0 15px 25px -20px rgba(0,0,0,0.1);
+}
+
+ul.list_item li.item{
+ position: relative;
+ display: inline-block;
+ padding: 0;
+ margin: 0 10px 0;
+ color: white;
+}
+
+ul.list_item li.item i{
+ font-size: 25px;
+}
+
+ul.list_item li.item span.circle_notify{
+ display: block;
+ position: absolute;
+ top: 0;
+ right: 0;
+ width: 7px;
+ height: 7px;
+ background: red;
+ border-radius: 50px;
+}
+
+ul.list_item li.item.left{
+ float: left;
+ top: 6px;
+}
+
+ul.list_item li.item.middle{
+}
+
+ul.list_item li.item.middle i{
+ font-size: 18px;
+}
+
+ul.list_item li.item.middle .cnt_search .txt_search{
+ postion: relative;
+ width: 350px;
+ border: none;
+ background: rgba(255, 255, 255, .15);
+ padding: 10px 15px 10px;
+ padding-right: 45px;
+ border-radius: 50px;
+ outline: none;
+ font-size: 14px;
+ color: white;
+ transition: .2s;
+}
+
+ul.list_item li.item.middle .cnt_search .txt_search:focus{
+ background: rgba(255, 255, 255, 1);
+ color: #222;
+}
+
+ul.list_item li.item.middle .cnt_search .txt_search::-webkit-input-placeholder{
+ color: rgba(255, 255, 255, .5);
+ transition: .2s;
+}
+
+ul.list_item li.item.middle .cnt_search .txt_search:focus::-webkit-input-placeholder{
+ color: rgba(0, 0, 0, .4);
+}
+
+ul.list_item li.item.middle .cnt_search i{
+ position: absolute;
+ right: 15px;
+ top: 9px;
+ transition: .2s;
+}
+
+ul.list_item li.item.middle .cnt_search .txt_search:focus ~ i{
+ color: rgba(78, 113, 179 ,1);
+}
+
+ul.list_item li.item.right{
+ float: right;
+ top: 6px;
+}
+
+ul.list_item li.item.right i{
+ margin-top: 3px;
+ font-size: 18px;
+}
+
+.Containers{
+ margin-top: 50px;
+}
+
+.Container{
+ display: inline-block;
+ vertical-align: top;
+ margin: 0;
+ padding: 10px;
+ box-sizing: border-box;
+}
+
+.Container.Left{
+ float: left;
+ background: white;
+ width: 25%;
+ height: 100%;
+ height: 1000;
+}
+
+.Container.Middle{
+ background: transparent;
+ width: 60%;
+}
+
+.Container.Right{
+ float: right;
+ background: white;
+ width: 15%;
+}
+
+.Sections{
+ padding: 20px 20px 0px;
+}
+
+.Sections h1.title{
+ font-size: 18px;
+ color: #222;
+ font-family: sans-serif;
+ font-weight: 600;
+}
+
+.Sections.Stories .Body{
+ padding: 10px 0 10px;
+ text-align: left;
+}
+
+.Sections.Stories .Body .img_avatar{
+ position: relative;
+ display: inline-block;
+ margin: 5px 7px 5px;
+ width: 50px;
+ height: 50px;
+ border: 2px solid white;
+ background-position: center center;
+ background-repeat: no-repeat;
+ background-size: 100%;
+ border-radius: 50%;
+ list-style: none;
+}
+
+.Sections.Stories .Body .img_avatar .img_border{
+ position: absolute;
+ top: -5px;
+ left: -5px;
+ width: 120%;
+ height: 120%;
+ border-radius: 50%;
+ border: 2px solid rgba(78, 113, 179 ,1);
+ padding: 20px;
+ box-sizing: border-box;
+}
+
+
+.Sections.Stories .Body .img_avatar.perfil_session .img_border{
+ border-style: dashed;
+ transition: .2s;
+}
+
+.Sections.Stories .Body .img_avatar.perfil_session .img_border:hover{
+ box-shadow: 0 8px 20px -8px rgba(78, 113, 179 , .5);
+ transform: scale(1.05);
+}
+
+.Sections.Stories .Body .img_avatar.perfil_session .img_border .btn_open_sect{
+ position: absolute;
+ top: 3px;
+ left: 3px;
+ width: 90%;
+ height: 90%;
+ background: rgba(78, 113, 179, .8);
+ border-radius: 50%;
+ border: none;
+ outline: none;
+ cursor: pointer;
+}
+
+.Sections.Stories .Body .img_avatar.perfil_session .img_border .btn_open_sect .fa{
+ color: rgba(255, 255, 255, 1);
+ font-size: 18px;
+}
+
+.Sections.New_Post .Body .cnt_write_post{
+ position: relative;
+ padding: 10px 5px 5px;
+ border: none;
+ border-radius: 15px;
+ background: white;
+ box-shadow: 0 6px 21px -5px rgb(61, 83, 255,);
+ transition: .5s;
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_new_written .img_avatar{
+ position: absolute;
+ top: 8px;
+ left: 10px;
+ width: 40px;
+ height: 40px;
+ background: #eee;
+ border-radius: 50%;
+ background-position: center center;
+ background-repeat: no-repeat;
+ background-size: 100%;
+ border-radius: 50%;
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_new_written .txt_post{
+ font-family: "Roboto";
+ background: transparent;
+ padding: 10px;
+ padding-left: 56px;
+ width: 100%;
+ height: 35px;
+ font-size: 15px;
+ font-weight: normal;
+ border: none;
+ resize: none;
+ outline: none;
+ overflow: hidden;
+ box-sizing: border-box;
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_new_written .txt_post.change_placeholder::-webkit-input-placeholder{
+ color: rgba(255,255,255,.75);
+ font-weight: normal;
+ text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_new_written .txt_post.change_placeholder{
+ color: #fff;
+ font-weight: 600;
+ font-size: 20px;
+ text-shadow: 5px 3px 5px rgba(0, 0, 0, .2);
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_new_written .btn.submit{
+ position: absolute;
+ bottom: 6px;
+ right: 8px;
+ width: 40px;
+ height: 40px;
+ padding: 0;
+ text-align: center;
+ box-sizing: border-box;
+ border-radius: 50%;
+ background: rgb(61, 83, 255);
+ color: white;
+ transform: rotate(20deg);
+ border: none;
+ outline: none;
+ cursor: pointer;
+ transition: .2s;
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_new_written .btn.submit:hover, .Sections.New_Post .Body .cnt_write_post .cnt_new_written .txt_post:focus ~ .btn.submit{
+ transform: rotate(50deg);
+ box-shadow: 0 4px 10px -4px rgb(61, 83, 255,);
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post{
+ padding: 20px 5px 0;
+ display: none;
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post{
+ display: inline-block;
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post .btn.add_more{
+ position: relative;
+ margin: 0 5px 0;
+ background: transparent;
+ border: none;
+ font-size: 18px;
+ color: #ddd;
+ text-align: center;
+ outline: none;
+ cursor: pointer;
+ transition: .2s;
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post:nth-child(2) .btn.add_more:hover{
+ color: rgb(40, 239, 213);
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post:nth-child(3) .btn.add_more:hover{
+ color: rgb(255, 242, 73);
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post:nth-child(4) .btn.add_more:hover{
+ color: rgb(171, 239, 86);
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post:nth-child(5) .btn.add_more:hover{
+ color: rgb(230, 11, 100);
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post .btn.add_more .bubble{
+   font-family: "Roboto";
+   z-index: -1;
+   position: absolute;
+   bottom: -50px;
+   left: -55px;
+   width: 110px;
+   background: #fff;
+   font-weight: 500;
+   letter-spacing: 1px;
+   font-size: 12px;
+   border-radius: 50px;
+   padding: 8px 10px 8px;
+   box-shadow: 0 2px 10px -3px rgba(0,0,0, .1);
+   opacity: 0;
+   transform: scale(0);
+   transition: .25s;
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post .btn.add_more:hover > .bubble{
+ z-index: 1;
+ opacity: 1;
+ transform: scale(1);
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post .btn.add_more.palette{
+ z-index: 10;
+ position: relative;
+ padding: 2px 0 0;
+ width: 40px;
+ height: 40px;
+ background: -webkit-linear-gradient(-50deg, rgba(247, 213, 45, 1), rgba(255, 102, 0, 0.8), rgba(189,24,112,1) 50%, rgba(189,24,112,0.68), rgba(22, 26, 152, .6));
+ border-radius: 50%;
+ box-shadow: 0 0 6px 0 rgba(0,0,0,.3);
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post .btn.add_more.palette:before{
+ z-index: -1;
+ content : '';
+ position: absolute;
+ top: 2px;
+ left: 0;
+ right: 0;
+ margin: 0 auto;
+ width: 90%;
+ height: 90%;
+ border-radius: 50%;
+ background: #fff;
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post .btn.add_more.palette.applied_color:before{
+ top: 0;
+ width: 100%;
+ height: 100%;
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post .btn.add_more.palette .fa{
+ background: -webkit-linear-gradient(-50deg, rgba(247, 213, 45, 1), rgba(255, 102, 0, 0.8), rgba(189,24,112,1) 60%, rgba(189,24,112,0.68), rgba(22, 26, 152, .6));
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post .list_colors_palette{
+ z-index: 2;
+ position: absolute;
+ left: 0;
+ bottom: -51px;
+ background: white;
+ padding: 6px 10px 2px;
+ width: auto;
+ text-align: left;
+ display: none;
+ border-radius: 50px;
+ box-shadow: 0 0 20px 0 rgba(0,0,0,.1);
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post .list_colors_palette .option_color{
+ display: inline-block;
+ background: #eee;
+ list-style: none;
+ width: 30px;
+ height: 30px;
+ padding: 7px 0 0;
+ text-align:center;
+ border-radius: 50px;
+ font-size: 14px;
+ box-sizing: border-box;
+ cursor: pointer;
+ transition: .15s;
+}
+
+.Sections.New_Post .Body .cnt_write_post .cnt_more_files_post .file_post .list_colors_palette .option_color:hover{
+ transform: scale(1.15);
+ box-shadow: 0 0 4px 0 rgba(0,0,0,0.4);
+}

@@ -1,0 +1,11 @@
+<center>
+  <br>
+  <br>
+  <br>
+<%= form_for @post do |form| %>
+  <%= form.label 'Please edit your post:' %><br><br>
+  <%= form.text_area :message, id: 'Message' %><br><br>
+
+  <%= form.submit "Submit" %>
+<% end %>
+</center>
