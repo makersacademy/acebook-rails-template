@@ -6,6 +6,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <% if flash[:no_delete] %>
+      <div class='notice'> <%= flash[:no_delete] %> </div>
+    <% end %>
+
+    <% if flash[:success] %>
+      <div class='notice'> <%= flash[:success] %> </div>
+    <% end %>
+
+    <% if flash[:no_edit] %>
+      <div class='notice'> <%= flash[:no_edit] %> </div>
+    <% end %>
+
+    <% if flash[:edit_timeout_failure] %>
+      <div class='notice'> <%= flash[:edit_timeout_failure] %> </div>
+    <% end %>
+
+    <% if flash[:bad_email] %>
+      <div class='notice'> <%= flash[:bad_email] %> </div>
+    <% end %>
+
+
   </head>
 
   <body>

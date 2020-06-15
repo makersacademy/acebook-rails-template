@@ -1,0 +1,7 @@
+<h1> Upload Photos </h1>
+
+<%= form_for(@album) do |f| %>
+  <%= f.label :photos %>
+  <%= f.file_field :photos %>
+  <%= f.submit "Upload" %>
+<% end %>

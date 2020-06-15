@@ -1,0 +1,3 @@
+<%=@album.name%>
+
+<%= button_to 'Upload Photos', {:controller => "albums", :action => "new_photo", :id => @album.id}, :method=>:get, class: "main_button button_new" %>

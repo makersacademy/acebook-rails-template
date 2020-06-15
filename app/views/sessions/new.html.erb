@@ -1,0 +1,33 @@
+<% if flash[:fail_duplicate_email] %>
+  <div class='notice'> <%= flash[:fail_duplicate_email] %> </div>
+<% end %>
+
+<% provide(:title, "Log in") %>
+
+<% if flash[:danger] %>
+  <div class='notice'> <%= flash[:danger] %> </div>
+<% end %>
+
+<div class="sign_grid">
+
+  <div class="container">
+    <div class="row">
+      <div class="input">
+        <%= form_for(:session, url: login_path) do |f| %>
+
+          <%= f.email_field :email, class: 'form-control', placeholder: 'Enter an email' %>
+
+          <%= f.password_field :password, class: 'form-control', placeholder: 'Enter your password' %>
+
+          <%= f.submit "Log in", class: "button button2" %>
+        <% end %>
+
+        <p>New user? <%= link_to "Sign up now!", "/users/new" %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="log_in">
+    <h1>Log in</h1>
+  </div>
+</div>

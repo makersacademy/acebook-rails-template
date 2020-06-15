@@ -1,7 +1,77 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<div class="main-page">
+
+  <div class="navigation-bar">
+    <div class="nav-left-wrap">
+
+      <div class="nav-logo">
+        <%= image_tag "/assets/logo.png"%>
+      </div>
+
+    </div> <%# nav-left %>
+    <div class="nav-right">
+
+        <div class="nav-right-wrap">
+
+          <%= button_to "New post", new_post_path, method: :get, class: "main_button button_new" %>
+          <%= button_to "Albums", albums_path, method: :get, class: "main_button button_add" %>
+          <%= button_to "Go to my profile", users_path, method: :get, class: "main_button button_profile" %>
+          <%= button_to "Log out", logout_path, method: :delete, class: "main_button button_logout" %>
+
+          <div class="nav-username"></div>
+          <div class="nav-profile"></div>
+          <div class="nav-picture"></div>
+
+      </div> <%# nav-right-wrap %>
+    </div> <%# nav-right %>
+  </div> <%# Navigation bar %>
+
+  <div class="posts">
+
+    <% @posts.reverse.each do |post| %>
+        <div class="post-card">
+
+          <div class="message-grid">
+
+            <div class="message-internal">
+              <div id='post-<%= post.id %>' class='post'>
+
+                <div class='message'>
+                  <%= simple_format post.message %>
+                </div>
+
+                <div class='user'>
+                  <%= User.find_by(id: post.user_id).email %>
+                </div>
+
+                <div class='timestamp'>
+                  <%= Post.format_time(post.created_at) %>
+                </div>
+
+              </div>
+
+            </div> <%# message-internal %>
+
+            <div class="right-container">
+
+              <div class="profile-thumb-container">
+                <img src="http://fanaru.com/unicorns/image/230993-unicorns-unicorn-avatar.png" alt="Avatar" class="profile-thumb">
+              </div> <%# profile-thumb %>
+
+              <div class="message-buttons">
+
+                <% if post.allow_update? %>
+
+                  <%= button_to "Edit", edit_post_path(:id => post.id), :method => :get, :id => "edit_#{post.id}", class: "main_button button_edit"%>
+                  <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id, class: "main_button button_delete" %>
+
+                <% end %>
+              </div>
+            </div> <%# right-container %>
+          </div> <%# message-grid %>
+        </div> <%# post-card%>
+    <% end %>
+
+  </div> <%# posts %>
+</div> <%# main %>
