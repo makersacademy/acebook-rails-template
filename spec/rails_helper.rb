@@ -30,6 +30,22 @@ RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
+  config.before(:suite) do
+
+  end
+
+
+  config.before(:each) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.start
+    Signup.create(:username => "bobby" , :password => "boblord95", :email => "bob@bobyd.bob")
+    5.times {Post.create(:message => "A test message", :signup_id => 1)}
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.

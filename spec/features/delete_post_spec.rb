@@ -1,15 +1,13 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
-  scenario "Can submit posts and view them" do
+feature "delete posts" do
+  scenario "Can delete my own post" do
     signup()
-    add_post("Hello, world!")
-    expect(page).to have_content("Hello, world!")
-    time = Time.new
-    expect(page).to have_content("#{time.strftime('%d/%m/%Y')}")
-    expect(Post.find_by(signup_id: 2)).to be
-  end
+    add_post("Who wants ice cream, we all want ice cream")
+    click_button "Delete6"
+    expect(page).not_to have_content("Who wants ice cream, we all want ice cream")
 
+  end
 end
 
 def signup()
