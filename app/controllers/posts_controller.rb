@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# posts controller
 class PostsController < ApplicationController
   before_action :authenticate_user!
   def new
