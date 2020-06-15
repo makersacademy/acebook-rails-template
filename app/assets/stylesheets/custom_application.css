@@ -1,0 +1,146 @@
+.panel-heading {
+  font-size: 1.5rem;
+}
+
+.btn-primary-custom {
+  color: #07575B;
+  background-color: #C4DFE6;
+  border-color: #C4DFE6;
+  margin-top: 5px;
+}
+
+.btn-primary-custom:hover {
+  color: #C4DFE6;
+  background-color: #003B46;
+  border-color: #003B46;
+  margin-top: 5px;
+}
+
+.mx-auto-custom {
+  width: 400px;
+  margin: auto;
+}
+
+.page-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+  color: #07575B;
+}
+.page-subtitle {
+  font-size: 2.0rem;
+  font-weight: 200;
+  line-height: 1.2;
+  text-align: center;
+  color: #66A5AD;
+}
+
+a {
+  color: #003B46;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+
+.posts {
+  padding: 2%;
+  padding-bottom: 5%;
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: #C4DFE6;
+}
+
+.comment {
+  padding: 2%;
+  padding-bottom: 5%;
+  margin-top: 2%;
+  margin-left: 20%;
+  margin-right: 10%;
+  background-color: #c4dfe68c;
+}
+
+.not_found_error {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: center;
+  color: #07575B;
+}
+
+.user_name {
+  text-decoration: underline;
+  display: inline;
+  text-align: left;
+}
+
+.post_time {
+  font-size: 0.8rem;
+  display: inline;
+  float: right;
+}
+
+.post_message {
+}
+
+.post_link {
+  display: inline;
+  float: left;
+  position: relative;
+  padding: 5px;
+  text-decoration: underline;
+}
+
+.new_post_link {
+  width: 100px;
+  padding: 5px;
+  margin-left: 10%;
+  text-align: center;
+  background-color: #c4dfe68c;
+  border: 1px solid #003B46;
+}
+
+.post_form {
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.post_form label {
+  display: block;
+  text-align: left;
+  width: 6em;
+  margin-right: 1em;
+  margin-top: 0.4em;
+  color: #07575B;
+}
+
+.post_form textarea {
+  border-radius: 5px;
+  border-color: #66A5AD;
+  color: black;
+  width: 300px;
+  height: 100px;
+}
+
+.post_form input[type=submit] {
+  display: block;
+  float: bottom;
+  color: #07575B;
+  background-color: #C4DFE6;
+  border-color: #C4DFE6;
+}
+
+.user_li {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2;
+  text-align: center;
+  text-decoration: underline;
+  color: #07575B;
+}
