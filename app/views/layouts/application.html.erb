@@ -9,6 +9,21 @@
   </head>
 
   <body>
+  <div class=banner>
+    <div class='logo'>
+      <h1><a href=
+      <%= session[:user_id] ? '/posts/index' : '/'  %>
+      >
+      acebook
+      </a></h1>
+    </div>
+    <div class='banner_items'>
+    <% if session[:user_id] %>
+      <h2><%= link_to 'logout', logout_path %></h2>
+    <%end%>
+    </div>
+  </div>
+  <p id=”notice”><%= flash[:notice] %></p>
     <%= yield %>
   </body>
 </html>
