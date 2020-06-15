@@ -19,6 +19,17 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# visuals
+gem 'bootstrap', '~> 4.2.1'
+gem 'jquery-rails'
+
+
+gem 'devise', '~> 4.2'
+# linter
+gem 'rubocop', '0.56.0'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.2.1'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -34,8 +45,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem 'simplecov', require: false
+  gem 'coveralls', require: false
 end
 
 group :development do

@@ -4,17 +4,32 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    @post = Post.create({"text"=>params[:post][:text], "poster_username"=> current_user.username, "recipient_username" => params[:post][:recipient_username]})
+    redirect_back(fallback_location: root_path)
+
   end
 
   def index
     @posts = Post.all
   end
 
+  def homepage
+
+  end
+
+  def show
+    @profile = User.find(params[:profile_id])
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments
+  end
+
+
   private
 
   def post_params
     params.require(:post).permit(:message)
   end
+
+
 end
