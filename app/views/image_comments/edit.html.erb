@@ -1,0 +1,8 @@
+<h1>New Image Post Comment</h1>
+
+<%= form_for @image_post do |form| %>
+  <%= form.label :image_post_comment %>
+  <%= form.text_area :image_post_comment %>
+
+  <%= form.submit "Update" %>
+<% end %>

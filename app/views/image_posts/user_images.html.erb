@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Image Posts</h1>
+
+<% get_images_by_user(current_user).each do |image_post| %>
+  <div>
+    <%= image_tag(image_post.picture_url, width: 600) if image_post.picture.present? %> <br>
+    <%= image_post.caption %> <br>
+    <p> Posted by <%= find_image_post_email(image_post) %> <%= time_ago_in_words(image_post.created_at || Time.now) %> ago. </p>
+
+    <%= link_to 'Edit', edit_image_post_path(image_post) %> |
+    <%= link_to 'Back', image_posts_path %>
+    <hr>
+  </div>
+<% end %>

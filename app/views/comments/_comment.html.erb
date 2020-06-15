@@ -1,0 +1,4 @@
+<% if comment.comment_text != nil %>
+<% time = comment.created_at%>
+<p><%= simple_format(comment.comment_text) %> - <%= time_ago_in_words(comment.created_at || Time.now) %> - <%= get_comment_email(comment.user_id) %></p>
+<% end %>

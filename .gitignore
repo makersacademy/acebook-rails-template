@@ -6,10 +6,10 @@
 
 # Ignore bundler config.
 /.bundle
-
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -21,3 +21,13 @@
 /yarn-error.log
 
 .byebug_history
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# coverage files
+coverage
+public/uploads/image_post/
+public/uploads/tmp
