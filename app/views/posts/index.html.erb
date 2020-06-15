@@ -15,7 +15,7 @@
         <td>User</td>
   <% if current_user == post.user %>
         <td class='edit'><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td class='delete'><%= link_to 'Delete', post_path(post)
+        <td class='delete'><%= link_to 'Delete', post_path(post),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
       <% end %>

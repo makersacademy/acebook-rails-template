@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/models/user.rb": {
+      "/Users/student/Projects/acebook-freight-train-to-railsville/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -16,7 +16,7 @@
           null
         ]
       },
-      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/models/application_record.rb": {
+      "/Users/student/Projects/acebook-freight-train-to-railsville/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -38,7 +38,7 @@
           null
         ]
       },
-      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/helpers/application_helper.rb": {
+      "/Users/student/Projects/acebook-freight-train-to-railsville/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -47,7 +47,7 @@
           null
         ]
       },
-      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/controllers/posts_controller.rb": {
+      "/Users/student/Projects/acebook-freight-train-to-railsville/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
@@ -55,60 +55,57 @@
           1,
           1,
           1,
-          3,
-          null,
-          null,
-          1,
-          4,
-          4,
-          4,
-          4,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          7,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
           1,
           5,
           null,
           null,
           1,
+          6,
+          6,
+          6,
+          6,
+          null,
           null,
           1,
-          9,
+          0,
+          null,
+          null,
+          1,
+          12,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          13,
           null,
           null
         ]
       },
-      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/controllers/application_controller.rb": {
+      "/Users/student/Projects/acebook-freight-train-to-railsville/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -123,12 +120,41 @@
           null
         ]
       },
-      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/controllers/users/sessions_controller.rb": {
+      "/Users/student/Projects/acebook-freight-train-to-railsville/app/models/post.rb": {
         "lines": [
           null,
           null,
           null,
           1,
+          1,
+          null
+        ]
+      },
+      "/Users/student/Projects/acebook-freight-train-to-railsville/app/models/ability.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          27,
+          27,
+          27,
+          27,
+          27,
+          27,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null,
@@ -201,6 +227,8 @@
       },
       "/Users/student/Projects/acebook-freight-train-to-railsville/app/jobs/application_job.rb": {
         "lines": [
+          null,
+          null,
           0,
           0
         ],
@@ -283,7 +311,7 @@
         "branches": {
         }
       },
-      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/controllers/users/unlocks_controller.rb": {
+      "/Users/student/Projects/acebook-freight-train-to-railsville/app/controllers/users/unlocks_controller.rb": {
         "lines": [
           null,
           null,
@@ -319,7 +347,7 @@
         "branches": {
         }
       },
-      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/controllers/users/confirmations_controller.rb": {
+      "/Users/student/Projects/acebook-freight-train-to-railsville/app/controllers/users/confirmations_controller.rb": {
         "lines": [
           null,
           null,
@@ -355,7 +383,7 @@
         "branches": {
         }
       },
-      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/controllers/users/registrations_controller.rb": {
+      "/Users/student/Projects/acebook-freight-train-to-railsville/app/controllers/users/registrations_controller.rb": {
         "lines": [
           null,
           null,
@@ -423,7 +451,7 @@
         "branches": {
         }
       },
-      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/channels/application_cable/connection.rb": {
+      "/Users/student/Projects/acebook-freight-train-to-railsville/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -435,7 +463,7 @@
         "branches": {
         }
       },
-      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/channels/application_cable/channel.rb": {
+      "/Users/student/Projects/acebook-freight-train-to-railsville/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -448,6 +476,6 @@
         }
       }
     },
-    "timestamp": 1592220528
+    "timestamp": 1592230518
   }
 }

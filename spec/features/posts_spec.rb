@@ -33,6 +33,7 @@ RSpec.feature 'Posts', type: :feature do
   scenario "Signed in users can delete posts, only if its their post" do
     sign_up
     add_post
+    save_and_open_page
     within (".delete") do
       click_link "Delete"
     end
