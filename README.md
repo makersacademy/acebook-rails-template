@@ -14,6 +14,14 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Quickstart
 
+## Quality control 
+- simplecov 
+  - connected to rspec
+- rubocop 
+  - run `rubocop`
+- rubycritic 
+  - run `rubocritic`
+
 First, clone this repository. Then:
 
 ```bash
