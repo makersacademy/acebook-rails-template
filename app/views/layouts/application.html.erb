@@ -2,13 +2,68 @@
 <html>
   <head>
     <title>Acebook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'application' %>
+
   </head>
 
   <body>
-    <%= yield %>
+
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">Acebook</a>
+
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to "Home", home_path, class: 'nav-link'  %>
+          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+                <%= link_to "My profile", profile_page_path(current_user[:id]), class: 'nav-link'  %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "New post", new_post_path, class: 'nav-link'  %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Find friends", friendships_search_path, method: :get, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <% if notice %>
+              <div class="alert alert-success" role="alert">
+                <%= notice %>
+              </div>
+            <% end %>
+
+            <% if alert %>
+              <div class="alert alert-warning" role="alert">
+                <%= alert %>
+              </div>
+            <% end %>
+        </div>
+        <%= yield %>
+    </div>
+
   </body>
 </html>

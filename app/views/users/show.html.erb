@@ -1,0 +1,78 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+<% if @user.id == current_user.id%>
+    <h3 class="panel-title">My Profile</h3>
+<% else %>
+  <h3 class="panel-title">Profile</h3>
+<% end %>
+  </div>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 " align="center">
+        <%= image_tag @user.avatar.url, size:"100x100" %>
+      </div>
+      <div class=" col-md-9 col-lg-9 ">
+        <table class="table table-user-information">
+          <tbody>
+            <tr>
+              <td>Username:</td>
+              <td><%= @user.username %></td>
+            </tr>
+            <tr>
+              <td>First name:</td>
+              <td><%= @user.firstname %></td>
+            </tr>
+            <tr>
+              <td>Last name:</td>
+              <td><%= @user.lastname %></td>
+            </tr>
+            <tr>
+              <td>Date of Birth</td>
+              <td><%= @user.birthday %></td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td><%= @user.email %></td>
+            </tr>
+            <tr>
+              <td>Bio</td>
+              <td><%= @user.bio %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<% if @user.id == current_user.id%>
+ <div class="panel-footer">
+    <span class="pull-right">
+        <a href="edit.html" type="button" class="btn btn-info mb-2">Edit</a>
+        <%= button_to("Delete", cancel_user_registration_path(@user.id),
+          data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger") %>
+    </span>
+  </div>
+<% end %>
+
+  <div id="your-friends">
+    <br>
+    <h3>Friends: </h3>
+    <hr>
+    <div class="card-columns">
+      <% @friends.each do |friend| %>
+          <div class="card col-5">
+            <%= link_to profile_page_path(friend.id) do %>
+              <div class="card-body">
+                <%= image_tag friend.avatar.url, size:"50x50", class: "mr-2 rounded-circle center"%>
+                <%= "#{friend.firstname} #{friend.lastname}" %>
+              
+              <% if @user.id == current_user.id %>
+                <%= link_to "unfriend","#" %>
+              <% end %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+  </div>

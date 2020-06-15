@@ -18,6 +18,7 @@ First, clone this repository. Then:
 
 ```bash
 > bundle install
+> brew bundle
 > bin/rails db:create
 > bin/rails db:migrate
 

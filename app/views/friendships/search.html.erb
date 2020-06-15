@@ -1,0 +1,23 @@
+<form action="search" method="get">
+  <input type="text" name="search" placeholder="Enter friend's name">
+  <input type="submit" value="submit" >
+</form>
+
+<% if @results %>
+  <% @results.each do |friend| %>
+    <%= link_to profile_page_path(friend.id) do %>
+      <hr>
+      <%= "#{friend.firstname} #{friend.lastname}" %>
+    <% end %>
+      <form  action="create" method="post">
+        <%= token_tag %>
+        <input type="hidden" name="friend_id" value="<%= friend.id %>">
+        <% if already_friends?(current_user, friend) %>
+          <h6>Already friends!</h6>
+        <% else %>
+          <input type="submit" value="Add Friend">
+        <% end %>
+      </form>
+      </br>
+  <% end %>
+<% end %>
