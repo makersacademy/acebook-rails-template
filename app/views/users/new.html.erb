@@ -1,0 +1,29 @@
+
+  <% if flash[:bad_email] %>
+    <div class='notice'> <%= flash[:bad_email] %> </div>
+  <% end %>
+
+<% provide(:title, 'Sign up') %>
+
+<div class="sign_grid">
+
+  <div class="container">
+    <div class="row">
+      <div class="input-field col s6">
+        <%= form_for(@user) do |f| %>
+
+          <%= f.email_field :email, placeholder: 'Enter an email adress' %>
+
+          <%= f.password_field :password, placeholder: 'Enter password' %>
+
+          <%= f.submit "Create my account", class: "button button2" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="sign">
+      <h1>Sign up</h1>
+  </div>
+  
+</div>
