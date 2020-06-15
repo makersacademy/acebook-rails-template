@@ -1,0 +1,53 @@
+
+<h1>Acebook</h1>
+<p>Welcome to Acebook! </p>
+
+<div class='row'>
+  <div class='col-xs-3'>
+    <div class="panel panel-default">
+     <div class="panel-body">
+       <button> News feed </button>
+    <!---  <p> left </p> --->
+     </div>
+    </div>
+  </div>
+
+
+
+  <div class='col-xs-6'>
+    <% for @p in @posts %>
+    <div class="panel panel-default">
+       <div class="panel-body">
+         <div id="timeline"
+         <p> <%= @p.content %></p>
+         </div>
+       </div>
+    </div
+         <% end %>
+  </div>
+
+
+  <div class='col-xs-3'>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <button> Stories </button>
+    <!--- <p> right </p> --->
+      </div>
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-xs-3'>
+    <div class="panel panel-default">
+     <div class="panel-body">
+    <!---  <p> trend left </p> --->
+     </div>
+    </div>
+  </div>
+
+
+<style>
+h1 {
+  color: #3b5998;
+}
+</style>
