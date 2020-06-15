@@ -1,0 +1,10 @@
+<div class="container text-center">
+  <h1><%=@user.first_name%>'s profile</h1>
+  <h2><%=@user.first_name%>'s posts:</h2>
+  <div class="container text-center">
+    <% @posts.reverse.each do |post| %>
+      <p class="post-message"><%= post.message %> <%= post.created_at.strftime("%d/%m") %></p>
+      <p>Likes <%= post.likes.count %></p>
+    <% end %>
+  </div>
+</div>

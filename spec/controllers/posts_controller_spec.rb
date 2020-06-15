@@ -1,29 +1,50 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  describe "GET /new " do
-    it "responds with 200" do
-      get :new
-      expect(response).to have_http_status(200)
+
+  let(:user) { FactoryBot.create(:user) }
+
+  describe "When user NOT Logged IN" do
+
+    describe "GET /new " do
+      it "responds with 200" do
+        get :new
+        expect(response).to have_http_status(302)
+      end
     end
   end
 
-  describe "POST /" do
-    it "responds with 200" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect(response).to redirect_to(posts_url)
+  describe "When Logged IN" do
+
+    before :each do
+      login_as(user, scope: :user)
     end
 
-    it "creates a post" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect(Post.find_by(message: "Hello, world!")).to be
+    describe "GET / " do
+      it "responds with 200" do
+        get :index
+        expect(response).to have_http_status(200)
+      end
     end
+
+    describe "GET /new " do
+      it "responds with 200" do
+        get :new
+        expect(response).to have_http_status(200)
+      end
+    end
+
+    describe "POST /" do
+      it "creates a post" do
+        post :create, params: { post: { title: 'Hello, world!' } }
+        expect(response).to redirect_to(posts_url)
+      end
+    end
+
+    after :all do
+      logout
+    end
+
   end
 
-  describe "GET /" do
-    it "responds with 200" do
-      get :index
-      expect(response).to have_http_status(200)
-    end
-  end
 end

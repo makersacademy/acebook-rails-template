@@ -1,0 +1,17 @@
+<div class="container new-post">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1 class="text-center">Edit your post</h1>
+      <%= bootstrap_form_for(@post) do |f| %>
+        <%= f.text_area :message,
+                        rows: 6,
+                        required: true,
+                        minlength: 0,
+                        maxlength: 1000,
+                        placeholder: @post,
+                        class: 'form-control' %>
+        <%= f.submit "Submit", class: 'form-control create-post-button' %>
+      <% end %>
+    </div>
+  </div>
+</div>
