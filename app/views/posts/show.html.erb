@@ -1,0 +1,33 @@
+<% @user = User.find(@post.creator_id) %>
+
+<div id="logout">
+  <%= link_to 'Back', :users, :class => 'btn btn-secondary btn-sm' %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
+</div>
+<div class="comments">
+  <div class="createdby">
+    <small><%= "created by: " %> <%= @user.email %></small><br>
+    <small> <%= @post.created_at %></small>
+  </div><br>
+  <h3>Post</h3>
+  <div id="post-description" class="box-shadow">
+    <%= @post.description %>
+ </div><br>
+
+
+<h2>Add a comment:</h2>
+
+<%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
+
+  <p>
+
+    <%= form.text_area :body, :class => "textarea" %>
+  </p>
+  <p>
+    <%= form.submit "Create Comment", :class => 'btn btn-primary btn-sm' %>
+  </p><br>
+<% end %>
+
+<div class="comment-background">
+  <%= render @post.comments %>
+</div>

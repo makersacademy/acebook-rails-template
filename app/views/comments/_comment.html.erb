@@ -1,0 +1,20 @@
+<div class="eachcomment">
+
+
+<div class="createdby">
+  <small>Commented by:</small><br>
+  <%= comment.commenter_id %>
+</div>
+
+  <%= comment.body %>
+  <br><br>
+
+  <div class="buttons">
+    <% if current_user.id == comment.commenter_id %>
+    <%= link_to 'Delete', [comment.post, comment], :class => 'btn btn-secondary btn-sm',
+                 method: :delete,
+                 data: { confirm: 'Are you sure?' } %>
+    <%end%>
+  </div>
+</div>
+<br>

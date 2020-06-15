@@ -1,0 +1,121 @@
+
+<div>
+
+
+
+<div id="helloUser">
+
+  <p><%= link_to "Go to Profile", edit_user_path(current_user), :class => 'btn btn-primary btn-sm'%></p>
+
+  <% if current_user.avatar != "" %>
+      <img src=<%= current_user.avatar %> width="150" height="150" class="avatar">
+  <% end %>
+
+  <br>
+  <% if user_signed_in? %>
+    Hello,
+
+    <% if current_user.user_name != nil && current_user.user_name.length > 0  %>
+      <em> <%= current_user.user_name %> </em>
+    <% else %>
+      <em> <%= current_user.email %> </em>
+    <% end %>
+    !
+  <% end %>
+</div><br>
+
+<div id="logout">
+
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-secondary btn-sm' %>
+
+</div>
+
+<%= form_with scope: :post, url: posts_path,local: true do |form| %>
+<div id="createPost">
+  <p>Add Post</p>
+
+  <%= form.text_area :description, :class => "textarea" %><br>
+
+  <div id="PostButton">
+    <%= form.submit "Create Post", :class => 'btn btn-primary btn-sm' %>
+  </div>
+</div><br>
+<% end %>
+
+<div style="clear:both;"></div>
+<br>
+<div id="users">
+  <h1 id="usersHeader">Users Profile</h1>
+
+  <small id="usersHeader">Explore other posts and have a fun !</small>
+  <hr>
+<% @users.each do |user| %>
+
+    <% if user.id != current_user.id%>
+    <ul id="eachUser">
+    <a style="color: white; text-decoration: none;" href="<%=user_path(user)%>">
+      <div>
+        <% if user.user_name != nil && user.user_name.length > 0  %>
+          <%= user.user_name %>
+        <% else %>
+          <%= user.email %>
+        <% end %>
+        <br>
+      </div>
+    </a>
+
+    <% end %>
+  </ul>
+<% end %>
+<hr>
+  </div>
+
+
+
+<table align="center" id="test">
+  <% @posts.reverse.each do |post| %>
+    <tr>
+      <% @user = User.find(post.creator_id) %>
+      <% if current_user.id == post.creator_id %>
+      <div class="eachpost">
+        <div class="createdby">
+          <small><%= "created by: " %> <%= @user.email %></small><br>
+          <small> <%= post.created_at %></small>
+        </div><br>
+
+        <div>
+          <%= post.description %>
+        </div><br>
+
+        <div class="buttons">
+
+
+        <% pre_like = post.likes.find{|like| like.user_id == current_user.id } %>
+        <% if pre_like %>
+          <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete, :class => 'btn btn-secondary btn-sm' %>
+          <p> <%= post.likes.count %></p>
+        <% else %>
+          <%= link_to 'Like', post_likes_path(post), method: :post, :class => 'btn btn-secondary btn-sm' %>
+          <p> <%= post.likes.count %></p>
+        <% end %>
+
+
+
+
+        <%= link_to 'Comment', post_path(post), :class => 'btn btn-secondary btn-sm' %>
+        <% if current_user.id == post.creator_id %>
+        <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-secondary btn-sm' %>
+        <%= link_to 'Delete', post_path(post), :class => 'btn btn-secondary btn-sm',
+                method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div><br>
+      <% end %>
+    </tr>
+    <% end %>
+  <% end %>
+
+</table>
+
+
+</div>
