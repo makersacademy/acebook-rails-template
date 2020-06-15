@@ -1,6 +1,33 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<%= button_to "Log out", logout_path, method: :delete %>
+
+<% if flash[:success] %>
+  <div class='notice'> <%= flash[:success] %> </div>
 <% end %>
+
+<% if flash[:no_delete] %>
+  <div class='notice'> <%= flash[:no_delete] %> </div>
+<% end %>
+
+
+<% @posts.reverse.each do |post| %>
+  <div id='post-<%= post.id %>' class='post'>
+    <div class='message'>
+      <%= simple_format post.message %>
+    </div>
+    <div class='timestamp'>
+      <%= Post.format_time(post.created_at) %>
+    </div>
+    <div class="edit-link">
+      <%= link_to edit_post_path(post) do %>
+        edit post
+      <% end %>
+    </div>
+    <div class="delete-button">
+      <%= button_to "Delete", post_path(:id => post.id), :method => :delete, :id => post.id %>
+    </div>
+  </div>
+<% end %>
+
 
 <%= link_to new_post_path do %>
   New post
