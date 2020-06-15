@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Edit Comment</h1>
+ 
+  <%= form_for [@post, @comment] do |form| %>
+      <%= form.label 'Add Comment' %><br>
+      <%= form.text_area :body %>
+    <p>
+      <%= form.submit 'Save' %>
+    </p>
+  <% end %>
+
+  <script>
+    var area = document.getElementById("area");
+    document.getElementById("new_post").addEventListener('keydown', function (event) {
+      if (event.keyCode === 13 && event.target !== area) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

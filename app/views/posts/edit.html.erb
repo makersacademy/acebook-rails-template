@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id='post-spacer'>
+</div>
+<div class="card">
+  <div id='new-post-header'>
+      EDIT POST
+  </div>
+</div>
+<div id='post-spacer'>
+</div>
+
+<div id='new-post-form'>
+
+<%= form_for @post do |form| %>
+    <div id='form-header'>
+      <%= form.label :message %>
+    </div>
+  <div class="card">
+  <div id='form-text-area'>
+    <%= form.text_area :message, :maxlength => 500, :size => 40, :id => "area" %>
+  </div>
+  <div id='form-submit-btn'>
+    <%= form.submit "Submit" %>
+  </div>
+  </div>
+<% end %>
+
+  <script>
+    var area = document.getElementById("area");
+    document.getElementById("new_post").addEventListener('keydown', function (event) {
+      if (event.keyCode === 13 && event.target !== area) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

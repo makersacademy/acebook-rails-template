@@ -1,0 +1,17 @@
+language: ruby
+dist: trusty
+rvm:
+- 2.5.0
+services:
+- postgresql
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+script:
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: "PvFZsLqCvhOGRrVtObmdaH5aq6A+Li4wvPdd+Onbk1yW3loBP79cr8IkIRaushTKsHfAoXwZTxr1t2bOSYLpZ5BcaTG7Sp9E1hSiB2FE4qnM0v/Tglfu/XCedUVS8pGwkVxugUbDSUzv3SXZvLkKMAj6IBF5LEUlKS4AazmxmRP1uyi7P3PA6LnK89/KmJ3uQh7yC0GsfDIm5UHpUv9xXSRcf7eLozyraI4vtczAfsO/dTYI9s5aJuIzMdW3rwxQjrOcdGzd4qluEIQjFIBgw64BK6NdAw33S0KTOHwkKM8a6JGs8wiomwgNIaZYQ2/8cfmNZjcI5zylALVKFkO7AbFtglz/T8PDZ/zu+0nA4YvOx5NXkdwwDeT87U2kCNvAM5OXGFh3xW58otQZHKsctgpqaOlzahJ6QGXBCt/o0h0QN0Oc1pkMcAzXP2rBYTWhq111k0v0umrVKIjqz8y5+ZbQYf1vFcyxjX+iCtd9Mx4u4zKd151QsLf56qWij3LUh1Dv39olmVmZR1G56Net3r2LmTYY2xUkMnsqH3tx1wbhQnfKqBQ39X3RSGLoDM/agiEd6sYUYTS7T0myPZy4cjkkG5QEuI8ty5fHhjUWipISpgI5pkrzYaL2YBHuaALgpauDYIZKdo3ieyIMmO2CRXzxqJcWogim2MXIDrquLcU="
+  app: 
+    develop: acebook-catbook-inc
