@@ -26,9 +26,15 @@
 
 
 <p>
-<%= link_to new_post_path do %>
-  New post
+<% if user_signed_in? == false %>
+  <%= link_to "Sign up", new_user_registration_path %>
+  <%= link_to "Sign in", new_user_session_path %>
+<% else %>
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
+  <%= link_to "Sign out", destroy_user_session_path,
+                method: :get,
+                data: { confirm: 'Are you sure?' } %>
 <% end %>
-<%= link_to "Sign out", destroy_user_session_path,
-              method: :get,
-              data: { confirm: 'Are you sure?' } %>
+</p>
