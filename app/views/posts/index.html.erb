@@ -4,6 +4,7 @@
       <th scope="col">Message</th>
       <th scope="col">Created at</th>
       <th scope="col">User</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -12,16 +13,22 @@
         <td><%= simple_format(post.message) %></td>
         <td><%= post.created_at %></td>
         <td>User</td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+  <% if current_user == post.user %>
+        <td class='edit'><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td class='delete'><%= link_to 'Delete', post_path(post)
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
     </tr>
   <% end %>
   </tbody>
 </table>
 
+
+<p>
 <%= link_to new_post_path do %>
   New post
 <% end %>
-
 <%= link_to "Sign out", destroy_user_session_path,
               method: :get,
               data: { confirm: 'Are you sure?' } %>

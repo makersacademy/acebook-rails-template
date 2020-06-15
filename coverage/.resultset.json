@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Projects/acebook-freight-train-to-railsville/app/models/user.rb": {
+      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -16,17 +16,29 @@
           null
         ]
       },
-      "/Users/student/Projects/acebook-freight-train-to-railsville/app/models/application_record.rb": {
+      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/models/application_record.rb": {
         "lines": [
           null,
           null,
           null,
           1,
           1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/Users/student/Projects/acebook-freight-train-to-railsville/app/helpers/application_helper.rb": {
+      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -35,7 +47,7 @@
           null
         ]
       },
-      "/Users/student/Projects/acebook-freight-train-to-railsville/app/controllers/posts_controller.rb": {
+      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
@@ -67,23 +79,36 @@
           1,
           1,
           null,
+          1,
           0,
           null,
-          null,
-          null,
           1,
           1,
           null,
           null,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           1,
           5,
           null,
+          null,
+          1,
+          null,
+          1,
+          9,
+          null,
           null
         ]
       },
-      "/Users/student/Projects/acebook-freight-train-to-railsville/app/controllers/application_controller.rb": {
+      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -91,16 +116,42 @@
           1,
           1,
           1,
+          1,
+          0,
+          0,
+          null,
           null
         ]
       },
-      "/Users/student/Projects/acebook-freight-train-to-railsville/app/models/post.rb": {
+      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/controllers/users/sessions_controller.rb": {
         "lines": [
           null,
           null,
           null,
           1,
-          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -150,8 +201,6 @@
       },
       "/Users/student/Projects/acebook-freight-train-to-railsville/app/jobs/application_job.rb": {
         "lines": [
-          null,
-          null,
           0,
           0
         ],
@@ -234,7 +283,7 @@
         "branches": {
         }
       },
-      "/Users/student/Projects/acebook-freight-train-to-railsville/app/controllers/users/unlocks_controller.rb": {
+      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/controllers/users/unlocks_controller.rb": {
         "lines": [
           null,
           null,
@@ -270,7 +319,7 @@
         "branches": {
         }
       },
-      "/Users/student/Projects/acebook-freight-train-to-railsville/app/controllers/users/confirmations_controller.rb": {
+      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/controllers/users/confirmations_controller.rb": {
         "lines": [
           null,
           null,
@@ -306,7 +355,7 @@
         "branches": {
         }
       },
-      "/Users/student/Projects/acebook-freight-train-to-railsville/app/controllers/users/registrations_controller.rb": {
+      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/controllers/users/registrations_controller.rb": {
         "lines": [
           null,
           null,
@@ -374,7 +423,7 @@
         "branches": {
         }
       },
-      "/Users/student/Projects/acebook-freight-train-to-railsville/app/channels/application_cable/connection.rb": {
+      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -386,7 +435,7 @@
         "branches": {
         }
       },
-      "/Users/student/Projects/acebook-freight-train-to-railsville/app/channels/application_cable/channel.rb": {
+      "/Users/Jonathan/Desktop/Ruby_Makers/acebook-freight-train-to-railsville/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,

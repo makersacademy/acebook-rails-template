@@ -3,6 +3,7 @@
 # posts controller
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   def new
     @post = Post.new
   end
@@ -25,11 +26,20 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @posts = Post.all
-    if @post.update(post_params)
-      redirect_to posts_path
-    else
+
+    if @post.validate_is_editable
       render 'edit'
+
+    elsif @post.update(post_params)
+      redirect_to posts_path
+
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
   end
 
   def edit
