@@ -1,0 +1,33 @@
+<p id=”notice”><%= flash[:notice] %></p>
+<h1><%= User.find(params[:id]).email %>'s profile </h1>
+
+<div class='posts-body'>
+<article class='posts'>
+<%
+=begin%>
+ <% @posts.each do |post| %>
+  <% @user = User.find(post.users_id) %>
+  <article class="post" id='<%= post.id %>'>
+      <header>
+        <p> <%= post.message %> </p>
+      </header>
+      <footer class='post-footer'>
+        <span>&#x1F9E1 0<span>
+        <p>
+          posted at
+          <time datetime= <%= post.created_at %> ></time>
+          by <a href='users/<%=@user.id%>'><%= @user.username %>.</a>
+        </p>
+    </footer>
+    
+  </article>
+  
+  
+<% end %> 
+<%
+=end%>
+</article>
+</div>
+<%= link_to new_post_path do %>
+  New post
+<% end %>
