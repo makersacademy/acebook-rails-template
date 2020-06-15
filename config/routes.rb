@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  resources :posts
+  devise_for :users, :controllers => { sign_up: 'registrations' }
+  resources :posts, :shallow => true do
+    resources :likes
+  end
+  root to: 'posts#index'
+  get '/:id', to: 'user#user', as: :user_page
 end

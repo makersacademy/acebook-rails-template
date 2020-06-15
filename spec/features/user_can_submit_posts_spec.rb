@@ -1,11 +1,11 @@
 require 'rails_helper'
+require_relative '../web_helpers.rb'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
-    visit "/posts"
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    visit_site_sign_up
+    hello_world_post
+  
     expect(page).to have_content("Hello, world!")
   end
 end

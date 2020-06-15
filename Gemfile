@@ -1,11 +1,16 @@
 source 'https://rubygems.org'
+ruby '2.5.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'jquery-rails'
 
+gem 'bootstrap', '~> 4.1.3'
+
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use postgresql as the database for Active Record
@@ -29,13 +34,18 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+  gem 'sanitize'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem 'rubocop', require: false
+  gem 'selenium-webdriver'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
 end
 
 group :development do
