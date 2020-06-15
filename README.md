@@ -1,26 +1,38 @@
 # AceBook
 
-REQUIRED INSTRUCTIONS:
+[![Build Status](https://travis-ci.com/m-budryte/acebook-zuckerbros.svg?branch=master)](https://travis-ci.com/m-budryte/acebook-zuckerbros)
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+![Coverage](https://github.com/m-budryte/acebook-zuckerbros/blob/master/badge.svg)
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+MVP aims to have basic functionality:
 
-2. The card wall is here: <please update>
+1. Users can make posts
+2. Users can see posts
+3. Users can edit posts
+4. Users can delete posts
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+Currently 1 and 2 are completed and 3 is in progression. Next step is to have posts that are edited, have their changes implemented.
 
-## Quickstart
+The app was deployed on the AWS server. http://production.ujbndkqft3.eu-west-2.elasticbeanstalk.com/
 
-First, clone this repository. Then:
+## Setup instructions
+- clone repo
+run
 
 ```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
+bundle install
 ```
+## Usage
+run
+```bash
+rails s
+```
+
+## Running tests
+run 
+```
+rspec
+```
+in project directory
+
+

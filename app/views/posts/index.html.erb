@@ -1,7 +1,42 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>   
+
+
+  <div class="container-fluid">
+    <center>
+      <% if user_signed_in? %>
+      <div class="container-fluid">
+        <%= link_to new_post_path, :class => "btn btn-outline-success" do %>New post<% end %>
+      </div><br>
+      <%end%>
+
+      <div class="container">
+        <% @posts.each do |post| %>
+          <div class="card">
+            <div class="card-body">
+              <p> Posted by: <%= post.user.first_name %>
+
+              <h3><%= post.message %></h3>
+                <% if post.user == current_user %>
+                  <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
+                  <%= link_to edit_post_path(post), :class => "btn btn-outline-dark" do %>
+                    Edit
+                  <% end %><br><br>
+                <% end %>
+                <p class="text-right"><%= post.created_at.strftime('%b %d, %H:%M ') %></p>
+            </div>
+          </div><br>
+        <% end %>
+      </div>
+    </center>
+  </div>
+</html>
