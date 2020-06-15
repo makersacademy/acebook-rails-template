@@ -11,13 +11,20 @@ RSpec.feature "Posts", type: :feature do
   scenario "Signed in user can edit posts" do
     sign_up
     add_post
-    click_link "Edit"
+    save_and_open_page
+    within (".posts") do
+      click_link "Edit"
+    end
     fill_in "Message", with: "Goodbye, world!"
     click_button 'Submit'
     expect(page).to have_content("Goodbye, world!")
   end
 
-  scenario "Signed in user can edit posts, only if its their post"
+  scenario "Signed in user can edit posts, only if its their post" do
     sign_up
-    click_link "Edit"
+    add_post
+    within (".posts") do
+      click_link "Edit"
+    end
+  end
 end
