@@ -43,7 +43,6 @@ group :development, :test do
   gem 'rubocop', '~> 0.85.1', require: false
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
-  gem 'rubocop', require: false
   gem 'factory_bot_rails'
 end
 
