@@ -7,11 +7,12 @@ class Ability
     can :read, Post, public: true
     if user.present?
       can :read, :all
+      can :destroy, Post, user_id: user.id
       can :create, Post
       can :update, Post, user_id: user.id
     end
   end
-end 
+end
 
 
 

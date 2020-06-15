@@ -7,7 +7,7 @@ class ApplicationRecord < ActiveRecord::Base
 
   def validate_is_editable
     if self.persisted? && !self.editable?
-      self.errors[:ERROR!] << "can edit in just 10 minutes after creation"
+      self.errors[:ERROR!] << "You can edit just 10 minutes after creation"
     end
   end
 

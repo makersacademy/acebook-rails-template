@@ -1,12 +1,18 @@
 <% @posts.each do |post| %>
-  <p class="posts"><%= post.message %>  <%= link_to 'Edit', edit_post_path(post) %> <%= link_to 'Delete', post_path(post), method: :delete,
-              data: { confirm: 'Are you sure?' } %></p>
+  <p><%= post.message %></p>
+
+<% if current_user == post.user %>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Delete', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
 <% end %>
 
+<p>
 <%= link_to new_post_path do %>
   New post
 <% end %>
-
 <%= link_to "Sign out", destroy_user_session_path,
               method: :get,
               data: { confirm: 'Are you sure?' } %>
