@@ -12,7 +12,7 @@ RSpec.feature "Posts", type: :feature do
     sign_up
     add_post
     save_and_open_page
-    within (".posts") do
+    within (".edit") do
       click_link "Edit"
     end
     fill_in "Message", with: "Goodbye, world!"
@@ -23,8 +23,16 @@ RSpec.feature "Posts", type: :feature do
   scenario "Signed in user can edit posts, only if its their post" do
     sign_up
     add_post
-    within (".posts") do
+    within (".edit") do
       click_link "Edit"
+    end
+  end
+
+  scenario "Signed in users can delete posts, only if its their post" do
+    sign_up
+    add_post
+    within (".delete") do
+      click_link "Delete"
     end
   end
 end
