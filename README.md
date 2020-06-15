@@ -1,4 +1,10 @@
+[![Build Status](https://travis-ci.com/leoncross/acebook-firenze.svg?branch=master)](https://travis-ci.com/leoncross/acebook-firenze)
+
+[![Coverage Status](https://coveralls.io/repos/github/leoncross/acebook-firenze/badge.svg?branch=master)](https://coveralls.io/github/leoncross/acebook-firenze?branch=master)
+
 # AceBook
+
+Currently deployed at https://acebook-firenze.herokuapp.com/
 
 REQUIRED INSTRUCTIONS:
 
@@ -7,10 +13,20 @@ the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+2. The card wall is here: https://trello.com/b/vEoyezNf/firenze
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+
+
+# routes:
+
+- /users - shows all users
+- /users/show - shows current user profile
+- /users/sign_in
+- /users/sign_up
+
 
 ## Quickstart
 

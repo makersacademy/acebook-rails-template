@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :posts
+  resources :avatars
+  resources :profiles do
+    resources :bios, :friends
+    resources :posts do
+      resources :comments, :likes
+    end
+  end
+
+  devise_for :users
+
+  devise_scope :user do
+     get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
+  root 'posts#homepage'
+
+  match "/profiles/posts", to: "posts#create", via: "post", :as => :create_post
+  match "/profiles/bios", to: "bios#create", via: "post", :as => :create_bio
+  match "/profiles/:profile_id/posts/:id/comments", to: "comments#create", via: "post", :as => :create_comment
+
 end
