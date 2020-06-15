@@ -1,0 +1,8 @@
+<h1>Your wall</h1>
+
+<% @posts.each do |post| %>
+    <% if current_user.id == post.user_id %>
+    <li><%= simple_format(post.content) %>&nbsp;<%= post.created_at %></li>
+    <% end %>
+<% end %>
+<%= link_to 'All posts', posts_path %>
