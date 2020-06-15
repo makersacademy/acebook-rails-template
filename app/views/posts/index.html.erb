@@ -1,7 +1,11 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= post.message %>  <%= link_to 'Edit', edit_post_path(post) %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+<%= link_to "Sign out", destroy_user_session_path,
+              method: :get,
+              data: { confirm: 'Are you sure?' } %>
