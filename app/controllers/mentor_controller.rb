@@ -1,4 +1,4 @@
 class MentorController < ApplicationController
-  def show
+  def index
   end
 end

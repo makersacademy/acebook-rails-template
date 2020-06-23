@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'mentor/index'
+
   get 'mentor/show'
 
   get 'student/show'
