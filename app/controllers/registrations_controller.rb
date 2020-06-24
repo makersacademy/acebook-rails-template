@@ -1,7 +1,7 @@
-class RegistrationsController < Devise::RegistrationsController
-  protected
+# class RegistrationsController < Devise::RegistrationsController
+#   protected
 
-  def after_sign_up_path_for(resource)
-    "pages/home"
-  end
-end
+#   def after_sign_up_path_for(resource)
+#     "pages/home"
+#   end
+# end
