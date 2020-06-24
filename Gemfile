@@ -21,6 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'travis'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'devise'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -38,6 +39,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov', require: false
   gem 'rubocop', require: false
+  gem 'factory_bot_rails'
 end
 
 group :development do
