@@ -1,5 +1,6 @@
 class StudentController < ApplicationController
-  def sign_in
-    @users = User.all
+  def dashboard
   end
+
+
 end
