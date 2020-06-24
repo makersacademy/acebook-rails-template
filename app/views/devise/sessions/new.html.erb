@@ -1,5 +1,9 @@
 <h2>Log in</h2>
 
+ if current page = students/login
+ else current page = metnors/login 
+<%= link_to 'Log in as a mentor', new_mentor_session_path %>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />

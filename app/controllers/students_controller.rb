@@ -1,4 +1,5 @@
 class StudentController < ApplicationController
-  def show
+  def sign_in
+    @users = User.all
   end
 end
