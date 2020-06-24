@@ -21,4 +21,6 @@
 /yarn-error.log
 
 .byebug_history
+
+#Ignore all coverage files
 /coverage/
