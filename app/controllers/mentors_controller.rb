@@ -1,6 +1,6 @@
 class MentorsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @mentors = Mentor.all
+    @students = Student.all
   end
 end
