@@ -1,0 +1,8 @@
+<p>All Mentors</p>
+
+<% @mentors.each do | mentor | %>
+  <%= mentor.email %>
+  <br>
+<% end %> 
+
+<%= link_to 'Log out', destroy_student_session_path, :method => :delete %>

@@ -1,16 +1,13 @@
 Rails.application.routes.draw do
-  get 'pages/home'
 
-  devise_for :users
-  get 'mentor/index'
+  devise_for :students
+  devise_for :mentors
 
-  get 'mentor/show'
+  resources :students
+  resources :mentors
 
-  get 'student/show'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  resources :posts
-
-  root to: "pages#home"
+  root to: "pages#welcome"
+  get 'mentor_dashboard' => 'mentors#index'
+  get 'student_dashboard' => 'students#index'
 end
+

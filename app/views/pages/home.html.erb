@@ -1,7 +1,15 @@
 <h1>DASHBOARD</h1>
-<% if current_user %>
-<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-<% else %>
-<%= link_to 'Sign Up', new_user_registration_path %>
-<%= link_to 'Sign In', new_user_session_path %>
+<% if student_signed_in? %>
+  <%= link_to 'Log out', destroy_student_session_path, method: :delete %>
+<% end %>
+<% if mentor_signed_in? %>
+  <%= link_to 'Log out', destroy_mentor_session_path, method: :delete %>
+<% end %>
+
+<% if student_signed_in? %>
+    <p>I'm a Student</p>
+<% end %>
+
+<% if mentor_signed_in? %>
+    <p>I'm a Mentor</p>
 <% end %>
