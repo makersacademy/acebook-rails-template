@@ -3,7 +3,9 @@
   <%= form.text_field :message %>
 <div class="field">
   <%= form.label :file %>
-  <%= form.file_field :file %>
 </div>
+  <div class="file_button">
+    <%= form.file_field :file %>
+  </div>
   <%= form.submit "Submit" %>
 <% end %>
