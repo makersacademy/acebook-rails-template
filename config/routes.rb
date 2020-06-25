@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :mentors
 
   root to: "pages#welcome"
-  get 'mentor_dashboard' => 'mentors#show'
-  get 'student_dashboard' => 'students#show'
+  get "/students/:id/dashboard" => "students#show"
+  get "/mentors/:id/dashboard" => "mentors#show"
 end
 
