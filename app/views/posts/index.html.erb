@@ -1,8 +1,11 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <%= image_tag(post.file) if post.file.attached?%> 
+  <% if post.file.attached? %>
+    <%= link_to 'View Download', rails_blob_path(post.file, disposition: 'attachments')%>
+  <%end%>
 <% end %>
-
+<br>
+<br>
 <%= link_to new_post_path do %>
   New post
 <% end %>
