@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'pages/home'
 
   devise_for :students
   devise_for :mentors
@@ -7,9 +6,8 @@ Rails.application.routes.draw do
   resources :students
   resources :mentors
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
   root to: "pages#welcome"
-
+  get 'mentor_dashboard' => 'students#index'
+  get 'student_dashboard' => 'mentors#index'
 end
 
