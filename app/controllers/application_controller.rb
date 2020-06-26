@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
   devise_group :user, contains: [:student, :mentor]
   def after_sign_in_path_for(_resource)
     if current_user.type == "Student"
-      student_dashboard_path
+      "/students/#{current_user.id}/dashboard"
     else
-      mentor_dashboard_path
+      "/mentors/#{current_user.id}/dashboard"
     end
   end
 

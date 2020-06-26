@@ -3,7 +3,8 @@ class StudentsController < ApplicationController
   def index
     @mentors = Mentor.all
   end
-end
 
-# @students = Student.where(mentor: current_user)
-# 
+  def show
+    @student = Student.find(params[:id])
+  end
+end

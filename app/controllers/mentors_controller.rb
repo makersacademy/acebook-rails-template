@@ -3,4 +3,9 @@ class MentorsController < ApplicationController
   def index
     @students = Student.all
   end
+
+  def show
+    @mentor = Mentor.find(params[:id])
+  end
+
 end

@@ -1,4 +1,3 @@
-<h1>Mentor#show</h1>
-<p>Find me in app/views/mentor/show.html.erb</p>
+<p>Welcome, <%= @mentor.email %></p>
 
-<p>This will be a dashboard when mentors login</p>
+<%= link_to 'Log out', destroy_mentor_session_path, :method => :delete %>
