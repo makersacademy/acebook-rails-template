@@ -11,6 +11,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    # @student = Student.find(params[:id])
+    # @mentor = Mentor.find(params[:id])
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   private
