@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   def new
     @post = Post.new
+    @user = current_user
   end
 
   def create
@@ -16,8 +17,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @posts = User.find(params[:id]).posts.order(created_at: :desc)
+    @post = User.find(params[:id]).posts.order(created_at: :desc)
   end
 
   private

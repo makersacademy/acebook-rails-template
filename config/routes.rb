@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   devise_for :students
   devise_for :mentors
 
-  resources :students
   resources :mentors
 
-  resources :posts do
-    resources :students
+  resources :students do
+    resources :posts
   end
 
 
