@@ -5,8 +5,11 @@ Rails.application.routes.draw do
 
   resources :students
   resources :mentors
-  resources :posts
-  
+
+  resources :posts do
+    resources :students
+  end
+
 
   root to: "pages#welcome"
   get "/students/:id/dashboard" => "students#show"

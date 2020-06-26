@@ -16,7 +16,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @user = User.find(params[:id])
+    @posts = User.find(params[:id]).posts.order(created_at: :desc)
   end
 
   private

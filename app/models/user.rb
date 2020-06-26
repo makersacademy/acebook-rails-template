@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :first_name, uniqueness: true, if: -> { self.first_name.present? }
   validates :last_name, presence: true
   validates :last_name, uniqueness: true, if: -> { self.last_name.present? }
+  has_many :posts
 end
