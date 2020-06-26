@@ -23,7 +23,7 @@ module SimpleDiscussion::ForumPostsHelper
 
   def forum_user_badge(user)
     if user.respond_to?(:moderator) && user.moderator?
-      content_tag :span, "Mod", class: "badge badge-default"
+      content_tag :span, "Mentor", class: "badge badge-default"
     end
   end
 end

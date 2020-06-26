@@ -1,3 +1,4 @@
-<p>Welcome, <%= @student.email %></p> 
+<p>Welcome, <%= @student.email %></p>
 
 <%= link_to 'Log out', destroy_student_session_path, :method => :delete %>
+<%= link_to "Forum", simple_discussion_path %>
