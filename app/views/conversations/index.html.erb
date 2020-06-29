@@ -18,7 +18,7 @@
 
 <br>
 <%= link_to 'Back to Your Dashboard',
-if current_user.type == "student"
+if current_user.type == "Student"
   student_path(current_user.id)
 else
   mentor_path(current_user.id)
