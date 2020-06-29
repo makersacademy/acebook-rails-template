@@ -6,8 +6,8 @@ rvm:
 os: osx
 
 install:
-- gem uninstall bundler
-- gem install bundler --version '1.7.4'
+# - gem uninstall bundler
+# - gem install bundler --version '1.7.4'
 - bundle install
 # - rails db:create
 # - rails db:migrate
