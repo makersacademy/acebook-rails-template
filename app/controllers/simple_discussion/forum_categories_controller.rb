@@ -2,7 +2,6 @@ class SimpleDiscussion::ForumCategoriesController < SimpleDiscussion::Applicatio
   before_action :set_category, only: :index
 
   def new
-    p "hellooooooo"
     @category = ForumCategory.new
   end
 
@@ -25,7 +24,6 @@ class SimpleDiscussion::ForumCategoriesController < SimpleDiscussion::Applicatio
     def set_category
       @category = ForumCategory.friendly.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      p "does this work"
       redirect_to simple_discussion.forum_threads_path
     end
 
