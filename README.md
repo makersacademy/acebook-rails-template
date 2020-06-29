@@ -2,12 +2,14 @@
 
 REQUIRED INSTRUCTIONS:
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+1. TeamNameComingSoon – the best team name in the galaxy
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+
+2. The card wall is here: https://trello.com/b/xrhvWkLN/acebook-tncs
+
+
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
