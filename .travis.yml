@@ -1,6 +1,13 @@
 language: ruby
 rvm: 
   - 2.5.0
+
+install:
+- bundle install
+- rails db:create
+- rails db:migrate
+script: rake
+
   # can specify many versions of ruby if you like
 
 # services:
