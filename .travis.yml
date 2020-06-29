@@ -8,7 +8,6 @@ install:
 - bundle install
 - rails db:create
 - rails db:migrate
-script: rake
 
 # deploy:
 #   skip_cleanup: true
@@ -23,4 +22,5 @@ script: rake
 #    - psql -U postgres -c 'CREATE DATABASE post_test;'
 
 script:
+  -rake
   - bundle exec rspec 
