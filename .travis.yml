@@ -2,6 +2,8 @@ language: ruby
 
 rvm:
 - 2.5.0
+  # can specify many versions of ruby if you like
+
 install:
 - gem uninstall bundler
 - gem install bundler --version '1.7.4'
@@ -12,7 +14,7 @@ install:
 # deploy:
 #   skip_cleanup: true
 
-  # can specify many versions of ruby if you like
+
 
 # services:
 #   - postgresql
@@ -21,6 +23,6 @@ install:
 #   - psql -U postgres -c 'CREATE DATABASE user_test;'
 #    - psql -U postgres -c 'CREATE DATABASE post_test;'
 
-# script:
-#   -rake
+script:
+  -rake
 #   - bundle exec rspec 
