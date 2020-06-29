@@ -37,3 +37,7 @@ def sign_in_mentor
   fill_in "Password", with: "12345q"
   click_button "Log in"
 end
+
+def sign_out_student
+  click_link "Log out"
+end
