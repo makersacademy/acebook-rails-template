@@ -1,0 +1,5 @@
+<%= form_with model: @category do %>
+  <%= f.label :name %>
+  <%= f.text_field :name, autocomplete: "category name" %>
+  <%= submit "Create" %>
+<% end %>
