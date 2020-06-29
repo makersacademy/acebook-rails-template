@@ -26,3 +26,5 @@ First, clone this repository. Then:
 ```
 
 Travis test
+
+Pull request test
