@@ -1,0 +1,14 @@
+language: ruby
+rvm: 
+  - 2.5
+  # can specify many versions of ruby if you like
+
+# services:
+#   - postgresql
+
+# before_script:
+#   - psql -U postgres -c 'CREATE DATABASE user_test;'
+#    - psql -U postgres -c 'CREATE DATABASE post_test;'
+
+# script:
+#   - bundle exec rspec
