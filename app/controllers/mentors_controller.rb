@@ -6,6 +6,13 @@ class MentorsController < ApplicationController
 
   def show
     @mentor = Mentor.find(params[:id])
+    @students = Student.all
+  end
+
+  def update
+    student = Student.find_by(email: params[:mentor][:student_email])
+    current_user.students << student
+    current_user.save
   end
 
 end
