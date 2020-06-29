@@ -2,14 +2,14 @@ language: ruby
 rvm: 
   - 2.5.0
 
-install:
-- bundle install
-- rails db:create
-- rails db:migrate
-script: rake
+# install:
+# - bundle install
+# - rails db:create
+# - rails db:migrate
+# script: rake
 
-deploy:
-  skip_cleanup: true
+# deploy:
+#   skip_cleanup: true
 
   # can specify many versions of ruby if you like
 
@@ -20,5 +20,5 @@ deploy:
 #   - psql -U postgres -c 'CREATE DATABASE user_test;'
 #    - psql -U postgres -c 'CREATE DATABASE post_test;'
 
-# script:
-#   - bundle exec rspec 
+script:
+  - bundle exec rspec 
