@@ -10,5 +10,5 @@ rvm:
 #   - psql -U postgres -c 'CREATE DATABASE user_test;'
 #    - psql -U postgres -c 'CREATE DATABASE post_test;'
 
-# script:
-#   - bundle exec rspec
+script:
+  - bundle exec rspec 
