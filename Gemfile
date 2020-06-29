@@ -28,7 +28,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'rake'
 gem 'travis'
 
 group :development, :test do
@@ -38,6 +37,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem 'rake'
 end
 
 group :development do
