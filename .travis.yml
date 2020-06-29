@@ -1,6 +1,6 @@
 language: ruby
 rvm: 
-  - 2.5
+  - 2.5.8
   # can specify many versions of ruby if you like
 
 # services:
