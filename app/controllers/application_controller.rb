@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     redirect_to root_path, :notice => 'Please login' if user_signed_in? == false
   end
+
   def configure_permitted_parameters
     added_attrs = [:first_name, :last_name, :email, :password, :password_confirmation, :remember_me, :moderator]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs

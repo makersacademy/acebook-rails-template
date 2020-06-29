@@ -15,3 +15,7 @@
  */
 
 *= require simple_discussion
+
+.category-name {
+  color: red;
+}

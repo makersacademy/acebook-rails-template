@@ -20,5 +20,20 @@ class CreateForumCategories < ActiveRecord::Migration[4.2]
       name: "Feedback",
       color: "#16bc9c",
     )
+      # 
+      # ForumCategory.create(
+      #   name: "Classes",
+      #   color: "#16bc9c",
+      # )
+      #
+      # ForumCategory.create(
+      #   name: "Exams",
+      #   color: "#16bc9c",
+      # )
+      #
+      # ForumCategory.create(
+      #   name: "Study help",
+      #   color: "#16bc9c",
+      # )
   end
 end
