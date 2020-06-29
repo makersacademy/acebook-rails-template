@@ -40,10 +40,7 @@ end
 
 def create_category
   click_link "Forum"
-  # within (all(".btn.btn-outline-primary.btn-block")[1]) do
-    click_link "Create A New Category"
-  # end
-
+  click_link "Create A New Category"
   fill_in "Name", with: "General"
   click_button "Create"
 end
