@@ -2,6 +2,7 @@ class SimpleDiscussion::ForumCategoriesController < SimpleDiscussion::Applicatio
   before_action :set_category, only: :index
 
   def new
+    p "hellooooooo"
     @category = ForumCategory.new
   end
 
@@ -12,8 +13,11 @@ class SimpleDiscussion::ForumCategoriesController < SimpleDiscussion::Applicatio
   end
 
   def create
+    if current_user.type == "Mentor"
     @category = ForumCategory.new(category_params)
+    @category.save
     redirect_to simple_discussion.forum_threads_path
+    end
   end
 
   private
@@ -26,6 +30,6 @@ class SimpleDiscussion::ForumCategoriesController < SimpleDiscussion::Applicatio
     end
 
     def category_params
-      params.require(:forum_categories).permit(:name)
+      params.require(:forum_category).permit(:name)
     end
 end

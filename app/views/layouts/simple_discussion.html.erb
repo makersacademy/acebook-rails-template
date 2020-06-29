@@ -65,8 +65,11 @@
               <%= icon "fa-fw fas", "circle", style: "color: #{category.color}" %>
                 <div class="category-name"> <%= category.name %></div>
             <% end %>
-
           </div>
+        <% end %>
+        <br>
+        <% if current_user.type == "Mentor" %>
+          <%= link_to t('create a new category'), new_simple_discussion_forum_category_path, class: "btn btn-outline-primary btn-block" %>
         <% end %>
       </div>
 
