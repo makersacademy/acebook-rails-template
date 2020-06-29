@@ -3,6 +3,7 @@ language: ruby
 rvm:
 - 2.5.0
   # can specify many versions of ruby if you like
+os: osx
 
 install:
 - gem uninstall bundler
