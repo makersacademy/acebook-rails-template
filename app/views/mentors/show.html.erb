@@ -1,3 +1,13 @@
 <p>Welcome, <%= @mentor.email %></p>
 
+<p> <%= link_to 'Chat', conversations_path %> </p>
+
+<% @conversations.each do |conversation| %>
+    <%= link_to conversation.recipient(current_user).email, conversation_messages_path(conversation) %>
+    <% if !conversation.unread_message_count(current_user).zero? %>
+      (<%= conversation.unread_message_count(current_user) %>)
+    <% end %>
+    <br>
+<% end %>
+
 <%= link_to 'Log out', destroy_mentor_session_path, :method => :delete %>

@@ -1,0 +1,25 @@
+<ul style="text-align:center">
+  <h2>Active Conversations</h2>
+  <% @conversations.each do |conversation| %>
+      <%= link_to conversation.recipient(current_user).email, conversation_messages_path(conversation) %>
+      <% if !conversation.unread_message_count(current_user).zero? %>
+        (<%= conversation.unread_message_count(current_user) %>)
+      <% end %>
+      <br>
+  <% end %>
+</ul>
+
+<ul style="text-align:center">
+  <h2>Available Users</h2>
+  <% @users.each do |user| %>
+    <%= link_to user.email, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post %><br>
+  <% end %>
+</ul>
+
+<br>
+<%= link_to 'Back to Your Dashboard',
+if current_user.type == "student"
+  student_path(current_user.id)
+else
+  mentor_path(current_user.id)
+end%>

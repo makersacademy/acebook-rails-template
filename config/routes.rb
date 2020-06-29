@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'messages/index'
+
+  get 'conversations/index'
+
   devise_for :students
   devise_for :mentors
 
   resources :mentors
+  resources :students
 
-  resources :students do
-    resources :posts
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
   end
 
 

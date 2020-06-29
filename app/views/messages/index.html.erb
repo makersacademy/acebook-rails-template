@@ -1,0 +1,20 @@
+<ul style="text-align:center">
+  <% @messages.each do |message| %>
+    <% if message.body %>
+        <h5><%= message.user.email %></h5>
+        <p><%= message.body %></p>
+    <% end %>
+  <% end %>
+</ul>
+
+<ul style="text-align:center">
+<%= form_for [@conversation, @message] do |f| %>
+  <div class="field">
+    <%= f.text_area :body, placeholder: "Wagwan G?" %>
+  </div>
+
+  <%= f.submit "Send" %>
+<% end %>
+</ul>
+<br>
+<%= link_to 'Back', url_for(:back) %>
