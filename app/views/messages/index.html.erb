@@ -32,4 +32,9 @@
 <% end %>
 </ul>
 <br>
-<%= link_to 'Back', url_for(:back) %>
+<%= link_to 'Back to Your Dashboard',
+if current_user.type == "Student"
+  "/students/#{current_user.id}/dashboard"
+else
+  "/mentors/#{current_user.id}/dashboard"
+end %>

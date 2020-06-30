@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
     @message.user = current_user
 
     if @message.save
-      redirect_to conversation_messages_path(@conversation)
+      redirect_to conversation_messages_path(@conversation.id)
     end
   end
 
