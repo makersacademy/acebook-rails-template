@@ -38,6 +38,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov', require: false
   gem 'rubocop'
+  gem 'clearance'
+  gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
 end
 
 group :development do
