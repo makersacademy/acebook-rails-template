@@ -1,9 +1,11 @@
+<ul>
 <% @posts.each do |post| %>
-  <p id="<%= post.id %>"><%= post.created_at.to_date%> <%= post.created_at.strftime("%k:%M") %></p>
+  <li> <p id="<%= post.id %>"><%= post.created_at.to_date%> <%= post.created_at.strftime("%k:%M") %></p>
 
   <p><div id="body"><%= simple_format(post.message) %></div></p>
-<% end %>
-
+  </li>
+<% end %> 
+  </ul>
 <%= link_to new_post_path do %>
   New post
 <% end %>
