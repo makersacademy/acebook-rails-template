@@ -37,7 +37,13 @@ group :development, :test do
   gem 'rubocop'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
+<<<<<<< HEAD
   gem 'simplecov-console', '~> 0.4.1', require: false 
+=======
+  # gem 'simplecov-console', '~> 0.4.1'
+  gem 'clearance'
+  gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
+>>>>>>> f08b007d40a1bd1a8683e2cd89b2267f391d396c
 end
 
 group :development do
