@@ -1,8 +1,0 @@
-default: &default
-  adapter: postgresql
-test:
-  <<: *default
-  database: pgapp_test
-  username: travis
-  encoding: utf8
-  
