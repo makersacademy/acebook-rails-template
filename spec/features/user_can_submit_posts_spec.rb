@@ -25,7 +25,7 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("#{Time.now.strftime("%Y-%m-%d")}")
   end
 
-  scenario "Can submit posts and view time" do
+  xscenario "Can submit posts and view time" do
     creates_a_post
     expect(page).to have_content("#{Time.now.strftime("%k:%M")}")
   end
