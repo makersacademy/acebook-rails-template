@@ -22,7 +22,10 @@ gem 'uglifier', '>= 1.3.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
-gem 'rake', '~> 13.0', '>= 13.0.1'
+gem 'rake'
+
+# Use ActiveModel has_secure_password
+gem 'bcrypt'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
