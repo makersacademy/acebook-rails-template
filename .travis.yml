@@ -5,5 +5,8 @@ rvm:
 
 before_install: gem install bundler -v 1.17.2
 
+services:
+  - postgresql
+
 install:
   - bundle install
