@@ -1,15 +1,16 @@
 language: ruby
 rvm:
   - 2.5.0
-  - jruby-19mode
-  - rbx-2
-
 services:
--postgresql
-
+  - postgresql
+before_install:
+  - export TZ='Europe/London'
 before_script:
-- bundle exec rails db:create
-- bundle exec rails db:migrate
-
+  - bundle exec rails db:create
+  - bundle exec rails db:migrate
 script:
-- bundle exec rspec
+  - bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: l4IRvHNfucCp8rQ5Ng1nZ0kkabqa3ARY8+Sqw6j3LzlsH7Ci3hElFlEXql5CIPyrxCignpUpPjZbO8fC3jnqL5B3idwlxluno+W91mwbbdnPOw/5+aUMvUd11HCepV0xcQG3Y/4Wp6v9t6XggvO1EhaYdSAwj/BuRXsPNnTbpHDkzHXfJw3MwGWsvPDZVfqCS4odoUNAE3WKmlwqj7pqm0nlijhBUJOK7uzxQLEjcPYHfrj8YUn1Vu2WbvcduX3wqDzExE8uaPtIBUD9gOfz4rDccEtKi4/lROXbaUesKj+VrwLTvHKR2xp7brnR5pNkorQHHAYN/Hx5DuM9m5sBpp2iDbh92jXYu3k2MBkl4DHdA4OYjWMc9BMJwAvCGImIHgJ58YRQaC64MV0BUTMOaZXh1Z9z3KgKSkah3ChVh5ba+0/A/RiA1CAjDO1BsFmRsTMllJgf4SoUCEP2bsXRNUNObaCSIt5+zoG6XOHpetcBgIqQJbAWHV4KDrps/3a/kmKUDmsQUTeWCSKg7xyyFhgy+jZXWGU+XHySZC4WOzvB83E2GQYo9isACvzgRSl9yEiBq871ZLSY0tJz+aW7MkekLYkzpMll2WVOnbGU9LKxyEnTQO4zxipufscOU9STtdHgkWvkgHm/FcW6g2w1mkteKVvA61YcoRcE3snPKiE=
