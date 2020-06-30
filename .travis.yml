@@ -4,7 +4,7 @@ rvm:
 services:
   - postgresql
 before_install:
-  - export TZ='Europe/London'
+  - gem install bundler
 before_script:
   - bundle exec rails db:create
   - bundle exec rails db:migrate
