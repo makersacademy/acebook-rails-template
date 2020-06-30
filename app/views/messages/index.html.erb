@@ -40,7 +40,7 @@
   <% @posts.each do |post| %>
     <p><%= post.message %></p>
     <% if post.file.attached? %>
-      <%= link_to 'View Download', rails_blob_path(post.file, disposition: 'attachments')%>  
+      <%= link_to "#{post.filename}", rails_blob_path(post.file, disposition: 'attachments')%>
     <%end%>
   <% end %>
   <br>
