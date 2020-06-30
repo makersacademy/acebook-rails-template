@@ -3,25 +3,27 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
-
   end
 
   def create
     @post = Post.create(post_params)
-    puts post_params
-    puts @post.save
-    puts @post.errors.full_messages
     puts 'CREATE'
+    @post.save
+    @post.errors.full_messages
     redirect_to posts_url
   end
 
   def index
     @posts = Post.all
+    puts 'ALL'
   end
 
-  def remove
-
-  end 
+  def destroy
+    puts params
+    @post = Post.find_by(id: params[:id])
+    @post.destroy
+    redirect_to posts_url
+  end
 
   private
 
