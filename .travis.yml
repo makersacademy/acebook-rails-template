@@ -1,6 +1,7 @@
 language: ruby
 
-before script:
+before_script:
+  - gem install bundler
   - bin/rails db:create
   - bin/rails db:migrate
 
