@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   resources :students
 
   resources :posts
-  root to: "posts#new"
 
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]

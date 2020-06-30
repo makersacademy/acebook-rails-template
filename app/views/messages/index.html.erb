@@ -1,3 +1,5 @@
+<div class="row">
+<div class="col-10">
 <ul>
   <% @messages.each do |message| %>
     <% if message.body %>
@@ -33,3 +35,18 @@
 </ul>
 <br>
 <%= link_to 'Back', url_for(:back) %>
+</div>
+<div class="col-2" style="padding-left: 50px; padding-right: 20px">
+  <% @posts.each do |post| %>
+    <p><%= post.message %></p>
+    <% if post.file.attached? %>
+      <%= link_to 'View Download', rails_blob_path(post.file, disposition: 'attachments')%>  
+    <%end%>
+  <% end %>
+  <br>
+  <br>
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
+</div>
+</div>
