@@ -1,5 +1,6 @@
 <% @posts.each do |post| %>
-  <p><%= post.created_at.to_date %></p>
+  <p><%= post.created_at.to_date%> <%= post.created_at.strftime("%k:%M") %></p>
+  
   <p><%= post.message %></p>
 <% end %>
 

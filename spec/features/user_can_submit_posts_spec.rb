@@ -15,8 +15,15 @@ RSpec.feature "Timeline", type: :feature do
 end
 
 RSpec.feature "Timeline", type: :feature do
-  scenario "Can submit posts and view them" do
+  scenario "Can submit posts and view date" do
     creates_a_post
     expect(page).to have_content("#{Time.now.strftime("%Y-%m-%d")}")
+  end
+end
+
+RSpec.feature "Timeline", type: :feature do
+  scenario "Can submit posts and view time" do
+    creates_a_post
+    expect(page).to have_content("#{Time.now.strftime("%k:%M")}")
   end
 end
