@@ -50,46 +50,8 @@
           1,
           null
         ]
-      },
-      "/Users/nickbutler/Projects/acebook-brainaics/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/nickbutler/Projects/acebook-brainaics/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/nickbutler/Projects/acebook-brainaics/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/nickbutler/Projects/acebook-brainaics/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1593528096
+    "timestamp": 1593528874
   }
 }
