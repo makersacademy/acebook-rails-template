@@ -6,6 +6,14 @@ class MentorsController < ApplicationController
 
   def show
     @mentor = Mentor.find(params[:id])
+    @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+    @students = Student.all
   end
 
+  def update
+    student = Student.find_by(email: params[:mentor][:student_email])
+    current_user.students << student
+    current_user.save
+    redirect_to mentor_path(current_user.id)
+  end
 end

@@ -1,0 +1,10 @@
+<div class="col"></div>
+<div class="col">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= message.user.email %></h5>
+        <p><%= message.body %></p>
+        <p><%= message.created_at.strftime("%d/%m/%y at %l:%M %p") %></p>
+      </div>
+    </div>
+  </div>
