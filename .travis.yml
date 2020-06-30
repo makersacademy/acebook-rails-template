@@ -8,5 +8,9 @@ before_install: gem install bundler -v 1.17.2
 services:
   - postgresql
 
-install:
-  - bundle install
+before_script:
+  - bin/rails db:create
+  - bin/rails db:migrate
+
+script:
+  - bundle exec rspec
