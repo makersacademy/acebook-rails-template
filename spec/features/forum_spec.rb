@@ -6,7 +6,7 @@ RSpec.feature "Forum", type: :feature do
       sign_up_mentor
       create_category
       click_link "Ask A Question"
-      select "General", from: "Choose a Category"
+      select "Exams", from: "Choose a Category"
       fill_in 'Title', with: 'Testing'
       fill_in "What do you need help with?", with: "How do i test?"
       click_button "Ask Your Question"

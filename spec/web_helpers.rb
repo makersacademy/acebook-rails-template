@@ -41,6 +41,6 @@ end
 def create_category
   click_link "Forum"
   click_link "Create A New Category"
-  fill_in "Name", with: "General"
+  fill_in "Name", with: "Exams"
   click_button "Create"
 end
