@@ -12,15 +12,15 @@
 <body>
   <p>Welcome,<%= @mentor.first_name %></p>
 
-<p> <%= link_to 'Chat', conversations_path %> </p>
+  <p> <%= link_to 'Chat', conversations_path %> </p>
 
-<% @conversations.each do |conversation| %>
-    <%= link_to conversation.recipient(current_user).email, conversation_messages_path(conversation) %>
-    <% if !conversation.unread_message_count(current_user).zero? %>
-      (<%= conversation.unread_message_count(current_user) %>)
-    <% end %>
-    <br>
-<% end %>
+  <% @conversations.each do |conversation| %>
+      <%= link_to conversation.recipient(current_user).email, conversation_messages_path(conversation) %>
+      <% if !conversation.unread_message_count(current_user).zero? %>
+        (<%= conversation.unread_message_count(current_user) %>)
+      <% end %>
+      <br>
+  <% end %>
 
   <div class="ui widget">
     <%= form_with model: @mentor, method: "put" do |f| %>
