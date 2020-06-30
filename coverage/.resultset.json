@@ -1,19 +1,19 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/sophiebrown/Projects/Week-8/acebook-brainaics/app/helpers/application_helper.rb": {
+      "/Users/Student/Desktop/Tristan_Makers/ace_booke/acebook-brainaics/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/sophiebrown/Projects/Week-8/acebook-brainaics/app/helpers/welcome_helper.rb": {
+      "/Users/Student/Desktop/Tristan_Makers/ace_booke/acebook-brainaics/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/sophiebrown/Projects/Week-8/acebook-brainaics/app/controllers/posts_controller.rb": {
+      "/Users/Student/Desktop/Tristan_Makers/ace_booke/acebook-brainaics/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           1,
@@ -37,7 +37,7 @@
           null
         ]
       },
-      "/Users/sophiebrown/Projects/Week-8/acebook-brainaics/app/controllers/application_controller.rb": {
+      "/Users/Student/Desktop/Tristan_Makers/ace_booke/acebook-brainaics/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -45,7 +45,7 @@
           null
         ]
       },
-      "/Users/sophiebrown/Projects/Week-8/acebook-brainaics/app/controllers/welcome_controller.rb": {
+      "/Users/Student/Desktop/Tristan_Makers/ace_booke/acebook-brainaics/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           1,
@@ -53,27 +53,27 @@
           null
         ]
       },
-      "/Users/sophiebrown/Projects/Week-8/acebook-brainaics/app/models/post.rb": {
+      "/Users/Student/Desktop/Tristan_Makers/ace_booke/acebook-brainaics/app/models/post.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/sophiebrown/Projects/Week-8/acebook-brainaics/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/sophiebrown/Projects/Week-8/acebook-brainaics/app/models/user.rb": {
+      "/Users/Student/Desktop/Tristan_Makers/ace_booke/acebook-brainaics/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/sophiebrown/Projects/Week-8/acebook-brainaics/app/mailers/application_mailer.rb": {
+      "/Users/Student/Desktop/Tristan_Makers/ace_booke/acebook-brainaics/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/Student/Desktop/Tristan_Makers/ace_booke/acebook-brainaics/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -83,7 +83,7 @@
         "branches": {
         }
       },
-      "/Users/sophiebrown/Projects/Week-8/acebook-brainaics/app/jobs/application_job.rb": {
+      "/Users/Student/Desktop/Tristan_Makers/ace_booke/acebook-brainaics/app/jobs/application_job.rb": {
         "lines": [
           0,
           0
@@ -91,7 +91,7 @@
         "branches": {
         }
       },
-      "/Users/sophiebrown/Projects/Week-8/acebook-brainaics/app/channels/application_cable/connection.rb": {
+      "/Users/Student/Desktop/Tristan_Makers/ace_booke/acebook-brainaics/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -101,7 +101,7 @@
         "branches": {
         }
       },
-      "/Users/sophiebrown/Projects/Week-8/acebook-brainaics/app/channels/application_cable/channel.rb": {
+      "/Users/Student/Desktop/Tristan_Makers/ace_booke/acebook-brainaics/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -112,6 +112,6 @@
         }
       }
     },
-    "timestamp": 1593523965
+    "timestamp": 1593524756
   }
 }
