@@ -1,6 +1,6 @@
 language: ruby
 
-before_install: gem install bundler
+before_install: gem install bundler -v 1.17.3
 
 before_script:
   - bin/rails db:create
