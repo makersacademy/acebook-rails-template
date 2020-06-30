@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.sort_by{ |post| post[:created_at] }.reverse
   end
 
   private
