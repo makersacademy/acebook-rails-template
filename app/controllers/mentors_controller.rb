@@ -17,7 +17,7 @@ class MentorsController < ApplicationController
     p "+++++++++++++++++++++++"
     p "params for student_email are #{params[:mentor][:student_email]}"
     p "-----------------------"
-    p "student found by email is - #{Student.find_by(email: "Test123@student.com")}"
+    p "student is - #{student}"
     current_user.students << student
     current_user.save
   end
