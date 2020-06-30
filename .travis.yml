@@ -5,6 +5,10 @@ rvm:
   - jruby-19mode
   - rbx-2
 
-script: — bundle install
+before_install:
+  - gem install bundler
+
+script: 
+  — bundle install
   — bundle exec rake db:migrate
   — bundle exec rspec
