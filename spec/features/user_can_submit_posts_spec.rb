@@ -7,23 +7,32 @@ def creates_a_post
   click_button "Submit"
 end
 
+def creates_a_post2
+  visit "/posts"
+  click_link "New post"
+  fill_in "Message", with: "Hello, again"
+  click_button "Submit"
+end
+
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
     creates_a_post
     expect(page).to have_content("Hello, world!")
   end
-end
 
-RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view date" do
     creates_a_post
     expect(page).to have_content("#{Time.now.strftime("%Y-%m-%d")}")
   end
-end
 
-RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view time" do
     creates_a_post
     expect(page).to have_content("#{Time.now.strftime("%k:%M")}")
+  end
+
+  scenario "Order of posts based on time created" do
+    creates_a_post
+    creates_a_post2
+    expect(page).to have_content(/Hello, again.*Hello, world!/)
   end
 end
