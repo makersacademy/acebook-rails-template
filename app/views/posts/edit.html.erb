@@ -1,8 +1,8 @@
-edit page
 
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-
-  <%= form.submit "Submit" %>
+<%= form_for @post,  method: :patch do |form| %> 
+  <%= form.label :Previous_Post  %>
+  <%= form.text_field :new_message%>
+ <%= form.submit "Submit" %>
 <% end %>
+
+
