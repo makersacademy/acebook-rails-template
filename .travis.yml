@@ -1,5 +1,6 @@
 language: ruby
 
+before script:
   - bin/rails db:create
   - bin/rails db:migrate
 
