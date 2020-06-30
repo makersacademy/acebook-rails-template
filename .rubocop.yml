@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - 'spec/spec_helper.rb'
     - 'spec/rails_helper.rb'
+    - 'bin/*'
 
 
 Layout/IndentationConsistency:
@@ -37,7 +38,7 @@ Style/NilComparison:
 Style/Not:
   Enabled: true
 Style/NumericLiterals:
-  Enabled: true
+  Enabled: false
 Style/NumericPredicate:
   Enabled: true
 Style/OneLineConditional:
