@@ -16,4 +16,14 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content(Time.now.strftime("%F %H:%M"))
   end
+
+  scenario "the page displays the newest message first" do
+    visit "/posts"
+     #click_link "New post"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    fill_in "Message", with: "I should be displayed first!"
+    click_button "Submit"
+    expect(first("p")).to have_content("I should be displayed first!")
+  end
 end
