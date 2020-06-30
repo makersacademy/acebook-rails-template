@@ -21,4 +21,13 @@ RSpec.feature "Mentor", type: :feature do
     expect(page).to have_content("Signed out successfully.")
   end
 
+  scenario "can add a student" do
+    sign_up_mentor
+    sign_up_student
+    sign_out_student
+    sign_in_mentor
+    fill_in "mentor[student_email]", with: "test123@student.com"
+    click_button "Add Student"
+    expect(page).to have_content("test123@student.com")
+  end
 end
