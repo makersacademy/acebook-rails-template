@@ -42,7 +42,6 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with:
     "I am a post.\r\nOne which has new lines"
     click_button "Submit"
-    puts (find('#body').text)
     expect(find('#body').text).to eq("I am a post.\nOne which has new lines")
   end
 end
