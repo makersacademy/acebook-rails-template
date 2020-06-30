@@ -35,13 +35,14 @@ RSpec.feature "Timeline", type: :feature do
     creates_a_post2
     expect(page).to have_content(/Hello, again.*Hello, world!/)
   end
-  
-  scenario "A post can be added with line breaks" do
+
+  xscenario "A post can be added with line breaks" do
     visit "/posts"
     click_link "New post"
-    fill_in "Message", with: 
-    "I am a post <br> One which has new lines"
+    fill_in "Message", with:
+    "I am a post.\r\nOne which has new lines"
     click_button "Submit"
-    expect(page).to have_content("I am a post One which has new lines")
+    puts (find('#body').text)
+    expect(find('#body').text).to eq("I am a post.\nOne which has new lines")
   end
 end
