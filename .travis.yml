@@ -9,16 +9,16 @@ install:
 # - gem uninstall bundler
 # - gem install bundler --version '1.7.4'
 - bundle install
-# - rails db:create
-# - rails db:migrate
+- rails db:create
+- rails db:migrate
 
 # deploy:
 #   skip_cleanup: true
 
 
 
-# services:
-#   - postgresql
+services:
+  - postgresql
 
 # before_script:
 #   - psql -U postgres -c 'CREATE DATABASE user_test;'
