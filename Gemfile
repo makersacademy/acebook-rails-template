@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'simple_discussion'
 gem 'font-awesome-sass'
+gem 'filesize', '~> 0.2.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

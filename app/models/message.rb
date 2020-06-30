@@ -1,6 +1,7 @@
 class Message < ApplicationRecord
   belongs_to :conversation
   belongs_to :user
+  has_one_attached :file
 
   validates_presence_of :body, :conversation_id, :user_id
 

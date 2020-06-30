@@ -1,5 +1,3 @@
-<div class="row">
-<div class="col-10">
 <ul>
   <% @messages.each do |message| %>
     <% if message.body %>
@@ -16,6 +14,9 @@
         <h5 class="card-title"><%= message.user.email %></h5>
           <p><%= message.body %></p>
           <p><%= message.created_at.strftime("%d/%m/%y at %l:%M %p") %></p>
+          <% if message.file.attached? %>
+            <%= link_to "#{message.file.filename}" + " " + Filesize.from("#{message.file.byte_size} B").pretty, rails_blob_path(message.file, disposition: 'attachments')%>
+          <%end%>
         </div>
       </div>
     </div>
@@ -29,24 +30,12 @@
   <div class="field">
     <%= f.text_area :body, placeholder: "Wagwan G?" %>
   </div>
-
+  <div class="file_button" style="padding-left:100px">
+    <%= f.file_field :file %>
+  </div>
+  <br>
   <%= f.submit "Send" %>
 <% end %>
 </ul>
 <br>
 <%= link_to 'Back', url_for(:back) %>
-</div>
-<div class="col-2" style="padding-left: 50px; padding-right: 20px">
-  <% @posts.each do |post| %>
-    <p><%= post.message %></p>
-    <% if post.file.attached? %>
-      <%= link_to "#{post.filename}", rails_blob_path(post.file, disposition: 'attachments')%>
-    <%end%>
-  <% end %>
-  <br>
-  <br>
-  <%= link_to new_post_path do %>
-    New post
-  <% end %>
-</div>
-</div>
