@@ -12,8 +12,6 @@ class MentorsController < ApplicationController
 
   def update
     student = Student.find_by(email: params[:mentor][:student_email])
-    p "----------------------"
-    p "params are #{params}"
     current_user.students << student
     current_user.save
   end
