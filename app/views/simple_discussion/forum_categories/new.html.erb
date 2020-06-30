@@ -1,0 +1,5 @@
+<%=form_for @category, url: simple_discussion_forum_categories_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, autocomplete: "category name" %>
+  <%= f.submit "Create" %>
+<% end %>

@@ -81,7 +81,11 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
-    ffi (1.13.1)
+    ffi (1.9.25)
+    font-awesome-sass (5.13.0)
+      sassc (>= 1.11)
+    friendly_id (5.3.0)
+      activerecord (>= 4.0.0)
     gh (0.17.0)
       activesupport (~> 5.0)
       addressable (~> 2.4)
@@ -92,6 +96,7 @@ GEM
       net-http-pipeline
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gravatar_image_tag (1.2.0)
     highline (2.0.3)
     i18n (1.8.3)
       concurrent-ruby (~> 1.0)
@@ -212,9 +217,17 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    selenium-webdriver (3.142.7)
-      childprocess (>= 0.5, < 4.0)
-      rubyzip (>= 1.2.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    selenium-webdriver (3.11.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.2)
+    simple_discussion (1.2.0)
+      font-awesome-sass (~> 5.13.0)
+      friendly_id (>= 5.2.0)
+      gravatar_image_tag
+      rails (>= 4.2)
+      will_paginate (>= 3.1.0)
     simplecov (0.18.5)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -255,7 +268,8 @@ GEM
     websocket (1.2.8)
     websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.5)
+    websocket-extensions (0.1.3)
+    will_paginate (3.3.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
@@ -267,6 +281,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   devise
   factory_bot_rails
+  font-awesome-sass
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg
@@ -276,6 +291,7 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_discussion
   simplecov
   travis
   tzinfo-data
