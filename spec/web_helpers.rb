@@ -45,6 +45,18 @@ def create_category
   click_button "Create"
 end
 
-def sign_out_student
+def sign_out
   click_link "Log out"
+end
+
+def add_student
+  fill_in "mentor[student_email]", with: "test123@student.com"
+  click_button "Add Student"
+end
+
+def send_message
+  click_link "Chat"
+  click_link "test123@student.com"
+  fill_in "message[body]", with: "test message"
+  click_button "Send"
 end
