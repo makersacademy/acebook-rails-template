@@ -12,6 +12,7 @@
 <body>
   <p>Welcome,<%= @mentor.first_name %></p>
 
+  <%= link_to "Forum", simple_discussion_path %>
   <p> <%= link_to 'Chat', conversations_path %> </p>
 
   <% @conversations.each do |conversation| %>

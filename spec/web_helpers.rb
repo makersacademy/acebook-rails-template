@@ -38,6 +38,13 @@ def sign_in_mentor
   click_button "Log in"
 end
 
+def create_category
+  click_link "Forum"
+  click_link "Create A New Category"
+  fill_in "Name", with: "Exams"
+  click_button "Create"
+end
+
 def sign_out_student
   click_link "Log out"
 end
