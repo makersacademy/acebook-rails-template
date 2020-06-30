@@ -1,18 +1,35 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :tests
   get 'pages/home'
+||||||| 50b89d4
+  get 'pages/home'
+=======
+>>>>>>> master
 
-  devise_for :users
-  get 'mentor/index'
+  get 'messages/index'
 
-  get 'mentor/show'
+  get 'conversations/index'
 
-  get 'student/show'
+  devise_for :students
+  devise_for :mentors
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :mentors
+  resources :students
 
+<<<<<<< HEAD
   resources :posts
   root to: "posts#new"
+||||||| 50b89d4
+  resources :posts
+=======
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
+>>>>>>> master
 
-  root to: "pages#home"
+
+  root to: "pages#welcome"
+  get "/students/:id/dashboard" => "students#show"
+  get "/mentors/:id/dashboard" => "mentors#show"
 end

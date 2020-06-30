@@ -1,0 +1,35 @@
+<ul>
+  <% @messages.each do |message| %>
+    <% if message.body %>
+    <div class="row">
+      <% if message.user_id == current_user.id %>
+        <div class="container">
+          <div class="card" style="width:18rem; float:right;">
+            <div class="card-body">
+      <% else %>
+        <div class="container">
+          <div class="card"style="width:18rem; float:left;">
+            <div class="card-body">
+      <% end %>
+        <h5 class="card-title"><%= message.user.email %></h5>
+          <p><%= message.body %></p>
+          <p><%= message.created_at.strftime("%d/%m/%y at %l:%M %p") %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <% end %>
+  <% end %>
+</ul>
+
+<ul style="text-align:center">
+<%= form_for [@conversation, @message] do |f| %>
+  <div class="field">
+    <%= f.text_area :body, placeholder: "Wagwan G?" %>
+  </div>
+
+  <%= f.submit "Send" %>
+<% end %>
+</ul>
+<br>
+<%= link_to 'Back', url_for(:back) %>

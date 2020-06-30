@@ -1,0 +1,43 @@
+<head>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      students = JSON.parse('<%= {emails: @students.map { |student| student.email } }.to_json.html_safe %>')
+      $("#add_student").autocomplete({source: students.emails});
+    });
+  </script>
+</head>
+<body>
+  <p>Welcome,<%= @mentor.first_name %></p>
+
+<p> <%= link_to 'Chat', conversations_path %> </p>
+
+<% @conversations.each do |conversation| %>
+    <%= link_to conversation.recipient(current_user).email, conversation_messages_path(conversation) %>
+    <% if !conversation.unread_message_count(current_user).zero? %>
+      (<%= conversation.unread_message_count(current_user) %>)
+    <% end %>
+    <br>
+<% end %>
+
+  <div class="ui widget">
+    <%= form_with model: @mentor, method: "put" do |f| %>
+    <%= f.text_field :student_email, id: "add_student" %>
+    <%= f.submit "Add Student", { :onclick => "history.go(0)" } %>
+    <% end %>
+  </div>
+
+  <p>Students you're connected with</p>
+
+  <% @mentor.students.each do |student|%>
+    <ul>
+      <li>
+        <%= student.first_name + " " + student.last_name + " - " + "(" + student.email + ")"%>
+      </li>
+    </ul>
+  <% end %>
+
+  <%= link_to 'Log out', destroy_mentor_session_path, :method => :delete %>
+</body>
