@@ -22,3 +22,7 @@
 
 .byebug_history
 coverage
+
+# Ignore  all files in coverage
+
+/coverage/*
