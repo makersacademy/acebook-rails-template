@@ -1,13 +1,10 @@
-<h1>Welcome</h1>
+<h1>Welcome to Acebook</h1>
   <% if current_user %>
-    Logged in as <%= current_user.email %>.
-    <%= link_to “Log Out”, logout_path %>
+    Logged in as <%= current_user.firstname %>.
+    <%= link_to "Log Out", sessions_destroy_path %>
   <% else %>
-    <%= link_to “Sign Up”, users_path %> or 
-    <%= link_to “Log In”, login_path %>
+    <%= link_to "Sign Up", new_user_path %> or 
+    <%= link_to "Log In", new_session_path %>
   <% end %>
 
 <p id=”notice”><%= notice %></p>
-
-<h1>Example</h1>
-<p>Lorem ipsum …</p>
