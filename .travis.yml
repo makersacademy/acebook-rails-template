@@ -1,17 +1,19 @@
 language: ruby
 before_install: gem install bundler -v 1.17.3
 services:
-  - postgresql
+- postgresql
 before_script:
-  - bin/rails db:create
-  - bin/rails db:migrate
+- bin/rails db:create
+- bin/rails db:migrate
 script:
-  - bundle exec rspec
+- bundle exec rspec
 deploy:
   provider: heroku
   skip_cleanup: true
   api_key:
-    secure: mii8pAUcEPgNR07R02yiDCJI0PV96Ry8eDC+OI1gMWBbwDxY94Q3M2XvFGa8EeaUBLrHSCb/TNBysHAEX2MICSOHaOB7z2NzhMHDccGTZpbY34BM5MLPtswlYv6unsUWh4c+3SMtqMHvxQ0AaMxsmsiDUYLj7dj8ETjac38phTgkKDD+a8ZreEVI4Ts+PzhpgJBhDLkU8xi5XDUNMv9JiY+g9TotlZEFxJXJnK7VCET5B6VKZAA3l4d7EwW1BX1nXQEKVC48ZJR5XBg6LL1ZsFI/EkYzSaC1qbsHRHJmcKfF6wxUmqIMlH34q4kCB2HzGAdXTO1nGoHDNtnTEvIQEecwCph47Y1+oicr+64goQv1aH+4cxWsE1DiSJsP6DUD87Bsa4WvSsuWLK+za+5KMnx3ujKxYv8jO0AwxMkHhNwi+ROF9pL8Flu9aHZUBJ+spgnya+qNSBSUpkSuxnktdfDd9eRnSEPL8LdyBIL5OPoCEpFpZirwbcNRxsN4NRc3xP/OEiY1tmMOV/9YmdKJY/tjHWL+TGNQEYLTcJ9iA1KebfhC+PbT0qsNtmP86ZuyQoAm1qfsIOVkBzRaji+hlRazAIh02NYVW9/lSGDiXQIjs4zq5x0kfsXjX0T9Cg1NRDVOf8lN4mjay4Ek+GSZLiNFGuYusMrQII78zUe53eY=
+    secure: mk88TmILGqo3RvEbiIUiwg1EZfevY2sqq3k/yGwJU6sM7T5Z6UC0hVg6q2eWbBY1GUlnf6M6NPD/60TMsQ62/uCRYUpZ8DAwe1cDq4df90tRkovimJOEH0qJQtXiEBDPZLHVmhqTv2HTi1V8WupCfDvb1iXKe1G9OI9wwOG1tERpvDOOM7w6CJbkLzXzvECmb+kp0rFkDg/Ei1kmhubk7koc39jAgB8Z2vX3icmvqS+l0BBxvW2JlR1cPPBe7Dh3V7cTqpgKYcyUvtfqy1AOurQTm/v3fm2I/Ifb7wr6ZrUSRheuhe3I5kfmTtuV3Z/M/uJDd5BxSPd9ojUyWJI/3AKTeGS8y9J8bYH3Za5G7MPbuda36C8cix2uWeVLfJ+wEmYbsxxQOfNO8lxAzadH9uDsr+pj9Vc9LoLh40TCP4TeWhlUZWin2gIZcKRnupHDrwHgzmCM/nS2Fy5cZIhzm2D/wIcVLAeiuQb5lxVMN17eUS+N4nbzFMvT5btYhT7ZcyKvprhZdBUCGOXSyoGtqZXx1zJJtsXwoyNLJQwvJeHTLjudCKomUQqQiAcaQOh6PRD8OAyxseuq3PXZAe5cD3C9mbw9uHo5/plNVTscv2S8FrGZTrDtTwL/EX5PjsjlAJsNVmcpDQCm/Q7XhimEK6w96dheu7waRrJwtNiSglw=
   app: jjer
   on:
     repo: Emanuele-20/acebook-rails-template
+
+
