@@ -1,14 +1,77 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-  <p><%= post.created_at %></p>
 
-   <p><%= link_to("Delete post", post_path(post) , method: :delete )%></p>
-   
-     <p><%= link_to("edit message", edit_post_path(post) , method: :get )%></p>
-<% end %>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
+   <%= stylesheet_link_tag "style.css" %>
 
+    <title>Acebook</title>
+  </head>
 
-<%= link_to new_post_path do %>
+  <body>
+    <div class="container">
+
+ 
+
+  <% @posts.each do |post| %>
+      <div class="col-md-7">
+          <div class="social-feed-separated">
+
+              <div class="social-feed-box">
+                  
+                  <div class="social-avatar">
+
+                      <a href="#">
+                          Quigley
+                      </a>
+                      <small class="text-muted"><p><%= post.created_at %></p></small>
+                  </div>
+                  <div class="social-body">
+                     
+                          <p><%= post.message %></p>
+                      
+                      <img src="" class="img-responsive">
+                      <div class="btn-group">
+                      <%# <p><%= link_to("Delete post", post_path(post) , method: :delete )%>
+                       
+                    
+                       
+                          <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up" style=color:#8b9dc3;></i> Like!</button>
+                          <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>
+
+                        <%= link_to post_path(post), method: :delete, data: { confirm: 'Are you sure you want to delete your post?' } do %>
+                            <button class="btn btn-white btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <% end %>
+
+                         <%= link_to edit_post_path(post), method: :get do %>
+                            <button class="btn btn-white btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
+                        <% end %>
+
+                        
+                      </div>
+              
+
+                  </div>
+      
+              </div>
+      
+          </div> 
+      </div>
+
+      <% end %>
+               <%= link_to new_post_path do %>
   New post
 <% end %>
+    </div>

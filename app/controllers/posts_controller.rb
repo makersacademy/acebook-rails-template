@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     puts params[:message]
-    @post.update(message: params[:post][:new_message])
+    @post.update(message: params[:post][:message])
     redirect_to posts_url
   end
 
