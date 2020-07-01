@@ -8,7 +8,7 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("#{Time.now.strftime("%Y-%m-%d")}", "#{Time.now.strftime("%k:%M")}")
   end
 
-  scenario "User email for creator" do
+  xscenario "User email for creator" do
     creates_a_post
     expect(page).to have_content(/bob1.*Hello, world!/)
   end
