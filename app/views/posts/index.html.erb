@@ -10,6 +10,9 @@
   <form method="get" action="/posts/<%=post.id%>/edit"> 
     <button type="submit">Edit</button>
   </form>
+  <form method="delete" action="/posts/<%=post.id%>"> 
+  <button type="submit">Delete</button>
+</form>
   <p><%= post.updated_at.in_time_zone("London") %></p>
 <!-- To-do: add user Id from user table to display in the posts -->
 <% end %>

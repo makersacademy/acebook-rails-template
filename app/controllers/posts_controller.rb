@@ -23,6 +23,10 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def destroy
+    p "you're in the destory method"
+  end
+
   private
 
   def post_params
