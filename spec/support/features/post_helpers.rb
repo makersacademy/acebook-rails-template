@@ -1,4 +1,7 @@
+require_relative 'clearance_helpers.rb'
+
 def creates_a_post
+  sign_up_with('bob@email.com', 'password1')
   visit "/posts"
   click_link "New post"
   fill_in "Message", with: "Hello, world!"
@@ -6,7 +9,6 @@ def creates_a_post
 end
 
 def creates_a_post2
-  visit "/posts"
   click_link "New post"
   fill_in "Message", with: "Hello, again"
   click_button "Submit"
