@@ -1,0 +1,10 @@
+Style/Encoding:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 300
+
+Metrics/BlockLength:
+  Exclude:
+    - '**/spec/controllers/posts_controller_spec.rb'
+
