@@ -28,7 +28,7 @@ end
 feature 'Update post after 10 mins' do
   
   before do
-    travel_to Time.zone.local(2019)
+    travel_to Time.zone.local(2019, 11, 24, 01, 04, 44)
   end
 
   scenario 'User cant update a post after 10 mins' do
@@ -37,6 +37,8 @@ feature 'Update post after 10 mins' do
     fill_in "Message", with: "Update me!"
     click_button "Submit"
     travel_back
+    visit "/posts"
     expect(page).to_not have_link("Edit")
   end
 end
+

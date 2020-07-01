@@ -1,3 +1,5 @@
+<div class="container text-center">
+
 <%= link_to new_post_path do %>
   New post
 <% end %>
@@ -8,7 +10,9 @@
   <%= link_to 'Delete', post_path(post), 
                 method: :delete, 
                 data: { confirm: 'Are you sure?' } %>
+    <% if post.created_at >= Time.now - 10*60 %>
    <%= link_to 'Edit', edit_post_path(post) %>
 <% end %>
+<% end %>
 
-
+</div>
