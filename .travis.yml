@@ -1,7 +1,7 @@
 # single test suite, non-parallel build.
 env:
   global:
-    - CC_TEST_REPORTER_ID=ABC123
+    - CC_TEST_REPORTER_ID=a5c3a57f9866db8a64120664051213b5df476ff825a6c3acad5513b519204dec
 language: ruby
 
 rvm:
