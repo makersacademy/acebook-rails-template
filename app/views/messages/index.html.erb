@@ -12,7 +12,7 @@
             <div class="card-body">
       <% end %>
         <h5 class="card-title"><%= message.user.email %></h5>
-          <p><%= message.body %></p>
+          <p style="font-size: 20px;"><%= message.body %></p>
           <p><%= message.created_at.strftime("%d/%m/%y at %l:%M %p") %></p>
           <% if message.file.attached? %>
             <%= link_to "#{message.file.filename}" + " " + Filesize.from("#{message.file.byte_size} B").pretty, rails_blob_path(message.file, disposition: 'attachments')%>
