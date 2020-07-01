@@ -1,45 +1,45 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Programing/acebook-brainaics/app/helpers/application_helper.rb": {
+      "/Users/nickbutler/Projects/wk8/acebook-brainaics/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/Programing/acebook-brainaics/app/helpers/welcome_helper.rb": {
+      "/Users/nickbutler/Projects/wk8/acebook-brainaics/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/Programing/acebook-brainaics/app/controllers/posts_controller.rb": {
+      "/Users/nickbutler/Projects/wk8/acebook-brainaics/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           1,
-          5,
-          5,
+          4,
+          4,
           null,
           null,
           1,
-          7,
-          7,
+          6,
+          6,
           null,
           null,
           1,
-          16,
+          13,
           null,
           null,
           1,
           null,
           1,
-          7,
+          6,
           null,
           null,
           null
         ]
       },
-      "/Users/student/Programing/acebook-brainaics/app/controllers/application_controller.rb": {
+      "/Users/nickbutler/Projects/wk8/acebook-brainaics/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -47,49 +47,49 @@
           null
         ]
       },
-      "/Users/student/Programing/acebook-brainaics/app/controllers/welcome_controller.rb": {
+      "/Users/nickbutler/Projects/wk8/acebook-brainaics/app/controllers/welcome_controller.rb": {
         "lines": [
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Programing/acebook-brainaics/app/models/post.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/student/Programing/acebook-brainaics/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/student/Programing/acebook-brainaics/app/models/user.rb": {
-        "lines": [
-          1,
           1,
           1,
           null,
           null
         ]
       },
-      "/Users/student/Programing/acebook-brainaics/app/controllers/users_controller.rb": {
+      "/Users/nickbutler/Projects/wk8/acebook-brainaics/app/models/post.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/nickbutler/Projects/wk8/acebook-brainaics/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/nickbutler/Projects/wk8/acebook-brainaics/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/nickbutler/Projects/wk8/acebook-brainaics/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
           null,
           1,
-          21,
+          9,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1593603122
+    "timestamp": 1593608575
   }
 }

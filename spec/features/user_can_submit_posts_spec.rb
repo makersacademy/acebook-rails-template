@@ -2,24 +2,14 @@ require 'rails_helper'
 require_relative '../support/features/post_helpers.rb'
 
 RSpec.feature "Timeline", type: :feature do
-  scenario "Can submit posts and view them" do
-    creates_a_post
-    expect(page).to have_content("Hello, world!")
-  end
-
   scenario "Can submit posts and view date" do
     creates_a_post
-    expect(page).to have_content("#{Time.now.strftime("%Y-%m-%d")}")
-  end
-
-  xscenario "Can submit posts and view time" do
-    creates_a_post
-    expect(page).to have_content("#{Time.now.strftime("%k:%M")}")
+    expect(page).to have_content("#{Time.now.strftime("%Y-%m-%d")}", "#{Time.now.strftime("%k:%M")}")
   end
 
   scenario "User email for creator" do
     creates_a_post
-    expect(page).to have_content(/bob@email.com.*Hello, world!/)
+    expect(page).to have_content(/bob1.*Hello, world!/)
   end
 
   scenario "Order of posts based on time created" do
