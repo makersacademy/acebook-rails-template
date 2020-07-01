@@ -7,6 +7,9 @@
 
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
+  <form method="get" action="/posts/<%=post.id%>/edit"> 
+    <button type="submit">Edit</button>
+  </form>
   <p><%= post.updated_at.in_time_zone("London") %></p>
-# To-do: add user Id from user table to display in the posts
+<!-- To-do: add user Id from user table to display in the posts -->
 <% end %>
