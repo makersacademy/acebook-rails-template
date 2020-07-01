@@ -42,8 +42,8 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  #Set default host for test env.
-  config.action_mailer.default_url_options = {:host => "localhost:3000"}
+  # Set default host for test env.
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
