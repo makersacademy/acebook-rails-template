@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "welcome/index"
+
   get 'sessions/new'
 
   get 'sessions/create'
@@ -6,13 +8,12 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   resources :sessions, only: [:new, :create, :destroy]
-  # get ‘signup’, to: "users#new", as: ‘signup’
+  get ‘sign_up’, to: "users#new", as: ‘signup’
   get ‘login’, to: "sessions#new", as: ‘login’
   get ‘logout’, to: "sessions#destroy", as: ‘logout’
 
   resources :users
-  # get 'welcome/index'
-  root "welcome/index"
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :posts
