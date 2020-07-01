@@ -1,3 +1,7 @@
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+
 <% @posts.each do |post| %>
   <p><%= post.created_at.strftime("%d %b %y") %></p>
   <p><%= post.message %></p>
@@ -6,6 +10,4 @@
                 data: { confirm: 'Are you sure?' } %>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+
