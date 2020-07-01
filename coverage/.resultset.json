@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/spec/controllers/posts_controller_spec.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -34,7 +34,7 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/spec/rails_helper.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -96,7 +96,7 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/environment.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -105,7 +105,7 @@
           1
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/application.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/application.rb": {
         "lines": [
           1,
           null,
@@ -127,14 +127,14 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/boot.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/boot.rb": {
         "lines": [
           1,
           null,
           1
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/environments/test.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -180,7 +180,7 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/initializers/application_controller_renderer.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -190,7 +190,7 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/initializers/assets.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -208,7 +208,7 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/initializers/backtrace_silencers.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -219,7 +219,7 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/initializers/cookies_serializer.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -228,7 +228,7 @@
           1
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/initializers/filter_parameter_logging.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -236,7 +236,7 @@
           1
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/initializers/inflections.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -256,7 +256,7 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/initializers/mime_types.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -264,7 +264,7 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/initializers/wrap_parameters.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -282,7 +282,7 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/config/routes.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/routes.rb": {
         "lines": [
           1,
           null,
@@ -294,13 +294,13 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/app/helpers/application_helper.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/app/controllers/posts_controller.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           1,
@@ -343,64 +343,14 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/app/controllers/application_controller.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/spec/features/update_post_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/spec/features/update_post_spec.rb": {
         "lines": [
           1,
           null,
@@ -413,10 +363,58 @@
           1,
           1,
           null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/spec/models/post_spec.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/spec/features/user_can_submit_posts_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/spec/models/post_spec.rb": {
         "lines": [
           1,
           null,
@@ -425,7 +423,7 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/app/models/post.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/app/models/post.rb": {
         "lines": [
           1,
           null,
@@ -434,7 +432,7 @@
           null
         ]
       },
-      "/Users/nadinedelia/Projects/acebook-TeamNameComingSoon-rails/app/models/application_record.rb": {
+      "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/app/models/application_record.rb": {
         "lines": [
           1,
           1,
@@ -442,6 +440,6 @@
         ]
       }
     },
-    "timestamp": 1593611548
+    "timestamp": 1593616570
   }
 }

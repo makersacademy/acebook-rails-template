@@ -5,7 +5,7 @@ feature 'Delete post' do
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Delete me!"
-    click_button "Submit"
+    click_button "Share"
     click_link 'Delete'
     expect(page).to_not have_content("Delete me!")
   end
@@ -16,10 +16,10 @@ feature 'Update post' do
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Update me!"
-    click_button "Submit"
+    click_button "Share"
     click_link 'Edit'
     fill_in "Message", with: "I'm changed I promise!!!"
-    click_button "Submit"
+    click_button "Share"
     expect(page).to have_content("I'm changed I promise!!!")
     expect(page).to_not have_content('Update me!')
   end
@@ -35,7 +35,7 @@ feature 'Update post after 10 mins' do
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Update me!"
-    click_button "Submit"
+    click_button "Share"
     travel_back
     visit "/posts"
     expect(page).to_not have_link("Edit")
