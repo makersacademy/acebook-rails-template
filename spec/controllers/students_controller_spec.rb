@@ -6,7 +6,7 @@ RSpec.describe StudentsController, type: :controller do
     context "after a student signs in" do
       before { sign_in student }
       it "returns http success" do
-        get :index
+        student_path(student.id)
         expect(response).to have_http_status(:success)
       end
     end

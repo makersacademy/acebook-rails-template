@@ -6,7 +6,7 @@ RSpec.describe MentorsController, type: :controller do
     context "after a mentor signs in" do
       before { sign_in mentor }
       it "returns http success" do
-        get :index
+        mentor_path(mentor.id)
         expect(response).to have_http_status(:success)
       end
     end
