@@ -52,7 +52,7 @@ Using a gem is useful but does hide some important functionality which was a pai
 * Currently there is an unexpected terminal output when test are run
 * Adding a test for minimun code coverage
 * Looking into code climate
-* Further edits to the rubocop file
+* Further edits to the rubocop file - currently 7 offences in master
 
 
 REQUIRED INSTRUCTIONS:
