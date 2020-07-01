@@ -7,7 +7,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    puts 'CREATE'
     @post.save
     @post.errors.full_messages
     redirect_to posts_url
@@ -19,7 +18,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    puts 'ALL'
   end
 
   def destroy
@@ -31,7 +29,6 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find_by(id: params[:id])
-    puts params[:message]
     @post.update(message: params[:post][:message])
     redirect_to posts_url
   end
