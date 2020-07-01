@@ -1,4 +1,11 @@
 <h1>hello</h1>
 
+<%= form_for @post do |form| %>
+  <%= form.label :message %>
+  <%= form.text_area :message %>
+
+  <%= form.submit "Submit" %>
+<% end %>
+
 <p>The id of this post is <%= params[:id] %></p>
 <p>The .find method gives <%= @post.inspect %></p>

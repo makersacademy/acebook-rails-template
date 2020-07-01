@@ -17,6 +17,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def update
+    @post = Post.find(params[:id])
+    p params[:post][:message]
+    Post.update(params[:id], :message => params[:post][:message])
+  
+  end
+
   private
 
   def post_params
