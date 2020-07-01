@@ -1,5 +1,5 @@
 body {
-  margin-top: 60px;
+  margin-top: 80px;
   background: #8b9dc3;
 }
 /* Social feed */
@@ -151,3 +151,70 @@ body {
           margin-left: 15%;
           margin-right: 15%;
        } */
+/* NAVIGATION */
+
+       .bg-light {
+        background-color: #4267b2 !important;
+      }
+      
+      .white {
+        color: #ffffff;
+      }
+      
+      .container1 {
+        padding-top: 210px;
+      }
+      
+      body {
+        background-color: #8b9dc3;
+      }
+      
+      /* .btn:hover {
+        color: rgba(255, 255, 255, 0.7);
+      } */
+      .nav-link:hover {
+        color: rgba(255, 255, 255, 0.7) !important;
+      }
+      
+      .navbar-light .navbar-nav .nav-link {
+        color: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 1.2rem;
+      }
+      
+      .navbar-light .navbar-brand {
+        color: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+      
+      .navbar-light .navbar-nav .active > .nav-link {
+        color: #ffffff;
+      }
+      
+      .footer {
+        background: #061d25;
+        padding: 10px 0;
+      }
+      .footer a {
+        color: #70726f;
+        font-size: 20px;
+        padding: 10px;
+        border-right: 1px solid #70726f;
+        transition: all 0.5s ease;
+      }
+      .footer a:first-child {
+        border-left: 1px solid #70726f;
+      }
+      .footer a:hover {
+        color: #ffffff;
+      }
+      
+      .jumbotron {
+        padding-top: 120px;
+        margin-bottom: 0rem;
+      }
+      
+      .mb-2,
+      .my-2 {
+        margin-bottom: 1rem !important;
+      }
