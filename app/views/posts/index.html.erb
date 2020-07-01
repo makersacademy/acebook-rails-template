@@ -2,22 +2,40 @@
 <div class="container text-center">
 
 <%= link_to new_post_path do %>
+<button class="btn btn-sm btn-primary pull-right">
   New post
+  </button>
 <% end %>
+<br>
+<br>
+<br>
+<br>
 
+<div class="panel">
 <div class="panel-body">
+<div class="media-block">
 <% @posts.each do |post| %>
-  <div class="media-block">
-  <%= post.created_at.strftime("%d %b %y") %>
-  <%= post.message %><br>
+  <div class="media-body">
+  <div class="panel">
+<p class="text-muted text-sm">
+  <%= post.created_at.strftime("%d %b %y") %> 
+  </p>
+ <p> <%= post.message %> </p> 
+ <p class="text-muted text-sm">
   <%= link_to 'Delete', post_path(post), 
                 method: :delete, 
                 data: { confirm: 'Are you sure?' } %>
     <% if post.created_at >= Time.now - 10*60 %>
       <%= link_to 'Edit', edit_post_path(post) %>
   <% end %>
-  </div><br>
+  </p>
+  </div>
+  </div>
+  <br>
 <% end %>
+</div>
+</div>
+</div>
 </div>
 
 </div>
