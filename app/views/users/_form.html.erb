@@ -12,3 +12,9 @@
   <%= form.label :password %>
   <%= form.password_field :password %>
 </div>
+
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |msg|%>
+    <%= msg %>
+  <%end%>
+<%end%>
