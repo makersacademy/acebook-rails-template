@@ -23,7 +23,7 @@ RSpec.feature "Visitor updates password" do
     visit_password_reset_page_for user
     change_password_to ""
 
-    expect(page).to have_content ("Password can't be blank")
+    expect(page).to have_content "Password can't be blank"
     expect_user_to_be_signed_out
   end
 
