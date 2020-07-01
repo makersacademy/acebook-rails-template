@@ -1,14 +1,14 @@
-<ul>
+<div>
   <% @messages.each do |message| %>
     <% if message.body %>
     <div class="row">
       <% if message.user_id == current_user.id %>
         <div class="container">
-          <div class="card" style="width:18rem; float:right;">
+          <div class="card" style="width:20rem; float:right;margin-right:125px;"">
             <div class="card-body">
       <% else %>
         <div class="container">
-          <div class="card"style="width:18rem; float:left;">
+          <div class="card"style="width:20rem; float:left;margin-left:125px;"">
             <div class="card-body">
       <% end %>
         <h5 class="card-title"><%= message.user.email %></h5>
@@ -22,13 +22,14 @@
     </div>
   </div>
     <% end %>
+    <br>
   <% end %>
-</ul>
+</div>
 
-<ul style="text-align:center">
+<div style="text-align:center">
 <%= form_for [@conversation, @message] do |f| %>
   <div class="field">
-    <%= f.text_area :body, placeholder: "Wagwan G?" %>
+    <%= f.text_area :body, cols: "45", rows: "2", placeholder: "What say you?" %>
   </div>
   <div class="file_button" style="padding-left:100px">
     <%= f.file_field :file %>
@@ -36,6 +37,13 @@
   <br>
   <%= f.submit "Send" %>
 <% end %>
-</ul>
+</div>
 <br>
-<%= link_to 'Back', url_for(:back) %>
+<div class="links-bar" style="text-align:center">
+<a><%= link_to 'Back to Conversations', conversations_path %></a>
+<% if current_user.type == "Student" %>
+  <a><%= link_to 'Back to Your Dashboard', student_path(current_user.id) %></a>
+<% else %>
+  <a><%= link_to 'Back to Your Dashboard', mentor_path(current_user.id) %></a>
+<% end %>
+</div>

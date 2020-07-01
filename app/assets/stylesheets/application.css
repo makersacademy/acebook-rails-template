@@ -14,3 +14,40 @@
  *= require_simple_discussion
  *= require_self
  */
+
+.links-bar a:not([href]) {
+    color: #666;
+    text-decoration: none;
+}
+
+.links-bar a:focus {
+   color: #666;
+   text-decoration: none;
+}
+
+ .links-bar a {
+   color: #666;
+   background-color: transparent;
+   text-decoration: none;
+ }
+.links-bar a:visited {
+   color: #666;
+   background-color: transparent;
+   text-decoration: none;
+ }
+ .links-bar a:hover {
+   color: #666;
+   background-color: transparent;
+   text-decoration: underline;
+ }
+ .links-bar a:active {
+   color: #666;
+   background-color: transparent;
+   text-decoration: underline;
+ }
+
+ .field {
+   cols: 45;
+   rows: 2;
+   placeholder: "Wagwan G?"
+ }
