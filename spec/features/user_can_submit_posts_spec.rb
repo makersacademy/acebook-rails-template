@@ -17,7 +17,7 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("#{Time.now.strftime("%k:%M")}")
   end
 
-  scenario "Can submit posts and view date" do
+  scenario "User email for creator" do
     sign_up_with('bob@email.com', 'password1')
     creates_a_post
     expect(page).to have_content(/bob@email.com.*Hello, world!/)
