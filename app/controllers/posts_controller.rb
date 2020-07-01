@@ -19,9 +19,8 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    p params[:post][:message]
     Post.update(params[:id], :message => params[:post][:message])
-  
+    redirect_to posts_url
   end
 
   private
