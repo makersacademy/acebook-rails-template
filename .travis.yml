@@ -1,5 +1,7 @@
 language: ruby
 
+# cache: bundler
+
 before_install: gem install bundler -v 1.17.3
 
 services:
@@ -11,3 +13,26 @@ before_script:
 
 script:
   - bundle exec rspec
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "asU2l5B90Ni42xTa0uAOkRBnROFdW+xodzmCAm8E4yLADrRaRRDGHWkYJ2sCGyCkKOaW6DQ5ZJ+2s
+  Wmj0zHq6xhMGhwPR1wp+8P/0xxe0fhTQerIxorp+VGq1TopTwTVtJX7dlJKSun/kT+E16BzKbu+0RCo7PMpA1PGW
+  Zey1Z7bkf++0X0AaMXEr6K/akkwz2UbzGGsMk3jO40VcSSBm1rRBRXNHy633niQB/e3velLHsf4rLpJWDgT138qA
+  17wvowrNxPSDnDMzYrSFrDgV9ioPHjxDAR3ANVNXZEM0rbxTp1S2QxfqScf6g7XeQb820wD5t/s7KLJ/Cih2uYgX
+
+  sQRJRAGDCyRcuzpbhPo6mrSlZglggzMWqBvr4zysNlVsjB/BgsHG+xvsnpSf/AWmd+TF5Jb8Uy2kROCTyvv1ncp0
+  QfzqFaKPCSvpdft8swthSogCVtHbwzLc2JDhOESRf+HtqU9ExBRI3WqTKhj6MGc17fd7tqEXuGui8SNUgYNzKxLR
+  cZDFXpQAcEJhiBXQ7S3YyLp+AX1ApRZniBOb+rfIo54JTKdTPBen4zqSmv2mzmKSvn5HKgVaR6zoO/UE/3pn/Oxp
+  QV6vw7jo6kXrUFrnUQIhTMBciYeY764fLGEE6pw+1++ZwgX/ycXPIBy5b6FDPtipxBVMLJQBvpUfQk="
+  app: jjer
+  on:
+    repo: Emanuele-20/acebook-rails-template
+
+
+
+# before_script:
+# - bundle exec rake db:create
+# - bundle exec rake db:migrate
+# - bundle exec rake assets:precompile
