@@ -1,0 +1,57 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/emanuele/Projects/acebook-rails-template/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/emanuele/Projects/acebook-rails-template/app/controllers/posts_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          3,
+          3,
+          null,
+          null,
+          1,
+          3,
+          null,
+          null,
+          1,
+          null,
+          1,
+          3,
+          null,
+          null
+        ]
+      },
+      "/Users/emanuele/Projects/acebook-rails-template/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/emanuele/Projects/acebook-rails-template/app/models/post.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/emanuele/Projects/acebook-rails-template/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1593597269
+  }
+}
