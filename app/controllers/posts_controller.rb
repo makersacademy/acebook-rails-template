@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
+    @user_id = current_user.username
   end
 
   def create
@@ -15,6 +16,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :creator_id)
   end
+
 end

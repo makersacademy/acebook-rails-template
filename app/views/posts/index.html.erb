@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
-  <p id="<%= post.id %>"><%= post.created_at.to_date%> <%= post.created_at.strftime("%k:%M") %></p>
-
-  <p><div id="body"><%= simple_format(post.message) %></div></p>
+  <div id="data"><%= post.created_at.to_date%> <%= post.created_at.strftime("%k:%M") %></div>
+  <div id="creator"> <%= post.creator_id %> </div>
+  <div id="body"><%= simple_format(post.message) %></div>
 <% end %>
 
 <%= link_to new_post_path do %>
