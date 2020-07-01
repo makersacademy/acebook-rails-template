@@ -7,12 +7,8 @@
 
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
-  <form method="get" action="/posts/<%=post.id%>/edit"> 
-    <button type="submit">Edit</button>
-  </form>
-  <form method="delete" action="/posts/<%=post.id%>"> 
-  <button type="submit">Delete</button>
-</form>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  <%= link_to "Delete", destroy_post_path(:id => post.id), :method => :delete %>
   <p><%= post.updated_at.in_time_zone("London") %></p>
 <!-- To-do: add user Id from user table to display in the posts -->
 <% end %>

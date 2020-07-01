@@ -24,7 +24,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    p "you're in the destory method"
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_url
   end
 
   private
