@@ -87,10 +87,15 @@
       "/Users/student/gitDir/acebook-rails-template/app/models/user.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          1,
+          1,
           null
         ]
       }
     },
-    "timestamp": 1593624249
+    "timestamp": 1593624403
   }
 }

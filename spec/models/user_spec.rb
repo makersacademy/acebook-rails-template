@@ -1,5 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+
+  describe 'user sign up' do
+    it 'allows a new user to sign up' do
+      user = User.new(name: "Emanuele", email: "ema@test.com", password_digest: "test")
+      expect(user).to be_valid
+    end
+  end
+
+  describe 'invalid username' do
+    it  "rejects sign up with no username" do
+      user = User.new(name: nil, email: "ema@test.com", password_digest: "test")
+      expect(user).to_not be_valid
+    end
+  end
+
+  describe 'invalid email' do
+    it  "rejects sign up with no username" do
+      user = User.new(name: "Emanuele", email: "ema@test.com", password_digest: nil)
+      expect(user).to_not be_valid
+    end
+  end
+end 
