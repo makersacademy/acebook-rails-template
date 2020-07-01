@@ -1,7 +1,65 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<% content_for :welcome_name do %>
+  <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">@username</a>
+          </li>
 <% end %>
 
-<%= link_to new_post_path do %>
+<% content_for :new_post do %>
+                      <%= link_to new_post_path, class: "nav-link" do %>
   New post
 <% end %>
+<% end %>
+
+
+
+  <body>
+    <div class="container">
+  <% @posts.each do |post| %>
+      <div class="col-md-7">
+          <div class="social-feed-separated">
+
+              <div class="social-feed-box">
+                  
+                  <div class="social-avatar">
+
+                      <a href="#">
+                          Quigley
+                      </a>
+                      <small class="text-muted"><p><%= post.created_at %></p></small>
+                  </div>
+                  <div class="social-body">
+                     
+                          <p><%= post.message %></p>
+                      
+                      <img src="" class="img-responsive">
+                      <div class="btn-group">
+                      <%# <p><%= link_to("Delete post", post_path(post) , method: :delete )%>
+                       
+                    
+                       
+                          <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up" style=color:#8b9dc3;></i> Like!</button>
+                          <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>
+
+                        <%= link_to post_path(post), method: :delete, id: "delete_post" do %>
+                            <button class="btn btn-white btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        <% end %>
+
+                         <%= link_to edit_post_path(post), method: :get, id: "edit_post" do %>
+                            <button class="btn btn-white btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
+                        <% end %>
+
+                        
+                      </div>
+              
+
+                  </div>
+      
+              </div>
+      
+          </div> 
+      </div>
+
+      <% end %>
+
+    </div>
