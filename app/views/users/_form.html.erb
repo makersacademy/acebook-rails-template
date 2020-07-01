@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :firstname %>
+    <%= form.label :firstname, "First Name" %>
     <%= form.text_field :firstname, id: :user_firstname %>
   </div>
 
   <div class="field">
-    <%= form.label :lastname %>
+    <%= form.label :lastname, "Last Name" %>
     <%= form.text_field :lastname, id: :user_lastname %>
   </div>
 
@@ -29,7 +29,9 @@
   <div class="field">
     <%= form.label :password %>
     <%= form.password_field :password, id: :user_password %>
+    <p> (Password must be between 6 and 10 characters) </p>
   </div>
+  
 
   <div class="field">
     <%= form.label :password_confirmation %>
