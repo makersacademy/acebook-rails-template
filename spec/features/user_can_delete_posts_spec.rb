@@ -8,7 +8,7 @@ RSpec.feature 'Timeline', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'Test Post!'
     click_button 'Submit'
-    click_link 'Delete post'
+    click_link('delete_post')
     expect(page).not_to have_content('Test Post!')
   end
 end

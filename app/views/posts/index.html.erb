@@ -51,11 +51,11 @@
                           <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up" style=color:#8b9dc3;></i> Like!</button>
                           <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>
 
-                        <%= link_to post_path(post), method: :delete, data: { confirm: 'Are you sure you want to delete your post?' } do %>
+                        <%= link_to post_path(post), method: :delete, id: "delete_post" do %>
                             <button class="btn btn-white btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         <% end %>
 
-                         <%= link_to edit_post_path(post), method: :get do %>
+                         <%= link_to edit_post_path(post), method: :get, id: "edit_post" do %>
                             <button class="btn btn-white btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
                         <% end %>
 

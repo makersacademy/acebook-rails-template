@@ -1,7 +1,7 @@
 
 <%= form_for @post,  method: :patch do |form| %> 
   <%= form.label :Previous_Post  %>
-  <%= form.text_field :message%>
+  <%= form.text_field :message , id: "new_message"%>
  <%= form.submit "Submit" %>
 <% end %>
 
