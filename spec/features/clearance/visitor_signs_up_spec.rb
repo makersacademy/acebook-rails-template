@@ -10,20 +10,26 @@ RSpec.feature "Visitor signs up" do
     expect(current_path).to eq sign_up_path
   end
 
-  xscenario "with valid email and password" do
-    sign_up_with "valid@example.com", "password"
+  scenario "with valid email, username and password" do
+    sign_up_with "valid@example.com", "username", "password"
 
     expect_user_to_be_signed_in
   end
 
-  xscenario "tries with invalid email" do
-    sign_up_with "invalid_email", "password"
+  scenario "tries with invalid email" do
+    sign_up_with "invalid_email", "username", "password"
 
     expect_user_to_be_signed_out
   end
 
-  xscenario "tries with blank password" do
-    sign_up_with "valid@example.com", ""
+  scenario "tries with blank password" do
+    sign_up_with "valid@example.com", "username", ""
+
+    expect_user_to_be_signed_out
+  end
+
+  scenario "tries with blank username" do
+    sign_up_with "valid@example.com", "", "password"
 
     expect_user_to_be_signed_out
   end
