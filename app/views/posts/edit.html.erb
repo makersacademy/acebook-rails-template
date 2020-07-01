@@ -22,34 +22,14 @@
                   </div>
                   <div class="social-body">
 
-                           <%= form_for @post,  method: :patch do |form| %> 
+                            <%= form_for @post,  method: :patch do |form| %> 
   
-  <%= form.text_field :message , id: "new_message"%>
+ 
+<label for="defaultFormMessageModalEx">Update your post below</label>
+<%= form.text_area(:message, id: "defaultFormMessageModalEx", class: 'md-textarea form-control')  %> 
+   
   <button class="btn btn-white btn-xs"><i class="fa fa-refresh" aria-hidden="true"></i> Update Post</button>
 <% end %>
-                      
-                      <img src="" class="img-responsive">
-                      <div class="btn-group">
-                 
-                       
-                    
-                       <button class="btn btn-white btn-xs"><i class="fa fa-refresh" aria-hidden="true"></i> Button</button>
-                        
-<%#                          
-                      <%= link_to  method: :patch, id: "Submit" do %> 
-                           
-                        <%# <% end %>
-                       
-                           
-                     
-
-                         
-                            
-                        
-
-                        
-                      </div>
-              
 
                   </div>
       
@@ -61,5 +41,5 @@
  
     </div>
 
-   
+
 
