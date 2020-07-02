@@ -1,13 +1,8 @@
 <h1>hello</h1>
 
-
-<% if @post.editable? %>
   <%= form_for @post do |form| %>
     <%= form.label :message %>
     <%= form.text_area :message %>
 
     <%= form.submit "Submit" %>
-  <% else %>
-    <p>Sorry, messages can only be edited within 10 minutes of creation<p>
-  <% end %>
 <% end %>
