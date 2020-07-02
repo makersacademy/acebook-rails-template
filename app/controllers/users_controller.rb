@@ -1,10 +1,16 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
   end
 
   def create
-    p @user = User.create(user_params)
+    p 'Here'
+    p user_params
+
+    @user = User.create(user_params)
+    p @user.save
     redirect_to posts_url
   end
 
