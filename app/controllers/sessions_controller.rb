@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
-  def new; end
+  def new
+  end
 
   def create
-    p params
-    p user = User.find_by(email: params[:user][:email])
-
-    if user.valid?
+    user = User.find_by(email: params[:user][:email])
+    if user && user.authenticate(params[:user][:password])
+      session[:user_id] = user.id
       redirect_to posts_url
+    else
+      redirect_to '/login'
     end
   end
 end

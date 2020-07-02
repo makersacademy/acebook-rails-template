@@ -5,45 +5,37 @@ RSpec.describe UsersController, type: :controller do
 
   describe 'POST /' do
     it 'creates a new user' do
-      post :create, params: { user: {name: 'Emanuele', email: 'ema@test.com', password_digest: '12345' }}
+      post :create, params: { user: {name: 'Emanuele', email: 'ema@test.com', password: '12345' }}
       expect(User.find_by(name: 'Emanuele')).to be
-      expect(User.find_by(password_digest: '12345')).to be
+      # expect(User.find_by(password_digest: '12345')).to be
       expect(User.find_by(email: 'ema@test.com')).to be
     end
   end
 
   describe 'user sign up' do
     it 'allows a new user to sign up' do
-      user = User.new(name: 'Emanuele', email: 'ema@test.com', password_digest: 'test')
+      user = User.new(name: 'Emanuele', email: 'ema@test.com', password: 'test')
       expect(user).to be_valid
     end
   end
-  # 
-  # describe 'user log in' do
-  #   it 'allows a user to log in' do
-  #     post :create, params: { user: {name: 'Emanuele', email: 'ema@test.com', password_digest: '12345' }}
-  #     post :login, params: { user: {email: 'ema@test.com', password_digest: '12345' }}
-  #     expect(response).to redirect_to(posts_url)
-  #   end
-  # end
-
+  
   describe 'invalid username' do
     it 'rejects sign up with no name' do
-      user = User.new(name: nil, email: 'ema@test.com', password_digest: 'test')
+      user = User.new(name: nil, email: 'ema@test.com', password: 'test')
       expect(user).to_not be_valid
     end
   end
 
   describe 'invalid email' do
     it 'rejects sign up with no email' do
-      user = User.new(name: 'Emanuele', email: nil, password_digest: nil)
+      user = User.new(name: 'Emanuele', email: nil, password: nil)
       expect(user).to_not be_valid
     end
   end
 
   describe 'invalid email' do
     it 'rejects sign up with no password' do
-      user = User.new(name: 'Emanuele', email: 'ema@test.com', password_digest: nil)
+      user = User.new(name: 'Emanuele', email: 'ema@test.com', password: nil)
       expect(user).to_not be_valid
     end
   end
