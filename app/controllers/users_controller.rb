@@ -8,8 +8,18 @@ class UsersController < ApplicationController
     redirect_to posts_url
   end
 
+  def check
+    p user_params
+    @user = User.find(user_params)
+    if @user != nil
+      redirect_to users_url
+    # else
+    #   redirect_to posts_url
+    end
+  end
+
   def login
-  end 
+  end
 
   private
 
