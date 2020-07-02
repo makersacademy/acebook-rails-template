@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
-  # get 'sessions/new'
-  # get "sessions/create"
-  # get 'sessions/destroy'
+  get 'sessions/new'
+  get "sessions/create"
+  get 'sessions/destroy'
 
   get 'signup', to: "users#new", as: 'signup'
   get 'login', to: "sessions#new", as: 'login'
