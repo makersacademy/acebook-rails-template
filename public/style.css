@@ -1,10 +1,30 @@
 .sign-up {
   text-align: center;
+  margin: auto;
+  width: 200px;
+  background-color: #494949;
+  opacity: 0.8;
+  color: white;
+  font-weight: bold;
 }
 
 .sign-in {
   text-align: center;
+  margin: auto;
+  width: 200px;
+  background-color: #494949;
+  opacity: 0.8;
+  color: white;
+  font-weight: bold;
 }
+
+#top_bar {
+  background-color: #494949;
+  opacity: 0.8;
+  color: white;
+  font-weight: bold;
+}
+
 
 body {
   background-size: cover;
