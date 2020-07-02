@@ -18,6 +18,15 @@
   font-weight: bold;
 }
 
+#vertical {
+  position: absolute;
+  top: 50%;
+  margin-top: -200px;
+  /* half of #content height*/
+  left: 0;
+  width: 100%;
+}
+
 #top_bar {
   background-color: #494949;
   opacity: 0.8;
