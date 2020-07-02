@@ -8,9 +8,9 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("#{Time.now.strftime("%Y-%m-%d")}", "#{Time.now.strftime("%k:%M")}")
   end
 
-  xscenario "User email for creator" do
+  scenario "User email for creator" do
     creates_a_post
-    expect(page).to have_content(/bob1.*Hello, world!/)
+    expect(page).to have_content("bob1 Hello, world!")
   end
 
   scenario "Order of posts based on time created" do
@@ -20,10 +20,10 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   xscenario "A post can be added with line breaks" do
-    visit "/posts"
+    sign_in 
     click_link "New post"
     fill_in "Message", with:
-    "I am a post.\r\nOne which has new lines"
+    "I am a post." + "\r\n" + "One which has new lines"
     click_button "Submit"
     expect(find('#body').text).to eq("I am a post.\nOne which has new lines")
   end
