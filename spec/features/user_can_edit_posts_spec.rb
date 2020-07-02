@@ -25,9 +25,10 @@ RSpec.feature "Edit", type: :feature do
   end
 
   scenario "user cannot edit their own posts after 10 minutes" do
-    creates_a_post
+    Timecop.freeze(Time.now - 11.minutes) do
+      creates_a_post
+    end
     click_link "update"
     expect(page).to have_content("You can only edit a post for 10mins...  😥")
   end
-
 end
