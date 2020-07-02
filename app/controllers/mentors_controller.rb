@@ -14,6 +14,6 @@ class MentorsController < ApplicationController
     student = Student.find_by(email: params[:mentor][:student_email])
     current_user.students << student
     current_user.save
-    redirect_to mentor_path(current_user.id)
+    redirect_back(fallback_location: root_path)
   end
 end

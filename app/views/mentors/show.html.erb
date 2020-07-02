@@ -24,21 +24,23 @@
   <% end %>
 
   <div class="ui widget">
-    <%= form_with model: @mentor, method: "put" do |f| %>
-    <%= f.text_field :student_email, id: "add_student" %>
-    <%= f.submit "Add Student" %>
+    <%= form_with model: @mentor, method: "put", local: true do |f| %>
+      <%= f.text_field :student_email, id: "add_student" %>
+      <%= f.submit "Add Student" %>
     <% end %>
   </div>
 
-  <p>Students you're connected with</p>
+  <h3>Students you are connected with</h3>
 
-  <% @mentor.students.each do |student|%>
-    <ul>
-      <li>
-        <%= student.first_name + " " + student.last_name + " - " + "(" + student.email + ")"%>
-      </li>
-    </ul>
-  <% end %>
+  <div>
+    <% @mentor.students.each do |student|%>
+      <ul>
+        <li>
+          <%= student.first_name + " " + student.last_name + " - " + "(" + student.email + ")"%>
+        </li>
+      </ul>
+    <% end %>
+  </div>
 
   <%= link_to 'Log out', destroy_mentor_session_path, :method => :delete %>
 </body>

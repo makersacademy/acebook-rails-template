@@ -17,9 +17,10 @@
 </ul>
 
 <br>
+
 <%= link_to 'Back to Your Dashboard',
 if current_user.type == "Student"
-  student_path(current_user.id)
+  "/students/#{current_user.id}/dashboard"
 else
-  mentor_path(current_user.id)
-end%>
+  "/mentors/#{current_user.id}/dashboard"
+end %>
