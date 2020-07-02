@@ -600,8 +600,10 @@
       "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/config/routes.rb": {
         "lines": [
           1,
+          null,
           1,
           null,
+          1,
           1,
           1,
           null,
@@ -777,6 +779,6 @@
         ]
       }
     },
-    "timestamp": 1593694041
+    "timestamp": 1593698046
   }
 }
