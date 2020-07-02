@@ -16,12 +16,18 @@ RSpec.feature "Edit", type: :feature do
     expect(page).to have_content("bob1 Hello, Brainaics!")
   end
 
-  scenario "user can not edit another user's posts" do
+  scenario "user cannot edit another user's posts" do
     creates_a_post
     click_on "Sign out"
     sign_in
     click_link "update"
     expect(page).to have_content("Cannot change another user's post")
+  end
+
+  scenario "user cannot edit their own posts after 10 minutes" do
+    creates_a_post
+    click_link "update"
+    expect(page).to have_content("You can only edit a post for 10mins...  😥")
   end
 
 end

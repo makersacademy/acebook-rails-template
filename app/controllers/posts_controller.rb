@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :require_permission, only: [:edit, :destroy]
+  before_action :require_time_check, only: :edit
 
   def new
     @post = Post.new
@@ -41,6 +42,13 @@ class PostsController < ApplicationController
   def require_permission
     if current_user != Post.find(params[:id]).user
       flash[:alert] = "Cannot change another user's post"
+      redirect_to posts_url
+    end
+  end
+
+  def require_time_check
+    if Time.now - Post.find(params[:id]).created_at > 10.minutes
+      flash[:alert] = "You can only edit a post for 10mins...  😥"
       redirect_to posts_url
     end
   end
