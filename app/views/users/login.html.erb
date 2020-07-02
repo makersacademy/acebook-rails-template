@@ -1,13 +1,30 @@
-<h1>Log in</h1>
 
-<%= form_with scope: :user, url: '/login', local: true  do |form| %>
 
-<%= form.label :email %>
-<%= form.email_field :email %>
 
-<%= form.label :password %>
-<%= form.password_field :password %>
+<div class="container1">
+      <div class="col-md-6 mx-auto text-center">
+         <div class="header-title">
+            <h1 class="wv-heading--title white">
+            
+            </h1>
+            <br>
+         </div>
+      </div>
 
-<%= form.submit "Log in" %>
+
+<%= form_with scope: :user, url: '/login', local: true, class: "col-md-4 mx-auto" do |form| %>
+
+<%= form.email_field :email , placeholder: "Email", class: "form-control my-input form-group"%>
+
+<%= form.password_field :password,  placeholder: "Password", class: "form-control my-input mb-2 input-group" %>
+
+<%= form.submit "Log in", class: "btn btn-block send-button tx-tfm white text-center" %>
 
 <% end %>
+
+</div>
+
+
+
+
+
