@@ -1,8 +1,14 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
+<p id=”notice”><%= notice %></p>
+<!-- This will say "logged in" when the user has logged  in-->
 
-  <%= form.submit "Submit" %>
+<% @posts.each do |post| %>
+  <p><%= post.message %></p>
+    <%= form_for @post do |form| %>
+      <%= form.label :message %>
+      <%= form.text_area :message %>
+
+      <%= form.submit "Submit" %>
+    <% end %>
 <% end %>
 
 <% @posts.reverse.each do |post| %>
