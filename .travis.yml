@@ -9,13 +9,9 @@ rvm:
 
 before_install: 
   - gem install bundler -v 1.17.2
-  - git clone https://github.com/TravisToolbox/rubocop-travis.git
 
 services:
   - postgresql
-
-install:
-  - ./rubocop-travis/install.sh
 
 before_script:
   - bin/rails db:create
@@ -26,7 +22,6 @@ before_script:
 
 script:
   - bundle exec rspec
-  - ./rubocop-travis/scan.sh
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
