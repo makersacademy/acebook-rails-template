@@ -15,4 +15,14 @@ RSpec.feature "Edit", type: :feature do
     click_on "Submit"
     expect(page).to have_content("bob1 Hello, Brainaics!")
   end
+
+  scenario "user can edit their own posts" do
+    creates_a_post
+    click_on "Sign out"
+    sign_in
+    click_link "update"
+    expect(page).to have_content("Cannot edit another users post")
+  end
+
+    # signout, signin new user, expect page to not have button edit
 end

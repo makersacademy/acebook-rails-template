@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :require_permission, only: :edit
+
   def new
     @post = Post.new
     @user_id = current_user.id
@@ -34,6 +36,13 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message, :user_id)
+  end
+
+  def require_permission
+    if current_user != Post.find(params[:id]).user
+      flash[:alert] = "Cannot edit another users post"
+      redirect_to posts_url
+    end
   end
 
 end

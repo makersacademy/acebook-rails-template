@@ -18,7 +18,7 @@
     <section>
     <div id="flash">
     <% flash.each do |key, value| %>
-      <div class='flash <%= key %>'><%= value %></div>
+      <h1><div class='flash <%= key %>'><%= value %></div></h1>
     <% end %>
   </div>
     <%= yield %>
