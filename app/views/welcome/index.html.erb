@@ -7,7 +7,8 @@
     <%= link_to "Log In", new_session_path %>
   <% end %> -->
 
-  <p id=”alert”><%= alert %></p>
+  <!-- <p id=”alert”><%= alert %></p> -->
+  <p id=”notice”><%= notice %></p>
 
 <h2>Login</h2>
   <%= form_tag sessions_path do |form| %>
@@ -27,5 +28,3 @@
 
 <% end %>
 <%= link_to "Sign Up", new_user_path %>
-
-<!-- <p id=”notice”><%= notice %></p> -->
