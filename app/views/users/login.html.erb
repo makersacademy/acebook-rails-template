@@ -1,6 +1,6 @@
 <h1>Log in</h1>
 
-<%= form_with scope: :user, url: users_path, local: true  do |form| %>
+<%= form_with scope: :user, url: '/login', local: true  do |form| %>
 
 <%= form.label :email %>
 <%= form.email_field :email %>
