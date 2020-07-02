@@ -15,7 +15,7 @@ services:
   - postgresql
 
 install:
-  - - ./rubocop-travis/install.sh
+  - ./rubocop-travis/install.sh
 
 before_script:
   - bin/rails db:create
