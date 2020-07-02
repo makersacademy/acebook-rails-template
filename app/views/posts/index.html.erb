@@ -3,8 +3,15 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+<%= form_for @post do |form| %>
+  <%= form.label :message %>
+  <%= form.text_area :message %>
+
+  <%= form.submit "Submit" %>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<% @posts.reverse.each do |post| %>
+  <p><%= post.message %></p>
+  <p><%= post.updated_at.in_time_zone("London") %></p>
+# To-do: add user Id from user table to display in the posts
 <% end %>
