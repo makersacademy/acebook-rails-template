@@ -1,0 +1,9 @@
+<div class='panel'>
+    <%= form_for @post do |form| %>
+    
+      <%= form.label :message %>
+      <%= form.text_area :message, :class => "form-control", :placeholder => 'What are you thinking?', :input_html => {:minlength => 1}  %><br>
+
+      <%= form.submit "Share", :class => "btn btn-sm btn-primary pull-right" %>
+    <% end %>
+</div>
