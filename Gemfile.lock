@@ -42,10 +42,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.1)
-<<<<<<< HEAD
     bcrypt (3.1.13)
-=======
->>>>>>> 7cc81f79db3ee227100c693f8dd77fa66440fb69
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.1)
