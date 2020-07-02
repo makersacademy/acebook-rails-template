@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
   <div id="data"><%= post.created_at.to_date%> <%= post.created_at.strftime("%k:%M") %></div>
-  <div id="creator"> <%= post.user_id %> </div>
+  <div id="creator"> <%= post.user.username %> </div>
   <div id="body"><%= simple_format(post.message) %></div>
 <% end %>
 
