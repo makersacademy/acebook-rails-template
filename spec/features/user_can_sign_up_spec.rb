@@ -30,7 +30,7 @@ RSpec.feature "Signing up", type: :feature do
     fill_in "Password", with: "123456"
     fill_in "Confirm Password", with: "123456"
     click_button "Create User"
-    expect(page).to have_content("First name can't be blank")
+    expect(page).to have_content("Firstname can't be blank")
     expect(page).to have_current_path("/users")
   end
   scenario "Encounters error when no last name is passed" do
@@ -39,7 +39,7 @@ RSpec.feature "Signing up", type: :feature do
     fill_in "Password", with: "123456"
     fill_in "Confirm Password", with: "123456"
     click_button "Create User"
-    expect(page).to have_content("Last name can't be blank")
+    expect(page).to have_content("Lastname can't be blank")
     expect(page).to have_current_path("/users")
   end
   scenario "Encounters error when password is too short" do
