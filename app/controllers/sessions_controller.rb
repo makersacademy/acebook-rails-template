@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id 
-      redirect_to root_url, notice: "Logged in!"
+      redirect_to posts_path, notice: "Logged in!"
       # :action => post_path, :id => user.id, notice: "You successfully logged in!"
       
     else
