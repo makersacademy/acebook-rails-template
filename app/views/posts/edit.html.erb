@@ -1,0 +1,6 @@
+<%= form_for :post, url: post_path(@post), method: :patch do |form| %>
+    <%= form.hidden_field :user_id, :value => @user_id %>
+    <%= form.label :message %>
+    <%= form.text_area :message %>
+    <%= form.submit "Submit" %>
+  <% end %>

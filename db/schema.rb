@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20200701151945) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "creator_id"
+    t.string "creator_id", limit: 60
     t.bigint "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -38,4 +38,5 @@ ActiveRecord::Schema.define(version: 20200701151945) do
   end
 
   add_foreign_key "posts", "users"
+  add_foreign_key "posts", "users", column: "creator_id", primary_key: "username", name: "posts_creator_id_fkey"
 end
