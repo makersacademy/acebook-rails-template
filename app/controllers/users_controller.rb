@@ -8,6 +8,9 @@ class UsersController < ApplicationController
     redirect_to posts_url
   end
 
+  def login
+  end 
+
   private
 
   def user_params
