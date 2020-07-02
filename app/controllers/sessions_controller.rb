@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to posts_url
     else
+      flash[:login_errors] = ["Invalid Credentials ;-D"]
       redirect_to '/login'
     end
   end
