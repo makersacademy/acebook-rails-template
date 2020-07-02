@@ -1,19 +1,9 @@
 language: ruby
-rvm: 
-  - '2.5.0'
-  # can specify many versions of ruby if you like
-
-  # before_script:
-  # - psql -U postgres -c 'CREATE DATABASE user_test;'
-  #  - psql -U postgres -c 'CREATE DATABASE post_test;'
-
-env:
-  - DB=postgresql
-
+before_install: gem install bundler -v 1.17.3
+services:
+  - postgresql
+before_script:
+  - bin/rails db:create
+  - bin/rails db:migrate
 script:
-  - RAILS_ENV=test bundle exec rake db:create db:migrate --trace
   - bundle exec rspec
-
-  before_script:
-  - cp config/database.travis.yml config/database.yml
-  - psql -e 'create database pgapp_test'

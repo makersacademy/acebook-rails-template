@@ -42,7 +42,10 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     ast (2.4.1)
+<<<<<<< HEAD
     bcrypt (3.1.13)
+=======
+>>>>>>> 7cc81f79db3ee227100c693f8dd77fa66440fb69
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.1)
@@ -142,7 +145,11 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rainbow (3.0.0)
+<<<<<<< HEAD
     rake (12.3.1)
+=======
+    rake (13.0.1)
+>>>>>>> 7cc81f79db3ee227100c693f8dd77fa66440fb69
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
