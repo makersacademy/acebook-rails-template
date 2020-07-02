@@ -1,0 +1,43 @@
+.sign-up {
+  text-align: center;
+  margin: auto;
+  width: 200px;
+  background-color: #494949;
+  opacity: 0.8;
+  color: white;
+  font-weight: bold;
+}
+
+.sign-in {
+  text-align: center;
+  margin: auto;
+  width: 200px;
+  background-color: #494949;
+  opacity: 0.8;
+  color: white;
+  font-weight: bold;
+}
+
+#vertical {
+  position: absolute;
+  top: 50%;
+  margin-top: -200px;
+  /* half of #content height*/
+  left: 0;
+  width: 100%;
+}
+
+#top_bar {
+  background-color: #494949;
+  opacity: 0.8;
+  color: white;
+  font-weight: bold;
+}
+
+
+body {
+  background-size: cover;
+    	background-repeat: no-repeat;
+    	min-height: 100vh;
+  background-image: url("mangrove-background.jpg");
+}
