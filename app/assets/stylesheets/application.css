@@ -26,7 +26,7 @@
   
   .sign-in {
     text-align: center;
-    margin: auto;
+    margin: 5% auto auto 20%;
     width: 200px;
     background-color: #494949;
     opacity: 0.8;
@@ -49,7 +49,6 @@
     color: white;
     font-weight: bold;
   }
-  
   
   body {
     margin-top: 100px;
@@ -88,10 +87,6 @@
   body.index {
     background-image: url("scarefloorimage.jpg");
   }
-
-  body.signup {
-    background-image: url("monsters_sign_up_image.jpg");
-  }
   
   .container.post {
     background-color: white;
@@ -100,4 +95,40 @@
   
   .each_post {
     margin-top: 10px;
+  }
+
+  .page-footer {
+      z-index: -1;
+      background-color: white;
+  }
+
+  * {
+    box-sizing: border-box;
+   }
+   *:before,
+   *:after {
+    box-sizing: border-box;
+   }
+   html,
+   body {
+    height: 100%;
+    position: relative;
+   }
+   .main-container {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px; /* height of your footer */
+   }
+   footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+   }
+   .btn {
+       background-color: #69B5AB;
+   }
+   body.new.clearance\/users {
+    background-image: url("signupimage");
   }

@@ -11,6 +11,7 @@
   <%= form.password_field :password, placeholder: "password" %>
 </div>
 
+
 <% if @user.errors.any? %>
   <% @user.errors.full_messages.each do |msg|%>
     <%= msg %>
