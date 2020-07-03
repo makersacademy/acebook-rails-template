@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ html {
+     height: 100%;
+ }
+
  .sign-up {
     text-align: center;
     margin: auto;
@@ -35,12 +39,14 @@
   }
   
   #vertical {
-    position: absolute;
+    position: relative;
     top: 50%;
     margin-top: -200px;
-    /* half of #content height*/
     left: 0;
     width: 100%;
+  }
+  ul {
+      list-style: none;
   }
   
   #top_bar {
@@ -54,28 +60,15 @@
     margin-top: 100px;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
     background-image: url("sullyhomescreen.jpg");
-  }
-  
-  #footer {
-    /* background-image: url("hdrm_character-sulley_launch.jpg"); */
-    z-index:-1;
-    position:fixed;
-     left:0px;
-     bottom:0px;
-     height:100px;
-     width:100%;
-  }
-  
-  .footer_image {
-    width: 100%;
     height: 100%;
+    position: relative;
+    padding-bottom: 2.5rem;    /* Footer height */
+    background-repeat: repeat-y;
   }
   
   #navbarSupportedContent {
     text-align: right;
-  
   }
   
   #signout {
@@ -84,6 +77,13 @@
     display: inline-block;
     width: 100%;
   }
+
+  body.new.clearance\/sessions {
+    padding-top: 200px;
+    background-color: #69B5AB;
+    background-repeat: no-repeat;
+  }
+
   body.index {
     background-image: url("scarefloorimage.jpg");
   }
@@ -97,11 +97,6 @@
     margin-top: 10px;
   }
 
-  .page-footer {
-      z-index: -1;
-      background-color: white;
-  }
-
   * {
     box-sizing: border-box;
    }
@@ -109,26 +104,35 @@
    *:after {
     box-sizing: border-box;
    }
-   html,
-   body {
-    height: 100%;
+
+   #page-container {
     position: relative;
+    min-height: 100vh;
    }
-   .main-container {
-    min-height: 100vh; /* will cover the 100% of viewport */
-    overflow: hidden;
-    display: block;
-    position: relative;
-    padding-bottom: 100px; /* height of your footer */
-   }
+
+   .content-wrap {
+    /* padding-top: 200px; */
+    padding-bottom: 100px;    /* Footer height */
+  }
+
    footer {
     position: absolute;
+    height: 100px;
     bottom: 0;
     width: 100%;
+    background-color: white;
+    z-index: -1;
    }
    .btn {
        background-color: #69B5AB;
    }
    body.new.clearance\/users {
+    padding-top: 200px;
     background-image: url("signupimage");
+    background-color: #69B5AB;
+    background-repeat: no-repeat;
+  }
+
+  .container-sm {
+      margin-bottom: 100px;
   }
