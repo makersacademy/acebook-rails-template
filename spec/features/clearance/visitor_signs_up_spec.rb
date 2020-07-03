@@ -4,9 +4,7 @@ require "support/features/clearance_helpers"
 RSpec.feature "Visitor signs up" do
   scenario "by navigating to the page" do
     visit sign_in_path
-
-    click_link I18n.t("sessions.form.sign_up")
-
+    find(".signup_link").click
     expect(current_path).to eq sign_up_path
   end
 

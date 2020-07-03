@@ -1,4 +1,6 @@
+
 <% @posts.each do |post| %>
+  <div class="container post">
   <div id="data"><%= post.created_at.to_date%> <%= post.created_at.strftime("%k:%M") %></div>
   <div id="creator"> <%= post.user.username %> </div>
   <div id="body"><%= simple_format(post.message) %></div> 
@@ -6,8 +8,6 @@
   <div id="delete"><%= link_to "delete", post_path(post), method: :delete,
   data: { confirm: 'Are you sure?' } %></div>
 <% end %>
-
-
 
 <%= link_to new_post_path do %>
   New post

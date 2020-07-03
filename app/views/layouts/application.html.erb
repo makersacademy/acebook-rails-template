@@ -10,17 +10,31 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
+
+
   <header>
-    <% if signed_in? %>
-    <div class="container-sm" id="top_bar">
-    <div class="d-flex justify-content-between">
-        Signed in as: <%= current_user.username %>
-        <%= button_to 'Sign out', sign_out_path, method: :delete %>
-    </div>
-    </div>
-    <% end %>
-  </header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" id="nav-bar">
+        <a class="navbar-brand" href="#">Welcome to the Scare Floor</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-right" id="signout">
+            <li class="nav-item">
+              <% if signed_in? %>
+                  You&#39re Scarer: <%= current_user.username %>
+                  <%= button_to 'Sign out', sign_out_path, method: :delete %>
+              <% else %>
+                  Not a Scarer? <%= link_to t(".sign_up"), sign_up_path, :class => "signup_link" %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</header>
+<body class="<%= params[:action] %>">
+
     <section>
       <div id="flash">
         <% flash.each do |key, value| %>
@@ -35,4 +49,5 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
+
 </html>
