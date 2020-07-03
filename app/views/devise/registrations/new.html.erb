@@ -6,6 +6,8 @@
   <div class="col-sm-offset-4 col-sm-4">
     <h3>Sign up <small>it's free!</small></h3>
 
+
+  <%# this is using the gemfile bootstrap_form. More info on usage can be found here https://github.com/bootstrap-ruby/bootstrap_form#bootstrap-form-for %>
   <%= bootstrap_form_for(resource, 
                        :as => resource_name, 
                        :url => registration_path(resource_name)) do |f| %>
@@ -25,6 +27,7 @@
   <%= f.submit 'Sign up', class: 'btn sign-up-button' %>
 <% end %>
 
+<%# this renders everthing in the file containing conditionals on specific paths %>
 <%= render "devise/shared/links" %>
 </div>
 </div>
