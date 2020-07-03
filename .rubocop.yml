@@ -4,6 +4,15 @@ AllCops:
     - 'spec/rails_helper.rb'
     - 'bin/*'
 
+Layout/LineLength:
+  Exclude:
+    - 'spec/**/*'
+  Max: 200
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
 
 Layout/IndentationConsistency:
   Enabled: true
@@ -70,7 +79,7 @@ Layout/SpaceAroundKeyword:
 Layout/SpaceAroundOperators:
   Enabled: true
 Layout/SpaceBeforeBlockBraces:
-  Enabled: true
+  Enabled: false
 Layout/SpaceBeforeComma:
   Enabled: true
 Layout/SpaceBeforeComment:
