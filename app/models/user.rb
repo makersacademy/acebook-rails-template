@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :posts
   validates :firstname, presence: true
   validates :lastname, presence: true
   has_secure_password 
