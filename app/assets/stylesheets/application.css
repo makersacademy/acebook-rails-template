@@ -88,6 +88,10 @@
   body.index {
     background-image: url("scarefloorimage.jpg");
   }
+
+  body.sign-up {
+    background-image: url("monsters_sign_up_image.jpg");
+  }
   
   .container.post {
     background-color: white;
