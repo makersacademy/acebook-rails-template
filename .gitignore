@@ -22,5 +22,5 @@
 
 .byebug_history
 
-/coverage/*
-/coverage/.resultset.json
+/coverage.data
+/coverage/
