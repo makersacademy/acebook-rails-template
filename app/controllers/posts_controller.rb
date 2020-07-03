@@ -39,3 +39,4 @@ class PostsController < ApplicationController
     params.require(:post).permit(:message)
   end
 end
+
