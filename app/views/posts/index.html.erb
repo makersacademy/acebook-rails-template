@@ -1,11 +1,13 @@
-<div class="scareFloor">
+
 <% @posts.each do |post| %>
+  <div class="container post">
   <div id="data"><%= post.created_at.to_date%> <%= post.created_at.strftime("%k:%M") %></div>
   <div id="creator"> <%= post.user_id %> </div>
   <div id="body"><%= simple_format(post.message) %></div>
+  </div>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
-</div>
+

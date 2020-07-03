@@ -72,3 +72,8 @@ body {
 body.index {
   background-image: url("scarefloorimage.jpg");
 }
+
+.container.post {
+  background-color: white;
+  opacity: 0.8;
+}
