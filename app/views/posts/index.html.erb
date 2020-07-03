@@ -20,24 +20,24 @@
           <div class="social-feed-separated">
 
               <div class="social-feed-box">
-                  
+
                   <div class="social-avatar">
 
                       <a href="#">
                           Quigley
                       </a>
-                      <small class="text-muted"><p><%= post.created_at %></p></small>
+                      <small class="text-muted"><p><%= post.created_at.strftime("%B %d %Y, %l:%M%P") %></p></small>
                   </div>
                   <div class="social-body">
-                     
+
                           <p><%= post.message %></p>
-                      
+
                       <img src="" class="img-responsive">
                       <div class="btn-group">
                       <%# <p><%= link_to("Delete post", post_path(post) , method: :delete )%>
-                       
-                    
-                       
+
+
+
                           <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up" style=color:#8b9dc3;></i> Like!</button>
                           <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>
 
@@ -49,15 +49,15 @@
                             <button class="btn btn-white btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
                         <% end %>
 
-                        
+
                       </div>
-              
+
 
                   </div>
-      
+
               </div>
-      
-          </div> 
+
+          </div>
       </div>
 
       <% end %>
