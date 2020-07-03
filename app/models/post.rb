@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   end
 
   def find_user(:id)
-    @user = new User.find(id)
+    User.find(id)
   end
 
 end

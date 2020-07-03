@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.new
+    @names = Post.find_user(params[:user_id])
   end
 
   def edit
