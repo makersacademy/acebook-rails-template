@@ -89,4 +89,13 @@ RSpec.feature "Signing up", type: :feature do
     click_button "Create User"
     expect(page).to have_content("Email has already been taken")
   end 
+
+  scenario "page renders a back link" do
+    expect(page).to have_link("Back")
+  end
+
+  scenario "back button should lead user back to the landing page" do
+    click_link "Back"
+    expect(page).to have_current_path('/')
+  end
 end
