@@ -72,4 +72,30 @@ RSpec.feature "Signing up", type: :feature do
     expect(page).to have_content("Password confirmation doesn't match Password")
     expect(page).to have_current_path("/users")
   end
+
+  scenario "Encounters error when the email is already used by another user" do
+    fill_in "First Name", with: "Al"
+    fill_in "Last Name", with: "Sumner"
+    fill_in "Email", with: "al@gmail.com"
+    fill_in "Password", with: "123456"
+    fill_in "Confirm Password", with: "123456"
+    click_button "Create User"
+    click_link "Sign Up"
+    fill_in "First Name", with: "Al"
+    fill_in "Last Name", with: "Sumner"
+    fill_in "Email", with: "al@gmail.com"
+    fill_in "Password", with: "123456"
+    fill_in "Confirm Password", with: "123456"
+    click_button "Create User"
+    expect(page).to have_content("Email has already been taken")
+  end 
+
+  scenario "page renders a back link" do
+    expect(page).to have_link("Back")
+  end
+
+  scenario "back button should lead user back to the landing page" do
+    click_link "Back"
+    expect(page).to have_current_path('/')
+  end
 end

@@ -26,4 +26,11 @@ RSpec.feature "Logging in", type: :feature do
     expect(page).to have_current_path("/")
     expect(page).to have_content("Email or password is invalid")
   end
+
+  scenario "Finds a tailored welcome message" do
+    fill_in "Email", with: "al@gmail.com"
+    fill_in "Password", with: "123456"
+    click_button "Login"
+    expect(page).to have_content("Hello, Al.")
+  end
 end
