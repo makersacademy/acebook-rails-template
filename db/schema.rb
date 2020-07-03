@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200630141547) do
+ActiveRecord::Schema.define(version: 20200701151945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20200630141547) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,4 +36,6 @@ ActiveRecord::Schema.define(version: 20200630141547) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "posts", "users"
+  add_foreign_key "posts", "users", column: "creator_id", primary_key: "username", name: "posts_creator_id_fkey"
 end
