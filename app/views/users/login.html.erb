@@ -20,6 +20,12 @@
 
 <%= form.submit "Log in", class: "btn btn-block send-button tx-tfm white text-center" %>
 
+<% if flash[:login_errors] %>
+<% flash[:login_errors].each do |error| %>
+<p> <%=error%></p>
+<% end %>
+<% end %>
+
 <% end %>
 
 </div>
