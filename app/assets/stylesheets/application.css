@@ -89,8 +89,8 @@
     background-image: url("scarefloorimage.jpg");
   }
 
-  body.signup {
-    background-image: url("monsters_sign_up_image.jpg");
+  body.new.clearance\/users {
+    background-image: url("signupimage");
   }
   
   .container.post {

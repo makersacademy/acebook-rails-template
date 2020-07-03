@@ -33,8 +33,7 @@
         </div>
       </nav>
 </header>
-<body class="<%= params[:action] %>">
-
+<body class="<%= params[:action] %> <%= params[:controller] %>">
     <section>
       <div id="flash">
         <% flash.each do |key, value| %>
