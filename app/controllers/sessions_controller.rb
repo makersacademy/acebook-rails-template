@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id 
       redirect_to posts_path, notice: "Logged in!"
       # :action => post_path, :id => user.id, notice: "You successfully logged in!"
-      
     else
       redirect_to root_url, notice: "Email or password is invalid"  
       #flash.now[:alert] = "Email or password is invalid"      

@@ -1,5 +1,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <p id=”notice”><%= notice %></p>
+<h3> Logged in as <%= current_user.firstname %>. </h3> 
+<%= link_to "Log out", session_path(:id => current_user.id), :method => :delete %>
+
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_area :message %>
@@ -9,13 +12,13 @@
 
 <% @posts.reverse.each do |post| %>
   <p><%= post.message %></p>
-    <% if post.editable? %>
+  <% if post.editable? %>
       <%= link_to "Edit", edit_post_path(post), id: 'edit' %>
-      <%= link_to "Delete", destroy_post_path(:id => post.id), :method => :delete %>
+      <%= link_to "Delete", post_path(:id => post.id), :method => :delete %>
       <p><%= post.updated_at.in_time_zone("London") %></p>
     <% else %>
-      <%= link_to "Delete", destroy_post_path(:id => post.id), :method => :delete %>
+      <%= link_to "Delete", post_path(:id => post.id), :method => :delete %>
       <p><%= post.updated_at.in_time_zone("London") %></p>
-    <% end %>
+    <% end %> 
 <!-- To-do: add user Id from user table to display in the posts -->
-<% end %>
+<% end %> 
