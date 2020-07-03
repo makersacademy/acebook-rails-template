@@ -7,8 +7,12 @@
 
 <% content_for :login_logout do %>
 <li class="nav-item">
-            <a class="nav-link" href="/signup">Logout</a>
+    
+
+            <%= link_to sessions_path , method: :delete, class: "nav-item nav-link", id: "delete_post" do %>
+            Logout
           </li>
+           <% end %>  
     <% end %>    
 
 <% content_for :new_post do %>

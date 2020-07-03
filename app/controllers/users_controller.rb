@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class UsersController < ApplicationController
-
+  skip_before_action :require_login
   def new
     @user = User.new
   end
@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     # p @user.save
+    session[:user_id] = @user.id
     redirect_to posts_url
   end
 
