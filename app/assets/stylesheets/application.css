@@ -59,12 +59,12 @@
   body {
     margin-top: 100px;
     background-size: cover;
-    background-repeat: no-repeat;
     background-image: url("sullyhomescreen.jpg");
     height: 100%;
     position: relative;
     padding-bottom: 2.5rem;    /* Footer height */
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   
   #navbarSupportedContent {
@@ -80,8 +80,6 @@
 
   body.new.clearance\/sessions {
     padding-top: 200px;
-    background-color: #69B5AB;
-    background-repeat: no-repeat;
   }
 
   body.index {
@@ -129,10 +127,7 @@
    body.new.clearance\/users {
     padding-top: 200px;
     background-image: url("signupimage");
-    background-color: #69B5AB;
-    background-repeat: no-repeat;
-  }
-
+   }
   .container-sm {
       margin-bottom: 100px;
   }
