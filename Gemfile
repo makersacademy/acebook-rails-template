@@ -43,6 +43,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-console', '~> 0.4.1', require: false
+  gem 'timecop'
 end
 
 group :development do

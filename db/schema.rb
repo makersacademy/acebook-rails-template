@@ -37,4 +37,5 @@ ActiveRecord::Schema.define(version: 20200701151945) do
   end
 
   add_foreign_key "posts", "users"
+  add_foreign_key "posts", "users", column: "creator_id", primary_key: "username", name: "posts_creator_id_fkey"
 end
