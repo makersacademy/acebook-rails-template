@@ -56,7 +56,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
-    background-image: url("/app/assets/images/homescreenimage.jpg");
+    background-image: url("sullyhomescreen.jpg");
   }
   
   #footer {
