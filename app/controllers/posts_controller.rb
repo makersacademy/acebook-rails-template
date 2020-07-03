@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   end
 
   def index
+#   @user_name = session[:user_name]
     @posts = Post.all.order(created_at: :desc)
   end
 
