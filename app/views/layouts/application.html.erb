@@ -26,7 +26,7 @@
                   You&#39re Scarer: <%= current_user.username %>
                   <%= button_to 'Sign out', sign_out_path, method: :delete %>
               <% else %>
-                  Not a Scarer? <%= link_to t(".sign_up"), sign_up_path %>
+                  Not a Scarer? <%= link_to t(".sign_up"), sign_up_path, :class => "signup_link" %>
               <% end %>
             </li>
           </ul>
