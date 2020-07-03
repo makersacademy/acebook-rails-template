@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.new
+    # @names = Post.find_user(params[:user_id])
   end
 
   def edit
@@ -36,7 +37,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
 end
 
