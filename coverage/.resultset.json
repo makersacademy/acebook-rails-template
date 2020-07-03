@@ -659,7 +659,7 @@
           null,
           null,
           1,
-          13,
+          14,
           null,
           null,
           1,
@@ -697,7 +697,7 @@
           1,
           null,
           1,
-          0,
+          1,
           null,
           null,
           null
@@ -706,6 +706,17 @@
       "/Users/chriscooney/projects/makers/acebook-TeamNameComingSoon-rails/spec/features/login_out_spec.rb": {
         "lines": [
           1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           1,
           1,
@@ -826,7 +837,7 @@
           null,
           null,
           1,
-          1,
+          2,
           null,
           null,
           null,
@@ -843,6 +854,6 @@
         ]
       }
     },
-    "timestamp": 1593787719
+    "timestamp": 1593788090
   }
 }
