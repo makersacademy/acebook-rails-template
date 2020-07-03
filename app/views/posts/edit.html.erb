@@ -18,18 +18,29 @@
                       <a href="#">
                           @Name 
                       </a>
-                      
+                      <small class="text-muted"><p>Time made</p></small>
                   </div>
                   <div class="social-body">
 
-                            <%= form_for @post do |form| %> 
+                            <%= form_for @post,  method: :patch do |form| %> 
   
  
-
-<%= form.text_area(:message, id: "Message", class: 'md-textarea form-control', placeholder: "What are you thinking?")  %> 
-
-  <button class="btn btn-white btn-xs"><i class="fa fa-refresh" aria-hidden="true"></i> New Post</button>
+<label for="defaultFormMessageModalEx">Update your post below</label>
+<%= form.text_area(:message, id: "Message", class: 'md-textarea form-control')  %> 
+   
+  <button class="btn btn-white btn-xs"><i class="fa fa-refresh" aria-hidden="true"></i> Update Post</button>
 <% end %>
+                       
+                           
+                     
+
+                         
+                            
+                        
+
+                        
+                     
+              
 
                   </div>
       
@@ -41,7 +52,5 @@
  
     </div>
 
-
-
-
+   
 
