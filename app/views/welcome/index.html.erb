@@ -1,0 +1,30 @@
+<h1>Welcome to Acebook</h1>
+<!--<% if current_user %>
+    Logged in as <%= current_user.firstname %>.
+    <%= link_to "Log out", session_path(:id => current_user.id), :method => :delete %>
+  <% else %>
+    <%= link_to "Sign Up", new_user_path %> or 
+    <%= link_to "Log In", new_session_path %>
+  <% end %> -->
+
+  <!-- <p id=”alert”><%= alert %></p> -->
+  <p id=”notice”><%= notice %></p>
+
+<h2>Login</h2>
+  <%= form_tag sessions_path do |form| %>
+    <div class=”field”>
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+    </div>
+
+    <div class=”field”>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+
+    <div class=”actions”>
+      <%= submit_tag "Login" %>
+    </div>
+
+<% end %>
+<%= link_to "Sign Up", new_user_path %>
