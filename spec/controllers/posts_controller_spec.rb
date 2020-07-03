@@ -20,7 +20,16 @@ RSpec.describe PostsController, type: :controller do
       post :create, params: { post: { message: 'Hello, world!' } }
       expect(Post.find_by(message: 'Hello, world!')).to be
     end
+
+    it 'break lines' do
+      p "start"
+      post :create, params: { post: { message: "Hello,\n world!" } }
+      puts message: 
+      expect(Post.find_by(message: "Hello,\n world!")).to be
+      p "end"
+    end
   end
+
 
   describe 'GET /' do
     it 'responds with 200' do
@@ -50,5 +59,5 @@ RSpec.describe PostsController, type: :controller do
       expect(Post.find_by(message: 'Hello, world!')).not_to be
     end
   end
-  
+
 end
