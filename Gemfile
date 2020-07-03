@@ -39,7 +39,7 @@ group :development, :test do
   gem 'rspec'
   gem 'rake'
   gem 'rubocop', '0.79.0'
-
+  
   gem 'simplecov'
   gem 'simplecov-console'
 end
