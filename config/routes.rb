@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :posts, :users
   # root 'users#new'
-
+  get '/' => 'users#new'
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
 
