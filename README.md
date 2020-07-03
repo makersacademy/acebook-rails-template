@@ -25,7 +25,7 @@
 - We paired daily to complete allocated user stories. We switched pairs on a daily basis. At times, we used a technique called 'mobbing' to come together as a team if a pair was blocked. This worked amazingly well on every occasion!
 - We recorded the ongoing status of each user story using a [Trello Borad](https://trello.com/b/vPCTtQTU/jjer-acebook-team-project). This helped when allocating work and identifying each pair's workload.
 - We completed our first [MVP](LINK) on Thursday. We completed our second [MVP](LINK) on WHEN.
-- We each contributed to a [workdoc](https://docs.google.com/document/d/1d5D25TKtcbWB10EwE9Y4g4MDCJh_4K9d9oV725ppsYQ/edit daily that allowed each member of the team to input ideas, basic pseudocode to attack a problem, and collaborate on project strategy.
+- We each contributed to a [workdoc](https://docs.google.com/document/d/1d5D25TKtcbWB10EwE9Y4g4MDCJh_4K9d9oV725ppsYQ/edit)daily that allowed each member of the team to input ideas, basic pseudocode to attack a problem, and collaborate on project strategy.
 
 ## Domain and Process Modelling
 
