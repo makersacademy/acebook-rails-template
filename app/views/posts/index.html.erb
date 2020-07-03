@@ -9,14 +9,17 @@
 <% end %>
 
 <% @posts.reverse.each do |post| %>
+  <p><%= post.find_user(post.user_id).firstname %></p>
+  <%= p post.user_id %>
+  <%= p post.inspect %>
+
   <p><%= post.message %></p>
-    <% if post.editable? %>
-      <%= link_to "Edit", edit_post_path(post), id: 'edit' %>
-      <%= link_to "Delete", destroy_post_path(:id => post.id), :method => :delete %>
-      <p><%= post.updated_at.in_time_zone("London") %></p>
-    <% else %>
-      <%= link_to "Delete", destroy_post_path(:id => post.id), :method => :delete %>
-      <p><%= post.updated_at.in_time_zone("London") %></p>
+    <% if post.user_id == current_user.id %>
+        <% if post.editable? %>
+          <%= link_to "Edit", edit_post_path(post), id: 'edit' %>
+        <% end %>
+        <%= link_to "Delete", destroy_post_path(:id => post.id), :method => :delete %>
     <% end %>
+  <p><%= post.updated_at.in_time_zone("London") %></p>
+  <% end %>
 <!-- To-do: add user Id from user table to display in the posts -->
-<% end %>
