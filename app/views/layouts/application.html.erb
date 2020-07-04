@@ -10,27 +10,8 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" id="nav-bar">
-        <a class="navbar-brand" href="#">Welcome to the Scare Floor</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav navbar-right" id="signout">
-            <li class="nav-item">
-              <% if signed_in? %>
-                  You&#39re Scarer: <%= current_user.username %>
-                  <%= button_to 'Sign out', sign_out_path, method: :delete %>
-              <% else %>
-                  Not a Scarer? <%= link_to t(".sign_up"), sign_up_path, :class => "signup_link" %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </nav>
-</header>
+  <%= render "layouts/header" %>
+
 <body class="<%= params[:action] %> <%= params[:controller] %>">
 <div id="page-container">
 <div class="content-wrap">
