@@ -45,15 +45,6 @@
     text-align: center;
     height: 1.5em;
     opacity: .5;
-    &:before {
-      content: 'Already a Scarer?';
-      background: linear-gradient(to right, transparent, #818078, transparent);
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 100%;
-      height: 1px;
-    }
 }
   
   ul {
@@ -137,12 +128,14 @@
 
    footer {
     position: absolute;
-    height: 100px;
+    height: 50px;
     bottom: 0;
     width: 100%;
-    background-color: white;
+    background-color: #69B5AB;
     z-index: -1;
+    color: #535353;
    }
+
    .btn {
        background-color: #69B5AB;
    }
