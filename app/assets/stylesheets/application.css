@@ -18,16 +18,6 @@
      height: 100%;
  }
 
- /* .sign-up {
-    text-align: center;
-    margin: auto;
-    width: 200px;
-    background-color: #494949;
-    opacity: 0.8;
-    color: white;
-    font-weight: bold;
-  } */
-
   .card.bg-light.sign-up {
     width: 300px;
 }
@@ -71,6 +61,25 @@
   
   #navbarSupportedContent {
     text-align: right;
+  }
+
+  .nav-bar-signout-signup {
+      width: 25%;
+      text-align: center;
+      margin: auto 5px auto auto;
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.sign-out {
+    margin: auto;
+      height: 20px;
+      width: 100px;
+      font-size: small;
+      right: 5px;
+  }
+
+  .signed-in-as {
+      width: 100%;
+      margin-bottom: 5px;
   }
   
   #signout {
@@ -124,6 +133,11 @@
    .content-wrap {
     /* padding-top: 200px; */
     padding-bottom: 100px;    /* Footer height */
+  }
+
+  .logo {
+      height: 40px;
+      width: 40px;
   }
 
    footer {
