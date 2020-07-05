@@ -2,21 +2,21 @@
   <div class="input-group-prepend">
       <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
    </div>
-  <%= form.text_field :email, type: 'email', placeholder: "email" %>
+  <%= form.text_field :email, type: 'email', placeholder: "email", :class => "form-control" %>
 </div>
 
 <div class="form-group input-group">
   <div class="input-group-prepend">
       <span class="input-group-text"> <i class="fa fa-user"></i> </span>
    </div>
-  <%= form.text_field :username, placeholder: "username" %>
+  <%= form.text_field :username, placeholder: "username", :class => "form-control" %>
 </div>
 
 <div class="form-group input-group">
   <div class="input-group-prepend">
       <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
    </div>
-  <%= form.password_field :password, placeholder: "password" %>
+  <%= form.password_field :password, placeholder: "password", :class => "form-control" %>
 </div>
 
 
@@ -25,5 +25,3 @@
     <%= msg %>
   <%end%>
 <%end%>
-
-
