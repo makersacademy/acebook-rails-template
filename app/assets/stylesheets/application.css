@@ -75,6 +75,7 @@
       width: 100px;
       font-size: small;
       right: 5px;
+      background-color: #007DC4;
   }
 
   .signed-in-as {
