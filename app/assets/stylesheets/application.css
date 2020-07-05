@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ /* monsters inc blue: #007DC4 
+ Sully blue: #69B5AB
+ */
+
  html {
      height: 100%;
  }
@@ -160,4 +164,52 @@
    }
   .container-sm {
       margin-bottom: 100px;
+  }
+
+  #data{
+      margin: auto 10px auto auto;
+  }
+
+  #creator {
+    margin: auto auto auto 10px;
+    color: #007DC4;
+    opacity: unset;
+  }
+
+  #update {
+    margin: auto auto 2px 10px;
+  }
+
+  #delete {
+    margin: auto 10px 2px auto;
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.update{ 
+    margin: auto;
+      height: 30px;
+      width: 100px;
+      font-size: medium;
+      right: 5px;
+      background-color: #007DC4;
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.delete{ 
+    margin: auto;
+      height: 30px;
+      width: 100px;
+      font-size: medium;
+      right: 5px;
+      background-color: #007DC4;
+  }
+
+  #body {
+      text-align: center;
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.new {
+    background-color: #007DC4;
+  }
+
+  .container.container.post {
+      margin-bottom: 5px;
   }
