@@ -14,7 +14,7 @@
  *= require_self
  */
 
- /* monsters inc blue: #007DC4 
+ /* monsters inc blue: #007DC4
  Sully blue: #69B5AB
  */
 
@@ -40,18 +40,18 @@
     height: 1.5em;
     opacity: .5;
 }
-  
+
   ul {
       list-style: none;
   }
-  
+
   #top_bar {
     background-color: #494949;
     opacity: 0.8;
     color: white;
     font-weight: bold;
   }
-  
+
   body {
     margin-top: 100px;
     background-size: cover;
@@ -62,7 +62,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
-  
+
   #navbarSupportedContent {
     text-align: right;
   }
@@ -86,7 +86,7 @@
       width: 100%;
       margin-bottom: 5px;
   }
-  
+
   #signout {
     text-align: right;
     position: relative;
@@ -119,12 +119,12 @@
   body.posts.edit {
     background-image: url("monstersinceditpost.jpg");
   }
-  
+
   .container.post {
     background-color: white;
     opacity: 0.8;
   }
-  
+
   .each_post {
     margin-top: 10px;
   }
@@ -191,7 +191,7 @@
     margin: auto 10px 2px auto;
   }
 
-  .btn.btn-lg.btn-primary.btn-block.update{ 
+  .btn.btn-lg.btn-primary.btn-block.update{
     margin: auto;
       height: 30px;
       width: 100px;
@@ -200,7 +200,7 @@
       background-color: #007DC4;
   }
 
-  .btn.btn-lg.btn-primary.btn-block.delete{ 
+  .btn.btn-lg.btn-primary.btn-block.delete{
     margin: auto;
       height: 30px;
       width: 100px;
@@ -231,6 +231,7 @@
 
   .message-input {
       width: 100%;
+      text-align: center;
   }
 
   .btn.btn-lg.btn-primary.btn-block.submit-new {
@@ -250,5 +251,3 @@
     right: 5px;
     background-color: #007DC4;
   }
-
-
