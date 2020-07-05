@@ -112,6 +112,13 @@
   body.index {
     background-image: url("scarefloorimage.jpg");
   }
+  body.posts.new {
+    background-image: url("monstersincnewpost.jpg");
+  }
+
+  body.posts.edit {
+    background-image: url("monstersinceditpost.jpg");
+  }
   
   .container.post {
     background-color: white;
@@ -214,7 +221,7 @@
       margin-bottom: 5px;
   }
 
-  /* new post */
+  /* new & edit posts */
 
   .message-label {
       margin: 5px auto 0 5px;
