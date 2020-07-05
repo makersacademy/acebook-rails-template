@@ -15,11 +15,15 @@
 <body class="<%= params[:action] %> <%= params[:controller] %>">
 <div id="page-container">
 <div class="content-wrap">
-      <div id="flash">
+<% if !!flash.first %>
+<div class="container">
+      <div class="alert alert-danger">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>
       </div>
+      </div>
+      <% end %>
       <div class="container-sm">
         <%= yield %>
       </div>
