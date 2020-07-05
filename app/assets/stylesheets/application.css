@@ -235,7 +235,7 @@
   }
 
   .btn.btn-lg.btn-primary.btn-block.submit-new {
-    margin: 5px 5px 0 auto;
+    margin: 5px 5px 2px auto;
     height: 30px;
     width: 100px;
     font-size: medium;
@@ -244,7 +244,7 @@
   }
 
   .btn.btn-lg.btn-primary.btn-block.go-back-new {
-    margin: 5px auto 0 5px;
+    margin: 5px auto 2px 5px;
     height: 30px;
     width: 100px;
     font-size: medium;
