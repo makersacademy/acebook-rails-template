@@ -1,6 +1,12 @@
+<div class="container container post">
 <%= form_for :post, url: post_path(@post), method: :patch do |form| %>
     <%= form.hidden_field :user_id, :value => @user_id %>
-    <%= form.label :message %>
-    <%= form.text_area :message %>
-    <%= form.submit "Submit" %>
+    <%= form.label :message, :class => "message-label" %>
+    <%= form.text_area :message, :class => "message-input"%>
+    <hr>
+    <div class="row">
+    <%= form.submit "Submit", :class => "btn btn-lg btn-primary btn-block submit-new" %>
   <% end %>
+  <%= link_to 'Cancel', :back, :class => "btn btn-lg btn-primary btn-block go-back-new"%>
+  </div>
+  </div>

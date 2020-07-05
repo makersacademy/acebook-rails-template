@@ -213,3 +213,35 @@
   .container.container.post {
       margin-bottom: 5px;
   }
+
+  /* new post */
+
+  .message-label {
+      margin: 5px auto 0 5px;
+      font-size: large;
+      color: #007DC4;
+  }
+
+  .message-input {
+      width: 100%;
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.submit-new {
+    margin: 5px 5px 0 auto;
+    height: 30px;
+    width: 100px;
+    font-size: medium;
+    right: 5px;
+    background-color: #007DC4;
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.go-back-new {
+    margin: 5px auto 0 5px;
+    height: 30px;
+    width: 100px;
+    font-size: medium;
+    right: 5px;
+    background-color: #007DC4;
+  }
+
+

@@ -13,7 +13,7 @@ RSpec.feature "Edit", type: :feature do
     click_link "update"
     fill_in "Message", with: "Hello, Brainaics!"
     click_on "Submit"
-    expect(page).to have_content(/bob1*Hello, Brainaics!/)
+    expect(page).to have_content(/bob1.*Hello, Brainaics!/)
   end
 
   scenario "user cannot edit another user's posts" do
