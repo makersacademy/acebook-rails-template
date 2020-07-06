@@ -1,8 +1,10 @@
+
+<div id="wall_owner">wall of, <%= @username %></div>
 <ul>
 <% @posts.each do |post| %>
   <li class=each_post>
   <div class="container post">
-  <div id="data"><%= post.created_at.to_date%> <%= post.created_at.strftime("%k:%M") %></div>
+  <div id="data"><%= post.created_at.localtime.to_date%> <%= post.created_at.localtime.strftime("%k:%M") %></div>
   <div id="creator"> <%= post.user.username %> </div>
   <div id="body"><%= simple_format(post.message) %></div>
   <div id="update"><%= link_to "update", edit_post_path(post) %></div>
@@ -14,5 +16,5 @@
 </ul>
 
 <%= link_to new_post_path do %>
-  New post
+  new post
 <% end %>
