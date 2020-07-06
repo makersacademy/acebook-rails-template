@@ -28,7 +28,7 @@ module Features
       fill_in "user_email", with: email
       fill_in "user_username", with: username
       fill_in "user_password", with: password
-      click_button I18n.t("helpers.submit.user.create")
+      click_button "sign up"
     end
 
     def expect_user_to_be_signed_in
@@ -37,7 +37,7 @@ module Features
     end
 
     def expect_user_to_be_signed_out
-      expect(page).to have_content ("Sign Up")
+      expect(page).to have_content ("sign up")
     end
 
     def user_with_reset_password
