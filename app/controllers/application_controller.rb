@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
     # return the path based on resource
     '/posts'
   end
+
+  def destroy_user_session_path
+
+  end
 end
