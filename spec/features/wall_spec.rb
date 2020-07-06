@@ -13,4 +13,9 @@ RSpec.feature "wall", type: :feature do
     expect(page).to have_content('wall of, testingName')
   end
 
+  scenario "user redirected to sign in" do
+    visit "wall/0"
+    expect(page).to have_content("sign inc.")
+  end
+
 end
