@@ -15,7 +15,7 @@
 </li>
 </ul>
 
-<%= form_for new_post_path do |form| %>
+<%= form_for new_wall_path do |form| %>
   <%= form.hidden_field :wall_id, :value => params[:id] %>
   <div class="row">
   <%= form.submit "new post", :class => "btn btn-lg btn-primary btn-block submit-new" %>
