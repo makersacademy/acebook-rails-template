@@ -25,6 +25,7 @@
   <p> <%= post.updated_at.in_time_zone("London") %> </p>
 
   <% post.comments.each do |comment| %>
+    <p><%= User.find(comment.user_id).firstname %></p>
     <p><%= comment.body %></p>  
   <% end %>
   <%= form_for([post, post.comments.build]) do |form| %>
