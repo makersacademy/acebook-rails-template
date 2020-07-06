@@ -12,7 +12,7 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
-  #Action Cable URL websocket listening on ws://localhost:3000/cable.
+  # Action Cable URL websocket listening on ws://localhost:3000/cable.
   config.action_cable.url = "ws://localhost:3000/cable"
 
   # Enable/disable caching. By default caching is disabled.

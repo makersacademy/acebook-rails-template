@@ -9,16 +9,15 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
 
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
-    $('.js-messages').append data['message']
+    $('#message').append('<div class="message">' + data.content + '</div>')
   },
 
   speak: function(message) {
-    @perform 'speak', message: message
-
-    $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
-      if event.keyCode is 13 # return = send
-        App.room.speak event.target.value
-        event.target.value = ""
-        event.preventDefault()
+    // @perform 'speak', message: message
+    // $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
+    //  if event.keyCode is 13 # return = send
+    //    App.room.speak event.target.value
+    //    event.target.value = ""
+    //    event.preventDefault()
   }
 });
