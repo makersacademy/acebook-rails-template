@@ -7,6 +7,58 @@
           null
         ]
       },
+      "/Users/student/gitDir/acebook-rails-template/app/controllers/posts_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          5,
+          null,
+          null,
+          1,
+          8,
+          8,
+          8,
+          8,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          11,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          8,
+          null,
+          null
+        ]
+      },
+      "/Users/student/gitDir/acebook-rails-template/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/student/gitDir/acebook-rails-template/app/models/post.rb": {
         "lines": [
           1,
@@ -20,64 +72,8 @@
           1,
           null
         ]
-      },
-      "/Users/student/gitDir/acebook-rails-template/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/student/gitDir/acebook-rails-template/app/controllers/posts_controller.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1593790011
+    "timestamp": 1594040405
   }
 }
