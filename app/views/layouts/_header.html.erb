@@ -4,16 +4,16 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav navbar-right" id="signout">
         <li class="nav-item">
         <div class="nav-bar-signout-signup" >
           <% if signed_in? %>
-              <p class="signed-in-as"> You&#39re Scarer: <%= current_user.username %> </p>
+              <p class="signed-in-as"> Scarer: <%= current_user.username %> </p>
               <%= button_to 'Sign out', sign_out_path, method: :delete, :class => 'btn btn-lg btn-primary btn-block sign-out' %>
           <% else %>
-              <span class="navbar-signup">Not a Scarer? <%= link_to t(".sign_up"), sign_up_path, :class => "signup_link" %> </span>
+              <span class="navbar-signup">not a Scarer? <%= link_to t(".sign_up"), sign_up_path, :class => "signup_link" %> </span>
           <% end %>
           </div>
         </li>
