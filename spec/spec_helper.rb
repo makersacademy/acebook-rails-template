@@ -119,3 +119,9 @@ RSpec.configure do |config|
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
 end
+
+RSpec.configure do |config|
+  config.after :each do
+    Warden.test_reset!
+  end
+end
