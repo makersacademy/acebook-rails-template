@@ -1,2 +1,10 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<h1>chat room</h1>
+
+<div class="js-message">
+  <%= render @message %>
+</div>
+
+<form>
+  <label>make a scream</label><br>
+  <input type="text" data-behavior="room_speaker">
+</form>
