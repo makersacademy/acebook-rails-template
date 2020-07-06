@@ -1,11 +1,14 @@
 class Message < ApplicationRecord
 
   def new
-    @message = Message.new
+    @messages = Message.new
   end  
 
   def create
-    @message = Message.create(msg_params)
+    @messages = Message.create(msg_params)
+    if @messages.save
+      ActionCable.server.broadcast 'room_channel', content: @messages.content
+    end
   end
 
   private  
