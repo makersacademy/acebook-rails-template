@@ -17,12 +17,14 @@ class PostsController < ApplicationController
   end
 
   def index
+    @username = User.find_by(id:  session[:user_id])
+    puts @username
     #   @user_name = session[:user_name]
     @posts = Post.all.order(created_at: :desc)
   end
 
   def destroy
-    params
+    
     @post = Post.find_by(id: params[:id])
     @post.destroy
     redirect_to posts_url
