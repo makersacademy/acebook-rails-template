@@ -27,5 +27,15 @@
   <% post.comments.each do |comment| %>
     <p><%= comment.body %></p>  
   <% end %>
+  <%= form_for([post, post.comments.build]) do |form| %>
+  
+    <p>
+      <%= form.text_area :body, placeholder: "Add comment" %>
+    </p>
+    <p>
+    <%= form.submit "Submit" %>
+    </p>
+  
+    <% end %>
 
 <% end %>
