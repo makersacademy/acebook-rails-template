@@ -9,7 +9,7 @@
   <div class="container container post">
   <div class="row">
   <div id="creator"> <%= post.user.username %> </div>
-  <div id="data"><%= post.created_at.to_date%> <%= post.created_at.strftime("%k:%M") %></div>
+  <div id="data"><%= post.created_at.to_date%> <%= post.created_at.localtime.strftime("%k:%M") %></div>
   </div>
   <hr>
   <div id="body"><%= simple_format(post.message) %></div>
