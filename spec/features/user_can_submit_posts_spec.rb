@@ -26,10 +26,10 @@ RSpec.feature 'Timeline', type: :feature do
   end
 
   scenario 'Post can be added with line breaks' do
-   visit '/posts'
-   click_link 'New post'
-   fill_in 'Message', with: "line" + "\r\n" + "break!"
-   click_button 'New Post'
-   expect(page).to have_content("line\nbreak!")
+    visit '/posts'
+    click_link 'New post'
+    fill_in 'Message', with: "line" + "\r\n" + "break!"
+    click_button 'New Post'
+    expect(page).to have_content("line\nbreak!")
 end
 end

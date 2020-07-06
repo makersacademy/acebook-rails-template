@@ -9,7 +9,22 @@
           null
         ]
       },
+
       "/Users/PerrinJ/acebook-rails-template/app/helpers/sessions_helper.rb": {
+
+      "/Users/student/gitDir/acebook-rails-template/app/helpers/sessions_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/student/gitDir/acebook-rails-template/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+
         "lines": [
           null,
           null,
@@ -48,19 +63,8 @@
           null,
           1,
           null,
-          8,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          1,
-          1,
+
+  
 
    
 
@@ -69,6 +73,8 @@
           null,
           1,
           13,
+
+
           null,
           null,
           1,
@@ -139,7 +145,53 @@
           null
         ]
       },
-      "/Users/PerrinJ/acebook-rails-template/app/controllers/users_controller.rb": {
+
+      "/Users/student/gitDir/acebook-rails-template/app/controllers/sessions_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/gitDir/acebook-rails-template/app/controllers/users_controller.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/student/gitDir/acebook-rails-template/app/models/post.rb": {
+
         "lines": [
           null,
           null,
@@ -194,10 +246,23 @@
           1,
           null
         ]
+      },
+      "/Users/student/gitDir/acebook-rails-template/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
 
+
     "timestamp": 1594041206
+
 
 
   }

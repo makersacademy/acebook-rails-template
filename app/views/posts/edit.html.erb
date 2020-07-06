@@ -14,50 +14,47 @@
 
 <body>
     <div class="container">
- 
+
       <div class="col-md-7">
           <div class="social-feed-separated">
 
               <div class="social-feed-box">
-                  
+
                   <div class="social-avatar">
 
                       <a href="#">
-                          @Name 
+                          @Name
                       </a>
                       <small class="text-muted"><p>Time made</p></small>
                   </div>
                   <div class="social-body">
 
-                            <%= form_for @post,  method: :patch do |form| %> 
-  
- 
+                            <%= form_for @post,  method: :patch do |form| %>
+
+
 <label for="defaultFormMessageModalEx">Update your post below</label>
-<%= form.text_area(:message, id: "Message", class: 'md-textarea form-control')  %> 
-   
+<%= form.text_area(:message, id: "Message", class: 'md-textarea form-control')  %>
+
   <button class="btn btn-white btn-xs"><i class="fa fa-refresh" aria-hidden="true"></i> Update Post</button>
 <% end %>
-                       
-                           
-                     
 
-                         
-                            
-                        
 
-                        
-                     
-              
+
+
+
+
+
+
+
+
+
 
                   </div>
-      
+
               </div>
-      
-          </div> 
+
+          </div>
       </div>
 
- 
+
     </div>
-
-   
-
