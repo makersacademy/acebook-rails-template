@@ -20,7 +20,7 @@ RSpec.describe PostsController, type: :controller do
       post :create, params: { post: { message: 'Hello, world!' } }
       expect(Post.find_by(message: 'Hello, world!')).to be
     end
-  end
+  end 
 
   describe 'GET /' do
     it 'responds with 200' do
@@ -50,5 +50,4 @@ RSpec.describe PostsController, type: :controller do
       expect(Post.find_by(message: 'Hello, world!')).not_to be
     end
   end
-  
 end

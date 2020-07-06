@@ -27,11 +27,11 @@
                       <a href="#">
                           Quigley
                       </a>
-                      <small class="text-muted"><p><%= post.created_at.strftime("%B %d %Y, %l:%M%P")%></p></small>
+                      <small class="text-muted"><p><%= post.created_at.strftime("%B %d %Y, %l:%M%P") %></p></small>
                   </div>
                   <div class="social-body">
 
-                          <p><%= post.message %></p>
+                          <p><%= simple_format(post.message) %></p>
 
                       <img src="" class="img-responsive">
                       <div class="btn-group">
