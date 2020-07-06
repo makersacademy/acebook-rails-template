@@ -39,7 +39,6 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-
   describe 'Update' do
     it 'Updates a post' do
       post :create, params: { post: { message: 'Hello, world!' } }
@@ -50,5 +49,4 @@ RSpec.describe PostsController, type: :controller do
       expect(Post.find_by(message: 'Hello, world!')).not_to be
     end
   end
-  
 end
