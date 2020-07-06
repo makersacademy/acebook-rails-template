@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/PerrinJ/acebook-rails-template/app/helpers/application_helper.rb": {
+      "/Users/emanuele/Projects/acebook-rails-template/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -9,7 +9,7 @@
           null
         ]
       },
-      "/Users/PerrinJ/acebook-rails-template/app/helpers/sessions_helper.rb": {
+      "/Users/emanuele/Projects/acebook-rails-template/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -17,7 +17,7 @@
           null
         ]
       },
-      "/Users/PerrinJ/acebook-rails-template/app/helpers/users_helper.rb": {
+      "/Users/emanuele/Projects/acebook-rails-template/app/helpers/users_helper.rb": {
         "lines": [
           null,
           null,
@@ -25,13 +25,29 @@
           null
         ]
       },
-      "/Users/PerrinJ/acebook-rails-template/app/controllers/posts_controller.rb": {
+      "/Users/emanuele/Projects/acebook-rails-template/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
           0,
+          null,
+          null,
+          1,
+          null,
+          3,
           null,
           null,
           1,
@@ -43,22 +59,6 @@
           null,
           1,
           0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
           0,
           0,
           null,
@@ -66,33 +66,12 @@
           1,
           null,
           1,
-          0,
+          1,
           null,
           null
         ]
       },
-      "/Users/PerrinJ/acebook-rails-template/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          12,
-          12,
-          11,
-          11,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/PerrinJ/acebook-rails-template/app/controllers/sessions_controller.rb": {
+      "/Users/emanuele/Projects/acebook-rails-template/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -100,6 +79,27 @@
           1,
           null,
           1,
+          null,
+          1,
+          null,
+          1,
+          16,
+          16,
+          10,
+          10,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/emanuele/Projects/acebook-rails-template/app/controllers/sessions_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
           0,
           0,
           0,
@@ -112,38 +112,38 @@
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/PerrinJ/acebook-rails-template/app/controllers/users_controller.rb": {
+      "/Users/emanuele/Projects/acebook-rails-template/app/controllers/users_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
           1,
-          2,
+          4,
           null,
           null,
           1,
-          2,
+          3,
           null,
-          2,
-          2,
+          3,
+          3,
           null,
-          null,
-          1,
           null,
           1,
-          2,
+          null,
+          1,
+          3,
           null,
           null
         ]
       },
-      "/Users/PerrinJ/acebook-rails-template/app/models/post.rb": {
+      "/Users/emanuele/Projects/acebook-rails-template/app/models/post.rb": {
         "lines": [
           null,
           null,
@@ -152,7 +152,7 @@
           null
         ]
       },
-      "/Users/PerrinJ/acebook-rails-template/app/models/application_record.rb": {
+      "/Users/emanuele/Projects/acebook-rails-template/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -161,7 +161,7 @@
           null
         ]
       },
-      "/Users/PerrinJ/acebook-rails-template/app/models/user.rb": {
+      "/Users/emanuele/Projects/acebook-rails-template/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -175,6 +175,6 @@
         ]
       }
     },
-    "timestamp": 1594030677
+    "timestamp": 1594032575
   }
 }

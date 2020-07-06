@@ -7,7 +7,6 @@ RSpec.feature 'Sign Up', type: :feature do
     visit '/signup'
     expect(page).to have_content('Sign Up')
   end
-
   scenario 'User can sign up with a name' do
     visit '/signup'
     fill_in 'user[name]', with: 'Emanuele'
