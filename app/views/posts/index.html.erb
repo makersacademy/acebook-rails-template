@@ -20,5 +20,11 @@
         <% end %>
         <%= link_to "Delete", destroy_post_path(:id => post.id), :method => :delete %>
     <% end %>
-  <p><%= post.updated_at.in_time_zone("London") %></p>
+  <p> <%= post.updated_at.in_time_zone("London") %> </p>
+  <% post.comments.each do |comment| %>
+    <p> comment
+      <%= comment.body %>
+    </p>
+  
+    <% end %>
   <% end %>
