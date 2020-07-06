@@ -1,5 +1,9 @@
 
-
+<% content_for :login_logout do %>
+<li class="nav-item">
+            <a class="nav-link" href="/signup">Sign Up</a>
+          </li>
+    <% end %>  
 
 <div class="container1">
       <div class="col-md-6 mx-auto text-center">
@@ -16,7 +20,7 @@
 
 <%= form.email_field :email , placeholder: "Email", class: "form-control my-input form-group"%>
 
-<%= form.password_field :password,  placeholder: "Password", class: "form-control my-input mb-2 input-group" %>
+<%= form.password_field :password,  placeholder: "Password",  class: "form-control my-input mb-2 input-group" %>
 
 <%= form.submit "Log in", class: "btn btn-block send-button tx-tfm white text-center" %>
 

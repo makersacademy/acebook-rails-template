@@ -5,9 +5,25 @@
           </li>
 <% end %>
 
+<% content_for :login_logout do %>
+<li class="nav-item">
+    
+
+            <%= link_to sessions_path , method: :delete, class: "nav-item nav-link", id: "delete_post" do %>
+            Logout
+          </li>
+           <% end %>  
+    <% end %>    
+
 <% content_for :new_post do %>
                       <%= link_to new_post_path, class: "nav-link" do %>
   New post
+<% end %>
+<% end %>
+
+<% content_for :my_profile do %>
+                      <%= link_to '/posts' , class: "nav-link" do %>
+  My Profile
 <% end %>
 <% end %>
 
@@ -25,7 +41,7 @@
                   <div class="social-avatar">
 
                       <a href="#">
-                          Quigley
+                          @username
                       </a>
                       <small class="text-muted"><p><%= post.created_at.strftime("%B %d %Y, %l:%M%P") %></p></small>
                   </div>
