@@ -52,14 +52,121 @@ If I make a mistake or would like to add or change what I say
 I would like to be able to edit a post
 ```
 ```
+As a user
+So that I can see when a post was created
+I would like to visualise every post with the date it was created
+```
+```
+As a user
+For security reasons, after I finished using the app
+I would like to be able to sign out
+```
+```
+As system designer
+So that I can offer an improved user experience
+I would like to collect user's first and last name on sign up
+```
+```
+As system designer
+So that I can offer high level of security
+Users will have to provide an email address with a correct format
+```
+```
+As system designer
+So that I can ensure higher level of security for users
+Users will have to provide a password of between 6 and 10 characters
+```
+```
 As a system designer
 To ensure that the service is fair and secure
 Users are only able to edit and delete their own posts
 ```
 ```
 As a system designer
-Edit posts within 10 mins.......
+So that a specific comment's subject matter cannot be changed after a certain time
+Users are only able to edit their posts within 10 minutes from their creation
 ```
+```
+As a system designer
+to ensure security and a good user experience
+Any non signed in user cannot visit any page other than the home page
+```
+```
+As a system designer
+to ensure security and a good user experience
+Any non signed in user cannot visit any page other than the home page
+```
+
+## Daily structure
+
+* 9:45am - Stand up
+*	9:45am - 10:15am: Day plan & code reviews
+*	10:15am - 12:00pm: Morning pairing session
+*	12:00pm - 12:30pm: Pre lunch catch up
+*	2:00pm - 5:00pm: Afternoon pairing session
+*	5:00pm - Retro (daily review + next day's plan)
+
+
+## Sprint 1
+
+Features to implement:
+
+1. Ability to Log in/ sign up: 
+    * Ability for user to sign up with name, email, password
+    * Ability for user to log in with password and email
+    * Encrypt password
+    * Log in/ sign up checks (valid password/valid email address)
+  
+2. Ability to post a message to the board:
+    * Logged in users can post a message to the board (any length, just text)
+    * Message comes with a time stamp on day written
+    * Message comes with date stamp if older than 1 day
+    * Messages appear on screen newest first
+  
+3. Team work:
+    * Successfully deploy to Heroku
+    * Ensure Travis builds are green
+    * Get Rubocop set up and working
+  
+Each pair will take on responsibility for a feature, developing it full stack, and will work on it for the day, if there is more than 1 days work they can continue it for another day, however we will swap pairs if the feature takes more than 2 days to complete.
+
+Bene and Al: ability to sign in/ sign up
+Ant and Katie: ability to post message to board
+
+
+## Sprint 2
+
+For the second sprint we decided to change our structure so that each team member had the chance to work on all features and not just on those initially assigned to that first pairing team.
+
+Features to implement - aim to complete all user stories from current Trello cards
+
+1. Create Sessions:
+    * Code should create a new session when a user logs in
+    * Session should be terminated when user logs out
+
+2. Posts:
+    * Assign a user_id to a post when created so that they can only be be manipulated by the creator
+    
+3. Edit posts:
+    * When a post is created the user should have a 10 minute window to edit
+    * A user can only edit and delete their own posts
+    
+4. Additional features:
+    * Create sign out link available on all pages
+    * Users cannot add a blank post
+    * Posts can have line breaks
+    * Anyone not logged in should not be able to visit any page other than the index page
+
+5. Testing:
+    * Rubocop
+    * Simplecov
+
+By the end of this sprint we had completed all user stories so far. The only features we were not able to implement were:
+    * Users cannot add a blank post
+    * Posts can have line breaks
+    * Simplecov
+
+
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
