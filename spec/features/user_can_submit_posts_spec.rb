@@ -17,4 +17,12 @@ RSpec.feature 'Timeline', type: :feature do
     click_button 'New Post'
     expect(page).to have_content("#{Time.now.strftime('%B %d %Y')}")
   end
+
+  scenario 'Post can be added with line breaks' do
+   visit '/posts'
+   click_link 'New post'
+   fill_in 'Message', with: "line" + "\r\n" + "break!"
+   click_button 'New Post'
+   expect(page).to have_content("line\nbreak!")
+end
 end
