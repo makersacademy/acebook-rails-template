@@ -1,15 +1,17 @@
 language: ruby
 before_install: gem install bundler -v 1.17.3
 services:
-- postgresql
+  - postgresql
 before_script:
-- bin/rails db:create
-- bin/rails db:migrate
+  - bin/rails db:create
+  - bin/rails db:migrate
 script:
-- bundle exec rspec
+  - bundle exec rspec
+
 deploy:
   provider: heroku
   skip_cleanup: true
+
   api_key:
     secure: mk88TmILGqo3RvEbiIUiwg1EZfevY2sqq3k/yGwJU6sM7T5Z6UC0hVg6q2eWbBY1GUlnf6M6NPD/60TMsQ62/uCRYUpZ8DAwe1cDq4df90tRkovimJOEH0qJQtXiEBDPZLHVmhqTv2HTi1V8WupCfDvb1iXKe1G9OI9wwOG1tERpvDOOM7w6CJbkLzXzvECmb+kp0rFkDg/Ei1kmhubk7koc39jAgB8Z2vX3icmvqS+l0BBxvW2JlR1cPPBe7Dh3V7cTqpgKYcyUvtfqy1AOurQTm/v3fm2I/Ifb7wr6ZrUSRheuhe3I5kfmTtuV3Z/M/uJDd5BxSPd9ojUyWJI/3AKTeGS8y9J8bYH3Za5G7MPbuda36C8cix2uWeVLfJ+wEmYbsxxQOfNO8lxAzadH9uDsr+pj9Vc9LoLh40TCP4TeWhlUZWin2gIZcKRnupHDrwHgzmCM/nS2Fy5cZIhzm2D/wIcVLAeiuQb5lxVMN17eUS+N4nbzFMvT5btYhT7ZcyKvprhZdBUCGOXSyoGtqZXx1zJJtsXwoyNLJQwvJeHTLjudCKomUQqQiAcaQOh6PRD8OAyxseuq3PXZAe5cD3C9mbw9uHo5/plNVTscv2S8FrGZTrDtTwL/EX5PjsjlAJsNVmcpDQCm/Q7XhimEK6w96dheu7waRrJwtNiSglw=
   app: jjer

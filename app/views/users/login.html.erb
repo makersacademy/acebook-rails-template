@@ -1,0 +1,31 @@
+
+
+
+<div class="container1">
+      <div class="col-md-6 mx-auto text-center">
+         <div class="header-title">
+            <h1 class="wv-heading--title white">
+            Log in
+            </h1>
+            <br>
+         </div>
+      </div>
+
+
+<%= form_with scope: :user, url: '/login', local: true, class: "col-md-4 mx-auto" do |form| %>
+
+<%= form.email_field :email , placeholder: "Email", class: "form-control my-input form-group"%>
+
+<%= form.password_field :password,  placeholder: "Password", class: "form-control my-input mb-2 input-group" %>
+
+<%= form.submit "Log in", class: "btn btn-block send-button tx-tfm white text-center" %>
+
+<% if flash[:login_errors] %>
+<% flash[:login_errors].each do |error| %>
+<p> <%=error%></p>
+<% end %>
+<% end %>
+
+<% end %>
+
+</div>
