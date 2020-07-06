@@ -91,11 +91,6 @@ As a system designer
 to ensure security and a good user experience
 Any non signed in user cannot visit any page other than the home page
 ```
-```
-As a system designer
-to ensure security and a good user experience
-Any non signed in user cannot visit any page other than the home page
-```
 
 ## Daily structure
 
