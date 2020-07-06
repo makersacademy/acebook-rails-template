@@ -1,6 +1,12 @@
 # AceBook
 
-##[Notes from Sprint 1](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-1) - [Notes from Sprint 2](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-2) 
+### [Notes from Sprint 1](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-1) - [Notes from Sprint 2](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-2) 
+
+### Challenge progress overview:
+* Currently, all elements of CRUD are implemented, including an editing feature that is permitted for ten minutes only.
+* The users are able to make a time-stamped and username-stamped post, which is presented in reverse chronological order.
+* They can sign-up, sign-in, and log out. 
+
 
 ### Team
 * [Tristan Langford](https://github.com/tristanlangford)
