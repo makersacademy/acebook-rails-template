@@ -11,9 +11,9 @@
         <div class="nav-bar-signout-signup" >
           <% if signed_in? %>
               <p class="signed-in-as"> Scarer: <%= current_user.username %> </p>
-              <%= button_to 'Sign out', sign_out_path, method: :delete, :class => 'btn btn-lg btn-primary btn-block sign-out' %>
+              <%= button_to 'sign out', sign_out_path, method: :delete, :class => 'btn btn-lg btn-primary btn-block sign-out' %>
           <% else %>
-              <span class="navbar-signup">not a Scarer? <%= link_to t(".sign_up"), sign_up_path, :class => "signup_link" %> </span>
+              <span class="navbar-signup">not a Scarer? <%= link_to "sign up", sign_up_path, :class => "signup_link" %> </span>
           <% end %>
           </div>
         </li>
