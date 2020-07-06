@@ -1,6 +1,6 @@
 # AceBook
 
-## [Team](https://github.com/tristanlangford/acebook-brainaics#team) - [Notes from Sprint 1](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-1) - [Notes from Sprint 2](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-2) 
+##[Notes from Sprint 1](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-1) - [Notes from Sprint 2](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-2) 
 
 ### Team
 * [Tristan Langford](https://github.com/tristanlangford)
