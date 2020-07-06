@@ -3,6 +3,8 @@ class PostsController < ApplicationController
   before_action :require_time_check, only: :edit
 
   def new
+    p params
+    @wall = params[:id]
     @post = Post.new
     @user_id = current_user.id
   end
@@ -16,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user_id = current_user.id
   end
-  
+
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
@@ -48,7 +50,7 @@ class PostsController < ApplicationController
 
   def require_time_check
     if Time.now - Post.find(params[:id]).created_at > 10.minutes
-      flash[:alert] = "You can only edit a post for 10mins...  😥"
+      flash[:alert] = "You can only edit a post for 10mins... 😥"
       redirect_to posts_url
     end
   end
