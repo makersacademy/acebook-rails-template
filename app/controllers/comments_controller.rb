@@ -3,13 +3,13 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(body: params[:comment][:body], user_id: current_user.id)
-    redirect_to posts_url
+    redirect_to posts_url, notice: 'comment successfully posted!'
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to posts_url
+    redirect_to posts_url, notice: 'comment successfully deleted'
   end
 
   def edit
