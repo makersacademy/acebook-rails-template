@@ -5,7 +5,9 @@
 
   <div class="container container users">
   <% @users.each do |user| %>
+    <hr>
     <div class="scarer"><a href="wall/<%= user.id %>" ><%= user.username %></a></div>
   <% end %>
+  <hr>
 </div>
 </div>

@@ -166,7 +166,7 @@ footer {
 
   .container.title {
     background-color: #007DC4;
-    margin-bottom: 2px;
+    margin-bottom: 20px;
     color: white;
   }
 
@@ -275,6 +275,16 @@ footer {
       width: 100px;
       font-size: medium;
       right: 5px;
+      background-color: #007DC4;
+      color: white;
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.new-post {
+    margin: auto 10px auto auto;
+      height: 30px;
+      width: 100px;
+      font-size: medium;
+      right: 5px;
       background-color: white;
       color: #007DC4;
   }
@@ -297,7 +307,7 @@ footer {
   }
 
   .scarer {
-    margin: 2px auto 5px auto;
+    margin: auto auto auto auto;
   }
 
   #scarer_list {
