@@ -7,8 +7,8 @@
 
 <% (0...@album.images.count).each do |image| %>
   <%= image_tag(@album.thumbnail(image)) %>
-  <% end %>
+<% end %>
 
 <br><br>
-<%= link_to 'Delete Album', @album, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-<%= link_to "Back to posts", posts_url %>
+<%= link_to 'Delete Album', destroy_album_path(:user_id, :id), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+<%= link_to "Back to profile", profile_index_path(:id => user_id) %>

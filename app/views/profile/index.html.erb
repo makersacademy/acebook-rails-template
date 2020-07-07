@@ -1,7 +1,7 @@
 <h1><%= @user.firstname %>'s Profile Page</h1>
 
 
-<%= link_to "Add Photo Album", new_album_path %>
+<%= link_to "Add Photo Album", new_user_album_path(@user.id) %>
 <br>
 <br>
 
@@ -10,8 +10,8 @@
     <% @albums.each do |album| %>
       <tr>
         <td><%= album.title %></td>
-        <td><%= link_to 'View Album', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
+        <td><%= link_to 'View Album', user_album_url(@user.id, album.id) %></td>
+        <td><%= link_to 'Edit', edit_user_album_path(@user.id, album.id) %></td>
       </tr>
     <% end %>
   </tbody>

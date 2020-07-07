@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   get 'profile/index'
   root "welcome#index"
 
-  resources :users
+  resources :users do
+    resources :albums
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
-  resources :albums
+  # resources :albums
 
   get 'sessions/new'
   get "sessions/create"
@@ -17,5 +20,6 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  delete '/users/:user_id/albums/:id', to: 'albums#destroy', as: 'destroy_album'
   delete '/posts/:id', to: 'posts#destroy', as: 'destroy_post'
 end
