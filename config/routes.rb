@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   post '/wall/:id' => "wall#new"
   resources :posts
   resources :wall
-  root to: 'posts#index'
+  root to: 'sessions#new'
 end

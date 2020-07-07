@@ -18,15 +18,15 @@ RSpec.feature "wall", type: :feature do
     expect(page).to have_content("sign inc.")
   end
 
-  xscenario "only that walls posts displayed", :focus => true do
+  scenario "only that walls posts displayed" do
     sign_up_with('email@eamil', 'testingName', "password")
-    creates_a_post2
+    creates_a_post_wall
     expect(page).to have_content("Hello, again")
   end
 
-  xscenario "only that walls posts displayed", :focus => true do
+  scenario "only that walls posts displayed" do
     sign_up_with('email@eamil', 'testingName', "password")
-    creates_a_post2
+    creates_a_post_wall
     sign_out
     sign_up_with('emai2l@eamil', 'testing2Name', "pass2word")
     expect(page).to_not have_content("Hello, again")

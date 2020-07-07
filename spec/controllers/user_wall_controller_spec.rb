@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe WallController, type: :controller do
 
-  describe "GET /:user_id/", :focus => true do
+  describe "GET /:user_id/" do
     xit "responds with 200" do
       sign_in
       ### ADD user_id = 1 to DB
