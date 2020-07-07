@@ -11,7 +11,7 @@ RSpec.feature "Visitor resets password" do
     ActiveJob::Base.queue_adapter = original_adapter
   end
 
-  xscenario "by navigating to the page" do
+  scenario "by navigating to the page" do
     visit sign_in_path
 
     click_link "forgot password"
@@ -19,14 +19,14 @@ RSpec.feature "Visitor resets password" do
     expect(current_path).to eq new_password_path
   end
 
-  xscenario "with valid email" do
+  scenario "with valid email" do
     user = user_with_reset_password
 
     expect_page_to_display_change_password_message
     expect_reset_notification_to_be_sent_to user
   end
 
-  xscenario "with non-user account" do
+  scenario "with non-user account" do
     reset_password_for "unknown.email@example.com"
 
     expect_page_to_display_change_password_message

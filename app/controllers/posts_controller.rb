@@ -2,12 +2,6 @@ class PostsController < ApplicationController
   before_action :require_permission, only: [:edit, :destroy]
   before_action :require_time_check, only: :edit
 
-  def new
-    @wall = params[:id]
-    @post = Post.new
-    @user_id = current_user.id
-  end
-
   def create
     @post = Post.create(post_params)
     redirect_to wall_url(params[:id] = @post.wall_id)
@@ -29,10 +23,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to wall_url(params[:id] = @post.wall_id)
-  end
-
-  def index
-    @posts = Post.all.sort_by{ |post| post[:created_at] }.reverse
   end
 
   private

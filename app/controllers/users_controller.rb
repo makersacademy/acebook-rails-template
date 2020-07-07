@@ -12,7 +12,7 @@ class UsersController < Clearance::BaseController
 
     if @user.save
       sign_in @user
-      redirect_back_or wall_url(params[:id] = current_user.id)
+      redirect_back_or url_after_create
     else
       render template: "users/new"
     end
@@ -22,12 +22,12 @@ class UsersController < Clearance::BaseController
 
   def redirect_signed_in_users
     if signed_in?
-      redirect_to Clearance.configuration.redirect_url
+      url_after_create
     end
   end
 
   def url_after_create
-    Clearance.configuration.redirect_url
+    wall_url(params[:id] = current_user.id)
   end
 
   def user_from_params

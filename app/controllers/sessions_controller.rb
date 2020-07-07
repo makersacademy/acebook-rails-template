@@ -7,7 +7,7 @@ class SessionsController < Clearance::BaseController
 
       sign_in(@user) do |status|
         if status.success?
-          redirect_back_or wall_url(params[:id] = current_user.id)
+          redirect_back_or url_after_create
         else
           flash.now.alert = status.failure_message
           render template: "sessions/new", status: :unauthorized
@@ -33,14 +33,11 @@ class SessionsController < Clearance::BaseController
     end
 
     def url_after_create
-      redirect_to wall_url(params[:id] = current_user.id)
+      wall_url(params[:id] = current_user.id)
     end
 
     def url_after_destroy
       sign_in_url
     end
 
-    def url_for_signed_in_users
-      url_after_create
-    end
   end
