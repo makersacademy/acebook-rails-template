@@ -315,3 +315,9 @@ footer {
     font-weight: bold;
     text-align: center;
   }
+
+  body.users.index {
+    background-image: url("Monsters-Inc_friends_page.jpg");
+   }
+
+
