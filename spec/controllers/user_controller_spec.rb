@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
 
-  describe "GET /", :focus => true do
+  describe "GET /" do
     it "responds with 200" do
       sign_in
       get :index

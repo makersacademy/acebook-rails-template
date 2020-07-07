@@ -8,10 +8,12 @@ RSpec.feature "Delete", type: :feature do
     expect(page).to_not have_content(/bob1.*Hello, world!/)
   end
 
-  xscenario "user can not delete another user's post" do
+  scenario "user can not delete another user's post" do
     creates_a_post
     click_on "sign out"
-    sign_in ## how to get to the right wall to test
+    sign_in
+    visit users_path
+    click_link 'bob1'
     click_link "delete"
     expect(page).to have_content("Cannot change another user's post")
   end

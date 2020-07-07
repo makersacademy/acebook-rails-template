@@ -16,10 +16,12 @@ RSpec.feature "Edit", type: :feature do
     expect(page).to have_content(/bob1.*Hello, Brainaics!/)
   end
 
-  xscenario "user cannot edit another user's posts" do
+  scenario "user cannot edit another user's posts" do
     creates_a_post
     click_on "sign out"
-    sign_in ### how to get to the first sign in wall
+    sign_in
+    visit users_path
+    click_link 'bob1'
     click_link "update"
     expect(page).to have_content("Cannot change another user's post")
   end
