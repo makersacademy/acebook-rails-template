@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url #redirect using the wall_id
+    redirect_to wall_url(params[:id] = @post.wall_id)
   end
 
   def edit
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :user_id)
+    params.require(:post).permit(:message, :user_id, :wall_id)
   end
 
   def require_permission
