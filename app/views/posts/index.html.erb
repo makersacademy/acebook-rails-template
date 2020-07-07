@@ -29,8 +29,10 @@
   <p> <%= post.updated_at.in_time_zone("London") %> </p>
 
   <!-- comments -->
+  
   <% post.comments.each do |comment| %>
     <!-- name of commenter -->
+    <div id="singlecomment">
     <p><%= User.find(comment.user_id).firstname %></p>
     <p><%= comment.body %></p>
 
@@ -40,9 +42,11 @@
       <% end %>
       <%= link_to "Delete", post_destroy_comment_path(:id => comment.id, :post_id => post.id), :method => :delete %> 
     <% end %>
-  <% end %>
+    </div>
+  <% end %> 
   <%= form_for([post, post.comments.build]) do |form| %>
     <p><%= form.text_area :body, placeholder: "Add comment" %></p>
     <p><%= form.submit "Comment" %></p>
   <% end %>
 <% end %>
+
