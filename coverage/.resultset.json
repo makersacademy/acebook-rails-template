@@ -46,8 +46,10 @@
           null,
           null,
           1,
+          14,
           null,
-          12,
+          14,
+          null,
           null,
           null,
           1,
@@ -83,8 +85,8 @@
           1,
           null,
           1,
-          25,
-          25,
+          27,
+          27,
           0,
           0,
           null,
@@ -125,20 +127,20 @@
           1,
           1,
           1,
-          8,
+          10,
           null,
           null,
           1,
-          7,
+          9,
           null,
-          7,
-          7,
+          9,
+          9,
           null,
-          null,
-          1,
           null,
           1,
-          7,
+          null,
+          1,
+          9,
           null,
           null
         ]
@@ -173,8 +175,19 @@
           1,
           null
         ]
+      },
+      "/Users/emanuele/Projects/acebook-rails-template/app/controllers/addfriends_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1594110441
+    "timestamp": 1594118012
   }
 }
