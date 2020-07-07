@@ -2,7 +2,7 @@
   <div class="container container post">
   <% @users.each do |user| %>
     <div><%= user.id %></div>
-    <div><%= user.username %></div>
+    <div><a href="wall/<%= user.id %>" ><%= user.username %></a></div>
   <% end %>
 </div>
 </div>

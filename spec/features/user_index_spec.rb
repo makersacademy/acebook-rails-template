@@ -7,4 +7,11 @@ RSpec.feature "wall", type: :feature do
     expect(page).to have_content('testingName')
   end
 
+  scenario "user list has links to walls", :focus => true do
+    sign_up_with('email@eamil', 'testingName', "password")
+    visit users_path
+    click_link 'testingName'
+    expect(page).to have_content('wall of... testingName')
+  end
+
 end
