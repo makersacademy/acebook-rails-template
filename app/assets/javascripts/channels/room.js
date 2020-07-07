@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
       });
       $('#add_message').submit(function(event) {
-          console.log(event.target)
-          App.room.speak(event.target);
+          console.log(event)
+          App.room.speak(event.target[0].value);
           event.target.value = '';
           return event.preventDefault();
       });
