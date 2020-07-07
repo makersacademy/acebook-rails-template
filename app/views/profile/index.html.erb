@@ -1,5 +1,7 @@
 <h1><%= @user.firstname %>'s Profile Page</h1>
 
+<%= render 'form', album: @album %>
+
 <% @posts.each do |post| %>
   <% if post.user_id == @user.id %>
     <p><%= post.message %></p><br>
