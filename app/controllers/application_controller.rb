@@ -7,12 +7,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(_resource)
     # return the path based on resource
     '/posts'
   end
 
-  def destroy_user_session_path
-
-  end
+  def destroy_user_session_path; end
 end
