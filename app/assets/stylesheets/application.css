@@ -259,20 +259,23 @@ footer {
   }
 
   .new-post-form {
-    margin: auto 10px 2px auto;
+    margin: auto 0px auto auto;
+    text-align: right;
   }
 
   #wall_owner {
-    margin: auto auto 2px 10px;
+    margin: auto auto auto 10px;
+    font-weight: bold;
   }
 
   .btn.btn-lg.btn-primary.btn-block.submit-new {
-    margin: auto 10px 2px auto;
+    margin: auto 10px auto auto;
       height: 30px;
       width: 100px;
       font-size: medium;
       right: 5px;
-      background-color: #007DC4;
+      background-color: white;
+      color: #007DC4;
   }
 
   .btn.btn-lg.btn-primary.btn-block.go-back-new {
