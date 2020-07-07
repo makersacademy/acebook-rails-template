@@ -1,7 +1,9 @@
 <header>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" id="nav-bar">
-    <% if signed_in? %>
+    <% if signed_in? && params[:controller] != "wall" %>
       <a href="wall/<%= current_user.id %>">
+      <% elsif signed_in? && params[:controller] == "wall" %>
+      <a href="<%= current_user.id %>">
     <% else %>
       <a>
     <% end %>
