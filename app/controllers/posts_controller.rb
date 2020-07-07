@@ -7,9 +7,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    p @post.save
-    p @post.errors.full_messages
-    
+    @post.save
+    @post.errors.full_messages
+
     redirect_to posts_path
   end
 
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
 
   def destroy
-    
+
     @post = Post.find_by(id: params[:id])
     @post.destroy
     redirect_to posts_url
