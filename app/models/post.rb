@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   has_many :comments
   
   def editable?
-    Time.now - self.created_at < 5.seconds
+    Time.now - self.created_at < 20.seconds
   end
 
 end
