@@ -7,7 +7,7 @@ RSpec.describe RoomChannel, type: :channel do
   #   stub_connection user_id: user.id
   # end
 
-  xit "rejects when no room id" do
+  xit "redirects when not logged in" do
     subscribe
     expect(subscription).to be_rejected
   end
