@@ -19,7 +19,6 @@ RSpec.feature "Timeline", type: :feature do
 
   scenario "comments have a delete link" do
     within("#singlecomment") { expect(page).to have_link("Delete") }
-    #expect("singlecomment").not_to have_content("Hello, world!")
   end 
 
   scenario "users can delete their own comments" do 
@@ -32,7 +31,7 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("comment successfully deleted")
   end
 
-  scenario "user cannot delete other user's posts" do
+  scenario "user cannot delete other user's comments" do
     click_link("Log out")
     click_link "Sign Up"
     fill_in "user_firstname", with: "Anthony"
@@ -46,6 +45,4 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Login"
     within("#singlecomment") { expect(page).not_to have_link("Delete") }
   end 
-
-
 end
