@@ -13,6 +13,7 @@
 
 <% @posts.reverse.each do |post| %>
   <p><%= User.find(post.user_id).firstname %></p>
+
   <p><%= post.message %></p>
     <% if post.user_id == current_user.id %>
         <% if post.editable? %>
@@ -20,5 +21,22 @@
         <% end %>
         <%= link_to "Delete", destroy_post_path(:id => post.id), :method => :delete %>
     <% end %>
-  <p><%= post.updated_at.in_time_zone("London") %></p>
+
+  <p> <%= post.updated_at.in_time_zone("London") %> </p>
+
+  <% post.comments.each do |comment| %>
+    <p><%= User.find(comment.user_id).firstname %></p>
+    <p><%= comment.body %></p>  
   <% end %>
+  <%= form_for([post, post.comments.build]) do |form| %>
+  
+    <p>
+      <%= form.text_area :body, placeholder: "Add comment" %>
+    </p>
+    <p>
+    <%= form.submit "Submit" %>
+    </p>
+  
+    <% end %>
+
+<% end %>
