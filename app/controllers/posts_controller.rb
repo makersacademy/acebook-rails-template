@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     p @post.save
     p @post.errors.full_messages
+    
     redirect_to posts_path
   end
 

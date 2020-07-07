@@ -1,4 +1,4 @@
-class AddfriendsController < ActionController::Base
+class AddfriendsController < ApplicationController
   def index
   # pull data from database
   params[:id] = session[:user_id]
