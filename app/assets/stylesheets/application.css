@@ -287,3 +287,21 @@ footer {
     right: 5px;
     background-color: #007DC4;
   }
+
+  /* user_list */
+
+  .container.users {
+    background-color: white;
+    opacity: 0.8;
+    text-align: center;
+  }
+
+  .scarer {
+    margin: 2px auto 5px auto;
+  }
+
+  #scarer_list {
+    margin: auto auto auto 10px;
+    font-weight: bold;
+    text-align: center;
+  }
