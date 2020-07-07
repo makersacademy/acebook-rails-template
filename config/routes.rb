@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
     delete '/comments/:id', to: 'comments#destroy', as: 'destroy_comment'
+    patch '/comments/:id', to: 'comments#update', as: 'update_comment'
   end
   delete '/posts/:id', to: 'posts#destroy', as: 'destroy_post'
 end

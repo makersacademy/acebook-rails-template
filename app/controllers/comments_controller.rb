@@ -11,4 +11,15 @@ class CommentsController < ApplicationController
     @comment.destroy
     redirect_to posts_url
   end
+
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    p params
+    Comment.update(params[:id], :body => params[:comment][:body])
+    redirect_to posts_url
+  end
 end

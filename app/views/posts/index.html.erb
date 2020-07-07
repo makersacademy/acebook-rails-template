@@ -35,6 +35,7 @@
     <p><%= comment.body %></p>
 
     <% if comment.user_id == current_user.id %>
+      <%= link_to "Edit", edit_post_comment_path(:id => comment.id, :post_id => post.id) %>
       <%= link_to "Delete", post_destroy_comment_path(:id => comment.id, :post_id => post.id), :method => :delete %> 
     <% end %>
   <% end %>
