@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :albums
+    post '/users/:user_id/albums', to: 'albums#create', as: 'create_album'
   end
 
   resources :sessions, only: [:new, :create, :destroy]

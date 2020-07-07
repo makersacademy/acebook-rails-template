@@ -10,5 +10,5 @@
 <% end %>
 
 <br><br>
-<%= link_to 'Delete Album', destroy_album_path(:user_id, :id), method: :delete, data: { confirm: 'Are you sure?' } %><br>
-<%= link_to "Back to profile", profile_index_path(:id => user_id) %>
+<%= link_to 'Delete Album', destroy_album_path(:user_id => params[:user_id], :id => params[:id]), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+<%= link_to "Back to profile", profile_index_path(:id => params[:user_id]) %>

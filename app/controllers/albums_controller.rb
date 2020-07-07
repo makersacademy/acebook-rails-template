@@ -10,6 +10,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
+    
   end
 
   # GET /albums/new
@@ -28,7 +29,7 @@ class AlbumsController < ApplicationController
 
     respond_to do |format|
       if @album.save
-        format.html { redirect_to @album, notice: 'Album was successfully created.' }
+        format.html { redirect_to profile_index_path(:id => params[:user_id]), notice: 'Album was successfully created.' }
         format.json { render :show, status: :created, location: @album }
       else
         format.html { render :new }
@@ -55,7 +56,7 @@ class AlbumsController < ApplicationController
   # DELETE /albums/1.json
   def destroy
     @album.destroy
-    redirect_to posts_url
+    redirect_to profile_index_path(:id => params[:user_id])
   end
 
   private

@@ -2,4 +2,4 @@
 
 <%= render 'form', album: @album %>
 
-<%= link_to 'Back', albums_path %>
+<%= link_to 'Back', profile_index_path(:id => params[:user_id]) %>
