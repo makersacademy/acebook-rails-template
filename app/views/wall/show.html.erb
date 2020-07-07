@@ -1,11 +1,19 @@
 <div class="container">
+<div class="container container title">
+<div class="row">
+
   <div id="wall_owner">wall of, <%= @username %></div>
 
+  <div class="new-post-form">
   <%= form_for new_post_path do |form| %>
     <%= form.hidden_field :wall_id, :value => params[:id] %>
-    <div class="row">
+
     <%= form.submit "new post", :class => "btn btn-lg btn-primary btn-block submit-new" %>
   <% end %>
+  </div>
+  </div>
+
+  </div>
 
 <% @posts.each do |post| %>
 
