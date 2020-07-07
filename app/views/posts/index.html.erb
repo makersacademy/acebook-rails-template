@@ -43,6 +43,6 @@
   <% end %>
   <%= form_for([post, post.comments.build]) do |form| %>
     <p><%= form.text_area :body, placeholder: "Add comment" %></p>
-    <p><%= form.submit "Submit" %></p>
+    <p><%= form.submit "Comment" %></p>
   <% end %>
 <% end %>
