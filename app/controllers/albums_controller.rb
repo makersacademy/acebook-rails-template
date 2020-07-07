@@ -55,10 +55,7 @@ class AlbumsController < ApplicationController
   # DELETE /albums/1.json
   def destroy
     @album.destroy
-    respond_to do |format|
-      format.html { redirect_to albums_url, notice: 'Album was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to posts_url
   end
 
   private
@@ -69,6 +66,6 @@ class AlbumsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def album_params
-      params.fetch(:album, {})
+      params.require(:album).permit(:title, images: [])
     end
 end

@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+
+<% (0...@album.images.count).each do |image| %>
+  <%= image_tag(@album.thumbnail(image)) %>
+  <% end %>
+
+<br><br>
+<%= link_to 'Delete Album', @album, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+<%= link_to "Back to posts", posts_url %>
