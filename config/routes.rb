@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   get '/login' => 'users#login'
   post '/login' => 'sessions#create'
   delete '/sessions', to: 'sessions#destroy'
+  get "/profile/(:id)" => 'addfriends#index'
+
 end

@@ -17,11 +17,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @username = User.find_by(id:  session[:user_id])
-    puts @username
-    #   @user_name = session[:user_name]
-    @posts = Post.all.order(created_at: :desc)
+      @username = User.find_by(id:  session[:user_id])
+      #   @user_name = session[:user_name]
+      @posts = Post.all.order(created_at: :desc)
   end
+
 
   def destroy
     
