@@ -2,6 +2,10 @@ class UsersController < Clearance::BaseController
   before_action :redirect_signed_in_users, only: [:create, :new]
   skip_before_action :require_login, only: [:create, :new], raise: false
 
+  def index
+    @users = User.all
+  end
+
   def new
     @user = user_from_params
     render template: "users/new"
