@@ -1,14 +1,13 @@
 require "rails_helper"
 
 RSpec.describe RoomChannel, type: :channel do
-  # before do
-    # initialize connection with identifiers
-  #   stub_connection user_id: user.id
-  # end
+  before do
+    stub_connection user_id: user.id
+  end
 
-  xit "redirects when not logged in" do
+  it "redirects when not logged in", :focus => true do
     subscribe
-    expect(subscription).to be_rejected
+    assert_no_streams  
   end
 
   xit "subscribes to a stream when room id is provided" do
