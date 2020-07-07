@@ -8,7 +8,7 @@ RSpec.feature "Edit", type: :feature do
     expect(page).to have_content('make a scream')
   end
 
-  scenario "user can write a message", :focus => true do
+  scenario "user can write a message" do
     writes_a_message
     visit '/rooms/show'
     find('#write_message').native.send_keys(:return)

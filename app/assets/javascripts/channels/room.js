@@ -22,14 +22,18 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
 document.addEventListener("DOMContentLoaded", function(event) { 
   $(function(){
       $(document).on('keypress', '[data-behavior~=room_speaker]', function(event) {
-        if (event.keyCode === 13) {
+        if (event.keyCode === 13)  {
           App.room.speak(event.target.value);
           event.target.value = '';
           return event.preventDefault();
         }
       });
+      $('#add_message').submit(function(event) {
+          console.log(event.target)
+          App.room.speak(event.target);
+          event.target.value = '';
+          return event.preventDefault();
+      });
   });
 });
-
-
 
