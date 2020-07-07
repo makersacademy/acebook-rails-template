@@ -12,7 +12,7 @@ RSpec.feature "Delete", type: :feature do
     creates_a_post
     click_on "sign out"
     sign_in
-    visit users_path
+    click_button 'Scarer list'
     click_link 'bob1'
     click_link "delete"
     expect(page).to have_content("Cannot change another user's post")
