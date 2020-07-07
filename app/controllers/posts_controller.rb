@@ -7,9 +7,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    @post.save
-    @post.errors.full_messages
-    redirect_to posts_url
+    p @post.save
+    p @post.errors.full_messages
+    redirect_to posts_path
   end
 
   def edit
