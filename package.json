@@ -1,5 +1,8 @@
 {
   "name": "acebook",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "codeclimate-test-reporter": "^0.5.1"
+  }
 }
