@@ -8,10 +8,6 @@ RSpec.feature "Messages", type: :feature do
     expect(page).to have_content('make a scream')
   end
 
-  it "POST #create" do
-    expect { post :speak, message: { text: 'Cool!' }}.to
-      have_broadcasted_to("messages").with(text: 'Cool!')
-  end
   xscenario "user can write a message" do
     # writes_a_message
     # sign_in

@@ -40,7 +40,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 4.0.0.beta3'
   gem 'rubocop'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
