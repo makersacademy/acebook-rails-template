@@ -9,6 +9,7 @@
 <% @results.each do |result| %>
   <%= image_tag(@album.thumbnail(i)) %>
   <%= link_to "Delete", destroy_image_path(:album_id => params[:id], :id => result['blob_id']), method: :delete %>
+  <%= link_to "Make Profile Photo", set_profile_photo_path(:id => result['id']), method: :post %>
   <% i += 1 %>
 <% end %>
 

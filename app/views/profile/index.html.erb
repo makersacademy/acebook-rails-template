@@ -1,7 +1,7 @@
 <h1><%= @user.firstname %>'s Profile Page</h1>
-<%= image_tag(rails_blob_path(@photo)) %>
+<%= image_tag(rails_blob_path(@photo), size: '200x200') if @photo %>
 
-
+<br>
 <%= link_to "Add Photo Album", new_user_album_path(@user.id) %>
 <br>
 <%= link_to "Back to posts", posts_path %>
