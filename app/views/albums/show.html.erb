@@ -5,10 +5,12 @@
   <%= @album.title %>
 </p>
 
-<% (0...@album.images.count).each do |image| %>
-  <%= image_tag(@album.thumbnail(image)) %>
-  <% p params %>
-  <%= link_to "Delete", destroy_image_path(:album_id => params[:id], :id => @image.id), method: :delete %>
+<% i = 0 %>
+<% @results.each do |result| %>
+  <%= image_tag(@album.thumbnail(i)) %>
+  <%= result['blob_id'] %>
+  <%= link_to "Delete", destroy_image_path(:album_id => params[:id], :id => result['blob_id']), method: :delete %>
+  <% i += 1 %>
 <% end %>
 
 <br><br>
