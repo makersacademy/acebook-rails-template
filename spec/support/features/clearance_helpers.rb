@@ -37,7 +37,7 @@ module Features
     end
 
     def expect_user_to_be_signed_out
-      expect(page).to have_content ("sign up")
+      expect(page).to have_content "sign up"
     end
 
     def user_with_reset_password
