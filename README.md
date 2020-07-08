@@ -162,6 +162,39 @@ By the end of this sprint we had completed all user stories so far. The only fea
     * Simplecov
 
 
+# Sprint 3
+
+Last thing Friday we asked for a new feature to work on that we could break down and plan our third sprint around. The feature we were given was the ability for a user to comment on each other's posts.
+  
+However we were thrown a curve ball during our morning stand up that due to a shift in the product market-fit that we are trying to achieve with this application, we need to implement a new feature that was to be prioritised above all other work. This feature was to add photo albums. Users want to be able to upload photos to display as their profile picture, so that everyone can see who they are. 
+
+1. A signed-in user can:
+
+    * Upload photos which are stored in albums
+    * Choose a photo to be their profile picture
+    * Edit or delete photos (but not ones they don't own)
+    * See the albums of other users
+
+- Further Challenge
+
+    * Use AWS to store images
+    * A signed-in user can like and comment on photos
+
+2. A signed-in user can:
+
+    * comment on any post
+    * see a helpful message that their comment was successfully posted
+    * edit their own comments (for up to 10mins)
+    * edit capability is not possible afterwards
+    * see a helpful message that the edit was successful
+    * delete their own comments
+    * see a helpful message that the delete was successful
+    
+ 3. Outstanding Tasks:
+ 
+ * Comments cannot be blank
+ * Posts can have line breaks
+ * SimpleCov
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
