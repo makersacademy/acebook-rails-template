@@ -4,11 +4,10 @@
   <strong>Title:</strong>
   <%= @album.title %>
 </p>
-
+ 
 <% i = 0 %>
 <% @results.each do |result| %>
   <%= image_tag(@album.thumbnail(i)) %>
-  <%= result['blob_id'] %>
   <%= link_to "Delete", destroy_image_path(:album_id => params[:id], :id => result['blob_id']), method: :delete %>
   <% i += 1 %>
 <% end %>

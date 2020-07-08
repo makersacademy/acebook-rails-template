@@ -10,9 +10,9 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
-    @results = ActiveRecord::Base.connection.execute("SELECT * FROM active_storage_attachments")
-    image_id = ActiveStorage::Attachment.find_by(record_id: params[:id]).id
-    @image = ActiveStorage::Blob.find(image_id)
+    @results = ActiveRecord::Base.connection.execute("SELECT * FROM active_storage_attachments WHERE record_id = #{params[:id]}")
+    # image_id = ActiveStorage::Attachment.find_by(record_id: params[:id]).id
+    # @image = ActiveStorage::Blob.find(image_id)
   end
 
   # GET /albums/new
