@@ -1,11 +1,11 @@
 # AceBook
 
-### [Notes from Sprint 1](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-1) - [Notes from Sprint 2](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-2) 
+### [Notes from Sprint 1](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-1) - [Notes from Sprint 2](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-2)
 
 ### Challenge progress overview:
 * Currently, all elements of CRUD are implemented, including an editing feature that is permitted for ten minutes only.
 * The users are able to make a time-stamped and username-stamped post, which is presented in reverse chronological order.
-* They can sign-up, sign-in, and log out. 
+* They can sign-up, sign-in, and log out.
 
 
 ### Team
@@ -76,7 +76,7 @@ Using a gem is useful but does hide some important functionality which was a pai
 
 * Bootstrap gem implemented to begin base styling for app, including reworking container size and formatting.
 * Use of placeholder values for sign-up/ sign-in pages.
-* Sign-up/ sign-in containers are centre-aligned vertically 
+* Sign-up/ sign-in containers are centre-aligned vertically
 
 #### Challenges in Feature Implementation
 
@@ -113,15 +113,75 @@ Using a gem is useful but does hide some important functionality which was a pai
 * Implementation of TimeCop gem to test for post editing window.
 * Implementation of a test for minimun code coverage
 * Further edits to the Rubocop file in order to customise formatting
-* Coverage file successfully added to .gitignore file to econimise timespent 
-
-
+* Coverage file successfully added to .gitignore file to econimise timespent
 
 #### Small things to think about in Future Sprints
 <i> These currently remains the same as the previous sprint </i>
 
 * Currently there is an unexpected terminal output when test are run
 * Looking into code climate
+
+## Notes from Sprint 3
+
+### Team Wall
+
+#### Coding Achievements
+* A logged in User is directed to their own Wall. Or is presented with the login screen, therefor this is the default route.
+* User can see other users wall when logged in- this was achieved via the implementation of a "scarer list".
+The list is a series of links which when clicked navigate to the wall of the associated user. This uses the user_id as
+param.
+* User can post on a user's wall and it only appears on that wall. This functionality was delivered concurrently with the
+above. The posts are stored in the posts database with a wall_id, so are linked with the wall at which they were created.
+
+#### Challenges in Feature Implementation
+* These features were implemented smoothly and there were no specific challenges noted in their implementation.
+
+#### Small things to think about in Future Sprints
+* CSS
+
+### Team Chat-room
+
+#### Coding Achievements
+
+* In response to the 12pm changing requirements this team's sprint was around the implementation of chatroom functionality.
+* Action cable was suggested for this so Team chat-room installed the action cable gem and followed the documentation to
+spike the feature.
+* User can join a chatroom with other signed in users. Was achieved using inbuilt clearance functionality only allowing
+current_users, i.e signed in users, to access the chatroom route. If not logged in they are returned to the sign in route.
+* See realtime messages, was achieved using action cable utilising JQuery and the JQuery-rails gem. This allows the
+messages to appear onscreen without the need to refresh the page.
+* A User can share their own message. This is handled by the action cable gem and it's subscription to a stream allowing
+users to input a message in the chatroom and have it instantly return as long as the connection is established and
+persists.
+
+#### Challenges in Feature Implementation
+
+* Installing and utilising the features of this new gem required methodically working through the documentation to ensure
+it behaved how we wanted it to for our application.
+* Testing was and is a problem currently. The ability to test the behaviour of action cable has alluded us far, not for
+want of trying. This will continue to be addressed, but for the purpose of deploying the feature this was excluded from
+coverage for now.
+
+#### Small things to think about in Future Sprints
+* Testing of action cable behaviour is ongoing and will require addressing.
+
+### Group Work
+
+#### Coding Achievements
+
+* Tristan did some additional work on the CSS styling at the weekend, tidying up style, changed button on edit form to a
+back button.
+* Added logo and footer
+* We mobbed on Monday morning pre announcement to clear all outstanding rspec fails and reduce rubocop problems.
+* Reduced the number of redundant rspec tests.
+
+#### Small things to think about in Future Sprints
+
+* Currently there is an unexpected terminal output when test are run
+* Adding a test for minimum code coverage -- DONE
+* Looking into code climate -- Following discussion with Tatsiana it was agreed our coverage was sufficient without
+code climate.
+* Further edits to the rubocop file - currently 5 offences in master
 
 
 REQUIRED INSTRUCTIONS:
