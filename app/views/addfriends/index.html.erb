@@ -21,6 +21,12 @@
               
 <ul class="list-group">
 
+<% if @current_user.friends.empty? %> 
+ <h1> You have 0 friends...</h1>
+
+<% else %> 
+
+
  <h1> Your friends </h1>
  <% @current_user.friends.each do |one_friend|  %> 
   <li class="list-group-item">  <%= one_friend.name %>  <small class="text-muted"><p>Friends since: <%= one_friend.updated_at.strftime("%B  %Y") %></p></small>    </li>
@@ -28,10 +34,12 @@
   </ul>
   <br>
 <% end %> 
+<% end %> 
 
 
+<% if @current_user.friend_requests.empty? %> 
 
-
+<% else %> 
 
  <h1> Your friend requests </h1>
  <% @current_user.friend_requests.each do |one_friend|  %> 
@@ -41,6 +49,13 @@
   <br>
 <% end %> 
 
+
+<% end %> 
+
+<% if @current_user.pending_friends.empty? %> 
+
+<% else %> 
+
  <h1> Your pending requests </h1>
  <% @current_user.pending_friends.each do |one_friend|  %> 
   <li class="list-group-item">  <%= one_friend.name %>  </li>
@@ -48,7 +63,7 @@
   </ul>
   <br>
 <% end %> 
-
+<% end %> 
 </div>
 
 
