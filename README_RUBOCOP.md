@@ -25,4 +25,16 @@ We decide to comment line 11 in application controller.
 
 CODE TO REVIEW
 /app/controllers/application_controller.rb line 11 - 15
-app/controllers/sessions_controller.rb line 9 
+def require_login
+  # current_user = false
+  # if session[:user_id].nil?
+  #   p 'LOGGED IN'
+  #   redirect_to '/login'
+  # end
+  return unless session[:user_id].nil?
+
+  p 'LOGGED IN'
+  redirect_to '/login'
+end
+end
+app/controllers/sessions_controller.rb line 9
