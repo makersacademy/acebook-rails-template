@@ -3,6 +3,8 @@
 
 <%= link_to "Add Photo Album", new_user_album_path(@user.id) %>
 <br>
+<%= link_to "Back to posts", posts_path %>
+<br>
 <br>
 
 <table>
@@ -11,7 +13,6 @@
       <tr>
         <td><%= album.title %></td>
         <td><%= link_to 'View Album', user_album_url(@user.id, album.id) %></td>
-        <td><%= link_to 'Edit', edit_user_album_path(@user.id, album.id) %></td>
       </tr>
     <% end %>
   </tbody>
