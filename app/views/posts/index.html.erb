@@ -15,7 +15,7 @@
 <% @posts.reverse.each do |post| %>
   <p><%= User.find(post.user_id).firstname %></p>
 
-  <p><%= post.message %></p>
+  <p> <%= simple_format(post.message) %></p>
     <% if post.user_id == current_user.id %>
         <% if post.editable? %>
           <%= link_to "Edit", edit_post_path(post), id: 'edit' %>
@@ -27,7 +27,7 @@
 
   <% post.comments.each do |comment| %>
     <p><%= User.find(comment.user_id).firstname %></p>
-    <p><%= comment.body %></p>  
+    <p><%= simple_format(comment.body) %></p>  
   <% end %>
   <%= form_for([post, post.comments.build]) do |form| %>
   
