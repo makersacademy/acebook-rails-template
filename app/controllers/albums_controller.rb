@@ -10,7 +10,8 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
-    
+    image_id = ActiveStorage::Attachment.find(3).id
+    @image = ActiveStorage::Blob.find(image_id)
   end
 
   # GET /albums/new

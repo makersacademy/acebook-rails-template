@@ -6,6 +6,7 @@
 </p>
 
 <% (0...@album.images.count).each do |image| %>
+  <%= @image.inspect %>
   <%= image_tag(@album.thumbnail(image)) %>
 <% end %>
 
