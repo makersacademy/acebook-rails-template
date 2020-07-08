@@ -8,12 +8,12 @@ RSpec.feature "Messages", type: :feature do
     expect(page).to have_content('make a scream')
   end
 
-  xscenario "user can write a message" do
-    # writes_a_message
-    # sign_in
+  scenario "user can write a message", :focus => true do
+    sign_in
     visit "/rooms/show"
     fill_in "write_message", with: "Hello, world!"
-    click_on 'scream!'
-    expect(streams).to have_content(/Hello, world!/)
+    find_button('submit').click
+    visit "/rooms/show"
+    expect(page).to have_content(/Hello, world!/)
   end
 end

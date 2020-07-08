@@ -92,6 +92,11 @@
   body.signup {
     background-image: url("monsters_sign_up_image.jpg");
   }
+
+  body.show {
+    background-image: url("chatroom_image.png")
+
+  }
   
   .container.post {
     background-color: white;
@@ -100,4 +105,11 @@
   
   .each_post {
     margin-top: 10px;
+  }
+
+  #messages {
+    max-height: 400px;
+    overflow-y: scroll;
+    background-color: white;
+    opacity: 0.7;
   }
