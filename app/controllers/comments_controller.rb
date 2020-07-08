@@ -3,7 +3,12 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(body: params[:comment][:body], user_id: current_user.id)
-    redirect_to posts_url, notice: 'comment successfully posted!'
+    if @comment.valid?
+      redirect_to posts_url, notice: 'comment successfully posted!'
+    else
+      redirect_to posts_url, notice: "comments cannot be blank"
+    end
+    
   end
 
   def destroy

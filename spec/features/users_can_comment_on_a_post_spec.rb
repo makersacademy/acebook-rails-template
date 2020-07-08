@@ -27,6 +27,12 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("This is a test")
   end
 
+  scenario "comments cannot be blank" do
+    fill_in "comment_body", with: "   "
+    click_button "Comment"
+    expect(page).to have_content("comments cannot be blank")
+  end
+
   # Needs sign out button implementation
   # scenario "Can see another users name above that users post" do
   #   fill_in "Message", with: "Hello, world!"
