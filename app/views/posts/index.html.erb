@@ -3,6 +3,18 @@
 <h3> Hello, <%= current_user.firstname %>. (<%= link_to "Log out", session_path(:id => current_user.id), :method => :delete %>)</h3> 
 <%= link_to "Profile", profile_index_path(:id => current_user.id) %>
 
+<% if @post.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+  <ul>
+  <% post.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
+
 <%= form_for @post do |form| %>
   <%= form.label :message%>
   <%= form.text_area :message, placeholder: "What are your thoughts?" %>
