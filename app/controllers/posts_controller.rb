@@ -23,7 +23,7 @@ class PostsController < ApplicationController
       @current_user = User.find_by(id:  session[:user_id])
       #   @user_name = session[:user_name]
       @posts = Post.all.order(created_at: :desc)
-      @all_users = User.all()
+      @all_users = User.all().where.not(id: @current_user.id)
   end
 
 

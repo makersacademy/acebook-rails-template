@@ -28,8 +28,29 @@
   <body>
     <div class="container">
 
+<div class="col-md-7">
+        <ul class="list-group">
+
+<li class="list-group-item" style = "background-color: #4267b2" > <p style = "color: white"> Welcome to JJERbook <%= @current_user.name %> </p> </li>
+ 
+  
+  </ul>
+</div>
+
+
+
   <% @posts.each do |post| %>
       <div class="col-md-7">
+
+
+  
+
+
+
+
+
+
+
           <div class="social-feed-separated">
 
               <div class="social-feed-box">
@@ -44,8 +65,7 @@
                   <div class="social-body">
 
                           <p><%= simple_format(post.message) %></p>
-
-                      <img src="" class="img-responsive">
+                      
                       <div class="btn-group">
                       <%# <p><%= link_to("Delete post", post_path(post) , method: :delete )%>
 
@@ -71,10 +91,26 @@
               </div>
 
           </div>
+
+  
       </div>
 
-      <% end %>
-   <h1> Welcome to JJERbook </h1>
+<% end %> 
 
+<div class="col-md-7">
+  
+
+        <ul class="list-group">
+  
+
+<li class="list-group-item" style = "background-color: #4267b2" > <p style = "color: white"> Suggested friends  </p>  </li>
+ <% @all_users.each do |user| %>
+  <li class="list-group-item">  <%=  user.name %> <small class="text-muted"><p>Member of jjer since: <%=  user.created_at.strftime("%B  %Y")  %>   </p></small>    
+   <button type="button" class="btn btn-primary">Add Friend</button>
+  </li>
+ 
+  <% end %>
+  </ul>
+  </div>
    
     </div>
