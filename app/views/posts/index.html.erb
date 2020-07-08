@@ -31,7 +31,7 @@
 <div class="col-md-7">
         <ul class="list-group">
 
-<li class="list-group-item" style = "background-color: #4267b2" > <p style = "color: white"> Welcome to JJERbook <%= @current_user.name %> </p> </li>
+<li class="list-group-item" style = "background-color: #4267b2" > <h3 style = "color: white"> Welcome to JJERbook <%= @current_user.name %> </h3> </li>
  
   
   </ul>
@@ -68,9 +68,6 @@
                       
                       <div class="btn-group">
                       <%# <p><%= link_to("Delete post", post_path(post) , method: :delete )%>
-
-
-
                           <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up" style=color:#8b9dc3;></i> Like!</button>
                           <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>
 
@@ -105,10 +102,12 @@
 
 <li class="list-group-item" style = "background-color: #4267b2" > <p style = "color: white"> Suggested friends  </p>  </li>
  <% @all_users.each do |user| %>
+ <% if @current_user.friend?(user) != true %>
   <li class="list-group-item">  <%=  user.name %> <small class="text-muted"><p>Member of jjer since: <%=  user.created_at.strftime("%B  %Y")  %>   </p></small>    
    <button type="button" class="btn btn-primary">Add Friend</button>
   </li>
- 
+ <% else %>
+  <% end %>
   <% end %>
   </ul>
   </div>
