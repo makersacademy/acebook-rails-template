@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  delete '/users/:user_id/albums/:album_id/images/:id', to: 'images#destroy', as: 'destroy_image'
   delete '/users/:user_id/albums/:id', to: 'albums#destroy', as: 'destroy_album'
   delete '/posts/:id', to: 'posts#destroy', as: 'destroy_post'
 end

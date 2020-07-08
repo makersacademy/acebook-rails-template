@@ -6,8 +6,9 @@
 </p>
 
 <% (0...@album.images.count).each do |image| %>
-  <%= @image.inspect %>
   <%= image_tag(@album.thumbnail(image)) %>
+  <% p params %>
+  <%= link_to "Delete", destroy_image_path(:album_id => params[:id], :id => @image.id), method: :delete %>
 <% end %>
 
 <br><br>
