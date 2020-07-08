@@ -43,7 +43,9 @@
 
  <h1> Your friend requests </h1>
  <% @current_user.friend_requests.each do |one_friend|  %> 
-  <li class="list-group-item">  <%= one_friend.name %>  </li>
+  <li class="list-group-item">  <%= one_friend.name %>
+  
+    </li>
   
   </ul>
   <br>
@@ -57,7 +59,9 @@
 <% else %> 
 
  <h1> Your pending requests </h1>
+
  <% @current_user.pending_friends.each do |one_friend|  %> 
+
   <li class="list-group-item">  <%= one_friend.name %>  </li>
   
   </ul>
@@ -66,6 +70,9 @@
 <% end %> 
 </div>
 
+<%# 
+<% p one_friend.confirm_friend(@current_user)  this line. alter the boolean to true from the @current users perspective. . 
+ <%# <% p @current_user.friend?(one_friend) %>   
 
   
 </div>
