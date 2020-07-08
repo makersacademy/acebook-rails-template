@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Timeline', type: :feature do
   before(:each) do
-    Capybara.current_driver= :selenium
+    # Capybara.current_driver= :selenium
     visit "/"
     click_link "Sign Up"
     fill_in "user_firstname", with: "testfirstname"
@@ -40,14 +40,14 @@ RSpec.feature 'Timeline', type: :feature do
   # end
   # will fix the above test after merge: test failing because comment button submit.
 
-  scenario 'the posts text area allows for line breaks' do
-    fill_in 'Message', with: "Hello\n world!"
-    click_button 'Submit'
-    expect(page.html).to match(/Hello\s*<br>\s*world!/)
-  end
-  after(:all) do
-    Capybara.use_default_driver
-  end
+  # scenario 'the posts text area allows for line breaks' do
+  #   fill_in 'Message', with: "Hello\n world!"
+  #   click_button 'Submit'
+  #   expect(page.html).to match(/Hello\s*<br>\s*world!/)
+  # end
+  # after(:all) do
+  #   Capybara.use_default_driver
+  # end
 end
 
 # scenario "Can submit posts with line breaks" do
