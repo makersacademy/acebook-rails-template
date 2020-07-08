@@ -18,4 +18,11 @@ Fixed indentation problems
 61 files inspected, 76 offenses detected - We are going to run spec before and after
 Before uncomment line 11 in application_controller.rb, same in each scenario.
 
-We decide to comment line 11 in application controller.########################
+We decide to comment line 11 in application controller.
+
+
+
+
+CODE TO REVIEW
+/app/controllers/application_controller.rb line 11 - 15
+app/controllers/sessions_controller.rb line 9 
