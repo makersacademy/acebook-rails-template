@@ -159,6 +159,15 @@ footer {
     background-image: url("scarefloorimage.jpg");
   }
 
+  body.signup {
+    background-image: url("monsters_sign_up_image.jpg");
+  }
+
+  body.show {
+    background-image: url("chatroom_image.png")
+
+  }
+  
   .container.post {
     background-color: white;
     opacity: 0.8;
@@ -174,6 +183,26 @@ footer {
     margin-top: 10px;
   }
 
+  #messages {
+    border-radius: 15px;
+    max-height: 400px;
+    overflow-y: scroll;
+    background-color: white;
+    opacity: 0.7;
+    padding: 20px;
+
+  }
+
+  #submit {
+    border-radius: 10px;
+    color: #1c92ba;
+
+  }
+
+  #write_message {
+    border-radius: 10px;
+    border-color: dimgray;
+  }
    #page-container {
     position: relative;
     min-height: 100vh;
