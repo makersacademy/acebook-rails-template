@@ -38,7 +38,7 @@
 
 
 <% if @current_user.friend_requests.empty? %> 
-
+<h1> You have 0 friend requests</h1>
 <% else %> 
 
  <h1> Your friend requests </h1>
@@ -53,7 +53,7 @@
 <% end %> 
 
 <% if @current_user.pending_friends.empty? %> 
-
+<h1> You have 0 pending friends</h1>
 <% else %> 
 
  <h1> Your pending requests </h1>
