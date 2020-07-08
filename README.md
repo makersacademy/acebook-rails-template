@@ -1,5 +1,19 @@
 # AceBook
 
+### [Notes from Sprint 1](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-1) - [Notes from Sprint 2](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-2) 
+
+### Challenge progress overview:
+* Currently, all elements of CRUD are implemented, including an editing feature that is permitted for ten minutes only.
+* The users are able to make a time-stamped and username-stamped post, which is presented in reverse chronological order.
+* They can sign-up, sign-in, and log out. 
+
+
+### Team
+* [Tristan Langford](https://github.com/tristanlangford)
+* [Rachael Ewins](https://github.com/RaeRachael)
+* [Nick Butler](https://github.com/nwmbutler)
+* [Sophie Brown](https://github.com/sofyloafy)
+
 ## Notes from Sprint 1
 
 ### Team Users
@@ -97,14 +111,17 @@ Using a gem is useful but does hide some important functionality which was a pai
 #### Coding Achievements
 
 * Implementation of TimeCop gem to test for post editing window.
+* Implementation of a test for minimun code coverage
+* Further edits to the Rubocop file in order to customise formatting
+* Coverage file successfully added to .gitignore file to econimise timespent 
+
+
 
 #### Small things to think about in Future Sprints
 <i> These currently remains the same as the previous sprint </i>
 
 * Currently there is an unexpected terminal output when test are run
-* Adding a test for minimun code coverage
 * Looking into code climate
-* Further edits to the rubocop file - currently 7 offences in master
 
 
 REQUIRED INSTRUCTIONS:

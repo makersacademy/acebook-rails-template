@@ -1,18 +1,28 @@
 <%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
-    <%= form.text_field :email, type: 'email', placeholder: "email" %>
+  <div class="form-group input-group">
+  <div class="input-group-prepend">
+      <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+   </div>
+    <%= form.text_field :email, type: 'email', placeholder: "email", :class => "form-control" %>
   </div>
 
-  <div class="password-field">
-    <%= form.password_field :password, placeholder: "password" %>
+
+  <div class="form-group input-group">
+  <div class="input-group-prepend">
+      <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
   </div>
+  <div class="password-field">
+    <%= form.password_field :password, placeholder: "password", :class => "form-control" %>
+  </div>
+  </div>
+
 
   <div class="submit-field">
-    <%= form.submit %>
+    <%= form.submit :value => "sign in", :class => "btn btn-lg btn-primary btn-block"%>
   </div>
 
   <div class="other-links">
 
-    <%= link_to t(".forgot_password"), new_password_path %>
+    <%= link_to "forgot password", new_password_path, :class => "btn btn-lg btn-primary btn-block" %>
   </div>
 <% end %>

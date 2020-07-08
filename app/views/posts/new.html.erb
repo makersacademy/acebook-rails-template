@@ -1,7 +1,16 @@
+<div class="container container post">
 <%= form_for @post do |form| %>
   <%= form.hidden_field :user_id, :value => @user_id %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
+  <div class="row">
+  <%= form.label :message, :class => "message-label" %>
+  </div>
+  <hr>
+  <%= form.text_area :message, :class => "message-input" %>
+  <hr>
+  <div class="row">
+  <%= form.submit "submit", :class => "btn btn-lg btn-primary btn-block submit-new" %>
 
-  <%= form.submit "Submit" %>
 <% end %>
+<%= link_to 'cancel', :back, :class => "btn btn-lg btn-primary btn-block go-back-new"%>
+</div>
+</div>
