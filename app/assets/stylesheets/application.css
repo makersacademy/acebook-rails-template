@@ -79,6 +79,7 @@ ul {
   .logo {
     height: 40px;
     width: 40px;
+    margin-right: 40px;
 }
 
   .nav-bar-signout-signup {
@@ -170,6 +171,12 @@ footer {
   .container.post {
     background-color: white;
     opacity: 0.8;
+  }
+
+  .container.title {
+    background-color: #007DC4;
+    margin-bottom: 20px;
+    color: white;
   }
 
   .each_post {
@@ -273,6 +280,7 @@ footer {
 
   .btn.btn-lg.btn-primary.btn-block.new {
     background-color: #007DC4;
+    margin: auto 5px auto auto;
   }
 
   .message-input {
@@ -280,13 +288,34 @@ footer {
       text-align: center;
   }
 
+  .new-post-form {
+    margin: auto 0px auto auto;
+    text-align: right;
+  }
+
+  #wall_owner {
+    margin: auto auto auto 10px;
+    font-weight: bold;
+  }
+
   .btn.btn-lg.btn-primary.btn-block.submit-new {
-    margin: 5px 5px 2px auto;
-    height: 30px;
-    width: 100px;
-    font-size: medium;
-    right: 5px;
-    background-color: #007DC4;
+    margin: auto 10px auto auto;
+      height: 30px;
+      width: 100px;
+      font-size: medium;
+      right: 5px;
+      background-color: #007DC4;
+      color: white;
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.new-post {
+    margin: auto 10px auto auto;
+      height: 30px;
+      width: 100px;
+      font-size: medium;
+      right: 5px;
+      background-color: white;
+      color: #007DC4;
   }
 
   .btn.btn-lg.btn-primary.btn-block.go-back-new {
@@ -297,3 +326,27 @@ footer {
     right: 5px;
     background-color: #007DC4;
   }
+
+  /* user_list */
+
+  .container.users {
+    background-color: white;
+    opacity: 0.8;
+    text-align: center;
+  }
+
+  .scarer {
+    margin: auto auto auto auto;
+  }
+
+  #scarer_list {
+    margin: auto auto auto 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  body.users.index {
+    background-image: url("Monsters-Inc_friends_page.jpg");
+   }
+
+
