@@ -18,7 +18,7 @@ RSpec.feature "Visitor updates password" do
     expect_user_to_be_signed_in
   end
 
-  xscenario "tries with a blank password" do
+  scenario "tries with a blank password" do
     user = user_with_reset_password
     visit_password_reset_page_for user
     change_password_to ""
