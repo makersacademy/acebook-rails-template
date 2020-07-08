@@ -21,6 +21,13 @@
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav navbar-left" id="chat-room">
+            <li class="nav-item">
+              <% if signed_in? %>
+                  <%= button_to 'monster chat', rooms_show_path, method: :get %>
+              <% end %>
+            </li>
+          </ul>
           <ul class="navbar-nav navbar-right" id="signout">
             <li class="nav-item">
               <% if signed_in? %>
