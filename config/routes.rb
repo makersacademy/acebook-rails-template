@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/sessions', to: 'sessions#destroy'
   get '/profile/' => 'friendships#index'
+
+  post '/friend' => 'friendships#create'
 end

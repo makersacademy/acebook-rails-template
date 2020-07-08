@@ -103,13 +103,20 @@
 <li class="list-group-item" style = "background-color: #4267b2" > <p style = "color: white"> Suggested friends  </p>  </li>
  <% @all_users.each do |user| %>
  <% if @current_user.friend?(user) != true %>
-  <li class="list-group-item">  <%=  user.name %> <small class="text-muted"><p>Member of jjer since: <%=  user.created_at.strftime("%B  %Y")  %>   </p></small>    
-   <button type="button" class="btn btn-primary">Add Friend</button>
-  </li>
- <% else %>
+
+
+<%= link_to '/friend', method: :post, :class => "list-group-item"  do %>
+<%=  user.name %> <small class="text-muted"><p>Member of jjer since: <%=  user.created_at.strftime("%B  %Y")  %>   </p></small>
+         <button type="button" class="btn btn-primary">Add Friend</button>                   
+    <% end %>
+ 
   <% end %>
   <% end %>
   </ul>
   </div>
    
     </div>
+ 
+  
+
+  

@@ -6,4 +6,14 @@ class FriendshipsController < ApplicationController
   
   end
 
+  def create
+    hash = { 'user_id' => 57 , 'friend_id' => 58 , 'confirmed' => TRUE   }
+    hash2 = { 'user_id' => 58 , 'friend_id' => 57 , 'confirmed' => TRUE   }
+     @friends = Friendship.create(hash)
+     @friends_inverse = Friendship.create(hash2)
+    p @friends.save
+    p @friends.errors.full_messages
+    redirect_to posts_path
+  end
+
 end
