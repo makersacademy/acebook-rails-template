@@ -5,10 +5,10 @@ RSpec.feature "Messages", type: :feature do
   scenario "user can visit a chat-room" do
     sign_in
     visit '/rooms/show'
-    expect(page).to have_content('make a scream')
+    expect(page).to have_content('chat room')
   end
 
-  scenario "user can write a message", :focus => true do
+  xscenario "user can write a message" do
     sign_in
     visit "/rooms/show"
     fill_in "write_message", with: "Hello, world!"

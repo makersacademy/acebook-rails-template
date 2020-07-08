@@ -16,8 +16,10 @@ SimpleCov.start 'rails' do
   add_filter '/bin/'
   add_filter '/spec/'
   add_filter '/app/jobs/application_job.rb'
+  add_filter '/app/jobs/message_broadcast_job.rb'
   add_filter '/app/mailers/application_mailer.rb'
   add_filter '/app/channels/application_cable'
+  add_filter '/app/channels/room_channel.rb'
   add_filter '/vendor/'
 end
 
