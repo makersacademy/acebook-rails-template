@@ -23,6 +23,13 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content('Hello, world!')
   end
 
+  scenario 'Cannot submit empty posts' do
+    fill_in 'Message', with: '   '
+    click_button 'Submit'
+    # expect(page).not_to have_content('   ')
+    expect(page).to have_content('cannot submit an empty post')
+  end
+
   # scenario 'Can see the last updated time for a post' do
   #   visit '/posts'
   #   fill_in 'Message', with: 'Hello, world!'
