@@ -1,17 +1,18 @@
-<div id="vertical">
-  <div id="clearance" class="sign-up">
-    <h2><%= t(".title") %></h2>
+<div class="card bg-light sign-in">
+<article class="card-body mx-auto" style="max-width: 400px;">
+<h4 class="card-title mt-3 text-center"><%= "sign up" %></h4>
 
     <%= form_for @user do |form| %>
       <%= render partial: '/users/form', object: form %>
 
       <div class="submit-field">
-        <%= form.submit %>
+        <%= form.submit :value => "sign up", :class => "btn btn-lg btn-primary btn-block"%>
       </div>
 
+      <hr data-content="already a Scarer?">
+
       <div class="other-links">
-        <%= link_to t(".sign_in"), sign_in_path %>
+        <%= link_to "sign in", sign_in_path, :class => "btn btn-lg btn-primary btn-block" %>
       </div>
     <% end %>
-  </div>
 </div>

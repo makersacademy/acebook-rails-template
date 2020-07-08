@@ -1,11 +1,10 @@
 <h1>chat room</h1>
 
-<div id="messages">
+<div id="messages" class="overflow-auto">
   <%= render @messages %>
-</div>
+</div><br>
 
 <form id="add_message">
-  <label>make a scream</label><br>
   <input type="text" data-behavior="room_speaker" id="write_message">
-  <input type="submit" value="scream!">
+  <input type="submit" value="scream!" id='submit'>
 </form>

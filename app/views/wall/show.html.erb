@@ -1,18 +1,36 @@
-<ul>
+<div class="container">
+<div class="container container title">
+<div class="row">
+
+  <div id="wall_owner">wall of... <%= @username %></div>
+
+  <div class="new-post-form">
+  <%= form_for new_post_path do |form| %>
+    <%= form.hidden_field :wall_id, :value => params[:id] %>
+
+    <%= form.submit "new post", :class => "btn btn-lg btn-primary btn-block new-post" %>
+  <% end %>
+  </div>
+  </div>
+
+  </div>
+
 <% @posts.each do |post| %>
-  <li class=each_post>
-  <div class="container post">
-  <div id="data"><%= post.created_at.to_date%> <%= post.created_at.strftime("%k:%M") %></div>
+
+  <div class="container container post">
+  <div class="row">
   <div id="creator"> <%= post.user.username %> </div>
+  <div id="data"><%= post.created_at.to_date%> <%= post.created_at.localtime.strftime("%k:%M") %></div>
+  </div>
+  <hr>
   <div id="body"><%= simple_format(post.message) %></div>
-  <div id="update"><%= link_to "update", edit_post_path(post) %></div>
-  <div id="delete"><%= link_to "delete", post_path(post), method: :delete,
-  data: { confirm: 'Are you sure?' } %>
+  <hr>
+  <div class="row">
+  <div id="update"><%= link_to "update", edit_post_path(post),  :class => 'btn btn-lg btn-primary btn-block update'%></div>
+  <div id="delete"><%= link_to "delete", post_path(post), method: :delete, :class => 'btn btn-lg btn-primary btn-block delete',
+  data: { confirm: 'are you sure?' } %></div>
+  </div>
   </div>
 <% end %>
-</li>
-</ul>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+</div>

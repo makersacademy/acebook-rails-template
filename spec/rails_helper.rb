@@ -8,7 +8,7 @@ require 'clearance/rspec'
 require 'spec_helper'
 require 'rspec/rails'
 require_relative './support/features/clearance_helpers.rb'
-require "action_cable/testing/rspec"
+# require "action_cable/testing/rspec"
 
 
 
