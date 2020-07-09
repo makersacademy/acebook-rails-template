@@ -155,7 +155,7 @@ footer {
     font-weight: bold;
   }
 
-  body.index {
+  body.show.wall {
     background-image: url("scarefloorimage.jpg");
   }
 
