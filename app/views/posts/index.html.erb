@@ -103,9 +103,9 @@
 <li class="list-group-item" style = "background-color: #4267b2" > <p style = "color: white"> Suggested friends  </p>  </li>
 <% @all_users.each do |friend| %>
 <% if @current_user.friend?(friend) != true %>
-<%= form_with url: '/friend', class: "list-group-item" do |form| %>
+<%= form_tag '/friend', class: "list-group-item" do %>
 <%= friend.name %> <small class="text-muted"><p>Member of jjer since: <%=  friend.created_at.strftime("%B  %Y")  %>   </p></small>
-<%= form.button  :"Add Friend" , name: "friend_id", value: friend.id, class: "btn btn-primary" %>
+<%= button_tag 'Add Friend', name: "friend_id", value: friend.id, class: "btn btn-primary" %>
 <% end %>
 <% end %>
 <% end %>
