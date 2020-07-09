@@ -1,7 +1,7 @@
 <% content_for :welcome_name do %>
   <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">@username</a>
+            <a class="nav-link" href="#"> <%= @current_user.name %> </a>
           </li>
 <% end %>
 
@@ -23,9 +23,9 @@
                   <div class="social-avatar">
 
                       <a href="#">
-                          @Name
+                          <%= @current_user.name %>
                       </a>
-                      <small class="text-muted"><p>Time made</p></small>
+                      <small class="text-muted"><p>Originally posted on: <%= @post.created_at.strftime("%B %d %Y at %l:%M%P") %></p></small>
                   </div>
                   <div class="social-body">
 

@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   describe 'GET /new ' do
-    xit 'responds with 200' do
+    it 'redirect page' do
       get :new
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(302)
     end
   end
 
@@ -17,15 +17,15 @@ RSpec.describe PostsController, type: :controller do
     end
 
     xit 'creates a post' do
-      post :create, params: { post: { message: 'Hello, world!' } }
+    p   post :create, params: { post: { message: 'Hello, world!' } }
       expect(Post.find_by(message: 'Hello, world!')).to be
     end
   end
 
   describe 'GET /' do
-    xit 'responds with 200' do
+    it 'responds with 200' do
       get :index
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(302)
     end
   end
 
