@@ -1,6 +1,6 @@
 # AceBook
 
-### [Notes from Sprint 1](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-1) - [Notes from Sprint 2](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-2)
+### [Notes from Sprint 1](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-1) - [Notes from Sprint 2](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-2) - [Notes from Sprint 3](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-3)
 
 ### Challenge progress overview:
 * Currently, all elements of CRUD are implemented, including an editing feature that is permitted for ten minutes only.
