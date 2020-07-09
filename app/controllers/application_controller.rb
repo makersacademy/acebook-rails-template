@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     # end
     return unless session[:user_id].nil?
 
-    p 'LOGGED IN'
+    # p 'LOGGED IN'
     redirect_to '/login'
   end
 end

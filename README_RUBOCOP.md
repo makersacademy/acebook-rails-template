@@ -47,6 +47,30 @@ was switched to...
 expect(page).to have_content(Time.now.strftime('%B %d %Y').to_s)
 
 
+BEFORE:
+spec/controllers/posts_controller_spec.rb:46:55: C: RSpec/Be: Don't use be without a
+n argument.
+      expect(Post.find_by(message: "Hello, world")).to be
+AFTER:
+expect(Post.find_by(message: 'Hello, world!')).to be   true
+
+
+
+WE DON'T NEED TWO EXPECT AT THE END IF WE FOLLOW THE RUBOCOP RULES
+/Users/emanuele/Projects/acebook-rails-template/spec/controllers/posts_controller_spec.rb
+
+describe 'Update' do
+  xit 'Updates a post' do
+    post :create, params: { post: { message: 'Hello, world!' } }
+    found_post = Post.find_by(message: 'Hello, world!')
+    patch :update, params: { id: found_post.id, post: { message: "I'm updated" } }
+    expect(Post.find_by(message: "I'm updated")).to be
+    expect(Post.find_by(message: 'Hello, world!')).not_to be
+  end
+end
+
+
+
 
 
 
