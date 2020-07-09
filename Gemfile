@@ -40,6 +40,9 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', '0.79.0'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
   gem 'selenium-webdriver'
 
   gem 'simplecov'
