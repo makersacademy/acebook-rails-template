@@ -10,6 +10,6 @@ RSpec.feature 'friendslist', type: :feature do
     fill_in 'user[password]', with: '12345'
     click_on 'Create Account'
     click_link 'Emanuele'
-    expect(page).to have_content("Profile Page")
+    expect(page).to have_content("About")
   end
 end
