@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments
+    delete '/comments/:id', to: 'comments#destroy', as: 'destroy_comment'
+    patch '/comments/:id', to: 'comments#update', as: 'update_comment'
   end
 
   post '/users/:user_id/images/:id', to: 'profile#set_photo', as: 'set_profile_photo'

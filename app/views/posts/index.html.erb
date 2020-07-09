@@ -13,8 +13,10 @@
 <% end %>
 
 <% @posts.reverse.each do |post| %>
+  <!-- name of poster -->
   <p><%= User.find(post.user_id).firstname %></p>
 
+  <!-- post message -->
   <p><%= post.message %></p>
     <% if post.user_id == current_user.id %>
         <% if post.editable? %>
@@ -23,21 +25,28 @@
         <%= link_to "Delete", destroy_post_path(:id => post.id), :method => :delete %>
     <% end %>
 
+  <!-- post updated time -->
   <p> <%= post.updated_at.in_time_zone("London") %> </p>
 
+  <!-- comments -->
+  
   <% post.comments.each do |comment| %>
+    <!-- name of commenter -->
+    <div id="singlecomment">
     <p><%= User.find(comment.user_id).firstname %></p>
-    <p><%= comment.body %></p>  
-  <% end %>
-  <%= form_for([post, post.comments.build]) do |form| %>
-  
-    <p>
-      <%= form.text_area :body, placeholder: "Add comment" %>
-    </p>
-    <p>
-    <%= form.submit "Submit" %>
-    </p>
-  
-    <% end %>
+    <p><%= comment.body %></p>
 
+    <% if comment.user_id == current_user.id %>
+      <% if comment.editable? %>
+        <%= link_to "Edit", edit_post_comment_path(:id => comment.id, :post_id => post.id) %>
+      <% end %>
+      <%= link_to "Delete", post_destroy_comment_path(:id => comment.id, :post_id => post.id), :method => :delete %> 
+    <% end %>
+    </div>
+  <% end %> 
+  <%= form_for([post, post.comments.build]) do |form| %>
+    <p><%= form.text_area :body, placeholder: "Add comment" %></p>
+    <p><%= form.submit "Comment" %></p>
+  <% end %>
 <% end %>
+

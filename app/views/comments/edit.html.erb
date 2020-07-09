@@ -1,0 +1,7 @@
+<h1>Edit Comment</h1>
+
+<%= form_for(@comment, url: post_update_comment_path) do |form| %>
+  <%= form.text_area :body %>
+
+  <%= form.submit "Submit" %>
+<% end %>
