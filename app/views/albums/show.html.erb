@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+ 
+<% i = 0 %>
+<% @results.each do |result| %>
+  <%= image_tag(@album.thumbnail(i)) %>
+  <%= link_to "Delete", destroy_image_path(:album_id => params[:id], :id => result['blob_id']), method: :delete %>
+  <%= link_to "Make Profile Photo", set_profile_photo_path(:id => result['id']), method: :post %>
+  <% i += 1 %>
+<% end %>
+
+<br><br>
+<%= link_to 'Delete Album', destroy_album_path(:user_id => params[:user_id], :id => params[:id]), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+<%= link_to "Back to profile", profile_index_path(:id => params[:user_id]) %>
