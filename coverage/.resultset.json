@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/emanuele/Projects/acebook-rails-template/app/helpers/application_helper.rb": {
+      "/Users/student/gitDir/acebook-rails-template/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -9,7 +9,7 @@
           null
         ]
       },
-      "/Users/emanuele/Projects/acebook-rails-template/app/helpers/sessions_helper.rb": {
+      "/Users/student/gitDir/acebook-rails-template/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -17,7 +17,7 @@
           null
         ]
       },
-      "/Users/emanuele/Projects/acebook-rails-template/app/helpers/users_helper.rb": {
+      "/Users/student/gitDir/acebook-rails-template/app/helpers/users_helper.rb": {
         "lines": [
           null,
           null,
@@ -25,22 +25,25 @@
           null
         ]
       },
-      "/Users/emanuele/Projects/acebook-rails-template/app/controllers/posts_controller.rb": {
+      "/Users/student/gitDir/acebook-rails-template/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
           5,
+          5,
           null,
           null,
           1,
           5,
           5,
           5,
+          null,
           5,
           null,
           null,
+          1,
           1,
           1,
           null,
@@ -49,17 +52,19 @@
           14,
           null,
           14,
+          14,
           null,
           null,
           null,
           1,
-          0,
+          null,
           0,
           0,
           0,
           null,
           null,
           1,
+          null,
           1,
           1,
           1,
@@ -73,7 +78,7 @@
           null
         ]
       },
-      "/Users/emanuele/Projects/acebook-rails-template/app/controllers/application_controller.rb": {
+      "/Users/student/gitDir/acebook-rails-template/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -94,9 +99,11 @@
           null
         ]
       },
-      "/Users/emanuele/Projects/acebook-rails-template/app/controllers/sessions_controller.rb": {
+      "/Users/student/gitDir/acebook-rails-template/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
+          null,
+          1,
           null,
           1,
           1,
@@ -120,7 +127,7 @@
           null
         ]
       },
-      "/Users/emanuele/Projects/acebook-rails-template/app/controllers/users_controller.rb": {
+      "/Users/student/gitDir/acebook-rails-template/app/controllers/users_controller.rb": {
         "lines": [
           null,
           null,
@@ -145,7 +152,15 @@
           null
         ]
       },
-      "/Users/emanuele/Projects/acebook-rails-template/app/models/post.rb": {
+      "/Users/student/gitDir/acebook-rails-template/app/models/friendship.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/student/gitDir/acebook-rails-template/app/models/post.rb": {
         "lines": [
           null,
           null,
@@ -154,7 +169,7 @@
           null
         ]
       },
-      "/Users/emanuele/Projects/acebook-rails-template/app/models/application_record.rb": {
+      "/Users/student/gitDir/acebook-rails-template/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -163,31 +178,76 @@
           null
         ]
       },
-      "/Users/emanuele/Projects/acebook-rails-template/app/models/user.rb": {
+      "/Users/student/gitDir/acebook-rails-template/app/models/user.rb": {
         "lines": [
           null,
           null,
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          null,
           1,
           1,
           1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
           null
         ]
       },
-      "/Users/emanuele/Projects/acebook-rails-template/app/controllers/addfriends_controller.rb": {
+      "/Users/student/gitDir/acebook-rails-template/app/controllers/friendships_controller.rb": {
         "lines": [
           1,
           1,
           null,
           1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1594118012
+    "timestamp": 1594282795
   }
 }

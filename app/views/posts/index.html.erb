@@ -2,7 +2,7 @@
   <ul class="navbar-nav ml-auto">
           <li class="nav-item">
 
-<a class="nav-link" href = <%= ("profile/") %>   ><%= @username.name %></a>
+<a class="nav-link" href = <%= ("profile/") %>   ><%= @current_user.name %></a>
           </li>
 <% end %>
 
@@ -28,8 +28,29 @@
   <body>
     <div class="container">
 
+<div class="col-md-7">
+        <ul class="list-group">
+
+<li class="list-group-item" style = "background-color: #4267b2" > <h3 style = "color: white"> Welcome to JJERbook <%= @current_user.name %> </h3> </li>
+
+
+  </ul>
+</div>
+
+
+
   <% @posts.each do |post| %>
       <div class="col-md-7">
+
+
+
+
+
+
+
+
+
+
           <div class="social-feed-separated">
 
               <div class="social-feed-box">
@@ -45,12 +66,8 @@
 
                           <p><%= simple_format(post.message) %></p>
 
-                      <img src="" class="img-responsive">
                       <div class="btn-group">
                       <%# <p><%= link_to("Delete post", post_path(post) , method: :delete )%>
-
-
-
                           <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up" style=color:#8b9dc3;></i> Like!</button>
                           <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>
 
@@ -71,8 +88,28 @@
               </div>
 
           </div>
+
+
       </div>
 
-      <% end %>
-   <h1> Welcome to JJERbook </h1>
+<% end %>
+
+<div class="col-md-7">
+
+
+        <ul class="list-group">
+
+
+<li class="list-group-item" style = "background-color: #4267b2" > <p style = "color: white"> Suggested friends  </p>  </li>
+<% @all_users.each do |friend| %>
+<% if @current_user.friend?(friend) != true %>
+<%= form_tag '/friend', class: "list-group-item" do %>
+<%= friend.name %> <small class="text-muted"><p>Member of jjer since: <%=  friend.created_at.strftime("%B  %Y")  %>   </p></small>
+<%= button_tag 'Add Friend', name: "friend_id", value: friend.id, class: "btn btn-primary" %>
+<% end %>
+<% end %>
+<% end %>
+
+  </ul>
+  </div>
     </div>

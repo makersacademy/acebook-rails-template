@@ -3,7 +3,7 @@
 <li class="nav-item">
             <a class="nav-link" href="/signup">Sign Up</a>
           </li>
-    <% end %>  
+    <% end %>
 
 <div class="container1">
       <div class="col-md-6 mx-auto text-center">
@@ -13,6 +13,17 @@
             </h1>
             <br>
          </div>
+
+         <div style='color: white'>
+
+
+         <% if flash[:login_errors] %>
+         <% flash[:login_errors].each do |error| %>
+         <p> <%=error%></p>
+         <% end %>
+         <% end %>
+         </div>
+
       </div>
 
 
@@ -23,12 +34,6 @@
 <%= form.password_field :password,  placeholder: "Password",  class: "form-control my-input mb-2 input-group" %>
 
 <%= form.submit "Log in", class: "btn btn-block send-button tx-tfm white text-center" %>
-
-<% if flash[:login_errors] %>
-<% flash[:login_errors].each do |error| %>
-<p> <%=error%></p>
-<% end %>
-<% end %>
 
 <% end %>
 
