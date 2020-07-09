@@ -1,25 +1,29 @@
 <header>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" id="nav-bar">
-    <% if signed_in? && params[:controller] != "wall" %>
-      <a href="wall/<%= current_user.id %>">
-      <% elsif signed_in? && params[:controller] == "wall" %>
-      <a href="<%= current_user.id %>">
+    <% if signed_in? %>
+    <%= link_to image_tag("monsters_inc_logo.jpg", class: "logo"), wall_path(current_user.id), method: :get %> 
     <% else %>
-      <a>
+      <%= image_tag("monsters_inc_logo.jpg", class: "logo") %>
     <% end %>
-      <%= image_tag("monsters_inc_logo.jpg", :alt => "logo", :class => "logo") %></a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav navbar-left" id="scarers-list">
+    <% if signed_in? %>
     <li class="nav-item">
         <div class="nav-bar-scarers-list" >
-          <% if signed_in? %>
-              <%= button_to 'Scarer list', users_path, method: :get,:class => 'btn btn-lg btn-primary btn-block sign-out' %>
-          <% end %>
-          </div>
+          <%= button_to 'Scarer list', users_path, method: :get,:class => 'btn btn-lg btn-primary btn-block sign-out' %>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div class="nav-bar-monster-chat" >
+          <%= button_to 'monster chat', rooms_show_path, method: :get,:class => 'btn btn-lg btn-primary btn-block sign-out' %>
+        </div>
+    <% end %>
+    </div>
     </li>
     </ul>
 
