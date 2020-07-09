@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.feature 'Timeline', type: :feature do
-  scenario 'Can edit posts and view them' do
+RSpec.describe 'Timeline', type: :feature do
+  it 'Can edit posts and view them' do
     log_in_eman
     click_link 'New post'
     fill_in 'Message', with: 'Hello world!!'

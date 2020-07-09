@@ -11,24 +11,24 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-describe 'invalid username' do
-  it 'rejects sign up with no name' do
-    user = User.new(name: nil, email: 'ema@test.com', password: '12345')
-    expect(user).to_not be_valid
+  describe 'invalid username' do
+    it 'rejects sign up with no name' do
+      user = User.new(name: nil, email: 'ema@test.com', password: '12345')
+      expect(user).not_to be_valid
+    end
   end
-end
 
-describe 'invalid email' do
-  it 'rejects sign up with no email' do
-    user = User.new(name: 'Emanuele', email: nil, password: '12345')
-    expect(user).to_not be_valid
+  describe 'invalid email' do
+    it 'rejects sign up with no email' do
+      user = User.new(name: 'Emanuele', email: nil, password: '12345')
+      expect(user).not_to be_valid
+    end
   end
-end
 
-describe 'invalid password' do
-  it 'rejects sign up with no password' do
-    user = User.new(name: 'Emanuele', email: 'ema@test.com', password: nil)
-    expect(user).to_not be_valid
+  describe 'invalid password' do
+    it 'rejects sign up with no password' do
+      user = User.new(name: 'Emanuele', email: 'ema@test.com', password: nil)
+      expect(user).not_to be_valid
+    end
   end
-end
 end

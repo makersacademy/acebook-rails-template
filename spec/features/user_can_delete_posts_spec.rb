@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.feature 'Timeline', type: :feature do
-  scenario 'Can delete posts ' do
+RSpec.describe 'Timeline', type: :feature do
+  it 'Can delete posts ' do
     log_in_eman
     click_link 'New post'
     fill_in 'Message', with: 'Test Post!'

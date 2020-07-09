@@ -21,6 +21,37 @@ Before uncomment line 11 in application_controller.rb, same in each scenario.
 We decide to comment line 11 in application controller.
 
 
+Following this walkthough (https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-project-rubocop-setup-with-rspec/) we
+
+Added gems and updated the rubocop.yml file, with some style preferences.
+
+We added these changes and commited 'Added Rubocop gems and set-up Rubo...'
+
+We ran 'bundle exec rubocop --safe-auto-correct' and looked though the changes.
+
+Many of these changes were; blank space, indentation, switching syntax 'scenario'
+for 'it'
+
+
+spec/controllers/posts_controller_spec.rb
+expect(response).to have_http_status(200)
+
+was switched to...
+expect(response).to have_http_status(:ok)
+
+
+spec/features/user_can_submit_posts_spec.rb
+expect(page).to have_content("#{Time.now.strftime('%B %d %Y')}")
+
+was switched to...
+expect(page).to have_content(Time.now.strftime('%B %d %Y').to_s)
+
+
+
+
+
+
+
 
 
 CODE TO REVIEW

@@ -2,13 +2,13 @@
 
 require 'rails_helper'
 
-RSpec.feature 'Log In', type: :feature do
-  scenario 'User can log into acebook' do
+RSpec.describe 'Log In', type: :feature do
+  it 'User can log into acebook' do
     visit '/login'
     expect(page).to have_content('Log in')
   end
 
-  xscenario 'user can login with their name and password' do
+  xit 'user can login with their name and password' do
     User.create(name: 'Emanuele', password: '12345', email: 'ema@test.com')
     visit '/login'
     fill_in 'user[email]', with: 'ema@test.com'
@@ -17,7 +17,7 @@ RSpec.feature 'Log In', type: :feature do
     expect(page).to have_content('Welcome to JJERbook')
   end
 
-  xscenario 'error raised for invalid credentials' do
+  xit 'error raised for invalid credentials' do
     User.create(name: 'Emanuele', password: '12345', email: 'ema@test.com')
     visit '/login'
     fill_in 'user[email]', with: 'ema@test.com'
