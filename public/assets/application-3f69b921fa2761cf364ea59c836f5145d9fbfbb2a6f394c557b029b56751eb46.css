@@ -108,9 +108,9 @@ footer {
     height: 50px;
     bottom: 0;
     width: 100%;
-    background-color: #69B5AB;
+    background-color: #007DC4;
     z-index: -1;
-    color: #535353;
+    color: white;
    }
 
    /* sign up page */
@@ -156,7 +156,7 @@ footer {
     font-weight: bold;
   }
 
-  body.index {
+  body.show.wall {
     background-image: url("scarefloorimage.jpg");
   }
 
@@ -168,6 +168,7 @@ footer {
     background-image: url("chatroom_image.png")
 
   }
+  
   
   .container.post {
     background-color: white;
@@ -348,6 +349,10 @@ footer {
 
   body.users.index {
     background-image: url("Monsters-Inc_friends_page.jpg");
+   }
+
+   .nav-bar-monster-chat {
+     margin-left: 20px;
    }
 
 

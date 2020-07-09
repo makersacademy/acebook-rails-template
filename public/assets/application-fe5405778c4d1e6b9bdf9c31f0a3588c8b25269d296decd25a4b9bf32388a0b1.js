@@ -1306,7 +1306,7 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
   },
 
   received: function(data) {
-    return $('#messages').append(data['message']);
+    return $('#messages').prepend(data['message']);
   },
 
   speak: function(message) {
