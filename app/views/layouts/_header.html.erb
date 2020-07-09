@@ -1,13 +1,11 @@
 <header>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" id="nav-bar">
-    <% if signed_in? && params[:controller] != "wall" %>
-      <a href="wall/<%= current_user.id %>">
-      <% elsif signed_in? && params[:controller] == "wall" %>
-      <a href="<%= current_user.id %>">
+    <% if signed_in? %>
+    <%= link_to image_tag("monsters_inc_logo.jpg", class: "logo"), wall_path(current_user.id), method: :get %> 
     <% else %>
-      <a>
+      <%= image_tag("monsters_inc_logo.jpg", class: "logo") %>
     <% end %>
-      <%= image_tag("monsters_inc_logo.jpg", :alt => "logo", :class => "logo") %></a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
