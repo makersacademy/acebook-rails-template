@@ -5,11 +5,19 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+
     if @post.valid?
       redirect_to posts_url
     else
       redirect_to posts_url, notice: 'cannot submit an empty post'
     end 
+
+
+#       if @post.valid?
+#         redirect_to posts_url
+#       else
+#         flash[:alert] = "comment cannot be blank"
+#       end
 
   end
 
@@ -29,7 +37,8 @@ class PostsController < ApplicationController
     Post.update(params[:id], :message => params[:post][:message])
     redirect_to posts_url
     else
-    redirect_to posts_url, notice: 'cant edit'
+      # we need to get rid of the following line
+    redirect_to posts_url, notice: 'cant edit' 
     end
   end
 
