@@ -1,6 +1,6 @@
 # AceBook
 
-### [Notes from Sprint 1](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-1) - [Notes from Sprint 2](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-2) - [Notes from Sprint 3](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-3)
+### [Notes from Sprint 1](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-1) - [Notes from Sprint 2](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-2) - [Notes from Sprint 3](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-3) - [Notes from Sprint 4](https://github.com/tristanlangford/acebook-brainaics#notes-from-sprint-4)
 
 ### Challenge progress overview:
 * Currently, all elements of CRUD are implemented, including an editing feature that is permitted for ten minutes only.
@@ -182,6 +182,44 @@ back button.
 * Looking into code climate -- Following discussion with Tatsiana it was agreed our coverage was sufficient without
 code climate.
 * Further edits to the rubocop file - currently 5 offences in master
+
+## Notes from Sprint 4
+
+### Team React
+
+#### Coding Achievements
+
+* Following another change in requirements; "Separate Rails entirely from the front end. Build a front end app to consume the Rails API", this team proceeded to understand how to breakdown our application into an API
+* GET API connection live using REACT.js, where data can be passed from the API backend to the frontend and rendered on a page
+
+#### Challenges in Feature Implementation
+* Handling the format of the JSON data React.js can work with
+* Understanding data requirements for Gems and how validation blocked the transfer of data
+
+### Team Finalise Deployment
+
+#### Coding Achievements
+
+* Added username to chat room input and output by manipulating the Action Cable Gem Javascript code and the relationship between users and messages in the database
+* Completed the chat room with CSS and link
+
+#### Challenges in Feature Implementation
+* Capybara form submitting with JQuery didn’t work 
+* Manipulating ActionCable Gem to accept the username when adding to database
+* Getting a broadcast to work on Heroku
+
+### Group Work
+
+#### Coding Achievements
+* Minimised our Rubocop offences  
+* Prepared app presentation
+* Group Code Review
+
+#### Future Features
+* POST API connection
+* Getting broadcast live on Heroku for chat room
+* Custom 404 error page when a user tries to visit a non-existing wall
+* Enable username to be used as a parameter instead/as well as user_id
 
 
 REQUIRED INSTRUCTIONS:
