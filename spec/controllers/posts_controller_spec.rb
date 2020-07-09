@@ -33,7 +33,6 @@ RSpec.describe PostsController, type: :controller do
     xit 'Deletes a post' do
       post :create, params: { post: { message: 'Hello, world!' } }
       found_post = Post.find_by(message: 'Hello, world!')
-
       delete :destroy, params: { id: found_post.id }
       expect(Post.find_by(message: 'Hello, world!')).not_to be
     end
@@ -42,7 +41,7 @@ RSpec.describe PostsController, type: :controller do
   describe 'Update' do
     xit 'Updates a post' do
       post :create, params: { post: { message: 'Hello, world!' } }
-      p found_post = Post.find_by(message: 'Hello, world!')
+      found_post = Post.find_by(message: 'Hello, world!')
       patch :update, params: { id: found_post.id, post: { message: "I'm updated" } }
       expect(Post.find_by(message: "I'm updated")).to be
       expect(Post.find_by(message: 'Hello, world!')).not_to be
