@@ -14,4 +14,5 @@ class RoomChannel < ApplicationCable::Channel
   def message_params
     params.require(:post).permit(:message, :user_id)
   end
+
 end

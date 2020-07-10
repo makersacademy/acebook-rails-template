@@ -4,7 +4,6 @@ class WallController < ApplicationController
     @wall_id = params[:id]
     @post = Post.new
     @user_id = current_user.id
-    # create view with form for @posts - leads to Post at '/posts'
   end
 
   def show
