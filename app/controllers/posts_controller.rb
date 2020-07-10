@@ -32,17 +32,17 @@ class PostsController < ApplicationController
   end
 
   def require_permission
-    if current_user != Post.find(params[:id]).user
-      flash[:alert] = "Cannot change another user's post"
-      redirect_to wall_url(params[:id] = Post.find(params[:id]).wall_id)
-    end
+    return unless current_user != Post.find(params[:id]).user
+
+    flash[:alert] = "Cannot change another user's post"
+    redirect_to wall_url(params[:id] = Post.find(params[:id]).wall_id)
   end
 
   def require_time_check
-    if Time.now - Post.find(params[:id]).created_at > 10.minutes
-      flash[:alert] = "You can only edit a post for 10mins... 😥"
-      redirect_to wall_url(params[:id] = Post.find(params[:id]).wall_id)
-    end
+    return unless Time.now - Post.find(params[:id]).created_at > 10.minutes
+
+    flash[:alert] = "You can only edit a post for 10mins... 😥"
+    redirect_to wall_url(params[:id] = Post.find(params[:id]).wall_id)
   end
 
 end

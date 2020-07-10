@@ -27,9 +27,9 @@ class SessionsController < Clearance::BaseController
   private
 
   def redirect_signed_in_users
-    if signed_in?
-      redirect_to wall_url(params[:id] = current_user.id)
-    end
+    return unless signed_in?
+    
+    redirect_to wall_url(params[:id] = current_user.id)
   end
 
   def url_after_create

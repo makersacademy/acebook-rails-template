@@ -4,7 +4,7 @@ module ApplicationCable
 
     def connect
       self.current_user = find_current_user
-      reject_unauthorized_connection unless self.current_user
+      reject_unauthorized_connection unless current_user
     end
 
     private
