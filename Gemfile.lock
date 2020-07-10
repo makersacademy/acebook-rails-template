@@ -71,13 +71,6 @@ GEM
       bcrypt (>= 3.1.1)
       email_validator (~> 2.0)
       railties (>= 5.0)
-    coffee-rails (4.2.2)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
     diff-lcs (1.4.4)
@@ -159,7 +152,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    redis (3.3.5)
     regexp_parser (1.7.1)
     rexml (3.2.4)
     rspec-core (3.9.2)
@@ -259,7 +251,6 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   clearance
-  coffee-rails
   factory_bot_rails (~> 4.8, >= 4.8.2)
   jbuilder (~> 2.5)
   jquery-rails
