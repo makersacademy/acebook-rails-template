@@ -26,8 +26,7 @@ class UsersController < Clearance::BaseController
 
   def redirect_signed_in_users
     return unless signed_in?
-
-    url_after_create
+    redirect_to url_after_create
   end
 
   def url_after_create

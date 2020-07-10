@@ -8,6 +8,12 @@ RSpec.feature "Visitor signs up" do
     expect(current_path).to eq sign_up_path
   end
 
+  scenario "test redirect for signed in users" do
+    sign_up_with('bob@email.com', 'bob1', 'password1')
+    visit sign_up_path
+    expect(page).to have_content('wall of... bob1')
+  end
+
   scenario "with valid email, username and password" do
     sign_up_with "valid@example.com", "username", "password"
 
