@@ -1,15 +1,15 @@
 <div class="container container post">
   <div class="container container post">
-<%= form_for :post, url: post_path(@post), method: :patch do |form| %>
-    <%= form.hidden_field :user_id, :value => @user_id %>
-    <%= form.hidden_field :wall_id, :value => @wall_id %>
-    <%= form.label :message, :class => "message-label" %>
-    <%= form.text_area :message, :class => "message-input"%>
-    <hr>
-    <div class="row">
-    <%= form.submit "submit", :class => "btn btn-lg btn-primary btn-block submit-new" %>
-  <% end %>
-  <%= link_to 'cancel', :back, :class => "btn btn-lg btn-primary btn-block go-back-new"%>
+    <%= form_for :post, url: post_path(@post), method: :patch do |form| %>
+      <%= form.hidden_field :user_id, :value => @user_id %>
+      <%= form.hidden_field :wall_id, :value => @wall_id %>
+      <%= form.label :message, :class => "message-label" %>
+      <%= form.text_area :message, :class => "message-input"%>
+      <hr>
+      <div class="row">
+      <%= form.submit "submit", :class => "btn btn-lg btn-primary btn-block submit-new" %>
+    <% end %>
+    <%= link_to 'cancel', :back, :class => "btn btn-lg btn-primary btn-block go-back-new"%>
   </div>
   </div>
 </div>

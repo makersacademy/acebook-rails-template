@@ -4,22 +4,18 @@
    </div>
   <%= form.text_field :email, type: 'email', placeholder: "email", :class => "form-control" %>
 </div>
-
 <div class="form-group input-group">
   <div class="input-group-prepend">
       <span class="input-group-text"> <i class="fa fa-user"></i> </span>
    </div>
   <%= form.text_field :username, placeholder: "username", :class => "form-control" %>
 </div>
-
 <div class="form-group input-group">
   <div class="input-group-prepend">
       <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
    </div>
   <%= form.password_field :password, placeholder: "password", :class => "form-control" %>
 </div>
-
-
 <% if @user.errors.any? %>
   <% @user.errors.full_messages.each do |msg|%>
     <%= msg %>
