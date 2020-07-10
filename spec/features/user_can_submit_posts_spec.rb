@@ -5,7 +5,9 @@ RSpec.feature "Timeline", type: :feature do
 
   scenario "Can submit posts and view date" do
     creates_a_post
-    expect(page).to have_content("#{Time.now.strftime("%Y-%m-%d")}", "#{Time.now.strftime("%k:%M")}")
+    time = Time.now
+    expect(page).to have_content("#{time.strftime("%Y-%m-%d")}")
+    expect(page).to have_content("#{time.strftime("%k:%M")}")
   end
 
   scenario "User email for creator" do

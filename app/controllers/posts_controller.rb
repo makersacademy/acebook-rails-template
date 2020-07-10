@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     redirect_to wall_url(params[:id] = Post.find(params[:id]).wall_id)
   end
 
-  def require_time_check
+  def require_time_check 
     return unless Time.now - Post.find(params[:id]).created_at > 10.minutes
 
     flash[:alert] = "You can only edit a post for 10mins... 😥"
