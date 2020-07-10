@@ -218,6 +218,8 @@ code climate.
 #### Future Features
 * POST API connection
 * Getting broadcast live on Heroku for chat room
+* Reset password functionality
+* User can customise their wall
 * Custom 404 error page when a user tries to visit a non-existing wall
 * Enable username to be used as a parameter instead/as well as user_id
 
