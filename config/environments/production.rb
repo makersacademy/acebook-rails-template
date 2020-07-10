@@ -1,10 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # config.web_socket_server_url = "wss://damp-reaches-86620.herokuapp.com/cable" 
-
-  # config.action_cable.allowed_request_origins = ['https://damp-reaches-86620.herokuapp.com', 'http://damp-reaches-86620.herokuapp.com']
-
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -79,9 +75,6 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-
-  # Set default host for test env.
-  config.action_mailer.default_url_options = { :host => "localhost:3000" }
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
