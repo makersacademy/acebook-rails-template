@@ -11,7 +11,7 @@ RSpec.feature "Visitor resets password" do
     ActiveJob::Base.queue_adapter = original_adapter
   end
 
-  scenario "by navigating to the page" do
+  xscenario "by navigating to the page" do
     visit sign_in_path
 
     click_link "forgot password"
