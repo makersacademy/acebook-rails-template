@@ -1,3 +1,6 @@
-class Wall < ApplicationRecord
-  belongs_to :user
-end
+# needed for customisable walls.
+
+# class Wall < ApplicationRecord
+#   belongs_to :user
+# end
+
