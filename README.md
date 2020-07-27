@@ -18,6 +18,7 @@ First, clone this repository. Then:
 
 ```bash
 > bundle install
+> if you are not on the right version, run 'rvm '
 > bin/rails db:create
 > bin/rails db:migrate
 
