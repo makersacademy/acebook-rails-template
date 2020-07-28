@@ -3,13 +3,14 @@
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
-the below**
+   the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
 2. The card wall is here: <please update>
 
 ## How to contribute to this project
+
 See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Quickstart
@@ -34,3 +35,33 @@ rails generate controller [NAME OF PAGE] [ACTION(e.g. class name)]
 ```
 
 This will create the files in views, test units, helpers, stylesheet and adds the page to the routes.rb file.
+
+
+## Connecting to database
+
+Log on to Heroku
+
+access floating-plateau-14779
+
+click 'resources'
+
+Select the postgres database
+
+Select 'Settings', then 'view credentials'
+
+Grab the URI
+
+Go to TablePlus
+
+Create a new connection using the URL
+
+Paste the URI and connect!
+
+
+
+
+## DANGER
+
+We have put this line into config/initializers/application.rb
+
+`Warning[:deprecated] = false`
