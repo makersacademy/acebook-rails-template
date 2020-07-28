@@ -5,9 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-group :production do
+ruby '2.7'
+# group :production do
   gem 'pg', '1.2.3'
-end
+# end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
@@ -30,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'simplecov', require: false, group: :test
 gem 'simplecov-console', require: false
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
