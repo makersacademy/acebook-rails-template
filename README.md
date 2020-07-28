@@ -24,3 +24,13 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## How to create new pages
+
+Run this in your terminal:
+
+```
+rails generate controller [NAME OF PAGE] [ACTION(e.g. class name)]
+```
+
+This will create the files in views, test units, helpers, stylesheet and adds the page to the routes.rb file.
