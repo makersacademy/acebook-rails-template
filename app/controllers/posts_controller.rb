@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   end
 
   def create
-
     @post = Post.new(post_params)
 
     if @post.save
@@ -27,7 +26,6 @@ class PostsController < ApplicationController
   end
 
   def update
-
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
@@ -41,12 +39,12 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-   
+
     redirect_to posts_path
   end
 
   private
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:post).permit(:message)
   end
 end
