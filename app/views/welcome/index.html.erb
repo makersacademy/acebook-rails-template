@@ -2,7 +2,7 @@
 
 <form action="/">
   <label for="email_address">Email Address:</label><br>
-  <input pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$/" id="email_address" name="email_address" required><br>
+  <input type="email" id="email_address" name="email_address" required><br>
   <label for="password">Password:</label><br>
   <input type="password" id="password" name="password" minlength="6" maxlength="10" required><br><br>
   <input type="submit" value="Sign up">

@@ -65,3 +65,16 @@ Paste the URI and connect!
 We have put this line into config/initializers/application.rb
 
 `Warning[:deprecated] = false`
+
+
+## Email and Password validation (Input field)
+
+Email:
+
+We were able do this but it became clear that you can't validate past the '@'.
+This article explains more at the line: "TL;DR: The only 100%"
+https://stackoverflow.com/questions/19605773/html5-email-validation
+
+Password:
+
+This was created using the min/max length fields on the password.
