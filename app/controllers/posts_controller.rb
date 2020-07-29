@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-    @post = nil
   end
 
   def show
@@ -42,8 +41,6 @@ class PostsController < ApplicationController
     if @post.user_id == 1
     @post.destroy
     redirect_to posts_path
-    else
-    @post.errors = "Cannot delete other user's posts"
     end
 
   end
