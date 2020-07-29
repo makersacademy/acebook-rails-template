@@ -27,11 +27,17 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    if @post.user_id == 1 && (Time.now - @post.created_at < 10.minutes)
 
-    if @post.update(post_params)
-      redirect_to @post
+      if @post.update(post_params)
+        redirect_to @post
+      else
+        render 'edit'
+      end
+
     else
-      render 'edit'
+      redirect_to posts_path
+      
     end
   end
 
