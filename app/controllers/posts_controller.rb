@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.user_id == 1 #session[:user_id]
+    if @post.user_id == session[:user_id] #session[:user_id]
     @post.destroy
     redirect_to posts_path
     end
@@ -58,6 +58,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:message,:input_user_id)
+    params.require(:post).permit(:message,:user_id)
   end
 end
