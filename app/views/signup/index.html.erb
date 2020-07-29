@@ -1,1 +1,86 @@
-<h1> Welcome to the signup page </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%# <link rel="stylesheet" href="/Users/joshng/Makers/full-time/afternoon-challenges/week8/acebook-JIMJI/app/views/signup/css/signup.css"> %>
+  <title>Acebook - Sign Up!</title>
+</head>
+<body>
+
+<h1>Welcome to Acebook!</h1>
+
+
+<form action="/">
+  <label for="email_address">Email Address:</label><br>
+  <input type="email" id="email_address" name="email_address" required><br>
+  <label for="password">Password:</label><br>
+
+  <div class="passwordHover">
+  <input type="password" id="password" name="password" minlength="6" maxlength="10" required>
+  <span class="passwordHovertext">Please enter a password between 6-10 characters.</span>
+  </div>  
+  <br><br>
+  <input type="submit" value="Sign up">
+</form> 
+  
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<style>
+/* passwordHover container */
+.passwordHover {
+  position: relative;
+  display: inline-block;
+}
+
+/* passwordHover text */
+.passwordHover .passwordHovertext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the passwordHover text */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+
+  /* Fade in passwordHover */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* passwordHover arrow */
+.passwordHover .passwordHovertext::after {
+  content: " ";
+  position: absolute;
+  top: 25%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+/* Show the passwordHover text when you mouse over the passwordHover container */
+.passwordHover:hover .passwordHovertext {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
