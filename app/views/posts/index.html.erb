@@ -14,7 +14,7 @@
       <td><%= post.created_at %></td>
       <td><%= Time.now %> </td>
       <td><%= link_to 'Show', post_path(post) %></td>
-      <% if post.user_id == 1 %>
+      <% if post.user_id == session[:user_id] %>
       <% if Time.now - post.created_at < 10.minutes %>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
       <% end %>

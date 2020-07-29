@@ -1,4 +1,9 @@
 class PostsController < ApplicationController
+
+  enable :sessions
+
+  session[:user_id] = 1
+
   def index
     @posts = Post.all
   end
@@ -27,7 +32,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.user_id == 1 && (Time.now - @post.created_at < 10.minutes)
+    if @post.user_id == session[:user_id] && (Time.now - @post.created_at < 10.minutes)
 
       if @post.update(post_params)
         redirect_to @post
@@ -37,14 +42,14 @@ class PostsController < ApplicationController
 
     else
       redirect_to posts_path
-      
+
     end
   end
 
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.user_id == 1
+    if @post.user_id == session[:user_id]
     @post.destroy
     redirect_to posts_path
     end
