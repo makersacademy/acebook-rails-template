@@ -17,6 +17,10 @@ class PostsController < ApplicationController
   end
 
   def create
+    p 'this is the params'
+    p post_params
+    p "this is the session id"
+    p session[:user_id]
     @post = Post.new(post_params)
 
     if @post.save
@@ -54,6 +58,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message,:input_user_id)
   end
 end
