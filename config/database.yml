@@ -57,8 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: postgresql-curly-05910
-  url: postgres://vuvldutsgjooeh:1b5e95390b77f07bf419837ff5b5225e1b4c0db1fc786d89cec086ec6671d099@ec2-18-215-99-63.compute-1.amazonaws.com:5432/dlgod3er693af
+  database: pgapp_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
