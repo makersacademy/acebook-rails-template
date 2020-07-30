@@ -7,9 +7,11 @@ RSpec.feature 'Timeline', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
-    within("//div[@id='1' and @class='posts']") do
+    
+    within(first('div.posts')) do
       click_link 'Update post'
     end
+
     fill_in 'Message', with: 'Goodbye, world!'
     click_button 'Submit'
     expect(page).to have_content('Goodbye, world!')

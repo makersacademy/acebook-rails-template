@@ -1,5 +1,11 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <div id="<%= post.id%>" class="posts">
+    <p><%= post.message %></p>
+    <%= button_to edit_post_path(post.id) do %>
+      Update post
+    <% end %>
+  </div>
+  
 <% end %>
 
 <%= link_to new_post_path do %>
