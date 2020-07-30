@@ -18,6 +18,16 @@ class SessionsController < ApplicationController
     end
   end
 
+  def logout
+    session.delete(:user_id)
+    @user = nil
+  end
+
+  def destroy
+    logout
+    redirect_to root_url
+  end
+
   def welcome
   end
 
