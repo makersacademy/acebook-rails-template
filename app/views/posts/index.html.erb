@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
     <p><%= post.message %></p>
-    <%= button_to edit_post_path(post.id) do %>
+    <%= link_to edit_post_path(post.id) do %>
       Update post
     <% end %>
   </div>
