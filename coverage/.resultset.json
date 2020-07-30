@@ -340,22 +340,22 @@
         "lines": [
           1,
           1,
-          2,
-          null,
-          null,
-          1,
-          3,
           3,
           null,
           null,
           1,
-          3,
+          4,
+          4,
+          null,
+          null,
+          1,
+          5,
           null,
           null,
           1,
           null,
           1,
-          3,
+          4,
           null,
           null
         ]
@@ -466,6 +466,27 @@
           1,
           1,
           null,
+          null,
+          null
+        ]
+      },
+      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/features/user_can_update_posts_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
           null,
           null
         ]
@@ -614,6 +635,6 @@
         ]
       }
     },
-    "timestamp": 1596038725
+    "timestamp": 1596118445
   }
 }
