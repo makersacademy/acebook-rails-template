@@ -4,14 +4,16 @@ class UsersController < ApplicationController
     end
 
     def new
-      @user = User.new
+      ## Comment the following line out
+       @user = User.new
+      p "within new method in the controller"
 
     end
 
     def create
         # Users.create(params[:user][:email], params[:user][:password]
         # render plain: params[:user][:email].inspect
-
+        p "within create method in controller"
         @user = User.new(user_params)
         if @user.save
           redirect_to @user
