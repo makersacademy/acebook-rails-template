@@ -11,7 +11,7 @@
   <% @posts.reverse.each do |post| %>
     <tr>
       <td><%= post.email %></td>
-      <td><%= post.message %></td>
+      <td><%= simple_format post.message %></td>
       <td><%= post.created_at %></td>
       <td>user_id:<%= post.user_id %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
