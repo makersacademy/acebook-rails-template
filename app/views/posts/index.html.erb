@@ -1,5 +1,4 @@
 <h1>Listing Posts</h1>
-<h1> Session id: <%= session[:user_id] %> </h1>
  <%= link_to 'New post', new_post_path %>
 <table>
   <tr>
@@ -13,7 +12,6 @@
       <td><%= post.email %></td>
       <td><%= simple_format post.message %></td>
       <td><%= post.created_at %></td>
-      <td>user_id:<%= post.user_id %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
       <% if post.user_id == session[:user_id] %>
       <% if Time.now - post.created_at < 10.minutes %>
