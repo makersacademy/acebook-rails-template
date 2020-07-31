@@ -1,54 +1,22 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/controllers/index_controller_spec.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/controllers/index_controller_spec.rb": {
         "lines": [
+          1,
           null,
           null,
           null,
           null,
           null,
           null,
-          null,
+
           null,
           null,
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/controllers/posts_controller_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/rails_helper.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -109,7 +77,7 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/environment.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -118,7 +86,7 @@
           1
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/application.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/application.rb": {
         "lines": [
           1,
           null,
@@ -140,14 +108,14 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/boot.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/boot.rb": {
         "lines": [
           1,
           null,
           1
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/environments/test.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -193,7 +161,7 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/initializers/application_controller_renderer.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -203,7 +171,7 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/initializers/assets.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -221,7 +189,7 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/initializers/backtrace_silencers.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -232,7 +200,7 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/initializers/cookies_serializer.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -241,7 +209,8 @@
           1
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/initializers/filter_parameter_logging.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/initializers/filter_parameter_logging.rb": {
+
         "lines": [
           null,
           null,
@@ -249,7 +218,8 @@
           1
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/initializers/inflections.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/initializers/inflections.rb": {
+
         "lines": [
           null,
           null,
@@ -269,7 +239,8 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/initializers/mime_types.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/initializers/mime_types.rb": {
+
         "lines": [
           null,
           null,
@@ -277,7 +248,7 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/initializers/wrap_parameters.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -295,18 +266,34 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/config/routes.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/config/routes.rb": {
         "lines": [
           1,
           null,
           1,
-          null,
           1,
           null,
           1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
           null,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/helpers/index_helper.rb": {
+        "lines": [
           1,
           1,
           null
@@ -318,19 +305,25 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/app/helpers/index_helper.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/app/helpers/users_helper.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/app/helpers/welcome_helper.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/helpers/welcome_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           1,
           null
@@ -352,6 +345,8 @@
           3,
           null,
           null,
+          1,
+          1,
           1,
           null,
           1,
@@ -375,22 +370,11 @@
           1,
           1,
           1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/app/controllers/users_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
           null,
           null,
           1,
-          2,
+          1,
+          1,
           null,
           null,
           null,
@@ -413,16 +397,17 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/controllers/welcome_controller_spec.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/controllers/posts_controller.rb": {
         "lines": [
           1,
+          1,
+          2,
           null,
           1,
           null,
           1,
-          1,
-          1,
-          1,
+          3,
+          3,
           null,
           null,
           null,
@@ -433,11 +418,25 @@
         "lines": [
           1,
           1,
+          3,
+          null,
+          null,
+          1,
+          null,
+          1,
+          3,
           null,
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/features/creating_user_spec.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/controllers/sessions_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -449,28 +448,172 @@
           null,
           1,
           1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null,
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/controllers/sessions_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/controllers/users_controller_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/controllers/users_controller.rb": {
+
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/controllers/welcome_controller_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/controllers/welcome_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/features/user_can_submit_posts_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/helpers/index_helper_spec.rb": {
         "lines": [
           1,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/helpers/index_helper_spec.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/helpers/sessions_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -489,7 +632,7 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/helpers/users_helper_spec.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/helpers/users_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -508,7 +651,7 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/helpers/welcome_helper_spec.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/helpers/welcome_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -527,6 +670,66 @@
           null
         ]
       },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/models/post_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/models/post.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/views/index/index.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/views/sessions/create.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/views/sessions/login.html.erb_spec.rb": {=======
       "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/models/post_spec.rb": {
         "lines": [
           1,
@@ -576,25 +779,22 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/views/users/new.html.erb_spec.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/views/sessions/new.html.erb_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          1,
-          1,
-          1,
-          1,
-          null,
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/views/users/show.html.erb_spec.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/views/sessions/welcome.html.erb_spec.rb": {
+
         "lines": [
           1,
           null,
           1,
+
           2,
           1,
           1,
@@ -604,7 +804,8 @@
           null
         ]
       },
-      "/Users/makersadmin/Documents/Projects/week8/acebook-ciao-pescao/acebook-ciao-pescao/spec/views/welcome/index.html.erb_spec.rb": {
+      "/Users/mirimichaelson/Desktop/Projects/acebook_ciao_pescao/spec/views/welcome/index.html.erb_spec.rb": {
+
         "lines": [
           1,
           null,
@@ -614,6 +815,8 @@
         ]
       }
     },
-    "timestamp": 1596038725
+
+"timestamp": 1596123118
+
   }
 }

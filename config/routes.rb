@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
 
+  resources :users, only: [:new, :create]
+  resources :posts
+
+  root 'sessions#welcome'
   get 'welcome/index'
-
-  root 'welcome#index'
-
   get 'index/index'
+
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  get 'welcome', to: 'sessions#welcome'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :posts
-  resources :users
 end
