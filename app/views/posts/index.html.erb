@@ -1,9 +1,12 @@
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
     <p><%= post.message %></p>
-    <%= link_to edit_post_path(post.id) do %>
-      Update post
+    <%if (post.created_at + 1.hours + 5.seconds).strftime('%Y-%m-%d %I:%M:%S') > @time.to_formatted_s(:db) %>
+      <%= link_to edit_post_path(post.id) do %>
+        Update post
+      <% end %>
     <% end %>
+    
   </div>
   
 <% end %>

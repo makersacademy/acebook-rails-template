@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @time = Time.new
     @posts = Post.all
   end
   
