@@ -13,12 +13,15 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, id: :person_email %>
+    <%# <%= form.text_field :email, id: :person_email %>
+    <%= form.email_field :email, id: :person_email %>
   </div>
 
   <div class="field">
+    
     <%= form.label :password %>
-    <%= form.text_field :password, id: :person_password %>
+    <%# <%= form.text_field :password, id: :person_password %>
+    <%= form.password_field :password, id: :person_password, minlength: 6, maxlength: 10 %>
   </div>
 
   <div class="actions">
