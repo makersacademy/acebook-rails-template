@@ -5,12 +5,13 @@
   <tr>
     <th>Message</th>
     <th>Created</th>
-    <th colspan="3"></th>
+    <th colspan="4"></th>
   </tr>
 
   <% @posts.reverse.each do |post| %>
     <tr>
-      <td><%= post.message %></td>
+      <td><%= post.email %></td>
+      <td><%= simple_format post.message %></td>
       <td><%= post.created_at %></td>
       <td>user_id:<%= post.user_id %></td>
       <td><%= link_to 'Show', post_path(post) %></td>
