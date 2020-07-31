@@ -17,12 +17,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    p 'this is the params'
-    p post_params
-    p "this is the session id"
-    p session[:user_id]
     @post = Post.new(post_params)
-
+    @post.user_id = current_user.id
     if @post.save
       redirect_to @post
     else
@@ -42,22 +38,21 @@ class PostsController < ApplicationController
 
     else
       redirect_to posts_path
-
     end
   end
 
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.user_id == session[:user_id] #session[:user_id]
+    if @post.user_id == session[:user_id]
     @post.destroy
     redirect_to posts_path
     end
-
   end
 
   private
   def post_params
     params.require(:post).permit(:message,:user_id)
   end
+
 end
