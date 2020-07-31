@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.user_id == 1 && (Time.now - @post.created_at < 10.minutes)
+    if @post.user_id == current_user.id && (Time.now - @post.created_at < 10.minutes)
 
       if @post.update(post_params)
         redirect_to @post
