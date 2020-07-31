@@ -4,17 +4,17 @@ class UsersController < ApplicationController
     end
 
     def new
-      @user = User.new
-
+      ## Comment the following line out
+       @user = User.new
     end
 
     def create
         # Users.create(params[:user][:email], params[:user][:password]
         # render plain: params[:user][:email].inspect
-
-        @user = User.new(user_params)
-        if @user.save
-          redirect_to @user
+        @user = User.create(user_params)
+        if @user.save ##this is a thing that returns true
+          session[:user_id] = @user.id
+          redirect_to '/welcome'
         else
           render 'new'
         end

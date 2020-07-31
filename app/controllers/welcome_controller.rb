@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
-  def index
-  end
+    def index
+      p "This is within the welcome controller"
+    end
+
 end
