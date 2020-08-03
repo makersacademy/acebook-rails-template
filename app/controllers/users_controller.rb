@@ -12,15 +12,14 @@ class UsersController < ApplicationController
     end
 
     def create
-        # Users.create(params[:user][:email], params[:user][:password]
-        # render plain: params[:user][:email].inspect
-        @user = User.create(user_params)
-        if @user.save ##this is a thing that returns true
-          session[:user_id] = @user.id
-          redirect_to '/posts'
-        else
-          render 'new'
-        end
+      @user = User.create(user_params)
+      if @user.save
+        session[:user_id] = @user.id
+        redirect_to '/posts'
+      else
+        flash[:error] = "Email or password in incorrect format"
+        render 'new'
+      end
     end
 
     private

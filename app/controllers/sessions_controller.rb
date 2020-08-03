@@ -7,12 +7,18 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:email])
+
     if @user && @user.authenticate(params[:password])
        session[:user_id] = @user.id
        redirect_to '/posts'
+    elsif !@user
+      flash[:alert] = "sEa-mail address dopes not exist - please sign up"
+      redirect_to '/login'
     else
-       redirect_to '/login'
+      flash[:alert] = "FINcorrect Password"
+      redirect_to '/login'
     end
+
   end
 
   def login
