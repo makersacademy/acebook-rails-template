@@ -21,11 +21,10 @@ RSpec.feature "Edit ", type: :feature do
     fill_in "post[message]", with: "Hello, world!"
     click_button "Create Post"
     @post = Post.find(URI.parse(current_url).to_s.split("/")[-1].to_i)
-    p @post.created_at
     @post.created_at = 11.minutes.ago
-    p @post.created_at
-    # click_link "Back"
-    # expect(page).not_to have_link("Edit")
-    expect(page).to have_link("Back")
+    @post.save
+    click_link "Back"
+    expect(page).not_to have_link("Edit")
+
   end
 end
