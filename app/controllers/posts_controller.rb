@@ -22,6 +22,8 @@ class PostsController < ApplicationController
     if @post.message == post_params[:message]
       flash.now[:messages] = "Not possible. Message has not been changed"
       render :edit
+    elsif Time.now - 10.minutes > @post.created_at
+      redirect_to posts_url
     else
       @post.update_attributes(post_params)
       redirect_to posts_url
