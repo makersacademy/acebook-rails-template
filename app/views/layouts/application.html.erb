@@ -2,11 +2,18 @@
 <html>
   <head>
     <title>Acebook</title>
-    <%= csrf_meta_tags %>
 
+    <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <%= button_to "Log Out", '/logout', method: :get %>
+    <%# see you on the flipper side %>
+    <% if logged_in? %>
+        <h1>You are Logged In, <%= current_user.email %></h1>
+        <%= button_to "Log Out", '/logout', method: :get %>
+    <% else %>
+        <%= button_to "Login", '/login', method: :get%>
+    <%end%>
+
   </head>
 
   <body>

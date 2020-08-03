@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # get 'logout', :controller => 'sessions', :action => 'destroy'
   get 'logout', to: 'sessions#destroy'
+  get 'authorized', to: 'sessions#page_requires_login'
 
   # map.resource :session
 
