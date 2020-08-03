@@ -1,5 +1,3 @@
-<h1>Welcome to your shoal, <%= current_user.email %></h1>
-
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
     <p><%= post.message %></p>
