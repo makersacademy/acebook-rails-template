@@ -12,9 +12,17 @@
         <%= button_to "Log Out", '/logout', method: :get %>
     <%end%>
 
+
+
   </head>
 
   <body>
     <%= yield %>
+    <style type="text/css">
+      <%= raw Rails.application.assets['application.css'].to_s %>
+    </style>
+    <script type="text/javascript">
+      <%= raw Rails.application.assets['application.js'].to_s %>
+    </script>
   </body>
 </html>
