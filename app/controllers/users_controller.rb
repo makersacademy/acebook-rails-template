@@ -12,6 +12,8 @@ class UsersController < ApplicationController
         # Users.create(params[:user][:email], params[:user][:password]
         # render plain: params[:user][:email].inspect
         @user = User.create(user_params)
+        p @user
+        p @user.save
         if @user.save ##this is a thing that returns true
           session[:user_id] = @user.id
           redirect_to '/welcome'

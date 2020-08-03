@@ -3,14 +3,13 @@ require 'rails_helper'
 
 RSpec.feature 'Timeline', type: :feature do
   scenario 'Can update posts and view them' do
+    register_user
     visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
     
-    within(first('div.posts')) do
-      click_link 'Update post'
-    end
+    click_button 'Update post'
 
     fill_in 'Message', with: 'Goodbye, world!'
     click_button 'Submit'
@@ -18,14 +17,13 @@ RSpec.feature 'Timeline', type: :feature do
   end
 
   scenario 'Cannot update posts with blank message' do
+    register_user
     visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'Hello World!'
     click_button 'Submit'
     
-    within(first('div.posts')) do
-      click_link 'Update post'
-    end
+    click_button 'Update post'
 
     fill_in 'Message', with: ''
     click_button 'Submit'
@@ -33,14 +31,14 @@ RSpec.feature 'Timeline', type: :feature do
   end
 
   scenario 'Cannot update posts with same message' do
+    register_user
+    
     visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'Hello World!'
     click_button 'Submit'
     
-    within(first('div.posts')) do
-      click_link 'Update post'
-    end
+    click_button 'Update post'
 
     fill_in 'Message', with: 'Hello World!'
     click_button 'Submit'
