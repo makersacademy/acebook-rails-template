@@ -2,16 +2,16 @@ require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
 
-  describe "GET #new" do
+  describe "GET #destroy" do
     it "returns http success" do
-      get :new
+      get :destroy
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #create" do
+  describe "POST #create" do
     it "returns http success" do
-      get :create
+      post :create
       expect(response).to have_http_status(:success)
     end
   end
