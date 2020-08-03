@@ -6,18 +6,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    p "we're in def create"
-   @user = User.find_by(email: params[:email])
-   p @user
-   if @user && @user.authenticate(params[:password])
-     p "You got into the if statement good job"
-      session[:user_id] = @user.id
-      redirect_to '/posts'
-   else
-     p "You got into the else statement good job"
-      redirect_to '/login'
-   end
-
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
+       session[:user_id] = @user.id
+       redirect_to '/posts'
+    else
+       redirect_to '/login'
+    end
   end
 
   def login
