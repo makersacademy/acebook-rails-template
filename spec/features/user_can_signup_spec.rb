@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "signup", type: :feature do
-  scenario "Can signup" do
+  scenario "User can signup" do
     visit "/"
     click_button "Sign Up"
     fill_in "user[email]", with: "test@test.com"
