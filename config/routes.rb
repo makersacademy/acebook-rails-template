@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :people
   resources :people
   get 'login/index'
   get 'welcome/index'
