@@ -5,12 +5,17 @@
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
     <p><%= post.message %></p>
-     <%if (post.created_at + 1.hours + 10.minutes).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) && (current_user.id == post.user_id) %>
-      <%= button_to edit_post_path(post.id), method: :get do %>
-        Update post
+      <%if (post.created_at + 1.hours + 10.minutes).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) && (current_user.id == post.user_id) %>
+        <%= button_to edit_post_path(post.id), method: :get do %>
+          Update post
+        <% end %>
       <% end %>
-     <% end %>
-    
+
+      <%if current_user.id == post.user_id %>
+        <%= button_to post_path(post), method: :delete do %>
+          Delete post
+        <% end %>
+      <% end %>
   </div>
   
 <% end %>
