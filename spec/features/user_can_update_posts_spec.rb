@@ -45,6 +45,22 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content("Not possible. Message has not been changed")
   end
 
+  scenario 'Cannot update user posts belonging to other users' do
+    register_user
+    visit '/posts'
+    click_link 'New post'
+    fill_in 'Message', with: 'Hello World!'
+    click_button 'Submit'
+    visit '/users/new'
+    fill_in 'user[email]', with: 'test@test1.com'
+    fill_in 'user[password]', with: 'test12345'
+    click_button 'Create User'
+    visit '/posts'
+    expect(page).not_to have_selector(:link_or_button, 'Update post')
+  end
+
+
+
   # scenario 'cannot update a post if wait longer than wait time' do
   #   p Time.new
   #   visit '/posts'
