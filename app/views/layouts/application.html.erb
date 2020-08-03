@@ -11,8 +11,9 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
     <% if person_signed_in? %>
-  <a href="<%= destroy_person_session_path%>" data-method="delete">
+    <a href="<%= destroy_person_session_path%>" data-method="delete">
     <i class="fa fa-user"></i>
   </a>
 <% else %>
