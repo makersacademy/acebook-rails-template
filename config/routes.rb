@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   get 'index/index'
 
-  get 'login', to: 'sessions#new'
+  get 'login', to: 'sessions#login'
   post 'login', to: 'sessions#create'
   get 'welcome', to: 'sessions#welcome'
 
