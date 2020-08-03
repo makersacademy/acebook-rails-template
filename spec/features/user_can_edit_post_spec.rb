@@ -20,7 +20,7 @@ RSpec.feature "Edit ", type: :feature do
     click_link "New post"
     fill_in "post[message]", with: "Hello, world!"
     click_button "Create Post"
-    @post = Post.find(URI.parse(current_url).to_s.split("/")[-1].to_i)
+    @post = Post.find(current_url.to_s.split("/")[-1].to_i)
     @post.created_at = 11.minutes.ago
     @post.save
     click_link "Back"
