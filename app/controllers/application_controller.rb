@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def authorized
     unless logged_in?
       flash[:alert] = "Naughty fish! You must be logged in to view this this page"
-      redirect_to '/welcome'
+      redirect_to '/'
     end
   end
 
