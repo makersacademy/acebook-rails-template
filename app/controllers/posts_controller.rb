@@ -18,10 +18,14 @@ class PostsController < ApplicationController
   end
 
   def update
-    # @post = Post.update(post_params)
     @post = Post.find(params[:id])
-    @post.update_attributes(post_params)
-    redirect_to posts_url
+    if @post.message == post_params[:message]
+      flash.now[:messages] = "Not possible. Message has not been changed"
+      render :edit
+    else
+      @post.update_attributes(post_params)
+      redirect_to posts_url
+    end
   end
 
   private

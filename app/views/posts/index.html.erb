@@ -4,9 +4,6 @@
      <%if (post.created_at + 1.hours + 5.seconds).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) %>
       <%= link_to edit_post_path(post.id) do %>
         Update post
-        <%= (post.created_at + 1.hours + 5.seconds).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) %>
-        <%= @time.to_formatted_s(:db) %>
-        <%= (post.created_at + 1.hours + 5.seconds).strftime('%Y-%m-%d %H:%M:%S') %>
       <% end %>
      <% end %>
     

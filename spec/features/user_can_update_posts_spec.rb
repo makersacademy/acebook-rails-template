@@ -43,7 +43,8 @@ RSpec.feature 'Timeline', type: :feature do
     end
 
     fill_in 'Message', with: 'Hello World!'
-    expect {click_button 'Submit'}.to raise_error('Not possible. Message has not been changed')
+    click_button 'Submit'
+    expect(page).to have_content("Not possible. Message has not been changed")
   end
 
   scenario 'cannot update a post if wait longer than wait time' do
