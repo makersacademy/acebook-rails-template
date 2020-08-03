@@ -1,3 +1,5 @@
+<h1>Welcome to your shoal, <%= current_user.email %></h1>
+
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
     <p><%= post.message %></p>
@@ -5,7 +7,7 @@
       Update post
     <% end %>
   </div>
-  
+
 <% end %>
 
 <%= link_to new_post_path do %>
