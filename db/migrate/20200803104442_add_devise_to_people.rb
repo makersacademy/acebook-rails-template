@@ -4,7 +4,9 @@ class AddDeviseToPeople < ActiveRecord::Migration[5.1]
   def self.up
     change_table :people do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
+      # t.string :email,              null: false, default: ""
+      # have commented out the line above for the migration as we already had an email column
+      
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
