@@ -9,6 +9,7 @@ Warning[:deprecated] = false
 Bundler.require(*Rails.groups)
 
 module Acebook
+  # This class allows the application to exist
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1

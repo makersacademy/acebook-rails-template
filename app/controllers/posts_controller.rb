@@ -17,5 +17,6 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message)
+    parms.require(:post).permit(userid:[])
   end
 end

@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "people/show", type: :view do
+RSpec.describe 'people/show', type: :view do
   before(:each) do
     @person = assign(:person, Person.create!(
-      :email => "Email",
-      :password => "Password"
-    ))
+                                email: 'jimji@jimji.com',
+                                password: 'Password123'
+                              ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Email/)
     expect(rendered).to match(/Password/)
