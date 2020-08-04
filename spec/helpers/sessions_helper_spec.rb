@@ -22,5 +22,3 @@ def user_signup_helper
   fill_in 'user_password', with: 'test1234'
   click_button 'Create User'
 end
-
-
