@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'features_helper'
 
 RSpec.feature "Destroy", type: :feature, js: true do
-  scenario "Can delete own post" do
+  xscenario "Can delete own post" do
     signup
     login
     click_link "New post"
