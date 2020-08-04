@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def index
     @time = Time.new
-    @posts = Post.all
+    @posts = Post.all.reverse
   end
   
   def edit

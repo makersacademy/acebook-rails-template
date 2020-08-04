@@ -14,4 +14,14 @@ RSpec.feature 'Timeline', type: :feature do
     creating_post("Afternoon")
     expect(page).to have_content( 'test@test.com' )
   end
+
+  it "should show the newest post first" do
+    register_user
+    creating_post("First Post")
+    creating_post("Second Post")
+
+    within first('div.posts') do
+      expect(all('p').first.text).to eq 'Second Post'
+    end
+  end
 end
