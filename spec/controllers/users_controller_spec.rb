@@ -4,7 +4,6 @@ RSpec.describe UsersController, type: :controller do
   describe 'GET /new' do
     it 'responds with 200' do
       get :new
-      p response
       expect(response).to have_http_status(200)
     end
   end

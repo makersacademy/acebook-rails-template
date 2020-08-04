@@ -2,9 +2,9 @@ class UsersController < ApplicationController
 
     skip_before_action :authorized, only: [:new, :create]
 
-    def show
-      @user = User.find(params[:id])
-    end
+    # def show
+    #   @user = User.find(params[:id])
+    # end
 
     def new
        @user = User.new
