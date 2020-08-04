@@ -129,7 +129,7 @@ $ rails server
 
 **Additional Functionality**
 ----
- Allow comments on posts
- Improve CSS
- User Profiles with Avatars 
- Allow posts to have upload file function
+ - Allow comments on posts
+ - Improve CSS
+ - User Profiles with Avatars 
+ - Allow posts to have upload file function
