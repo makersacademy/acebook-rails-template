@@ -3,16 +3,20 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-  <div class="background">
-  <body>
-  <div class="logo">
-  <%=image_tag("/dreambook_logo.jpg") %>
-  </div>
-    <%= yield %>
+  <body class="background">
+        <%=image_tag("/dreambook_logo.jpg") %>
+          <%= yield %>
   </body>
-  </div>
+    <div id="clouds">  
+      <div class="cloud x1"></div>
+      <div class="cloud x2"></div>
+      <div class="cloud x3"></div>
+      <div class="cloud x4"></div>
+      <div class="cloud x5"></div>
+      <div class="cloud x6"></div>
+      <div class="cloud x7"></div>
+    </div>
 </html>

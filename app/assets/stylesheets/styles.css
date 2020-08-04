@@ -4,11 +4,10 @@
   position:fixed;
   height:100%;
   width:100%;
-  overflow: scroll;
 }
 
 h1 {
-  color: white;
+  color: black;
   font-family: 'Lucida Grande';
   font-size: 20px;
   font-weight: bold;
@@ -16,42 +15,47 @@ h1 {
 }
 
 .buttons {
-margin-left: 42%;
-margin-right: 40%;
+margin-left: 45%;
+margin-right: 45%;
 font-size: 16px;
 padding: 5px 10px;
 border-radius: 12px;
 background-color: #a0c1b8;
+z-index: 1;
 }
 
-
-
 .buttons:hover {
-  margin-left: 40%;
-  margin-right: 40%;
+  margin-left: 45%;
+  margin-right: 45%;
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 12px;
   background-color: #709fb0;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  z-index: 1;
 }
-img {
 
+img {
+  margin-top: 0.55%;
+  margin-left: 0.55%;
   max-width: 50px;
   max-height:  50px;
+  position:fixed; top:0; left:0;
 }
 
 body {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 #clouds {
   padding: 100px 0;
-  background: #66ccff;
-	background: -webkit-linear-gradient(top, #6DD3E7 20%, #fff 70%);
-	background: linear-gradient(top, #6DD3E7 20%, #fff 70%);
-	background: -moz-linear-gradient(top, #6DD3E7 20%, #fff 70%);
+  background: #726a95;
+	background: -webkit-linear-gradient(top, #726a95 20%, #fff 70%);
+	background: linear-gradient(top, #726a95 20%, #fff 70%);
+	background: -moz-linear-gradient(top, #726a95 20%, #fff 70%);
   height: 100vh;
+  position: relative;
+  z-index: -1;
 }
 
 .cloud {
@@ -62,6 +66,7 @@ body {
   -moz-border-radius: 200px;
   -webkit-border-radius: 200px;
   position: relative;
+  z-index: -1;
   
   -moz-box-shadow: 9px -7px 0 0 #f7e7eb inset;
   -webkit-box-shadow: 9px -7px 0 0 #f7e7eb inset;
@@ -75,7 +80,7 @@ body {
   width: 120px;
   height:120px;
   top: -75px;
-  
+
   border-radius: 100px;
   -moz-border-radius: 100px;
   -webkit-border-radius: 100px;
@@ -94,7 +99,6 @@ body {
   height: 90px;
   top: -45px;
   right: 25px;
-
 }
 
 .cloud:before {
@@ -104,7 +108,8 @@ body {
 .x1 {
 	-webkit-animation: moveclouds 45s linear infinite;
 	-moz-animation: moveclouds 45s linear infinite;
-	-o-animation: moveclouds 45s linear infinite;
+  -o-animation: moveclouds 45s linear infinite;
+  z-index: -1;
 }
 
 .x2 {
@@ -116,7 +121,8 @@ body {
   
   -webkit-animation: moveclouds 40s linear infinite;
 	-moz-animation: moveclouds 40s linear infinite;
-	-o-animation: moveclouds 40s linear infinite;
+  -o-animation: moveclouds 40s linear infinite;
+  z-index: -1;
 }
 
 .x3 {
@@ -130,7 +136,8 @@ body {
   
   -webkit-animation: moveclouds 35s linear infinite;
 	-moz-animation: moveclouds 35s linear infinite;
-	-o-animation: moveclouds 35s linear infinite;
+  -o-animation: moveclouds 35s linear infinite;
+  z-index: -1;
 }
 
 .x4 {
@@ -142,7 +149,8 @@ body {
   
   -webkit-animation: moveclouds 48s linear infinite;
 	-moz-animation: moveclouds 48s linear infinite;
-	-o-animation: moveclouds 48s linear infinite;
+  -o-animation: moveclouds 48s linear infinite;
+  z-index: -1;
 }
 
 .x5 {
@@ -155,7 +163,7 @@ body {
   -webkit-animation: moveclouds 35s linear infinite;
 	-moz-animation: moveclouds 35s linear infinite;
 	-o-animation: moveclouds 35s linear infinite;
-
+  z-index: -1;
 }
 
 .x6 {
@@ -169,7 +177,8 @@ body {
   
    -webkit-animation: moveclouds 31s linear infinite;
 	-moz-animation: moveclouds 31s linear infinite;
-	-o-animation: moveclouds 31s linear infinite;
+  -o-animation: moveclouds 31s linear infinite;
+  z-index: -1;
 }
 
 .x7 {
@@ -183,7 +192,8 @@ body {
   
    -webkit-animation: moveclouds 30s linear infinite;
 	-moz-animation: moveclouds 30s linear infinite;
-	-o-animation: moveclouds 30s linear infinite;
+  -o-animation: moveclouds 30s linear infinite;
+  z-index: -1;
 }
 
 @-webkit-keyframes moveclouds {
