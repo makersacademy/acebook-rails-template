@@ -1,0 +1,32 @@
+.background {
+  background-color: purple;
+  opacity: 0.6;
+  position:fixed;
+  height:100%;
+  width:100%;
+  overflow: scroll;
+}
+
+h1 {
+  color: white;
+  font-family: 'Lucida Grande';
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.button_to {
+  margin-left: 20%;
+  margin-right: 20%;
+  font-size: 16px;
+  color: #6495ED;
+  padding: 5px 10px;
+  border-radius: 12px;
+  border: 2px solid #6495ED;
+  background-color: #faf6f6;;
+  cursor: pointer;
+}
+
+.button_to:hover {
+  background-color: red;
+}
