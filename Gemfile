@@ -10,7 +10,7 @@ end
   gem 'pg', '1.2.3'
  # end
 
- gem 'bundler'
+ gem 'bundler', '~> 2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
