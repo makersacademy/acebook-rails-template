@@ -4,6 +4,7 @@
 
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
+    <p><%= p post.user.email %></p>
     <p><%= post.message %></p>
     <p><%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
       <%if (post.created_at + 1.hours + 10.minutes).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) && (current_user.id == post.user_id) %>
@@ -17,6 +18,8 @@
           Delete post
         <% end %>
       <% end %>
+
+      
   </div>
   
 <% end %>

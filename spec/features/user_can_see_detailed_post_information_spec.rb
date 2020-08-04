@@ -8,4 +8,10 @@ RSpec.feature 'Timeline', type: :feature do
     creating_post("Afternoon")
     expect(page).to have_content( Time.now.strftime('%d-%m-%y %H:%M:%S'))
   end
+  scenario 'Can see who created each post that the user is viewing' do
+    register_user
+    visit '/posts'
+    creating_post("Afternoon")
+    expect(page).to have_content( 'test@test.com' )
+  end
 end
