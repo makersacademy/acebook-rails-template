@@ -1,3 +1,4 @@
+# This class created a people table for the basic person to exist
 class CreatePeople < ActiveRecord::Migration[5.1]
   def change
     create_table :people do |t|
