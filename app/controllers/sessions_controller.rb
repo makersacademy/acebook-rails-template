@@ -30,10 +30,10 @@ class SessionsController < ApplicationController
     logout
     redirect_to root_url
   end
- 
+
   def welcome
   end
-  
+
   def page_requires_login
   end
 
