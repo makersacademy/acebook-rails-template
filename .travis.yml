@@ -2,9 +2,12 @@ language: ruby
 rvm: 2.5.0
 sudo: required
 os: osx
+services:
+  - postgresql
 before_install:
   - yes | gem update --system --force
   - gem install bundler -v '2.1.2'
+  - postgresql
 cache: bundler
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
