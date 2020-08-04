@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.feature 'Timeline', type: :feature do
   scenario 'Can submit posts and view them' do
     register_user
@@ -12,4 +11,3 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content('Hello, world!')
   end
 end
-

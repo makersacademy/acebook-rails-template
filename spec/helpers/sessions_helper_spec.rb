@@ -12,4 +12,15 @@ require 'rails_helper'
 # end
 RSpec.describe SessionsHelper, type: :helper do
   pending "add some examples to (or delete) #{__FILE__}"
+
 end
+
+def user_signup_helper
+  visit '/'
+  click_button 'Sign Up'
+  fill_in 'user_email', with: 'test@test.com'
+  fill_in 'user_password', with: 'test1234'
+  click_button 'Create User'
+end
+
+

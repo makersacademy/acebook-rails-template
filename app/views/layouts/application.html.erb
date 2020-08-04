@@ -2,13 +2,35 @@
 <html>
   <head>
     <title>Acebook</title>
-    <%= csrf_meta_tags %>
 
+    <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%# see you on the flipper side %>
+    <% if logged_in? %>
+        <h1>You are Logged In, <%= current_user.email %></h1>
+        <%= button_to "Log Out", '/logout', method: :get %>
+    <%end%>
+
+
+
   </head>
 
   <body>
+
     <%= yield %>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: [:alert, alert_for(name)]%>
+    <% end %> 
+
+    <style type="text/css">
+      <%= raw Rails.application.assets['application.css'].to_s %>
+    </style>
+    <script type="text/javascript">
+      <%= raw Rails.application.assets['application.js'].to_s %>
+    </script>
+    <!-- <embed src="path/to/background.mp3" autostart="true" loop="true" hidden="true"><embed> -->
+  
   </body>
 </html>
