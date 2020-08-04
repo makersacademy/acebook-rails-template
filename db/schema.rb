@@ -41,5 +41,6 @@ ActiveRecord::Schema.define(version: 20200804113029) do
     t.datetime 'updated_at', null: false
     t.string 'email'
     t.string 'password'
+
   end
 end
