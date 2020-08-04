@@ -5,9 +5,13 @@ A clone of Facebook.
 **Contributors**
 ----
 [Katie Jones](https://github.com/katieljones)
+
 [Joanne Chen](https://github.com/Joanne0330)
+
 [Dhara Patel](https://github.com/Dhara-95)
+
 [Sam Landman](https://github.com/samlandman)
+
 [Rabee Mghrabi](https://github.com/Rabee93)
 
 
