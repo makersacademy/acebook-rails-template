@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     end
 
     def new
-      ## Comment the following line out
        @user = User.new
     end
 
@@ -16,8 +15,11 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
         redirect_to '/posts'
-      else
-        flash[:error] = "Email or password in incorrect format"
+      elsif @user.errors.messages[:email] != [] #bad email
+        flash.now[:error] = "Email in fincorrect format"
+        render 'new'
+      else  #bad password
+        flash.now[:error] = "Password in fincorrect format - please enter 6-10 characters"
         render 'new'
       end
     end
@@ -27,3 +29,9 @@ class UsersController < ApplicationController
       params.require(:user).permit(:email, :password)
     end
 end
+
+
+#<ActiveModel::Errors:0x00007ff34e9dc940 
+# @base=#<User id: nil, email: "dsdas", password_digest: "$2a$12$KOlJPc.IcS5a72H3/eYoJeOXkgHlpeXPjGhyQUov9M5...", created_at: nil, updated_at: nil>, 
+# @messages={:email=>["is invalid"]}, 
+# @details={:email=>[{:error=>:invalid, :value=>"dsdas"}]}>
