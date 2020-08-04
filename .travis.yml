@@ -1,7 +1,7 @@
 language: ruby
 rvm: 2.5.0
 sudo: required
-os: osx
+dist: trusty
 services:
   - postgresql
 before_install:
