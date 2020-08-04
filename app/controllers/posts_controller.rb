@@ -9,7 +9,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @time = Time.new
+    @posts = Post.all.reverse
   end
   
   def edit
@@ -17,16 +18,28 @@ class PostsController < ApplicationController
   end
 
   def update
-    # @post = Post.update(post_params)
     @post = Post.find(params[:id])
-    @post.update_attributes(post_params)
+    if @post.message == post_params[:message]
+      flash.now[:messages] = "Not possible. Message has not been changed"
+      render :edit
+    elsif Time.now - 10.minutes > @post.created_at
+      redirect_to posts_url
+    else
+      @post.update_attributes(post_params)
+      redirect_to posts_url
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.delete
     redirect_to posts_url
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message).merge(user_id: current_user.id)
   end
 
 end

@@ -1,5 +1,9 @@
 require 'simplecov'
 require 'simplecov-console'
+require 'capybara'
+Capybara.javascript_driver = :webkit
+
+
 SimpleCov.start
 # specs live under a `spec` directory, which RSpec adds to the `$LOAD_PATH`.
 # The generated `.rspec` file contains `--require spec_helper` which will cause

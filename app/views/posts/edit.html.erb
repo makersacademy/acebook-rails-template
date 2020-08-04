@@ -1,3 +1,7 @@
+<% if flash[:messages] %>
+  <h2><%= flash[:messages] %></h2>
+<% end %>
+
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
