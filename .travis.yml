@@ -2,3 +2,6 @@ language: ruby
 rvm: 2.5.0
 sudo: required
 os: osx
+ 
+before_install:
+  - gem install bundler
