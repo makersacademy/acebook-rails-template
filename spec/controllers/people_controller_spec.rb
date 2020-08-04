@@ -28,23 +28,22 @@ RSpec.describe PeopleController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Person. As you add validations to Person, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip('Add a hash of attributes valid for your model')
-  }
 
-  let(:invalid_attributes) {
-    skip('Add a hash of attributes invalid for your model')
-  }
+  # give it something to go on when carrying out the tests, that will work
+  let(:valid_attributes) { { email: 'india@india.india', password: 'indiaindia' } }
+  
+  # give it something to go on when carrying out the tests, that will not work
+  let(:invalid_attributes) { { email: 'india', password: 'india' } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # PeopleController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) { {id: '1', email: 'india@india.india', password: 'indiaindia'} }
 
   describe "GET #index" do
     it "returns a success response" do
       Person.create! valid_attributes
-      get :index, params: {}, session: valid_session
+      get :index, params: { email: 'india@india.india', password: 'indiaindia' }, session: valid_session
       expect(response).to be_successful
     end
   end
