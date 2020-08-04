@@ -78,3 +78,15 @@ https://stackoverflow.com/questions/19605773/html5-email-validation
 Password:
 
 This was created using the min/max length fields on the password.
+
+## To run simplecov:
+
+```
+bundle install
+```
+```
+rspec
+```
+```
+open coverage/index.html
+```
