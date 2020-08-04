@@ -2,6 +2,7 @@ language: ruby
 rvm: 2.5.0
 sudo: required
 os: osx
- 
 before_install:
-  - gem install bundler
+  - yes | gem update --system --force
+  - gem install bundler -v '2.1.2'
+cache: bundler
