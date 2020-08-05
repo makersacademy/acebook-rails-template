@@ -57,7 +57,14 @@ body {
   border-style: solid;
   border-color: #a0c1b8;
   border-radius: 50px;
+}
 
+.post-message {
+  background: orange;
+}
+
+.comment {
+  background: green;
 }
 
 #clouds {
