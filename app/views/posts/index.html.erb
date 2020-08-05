@@ -6,9 +6,10 @@
   <% @posts.reverse.each do |post| %>
     </br>
     <div class='post'>
-      <h4><%= post.email %></h4>
-      <h4><%= simple_format post.message %> at <%= post.created_at %></h4>
-      <h4><%= link_to 'Show', post_path(post) %>
+      <div class = 'post-message'>
+        <h4><%= post.email %></h4>
+        <h4><%= simple_format post.message %> at <%= post.created_at %></h4>
+        <h4><%= link_to 'Show', post_path(post) %>
         <% if post.user_id == session[:user_id] %>
             <% if Time.now - post.created_at < 10.minutes %>
             <%= link_to 'Edit', edit_post_path(post) %>
@@ -18,6 +19,7 @@
             data: { confirm: 'Are you sure?' } %>
         <% end %>
       </h4>
+    </div>
 
       <% @post = post %>
       <%= render post.comments %>
