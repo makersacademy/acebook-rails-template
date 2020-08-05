@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'authorized', to: 'sessions#page_requires_login'
   delete 'logout', to: 'sessions#destroy'
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
   root 'sessions#welcome'
 
