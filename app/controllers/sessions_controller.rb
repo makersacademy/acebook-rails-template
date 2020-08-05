@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
        session[:user_id] = @user.id
-       redirect_to '/posts'
+       redirect_to '/' + current_user.id.to_s
     elsif !@user
       flash[:alert] = "sEa-mail address dopes not exist - please sign up"
       redirect_to '/login'

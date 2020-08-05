@@ -1,10 +1,16 @@
 <% if flash[:messages] %>
   <h2><%= flash[:messages] %></h2>
 <% end %>
+
 <% if logged_in? %>
-        <h1>Welcome to your wall, <%= current_user.email %></h1>
-        <%= button_to "Log Out", '/logout', method: :get %>
-    <%end%>
+<% p session[:wall_id] %>
+<% p current_user.id %>
+  <% if session[:wall_id] == current_user.id.to_s %>
+        <h1>Welcome to your wall, <%= User.find(session[:wall_id]).email %></h1>
+      <%else%>
+        <h1>This wall belongs to <%= User.find(session[:wall_id]).email %></h1>
+      <%end%>
+<%end%>
 
 
 <% @posts.each do |post| %>

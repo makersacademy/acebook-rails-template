@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       @user = User.create(user_params)
       if @user.save
         session[:user_id] = @user.id
-        redirect_to '/posts'
+        redirect_to '/' + current_user.id.to_s
       elsif @user.errors.messages[:email] != [] #bad email
         flash.now[:error] = "Email in fincorrect format"
         render 'new'
