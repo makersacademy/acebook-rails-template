@@ -22,8 +22,16 @@
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
       <% end %>
-    </tr>
+
+    <h2>Comments</h2>
+    <% @post = post %>
+    <%= render post.comments %>
+
+    <h2>Add a comment:</h2>
+    <%= render 'comments/form' %>
+
   <% end %>
+  </tr>
 </table>
 
 <%= button_to "Logout", logout_path, method: :delete, class: "buttons" %>
