@@ -48,9 +48,10 @@ body {
 }
 
 .post {
+  margin-left: 40%;
+  margin-right: 40%;
   text-align: center;
   max-width: 500px;
-  max-height: 300px;
   position: relative;
   background-color: #a0c1b8;
   border-style: solid;
