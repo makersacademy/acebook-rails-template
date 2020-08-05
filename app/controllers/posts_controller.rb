@@ -9,6 +9,8 @@ class PostsController < ApplicationController
   end
 
   def index
+    p "current user id " + current_user.id.to_s
+    p "Wall id " + params[:user_id].to_s
     @time = Time.new
     @posts = Post.all.reverse
   end

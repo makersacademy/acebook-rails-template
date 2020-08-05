@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.feature 'User', type: :feature do
 
-  scenario 'Can create a user and view them' do
+  scenario 'Can create a user and view own wall' do
     visit '/'
     click_button 'Sign Up'
     fill_in 'user_email', with: 'test@test.com'
     fill_in 'user_password', with: 'test1234'
     click_button 'Create User'
-    expect(page).to have_content('test@test.com')
+    expect(page).to have_content('Welcome to your wall, test@test.com')
   end
 
   scenario 'Returns error if invalid email' do

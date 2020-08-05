@@ -1,6 +1,11 @@
 <% if flash[:messages] %>
   <h2><%= flash[:messages] %></h2>
 <% end %>
+<% if logged_in? %>
+        <h1>Welcome to your wall, <%= current_user.email %></h1>
+        <%= button_to "Log Out", '/logout', method: :get %>
+    <%end%>
+
 
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
