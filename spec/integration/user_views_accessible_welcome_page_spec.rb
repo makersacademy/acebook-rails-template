@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-feature 'welcome', js: true do
+feature 'people', js: true do
   scenario 'index is accessible' do
-    visit welcome_index_path
+    visit 'http://localhost:3000/people/sign_in'
     expect(page).to be_accessible
   end
 end

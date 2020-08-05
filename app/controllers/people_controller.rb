@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :set_person, only: [show edit update destroy]
 
   # GET /people
   # GET /people.json
@@ -9,8 +9,7 @@ class PeopleController < ApplicationController
 
   # GET /people/1
   # GET /people/1.json
-  def show
-  end
+  def show; end
 
   # GET /people/new
   def new
@@ -18,8 +17,7 @@ class PeopleController < ApplicationController
   end
 
   # GET /people/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /people
   # POST /people.json
@@ -62,14 +60,14 @@ class PeopleController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_person
-      @person = Person.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def person_params
-      params.require(:person).permit(:email, :password)
-    end
-    
+  # Use callbacks to share common setup or constraints between actions.
+  def set_person
+    @person = Person.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def person_params
+    params.require(:person).permit(:email, :password)
+  end
 end
