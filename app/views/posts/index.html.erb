@@ -1,7 +1,24 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<p id="notice"><%= notice %></p>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<h1>Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.reverse.each do |post| %>
+      <tr>
+        <td><%= post.message %>
+        <td><%= post.created_at %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
