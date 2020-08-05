@@ -9,16 +9,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    p "current user id " + current_user.id.to_s
-    p "Wall id " + params[:user_id].to_s
     session[:wall_id] = params[:user_id]
     @time = Time.new
-    #@posts = Post.all.reverse
     @posts = Post.where(wall_id: session[:wall_id]).reverse
-
-    # User.where(weekly_subscriber: true).find_each do |user|
-    #   NewsMailer.weekly(user).deliver_now
-    # end
   end
   
   def edit

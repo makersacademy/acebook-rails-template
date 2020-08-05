@@ -3,15 +3,12 @@
 <% end %>
 
 <% if logged_in? %>
-<% p session[:wall_id] %>
-<% p current_user.id %>
   <% if session[:wall_id] == current_user.id.to_s %>
-        <h1>Welcome to your wall, <%= User.find(session[:wall_id]).email %></h1>
-      <%else%>
-        <h1>This wall belongs to <%= User.find(session[:wall_id]).email %></h1>
-      <%end%>
+    <h1>Welcome to your wall, <%= User.find(session[:wall_id]).email %></h1>
+  <%else%>
+    <h1>This wall belongs to <%= User.find(session[:wall_id]).email %></h1>
+  <%end%>
 <%end%>
-
 
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
