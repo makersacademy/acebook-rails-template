@@ -10,9 +10,10 @@
   </thead>
 
   <tbody>
-    <% @posts.each do |post| %>
+    <% @posts.reverse.each do |post| %>
       <tr>
         <td><%= post.message %>
+        <td><%= post.created_at %>
       </tr>
     <% end %>
   </tbody>
