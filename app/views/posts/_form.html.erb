@@ -11,17 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :people_id %>
-    <%= form.text_field :people_id, id: :post_people_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :message %>
-    <%= form.text_field :message, id: :post_message %>
-  </div>
-
   <div class="actions">
+    <%= form.text_field :message %>
     <%= form.submit %>
   </div>
 <% end %>
