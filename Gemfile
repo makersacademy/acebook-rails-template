@@ -59,3 +59,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem "bcrypt", "~> 3.1"
 
 gem 'webpacker'
+
+gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
