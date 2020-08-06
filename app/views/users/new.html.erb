@@ -1,3 +1,4 @@
+<div class="sign_in_box">
 <h1>New User</h1>
 
 
@@ -16,6 +17,7 @@
     </ul>
   </div>
 <% end %>
+
   <p>
     <%= form.label :email %><br>
     <%= form.text_field :email %>
@@ -26,7 +28,8 @@
     <%= form.password_field :password %>
   </p>
 
-  <p>
+  <div class="save_user_button">
     <%= form.submit class: "buttons"%>
-  </p>
+  </div>
 <% end %>
+</div>
