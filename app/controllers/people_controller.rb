@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: [show edit update destroy]
+  before_action :set_person, only: [:show, :edit, :update, :destroy]
 
   # GET /people
   # GET /people.json
@@ -9,7 +9,12 @@ class PeopleController < ApplicationController
 
   # GET /people/1
   # GET /people/1.json
-  def show; end
+  def show; 
+    @people = Person.find(params[:id])
+    @followers = @people.followers
+    @followees = @people.followees
+    @not_following = @people.not_following
+  end
 
   # GET /people/new
   def new
@@ -38,12 +43,17 @@ class PeopleController < ApplicationController
   # PATCH/PUT /people/1
   # PATCH/PUT /people/1.json
   def update
+    @person = Person.find(params[:id])
+    # byebug
+    Person.find_by(email: params[:person][:email]).followers << @person
+    redirect_to "/people/#{@person.id}"
+
     respond_to do |format|
       if @person.update(person_params)
         format.html { redirect_to @person, notice: 'Person was successfully updated.' }
         format.json { render :show, status: :ok, location: @person }
       else
-        format.html { render :edit }
+         format.html { render :edit }
         format.json { render json: @person.errors, status: :unprocessable_entity }
       end
     end
