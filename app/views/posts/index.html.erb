@@ -1,6 +1,7 @@
 <h1>Listing Posts</h1>
  <%= link_to 'New post', new_post_path %>
- <%= button_to "Logout", logout_path, method: :delete, class: "buttons" %>
+
+ <%= button_to "Logout", logout_path, method: :delete, class: "logout-button" %>
 
 
   <% @posts.reverse.each do |post| %>
@@ -8,7 +9,7 @@
     <div class='post'>
       <div class = 'post-message'>
         <h4><%= post.email %></h4>
-        <h4><%= simple_format post.message %> at <%= post.created_at %></h4>
+        <h4><%= simple_format post.message %> <%= time_ago_in_words(post.created_at) %> ago</h4>
         <h4><%= link_to 'Show', post_path(post) %>
         <% if post.user_id == session[:user_id] %>
             <% if Time.now - post.created_at < 10.minutes %>
@@ -23,13 +24,12 @@
 
       <% @post = post %>
       <%= render post.comments %>
-    
-      <h4>Add a comment:</h4>
       <%= render 'comments/form' %>
 
     </div>
+    <% def time_ago_in_words(from_time, include_seconds_or_options = {})
+    distance_of_time_in_words(from_time, Time.now, include_seconds_or_options)
+    end
+    %>
 
   <% end %>
-  
-
-
