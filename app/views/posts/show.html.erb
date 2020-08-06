@@ -2,7 +2,13 @@
   <h2><%= flash[:messages] %></h2>
 <% end %>
 
-<h1> Main Posts Page </h1>
+<% if logged_in? %>
+  <% if session[:wall_id] == current_user.id.to_s %>
+    <h1>Welcome to your wall, <%= User.find(session[:wall_id]).email %></h1>
+  <%else%>
+    <h1>This wall belongs to <%= User.find(session[:wall_id]).email %></h1>
+  <%end%>
+<%end%>
 
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
@@ -26,3 +32,6 @@
 
 <% end %>
 
+<%= link_to new_post_path do %>
+  New post
+<% end %>

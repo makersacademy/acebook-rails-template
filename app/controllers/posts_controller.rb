@@ -8,10 +8,15 @@ class PostsController < ApplicationController
     redirect_to '/' + session[:wall_id]
   end
 
-  def index
+  def show
     session[:wall_id] = params[:user_id]
     @time = Time.new
-    @posts = Post.where(wall_id: session[:wall_id]).reverse
+    @posts = Post.where(wall_id: session[:wall_id]).reverse 
+  end
+
+  def index
+    @time = Time.new
+    @posts = Post.all.reverse
   end
   
   def edit

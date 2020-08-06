@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # get 'logout', :controller => 'sessions', :action => 'destroy'
   get 'logout', to: 'sessions#destroy'
-  get '/:user_id', to: 'posts#index'
+  get '/:user_id', to: 'posts#show'
 
   # map.resource :session
 
