@@ -6,7 +6,7 @@
 
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
-    <p>Post: <%= simple_format(post.message) %></p>
+    Post: <%= simple_format(post.message) %>
     <p>Created At: <%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
 
     <%if logged_in? %>
