@@ -1,16 +1,17 @@
+<div class="show_post"> 
 
-<p>
-<strong>Message:</strong>
+
+<h2>Message:</h2>  
 <%= simple_format @post.message %>
-</p>
 
-<h2>Comments</h2>
+<h2>Comments:</h2>
 <%= render @post.comments %>
 
-<h2>Add a comment:</h2>
+<div class="comments_posts_show">
 <%= render 'comments/form' %>
-
-
+</div>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+</div>

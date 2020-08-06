@@ -92,7 +92,7 @@ body {
 .comment {
   border-radius: 12px;
   border: solid;
-  border-color: #f4ebc1;
+  border-color: white;
 }
 
 .comment_button{
@@ -107,6 +107,11 @@ z-index: 1;
 position: relative;
 }
 
+.show_post{
+  margin-top: 5%;
+  display: inline-block;
+}
+
 #clouds {
   padding: 100px 0;
   background: #726a95;
@@ -116,7 +121,6 @@ position: relative;
   height: 100vh;
   position: relative;
   z-index: -1;
-
 }
 
 .cloud {
