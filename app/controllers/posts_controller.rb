@@ -19,6 +19,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
+    @post.wall_id = current_user.id
+    'This is the create method'
+    p @post.wall_id
+    p @post
     if @post.save
       redirect_to @post
     else
@@ -52,7 +56,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message,:user_id,:wall_id)
   end
 
 end
