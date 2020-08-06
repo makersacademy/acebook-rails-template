@@ -9,8 +9,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      @wall = Wall.new(:user_id => current_user.id)
-      p :user_id => current_user.id
+      @wall = Wall.new(:user_id => @user.id, :id => @user.id)
+      @wall.save
+      @walls = Wall.all
+      p @walls
       redirect_to '/'
     else
       render 'new'

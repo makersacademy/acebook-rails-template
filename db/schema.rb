@@ -26,16 +26,20 @@ ActiveRecord::Schema.define(version: 20200806091425) do
     t.string "commenter"
     t.text "body"
     t.bigint "post_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "message"
     t.integer "user_id"
+    t.bigint "wall_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["wall_id"], name: "index_posts_on_wall_id"
   end
 
   create_table "users", force: :cascade do |t|
