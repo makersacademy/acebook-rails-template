@@ -17,7 +17,7 @@ RSpec.feature 'Timeline', type: :feature do
     creating_post('Deleting Own Post!')
 
     register_user('test2@test.com')
-    visit '/posts'
+    visit '/1'
 
     expect(page).not_to have_selector(:link_or_button, 'Delete post')
   end

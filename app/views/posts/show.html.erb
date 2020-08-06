@@ -2,17 +2,19 @@
   <h2><%= flash[:messages] %></h2>
 <% end %>
 
-<h1> Main Posts Page </h1>
+<% if logged_in? %>
+  <% if session[:wall_id] == current_user.id.to_s %>
+    <h1>Welcome to your wall, <%= User.find(session[:wall_id]).name %></h1>
+  <%else%>
+    <h1>This wall belongs to <%= User.find(session[:wall_id]).name %></h1>
+  <%end%>
+<%end%>
 
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
-    Post: <%= simple_format(post.message) %>
-    <p>Created At: <%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
-
-    <%if logged_in? %>
-      <p>Author: <%= link_to post.user.name, "/" + post.user.id.to_s %></p>
-      <p>Wall: <%= link_to User.find(post.wall_id).name, "/" + post.wall_id.to_s %></p> 
-    
+    <%= simple_format(post.message) %>
+    <p><%= post.user.email %></p>
+    <p><%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
       <%if (post.created_at + 1.hours + 10.minutes).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) && (current_user.id == post.user_id) %>
         <%= button_to edit_post_path(post.id), method: :get do %>
           Update post
@@ -24,12 +26,12 @@
           Delete post
         <% end %>
       <% end %>
-    <%else%>
-      <p>Author: <%= post.user.email %></p>
-      <p>Wall: <%= User.find(post.wall_id).email %></p>
-    <% end %>
+
       
   </div>
 
 <% end %>
 
+<%= link_to new_post_path do %>
+  New post
+<% end %>

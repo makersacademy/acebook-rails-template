@@ -14,11 +14,14 @@ class UsersController < ApplicationController
       @user = User.create(user_params)
       if @user.save
         session[:user_id] = @user.id
-        redirect_to '/posts'
-      elsif @user.errors.messages[:email] != [] #bad email
-        flash.now[:error] = "Email in fincorrect format"
+        redirect_to '/' + current_user.id.to_s      
+      elsif @user.errors.messages[:name] != [] #bad name
+        flash.now[:error] = "Name " + @user.errors.messages[:name].first
         render 'new'
-      else  #bad password
+      elsif @user.errors.messages[:email] != [] #bad email
+        flash.now[:error] = "Seamail " + @user.errors.messages[:email].first
+        render 'new'
+      else  
         flash.now[:error] = "Password in fincorrect format - please enter 6-10 characters"
         render 'new'
       end
@@ -26,7 +29,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-      params.require(:user).permit(:email, :password)
+      params.require(:user).permit(:email, :password, :name)
     end
 end
 
