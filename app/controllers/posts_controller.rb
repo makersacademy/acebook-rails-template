@@ -18,13 +18,17 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    if @post.wall_id == nil
+      @post.wall_id = current_user.id
+    end
     @post.user_id = current_user.id
-    @post.wall_id = current_user.id
+  
+    # @post.wall_id = current_user.id
     'This is the create method'
     p @post.wall_id
     p @post
     if @post.save
-      redirect_to @post
+      redirect_back(fallback_location: root_path)
     else
       render 'new'
     end
