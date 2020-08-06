@@ -17,7 +17,13 @@ RSpec.feature 'User', type: :feature do
     fill_in 'user_email', with: 'abademail'
     fill_in 'user_password', with: 'test1234'
     click_button 'Create User'
-    expect(page).to have_content('Email in fincorrect format')
+    expect(page).to have_content('Seamail is invalid')
+  end
+
+  scenario 'Returns error if email has already been used' do
+    register_user
+    register_user
+    expect(page).to have_content('Seamail has already been taken')
   end
 
   scenario 'Returns error if invalid password' do
