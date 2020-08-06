@@ -47,17 +47,12 @@ position: relative;
 .logout-button {
   margin-top: 0.55%;
   margin-right: 0.55%;
-  
   position:fixed; top:0; right:0;
   border-radius: 12px;
   background-color: #a0c1b8;
   z-index: 1;
-  position: relative;
   font-size: 16px;
   padding: 5px 10px;
-  border-radius: 12px;
-  background-color: #a0c1b8;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 form {
   margin-left: 40%;
@@ -113,7 +108,7 @@ body {
   height: 100vh;
   position: relative;
   z-index: -1;
-  
+
 }
 
 .cloud {
@@ -125,7 +120,7 @@ body {
   -webkit-border-radius: 200px;
   position: relative;
   z-index: -1;
-  
+
   -moz-box-shadow: 9px -7px 0 0 #f7e7eb inset;
   -webkit-box-shadow: 9px -7px 0 0 #f7e7eb inset;
   box-shadow: 9px -7px 0 0 #f7e7eb inset;
@@ -142,11 +137,11 @@ body {
   border-radius: 100px;
   -moz-border-radius: 100px;
   -webkit-border-radius: 100px;
-  
+
   transform: rotate(30deg);
   -moz-transform: rotate(30deg);
   -webkit-transform: rotate(30deg);
-  
+
   -moz-box-shadow: 10px 3px 0 0 #f7e7eb inset;;
   -webkit-box-shadow: 10px 3px 0 0 #f7e7eb inset;
   box-shadow: 10px 3px 0 0 #f7e7eb inset;
@@ -175,8 +170,8 @@ body {
   transform: scale(0.6);
   -webkit-transform: scale(0.6);
   -moz-transform: scale(0.6);
-  -o-transform: scale(0.6);  
-  
+  -o-transform: scale(0.6);
+
   -webkit-animation: moveclouds 40s linear infinite;
 	-moz-animation: moveclouds 40s linear infinite;
   -o-animation: moveclouds 40s linear infinite;
@@ -191,7 +186,7 @@ body {
   -moz-transform: scale(0.3);
   -o-transform: scale(0.3);
   opacity: .8;
-  
+
   -webkit-animation: moveclouds 35s linear infinite;
 	-moz-animation: moveclouds 35s linear infinite;
   -o-animation: moveclouds 35s linear infinite;
@@ -204,7 +199,7 @@ body {
   -webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);
   -o-transform: scale(0.8);
-  
+
   -webkit-animation: moveclouds 48s linear infinite;
 	-moz-animation: moveclouds 48s linear infinite;
   -o-animation: moveclouds 48s linear infinite;
@@ -217,7 +212,7 @@ body {
   -webkit-transform: scale(0.6);
   -moz-transform: scale(0.6);
   -o-transform: scale(0.6);
-  
+
   -webkit-animation: moveclouds 35s linear infinite;
 	-moz-animation: moveclouds 35s linear infinite;
 	-o-animation: moveclouds 35s linear infinite;
@@ -232,7 +227,7 @@ body {
   -moz-transform: scale(0.2);
   -o-transform: scale(0.2);
   opacity: 0.7;
-  
+
    -webkit-animation: moveclouds 31s linear infinite;
 	-moz-animation: moveclouds 31s linear infinite;
   -o-animation: moveclouds 31s linear infinite;
@@ -247,7 +242,7 @@ body {
   -moz-transform: scale(0.2);
   -o-transform: scale(0.2);
   opacity: .7;
-  
+
    -webkit-animation: moveclouds 30s linear infinite;
 	-moz-animation: moveclouds 30s linear infinite;
   -o-animation: moveclouds 30s linear infinite;
