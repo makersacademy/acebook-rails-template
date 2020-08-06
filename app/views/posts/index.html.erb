@@ -1,12 +1,19 @@
 <% if flash[:messages] %>
   <h2><%= flash[:messages] %></h2>
 <% end %>
+<div class="container">
+
 
 <% @posts.each do |post| %>
+<div class="card">
   <div id="<%= post.id%>" class="posts">
-    <p><%= post.message %></p>
-    <p><%= post.user.email %></p>
+    <div class="post_header">
+    <p class='post_name'><%= post.user.email %></p>
+    <div class="post_date">
     <p><%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
+    </div>
+    </div>
+    <p><%= post.message %></p>
       <%if (post.created_at + 1.hours + 10.minutes).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) && (current_user.id == post.user_id) %>
         <%= button_to edit_post_path(post.id), method: :get do %>
           Update post
@@ -19,10 +26,10 @@
         <% end %>
       <% end %>
 
-      
   </div>
-
+</div>
 <% end %>
+</div>
 
 <%= link_to new_post_path do %>
   New post
