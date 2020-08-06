@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application' %>
     <%# see you on the flipper side %>
     <% if logged_in? %>
-        <h1>You are Logged In, <%= current_user.email %></h1>
+        <h1>You are Logged In, <%= current_user.name %></h1>
         <%= button_to "Log Out", '/logout', method: :get %>
         <%= button_to "My Wall", '/' + current_user.id.to_s, method: :get %>
     <%end%>
