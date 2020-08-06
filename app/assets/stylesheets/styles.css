@@ -22,7 +22,6 @@ p {
   font-family: 'Lucida Grande';
 }
 
-
 .buttons {
 margin-left: 20%;
 margin-right: 20%;
@@ -44,6 +43,7 @@ position: relative;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   z-index: 1;
 }
+
 .logout-button {
   margin-top: 0.55%;
   margin-right: 0.55%;
@@ -54,6 +54,7 @@ position: relative;
   font-size: 16px;
   padding: 5px 10px;
 }
+
 form {
   margin-left: 40%;
   font-family: 'Lucida Grande';
@@ -88,12 +89,22 @@ body {
   border-radius: 50px;
 }
 
-
 .comment {
-  /* background: #f4ebc1; */
   border-radius: 12px;
   border: solid;
-  border-color: #f4ebc1;;
+  border-color: #f4ebc1;
+}
+
+.comment_button{
+margin-left: 20%;
+margin-right: 20%;
+font-size: 12px;
+padding: 5px 10px;
+border-radius: 12px;
+border-color: #709fb0;
+background-color: #709fb0;
+z-index: 1;
+position: relative;
 }
 
 #clouds {
