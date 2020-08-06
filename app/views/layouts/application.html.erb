@@ -1,6 +1,17 @@
 <!DOCTYPE html>
+
+
+  <svg>
+    <defs>
+      <filter id="f">
+      <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="2" seed="1"/>
+      <feDisplacementMap in="SourceGraphic" scale="16" />
+     </filter>
+    </defs>
+  </svg>
 <html>
   <head>
+
     <title>Acebook</title>
 
     <%= csrf_meta_tags %>
@@ -18,20 +29,13 @@
 
   <body>
 
+
     <%= yield %>
 
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: [:alert, alert_for(name)]%>
+    <%= content_tag :div, msg, class: [:alert, alert_for(name)]%>
     <% end %>
 
-    <style type="text/css">
-      <%= raw Rails.application.assets['application.css'].to_s %>
-    </style>
-    <script type="text/javascript">
-      <%= raw Rails.application.assets['application.js'].to_s %>
-    </script>
-    <!-- <embed src="path/to/background.mp3" autostart="true" loop="true" hidden="true"><embed> -->
-  
 
   </body>
 </html>
