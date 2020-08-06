@@ -1,5 +1,4 @@
-<%= form_with model: @post, local: true do |form| %>
-
+<%= form_with(model: [ @wall, @wall.posts.build ], local: true) do |form| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -19,6 +18,11 @@
     <%= form.label :message %><br>
     <%= form.text_area :message %>
   </p>
+
+  <p>
+  <%= form.label :wall_id %><br>
+  <%= form.text_area :wall_id %>
+</p>
 
   <p>
     <%= form.submit class: "buttons"%>

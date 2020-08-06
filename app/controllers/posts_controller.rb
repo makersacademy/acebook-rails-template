@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.wall_id = current_user.id
+    # @post.wall_id = current_user.id
     'This is the create method'
     p @post.wall_id
     p @post

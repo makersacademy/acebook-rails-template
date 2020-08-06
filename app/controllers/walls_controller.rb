@@ -1,12 +1,9 @@
 class WallsController < ApplicationController
   def index
-    p current_user.id
     @wall = Wall.find(current_user.id)
     @post = Post.new
     @posts = @wall.posts.all
     @walls = Wall.all
-    p 'Wall id'
-    p @wall.id
   end
 
   def show
@@ -14,5 +11,21 @@ class WallsController < ApplicationController
     @post = Post.new
     @posts = @wall.posts.all
     @walls = Wall.all
+  end
+
+  def create
+    @wall = Wall.find(params[:wall_id])
+    p post_params
+    @post = @wall.posts.create(wall_params)
+    @post.wall_id = 100
+    @post.user_id = current_user.id
+    p @post.wall_id
+    @post.save
+    redirect_to '/posts'
+  end
+
+  private
+  def wall_params
+      params.require(:post).permit(:message)
   end
 end
