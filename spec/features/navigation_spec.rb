@@ -13,6 +13,12 @@ RSpec.feature 'User', type: :feature do
     click_button 'Main Feed'
     expect(page).to have_content('Main Posts Page')
   end
+
+  scenario 'If user is logged in and visits root then it redirects to user wall' do
+    register_user(email = 'test1@test.com')
+    visit '/'
+    expect(page).to have_content('Welcome to your wall')
+  end
 end
 
 

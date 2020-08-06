@@ -25,6 +25,9 @@ class SessionsController < ApplicationController
   end
 
   def welcome
+    if logged_in?
+      redirect_to '/' + current_user.id.to_s
+    end
   end
 
   def destroy
