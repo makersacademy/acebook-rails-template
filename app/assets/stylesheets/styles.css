@@ -21,6 +21,15 @@ h4 {
 p {
   font-family: 'Lucida Grande';
 }
+.button_login {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background-color: #a0c1b8;
+  z-index: 1;
+  position: relative;
+  width: 100px;
+}
 
 .buttons {
 margin-left: 20%;
@@ -43,7 +52,14 @@ position: relative;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   z-index: 1;
 }
-
+.welcome_box {
+  border: solid;
+  border-color: #709fb0;
+  background-color: #709fb0;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 12px;
+}
 .logout-button {
   margin-top: 0.55%;
   margin-right: 0.55%;
@@ -53,6 +69,11 @@ position: relative;
   z-index: 1;
   font-size: 16px;
   padding: 5px 10px;
+}
+.homepage_signup_button {
+  margin-top: 0.55%;
+  margin-right: 5%;
+  position:fixed; top:0; right:0;
 }
 
 form {
