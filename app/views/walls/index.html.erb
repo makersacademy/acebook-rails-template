@@ -1,0 +1,37 @@
+<h1>Listing Posts</h1>
+ <%= link_to 'New post', new_post_path %>
+<table>
+  <tr>
+    <th></th>
+    <th>Message</th>
+    <th>Created</th>
+    <th colspan="4"></th>
+  </tr>
+
+  <% @posts.reverse.each do |post| %>
+    <tr>
+      <td><%= post.email %></td>
+      <td><%= simple_format post.message %></td>
+      <td><%= post.created_at %></td>
+      <td><%= link_to 'Show', post_path(post) %></td>
+      <% if post.user_id == session[:user_id] %>
+      <% if Time.now - post.created_at < 10.minutes %>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <% end %>
+      <td><%= link_to 'Destroy', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+
+    <h2>Comments</h2>
+    <% @post = post %>
+    <%= render post.comments %>
+
+    <h2>Add a comment:</h2>
+    <%= render 'comments/form' %>
+
+  <% end %>
+  </tr>
+</table>
+
+<%= button_to "Logout", logout_path, method: :delete, class: "buttons" %>
