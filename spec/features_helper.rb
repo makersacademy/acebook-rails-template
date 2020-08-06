@@ -12,3 +12,14 @@
     fill_in "password", with: "123456"
     click_button "Login"
   end
+
+  def create_post
+    click_link "New post"
+    fill_in "post[message]", with: "Hello, world!"
+    click_button "Create Post"
+  end
+
+  def create_comment
+    fill_in "comment[body]", with: "I love this post!!!"
+    click_button "Create Comment"
+  end
