@@ -8,8 +8,48 @@ body {
 .fish-background {
   // width: 100%;
   // background-image: image-url('fish.jpg');
-// background: url(asset_path 'fish.jpg')
-// background:image_path("fish.jpg")
+	// background: url(asset_path 'fish.jpg')
+	// background:image_path("fish.jpg")
 width: 100%;
 z-index: -1;
+}
+
+.form-signin{
+	width:50%;
+	margin: auto;
+	background-color: rgba(164, 159, 159, 0.3);
+	position: relative;
+	max-width: 300px;
+}
+
+.form-label-group{
+	width: 90%;
+	margin: auto;
+	padding: 10px;
+}
+
+.form-control{
+	margin: auto;
+	width: 50%;
+}
+
+.form-signin{
+	padding: 10px;
+}
+
+.input-field{
+	text-align: center;
+	display: block;
+	margin: auto;
+}
+
+.submit-button{
+	width: 46.5%;
+	display: block;
+	margin: auto;
+	position: relative;
+}
+
+.container{
+	padding: 50px;
 }
