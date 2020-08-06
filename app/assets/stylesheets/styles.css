@@ -73,10 +73,7 @@ body {
 }
 
 .comment_form {
-  /* margin-left: 20%; */
-  /* margin-right: 70%; */
-  /* display: inline-block; */
-  position: relative;
+  margin-left: -60%;
 }
 
 .post {
