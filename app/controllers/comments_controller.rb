@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params)
     @comment.user_id = current_user.id
     @comment.save
-    redirect_to '/posts'
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
