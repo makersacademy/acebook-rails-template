@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 
-
-  <svg>
-    <defs>
-      <filter id="f">
-      <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="2" seed="1"/>
-      <feDisplacementMap in="SourceGraphic" scale="16" />
-     </filter>
-    </defs>
-  </svg>
 <html>
+<!-- <div class="background">
+  </div> -->
   <head>
-
     <title>Acebook</title>
 
     <%= csrf_meta_tags %>
@@ -36,6 +28,12 @@
     <%= content_tag :div, msg, class: [:alert, alert_for(name)]%>
     <% end %>
 
+    <!-- <div style="background-image: url('sea-background.jpg'); height: 400px; width: 400px;"></div> -->
+
+
+
+
 
   </body>
+
 </html>
