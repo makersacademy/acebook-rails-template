@@ -13,22 +13,19 @@
  // *= require_tree .
  // *= require_self
  // */
- // @import "bootstrap-sprockets";
 
- @import "bootstrap/scss/bootstrap.scss";
+@import "bootstrap";
+html {
+    // background-color:#fff;
+    color: #fff;
+    overflow-x: hidden;
+}
 
-
-
- html{
-   // background-color:#fff;
-   color:#fff;
-   overflow-x:hidden;
-
- }
 // above is bubbles, below is other...
 body {
-  background-image: url('sea-background.jpg');
-  background-size: cover;
+    background-image: url('sea-background.jpg');
+    background-size: cover;
 }
+
 // }
 // height: 200px;
