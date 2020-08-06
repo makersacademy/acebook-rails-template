@@ -35,7 +35,7 @@
  <% @walls.each do |wall| %>
   </br>
   <div class='wall'>
-      <h4><%= wall.id %></h4>
+      <h4><%= wall.user.email %></h4>
       <h4><%= link_to 'Show', wall_path(wall) %></h4>
   </div>
   <% end %>
