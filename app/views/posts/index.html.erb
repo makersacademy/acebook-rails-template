@@ -6,9 +6,13 @@
 
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
-    <p><%= post.message %></p>
-    <p><%= post.user.email %></p>
-    <p><%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
+    <p>Post: <%= post.message %></p>
+    <p>Created At: <%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
+
+    <%if logged_in? %>
+      <p>Author: <%= link_to post.user.email, "/" + post.user.id.to_s %></p>
+      <p>Wall: <%= link_to User.find(post.wall_id).email, "/" + post.wall_id.to_s %></p> 
+    
       <%if (post.created_at + 1.hours + 10.minutes).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) && (current_user.id == post.user_id) %>
         <%= button_to edit_post_path(post.id), method: :get do %>
           Update post
@@ -20,7 +24,10 @@
           Delete post
         <% end %>
       <% end %>
-
+    <%else%>
+      <p>Author: <%= post.user.email %></p>
+      <p>Wall: <%= User.find(post.wall_id).email %></p>
+    <% end %>
       
   </div>
 

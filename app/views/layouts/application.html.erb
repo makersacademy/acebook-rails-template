@@ -12,6 +12,7 @@
         <%= button_to "Log Out", '/logout', method: :get %>
         <%= button_to "My Wall", '/' + current_user.id.to_s, method: :get %>
     <%end%>
+    <%= button_to "Main Feed", '/posts', method: :get %>
   </head>
 
   <body>

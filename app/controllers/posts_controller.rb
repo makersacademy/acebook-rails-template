@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  skip_before_action :authorized, only: [:index]
+
   def new
     @post = Post.new
   end
