@@ -9,7 +9,7 @@
    <div class='post'>
      <div class = 'post-message'>
        <h4><%= post.email %></h4>
-       <h4><%= simple_format post.message %> at <%= post.created_at %></h4>
+       <h4><%= simple_format post.message %> <%= time_ago_in_words(post.created_at) %> ago</h4>
        <h4><%= link_to 'Show', post_path(post) %>
        <% if post.user_id == session[:user_id] %>
            <% if Time.now - post.created_at < 10.minutes %>
@@ -39,3 +39,7 @@
       <h4><%= link_to 'Show', wall_path(wall) %></h4>
   </div>
   <% end %>
+
+  <% def time_ago_in_words(from_time, include_seconds_or_options = {})
+    distance_of_time_in_words(from_time, Time.now, include_seconds_or_options)
+    end%>
