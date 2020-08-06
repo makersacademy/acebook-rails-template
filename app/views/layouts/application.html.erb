@@ -22,7 +22,7 @@
 
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: [:alert, alert_for(name)]%>
-    <% end %> 
+    <% end %>
 
     <style type="text/css">
       <%= raw Rails.application.assets['application.css'].to_s %>
@@ -32,5 +32,6 @@
     </script>
     <!-- <embed src="path/to/background.mp3" autostart="true" loop="true" hidden="true"><embed> -->
   
+
   </body>
 </html>
