@@ -4,6 +4,28 @@
     <h1>You are Logged In, <%= current_user.email %></h1>
 <%end%>
 
-<%= button_to "Login", '/login', class: "buttons", method: :get%>
+<h1>Login</h1>
+
+<%  if !@error.nil? %>
+    <div id="error_explanation">
+      <h2><%=@error%></h2>
+      </ul>
+    </div>
+  <% end %>
+
+   <%= form_tag '/login' do %>
+
+   <%= label_tag :email%>
+
+   <%= text_field_tag :email %>
+
+   <%= label_tag :password%>
+
+   <%= password_field_tag :password%>
+
+   <%= submit_tag "Login", class: "buttons" %>
+
+<%end%>
+
 
 <%= button_to "Sign Up", '/users/new', class: "buttons", method: :get%>
