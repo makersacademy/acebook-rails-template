@@ -4,6 +4,6 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   delegate :email, :to => :user
-  validates :message, presence: true,
-            length: { minimum: 10 }
+  validates :message, presence: true
+  
   end

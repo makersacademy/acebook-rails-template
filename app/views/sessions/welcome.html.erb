@@ -1,9 +1,5 @@
 <h1>Welcome to Dreambook!</h1>
 
-<% if logged_in? %>
-    <h1>You are Logged In, <%= current_user.email %></h1>
-<%end%>
-
 <h1>Login</h1>
 
 <%  if !@error.nil? %>
@@ -18,6 +14,11 @@
    <%= label_tag :email%>
 <br>
    <%= text_field_tag :email %>
+</p>
+<p>
+   <%= label_tag :username%>
+<br>
+   <%= text_field_tag :username %>
 </p>
 <p>
    <%= label_tag :password%>

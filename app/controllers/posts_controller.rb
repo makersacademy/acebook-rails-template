@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       @post.wall_id = current_user.id
     end
     @post.user_id = current_user.id
-  
+
     # @post.wall_id = current_user.id
     'This is the create method'
     p @post.wall_id
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
       render 'new'
     end
   end
+
 
   def update
     @post = Post.find(params[:id])
