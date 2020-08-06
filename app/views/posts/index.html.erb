@@ -1,6 +1,7 @@
 <h1>Listing Posts</h1>
  <%= link_to 'New post', new_post_path %>
- <%= button_to "Logout", logout_path, method: :delete, class: "buttons" %>
+
+ <%= button_to "Logout", logout_path, method: :delete, class: "logout-button" %>
 
 
   <% @posts.reverse.each do |post| %>
@@ -23,8 +24,6 @@
 
       <% @post = post %>
       <%= render post.comments %>
-    
-      <h4>Add a comment:</h4>
       <%= render 'comments/form' %>
 
     </div>
