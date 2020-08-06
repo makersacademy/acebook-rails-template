@@ -13,7 +13,7 @@
 //= require rails-ujs
 //= require_tree .
 // <![CDATA[
-var colours=new Array("##00FFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF"); // #008080 ##00FFFFcolours for top, right, bottom and left borders and background of bubbles
+var colours=new Array("##00FFFF", "#FFFFFF", "#d1edf2", "#afeeee", "#FFFFFF"); // #008080 ##00FFFFcolours for top, right, bottom and left borders and background of bubbles
     var bubbles=100; // maximum number of bubbles on screen
     var x=ox=400;
     var y=oy=300;
@@ -153,5 +153,3 @@ var colours=new Array("##00FFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF"); /
     return (div);
     }
     // ]]>
-
-  
