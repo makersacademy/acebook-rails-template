@@ -8,6 +8,9 @@
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.3",
+    "webpack": "^4.44.1",
     "webpack-dev-server": "^3.11.0"
   }
 }
