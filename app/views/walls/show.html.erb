@@ -3,12 +3,12 @@
  <%= button_to "Logout", logout_path, method: :delete, class: "buttons" %>
 
  <%= render 'form' %>
- 
+
  <% @posts.reverse.each do |post| %>
    </br>
    <div class='post'>
      <div class = 'post-message'>
-       <h4><%= post.email %></h4>
+       <h4><%= post.username %></h4>
        <h4><%= simple_format post.message %> <%= time_ago_in_words(post.created_at) %> ago</h4>
        <h4><%= link_to 'Show', post_path(post) %>
        <% if post.user_id == session[:user_id] %>
@@ -24,7 +24,7 @@
 
      <% @post = post %>
      <%= render post.comments %>
-   
+
      <h4>Add a comment:</h4>
      <%= render 'comments/form' %>
 
@@ -35,7 +35,7 @@
  <% @walls.each do |wall| %>
   </br>
   <div class='wall'>
-      <h4><%= wall.user.email %></h4>
+      <h4><%= wall.user.username %></h4>
       <h4><%= link_to 'Show', wall_path(wall) %></h4>
   </div>
   <% end %>
