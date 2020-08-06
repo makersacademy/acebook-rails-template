@@ -4,9 +4,7 @@ RSpec.feature "Edit ", type: :feature do
   scenario "Can edit own post and view the updated post" do
     signup
     login
-    click_link "New post"
-    fill_in "post[message]", with: "Hello, world!"
-    click_button "Create Post"
+    create_post
     click_link "Back"
     click_link "Edit"
     fill_in "post[message]", with: "Hello, world"
@@ -17,9 +15,7 @@ RSpec.feature "Edit ", type: :feature do
   scenario "Own post after 10 minutes" do
     signup
     login
-    click_link "New post"
-    fill_in "post[message]", with: "Hello, world!"
-    click_button "Create Post"
+    create_post
     @post = Post.find(current_url.to_s.split("/")[-1].to_i)
     @post.created_at = 11.minutes.ago
     @post.save
