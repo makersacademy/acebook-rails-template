@@ -6,14 +6,16 @@
       </div>
       <div class="form-label-group">
          <div class="login-control">
-               <%= button_to "Login", '/login', method: :get, class: "btn btn-primary"%>
+          <div class="button-wrapper">
+            <a href="/login" class="btn btn-secondary btn-lg" role="button">Login</a>
+          </div>
          </div>
       </div>
 
       <div class="form-label-group">
-         <div class="login-control">
-          <%= button_to "Sign Up", '/users/new', method: :get, class: "btn btn-primary"%>
-         </div>
+        <div class="button-wrapper">
+             <a href="/users/new" class="btn btn-secondary btn-lg" role="button">Spawn</a>
+        </div>
       </div>
    </div>
 </div>
