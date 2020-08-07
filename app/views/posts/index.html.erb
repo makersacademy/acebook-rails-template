@@ -12,19 +12,21 @@
         <h4><%= link_to 'Show', post_path(post) %>
         <% if post.user_id == session[:user_id] %>
             <% if Time.now - post.created_at < 10.minutes %>
-            <%= link_to 'Edit', edit_post_path(post) %>
-            <% end %>
+              <%= link_to 'Edit', edit_post_path(post) %>
+        <% end %>
             <%= link_to 'Destroy', post_path(post),
             method: :delete,
             data: { confirm: 'Are you sure?' } %>
-            <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
-<% if pre_like %>
-  <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
-<% else %>
-  <%= button_to 'Like', post_likes_path(@post), method: :post %>
-<% end %>
-
-        <% end %>
+    <% end %>
+      <% @post = post %>
+      <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+    <div class="like_button">
+      <% if pre_like %>
+        <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+      <% else %>
+        <%= button_to 'Like', post_likes_path(@post), method: :post %>
+    <% end %>
+    </div>
         <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
       </h4>
     </div>
