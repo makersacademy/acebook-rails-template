@@ -7,6 +7,8 @@
 # Ignore bundler config.
 /.bundle
 
+/coverage
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -21,3 +23,11 @@
 /yarn-error.log
 
 .byebug_history
+
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

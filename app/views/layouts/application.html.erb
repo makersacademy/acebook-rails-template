@@ -1,14 +1,55 @@
 <!DOCTYPE html>
+
 <html>
+
   <head>
     <title>Acebook</title>
-    <%= csrf_meta_tags %>
 
+    <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%# see you on the flipper side %>
+    <nav class = "navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/">
+        <%=image_tag("f-fish-logo.png", width: "50", height: "50", class: "d-inline-block align-top", alt: "")%>
+          <span class="navbar-text">
+            FishBook
+          </span>
+      </a>
+
+      <form class="form-inline">
+        <% if logged_in? %>
+          <span class="navbar-text">
+            <%=current_user.name%>
+            <%= image_tag current_user.image.url(:image), class: "avatar" %>
+          </span>
+          <div class="logout">
+          <%= link_to "Log Out", '/logout', class:"btn btn-outline-primary" %>
+          <%= link_to "My Wall", '/'+current_user.id.to_s, class:"btn btn-outline-primary" %>
+          </div>
+        <%end%>
+          <%= link_to "Fish Feed", '/posts', class:"btn btn-outline-primary" %>      </form>
+    </nav>
+
+
+
+
   </head>
 
   <body>
+
+
     <%= yield %>
+
+    <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: [:alert, alert_for(name)]%>
+    <% end %>
+
+
+
+
+
+
   </body>
+
 </html>

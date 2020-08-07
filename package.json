@@ -1,5 +1,16 @@
 {
   "name": "acebook",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "4.2.2",
+    "bootstrap": "^4.0.0-alpha.5",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "sass-loader": "^9.0.3",
+    "sass": "^1.26.10",
+    "webpack": "^4.44.1",
+    "webpack-dev-server": "^3.11.0"
+  }
 }
