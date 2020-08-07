@@ -29,12 +29,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-      params.require(:user).permit(:email, :password, :name)
+      params.require(:user).permit(:email, :password, :name, :image)
     end
 end
-
-
-#<ActiveModel::Errors:0x00007ff34e9dc940 
-# @base=#<User id: nil, email: "dsdas", password_digest: "$2a$12$KOlJPc.IcS5a72H3/eYoJeOXkgHlpeXPjGhyQUov9M5...", created_at: nil, updated_at: nil>, 
-# @messages={:email=>["is invalid"]}, 
-# @details={:email=>[{:error=>:invalid, :value=>"dsdas"}]}>
