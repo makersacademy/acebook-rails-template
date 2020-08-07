@@ -1,10 +1,29 @@
-  <h1>Sign Up</h1>
-  <%= form_for @user do |f|%>
-    <%= f.label :name%><br>
-    <%= f.text_field :name%><br>
-    <%= f.label :email%><br>
-    <%= f.text_field :email%><br>
-    <%= f.label :password%> (6 - 10 characters)<br>
-    <%= f.password_field :password%><br>
-    <%= f.submit %>
-  <%end%>
+  <div class="container">
+   <div class="form-signin">
+      <div class="text-center mb-4">
+         <%= image_tag('f-fish-logo.jpg', class: 'mb-4', width: 100, height: 100)%>
+         <h1 class="h3 mb-3 font-weight-normal">Spawn a new Fish</h1>
+      </div>
+      <%= form_for @user do |f| %>
+     
+     <div class="form-label-group">
+         <div class="login-control">
+           <%= f.text_field :name, placeholder: 'Name', class: "input-field" %>
+         </div>
+      </div>
+     
+      <div class="form-label-group">
+         <div class="login-control">
+               <%= f.text_field :email, placeholder: 'Email', class: "input-field" %>
+         </div>
+      </div>
+
+      <div class="form-label-group">
+         <div class="login-control">
+            <%= f.password_field :password, placeholder: 'Password (6 - 10 chars)', class: "input-field"%>
+         </div>
+      </div>
+      <%= submit_tag "Login", class: 'btn btn-lg btn-primary btn-block', class: "submit-button"%>
+   <%end%>
+   </div>
+</div>

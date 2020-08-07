@@ -10,12 +10,31 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%# see you on the flipper side %>
-    <% if logged_in? %>
-        <h1>You are Logged In, <%= current_user.name %></h1>
-        <%= button_to "Log Out", '/logout', method: :get %>
-        <%= button_to "My Wall", '/' + current_user.id.to_s, method: :get %>
-    <%end%>
-    <%= button_to "Main Feed", '/posts', method: :get %>
+    <nav class = "navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <%=image_tag("f-fish-logo.jpg", width: "50", height: "50", class: "d-inline-block align-top", alt: "")%>
+          <span class="navbar-text">
+            FishBook
+          </span>
+      </a>
+
+      <form class="form-inline">
+        <% if logged_in? %>
+          <span class="navbar-text">
+            <%=current_user.name%>
+          </span>
+          <div class="logout">
+          <%= link_to "Log Out", '/logout', class:"btn btn-outline-success" %>
+          <%= link_to "My Wall", '/'+current_user.id.to_s, class:"btn btn-outline-success" %>
+          </div>
+        <%end%>
+          <%= button_to "Main Feed", '/posts', method: :get %>
+      </form>
+    </nav>
+  
+
+
+
   </head>
 
   <body>
