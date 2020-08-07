@@ -1,9 +1,12 @@
 <h1><%=@wall.user.username%>'s Wall </h1>
  <%= link_to 'New post', new_post_path %>
+
+ <div class="wall_logout_button"
  <%= button_to "Logout", logout_path, method: :delete, class: "buttons" %>
-
+ </div>
+ <div class="message_form_on_wall"
  <%= render 'form' %>
-
+ </div>
  <% @posts.reverse.each do |post| %>
    </br>
    <div class='post'>
@@ -19,8 +22,8 @@
            method: :delete,
            data: { confirm: 'Are you sure?' } %>
        <% end %>
-     </h4>
-   </div>
+       </h4>
+    </div>
 
      <% @post = post %>
      <%= render post.comments %>
@@ -39,7 +42,6 @@
 
 
  <% end %>
-
  <% @walls.each do |wall| %>
   </br>
   <div class='wall'>
