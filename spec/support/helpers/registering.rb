@@ -5,7 +5,7 @@ module Helpers
       fill_in 'user[email]', with: email
       fill_in 'user[name]', with: name
       fill_in 'user[password]', with: password
-      click_button 'Spawn'
+      click_link_or_button 'Spawn'
     end
   end
 end

@@ -8,19 +8,19 @@ RSpec.feature 'User', type: :feature do
     visit '/logout'
 
     visit '/'
-    click_button 'Login'
+    click_link_or_button 'Login'
     fill_in 'email', with: 'test@test.com'
     fill_in 'password', with: 'test1234'
-    click_button 'Login'
+    click_link_or_button 'Login'
     expect(page).to have_content('Welcome to your wall, Test')
   end
 
   scenario 'Email not in db returns error' do
     visit '/'
-    click_button 'Login'
+    click_link_or_button 'Login'
     fill_in 'email', with: 'test@test.com'
     fill_in 'password', with: 'test1234'
-    click_button 'Login'
+    click_link_or_button 'Login'
     expect(page).to have_content("sEa-mail address dopes not exist - please sign up")
   end
 
@@ -28,10 +28,10 @@ RSpec.feature 'User', type: :feature do
     register_user
     visit '/logout'
     visit '/'
-    click_button 'Login'
+    click_link_or_button 'Login'
     fill_in 'email', with: 'test@test.com'
     fill_in 'password', with: 'wrongpassword'
-    click_button 'Login'
+    click_link_or_button 'Login'
     expect(page).to have_content("FINcorrect Password")
   end
 

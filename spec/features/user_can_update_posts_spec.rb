@@ -5,12 +5,12 @@ RSpec.feature 'Timeline', type: :feature do
   scenario 'Can update posts and view them' do
     register_user
     click_link 'New post'
-    fill_in 'Message', with: 'Hello, world!'
+    fill_in 'post_message', with: 'Hello, world!'
     click_button 'Submit'
     
     click_button 'Update post'
 
-    fill_in 'Message', with: 'Goodbye, world!'
+    fill_in 'post_message', with: 'Goodbye, world!'
     click_button 'Submit'
     expect(page).to have_content('Goodbye, world!')
   end
@@ -18,12 +18,12 @@ RSpec.feature 'Timeline', type: :feature do
   scenario 'Cannot update posts with blank message' do
     register_user
     click_link 'New post'
-    fill_in 'Message', with: 'Hello World!'
+    fill_in 'post_message', with: 'Hello World!'
     click_button 'Submit'
     
     click_button 'Update post'
 
-    fill_in 'Message', with: ''
+    fill_in 'post_message', with: ''
     click_button 'Submit'
     expect(page).to have_content('Hello World!')
   end
@@ -32,12 +32,12 @@ RSpec.feature 'Timeline', type: :feature do
     register_user
     
     click_link 'New post'
-    fill_in 'Message', with: 'Hello World!'
+    fill_in 'post_message', with: 'Hello World!'
     click_button 'Submit'
     
     click_button 'Update post'
 
-    fill_in 'Message', with: 'Hello World!'
+    fill_in 'post_message', with: 'Hello World!'
     click_button 'Submit'
     expect(page).to have_content("Not possible. Message has not been changed")
   end
@@ -45,7 +45,7 @@ RSpec.feature 'Timeline', type: :feature do
   scenario 'Cannot update user posts belonging to other users' do
     register_user
     click_link 'New post'
-    fill_in 'Message', with: 'Hello World!'
+    fill_in 'post_message', with: 'Hello World!'
     click_button 'Submit'
     register_user('test2@test.com')
     expect(page).not_to have_selector(:link_or_button, 'Update post')

@@ -6,6 +6,6 @@ RSpec.feature 'User', type: :feature do
     visit '/'
    register_user
     visit '/logout'
-    expect(page).to have_content('Welcome to Fishbook!')
+    expect(page).to have_content('Welcome to Fishbook')
   end
 end
