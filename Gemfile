@@ -68,4 +68,4 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'paperclip', '~> 4.2'
-gem 'simple_form'
+
