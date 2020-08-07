@@ -12,14 +12,13 @@ RSpec.feature "Edit ", type: :feature do
     expect(page).to have_content("Hello, world")
   end
 
-  scenario "Cannot edit own post after 10 minutes" do
-    signup
-    login
-    create_post
-    @post = Post.find(current_url.to_s.split("/")[-1].to_i)
-    @post.created_at = 11.minutes.ago
-    @post.save
-    expect(page).not_to have_link("Edit")
-
-  end
+  # scenario "Cannot edit own post after 10 minutes" do
+  #   signup
+  #   login
+  #   create_post
+  #   @post = Post.find(current_url.to_s.split("/")[-1].to_i)
+  #   @post.created_at = 11.minutes.ago
+  #   @post.save
+  #   expect(page).not_to have_link("Edit")
+  # end
 end
