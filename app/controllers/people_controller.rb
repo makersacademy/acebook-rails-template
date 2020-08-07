@@ -1,5 +1,7 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  protected
 
   # GET /people
   # GET /people.json
@@ -29,7 +31,6 @@ class PeopleController < ApplicationController
       if @person.save
         format.html { redirect_to @person, notice: 'Person was successfully created.' }
         format.json { render :show, status: :created, location: @person }
-        p "User has been created!"
       else
         format.html { render :new }
         format.json { render json: @person.errors, status: :unprocessable_entity }
@@ -44,6 +45,7 @@ class PeopleController < ApplicationController
       if @person.update(person_params)
         format.html { redirect_to @person, notice: 'Person was successfully updated.' }
         format.json { render :show, status: :ok, location: @person }
+        p person_params
       else
         format.html { render :edit }
         format.json { render json: @person.errors, status: :unprocessable_entity }
