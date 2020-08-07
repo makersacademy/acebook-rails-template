@@ -1,7 +1,14 @@
 <h1><%=@wall.user.username%>'s Wall </h1>
+
+ <div class="wall_logout_button"
  <%= button_to "Logout", logout_path, method: :delete, class: "buttons" %>
+ </div>
 
  <div class = 'post'>
+ <%= render 'form' %>
+ </div>
+
+ <div class="message_form_on_wall"
  <%= render 'form' %>
  </div>
 
@@ -20,19 +27,26 @@
            method: :delete,
            data: { confirm: 'Are you sure?' } %>
        <% end %>
-     </h4>
-   </div>
+       </h4>
+    </div>
 
      <% @post = post %>
      <%= render post.comments %>
 
      <h4>Add a comment:</h4>
      <%= render 'comments/form' %>
-
+   </div>
+   <div class="like_button">
+   <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+     <% if pre_like %>
+       <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+     <% else %>
+       <%= button_to 'Like', post_likes_path(@post), method: :post %>
+   <% end %>
    </div>
 
- <% end %>
 
+ <% end %>
  <% @walls.each do |wall| %>
   </br>
   <div class='wall'>

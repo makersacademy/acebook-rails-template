@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   get 'welcome', to: 'sessions#welcome'
   get 'authorized', to: 'sessions#page_requires_login'
+  get 'allwalls', to: 'walls#allwalls'
   delete 'logout', to: 'sessions#destroy'
 
   resources :walls do

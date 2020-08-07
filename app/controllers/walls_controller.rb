@@ -24,6 +24,10 @@ class WallsController < ApplicationController
     redirect_to '/posts'
   end
 
+  def allwalls
+    @walls = Wall.all
+  end
+
   private
   def wall_params
       params.require(:post).permit(:message)

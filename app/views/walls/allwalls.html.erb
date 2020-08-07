@@ -1,0 +1,13 @@
+<h4> All Walls </h4>
+
+<% @walls.each do |wall| %>
+  </br>
+  <div class='wallitem'>
+      <h4><%= wall.user.username %></h4>
+      <img src= https://icon2.cleanpng.com/20180212/lqe/kisspng-smile-sunlight-clip-art-the-sun-5a82059a0dba46.5475653515184705540562.jpg>
+      <h4><%= link_to 'Show', wall_path(wall) %></h4>
+
+
+  </div>
+
+  <% end %>

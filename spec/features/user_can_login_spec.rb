@@ -1,9 +1,10 @@
 require 'rails_helper'
+require 'features_helper'
 
 RSpec.feature "Login", type: :feature do
-  scenario "Can signup" do
+  scenario "user can login" do
     signup
     login
-    expect(page).to have_content("Listing Posts")
+    expect(page).to have_content("test's Wall")
   end
 end

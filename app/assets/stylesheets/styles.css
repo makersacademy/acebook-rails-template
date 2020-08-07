@@ -61,6 +61,38 @@ position: relative;
   border-radius: 12px;
 }
 
+.show_post {
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+  max-width: 700px;
+  position: relative;
+  background-color: #a0c1b8;
+  border-style: solid;
+  border-color: #a0c1b8;
+  border-radius: 50px;
+}
+
+.message_form_on_wall {
+  border: solid;
+  border-color: #709fb0;
+  background-color: #709fb0;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 12px;
+  text-align: center;
+}
+  
+.new_post_box{
+  border: solid;
+  border-color: #709fb0;
+  background-color: #709fb0;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 12px;
+  text-align: left;
+}
+  
 .sign_in_box {
   border: solid;
   border-color: #709fb0;
@@ -79,6 +111,10 @@ position: relative;
   font-size: 16px;
   padding: 5px 10px;
 }
+.wall_logout_button {
+  margin-left: 43.2%;
+  margin-right: 40%;
+}
 
 .homepage_signup_button {
   margin-top: 0.55%;
@@ -93,6 +129,18 @@ position: relative;
   font-size: 16px;
   padding: 5px 10px;
 }
+
+.wallitem {
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  image-orientation: inherit;
+  border-style: solid;
+  background-repeat: no-repeat; 
+  background-position: center; 
+  position: relative; 
+}
+
 
 form {
   margin-left: 40%;
@@ -126,6 +174,7 @@ body {
   border-style: solid;
   border-color: #a0c1b8;
   border-radius: 50px;
+
 }
 
 .comment {
