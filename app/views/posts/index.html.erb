@@ -1,35 +1,55 @@
 <% if flash[:messages] %>
   <h2><%= flash[:messages] %></h2>
 <% end %>
-<div class="container">
-
 
 <% @posts.each do |post| %>
-<div class="card">
-  <div id="<%= post.id%>" class="posts">
-    <div class="post_header">
-    <p class='post_name'><%= post.user.email %></p>
-    <div class="post_date">
-    <p><%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
-    </div>
-    </div>
-    <p><%= post.message %></p>
-      <%if (post.created_at + 1.hours + 10.minutes).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) && (current_user.id == post.user_id) %>
-        <%= button_to edit_post_path(post.id), method: :get do %>
-          Update post
-        <% end %>
-      <% end %>
+<div id="<%= post.id%>" class="card">
+	<div class="card-content">
+		<header class="card-content_header">
+			<a href="" class="card-account_link">
+        <!-- add reference in next line to user profile picture -->
+			<img src="//via.placeholder.com/250x250&text=Flan" alt="Flan" class="card-avatar">
+				<span class="card-user">
+          <!-- change the next line to name -->
+				<strong class="card-username"><%= post.user.email %></strong>
+				<span>&rlm;</span>
+			</span>
+				<span class="card-usertag">
+				<b><%= post.user.email %></b>
+			</span>
+      <span class="card-usertag">
+      <p><%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
+    </span>
 
-      <%if current_user.id == post.user_id %>
-        <%= button_to post_path(post), method: :delete do %>
-          Delete post
-        <% end %>
+			</a>
+		</header>
+		<article class="card-content_text">
+			<p><%= post.message %></p>
+		</article>
+<%# <!-- need to make sure of %>
+    <%# <% if post.image.url %> %>
+		<div class="card-content_video">
+			<div class="video-container">
+        <%# <%image_tag post.image.url(:medium), class:'img-responsive'%> %>
+			</div>
+		</div>
+    <%# <% end %>   %>
+    <%if (post.created_at + 1.hours + 10.minutes).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) && (current_user.id == post.user_id) %>
+    <%= button_to edit_post_path(post.id), class: 'post-link', method: :get do %>
+      <p>Update post</p>
+    <% end %>
+    <%if current_user.id == post.user_id %>
+      <%= button_to post_path(post), class: 'post-link-2',method: :delete do %>
+        <p>Delete post</p>
       <% end %>
+    <% end %>
+  <% end %>
 
-  </div>
+</div>
 </div>
 <% end %>
-</div>
+
+
 
 <%= link_to new_post_path do %>
   New post

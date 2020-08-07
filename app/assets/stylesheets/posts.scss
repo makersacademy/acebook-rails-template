@@ -1,0 +1,185 @@
+@import url('//fonts.googleapis.com/css?family=Open+Sans');
+$placeholder: #D3D3D3;
+
+body{
+	background: #f5f5f5;
+	font-family: 'Open Sans', sans-serif;
+}
+.card{
+	position: relative;
+	margin: 0 auto;
+	display: block;
+	background: #fff;
+	width: 580px;
+	// height: 410px;
+	border: 1px solid #e6ecf0;
+	border-radius: 3px;
+	padding: 9px 12px;
+	&-content{
+		margin-left: 58px;
+		margin-right: 58px;
+		width: auto;
+		height: 100%;
+		background: #fBfBfB;
+		&_header{
+			width: 100%;
+		}
+		&_text{
+			p{
+				white-space: pre-wrap;
+				word-wrap: break-word;
+				font-size: 14px;
+				line-height: 20px;
+			}
+		}
+		&_video{
+			margin-top: 10px;
+			background: black;
+		}
+	}
+	&-account{
+		&_link{
+			text-decoration: none;
+		}
+	}
+	&-avatar{
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		background: #D3D3D3;
+		overflow: hidden;
+		margin:{
+			top: 3px;
+			left: -58px;
+		}
+		float: left;
+		&-image{
+			width:100%;
+			height: 100%;
+		}
+	}
+	&-user{
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		word-wrap: normal;
+		&name{
+			color: #14171a;
+			font-size: 14px;
+			font-weight: bold;
+			&-tag{
+				font-size: .9em;
+			}
+		}
+		&tag{
+			font-size: 14px;
+			color: #657786;
+			b{
+				font-weight: normal;
+				&::before{
+					content: '@';
+				}
+			}
+		}
+	}
+}
+
+.video{
+	&-container{
+		border-radius: 5px;
+  	display: inline-block;
+  	overflow: hidden;
+  	position: relative;
+  	vertical-align: top;
+  	width: 100%;
+		max-width: 506px;
+		min-height: 275px;
+	}
+	&-player{
+	}
+}
+
+.post-link {
+	position: relative;
+	left: 270px;
+  display: inline-block;
+  margin: 0 0 15px;
+  padding: 0 15px;
+  background: lightblue;
+	border-color: #fff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4em;
+  transition: background .2s ease-in-out;
+
+  &:hover {
+    background: darken(lightblue, 10%);
+  }
+}
+
+.post-link-2 {
+	position: absolute;
+	top: 442px;
+	left: 470px;
+  display: inline-block;
+  margin: 0 0 15px;
+  padding: 0 15px;
+  background: lightblue;
+	border-color: #fff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4em;
+  transition: background .2s ease-in-out;
+
+  &:hover {
+    background: darken(lightblue, 10%);
+  }
+}
+
+
+.play{
+  background: rgba(255, 255, 255, 0.25);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+	&:hover{
+		background: rgba(200, 200, 200, 0.30);
+		path {
+			fill: lighten(#45b8ff, 5%);
+		}
+	}
+}
+span.text-placeholder{
+	display: inline-block;
+	width: 15%;
+}
+.text-placeholder{
+	display: block;
+	height: 12px;
+	margin: 4px 0;
+	width: 100%;
+	background: $placeholder;
+	&:nth-child(2){
+		width: 80%;
+	}
+	&:nth-child(3){
+		width: 60%;
+	}
+}
+.loading{
+	.card{
+		&-content{
+			&_video {
+				background: $placeholder;
+			}
+		}
+	}
+}
