@@ -1,7 +1,10 @@
-<h1>Timeline</h1>
- <%= link_to 'New post', new_post_path %>
+<h1>Feed</h1>
 
  <%= button_to "Logout", logout_path, method: :delete, class: "logout-button" %>
+
+ <div class ='post'>
+ <%= render 'form' %>
+ </div>
 
   <% @posts.reverse.each do |post| %>
     </br>

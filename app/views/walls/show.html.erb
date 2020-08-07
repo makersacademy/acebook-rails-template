@@ -1,8 +1,9 @@
 <h1><%=@wall.user.username%>'s Wall </h1>
- <%= link_to 'New post', new_post_path %>
  <%= button_to "Logout", logout_path, method: :delete, class: "buttons" %>
 
+ <div class = 'post'>
  <%= render 'form' %>
+ </div>
 
  <% @posts.reverse.each do |post| %>
    </br>
