@@ -2,17 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //
-// body {
-//   z-index: 1;
-// }
-// .fish-background {
-//   // width: 100%;
-//   // background-image: image-url('fish.jpg');
-// // background: url(asset_path 'fish.jpg')
-// // background:image_path("fish.jpg")
-// width: 100%;
-// z-index: -1;
-// }
+
 
 
 
@@ -55,4 +45,11 @@
 
 .container{
 	padding: 50px;
+}
+
+.login-control{
+	margin: auto;
+	// position: relative;
+	// display: block;
+	width: 35%;
 }
