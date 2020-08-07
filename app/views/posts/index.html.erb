@@ -1,7 +1,10 @@
 <% if flash[:messages] %>
   <h2><%= flash[:messages] %></h2>
 <% end %>
-<h1> Main Posts Page </h1>
+<div class="fish-feed-div">
+  <h1 class='fish-feed'> Fish Feed </h1>
+</div>
+
 <% @posts.each do |post| %>
 <div id="<%= post.id%>" class="card">
 	<div class="card-content">
@@ -14,10 +17,8 @@
           <!-- change the next line to name -->
         <%if logged_in? %>
 		  		<strong class="card-username"><%= link_to post.user.name, "/" + post.user.id.to_s %></strong>
-          <p> Wall: <%= link_to User.find(post.wall_id).name, "/" + post.wall_id.to_s %></p>
         <%else%>
           <strong class="card-username"><%= post.user.email %></strong>
-         <p>Wall: <%= User.find(post.wall_id).email %></p>
         <% end %>
 				<span>&rlm;</span>
 			</span>
@@ -29,14 +30,26 @@
     </span>
 			</a>
 		</header>
+    <%if logged_in? %>
+    <span class="card-usertag">
+      <p>Posted on wall: <%= link_to User.find(post.wall_id).name, "/" + post.wall_id.to_s
+      %></p>
+    </span>
+    <%else%>
+    <span class="card-usertag">
+     <p>Posted on wall: <%= User.find(post.wall_id).email %></p>
+   </span>
+
+    <% end %>
+
 		<article class="card-content_text">
 			<p><%= post.message %></p>
 		</article>
 <%# <!-- need to make sure of %>
-     <% if post.image.instance.image_file_name != nil %> 
+     <% if post.image.instance.image_file_name != nil %>
 		<div class="card-content_video">
 			<div class="video-container">
-         <%= image_tag post.image.url(:medium), class:'img-responsive'%> 
+         <%= image_tag post.image.url(:medium), class:'img-responsive'%>
 			</div>
 		</div>
      <% end %>
@@ -52,7 +65,4 @@
   <% end %>
 </div>
 </div>
-<% end %>
-<%= link_to new_post_path do %>
-  New post
 <% end %>
