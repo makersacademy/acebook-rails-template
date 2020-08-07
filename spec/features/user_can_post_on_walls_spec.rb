@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'features_helper'
 
-RSpec.feature "Timeline", type: :feature do
+RSpec.feature "Walls", type: :feature do
   scenario "Can submit posts and view them" do
     signup
     login

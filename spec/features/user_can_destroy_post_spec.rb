@@ -6,7 +6,6 @@ RSpec.feature "Destroy", type: :feature, js: true do
     signup
     login
     create_post
-    click_link "Back"
     click_link "Destroy"
     page.driver.browser.switch_to.alert.accept
     expect(page).not_to have_content("Hello, world!")
