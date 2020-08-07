@@ -14,7 +14,6 @@
   end
 
   def create_post
-    click_link "New post"
     fill_in "post[message]", with: "Hello, world!"
     click_button "Create Post"
   end
