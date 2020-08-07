@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message).merge(user_id: current_user.id).merge(wall_id: session[:wall_id])
+    params.require(:post).permit(:message, :image).merge(user_id: current_user.id).merge(wall_id: session[:wall_id])
   end
 
 end

@@ -13,7 +13,7 @@ end
 gem 'bundler'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails'
 # Use postgresql as the database for Active Record
 
 # Use Puma as the app server
@@ -67,3 +67,5 @@ gem 'webpacker'
 gem 'bootstrap', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
+gem 'paperclip', '~> 4.2'
+gem 'simple_form'

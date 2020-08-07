@@ -12,6 +12,11 @@
 
 <% @posts.each do |post| %>
   <div id="<%= post.id%>" class="posts">
+
+  <% if post.image.instance.image_file_name != nil %>
+    <%= image_tag post.image.url(:medium), class:'img-responsive' %>
+  <% end %>
+
     <%= simple_format(post.message) %>
     <p><%= post.user.email %></p>
     <p><%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
