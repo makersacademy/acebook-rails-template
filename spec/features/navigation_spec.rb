@@ -5,13 +5,13 @@ RSpec.feature 'User', type: :feature do
     register_user(email = 'test1@test.com')
     visit '/'
     visit '/posts'
-    expect(page).to have_content('Main Posts Page')
+    expect(page).to have_content('Fish Feed')
   end
 
   scenario 'User can view main posts wall by clicking main post button from welcome screen when logged in' do
     visit '/'
     visit '/posts'
-    expect(page).to have_content('Main Posts Page')
+    expect(page).to have_content('Fish Feed')
   end
 
   scenario 'If user is logged in and visits root then it redirects to user wall' do
