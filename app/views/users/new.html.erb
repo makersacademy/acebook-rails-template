@@ -5,6 +5,13 @@
          <h1 class="h3 mb-3 font-weight-normal">Spawn a new Fish</h1>
       </div>
       <%= form_for @user do |f| %>
+     
+     <div class="form-label-group">
+         <div class="login-control">
+           <%= f.text_field :name, placeholder: 'Name', class: "input-field" %>
+         </div>
+      </div>
+     
       <div class="form-label-group">
          <div class="login-control">
                <%= f.text_field :email, placeholder: 'Email', class: "input-field" %>
@@ -13,7 +20,7 @@
 
       <div class="form-label-group">
          <div class="login-control">
-            <%= f.password_field :password, placeholder: 'Password', class: "input-field"%>
+            <%= f.password_field :password, placeholder: 'Password (6 - 10 chars)', class: "input-field"%>
          </div>
       </div>
       <%= submit_tag "Login", class: 'btn btn-lg btn-primary btn-block', class: "submit-button"%>

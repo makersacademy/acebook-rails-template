@@ -1,5 +1,8 @@
 <!DOCTYPE html>
+
 <html>
+<!-- <div class="background">
+  </div> -->
   <head>
     <title>Acebook</title>
 
@@ -18,12 +21,14 @@
       <form class="form-inline">
         <% if logged_in? %>
           <span class="navbar-text">
-            <%=current_user.email%>
+            <%=current_user.name%>
           </span>
           <div class="logout">
           <%= link_to "Log Out", '/logout', class:"btn btn-outline-success" %>
+          <%= link_to "My Wall", '/'+current_user.id.to_s, class:"btn btn-outline-success" %>
           </div>
         <%end%>
+          <%= button_to "Main Feed", '/posts', method: :get %>
       </form>
     </nav>
   
@@ -34,19 +39,19 @@
 
   <body>
 
+
     <%= yield %>
 
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: [:alert, alert_for(name)]%>
-    <% end %> 
+    <%= content_tag :div, msg, class: [:alert, alert_for(name)]%>
+    <% end %>
 
-    <style type="text/css">
-      <%= raw Rails.application.assets['application.css'].to_s %>
-    </style>
-    <script type="text/javascript">
-      <%= raw Rails.application.assets['application.js'].to_s %>
-    </script>
-    <!-- <embed src="path/to/background.mp3" autostart="true" loop="true" hidden="true"><embed> -->
-  
+    <!-- <div style="background-image: url('sea-background.jpg'); height: 400px; width: 400px;"></div> -->
+
+
+
+
+
   </body>
+
 </html>

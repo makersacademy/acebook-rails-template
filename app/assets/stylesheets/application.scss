@@ -10,20 +10,27 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
- */
- @import "bootstrap/scss/bootstrap";
+ // *= require_tree .
+ // *= require_self
+ // */
 
- html{
-   background-color:#000;
-   color:#000;
-   overflow-x:hidden;
- }
+
+@import "bootstrap";
+html {
+    // background-color:#fff;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+// above is bubbles, below is other...
+body {
+    background-image: url('sea-background.jpg');
+    background-size: cover;
+    color: white;
+}
+
 
  .logout{
    padding-left: 10px;
    padding-right: 10px;
  }
-
- 
