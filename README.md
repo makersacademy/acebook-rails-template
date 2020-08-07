@@ -8,11 +8,11 @@ This project was built using Agile practices and was the first time all members 
 
 Getting Started:
 ----------------
-Git pull
-bundle
-brew install imagemagick
-rails db:reset
-rails db:migrate
+* Git pull
+* bundle
+* brew install imagemagick
+* rails db:reset
+* rails db:migrate
 
 Running Tests:
 --------------
