@@ -1,11 +1,19 @@
 class PostsController < ApplicationController
+  skip_before_action :authorized, only: [:index]
+
   def new
     @post = Post.new
   end
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    redirect_to '/' + session[:wall_id]
+  end
+
+  def show
+    session[:wall_id] = params[:user_id]
+    @time = Time.new
+    @posts = Post.where(wall_id: session[:wall_id]).reverse 
   end
 
   def index
@@ -23,23 +31,23 @@ class PostsController < ApplicationController
       flash.now[:messages] = "Not possible. Message has not been changed"
       render :edit
     elsif Time.now - 10.minutes > @post.created_at
-      redirect_to posts_url
+      redirect_to '/' + session[:wall_id]
     else
       @post.update_attributes(post_params)
-      redirect_to posts_url
+      redirect_to '/' + session[:wall_id]
     end
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.delete
-    redirect_to posts_url
+    redirect_to '/' + session[:wall_id]
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message).merge(user_id: current_user.id)
+    params.require(:post).permit(:message).merge(user_id: current_user.id).merge(wall_id: session[:wall_id])
   end
 
 end

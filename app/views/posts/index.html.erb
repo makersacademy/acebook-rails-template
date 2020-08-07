@@ -1,8 +1,13 @@
+
+
 <% if flash[:messages] %>
   <h2><%= flash[:messages] %></h2>
 <% end %>
 
+<h1> Main Posts Page </h1>
+
 <% @posts.each do |post| %>
+                          
 <div id="<%= post.id%>" class="card">
 	<div class="card-content">
 		<header class="card-content_header">
@@ -11,11 +16,23 @@
 			<img src="//via.placeholder.com/250x250&text=Flan" alt="Flan" class="card-avatar">
 				<span class="card-user">
           <!-- change the next line to name -->
-				<strong class="card-username"><%= post.user.email %></strong>
+        <%if logged_in? %>
+		  		<strong class="card-username"><%= link_to post.user.name, "/" + post.user.id.to_s %></strong>
+          <p> Wall: <%= link_to User.find(post.wall_id).name, "/" + post.wall_id.to_s %></p> 
+        <%else%>
+     
+          <strong class="card-username"><%= post.user.email %></strong>
+         <p>Wall: <%= User.find(post.wall_id).email %></p>
+        <% end %>
+          
 				<span>&rlm;</span>
+          
 			</span>
 				<span class="card-usertag">
+          
 				<b><%= post.user.email %></b>
+  
+          
 			</span>
       <span class="card-usertag">
       <p><%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
@@ -26,6 +43,7 @@
 		<article class="card-content_text">
 			<p><%= post.message %></p>
 		</article>
+    
 <%# <!-- need to make sure of %>
     <%# <% if post.image.url %> %>
 		<div class="card-content_video">

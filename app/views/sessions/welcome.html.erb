@@ -1,6 +1,21 @@
-<h1>Welcome</h1>
+<div class="container">
+   <div class="form-signin">
+      <div class="text-center mb-4">
+         <%= image_tag('f-fish-logo.png', class: 'mb-4', width: 100, height: 100)%>
+         <h1 class="h3 mb-3 font-weight-normal">Welcome to Fishbook</h1>
+      </div>
+      <div class="form-label-group">
+         <div class="login-control">
+          <div class="button-wrapper">
+            <a href="/login" class="btn btn-secondary btn-lg" role="button">Login</a>
+          </div>
+         </div>
+      </div>
 
-<%= button_to "Login", '/login', method: :get%>
-<%= button_to "Sign Up", '/users/new', method: :get%>
-
-
+      <div class="form-label-group">
+        <div class="button-wrapper">
+             <a href="/users/new" class="btn btn-secondary btn-lg" role="button">Spawn</a>
+        </div>
+      </div>
+   </div>
+</div>

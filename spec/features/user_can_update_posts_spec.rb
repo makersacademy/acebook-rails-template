@@ -4,7 +4,6 @@ require 'rails_helper'
 RSpec.feature 'Timeline', type: :feature do
   scenario 'Can update posts and view them' do
     register_user
-    visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
@@ -18,7 +17,6 @@ RSpec.feature 'Timeline', type: :feature do
 
   scenario 'Cannot update posts with blank message' do
     register_user
-    visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'Hello World!'
     click_button 'Submit'
@@ -33,7 +31,6 @@ RSpec.feature 'Timeline', type: :feature do
   scenario 'Cannot update posts with same message' do
     register_user
     
-    visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'Hello World!'
     click_button 'Submit'
@@ -47,15 +44,10 @@ RSpec.feature 'Timeline', type: :feature do
 
   scenario 'Cannot update user posts belonging to other users' do
     register_user
-    visit '/posts'
     click_link 'New post'
     fill_in 'Message', with: 'Hello World!'
     click_button 'Submit'
-    visit '/users/new'
-    fill_in 'user[email]', with: 'test@test1.com'
-    fill_in 'user[password]', with: 'test12345'
-    click_button 'Create User'
-    visit '/posts'
+    register_user('test2@test.com')
     expect(page).not_to have_selector(:link_or_button, 'Update post')
   end
 

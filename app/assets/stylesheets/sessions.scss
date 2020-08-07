@@ -1,3 +1,62 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//
+
+
+
+
+
+.form-signin{
+	width:50%;
+	margin: auto;
+	background-color: rgba(164, 159, 159, 0.3);
+	position: relative;
+	max-width: 300px;
+}
+
+.form-label-group{
+	width: 90%;
+	margin: auto;
+	padding: 10px;
+}
+
+.form-control{
+	margin: auto;
+	width: 50%;
+}
+
+.form-signin{
+	padding: 10px;
+}
+
+.input-field{
+	text-align: center;
+	display: block;
+	margin: auto;
+}
+
+.submit-button{
+	width: 46.5%;
+	display: block;
+	margin: auto;
+	position: relative;
+}
+
+.container{
+	padding: 50px;
+}
+
+.login-control{
+	margin: auto;
+	// position: relative;
+	// display: block;
+	width: 70%;
+}
+
+.button-wrapper{
+  margin: auto;
+  width: 100px;
+  display: block;
+  text-align: center;
+}
