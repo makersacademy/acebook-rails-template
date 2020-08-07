@@ -5,7 +5,6 @@ RSpec.feature "Edit ", type: :feature do
     signup
     login
     create_post
-    click_link "Back"
     click_link "Edit"
     fill_in "post[message]", with: "Hello, world"
     click_button "Update Post"
@@ -19,7 +18,6 @@ RSpec.feature "Edit ", type: :feature do
     @post = Post.find(current_url.to_s.split("/")[-1].to_i)
     @post.created_at = 11.minutes.ago
     @post.save
-    click_link "Back"
     expect(page).not_to have_link("Edit")
 
   end

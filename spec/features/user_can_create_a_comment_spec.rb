@@ -6,7 +6,6 @@ RSpec.feature "Create_comment", type: :feature do
     signup
     login
     create_post
-    click_link "Back"
     create_comment
     expect(page).to have_content("I love this post!!!")
   end
