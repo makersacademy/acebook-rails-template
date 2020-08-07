@@ -7,7 +7,7 @@
 <% end %>
 ​
 <h2>You follow</h2>
-<% @followees.each do |followee| %>
+<% @followees.uniq.each do |followee| %>
   <p><%= followee.email %></p>
 <% end %>
 ​
