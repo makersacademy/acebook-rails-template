@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 
 <html>
-<!-- <div class="background">
-  </div> -->
+
   <head>
     <title>Acebook</title>
 
@@ -11,8 +10,8 @@
     <%= javascript_include_tag 'application' %>
     <%# see you on the flipper side %>
     <nav class = "navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <%=image_tag("f-fish-logo.jpg", width: "50", height: "50", class: "d-inline-block align-top", alt: "")%>
+      <a class="navbar-brand" href="/">
+        <%=image_tag("f-fish-logo.png", width: "50", height: "50", class: "d-inline-block align-top", alt: "")%>
           <span class="navbar-text">
             FishBook
           </span>
@@ -32,7 +31,7 @@
           <%= button_to "Main Feed", '/posts', method: :get %>
       </form>
     </nav>
-  
+
 
 
 
@@ -47,7 +46,6 @@
     <%= content_tag :div, msg, class: [:alert, alert_for(name)]%>
     <% end %>
 
-    <!-- <div style="background-image: url('sea-background.jpg'); height: 400px; width: 400px;"></div> -->
 
 
 

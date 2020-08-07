@@ -16,12 +16,10 @@
 
 @import "bootstrap";
 html {
-    // background-color:#fff;
     color: #fff;
     overflow-x: hidden;
 }
 
-// above is bubbles, below is other...
 body {
     background-image: url('sea-background.jpg');
     background-size: cover;
@@ -33,12 +31,3 @@ body {
     padding-right: 10px;
 }
 
-.form-wrapper {
-    width: 60%;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 40px;
-    border: 1px solid #eeefef;
-    border-radius: 3px;
-    color: black;
-}
