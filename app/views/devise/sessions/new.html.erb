@@ -2,12 +2,12 @@
 
   <div class="grid">
 
-    <h2>Log in</h2>
+    <h2>Log in</h2><br>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'form login'}) do |f| %>
       <div class="form__field">
         <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form__input", placeholder: "Username" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form__input", placeholder: "Email Address" %>
       </div>
 
       <div class="form__field">
@@ -165,7 +165,7 @@ a:hover {
 input {
   background-image: none;
   border: 0;
-  color: inherit;
+  color: #ea4c88;
   font: inherit;
   margin: 0;
   outline: 0;
