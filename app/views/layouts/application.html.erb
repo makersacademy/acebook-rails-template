@@ -24,12 +24,11 @@
             <%= image_tag current_user.image.url(:image), class: "avatar" %>
           </span>
           <div class="logout">
-          <%= link_to "Log Out", '/logout', class:"btn btn-outline-success" %>
-          <%= link_to "My Wall", '/'+current_user.id.to_s, class:"btn btn-outline-success" %>
+          <%= link_to "Log Out", '/logout', class:"btn btn-outline-primary" %>
+          <%= link_to "My Wall", '/'+current_user.id.to_s, class:"btn btn-outline-primary" %>
           </div>
         <%end%>
-          <%= button_to "Main Feed", '/posts', method: :get %>
-      </form>
+          <%= link_to "Fish Feed", '/posts', class:"btn btn-outline-primary" %>      </form>
     </nav>
 
 

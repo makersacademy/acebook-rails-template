@@ -104,9 +104,11 @@ body{
 
 .post-link {
 	position: relative;
-	left: 270px;
+	left: 200px;
+	top: 30px;
   display: inline-block;
   margin: 0 0 15px;
+	margin-bottom: 0;
   padding: 0 15px;
   background: lightblue;
 	border-color: #fff;
@@ -121,11 +123,12 @@ body{
 }
 
 .post-link-2 {
-	position: absolute;
-	top: 500px;
-	left: 470px;
+	position: relative;
+	 bottom: 15px;
+	 left: 330px;
   display: inline-block;
   margin: 0 0 15px;
+	margin-bottom: 0;
   padding: 0 15px;
   background: lightblue;
 	border-color: #fff;
@@ -180,7 +183,7 @@ span.text-placeholder{
 	height: 150px;
 }
 .fish-feed {
-	font-family: 'Patrick Hand', cursive;
+	font-family: 'Patrick Hand', sans-serif;
 		position: relative;
 		top: 70px;
 		text-align: center;
