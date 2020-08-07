@@ -21,7 +21,7 @@
         <% if logged_in? %>
           <span class="navbar-text">
             <%=current_user.name%>
-            <%= image_tag current_user.image.url(:image) %>
+            <%= image_tag current_user.image.url(:image), class: "avatar" %>
           </span>
           <div class="logout">
           <%= link_to "Log Out", '/logout', class:"btn btn-outline-success" %>

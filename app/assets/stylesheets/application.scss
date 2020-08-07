@@ -31,3 +31,19 @@ body {
     padding-right: 10px;
 }
 
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #D3D3D3;
+    overflow: hidden;
+    margin: {
+        top: 3px;
+        left: -58px;
+    }
+    float: left;
+    &-image {
+        width: 100%;
+        height: 100%;
+    }
+}
