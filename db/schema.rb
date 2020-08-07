@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20200806191919) do
     t.bigint "wall_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
     t.index ["wall_id"], name: "index_posts_on_wall_id"
   end
 
