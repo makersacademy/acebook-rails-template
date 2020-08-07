@@ -96,12 +96,15 @@ position: relative;
 
 .wallitem {
   text-align: center;
-  height: fit-content;
-  width: fit-content;
+  height: 200px;
+  width: 200px;
+  image-orientation: inherit;
   border-style: solid;
-  enable-background: inherit;
-  border-image: url(https://icon2.cleanpng.com/20180212/lqe/kisspng-smile-sunlight-clip-art-the-sun-5a82059a0dba46.5475653515184705540562.jpg);
+  background-repeat: no-repeat; 
+  background-position: center; 
+  position: relative; 
 }
+
 
 form {
   margin-left: 40%;
