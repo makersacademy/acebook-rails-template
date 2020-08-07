@@ -1,6 +1,7 @@
 <% if flash[:messages] %>
   <h2><%= flash[:messages] %></h2>
 <% end %>
+
 <div class="fish-feed-div">
   <h1 class='fish-feed'> Fish Feed </h1>
 </div>
@@ -11,7 +12,7 @@
 		<header class="card-content_header">
 			<a href="" class="card-account_link">
         <!-- add reference in next line to user profile picture -->
-        <%= image_tag current_user.image.url(:image), class: "card-avatar" %>
+        <%= image_tag post.user.image.url(:image), class: "card-avatar" %>
         <!-- <img src="//via.placeholder.com/250x250&text=Flan" alt="Flan" class="card-avatar"> -->
 				<span class="card-user">
           <!-- change the next line to name -->
@@ -56,6 +57,7 @@
     <%if (post.created_at + 1.hours + 10.minutes).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) && (current_user.id == post.user_id) %>
     <%= button_to edit_post_path(post.id), class: 'post-link', method: :get do %>
       <p>Update post</p>
+
     <% end %>
     <%if current_user.id == post.user_id %>
       <%= button_to post_path(post), class: 'post-link-2',method: :delete do %>

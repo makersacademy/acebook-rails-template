@@ -4,37 +4,79 @@
 
 <% if logged_in? %>
   <% if session[:wall_id] == current_user.id.to_s %>
-    <h1>Welcome to your wall, <%= User.find(session[:wall_id]).name %></h1>
+  <div class="fish-feed-div">
+    <h1 class='fish-feed'>Welcome to your wall, <%= User.find(session[:wall_id]).name %></h1>
+  </div>
+
   <%else%>
+  <div class="fish-feed-div">
     <h1>This wall belongs to <%= User.find(session[:wall_id]).name %></h1>
+  </div>
+
   <%end%>
 <%end%>
 
 <% @posts.each do |post| %>
-  <div id="<%= post.id%>" class="posts">
+<div id="<%= post.id%>" class="card">
+	<div class="card-content">
+		<header class="card-content_header">
+			<a href="" class="card-account_link">
+        <!-- add reference in next line to user profile picture -->
+        <%= image_tag post.user.image.url(:image), class: "card-avatar" %>
+        <!-- <img src="//via.placeholder.com/250x250&text=Flan" alt="Flan" class="card-avatar"> -->
+				<span class="card-user">
+          <!-- change the next line to name -->
+        <%if logged_in? %>
+		  		<strong class="card-username"><%= link_to post.user.name, "/" + post.user.id.to_s %></strong>
+        <%else%>
+          <strong class="card-username"><%= post.user.email %></strong>
+        <% end %>
+				<span>&rlm;</span>
+			</span>
+				<span class="card-usertag">
+				<b><%= post.user.email %></b>
+			</span>
+      <span class="card-usertag">
+      <p><%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
+    </span>
+			</a>
+		</header>
+    <%if logged_in? %>
+    <span class="card-usertag">
+      <p>Posted on wall: <%= link_to User.find(post.wall_id).name, "/" + post.wall_id.to_s
+      %></p>
+    </span>
+    <%else%>
+    <span class="card-usertag">
+     <p>Posted on wall: <%= User.find(post.wall_id).email %></p>
+   </span>
 
-  <% if post.image.instance.image_file_name != nil %>
-    <%= image_tag post.image.url(:medium), class:'img-responsive' %>
+    <% end %>
+
+		<article class="card-content_text">
+			<p><%= post.message %></p>
+		</article>
+<%# <!-- need to make sure of %>
+     <% if post.image.instance.image_file_name != nil %>
+		<div class="card-content_video">
+			<div class="video-container">
+         <%= image_tag post.image.url(:medium), class:'img-responsive'%>
+			</div>
+		</div>
+     <% end %>
+    <%if (post.created_at + 1.hours + 10.minutes).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) && (current_user.id == post.user_id) %>
+    <%= button_to edit_post_path(post.id), class: 'post-link', method: :get do %>
+      <p>Update post</p>
+
+    <% end %>
+    <%if current_user.id == post.user_id %>
+      <%= button_to post_path(post), class: 'post-link-2',method: :delete do %>
+        <p>Delete post</p>
+      <% end %>
+    <% end %>
   <% end %>
-
-    <%= simple_format(post.message) %>
-    <p><%= post.user.email %></p>
-    <p><%= (post.created_at + 1.hours).strftime('%d-%m-%y %H:%M:%S') %></p>
-      <%if (post.created_at + 1.hours + 10.minutes).strftime('%Y-%m-%d %H:%M:%S') > @time.to_formatted_s(:db) && (current_user.id == post.user_id) %>
-        <%= button_to edit_post_path(post.id), method: :get do %>
-          Update post
-        <% end %>
-      <% end %>
-
-      <%if current_user.id == post.user_id %>
-        <%= button_to post_path(post), method: :delete do %>
-          Delete post
-        <% end %>
-      <% end %>
-
-      
-  </div>
-
+</div>
+</div>
 <% end %>
 
 <%= link_to new_post_path do %>
