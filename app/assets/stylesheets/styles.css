@@ -130,6 +130,18 @@ position: relative;
   padding: 5px 10px;
 }
 
+.wallitem {
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  image-orientation: inherit;
+  border-style: solid;
+  background-repeat: no-repeat; 
+  background-position: center; 
+  position: relative; 
+}
+
+
 form {
   margin-left: 40%;
   font-family: 'Lucida Grande';
