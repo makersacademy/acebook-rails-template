@@ -1,5 +1,8 @@
 <!DOCTYPE html>
+
 <html>
+<!-- <div class="background">
+  </div> -->
   <head>
     <title>Acebook</title>
 
@@ -17,19 +20,19 @@
 
   <body>
 
+
     <%= yield %>
 
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: [:alert, alert_for(name)]%>
-    <% end %> 
+    <%= content_tag :div, msg, class: [:alert, alert_for(name)]%>
+    <% end %>
 
-    <style type="text/css">
-      <%= raw Rails.application.assets['application.css'].to_s %>
-    </style>
-    <script type="text/javascript">
-      <%= raw Rails.application.assets['application.js'].to_s %>
-    </script>
-    <!-- <embed src="path/to/background.mp3" autostart="true" loop="true" hidden="true"><embed> -->
-  
+    <!-- <div style="background-image: url('sea-background.jpg'); height: 400px; width: 400px;"></div> -->
+
+
+
+
+
   </body>
+
 </html>
