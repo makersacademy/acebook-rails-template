@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20200806141431) do
     t.integer "followee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
   end
 
   create_table "people", force: :cascade do |t|
@@ -51,4 +52,5 @@ ActiveRecord::Schema.define(version: 20200806141431) do
   end
 
   add_foreign_key "posts", "people"
+
 end
