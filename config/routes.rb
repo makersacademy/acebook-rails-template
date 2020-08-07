@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :follows
   resources :posts
   devise_for :people
   resources :people
