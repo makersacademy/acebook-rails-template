@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @person.email %>
-</p>
+<h1>Hey! <%= @person.email %></h1>
+<h2>Your followers are</h2>
+<% @followers.each do |follower| %>
+  <p><%= follower.email %></p>
+<% end %>
+​
+<h2>You follow</h2>
+<% @followees.uniq.each do |followee| %>
+  <p><%= followee.email %></p>
+<% end %>
+​
+<h2>Here's who you don't follow</h2>
+<% @not_following.each do |user| %>
+  <p><%= user.email %></p> <%= form_for user, url: { action: "update" } do |f| %>
+    <%= f.hidden_field :email %>
+    <%= f.submit "Add Friend" %>
+  <% end %>
+<% end %>
 
-<p>
-  <strong>Password:</strong>
-  <%= @person.password %>
-</p>
-
-<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Edit details', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>
