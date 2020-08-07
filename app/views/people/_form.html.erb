@@ -18,13 +18,19 @@
   </div>
 
   <div class="field">
-    
     <%= form.label :password %>
     <%# <%= form.text_field :password, id: :person_password %>
     <%= form.password_field :password, id: :person_password, minlength: 6, maxlength: 10 %>
   </div>
 
+   <div class="field">
+    <%= form.label :username %>
+    <%# <%= form.text_field :email, id: :person_email %>
+    <%= form.text_field :username, id: :username %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
+  
 <% end %>
