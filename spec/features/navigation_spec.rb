@@ -4,13 +4,13 @@ RSpec.feature 'User', type: :feature do
   scenario 'User can view main posts wall by clicking main post button from welcome screen when logged in' do
     register_user(email = 'test1@test.com')
     visit '/'
-    click_button 'Main Feed'
+    visit '/posts'
     expect(page).to have_content('Main Posts Page')
   end
 
   scenario 'User can view main posts wall by clicking main post button from welcome screen when logged in' do
     visit '/'
-    click_button 'Main Feed'
+    visit '/posts'
     expect(page).to have_content('Main Posts Page')
   end
 

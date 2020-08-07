@@ -10,7 +10,7 @@ RSpec.describe "users/new.html.erb", type: :view do
   it 'renders a form with a user email and password text field' do
     expect(rendered).to have_field('user_email')
     expect(rendered).to have_field('user_password')
-    expect(rendered).to have_button('Create User')
+    expect(rendered).to have_button('Spawn')
   end
 
 end

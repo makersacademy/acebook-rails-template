@@ -4,7 +4,9 @@ RSpec.feature 'User', type: :feature do
 
   scenario 'User can login and views own wall' do
     register_user
-    click_button 'Log Out'
+
+    visit '/logout'
+
     visit '/'
     click_button 'Login'
     fill_in 'email', with: 'test@test.com'
@@ -24,7 +26,7 @@ RSpec.feature 'User', type: :feature do
 
   scenario 'Password does not match db password returns error' do
     register_user
-    click_button 'Log Out'
+    visit '/logout'
     visit '/'
     click_button 'Login'
     fill_in 'email', with: 'test@test.com'
