@@ -59,8 +59,33 @@ I would like to see their email next to their post.
 ```
 ```
 As a User,
-So that I can see when a post was written,
-I would like to see a timestamp next to all posts.
+So that I can make comments on posts,
+I would like to make comments on all posts in the feed.
+```
+```
+As a User,
+So that I can have my own wall,
+I would like to have all my posts and their comments on my wall.
+```
+```
+As a User,
+So that I can express how I feel about the posts,
+I would like to be able to like some posts.
+```
+```
+As a User,
+So that I can change my mind about some posts,
+I would like to be able to unlike the posts that I previously liked.
+```
+```
+As a User,
+So that I know how people feel about the posts,
+I would like to be able to see how many likes are on each posts.
+```
+```
+As a User,
+So that I can see when the post was written,
+I would like to see how long ago the post was written next to all posts.
 ```
 ```
 As a Developer,
