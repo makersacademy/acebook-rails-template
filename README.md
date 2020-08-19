@@ -1,26 +1,26 @@
-# AceBook
 
-REQUIRED INSTRUCTIONS:
+Project Description
+===================
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+This is a team project to build a clone of Facebook using Ruby on Rails. 
+This project was built using Agile practices and was the first time all members of the team had worked with Rails.
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+Getting Started:
+----------------
+* Git pull
+* bundle
+* brew install imagemagick
+* rails db:reset
+* rails db:migrate
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+Running Tests:
+--------------
+Rspec
 
-## Quickstart
+Server:
+-------
 
-First, clone this repository. Then:
+Rails s
 
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
 
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
-```

@@ -1,0 +1,21 @@
+<% if flash[:messages] %>
+  <h2><%= flash[:messages] %></h2>
+<% end %>
+
+<%= form_for @post, html: { multipart: true } do |f| %>
+
+  <div class="form-label-group">
+     <div class="login-control">
+       <%= f.file_field :image, class: "input-field" %>
+     </div>
+  </div>
+
+ <div class="form-label-group">
+     <div class="login-control">
+       <%= f.text_area :message, placeholder: 'Enter your post...', class: "input-field", size: "40x5" %>
+     </div>
+  </div>
+
+  <%= submit_tag "Submit", class: 'btn btn-lg btn-primary btn-block', class: "submit-button"%>
+  
+<%end%>
