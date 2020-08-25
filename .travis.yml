@@ -1,8 +1,6 @@
 language: ruby
 rvm:
  - 2.5.0
-os: [
-  osx
-  ],
+os: osx
 services:
   - postgresql
