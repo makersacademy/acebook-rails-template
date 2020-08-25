@@ -2,7 +2,7 @@ services:
     - postgresql
 os: osx
 addons:
-    postgresql: '9.6'
+    postgresql: '12.3'
 
 before_script:
     - cp config/database.yml.travis config/database.yml
