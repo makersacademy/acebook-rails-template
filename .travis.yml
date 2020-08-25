@@ -1,6 +1,6 @@
 services:
     - postgresql
-os: osx
+
 addons:
     postgresql: '12.3'
 
