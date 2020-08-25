@@ -3,8 +3,8 @@ rvm:
   - 2.5.0  
 
 install: 
-  - gem update --system.
-  - gem install bundler
+  - gem uninstall bundler
+  - gem install bundler --version '1.17.2'
   - bundle install
 
 services: postgresql
