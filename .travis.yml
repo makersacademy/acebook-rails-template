@@ -3,6 +3,7 @@ rvm:
   - 2.5.0  
 
 install: 
+  - gem update --system.
   - gem install bundler
   - bundle install
 
