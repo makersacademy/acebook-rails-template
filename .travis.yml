@@ -1,22 +1,19 @@
-services:
-    - postgresql
-
-addons:
-    postgresql: '12.3'
-
-install:
-  - gem uninstall bundler
-  - gem install bundler --version '1.17.2'
-
-before_script:
-    - cp config/database.yml.travis config/database.yml
-
 language: ruby
-
 rvm:
-    - 2.5.0
+  - 2.5.0  
+os: osx
+
+install: 
+  - bundle install
+  - rails db:create
+  - rails db:migrate 
+services:
+  - postgresql
+
+before_script: 
+  - psql -U postgres -c 'CREATE DATABASE user_test;'   
+  - psql -U postgres -c 'CREATE DATABASE post_test;'
 
 script:
-    - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
-    - bundle exec rspec
-
+  - bundle exec rake    
+  - bundle exec rspec
