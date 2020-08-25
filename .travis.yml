@@ -2,8 +2,7 @@ language: ruby
 rvm:
   - 2.5.0  
 
-install: 
-
+install:
   - gem install bundler --version '1.17.2'
   - bundle install
 
