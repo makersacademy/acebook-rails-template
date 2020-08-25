@@ -9,5 +9,3 @@ script:
 - bundle exec rake db:test:prepare
 - bundle exec rake
 
-before_script:
-  - psql -c 'create database acebook_test;' -U postgres
