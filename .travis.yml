@@ -8,13 +8,8 @@ install:
   - bundle install
 
 services: postgresql
-
-addons: 
-  postgresql: 9.6
  
 before_script:
-  - psql -U postgres -c 'CREATE DATABASE user_test;'   
-  - psql -U postgres -c 'CREATE DATABASE post_test;'
   - rails db:create
   - rails db:migrate 
 
