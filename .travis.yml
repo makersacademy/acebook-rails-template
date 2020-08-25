@@ -9,8 +9,9 @@ install:
   - rails db:migrate 
 services:
   - postgresql
-
-before_script: 
+ 
+before_script:
+  - brew services start postgresql
   - psql -U postgres -c 'CREATE DATABASE user_test;'   
   - psql -U postgres -c 'CREATE DATABASE post_test;'
 
