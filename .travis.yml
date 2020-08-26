@@ -6,6 +6,9 @@ install:
  - bundle update --bundler
  - bundle install
 
+services:
+  - postgresql
+
 script:
  — bundle exec rails db:create
  — bundle exec rails db:migrate
