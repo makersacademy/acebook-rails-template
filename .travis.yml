@@ -13,9 +13,9 @@ script:
 - bundle exec rspec
 deploy:
   provider: heroku
-  app: intense-scrubland-58731
   api_key:
     secure: YtvGcmokaeSEuu5ihKRqmr0jcze7qHJFkeOOoIY+LtRZ0M59GPhe68R2+n3L3aoYgCQbKURv1XvSm2tSkWMIcsnYYNYlLb38wshHPmZoONk+anBBmQX/W13p4TjbLW4Q9hJglXGL6JkZxvlkKSrK420EWn2TvGs3n5zz11a+YHIi9mgdX5/pZaVHkLE6GsIop/oocXbLdQsRZjOcsLvAD7r0k3Aj5aXOLY7IgzPMn96C18D/C3VoR2O3KBkwTUZckD0RJKZaJy9PsvunZXGO+0o5+E0wgwtUXLNiiGA+dTmwCmqOtXs8689a/0yknzpl+2Ona2i9nlExRhA8hNftqqABnFsZbVyKuOgFqxi36BdO98ej4jVQ/1tDzEgUSuGMfCVoxsbSxlBc+l8s0PftGEktybtBTB5TUEqntx1VqU09zz+qswV+ntKfANkdst9ZCGO8mlnxiAwsROtL3MY8MdYhrVuDybu9ecVxbLmppO7SfDHK5JHqAkEKs7tRVYGXOkXMKh4/KJr2u84XcNhxN4myWVAyMs6hM1YuKRGDFARGbA9d4KZfHlyNcUXKaFTT9/I8H3XQWxjMAW2jnrVodihbjLp/KA1ZpPUOJRc/AlR65AZIpEqOXgX24eg3e7WJsLVI1S/xlGlg5BR0g5O24zLbnlCXwUW3yhmy15kRUcg=
     on:
     repo: harrylb14/acebook-onlyfoursandhorses
     skip_cleanup: 'true'
+  app: intense-scrubland-58731
