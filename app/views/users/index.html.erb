@@ -1,0 +1,9 @@
+<h1> Acebook </h1>
+
+<%= form_with model: @user, :url => {:action => "create"} do |form| %>
+ <%= form.text_field :first_name %>
+ <%= form.text_field :last_name %>
+ <%= form.text_field :email %>
+ <%= form.text_field :password %>
+ <%= form.submit %>
+<% end %>
