@@ -5,10 +5,21 @@ RSpec.feature "Sign Up", type: :feature do
     visit '/' 
     expect(page).to have_link("Sign up")
   end
-  scenario "sign up button directs to users/new" do
+  scenario "sign up button directs to /users/new" do
     visit '/'
     click_link("Sign up")
     expect(page).to have_content("Register as a User below")
     expect(current_path).to eq("/users/new")
+  end
+  scenario "sign up form registers user" do
+    visit '/users/new'
+    expect(page).to have_field("user[name]")
+    expect(page).to have_field("user[email]")
+    expect(page).to have_field("user[password]")
+    fill_in "user[name]", with: "Test Johnson"
+    fill_in "user[email]", with: "testjohnson@testmail.com"
+    fill_in "user[password]", with: "1234"
+    click_button 'Save User'
+    expect(page).to have_content("Hello Test Johnson")
   end
 end 
