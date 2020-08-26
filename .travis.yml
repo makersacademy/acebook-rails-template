@@ -16,6 +16,5 @@ deploy:
   api_key:
     secure: chs18R4haIPhMfhyXdMWSMrSvmUoDdl8n4QTU2Ij8vlQ7yKC4yUKdaO2tPKYWYPImUoy1ZbBHAP9FnXPzguOnOFfRmVLoL1JBtMiEU0rKVkHjMlo9k3qe5ZFu76NC7JnksedNIl+H3gzCMCvi+gtWZ8HlmuHI1+IER0iT0u0dmK0qkFCLkUM30xCrlaT35KlCdeI/3v7s15DUoPE2Umtjrc0BByJYpZOQCeO7E89G549yJ5cf2BdMGoKh+1CFCEZDTp/W09uRrrQLJ1WeH5HlVjtaNc/yO3dPazmT5oKShDdq3lxROhBJRJt48vtEC39cls9t7vWF61JfigIRT7iT9w3IdF9AhB2/6qe/4AJFLzmN1a5sO6PaAtQ1HyZxDwkpNyav0OxxkmA4gIIvJW9eSrbk8IgHW6INDC+Ya0I4V7EPO1zM0cXjW4tk9V7c5w1EaOO1JiemV8EYNHSO1MHcpeIfEzXeBio2odQPX2gqUTtFE7cmrbkGVfSmY5MlzUgfUjGZp60bw9ox0uE/2ClpvogohbiJduB+kfwQk3FeDyF+244Ggc+NsCpxUwqSYs9jrtVaE+ovL2KGm9/ao1BYaYVEoD70UbyKZJFQAR/PaXgoBXjHz0G9ohcL6nsEPxp553AyuIIkeNlW2XAJWAX5978bb8Zv/e7tQNlHtMbkuQ=
   on:     
-      repo: https://github.com/harrylb14/acebook-onlyfoursandhorses
+      repo: git@github.com:harrylb14/acebook-onlyfoursandhorses.git
       skip_cleanup: 'true'
-      
