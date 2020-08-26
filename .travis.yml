@@ -7,9 +7,13 @@ install:
  - bundle install
 
 services:
-  - postgresql
+ - postgresql
 
 script:
  — bundle exec rails db:create
+
+ script:
  — bundle exec rails db:migrate
+
+ script:
  - bundle exec rspec
