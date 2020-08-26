@@ -5,4 +5,10 @@ RSpec.feature "Sign Up", type: :feature do
     visit '/' 
     expect(page).to have_link("Sign up")
   end
+  scenario "sign up button directs to users/new" do
+    visit '/'
+    click_link("Sign up")
+    expect(page).to have_content("Register as a User below")
+    expect(current_path).to eq("/users/new")
+  end
 end 
