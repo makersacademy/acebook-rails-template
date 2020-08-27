@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "creating posts", type: :feature do
   scenario 'user can create posts' do
-    visit "/posts/new"
+    sign_up
+    click_link "New Post"
     fill_in "Message", with: "Test content"
     click_button "Submit"
     expect(page).to have_content("Test content")

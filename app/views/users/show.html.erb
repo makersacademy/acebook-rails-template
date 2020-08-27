@@ -1,4 +1,38 @@
 Hello <%= @user.name %>
 
+<p>
+  <strong>Add Post:</strong>
+</p>
+<%= form_with(model: [ @user, @user.posts.build ], local: true) do |form| %>
+  <%= form.label :message %>
+  <%= form.text_field :message %>
+
+  <%= form.submit "Submit" %>
+<% end %>
+
+<h2>Posts</h2>
+<table>
+<%= @user.posts %>
+<% @user.posts.each do |post| %>
+  <p>
+    <strong>Post:</strong>
+  </p>
+  <p>
+    <strong>User ID:</strong>
+    <%= post.user_id %>
+  </p>
+  <strong>Post ID:</strong>
+    <%= post.id %><br>
+  <tr>
+      <td><%= post.message %></td>
+      <td><%= link_to 'Show', user_post_path(@user) %></td>
+      <td><%= link_to 'Update', edit_user_post_path(@user) %></td>
+      <td><%= link_to 'Delete', user_post_path(@user),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    </table>
+<% end %>
+
 <%= link_to 'Edit User', edit_user_path(@user) %>
 <%= link_to 'Delete User', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>

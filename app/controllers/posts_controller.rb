@@ -10,9 +10,9 @@
   end
 
   def create
-    @post = Post.create(post_params)
-    @post.save
-    redirect_to @post
+    @user = User.find(params[:user_id])
+    @post = @user.posts.create(post_params)
+    redirect_to user_path(@user)
   end
 
   def index
@@ -24,6 +24,7 @@
   end
 
   def update
+    @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to @post
@@ -33,9 +34,10 @@
 end
 
   def destroy
-    @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
+    @post = @user.posts.find(params[:id])
     @post.destroy
-    redirect_to posts_path
+    redirect_to user_path(@user)
   end
 
   private
