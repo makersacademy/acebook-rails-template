@@ -19,4 +19,5 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(Post.order(created_at: :desc)[0].message).to eq("Hello, acebook-team2!")
   end
+  
 end
