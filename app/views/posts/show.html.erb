@@ -1,3 +1,11 @@
 <p>
 
 <%= @post.message %>
+<br>
+<%= link_to 'Update', edit_post_path() %>
+<%= link_to 'Delete', post_path(),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+</p>
+
+<%= link_to 'All posts', posts_path %>
