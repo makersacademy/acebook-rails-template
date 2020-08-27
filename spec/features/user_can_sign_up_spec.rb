@@ -16,17 +16,14 @@ RSpec.feature "Sign Up", type: :feature do
     expect(page).to have_field("user[name]")
     expect(page).to have_field("user[email]")
     expect(page).to have_field("user[password]")
-    fill_in "user[name]", with: "Test Johnson"
-    fill_in "user[email]", with: "testjohnson@testmail.com"
-    fill_in "user[password]", with: "1234"
-    click_button 'Save User'
+    sign_up
     expect(page).to have_content("Hello Test Johnson")
   end
   scenario 'users cannot sign up with invalid credentials' do
     visit '/users/new'
     fill_in "user[name]", with: "Big Suze"
     fill_in "user[password]", with: "Mental Posho"
-    click_button 'Save User'
+    click_button 'Create User'
     expect(page).to have_content "Please fill all fields."
     expect(page).to_not have_content "Hello Big Suze"
   end
