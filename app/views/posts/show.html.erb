@@ -2,7 +2,7 @@
 
 <%= @post.message %>
 <br>
-<%= link_to 'Update', edit_user_post_path(@post) %>
+<%= link_to 'Update', edit_user_post_path(@user) %>
 <%= link_to 'Delete', [@post.user, @post],
                         method: :delete,
                         data: { confirm: 'Are you sure?' } %>

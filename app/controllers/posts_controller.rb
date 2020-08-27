@@ -1,5 +1,3 @@
-
-
   class PostsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
@@ -31,10 +29,10 @@
   end
 
   def update
-    # @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to user_post_path(@user)
     else
       render 'edit'
   end

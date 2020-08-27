@@ -1,6 +1,6 @@
 <h1>Edit Post</h1>
 
-<%= form_with(model: @user_post, :url => user_posts_path, local: true) do |form| %>
+<%= form_for [@user, @post], url: { controller: "posts", action: "update", user_id: @user.id}, method: :patch do |form| %>
 
   <% if @post.errors.any? %>
     <div id="error_explanation">
