@@ -6,12 +6,15 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+
   get '/home', to: 'users#show' #test
+
   get '/create_session', to: 'sessions#create'
+
   delete '/logout', to: 'sessions#destroy'
 
-  resources :users
-  resources :posts
+  resources :posts, :users
+
 
   root 'users#new'
 end
