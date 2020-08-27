@@ -8,7 +8,8 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
   end
-  scenario "Can submit posts and view them" do
+
+  scenario "Show the newest post first" do
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
