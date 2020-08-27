@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.serial :id
       t.text :first_name
       t.text :last_name
-      t.text :password
+      t.text :password_digest
       t.text :email
 
       t.timestamps
@@ -13,5 +13,6 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     execute 'ALTER TABLE users ALTER COLUMN last_name TYPE VARCHAR(60);'
     execute 'ALTER TABLE users ALTER COLUMN password TYPE VARCHAR(60);'
     execute 'ALTER TABLE users ALTER COLUMN email TYPE VARCHAR(60);'
+    execute 'ALTER TABLE users RENAME COLUMN password TO password_digest'
   end
 end
