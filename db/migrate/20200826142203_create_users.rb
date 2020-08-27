@@ -11,8 +11,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     end
     execute 'ALTER TABLE users ALTER COLUMN first_name TYPE VARCHAR(60);'
     execute 'ALTER TABLE users ALTER COLUMN last_name TYPE VARCHAR(60);'
-    execute 'ALTER TABLE users ALTER COLUMN password TYPE VARCHAR(60);'
+    execute 'ALTER TABLE users ALTER COLUMN password_digest TYPE VARCHAR(60);'
     execute 'ALTER TABLE users ALTER COLUMN email TYPE VARCHAR(60);'
-    execute 'ALTER TABLE users RENAME COLUMN password TO password_digest'
   end
 end

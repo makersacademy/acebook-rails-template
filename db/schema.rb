@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20200826142203) do
     t.serial "id", null: false
     t.string "first_name", limit: 60
     t.string "last_name", limit: 60
-    t.string "password", limit: 60
+    t.string "password_digest", limit: 60
     t.string "email", limit: 60
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

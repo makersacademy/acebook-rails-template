@@ -12,10 +12,10 @@ class UsersController < ApplicationController
     @user = User.new(get_params)
     @user.save
     p @user
-    if @user.id
+    if @user.created_at
       p 'I got here /1/'
       flash[:notice] = 'Successfully created user account'
-      redirect_to '/home'
+      redirect_to '/login'
     else
       p 'I got here /2/'
       flash[:danger] = 'Please check submitted information'
