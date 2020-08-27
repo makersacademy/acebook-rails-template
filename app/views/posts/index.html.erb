@@ -1,17 +1,37 @@
 
 
-<h1>Posts</h1>
-<%= link_to 'New post', new_post_path %>
+<h1>All Posts</h1>
+<%= link_to 'New post', new_user_post_path(@user) %>
 <table>
 
   <% @posts.each do |post| %>
     <tr>
       <td><%= post.message %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-      <td><%= link_to 'Update', edit_post_path(post) %></td>
-      <td><%= link_to 'Delete', post_path(post),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+      <%= puts post.id %>
+      <%= post.id %>
+      <td><%= link_to 'Show', user_post_path(post.user_id, post.id)%></td>
+        <td><%= link_to 'Delete', [post.user, post],
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
+
+
+<h2>Your Posts</h2>
+<table>
+<% @user.posts.each do |post| %>
+  <p>
+    <strong>Post:</strong>
+  </p>
+  <strong>Post ID:</strong>
+    <%= post.id %><br>
+  <tr>
+      <td><%= post.message %></td>
+      <td><%= link_to 'Show', user_posts_path(@user) %></td>
+      <td><%= link_to 'Delete', user_posts_path(@user),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    </table>
+<% end %>

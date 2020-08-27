@@ -1,6 +1,6 @@
 <h1>Edit Post</h1>
 
-<%= form_with(model: @post, local: true) do |form| %>
+<%= form_with(model: @user_post, :url => user_posts_path, local: true) do |form| %>
 
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -23,4 +23,4 @@
 
 <% end %>
 
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', user_posts_path %>

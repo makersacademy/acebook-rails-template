@@ -1,4 +1,15 @@
-<%= form_with @user_path do |form| %>
+<%# <%= form_with model: posts do |form| %>
+  <%# <%= form.label :message %> %>
+  <%# <%= form.text_field :message %> %>
+
+  <%# <%= form.submit "Submit" %> %>
+<%# <% end %> %> %>
+
+<%# new form %>
+<p>
+  <strong>Add Post:</strong>
+</p>
+<%= form_with(model: [ @user, @user.posts.build ], local: true) do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
 
