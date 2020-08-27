@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+    font-family: 'Titillium Web', sans-serif;
+    padding: 0;
+    margin: 0;
+}

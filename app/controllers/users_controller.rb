@@ -11,11 +11,19 @@ class UsersController < ApplicationController
   def create
     @user = User.new(get_params)
     @user.save
-    session[:id] = @user.id
-    redirect_to '/login'
+    p @user
+    if @user.id
+      p 'I got here /1/'
+      flash[:notice] = 'Successfully created user account'
+      redirect_to '/home'
+    else
+      p 'I got here /2/'
+      flash[:danger] = 'Please check submitted information'
+      redirect_to '/users/new'
+    end
   end
 
-private
+  private
 
   def get_params
     params.fetch(:user, {}).permit(:first_name, :last_name, :password, :password_confirmation, :email)
