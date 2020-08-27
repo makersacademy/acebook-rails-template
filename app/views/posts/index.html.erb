@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %><p>
+  <p><%= post.message.gsub(/(\r)?\n/, "<br/>").html_safe %><p>
   <p> <%= post.created_at.strftime('%k:%M %d/%m/%Y') %><p>
     <br>
 <% end %>
@@ -7,3 +7,6 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+
+<br>
