@@ -17,7 +17,7 @@ require 'rails_helper'
 
 #     it 'creates a post' do
 #       post :create, params: { post: { message: 'Hello, world!' } }
-#       expect(Post.find_by(message: 'Hello, world!')).to be 
+#       expect(Post.find_by(message: 'Hello, world!')).to be
 #     end
 #   end
 

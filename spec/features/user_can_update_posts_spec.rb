@@ -13,5 +13,5 @@ RSpec.feature 'Posts', type: :feature do
     click_button 'Update Post'
     expect(page).not_to have_content('Test')
     expect(page).to have_content('Something else')
-  end  
+  end
 end

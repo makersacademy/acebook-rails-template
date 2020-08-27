@@ -2,3 +2,9 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 Style/BlockComments:
   Enabled: false
+Style/ExpandPathArguments:
+  Enabled: false
+Documentation:
+  Enabled: false
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
