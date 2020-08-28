@@ -19,3 +19,9 @@
     padding: 0;
     margin: 0;
 }
+
+body {
+    background: rgb(247,247,247);
+    background: linear-gradient(176deg, rgba(247,247,247,1) 6%, rgba(42,173,168,1) 11%, rgba(125,39,64,1) 99%, rgba(190,105,125,1) 100%);
+    background-repeat: no-repeat;
+}
