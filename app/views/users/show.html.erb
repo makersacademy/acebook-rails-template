@@ -3,3 +3,4 @@ Hello <%= @user.name %>
 <%= link_to 'See Posts', user_posts_path(@user) %>
 <%= link_to 'Edit User', edit_user_path(@user) %>
 <%= link_to 'Delete User', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Log out', logout_path, method: :delete %>
