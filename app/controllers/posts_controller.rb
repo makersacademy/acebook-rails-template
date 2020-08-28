@@ -24,8 +24,7 @@ class PostsController < ApplicationController
     p "/7"
     p current_user
     p "/8"
-    post_params.merge(user_id: current_user.id)
-    Post.create(post_params)
+    p @post = current_user.posts.create(post_params)
     redirect_to posts_url
   end
 

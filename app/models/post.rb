@@ -1,3 +1,4 @@
 class Post < ApplicationRecord
-  belongs_to :user
+  has_one :user
+  belongs_to :users_post
 end
