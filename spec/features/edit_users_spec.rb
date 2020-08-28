@@ -15,7 +15,7 @@ feature 'editing users' do
     click_link 'Edit User'
     fill_in 'user[name]', with: 'Edit Johnson'
     fill_in 'user[email]', with: 'Editjohnson@testmail.com'
-    fill_in 'user[password]', with: '1234'
+    fill_in 'user[password]', with: '123456'
     click_button 'Update User'
     expect(page).to have_content 'Hello Edit Johnson'
   end

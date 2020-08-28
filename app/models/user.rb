@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   has_many :posts
-  validates :name, presence: { message: 'Please fill all fields.' }
-  validates :email, presence: { message: 'Please fill all fields.' }
-  validates :password, presence: { message: 'Please fill all fields.' }
+  has_secure_password
+  before_save { self.email = email.downcase }
+  validates :name, presence: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+  validates :password, presence: true, length: { minimum: 6 }
 end

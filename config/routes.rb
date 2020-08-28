@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+
+
   get 'welcome/index'
   # get '/posts/new', to: 'posts#new'
   # post '/posts/create', to: 'posts#create'
