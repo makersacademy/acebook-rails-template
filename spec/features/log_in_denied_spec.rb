@@ -10,4 +10,10 @@ RSpec.feature 'log in denied' do
     click_button 'Log in'
     expect(page).to have_content('Invalid email/password combination')
   end
+  scenario 'cannot sign up with already used email' do
+    sign_up
+    click_link('Log out')
+    sign_up
+    expect(page).to have_content('Email has already been taken')
+  end
 end
