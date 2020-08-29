@@ -64,3 +64,15 @@ textarea {
     width: 50%;
     height: 150px;
 }
+
+.registration-form {
+    margin: auto;
+    width: 50%;
+    padding: 100px;
+}
+
+.login-form {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
