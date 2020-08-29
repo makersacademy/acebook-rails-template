@@ -1,5 +1,5 @@
 <div class="login-form">
-  <div>Please enter your login credentials below:<div>
+  <div>Please enter your login credentials below:</div>
   <div>
     <%= form_with(url: login_path, scope: :session, local: true) do |form| %>
 
@@ -15,7 +15,7 @@
       </div>
 
     <% end %>
-    <div>
+  </div>
 
 
   <div class="danger">
@@ -25,4 +25,5 @@
   <div class="notice">
     <%= flash[:notice] %>
   </div>
+
 </div>
