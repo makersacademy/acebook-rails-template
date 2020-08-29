@@ -1,18 +1,36 @@
-<%= current_user.posts.count <= 0 ?  "Make your first post!" : "You have made " + current_user.posts.count.to_s + " posts" %>
-<div style="margin-top: 10px">
-<% @posts.each do |post| %>
-  <%= post.get_owner %>
-  <p><%= post.message.gsub(/(\r)?\n/, "<br/>").html_safe %><p>
-  <p> <%= post.created_at.localtime.strftime('%k:%M %d/%m/%Y') %><p>
-    <br>
-<% end %>
+<div>
+  <%= current_user.posts.count <= 0 ?  "Make your first post!" : "You have made " + current_user.posts.count.to_s + " posts" %>
+  <br/>
+  <div class="row">
+    <div class="column left">
+      <p><-- Shortcuts go here --></p>
+      <h2>Your shortcuts</h2>
+    </div>
+    <div class="column middle">
+      <h2>Global posts feed</h2>
+      <div id="form">
+      <%= form_with(scope: :post, url: '/posts') do |form| %>
+        Create a new post
+        <br/>
+        <%= form.text_area :message %>
+        <br/>
+        <%= form.submit "Submit" %>
+      <% end %>
+      </div>
 
+      <p> <% @posts.each do |post| %>
+         <p> <%= post.get_owner %> posted: </p>
+        <p><%= post.message.gsub(/(\r)?\n/, "<br/>").html_safe %><p>
+        <p> <%= post.created_at.localtime.strftime('%k:%M %d/%m/%Y') %><p>
+      <br>
+      <% end %> </p>
+    </div>
+    <div class="column right">
+      <h2>Contacts</h2>
+      <p><-- Your contacts go here --></p>
+    </div>
+  </div>
 
-<%= form_with(scope: :post, url: '/posts') do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
-  <%= form.submit "Submit" %>
-<% end %>
 </div>
 
 <br>
