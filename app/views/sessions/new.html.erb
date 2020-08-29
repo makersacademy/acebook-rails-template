@@ -6,12 +6,12 @@
 
       <div class="actions">
         <%= form.label :email %>
-        <%= form.email_field :email %>
+        <%= form.email_field :email, id: 'email' %>
 
         <%= form.label :password %>
-        <%= form.password_field :password %>
+        <%= form.password_field :password, id: 'password' %>
 
-        <%= form.submit "Log in"%>
+        <%= form.submit "Log in", id: 'Login' %>
       </div>
 
     <% end %>

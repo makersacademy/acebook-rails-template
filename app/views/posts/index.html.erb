@@ -12,7 +12,7 @@
       <%= form_with(scope: :post, url: '/posts') do |form| %>
         Create a new post
         <br/>
-        <%= form.text_area :message %>
+        <%= form.text_area :message, id: 'message_content' %>
         <br/>
         <%= form.submit "Submit" %>
       <% end %>

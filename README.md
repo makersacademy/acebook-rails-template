@@ -1,16 +1,11 @@
 # AceBook
 
-REQUIRED INSTRUCTIONS:
+### To run tests
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: https://trello.com/b/HVRrhmGs/acebook-project-team-2
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+In CLI create the databases: 
+`bin/rails db:create` or `rails db:create`
+To migrate tables for test environment:
+`bin/rails db:migrate RAILS_ENV=test` or `rails db:migrate RAILS_ENV=test`
 
 ## Quickstart
 
