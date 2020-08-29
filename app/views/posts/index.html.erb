@@ -1,12 +1,18 @@
+<%= current_user.posts.count <= 0 ?  "Make your first post!" : "You have made " + current_user.posts.count.to_s + " posts" %>
+<div style="margin-top: 10px">
 <% @posts.each do |post| %>
+  <%= post.get_owner %>
   <p><%= post.message.gsub(/(\r)?\n/, "<br/>").html_safe %><p>
   <p> <%= post.created_at.localtime.strftime('%k:%M %d/%m/%Y') %><p>
     <br>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
 
+<%= form_with(scope: :post, url: '/posts') do |form| %>
+  <%= form.label :message %>
+  <%= form.text_area :message %>
+  <%= form.submit "Submit" %>
+<% end %>
+</div>
 
 <br>
