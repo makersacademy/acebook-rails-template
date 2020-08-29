@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 20200828164120) do
 
   create_table "posts", force: :cascade do |t|
     t.string "message"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -31,8 +33,12 @@ ActiveRecord::Schema.define(version: 20200828164120) do
   end
 
   create_table "users_posts", id: false, force: :cascade do |t|
-    t.integer "user"
-    t.integer "post"
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_users_posts_on_post_id"
+    t.index ["user_id"], name: "index_users_posts_on_user_id"
   end
 
+  add_foreign_key "users_posts", "posts"
+  add_foreign_key "users_posts", "users"
 end

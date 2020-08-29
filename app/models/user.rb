@@ -1,7 +1,5 @@
 class User < ApplicationRecord
-
-  has_many :users_posts
-  has_many :posts, through: :users_posts
+  has_many :posts, dependent: :destroy
 
   validates :first_name, presence: true
   EMAIL_FORMAT = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
