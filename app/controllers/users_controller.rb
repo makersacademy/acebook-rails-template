@@ -13,7 +13,8 @@ class UsersController < ApplicationController
     @user.save
     if @user.created_at
       flash[:notice] = 'Successfully created user account'
-      redirect_to '/login'
+      session[:id] = @user.id
+      redirect_to '/posts'
     else
       flash[:danger] = 'Please check submitted information'
       redirect_to '/users/new'
