@@ -24,10 +24,10 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if !@post.updatable? && (@post.user_id == current_user.id)
-      flash[:alert] = 'Ten minutes have elapsed since the post was created. It can no longer be updated'
+      flash[:alert] = "#{@post.update_time} seconds have elapsed since the post was created. It can no longer be updated"
     elsif @post.updatable? && (@post.user_id != current_user.id)
       flash[:alert] = 'Only the owner of the post may edit the post'
-    else
+    elsif @post.updatable? && (@post.user_id == current_user.id)
       @post.update(message: post_params['message'])
     end
     reload_page
