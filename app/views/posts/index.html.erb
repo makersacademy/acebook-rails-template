@@ -5,11 +5,15 @@
 
     <div class="column left">
       <p><-- Shortcuts go here --></p>
-      <h2>Your shortcuts</h2>
+      <div id="subtitle">
+        Your shortcuts
+      </div>
     </div>
 
     <div class="column middle">
-      <h2>Global posts feed</h2>
+      <div id="subtitle">
+        Global posts feed
+      </div>
       <div id="form">
         <%= form_with(scope: :post, url: '/posts') do |form| %>
           Create a new post
@@ -29,7 +33,7 @@
             <%= form_with(model: post) do |form| %>
               <%= form.text_area :message, id: 'message_content' %>
               <br/>
-              <%= form.submit "Submit" %>
+              <%= form.submit "Update" %>
             <% end %>
           </div>
         <% end %>
@@ -42,7 +46,9 @@
     </div>
 
     <div class="column right">
-      <h2>Contacts</h2>
+      <div id="subtitle">
+        Contacts
+      </div>
       <p><-- Your contacts go here --></p>
     </div>
   </div>
