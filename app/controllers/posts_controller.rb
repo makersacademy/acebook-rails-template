@@ -35,11 +35,12 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.user_id != current_user.id
-      flash[:alert] = 'Only the owner of the post may delete the post'
-    elsif @post.user_id == current_user.id
+    if @post.user_id == current_user.id
       flash[:alert] = 'Post deleted'
+      UsersPost.find(params[:id]).destroy
       @post.destroy
+    else
+      flash[:alert] = 'Only the owner of the post may delete the post'
     end
     reload_page
   end
