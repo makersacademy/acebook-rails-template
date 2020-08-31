@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
 
-  MAX_TIME_TO_UPDATE = 6
+  MAX_TIME_TO_UPDATE = 600
 
   def owner
     User.find(user_id).first_name

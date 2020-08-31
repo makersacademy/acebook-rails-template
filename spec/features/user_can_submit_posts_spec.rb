@@ -18,6 +18,7 @@ RSpec.feature 'Timeline', type: :feature do
     visit '/posts'
     fill_in 'message_content', with: 'Hello, world!'
     click_button 'Submit'
+    visit '/posts'
     fill_in 'message_content', with: 'Hello, acebook-team2!'
     click_button 'Submit'
     expect(Post.order(created_at: :desc)[0].message).to eq('Hello, acebook-team2!')

@@ -31,7 +31,7 @@
         <% if post.updatable? && (post.user_id == current_user.id) %>
           <div id="update_post">
             <%= form_with(model: post) do |form| %>
-              <%= form.text_area :message, id: 'message_content' %>
+              <%= form.text_area :message, id: 'update_content' %>
               <br/>
               <%= form.submit "Update" %>
             <% end %>
