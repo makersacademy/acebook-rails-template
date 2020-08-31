@@ -15,6 +15,5 @@ Rails.application.routes.draw do
 
   resources :posts, :users
 
-
   root 'users#new'
 end

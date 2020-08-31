@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    redirect_to '/posts' if current_user
     @user = User.new
   end
 
