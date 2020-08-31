@@ -76,3 +76,7 @@ textarea {
     width: 50%;
     padding: 10px;
 }
+
+#update_post textarea {
+    width: 25%
+}
