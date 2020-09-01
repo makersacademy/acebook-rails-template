@@ -4,10 +4,12 @@
 <br>
 <p> <%= @post.created_at.strftime('%B %d %Y, %l:%M%P') %></p>
 <br>
-<%= link_to 'Update', edit_user_post_path(@user) %>
-<%= link_to 'Delete', [@post.user, @post],
-                        method: :delete,
-                        data: { confirm: 'Are you sure?' } %>
+<% if @post.user.id == current_user.id %>
+  <%= link_to 'Update', edit_user_post_path(@user) %>
+  <%= link_to 'Delete', [@post.user, @post],
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' } %>
+<% end %>
 </p>
 
 <%= link_to 'All posts', user_posts_path %>
