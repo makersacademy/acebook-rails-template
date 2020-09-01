@@ -85,4 +85,4 @@ production:
   <<: *default
   database: acebook_production
   username: pgapp
-  password: <%= ENV['PGAPP_DATABASE_PASSWORD'] %>
+  password: "" 
