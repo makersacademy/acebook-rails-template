@@ -14,6 +14,8 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.1'
 gem 'rubocop-rails'
+gem "jquery-rails"
+gem 'jquery-ui-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'simplecov', require: false, group: :test

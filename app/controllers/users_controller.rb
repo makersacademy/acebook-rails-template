@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = 'Welcome to Acebook!'
+      # redirect_to user_posts_path(@user)
       redirect_to @user
     else
       render 'new'
