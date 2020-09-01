@@ -1,55 +1,57 @@
 <div class="registration-form">
-  <div class="title" style="float: left; height: 300px; margin-right: 20px;">
+  <div class="title">
     <h1>Acebook™</h1>
     <h3>Acebook™ is to Facebook as AskJeeves is to Google.<br/>
       Connect and share with people in your life.</h3>
   </div>
-  <%= form_with(model: @user, local: true) do |f| %>
 
-    <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <%= form_with(model: @user, local: true) do |f| %>
 
-        <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+
+      <% end %>
+    <div id="new_form_field">
+        <div>
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, id: 'first_name' %>
+        </div>
+        <br/>
+        <div>
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, id: 'last_name' %>
+        </div>
+        <br/>
+        <div>
+          <%= f.label :email %>
+          <%= f.text_field :email, id: 'email' %>
+        </div>
+        <br/>
+        <div>
+          <%= f.label :password %>
+          <%= f.password_field :password, id: 'password' %>
+        </div>
+        <br/>
+        <div>
+          <%= f.label :password_confirmation, "Confirmation" %>
+          <%= f.password_field :password_confirmation, id: 'password_confirmation' %>
+        </div>
+        <br/>
+        <div style="text-align: center">
+          <div>
+            <%= f.submit %>
+          </div>
+          Passwords must be between 6-10 characters</div>
       </div>
-
     <% end %>
-
-    <div>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, id: 'first_name' %>
-    </div>
-    <br/>
-    <div>
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, id: 'last_name' %>
-    </div>
-    <br/>
-    <div>
-      <%= f.label :email %>
-      <%= f.text_field :email, id: 'email' %>
-    </div>
-    <br/>
-    <div>
-      <%= f.label :password %>
-      <%= f.password_field :password, id: 'password' %>
-    </div>
-    <br/>
-    <div>
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, id: 'password_confirmation' %>
-    </div>
-    <br/>
-    <div>
-      <%= f.submit %>
-    </div>
-  <% end %>
-
-  Passwords must be between 6-10 characters
 
   <div class="danger">
     <%= flash[:danger] %>

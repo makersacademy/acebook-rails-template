@@ -8,7 +8,7 @@ RSpec.feature 'Timeline', type: :feature do
   end
 
   scenario 'Can submit posts and view them' do
-    expect(page).to have_content('Create a new post')
+    expect(page).to have_content('Make your first post!')
     fill_in 'message_content', with: 'Hello, world!'
     click_button 'Submit'
     expect(page).to have_content('Hello, world!')
@@ -18,6 +18,7 @@ RSpec.feature 'Timeline', type: :feature do
     visit '/posts'
     fill_in 'message_content', with: 'Hello, world!'
     click_button 'Submit'
+    visit '/posts'
     fill_in 'message_content', with: 'Hello, acebook-team2!'
     click_button 'Submit'
     expect(Post.order(created_at: :desc)[0].message).to eq('Hello, acebook-team2!')
