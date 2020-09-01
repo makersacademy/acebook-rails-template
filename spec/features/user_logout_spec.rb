@@ -1,15 +1,11 @@
 require 'rails_helper'
-require 'create_user_helper'
 
 RSpec.feature "Logout", type: :feature do
   scenario "successful logout" do
-    create_new_user
-    expect(page).to have_content("Successfully created user account")
-    fill_in "session[email]", with: "email@email.com"
-    fill_in "session[password]", with: "123456"
-    click_button "Log in"
-    expect(page).to have_content("Hi Some")
+    create_user
+    user_login
     click_link "Log out"
+    expect(page).to_not have_content("Logged in as: test")
     expect(page).to have_link("Log in")
   end
 end
