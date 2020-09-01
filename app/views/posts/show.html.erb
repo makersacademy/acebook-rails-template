@@ -1,6 +1,8 @@
 <p>
 
-<%= @post.message %>
+<p style="white-space: pre-line"><%= @post.message %></p>
+<br>
+<p> <%= @post.created_at.strftime('%B %d %Y, %l:%M%P') %></p>
 <br>
 <%= link_to 'Update', edit_user_post_path(@user) %>
 <%= link_to 'Delete', [@post.user, @post],
@@ -9,3 +11,5 @@
 </p>
 
 <%= link_to 'All posts', user_posts_path %>
+
+
