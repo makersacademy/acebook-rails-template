@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email])
     if @user&.authenticate(params[:session][:password])
       session[:id] = @user.id
-      redirect_to @user
+      redirect_to '/posts'
     else
       flash.now[:danger] = 'Please check the information submitted'
       render 'new'

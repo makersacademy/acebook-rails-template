@@ -1,22 +1,29 @@
-<%= form_with(url: login_path, scope: :session, local: true) do |form| %>
+<div class="login-form">
+  <div>Please enter your login credentials below:</div>
+  <div>
+    <%= form_with(url: login_path, scope: :session, local: true) do |form| %>
 
-  <div class="actions">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
 
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+      <div class="actions">
+        <%= form.label :email %>
+        <%= form.email_field :email, id: 'email' %>
 
-    <%= form.submit "Log in"%>
+        <%= form.label :password %>
+        <%= form.password_field :password, id: 'password' %>
+
+        <%= form.submit "Log in", id: 'Login' %>
+      </div>
+
+    <% end %>
   </div>
 
-<% end %>
 
+  <div class="danger">
+    <%= flash[:danger] %>
+  </div>
 
-<div class="danger">
-  <%= flash[:danger] %>
-</div>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
 
-<div class="notice">
-  <%= flash[:notice] %>
 </div>

@@ -1,12 +1,10 @@
 class CreateUsers < ActiveRecord::Migration[5.1]
   def change
-    create_table :users, id: false do |t|
-      t.serial :id
+    create_table :users do |t|
       t.text :first_name
       t.text :last_name
       t.text :password_digest
       t.text :email
-
       t.timestamps
     end
     execute 'ALTER TABLE users ALTER COLUMN first_name TYPE VARCHAR(60);'

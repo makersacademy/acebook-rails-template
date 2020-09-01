@@ -1,12 +1,60 @@
-<% @posts.each do |post| %>
-  <p><%= post.message.gsub(/(\r)?\n/, "<br/>").html_safe %><p>
-  <p> <%= post.created_at.localtime.strftime('%k:%M %d/%m/%Y') %><p>
-    <br>
-<% end %>
+<div>
+  <br/>
+  <div class="row">
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+    <div class="column left">
+      <p><-- Shortcuts go here --></p>
+      <div id="subtitle">
+        Your shortcuts
+      </div>
+    </div>
 
+    <div class="column middle">
+      <div id="subtitle">
+        Global posts feed
+      </div>
+      <%= current_user.posts.count <= 0 ? "Make your first post!" : "You have made " + current_user.posts.count.to_s + " posts" %>
+      <div id="form">
+        <%= form_with(scope: :post, url: '/posts') do |form| %>
+          <br/>
+          <%= form.text_area :message, id: 'message_content', placeholder: "What's on your mind, #{current_user.first_name}?" %>
+          <br/>
+          <%= form.submit "Submit" %>
+        <% end %>
+      </div>
+      <div class="notice"><%= flash[:alert] %></div>
+      <p>
+        <% @posts.each do |post| %>
+        <p> <%= post.owner %> posted: </p>
+        <p><%= post.message.gsub(/(\r)?\n/, "<br/>").html_safe %><p>
+        <% if post.updatable? && (post.user_id == current_user.id) %>
+          <div id="update_post">
+            <%= form_with(model: post) do |form| %>
+              <%= form.text_area :message, id: 'update_content' %>
+              <br/>
+              <%= form.submit "Update" %>
+            <% end %>
+          </div>
+        <% end %>
+        <p> <%= post.created_at.localtime.strftime('%k:%M') %> | <%= post.created_at.localtime.strftime('%d/%m/%Y') %><p>
+        <% if post.user_id == current_user.id %>
+        <div id="elete_post">
+          <%= link_to 'Delete post', post_path(post), method: :delete, data: { confirm: 'Confirm delete'} %>
+        </div>
+        <% end %>
+      <br/>
+
+      <% end %> </p>
+    </div>
+
+    <div class="column right">
+      <div id="subtitle">
+        Contacts
+      </div>
+      <p><-- Your contacts go here --></p>
+    </div>
+  </div>
+
+</div>
 
 <br>
