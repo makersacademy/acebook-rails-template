@@ -9,19 +9,13 @@ class CommentsController < ApplicationController
     @comments = Comment.order(created_at: :desc)
   end
 
-  def create
-    @comment = Comment.create(poster: current_user.id,
-                              message: comment_params['message'],
-                              post: Post.find(comment_params['post_id']))
-    reload_page
-  end
 
   def update
-    p comment_params['message']
-    p 'u wot'
     return if comment_params['message'].empty?
 
-    @comment = Comment.find(params[:id])
+    @comment = Comment.find(params['id'])
+    return 'INVALID ID' if @comment.nil?
+
     if !@comment.updatable? && (@comment.poster.to_i == current_user.id)
       flash[:alert] = "#{@comment.update_time} seconds have elapsed since the comment was created. It can no longer be updated"
     elsif @comment.updatable? && (@comment.poster.to_i != current_user.id)
@@ -31,6 +25,14 @@ class CommentsController < ApplicationController
     end
     reload_page
   end
+
+  def create
+    @comment = Comment.create(poster: current_user.id,
+                              message: comment_params['message'],
+                              post: Post.find(comment_params['post_id']))
+    reload_page
+  end
+
 
   def destroy
     @comment = Comment.find(params[:id])

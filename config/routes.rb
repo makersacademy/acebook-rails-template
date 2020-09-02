@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   delete '/posts/:id/comments', to: 'comments#destroy'
-
+  post '/posts/:post_id/comments/:id', to: 'comments#update'
+  get '/posts/:post_id/comments/:id', to: 'comments#show'
   resources :users
 
   resources :posts do

@@ -26,7 +26,7 @@
       <div class="notice"><%= flash[:alert] %></div>
 
           <% @posts.each do |post| %>
-        <div id="posts" style="border-radius: 25px; border: 1px solid black; padding: 10px;">
+        <div id="posts" style="border-radius: 25px; border: 1px solid black; padding: 10px; width: 50%;">
 
           <p> <%= post.owner %> posted: </p>
           <p><%= post.message.gsub(/(\r)?\n/, "<br/>").html_safe %></p>
@@ -38,10 +38,10 @@
 
               <% if comment.updatable? && (comment.poster.to_i == current_user.id) %>
                 <div id="update_comment">
-                  <%= form_with(scope: :comment) do |form| %>
+                  <%= form_with(scope: :comment, url: post_comment_path(post, id: comment.id), method: :update) do |form| %>
                     <%= form.text_area :message, id: 'update_comment' %>
                     <br/>
-                    <%= form.submit "Update" %>
+                    <%= form.submit "Update", method: :update%>
                   <% end %>
                 </div>
               <% end %>
