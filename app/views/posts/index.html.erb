@@ -19,7 +19,7 @@
           <br/>
           <%= form.text_area :message, id: 'message_content', placeholder: "What's on your mind, #{current_user.first_name}?" %>
           <br/>
-          <%= form.submit "Submit" %>
+          <%= form.submit 'Submit', :class => 'submit' %>
         <% end %>
       </div>
       <div class="notice"><%= flash[:alert] %></div>
