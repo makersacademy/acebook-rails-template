@@ -2,7 +2,7 @@
 
 ### To run tests
 
-In CLI create the databases: 
+In CLI create the databases:
 `bin/rails db:create` or `rails db:create`
 To migrate tables for test environment:
 `bin/rails db:migrate RAILS_ENV=test` or `rails db:migrate RAILS_ENV=test`
@@ -149,3 +149,4 @@ So that I can make my posts easier to read
 I want my posts appear to as I type them (line breaks should be preserved)
 13
 ```
+<img src="db_schema.png" />
