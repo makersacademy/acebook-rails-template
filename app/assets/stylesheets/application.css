@@ -32,12 +32,17 @@ header {
     z-index: 100;
 }
 a { color: black}
-a:visited { text-decoration: none; color:black; }
+a:link { text-decoration: none; color:white; }
+a:visited { text-decoration: none; color:white; }
 a:hover { text-decoration: none; color:blue; }
 a:focus { text-decoration: none; color:yellow; }
 a:hover, a:active { text-decoration: none; color:blue }
 
-#site_title {
+#site_title a:link,
+#site_title a:visited,
+#site_title a:hover,
+#site_title a:focus {
+  color: white;
   font-size: 30px;
   z-index: 100;
   float: left;
@@ -124,9 +129,12 @@ textarea {
 }
 
 .login-form {
-    margin: auto;
-    width: 25%;
-    padding: 10px;
+  border-radius: 1px;
+  border-color: black;
+  border-style: solid;
+  margin: auto;
+  width: 25%;
+  padding: 10px;
 }
 
 #update_post textarea {
