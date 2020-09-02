@@ -1,17 +1,20 @@
 <div class="login-form">
-  <div>Please enter your login credentials below:</div>
+  <div style="text-align: center">Please enter your login credentials below:</div>
   <div>
     <%= form_with(url: login_path, scope: :session, local: true) do |form| %>
 
 
-      <div class="actions">
+      <div class="actions", style="text-align: center">
+        <br/><br/>
         <%= form.label :email %>
         <%= form.email_field :email, id: 'email' %>
+        <br/><br/>
 
         <%= form.label :password %>
         <%= form.password_field :password, id: 'password' %>
+        <br/><br/>
 
-        <%= form.submit "Log in", id: 'Login' %>
+        <%= form.submit "Log in", :class => 'submit', id: 'Login' %>
       </div>
 
     <% end %>

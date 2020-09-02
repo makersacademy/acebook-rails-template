@@ -32,12 +32,17 @@ header {
     z-index: 100;
 }
 a { color: black}
-a:visited { text-decoration: none; color:black; }
+a:link { text-decoration: none; color:white; }
+a:visited { text-decoration: none; color:white; }
 a:hover { text-decoration: none; color:blue; }
 a:focus { text-decoration: none; color:yellow; }
 a:hover, a:active { text-decoration: none; color:blue }
 
-#site_title {
+#site_title a:link,
+#site_title a:visited,
+#site_title a:hover,
+#site_title a:focus {
+  color: white;
   font-size: 30px;
   z-index: 100;
   float: left;
@@ -50,7 +55,7 @@ a:hover, a:active { text-decoration: none; color:blue }
 }
 
 #subtitle {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 #new_form_field {
@@ -108,29 +113,48 @@ body {
 
 #form {
     margin: 10px;
+    margin-bottom: 20px;
 }
 
 textarea {
     width: 50%;
+    min-width: 50%;
     height: 150px;
 }
 
 .registration-form {
-    margin: auto;
-    width: 50%;
-    padding: 100px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .login-form {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
+  border-radius: 1px;
+  border-color: black;
+  border-style: solid;
+  margin: auto;
+  width: 25%;
+  padding: 10px;
 }
 
-#update_post textarea {
-    width: 25%
+#update_post {
+    margin: 10px;
 }
 
-#form {
-    margin-bottom: 20px;
+.submit {
+  color: white;
+  background-color: #ff7e00;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+#message_content {
+  font-size: 16px;
+}
+
+#post_count {
+  font-size: 16px;
 }
