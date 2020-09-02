@@ -8,4 +8,10 @@ class User < ApplicationRecord
   before_save { self.email = email.downcase }
   has_secure_password
 
+  def comments
+    count = 0
+    Comment.all.map { |comment| count += 1 if comment.poster.to_i == id }
+    count
+  end
+
 end

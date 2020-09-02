@@ -13,7 +13,8 @@
       <div id="subtitle">
         Global posts feed
       </div>
-      <%= current_user.posts.count <= 0 ? "Make your first post!" : "You have made " + current_user.posts.count.to_s + " posts" %>
+      <%= current_user.posts.count <= 0 ? "Make your first post!" : "You have made " + current_user.posts.count.to_s + " posts" %><br/>
+      <%= current_user.comments <= 0 ? "You have made no comments" : "You have made " + current_user.comments.to_s + " comments" %>
       <div id="form">
         <%= form_with(scope: :post, url: '/posts') do |form| %>
           <br/>
