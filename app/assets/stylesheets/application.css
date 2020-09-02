@@ -55,7 +55,7 @@ a:hover, a:active { text-decoration: none; color:blue }
 }
 
 #subtitle {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 #new_form_field {
@@ -113,10 +113,12 @@ body {
 
 #form {
     margin: 10px;
+    margin-bottom: 20px;
 }
 
 textarea {
     width: 50%;
+    min-width: 50%;
     height: 150px;
 }
 
@@ -137,12 +139,8 @@ textarea {
   padding: 10px;
 }
 
-#update_post textarea {
-    width: 25%
-}
-
-#form {
-    margin-bottom: 20px;
+#update_post {
+    margin: 10px;
 }
 
 .submit {
@@ -150,5 +148,13 @@ textarea {
   background-color: #ff7e00;
   border: none;
   padding: 5px 10px;
+  font-size: 16px;
+}
+
+#message_content {
+  font-size: 16px;
+}
+
+#post_count {
   font-size: 16px;
 }
