@@ -20,6 +20,6 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-
+  get 'auth/:provider/callback' => "sessions#create"
   root 'users#new'
 end
