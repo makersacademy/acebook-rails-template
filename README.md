@@ -18,6 +18,10 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+### Database schema
+
+<img src="db_schema.png" />
+
 ## User Stories
 
 ### Sign-up
@@ -29,7 +33,7 @@ I would like to be redirected to the homepage by default
 
 As a non-signed up user
 So that I am encouraged to sign-up
-I should be redirected to the homepage when I visit any other url -->
+I should be redirected to the homepage when I visit any other url
 
 As a new User
 So that I can sign up
@@ -41,7 +45,7 @@ I would only like valid email addresses to be accepted
 
 As a new User
 So that I can enter a secure password
-I would like to see an error message if my password is not valid - Password validation restrictions included on trello
+I would like to see an error message if my password is not valid
 
 As a newly signed up user
 So I can confirm my sign-up
@@ -139,7 +143,3 @@ As a user
 So that I know my comment has been deleted
 I want to see a confirmation message
 ```
-
-### Database schema
-
-<img src="db_schema.png" />
