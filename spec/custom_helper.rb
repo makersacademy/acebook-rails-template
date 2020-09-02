@@ -14,3 +14,8 @@ def user_login
   fill_in('password', with: '123123')
   click_button 'Login'
 end
+
+def log_out_and_in
+  click_link "Log out"
+  click_link "Log in"
+end
