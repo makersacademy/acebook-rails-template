@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
 
+  get 'auth/:provider/callback' => "sessions#create"
+
   resources :posts, :users
 
   root 'users#new'

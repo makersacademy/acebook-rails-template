@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20200828164120) do
     t.string "email", limit: 60
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider", limit: 120
+    t.string "uid", limit: 120
   end
 
   create_table "users_posts", id: false, force: :cascade do |t|
