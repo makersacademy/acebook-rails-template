@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
   
-  #get 'profile', to: "users##{@user.id}", as: 'profile'
+  get 'profile', to: 'users#show', as: 'profile'
 end
