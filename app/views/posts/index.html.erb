@@ -1,5 +1,6 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <%=post.created_at.to_formatted_s(:long)%>
 <% end %>
 
 <%= link_to new_post_path do %>
