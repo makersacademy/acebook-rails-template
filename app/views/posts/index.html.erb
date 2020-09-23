@@ -1,3 +1,13 @@
+<% if current_user %>
+  Logged in as <%= current_user.email %>.
+  <%= link_to 'Log Out', logout_path %>
+  <%= link_to 'My Profile', profile_path %>
+<% else %>
+  <%= link_to 'Sign Up', signup_path %> or 
+  <%= link_to 'Log In', login_path %>
+<% end %>
+
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
