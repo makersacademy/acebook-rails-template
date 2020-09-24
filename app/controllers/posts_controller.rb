@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.reverse_order
+    @comments = Comment.all
   end
 
   def edit

@@ -18,7 +18,14 @@
   <% if can? :destroy, post %>
     <%= link_to 'Delete', post_path(post), method: :delete, data: { :confirm => "Are you sure?" } %>
   <% end %>
-  
+  <%= link_to new_comment_path do %>
+    New comment
+  <% end %>
+  <% @comments.each do |comment| %>
+    <% if comment.post_id == post.id %>
+      <p><%= comment.comment %></p>
+    <% end %>
+  <% end %>
 <% end %>
 <br>
 <%= link_to new_post_path do %>
