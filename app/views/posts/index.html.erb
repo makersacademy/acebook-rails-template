@@ -21,9 +21,12 @@
   <% if can? :destroy, post %>
     <%= link_to 'Delete', post_path(post), method: :delete, data: { :confirm => "Are you sure?" } %>
   <% end %>
+
   <% if current_user %>
-    <form action="<%= new_comment_path %>">     
-    <input hidden value="<%= post.id %>" name="post_id">      <input type="Submit" value="Comment">  
+    <form action="<%= create_comment_path %>" method="post">     
+    <input hidden value="<%= post.id %>" name="post_id">    
+    <input name='comment'  type=text > 
+     <input type="Submit" value="Comment">  
     </form>
   <% end %>
 
