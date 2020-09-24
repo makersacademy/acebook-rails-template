@@ -18,12 +18,21 @@
   <% if can? :destroy, post %>
     <%= link_to 'Delete', post_path(post), method: :delete, data: { :confirm => "Are you sure?" } %>
   <% end %>
-  <%= link_to new_comment_path do %>
-    New comment
+  <% if current_user %>
+    <form action="<%= new_comment_path %>">     
+    <input hidden value="<%= post.id %>" name="post_id">      <input type="Submit" value="Comment">  
+    </form>
   <% end %>
+
   <% @comments.each do |comment| %>
     <% if comment.post_id == post.id %>
       <p><%= comment.comment %></p>
+      <% if can? :edit, comment %>
+        <%= link_to 'Edit', edit_comment_path(comment) %>
+      <% end %>
+      <% if can? :destroy, comment %>
+        <%= link_to 'Delete', comment_path(comment), method: :delete, data: { :confirm => "Are you sure?" } %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

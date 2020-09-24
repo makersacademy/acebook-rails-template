@@ -16,26 +16,7 @@
     <%= form.text_field :comment %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%
-=begin%>
- <%= form.text_field :user_id %> 
-<%
-=end%>
-    <input value=“<%= session[:user_id] %>” hidden name=user_id ></input>
-  </div>
-
-  <div class="field">
-    <%= form.label :post_id %>
-    <%
-=begin%>
- <%= form.text_field :post_id %> 
-<%
-=end%>
-    <input value=“<%= session[:user_id] %>” hidden name=post_id ></input>
-  </div>
-
+  <input hidden value="<%= params[:post_id] %>" name="post_id">
   <div class="actions">
     <%= form.submit %>
   </div>
