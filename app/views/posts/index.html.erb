@@ -21,11 +21,12 @@
 <% end %>
 
 <% @posts.each do |post| %>
+<div class= 'post-box'>
 <br>
  <% our_user = User.find(post[:user_id]) %>
- <%= our_user[:username] %>
-  <p><%= post.message %></p>
-  <%=post.created_at.to_formatted_s(:long)%>
+ <div class = 'username'><%= our_user[:username] %></div>
+  <div class = 'post'><%= post.message %></div>
+  <div class = 'time'><%=post.created_at.to_formatted_s(:long)%></div>
   <% if can? :edit, post %>
     <%= link_to 'Edit', edit_post_path(post) %>
   <% end %>
@@ -45,7 +46,7 @@
       </div>
     <% end %>
   <% end %>
-
+<hr>
   <% @comments.each do |comment| %>
     <% if comment.post_id == post.id %>
       <% our_user = User.find(comment[:user_id]) %>
@@ -57,8 +58,12 @@
       <% end %>
       <% if can? :destroy, comment %>
         <%= link_to 'Delete', comment_path(comment), method: :delete, data: { :confirm => "Are you sure?" } %>
-      <% end %>
+        <% end %>
     <% end %>
   <% end %>
+  </div>
+  <br>
+   <br>
 <% end %>
 <br>
+
