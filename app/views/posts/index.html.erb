@@ -8,6 +8,17 @@
   <%= link_to 'Log In', login_path %>
 <% end %>
 
+<% if current_user %>
+  <%= form_for @post do |form| %>        
+      <div class="field">
+        <%= form.label :message %>
+        <%= form.text_field :message %>
+      </div>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+<% end %>
 
 <% @posts.each do |post| %>
 <br>
@@ -48,8 +59,3 @@
   <% end %>
 <% end %>
 <br>
-<% if current_user %>
-  <%= link_to new_post_path do %>
-    New post
-  <% end %>
-<% end %>
