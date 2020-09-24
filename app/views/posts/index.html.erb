@@ -23,11 +23,16 @@
   <% end %>
 
   <% if current_user %>
-    <form action="<%= create_comment_path %>" method="post">     
-    <input hidden value="<%= post.id %>" name="post_id">    
-    <input name='comment'  type=text > 
-     <input type="Submit" value="Comment">  
-    </form>
+    <%= form_for @comment do |form| %>     
+      <input hidden value="<%= post.id %>" name="post_id">    
+      <div class="field">
+        <%= form.label :comment %>
+        <%= form.text_field :comment %>
+      </div>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
   <% end %>
 
   <% @comments.each do |comment| %>
