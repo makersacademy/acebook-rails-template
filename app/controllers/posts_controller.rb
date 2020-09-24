@@ -11,6 +11,8 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.reverse_order
     @comments = Comment.all
+    @comment = Comment.new( :post => @post )
+    @post = Post.new
   end
 
   def edit

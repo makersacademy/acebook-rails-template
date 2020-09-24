@@ -8,6 +8,17 @@
   <%= link_to 'Log In', login_path %>
 <% end %>
 
+<% if current_user %>
+  <%= form_for @post do |form| %>        
+      <div class="field">
+        <%= form.label :message %>
+        <%= form.text_field :message %>
+      </div>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+<% end %>
 
 <% @posts.each do |post| %>
 <br>
@@ -21,10 +32,18 @@
   <% if can? :destroy, post %>
     <%= link_to 'Delete', post_path(post), method: :delete, data: { :confirm => "Are you sure?" } %>
   <% end %>
+
   <% if current_user %>
-    <form action="<%= new_comment_path %>">     
-    <input hidden value="<%= post.id %>" name="post_id">      <input type="Submit" value="Comment">  
-    </form>
+    <%= form_for @comment do |form| %>     
+      <input hidden value="<%= post.id %>" name="post_id">    
+      <div class="field">
+        <%= form.label :comment %>
+        <%= form.text_field :comment %>
+      </div>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
   <% end %>
 
   <% @comments.each do |comment| %>
@@ -43,8 +62,3 @@
   <% end %>
 <% end %>
 <br>
-<% if current_user %>
-  <%= link_to new_post_path do %>
-    New post
-  <% end %>
-<% end %>
