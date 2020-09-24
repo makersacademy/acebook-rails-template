@@ -51,7 +51,7 @@
       <% our_user = User.find(comment[:user_id]) %>
       <%= our_user[:username] %>
       <p><%= simple_format comment.comment %></p>
-      <%=post.created_at.to_formatted_s(:long)%>
+      <%=comment.created_at.to_formatted_s(:long)%>
       <% if can? :edit, comment %>
         <%= link_to 'Edit', edit_comment_path(comment) %>
       <% end %>
