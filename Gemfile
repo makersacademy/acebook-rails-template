@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bcrypt'
+gem 'cancancan'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
