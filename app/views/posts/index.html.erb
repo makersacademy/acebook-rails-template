@@ -12,7 +12,7 @@
   <%= form_for @post do |form| %>        
       <div class="field">
         <%= form.label :message %>
-        <%= form.text_field :message %>
+        <%= form.text_area :message, :cols => 50, :rows => 5 %>
       </div>
       <div class="actions">
         <%= form.submit %>
@@ -38,7 +38,7 @@
       <input hidden value="<%= post.id %>" name="post_id">    
       <div class="field">
         <%= form.label :comment %>
-        <%= form.text_field :comment %>
+        <%= form.text_area :comment, :cols => 50, :rows =>2 %>
       </div>
       <div class="actions">
         <%= form.submit %>
