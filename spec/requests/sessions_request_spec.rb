@@ -19,16 +19,9 @@ end
 
 RSpec.feature "Sessions", type: :feature do
   scenario "GET /destroy works" do
-      visit "/signup"
-      fill_in "user[email]",	with: "test@test.com"
-      fill_in "user[password]",	with: "password"
-      fill_in "user[password_confirmation]",	with: "password"
-      click_on('Create User')
-      fill_in "email",	with: "test@test.com"
-      fill_in "password",	with: "password"
-      click_on('Login')
-      expect(page).to have_content("test@test.com")
+      signup_and_login
+      expect(page).to have_content("testuser")
       click_on('Log Out')
-      expect(page).not_to have_content("test@test.com")
+      expect(page).not_to have_content("testuser")
   end
 end
