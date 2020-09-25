@@ -9,7 +9,6 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "User can see date and time post was created" do
-    Time.zone = 'London'
     signup_and_login
     fill_in "Message", with: "Hello, world 1 !"
     click_button "Create Post"
