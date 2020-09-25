@@ -7,6 +7,7 @@ end
 
 gem 'bcrypt'
 gem 'cancancan'
+gem 'travis'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
