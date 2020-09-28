@@ -40,7 +40,6 @@ RSpec.feature "Timeline", type: :feature do
     signup_and_login
     fill_in "Message", with: "Hello, world 1 !"
     click_button "Create Post"
-    click_link "Delete"
     expect(page).to have_content("testuser")
   end
 end

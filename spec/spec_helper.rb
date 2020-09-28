@@ -117,3 +117,15 @@ def signup_and_login
     fill_in "password",	with: "password"
     click_on('Login')
   end
+
+  def signup_and_login_2
+    visit "/signup"
+    fill_in "user[username]", with: "user2"
+    fill_in "user[email]",	with: "user2@test.com"
+    fill_in "user[password]",	with: "password"
+    fill_in "user[password_confirmation]",	with: "password"
+    click_on('Create User')
+    fill_in "email",	with: "user2@test.com"
+    fill_in "password",	with: "password"
+    click_on('Login')
+  end
