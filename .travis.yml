@@ -14,8 +14,8 @@ before_script:
   - bundle exec rake db:migrate
 script:
   - bundle exec rspec
-deploy:
-  provider: heroku
-  app: octobook-team
-  api_key: $HEROKU_API
-  run: "rake db:migrate"
+# deploy:
+#   provider: heroku
+#   app: octobook-team
+#   api_key: $HEROKU_API
+#   run: "rake db:migrate"
