@@ -40,6 +40,8 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'rspec-rails'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
 end
 
 group :development do
