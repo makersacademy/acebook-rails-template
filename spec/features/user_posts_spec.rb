@@ -16,7 +16,7 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content(Time.now.to_formatted_s(:long))
   end
 
-  scenario "Editing note" do
+  scenario "Can edit a post" do
     signup_and_login
     fill_in "Message", with: "Hello, world 1 !"
     click_button "Create Post"
@@ -36,4 +36,10 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).not_to have_content("Hello, world 1!")
   end
 
+  scenario "Username appears next to post" do
+    signup_and_login
+    fill_in "Message", with: "Hello, world 1 !"
+    click_button "Create Post"
+    expect(page).to have_content("testuser")
+  end
 end
