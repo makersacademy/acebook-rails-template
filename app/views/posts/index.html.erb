@@ -53,10 +53,10 @@
       <p><%= simple_format comment.comment %></p>
       <%=comment.created_at.to_formatted_s(:long)%>
       <% if can? :edit, comment %>
-        <%= link_to 'Edit', edit_comment_path(comment) %>
+        <%= link_to 'Edit', edit_comment_path(comment), id: "edit-comment" %>
       <% end %>
       <% if can? :destroy, comment %>
-        <%= link_to 'Delete', comment_path(comment), method: :delete, data: { :confirm => "Are you sure?" } %>
+        <%= link_to 'Delete', comment_path(comment), method: :delete, data: { :confirm => "Are you sure?" }, id: "delete-comment" %>
       <% end %>
     <% end %>
   <% end %>

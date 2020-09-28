@@ -116,4 +116,9 @@ def signup_and_login
     fill_in "email",	with: "test@test.com"
     fill_in "password",	with: "password"
     click_on('Login')
-  end
+end
+
+def add_post(text)
+  fill_in "Message", with: text
+  click_button "Create Post"
+end
