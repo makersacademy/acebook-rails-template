@@ -15,6 +15,15 @@
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 #
+require 'simplecov'
+require 'simplecov-console'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console,
+  # Want a nice code coverage website? Uncomment this next line!
+  # SimpleCov::Formatter::HTMLFormatter
+])
+SimpleCov.start
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -96,4 +105,32 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  
+def signup_and_login
+  visit "/signup"
+  fill_in "user[username]", with: "testuser"
+  fill_in "user[email]",	with: "test@test.com"
+  fill_in "user[password]",	with: "password"
+  fill_in "user[password_confirmation]",	with: "password"
+  click_on('Create User')
+  fill_in "email",	with: "test@test.com"
+  fill_in "password",	with: "password"
+  click_on('Login')
+end
+
+def add_post(text)
+  fill_in "Message", with: text
+  click_button "Create Post"
+end
+
+def signup_and_login_2
+  visit "/signup"
+  fill_in "user[username]", with: "user2"
+  fill_in "user[email]",	with: "user2@test.com"
+  fill_in "user[password]",	with: "password"
+  fill_in "user[password_confirmation]",	with: "password"
+  click_on('Create User')
+  fill_in "email",	with: "user2@test.com"
+  fill_in "password",	with: "password"
+  click_on('Login')
 end
