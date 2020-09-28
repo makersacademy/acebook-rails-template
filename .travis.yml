@@ -1,22 +1,22 @@
 language: ruby
 cache:
-  - bundler
-  - yarn
+- bundler
+- yarn
 services:
-  - postgresql
+- postgresql
 before_install:
-  - nvm install --lts
-  - export TZ=Europe/London
+- nvm install --lts
+- export TZ=Europe/London
 before_script:
-  - bundle install --jobs=3 --retry=3
-  - yarn
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
+- bundle install --jobs=3 --retry=3
+- yarn
+- bundle exec rake db:create
+- bundle exec rake db:migrate
 script:
-  - bundle exec rspec
+- bundle exec rspec
 deploy:
   provider: heroku
   app: octobook-team
-  api_key: 
-    secure: $HEROKU_API
-  run: "rake db:migrate"
+  run: rake db:migrate
+  api_key:
+    secure: gkp7AvwoY0CxuGNdlUBIr56G4Bte98XMJB747U9WUww1/UI6CPK3Efw4G2yA3Rza1tl87zB2p3K25v2JhlwkOIGrWA9C4X48V4uoZ4C7ppfsHWsyjSghoMWpitBKjUTBiG24W4g2Y7PGfJqBnvYKRst+4kI7RkfXJvxzsQqTIMWv/FX2il4s9mHtXt9fpE4IJzMskX+sAQHiP6PSwPUu3AtlFkpqLyfVADoJ1SOAwIA62LN6sIB2nFO2rbPsCMX+29HgAO3XAWAFQ744TVpalR6nW6MWgCN3ImDWF1pj0iJQt12GbhN2/BH0vrJ4QSwwWNVtlpP+mCbUs2Z18UZtGz/Y40cb+kgdTLH9rGOTMqrewTaXi9mTQpc3Lzxk6mY4/uQTvtznL0xy4P9/xYbJFax2u5sfYz2KqwBilU3MmNkyJ6+Ttb2hiqqDegf36TXdkFG4pkjuepZ3Db3IM7Toh5zQMcvUbTinJBNqSYCq6f0MXZ8QRGADKJTM14MNj3IMBcH6Rvhtoj4pHOl6GcvTNd7lJ+uMJqBTX4pxqzoMJlD4giYfLNDLe5AiAhR5w3WMPCmGR1om+Mv2KcsQAwA2uFQ3YIVxHrMDr8bCfpsF3PCys4Gmkxq2MQquSNjE6BfoRM2tqre0DwrLrNyuJDcajVp3V4pk1oql/qYRc9itJLU=
