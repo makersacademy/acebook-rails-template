@@ -19,12 +19,22 @@
       </div>
     <% end %>
 <% end %>
+
 <% @posts.each do |post| %>
 <br>
  <% our_user = User.find(post[:user_id]) %>
  <%= our_user[:username] %>
   <p><%= simple_format post.message %></p>
   <%=post.created_at.to_formatted_s(:long)%>
+  <% if current_user %>
+    <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+    <% if pre_like %>
+      <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete, style: "background: red" %>
+    <% else %>
+      <%= button_to 'Like', post_likes_path(post), method: :post %>
+    <% end %>
+  <% end %>
+  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   <% if can? :edit, post %>
     <%= link_to 'Edit', edit_post_path(post) %>
   <% end %>
