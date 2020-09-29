@@ -23,6 +23,9 @@
 <% @posts.each do |post| %>
 <br>
  <% our_user = User.find(post[:user_id]) %>
+  <% if our_user.photo.attached? %>
+  <%= link_to image_tag(our_user.photo, size: '50x50') %>
+  <% end %>
  <%= our_user[:username] %>
   <p><%= simple_format post.message %></p>
   <%=post.created_at.to_formatted_s(:long)%>
@@ -58,6 +61,9 @@
   <% @comments.each do |comment| %>
     <% if comment.post_id == post.id %>
       <% our_user = User.find(comment[:user_id]) %>
+      <% if our_user.photo.attached? %>
+        <%= link_to image_tag(our_user.photo, size: '50x50') %>
+      <% end %>
       <%= our_user[:username] %>
       <p><%= simple_format comment.comment %></p>
       <%=comment.created_at.to_formatted_s(:long)%>
