@@ -45,7 +45,6 @@
   <% if can? :destroy, post %>
     <%= link_to 'Delete', post_path(post), method: :delete, data: { :confirm => "Are you sure?" } %>
   <% end %>
-<p> reset heroku </p>
   <% if current_user %>
     <%= form_for @comment do |form| %>     
       <input hidden value="<%= post.id %>" name="post_id">    
