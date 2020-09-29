@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag(@user.photo, width: 200) if @user.photo.attached? %>
+<%= image_tag(@user.photo, size: '100x100') if @user.photo.attached? %>
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
