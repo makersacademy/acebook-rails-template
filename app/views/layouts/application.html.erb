@@ -10,7 +10,7 @@
   </head>
 
   <body>
-     <%= image_tag("/assets/logo.png", alt: "Logo", class: "logo")%>
+    <%= link_to image_tag("/assets/logo.png", alt: "Logo", class: "logo"), root_url %>
     <%= yield %>
   </body>
 </html>
