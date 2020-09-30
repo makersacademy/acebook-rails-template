@@ -58,23 +58,27 @@
     <% end %>
   <% end %>
 <hr>
-  <% @comments.each do |comment| %>
-    <% if comment.post_id == post.id %>
-      <% our_user = User.find(comment[:user_id]) %>
-      <% if our_user.photo.attached? %>
-        <%= link_to image_tag(our_user.photo, size: '50x50') %>
+<div class="commentSection">
+  <% @comments.each do |comment| %> 
+      <% if comment.post_id == post.id %>
+      <div class="commentsDiv">
+        <% our_user = User.find(comment[:user_id]) %>
+        <% if our_user.photo.attached? %>
+          <%= link_to image_tag(our_user.photo, size: '50x50') %>
+        <% end %>
+        <%= our_user[:username] %>
+        <p><%= simple_format comment.comment, class: "commentText" %></p>
+        <%=comment.created_at.to_formatted_s(:long)%>
+        <% if can? :edit, comment %>
+          <%= link_to 'Edit', edit_comment_path(comment), id: "edit-comment" %>
+        <% end %>
+        <% if can? :destroy, comment %>
+          <%= link_to 'Delete', comment_path(comment), method: :delete, data: { :confirm => "Are you sure?" }, id: "delete-comment" %>
+        <% end %>
+      </div>
       <% end %>
-      <%= our_user[:username] %>
-      <p><%= simple_format comment.comment %></p>
-      <%=comment.created_at.to_formatted_s(:long)%>
-      <% if can? :edit, comment %>
-        <%= link_to 'Edit', edit_comment_path(comment), id: "edit-comment" %>
-      <% end %>
-      <% if can? :destroy, comment %>
-        <%= link_to 'Delete', comment_path(comment), method: :delete, data: { :confirm => "Are you sure?" }, id: "delete-comment" %>
-      <% end %>
-    <% end %>
   <% end %>
+ </div> 
   </div>
   <br>
    <br>
