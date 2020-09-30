@@ -46,3 +46,9 @@ box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
   text-align: right;
 }
 
+#notice {
+  position: relative;
+  color: lightgreen;
+  left: 50%;
+  top: 50%;
+}
