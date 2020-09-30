@@ -52,3 +52,7 @@ box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
   left: 50%;
   top: 50%;
 }
+
+.like-button {
+width: 30px;
+}
