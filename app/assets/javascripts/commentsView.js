@@ -3,29 +3,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   [...posts].map((post) => {
     let comments = post.getElementsByClassName('commentsDiv');
-    let saved = [...comments];
+    let allComments = [...comments];
     let section = post.getElementsByClassName('commentSection');
-
-    let button = document.createElement('button');
-    button.innerHTML = 'More';
-
+    let commentSection = section[0];
+    let displayButton = document.createElement('button');
+    displayButton.innerHTML = 'More';
     let show = true;
 
-    button.addEventListener('click', () => {
+    displayButton.addEventListener('click', () => {
       if (show) {
-        section[0].innerHTML = '';
-        saved.forEach((comm) => {
-          section[0].appendChild(comm);
+        commentSection.innerHTML = '';
+        allComments.forEach((each) => {
+          commentSection.appendChild(each);
         });
-        section[0].appendChild(button);
+        displayButton.innerHTML = 'Less';
+        commentSection.appendChild(displayButton);
+      } else {
+        commentSection.innerHTML = `${allComments[0].innerHTML}</br> ${allComments[1].innerHTML} </br>`;
+        displayButton.innerHTML = 'More';
+        commentSection.appendChild(displayButton);
       }
-
       show = !show;
     });
 
     if (comments.length > 2) {
-      section[0].innerHTML = `${comments[0].innerHTML}</br> ${comments[1].innerHTML} </br>`;
-      section[0].appendChild(button);
+      commentSection.innerHTML = `${comments[0].innerHTML}</br> ${comments[1].innerHTML} </br>`;
+      commentSection.appendChild(displayButton);
     }
   });
 });
