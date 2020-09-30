@@ -43,7 +43,7 @@ var allowedKeys = {
 
     octopus.style.visibility = "visible"
   
-    //var audio = new Audio('audio/pling.mp3');
-    //audio.play();
-  
+    var audio = new Audio('./assets/audio/ghosts03.mp3');
+    audio.play();
+  setTimeout(function(){ octopus.style.visibility = "hidden"; }, 8500);
   }
