@@ -11,7 +11,7 @@ RSpec.feature "Like", type: :feature do
     visit('/')
     signup_and_login
     add_post("text")
-    click_button "Like"
+    click_link 'Like'
     expect(page).to have_content("1 Like")
     expect(page).not_to have_selector(:link_or_button, 'Like')
   end
@@ -20,8 +20,8 @@ RSpec.feature "Like", type: :feature do
     visit('/')
     signup_and_login
     add_post("text")
-    click_button "Like"
-    click_button "Unlike"
+    click_link "Like"
+    click_link "Unlike"
     expect(page).to have_content("0 Likes")
     expect(page).not_to have_selector(:link_or_button, 'Unlike')
   end
@@ -30,10 +30,10 @@ RSpec.feature "Like", type: :feature do
     visit('/')
     signup_and_login
     add_post("text")
-    click_button "Like"
+    click_link "Like"
     click_link "Log Out"
     signup_and_login_2
-    click_button "Like"
+    click_link "Like"
     expect(page).to have_content("2 Likes")
     expect(page).not_to have_selector(:link_or_button, 'Like')
   end
