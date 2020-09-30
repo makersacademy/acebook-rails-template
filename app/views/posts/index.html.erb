@@ -19,7 +19,6 @@
       </div>
     <% end %>
 <% end %>
-
 <% @posts.each do |post| %>
 <div class= 'post-box'>
 <br>
@@ -29,8 +28,10 @@
   <% end %>
   <div class = 'username'><%= our_user[:username] %></div>
   <div class = 'post'><%= simple_format post.message %></div>
-  <span class = 'likes'>
+  <div class = 'rightbox'>
   <div class = 'time'><%=post.created_at.to_formatted_s(:long)%></div>
+  </div>
+  <div class = 'leftbox'>
   <% if current_user %>
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
     <% if pre_like %>
@@ -39,16 +40,15 @@
       <%= link_to image_tag('/assets/unlike.png', class: 'like-button'), post_likes_path(post), method: :post %>
     <% end %>
   <% end %>
-   </span>
-  <span class = 'likes'>
   <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
   <% if can? :edit, post %>
     <%= link_to 'Edit', edit_post_path(post) %>
   <% end %>
-  </span>
+  </div>
   <% if can? :destroy, post %>
     <%= link_to 'Delete', post_path(post), method: :delete, data: { :confirm => "Are you sure?" } %>
   <% end %>
+  <div class = 'leftbox'>
   <% if current_user %>
     <%= form_for @comment do |form| %>     
       <input hidden value="<%= post.id %>" name="post_id">    
@@ -56,9 +56,12 @@
         <%= form.label :comment %>
         <%= form.text_area :comment, :cols => 50, :rows =>2 %>
       </div>
+  </div>
+  <div class = 'rightbox'>
       <div class="actions">
         <%= form.submit %>
       </div>
+  </div>
     <% end %>
   <% end %>
 <hr>
