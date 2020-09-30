@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Acebook</title>
-    <%= favicon_link_tag asset_path('/assets/favicon.png') %>
+    <%= favicon_link_tag asset_path('favicon.png') %>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <%= link_to image_tag("/assets/logo.png", alt: "Logo", class: "logo"), root_url %>
+    <%= link_to image_tag("logo.png", alt: "Logo", class: "logo"), root_url %>
     <%= yield %>
   </body>
 </html>
