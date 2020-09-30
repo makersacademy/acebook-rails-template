@@ -11,8 +11,8 @@ amazon:
   service: S3
   access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
-  region: ENV["S3_REGION"]
-  bucket: ENV["S3_BUCKET_NAME"]
+  region: eu-west-2
+  bucket: octobook-team
 
 
 # Remember not to checkin your GCS keyfile to a repository
