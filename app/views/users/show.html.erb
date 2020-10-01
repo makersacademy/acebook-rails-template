@@ -16,3 +16,37 @@
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', root_url %>
+
+
+<% @user.posts.each do |post| %>
+  <div class= 'post-box'>
+  <br>
+    <% if @user.photo.attached? %>
+      <%= link_to image_tag(@user.photo, size: '50x50') %>
+    <% else %>
+      <%= image_tag("avatar.png", size: '50x50')%>
+    <% end %>
+    <div class = 'username'><%= @user.username %></div>
+    <div class = 'post'><%= simple_format post.message %></div>
+    <div class = 'time'><%=post.created_at.to_formatted_s(:long)%></div>
+    <% if current_user %>
+      <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+      <% if pre_like %>
+        <%= link_to image_tag('like.png', class: 'like-button'), post_like_path(post, pre_like), method: :delete, id: 'Unlike' %>
+      <% else %>
+        <%= link_to image_tag('unlike.png', class: 'like-button'), post_likes_path(post), method: :post, id: 'Like' %>
+      <% end %>
+    <% end %>
+    <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+    <% if can? :edit, post %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+    <% end %>
+    <% if can? :destroy, post %>
+      <%= link_to 'Delete', post_path(post), method: :delete, data: { :confirm => "Are you sure?" } %>
+    <% end %>
+  <hr>
+  </div> 
+    <br>
+     <br>
+  <% end %>
+  <br>

@@ -10,7 +10,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(session[:user_id])
+    if !params[:id]
+      @user = User.find(session[:user_id])
+    else
+      @user = User.find(params[:id])
+    end
   end
 
   # GET /users/new
