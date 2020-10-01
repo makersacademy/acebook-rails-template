@@ -93,13 +93,13 @@
         <div class = 'comment-post'>
           <p><%= simple_format comment.comment, class: "commentText" %></p>
           <div class = 'time' ><%=comment.created_at.to_formatted_s(:long)%></div>
-          </div>
-        
+        </div>
+     </div> 
       <% end %>
   <% end %>
- </div> 
   </div>
-  <br>
-   <br>
+ </div>
+<br>
+<br>
 <% end %>
 <br>
