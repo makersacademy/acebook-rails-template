@@ -12,7 +12,7 @@
   <%= form_for @post do |form| %>        
       <div class="field">
         <%= form.label :message %>
-        <%= form.text_area :message, :cols => 50, :rows => 5 %>
+        <%= form.text_area :message, :cols => 50, :rows => 5, required: true %>
       </div>
       <div class="actions">
         <%= form.submit %>
