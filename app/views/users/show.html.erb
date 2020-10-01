@@ -1,27 +1,30 @@
+    <%= stylesheet_link_tag    'show', media: 'all' %>
 <p id="notice"><%= notice %></p>
+<div class = 'post-box'>
 <% if @user.photo.attached? %>
-  <%= image_tag(@user.photo, size: '100x100') %>
-<% else %>
-  <%= image_tag("avatar.png", size: '50x50')%>
-<% end %>
-<% if session[:user_id] == @user.id %>
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-<% end %>
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+      <%= image_tag(@user.photo, size: '100x100') %>
+    <% else %>
+      <%= image_tag("avatar.png", size: '100x100')%>
+    <% end %>
+    <% if session[:user_id] == @user.id %>
+    <p>
+      <strong><%= @user.email %></strong>
+      
+    </p>
+    <% end %>
+    <p>
+      <strong><%= @user.username %></strong>
+      
+    </p>
+ 
 
 <% if session[:user_id] == @user.id %>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<% end %>
-<%= link_to 'Back', root_url %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Delete Profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</div> 
 
-
+<my-padder>
 <% @user.posts.reverse_order.each do |post| %>
   <div class= 'post-box'>
   <br>
