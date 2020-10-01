@@ -4,15 +4,18 @@
 <% else %>
   <%= image_tag("avatar.png", size: '50x50')%>
 <% end %>
+<% if session[:user_id] == @user.id %>
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+<% end %>
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
 </p>
 
+if
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', root_url %>
