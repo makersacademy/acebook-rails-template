@@ -43,15 +43,9 @@ var allowedKeys = {
 
     octopus.style.visibility = "visible"
   
-<<<<<<< HEAD
     document.getElementById('konami-ghosts').play()
 
     
 
     setTimeout(function(){ octopus.style.visibility = "hidden"; }, 8500);
-=======
-    var audio = new Audio('ghosts03.mp3');
-    audio.play();
-  setTimeout(function(){ octopus.style.visibility = "hidden"; }, 8500);
->>>>>>> 74802c3b84da679ef2d1f332a3db974bc91ca1ad
   }
