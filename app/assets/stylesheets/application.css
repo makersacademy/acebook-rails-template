@@ -56,3 +56,15 @@ box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
 .like-button {
 width: 30px;
 }
+
+.leftbox { 
+  float:left;   
+  width:50%; 
+  height:50px; 
+} 
+ 
+.rightbox{ 
+  float:right; 
+  width:50%; 
+  height:50px; 
+}
