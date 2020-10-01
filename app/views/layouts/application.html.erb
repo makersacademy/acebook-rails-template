@@ -10,7 +10,17 @@
   </head>
 
   <body>
+  
     <%= link_to image_tag("logo.png", alt: "Logo", class: "logo"), root_url %>
+    <p id=”notice”><%= notice %></p>
+        <% if current_user %>
+          <%= link_to 'Log Out', logout_path, class: 'button' %>
+          <%= link_to "#{current_user.username}'s profile", profile_path, class: 'button' %>
+        <% else %>
+          <%= link_to 'Sign Up', signup_path, class: 'button' %> or 
+          <%= link_to 'Log In', login_path, class: 'button' %>
+        <% end %>
     <%= yield %>
+    
   </body>
 </html>

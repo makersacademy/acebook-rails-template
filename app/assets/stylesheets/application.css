@@ -15,12 +15,15 @@
  */
  .logo { 
    width: 27%;
+   display: inline-block;
+
  }
  body {
    background-color: #303030;
    color: #000000}
 
 .post-box { 
+border-radius: 25px;
 margin: auto;
 text-align: center;
 background-color: white;
@@ -35,6 +38,15 @@ box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
 .username {
   text-align: left;
   font-size: 20px;
+  display: inline-block; 
+  float: left;
+}
+
+.comment-username {
+  text-align: left;
+  font-size: 12px;
+  display: inline-block; 
+  float: left;
 }
 
 .post { 
@@ -42,8 +54,16 @@ box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
   padding: 10px;
 }
 
+.edit-buttons {
+  display: inline-block; 
+  float: right;
+}
+
 .time {
   text-align: right;
+  color: grey;
+  font-size: 10px;
+
 }
 
 #notice {
@@ -57,14 +77,19 @@ box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
 width: 30px;
 }
 
-.leftbox { 
-  float:left;   
-  width:50%; 
-  height:50px; 
-} 
- 
-.rightbox{ 
-  float:right; 
-  width:50%; 
-  height:50px; 
+.button {
+  background-color: rgba(199,91,77,0.9);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  float: right;
+
 }
+
+
