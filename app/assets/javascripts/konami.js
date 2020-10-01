@@ -9,7 +9,7 @@ var allowedKeys = {
   };
   
   // the 'official' Konami Code sequence
-  var konamiCode = ['up', 'up'];
+  var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
   
   // a variable to remember the 'position' the user has reached so far.
   var konamiCodePosition = 0;
@@ -43,7 +43,7 @@ var allowedKeys = {
 
     octopus.style.visibility = "visible"
   
-    var audio = new Audio('./assets/audio/ghosts03.mp3');
+    var audio = new Audio('ghosts03.mp3');
     audio.play();
   setTimeout(function(){ octopus.style.visibility = "hidden"; }, 8500);
   }
