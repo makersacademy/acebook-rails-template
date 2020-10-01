@@ -5,8 +5,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_secure_password
 
-  validates :email, presence: true, uniqueness: true
-  validates :password, length: { minimum: 8 }
+  validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  validates :password, presence: true, length: { minimum: 8 }
   validate :password_uppercase
   validate :password_lower_case
   validate :password_contains_number
