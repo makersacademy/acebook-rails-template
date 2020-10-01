@@ -85,7 +85,7 @@
           <%= image_tag("avatar.png", size: '30x30')%>
         <% end %>
 
-        <%= our_user[:username] %>
+        <%= link_to comment.user.username, comment.user %></div>
         </div>
         <p><%= simple_format comment.comment, class: "commentText" %></p>
         <div class = 'time' ><%=comment.created_at.to_formatted_s(:long)%></div>
