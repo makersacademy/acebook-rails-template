@@ -10,37 +10,49 @@
 
 <% if current_user %>
   <%= form_for @post do |form| %>        
-      <div class="field">
+      <div style="display:inline-block", class="field">
         <%= form.label :message %>
         <%= form.text_area :message, :cols => 50, :rows => 5 %>
       </div>
-      <div class="actions">
+      <div style="display:inline-block", class="actions">
         <%= form.submit %>
       </div>
     <% end %>
 <% end %>
 <% @posts.each do |post| %>
 <div class= 'post-box'>
-<br>
- <% our_user = User.find(post[:user_id]) %>
-  <% if our_user.photo.attached? %>
-  <%= link_to image_tag(our_user.photo, size: '50x50') %>
+
+<div style="display:inline-block; float:right">
+<% if can? :edit, post %>
+  <%= link_to 'Edit', edit_post_path(post) %>
+<% end %>
+<% if can? :destroy, post %>
+  <%= link_to 'Delete', post_path(post), method: :delete, data: { :confirm => "Are you sure?" } %>
+<% end %></div>
+
+<div style="display:inline-block", class='username'>
+  <% if post.user.photo.attached? %>
+    <%= image_tag(post.user.photo, size: '50x50') %>
+  <% else %>
+    <%= image_tag("avatar.png", size: '50x50')%>
   <% end %>
-  <div class = 'username'><%= our_user[:username] %></div>
+  <%= link_to post.user.username, post.user %></div>
   <div class = 'post'><%= simple_format post.message %></div>
   <div class = 'rightbox'>
   <div class = 'time'><%=post.created_at.to_formatted_s(:long)%></div>
   </div>
   <div class = 'leftbox'>
+
   <% if current_user %>
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
     <% if pre_like %>
-      <%= link_to image_tag('/assets/like.png', class: 'like-button'), post_like_path(post, pre_like), method: :delete %>
+      <%= link_to image_tag('like.png', class: 'like-button'), post_like_path(post, pre_like), method: :delete, id: 'Unlike' %>
     <% else %>
-      <%= link_to image_tag('/assets/unlike.png', class: 'like-button'), post_likes_path(post), method: :post %>
+      <%= link_to image_tag('unlike.png', class: 'like-button'), post_likes_path(post), method: :post, id: 'Like' %>
     <% end %>
   <% end %>
   <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+
   <% if can? :edit, post %>
     <%= link_to 'Edit', edit_post_path(post) %>
   <% end %>
@@ -51,12 +63,11 @@
   <div class = 'leftbox'>
   <% if current_user %>
     <%= form_for @comment do |form| %>     
-      <input hidden value="<%= post.id %>" name="post_id">    
-      <div class="field">
+      <input hidden value="<%= post.id %>" name="post_id">
+      <div style="display:inline-block", class="field">
         <%= form.label :comment %>
-        <%= form.text_area :comment, :cols => 50, :rows =>2 %>
-      </div>
-  </div>
+        <%= form.text_area :comment, :cols => 50, :rows =>2 %>    
+  <div style="display:inline-block", class="actions"> ***
   <div class = 'rightbox'>
       <div class="actions">
         <%= form.submit %>
@@ -65,23 +76,27 @@
     <% end %>
   <% end %>
 <hr>
-  <% @comments.each do |comment| %>
-    <% if comment.post_id == post.id %>
-      <% our_user = User.find(comment[:user_id]) %>
-      <% if our_user.photo.attached? %>
-        <%= link_to image_tag(our_user.photo, size: '50x50') %>
+<div class="commentSection">
+  <% @comments.each do |comment| %> 
+      <% if comment.post_id == post.id %>
+      <div class="commentsDiv">
+        <% our_user = User.find(comment[:user_id]) %>
+        <% if our_user.photo.attached? %>
+          <%= link_to image_tag(our_user.photo, size: '50x50') %>
+        <% end %>
+        <%= our_user[:username] %>
+        <p><%= simple_format comment.comment, class: "commentText" %></p>
+        <%=comment.created_at.to_formatted_s(:long)%>
+        <% if can? :edit, comment %>
+          <%= link_to 'Edit', edit_comment_path(comment), id: "edit-comment" %>
+        <% end %>
+        <% if can? :destroy, comment %>
+          <%= link_to 'Delete', comment_path(comment), method: :delete, data: { :confirm => "Are you sure?" }, id: "delete-comment" %>
+        <% end %>
+      </div>
       <% end %>
-      <%= our_user[:username] %>
-      <p><%= simple_format comment.comment %></p>
-      <%=comment.created_at.to_formatted_s(:long)%>
-      <% if can? :edit, comment %>
-        <%= link_to 'Edit', edit_comment_path(comment), id: "edit-comment" %>
-      <% end %>
-      <% if can? :destroy, comment %>
-        <%= link_to 'Delete', comment_path(comment), method: :delete, data: { :confirm => "Are you sure?" }, id: "delete-comment" %>
-      <% end %>
-    <% end %>
   <% end %>
+ </div> 
   </div>
   <br>
    <br>
