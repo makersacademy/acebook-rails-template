@@ -22,7 +22,7 @@
 <%= link_to 'Back', root_url %>
 
 
-<% @user.posts.each do |post| %>
+<% @user.posts.reverse_order.each do |post| %>
   <div class= 'post-box'>
   <br>
     <% if @user.photo.attached? %>
