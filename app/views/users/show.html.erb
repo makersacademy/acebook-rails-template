@@ -1,9 +1,16 @@
 <p id="notice"><%= notice %></p>
-
-<%= image_tag(@user.photo, size: '100x100') if @user.photo.attached? %>
+<% if @user.photo.attached? %>
+  <%= image_tag(@user.photo, size: '100x100') %>
+<% else %>
+  <%= image_tag("avatar.png", size: '50x50')%>
+<% end %>
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
+</p>
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

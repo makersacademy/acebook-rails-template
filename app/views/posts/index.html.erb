@@ -1,15 +1,18 @@
+
 <div class = 'post-box'>
     <% if current_user %>
       <%= form_for @post do |form| %>        
           <div style="display:inline-block", class="field">
             <%= form.label :message %>
-            <%= form.text_area :message, :cols => 50, :rows => 5 %>
+            <%= form.text_area :message, :cols => 50, :rows => 5, required: true %>
           </div>
+        <div class="field">
+          <%= form.file_field :photo %>
+        </div>
           <div style="display:inline-block", class="actions">
             <%= form.submit %>
           </div>
         <% end %>
-    <% end %>
 </div>
 <br>
 <br>
@@ -35,6 +38,10 @@
   <div class = 'post'><%= simple_format post.message %></div>
   <div class = 'time'><%=post.created_at.to_formatted_s(:long)%></div>
 
+  <% if post.photo.attached? %>
+    <%= link_to image_tag(post.photo, size: '100x100') %>
+  <% end %>
+
   <% if current_user %>
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
     <% if pre_like %>
@@ -49,7 +56,7 @@
       <input hidden value="<%= post.id %>" name="post_id">    
       <div class="field">
         <%= form.label :comment %>
-        <%= form.text_area :comment, :cols => 50, :rows =>2 %>
+        <%= form.text_area :comment, :cols => 50, :rows =>2, required: true %>
       </div>
       <div class="actions">
         <%= form.submit %>

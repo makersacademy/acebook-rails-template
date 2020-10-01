@@ -9,6 +9,7 @@ gem 'cancancan'
 gem 'travis'
 gem "aws-sdk-s3", require: false
 gem 'sass'
+gem 'active_storage_validations'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
