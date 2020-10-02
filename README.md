@@ -27,11 +27,11 @@ First, clone this repository. Then:
 
 http://octobook-team.herokuapp.com/
 
-# User Stories
+## User Stories
 
 [User Stories](https://github.com/fraserbrookhouse/acebook-rails-quadropus/wiki/User-stories#viewing-posts)
 
-# Website Wireframes
+## Website Wireframes
 
 ![Logged-out-Index](./wireframe-img/logged-out-index.png)
 ![Logged-in-index](./wireframe-img/logged-in-index.png)
@@ -41,7 +41,7 @@ http://octobook-team.herokuapp.com/
 ![user-page](./wireframe-img/user-page.png)
 ![edit-profile](./wireframe-img/edit-profile.png)
 
-# Website Screenshots
+## Website Screenshots
 ![home](./screenshots/home.png)
 ![log-in](./screenshots/login.png)
 ![sign-up](./screenshots/signup.png)
@@ -50,6 +50,6 @@ http://octobook-team.herokuapp.com/
 ![user-page](./screenshots/profile.png)
 ![comments](./screenshots/comments.png)
 
-# Additional Notes
+## Additional Notes
 
 Try entering the Konami code for a fun surprise!
