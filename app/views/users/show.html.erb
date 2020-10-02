@@ -28,12 +28,13 @@
 <% @user.posts.reverse_order.each do |post| %>
   <div class= 'post-box'>
   <br>
-    <% if @user.photo.attached? %>
+    <div class = 'username'><% if @user.photo.attached? %>
       <%= link_to image_tag(@user.photo, size: '50x50') %>
     <% else %>
-      <%= image_tag("avatar.png", size: '50x50')%>
+      ><%= image_tag("avatar.png", size: '50x50')%>
     <% end %>
-    <div class = 'username'><%= @user.username %></div>
+    <%= @user.username %></div>
+    <small-padder>
     <div class = 'post'><%= simple_format post.message %></div>
     <div class = 'time'><%=post.created_at.to_formatted_s(:long)%></div>
     <% if current_user %>
