@@ -22,22 +22,22 @@
 <div class= 'post-box'>
 <br>
 <div class ='edit-buttons'>
-<% if can? :edit, post %>
-  <%= link_to 'Edit', edit_post_path(post) %>
-<% end %>
-<% if can? :destroy, post %>
-  <%= link_to 'Delete', post_path(post), method: :delete, data: { :confirm => "Are you sure?" } %>
-<% end %>
+  <% if can? :edit, post %>
+    <%= link_to 'Edit', edit_post_path(post) %>
+  <% end %>
+  <% if can? :destroy, post %>
+    <%= link_to 'Delete', post_path(post), method: :delete, data: { :confirm => "Are you sure?" } %>
+  <% end %>
 </div>
 
 <div class='username'>
-  <% if post.user.photo.attached? %>
-    <%= image_tag(post.user.photo, size: '50x50') %>
-  <% else %>
-    <%= image_tag("avatar.png", size: '50x50')%>
-  <% end %>
-  <%= link_to post.user.username, post.user %></div>
-  <small-padder>
+    <% if post.user.photo.attached? %>
+      <%= image_tag(post.user.photo, size: '50x50') %>
+    <% else %>
+      <%= image_tag("avatar.png", size: '50x50')%>
+    <% end %>
+    <%= link_to post.user.username, post.user %></div>
+    <small-padder>
   <div class = 'post'><%= simple_format post.message %></div>
 
   <% if post.photo.attached? %>
@@ -81,22 +81,21 @@
           <%= link_to 'Delete', comment_path(comment), method: :delete, data: { :confirm => "Are you sure?" }, id: "delete-comment" %>
         <% end %>
         </div>
-        <div class = 'comment-username'>
 
+        <div class = 'comment-username'>
         <% our_user = User.find(comment[:user_id]) %>
         <% if our_user.photo.attached? %>
           <%=image_tag(our_user.photo, size: '30x30') %>
         <% else %>
           <%= image_tag("avatar.png", size: '30x30')%>
         <% end %>
-
-        <%= link_to comment.user.username, comment.user %></div>
+        <%= link_to comment.user.username, comment.user %>
         </div>
         <div class = 'comment-post'>
           <p><%= simple_format comment.comment, class: "commentText" %></p>
           <div class = 'time' ><%=comment.created_at.to_formatted_s(:long)%></div>
         </div>
-     </div> 
+      </div>
       <% end %>
   <% end %>
   </div>
