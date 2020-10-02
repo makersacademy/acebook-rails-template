@@ -36,6 +36,9 @@
     <%= @user.username %></div>
     <small-padder>
     <div class = 'post'><%= simple_format post.message %></div>
+    <% if post.photo.attached? %>
+      <%= link_to image_tag(post.photo, style: "float:left;width:100%;height:50%;object-fit:cover;") %>
+    <% end %>
     <div class = 'time'><%=post.created_at.to_formatted_s(:long)%></div>
     <% if current_user %>
       <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
