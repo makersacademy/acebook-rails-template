@@ -31,7 +31,7 @@
     <div class = 'username'><% if @user.photo.attached? %>
       <%= link_to image_tag(@user.photo, size: '50x50') %>
     <% else %>
-      ><%= image_tag("avatar.png", size: '50x50')%>
+      <%= image_tag("avatar.png", size: '50x50')%>
     <% end %>
     <%= @user.username %></div>
     <small-padder>
