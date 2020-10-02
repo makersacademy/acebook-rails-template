@@ -102,8 +102,20 @@ width: 30px;
   font-size: 12px;
   margin: 4px 2px;
   font-family: 'Grandstander', cursive;
-  
+  box-shadow: 0 6px rgb(83, 83, 83);
+  border-radius: 6px;
 
+}
+
+.button:hover {background-color: rgba(168, 22, 2, 0.9)}
+
+.button:active {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  background-color: rgba(168, 22, 2, 0.9);
+  box-shadow: 0 4px rgb(83, 83, 83);
+  transform: translateY(4px);
 }
 
 #konami-octopus {
