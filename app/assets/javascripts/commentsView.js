@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let section = post.getElementsByClassName('commentSection');
     let commentSection = section[0];
     let displayButton = document.createElement('button');
+    displayButton.setAttribute('class', 'button')
     displayButton.innerHTML = 'More';
     let show = true;
 

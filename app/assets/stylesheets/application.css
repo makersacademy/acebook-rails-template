@@ -16,47 +16,62 @@
  .logo { 
    width: 27%;
    display: inline-block;
-
+   position: left;
  }
  body {
    background-color: #303030;
-   color: #000000}
+   color: red;
+   font-family: 'Grandstander', cursive;
+  }
 
 .post-box { 
+padding-bottom: 25px;
+color: black;
 border-radius: 25px;
 margin: auto;
 text-align: center;
 background-color: white;
 padding: 10px;
-width: 50%;
+width: 60%;
 box-shadow: 5px 10px;
 --box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
 -moz-box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
 box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
+font-family: 'Grandstander', cursive;
 }
 
 .username {
   text-align: left;
-  font-size: 20px;
+  font-size: 24px;
   display: inline-block; 
   float: left;
 }
 
 .comment-username {
   text-align: left;
-  font-size: 12px;
+  font-size: 13px;
   display: inline-block; 
   float: left;
 }
 
+.comment-post {
+  font-size: 14px;
+  padding: 20px;
+  position: center;
+  font-family: 'Grandstander', cursive;
+}
+
 .post { 
-  font-size: 16px;
+  font-size: 20px;
   padding: 10px;
+  font-family: 'Grandstander', cursive;
 }
 
 .edit-buttons {
   display: inline-block; 
   float: right;
+  font-size: 12px
+
 }
 
 .time {
@@ -81,15 +96,26 @@ width: 30px;
   background-color: rgba(199,91,77,0.9);
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 15px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   margin: 4px 2px;
-  cursor: pointer;
-  float: right;
+  font-family: 'Grandstander', cursive;
+  box-shadow: 0 6px rgb(83, 83, 83);
+  border-radius: 6px;
 
+}
+
+.button:hover {background-color: rgba(168, 22, 2, 0.9)}
+
+.button:active {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  background-color: rgba(168, 22, 2, 0.9);
+  box-shadow: 0 4px rgb(83, 83, 83);
+  transform: translateY(4px);
 }
 
 #konami-octopus {
@@ -109,4 +135,41 @@ width: 30px;
   0% {opacity: 100%}
   50% {opacity: 10%}
   100% {opacity: 100%}
+}
+
+.flash {
+  background-color: red;
+}
+/* Top navigation */
+.topnav {
+  overflow: hidden;
+  background-color: #303030;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: rgba(199,91,77,0.9);
+  color: white;
+}
+
+my-padder {
+   display: block;
+   margin: 7em 0;
+}
+small-padder {
+  display: block;
+  margin: 3em 0;
+}
+
+.octo {
+
+  float: left;
 }

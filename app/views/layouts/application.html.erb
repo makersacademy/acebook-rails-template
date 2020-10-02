@@ -2,24 +2,29 @@
 <html>
   <head>
     <title>Acebook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@200&display=swap" rel="stylesheet">
     <%= favicon_link_tag asset_path('favicon.png') %>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+  
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
   
-    <%= link_to image_tag("logo.png", alt: "Logo", class: "logo"), root_url %>
-    <p id=”notice”><%= notice %></p>
+    <div clsss = 'flash'><p id=”notice”><%= notice %></p></div>
+    <div class="topnav">
         <% if current_user %>
-          <%= link_to 'Log Out', logout_path, class: 'button' %>
-          <%= link_to "#{current_user.username}'s profile", profile_path, class: 'button', id: "My Profile" %>
+          <%= link_to 'Log Out', logout_path%>
+          <%= link_to "#{current_user.username}'s profile", profile_path, id: "My Profile" %>
         <% else %>
-          <%= link_to 'Sign Up', signup_path, class: 'button' %> 
-          <%= link_to 'Log In', login_path, class: 'button' %>
+          <%= link_to 'Sign Up', signup_path %> 
+          <%= link_to 'Log In', login_path%>
         <% end %>
+    </div>
+    <%= link_to image_tag("logo.png", alt: "Logo", class: "logo"), root_url %>
+    <my-padder>
     <%= yield %>
 
     <%= image_tag('konami-octopus.png', id: 'konami-octopus', style: 'visibility: hidden') %>
