@@ -82,13 +82,15 @@
         <% end %>
         </div>
         <div class = 'comment-username'>
-          <% our_user = User.find(comment[:user_id]) %>
-          <% if our_user.photo.attached? %>
-            <%=image_tag(our_user.photo, size: '30x30') %>
-          <% else %>
-            <%= image_tag("avatar.png", size: '30x30')%>
-          <% end %>
-          <%= our_user[:username] %>
+
+        <% our_user = User.find(comment[:user_id]) %>
+        <% if our_user.photo.attached? %>
+          <%=image_tag(our_user.photo, size: '30x30') %>
+        <% else %>
+          <%= image_tag("avatar.png", size: '30x30')%>
+        <% end %>
+
+        <%= link_to comment.user.username, comment.user %></div>
         </div>
         <div class = 'comment-post'>
           <p><%= simple_format comment.comment, class: "commentText" %></p>
