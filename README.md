@@ -1,12 +1,13 @@
 # OctoBook
 
-A social network app for Cephalopoda, where you can:
+A social network app for Cephalopods, where you can:
 
-- express your self in a post
-- share stunning photos
-- support your friends with likes and comments
-- see all the activities in your personal profile space.
-  - Sing up now and give us your data for free !
+- Express yourself in a post
+- Share stunning photos
+- Support your friends with likes and comments
+- See all of a user's posts on their personal profile.
+
+Sign up now and give us your data for free!
 
 ## Quickstart
 
