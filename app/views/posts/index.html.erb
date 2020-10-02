@@ -11,7 +11,7 @@
           <%= form.file_field :photo %>
         </div>
           <div style="display:inline-block", class="actions">
-            <%= form.submit %>
+            <%= form.submit(class:'button')%>
           </div>
         <% end %>
       <% end %>
@@ -64,7 +64,7 @@
         <%= form.text_area :comment, :cols => 50, :rows => 2, required: true, style: "width:100%;height:50%;object-fit:cover;" %>
       </div>
       <div class="actions">
-        <%= form.submit %>
+        <%= form.submit(class:'button')%>
       </div>
     <% end %>
   <% end %>

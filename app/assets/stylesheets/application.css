@@ -21,7 +21,7 @@
  body {
    background-color: #303030;
    color: red;
-   
+   font-family: 'Grandstander', cursive;
   }
 
 .post-box { 
@@ -32,16 +32,17 @@ margin: auto;
 text-align: center;
 background-color: white;
 padding: 10px;
-width: 50%;
+width: 60%;
 box-shadow: 5px 10px;
 --box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
 -moz-box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
 box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
+font-family: 'Grandstander', cursive;
 }
 
 .username {
   text-align: left;
-  font-size: 20px;
+  font-size: 24px;
   display: inline-block; 
   float: left;
 }
@@ -54,19 +55,22 @@ box-shadow: 10px 11px 17px -8px rgba(199,91,77,0.9);
 }
 
 .comment-post {
-  font-size: 10px;
+  font-size: 14px;
   padding: 20px;
   position: center;
+  font-family: 'Grandstander', cursive;
 }
 
 .post { 
-  font-size: 16px;
+  font-size: 20px;
   padding: 10px;
+  font-family: 'Grandstander', cursive;
 }
 
 .edit-buttons {
   display: inline-block; 
   float: right;
+  font-size: 12px
 
 }
 
@@ -92,14 +96,13 @@ width: 30px;
   background-color: rgba(199,91,77,0.9);
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 15px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   margin: 4px 2px;
-  cursor: pointer;
-  float: right;
+  font-family: 'Grandstander', cursive;
+  
 
 }
 
