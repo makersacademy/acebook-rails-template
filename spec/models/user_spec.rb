@@ -1,4 +1,4 @@
-require 'rails_helper'
+require './app/models/user.rb'
 
 describe User, type: :model do
   
@@ -11,8 +11,6 @@ describe User, type: :model do
     expect(user.first_name).to eq("Bruce")
     expect(user.last_name).to eq("Wayne")
   end
-
-  
 
 
 end
