@@ -23,4 +23,6 @@ First, clone this repository. Then:
 
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
+
+> Run rails_best_practices in root folder of app: rails_best_practices . -c config/rails_best_practices.yml  
 ```
