@@ -6,7 +6,6 @@ RSpec.feature "Delete", type: :feature do
     click_link 'New post'
     fill_in "Message", with: "Hello world"
     click_button 'Submit'
-    #first(:link).click
     click_link 'Delete'
     expect(page).not_to have_content('Hello world')
   end 
