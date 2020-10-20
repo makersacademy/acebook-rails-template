@@ -25,9 +25,8 @@ class PostsController < ApplicationController
     end
   end
 
-
   def index
-    @posts = Post.all
+    @posts = Post.all.order('created_at DESC')
   end
 
   private
