@@ -47,10 +47,9 @@ RSpec.describe PostsController, type: :controller do
 
   describe "PUT update/:id" do
     it "allows post to be updated" do
-      item = Post.create message: "hello"
-      post :update, item: {message: "Bye"}
-      item.reload  
-      expect(item.message).to eq("Bye")
+      @post = Post.create message: "hello"
+      put :update, params: { id: @post.id, message: "Bye" }
+      expect(response).to be_redirect
     end
   end
 end
