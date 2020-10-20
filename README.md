@@ -25,17 +25,22 @@ First, clone this repository. Then:
 > bin/rails server # Start the server at localhost:3000
 ```
 
-# Migrade Database:
+# Database:
 
-> Create database:
-bin/rails g model User email:string password:string first_name:string last_name:string 
-bin/rails db:setup (unless database already there)
-bin/rails db:migrate
+## Create database (example):
+- Creates the migrate files locally:
+> bin/rails g model User email:string password:string first_name:string last_name:string ` 
+- creates local database:
+> bin/rails db:setup
+- Populate local database (add "RAILS_ENV=test", for example, afterwards if one DB has not updated):
+> bin/rails db:migrate 
 
-then heroku run rake db:migrate? To push to Heroku?
+- Then Deploy/push latest changes to Heroku:
+> git add/commit/push
 
+> rake run rake db:migrate
 
-# Database Overview:
+## Overview tips:
 https://riptutorial.com/ruby-on-rails/example/6137/change-an-existing-column-s-type
-> rake db:migrate:status
-> rake db:migrate VERSION=20080906120000
+> - rake db:migrate:status
+> - rake db:migrate VERSION=20080906120000
