@@ -12,5 +12,7 @@ describe User, type: :model do
     expect(user.last_name).to eq("Wayne")
   end
 
+  
+
 
 end
