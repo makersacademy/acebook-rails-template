@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+
+ body { 
+   background-color: white;
+   font-family: font-family: 'Quicksand', sans-serif;
+   padding-left: 5em;
+ }
+
+ .site_header {
+   color: #3b5998;
+   text-decoration: none;
+ }
+
+ .site_header a:hover {
+  font-weight: 850;
+ }
+
+ .sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 4em; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #3b5998; /* FB blue */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 8em;
+}
+
+.sidenav a {
+  color: white;
+  padding-left: 0.4em;
+  text-decoration: none;
+
+}
+
+.sidenav a:hover {
+  font-weight: 850;
+}
+
+.footer {
+  position: fixed;
+  padding-left: 0em;
+  bottom: 0;
+  width: 100%;
+  font-size: x-small;
+}
