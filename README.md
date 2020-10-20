@@ -24,3 +24,18 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+# Migrade Database:
+
+> Create database:
+bin/rails g model User email:string password:string first_name:string last_name:string 
+bin/rails db:setup (unless database already there)
+bin/rails db:migrate
+
+then heroku run rake db:migrate? To push to Heroku?
+
+
+# Database Overview:
+https://riptutorial.com/ruby-on-rails/example/6137/change-an-existing-column-s-type
+> rake db:migrate:status
+> rake db:migrate VERSION=20080906120000
