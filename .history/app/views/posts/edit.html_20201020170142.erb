@@ -1,11 +1,10 @@
 <h1>Edit post</h1>
 
 <%= form_with(model: @post, local:true) do |form| %>
-<div id='edit'>
+<div id='app'>
 <%=form.label :message %>
 <%= form.text_area :message%>
 <%= form.submit "Submit"%>
 <%end%>
-</div>
 
 <p><%= link_to 'Home', posts_path %>
