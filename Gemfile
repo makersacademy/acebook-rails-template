@@ -38,11 +38,11 @@ group :development, :test do
   gem 'selenium-webdriver'
   # gem 'rspec-rails'
   gem 'rubocop'
-  gem 'rspec-core', git: 'https://github.com/rspec/rspec-core'
-  gem 'rspec-expectations', git: 'https://github.com/rspec/rspec-expectations'
-  gem 'rspec-mocks', git: 'https://github.com/rspec/rspec-mocks'
-  gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails'
-  gem 'rspec-support', git: 'https://github.com/rspec/rspec-support'
+  gem 'rspec-core' 
+  gem 'rspec-expectations' 
+  gem 'rspec-mocks'
+  gem 'rspec-rails'
+  gem 'rspec-support'
 end
 
 group :development do
