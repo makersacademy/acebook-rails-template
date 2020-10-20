@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20201020150818) do
-=======
-ActiveRecord::Schema.define(version: 20201019154020) do
->>>>>>> e8bed18... playing around
-=======
-ActiveRecord::Schema.define(version: 20201020110610) do
->>>>>>> 611c1a3... playing with the DB
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,15 +22,6 @@ ActiveRecord::Schema.define(version: 20201020110610) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password"
-    t.string "first_name"
-    t.string "last_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
