@@ -44,6 +44,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec-support'
   gem "rails_best_practices"
+  gem 'simplecov'
+  gem 'simplecov-console'
 end
 
 group :development do
