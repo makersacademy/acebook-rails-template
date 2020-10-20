@@ -1,8 +1,18 @@
-language: ruby
-rvm:
- - 2.7
 services:
-  - postgresql
+    - postgresql
+
+addons:
+    postgresql: '9.6'
 
 before_script:
-  - cp config/database.yml.travis config/database.yml
+    - cp config/database.yml.travis config/database.yml
+
+language: ruby
+
+rvm:
+    - 2.7
+
+script:
+    - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
+    - bundle exec rspec
+    - bundle exec rubocop --config .rubocop.yml
