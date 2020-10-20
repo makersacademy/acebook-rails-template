@@ -1,7 +1,10 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <%= link_to 'Delete', post_path(post), :method => :delete %>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+
