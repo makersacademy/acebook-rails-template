@@ -52,4 +52,16 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to be_redirect
     end
   end
+
+  describe "DELETE" do  
+    it 'responds with 200' do 
+      post = Post.create message: "hello world"
+      post.destroy
+      expect(response).to have_http_status(200)
+    end 
+    it 'should delete a post' do
+      post = Post.create message: "hello world"
+      expect { post.destroy }.to change(Post, :count).by(-1) 
+    end 
+   end 
 end
