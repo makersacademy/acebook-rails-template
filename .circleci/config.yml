@@ -1,9 +1,10 @@
 version: 2.1
+
 orbs:
   ruby: circleci/ruby@0.1.2 
 
 jobs:
-  build:
+  test:
     executor: default
     steps:
       - checkout
@@ -36,12 +37,41 @@ jobs:
           root: ~/
           paths:
             - ./hix
+  build:
+    executor: default
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - Acebook-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - Acebook-
+      - configure_bundler
+      - run:
+          name: Install bundle
+          command: bundle install
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://127.0.0.1:5432 -timeout 1m
+      - run:
+          name: Setup DB
+          command: bundle exec rails db:create db:schema:load --trace
+      - save_cache:
+          key: Acebook-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ./Acebook
+
+
 
 workflows:
   version: 2
   integration:
     jobs:
       - build
+      - test
 
   executors:
     default:
@@ -72,38 +102,6 @@ commands:
             echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
             source $BASH_ENV
             gem install bundler
-
-
-
-jobs:
-  build:
-    executor: default
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - Acebook-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - Acebook-
-      - configure_bundler
-      - run:
-          name: Install bundle
-          command: bundle install
-      - run:
-          name: Wait for DB
-          command: dockerize -wait tcp://127.0.0.1:5432 -timeout 1m
-      - run:
-          name: Setup DB
-          command: bundle exec rails db:create db:schema:load --trace
-      - save_cache:
-          key: Acebook-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - ./Acebook
-
-
 
 
     executor: ruby/default
