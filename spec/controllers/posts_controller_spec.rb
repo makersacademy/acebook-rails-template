@@ -28,9 +28,11 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "DELETE /" do
+    before :each do
+      @post = Post.create(:message => :cat)
+    end
     it "removes post from table" do
-      post1 = Post.create(:message => "Hello!")
-      expect { delete :destroy, message: "Hello!" }.to change { Post.count }.by(-1)
+      expect { delete :destroy, params: { id: @post.id } }.to change { Post.count }.by(-1)
     end
   end
 end
