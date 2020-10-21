@@ -44,3 +44,10 @@ First, clone this repository. Then:
 https://riptutorial.com/ruby-on-rails/example/6137/change-an-existing-column-s-type
 > - rake db:migrate:status
 > - rake db:migrate VERSION=20080906120000
+
+## Remove depracy warnings
+
+- rvm install 2.5.0
+- rvm use 2.5.0
+- bundle install (update bundler if needed)
+- run rspec to test
