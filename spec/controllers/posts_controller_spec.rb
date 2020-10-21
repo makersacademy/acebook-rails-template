@@ -31,8 +31,14 @@ RSpec.describe PostsController, type: :controller do
     before :each do
       @post = Post.create(:message => :cat)
     end
+
     it "removes post from table" do
       expect { delete :destroy, params: { id: @post.id } }.to change { Post.count }.by(-1)
+    end
+
+    it "returns a status found (302)" do
+      delete :destroy, params: { id: @post.id }
+      expect(response).to have_http_status(302) #would like to check with someone that this is the desired response from a delete route
     end
   end
 end
