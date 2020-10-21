@@ -19,6 +19,14 @@ RSpec.describe UsersController, type: :controller do
       post :create, params: { user: { name: "", email: "bob@bob.com", password: "1234567" } }
       expect(response).not_to redirect_to(welcome_url)
     end
+
+    it "doesn't create user if email is not unique" do
+      post :create, params: { user: { name: "Bob", email: "bob@bob.com", password: "1234567" } }
+      post :create, params: { user: { name: "Bob Two", email: "bob@bob.com", password: "1234567" } }
+      expect(response).not_to redirect_to(welcome_url)
+      expect(User.find_by(name: "Bob Two")).not_to be
+    end
+
     it "creates a user" do
       post :create, params: { user: { name: "Bob", email: "bob@bob.com", password: "1234567" } }
       expect(User.find_by(email: "bob@bob.com")).to be
