@@ -4,8 +4,60 @@ orbs:
 
 jobs:
   build:
+    executor: default
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - hix-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - hix-
+      - configure_bundler
+      - run:
+          name: Install bundle
+          command: bundle install
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
+      - run:
+          name: Setup DB
+          command: bundle exec rails db:create db:schema:load --trace
+      - run:
+          name: RSpec
+          command: |
+            bundle exec rspec --profile 10 \
+                              --format progress
+      - store_artifacts:
+          path: coverage
+      - save_cache:
+          key: hix-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ./hix
+
+workflows:
+  version: 2
+  integration:
+    jobs:
+      - build
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node
+       - image: circleci/ruby:2.5.0
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_PATH: vendor/bundle
+          BUNDLE_RETRY: 3
+          BUNDLER_VERSION: 2.0.1
+          RAILS_ENV: test
+          DB_HOST: 127.0.0.1
+          PG_HOST: 127.0.0.1
+          PGUSER: hixonrails
+      - image: circleci/postgres:12.4
+        environment:
+          POSTGRES_DB: hix_postgresql_test
+          POSTGRES_USER: hixonrails
+
     executor: ruby/default
     steps:
       - checkout
