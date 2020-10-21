@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe PostsController, type: :controller do
   describe "GET /new " do
@@ -24,6 +24,13 @@ RSpec.describe PostsController, type: :controller do
     it "responds with 200" do
       get :index
       expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "DELETE /" do
+    it "removes post from table" do
+      post1 = Post.create(:message => "Hello!")
+      expect { delete :destroy, message: "Hello!" }.to change { Post.count }.by(-1)
     end
   end
 end
