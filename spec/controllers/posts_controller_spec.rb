@@ -57,7 +57,7 @@ RSpec.describe PostsController, type: :controller do
     it 'responds with 200' do 
       post = Post.create message: "hello world"
       post.destroy
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(209)
     end 
     it 'should delete a post' do
       post = Post.create message: "hello world"
