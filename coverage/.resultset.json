@@ -551,36 +551,6 @@
           null
         ]
       },
-      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/features/user_can_create_post_spec.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
       "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/features/user_can_log_in_spec.rb": {
         "lines": [
           1,
@@ -827,6 +797,6 @@
         ]
       }
     },
-    "timestamp": 1603297629
+    "timestamp": 1603297906
   }
 }
