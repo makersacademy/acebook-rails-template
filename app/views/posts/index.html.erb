@@ -1,11 +1,18 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %> <%= button_to "Delete Post", { :action => 'destroy', :id => post.id }, :method => :delete %> 
-  
-<%= button_to "Edit", edit_post_path(post.id), :method => :get%>
-
-  </p>  
-<% end %>
-
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+<% @posts.each do |post| %>
+  <div>
+    <h4>User(WIP)</h4>
+    <p><%= post.updated_at.strftime("%d/%m/%Y %k:%M") %></p>
+    <h5><%= post.message %></h5>
+    <div>
+      <div style="float: left"><%= button_to "Delete Post", { :action => 'destroy', :id => post.id }, :method => :delete %> </div>
+      <div style="float: left"><%= button_to "Edit", edit_post_path(post.id), :method => :get %><div>
+      </div>  
+  </div><br>
+<% end %>
+
+
+
