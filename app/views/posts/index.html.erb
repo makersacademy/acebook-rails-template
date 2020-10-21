@@ -1,3 +1,5 @@
+<h1>Welcome <%= current_user.name %></h1>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
