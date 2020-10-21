@@ -24,3 +24,5 @@
 
 .generators
 .rakeTasks
+/.idea/
+/coverage/
