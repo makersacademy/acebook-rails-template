@@ -24,3 +24,4 @@
 
 .generators
 .rakeTasks
+vendor/bundle/

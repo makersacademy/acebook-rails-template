@@ -17,10 +17,16 @@ class SessionsController < ApplicationController
     end
   end
 
-  def login
-
+  def logout
+    reset_session
+    redirect_to '/'
   end
 
+  # def login
+
+  # end
+
   def welcome
+
   end
 end
