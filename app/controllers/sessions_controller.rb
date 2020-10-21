@@ -17,10 +17,16 @@ class SessionsController < ApplicationController
     end
   end
 
-  def login
-
+  def logout
+    session[:user_id] = nil
+    redirect_to '/'
   end
 
+  # def login
+
+  # end
+
   def welcome
+
   end
 end

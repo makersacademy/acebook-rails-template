@@ -32,4 +32,11 @@ RSpec.describe SessionsController, type: :controller do
     end
   end
 
+  describe "POST #logout" do
+    it 'returns user to the welcome page' do
+      post :logout
+      expect(response).to redirect_to(welcome_url)
+    end
+  end
+
 end
