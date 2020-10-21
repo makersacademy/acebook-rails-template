@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
   <p><%= post.message %> <%= button_to "Delete Post", { :action => 'destroy', :id => post.id }, :method => :delete %> 
   
-<%= link_to "Edit", edit_post_path(post.id)%>
+<%= button_to "Edit", edit_post_path(post.id), :method => :get%>
 
   </p>  
 <% end %>
