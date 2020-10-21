@@ -22,5 +22,13 @@ module Helpers
       fill_in "Password", with: "Bobobob"
       click_button "Login"
     end
+
+    def log_in
+      visit "/welcome"
+      click_button "Log In"
+      fill_in "Email", with: "bob@test.com"
+      fill_in "Password", with: "Bobobob"
+      click_button "Login"
+    end
   end
 end
