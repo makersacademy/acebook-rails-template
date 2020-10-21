@@ -45,19 +45,19 @@ RSpec.describe PostsController, type: :controller do
     # end
   end
 
-  # describe "PUT update/:id" do
-  #   it "allows post to be updated" do
-  #     @post = Post.create message: "hello"
-  #     put :update, params: { id: @post.id, message: "Bye" }
-  #     expect(response).to be_redirect
-  #   end
-  # end
+  describe "PUT update/:id" do
+    it "allows post to be updated" do
+      @post = Post.create message: "hello"
+      put :update, params: { id: @post.id, message: "Bye" }
+      expect(response).to be_redirect
+    end
+  end
 
   describe "DELETE" do  
     it 'responds with 200' do 
       post = Post.create message: "hello world"
       post.destroy
-      expect(response).to have_http_status(209)
+      expect(response).to have_http_status(200)
     end 
     it 'should delete a post' do
       post = Post.create message: "hello world"
