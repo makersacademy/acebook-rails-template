@@ -1,8 +1,12 @@
 <h1>Welcome <%= current_user.name %></h1>
 
+<div class="news_feed">
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <div class="post"><p class="name"><%= User.find_by(id: post.user_id).name %>:</p>
+  <p class="message"><%= post.message %> </p> 
+  <p class="post_time"><%= post.created_at %></p></div>
 <% end %>
+</div>
 
 <%= link_to new_post_path do %>
   New post

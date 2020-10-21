@@ -24,7 +24,5 @@
 
 .generators
 .rakeTasks
-vendor/bundle/
-Gemfile.lock
-coverage/.last_run.json
-coverage/.resultset.json
+/.idea/
+/coverage/
