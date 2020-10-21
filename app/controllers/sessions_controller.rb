@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       session[:user_id]= @user.id
-      
       redirect_to '/'
     else
       redirect_to '/login'
@@ -29,4 +28,5 @@ class SessionsController < ApplicationController
   def welcome
 
   end
+  
 end
