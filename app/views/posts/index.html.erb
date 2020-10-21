@@ -1,8 +1,9 @@
 <h1>Welcome <%= current_user.name %></h1>
 
 <% @posts.each do |post| %>
-  <p><%= User.find_by(id: post.user_id).name %></p>
-  <p><%= post.message %></p>
+  <p><%= User.find_by(id: post.user_id).name %>: <%= post.message %><br> <%= post.created_at %></p>
+
+
 <% end %>
 
 <%= link_to new_post_path do %>
