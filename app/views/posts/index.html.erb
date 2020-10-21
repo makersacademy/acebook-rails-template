@@ -1,6 +1,16 @@
-<%= link_to new_post_path do %>
-  New post
+
+
+<h1>FacelessBook</h1>
+<br>
+
+
+<%= form_for @post do |form| %>
+  <%= form.label "What's on your mind?" %><br>
+  <%= form.text_field :message %><br>
+
+  <%= form.submit "Submit" %>
 <% end %>
+
 
 <% @posts.each do |post| %>
   <div>

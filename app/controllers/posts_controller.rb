@@ -1,8 +1,4 @@
 class PostsController < ApplicationController
-  def new
-    @post = Post.new
-  end
-
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
@@ -25,6 +21,7 @@ class PostsController < ApplicationController
   end
 
   def index
+    @post = Post.new
     @posts = Post.all
   end
 
