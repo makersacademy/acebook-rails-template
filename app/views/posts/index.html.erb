@@ -1,6 +1,7 @@
 <h1>Welcome <%= current_user.name %></h1>
 
 <% @posts.each do |post| %>
+  <p><%= User.find_by(id: post.user_id).name %></p>
   <p><%= post.message %></p>
 <% end %>
 
