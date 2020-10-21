@@ -1,110 +1,165 @@
 version: 2.1
-
-orbs:
-  ruby: circleci/ruby@0.1.2
-
 jobs:
-  test:
-    executor: default
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - hix-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - hix-
-      - configure_bundler
-      - run:
-          name: Install bundle
-          command: bundle install
-      - run:
-          name: Wait for DB
-          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
-      - run:
-          name: Setup DB
-          command: bundle exec rails db:create db:schema:load --trace
-      - run:
-          name: RSpec
-          command: |
-            bundle exec rspec --profile 10 \
-                              --format progress
-      - store_artifacts:
-          path: coverage
-      - save_cache:
-          key: hix-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - ./hix
   build:
-    executor: default
+    docker:
+      # specify the version you desire here
+      - image: circleci/ruby:2.5.0-node-browsers
+        environment:
+          PGHOST: localhost
+          PGUSER:
+          RAILS_ENV: test
+      - image: postgres:9.5
+        environment:
+          POSTGRES_USER:
+          POSTGRES_DB: pgapp_test
+          POSTGRES_PASSWORD: ""
+      - image: redis
+
+    working_directory: ~/Acebook
+
     steps:
       - checkout
+
+      # Download and cache dependencies
       - restore_cache:
           keys:
-            - Acebook-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-            - Acebook-
-      - configure_bundler
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
       - run:
-          name: Install bundle
-          command: bundle install
-      - run:
-          name: Wait for DB
-          command: dockerize -wait tcp://127.0.0.1:5432 -timeout 1m
-      - run:
-          name: Setup DB
-          command: bundle exec rails db:create db:schema:load --trace
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
       - save_cache:
-          key: Acebook-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
-            - vendor/bundle
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - ./Acebook
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-workflows:
-  version: 2
-  integration:
-    jobs:
-      - build
-      - test
+      # Database setup
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
 
-  executors:
-    default:
-      working_directory: ~/Acebook
-      docker:
-        - image: circleci/ruby:2.5.0
-          environment:
-            BUNDLE_JOBS: 3
-            BUNDLE_PATH: vendor/bundle
-            BUNDLE_RETRY: 3
-            BUNDLER_VERSION: 2.0.1
-            RAILS_ENV: test
-            DB_HOST: 127.0.0.1
-            PG_HOST: 127.0.0.1
-            PGUSER:
-        - image: circleci/postgres:12.4
-          environment:
-            POSTGRES_DB: pgapp_test
-            POSTGRES_USER:
-
-    commands:
-      configure_bundler:
-        description: Configure bundler
-        steps:
-          - run:
-              name: Configure bundler
-              command: |
-                echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
-                source $BASH_ENV
-                gem install bundler
-
-    executor: ruby/default
-    steps:
-      - checkout
+      # run tests!
+      # Change to rspec if you are using rspec
       - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+          name: run tests
+          command: rspec
+
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
+#version: 2.1
+
+# orbs:
+#   ruby: circleci/ruby@0.1.2
+
+# jobs:
+#   test:
+#     executor: default
+#     steps:
+#       - checkout
+#       - restore_cache:
+#           keys:
+#             - hix-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+#             - hix-
+#       - configure_bundler
+#       - run:
+#           name: Install bundle
+#           command: bundle install
+#       - run:
+#           name: Wait for DB
+#           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
+#       - run:
+#           name: Setup DB
+#           command: bundle exec rails db:create db:schema:load --trace
+#       - run:
+#           name: RSpec
+#           command: |
+#             bundle exec rspec --profile 10 \
+#                               --format progress
+#       - store_artifacts:
+#           path: coverage
+#       - save_cache:
+#           key: hix-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+#           paths:
+#             - vendor/bundle
+#       - persist_to_workspace:
+#           root: ~/
+#           paths:
+#             - ./hix
+#   build:
+#     executor: default
+#     steps:
+#       - checkout
+#       - restore_cache:
+#           keys:
+#             - Acebook-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+#             - Acebook-
+#       - configure_bundler
+#       - run:
+#           name: Install bundle
+#           command: bundle install
+#       - run:
+#           name: Wait for DB
+#           command: dockerize -wait tcp://127.0.0.1:5432 -timeout 1m
+#       - run:
+#           name: Setup DB
+#           command: bundle exec rails db:create db:schema:load --trace
+#       - save_cache:
+#           key: Acebook-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+#           paths:
+#             - vendor/bundle
+#       - persist_to_workspace:
+#           root: ~/
+#           paths:
+#             - ./Acebook
+
+# workflows:
+#   version: 2
+#   integration:
+#     jobs:
+#       - build
+#       - test
+
+#   executors:
+#     default:
+#       working_directory: ~/Acebook
+#       docker:
+#         - image: circleci/ruby:2.5.0
+#           environment:
+#             BUNDLE_JOBS: 3
+#             BUNDLE_PATH: vendor/bundle
+#             BUNDLE_RETRY: 3
+#             BUNDLER_VERSION: 2.0.1
+#             RAILS_ENV: test
+#             DB_HOST: 127.0.0.1
+#             PG_HOST: 127.0.0.1
+#             PGUSER:
+#         - image: circleci/postgres:12.4
+#           environment:
+#             POSTGRES_DB: pgapp_test
+
+#             POSTGRES_USER:
+
+#     commands:
+#       configure_bundler:
+#         description: Configure bundler
+#         steps:
+#           - run:
+#               name: Configure bundler
+#               command: |
+#                 echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+#                 source $BASH_ENV
+#                 gem install bundler
+
+#     executor: ruby/default
+#     steps:
+#       - checkout
+#       - run:
+#           name: Which bundler?
+#           command: bundle -v
+#       - ruby/bundle-install
