@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acebook</title>
+    <title>acebook</title>
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
   </head>
 
   <body>
+  <h1 class="site_header"><a class="site_header" href="/posts">acebook</a></h1>
+
+  <div class="sidenav">
+  <a href="#">About</a>
+  </div>
+
+
     <%= yield %>
   </body>
+
+<footer class="footer">
+  <p>Made by Team TRex 🦖</p>
+</footer>
+
 </html>
