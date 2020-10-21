@@ -14,9 +14,11 @@
   <h1 class="site_header"><a class="site_header" href="/posts">acebook</a></h1>
 
   <div class="sidenav">
-  <a href="#">about</a>
+    <%= link_to "Home", root_path, method: :get %>
+    <% if logged_in? %>
+      <%= link_to "Log out", logout_path, method: :post %>
+    <% end %>
   </div>
-
 
     <%= yield %>
   </body>
