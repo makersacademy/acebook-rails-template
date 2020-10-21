@@ -43,22 +43,24 @@ workflows:
     jobs:
       - build
 
-
-    docker:
+  executors:
+    default:
+      working_directory: ~/Acebook
+      docker:
        - image: circleci/ruby:2.5.0
-        environment:
-          BUNDLE_JOBS: 3
-          BUNDLE_PATH: vendor/bundle
-          BUNDLE_RETRY: 3
-          BUNDLER_VERSION: 2.0.1
-          RAILS_ENV: test
-          DB_HOST: 127.0.0.1
-          PG_HOST: 127.0.0.1
-          PGUSER: 
-      - image: circleci/postgres:12.4
-        environment:
-          POSTGRES_DB: pgapp_test
-          POSTGRES_USER: 
+          environment:
+            BUNDLE_JOBS: 3
+            BUNDLE_PATH: vendor/bundle
+            BUNDLE_RETRY: 3
+            BUNDLER_VERSION: 2.0.1
+            RAILS_ENV: test
+            DB_HOST: 127.0.0.1
+            PG_HOST: 127.0.0.1
+            PGUSER: 
+        - image: circleci/postgres:12.4
+          environment:
+            POSTGRES_DB: pgapp_test
+            POSTGRES_USER: 
 
 commands:
   configure_bundler:
