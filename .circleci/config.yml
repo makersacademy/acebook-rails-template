@@ -42,6 +42,8 @@ workflows:
   integration:
     jobs:
       - build
+
+
     docker:
        - image: circleci/ruby:2.5.0
         environment:
@@ -52,11 +54,55 @@ workflows:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
           PG_HOST: 127.0.0.1
-          PGUSER: hixonrails
+          PGUSER: 
       - image: circleci/postgres:12.4
         environment:
-          POSTGRES_DB: hix_postgresql_test
-          POSTGRES_USER: hixonrails
+          POSTGRES_DB: pgapp_test
+          POSTGRES_USER: 
+
+commands:
+  configure_bundler:
+    description: Configure bundler
+    steps:
+      - run:
+          name: Configure bundler
+          command: |
+            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+            source $BASH_ENV
+            gem install bundler
+
+
+
+jobs:
+  build:
+    executor: default
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - Acebook-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - Acebook-
+      - configure_bundler
+      - run:
+          name: Install bundle
+          command: bundle install
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://127.0.0.1:5432 -timeout 1m
+      - run:
+          name: Setup DB
+          command: bundle exec rails db:create db:schema:load --trace
+      - save_cache:
+          key: Acebook-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ./Acebook
+
+
+
 
     executor: ruby/default
     steps:
