@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  ruby: circleci/ruby@0.1.2 
+  ruby: circleci/ruby@0.1.2
 
 jobs:
   test:
@@ -64,8 +64,6 @@ jobs:
           paths:
             - ./Acebook
 
-
-
 workflows:
   version: 2
   integration:
@@ -86,11 +84,11 @@ workflows:
             RAILS_ENV: test
             DB_HOST: 127.0.0.1
             PG_HOST: 127.0.0.1
-            PGUSER: 
+            PGUSER:
         - image: circleci/postgres:12.4
           environment:
             POSTGRES_DB: pgapp_test
-            POSTGRES_USER: 
+            POSTGRES_USER:
 
 commands:
   configure_bundler:
@@ -103,12 +101,10 @@ commands:
             source $BASH_ENV
             gem install bundler
 
-
-    executor: ruby/default
-    steps:
-      - checkout
-      - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
-
+    # executor: ruby/default
+    # steps:
+    #   - checkout
+    #   - run:
+    #       name: Which bundler?
+    #       command: bundle -v
+    #   - ruby/bundle-install
