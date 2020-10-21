@@ -41,4 +41,16 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(302) #would like to check with someone that this is the desired response from a delete route
     end
   end
+
+  describe "posts#update" do
+    before :each do
+      @post = Post.create(:message => "Hello Charlotte!")
+    end
+
+    it "Changes the message of a post" do
+      patch :update, params: { id: @post.id, post: { message: "updated" } }
+      expect(Post.find_by(id: @post.id).message).to eq "updated"
+      p @post #returning the old message so perhaps the test database isnt working properly???
+    end
+  end
 end
