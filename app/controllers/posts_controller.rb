@@ -14,6 +14,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    flash.now["potato"] = "im a potato"
+      if Time.now >=  (@post[:created_at] + 600)
+      flash["#{@post.id}"] = "Postato too old to edit"
+      redirect_to root_path
+      end
+  
 
     if current_user[:id] != @post[:user_id]
       redirect_to root_path

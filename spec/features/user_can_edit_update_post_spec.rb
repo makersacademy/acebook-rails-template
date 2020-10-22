@@ -21,4 +21,14 @@ feature "Update Post" do
     expect(page).to have_content("Hello, world!")
     expect(page).not_to have_content("Edit")
   end
+
+  scenario "cannot edit messages after 10 minutes have passed" do
+    sign_up
+    make_post
+    allow(Time).to receive(:now).and_return(Time.now + 601)
+    click_link "Edit"
+#  expect(msg).to eq("Can't edit: Post is older than 10 minutes")
+#     msg.accept
+    expect(page).to have_current_path("/")
+  end
 end

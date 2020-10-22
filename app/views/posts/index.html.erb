@@ -7,6 +7,8 @@
   <p class="post_time"><%= post.created_at %></p>
   <p class="edited"><%= "Edited" if post.updated_at != post.created_at %> </p>
   <%= link_to "Edit post", edit_post_path(:id => post.id) if  post.user_id == current_user.id %>
+  
+  <%=flash[post.id.to_s]%>
   <hr>
   </div>
 <% end %>
