@@ -1,0 +1,7 @@
+<div style="float: left">
+      <%= form_for @comment, method: :post do |form| %>
+        
+        <%= form.text_field :content, placeholder: "Post a comment" %>
+        <%= form.submit "Submit" %>
+      <% end %>
+</div> 

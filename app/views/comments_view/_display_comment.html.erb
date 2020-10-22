@@ -1,0 +1,6 @@
+<% @comments.each do |comment| %>
+<h5><%= comment.content %></h5>
+<div style="float: left"><%= button_to "Delete Comment", url: { :controller => "comments",:action => 'destroy', :id => comment.id }, html: {:method => :delete} %> </div>
+
+      
+<% end %>

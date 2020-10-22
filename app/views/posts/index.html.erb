@@ -22,14 +22,8 @@
 
       <div style="float: none"><%= button_to "Edit", edit_post_path(post.id), :method => :get %></div>
 
-      <div style="float: left">
-      <%= form_for @comment do |form| %>
-        
-        <%= form.text_field :message, placeholder: "Post a comment" %>
-        <%= form.submit "Submit" %>
-      <% end %></div>
-
-    </div>  <br>
+     <%= render :partial => "./comments_view/comment_form", locals: { comment: @comment}%> <br>
+     <%= render :partial => "./comments_view/display_comment", locals: { comment: @comment}%> <br>
 
   </div><br>
 <% end %>
