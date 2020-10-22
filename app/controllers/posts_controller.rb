@@ -12,8 +12,9 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def update
-
+  def edit
+    @post = Post.find(params[:id])
+    # add check for post time
   end
 
   private
