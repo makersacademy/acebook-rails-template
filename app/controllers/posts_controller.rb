@@ -14,16 +14,25 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+
+    if current_user[:id] != @post[:user_id]
+      redirect_to root_path
+    end
+
     # add check for post time
   end
 
   def update
     @post = Post.find(params[:id])
 
-    if @post.update(post_params)
-      redirect_to root_path
-    else
-      render 'edit'
+    if current_user.id == @post.user_id
+      if @post.update(post_params)
+        redirect_to root_path
+      else
+        render 'edit'
+      end
+    else 
+      redirect_to root_path, :status => 403
     end
   end 
   

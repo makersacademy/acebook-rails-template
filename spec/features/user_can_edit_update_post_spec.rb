@@ -12,4 +12,13 @@ feature "Update Post" do
     expect(page).to have_content("Goodbye, world!")
     expect(page).to have_content("Edited")
   end
+
+  scenario "Cannot edit if a different user made post" do
+    sign_up
+    make_post
+    click_link "Log out"
+    sign_up_as_potato
+    expect(page).to have_content("Hello, world!")
+    expect(page).not_to have_content("Edit")
+  end
 end

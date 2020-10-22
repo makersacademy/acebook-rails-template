@@ -9,6 +9,15 @@ module Helpers
       click_button "Create User"
     end
 
+    def sign_up_as_potato
+      visit "/welcome"
+      click_button "Sign Up"
+      fill_in "Name", with: "Potato"
+      fill_in "Email", with: "potato@test.com"
+      fill_in "Password", with: "mashed"
+      click_button "Create User"
+    end
+
     def sign_up_log_in
       visit "/welcome"
       click_button "Sign Up"
