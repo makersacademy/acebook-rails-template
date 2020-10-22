@@ -4,7 +4,9 @@
 <% @posts.each do |post| %>
   <div class="post"><p class="name"><%= User.find_by(id: post.user_id).name %>:</p>
   <p class="message"><%= post.message %> </p> 
-  <p class="post_time"><%= post.created_at %></p></div>
+  <p class="post_time"><%= post.created_at %></p>
+  <%= link_to "Edit post", edit_post_path(:id => post.id) %>
+  </div>
 <% end %>
 </div>
 
