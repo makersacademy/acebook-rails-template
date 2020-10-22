@@ -5,9 +5,11 @@
   <div class="post"><p class="name"><%= User.find_by(id: post.user_id).name %>:</p>
   <p class="message"><%= post.message %> </p> 
   <p class="post_time"><%= post.created_at %></p>
-  <p class="delete_button"><%= link_to 'delete', post_path(post),
-  method: :delete,
-  data: { confirm: 'Are you sure?' } %></p></div>
+    <% if current_user.id == post.user_id %>
+        <p class="delete_button"><%= link_to 'delete', post_path(post),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></p></div>
+      <% end %>
 <% end %>
 </div>
 
