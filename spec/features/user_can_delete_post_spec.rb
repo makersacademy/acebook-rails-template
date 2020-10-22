@@ -7,7 +7,6 @@ feature "delete post" do
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     click_link "delete"
-    page.accept_confirm { click_button "OK" }
     expect(page).not_to have_content("Hello, world!")
   end
 end
