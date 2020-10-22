@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.all
-    @comment = Comment.new(post_id: params[:id])
+    @comment = Comment.new(post_id: params[:post_id])
     @comments = Comment.all
   end
 
