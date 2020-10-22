@@ -17,6 +17,15 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
+  describe "#destroy" do 
+    it "delete a post" do 
+      allow(User).to receive(:find_by).and_return({user: { name: 'bob', email: 'bob@test.com' }})
+      post :create, params: { post: { message: "Hello, world!" } }
+      delete :destory, params: { id: 1 }
+      assert_response :success
+    end
+  end
+
   describe "GET /" do
     it "responds with 200" do
       allow(User).to receive(:find_by).and_return({ user: { name: 'Bob', email: 'bob@test.com' }})
@@ -28,5 +37,7 @@ RSpec.describe PostsController, type: :controller do
       get :index
       expect(response).to redirect_to(welcome_url)
     end
+
+
   end
 end
