@@ -1,12 +1,6 @@
 require "rails_helper"
 
 RSpec.describe PostsController, type: :controller do
-  describe "GET /new " do
-    it "responds with 200" do
-      get :new
-      expect(response).to have_http_status(200)
-    end
-  end
 
   describe "POST /" do
     it "responds with 200" do
@@ -49,8 +43,8 @@ RSpec.describe PostsController, type: :controller do
 
     it "Changes the message of a post" do
       patch :update, params: { id: @post.id, post: { message: "updated" } }
+      @post = Post.find_by(id: @post.id)
       expect(Post.find_by(id: @post.id).message).to eq "updated"
-      p @post #returning the old message so perhaps the test database isnt working properly???
     end
   end
 end
