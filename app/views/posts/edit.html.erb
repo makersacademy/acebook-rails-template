@@ -19,6 +19,7 @@
   <p>
     <%= form.label :message %><br>
     <%= form.text_area :message, :value => @post.message %>
+    <%= form.hidden_field :user_id, :value => current_user.id %>
   </p>
 
   <p>
