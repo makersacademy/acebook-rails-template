@@ -17,9 +17,17 @@ class PostsController < ApplicationController
     # add check for post time
   end
 
+  def update
+    @post = Post.new(update_post_params)
+  end 
+  
   private
 
   def post_params
     params.require(:post).permit(:message, :user_id)
+  end
+
+  def update_post_params
+    params.require(:post).permit(:message, :id)
   end
 end

@@ -40,4 +40,16 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+  # TODO - write controller test for patch
+  # describe "PATCH /posts/:id" do 
+  #   it "will redirect" do
+  #     allow(User).to receive(:find_by).and_return({ user: { name: 'Bob', email: 'bob@test.com', id: 1 }})
+  #     allow(Post).to receive(:find).and_return({ post: { id: 1, message: "potatoes are good", created_at: "", updated_at: "nil", user_id: 1 }})
+  #     post = Post.find()
+  #     # patch :update,  params: {message: "potatoes are really good"}
+  #     patch post_url(id: 1), params: { post: { message: "potatoes are really good" } }
+  #     expect(response).to redirect_to(root_url)
+      
+  #   end
+  # end
 end

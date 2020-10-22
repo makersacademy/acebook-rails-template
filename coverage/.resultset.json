@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/support/helpers/authentication.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/support/helpers/authentication.rb": {
         "lines": [
           1,
           1,
@@ -39,7 +39,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/support/helpers/posts.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/support/helpers/posts.rb": {
         "lines": [
           1,
           1,
@@ -52,7 +52,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/controllers/posts_controller_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -96,10 +96,22 @@
           1,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/rails_helper.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -162,7 +174,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/environment.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -171,7 +183,7 @@
           1
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/application.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/application.rb": {
         "lines": [
           1,
           null,
@@ -193,14 +205,14 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/boot.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/boot.rb": {
         "lines": [
           1,
           null,
           1
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/environments/test.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -246,7 +258,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/initializers/application_controller_renderer.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -256,7 +268,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/initializers/assets.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -274,7 +286,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/initializers/backtrace_silencers.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -285,7 +297,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/initializers/cookies_serializer.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -294,7 +306,7 @@
           1
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/initializers/filter_parameter_logging.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -302,7 +314,7 @@
           1
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/initializers/inflections.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -322,7 +334,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/initializers/mime_types.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -330,7 +342,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/initializers/wrap_parameters.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -348,7 +360,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/config/routes.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/config/routes.rb": {
         "lines": [
           1,
           1,
@@ -367,25 +379,25 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/app/helpers/application_helper.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/app/helpers/sessions_helper.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/app/helpers/users_helper.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/app/controllers/posts_controller.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           1,
@@ -402,8 +414,12 @@
           null,
           null,
           1,
-          1,
+          2,
           null,
+          null,
+          null,
+          1,
+          1,
           null,
           null,
           1,
@@ -411,10 +427,14 @@
           1,
           5,
           null,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/app/controllers/application_controller.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -424,20 +444,20 @@
           1,
           null,
           1,
-          130,
+          133,
           null,
           null,
           1,
-          111,
+          114,
           null,
           null,
           1,
-          39,
+          41,
           null,
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/controllers/sessions_controller_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/controllers/sessions_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -483,7 +503,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/app/controllers/sessions_controller.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           null,
@@ -519,7 +539,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/controllers/users_controller_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/controllers/users_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -559,7 +579,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/app/controllers/users_controller.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/app/controllers/users_controller.rb": {
         "lines": [
           1,
           null,
@@ -587,10 +607,14 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/features/user_can_edit_update_post_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/features/user_can_edit_update_post_spec.rb": {
         "lines": [
           1,
           null,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -598,15 +622,11 @@
           1,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
           null,
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/features/user_can_log_in_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/features/user_can_log_in_spec.rb": {
         "lines": [
           1,
           null,
@@ -637,7 +657,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/features/user_can_logout_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/features/user_can_logout_spec.rb": {
         "lines": [
           1,
           null,
@@ -658,7 +678,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -689,7 +709,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/features/user_signup_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/features/user_signup_spec.rb": {
         "lines": [
           1,
           null,
@@ -723,7 +743,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/helpers/sessions_helper_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/helpers/sessions_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -742,7 +762,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/helpers/users_helper_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/helpers/users_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -761,7 +781,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/models/post_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/models/post_spec.rb": {
         "lines": [
           null,
           null,
@@ -770,7 +790,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/models/user_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/models/user_spec.rb": {
         "lines": [
           null,
           null,
@@ -779,7 +799,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/views/sessions/create.html.erb_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/views/sessions/create.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -788,7 +808,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/views/sessions/login.html.erb_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/views/sessions/login.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -797,7 +817,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/views/sessions/new.html.erb_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/views/sessions/new.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -806,7 +826,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/views/sessions/welcome.html.erb_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/views/sessions/welcome.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -815,7 +835,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/views/users/create.html.erb_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/views/users/create.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -824,7 +844,7 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/spec/views/users/new.html.erb_spec.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/spec/views/users/new.html.erb_spec.rb": {
         "lines": [
           null,
           null,
@@ -833,25 +853,25 @@
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/app/models/user.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/app/models/user.rb": {
         "lines": [
+          1,
+          1,
           1,
           1,
           1,
           1,
-          1,
-          1,
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/app/models/application_record.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/veronicalee/Documents/Projects/makers/week-8/acebook-rails-template/app/models/post.rb": {
+      "/Users/nicolakeys/Makers/Projects/acebook-rails-template/app/models/post.rb": {
         "lines": [
           1,
           1,
@@ -860,6 +880,6 @@
         ]
       }
     },
-    "timestamp": 1603372038
+    "timestamp": 1603375959
   }
 }
