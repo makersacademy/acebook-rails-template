@@ -13,7 +13,7 @@
 
 <% @posts.reverse.each do |post| %>
   <div>
-    <h4>User(WIP)</h4>
+    <h4><%= post.user.first_name %> <%= post.user.last_name %>: </h4>
     <p><%= post.updated_at.strftime("%d/%m/%Y %k:%M") %></p>
     <h5><%= post.message %></h5>
     <div>
