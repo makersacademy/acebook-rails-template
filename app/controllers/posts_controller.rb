@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   private
 
-  def post_params
-    params.require(:post).permit(:message)
+  def post_params        
+  params.require(:post).permit(:message, :user_id).merge(user_id: current_user.id)      
   end
 end

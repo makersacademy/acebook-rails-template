@@ -7,12 +7,11 @@
 <%= form_for @post do |form| %>
   <%= form.label "What's on your mind?" %><br>
   <%= form.text_field :message %><br>
-
   <%= form.submit "Submit" %>
 <% end %>
 
 
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
   <div>
     <h4>User(WIP)</h4>
     <p><%= post.updated_at.strftime("%d/%m/%Y %k:%M") %></p>
