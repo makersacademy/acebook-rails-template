@@ -1,9 +1,8 @@
-class UserMailer < ApplicationMailer
-  default from: 'robot.lizard2020@yahoo.com'
+class UserMailer < Devise::Mailer
+  include Devise::Controllers::UrlHelpers
+  default template_path: 'users/mailer' 
 
-  def welcome_email
-    @user = params[:user] #where this coming from?
-    @url = 'http://example.com/login'
-    mail(to: @user.email, subject: 'Welcome to FAECES BOOK')
+  def welcome_reset_password_instructions(user)
+    mail(to: user.email, subject: 'Welcome to the New Site')
   end
 end
