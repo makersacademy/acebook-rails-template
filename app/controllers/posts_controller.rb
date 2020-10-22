@@ -23,13 +23,13 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.all
-    @comment = Comment.new
+    @comment = Comment.new(post_id: params[:id])
     @comments = Comment.all
   end
 
   private
 
-  def post_params        
-  params.require(:post).permit(:message, :user_id).merge(user_id: current_user.id)      
+  def post_params
+    params.require(:post).permit(:message, :user_id).merge(user_id: current_user.id)
   end
 end
