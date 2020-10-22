@@ -6,7 +6,7 @@ class UserMailer < Devise::Mailer
 
   def welcome_reset_password_instructions(user)
     create_reset_password_token(user)
-    mail(to: user.email, subject: 'Welcome to the New Site')
+    mail(from: "donotreply@smtp.mailtrap.io", to: user.email, subject: 'Welcome to the New Site')
   end
 
 
