@@ -17,13 +17,18 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  # describe "#destroy" do 
-  #   it "delete a post" do 
+  # describe "#destroy" do
+  #   it "redirect to index page after deleting post" do
   #     allow(User).to receive(:find_by).and_return({user: { name: 'bob', email: 'bob@test.com' }})
-  #     post :create, params: { post: { message: "Hello, world!" } }
-  #     #expect { delete :destroy, id: 1 }.to change(Post, :count).by(-1)
-  #     #delete :destroy,  
-  #     #assert_response :success
+  #     delete :destroy, params: {id: 1}
+  #     expect(response).to redirect_to(post_url)
+  #   end
+  #
+  #   it "hope it works" do
+  #     post = post(:one)
+  #     assert_difference('Post.count', -1) do
+  #       delete post_url(post)
+  #     end
   #   end
   # end
 
@@ -38,7 +43,6 @@ RSpec.describe PostsController, type: :controller do
       get :index
       expect(response).to redirect_to(welcome_url)
     end
-
 
   end
 end
