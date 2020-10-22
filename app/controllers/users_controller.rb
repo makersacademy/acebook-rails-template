@@ -5,8 +5,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @post = User.create(post_params)
-    redirect_to user_url
+    @user = User.create(user_params)
+    UserMailer.with(user: @user).welcome_email.deliver_now
+    format.html { redirect_to(@user, notice: 'User was created.') }
+    format.json { render json: @user, status: :created, location: @user }
+
+    #redirect_to user_url
   end
 
   def index
@@ -15,7 +19,7 @@ class UsersController < ApplicationController
 
   private
 
-  def post_params
-    params.require(:post).permit(:message)
+  def user_params
+    params.require(:user).permit(:email)
   end
 end
