@@ -13,8 +13,10 @@ class PostsController < ApplicationController
     
   end
 
-  def delete
-
+  def destory
+    @post = Post.find_by(params[:id])
+    @post.destory
+    redirect_to posts_url
   end
 
   private
