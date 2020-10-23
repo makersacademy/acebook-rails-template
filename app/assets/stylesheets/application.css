@@ -15,9 +15,10 @@
  */
 
  body { 
-   background-color: white;
-   font-family: 'Quicksand', sans-serif;
-   padding-left: 5em;
+  background-color: white;
+  font-family: 'Quicksand', sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
  }
 
  .site_header {
@@ -30,8 +31,8 @@
  }
 
  .sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 4em; /* Set the width of the sidebar */
+  height: 100%; /* full-height: remove this if you want "auto" height */
+  width: 5em; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -45,7 +46,6 @@
   color: white;
   padding-left: 0.4em;
   text-decoration: none;
-
 }
 
 .sidenav a:hover {
@@ -53,9 +53,25 @@
 }
 
 .footer {
-  position: fixed;
-  padding-left: 0em;
+  /* position: fixed; */
+  padding-left: 11em;  
+  padding-bottom: 1.5em;
+  padding-top: 0em;
   bottom: 0;
   width: 100%;
   font-size: x-small;
+}
+
+#footer_block {
+  padding-top: 2em;
+}
+
+.content {
+  min-height: 100%;
+  margin: 0 auto -50px;
+  padding-left: 7em;
+}
+
+.push {
+  height: 50px;
 }
