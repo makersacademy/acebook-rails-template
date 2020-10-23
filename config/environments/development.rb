@@ -37,14 +37,17 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => '0069bc350cbaae',
-    :password => '47f8e67d655011',
-    :address => 'smtp.mailtrap.io',
-    :domain => 'smtp.mailtrap.io',
-    :port => '2525',
-    :authentication => :cram_md5
+    :user_name => 'apikey',
+    :password => "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",
+    # ENV['SENDGRID_API_KEY'],
+    :domain => 'protonmail.com',
+    # robot.lizard2020@yahoo.com
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
-
+ 
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
