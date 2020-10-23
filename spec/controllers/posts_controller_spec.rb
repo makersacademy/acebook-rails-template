@@ -13,7 +13,7 @@ RSpec.describe PostsController, type: :controller do
     it "responds with 200" do
       allow(User).to receive(:find_by).and_return({ user: { name: 'Bob', email: 'bob@test.com' }})
       post :create, params: { post: { message: "Hello, world!" } }
-      expect(response).to redirect_to(posts_url)
+      expect(response).to redirect_to(root_url)
     end
   end
 
@@ -27,6 +27,28 @@ RSpec.describe PostsController, type: :controller do
     it "if user not signed in you get redirected to the homepage" do
       get :index
       expect(response).to redirect_to(welcome_url)
+    end
+
+  end
+
+  describe "DELETE #destory" do
+    it "check that we can delete a post" do
+      User.create(name: "bob", email: "bob@bob.com", password: "123456")
+      user = User.find_by(name: "bob")
+      allow(User).to receive(:find_by).and_return(user)
+      Post.create(message: "Hello I am a test", user_id: user.id)
+      post = Post.find_by(message: "Hello I am a test")
+      expect { delete :destroy, params: {id: post.id } }.to change { Post.count }.by(-1)
+    end
+
+    it "redirects to index page after deleting post" do
+      User.create(name: "bob", email: "bob@bob.com", password: "123456")
+      user = User.find_by(name: "bob")
+      allow(User).to receive(:find_by).and_return(user)
+      Post.create(message: "Hello I am a test", user_id: user.id)
+      post = Post.find_by(message: "Hello I am a test")
+      delete :destroy, params: {id: post.id }
+      expect(response).to redirect_to(root_url)
     end
   end
 end
