@@ -1,3 +1,4 @@
+
 1) timestamp for posts
 2) add title to posts page
 3) add users' name to post (later)
@@ -7,3 +8,6 @@
 7) like buttons (potentially need new class? (or column in post class))
 8) Comments table requirements: ID, message (text), post_id(FK), commenters_id(FK), timestamp
 9) feature tests. TICK
+
+user-class => What does autofocus do in HTML?
+
