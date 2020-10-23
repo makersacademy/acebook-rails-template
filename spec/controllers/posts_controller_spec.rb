@@ -13,7 +13,7 @@ RSpec.describe PostsController, type: :controller do
     it "responds with 200" do
       allow(User).to receive(:find_by).and_return({ user: { name: 'Bob', email: 'bob@test.com' }})
       post :create, params: { post: { message: "Hello, world!" } }
-      expect(response).to redirect_to(posts_url)
+      expect(response).to redirect_to(root_url)
     end
   end
 
@@ -48,7 +48,7 @@ RSpec.describe PostsController, type: :controller do
       Post.create(message: "Hello I am a test", user_id: user.id)
       post = Post.find_by(message: "Hello I am a test")
       delete :destroy, params: {id: post.id }
-      expect(response).to redirect_to(posts_url)
+      expect(response).to redirect_to(root_url)
     end
   end
 end
