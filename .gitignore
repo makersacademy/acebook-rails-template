@@ -25,4 +25,4 @@
 .generators
 .rakeTasks
 /.idea/
-/coverage/
+coverage/
