@@ -1,4 +1,9 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :owned_post, only: [:edit, :update, :destroy]
+
+
   def new
     @post = Post.new
   end
@@ -20,7 +25,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to @post
-    else 
+    else
       render 'edit'
     end
   end
@@ -29,15 +34,27 @@ class PostsController < ApplicationController
     @posts = Post.all.order('created_at DESC')
   end
 
-  def destroy 
+  def destroy
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_url
-  end 
+  end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message).merge(user_id: current_user.id)
   end
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def owned_post
+    unless @post.user_id == current_user.id
+      flash[:alert] = "That post doesn't belong to you!"
+      redirect_to posts_url
+    end
+  end
+
+
 end
