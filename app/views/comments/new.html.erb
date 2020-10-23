@@ -1,1 +1,8 @@
 <h1>Comment page</h1>
+
+<%= form_for @comment do |form| %>
+  <%= form.label :comment %>
+  <%= form.text_field :comment %>
+
+  <%= form.submit "Submit" %>
+<% end %>

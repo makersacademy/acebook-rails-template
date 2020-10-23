@@ -1,17 +1,18 @@
 
   <p><%= @post.message %></p>
 
-<h1>New Comment</h1>
 
+<%= p @comment %>
 
+<%# 
 <%= form_for @comment do |form| %>
-  <%= form.label :comment %>
-  <%= form.text_field :comment %>
+  <%# <%= form.label :comment %>
+  <%# <%= form.text_field :comment %>
 
-  <%= form.submit "Submit" %>
-<% end %>
+  <%# <%= form.submit "Submit" %> 
+<%# <% end %> 
 
 
-  
+   <p><%= link_to 'Comment', new_comment_path %>
 
   <p><%= link_to 'Home', posts_path %>

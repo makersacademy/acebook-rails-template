@@ -2,22 +2,22 @@ class CommentsController < ApplicationController
 
     def index
         @comment = Comment.all
-      end
+    end
     
 
     def new
         @comment = Comment.new
-      end
+    end
 
     def create
-        # @post = Post.find(params[:post_id])
+        #@post = Post.find(params[:post_id])
         @comment = Comment.new(commentParams)
-           if @comment.save 
-            flash[:success] = "Comment successfully added"
-            redirect_to post_url
-           else 
-            render "new"
-           end
+        #    if @comment.save 
+        #     flash[:success] = "Comment successfully added"
+        redirect_to '/'
+        #    else 
+            #render "new"
+          # end
         
     end 
 
@@ -33,6 +33,7 @@ class CommentsController < ApplicationController
     end
 
     def commentParams
+        #params.require(:comment).permit(:comment).merge(:post_id)
         params.require(:comment).permit(:comment, :post_id)
     end
 end
