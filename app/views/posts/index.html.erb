@@ -22,7 +22,7 @@
       <div style="float: none"><%= button_to "Edit", edit_post_path(post.id), :method => :get %></div>
 
      <%= render :partial => "./comments/comment_form", locals: { comment: @comment, post_id: post.id}%> <br>
-     <%= render :partial => "./comments/display_comment", locals: { comment: @comment, post_id: post.id}%> 
+     <%= render :partial => "./comments/display_comment", locals: { comment: @comment, post: post}%> 
 
   </div>
 <% end %>
