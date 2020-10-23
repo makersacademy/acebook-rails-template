@@ -1,5 +1,5 @@
 <h1>Welcome <%= current_user.name %></h1>
-
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <div class="news_feed">
 <% @posts.each do |post| %>
   <div class="post"><p class="name"><%= User.find_by(id: post.user_id).name %>:</p>
@@ -8,8 +8,12 @@
   <p class="edited"><%= "Edited" if post.updated_at != post.created_at %> </p>
   <%= link_to "Edit post", edit_post_path(:id => post.id) if  post.user_id == current_user.id %>
   
-  <%=flash[post.id.to_s]%>
+ <label id=<%="post_flash_" + post.id.to_s %>  style="color:red;"> <%=flash[post.id.to_s]%></label>
   <hr>
+  <script>
+  
+setTimeout(function(){$('#post_flash_<%=post.id.to_s%>').fadeOut();}, 3000);
+</script>
   </div>
 <% end %>
 </div>
@@ -17,3 +21,5 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+
