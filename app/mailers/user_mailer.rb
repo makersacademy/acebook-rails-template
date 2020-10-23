@@ -2,13 +2,11 @@ class UserMailer < Devise::Mailer
   helper :application # gives access to all helpers defined within `application_helper`.
   include Devise::Controllers::UrlHelpers
   default template_path: 'users/mailer' 
-
-
+  
   def welcome_reset_password_instructions(user)
     create_reset_password_token(user)
-    mail(from: "robot-lizard@protonmail.com", to: user.email, subject: 'Welcome to the New Site')
+    mail(from: "Robot Lizard", to: user.email, subject: 'Welcome to the New Site')
   end
-
 
   private
 

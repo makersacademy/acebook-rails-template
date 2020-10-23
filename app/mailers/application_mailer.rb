@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  # default from: 'robot.lizard2020@yahoo.com'
+  default from: "Robot Lizard"
   layout 'mailer'
 end
