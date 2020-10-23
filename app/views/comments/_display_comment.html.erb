@@ -1,0 +1,14 @@
+<% post.comments.each do |comment| %>
+
+<h2><%= comment.user.first_name %> <%= comment.user.last_name %>:</h2>
+<h5><%= comment.content %></h5>
+
+
+<div style="float: left">
+
+<%= button_to "Delete Comment", { :controller => "comments",:action => 'destroy', :id => comment.id }, :method => :delete %> </div>
+
+<div style="float: none"><%= button_to "Edit", edit_comment_path(comment.id), :method => :get %></div>
+
+      
+<% end %>
