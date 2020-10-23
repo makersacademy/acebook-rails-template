@@ -1,6 +1,8 @@
 <% post.comments.each do |comment| %>
+
+<h2><%= comment.user.first_name %> <%= comment.user.last_name %>:</h2>
 <h5><%= comment.content %></h5>
-<h5><%= comment.user_id %></h5>
+
 
 <div style="float: left">
 
