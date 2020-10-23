@@ -33,24 +33,38 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET /posts/:id/edit" do
     it "responds with 200" do
-      allow(User).to receive(:find_by).and_return({ user: { name: 'Bob', email: 'bob@test.com', id: 1 }})
-      allow(Post).to receive(:find).and_return({ post: { id: 1, message: "potatoes are good", created_at: "", updated_at: "nil", user_id: 1 }})
-  
-      get :edit, params: { id: 1 }
+      User.create(name: "Bob", email: "bob@bob.com", password: "1234567")
+      user = User.find_by(name: "Bob")
+      allow(User).to receive(:find_by).and_return(user)
+      post :create, params: { post: { message: "Hello, world!", user_id: user.id } }
+      post = Post.find_by(message: "Hello, world!")
+
+      get :edit, params: { id: post.id }
       expect(response).to have_http_status(200)
     end
   end
 
-  # TODO - write controller test for patch
-  # describe "PATCH /posts/:id" do 
-  #   it "will redirect" do
-  #     allow(User).to receive(:find_by).and_return({ user: { name: 'Bob', email: 'bob@test.com', id: 1 }})
-  #     allow(Post).to receive(:find).and_return({ post: { id: 1, message: "potatoes are good", created_at: "", updated_at: "nil", user_id: 1 }})
-  #     post = Post.find()
-  #     # patch :update,  params: {message: "potatoes are really good"}
-  #     patch post_url(id: 1), params: { post: { message: "potatoes are really good" } }
-  #     expect(response).to redirect_to(root_url)
-      
-  #   end
-  # end
+  describe "PATCH /posts/:id" do
+    it "will redirect back to index when successfully updated" do
+      User.create(name: "Bob", email: "bob@bob.com", password: "1234567")
+      user = User.find_by(name: "Bob")
+      allow(User).to receive(:find_by).and_return(user)
+      post :create, params: { post: { message: "Hello, world!", user_id: user.id } }
+      post = Post.find_by(message: "Hello, world!")
+
+      patch :update, params: { id: post.id, post: { message: "potatoes are really good", user_id: user.id} }
+      expect(response).to redirect_to(root_url)
+    end
+
+    it "will update the post message" do
+      User.create(name: "Bob", email: "bob@bob.com", password: "1234567")
+      user = User.find_by(name: "Bob")
+      allow(User).to receive(:find_by).and_return(user)
+      post :create, params: { post: { message: "Hello, world!", user_id: user.id } }
+      post = Post.find_by(message: "Hello, world!")
+
+      patch :update, params: { id: post.id, post: { message: "potatoes are really good", user_id: user.id} }
+      expect(Post.find(post.id).message).to eq("potatoes are really good")
+    end
+  end
 end

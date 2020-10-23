@@ -27,8 +27,7 @@ feature "Update Post" do
     make_post
     allow(Time).to receive(:now).and_return(Time.now + 601)
     click_link "Edit"
-#  expect(msg).to eq("Can't edit: Post is older than 10 minutes")
-#     msg.accept
+    expect(page).to have_content("Post too old to edit")
     expect(page).to have_current_path("/")
   end
 end
