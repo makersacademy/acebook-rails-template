@@ -1,6 +1,7 @@
 describe "#edit" do 
 	it "let's a user edit a post" do 
-		newpost
+		sign_up
+		write_post
 		click_link "Edit"
 		find_field('post[message]').set("goodbye, world!")
 		click_button "Submit"
