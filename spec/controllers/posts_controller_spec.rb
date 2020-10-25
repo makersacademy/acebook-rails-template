@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   
-  user = FactoryBot.create(:user) 
-  #let(:user) { create(:user) }
+  user = FactoryBot.create(:user)
+  new_post = FactoryBot.create(:post) 
   # before(:each) do 
   #   sign_in(user)
   # end 
@@ -38,14 +38,17 @@ RSpec.describe PostsController, type: :controller do
     end
     it "show returns 200" do
       sign_in(user)
-      post = Post.create message: "hello"
+      #post :create, params: { post: { message: "Hello, world!", id: 2 } }
+      #post = Post.create message: "hello", id: 2
+      post = new_post
       get :show, params: { id: post.id }
       expect(response).to have_http_status(200)
     end
 
     it "edit responds with 200" do
       sign_in(user)
-      post = Post.create message: "hello"
+      post = new_post
+      #post = Post.create message: "hello"
       get :edit, params: {id: post.id}
       expect(response).to have_http_status(200)
     end
