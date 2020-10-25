@@ -1,7 +1,7 @@
 
 require 'simplecov'
 require 'simplecov-console'
-require 'factory_girl_rails'
+require 'factory_bot_rails'
 
 SimpleCov.formatter = (SimpleCov::Formatter::MultiFormatter.new SimpleCov::Formatter::Console)
 
@@ -44,7 +44,7 @@ RSpec.configure do |config|
 
   #factory girl 
 
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   # rspec-mocks config goes here. You can use an alternate test double
   # library (such as bogus or mocha) by changing the `mock_with` option here.
   config.mock_with :rspec do |mocks|

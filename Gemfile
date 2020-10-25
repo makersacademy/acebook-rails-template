@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'factory_girl_rails'
+gem 'factory_bot_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,7 +41,8 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'rubocop', require: false
-  gem 'rubocop-rspec', require: false  
+  gem 'rubocop-rspec', require: false 
+  gem 'faker' 
 end
 
 group :development do

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   
-  user = FactoryGirl.create(:user) 
+  user = FactoryBot.create(:user) 
   #let(:user) { create(:user) }
   # before(:each) do 
   #   sign_in(user)
