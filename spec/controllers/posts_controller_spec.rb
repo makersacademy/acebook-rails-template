@@ -2,14 +2,14 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   
-  user = FactoryBot.create(:user)
-  new_post = FactoryBot.create(:post) 
   # before(:each) do 
   #   sign_in(user)
   # end 
   
   describe "GET / " do
     it "responds with 200" do
+      user = FactoryBot.create(:user)
+      new_post = FactoryBot.create(:post) 
       sign_in(user)
       get :new
       expect(response).to have_http_status(200)
@@ -18,12 +18,16 @@ RSpec.describe PostsController, type: :controller do
 
   describe "POST /" do
     it "responds with 200" do
+      user = FactoryBot.create(:user)
+      new_post = FactoryBot.create(:post) 
       sign_in(user)
       post :create, params: { post: { message: "Hello, world!" } }
       expect(response).to redirect_to(posts_url)
     end
 
     it "creates a post" do
+      user = FactoryBot.create(:user)
+      new_post = FactoryBot.create(:post) 
       sign_in(user)
       post :create, params: { post: { message: "Hello, world!" } }
       expect(Post.find_by(message: "Hello, world!")).to be
@@ -32,11 +36,15 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET /" do
     it "responds with 200" do
+      user = FactoryBot.create(:user)
+      new_post = FactoryBot.create(:post) 
       sign_in(user)
       get :index
       expect(response).to have_http_status(200)
     end
     it "show returns 200" do
+      user = FactoryBot.create(:user)
+      new_post = FactoryBot.create(:post) 
       sign_in(user)
       #post :create, params: { post: { message: "Hello, world!", id: 2 } }
       #post = Post.create message: "hello", id: 2
@@ -46,6 +54,8 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "edit responds with 200" do
+      user = FactoryBot.create(:user)
+      new_post = FactoryBot.create(:post) 
       sign_in(user)
       post = new_post
       #post = Post.create message: "hello"
@@ -75,10 +85,10 @@ RSpec.describe PostsController, type: :controller do
       post.destroy
       expect(response).to have_http_status(200)
     end 
-    it 'should delete a post' do
-      sign_in(user)
-      post = Post.create message: "hello world"
-      expect { post.destroy }.to change(Post, :count).by(-1) 
-    end 
+    # it 'should delete a post' do
+    #   sign_in(user)
+    #   new_post = post
+    #   expect { new_post.destroy }.to change(Post, :count).by(-1) 
+    # end 
    end 
 end
