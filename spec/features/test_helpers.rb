@@ -1,6 +1,5 @@
 
-def newpost 
-	visit "/posts"
+def add_new_post 
 	click_link "New post"
 	fill_in "Message", with: "Hello, world!"
 	click_button "Submit"
@@ -16,8 +15,3 @@ def sign_up
 	click_on "Confirm"
 end
 
-def write_post
-	click_link "New post"
-	fill_in "Message", with: "Hello, world!"
-	click_button "Submit"
-end 
