@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   respond_to :js, :html, :json
-
+  before_action :authenticate_user!
+  
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
@@ -30,13 +31,13 @@ class PostsController < ApplicationController
 
   def upvote
     @post = Post.find(params[:id])
-    @post.upvote_by current_user
+    @post.liked_by current_user
     redirect_back fallback_location: root_path
   end
 
   def downvote
     @post = Post.find(params[:id])
-    @post.downvote_by current_user
+    @post.unliked_by current_user
     redirect_back fallback_location: root_path
   end
 
