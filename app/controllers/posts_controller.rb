@@ -19,11 +19,17 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
-      redirect_to @post
-    else
+    if (Time.now - @post.created_at) < 600  
+      if @post.update(post_params)
+        redirect_to @post
+      else
+        render 'edit'
+      end
+    else 
+      flash.now[:alert] = "This post cannot be updated"
       render 'edit'
-    end
+    end 
+    p Time.now - @post.created_at
   end
 
   def index
