@@ -1,4 +1,6 @@
-
+<body class="showing">
   <p><%= @post.message %></p> <br>
-  posted by: <%= @post.user.name%>
+  posted by: <%= @post.user.name%> <br>
+  <%= @post.created_at %> <br>
   <p><%= link_to 'Home', posts_path %>
+  </body>

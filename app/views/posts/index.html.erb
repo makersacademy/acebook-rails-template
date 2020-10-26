@@ -1,19 +1,17 @@
-
+<body class="posts-view">
 <p class="new-post">
 <%= link_to new_post_path do %>
   New post
 <% end %>
 </p>
-
+<div class="viewing">
 <% @posts.each do |post| %>
-
   <p class='message'><%= post.message %><br>
   posted by: <%= post.user.name%> <br>
   <%= post.created_at %> </p>
   <%= link_to "Edit", edit_post_path(post)%> 
   <%= link_to "Show", post_path(post)%> 
   <%= link_to 'Delete', post_path(post), :method => :delete %>
-<% end %>
-
-
-
+<% end %> <br>
+</div>
+</body>

@@ -25,13 +25,13 @@ text-shadow: 1px 1px black;
   body {
 	font-family: 'Lucida Grande', tahoma, verdana, arial, sans-serif;
 	min-height: 100vh;
-	background-color: #E7F0FF;
+	background-color: ;
 	color: #262626;
 	padding-bottom: 3rem;
 	margin: auto;
-	width: 70%;
 	padding: 10px;
-	text-align: center;
+	text-align: center; 
+  background-color: #FFD3BA;
   }
 	
 	.navbar-text {
@@ -69,19 +69,18 @@ form {
 }
 
 .message {
-  margin-top: 60px;
-  padding: 7px;
 	background: darken(whitesmoke, 10%);
 	border: 2px solid #D0CCD0;
 	border-width: 30%;
+	position: center;
 
 }
 input[type=submit] {
 	width: 45%;
-	background-color: #006BA6;
-	border: 1px solid #006BA6;
+background-color: #23B5D3;
+border: 1px solid #23B5D3;
   padding: 5px 12px;
-	color: ##D0CCD0;
+	color: white;
   font-weight: bold;
   cursor: pointer;
   border-radius: 3px;
@@ -93,7 +92,7 @@ input[type=submit] {
 	margin-top: 85px;
 }
 
-#post_message {
+#post_message, textarea {
 	width: 90%;
 	height: 120px;
 	margin-top: 10px;
@@ -101,11 +100,42 @@ input[type=submit] {
   padding: 8px 12px;
   border: 1px solid #dbdbdb;
   box-sizing: border-box;
-  border-radius: 3px;
+	border-radius: 3px;
+	border-radius: 2px;
+font-family: 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+
+
 }
 
 .img-logo {
 	margin-top: 12px;
 	width: 4%;
 	border-radius: 50%;
+}
+
+.image-views {
+		background-position: center bottom; repeat-x, no repeat-y;
+		bottom: 0px; 
+		width: 100%;
+		align-items: center;
+		image-rendering: repeat-x;
+
+}
+
+.posts-view, .showing, .editing, .edit_page {
+font-family: 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+background-image: url('https://www.epmmagazine.com/downloads/7441/download/face%20masks.jpg?cb=cedd8e88e25c2482f57e628a621d9a8c&w=640');
+background-position: center bottom;
+  background-repeat:repeat-x; 
+color: #262626;
+background-color: #FFD3BA;
+margin: auto;
+width: 100%;
+text-align: center;
+}
+
+.viewing, {
+margin: auto;
+width: 60%;
+padding: 10px;
 }
