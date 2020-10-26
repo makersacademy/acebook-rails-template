@@ -85,10 +85,11 @@ RSpec.describe PostsController, type: :controller do
       post.destroy
       expect(response).to have_http_status(200)
     end 
-    # it 'should delete a post' do
-    #   sign_in(user)
-    #   new_post = post
-    #   expect { new_post.destroy }.to change(Post, :count).by(-1) 
-    # end 
+    it 'should delete a post' do
+      user = FactoryBot.create(:user)
+      new_post = FactoryBot.create(:post) 
+      sign_in(user)
+      expect { new_post.destroy }.to change(Post, :count).by(-1) 
+    end 
    end 
 end
