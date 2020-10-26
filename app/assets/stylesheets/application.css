@@ -16,7 +16,7 @@
 
  .new, .sign_up {
 background-image: url('https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/06/25/08/istock-1211156080.jpg');
-	margin-top: 210px;
+	margin-top: 170px;
 	color: white;
 text-shadow: 1px 1px black;
 
@@ -102,4 +102,10 @@ input[type=submit] {
   border: 1px solid #dbdbdb;
   box-sizing: border-box;
   border-radius: 3px;
+}
+
+.img-logo {
+	margin-top: 12px;
+	width: 4%;
+	border-radius: 50%;
 }

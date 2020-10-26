@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Croc Ma World</title>
+    <title>FaceMASKbook</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="icon" 
+      type="image/png" 
+      href="https://media.istockphoto.com/vectors/medical-face-mask-icon-vector-id1214356891?k=6&m=1214356891&s=170667a&w=0&h=JFPgP9cuzkBQk3vV2lqg1LGkhDlxmlsPhxcdYzhyx2w=">
   </head>
 
   <body>
-  <h1 class="logo"> CROC MY WORLD </h1>
+  <h1 class="logo">Face<img class="img-logo" src="https://media.istockphoto.com/vectors/medical-face-mask-icon-vector-id1214356891?k=6&m=1214356891&s=170667a&w=0&h=JFPgP9cuzkBQk3vV2lqg1LGkhDlxmlsPhxcdYzhyx2w=">book</h1>
     <%= yield %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
