@@ -4,6 +4,7 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <p class="navbar-text float-right">
@@ -17,12 +18,7 @@
     <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
   <% end %>
   </p>
- <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a class="nav-link" href="/ideas">Ideas</a>
-    </li>
-    ...
-  </ul>
+ 
   
   </head>
 

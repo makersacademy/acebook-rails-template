@@ -1,0 +1,12 @@
+<% if !current_user.voted_for?(post)%>
+        <%= link_to like_post_path(post), method: :put do %> 
+        <div class="engagement"> 
+        <p> <button type="button" class="badge badge-secondary"> Like <span class="badge"><%= post.get_upvotes.size %> </span></button> </p>
+         </div>
+        <% end %>
+    <% else%>
+        <%= link_to unlike_post_path(post), method: :put do %>
+        <div class="engagement"> <button type="button" class="badge badge-info"> Unlike <span class="badge">
+        <%= post.get_upvotes.size %> </div>
+        <% end %>
+    <%end%>

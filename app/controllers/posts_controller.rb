@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  respond_to :js, :html, :json
+  before_action :authenticate_user!
+  
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
@@ -24,6 +27,18 @@ class PostsController < ApplicationController
     @post = Post.new
     @posts = Post.all
     @comment = Comment.new(post_id: params[:post_id])
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    @post.liked_by current_user
+    redirect_back fallback_location: root_path
+  end
+
+  def unlike
+    @post = Post.find(params[:id])
+    @post.unliked_by current_user
+    redirect_back fallback_location: root_path
   end
 
   private

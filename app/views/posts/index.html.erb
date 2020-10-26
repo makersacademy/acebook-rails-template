@@ -14,13 +14,15 @@
 <% @posts.reverse.each do |post| %>
   <div>
     <h4><%= post.user.first_name %> <%= post.user.last_name %>: </h4>
-    <p><%= post.updated_at.strftime("%d/%m/%Y %k:%M") %></p>
+    <p><%= post.created_at.strftime("%d/%m/%Y %k:%M") %></p>
     <h5><%= post.message %></h5>
     <div>
       <div style="float: left"><%= button_to "Delete Post", { :action => 'destroy', :id => post.id }, :method => :delete %> </div>
 
       <div style="float: none"><%= button_to "Edit", edit_post_path(post.id), :method => :get %></div>
+  
 
+    <%= render :partial => "./likes/like_button", locals: { post: post, post_id: post.id}%> <br>
      <%= render :partial => "./comments/comment_form", locals: { comment: @comment, post_id: post.id}%> <br>
      <%= render :partial => "./comments/display_comment", locals: { comment: @comment, post: post}%> 
 

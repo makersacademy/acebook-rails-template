@@ -10,5 +10,19 @@
 
 <div style="float: none"><%= button_to "Edit", edit_comment_path(comment.id), :method => :get %></div>
 
+<% if !current_user.voted_for?(comment)%>
+        <%= link_to like_comment_path(comment), method: :put do %> 
+        <div class="engagement"> 
+        <p> <button type="button" class="badge badge-secondary"> Like <span class="badge"><%= comment.get_upvotes.size %> </span></button> </p>
+         </div>
+        <% end %>
+    <% else%>
+        <%= link_to unlike_comment_path(comment), method: :put do %>
+        <div class="engagement"> <button type="button" class="badge badge-info"> Unlike <span class="badge">
+        <%= comment.get_upvotes.size %> </div>
+        <% end %>
+<%end%>
+
       
 <% end %>
+
