@@ -1,0 +1,9 @@
+<h1>Edit comment</h1>
+
+<%= form_with(model: @comment, local:true) do |form| %>
+<%=form.label :comment %>
+<%= form.text_area :comment%>
+<%= form.submit "Submit"%>
+<%end%>
+
+<p><%= link_to 'Home', posts_path %>

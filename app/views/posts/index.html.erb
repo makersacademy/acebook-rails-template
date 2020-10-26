@@ -9,7 +9,9 @@
     <% post.comments.each do |comment| %>
     <p>
       <%= comment.comment %>
+      Posted by:
        <%= comment.user.name%>
+       <%= link_to 'Edit', edit_comment_path(comment) %>
     </p>
     <% end %>
   </p>

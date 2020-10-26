@@ -2,7 +2,7 @@
 
 <%= form_with(model: @post, local:true) do |form| %>
 <%=form.label :message %>
-<section id='edit'><%= form.text_area :message%><section>
+<%= form.text_area :message%>
 <%= form.submit "Submit"%>
 <%end%>
 
