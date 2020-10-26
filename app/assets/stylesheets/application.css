@@ -25,7 +25,7 @@
   body {
 	font-family: 'Lucida Grande', tahoma, verdana, arial, sans-serif;
 	min-height: 100vh;
-	background-color: ;
+	
 	color: #262626;
 	padding-bottom: 3rem;
 	margin: auto;
@@ -111,14 +111,7 @@ input[type=submit] {
 	border-radius: 50%;
 }
 
-.image-views {
-		background-position: center bottom; repeat-x, no repeat-y;
-		bottom: 0px; 
-		width: 100%;
-		align-items: center;
-		image-rendering: repeat-x;
 
-}
 
 .posts-view, .showing, .editing, .edit_page {
 	font-family: 'Lucida Grande', tahoma, verdana, arial, sans-serif;
@@ -132,7 +125,7 @@ input[type=submit] {
 	text-align: center;
 }
 
-.viewing, {
+.viewing {
 	margin: auto;
 	width: 60%;
 	padding: 10px;
