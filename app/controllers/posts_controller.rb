@@ -28,13 +28,16 @@ class PostsController < ApplicationController
     @comment = Comment.new(post_id: params[:post_id])
   end
 
-  def like
+  def upvote
     @post = Post.find(params[:id])
-    if params[:format] == "like"
-      @post.liked_by current_user
-    elsif params[:format] == "unlike"
-      @post.unliked_by current_user
-    end
+    @post.upvote_by current_user
+    redirect_back fallback_location: root_path
+  end
+
+  def downvote
+    @post = Post.find(params[:id])
+    @post.downvote_by current_user
+    redirect_back fallback_location: root_path
   end
 
   private
