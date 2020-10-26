@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   validates_presence_of :email, :name
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
 end

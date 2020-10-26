@@ -9,6 +9,7 @@
     <% post.comments.each do |comment| %>
     <p>
       <%= comment.comment %>
+       <%= comment.user.name%>
     </p>
     <% end %>
   </p>
