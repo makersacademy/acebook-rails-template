@@ -13,8 +13,93 @@
  *= require_tree .
  *= require_self
  */
- body {
-background-color: #BFDBF7;
+
+ .new, .sign_up {
+background-image: url('https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/06/25/08/istock-1211156080.jpg');
+	margin-top: 210px;
+	color: white;
+text-shadow: 1px 1px black;
+
 
  }
+  body {
+	font-family: 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+	min-height: 100vh;
+	background-color: #E7F0FF;
+	color: #262626;
+	padding-bottom: 3rem;
+	margin: auto;
+	width: 70%;
+	padding: 10px;
+	text-align: center;
+  }
+	
+	.navbar-text {
+	margin-top: 15px;
+	position: absolute;
+	top: 8px;
+	right: 40px;
+	padding-left: 20px;
+	}
 
+form {
+  width: 500px;
+  height: 50%;
+  overflow: hidden;
+  border: 0 solid #000;
+	margin: auto;
+}
+
+#user_password,
+#user_email,
+#user_name,
+#user_password,
+#user_password_confirmation,
+#user_current_password, #post_message {
+  width: 45%;
+  margin-bottom: 5px;
+  padding: 8px 12px;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.button_to {
+  margin-top: 12px;
+}
+
+.message {
+  margin-top: 60px;
+  padding: 7px;
+	background: darken(whitesmoke, 10%);
+	border: 2px solid #D0CCD0;
+	border-width: 30%;
+
+}
+input[type=submit] {
+	width: 45%;
+	background-color: #006BA6;
+	border: 1px solid #006BA6;
+  padding: 5px 12px;
+	color: ##D0CCD0;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+	margin-top: 12px;
+	font-size: 18px;
+}
+
+.new_post {
+	margin-top: 85px;
+}
+
+#post_message {
+	width: 90%;
+	height: 120px;
+	margin-top: 10px;
+  margin-bottom: 5px;
+  padding: 8px 12px;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
