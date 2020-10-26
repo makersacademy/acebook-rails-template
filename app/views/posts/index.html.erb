@@ -22,7 +22,7 @@
       <div style="float: none"><%= button_to "Edit", edit_post_path(post.id), :method => :get %></div>
   
 
-    <%= render :partial => "./posts/like_button", locals: { post: @post, post_id: post.id}%> <br>
+    <%= render :partial => "./likes/like_button", locals: { post: post, post_id: post.id}%> <br>
      <%= render :partial => "./comments/comment_form", locals: { comment: @comment, post_id: post.id}%> <br>
      <%= render :partial => "./comments/display_comment", locals: { comment: @comment, post: post}%> 
 
