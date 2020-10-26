@@ -26,6 +26,18 @@ class CommentsController < ApplicationController
     redirect_to posts_url
   end
 
+  def like
+    @comment = Comment.find(params[:id])
+    @comment.liked_by current_user
+    redirect_back fallback_location: root_path
+  end
+
+  def unlike
+    @comment = Comment.find(params[:id])
+    @comment.unliked_by current_user
+    redirect_back fallback_location: root_path
+  end
+
   private
 
   def comment_params
