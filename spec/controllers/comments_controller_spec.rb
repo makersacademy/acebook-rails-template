@@ -42,6 +42,22 @@ RSpec.describe CommentsController, type: :controller do
     end
   end
 
+  it "update method changes comment" do
+    patch :update, params: {id: @new_comment.id, comment: { comment: "Oops" } }
+    expect(Comment.find_by(comment: "Oops")).to be
+  end
+
+  describe "DELETE" do
+    it 'responds with 200' do
+      expect(response).to have_http_status(200)
+    end
+    it 'should delete a post' do
+      expect { @new_comment.destroy }.to change(Comment, :count).by(-1) 
+    end 
+  end
+
+  
+
 end
 
 

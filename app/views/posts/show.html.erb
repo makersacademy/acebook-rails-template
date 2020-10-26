@@ -4,6 +4,11 @@
     <% @post.comments.each do |comment| %>
     <p>
       <%= comment.comment %>
+      Posted by:
+      <%= comment.user.name %>
+      <%= link_to 'Edit', edit_comment_path(comment) %>
+       <%= link_to 'Delete', comment_path(comment), :method => :delete %>
+    
     </p>
     <% end %>
     <p><%= link_to 'Comment on this post', new_comment_path(post_id: @post.id) %>

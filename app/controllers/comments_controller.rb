@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
+    before_action :authenticate_user!
     before_action :find_comment, only: [:show, :edit, :update, :destroy]
+    before_action :owned_post, only: [:edit, :update, :destroy]
 
     def index
         @comment = Comment.all
@@ -35,9 +37,8 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        @post = Post.find(params[:post_id])
         @comment.destroy
-        redirect_to post_url
+        redirect_to posts_url
     end
 
     private
@@ -48,5 +49,12 @@ class CommentsController < ApplicationController
 
     def comment_params
         params.require(:comment).permit(:comment, :post_id).merge(user_id: current_user.id)
+    end
+
+    def owned_post
+      unless @comment.user_id == current_user.id
+        flash[:alert] = "That post doesn't belong to you!"
+        redirect_to posts_url
+      end
     end
 end

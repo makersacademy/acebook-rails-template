@@ -12,6 +12,7 @@
       Posted by:
        <%= comment.user.name%>
        <%= link_to 'Edit', edit_comment_path(comment) %>
+       <%= link_to 'Delete', comment_path(comment), :method => :delete %>
     </p>
     <% end %>
   </p>
