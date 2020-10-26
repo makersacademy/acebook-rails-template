@@ -20,13 +20,23 @@
       <div style="float: left"><%= button_to "Delete Post", { :action => 'destroy', :id => post.id }, :method => :delete %> </div>
 
       <div style="float: none"><%= button_to "Edit", edit_post_path(post.id), :method => :get %></div>
+
+
+      <% if post.user.likes post %>
+       <%= link_to unlike_post_path(post), method: :put do %>
+        <div class="engagement"> <%= button_to "Unlike"%><p><%= post.get_likes.size %> </p> </div>
+      <% end %>
+      <%end%>
+       
+       <%if !post.user.likes post%>
       
       <%= link_to like_post_path(post), method: :put do %> 
-      <div class="engagement"> <%= button_to "Like"%> <p><%= post.get_upvotes.size %> </p> </div>
+      <div class="engagement"> <%= button_to "Like"%> <p><%= post.get_likes.size %> </p> </div>
       <% end %>
-      <%= link_to dislike_post_path(post), method: :put do %>
-        <div class="engagement"> <%= button_to "Dislike"%><p><%= post.get_downvotes.size %> </p> </div>
       <% end %>
+      
+      
+      
 
      <%= render :partial => "./comments/comment_form", locals: { comment: @comment, post_id: post.id}%> <br>
      <%= render :partial => "./comments/display_comment", locals: { comment: @comment, post: post}%> 
