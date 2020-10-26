@@ -1,8 +1,15 @@
 
   <p><%= @post.message %></p>
+  <p>
+    <% @post.comments.each do |comment| %>
+    <p>
+      <%= comment.comment %>
+    </p>
+    <% end %>
+    <p><%= link_to 'Comment on this post', new_comment_path(post_id: @post.id) %>
+  </p>
 
 
-<%= p @comment %>
 
 <%# 
 <%= form_for @comment do |form| %>
@@ -13,6 +20,6 @@
 <%# <% end %> 
 
 
-   <p><%= link_to 'Comment', new_comment_path(post_id: @post.id) %>
+
 
   <p><%= link_to 'Home', posts_path %>

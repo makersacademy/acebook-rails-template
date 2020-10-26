@@ -16,7 +16,7 @@ RSpec.describe CommentsController, type: :controller do
   end
 
   describe "POST /" do
-    it "responds with 200" do
+    it "redirects back to the posts page" do
       post :create, params: { comment: { comment: "This is a comment" } }
       expect(response).to redirect_to(posts_url)
     end
