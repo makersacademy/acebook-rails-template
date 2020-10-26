@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  respond_to :js, :html, :json
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
@@ -24,6 +26,15 @@ class PostsController < ApplicationController
     @post = Post.new
     @posts = Post.all
     @comment = Comment.new(post_id: params[:post_id])
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    if params[:format] == "like"
+      @post.liked_by current_user
+    elsif params[:format] == "unlike"
+      @post.unliked_by current_user
+    end
   end
 
   private

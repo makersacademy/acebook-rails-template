@@ -21,6 +21,14 @@
 
       <div style="float: none"><%= button_to "Edit", edit_post_path(post.id), :method => :get %></div>
 
+  
+  <%= form_tag like_path(likeable_type: post.class.to_s, likeable_id: post.id), remote: true do %>
+    <% button_tag class: 'btn btn-block' do %>
+      <button type="button">Like</button>
+    <% end %>
+    <% end %>
+
+
      <%= render :partial => "./comments/comment_form", locals: { comment: @comment, post_id: post.id}%> <br>
      <%= render :partial => "./comments/display_comment", locals: { comment: @comment, post: post}%> 
 
