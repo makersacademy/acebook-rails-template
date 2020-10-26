@@ -1,6 +1,34 @@
+
+
+  <p><%= @post.message %></p>
+  <p>
+    <% @post.comments.each do |comment| %>
+    <p>
+      <%= comment.comment %>
+      Posted by:
+      <%= comment.user.name %>
+      <%= link_to 'Edit', edit_comment_path(comment) %>
+       <%= link_to 'Delete', comment_path(comment), :method => :delete %>
+    
+    </p>
+    <% end %>
+    <p><%= link_to 'Comment on this post', new_comment_path(post_id: @post.id) %>
+  </p>
+
+
+<%# 
+<%= form_for @comment do |form| %>
+  <%# <%= form.label :comment %>
+  <%# <%= form.text_field :comment %>
+
+  <%# <%= form.submit "Submit" %> 
+<%# <% end %> 
+
+
 <body class="showing">
   <p><%= @post.message %></p> <br>
   posted by: <%= @post.user.name%> <br>
   <%= @post.created_at %> <br>
+
   <p><%= link_to 'Home', posts_path %>
   </body>

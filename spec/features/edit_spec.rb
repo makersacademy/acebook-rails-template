@@ -1,13 +1,13 @@
-# frozen_string_literal: true
 
-describe '#edit' do
-  it "let's a user edit a post" do
-    sign_up
-    write_post
-    click_link 'Edit'
-    find_field('post[message]').set('goodbye, world!')
-    click_button 'Submit'
-    expect(page).not_to have_content('Hello, world')
-    expect(page).to have_content('goodbye, world')
-  end
-end
+describe "#edit" do 
+	it "let's a user edit a post" do 
+		sign_up
+		add_new_post
+		click_link "Edit"
+		find_field('post[message]').set("goodbye, world!")
+		click_button "Submit"
+		expect(page).not_to have_content("Hello, world")
+		expect(page).to have_content("goodbye, world")
+	end 
+end 
+

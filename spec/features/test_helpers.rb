@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-def newpost
-  visit '/posts'
-  click_link 'New post'
-  fill_in 'Message', with: 'Hello, world!'
-  click_button 'Submit'
-end
+def add_new_post 
+	click_link "New post"
+	fill_in "Message", with: "Hello, world!"
+	click_button "Submit"
+end 
 
 def sign_up
   visit '/'
@@ -17,8 +16,3 @@ def sign_up
   click_on 'Confirm'
 end
 
-def write_post
-  click_link 'New post'
-  fill_in 'Message', with: 'Hello, world!'
-  click_button 'Submit'
-end
