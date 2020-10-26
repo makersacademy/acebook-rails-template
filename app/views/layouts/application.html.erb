@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acebook</title>
+    <title>FaceMASKbook</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="icon" 
+      type="image/png" 
+      href="https://media.istockphoto.com/vectors/medical-face-mask-icon-vector-id1214356891?k=6&m=1214356891&s=170667a&w=0&h=JFPgP9cuzkBQk3vV2lqg1LGkhDlxmlsPhxcdYzhyx2w=">
   </head>
 
   <body>
+  <h1 class="logo">Face<img class="img-logo" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/medical-mask-2224899-1852054.png">book</h1>
     <%= yield %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
@@ -17,13 +20,14 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
-    <p class="navbar-text float-right">
-  <% if user_signed_in? %>
-    Logged in as <strong><%= current_user.email %></strong>.
+    <div class="navbar-text float-right">
+    
+    <% if user_signed_in? %>
+    Logged in as <strong><%= current_user.name%></strong>. <br>
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
   <% end %>
-</p>
+</div>
 
   </body>
 </html>
