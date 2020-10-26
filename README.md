@@ -1,6 +1,10 @@
 'trello board'
 https://trello.com/invite/b/TQkCs4aN/0e202ae57f0d33c6543789beec867771/acebook-ruby-on-rails
 
+
+https://acebook-croc-my-world.herokuapp.com/posts
+
+
 # AceBook
 
 REQUIRED INSTRUCTIONS:

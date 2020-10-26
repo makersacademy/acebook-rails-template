@@ -1,89 +1,43 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Projects/week_8/acebook-rails-template/spec/features/test_helpers.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/spec/features/test_helpers.rb": {
         "lines": [
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
           null,
           1,
           3,
           3,
-          0,
-          0,
-          null
-        ]
-      },
-      "/Users/student/Projects/week_8/acebook-rails-template/spec/controllers/posts_controller_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          0,
+          3,
+          3,
+          3,
+          3,
+          3,
           null,
           null,
-          null,
-          1,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          0,
-          null,
-          1,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
           1,
           2,
+          2,
+          2,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/spec/controllers/comments_controller_spec.rb": {
+        "lines": [
+          1,
           null,
+          1,
           null,
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/spec/rails_helper.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -111,12 +65,15 @@
           null,
           null,
           null,
-          1,
           null,
           1,
           null,
           1,
           null,
+          1,
+          null,
+          1,
+          null,
           null,
           null,
           null,
@@ -136,6 +93,7 @@
           null,
           null,
           1,
+          null,
           null,
           null,
           1,
@@ -144,7 +102,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/environment.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -153,7 +111,7 @@
           1
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/application.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/application.rb": {
         "lines": [
           1,
           null,
@@ -175,14 +133,14 @@
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/boot.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/boot.rb": {
         "lines": [
           1,
           null,
           1
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/environments/test.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -228,7 +186,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/initializers/application_controller_renderer.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -238,7 +196,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/initializers/assets.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -256,7 +214,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/initializers/backtrace_silencers.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -267,7 +225,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/initializers/cookies_serializer.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -276,7 +234,7 @@
           1
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/initializers/devise.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/devise.rb": {
         "lines": [
           null,
           null,
@@ -591,7 +549,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/initializers/filter_parameter_logging.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -599,7 +557,7 @@
           1
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/initializers/inflections.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -619,7 +577,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/initializers/mime_types.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -627,7 +585,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/initializers/wrap_parameters.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -645,7 +603,34 @@
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/config/routes.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/spec/factories/posts.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          11,
+          11,
+          11,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/spec/factories/users.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          11,
+          11,
+          11,
+          11,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/config/routes.rb": {
         "lines": [
           1,
           1,
@@ -653,10 +638,11 @@
           null,
           1,
           1,
+          1,
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/app/models/user.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/app/models/user.rb": {
         "lines": [
           1,
           null,
@@ -666,77 +652,215 @@
           null,
           1,
           1,
+          null,
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/app/models/application_record.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/app/helpers/application_helper.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/app/controllers/posts_controller.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/app/helpers/comments_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/app/helpers/registrations_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/app/controllers/comments_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           1,
           1,
           null,
+          1,
           null,
           1,
-          0,
+          12,
+          12,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/spec/controllers/posts_controller_spec.rb": {
+        "lines": [
           1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
           null,
           1,
           null,
           1,
-          0,
+          10,
+          10,
+          10,
+          null,
           null,
           1,
-          0,
+          1,
+          1,
+          1,
+          null,
           null,
           null,
           1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/app/controllers/posts_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          6,
+          6,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          3,
+          3,
+          null,
           0,
+          null,
+          null,
+          null,
+          1,
+          10,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          9,
+          null,
+          1,
+          9,
+          null,
+          null,
+          1,
+          6,
           0,
           0,
           null,
@@ -746,53 +870,7 @@
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/student/Projects/week_8/acebook-rails-template/spec/features/delete_post_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Projects/week_8/acebook-rails-template/spec/features/edit_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Projects/week_8/acebook-rails-template/spec/features/show_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/student/Projects/week_8/acebook-rails-template/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/spec/features/delete_post_spec.rb": {
         "lines": [
           1,
           null,
@@ -800,14 +878,99 @@
           1,
           1,
           1,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/spec/models/post_spec.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/spec/features/edit_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/spec/features/show_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/spec/features/user_can_submit_posts_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/spec/helpers/comments_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/spec/models/comment_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/app/models/comment.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/student/Makers/week8/acebook-rails-template/spec/models/post_spec.rb": {
         "lines": [
           1,
           null,
@@ -816,15 +979,16 @@
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/app/models/post.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/app/models/post.rb": {
         "lines": [
+          1,
           1,
           1,
           1,
           null
         ]
       },
-      "/Users/student/Projects/week_8/acebook-rails-template/spec/models/user_spec.rb": {
+      "/Users/student/Makers/week8/acebook-rails-template/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -834,6 +998,6 @@
         ]
       }
     },
-    "timestamp": 1603450965
+    "timestamp": 1603710851
   }
 }
