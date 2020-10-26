@@ -29,7 +29,6 @@ class PostsController < ApplicationController
       flash.now[:alert] = "This post cannot be updated"
       render 'edit'
     end 
-    p Time.now - @post.created_at
   end
 
   def index

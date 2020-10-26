@@ -35,9 +35,9 @@
           1,
           null,
           1,
-          10,
-          10,
-          10,
+          11,
+          11,
+          11,
           null,
           null,
           1,
@@ -80,6 +80,14 @@
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
           1,
           1,
           1,
@@ -664,15 +672,34 @@
           null
         ]
       },
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/factories/old_post.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/factories/posts.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          11,
-          11,
-          11,
+          1,
+          12,
+          12,
+          12,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
           null,
           null
         ]
@@ -683,10 +710,10 @@
           null,
           1,
           1,
-          11,
-          11,
-          11,
-          11,
+          12,
+          12,
+          12,
+          12,
           null,
           null
         ]
@@ -758,10 +785,15 @@
           null,
           null,
           1,
+          4,
           3,
           3,
           null,
           0,
+          null,
+          null,
+          1,
+          1,
           null,
           null,
           null,
@@ -780,11 +812,11 @@
           9,
           null,
           1,
-          9,
+          10,
           null,
           null,
           1,
-          6,
+          7,
           0,
           0,
           null,
@@ -903,6 +935,6 @@
         ]
       }
     },
-    "timestamp": 1603709386
+    "timestamp": 1603729795
   }
 }

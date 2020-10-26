@@ -4,7 +4,7 @@ RSpec.describe PostsController, type: :controller do
   
   before(:each) do 
     user = FactoryBot.create(:user)
-    @new_post = FactoryBot.create(:post) 
+    @new_post = FactoryBot.create(:post, :new) 
     sign_in(user)
   end 
   
@@ -41,7 +41,7 @@ RSpec.describe PostsController, type: :controller do
       get :edit, params: {id: @new_post.id}
       expect(response).to have_http_status(200)
     end
-
+  
     it "update method changes post" do
       patch :update, params: {id: @new_post.id, post: { message: "bye" } }
       expect(Post.find_by(message: "bye")).to be
@@ -52,6 +52,14 @@ RSpec.describe PostsController, type: :controller do
     it "allows post to be updated" do
       patch :update, params: { id: @new_post.id, post: { message: "Bye" } }
       expect(response).to be_redirect
+    end
+  end
+
+  describe "PUT update/:id" do
+    it "doesn't allow post to be updated after 10 mins have passed" do
+      old_post = FactoryBot.create(:post, :old)
+      patch :update, params: { id: old_post.id, post: { message: "Bye" } }
+      expect(flash[:alert]).to be_present
     end
   end
 
