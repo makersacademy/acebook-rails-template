@@ -12,9 +12,13 @@ Rails.application.routes.draw do
 
   resources :posts do
     member do
+<<<<<<< HEAD
       put 'like', to: 'posts#upvote'
       put 'unlike', to: 'posts#downvote'
+=======
+      put "like", to: "posts#like"
+      put "unlike", to: "posts#unlike"
+>>>>>>> af27ad011d46a88bf75be767a4f79c4df1c7fc2c
     end
   end
-  
 end
