@@ -1,3 +1,4 @@
+
 describe "#edit" do 
 	it "let's a user edit a post" do 
 		sign_up
@@ -8,4 +9,5 @@ describe "#edit" do
 		expect(page).not_to have_content("Hello, world")
 		expect(page).to have_content("goodbye, world")
 	end 
-	end 
+end 
+

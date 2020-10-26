@@ -1,6 +1,7 @@
+<div class="post_page">
 <%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
-
+Your post here: <br>
+  <%= form.text_field :message %> <br>
   <%= form.submit "Submit" %>
 <% end %>
+</div>
