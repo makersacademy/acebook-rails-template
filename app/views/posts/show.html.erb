@@ -1,4 +1,4 @@
 
-  <p><%= @post.message %></p>
-
+  <p><%= @post.message %></p> <br>
+  posted by: <%= @post.user.name%>
   <p><%= link_to 'Home', posts_path %>
