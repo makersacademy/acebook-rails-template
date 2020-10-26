@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :owned_post, only: [:edit, :update, :destroy]
-
+  before_action :set_post, only: %i[show edit update destroy]
+  before_action :owned_post, only: %i[edit update destroy]
 
   def new
     @post = Post.new
@@ -45,6 +46,7 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message).merge(user_id: current_user.id)
   end
+
   def set_post
     @post = Post.find(params[:id])
   end
@@ -55,6 +57,4 @@ class PostsController < ApplicationController
       redirect_to posts_url
     end
   end
-
-
 end
