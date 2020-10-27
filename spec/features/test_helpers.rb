@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 
 def add_new_post 
 	click_link "New post"
@@ -16,3 +15,17 @@ def sign_up
   click_on 'Confirm'
 end
 
+def sign_up_second_user
+  click_on 'Sign up'
+  fill_in 'Name', with: 'User2'
+  fill_in 'Email', with: 'user2@test.com'
+  fill_in 'Password', with: 'secret'
+  fill_in 'Password confirmation', with: 'secret'
+  click_on 'Confirm'
+end
+
+def add_comment
+  click_link "Comment on this post"
+  fill_in "Comment", with: "First comment!!"
+  click_button "Submit"
+end

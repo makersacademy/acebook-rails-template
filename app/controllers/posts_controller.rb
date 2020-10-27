@@ -11,7 +11,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    if @post.save
+      flash[:success] = "Post added"
+      redirect_to posts_url
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -22,6 +27,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
+      flash[:success] = "Post updated"
       redirect_to @post
     else
       render 'edit'

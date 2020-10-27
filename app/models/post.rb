@@ -2,7 +2,7 @@
 
 class Post < ApplicationRecord
 
-	validates :user_id, presence: true
+	validates_presence_of :user_id, :message
 	belongs_to :user
 	has_many :comments, dependent: :destroy
 
