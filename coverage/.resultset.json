@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Makers/week8/acebook-rails-template/spec/features/test_helpers.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/features/test_helpers.rb": {
         "lines": [
           null,
           1,
@@ -36,7 +36,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/controllers/comments_controller_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/controllers/comments_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -111,7 +111,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/rails_helper.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/rails_helper.rb": {
         "lines": [
           null,
           null,
@@ -177,7 +177,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/environment.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -188,7 +188,7 @@
           1
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/application.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/application.rb": {
         "lines": [
           null,
           null,
@@ -212,7 +212,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/boot.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/boot.rb": {
         "lines": [
           null,
           null,
@@ -221,7 +221,7 @@
           1
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/environments/test.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/environments/test.rb": {
         "lines": [
           null,
           null,
@@ -269,7 +269,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/application_controller_renderer.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -280,7 +280,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/assets.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -300,7 +300,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/backtrace_silencers.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -312,7 +312,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/cookies_serializer.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -323,7 +323,7 @@
           1
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/devise.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/initializers/devise.rb": {
         "lines": [
           null,
           null,
@@ -638,7 +638,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/filter_parameter_logging.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -648,7 +648,7 @@
           1
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/inflections.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -669,7 +669,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/mime_types.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -678,7 +678,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/initializers/wrap_parameters.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -698,7 +698,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/factories/comments.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/factories/comments.rb": {
         "lines": [
           1,
           null,
@@ -712,7 +712,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/factories/old_post.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/factories/old_post.rb": {
         "lines": [
           1,
           null,
@@ -721,7 +721,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/factories/posts.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/factories/posts.rb": {
         "lines": [
           1,
           null,
@@ -745,7 +745,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/factories/users.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/factories/users.rb": {
         "lines": [
           1,
           null,
@@ -759,7 +759,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/config/routes.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/config/routes.rb": {
         "lines": [
           null,
           null,
@@ -773,7 +773,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/app/models/user.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -790,7 +790,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/app/models/application_record.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -799,7 +799,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/app/helpers/application_helper.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -807,13 +807,13 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/app/helpers/comments_helper.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/app/helpers/comments_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/app/helpers/registrations_helper.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/app/helpers/registrations_helper.rb": {
         "lines": [
           null,
           null,
@@ -821,7 +821,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/app/controllers/comments_controller.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/app/controllers/comments_controller.rb": {
         "lines": [
           1,
           1,
@@ -881,7 +881,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/app/controllers/application_controller.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -899,7 +899,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/controllers/posts_controller_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -998,7 +998,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/app/controllers/posts_controller.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
@@ -1069,7 +1069,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/features/add_comment_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/features/add_comment_spec.rb": {
         "lines": [
           1,
           null,
@@ -1096,7 +1096,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/features/delete_comment_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/features/delete_comment_spec.rb": {
         "lines": [
           1,
           null,
@@ -1124,7 +1124,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/features/delete_post_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/features/delete_post_spec.rb": {
         "lines": [
           1,
           null,
@@ -1148,7 +1148,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/features/edit_comment_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/features/edit_comment_spec.rb": {
         "lines": [
           1,
           null,
@@ -1178,7 +1178,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/features/edit_post_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/features/edit_post_spec.rb": {
         "lines": [
           1,
           null,
@@ -1205,7 +1205,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/features/new_post_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/features/new_post_spec.rb": {
         "lines": [
           1,
           null,
@@ -1218,7 +1218,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/features/show_post_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/features/show_post_spec.rb": {
         "lines": [
           1,
           null,
@@ -1233,7 +1233,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/helpers/comments_helper_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/helpers/comments_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -1252,7 +1252,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/models/comment_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/models/comment_spec.rb": {
         "lines": [
           1,
           null,
@@ -1282,7 +1282,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/app/models/comment.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/app/models/comment.rb": {
         "lines": [
           1,
           1,
@@ -1291,7 +1291,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/models/post_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/models/post_spec.rb": {
         "lines": [
           1,
           null,
@@ -1315,7 +1315,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/app/models/post.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/app/models/post.rb": {
         "lines": [
           null,
           null,
@@ -1328,7 +1328,7 @@
           null
         ]
       },
-      "/Users/student/Makers/week8/acebook-rails-template/spec/models/user_spec.rb": {
+      "/Users/connorworthington/Development/acebook/acebook-rails-template/spec/models/user_spec.rb": {
         "lines": [
           null,
           null,
@@ -1357,6 +1357,6 @@
         ]
       }
     },
-    "timestamp": 1603794727
+    "timestamp": 1603795090
   }
 }
