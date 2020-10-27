@@ -4,7 +4,7 @@ RSpec.describe Comment, type: :model do
 
   before(:each) do 
     @user = FactoryBot.create(:user)
-    @new_post = FactoryBot.create(:post)
+    @new_post = FactoryBot.create(:post, :new)
   end 
 
   it "is valid with valid attributes" do

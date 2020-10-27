@@ -4,7 +4,7 @@ RSpec.describe CommentsController, type: :controller do
 
   before(:each) do 
     user = FactoryBot.create(:user)
-    @new_post = FactoryBot.create(:post)
+    @new_post = FactoryBot.create(:post, :new)
     @new_comment = FactoryBot.create(:comment)
     sign_in(user)
   end 
