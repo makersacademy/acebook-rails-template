@@ -182,3 +182,16 @@ textarea {
 .dropdown:hover .dropbtn {
   background-color: #a948b4;
 }
+.viewing {
+	margin: auto;
+	width: 60%;
+	padding: 10px;
+}
+
+.post_like:after {
+	content: "Unlike";
+}
+
+
+
+

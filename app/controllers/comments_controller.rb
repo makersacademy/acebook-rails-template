@@ -1,31 +1,31 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_comment, only: [:show, :edit, :update, :destroy]
-  before_action :owned_post, only: [:edit, :update, :destroy]
+  before_action :find_comment, only: %i[show edit update destroy]
+  before_action :owned_post, only: %i[edit update destroy]
 
   def new
-      @comment = Comment.new
+    @comment = Comment.new
   end
 
   def create
     @comment = Comment.create(comment_params)
-    if @comment.save 
-      flash[:success] = "Comment successfully added"
+    if @comment.save
+      flash[:success] = 'Comment successfully added'
       redirect_to posts_url
-    else 
-      render "new"
+    else
+      render 'new'
     end
-  end 
-
-  def show 
   end
 
-  def edit
-  end
+  def show; end
+
+  def edit; end
 
   def update
     if @comment.update(comment_params)
-      flash[:success] = "Comment updated"
+      flash[:success] = 'Comment updated'
       redirect_to posts_path
     else
       render 'edit'

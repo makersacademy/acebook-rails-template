@@ -2,8 +2,8 @@
 
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :owned_post, only: [:edit, :update, :destroy]
+  before_action :set_post, only: %i[show edit update destroy]
+  before_action :owned_post, only: %i[edit update destroy]
 
   def new
     @post = Post.new
@@ -12,31 +12,29 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     if @post.save
-      flash[:success] = "Post added"
+      flash[:success] = 'Post added'
       redirect_to posts_url
     else
       render 'new'
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
-    if (Time.now - @post.created_at) < 600  
+    if (Time.now - @post.created_at) < 600
       if @post.update(post_params)
         redirect_to @post
       else
         render 'edit'
       end
-    else 
-      flash.now[:alert] = "This post cannot be updated"
+    else
+      flash.now[:alert] = 'This post cannot be updated'
 
       render 'edit'
-    end 
+    end
   end
 
   def index
