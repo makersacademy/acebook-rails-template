@@ -23,6 +23,4 @@ Rails.application.routes.draw do
       put "unlike", to: "comments#unlike"
     end
   end
-
-
 end
