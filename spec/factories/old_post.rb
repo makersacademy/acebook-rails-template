@@ -1,5 +1,6 @@
- require 'faker'
+# frozen_string_literal: true
 
- FactoryBot.define do
+require 'faker'
 
-end 
+FactoryBot.define do
+end

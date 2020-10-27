@@ -130,3 +130,10 @@ input[type=submit] {
 	width: 60%;
 	padding: 10px;
 }
+
+.post_like:after {
+	content: "Unlike";
+}
+
+
+
