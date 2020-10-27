@@ -3,7 +3,7 @@
 class LikesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_post
-  before_action :find_like, only: [:destroy]
+  # before_action :find_like, only: [:destroy]
 
   def create
     if !already_liked?
@@ -19,9 +19,9 @@ class LikesController < ApplicationController
 
   private
 
-  def find_like
-    @like = @post.likes.find(params[:id])
-  end
+  # def find_like
+  #   @like = @post.likes.find(params[:id])
+  # end
 
   def find_post
     @post = Post.find(params[:post_id])

@@ -2,7 +2,8 @@
 
 FactoryBot.define do
   factory :like do
-    post { nil }
-    user { nil }
+    id { Faker::Number.unique.number(digits: 3) }
+    post_id { 5 }
+    user_id { 5 }
   end
 end
