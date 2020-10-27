@@ -1,29 +1,52 @@
 <body class="posts-view">
 <p class="new-post">
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+
+<%= link_to "Whats on your mind?", new_post_path, class: 'button'%>
+
+
+
 </p>
 <%= flash[:notice]%>
 <div class="viewing">
+
+
 <% @posts.each do |post| %>
   <p class='message'><%= post.message %><br>
-  posted by: <%= post.user.name%> <br>
-  <%= post.created_at %> <br>
+
+ < posted by: <%= post.user.name%> > <br>
+     <%= post.created_at %> <br>
   <%likes = "#{post.likes.count.to_s}" + " #{post.likes.count ==1 ? 'Like' : 'Likes'}"%>
   <%= button_to "#{likes}", post_likes_path(post), method: :post %>
   
-  <%= link_to "Edit", edit_post_path(post)%> 
-  <%= link_to "Show", post_path(post)%> 
-  <%= link_to 'Delete', post_path(post), :method => :delete %>
-    <% post.comments.each do |comment| %> <br>
-    
-      <%= comment.comment %>
+  
+  <%= link_to 'Comment on this post', new_comment_path(post_id: post.id), class: 'button' %>
+  <%= link_to "Edit post", edit_post_path(post), class: 'button'%> 
+  <%= link_to 'Delete post', post_path(post), :method => :delete, class: 'button' %>
+
+  <p>
+  <div class="dropdown">
+  <button class="dropbtn">Comments <%= post.comments.count %>  </button>
+  <div class="dropdown-content">
+
+    <% post.comments.each do |comment| %>
+      <br>
+     <%= comment.comment %><br>
+
       Posted by:
-       <%= comment.user.name%>
+       <%= comment.user.name %>
        <%= link_to 'Edit Comment', edit_comment_path(comment) %>
        <%= link_to 'Delete Comment', comment_path(comment), :method => :delete %>
-    <% end %>
+
+      
+     </p> 
+     <% end %>
+   
+  </div>
+</div>
+
+
+  
+
   </p>
  
 <% end %>
