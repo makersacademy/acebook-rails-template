@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
@@ -9,7 +11,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    if @post.save
+      flash[:success] = "Post added"
+      redirect_to posts_url
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -27,6 +34,7 @@ class PostsController < ApplicationController
       end
     else 
       flash.now[:alert] = "This post cannot be updated"
+
       render 'edit'
     end 
   end
@@ -45,6 +53,7 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message).merge(user_id: current_user.id)
   end
+
   def set_post
     @post = Post.find(params[:id])
   end
@@ -55,6 +64,4 @@ class PostsController < ApplicationController
       redirect_to posts_url
     end
   end
-
-
 end
