@@ -7,12 +7,12 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to posts_url
+    redirect_back fallback_location: posts_path
   end
 
   def create
     @comment = Comment.create(comment_params)
-    redirect_to posts_url
+    redirect_back fallback_location: posts_path
   end
 
   def edit

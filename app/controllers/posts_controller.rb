@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_url
+    redirect_back fallback_location: posts_path
   end
 
   def edit
