@@ -14,48 +14,48 @@
  *= require_self
  */
 
- .new, .sign_up {
-	background-image: url('https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/06/25/08/istock-1211156080.jpg');
-	margin-top: 120px;
-	color: white;
-	text-shadow: 1px 1px black;
+.new,
+.sign_up {
+  background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/06/25/08/istock-1211156080.jpg");
+  margin-top: 120px;
+  color: white;
+  text-shadow: 1px 1px black;
+}
+body {
+  font-family: "Lucida Grande", tahoma, verdana, arial, sans-serif;
+  min-height: 100vh;
 
+  color: #262626;
+  padding-bottom: 3rem;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  background-color: #ffd3ba;
+}
 
- }
-  body {
-	font-family: 'Lucida Grande', tahoma, verdana, arial, sans-serif;
-	min-height: 100vh;
-	
-	color: #262626;
-	padding-bottom: 3rem;
-	margin: auto;
-	padding: 10px;
-	text-align: center; 
-  background-color: #FFD3BA;
-  }
-	
-	.navbar-text {
-	margin-top: 15px;
-	position: absolute;
-	top: 8px;
-	right: 40px;
-	padding-left: 20px;
-	}
+.navbar-text {
+  margin-top: 15px;
+  position: absolute;
+  top: 8px;
+  right: 40px;
+  padding-left: 20px;
+}
 
 form {
   width: 500px;
   height: 50%;
   overflow: hidden;
   border: 0 solid #000;
-	margin: auto;
+  margin: auto;
 }
 
-	#user_password,
-	#user_email,
-	#user_name,
-	#user_password,
-	#user_password_confirmation,
-	#user_current_password, #post_message {
+#user_password,
+#user_email,
+#user_name,
+#user_password,
+#user_password_confirmation,
+#user_current_password,
+#post_message {
   width: 45%;
   margin-bottom: 5px;
   padding: 8px 12px;
@@ -69,64 +69,107 @@ form {
 }
 
 .message {
-	background: darken(whitesmoke, 10%);
-	border: 2px solid #D0CCD0;
-	border-width: 30%;
-	position: center;
-
+  background: darken(whitesmoke, 10%);
+  border: 2px solid #d0ccd0;
+  border-width: 30%;
+  position: center;
 }
-input[type=submit] {
-	width: 45%;
-	background-color: #23B5D3;
-	border: 1px solid #23B5D3;
+input[type="submit"] {
+  width: 45%;
+  background-color: #23b5d3;
+  border: 1px solid #23b5d3;
   padding: 5px 12px;
-	color: white;
+  color: white;
   font-weight: bold;
   cursor: pointer;
   border-radius: 3px;
-	margin-top: 12px;
-	font-size: 18px;
+  margin-top: 12px;
+  font-size: 18px;
 }
 
 .new_post {
-	margin-top: 85px;
+  margin-top: 85px;
 }
 
-#post_message, textarea {
-	width: 90%;
-	height: 120px;
-	margin-top: 10px;
+#post_message,
+textarea {
+  width: 90%;
+  height: 120px;
+  margin-top: 10px;
   margin-bottom: 5px;
   padding: 8px 12px;
   border: 1px solid #dbdbdb;
   box-sizing: border-box;
-	border-radius: 3px;
-	border-radius: 2px;
-	font-family: 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+  border-radius: 3px;
+  border-radius: 2px;
+  font-family: "Lucida Grande", tahoma, verdana, arial, sans-serif;
 }
 
 .img-logo {
-	margin-top: 12px;
-	width: 4%;
-	border-radius: 50%;
+  margin-top: 12px;
+  width: 4%;
+  border-radius: 50%;
 }
 
-
-
-.posts-view, .showing, .editing, .edit_page {
-	font-family: 'Lucida Grande', tahoma, verdana, arial, sans-serif;
-	background-image: url('https://www.epmmagazine.com/downloads/7441/download/face%20masks.jpg?cb=cedd8e88e25c2482f57e628a621d9a8c&w=640');
-	background-position: center bottom;
-  background-repeat:repeat-x; 
-	color: #262626;
-	background-color: #FFD3BA;
-	margin: auto;
-	width: 100%;
-	text-align: center;
+.posts-view,
+.showing,
+.editing,
+.edit_page {
+  font-family: "Lucida Grande", tahoma, verdana, arial, sans-serif;
+  background-image: url("https://www.epmmagazine.com/downloads/7441/download/face%20masks.jpg?cb=cedd8e88e25c2482f57e628a621d9a8c&w=640");
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  color: #262626;
+  background-color: #ffd3ba;
+  margin: auto;
+  width: 100%;
+  text-align: center;
 }
 
 .viewing {
-	margin: auto;
-	width: 60%;
-	padding: 10px;
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+.dropbtn {
+  background-color: #8e3e8c85;
+  color: rgb(231, 219, 219);
+  padding: 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 25px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: ;
+  background-color: #c3a1a1;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 25px;
+}
+
+.dropdown-content a {
+  color: black;
+  /* padding: 12px 16px; */
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #a948b4;
 }
