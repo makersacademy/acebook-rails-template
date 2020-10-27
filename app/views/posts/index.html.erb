@@ -4,6 +4,7 @@
   New post
 <% end %>
 </p>
+<%= flash[:notice]%>
 <div class="viewing">
 <% @posts.each do |post| %>
   <p class='message'><%= post.message %><br>
