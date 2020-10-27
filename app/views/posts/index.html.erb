@@ -10,7 +10,9 @@
   <p class='message'><%= post.message %><br>
   posted by: <%= post.user.name%> <br>
   <%= post.created_at %> <br>
-  <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%> </br>
+  <%likes = "#{post.likes.count.to_s}" + " #{post.likes.count ==1 ? 'Like' : 'Likes'}"%>
+  <%= button_to "#{likes}", post_likes_path(post), method: :post %>
+  
   <%= link_to "Edit", edit_post_path(post)%> 
   <%= link_to "Show", post_path(post)%> 
   <%= link_to 'Delete', post_path(post), :method => :delete %>
