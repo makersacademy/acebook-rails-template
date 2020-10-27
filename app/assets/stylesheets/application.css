@@ -68,6 +68,15 @@ form {
   margin-top: 12px;
 }
 
+.button {
+  background-color: #1f5cab85;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 25px;
+}
+
 .message {
   background: darken(whitesmoke, 10%);
   border: 2px solid #d0ccd0;
