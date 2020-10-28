@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-require "rails_helper"
+
+require 'rails_helper'
 
 RSpec.feature 'Create a like' do
   scenario 'The main page has a like button on it ' do

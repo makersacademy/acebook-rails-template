@@ -13,7 +13,7 @@
 <% @posts.each do |post| %>
 <p class='message'>
 <%= post.user.name%> <br>
- <%= ((Time.now - post.created_at)/10000).ceil %> hours ago <br>
+ <u><%= ((Time.now - post.created_at)/10000).ceil %> hours ago</u> <br>
 <br>
   <%= post.message %><br>
   <br>
@@ -32,8 +32,8 @@
       <br>
      <%= comment.comment %><br>
 
-      Posted by:
-       <%= comment.user.name %>
+      <u>Posted by:
+       <%= comment.user.name %></u>
        <%= link_to 'Edit Comment', edit_comment_path(comment) %>
        <%= link_to 'Delete Comment', comment_path(comment), :method => :delete %>
 
