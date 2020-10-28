@@ -1,6 +1,7 @@
 # frozen_string_literal: true
+require "rails_helper"
 
-RSpec.feature 'Create a like', type: :feature do
+RSpec.feature 'Create a like' do
   scenario 'The main page has a like button on it ' do
     sign_up
     add_new_post
@@ -26,14 +27,12 @@ RSpec.feature 'Create a like', type: :feature do
   scenario 'The main page has a like button on it ' do
     sign_up
     add_new_post
-    click_on 'Show'
     expect(page).to have_selector(:link_or_button, 'Like')
   end
 
   scenario 'Can like a post from the individual post page' do
     sign_up
     add_new_post
-    click_on 'Show'
     click_on 'Like'
     expect(page).to have_current_path('/')
     expect(page).to have_content('You have liked this post')
@@ -42,7 +41,6 @@ RSpec.feature 'Create a like', type: :feature do
   scenario 'Can unlike a post from the individual post page' do
     sign_up
     add_new_post
-    click_on 'Show'
     click_on 'Like'
     click_on 'Like'
     expect(page).to have_current_path('/')

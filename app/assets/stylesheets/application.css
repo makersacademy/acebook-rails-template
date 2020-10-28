@@ -107,8 +107,9 @@ textarea, #comment_comment {
 
 .img-logo {
   margin-top: 12px;
-  width: 4%;
-  border-radius: 50%;
+	width: 20%;
+	border-radius: 4px;
+ 
 }
 
 .posts-view,
@@ -148,7 +149,6 @@ textarea, #comment_comment {
 
 .dropdown-content {
   display: none;
-  position: ;
   background-color: #c3a1a1;
   min-width: 250px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 def add_new_post
-  click_link 'New post'
+  click_link "Whats on your mind?"
   fill_in 'Message', with: 'Hello, world!'
   click_button 'Submit'
 end

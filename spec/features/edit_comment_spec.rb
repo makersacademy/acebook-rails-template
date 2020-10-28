@@ -6,7 +6,6 @@ RSpec.feature 'Edit comment', type: :feature do
   scenario 'user can edit their comment' do
     sign_up
     add_new_post
-    click_link 'Show'
     add_comment
     click_link 'Edit Comment'
     find_field('comment[comment]').set "lol ninja'd"
@@ -18,7 +17,6 @@ RSpec.feature 'Edit comment', type: :feature do
   scenario "user cannot edit someone else's comment" do
     sign_up
     add_new_post
-    click_link 'Show'
     add_comment
     click_link 'Logout'
     sign_up_second_user
