@@ -46,7 +46,8 @@ form {
   height: 50%;
   overflow: hidden;
   border: 0 solid #000;
-  margin: auto;
+	margin: auto;
+	text-align: center;
 }
 
 #user_password,
@@ -80,8 +81,9 @@ form {
 .message {
   background: darken(whitesmoke, 10%);
   border: 2px solid #d0ccd0;
-  border-width: 30%;
-  position: center;
+	border-width: 30%;
+	border-radius: 8px;
+	background-color: white;
 }
  
 
@@ -96,7 +98,7 @@ textarea, #comment_comment {
   margin-top: 10px;
   margin-bottom: 5px;
   padding: 8px 12px;
-  border: 1px solid #dbdbdb;
+	border: 1px solid #dbdbdb;
   box-sizing: border-box;
   border-radius: 3px;
   border-radius: 2px;
@@ -126,8 +128,8 @@ textarea, #comment_comment {
 
 .viewing {
   margin: auto;
-  width: 60%;
-  padding: 10px;
+  width: 40%;
+	padding: 10px;
 }
 
 .dropbtn {
@@ -170,11 +172,6 @@ textarea, #comment_comment {
 
 .dropdown:hover .dropbtn {
   background-color: #a948b4;
-}
-.viewing {
-	margin: auto;
-	width: 60%;
-	padding: 10px;
 }
 
 .post_like:after {
