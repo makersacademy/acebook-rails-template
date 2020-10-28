@@ -1,0 +1,13 @@
+
+
+<h2>Pending Friend Requests</h2>
+
+<%= render :partial => "/friendships/pending", locals: { pending: @pending}%> <br>
+
+<h2>Friends</h2>
+
+<%= render :partial => "/friendships/friends", locals: { friends: @friends}%> <br>
+
+<h2>Blocked</h2>
+
+<%= render :partial => "/friendships/blocked", locals: { blocked: @blocked}%> <br>

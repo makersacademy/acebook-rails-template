@@ -8,6 +8,13 @@ class PostsController < ApplicationController
     redirect_back fallback_location: posts_path
   end
 
+  def destroy_on_profile
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to user_path(current_user.id)
+  end
+
+
   def edit
     @post = Post.find(params[:id])
   end

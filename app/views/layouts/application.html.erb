@@ -7,31 +7,48 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <p class="navbar-text float-right">
 
+
+<div class="navbar">
+<h2>AceBook___</h2>
   <% if user_signed_in? %>
-    Logged in as <strong><%= current_user.email %></strong>.
+    Logged in as <strong><%= current_user.email %></strong>
     <%= link_to 'Home',posts_path, :class => 'navbar-link' %> |
     <%= link_to 'My Profile', user_path(current_user.id), :method => :get, :class => 'navbar-link' %> |
+
     <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+
+
+<%if current_user.requested_friends.size >= 1 %>
+    <%= link_to requests_user_path(current_user), method: :get do %> 
+    <button type="button" class="badge badge-primary"> Friends Requests <span class="badge"><%= current_user.requested_friends.size %> </span></button>
+     <% end %> 
+  <%else%>
+   <%= link_to requests_user_path(current_user), method: :get do %> 
+    <button type="button" class="badge badge-primary"> View Friends</button>
+  <%end%>
+<%end%>|
+
+
     <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+   
+   
   <% else %>
     <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
     <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
   <% end %>
-  </p>
+</div>
   
-  </head>
+
+</head>
 
   <body>
-  <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
-
-    <%= yield %>
+    <% if notice %>
+     <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+  <%= yield %>
   </body>
 </html>

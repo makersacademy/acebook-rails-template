@@ -1,0 +1,18 @@
+<% friends.each do |user| %>
+  <div>
+  
+    <h4><a href="/users/<%=user.id%>   "><%= user.first_name %> <%= user.last_name %></a> 
+    </h4>
+    
+<%= link_to unfriend_friendship_path(user.id), method: :put do %> 
+        <div class="engagement"> 
+        <p> <button type="button" class="btn btn-secondary btn-sm">Remove</button> </p>  
+<% end %>
+<%= link_to block_friendship_path(user.id), method: :put do %> 
+         <p> <button type="button" class="btn btn-danger btn-sm">Block</button> </p>
+         </div>
+<% end %>
+    
+    </div>
+      
+<% end %>

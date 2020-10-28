@@ -42,6 +42,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :profile_picture %><br />
+    <%= f.file_field :avatar %><br>
+  </div>
+
+  <div class="field">
     <%= f.label :bio %><br />
     <%= f.text_field :bio, autofocus: true, autocomplete: "bio" %>
   </div>
