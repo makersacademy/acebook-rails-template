@@ -110,14 +110,11 @@ GEM
       multi_json (~> 1.11)
       os (>= 0.9, < 2.0)
       signet (~> 0.14)
-<<<<<<< HEAD
     has_friendship (1.1.8)
       activemodel (>= 4.2.0, < 6.1)
       activerecord (>= 4.2.0, < 6.1)
       activesupport (>= 4.2.0, < 6.1)
       stateful_enum
-=======
->>>>>>> fd59a203a3e3fa603bb8fc3a014bec9bac21f62c
     httpclient (2.8.3)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
@@ -272,10 +269,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   devise
   google-cloud-storage (~> 1.8)
-<<<<<<< HEAD
   has_friendship
-=======
->>>>>>> fd59a203a3e3fa603bb8fc3a014bec9bac21f62c
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mini_magick
