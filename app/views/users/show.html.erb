@@ -1,15 +1,13 @@
 
+
 <div class="profile">
-  
-    <h4><%= @user.first_name %> <%= @user.last_name %> </h4>
-    <p>About me: <%= @user.bio %></p>
+ <h1> <%= @user.first_name %> <%=@user.last_name%> </h1>
+<p>About me: <%= @user.bio %></p>
 
-  <p><% if @user.avatar.attached? %>
-    <image src="<%=(url_for(@user.avatar))%>"></image>
-  <% end %></p>
+<p><% if @user.avatar.attached? %>
+  <img src="<%=(url_for(@user.avatar.variant(resize: "400x400")))%>">
+<% end %></p>
 </div>
-
-
 <%if current_user.id != @user.id%>
   <%= render :partial => "./friendships/user_friendship", locals: { user_id: @user.id, user: @user }%> 
 <%end%>
@@ -19,23 +17,11 @@
 <%end%>
 
 
-
-
-
-
 <% @posts.reverse.each do |post| %>
   <% if post.user_id == @user.id %>
-  <div>
-    <h4><%= post.user.first_name %> <%= post.user.last_name %>: </h4>
-    <p><%= post.updated_at.strftime("%d/%m/%Y %k:%M") %></p>
-    <h5><%= post.message %></h5>
-    <div>
-      <div style="float: left"><%= button_to "Delete Post", { :action => 'destroy', :controller=> "posts", :id => post.id }, :method => :delete %> </div>
-      <div style="float: none"><%= button_to "Edit", edit_post_path(post.id), :method => :get %></div>
-
-      
-     <%= render :partial => "./comments/comment_form", locals: { comment: @comment, post_id: post.id}%> <br>
-     <%= render :partial => "./comments/display_comment", locals: { comment: @comment, post: post}%> 
+    <%= render :partial => "./posts/view_posts", locals: { post: post}%> <br>
+    <%= render :partial => "./comments/comment_form", locals: { comment: @comment, post_id: post.id}%> <br>
+    <%= render :partial => "./comments/display_comment", locals: { comment: @comment, post: post}%> 
   </div>
   <% end %>
 <% end %>

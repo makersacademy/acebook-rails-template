@@ -11,12 +11,13 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /config/secrets.yml
+/config/keyfile.json
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/config/secrets.yml
+
 /node_modules
 /yarn-error.log
 

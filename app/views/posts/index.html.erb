@@ -1,29 +1,14 @@
 
+<head>
+<link rel="stylesheet" href="/assets/iconstyles.css">
+</head>
 <%= render :partial => "/posts/create_post", locals: { post: @post}%>
 
 <br>
 
 <% @posts.reverse.each do |post| %>
-  <div>
-    <h4><a href="/users/<%=post.user.id%>   "><%= post.user.first_name %> <%= post.user.last_name %></a> </h4>
-    <h5><%= post.message %></h5>
-    <%= post.created_at.strftime("%d/%m/%Y")%> at <%= post.created_at.strftime("%k:%M") %>
-    <div>
 
-
-    <div style="float: left"><%= link_to edit_post_path(post.id), :method => :get do %>
-      <div class="engagement"> 
-        <p> <button type="button" class="btn btn-primary btn-sm">Edit</span></button> </p>
-            </div>
-    <% end %> </div>
-
-      <div style="float: left"><%= button_to "Delete Post", { :action => 'destroy', :id => post.id }, :method => :delete %> </div>
-
-
-
-
-   
-
+   <%= render :partial => "./posts/view_posts", locals: { post: post}%> <br>
     <%= render :partial => "./likes/like_button", locals: { post: post, post_id: post.id}%> <br>
      <%= render :partial => "./comments/comment_form", locals: { comment: @comment, post_id: post.id}%> <br>
      <%= render :partial => "./comments/display_comment", locals: { comment: @comment, post: post}%> 
