@@ -855,7 +855,6 @@
         "lines": [
           null,
           null,
-          null,
           1,
           1,
           1,
@@ -1305,6 +1304,7 @@
       "/Users/victoriajusko/Projects/Croc-My-World/spec/features/like_spec.rb": {
         "lines": [
           null,
+          null,
           1,
           null,
           1,
@@ -1373,6 +1373,7 @@
       },
       "/Users/victoriajusko/Projects/Croc-My-World/spec/features/show_post_spec.rb": {
         "lines": [
+          null,
           null,
           null,
           null,
@@ -1563,6 +1564,6 @@
         ]
       }
     },
-    "timestamp": 1603897295
+    "timestamp": 1603901697
   }
 }

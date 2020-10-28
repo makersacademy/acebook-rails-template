@@ -18,7 +18,7 @@
   <%= post.message %><br>
   <br>
   <%likes = "#{post.likes.count.to_s}" + " #{post.likes.count ==1 ? 'Like' : 'Likes'}"%>
-  <%= button_to "#{likes}", post_likes_path(post), method: :post %> <br>
+  <%= button_to "#{likes}", post_likes_path(post), method: :post%> <br>
   <%= link_to 'Comment on this post', new_comment_path(post_id: post.id), class: 'button' %>
   <%= link_to "Edit post", edit_post_path(post), class: 'button'%> 
   <%= link_to 'Delete post', post_path(post), :method => :delete, class: 'button' %>
