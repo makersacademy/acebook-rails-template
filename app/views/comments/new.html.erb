@@ -1,8 +1,8 @@
 <h1>Comment page</h1>
 
 <%= form_for @comment do |form| %>
-  <%= form.label :comment %>
-  <%= form.text_field :comment %>
+  <%= form.label :comment %> <br>
+  <%= form.text_field :comment %> <br>
   <%= form.hidden_field :post_id, value: "#{params[:post_id]}" %>
 
   <%= form.submit "Submit" %>

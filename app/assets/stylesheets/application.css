@@ -68,7 +68,7 @@ form {
   margin-top: 12px;
 }
 
-.button {
+.button, input[type="submit"] {
   background-color: #1f5cab85;
   color: rgb(255, 255, 255);
   padding: 10px;
@@ -83,25 +83,14 @@ form {
   border-width: 30%;
   position: center;
 }
-input[type="submit"] {
-  width: 45%;
-  background-color: #23b5d3;
-  border: 1px solid #23b5d3;
-  padding: 5px 12px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 3px;
-  margin-top: 12px;
-  font-size: 18px;
-}
+ 
 
 .new_post {
   margin-top: 85px;
 }
 
 #post_message,
-textarea {
+textarea, #comment_comment {
   width: 90%;
   height: 120px;
   margin-top: 10px;
