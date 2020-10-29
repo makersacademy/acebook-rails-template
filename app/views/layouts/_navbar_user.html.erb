@@ -1,7 +1,7 @@
 
 <div class='container-fluid'>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" href="/posts">Robot Lizard<img src="https://media.giphy.com/media/Lml3u3TpB2P3au7QmM/giphy.gif" width="50" height="50" alt=""> <strong><%= current_user.email %></strong>
+  <a class="navbar-brand" href="/posts">MaskBook<img src="https://media.giphy.com/media/Lml3u3TpB2P3au7QmM/giphy.gif" width="50" height="50" alt=""></strong>
 
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,22 +11,26 @@
     <div class="navbar-nav ml-auto">
 
       <a class="nav-item nav-link active" <%= link_to posts_path, :method => :get do %>  
-       <button type="button" class="badge badge-primary">Home</button> 
+       <button type="button" class=" -roundedbtn btn-roundedbtn btn-success btn-sm">Home</button> 
       <% end %>  <span class="sr-only">(current)</span></a>
-      
-      <a class="nav-item nav-link active" <%= link_to user_path(current_user.id), :method => :get do %> 
-       <button type="button" class="badge badge-primary">Profile</button> 
-      <% end %>  </a>
       
       <a class="nav-item nav-link active" <%= render :partial => "./friendships/friend_requests"%>  </a>
       
-      <a class="nav-item nav-link active" <%= link_to edit_user_registration_path, :method => :get do %> 
-       <button type="button" class="badge badge-primary">Settings</button> 
-      <% end %> </a>
-
-      <a class="nav-item nav-link active" <%= link_to  destroy_user_session_path, method: :delete do  %>
-       <button type="button" class="badge badge-primary">Log out</button>
-      <% end %>  </a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle -roundedbtn btn-roundedbtn btn-success btn-sm" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><%= current_user.first_name %> <%= current_user.last_name %></a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item nav-item nav-link active" <%= link_to user_path(current_user.id), :method => :get do %> 
+            <button type="button" class=" -roundedbtn btn-roundedbtn btn-success btn-sm"><%= current_user.first_name %>'s Profile'</button> 
+           <% end %>  </a>
+           <a class="dropdown-item nav-item nav-link active" <%= link_to edit_user_registration_path, :method => :get do %> 
+            <button type="button" class=" -roundedbtn btn-roundedbtn btn-success btn-sm">Settings</button> 
+           <% end %> </a>
+           <a class="dropdown-item" <%= link_to  destroy_user_session_path, method: :delete do  %>
+            <button type="button" class=" -roundedbtn btn-roundedbtn btn-success btn-sm">Log out</button>
+           <% end %>  </a>
+        </div>
+      </li>
 
 
     </div>
