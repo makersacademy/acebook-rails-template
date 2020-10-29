@@ -9,5 +9,5 @@ local:
 google:
   service: GCS
   project: "My First Project"
-  credentials: <%= Rails.root.join("config/keyfile.json") %>
+  credentials: <%= ENV["GOOGLE_CREDENTIALS"] %>
   bucket: "lizard-active-storage"
