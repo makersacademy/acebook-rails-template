@@ -64,13 +64,13 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "acebook_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+  config.action_mailer.default_url_options = { :host => "https://acebook-robotlizard.herokuapp.com" }
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     user_name: "robotlizard2020@gmail.com",
-    password: "makersss123!",
+    password: ENV["GMAIL_PASSWORD"],
     domain: "localhost:3000",
     address: "smtp.gmail.com",
     port: "587",
