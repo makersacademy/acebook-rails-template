@@ -1,6 +1,9 @@
-<%# Create a post form %>
-  <%= form_for post, :class => 'post-form' do |form| %>
-    <%= form.label "What's on your mind?" %><br>
-    <%= form.text_field :message %>
-    <%= form.submit "Submit" %>
-  <% end %>
+
+ <%# Create a post form %>
+<%= form_for post do |form| %>
+  <%= form.label "What's on your mind?" %><br>
+  <%= form.text_field :message %>
+  <%= form.file_field :image %>
+  <%= form.submit "Submit" %>
+<% end %>
+

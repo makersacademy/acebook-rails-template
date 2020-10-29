@@ -1,0 +1,64 @@
+
+
+/* Create two unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 1000px; /* Should be removed. Only for demonstration */
+}
+
+.profile {
+  position:relative;
+  left: 50px;
+  right: 30px;
+  width: 27.5%;
+  background: #d5e0e8;
+  
+}
+
+.posts {
+  position:relative;
+  left: 30px;
+  right: 30px;
+  width: 67.5%;
+  background: #d5e0e8;  
+}
+
+.gap{
+  width: 5%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+#profile-photo{
+  text-align: center;
+}
+
+#profile-names{
+  font-size: 30px;
+  white-space: nowrap;
+  text-align: left;
+  
+}
+
+#profile-buttons{
+  text-align: center
+}
+
+#about-me{
+
+}
+
+
+#post{
+  display: block;
+    text-align: center;
+   
+}
+
