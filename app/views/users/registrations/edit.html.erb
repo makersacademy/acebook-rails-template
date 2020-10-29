@@ -4,18 +4,18 @@
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :first_name %><br /> 
-    <%= f.text_field :first_name, autofocus: true %>
+    <%= f.label :first_name, class: "form-label" %><br /> 
+    <%= f.text_field :first_name, autofocus: true, class: "form-text" %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true %>
+    <%= f.label :last_name, class: "form-label"  %><br />
+    <%= f.text_field :last_name, autofocus: true, class: "form-text" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, size: 40, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, class: "form-label"  %><br />
+    <%= f.email_field :email, size: 40, autofocus: true, autocomplete: "email", class: "form-text" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -23,36 +23,35 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.label :password, class: "form-label" %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-text" %>
     <% if @minimum_password_length %>
-      <br />
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.label :password_confirmation, class: "form-label" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-text" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <%= f.label :current_password, class: "form-label" %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "form-text" %>
   </div>
 
   <div class="field">
     <%= f.label :profile_picture %><br />
-    <%= f.file_field :avatar %><br>
+    <%= f.file_field :avatar, class: "form-text" %>
   </div>
 
   <div class="field" style="">
     <%= f.label :bio %><br />
-    <%= f.text_field :bio, size: 80, autofocus: true, autocomplete: "bio" %>
+    <%= f.text_field :bio, size: 80, autofocus: true, autocomplete: "bio", class: "form-text" %>
   </div><br>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update"%>
   </div></div>
 <% end %>
 

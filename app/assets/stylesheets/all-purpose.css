@@ -1,0 +1,79 @@
+.edit-body {
+  width: 700px;
+  float: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edit-block {
+  padding:20px;
+  background-color: rgb(235, 242, 243);
+  border-radius: 10px;
+}
+
+.form-text {
+  outline: none;
+  border-radius: 10px;
+}
+
+.form-text-post {
+  outline: none;
+  border-radius: 10px;
+  width: 500px;
+}
+
+.form-media {
+  outline: none;
+  border-radius: 10px;
+}
+
+/* 
+.form-label {
+  float: left;
+} */
+
+
+.form-label-post {
+  font-size: 20px;
+  text-align: left;
+}
+
+.field {
+  padding: 10px;
+}
+
+.actions{
+  padding: 10px;
+}
+
+.friends-title {
+  text-align: center;
+  margin: 20px;
+  margin-top: 20px;
+}
+
+.friends-name {
+  font-size: 20px;
+  text-align: left;
+  display: inline-block;
+  margin: 20px;
+}
+
+.friends-buttons {
+  display: inline-block;
+  float: right;
+  margin: 20px;
+}
+
+.friends-body {
+  width: 700px;
+  float: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.friends-block {
+  padding:20px;
+  background-color: rgb(235, 242, 243);
+  border-radius: 10px;
+}

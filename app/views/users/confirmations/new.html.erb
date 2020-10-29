@@ -1,16 +1,16 @@
-<h2>Resend confirmation instructions</h2>
+<br><div class="edit-body"><h2>Resend confirmation instructions</h2>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <div class="edit-block"><%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-  </div>
+    <%= f.label :email, class: "form-label" %><br />
+    <%= f.email_field :email, size: 40, autofocus: true, class: "form-text", autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+  </div><br>
 
   <div class="actions">
     <%= f.submit "Resend confirmation instructions" %>
   </div>
-<% end %>
+<% end %></div><br>
 
-<%= render "users/shared/links" %>
+<%= render "users/shared/links" %></div><br>

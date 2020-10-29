@@ -7,21 +7,20 @@
   <div class='container'>
     <div class='row'>
        <div class='col-8 mx-auto'>
-          <div class="text-center">
+          <div class="text-center edit-body">
 
     
 
 <%# Create Post Form %>
-<%= render :partial => "/posts/create_post", locals: { post: @post}%>
+<div class="edit-block"><%= render :partial => "/posts/create_post", locals: { post: @post}%></div>
 
 <br>
 
 
 <%# Itterates through every post %>
     <div id='content-wrapper'>
-      <div class='post-meta'>
   <% @posts.each do |post| %>
-    <div class='single-post'>
+    <div class='single-post edit-block'>
 <%# Renders the post %>
    <%= render :partial => "./posts/view_posts", locals: { post: post}%> 
     
@@ -43,4 +42,3 @@
      </div>
    </div>
  </div>
-</div>

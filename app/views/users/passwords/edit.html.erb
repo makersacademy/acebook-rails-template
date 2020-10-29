@@ -1,6 +1,6 @@
-<h2>Change your password</h2>
+<br><div class="edit-body"><h2>Change your password</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+<div class="edit-block"><%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 
@@ -20,6 +20,6 @@
   <div class="actions">
     <%= f.submit "Change my password" %>
   </div>
-<% end %>
+<% end %></div><br>
 
-<%= render "users/shared/links" %>
+<%= render "users/shared/links" %></div><br>
