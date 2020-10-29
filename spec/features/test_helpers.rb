@@ -26,7 +26,7 @@ def sign_up_second_user
 end
 
 def add_comment
-  click_link 'Comment on this post'
+  click_link 'Add comment'
   fill_in 'Comment', with: 'First comment!!'
   click_button 'Submit'
 end

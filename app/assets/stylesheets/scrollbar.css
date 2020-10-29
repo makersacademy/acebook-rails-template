@@ -1,0 +1,20 @@
+::-webkit-scrollbar {
+  width: 35px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+	border: 16px solid rgb(255, 255, 255);
+  background-clip: padding-box;
+  height: 0px
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255); /*change this colour if you want a visible scroll*/
+}
+

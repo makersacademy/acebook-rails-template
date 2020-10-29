@@ -8,11 +8,11 @@ class LikesController < ApplicationController
   def create
     if !already_liked?
       @like = Like.create(post_id: params[:post_id], user_id: current_user.id)
-      flash[:notice] = 'You have liked this post'
+      flash[:notice] = 'Like added'
     else
-      @like = Like.find_by(user_id: current_user.id)
+      @like = Like.find_by(post_id: params[:post_id])
       @like.destroy
-      flash[:notice] = 'You have unliked this post'
+      flash[:notice] = 'Like removed'
     end
     redirect_to root_url
   end

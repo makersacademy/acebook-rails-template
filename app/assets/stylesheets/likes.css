@@ -1,0 +1,25 @@
+.likes-container {
+  float: right;
+  margin-top: -40px;
+}
+.likesbtn {
+  background-image: url('smile.jpg');
+  background-size: 100%;
+  height: 48px;
+  width: 50px;
+  border: none;
+  border-radius: 50%;
+  float: right;
+  margin: auto;
+  outline:none;
+}
+
+.likesbtn:hover {
+  cursor: pointer
+}
+
+.likes-number {
+  margin: -10px;
+  float: right
+}
+

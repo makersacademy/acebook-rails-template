@@ -21,14 +21,17 @@
   color: white;
   text-shadow: 1px 1px black;
 }
+
 body {
   font-family: "Lucida Grande", tahoma, verdana, arial, sans-serif;
-  min-height: 100vh;
+  height: 100vh;
 	color: #004E89;
   padding-bottom: 3rem;
   margin: auto;
   padding: 10px;
   text-align: center;
+  overflow: hidden;
+  width: 100%
 }
 
 .navbar-text {
@@ -81,10 +84,9 @@ form {
 	border: 2px solid #004E89;
 	border-width: 30%;
 	border-radius: 8px;
-	background-color: white;
+  background-color: white;
+  padding: 10px
 }
- 
-
 
 .new_post {
   margin-top: 85px;
@@ -108,13 +110,13 @@ textarea, #comment_comment {
   margin-top: 12px;
 	width: 20%;
 	border-radius: 4px;
- 
 }
 
 .posts-view, .showing, .editing, .edit_page, .view_com {
   font-family: "Lucida Grande", tahoma, verdana, arial, sans-serif;
 	background-image: url("https://i.ibb.co/kMHzXfQ/maskbookicon.jpg");
   background-position: center bottom;
+  background-attachment: fixed;
   background-repeat: repeat-x;
 	color:  #004E89;
   background-color: white;
@@ -125,50 +127,35 @@ textarea, #comment_comment {
 
 .viewing, .showingpost {
   margin: auto;
-  width: 40%;
-	padding: 10px;
+  width: 50%;
+  padding: 10px;
+}
+
+.viewing {
+  overflow: scroll;
+  width: 45%;
+  height: 62vh;
+  padding-left: 55px;
+}
+
+.line-break {
+  white-space: pre-line;
 }
 
 .dropbtn {
-background-color: #AFD2E9;
+  background-color: #AFD2E9;
   color: white;
   padding: 10px;
   font-size: 12px;
   border: none;
   border-radius: 25px;
+  text-align: center
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-	background-color: #AFD2E9;
-  min-width: 250px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-	border-radius: 25px;
-	overflow-wrap: break-word;
-}
-
-.dropdown-content a {
-  color: black;
-  /* padding: 12px 16px; */
-  text-decoration: none;
-  display: block;
-}
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-background-color: #3E517A;
+.postbtn {
+  font-size: 12px;
+  padding: 0px 10px;
+  color: unset
 }
 
 .post_like:after {
@@ -179,14 +166,7 @@ background-color: #3E517A;
 color:  #004E89;
 }
 
- .likesbtn {
-background-image: url('https://i.ibb.co/105LDTB/smile.jpg');
-background-position: 50% 50%;
-height: 20px;
-width: 20px;
-border: none;
-border-radius: 4px;
-}
+
 
 
 

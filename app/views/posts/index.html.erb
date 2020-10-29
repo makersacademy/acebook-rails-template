@@ -1,55 +1,47 @@
 <body class="posts-view">
-<p class="new-post">
-
-<%= link_to "Whats on your mind?", new_post_path, class: 'button'%>
-
-
-
-</p>
-<%= flash[:notice]%>
-<div class="viewing">
-
- 
-<% @posts.each do |post| %>
-<p class='message'>
-<%= post.user.name%> <br>
- <u><%= ((Time.now - post.created_at)/10000).ceil %> hours ago</u> <br>
-<br>
-  <%= post.message %><br>
-  <br>
-  <%likes = "#{post.likes.count.to_s}" + " #{post.likes.count ==1 ? 'Like' : 'Likes'}"%>
-  <%= button_to "#{likes}", post_likes_path(post), method: :post%> <br>
-  <%= link_to 'Comment on this post', new_comment_path(post_id: post.id), class: 'button' %>
-  <%= link_to "Edit post", edit_post_path(post), class: 'button'%> 
-  <%= link_to 'Delete post', post_path(post), :method => :delete, class: 'button' %>
-
+  <p class="new-post">
+    <%= link_to "Whats on your mind?", new_post_path, class: 'button'%>
   </p>
-  <div class="dropdown">
-  <button class="dropbtn">Comments <%= post.comments.count %>  </button>
-  <div class="dropdown-content">
-
-    <% post.comments.each do |comment| %>
+  <div class="viewing">
+    
+    <% @posts.each do |post| %>
+    <div class='message'>
+      <%= post.user.name%> <br>
+      <u><%= ((Time.now - post.created_at)/10000).ceil %> hours ago</u>
       <br>
-     <%= comment.comment %><br>
+        <span class='line-break'>
+        <%= post.message %>
+        </span>
+        <br>
+        <%= link_to "Edit post", edit_post_path(post), class: 'postbtn'%> 
+        <%= link_to 'Delete post', post_path(post), :method => :delete, class: 'postbtn' %>
+        <%= link_to 'Add comment', new_comment_path(post_id: post.id), class: 'postbtn' %>
+    </div>
 
-      <u>Posted by:
-       <%= comment.user.name %></u>
-       <%= link_to 'Edit Comment', edit_comment_path(comment) %>
-       <%= link_to 'Delete Comment', comment_path(comment), :method => :delete %>
+    <div class='likes-container'>
+      <%= button_to "Like", post_likes_path(post), method: :post, class: 'likesbtn' %>
+      <span class='likes-number'>
+        <%= post.likes.count %>
+      </span>
+    </div>
+    
+    <div class="dropdown">
+      <button class="dropbtn">Comments <%= post.comments.count %>  </button>
+      <div class="dropdown-content">
+        <% post.comments.each do |comment| %>
+          <span class='line-break'>
+            <%= comment.comment %>
+          </span>
+          <br>
+          <u>Posted by:
+          <%= comment.user.name %></u>
+          <%= link_to 'Edit Comment', edit_comment_path(comment) %>
+          <%= link_to 'Delete Comment', comment_path(comment), :method => :delete %> 
+        <% end %>
+      </div>
+    </div> 
 
-      
-     </p> 
-     <% end %>
-   
+    <% end %>
   </div>
-</div>
-
-
-  
-
-  </p>
- 
-<% end %>
-</div>
 </body>
 

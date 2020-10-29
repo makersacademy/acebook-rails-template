@@ -6,14 +6,14 @@
 <%= post.user.name%> <br>
  <u><%= ((Time.now - post.created_at)/10000).ceil %> hours ago</u> <br>
 <br>
-  <%= post.message %><br>
+  <%= post.message %><br><br>
   </p>
   <br>
   <%likes = "#{post.likes.count.to_s}" + " #{post.likes.count ==1 ? 'Like' : 'Likes'}"%>
   <%= button_to "#{likes}", post_likes_path(post), method: :post%> <br>
 <%= form_for @comment do |form| %>
   <%= form.label :comment %> <br>
-  <%= form.text_field :comment %> <br>
+  <%= form.text_area :comment %> <br>
   <%= form.hidden_field :post_id, value: "#{params[:post_id]}" %>
 
   <%= form.submit "Submit" %>

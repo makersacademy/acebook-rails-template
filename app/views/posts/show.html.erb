@@ -1,7 +1,7 @@
 
 
   <p><%= @post.message %></p>
-  <%likes = "#{@post.likes.count.to_s}" + " #{@post.likes.count ==1 ? 'Like' : 'Likes'}"%>
+  <%likes = "#{@post.likes.count.to_s}" %>
   <%= button_to "#{likes}", post_likes_path(@post), method: :post %>
   <p>
     <% @post.comments.each do |comment| %>

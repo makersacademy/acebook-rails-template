@@ -15,7 +15,7 @@ RSpec.feature 'Add comment', type: :feature do
     add_new_post
     click_link 'Logout'
     sign_up_second_user
-    click_link 'Comment on this post'
+    click_link 'Add comment'
     fill_in 'Comment', with: '+1 totally agree'
     click_button 'Submit'
     expect(page).to have_content '+1 totally agree'

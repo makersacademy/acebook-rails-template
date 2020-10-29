@@ -31,8 +31,7 @@ class PostsController < ApplicationController
         render 'edit'
       end
     else
-      flash.now[:alert] = 'This post cannot be updated'
-
+      flash.now[:alert] = 'Posts can only be updated within 10 minutes'
       render 'edit'
     end
   end
