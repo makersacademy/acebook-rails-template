@@ -5,6 +5,9 @@
 <% post.comments.each do |comment| %>
 
 
+<div style="float: none"><%= button_to "Edit Comment", edit_comment_path(comment.id), :method => :get %></div>
+
+
 <div class="comment">
     <h5><a href="/users/<%=comment.user.id%>   "><%= comment.user.first_name %> <%= comment.user.last_name %></a></h5>
     <h6><%= comment.content %></h6>

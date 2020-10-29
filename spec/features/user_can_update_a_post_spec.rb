@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can delete posts" do
-    visit "/posts"
-    fill_in "post_message", with: "Hello, world!"
-    click_button "Submit"
-    click_button "Edit"
-    fill_in "Message", with: "Goodbye, world!"
-    click_button "Submit"
+    sign_up
+    sign_in
+    add_post
+    find("input[type=submit][value='Edit']").click
+    fill_in "post_message", with: "Goodbye, world!"
+    find("input[type=submit][value='Submit']").click
     expect(page).to have_content("Goodbye, world!")
   end
 end
