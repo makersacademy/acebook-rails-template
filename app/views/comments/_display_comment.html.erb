@@ -1,26 +1,29 @@
 
 <% post.comments.each do |comment| %>
+    <div class='single-comment'>
 
 <%# Displays edit and delete on comments if they were made by the logged in user %>
     <%if current_user.id == comment.user.id%>
+        
 
 <%# Renders each comment %>
-        <%= render :partial => "./comments/user_comment", locals: {comment: comment}%> <br>
+        <%= render :partial => "./comments/user_comment", locals: {comment: comment}%> 
 
 <%# Renders comment edit and delete button %>
         <%= render :partial => "./comments/comment_edit_delete", locals: { comment_id: comment.id, comment: comment}%> 
 
 <%# Renders a comment like button %>
-        <%= render :partial => "./likes/comment_like_button", locals: { comment: comment}%> <br><br>
-        
+        <%= render :partial => "./likes/comment_like_button", locals: { comment: comment}%> 
+</div>        
     <%else%>
 
 <%# Renders each comment %>
-        <%= render :partial => "./comments/user_comment", locals: {comment: comment}%> <br>
+        <%= render :partial => "./comments/user_comment", locals: {comment: comment}%> 
 
 <%# Renders a comment like button %>
-        <%= render :partial => "./likes/comment_like_button", locals: { comment: comment}%> <br>
-    <%end%>
+        <%= render :partial => "./likes/comment_like_button", locals: { comment: comment}%> 
+     
+   <%end%>
 
 <% end %>
     

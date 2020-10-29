@@ -1,8 +1,14 @@
 
-<a href="/users/<%=post.user.id%>   "><%= post.user.first_name %> <%= post.user.last_name %></a> <br>
- <% if post.image.attached? %>
-     <img src="<%=(url_for(post.image.variant(resize: "500x500")))%>">
-      <% end %>
- <%= post.message %> <br>
 
+<div class='username'>
+<a href="/users/<%=post.user.id%> "><%= post.user.first_name %> <%= post.user.last_name %></a> <br>
+</div>
+<div class='message'>
+ <%= post.message %> 
+</div> 
+ 
+
+<div class='date'>
 <%= post.created_at.strftime("%d/%m/%Y")%> at <%= post.created_at.strftime("%k:%M") %><br>
+</div>
+
