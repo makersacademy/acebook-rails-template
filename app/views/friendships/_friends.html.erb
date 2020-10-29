@@ -3,7 +3,7 @@
 <% friends.each do |user| %>
     
     <%# List current_users friends  %>
-    <div class="friends-name"><a href="/users/<%=user.id%>"><%= user.first_name %> <%= user.last_name %></a><div> 
+    <div class="friends-name"><a href="/users/<%=user.id%>"><%= user.first_name %> <%= user.last_name %></div></a>
    
   <%# Allows current_user to unfriend a user  %>
   <div class="friends-buttons">
@@ -14,6 +14,5 @@
 <%# Allows current_user to block a friended user %>
   <%= link_to block_friendship_path(user.id), method: :put do %> 
     <button type="button" class="btn btn-danger btn-sm" style="font-size: 0.6em;">Block</button> 
-  <% end %></div><br>
-          
+  <% end %></div>         
 <% end %>

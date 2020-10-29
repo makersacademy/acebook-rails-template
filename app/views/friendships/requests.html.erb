@@ -4,16 +4,20 @@
 
 <%# Renders friends requests that are pending if there are any %>
 <%if current_user.requested_friends.size >= 1 %>
-<div style="text-align: center;"><div class="requests-body"><div class="friends-block"><h3>Pending Friend Requests</h3>
-  <%= render :partial => "/friendships/pending", locals: { pending: @pending}%> <br>
-<%end%></div><br>
+<div >
+  <div class="friends-body">
+    <div class="friends-block"><h3>Pending Friend Requests</h3>
+  <%= render :partial => "/friendships/pending", locals: { pending: @pending}%> 
+<%end%>
+    </div><br>
 
-<div class="friends-block"><h3>Friends</h3>
-
-<%# Renders accepted friends %>
-  <%= render :partial => "/friendships/friends", locals: { friends: @friends}%></div><br></br>
-
-  <div class="friends-block"><h3>Blocked</h3>
-
-<%# Renders blocked friends %>
-  <%= render :partial => "/friendships/blocked", locals: { blocked: @blocked}%> <br></div></div></div>
+    <div class="friends-block"><h3>Friends</h3>
+      <%# Renders accepted friends %>
+      <%= render :partial => "/friendships/friends", locals: { friends: @friends}%>
+    </div><br>
+    <div class="friends-block"><h3>Blocked</h3>
+      <%# Renders blocked friends %>
+      <%= render :partial => "/friendships/blocked", locals: { blocked: @blocked}%>
+    </div>
+  </div>
+</div>
