@@ -9,53 +9,7 @@
     <%= javascript_include_tag 'application' %>
 
 
-<div class="navbar">
-  <h2>Facelessbook</h2>
-  <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>
 
-<%# Link to Home %>
-    <%= link_to posts_path, :method => :get do %>  
-      <button type="button" class="badge badge-primary">Home</button> 
-    <% end %> 
-    
-  |
-
-<%# Link to user profile %>
-    <%= link_to user_path(current_user.id), :method => :get do %> 
-      <button type="button" class="badge badge-primary">Profile</button> 
-    <% end %> 
-  
-  |
-
-<%# Renders the requested friends button %>
-    <%= render :partial => "./friendships/friend_requests"%> 
-
-  |
-
-<%# Link to user settings %>
-    <%= link_to edit_user_registration_path, :method => :get do %> 
-      <button type="button" class="badge badge-primary">Settings</button> 
-    <% end %> 
-    
-  |
-
-<%# Link to log out %>
-    <%= link_to  destroy_user_session_path, method: :delete do  %>
-       <button type="button" class="badge badge-primary">Log out</button>
-    <% end %> 
-   
-<%# If user is not logged in, display: %>
-  <% else %>
-<%# Link to sign up %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
-    
-  |
-
-  <%# Link to log in %>
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-  <% end %>
- </div>
   
 </head>
 
