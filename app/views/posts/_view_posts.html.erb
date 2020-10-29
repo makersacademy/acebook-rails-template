@@ -1,5 +1,5 @@
 
-  <div>
+  <div class='col'>
     <h4><a href="/users/<%=post.user.id%>   "><%= post.user.first_name %> <%= post.user.last_name %></a> </h4>
     <h5><%= post.message %></h5>
     <%= post.created_at.strftime("%d/%m/%Y")%> at <%= post.created_at.strftime("%k:%M") %>

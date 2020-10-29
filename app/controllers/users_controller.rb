@@ -18,13 +18,18 @@ class UsersController < ApplicationController
     @posts = Post.all
     @comment = Comment.new(post_id: params[:post_id])
   end
-
-  def show
-    @user = User.find(params[:id])
-    @post = Post.new
-    @posts = Post.all
-    @comment = Comment.new(post_id: params[:post_id])
-  end
+  
+  # def destroy
+  #   @user = User.find(params[:id])
+  #   @user.destroy
+  #   redirect_back fallback_location: new_user_session_path
+  # end
+  # def show
+  #   @user = User.find(params[:id])
+  #   @post = Post.new
+  #   @posts = Post.all
+  #   @comment = Comment.new(post_id: params[:post_id])
+  # end
 
   def index
     @users = User.all
