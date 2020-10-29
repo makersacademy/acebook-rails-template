@@ -1,26 +1,57 @@
+<head>
+<link rel="stylesheet" href="profile.css">
+</head>
 
-<%# Displays the first and last name of the user of the profile %>
-<%= @user.first_name %> <%= @user.last_name %><br>
+<header>
+</header>
+
+<div class="row">
+
+  <div class="column profile">
+  <%# Displays the first and last name of the user of the profile %>
+  <div id="profile-names">
+  <%= @user.first_name %> <%= @user.last_name %><br>
+</div>
+
+   <div id="profile-photo">   
+  <%# Displays a profile image if one uploaded, else displays an emoji%>
+      <% if @user.avatar.attached? %>
+        <image src="<%=(url_for(@user.avatar))%>"></image>
+      <%else%>
+        <p>🤦</p>
+      <% end %><br>
+  </div>
+
+<div id="profile-buttons">
+<%# If the user browsing the profile is not the current user, it will display the add friend button %>
+     <%if current_user.id != @user.id%>
+        <%= render :partial => "./friendships/user_friendship", locals: { user_id: @user.id, user: @user }%> 
+     <%else%>
+      <%= link_to edit_user_registration_path(@user.id), :method => :get do %> 
+      <button type="button" class="badge badge-primary">Edit Profile</button>
+      <% end %><br>
+    <%end%>
+</div>
+
+<div id="about-me">
+    <%# Displays user bio %>
+  About me:<br> <%= @user.bio %><br><br>
+</div>    
     
-<%# Displays a profile image if one uploaded, else displays an emoji%>
-  <% if @user.avatar.attached? %>
-    <image src="<%=(url_for(@user.avatar))%>"></image>
-  <%else%>
-    <p>🤦</p>
-  <% end %><br>
+   
 
-  <%# Displays user bio %>
-About me:<br> <%= @user.bio %><br><br>
-  
-  <%# If the user browsing the profile is not the current user, it will display the add friend button %>
-  <%if current_user.id != @user.id%>
-    <%= render :partial => "./friendships/user_friendship", locals: { user_id: @user.id, user: @user }%> 
-  <%end%>
+  <%# profile div close %>
+  </div> 
 
+ <div class="column gap"></div>
+
+<div class="column posts">
 <%# If the current user is browsing their own profile it will render a create a post form %>
+<div id="post">
   <%if current_user.id == @user.id%>
     <%= render :partial => "./posts/create_post", locals: { post: @post}%>
   <%end%>
+ </div> 
 
 <%# Shows all the profile users posts %>
 <% @posts.each do |post| %>
@@ -37,3 +68,10 @@ About me:<br> <%= @user.bio %><br><br>
   
   <% end %>
 <% end %>
+<%# posts close %>
+</div>
+
+
+<%# row close %>
+</div>
+

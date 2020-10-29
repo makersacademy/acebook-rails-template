@@ -3,11 +3,12 @@
 <% blocked.each do |user| %>
   
   <%# Displays each blocked user %>
-    <a href="/users/<%=user.id%>"><%= user.first_name %> <%= user.last_name %></a> 
+  <div class="friends-name"><a href="/users/<%=user.id%>"><%= user.first_name %> <%= user.last_name %></a></div> 
    
  <%# Unblocks a blocked user  %>
+ <div class="friends-buttons">
   <%= link_to unblock_friendship_path(user.id), method: :put do %> 
-    <button type="button" class="btn btn-danger btn-sm">Unblock</button>          
-  <% end %>
+    <button type="button" class="btn btn-danger btn-sm" style="font-size: 0.6em;">Unblock</button>          
+  <% end %></div>
          
 <% end %>

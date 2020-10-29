@@ -9,7 +9,7 @@
 
 <%# If the target user has requested friendship with current_user, current_user is able to accept it on the target user page %>
         <%= link_to accept_friendship_path(user.id), method: :put do %> 
-        <button type="button" class="badge badge-primary">Accept</buton>
+        <button type="button" class="badge badge-primary">Accept</button>
         <% end %>
 
 <%elsif !user.friends_with?(current_user)%>

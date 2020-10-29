@@ -3,64 +3,23 @@
   <head>
     <title>Facelessbook</title>
     <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">-->
+    <link rel="stylesheet" href="friends.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
 
-<div class="navbar">
-  <h2>Facelessbook</h2>
-  <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>
 
-<%# Link to Home %>
-    <%= link_to posts_path, :method => :get do %>  
-      <button type="button" class="badge badge-primary">Home</button> 
-    <% end %> 
-    
-  |
-
-<%# Link to user profile %>
-    <%= link_to user_path(current_user.id), :method => :get do %> 
-      <button type="button" class="badge badge-primary">Profile</button> 
-    <% end %> 
-  
-  |
-
-<%# Renders the requested friends button %>
-    <%= render :partial => "./friendships/friend_requests"%> 
-
-  |
-
-<%# Link to user settings %>
-    <%= link_to edit_user_registration_path, :method => :get do %> 
-      <button type="button" class="badge badge-primary">Settings</button> 
-    <% end %> 
-    
-  |
-
-<%# Link to log out %>
-    <%= link_to  destroy_user_session_path, method: :delete do  %>
-       <button type="button" class="badge badge-primary">Log out</button>
-    <% end %> 
-   
-<%# If user is not logged in, display: %>
-  <% else %>
-<%# Link to sign up %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
-    
-  |
-
-  <%# Link to log in %>
-    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-  <% end %>
- </div>
   
 </head>
 
 
  <body>
+ <% if user_signed_in? %>
+    <%= render 'layouts/navbar_user'%>
+  <% else %>
+    <%= render 'layouts/navbar_main'%>
+  <% end %>
     <% if notice %>
      <p class="alert alert-success"><%= notice %></p>
     <% end %>

@@ -1,3 +1,4 @@
+
 <a href="/users/<%=post.user.id%>   "><%= post.user.first_name %> <%= post.user.last_name %></a> <br>
  <% if post.image.attached? %>
      <img src="<%=(url_for(post.image.variant(resize: "500x500")))%>">

@@ -1,0 +1,46 @@
+
+<div class='container-fluid'>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="/posts">RobotLizard<img src="https://media.giphy.com/media/Lml3u3TpB2P3au7QmM/giphy.gif" width="50" height="50" alt=""></strong>
+
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse w-100 order-3 dual-collapse2" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+
+      <a class="nav-item nav-link active" <%= link_to posts_path, :method => :get do %>  
+       <link>Home</link> 
+      <% end %>  <span class="sr-only">(current)</span></a>
+      
+      <a class="nav-item nav-link active" <%= render :partial => "./friendships/friend_requests"%>  </a>
+      
+      <li class="nav-item nav-link dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"><%= current_user.first_name %> <%= current_user.last_name %></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" <%= link_to user_path(current_user.id), :method => :get do %> 
+            <link><%= current_user.first_name %>'s Profile</link> 
+           <% end %>  </a>
+           <a class="dropdown-item" <%= link_to edit_user_registration_path, :method => :get do %> 
+            <link>Settings</link> 
+           <% end %> </a>
+           <a class="dropdown-item" <%= link_to  destroy_user_session_path, method: :delete do  %>
+            <link>Log out</link>
+           <% end %>  </a>
+        </div>
+      </li>
+
+
+    </div>
+  </div>
+</nav>
+<br>
+</div>
+
+
+
+
+
+
