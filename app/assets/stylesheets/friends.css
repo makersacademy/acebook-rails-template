@@ -1,0 +1,23 @@
+.friends-title {
+  text-align: center;
+}
+
+.friends-name {
+  font-size: 20px;
+  text-align: left;
+}
+
+.friends-buttons {
+  text-align: right;
+}
+
+.requests-body {
+  width: 80%;
+  margin: auto;
+  display: inline-block; 
+  text-align: left;
+}
+
+.friends-block {
+  background-color: rgb(235, 242, 243);
+}
