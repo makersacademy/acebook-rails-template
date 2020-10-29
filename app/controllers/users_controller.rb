@@ -15,14 +15,7 @@ class UsersController < ApplicationController
   def show
     @post = Post.new
     @user = User.find(params[:id])
-    @posts = Post.all
-    @comment = Comment.new(post_id: params[:post_id])
-  end
-
-  def show
-    @user = User.find(params[:id])
-    @post = Post.new
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
     @comment = Comment.new(post_id: params[:post_id])
   end
 

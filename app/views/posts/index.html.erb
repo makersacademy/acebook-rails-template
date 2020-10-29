@@ -1,19 +1,26 @@
 
-<head>
-<link rel="stylesheet" href="/assets/iconstyles.css">
-</head>
+<%# Create Post Form %>
 <%= render :partial => "/posts/create_post", locals: { post: @post}%>
 
 <br>
 
-<% @posts.reverse.each do |post| %>
+<%# Itterates through every post %>
+<% @posts.each do |post| %>
 
-   <%= render :partial => "./posts/view_posts", locals: { post: post}%> <br>
-    <%= render :partial => "./likes/like_button", locals: { post: post, post_id: post.id}%> <br>
+<%# Renders the post %>
+   <%= render :partial => "./posts/view_posts", locals: { post: post}%> 
+
+<%# Renders the like button for the post %>
+     <%= render :partial => "./likes/post_like_button", locals: { post: post}%> <br><br>
+
+<%# Renders the comment form for the post %>
      <%= render :partial => "./comments/comment_form", locals: { comment: @comment, post_id: post.id}%> <br>
+
+
+<%# Renders the comments left on the post %>
      <%= render :partial => "./comments/display_comment", locals: { comment: @comment, post: post}%> 
 
-  </div>
+  <br><br>
 <% end %>
 
 

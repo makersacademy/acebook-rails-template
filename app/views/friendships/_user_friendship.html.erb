@@ -1,30 +1,28 @@
-<%if user.requested_friends.include?(current_user)%>
 
-<%= link_to unfriend_friendship_path(user_id), method: :put do %> 
-        <div class="engagement"> 
-        <p> <button type="button" class="btn btn-secondary btn-sm">Cancel Friend Request</button> </p>
-         </div>
-<% end %>
+<%if user.requested_friends.include?(current_user)%>
+        <%# If current_user has requested a friendship, they are able to cancel it on the target users page %>
+        <%= link_to unfriend_friendship_path(user_id), method: :put do %>       
+        <button type="button" class="badge badge-primary">Cancel Friend Request</button>
+        <% end %>
+
 <%elsif user.pending_friends.include?(current_user)%>
 
-<%= link_to accept_friendship_path(user.id), method: :put do %> 
-        <div class="engagement"> 
-        <p> <button type="button" class="btn btn-primary btn-sm">Accept</p>
-         </div>
-<% end %>
-
+<%# If the target user has requested friendship with current_user, current_user is able to accept it on the target user page %>
+        <%= link_to accept_friendship_path(user.id), method: :put do %> 
+        <button type="button" class="badge badge-primary">Accept</buton>
+        <% end %>
 
 <%elsif !user.friends_with?(current_user)%>
-<%= link_to addfriend_friendship_path(user_id), method: :put do %> 
-        <div class="button-icons"> 
-        <p> <button type="button" class="btn btn-info btn-sm"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg></button> </p>
-         </div>
-<% end %>
+
+<%# Allows the current_user to add the target user as a friend %>
+        <%= link_to addfriend_friendship_path(user_id), method: :put do %> 
+        <button type="button" class="badge badge-primary">Add Friend</button>
+        <% end %>
 
 <%else%>
-<%= link_to unfriend_friendship_path(user_id), method: :put do %> 
-        <div class="button-icons"> 
-        <p> <button type="button" class="btn btn-secondary btn-sm"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7a4 4 0 11-8 0 4 4 0 018 0zM9 14a6 6 0 00-6 6v1h12v-1a6 6 0 00-6-6zM21 12h-6"></path></svg></button> </p>
-         </div>
-<% end %>
+
+<%# Allows current_user to unfriend target_user %>
+        <%= link_to unfriend_friendship_path(user_id), method: :put do %> 
+        <button type="button" class="badge badge-primary">Unfriend</button>
+        <% end %>
 <%end%>

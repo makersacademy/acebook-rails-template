@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   respond_to :js, :html, :json
   before_action :authenticate_user!
-  
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
@@ -13,7 +13,6 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to user_path(current_user.id)
   end
-
 
   def edit
     @post = Post.find(params[:id])
@@ -32,7 +31,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
     @comment = Comment.new(post_id: params[:post_id])
   end
 

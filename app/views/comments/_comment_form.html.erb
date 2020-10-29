@@ -1,7 +1,7 @@
-<div style="float: left">
-      <%= form_for comment, method: :post do |form| %>
-        <%= form.text_field :content, placeholder: "Post a comment" %>
-        <%= form.hidden_field :post_id, value: post_id %>
-        <%= form.submit "Submit " %>
-      <% end %>
-</div> <br><br><br>
+<%# Form for comments %>
+
+<%= form_for comment, method: :post do |form| %>
+  <%= form.text_field :content, placeholder: "Post a comment" %>
+  <%= form.hidden_field :post_id, value: post_id %>
+  <%= form.submit "Submit" %>
+<% end %>

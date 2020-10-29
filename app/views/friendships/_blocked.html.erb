@@ -1,15 +1,13 @@
-<% @blocked.each do |user| %>
-  <div>
+<%# Friendships controller: Requests: @blocked %>
+
+<% blocked.each do |user| %>
   
-    <h4><a href="/users/<%=user.id%>"><%= user.first_name %> <%= user.last_name %></a> 
-    </h4>
-    
-<%= link_to unblock_friendship_path(user.id), method: :put do %> 
-        <div class="engagement"> 
-        <p> <button type="button" class="btn btn-danger btn-sm">Unblock</button> </p>
-         </div>
-<% end %>
-    
-    </div>
-      
+  <%# Displays each blocked user %>
+    <a href="/users/<%=user.id%>"><%= user.first_name %> <%= user.last_name %></a> 
+   
+ <%# Unblocks a blocked user  %>
+  <%= link_to unblock_friendship_path(user.id), method: :put do %> 
+    <button type="button" class="btn btn-danger btn-sm">Unblock</button>          
+  <% end %>
+         
 <% end %>

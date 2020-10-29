@@ -1,27 +1,39 @@
 
+<%# Displays the first and last name of the user of the profile %>
+<%= @user.first_name %> <%= @user.last_name %><br>
+    
+<%# Displays a profile image if one uploaded, else displays an emoji%>
+  <% if @user.avatar.attached? %>
+    <image src="<%=(url_for(@user.avatar))%>"></image>
+  <%else%>
+    <p>🤦</p>
+  <% end %><br>
 
-<div class="profile">
- <h1> <%= @user.first_name %> <%=@user.last_name%> </h1>
-<p>About me: <%= @user.bio %></p>
+  <%# Displays user bio %>
+About me:<br> <%= @user.bio %><br><br>
+  
+  <%# If the user browsing the profile is not the current user, it will display the add friend button %>
+  <%if current_user.id != @user.id%>
+    <%= render :partial => "./friendships/user_friendship", locals: { user_id: @user.id, user: @user }%> 
+  <%end%>
 
+<%# If the current user is browsing their own profile it will render a create a post form %>
+  <%if current_user.id == @user.id%>
+    <%= render :partial => "./posts/create_post", locals: { post: @post}%>
+  <%end%>
 
-<p><% if @user.avatar.attached? %>
-  <img src="<%=(url_for(@user.avatar.variant(resize: "400x400")))%>">
-<% end %></p>
-</div>
-<%if current_user.id != @user.id%>
-  <%= render :partial => "./friendships/user_friendship", locals: { user_id: @user.id, user: @user }%> 
-<%end%>
-
-<%if current_user.id == @user.id%>
-<%= render :partial => "./posts/create_post", locals: { post: @post}%>
-<%end%>
-
-<% @posts.reverse.each do |post| %>
+<%# Shows all the profile users posts %>
+<% @posts.each do |post| %>
   <% if post.user_id == @user.id %>
-    <%= render :partial => "./posts/view_posts", locals: { post: post}%> <br>
+
+  <%# Renders each post %>
+    <%= render :partial => "./posts/view_posts", locals: { post: post}%> 
+  <%# Renders the post like button %>
+    <%= render :partial => "./likes/post_like_button", locals: { post: post}%> <br><br>
+  <%# Renders the comment form %>
     <%= render :partial => "./comments/comment_form", locals: { comment: @comment, post_id: post.id}%> <br>
+  <%# Renders the post comments %>
     <%= render :partial => "./comments/display_comment", locals: { comment: @comment, post: post}%> 
-  </div>
+  
   <% end %>
 <% end %>

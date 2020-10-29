@@ -1,9 +1,8 @@
 <h1>Edit Comment</h1>
 
+<%# Edit comment form %>
 <%= form_for :comment, url: comment_path(@comment), method: :patch do |form|%>
-<%= form.label :message %>
-  <%= form.text_field :content, placeholder: "content" %>
-
-  <%= form.submit "Submit" %>
-
+  <%= form.label :message %>
+    <%= form.text_field :content, placeholder: "content" %>
+    <%= form.submit "Submit" %>
 <%end%>

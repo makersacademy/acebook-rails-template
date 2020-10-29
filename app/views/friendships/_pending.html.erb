@@ -1,24 +1,21 @@
+<%# Friendships controller: Requests: @pending %>
+
 <% pending.each do |user| %>
-  <div>
   
-    <h4><a href="/users/<%=user.id%>   "><%= user.first_name %> <%= user.last_name %></a> 
-    </h4>
-    <%= link_to accept_friendship_path(user.id), method: :put do %> 
-        <div class="engagement"> 
-        <p> <button type="button" class="badge badge-secondary">Accept<span class="badge"> </span></button> </p>
-         </div>
-<% end %>
-<%= link_to decline_friendship_path(user.id), method: :put do %> 
-        <div class="engagement"> 
-        <p> <button type="button" class="btn btn-danger btn-sm">Decline</button> </p>
-         </div>
-<% end %>
-<%= link_to block_friendship_path(user.id), method: :put do %> 
-        <div class="engagement"> 
-        <p> <button type="button" class="btn btn-danger btn-sm">Block</button> </p>
-         </div>
-<% end %>
+  <a href="/users/<%=user.id%>   "><%= user.first_name %> <%= user.last_name %></a> 
     
-    </div>
-      
+    <%# Allows user to accept incoming friend request %>
+    <%= link_to accept_friendship_path(user.id), method: :put do %> 
+      <button type="button" class="btn btn-secondary btn-sm">Accept</button>
+    <%end%>
+
+ <%# Allows user to decline incoming friend request %>
+    <%= link_to decline_friendship_path(user.id), method: :put do %>         
+      <button type="button" class="btn btn-danger btn-sm">Decline</button>      
+    <% end %>
+
+  <%# Allows user to block incoming friend request user %>
+    <%= link_to block_friendship_path(user.id), method: :put do %> 
+       <button type="button" class="btn btn-danger btn-sm">Block</button>
+    <% end %>      
 <% end %>

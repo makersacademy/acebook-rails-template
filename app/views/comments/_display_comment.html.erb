@@ -1,46 +1,27 @@
-<head>
-<link rel="stylesheet" href="/assets/iconstyles.css">
-</head>
 
 <% post.comments.each do |comment| %>
 
+<%# Displays edit and delete on comments if they were made by the logged in user %>
+    <%if current_user.id == comment.user.id%>
 
-<div style="float: none"><%= button_to "Edit Comment", edit_comment_path(comment.id), :method => :get %></div>
+<%# Renders each comment %>
+        <%= render :partial => "./comments/user_comment", locals: {comment: comment}%> <br>
 
+<%# Renders comment edit and delete button %>
+        <%= render :partial => "./comments/comment_edit_delete", locals: { comment_id: comment.id, comment: comment}%> 
 
-<div class="comment">
-    <h5><a href="/users/<%=comment.user.id%>   "><%= comment.user.first_name %> <%= comment.user.last_name %></a></h5>
-    <h6><%= comment.content %></h6>
-    <%= comment.created_at.strftime("%d/%m/%Y")%> at <%= comment.created_at.strftime("%k:%M") %><br>
-</div>
-
-<div style="float: left"><%= link_to edit_comment_path(comment.id), :method => :get do %>
-    <div class="button-icons"> 
-        <p> <button type="button" class="btn btn-primary btn-sm"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg></span></button> </p>
-            </div>
-        <% end %> </div></div>
-
- 
-    <div style="float: left"><%= link_to comment, :method => :delete do %>
-      <div class="button-icons"> 
-        <p> <button type="button" class="btn btn-primary btn-sm"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></span></button> </p>
-            </div>
-    <% end %> </div>
+<%# Renders a comment like button %>
+        <%= render :partial => "./likes/comment_like_button", locals: { comment: comment}%> <br><br>
         
+    <%else%>
 
-<div style="float: none"> 
-    <% if !current_user.voted_for?(comment)%>
-        <%= link_to like_comment_path(comment), method: :put do %> 
-        <div class="engagement"> 
-        <p> <button type="button" class="badge badge-secondary"> Like <span class="badge"><%= comment.get_upvotes.size %> </span></button> </p>
-            </div>
-        <% end %>
-    <% else%>
-        <%= link_to unlike_comment_path(comment), method: :put do %>
-        <div class="engagement"> <button type="button" class="badge badge-info">Unlike<span class="badge">
-        <%= comment.get_upvotes.size %> </div>
-        <% end %>
+<%# Renders each comment %>
+        <%= render :partial => "./comments/user_comment", locals: {comment: comment}%> <br>
+
+<%# Renders a comment like button %>
+        <%= render :partial => "./likes/comment_like_button", locals: { comment: comment}%> <br>
     <%end%>
-      <% end %>
-      </div>
+
+<% end %>
+    
 

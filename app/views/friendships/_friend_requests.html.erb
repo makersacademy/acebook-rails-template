@@ -1,0 +1,14 @@
+
+
+<%# Friends request button for Nav Bar %>
+<%if current_user.requested_friends.size >= 1 %>
+<%# Displays Friends Requests and number of requests %>
+    <%= link_to requests_user_path(current_user), method: :get do %> 
+      <button type="button" class="badge badge-primary">Friends Requests<span class="badge"><%= current_user.requested_friends.size %> </span></button>
+     <% end %> 
+  <%else%>
+  <%# Displays 'view friends' if no pending friend requests %>
+   <%= link_to requests_user_path(current_user), method: :get do %> 
+      <button type="button" class="badge badge-primary">View Friends</button>
+  <%end%>
+<%end%>
