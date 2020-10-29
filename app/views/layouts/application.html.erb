@@ -61,6 +61,11 @@
 
 
  <body>
+ <% if user_signed_in? %>
+    <%= render 'layouts/navbar_user'%>
+  <% else %>
+    <%= render 'layouts/navbar_main'%>
+  <% end %>
     <% if notice %>
      <p class="alert alert-success"><%= notice %></p>
     <% end %>
