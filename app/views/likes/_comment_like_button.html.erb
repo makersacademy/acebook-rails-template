@@ -2,10 +2,10 @@
 <%# Allows a like button for COMMENTS if not already liked, otherwise an unlike button %>
 <% if !current_user.voted_for?(comment)%>
     <%= link_to like_comment_path(comment), method: :put do %>   
-       <button type="button" class="badge badge-secondary">like<span class="badge"><%= comment.get_upvotes.size %> </span></button> 
+       <button type="button" class="btn btn-primary btn-sm" style="font-size: 0.6em;">like <%= comment.get_upvotes.size %></button> 
     <% end %>
 <% else%>
         <%= link_to unlike_comment_path(comment), method: :put do %>
-         <button type="button" class="badge badge-info">unlike<span class="badge"><%= comment.get_upvotes.size %> </span></button>
+         <button type="button" class="btn btn-primary btn-sm" style="font-size: 0.6em;">unlike <%= comment.get_upvotes.size %></button>
     <% end %>
 <%end%>
