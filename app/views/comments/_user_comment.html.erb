@@ -1,0 +1,4 @@
+<%# Displays a users comment %>
+<a href="/users/<%=comment.user.id%>"><%= comment.user.first_name %> <%= comment.user.last_name %></a><br>
+<%= comment.content %><br>
+<%= comment.created_at.strftime("%d/%m/%Y")%> at <%= comment.created_at.strftime("%k:%M") %>

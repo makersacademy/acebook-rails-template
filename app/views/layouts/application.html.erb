@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acebook</title>
+    <title>Facelessbook</title>
     <%= csrf_meta_tags %>
-
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">-->
+    <link rel="stylesheet" href="friends.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-  </head>
 
-  <body>
-    <%= yield %>
+</head>
+
+ <body>
+ <% if user_signed_in? %>
+    <%= render 'layouts/navbar_user'%>
+  <% else %>
+    <%= render 'layouts/navbar_main'%>
+  <% end %>
+    <% if notice %>
+     <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+  <%= yield %>
   </body>
 </html>

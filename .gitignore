@@ -10,7 +10,8 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
-
+/config/secrets.yml
+/config/keyfile.json
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -21,3 +22,8 @@
 /yarn-error.log
 
 .byebug_history
+sendgrid.env
+sendgrid.env
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key

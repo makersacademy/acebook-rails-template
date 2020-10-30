@@ -1,0 +1,16 @@
+
+<%# For posts made by the current user, a delete and edit button are shown %>
+<%if current_user.id == post.user.id%>
+
+<%# Renders the each post %>
+    <%= render :partial => "./posts/user_post", locals: { post: post}%> 
+
+<%# Renders the edit and delete buttons under the post %>
+    <%= render :partial => "./posts/post_edit_delete", locals: { post: post}%> 
+
+<%else%>
+<%# Renders the each post %>
+    <%= render :partial => "./posts/user_post", locals: { post: post}%> 
+    
+<%end%>
+

@@ -1,7 +1,46 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<!DOCTYPE html>
+<html>
 
-<%= link_to new_post_path do %>
-  New post
+<head>
+</head>
+
+  <div class='container'>
+    <div class='row'>
+       <div class='col-8 mx-auto'>
+          <div class="text-center">
+
+    
+
+<%# Create Post Form %>
+<%= render :partial => "/posts/create_post", locals: { post: @post}%>
+
+<br>
+
+
+<%# Itterates through every post %>
+    <div id='content-wrapper'>
+      <div class='post-meta'>
+  <% @posts.each do |post| %>
+    <div class='single-post'>
+<%# Renders the post %>
+   <%= render :partial => "./posts/view_posts", locals: { post: post}%> 
+    
+<%# Renders the like button for the post %>
+     <%= render :partial => "./likes/post_like_button", locals: { post: post}%> <br><br>
+
+<%# Renders the comment form for the post %>
+     <%= render :partial => "./comments/comment_form", locals: { comment: @comment, post_id: post.id}%> <br>
+
+
+<%# Renders the comments left on the post %>
+     <%= render :partial => "./comments/display_comment", locals: { comment: @comment, post: post}%> 
+</div>
+  <br><br>
 <% end %>
+      </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>

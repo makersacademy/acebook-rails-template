@@ -1,0 +1,28 @@
+
+<%if user.requested_friends.include?(current_user)%>
+        <%# If current_user has requested a friendship, they are able to cancel it on the target users page %>
+        <%= link_to unfriend_friendship_path(user_id), method: :put do %>       
+        <button type="button" class="badge badge-primary">Cancel Friend Request</button>
+        <% end %>
+
+<%elsif user.pending_friends.include?(current_user)%>
+
+<%# If the target user has requested friendship with current_user, current_user is able to accept it on the target user page %>
+        <%= link_to accept_friendship_path(user.id), method: :put do %> 
+        <button type="button" class="badge badge-primary">Accept</button>
+        <% end %>
+
+<%elsif !user.friends_with?(current_user)%>
+
+<%# Allows the current_user to add the target user as a friend %>
+        <%= link_to addfriend_friendship_path(user_id), method: :put do %> 
+        <button type="button" class="badge badge-primary">Add Friend</button>
+        <% end %>
+
+<%else%>
+
+<%# Allows current_user to unfriend target_user %>
+        <%= link_to unfriend_friendship_path(user_id), method: :put do %> 
+        <button type="button" class="badge badge-primary">Unfriend</button>
+        <% end %>
+<%end%>

@@ -1,0 +1,11 @@
+
+<%# Allows a like button for POSTS if not already liked, otherwise an unlike button %>
+<% if !current_user.voted_for?(post)%>
+    <%= link_to like_post_path(post), method: :put do %> 
+         <button type="button" class="btn btn-primary btn-sm" style="font-size: 0.6em;">like <%= post.get_upvotes.size %></button> 
+    <% end %>
+<% else%>
+    <%= link_to unlike_post_path(post), method: :put do %>
+        <button type="button" class="btn btn-primary btn-sm" style="font-size: 0.6em;">unlike <%= post.get_upvotes.size %></button>
+    <% end %>
+<%end%>

@@ -5,12 +5,21 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'simplecov', require: false, group: :test
 
+
+gem 'has_friendship'
+
+gem 'mini_magick'
+
+gem "google-cloud-storage", "~> 1.8", require: false
+gem 'bootsnap'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
+gem 'devise'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -28,6 +37,15 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# styling
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'simple_form'
+gem 'popper_js'
+gem 'tether-rails'
+gem 'turbolinks'
+
+gem 'acts_as_votable'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -36,6 +54,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem 'timecop'
 end
 
 group :development do
