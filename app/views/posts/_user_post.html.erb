@@ -3,6 +3,13 @@
 <div class='username'>
 <a href="/users/<%=post.user.id%> "><%= post.user.first_name %> <%= post.user.last_name %></a> <br>
 </div>
+
+<div class='postimage'> 
+<p><% if post.image.attached? %>
+    <img src="<%=(url_for(post.image.variant(resize: "400x400")))%>">
+<% end %></p>
+</div>
+
 <div class='message'>
  <%= post.message %> 
 </div> 
