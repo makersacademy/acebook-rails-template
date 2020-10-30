@@ -4,12 +4,16 @@
     <title>RobotLizard</title>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="all-purpose.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css.map"> 
+<link rel="stylesheet" type="text/css" href="poststyles.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> 
+
+
 </head>
 
- <body>
+ <body style='background-color: black'>
  <% if user_signed_in? %>
     <%= render 'layouts/navbar_user'%>
   <% else %>

@@ -21,6 +21,7 @@
 
 #content-wrapper {
   width: 100%;
+  color: #16e60f !important;
 }
 
 .post-meta {
@@ -34,7 +35,7 @@
 }
 
 .single-post {
-  font-size: 35px;
+  font-size: 33px;
   text-align: left; 
   padding-left: 10%;
   padding-right: 10%;
@@ -48,17 +49,24 @@
 
 .username {
   font-size: 40px ;
-  color:green($color: #16e60f)
+  color: magenta !important;
+}
+
+a {
+  font-size: 40px ;
+  color:#16e60f !important;
 }
 
 .date {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 20px ;
+  font-size: 30px ;
 }
 
 .submit-comment {
   margin-top: 10px;
+  font-size: 25px ;
+
 }
 
 .single-comment  {
@@ -67,15 +75,21 @@
 }
 
 .commenter {
-  font-size: 17px ;
+  font-size: 35px ;
+  color: #16e60f;
 }
 
 .comment-date {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 10px ;
+  font-size: 20px ;
 }
 
 .postimage {
   text-align: center;
 }
+
+button.btn.btn-primary.btn-sm {
+  background-color: magenta !important;
+}
+

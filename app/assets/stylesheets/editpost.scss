@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'VT323';
   font-style: normal;
@@ -17,92 +16,29 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Create two unequal columns that floats next to each other */
-.column {
-  float: left;
-  padding: 10px;
-  height: 1000px; /* Should be removed. Only for demonstration */
+a:link {
+  color:magenta;
+  background-color: transparent;
+  text-decoration: none;
 }
 
-.profile {
-  position:relative;
-  left: 50px;
-  right: 30px;
-  width: 27.5%;
-  background:black;
-  font-family: 'VT323';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('VT323 Regular'), local('VT323-Regular'), url(https://fonts.gstatic.com/s/vt323/v12/pxiKyp0ihIEF2isfFJXUdVNF.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  
-}
-
-.posts {
-  text-align: left; 
-  padding-left: 10%;
-  padding-right: 10%;
-  font-size: 33px;
-  color: #16e60f !important;
-  position:relative;
-  width: 67.5%;
-  background: black;  
-  font-family: 'VT323';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('VT323 Regular'), local('VT323-Regular'), url(https://fonts.gstatic.com/s/vt323/v12/pxiKyp0ihIEF2isfFJXUdVNF.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-.date {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 30px ;
-}
-.gap{
-  width: 5%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-#profile-photo{
-  text-align: center;
-}
-
-#profile-names{
-  font-size: 30px;
-  white-space: nowrap;
-  text-align: left;
-  color: magenta;
-  
-}
-
-#profile-buttons{
-  text-align: center
-}
-
-#about-me{
+h1 {
   color: #16e60f;
-
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('VT323 Regular'), local('VT323-Regular'), url(https://fonts.gstatic.com/s/vt323/v12/pxiKyp0ihIEF2isfFJXUdVNF.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.message {
+.label {
+  color: #16e60f;
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('VT323 Regular'), local('VT323-Regular'), url(https://fonts.gstatic.com/s/vt323/v12/pxiKyp0ihIEF2isfFJXUdVNF.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 
 }
-
-#post{
-  display: block;
-  text-align: center;
-  font-size: 33px;
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
