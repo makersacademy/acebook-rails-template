@@ -20,6 +20,7 @@
 
 
 .navbar-brand {
+  background-color: black;
   font-size: 50px !important;
   font-family: 'VT323';
   font-style: normal;
@@ -30,6 +31,7 @@
 }
 
 .navbar-nav {
+  background-color: black;
   color: #16e60f;
   font-size: 35px;
   font-family: 'VT323';
@@ -65,4 +67,8 @@
   40%, 60% {
     transform: translate3d(4px, 0, 0);
   }
+}
+
+.navbarDropdownMenuLink {
+  background-color: black;
 }

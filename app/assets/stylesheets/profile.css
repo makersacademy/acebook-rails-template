@@ -91,12 +91,10 @@
 
 #about-me{
   color: #16e60f;
-
+  font-size: 30px;
 }
 
-.message {
 
-}
 
 #post{
   display: block;
@@ -106,3 +104,11 @@
   padding-right: 10%;
 }
 
+button.badge.badge-primary {
+  background-color: magenta !important;
+  border-color: black;
+}
+
+button.btn.btn-primary.btn-sm {
+  background-color: magenta !important;
+}
