@@ -20,10 +20,10 @@
     <%= render 'layouts/navbar_main'%>
   <% end %>
     <% if notice %>
-     <p class="alert alert-success"><%= notice %></p>
+     <div class="alert alert-great"><%= notice %></div>
     <% end %>
     <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
+      <div class="alert alert-bad"><%= alert %></div>
     <% end %>
   <%= yield %>
   </body>
