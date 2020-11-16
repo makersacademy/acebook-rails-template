@@ -4,10 +4,10 @@ rvm:
  — 2.5.0
 
 gemfile: 
-  - Gemfile
+ — Gemfile
 
 script:
  — bundle install
- - bin/rails db:create
- - bin/rails db:migrate
- - bundle exec rspec
+ — bin/rails db:create
+ — bin/rails db:migrate
+ — bundle exec rspec
