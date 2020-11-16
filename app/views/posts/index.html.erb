@@ -1,7 +1,106 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
 
-<%= link_to new_post_path do %>
-  New post
+
+    <% if current_user %>
+    <div class = 'post-box'>
+      <%= form_for @post do |form| %>        
+          <div style="display:inline-block", class="field">
+            <%= form.label :message %>
+            <%= form.text_area :message, :cols => 50, :rows => 5, required: true,  style: "width:100%;height:50%;object-fit:cover;" %>
+          </div>
+        <div class="field">
+          <%= form.file_field :photo %>
+        </div>
+          <div style="display:inline-block", class="actions">
+            <%= form.submit(class:'button')%>
+          </div>
+        <% end %>
+      <% end %>
+</div>
+<br>
+<br>
+<% @posts.each do |post| %>
+<div class= 'post-box'>
+<br>
+<div class ='edit-buttons'>
+  <% if can? :edit, post %>
+    <%= link_to 'Edit', edit_post_path(post) %>
+  <% end %>
+  <% if can? :destroy, post %>
+    <%= link_to 'Delete', post_path(post), method: :delete, data: { :confirm => "Are you sure?" } %>
+  <% end %>
+</div>
+
+<div class='username'>
+    <% if post.user.photo.attached? %>
+      <%= image_tag(post.user.photo, size: '50x50') %>
+    <% else %>
+      <%= image_tag("avatar.png", size: '50x50')%>
+    <% end %>
+    <%= link_to post.user.username, post.user %></div>
+    <small-padder>
+  <div class = 'post'><%= simple_format post.message %></div>
+
+  <% if post.photo.attached? %>
+    <%= link_to image_tag(post.photo, style: "float:left;width:100%;height:50%;object-fit:cover;") %>
+  <% end %>
+<div class = 'octo'>
+  <% if current_user %>
+    <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+    <% if pre_like %>
+      <%= link_to image_tag('like.png', class: 'like-button'), post_like_path(post, pre_like), method: :delete, id: 'Unlike' %>
+    <% else %>
+      <%= link_to image_tag('unlike.png', class: 'like-button'), post_likes_path(post), method: :post, id: 'Like' %>
+    <% end %>
+  <% end %>
+  <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+  </div>
+  <div class = 'time'><%=post.created_at.to_formatted_s(:long)%></div>
+  <% if current_user %>
+  <small-padder>
+    <%= form_for @comment do |form| %>     
+      <input hidden value="<%= post.id %>" name="post_id">    
+      <div class="field", style="display:inline-block" >
+        <%= form.label :comment %>
+        <%= form.text_area :comment, :cols => 50, :rows => 2, required: true, style: "width:100%;height:50%;object-fit:cover;" %>
+      </div>
+      <div class="actions">
+        <%= form.submit(class:'button')%>
+      </div>
+    <% end %>
+  <% end %>
+<hr>
+<div class="commentSection">
+  <% @comments.each do |comment| %> 
+      <% if comment.post_id == post.id %>
+      <div class="commentsDiv">
+       <div class = 'edit-buttons'>
+        <% if can? :edit, comment %>
+          <%= link_to 'Edit', edit_comment_path(comment), id: "edit-comment" %>
+        <% end %>
+        <% if can? :destroy, comment %>
+          <%= link_to 'Delete', comment_path(comment), method: :delete, data: { :confirm => "Are you sure?" }, id: "delete-comment" %>
+        <% end %>
+        </div>
+
+        <div class = 'comment-username'>
+        <% our_user = User.find(comment[:user_id]) %>
+        <% if our_user.photo.attached? %>
+          <%=image_tag(our_user.photo, size: '30x30') %>
+        <% else %>
+          <%= image_tag("avatar.png", size: '30x30')%>
+        <% end %>
+        <%= link_to comment.user.username, comment.user %>
+        </div>
+        <div class = 'comment-post'>
+          <p><%= simple_format comment.comment, class: "commentText" %></p>
+          <div class = 'time' ><%=comment.created_at.to_formatted_s(:long)%></div>
+        </div>
+      </div>
+      <% end %>
+  <% end %>
+  </div>
+ </div>
+<br>
+<br>
 <% end %>
+<br>

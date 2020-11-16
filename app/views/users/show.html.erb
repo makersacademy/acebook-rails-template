@@ -1,0 +1,63 @@
+    <%= stylesheet_link_tag    'show', media: 'all' %>
+<p id="notice"><%= notice %></p>
+<div class = 'post-box'>
+<% if @user.photo.attached? %>
+      <%= image_tag(@user.photo, size: '100x100') %>
+    <% else %>
+      <%= image_tag("avatar.png", size: '100x100')%>
+    <% end %>
+    <% if session[:user_id] == @user.id %>
+    <p>
+      <strong><%= @user.email %></strong>
+      
+    </p>
+    <% end %>
+    <p>
+      <strong><%= @user.username %></strong>
+      
+    </p>
+ 
+
+<% if session[:user_id] == @user.id %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Delete Profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</div> 
+
+<my-padder>
+<% @user.posts.reverse_order.each do |post| %>
+  <div class= 'post-box'>
+  <br>
+    <div class = 'username'><% if @user.photo.attached? %>
+      <%= link_to image_tag(@user.photo, size: '50x50') %>
+    <% else %>
+      <%= image_tag("avatar.png", size: '50x50')%>
+    <% end %>
+    <%= @user.username %></div>
+    <small-padder>
+    <div class = 'post'><%= simple_format post.message %></div>
+    <% if post.photo.attached? %>
+      <%= link_to image_tag(post.photo, style: "float:left;width:100%;height:50%;object-fit:cover;") %>
+    <% end %>
+    <div class = 'time'><%=post.created_at.to_formatted_s(:long)%></div>
+    <% if current_user %>
+      <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+      <% if pre_like %>
+        <%= link_to image_tag('like.png', class: 'like-button'), post_like_path(post, pre_like), method: :delete, id: 'Unlike' %>
+      <% else %>
+        <%= link_to image_tag('unlike.png', class: 'like-button'), post_likes_path(post), method: :post, id: 'Like' %>
+      <% end %>
+    <% end %>
+    <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+    <% if can? :edit, post %>
+      <%= link_to 'Edit', edit_post_path(post) %>
+    <% end %>
+    <% if can? :destroy, post %>
+      <%= link_to 'Delete', post_path(post), method: :delete, data: { :confirm => "Are you sure?" } %>
+    <% end %>
+  <hr>
+  </div> 
+    <br>
+     <br>
+  <% end %>
+  <br>

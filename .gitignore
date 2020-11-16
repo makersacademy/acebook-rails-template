@@ -21,3 +21,9 @@
 /yarn-error.log
 
 .byebug_history
+/coverage
+/storage
+.DS_Store
+
+
+/config/master.key
