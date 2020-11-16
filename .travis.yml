@@ -7,6 +7,6 @@ gemfile:
  — Gemfile
 
 script:
- — bin/rails db:create
- — bin/rails db:migrate
+ — bundle exec db:create
+ — bundle exec rails db:migrate
  — bundle exec rspec
