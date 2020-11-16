@@ -7,7 +7,7 @@ gemfile:
   - Gemfile
 
 script:
- — bundle install — jobs=3 — retry=3
- — bundle exec rake db:create
- — bundle exec rake db:migrate
- — bundle exec rspec
+ — bundle install
+ - bin/rails db:create
+ - bin/rails db:migrate
+ - bundle exec rspec
