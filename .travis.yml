@@ -6,7 +6,9 @@ rvm:
 gemfile: 
  — Gemfile
 
-script:
+before_script:
  — bundle exec db:create
  — bundle exec rails db:migrate
+
+script:
  — bundle exec rspec
