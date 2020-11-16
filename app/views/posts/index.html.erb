@@ -1,7 +1,26 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<div class="container">
+
+<%= link_to new_post_path, :class => "btn btn-lg btn-primary btn-block new" do %>
+  create a new post
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
+<% @posts.each do |post| %>
+
+  <div class="container container post">
+  <div class="row">
+  <div id="creator"> <%= post.user.username %> </div>
+  <div id="data"><%= post.created_at.to_date%> <%= post.created_at.strftime("%k:%M") %></div>
+  </div>
+  <hr>
+  <div id="body"><%= simple_format(post.message) %></div>
+  <hr>
+  <div class="row">
+  <div id="update"><%= link_to "update", edit_post_path(post),  :class => 'btn btn-lg btn-primary btn-block update'%></div>
+  <div id="delete"><%= link_to "delete", post_path(post), method: :delete, :class => 'btn btn-lg btn-primary btn-block delete',
+  data: { confirm: 'are you sure?' } %></div>
+  </div>
+  </div>
 <% end %>
+
+
+</div>

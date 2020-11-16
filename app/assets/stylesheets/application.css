@@ -13,3 +13,258 @@
  *= require_tree .
  *= require_self
  */
+
+ /* monsters inc blue: #007DC4
+ Sully blue: #69B5AB
+ */
+
+ /* All page formatting */
+
+ html {
+     height: 100%;
+ }
+
+ body {
+    margin-top: 100px;
+    background-size: cover;
+    background-image: url("sullyhomescreen.jpg");
+    height: 100%;
+    position: relative;
+    padding-bottom: 2.5rem;    /* Footer height */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  #body {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.btn.btn-lg.btn-primary.btn-block {
+    height: 30px;
+    padding: 0;
+    border: 0;
+    margin-bottom: 5px;
+}
+
+* { box-sizing: border-box;
+   }
+   *:before,
+   *:after {
+    box-sizing: border-box;
+   }
+
+   .btn {
+    background-color: #69B5AB;
+}
+
+/* header */
+
+.btn.btn-lg.btn-primary.btn-block.sign-out {
+    margin: auto;
+      height: 20px;
+      width: 100px;
+      font-size: small;
+      right: 5px;
+      background-color: #007DC4;
+  }
+
+  #navbarSupportedContent {
+    text-align: right;
+  }
+
+  .logo {
+    height: 40px;
+    width: 40px;
+}
+
+  .nav-bar-signout-signup {
+      width: 25%;
+      text-align: center;
+      margin: auto 5px auto auto;
+  }
+
+  .signed-in-as {
+      width: 100%;
+      margin-bottom: 5px;
+  }
+
+  #signout {
+    text-align: right;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  /* footer */
+
+footer {
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    background-color: #69B5AB;
+    z-index: -1;
+    color: #535353;
+   }
+
+   /* sign up page */
+
+   body.new.clearance\/users {
+    padding-top: 100px;
+    background-image: url("signupimage");
+   }
+
+  .card.bg-light.sign-up {
+    width: 300px;
+}
+
+  .card.bg-light.sign-in {
+      width: 300px;
+  }
+
+  body.new.clearance\/sessions {
+    padding-top: 100px;
+  }
+
+  .inc {
+    color: #69B5AB;
+}
+
+  /* view posts */
+
+  .hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: .5;
+}
+
+  #top_bar {
+    background-color: #494949;
+    opacity: 0.8;
+    color: white;
+    font-weight: bold;
+  }
+
+  body.index {
+    background-image: url("scarefloorimage.jpg");
+  }
+
+  .container.post {
+    background-color: white;
+    opacity: 0.8;
+  }
+
+  .each_post {
+    margin-top: 10px;
+  }
+
+   #page-container {
+    position: relative;
+    min-height: 100vh;
+   }
+
+   .content-wrap {
+    padding-bottom: 100px;    /* Footer height */
+  }
+
+   .btn {
+       background-color: #69B5AB;
+   }
+
+  .container-sm {
+      margin-bottom: 100px;
+  }
+
+  #data{
+      margin: auto 10px auto auto;
+  }
+
+  #creator {
+    margin: auto auto auto 10px;
+    color: #007DC4;
+    opacity: unset;
+  }
+
+  #update {
+    margin: auto auto 2px 10px;
+  }
+
+  #delete {
+    margin: auto 10px 2px auto;
+  }
+
+  /*  edit posts */
+
+  body.posts.edit {
+    background-image: url("monstersinceditpost.jpg");
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.update{
+    margin: auto;
+      height: 30px;
+      width: 100px;
+      font-size: medium;
+      right: 5px;
+      background-color: #007DC4;
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.delete{
+    margin: auto;
+      height: 30px;
+      width: 100px;
+      font-size: medium;
+      right: 5px;
+      background-color: #007DC4;
+  }
+
+  .container.container.post {
+      margin-bottom: 5px;
+  }
+
+  /* new posts */
+
+  body.posts.new {
+    background-image: url("monstersincnewpost.jpg");
+  }
+
+  .message-label {
+      margin: 5px auto 0 5px;
+      font-size: large;
+      color: #007DC4;
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.new {
+    background-color: #007DC4;
+  }
+
+  .message-input {
+      width: 100%;
+      text-align: center;
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.submit-new {
+    margin: 5px 5px 2px auto;
+    height: 30px;
+    width: 100px;
+    font-size: medium;
+    right: 5px;
+    background-color: #007DC4;
+  }
+
+  .btn.btn-lg.btn-primary.btn-block.go-back-new {
+    margin: 5px auto 2px 5px;
+    height: 30px;
+    width: 100px;
+    font-size: medium;
+    right: 5px;
+    background-color: #007DC4;
+  }
