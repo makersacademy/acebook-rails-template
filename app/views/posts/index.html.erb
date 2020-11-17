@@ -4,12 +4,10 @@
   <% end %>
   Login
 <% else %>
-  <%= flash[:notice] %>
-  <%= link_to new_user_path do %>
-    Logout
-  <% end %>
+  <%= link_to('Logout', {:controller => "sessions", :action => 'destroy'}, :method => :delete) %>
 <% end %>
 
+<%= flash[:notice] %>
 
 
 <% @posts.each do |post| %>

@@ -4,9 +4,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    p user_params["email"]
-    p User.all
-    p User.where(email: user_params["email"])
     if User.find_by_email(user_params["email"]).nil?
       @user = User.create(user_params)
       session[:current_user_id] = @user.id
@@ -14,7 +11,7 @@ class UsersController < ApplicationController
       redirect_to posts_url
     else
       flash[:warning] = "Email already in use."
-      redirect_to users_new_url
+      redirect_to('/users/new')
     end
   end
 
