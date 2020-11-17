@@ -109,3 +109,12 @@ As a user,
 So that I can send a personal message,
 I would like to be able to private message any user.
 ```
+
+## Database commands
+
+rails db:create
+rails db:migrate
+rails db:create RAILS_ENV=test
+rails db:migrate RAILS_ENV=test
+
+rails db:drop
