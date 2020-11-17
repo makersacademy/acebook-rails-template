@@ -2,6 +2,8 @@
   Sign Up
 <% end %>
 
+<%= flash[:notice] %>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>

@@ -9,6 +9,6 @@ RSpec.feature "Sign Up", type: :feature do
     fill_in "user_email", with: "arakno@makers.com"
     fill_in "user_password", with: "makers4life"
     click_button "Submit"
-    expect(page).to have_content("Homepage")
+    expect(page).to have_content("Welcome Arabella Knowles")
   end
 end
