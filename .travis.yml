@@ -1,4 +1,6 @@
 language: ruby
+before_install:
+  - gem install -v 2.1.4 bundler --no-rdoc --no-ri
 scripts:
 script:
   - bundle exec bin/rails db:create
