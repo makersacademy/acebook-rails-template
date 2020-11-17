@@ -2,3 +2,10 @@ language: ruby
 rvm:
  - 2.7.0
  - jruby
+services:
+ - postgresql
+script:
+ - bundle install
+ - bundle exec bin/rails db:create
+ - bundle exec bin/rails db:migrate
+ - bundle exec rspec
