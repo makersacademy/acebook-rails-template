@@ -5,4 +5,4 @@ scripts:
 script:
   - bundle exec bin/rails db:create
   - bundle exec bin/rails db:migrate
-  - bundle exec rake
+  - bundle exec rspec
