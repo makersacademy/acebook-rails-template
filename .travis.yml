@@ -1,8 +1,7 @@
 language: ruby
-before_install:
-  - gem install -v 2.1.4 bundler --no-rdoc --no-ri
-scripts:
+# before_install:
+#   - gem install -v 2.1.4 bundler --no-rdoc --no-ri
 script:
   - bundle exec bin/rails db:create
   - bundle exec bin/rails db:migrate
-  - bundle exec rspec
+  - bundle exec rake
