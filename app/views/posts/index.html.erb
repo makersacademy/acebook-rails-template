@@ -5,6 +5,9 @@
   Login
 <% else %>
   <%= flash[:notice] %>
+  <%= link_to new_user_path do %>
+    Logout
+  <% end %>
 <% end %>
 
 
