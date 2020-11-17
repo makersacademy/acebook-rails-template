@@ -4,7 +4,7 @@ rvm:
 services:
   - postgresql
 script:
-  - bundle install — jobs=3 — retry=3
+  - bundle install
   - bundle exec rails db:create
   - bundle exec rails db:migrate
   - bundle exec rspec
