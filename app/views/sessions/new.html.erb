@@ -1,0 +1,15 @@
+<%= form_with(model: session, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :user_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password, id: :user_password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit id: :submit_sign_in %>
+  </div>
+<% end %>
