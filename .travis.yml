@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.7.1
+  - 2.5.0
 script:
   - bundle install
   - bundle exec rails db:create
