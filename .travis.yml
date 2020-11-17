@@ -1,14 +1,6 @@
 language: ruby
-
-rvm:
- — 2.5.0
-
-gemfile: 
- — Gemfile
-
-before_script:
- — bin/rails db:create
- — bin/rails db:migrate
-
+scripts:
 script:
- — bundle exec rspec
+  - bundle exec bin/rails db:create
+  - bundle exec bin/rails db:migrate
+  - bundle exec rake
