@@ -1,5 +1,7 @@
 # AceBook
 
+Making a fake version of facebook.
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
@@ -7,7 +9,7 @@ the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+2. The card wall is here: <https://trello.com/b/AN7nuWNZ/district-3>
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
