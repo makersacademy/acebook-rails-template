@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    session[:current_user_id] = @user.id
     flash[:notice] = "Welcome #{user_params["full_name"]}"
     redirect_to posts_url
   end
