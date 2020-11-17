@@ -34,7 +34,7 @@ RSpec.describe UsersController, type: :controller do
   }
 
   let(:invalid_attributes) {
-    {name: "test", email: nil, password: nil}
+    {name: nil, email: nil, password: nil}
     #skip("Add a hash of attributes invalid for your model")
   }
 
@@ -99,14 +99,15 @@ RSpec.describe UsersController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {name: "New Person", email: "new@testing.com", password: "test1234"}
       }
 
       it "updates the requested user" do
         user = User.create! valid_attributes
         put :update, params: {id: user.to_param, user: new_attributes}, session: valid_session
         user.reload
-        skip("Add assertions for updated state")
+        expect(user.name).to eq("New Person")
+        expect(user.email).to eq("new@testing.com")
       end
 
       it "redirects to the user" do
@@ -118,6 +119,7 @@ RSpec.describe UsersController, type: :controller do
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
+        skip
         user = User.create! valid_attributes
         put :update, params: {id: user.to_param, user: invalid_attributes}, session: valid_session
         expect(response).to be_success
