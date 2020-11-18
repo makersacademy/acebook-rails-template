@@ -1,3 +1,14 @@
+<% if @current_user.nil? %>
+  <%= link_to new_user_path do %>
+    Sign Up
+  <% end %>
+  Login
+<% else %>
+  <%= link_to('Logout', {:controller => "sessions", :action => 'destroy'}, :method => :delete) %>
+<% end %>
+
+<%= flash[:notice] %>
+
 <% i = @posts.length - 1
 while i >= 0 do %>
   <p><%= @posts[i].message + "-" + @posts[i].created_at.strftime("%-d/%-m/%-y %H:%M")%></p>
