@@ -14,3 +14,8 @@ script:
   - bundle exec rails db:create
   - bundle exec rails db:migrate
   - bundle exec rspec 
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "79870e19-0278-480c-82ef-7d85fa536883"
