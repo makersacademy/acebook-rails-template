@@ -9,12 +9,11 @@
 
 <%= flash[:notice] %>
 
-
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<% i = @posts.length - 1
+while i >= 0 do %>
+  <p><%= @posts[i].message + "-" + @posts[i].created_at.strftime("%-d/%-m/%-y %H:%M")%></p>
+<% i -= 1 end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
-

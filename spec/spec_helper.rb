@@ -18,6 +18,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require_relative './spec_helpers/user_spec_helper.rb'
 RSpec.configure do |config|
+  puts "TO SEE TEST COVERAGE OPEN coverage/index.html"
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
