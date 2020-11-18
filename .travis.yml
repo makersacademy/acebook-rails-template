@@ -1,11 +1,10 @@
 language: ruby
 rvm:
- - 2.6.5
- - jruby
+ - 2.7.1
+ # - jruby
 services:
  - postgresql
 script:
- - gem update --system 3.0.8 && gem update --system
  - bundle install
  - bundle exec bin/rails db:create
  - bundle exec bin/rails db:migrate
