@@ -122,6 +122,7 @@ RSpec.describe UsersController, type: :controller do
         skip
         user = User.create! valid_attributes
         put :update, params: {id: user.to_param, user: invalid_attributes}, session: valid_session
+        p response
         expect(response).to be_success
       end
     end

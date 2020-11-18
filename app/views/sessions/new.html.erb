@@ -1,15 +1,15 @@
-<%= form_with(model: session, local: true) do |form| %>
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
-  </div>
+<h1>Log in to Acebook</h1>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password, id: :user_password %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit id: :submit_sign_in %>
-  </div>
+<%= form_tag sessions_path do %>
+<div class="field">
+<%= label_tag :email %><br>
+<%= text_field_tag :email %>
+</div>
+ <div class="field">
+   <%= label_tag :password %><br>
+<%= password_field_tag :password %>
+</div>
+ <div class="actions">
+  <%= submit_tag "Log In" %>
+</div>
 <% end %>
