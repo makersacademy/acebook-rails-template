@@ -12,7 +12,8 @@
 <%@posts.each do |post| %>
   <div>
     <%=post.message%> <br>
-    <%=post.posted_at%>
+    <%=post.posted_at%> <br>
+    <%=post.user.username%>
   </div>
 <%end%>
 
