@@ -5,7 +5,7 @@ rvm:
 services:
  - postgresql
 script:
- - gem install pg -v '1.2.3' --source 'https://rubygems.org/'
+ - gem update --system 3.0.8 && gem update --system
  - bundle install
  - bundle exec bin/rails db:create
  - bundle exec bin/rails db:migrate
