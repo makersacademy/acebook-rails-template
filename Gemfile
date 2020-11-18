@@ -37,7 +37,8 @@ group :development, :test do
   gem 'orderly'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
-
+  gem 'rubocop'
+  gem 'simplecov'
 end
 
 group :development do
