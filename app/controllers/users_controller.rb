@@ -24,9 +24,13 @@ class UsersController < ApplicationController
   end
 
   private
+  VALID_EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+   
 
   def validate_email(email)
-    (email =~ URI::MailTo::EMAIL_REGEXP)
+    
+    email =~ VALID_EMAIL_REGEX
+    
   end
 
   def user_params
