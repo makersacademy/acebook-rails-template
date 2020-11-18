@@ -1,9 +1,9 @@
 class Post < ApplicationRecord
-  def simplifydate
-    return self.created_at.strftime('%d-%m-%Y')
+  def simplifydate(date = self.created_at)
+    return date.strftime('%d-%m-%Y')
   end
 
-  def simplifytime
-    return self.created_at.strftime('%H:%M')
+  def simplifytime(time = self.created_at)
+    return time.strftime('%H:%M')
   end
 end
