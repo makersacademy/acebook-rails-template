@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
     @current_user = User.find_by_id(session[:current_user_id])
   end
 
