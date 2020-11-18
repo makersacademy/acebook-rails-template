@@ -3,6 +3,8 @@
 <%= @user_name %>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <p>Posted at: <%= post.simplifytime %></p>
+  <p>Posted on: <%= post.simplifydate %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
