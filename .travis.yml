@@ -10,7 +10,7 @@ script:
 - bundle exec rails db:create
 - bundle exec rails db:migrate
 - bundle exec rspec
-- coverage report --fail-under=100
+- coverage report --fail-under=80
 deploy:
   provider: heroku
   api_key:
