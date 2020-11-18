@@ -24,6 +24,6 @@ RSpec.feature "Sign Up", type: :feature do
   end
   scenario "Email must be valid in order to sign up" do
     user_signup('arakno', 'dan-makers.com')
-    expect(page).to have_content("This is not a valid email address")
+    expect(page).to have_content("dan-makers.com is not a valid email address")
   end 
 end

@@ -11,14 +11,23 @@ class UsersController < ApplicationController
     elsif username_not_unique?(user_params["username"])
       error_response("Username")
     else
-      @user = User.create(user_params)
-      session[:current_user_id] = @user.id
-      flash[:notice] = "Welcome #{user_params["full_name"]}"
-      redirect_to posts_url
+      if validate_email(user_params["email"])
+        @user = User.create(user_params)
+        session[:current_user_id] = @user.id
+        flash[:notice] = "Welcome #{user_params["full_name"]}"
+        redirect_to posts_url
+      else 
+        flash[:warning] = "#{user_params["email"]} is not a valid email address"
+        redirect_to('/users/new')
+      end
     end
   end
 
   private
+
+  def validate_email(email)
+    (email =~ URI::MailTo::EMAIL_REGEXP)
+  end
 
   def user_params
     params.require(:user).permit(:username, :full_name, :email, :password)
