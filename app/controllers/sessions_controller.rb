@@ -5,16 +5,21 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.authenticate(email: params[:email], password: params[:password])
-    if @user 
-      session[:user_id] = @user.id
-      render json: {
-        status: :created,
-        logged_in: :true,
-        user: @user
-      }
-    else
-      render json:{status: 401}
+    @user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
+    # authenticate(email: params[:email], password: params[:password])
+    respond_to do |format|
+      if @user
+        format.html { redirect_to posts_path}
+        session[:user] = @user
+        format.json {
+          render :show,
+          status: :created,
+          logged_in: :true,
+          user: @user
+        }
+      else
+        render json:{status: 401}
+      end
     end
   end
 
