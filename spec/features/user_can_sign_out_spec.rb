@@ -7,8 +7,7 @@ RSpec.feature "Sign Out", type: :feature do
     fill_in "email", with: "test@testing.com"
     fill_in "password", with: "test1234"
     click_button("Log In")
-    click_link("Log Out")
-    save_and_open_page
+    click_button("Log Out")
 
     expect(page).to have_content("Logged out!")
     expect(page).not_to have_content("Test Person")
