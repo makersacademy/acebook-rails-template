@@ -10,6 +10,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    if session[:user]
+      @user_name = session[:user]["name"]
+    end
+      
   end
 
   private
