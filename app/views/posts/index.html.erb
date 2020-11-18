@@ -2,7 +2,9 @@
   <%= link_to new_user_path do %>
     Sign Up
   <% end %>
-  Login
+  <%= link_to new_sessions_path do %>
+    Login
+  <% end %>
 <% else %>
   <%= link_to('Logout', {:controller => "sessions", :action => 'destroy'}, :method => :delete) %>
   
