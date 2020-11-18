@@ -10,16 +10,17 @@ class UsersController < ApplicationController
       error_response("Email")
     elsif username_not_unique?(user_params["username"])
       error_response("Username")
+    elsif invalid_email?(user_params["email"])
+      flash[:warning] = "#{user_params["email"]} is not a valid email address"
+      redirect_to('/users/new')
+    elsif invalid_password?(user_params["password"])
+      flash[:warning] = "Password must be between 6-10 characters"
+      redirect_to('/users/new')
     else
-      if validate_email(user_params["email"])
-        @user = User.create(user_params)
-        session[:current_user_id] = @user.id
-        flash[:notice] = "Welcome #{user_params["full_name"]}"
-        redirect_to posts_url
-      else 
-        flash[:warning] = "#{user_params["email"]} is not a valid email address"
-        redirect_to('/users/new')
-      end
+      @user = User.create(user_params)
+      session[:current_user_id] = @user.id
+      flash[:notice] = "Welcome #{user_params["full_name"]}"
+      redirect_to posts_url
     end
   end
 
@@ -27,10 +28,12 @@ class UsersController < ApplicationController
   VALID_EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
    
 
-  def validate_email(email)
-    
-    email =~ VALID_EMAIL_REGEX
-    
+  def invalid_email?(email)
+    !(email =~ VALID_EMAIL_REGEX)
+  end
+
+  def invalid_password?(password)
+    ((password.length < 6) || (password.length > 10))
   end
 
   def user_params
