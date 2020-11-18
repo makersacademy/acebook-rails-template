@@ -16,8 +16,14 @@ RSpec.feature "Sign Up", type: :feature do
     user_signup('dan', 'arakno@makers.com')
     expect(page).to have_content("Email already in use.")
   end
-  # scenario "Username must be unique" do
-  #   user_signup('arakno', 'dan@makers.com')
-  #   expect(page).to have_content("Username already in use.")
-  # end
+  scenario "Username must be unique" do
+    user_signup('arakno', 'dan@makers.com')
+    click_link 'Logout'
+    user_signup('arakno', 'arakno@makers.com')
+    expect(page).to have_content("Username already in use.")
+  end
+  scenario "Email must be valid in order to sign up" do
+    user_signup('arakno', 'dan-makers.com')
+    expect(page).to have_content("This is not a valid email address")
+  end 
 end
