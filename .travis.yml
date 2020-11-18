@@ -5,6 +5,7 @@ rvm:
 services:
  - postgresql
 script:
+ - gem install bundler:1.17.3
  - bundle install
  - bundle exec bin/rails db:create
  - bundle exec bin/rails db:migrate
