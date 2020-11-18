@@ -9,7 +9,7 @@ RSpec.describe UsersController, type: :controller do
   end
   describe "POST /" do
     it "responds with 200" do
-      post :create, params: { user: { username: "arakno", full_name: "Arabella Knowles", email: "arakno@makers.com", password: "makers4life" } }
+      post :create, params: { user: { username: "arakno", full_name: "Arabella Knowles", email: "arakno@makers.com", password: "makers4L" } }
       expect(response).to redirect_to(posts_url)
     end
   end

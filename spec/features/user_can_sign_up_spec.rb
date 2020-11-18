@@ -6,7 +6,7 @@ RSpec.feature "Sign Up", type: :feature do
     expect(page).to have_content("Welcome Arabella Knowles")
   end
   scenario "Sign up button not visible once signed up" do
-    user_signup('arakno', 'arakno@makers.com', 'Arabella Knowles', 'makers4life')
+    user_signup('arakno', 'arakno@makers.com', 'Arabella Knowles', 'makers4L')
     expect(page).not_to have_content("Login")
     expect(page).not_to have_content("Sign Up")
   end
