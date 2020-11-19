@@ -1,6 +1,6 @@
 <%= button_to 'Log Out', log_out_url %>
 
-<%= @user["name"] %>
+<%= session[:user]["name"] %>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <p>Posted by: <%= User.find_by(id: post.user_id).name %></p>

@@ -1,3 +1,4 @@
+require_relative '../helpers/posts_helper.rb'
 class PostsController < ApplicationController
   def new
     @post = Post.new
