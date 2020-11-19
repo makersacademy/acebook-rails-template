@@ -18,4 +18,10 @@ RSpec.describe User, type: :model do
   it "checks if email is valid - passed invalid email" do
     expect(User.valid_email?("araknomakers.com")).to eq(false)
   end
+  it "checks password length is between 6 and 10" do 
+    expect(User.valid_password?("makers")).to eq(true)
+  end
+  it "checks password length is between 6 and 10" do 
+    expect(User.valid_password?("makers10101")).to eq(false)
+  end
 end

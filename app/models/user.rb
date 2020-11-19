@@ -18,4 +18,7 @@ class User < ApplicationRecord
     ((email =~ VALID_EMAIL_REGEX) == 0) ? true : false
   end
 
+  def self.valid_password?(password)
+    ((6 <= password.length) && (password.length <= 10))
+  end
 end
