@@ -24,6 +24,8 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+# See AceBook In Action:
+![AceBook on Heroku](https://acebook-team-life-savers.herokuapp.com/)
 
 # Planning
 ## User Stories
