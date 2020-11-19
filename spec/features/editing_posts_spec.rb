@@ -38,4 +38,15 @@ RSpec.feature "Editing posts", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Error: You can only edit your own posts.")
   end
+
+  scenario "User can't see edit button 10 minutes after creating post" do
+    user_signup('arakno', 'arakno@makers.com')
+    user = User.find_by_email('arakno@makers.com')
+    Post.create(id: 1, message: 'Ten minutes ago', created_at: DateTime.now - 10.minutes, user_id: user.id )
+    visit "/posts"
+    expect(page).to_not have_link('edit')
+    
+    
+  end
+
 end

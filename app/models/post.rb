@@ -13,4 +13,9 @@ class Post < ApplicationRecord
       current_user_id == self.user_id
     end
 
+    def is_less_than_ten_minutes_old?
+      self.created_at + 10 > DateTime.now()
+    end
+
+
 end
