@@ -14,4 +14,14 @@ RSpec.feature "Editing posts", type: :feature do
     click_button "Submit"
     expect(page).to have_content("New message")
   end
+
+  scenario "User cannot see edit button on someone else's post" do
+    user_signup('arakno', 'arakno@makers.com')
+    click_link "New post"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Submit"
+    click_link "Logout"
+    user_signup('ds.danielh', 'dan@makers.com')
+    expect(page).not_to have_link("edit")
+  end
 end

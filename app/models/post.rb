@@ -9,4 +9,8 @@ class Post < ApplicationRecord
       self.message.gsub(/\n/, '<br/>').html_safe
     end
 
+    def owned_by(current_user_id)
+      current_user_id == self.user_id
+    end
+
 end
