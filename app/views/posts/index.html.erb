@@ -8,11 +8,17 @@
 <% end %>
 
 <%= flash[:notice] %>
+<%= flash[:warning]%>
 
-<% i = @posts.length - 1
-while i >= 0 do %>
-  <p><%= @posts[i].message + "-" + @posts[i].created_at.strftime("%-d/%-m/%-y %H:%M")%></p>
-<% i -= 1 end %>
+<%@posts.each do |post| %>
+  <div id="post-<%= post.id %>">
+    <%= post.formatted_message%>
+    <%=post.posted_at%> <br>
+    <%=post.user.username if !!post.user_id%>
+    <%= link_to('edit', {:controller => "posts", :action => 'edit', :id => post.id }, :method => :get) if post.editable?(session[:current_user_id])%>
+  </div>
+<%end%>
+
 
 <%= link_to new_post_path do %>
   New post
