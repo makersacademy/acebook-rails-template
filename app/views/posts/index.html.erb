@@ -11,7 +11,7 @@
 
 <%@posts.each do |post| %>
   <div>
-    <%=post.message%> <br>
+  <%= post.message.gsub(/\n/, '<br/>').html_safe%>
     <%=post.posted_at%> <br>
     <%=post.user.username if !!post.user_id%>
   </div>
