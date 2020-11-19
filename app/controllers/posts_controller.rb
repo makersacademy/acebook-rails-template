@@ -14,7 +14,11 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find_by_id(params[:id])
-    @post.update(message: post_params["message"])
+    if @post.owned_by(session[:current_user_id])
+      @post.update(message: post_params["message"]) 
+    else
+      flash[:warning] = "Error: You can only edit your own posts."
+    end
     redirect_to posts_url
   end
 

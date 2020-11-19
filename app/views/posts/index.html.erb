@@ -8,6 +8,7 @@
 <% end %>
 
 <%= flash[:notice] %>
+<%= flash[:warning]%>
 
 <%@posts.each do |post| %>
   <div id="post-<%= post.id %>">
