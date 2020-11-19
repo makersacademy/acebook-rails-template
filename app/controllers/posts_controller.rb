@@ -9,17 +9,13 @@ class PostsController < ApplicationController
   end
 
   def edit
-
     @post = Post.find_by_id(params[:id])
-    
   end
 
   def update
-
     @post = Post.find_by_id(params[:id])
     @post.update(message: post_params["message"])
     redirect_to posts_url
-
   end
 
   def index

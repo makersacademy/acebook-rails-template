@@ -10,7 +10,7 @@
 <%= flash[:notice] %>
 
 <%@posts.each do |post| %>
-  <div>
+  <div id="post-<%= post.id %>">
     <%= post.formatted_message%>
     <%=post.posted_at%> <br>
     <%=post.user.username if !!post.user_id%>
