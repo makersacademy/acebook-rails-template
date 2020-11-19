@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   it { is_expected.to be }
 
-  it "checks if username and email are unique" do
-    expect(User.unique_email_and_username?("arakno", "arakno@makers.com")).to eq(true)
+  it "checks if username and email are in use" do
+    expect(User.email_and_username_in_use?("arakno", "arakno@makers.com")).to eq(false)
   end
-  it "checks if username is unique" do
-    expect(User.unique_username?("arakno")).to eq(true)
+  it "checks if username is in use" do
+    expect(User.username_in_use?("arakno")).to eq(false)
   end
-  it "checks if email is unique" do
-    expect(User.unique_email?("arakno@makers.com")).to eq(true)
+  it "checks if email is in use" do
+    expect(User.email_in_use?("arakno@makers.com")).to eq(false)
   end
   it "checks if email is valid - passed valid email" do
     expect(User.valid_email?("arakno@makers.com")).to eq(true)
