@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    #Post.create(post_params)
     @post = Post.create(message: post_params["message"], user_id: session[:current_user_id])
     redirect_to posts_url
   end
