@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
       # link to sign up - incase they haven't already
     elsif ((@current_user.authenticate(user_params["password"])) == false)
       flash[:notice] = "Username and password do not match, please try again"
-      redirect_to('/posts')
+      redirect_to('/sessions/new')
       # password authentication - bcrypt
     else
       session[:current_user_id] = @current_user.id

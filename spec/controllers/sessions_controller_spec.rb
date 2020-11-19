@@ -16,12 +16,12 @@ RSpec.describe SessionsController, type: :controller do
   
   describe "POST /" do
     it "correct info: redirects to /posts" do
-      post :create, params: { username: "arakno", password: "maker4L" } 
+      post :create, params: { username: "arakno", password: "makers4L" } 
       expect(response).to have_http_status(302)
       expect(response).to redirect_to(posts_url)
     end
     it "Incorrect info: redirects to /sessions/new" do
-      post :create, params: { username: "arabekno", password: "maker4L" } 
+      post :create, params: { username: "arabekno", password: "makers4L" } 
       expect(response).to have_http_status(302)
       expect(response).to redirect_to('/sessions/new')
     end
