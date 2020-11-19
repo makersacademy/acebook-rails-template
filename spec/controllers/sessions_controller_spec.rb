@@ -29,6 +29,7 @@ RSpec.describe SessionsController, type: :controller do
       expect(response).to redirect_to('/sessions/new')
     end
   end
+  
   describe "DELETE /" do
     it "redirects to home page" do
       delete :destroy

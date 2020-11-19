@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create 
+    # User.authenticate(user_params["username"], user_params["email"], user_params["password"])
     if email_and_username_not_unique?(user_params["username"], user_params["email"])
       error_response("Email and username")
     elsif email_not_unique?(user_params["email"])
