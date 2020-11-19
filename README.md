@@ -25,7 +25,7 @@ First, clone this repository. Then:
 > bin/rails server # Start the server at localhost:3000
 ```
 # See AceBook In Action:
-![AceBook on Heroku](https://acebook-team-life-savers.herokuapp.com/)
+[AceBook on Heroku](https://acebook-team-life-savers.herokuapp.com/)
 
 # Planning
 ## User Stories
