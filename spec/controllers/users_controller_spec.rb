@@ -18,17 +18,20 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(302)
       expect(response).to redirect_to('/users/new')
     end
-    it "Username already in db: redirects to /users/new" do
-      User.create(username: "arakno", full_name: "Arabella Knowles", email: "arakno@makers.com", password: "makers4L")
-      post :create, params: { user: { username: "arakno", full_name: "Elsa Knowles", email: "ara@makers.com", password: "akers4L" } }
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to('/users/new')
-    end
-    it "Email already in db: redirects to /users/new" do
-      User.create(username: "arakno", full_name: "Arabella Knowles", email: "arakno@makers.com", password: "makers4L")
-      post :create, params: { user: { username: "arakno101", full_name: "Arabella Knowles", email: "arakno@makers.com", password: "bakers4L" } }
-      expect(response).to have_http_status(302)
-      expect(response).to redirect_to('/users/new')
+    context "User already created" do 
+      before do
+        User.create(username: "arakno", full_name: "Arabella Knowles", email: "arakno@makers.com", password: "makers4L")
+      end
+      it "Username already in db: redirects to /users/new" do
+        post :create, params: { user: { username: "arakno", full_name: "Elsa Knowles", email: "ara@makers.com", password: "akers4L" } }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to('/users/new')
+      end
+      it "Email already in db: redirects to /users/new" do
+        post :create, params: { user: { username: "arakno101", full_name: "Arabella Knowles", email: "arakno@makers.com", password: "bakers4L" } }
+        expect(response).to have_http_status(302)
+        expect(response).to redirect_to('/users/new')
+      end
     end
   end
 end

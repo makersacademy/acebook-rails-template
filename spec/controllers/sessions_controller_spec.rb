@@ -29,10 +29,10 @@ RSpec.describe SessionsController, type: :controller do
       expect(response).to redirect_to('/sessions/new')
     end
   end
-  # describe "DELETE" do
-  #   it "responds with 200" do
-  #     delete
-  #     expect(response).to have_http_status(200)
-  #   end
-  # end
+  describe "DELETE /" do
+    it "redirects to home page" do
+      delete :destroy
+      expect(response).to redirect_to(root_url)
+    end
+  end
 end
