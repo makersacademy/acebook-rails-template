@@ -4,8 +4,7 @@ RSpec.describe SessionsController, type: :controller do
   before do
     User.create(username: "arakno", full_name: "Arabella Knowles", email: "arakno@makers.com", password: "makers4L")
     @user = User.find_by_username("arakno")
-    @password = @user.password
-    p @password
+    # @password = @user.password
   end
 
   describe "GET /new " do

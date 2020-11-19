@@ -13,9 +13,9 @@ class UsersController < ApplicationController
     elsif invalid_email?(user_params["email"])
       flash[:warning] = "#{user_params["email"]} is not a valid email address"
       redirect_to('/users/new')
-    # elsif invalid_password?(user_params["password"])
-    #   flash[:warning] = "Password must be between 6-10 characters"
-    #   redirect_to('/users/new')
+    elsif invalid_password?(user_params["password"])
+      flash[:warning] = "Password must be between 6-10 characters"
+      redirect_to('/users/new')
     else
       @user = User.create(user_params)
       session[:current_user_id] = @user.id

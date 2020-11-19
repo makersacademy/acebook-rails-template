@@ -12,8 +12,6 @@ class SessionsController < ApplicationController
     # if find_by_username(params["username"]) returns not nil - they are a user - if not throw flash message
     # check that their password matches their username, if not throw flash message, but we also need to encrypt the password
     @current_user = User.find_by_username(user_params["username"])
-    p user_params["password"]
-    p User.attribute_names
 
     if @current_user.nil?
       flash[:notice] = "The username #{user_params["username"]} does not exist"
@@ -21,7 +19,7 @@ class SessionsController < ApplicationController
       # link to sign up - incase they haven't already
     elsif ((@current_user.authenticate(user_params["password"])) == false)
       flash[:notice] = "Username and password do not match, please try again"
-      redirect_to('/sessions/new')
+      redirect_to('/posts')
       # password authentication - bcrypt
     else
       session[:current_user_id] = @current_user.id
