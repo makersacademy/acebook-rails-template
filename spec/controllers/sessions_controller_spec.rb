@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
   before do
-    User.create(username: "arakno", full_name: "Arabella Knowles", email: "arakno@makers.com", password_digest: "makers4L")
+    User.create(username: "arakno", full_name: "Arabella Knowles", email: "arakno@makers.com", password: "makers4L")
+    @user = User.find_by_username("arakno")
+    @password = @user.password
+    p @password
   end
 
   describe "GET /new " do
@@ -14,12 +17,12 @@ RSpec.describe SessionsController, type: :controller do
   
   describe "POST /" do
     it "correct info: redirects to /posts" do
-      post :create, params: { username: "arakno", password_digest: "makers4L" } 
+      post :create, params: { username: "arakno", password: "maker4L" } 
       expect(response).to have_http_status(302)
       expect(response).to redirect_to(posts_url)
     end
     it "Incorrect info: redirects to /sessions/new" do
-      post :create, params: { username: "arabekno", password_digest: "makers4L" } 
+      post :create, params: { username: "arabekno", password: "maker4L" } 
       expect(response).to have_http_status(302)
       expect(response).to redirect_to('/sessions/new')
     end

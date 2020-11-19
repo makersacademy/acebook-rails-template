@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :full_name, :email, :password_digest)
+    params.require(:user).permit(:username, :full_name, :email, :password)
   end
 
   def email_and_username_not_unique?(email, username)
