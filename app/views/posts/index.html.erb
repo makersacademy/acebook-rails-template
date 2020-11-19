@@ -13,7 +13,7 @@
   <div>
     <%=post.message%> <br>
     <%=post.posted_at%> <br>
-    <%=post.user.username%>
+    <%=post.user.username if !!post.user_id%>
   </div>
 <%end%>
 
