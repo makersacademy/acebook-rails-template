@@ -11,11 +11,11 @@ class SessionsController < ApplicationController
     @current_user = User.find_by_username(user_params["username"])
 
     if user_not_recognised?
-      flash[:notice] = "The username #{user_params["username"]} does not exist"
+      flash[:warning] = "The username #{user_params["username"]} does not exist"
       redirect_to('/sessions/new')
       # link to sign up - incase they haven't already
     elsif failed_password_authentication?(user_params["password"])
-      flash[:notice] = "Username and password do not match, please try again"
+      flash[:warning] = "Username and password do not match, please try again"
       redirect_to('/sessions/new')
     else
       session[:current_user_id] = @current_user.id
