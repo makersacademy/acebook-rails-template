@@ -1,8 +1,9 @@
 <%= button_to 'Log Out', log_out_url %>
 
-<%= @user_name %>
+<%= @user["name"] %>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <p>Posted by: <%= User.find_by(id: post.user_id).name %></p>
   <p>Posted at: <%= post.simplifytime %></p>
   <p>Posted on: <%= post.simplifydate %></p>
 <% end %>
