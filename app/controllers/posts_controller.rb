@@ -4,9 +4,24 @@ class PostsController < ApplicationController
   end
 
   def create
-    #Post.create(post_params)
+    p post_params["message"]
+    p session[:current_user_id]
     @post = Post.create(message: post_params["message"], user_id: session[:current_user_id])
     redirect_to posts_url
+  end
+
+  def edit
+
+    @post = Post.find_by_id(params[:id])
+    
+  end
+
+  def update
+
+    @post = Post.find_by_id(params[:id])
+    @post.update(message: post_params["message"])
+    redirect_to posts_url
+
   end
 
   def index

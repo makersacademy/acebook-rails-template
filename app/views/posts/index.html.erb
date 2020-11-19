@@ -14,6 +14,7 @@
     <%= post.formatted_message%>
     <%=post.posted_at%> <br>
     <%=post.user.username if !!post.user_id%>
+    <%= link_to('edit', {:controller => "posts", :action => 'edit', :id => post.id }, :method => :get) %>
   </div>
 <%end%>
 
