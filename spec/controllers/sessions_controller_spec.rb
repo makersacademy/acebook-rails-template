@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
   before do
-    # add person to database
-    User.create(username: "arakno", full_name: "Arabella Knowles", email: "arakno@makers.com", password: "makers4L")
+    User.create(username: "arakno", full_name: "Arabella Knowles", email: "arakno@makers.com", password_digest: "makers4L")
   end
 
   describe "GET /new " do
@@ -12,6 +11,7 @@ RSpec.describe SessionsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+  
   describe "POST /" do
     it "correct info: redirects to /posts" do
       post :create, params: { username: "arakno", password: "makers4L" } 
