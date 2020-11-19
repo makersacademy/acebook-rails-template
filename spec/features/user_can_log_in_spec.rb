@@ -12,7 +12,7 @@ RSpec.feature "Login", type: :feature do
     click_link "Logout"
     click_link "Login"
     fill_in "username", with: "arakno"
-    fill_in "password", with: "makers4L"
+    fill_in "password_digest", with: "makers4L"
     click_button "Login"
     expect(page).to have_content("Hello, world!")
   end
