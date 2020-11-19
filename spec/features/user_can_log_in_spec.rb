@@ -10,10 +10,7 @@ RSpec.feature "Login", type: :feature do
     user_signup('arakno', 'arakno@makers.com', 'Arabella Knowles', 'makers4L')
     create_post("Hello, world!")
     click_link "Logout"
-    click_link "Login"
-    fill_in "username", with: "arakno"
-    fill_in "password", with: "makers4L"
-    click_button "Login"
+    user_login("arakno", "makers4L")
     expect(page).to have_content("Hello, world!")
   end
 end
