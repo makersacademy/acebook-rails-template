@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe SessionsController, type: :controller do
   before do
     User.create(username: "arakno", full_name: "Arabella Knowles", email: "arakno@makers.com", password: "makers4L")
-    @user = User.find_by_username("arakno")
   end
 
   describe "GET /new " do
@@ -19,8 +18,13 @@ RSpec.describe SessionsController, type: :controller do
       expect(response).to have_http_status(302)
       expect(response).to redirect_to(posts_url)
     end
-    it "Incorrect info: redirects to /sessions/new" do
+    it "Username is not in database: redirects to /sessions/new" do
       post :create, params: { username: "arabekno", password: "makers4L" } 
+      expect(response).to have_http_status(302)
+      expect(response).to redirect_to('/sessions/new')
+    end
+    it "Username does not match password: redirects to /sessions/new" do
+      post :create, params: { username: "arakno", password: "maker4L" } 
       expect(response).to have_http_status(302)
       expect(response).to redirect_to('/sessions/new')
     end

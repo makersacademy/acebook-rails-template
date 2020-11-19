@@ -1,10 +1,5 @@
 class SessionsController < ApplicationController
-  # #create
-  # ## click log in, db with the email return id current user id to their actual id 
-  # encrypt passwords 
-
   def new
-
   end
 
   def create 
