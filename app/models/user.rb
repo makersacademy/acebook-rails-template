@@ -3,15 +3,15 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
   def self.email_and_username_in_use?(username, email)
-    (self.email_in_use?(email) && self.username_in_use?(username))
+    self.email_in_use?(email) && self.username_in_use?(username)
   end
 
   def self.email_in_use?(email)
-    !User.find_by_email(email).nil?
+    !!User.find_by_email(email)
   end
 
   def self.username_in_use?(username)
-    !User.find_by_username(username).nil?
+    !!User.find_by_username(username)
   end
 
   def self.valid_email?(email)

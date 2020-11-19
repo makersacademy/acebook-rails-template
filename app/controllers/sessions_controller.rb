@@ -5,10 +5,9 @@ class SessionsController < ApplicationController
   def create 
     @current_user = User.find_by_username(user_params["username"])
 
-    if user_not_recognised?
+    if username_not_recognised?
       flash[:warning] = "The username #{user_params["username"]} does not exist"
       redirect_to('/sessions/new')
-      # link to sign up - incase they haven't already
     elsif failed_password_authentication?(user_params["password"])
       flash[:warning] = "Username and password do not match, please try again"
       redirect_to('/sessions/new')
@@ -36,7 +35,7 @@ class SessionsController < ApplicationController
     (@current_user.authenticate(user_params["password"])) == false
   end
 
-  def user_not_recognised?
+  def username_not_recognised?
     @current_user.nil?
   end
 end
