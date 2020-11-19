@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
+  @@test_user_id = '5432'
+
   describe "GET /new " do
     it "responds with 200" do
       get :new
@@ -15,16 +17,17 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "creates a post" do
-      post :create, params: { post: { message: "Hello, world!" }, user_id: 1 }
-      p "-----------"
-      p Post.all
+  
+      puts"-----------------------------"
+      post :create, params: { post: { message: "Hello, world!" }}
+      puts"-----------------------------"
       expect(Post.find_by(message: "Hello, world!")).to be
     end
   end
 
   describe "GET /" do
     it "responds with 200" do
-      get :index
+      get :index, session: { id: 4567 }
       expect(response).to have_http_status(200)
     end
   end

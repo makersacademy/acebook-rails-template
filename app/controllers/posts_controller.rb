@@ -3,7 +3,13 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def create(session_user_id = session[:user]["id"])
+  def create
+    if ENV['RAILS_ENV'] == "test"
+      session_user_id = @@test_user_id
+    else
+      session_user_id = session[:user]["id"]
+    end
+
     @post = Post.create(post_params.merge(user_id: session_user_id))
     redirect_to posts_url
   end
