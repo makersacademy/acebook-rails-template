@@ -6,7 +6,14 @@
   <p>Posted by: <%= User.find_by(id: post.user_id).name %></p>
   <p>Posted at: <%= post.simplifytime %></p>
   <p>Posted on: <%= post.simplifydate %></p>
+  <p><%= form_with(url: "/posts/", method: "post") %></p>
+  <p><%= text_field(:comment, :comment_text) %></p>
+  <p><%= button_to "Comment", comment_post_url, id: "comment"%></p>
+  <% post.comments.each do |comment| %>
+  <p><%= comment.comment_text %></p>
+  <% end %>
 <% end %>
+
 
 <%= link_to new_post_path do %>
   New post
