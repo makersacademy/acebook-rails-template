@@ -10,6 +10,12 @@ RSpec.feature "Sign Up", type: :feature do
     expect(page).not_to have_content("Login")
     expect(page).not_to have_content("Sign Up")
   end
+  scenario "Email and username must be unique" do
+    user_signup('arakno', 'arakno@makers.com', 'Arabella Knowles', 'makers4L')
+    click_link 'Logout'
+    user_signup('arakno', 'arakno@makers.com', 'Arabella Knowles', 'makers4L')
+    expect(page).to have_content("Email and username already in use.")
+  end
   scenario "Email must be unique" do
     user_signup('arakno', 'arakno@makers.com', 'Arabella Knowles', 'makers4L')
     click_link 'Logout'
