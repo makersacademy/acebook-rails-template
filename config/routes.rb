@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post '/posts_create' => 'posts#create'
   post '/log_out' => 'sessions#destroy'
   get '/new' => 'users#new'
-  post '/like_post' => 'posts#like'
+  post '/like_post' => 'posts#like', as: "like_post"
   resources :sessions
   post "/comment_on_posts" => 'posts#comment', as: "comment_on_posts"
 end
