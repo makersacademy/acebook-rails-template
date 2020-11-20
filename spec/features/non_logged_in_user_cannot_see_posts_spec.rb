@@ -5,7 +5,7 @@ RSpec.feature "Non-logged in user", type: :feature do
     user_signup('arakno', 'arakno@makers.com', 'Arabella Knowles', 'makers4L')
     create_post('Hello World!')
     click_link "Logout"
-    expect(page).not_to have_content("Hello, world")
+    expect(page).not_to have_content("Hello World!")
   end
 
   scenario "cannot see new post link" do
