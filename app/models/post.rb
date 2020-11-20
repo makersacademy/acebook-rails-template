@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :likes
+  has_many :likes, :dependent => :delete_all
 
   def simplifydate(date = self.created_at)
     return date.strftime('%d-%m-%Y')

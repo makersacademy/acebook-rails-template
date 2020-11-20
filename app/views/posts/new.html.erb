@@ -1,9 +1,3 @@
-<%= form_for @post do |form| %>
-<div class="field">
-  <%= form.label :message %>
-  <%= form.text_field :message, id: :post_message  %>
- </div>
-<div class="actions">
-  <%= form.submit "Submit" %>
-</div>
-<% end %>
+
+<%= render 'form'%>
+
