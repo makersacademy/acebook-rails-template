@@ -5,13 +5,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    if ENV['RAILS_ENV'] == "test"
-      session_user_id = @@test_user_id
-    else
-      session_user_id = session[:user]["id"]
-    end
-
-    @post = Post.create(post_params.merge(user_id: session_user_id))
+    @post = Post.create(post_params)
     redirect_to posts_url
   end
 
@@ -20,7 +14,13 @@ class PostsController < ApplicationController
     if session[:user]
       @user = session[:user]
     end
-      
+  end
+
+  def like
+    @post = Post.find_by(params[:id])
+    @user = User.find_by(id: session[:user]["id"])
+    @post.like(@user)
+    redirect_to posts_url
   end
   
   def comment
@@ -33,6 +33,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.permit(:message, :user_id)
   end
 end
