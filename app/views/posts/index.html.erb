@@ -8,7 +8,17 @@
   <p>Posted on: <%= post.simplifydate %></p>
   <p>Likes: <%= post.likes.size %></p>
   <%= button_to 'Like', like_post_url, id: "like" %>
+  <p><%= post.id %><p>
+  <p><%= form_tag comment_on_posts_path do %></p>
+    <%= hidden_field_tag :post_id, post.id %>
+  <p><%= text_field_tag :comment_text %></p>
+  <p><%= submit_tag "Comment" %></p>
+  <% end %>
+  <% post.comments.each do |comment| %>
+  <p><%= comment.comment_text %></p>
+  <% end %>
 <% end %>
+
 
 <%= link_to new_post_path do %>
   New post

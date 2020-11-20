@@ -22,6 +22,13 @@ class PostsController < ApplicationController
     @post.like(@user)
     redirect_to posts_url
   end
+  
+  def comment
+    @user = User.find_by(id: session[:user]["id"])
+    @post = Post.find_by(id: params[:post_id])
+    @post.comment(@user, params[:comment_text])
+    redirect_to posts_url
+  end
 
   private
 
