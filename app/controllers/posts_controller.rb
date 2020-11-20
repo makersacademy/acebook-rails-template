@@ -5,13 +5,6 @@ class PostsController < ApplicationController
   end
 
   def create
-   #if ENV['RAILS_ENV'] == "test" && !@@test_user_id.nil?
-    # session_user_id = @@test_user_id
-   #else
-  #session_user_id = session[:user]["id"]
-   #end
-    #session_user_id = session[:user]["id"]
-
     @post = Post.create(post_params)
     redirect_to posts_url
   end
