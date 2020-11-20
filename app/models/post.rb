@@ -18,7 +18,7 @@ class Post < ApplicationRecord
     end
 
     def is_less_than_ten_minutes_old?
-      self.created_at + 10 > DateTime.now()
+      self.created_at + 10.minutes > DateTime.now()
     end
 
 
