@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :posts
   post '/log_out' => 'sessions#destroy'
   get '/new' => 'users#new'
+  post '/like_post' => 'posts#like'
   resources :sessions
-  
 end

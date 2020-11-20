@@ -23,6 +23,13 @@ class PostsController < ApplicationController
       
   end
 
+  def like
+    @post = Post.find_by(params[:id])
+    @user = User.find_by(id: session[:user]["id"])
+    @post.like(@user)
+    redirect_to posts_url
+  end
+
   private
 
   def post_params

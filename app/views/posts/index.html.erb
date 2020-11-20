@@ -6,6 +6,8 @@
   <p>Posted by: <%= User.find_by(id: post.user_id).name %></p>
   <p>Posted at: <%= post.simplifytime %></p>
   <p>Posted on: <%= post.simplifydate %></p>
+  <p>Likes: <%= post.likes.size %></p>
+  <%= button_to 'Like', like_post_url, id: "like" %>
 <% end %>
 
 <%= link_to new_post_path do %>
