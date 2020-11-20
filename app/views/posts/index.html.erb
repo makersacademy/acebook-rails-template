@@ -6,9 +6,12 @@
   <p>Posted by: <%= User.find_by(id: post.user_id).name %></p>
   <p>Posted at: <%= post.simplifytime %></p>
   <p>Posted on: <%= post.simplifydate %></p>
-  <p><%= form_with(url: "/posts/", method: "post") %></p>
-  <p><%= text_field(:comment, :comment_text) %></p>
-  <p><%= button_to "Comment", comment_post_url, id: "comment"%></p>
+  <p><%= post.id %><p>
+  <p><%= form_tag comment_on_posts_path do %></p>
+    <%= hidden_field_tag :post_id, post.id %>
+  <p><%= text_field_tag :comment_text %></p>
+  <p><%= submit_tag "Comment" %></p>
+  <% end %>
   <% post.comments.each do |comment| %>
   <p><%= comment.comment_text %></p>
   <% end %>

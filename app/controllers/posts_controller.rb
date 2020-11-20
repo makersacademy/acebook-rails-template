@@ -25,8 +25,8 @@ class PostsController < ApplicationController
   
   def comment
     @user = User.find_by(id: session[:user]["id"])
-    @post = Post.find_by(id: params[:id])
-    @post.comment(@user, comment_text)
+    @post = Post.find_by(id: params[:post_id])
+    @post.comment(@user, params[:comment_text])
     redirect_to posts_url
   end
 

@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   post '/log_out' => 'sessions#destroy'
   get '/new' => 'users#new'
   resources :sessions
-  post '/comment_post' => 'posts#comment'
+  post "/comment_on_posts" => 'posts#comment', as: "comment_on_posts"
 end
