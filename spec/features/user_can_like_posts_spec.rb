@@ -10,7 +10,7 @@ RSpec.feature "Liking posts", type: :feature do
     click_link("New post")
     fill_in "message", with: "Best post ever"
     click_on("Submit")
-    click_on("like")
+    click_on("Like")
     expect(page).to have_content("Likes: 1")
   end
 end
