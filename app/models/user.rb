@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :posts
   has_secure_password
   VALID_EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
@@ -21,4 +22,5 @@ class User < ApplicationRecord
   def self.valid_password?(password)
     ((6 <= password.length) && (password.length <= 10))
   end
+
 end

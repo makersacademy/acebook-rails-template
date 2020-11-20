@@ -20,7 +20,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Quickstart
 
-First, clone this repository. Then:
+First, clone this repository. Then: 
 
 ```bash
 > bundle install
