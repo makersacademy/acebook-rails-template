@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     respond_to do |format|
-      if User.find_by(email: params[:user][:email]) 
+      if user_already_exists 
         format.html { redirect_to root_url, notice: "User already exists. Please log in." }
       else
         @user = User.new(user_params)
@@ -66,6 +66,11 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def user_already_exists
+      User.find_by(email: params[:user][:email])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
