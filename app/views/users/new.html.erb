@@ -1,0 +1,47 @@
+
+<% content_for :login_logout do %>
+<li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+    <% end %>   
+
+
+
+<div class="container1">
+      <div class="col-md-6 mx-auto text-center">
+         <div class="header-title">
+            <h1 class="wv-heading--title white">
+               Sign Up Below
+            </h1>
+            <br>
+         </div>
+      </div>
+
+<%= form_with scope: :user, url: users_path, local: true, class: "col-md-4 mx-auto" do |form| %>
+
+
+<%= form.text_field :name, placeholder: "Name", class: "form-control my-input form-group"%>
+
+<%= form.email_field :email , placeholder: "Email", class: "form-control my-input form-group"%>
+
+<%= form.password_field :password,  placeholder: "Password", minlength: "5", class: "form-control my-input mb-2 input-group" %>
+
+<%= form.submit "Create Account", class: "btn btn-block send-button tx-tfm white text-center" %>
+
+<p class="small mt-3 white text-center">By signing up, you are indicating that you have read and agree to the <a href="#" class="ps-hero__content__link">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+</p>
+
+
+<% end %>
+
+
+</div>
+
+
+
+
+
+
+
+
+

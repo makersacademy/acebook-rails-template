@@ -1,0 +1,80 @@
+<% content_for :login_logout do %>
+<li class="nav-item">
+
+
+            <%= link_to sessions_path , method: :delete, class: "nav-item nav-link", id: "delete_post" do %>
+            Logout
+          </li>
+           <% end %>
+    <% end %>
+
+
+   
+
+
+<div class="container">
+
+<div class="col-md-7">
+
+      
+
+              
+<ul class="list-group">
+
+<% if @current_user.friends.empty? %> 
+ <h1> You have 0 friends...</h1>
+
+<% else %> 
+
+
+ 
+ <li class="list-group-item" style = "background-color: #4267b2" > <p style = "color: white"> Your Friends </p>  </li>
+ <% @current_user.friends.each do |one_friend|  %> 
+  <li class="list-group-item">  <%= one_friend.name %>  <small class="text-muted"><p>Friends since: <%= one_friend.updated_at.strftime("%B  %Y") %></p></small>    </li>
+  
+  </ul>
+  <br>
+<% end %> 
+<% end %> 
+
+
+<% if @current_user.friend_requests.empty? %> 
+<h1> You have 0 friend requests</h1>
+<% else %> 
+
+
+ <li class="list-group-item" style = "background-color: #4267b2" > <p style = "color: white"> Your friend requests </p>  </li>
+ <% @current_user.friend_requests.each do |one_friend|  %> 
+  <li class="list-group-item">  <%= one_friend.name %>
+  
+    </li>
+  
+  </ul>
+  <br>
+<% end %> 
+
+
+<% end %> 
+
+<% if @current_user.pending_friends.empty? %> 
+<h1> You have 0 pending friends</h1>
+<% else %> 
+
+
+ <li class="list-group-item" style = "background-color: #4267b2" > <p style = "color: white"> Your pending requests </p>  </li>
+ <% @current_user.pending_friends.each do |one_friend|  %> 
+
+  <li class="list-group-item">  <%= one_friend.name %>  </li>
+  
+  </ul>
+  <br>
+<% end %> 
+<% end %> 
+</div>
+
+<%# 
+<% p one_friend.confirm_friend(@current_user)  this line. alter the boolean to true from the @current users perspective. . 
+ <%# <% p @current_user.friend?(one_friend) %>   
+
+  
+</div>
