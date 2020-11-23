@@ -44,7 +44,8 @@ end
 
 group :test do
   gem 'cucumber-rails', require: false
-  gem 'rubocop'
+  gem 'orderly'
+  gem 'rubocop'  
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
