@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   before_action only: [:new, :create, :destroy]
   
   def new
+    # render json: { status: "It's working!" }
   end
 
   def create

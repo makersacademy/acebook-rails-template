@@ -142,3 +142,6 @@ RSpec.describe UsersController, type: :controller do
   end
 
 end
+
+
+post http://localhost:3000/user/create {name: "Test Person", email: "test@testing.com", password: "test1234", password_confirmation: "test1234"}

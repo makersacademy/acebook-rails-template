@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   def create
     respond_to do |format|
       if user_already_exists 
+        # Will have to format this to json to let REACT app send notice itself
         format.html { redirect_to root_url, notice: "User already exists. Please log in." }
       else
         @user = User.new(user_params)
@@ -81,3 +82,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end
+

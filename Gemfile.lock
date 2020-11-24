@@ -173,6 +173,8 @@ GEM
       json
       websocket (~> 1.0)
     rack (2.0.5)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (0.8.3)
       rack (>= 1.0, < 3)
     rails (5.1.5)
@@ -316,6 +318,7 @@ DEPENDENCIES
   orderly
   pg
   puma (~> 3.7)
+  rack-cors
   rails (~> 5.1.1)
   rspec-rails (~> 3.5)
   rubocop
