@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /users/1
   # GET /users/1.json
   def show
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   # def index
   #   @users = User.all
   # end
-  
+
   # # GET /users/new
   # def new
   #   @user = User.new
