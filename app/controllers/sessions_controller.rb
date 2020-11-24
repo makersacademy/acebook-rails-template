@@ -1,13 +1,13 @@
 class SessionsController < ApplicationController
   before_action only: [:new, :create, :destroy]
+  include CurrentUserConcern
   
   def new
     render json: { status: "It's working!" }
   end
 
   def create
-    @user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
-
+    @user = User.find_by(email: params[:user][:email]).try(:authenticate, params[:user][:password])
     if @user
       session[:user] = @user
       render json: {
