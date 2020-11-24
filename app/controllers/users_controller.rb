@@ -1,30 +1,33 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  # GET /users
-  # GET /users.json
-  def index
-    @users = User.all
-  end
-
   # GET /users/1
   # GET /users/1.json
   def show
   end
 
-  # GET /users/new
-  def new
-    @user = User.new
-  end
+  # ----------------------------
+  # Commented out because not certain these are needed for API
 
-  # GET /users/1/edit
-  def edit
-  end
+  # # GET /users
+  # # GET /users.json
+  # def index
+  #   @users = User.all
+  # end
+  
+  # # GET /users/new
+  # def new
+  #   @user = User.new
+  # end
+
+  # # GET /users/1/edit
+  # def edit
+  # end
+  # ----------------------------
 
   # POST /users
   # POST /users.json
   def create
-
     if user_already_exists 
       render json: { status: "user already exists" }
     else
@@ -42,12 +45,10 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        render json: { status: :ok, user: @user }
-      else
-        render json: { status: :unprocessable_entity }
-      end
+    if @user.update(user_params)
+      render json: { status: :ok, user: @user }
+    else
+      render json: { status: :unprocessable_entity }
     end
   end
 
