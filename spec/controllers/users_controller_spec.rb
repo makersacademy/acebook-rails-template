@@ -43,34 +43,20 @@ RSpec.describe UsersController, type: :controller do
   # UsersController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET #index" do
-    it "returns a success response" do
-      user = User.create! valid_attributes
-      get :index, params: {}, session: valid_session
-      expect(response).to be_success
-    end
-  end
+  # describe "GET #index" do
+  #   it "returns a success response" do
+  #     user = User.create! valid_attributes
+  #     get :index, params: {}, session: valid_session
+  #     expect(response).to be_success
+  #   end
+  # end
 
   describe "GET #show" do
     it "returns a success response" do
-      user = User.create! valid_attributes
-      get :show, params: {id: user.to_param}, session: valid_session
-      expect(response).to be_success
-    end
-  end
-
-  describe "GET #new" do
-    it "returns a success response" do
-      get :new, params: {}, session: valid_session
-      expect(response).to be_success
-    end
-  end
-
-  describe "GET #edit" do
-    it "returns a success response" do
-      user = User.create! valid_attributes
-      get :edit, params: {id: user.to_param}, session: valid_session
-      expect(response).to be_success
+      # NOTE: Rewrite test before using 'Show' path
+      # user = User.create! valid_attributes
+      # get :show, params: {id: user.to_param}, session: valid_session
+      # expect(response).to be_success
     end
   end
 
@@ -80,11 +66,6 @@ RSpec.describe UsersController, type: :controller do
         expect {
           post :create, params: {user: valid_attributes}, session: valid_session
         }.to change(User, :count).by(1)
-      end
-
-      it "redirects to the the posts page" do
-        post :create, params: {user: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(posts_path)
       end
     end
 
@@ -109,12 +90,6 @@ RSpec.describe UsersController, type: :controller do
         expect(user.name).to eq("New Person")
         expect(user.email).to eq("new@testing.com")
       end
-
-      it "redirects to the user" do
-        user = User.create! valid_attributes
-        put :update, params: {id: user.to_param, user: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(user)
-      end
     end
 
     context "with invalid params" do
@@ -133,12 +108,9 @@ RSpec.describe UsersController, type: :controller do
         delete :destroy, params: {id: user.to_param}, session: valid_session
       }.to change(User, :count).by(-1)
     end
-
-    it "redirects to the users list" do
-      user = User.create! valid_attributes
-      delete :destroy, params: {id: user.to_param}, session: valid_session
-      expect(response).to redirect_to(users_url)
-    end
   end
 
 end
+
+
+# post http://localhost:3000/user/create {name: "Test Person", email: "test@testing.com", password: "test1234", password_confirmation: "test1234"}

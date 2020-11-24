@@ -1,7 +1,0 @@
-<%= form_tag posts_create_url do %>
-  <%= label_tag :message %>
-  <%= text_field_tag :message, nil, id: :message  %>
-  <%= hidden_field_tag :user_id, session[:user]["id"], id: :user_id%>
-  
-  <%= submit_tag "Submit" %>
-<% end %>
