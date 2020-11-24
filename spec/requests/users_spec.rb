@@ -12,7 +12,7 @@ RSpec.describe "create new user route", type: :request do
 
     before do 
       post '/users', params: {user: test_person}
-  end
+    end
 
     it "has a status of 200" do
       expect(response).to have_http_status(200)
@@ -25,7 +25,5 @@ RSpec.describe "create new user route", type: :request do
     it 'returns a user object' do
       expect(JSON.parse(response.body)['user']['name']).to eq "Test Person"
     end
-  
-
   end
 end
