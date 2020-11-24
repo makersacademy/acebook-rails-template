@@ -24,20 +24,17 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    respond_to do |format|
-      if user_already_exists 
-        # Will have to format this to json to let REACT app send notice itself
-        format.html { redirect_to root_url, notice: "User already exists. Please log in." }
+
+    if user_already_exists 
+      render json: { status: "user already exists" }
+    else
+      @user = User.new(user_params)
+
+      if @user.save
+        session[:user] = @user
+        render json: { status: :created, user: @user }
       else
-        @user = User.new(user_params)
-        if @user.save
-          session[:user] = @user
-          format.html { redirect_to posts_path }
-          format.json { render :show, status: :created, location: @user }
-        else
-          format.html { render :new }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
-        end
+        render json: { status: :unprocessable_entity }
       end
     end
   end
@@ -47,11 +44,9 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        render json: { status: :ok, user: @user }
       else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        render json: { status: :unprocessable_entity }
       end
     end
   end
@@ -60,16 +55,13 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    render json: { status: :user_destroyed }
   end
 
   private
 
     def user_already_exists
-      User.find_by(email: params[:user][:email])
+      User.find_by(email: params[:email])
     end
 
     # Use callbacks to share common setup or constraints between actions.
