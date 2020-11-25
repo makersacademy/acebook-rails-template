@@ -52,18 +52,15 @@ RSpec.describe "Posts", type: :request do
   describe 'POST /like' do
 
     before do
-      @@post_test_person = FactoryBot.create(:user)
-      add_posts(@@post_test_person)
+      @post_test_person = FactoryBot.create(:user)
+      add_posts(@post_test_person)
       get '/posts'
       post_id_test = JSON.parse(response.body)['posts'][0]["id"]
-      puts '------------'
-      p post_id_test
-      puts '------------'
-      post '/like_post', params: { post: { post_id: post_id_test, user_id: @@post_test_person.id } }
+      post '/like_post', params: { post: { id: post_id_test, user_id: @post_test_person.id } }
     end
 
-    it 'has a status 200' do
-      expect(JSON.parse(response.body)['status']).to eq 200
+    it 'has a status of :like_created' do
+      expect(JSON.parse(response.body)['status']).to eq 'like_created'
     end
 
   end
