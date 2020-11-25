@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
   def logged_in
     if @current_user
       render json: {
-        logged_in: :true,
+        logged_in: true,
         user: @user
       }
     else
