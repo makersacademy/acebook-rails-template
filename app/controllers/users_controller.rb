@@ -5,6 +5,13 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find_by(id: params['id'])
+    @user_posts = Post.find_by(user_id: params['id'])
+    render json: {
+      status: :shown,
+      user: @user,
+      user_posts: @user_posts
+    }
   end
 
   # POST /users
