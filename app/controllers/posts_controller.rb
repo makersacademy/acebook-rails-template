@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+
     if @post
       render json: {
         status: :created,
@@ -32,10 +33,9 @@ class PostsController < ApplicationController
   end
 
   def like
-    like_post(params)
     @post = Post.find_by(id: params['post']['id'])
-
     if @post
+      like_post(params)
       render json: {
         status: :like_created,
         post: @post,
@@ -51,10 +51,12 @@ class PostsController < ApplicationController
   def comment
     comment_on_post(params)
     @commented_post = Post.find_by(id: post_params[:post_id])
-
+    puts '----------contro--------'
+    p @commented_post
+    puts '----------contro--------'
     if @commented_post
       render json: {
-        status: :comment_created,
+        status: :created,
         post: @commented_post
       }
     else
@@ -67,7 +69,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:id, :message, :user_id)
+    params.require(:post).permit(:message, :user_id)
   end
 
   def like_post(liked_post_params)
@@ -76,10 +78,10 @@ class PostsController < ApplicationController
     @post.like(@user)
   end
 
-  def comment_on_post(post_params)
-    @user = User.find_by(id: session[:user]["id"])
-    @post = Post.find_by(id: post_params[:post_id])
-    @post.comment(@user, post_params[:comment_text])
+  def comment_on_post(comment_params)
+    @user = User.find_by(id: comment_params["post"]["user_id"])
+    @post = Post.find_by(id: comment_params["post"]["id"])
+    @post.comment(@user, comment_params["post"]["comment_text"])
   end
 
 end

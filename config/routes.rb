@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   get '/new' => 'users#new'
   post '/like_post' => 'posts#like', as: "like_post"
   resources :sessions
-  post "/comment_on_posts" => 'posts#comment', as: "comment_on_posts"
+  post "/comment_on_posts" => 'posts#comment'#, as: "comment_on_posts"
 end
