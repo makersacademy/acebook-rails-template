@@ -7,10 +7,12 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params['id'])
     @user_posts = Post.find_by(user_id: params['id'])
+
     render json: {
-      status: :shown,
       user: @user,
-      user_posts: @user_posts
+      user_posts: @user_posts,
+      comments: @user_posts.comments,
+      likes: @user_posts.likes
     }
   end
 

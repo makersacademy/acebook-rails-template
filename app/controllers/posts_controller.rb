@@ -4,9 +4,24 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def show
+    # p post_params
+    # @post = Post.find_by(id: post_params['id'])
+    # if @post
+    #   render json: {
+    #     post: @post,
+    #     comments: @post.comments,
+    #     likes: @post.likes
+    #   }
+    # else
+    #   render json: {
+    #     status: 404
+    #   }
+    # end
+  end
+
   def create
     @post = Post.create(post_params)
-
     if @post
       render json: {
         status: :created,

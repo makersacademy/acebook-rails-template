@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/like_post' => 'posts#like', as: "like_post"
   post "/comment_on_posts" => 'posts#comment', as: "comment_on_posts"
 
+  get '/post_comments_and_likes' => 'posts#show'
   get '/logged_in' => 'sessions#logged_in'
   get '/new' => 'users#new'
 
