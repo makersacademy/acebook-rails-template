@@ -5,26 +5,16 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find_by(id: params['id'])
+    @user_posts = Post.find_by(user_id: params['id'])
+
+    render json: {
+      user: @user,
+      user_posts: @user_posts,
+      comments: @user_posts.comments,
+      likes: @user_posts.likes
+    }
   end
-
-  # ----------------------------
-  # Commented out because not certain these are needed for API
-
-  # # GET /users
-  # # GET /users.json
-  # def index
-  #   @users = User.all
-  # end
-
-  # # GET /users/new
-  # def new
-  #   @user = User.new
-  # end
-
-  # # GET /users/1/edit
-  # def edit
-  # end
-  # ----------------------------
 
   # POST /users
   # POST /users.json
@@ -73,7 +63,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      p params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end

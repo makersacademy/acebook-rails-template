@@ -49,23 +49,84 @@ RSpec.describe "Posts", type: :request do
       expect(JSON.parse(response.body)['posts'][3]["message"]).to eq "Hello Planet 1!"
     end
   end
+
   describe 'POST /like' do
 
     before do
       @post_test_person = FactoryBot.create(:user)
       add_posts(@post_test_person)
       get '/posts'
-      post_id_test = JSON.parse(response.body)['posts'][0]["id"]
-      post '/like_post', params: { post: { id: post_id_test, user_id: @post_test_person.id } }
+      @post_id_test = JSON.parse(response.body)['posts'][0]["id"]
+      post '/like_post', params: { post: { id: @post_id_test, user_id: @post_test_person.id } }
     end
 
     it 'has a status of :like_created' do
       expect(JSON.parse(response.body)['status']).to eq 'like_created'
     end
 
+    it 'counts number of likes' do
+      expect(JSON.parse(response.body)['like_count']).to eq 1
+    end
+
+    it 'returns likes when count is above one' do
+      post "/log_out"
+      test_person_2 = {
+        name: "Test Person", 
+        email: "test1@testing.com", 
+        password: "123456", 
+        password_confirmation: "123456" 
+      }
+      post '/users', params: {user: test_person_2}
+      @user_id_test_2 = JSON.parse(response.body)['user']["id"]
+      post '/like_post', params: { post: { id: @post_id_test, user_id: @user_id_test_2 } }
+      expect(JSON.parse(response.body)['like_count']).to eq 2
+    end
+
+
+    it 'returns a post that was liked' do
+      expect(JSON.parse(response.body)["post"]["id"]).to eq @post_id_test
+    end
+
+    it "returns unprocessable_entity when post can't be liked" do
+      post '/like_post', params: { post: { id: "0", user_id: @post_test_person.id } }
+      expect(JSON.parse(response.body)["status"]).to eq "unprocessable_entity"
+    end
   end
 
+  describe "POST /posts#comment" do
 
+    before do
+      @post_test_person = FactoryBot.create(:user)
+      add_posts(@post_test_person)
+      get '/posts'
+      @post_id = JSON.parse(response.body)['posts'][0]["id"]
+      add_custom_comment(user:@post_test_person, comment:"Hello! I'm a comment!", post_id: @post_id)
+    end
 
+    it "has a status of created" do
+      expect(JSON.parse(response.body)["status"]).to eq "created"
+    end
+
+    it 'returns the post that was commented on' do
+      expect(JSON.parse(response.body)["post"]["id"]).to eq @post_id
+    end
+
+    it "returns the posts' comments" do
+      expect(JSON.parse(response.body)["comments"].count).to eq 1
+      expect(JSON.parse(response.body)["comments"][0]["comment_text"]).to eq "Hello! I'm a comment!"
+    end
+
+    it "returns the posts' comments in reverse order" do
+      add_custom_comment(user:@post_test_person, comment:"Hello! I'm the SECOND comment!", post_id:@post_id)
+      add_custom_comment(user:@post_test_person, comment:"Hello! I'm the THIRD comment!", post_id:@post_id)
+      add_custom_comment(user:@post_test_person, comment:"Hello! I'm the FOURTH comment!", post_id:@post_id)
+
+      expect(JSON.parse(response.body)["comments"].count).to eq 4
+      expect(JSON.parse(response.body)["comments"][0]["comment_text"]).to eq "Hello! I'm the FOURTH comment!"
+      expect(JSON.parse(response.body)["comments"][1]["comment_text"]).to eq "Hello! I'm the THIRD comment!"
+      expect(JSON.parse(response.body)["comments"][2]["comment_text"]).to eq "Hello! I'm the SECOND comment!"
+      expect(JSON.parse(response.body)["comments"][3]["comment_text"]).to eq "Hello! I'm a comment!"
+    end
+  end
 end
 
