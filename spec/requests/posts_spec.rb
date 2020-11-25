@@ -48,49 +48,27 @@ RSpec.describe "Posts", type: :request do
       expect(JSON.parse(response.body)['posts'][2]["message"]).to eq "Hello Planet 2!"
       expect(JSON.parse(response.body)['posts'][3]["message"]).to eq "Hello Planet 1!"
     end
+  end
+  describe 'POST /like' do
 
+    before do
+      @@post_test_person = FactoryBot.create(:user)
+      add_posts(@@post_test_person)
+      get '/posts'
+      post_id_test = JSON.parse(response.body)['posts'][0]["id"]
+      puts '------------'
+      p post_id_test
+      puts '------------'
+      post '/like_post', params: { post: { post_id: post_id_test, user_id: @@post_test_person.id } }
+    end
+
+    it 'has a status 200' do
+      expect(JSON.parse(response.body)['status']).to eq 200
+    end
 
   end
 
 
-  # def index
-  #   @posts = Post.order("created_at Desc").all
-  #   if @posts
-  #     render json: {
-  #       status: :created,
-  #       posts: @posts
-  #     }
-  #   else
-  #     render json: {
-  #       status: :unprocessable_entity
-  #     }
-  #   end
-  # end
+
 end
 
-def add_posts(test_person)
-  post '/posts', params: { 
-    post: { 
-      message: "Hello Planet 1!", 
-      user_id: test_person.id 
-      }
-    }
-  post '/posts', params: { 
-    post: { 
-      message: "Hello Planet 2!", 
-      user_id: test_person.id 
-      }
-    }
-  post '/posts', params: { 
-    post: { 
-      message: "Hello Planet 3!", 
-      user_id: test_person.id 
-      }
-    }
-  post '/posts', params: { 
-    post: { 
-      message: "Hello Planet 4!", 
-      user_id: test_person.id 
-      }
-    }
-end
