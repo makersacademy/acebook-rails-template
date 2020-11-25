@@ -15,7 +15,6 @@ RSpec.describe "Log in route", type: :request do
     end
 
     it "has a status of 200" do
-      puts JSON.parse(response.body)
       expect(response).to have_http_status(200)
     end
 
