@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
   end
 
   def logged_in
-    if sessions[:user]
+    if @current_user
       render json: {
         logged_in: :true,
         user: @user
