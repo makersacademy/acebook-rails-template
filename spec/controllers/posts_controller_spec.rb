@@ -5,12 +5,6 @@ RSpec.describe PostsController, type: :controller do
    User.create({name: "Bob", email: "test@testing243.co.uk", password: "123456"})
    @@test_user_id = User.find_by(email: "test@testing243.co.uk").id
   end
-  # describe "GET /new " do
-  #   it "responds with 200" do
-  #     get :new
-  #     expect(response).to have_http_status(200)
-  #   end
-  # end
 
   describe "POST /" do
     it "responds with 200" do

@@ -91,8 +91,6 @@ RSpec.describe "Posts", type: :request do
       post '/like_post', params: { post: { id: "0", user_id: @post_test_person.id } }
       expect(JSON.parse(response.body)["status"]).to eq "unprocessable_entity"
     end
-
-   
   end
 
   describe "POST /posts#comment" do
@@ -102,28 +100,33 @@ RSpec.describe "Posts", type: :request do
       add_posts(@post_test_person)
       get '/posts'
       @post_id = JSON.parse(response.body)['posts'][0]["id"]
-      post '/posts#comment', params: { post: { id: @post_id, message: "Hello London!",user_id: @post_test_person.id } }
+      add_custom_comment(user:@post_test_person, comment:"Hello! I'm a comment!", post_id: @post_id)
     end
 
     it "has a status of created" do
       expect(JSON.parse(response.body)["status"]).to eq "created"
     end
 
-    it 'returns a post that was commented' do
-      puts "---------TEST--------"
-      p JSON.parse(response.body)
-      puts "---------TEST--------"
-      
+    it 'returns the post that was commented on' do
       expect(JSON.parse(response.body)["post"]["id"]).to eq @post_id
     end
 
+    it "returns the posts' comments" do
+      expect(JSON.parse(response.body)["comments"].count).to eq 1
+      expect(JSON.parse(response.body)["comments"][0]["comment_text"]).to eq "Hello! I'm a comment!"
+    end
 
+    it "returns the posts' comments in reverse order" do
+      add_custom_comment(user:@post_test_person, comment:"Hello! I'm the SECOND comment!", post_id:@post_id)
+      add_custom_comment(user:@post_test_person, comment:"Hello! I'm the THIRD comment!", post_id:@post_id)
+      add_custom_comment(user:@post_test_person, comment:"Hello! I'm the FOURTH comment!", post_id:@post_id)
 
+      expect(JSON.parse(response.body)["comments"].count).to eq 4
+      expect(JSON.parse(response.body)["comments"][0]["comment_text"]).to eq "Hello! I'm the FOURTH comment!"
+      expect(JSON.parse(response.body)["comments"][1]["comment_text"]).to eq "Hello! I'm the THIRD comment!"
+      expect(JSON.parse(response.body)["comments"][2]["comment_text"]).to eq "Hello! I'm the SECOND comment!"
+      expect(JSON.parse(response.body)["comments"][3]["comment_text"]).to eq "Hello! I'm a comment!"
+    end
   end
-
-
-
-
-
 end
 

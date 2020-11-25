@@ -30,12 +30,10 @@ RSpec.describe UsersController, type: :controller do
   # adjust the attributes here as well.
   let(:valid_attributes) {
     {name: "Test Person", email: "test@testing.com", password: "test1234"}
-    # skip("Add a hash of attributes valid for your model")
   }
 
   let(:invalid_attributes) {
     {name: nil, email: nil, password: nil}
-    #skip("Add a hash of attributes invalid for your model")
   }
 
   # This should return the minimal set of values that should be in the session
@@ -111,6 +109,3 @@ RSpec.describe UsersController, type: :controller do
   end
 
 end
-
-
-# post http://localhost:3000/user/create {name: "Test Person", email: "test@testing.com", password: "test1234", password_confirmation: "test1234"}
