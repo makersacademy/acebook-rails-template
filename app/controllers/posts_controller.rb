@@ -35,10 +35,12 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.reverse
-    if @posts
+    @all_posts = Post.all.reverse
+    if @all_posts
       render json: {
-        posts: @posts
+        posts: @all_posts,
+        comments: retrieve_comments,
+        likes: retrieve_likes
       }
     else
       render json: {
@@ -99,6 +101,20 @@ class PostsController < ApplicationController
     @user = User.find_by(id: given_comment_params["user_id"])
     @post = Post.find_by(id: given_comment_params["post_id"])
     @post.comment(@user, given_comment_params["comment_text"])
+  end
+
+  def retrieve_comments
+    comments = []
+    @all_posts.each do |post|
+      comments << post.comments
+    end
+  end
+  
+  def retrieve_likes
+    likes = []
+    @all_posts.each do |post|
+      likes << post.likes
+    end
   end
 
 end
