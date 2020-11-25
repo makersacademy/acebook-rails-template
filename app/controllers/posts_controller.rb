@@ -33,12 +33,13 @@ class PostsController < ApplicationController
 
   def like
     like_post(params)
-    @liked_post = Post.find_by(id: params['post']['id'])
+    @post = Post.find_by(id: params['post']['id'])
 
-    if @liked_post
+    if @post
       render json: {
         status: :like_created,
-        post: @liked_post
+        post: @post,
+        like_count: @post.likes.size
       }
     else
       render json: {
