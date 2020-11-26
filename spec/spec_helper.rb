@@ -6,6 +6,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'database_cleaner'
 require 'factory_bot_rails'
+require_relative './support/auth_helper.rb'
 
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([

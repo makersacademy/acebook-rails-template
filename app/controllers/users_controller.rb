@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_request, only: [:create]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  include CurrentUserConcern
 
   # GET /users/1
   # GET /users/1.json
@@ -22,11 +22,11 @@ class UsersController < ApplicationController
     if user_already_exists 
       render json: { status: "user already exists" }
     else
-      @user = User.new(user_params)
+      user = User.new(user_params)
 
-      if @user.save
-        session[:user_id] = @user.id
-        render json: { status: :created, user: @user }
+      if user.save
+        token = JsonWebToken.encode(user_id: user.id)
+        render json: { status: :created, user: user, auth_token: token}
       else
         render json: { status: :unprocessable_entity }
       end

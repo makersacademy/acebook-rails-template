@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Log in route", type: :request do
-  describe "POST /sessions" do
+  describe "POST /authenticate" do
 
     log_in_test_person = {
       email: "test@testing.com", 
@@ -11,7 +11,7 @@ RSpec.describe "Log in route", type: :request do
     before do 
       @test_person = FactoryBot.create(:user)
       post '/log_out'
-      post '/sessions#new', params: {user: log_in_test_person}
+      post '/authenticate', params: log_in_test_person
     end
 
     it "has a status of 200" do
@@ -19,7 +19,7 @@ RSpec.describe "Log in route", type: :request do
     end
 
     it "has a status of logged in" do
-      expect(JSON.parse(response.body)['logged_in']).to eq "true"
+      expect(JSON.parse(response.body)['logged_in']).to eq true
     end
 
     it 'returns a user object' do

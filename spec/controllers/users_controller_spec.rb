@@ -12,6 +12,11 @@ RSpec.describe UsersController, type: :controller do
 
   let(:valid_session) { {} }
 
+  include AuthHelper
+  before(:each) do
+    http_login
+  end
+
   describe "GET #show" do
     it "returns a success response" do
       # NOTE: Rewrite test before using 'Show' path
