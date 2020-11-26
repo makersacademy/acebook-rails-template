@@ -90,15 +90,15 @@ class PostsController < ApplicationController
   end
 
   def like_post(liked_post_params)
-    @post = Post.find_by(id: liked_post_params['post']['id'])
-    @user = User.find_by(id: liked_post_params['post']['user_id'])
-    @post.like(@user)
+    post = Post.find_by(id: liked_post_params['post']['id'])
+    user = User.find_by(id: liked_post_params['post']['user_id'])
+    post.like(user)
   end
 
-  def comment_on_post(given_comment_params)
-    @user = User.find_by(id: given_comment_params["user_id"])
-    @post = Post.find_by(id: given_comment_params["post_id"])
-    @post.comment(@user, given_comment_params["comment_text"])
+  def comment_on_post(given_comment_params)    
+    user = User.find_by(id: given_comment_params["user_id"])
+    post = Post.find_by(id: given_comment_params["post_id"])
+    post.comment(user, given_comment_params["comment_text"])
   end
 
   def retrieve_comments
@@ -119,6 +119,7 @@ class PostsController < ApplicationController
     posts = Post.all
     posts.map do |post|
       {
+        id: post.id,
         message: post.message,
         comments: post.comments,
         likes: post.likes
