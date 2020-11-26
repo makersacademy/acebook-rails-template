@@ -35,12 +35,10 @@ class PostsController < ApplicationController
   end
 
   def index
-    @all_posts = Post.all.reverse
-    if @all_posts
+    all_posts = retrieve_posts_with_comments_and_likes.reverse
+    if all_posts
       render json: {
-        posts: @all_posts,
-        comments: retrieve_comments,
-        likes: retrieve_likes
+        posts: all_posts
       }
     else
       render json: {
@@ -114,6 +112,17 @@ class PostsController < ApplicationController
     likes = []
     @all_posts.each do |post|
       likes << post.likes
+    end
+  end
+
+  def retrieve_posts_with_comments_and_likes
+    posts = Post.all
+    posts.map do |post|
+      {
+        message: post.message,
+        comments: post.comments,
+        likes: post.likes
+      }
     end
   end
 
