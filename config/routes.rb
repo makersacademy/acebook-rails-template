@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  post '/authenticate' => 'authentication#authenticate'
+
   resources :posts
   post '/post/create' => 'posts#create'
   post '/posts_create' => 'posts#create'

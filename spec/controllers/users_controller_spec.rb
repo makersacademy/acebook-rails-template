@@ -12,6 +12,10 @@ RSpec.describe UsersController, type: :controller do
 
   let(:valid_session) { {} }
 
+  before(:each) do
+    allow(controller).to receive(:authenticate_request) { true }
+  end
+
   describe "GET #show" do
     it "returns a success response" do
       # NOTE: Rewrite test before using 'Show' path

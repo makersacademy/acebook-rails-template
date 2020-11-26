@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
   before :each do
+   allow(controller).to receive(:authenticate_request) { true }
    User.create({name: "Bob", email: "test@testing243.co.uk", password: "123456"})
    @@test_user_id = User.find_by(email: "test@testing243.co.uk").id
   end

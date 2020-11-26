@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'travis'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'jwt'
+gem 'simple_command'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
