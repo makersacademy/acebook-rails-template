@@ -25,8 +25,8 @@ class UsersController < ApplicationController
       user = User.new(user_params)
 
       if user.save
-        token = JsonWebToken.encode(user_id: user.id)
-        render json: { status: :created, user: user, auth_token: token}
+        command = AuthenticateUser.call(user.email, user_params['password'])
+        render json: { status: :created, user: user, auth_token: command.result}
       else
         render json: { status: :unprocessable_entity }
       end
