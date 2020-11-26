@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
 
       if @user.save
-        session[:user] = @user
+        session[:user_id] = @user.id
         render json: { status: :created, user: @user }
       else
         render json: { status: :unprocessable_entity }
