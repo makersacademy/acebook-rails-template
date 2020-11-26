@@ -3,15 +3,19 @@ require 'rails_helper'
 RSpec.describe "Log in route", type: :request do
   describe "POST /authenticate" do
 
-    log_in_test_person = {
-      email: "test@testing.com", 
-      password: "123456", 
-    }
-
     before do 
-      @test_person = FactoryBot.create(:user)
+      test_person = FactoryBot.create(:user)
+      token = JsonWebToken.encode(user_id: test_person.id)
+      headers = { "Authorization" => token }
+
       post '/log_out'
-      post '/authenticate', params: log_in_test_person
+      post '/authenticate', params: { 
+        user: {
+          email: test_person.email, 
+          password: test_person.password
+          } 
+        }, 
+        headers: headers
     end
 
     it "has a status of 200" do
