@@ -12,9 +12,8 @@ RSpec.describe UsersController, type: :controller do
 
   let(:valid_session) { {} }
 
-  include AuthHelper
   before(:each) do
-    http_login
+    allow(controller).to receive(:authenticate_request) { true }
   end
 
   describe "GET #show" do
