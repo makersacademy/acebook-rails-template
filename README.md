@@ -24,4 +24,5 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
-#Trello link : https://trello.com/b/HS4R2TtY
+# Trello
+https://trello.com/b/HS4R2TtY
