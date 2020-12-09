@@ -7,4 +7,16 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "POST /" do
+    it "redirects to the post page" do
+      post :create, params: { user: { email:"examplemail",password:"examplepass" } }
+      expect(response).to redirect_to(posts_url)
+    end
+
+    it "creates a user" do
+      post :create, params: { user: { email:"examplemail",password:"examplepass" }}
+      expect(User.find_by(email:"examplemail")).to be
+    end
+  end
 end

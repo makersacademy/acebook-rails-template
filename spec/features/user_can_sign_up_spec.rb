@@ -7,6 +7,6 @@ feature "Signing Up" do
     fill_in "Password", with: "Passwrd1"
     click_button "Submit"
     expect(page).to have_content("You've signed up!")
-    expect(path).to eq("/posts")
+    expect(current_path).to eq("/posts")
   end
 end
