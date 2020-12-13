@@ -10,13 +10,13 @@ RSpec.describe UsersController, type: :controller do
 
   describe "POST /" do
     it "redirects to the post page" do
-      post :create, params: { user: { email:"examplemail",password:"examplepass" } }
+      post :create, params: { user: { email:"example@example.com",password:"examplepass" } }
       expect(response).to redirect_to(posts_url)
     end
 
     it "creates a user" do
-      post :create, params: { user: { email:"examplemail",password:"examplepass" }}
-      expect(User.find_by(email:"examplemail")).to be
+      post :create, params: { user: { email:"example@example.com",password:"examplepass" }}
+      expect(User.find_by(email:"example@example.com")).to be
     end
   end
 end
