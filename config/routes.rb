@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :users
-  get "/sign-up", to: "users#new", as: "sign_up"
+  # get "/sign-up", to: "devise/registrations#new", as: "sign_up"
   root to: "posts#index"
 end
