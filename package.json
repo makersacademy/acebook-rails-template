@@ -1,5 +1,13 @@
 {
   "name": "acebook",
+  "version": "1.0.0",
+  "description": "SCLZ - You think a billion dollar social media enterprise is cool?! What about a trillion dollar enterprise! Welcome to SCLZ (Socialize)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexleesonmill/acebook-SCLZ.git"
+  },
   "private": true,
+  "homepage": "https://github.com/alexleesonmill/acebook-SCLZ#readme",
+  "author": "Adam Grieve, Alex Leeson-Mill, Georgie Horth, Christian Walsh",
   "dependencies": {}
 }
