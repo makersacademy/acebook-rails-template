@@ -1,5 +1,7 @@
 # AceBook
 
+We are using a github project board for planning and github wiki for documentation.
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
