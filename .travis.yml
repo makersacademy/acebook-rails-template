@@ -1,12 +1,20 @@
 language: ruby
 rvm:
-- 2.0.0
-- 1.9.3
+- 2.7.2
 - jruby-19mode
 - rbx-2
 
+services:
+  - postgresql
+
+addons:
+  postgresql: '9.6'
+
+before_script:
+- cp config/database.yml.travis config/database.yml
+
 script:
  — bundle install — jobs=3 — retry=3
- — bundle exec rake db:create
- — bundle exec rake db:migrate
+ — bundle exec rails db:create
+ — bundle exec rails db:migrate
  — bundle exec rspec
