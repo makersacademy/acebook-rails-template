@@ -24,3 +24,7 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## Entity Relationship Diagram
+
+![zuckerBook DB Model-](https://user-images.githubusercontent.com/71923215/102097713-296ecb80-3e1e-11eb-941b-408c6223221b.png)
