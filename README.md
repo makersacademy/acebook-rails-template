@@ -2,6 +2,10 @@
 
 We are using a github project board for planning and github wiki for documentation.
 
+## Entity Relationship Diagram
+
+<img width="771" alt="Screenshot 2020-12-14 at 17 05 56" src="https://user-images.githubusercontent.com/59441094/102111966-f5e86d00-3e2e-11eb-9d43-e316faa72fcc.png">
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
