@@ -38,6 +38,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 4.0.1'
+  gem 'simplecov'
+  gem 'simplecov-console'
 end
 
 group :development do
@@ -48,5 +50,3 @@ end
 
 # # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'simplecov', require: false, group: :test
-gem 'simplecov-console', require: false, group: :test
