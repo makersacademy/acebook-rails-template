@@ -1,6 +1,8 @@
 # AceBook
+[![Build Status](https://travis-ci.com/alexleesonmill/acebook-SCLZ.svg?branch=master)](https://travis-ci.com/alexleesonmill/acebook-SCLZ)
 
 We are using a github project board for planning and github wiki for documentation.
+
 
 ## Entity Relationship Diagram
 
