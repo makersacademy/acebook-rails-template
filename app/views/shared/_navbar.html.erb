@@ -41,6 +41,7 @@
       <div class="navbar-item">
         <div class="buttons">
           <% if user_signed_in? %>
+            <%= link_to 'User Settings', edit_user_registration_path, class: 'button is-primary' %>
             <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'button is-primary' %>
           <% else %>
             <%= link_to 'Register', new_user_registration_path, class: 'button is-primary' %>
