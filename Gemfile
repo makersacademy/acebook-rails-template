@@ -25,9 +25,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'devise', '~> 4.7', '>= 4.7.3'
+# gem 'has_friendship'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'travis'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -36,6 +38,12 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+end
+
+group :test do
+  gem 'rubocop', '0.79.0'
 end
 
 group :development do
