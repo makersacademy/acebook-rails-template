@@ -1,9 +1,5 @@
 addons:
   postgresql: 9.6
-  # code_climate:
-  #     repo_token: <Get from Code Climate>
-# after_success:
-#   - bundle exec codeclimate-test-reporter
 before_script:
   - gem install bundler
   - cp config/database.yml.travis config/database.yml
