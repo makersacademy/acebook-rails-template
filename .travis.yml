@@ -1,17 +1,34 @@
-addons:
-  postgresql: 9.6
-before_install:
-  - yes | gem update --system --force
-  - gem install bundler
-before_script:
-  - cp config/database.yml.travis config/database.yml
-  - psql -c 'create database travis_ci_test;' -U postgres
+# addons:
+#   postgresql: 9.6
+# before_install:
+#   - yes | gem update --system --force
+#   - gem install bundler
+# before_script:
+#   - cp config/database.yml.travis config/database.yml
+#   - psql -c 'create database travis_ci_test;' -U postgres
+# language: ruby
+# rvm:
+# - 2.5.0
+# script:
+#   - bundle config set --local deployment 'true'
+#   — bundle install — jobs=3 — retry=3
+#   — bundle exec rake db:create
+#   — bundle exec rake db:migrate
+#   - bundle exec rspec
+
 language: ruby
-rvm:
-- 2.5.0
+cache:
+  - bundler
+  - yarn
+services:
+  - postgresql
+before_install:
+  - nvm install --lts
+before_script:
+  - bundle install --jobs=3 --retry=3
+  - yarn
+  - bundle exec rake db:create
+  - bundle exec rake db:schema:load
 script:
-  - bundle config set --local deployment 'true'
-  — bundle install — jobs=3 — retry=3
-  — bundle exec rake db:create
-  — bundle exec rake db:migrate
-  - bundle exec rspec
+  - bundle exec rake test
+  - bundle exec rake test:system
