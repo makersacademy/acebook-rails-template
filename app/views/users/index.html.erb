@@ -1,1 +1,19 @@
-<h1> Sign Up </h1>
+<div> 
+  <h1> zuckerBook </h1> 
+</div>
+
+<div>
+  <a href="/posts">Posts</a>
+  <a href="/login">Login</a>
+</div>
+
+<div>
+  <form action="/users/new" method="post">
+    <input type="text" name="username" placeholder="username" required>
+    <input type="email" name="email" placeholder="email" required>
+    <input type="password" name="password" placeholder="password" required>
+    <input type="password" name="password_confirmation" placeholder="confirm password" required>
+    <input type="text" name="profile_picture" placeholder="profile pic url" required>
+    <input type="submit" value="Submit">
+  </form>
+</div>
