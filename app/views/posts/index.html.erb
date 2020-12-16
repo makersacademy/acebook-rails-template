@@ -1,4 +1,4 @@
-<p>You've signed up!</p>
+<%= flash[:notice] %>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
@@ -7,4 +7,8 @@
   New post
 <% end %>
 
-<%= button_to "logout", destroy_user_session_path, method: :delete  %>
+<%= button_to "Log out", destroy_user_session_path, method: :delete  %>
+
+<form>
+  <input type='submit' id='Log in', value='Log in'>
+</form>
