@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: zuckerBook_production
-  username: zuckerBook
-  password: <%= ENV['ZUCKERBOOK_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
