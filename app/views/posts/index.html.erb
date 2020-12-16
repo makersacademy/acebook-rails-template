@@ -1,7 +1,14 @@
+<%= form_for(@post) do |f| %>
+  <div class="field">
+    <%= f.label :post %><br>
+    <%= f.text_area :message %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Post" %>
+  </div>
+<% end %>
+<br><br>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
