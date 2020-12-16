@@ -6,3 +6,5 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
