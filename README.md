@@ -47,4 +47,5 @@ So I can post my poetry,
 Posts let me have line breaks where I want them.
 
 ```
-![Screenshot 2020-12-16 at 11 41 32](https://user-images.githubusercontent.com/71889577/102344518-f0586780-3f93-11eb-97c4-f6d5a19a8757.png)
+[Flowchart with swimlanes.pdf](https://github.com/savannaelbey/acebook-jasshands/files/5702482/Flowchart.with.swimlanes.pdf)
+
