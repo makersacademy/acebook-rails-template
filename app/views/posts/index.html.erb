@@ -1,6 +1,7 @@
 <% @posts.sort_by(&:id).reverse.each do |post| %>
   <p><%= simple_format post.message%></p>
   <p>Posted by: <%= User.find_by(id: post.user_id).name %> at <%= post.created_at.strftime("%k:%M:%S on %B %e, %Y") %></p>
+  <%= link_to 'destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 
 <%= link_to new_post_path do %>
