@@ -1,4 +1,6 @@
 language: ruby
+rvm:
+ — 2.5.0
 cache:
   - bundler
   - yarn
