@@ -9,6 +9,13 @@ RSpec.feature "User Sign In", type: :feature do
     end
   end
 
+  RSpec.feature "User Sign In", type: :feature do
+    scenario "Users are redirected to the sign in page if they are not signed in" do
+      visit "/"
+      expect(current_path).to eq "/users/sign_in"
+    end
+  end
+
 RSpec.feature "User Sign In", type: :feature do
   scenario "User cannot sign in without signing up" do
     visit "users/sign_in"
@@ -26,9 +33,3 @@ RSpec.feature "User Sign In", type: :feature do
   end
 end
 
-# When a user hasn't signed in and visits the index of the application:
-
-# if they visit another URL, they are redirected to the index
-# they can see a link to a sign in page which prompts them to enter in their email address and password.
-# they can only enter valid emails
-# When they submit their details, they are logged in and redirected to their posts page.
