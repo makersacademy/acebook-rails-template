@@ -6,4 +6,5 @@ RSpec.describe Post, type: :model do
     post = Post.create(user_id: user.id, body: "I love testing posts")
     expect(post.body).to eq("I love testing posts")
   end
+
 end
