@@ -1,5 +1,3 @@
-Josh on User branch
-
 # AceBook
 
 REQUIRED INSTRUCTIONS:
@@ -26,3 +24,7 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+Resources used:
+Authentication - https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8
+Logging Out - https://moustafamm.medium.com/authentication-in-rails-sign-up-log-in-and-log-out-8042b35b4325
