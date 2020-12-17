@@ -38,12 +38,12 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
-  gem 'simplecov', require: false
-  gem 'simplecov-console', require: false
 end
 
 group :test do
   gem 'rubocop', '0.79.0'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
 end
 
 group :development do
