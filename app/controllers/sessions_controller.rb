@@ -13,4 +13,9 @@ class SessionsController < ApplicationController
       redirect_to '/login', notice: 'Invalid login details'
     end
   end
+
+  def destroy
+    session.clear
+    redirect_to '/login', notice: 'Successfully logged out'
+  end
 end
