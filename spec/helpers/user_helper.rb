@@ -7,10 +7,12 @@ def sign_up
   fill_in "user_password_confirmation", with: "WendyWendy"
   click_button "Sign up"
 end
-    # def sign_in
-    #   visit '/'
-    #   click_link 'Sign In'
-    #   fill_in 'Email', with: 'test@test.com'
-    #   fill_in 'Password', with: 'Test123'
-    #   click_button 'Log in'
-    # end
+
+def sign_in
+  sign_up
+  click_link "Sign Out"
+  visit "/users/sign_in"
+  fill_in "user_email", with: "wendy@wendy.com"
+  fill_in "user_password", with: "WendyWendy"
+  click_button 'Log in'
+end
