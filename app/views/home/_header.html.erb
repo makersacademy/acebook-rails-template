@@ -15,6 +15,10 @@
     </ul>
   </div>
   <form style="float: right; padding-right: 30px;">
-    <input type="submit" class="btn btn-secondary" value="Log Out">
+  
+        <%= link_to '<button type="button">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete, class:"btn btn-secondary"%>
+
   </form>
 </nav>
+
+
