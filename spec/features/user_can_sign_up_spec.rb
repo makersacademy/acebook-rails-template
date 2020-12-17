@@ -40,11 +40,13 @@ RSpec.feature "User Registration", type: :feature do
   end
 end
 
-# RSpec.feature "User Registration", type: :feature do
-#   scenario "User cannot sign up if email has already been taken" do
-#     sign_up
-    
-#   end
-# end
+RSpec.feature "User Registration", type: :feature do
+  scenario "User cannot sign up if email has already been taken" do
+    sign_up
+    click_link "Sign Out"
+    sign_up
+    expect(page).to have_content("Email has already been taken")
+  end
+end
 
 
