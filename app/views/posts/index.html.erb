@@ -1,14 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
 <%= form_for(@post) do |f| %>
   <div class="field">
     <%= f.label 'New Post' %><br>
-    <%= f.text_area :message %>
+    <%= f.text_area :postBody %>
   </div>
   <div class="actions">
     <%= f.submit "Post" %>
   </div>
 <% end %>
-<br><br>
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Postbody</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.postBody %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
 
