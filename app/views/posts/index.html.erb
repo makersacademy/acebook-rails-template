@@ -1,4 +1,4 @@
-<% @posts.each do |post| %>
+<% @posts.sort_by(&:id).reverse.each do |post| %>
   <p><%= post.message %></p>
   <p><%= User.find_by(id: post.user_id).name %></p>
 <% end %>
