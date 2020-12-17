@@ -1,7 +1,56 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
-
-<%= link_to new_post_path do %>
+<div class="columns ml-6 is-family-code"><%= link_to new_post_path do %>
   New post
+<% end %>
+</div>
+
+<head>
+   <style>
+    div.columns {
+      margin-top: 8px;
+    }
+
+    p {
+      font-family: calibri;
+      font-size: 20px;
+    }
+
+    .card-header-title {
+      font-size: 20px;
+    }
+
+    span {
+      margin-left: 63%;
+    }
+  </style>
+  </head>
+<body>
+  <% @posts.each do |post| %>
+  <div class='container '>
+    <div class='columns is-fluid is-centered'>
+      <div class='column is-5'>
+        <div class="card">
+          <div class='card-header'>
+            <div class="card-header-title is-family-code has-text-info">
+             Username
+            </div>
+          </div>
+          <div class="card-content">
+            <p class='is-success is-family-code'>
+            <%= post.message %>
+            </p>
+          </div>
+          <div>
+            <footer class="card-footer-item">
+
+                <span>
+                  <p class='is-size-7 is-family-code has-text-info-dark'>Posted <%= time_ago_in_words(post.created_at) %> ago</p>
+                </span>
+
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 <% end %>

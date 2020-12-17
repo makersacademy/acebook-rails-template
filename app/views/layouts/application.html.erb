@@ -10,8 +10,8 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class='columns mt-1 ml-6'><p class="notice"><%= notice %></p></div>
+    <div class='columns mt-1 is-centered'><p class="alert has-text-danger"><%= alert %></p></div>
     <%= yield %>
   </body>
 </html>
