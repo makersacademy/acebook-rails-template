@@ -3,6 +3,7 @@
  <%= link_to 'BragBook', root_path, class:'nav-link'%>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
+    <% if user_signed_in? %>
       <li class="nav-item">
          <%= link_to 'Profile', root_path, class:'nav-link'%>
       </li>
@@ -15,10 +16,9 @@
     </ul>
   </div>
   <form style="float: right; padding-right: 30px;">
-  
-        <%= link_to '<button type="button">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete, class:"btn btn-secondary"%>
-
+    <%= link_to '<button type="button">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete, class:"btn btn-secondary"%>
   </form>
+  <%end%>
 </nav>
 
 
