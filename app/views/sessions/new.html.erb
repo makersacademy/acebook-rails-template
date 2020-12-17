@@ -1,0 +1,22 @@
+<div> 
+  <h1> zuckerBook </h1> 
+</div>
+
+<div>
+  <a href="/posts">Posts</a>
+  <a href="/signup">Signup</a>
+</div>
+
+<% flash.each do |type, msg| %>
+  <p> <%= msg %> </p>
+<% end %>
+
+<div>
+  <form action="/sessions" method="post">
+    <input type="email" name="email" placeholder="email" required>
+    <br>
+    <input type="password" name="password" placeholder="password" required>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
