@@ -1,6 +1,8 @@
 <% @posts.sort_by(&:id).reverse.each do |post| %>
+  <% p Time.now.to_s %>
+  <% p post.created_at %>
   <p><%= post.message %></p>
-  <p><%= User.find_by(id: post.user_id).name %></p>
+  <p>Posted by: <%= User.find_by(id: post.user_id).name %> at <%= post.created_at.strftime("%k:%M:%S on %B %e, %Y") %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
