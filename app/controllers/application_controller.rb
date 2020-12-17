@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorized
-   redirect_to '/posts' unless logged_in? #sub out to /users/new later
+  #  redirect_to '/posts' unless logged_in? #sub out to /users/new later
   end
 
 end
