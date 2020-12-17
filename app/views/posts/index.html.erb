@@ -1,2 +1,12 @@
-<h1>Hello Rails!</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div> 
+  <h1> zuckerBook </h1> 
+</div>
+
+<div>
+  <a href="/posts">Posts</a>
+  <a href="/login">Login</a>
+</div>
+
+<% flash.each do |type, msg| %>
+  <p> <%= msg %> </p>
+<% end %>
