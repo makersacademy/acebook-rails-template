@@ -1,9 +1,15 @@
 <% @posts.sort_by(&:id).reverse.each do |post| %>
+
   <p><%= simple_format post.message%></p>
   <p>Posted by: <%= User.find_by(id: post.user_id).name %> at <%= post.created_at.strftime("%k:%M:%S on %B %e, %Y") %></p>
   <% if current_user.id == post.user_id %>
     <%= link_to 'destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= link_to 'update', edit_post_path(post) %>
+     <% if Time.now - post.created_at < 600 %>
+       <% p "within 600 seconds apparently!" %>
+       <% p post.created_at - Time.now %>
+       <% p post.created_at - Time.now < 600 %>
+      <%= link_to 'update', edit_post_path(post) %>
+     <% end %>
   <% end %>
 <% end %><br/><br/>
 
