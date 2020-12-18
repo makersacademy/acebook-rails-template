@@ -36,10 +36,8 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       if current_user.id == @post.user_id
         if @post.update(post_params)
-          p ("in first conditional")
           redirect_to posts_url
         else
-          p ("in second conditional")
           render :edit
         end
       else
