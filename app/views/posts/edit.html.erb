@@ -1,0 +1,10 @@
+<div class="columns is-centered mt-6">
+  <div class="column is-one-third">
+    <h1 class="is-size-2 has-text-weight-bold mb-5">Editing Entry</h1>
+    <%= form_for @post do |form| %>
+      <%= form.label :message %>
+      <%= form.text_area :message, value: Post.find_by(id: params[:id]).message, class: "is-centered" %>
+      <%= form.submit "Submit" %>
+    <% end %>
+  </div>
+</div>
