@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(params.require(:user).permit(:username, :password))
+    @user = User.create(user_params)
     session[:user_id] = @user.id
     redirect_to '/posts' #sub this to /posts later
   end
@@ -17,6 +17,12 @@ class UsersController < ApplicationController
     return unless result.any?
     return unless BCrypt::Password.new(result[0]['password']) == password
     User.new(id: result[0]['id'], email: result[0]['email'])
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :email, :password)
   end
 
 end
