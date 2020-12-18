@@ -23,48 +23,27 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    # redirect_to posts_path(@post)
   end
 
   def update
       @post = Post.find(params[:id])
-    if @post.update(post_params)
-      p ("in first conditional")
-      redirect_to :back
-    else
-      p ("in second conditional")
-      render :edit
-      redirect_to posts_url
-    end
-    # @post = Post.find(params[:id])
-    # @post.update(entry_params)
-    # redirect_to posts_path
-    # respond_to do |format|
-    #   if @post.update(entry_params)
-    #     format.html { redirect_to posts_path, notice: 'Entry was successfully updated.' }
-    #     # format.json { render :show, status: :ok, location: @post }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @post.errors, status: :unprocessable_entity }
-    #   end
-    # end
+      if current_user.id == @post.user_id
+        if @post.update(post_params)
+          p ("in first conditional")
+          redirect_to posts_url
+        else
+          p ("in second conditional")
+          render :edit
+        end
+      else
+        redirect_to posts_path
+      end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
 end
 
-# def update
-#     respond_to do |format|
-#       if @entry.update(entry_params)
-#         format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
-#         format.json { render :show, status: :ok, location: @entry }
-#       else
-#         format.html { render :edit }
-#         format.json { render json: @entry.errors, status: :unprocessable_entity }
-#       end
-#     end
-#   end
