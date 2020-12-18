@@ -213,7 +213,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
   bcrypt
+=======
+  bcrypt (~> 3.1, >= 3.1.12)
+>>>>>>> 7f51707f6b181b2f9ad4ceffc03750b95057a621
   byebug
   capybara (~> 2.13)
   jbuilder (~> 2.5)

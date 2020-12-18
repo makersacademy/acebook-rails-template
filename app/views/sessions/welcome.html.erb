@@ -1,13 +1,9 @@
+<h1>Welcome to Acebook!</h1
+
 <% if logged_in? %>
   <h1>You are Logged In, <%= current_user.username %></h1>
 <%end%>
 
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-
+<%= button_to "Login", '/login', method: :get%>
+<%= button_to "Sign Up", '/users/new', method: :get%>
 <%= button_to "Log out", logout_path, method: "delete" %>
