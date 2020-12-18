@@ -1,11 +1,6 @@
 feature 'logging out' do
   scenario 'user is logged in, then logs out' do
-    User.create(
-      username: 'Malachi',
-      email: 'm.spencer@makers.com',
-      password: '2020',
-      password_confirmation: '2020'
-    )
+    create_user_in_test_db
 
     visit('/login')
 
