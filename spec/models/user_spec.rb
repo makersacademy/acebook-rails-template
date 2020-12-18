@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end
+<<<<<<< HEAD
+=======
 
 # describe '.create' do
 #   it 'creates a new user profile' do
@@ -19,3 +21,4 @@ end
 #     expect(authenticated_user.id).to eq user.id
 #   end
 # end
+>>>>>>> 7f51707f6b181b2f9ad4ceffc03750b95057a621
