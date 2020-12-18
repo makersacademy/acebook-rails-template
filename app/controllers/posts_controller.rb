@@ -1,8 +1,16 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+
+  before_action :authenticate_user!, :set_post, only: [:show, :edit, :update, :destroy]
+  # Might need to split it into multiple lines
 
   # GET /posts
   # GET /posts.json
+  
+#   def create
+#     @post = Post.create(post_params)
+#     redirect_to posts_url
+#   end
+  
   def index
     @post = Post.new
     @posts = Post.order(created_at: :desc).all
