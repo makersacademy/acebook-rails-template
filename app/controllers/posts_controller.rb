@@ -6,10 +6,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   
-#   def create
-#     @post = Post.create(post_params)
-#     redirect_to posts_url
-#   end
+  # def create
+  #   @post = Post.create(post_params)
+  #   redirect_to posts_url
+  # end
   
   def index
     @post = Post.new
