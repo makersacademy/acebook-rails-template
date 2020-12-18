@@ -2,7 +2,7 @@
 
 <h1>Posts</h1>
 <br>
-<%= form_for(@post) do |f| %>
+<%= form_with model: @post do |f| %>
   <div class="field">
     <%= f.text_area(:postBody, cols: 25, rows: 5, class: 'form-control col-sm-12', placeholder:"Write your post here...") %>
   </div>
