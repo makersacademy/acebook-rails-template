@@ -14,23 +14,23 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item">
-        Home
+        <%= link_to 'Home', home_index_path, class: 'columns mt-4 mr-3 is-family-code has-text-info-dark' %>
       </a>
 
       <a class="navbar-item">
-        Timeline
+        <%= link_to 'Timeline', posts_path, class: 'columns mt-4 mr-3 is-family-code has-text-info-dark' %>
       </a>
 
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
+        <a class="navbar-link is-family-code has-text-info-dark">
           More
         </a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item">
+          <a class="navbar-item is-family-code has-text-info-dark">
             Profile
           </a>
-          <a class="navbar-item">
+          <a class="navbar-item is-family-code has-text-info-dark">
             User Settings
           </a>
         </div>
@@ -41,16 +41,14 @@
       <div class="navbar-item">
         <div class="buttons">
           <% if user_signed_in? %>
-            <%= link_to 'User Settings', edit_user_registration_path, class: 'button is-primary' %>
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'button is-primary' %>
+            <%= link_to 'User Settings', edit_user_registration_path, class: 'is-family-code button is-info' %>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'is-family-code button is-info' %>
           <% else %>
-            <%= link_to 'Register', new_user_registration_path, class: 'button is-primary' %>
-            <%= link_to 'Sign In', new_user_session_path, class: 'button is-primary' %>
+            <%= link_to 'Register', new_user_registration_path, class: 'is-family-code button is-info' %>
+            <%= link_to 'Sign In', new_user_session_path, class: 'is-family-code button is-info' %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </nav>
-
-      

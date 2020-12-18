@@ -1,15 +1,16 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
+<div class="columns mt-3 mr-1 is-centered"><h2 class="is-size-3">Edit <%= resource_name.to_s.humanize %></h2></div>
+<div class="columns mt-3 is-centered">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
+  <div class="columns mt-1 mb-0 mr-4 is-centered"><%= f.label :email %><br /></div>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <div class="columns mt-1 ml-6 mb-0"><%= f.label :name %><br /></div>
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
@@ -18,11 +19,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <div class="columns mt-2 mr-1 mb-0 is-centered"><%= f.label :password %> </div><i class='is-size-7'><div class="columns is-centered mt-0 mb-0">(Leave blank to not change)</i><br /></div>
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em class='is-size-7 ml-4 mt-6'><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
 
@@ -32,17 +33,22 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <div class="columns mt-2 ml-4 mb-0"><%= f.label :current_password %></div><i class='is-size-7'><div class="columns is-centered mt-0 mb-0">(To confirm)</i><br /></div>
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+<div class="columns is-centered mr-2 mt-3 mb-3">
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
+</div>
 <% end %>
 
-<h3>Delete my account</h3>
+</div>
 
-<p>Unhappy? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<h3 class="columns is-centered mt-4">Unhappy? Delete your account below</h3>
+
+<div class="columns is-centered mt-2"> <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Really?" }, method: :delete, class: 'columns mt-3 has-background-danger' %></div>
+
+<div class="columns is-centered"><%= link_to "Back", :back %></div>
