@@ -26,16 +26,11 @@ feature 'registration' do
   end
 
   scenario 'username is taken' do
-    user = User.create(
-      username: 'Margarida',
-      email: 'margarida@emakers.pt',
-      password: '2020',
-      password_confirmation: '2020'
-    )
+    create_user_in_test_db
 
     visit('/signup')
 
-    fill_in('username', with: 'Margarida')
+    fill_in('username', with: 'Malachi')
     fill_in('email', with: 'margarida@example.pt')
     fill_in('password', with: '2020')
     fill_in('password_confirmation', with: '2020')
@@ -46,17 +41,12 @@ feature 'registration' do
   end
 
   scenario 'email is taken' do
-    user = User.create(
-      username: 'Peter',
-      email: 'peter@example.pt',
-      password: '2020',
-      password_confirmation: '2020'
-    )
+    create_user_in_test_db
 
     visit('/signup')
 
     fill_in('username', with: 'Margarida')
-    fill_in('email', with: 'peter@example.pt')
+    fill_in('email', with: 'm.spencer@makers.com')
     fill_in('password', with: '2020')
     fill_in('password_confirmation', with: '2020')
     click_button('Submit')
