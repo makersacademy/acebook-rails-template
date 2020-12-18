@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+#test
 
 source 'https://rubygems.org'
 
@@ -6,12 +7,12 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
+gem 'travis', '~> 1.8', '>= 1.8.8'
 gem 'email_validator'
 # Authentication
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 6.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -40,7 +41,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
   gem 'selenium-webdriver'
   gem 'simplecov'
   gem 'simplecov-console'
