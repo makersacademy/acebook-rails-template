@@ -15,8 +15,9 @@
     <%= form.label :postBody %>
     <%= form.text_field :postBody, id: :post_postBody %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit('Update', class:'btn btn-secondary') %>
+    <%= link_to 'Back', posts_path, :class => "btn btn-secondary" %>
   </div>
 <% end %>
