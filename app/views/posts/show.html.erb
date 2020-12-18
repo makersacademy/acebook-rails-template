@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="mb-1"><img src="https://user-images.githubusercontent.com/65397514/102521890-27b33b00-409e-11eb-9024-9e06d655f1c0.png" width="50px" height="auto"></h5><br>
+          <p class="card-text"><%= @post.postBody %></p>
+          <small class="text-muted"><%= @post.created_at.strftime("Post created at %H:%M on %B %d, %Y") %></small>
+          <br><br>
+          <%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-secondary"%> <%= link_to 'Back', posts_path, :class => "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</p>
+
+
