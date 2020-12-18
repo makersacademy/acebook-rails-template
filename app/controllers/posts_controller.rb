@@ -23,6 +23,13 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    if current_user.id != @post.user_id
+      flash[:notice] = "You cannot edit someone else's post"
+      redirect_to posts_url
+    elsif Time.now - @post.created_at > 600
+      flash[:notice] = "Posts cannot be updated after 10 minutes"
+      redirect_to posts_url
+    end
   end
 
   def update
@@ -46,4 +53,3 @@ class PostsController < ApplicationController
     params.require(:post).permit(:message, :user_id)
   end
 end
-
