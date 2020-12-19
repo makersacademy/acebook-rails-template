@@ -27,7 +27,7 @@ RSpec.feature "User Sign In", type: :feature do
 end
 
 RSpec.feature "User Sign In", type: :feature do
-  pending "Users are redirected to their posts page when signed in" do
+   scenario "Users are redirected to their posts page when signed in" do
     sign_in
     expect(current_path).to eq "/posts"
   end
