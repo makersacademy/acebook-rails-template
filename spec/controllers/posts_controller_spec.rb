@@ -94,14 +94,14 @@ RSpec.describe PostsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        { :postBody => "Post Body" }
+        { :postBody => "Post Body on a Saturday" }
       }
 
       it "updates the requested post" do
         post = Post.create! valid_attributes
         put :update, params: {id: post.to_param, post: new_attributes}, session: valid_session
         post.reload
-        skip("Add assertions for updated state")
+        expect(post.postBody).to eq("Post Body on a Saturday")
       end
 
       it "redirects to the post" do
