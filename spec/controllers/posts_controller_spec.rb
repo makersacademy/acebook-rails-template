@@ -29,13 +29,16 @@ RSpec.describe PostsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Post. As you add validations to Post, be sure to
   # adjust the attributes here as well.
+
+  login_user
+
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { :postBody => "Post Body" }
   }
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  # let(:invalid_attributes) {
+  #   skip("Add a hash of attributes invalid for your model")
+  # }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -54,14 +57,6 @@ RSpec.describe PostsController, type: :controller do
     it "returns a success response" do
       post = Post.create! valid_attributes
       get :show, params: {id: post.to_param}, session: valid_session
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET #new" do
-    it "returns a success response" do
-      sign_in @user
-      get :new, params: {}, session: valid_session
       expect(response).to be_successful
     end
   end
@@ -88,18 +83,18 @@ RSpec.describe PostsController, type: :controller do
       end
     end
 
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {post: invalid_attributes}, session: valid_session
-        expect(response).to be_successful
-      end
-    end
+    # context "with invalid params" do
+    #   it "returns a success response (i.e. to display the 'new' template)" do
+    #     post :create, params: {post: invalid_attributes}, session: valid_session
+    #     expect(response).to be_successful
+    #   end
+    # end
   end
 
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { :postBody => "Post Body" }
       }
 
       it "updates the requested post" do
@@ -116,13 +111,13 @@ RSpec.describe PostsController, type: :controller do
       end
     end
 
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'edit' template)" do
-        post = Post.create! valid_attributes
-        put :update, params: {id: post.to_param, post: invalid_attributes}, session: valid_session
-        expect(response).to be_successful
-      end
-    end
+    # context "with invalid params" do
+    #   it "returns a success response (i.e. to display the 'edit' template)" do
+    #     post = Post.create! valid_attributes
+    #     put :update, params: {id: post.to_param, post: invalid_attributes}, session: valid_session
+    #     expect(response).to be_successful
+    #   end
+    # end
   end
 
   describe "DELETE #destroy" do
