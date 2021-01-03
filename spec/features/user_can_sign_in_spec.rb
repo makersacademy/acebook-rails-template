@@ -8,7 +8,9 @@ feature 'signing in' do
     fill_in 'Email', with: 'testenv@example.com'
     fill_in 'Password', with: 'testpass'
     click_button 'Log in'
-    expect(current_path).to eq '/'
+    expect(current_path).to eq '/posts'
     expect(page).to have_content 'Signed in successfully.'
   end
+
+
 end
