@@ -1,17 +1,3 @@
-<div>
-  <h1> zuckerBook </h1>
-</div>
-
-<div>
-  <a href="/posts">Posts</a>
-  <a href="/login">Login</a>
-  <a href="/logout">Log Out</a>
-</div>
-
-<% flash.each do |type, msg| %>
-  <p> <%= msg %> </p>
-<% end %>
-
 <h1>Posts!</h1>
 <% @posts.each do |post| %>
 <div class="post">

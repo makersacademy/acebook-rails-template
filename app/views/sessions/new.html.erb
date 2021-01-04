@@ -1,39 +1,8 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-<nav class="navbar"> 
-  <img src="logo.png" alt="zuckerBook">
-  <span>
-    <a href="/posts" class="mr-5">Posts</a>
-    <a href="/signup" class="btn btn-success">Register</a>
-  </span>
-</nav>
-
-<div class="container">
-  <% flash.each do |type, msg| %>
-  <div class="alert alert-danger text-center mx-auto" role="alert">
-    <%= msg %>
-  </div>
+<div class="card mx-auto text-center px-4 pt-4 pb-3 mt-5" style="width: 375px;">
+  <h3 class="card-title mb-3">Log In</h3>
+  <%= form_tag sessions_path do %>
+    <%= text_field_tag 'email', nil, placeholder: 'email', class: "form-control mb-3" %>
+    <%= password_field_tag 'password', nil, placeholder: 'password', class: "form-control mb-3" %>
+  <%= submit_tag 'Sign In', class: "btn btn-primary" %>
   <% end %>
-
-  <div class="card mx-auto text-center px-4 pt-4 pb-3 mt-5" style="width: 375px;">
-    <form action="/sessions" method="post">
-      <input class="form-control" type="email" name="email" placeholder="Email" required>
-      <br>
-      <input class="form-control" type="password" name="password" placeholder="Password" required>
-      <br>
-      <input type="submit" value="Sign In" class="btn btn-primary">
-    </form>
-  </div>
 </div>
-
-<footer class="navbar fixed-bottom mb-2">
-  <span class="ml-3">
-    <a href="#" class="mr-5">Privacy Policy</a>
-    <a href="#">Human Capital</a>
-  </span>
-
-  <span class="mr-3">
-    <a href="#" class="mr-5">Advertisers</a>
-    <a href="#">About Us</a>
-  </span>
-</footer>

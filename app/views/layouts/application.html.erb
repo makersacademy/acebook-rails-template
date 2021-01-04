@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ZuckerBook</title>
+    <title>zuckerBook</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   </head>
 
   <body>
+    <nav class="navbar"> 
+      <a href="/posts"><img src="<%=asset_path('logo.png')%>" alt="zuckerBook"></a>
+      <div>
+        <% if current_user %>
+        <span>
+          Welcome, <%= current_user.username %>
+          <%= link_to 'Sign Out', logout_path, class: "btn btn-danger ml-4" %> 
+        </span> 
+      <% else %>
+        <%= link_to 'Sign Up', new_user_path, class: "btn btn btn-success mr-4" %>
+        <%= link_to 'Sign In', new_session_path, class: "btn btn btn-primary" %>
+      <% end %>
+      </div>
+    </nav>
+   
+    
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-danger text-center mx-auto" role="alert">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
+
+    <footer class="navbar fixed-bottom mb-2">
+      <span class="ml-3">
+        <a href="#" class="mr-5">Privacy Policy</a>
+        <a href="#">Human Capital</a>
+      </span>
+    
+      <span class="mr-3">
+        <a href="#" class="mr-5">Advertisers</a>
+        <a href="#">About Us</a>
+      </span>
+    </footer>
+    
   </body>
 </html>
