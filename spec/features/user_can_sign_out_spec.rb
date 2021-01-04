@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Signing Out' do
   before do
-    sign_in
+    sign_in1
   end
   it 'Signs out successfully' do
     click_button 'Log out'

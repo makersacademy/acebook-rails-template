@@ -1,4 +1,3 @@
-require 'rspec/rails'
 require 'helpers/sign_in_helper'
 require 'pry'
 
