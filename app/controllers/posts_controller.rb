@@ -12,7 +12,8 @@ class PostsController < ApplicationController
   # end
   
   def index
-    @post = Post.new
+    @post = current_user.posts.build
+
     @posts = Post.order(created_at: :desc).all
   end
 
@@ -32,8 +33,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
-
+    # @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -77,6 +78,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:postBody)
+      params.require(:post).permit(:postBody, :user_id)
     end
 end
