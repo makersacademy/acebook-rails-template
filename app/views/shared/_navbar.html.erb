@@ -28,7 +28,11 @@
 
         <div class="navbar-dropdown">
           <a class="navbar-item is-family-code has-text-info-dark">
-            Profile
+            <% if current_user == nil %>
+              <%= link_to 'Profile', posts_path, class: 'columns mt-4 mr-3 is-family-code has-text-info-dark' %>
+            <% else %> <%# change the below line %>
+              <%= link_to 'Profile', custom_user_posts_path(current_user.id), class: 'columns mt-4 mr-3 is-family-code has-text-info-dark' %>
+            <% end %>
           </a>
           <a class="navbar-item is-family-code has-text-info-dark">
             User Settings
