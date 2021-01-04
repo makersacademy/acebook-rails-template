@@ -19,7 +19,7 @@
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 </p>
-
+<%= image_tag current_user.gravatar_url, :class => "gravatar" %>
     <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
