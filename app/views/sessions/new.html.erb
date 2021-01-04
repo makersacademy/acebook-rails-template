@@ -8,11 +8,13 @@
   </span>
 </nav>
 
-<% flash.each do |type, msg| %>
-  <p> <%= msg %> </p>
-<% end %>
-
 <div class="container">
+  <% flash.each do |type, msg| %>
+  <div class="alert alert-danger text-center mx-auto" role="alert">
+    <%= msg %>
+  </div>
+  <% end %>
+
   <div class="card mx-auto text-center px-4 pt-4 pb-3" style="width: 375px;">
     <form action="/sessions" method="post">
       <input class="form-control" type="email" name="email" placeholder="Email" required>
