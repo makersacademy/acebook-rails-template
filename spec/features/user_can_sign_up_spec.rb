@@ -29,5 +29,14 @@ feature "Signing Up" do
     expect(current_path).to eq("/users")
   end
 
+  scenario "signing up with a password that is too short" do
+    visit "/users/sign_up"
+    fill_in "Email", with: "mob@example.com"
+    fill_in "Password", with: "123"
+    fill_in "Password confirmation", with: "123"
+    click_button "Sign up"
+    expect(page).to have_content("Password is too short (minimum is 6 characters)")
+    expect(current_path).to eq("/users")
+  end
 
 end
