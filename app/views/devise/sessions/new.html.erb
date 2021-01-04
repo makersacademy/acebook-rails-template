@@ -2,17 +2,17 @@
 <div class="columns mt-3 is-centered">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-   <div class="columns mt-1 ml-6 mb-0 "><%= f.label :email %></div>
+   <div class="columns mt-1 mb-0 is-centered "><%= f.label :email %></div>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <div class="columns mt-0 ml-6 mb-0 "><%= f.label :password %></div>
+    <div class="columns mt-1 mb-0 is-centered "><%= f.label :password %></div>
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="field mt-1 is-centered">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
