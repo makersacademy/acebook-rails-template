@@ -8,20 +8,16 @@
   <% end %>
 
   <div>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.text_field :username, placeholder: 'username' %>
   </div>
   <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, placeholder: 'email' %>
   </div>
   <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, placeholder: 'password' %>
   </div>
   <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder: 'password confirmation' %>
   </div>
-  <%= f.submit %>
+  <%= f.submit 'Sign Up' %>
 <% end %>
