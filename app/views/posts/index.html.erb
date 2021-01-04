@@ -22,38 +22,40 @@
   </style>
   </head>
 <body>
-<% @posts.sort_by(&:id).reverse.each do |post| %>
-  <div class='container '>
-    <div class='columns is-fluid is-centered'>
-      <div class='column is-5'>
-        <div class="card">
-          <div class='card-header'>
-            <div class="card-header-title is-family-code has-text-info">
-             Posted by: <%= User.find_by(id: post.user_id).name %>
+  <% @posts.sort_by(&:id).reverse.each do |post| %>
+    <div class='container '>
+      <div class='columns is-fluid is-centered'>
+        <div class='column is-5'>
+          <div class="card">
+            <div class='card-header'>
+              <div class="card-header-title is-family-code has-text-info">
+               Posted by:&nbsp;<a href="/users/<%= post.user_id %>/user_posts"><%= User.find_by(id: post.user_id).name %></a>
+              </div>
             </div>
-          </div>
-          <div class="card-content">
-            <p class='is-success is-family-code'>
-            <%= simple_format post.message%>
-            </p>
-          </div>
-          <div>
-            <footer class="card-footer-item">
-                <span>
-                  <%= button_to "👍 #{post.likes.count}", post_likes_path(:post_id => post.id), method: :post, :class => "button is-info is-outlined" %>
-                  <p class='is-size-7 is-family-code has-text-info-dark'>Posted at <%= post.created_at.strftime("%k:%M:%S on %B %e, %Y") %></p>
-                  <% if current_user.id == post.user_id %>
-                    <%= link_to 'destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-                     <% if Time.now - post.created_at < 600 %>
-                      <%= link_to 'update', edit_post_path(post) %>
-                     <% end %>
-                  <% end %>
-                </span>
-            </footer>
+            <div class="card-content">
+              <p class='is-success is-family-code'>
+              <%= simple_format post.message%>
+              </p>
+            </div>
+            <div>
+              <footer class="card-footer-item">
+                  <span>
+                    <%= button_to "👍 #{post.likes.count}", post_likes_path(:post_id => post.id), method: :post, :class => "button is-info is-outlined" %>
+                    <p class='is-size-7 is-family-code has-text-info-dark'>Posted at <%= post.created_at.strftime("%k:%M:%S on %B %e, %Y") %></p>
+                    <% if current_user != nil %>
+                      <% if current_user.id == post.user_id %>
+                        <%= link_to 'destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                         <% if Time.now - post.created_at < 600 %>
+                          <%= link_to 'update', edit_post_path(post) %>
+                         <% end %>
+                      <% end %>
+                    <% end %>
+                  </span>
+              </footer>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </body>
-<% end %>
