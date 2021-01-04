@@ -12,5 +12,17 @@ feature 'signing in' do
     expect(page).to have_content 'Signed in successfully.'
   end
 
-
+  scenario "Signed in user is redirected to posts from home page" do
+    User.create(:email => 'testenv@example.com', :password => 'testpass')
+    visit '/'
+    click_button 'Log in'
+    fill_in 'Email', with: 'testenv@example.com'
+    fill_in 'Password', with: 'testpass'
+    click_button 'Log in'
+    visit '/'
+    expect(current_path).to eq '/'
+    expect(page).to have_link("New post", :href => "/posts/new")
+    expect(page).not_to have_button("Log in")
+    expect(page).not_to have_button("Sign up")
+  end
 end
