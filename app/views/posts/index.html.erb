@@ -25,7 +25,7 @@
       </div>
     </div>
     <p class="mb-1" id="look-here"><%= simple_format(post.postBody) %></p>
-    <small class="text-muted"><%= post.created_at.strftime("Post created at %H:%M on %B %d, %Y") %> by <%= post.user.name %></small>
+    <small class="text-muted"><%= post.created_at.strftime("Post created at %H:%M on %B %d, %Y") %> by <%= post.user.name if post.user %></small>
   </a>
   <% end %>
 </div>
