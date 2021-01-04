@@ -49,4 +49,14 @@ feature "Signing Up" do
     expect(current_path).to eq("/users")
   end
 
+  scenario "signing up with an invalid email address" do
+    visit "/users/sign_up"
+    fill_in "Email", with: "mobexample.com"
+    fill_in "Password", with: "123456"
+    fill_in "Password confirmation", with: "123456"
+    click_button "Sign up"
+    expect(page).to have_content("Email is invalid")
+    expect(current_path).to eq("/users")
+  end
+
 end
