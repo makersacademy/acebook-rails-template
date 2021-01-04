@@ -4,8 +4,7 @@ require 'helpers/user_helper'
 RSpec.feature "User Registration", type: :feature do
   scenario "User can sign up for BragBook" do
     visit "/users/sign_up"
-    fill_in "user_first_name", with: "Wendy"
-    fill_in "user_last_name", with: "McWend"
+    fill_in "user_name", with: "Wendy Wendy"
     fill_in "user_email", with: "wendy@wendy.com"
     fill_in "user_password", with: "WendyWendy"
     fill_in "user_password_confirmation", with: "WendyWendy"
@@ -17,8 +16,7 @@ end
 RSpec.feature "User Registration", type: :feature do
   scenario "User must sign up with a valid email address" do
     visit "/users/sign_up"
-    fill_in "user_first_name", with: "Wendy"
-    fill_in "user_last_name", with: "McWend"
+    fill_in "user_name", with: "Wendy Wendy"
     fill_in "user_email", with: "wendy@@wendy.com"
     fill_in "user_password", with: "WendyWendy"
     fill_in "user_password_confirmation", with: "WendyWendy"
@@ -30,8 +28,7 @@ end
 RSpec.feature "User Registration", type: :feature do
   scenario "User must sign up with a valid password of between 6-10 characters" do
     visit "/users/sign_up"
-    fill_in "user_first_name", with: "Wendy"
-    fill_in "user_last_name", with: "McWend"
+    fill_in "user_name", with: "Wendy Wendy"
     fill_in "user_email", with: "wendy@wendy.com"
     fill_in "user_password", with: "WendyWendyWendyWendyWendy"
     fill_in "user_password_confirmation", with: "WendyWendyWendyWendyWendy"

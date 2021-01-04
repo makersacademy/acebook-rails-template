@@ -33,7 +33,10 @@ RSpec.describe PostsController, type: :controller do
   login_user
 
   let(:valid_attributes) {
-    { :postBody => "Post Body" }
+    { 
+      :postBody => "Post Body",
+      :user_id => 1
+    }
   }
 
   # let(:invalid_attributes) {
