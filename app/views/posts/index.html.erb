@@ -1,7 +1,15 @@
+<%= flash[:notice] %>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <p><%= post.user.email %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+<%= button_to "Log out", destroy_user_session_path, method: :delete  %>
+
+<form action='users/sign_in'>
+  <input type='submit' id='Log in', value='Log in'>
+</form>
