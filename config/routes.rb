@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'home/index'
-  resources :posts
+  resources :posts do
+    resources :likes
+  end
   root to: 'home#index'
 
   resources  :users do

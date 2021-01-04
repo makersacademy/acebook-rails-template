@@ -11,6 +11,16 @@ module Helpers
       click_button 'Sign up'
     end
 
+    def user_two
+      visit '/'
+      click_link 'Register'
+      fill_in 'Email', with: 'testy@testy.com'
+      fill_in 'Name', with: 'Testy123'
+      fill_in 'Password', with: 'Testy123'
+      fill_in 'Password confirmation', with: 'Testy123'
+      click_button 'Sign up'
+    end
+
     def sign_in
       visit '/'
       click_link 'Sign In'
