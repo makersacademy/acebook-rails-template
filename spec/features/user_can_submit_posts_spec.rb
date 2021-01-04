@@ -8,6 +8,8 @@ feature "Timeline" do
     fill_in "post[message]", with: "Hello, world!"
     click_button "Post"
     expect(page).to have_content("Hello, world!")
+    date = DateTime.now.strftime('%d %b %Y')
+    expect(page).to have_content(date)
   end
   scenario "Posts show the date they were created" do
     Post.create(message: "Hello, World!", created_at: DateTime.new(2021, 1, 3, 1, 3, 3))
