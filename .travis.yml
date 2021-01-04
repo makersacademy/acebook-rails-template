@@ -1,0 +1,32 @@
+language: ruby
+# cache:
+#   - bundler
+#   - yarn
+# services:
+#   - postgresql
+# before_install:
+#   # - nvm install --lts
+#   # - gem install bundler -2.1.4
+#
+#   - yes | gem update --system --force
+#   - gem install bundler
+# before_script:
+#   - bundle install --jobs=3 --retry=3
+#   - nvm install 10
+#   - bundle exec rails db:create
+#   - bundle exec rails db:schema:load
+# script:
+#   - bundle exec rpsec
+​
+rvm:
+ - 2.7.0
+ - jruby
+services:
+ - postgresql
+script:
+ - gem install bundler:2.1.4
+ - bundle update --bundler
+ - bundle install
+ - bundle exec rails db:create
+ - bundle exec rails db:migrate
+ - bundle exec rspec
