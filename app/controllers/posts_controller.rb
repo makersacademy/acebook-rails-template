@@ -6,8 +6,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    puts "in the show method"
-    puts post_path
   end
 
   def new
@@ -17,7 +15,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(user_id: session[:user_id], body: params[:post][:body])
     if @post.save
-      redirect_to @post
+      redirect_to posts_url
     else
       render 'new'
     end
@@ -28,17 +26,15 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to posts_url
     else
       render 'edit'
     end
   end
 
   def destroy
-    puts "destroying post"
-    puts @post
     @post.destroy
-    redirect_to root_path
+    redirect_to posts_url
   end
 
   private
