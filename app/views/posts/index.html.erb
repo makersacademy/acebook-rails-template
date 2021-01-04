@@ -29,7 +29,7 @@
           <div class="card">
             <div class='card-header'>
               <div class="card-header-title is-family-code has-text-info">
-               Posted by: <%= User.find_by(id: post.user_id).name %>
+               Posted by:&nbsp;<a href="/users/<%= post.user_id %>/user_posts"><%= User.find_by(id: post.user_id).name %></a>
               </div>
             </div>
             <div class="card-content">
