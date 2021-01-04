@@ -1,3 +1,5 @@
+<h1><%= User.find(params[:id]).name %>'s profile page</h1>
+
 <% @posts.sort_by(&:id).reverse.each do |post| %>
   <div class='container '>
     <div class='columns is-fluid is-centered'>
