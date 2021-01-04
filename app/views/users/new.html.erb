@@ -1,37 +1,18 @@
-<div class="card mx-auto text-center px-4 pt-4 pb-3 mt-5" style="width: 375px;">
-  <h3 class="card-title mb-3">Join the family</h3>
-  
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <% @user.errors.full_messages.each do |msg| %>
-      <div> <%= msg %> </div>
+      <div class="alert alert-danger text-center mx-auto" role="alert">
+        <%= msg %>
+      </div>
     <% end %>
   <% end %>
 
-  <div>
-    <%= f.text_field :username, placeholder: 'username' %>
-  </div>
-  <div>
-    <%= f.text_field :email, placeholder: 'email' %>
-  </div>
-  <div>
-    <%= f.password_field :password, placeholder: 'password' %>
-  </div>
-  <div>
-    <%= f.password_field :password_confirmation, placeholder: 'password confirmation' %>
-  </div>
-  <%= f.submit 'Sign Up' %>
-<% end %>
-</div>
-<!---
   <div class="card mx-auto text-center px-4 pt-4 pb-3 mt-5" style="width: 375px;">
-  <h3 class="card-title mb-3">Join the family</h3>
-  <%= form_tag sessions_path do %>
-    <%= text_field_tag 'username', nil, placeholder: 'username', class: "form-control mb-3" %>
-    <%= text_field_tag 'email', nil, placeholder: 'email', class: "form-control mb-3" %>
-    <%= password_field_tag 'password', nil, placeholder: 'password', class: "form-control mb-3" %>
-    <%= password_field_tag 'password_confirmation', nil, placeholder: 'password_confirmation', class: "form-control mb-3" %>
-  <%#= submit 'Sign Up', class: "btn btn-primary" %>
+    <h3 class="card-title mb-3" style="font-weight: lighter;">Join our Family</h3>
+    <%= f.text_field :username, placeholder: 'username', class: "form-control mb-3" %>
+    <%= f.text_field :email, placeholder: 'email', class: "form-control mb-3" %>
+    <%= f.password_field :password, placeholder: 'password', class: "form-control mb-3" %>
+    <%= f.password_field :password_confirmation, placeholder: 'password confirmation', class: "form-control mb-3" %>
+    <%= f.submit 'Sign Up', class: "btn btn-success" %>
   <% end %>
 </div>
--->
