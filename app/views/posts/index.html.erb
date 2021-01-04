@@ -40,6 +40,7 @@
           <div>
             <footer class="card-footer-item">
                 <span>
+                  <%= button_to "👍 #{post.likes.count}", post_likes_path(:post_id => post.id), method: :post, :class => "button is-info is-outlined" %>
                   <p class='is-size-7 is-family-code has-text-info-dark'>Posted at <%= post.created_at.strftime("%k:%M:%S on %B %e, %Y") %></p>
                   <% if current_user.id == post.user_id %>
                     <%= link_to 'destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>

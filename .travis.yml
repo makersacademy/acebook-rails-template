@@ -1,12 +1,15 @@
 install:
- - bundle update --bundler
- - bundle install
-
+- bundle update --bundler
+- bundle install
 services:
- - postgresql
-
+- postgresql
 script:
- - bundle exec rails db:create
- - bundle exec rails db:migrate
- - bundle exec rails db:environment:set RAILS_ENV=test
- - bundle exec rspec
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+- bundle exec rails db:environment:set RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  api_key:
+    secure: YTxq64SbfBWAzYI5sdLLMsceiDm7ungwgsjMrPmCo/ZJ6q2mColPwZBpqEf76vkbr0IoPWymFPntdt90H3AF3ingO799m18aWQ6AiFloQOxpanIjqGyz3GCGyyfoPQZz9hWhjZPtXPABfPD1Xna0TwURxt/YjLlhyeevRvJUDQY3JlNOVCKRZlpdLhQZ9EbUnGmhwSnZvoih1ag7IJBzaDlBOTXMcjnNSyGTKWCR/O2eXeo+QspDhERAvHUGF8rdQUi6Z8Idghupx/wjSgTi0mkMJnCMvG0V0tk5zWk7uW5niXWE1y7q4gHZ4OtNvaCqL9ElyFMYM2CEkVzoxdp23Dnah4Y2Ww0tZ0GW6jy2+T3L2aw13epn5JzNXWRfVEB7cIPNQfbYxpwm4EsuwDyBh/SYWrWMFJ/pqlTGNxF8I8pjyrc6jhBQVoi9cC8vrI/Gc/N45a8HbR2SCoyOBrHeyuTZCuRHtNJKPsCDKvLWU/iFUzpDwEeUtlfTpPtPL/yEsSmpMruIiwt5RUTk/73/DpFf8saXVu/kNqs6fqG+xI8fdwr55Brl/Kuf5G2U1b36edV1douAX/ebm0HqxB3i8rf2nG/lqFanLvJjXqTYeqWNxmycji+3d5+yRUIblME1fMYKYVwCiEbqfixtGSust24zU6CNneaDFIBKeUeTDFw=
+  app: sclz
+  run: "rake db:migrate"
