@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-def sign_in
+def sign_in1
   User.create(:email => 'testenv@example.com', :password => 'testpass')
   visit "/users/sign_in"
   fill_in "Email", with: "testenv@example.com"
