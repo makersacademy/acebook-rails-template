@@ -1,57 +1,57 @@
 feature 'registration' do
   scenario 'user signs up successfully' do
-    visit('/signup')
+    visit('/users/new')
 
     fill_in('username', with: 'Margarida')
     fill_in('email', with: 'margarida@example.pt')
     fill_in('password', with: '2020')
-    fill_in('password_confirmation', with: '2020')
-    click_button('Submit')
+    fill_in('password confirmation', with: '2020')
+    click_button('Sign Up')
 
-    expect(current_path).to eq('/posts')
-    expect(page).to have_content('Posts!')
+    expect(current_path).to eq('/sessions/new')
+    expect(page).to have_content('')
   end
 
   scenario "user's passwords do not match" do
-    visit('/signup')
+    visit('/users/new')
 
     fill_in('username', with: 'Margarida')
     fill_in('email', with: 'margarida@example.pt')
     fill_in('password', with: '2020')
-    fill_in('password_confirmation', with: '2021')
-    click_button('Submit')
+    fill_in('password confirmation', with: '2021')
+    click_button('Sign Up')
 
-    expect(current_path).to eq('/signup')
-    expect(page).to have_content('Password does not match confirmation')
+    expect(current_path).to eq('/users')
+    expect(page).to have_content("Password confirmation doesn't match Password")
   end
 
   scenario 'username is taken' do
     create_user_in_test_db
 
-    visit('/signup')
+    visit('/users/new')
 
     fill_in('username', with: 'Malachi')
     fill_in('email', with: 'margarida@example.pt')
     fill_in('password', with: '2020')
-    fill_in('password_confirmation', with: '2020')
-    click_button('Submit')
+    fill_in('password confirmation', with: '2020')
+    click_button('Sign Up')
 
-    expect(current_path).to eq('/signup')
-    expect(page).to have_content('Username taken, please choose a different username')
+    expect(current_path).to eq('/users')
+    expect(page).to have_content('Username has already been taken')
   end
 
   scenario 'email is taken' do
     create_user_in_test_db
 
-    visit('/signup')
+    visit('/users/new')
 
     fill_in('username', with: 'Margarida')
     fill_in('email', with: 'm.spencer@makers.com')
     fill_in('password', with: '2020')
-    fill_in('password_confirmation', with: '2020')
-    click_button('Submit')
+    fill_in('password confirmation', with: '2020')
+    click_button('Sign Up')
 
-    expect(current_path).to eq('/signup')
+    expect(current_path).to eq('/users')
     expect(page).to have_content('Email already registered')
   end
 end
