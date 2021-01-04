@@ -9,7 +9,7 @@ feature 'registration' do
     click_button('Sign Up')
 
     expect(current_path).to eq('/sessions/new')
-    expect(page).to have_content('')
+    expect(page).to have_content('Successfully signed up')
   end
 
   scenario "user's passwords do not match" do
