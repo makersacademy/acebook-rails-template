@@ -39,4 +39,14 @@ feature "Signing Up" do
     expect(current_path).to eq("/users")
   end
 
+  scenario "signing up with a mismatched password" do
+    visit "/users/sign_up"
+    fill_in "Email", with: "mob@example.com"
+    fill_in "Password", with: "123456"
+    fill_in "Password confirmation", with: "1234567"
+    click_button "Sign up"
+    expect(page).to have_content("Password confirmation doesn't match Password")
+    expect(current_path).to eq("/users")
+  end
+
 end
