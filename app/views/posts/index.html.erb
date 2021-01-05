@@ -1,4 +1,5 @@
 <% @posts.each do |post| %>
+  <p><%= post.user.fname %> <%= post.user.lname %> </p>
   <p><%= post.message %></p>
 <% end %>
 
