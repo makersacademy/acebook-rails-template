@@ -31,3 +31,16 @@
 
 en:
   hello: "Hello world"
+  datetime: &datetime
+    month_names:
+      [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    formats:
+      default: "%k:%M:%S on %B %e, %Y"
+      short: "%d/%m/%Y"
+      day_month: "%d/%m"
+
+  date:
+    <<: *datetime
+
+  time:
+    <<: *datetime
