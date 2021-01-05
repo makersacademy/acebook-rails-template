@@ -2,13 +2,15 @@ class LikesController < ApplicationController
   before_action :find_post
 
   def create
-    if already_liked?
-      @like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
-      @like.destroy
-    else
-      @post.likes.create(user_id: current_user.id)
+    if current_user != nil
+      if already_liked?
+        @like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
+        @like.destroy
+      else
+        @post.likes.create(user_id: current_user.id)
+      end
+      redirect_to posts_url
     end
-    redirect_to posts_url
   end
 
   private
