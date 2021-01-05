@@ -1,10 +1,15 @@
+<%= stylesheet_link_tag "application" %>
 <%= flash[:notice] %>
+
+
+<form action='/posts' method='POST'>
+  <input type='text' name='post[message]'>
+  <input type='submit' value='Post'>
+</form>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
+  <p class="date"><%= post.date %></p>
 <% end %>
 
 <%= button_to "Log out", destroy_user_session_path, method: :delete  %>
