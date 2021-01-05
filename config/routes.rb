@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'home/index'
   resources :posts do
     resources :likes
+    resources :comment_likes
   end
   root to: 'home#index'
 

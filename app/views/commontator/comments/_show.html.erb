@@ -77,9 +77,13 @@
   <span id="commontator-comment-<%= comment.id %>-created-timestamp" class="timestamp">
     <%= comment.created_timestamp %>
   </span>
-
+  <br>
   <span id="commontator-comment-<%= comment.id %>-updated-timestamp" class="timestamp">
     <%= comment.updated_timestamp if comment.is_modified? %>
+  </span>
+  <br><br>
+  <span class="button is-info is-outlined">
+    <%# <%= button_to "👍 #{comment.commentlikes.count}", comment_likes_path(:commontator_comment_id => comment.id), method: :post %> %>
   </span>
 </div>
 
