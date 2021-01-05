@@ -1,5 +1,5 @@
 class CommentLikesController < ApplicationController
-  before_action :set_comment_like, only: [:show, :edit, :update, :destroy]
+  before_action :find_comment
 
   def create
     if current_user != nil
@@ -15,8 +15,8 @@ class CommentLikesController < ApplicationController
 
   private
 
-  def find_post
-    @commontator_comment = commontator_comment.find(params[:commontator_comment_id])
+  def find_comment
+    @commontator_comment = Commontator::Comment.find(params[:commontatorid])
   end
 
   def already_liked?
