@@ -19,9 +19,11 @@
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1"><img src="https://user-images.githubusercontent.com/65397514/102521890-27b33b00-409e-11eb-9024-9e06d655f1c0.png" width="50px" height="auto"></h5>
       <div class="btn-toolbar">
+        <% if post.user_id == current_user.id %>
         <%= button_to 'Show', post_path(post), :class => "btn btn-secondary", :method => :get %>
         <%= button_to 'Edit', edit_post_path(post), :class => "btn btn-secondary", :method => :get %>
         <%= button_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-secondary" %>
+        <% end %>
       </div>
     </div>
     <p class="mb-1" id="look-here"><%= simple_format(post.postBody) %></p>
