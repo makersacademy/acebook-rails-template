@@ -29,9 +29,7 @@
               <%= link_to 'Profile', custom_user_posts_path(current_user.id), class: 'navbar-item mt-4 is-family-code has-text-info-dark' %>
             <% end %>
 
-          <a class="navbar-item is-family-code has-text-info-dark">
-            User Settings
-          </a>
+          <%= link_to 'User Settings', edit_user_registration_path, class: 'navbar-item is-family-code has-text-info-dark' %>
         </div>
       </div>
     </div>
