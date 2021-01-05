@@ -1,8 +1,16 @@
-<div class="columns is-centered mt-5"><%= form_for @post do |form| %>
-  <%= form.label :message %>
+<div class="columns is-centered mt-6">
+  <div class="column is-one-third">
+    <h1 class="is-size-2 has-text-weight-bold mb-5 has-text-info-dark" style="width: 65%; margin-left: 25%">New Entry</h1>
+      <div>
+        <%= form_for @post do |form| %>
+        <div style="width: 30%; margin-left: 40%">
+          <%= form.label :message, class: "is-size-4 has-text-info-dark" %>
+        </div>
 
-  <%= form.text_area :message, placeholder: "my placeholder", class: "textarea" %>
+          <%= form.text_area :message, placeholder: "Socialize here!", class: "textarea" %>
 
-  <%= form.submit "Submit" %>
-<% end %>
+          <%= form.submit "Submit" %>
+      <% end %>
+    </div>
+  </div>
 </div>

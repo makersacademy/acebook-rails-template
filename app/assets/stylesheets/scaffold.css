@@ -25,8 +25,7 @@ a:visited {
 }
 
 a:hover {
-  color: #fff;
-  background-color: #000;
+  color: #000;
 }
 
 th {
@@ -77,4 +76,22 @@ div.actions {
 
 label {
   display: block;
+}
+
+input[type=submit] {
+    display: inline-block;
+    padding: 5px 15px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    color: #51a7e0;
+    border: 1px solid #51a7e0;
+    margin-top: 5px
+}
+
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #51a7e0;
+    color: #f4f5f6;
 }
