@@ -15,3 +15,12 @@ def sign_in
   fill_in "user_password", with: "WendyWendy"
   click_button 'Log in'
 end
+
+def sign_up2
+  visit "/users/sign_up"
+  fill_in "user_name", with: "Mel Mel"
+  fill_in "user_email", with: "mel@mel.com"
+  fill_in "user_password", with: "melmel"
+  fill_in "user_password_confirmation", with: "melmel"
+  click_button "Sign up"
+end
