@@ -4,6 +4,15 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
 
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      setTimeout(function(){
+        $('.notice').remove();
+      }, 5000);
+     })
+    </script>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>

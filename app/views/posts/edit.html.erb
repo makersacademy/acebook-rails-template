@@ -1,10 +1,14 @@
 <div class="columns is-centered mt-6">
   <div class="column is-one-third">
-    <h1 class="is-size-2 has-text-weight-bold mb-5">Editing Entry</h1>
-    <%= form_for @post do |form| %>
-      <%= form.label :message %>
-      <%= form.text_area :message, value: Post.find_by(id: params[:id]).message, class: "is-centered" %>
-      <%= form.submit "Submit" %>
-    <% end %>
+    <h1 class="is-size-2 has-text-weight-bold mb-5 has-text-info-dark" style="width: 65%; margin-left: 25%">Editing Entry</h1>
+    <div>
+      <%= form_for @post do |form| %>
+      <div style="width: 30%; margin-left: 40%">
+        <%= form.label :message, class: "is-size-4 has-text-info-dark" %>
+      </div>
+        <%= form.text_area :message, value: Post.find_by(id: params[:id]).message, class: "textarea pb-2" %>
+        <%= form.submit "Submit" %>
+      <% end %>
+    </div>
   </div>
 </div>
