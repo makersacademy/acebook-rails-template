@@ -114,7 +114,7 @@ Commontator.configure do |config|
   #          This is not recommended, as it can cause confusion over deleted comments
   #          If using pagination, it can also cause comments to change pages
   # Default: nil (no filtering - all comments are visible)
-  config.comment_filter = nil
+  config.comment_filter = Commontator::Comment.arel_table[:deleted_at].eq(nil)
 
   # thread_read_proc
   # Type: Proc
@@ -140,7 +140,7 @@ Commontator.configure do |config|
   #   :l (only if it's the latest comment)
   #   :n (never)
   # Default: :l
-  config.comment_editing = :l
+  config.comment_editing = :a
 
   # comment_deletion
   # Type: Symbol
@@ -151,7 +151,7 @@ Commontator.configure do |config|
   #   :n (never)
   # Note: For moderators, see the next option
   # Default: :l
-  config.comment_deletion = :l
+  config.comment_deletion = :a
 
   # moderator_permissions
   # Type: Symbol
