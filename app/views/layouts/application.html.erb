@@ -19,11 +19,12 @@
         <% if current_user %>
         <span>
           Welcome, <%= current_user.username %>
+          <a href="/posts/new" class="btn btn-primary ml-4 px-2 py-1">New Post</a>
           <%= link_to 'Sign Out', logout_path, class: "btn btn-danger ml-4" %> 
         </span> 
       <% else %>
-        <%= link_to 'Sign Up', new_user_path, class: "btn btn btn-success mr-4" %>
-        <%= link_to 'Sign In', new_session_path, class: "btn btn btn-primary" %>
+        <%= link_to 'Sign Up', new_user_path, class: "btn btn-success mr-4" %>
+        <%= link_to 'Sign In', new_session_path, class: "btn btn-primary" %>
       <% end %>
       </div>
     </nav>
