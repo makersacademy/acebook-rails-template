@@ -21,7 +21,6 @@ feature 'signing in' do
     click_button 'Log in'
     visit '/'
     expect(current_path).to eq '/'
-    expect(page).to have_link("New post", :href => "/posts/new")
     expect(page).not_to have_button("Log in")
     expect(page).not_to have_button("Sign up")
   end
