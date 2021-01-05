@@ -1,0 +1,16 @@
+<%# <div class="alert alert-warning alert-dismissible fade show" role="alert"> %>
+ <%# <%= notice %> 
+  <%# <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div> %>
+
+
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>">
+    <a href="#" data-dismiss="alert" class="close">×</a>
+    <ul>
+      <li>
+        <%= value %>
+      </li>
+    </ul>
+  </div>
+<% end %>

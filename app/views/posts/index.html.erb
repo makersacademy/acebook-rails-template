@@ -1,7 +1,36 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<p id="notice"><%= notice %></p>
 
-<%= link_to new_post_path do %>
-  New post
+<h1>Posts</h1>
+<br>
+<%= form_with model: @post do |f| %>
+  <div class="field">
+    <%= f.text_area(:postBody, cols: 25, rows: 5, class: 'form-control col-sm-12', placeholder:"Write your post here...") %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit("Post", class: "btn btn-secondary") %>
+  </div>
 <% end %>
+<br><br>
+
+<div class="list-group">
+  <% @posts.each do |post| %>
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"><img src="https://user-images.githubusercontent.com/65397514/102521890-27b33b00-409e-11eb-9024-9e06d655f1c0.png" width="50px" height="auto"></h5>
+      <div class="btn-toolbar">
+        <% if current_user && (post.user_id == current_user.id) %>
+        <%= button_to 'Show', post_path(post), :class => "btn btn-secondary", :method => :get %>
+        <%= button_to 'Edit', edit_post_path(post), :class => "btn btn-secondary", :method => :get %>
+        <%= button_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-secondary" %>
+        <% end %>
+      </div>
+    </div>
+    <p class="mb-1" id="look-here"><%= simple_format(post.postBody) %></p>
+    <small class="text-muted"><%= post.created_at.strftime("Post created at %H:%M on %B %d, %Y") %> by <%= post.user.name if post.user %></small>
+  </a>
+  <% end %>
+</div>
+
+<br>
+
