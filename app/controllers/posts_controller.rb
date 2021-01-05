@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   # Might need to split it into multiple lines
 
   # GET /posts
@@ -69,6 +70,8 @@ class PostsController < ApplicationController
     end
   end
 
+ 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -78,5 +81,10 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:postBody, :user_id)
+    end
+
+    def correct_user
+      @post = current_user.posts.find_by(id: params[:id])
+      redirect_to posts_path, notice: "Not authorized - stop trying to hack your friends!" if @post.nil?
     end
 end
