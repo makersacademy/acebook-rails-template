@@ -5,6 +5,7 @@ class Commontator::Comment < ActiveRecord::Base
   belongs_to :parent, optional: true, class_name: name, inverse_of: :children
 
   has_many :children, class_name: name, foreign_key: :parent_id, inverse_of: :parent
+  has_many :commentlikes
 
   validates :editor, presence: true, on: :update
   validates :body, presence: true, uniqueness: {

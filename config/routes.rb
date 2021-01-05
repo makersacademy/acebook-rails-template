@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comment_likes
   devise_for :users
   get 'home/index'
   resources :posts do
