@@ -1,6 +1,6 @@
-<%= form_for @post do |f| %>
-  <%= f.label :body %><br>
-  <%= f.text_area :body %><br>
-  <br>
-  <%= f.submit %>
-<% end %>
+<div class="card mx-auto text-center px-4 pt-4 pb-3 mt-5" style="width: 375px;">
+  <%= form_for @post do |f| %>
+    <%= f.text_area :body,  class: "form-control mb-3" %>
+    <%= f.submit 'Submit', class: "btn btn-success" %>
+  <% end %>
+</div>
