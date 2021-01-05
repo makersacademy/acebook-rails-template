@@ -1,10 +1,23 @@
-<h1>Posts!</h1>
 <% @posts.each do |post| %>
-<div class="post">
-  <%= post.body %>
-  <%= link_to "Edit", edit_post_path(post) %>
-  <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
+<div class="card my-5 mx-auto" style="width: 80%;">
+  <span class="card-header">
+    <b>
+      <%= post.user.username.capitalize %>
+    </b>
+    <i>
+      posted
+      <%= time_ago_in_words(post.created_at) %> ago
+    </i>
+    <% if post.user == current_user %>
+    <span style="float: right;">
+      <%= link_to "Edit", edit_post_path(post) %>
+      <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?"} %>
+    </span>
+    <% end %> 
+  </span>
+  <span class="d-inline-flex">
+    <img src="<%=asset_path('profilepic.png')%>" alt="<%= post.user.username %>'s profile picture" class="img-thumbnail rounded m-2" style="height: 100%;">
+    <p class="text-justify m-2"><%= post.body %></p>
+  </span>
 </div>
 <% end %>
-<br>
-<a href="/posts/new">New post</a>
