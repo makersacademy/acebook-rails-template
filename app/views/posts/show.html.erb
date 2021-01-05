@@ -3,3 +3,8 @@
 <%= @post.body %>
 <br>
 <%= link_to "Edit", edit_post_path(@post) %>
+
+<% @comments.each do |comment| %>
+  <div> <%= comment.body %> </div>
+  <div> <%= get_name(id: comment.user_id) %> </div>
+<% end %>
