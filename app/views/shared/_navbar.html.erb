@@ -13,27 +13,21 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">
-        <%= link_to 'Home', home_index_path, class: 'columns mt-4 mr-3 is-family-code has-text-info-dark' %>
-      </a>
+      <%= link_to 'Home', home_index_path, class: 'columns mt-4 mr-3 is-family-code has-text-info-dark navbar-item' %>
 
-      <a class="navbar-item">
-        <%= link_to 'Timeline', posts_path, class: 'columns mt-4 mr-3 is-family-code has-text-info-dark' %>
-      </a>
+      <%= link_to 'Timeline', posts_path, class: 'columns mt-4 mr-3 is-family-code has-text-info-dark navbar-item' %>
 
-      <div class="navbar-item has-dropdown is-hoverable">
+      <div class="navbar-item has-dropdown is-hoverable mt-1" style="left: -11px; top: -1px">
         <a class="navbar-link is-family-code has-text-info-dark">
           More
         </a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item is-family-code has-text-info-dark">
             <% if current_user == nil %>
-              <%= link_to 'Profile', posts_path, class: 'columns mt-4 mr-3 is-family-code has-text-info-dark' %>
-            <% else %> <%# change the below line %>
-              <%= link_to 'Profile', custom_user_posts_path(current_user.id), class: 'columns mt-4 mr-3 is-family-code has-text-info-dark' %>
+              <%= link_to 'Profile', posts_path, class: 'navbar-item mt-4 is-family-code has-text-info-dark' %>
+            <% else %>
+              <%= link_to 'Profile', custom_user_posts_path(current_user.id), class: 'navbar-item mt-4 is-family-code has-text-info-dark' %>
             <% end %>
-          </a>
 
           <a class="navbar-item is-family-code has-text-info-dark">
             User Settings
