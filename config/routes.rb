@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   get 'friends/requests' => 'friends#requests', :as => :friend_requests
 
+  get 'friends/accept/:id' => 'friends#accept', :as => :accept_request
+
 end
