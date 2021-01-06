@@ -1,4 +1,6 @@
 <% @posts.each do |post| %>
+  <p><%= post.user.fname %> <%= post.user.lname %> </p>
+  <div class = 'time' ><%=post.created_at.to_formatted_s(:long)%></div>
   <p><%= post.message %></p>
 <% end %>
 
