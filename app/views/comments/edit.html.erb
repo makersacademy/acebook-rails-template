@@ -1,0 +1,14 @@
+<div class='container.is-max-desktop'>
+  <div class='columns is-fluid is-centered'>
+    <div class='column is-5'>
+      <div class="card">
+        <h1>Edit Comment</h1>
+        <%= form_for([@current_post, @comment], :html => {:class => "control p-2" }) do |f| %>
+          <%= f.text_area :body, :placeholder => "Enter comment", :class => 'textarea is-info is-small' %>
+          <%= f.submit "Edit", :class => 'button is-info is-rounded' %>
+        <% end %>
+        <%= link_to 'Back to Feed', posts_url, :class => 'button is-info is-rounded' %>
+      </div>
+    </div>
+  </div>
+</div>

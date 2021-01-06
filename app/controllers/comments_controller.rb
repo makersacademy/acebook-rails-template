@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
   before_action :find_post, only: [:create, :edit, :update]
   before_action :find_comment, only: [:edit, :update]
+  respond_to :js, :html, :json
 
   def index
-    @comment = Comment.all
+    @comments = Comment.all
   end
 
   def new
@@ -25,9 +26,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  # POST /comments
-  # POST /comments.json
-
   def create
     @comment = @current_post.comments.create(comment_params) { |c| c.user_id = current_user.id }
     redirect_to posts_url
@@ -39,7 +37,7 @@ class CommentsController < ApplicationController
         if @comment.update(comment_params)
           redirect_to posts_url
         else
-          render :edit_comment
+          render :edit
         end
       else
         redirect_to posts_path
@@ -52,6 +50,15 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_path, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def like
+    @comment = Comment.find(params[:id])
+    if params[:format] == 'like'
+      @comment.liked_by current_user
+    elsif params[:format] == 'unlike'
+      @comment.unliked_by current_user
     end
   end
 

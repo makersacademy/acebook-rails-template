@@ -1,11 +1,26 @@
-
-<div class="comment">
+  <div class="comment">
   <div class="comment-text">
     <b><%= link_to comment.user.name, post_path(id: comment.user.id), :class => "post-link" %></b>
     <p class="comment_body"><%= simple_format(comment.body) %>
     </p>
   </div>
-  <% if Time.now - comment.created_at < 600 %><%= link_to 'Edit comment', edit_post_comment_path(comment.post, comment) %>
+    <div class="parent-likes">
+      <div class="like_count" <%= comment.id %>'>
+        <%= comment.get_likes.size %> &#128077
+      </div>
+      <a>
+        <% if current_user.liked? comment %>
+          <div id="liked-btn"> <%= link_to like_comment_path(comment, 'unlike'), class: "liked-btn",
+                            method: :put, remote: :true do %> Liked </div>
+        <% end %>
+        <% else %>
+          <div> <%= link_to like_comment_path(comment, 'like'), class: "like-btn",
+                            method: :put, remote: :true do %> Like </div>
+        <% end %>
+        <% end %>
+      </a>
+    </span>
+    <% if Time.now - comment.created_at < 600 %><%= link_to 'Edit comment', edit_post_comment_path(comment.post, comment) %>
     -
     <% end %><%= link_to 'Delete comment', post_comment_path(comment.post, comment), method: :delete %>
   <br><br>
