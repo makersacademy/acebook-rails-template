@@ -8,6 +8,11 @@ class FriendsController < ApplicationController
     redirect_to friend_requests_path
   end
 
+  def decline
+    current_user.decline_request(User.find(params[:id]))
+    redirect_to friend_requests_path
+  end
+
   def list
     @friends_list = User.find(params[:id]).friends
   end
