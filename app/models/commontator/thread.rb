@@ -36,21 +36,21 @@ class Commontator::Thread < ActiveRecord::Base
     # ID is used as a tie-breaker because MySQL lacks sub-second timestamp resolution
     case config.comment_order.to_sym
     when :l
-      fc.order(cc[:created_at].desc, cc[:id].desc)
+      fc.order(cc[:created_at].asc, cc[:id].asc)
     when :ve
-      fc.order(
-        Arel::Nodes::Descending.new(cc[:cached_votes_up] - cc[:cached_votes_down]),
-        cc[:created_at].asc,
-        cc[:id].asc
-      )
-    when :vl
       fc.order(
         Arel::Nodes::Descending.new(cc[:cached_votes_up] - cc[:cached_votes_down]),
         cc[:created_at].desc,
         cc[:id].desc
       )
+    when :vl
+      fc.order(
+        Arel::Nodes::Descending.new(cc[:cached_votes_up] - cc[:cached_votes_down]),
+        cc[:created_at].asc,
+        cc[:id].asc
+      )
     else
-      fc.order(cc[:created_at].asc, cc[:id].asc)
+      fc.order(cc[:created_at].desc, cc[:id].desc)
     end
   end
 
