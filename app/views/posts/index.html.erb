@@ -19,6 +19,6 @@
       <img src="<%=asset_path('profilepic.png')%>" alt="<%= post.user.username %>'s profile picture" class="img-thumbnail rounded m-2" style="height: 100%;">
       <p class="text-justify m-2"><%= post.body %></p>
     </span>
-    <%= link_to "Comments", post_path(post), class: "btn btn-primary" %>     
+    <%= link_to "Comments", post_path(post) %>     
   </div>
 <% end %>
