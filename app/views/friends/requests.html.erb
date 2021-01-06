@@ -1,0 +1,8 @@
+here u should see friends requests
+
+<% @friend_requests.each do |fr| %>
+<p>You have a friend request from <%= fr.name %></p>
+<% end %>
+
+<% p "The number of friend requests is: " %>
+<% p @friend_requests.length %>

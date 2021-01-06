@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   mount Commontator::Engine => '/commontator'
 
+  get 'friends/requests' => 'friends#requests', :as => :friend_requests
+
 end

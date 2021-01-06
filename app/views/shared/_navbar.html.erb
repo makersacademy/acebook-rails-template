@@ -28,6 +28,9 @@
             <% else %>
               <%= link_to 'Profile', custom_user_posts_path(current_user.id), class: 'navbar-item mt-4 is-family-code has-text-info-dark' %>
             <% end %>
+            <% if current_user != nil %>
+              <%= link_to 'Friend Requests', friend_requests_path, class: 'navbar-item mt-4 is-family-code has-text-info-dark' %>
+            <% end %>
         </div>
       </div>
     </div>
