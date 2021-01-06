@@ -1,4 +1,4 @@
-<%= form_with url: post_comments_path(post.id) do |form| %>
-  <%= form.text_field :comment_body %>
-  <%= form.submit 'Comment'%>
+<%= form_for([@post, @comment], remote: true) do |f| %>
+  <%= f.text_field :body %>
+  <%= f.submit 'Comment' %>
 <% end %>
