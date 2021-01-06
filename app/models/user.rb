@@ -4,6 +4,8 @@ class User < ApplicationRecord
   include Gravtastic
   gravtastic
 
+  acts_as_commontator
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
