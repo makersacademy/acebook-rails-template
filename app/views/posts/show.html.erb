@@ -1,10 +1,13 @@
 <h1> Post details </h1>
+<div id="post-container">
+  <%= @post.body %>
+  <br>
+  <%= link_to "Edit", edit_post_path(@post) %>
 
-<%= @post.body %>
-<br>
-<%= link_to "Edit", edit_post_path(@post) %>
+  <%= render 'comments/form' %>
 
-<% @comments.each do |comment| %>
-  <div> <%= comment.body %> </div>
-  <div> <%= get_name(id: comment.user_id) %> </div>
-<% end %>
+  <br>
+  <div id="comments-container">
+    <%= render 'comments/index' %>
+  </div>
+</div>
