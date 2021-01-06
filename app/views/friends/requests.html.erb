@@ -2,6 +2,7 @@ here u should see friends requests
 
 <% @friend_requests.each do |fr| %>
 <p>You have a friend request from <%= fr.name %></p>
+<% p fr %>
 <%= link_to 'Accept Friend', accept_request_path(fr) %>
 <% end %>
 
