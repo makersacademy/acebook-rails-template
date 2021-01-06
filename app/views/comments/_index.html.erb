@@ -1,0 +1,11 @@
+<% @post.comments.reverse.each do |comment| %>
+  <div id="comment-<%=comment.id%>">
+    <div> <%= comment.body %> </div>
+    <div> <%= comment.user.username %> </div>
+    <div> <%= time_ago_in_words(comment.created_at) %> ago </div>
+    <% if comment.user == current_user %>
+      <%= link_to "Delete", post_comment_path(@post, comment), method: :delete, remote: true %>
+    <% end %>
+  </div>
+  <br>
+<% end %>
