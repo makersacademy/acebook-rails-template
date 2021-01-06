@@ -13,6 +13,4 @@ Rails.application.routes.draw do
   end
   get 'users/:id/user_posts' => 'users#user_posts', :as => :custom_user_posts
 
-  mount Commontator::Engine => '/commontator'
-
 end

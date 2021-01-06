@@ -33,11 +33,7 @@ gem 'travis'
 gem 'devise'
 
 gem 'bulma-rails', '~> 0.9.1'
-
-gem 'commontator'
 gem 'jquery-rails'
-gem 'sassc-rails'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
