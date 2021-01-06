@@ -36,6 +36,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem "rubocop", "~> 1.7"
+  gem "rubocop-rspec", "~> 2.1"
 end
 
 group :development do
@@ -48,3 +50,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise", "~> 4.7"
+
+gem "rubocop-rails", "~> 2.9"
