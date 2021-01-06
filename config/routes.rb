@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   get 'pages/home'
 
+
   devise_for :users
   resources :posts
+
+  get '/:id', to: 'walls#show', as: 'wall'
 
 
 
@@ -13,7 +16,8 @@ Rails.application.routes.draw do
 
   authenticated :user do
     # root :to => "posts#index"
-  root "posts#index", as: :authenticated_root
+
+    root "posts#index", as: :authenticated_root
   end
 
 end

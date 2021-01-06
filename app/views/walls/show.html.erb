@@ -1,0 +1,11 @@
+<%= stylesheet_link_tag "application" %>
+<%= flash[:notice] %>
+<h1>Welcome <%=current_user.email%></h1>
+
+
+<form action='/posts' method='POST'>
+  <input type='text' name='post[message]'>
+  <input type='submit' value='Post'>
+</form>
+
+<%= button_to "Log out", destroy_user_session_path, method: :delete  %>
