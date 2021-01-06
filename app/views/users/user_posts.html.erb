@@ -4,7 +4,4 @@
   <%= link_to 'Add as friend', method: current_user.friend_request(User.find(params[:id])) %>
 <% end %>
 
-<%# <% p "friends of current user: " %>
-<%# p current_user.friends %>
-
 <%= render 'shared/posts_cards' %>
