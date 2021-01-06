@@ -1,9 +1,7 @@
 <h1 class="columns text-weight-is mt-3 is-centered is-family-code is-size-2 has-text-info-dark"><%= User.find(params[:id]).name %>'s profile page</h1>
 
-<% if current_user != nil %>
-  <% if current_user.id != params[:id].to_i %>
-    <%= link_to 'Add as friend', method: current_user.friend_request(User.find(params[:id])) %>
-  <% end %>
+<% if current_user != nil && current_user.id != params[:id].to_i && !current_user.friends_with?(User.find(params[:id])) %>
+  <%= link_to 'Add as friend', method: current_user.friend_request(User.find(params[:id])) %>
 <% end %>
 
 <%# <% p "friends of current user: " %>
