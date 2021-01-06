@@ -12,6 +12,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+    @comments = @post.comments.all
+    @comment = @post.comments.build
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy

@@ -26,6 +26,17 @@
             <%= simple_format post.message%>
             </p>
           </div>
+          <div class="comments">
+              <div class="comment">
+                  <%= render post.comments %>
+              </div>
+            </div>
+          <div class="field">
+            <div class="control">
+              <%= render "comments/form" %>
+            </div>
+          </div>
+
           <div>
             <footer class="card-footer-item">
               <%= button_to "👍 #{post.likes.count}", post_likes_path(:post_id => post.id), method: :post, :class => "button is-info is-outlined" %>
