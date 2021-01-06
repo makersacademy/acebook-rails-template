@@ -37,7 +37,7 @@ module Helpers
       click_button 'Submit'
     end
 
-    def register_u2__and_create_post
+    def register_u2_and_create_post
       user_two
       click_link 'Timeline'
       click_link 'New Post'
