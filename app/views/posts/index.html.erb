@@ -1,8 +1,9 @@
-<% @posts.each do |post| %>
+
+<% @posts.reverse.each do |post| %>
   <p><%= post.user.fname %> <%= post.user.lname %> </p>
-  <div class = 'time' ><%=post.created_at.to_formatted_s(:long)%></div>
   <p><%= post.message %></p>
   <%= commontator_thread(post) %>
+  <div class = 'time' ><%=post.created_at.to_formatted_s(:short)%></div>
 <% end %>
 
 <%= link_to new_post_path do %>
