@@ -1,5 +1,17 @@
 <h1> Post details </h1>
+<div id="post-container">
+  <%= @post.body %>
+  <br>
 
-<%= @post.body %>
-<br>
-<%= link_to "Edit", edit_post_path(@post) %>
+  <%= link_to "Edit", edit_post_path(@post) %>
+  <br>
+
+  <% if current_user %>
+    <%= render 'comments/form' %>
+  <% end %>
+
+  <br>
+  <div id="comments-container">
+    <%= render 'comments/index' %>
+  </div>
+</div>

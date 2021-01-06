@@ -1,0 +1,4 @@
+<%= form_for([@post, @comment], remote: true) do |f| %>
+  <%= f.text_field :body %>
+  <%= f.submit 'Comment' %>
+<% end %>

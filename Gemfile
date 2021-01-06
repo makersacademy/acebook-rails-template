@@ -53,4 +53,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :test do
   gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
+  gem 'simplecov', require: false
 end
