@@ -1,20 +1,29 @@
-.commontator .comment {
-  &, .body blockquote {
-    border-radius: 25px;
-   border: 3px solid #73AD21;
-   padding: 15px;
-   width: 95%;
-   height: 100px;
-   font-size: 80%;
-    font-weight: small;
-    color: #000;
-  }
+//.commontator .comment {
+//  &, .body blockquote {
+//    border-radius: 25px;
+//   border: 3px solid #73AD21;
+//   padding: 15px;
+//   width: 95%;
+//   height: 100px;
+//   font-size: 80%;
+//    font-weight: small;
+//    color: #000;
+//  }
+
+  .commontator .comment {
+    &, .body blockquote {
+      border-radius: 25px;
+      border: 3px solid #1d72aa;
+      font-size: 90%;
+      font-weight: normal;
+      color: #000;
+    }
 
   & {
     clear: both;
 
     margin: 15px 0;
-    border-color: #DDD;
+    border: 2px solid #1d72aa;
     padding: 0;
 
     font-style: typewriter;
@@ -23,7 +32,7 @@
   .section {
   	clear: both;
 
-    margin: 5px 7px;
+    margin: 5px 7px 0px;
   }
 
   .author {
@@ -74,7 +83,7 @@
     overflow: hidden;
 
     blockquote {
-      border-color: #CCC;
+      border-color: #1d72aa;
       padding: 5px 7px;
 
       background-color: #EEE;

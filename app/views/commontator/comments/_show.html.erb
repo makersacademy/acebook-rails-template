@@ -22,6 +22,7 @@
   </span>
 
   <span id="commontator-comment-<%= comment.id %>-actions" class="actions">
+    <% if Time.now - comment.created_at < 600 %>
     <%=
       link_to(
         t('commontator.comment.actions.edit'),
@@ -31,6 +32,7 @@
         remote: true
       ) if comment.can_be_edited_by?(user)
     %>
+    <% end %>
 
     <% if comment.can_be_deleted_by?(user) %>
       <% is_deleted = comment.is_deleted? %>
@@ -81,7 +83,6 @@
   <span id="commontator-comment-<%= comment.id %>-updated-timestamp" class="timestamp">
     <%= comment.updated_timestamp if comment.is_modified? %>
   </span>
-  <br>
 </div>
 
 <div id="commontator-comment-<%= comment.id %>-children" class="children">
