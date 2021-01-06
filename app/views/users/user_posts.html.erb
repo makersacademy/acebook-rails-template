@@ -3,6 +3,10 @@
 <% if current_user != nil && current_user.id != params[:id].to_i && !current_user.friends_with?(User.find(params[:id])) %>
   <% if !current_user.pending_friends.map{|fr| fr.id}.include?(params[:id].to_i) && !current_user.requested_friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
     <%= link_to 'Add as friend', method: current_user.friend_request(User.find(params[:id])) %>
+  <% elsif current_user.pending_friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
+    <p>You are waiting for <%= User.find(params[:id]).name %> to respond to your friend request</p>
+  <% elsif current_user.requested_friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
+    <p><%= User.find(params[:id]).name %> is waiting for you to respond to their <a href="/friends/requests/">friend request</a></p>
   <% end %>
 <% end %>
 

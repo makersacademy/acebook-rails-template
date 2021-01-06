@@ -2,6 +2,6 @@ behold, all of my friends:
 
 <ul>
   <% @friends_list.each do |friend| %>
-  <li><%= friend.name %></li>
+  <li><a href="/users/<%= friend.id %>/user_posts"><%= friend.name %></a></li>
   <% end %>
 </ul>
