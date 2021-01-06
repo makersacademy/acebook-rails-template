@@ -11,7 +11,7 @@
       <a>
         <% if current_user.liked? comment %>
           <div id="liked-btn"> <%= link_to like_comment_path(comment, 'unlike'), class: "liked-btn",
-                            method: :put, remote: :true do %> Liked </div>
+                            method: :put, remote: :true do %> Unlike </div>
         <% end %>
         <% else %>
           <div> <%= link_to like_comment_path(comment, 'like'), class: "like-btn",
