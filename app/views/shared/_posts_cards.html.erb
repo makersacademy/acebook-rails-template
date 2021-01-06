@@ -12,6 +12,7 @@
  }
 </style>
 <% @posts.sort_by(&:id).reverse.each do |post| %>
+  <% @current_post = post %>
   <div class='container.is-max-desktop '>
     <div class='columns is-fluid is-centered'>
       <div class='column is-5'>

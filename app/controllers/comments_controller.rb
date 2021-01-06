@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
 
   def create
-    @comment = Comment.create(comment_params) { |c| c.user_id = current_user.id }
+    @comment = @current_post.comments.create(comment_params) { |c| c.user_id = current_user.id }
     redirect_to posts_url
   end
 
@@ -65,7 +65,7 @@ class CommentsController < ApplicationController
     @comment = @current_post.comments.find(params[:id])
   end
 
-    def comment_params
-      params.require(:comment).permit(:post_id, :user_id)
-    end
+  def comment_params
+    params.require(:comment).permit(:post_id, :user_id, :body)
+  end
 end

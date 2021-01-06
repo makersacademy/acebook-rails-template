@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  resources :comments
   resources :comment_likes
   devise_for :users
   get 'home/index'
   resources :posts do
     resources :likes
-    resources :comment_likes
+    resources :comments
   end
   root to: 'home#index'
 
