@@ -1,0 +1,13 @@
+$('.liked-btn').on('ajax:success', function(){
+    $(this).parent().parent().find('.like_count')
+    .html('<%= @comment.get_likes.size %> &#128077');
+    $(this).closest('.liked-btn').html('Like');
+    location.reload();
+});
+$('.like-btn').on('ajax:success', function(){
+    $(this).parent().parent().find('.like_count')
+    .html("<%= @comment.get_likes.size %> &#128077");
+    $(this).closest('.like-btn').html('Liked');
+    location.reload();
+});
+

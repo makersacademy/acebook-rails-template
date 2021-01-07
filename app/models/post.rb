@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
-  acts_as_commontable
-
+  has_many :comments, dependent: :destroy
 end

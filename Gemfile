@@ -33,11 +33,9 @@ gem 'travis'
 gem 'devise'
 
 gem 'bulma-rails', '~> 0.9.1'
-
-gem 'commontator'
 gem 'jquery-rails'
-gem 'sassc-rails'
-
+gem 'acts_as_votable'
+gem 'timecop'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  resources :comment_likes
   devise_for :users
   get 'home/index'
   resources :posts do
     resources :likes
-    resources :comment_likes
+    resources :comments
+  end
+
+  resources :comments do
+    member do
+      put 'like' => 'comments#like'
+    end
   end
   root to: 'home#index'
 
@@ -12,8 +17,6 @@ Rails.application.routes.draw do
     resources :posts, only: [:index]
   end
   get 'users/:id/user_posts' => 'users#user_posts', :as => :custom_user_posts
-
-  mount Commontator::Engine => '/commontator'
 
   get 'friends/requests' => 'friends#requests', :as => :friend_requests
 

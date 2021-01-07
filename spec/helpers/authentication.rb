@@ -29,6 +29,15 @@ module Helpers
       click_button 'Log in'
     end
 
+    def make_comment
+      register
+      click_link 'Timeline'
+      click_link 'New Post'
+      fill_in 'Message', with: 'this is a post'
+      click_button 'Submit'
+      fill_in 'comment[body]', with: 'this is a comment'
+      click_button 'Add Comment'
+
     def register_u1_and_create_post
       register
       click_link 'Timeline'

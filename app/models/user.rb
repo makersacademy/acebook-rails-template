@@ -5,7 +5,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :posts
-  has_many :commentlikes
-  acts_as_commontator
+
+  has_many :comments
+  acts_as_voter
+
   has_friendship
+
 end
