@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get 'users/:id/user_posts' => 'users#user_posts', :as => :custom_user_posts
 
   get 'posts/show', to: "posts#show"
+
 end
