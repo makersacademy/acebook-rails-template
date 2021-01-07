@@ -43,7 +43,7 @@ RSpec.feature 'Adding friends', type: :feature do
   scenario 'When another user has sent a friend request, the add friend button is no loger visible on their page and replaced with a message' do
     register_u1_and_create_post
     click_link 'Sign Out'
-    register_u2__and_create_post
+    register_u2_and_create_post
     click_link 'Timeline'
     click_link 'Test123'
     click_link 'Add as friend'
