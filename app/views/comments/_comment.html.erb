@@ -1,7 +1,7 @@
-  <div class="comment">
-  <div class="comment-text">
+  <div class="comment m-2">
+  <div class="comment-text m-2">
     <b><%= link_to comment.user.name, post_path(id: comment.user.id), :class => "post-link" %></b>
-    <p class="comment_body"><%= simple_format(comment.body) %>
+    <p class="comment_body m-2"><%= simple_format(comment.body) %>
     </p>
   </div>
     <div class="parent-likes">

@@ -36,8 +36,6 @@ class CommentsController < ApplicationController
       if current_user.id == @comment.user_id
         if @comment.update(comment_params)
           redirect_to posts_url
-        else
-          render :edit
         end
       else
         redirect_to posts_path

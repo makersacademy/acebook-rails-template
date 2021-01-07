@@ -6,6 +6,27 @@ RSpec.describe CommentsController, type: :controller do
     sign_in(user)
   end
 
+  describe 'GET /' do
+    it 'responds with 200' do
+      get :index
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe 'GET /new ' do
+    it 'responds with 200' do
+      get :new
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe 'GET /show ' do
+    it 'responds with 200' do
+      get :show
+      expect(response).to have_http_status(200)
+    end
+  end
+
   describe "POST /" do
     it 'creates a comment' do
       post1 = Post.create(message: "Hello, world!", user_id: user.id)
@@ -25,7 +46,7 @@ RSpec.describe CommentsController, type: :controller do
 
     it "won't let you edit someone elses comment" do
       post = Post.create(message: "Hello, world!", user_id: user.id)
-      user2 = User.create(name: 'Alex', email: 'test2@test.com', password: 'password1', password_confirmation: 'password1')
+      user2 = User.create(id: 2, name: 'Alex', email: 'test2@test.com', password: 'password1', password_confirmation: 'password1')
       comment = Comment.create(body: "Comment", user_id: user2.id, post_id: post.id)
       params = { post_id: post.id, id: comment.id }
       get :edit, params: params
