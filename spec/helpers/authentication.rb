@@ -37,6 +37,21 @@ module Helpers
       click_button 'Submit'
       fill_in 'comment[body]', with: 'this is a comment'
       click_button 'Add Comment'
+
+    def register_u1_and_create_post
+      register
+      click_link 'Timeline'
+      click_link 'New Post'
+      fill_in 'Message', with: 'Hello, world!'
+      click_button 'Submit'
+    end
+
+    def register_u2_and_create_post
+      user_two
+      click_link 'Timeline'
+      click_link 'New Post'
+      fill_in 'Message', with: 'Hello, world!'
+      click_button 'Submit'
     end
   end
 end

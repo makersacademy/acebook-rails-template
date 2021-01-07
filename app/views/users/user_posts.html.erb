@@ -1,3 +1,18 @@
 <h1 class="columns text-weight-is mt-3 is-centered is-family-code is-size-2 has-text-info-dark"><%= User.find(params[:id]).name %>'s profile page</h1>
 
+<% if current_user != nil && current_user.id != params[:id].to_i && !current_user.friends_with?(User.find(params[:id])) %>
+  <% if !current_user.pending_friends.map{|fr| fr.id}.include?(params[:id].to_i) && !current_user.requested_friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
+    <%= link_to 'Add as friend', method: current_user.friend_request(User.find(params[:id])) %>
+  <% elsif current_user.pending_friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
+    <p>You are waiting for <%= User.find(params[:id]).name %> to respond to your friend request</p>
+  <% elsif current_user.requested_friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
+    <p><%= User.find(params[:id]).name %> is waiting for you to respond to their <a href="/friends/requests/">friend request</a></p>
+  <% end %>
+<% elsif current_user != nil && current_user.friends_with?(User.find(params[:id])) %>
+  <p>You are friends with <%= User.find(params[:id]).name %></p>
+<% end %>
+
+<%= link_to 'Friend List', friends_list_path %>
+
 <%= render 'shared/posts_cards' %>
+

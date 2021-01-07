@@ -63,7 +63,7 @@ RSpec.describe PostsController, type: :controller do
       sign_in(user)
       User.create(id: 2, email: 'testy@testy.com', password: '1234567')
       user2 = User.find_by(email: 'testy@testy.com')
-      allow(User).to receive(:find_by).and_return({ user: {id: 2, email: 'testy@testy.com' }})
+      # allow(User).to receive(:find_by).and_return({ user: {id: 2, email: 'testy@testy.com' }})
       post :create, params: { post: { message: 'Hello, world!', user_id: user.id } }
       post = Post.find_by(message: 'Hello, world!')
       patch :update, params: { id: post.id, post: {message: 'The world is a dark, dark place', user_id: user2.id } }
