@@ -28,5 +28,15 @@ module Helpers
       fill_in 'Password', with: 'Test123'
       click_button 'Log in'
     end
+
+    def make_comment
+      register
+      click_link 'Timeline'
+      click_link 'New Post'
+      fill_in 'Message', with: 'this is a post'
+      click_button 'Submit'
+      fill_in 'comment[body]', with: 'this is a comment'
+      click_button 'Add Comment'
+    end
   end
 end
