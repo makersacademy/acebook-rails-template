@@ -14,7 +14,7 @@
 <div class="column is-centered is-one-third" style="width: 45%; margin-left: 27.5%">
 <% @posts.sort_by(&:id).reverse.each do |post| %>
   <% @current_post = post %>
-    <div class='row' style="min-width: 100%">
+    <div class='row mb-2' style="min-width: 100%; border: 1px solid #3298dc; border-radius: 5px">
       <div class="card is-centered">
 
         <div class='card-header m-2'>
@@ -45,8 +45,8 @@
               </span>
           </footer>
         </div>
-        
-        <div class="comments">
+
+        <div class="comments mt-4">
           <div class="comment">
             <%= render post.comments %>
           </div>

@@ -1,18 +1,19 @@
-<div class="comment m-2">
+<div class="comment ml-6 mr-6 mb-2" style="border: 1px solid #3298dc; border-radius: 20px">
 
   <div class="comment-text m-2"> <!--  This div relates to the poster of the comment -->
-    <b><a href="/users/<%= comment.user_id %>/user_posts"><%= User.find_by(id: comment.user_id).name %></a></b>
-    <p class="comment_body m-2"><%= simple_format(comment.body) %>
-    </p>
+    <h3><a href="/users/<%= comment.user_id %>/user_posts"><%= User.find_by(id: comment.user_id).name %></a> commented:</h3>
+    <div class="comment_body mt-2 ml-2">
+      <%= simple_format(comment.body) %>
+    </div>
   </div>
 
-  <div class="parent-likes"> <!--  This div relates to the like count of the comment -->
+  <div class="parent-likes m-2"> <!--  This div relates to the like count of the comment -->
     <div class="like_count" <%= comment.id %>'>
       <%= comment.get_likes.size %> &#128077
     </div>
   </div>
 
-  <div> <!--  This div relates to the like button of the comment -->
+  <div class="m-2"> <!--  This div relates to the like button of the comment -->
     <% if current_user != nil %>
       <% if current_user.liked? comment %>
         <div id="liked-btn">
@@ -30,8 +31,8 @@
     <% end %>
   </div>
 
-  <div> <!--  This div relates to posting time & the edit/delete buttons of the comment -->
-    <p class='is-size-7 is-family-code has-text-info-dark'>
+  <div class="m-2"> <!--  This div relates to posting time & the edit/delete buttons of the comment -->
+    <p class='is-size-7 is-family-code has-text-info-dark' style="float: right">
       Commented at <%= comment.created_at.strftime("%k:%M:%S on %B %e, %Y") %>
     </p>
     <% if Time.now - comment.created_at < 600 && current_user.id == comment.user_id %>
@@ -44,4 +45,3 @@
   </div>
 
 </div>
-<br>
