@@ -4,7 +4,10 @@
 
 <% @posts.reverse.each do |post| %>
   <p><%= post.user.fname %> <%= post.user.lname %> </p>
+
   <p><%= post.id %> /// <%= simple_format(post.message) %></p>
+<%= commontator_thread(post) %>
+
   <div class = 'time' ><%=post.created_at.to_formatted_s(:short)%></div>
 
 <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>

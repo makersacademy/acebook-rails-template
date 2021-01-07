@@ -31,6 +31,9 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'gravtastic'
+gem 'commontator'
+gem 'jquery-rails'
+gem 'sassc-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
