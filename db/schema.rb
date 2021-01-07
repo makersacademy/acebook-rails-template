@@ -11,9 +11,17 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_01_05_172441) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comment_likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "commontator_comments_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["commontator_comments_id"], name: "index_comment_likes_on_commontator_comments_id"
+    t.index ["user_id"], name: "index_comment_likes_on_user_id"
+  end
 
   create_table "commontator_comments", force: :cascade do |t|
     t.bigint "thread_id", null: false
@@ -99,6 +107,8 @@ ActiveRecord::Schema.define(version: 2021_01_05_172441) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comment_likes", "commontator_comments", column: "commontator_comments_id"
+  add_foreign_key "comment_likes", "users"
   add_foreign_key "commontator_comments", "commontator_comments", column: "parent_id", on_update: :restrict, on_delete: :cascade
   add_foreign_key "commontator_comments", "commontator_threads", column: "thread_id", on_update: :cascade, on_delete: :cascade
   add_foreign_key "commontator_subscriptions", "commontator_threads", column: "thread_id", on_update: :cascade, on_delete: :cascade
