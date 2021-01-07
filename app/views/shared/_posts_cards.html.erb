@@ -14,46 +14,51 @@
 <div class="column is-centered is-one-third" style="width: 45%; margin-left: 27.5%">
 <% @posts.sort_by(&:id).reverse.each do |post| %>
   <% @current_post = post %>
-  <div class='row' style="min-width: 100%">
-        <div class="card is-centered">
-          <div class='card-header m-2'>
-            <div class="card-header-title is-family-code has-text-info">
-              Posted by:&nbsp;<a href="/users/<%= post.user_id %>/user_posts"><%= User.find_by(id: post.user_id).name %></a>
-            </div>
-          </div>
-          <div class="card-content m-2">
-            <p class='is-success is-family-code'>
-              <%= simple_format post.message%>
-            </p>
-          </div>
+    <div class='row' style="min-width: 100%">
+      <div class="card is-centered">
 
-          <div>
-            <footer class="card-footer-item">
-              <%= button_to "👍 #{post.likes.count}", post_likes_path(:post_id => post.id), method: :post, :class => "button is-info is-outlined" %>
-              <span>
-                  <p class='is-size-7 is-family-code has-text-info-dark'>Posted at <%= post.created_at.strftime("%k:%M:%S on %B %e, %Y") %></p>
-                <% if current_user != nil %>
-                    <% if current_user.id == post.user_id %>
-                      <%= link_to 'delete', post, method: :delete, :class => "is-family-code has-text-info", data: { confirm: 'Are you sure?' } %>
-                    <% if Time.now - post.created_at < 600 %>
-                        <%= link_to 'edit', edit_post_path(post), :class => "is-family-code has-text-info" %>
-                       <% end %>
-                    <% end %>
-                  <% end %>
-                </span>
-            </footer>
-          </div>
-          <div class="comments">
-            <div class="comment">
-              <%= render post.comments %>
-            </div>
-          </div>
-          <div class="field">
-            <div class="control">
-              <%= render "comments/form" %>
-            </div>
+        <div class='card-header m-2'>
+          <div class="card-header-title is-family-code has-text-info">
+            Posted by:&nbsp;<a href="/users/<%= post.user_id %>/user_posts"><%= User.find_by(id: post.user_id).name %></a>
           </div>
         </div>
+
+        <div class="card-content m-2">
+          <p class='is-success is-family-code'>
+            <%= simple_format post.message%>
+          </p>
+        </div>
+
+        <div>
+          <footer class="card-footer-item">
+            <%= button_to "👍 #{post.likes.count}", post_likes_path(:post_id => post.id), method: :post, :class => "button is-info is-outlined" %>
+            <span>
+                <p class='is-size-7 is-family-code has-text-info-dark'>Posted at <%= post.created_at.strftime("%k:%M:%S on %B %e, %Y") %></p>
+              <% if current_user != nil %>
+                  <% if current_user.id == post.user_id %>
+                    <%= link_to 'delete', post, method: :delete, :class => "is-family-code has-text-info", data: { confirm: 'Are you sure?' } %>
+                  <% if Time.now - post.created_at < 600 %>
+                      <%= link_to 'edit', edit_post_path(post), :class => "is-family-code has-text-info" %>
+                     <% end %>
+                  <% end %>
+                <% end %>
+              </span>
+          </footer>
+        </div>
+        
+        <div class="comments">
+          <div class="comment">
+            <%= render post.comments %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <%= render "comments/form" %>
+          </div>
+        </div>
+
       </div>
-<% end %>
+    </div>
+  <% end %>
 </div>
