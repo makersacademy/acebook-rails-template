@@ -12,6 +12,7 @@
 <div id="newsfeed" class="column is-two-thirds" style="margin: 0 auto;">
 
 <% @posts.reverse.each do |post| %>
+
   <div id="loop-container">
   <div id="the-post" style="width: 90%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
   <p><b><%= post.user.fname %> <%= post.user.lname %></b></p>
@@ -28,7 +29,7 @@
     <%= button_to ' Like', post_likes_path(post), method: :post, :class => "flame" %>
   <% end %>
   </div><!-- // like button -->
-
+  <%= commontator_thread(post) %>
   <div id="likes-count" style="width: 30px; float: right;">
   <% if post.likes.count != 0 %>
   <%= post.likes.count %> <img src="/flame.png" width="12px" height: auto;>
@@ -41,6 +42,8 @@
 </div><!-- // timestamp -->
 </div><!-- // social-info -->
 </div><!-- // loop container -->
+
+  
 <% end %>
 </div><!--// newsfeed -->
 

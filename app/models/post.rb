@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   after_initialize :init
 
+  acts_as_commontable dependent: :destroy
+
   attr_accessor :user_id
 
   def init
