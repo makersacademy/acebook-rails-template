@@ -35,12 +35,14 @@
     <p class='is-size-7 is-family-code has-text-info-dark' style="float: right">
       Commented at <%= comment.created_at.strftime("%k:%M:%S on %B %e, %Y") %>
     </p>
-    <% if Time.now - comment.created_at < 600 && current_user.id == comment.user_id %>
-      <%= link_to 'Edit comment', edit_post_comment_path(comment.post, comment) %>
-      -
-    <% end %>
-    <% if current_user.id == comment.user_id %>
-      <%= link_to 'Delete comment', post_comment_path(comment.post, comment), method: :delete %>
+    <% if current_user != nil %>
+      <% if Time.now - comment.created_at < 600 && current_user.id == comment.user_id %>
+        <%= link_to 'Edit comment', edit_post_comment_path(comment.post, comment) %>
+        -
+      <% end %>
+      <% if current_user.id == comment.user_id %>
+        <%= link_to 'Delete comment', post_comment_path(comment.post, comment), method: :delete %>
+      <% end %>
     <% end %>
   </div>
 

@@ -32,17 +32,20 @@
         <div>
           <footer class="card-footer-item">
             <%= button_to "👍 #{post.likes.count}", post_likes_path(:post_id => post.id), method: :post, :class => "button is-info is-outlined" %>
-            <span>
-                <p class='is-size-7 is-family-code has-text-info-dark'>Posted at <%= post.created_at.strftime("%k:%M:%S on %B %e, %Y") %></p>
+            <span class="has-text-info">
+              <p class='is-size-7 is-family-code has-text-info-dark'>
+                Posted at <%= post.created_at.strftime("%k:%M:%S on %B %e, %Y") %>
+              </p>
               <% if current_user != nil %>
-                  <% if current_user.id == post.user_id %>
-                    <%= link_to 'delete', post, method: :delete, :class => "is-family-code has-text-info", data: { confirm: 'Are you sure?' } %>
+                <% if current_user.id == post.user_id %>
+                  <%= link_to 'delete', post, method: :delete, :class => "is-family-code has-text-info", data: { confirm: 'Are you sure?' } %>
                   <% if Time.now - post.created_at < 600 %>
-                      <%= link_to 'edit', edit_post_path(post), :class => "is-family-code has-text-info" %>
-                     <% end %>
+                    -
+                    <%= link_to 'edit', edit_post_path(post), :class => "is-family-code has-text-info" %>
                   <% end %>
                 <% end %>
-              </span>
+              <% end %>
+            </span>
           </footer>
         </div>
 

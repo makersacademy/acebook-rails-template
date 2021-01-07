@@ -37,6 +37,7 @@ module Helpers
       click_button 'Submit'
       fill_in 'comment[body]', with: 'this is a comment'
       click_button 'Add Comment'
+    end
 
     def register_u1_and_create_post
       register
