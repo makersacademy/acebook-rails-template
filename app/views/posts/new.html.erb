@@ -1,6 +1,22 @@
 <%= form_for @post do |form| %>
   <%= form.label :message %>
-  <%= form.text_field :message %>
+  <%= form.text_area :message %>
 
   <%= form.submit "Submit" %>
+<% end %>
+
+<% @posts.reverse.each do |post| %>
+  <p><%= post.user.fname %> <%= post.user.lname %> </p>
+  <p><%= post.id %> /// <%= simple_format(post.message) %></p>
+  <div class = 'time' ><%=post.created_at.to_formatted_s(:short)%></div>
+
+<% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+<% if pre_like %>
+  <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+<% else %>
+  <%= button_to 'Like', post_likes_path(post), method: :post %>
+<% end %>
+<% if post.likes.count != 0 %>
+<%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+<% end %>
 <% end %>
