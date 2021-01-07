@@ -1,6 +1,9 @@
-<h2>Log in</h2>
+<!-- SIGN IN PAGE -->
+<div id="login-container" style="margin: 0 auto; margin-top: 150px;">
+<h2 align="center" style="font-size: 1.5em;">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div id="creds" style="width: 90%; padding-left: 20px;">
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -17,10 +20,13 @@
       <%= f.label :remember_me %>
     </div>
   <% end %>
+  </div><!-- // creds -->
 
+<div id="login-controls">
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
 <%= render "devise/shared/links" %>
+</div><!-- // login-controls -->
+</div><!-- // container -->
