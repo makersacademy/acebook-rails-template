@@ -1,23 +1,64 @@
+<div id="satanberg" style="width: 300px; height: 300px; margin: 0 auto; margin-bottom: 20px;">
+  <%= link_to posts_path do %>
+<img align="center" src="/satanberg.jpg" title="New Post">
+<% end %>
+<div id="update-status">
 <%= form_for @post do |form| %>
   <%= form.label :message %>
-  <%= form.text_area :message %>
+  <%= form.text_area :message, :class => "input" %>
 
   <%= form.submit "Submit" %>
 <% end %>
+</div><!-- // update-status -->
+
+</div><!-- // satanberg -->
+<div id="container" class="columns" style="margin: 0 auto; width: 66%;">
+
+<div id="newsfeed" class="column is-two-thirds" style="margin: 0 auto;">
 
 <% @posts.reverse.each do |post| %>
-  <p><%= post.user.fname %> <%= post.user.lname %> </p>
-  <p><%= post.id %> /// <%= simple_format(post.message) %></p>
-  <div class = 'time' ><%=post.created_at.to_formatted_s(:short)%>
-  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  <div id="loop-container">
+  <div id="the-post" style="width: 90%; padding-left: 20px; padding-top: 10px; padding-bottom: 10px;">
+  <p><b><%= post.user.fname %> <%= post.user.lname %></b></p>
+  <p><%= simple_format(post.message) %></p>
+  </div><!--// the post -->
 
-<% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
-<% if pre_like %>
-  <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
-<% else %>
-  <%= button_to 'Like', post_likes_path(post), method: :post %>
+<div id="social-info" style="width: 100%; height: 40px; background-color: #60A5A9; border-radius: 0px 0px 20px 20px; padding-left: 15px;">
+  <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+  <div id="like-controls" style="float: left; width: 15%; height: 40px; padding-left: 5px; padding-top: 5px;">
+  <div id="like-button" style="width: 27%; float: left;>
+  <% if pre_like %>
+    <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete, :class => "button is-small is-danger" %>
+  <% else %>
+    <%= button_to ' Like', post_likes_path(post), method: :post, :class => "flame" %>
+  <% end %>
+  </div><!-- // like button -->
+
+  <div id="likes-count" style="width: 30px; float: right;">
+  <% if post.likes.count != 0 %>
+  <%= post.likes.count %> <img src="/flame.png" width="12px" height: auto;>
+  <% end %>
+  </div><!-- // likes count -->
+
+  </div><!--// like controls -->
+
+<div id="timestamp" style="float: right; height: 40px; color: white; padding-right: 20px; padding-top: 5px;" ><%= post.created_at.to_formatted_s(:acebook_timestamp)%>
+</div><!-- // timestamp -->
+<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+</div><!-- // social-info -->
+</div><!-- // loop container -->
 <% end %>
-<% if post.likes.count != 0 %>
-<%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
-<% end %>
-<% end %>
+</div><!--// newsfeed -->
+
+<div id="ad-column" class="column is-one-third" style="margin: 0 auto;">
+  <div class="ad">
+    <img src="/satanberg.jpg">
+    <h3>Holga wants to meet you!</h3>
+  </div>
+  <div class="ad">
+    <img src="/satanberg.jpg">
+    <h3>How I got abs by eating McDonalds!</h3>
+  </div>
+</div><!-- // ad column -->
+
+</div><!-- // container -->

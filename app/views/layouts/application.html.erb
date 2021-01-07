@@ -3,23 +3,29 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-
+    <meta charset="utf-8">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <p class="navbar-text float-right">
-<% if user_signed_in? %>
-<%= image_tag current_user.gravatar_url, :class => "gravatar" %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-</p>
+    <div id="global-header">
+      <div id="global-logo">
+        <h1>Acebook - The Facebook (The Remix)</h1>
+      </div><!-- // global logo -->
+      <div id="logged_in">
+      <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong> | <%= link_to 'Edit profile', edit_user_registration_path %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+      </div><!-- // logged_in -->
+    </div><!-- // global header -->
+
     <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
