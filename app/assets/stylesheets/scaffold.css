@@ -16,7 +16,9 @@ pre {
   font-size: 11px;
 }
 
-a {
+a,
+a:hover,
+a:visited {
   color: #000;
 }
 

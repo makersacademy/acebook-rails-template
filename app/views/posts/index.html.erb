@@ -1,8 +1,10 @@
-<% if current_user != nil %>
-<%= link_to 'New Post', new_post_path, :class => "ml-6 is-family-code has-text-info-dark is-size-4" %>
-<% end %>
+<div class="button is-info is-rounded p-2" style="width: 8%; margin-left: 46%; text-align: center; border: 1px solid #51a7e0; border-radius: 20px">
+  <% if current_user != nil %>
+    <%= link_to 'New Post', new_post_path, :class => "is-family-code is-size-4", :style => "color: #ffffff" %>
+  <% end %>
+</div>
 <head>
-  </head>
+</head>
 <body>
   <%= render 'shared/posts_cards' %>
 </body>
