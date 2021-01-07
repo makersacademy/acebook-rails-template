@@ -44,6 +44,7 @@
 
 <div id="timestamp" style="float: right; height: 40px; color: white; padding-right: 20px; padding-top: 5px;" ><%= post.created_at.to_formatted_s(:acebook_timestamp)%>
 </div><!-- // timestamp -->
+<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
 </div><!-- // social-info -->
 </div><!-- // loop container -->
 <% end %>

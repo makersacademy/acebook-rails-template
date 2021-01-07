@@ -19,6 +19,7 @@
   <p><%= simple_format(post.message) %></p>
   </div><!--// the post -->
 
+
 <div id="social-info" style="width: 100%; height: 40px; background-color: #60A5A9; border-radius: 0px 0px 20px 20px; padding-left: 15px;">
   <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
   <div id="like-controls" style="float: left; width: 15%; height: 40px; padding-left: 5px; padding-top: 5px;">
@@ -30,6 +31,7 @@
   <% end %>
   </div><!-- // like button -->
   <%= commontator_thread(post) %>
+  <%= link_to 'Burn Post', post, method: :delete, data: { confirm: 'Are you sure?' } %>
   <div id="likes-count" style="width: 30px; float: right;">
   <% if post.likes.count != 0 %>
   <%= post.likes.count %> <img src="/flame.png" width="12px" height: auto;>
