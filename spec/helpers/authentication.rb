@@ -28,5 +28,21 @@ module Helpers
       fill_in 'Password', with: 'Test123'
       click_button 'Log in'
     end
+
+    def register_u1_and_create_post
+      register
+      click_link 'Timeline'
+      click_link 'New Post'
+      fill_in 'Message', with: 'Hello, world!'
+      click_button 'Submit'
+    end
+
+    def register_u2_and_create_post
+      user_two
+      click_link 'Timeline'
+      click_link 'New Post'
+      fill_in 'Message', with: 'Hello, world!'
+      click_button 'Submit'
+    end
   end
 end

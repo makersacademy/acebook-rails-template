@@ -1,0 +1,5 @@
+<% @friend_requests.each do |fr| %>
+<p>You have a friend request from <%= fr.name %></p>
+<%= link_to 'Accept Friend Request', accept_request_path(fr) %>
+<%= link_to 'Decline Friend Request', decline_request_path(fr) %>
+<% end %>

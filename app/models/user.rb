@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :posts
   has_many :commentlikes
   acts_as_commontator
+  has_friendship
 end
