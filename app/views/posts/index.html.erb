@@ -9,6 +9,7 @@
 <%= commontator_thread(post) %>
 
   <div class = 'time' ><%=post.created_at.to_formatted_s(:short)%></div>
+  <%= link_to 'Burn Post', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>

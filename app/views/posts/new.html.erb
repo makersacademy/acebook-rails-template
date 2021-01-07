@@ -8,7 +8,8 @@
 <% @posts.reverse.each do |post| %>
   <p><%= post.user.fname %> <%= post.user.lname %> </p>
   <p><%= post.id %> /// <%= simple_format(post.message) %></p>
-  <div class = 'time' ><%=post.created_at.to_formatted_s(:short)%></div>
+  <div class = 'time' ><%=post.created_at.to_formatted_s(:short)%>
+  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
 
 <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>
