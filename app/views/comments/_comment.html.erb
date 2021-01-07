@@ -1,6 +1,6 @@
   <div class="comment m-2">
   <div class="comment-text m-2">
-    <b><%= link_to comment.user.name, post_path(id: comment.user.id), :class => "post-link" %></b>
+    <b><a href="/users/<%= comment.user_id %>/user_posts"><%= User.find_by(id: comment.user_id).name %></a></b>
     <p class="comment_body m-2"><%= simple_format(comment.body) %>
     </p>
   </div>
