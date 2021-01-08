@@ -15,7 +15,6 @@ feature "Signing Up" do
     fill_in "Password confirmation", with: "Passwrd1"
     click_button "Sign up"
     expect(page).to have_content("Welcome! You have signed up successfully.")
-    expect(current_path).to eq("/posts")
   end
 
   scenario "Signing up with a password that is too long" do
