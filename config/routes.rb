@@ -7,19 +7,12 @@ Rails.application.routes.draw do
 
   get '/:id', to: 'walls#show', as: 'wall'
   post '/walls', to: 'walls#create'
-
-
-
-
+  
   unauthenticated :user do
-    root "pages#home", as: :unauthenticated_root
+    root 'pages#home', as: :unauthenticated_root
   end
-
 
   authenticated :user do
-    # root :to => "posts#index"
-
     root "posts#index", as: :authenticated_root
   end
-
 end
