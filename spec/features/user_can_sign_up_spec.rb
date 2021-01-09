@@ -6,15 +6,14 @@ describe 'Signing Up' do
     click_button 'Sign up'
     expect(page).to have_current_path('/users/sign_up')
   end
-
-  it 'Can sign up with valid details' do
-    visit '/users/sign_up'
-    fill_in 'Email', with: 'mob@example.com'
-    fill_in 'Password', with: 'Passwrd1'
-    fill_in 'Password confirmation', with: 'Passwrd1'
-    click_button 'Sign up'
-    expect(page).to have_content('Welcome! You have signed up successfully.')
-    expect(page).to have_current_path('/posts')
+  
+  scenario "Can sign up with valid details" do
+    visit "/users/sign_up"
+    fill_in "Email", with: "mob@example.com"
+    fill_in "Password", with: "Passwrd1"
+    fill_in "Password confirmation", with: "Passwrd1"
+    click_button "Sign up"
+    expect(page).to have_content("Welcome! You have signed up successfully.")
   end
 
   it 'Signing up with a password that is too long' do

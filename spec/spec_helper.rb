@@ -1,4 +1,5 @@
 require 'helpers/sign_in_helper'
+require 'pry'
 require 'simplecov'
 
 SimpleCov.start 'rails' do
