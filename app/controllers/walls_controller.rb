@@ -1,18 +1,15 @@
 class WallsController < ApplicationController
-
   def show
     session[:wall_id] = params[:id]
     @user = User.find_by(id: params[:id])
-    if Wall.find_by(id: params[:id]) == nil
-      Wall.create(id: params[:id])
-    end
+    Wall.create(id: params[:id]) if Wall.find_by(id: params[:id]).nil?
     @wall = Wall.find_by(id: params[:id])
 
-    if Post.find_by(wall_id: session[:wall_id]) == nil
-      @posts = []
-    else
-      @posts = Post.where(wall_id: session[:wall_id])
-    end
+    @posts = if Post.find_by(wall_id: session[:wall_id]).nil?
+               []
+             else
+               Post.where(wall_id: session[:wall_id])
+             end
     # @posts = Wall.find_by(id: current_user.id)
   end
 
@@ -29,5 +26,4 @@ class WallsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
   end
-
 end
