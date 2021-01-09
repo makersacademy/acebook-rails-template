@@ -1,11 +1,16 @@
 <%= stylesheet_link_tag "application" %>
 <%= flash[:notice] %>
-<h1>Welcome <%=current_user.email%></h1>
+<h1><%=@user.email%></h1>
 
+<%= form_for :post, url: '/walls', method: :post do |form| %>
+  <%= form.label :message %>
+  <%= form.text_field :message %>
 
-<form action='/posts' method='POST'>
-  <input type='text' name='post[message]'>
-  <input type='submit' value='Post'>
-</form>
+  <%= form.submit "Post" %>
+<% end %>
+
+<% @posts.each do |post| %>
+  <p><%= post.message %> by <%= post.user.email %> </p>
+<% end %>
 
 <%= button_to "Log out", destroy_user_session_path, method: :delete  %>

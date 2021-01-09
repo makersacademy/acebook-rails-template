@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    p @post
+    # create post with the message and the wall id and the user id
     redirect_to "/#{current_user.id}"
   end
 

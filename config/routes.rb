@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :posts
 
   get '/:id', to: 'walls#show', as: 'wall'
+  post '/walls', to: 'walls#create'
+
 
 
 
