@@ -1,27 +1,17 @@
 require 'rails_helper'
 
 describe 'signing in' do
-  it 'user signs in with valid email and password' do
-    user = User.create(email: 'testenv@example.com', password: 'testpass')
+  let(:email) { 'testenv@example.com' }
+  let(:password) { 'testpass' }
+  let!(:user) { User.create(email: email, password: password) }
+
+  it 'user signs in with valid email and password and sees their own wall' do
     visit '/'
     click_button 'Log in'
-    fill_in 'Email', with: 'testenv@example.com'
-    fill_in 'Password', with: 'testpass'
+    fill_in 'Email', with: email
+    fill_in 'Password', with: password
     click_button 'Log in'
     expect(page).to have_current_path("/#{user.id}", ignore_query: true)
     expect(page).to have_content 'Signed in successfully.'
-  end
-
-  it 'Signed in user is redirected to posts from home page' do
-    User.create(email: 'testenv@example.com', password: 'testpass')
-    visit '/'
-    click_button 'Log in'
-    fill_in 'Email', with: 'testenv@example.com'
-    fill_in 'Password', with: 'testpass'
-    click_button 'Log in'
-    visit '/'
-    expect(page).to have_current_path '/'
-    expect(page).not_to have_button('Log in')
-    expect(page).not_to have_button('Sign up')
   end
 end

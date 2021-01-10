@@ -1,7 +1,7 @@
 class WallsController < ApplicationController
   def show
     session[:wall_id] = params[:id]
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id]) || User.find_by(id: current_user.id)
     Wall.create(id: params[:id]) if Wall.find_by(id: params[:id]).nil?
     @wall = Wall.find_by(id: params[:id])
 
