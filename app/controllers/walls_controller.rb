@@ -16,19 +16,9 @@ class WallsController < ApplicationController
 
     session[:wall_id] = params[:id]
     @user = User.find_by(id: params[:id])
-    if @user == nil
-      redirect_to "/#{current_user.id}"
-    elsif Wall.find_by(id: params[:id]) == nil
-      Wall.create(id: params[:id])
-    end
-    @wall = Wall.find_by(id: params[:id])
-
-    @posts = if Post.find_by(wall_id: session[:wall_id]).nil?
-               []
-             else
-               Post.where(wall_id: session[:wall_id])
-             end
-    # @posts = Wall.find_by(id: current_user.id)
+    redirect_to "/#{current_user.id}" if @user.nil?
+      
+    @posts = Post.where(wall_id: session[:wall_id])
   end
 
   def create
