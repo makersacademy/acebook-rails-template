@@ -23,18 +23,23 @@ describe 'user can access different pages when logged in or not logged in' do
       click_button 'Log in'
     end
 
-    it 'user who is logged in is shown their wall on the homepage' do
+    it 'user who is logged in is redirected from homepage to their wall' do
       visit '/'
-      expect(page).to have_current_path('/', ignore_query: true)
+      expect(page).to have_current_path("/#{user.id}", ignore_query: true)
       expect(page).to have_content(email)
       expect(page).not_to have_button('Log in')
       expect(page).not_to have_button('Sign up')
     end
 
-    it 'user who is logged in can view a wall' do
+    it 'user can view a wall' do
       visit "/#{user.id}"
       expect(page).to have_current_path "/#{user.id}"
       expect(page).to have_content(user.email)
+    end
+
+    it "redirects to user's wall if trying to access a non-existant wall" do
+      visit "/junk"
+      expect(page).to have_current_path("/#{user.id}", ignore_query: true)
     end
   end
 end
