@@ -11,6 +11,9 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %> by <%= post.user.email %> </p>
+  <form>
+    <input type="submit" name="Delete" value="Delete">
+  </form>
 <% end %>
 
 <%= button_to "Log out", destroy_user_session_path, method: :delete  %>

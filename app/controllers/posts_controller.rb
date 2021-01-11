@@ -13,6 +13,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def destroy
+
+  end
+
   private
 
   def post_params
