@@ -4,6 +4,9 @@ describe 'Deleting a post' do
   let!(:post) do
     Post.create(message: 'Test message', user_id: post_writer.id, wall_id: wall_owner.id)
   end
+  let!(:post_by_wall_owner) do
+    Post.create(message: 'This is my wall,get out', user_id: wall_owner.id, wall_id: wall_owner.id)
+  end
 
   before do
     visit('/users/sign_in')
@@ -22,5 +25,13 @@ describe 'Deleting a post' do
     click_button 'Delete'
     expect(page).to have_current_path "/#{wall_owner.id}", ignore_query: true
     expect(page).not_to have_content(post.message)
+  end
+
+  it 'Can only delete a post that it wrote' do
+    visit("/#{wall_owner.id}")
+    post_by_other_user = find("##{post_by_wall_owner.id}")
+    post_by_current_user = find("##{post.id}")
+    expect(post_by_other_user).not_to have_button 'Delete'
+    expect(post_by_current_user).to have_button 'Delete'
   end
 end
