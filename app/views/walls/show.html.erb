@@ -11,9 +11,11 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %> by <%= post.user.email %> </p>
-  <form>
-    <input type="submit" name="Delete" value="Delete">
-  </form>
+  <%= button_to "Delete", { 
+    :controller => :posts,
+    :action => 'destroy', 
+    :id => post.id 
+    }, :method => :delete %>
 <% end %>
 
 <%= button_to "Log out", destroy_user_session_path, method: :delete  %>

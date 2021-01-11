@@ -1,19 +1,26 @@
-describe "Deleting a post" do
-  let!(:user) {User.create(email: 'test@example.com', password: 'testpass')}
-  let!(:post) {Post.create(message: 'Test message', user_id: user.id, wall_id: user.id)}
+describe 'Deleting a post' do
+  let!(:post_writer) { User.create(email: 'test@example.com', password: 'testpass') }
+  let!(:wall_owner) { User.create(email: 'test2@example.com', password: 'testpass') }
+  let!(:post) do
+    Post.create(message: 'Test message', user_id: post_writer.id, wall_id: wall_owner.id)
+  end
 
   before do
     visit('/users/sign_in')
-    fill_in 'Email' ,with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'Email', with: post_writer.email
+    fill_in 'Password', with: post_writer.password
     click_button 'Log in'
   end
 
-  it "displays a delete button with every post" do
-      visit("/#{user.id}")
-      expect(page).to have_button("Delete")
+  it 'displays a delete button with every post' do
+    visit("/#{wall_owner.id}")
+    expect(page).to have_button('Delete')
   end
 
-  
-
+  it 'can delete a post' do
+    visit("/#{wall_owner.id}")
+    click_button 'Delete'
+    expect(page).to have_current_path "/#{wall_owner.id}", ignore_query: true
+    expect(page).not_to have_content(post.message)
+  end
 end
