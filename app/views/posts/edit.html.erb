@@ -1,0 +1,9 @@
+<%= form_for :post, url: "/posts/#{@post.id}", method: :patch do |form| %>
+  
+  <%= form.label :message %>
+  <%= form.text_field :message %>
+
+  <%= form.submit "Update" %>
+<% end %>
+
+<%= button_to "Log out", destroy_user_session_path, method: :delete  %>

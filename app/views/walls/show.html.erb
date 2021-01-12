@@ -24,6 +24,7 @@
     <%end%>
     </article>
 
+  <%= button_to "Update", "/posts/#{post.id}/edit", method: :get  %>
 <% end %>
 
 <%= button_to "Log out", destroy_user_session_path, method: :delete  %>
