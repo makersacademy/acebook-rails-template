@@ -31,4 +31,18 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(:ok)
     end
   end
+
+  describe 'DELETE /' do
+    it 'deletes a post by the current user' do
+      post = Post.create(message: 'Hello, world!', user_id: @user.id)
+      expect { delete :destroy, params: { id: post.id } }.to change(Post, :count).by(-1)
+      expect(Post.find_by(id: post.id)).to be_nil
+    end
+
+    it 'does not delete a post by a different user' do
+      author = User.create(email: 'testenv2@example.com', password: 'testpass')
+      post_by_author = Post.create(message: 'Hello, world!', user_id: author.id)
+      expect { delete :destroy, params: { id: post_by_author.id } }.to change(Post, :count).by(0)
+    end
+  end
 end

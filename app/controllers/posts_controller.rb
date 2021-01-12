@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    # create post with the message and the wall id and the user id
     redirect_to "/#{current_user.id}"
   end
 
@@ -15,8 +14,8 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to request.referer
+    @post.destroy if @post.user == current_user
+    redirect_to request.referer || '/'
   end
 
   private
