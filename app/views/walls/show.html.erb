@@ -11,6 +11,7 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %> by <%= post.user.email %> </p>
+  <p class="date"><%= post.date %></p>
   <%= button_to "Update", "/posts/#{post.id}/edit", method: :get  %>
 <% end %>
 

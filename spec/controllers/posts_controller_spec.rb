@@ -31,4 +31,10 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(:ok)
     end
   end
+
+  describe ' UPDATE /  ' do
+    it 'Updates a post by its user ' do
+      post = Post.create(message: 'Hello, World', user_id: @user.id)
+    end
+  end
 end
