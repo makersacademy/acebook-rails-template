@@ -70,7 +70,7 @@ workflows:
   #     - test:         # Then run test,
   #         requires:   # Test requires that build passes for it to run.
   #           - build   # Finally, run the build job.
-  heroku_deploy:
+  build_and_test_and_heroku_deploy:
     jobs:
       - build
       - test:
@@ -82,4 +82,4 @@ workflows:
             - test
           filters:
             branches:
-              only: sequential-branch-filter
+              only: master
