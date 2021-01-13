@@ -77,6 +77,6 @@ workflows:
             branches:
               only: master
           post-steps:
-            - run: heroku run rake db:migrate
+            - run: heroku run rake db:migrate --app acebook-peeps2020
             - run: sleep 5
-            - run: heroku restart
+            - run: heroku restart --app acebook-peeps2020
