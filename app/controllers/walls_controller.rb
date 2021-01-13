@@ -1,10 +1,9 @@
 class WallsController < ApplicationController
-  def show   
-
+  def show
     session[:wall_id] = params[:id]
     @user = User.find_by(id: params[:id])
     redirect_to "/#{current_user.id}" if @user.nil?
-      
+
     @posts = Post.where(wall_id: session[:wall_id])
   end
 

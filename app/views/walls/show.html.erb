@@ -10,7 +10,18 @@
 <% end %>
 
 <% @posts.each do |post| %>
+  <article id="<%= post.id %>">
+
+
   <p><%= post.message %> by <%= post.user.email %> </p>
+  <%  if current_user == post.user %>
+  <%= button_to "Delete", {
+    :controller => :posts,
+    :action => 'destroy',
+    :id => post.id
+    }, :method => :delete %>
+    <%end%>
+    </article>
 <% end %>
 
 <%= button_to "Log out", destroy_user_session_path, method: :delete  %>

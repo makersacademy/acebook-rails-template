@@ -38,7 +38,7 @@ describe 'user can access different pages when logged in or not logged in' do
     end
 
     it "redirects to user's wall if trying to access a non-existant wall" do
-      visit "/junk"
+      visit '/junk'
       expect(page).to have_current_path("/#{user.id}", ignore_query: true)
     end
   end
