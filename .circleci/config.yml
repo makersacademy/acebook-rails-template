@@ -76,3 +76,7 @@ workflows:
           filters:
             branches:
               only: master
+          post-steps:
+            - run: heroku run rake db:migrate
+            - run: sleep 5
+            - run: heroku restart
