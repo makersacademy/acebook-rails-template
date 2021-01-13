@@ -1,3 +1,5 @@
+require 'date'
+
 describe 'Posting to own wall' do
   it 'user can post to own wall' do
     user = User.create(email: 'testenv@example.com', password: 'testpass')
@@ -8,6 +10,8 @@ describe 'Posting to own wall' do
     expect(page).to have_current_path("/#{user.id}", ignore_query: true)
     fill_in 'post[message]', with: 'my wall'
     click_button('Post')
+    date = DateTime.now.strftime('%d %b %Y')
     expect(page).to have_content('testenv@example.com')
+    expect(page).to have_content(date)
   end
 end

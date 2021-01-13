@@ -24,6 +24,7 @@
     <%end%>
     </article>
 
+  <p class="date"><%= post.date %></p>
   <%= button_to "Update", "/posts/#{post.id}/edit", method: :get  %>
 <% end %>
 
