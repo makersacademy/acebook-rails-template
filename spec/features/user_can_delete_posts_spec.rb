@@ -1,3 +1,4 @@
+
 describe 'Deleting a post' do
   let!(:post_writer) { User.create(email: 'test@example.com', password: 'testpass') }
   let!(:wall_owner) { User.create(email: 'test2@example.com', password: 'testpass') }

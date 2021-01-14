@@ -18,6 +18,17 @@ class PostsController < ApplicationController
     redirect_to request.referer || '/'
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    # binding.pry
+    @post = Post.find(params[:id])
+    @post.update(post_params) if @post.user == current_user
+    redirect_to "/#{@post.wall_id}"
+  end
+
   private
 
   def post_params
