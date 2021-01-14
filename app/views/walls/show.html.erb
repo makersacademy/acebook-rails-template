@@ -1,31 +1,33 @@
 <%= stylesheet_link_tag "application" %>
 <%= flash[:notice] %>
-<h1><%=@user.email%></h1>
+<h2><%=@user.email%></h2>
 
 <%= form_for :post, url: '/walls', method: :post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
+  <%= form.text_area :message , placeholder: "What's on your mind?"%>
 
   <%= form.submit "Post" %>
 <% end %>
 
 <% @posts.each do |post| %>
-  <article id="<%= post.id %>">
-
-
-  <p><%= post.message %> by <%= post.user.email %> </p>
-
-  <%  if current_user == post.user %>
-  <%= button_to "Delete", {
-    :controller => :posts,
-    :action => 'destroy',
-    :id => post.id
-    }, :method => :delete %>
-    <%= button_to "Update", "/posts/#{post.id}/edit", method: :get  %>
-    <%end%>
-    </article>
+  <article class="post" id="<%= post.id %>">
 
   <p class="date"><%= post.date %></p>
+  <p><%= post.message %> <span class="author">by <%= post.user.email %> </span> </p>
+  
+
+  <%  if current_user == post.user %>
+  <div class="side-by-side-buttons">
+    <%= button_to "Delete", {
+      :controller => :posts,
+      :action => 'destroy',
+      :id => post.id
+      }, :method => :delete %>
+    <%= button_to "Update", "/posts/#{post.id}/edit", method: :get  %>
+  </div>
+  <%end%>
+    </article>
+
+  
 <% end %>
 
 <%= button_to "Log out", destroy_user_session_path, method: :delete  %>

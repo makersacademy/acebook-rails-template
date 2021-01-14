@@ -27,7 +27,7 @@ describe 'updating posts' do
     visit "/#{wall_owner.id}"
     click_button 'Update'
     expect(page).to have_current_path "/posts/#{post.id}/edit", ignore_query: true
-    fill_in 'Message', with: updated_post
+    fill_in 'post[message]', with: updated_post
     click_button 'Update'
     expect(page).to have_current_path "/#{wall_owner.id}", ignore_query: true
     expect(page).not_to have_content(original_post)
