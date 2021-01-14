@@ -23,8 +23,9 @@ class PostsController < ApplicationController
   end
 
   def update
+    # binding.pry
     @post = Post.find(params[:id])
-    @post.update(post_params)
+    @post.update(post_params) if @post.user == current_user
     redirect_to "/#{@post.wall_id}"
   end
 

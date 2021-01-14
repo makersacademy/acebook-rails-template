@@ -32,7 +32,7 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-<<<<<<< HEAD
+
   describe 'DELETE /' do
     it 'deletes a post by the current user' do
       post = Post.create(message: 'Hello, world!', user_id: @user.id)
@@ -44,11 +44,24 @@ RSpec.describe PostsController, type: :controller do
       author = User.create(email: 'testenv2@example.com', password: 'testpass')
       post_by_author = Post.create(message: 'Hello, world!', user_id: author.id)
       expect { delete :destroy, params: { id: post_by_author.id } }.to change(Post, :count).by(0)
-=======
+    end
+  end
   describe ' UPDATE /  ' do
     it 'Updates a post by its user ' do
       post = Post.create(message: 'Hello, World', user_id: @user.id)
->>>>>>> A post can show a date when it was created
+      patch :update, params: { id: post.id,post:{ message: "hello!!!!!"}}
+      expect(Post.find(post.id).message).to eq "hello!!!!!"
+    end
+
+    it "Does not update a post from a different user" do
+      author = User.create(email: 'testenv2@example.com', password: 'testpass')
+      post_by_author = Post.create(message: 'Hello, world!', user_id: author.id)
+      patch :update, params: { id: post_by_author.id,post:{ message: "hello!!!!!"}}
+      expect(Post.find(post_by_author.id).message).to eq "Hello, world!"
     end
   end
+
+
+
+
 end
