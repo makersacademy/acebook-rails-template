@@ -3,6 +3,7 @@ require "simplecov-console"
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter,
   SimpleCov::Formatter::Console,
+  # SimpleCov::Formatter::Console.show_covered = true # show all files in coverage report
 ])
 SimpleCov.start
 
