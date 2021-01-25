@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Will-Helliwell/acebook-on-the-rails.svg?branch=master)](https://github.com/Will-Helliwell/acebook-on-the-rails)
+
 # AceBook
 
 REQUIRED INSTRUCTIONS:
