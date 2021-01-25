@@ -1,0 +1,12 @@
+language: ruby
+
+rvm:
+  - 2.5.0
+
+services:
+  - sqlite3
+
+before_script:
+
+script:
+  - bundle exec rspec
