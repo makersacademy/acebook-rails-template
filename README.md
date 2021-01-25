@@ -26,3 +26,5 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+## Trello Board
+https://trello.com/b/lvw4CKtU/clobs-acebook
