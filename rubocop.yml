@@ -1,0 +1,9 @@
+inherit_from: ../.rubocop.yml
+
+require: rubocop-rspec
+
+Style/Encoding:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 99
