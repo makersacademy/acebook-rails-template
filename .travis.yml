@@ -1,14 +1,16 @@
-language:
- ruby
-
-rvm:
-   - 2.7
-
+language: ruby
+cache:
+  - bundler
+  - yarn
 services:
-    - postgresql
-
+  - postgresql
+before_install:
+  - nvm install --lts
 before_script:
- - psql -c 'CREATE DATABASE pgapp_test;' -U postgres
-
+  - bundle install --jobs=3 --retry=3
+  - yarn
+  - bundle exec rake db:create
+  - bundle exec rake db:schema:load
 script:
- - bundle exec rspec
+  - bundle exec rake test
+  - bundle exec rake test:system
