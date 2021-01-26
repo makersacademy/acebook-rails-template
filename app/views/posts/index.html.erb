@@ -1,7 +1,25 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
-
+<div class="new-post-box">
 <%= link_to new_post_path do %>
   New post
 <% end %>
+</div>
+
+<div class="posts">
+<div class="post-card">
+  <%= fa_icon "user" %>
+  <p class="username">Username</p>
+  <p class="message">Hello World!</p>
+  <p class="timestamp">Tuesday January 27</p>
+  </div>
+<% @posts.each do |post| %>
+  <div class="post-card">
+  <%= fa_icon "user" %>
+  <p class="username"></p>
+  <p class="message"><%= post.message %></p>
+  <p class="timestamp"></p>
+  </div>
+<% end %>
+
+
+
+</div>
