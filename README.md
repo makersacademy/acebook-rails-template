@@ -1,4 +1,6 @@
 # AceBook
+[![Build Status](https://travis-ci.org/PiperS52/acebook-CLOBS.svg?branch=master)](https://travis-ci.org/PiperS52/acebook-CLOBS)
+
 [![Test Coverage](https://api.codeclimate.com/v1/badges/31c88352bd7ca2b144ac/test_coverage)](https://codeclimate.com/github/PiperS52/acebook-CLOBS/test_coverage)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/31c88352bd7ca2b144ac/maintainability)](https://codeclimate.com/github/PiperS52/acebook-CLOBS/maintainability)
@@ -31,5 +33,3 @@ First, clone this repository. Then:
 ```
 ## Trello Board
 https://trello.com/b/lvw4CKtU/clobs-acebook
-
-[![Test Coverage](https://api.codeclimate.com/v1/badges/31c88352bd7ca2b144ac/test_coverage)](https://codeclimate.com/github/PiperS52/acebook-CLOBS/test_coverage)
