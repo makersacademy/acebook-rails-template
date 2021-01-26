@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    redirect_to @user
+    redirect_to @user, notice: "You have successfully signed up to Acebook!"
   end
 
   def show
