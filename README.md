@@ -2,6 +2,9 @@
 
 # AceBook
 
+Link to Trello Board:
+(https://trello.com/b/XiB46v42/acebook-on-the-rails)
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
