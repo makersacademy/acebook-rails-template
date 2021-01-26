@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :posts
   root 'welcome#index'
 
-  get "/users/new", to: "welcome#signup"
-  get "welcome/signup", to: "welcome#signup"
+  get "/users/new", to: "users#new"
+  post "/users", to: "users#index"
 
 end
