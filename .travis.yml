@@ -1,7 +1,7 @@
 language: ruby
 
-env:
-  - DB=postgresql
+rvm:
+ — 2.5.0
 
 script:
   - bundle -v
@@ -11,8 +11,8 @@ script:
   - bundle exec rspec
 
 before_script:
-  - cp config/database.travis.yml config/database.yml
+  - cp config/database.yml
 
-bundler_args: --binstubs=./bundler_stubs
+
  
 
