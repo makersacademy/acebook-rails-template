@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   resources :posts
   # testing for heroku
-  root 'welcome#index'
+  root 'posts#index'
 end
