@@ -20,4 +20,7 @@
 /node_modules
 /yarn-error.log
 
+# Ignore test coverage files
+/coverage
+
 .byebug_history
