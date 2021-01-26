@@ -20,4 +20,4 @@ after_script:
 deploy:
   provider: heroku
   api_key:
-    secure: 92d436b2-a87f-4853-bd6f-71f6252107f8
+    secure: "92d436b2-a87f-4853-bd6f-71f6252107f8"
