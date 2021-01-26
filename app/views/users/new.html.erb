@@ -1,6 +1,6 @@
 <h1> New User </h1>
 
-<%= form_with(model: @user) do |form| %>
+<%= form_with(model: @user, local: true) do |form| %>
   <div>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
