@@ -1,2 +1,10 @@
-<h1>Hello, Rails, this is the Users!</h1>
+<h1>Users</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= user.name %>
+    </li>
+<% end %>
+</ul>
 
