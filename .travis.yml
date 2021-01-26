@@ -1,0 +1,17 @@
+language: ruby
+ruby:
+  - 2.7.0p0
+cache: npm
+install:
+  - npm ci
+script:
+  - npm test
+  - npm run build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: build
+  on:
+    branch: master
