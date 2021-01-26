@@ -4,8 +4,13 @@ rvm:
   - 2.5
 
 services:
+  - postgresql
 
 before_script:
+  - bundle install
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
 
 script:
-  - bundle exec rspec
+  - bundle exec rake test
+  - bundle exec rake test:system
