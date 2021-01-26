@@ -1,3 +1,12 @@
+require 'simplecov'
+require "simplecov-console"
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  # SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::Console,
+  # SimpleCov::Formatter::Console.show_covered = true # show all files in coverage report
+])
+SimpleCov.start 'rails'
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
