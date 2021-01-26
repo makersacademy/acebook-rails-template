@@ -2,8 +2,7 @@
 
 # AceBook
 
-Link to Trello Board:
-(https://trello.com/b/XiB46v42/acebook-on-the-rails)
+[Click here for Trello Board](https://trello.com/b/XiB46v42/acebook-on-the-rails)
 
 REQUIRED INSTRUCTIONS:
 
@@ -28,4 +27,11 @@ First, clone this repository. Then:
 
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
+```
+
+### Getting Heroku Running
+Do the following after every commit on the master branch.
+```
+git push heroku master
+heroku run rails db:migrate
 ```
