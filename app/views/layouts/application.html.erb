@@ -9,6 +9,13 @@
   </head>
 
   <body>
+    <% if current_user %>
+      Logged in as: <%= current_user.email %>
+      <%= link_to "Log Out", sessions_path(session.id), method: "delete" %>
+    <% else %>
+    <%= link_to "Sign Up", new_user_path %> or
+    <%= link_to "Log In", new_session_path %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
