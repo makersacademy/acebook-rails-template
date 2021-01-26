@@ -3,6 +3,8 @@ language: ruby
 rvm:
   - 2.5.0
 
+dist: trusty
+
 services:
   - postgresql
 
