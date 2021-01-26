@@ -3,6 +3,9 @@
 Jaanis' Trello Board:
 https://trello.com/b/mU9Va6vg/team
 
+Jaanis' Code Climate Link:
+https://codeclimate.com/github/Aracho1/acebook-JAANIS
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
@@ -27,3 +30,5 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+## 
