@@ -23,6 +23,18 @@ Style/FrozenStringLiteralComment:
 
 Layout/CommentIndentation:
   Enabled: false
-  
+
 RSpec/Capybara/FeatureMethods: 
+  Enabled: false
+
+Style/Documentation: 
+  Enabled: false
+
+Style/GlobalStdStream:
+
+    Enabled: false
+Style/ExpandPathArguments:
+  Enabled: false
+
+Style/SymbolArray:
   Enabled: false
