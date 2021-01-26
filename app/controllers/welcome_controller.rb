@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
   def index
   end
 
-  def sign_up
+  def signup
   end
 
 end
