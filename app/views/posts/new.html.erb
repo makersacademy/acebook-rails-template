@@ -1,6 +1,8 @@
+<div class="new-message-page">
 <%= form_for @post do |form| %>
-  <%= form.label :message %>
+  <%= form.label :"Create post" %>
   <%= form.text_field :message %>
 
   <%= form.submit "Submit" %>
 <% end %>
+</div>

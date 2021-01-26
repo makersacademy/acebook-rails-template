@@ -40,11 +40,14 @@ body {
 
 }
 
-.post-card {
+.post-card-wrapper {
   background-color: white;
   width: 800px;
   border-radius: 10px;
   margin: 20px;
+}
+
+.post-card-content {
   padding: 10px;
 }
 
@@ -57,7 +60,8 @@ body {
 }
 
 .vertical-menu a:hover {
-  background-color: rgb(255, 255, 255); /* Dark grey background on mouse-over */
+  background-color: rgb(255, 255, 255); 
+  cursor: pointer;
 }
 
 
@@ -100,6 +104,22 @@ body {
   float: right;
 }
 
+.username {
+  text-align: center;
+  display: inline-block;
+}
 .message {
   text-align: center;
+}
+
+.new-message-page {
+  margin: 30px;
+}
+
+.new-post-box {
+  text-align: center;
+}
+
+p {
+  margin: 0;
 }
