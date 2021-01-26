@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :posts
-  # testing for heroku
-  root 'posts#index'
+  root 'welcome#index'
+
+  get "/users/new", to: "welcome#sign_up"
+  
 end
