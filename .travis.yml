@@ -6,10 +6,8 @@ rvm:
 services:
   - postgresql
 
-before_script:
-  - bundle install
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-
 script:
-  - bundle exec rake test
+  - bundle install
+  - bundle exec bin/rails db:create
+  - bundle exec bin/rails db:migrate
+  - bundle exec rspec
