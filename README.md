@@ -29,3 +29,46 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+
+
+## How to add the date to the posts
+
+Check the table already created in the file db/schema.rb
+
+```bash
+create_table "posts", force: :cascade do |t|
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+```
+
+**Add the date to the index.html.erb**
+
+Open the file app/views/posts/index.html.erb and add  'created_at'
+
+```bash
+  <p> <%= post.created_at%> </p> 
+```
+**To change the format**
+```bash
+# config/locales/pirate.yml
+pirate:
+  time:
+    formats:
+      short: '%d.%m.%Y'
+
+```
+Update the file index.html.erb
+
+```bash
+  <p>Added at <%= l post.created_at, format: :short%> </p> 
+```
+**To view data in the table**
+
+```bash
+> rails db
+> dt
+> SELECT * FROM posts;
+```
+
