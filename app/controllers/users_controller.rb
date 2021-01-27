@@ -1,14 +1,23 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new
+    @user = User.new()
   end
 
+
   def create
-    @user = User.create(user_params)
-    redirect_to users_url
+    # @user = User.create(user_params)
+    # # redirect_to users_url
+
+ 
   end
 
   def index
+    @user = User.create(user_params)
+    # if @user.save
+      redirect_to posts_url
+    #  else
+  
+    #  end
   end
 
   private
