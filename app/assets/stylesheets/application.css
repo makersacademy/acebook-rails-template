@@ -12,11 +12,10 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
  */
 
  @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
-@import "font-awesome";
+
 
 body {
   background-color: rgb(229, 231, 235);
@@ -60,7 +59,7 @@ body {
 }
 
 .vertical-menu a:hover {
-  background-color: rgb(255, 255, 255); 
+  background-color: rgb(255, 255, 255);
   cursor: pointer;
 }
 
@@ -75,7 +74,7 @@ body {
   float: left;
   padding: 20px;
   font-family: 'Hammersmith One', sans-serif;
-  
+
 }
 
 .horizontal-menu ul {
