@@ -1,6 +1,21 @@
+
 <div class="new-post-box">
+<% @posts.each do |post| %>
+  <p><%= post.message %></p>
+<% end %>
+
+<div>
+
+  <%= link_to new_user_path do %>
+    Sign up please!
+  <% end %>
+
+</div>
+
+<div>
+
 <%= link_to new_post_path do %>
-  New post
+  Write a New post
 <% end %>
 </div>
 
@@ -25,7 +40,6 @@
   </div>
   </div>
 <% end %>
-
 
 
 </div>
