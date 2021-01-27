@@ -5,19 +5,11 @@ class UsersController < ApplicationController
 
 
   def create
-    # @user = User.create(user_params)
-    # # redirect_to users_url
-
- 
   end
 
   def index
     @user = User.create(user_params)
-    # if @user.save
       redirect_to posts_url
-    #  else
-  
-    #  end
   end
 
   private
