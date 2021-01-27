@@ -6,6 +6,7 @@ RSpec.describe "Timeline", type: :feature do
     fill_in 'user[name]', with: "Tim"
     fill_in "user[email]", with: "tim@tim.com"
     fill_in "user[password]", with: "secret"
+    fill_in 'user[password_confirmation]', with: "secret"
     click_button "Create User"
     visit "/posts"
     click_link "New post"

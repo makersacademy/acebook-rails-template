@@ -2,7 +2,7 @@
 
 <%= form_with(model: @user, local: true) do |form| %>
   <div>
-    <%= form.label :name %><br>
+    <%= form.label :name %>
     <%= form.text_field :name %>
     <% @user.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
@@ -10,7 +10,7 @@
   </div>
 
   <div>
-    <%= form.label :email %><br>
+    <%= form.label :email %>
     <%= form.email_field :email %>
     <% @user.errors.full_messages_for(:email).each do |message| %>
       <div><%= message %></div>
@@ -18,9 +18,17 @@
   <div>
 
   <div>
-    <%= form.label :password %><br>
+    <%= form.label :password %>
     <%= form.password_field :password %>
     <% @user.errors.full_messages_for(:password).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  <div>
+
+   <div>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+    <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
       <div><%= message %></div>
     <% end %>
   <div>
