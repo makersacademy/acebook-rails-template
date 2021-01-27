@@ -4,28 +4,19 @@
     <title>Acebook</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-  <div class = "header">
-  <div class="horizontal-menu">
-    <ul>
-      <li id="logo">Acebook</li>
-      <li><a href="#news">Sign In</a></li>
-      <li><a href="#contact">Sign Up</a></li>
-      <li><a class="active" href="#about">feature</a></li>
-    </ul>
-</div>
-  <div class="vertical-menu">
-  <a href="#">feature1</a>
-  <a href="#">feature2</a>
-  <a href="#">feature3</a>
-  <a href="#">feature4</a>
-  </div>
-  </div>
+    <header class="d-flex flex-row flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm">
+      <div class="d-flex flex-column my-0 me-md-auto">
+        <p class="h1 ">acebook</p>
+        <p class="h6 align-self-end">JANNIS</p>
+      </div>
+      <a class="btn btn-outline-primary" href="#">Sign up</a>
+    </header>
     <%= yield %>
   </body>
 </html>

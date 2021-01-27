@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
 
 body {
@@ -22,17 +22,17 @@ body {
   font-family: 'Hammersmith One', sans-serif;
 }
 
-.header {
-  position: relative;
-  top: 0;
-  width: 100%;
+header {
+  background-color: #3C5898;
+  color: white;
 }
 
 .posts {
   float: left;
   margin: 50px;
 }
- .vertical-menu {
+
+.vertical-menu {
   width: 200px;
   font-family: 'Hammersmith One', sans-serif;
   float: left;
@@ -52,10 +52,14 @@ body {
 
 .vertical-menu a {
   background-color: none;
-  color: black; /* Black text color */
-  display: block; /* Make the links appear below each other */
-  padding: 12px; /* Add some padding */
-  text-decoration: none; /* Remove underline from links */
+  color: black;
+  /* Black text color */
+  display: block;
+  /* Make the links appear below each other */
+  padding: 12px;
+  /* Add some padding */
+  text-decoration: none;
+  /* Remove underline from links */
 }
 
 .vertical-menu a:hover {
@@ -75,15 +79,6 @@ body {
   padding: 20px;
   font-family: 'Hammersmith One', sans-serif;
 
-}
-
-.horizontal-menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #3C5898;
-  color: white;
 }
 
 
@@ -107,6 +102,7 @@ body {
   text-align: center;
   display: inline-block;
 }
+
 .message {
   text-align: center;
 }
@@ -121,4 +117,34 @@ body {
 
 p {
   margin: 0;
+}
+
+.profile-img {
+  width: 50px;
+}
+
+.signup-box {
+  border-radius: 10px;
+  border: #3C5898 2px solid;
+  padding: 1em 2em;
+}
+
+label {
+  padding: 5px 10px;
+}
+
+input[type=text] {
+  border-radius: 5px;
+  border: #3C5898 2px solid;
+  background-color: white;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 1em;
+}
+
+input[type=submit] {
+  border-radius: 5px;
+  border: #3C5898 2px solid;
+  background-color: #3C5898;
+  color: white;
 }
