@@ -4,12 +4,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    #change line below once user login working to User.find_by:
+    @user = User.create(username: "Natasha", email: "natasha@acebook.com", password: "bob")
+    @post = @user.posts.create(post_params)
     redirect_to posts_url
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order('created_at DESC')
   end
 
   private
