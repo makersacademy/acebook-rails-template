@@ -3,6 +3,10 @@ by JAANIS
 
 1. [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
+Jaanis' Code Climate Link:
+https://codeclimate.com/github/Aracho1/acebook-JAANIS
+
+REQUIRED INSTRUCTIONS:
 
 2. [The card wall is here.](https://trello.com/b/mU9Va6vg/team)
 
@@ -22,6 +26,8 @@ First, clone this repository. Then:
 > bin/rails server # Start the server at localhost:3000
 ```
 
+## 
+=======
 ### User Stories
 
 **User Sign Up:**
@@ -83,3 +89,4 @@ class Post < A....
 end
 
 ===============================
+
