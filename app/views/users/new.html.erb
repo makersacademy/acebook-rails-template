@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign up</title>
+  </head>
+  <body>
+    <div class='form' id='sign-up-form'>
+      <%= form_for @user do |form| %>
+        <%= form.label :username %>
+        <%= form.text_field :username %>
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+        <%= form.label :password %>
+        <%= form.text_field :password %>
+
+        <%= form.submit "Sign Me Up!" %>
+      <% end %>
+    </div>
+
+  </body>
+</html>
+
+<!-- -> button "Sign Up" on homepage which links to users/new page - index.html.erb
+-> users/new will be a form containing: -
+  - email address
+  - username
+  - password
+  - Sign Me Up! -->

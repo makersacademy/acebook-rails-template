@@ -13,3 +13,112 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+
+body {
+  background-color: rgb(229, 231, 235);
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+.header {
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+
+.posts {
+  float: left;
+  margin: 50px;
+}
+ .vertical-menu {
+  width: 200px;
+  font-family: 'Hammersmith One', sans-serif;
+  float: left;
+
+}
+
+.post-card-wrapper {
+  background-color: white;
+  width: 800px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.post-card-content {
+  padding: 10px;
+}
+
+.vertical-menu a {
+  background-color: none;
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+
+.horizontal-menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.horizontal-menu li {
+  list-style-type: none;
+  float: left;
+  padding: 20px;
+  font-family: 'Hammersmith One', sans-serif;
+
+}
+
+.horizontal-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #3C5898;
+  color: white;
+}
+
+
+
+
+#logo {
+  font-size: 2vw;
+}
+
+.username {
+  display: inline;
+}
+
+.timestamp {
+  font-size: 10px;
+  color: grey;
+  float: right;
+}
+
+.username {
+  text-align: center;
+  display: inline-block;
+}
+.message {
+  text-align: center;
+}
+
+.new-message-page {
+  margin: 30px;
+}
+
+.new-post-box {
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
