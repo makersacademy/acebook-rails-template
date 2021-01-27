@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :authorize, except: :index
+
   def new
     @post = Post.new
   end
