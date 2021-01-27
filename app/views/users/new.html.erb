@@ -25,6 +25,14 @@
     <% end %>
   <div>
 
+   <div>
+    <%= form.label :password_confirmation %><br>
+    <%= form.password_field :password_confirmation %>
+    <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  <div>
+
   <div>
     <%= form.submit%>
   </div>
