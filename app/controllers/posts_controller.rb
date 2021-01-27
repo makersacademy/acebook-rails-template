@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
+    # @user_id = session[:user_id]
   end
 
   def create
@@ -15,6 +16,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, 'user_id')
   end
 end
