@@ -3,20 +3,45 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   </head>
 
   <body>
+  
     <header class="d-flex flex-row flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm">
-      <div class="d-flex flex-column my-0 me-md-auto">
-        <p class="h1 ">acebook</p>
-        <p class="h6 align-self-end">JANNIS</p>
+      <div class="d-flex flex-column my-0 title">
+        <p class="h1 logo">acebook</p>
+        <p class="align-self-end slogan">J A N N I S</p>
       </div>
-      <a class="btn btn-outline-primary" href="#">Sign up</a>
+      <a class="button" href="#">Log in</a>
     </header>
+
     <%= yield %>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p> acebook J A N N I S &copy; 2021</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+
+    <!-- Bootstrap scripts-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
+    </script>
+
   </body>
 </html>

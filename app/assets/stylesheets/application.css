@@ -18,7 +18,7 @@
 
 
 body {
-  background-color: rgb(229, 231, 235);
+  background-image: radial-gradient(circle 1224px at 10.6% 8.8%, rgba(255, 255, 255, 1) 0%, rgba(153, 202, 251, 1) 100.2%);
   font-family: 'Hammersmith One', sans-serif;
 }
 
@@ -27,17 +27,53 @@ header {
   color: white;
 }
 
-.posts {
-  float: left;
-  margin: 50px;
+.title {
+  margin-right: auto !important;
 }
 
-.vertical-menu {
-  width: 200px;
-  font-family: 'Hammersmith One', sans-serif;
-  float: left;
 
+.post {
+  border-radius: 10px;
+  color: white;
+  border: #3C5898 2px solid;
+  margin: 1em auto;
+  background-color: #3C5898;
+  min-width: 300px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
+
+.post:hover {
+  background-color: white;
+  color: #3C5898 !important;
+}
+
+.post-img {
+  display: flex;
+  align-self: flex-start;
+  margin: 0.5em 1em;
+}
+
+.post-content {
+  width: 100%;
+  margin: 0.5em 1em;
+}
+
+.post-text {
+  margin: 0 0 1em 0 !important;
+  text-align: justify;
+}
+
+.post-date {
+  color: gray;
+  font-style: italic;
+}
+
 
 .post-card-wrapper {
   background-color: white;
@@ -50,42 +86,8 @@ header {
   padding: 10px;
 }
 
-.vertical-menu a {
-  background-color: none;
-  color: black;
-  /* Black text color */
-  display: block;
-  /* Make the links appear below each other */
-  padding: 12px;
-  /* Add some padding */
-  text-decoration: none;
-  /* Remove underline from links */
-}
-
-.vertical-menu a:hover {
-  background-color: rgb(255, 255, 255);
-  cursor: pointer;
-}
-
-
-.horizontal-menu a {
-  text-decoration: none;
-  color: white;
-}
-
-.horizontal-menu li {
-  list-style-type: none;
-  float: left;
-  padding: 20px;
-  font-family: 'Hammersmith One', sans-serif;
-
-}
-
-
-
-
-#logo {
-  font-size: 2vw;
+.logo {
+  font-weight: bolder !important;
 }
 
 .username {
@@ -126,20 +128,34 @@ p {
 .signup-box {
   border-radius: 10px;
   border: #3C5898 2px solid;
-  padding: 1em 2em;
+  background-color: white;
+  padding: 2em 3em;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 label {
   padding: 5px 10px;
 }
 
-input[type=text] {
+input[type=text],
+input[type=password] {
   border-radius: 5px;
   border: #3C5898 2px solid;
-  background-color: white;
   color: white;
   padding: 5px 10px;
-  margin: 0 1em;
+  background: #3C5898;
+  font-weight: bold;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+  background-color: white;
+  color: #3C5898;
+  outline: none;
 }
 
 input[type=submit] {
@@ -147,4 +163,52 @@ input[type=submit] {
   border: #3C5898 2px solid;
   background-color: #3C5898;
   color: white;
+  max-width: 200px;
+  margin: auto;
+  padding: 0.5em 1em;
+  font-weight: bold;
+}
+
+.slogan {
+  line-height: 0;
+  font-weight: lighter;
+}
+
+h1 {
+  font-size: calc(1.375rem + 1.5vw) !important;
+}
+
+h2 {
+  color: #3C5898;
+  font-size: calc(1.325rem + .9vw) !important;
+}
+
+h3 {
+  color: gray;
+}
+
+.button {
+  color: white;
+  border-color: white;
+  font-weight: 400;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: w;
+  border: 1px solid white;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+}
+
+.button:hover {
+  color: #3C5898;
+  background-color: white;
+
+}
+
+@media only screen and (max-width: 600px) {
+  .signup-box {
+    margin: auto !important;
+  }
 }
