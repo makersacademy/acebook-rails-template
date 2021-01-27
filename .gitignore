@@ -23,3 +23,6 @@
 .byebug_history
 # Do not commit generated files in the coverage directory.
 coverage/*
+
+# ignore heroku file
+/acebook-jaanis*

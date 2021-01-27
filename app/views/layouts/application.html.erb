@@ -6,9 +6,26 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
+  <div class = "header">
+  <div class="horizontal-menu">
+    <ul>
+      <li id="logo">Acebook</li>
+      <li><a href="#news">Sign In</a></li>
+      <li><a href="#contact">Sign Up</a></li>
+      <li><a class="active" href="#about">feature</a></li>
+    </ul>
+</div>
+  <div class="vertical-menu">
+  <a href="#">feature1</a>
+  <a href="#">feature2</a>
+  <a href="#">feature3</a>
+  <a href="#">feature4</a>
+  </div>
+  </div>
     <%= yield %>
   </body>
 </html>
