@@ -1,0 +1,13 @@
+<div>
+  <h1> Sign-up Form </h1>
+  <div id="signup_form">
+      <%= form_for @user, :method => :post, params: { user: { active: true}} do |form| %>
+
+      <%= form.text_field :username %>
+      <%= form.text_field :email %>
+      <%= form.text_field :password %>
+      <%= form.submit "Create Account" %>
+    <% end %>
+  </div>
+
+</div>
