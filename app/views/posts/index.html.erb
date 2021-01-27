@@ -1,11 +1,5 @@
 
 <div class="new-post-box">
-<% @posts.each do |post| %>
-  <div>
-    <p><%= post.message %></p>
-    <p><%= post.created_at.strftime("%m/%d/%Y/%H/%M/%S") %></p>
-  </div>
-<% end %>
 
 <div>
 
@@ -23,23 +17,15 @@
 </div>
 
 <div class="posts">
-<div class="post-card-wrapper">
-<div class="post-card-content">
-  <%= image_tag("user", width: 50) %>
-  <p class="username">Username</p>
-  <hr>
-  <p class="message">Hello World!</p>
-  <p class="timestamp">14:20 Tuesday January 27</p>
-  </div>
-  </div>
+
 <% @posts.each do |post| %>
   <div class="post-card-wrapper">
   <div class="post-card-content">
   <%= image_tag("user", width: 50) %>
-  <p class="username"></p>
+  <p class="username"><%=post.user.username%></p>
   <hr>
   <p class="message"><%= post.message %></p>
-  <p class="timestamp"></p>
+  <p class="timestamp"><%= post.created_at.strftime("%H:%M %A %B %-d") %></p>
   </div>
   </div>
 <% end %>
