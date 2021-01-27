@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 TIMESTAMP = Time.now
-FORMATTED_TIME = TIMESTAMP.strftime("%d %b %Y %k:%M")
+FORMATTED_TIME = TIMESTAMP.strftime("%k:%M %d.%m.%y")
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do

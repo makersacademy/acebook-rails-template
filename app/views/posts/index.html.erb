@@ -2,7 +2,7 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <p>Added at <%= l post.created_at, format: :short%> </p> 
+  <p>Added at <%= l post.created_at %> </p> 
 <% end %>
 
 <%= link_to new_post_path do %>
