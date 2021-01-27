@@ -1,7 +1,10 @@
 
 <div class="new-post-box">
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <div>
+    <p><%= post.message %></p>
+    <p><%= post.created_at.strftime("%m/%d/%Y/%H/%M/%S") %></p>
+  </div>
 <% end %>
 
 <div>
