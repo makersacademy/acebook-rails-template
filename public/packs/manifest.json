@@ -1,0 +1,24 @@
+{
+  "entrypoints": {
+    "hello_react": {
+      "js": [
+        "/packs/js/hello_react-688de436ff04be03adbc.js"
+      ],
+      "js.map": [
+        "/packs/js/hello_react-688de436ff04be03adbc.js.map"
+      ]
+    },
+    "hello-world-bundle": {
+      "js": [
+        "/packs/js/hello-world-bundle-50328b17bd745dbd81f5.js"
+      ],
+      "js.map": [
+        "/packs/js/hello-world-bundle-50328b17bd745dbd81f5.js.map"
+      ]
+    }
+  },
+  "hello-world-bundle.js": "/packs/js/hello-world-bundle-50328b17bd745dbd81f5.js",
+  "hello-world-bundle.js.map": "/packs/js/hello-world-bundle-50328b17bd745dbd81f5.js.map",
+  "hello_react.js": "/packs/js/hello_react-688de436ff04be03adbc.js",
+  "hello_react.js.map": "/packs/js/hello_react-688de436ff04be03adbc.js.map"
+}

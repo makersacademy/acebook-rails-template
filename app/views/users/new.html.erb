@@ -37,7 +37,7 @@
     </div>
     <div class="col-11 col-md-6 col-lg-4 signup-box align-self-start">
       <h2 class="text-center">Sign up</h2>
-      <form>
+      <form id="user-sign-up-form">
         <%= form_for @user do |form| %>
           <div class="m-3 d-flex flex-column">
             <%= form.label :username %>
@@ -46,7 +46,8 @@
           </div>
           <div class="m-3 d-flex flex-column">
             <%= form.label :email %>
-            <%= form.text_field :email %>
+            <%= form.email_field :email %>
+            <span class="error" aria-live="polite"></span>
             <span id="emailHelp" class="form-text align-self-end">We'll never share your email with anyone else.</span>
           </div>
           <div class="m-3 d-flex flex-column">
