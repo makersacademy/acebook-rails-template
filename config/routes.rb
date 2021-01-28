@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :posts
   # testing for heroku
   root 'welcome#index'
+
+  post "/posts/create", to: "posts#create"
 end
