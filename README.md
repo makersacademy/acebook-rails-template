@@ -90,3 +90,8 @@ end
 
 ===============================
 
+**Reminders**
+
+migration files for drop tables will need to be deleted once everyone (including Heroku) has run db:migrate
+
+a line of code in the create posts method in the posts controller will need to be changed once we can store user details. At the moment a new user is created when a new post is created - obvs not ideal! 
