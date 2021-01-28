@@ -142,7 +142,8 @@ label {
 }
 
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type=email] {
   border-radius: 5px;
   border: #3C5898 2px solid;
   color: white;
@@ -152,7 +153,8 @@ input[type=password] {
 }
 
 input[type=text]:focus,
-input[type=password]:focus {
+input[type=password]:focus,
+input[type=email]:focus {
   background-color: white;
   color: #3C5898;
   outline: none;
