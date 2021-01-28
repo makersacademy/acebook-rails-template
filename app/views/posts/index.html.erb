@@ -2,6 +2,6 @@
   <p><%= post.message %></p>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<%= javascript_pack_tag 'application' %>
+
+<%= react_component("MyComponent") %>
