@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :login_required, :only => [:index]
+  # skip_before_action :login_required, :only => [:index]
 
   def new
     check_for_user

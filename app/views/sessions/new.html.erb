@@ -1,6 +1,6 @@
 <h1> Sign in </h1>
 
-<%= form_with(local: true) do |form| %>
+<%= form_for(:session, url: sessions_url, local: true) do |form| %>
 
   <div>
     <%= form.label :email %>
