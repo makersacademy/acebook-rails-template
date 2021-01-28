@@ -9,12 +9,14 @@ class PostsController < ApplicationController
   def create
     check_for_user
     @post = Post.create(post_params)
+    p session[:user_id]
     redirect_to posts_url
   end
 
   def index
     check_for_user
     @posts = Post.all
+    p session[:user_id]
   end
 
   private

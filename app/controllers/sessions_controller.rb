@@ -6,17 +6,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    p "hi there"
     user = User.find_by_email(params[:session][:email])
-   p user.authenticate(params[:session][:password])
     if user && user.authenticate(params[:session][:password])
-      
       session[:user_id] = user.id
-      p "hi there"
-      p session[:user_id]
       redirect_to posts_url, :notice => "Welcome back, #{user.email}"
     else
-      p "not here"
       flash.now.alert = "Invalid email or password"
       render "new"
     end

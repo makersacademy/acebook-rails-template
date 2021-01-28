@@ -1,6 +1,7 @@
+
 <% if logged_in? %>
-  Hiya, <%= current_user.name %>! You're looking mighty fine today!
-  <%=link_to "Log Out", session_url, method: :delete%>
+
+  <%= link_to "Log Out", session_path, method: :delete %>
 <% else %>
   <%= link_to "Log In", new_session_url %>
 <% end %>
