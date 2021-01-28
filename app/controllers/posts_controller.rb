@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
-  def new
+
+  def index
     @post = Post.new
+    @posts = Post.all
   end
 
   def create
@@ -8,9 +10,6 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-  def index
-    @posts = Post.all
-  end
 
   private
 
