@@ -1,17 +1,41 @@
 <div>
-  <h1> Sign-up Form </h1>
-  <div id="signup_form">
+  <div class="jumbotron">
+    <div class='border-bottom border-dark'>
+    <h1>Sign-up</h1>
+    </div>
+  </div>
+
+  <div id="signup_form" class='container'>
     <%= form_for @user, :method => :post, params: { user: { active: true}} do |form| %>
-      <%= form.label :username %>
-      <%= form.text_field :username %><br>
-
-      <%= form.label :email %>
-      <%= form.email_field :email %><br>
-
-      <%= form.label :password_string %>
-      <%= form.password_field :password_string %><br>
-
-      <%= form.submit "Create Account" %>
+      <div class='row mb-4'>
+        <div class='col-xs-2 col-xs-offset-4 text-right'>
+          <%= form.label :username %>
+        </div>
+        <div class='col-xs-2'>
+          <%= form.text_field :username %>
+        </div>
+      </div>
+      <div class='row mb-4'>
+        <div class='col-xs-2 col-xs-offset-4 text-right'>
+          <%= form.label :email %>
+        </div>
+        <div class='col-xs-2'>
+          <%= form.email_field :email %>
+        </div>
+      </div>
+      <div class='row mb-4'>
+        <div class='col-xs-2 col-xs-offset-4 text-right'>
+          <%= form.label :password %>
+        </div>
+        <div class='col-xs-2'>
+          <%= form.password_field :password_string %>
+        </div>
+      </div>
+      <div class='row mb-4'>
+        <div class='col-xs-2 col-xs-offset-6'>
+          <%= form.submit "Create Account", :class => "btn btn-dark" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

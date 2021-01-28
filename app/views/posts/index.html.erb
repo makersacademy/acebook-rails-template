@@ -1,17 +1,40 @@
-<h1>Konichiwa</h1>
+<div>
 
-<div id="new_post_form">
-  <%= form_for @post do |form| %>
-    <%= form.label :message %>
-    <%= form.text_field :message %>
+  <div class="jumbotron">
+    <div class='border-bottom border-dark'>
+      <h1>Acebook</h1>
+      </div>
+    </div>
+  </div>
 
-    <%= form.submit "Submit" %>
-  <% end %>
-</div>
+  <div class='container'>
 
-<div id="post_display_area">
-  <% @posts.each do |post| %>
-    <p><%= post.message %></p>
-    <p>Added at <%= l post.created_at %> </p>
-  <% end %>
+    <div id="new_post_form" class='container text-center'>
+      <%= form_for @post do |form| %>
+      <div class='row mb-4'>
+        <div class='col-xs-4 col-xs-offset-4'>
+          <%= form.text_field :message %>
+        </div>
+      </div>
+      <div class='row mb-4'>
+        <div class='col-xs-4 col-xs-offset-4'>
+          <%= form.submit "Submit", :class => "btn btn-dark" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    <div id="post_display_area" class='container'>
+      <% @posts.each do |post| %>
+        <div class='row mb-4'>
+          <div class='col-xs-4 col-xs-offset-4'>
+            <div class='p-3 border border-dark'>
+            <p><%= post.message %></p>
+            <p>Added at <%= l post.created_at %> </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
