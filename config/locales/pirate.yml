@@ -1,4 +1,1 @@
 pirate:
-  time:
-    formats:
-      short: '%d.%m.%Y'
