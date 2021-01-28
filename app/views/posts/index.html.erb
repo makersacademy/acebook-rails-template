@@ -12,6 +12,6 @@
 <div id="post_display_area">
   <% @posts.each do |post| %>
     <p><%= post.message %></p>
-    <p>Added at <%= l post.created_at, format: :short%> </p>
+    <p>Added at <%= l post.created_at %> </p>
   <% end %>
 </div>
