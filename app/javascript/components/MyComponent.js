@@ -5,7 +5,7 @@ class MyComponent extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <AllPosts />
+        <AllPosts posts={this.props.data}/>
       </React.Fragment>
     );
   }
