@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_email(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
-      session[:user_id] = user.id
+      session[:user] = user
       redirect_to posts_url, :notice => "Welcome back, #{user.email}"
     else
       flash.now.alert = "Invalid email or password"
@@ -17,14 +17,14 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    session[:user] = nil
     redirect_to new_session_url
   end
 
   private
 
   def login(user)
-    session[:user_id] = nil
+    session[:user] = nil
   end
 
 end
