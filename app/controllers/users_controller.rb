@@ -15,12 +15,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    p "3"
-    p @user
+    @user = User.create(user_params)
 
+    session[:user] = @user
     if @user.save
-      session[:user] = @user
       redirect_to @user
     else
       render :new

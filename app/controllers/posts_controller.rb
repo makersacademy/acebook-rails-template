@@ -20,11 +20,11 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, 'user_id')
+    params.require(:post).permit(:message, :user_id)
   end
 
   def check_for_user
-    if session[:user_id] === nil
+    if session[:user] === nil
       redirect_to new_user_url
     end
   end

@@ -1,4 +1,5 @@
 require 'rails_helper'
+require_relative '../../app/models/user.rb'
 
 RSpec.describe PostsController, type: :controller do
   describe "GET /new " do
@@ -10,12 +11,15 @@ RSpec.describe PostsController, type: :controller do
 
   describe "POST /" do
     it "responds with 200" do
-      post :create, params: { post: { message: "Hello, world!" } }
+      session[:user] = User.create(name: "Will", email: "will@will.com", password: "hello12", password_confirmation: "hello12")
+      post :create, params: { post: { message: "Hello, world!", user_id: session[:user]['id'] } } 
       expect(response).to redirect_to(posts_url)
+    
     end
 
     it "creates a post" do
-      post :create, params: { post: { message: "Hello, world!" } }
+      session[:user] = User.create(name: "Will", email: "will@will.com", password: "hello12", password_confirmation: "hello12")
+      post :create, params: { post: { message: "Hello, world!", user_id: session[:user]['id'] } }
       expect(Post.find_by(message: "Hello, world!")).to be
     end
   end
