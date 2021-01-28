@@ -1,10 +1,13 @@
+<div class='posts'>
 <% @posts.each do |post| %>
   <% @user = User.find_by(id: post.user_id) %>
-  <p><%= @user.name %></p>
-  <p><%= post.message %></p>
-  <p><%= post.created_at %></p><br>
+  <div id='post'>
+  <p id='user'><%= @user.name %></p>
+  <p id='message'><%= post.message %></p>
+  <p id='time'><%= post.created_at.strftime('%H:%M') %></p><br>
+  </div>
 <% end %>
-
+</div>
 <%= link_to new_post_path do %>
   New post
 <% end %>
