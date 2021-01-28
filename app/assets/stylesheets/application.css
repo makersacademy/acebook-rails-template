@@ -216,21 +216,22 @@ h3 {
 /* CSS for validation forms & errors */
 
 
-input[type=email]{
-  -webkit-appearance: none;
-  appearance: none;
-
-  width: 100%;
-  border: 1px solid #333;
-  margin: 0;
-
-  font-family: inherit;
-  font-size: 90%;
-
-  box-sizing: border-box;
-}
 
 /* This is our style for the invalid fields */
+input[type=email]{
+-webkit-appearance: none;
+appearance: none;
+
+width: 100%;
+border: 1px solid #333;
+margin: 0;
+
+font-family: inherit;
+font-size: 90%;
+
+box-sizing: border-box;
+}
+
 input:invalid{
   border-color: #900;
   background-color: #FDD;
@@ -256,3 +257,19 @@ input:focus:invalid {
 .error.active {
   padding: 0.3em;
 }
+
+input[type=password]{
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 100%;
+  border: 1px solid #333;
+  margin: 0;
+
+  font-family: inherit;
+  font-size: 90%;
+
+  box-sizing: border-box;
+}
+
+/* This is our style for the invalid fields */
