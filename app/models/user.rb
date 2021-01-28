@@ -9,4 +9,10 @@ class User < ApplicationRecord
   validates :password_digest, :presence => true,
                    :uniqueness => {:case_sensitive => true},
                    :length => {:minimum => 6}
+
+  def to_param
+    id
+    name
+  end
+
 end
