@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   # testing for heroku
   root 'welcome#index'
 
-  post "/posts/create", to: "posts#create"
+  # post "/posts/create", to: "posts#create"
 end
