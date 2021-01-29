@@ -6,8 +6,9 @@ class AllPosts extends React.Component {
       <div>
         <h1>All posts:
         <ul>
-          {this.props.posts.map((post) => <li>{post.message}</li>)}
+          {this.props.posts.map((post) => <li>{post.message} {post.created_at}</li>)}
         </ul>
+      
         </h1>
       </div>
       )
