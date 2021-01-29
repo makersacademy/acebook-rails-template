@@ -1,12 +1,14 @@
 class PostsController < ApplicationController
 
   before_action :authorize, except: :index
+  skip_before_action :verify_authenticity_token
 
   def new
     @post = Post.new
   end
 
   def create
+    p post_params
     @post = Post.create(post_params)
     redirect_to posts_url
   end
@@ -18,6 +20,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.permit(:message)
   end
 end
