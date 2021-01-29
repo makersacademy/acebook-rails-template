@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @existing_user = User.find_by_email(params[:user]['email'])
     if @existing_user.nil?
       @user = User.create(user_params)
+      session[:user_id] = @user.id
       redirect_to posts_url
     else
       flash[:alert] = "This e-mail is already in use"
