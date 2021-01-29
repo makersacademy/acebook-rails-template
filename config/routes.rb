@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
 
   resources :user, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
@@ -15,14 +10,7 @@ Rails.application.routes.draw do
 
   get "/users/new", to: "users#new"
   post "/users", to: "users#create"
-  # Sessions routes
-  get "/login", to: "session#new"
-  post "/sign-up", to: "session#create"
-  get "/logout", to: "session#destroy"
-
-  # Sessions routes
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  get "/logout", to: "sessions#destroy"
-
+  get 'sessions/new'
+  post 'sessions/create'
+  get 'sessions/destroy'
 end
