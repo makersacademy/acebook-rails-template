@@ -1,17 +1,10 @@
 <h1>Konichiwa</h1>
 
-<div id="new_post_form">
-  <%= form_for @post do |form| %>
-    <%= form.label :message %>
-    <%= form.text_field :message %>
+<% @posts.each do |post| %>
+  <p><%= post.message %></p>
+  <p>Added at <%= l post.created_at %> </p> 
+<% end %>
 
-    <%= form.submit "Submit" %>
-  <% end %>
-</div>
-
-<div id="post_display_area">
-  <% @posts.each do |post| %>
-    <p><%= post.message %></p>
-    <p>Added at <%= l post.created_at %> </p>
-  <% end %>
-</div>
+<%= link_to new_post_path do %>
+  New post
+<% end %>
