@@ -4,6 +4,7 @@ RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
     visit "/posts"
     click_link "Sign Up"
+    fill_in "Username", with: "mrtest"
     fill_in "Email", with: "mrtester@test.com"
     fill_in "Password", with: "test123"
     fill_in "Password confirmation", with: "test123"
