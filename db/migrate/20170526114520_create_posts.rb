@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
     create_table :posts do |t|
       t.string :message
 
-      t.timestamps :created_at
+      t.Time.now.strftime("%Y-%m-%d") 
     end
   end
 end
