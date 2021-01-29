@@ -11,7 +11,6 @@ class NewPost extends React.Component {
   }
 
   handleSubmit = (event) => {
-    alert('A message was posted: ' + this.state);
 
     fetch('http://localhost:3000/posts', {
         method: 'POST',
@@ -25,6 +24,7 @@ class NewPost extends React.Component {
         return response.json();
       });
 
+    this.props.rerenderAllPostsCallback();
     event.preventDefault();
 }
 
