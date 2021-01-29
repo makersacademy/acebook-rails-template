@@ -6,7 +6,7 @@ RSpec.feature "New User", type: :feature do
     click_link "sign-up"
     fill_in "user[username]", with: "Stephen"
     fill_in "user[email]", with: "stephen@test.com"
-    fill_in "user[password_string]", with: "stephenisntreal"
+    fill_in "user[password]", with: "stephenisntreal"
     click_button "Create Account"
     expect(current_path).to eq("/posts")
   end
