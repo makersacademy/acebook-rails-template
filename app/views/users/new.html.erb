@@ -1,4 +1,9 @@
 <div>
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
   <h1> Sign-up Form </h1>
   <div id="signup_form">
     <%= form_for @user, :method => :post, params: { user: { active: true}} do |form| %>
