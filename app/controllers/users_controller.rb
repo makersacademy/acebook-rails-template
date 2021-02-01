@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     session[:user] = @user
     if @user.save
-      redirect_to @user
+      redirect_to posts_url
     else
       render :new
     end

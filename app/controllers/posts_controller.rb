@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def index
     check_for_user
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   private
