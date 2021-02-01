@@ -1,7 +1,9 @@
 import React from "react"
 
 class AllPosts extends React.Component {
+
   render(){
+    console.log(this.props.posts)
     return(
       <div>
         <h1>All posts:

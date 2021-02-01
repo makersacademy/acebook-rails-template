@@ -8,13 +8,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    p post_params
     @post = Post.create(post_params)
     redirect_to posts_url
   end
 
   def index
     @posts = Post.all
+  end
+
+  def data
+    @posts = Post.all
+    render json: @posts.to_json
   end
 
   private

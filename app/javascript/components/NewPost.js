@@ -25,6 +25,7 @@ class NewPost extends React.Component {
         return response.json();
       });
 
+    this.props.rerenderAllPostsCallback();
     event.preventDefault();
 }
 
