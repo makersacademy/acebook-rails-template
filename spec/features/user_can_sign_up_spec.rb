@@ -8,6 +8,6 @@ RSpec.describe "Timeline", type: :feature do
     fill_in 'user[password]', with: "namepass"
     fill_in 'user[password_confirmation]', with: "namepass"
     click_button "Create User"
-    expect(page).to have_content("Welcome name")
+    expect(page).to have_current_path("/posts")
   end
 end
