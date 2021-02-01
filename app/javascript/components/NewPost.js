@@ -11,7 +11,7 @@ class NewPost extends React.Component {
   }
 
   handleSubmit = (event) => {
-    alert('A message was posted: ' + this.state);
+    alert('A message was posted: ' + this.state.message);
 
     fetch('http://localhost:3000/posts', {
         method: 'POST',
