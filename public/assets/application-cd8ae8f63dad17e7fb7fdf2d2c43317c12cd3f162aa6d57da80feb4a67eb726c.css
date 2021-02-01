@@ -16,5 +16,46 @@
 
 
  body {
-   background-color: rgb(203, 42, 181);
- }
+  color: white;
+  text-align: center;
+  background-image: linear-gradient(40deg, #21345a, #12213f, #4267B2, #4267B2);
+  background-size: auto;
+}
+
+.sign_up_form {
+  align-items: center;
+  height: 300px;
+  width: 50%;
+  margin: auto;
+  background-color:#1d2d4d6c;
+  border-radius: 20px;
+}
+
+.user_name_enter.label {
+  float: left;
+}
+
+.user_name_enter.input {
+  float: right;
+}
+
+.user_email_enter.label {
+ float: left;
+}
+
+.user_email_enter.input {
+ float: right;
+}
+
+.posts {
+ background-color: rgb(255, 255, 255);
+}
+
+#post {
+ margin: auto;
+ align-items: center;
+ color: rgb(0, 0, 0);
+ width: 30%;
+ background-color: rgb(219, 221, 225);
+ border-radius: 30px;
+}
