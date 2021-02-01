@@ -1,7 +1,13 @@
 require 'rails_helper'
 
-RSpec.feature "Timeline", type: :feature do
-  scenario "Can submit posts and view them" do
+RSpec.describe "Timeline", type: :feature do
+  it "Can submit posts and view them" do
+    visit "/users/new"
+    fill_in 'user[name]', with: "Tim"
+    fill_in "user[email]", with: "tim@tim.com"
+    fill_in "user[password]", with: "secret"
+    fill_in 'user[password_confirmation]', with: "secret"
+    click_button "Create User"
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
