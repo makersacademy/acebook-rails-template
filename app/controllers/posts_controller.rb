@@ -17,6 +17,11 @@ class PostsController < ApplicationController
     @posts = Post.all.order(created_at: :desc)
   end
 
+  def posts_api
+    @posts = Post.all.order(created_at: :desc)
+    render json: @posts
+  end
+
   private
 
   def post_params
