@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create( {:user_id => '1', :content => post_params["content"]} )
     redirect_to posts_url
   end
 
