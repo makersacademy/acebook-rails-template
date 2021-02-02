@@ -42,6 +42,7 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'travis'
+  gem 'poltergeist'
 end
 
 group :development do
