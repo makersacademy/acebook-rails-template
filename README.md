@@ -46,6 +46,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -128,6 +129,11 @@ bin/rails server
 
 Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for instructions on how to contribute.
 Any contributions you make are **greatly appreciated** :smile:.
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
