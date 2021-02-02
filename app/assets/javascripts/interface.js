@@ -1,5 +1,5 @@
 console.log("I'm in the interface")
-
+let likes = 0
 fetch('/posts_api')
   .then(response => response.json())
   .then(data => {
@@ -27,15 +27,28 @@ fetch('/posts_api')
     constructor(props) {
       super(props);
       this.state = { liked: false };
-      this.setState = this.setState.bind('this');
+      this.handleClick = this.handleClick.bind('this');
+      
+    }
+
+    handleClick = () => {
+      this.setState(prevState => (prevState, { 
+        liked: !prevState.liked 
+      }));
+      this.sendLikeData() 
+      console.log(likes)
     }
   
     render() {
         return e(
             'button',
-            { onClick: () => this.setState(prevState => ({ liked: !prevState.liked }))},
+            { onClick: () =>  this.handleClick() },
             this.state.liked ? 'Dislike' : 'Like'
           );
       }
+
+    sendLikeData() {
+      this.state.liked ? likes-- : likes++
+    }
   }
-  
+
