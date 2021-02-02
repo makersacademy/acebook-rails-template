@@ -12,11 +12,10 @@ fetch('/posts_api')
         let user = `<p>${element.user_id}</p><br>`
         let message = `<p>${element.message}</p><br>`
         let time = `<p>${element.created_at}</p><br>`
+        let like_button = document.createElement('div')
         div.innerHTML = user + message + time
-        let button = React.createElement;
-        button.setAttribute('id', 'like-button');
-        const domContainer = document.getElementById('like-button');
-        ReactDOM.render(button(LikeButton), domContainer);
+        ReactDOM.render(e(LikeButton), like_button);
+        div.appendChild(like_button)
         divPosts.appendChild(div)
     });
   });
@@ -28,20 +27,15 @@ fetch('/posts_api')
     constructor(props) {
       super(props);
       this.state = { liked: false };
+      this.setState = this.setState.bind('this');
     }
   
     render() {
-      if (this.state.liked) {
-        return 'You liked this.';
+        return e(
+            'button',
+            { onClick: () => this.setState(prevState => ({ liked: !prevState.liked }))},
+            this.state.liked ? 'Dislike' : 'Like'
+          );
       }
-  
-      return e(
-        'button',
-        { onClick: () => this.setState({ liked: true }) },
-        'Like'
-      );
-    }
   }
-
-const domContainer = document.getElementById('like-button');
-ReactDOM.render(e(LikeButton), domContainer);
+  
