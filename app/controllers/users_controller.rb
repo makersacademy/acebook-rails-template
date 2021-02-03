@@ -5,9 +5,16 @@ class UsersController < ApplicationController
 
   def create
     User.create([{ username: user_params["username"], password: user_params["password"] }])
-    redirect_to posts_url
+    redirect_to :controller => 'users', :action => 'login', alert: "You have signed up!"
   end
 
+  def login
+    @alert = params[:alert]
+  end
+
+  def index
+  end
+  
   private
   def user_params
     params.require(:user).permit(:username, :password)

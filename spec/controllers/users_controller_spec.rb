@@ -8,18 +8,13 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  describe "POST /" do
-    it "responds with 200" do
-      post :create, params: { user: { username: "lotty", password: "password12"  } }
-      expect(response).to redirect_to(posts_url)
-    end
-  end
-    it "creates a post" do
-      post :create, params: { user: { username: "lotty", password: "password12"  } }
+  describe "POST /create" do
+    it "lets a user sign up" do
+      post :create, params: { user: { username: "lotty", password: "password12" } }
       expect(User.find_by(username: "lotty")).to be
     end
+  end
   
-
   describe "GET /" do
     it "responds with 200" do
       get :index
