@@ -1,9 +1,10 @@
 console.log("I'm in the interface")
+
 let likes = 0
 fetch('/posts_api')
   .then(response => response.json())
   .then(data => {
-    
+
     let divPosts = document.getElementById("posts")
     divPosts.innerHTML = ''
     data.forEach(element => {
@@ -22,6 +23,7 @@ fetch('/posts_api')
 
 
   const e = React.createElement;
+
   
   class LikeButton extends React.Component {
     constructor(props) {
@@ -112,3 +114,4 @@ fetch('/posts_api')
   }
 
 }
+

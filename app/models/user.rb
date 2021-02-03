@@ -2,8 +2,10 @@ require 'bcrypt'
 
 class User < ApplicationRecord
 
+
   has_many :posts
   has_many :likes
+
   include BCrypt
   # attribute :password_digest
   has_secure_password
