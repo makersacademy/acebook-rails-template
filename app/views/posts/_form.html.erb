@@ -13,8 +13,18 @@
 
   <div class="field">
     <%= form.label :post %>
-    <%= form.text_area :post, id: :post_post %>
+    <%= form.text_area :post, id: :post_post%>
   </div>
+
+  <div class="field">
+    <%= form.number_field :user_id, value: current_user.id, type: :hidden%>
+  </div>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_area :username, value: current_user.username%>
+  </div>
+ 
 
   <div class="actions">
     <%= form.submit %>
