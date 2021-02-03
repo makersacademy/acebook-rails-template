@@ -1,0 +1,15 @@
+like button
+    show "like"
+        show when state {loading: false, liked: false}
+        select all from likes where user_id and post_id match
+        if user_id and post_id DONT match return false
+    or "unlike"
+        show when state {loading: false, liked: true}
+        select all from likes where user_id and post_id match
+        if user_id and post_id DO match return true
+    or "no button" if not state not loaded
+        show when state {loading: true, liked: false/true}
+        default state
+
+
+number of likes
