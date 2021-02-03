@@ -1,18 +1,64 @@
 <p id="alert"> <%= alert %></p>
-<h1>Login</h1>
 
-<%= form_tag sessions_path do |form| %>
-  <div class = "field">
-    <%= label_tag :username %>
-    <%= text_field_tag :username%>
+
+<div class="container">
+  <div class="row py-5 mt-4 align-items-center">
+      <!-- For Demo Purpose -->
+      <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+          <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
+          <h1>Welcome to Acebook</h1>
+          <p class="font-italic text-muted mb-0">Glad to see you again, log back into your account here.</p>
+          <%# <p class="font-italic text-muted">Snippet By <a href="https://bootstrapious.com" class="text-muted">
+              <u>Bootstrapious</u></a>
+          </p> %>
+      </div>
+
+
+     <!-- Log in  Section -->
+    <div class="col-md-7 col-lg-6 ml-auto">
+    <h2>Login</h2><br/>
+
+
+
+      <%= form_tag sessions_path do |form| %>
+
+        <div class="form-row">
+
+          <div class = "field form-group col-md-12">
+            <%= label_tag :username %>
+            <%= text_field_tag :username, "", class: 'form-control'%>
+          </div>
+
+          <div class = "field form-group col-md-12">
+            <%= label_tag :password %>
+            <%= password_field_tag :password, "", class: 'form-control' %>
+          </div>
+
+          <div class ="actions form-group col-lg-12">
+            <%= submit_tag "Login", class:"btn btn-primary btn-block py-2" %>
+          </div>
+
+        </div>
+
+
+      <%end%>
+
+      <!-- Divider Text -->
+      <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+          <div class="border-bottom w-100 ml-5"></div>
+          <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+          <div class="border-bottom w-100 mr-5"></div>
+      </div>
+
+
+      <%= link_to "Sign Up", signup_path, class:"btn btn-primary btn-block py-2" %>
+
+
+
+
+    </div>
+
   </div>
 
-  <div class = "field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
+</div>
 
-  <div class ="actions">
-    <%= submit_tag "Login" %>
-  </div>
-<%end%>

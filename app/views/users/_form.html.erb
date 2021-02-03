@@ -1,48 +1,62 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <%= form_with(model: user, local: true) do |form| %>
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <form >
+    <div class="form-row">
+
+      <%# first name field %>
+      <div class="field form-group col-md-6">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name, id: :user_first_name, class:"form-control" %>
+      </div>
+
+      <%# last name field %>
+      <div class="field form-group col-md-6">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name, id: :user_last_name, class:"form-control"%>
+      </div>
+
+      <%# username field %>
+      <div class="field form-group col-md-12">
+          <%= form.label :username %>
+          <%= form.text_field :username, id: :user_username, class:"form-control" %>
+      </div>
+
+      <%# email field %>
+        <div class="field form-group col-md-12">
+          <%= form.label :email %>
+          <%= form.text_field :email, id: :user_email, class:"form-control" %>
+        </div>
+
+      <%# password field %>
+      <div class="field form-group col-md-6">
+        <%= form.label :password %>
+        <%= form.password_field :password, id: :user_password, class:"form-control" %>
+      </div>
+
+      <%# password confirmation field %>
+      <div class="field form-group col-md-6">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation, id: :user_password_confirmation, class:"form-control" %>
+      </div>
+
+      <%# submit button %>
+      <div class="actions form-group col-lg-12" >
+        <%= form.submit class:"btn btn-primary btn-block py-2" %>
+      </div>
+
+      </div>
+    </form>
   <% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, id: :user_first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, id: :user_last_name %>
-
-  </div>
-
- <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username, id: :user_username %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password, id: :user_password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
