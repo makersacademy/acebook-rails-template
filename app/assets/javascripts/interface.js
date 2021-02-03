@@ -48,7 +48,21 @@ fetch('/posts_api')
       }
 
     sendLikeData() {
-      this.state.liked ? likes-- : likes++
-    }
+      this.state.liked ? likes-- : likes++;
+
+      fetch("/posts", {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify({message: "hello from message", user_id: 2})})
+      .then(response => {
+      console.log(response);
+      console.log(response.json());
+      console.log(JSON.stringify(response));
+      })
+    
   }
 
+}
