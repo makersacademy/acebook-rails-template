@@ -10,7 +10,7 @@ fetch('/posts_api')
     data.forEach(element => {
         let div = document.createElement('div')
         div.setAttribute('id', 'post')
-        let user = `<p>${element.user_id}</p><br>`
+        let user = `<p>${element.user_name}</p><br>`
         let message = `<p>${element.message}</p><br>`
         let time = `<p>${element.created_at}</p><br>`
         let like_button = document.createElement('div')
