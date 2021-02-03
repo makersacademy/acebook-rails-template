@@ -1,0 +1,16 @@
+<p id="notice"> <%=notice%> </p>
+<h1>Home index</h1>
+<p>welcome!</p>
+
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<% if current_user %>
+  Logged in as <%= current_user.email %>.
+  <%= link_to "Log Out", logout_path %>
+<% else %>
+  <%= link_to "Log In", login_path %> or
+  <%= link_to "Sign Up", signup_path %>
+
+<% end %>
+<p><%= notice %></p>
