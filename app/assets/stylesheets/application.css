@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ .heading-center1 {
+   text-align: center;
+   font-size: 60px;
+   color: slateblue;
+ }
+ 
+.heading-center6 {
+  text-align: center;
+  color: grey;
+  font-size: 18px;
+}
