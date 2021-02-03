@@ -1,6 +1,5 @@
 console.log("I'm in the interface")
 
-let likes = 0
 fetch('/posts_api')
   .then(response => response.json())
   .then(data => {
