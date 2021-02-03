@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "Timeline", type: :feature do
-  it "Can submit posts and view them", js: true do
+
+  pending "Can submit posts and view them" do
+
     visit "/users/new"
     fill_in 'user[name]', with: "Tim"
     fill_in "user[email]", with: "tim@tim.com"

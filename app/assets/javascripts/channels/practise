@@ -1,0 +1,21 @@
+like button
+    show "like"
+        show when state {loading: false, liked: false}
+        select all from likes where user_id and post_id match
+        if user_id and post_id DONT match return false
+    or "unlike"
+        show when state {loading: false, liked: true}
+        select all from likes where user_id and post_id match
+        if user_id and post_id DO match return true
+    or "no button" if not state not loaded
+        show when state {loading: true, liked: false/true}
+        default state
+
+
+        # search database for post_id
+        # where session[user][id] and post_id exist
+        # render json: {loading: false, liked: true}
+        # if session[user][id] and post_id  DO NOT exist
+        # render json: {loading: false, liked: false}
+
+number of likes

@@ -21,6 +21,7 @@ class PostsController < ApplicationController
     @posts = Post.all.order(created_at: :desc).as_json()
     @posts_with_name = @posts.each { |post| post[:user_name] = User.find(post["user_id"]).name }
     render json: @posts_with_name
+
   end
 
   private
