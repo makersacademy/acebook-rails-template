@@ -12,4 +12,10 @@ like button
         default state
 
 
+        # search database for post_id
+        # where session[user][id] and post_id exist
+        # render json: {loading: false, liked: true}
+        # if session[user][id] and post_id  DO NOT exist
+        # render json: {loading: false, liked: false}
+
 number of likes

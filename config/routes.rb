@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get "/posts_api", to: "posts#posts_api"
   post "/likes/data", to: "likes#find_if_post_is_liked"
+  post "likes/create", to: "likes#create"
+  post "likes/destroy", to: "likes#destroy"
   resources :sessions, only: [:create, :new]
 
   delete 'session' => 'sessions#destroy'

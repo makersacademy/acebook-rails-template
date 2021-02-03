@@ -69,29 +69,46 @@ fetch('/posts_api')
       return e(
           'button',
           { onClick: () =>  this.handleClick() },
-          this.state.liked ? 'Dislike' : 'Like'
+          this.state.liked ? 'Unlike' : 'Like'
           );
       }
 
 
 
     sendLikeData() {
-      this.state.liked ? likes-- : likes++;
-      const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
-      fetch("/likes", {
-        method: "POST", 
-        headers: {
-          'Content-Type': 'application/json',
-          'X-CSRF-Token': csrf
-        },
-        body: JSON.stringify({ post_id: 10, user_id: 10})
+      if (this.state.liked) {
+        console.log(this.props)
+        const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+        fetch("/likes/destroy", {
+          method: "POST", 
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': csrf
+          },
+          body: JSON.stringify({ post_id: this.props.post_id})
+        })
+        .then(response => {
+        console.log(response);
+        console.log(response.json());
+        console.log(JSON.stringify(response));
       })
-      .then(response => {
-      console.log(response);
-      console.log(response.json());
-      console.log(JSON.stringify(response));
+    } else {
+        console.log(this.props)
+        const csrf = document.querySelector("meta[name='csrf-token']").getAttribute("content");
+        fetch("/likes/create", {
+          method: "POST", 
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': csrf
+          },
+          body: JSON.stringify({ post_id: this.props.post_id})
+        })
+        .then(response => {
+        console.log(response);
+        console.log(response.json());
+        console.log(JSON.stringify(response));
       })
-    
+    }
   }
 
 }
