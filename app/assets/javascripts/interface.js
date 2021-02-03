@@ -59,7 +59,6 @@ fetch('/posts_api')
         liked: !prevState.liked 
       }));
       this.sendLikeData() 
-      console.log(likes)
     }
   
     render() {
