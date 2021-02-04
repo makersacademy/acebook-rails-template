@@ -1,16 +1,30 @@
 <%# TIMELINE %>
+<div id="page" class="container-fluid">
+  <div class="container-fluid">
+    <div class="form-group">
+      <%= form_for @post do |form| %>
+        <%= form.text_area :content, class: "form-control", rows: 3, placeholder: "Compose new post" %>
+        <%= form.submit "New Post", id: "submit_post", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
 
-<%= form_for @post do |form| %>
-  <%= form.label :content %>
-  <%= form.text_field :content %>
-
-  <%= form.submit "New Post" %>
-<% end %>
-
-<h1>Posts</h1>
-
-<% @posts.each do |post| %>
-  <% user = User.find(post.user_id)%>
-  <%= link_to user.username, user_path(user.id) %>
-  <%= link_to post.content, post %></p>
-<% end %>
+  <% @posts.each do |post| %>
+    <div id="post" class="container-fluid">
+      <% user = User.find(post.user_id)%>
+      <div class="profile_pic">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+      </div>
+      <div class="post-text">
+        <div class="user_details">
+          <%= link_to "@#{user.username}", user_path(user.id) %>
+        </div>
+        <div class="post_content">
+          <%= link_to post.content, post %>
+        </div>
+      </div>
+      <div class="interactions">
+      </div>
+    </div>
+  <% end %>
+</div>

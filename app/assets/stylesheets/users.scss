@@ -1,3 +1,31 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.heading-center1 {
+  text-align: center;
+  font-size: 60px;
+  color: slateblue;
+}
+
+.heading-center6 {
+ text-align: center;
+ color: grey;
+ font-size: 18px;
+}
+
+.log_in{
+ color: slateblue;
+}
+
+.small-middle-container{
+ margin: auto;
+ width: 30%;
+}
+
+body{
+   background-image: url(friends.png);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: 600px 400px;
+   background-position: 20% 20%
+ }
