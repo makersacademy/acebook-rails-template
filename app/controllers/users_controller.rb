@@ -17,18 +17,18 @@ class UsersController < ApplicationController
     else
       flash[:notice] =  "You have signed up!"
     end 
-      redirect_to action: "index"
+      redirect_to "/"
   end
 
   def authenticate
-    user = User.find_by(username: user_params["username"])
-    if user.authenticate(user_params["password"])
+    user = User.find_by(username: params["username"])
+    if user && user.authenticate(params["password"])
       session[:user] = user
       flash[:notice] =  "You have logged in!"
-      redirect_to controller: "posts", action: "index"
+      redirect_to "/timeline"
     else
       flash[:alert] =  "Incorrect username or password"
-      redirect_to action: 'index'
+      redirect_to "/"
        # if invalid login, flashes error message & goes back to users/login
     end
   end

@@ -1,3 +1,55 @@
+<div>
+  <div id="title">
+    <br><br><br>
+    <h1 class="heading-center1">AceBook</h1>
+    <h6 class="heading-center6"><em>Find your friends, or make some</em></h6>
+  </div>
+
+  <br>
+
+  <div>
+    <div class="small-middle-container">
+    <div class="card">
+    <article class="card-body">
+    	<h4 class="card-title text-center mb-4 mt-1" style="color: slateblue">Log in</h4>
+    	<hr>
+
+    	<%= form_tag users_authenticate_url do %>
+        <fieldset id="log_in">
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+            </div>
+            <%= text_field_tag :username, nil, placeholder: "Username", class: "form-control" %>
+          </div> <!-- input-group.// -->
+          </div> <!-- form-group// -->
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <%= password_field_tag :password, nil, placeholder: "Password", class: "form-control"  %>
+          </div> <!-- input-group.// -->
+          </div> <!-- form-group// -->
+          <div class="form-group">
+          <%= submit_tag "Log In", class: "btn btn-primary btn-block" %>
+          </div> <!-- form-group// -->
+          <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+    	  </fieldset>
+      <% end %>
+    </article>
+    </div> <!-- card.// -->
+    </div> <!-- row.// -->
+
+    </div>
+    <!--container end.//-->
+
+    <br><br><hr>
+
+<!--  <br><br><br><br><br><br><br><br>
+
+<hr> this makes a line dash -->
 <%= form_for @user do |form| %>
   <fieldset id="sign_up">
     <%= form.label :username %>
@@ -7,17 +59,5 @@
     <%= form.password_field :password %>
     <br>
     <%= form.submit "Sign Up" %>
-  </fieldset>
-<% end %>
-
-<%= form_with(model: @user, url: {action: "authenticate"}) do |form| %>
-  <fieldset id="log_in">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-    <br>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-    <br>
-    <%= form.submit "Log In" %>
   </fieldset>
 <% end %>
