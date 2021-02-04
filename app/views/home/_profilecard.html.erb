@@ -1,20 +1,27 @@
-<div class="card">
-    <div class="card-body">
-        <div class="h5">@LeeCross</div>
-        <div class="h7 text-muted">Fullname : Miracles Lee Cross</div>
-        <div class="h7">Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js,
-            etc.
+<% if current_user %>
+    <div class="card">
+        <div class="card-body">
+            <div class="h5">@<%= current_user.username %></div>
+
+            <!--profile pic-->
+            <div class="mr-2">
+                <img class="rounded-circle" width="90" src="https://picsum.photos/50/50" alt="profile-pic">
+            </div>
+
+            <div class="h7 text-muted">Name: <%= current_user.first_name %> <%= current_user.last_name %></div>
+            <div class="h7">Email: <%= current_user.email %></div>
         </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="h6 text-muted">Friends</div>
+                <div class="h5">To be added</div>
+            </li>
+            <li class="list-group-item"> 
+                <div class="h6 text-muted">Edit Profile link to go here</div>
+            </li>
+            <li class="list-group-item"><%= link_to "Log Out", logout_path %></li>
+            
+        </ul>
     </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-            <div class="h6 text-muted">Followers</div>
-            <div class="h5">5.2342</div>
-        </li>
-        <li class="list-group-item">
-            <div class="h6 text-muted">Following</div>
-            <div class="h5">6758</div>
-        </li>
-        <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-</div>
+<% end %>
+
