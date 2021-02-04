@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  resources :friendships 
+  resources :friendships
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root 'home#index'
@@ -16,4 +16,3 @@ Rails.application.routes.draw do
   get '/', to: 'posts#index'
   get '/posts', to: 'posts#index'
 end
-

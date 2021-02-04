@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
-  include Clearance::Controller
   protect_from_forgery with: :exception
-
   helper_method :current_user
   before_action :authenticate_user!
 
@@ -17,6 +15,10 @@ class ApplicationController < ActionController::Base
     else
       @current_user = nil
     end
+  end
+
+  def inverse_friends
+    @friendship = Friendships.find(session)
   end
 
 

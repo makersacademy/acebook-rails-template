@@ -1,5 +1,9 @@
 class FriendshipsController < ApplicationController
 
+  def index
+    @friendship = Friendship.all
+  end
+
   def new
 
   end
@@ -14,4 +18,6 @@ class FriendshipsController < ApplicationController
       redirect_to root_url
     end
   end
+
+
 end
