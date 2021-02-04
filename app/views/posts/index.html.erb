@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
@@ -16,8 +17,8 @@
       <tr>
         <td><%= post.post %></td>
          <td><%= post.user.username %></td>
-
-        <td><%= link_to 'Show', post %></td>
+        <td><%= post.created_at.strftime("%A, %d %B %Y %l:%M%p") %></td>
+        <td><%= time_ago_in_words(post.created_at, :limit => 1.day.ago) %> ago</td>
         <% if current_user === post.user %>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

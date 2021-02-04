@@ -16,12 +16,12 @@
   <tbody>
     <% @friends.each do |friend| %>
       <tr>
+        <% if current_user === friend.user %>
         <td><%= friend.first_name %></td>
         <td><%= friend.last_name %></td>
         <td><%= friend.email %></td>
         <td><%= friend.username %></td>
         <td><%= link_to 'Show', friend %></td>
-        <% if current_user === friend.user %>
         <td><%= link_to 'Edit', edit_friend_path(friend) %></td>
         <td><%= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
