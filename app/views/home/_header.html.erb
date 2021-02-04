@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <%# root_path links to whatever is set as the homepage / main page %>
-<%= link_to 'Acebook', root_path, class:"navbar-brand" %> 
+<%= link_to 'Acebook', root_path, class:"navbar-brand" %>
   <%# <a class="navbar-brand" href="#">Acebook</a> %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -17,7 +17,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Friends</a>
+        <a class="nav-link" href="friends">Friends</a>
       </li>
 
     </ul>
@@ -27,10 +27,10 @@
     </form> %>
 
     <% if current_user %>
-            Hello <%= current_user.first_name %>! 
+            Hello <%= current_user.first_name %>!
             <%= link_to "Log Out", logout_path, class:"nav-link" %>
     <% else %>
-        <%= link_to "Log In", login_path, class:"nav-link" %> 
+        <%= link_to "Log In", login_path, class:"nav-link" %>
     <% end %>
   </div>
 </nav>
