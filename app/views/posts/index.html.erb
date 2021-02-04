@@ -16,8 +16,9 @@
       <tr>
         <td><%= post.post %></td>
          <td><%= post.user.username %></td>
+        <td><%= post.created_at.strftime("%A, %d %B %Y %l:%M%p") %></td>
+        <td><%= time_ago_in_words(post.created_at, :limit => 1.day.ago) %> ago</td>
 
-        <td><%= link_to 'Show', post %></td>
         <% if current_user === post.user %>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
