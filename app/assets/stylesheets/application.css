@@ -78,7 +78,23 @@
   opacity: 1;
 }
 
+.c-button-green {
+  background: #008037;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  border: 0px;
+  opacity: 1;
+}
+
 .c-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.c-button-green:hover {
   cursor: pointer;
   opacity: 0.8;
   transition: 0.3s;
@@ -101,6 +117,24 @@
   top: 6px;
 }
 
+
+.c-button-cancel {
+  background: #9a2525;
+  color: white;
+  width: 120px;
+  height: 50px;
+  border-radius: 4px;
+  border: 0px;
+  opacity: 1;
+}
+
+.c-button-cancel:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
 .newpost{
   color: #463f57 !important
 }
+
