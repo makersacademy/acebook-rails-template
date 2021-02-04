@@ -1,7 +1,7 @@
 
 <% if logged_in? %>
 
-  <%= link_to "Log Out", session_path, method: :delete %>
+  <%= link_to "Log Out", session_path %>
 <% else %>
   <%= link_to "Log In", new_session_url %>
 <% end %>

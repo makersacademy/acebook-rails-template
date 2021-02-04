@@ -31,17 +31,11 @@
   border-radius: 20px;
 }
 
-.user_name_enter.label {
-  float: left;
-}
 
 .user_name_enter.input {
-  float: right;
+  width: 50%;
 }
 
-.user_email_enter.label {
- float: left;
-}
 
 .user_email_enter.input {
  float: right;

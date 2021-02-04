@@ -2,32 +2,28 @@
 
 <%= form_with(model: @user, local: true, class: "sign_up_form") do |form| %>
   <div class='user_name_enter'>
-    <%= form.label :name %>
-    <%= form.text_field :name, placeholder: "Enter name here..."%>
+    <%= form.text_field :name, :size=>"50", placeholder: "Enter name here..."%>
     <% @user.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div class='user_email_enter'>
-    <%= form.label :email %>
-    <%= form.email_field :email, placeholder: "Enter email here..." %>
+    <%= form.email_field :email, :size=>"50", placeholder: "Enter email here..." %>
     <% @user.errors.full_messages_for(:email).each do |message| %>
       <div><%= message %></div>
     <% end %>
   <div>
 
   <div class='user_password_enter'>
-    <%= form.label :password %>
-    <%= form.password_field :password, placeholder: "Enter your password here..." %>
+    <%= form.password_field :password, :size=>"50", placeholder: "Enter your password here..." %>
     <% @user.errors.full_messages_for(:password).each do |message| %>
       <div><%= message %></div>
     <% end %>
   <div>
 
    <div class='user_password_confirmation_enter'>
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, placeholder: "Please confirm your password..." %>
+    <%= form.password_field :password_confirmation, :size=>"50", placeholder: "Please confirm your password..." %>
     <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
       <div><%= message %></div>
     <% end %>

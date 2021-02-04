@@ -3,13 +3,11 @@
 <%= form_for(:session, url: sessions_url, local: true) do |form| %>
 
   <div>
-    <%= form.label :email %>
-    <%= form.email_field :email, placeholder: "Enter email here..." %>
+    <%= form.email_field :email, :size=>"50", placeholder: "Enter email here..." %>
   <div>
 
   <div>
-    <%= form.label :password %>
-    <%= form.password_field :password, placeholder: "Password..." %>
+    <%= form.password_field :password, :size=>"50", placeholder: "Password..." %>
   <div>
 
   <div>
