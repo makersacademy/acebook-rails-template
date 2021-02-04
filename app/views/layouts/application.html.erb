@@ -30,6 +30,7 @@
             <li class="nav-item">
               <a class="nav-link" data-method="delete" href="<%= destroy_user_session_path %>">Logout</a>
             </li>
+            <%= image_tag current_user.gravatar_url, :class => "gravatar" %>
           <% else %>
             <li class="nav-item">
               <a class="nav-link" href="<%= new_user_session_path %>">Login</a>
@@ -48,9 +49,9 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    
+
     <div class="container-fluid">
-     <%= yield %> 
+     <%= yield %>
     </div>
 
   </body>
