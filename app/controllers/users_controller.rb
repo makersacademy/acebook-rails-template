@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def create
     hashed_password = BCrypt::Password.create(user_params["password"])
-    User.create([{ username: user_params["username"], password_digest: hashed_password }])
+    User.create([{ username: user_params["username"], password: user_params["password"] }])
     redirect_to :controller => 'users', :action => 'login', alert: "You have signed up!"
   end
 
@@ -22,6 +22,6 @@ class UsersController < ApplicationController
   
   private
   def user_params
-    params.require(:user).permit(:username, :password_digest)
+    params.require(:user).permit(:username, :password)
   end
 end

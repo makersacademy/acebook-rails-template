@@ -9,14 +9,14 @@ end
 
 it "is not valid without username" do
   user = User.new
-  user.password_digest = "password123"
+  user.password= "password123"
   expect(user).to_not be_valid
 end
 
 it "is valid with valid attributes" do
   user = User.new
   user.username = "Charlotte"
-  user.password_digest = "password123"
+  user.password = "password123"
   expect(user).to be_valid
 end
 end

@@ -10,7 +10,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe "POST /create" do
     it "lets a user sign up" do
-      post :create, params: { user: { username: "lotty", password_digest: "password12" } }
+      post :create, params: { user: { username: "lotty", password: "password12" } }
       expect(User.find_by(username: "lotty")).to be
     end
   end
