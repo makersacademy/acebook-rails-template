@@ -1,0 +1,25 @@
+#post{
+  border: solid 1px gainsboro;
+  width: 95%;
+  margin: 5px;
+  padding: 5px;
+}
+
+.profile_pic{
+  width: 10%;
+  display: inline-block;
+}
+
+.profile_pic img{
+  width: 100%;  
+}
+
+.post-text{
+  text-align: left;
+  display: inline-block;
+  width: 89%;
+}
+
+.user_details{
+  font-style: italic;
+}

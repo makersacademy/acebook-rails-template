@@ -1,0 +1,8 @@
+ <div class="container-fluid">
+    <div class="form-group">
+      <%= form_for @post do |form| %>
+        <%= form.text_area :content, class: "form-control", rows: 3, placeholder: "Compose new post" %>
+        <%= form.submit "New Post", id: "submit_post", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
