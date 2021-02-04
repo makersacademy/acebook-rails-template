@@ -2,6 +2,7 @@ require 'bcrypt'
 
 class UsersController < ApplicationController
   include BCrypt
+  skip_before_action :require_login
 
   def index
   end
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
   def authenticate
     user = User.find_by(username: user_params["username"])
     if user.authenticate(user_params["password"])
+      session[:user] = user
       flash[:notice] =  "You have logged in!"
       redirect_to action: 'index'
     else
