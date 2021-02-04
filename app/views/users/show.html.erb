@@ -1,2 +1,10 @@
 <%# MICHEAL CODE HERE %>
 <%= @user.username %>
+
+<h1>Posts</h1>
+
+<% @posts.each do |post| %>
+  <% user = User.find(post.user_id)%>
+  <%= link_to user.username, user_path(user.id) %>
+  <%= link_to post.content, post %></p>
+<% end %>
