@@ -1,5 +1,8 @@
+<h1>Posts</h1>
+
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+    <p><%= post.message %></p>
+    <%= image_tag post.picture_url, width: '100%' if post.picture.present? %>
 <% end %>
 
 <%= link_to new_post_path do %>
