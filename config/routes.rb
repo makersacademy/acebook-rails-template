@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
   get "/anythingrandom", to: "articles#index"
 
-  resources :posts
+  get 'users/login'
+
+    post '/users/authenticate'
+  resources :posts, :users
 end
