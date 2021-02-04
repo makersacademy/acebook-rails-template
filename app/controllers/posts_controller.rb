@@ -19,8 +19,15 @@ class PostsController < ApplicationController
 
   def posts_api
     @posts = Post.all.order(created_at: :desc).as_json()
-    @posts_with_name = @posts.each { |post| post[:user_name] = User.find(post["user_id"]).name }
-    render json: @posts_with_name
+    @posts_with_name_and_likes = @posts.each do |post| 
+                       post[:user_name] = User.find(post["user_id"]).name 
+                       post[:number_of_likes] = Like.where(post_id: post["id"]).length
+                       p "hello im here"
+                       p post[:number_of_likes]
+                       
+    end
+
+    render json: @posts_with_name_and_likes
 
   end
 

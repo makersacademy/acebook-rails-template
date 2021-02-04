@@ -12,8 +12,9 @@ fetch('/posts_api')
         let user = `<p>${element.user_name}</p><br>`
         let message = `<p>${element.message}</p><br>`
         let time = `<p>${element.created_at}</p><br>`
+        let likes = `<p>${element.number_of_likes}</p><br>`
         let like_button = document.createElement('div')
-        div.innerHTML = user + message + time
+        div.innerHTML = user + message + time + likes
         ReactDOM.render(e(LikeButton, {post_id: element.id}),  like_button);
         div.appendChild(like_button)
         divPosts.appendChild(div)
