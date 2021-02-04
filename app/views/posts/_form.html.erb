@@ -20,12 +20,6 @@
     <%= form.number_field :user_id, value: current_user.id, type: :hidden%>
   </div>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_area :username, value: current_user.username%>
-  </div>
- 
-
   <div class="actions">
     <%= form.submit %>
   </div>
