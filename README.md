@@ -20,6 +20,7 @@ First, clone this repository. Then:
 > bundle install
 > bin/rails db:create
 > bin/rails db:migrate
+> bin/rails db:seed #(If you want some test data)
 
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
