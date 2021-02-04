@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
-  <p><%= post.content %></p>
+  <% user = User.find(post.user_id)%>
+  <%= link_to user.username, user_path(user.id) %>
+  <%= link_to post.content, post %></p>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<%= link_to "New post", new_post_path %>

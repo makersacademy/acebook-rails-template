@@ -28,4 +28,12 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "GET /user/:id" do
+    it "responds with 200" do
+      get :show, params: { id: 1 }
+      expect(response).to have_http_status(200)
+    end
+  end
+
+
 end

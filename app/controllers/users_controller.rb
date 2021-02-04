@@ -32,6 +32,10 @@ class UsersController < ApplicationController
        # if invalid login, flashes error message & goes back to users/login
     end
   end
+
+  def show
+    @user = User.find(params[:id])
+  end
   
   private
 
