@@ -1,9 +1,5 @@
 class PostsController < ApplicationController
 
-  def new
-    @post = Post.new
-  end
-
   def create
     begin
       Post.create!(user_id: session[:user]["id"], content: post_params["content"])
@@ -24,6 +20,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @post = Post.new
   end
 
   private

@@ -1,7 +1,16 @@
+<%# TIMELINE %>
+
+<%= form_for @post do |form| %>
+  <%= form.label :content %>
+  <%= form.text_field :content %>
+
+  <%= form.submit "New Post" %>
+<% end %>
+
+<h1>Posts</h1>
+
 <% @posts.each do |post| %>
   <% user = User.find(post.user_id)%>
   <%= link_to user.username, user_path(user.id) %>
   <%= link_to post.content, post %></p>
 <% end %>
-
-<%= link_to "New post", new_post_path %>
