@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   has_secure_password
 
   validates :username, presence: true, uniqueness: true
@@ -12,4 +13,5 @@ class User < ApplicationRecord
 
   has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
   has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+
 end
