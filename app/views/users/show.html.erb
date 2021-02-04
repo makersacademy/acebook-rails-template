@@ -23,6 +23,11 @@
   <%= @user.username %>
 </p>
 
-
+ <h2>Users Who Have Befriended You</h2>
+<ul>
+  <% for user in @user.inverse_friends %>
+  <li><%= h user.username %><%= link_to "accept", users_path(), :method => :put %></li>
+  <% end %>
+</ul>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

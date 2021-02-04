@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
 
-
-  resources :friends
+  resources :friendships 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root 'home#index'

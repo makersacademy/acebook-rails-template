@@ -16,6 +16,8 @@
       <tr>
         <td><%= post.post %></td>
          <td><%= post.user.username %></td>
+      
+
         <td><%= post.created_at.strftime("%A, %d %B %Y %l:%M%p") %></td>
         <td><%= time_ago_in_words(post.created_at, :limit => 1.day.ago) %> ago</td>
 
@@ -25,6 +27,8 @@
          <% end %>
       </tr>
     <% end %>
+
+   
   </tbody>
 </table>
 
