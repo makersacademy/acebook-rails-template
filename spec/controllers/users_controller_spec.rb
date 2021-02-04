@@ -24,7 +24,7 @@ RSpec.describe UsersController, type: :controller do
   describe "POST /authenticate" do
     it "responds with 200" do
       post :authenticate, params: { username: 'Charlotte', password: 'this_is_a_password' }
-      expect(response).to redirect_to("/timeline")
+      expect(response).to redirect_to("/users/1")
     end
   end
 

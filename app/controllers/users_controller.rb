@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if user && user.authenticate(params["password"])
       session[:user] = user
       flash[:primary] =  "You have logged in!"
-      redirect_to "/timeline"
+      redirect_to action: 'show', id: user.id 
     else
       flash[:danger] =  "Incorrect username or password"
       redirect_to "/"
@@ -35,6 +35,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def log_out
+    session[:user] = nil
+    flash[:primary] =  "You have logged out"
+    redirect_to "/"
   end
   
   private
