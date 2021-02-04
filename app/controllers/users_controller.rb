@@ -5,9 +5,6 @@ class UsersController < ApplicationController
   skip_before_action :require_login
 
   def index
-  end
-
-  def new
     @user = User.new
   end
 
@@ -16,16 +13,11 @@ class UsersController < ApplicationController
       User.create!(username: user_params["username"], password: user_params["password"])
     rescue => exception
       flash[:alert] = exception.message
-      redirect_to new_user_path
       # if invalid user, flashes error message & goes back to users/new
     else
       flash[:notice] =  "You have signed up!"
-      redirect_to action: 'login'
     end 
-  end
-
-  def login
-    @user = User.new
+      redirect_to action: "index"
   end
 
   def authenticate
@@ -33,10 +25,10 @@ class UsersController < ApplicationController
     if user.authenticate(user_params["password"])
       session[:user] = user
       flash[:notice] =  "You have logged in!"
-      redirect_to action: 'index'
+      redirect_to controller: "posts", action: "index"
     else
       flash[:alert] =  "Incorrect username or password"
-      redirect_to action: 'login'
+      redirect_to action: 'index'
        # if invalid login, flashes error message & goes back to users/login
     end
   end

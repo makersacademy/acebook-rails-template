@@ -1,2 +1,23 @@
- <%= link_to 'sign up page', new_user_path %>
- <%= link_to 'login page', "users/login" %>
+<%= form_for @user do |form| %>
+  <fieldset id="sign_up">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+    <br>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+    <br>
+    <%= form.submit "Sign Up" %>
+  </fieldset>
+<% end %>
+
+<%= form_with(model: @user, url: {action: "authenticate"}) do |form| %>
+  <fieldset id="log_in">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+    <br>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+    <br>
+    <%= form.submit "Log In" %>
+  </fieldset>
+<% end %>
