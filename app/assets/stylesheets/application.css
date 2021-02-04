@@ -21,6 +21,10 @@
   color: white !important;
 }
 
+.navbar-expand-lg .navbar-brand {
+  color: white !important;
+}
+
 .field .align-label {
   width: 305px;
   text-align: left !important;
@@ -103,7 +107,7 @@
 .newpost{
   color: #463f57 !important
 }
-    
+
 .gravatar {
   height: 30px;
   width: auto;
