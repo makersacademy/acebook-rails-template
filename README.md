@@ -52,8 +52,6 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -107,6 +105,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    bin/rails db:create
    bin/rails db:migrate
+   bin/rails db:seed #(If you want some test data)
    ```
 
 <!-- USAGE EXAMPLES -->

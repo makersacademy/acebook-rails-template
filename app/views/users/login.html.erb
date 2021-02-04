@@ -1,0 +1,9 @@
+<%= form_with(model: @user, url: {action: "authenticate"}) do |form| %>
+  <%= form.label :username %>
+  <%= form.text_field :username %>
+  <br>
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+  <br>
+  <%= form.submit "Submit" %>
+<% end %>
