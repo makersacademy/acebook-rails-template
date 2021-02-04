@@ -10,11 +10,11 @@ class UsersController < ApplicationController
   def create
     hashed_password = BCrypt::Password.create(user_params["password"])
     User.create([{ username: user_params["username"], password: user_params["password"] }])
-    redirect_to :controller => 'users', :action => 'login', alert: "You have signed up!"
+    flash[:notice] =  "You have signed up!"
+    redirect_to action: 'login'
   end
 
   def login
-    @alert = params[:alert]
   end
 
   def index
