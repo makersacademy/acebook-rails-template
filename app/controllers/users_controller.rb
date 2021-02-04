@@ -12,10 +12,10 @@ class UsersController < ApplicationController
     begin
       User.create!(username: user_params["username"], password: user_params["password"])
     rescue => exception
-      flash[:alert] = exception.message
-      # if invalid user, flashes error message & goes back to users/new
+      flash[:danger] = exception.message
+      # if invalid user, flashes error message
     else
-      flash[:notice] =  "You have signed up!"
+      flash[:primary] =  "You have signed up!"
     end 
       redirect_to "/"
   end
@@ -24,10 +24,10 @@ class UsersController < ApplicationController
     user = User.find_by(username: params["username"])
     if user && user.authenticate(params["password"])
       session[:user] = user
-      flash[:notice] =  "You have logged in!"
+      flash[:primary] =  "You have logged in!"
       redirect_to "/timeline"
     else
-      flash[:alert] =  "Incorrect username or password"
+      flash[:danger] =  "Incorrect username or password"
       redirect_to "/"
        # if invalid login, flashes error message & goes back to users/login
     end
