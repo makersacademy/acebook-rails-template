@@ -1,28 +1,29 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  describe "GET /new " do
+
+  describe "GET /timeline" do
     it "responds with 200" do
-      get :new
+      get :index
       expect(response).to have_http_status(200)
     end
   end
 
-  describe "POST /" do
+  describe "POST /posts/create" do
     it "responds with 200" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect(response).to redirect_to(posts_url)
+      post :create, params: { post: { content: "Hello, world!" } }
+      expect(response).to redirect_to("/")
     end
 
     it "creates a post" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect(Post.find_by(message: "Hello, world!")).to be
+      post :create, params: { post: { user_id: "1", content: "Hello, world!" } }
+      expect(Post.find_by(content: "Hello, world!")).to be
     end
   end
 
-  describe "GET /" do
+  describe "GET /post/:id" do
     it "responds with 200" do
-      get :index
+      get :show, params: { id: 1 }
       expect(response).to have_http_status(200)
     end
   end

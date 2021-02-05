@@ -1,20 +1,30 @@
 class PostsController < ApplicationController
-  def new
-    @post = Post.new
-  end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to posts_url
+    begin
+      Post.create!(user_id: session[:user]["id"], content: post_params["content"])
+    rescue => exception
+      flash[:danger] = exception.message
+      # if invalid post, flashes error message & goes back to posts/new
+    else
+      flash[:primary] =  "Posted"
+    end 
+    redirect_back fallback_location: "/"
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @user = User.find(@post.user_id)
   end
 
   def index
     @posts = Post.all
+    @post = Post.new
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:content)
   end
 end

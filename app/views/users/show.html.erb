@@ -1,0 +1,9 @@
+<%# MICHEAL CODE HERE %>
+<%= @user.username %>
+
+<h1>Posts</h1>
+
+<% if session[:user]["id"] == @user.id %>
+  <%= render "shared/add_post" %>
+<% end %>
+<%= render "shared/show_posts" %>
