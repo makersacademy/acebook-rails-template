@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   resources :friendships do
     get '/status', to: 'friendships#status', on: :member
     member do
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
       put :accept
     end
   end
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root 'home#index'

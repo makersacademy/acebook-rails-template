@@ -9,11 +9,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
+        <%= link_to 'Profile', root_path, class:"nav-link" %>
+        <%# <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a> %>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Feed</a>
+        <%= link_to 'Feed', posts_path, class:"nav-link" %>
       </li>
 
       <li class="nav-item">
@@ -27,10 +28,14 @@
     </form> %>
 
     <% if current_user %>
-            Hello <%= current_user.first_name %>!
-            <%= link_to "Log Out", logout_path, class:"nav-link" %>
+
+
+     <span class="navbar-text nav-link"> Hello <%= current_user.first_name %>! </span> 
+      <%= link_to "Log Out", logout_path, class:"nav-link btn btn-secondary" %>
+
     <% else %>
-        <%= link_to "Log In", login_path, class:"nav-link" %>
+        <%= link_to "Log In", login_path, class:"nav-link btn btn-secondary" %> 
+
     <% end %>
   </div>
 </nav>
