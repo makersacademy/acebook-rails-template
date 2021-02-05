@@ -3,8 +3,7 @@
 
 <h1>Posts</h1>
 
-<% @posts.each do |post| %>
-  <% user = User.find(post.user_id)%>
-  <%= link_to user.username, user_path(user.id) %>
-  <%= link_to post.content, post %></p>
+<% if session[:user]["id"] == @user.id %>
+  <%= render "shared/add_post" %>
 <% end %>
+<%= render "shared/show_posts" %>

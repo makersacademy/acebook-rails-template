@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     else
       flash[:primary] =  "You have signed up!"
     end 
-      redirect_to "/"
+      redirect_back fallback_location: "/"
   end
 
   def authenticate
@@ -28,13 +28,14 @@ class UsersController < ApplicationController
       redirect_to action: 'show', id: user.id 
     else
       flash[:danger] =  "Incorrect username or password"
-      redirect_to "/"
+      redirect_back fallback_location: "/"
        # if invalid login, flashes error message & goes back to users/login
     end
   end
 
   def show
     @user = User.find(params[:id])
+    @post = Post.new #for adding new posts
     @posts = Post.where(user_id: params[:id])
   end
 
