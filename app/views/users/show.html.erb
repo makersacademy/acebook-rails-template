@@ -1,4 +1,8 @@
 <%# MICHEAL CODE HERE %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag "profile" %>
+<% end %>
+
 <%= @user.username %>
 
 <h1>Posts</h1>
