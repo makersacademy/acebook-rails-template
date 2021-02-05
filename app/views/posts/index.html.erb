@@ -1,7 +1,6 @@
-<% @posts.each do |post| %>
-  <p><%= post.content %></p>
-<% end %>
+<%# TIMELINE %>
+<div id="page" class="container-fluid">
+  <%= render "shared/add_post" %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+  <%= render "shared/show_posts" %>
+</div>

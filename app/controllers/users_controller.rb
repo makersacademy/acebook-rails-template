@@ -5,9 +5,6 @@ class UsersController < ApplicationController
   skip_before_action :require_login
 
   def index
-  end
-
-  def new
     @user = User.new
   end
 
@@ -15,30 +12,37 @@ class UsersController < ApplicationController
     begin
       User.create!(username: user_params["username"], password: user_params["password"])
     rescue => exception
-      flash[:alert] = exception.message
-      redirect_to new_user_path
-      # if invalid user, flashes error message & goes back to users/new
+      flash[:danger] = exception.message
+      # if invalid user, flashes error message
     else
-      flash[:notice] =  "You have signed up!"
-      redirect_to action: 'login'
+      flash[:primary] =  "You have signed up!"
     end 
-  end
-
-  def login
-    @user = User.new
+      redirect_back fallback_location: "/"
   end
 
   def authenticate
-    user = User.find_by(username: user_params["username"])
-    if user.authenticate(user_params["password"])
+    user = User.find_by(username: params["username"])
+    if user && user.authenticate(params["password"])
       session[:user] = user
-      flash[:notice] =  "You have logged in!"
-      redirect_to action: 'index'
+      flash[:primary] =  "You have logged in!"
+      redirect_to action: 'show', id: user.id 
     else
-      flash[:alert] =  "Incorrect username or password"
-      redirect_to action: 'login'
+      flash[:danger] =  "Incorrect username or password"
+      redirect_back fallback_location: "/"
        # if invalid login, flashes error message & goes back to users/login
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @post = Post.new #for adding new posts
+    @posts = Post.where(user_id: params[:id])
+  end
+
+  def log_out
+    session[:user] = nil
+    flash[:primary] =  "You have logged out"
+    redirect_to "/"
   end
   
   private

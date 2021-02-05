@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  
-  get 'users/login'
+  get "/", to: "users#index"
 
-    post '/users/authenticate'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'users/login'
+  post '/users/authenticate'
+  post "/users/log_out"
+
+  get "/timeline", to: "posts#index"
 
   resources :posts, :users
 end
