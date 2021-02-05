@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   end
 
   def update
+  Post.find(params[:id]).increment!(:likes)
     redirect_back fallback_location: "/"
   end
 
