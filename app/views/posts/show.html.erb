@@ -2,4 +2,4 @@
 <h1><%= link_to @user.username, @user %></a></h1>
 <p><%= @post.content %></p>
 <%# <%= button_to "New", action: "new" %> %>
-<button formmethod=“put”>like</button>
+<%= button_to "Like", { :id => @post.id}, :method => :put %>
