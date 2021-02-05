@@ -1,0 +1,51 @@
+hr{
+  margin: 0;
+}
+
+p{
+  margin: 0;
+}
+
+
+#page {
+  margin: auto;
+  width: 60%;
+  height: 100vh;
+  border: 3px solid gainsboro;
+  padding: 10px;
+  text-align: center;
+  display: block; 
+}
+
+#post{
+  width: 80%;
+  display: inline-block;
+  border: solid 3px black;
+  text-align: left;
+}
+
+#post img{
+  width: 10%;
+  display: inline;
+}
+
+.inner-post{
+  padding: 5px 10px 5px 10px;
+}
+
+#post-content{
+  padding: 10px;
+}
+
+#post-content p{
+  font-style: italic;
+  font-size: small;
+}
+
+#interactions{
+  text-align: center;
+}
+
+#interactions form{
+  display: inline;
+}

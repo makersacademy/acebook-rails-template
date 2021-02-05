@@ -1,18 +1,26 @@
 <%# Individual Post %>
-<div class="page">
-  <div class="container-fluid">
-    <div class="profile_pic">
+<% content_for :head do %>
+  <%= stylesheet_link_tag "post_page" %>
+<% end %>
+<div id="page">
+  <div id="post" class="align-middle">
+    <div id="user-details" class="inner-post">
       <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
-    </div>
-    <div class="user_details">
       <%= link_to @user.username, @user %>
     </div>
-    <div class="post_content">
-      <%= @post.content %>
+    <hr>
+    <div id="post-content" class="inner-post">
+      <h4><%= @post.content %></h4>
+      <p><%= @post.created_at %></p>
     </div>
-    <div class="interactions">
-      <%= @post.likes %>
-      <%= button_to "Like", { :id => @post.id}, :method => :put %>
+    <hr>
+    <div id="post-stats" class="inner-post">
+      <p><%= @post.likes %> likes</p>
+    </div>
+    <hr>
+    <div id="interactions" class="inner-post">
+      <%= button_to "Like", { :id => @post.id}, {method: :put, class: "btn btn-secondary"} %>
+      <button class="btn btn-secondary">Add Comment</button>
     </div>
   </div>
 </div>
