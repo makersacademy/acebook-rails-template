@@ -27,4 +27,13 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "PUT/posts/:id" do
+    it "responds with 200" do
+      put :update, params: { id: 1 }
+      expect(response).to redirect_to("/")
+    end
+  end  
+  
+
 end
