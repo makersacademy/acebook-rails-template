@@ -27,10 +27,21 @@ class FriendshipsController < ApplicationController
     redirect_to root_url
   end
 
-  def show
+  def status
+    @inversefriendship = current_user.inverse_friendships
   end
 
   def put
     @friendships.all
+  end
+
+  def accept
+    @friendship = current_user.friendship.find(params[:friend_id])
+    @friendship.update(:status, true)
+    redirect_to root_url
+  end
+  
+  def decline
+    update(status: false)
   end
 end

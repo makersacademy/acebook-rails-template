@@ -7,4 +7,8 @@ class Friendship < ApplicationRecord
     update(status: true)
   end
 
+  def decline
+    update(status: false)
+  end
+
 end

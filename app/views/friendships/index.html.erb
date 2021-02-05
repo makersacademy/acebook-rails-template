@@ -11,6 +11,9 @@
   <% @inversefriendship.each do |friend| %>
         <ul>
           <li><%= friend.status %></li>
-          <li><%= friend.user.username %></li>
+          <li><%= friend.user.username %><%= link_to "Accept Friend", accept_friendship_path(:friend_id => friend.id, :user_id => current_user.id), :method => :put %></li>
+
         </ul>
   <% end %>
+
+ 

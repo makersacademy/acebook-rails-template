@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   resources :friendships do
     get '/status', to: 'friendships#status', on: :member
+    member do
+      patch :accept
+      put :accept
+    end
   end
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

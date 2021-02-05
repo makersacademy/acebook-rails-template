@@ -1,0 +1,10 @@
+<h2> people who have requested </h2>
+  <% @inversefriendship.each do |friend| %>
+        <ul>
+          <li><%= friend.status %></li>
+          <li><%= friend.user.username %></li>
+
+        </ul>
+    <% end %>
+
+    
