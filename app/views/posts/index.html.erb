@@ -14,6 +14,7 @@
     
     <% @posts.each do |post| %>
       <tr>
+
         <td><%= post.post %></td> 
          <td><%= post.user.username %></td>
          <td><%= post.user.first_name  %> <%= post.user.last_name%></td>
@@ -23,6 +24,7 @@
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
   </tbody>
 </table>
 
