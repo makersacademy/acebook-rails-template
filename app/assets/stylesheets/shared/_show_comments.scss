@@ -1,8 +1,9 @@
-.post{
+.comment{
   border: solid 1px gainsboro;
-  width: 99%;
+  width: 90%;
   margin: auto;
   display: inline-block;
+  text-align: left;
 }
 
 .container-fluid {
@@ -15,15 +16,16 @@
 }
 
 .profile-pic img{
-  width: 100%;  
+  width: 100% !important;
+  height: auto; 
 }
 
-.post-text{
+.comment-text{
   text-align: left;
   display: inline-block;
   width: 89%;
 }
 
-.user-details{
+.comment-details{
   font-style: italic;
 }

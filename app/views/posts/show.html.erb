@@ -18,9 +18,13 @@
       <p><%= @post.likes %> likes</p>
     </div>
     <hr>
-    <div id="interactions" class="inner-post">
+    <div id="interaction-panel" class="inner-post">
       <%= button_to "Like", { :id => @post.id}, {method: :put, class: "btn btn-secondary"} %>
       <button class="btn btn-secondary">Add Comment</button>
+    </div>
+    <hr>
+    <div id="comments">
+      <%= render "shared/show_comments" %>
     </div>
   </div>
 </div>

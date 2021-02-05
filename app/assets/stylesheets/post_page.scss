@@ -42,10 +42,15 @@ p{
   font-size: small;
 }
 
-#interactions{
+#interaction-panel{
   text-align: center;
 }
 
-#interactions form{
+#interaction-panel form{
   display: inline;
+}
+
+#comments {
+  padding: 20px 0px 20px 0px;
+  text-align: center;
 }
