@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @post = Post.new #for adding new posts
-    @posts = Post.where(user_id: params[:id])
+    @posts = Post.where(user_id: params[:id]).order(created_at: :desc)
   end
 
   def log_out
