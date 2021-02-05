@@ -19,4 +19,15 @@ RSpec.describe Post, type: :model do
     new_post.content = "Hello World!"
     expect(new_post).to be_valid
   end
+
+
+it "post has zero likes" do
+new_post = Post.new
+expect(new_post.likes).to equal 0
+end
+
+it " post can have multiple likes" do
+  new_post = Post.new
+  expect { new_post.increment!(:likes)}.to change { new_post.likes }.by(1)
+end 
 end

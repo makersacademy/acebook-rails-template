@@ -2,7 +2,7 @@ require 'bcrypt'
 
 class UsersController < ApplicationController
   include BCrypt
-  skip_before_action :require_login
+  skip_before_action :require_login, except: [:show, :log_out]
 
   def index
     @user = User.new
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @post = Post.new #for adding new posts
-    @posts = Post.where(user_id: params[:id])
+    @posts = Post.where(user_id: params[:id]).order(created_at: :desc)
   end
 
   def log_out
