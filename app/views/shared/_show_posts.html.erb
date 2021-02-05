@@ -1,5 +1,6 @@
 <% @posts.each do |post| %>
-    <div id="post" class="container-fluid">
+  <div class="post">
+    <div class="container-fluid" onclick="location.href='<%= post_path(post.id) %>';">
       <% user = User.find(post.user_id)%>
       <div class="profile_pic">
         <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
@@ -9,10 +10,11 @@
           <%= link_to "@#{user.username}", user_path(user.id) %>
         </div>
         <div class="post_content">
-          <%= link_to post.content, post %>
+          <%= post.content %>
         </div>
       </div>
       <div class="interactions">
       </div>
     </div>
+  </div>
   <% end %>
