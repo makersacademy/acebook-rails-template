@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    session[:user] = User.find_by(username: "Charlotte") if ENV['RAILS_ENV'] == "test"
+    session[:user] = User.find(1) if ENV['RAILS_ENV'] == "test" && session[:user].nil?
     !session[:user].nil?
   end
 

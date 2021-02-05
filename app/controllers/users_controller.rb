@@ -2,7 +2,7 @@ require 'bcrypt'
 
 class UsersController < ApplicationController
   include BCrypt
-  skip_before_action :require_login
+  skip_before_action :require_login, except: [:show, :log_out]
 
   def index
     @user = User.new
