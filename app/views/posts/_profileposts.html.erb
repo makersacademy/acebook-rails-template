@@ -35,8 +35,10 @@
     <!--card body-->
 
     <div class="card-body">
-      <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
-          <h5 class="card-title"><%= post.post %></h5> <!--post.post -->
+      <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i><%= time_ago_in_words(post.created_at, :limit => 1.day.ago) %> ago
+      </div>
+
+        <h5 class="card-title"><%= post.post %></h5> <!--post.post -->
         <p class="card-text"> <!--text goes here--></p>
     </div>
 
