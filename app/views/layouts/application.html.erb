@@ -9,12 +9,14 @@
     <%= javascript_include_tag 'application' %>
     <%= yield(:head) %>
   </head>
-<%# NAV BAR HERE %>
-<% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>"><%= value %></div>
-<% end %>
-<%# Error/Confirmation flashes here ^ %>
   <body>
-    <%= yield %>
-  </body>
-</html>
+  <div class="container">
+    <div class="main-body">
+      <%= render "layouts/navbar"%>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      <%# Error/Confirmation flashes here ^ %>
+      <%= yield %>
+    </body>
+  </html>
