@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <h1>hello</h1>
 
   <strong>First name:</strong>
   <%= @user.first_name %>
@@ -23,6 +24,20 @@
   <%= @user.username %>
 </p>
 
+<h2> Friends </h2>
+<ul>
+  <%for friendship in @user.friendships %>
+    <li>
+      <%=h friendship.friend.username%>
+      (<%= link_to "remove", friendship, :method => :destroy %>)
+    </li>
+    <%end%>
 
+ <h2>Users Who Have Befriended You</h2>
+<ul>
+  <% for user in @user.inverse_friends %>
+  <li><%= h user.username %><%= link_to "accept", friendships_path(current_user, @friend), :method => :put %></li>
+  <% end %>
+</ul>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

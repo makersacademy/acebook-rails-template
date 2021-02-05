@@ -1,0 +1,23 @@
+<h2> Friends </h2>
+
+
+  <% @friendship.each do |friend| %>
+        <ul>
+          <li><%= friend.status %></li>
+          <li><%= friend.friend.username %></li>
+        </ul>
+  <% end %>
+<h2> people who have requested </h2>
+ <% @friendship.each do |friend| %>
+  <%= friend.id %>
+  <% end %>
+
+  <% @inversefriendship.each do |friendship| %>
+        <ul>
+          <li><%= friendship.status %></li>
+          <li><%= friendship.user.username %><%= link_to "Accept Friend", accept_friendship_path(friendship), :method => :put %></li>
+
+        </ul>
+  <% end %>
+
+ 

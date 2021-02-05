@@ -2,7 +2,14 @@ Rails.application.routes.draw do
 
 
 
-  resources :friends
+  resources :friendships do
+    get '/status', to: 'friendships#status', on: :member
+    member do
+      patch :accept
+      put :accept
+    end
+  end
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root 'home#index'
@@ -12,7 +19,9 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
   resources :posts
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'posts#index'
   get '/posts', to: 'posts#index'
-end
+  #get '/friends',to: 'users#show', as: 'friends'
+  end
