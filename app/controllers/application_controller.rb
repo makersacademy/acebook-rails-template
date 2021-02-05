@@ -17,9 +17,5 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def inverse_friends
-    @friendship = Friendships.find(session)
-  end
-
 
 end

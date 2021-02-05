@@ -1,11 +1,12 @@
 class FriendshipsController < ApplicationController
 
   def index
-    @friendship = Friendship.all
+    @friendship = current_user.friendships
+    @inversefriendship = current_user.inverse_friendships
+    #@friendship = Friendships.find(params[:friend_id])
   end
 
   def new
-
   end
 
   def create
@@ -19,5 +20,17 @@ class FriendshipsController < ApplicationController
     end
   end
 
+  def destroy
+    @friendship = current_user.friendship.find(params[:friend_id])
+    @friendship.destroy
+    flash[:notice]= "successfully deleted friend"
+    redirect_to root_url
+  end
 
+  def show
+  end
+
+  def put
+    @friendships.all
+  end
 end
