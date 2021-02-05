@@ -22,6 +22,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def update
+    redirect_back fallback_location: "/"
+  end
+
   private
 
   def post_params
