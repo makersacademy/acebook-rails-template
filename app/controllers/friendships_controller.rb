@@ -36,12 +36,14 @@ class FriendshipsController < ApplicationController
   end
 
   def accept
-    @friendship = current_user.friendship.find(params[:friend_id])
-    @friendship.update(:status, true)
+    @friendship = current_user.inverse_friendships.find(params[:id])
+    @friendship.update(status: true)
     redirect_to root_url
   end
   
   def decline
-    update(status: false)
+    @friendship = current_user.inverse_friendships.find(params[:id])
+    @friendship.update(status: false)
+    redirect_to root_url
   end
 end
