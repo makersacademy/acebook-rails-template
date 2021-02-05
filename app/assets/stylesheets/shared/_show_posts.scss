@@ -1,7 +1,11 @@
-#post{
+.post{
   border: solid 1px gainsboro;
-  width: 95%;
-  margin: 5px;
+  width: 99%;
+  margin: auto;
+  display: inline-block;
+}
+
+.container-fluid {
   padding: 5px;
 }
 
