@@ -1,8 +1,8 @@
 class FriendshipsController < ApplicationController
 
   def index
-    @friendship = current_user.friendships
-    @inversefriendship = current_user.inverse_friendships
+    @friendships = current_user.friendships
+    @inversefriendships = current_user.inverse_friendships
     #@friendship = Friendships.find(params[:friend_id])
   end
 

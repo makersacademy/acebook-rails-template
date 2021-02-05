@@ -1,23 +1,46 @@
-<h2> Friends </h2>
+ <% # Displays the list of friends of both relationships if status equals to true %>
+ <h2> Your List of Friends</h2>
 
-
-  <% @friendship.each do |friend| %>
-        <ul>
-          <li><%= friend.status %></li>
-          <li><%= friend.friend.username %></li>
-        </ul>
+<% @friendships.each do |friendship| %>
+  <% if friendship.status === 't' %>
+      <ul>
+        <li><%= friendship.status %></li>
+        <li><%= friendship.friend.username %></li>
+      </ul>
   <% end %>
-<h2> people who have requested </h2>
- <% @friendship.each do |friend| %>
-  <%= friend.id %>
+<% end %>
+
+<% @inversefriendships.each do |friendship| %>
+  <% if friendship.status === 't' %>
+      <ul>
+        <li><%= friendship.status %></li>
+        <li><%= friendship.user.username %></li>
+      </ul>
+<% end %>
+<% end %>
+
+<% ###################################################### %>
+
+<% # Displays friends you requested if you made the requested %>
+<% # Displays another view for user who received friend request %>
+
+<% @friendships.each do |friendship| %>
+  <% if current_user.id != friendship.friend.id %>
+    <h2> Friends You Requested - Still Pending</h2>
+      <ul>
+        <li><%= friendship.status %></li>
+        <li><%= friendship.friend.username %></li>
+      </ul>
   <% end %>
+<% end %>
 
-  <% @inversefriendship.each do |friendship| %>
-        <ul>
-          <li><%= friendship.status %></li>
-          <li><%= friendship.user.username %><%= link_to "Accept Friend", accept_friendship_path(friendship), :method => :put %></li>
 
-        </ul>
+ <% @inversefriendships.each do |friendship| %>
+  <% if current_user.id === friendship.friend.id %>
+    <h2> Friend Requests You Recieved</h2>
+      <ul>
+        <li><%= friendship.status %></li>
+        <li><%= friendship.user.username %> <%= link_to "Accept Friend", accept_friendship_path(friendship), :method => :put %></li></li>
+      </ul>
   <% end %>
-
- 
+<% end %>
