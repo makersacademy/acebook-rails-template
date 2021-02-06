@@ -1,43 +1,133 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <h1>hello</h1>
+<div class="jumbotron jumbotron-fluid ">
+  <div class="container">
+    <h1 class="display-4">Profile Header</h1>
+    <%# <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> %>
+  </div>
+</div>
 
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+<div class="container-fluid gedf-wrapper mt-5">
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
+  <div class="row">
 
-</p>
+    <!--- First column  -->
+    <div class="col-md-3">
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+      <!--- profile card -->
+       <div class="card">
+        <div class="card-body">
+            <div class="h5">@<%= @user.username %></div>
+
+            <!--profile pic-->
+            <div class="mr-2">
+                <img class="rounded-circle" width="90" src="https://picsum.photos/50/50" alt="profile-pic">
+            </div>
+
+            <div class="h7 text-muted">Name: <%= @user.first_name %> <%= @user.last_name %></div>
+            <div class="h7">Email: <%= @user.email %></div>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="h6 text-muted">Friends</div>
+                <div class="h5">To be added</div>
+            </li>
+        </ul>
+      </div>
+                
+    </div>
+            
 
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+    <!--- Second column  -->
+    <div class="col-md-6 gedf-main">
 
-<h2> Friends </h2>
-<ul>
-  <%for friendship in @user.friendships %>
-    <li>
-      <%=h friendship.friend.username%>
-      (<%= link_to "remove", friendship, :method => :destroy %>)
-    </li>
-    <%end%>
+    <!-- Profile posts-->
 
- <h2>Users Who Have Befriended You</h2>
-<ul>
-  <% for user in @user.inverse_friends %>
-  <li><%= h user.username %><%= link_to "accept", friendships_path(current_user, @friend), :method => :put %></li>
-  <% end %>
-</ul>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+      <% @posts.each do |post| %>
+        <%if @user === post.user%>
+        <!--card header-->
+        <div class="card gedf-card mb-3">
+          <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="mr-2">
+                    <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                </div>
+                
+                <div class="ml-2">
+                  <div class="h5 m-0">@<%= post.user.username %></div> 
+                    <div class="h7 text-muted"><%= post.user.first_name  %> <%= post.user.last_name%></div> 
+                </div>
+              </div>
+
+              <div>
+                <div class="dropdown">
+                  <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-h"></i>
+                  </button>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                      <%= link_to 'Edit', edit_post_path(post), class:"dropdown-item" %>
+                      <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"dropdown-item" %>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--card body-->
+
+          <div class="card-body">
+            <div class="text-muted h7 mb-2"> <p><i class="fa fa-clock-o fa-fw"></i><%= time_ago_in_words(post.created_at, :limit => 1.day.ago) %> ago</p>
+            </div>
+
+              <h5 class="card-title"><%= post.post %></h5> <!--post.post -->
+              <p class="card-text"> <!--text goes here--></p>
+          </div>
+
+          <!--card footer-->
+          <div class="card-footer">
+              <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+              <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+              <%# <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a> %>
+          </div>        
+
+        </div>
+        <%end %>
+
+      <% end %>
+
+    </div>
+
+    <!--- third column  -->
+    <div class="col-md-3">
+
+    <h2> Friends </h2>
+    <ul>
+      <%for friendship in @user.friendships %>
+        <li>
+          <%=h friendship.friend.username%>
+          (<%= link_to "remove", friendship, :method => :destroy %>)
+        </li>
+        <%end%>
+
+    <h2>Users Who Have Befriended You</h2>
+    <ul>
+      <% for user in @user.inverse_friends %>
+      <li><%= h user.username %><%= link_to "accept", friendships_path(current_user, @friend), :method => :put %></li>
+      <% end %>
+    </ul>
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+    <%= link_to 'Back', users_path %>
+
+    </div>
+
+
+
+
+
+    
+  </div>
+</div>
