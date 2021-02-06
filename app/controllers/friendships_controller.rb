@@ -39,7 +39,7 @@ class FriendshipsController < ApplicationController
   
   def decline
     @friendship = current_user.inverse_friendships.find(params[:id])
-    @friendship.update(status: false)
+    @friendship.destroy
     redirect_to root_url
   end
 end
