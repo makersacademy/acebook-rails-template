@@ -40,7 +40,7 @@
     <h2> Friend Requests You Recieved</h2>
       <ul>
         <li><%= friendship.status %></li>
-        <li><%= friendship.user.username %> <%= link_to "Accept Friend", accept_friendship_path(friendship), :method => :put %></li></li>
+        <li><%= friendship.user.username %> <%= link_to "Accept Friend", accept_friendship_path(friendship), :method => :put %> <%= link_to "Decline Friend", decline_friendship_path(friendship), :method => :delete %></li>
       </ul>
   <% end %>
 <% end %>

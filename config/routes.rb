@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     member do
       patch :accept
       put :accept
+      delete :decline
     end
   end
 
