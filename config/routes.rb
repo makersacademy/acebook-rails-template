@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
 
-  get 'friends', to: 'friendships#index'
-  resources :friendships do
+  
+  resources :friendships, :path => 'friends' do
     get '/status', to: 'friendships#status', on: :member
     member do
       patch :accept
