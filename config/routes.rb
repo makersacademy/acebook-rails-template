@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
 
-
-  resources :friendships do
+  
+  resources :friendships, :path => 'friends' do
     get '/status', to: 'friendships#status', on: :member
     member do
       patch :accept
       put :accept
+      delete :decline
     end
   end
 
