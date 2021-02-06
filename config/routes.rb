@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-
-  
   resources :friendships, :path => 'friends' do
-    get '/status', to: 'friendships#status', on: :member
+    get '/status', to: 'friends#status', on: :member
     member do
       patch :accept
       put :accept
@@ -19,10 +17,12 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :posts
+  resources :posts do
+    post 'comments', to: 'comments#create'
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/', to: 'posts#index'
+  
   get '/posts', to: 'posts#index'
-  #get '/friends',to: 'users#show', as: 'friends'
+  
   end
