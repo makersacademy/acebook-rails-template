@@ -1,54 +1,104 @@
  <div class="jumbotron jumbotron-fluid "  style="background-image: url(https://d16yj43vx3i1f6.cloudfront.net/uploads/2020/10/Diversity.jpg); background-size: 100%; background-position-y: 5%;">
   <div class="container">
     <h1 class="display-4  text-white">Friends</h1>
-    <%# <p class="lead">Request new friends</p> %>
   </div>
 </div>
 
  
- <% # Displays the list of friends of both relationships if status equals to true %>
- <h2> Your List of Friends</h2>
+<div class="row">
 
-<% @friendships.each do |friendship| %>
-  <% if friendship.status === 't' %>
-      <ul>
-        <li><%= friendship.status %></li>
-        <li><%= friendship.friend.username %></li>
-      </ul>
-  <% end %>
-<% end %>
+  <div class="col-8 ">
+    <% # Displays the list of friends of both relationships if status equals to true %>
+    <h4> Your Friends List</h4>
 
-<% @inversefriendships.each do |friendship| %>
-  <% if friendship.status === 't' %>
-      <ul>
-        <li><%= friendship.status %></li>
-        <li><%= friendship.user.username %></li>
-      </ul>
-<% end %>
-<% end %>
+    <!--line 16 to 30 doesn't display on browser not sure what it does -sarah -->
+    
+    <% @friendships.each do |friendship| %>
+      <% if friendship.status === 't' %>
+          
+          <div class="card" style="width: 12rem;">
+            <img src="https://www.kirkham-legal.co.uk/wp-content/uploads/2017/02/profile-placeholder.png" class="card-img-top" alt="...">
+            <div class="card-body bg-dark text-white">
+              <h5 class="card-title ">@<%= friendship.friend.username %></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><%= friendship.friend.first_name %> <%= friendship.friend.last_name %></li>
+              <li class="list-group-item"><%= link_to 'Show', friendship.friend %></li>
+            </ul>
+          </div>
+      <% end %>
+    <% end %>
 
-<% ###################################################### %>
+    <div class="row row-cols-3">
+  
+    <% @inversefriendships.each do |friendship| %>
+      <% if friendship.status === 't' %>
+        <div class="col mb-5">
+          <div class="card" style="width: 12rem;">
+            <img src="https://www.kirkham-legal.co.uk/wp-content/uploads/2017/02/profile-placeholder.png" class="card-img-top" alt="...">
+            <div class="card-body bg-dark text-white">
+              <h5 class="card-title ">@<%= friendship.user.username %></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><%= friendship.user.first_name %> <%= friendship.user.last_name %></li>
+              <li class="list-group-item"><%= link_to 'Show', friendship.user %></li>
+            </ul>
+          </div>
+        </div>
+    <% end %>
+    <% end %>
 
-<% # Displays friends you requested if you made the requested %>
-<% # Displays another view for user who received friend request %>
-
-<h2> Friends You Requested - Still Pending</h2>
-<% @friendships.each do |friendship| %>
-  <% if current_user.id != friendship.friend.id %>
-      <ul>
-        <li><%= friendship.status %></li>
-        <li><%= friendship.friend.username %></li>
-      </ul>
-  <% end %>
-<% end %>
+    </div>
+   
+  </div>
 
 
- <% @inversefriendships.each do |friendship| %>
-  <% if current_user.id === friendship.friend.id && friendship.status != 't' || current_user.id === friendship.friend.id && friendship.status === 'f' %>
-    <h2> Friend Requests You Recieved</h2>
-      <ul>
-        <li><%= friendship.status %></li>
-        <li><%= friendship.user.username %> <%= link_to "Accept Friend", accept_friendship_path(friendship), :method => :put %> <%= link_to "Decline Friend", decline_friendship_path(friendship), :method => :delete %></li>
-      </ul>
-  <% end %>
-<% end %>
+
+  <div class="col">
+    <% ###################################################### %>
+
+    <% # Displays friends you requested if you made the requested %>
+    <% # Displays another view for user who received friend request %>
+
+     <div class="mb-5"> 
+
+      <h4> Pending Friend Request </h4>
+      <% @inversefriendships.each do |friendship| %>
+        <% if current_user.id === friendship.friend.id && friendship.status != 't' || current_user.id === friendship.friend.id && friendship.status === 'f' %>
+
+          <div class="card mb-2" style="width: 18rem;">
+            <div class="card-header">
+              @<%= friendship.user.username %>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><%= link_to "Accept Friend", accept_friendship_path(friendship), :method => :put, class:"btn btn-success btn-sm" %> <%= link_to "Decline Friend", decline_friendship_path(friendship), :method => :delete, class:"btn btn-danger btn-sm" %></li>
+            </ul>
+          </div>
+
+        <% end %>
+      <% end %>
+
+    </div>
+
+    <div >
+
+      <h4> Pending Friend Response</h4>
+      <% @friendships.each do |friendship| %>
+        <% if current_user.id != friendship.friend.id %>
+
+            <div class="card mb-2" style="width: 18rem;">
+              <div class="card-header">
+                @<%= friendship.friend.username %>
+              </div>
+            </div>
+
+        <% end %>
+      <% end %>
+
+    </div>
+
+   
+
+  </div>
+  
+</div>
