@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-
+  get 'friends', to: 'friendships#index'
   resources :friendships do
     get '/status', to: 'friendships#status', on: :member
     member do

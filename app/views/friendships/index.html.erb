@@ -24,9 +24,9 @@
 <% # Displays friends you requested if you made the requested %>
 <% # Displays another view for user who received friend request %>
 
+<h2> Friends You Requested - Still Pending</h2>
 <% @friendships.each do |friendship| %>
   <% if current_user.id != friendship.friend.id %>
-    <h2> Friends You Requested - Still Pending</h2>
       <ul>
         <li><%= friendship.status %></li>
         <li><%= friendship.friend.username %></li>
@@ -36,7 +36,7 @@
 
 
  <% @inversefriendships.each do |friendship| %>
-  <% if current_user.id === friendship.friend.id && friendship.status === 'null' %>
+  <% if current_user.id === friendship.friend.id && friendship.status != 't' %>
     <h2> Friend Requests You Recieved</h2>
       <ul>
         <li><%= friendship.status %></li>

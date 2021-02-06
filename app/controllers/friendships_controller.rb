@@ -31,10 +31,6 @@ class FriendshipsController < ApplicationController
     @inversefriendship = current_user.inverse_friendships
   end
 
-  def put
-    @friendships.all
-  end
-
   def accept
     @friendship = current_user.inverse_friendships.find(params[:id])
     @friendship.update(status: true)
