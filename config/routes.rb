@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   
   resources :friendships, :path => 'friends' do
-    get '/status', to: 'friendships#status', on: :member
+    get '/status', to: 'friends#status', on: :member
     member do
       patch :accept
       put :accept
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :posts
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/', to: 'posts#index'
+  
   get '/posts', to: 'posts#index'
-  #get '/friends',to: 'users#show', as: 'friends'
+  
   end
