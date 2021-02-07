@@ -34,7 +34,7 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to redirect_to("/")
     end 
   
-  it "likes should increase by 1" do
+    it "likes should increase by 1" do
       put :update, params: { id: 1 }
       post = Post.find(1)
       expect(post.likes).to equal 1
