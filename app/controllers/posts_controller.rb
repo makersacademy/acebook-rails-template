@@ -2,14 +2,16 @@ class PostsController < ApplicationController
 
   def create
     begin
-      Post.create!(user_id: session[:user]["id"], content: post_params["content"])
+      @post = Post.create!(user_id: session[:user]["id"], content: post_params["content"])
+      respond_to do |format|
+          format.html { redirect_back fallback_location: "/", flash[:primary] =>  "Posted"}
+          format.js
+          format.json { render json: @post, flash[:primary] =>  "Posted" }
+        end
     rescue => exception
       flash[:danger] = exception.message
       # if invalid post, flashes error message & goes back to posts/new
-    else
-      flash[:primary] =  "Posted"
     end 
-    redirect_back fallback_location: "/"
   end
 
   def show
