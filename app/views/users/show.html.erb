@@ -117,7 +117,7 @@
             <% if session[:user]["id"] == @user.id %>
               <%= render "shared/add_post" %>
             <% end %>
-            <%= render "shared/show_posts" %>
+            <%= render @posts %>
           </div>
         </div>
     </div>
