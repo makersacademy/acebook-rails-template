@@ -114,19 +114,10 @@
             </div>
           </div>
           <div class="form-group shadow-textarea">
-            <!-- <label for="exampleFormControlTextarea6">Shadow and placeholder</label> -->
-            <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="4" placeholder="Write something here..."></textarea>
-            <br>
-            <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="4" placeholder="Write something here..."></textarea>
-            <input class="btn" type="button" value="Post">
+            <% if session[:user]["id"] == @user.id %>
+              <%= render "shared/add_post" %>
+            <% end %>
+            <%= render "shared/show_posts" %>
           </div>
-
         </div>
     </div>
-
-<h1>Posts</h1>
-
-<% if session[:user]["id"] == @user.id %>
-  <%= render "shared/add_post" %>
-<% end %>
-<%= render "shared/show_posts" %>
