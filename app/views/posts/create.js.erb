@@ -1,6 +1,12 @@
+var nav = document.querySelector("nav");
+var flash = "<div class='alert alert-primary' role='alert'>Posted!</div>";
+nav.insertAdjacentHTML("afterend", flash );
+// add flash
+
 var posts = document.querySelector("#posts");
 var newPost = "<div class='newPost'><%= j render(@post) %></div>"
 posts.insertAdjacentHTML("afterbegin", newPost );
 // add new post on top of previous ones
+
 document.getElementById("post_content").value = "";
 // reset form to be blank
