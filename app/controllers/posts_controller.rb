@@ -3,8 +3,9 @@ class PostsController < ApplicationController
   def create
     begin
       @post = Post.create!(user_id: session[:user]["id"], content: post_params["content"])
+      flash[:primary] =  "Posted!"
       respond_to do |format|
-        format.html { redirect_back fallback_location: "/", flash[:primary] =>  "Posted!"}
+        format.html { redirect_back fallback_location: "/"}
         format.js
         format.json { render json: @post}
       end
