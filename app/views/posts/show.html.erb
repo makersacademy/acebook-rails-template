@@ -15,11 +15,11 @@
     </div>
     <hr>
     <div id="post-stats" class="inner-post">
-      <p><%= @post.likes %> likes</p>
+      <p><span id="likes"><%= @post.likes %></span> likes</p>
     </div>
     <hr>
     <div id="interaction-panel" class="inner-post">
-      <%= button_to "Like", { :id => @post.id}, {method: :put, class: "btn btn-secondary"} %>
+      <%= button_to "Like", { :id => @post.id}, {method: :put, class: "btn btn-secondary", remote: true} %>
       <button class="btn btn-secondary">Add Comment</button>
     </div>
     <hr>
