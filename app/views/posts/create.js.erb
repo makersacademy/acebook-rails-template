@@ -1,2 +1,6 @@
 var posts = document.querySelector("#posts");
-posts.insertAdjacentHTML("afterbegin", "<%= j render(@post) %>");
+var newPost = "<div class='newPost'><%= j render(@post) %></div>"
+posts.insertAdjacentHTML("afterbegin", newPost );
+// add new post on top of previous ones
+document.getElementById("post_content").value = "";
+// reset form to be blank
