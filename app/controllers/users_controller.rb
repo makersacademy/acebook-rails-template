@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if session[:user] #if user is already logged in
       @user = User.find(session[:user]["id"])
       @post = Post.new #for adding new posts
-      @posts = Post.where(user_id: session[:user]["id"]).order(created_at: :desc)
+      @posts = @user.posts.order(created_at: :desc)
       render action: 'show', id: session[:user]["id"]
     else
       @disable_nav = true
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @post = Post.new #for adding new posts
-    @posts = Post.where(user_id: params[:id]).order(created_at: :desc)
+    @posts = @user.posts.order(created_at: :desc)
   end
 
   def log_out

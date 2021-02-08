@@ -4,7 +4,6 @@ class PostsController < ApplicationController
     begin
       @post = Post.create!(user_id: session[:user]["id"], content: post_params["content"])
       flash[:primary] =  "Posted!"
-      p "No error"
       respond_to do |format|
         format.html { redirect_back fallback_location: "/"}
         format.js
@@ -24,9 +23,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @user = User.find(@post.user_id)
+    @user = @post.user
     @comment = Comment.new
-    @comments = Comment.where(post_id: params[:id]).order(created_at: :desc)
+    @comments = @post.comments.order(created_at: :desc)
   end
 
   def index
