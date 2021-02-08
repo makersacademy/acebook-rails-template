@@ -2,7 +2,7 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-<div align="center">  
+<div align="center">
   <div class="c-top-container">
       <div class="field">
         <%= f.label :email %><br>
@@ -45,6 +45,6 @@
     <br>
     <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, :class => "c-button-cancel", method: :delete %>
       <br>
-    <button class="c-button"<%= link_to "Back", :back %></button>
+    <%= link_to "Back", root_path(), class: 'c-button ltb' %>
   </div>
 </div>
