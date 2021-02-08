@@ -13,8 +13,10 @@
 //= require rails-ujs
 //= require_tree .
 
-window.setTimeout(function() {
+function fadeAlert(){
   $(".alert").fadeTo(500, 0).slideUp(500, function(){
-      $(this).remove(); 
+    $(this).remove(); 
   });
-}, 4000);
+}
+
+window.setTimeout(fadeAlert, 4000);
