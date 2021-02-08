@@ -31,17 +31,11 @@
 }
 
 .newPost {
-	opacity: 0;
-	animation: fadeIn 0.25s ease-in both;
+	max-height: 0;
+  overflow: hidden;
+	animation: slideIn 1s;
 }
 
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-		transform: translate3d(0, -20%, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
+@keyframes slideIn {
+	to { max-height: 500px; }
 }

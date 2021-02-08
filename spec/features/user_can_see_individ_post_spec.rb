@@ -5,7 +5,7 @@ RSpec.feature "Individual Post page", type: :feature do
     visit "/timeline"
     find('.post').click
     expect(page).to have_content("Hello World")
-    expect(page).to have_content("Charlotte")
+    expect(page).to have_content("@Charlotte")
   end
 
   scenario "Like post" do
