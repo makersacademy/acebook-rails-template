@@ -46,10 +46,6 @@
               -->
             </div>
             <div class="col-md-8">
-<<<<<<< HEAD
-=======
-                
->>>>>>> timeline_page
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="row">
@@ -108,18 +104,11 @@
                 </div>
               </div>
               </div>
-<<<<<<< HEAD
         
-=======
-              <div class="col-md-2">
-                  <div class="sidebar">
-                      <h6 class="mb-2">Testing</h6>
->>>>>>> timeline_page
                   </div>
               </div>
             </div>
           </div>
-<<<<<<< HEAD
           <div class="container">
    <div class="row">
       <div class="col-md-12">
@@ -551,7 +540,7 @@
           <% if session[:user]["id"] == @user.id %>
             <%= render "shared/add_post" %>
           <% end %>
-          <%= render "shared/show_posts" %>
+          <%= render @posts %>
 
           </div>
           </div>
@@ -567,15 +556,5 @@
           #%>
         
 
-=======
-          <div class="form-group shadow-textarea">
-            <% if session[:user]["id"] == @user.id %>
-              <%= render "shared/add_post" %>
-            <% end %>
-            <div id="posts">
-              <%= render @posts %>
-            </div>
-          </div>
->>>>>>> timeline_page
         </div>
     </div>
