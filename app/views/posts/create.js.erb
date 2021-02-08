@@ -1,12 +1,21 @@
+var alert = "Posted!";
+var level = "primary";
+
+if("<%= j @error %>"){
+  alert = "<%= j @error %>";
+  level = "danger";
+} else{
+  var posts = document.querySelector("#posts");
+  var newPost = "<div class='newPost'><%= j render(@post) %></div>";
+  posts.insertAdjacentHTML("afterbegin", newPost );
+  // add new post on top of previous ones
+}
+
+
 var nav = document.querySelector("nav");
-var flash = "<div class='alert alert-primary' role='alert'>Posted!</div>";
+var flash = `<div class='alert alert-${level}' role='alert'>${alert}</div>`;
 nav.insertAdjacentHTML("afterend", flash );
 // add flash
-
-var posts = document.querySelector("#posts");
-var newPost = "<div class='newPost'><%= j render(@post) %></div>"
-posts.insertAdjacentHTML("afterbegin", newPost );
-// add new post on top of previous ones
 
 document.getElementById("post_content").value = "";
 // reset form to be blank

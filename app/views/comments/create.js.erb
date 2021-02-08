@@ -1,12 +1,20 @@
+var alert = "Added comment!";
+var level = "primary";
+
+if("<%= j @error %>"){
+  alert = "<%= j @error %>";
+  level = "danger";
+} else{
+  var comments = document.querySelector("#comments");
+  var newComment = "<div class='newComment'><%= j render(@comment) %></div>"
+  comments.insertAdjacentHTML("afterbegin", newComment );
+  // add new comment on top of previous ones
+}
+
 var nav = document.querySelector("nav");
-var flash = "<div class='alert alert-primary' role='alert'>Added comment!</div>";
+var flash = `<div class='alert alert-${level}' role='alert'>${alert}</div>`;
 nav.insertAdjacentHTML("afterend", flash );
 // add flash
-
-var posts = document.querySelector("#comments");
-var newPost = "<div class='newComment'><%= j render(@comment) %></div>"
-posts.insertAdjacentHTML("afterbegin", newPost );
-// add new post on top of previous ones
 
 document.getElementById("comment_content").value = "";
 // reset form to be blank

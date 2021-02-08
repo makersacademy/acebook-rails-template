@@ -4,15 +4,21 @@ class PostsController < ApplicationController
     begin
       @post = Post.create!(user_id: session[:user]["id"], content: post_params["content"])
       flash[:primary] =  "Posted!"
+      p "No error"
       respond_to do |format|
         format.html { redirect_back fallback_location: "/"}
         format.js
         format.json { render json: @post}
       end
     rescue => exception
+      @error = exception.message
       flash[:danger] = exception.message
-      respond_to { |format| format.html { redirect_back fallback_location: "/"} }
-      # if invalid post, flashes error message & goes back to posts/new
+      respond_to do |format|
+        format.html { redirect_back fallback_location: "/"}
+        # if invalid post, flashes error message & goes back to posts/new
+        format.js
+        format.json { render json: @error }
+      end
     end 
   end
 
