@@ -1,9 +1,16 @@
-<h1>Posts</h1>
 
-<% @posts.each do |post| %>
-    <p><%= post.message %></p>
-    <%= image_tag post.picture_url, width: '100%' if post.picture.present? %>
-<% end %>
+<h1>Posts</h1>
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-4" align="center">
+      <div class="posts-index-cont">
+        <h2><%= post.title %></h2>
+        <p><%= post.message %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
 
 <%= link_to new_post_path do %>
   New post
