@@ -12,10 +12,10 @@
     <h4> Your Friends List</h4>
 
     <!--line 16 to 30 doesn't display on browser not sure what it does -sarah -->
-    
+    <div class="row row-cols-3">
     <% @friendships.each do |friendship| %>
       <% if friendship.status === 't' %>
-          
+        <div class="col mb-5">  
           <div class="card" style="width: 12rem;">
             <img src="https://www.kirkham-legal.co.uk/wp-content/uploads/2017/02/profile-placeholder.png" class="card-img-top" alt="...">
             <div class="card-body bg-dark text-white">
@@ -26,10 +26,11 @@
               <li class="list-group-item"><%= link_to 'Show', friendship.friend %></li>
             </ul>
           </div>
+        </div>
       <% end %>
     <% end %>
 
-    <div class="row row-cols-3">
+    
   
     <% @inversefriendships.each do |friendship| %>
       <% if friendship.status === 't' %>
