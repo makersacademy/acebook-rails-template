@@ -18,4 +18,11 @@ RSpec.feature "Individual Post page", type: :feature do
     visit "/posts/1"
     expect(page).to have_content("This is a great post!")
   end
+
+  scenario  "Add comment" do
+    visit "/posts/1"
+    fill_in "comment_content", with: "This is a new comment"
+    click_button "Submit"
+    expect(page).to have_content("This is a new comment")
+  end
 end

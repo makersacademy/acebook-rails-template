@@ -1,0 +1,12 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "shared/_add_post" %>
+<% end %> 
+ 
+ <div class="container-fluid">
+    <div class="form-group">
+      <%= form_for [@post, @comment] do |form| %>
+        <%= form.text_area :content, class: "form-control", rows: 3, placeholder: "Compose new comment" %>
+        <%= form.submit "Submit", id: "submit_post", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
