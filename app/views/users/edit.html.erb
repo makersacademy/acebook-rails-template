@@ -1,0 +1,27 @@
+
+
+<div class="container-fluid gedf-wrapper mt-5">
+    <div class="row">
+
+            <!--- First column  -->
+        <div class="col-md-3">
+
+            <!--- profile card -->
+            <%= render "users/profilecard"%>
+            
+        </div>
+
+        <!--- Second column  -->
+        <div class="col-md-6 gedf-main">
+            <%# <h1>Editing User</h1> %>
+
+            <%= render 'form', user: @user %>
+
+            <!--<%= link_to 'Show', @user %> | -->
+            <!--<%= link_to 'Back', users_path %> -->
+
+
+        </div>
+    </div>
+</div>
+

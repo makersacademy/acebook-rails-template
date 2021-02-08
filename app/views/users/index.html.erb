@@ -1,0 +1,33 @@
+<div class="jumbotron jumbotron-fluid "  style="background-image: url(https://d16yj43vx3i1f6.cloudfront.net/uploads/2020/10/Diversity.jpg); background-size: 100%; background-position-y: 5%;">
+  <div class="container">
+    <h1 class="display-4  text-white">Users</h1>
+    <%# <p class="lead">Request new friends</p> %>
+  </div>
+</div>
+
+
+<p id="notice"><%= notice %></p>
+
+<div class="row row-cols-5 mb-5">
+<% @users.each do |user| %>
+
+
+  <div class="col mb-5">
+    <div class="card" style="width: 12rem;">
+      <img src="https://www.kirkham-legal.co.uk/wp-content/uploads/2017/02/profile-placeholder.png" class="card-img-top" alt="...">
+      <div class="card-body bg-dark text-white">
+        <h5 class="card-title ">@<%= user.username %></h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= user.first_name %> <%= user.last_name %></li>
+        <li class="list-group-item"><%= link_to 'Show', user %></li>
+        <li class="list-group-item"><%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %></li>
+      </ul>
+    </div>
+  </div>
+    
+<% end %>
+</div>
+
+
+

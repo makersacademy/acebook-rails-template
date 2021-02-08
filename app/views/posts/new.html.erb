@@ -1,6 +1,28 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
 
-  <%= form.submit "Submit" %>
-<% end %>
+  <div class="container-fluid gedf-wrapper mt-5">
+        <div class="row">
+
+             <!--- First column  -->
+            <div class="col-md-3">
+
+            
+
+              <!--- profile card -->
+              <%= render "users/profilecard"%>
+                
+            </div>
+
+            <!--- Second column  -->
+            <div class="col-md-6 gedf-main">
+
+
+            <%= render 'form', post: @post %>
+            <!-- <%= link_to 'Back', posts_path %> -->
+
+            
+        </div>
+    </div>
+
+
+
+

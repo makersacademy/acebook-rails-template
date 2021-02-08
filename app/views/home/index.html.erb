@@ -1,0 +1,80 @@
+
+<!-- Logged in alert -->
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <p id="notice"> <%=notice%> </p>
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+<% if current_user %>
+    
+    <!--- Jumbo header  -->
+    <%= render "users/profileheader"%>
+    
+
+    <div class="container-fluid gedf-wrapper mt-5">
+
+        <div class="row">
+
+             <!--- First column  -->
+            <div class="col-md-3">
+
+              <!--- profile card -->
+              <%= render "users/profilecard"%>
+                
+            </div>
+            
+
+
+            <!--- Second column  -->
+            <div class="col-md-6 gedf-main">
+
+                <!--- create New Post Button-->
+
+                 <%= link_to "Create a new Post", new_post_path, class:"btn btn-primary btn-block py-2 mb-3" %>
+                
+                
+                <!-- Profile posts-->
+
+                <%= render "posts/profileposts"%>
+
+            </div>
+
+
+          <!--- third column  -->
+            <%# <div class="col-md-3">
+                <div class="card gedf-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+                <div class="card gedf-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                                card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div> 
+            </div> %>
+        </div>
+    </div>
+
+
+<% else %>
+
+  <%= link_to "Log In", login_path %> or
+  <%= link_to "Sign Up", signup_path %>
+
+<% end %>
+

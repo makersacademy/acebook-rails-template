@@ -1,0 +1,33 @@
+
+ <div class="container-fluid gedf-wrapper mt-5">
+        <div class="row">
+
+             <!--- First column  -->
+            <div class="col-md-3">
+
+            
+
+              <!--- profile card -->
+              <%= render "users/profilecard"%>
+                
+            </div>
+
+            <!--- Second column  -->
+            <div class="col-md-6 gedf-main">
+            <%# <h1>Editing Post</h1> %>
+
+            <%= render 'form', post: @post %>
+
+           <!-- <%= link_to 'Show', @post %> | -->
+            <!-- <%= link_to 'Back', posts_path %> -->
+
+            </div>
+
+        </div>
+
+</div>
+
+
+
+
+
