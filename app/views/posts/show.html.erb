@@ -23,7 +23,7 @@
       <%= button_to "Like", { :id => @post.id}, {method: :put, class: "btn btn-secondary", remote: true} %>
       <button class="btn btn-secondary" data-toggle="collapse" data-target="#comment_form">Add Comment</button>
     </div>
-    <hr>
+    <hr id="beforeComments">
     <div id="comment_form" class="collapse">
       <%= render "comments/add_comment" %>
     </div>

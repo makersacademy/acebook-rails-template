@@ -1,8 +1,4 @@
-<% content_for :head do %>
-  <%= stylesheet_link_tag "shared/_add_content" %>
-<% end %> 
- 
- <div class="container-fluid">
+<div class="container-fluid">
     <div class="form-group">
       <%= form_for [@post, @comment], remote: true do |form| %>
         <%= form.text_area :content, class: "form-control", rows: 3, placeholder: "Compose new comment" %>
