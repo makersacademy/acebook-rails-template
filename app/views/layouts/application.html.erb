@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
@@ -14,6 +15,18 @@
   <div class="alert alert-<%= key %>"><%= value %></div>
 <% end %>
 <%# Error/Confirmation flashes here ^ %>
+=======
+<head>
+  <title>Acebook</title>
+  <%= csrf_meta_tags %>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+>>>>>>> home_page
   <body>
     <%= yield %>
   </body>
