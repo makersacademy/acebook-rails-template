@@ -5,7 +5,16 @@ class UsersController < ApplicationController
   skip_before_action :require_login, except: [:show, :log_out]
 
   def index
-    @user = User.new
+    if session[:user] #if user is already logged in
+      @user = User.find(session[:user]["id"])
+      @post = Post.new #for adding new posts
+      @posts = Post.where(user_id: params[:id]).order(created_at: :desc)
+      render action: 'show', id: session[:user]["id"]
+    else
+      @disable_nav = true
+      @user = User.new
+      # shows log in / sign up page
+    end
   end
 
   def create

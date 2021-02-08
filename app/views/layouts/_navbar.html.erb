@@ -3,9 +3,7 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/timeline">Timeline</a></li>
     <li class="breadcrumb-item"><a href="javascript:void(0)">Notification</a></li>
-    <% unless session[:user].nil? %>
-      <li class="breadcrumb-item"><a href=<%= user_path(session[:user]["id"]) %>>User Profile</a></li>
-    <% end %>
+    <li class="breadcrumb-item"><a href="/" >User Profile</a></li>
     <li class="breadcrumb-item"><a href="javascript:void(0)">Inbox</a></li>
     <li class="breadcrumb-item"><a href="javascript:void(0)">Setting</a></li>
     <li class="breadcrumb-item"><a href="/users/log_out">Logout</a></li>
