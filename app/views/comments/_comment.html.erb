@@ -1,0 +1,20 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "shared/_show_comments" %>
+<% end %> 
+
+<div class="comment">
+    <div class="container-fluid">
+      <% user = User.find(comment[:user_id])%>
+      <div class="profile-pic">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+      </div>
+      <div class="comment-text">
+        <div class="user-details">
+          <%= link_to "@#{user.username}", user_path(user.id) %>
+        </div>
+        <div class="comment-content">
+          <%= comment[:content] %>
+        </div>
+      </div>
+    </div>
+  </div>

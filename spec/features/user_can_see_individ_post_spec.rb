@@ -13,4 +13,9 @@ RSpec.feature "Individual Post page", type: :feature do
     click_on "Like"
     expect(page).to have_content("1 like")
   end
+
+  scenario  "See comments" do
+    visit "/posts/1"
+    expect(page).to have_content("This is a great post!")
+  end
 end
