@@ -1,3 +1,4 @@
+<h1>New Post</h1>
 <%= form_for @post do |form| %>
   <%= form.label :title %>
   <br>
@@ -6,10 +7,12 @@
   <%= form.label :message %>
   <br>
   <%= form.text_field :message %>
+
   <br>
   <%= form.label :post_img %>
   <br>
   <%= form.file_field :post_img %>
   <br>
+
   <%= form.submit "Submit" %>
 <% end %>

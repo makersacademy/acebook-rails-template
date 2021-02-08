@@ -13,13 +13,16 @@
  *= require_tree .
  *= require_self
  */
-
 .navbar {
   background: #463f57;
   height: 80px;
 }
 
 .nav-item .nav-link {
+  color: white !important;
+}
+
+.navbar-expand-lg .navbar-brand {
   color: white !important;
 }
 
@@ -171,3 +174,9 @@
   margin-top: 60px;
   margin-bottom: 60px;
 }
+
+.gravatar {
+  height: 30px;
+  width: auto;
+}
+
