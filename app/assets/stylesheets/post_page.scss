@@ -50,6 +50,15 @@ p{
 }
 
 #comments {
-  padding: 20px 0px 20px 0px;
+  padding-bottom: 20px 0px 20px 0px;
   text-align: center;
+}
+
+#comment_form{
+  width: 90%;
+  margin: auto;
+}
+
+#comment_form .container-fluid{
+  padding: 0;
 }

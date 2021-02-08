@@ -20,11 +20,13 @@
     <hr>
     <div id="interaction-panel" class="inner-post">
       <%= button_to "Like", { :id => @post.id}, {method: :put, class: "btn btn-secondary", remote: true} %>
-      <button class="btn btn-secondary">Add Comment</button>
+      <button class="btn btn-secondary" data-toggle="collapse" data-target="#comment_form">Add Comment</button>
     </div>
     <hr>
+    <div id="comment_form" class="collapse">
+      <%= render "comments/add_comment" %>
+    </div>
     <div id="comments">
-      <%= render "shared/add_comment" %>
       <%= render @comments %>
     </div>
   </div>

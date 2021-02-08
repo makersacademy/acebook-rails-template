@@ -21,6 +21,7 @@ RSpec.feature "Individual Post page", type: :feature do
 
   scenario  "Add comment" do
     visit "/posts/1"
+    click_on "Add Comment"
     fill_in "comment_content", with: "This is a new comment"
     click_button "Submit"
     expect(page).to have_content("This is a new comment")
