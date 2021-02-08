@@ -29,3 +29,14 @@
 .comment-details{
   font-style: italic;
 }
+
+.newComment {
+	max-height: 0;
+  overflow: hidden;
+	animation: slideIn 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+	to { max-height: 500px; }
+}

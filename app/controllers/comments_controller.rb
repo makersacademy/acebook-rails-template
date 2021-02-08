@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   def create
     begin
       @comment = Comment.create!(post_id: params[:post_id], user_id: session[:user]["id"], content: comment_params["content"])
-      flash[:primary] =  "Added Comment!"
+      flash[:primary] =  "Added comment!"
       respond_to do |format|
         format.html { redirect_back fallback_location: "/"}
         format.js
