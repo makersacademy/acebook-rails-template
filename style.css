@@ -44,16 +44,14 @@ body{
 
 .bg-gray-300 {
     background-color: #e2e8f0;
-<<<<<<< HEAD
-=======
 }
 .h-100 {
     height: 100%!important;
 }
 .shadow-none {
     box-shadow: none!important;
->>>>>>> fa5c5c0fdba8bbeeeabbb9dcd31f13921a2fda9c
 }
+
 .h-100 {
     height: 100%!important;
 }
