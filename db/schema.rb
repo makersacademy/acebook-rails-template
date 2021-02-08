@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210205144141) do
+ActiveRecord::Schema.define(version: 20210208115154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "post_id"
+    t.integer "user_id"
+    t.string "content"
+    t.datetime "created_at"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.bigint "user_id"
@@ -28,5 +36,6 @@ ActiveRecord::Schema.define(version: 20210205144141) do
     t.string "password_digest"
   end
 
+  add_foreign_key "comments", "users"
   add_foreign_key "posts", "users"
 end
