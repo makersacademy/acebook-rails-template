@@ -1,21 +1,6 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag "profile" %>
 <% end %>
-
-<div class="container">
-    <div class="main-body">
-          <!-- Breadcrumb -->
-          <nav aria-label="breadcrumb" class="main-breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="javascript:void(0)">Timeline</a></li>
-              <li class="breadcrumb-item"><a href="javascript:void(0)">Notification</a></li>
-              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
-              <li class="breadcrumb-item"><a href="javascript:void(0)">Inbox</a></li>
-              <li class="breadcrumb-item"><a href="javascript:void(0)">Setting</a></li>
-              <li class="breadcrumb-item"><a href="javascript:void(0)">Logout</a></li>
-            </ol>
-          </nav>
-          <!-- /Breadcrumb -->
           <!-- /Avatar info area -->
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
@@ -24,7 +9,7 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
-                      <h4>Arbnor Testing</h4>
+                      <h4><%= @user.username %></h4>
                       <p class="text-secondary mb-1">Ruby, HTML, CSS. What else?</p>
                       <p class="text-muted font-size-sm">London, UK</p>
                       <button class="btn btn-primary">Add Friend</button>
@@ -61,6 +46,10 @@
               -->
             </div>
             <div class="col-md-8">
+<<<<<<< HEAD
+=======
+                
+>>>>>>> timeline_page
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="row">
@@ -119,11 +108,18 @@
                 </div>
               </div>
               </div>
+<<<<<<< HEAD
         
+=======
+              <div class="col-md-2">
+                  <div class="sidebar">
+                      <h6 class="mb-2">Testing</h6>
+>>>>>>> timeline_page
                   </div>
               </div>
             </div>
           </div>
+<<<<<<< HEAD
           <div class="container">
    <div class="row">
       <div class="col-md-12">
@@ -571,5 +567,15 @@
           #%>
         
 
+=======
+          <div class="form-group shadow-textarea">
+            <% if session[:user]["id"] == @user.id %>
+              <%= render "shared/add_post" %>
+            <% end %>
+            <div id="posts">
+              <%= render @posts %>
+            </div>
+          </div>
+>>>>>>> timeline_page
         </div>
     </div>

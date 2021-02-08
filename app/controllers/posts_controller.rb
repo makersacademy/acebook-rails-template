@@ -2,24 +2,39 @@ class PostsController < ApplicationController
 
   def create
     begin
-      Post.create!(user_id: session[:user]["id"], content: post_params["content"])
+      @post = Post.create!(user_id: session[:user]["id"], content: post_params["content"])
+      flash[:primary] =  "Posted!"
+      respond_to do |format|
+        format.html { redirect_back fallback_location: "/"}
+        format.js
+        format.json { render json: @post}
+      end
     rescue => exception
       flash[:danger] = exception.message
+      respond_to { |format| format.html { redirect_back fallback_location: "/"} }
       # if invalid post, flashes error message & goes back to posts/new
-    else
-      flash[:primary] =  "Posted"
     end 
-    redirect_back fallback_location: "/"
   end
 
   def show
     @post = Post.find(params[:id])
     @user = User.find(@post.user_id)
+    @comment = Comment.new
+    @comments = Comment.where(post_id: params[:id]).order(created_at: :desc)
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
     @post = Post.new
+  end
+
+  def update
+    @post = Post.find(params[:id]).increment!(:likes)
+    respond_to do |format|
+      format.html { redirect_back fallback_location: "/"}
+      format.js
+      format.json { render json: @post}
+    end
   end
 
   private

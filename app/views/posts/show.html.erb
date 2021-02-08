@@ -1,3 +1,34 @@
 <%# Individual Post %>
-<h1><%= link_to @user.username, @user %></a></h1>
-<p><%= @post.content %></p>
+<% content_for :head do %>
+  <%= stylesheet_link_tag "post_page" %>
+<% end %>
+
+<div id="page">
+  <div id="post" class="align-middle">
+    <div id="user-details" class="inner-post">
+      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+      <%= link_to "@#{@user.username}", @user %>
+    </div>
+    <hr>
+    <div id="post-content" class="inner-post">
+      <h4><%= @post.content %></h4>
+      <p><%= @post.created_at %></p>
+    </div>
+    <hr>
+    <div id="post-stats" class="inner-post">
+      <p><span id="likes"><%= @post.likes %></span> likes</p>
+    </div>
+    <hr>
+    <div id="interaction-panel" class="inner-post">
+      <%= button_to "Like", { :id => @post.id}, {method: :put, class: "btn btn-secondary", remote: true} %>
+      <button class="btn btn-secondary" data-toggle="collapse" data-target="#comment_form">Add Comment</button>
+    </div>
+    <hr>
+    <div id="comment_form" class="collapse">
+      <%= render "comments/add_comment" %>
+    </div>
+    <div id="comments">
+      <%= render @comments %>
+    </div>
+  </div>
+</div>

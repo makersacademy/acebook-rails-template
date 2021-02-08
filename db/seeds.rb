@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(username: 'Charlotte', password: 'this_is_a_password')
 Post.create(content: 'Hello World', user_id: '1')
+Comment.create(content: 'This is a great post!', user_id: '1', post_id: '1')
 #   Character.create(name: 'Luke', movie: movies.first)

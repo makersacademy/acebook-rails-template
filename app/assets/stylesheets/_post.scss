@@ -1,20 +1,22 @@
 .post{
   border: solid 1px gainsboro;
+  border-radius: 5px;
   width: 99%;
   margin: auto;
   display: inline-block;
+  background-color: white;
 }
 
 .container-fluid {
   padding: 5px;
 }
 
-.profile_pic{
+.profile-pic{
   width: 10%;
   display: inline-block;
 }
 
-.profile_pic img{
+.profile-pic img{
   width: 100%;  
 }
 
@@ -24,6 +26,17 @@
   width: 89%;
 }
 
-.user_details{
+.user-details{
   font-style: italic;
+}
+
+.newPost {
+	max-height: 0;
+  overflow: hidden;
+	animation: slideIn 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+	to { max-height: 500px; }
 }

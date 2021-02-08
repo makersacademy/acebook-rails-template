@@ -34,6 +34,5 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
-
-
+  
 end

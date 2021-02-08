@@ -1,0 +1,64 @@
+hr{
+  margin: 0;
+}
+
+p{
+  margin: 0;
+}
+
+
+#page {
+  margin: auto;
+  height: 100vh;
+  border: 3px solid gainsboro;
+  padding: 10px;
+  text-align: center;
+  display: block; 
+}
+
+#post{
+  width: 80%;
+  display: inline-block;
+  border: solid 3px black;
+  text-align: left;
+}
+
+#post img{
+  width: 10%;
+  display: inline;
+}
+
+.inner-post{
+  padding: 5px 10px 5px 10px;
+}
+
+#post-content{
+  padding: 10px;
+}
+
+#post-content p{
+  font-style: italic;
+  font-size: small;
+}
+
+#interaction-panel{
+  text-align: center;
+}
+
+#interaction-panel form{
+  display: inline;
+}
+
+#comments {
+  padding-bottom: 20px 0px 20px 0px;
+  text-align: center;
+}
+
+#comment_form{
+  width: 90%;
+  margin: auto;
+}
+
+#comment_form .container-fluid{
+  padding: 0;
+}
