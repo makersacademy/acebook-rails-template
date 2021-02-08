@@ -1,7 +1,15 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-4" align="center">
+      <div class="posts-index-cont">
+        <h2><%= post.title %></h2>
+        <p><%= post.message %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-<%= link_to new_post_path do %>
-  New post
+
+ <%= link_to new_post_path do %>
+    New post
 <% end %>
