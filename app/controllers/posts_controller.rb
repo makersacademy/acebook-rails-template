@@ -11,6 +11,7 @@ class PostsController < ApplicationController
       end
     rescue => exception
       flash[:danger] = exception.message
+      respond_to { |format| format.html { redirect_back fallback_location: "/"} }
       # if invalid post, flashes error message & goes back to posts/new
     end 
   end

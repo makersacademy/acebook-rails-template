@@ -1,0 +1,12 @@
+var nav = document.querySelector("nav");
+var flash = "<div class='alert alert-primary' role='alert'>Added comment!</div>";
+nav.insertAdjacentHTML("afterend", flash );
+// add flash
+
+var posts = document.querySelector("#comments");
+var newPost = "<div class='newComment'><%= j render(@comment) %></div>"
+posts.insertAdjacentHTML("afterbegin", newPost );
+// add new post on top of previous ones
+
+document.getElementById("comment_content").value = "";
+// reset form to be blank

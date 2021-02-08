@@ -9,11 +9,16 @@ class CommentsController < ApplicationController
     begin
       @comment = Comment.create!(post_id: params[:post_id], user_id: session[:user]["id"], content: comment_params["content"])
       flash[:primary] =  "Added Comment!"
+      respond_to do |format|
+        format.html { redirect_back fallback_location: "/"}
+        format.js
+        format.json { render json: @comment}
     rescue => exception
       flash[:danger] = exception.message
+      respond_to { |format| format.html { redirect_back fallback_location: "/"} }
+      end
       # if invalid post, flashes error message & goes back to posts/new
-    end 
-    redirect_back fallback_location: "/"
+    end
   end
 
   private
