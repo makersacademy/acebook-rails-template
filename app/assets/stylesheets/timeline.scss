@@ -1,0 +1,19 @@
+html, body {
+  height: 100%;
+}
+
+body{
+  background-image: none;
+}
+
+.container-fluid {
+  display: inline-block;
+}
+
+#page{
+  margin: auto;
+  border: 3px solid gainsboro;
+  padding: 10px;
+  text-align: center;
+  display: block;
+}

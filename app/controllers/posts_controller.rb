@@ -2,14 +2,17 @@ class PostsController < ApplicationController
 
   def create
     begin
-      Post.create!(user_id: session[:user]["id"], content: post_params["content"])
+      @post = Post.create!(user_id: session[:user]["id"], content: post_params["content"])
+      flash[:primary] =  "Posted!"
+      respond_to do |format|
+        format.html { redirect_back fallback_location: "/"}
+        format.js
+        format.json { render json: @post}
+      end
     rescue => exception
       flash[:danger] = exception.message
       # if invalid post, flashes error message & goes back to posts/new
-    else
-      flash[:primary] =  "Posted"
     end 
-    redirect_back fallback_location: "/"
   end
 
   def show
@@ -23,8 +26,12 @@ class PostsController < ApplicationController
   end
 
   def update
-  Post.find(params[:id]).increment!(:likes)
-    redirect_back fallback_location: "/"
+    @post = Post.find(params[:id]).increment!(:likes)
+    respond_to do |format|
+      format.html { redirect_back fallback_location: "/"}
+      format.js
+      format.json { render json: @post}
+    end
   end
 
   private

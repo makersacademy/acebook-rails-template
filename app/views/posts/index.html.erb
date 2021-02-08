@@ -1,6 +1,11 @@
 <%# TIMELINE %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag "timeline" %>
+<% end %>
+
 <div id="page" class="container-fluid">
   <%= render "shared/add_post" %>
-
-  <%= render "shared/show_posts" %>
+  <div id="posts">
+    <%= render @posts %>
+  </div>
 </div>

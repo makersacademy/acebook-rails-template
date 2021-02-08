@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'users/login'
   post '/users/authenticate'
-  post "/users/log_out"
+  get "/users/log_out"
 
   get "/timeline", to: "posts#index"
 
