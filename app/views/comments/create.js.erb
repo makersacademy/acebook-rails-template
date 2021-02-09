@@ -2,12 +2,10 @@ var alert = "Added comment!";
 var level = "primary";
 
 <% if @error.nil? %>
-  <% if @post.original_post_id.nil? %>
-    var comments = document.querySelector("#comments");
-    var newComment = "<div class='newComment'><%= j render(@comment) %></div>"
-    comments.insertAdjacentHTML("afterbegin", newComment );
-    // add new comment on top of previous ones
-  <% end %>
+  var comments = document.querySelector("#comments");
+  var newComment = "<div class='newComment'><%= j render(@comment) %></div>"
+  comments.insertAdjacentHTML("afterbegin", newComment );
+  // add new comment on top of previous ones
 <% else %>
   alert = "<%= j @error %>";
   level = "danger";
@@ -20,5 +18,8 @@ nav.insertAdjacentHTML("afterend", flash );
 window.setTimeout(fadeAlert, 4000);
 // trigger countdown to make alert auto disappear
 
+
+
 document.getElementById("comment_content").value = "";
 // reset form to be blank
+closeForm();
