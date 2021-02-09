@@ -1,10 +1,4 @@
 class CommentsController < ApplicationController
-  def index
-    @post = Post.find(params[:post_id])
-    @comment = Comment.new
-    @comments = @post.comments.order(created_at: :desc)
-  end
-
   def create
     begin
       @comment = Comment.create!(comment_params)
