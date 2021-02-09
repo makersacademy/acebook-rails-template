@@ -1,0 +1,16 @@
+<br>
+<h1><%= @user.name %></h1>
+<br>
+<h1><%= @user.bio %></h1>
+
+<div class="row">
+  <% @user_posts.each do |post| %>
+    <div class="col-4" align="center">
+      <div class="posts-index-cont">
+        <h2><%= post.title %></h2>
+        <p><%= post.message %></p>
+      </div>
+        <%= link_to 'Delete', post_path(post), method: :delete, id: "delete_post_#{post.id}_from_index", data: { confirm: 'Are you sure?' } %> 
+    </div>
+  <% end %>
+</div>
