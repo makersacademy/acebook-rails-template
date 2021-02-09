@@ -3,17 +3,21 @@ class PostsController < ApplicationController
   def create
     begin
       @post = Post.create!(post_params)
-      flash[:primary] = "Posted!"
       respond_to do |format|
-        format.html { redirect_back fallback_location: "/"}
+        format.html do
+          flash[:primary] = "Posted!"
+          redirect_back fallback_location: "/"
+        end
         format.js
         format.json { render json: @post}
       end
     rescue => exception
       @error = exception.message
-      flash[:danger] = exception.message
       respond_to do |format|
-        format.html { redirect_back fallback_location: "/"}
+        format.html do
+          flash[:danger] = exception.message
+          redirect_back fallback_location: "/"
+        end
         # if invalid post, flashes error message & goes back to posts/new
         format.js
         format.json { render json: @error }

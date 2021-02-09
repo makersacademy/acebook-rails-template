@@ -1,4 +1,4 @@
-var alert = "Posted!";
+var alert = `Posted! <%= link_to "View", @post %>`;
 var level = "primary";
 
 <% if @error.nil? %>

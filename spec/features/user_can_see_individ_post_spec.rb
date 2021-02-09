@@ -32,8 +32,5 @@ RSpec.feature "Individual Post page", type: :feature do
     fill_in "post_content", with: "This is a new share"
     find("#submit_share").click
     expect(page).to have_content("Posted!")
-    # visit "/posts/2"
-    # expect(page).to have_content("Hello World")
-    # expect(page).to have_content("This is a new share")
   end
 end
