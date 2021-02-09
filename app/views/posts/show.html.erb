@@ -37,6 +37,11 @@
     <div id="post-content" class="inner-post">
       <h4><%= @post.content %></h4>
       <p><%= @post.created_at %></p>
+      <div id="original_post">
+        <% if @original_post %>
+          <%= render @original_post %>
+        <% end %>
+      </div>
     </div>
     <hr>
     <div id="post-stats" class="inner-post">

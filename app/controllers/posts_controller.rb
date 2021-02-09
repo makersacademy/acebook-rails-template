@@ -31,6 +31,7 @@ class PostsController < ApplicationController
     @user = @post.user
     @comment = Comment.new
     @comments = @post.comments.order(created_at: :desc)
+    @original_post = @post.original_post
   end
 
   def index
