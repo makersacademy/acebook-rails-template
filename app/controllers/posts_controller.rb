@@ -27,16 +27,18 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @new_post = Post.new
-    @user = @post.user
-    @comment = Comment.new
-    @comments = @post.comments.order(created_at: :desc)
     @original_post = @post.original_post
+    @user = @post.user
+    @comments = @post.comments.order(created_at: :desc)
+    # for forms
+    @comment = Comment.new
+    @new_post = Post.new
   end
 
   def index
     @posts = Post.order(created_at: :desc)
     @post = Post.new
+    @depth = 0 # how far to get retweets
   end
 
   def update

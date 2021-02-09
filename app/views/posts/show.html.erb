@@ -39,7 +39,8 @@
       <p><%= @post.created_at %></p>
       <div id="original_post">
         <% if @original_post %>
-          <%= render @original_post %>
+          <%= render partial: @original_post, locals: { depth: 0 } %>
+          <%#  depth : 0 so that only gets latest retweet %>
         <% end %>
       </div>
     </div>

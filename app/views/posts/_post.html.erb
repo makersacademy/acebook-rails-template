@@ -1,8 +1,13 @@
 <div class="post">
   <div class="container-fluid" onclick="location.href='<%= post_path(post.id) %>';">
-    <% user = User.find(post.user_id)%>
+    <% user = post.user %>
+    <% if depth > 0 %>
+      <% original_post = post.original_post %>
+    <% end %>
     <div class="profile-pic">
-      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+      <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+      </div>
     </div>
     <div class="post-text">
       <div class="user-details">
@@ -11,6 +16,11 @@
       <div class="post-content">
         <%= post.content %>
       </div>
+      <% if original_post %>
+        <div class="original-post">
+          <%= render partial: original_post, locals: { depth: depth-1 } %>
+        </div>
+      <% end %>
     </div>
     <div class="interactions">
     </div>
