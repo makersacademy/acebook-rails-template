@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def create
     begin
-      @post = Post.create!(user_id: session[:user]["id"], content: post_params["content"])
+      @post = Post.create!(post_params)
       flash[:primary] =  "Posted!"
       respond_to do |format|
         format.html { redirect_back fallback_location: "/"}
@@ -45,6 +45,8 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    post = params.require(:post).permit(:content, :original_post_id)
+    post[:user_id] = session[:user]["id"]
+    return post
   end
 end
