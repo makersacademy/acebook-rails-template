@@ -6,10 +6,14 @@ p{
   margin: 0;
 }
 
+div{
+  border-radius: 5px;
+}
+
 
 #page {
   margin: auto;
-  height: 100vh;
+  min-height: 100vh;
   border: 3px solid gainsboro;
   padding: 10px;
   text-align: center;
@@ -25,6 +29,7 @@ p{
 
 #post img{
   width: 10%;
+  border-radius: 50%;
   display: inline;
 }
 
@@ -39,6 +44,12 @@ p{
 #post-content p{
   font-style: italic;
   font-size: small;
+}
+
+#original_post{
+  padding-top: 10px;
+  width: 95%;
+  margin: auto;
 }
 
 #interaction-panel{

@@ -541,7 +541,7 @@
             <%= render "shared/add_post" %>
           <% end %>
           <div id="posts">
-            <%= render @posts %>
+                <%= render partial: @posts, locals: { depth: 1 } %>
          </div>
 
           </div>

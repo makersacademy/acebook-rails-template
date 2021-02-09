@@ -1,21 +1,24 @@
 class CommentsController < ApplicationController
-  def index
-    @post = Post.find(params[:post_id])
-    @comment = Comment.new
-    @comments = @post.comments.order(created_at: :desc)
-  end
-
   def create
     begin
-      @comment = Comment.create!(post_id: params[:post_id], user_id: session[:user]["id"], content: comment_params["content"])
-      flash[:primary] =  "Added comment!"
+      @comment = Comment.create!(comment_params)
       respond_to do |format|
-        format.html { redirect_back fallback_location: "/"}
+        format.html do
+          flash[:primary] =  "Added comment!"
+          redirect_back fallback_location: "/"
+        end
         format.js
         format.json { render json: @comment}
+      end
     rescue => exception
-      flash[:danger] = exception.message
-      respond_to { |format| format.html { redirect_back fallback_location: "/"} }
+      @error = exception.message
+      respond_to do |format| 
+        format.html do
+          flash[:danger] = @error
+          redirect_back fallback_location: "/"
+        end
+        format.js
+        format.json { render json: @error }
       end
       # if invalid post, flashes error message & goes back to posts/new
     end
@@ -24,7 +27,10 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    comment = params.require(:comment).permit(:content)
+    comment[:post_id] = params[:post_id]
+    comment[:user_id] = session[:user]["id"]
+    return comment
   end
 
 end
