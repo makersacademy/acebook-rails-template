@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
   $(document).on('mouseenter', '.post', function(){
-    $(this).css("border", "solid 3px black");
+    $(this).css("background", "#F0F6F6");
   });
 
   $(document).on('mouseleave', '.post', function(){
-    $(this).css("border", "solid 1px gainsboro");
+    $(this).css("background", "white");
   });
 
   $( document ).ready(function() {
