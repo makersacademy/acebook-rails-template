@@ -15,3 +15,4 @@
  *= require shared/_comment
  *= require shared/_post
  */
+ html, body {margin:0;padding:0;height:100%;}
