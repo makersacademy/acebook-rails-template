@@ -4,8 +4,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    p post_params
+    @post = current_user.posts.create(post_params)
     redirect_to posts_url
+  end
+
+  def destroy
+    Post.find(params[:id]).destroy
+    redirect_to posts_path, notice: 'Your post was deleted successfully'
   end
 
   def index

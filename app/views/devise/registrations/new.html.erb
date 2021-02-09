@@ -7,6 +7,12 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="c-top-container">
+
+        <div class="field">
+          <%= f.label :name, class: 'align-label colored-grey' %><br />
+          <%= f.text_field :name, class: 'c-input', autofocus: true, autocomplete: "email" %>
+        </div>
+
         <div class="field">
           <%= f.label :email, class: 'align-label colored-grey' %><br />
           <%= f.email_field :email, class: 'c-input', autofocus: true, autocomplete: "email" %>

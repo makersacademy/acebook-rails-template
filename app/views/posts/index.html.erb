@@ -1,5 +1,8 @@
+<br>
 <h1>Posts</h1>
 
+<%= link_to "#{current_user.name}'s profile", current_user%>
+<br>
 <%= link_to new_post_path do %>
   New post
 <% end %>
@@ -36,3 +39,4 @@
     </div>
   <% end %>
 </div>
+
