@@ -7,12 +7,11 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     unauthenticated do
-     root :to => 'devise/sessions#new'
+      root :to => 'devise/sessions#new'
     end
 
     authenticated do
-     root :to => 'posts#index'
+      root :to => 'posts#index'
+    end
   end
-   end
-
 end

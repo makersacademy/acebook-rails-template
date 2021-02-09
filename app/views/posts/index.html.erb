@@ -1,17 +1,23 @@
-
+<br>
 <h1>Posts</h1>
+
+<%= link_to "#{current_user.name}'s profile", current_user%>
+<br>
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+
 <div class="row">
   <% @posts.each do |post| %>
     <div class="col-4" align="center">
       <div class="posts-index-cont">
+        <% if post.image.attached? %>
         <h2><%= post.title %></h2>
         <p><%= post.message %></p>
+        <p><%= image_tag post.image.variant(resize: "300x500") %></p>
+        <% end %>
       </div>
     </div>
   <% end %>
 </div>
 
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>

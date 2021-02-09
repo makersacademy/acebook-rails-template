@@ -180,3 +180,18 @@
   width: auto;
 }
 
+.c-button-lge {
+  background: #463f57 ;
+  color: white;
+  width: fit-content;
+  height: 40px;
+  border-radius: 4px;
+  border: 0px;
+  opacity: 1;
+}
+
+.c-button-lge:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}

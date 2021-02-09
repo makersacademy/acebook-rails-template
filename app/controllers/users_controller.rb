@@ -4,6 +4,9 @@ class UsersController < ApplicationController
     @user_posts = @user.posts
   end
 
+  def sign_up_params
+    params.require(:user).permit(:bio)
+  end
 
 end
  

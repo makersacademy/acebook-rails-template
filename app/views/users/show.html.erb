@@ -1,7 +1,9 @@
 <br>
 <h1><%= @user.name %></h1>
+<%= link_to "Back to homepage", root_path() %> | 
+<%= link_to "Edit bio" %>
 <br>
-<h1><%= @user.bio %></h1>
+<h4><%= @user.bio %></h4>
 
 <div class="row">
   <% @user_posts.each do |post| %>
