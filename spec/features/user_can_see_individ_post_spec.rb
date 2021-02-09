@@ -1,29 +1,39 @@
 require 'rails_helper'
 
 RSpec.feature "Individual Post page", type: :feature do
-  scenario "Can see individual posts" do
+  before do
     visit "/posts/1"
+  end
+
+  scenario "Can see individual posts" do
     expect(page).to have_content("Hello World")
     expect(page).to have_content("@Charlotte")
   end
 
   scenario "Like post" do
-    visit "/posts/1"
     expect(page).to have_content("0 likes")
     click_on "Like"
     expect(page).to have_content("1 like")
   end
 
   scenario  "See comments" do
-    visit "/posts/1"
     expect(page).to have_content("This is a great post!")
   end
 
   scenario  "Add comment" do
-    visit "/posts/1"
     click_on "Add Comment"
     fill_in "comment_content", with: "This is a new comment"
-    click_button "Submit"
+    find("#submit_comment").click
     expect(page).to have_content("This is a new comment")
+  end
+
+  scenario  "Add comment" do
+    click_on "Share"
+    fill_in "post_content", with: "This is a new share"
+    find("#submit_share").click
+    expect(page).to have_content("Posted!")
+    # visit "/posts/2"
+    # expect(page).to have_content("Hello World")
+    # expect(page).to have_content("This is a new share")
   end
 end

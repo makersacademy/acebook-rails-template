@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   def create
     begin
       @post = Post.create!(post_params)
-      flash[:primary] =  "Posted!"
+      flash[:primary] = "Posted!"
       respond_to do |format|
         format.html { redirect_back fallback_location: "/"}
         format.js
@@ -23,6 +23,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @new_post = Post.new
     @user = @post.user
     @comment = Comment.new
     @comments = @post.comments.order(created_at: :desc)

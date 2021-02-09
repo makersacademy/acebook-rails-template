@@ -19,4 +19,8 @@ function fadeAlert(){
   });
 }
 
+function closeModal(){
+  $('.modal').modal('hide');
+}
+
 window.setTimeout(fadeAlert, 4000);
