@@ -6,13 +6,32 @@
 
 <div class="row">
   <% @posts.each do |post| %>
-    <div class="col-4" align="center">
+    <div class="col-xl-4" align="center">
       <div class="posts-index-cont">
         <% if post.image.attached? %>
-        <h2><%= post.title %></h2>
-        <p><%= post.message %></p>
-        <p><%= image_tag post.image.variant(resize: "300x500") %></p>
+        <div class="posts-index-img-cont">
+          <%= image_tag post.image, class: 'post-img' %>
+        </div>
         <% end %>
+        <div class="posts-user-avatar">
+          <%# User avatar here %>
+        </div>
+        <div class="heading-container">
+          <h2 class="h2-med white-text">
+            <%= post.title[(0...70)] %>
+            <%= "..." if post.title.length > 50 %>
+          </h2>
+        </div>
+        <div class="post-stats-div">
+          <div class="views-div">
+            <%= image_tag 'views-icon.png', class: 'post-stats-icon' %>
+            <p class="count white-text">sample</p>
+          </div>
+          <div class="likes-div">
+            <%= image_tag 'likes-icon.png', class: 'post-stats-icon' %>
+            <p class="count white-text">sample</p>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
