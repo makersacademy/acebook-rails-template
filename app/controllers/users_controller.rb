@@ -43,7 +43,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    p @user
     @post = Post.new #for adding new posts
     @posts = @user.posts.order(created_at: :desc)
   end
