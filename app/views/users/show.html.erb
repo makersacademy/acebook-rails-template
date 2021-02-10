@@ -53,11 +53,7 @@
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-<<<<<<< HEAD
-                      Charlotte Agnis
-=======
                      <%= @user.full_name %>
->>>>>>> views
                     </div>
                   </div>
                   <hr>
@@ -65,7 +61,9 @@
                     <div class="col-sm-3">
                       <h6 class="mb-0">Email</h6>
                     </div>
+                    <div class="col-sm-9 text-secondary">
                       <%= @user.email%>
+                    </div>
                   </div>
                   <hr>
                   <div class="row">
@@ -122,13 +120,13 @@
                   <div class="tab-content">
 
                   <div class="tab-pane fade" id="profile-posts">
-                    <h1>Posts</h1>
-                         <% if session[:user]["id"] == @user.id %>
-                      <%= render "shared/add_post" %>
-                    <% end %>
-                    <div id="posts">
-                          <%= render partial: @posts, locals: { depth: 1 } %>
-                   </div>
+                     <h1>Posts</h1>
+                     <% if session[:user]["id"] == @user.id %>
+                        <%= render "shared/add_post" %>
+                     <% end %>
+                     <div id="posts">
+                        <%= render partial: @posts, locals: { depth: 1 } %>
+                     </div>
                   </div> 
                   <div class="tab-pane active" id="profile-friends">  
                   <!-- end profile -->
