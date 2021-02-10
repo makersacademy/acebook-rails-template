@@ -102,6 +102,15 @@
   transition: 0.3s;
 }
 
+.errors * {
+  color: red !important;
+  font-weight: 500;
+}
+
+.errors > li {
+  width: 200px;
+}
+
 .c-button-green:hover {
   cursor: pointer;
   opacity: 0.8;
