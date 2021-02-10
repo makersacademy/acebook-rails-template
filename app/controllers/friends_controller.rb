@@ -11,6 +11,12 @@ class FriendsController < ApplicationController
     redirect_back fallback_location: "/"
   end
 
+  def destroy
+    friend_request = Friend.find_by(friend_params)
+    friend_request.destroy
+    redirect_back fallback_location: "/"
+  end
+
   private
   
   def friend_params

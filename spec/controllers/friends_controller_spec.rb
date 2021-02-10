@@ -31,4 +31,22 @@ RSpec.describe FriendsController, type: :controller do
       expect(friend_request.status).to eq "Accepted"
     end
   end
+
+  describe "DELETE /users/:user_id/comments/:id" do
+    before do
+      post :create, params: { user_id: 1, friend: { requester_id: 1 } }
+      # create friend request
+      delete :destroy, params: { user_id: 1, id: 1, friend: { requester_id: 1 } }
+      # accept friend request
+    end
+
+    it "responds with 200" do
+      expect(response).to redirect_to("/")
+    end
+
+    it "removes a friend/friend request" do  
+      friend_request = Friend.find_by(requester_id: 1, receiver_id: 1)
+      expect(friend_request).not_to be
+    end
+  end
 end
