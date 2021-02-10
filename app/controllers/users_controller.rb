@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       # if invalid user, flashes error message
     else
       flash[:primary] =  "You have signed up!"
-    end 
+    end
       redirect_back fallback_location: "/"
   end
 
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
     flash[:primary] =  "You have logged out"
     redirect_to "/"
   end
-  
+
   private
 
   def user_params

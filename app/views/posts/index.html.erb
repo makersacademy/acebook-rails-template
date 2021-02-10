@@ -3,6 +3,14 @@
   <%= stylesheet_link_tag "timeline" %>
 <% end %>
 <h1>Your Timeline</h1>
+<div class="sidenav">
+  <a href="/timeline">Timeline</a>
+  <a href="javascript:void(0)">Notification</a>
+  <a id="profile" href="/users/<%= session[:user]["id"] %>">User Profile</a>
+  <a href="javascript:void(0)">Inbox</a>
+  <a href="javascript:void(0)">Setting</a>
+  <a href="/users/log_out">Logout</a>
+</div>
 <div id="page" class="container-fluid">
   <%= render "shared/add_post" %>
   <div id="posts">
