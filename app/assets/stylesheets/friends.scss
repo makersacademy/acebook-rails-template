@@ -3,3 +3,57 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // NOTIFICATION CSS HERE
+
+#page{
+  width: 80%;
+  margin: auto;
+}
+
+#requests{
+  width: 100%;
+  text-align: center;
+}
+
+#requests th, td{
+  width: 50%;
+  margin: 5px;
+  border: 1px solid gainsboro;
+}
+
+#requests th{
+  font-size: large;
+}
+
+.request{
+  border: 1px solid gainsboro;
+  margin: 10px 5px 10px 5px;
+}
+
+.request hr{
+  margin: 0;
+}
+
+.user{
+  display: table-row;
+}
+
+.user .profile-pic{
+  width: 25%;
+  padding-left: 1rem;
+}
+
+.user-link{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  font-style: italic;
+  padding-left: 5px;
+}
+
+.button-panel{
+  padding: 1rem;
+}
+
+.button-panel form{
+  display: inline;
+}
