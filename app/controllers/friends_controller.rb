@@ -1,4 +1,8 @@
 class FriendsController < ApplicationController
+  def index
+    @requests = Friend.find_by(requester_id: session[:user]["id"], status: "Pending")
+  end
+
   def create
     Friend.create!(friend_params)
     redirect_back fallback_location: "/"

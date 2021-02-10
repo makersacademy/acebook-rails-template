@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe FriendsController, type: :controller do
-  describe "POST /users/:user_id/create" do
+  describe "POST /users/:user_id/friends/create" do
     it "responds with 200" do
       post :create, params: { user_id: 1, friend: { requester_id: 1 } }
       expect(response).to redirect_to("/")
@@ -14,7 +14,7 @@ RSpec.describe FriendsController, type: :controller do
     end
   end
 
-  describe "PATCH /users/:user_id/comments/:id" do
+  describe "PATCH /users/:user_id/friends/:id" do
     before do
       post :create, params: { user_id: 1, friend: { requester_id: 1 } }
       # create friend request
@@ -32,12 +32,12 @@ RSpec.describe FriendsController, type: :controller do
     end
   end
 
-  describe "DELETE /users/:user_id/comments/:id" do
+  describe "DELETE /users/:user_id/friends/:id" do
     before do
       post :create, params: { user_id: 1, friend: { requester_id: 1 } }
       # create friend request
       delete :destroy, params: { user_id: 1, id: 1, friend: { requester_id: 1 } }
-      # accept friend request
+      # delete friend request
     end
 
     it "responds with 200" do
@@ -49,4 +49,12 @@ RSpec.describe FriendsController, type: :controller do
       expect(friend_request).not_to be
     end
   end
+
+  describe "GET /users/:user_id/notifications" do
+    it "responds with 200" do
+      get :index, params: { user_id: 1 }
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end

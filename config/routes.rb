@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get 'users/login'
   post '/users/authenticate'
   get "/users/log_out"
-
+  
+  get "/notifications", to: "friends#index"
   get "/timeline", to: "posts#index"
 
   resources :users do
