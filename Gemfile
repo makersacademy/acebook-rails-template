@@ -57,3 +57,5 @@ gem 'carrierwave' # adding picture uploads
 gem 'mini_magick' # resizing images
 
 gem "image_processing", "~> 1.12"
+
+gem 'has_friendship' # add friendship feature

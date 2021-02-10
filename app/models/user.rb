@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_friendship
+
   include Gravtastic
   gravtastic
   # Include default devise modules. Others available are:
