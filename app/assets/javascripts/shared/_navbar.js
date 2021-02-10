@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var thisUrl = window.location.pathname;
-    if( thisUrl == "/"){
+      if( thisUrl == "/"){
         $("li").has("#profile").attr("aria-current", "page");
         $("li").has("#profile").addClass("breadcrumb-item active");
         $("#profile").contents().unwrap();
@@ -10,3 +10,4 @@ $(document).ready(function(){
         $(`li > a[href$="${thisUrl}"]`).contents().unwrap();
     }
 });
+

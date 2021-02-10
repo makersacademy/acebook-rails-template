@@ -1,16 +1,20 @@
-var alert = "Posted!";
+var alert = `Posted! <%= link_to "View", @post %>`;
 var level = "primary";
 
-if("<%= j @error %>"){
+<% if @error.nil? %>
+  <% if @post.original_post_id.nil? %>
+    var posts = document.querySelector("#posts");
+    var newPost = "<div class='newPost'><%= j render(@post) %></div>";
+    posts.insertAdjacentHTML("afterbegin", newPost );
+    // add new post on top of previous ones
+  <% end %>
+<% else %>
   alert = "<%= j @error %>";
   level = "danger";
-} else{
-  var posts = document.querySelector("#posts");
-  var newPost = "<div class='newPost'><%= j render(@post) %></div>";
-  posts.insertAdjacentHTML("afterbegin", newPost );
-  // add new post on top of previous ones
-}
+<% end %>
 
+closeModal();
+// trigger close modal
 
 var nav = document.querySelector("nav");
 var flash = `<div class='alert alert-${level}' role='alert'>${alert}</div>`;
@@ -20,4 +24,5 @@ window.setTimeout(fadeAlert, 4000);
 // trigger countdown to make alert auto disappear
 
 document.getElementById("post_content").value = "";
+document.getElementById("comment_content").value = "";
 // reset form to be blank
