@@ -1,1 +1,6 @@
-<%= @requests %>
+<%# NOTIFICATION PAGE %>
+<% if @requests %>
+  <%= render @requests %>
+<% else %>
+  <h1> No requests yet! </h1>
+<% end %>
