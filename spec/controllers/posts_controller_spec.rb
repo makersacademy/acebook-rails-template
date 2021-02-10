@@ -19,6 +19,13 @@ RSpec.describe PostsController, type: :controller do
       post :create, params: { post: { user_id: "1", content: "Hello, world!" } }
       expect(Post.find_by(content: "Hello, world!")).to be
     end
+
+    it "creates a retweet" do
+      post :create, params: { post: { user_id: "1", content: "I'm sharing this!", original_post_id: 1 } }
+      retweet = Post.find_by(content: "I'm sharing this!")
+      expect(retweet).to be
+      expect(retweet.original_post.content).to eq "Hello World"
+    end
   end
 
   describe "GET /post/:id" do
@@ -39,6 +46,6 @@ RSpec.describe PostsController, type: :controller do
       post = Post.find(1)
       expect(post.likes).to equal 1
     end
-  end  
+  end
 
 end

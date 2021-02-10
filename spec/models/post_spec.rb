@@ -29,4 +29,13 @@ RSpec.describe Post, type: :model do
     new_post = Post.new
     expect { new_post.increment!(:likes)}.to change { new_post.likes }.by(1)
   end 
+
+  it "can set up a retweet / share" do
+    retweet = Post.new()
+    retweet.user_id = 1
+    retweet.content = "I am sharing this post!"
+    retweet.original_post_id = 1 # retweeting post 1
+    expect(retweet).to be_valid
+    expect(retweet.original_post.content).to eq "Hello World"
+  end
 end

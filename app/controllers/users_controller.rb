@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def create
     begin
-      User.create!(username: user_params["username"], password: user_params["password"])
+      User.create!(user_params)
     rescue => exception
       flash[:danger] = exception.message
       # if invalid user, flashes error message
@@ -34,12 +34,11 @@ class UsersController < ApplicationController
     if user && user.authenticate(params["password"])
       session[:user] = user
       flash[:primary] =  "You have logged in!"
-      redirect_to action: 'show', id: user.id 
     else
       flash[:danger] =  "Incorrect username or password"
-      redirect_back fallback_location: "/"
        # if invalid login, flashes error message & goes back to users/login
     end
+    redirect_back fallback_location: "/"
   end
 
   def show

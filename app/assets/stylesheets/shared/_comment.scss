@@ -1,5 +1,6 @@
 .comment{
   border: solid 1px gainsboro;
+  border-radius: 5px;
   width: 90%;
   margin: auto;
   display: inline-block;
@@ -10,20 +11,22 @@
   padding: 5px;
 }
 
-.profile-pic{
+#comments .profile-pic{
   width: 10%;
-  display: inline-block;
+  display: table-cell;
 }
 
-.profile-pic img{
+#comments .profile-pic img{
   width: 100% !important;
   height: auto; 
 }
 
 .comment-text{
   text-align: left;
-  display: inline-block;
+  display: table-cell;
   width: 89%;
+  vertical-align: middle;
+  padding-left: 10px;
 }
 
 .comment-details{

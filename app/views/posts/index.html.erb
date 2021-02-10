@@ -6,6 +6,7 @@
 <div id="page" class="container-fluid">
   <%= render "shared/add_post" %>
   <div id="posts">
-    <%= render @posts %>
+    <%= render partial: @posts, locals: { depth: 1 } %>
+    <%# depth: 1 so can get tweets one tweet deep %>
   </div>
 </div>
