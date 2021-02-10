@@ -4,6 +4,11 @@ html, body {
 
 body{
   background-image: none;
+  background-color: #F0F6F6;
+}
+
+h1{
+  color: #67A5A9;
 }
 
 .container-fluid {
@@ -12,11 +17,10 @@ body{
 
 #page{
   margin: auto;
-  border: 3px solid gainsboro;
+  //border: 3px solid gainsboro;
   padding: 10px;
   text-align: center;
   display: block;
-  width: 60%;
 }
 
 .original-post{
@@ -25,3 +29,4 @@ body{
   display: inline-block;
   margin: 5px;
 }
+
