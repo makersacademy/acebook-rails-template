@@ -68,13 +68,31 @@
                 <div class="modal-body">
                   <%= form_for @user do |form| %>
                     <fieldset id="sign_up">
+                    
                       <%= form.label :username %>
                       <%= form.text_field :username %>
                       <br><br>
                       <%= form.label :password %>
                       <%= form.password_field :password %>
                       <br><br>
+  
+                      <%= form.label :full_name %>
+                      <%= form.text_field :full_name %>
+                      <br><br>
+                       <%= form.label :email %>
+                      <%= form.text_field :email %>
+                      <br><br>
+                       <%= form.label :mobile %>
+                      <%= form.text_field :mobile %>
+                       <br><br>
+                       <%= form.label :address %>
+                      <%= form.text_field :address%>
+                      <br><br>
+                      <%= form.label :url %>
+                      <%= form.text_field :url%>
+                       <br><br>
                       <%= form.submit "Sign Up" %>
+                    
                     </fieldset>
                   <% end %>
                 </div>
