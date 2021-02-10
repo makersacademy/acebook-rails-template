@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   get "/timeline", to: "posts#index"
 
-  resources :users
+  resources :users do
+    resources :friends
+  end
   
   resources :posts do
     resources :comments
