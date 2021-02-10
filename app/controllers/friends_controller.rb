@@ -39,9 +39,10 @@ class FriendsController < ApplicationController
   
   def friend_params
     friend_request = params.permit(:friend).permit(:id)
-    friend_request[:id] = params[:id]
-    friend_request[:receiver_id] = params[:user_id]
-    friend_request[:requester_id] = session[:user]["id"]
+    friend_request[:id] ||= params[:id]
+    friend_request[:receiver_id] ||= params[:user_id]
+    friend_request[:requester_id] ||= session[:user]["id"]
+    #p friend_request
     return friend_request
   end
 end
