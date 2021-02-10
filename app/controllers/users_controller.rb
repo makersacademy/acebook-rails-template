@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
   def log_out
     session[:user] = nil
-    flash[:primary] =  "You have logged out"
+    flash[:primary] =  "You have logged out!"
     redirect_to "/"
   end
   

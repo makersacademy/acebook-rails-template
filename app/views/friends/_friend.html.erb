@@ -1,6 +1,7 @@
 <%# INDIVIDUAL FRIEND REQUEST HTML HERE %>
 <div class="request">
-  <p>From: <%= friend.requester.username %></p>
+  <% user = sent ? friend.receiver : friend.requester %>
+  <p><%= sent ? "To" : "From" %>: <%= link_to "@#{user.username}", user %></p>
   
   <%= button_to "Accept Friend Request" , [ User.find(session[:user]["id"]) , friend ], {method: :patch, class: "btn btn-secondary"} %>
   <%= button_to "Delete Friend Request", [ User.find(session[:user]["id"]) , friend ], {method: :delete, class: "btn btn-secondary"} %>

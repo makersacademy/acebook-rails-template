@@ -1,6 +1,14 @@
 <%# NOTIFICATION PAGE %>
-<% if @requests %>
-  <%= render @requests %>
+<h1> Pending friend requests: </h1>
+<% if @received_requests %>
+  <%= render partial: @received_requests, locals: { sent: false } %>
 <% else %>
-  <h1> No requests yet! </h1>
+  <h2> No pending friend requests! </h2>
+<% end %>
+
+<h1> Sent friend requests: </h1>
+<% if @sent_requests %>
+  <%= render partial: @sent_requests, locals: { sent: true } %>
+<% else %>
+  <h2> No pending friend requests! </h2>
 <% end %>

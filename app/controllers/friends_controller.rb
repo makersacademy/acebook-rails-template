@@ -1,6 +1,7 @@
 class FriendsController < ApplicationController
   def index
-    @requests = Friend.find_by(receiver_id: session[:user]["id"], status: "Pending")
+    @received_requests = Friend.find_by(receiver_id: session[:user]["id"], status: "Pending")
+    @sent_requests = Friend.find_by(requester_id: session[:user]["id"], status: "Pending")
   end
 
   def create
