@@ -1,2 +1,6 @@
 <%# INDIVIDUAL FRIEND REQUEST HTML HERE %>
-<%= friend.status %>
+<div class="request">
+  <p>From: <%= friend.requester.username %></p>
+  
+  <%= button_to "Accept Friend Request" , [ User.find(session[:user]["id"]) , friend ], {method: :patch, class: "btn btn-secondary"} %>
+</div>

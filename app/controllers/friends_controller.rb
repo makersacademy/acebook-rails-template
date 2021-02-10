@@ -9,14 +9,21 @@ class FriendsController < ApplicationController
   end
 
   def update
-    friend_request = Friend.find_by(friend_params)
-    friend_request.status = "Accepted"
-    friend_request.save
-    redirect_back fallback_location: "/"
+    begin
+      friend_request = Friend.find(friend_params["id"])
+    rescue => exception
+      flash[:danger] = exception
+    else
+      friend_request.status = "Accepted"
+      friend_request.save
+      flash[:primary] = "Accepted friend request!"
+    ensure
+      redirect_back fallback_location: "/"
+    end
   end
 
   def destroy
-    friend_request = Friend.find_by(friend_params)
+    friend_request = Friend.find(friend_params["id"])
     friend_request.destroy
     redirect_back fallback_location: "/"
   end
@@ -24,7 +31,8 @@ class FriendsController < ApplicationController
   private
   
   def friend_params
-    friend_request = params.require(:friend).permit(:id)
+    friend_request = params.permit(:friend).permit(:id)
+    friend_request[:id] = params[:id]
     friend_request[:receiver_id] = params[:user_id]
     friend_request[:requester_id] = session[:user]["id"]
     return friend_request

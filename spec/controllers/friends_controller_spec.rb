@@ -16,7 +16,7 @@ RSpec.describe FriendsController, type: :controller do
 
   describe "PATCH /users/:user_id/friends/:id" do
     before do
-      post :create, params: { user_id: 1, friend: { requester_id: 1 } }
+      post :create, params: { user_id: 1, id: 1, friend: { requester_id: 1 } }
       # create friend request
       patch :update, params: { user_id: 1, id: 1, friend: { requester_id: 1 } }
       # accept friend request
@@ -34,7 +34,7 @@ RSpec.describe FriendsController, type: :controller do
 
   describe "DELETE /users/:user_id/friends/:id" do
     before do
-      post :create, params: { user_id: 1, friend: { requester_id: 1 } }
+      post :create, params: { user_id: 1, id: 1, friend: { requester_id: 1 } }
       # create friend request
       delete :destroy, params: { user_id: 1, id: 1, friend: { requester_id: 1 } }
       # delete friend request

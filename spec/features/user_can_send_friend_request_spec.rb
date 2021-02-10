@@ -21,5 +21,16 @@ RSpec.feature "Friends System", type: :feature do
     click_on "Send Friend Request"
     expect(page).to have_button("Delete Friend Request")
   end
+
+  scenario "Accept friend request" do
+    visit "/users/1"
+    click_on "Send Friend Request"
+    visit "/users/log_out"
+    visit "/notifications" #switched to user 1
+    expect(page).not_to have_content("@Lotty")
+    click_on "Accept Friend Request"
+    expect(page).to have_content("Accepted friend request!")
+    expect(page).not_to have_content("@Lotty")
+  end
 end
 
