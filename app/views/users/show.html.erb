@@ -1,18 +1,14 @@
 <br>
+
+<div class="user-avatar-container">
+  <%= image_tag @user.avatar %>
+</div>
 <h1><%= @user.name %></h1>
-<%= link_to "Back to homepage", root_path() %> | 
+<%= link_to "Back to homepage", root_path() %> |
 <%= link_to "Edit bio" %>
 <br>
 <h4><%= @user.bio %></h4>
 
 <div class="row">
-  <% @user_posts.each do |post| %>
-    <div class="col-4" align="center">
-      <div class="posts-index-cont">
-        <h2><%= post.title %></h2>
-        <p><%= post.message %></p>
-      </div>
-        <%= link_to 'Delete', post_path(post), method: :delete, id: "delete_post_#{post.id}_from_index", data: { confirm: 'Are you sure?' } %> 
-    </div>
-  <% end %>
+  <%= render @user_posts %>
 </div>
