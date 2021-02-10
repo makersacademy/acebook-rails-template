@@ -23,9 +23,16 @@ class FriendsController < ApplicationController
   end
 
   def destroy
-    friend_request = Friend.find(friend_params["id"])
-    friend_request.destroy
-    redirect_back fallback_location: "/"
+    begin
+      friend_request = Friend.find(friend_params["id"])
+    rescue => exception
+      flash[:danger] = exception
+    else
+      friend_request.destroy
+      flash[:primary] = "Deleted friend request!"
+    ensure
+      redirect_back fallback_location: "/"
+    end
   end
 
   private

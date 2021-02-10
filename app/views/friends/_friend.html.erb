@@ -3,4 +3,5 @@
   <p>From: <%= friend.requester.username %></p>
   
   <%= button_to "Accept Friend Request" , [ User.find(session[:user]["id"]) , friend ], {method: :patch, class: "btn btn-secondary"} %>
+  <%= button_to "Delete Friend Request", [ User.find(session[:user]["id"]) , friend ], {method: :delete, class: "btn btn-secondary"} %>
 </div>
