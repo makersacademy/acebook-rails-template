@@ -36,7 +36,6 @@ class PostsController < ApplicationController
   end
 
   def index
-    @disable_nav = true
     @posts = Post.order(created_at: :desc)
     @post = Post.new
   end

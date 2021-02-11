@@ -1,38 +1,3 @@
-html, body {
-  height: 100%;
-}
-
-body{
-  background-image: none;
-  background-color: #F0F6F6;
-}
-
-h1{
-  color: #67A5A9;
-  text-align: center;
-  padding-top: 40px;
-}
-
-.container-fluid {
-  display: inline-block;
-  max-width: 800px;
-}
-
-#page{
-  margin: auto;
-  //border: 3px solid gainsboro;
-  padding: 10px;
-  text-align: center;
-  display: block;
-}
-
-.original-post{
-  width: 80%;
-  margin: auto;
-  display: inline-block;
-  margin: 5px;
-}
-
 .sidenav {
   width: 300px;
   position: fixed;
@@ -42,6 +7,14 @@ h1{
   //background: #eee;
   overflow-x: hidden;
   //padding: 8px 0;
+}
+
+.sidenav p {
+  padding: 10px 8px 10px 20px;
+  text-decoration: none;
+  font-size: 30px;
+  color: grey;
+  margin: 0;
 }
 
 .sidenav a {
@@ -66,13 +39,4 @@ h1{
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-}
-
-#add-post{
-  width: 80%;
-  margin: auto;
-}
-
-#add-post .container-fluid{
-  padding: 0;
 }

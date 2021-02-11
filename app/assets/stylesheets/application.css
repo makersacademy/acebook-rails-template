@@ -14,6 +14,7 @@
  *= require shared/_add_content
  *= require shared/_comment
  *= require shared/_post
+ *= require shared/_navbar
  */
 
  html, body {margin:0;padding:0;height:100%;}
