@@ -53,7 +53,7 @@
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Charlotte Agnis
+                     <%= @user.full_name %>
                     </div>
                   </div>
                   <hr>
@@ -62,16 +62,7 @@
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      test@test.com
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Phone</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      (0208) _________
+                      <%= @user.email%>
                     </div>
                   </div>
                   <hr>
@@ -80,7 +71,7 @@
                       <h6 class="mb-0">Mobile</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (+44) ___________
+                         <%= @user.mobile%>
                     </div>
                   </div>
                   <hr>
@@ -89,7 +80,7 @@
                       <h6 class="mb-0">Address</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      London, UK
+                        <%= @user.address%>
                     </div>
                   </div>
                   <hr>
@@ -124,7 +115,6 @@
                     </ul>
                   </div>
                   <div class="tab-content">
-
                   <div class="tab-pane fade" style="text-align:center;" id="profile-posts">
                      <h1>Posts</h1>
                      <% if session[:user]["id"] == @user.id %>
@@ -133,7 +123,8 @@
                      <div id="posts">
                         <%= render partial: @posts, locals: { depth: 1 } %>
                      </div>
-                  </div>
+
+
                   <div class="tab-pane active" id="profile-friends">  
                   <!-- end profile -->
                   <!-- begin profile-content -->

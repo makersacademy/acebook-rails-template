@@ -6,6 +6,12 @@ RSpec.feature "Register account", type: :feature do
     within_fieldset :sign_up do
       fill_in "user_username", with: "Lotty"
       fill_in "user_password", with: "Password12"
+      fill_in "user_full_name", with: "Charlotte Cole"
+      fill_in "user_email", with: "charlotte@gmail.com"
+      fill_in "user_mobile", with: "07474289731"
+      fill_in "user_address", with: "London, UK"
+      fill_in "user_url", with: "https://www.acebook.com/users/2"
+      
       click_button "Sign Up"
     end
     expect(page).to have_content("You have signed up")

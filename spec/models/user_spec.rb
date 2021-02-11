@@ -17,6 +17,11 @@ RSpec.describe User, type: :model do
     user = User.new
     user.username = "Charlotte"
     user.password = "password123"
+    user.full_name = "Charlotte Cole"
+    user.email = "charlotte@gmail.com"
+    user.mobile = "0000000000"
+    user.address = "London, UK"
+    user.url = "ttpsjknkjnkjn"
     expect(user).to be_valid
   end
 end

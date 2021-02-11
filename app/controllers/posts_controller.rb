@@ -38,7 +38,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.order(created_at: :desc)
     @post = Post.new
-    @depth = 0 # how far to get retweets
   end
 
   def update
