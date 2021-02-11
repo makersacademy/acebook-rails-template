@@ -7,9 +7,7 @@
     <% end %>
     <div class="posts-user-avatar">
       <% user_id = post.user_id %>
-      <% if user_id %>
-        <%= image_tag User.find(user_id).avatar, class: 'user-avatar-posts-index' %>
-      <% end %>
+     
     </div>
     <div class="heading-container">
       <h2 class="h2-med white-text">
