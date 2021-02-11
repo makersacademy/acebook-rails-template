@@ -406,30 +406,6 @@ body{
   vertical-align: top;
 }
 
-.sidenav {
-  width: 190px;
-  position: fixed;
-  z-index: 1;
-  top: 200px;
-  left: 80px;
-  //background: #eee;
-  overflow-x: hidden;
-  //padding: 8px 0;
-}
-
-.sidenav a {
-  padding: 10px 8px 10px 20px;
-  text-decoration: none;
-  font-size: 30px;
-  color: #67A5A9;
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #D0A18B;
-  // original blue hover #064579;
-}
-
 .main {
   margin-left: 140px; /* Same width as the sidebar + left position in px */
   font-size: 28px; /* Increased text to enable scrolling */
@@ -442,9 +418,13 @@ body{
 }
 
 .container{
-  float: right;
+  float: center;
 }
 
 .post {
   display: block;
+}
+
+#profile-posts .container-fluid{
+  padding-bottom: 0;
 }

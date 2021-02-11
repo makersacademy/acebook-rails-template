@@ -96,16 +96,14 @@
                   </div>
                   <div class="tab-content">
                   <div class="tab-pane fade" style="text-align:center;" id="profile-posts">
-                     <h1>Posts</h1>
+                     <%# <h1>Posts</h1> %>
                      <% if session[:user]["id"] == @user.id %>
                         <%= render "shared/add_post" %>
                      <% end %>
                      <div id="posts">
                         <%= render partial: @posts, locals: { depth: 1 } %>
                      </div>
-
-
-
+                  </div>
                   <div class="tab-pane active" id="profile-friends">  
                   <!-- end profile -->
                   <!-- begin profile-content -->
