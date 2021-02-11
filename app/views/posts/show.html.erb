@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-12" align="center">
+    <h1><%= @post.title %></h1>
+    <%= image_tag @post.image %>
+    <br>
+    <div id="<%= @post.id %>" class="post-show-like-button like-button">
+      <%= image_tag 'likes-icon.png', class: 'post-show-like-image i-block' %>
+      <span class="white-text i-block"><%= @post.likes %></span>
+    </div>
+    <p><%= @post.message %></p>
+  </div>
+</div>

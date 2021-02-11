@@ -13,3 +13,339 @@
  *= require_tree .
  *= require_self
  */
+.navbar {
+  background: #463f57;
+  height: 80px;
+}
+
+.nav-item .nav-link {
+  color: white !important;
+}
+
+.navbar-expand-lg .navbar-brand {
+  color: white !important;
+}
+
+.field .align-label {
+  width: 305px;
+  text-align: left !important;
+}
+
+.field {
+  position: relative;
+}
+
+.field .c-input {
+  width: 305px !important;
+}
+
+.c-top-container {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background: rgb(230, 230, 230);
+  width: 450px;
+}
+
+.c-bottom-container {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: rgb(230, 230, 230);
+  width: 450px;
+}
+
+.c-bottom-container * {
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.remember-me {
+  position: relative;
+  left: -40px;
+}
+
+#login-page-button {
+  position: relative;
+  left: 40px;
+}
+
+.c-top-container, .c-bottom-container {
+  padding: 30px;
+}
+
+.white-text {
+  color: white !important;
+}
+
+.c-button {
+  background: #463f57 ;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  border: 0px;
+  opacity: 1;
+}
+
+.c-button-green {
+  background: #008037;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  border: 0px;
+  opacity: 1;
+}
+
+.c-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.errors * {
+  color: red !important;
+  font-weight: 500;
+}
+
+.errors > li {
+  width: 200px;
+}
+
+.c-button-green:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.colored-grey {
+  color: #463f57 !important;
+}
+
+.remember-me label {
+  font-size: 14px;
+}
+
+#min-pass-len {
+  font-size: 10px;
+  position: absolute;
+  width: 200px;
+  display: inline;
+  left: 80px;
+  top: 6px;
+}
+
+
+.c-button-cancel {
+  background: #9a2525;
+  color: white;
+  width: 120px;
+  height: 50px;
+  border-radius: 4px;
+  border: 0px;
+  opacity: 1;
+}
+
+.c-button-cancel:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.newpost{
+  color: #463f57 !important
+}
+
+.c-button.ltb {
+  padding-top: 7px;
+}
+
+.c-button.ltb:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-logo {
+  top: -32px;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  pointer-events: none;
+}
+
+.login-logo {
+  width: 500px;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.posts-index-cont {
+  cursor: pointer;
+  display: block;
+  background: #463f57;
+  border-radius: 6px;
+  width: 400px;
+  height: 400px;
+  margin-top: 60px;
+  box-shadow: 4px 4px 4px gray;
+  margin-bottom: 60px;
+  transition: 0.3;
+}
+
+.posts-index-cont:hover {
+  opacity: 0.82;
+}
+
+.gravatar {
+  height: 30px;
+  width: auto;
+}
+
+.c-button-lge {
+  background: #463f57 ;
+  color: white;
+  width: fit-content;
+  height: 40px;
+  border-radius: 4px;
+  border: 0px;
+  opacity: 1;
+}
+
+.c-button-lge:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+.h2-med {
+  font-size: 22px;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.posts-index-img-cont {
+  background: rgb(240, 240, 240);
+  border-radius: 8px;
+  object-fit: cover;
+  width: 100%;
+  overflow-y: hidden;
+  height: 200px;
+}
+
+.posts-user-avatar {
+  position: relative;
+  top: -35px;
+  border: 4px solid #463f57;
+  background: white;
+  border-radius: 1000px;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+}
+
+.posts-user-avatar-img {
+  position: relative;
+  top: -2px;
+  left: -2px;
+  width: 70px;
+  min-height: 70px;
+}
+
+.posts-index-cont > h2 {
+  position: relative;
+  top: -20px;
+}
+
+.posts-index-cont > p {
+  position: relative;
+  top: -20px;
+}
+
+.post-stats-div {
+  width: 100%;
+  height: 50px;
+  background: #2e2939;
+  position: relative;
+  top: -22px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.post-stats-div > .views-div {
+  position: relative;
+  left: -100px;
+  width: 50%;
+  height: 100%;
+  top: 0px;
+  background: transparent;
+  border-right: 1px solid #463f57;
+}
+
+.post-stats-div > .likes-div {
+  width: 50%;
+  height: 100%;
+  top: -50px;
+  left: 100px;
+  position: relative;
+  background: transparent;
+  border-left: 1px solid #463f57;
+}
+
+.post-stats-icon {
+  width: 30px;
+  height: auto;
+  position: relative;
+  left: -30px;
+  top: 10px;
+}
+
+.views-div > .count {
+  font-size: 15px;
+  position: relative;
+  top: -17px;
+  left: 20px;
+}
+
+.likes-div > .count {
+  font-size: 15px;
+  position: relative;
+  top: -17px;
+  left: 20px;
+}
+
+.posts-index-cont > .heading-container {
+  position: relative;
+  top: -20px;
+  height: 100px;
+}
+
+.profile-text-purple {
+  color: #463f57;
+}
+
+.profile-text-green {
+  color: #008037;
+}
+
+.post-show-like-button {
+  position: relative;
+  background: #463f57;
+  border-radius: 8px;
+  width: 80px;
+  height: auto;
+  padding: 10px 20px 10px 20px;
+  margin: 10px 0px 10px 0px;
+  object-fit: cover;
+}
+
+.post-show-like-image {
+  position: relative;
+  width: 25px !important;
+}
+
+.i-block {
+  display: inline-block !important;
+}

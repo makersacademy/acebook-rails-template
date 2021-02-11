@@ -12,3 +12,30 @@
 //
 //= require rails-ujs
 //= require_tree .
+
+window.onload = function () {
+  // When a post is clicked on posts/index
+  // The browser accesses the posts individual url
+  $(".posts-index-cont").click(function () {
+    let id = $(this).attr("id");
+    let currentURL = window.location.toString();
+    let urlArr = currentURL.split("/");
+    let popped = urlArr.pop();
+    if (popped === "posts") {
+      window.location.href = window.location + "/" + id;
+    } else {
+      window.location.href = window.location + "posts/" + id;
+    }
+  });
+  // When a like button is clicked, process it
+  $(".like-button").click(function () {
+    console.log("post");
+    let post_id = $(".post-show-like-button").attr("id");
+    $.post(
+      "/posts/like_post",
+      {
+        post_id: post_id
+      }
+    );
+  });
+}

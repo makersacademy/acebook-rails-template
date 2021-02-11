@@ -1,7 +1,10 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<br>
+<h1>Posts</h1>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<%= link_to "#{current_user.name}'s profile", current_user, class: 'c-button ltb', style: 'padding: 10px 6px 10px 6px;' %>
+<br><br>
+<%= link_to "New Post", new_post_path, class: 'c-button ltb', style: 'padding: 10px 6px 10px 6px;' %>
+
+<div class="row">
+  <%= render @posts %>
+</div>

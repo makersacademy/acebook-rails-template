@@ -1,0 +1,22 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-avatar-container {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  img {
+    width: 500px;
+    position: relative;
+    left: -50px;
+  }
+}
+
+.user-avatar-posts-index {
+  border-radius: 1000px;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  top: -2px;
+  left: -2px;
+}
