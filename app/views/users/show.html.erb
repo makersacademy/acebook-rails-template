@@ -122,7 +122,12 @@
                                     <div class="p-10 bg-white">
                                        <div class="media media-xs overflow-visible">
                                           <a class="media-left" href="javascript:;">
-                                          <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object img-circle">
+                                          <% if @user.avatar.attached? %>
+                                             
+                                             <img src="<%= url_for(@user.avatar) %>">
+                                          <%# <% else %>
+                                             <%# <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="" class="media-object img-circle"> %>
+                                          <% end %> %>
                                           </a>
                                           <div class="media-body valign-middle">
                                              <b class="text-inverse"><%= @friends[0].username %></b>

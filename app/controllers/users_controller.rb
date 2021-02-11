@@ -16,7 +16,8 @@ class UsersController < ApplicationController
 
   def create
     begin
-      User.create!(user_params)
+      user = User.create!(user_params)
+      user.avatar.attach(params[:avatar])
     rescue => exception
       flash[:danger] = exception.message
       # if invalid user, flashes error message
