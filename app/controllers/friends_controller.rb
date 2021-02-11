@@ -5,8 +5,15 @@ class FriendsController < ApplicationController
   end
 
   def create
-    Friend.create!(friend_params)
-    redirect_back fallback_location: "/"
+    @friend_request = Friend.create(friend_params)
+    respond_to do |format|
+      format.html do
+        flash[:primary] = "Sent friend request!"
+        redirect_back fallback_location: "/"
+      end
+      format.js
+      format.json{ render json: @friend_request }
+    end
   end
 
   def update

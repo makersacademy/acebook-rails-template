@@ -14,9 +14,9 @@
                       <p class="text-muted font-size-sm">London, UK</p>
                       <% unless session[:user]["id"] == @user.id %>
                         <% if @friend_status %>
-                           <%= button_to "Delete Friend #{@friend_status.status == "Pending" ? "Request" : "" }" , [ User.find(params[:id]) , @friend_status ], {method: :delete, class: "btn btn-secondary"} %>
+                           <%= button_to "Delete Friend #{@friend_status.status == "Pending" ? "Request" : "" }" , [ User.find(params[:id]) , @friend_status ], {method: :delete, class: "btn btn-secondary", remote: true} %>
                         <% else %>
-                              <%= button_to "Send Friend Request" , { controller: "friends", action: "create", user_id: params[:id] }, {method: :post, class: "btn btn-secondary"} %>
+                              <%= button_to "Send Friend Request" , { controller: "friends", action: "create", user_id: params[:id] }, {method: :post, class: "btn btn-secondary", remote: true} %>
                         <% end %>
                         <button class="btn btn-outline-primary">Message</button>
                      <% end %>

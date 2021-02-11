@@ -1,0 +1,10 @@
+var nav = document.querySelector(".main-body");
+var flash = `<div class='alert alert-primary' role='alert'>Sent friend request!</div>`;
+nav.insertAdjacentHTML("beforebegin", flash );
+// add flash
+window.setTimeout(fadeAlert, 4000);
+// trigger countdown to make alert auto disappear
+
+postCreateFR();
+console.log("Triggered");
+// change button to "Delete Friend Request"
