@@ -8,7 +8,7 @@ body{
 h1 {
   font-size: 50px;
   text-align: center;
-  color:slateblue;
+  color: #67A5A9;
 }
 
 p {
@@ -63,15 +63,7 @@ p {
 .shadow-none {
   box-shadow: none!important;
 }
-.btn{
-  background-color: blueviolet;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-}
+
 .sidebar{
   grid-template-columns: 1;
   height: 100px;
@@ -86,12 +78,15 @@ body{
   background-color: #e2e8f0;
   background-image: "images/cheeseburger.png";
 }
+
 .main-body {
   padding: 15px;
 }
+
 .card {
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
-}
+ }
+
 
 .card {
   position: relative;
@@ -141,10 +136,10 @@ body{
   box-shadow: none!important;
 }
 .btn{
-  background-color: orange;
-  border: none;
+  background-color: #67A5A9;
+  border-color: #D0A18B;
   color: white;
-  padding: 16px 32px;
+  padding: 10px 20px;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
@@ -159,7 +154,7 @@ body{
 
 body{
   margin-top:20px;
-  background:#eee;
+  background-color: #F0F6F6;
 }
 
 .profile-header {
@@ -339,7 +334,7 @@ body{
 
 .profile-header .profile-header-tab>li.active>a,
 .profile-header .profile-header-tab>li>a.active {
-  color: #242a30
+  color: #304A51
 }
 
 .profile-content {
@@ -562,4 +557,45 @@ body.flat-black {
   vertical-align: top;
 }
 
+.sidenav {
+  width: 190px;
+  position: fixed;
+  z-index: 1;
+  top: 200px;
+  left: 80px;
+  //background: #eee;
+  overflow-x: hidden;
+  //padding: 8px 0;
+}
 
+.sidenav a {
+  padding: 10px 8px 10px 20px;
+  text-decoration: none;
+  font-size: 30px;
+  color: #67A5A9;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #D0A18B;
+  // original blue hover #064579;
+}
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.container{
+  float: right;
+}
+
+.post {
+  display: block;
+}

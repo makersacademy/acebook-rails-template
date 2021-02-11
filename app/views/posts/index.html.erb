@@ -11,6 +11,7 @@
   <a href="javascript:void(0)">Setting</a>
   <a href="/users/log_out">Logout</a>
 </div>
+<div class="tab-content">
 <div id="page" class="container-fluid">
   <%= render "shared/add_post" %>
   <div id="posts">
@@ -18,3 +19,18 @@
     <%# depth: 1 so can get tweets one tweet deep %>
   </div>
 </div>
+
+<div class="container">
+  <div id="feedControl">Loading...</div>
+</div>
+  <style type="text/css">
+    @import url("http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.css");
+  </style>
+  <script type="text/javascript">
+    function load() {
+      var feed =”www.feeds.bbci.co.uk/news/world/rss.xml”;
+      new GFdynamicFeedControl(feed, "feedControl");
+    }
+    google.load("feeds", "1");
+    google.setOnLoadCallback(load);
+  </script>

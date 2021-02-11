@@ -1,4 +1,7 @@
-$(document).ready(function(){
+// I DONT THINK WE NEED THIS ANYMORE, PREVIOUS JS FOR NAV BAR
+// TO HIGHLIGHT WHAT PAGE
+
+/*$(document).ready(function(){
     var thisUrl = window.location.pathname;
       if( thisUrl == "/"){
         $("li").has("#profile").attr("aria-current", "page");
@@ -10,4 +13,4 @@ $(document).ready(function(){
         $(`li > a[href$="${thisUrl}"]`).contents().unwrap();
     }
 });
-
+*/
