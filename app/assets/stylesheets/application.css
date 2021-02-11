@@ -19,3 +19,15 @@
  */
 
  html, body {margin:0;padding:0;height:100%;}
+ 
+ .btn-primary {
+  color: #304a51;
+  background-color: #BDD3DC;
+  border-color: #D0A18B;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #67A5A9;
+  border-color: #D0A18B;
+}
