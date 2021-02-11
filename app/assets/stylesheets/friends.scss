@@ -3,9 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // NOTIFICATION CSS HERE
+html, body {
+  height: 100%;
+}
+
+body{
+  background-image: none;
+  background-color: #F0F6F6;
+}
+
+h1{
+  color: #67A5A9;
+  text-align: center;
+  padding: 40px 0px 40px 0px;
+}
+
+.sidenav {
+  left: 150px;
+}
 
 #page{
-  width: 80%;
+  width: 60%;
   margin: auto;
 }
 
@@ -27,14 +45,13 @@
 .request{
   border: 1px solid gainsboro;
   margin: 10px 5px 10px 5px;
-}
-
-.request hr{
-  margin: 0;
+  background-color: white;
+  padding: 1rem 0px 1rem 0px;
 }
 
 .user{
   display: table-row;
+  padding: 10px 0px 10px 0px;
 }
 
 .user .profile-pic{
@@ -48,10 +65,6 @@
   text-align: left;
   font-style: italic;
   padding-left: 5px;
-}
-
-.button-panel{
-  padding: 1rem;
 }
 
 .button-panel form{
