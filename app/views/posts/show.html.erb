@@ -3,7 +3,32 @@
   <%= stylesheet_link_tag "post_page" %>
 <% end %>
 
+<%# MODAL (pop up for retweet) %>
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <%= form_for @new_post, remote: true do |form| %>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="shareModalLabel">Share Post</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= form.hidden_field(:original_post_id, value: params[:id]) %>
+          <%= form.text_area :content, class: "form-control", rows: 3, placeholder: "Add caption"%>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= form.submit "Submit", id: "submit_share", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <div id="page">
+  <h1>.</h1>
   <div id="post" class="align-middle">
     <div id="user-details" class="inner-post">
       <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
@@ -13,6 +38,12 @@
     <div id="post-content" class="inner-post">
       <h4><%= @post.content %></h4>
       <p><%= @post.created_at %></p>
+      <div id="original_post">
+        <% if @original_post %>
+          <%= render partial: @original_post, locals: { depth: 0 } %>
+          <%#  depth : 0 so that only gets latest retweet %>
+        <% end %>
+      </div>
     </div>
     <hr>
     <div id="post-stats" class="inner-post">
@@ -22,6 +53,7 @@
     <div id="interaction-panel" class="inner-post">
       <%= button_to "Like", { :id => @post.id}, {method: :put, class: "btn btn-secondary", remote: true} %>
       <button class="btn btn-secondary" data-toggle="collapse" data-target="#comment_form">Add Comment</button>
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#shareModal">Share</button>
     </div>
     <hr id="beforeComments">
     <div id="comment_form" class="collapse">

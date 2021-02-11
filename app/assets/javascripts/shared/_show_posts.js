@@ -1,11 +1,15 @@
 $(document).ready(function(){
 
   $(document).on('mouseenter', '.post', function(){
-    $(this).css("border", "solid 3px black");
+    $(this).css("background", "whitesmoke");
   });
 
   $(document).on('mouseleave', '.post', function(){
-    $(this).css("border", "solid 1px gainsboro");
+    $(this).css("background", "white");
+  });
+
+  $( document ).ready(function() {
+    $(".post").has(".original-post").find(".profile-pic").css( "vertical-align", "top" );
   });
   
 });

@@ -4,16 +4,53 @@ html, body {
 
 body{
   background-image: none;
+  background-color: #F0F6F6;
+}
+
+h1{
+  color: #67A5A9;
+  text-align: center;
+  padding-top: 40px;
 }
 
 .container-fluid {
   display: inline-block;
+  max-width: 800px;
 }
 
 #page{
   margin: auto;
-  border: 3px solid gainsboro;
+  //border: 3px solid gainsboro;
   padding: 10px;
   text-align: center;
   display: block;
 }
+
+.original-post{
+  margin: auto;
+  display: inline-block;
+  margin: 5px;
+}
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#add-post{
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  border: 1px solid gainsboro;
+}
+
+#add-post .container-fluid{
+  padding: 0;
+}
+

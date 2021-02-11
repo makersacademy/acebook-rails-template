@@ -6,10 +6,7 @@ class UsersController < ApplicationController
 
   def index
     if session[:user] #if user is already logged in
-      @user = User.find(session[:user]["id"])
-      @post = Post.new #for adding new posts
-      @posts = @user.posts.order(created_at: :desc)
-      render action: 'show', id: session[:user]["id"]
+      redirect_to action: 'show', id: session[:user]["id"]
     else
       @disable_nav = true
       @user = User.new  
@@ -25,7 +22,7 @@ class UsersController < ApplicationController
       # if invalid user, flashes error message
     else
       flash[:primary] =  "You have signed up!"
-    end 
+    end
       redirect_back fallback_location: "/"
   end
 
@@ -42,6 +39,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @friend_status = Friend.find_by(requester_id: session[:user]["id"], receiver_id: params[:id])
     @user = User.find(params[:id])
     @post = Post.new #for adding new posts
     @posts = @user.posts.order(created_at: :desc)
@@ -49,10 +47,10 @@ class UsersController < ApplicationController
 
   def log_out
     session[:user] = nil
-    flash[:primary] =  "You have logged out"
+    flash[:primary] =  "You have logged out!"
     redirect_to "/"
   end
-  
+
   private
 
   def user_params

@@ -12,7 +12,7 @@ end
 RSpec.feature "Only add posts from your profile", type: :feature do
   scenario "Can add posts from logged in profile" do
     visit "/users/1"
-    expect(page).to have_selector("input")
+    expect(page).to have_css("#post_content")
   end
 
   scenario "Can't add posts from someone else's profile" do
@@ -30,6 +30,6 @@ RSpec.feature "Only add posts from your profile", type: :feature do
     end
     # sign in as other user
     visit "/users/1" #-> Charlotte's page
-    expect(page).not_to have_selector("input")
+    expect(page).not_to have_css("#post_content")
   end
 end
