@@ -68,14 +68,14 @@
                 <div class="modal-body">
                   <%= form_for @user do |form| %>
                     <fieldset id="sign_up">
-                    
+
                       <%= form.label :username %>
                       <%= form.text_field :username %>
                       <br><br>
                       <%= form.label :password %>
                       <%= form.password_field :password %>
                       <br><br>
-  
+
                       <%= form.label :full_name %>
                       <%= form.text_field :full_name %>
                       <br><br>
@@ -92,7 +92,7 @@
                       <%= form.text_field :url%>
                        <br><br>
                       <%= form.submit "Sign Up" %>
-                    
+
                     </fieldset>
                   <% end %>
                 </div>
@@ -102,8 +102,9 @@
               </div>
             </div>
           </div>
-        <div>
-          <ul id="menu">
+        <footer>
+        <div class="footer">
+          <ul style="float" id="menu">
           <li><a href="javascript:void(0)">About</a></li>
           <li><a href="javascript:void(0)"> Help Center </a></li>
           <li><a href="javascript:void(0)"> Terms of Service </a></li>
@@ -117,6 +118,7 @@
           <li><a href="javascript:void(0)"> Settings </a></li>
           </ul>
         </div>
+        </footer>
 <!--  <br><br><br><br><br><br><br><br>
 
 <hr> this makes a line dash -->

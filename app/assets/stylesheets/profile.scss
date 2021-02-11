@@ -8,7 +8,7 @@ body{
 h1 {
   font-size: 50px;
   text-align: center;
-  color: #D0A18B;
+  color: #67A5A9;
 }
 
 p {
@@ -39,12 +39,52 @@ p {
   padding: 1rem;
 }
 
+
+.gutters-sm {
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.mb-3, .my-3 {
+  margin-bottom: 1rem!important;
+}
+
+.bg-gray-300 {
+  background-color: #e2e8f0;
+}
+.h-100 {
+  height: 100%!important;
+}
+.shadow-none {
+  box-shadow: none!important;
+}
+
+.sidebar{
+  grid-template-columns: 1;
+  height: 100px;
+  width: 100px;
+  background-color: blueviolet;
+}
+
+body{
+  margin-top:20px;
+  color: #1a202c;
+  text-align: left;
+  background-color: #e2e8f0;
+  background-image: "images/cheeseburger.png";
+}
 .main-body {
   padding: 15px;
 }
+
 .card {
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
-}
+ }
+
 
 .card {
   position: relative;
@@ -65,14 +105,29 @@ p {
 }
 
 .btn{
-  background-color: #D0A18B;
-  border: none;
+  background-color: #67A5A9;
+  border-color: #D0A18B;
+
   color: white;
-  padding: 16px 32px;
+  padding: 10px 20px;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.sidebar{
+  grid-template-columns: 1;
+  height: 100px;
+  width: 100px;
+  background-color: blueviolet;
+}
+
+
+body{
+  margin-top:20px;
+  background-color: #F0F6F6;
+}
+
 
 .profile-header {
   position: relative;
@@ -251,7 +306,7 @@ p {
 
 .profile-header .profile-header-tab>li.active>a,
 .profile-header .profile-header-tab>li>a.active {
-  color: #242a30
+  color: #304A51
 }
 
 .profile-content {
@@ -351,4 +406,45 @@ p {
   vertical-align: top;
 }
 
+.sidenav {
+  width: 190px;
+  position: fixed;
+  z-index: 1;
+  top: 200px;
+  left: 80px;
+  //background: #eee;
+  overflow-x: hidden;
+  //padding: 8px 0;
+}
 
+.sidenav a {
+  padding: 10px 8px 10px 20px;
+  text-decoration: none;
+  font-size: 30px;
+  color: #67A5A9;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #D0A18B;
+  // original blue hover #064579;
+}
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.container{
+  float: right;
+}
+
+.post {
+  display: block;
+}
