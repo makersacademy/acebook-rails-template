@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/arbOP/Acebook-Team-2">
-    <img src="https://github.com/othneildrew/Best-README-Template/blob/master/images/logo.png" alt="Logo" width="80" height="80">
+    <img src="/app/assets/images/acebook_logo_shading.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Project: Acebook</h3>
@@ -55,21 +55,19 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Acebook Homepage Screen Shot][/app/assets/images/homepage.png]](https://example.com)
 
 We're using Ruby on Rails with a dash of javascript to create our totally-original, super-awesome social media platform: Acebook!
 You can follow our journey with this project at our [blog](https://acebookteam2.medium.com/), which we update daily.
 
 See also:
-* Our [final presentation](https://acebookteam2.medium.com/), where we explain our process in a bit more detail.
+* Our [final presentation](https://docs.google.com/presentation/d/1DaVtLLyEy4lUTwKGgWct8j-Lkr1XMucAYgprILSEW-U/edit?usp=sharing), where we explain our process in a bit more detail.
 * Our [trello board](https://trello.com/b/5lBdCTpS/acebook), which we used to keep ourselves organised.
 * [The project outline](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
 Thanks for checking out our project! :smile:
 
 ### Built With
-
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [Ruby On Rails](https://rubyonrails.org/)
 <!-- * [JQuery](https://jquery.com) -->
@@ -81,8 +79,6 @@ This section should list any major frameworks that you built your project using.
 To get a local copy up and running follow these simple example steps:
 
 ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
 
 * [Node.js](https://nodejs.org/en/download/)
 * [Ruby](https://www.ruby-lang.org/en/downloads/)
@@ -137,8 +133,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
 Project Link: [https://github.com/arbOP/Acebook-Team-2](https://github.com/arbOP/Acebook-Team-2)
 
 
@@ -146,3 +140,5 @@ Project Link: [https://github.com/arbOP/Acebook-Team-2](https://github.com/arbOP
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [README template](https://github.com/othneildrew/Best-README-Template)
+* [This website was a GODSEND for learning about Rails](https://guides.rubyonrails.org)
+* [Bootstrap](https://getbootstrap.com)
