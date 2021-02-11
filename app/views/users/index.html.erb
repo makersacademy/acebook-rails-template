@@ -69,6 +69,7 @@
                   <%= form_for @user do |form| %>
                     <fieldset id="sign_up">
 
+
                       <%= form.label :username %>
                       <%= form.text_field :username %>
                       <br><br>
@@ -87,9 +88,6 @@
                        <br><br>
                        <%= form.label :address %>
                       <%= form.text_field :address%>
-                      <br><br>
-                      <%= form.label :url %>
-                      <%= form.text_field :url%>
                        <br><br>
                       <%= form.submit "Sign Up" %>
 

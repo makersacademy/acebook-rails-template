@@ -28,7 +28,6 @@ RSpec.describe User, type: :model do
     user.email = "charlotte@gmail.com"
     user.mobile = "0000000000"
     user.address = "London, UK"
-    user.url = "ttpsjknkjnkjn"
     expect(user).to be_valid
   end
 end

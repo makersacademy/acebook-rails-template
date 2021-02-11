@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       redirect_to action: 'show', id: session[:user]["id"]
     else
       @disable_nav = true
-      @user = User.new
+      @user = User.new  
       # shows log in / sign up page
     end
   end
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :full_name, :email, :mobile, :address, :url)
+    params.require(:user).permit(:username, :password, :full_name, :email, :mobile, :address)
   end
 
 end

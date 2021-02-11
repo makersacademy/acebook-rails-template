@@ -10,7 +10,6 @@ RSpec.feature "Register account", type: :feature do
       fill_in "user_email", with: "charlotte@gmail.com"
       fill_in "user_mobile", with: "07474289731"
       fill_in "user_address", with: "London, UK"
-      fill_in "user_url", with: "https://www.acebook.com/users/2"
       
       click_button "Sign Up"
     end
