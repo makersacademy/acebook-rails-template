@@ -8,6 +8,7 @@
                     </header>
                     <% @requests.each do |friend| %>
                         <section class="ui basic segment">
+                            <img class="ui avatar image" src="<%=friend.avatar %>">
                             <span class="ui green header">
                                 <%= friend.name%>
                             </span>
@@ -30,6 +31,7 @@
                             </header>
                             <% @pending.each do |friend| %>
                                 <section class="ui basic segment">
+                                    <img class="ui avatar image" src="<%=friend.avatar %>">
                                     <span class="ui yellow header">
                                         <%= friend.name%>
                                     </span>
@@ -44,6 +46,7 @@
                                 <% if @user.friends? %>
                                     <% @friends.each do |friend| %>
                                         <section class="ui basic segment">
+                                            <img class="ui avatar image" src="<%=friend.avatar %>">
                                             <span class="ui header">
                                                 <%= link_to  friend.name, user_path(friend) %>
                                             </span>
@@ -68,6 +71,7 @@
             </div>
             <% @user.not_friends.sample(5).each do |user| %>
                 <section class="ui basic segment">
+                    <img class="ui avatar image" src="<%=user.avatar %>">
                     <span class="ui header">
                     <%= link_to user.name, user_path(user) %>
                 </span>
