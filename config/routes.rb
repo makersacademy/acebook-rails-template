@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post '/update_profile' => 'users#update_profile'
   post '/picture' => 'users#update_picture'
 
+
   devise_scope :user do
     unauthenticated do
       root :to => 'devise/sessions#new'
@@ -17,4 +18,12 @@ Rails.application.routes.draw do
       root :to => 'posts#index'
     end
   end
+
+  post "/friends/add" => "friends/add"
+  post "/friends/reject" => "friends/reject"
+  post "/friends/remove" => "friends/remove"
+  get "/friends/search" => "friends/search"
+  post "/friends/search" => "friends/search"
+  resources :friends, only: [:index, :create]
+
 end
