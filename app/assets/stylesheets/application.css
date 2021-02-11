@@ -11,11 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
- *= require shared/_add_content
- *= require shared/_comment
- *= require shared/_post
- *= require shared/_navbar
- *= require shared/_footer
+*= require_tree .
  */
 
  html, body {margin:0;padding:0;height:100%;}
