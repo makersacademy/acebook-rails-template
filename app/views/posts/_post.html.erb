@@ -1,13 +1,15 @@
 <div class="col-xl-4" align="center">
-  <div class="posts-index-cont">
+  <div id="<%= post.id %>" class="posts-index-cont">
     <% if post.image.attached? %>
     <div class="posts-index-img-cont">
-      <%= image_tag post.image, class: 'post-img' %>
+      <%= image_tag url_for(post.image), class: 'post-img' %>
     </div>
     <% end %>
     <div class="posts-user-avatar">
       <% user_id = post.user_id %>
-     
+      <% if user_id %>
+        <%= image_tag User.find(user_id).avatar, class: "posts-user-avatar-img" %>
+      <% end %>
     </div>
     <div class="heading-container">
       <h2 class="h2-med white-text">
@@ -18,11 +20,11 @@
     <div class="post-stats-div">
       <div class="views-div">
         <%= image_tag 'views-icon.png', class: 'post-stats-icon' %>
-        <p class="count white-text">100</p>
+        <p class="count white-text"><%= post.views || "nil" %></p>
       </div>
       <div class="likes-div">
         <%= image_tag 'likes-icon.png', class: 'post-stats-icon' %>
-        <p class="count white-text">100</p>
+        <p class="count white-text"><%= post.likes || "nil" %></p>
       </div>
     </div>
   </div>

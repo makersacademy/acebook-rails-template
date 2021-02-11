@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'users/:id/picture' => 'users#update_picture'
   post '/update_profile' => 'users#update_profile'
   post '/picture' => 'users#update_picture'
+  post '/posts/like_post' => 'posts#like_post'
 
   devise_scope :user do
     unauthenticated do

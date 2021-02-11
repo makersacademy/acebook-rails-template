@@ -6,7 +6,7 @@
   <div class="c-top-container">
       <div class="field">
         <%= f.label :email %><br>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'c-input'  %>
       </div>
         <br>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -15,7 +15,7 @@
 
       <div class="field">
         <%= f.label :password %> <br><i>(leave blank if you don't want to change it)</i>
-        <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.password_field :password, autocomplete: "new-password", class: 'c-input'  %>
         <% if @minimum_password_length %>
             <br />
         <% end %>
@@ -23,13 +23,17 @@
         <br>
       <div class="field">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'c-input'  %>
       </div>
         <br>
 
       <div class="field">
         <%= f.label :current_password %> <br><i>(enter current password to confirm changes)</i><br />
-        <%= f.password_field :current_password, autocomplete: "current-password" %>
+        <%= f.password_field :current_password, autocomplete: "current-password", class: 'c-input' %>
+      </div>
+      <br>
+      <div class="field">
+        <%= f.file_field :avatar, class: 'c-input' %>
       </div>
         <br>
       <div class="actions">

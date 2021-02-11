@@ -180,6 +180,7 @@
 }
 
 .posts-index-cont {
+  cursor: pointer;
   display: block;
   background: #463f57;
   border-radius: 6px;
@@ -188,6 +189,11 @@
   margin-top: 60px;
   box-shadow: 4px 4px 4px gray;
   margin-bottom: 60px;
+  transition: 0.3;
+}
+
+.posts-index-cont:hover {
+  opacity: 0.82;
 }
 
 .gravatar {
@@ -238,6 +244,14 @@
   width: 70px;
   height: 70px;
   overflow: hidden;
+}
+
+.posts-user-avatar-img {
+  position: relative;
+  top: -2px;
+  left: -2px;
+  width: 70px;
+  min-height: 70px;
 }
 
 .posts-index-cont > h2 {
@@ -314,4 +328,24 @@
 
 .profile-text-green {
   color: #008037;
+}
+
+.post-show-like-button {
+  position: relative;
+  background: #463f57;
+  border-radius: 8px;
+  width: 80px;
+  height: auto;
+  padding: 10px 20px 10px 20px;
+  margin: 10px 0px 10px 0px;
+  object-fit: cover;
+}
+
+.post-show-like-image {
+  position: relative;
+  width: 25px !important;
+}
+
+.i-block {
+  display: inline-block !important;
 }

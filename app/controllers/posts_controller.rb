@@ -22,6 +22,22 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @post.increment_views()
+  end
+
+  def like_post
+    @current_user_id = current_user.id
+    @post_id = params[:post_id]
+    @post = Post.find(@post_id)
+    user_not_liked_post = !(@post.liked_user_ids.include? @current_user_id)
+    if user_not_liked_post
+      @post.increment_likes @current_user_id
+    end
+    render 'like_post'
+  end
+
   private
 
   def post_params
