@@ -36,10 +36,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @disable_nav = true
     @posts = Post.order(created_at: :desc)
     @post = Post.new
-    @depth = 0 # how far to get retweets
   end
 
   def update

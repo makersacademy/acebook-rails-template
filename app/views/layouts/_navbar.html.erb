@@ -1,22 +1,10 @@
-<!-- old navbar
-<nav aria-label="breadcrumb" class="main-breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/timeline">Timeline</a></li>
-    <li class="breadcrumb-item"><a href="javascript:void(0)">Notification</a></li>
-    <li class="breadcrumb-item"><a id="profile" href="/users/<%= session[:user]["id"] %>">User Profile</a></li>
-    <li class="breadcrumb-item"><a href="javascript:void(0)">Inbox</a></li>
-    <li class="breadcrumb-item"><a href="javascript:void(0)">Setting</a></li>
-    <li class="breadcrumb-item"><a href="/users/log_out">Logout</a></li>
-  </ol>
-</nav>
- -->
 
-<!-- NEW NAV BAR FOR PROFILE PAGE NOW -->
- <div class="sidenav">
-   <a href="/timeline">Timeline</a>
-   <a href="javascript:void(0)">Notification</a>
-   <a id="profile" href="/users/<%= session[:user]["id"] %>">User Profile</a>
-   <a href="javascript:void(0)">Inbox</a>
-   <a href="javascript:void(0)">Setting</a>
-   <a href="/users/log_out">Logout</a>
- </div>
+<div class="sidenav">
+  <a href="/timeline">Timeline</a>
+  <a href="/notifications">Notifications</a>
+  <a id="profile" href="/users/<%= session[:user]["id"] %>">User Profile</a>
+  <a href="javascript:void(0)">Inbox</a>
+  <a href="javascript:void(0)">Settings</a>
+  <a href="/users/log_out">Logout</a>
+</div>
+
