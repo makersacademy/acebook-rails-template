@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {
   registrations: 'registrations'
 }
+  resources :posts
+  resources :users
+  get 'users/:id/picture' => 'users#update_picture'
+  post '/update_profile' => 'users#update_profile'
+  post '/picture' => 'users#update_picture'
+
 
   devise_scope :user do
     unauthenticated do
@@ -18,9 +24,6 @@ Rails.application.routes.draw do
   post "/friends/remove" => "friends/remove"
   get "/friends/search" => "friends/search"
   post "/friends/search" => "friends/search"
-
-  resources :posts
-  resources :users
   resources :friends, only: [:index, :create]
 
 end

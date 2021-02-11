@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_02_11_113642) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+
   create_table "friendships", id: :serial, force: :cascade do |t|
     t.string "friendable_type"
     t.integer "friendable_id"
@@ -45,10 +46,18 @@ ActiveRecord::Schema.define(version: 2021_02_11_113642) do
     t.integer "blocker_id"
     t.integer "status"
     t.index ["friendable_id", "friend_id"], name: "index_friendships_on_friendable_id_and_friend_id", unique: true
+
+  create_table "bios", force: :cascade do |t|
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "message"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
@@ -66,6 +75,7 @@ ActiveRecord::Schema.define(version: 2021_02_11_113642) do
     t.string "name"
     t.string "bio"
     t.string "avatar"
+
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
