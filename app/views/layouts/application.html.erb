@@ -16,7 +16,9 @@
         <div class="main-body">
           <%= render "layouts/navbar" unless @disable_nav %>
           <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>"><%= value %></div>
+            <div id="flash">
+              <div id="inner-flash" class="alert alert-<%= key %>"><%= value %></div>
+            </div>
           <% end %>
           <%# Error/Confirmation flashes here ^ %>
           <%= yield %>

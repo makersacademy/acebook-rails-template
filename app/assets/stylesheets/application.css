@@ -31,3 +31,14 @@
   background-color: #67A5A9;
   border-color: #D0A18B;
 }
+
+#flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+#inner-flash {
+  margin: 0 auto;
+}
