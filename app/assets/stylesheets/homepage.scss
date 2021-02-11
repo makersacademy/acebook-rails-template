@@ -37,7 +37,7 @@ color: slateblue;
 
 .small-middle-container{
 margin: auto;
-width: 50%;
+width: 30%;
 position: relative;
 bottom: 30px; left: 350px
 }
@@ -167,4 +167,9 @@ ul#menu li{
 
 .btn-forgot{
   color: #67A5A9;
+}
+
+#menu a:hover {
+  color: #D0A18B;
+  // original blue hover #064579;
 }

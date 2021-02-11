@@ -22,7 +22,7 @@ class PostsController < ApplicationController
         format.js
         format.json { render json: @error }
       end
-    end 
+    end
   end
 
   def show

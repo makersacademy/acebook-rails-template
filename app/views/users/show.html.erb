@@ -12,8 +12,14 @@
                       <h4><%= @user.username %></h4>
                       <p class="text-secondary mb-1">Ruby, HTML, CSS.</p>
                       <p class="text-muted font-size-sm">London, UK</p>
-                      <button class="btn btn-primary">Add Friend</button>
-                      <button class="btn btn-outline-primary">Message</button>
+                      <% unless session[:user]["id"] == @user.id %>
+                        <% if @friend_status %>
+                           <%= button_to "Delete Friend #{@friend_status.status == "Pending" ? "Request" : "" }" , [ User.find(params[:id]) , @friend_status ], {method: :delete, class: "btn btn-secondary"} %>
+                        <% else %>
+                              <%= button_to "Send Friend Request" , { controller: "friends", action: "create", user_id: params[:id] }, {method: :post, class: "btn btn-secondary"} %>
+                        <% end %>
+                        <button class="btn btn-outline-primary">Message</button>
+                     <% end %>
                     </div>
                   </div>
                 </div>
@@ -95,7 +101,7 @@
                 </div>
               </div>
               </div>
-        
+
                   </div>
               </div>
             </div>
@@ -105,7 +111,7 @@
       <div class="col-md-12">
          <div id="content" class="content content-full-width">
             <!-- begin profile -->
-            <div class="profile">    
+            <div class="profile">
                 <!-- BEGIN profile-header-tab -->
                   <div class="container">
                     <div>

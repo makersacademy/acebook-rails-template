@@ -2,9 +2,12 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag "timeline" %>
 <% end %>
+
 <h1>Your Timeline</h1>
 <div id="page" class="container-fluid">
-  <%= render "shared/add_post" %>
+  <div id="add-post">
+    <%= render "shared/add_post" %>
+  </div>
   <div id="posts">
     <%= render partial: @posts, locals: { depth: 1 } %>
     <%# depth: 1 so can get tweets one tweet deep %>
