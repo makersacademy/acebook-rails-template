@@ -40,6 +40,9 @@ class PostsController < ApplicationController
     # get list of friend ids
     @friends_posts = Post.where("user_id IN (?)", friends).order(created_at: :desc)
     # get all posts by friends
+    # @posts = ActiveRecord::Base.connection.execute("SELECT users.username, posts.* 
+    # FROM posts FULL OUTER JOIN users ON 
+    # posts.user_id=users.id;")
     @posts = Post.all.order(created_at: :desc)
     @post = Post.new # for adding new posts
   end

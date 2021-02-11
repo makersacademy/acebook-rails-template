@@ -40,6 +40,7 @@ class UsersController < ApplicationController
 
   def show
     @friend_status = Friend.find_by(requester_id: session[:user]["id"], receiver_id: params[:id])
+    @friends = Friend.where(requester_id: params[:id], status: "Accepted").pluck(:receiver_id).map{ |id| User.find(id) }
     @user = User.find(params[:id])
     @post = Post.new #for adding new posts
     @posts = @user.posts.order(created_at: :desc)
