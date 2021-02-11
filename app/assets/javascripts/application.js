@@ -20,3 +20,11 @@ function fadeAlert(){
 }
 
 window.setTimeout(fadeAlert, 4000);
+
+$(document).ready(function(){
+  var containerHeight = $('.container').outerHeight(true);
+  var windowHeight = $('body').height();
+  if(containerHeight < windowHeight ){
+     $('.footer').css('position','fixed');
+  }
+});
