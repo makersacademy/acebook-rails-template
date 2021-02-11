@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       render action: 'show', id: session[:user]["id"]
     else
       @disable_nav = true
-      @user = User.new
+      @user = User.new  
       # shows log in / sign up page
     end
   end
@@ -43,7 +43,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    p @user
     @post = Post.new #for adding new posts
     @posts = @user.posts.order(created_at: :desc)
   end
@@ -57,7 +56,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :full_name, :email, :mobile, :address, :url)
+    params.require(:user).permit(:username, :password, :full_name, :email, :mobile, :address)
   end
 
 end
