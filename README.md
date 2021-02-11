@@ -55,7 +55,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Acebook Homepage Screen Shot][/app/assets/images/homepage.png]][https://example.com]
+<a href="https://github.com/arbOP/Acebook-Team-2">
+    <img src="/app/assets/images/homepage.png" alt="Acebook Homepage Screenshot">
+  </a>
 
 We're using Ruby on Rails with a dash of javascript to create our totally-original, super-awesome social media platform: Acebook!
 You can follow our journey with this project at our [blog](https://acebookteam2.medium.com/), which we update daily.
