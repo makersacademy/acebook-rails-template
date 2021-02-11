@@ -7,7 +7,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                     <%= image_tag url_for(@user.avatar), width: "150" %>
                     <div class="mt-3">
                       <h4><%= @user.username %></h4>
                       <p class="text-secondary mb-1">Ruby, HTML, CSS.</p>
@@ -122,12 +122,7 @@
                                     <div class="p-10 bg-white">
                                        <div class="media media-xs overflow-visible">
                                           <a class="media-left" href="javascript:;">
-                                          <% if @user.avatar.attached? %>
-                                             
-                                             <img src="<%= url_for(@user.avatar) %>">
-                                          <%# <% else %>
-                                             <%# <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="" class="media-object img-circle"> %>
-                                          <% end %> %>
+                                             <img src="https://bootdey.com/img/Content/avatar/avatar2.png">
                                           </a>
                                           <div class="media-body valign-middle">
                                              <b class="text-inverse"><%= @friends[0].username %></b>
