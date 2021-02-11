@@ -5,7 +5,12 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
-    redirect_to posts_url
+    if @post.valid?
+      redirect_to posts_url
+    else
+      redirect_to new_post_path(errors: @post.errors.messages)
+    end
+
   end
 
   def destroy

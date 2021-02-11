@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_posts = @user.posts
   end
-
+  
   def user_params
     params.require(:user).permit(:email, :password, :bio, :image)
   end
@@ -16,6 +16,4 @@ class UsersController < ApplicationController
     current_user.update(picture: user_params[:image])
     redirect_to user_path(current_user)
   end
-
 end
- 

@@ -1,9 +1,10 @@
-<br>
+<div class="user-avatar-container">
+  <%= image_tag @user.avatar %>
+</div>
 <h1 class="profile-text-purple"><%= @user.name %></h1>
 <%= link_to "Back to homepage", root_path(), class: "profile-text-green" %> | 
 <%= link_to 'Edit bio', users_path, class: "profile-text-green" %> 
 
-<br>
 <br>
 
 <div class="c-top-container">
@@ -12,6 +13,7 @@
 </div>
 
 <div class="row">
+
   <% @user_posts.each do |post| %>
     <div class="col-xl-4" align="center">
       <div class="posts-index-cont">
@@ -41,3 +43,7 @@
     </div>
   <% end %>
 </div>
+
+  <%= render @user_posts %>
+</div>
+

@@ -1,17 +1,45 @@
-<h1>New Post</h1>
-<%= form_for @post do |form| %>
-  <%= form.label :title %>
-  <br>
-  <%= form.text_field :title %>
-  <br>
-  <%= form.label :message %>
-  <br>
-  <%= form.text_field :message %>
-  <br>
-  <%= form.label :image %>
-  <br>
-  <%= form.file_field :image %>
-  <br>
 
-  <%= form.submit "Submit" %>
-<% end %>
+<div class="row">
+  <div class="col-12" align="center">
+    <h1>New Post</h1>
+    <ul class="errors">
+      <% if params[:errors] %>
+        <% params[:errors].each do |key_vals| %>
+          <li>
+            <%= key_vals[0] %>:
+            <% key_vals[1].each do |message| %>
+              <span><%= message %></span>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+    <div class="c-top-container">
+      <%= form_for @post do |form| %>
+        <div class="field">
+          <%= form.label :title, class: 'align-label' %>
+          <br>
+          <%= form.text_field :title, class: 'c-input' %>
+          <br>
+        </div>
+
+        <div class="field">
+          <%= form.label :message, class: 'align-label' %>
+          <br>
+          <%= form.text_field :message, class: 'c-input' %>
+          <br>
+        </div>
+
+        <div class="field">
+          <%= form.label :image, class: 'align-label' %>
+          <br>
+          <%= form.file_field :image, class: 'c-input' %>
+          <br>
+        </div>
+
+        <br>
+        <%= form.submit "Submit", class: 'c-button ltb' %>
+      <% end %>
+    </div>
+  </div>
+</div>
