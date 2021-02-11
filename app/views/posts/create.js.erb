@@ -17,7 +17,7 @@ closeModal();
 // trigger close modal
 
 var nav = document.querySelector(".main-body");
-var flash = `<div class='alert alert-${level}' role='alert'>${alert}</div>`;
+var flash = `<div id="flash"><div class='alert alert-${level}' role='alert'>${alert}</div></div>`;
 nav.insertAdjacentHTML("beforebegin", flash );
 // add flash
 window.setTimeout(fadeAlert, 4000);
