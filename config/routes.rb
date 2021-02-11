@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 }
   resources :posts
   resources :users
+  get 'users/:id/picture' => 'users#update_picture'
+  post '/update_profile' => 'users#update_profile'
+  post '/picture' => 'users#update_picture'
 
   devise_scope :user do
     unauthenticated do

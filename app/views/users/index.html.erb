@@ -1,0 +1,19 @@
+<br><br>
+<h2 align="center" class="profile-text-purple"> Make your profile stand out </h2>
+<br>
+
+<div align="center">
+  <div class="c-top-container">
+    <%= form_for(current_user, url: update_profile_path, method: 'post') do |f| %>
+      <div class="c-input">
+        <%= f.label :bio %><br>
+        <%= f.text_field :bio %>
+      </div>
+    <br>
+        <div class="actions">
+          <button class="c-button-green"<%= f.submit %>Save</button>
+        </div>
+    <br>
+    <% end %>
+  </div>
+</div>

@@ -4,8 +4,17 @@ class UsersController < ApplicationController
     @user_posts = @user.posts
   end
 
-  def sign_up_params
-    params.require(:user).permit(:bio)
+  def user_params
+    params.require(:user).permit(:email, :password, :bio, :image)
+  end
+
+  def index
+  end
+
+  def update_profile
+    current_user.update(bio: user_params[:bio])
+    current_user.update(picture: user_params[:image])
+    redirect_to user_path(current_user)
   end
 
 end
