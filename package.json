@@ -1,5 +1,7 @@
 {
   "name": "acebook",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "node.js": "^0.0.1-security"
+  }
 }

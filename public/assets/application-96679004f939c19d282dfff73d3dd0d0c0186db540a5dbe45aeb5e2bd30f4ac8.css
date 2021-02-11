@@ -1,0 +1,1198 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+ html, body {margin:0;padding:0;height:100%;}
+ 
+ .btn-primary {
+  color: #304a51;
+  background-color: #BDD3DC;
+  border-color: #D0A18B;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #67A5A9;
+  border-color: #D0A18B;
+}
+/* line 6, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 10, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+body {
+  background-image: none;
+  background-color: #F0F6F6;
+}
+
+/* line 15, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+h1 {
+  color: #67A5A9;
+  text-align: center;
+  padding: 40px 0px 40px 0px;
+}
+
+/* line 21, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+#page {
+  width: 60%;
+  margin: auto;
+}
+
+/* line 26, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+#requests {
+  width: 100%;
+  text-align: center;
+}
+
+/* line 31, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+#requests th, td {
+  width: 50%;
+  margin: 5px;
+  border: 1px solid gainsboro;
+}
+
+/* line 37, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+#requests th {
+  font-size: large;
+}
+
+/* line 41, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+.request {
+  border: 1px solid gainsboro;
+  margin: 10px 5px 10px 5px;
+  background-color: white;
+  padding: 1rem 0px 1rem 0px;
+}
+
+/* line 48, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+.user {
+  display: table-row;
+  padding: 10px 0px 10px 0px;
+}
+
+/* line 53, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+.user .profile-pic {
+  width: 25%;
+  padding-left: 1rem;
+}
+
+/* line 58, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+.user-link {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  font-style: italic;
+  padding-left: 5px;
+}
+
+/* line 66, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+.button-panel form {
+  display: inline;
+}
+
+/* line 70, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/friends.scss */
+.footer {
+  position: fixed;
+}
+/* line 3, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.body-background {
+  background-image: url("friends.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 500px 400px;
+  background-repeat: no-repeat;
+  background-attachment: relative;
+}
+
+/* line 12, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.heading-center1 {
+  text-align: center;
+  font-size: 60px;
+  color: #67A5A9;
+  position: relative;
+  top: 250px;
+  right: 350px;
+}
+
+/* line 20, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+h4 {
+  text-align: center;
+  color: #67A5A9;
+  position: relative;
+}
+
+/* line 26, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.heading-center6 {
+  text-align: center;
+  color: #D0A18B;
+  font-size: 18px;
+  position: relative;
+  top: 250px;
+  right: 350px;
+}
+
+/* line 34, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.log_in {
+  color: slateblue;
+}
+
+/* line 38, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.small-middle-container {
+  margin: auto;
+  width: 30%;
+  position: relative;
+  bottom: 30px;
+  left: 350px;
+}
+
+/* line 45, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.md-social-btn .mbsc-ic {
+  float: left;
+}
+
+/* line 49, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #BDD3DC;
+}
+
+/* The Modal (background) */
+/* line 56, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+/* line 71, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+/* line 80, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* line 87, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 94, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The Modal (background) */
+/* line 97, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+/* line 112, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+/* line 121, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* line 128, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 135, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-color: #000;
+}
+
+/* line 145, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.mbsc-cloak {
+  text-align: center;
+}
+
+/* line 150, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.btn-forgot {
+  color: #67A5A9;
+}
+
+/* line 154, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+#menu a:hover {
+  color: #D0A18B;
+}
+
+/* line 159, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/homepage.scss */
+.footer {
+  position: fixed;
+}
+/* line 1, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+hr {
+  margin: 0;
+}
+
+/* line 5, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+p {
+  margin: 0;
+}
+
+/* line 9, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+div {
+  border-radius: 5px;
+}
+
+/* line 13, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+body {
+  background-image: none;
+  background-color: #F0F6F6;
+}
+
+/* line 18, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+h1 {
+  color: #F0F6F6;
+  text-align: center;
+  padding: 50px;
+}
+
+/* line 24, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#page {
+  margin: auto;
+  min-height: 100vh;
+  padding: 10px;
+  text-align: center;
+}
+
+/* line 31, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#post {
+  width: 80%;
+  display: inline-block;
+  border: solid 3px gainsboro;
+  text-align: left;
+  background-color: white;
+}
+
+/* line 39, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#post img {
+  width: 10%;
+  border-radius: 50%;
+  display: inline;
+}
+
+/* line 45, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+.inner-post {
+  padding: 5px 10px 5px 10px;
+  margin: 0px 10px 0px 10px;
+}
+
+/* line 50, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#post-content {
+  padding: 10px;
+}
+
+/* line 54, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#post-content p {
+  font-style: italic;
+  font-size: small;
+}
+
+/* line 59, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#original_post {
+  padding-top: 10px;
+  width: 95%;
+  margin-left: 50px;
+}
+
+/* line 65, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#original_post img {
+  width: 100%;
+}
+
+/* line 69, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#interaction-panel {
+  text-align: center;
+}
+
+/* line 73, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#interaction-panel form {
+  display: inline;
+}
+
+/* line 77, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#beforeComments {
+  margin-bottom: 20px;
+}
+
+/* line 81, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#comments {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+/* line 86, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#comment_form {
+  width: 90%;
+  margin: auto;
+}
+
+/* line 91, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/post_page.scss */
+#comment_form .container-fluid {
+  padding: 0;
+}
+/* line 1, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+body {
+  margin-top: 20px;
+  color: #1a202c;
+  text-align: left;
+  background-color: #F0F6F6;
+}
+
+/* line 8, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+h1 {
+  font-size: 50px;
+  text-align: center;
+  color: #67A5A9;
+}
+
+/* line 14, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+p {
+  font-size: 20px;
+  text-align: center;
+}
+
+/* line 19, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.main-body {
+  padding: 15px;
+}
+
+/* line 23, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: .25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* line 36, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+
+/* line 43, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.gutters-sm {
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+/* line 48, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.gutters-sm > .col, .gutters-sm > [class*=col-] {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+/* line 52, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.mb-3, .my-3 {
+  margin-bottom: 1rem !important;
+}
+
+/* line 56, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.bg-gray-300 {
+  background-color: #e2e8f0;
+}
+
+/* line 59, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.h-100 {
+  height: 100% !important;
+}
+
+/* line 62, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.shadow-none {
+  box-shadow: none !important;
+}
+
+/* line 66, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.sidebar {
+  grid-template-columns: 1;
+  height: 100px;
+  width: 100px;
+  background-color: blueviolet;
+}
+
+/* line 73, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+body {
+  margin-top: 20px;
+  color: #1a202c;
+  text-align: left;
+  background-color: #e2e8f0;
+  background-image: "images/cheeseburger.png";
+}
+
+/* line 80, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.main-body {
+  padding: 15px;
+}
+
+/* line 84, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* line 89, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #F0FFFF;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: .25rem;
+}
+
+/* line 101, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+
+/* line 107, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.btn {
+  background-color: #67A5A9;
+  border-color: #D0A18B;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* line 118, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.sidebar {
+  grid-template-columns: 1;
+  height: 100px;
+  width: 100px;
+  background-color: blueviolet;
+}
+
+/* line 126, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+body {
+  margin-top: 20px;
+  background-color: #F0F6F6;
+}
+
+/* line 132, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header {
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 137, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header .profile-header-cover {
+  background-image: url(https://via.placeholder.com/600x100/);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* line 149, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header .profile-header-cover:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.75) 100%);
+}
+
+/* line 159, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header .profile-header-content {
+  color: #fff;
+  padding: 25px;
+}
+
+/* line 164, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header-img {
+  float: left;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  margin: 0 0 -20px;
+  padding: 3px;
+  border-radius: 4px;
+  background: #fff;
+}
+
+/* line 177, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header-img img {
+  max-width: 100%;
+}
+
+/* line 181, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header-info h4 {
+  font-weight: 500;
+  color: #fff;
+}
+
+/* line 186, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header-img + .profile-header-info {
+  margin-left: 140px;
+}
+
+/* line 190, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header .profile-header-content,
+.profile-header .profile-header-tab {
+  position: relative;
+}
+
+/* line 195, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.b-minus-1,
+.b-minus-10,
+.b-minus-2,
+.b-minus-3,
+.b-minus-4,
+.b-minus-5,
+.b-minus-6,
+.b-minus-7,
+.b-minus-8,
+.b-minus-9,
+.b-plus-1,
+.b-plus-10,
+.b-plus-2,
+.b-plus-3,
+.b-plus-4,
+.b-plus-5,
+.b-plus-6,
+.b-plus-7,
+.b-plus-8,
+.b-plus-9,
+.l-minus-1,
+.l-minus-2,
+.l-minus-3,
+.l-minus-4,
+.l-minus-5,
+.l-minus-6,
+.l-minus-7,
+.l-minus-8,
+.l-minus-9,
+.l-plus-1,
+.l-plus-10,
+.l-plus-2,
+.l-plus-3,
+.l-plus-4,
+.l-plus-5,
+.l-plus-6,
+.l-plus-7,
+.l-plus-8,
+.l-plus-9,
+.r-minus-1,
+.r-minus-10,
+.r-minus-2,
+.r-minus-3,
+.r-minus-4,
+.r-minus-5,
+.r-minus-6,
+.r-minus-7,
+.r-minus-8,
+.r-minus-9,
+.r-plus-1,
+.r-plus-10,
+.r-plus-2,
+.r-plus-3,
+.r-plus-4,
+.r-plus-5,
+.r-plus-6,
+.r-plus-7,
+.r-plus-8,
+.r-plus-9,
+.t-minus-1,
+.t-minus-10,
+.t-minus-2,
+.t-minus-3,
+.t-minus-4,
+.t-minus-5,
+.t-minus-6,
+.t-minus-7,
+.t-minus-8,
+.t-minus-9,
+.t-plus-1,
+.t-plus-10,
+.t-plus-2,
+.t-plus-3,
+.t-plus-4,
+.t-plus-5,
+.t-plus-6,
+.t-plus-7,
+.t-plus-8,
+.t-plus-9 {
+  position: relative !important;
+}
+
+/* line 277, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header .profile-header-tab {
+  background: #fff;
+  list-style-type: none;
+  margin: -10px 0 0;
+  padding: 0 0 0 140px;
+  white-space: nowrap;
+  border-radius: 0;
+}
+
+/* line 286, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.text-ellipsis,
+.text-nowrap {
+  white-space: nowrap !important;
+}
+
+/* line 291, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header .profile-header-tab > li {
+  display: inline-block;
+  margin: 0;
+}
+
+/* line 296, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header .profile-header-tab > li > a {
+  display: block;
+  color: #929ba1;
+  line-height: 20px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  border: none;
+}
+
+/* line 307, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-header .profile-header-tab > li.active > a,
+.profile-header .profile-header-tab > li > a.active {
+  color: #304A51;
+}
+
+/* line 312, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-content {
+  padding: 25px;
+  border-radius: 4px;
+}
+
+/* line 317, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-content:after,
+.profile-content:before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* line 324, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-content .tab-content,
+.profile-content .tab-pane {
+  background: 0 0;
+}
+
+/* line 329, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-left {
+  width: 200px;
+  float: left;
+}
+
+/* line 334, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-right {
+  margin-left: 240px;
+  padding-right: 20px;
+}
+
+/* line 339, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-image {
+  height: 175px;
+  line-height: 175px;
+  text-align: center;
+  font-size: 72px;
+  margin-bottom: 10px;
+  border: 2px solid #E2E7EB;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* line 350, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-image img {
+  display: block;
+  max-width: 100%;
+}
+
+/* line 355, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-highlight {
+  padding: 12px 15px;
+  background: #FEFDE1;
+  border-radius: 4px;
+}
+
+/* line 361, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-highlight h4 {
+  margin: 0 0 7px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* line 367, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-section + .profile-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #b9c3ca;
+}
+
+/* line 373, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-section:after,
+.profile-section:before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* line 380, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-section .title {
+  font-size: 20px;
+  margin: 0 0 15px;
+}
+
+/* line 385, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.profile-section .title small {
+  font-weight: 400;
+}
+
+/* line 389, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.bg-white {
+  background-color: #F0FFFF !important;
+}
+
+/* line 392, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.p-10 {
+  padding: 10px !important;
+}
+
+/* line 395, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.media.media-xs .media-object {
+  width: 32px;
+}
+
+/* line 398, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.m-b-2 {
+  margin-bottom: 2px !important;
+}
+
+/* line 401, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.media > .media-left, .media > .pull-left {
+  padding-right: 15px;
+}
+
+/* line 404, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.media-body, .media-left, .media-right {
+  display: table-cell;
+  vertical-align: top;
+}
+
+/* line 409, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.main {
+  margin-left: 140px;
+  /* Same width as the sidebar + left position in px */
+  font-size: 28px;
+  /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  /* line 416, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  /* line 417, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+/* line 420, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.container {
+  float: center;
+}
+
+/* line 424, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+.post {
+  display: block;
+}
+
+/* line 428, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/profile.scss */
+#profile-posts .container-fluid {
+  padding-bottom: 0;
+}
+/* line 1, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_add_content.scss */
+.form-group {
+  padding: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+/* line 8, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_add_content.scss */
+#submit_post {
+  float: right;
+  margin: 10px;
+}
+/* line 1, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_comment.scss */
+.comment {
+  border: solid 1px gainsboro;
+  border-radius: 5px;
+  width: 90%;
+  margin: auto;
+  display: inline-block;
+  text-align: left;
+}
+
+/* line 10, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_comment.scss */
+.container-fluid {
+  padding: 5px;
+}
+
+/* line 14, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_comment.scss */
+#comments .profile-pic {
+  width: 10%;
+  display: table-cell;
+}
+
+/* line 19, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_comment.scss */
+#comments .profile-pic img {
+  width: 100% !important;
+  height: auto;
+}
+
+/* line 24, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_comment.scss */
+.comment-text {
+  text-align: left;
+  display: table-cell;
+  width: 89%;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+/* line 32, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_comment.scss */
+.comment-details {
+  font-style: italic;
+}
+
+/* line 36, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_comment.scss */
+.newComment {
+  max-height: 0;
+  overflow: hidden;
+  animation: slideIn 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  to {
+    max-height: 500px;
+  }
+}
+/* line 1, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_footer.scss */
+.footer {
+  padding: 1rem 0rem 1rem 0rem;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 9, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_footer.scss */
+ul#menu li a {
+  color: #67A5A9;
+  font-size: 15px;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 17, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_footer.scss */
+ul#menu li {
+  list-style-type: none;
+  display: inline-block;
+}
+/* line 1, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_navbar.scss */
+.sidenav {
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 200px;
+  left: 80px;
+  overflow-x: hidden;
+}
+
+/* line 12, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_navbar.scss */
+.sidenav p {
+  padding: 10px 8px 10px 20px;
+  text-decoration: none;
+  font-size: 30px;
+  color: grey;
+  margin: 0;
+  text-align: left;
+}
+
+/* line 21, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_navbar.scss */
+.sidenav a {
+  padding: 10px 8px 10px 20px;
+  text-decoration: none;
+  font-size: 30px;
+  color: #67A5A9;
+  display: block;
+}
+
+/* line 29, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_navbar.scss */
+.sidenav a:hover {
+  color: #D0A18B;
+}
+
+/* line 34, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_navbar.scss */
+.main {
+  margin-left: 140px;
+  /* Same width as the sidebar + left position in px */
+  font-size: 28px;
+  /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  /* line 41, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_navbar.scss */
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  /* line 42, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_navbar.scss */
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+/* line 1, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_post.scss */
+.post {
+  border: solid 1px gainsboro;
+  border-radius: 5px;
+  width: 80%;
+  margin: auto;
+  margin-top: 12px;
+  display: inline-block;
+  background-color: white;
+}
+
+/* line 12, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_post.scss */
+.container-fluid {
+  padding: 5px;
+  height: 100%;
+}
+
+/* line 17, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_post.scss */
+.profile-pic {
+  width: 10%;
+  height: 100%;
+  display: table-cell;
+}
+
+/* line 23, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_post.scss */
+.profile-pic img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* line 28, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_post.scss */
+.post-text {
+  text-align: left;
+  display: table-cell;
+  width: 89%;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+/* line 36, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_post.scss */
+.user-details {
+  font-style: italic;
+}
+
+/* line 40, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_post.scss */
+.original-post {
+  padding-left: 20px;
+}
+
+/* line 44, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/shared/_post.scss */
+.newPost {
+  max-height: 0;
+  overflow: hidden;
+  animation: slideIn 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  to {
+    max-height: 500px;
+  }
+}
+/* line 1, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/timeline.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 5, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/timeline.scss */
+body {
+  background-image: none;
+  background-color: #F0F6F6;
+}
+
+/* line 10, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/timeline.scss */
+h1 {
+  color: #67A5A9;
+  text-align: center;
+  padding-top: 40px;
+}
+
+/* line 16, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/timeline.scss */
+.container-fluid {
+  display: inline-block;
+  max-width: 800px;
+}
+
+/* line 21, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/timeline.scss */
+#page {
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  display: block;
+}
+
+/* line 29, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/timeline.scss */
+.original-post {
+  margin: auto;
+  display: inline-block;
+  margin: 5px;
+}
+
+/* line 35, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/timeline.scss */
+.main {
+  margin-left: 140px;
+  /* Same width as the sidebar + left position in px */
+  font-size: 28px;
+  /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  /* line 42, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/timeline.scss */
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  /* line 43, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/timeline.scss */
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+/* line 46, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/timeline.scss */
+#add-post {
+  width: 100%;
+  margin: auto;
+}
+
+/* line 51, /Users/arawat/Desktop/Makers/week-9-10/Acebook-Team-2/app/assets/stylesheets/timeline.scss */
+#add-post .container-fluid {
+  padding: 0;
+}
