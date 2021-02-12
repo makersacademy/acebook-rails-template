@@ -15,6 +15,11 @@
       </div>
       <div class="post-content">
         <%= post.content %>
+         <% if post.photo.attached? %>
+          <div class="post-photo">
+            <%= image_tag url_for(post.photo) %>
+          </div>
+        <% end %>
       </div>
       <% if original_post %>
         <div class="original-post">

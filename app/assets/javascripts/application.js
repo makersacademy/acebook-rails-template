@@ -20,28 +20,3 @@ function fadeAlert(){
 }
 
 window.setTimeout(fadeAlert, 4000);
-
-function fixFooter(){
-  var containerHeight = $('.container').outerHeight(true);
-  var windowHeight = $('body').height();
-  if(containerHeight < windowHeight ){
-     $('.footer').css('position','fixed');
-  }else{
-    $('.footer').css('position','static');
-  }
-  console.log('AAAAA');
-}
-
-$(document).ready(function(){
-  fixFooter();
-  $('a').click(  function(){ 
-    var containerHeight = $('.container').outerHeight(true);
-    var windowHeight = $('body').height();
-    if(containerHeight < windowHeight ){
-      $('.footer').css('position','fixed');
-    }else{
-      $('.footer').css('position','static');
-    }
-    console.log('AAAAA');
-  });
-})

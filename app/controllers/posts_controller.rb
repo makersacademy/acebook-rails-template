@@ -59,7 +59,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    post = params.require(:post).permit(:content, :original_post_id)
+    post = params.require(:post).permit(:content, :original_post_id, :photo)
     post[:user_id] = session[:user]["id"]
     return post
   end

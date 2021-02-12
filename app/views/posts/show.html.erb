@@ -36,13 +36,20 @@
     </div>
     <hr>
     <div id="post-content" class="inner-post">
-      <h4><%= @post.content %></h4>
-      <p><%= @post.created_at %></p>
+      <div id="post-text">
+        <h4><%= @post.content %></h4>
+        <p><%= @post.created_at %></p>
+      </div>
+       <% if @post.photo.attached? %>
+          <div class="post-photo">
+            <%= image_tag url_for(@post.photo) %>
+          </div>
+        <% end %>
       <div id="original_post">
         <% if @original_post %>
           <%= render partial: @original_post, locals: { depth: 0 } %>
           <%#  depth : 0 so that only gets latest retweet %>
-        <% end %>
+        <% end %> 
       </div>
     </div>
     <hr>
