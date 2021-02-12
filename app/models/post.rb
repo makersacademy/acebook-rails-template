@@ -4,6 +4,7 @@ class Post < ApplicationRecord
 
   has_many :retweets, class_name: "Post", 
   foreign_key: "original_post_id"
+  has_one_attached :photo
   
   belongs_to :original_post, class_name: "Post", optional: true
 

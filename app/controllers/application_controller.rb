@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
   private
   
   def require_login
-    unless logged_in?
+    if logged_in?
+      redirect_to "/users/log_out" unless User.exists?(session[:user]["id"])
+    else
       flash[:danger] = "You must be logged in to access this section"
       redirect_to "/" # halts request cycle
     end
@@ -14,10 +16,6 @@ class ApplicationController < ActionController::Base
   def logged_in?
     session[:user] = User.find(1) if ENV['RAILS_ENV'] == "test" && session[:user].nil?
     !session[:user].nil?
-  end
-
-  def current_user
-    User.find_by(id: session[:user_id])
   end
 
 end

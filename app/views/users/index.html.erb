@@ -54,7 +54,7 @@
 </div>
     <!--container end.//-->
 </div>
-    <br><hr>
+    <br>
     <!-- Modal -->
           <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="Sign Up" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -68,14 +68,17 @@
                 <div class="modal-body">
                   <%= form_for @user do |form| %>
                     <fieldset id="sign_up">
-                    
+
+
                       <%= form.label :username %>
                       <%= form.text_field :username %>
                       <br><br>
                       <%= form.label :password %>
                       <%= form.password_field :password %>
                       <br><br>
-  
+                      <%= form.label "Profile Photo" %>
+                      <%= form.file_field :avatar %>
+                      <br><br>
                       <%= form.label :full_name %>
                       <%= form.text_field :full_name %>
                       <br><br>
@@ -87,12 +90,9 @@
                        <br><br>
                        <%= form.label :address %>
                       <%= form.text_field :address%>
-                      <br><br>
-                      <%= form.label :url %>
-                      <%= form.text_field :url%>
                        <br><br>
                       <%= form.submit "Sign Up" %>
-                    
+
                     </fieldset>
                   <% end %>
                 </div>
@@ -102,21 +102,6 @@
               </div>
             </div>
           </div>
-        <div>
-          <ul id="menu">
-          <li><a href="javascript:void(0)">About</a></li>
-          <li><a href="javascript:void(0)"> Help Center </a></li>
-          <li><a href="javascript:void(0)"> Terms of Service </a></li>
-          <li><a href="javascript:void(0)"> Privacy </a></li>
-          <li><a href="javascript:void(0)"> Policy </a></li>
-          <li><a href="javascript:void(0)"> Ads info </a></li>
-          <li><a href="javascript:void(0)"> Careers </a></li>
-          <li><a href="javascript:void(0)"> Advertising </a></li>
-          <li><a href="javascript:void(0)"> Marketing </a></li>
-          <li><a href="javascript:void(0)"> Directory </a></li>
-          <li><a href="javascript:void(0)"> Settings </a></li>
-          </ul>
-        </div>
 <!--  <br><br><br><br><br><br><br><br>
 
 <hr> this makes a line dash -->

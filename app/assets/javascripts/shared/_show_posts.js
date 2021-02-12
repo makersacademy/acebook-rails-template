@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   $(document).on('mouseenter', '.post', function(){
-    $(this).css("background", "#F0F6F6");
+    $(this).css("background", "whitesmoke");
   });
 
   $(document).on('mouseleave', '.post', function(){

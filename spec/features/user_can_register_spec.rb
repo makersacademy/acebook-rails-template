@@ -10,7 +10,6 @@ RSpec.feature "Register account", type: :feature do
       fill_in "user_email", with: "charlotte@gmail.com"
       fill_in "user_mobile", with: "07474289731"
       fill_in "user_address", with: "London, UK"
-      fill_in "user_url", with: "https://www.acebook.com/users/2"
       
       click_button "Sign Up"
     end
@@ -35,6 +34,16 @@ RSpec.feature "Invalid sign up", type: :feature do
       click_button "Sign Up"
     end
     expect(page).to have_content("Validation failed: Password can't be blank")
+  end
+
+  scenario "repeated username" do
+    visit "/"
+    within_fieldset :sign_up do
+      fill_in "user_username", with: "Charlotte"
+      fill_in "user_password", with: "Password12"
+      click_button "Sign Up"
+    end
+    expect(page).to have_content("Validation failed: Username has already been taken")
   end
 
 end

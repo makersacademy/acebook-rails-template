@@ -10,21 +10,30 @@ div{
   border-radius: 5px;
 }
 
+body{
+  background-image: none;
+  background-color: #F0F6F6;
+}
+
+h1{
+  color: #F0F6F6;
+  text-align: center;
+  padding: 50px;
+}
 
 #page {
   margin: auto;
   min-height: 100vh;
-  border: 3px solid gainsboro;
   padding: 10px;
   text-align: center;
-  display: block; 
 }
 
 #post{
   width: 80%;
   display: inline-block;
-  border: solid 3px black;
+  border: solid 3px gainsboro;
   text-align: left;
+  background-color: white;
 }
 
 #post img{
@@ -35,21 +44,39 @@ div{
 
 .inner-post{
   padding: 5px 10px 5px 10px;
+  margin: 0px 10px 0px 10px;
 }
 
 #post-content{
   padding: 10px;
+  text-align: center;
 }
 
-#post-content p{
+#post-text{
+  text-align: left;
+  padding-top: 10px;
+}
+
+#post-text p{
   font-style: italic;
   font-size: small;
+}
+
+#post-content .post-photo{
+  width: 90%;
+  padding: 10px 0px 10px 0px;
+  display: inline-block;
+}
+
+#post-content .post-photo img{
+  width: 100%;
+  border-radius: 10%;
 }
 
 #original_post{
   padding-top: 10px;
   width: 95%;
-  margin: auto;
+  margin-left: 50px;
 }
 
 #original_post img{

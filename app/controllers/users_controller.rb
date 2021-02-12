@@ -6,26 +6,23 @@ class UsersController < ApplicationController
 
   def index
     if session[:user] #if user is already logged in
-      @user = User.find(session[:user]["id"])
-      @post = Post.new #for adding new posts
-      @posts = @user.posts.order(created_at: :desc)
-      render action: 'show', id: session[:user]["id"]
+      redirect_to action: 'show', id: session[:user]["id"]
     else
       @disable_nav = true
-      @user = User.new
+      @user = User.new  
       # shows log in / sign up page
     end
   end
 
   def create
     begin
-      User.create!(user_params)
+      user = User.create!(user_params)
     rescue => exception
       flash[:danger] = exception.message
       # if invalid user, flashes error message
     else
       flash[:primary] =  "You have signed up!"
-    end 
+    end
       redirect_back fallback_location: "/"
   end
 
@@ -42,22 +39,23 @@ class UsersController < ApplicationController
   end
 
   def show
+    @friend_status = Friend.find_by(requester_id: session[:user]["id"], receiver_id: params[:id])
+    @friends = Friend.where(requester_id: params[:id], status: "Accepted").pluck(:receiver_id).map{ |id| User.find(id) }
     @user = User.find(params[:id])
-    p @user
     @post = Post.new #for adding new posts
     @posts = @user.posts.order(created_at: :desc)
   end
 
   def log_out
     session[:user] = nil
-    flash[:primary] =  "You have logged out"
+    flash[:primary] =  "You have logged out!"
     redirect_to "/"
   end
-  
+
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :full_name, :email, :mobile, :address, :url)
+    params.require(:user).permit(:username, :password, :full_name, :email, :mobile, :address, :avatar)
   end
 
 end
