@@ -14,7 +14,7 @@
   <hr>
   <% unless sent %>
     <div class="button-panel">
-      <%= button_to "Accept" , [ User.find(session[:user]["id"]) , friend ], {method: :patch, class: "btn btn-secondary"} %>
+      <%= button_to "Accept" , [ User.find(session[:user]["id"]) , friend ], {method: :patch, class: "btn btn-secondary",} %>
       <%= button_to "Reject", [ User.find(session[:user]["id"]) , friend ], {method: :delete, class: "btn btn-secondary"} %>
     </div>
   <% end %>

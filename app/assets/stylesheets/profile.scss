@@ -16,6 +16,10 @@ p {
   text-align: center;
 }
 
+img{
+  border-radius: 50%;
+}
+
 .main-body {
   padding: 15px;
 }
@@ -403,7 +407,7 @@ body{
 }
 .media-body, .media-left, .media-right {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .main {
@@ -421,10 +425,18 @@ body{
   float: center;
 }
 
-.post {
-  display: block;
-}
-
 #profile-posts .container-fluid{
   padding-bottom: 0;
+}
+
+.col-md-6 .media{
+  display: table-row;
+}
+
+.col-md-6 .media-left{
+  width: 20%;
+}
+
+.col-md-6 img{
+  width: 100%;
 }
