@@ -12,9 +12,9 @@
  *
  *= require_self
  *= require shared/_add_content
- *= require shared/_comment
- *= require shared/_post
- *= require shared/_navbar
+ *= require shared/_comment	
+ *= require shared/_post	
+ *= require shared/_navbar	
  *= require shared/_footer
  */
 
