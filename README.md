@@ -113,6 +113,7 @@ Before running, you may want to run
 ```sh
 bundle exec rspec
 ```
+
 to make sure that everything is working as intended.
 
 To start the server at localhost:3000, run:
@@ -144,3 +145,15 @@ Project Link: [https://github.com/arbOP/Acebook-Team-2](https://github.com/arbOP
 * [README template](https://github.com/othneildrew/Best-README-Template)
 * [This website was a GODSEND for learning about Rails](https://guides.rubyonrails.org)
 * [Bootstrap](https://getbootstrap.com)
+
+
+## Troubleshooting
+
+If you don't have Node.js installed yet, you might run into this error when running rspec:
+```
+ExecJS::RuntimeUnavailable:
+  Could not find a JavaScript runtime. See https://github.com/rails/execjs for a list of available runtimes.
+ ```
+That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` - 
+and then run `bundle exec rspec` again
+
