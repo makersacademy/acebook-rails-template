@@ -60,7 +60,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="signuplabel">Sign Up</h5>
+                  <h5 class="modal-title" id="signuplabel">Sign up for Acebook </h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -69,34 +69,50 @@
                   <%= form_for @user do |form| %>
                     <fieldset id="sign_up">
 
+<div class="sign_up">
+         <label for="inputUsername">Username</label>
+      <%=form.text_field :username, class: "form-control", placeholder: "Username"%>
+    
+  <br>
 
-                      <%= form.label :username %>
-                      <%= form.text_field :username %>
-                      <br><br>
-                      <%= form.label :password %>
-                      <%= form.password_field :password %>
-                      <br><br>
-
-                      <%= form.label :full_name %>
-                      <%= form.text_field :full_name %>
-                      <br><br>
-                       <%= form.label :email %>
-                      <%= form.text_field :email %>
-                      <br><br>
-                       <%= form.label :mobile %>
-                      <%= form.text_field :mobile %>
-                       <br><br>
-                       <%= form.label :address %>
-                      <%= form.text_field :address%>
-                       <br><br>
-                      <%= form.submit "Sign Up" %>
-
-                    </fieldset>
+      <label for="inputPassword">Password</label>
+     <%=form.password_field :password, class: "form-control", required: "password", placeholder: "Password"%>
+  
+  <br>
+  
+     <label for="inputFullName">Full Name</label>
+      <%=form.text_field :full_name, class: "form-control", required: "full_name", placeholder: "Full name"%>
+    
+   <br>
+    
+      <label for="inputEmail">Email</label>
+     <%=form.text_field :email, class: "form-control", placeholder: "Enter email"%>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+   
+    <div class="form-group col-md-150">
+    <label for="inputMobile">Mobile</label><br>
+ <%=form.text_field :mobile, class: "form-control",placeholder: "Enter mobile number "%>
+   <br>
+    <label for="inputAddress">Address</label><br>
+    <%=form.text_field :address, class: "form-control"%>
+    <label for="inputcity">City</label>
+    <select id="inputAddress" class="form-control">
+        <option selected >Choose...</option>
+        <option>United Kingdom</option>
+        <option>United States</option>
+        <option>Europe</option>
+        <option>Asia</option>
+        <option>Africa</option>
+      </select>
+    </div>
+ <br><br>
+ <%= form.submit "Sign Up", class: "btn btn-primary" %>
+</fieldset>
                   <% end %>
                 </div>
-                <div class="modal-footer">
+                <%# <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+                </div> %>
               </div>
             </div>
           </div>

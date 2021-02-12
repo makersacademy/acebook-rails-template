@@ -36,14 +36,4 @@ RSpec.feature "Invalid sign up", type: :feature do
     expect(page).to have_content("Validation failed: Password can't be blank")
   end
 
-  scenario "repeated username" do
-    visit "/"
-    within_fieldset :sign_up do
-      fill_in "user_username", with: "Charlotte"
-      fill_in "user_password", with: "Password12"
-      click_button "Sign Up"
-    end
-    expect(page).to have_content("Validation failed: Username has already been taken")
-  end
-
 end
