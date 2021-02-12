@@ -26,6 +26,10 @@ h1{
   display: block;
 }
 
+.tab-content{
+  margin-top: 1rem;
+}
+
 .original-post{
   margin: auto;
   display: inline-block;
@@ -44,10 +48,8 @@ h1{
 }
 
 #add-post{
-  width: 80%;
+  width: 100%;
   margin: auto;
-  background-color: white;
-  border: 1px solid gainsboro;
 }
 
 #add-post .container-fluid{

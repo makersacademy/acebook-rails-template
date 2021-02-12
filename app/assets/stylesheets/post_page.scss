@@ -49,11 +49,28 @@ h1{
 
 #post-content{
   padding: 10px;
+  text-align: center;
 }
 
-#post-content p{
+#post-text{
+  text-align: left;
+  padding-top: 10px;
+}
+
+#post-text p{
   font-style: italic;
   font-size: small;
+}
+
+#post-content .post-photo{
+  width: 90%;
+  padding: 10px 0px 10px 0px;
+  display: inline-block;
+}
+
+#post-content .post-photo img{
+  width: 100%;
+  border-radius: 10%;
 }
 
 #original_post{

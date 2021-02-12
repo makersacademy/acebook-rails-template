@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def create
     begin
-      User.create!(user_params)
+      user = User.create!(user_params)
     rescue => exception
       flash[:danger] = exception.message
       # if invalid user, flashes error message
@@ -40,6 +40,7 @@ class UsersController < ApplicationController
 
   def show
     @friend_status = Friend.find_by(requester_id: session[:user]["id"], receiver_id: params[:id])
+    @friends = Friend.where(requester_id: params[:id], status: "Accepted").pluck(:receiver_id).map{ |id| User.find(id) }
     @user = User.find(params[:id])
     @post = Post.new #for adding new posts
     @posts = @user.posts.order(created_at: :desc)
@@ -54,7 +55,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :full_name, :email, :mobile, :address)
+    params.require(:user).permit(:username, :password, :full_name, :email, :mobile, :address, :avatar)
   end
 
 end

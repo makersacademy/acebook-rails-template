@@ -5,7 +5,7 @@
 <div>
   <div id="title">
     <br><br>
-    <h1 class="heading-center1">AceBook</h1>
+    <h1 class="heading-center1"><%= image_tag url_for("acebook_logo_shading"), width: "60"%>AceBook</h1>
     <h6 class="heading-center6"><em>Where friends come together.</em></h6>
   </div>
 
@@ -54,7 +54,7 @@
 </div>
     <!--container end.//-->
 </div>
-    <br><hr>
+    <br>
     <!-- Modal -->
           <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="Sign Up" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -74,10 +74,12 @@
       <%=form.text_field :username, class: "form-control", placeholder: "Username"%>
     
   <br>
-
       <label for="inputPassword">Password</label>
      <%=form.password_field :password, class: "form-control", required: "password", placeholder: "Password"%>
+     <br>
   
+   <%= form.label "Profile Photo" %>
+   <%= form.file_field :avatar %>
   <br>
   
      <label for="inputFullName">Full Name</label>
@@ -116,23 +118,6 @@
               </div>
             </div>
           </div>
-        <footer>
-        <div class="footer">
-          <ul style="float" id="menu">
-          <li><a href="javascript:void(0)">About</a></li>
-          <li><a href="javascript:void(0)"> Help Center </a></li>
-          <li><a href="javascript:void(0)"> Terms of Service </a></li>
-          <li><a href="javascript:void(0)"> Privacy </a></li>
-          <li><a href="javascript:void(0)"> Policy </a></li>
-          <li><a href="javascript:void(0)"> Ads info </a></li>
-          <li><a href="javascript:void(0)"> Careers </a></li>
-          <li><a href="javascript:void(0)"> Advertising </a></li>
-          <li><a href="javascript:void(0)"> Marketing </a></li>
-          <li><a href="javascript:void(0)"> Directory </a></li>
-          <li><a href="javascript:void(0)"> Settings </a></li>
-          </ul>
-        </div>
-        </footer>
 <!--  <br><br><br><br><br><br><br><br>
 
 <hr> this makes a line dash -->

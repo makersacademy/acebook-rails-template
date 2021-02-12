@@ -12,9 +12,33 @@
  *
  *= require_self
  *= require shared/_add_content
- *= require shared/_comment
- *= require shared/_post
- *= require shared/_navbar
+ *= require shared/_comment	
+ *= require shared/_post	
+ *= require shared/_navbar	
+ *= require shared/_footer
  */
 
  html, body {margin:0;padding:0;height:100%;}
+ 
+ .btn-primary {
+  color: #304a51;
+  background-color: #BDD3DC;
+  border-color: #D0A18B;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #67A5A9;
+  border-color: #D0A18B;
+}
+
+#flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+#inner-flash {
+  margin: 0 auto;
+}

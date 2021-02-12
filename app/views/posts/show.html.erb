@@ -31,18 +31,25 @@
   <h1>.</h1>
   <div id="post" class="align-middle">
     <div id="user-details" class="inner-post">
-      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+        <%= image_tag url_for(@user.avatar) %>
       <%= link_to "@#{@user.username}", @user %>
     </div>
     <hr>
     <div id="post-content" class="inner-post">
-      <h4><%= @post.content %></h4>
-      <p><%= @post.created_at %></p>
+      <div id="post-text">
+        <h4><%= @post.content %></h4>
+        <p><%= @post.created_at %></p>
+      </div>
+       <% if @post.photo.attached? %>
+          <div class="post-photo">
+            <%= image_tag url_for(@post.photo) %>
+          </div>
+        <% end %>
       <div id="original_post">
         <% if @original_post %>
           <%= render partial: @original_post, locals: { depth: 0 } %>
           <%#  depth : 0 so that only gets latest retweet %>
-        <% end %>
+        <% end %> 
       </div>
     </div>
     <hr>

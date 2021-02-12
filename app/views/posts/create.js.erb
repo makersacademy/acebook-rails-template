@@ -16,9 +16,9 @@ var level = "primary";
 closeModal();
 // trigger close modal
 
-var nav = document.querySelector("nav");
-var flash = `<div class='alert alert-${level}' role='alert'>${alert}</div>`;
-nav.insertAdjacentHTML("afterend", flash );
+var nav = document.querySelector(".main-body");
+var flash = `<div id="flash"><div class='alert alert-${level}' role='alert'>${alert}</div></div>`;
+nav.insertAdjacentHTML("beforebegin", flash );
 // add flash
 window.setTimeout(fadeAlert, 4000);
 // trigger countdown to make alert auto disappear

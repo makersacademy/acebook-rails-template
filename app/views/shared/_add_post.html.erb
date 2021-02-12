@@ -2,6 +2,8 @@
     <div class="form-group">
       <%= form_for @post, remote: true do |form| %>
         <%= form.text_area :content, class: "form-control", rows: 3, placeholder: "Compose new post" %>
+        <%= form.label "Add a Photo" %>
+        <%= form.file_field :photo %>
         <%= form.submit "New Post", id: "submit_post", class: "btn btn-primary" %>
       <% end %>
     </div>

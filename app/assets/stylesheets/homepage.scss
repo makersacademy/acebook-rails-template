@@ -17,6 +17,11 @@
  top: 250px; right: 350px
 }
 
+.heading-center1 img{
+  vertical-align: text-top;
+  margin-right: 10px;
+}
+
 h4 {
   text-align: center;
   color: #67A5A9;
@@ -160,25 +165,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 .mbsc-cloak{
  text-align: center;
-}
-
-ul#menu li a{
-  color: #67A5A9;
-  font-size: 15px;
-  text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-ul#menu li{
-  list-style-type: none;
-  display: inline-block;
-}
-
-.btn-primary {
-    color: #304a51;
-    background-color: #BDD3DC;
-    border-color: #D0A18B;
 }
 
 // below is for the "forgot password?"

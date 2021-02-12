@@ -18,10 +18,6 @@ h1{
   padding: 40px 0px 40px 0px;
 }
 
-.sidenav {
-  left: 150px;
-}
-
 #page{
   width: 60%;
   margin: auto;
@@ -35,11 +31,12 @@ h1{
 #requests th, td{
   width: 50%;
   margin: 5px;
-  border: 1px solid gainsboro;
+  //border: 1px solid gainsboro;
 }
 
 #requests th{
   font-size: large;
+  color: #67A5A9;
 }
 
 .request{
@@ -69,4 +66,18 @@ h1{
 
 .button-panel form{
   display: inline;
+
 }
+
+.footer {
+  position: fixed;
+}
+
+.btn-secondary {
+  background-color: #67A5A9;
+}
+
+a {
+  color: #67A5A9;
+}
+
