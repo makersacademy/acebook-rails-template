@@ -41,3 +41,13 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+#notifications-menu{
+  background-color: blue;
+  width: 200px;
+  height: 80px;
+  padding: 20px;
+  position: fixed; top: 400px; left: 200px;
+  z-index: 10;
+  display: none;
+}
