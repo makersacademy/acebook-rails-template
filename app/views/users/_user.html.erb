@@ -6,7 +6,7 @@
           <%= image_tag url_for(user.avatar) %>
         </a>
         <div class="media-body valign-middle">
-            <b class="text-inverse"><%= user.username %></b>
+            <b class="text-inverse"><%= link_to "@#{user.username}", user %></b>
         </div>
         <div class="media-body valign-middle text-right overflow-visible">
             <div class="btn-group dropdown">
