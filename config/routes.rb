@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get "/", to: "users#index"
 
-  resources :posts
+  get 'users/login'
+  post '/users/authenticate'
+  get "/users/log_out"
+  
+  get "/notifications", to: "friends#index"
+  get "/timeline", to: "posts#index"
+
+  resources :users do
+    resources :friends
+  end
+  
+  resources :posts do
+    resources :comments
+  end
 end

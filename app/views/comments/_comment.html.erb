@@ -1,0 +1,16 @@
+<div class="comment">
+    <div class="container-fluid">
+      <% user = User.find(comment[:user_id])%>
+      <div class="profile-pic">
+        <%= image_tag url_for(user.avatar) %>
+      </div>
+      <div class="comment-text">
+        <div class="user-details">
+          <%= link_to "@#{user.username}", user_path(user.id) %>
+        </div>
+        <div class="comment-content">
+          <%= comment[:content] %>
+        </div>
+      </div>
+    </div>
+  </div>

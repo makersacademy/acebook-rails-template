@@ -1,0 +1,62 @@
+.post{
+  border: solid 1px gainsboro;
+  border-radius: 5px;
+  width: 80%;
+  margin: 12px 0px 12px 0px ;
+  display: inline-block;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.container-fluid {
+  padding: 5px;
+  height: 100%;
+}
+
+.profile-pic{
+  width: 10%;
+  height: 100%;
+  display: table-cell;
+}
+
+.profile-pic img{
+  width: 100%;  
+  border-radius: 50%;
+}
+
+.post-text{
+  text-align: left;
+  display: table-cell;
+  width: 89%;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+.user-details{
+  font-style: italic;
+}
+
+.post-photo{
+  width: 90%;
+  padding: 10px 0px 10px 0px;
+}
+
+.post-photo img{
+  width: 100%;
+  border-radius: 10%;
+}
+
+.original-post{
+  padding-left: 20px;
+}
+
+.newPost {
+	max-height: 0;
+  overflow: hidden;
+	animation: slideIn 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+	to { max-height: 500px; }
+}

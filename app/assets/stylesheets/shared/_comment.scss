@@ -1,0 +1,45 @@
+.comment{
+  border: solid 1px gainsboro;
+  border-radius: 5px;
+  width: 90%;
+  margin: auto;
+  display: inline-block;
+  text-align: left;
+}
+
+.container-fluid {
+  padding: 5px;
+}
+
+#comments .profile-pic{
+  width: 10%;
+  display: table-cell;
+}
+
+#comments .profile-pic img{
+  width: 100% !important;
+  height: auto; 
+}
+
+.comment-text{
+  text-align: left;
+  display: table-cell;
+  width: 89%;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+.comment-details{
+  font-style: italic;
+}
+
+.newComment {
+	max-height: 0;
+  overflow: hidden;
+	animation: slideIn 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+	to { max-height: 500px; }
+}

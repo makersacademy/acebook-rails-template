@@ -1,0 +1,135 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "profile" %>
+<% end %>
+          <!-- /Avatar info area -->
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                     <%= image_tag url_for(@user.avatar), width: "150" %>
+                    <div class="mt-3">
+                      <h4><%= @user.username %></h4>
+                      <p class="text-secondary mb-1">Ruby, HTML, CSS.</p>
+                      <p class="text-muted font-size-sm">London, UK</p>
+                      <% unless session[:user]["id"] == @user.id %>
+                        <% if @friend_status %>
+                           <%= button_to "Delete Friend #{@friend_status.status == "Pending" ? "Request" : "" }" , [ User.find(params[:id]) , @friend_status ], {method: :delete, class: "btn btn-secondary"} %>
+                        <% else %>
+                              <%= button_to "Send Friend Request" , { controller: "friends", action: "create", user_id: params[:id] }, {method: :post, class: "btn btn-secondary"} %>
+                        <% end %>
+                        <button class="btn btn-outline-primary">Message</button>
+                     <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                     <%= @user.full_name %>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= @user.email%>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Mobile</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                         <%= @user.mobile%>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Address</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <%= @user.address%>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">URL</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      https://www.acebook.com/users/<%= @user.id %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+   <div class="row">
+      <div class="col-md-12">
+         <div id="content" class="content content-full-width">
+            <!-- begin profile -->
+            <div class="profile">
+                <!-- BEGIN profile-header-tab -->
+                  <div class="container">
+                    <div>
+                      <ul class="profile-header-tab nav nav-tabs">
+                        <li class="nav-item"><a href="#profile-friends" class="nav-link active show" data-toggle="tab" style="color: #304a51;">FRIENDS</a></li>
+                        <li class="nav-item"><a href="#profile-posts" class="nav-link" data-toggle="tab" style="color: #304a51;">POSTS</a></li>
+                    </ul>
+                  </div>
+                  <div class="tab-content">
+                  <div class="tab-pane fade" style="text-align:center;" id="profile-posts">
+                     <%# <h1>Posts</h1> %>
+                     <% if session[:user]["id"] == @user.id %>
+                        <%= render "shared/add_post" %>
+                     <% end %>
+                     <div id="posts">
+                        <%= render partial: @posts, locals: { depth: 1 } %>
+                     </div>
+                  </div>
+                  <div class="tab-pane active" id="profile-friends">  
+                  <!-- end profile -->
+                  <!-- begin profile-content -->
+                  <div class="profile-content">
+                     <!-- begin tab-content -->
+                     <div class="tab-content p-0">
+                        <!-- begin #profile-friends tab -->
+                        <div class="tab-pane fade in active show" id="profile-friends">
+                           <h4 class="m-t-0 m-b-20">Friend List (<%= @friends.length %>)</h4>
+                              <% @friends.each_slice(2).to_a.each do |friends|	%>
+                                 <!-- begin row -->
+                                 <div class="row row-space-2">
+                                    <%= render friends %>
+                                 </div>
+                                 <!-- end row -->
+                              <% end %>
+                        </div>
+                        <!-- end #profile-friends tab -->
+                     </div>
+                     <!-- end tab-content -->
+                  </div>
+                  <!-- end profile-content -->
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+   </div>
+</div>

@@ -1,7 +1,48 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+<%# TIMELINE %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag "timeline" %>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<h1>Your Timeline</h1>
+
+<div id="page" class="container-fluid">
+  <div id="add-post">
+    <%= render "shared/add_post" %>
+  </div>
+  <div class="tab-content">
+    <ul id="myTab" class="profile-header-tab nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a href="#profile-friends" class="nav-link active show" data-toggle="tab" style="color: #304a51;">For You</a>
+        </li>
+        <li class="nav-item"><a href="#profile-posts" class="nav-link" data-toggle="tab" style="color: #304a51;">Explore</a></li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="profile-friends" role="tabpanel" aria-labelledby="profile-home-tab">
+        <div id="posts">
+          <% if @friends_posts.length > 0 %>
+            <%= render partial: @friends_posts, locals: { depth: 1 } %>
+            <%# depth: 1 so can get tweets one tweet deep %>
+          <% else %>
+            <div class="nothing-here">
+              <p>No friends yet!<br/>
+              Get started by adding some people from the explore tab!</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile-posts" role="tabpanel" aria-labelledby="profile-posts-tab">
+         <div id="posts">
+          <% if @posts.length > 0 %>
+            <%= render partial: @posts, locals: { depth: 1 } %>
+            <%# depth: 1 so can get tweets one tweet deep %>
+          <% else %>
+            <div class="nothing-here">
+              <p>No posts yet!<br/>
+              Start the conversation by writing a post!</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>
+</div>

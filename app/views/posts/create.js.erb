@@ -1,0 +1,28 @@
+var alert = `Posted! <%= link_to "View", @post %>`;
+var level = "primary";
+
+<% if @error.nil? %>
+  <% if @post.original_post_id.nil? %>
+    var posts = document.querySelector("#posts");
+    var newPost = "<div class='newPost'><%= j render partial: @post, locals: { depth: 1 } %></div>";
+    posts.insertAdjacentHTML("afterbegin", newPost );
+    // add new post on top of previous ones
+  <% end %>
+<% else %>
+  alert = "<%= j @error %>";
+  level = "danger";
+<% end %>
+
+closeModal();
+// trigger close modal
+
+var nav = document.querySelector(".main-body");
+var flash = `<div id="flash"><div class='alert alert-${level}' role='alert'>${alert}</div></div>`;
+nav.insertAdjacentHTML("beforebegin", flash );
+// add flash
+window.setTimeout(fadeAlert, 4000);
+// trigger countdown to make alert auto disappear
+
+document.getElementById("post_content").value = "";
+document.getElementById("comment_content").value = "";
+// reset form to be blank

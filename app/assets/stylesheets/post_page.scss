@@ -1,0 +1,110 @@
+hr{
+  margin: 0;
+}
+
+p{
+  margin: 0;
+}
+
+div{
+  border-radius: 5px;
+}
+
+body{
+  background-image: none;
+  background-color: #F0F6F6;
+}
+
+h1{
+  color: #F0F6F6;
+  text-align: center;
+  padding: 50px;
+}
+
+#page {
+  margin: auto;
+  min-height: 100vh;
+  padding: 10px;
+  text-align: center;
+}
+
+#post{
+  width: 80%;
+  display: inline-block;
+  border: solid 3px gainsboro;
+  text-align: left;
+  background-color: white;
+}
+
+#post img{
+  width: 10%;
+  border-radius: 50%;
+  display: inline;
+}
+
+.inner-post{
+  padding: 5px 10px 5px 10px;
+  margin: 0px 10px 0px 10px;
+}
+
+#post-content{
+  padding: 10px;
+  text-align: center;
+}
+
+#post-text{
+  text-align: left;
+  padding-top: 10px;
+}
+
+#post-text p{
+  font-style: italic;
+  font-size: small;
+}
+
+#post-content .post-photo{
+  width: 90%;
+  padding: 10px 0px 10px 0px;
+  display: inline-block;
+}
+
+#post-content .post-photo img{
+  width: 100%;
+  border-radius: 10%;
+}
+
+#original_post{
+  padding-top: 10px;
+  width: 95%;
+  margin-left: 50px;
+}
+
+#original_post img{
+  width: 100%;
+}
+
+#interaction-panel{
+  text-align: center;
+}
+
+#interaction-panel form{
+  display: inline;
+}
+
+#beforeComments{
+  margin-bottom: 20px;
+}
+
+#comments {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+#comment_form{
+  width: 90%;
+  margin: auto;
+}
+
+#comment_form .container-fluid{
+  padding: 0;
+}

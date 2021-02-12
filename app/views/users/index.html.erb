@@ -1,0 +1,120 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "homepage" %>
+<% end %>
+
+<div>
+  <div id="title">
+    <br><br>
+    <h1 class="heading-center1">AceBook</h1>
+    <h6 class="heading-center6"><em>Where friends come together.</em></h6>
+  </div>
+
+
+  <br>
+
+<div class="body-background">
+    <div class="small-middle-container">
+      <div class="card">
+        <article class="card-body">
+    	     <h4 class="card-title text-center mb-4 mt-1">Log in</h4>
+    	     <hr>
+
+    	<%= form_tag users_authenticate_url do %>
+        <fieldset id="log_in">
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+            </div>
+            <%= text_field_tag :username, nil, placeholder: "Username", class: "form-control" %>
+          </div> <!-- input-group.// -->
+          </div> <!-- form-group// -->
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+              </div>
+              <%= password_field_tag :password, nil, placeholder: "Password", class: "form-control"  %>
+          </div> <!-- input-group.// -->
+          </div> <!-- form-group// -->
+          <div class="form-group">
+          <%= submit_tag "Log In", class: "btn btn-primary btn-block"%>
+          </div> <!-- form-group// -->
+          <p class="text-center"><a href="#" class="btn-forgot">Forgot password?</a></p>
+          <div id="demo" class="mbsc-cloak">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup">
+              Sign Up
+            </button>
+    	  </fieldset>
+      <% end %>
+    </article>
+    </div> <!-- card.// -->
+    </div> <!-- row.// -->
+
+</div>
+    <!--container end.//-->
+</div>
+    <br>
+    <!-- Modal -->
+          <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="Sign Up" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="signuplabel">Sign Up</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <%= form_for @user do |form| %>
+                    <fieldset id="sign_up">
+
+
+                      <%= form.label :username %>
+                      <%= form.text_field :username %>
+                      <br><br>
+                      <%= form.label :password %>
+                      <%= form.password_field :password %>
+                      <br><br>
+                      <%= form.label "Profile Photo" %>
+                      <%= form.file_field :avatar %>
+                      <br><br>
+                      <%= form.label :full_name %>
+                      <%= form.text_field :full_name %>
+                      <br><br>
+                       <%= form.label :email %>
+                      <%= form.text_field :email %>
+                      <br><br>
+                       <%= form.label :mobile %>
+                      <%= form.text_field :mobile %>
+                       <br><br>
+                       <%= form.label :address %>
+                      <%= form.text_field :address%>
+                       <br><br>
+                      <%= form.submit "Sign Up" %>
+
+                    </fieldset>
+                  <% end %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--  <br><br><br><br><br><br><br><br>
+
+<hr> this makes a line dash -->
+<!-- this code is for the sign up
+<%= form_for @user do |form| %>
+  <fieldset id="sign_up">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+    <br>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+    <br>
+    <%= form.submit "Sign Up" %>
+  </fieldset>
+<% end %>
+-->

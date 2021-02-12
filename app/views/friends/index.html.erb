@@ -1,0 +1,35 @@
+<%# NOTIFICATION PAGE %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag "friends" %>
+<% end %>
+
+</li>
+<h1>Notifications</h1>
+
+<div class="container">
+  <div id="page">
+    <table id="requests">
+      <tr>
+        <th> Pending friend requests:</th>
+        <th>Sent friend requests:</th>
+      </tr>
+      <tr>
+        <br>
+        <td id="received">
+          <% if @received_requests %>
+            <%= render partial: @received_requests, locals: { sent: false } %>
+          <% else %>
+            <p> No pending friend requests!</p>
+          <% end %>
+        </td>
+        <td id="sent">
+          <% if @sent_requests %>
+            <%= render partial: @sent_requests, locals: { sent: true } %>
+          <% else %>
+            <p> No sent friend requests! </p>
+          <% end %>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

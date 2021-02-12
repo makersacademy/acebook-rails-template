@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Acebook</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
-</html>
+  <html>
+    <head>
+      <title></title>
+      <%= csrf_meta_tags %>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <%= javascript_include_tag 'application' %>
+      <%= stylesheet_link_tag "application", media: "all" %>
+      <%= favicon_link_tag asset_path('acebook_logo_shading.png') %>
+      <%= yield(:head) %>
+    </head>
+    <body>
+      <div class="container">
+        <div class="main-body">
+          <%= render "layouts/navbar" unless @disable_nav %>
+          <% flash.each do |key, value| %>
+            <div id="flash">
+              <div id="inner-flash" class="alert alert-<%= key %>"><%= value %></div>
+            </div>
+          <% end %>
+          <%# Error/Confirmation flashes here ^ %>
+          <%= yield %>
+        </div>
+      </div>
+    </body>
+    <%= render "layouts/footer" %>
+  </html>

@@ -1,0 +1,33 @@
+<div class="post">
+  <div class="container-fluid" onclick="location.href='<%= post_path(post.id) %>';">
+    <% user = post.user %>
+    <% if depth > 0 %>
+      <% original_post = post.original_post %>
+    <% end %>
+    <div class="profile-pic">
+      <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+        <%= image_tag url_for(user.avatar) %>
+      </div>
+    </div>
+    <div class="post-text">
+      <div class="user-details">
+        <%= link_to "@#{user.username}", user_path(user.id) %>
+      </div>
+      <div class="post-content">
+        <%= post.content %>
+         <% if post.photo.attached? %>
+          <div class="post-photo">
+            <%= image_tag url_for(post.photo) %>
+          </div>
+        <% end %>
+      </div>
+      <% if original_post %>
+        <div class="original-post">
+          <%= render partial: original_post, locals: { depth: depth-1 } %>
+        </div>
+      <% end %>
+    </div>
+    <div class="interactions">
+    </div>
+  </div>
+</div>
