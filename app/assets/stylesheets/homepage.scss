@@ -80,6 +80,21 @@ body {
   border: 1px solid #888;
   width: 80%;
 }
+/* The sign up for Aceebook title */
+.modal-title{
+color: #67A5A9;
+}
+/* The Sign up Button */
+.btn_btn-primary{
+  color: #67A5A9;
+}
+
+.btn-secondary{
+    color: #304a51;
+    background-color: #BDD3DC;
+    border-color: #D0A18B;
+ 
+}
 
 /* The Close Button */
 .close {
@@ -88,6 +103,7 @@ body {
   font-size: 28px;
   font-weight: bold;
 }
+
 
 .close:hover,
 .close:focus {
