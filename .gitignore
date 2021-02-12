@@ -23,3 +23,6 @@
 
 .byebug_history
 .vscode
+
+# ignore all files stored (pics)
+storage/

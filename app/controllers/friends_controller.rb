@@ -5,7 +5,8 @@ class FriendsController < ApplicationController
   end
 
   def create
-    Friend.create!(friend_params)
+    @friend_request = Friend.create(friend_params)
+    flash[:primary] = "Sent friend request!"
     redirect_back fallback_location: "/"
   end
 

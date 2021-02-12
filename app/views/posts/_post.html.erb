@@ -6,7 +6,7 @@
     <% end %>
     <div class="profile-pic">
       <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
-        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+        <%= image_tag url_for(user.avatar) %>
       </div>
     </div>
     <div class="post-text">
@@ -15,6 +15,11 @@
       </div>
       <div class="post-content">
         <%= post.content %>
+         <% if post.photo.attached? %>
+          <div class="post-photo">
+            <%= image_tag url_for(post.photo) %>
+          </div>
+        <% end %>
       </div>
       <% if original_post %>
         <div class="original-post">
