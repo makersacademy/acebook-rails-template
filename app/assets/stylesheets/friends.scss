@@ -31,11 +31,12 @@ h1{
 #requests th, td{
   width: 50%;
   margin: 5px;
-  border: 1px solid gainsboro;
+  //border: 1px solid gainsboro;
 }
 
 #requests th{
   font-size: large;
+  color: #67A5A9;
 }
 
 .request{
@@ -69,4 +70,12 @@ h1{
 
 .footer {
   position: fixed;
+}
+
+.btn-secondary {
+  background-color: #67A5A9;
+}
+
+a {
+  color: #67A5A9;
 }
