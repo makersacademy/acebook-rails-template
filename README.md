@@ -1,4 +1,4 @@
-# AceBook
+# EducationApp
 
 REQUIRED INSTRUCTIONS:
 
