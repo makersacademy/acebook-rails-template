@@ -20,5 +20,6 @@ RSpec.describe User, type: :model do
 
   it "new user isn't valid if username is already in use" do
     user = User.new(username: "testuser1", password: "hello")
+    expect(user).not_to be_valid
   end
 end
