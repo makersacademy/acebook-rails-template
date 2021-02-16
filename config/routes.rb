@@ -7,5 +7,9 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-  resources :posts, :users
+  resources :users
+
+  resources :courses do
+    resources :posts
+  end
 end
