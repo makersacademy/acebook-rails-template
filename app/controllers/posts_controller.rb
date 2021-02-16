@@ -12,13 +12,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def home_route
-    render 'home'
-  end
-
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    post_params = params.require(:post).permit(:user_id, :content)
+    post_params[:user_id] = session[:user_id] if post_params[:user_id].nil?
+    return post_params
   end
 end
