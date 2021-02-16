@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       redirect_to root_url
     else
       flash.now[:alert] = "Incorrect username or password"
-      render "new"
+      redirect_back fallback_location: "/"
     end
   end
 
