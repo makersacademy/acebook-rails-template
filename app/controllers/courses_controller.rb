@@ -16,6 +16,10 @@ class CoursesController < ApplicationController
     redirect_back fallback_location: "/"
   end
 
+  # get /courses/:id
+  def show
+  end
+
   private
 
   def course_params

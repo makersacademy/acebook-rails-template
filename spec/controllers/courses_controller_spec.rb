@@ -27,4 +27,11 @@ RSpec.describe CoursesController, type: :controller do
       expect(Course.find_by(title: "Hello, world!")).to be
     end
   end
+
+  describe "GET /courses/:id" do
+    it "responds with 200" do
+      get :show, params: { id: 1 }
+      expect(response).to have_http_status(200)
+    end
+  end
 end
