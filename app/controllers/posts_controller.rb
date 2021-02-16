@@ -12,6 +12,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def home_route
+    render 'home'
+  end
+
   private
 
   def post_params
