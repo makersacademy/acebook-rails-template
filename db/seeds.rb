@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(username: "testuser1", password: "password", email: "test@test.com")
 Course.create(user_id: 1, title: "Intro to Ruby")
+Post.create(course_id: 1, content: "Hello World")

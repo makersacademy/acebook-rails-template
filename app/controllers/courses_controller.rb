@@ -12,12 +12,13 @@ class CoursesController < ApplicationController
 
   #post /courses
   def create
-    Course.create(course_params)
-    redirect_back fallback_location: "/"
+    course = Course.create(course_params)
+    redirect_to course_url(course)
   end
 
   # get /courses/:id
   def show
+    @course = Course.find(params[:id])
   end
 
   private
