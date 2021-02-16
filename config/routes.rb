@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   post "users/authenticate", to: "users#authenticate"
   get "log out", to: "users#logout"
 
+  root to: "pages#home"
+
   resources :posts, :users
 end
