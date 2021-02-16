@@ -8,6 +8,11 @@ class UsersController < ApplicationController
     redirect_to action: "login"
   end
 
+  def show
+    @user = User.find(params[:id])
+    @courses = Course.joins("INNER JOIN users ON courses.user_id = users.id").select("users.username, courses.*").where(user_id: @user.id)
+  end
+
   def authenticate
     user = User.find_by(username: params["username"])
     if user && user.authenticate(params["password"])
