@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
   
   # get /courses
   def index
-    @courses = Course.all
+    @courses = Course.joins("INNER JOIN users ON courses.user_id = users.id").select("users.username, courses.*")
   end
 
   # get /courses/new
