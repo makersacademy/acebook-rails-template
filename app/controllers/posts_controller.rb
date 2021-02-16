@@ -10,9 +10,13 @@ class PostsController < ApplicationController
     redirect_back fallback_location: "/"
   end
 
-  # /courses/:id/posts
+  # get /courses/:id/posts
   def index
     @posts = Post.all
+  end
+
+  # get /courses/:course_id/posts/:id
+  def show
   end
 
   private
