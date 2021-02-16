@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "login", to: "users#login"
   post "users/authenticate", to: "users#authenticate"
+  get "log out", to: "users#logout"
 
   resources :posts, :users
 end

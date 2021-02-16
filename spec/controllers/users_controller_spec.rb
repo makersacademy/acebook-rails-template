@@ -26,4 +26,11 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to redirect_to("/")
     end
   end
+
+  describe "GET /logout" do
+    it "responds with 200" do
+      get :logout
+      expect(response).to redirect_to("/")
+    end
+  end 
 end

@@ -8,10 +8,6 @@ class UsersController < ApplicationController
     redirect_to action: "login"
   end
 
-  def login
-      #View the login page
-  end
-
   def authenticate
     user = User.find_by(username: params["username"])
     if user && user.authenticate(params["password"])
@@ -22,6 +18,11 @@ class UsersController < ApplicationController
        # if invalid login, flashes error message & goes back to users/login
     end
     redirect_back fallback_location: "/"
+  end
+
+  def logout
+    session[:user_id] = nil
+    redirect_to "/"
   end
 
   private
