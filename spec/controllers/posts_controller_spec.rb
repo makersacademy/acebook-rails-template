@@ -18,7 +18,7 @@ RSpec.describe PostsController, type: :controller do
   describe "POST /" do
     it "responds with 200" do
       post :create, params: { course_id: 1, post: { content: "Hello, world!" } }
-      expect(response).to redirect_to("/")
+      expect(response).to redirect_to("/courses/1/posts")
     end
 
     it "creates a post" do

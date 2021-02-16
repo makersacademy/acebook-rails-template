@@ -1,22 +1,24 @@
 class PostsController < ApplicationController
   # get /courses/:id/posts/new
   def new
+    @course = Course.find(params[:course_id])
     @post = Post.new
   end
 
   # post /courses/:course_id/posts
   def create
     @post = Post.create(post_params)
-    redirect_back fallback_location: "/"
+    redirect_to action: "index"
   end
 
   # get /courses/:id/posts
   def index
-    @posts = Post.all
+    @posts = Post.where(course_id: params[:course_id]).order(:position)
   end
 
   # get /courses/:course_id/posts/:id
   def show
+    @post = Post.find(params[:id])
   end
 
   private

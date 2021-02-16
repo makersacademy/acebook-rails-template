@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.feature "Available courses", type: :feature do
   scenario "Can view available courses" do
     visit "/courses"
