@@ -16,7 +16,7 @@ class SubscriptionsController < ApplicationController
   # DELETE /courses/:course_id/subscriptions/:id
   def destroy
     begin
-      Subscription.find_by(subscription_params).destroy!
+      Subscription.find(params[:id]).destroy!
     rescue => exception
       flash[:warning] = exception
     else
