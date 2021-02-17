@@ -1,12 +1,12 @@
 class SubscribeController < ApplicationController
-  before_action :find_post
+  before_action :find_course
   before_action :find_subscribe, only: [:destroy]
 
   def create
     if already_subscribed?
       flash[:notice] = "You can't subscribe more than once"
     else
-      @post.subscribe.create(user_id: current_user.id)
+      @course.subscribe.create(user_id: current_user.id)
     end
     redirect_back fallback_location: root_path #may need to change redirect
   end
@@ -22,8 +22,8 @@ class SubscribeController < ApplicationController
 
   private
 
-  def find_post
-    @post = Post.find(params[:post_id])
+  def find_course
+    @course = Course.find(params[:course_id])
   end
 
   def find_subscribe
@@ -31,6 +31,6 @@ class SubscribeController < ApplicationController
   end
 
   def already_subscribed?
-    Subscribe.where(user_id: current_user.id, post_id: params[:post_id]).exists?
+    Subscribe.where(user_id: current_user.id, course_id: params[:course_id]).exists?
   end
 end
