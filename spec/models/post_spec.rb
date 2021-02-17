@@ -15,5 +15,4 @@ RSpec.describe Post, type: :model do
     post = Post.new(course_id: 1)
     expect(post).not_to be_valid
   end
-
 end
