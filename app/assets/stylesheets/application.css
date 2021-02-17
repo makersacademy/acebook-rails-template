@@ -54,6 +54,10 @@ nav {
   background: #6c63ff;
 }
 
+.hide {
+  display: none !important;
+}
+
 .il-text-block {
   margin-left: 140px;
   margin-top: 150px;
