@@ -32,6 +32,11 @@
         </li>
       </ul>
     </nav>
+    <% flash.each do |key, value| %>
+      <div id="flash">
+        <div id="inner-flash" class="alert alert-<%= key %>"><%= value %></div>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

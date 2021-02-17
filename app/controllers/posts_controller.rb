@@ -1,4 +1,10 @@
 class PostsController < ApplicationController
+  
+  # get /courses/:id/posts
+  def index
+    @posts = Post.where(course_id: params[:course_id]).order(:position)
+  end
+  
   # get /courses/:id/posts/new
   def new
     @course = Course.find(params[:course_id])
@@ -8,12 +14,8 @@ class PostsController < ApplicationController
   # post /courses/:course_id/posts
   def create
     @post = Post.create(post_params)
+    flash[:success] = "Created a new post!"
     redirect_to action: "index"
-  end
-
-  # get /courses/:id/posts
-  def index
-    @posts = Post.where(course_id: params[:course_id]).order(:position)
   end
 
   # get /courses/:course_id/posts/:id

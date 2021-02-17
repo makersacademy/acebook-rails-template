@@ -4,7 +4,7 @@ class SubscribeController < ApplicationController
 
   def create
     if already_subscribed?
-      flash[:notice] = "You can't subscribe more than once"
+      flash[:warning] = "You can't subscribe more than once"
     else
       @course.subscribe.create(user_id: current_user.id)
     end
@@ -13,7 +13,7 @@ class SubscribeController < ApplicationController
 
   def destroy
     if !(already_subscribed?)
-      flash[:notice] = "Cannot unsubscribe"
+      flash[:warning] = "Cannot unsubscribe"
     else
       @subscribe.destroy
     end

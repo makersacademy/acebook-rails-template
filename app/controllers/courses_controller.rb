@@ -13,6 +13,7 @@ class CoursesController < ApplicationController
   #post /courses
   def create
     course = Course.create(course_params)
+    flash[:success] = "Created a new course!"
     redirect_to course_url(course)
   end
 

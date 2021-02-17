@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     if current_user.nil? && ENV['RAILS_ENV'] != 'test'
-      redirect_to login_path, notice: 'Please log in'
+      flash[:warning] = 'Please log in'
+      redirect_to login_path
     end
   end
 
