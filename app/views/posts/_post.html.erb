@@ -1,3 +1,4 @@
 <%# Individual post (/courses/:id/posts ) %>
-
-<h1>Lesson <%= post.position %> - <%= post.content %></h1>
+<div onclick="location.href='<%= course_post_path(post.course_id, post.id) %>';">
+  <h1>Lesson <%= post.position %> - <%= post.content %></h1>
+</div>
