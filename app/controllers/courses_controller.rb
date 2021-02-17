@@ -20,6 +20,7 @@ class CoursesController < ApplicationController
   # get /courses/:id
   def show
     @course = Course.find(params[:id])
+    @subscription = Subscription.find_by(course_id: params[:id], user_id: session[:user_id]) || Subscription.new()
   end
 
   private

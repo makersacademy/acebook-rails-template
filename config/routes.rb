@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :courses do
     resources :posts
-    resources :subscriptions
+    resources :subscriptions, only: [:create, :destroy]
   end
 
 end

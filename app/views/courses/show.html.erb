@@ -1,2 +1,8 @@
 <%# /courses/:id %>
 <%= @course.title %>
+
+<% if @subscription.valid? %>
+  <%= button_to 'Unsubscribe', course_subscription_path(@course, @subscription), method: :delete %>
+<% else %>
+  <%= button_to "Subscribe",  course_subscriptions_path(@course, @subscription), method: :create %>
+<% end %>
