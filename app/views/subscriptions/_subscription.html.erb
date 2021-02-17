@@ -1,0 +1,10 @@
+<% pre_subscribe = course.subscription.find {|subscription| subscription.user_id == current_user.id}%>
+
+<%if pre_subscribe%>
+  <%= link_to 'Unsubscribe', course_subscription_path(course, pre_subscribe), method: :delete %>
+<%else%>
+  <%= link_to 'Subscribe', course_subscription_path(course), method: :course %>
+<%end%>
+
+<!--Subscription Count-->
+<%= course.subscription.count %>

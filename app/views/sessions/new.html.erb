@@ -1,4 +1,5 @@
-<%= form_tag users_authenticate_url do %>
+<%# /login %>
+<%= form_tag sessions_url do %>
   <%= text_field_tag :username, nil, placeholder: "Username", class: "form-control" %>
   <%= password_field_tag :password, nil, placeholder: "Password", class: "form-control"  %>
   <%= submit_tag "Log In", class: "btn btn-primary btn-block"%>

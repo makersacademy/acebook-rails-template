@@ -19,18 +19,4 @@ RSpec.describe UsersController, type: :controller do
       expect(User.find_by(username: "testing_user")).to be
     end
   end
-
-  describe "POST /authenticate" do
-    it "responds with 200" do
-      post :authenticate, params: { user: { username: "testing_user", password: "password"} }
-      expect(response).to redirect_to("/")
-    end
-  end
-
-  describe "GET /logout" do
-    it "responds with 200" do
-      get :logout
-      expect(response).to redirect_to("/")
-    end
-  end 
 end

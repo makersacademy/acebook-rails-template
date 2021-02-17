@@ -1,4 +1,10 @@
 class Post < ApplicationRecord
-  belongs_to :user
-  validates_presence_of :user_id, :content
+  belongs_to :course
+  validates_presence_of :course_id, :content
+  before_create :set_position
+
+  def set_position
+    last_max_position = Post.where(course_id: self.course_id).maximum("position")
+    self.position ||= last_max_position.to_i + 1
+  end
 end
