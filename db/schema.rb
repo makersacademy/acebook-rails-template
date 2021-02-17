@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(version: 20210216174949) do
     t.index ["course_id"], name: "index_posts_on_course_id"
   end
 
+  create_table "subscribes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"

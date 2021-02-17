@@ -1,0 +1,19 @@
+<% @posts.each do |post| %>
+<%if post %>
+
+  <div class="card-footer">
+    <a class="card-link">
+      <i class="fa fa-gittip"></i>
+
+      <% pre_subscribe = post.subscribe.find {|subscribe| subscribe.user_id == current_user.id}%>
+
+      <%if pre_subscribe%>
+        <%= link_to 'Unsubscribe', post_subscribe_path(post, pre_subscribe), method: :delete %>
+      <%else%>
+        <%= link_to 'Subscribe', post_subscribe_path(post), method: :post %>
+      <%end%>
+    </a>
+
+    <!--subscribe Count-->
+    <%= post.subscribe.count %> 
+  </div>
