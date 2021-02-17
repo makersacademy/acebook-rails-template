@@ -4,16 +4,13 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def authenticate_user!
-    unless current_user
-      redirect_to login_path, notice: 'Please login'
+    if current_user.nil? && ENV['RAILS_ENV'] != 'test'
+      redirect_to login_path, notice: 'Please log in'
     end
   end
 
   def current_user
-    if session[:user_id]
-      @current_user ||= User.find(session[:user_id])
-    else
-      @current_user = nil
-    end
-  end
+    @current_user ||= session[:user_id] ? User.find(session[:user_id]) : nil
+  end 
+
 end
