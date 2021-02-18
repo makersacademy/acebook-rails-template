@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       flash[:primary] =  "You have logged in!"
     else
       flash[:danger] =  "Incorrect username or password"
-       # if invalid login, flashes error message & goes back to users/login
+      # if invalid login, flashes error message & goes back to users/login
     end
     redirect_back fallback_location: "/"
   end
