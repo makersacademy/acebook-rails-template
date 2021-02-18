@@ -4,7 +4,6 @@
 
 <% if @user.id == session[:user_id] %>
   <%= link_to "Edit Profile", edit_user_url %>
-  <%= button_to "Delete Account", @user, method: :delete %>
 <% end %>
 
 <h1>Courses</h1>

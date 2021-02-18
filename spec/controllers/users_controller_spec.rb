@@ -48,9 +48,9 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "DELETE /users/:id " do
-    it "redirects back" do
+    it "logs out when deleting account" do
       delete :destroy, params: {id: 1}
-      expect(response).to redirect_to("/")
+      expect(response).to redirect_to("/logout")
     end
 
     it "deletes a user" do

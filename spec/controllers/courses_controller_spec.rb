@@ -45,7 +45,7 @@ RSpec.describe CoursesController, type: :controller do
   describe "PATCH/PUT courses/:id" do
     it "redirects back" do
       put :update, params: {id: 1, course: { title: "Changing Test Title" } }
-      expect(response).to redirect_to("/")
+      expect(response).to redirect_to("/courses/1")
     end
 
     it "edits a course" do

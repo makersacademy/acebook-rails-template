@@ -44,7 +44,7 @@ RSpec.describe PostsController, type: :controller do
   describe "PATCH/PUT courses/:course_id/posts/:id" do
     it "redirects back" do
       put :update, params: {course_id: 1, id: 1, post: { content: "changing test content"} }
-      expect(response).to redirect_to("/")
+      expect(response).to redirect_to("/courses/1/posts/1")
     end
 
     it "edits a post" do
@@ -57,7 +57,7 @@ RSpec.describe PostsController, type: :controller do
   describe "DELETE courses/:course_id/posts/:id" do
     it "redirects back" do
       put :destroy, params: { course_id: 1, id: 1 }
-      expect(response).to redirect_to("/")
+      expect(response).to redirect_to("/courses/1/posts")
     end
 
     it "edits a post" do

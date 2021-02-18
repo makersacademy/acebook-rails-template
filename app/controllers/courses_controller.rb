@@ -43,7 +43,7 @@ class CoursesController < ApplicationController
       redirect_back fallback_location: "/"
     else
       flash[:success] = "Edited the course!"
-      redirect_to action: "index"
+      redirect_to course_url(@course)
     end
   end
 
