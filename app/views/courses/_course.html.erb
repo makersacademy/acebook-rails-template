@@ -1,4 +1,5 @@
 <%# Individual course %>
+
 <div onclick="location.href='<%= course_path(course.id) %>';">
   <h4><%= course.title %></h4>
   <p><%= link_to course.username, user_path(course.user_id) %></p>
