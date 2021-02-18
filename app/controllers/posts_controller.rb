@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :this_post, only: [:show, :edit, :update, :destroy]
   
   # get /courses/:id/posts
   def index
@@ -20,10 +21,23 @@ class PostsController < ApplicationController
 
   # get /courses/:course_id/posts/:id
   def show
-    @post = Post.find(params[:id])
+  end
+
+  # get courses/:course_id/posts/:id/edit 
+  def edit
+  end
+
+  def update
+    @post.update(post_params)
+    flash[:success] = "Edited the post!"
+    redirect_back fallback_location: "/"
   end
 
   private
+
+  def this_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     post_params = params.require(:post).permit(:course_id, :content)

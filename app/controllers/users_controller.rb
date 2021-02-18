@@ -31,7 +31,6 @@ class UsersController < ApplicationController
   end
 
   # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
     if @user.update(user_params)
       flash[:success] = 'User was successfully updated.'
@@ -40,7 +39,6 @@ class UsersController < ApplicationController
   end
 
   # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     if @user.destroy
       flash[:success] = 'User was successfully destroyed.'

@@ -34,4 +34,24 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
+  describe "GET courses/:course_id/posts/:id/edit" do
+    it "responds with 200" do
+      get :edit, params: {course_id: 1, id: 1}
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "PATCH/PUT courses/:course_id/posts/:id " do
+    it "redirects back" do
+      put :update, params: {course_id: 1, id: 1, post: { content: "changing test content"} }
+      expect(response).to redirect_to("/")
+    end
+
+    it "edits a post" do
+      put :update, params: {course_id: 1, id: 1, post: { content: "changing test content"} }
+      expect(Post.find_by(content: "Hello World")).not_to be
+      expect(Post.find_by(content: "changing test content")).to be
+    end
+  end
+
 end
