@@ -13,14 +13,21 @@ class CoursesController < ApplicationController
 
   #post /courses
   def create
-    course = Course.create(course_params)
-    flash[:success] = "Created a new course!"
-    redirect_to course_url(course)
+    begin
+      course = Course.create!(course_params)
+    rescue => exception
+      flash[:danger] = exception
+      redirect_back fallback_location: "/"
+    else
+      flash[:success] = "Created a new course!"
+      redirect_to course_url(course)
+    end
   end
 
   # get /courses/:id
   def show
     @subscription = Subscription.find_by(course_id: params[:id], user_id: session[:user_id]) || Subscription.new()
+    # if subscribed, gets that subscription, else creates new subscription (so that can render @subscription )
   end
 
   # get courses/:id/edit 
@@ -29,16 +36,28 @@ class CoursesController < ApplicationController
 
   # put/patch courses/:id 
   def update
-    @course.update(course_params)
-    flash[:success] = "Edited the course!"
-    redirect_back fallback_location: "/"
+    begin
+      @course.update!(course_params)
+    rescue => exception
+      flash[:danger] = exception
+    else
+      flash[:success] = "Edited the course!"
+    ensure
+      redirect_back fallback_location: "/"
+    end
   end
 
   # delete courses/:id
   def destroy
-    @course.destroy
-    flash[:success] = "Deleted the course!"
-    redirect_back fallback_location: "/"
+    begin
+      @course.destroy!
+    rescue => exception
+      flash[:danger] = exception
+    else
+      flash[:success] = "Deleted the course!"
+    ensure
+      redirect_back fallback_location: "/"
+    end
   end
 
   private

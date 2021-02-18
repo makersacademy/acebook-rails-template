@@ -14,9 +14,15 @@ class PostsController < ApplicationController
 
   # post /courses/:course_id/posts
   def create
-    @post = Post.create(post_params)
-    flash[:success] = "Created a new post!"
-    redirect_to action: "index"
+    begin
+      Post.create!(post_params)
+    rescue => exception
+      flash[:danger] = exception
+    else
+      flash[:success] = "Created a new post!"
+    ensure
+      redirect_to action: "index"
+    end
   end
 
   # get /courses/:course_id/posts/:id
@@ -29,16 +35,28 @@ class PostsController < ApplicationController
 
   # patch/put courses/:course_id/posts/:id 
   def update
-    @post.update(post_params)
+    begin
+      @post.update!(post_params)
+    rescue => exception
+      flash[:danger] = exception
+    else
     flash[:success] = "Edited the post!"
-    redirect_back fallback_location: "/"
+    ensure
+      redirect_back fallback_location: "/"
+    end
   end
 
   # delete courses/:course_id/posts/:id
   def destroy
-    @post.destroy
-    flash[:success] = "Deleted the post!"
-    redirect_back fallback_location: "/"
+    begin
+      @post.destroy!
+    rescue => exception
+      flash[:danger] = exception
+    else 
+      flash[:success] = "Deleted the post!"
+    ensure  
+      redirect_back fallback_location: "/"
+    end
   end
 
   private

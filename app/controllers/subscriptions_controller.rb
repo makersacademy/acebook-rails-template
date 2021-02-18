@@ -5,7 +5,7 @@ class SubscriptionsController < ApplicationController
     begin
       Subscription.create!(subscription_params)
     rescue => exception
-      flash[:warning] = exception
+      flash[:danger] = exception
     else
       flash[:success] = "Added subscription!"
     ensure
@@ -18,7 +18,7 @@ class SubscriptionsController < ApplicationController
     begin
       Subscription.find(params[:id]).destroy!
     rescue => exception
-      flash[:warning] = exception
+      flash[:dangrt] = exception
     else
       flash[:success] = "Removed subscription!"
     ensure

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     begin
       @user = User.create!(user_params)
     rescue => exception
-      flash[:warning] = exception
+      flash[:danger] = exception
       redirect_to new_user_url
     else
       flash[:success] = 'User was successfully created.'
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     begin
       @user.update!(user_params)
     rescue => exception
-      flash[:warning] = exception
+      flash[:danger] = exception
     else
       flash[:success] = 'User was successfully updated.'
     ensure
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
     begin
       @user.destroy!
     rescue => exception
-      flash[:warning] = exception
+      flash[:danger] = exception
     else
       flash[:success] = 'User was successfully destroyed.'
     ensure
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.permit(user: [:username, :password, :email])[:user]
+    params.require(:user).permit(:username, :password, :email)
   end
 
 end
