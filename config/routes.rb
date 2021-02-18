@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create]
 
   resources :courses do
     resources :posts
-    resources :subscriptions
+    resources :subscriptions, only: [:create, :destroy]
   end
 
 end

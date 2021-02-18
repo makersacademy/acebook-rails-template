@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:new, :create]
-  before_action :this_user, only: [:edit, :update, :destroy]
+  before_action :this_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users/new
   def new
@@ -11,19 +10,21 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
-    if @user.save
-      flash[:success] = 'User was successfully created.'
-      redirect_to "/login"
-    else
+    begin
+      @user = User.create!(user_params)
+    rescue => exception
+      flash[:danger] = exception
       redirect_to new_user_url
+    else
+      flash[:success] = 'You have signed up!'
+      redirect_to "/login"
     end
   end
 
-  # GET /users/1
+  # GET /users/:id
   def show
-    @user = User.find(params[:id])
     @courses = Course.joins("INNER JOIN users ON courses.user_id = users.id").select("users.username, courses.*").where(user_id: @user.id)
+    @subscriptions = Course.joins("INNER JOIN users ON users.id = courses.user_id INNER JOIN subscriptions ON courses.id = subscriptions.course_id").select("users.username", "courses.*").where("subscriptions.user_id = #{session[:user_id]}") 
   end
 
   # GET /users/1/edit
@@ -31,21 +32,29 @@ class UsersController < ApplicationController
   end
 
   # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
-    if @user.update(user_params)
+    begin
+      @user.update!(user_params)
+    rescue => exception
+      flash[:danger] = exception
+      redirect_back fallback_location: "/"
+    else
       flash[:success] = 'User was successfully updated.'
+      redirect_to user_url(@user)
     end
-    redirect_back fallback_location: "/"
   end
 
   # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
-    if @user.destroy
-      flash[:success] = 'User was successfully destroyed.'
+    begin
+      @user.destroy!
+    rescue => exception
+      flash[:danger] = exception
+      redirect_back fallback_location: "/"
+    else
+      flash[:success] = 'Account deleted!'
+      redirect_to "/logout"
     end
-    redirect_back fallback_location: "/"
   end
 
   private

@@ -1,4 +1,7 @@
 <%# /courses %>
+
+<%= link_to "Create new course", new_course_url %>
+
 <div class="container-fluid">
   <div class="row">
       <% @courses.each_with_index do |course, i| %>

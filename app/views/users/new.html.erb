@@ -1,12 +1,3 @@
 <%# /signup %>
 
-<%= form_for @user do |form| %>
-  <%= form.label :username %>
-  <%= form.text_field :username %>
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-
-  <%= form.submit "Submit" %>
-<% end %>
+<%= render "user_form" %>
