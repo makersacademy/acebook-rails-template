@@ -37,7 +37,7 @@ RSpec.describe UsersController, type: :controller do
   describe "PATCH/PUT /users/:id " do
     it "redirects back" do
       put :update, params: {id: 1, user: { username: "renaming_test_user", password: "password" } }
-      expect(response).to redirect_to("/")
+      expect(response).to redirect_to("/users/1")
     end
 
     it "edits a user" do

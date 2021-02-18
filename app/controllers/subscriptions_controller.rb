@@ -18,7 +18,7 @@ class SubscriptionsController < ApplicationController
     begin
       Subscription.find(params[:id]).destroy!
     rescue => exception
-      flash[:dangrt] = exception
+      flash[:danger] = exception
     else
       flash[:success] = "Removed subscription!"
     ensure
@@ -29,10 +29,7 @@ class SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    {
-      user_id: session[:user_id],
-      course_id: params[:course_id]
-    }
+    { user_id: session[:user_id], course_id: params[:course_id] }
   end
 
 end

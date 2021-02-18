@@ -40,10 +40,10 @@ class CoursesController < ApplicationController
       @course.update!(course_params)
     rescue => exception
       flash[:danger] = exception
+      redirect_back fallback_location: "/"
     else
       flash[:success] = "Edited the course!"
-    ensure
-      redirect_back fallback_location: "/"
+      redirect_to action: "index"
     end
   end
 

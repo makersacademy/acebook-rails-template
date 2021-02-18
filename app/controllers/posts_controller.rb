@@ -39,10 +39,10 @@ class PostsController < ApplicationController
       @post.update!(post_params)
     rescue => exception
       flash[:danger] = exception
+      redirect_back fallback_location: "/"
     else
     flash[:success] = "Edited the post!"
-    ensure
-      redirect_back fallback_location: "/"
+    redirect_to course_post_url(@post)
     end
   end
 
@@ -52,10 +52,10 @@ class PostsController < ApplicationController
       @post.destroy!
     rescue => exception
       flash[:danger] = exception
+      redirect_back fallback_location: "/"
     else 
       flash[:success] = "Deleted the post!"
-    ensure  
-      redirect_back fallback_location: "/"
+      redirect_to action: "index"
     end
   end
 
@@ -63,6 +63,7 @@ class PostsController < ApplicationController
 
   def this_post
     @post = Post.find(params[:id])
+    @course = @post.course
   end
 
   def post_params

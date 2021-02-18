@@ -37,10 +37,10 @@ class UsersController < ApplicationController
       @user.update!(user_params)
     rescue => exception
       flash[:danger] = exception
+      redirect_back fallback_location: "/"
     else
       flash[:success] = 'User was successfully updated.'
-    ensure
-      redirect_back fallback_location: "/"
+      redirect_to user_url(@user)
     end
   end
 

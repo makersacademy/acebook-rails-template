@@ -1,4 +1,4 @@
-RSpec.feature "Available courses", type: :feature do
+RSpec.feature "Available posts", type: :feature do
   scenario "Can view all posts" do
     log_in
     visit "/courses/1/posts"
