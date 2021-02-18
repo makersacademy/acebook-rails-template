@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       flash[:danger] = exception
       redirect_to new_user_url
     else
-      flash[:success] = 'User was successfully created.'
+      flash[:success] = 'You have signed up!'
       redirect_to "/login"
     end
   end
@@ -50,10 +50,10 @@ class UsersController < ApplicationController
       @user.destroy!
     rescue => exception
       flash[:danger] = exception
-    else
-      flash[:success] = 'User was successfully destroyed.'
-    ensure
       redirect_back fallback_location: "/"
+    else
+      flash[:success] = 'Account deleted!'
+      redirect_to "/logout"
     end
   end
 
