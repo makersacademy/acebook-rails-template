@@ -10,12 +10,14 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
-    if @user.save
+    begin
+      @user = User.create!(user_params)
+    rescue => exception
+      flash[:warning] = exception
+      redirect_to new_user_url
+    else
       flash[:success] = 'User was successfully created.'
       redirect_to "/login"
-    else
-      redirect_to new_user_url
     end
   end
 
@@ -27,23 +29,32 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
   end
 
   # PATCH/PUT /users/1
   def update
-    if @user.update(user_params)
+    begin
+      @user.update!(user_params)
+    rescue => exception
+      flash[:warning] = exception
+    else
       flash[:success] = 'User was successfully updated.'
+    ensure
+      redirect_back fallback_location: "/"
     end
-    redirect_back fallback_location: "/"
   end
 
   # DELETE /users/1
   def destroy
-    if @user.destroy
+    begin
+      @user.destroy!
+    rescue => exception
+      flash[:warning] = exception
+    else
       flash[:success] = 'User was successfully destroyed.'
+    ensure
+      redirect_back fallback_location: "/"
     end
-    redirect_back fallback_location: "/"
   end
 
   private
