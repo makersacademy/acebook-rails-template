@@ -9,7 +9,7 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "POST /" do
-    it "responds with 200" do
+    it "redirects to login" do
       post :create, params: { user: { username: "testing_user", password: "password", email: "someone@something.com" } }
       expect(response).to redirect_to("/login")
     end
@@ -17,6 +17,45 @@ RSpec.describe UsersController, type: :controller do
     it "creates a user" do
       post :create, params: { user: { username: "testing_user", password: "password", email: "someone@something.com" } }
       expect(User.find_by(username: "testing_user")).to be
+    end
+  end
+
+  describe "GET /users/:id " do
+    it "responds with 200" do
+      get :show, params: {id: 1}
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "GET /users/:id/edit " do
+    it "responds with 200" do
+      get :edit, params: {id: 1}
+      expect(response).to have_http_status(200)
+    end
+  end
+
+  describe "PATCH/PUT /users/:id " do
+    it "redirects back" do
+      put :update, params: {id: 1, user: { username: "renaming_test_user", password: "password" } }
+      expect(response).to redirect_to("/")
+    end
+
+    it "edits a user" do
+      put :update, params: {id: 1, user: { username: "renaming_test_user", password: "password" } }
+      expect(User.find_by(username: "testing_user")).not_to be
+      expect(User.find_by(username: "renaming_test_user")).to be
+    end
+  end
+
+  describe "DELETE /users/:id " do
+    it "redirects back" do
+      delete :destroy, params: {id: 1}
+      expect(response).to redirect_to("/")
+    end
+
+    it "deletes a user" do
+      put :destroy, params: { id: 1 }
+      expect(User.find_by(username: "testing_user")).not_to be
     end
   end
 end

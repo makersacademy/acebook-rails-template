@@ -29,10 +29,10 @@ class SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    subscription_params = params.permit(:subscription).permit(:course_id, :user_id)
-    subscription_params[:user_id] ||= session[:user_id]
-    subscription_params[:course_id] ||= params[:course_id]
-    return subscription_params
+    {
+      user_id: session[:user_id],
+      course_id: params[:course_id]
+    }
   end
 
 end
