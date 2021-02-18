@@ -18,6 +18,55 @@ body * {
   font-family: 'Montserrat';
 }
 
+.align-end {
+  text-align: right;
+}
+
+.course-index-container {
+  padding: 20px;
+  position: relative;
+  display: inline-block;
+  border: 2px solid #6C63FF;
+  background: #F4F4F4;
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+  margin-top: 50px;
+}
+
+.course-index-container > .title > a {
+  text-decoration: none;
+  color: #6C63FF !important;
+}
+
+.course-index-container {
+  cursor: pointer;
+}
+
+.course-index-container:hover {
+  box-shadow: 4px 4px 4px rgb(220, 220, 220);
+}
+
+.rating-star {
+  position: relative;
+  width: 25px;
+  height: auto;
+}
+
+.align-start {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.tcl {
+  background: red;
+  opacity: 0.5;
+  border: 2px solid black;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -52,6 +101,10 @@ nav {
   height: 500px;
   width: 100vw;
   background: #6c63ff;
+}
+
+.hide {
+  display: none !important;
 }
 
 .il-text-block {
@@ -158,4 +211,51 @@ footer {
 
 footer p {
   font-size: 12px;
+}
+
+@media (min-width: 576px) {
+}
+
+
+@media (min-width: 768px) {
+  .course-index-container {
+    width: 370px;
+    height: 200px;
+    margin-top: 60px;
+    border-radius: 8px;
+  }
+  .course-index-container > .desc {
+    line-height: 22px;
+    font-size: 0.95em;
+    letter-spacing: 3px;
+    opacity: 0.7;
+    text-align: center;
+  }
+  .course-index-container > .title {
+    font-size: 1.7em;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .course-index-container {
+    width: 330px;
+    height: 220px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .course-index-container {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+
+@media (min-width: 1400px) {
+  .course-index-container {
+    width: 450px;
+    height: 200px;
+  }
 }
