@@ -1,6 +1,4 @@
 <%# Individual course %>
 <%= link_to course.title, course_path(course.id) %>
 
-<% if not current_url_contains "/users/" %>
-  <p><%= link_to course.username, user_path(course.user_id) %></p>
-<% end %>
+<p><%= link_to course.username, user_path(course.user_id) %></p>
