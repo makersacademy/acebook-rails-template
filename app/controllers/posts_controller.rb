@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :this_post, only: [:show, :edit, :update, :destroy]
+  before_action :this_course
   
   # get /courses/:id/posts
   def index
@@ -63,7 +64,10 @@ class PostsController < ApplicationController
 
   def this_post
     @post = Post.find(params[:id])
-    @course = @post.course
+  end
+  
+  def this_course
+    @course = Course.find(params[:course_id])
   end
 
   def post_params
