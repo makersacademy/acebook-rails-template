@@ -5,7 +5,7 @@ class SubscriptionsController < ApplicationController
     begin
       Subscription.create!(subscription_params)
     rescue => exception
-      flash[:warning] = exception
+      flash[:danger] = exception
     else
       flash[:success] = "Added subscription!"
     ensure
@@ -18,7 +18,7 @@ class SubscriptionsController < ApplicationController
     begin
       Subscription.find(params[:id]).destroy!
     rescue => exception
-      flash[:warning] = exception
+      flash[:danger] = exception
     else
       flash[:success] = "Removed subscription!"
     ensure
@@ -29,10 +29,7 @@ class SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    subscription_params = params.require(:subscription).permit(:course_id, :user_id)
-    subscription_params[:user_id] ||= session[:user_id]
-    subscription_params[:course_id] ||= params[:course_id]
-    return subscription_params
+    { user_id: session[:user_id], course_id: params[:course_id] }
   end
 
 end

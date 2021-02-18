@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  before_action :this_course, only: [:show, :edit, :update, :destroy]
   
   # get /courses
   def index
@@ -12,17 +13,58 @@ class CoursesController < ApplicationController
 
   #post /courses
   def create
-    course = Course.create(course_params)
-    flash[:success] = "Created a new course!"
-    redirect_to course_url(course)
+    begin
+      course = Course.create!(course_params)
+    rescue => exception
+      flash[:danger] = exception
+      redirect_back fallback_location: "/"
+    else
+      flash[:success] = "Created a new course!"
+      redirect_to course_url(course)
+    end
   end
 
   # get /courses/:id
   def show
-    @course = Course.find(params[:id])
+    @subscription = Subscription.find_by(course_id: params[:id], user_id: session[:user_id]) || Subscription.new()
+    # if subscribed, gets that subscription, else creates new subscription (so that can render @subscription )
+  end
+
+  # get courses/:id/edit 
+  def edit
+  end
+
+  # put/patch courses/:id 
+  def update
+    begin
+      @course.update!(course_params)
+    rescue => exception
+      flash[:danger] = exception
+      redirect_back fallback_location: "/"
+    else
+      flash[:success] = "Edited the course!"
+      redirect_to course_url(@course)
+    end
+  end
+
+  # delete courses/:id
+  def destroy
+    begin
+      @course.destroy!
+    rescue => exception
+      flash[:danger] = exception
+    else
+      flash[:success] = "Deleted the course!"
+    ensure
+      redirect_back fallback_location: "/"
+    end
   end
 
   private
+
+  def this_course
+    @course = Course.find(params[:id])
+  end
 
   def course_params
     course_params = params.require(:course).permit(:user_id, :title)
