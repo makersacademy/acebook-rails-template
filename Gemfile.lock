@@ -62,50 +62,6 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    actioncable (5.2.4.5)
-      actionpack (= 5.2.4.5)
-      nio4r (~> 2.0)
-      websocket-driver (>= 0.6.1)
-    actionmailer (5.2.4.5)
-      actionpack (= 5.2.4.5)
-      actionview (= 5.2.4.5)
-      activejob (= 5.2.4.5)
-      mail (~> 2.5, >= 2.5.4)
-      rails-dom-testing (~> 2.0)
-    actionpack (5.2.4.5)
-      actionview (= 5.2.4.5)
-      activesupport (= 5.2.4.5)
-      rack (~> 2.0, >= 2.0.8)
-      rack-test (>= 0.6.3)
-      rails-dom-testing (~> 2.0)
-      rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    actionview (5.2.4.5)
-      activesupport (= 5.2.4.5)
-      builder (~> 3.1)
-      erubi (~> 1.4)
-      rails-dom-testing (~> 2.0)
-      rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    activejob (5.2.4.5)
-      activesupport (= 5.2.4.5)
-      globalid (>= 0.3.6)
-    activemodel (5.2.4.5)
-      activesupport (= 5.2.4.5)
-    activerecord (5.2.4.5)
-      activemodel (= 5.2.4.5)
-      activesupport (= 5.2.4.5)
-      arel (>= 9.0)
-    activestorage (5.2.4.5)
-      actionpack (= 5.2.4.5)
-      activerecord (= 5.2.4.5)
-      marcel (~> 0.3.1)
-    activesupport (5.2.4.5)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (>= 0.7, < 2)
-      minitest (~> 5.1)
-      tzinfo (~> 1.1)
-    addressable (2.7.0)
-      public_suffix (>= 2.0.2, < 5.0)
-    arel (9.0.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
     builder (3.2.4)
@@ -250,7 +206,6 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  ruby
   x86_64-darwin-19
 
 DEPENDENCIES
@@ -271,4 +226,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   2.2.11
+   2.2.7
