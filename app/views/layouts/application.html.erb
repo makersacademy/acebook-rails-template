@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acebook</title>
+    <title>Knowledge Pill</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -22,16 +21,30 @@
       <%= image_tag "navbar-brand.png", class: "navbar-brand-img" %>
       <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link purple-highlight" href="#">Courses</a>
+          <a class="nav-link purple-highlight" href="/courses">Courses</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link purple-highlight" href="#">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link purple-highlight" href="#">Sign in</a>
-        </li>
+        <% if not user_logged_in? %>
+          <li class="nav-item">
+            <a class="nav-link purple-highlight" href="/signup">Register</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link purple-highlight" href="/login">Sign in</a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a class="nav-link purple-highlight" href="/users/<%= session[:user_id] %>">My Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link purple-highlight" href="/logout">Log out</a>
+          </li>
+        <% end %>
       </ul>
     </nav>
+    <% flash.each do |key, value| %>
+      <div id="flash">
+        <div id="inner-flash" class="alert alert-<%= key %>"><%= value %></div>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

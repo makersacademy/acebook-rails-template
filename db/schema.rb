@@ -10,17 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210215161615) do
+ActiveRecord::Schema.define(version: 20210217181226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "courses", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "description"
+    t.integer "rating", default: 0
+    t.index ["user_id"], name: "index_courses_on_user_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "course_id"
+    t.integer "position"
+    t.index ["course_id"], name: "index_posts_on_course_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.index ["user_id"], name: "index_posts_on_user_id"
+    t.bigint "course_id"
+    t.index ["course_id"], name: "index_subscriptions_on_course_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -31,5 +51,6 @@ ActiveRecord::Schema.define(version: 20210215161615) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "posts", "users"
+  add_foreign_key "courses", "users"
+  add_foreign_key "posts", "courses"
 end
