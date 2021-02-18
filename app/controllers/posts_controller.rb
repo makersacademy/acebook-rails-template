@@ -27,9 +27,17 @@ class PostsController < ApplicationController
   def edit
   end
 
+  # patch/put courses/:course_id/posts/:id 
   def update
     @post.update(post_params)
     flash[:success] = "Edited the post!"
+    redirect_back fallback_location: "/"
+  end
+
+  # delete courses/:course_id/posts/:id
+  def destroy
+    @post.destroy
+    flash[:success] = "Deleted the post!"
     redirect_back fallback_location: "/"
   end
 
