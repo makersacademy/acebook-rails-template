@@ -1,5 +1,11 @@
 # EducationApp
 
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+</p>
+
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `EducationApp` and customize
@@ -32,5 +38,5 @@ If you don't have Node.js installed yet, you might run into this error when runn
 ExecJS::RuntimeUnavailable:
   Could not find a JavaScript runtime. See https://github.com/rails/execjs for a list of available runtimes.
  ```
-That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` - 
+That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` -
 and then run `bundle exec rspec` again

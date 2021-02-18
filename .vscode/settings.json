@@ -1,0 +1,41 @@
+{
+    "cSpell.enableFiletypes": [
+        "!handlebars",
+        "erb",
+        "git-rebase",
+        "image",
+        "objective-cpp",
+        "ruby",
+        "search-result"
+    ],
+    }
+        // If not specified searches for 'rubocop' executable available on PATH (default and recommended)
+        {"ruby.rubocop.executePath": "",}
+    ],
+        // You can use specific path
+        // "ruby.rubocop.executePath": "/Users/you/.rbenv/shims/"
+        // "ruby.rubocop.executePath": "/Users/you/.rvm/gems/ruby-2.3.2/bin/"
+        // "ruby.rubocop.executePath": "D:/bin/Ruby22-x64/bin/"
+        
+        // If not specified, it assumes a null value by default.
+        "ruby.rubocop.configFilePath": "/path/to/config/.rubocop.yml",
+
+        // default true
+        "ruby.rubocop.onSave": true
+    }
+
+    "ruby.rubocop.suppressRubocopWarnings": true,
+    "ruby.rubocop.useBundler": true,
+    "ruby.rubocop.executePath": " \"ruby.rubocop.executePath\": \"/User/Ghostglass\"   // \"ruby.rubocop.executePath\": \"/User/Ghostglass/.rvm/gems/ruby-2.3.2/bin/\"   // \"ruby.rubocop.executePath\": \"D:/bin/Ruby22-x64/bin/\"    // If not specified, it assumes a null value by default.   \"ruby.rubocop.configFilePath\": \"/path/to/config/.rubocop.yml\",    // default true   \"ruby.rubocop.onSave\": true }",
+    "ruby.rubocop.configFilePath": "{ \"ruby.rubocop.executePath\": \"/User/Ghostglass\"   // \"ruby.rubocop.executePath\": \"/User/Ghostglass/.rvm/gems/ruby-2.3.2/bin/\"   // \"ruby.rubocop.executePath\": \"D:/bin/Ruby22-x64/bin/\"    // If not specified, it assumes a null value by default.   \"ruby.rubocop.configFilePath\": \"/path/to/config/.rubocop.yml\",    // default true   \"ruby.rubocop.onSave\": true }",
+    "git.postCommitCommand": "push",
+    "git.showPushSuccessNotification": true,
+    "html.format.endWithNewline": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.templating": true,
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.intellisense": "rubyLocate",
+    "ruby.lint": {
+
+    }
+}
