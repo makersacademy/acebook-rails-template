@@ -43,7 +43,7 @@ class PostsController < ApplicationController
       redirect_back fallback_location: "/"
     else
     flash[:success] = "Edited the post!"
-    redirect_to course_post_url(@post)
+    redirect_to course_post_url(@course, @post)
     end
   end
 
