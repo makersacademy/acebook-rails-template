@@ -6,9 +6,10 @@
   <%= link_to "Add Post", new_course_post_path(@course) %>
 <% else %>
   <% if @subscription.valid? %>
-    <%= button_to 'Unsubscribe', course_subscription_path(@course, @subscription), method: :delete %>
+    <%= button_to 'Unsubscribe', course_subscription_path(@course, @subscription), method: :delete, class: 'p-button' %>
   <% else %>
-    <%= button_to "Subscribe",  course_subscriptions_path(@course, @subscription), method: :create %>
+    <%= button_to "Subscribe",  course_subscriptions_path(@course, @subscription), method: :create, class: 'p-button' %>
   <% end %>
 <% end %>
+
 <%= link_to "See Posts", course_posts_path(@course) %>
