@@ -1,5 +1,6 @@
 <%# /courses/:course_id/posts/:post_id %>
 
+<h1><%= @post.title %></h1>
 <% if @post.course.user_id == session[:user_id] %>
   <%= link_to "Edit Post", edit_course_post_url %>
   <%= button_to "Delete Post", [@course, @post], method: :delete %>
