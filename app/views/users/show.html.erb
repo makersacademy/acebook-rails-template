@@ -2,6 +2,10 @@
 
 <h2><span class="purple-highlight"><%= @user.username %></span>'s Profile</h2>
 
+<% if @user.avatar.attached? %>
+  <%= image_tag @user.avatar %>
+<% end %>
+
 <% if @user.id == session[:user_id] %>
   <%= link_to "Edit Profile", edit_user_url, class: 'p-button' %>
 <% end %>
