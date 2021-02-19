@@ -12,4 +12,4 @@ Course.create(
   description: "Sample course description. This description is longer. Than other descriptions. End description",
   rating: 5
 )
-Post.create(course_id: 1, content: "Hello World")
+Post.create(course_id: 1, title: "Test Post", content: "Hello World")

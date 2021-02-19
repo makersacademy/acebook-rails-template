@@ -35,26 +35,26 @@ RSpec.describe PostsController, type: :controller do
 
   describe "POST /" do
     it "responds with 200" do
-      post :create, params: { course_id: 1, post: { content: "Hello, world!" } }
+      post :create, params: { course_id: 1, post: { title: "New Post", content: "Hello, world!" } }
       expect(response).to redirect_to("/courses/1/posts")
     end
 
     it "creates a post" do
-      post :create, params: { course_id: 1, post: { content: "Hello, world!" } }
-      expect(Post.find_by(content: "Hello, world!")).to be
+      post :create, params: { course_id: 1, post: { title: "New Post", content: "Hello, world!" } }
+      expect(Post.find_by(title: "New Post")).to be
     end
   end
 
   describe "PATCH/PUT courses/:course_id/posts/:id" do
     it "redirects back" do
-      put :update, params: {course_id: 1, id: 1, post: { content: "changing test content"} }
+      put :update, params: {course_id: 1, id: 1, post: { title: "changing test title"} }
       expect(response).to redirect_to("/courses/1/posts/1")
     end
 
     it "edits a post" do
-      put :update, params: {course_id: 1, id: 1, post: { content: "changing test content"} }
-      expect(Post.find_by(content: "Hello World")).not_to be
-      expect(Post.find_by(content: "changing test content")).to be
+      put :update, params: {course_id: 1, id: 1, post: { title: "changing test title"} }
+      expect(Post.find_by(title: "Test Post")).not_to be
+      expect(Post.find_by(title: "changing test title")).to be
     end
   end
 

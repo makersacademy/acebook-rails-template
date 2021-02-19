@@ -71,7 +71,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    post_params = params.require(:post).permit(:course_id, :content)
+    post_params = params.require(:post).permit(:course_id, :title, :content)
     post_params[:course_id] ||= params[:course_id]
     return post_params
   end
