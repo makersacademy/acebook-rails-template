@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   # POST /session
   def create
-    user = User.find_by_username(params[:username])
+    user.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Logged in!"
@@ -24,5 +24,5 @@ class SessionsController < ApplicationController
     flash[:success] = "Logged out!"
     redirect_to "/"
   end
-  
+
 end
