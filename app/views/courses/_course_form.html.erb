@@ -1,5 +1,17 @@
-<%= form_for @course do |form| %>
-  <%= form.label :title %>
-  <%= form.text_field :title %>
-  <%= form.submit "Submit" %>
-<% end %>
+<div align="center">
+  <%= form_for @course do |form| %>
+    <%= form.label :title %>
+    <br>
+    <%= form.text_field :title %>
+    <br>
+    <%= form.label :description %>
+    <br>
+    <%= form.text_area :description %>
+    <br>
+    <%= form.label :main_image %>
+    <br>
+    <%= form.file_field :main_image %>
+    <br>
+    <%= form.submit "Submit" %>
+  <% end %>
+</div>

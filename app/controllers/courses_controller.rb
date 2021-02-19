@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   before_action :this_course, only: [:show, :edit, :update, :destroy]
-  
+
   # get /courses
   def index
     @courses = Course.joins("INNER JOIN users ON courses.user_id = users.id").select("users.username, courses.*")
@@ -30,11 +30,11 @@ class CoursesController < ApplicationController
     # if subscribed, gets that subscription, else creates new subscription (so that can render @subscription )
   end
 
-  # get courses/:id/edit 
+  # get courses/:id/edit
   def edit
   end
 
-  # put/patch courses/:id 
+  # put/patch courses/:id
   def update
     begin
       @course.update!(course_params)
@@ -67,7 +67,7 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    course_params = params.require(:course).permit(:user_id, :title)
+    course_params = params.require(:course).permit(:user_id, :title, :description, :rating, :main_image)
     course_params[:user_id] ||= session[:user_id]
     return course_params
   end

@@ -1,21 +1,92 @@
 <%# /users/:id %>
 
-<%= @user.username %>
+<h2><span class="purple-highlight"><%= @user.username %></span>'s Profile</h2>
 
 <% if @user.id == session[:user_id] %>
-  <%= link_to "Edit Profile", edit_user_url %>
+  <%= link_to "Edit Profile", edit_user_url, class: 'p-button' %>
 <% end %>
 
-<h1>Courses</h1>
+<h1 class="purple">Courses</h1>
 <% if @courses.length > 0 %>
-  <%= render @courses %>
+<div class="container-fluid">
+  <div class="row">
+      <% @courses.each_with_index do |course, i| %>
+          <div class="col-12 col-md-6 col-lg-4 align-center">
+            <div class="course-index-container">
+              <div class="img-container">
+                <% if course.main_image.attached? %>
+                  <%= image_tag course.main_image  %>
+                <% end %>
+              </div>
+              <h2 class="title"><a href="/courses/<%= course.id %>"><%= course.title %></a></h2>
+              <p class="author">
+                <b>By </b>
+                <%= link_to User.find(course.user_id).username, user_path(course.user_id) %>
+              </p>
+              <p class="rating">
+                <% course.rating.times do %>
+                  <%= image_tag "rating_star_y.png", class: 'rating-star' %>
+                <% end %>
+                <% if course.rating == 0 %>
+                  <%= "No rating" %>
+                <% end %>
+              </p>
+              <p class="desc">
+                <% if course.description %>
+                  <% if course.description.length >= 75 %>
+                    <%= course.description[(0..75)] + "..." %>
+                  <% else %>
+                    <%= course.description %>
+                  <% end %>
+                <% end %>
+              </p>
+            </div>
+          </div>
+      <% end %>
+  </div>
+</div>
 <% else %>
   <p>This user hasn't made any courses yet!</p>
 <% end %>
-<h1>Subscriptions</h1>
+  <h1 class="purple">Subscriptions</h1>
 <% if @subscriptions.length > 0 %>
-  <%= render @subscriptions %>
+  <div class="container-fluid">
+    <div class="row">
+        <% @subscriptions.each_with_index do |course, i| %>
+            <div class="col-12 col-md-6 col-lg-4 align-center">
+              <div class="course-index-container">
+                <div class="img-container">
+                  <% if course.main_image.attached? %>
+                    <%= image_tag course.main_image  %>
+                  <% end %>
+                </div>
+                <h2 class="title"><a href="/courses/<%= course.id %>"><%= course.title %></a></h2>
+                <p class="author">
+                  <b>By </b>
+                  <%= link_to User.find(course.user_id).username, user_path(course.user_id) %>
+                </p>
+                <p class="rating">
+                  <% course.rating.times do %>
+                    <%= image_tag "rating_star_y.png", class: 'rating-star' %>
+                  <% end %>
+                  <% if course.rating == 0 %>
+                    <%= "No rating" %>
+                  <% end %>
+                </p>
+                <p class="desc">
+                  <% if course.description %>
+                    <% if course.description.length >= 75 %>
+                      <%= course.description[(0..75)] + "..." %>
+                    <% else %>
+                      <%= course.description %>
+                    <% end %>
+                  <% end %>
+                </p>
+              </div>
+            </div>
+        <% end %>
+    </div>
+  </div>
 <% else %>
   <p>This user hasn't subscribed to any courses yet!</p>
 <% end %>
-

@@ -1,10 +1,18 @@
-<%= form_for @user do |form| %>
-  <%= form.label :username %>
-  <%= form.text_field :username %>
-  <%= form.label :password %>
-  <%= form.password_field :password %>
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-
-  <%= form.submit "Submit" %>
-<% end %>
+<div align="center">
+  <%= form_for @user do |form| %>
+    <%= form.label :username %>
+    <br>
+    <%= form.text_field :username %>
+    <br>
+    <%= form.label :password %>
+    <br>
+    <%= form.password_field :password %>
+    <br>
+    <%= form.label :email %>
+    <br>
+    <%= form.text_field :email %>
+    <br>
+    <%= form.submit "Submit", class: 'p-button' %>
+  <% end %>
+  <%= button_to "Delete Account", @user, method: :delete, class: 'p-button' %>
+</div>
