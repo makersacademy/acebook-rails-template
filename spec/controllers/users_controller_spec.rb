@@ -1,12 +1,31 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, type: :controller do
+RSpec.describe "/users", type: :request do
+  
   describe "GET /new " do
     it "responds with 200" do
-      get :new
+      get new_user_url
       expect(response).to have_http_status(200)
     end
   end
+
+    describe "GET /users/:id " do
+      it "responds with 200" do
+        get user_url(1)
+        expect(response).to have_http_status(200)
+      end
+    end
+  
+    describe "GET /users/:id/edit " do
+      it "responds with 200" do
+        get edit_user_url(1)
+        expect(response).to have_http_status(200)
+      end
+    end
+
+end
+
+RSpec.describe UsersController, type: :controller do
 
   describe "POST /" do
     it "redirects to login" do
@@ -17,20 +36,6 @@ RSpec.describe UsersController, type: :controller do
     it "creates a user" do
       post :create, params: { user: { username: "testing_user", password: "password", email: "someone@something.com" } }
       expect(User.find_by(username: "testing_user")).to be
-    end
-  end
-
-  describe "GET /users/:id " do
-    it "responds with 200" do
-      get :show, params: {id: 1}
-      expect(response).to have_http_status(200)
-    end
-  end
-
-  describe "GET /users/:id/edit " do
-    it "responds with 200" do
-      get :edit, params: {id: 1}
-      expect(response).to have_http_status(200)
     end
   end
 

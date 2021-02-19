@@ -67,8 +67,8 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    course_params = params.require(:course).permit(:user_id, :title, :avatar)
-    course_params[:user_id, :avatar] ||= session[:user_id]
+    course_params = params.require(:course).permit(:user_id, :title, :description, :rating, :main_image)
+    course_params[:user_id] ||= session[:user_id]
     return course_params
   end
 

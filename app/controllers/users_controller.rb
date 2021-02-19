@@ -24,7 +24,9 @@ class UsersController < ApplicationController
   # GET /users/:id
   def show
     @courses = Course.joins("INNER JOIN users ON courses.user_id = users.id").select("users.username, courses.*").where(user_id: @user.id)
-    @subscriptions = Course.joins("INNER JOIN users ON users.id = courses.user_id INNER JOIN subscriptions ON courses.id = subscriptions.course_id").select("users.username", "courses.*").where("subscriptions.user_id = #{session[:user_id]}")
+    #@subscriptions = Course.joins("INNER JOIN users ON users.id = courses.user_id INNER JOIN subscriptions ON courses.id = subscriptions.course_id").select("users.username", "courses.*").where("subscriptions.user_id = #{session[:user_id]}")
+    subscribed_course_ids = User.find(params[:id]).subscriptions.pluck(:course_id)
+    @subscriptions = Course.where(id: subscribed_course_ids)
   end
 
   # GET /users/1/edit
