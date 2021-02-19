@@ -30,6 +30,7 @@ class SubscriptionsController < ApplicationController
 
   def subscription_params
     { user_id: session[:user_id], course_id: params[:course_id] }
+    params.require(:user_id).permit(:course_id, :email, :avatar, subscription_params: [])
   end
 
 end

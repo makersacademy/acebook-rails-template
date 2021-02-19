@@ -1,5 +1,20 @@
 <%= form_for [@course, @post] do |form| %>
   <%= form.label :content %>
+  <%= form.file_field :contracts, multiple: true %>
+  # View
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Avatar:</strong><br />
+  <% if @profile.avatar.attached? %>
+    <%= form_for @profile do |f| %>
+      <%= f.fields_for :avatar_attachment_attributes do |avatar_form| %>
+	<%= avatar_form.hidden_field :id, value: @profile.avatar_attachment.id %>
+      <%= avatar_form.hidden_field :_destroy, value: true %>
+      <% end %>
+      <%= f.submit "Delete avatar" %>
+    <% end %>
+  <% end %>
+</p>
   <%= form.text_area :content %>
   <%= form.submit "Submit" %>
 <% end %>

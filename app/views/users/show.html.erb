@@ -3,19 +3,19 @@
 <%= @user.username %>
 
 <% if @user.id == session[:user_id] %>
-  <%= link_to "Edit Profile", edit_user_url %>
+<%= link_to "Edit Profile", edit_user_url %>
 <% end %>
 
 <h1>Courses</h1>
 <% if @courses.length > 0 %>
-  <%= render @courses %>
+<%= render @courses %>
 <% else %>
-  <p>This user hasn't made any courses yet!</p>
+<p>This user hasn't made any courses yet!</p>
 <% end %>
 <h1>Subscriptions</h1>
 <% if @subscriptions.length > 0 %>
-  <%= render @subscriptions %>
+<%= render @subscriptions %>
 <% else %>
-  <p>This user hasn't subscribed to any courses yet!</p>
+<p>This user hasn't subscribed to any courses yet!</p>
 <% end %>
 

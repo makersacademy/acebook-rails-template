@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   # GET /users/:id
   def show
     @courses = Course.joins("INNER JOIN users ON courses.user_id = users.id").select("users.username, courses.*").where(user_id: @user.id)
-    @subscriptions = Course.joins("INNER JOIN users ON users.id = courses.user_id INNER JOIN subscriptions ON courses.id = subscriptions.course_id").select("users.username", "courses.*").where("subscriptions.user_id = #{session[:user_id]}") 
+    @subscriptions = Course.joins("INNER JOIN users ON users.id = courses.user_id INNER JOIN subscriptions ON courses.id = subscriptions.course_id").select("users.username", "courses.*").where("subscriptions.user_id = #{session[:user_id]}")
   end
 
   # GET /users/1/edit
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :email)
+    params.require(:user).permit(:username, :password, :email, :avatar, avatar_attachment_attributes: [:id, :_destroy])
   end
 
 end
