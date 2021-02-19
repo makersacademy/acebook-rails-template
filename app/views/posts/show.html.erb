@@ -2,6 +2,5 @@
 
 <% if @post.course.user_id == session[:user_id] %>
   <%= link_to "Edit Post", edit_course_post_url %>
-  <%= button_to "Delete Post", [@course, @post], method: :delete %>
 <% end %>
 <%= @post.content %>
