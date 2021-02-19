@@ -3,7 +3,7 @@
 <h2><span class="purple-highlight"><%= @user.username %></span>'s Profile</h2>
 
 <% if @user.avatar.attached? %>
-  <%= image_tag @user.avatar, width: 250 %>
+  <%= image_tag @user.avatar.variant(gravity: "Center", crop: '250x250+0+0') %>
 <% else %>
   <%= image_tag "default-profile", width: 250%>
 <% end %>

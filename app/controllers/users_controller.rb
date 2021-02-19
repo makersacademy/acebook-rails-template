@@ -49,7 +49,7 @@ class UsersController < ApplicationController
     if params[:delete_avatar]
       @user.avatar.purge
       flash[:success] = 'Profile picture deleted!'
-      redirect_back fallback_location: "/"
+      redirect_to user_url(@user)
     else
       begin
         @user.destroy!
