@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :this_course, only: [:show, :edit, :update, :destroy]
 
   # get /courses
