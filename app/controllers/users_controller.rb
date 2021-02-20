@@ -24,16 +24,14 @@ class UsersController < ApplicationController
   # GET /users/:id
   def show
     @courses = Course.joins("INNER JOIN users ON courses.user_id = users.id").select("users.username, courses.*").where(user_id: @user.id)
-    #@subscriptions = Course.joins("INNER JOIN users ON users.id = courses.user_id INNER JOIN subscriptions ON courses.id = subscriptions.course_id").select("users.username", "courses.*").where("subscriptions.user_id = #{session[:user_id]}")
-    subscribed_course_ids = User.find(params[:id]).subscriptions.pluck(:course_id)
-    @subscriptions = Course.where(id: subscribed_course_ids)
+    @subscriptions = Course.joins("INNER JOIN users ON users.id = courses.user_id INNER JOIN subscriptions ON courses.id = subscriptions.course_id").select("users.username", "courses.*").where("subscriptions.user_id = #{session[:user_id]}")
   end
 
-  # GET /users/1/edit
+  # GET /users/:id/edit
   def edit
   end
 
-  # PATCH/PUT /users/1
+  # PATCH/PUT /users/:id
   def update
     begin
       @user.update!(user_params)
@@ -46,16 +44,22 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
+  # DELETE /users/:id
   def destroy
-    begin
-      @user.destroy!
-    rescue => exception
-      flash[:danger] = exception
-      redirect_back fallback_location: "/"
+    if params[:delete_avatar]
+      @user.avatar.purge
+      flash[:success] = 'Profile picture deleted!'
+      redirect_to user_url(@user)
     else
-      flash[:success] = 'Account deleted!'
-      redirect_to "/logout"
+      begin
+        @user.destroy!
+      rescue => exception
+        flash[:danger] = exception
+        redirect_back fallback_location: "/"
+      else
+        flash[:success] = 'Account deleted!'
+        redirect_to "/logout"
+      end
     end
   end
 
@@ -66,7 +70,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :email, :avatar, avatar_attachment_attributes: [:id, :_destroy])
+    params.require(:user).permit(:username, :password, :email, :avatar)
   end
 
 end

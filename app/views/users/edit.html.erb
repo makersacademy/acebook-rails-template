@@ -1,2 +1,4 @@
 <%# /users/:id/edit %>
 <%= render "user_form" %>
+<%= button_to "Delete Profile Picture", @user, method: :delete, params: { delete_avatar: true } %>
+<%= button_to "Delete Account", @user, method: :delete %>

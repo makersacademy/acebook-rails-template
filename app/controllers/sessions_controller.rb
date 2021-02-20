@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   # POST /session
   def create
-    user.find_by_username(params[:username])
+    user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Logged in!"

@@ -1,3 +1,4 @@
 <%# /courses/:id/posts/:id/edit %>
 
 <%= render "post_form" %>
+<%= button_to "Delete Post", [@course, @post], method: :delete %>
