@@ -7,10 +7,14 @@
         <%= image_tag course.main_image  %>
       <% end %>
     </div>
-    <h2 class="title"><a href="/courses/<%= course.id %>"><%= course.title %></a></h2>
+    <% if course.title.length >= 25 %>
+      <h2 class="title"><%= link_to course.title[(0..25)] + "...", course %></a></h2>
+    <% else %>
+      <h2 class="title"><%= link_to course.title, course_url(course) %></a></h2>
+    <% end %>
     <p class="author">
       <b>By </b>
-      <%= link_to User.find(course.user_id).username, user_path(course.user_id) %>
+      <%= link_to course.username, user_path(course.user_id) %>
     </p>
     <p class="rating">
       <% course.rating.times do %>

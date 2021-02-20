@@ -64,7 +64,7 @@ class CoursesController < ApplicationController
   private
 
   def this_course
-    @course = Course.find(params[:id])
+    @course = Course.joins("INNER JOIN users ON courses.user_id = users.id").select("users.username, courses.*").find(params[:id])
   end
 
   def course_params
