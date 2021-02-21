@@ -15,17 +15,17 @@ local:
 #   bucket: your_own_bucket
 
 # Remember not to checkin your GCS keyfile to a repository
-google_dev:
+google:
   service: GCS
   project: knowledge-pill
   credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
   bucket: knowledge-pill-production
 
-google:
+google_dev:
   service: GCS
   project: knowledge-pill
-  credentials: ENV
-  bucket: knowledge-pill-production
+  credentials: <%= Rails.root.join("config/secrets/knowledge-pill-305517-f28ce246f924.json") %>
+  bucket: knowledge-pill-atiyyah
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
