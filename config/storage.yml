@@ -5,3 +5,15 @@ local:
 test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
+
+google:
+  service: GCS
+  project: knowledge-pill
+  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
+  bucket: knowledge-pill-atiyyah
+
+google_dev:
+  service: GCS
+  project: knowledge-pill
+  credentials: <%= Rails.root.join("config/secrets/knowledge-pill-305517-f28ce246f924.json") %>
+  bucket: knowledge-pill-atiyyah
