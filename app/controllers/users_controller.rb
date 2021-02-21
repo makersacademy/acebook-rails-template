@@ -27,11 +27,11 @@ class UsersController < ApplicationController
     @subscriptions = Course.joins("INNER JOIN users ON users.id = courses.user_id INNER JOIN subscriptions ON courses.id = subscriptions.course_id").select("users.username", "courses.*").where("subscriptions.user_id = #{session[:user_id]}")
   end
 
-  # GET /users/1/edit
+  # GET /users/:id/edit
   def edit
   end
 
-  # PATCH/PUT /users/1
+  # PATCH/PUT /users/:id
   def update
     begin
       @user.update!(user_params)
@@ -44,16 +44,22 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
+  # DELETE /users/:id
   def destroy
-    begin
-      @user.destroy!
-    rescue => exception
-      flash[:danger] = exception
-      redirect_back fallback_location: "/"
+    if params[:delete_avatar]
+      @user.avatar.purge
+      flash[:success] = 'Profile picture deleted!'
+      redirect_to user_url(@user)
     else
-      flash[:success] = 'Account deleted!'
-      redirect_to "/logout"
+      begin
+        @user.destroy!
+      rescue => exception
+        flash[:danger] = exception
+        redirect_back fallback_location: "/"
+      else
+        flash[:success] = 'Account deleted!'
+        redirect_to "/logout"
+      end
     end
   end
 
@@ -64,7 +70,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :email, :avatar, avatar_attachment_attributes: [:id, :_destroy])
+    params.require(:user).permit(:username, :password, :email, :avatar)
   end
 
 end

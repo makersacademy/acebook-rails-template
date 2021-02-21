@@ -1,20 +1,37 @@
 <%# Individual course %>
 
-<div onclick="location.href='<%= course_path(course.id) %>';">
-  <h4><%= course.title %></h4>
-# View
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Avatar:</strong><br />
-  <% if @profile.avatar.attached? %>
-    <%= form_for @profile do |f| %>
-      <%= f.fields_for :avatar_attachment_attributes do |avatar_form| %>
-	<%= avatar_form.hidden_field :id, value: @profile.avatar_attachment.id %>
-      <%= avatar_form.hidden_field :_destroy, value: true %>
+<div class="col-12 col-md-6 col-lg-4 align-center">
+  <div class="course-index-container" onclick="location.href='<%= course_path(course.id) %>';">
+    <div class="img-container">
+      <% if course.main_image.attached? %>
+        <%= image_tag course.main_image  %>
       <% end %>
-      <%= f.submit "Delete avatar" %>
+    </div>
+    <% if course.title.length >= 25 %>
+      <h2 class="title"><%= link_to course.title[(0..25)] + "...", course %></a></h2>
+    <% else %>
+      <h2 class="title"><%= link_to course.title, course_url(course) %></a></h2>
     <% end %>
-  <% end %>
-</p>
-  <p><%= link_to course.username, user_path(course.user_id) %></p>
+    <p class="author">
+      <b>By </b>
+      <%= link_to course.username, user_path(course.user_id) %>
+    </p>
+    <p class="rating">
+      <% course.rating.times do %>
+        <%= image_tag "rating_star_y.png", class: 'rating-star' %>
+      <% end %>
+      <% if course.rating == 0 %>
+        <%= "No rating" %>
+      <% end %>
+    </p>
+    <p class="desc">
+      <% if course.description %>
+        <% if course.description.length >= 75 %>
+          <%= course.description[(0..75)] + "..." %>
+        <% else %>
+          <%= course.description %>
+        <% end %>
+      <% end %>
+    </p>
+  </div>
 </div>

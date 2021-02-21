@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :this_course, only: [:show, :edit, :update, :destroy]
 
   # get /courses
@@ -63,12 +64,13 @@ class CoursesController < ApplicationController
   private
 
   def this_course
-    @course = Course.find(params[:id])
+    @course = Course.joins("INNER JOIN users ON courses.user_id = users.id").select("users.username, courses.*").find(params[:id])
   end
 
   def course_params
-    course_params = params.require(:course).permit(:user_id, :title, :avatar)
-    course_params[:user_id, :avatar] ||= session[:user_id]
+    course_params = params.require(:course).permit(:user_id, :title, :description, :rating, :main_image)
+    course_params[:user_id] ||= session[:user_id]
+    # for adding a new course
     return course_params
   end
 
