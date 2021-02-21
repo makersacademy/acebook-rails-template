@@ -33,6 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem "actiontext", require: "action_text"
 gem "image_processing"
 gem 'webpacker'
+gem 'google-cloud-storage'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
