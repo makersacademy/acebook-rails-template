@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Knowledge Pill</title>
+    <title>Knowledge Pill</title> 
+    <%= favicon_link_tag asset_path("navbar-brand.png") %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -17,30 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar bg-light">
-      <a href="#" class="navbar-brand">Knowledge Pill</a>
-      <%= image_tag "navbar-brand.png", class: "navbar-brand-img" %>
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link purple-highlight" href="/courses">Courses</a>
-        </li>
-        <% if not user_logged_in? %>
-          <li class="nav-item">
-            <a class="nav-link purple-highlight" href="/signup">Register</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link purple-highlight" href="/login">Sign in</a>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <a class="nav-link purple-highlight" href="/users/<%= session[:user_id] %>">My Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link purple-highlight" href="/logout">Log out</a>
-          </li>
-        <% end %>
-      </ul>
-    </nav>
+    <%= render "layouts/navbar" %>
     <% flash.each do |key, value| %>
       <div id="flash">
         <div id="inner-flash" class="alert alert-<%= key %>"><%= value %></div>
