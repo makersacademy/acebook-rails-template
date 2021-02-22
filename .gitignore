@@ -21,4 +21,16 @@
 /yarn-error.log
 
 .byebug_history
-.vscode
+/.vscode
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+/storage
+.DS_Store
+/config/secrets
+/config/master.key

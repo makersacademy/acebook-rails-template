@@ -1,5 +1,6 @@
 <%= form_for [@course, @post] do |form| %>
-  <%= form.label :content %>
-  <%= form.text_area :content %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <%= form.rich_text_area :content %>
   <%= form.submit "Submit" %>
 <% end %>

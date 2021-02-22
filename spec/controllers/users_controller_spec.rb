@@ -58,9 +58,15 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to redirect_to("/logout")
     end
 
-    it "deletes a user" do
-      put :destroy, params: { id: 1 }
-      expect(User.find_by(username: "testing_user")).not_to be
+    # it "deletes a user" do
+    #   put :destroy, params: { id: 1 }
+    #   expect(User.find_by(username: "testuser1")).not_to be
+    # end
+
+    it "deletes user's avatar" do
+      put :destroy, params: { id: 1, delete_avatar: true }
+      expect(User.find_by(username: "testuser1")).to be
+      # Expect user to still exist
     end
   end
 end
