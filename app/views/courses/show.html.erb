@@ -21,13 +21,11 @@
 
 <div id="buttons">
   <% if @subscription.valid? %>
-    <%= button_to 'Unsubscribe', course_subscription_path(@course, @subscription), method: :delete, class: 'p-button' %>
+    <%= button_to 'Unsubscribe', course_subscription_path(@course, @subscription), method: :delete, class: 's-button purple-highlight' %>
     <%= render "ratings/rating_form" %>
-    <%= link_to "See Posts", course_posts_path(@course) %>
   <% elsif @course.user_id == session[:user_id] %>
-    <%= link_to "See Posts", course_posts_path(@course) %>
   <% else %>
-    <%= button_to "Subscribe",  course_subscriptions_path(@course, @subscription), method: :create, class: 'p-button' %>
+    <%= button_to "Subscribe",  course_subscriptions_path(@course, @subscription), method: :create, class: 's-button purple-highlight' %>
     <p>Please subscribe to see posts</p>
   <% end %>
 </div>
@@ -43,7 +41,7 @@
 <div class="tab-content">
   
   <div id="course" class="tab-pane active">
-    
+    <%= render "posts/index" %>
   </div>
   
   <div id="edit" class="tab-pane">

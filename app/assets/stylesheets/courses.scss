@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// NEW COURSE
+
 #course_title, #course_description {
   width: 60%;
   margin-bottom: 0.5rem;
@@ -26,4 +28,26 @@
   background: white;
   cursor: inherit;
   display: block;
+}
+
+// SHOW COURSE
+
+#buttons{
+  text-align: center;
+  margin: 0.5rem;
+}
+#buttons form{
+  display: inline;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+
 }

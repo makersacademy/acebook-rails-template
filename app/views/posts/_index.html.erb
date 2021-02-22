@@ -1,0 +1,10 @@
+<%# /courses/:id/posts %>
+
+<% if @course.user_id == session[:user_id] %>
+  <%= button_to "Add Post", new_course_post_path(@course), method: :get %>
+<% end %>
+<% if @course.posts.length == 0 %>
+  <p>No posts yet!</p>
+<% else %>
+  <%= render @course.posts %>
+<% end %>
