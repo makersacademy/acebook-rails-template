@@ -23,38 +23,8 @@ class UsersController < ApplicationController
 
   # GET /users/:id
   def show
-    @courses = Course.find_by_sql("
-      SELECT
-        users.username,
-        courses.*
-      FROM (
-        SELECT
-          AVG(coalesce(ratings.value, 0)) AS rating,
-          courses.*
-        FROM
-          courses
-        FULL JOIN ratings ON courses.id = ratings.course_id
-      GROUP BY
-        courses.id) AS courses
-        JOIN users ON users.id = courses.user_id;")
-
-    @subscriptions = Course.find_by_sql("
-      SELECT
-        users.username,
-        courses.*
-      FROM (
-        SELECT
-          AVG(coalesce(ratings.value, 0)) AS rating,
-          courses.*
-        FROM
-          courses
-        FULL JOIN ratings ON courses.id = ratings.course_id
-      GROUP BY
-        courses.id) AS courses
-        JOIN users ON users.id = courses.user_id
-        JOIN subscriptions ON subscriptions.course_id = courses.id
-      WHERE
-        subscriptions.user_id = #{session[:user_id]};")
+    @courses = Course.joins("INNER JOIN users ON courses.user_id = users.id").select("users.username, courses.*").where(user_id: @user.id)
+    @subscriptions = Course.joins("INNER JOIN users ON users.id = courses.user_id INNER JOIN subscriptions ON courses.id = subscriptions.course_id").select("users.username", "courses.*").where("subscriptions.user_id = #{session[:user_id]}")
   end
 
   # GET /users/:id/edit
