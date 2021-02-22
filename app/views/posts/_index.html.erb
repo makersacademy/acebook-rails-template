@@ -6,6 +6,9 @@
 <div id="posts" <%= 'class=blur' unless @subscription.valid? || @course.user_id == session[:user_id] %>>
   <% if @course.posts.length == 0 %>
     <p>No posts yet!</p>
+  <% elsif @course.posts.length > 10 %>
+    <%= render @course.posts[0...10] %>
+    <%= button_to "See More", course_posts_path(@course), method: :get, class: "p-button" %>
   <% else %>
     <%= render @course.posts %>
   <% end %>
