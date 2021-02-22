@@ -239,6 +239,8 @@ GEM
       tilt (~> 2.0)
     sinatra-flash (0.3.0)
       sinatra (>= 1.0.0)
+    sinatra-reloader (1.0)
+      sinatra-contrib
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -291,9 +293,8 @@ DEPENDENCIES
   simplecov-console
   sinatra
   sinatra-activerecord
-  sinatra-contrib
   sinatra-flash
-  tzinfo-data
+  sinatra-reloader
   uglifier
   web-console
 

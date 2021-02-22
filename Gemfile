@@ -23,7 +23,7 @@ gem 'rake'
 gem 'sass-rails'
 gem 'sinatra'
 gem 'sinatra-activerecord'
-gem 'sinatra-contrib'
+gem 'sinatra-reloader'
 gem 'sinatra-flash'
 # gem 'thin'
 # Use Uglifier as compressor for JavaScript assets
@@ -59,4 +59,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
