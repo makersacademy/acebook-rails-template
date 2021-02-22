@@ -1,10 +1,5 @@
 <%# /courses/:id %>
 
-<% if @course.main_image.attached? %>
-  <%= image_tag @course.main_image %>
-<% end %>
-<%# COURSE IMAGE %>
-
 <ul class="nav nav-tabs">
   <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#course">View Course</a></li>
   <% if @course.user_id == session[:user_id] %>
@@ -17,9 +12,22 @@
   
   <div id="course" class="tab-pane active">
     
-    <%= @course.title %>
-    By <%= link_to @course.username, user_url(@course.user_id) %>
-    Rating: <%= @course.ratings.average(:value) || "Not rated yet!" %>
+    <div class="container-fluid">
+      <div class="row i-purple-cont">
+        <div class="col-12">
+          <div class="i-course-img-container">
+            <%= image_tag @course.main_image %>
+          </div>
+          <div class="i-course-info">
+            <h2><%= @course.title %></h2>
+            <p><%= @course.description %></p>
+            <a href="<%= user_path(@course.user_id) %>">By <%= @course.get_course_user_name %></a>
+            <br>
+            Added on <%= @course.created_at.strftime("%B %Y") %>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <% if @subscription.valid? %>
       <%= button_to 'Unsubscribe', course_subscription_path(@course, @subscription), method: :delete, class: 'p-button' %>
