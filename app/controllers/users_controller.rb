@@ -23,38 +23,23 @@ class UsersController < ApplicationController
 
   # GET /users/:id
   def show
-    @courses = Course.find_by_sql("
+    @all_courses = Course.find_by_sql("
       SELECT
         users.username,
         courses.*
       FROM (
-        SELECT
-          AVG(coalesce(ratings.value, 0)) AS rating,
-          courses.*
-        FROM
-          courses
-        FULL JOIN ratings ON courses.id = ratings.course_id
-      GROUP BY
-        courses.id) AS courses
+          SELECT
+            courses.*,
+            AVG(coalesce(ratings.value, 0)) AS rating,
+            bool_or( EXISTS (SELECT id FROM subscriptions WHERE subscriptions.course_id = courses.id AND subscriptions.user_id = #{params[:id]})) as is_subbed
+          FROM
+            courses
+          FULL JOIN ratings ON courses.id = ratings.course_id
+          GROUP BY
+          courses.id) 
+        AS courses
         JOIN users ON users.id = courses.user_id;")
-
-    @subscriptions = Course.find_by_sql("
-      SELECT
-        users.username,
-        courses.*
-      FROM (
-        SELECT
-          AVG(coalesce(ratings.value, 0)) AS rating,
-          courses.*
-        FROM
-          courses
-        FULL JOIN ratings ON courses.id = ratings.course_id
-      GROUP BY
-        courses.id) AS courses
-        JOIN users ON users.id = courses.user_id
-        JOIN subscriptions ON subscriptions.course_id = courses.id
-      WHERE
-        subscriptions.user_id = #{session[:user_id]};")
+        # returns all courses, their ratings, the user that created them, and whether the user is subscribed to them
   end
 
   # GET /users/:id/edit
