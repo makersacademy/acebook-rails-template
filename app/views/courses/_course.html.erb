@@ -16,14 +16,6 @@
       <b>By </b>
       <%= link_to course.username, user_path(course.user_id) %>
     </p>
-    <p class="rating">
-      <% course.rating.times do %>
-        <%= image_tag "rating_star_y.png", class: 'rating-star' %>
-      <% end %>
-      <% if course.rating == 0 %>
-        <%= "No rating" %>
-      <% end %>
-    </p>
     <p class="desc">
       <% if course.description %>
         <% if course.description.length >= 75 %>
