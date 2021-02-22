@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
 
   # get /courses
   def index
-    @courses = Course.find_by_sql("SELECT	
+    @courses = Course.with_attached_main_image.find_by_sql("SELECT	
                                     users.username,	
                                     courses.*	
                                   FROM (	
@@ -16,7 +16,8 @@ class CoursesController < ApplicationController
                                     FULL JOIN ratings ON courses.id = ratings.course_id	
                                   GROUP BY	
                                     courses.id) AS courses	
-                                    JOIN users ON users.id = courses.user_id;")	
+                                    JOIN users ON users.id = courses.user_id;")
+  @courses.each
   end
 
   # get /courses/new
