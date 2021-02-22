@@ -39,7 +39,7 @@ class UsersController < ApplicationController
           courses.id) 
         AS courses
         JOIN users ON users.id = courses.user_id
-        WHERE user_id = 2
+        WHERE user_id = #{params[:id]}
         OR is_subbed = true;")
         # returns all courses, their ratings, the user that created them, and whether the user is subscribed to them
   end
