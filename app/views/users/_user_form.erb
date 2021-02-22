@@ -1,29 +1,10 @@
-<!-- <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
-    <input type="username" class="form-control" id="exampleInputUsername1" aria-describedby="usernameHelp" placeholder="Enter username">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your personal details with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">Example file input</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
-
-</form> -->
-
-
-
 <%= form_for @user do |form| %>
   <div class="field form-group col-md-6">
     <%= form.label :username %>
     <%= form.text_field :username, class:"form-control" %>
   </div>
 
-<div class="field form-group col-md-6">
+  <div class="field form-group col-md-6">
     <%= form.label :password %>
     <%= form.password_field :password, class:"form-control" %>
   </div>
@@ -38,6 +19,6 @@
   </div>
 
   <div class="actions form-group col-lg-2">
-    <%= form.submit "Submit"  %>
-    </div>
+    <%= form.submit class:"btn btn-primary btn-block py-2" %>
+  </div>
 <% end %>
