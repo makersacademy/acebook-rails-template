@@ -1,24 +1,9 @@
 <%# /courses %>
-
-<%= link_to "Create new course", new_course_url %>
+<br>
+<%= link_to "Create new course", new_course_url, class: 'p-button ml-st' %>
 
 <div class="container-fluid">
   <div class="row">
-      <% @courses.each_with_index do |course, i| %>
-          <div class="col-12 col-md-6 col-lg-4 align-center">
-            <div class="course-index-container">
-              <h2 class="title"><a href="/courses/<%= course.id %>"><%= course.title %></a></h2>
-              <p>
-                <% course.rating.times do %>
-                  <%= image_tag "rating_star.svg", class: 'rating-star' %>
-                <% end %>
-              </p>
-              <p class="desc">
-                <%= course.title[(0..75)] %>
-                <%= "..." if course.title.length >= 75 %>
-              </p>
-            </div>
-          </div>
-      <% end %>
+      <%= render @courses %>
   </div>
 </div>

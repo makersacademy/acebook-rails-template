@@ -1,21 +1,35 @@
 <%# /users/:id %>
 
-<%= @user.username %>
+<h2><span class="purple-highlight"><%= @user.username %></span>'s Profile</h2>
 
-<% if @user.id == session[:user_id] %>
-  <%= link_to "Edit Profile", edit_user_url %>
+<% if @user.avatar.attached? %>
+  <%= image_tag @user.avatar.variant(gravity: "Center", crop: '250x250+0+0') %>
+<% else %>
+  <%= image_tag "default-profile.png", width: 250%>
 <% end %>
 
-<h1>Courses</h1>
+<% if @user.id == session[:user_id] %>
+  <%= link_to "Edit Profile", edit_user_url, class: 'p-button' %>
+<% end %>
+
+<h1 class="purple">Courses</h1>
 <% if @courses.length > 0 %>
-  <%= render @courses %>
+  <div class="container-fluid">
+    <div class="row">
+      <%= render @courses %>
+    </div>
+  </div>
 <% else %>
   <p>This user hasn't made any courses yet!</p>
 <% end %>
-<h1>Subscriptions</h1>
+
+<h1 class="purple">Subscriptions</h1>
 <% if @subscriptions.length > 0 %>
-  <%= render @subscriptions %>
+  <div class="container-fluid">
+    <div class="row">
+        <%= render @subscriptions %>
+    </div>
+  </div>
 <% else %>
   <p>This user hasn't subscribed to any courses yet!</p>
 <% end %>
-
