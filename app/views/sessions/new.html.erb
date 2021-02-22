@@ -1,17 +1,27 @@
 <%# /login %>
 <br>
 <div class="field form-group col-md-4">
-<%= form_tag sessions_url do %>
-  <%= text_field_tag :username, nil, placeholder: "Username", class: "form-control" %>
-  <%= password_field_tag :password, nil, placeholder: "Password", class: "form-control"  %>
-  <%= submit_tag "Log In", class: "btn btn-primary btn-block"%>
+  <%= form_tag sessions_url do %>
+    <label> Username </label>
+  <%= text_field_tag :username, nil, class: "form-control" %>
 </div>
-<% end %>
+
+<div class="field form-group col-md-4">
+  <label> Password </label>
+    <%= password_field_tag :password, nil, class: "form-control"  %>
+</div>
 
 <!-- check box. Remembers username -->
-  <div class="form-check mb-2 mr-sm-2">
-      <label class="form-check-label" for="inlineFormCheck">
-        Remember me
-      </label>
-    <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+<div class="form-check mb-2 mr-sm-2">
+  <label class="form-check-label" for="inlineFormCheck">
+    Remember me
+  </label>
+  <input class="form-check-input" type="checkbox" id="inlineFormCheck">
 </div>
+
+
+<div class="actions form-group col-lg-2">
+  <button type="submit" class="btn btn-primary">Log In</button>
+</div>
+
+<% end %>
