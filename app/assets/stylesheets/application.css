@@ -18,6 +18,54 @@ body * {
   font-family: 'Montserrat';
 }
 
+.i-purple-cont {
+  background: #918BFE;
+  padding: 70px;
+  padding-left: 140px;
+  min-height: 600px;
+}
+
+.i-course-img-container {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background: black;
+  border-radius: 16px;
+  border: 3px solid white;
+  overflow: hidden;
+}
+
+.i-course-img-container > img {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+}
+
+.i-course-info {
+  position: relative;
+  height: 200px;
+  padding-top: 20px;
+  color: black;
+}
+
+.i-course-info > h2 {
+  font-weight: 600;
+  font-size: 2.35em;
+}
+
+.i-course-info > p {
+  font-size: 1.5em;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+.i-course-info > a {
+  color: white;
+  font-weight: 500;
+  font-size: 1.1em;
+  text-decoration: underline;
+}
+
 .align-end {
   text-align: right;
 }
@@ -272,12 +320,13 @@ textarea, input {
 }
 
 footer {
-  position: relative;
+  position: absolute;
   height: 30px;
   background: #f4f4f4;
   width: 100vw;
   margin-top: 70px;
   padding-top: 5px;
+  bottom: 0px;
 }
 
 footer p {
