@@ -14,4 +14,17 @@ RSpec.describe RatingsController, type: :controller do
     end
   end
 
+  describe "PATCH/PUT courses/:course_id/posts/:id" do
+    it "redirects back" do
+      put :update, params: { course_id: 1, id: 1, rating: { value: 2 } }
+      expect(response).to redirect_to("/")
+    end
+
+    it "edits a post" do
+      put :update, params: { course_id: 1, id: 1, rating: { value: 2 } }
+      expect(Rating.find_by(value: 5)).not_to be
+      expect(Rating.find_by(value: 2)).to be
+    end
+  end
+
 end

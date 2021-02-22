@@ -1,6 +1,5 @@
 class RatingsController < ApplicationController
-  before_action :this_post, only: [:update, :destroy]
-  before_action :this_course
+  before_action :this_rating, only: [:update, :destroy]
   
   # POST /courses/:course_id/ratings
   def create
@@ -10,6 +9,8 @@ class RatingsController < ApplicationController
 
   # PATCH/PUT /courses/:course_id/ratings/:id
   def update
+    @rating.update(rating_params)
+    redirect_back fallback_location: "/"
   end
 
   # DELETE /courses/:course_id/ratings/:id
@@ -20,10 +21,6 @@ class RatingsController < ApplicationController
 
   def this_rating
     @rating = Rating.find(params[:id])
-  end
-
-  def this_course
-    @course = Course.find(params[:course_id])
   end
 
   def rating_params
