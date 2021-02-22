@@ -19,6 +19,9 @@ Rating: <%= @course.ratings.average(:value) || "Not rated yet!" %>
       <%= f.select(:value, options_for_select([1,2,3,4,5])) %>
       <%= f.submit %>
     <% end %>
+    <% if @rating.valid? %>
+      <%= button_to 'Delete Rating', course_rating_path(@course, @rating), method: :delete %>
+    <% end %>
 
   <% else %>
     
