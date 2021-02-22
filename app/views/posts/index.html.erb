@@ -1,5 +1,5 @@
 <% @posts.reverse.each do |post| %>
-  <p><%= post.message %></p>
+  <p><%= post.message.gsub(/\n/, '<br/>').html_safe %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
