@@ -2,11 +2,6 @@ class PostsController < ApplicationController
   before_action :this_post, only: [:show, :edit, :update, :destroy]
   before_action :this_course
   
-  # get /courses/:id/posts
-  def index
-    @posts = Post.where(course_id: params[:course_id]).order(:position)
-  end
-  
   # get /courses/:id/posts/new
   def new
     @course = Course.find(params[:course_id])
