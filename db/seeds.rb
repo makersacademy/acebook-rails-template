@@ -16,6 +16,7 @@ Course.create(
   user_id: 1,
   title: "Intro to Ruby",
   description: "Sample course description. This description is longer. Than other descriptions. End description",
-  rating: 5
 )
+
 Post.create(course_id: 1, title: "Test Post", content: "Hello World")
+Rating.create( user_id: 1, course_id: 1, value: 5)

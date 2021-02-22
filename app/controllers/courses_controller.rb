@@ -4,7 +4,19 @@ class CoursesController < ApplicationController
 
   # get /courses
   def index
-    @courses = Course.joins("INNER JOIN users ON courses.user_id = users.id").select("users.username, courses.*")
+    @courses = Course.find_by_sql("SELECT	
+                                    users.username,	
+                                    courses.*	
+                                  FROM (	
+                                    SELECT	
+                                      AVG(coalesce(ratings.value, 0)) AS rating,	
+                                      courses.*	
+                                    FROM	
+                                      courses	
+                                    FULL JOIN ratings ON courses.id = ratings.course_id	
+                                  GROUP BY	
+                                    courses.id) AS courses	
+                                    JOIN users ON users.id = courses.user_id;")	
   end
 
   # get /courses/new
