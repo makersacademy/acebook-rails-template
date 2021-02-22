@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   
   # get /courses/:id/posts
   def index
-    @posts = Post.where(course_id: params[:course_id]).order(:position)
+    @posts = Post.with_rich_text_content.where(course_id: params[:course_id]).order(:position)
     @subscription = Subscription.find_by(course_id: params[:course_id], user_id: session[:user_id]) || Subscription.new()
   end
   
