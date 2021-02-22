@@ -40,14 +40,42 @@
   display: inline;
 }
 
+.center-align{
+  text-align: center;
+}
+
+#course-content{
+  width: 80%;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.tab-content{
+  margin-top: 1rem;
+  min-height: 500px;
+}
+
+.danger{
+  margin-top: 0.5rem;
+  background: white;
+  border-radius: 30px;
+  width: min-content;
+  height: 45px;
+  padding: 10px 10px 10px 10px;
+  color: red;
+  outline: none;
+  border: 1.5px solid red;
+  cursor: pointer;
+}
+
 .blur {
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
   filter: blur(5px);
-  width: 100px;
-  height: 100px;
-  background-color: #ccc;
-
+  width: 100%;
+  min-height: 500px;
+  background-color: #F1F1F1;
+  z-index: -1;
 }
