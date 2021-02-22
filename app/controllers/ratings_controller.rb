@@ -3,20 +3,41 @@ class RatingsController < ApplicationController
   
   # POST /courses/:course_id/ratings
   def create
-    Rating.create(rating_params)
-    redirect_back fallback_location: "/"
+    begin
+      Rating.create(rating_params)
+    rescue => exception
+      flash[:danger] = exception
+    else
+      flash[:success] = "Added your rating!"
+    ensure
+      redirect_back fallback_location: "/"
+    end
   end
 
   # PATCH/PUT /courses/:course_id/ratings/:id
   def update
-    @rating.update(rating_params)
-    redirect_back fallback_location: "/"
+    begin
+      @rating.update(rating_params) 
+    rescue => exception
+      flash[:danger] = exception
+    else
+      flash[:success] = "Updated your rating!"
+    ensure
+      redirect_back fallback_location: "/"
+    end 
   end
 
   # DELETE /courses/:course_id/ratings/:id
   def destroy
-    @rating.destroy
-    redirect_back fallback_location: "/"
+    begin
+      @rating.destroy
+    rescue => exception
+      flash[:danger] = exception
+    else
+      flash[:success] = "Deleted your rating!"
+    ensure
+      redirect_back fallback_location: "/"
+    end
   end
 
   private
