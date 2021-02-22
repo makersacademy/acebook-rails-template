@@ -36,11 +36,9 @@ ExecJS::RuntimeUnavailable:
 
 That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` - and then run `bundle exec rspec` again
 
----
-
 2. **Licensing:** This project is licensed under the [GNU GPL v.3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-3. **Authors:** This repository is a joint project between its collaborators; @HamishArro, @RTurney, @JoshSinyor, and @mscwilson.
+3. **Authors:** This repository is a joint project between its collaborators.
 
 ---
 
