@@ -15,6 +15,8 @@ class RatingsController < ApplicationController
 
   # DELETE /courses/:course_id/ratings/:id
   def destroy
+    @rating.destroy
+    redirect_back fallback_location: "/"
   end
 
   private
