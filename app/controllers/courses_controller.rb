@@ -45,10 +45,6 @@ class CoursesController < ApplicationController
     # if subscribed, gets that subscription, else creates new subscription (so that can render @subscription )
   end
 
-  # get courses/:id/edit
-  def edit
-  end
-
   # put/patch courses/:id
   def update
     begin

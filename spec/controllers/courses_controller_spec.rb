@@ -22,13 +22,6 @@ RSpec.describe "/courses", type: :request do
     end
   end
 
-  describe "GET courses/:id/edit" do
-    it "responds with 200" do
-      get edit_course_url(1)
-      expect(response).to have_http_status(200)
-    end
-  end
-
 end
 
 RSpec.describe CoursesController, type: :controller do
