@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_214712) do
+ActiveRecord::Schema.define(version: 2021_02_21_183711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2021_02_21_214712) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+    t.integer "rating", default: 0
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
@@ -70,16 +71,6 @@ ActiveRecord::Schema.define(version: 2021_02_21_214712) do
     t.integer "position"
     t.string "title"
     t.index ["course_id"], name: "index_posts_on_course_id"
-  end
-
-  create_table "ratings", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "course_id"
-    t.integer "value"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["course_id"], name: "index_ratings_on_course_id"
-    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "subscriptions", force: :cascade do |t|
@@ -103,6 +94,4 @@ ActiveRecord::Schema.define(version: 2021_02_21_214712) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "courses", "users"
   add_foreign_key "posts", "courses"
-  add_foreign_key "ratings", "courses"
-  add_foreign_key "ratings", "users"
 end

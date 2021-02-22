@@ -5,7 +5,7 @@
 <% if @user.avatar.attached? %>
   <%= image_tag @user.avatar.variant(gravity: "Center", crop: '250x250+0+0') %>
 <% else %>
-  <%= image_tag "default-profile.png", width: 250%>
+  <%= image_tag "default-profile.png", width: 250 %>
 <% end %>
 
 <% if @user.id == session[:user_id] %>

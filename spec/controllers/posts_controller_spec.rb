@@ -64,7 +64,7 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to redirect_to("/courses/1/posts")
     end
 
-    it "deletes a post" do
+    it "edits a post" do
       put :destroy, params: { course_id: 1, id: 1 }
       expect(Post.find_by(content: "Hello World")).not_to be
     end
