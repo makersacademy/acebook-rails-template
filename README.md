@@ -65,8 +65,32 @@ Actions are *italic*. Nouns are **bold**. Attributes of nouns are **_bold italic
 ##### User Story 01
 
 &nbsp;&nbsp;&nbsp;As a user,<br>
-&nbsp;&nbsp;&nbsp;<br>
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;So I can use AceBook<br>
+&nbsp;&nbsp;&nbsp;I would like to be able to sign up to Acebook<br>
+
+##### User Story 02
+
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;So I can access my account on AceBook<br>
+&nbsp;&nbsp;&nbsp;I would like to be able to login to Acebook<br>
+
+##### User Story 03
+
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;So I can share my annoying political opinions<br>
+&nbsp;&nbsp;&nbsp;I would like to be able to make a post on Acebook<br>
+
+##### User Story 04
+
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;So I can see what others are saying<br>
+&nbsp;&nbsp;&nbsp;I would like to be able to see all posts on Acebook<br>
+
+##### User Story 05
+
+&nbsp;&nbsp;&nbsp;As a user,<br>
+&nbsp;&nbsp;&nbsp;So I can see what my friends are saying<br>
+&nbsp;&nbsp;&nbsp;I would like to be able to see who made posts on Acebook<br>
 
 ---
 
@@ -76,58 +100,59 @@ Actions are *italic*. Nouns are **bold**. Attributes of nouns are **_bold italic
 
 ## Database Domain Modelling
 
-The above user stories parse into several classes. As per [Class Responsibility Collaborator](http://agilemodeling.com/artifacts/crcModel.htm) modelling, there are two obvious classes - **User** and **Space**.
+The above user stories parse into several classes. As per [Class Responsibility Collaborator](http://agilemodeling.com/artifacts/crcModel.htm) modelling, there are two obvious classes - **User** and **Post**.
 
-Class: **Space**
+Class: **Post**
 
 Responsibility | Collaborators
 --- | ---
 Knows owner | User
-Knows own name |
-Knows own description |
-Knows own price |
-Knows own availability |
-Knows own bookings |
+Knows own content |
+<!-- Knows own creation time and date | -->
+<!-- Knows edit time and date | -->
 
 Class: **User**
 
 Responsibility | Collaborators
 --- | ---
-Knows own name |
-Knows own username |
-Knows own e-mail |
+Knows own user_name |
+Knows own user_email |
 Knows own password |
-~Knows own telephone number~ |
-Knows own spaces | Space
+Knows own posts | Post
+<!-- Knows own profile pic url | Post -->
+
 
 Each class needs its own table, each with columns corresponding to the responsibilities of each class.
 
 Table: **Users**
 
-id PK | user_name | user_email | password_digest
+user_id PK | user_name | user_email | user_password_digest
 --- | --- | --- | ---
 
-Table: **Spaces**
+Table: **Posts**
 
-id PK | space_name | description | price | user_id FK | start_date | end_date
---- | --- | --- | --- | --- | --- | ---
+post_id PK | user_id FK | post_content
+--- | --- | ---
 
-Table: **Bookings**
-
-id PK | start_date | space_id FK | user_id FK | accepted
---- | --- | --- | --- | ---
+Additional columns in Users: user_profile_pic
+Additional columns in Posts: post_time, edit_time
 
 ---
 
 ## MVP Planning
 
-- [ ] Create a listing from form
+- [ ] Homepage with a list of posts
+- [ ] Homepage with a signup option
+- [ ] Signup form
+- [ ] Homepage with a login form
+- [ ] Tables to receive user data
+- [ ] Homepage with post form for a new post
 
 ---
 
 ## Feature & Unit Testing
 
-Taking for example User Story 01 (`I’d like to be able to create a listing of a space.`), this presupposes the existence of a user, a space, and the ability to list it.
+Taking for example User Story 01 (`I would like to be able to sign up to Acebook`), this presupposes the ability to sign up to become a user.
 
 Creating these follows the TDD process:
 1. Composition of pseudocode.
