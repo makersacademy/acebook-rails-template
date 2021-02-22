@@ -41,6 +41,7 @@ class CoursesController < ApplicationController
   # get /courses/:id
   def show
     @subscription = Subscription.find_by(course_id: params[:id], user_id: session[:user_id]) || Subscription.new()
+    @rating = @course.ratings.average(:value)
     # if subscribed, gets that subscription, else creates new subscription (so that can render @subscription )
   end
 
