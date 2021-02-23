@@ -1,6 +1,5 @@
-<%# /courses/:id/posts %>
-
-<% if @course.user_id == session[:user_id] %>
-  <%= link_to "Add Post", new_course_post_url %>
-<% end %>
-<%= render @posts %>
+<div class="page">
+  <h1>Posts for <%= link_to @course.title, @course, class: "purple" %></h1>
+  <hr style="width:50%">
+  <%= render "index" %>
+</div>

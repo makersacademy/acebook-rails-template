@@ -320,7 +320,7 @@ textarea, input {
 }
 
 footer {
-  position: absolute;
+  position: sticky;
   height: 30px;
   background: #f4f4f4;
   width: 100vw;

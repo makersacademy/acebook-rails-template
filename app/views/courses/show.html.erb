@@ -11,43 +11,55 @@
       <div class="i-course-info">
         <h2><%= @course.title %></h2>
         <p><%= @course.description %></p>
-        <a href="<%= user_path(@course.user_id) %>">By <%= @course.get_course_user_name %></a>
+        By <%= link_to @course.username, user_path(@course.user_id) %>
         <br>
         Added on <%= @course.created_at.strftime("%B %Y") %>
+        <br>
+        Last updated on <%= @course.updated_at.strftime("%B %Y") %>
+        <br>
+        <p class="rating">	
+          <% @course.rating.to_i.times do %>	
+            <%= image_tag "rating_star.svg", class: 'rating-star' %>	
+          <% end %>	
+          <% if @course.rating == 0 %>	
+            <%= "No rating" %>	
+          <% end %>	
+        </p>
       </div>
     </div>
   </div>
 </div>
 
 <div id="buttons">
-  <% if @subscription.valid? %>
-    <%= button_to 'Unsubscribe', course_subscription_path(@course, @subscription), method: :delete, class: 'p-button' %>
-    <%= render "ratings/rating_form" %>
-    <%= link_to "See Posts", course_posts_path(@course) %>
-  <% elsif @course.user_id == session[:user_id] %>
-    <%= link_to "See Posts", course_posts_path(@course) %>
-  <% else %>
-    <%= button_to "Subscribe",  course_subscriptions_path(@course, @subscription), method: :create, class: 'p-button' %>
-    <p>Please subscribe to see posts</p>
+  <% unless @course.user_id == session[:user_id] %>
+    <% if @subscription.valid? %>
+        <%= button_to 'Unsubscribe', course_subscription_path(@course, @subscription), method: :delete, class: 's-button purple-highlight' %>
+        <%= render "ratings/rating_form" %>
+    <% else %>
+      <%= button_to "Subscribe",  course_subscriptions_path(@course, @subscription), method: :create, class: 's-button purple-highlight' %>
+    <% end %>
   <% end %>
 </div>
 
-<ul class="nav nav-tabs">
-  <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#posts">View Posts</a></li>
-  <% if @course.user_id == session[:user_id] %>
-    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#edit">Edit Course</a></li>
-  <% end %>
-</ul>
-<%# Tabs -> only shows edit  %>
+<div class="center-align">
+  <div id="course-content">
+    <ul class="nav nav-tabs">
+      <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#show_posts">View Posts</a></li>
+      <% if @course.user_id == session[:user_id] %>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#edit">Edit Course</a></li>
+      <% end %>
+    </ul>
+    <%# Tabs -> only shows edit  %>
 
-<div class="tab-content">
-  
-  <div id="course" class="tab-pane active">
-    
-  </div>
-  
-  <div id="edit" class="tab-pane">
-    <%= render "courses/edit" %>
+    <div class="tab-content">
+      <div id="show_posts" class="tab-pane active">
+        <p><%= "You must be subscribed to view posts" unless @subscription.valid? || @course.user_id == session[:user_id] %></p>
+        <%= render "posts/index" %>
+      </div>
+      <div id="edit" class="tab-pane">
+        <%= render "courses/edit" %>
+      </div>
+    </div>
+    <%# Render tabs -> edit course %>
   </div>
 </div>
-<%# Render tabs -> edit course %>

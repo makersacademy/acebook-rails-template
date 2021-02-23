@@ -1,6 +1,12 @@
-<%= form_for [@course, @post] do |form| %>
-  <%= form.label :title %>
-  <%= form.text_field :title %>
-  <%= form.rich_text_area :content %>
-  <%= form.submit "Submit" %>
-<% end %>
+<div id="post_form">
+  <%= form_for [@course, @post] do |form| %>
+    <%= form.label :title %>
+    <br>
+    <%= form.text_field :title %>
+    <hr style="border-color: white;">
+    <%= form.rich_text_area :content %>
+    <div class="right-align">
+      <%= form.submit class: "p-button"%>
+    </div>
+  <% end %>
+</div>

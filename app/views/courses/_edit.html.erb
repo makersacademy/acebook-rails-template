@@ -1,5 +1,6 @@
 <%# /courses/:id/edit %>
 
-<%= link_to "Add Post", new_course_post_path(@course) %>
 <%= render "course_form" %>
-<%= button_to "Delete Course", @course, method: :delete %>
+<div id="delete-course">
+  <%= button_to "Delete Course", @course, method: :delete, class: "danger"%>
+</div>

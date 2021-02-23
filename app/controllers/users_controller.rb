@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   # GET /users/:id
   def show
-    @all_courses = Course.find_by_sql("
+    @all_courses = Course.with_attached_main_image.find_by_sql("
       SELECT
         users.username,
         courses.*

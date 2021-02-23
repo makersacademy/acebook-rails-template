@@ -1,3 +1,81 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// NEW COURSE
+
+#course_title, #course_description {
+  width: 60%;
+  margin-bottom: 0.5rem;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  margin: 10;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+// SHOW COURSE
+
+#buttons{
+  text-align: center;
+  margin: 0.5rem;
+}
+#buttons form{
+  display: inline;
+}
+
+.center-align{
+  text-align: center;
+}
+
+#course-content{
+  width: 80%;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.tab-content{
+  margin-top: 1rem;
+  min-height: 500px;
+}
+
+.danger{
+  margin-top: 0.5rem;
+  background: white;
+  border-radius: 30px;
+  width: min-content;
+  height: 45px;
+  padding: 10px 10px 10px 10px;
+  color: red;
+  outline: none;
+  border: 1.5px solid red;
+  cursor: pointer;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  width: 100%;
+  min-height: 500px;
+  background-color: #F1F1F1;
+  z-index: 10;
+}

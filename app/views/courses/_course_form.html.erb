@@ -6,12 +6,14 @@
     <br>
     <%= form.label :description %>
     <br>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, rows: "10" %>
     <br>
-    <%= form.label :main_image %>
+    <label class="btn p-button btn-file">
+      Select course banner
+      <%= form.file_field :main_image %> 
+    </label>
     <br>
-    <%= form.file_field :main_image %>
-    <br>
-    <%= form.submit "Submit" %>
+    <hr style="border-color: white; margin: 0;">
+    <%= form.submit "Submit", class: "s-button purple-highlight" %>
   <% end %>
 </div>
