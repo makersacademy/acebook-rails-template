@@ -13,8 +13,7 @@ Team notes
 * We completed two tasks
 * Started using trello and familiarise with it
 
-
-### Day 2
+#### Day 2
 * Read through the tickets/cards before starting jobs 
 * Learnt that we need to do some research before starting jobs 
 * Learnt about setting up a pipeline 
