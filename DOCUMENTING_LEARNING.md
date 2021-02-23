@@ -9,7 +9,7 @@
 * Selected Trello to host our project [Card Wall](https://trello.com/b/k5BoEoPi/acebook)
 
 ### Afternoon
-* Setup of project evironment, Gemfile and updated Ruby version
+* Setup of project environment, Gemfile and updated Ruby version
 * Basic planning session to start compiling user stories from user supplied cards
 * Compiled MVP class diagram and database
 
