@@ -26,3 +26,8 @@
 - 6 tall palm trees in Latin is sextus pinus erectus
 - Copied all of our images from Figma to our github repo
 - First feature test written, passed in the easiest way possible
+
+## 24 February 2021
+### Morning
+- Database tables, feature test and unit tests
+- Meeting with the client at 11:50AM
