@@ -3,13 +3,13 @@
 <% if @course.user_id == session[:user_id] %>
   <%= button_to "Add Post", new_course_post_path(@course), method: :get, id: "new-post", class: "p-button" %>
 <% end %>
-<div id="posts" <%= 'class=blur' unless @subscription.valid? || @course.user_id == session[:user_id] %>>
+<div id="posts" <%= "class=blur" unless @subscription.valid? || @course.user_id == session[:user_id] %>>
   <% if @course.posts.length == 0 %>
     <p>No posts yet!</p>
   <% elsif @course.posts.length > 10 %>
-    <%= render @course.posts[0...10] %>
+    <%= render partial: @course.posts[0...10], locals: { disabled: ( !@subscription.valid? || @course.user_id == session[:user_id] ) } %>
     <%= button_to "See More", course_posts_path(@course), method: :get, class: "p-button" %>
   <% else %>
-    <%= render @course.posts %>
+    <%= render partial: @course.posts, locals: { disabled: ( !@subscription.valid? || @course.user_id == session[:user_id] ) } %>
   <% end %>
 </div>

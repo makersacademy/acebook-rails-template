@@ -1,5 +1,5 @@
 <%# Individual post (/courses/:id/posts ) %>
-<div class="post" onclick="location.href='<%= course_post_path(post.course_id, post.id) %>';">
+<div class="post" onclick="location.href='<%= disabled ? 'javascript:void(0)' : course_post_path(post.course_id, post.id) %>';">
   <div class="inner-post">
     <h3><%= post.position %> - <%= post.title %></h3>
     <% if post.content.to_plain_text.length > 100 %>
