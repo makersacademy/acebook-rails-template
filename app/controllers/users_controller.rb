@@ -36,7 +36,7 @@ class UsersController < ApplicationController
             courses
           FULL JOIN ratings ON courses.id = ratings.course_id
           GROUP BY
-          courses.id) 
+          courses.id)
         AS courses
         JOIN users ON users.id = courses.user_id
         WHERE user_id = #{params[:id]}
@@ -87,7 +87,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :email, :avatar)
+    params.require(:user).permit(:username, :password, :password_confirmation, :email, :avatar)
   end
 
 end
