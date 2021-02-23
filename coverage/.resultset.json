@@ -1,8 +1,10 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/seanedwards/Makers/january/acebook-BBB/spec/controllers/posts_controller_spec.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/spec/controllers/posts_controller_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -34,8 +36,10 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/spec/rails_helper.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/spec/rails_helper.rb": {
         "lines": [
+          null,
+          null,
           null,
           1,
           1,
@@ -95,8 +99,10 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/environment.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/environment.rb": {
         "lines": [
+          null,
+          null,
           null,
           1,
           null,
@@ -104,8 +110,10 @@
           1
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/application.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/application.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -126,15 +134,19 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/boot.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/boot.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/environments/test.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/environments/test.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -179,8 +191,9 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/application_controller_renderer.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/initializers/application_controller_renderer.rb": {
         "lines": [
+          null,
           null,
           null,
           null,
@@ -189,8 +202,10 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/assets.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/initializers/assets.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -207,8 +222,9 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/backtrace_silencers.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/initializers/backtrace_silencers.rb": {
         "lines": [
+          null,
           null,
           null,
           null,
@@ -218,8 +234,10 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/cookies_serializer.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/initializers/cookies_serializer.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -227,16 +245,19 @@
           1
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/filter_parameter_logging.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/initializers/filter_parameter_logging.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
           1
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/inflections.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/initializers/inflections.rb": {
         "lines": [
+          null,
           null,
           null,
           null,
@@ -255,16 +276,19 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/mime_types.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/initializers/mime_types.rb": {
         "lines": [
+          null,
           null,
           null,
           null,
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/wrap_parameters.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/initializers/wrap_parameters.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -281,8 +305,10 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/config/routes.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/config/routes.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -290,14 +316,18 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/app/helpers/application_helper.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/app/helpers/application_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/app/controllers/posts_controller.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/app/controllers/posts_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           2,
@@ -320,15 +350,19 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/app/controllers/application_controller.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/app/controllers/application_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -342,8 +376,10 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/spec/models/post_spec.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/spec/models/post_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -351,20 +387,24 @@
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/app/models/post.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/app/models/post.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
-      "/Users/seanedwards/Makers/january/acebook-BBB/app/models/application_record.rb": {
+      "/Users/Student/Dropbox/My Mac (MA168)/Documents/Projects/Makers/group-projects/acebook-BBB/app/models/application_record.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1614087872
+    "timestamp": 1614090041
   }
 }
