@@ -114,6 +114,7 @@ Class: **Post**
 Responsibility | Collaborators
 --- | ---
 Knows owner | User
+
 Knows own content |
 <!-- Knows own creation time and date | -->
 <!-- Knows edit time and date | -->
