@@ -7,9 +7,9 @@
   <% if @course.posts.length == 0 %>
     <p>No posts yet!</p>
   <% elsif @course.posts.length > 10 %>
-    <%= render partial: @course.posts[0...10], locals: { disabled: ( !@subscription.valid? || @course.user_id == session[:user_id] ) } %>
+    <%= render partial: @course.posts[0...10], locals: { disabled: ( !(@subscription.valid? || @course.user_id == session[:user_id]) ) } %>
     <%= button_to "See More", course_posts_path(@course), method: :get, class: "p-button" %>
   <% else %>
-    <%= render partial: @course.posts, locals: { disabled: ( !@subscription.valid? || @course.user_id == session[:user_id] ) } %>
+    <%= render partial: @course.posts, locals: { disabled: ( !(@subscription.valid? || @course.user_id == session[:user_id])) } %>
   <% end %>
 </div>
