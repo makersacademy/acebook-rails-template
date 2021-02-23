@@ -45,14 +45,21 @@ That is because Rails will use a Javascript runtime (such as Node) under the hoo
 ## Table of Contents
 
 #### 1. Parsing User Stories
-- [ ] User Story 01
+- [x] User Story 01
+- [x] User Story 02
+- [x] User Story 03
+- [x] User Story 04
+- [x] User Story 05
 
 #### 2. Database Domain Modelling
-- [ ]
+- [x] Posts Table
+- [x] Users Table
 
 #### 3. MVP Planning
 
-#### 4. Feature & Unit Testing
+#### 4. Layout Planning
+
+#### 5. Feature & Unit Testing
 
 ---
 
@@ -121,7 +128,6 @@ Knows own password |
 Knows own posts | Post
 <!-- Knows own profile pic url | Post -->
 
-
 Each class needs its own table, each with columns corresponding to the responsibilities of each class.
 
 Table: **Users**
@@ -147,6 +153,15 @@ Additional columns in Posts: post_time, edit_time
 - [ ] Homepage with a login form
 - [ ] Tables to receive user data
 - [ ] Homepage with post form for a new post
+
+---
+
+## Layout Planning
+
+- [x] Wireframe Signup Page
+- [x] Wireframe Login Page
+- [x] Wireframe New Post Page
+- [x] Wireframe Homepage
 
 ---
 
