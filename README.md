@@ -164,13 +164,13 @@ Additional columns in Posts: post_time, edit_time
 - [x] Wireframe New Post Page
 - [x] Wireframe Homepage
 
-<img src="/app/assets/images/wireframes/signup_page_wireframe.png" width=300">
+<img src="/app/assets/images/wireframes/signup_page_wireframe.png" width="300">
 
-<img src="/app/assets/images/wireframes/signup_page_wireframe.png" width=300">
+<img src="/app/assets/images/wireframes/signup_page_wireframe.png" width="300">
 
-<img src="/app/assets/images/wireframes/signup_page_wireframe.png" width=300">
+<img src="/app/assets/images/wireframes/signup_page_wireframe.png" width="300">
 
-<img src="/app/assets/images/wireframes/signup_page_wireframe.png" width=300">
+<img src="/app/assets/images/wireframes/signup_page_wireframe.png" width="300">
 
 ---
 
