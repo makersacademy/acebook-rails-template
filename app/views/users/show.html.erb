@@ -12,6 +12,10 @@
   <%= link_to "Edit Profile", edit_user_url, class: 'p-button' %>
 <% end %>
 
+<% if @user.id == session[:user_id] %>
+  <%= link_to "Delete Profile", @user, method: :delete, class: 'p-button' %>
+<% end %>
+
 <h1 class="purple">Courses</h1>
 <% courses = @all_courses.select{|course| course.user_id == @user.id } %>
 <% if courses.length > 0 %>
