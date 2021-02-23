@@ -161,7 +161,7 @@ Additional columns in Posts: post_time, edit_time
 - [x] Wireframe Signup Page
 - [x] Wireframe Login Page
 - [x] Wireframe New Post Page
-- [ ] Wireframe Homepage
+- [x] Wireframe Homepage
 
 ---
 
