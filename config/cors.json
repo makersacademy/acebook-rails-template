@@ -1,0 +1,8 @@
+[
+  {
+    "origin": ["https://knowledge-pill.herokuapp.com/"],
+    "method": ["PUT", "GET", "HEAD", "DELETE", "OPTIONS"],
+    "responseHeader": ["Origin", "Content-Type", "Content-MD5", "Content-Disposition"],
+    "maxAgeSeconds": 3600
+  }
+]
