@@ -1,5 +1,6 @@
 <% @posts.reverse.each do |post| %>
-  <p><%= post.message.gsub(/\n/, '<br/>').html_safe %></p>
+  <h3><%= post.message.gsub(/\n/, '<br/>').html_safe %></h3>
+  <p>created @ <%= post.created_at.strftime('%d/%m/%y') %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
