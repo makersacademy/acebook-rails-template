@@ -1,4 +1,6 @@
 <%# /courses/:id/edit %>
 
 <%= render "course_form" %>
-<%= button_to "Delete Course", @course, method: :delete, class: "danger"%>
+<div id="delete-course">
+  <%= button_to "Delete Course", @course, method: :delete, class: "danger"%>
+</div>

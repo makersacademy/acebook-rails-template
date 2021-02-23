@@ -1,4 +1,10 @@
 <%# /courses/:id/posts/:id/edit %>
 
-<%= render "post_form" %>
-<%= button_to "Delete Post", [@course, @post], method: :delete %>
+<div class="page">
+  <h1>Edit Post for <%= link_to @course.title, @course, class: "purple" %></h1>
+  <hr style="width:50%">
+  <div id="delete-post" class="right-align">
+    <%= button_to "Delete Post", [@course, @post], method: :delete, class: "danger"%>
+  </div>
+  <%= render "post_form" %>
+</div>

@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.page{
+  text-align: center;
+  min-height: 80vh;
+  margin-top: 2rem;
+}
+
+// POST PREVIEWS
+
 #new-post{
   margin-bottom: 1rem;
   padding-left: 20px;
@@ -29,7 +37,32 @@
   color: gray;
 }
 
-.page{
-  text-align: center;
-  min-height: 80vh;
+// POST FORMS
+
+#post_form{
+  width: 80%;
+  display: inline-block;
+  text-align: left;
+}
+
+#post_form label{
+  font-size: larger;
+}
+
+.right-align{
+  padding-top: 1rem;
+  text-align: right;
+}
+
+#delete-post{
+  width: 80%;
+  display: inline-block;
+}
+
+input#post_title {
+  width: 100%;
+}
+
+trix-editor#post_content {
+  min-height: 50vh;
 }
