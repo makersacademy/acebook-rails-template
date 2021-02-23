@@ -7,6 +7,10 @@
   <div class="field form-group col-md-4">
     <%= form.label :password %>
     <%= form.password_field :password, class:"form-control" %>
+  </div>
+
+  <div class="field form-group col-md-4">
+    <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation, class:"form-control" %>
   </div>
 
@@ -19,14 +23,7 @@
     <%= form.label :Upload_a_Profile_Image %>
     <%= form.file_field :avatar, class:"form-control" %>
   </div>
-
-
-  <!-- <div class="form-check mb-2 mr-sm-2">
-    <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-      <label class="form-check-label" for="inlineFormCheck">
-      Remember me
-      </label>
-    </div> -->
+  <br>
 
   <div class="actions form-group col-lg-2">
     <button type="submit" class="btn btn-primary">Submit</button>
