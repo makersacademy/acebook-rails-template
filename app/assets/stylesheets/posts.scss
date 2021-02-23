@@ -1,0 +1,35 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new-post{
+  margin-bottom: 1rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: min-content;
+}
+
+.post{
+  text-align: left;
+  width: 80%;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.inner-post{
+  margin: 1rem;
+}
+
+.inner-post p{
+  margin-bottom: 0;
+  font-style: oblique;
+  color: gray;
+}
+
+.page{
+  text-align: center;
+  min-height: 80vh;
+}

@@ -1,1 +1,5 @@
-<%= render "index" %>
+<div class="page">
+  <h1>Posts for <%= link_to @course.title, @course, class: "purple" %></h1>
+  <hr style="width:50%">
+  <%= render "index" %>
+</div>

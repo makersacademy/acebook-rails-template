@@ -10,7 +10,6 @@ class PostsController < ApplicationController
   
   # get /courses/:id/posts/new
   def new
-    @course = Course.find(params[:course_id])
     @post = Post.new
   end
 
@@ -64,7 +63,7 @@ class PostsController < ApplicationController
   private
 
   def this_post
-    @post = Post.find(params[:id])
+    @post = Post.with_rich_text_content_and_embeds.find(params[:id])
   end
   
   def this_course
