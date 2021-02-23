@@ -5,19 +5,19 @@
     <li class="nav-item">
       <a class="nav-link purple-highlight" href="/courses">Courses</a>
     </li>
-    <% if not user_logged_in? %>
+    <% if user_logged_in? %>
+    <li class="nav-item">
+        <a class="nav-link purple-highlight" href="/users/<%= session[:user_id] %>">My Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link purple-highlight" href="/logout">Log out</a>
+      </li>
+    <% else %>
       <li class="nav-item">
         <a class="nav-link purple-highlight" href="/signup">Register</a>
       </li>
       <li class="nav-item">
           <a class="nav-link purple-highlight" href="/login">Sign in</a>
-      </li>
-    <% else %>
-      <li class="nav-item">
-        <a class="nav-link purple-highlight" href="/users/<%= session[:user_id] %>">My Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link purple-highlight" href="/logout">Log out</a>
       </li>
     <% end %>
   </ul>

@@ -258,8 +258,6 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.1.0)
     tilt (2.0.10)
-    trix (0.10.1)
-      rails
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
@@ -302,7 +300,6 @@ DEPENDENCIES
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   selenium-webdriver
-  trix
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)

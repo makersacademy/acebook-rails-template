@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :courses do
     resources :posts
     resources :subscriptions, only: [:create, :destroy]
+    resources :ratings, only: [:create, :update, :destroy]
   end
 
 end

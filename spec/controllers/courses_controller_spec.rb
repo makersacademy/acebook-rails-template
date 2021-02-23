@@ -22,13 +22,6 @@ RSpec.describe "/courses", type: :request do
     end
   end
 
-  describe "GET courses/:id/edit" do
-    it "responds with 200" do
-      get edit_course_url(1)
-      expect(response).to have_http_status(200)
-    end
-  end
-
 end
 
 RSpec.describe CoursesController, type: :controller do
@@ -36,7 +29,7 @@ RSpec.describe CoursesController, type: :controller do
   describe "POST /" do
     it "responds with 200" do
       post :create, params: { course: { user_id: 1, title: "Hello, world!" } }
-      expect(response).to redirect_to("/courses/2")
+      expect(response).to redirect_to("/courses/3")
     end
 
     it "creates a course" do
@@ -53,7 +46,7 @@ RSpec.describe CoursesController, type: :controller do
 
     it "edits a course" do
       put :update, params: {id: 1, course: { title: "Changing Test Title" } }
-      expect(Course.find_by(title: "Intro to Ruby")).not_to be
+      expect(Course.find_by(title: "Test Course")).not_to be
       expect(Course.find_by(title: "Changing Test Title")).to be
     end
   end
@@ -66,7 +59,7 @@ RSpec.describe CoursesController, type: :controller do
 
     it "deletes a course" do
       delete :destroy, params: { id: 1 }
-      expect(Course.find_by(title: "Intro to Ruby")).not_to be
+      expect(Course.find_by(title: "Test Course")).not_to be
     end
   end
 

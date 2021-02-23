@@ -5,7 +5,7 @@
 <% if @user.avatar.attached? %>
   <%= image_tag @user.avatar.variant(gravity: "Center", crop: '250x250+0+0') %>
 <% else %>
-  <%= image_tag "default-profile.png", width: 250 %>
+  <%= image_tag "default-profile.png", width: 250%>
 <% end %>
 
 <% if @user.id == session[:user_id] %>
@@ -17,10 +17,11 @@
 <% end %>
 
 <h1 class="purple">Courses</h1>
-<% if @courses.length > 0 %>
+<% courses = @all_courses.select{|course| course.user_id == @user.id } %>
+<% if courses.length > 0 %>
   <div class="container-fluid">
     <div class="row">
-      <%= render @courses %>
+      <%= render courses %>
     </div>
   </div>
 <% else %>
@@ -28,10 +29,11 @@
 <% end %>
 
 <h1 class="purple">Subscriptions</h1>
-<% if @subscriptions.length > 0 %>
+<% subscriptions = @all_courses.select{|course| course.is_subbed } %>
+<% if subscriptions.length > 0 %>
   <div class="container-fluid">
     <div class="row">
-        <%= render @subscriptions %>
+        <%= render subscriptions %>
     </div>
   </div>
 <% else %>
