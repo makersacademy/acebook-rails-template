@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   before_action :this_post, only: [:show, :edit, :update, :destroy]
   before_action :this_course
+  before_action :is_subscribed
   
   # get /courses/:id/posts
   def index
     @posts = Post.with_rich_text_content.where(course_id: params[:course_id]).order(:position)
-    @subscription = Subscription.find_by(course_id: params[:course_id], user_id: session[:user_id]) || Subscription.new()
   end
   
   # get /courses/:id/posts/new
@@ -68,6 +68,14 @@ class PostsController < ApplicationController
   
   def this_course
     @course = Course.find(params[:course_id])
+  end
+
+  def is_subscribed
+    @subscription = Subscription.find_by(course_id: params[:course_id], user_id: session[:user_id]) || Subscription.new()
+    unless @subscription.valid? || @course.user_id == session[:user_id]
+      flash[:warning] = "You need to be subscribed to view this content"
+      redirect_to course_url(@course)
+    end
   end
 
   def post_params
