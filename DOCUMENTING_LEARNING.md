@@ -25,3 +25,4 @@
 - Wireframing with figma to design the different route that we are planning to create: Signup, Login, Home, New Post
 - 6 tall palm trees in Latin is sextus pinus erectus
 - Copied all of our images from Figma to our github repo
+- First feature test written, passed in the easiest way possible
