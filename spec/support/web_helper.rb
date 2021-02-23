@@ -9,6 +9,7 @@ def sign_up_and_in_new_user
   visit "/signup"
   fill_in "user_username", with: "testuser2"
   fill_in "user_password", with: "password"
+  fill_in "user_password_confirmation", with: "password"
   click_on "Submit"
   visit "/login"
   fill_in "username", with: "testuser2"

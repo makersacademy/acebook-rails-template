@@ -20,8 +20,6 @@ RSpec.feature "Edit courses", type: :feature do
   scenario "Can edit a course" do
     log_in
     visit "/courses/1"
-    expect(page).to have_selector(:link_or_button, 'Edit Course')
-    click_on "Edit Course"
     fill_in "course_title", with: "Intro to Python"
     click_on "Submit"
     expect(page).to have_content "Intro to Python"
