@@ -65,10 +65,10 @@ class CoursesController < ApplicationController
       @course.destroy!
     rescue => exception
       flash[:danger] = exception
+      redirect_back fallback_location: "/"
     else
       flash[:success] = "Deleted the course!"
-    ensure
-      redirect_back fallback_location: "/"
+      redirect_to courses_url
     end
   end
 
