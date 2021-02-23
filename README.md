@@ -170,7 +170,7 @@ Additional columns in Posts: post_time, edit_time
 
 <img src="/app/assets/images/wireframes/new_post_page_wireframe.png" width="600">
 
-<img src="/app/assets/images/wireframes/timelame_page_wireframe.png" width="600">
+<img src="/app/assets/images/wireframes/timeline_page_wireframe.png" width="600">
 
 ---
 
