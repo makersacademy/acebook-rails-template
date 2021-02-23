@@ -22,6 +22,6 @@
 ### Afternoon
 - Started discussion on how we would start building the app
 - RSpec for unit tests, Capybara for feature tests
-- Wireframing with figma to design the different route that we are planning to create: Signup, Login, Home, New Post
-- 6 tall palm trees in Latin is sextus pinus erectus
+- Wireframing with Figma to design the different route that we are planning to create: Signup, Login, Home, New Post
+- 6 tall palm trees in Latin is _sextus pinus erectus_
 - Copied all of our images from Figma to our github repo
