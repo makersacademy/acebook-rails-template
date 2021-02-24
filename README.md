@@ -164,6 +164,14 @@ Additional columns in Posts: post_time, edit_time
 - [x] Wireframe New Post Page
 - [x] Wireframe Homepage
 
+<img src="/app/assets/images/wireframes/signup_page_wireframe.png" width="600">
+
+<img src="/app/assets/images/wireframes/login_page_wireframe.png" width="600">
+
+<img src="/app/assets/images/wireframes/new_post_page_wireframe.png" width="600">
+
+<img src="/app/assets/images/wireframes/timeline_page_wireframe.png" width="600">
+
 ---
 
 ## Feature & Unit Testing

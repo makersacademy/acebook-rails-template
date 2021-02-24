@@ -21,10 +21,6 @@ gem 'rails'
 gem 'rake'
 # Use SCSS for stylesheets
 gem 'sass-rails'
-gem 'sinatra'
-gem 'sinatra-activerecord'
-gem 'sinatra-reloader'
-gem 'sinatra-flash'
 # gem 'thin'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'

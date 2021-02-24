@@ -9,7 +9,7 @@
 * Selected Trello to host our project [Card Wall](https://trello.com/b/k5BoEoPi/acebook)
 
 ### Afternoon
-* Setup of project evironment, Gemfile and updated Ruby version
+* Setup of project environment, Gemfile and updated Ruby version
 * Basic planning session to start compiling user stories from user supplied cards
 * Compiled MVP class diagram and database
 
@@ -23,11 +23,12 @@
 - Started discussion on how we would start building the app
 - RSpec for unit tests, Capybara for feature tests
 - Wireframing with figma to design the different route that we are planning to create: Signup, Login, Home, New Post
-- 6 tall palm trees in Latin is sextus pinus erectus
+- 6 tall palm trees in Latin is _sextus pinus erectus_
 - Copied all of our images from Figma to our github repo
 - First feature test written, passed in the easiest way possible
 
 ## 24 February 2021
 ### Morning
-- Database tables, feature test and unit tests
+- Set up user model / controller / views
+- Write up unit test for model
 - Meeting with the client at 11:50AM
