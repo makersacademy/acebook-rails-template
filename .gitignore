@@ -24,3 +24,4 @@
 
 # Ignore the tesy coverage 
 echo "coverage" >> .gitignore
+.gitignore 
