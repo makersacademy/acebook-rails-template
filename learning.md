@@ -22,3 +22,10 @@ Team notes
 * Learnt that you can see simplecov coverage reports online
 * Learnt about date and time feature for posts 
 * Learnt about how to update and create new database tables using Active record
+
+### Day 3
+* Managing to understand what happened with migrating the database to heroku.
+* We are connected to heroku and have a deployed product
+* First retro review with clients/coaches went well.
+* In a better position today moving forwards to implement features.
+* Have broken down tickets into manageable chunks and are now easier to estimate.
