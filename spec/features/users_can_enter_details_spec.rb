@@ -31,4 +31,16 @@ feature 'sign up page' do
       expect(page).to have_content('Password is too short')
     end
   end
+
+  context 'when password is too long' do
+    scenario 'user cannot sign up and is warned' do
+      visit '/users/sign_up'
+      fill_in 'Email', with: 'test@email.com'
+      fill_in 'Password', with: 'longpassword'
+      fill_in 'Password confirmation', with: 'longpassword'
+      click_button 'Sign up'
+      expect(page).to have_content('Password is too long')
+    end
+  end
+
 end
