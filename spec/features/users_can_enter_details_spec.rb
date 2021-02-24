@@ -16,7 +16,7 @@ feature 'users can visit sign up page' do
     fill_in 'Password', with: 'testpass'
     fill_in 'Password confirmation', with: 'testpass'
     click_button 'Sign up'
-    expect(alert).to have_content("Please include an '@' in the email address")
+    expect(page).to have_current_path("/users/sign_up")
   end
 
   Capybara.use_default_driver
