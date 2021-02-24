@@ -25,10 +25,12 @@
 - Wireframing with figma to design the different route that we are planning to create: Signup, Login, Home, New Post
 - 6 tall palm trees in Latin is _sextus pinus erectus_
 - Copied all of our images from Figma to our github repo
-- First feature test written, passed in the easiest way possible
+- Firs t feature test written, passed in the easiest way possible
 
 ## 24 February 2021
 ### Morning
 - Set up user model / controller / views
 - Write up unit test for model
 - Meeting with the client at 11:50AM
+- Group watched GoRails videos on creating users and validation
+- Set up test environment to ensure test databases are being used
