@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.feature 'Sign-Up', type: :feature do 
   scenario 'Can sign up to BBB Acebook' do 
   visit '/'
-  click_button 'Sign up'
-  expect(page).current_path ('/users/sign_up')
+  click_link 'Register'
+  expect(page).to have_current_path('/users/sign_up')
   fill_in 'Name', with: "Katy Day"
   fill_in 'Username', with: "Katy_the_Magnificent"
   fill_in 'Email', with: 'email@example.com'
@@ -12,8 +12,8 @@ RSpec.feature 'Sign-Up', type: :feature do
   fill_in 'Password confirmation', with: 'password123'
   click_button 'Sign up'
   have_link 'Log in'
-  expect(page).current_path ('/')
-  expect(page).to have_content("Welcome, Katy!")
+  expect(page).to have_current_path('/')
+  expect(page).to have_content("Hello, Katy")
 
   end
 end
