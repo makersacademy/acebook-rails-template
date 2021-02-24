@@ -34,3 +34,9 @@
 - Meeting with the client at 11:50AM
 - Group watched GoRails videos on creating users and validation
 - Set up test environment to ensure test databases are being used
+
+### Afternoon
+- Watched GoRails video on creating a sign up form and handling sign up errors 
+- continued writing feature tests for signing up
+- Created html for sign up process
+- Watched GoRails videos on paths and routes to help plan and map out our routes 
