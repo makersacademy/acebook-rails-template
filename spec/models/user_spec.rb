@@ -1,5 +1,14 @@
 require 'rails_helper'
 
+
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # let (:user) { User.create({email: "test@email.com", password: "testPassword",  password_confirmation: "testPassword" }) }
+  describe '#create' do
+    
+    it 'creates a user with a password, and email' do
+      User.create({email: "test@email.com", password: "testPassword",  password_confirmation: "testPassword" })
+      expect(User.first.email).to eq("test@email.com")
+    end
+    
+  end
 end
