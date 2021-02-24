@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :posts
 
-  get 'posts/index'
+  root to: 'posts#index'
 
-  root to: "welcome#index"
+  get "welcome/index"
 end
