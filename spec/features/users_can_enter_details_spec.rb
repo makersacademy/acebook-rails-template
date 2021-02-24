@@ -43,4 +43,15 @@ feature 'sign up page' do
     end
   end
 
+  context 'when users correctly submit details' do
+    scenario 'user is redirected to their posts page' do
+      visit '/users/sign_up'
+      fill_in 'Email', with: 'test@email.com'
+      fill_in 'Password', with: 'testpass'
+      fill_in 'Password confirmation', with: 'testpass'
+      click_button 'Sign up'
+      expect(page).to have_current_path('/')
+    end
+  end
+
 end
