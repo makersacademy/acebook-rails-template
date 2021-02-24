@@ -1,6 +1,10 @@
 <% @posts.reverse_each do |post| %>
   <p class='message'> <%= post.message %></p>
   <p><%= post.updated_at %></p>
+  <%= link_to edit_post_path(post.id) do %>
+    Edit
+  <% end %>
+ 
 <% end %>
 
 <%= link_to new_post_path do %>
