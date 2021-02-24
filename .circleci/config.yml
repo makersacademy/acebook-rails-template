@@ -1,7 +1,8 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@0.1.2 
-
+  heroku: circleci/heroku@0.0.10
+  
 jobs:
   build:
     docker:
@@ -13,3 +14,4 @@ jobs:
           name: Which bundler?
           command: bundle -v
       - ruby/bundle-install
+      - heroku/deploy-via-git
