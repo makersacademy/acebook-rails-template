@@ -14,4 +14,4 @@ jobs:
           name: Which bundler?
           command: bundle -v
       - ruby/bundle-install
-    - heroku/deploy-via-git
+      - heroku/deploy-via-git
