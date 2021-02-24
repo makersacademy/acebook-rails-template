@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   resources :tests
 
-  root to: "posts#index"
+  root to: 'posts#index'
 end
