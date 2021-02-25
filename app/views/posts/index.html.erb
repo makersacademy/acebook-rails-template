@@ -4,6 +4,7 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <p><%= link_to("Edit this post", edit_post_path(post)) %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
