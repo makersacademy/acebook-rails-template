@@ -3,12 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
-  before(:each) do
-    @request.env["devise.mapping"] = Devise.mappings[:user]
-    user = FactoryGirl.create(:user)
-    user.confirm! #if you are using the "confirmable" module
-    sign_in user
-  end
+ 
+  login_user
+
   describe 'GET /new ' do
     it 'responds with 200' do
       get :new
