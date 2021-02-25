@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class User::UnlocksController < Devise::UnlocksController
+class Users::UnlocksController < Devise::UnlocksController
   skip_before_action :require_login
   # GET /resource/unlock/new
   # def new

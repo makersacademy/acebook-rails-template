@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   skip_before_action :require_login
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]

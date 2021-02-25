@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class User::ConfirmationsController < Devise::ConfirmationsController
+class Users::ConfirmationsController < Devise::ConfirmationsController
   skip_before_action :require_login
   # GET /resource/confirmation/new
   # def new
