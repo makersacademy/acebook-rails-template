@@ -24,5 +24,3 @@
 .env
 /coverage/
 /vendor/
-
-Gemfile.lock
