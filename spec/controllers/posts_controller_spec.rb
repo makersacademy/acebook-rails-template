@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
- 
+
   login_user
 
   describe 'GET /new ' do
@@ -19,16 +19,6 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to redirect_to(posts_url)
     end
 
-    it 'creates a post' do
-      post :create, params: { post: { message: 'Hello, world!' } }
-      expect(Post.find_by(message: 'Hello, world!')).to be
-    end
-
-    it 'creates a post with a date' do
-      post :create, params: { post: { message: "Today's date is:" } }
-      expected_result = Post.find_by(message: "Today's date is:").updated_at
-      expect(Time.zone.now - expected_result).to be < 1
-    end
   end
 
   describe 'GET /' do
