@@ -14,13 +14,13 @@ Team notes
 * Started using trello and familiarise with it
 
 #### Day 2
-* Read through the tickets/cards before starting jobs 
-* Learnt that we need to do some research before starting jobs 
-* Learnt about setting up a pipeline 
-* Learnt a bit about routes in rails 
-* More conscious about what we don't know 
+* Read through the tickets/cards before starting jobs
+* Learnt that we need to do some research before starting jobs
+* Learnt about setting up a pipeline
+* Learnt a bit about routes in rails
+* More conscious about what we don't know
 * Learnt that you can see simplecov coverage reports online
-* Learnt about date and time feature for posts 
+* Learnt about date and time feature for posts
 * Learnt about how to update and create new database tables using Active record
 
 ### Day 3
@@ -33,4 +33,3 @@ Team notes
 - https://www.youtube.com/watch?v=jd1gOhpETIA - devise sign in and auth
 - https://circleci.com/docs/2.0/about-circleci/?section=getting-started - CI circle explained.
 - https://devcenter.heroku.com/articles/getting-started-with-rails5#add-the-pg-gem - getting to grips with heroku.
-* 
