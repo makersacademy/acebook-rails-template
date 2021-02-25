@@ -1,4 +1,12 @@
 <%= form_for @post do |form| %>
+<% if @post.errors.any?%>
+<%= pluralize(@post.errors.count, "error")%>
+<ul>
+  <% @post.errors.full_messages.each do |message| %>
+  <%=message%>
+  <%end%>
+</ul>
+<%end%>
   <%= form.label :message %>
   <%= form.text_area :message %>
 
