@@ -23,6 +23,9 @@ jobs:
       executor: ruby/default
       steps:
       - checkout
+      - run:
+          name: Update bundler
+          command: bundle update --bundler
       - run: echo "this is the test job"
       - run:
           name: RSpec
