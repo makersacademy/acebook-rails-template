@@ -50,7 +50,7 @@ feature 'sign up page' do
       fill_in 'Password', with: 'testpass'
       fill_in 'Password confirmation', with: 'testpass'
       click_button 'Sign up'
-      expect(page).to have_current_path('/')
+      expect(page).to have_current_path('/posts')
     end
   end
 
