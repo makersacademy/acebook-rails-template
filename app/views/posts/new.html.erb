@@ -3,4 +3,5 @@
   <%= form.text_field :message %>
 
   <%= form.submit "Submit" %>
+  <%= form.number_field :user_id, id: :post_user_id, value: current_user.id, type: :hidden %>
 <% end %>
