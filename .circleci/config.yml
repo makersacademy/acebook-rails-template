@@ -15,7 +15,8 @@ jobs:
             sudo gem update --system
             echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
             source $BASH_ENV
-            gem install bundler
+            gem install bundler 
+
 
   test:
       docker:
@@ -30,6 +31,9 @@ jobs:
           name: Run bundler
           command: bundle install
       - run: echo "this is the test job"
+      - run:
+          name: DB migrate
+          command: rails rake db:migrate
       - run:
           name: RSpec
           command: |
