@@ -32,8 +32,8 @@ jobs:
           command: bundle install
       - run: echo "this is the test job"
       - run:
-          name: DB migrate
-          command: bundle exec rails db:migrate
+          name: DB create
+          command: bundle exec rails db:create db:schema:load --trace
       - run:
           name: RSpec
           command: |
