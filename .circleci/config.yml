@@ -24,6 +24,12 @@ jobs:
       steps:
       - checkout
       - run: echo "this is the test job"
+      - run:
+          name: RSpec
+          command: |
+            bundle exec rspec --profile 10 \
+                              --format progress
+
 # Orchestrate our job run sequence
 workflows:
   build_and_test:
