@@ -4,11 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Timeline', type: :feature do
   scenario 'User can update a former post to display a new message' do
-    visit '/posts'
-    click_link 'New post'
-    fill_in 'Message', with: 'Hello, world!'
-    click_button 'Submit'
-    expect(page).to have_content('Hello, world!')
+    create_a_new_post_and_see_it_on_the_feed("Hello, world!")
     first('.post').click_link 'Edit'
     fill_in 'Message', with: 'I am updated!'
     click_button 'Submit'
