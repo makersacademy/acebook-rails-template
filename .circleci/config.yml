@@ -25,7 +25,7 @@ jobs:
       - checkout
       - run:
           name: Update bundler
-          command: bundle update --bundler
+          command: gem install bundler:2.1.4
       - run: echo "this is the test job"
       - run:
           name: RSpec
