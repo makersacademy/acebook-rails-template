@@ -5,6 +5,7 @@
     <%= link_to edit_post_path(post.id) do %>
       Edit
     <% end %>
+    <%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: 'Are you certain you want to delete this post?' } %>
   </div>
 <% end %>
 
