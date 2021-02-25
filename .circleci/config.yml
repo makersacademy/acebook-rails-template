@@ -18,7 +18,6 @@ jobs:
         requires:
           filters:
             branches:
-              force: 
-                - true
-                only:
+              force: true
+              only:
                   - master
