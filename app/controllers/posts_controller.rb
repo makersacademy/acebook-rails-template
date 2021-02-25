@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    p params
     @post = Post.create(post_params)
     redirect_to posts_url
   end
@@ -24,15 +25,15 @@ class PostsController < ApplicationController
     redirect_to(post_path(post))
   end
 
-    def show
-      redirect_to posts_url
-    end
+  def show
+    redirect_to posts_url
+  end
 
-    def destroy
-      post = Post.find(params[:id])
-      post.destroy
-      redirect_to posts_url
-    end
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to posts_url
+  end
 
   private
 
