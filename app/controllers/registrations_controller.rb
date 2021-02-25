@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path, notice: "Sign in successful"
-      respond_to :js
+      # respond_to :js
     else
       flash[:alert] = "Something went wrong. Please try again!"
       render :new

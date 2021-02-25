@@ -13,6 +13,7 @@ gem 'activerecord'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 # Use postgresql as the database for Active Record
+gem 'launchy'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma'
