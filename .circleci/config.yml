@@ -33,7 +33,7 @@ jobs:
       - run: echo "this is the test job"
       - run:
           name: DB migrate
-          command: rails rake db:migrate
+          command: bundle exec rails db:migrate
       - run:
           name: RSpec
           command: |
