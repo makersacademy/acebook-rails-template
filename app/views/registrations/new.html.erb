@@ -1,13 +1,13 @@
 <h1>Sign up</h1>
 
-<%= form_with model: @user, url: sign_up_path do |form| %>
-<% if @user.errors.any? %>
-  <div>
-    <% @user.errors.full_messages.each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-<% end %>
+<%= form_with model: @user, url: sign_up_path, local: true, method: :post do |form| %>
+  <% if @user.errors.any? %>
+    <div>
+      <% @user.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
 
   <%= form.text_field :email, placeholder: "Enter e-Mail Address"%>
   <%= form.text_field :first_name, placeholder: "Enter First Name"%>

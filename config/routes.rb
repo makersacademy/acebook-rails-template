@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   get 'sign_up', to: 'registrations#new'
 
-  post 'sign_up', to: 'registrations#create', format: :js
+  post 'sign_up', to: 'registrations#create' # format: :js
+
+  delete 'logout', to: 'sessions#destroy'
 
   resources :posts
 
