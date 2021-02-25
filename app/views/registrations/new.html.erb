@@ -1,12 +1,18 @@
 <h1>Sign up</h1>
 
 <%= form_with model: @user, url: sign_up_path do |form| %>
-  <%= form.text_field :email %>
-  <%= form.text_field :first_name %>
-  <%= form.text_field :last_name %>
-  <%= form.text_field :password %>
-  <%= form.text_field :password_confirmation %>
-  <%= form.submit "Sign up" %>
+<% if @user.errors.any? %>
+  <div>
+    <%= @user.errors.full_messages.each do |messages| %>
+    <div><%= message %></div>
+    <% end %>
+  </div>
 <% end %>
 
-<%# Put divs for each form field %>
+  <%= form.text_field :email, placeholder: "Enter e-Mail Address"%>
+  <%= form.text_field :first_name, placeholder: "Enter First Name"%>
+  <%= form.text_field :last_name, placeholder: "Enter Last Name"%>
+  <%= form.password_field :password, placeholder: "Enter Password"%>
+  <%= form.password_field :password_confirmation, placeholder: "Confirm Password" %>
+  <%= form.submit "Sign up" %>
+<% end %>

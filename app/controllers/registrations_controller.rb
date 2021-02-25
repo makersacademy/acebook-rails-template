@@ -7,7 +7,9 @@ class RegistrationsController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to root_path, notice: "Welcome #{@user.first_name}!"
+      render plain: @user.first_name
     else
+      flash[:alert] = "Something went wrong. Please try again!"
       render :new
     end
   end
