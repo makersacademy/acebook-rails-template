@@ -2,9 +2,12 @@
   <div class='post'>
     <p class='message'> <%= post.message %></p>
     <p class='date'><%= post.updated_at %></p>
-    <p><%= User.find_by(id: post.user_id).email %></p>
-    <%= link_to "Edit", edit_post_path(post.id) %>
-    <%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: 'Are you certain you want to delete this post?' } %>
+    <p class='user-email'><%= User.find_by(id: post.user_id).email %></p>
+    <% if current_user.id == post.user_id %>
+      <%= link_to "Edit", edit_post_path(post.id) %>
+      <%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: 'Are you certain you want to delete this post?' } %>
+    <% end %>
+
   </div>
 <% end %>
 
