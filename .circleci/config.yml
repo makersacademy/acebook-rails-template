@@ -15,3 +15,8 @@ jobs:
           command: bundle -v
       - ruby/bundle-install
       - heroku/deploy-via-git
+        requires:
+          filters:
+            branches:
+              only:
+                - master
