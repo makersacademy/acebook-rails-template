@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-  validates_presence_of :message, :message => "can't be empty"
+  validates_presence_of :message, :presence => {:message => 'no message'}
 end
