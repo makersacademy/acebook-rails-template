@@ -18,7 +18,6 @@ RSpec.describe PostsController, type: :controller do
       post :create, params: { post: { message: 'Hello, world!' } }
       expect(response).to redirect_to(posts_url)
     end
-
   end
 
   describe 'GET /' do
