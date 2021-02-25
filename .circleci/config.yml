@@ -5,7 +5,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node
+      - image: circleci/ruby:2.7.2-stretch-node
     executor: ruby/default
     steps:
       - checkout
@@ -16,3 +16,17 @@ jobs:
             echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
             source $BASH_ENV
             gem install bundler
+
+  test:
+      docker:
+        - image: circleci/ruby:2.7.2-stretch-node
+      executor: ruby/default
+      steps:
+      - checkout
+      - run: echo "this is the test job"
+# Orchestrate our job run sequence
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test
