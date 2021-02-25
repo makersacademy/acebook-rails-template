@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def create
     p params
-    @post = Post.create(post_params)
+    @post = Post.create(post_params) { |c| c.user_id = current_user.id }
     redirect_to posts_url
   end
 
