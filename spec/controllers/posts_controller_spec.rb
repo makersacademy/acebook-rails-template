@@ -22,9 +22,9 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it 'creates a post with a date' do
-      post :create, params: { post: { message: "Today's date is:"} }
+      post :create, params: { post: { message: "Today's date is:" } }
       expected_result = Post.find_by(message: "Today's date is:").updated_at
-      expect(Time.now - expected_result).to be < 1
+      expect(Time.zone.now - expected_result).to be < 1
     end
   end
 
