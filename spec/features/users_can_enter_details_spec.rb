@@ -8,7 +8,6 @@ feature 'sign up page' do
     expect(page).to have_content('Welcome! You have signed up successfully.')
   end
 
-
   scenario 'cannot sign up with invalid email' do
     Capybara.current_driver = :selenium
     visit '/users/sign_up'
