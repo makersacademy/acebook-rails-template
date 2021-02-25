@@ -29,3 +29,8 @@ Team notes
 * First retro review with clients/coaches went well.
 * In a better position today moving forwards to implement features.
 * Have broken down tickets into manageable chunks and are now easier to estimate.
+* Some useful links where we learnt about CI and devise:
+- https://www.youtube.com/watch?v=jd1gOhpETIA - devise sign in and auth
+- https://circleci.com/docs/2.0/about-circleci/?section=getting-started - CI circle explained.
+- https://devcenter.heroku.com/articles/getting-started-with-rails5#add-the-pg-gem - getting to grips with heroku.
+* 
