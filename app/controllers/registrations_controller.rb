@@ -6,7 +6,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to home, notice: "Welcome #{@user.first_name}!"
+      redirect_to root_path, notice: "Welcome #{@user.first_name}!"
     else
       render :new
     end
