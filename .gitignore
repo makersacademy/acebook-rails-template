@@ -22,6 +22,5 @@
 
 .byebug_history
 
-# Ignore the tesy coverage 
-echo "coverage" >> .gitignore
-coverage 
+# Ignore the test coverage
+/coverage

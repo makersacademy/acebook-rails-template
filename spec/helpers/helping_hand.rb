@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Helpers
-  module SignUp
+  module HelpingHand
     def register
       visit '/'
       click_link 'Register'
@@ -11,6 +11,13 @@ module Helpers
       fill_in 'Password', with: 'password123'
       fill_in 'Password confirmation', with: 'password123'
       click_button 'Sign up'
+    end
+
+    def submit_post
+      visit '/posts'
+      click_link 'New post'
+      fill_in 'Message', with: 'Hello, world!'
+      click_button 'Submit'
     end
   end
 end
