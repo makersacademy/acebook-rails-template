@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rubocop'
-# Run -A for rubocop to automatically install updates
+# Run -A for rubocop to automatically change updates
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
