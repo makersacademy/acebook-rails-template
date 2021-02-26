@@ -1,11 +1,11 @@
-<h1>Posts</h1>
+<h1>Here are all the posts</h1>
 
 <% if @user %>
  Welcome, <%= @user.first_name %>!
 <% end %>
 
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <div class="post-container"><%= post.message %><br></div>
 <% end %>
 
 <%= link_to new_post_path do %>

@@ -28,3 +28,10 @@ body {
 .navbar li {
     list-style: none;
 }
+
+.post-container {
+    border: 1px solid black;
+    padding: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
