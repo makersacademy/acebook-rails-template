@@ -33,3 +33,11 @@ Team notes
 - https://www.youtube.com/watch?v=jd1gOhpETIA - devise sign in and auth
 - https://circleci.com/docs/2.0/about-circleci/?section=getting-started - CI circle explained.
 - https://devcenter.heroku.com/articles/getting-started-with-rails5#add-the-pg-gem - getting to grips with heroku.
+
+### Day 4
+* Learnt to only deploy from the master branch.
+* Added simplecov-console and rubocop.
+* Figured out how to redirect certain pages. 
+* The structure of rails is becoming more familiar.
+* Work well as a team.
+
