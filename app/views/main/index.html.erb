@@ -1,18 +1,16 @@
-<h1>Timelinez</h1>
+<h1>Timeline</h1>
 
-<% if @user %>
-  Welcome, <%= @user.first_name %>!
-  <%= button_to "Logout", logout_path, method: :delete %>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<div class="new-post">
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
+</div>
 
 <div class="feed">
   <% @posts.each do |post| %>
-    <div class="post-container container">
-      <div class="post-owner"></div>
+    <div class="post-container">
+      <div class="post-owner-pfp"><img src="/assets/default_pfp.svg"></div>
+      <div class="post-owner-name">John Doe</div>
       <div class="post-content"><%= post.message %></div>
       <div class="post-when">Posted at <%= post.created_at.strftime("%H:%M %d/%m/%y") %></div>
     </div>

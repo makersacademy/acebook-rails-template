@@ -8,18 +8,12 @@ body {
     font-family:Arial, Helvetica, sans-serif
 }
 
-.container {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/* Navbar */
 
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .navbar a {
@@ -30,11 +24,39 @@ body {
     list-style: none;
 }
 
-.post-container {
-    border: 1px solid black;
-    padding: 25px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+/* Body */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.post-when
+/* Posts on the Feed */
+
+.post-container {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
+  display: grid;
+  grid-template: auto auto auto / min-content auto;
+  grid-gap: 0.5rem;
+}
+
+.post-owner-pfp {
+  grid-area: 1 / 1 / 4 / 2;
+  width: 100px;
+}
+
+.post-owner-name {
+  align-self: center;
+  font-weight: bold;
+}
+
+.post-content {
+}
+
+.post-when {
+  align-self: end;
+}
