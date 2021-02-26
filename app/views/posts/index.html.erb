@@ -4,7 +4,7 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <p><%= User.find_by(id: post.user_id).name %></p>
+  <p><%= User.find_by(id: post.user_id).name.capitalize %></p>
   <p><%= link_to("Edit this post", edit_post_path(post)) %></p>
   <p><%= link_to 'Delete post', post, :confirm => "Are you sure you want to delete this post? HMMM?!", :method => :delete %></p>
 <% end %>
