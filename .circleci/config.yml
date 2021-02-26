@@ -20,7 +20,7 @@ jobs:
   test:  # our next job, called "test"
     # we run "parallel job containers" to enable speeding up our tests;
     # this splits our tests across multiple containers.
-    parallelism: 3 
+    # parallelism: 3 
     # here we set TWO docker images.
     docker:
       - image: cimg/ruby:2.7-node # this is our primary docker image, where step commands run.
@@ -46,12 +46,12 @@ jobs:
     # A series of steps to run, some are similar to those in "build".
     steps:
       - checkout 
-      - ruby/install-deps 
-      - node/install-packages:
-          pkg-manager: yarn
-          cache-key: "yarn.lock"
-      # Here we make sure that the secondary container boots 
-      # up before we run operations on the database.
+      # - ruby/install-deps 
+      # - node/install-packages:
+      #     pkg-manager: yarn
+      #     cache-key: "yarn.lock"
+      # # Here we make sure that the secondary container boots 
+      # # up before we run operations on the database.
       - run:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
