@@ -65,3 +65,11 @@
 - Fixed redirecting adding an index.js.erb
 - Worked on fixing flash messages when rendering page
 - Alice joined us to help us come to the conclusion we need a `local: true` in the form header for some reason to make the ujs actually unobtrusive.
+
+## 26 February 2021
+
+### Morning
+
+- Opened with updating of Trello board, assessment of current progress, and planning of task split for the pre-sprint checkout.
+- Discussed the balance of deliverable versus process.
+- Assigned work on the posts and users branches.
