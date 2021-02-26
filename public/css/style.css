@@ -11,6 +11,7 @@ body {
 .container {
     padding: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -28,3 +29,12 @@ body {
 .navbar li {
     list-style: none;
 }
+
+.post-container {
+    border: 1px solid black;
+    padding: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.post-when

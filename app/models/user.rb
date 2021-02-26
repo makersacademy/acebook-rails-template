@@ -6,4 +6,6 @@ class User < ApplicationRecord
             "#{data[:value]} already exists. Please enter a new email address"
           end
         }, format: {with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: 'Must be a valid email address' }
-    end
+
+  validates :password, presence: true, length: {:within => 6..10} 
+end
