@@ -41,3 +41,12 @@ Team notes
 * The structure of rails is becoming more familiar.
 * Work well as a team.
 
+### Day 5
+* Small steps are still steps
+* Work to be done with CSS to make it look pretty (at least for the first page)
+* Agreed on Mario theme
+* Played around with figma
+* Much more coding than the pas few days
+* Still need to work on circleCI
+* Redirect with ruby on rails
+* Well done team :)
