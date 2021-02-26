@@ -79,3 +79,7 @@
 - Configured a project-specific Heroku account and uploaded file.
 - Troubleshot Heroku start issues.
 - Split into Posts, Heroku and User working groups.
+- Important commands for heroku debugging:
+`heroku pg:reset --app hemo-acebook`
+`heroku run rake db:schema:load --app hemo-acebook`
+`heroku run rake db:migrate --app hemo-acebook`
