@@ -73,3 +73,9 @@
 - Opened with updating of Trello board, assessment of current progress, and planning of task split for the pre-sprint checkout.
 - Discussed the balance of deliverable versus process.
 - Assigned work on the posts and users branches.
+
+### Afternoon
+
+- Configured a project-specific Heroku account and uploaded file.
+- Troubleshot Heroku start issues.
+- Split into Posts, Heroku and User working groups.
