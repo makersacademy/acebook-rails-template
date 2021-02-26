@@ -1,33 +1,27 @@
-# language: ruby
-# rvm:
-#   - 2.5
-#   - jruby
-
-# script:
-#   - bundle exec rails db:migrate
-#   - bundle exec rspec
-# cache: bundler
-# services:
-#   - postgresql
-# addons:
-#   postgresql: "9.4"
 
 install:
   - bundle update --bundler
   - bundle install
 services:
   - postgresql
-  
-  
-build:
-  script:
-    - bundle exec bin/rails db:create
-    - bundle exec bin/rails db:migrate
-test:
-  script:
-    - bundle exec bin/rails db:environment:set RAILS_ENV=test
-    - bundle exec rspec
-    - bundle exec rubocop
+
+script:
+  - bundle exec bin/rails db:create
+  - bundle exec bin/rails db:migrate
+  - bundle exec bin/rails db:environment:set RAILS_ENV=test
+  - bundle exec rspec
+  - bundle exec rubocop
+
+# deploy:
+#   provider: heroku
+#  api_key: 
+#   secure: heroku
+# app: fierce-plains-18412
+#   on: 
+#  repo: SalarGhotaslo/acebook-sholk
+
+
+
 
 
 
