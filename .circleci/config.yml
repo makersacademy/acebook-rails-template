@@ -20,4 +20,4 @@ jobs:
             branches:
               force: true
               only:
-                  - master
+                  - deploy
