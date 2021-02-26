@@ -9,7 +9,7 @@ feature 'sign up page' do
   end
 
   scenario 'cannot sign up with invalid email' do
-    Capybara.current_driver = :selenium
+    Capybara.current_driver = :selenium_chrome_headless
     visit '/users/sign_up'
     fill_in 'Email', with: 'test'
     fill_in 'Password', with: 'testpass'

@@ -17,7 +17,7 @@
 # users commonly want.
 #
 # frozen_string_literal: true
-
+require 'webdrivers'
 require 'simplecov'
 require 'simplecov-console'
 require 'helpers/web_helper'
