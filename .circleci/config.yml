@@ -21,3 +21,5 @@ jobs:
               force: true
               only:
                   - deploy
+              ignore: 
+                  - master
