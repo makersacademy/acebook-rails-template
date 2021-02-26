@@ -10,6 +10,6 @@
 
 <div class="feed">
   <% @posts.each do |post| %>
-    <div class="post-container"><%= post.message %></div>
+    <div class="post-container"><%= post.message %>Posted at <%= post.created_at.strftime("%H:%k %d/%m/%y") %></div>
   <% end %>
 </div>
