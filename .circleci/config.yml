@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7-node
+      - image: circleci/ruby:2.7.2-node
     executor: ruby/default
     steps:
       - checkout # pull down our git code.
@@ -23,7 +23,7 @@ jobs:
     # parallelism: 3 
     # here we set TWO docker images.
     docker:
-      - image: cimg/ruby:2.7-node # this is our primary docker image, where step commands run.
+      - image: cimg/ruby:2.7.2-node # this is our primary docker image, where step commands run.
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
