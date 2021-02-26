@@ -6,10 +6,13 @@ class ApplicationController < ActionController::Base
   private
 
     def authenticate_user!
+      allowed_paths = [root_path, new_user_registration_path, new_user_password_path, user_registration_path, new_user_session_path]
       if user_signed_in?
         super
       else
-        redirect_to root_path, notice: "Please Login to view that page!" if request.original_fullpath != root_path
+        redirect_to root_path, notice: "Please login to view that page!" if !allowed_paths.include?(request.original_fullpath)
       end
     end
+
+
 end
