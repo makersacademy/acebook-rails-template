@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  # prepend_view_path "../views/main"
+
+  # def self.controller_path
+  #   "../views/main"
+  # end
+
   def new
     @post = Post.new
   end
