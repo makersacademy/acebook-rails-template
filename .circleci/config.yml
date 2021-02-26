@@ -46,7 +46,7 @@ jobs:
     # A series of steps to run, some are similar to those in "build".
     steps:
       - checkout 
-      # - ruby/install-deps 
+      - ruby/install-deps 
       # - node/install-packages:
       #     pkg-manager: yarn
       #     cache-key: "yarn.lock"
