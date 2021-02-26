@@ -1,18 +1,31 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  def new
+  before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+
+  def index
+    @posts = Post.all.order("created_at DESC")
     @post = Post.new
+  end
+
+  def new
+    @post = current_user.posts.build
   end
 
   def create
     p params
-    @post = Post.create(post_params)
-    redirect_to posts_url
-  end
+    @post = current_user.posts.build(post_params)
 
-  def index
-    @posts = Post.all
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to root_path, notice: 'Post was successfully created.' }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def edit
