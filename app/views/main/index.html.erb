@@ -4,16 +4,12 @@
  Welcome, <%= @user.first_name %>!
 <% end %>
 
-<div class="feed">
-  <% @posts.each do |post| %>
-    <div class="post-container">
-      <div>
-        <%= post.message %><br>
-      </div>
-    </div>
-  <% end %>
-</div>
-
 <%= link_to new_post_path do %>
   New post
 <% end %>
+
+<div class="feed">
+  <% @posts.each do |post| %>
+    <div class="post-container"><%= post.message %></div>
+  <% end %>
+</div>
