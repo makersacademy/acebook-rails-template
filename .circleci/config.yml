@@ -9,14 +9,23 @@ jobs:
       - image: circleci/ruby:2.7-node
     executor: ruby/default
     steps:
-      - checkout
-      - run:
-          name: Force Bundler Version
-          command: |
-            sudo gem update --system
-            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
-            source $BASH_ENV
-            gem install bundler 
+      - checkout # pull down our git code.
+      - ruby/install-deps # use the ruby orb to install dependencies
+      # use the node orb to install our packages
+      # specifying that we use `yarn` and to cache dependencies with `yarn.lock`
+      # learn more: https://circleci.com/docs/2.0/caching/
+      - node/install-packages: 
+          pkg-manager: yarn
+          cache-key: "yarn.lock"
+    # steps:
+    #   - checkout
+    #   - run:
+    #       name: Force Bundler Version
+    #       command: |
+    #         sudo gem update --system
+    #         echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+    #         source $BASH_ENV
+    #         gem install bundler 
   
 
 
