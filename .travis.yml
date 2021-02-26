@@ -11,14 +11,11 @@ script:
   - bundle exec bin/rails db:environment:set RAILS_ENV=test
   - bundle exec rspec
   - bundle exec rubocop
-  - git push heroku master
-  - heroku rails db:migrate
-  - https://fierce-plains-18412.herokuapp.com/
 
 # deploy:
-#   provider: heroku
-#  api_key: 
-#   secure: 657db9bb-d791-45d1-9c3c-3bb3725d5a7a
-# app: fierce-plains-18412
-#   on: 
-#  repo: SalarGhotaslo/acebook-sholk
+  provider: heroku
+ api_key: 
+  secure: 657db9bb-d791-45d1-9c3c-3bb3725d5a7a
+app: fierce-plains-18412
+  on: 
+ repo: SalarGhotaslo/acebook-sholk
