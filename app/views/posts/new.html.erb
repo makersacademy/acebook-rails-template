@@ -1,6 +1,14 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
+# <%= form_for @post do |form| %>
+#   <%= form.label :message %>
+#   <%= form.text_area :message %>
+#   <%= form.submit "Submit" %>
+# <% end %>
 
-  <%= form.submit "Submit" %>
+<%= form_for :post, post_path do |form| %>
+  <% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <div class='alert danger'><%= msg %></div>
+    <% end %>
+  <% end %>
 <% end %>
+<%= form.submit "Submit" %>
