@@ -1,15 +1,12 @@
 version: 2.1
 orbs:
-  ruby: circleci/ruby@0.1.2
+  ruby: circleci/ruby@1.0 
+  node: circleci/node@2
 
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7.2-stretch-node
-        environment:
-          RAILS_ENV: test
-          PGHOST: 127.0.0.1
-          PGUSER: root
+      - image: circleci/ruby:2.7-node
     executor: ruby/default
     steps:
       - checkout
