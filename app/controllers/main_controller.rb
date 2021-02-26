@@ -10,7 +10,7 @@ class MainController < ApplicationController
   private
 
   def load_posts
-    @posts = Post.order("created_at desc").limit(5)
+    @posts = Post.order("created_at desc").limit(50)
   end
 
 end
