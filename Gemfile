@@ -43,8 +43,8 @@ group :development, :test do
   gem 'rubocop-rake'
   gem 'rubocop-rspec'
   gem 'selenium-webdriver'
-  gem 'simplecov', require: false
-  gem 'simplecov-console', require: false
+  gem 'simplecov'
+  gem 'simplecov-console'
 end
 
 group :development do

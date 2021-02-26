@@ -2,7 +2,6 @@
 
 <% if @user %>
   Welcome, <%= @user.first_name %>!
-  <%= button_to "Logout", logout_path, method: :delete %>
 <% end %>
 
 <%= link_to new_post_path do %>
