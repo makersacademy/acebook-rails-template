@@ -14,7 +14,7 @@ script:
 
 deploy:
   provider: heroku:git
-  api_key: ${HEROKU_ACCESS_TOKEN}
+  api_key: ${ENV['HEROKU_ACCESS_TOKEN']}
   app: fierce-plains-18412
   edge: true
   run: rake db:migrate
