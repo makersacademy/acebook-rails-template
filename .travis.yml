@@ -17,9 +17,17 @@ install:
   - bundle install
 services:
   - postgresql
-script:
-  - bundle exec bin/rails db:create
-  - bundle exec bin/rails db:migrate
-  - bundle exec bin/rails db:environment:set RAILS_ENV=test
-  - bundle exec rspec
-  - bundle exec rubocop
+  
+  
+build:
+  script:
+    - bundle exec bin/rails db:create
+    - bundle exec bin/rails db:migrate
+test:
+  script:
+    - bundle exec bin/rails db:environment:set RAILS_ENV=test
+    - bundle exec rspec
+    - bundle exec rubocop
+
+
+
