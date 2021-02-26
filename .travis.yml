@@ -2,3 +2,12 @@ language: ruby
 rvm:
   - 2.5
   - jruby
+
+script:
+  - bundle exec rails db:migrate
+  - bundle exec rspec
+cache: bundler
+services:
+  - postgresql
+# addons:
+#   postgresql: "9.4"
