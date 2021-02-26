@@ -32,15 +32,15 @@ jobs:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
         environment: # add POSTGRES environment variables.
-          POSTGRES_USER: circleci-demo-ruby
-          POSTGRES_DB: rails_blog_test
+          POSTGRES_USER: pgapp
+          POSTGRES_DB: pgapp_test
           POSTGRES_PASSWORD: ""
     # environment variables specific to Ruby/Rails, applied to the primary container.
     environment:
       BUNDLE_JOBS: "3"
       BUNDLE_RETRY: "3"
       PGHOST: 127.0.0.1
-      PGUSER: circleci-demo-ruby
+      PGUSER: pgapp
       PGPASSWORD: ""
       RAILS_ENV: test
     # A series of steps to run, some are similar to those in "build".
