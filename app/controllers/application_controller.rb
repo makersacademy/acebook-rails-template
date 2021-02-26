@@ -5,10 +5,10 @@ class ApplicationController < ActionController::Base
     '/posts'
   end
 
-  before_action :authenticate 
-
-  def authenticate
-    redirect_to(root_path) unless current_user.nil?
-  end
+  # before_action :authenticate
+  #
+  # def authenticate
+  #   redirect_to(root_path) unless current_user.nil?
+  # end
 
 end
