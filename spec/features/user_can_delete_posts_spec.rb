@@ -39,5 +39,11 @@ RSpec.feature 'Timeline', type: :feature do
       expect(first('.post')).not_to have_link('Delete')
     end
 
+    scenario "User is warned when trying to edit another's post" do
+      visit '/posts/1/edit'
+      expect(page).to have_current_path('/posts')
+      expect(page).to have_content("Not authorised!")
+    end
+
   end
 end
