@@ -1,19 +1,28 @@
 class PostsController < ApplicationController
+ 
   def new
     @post = Post.new
   end
 
   def create
     @post = Post.create(post_params)
-    redirect_to posts_url
+    if (@post.save)
+      redirect_to '/posts'
+    else
+      render 'new'
+    end
   end
-
+  
   def index
     if user_signed_in?
       @posts = Post.all
     else
       redirect_to root_url
     end
+  end
+  
+  def show
+    @post = Post.find(params[:id])
   end
 
   private
