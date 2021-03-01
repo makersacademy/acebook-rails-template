@@ -1,8 +1,4 @@
 
-body {
-  background-color: #0a122a;
-}
-
 .post {
   margin-top: 2em;
   margin-bottom:  2em;
@@ -15,7 +11,7 @@ body {
   word-wrap: break-word;
   text-align: center;
   border-radius: 2.5em;
-  border: 0.1em solid #0a122a;
+  /* border: 0.1em solid #0a122a; */
 }
 
 #new-post-link {
