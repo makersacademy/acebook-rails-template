@@ -1,0 +1,10 @@
+<%= form_for :post, url: post_path(@post.id) }, method: :patch do |form| %>
+  <%= form.label :message %>
+ <%= form.text_area :message %>
+ <% if @post.errors.any? %>
+   <% @post.errors.full_messages.each do |msg| %>
+     <div class='alert danger'><%= msg %></div>
+   <% end %>
+ <% end %>
+ <%= form.submit "Submit" %>
+<% end %>
