@@ -10,6 +10,6 @@ RSpec.feature 'Timeline', type: :feature do
     fill_in 'Password confirmation', with: 'testpass'
     click_button 'Sign up'
     create_a_new_post_and_see_it_on_the_feed("Hello, world!")
-    expect(Time.zone.now - first('.date').text.to_datetime).to be < 1
+    expect(Time.zone.now - first('.date').text.to_datetime).to be < 60
   end
 end
