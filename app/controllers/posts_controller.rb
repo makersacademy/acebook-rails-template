@@ -3,6 +3,7 @@
 class PostsController < ApplicationController
 
   def new
+    p @posts
     @post = Post.new
   end
 

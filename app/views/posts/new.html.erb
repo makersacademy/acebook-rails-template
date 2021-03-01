@@ -1,6 +1,12 @@
+<!-- <% if @user %> -->
+<h1> Hello </h1>
+
 <%= form_for @post do |form| %>
+  <%= @post %>
   <%= form.label :message %>
   <%= form.text_field :message %>
 
   <%= form.submit "Submit" %>
 <% end %>
+
+<!-- <% end %> -->
