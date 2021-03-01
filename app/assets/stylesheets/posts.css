@@ -1,3 +1,8 @@
+
+body {
+  background-color: #0a122a;
+}
+
 .post {
   margin-top: 2em;
   margin-bottom:  2em;
@@ -7,6 +12,10 @@
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  word-wrap: break-word;
+  text-align: center;
+  border-radius: 2.5em;
+  border: 0.1em solid #0a122a;
 }
 
 #new-post-link {
@@ -15,4 +24,5 @@
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
