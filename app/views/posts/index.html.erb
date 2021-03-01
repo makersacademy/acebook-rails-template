@@ -5,8 +5,8 @@
   created by: <%= post.user.email %>
   <%= link_to "/posts/#{post.id}/edit" do %>
     Edit post
-
-<% end %>
+  <% end %>
+  <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }%>
 <% end %>
 <%= link_to new_post_path do %>
 <br>
