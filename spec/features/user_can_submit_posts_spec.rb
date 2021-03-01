@@ -14,7 +14,15 @@ RSpec.feature "Timeline", type: :feature do
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
+    expect(page).to have_current_path('/posts')
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content(Date.today.strftime('%d/%m/%y'))
   end
+
+  scenario "responds with correct status code " do
+    sign_up
+    click_link "New post"
+    expect(page).to have_http_status(200)
+  end
+  
 end
