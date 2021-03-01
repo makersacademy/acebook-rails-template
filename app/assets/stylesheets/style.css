@@ -1,11 +1,11 @@
 body {
  background-image: url("https://dypqnhofrd2x2.cloudfront.net/98D3-0000-028E-1362.jpg");
+ /* background-repeat: no-repeat; */
 }
 h1 {
   font-family: 'DotGothic16', sans-serif;
   color: white;
-  /* font-size: 50px; */
-  font-size: 100px;
+  font-size: 150px;
   font-weight: bold;
   padding-top: 150px;
 }
@@ -30,4 +30,12 @@ p {
 .navbar-brand {
   font-family: 'DotGothic16', sans-serif;
 
+}
+.mt-5 {
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.container-fluid{
+  background-color: greenyellow;
 }
