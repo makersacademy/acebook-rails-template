@@ -28,6 +28,8 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    redirect_to posts_path, notice: "Exceeded ten minute marker for editing posts, you eejit!" unless Time.zone.now - @post.created_at < (60 * 10)
+
   end
 
   def destroy
@@ -38,7 +40,7 @@ class PostsController < ApplicationController
 
   def correct_user
     @post = current_user.posts.find_by(id: params[:id])
-    redirect_to posts_path, notice: "Not authorised!" if @post.nil? 
+    redirect_to posts_path, notice: "Not authorised!" if @post.nil?
   end
 
   private
