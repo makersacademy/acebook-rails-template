@@ -1,18 +1,18 @@
 class PostsController < ApplicationController
- 
+
   def new
-    @post = Post.new
+    @post = current_user.posts.new
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = current_user.posts.create(post_params)
     if (@post.save)
       redirect_to '/posts'
     else
       render 'new'
     end
   end
-  
+
   def index
     if user_signed_in?
       @posts = Post.all
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
       redirect_to root_url
     end
   end
-  
+
   def show
     @post = Post.find(params[:id])
   end
@@ -28,6 +28,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
 end
