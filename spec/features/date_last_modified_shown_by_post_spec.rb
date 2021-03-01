@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Timeline', type: :feature do
-  scenario 'Submitted posts should show user' do
+  scenario 'Submitted posts should show date and time' do
     visit '/users/sign_up'
     fill_in 'Email', with: 'test@email.com'
     fill_in 'Password', with: 'testpass'
