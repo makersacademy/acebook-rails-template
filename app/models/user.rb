@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  validates :username, presence: true, acceptance: { message: 'must be abided' }
+  validates :username, uniqueness: true, if: ->{ self.username.present? }
   has_many :posts
 end
