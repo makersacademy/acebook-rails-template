@@ -4,7 +4,7 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <p class="user-name">Posted by <strong><%= User.find_by(id: post.user_id).name %></strong> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%>
+  <p class="user-name">Posted by <%=link_to User.find_by(id: post.user_id).name, user_path(User.find_by(id: post.user_id))%> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%>
   <%unless post.created_at == post.updated_at%>
 Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%>
   <%end%></p>
@@ -21,3 +21,4 @@ Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%>
   New post
 <% end %>
 <% end %>
+
