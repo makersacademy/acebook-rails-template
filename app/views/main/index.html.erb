@@ -10,7 +10,8 @@
   <% @posts.each do |post| %>
     <div class="post-container">
       <div class="post-owner-pfp"><img src="/assets/default_pfp.svg"></div>
-      <div class="post-owner-name">John Doe</div>
+      <% p post %>
+      <div class="post-owner-name"><%= User.find(post.user_id).first_name %></div>
       <div class="post-content"><%= post.message %></div>
       <div class="post-when">Posted at <%= post.created_at.strftime("%H:%M %d/%m/%y") %></div>
     </div>

@@ -7,8 +7,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to root_path
+    @post = Current.user.posts.new(post_params)
+    @post.save
+    if @post.save
+      redirect_to root_path, notice: 'Post successfully created'
+    else
+      render :new
+    end
   end
 
   def index
@@ -18,8 +23,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params_hash = params.require(:post).permit(:message)
-    params_hash["user_id"] = Current.user.id
-    params_hash
+    params.require(:post).permit(:message)
   end
 end
