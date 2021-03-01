@@ -1,4 +1,12 @@
+
+<div id="new-post-link">
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
+</div>
+
 <% @posts.reverse_each do |post| %>
+
   <div class='post'>
     <p class='message'> <%= post.message %></p>
     <p class='date'><%= post.updated_at %></p>
@@ -9,9 +17,4 @@
     <% end %>
 
   </div>
-<% end %>
-
-
-<%= link_to new_post_path do %>
-  New post
 <% end %>
