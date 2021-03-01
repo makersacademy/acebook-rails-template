@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def sign_up
   visit '/sign_up'
   fill_in 'user[first_name]', with: 'Joe'
@@ -6,7 +8,7 @@ def sign_up
   fill_in 'user[password]', with: 'password'
   fill_in 'user[password_confirmation]', with: 'password'
   click_button 'Sign up'
-end 
+end
 
 def sign_out
   click_button 'Logout'

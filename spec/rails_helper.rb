@@ -31,7 +31,6 @@ require 'simplecov-console'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-
   # config.before(:each) do |config|
 
   #   ActiveRecord::Base.subclasses.each(&:delete_all)
