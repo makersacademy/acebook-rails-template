@@ -4,7 +4,10 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <p class="user-name"> <%= User.find_by(id: post.user_id).name %> </p>
+  <p class="user-name">Posted by <strong><%= User.find_by(id: post.user_id).name %></strong> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%>
+  <%unless post.created_at == post.updated_at%>
+Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%>
+  <%end%></p>
 
   <%  if current_user.present? && current_user.id == post.user_id %>
     <p><%= link_to("Edit this post", edit_post_path(post)) %></p>
