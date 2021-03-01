@@ -2,10 +2,6 @@
 
 class PostsController < ApplicationController
 
-  protect_from_forgery with: :exception
-
-  before_action :authenticate_user!
-
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def new
