@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 require 'active_support/testing/time_helpers'
