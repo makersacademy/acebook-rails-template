@@ -2,6 +2,11 @@ require 'rails_helper'
 
 
 RSpec.describe PostsController, type: :controller do
+  # before do 
+  # user = new(:user)
+  #   allow_any_instance_of(ApplicationController).to receive(:current_user).and_return{user}
+  # end 
+
   describe "GET /new " do
     it "responds with 200" do
       get :new
