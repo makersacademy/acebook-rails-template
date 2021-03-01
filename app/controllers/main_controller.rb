@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class MainController < ApplicationController
+  
   before_action :load_posts, only: :index
 
   def index
