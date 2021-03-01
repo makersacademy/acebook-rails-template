@@ -1,0 +1,33 @@
+body {
+ background-image: url("https://dypqnhofrd2x2.cloudfront.net/98D3-0000-028E-1362.jpg");
+}
+h1 {
+  font-family: 'DotGothic16', sans-serif;
+  color: white;
+  /* font-size: 50px; */
+  font-size: 100px;
+  font-weight: bold;
+  padding-top: 150px;
+}
+h2 {
+  font-family: 'DotGothic16', sans-serif;
+  color: white;
+  font-size: 100px;
+
+}
+h3 {
+  font-family: 'DotGothic16', sans-serif;
+  color: white;
+}
+ul {
+  font-family: 'DotGothic16', sans-serif;
+  color: white;
+}
+p {
+  font-family: 'DotGothic16', sans-serif;
+  color: white;
+}
+.navbar-brand {
+  font-family: 'DotGothic16', sans-serif;
+
+}
