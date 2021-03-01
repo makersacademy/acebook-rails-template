@@ -9,7 +9,7 @@
 
   <div class='post'>
     <p class='message'> <%= post.message %></p>
-    <p class='date'><%= post.updated_at %></p>
+    <p class='date'>Posted at <%= post.updated_at.strftime("%k:%M on %d/%m/%Y") %></p>
     <p class='user-email'><%= User.find_by(id: post.user_id).email %></p>
     <% if current_user.id == post.user_id %>
       <%= link_to "Edit", edit_post_path(post.id) %>
