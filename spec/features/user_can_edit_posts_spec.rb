@@ -4,11 +4,7 @@ require 'rails_helper'
 
 RSpec.feature 'Timeline', type: :feature do
   scenario 'User can update a former post to display a new message' do
-    visit '/users/sign_up'
-    fill_in 'Email', with: 'test@email.com'
-    fill_in 'Password', with: 'testpass'
-    fill_in 'Password confirmation', with: 'testpass'
-    click_button 'Sign up'
+    sign_up(email: 'test@email.com', password: 'testpass')
     create_a_new_post_and_see_it_on_the_feed("Hello, world!")
     first('.post').click_link 'Edit'
     fill_in 'Message', with: 'I am updated!'
