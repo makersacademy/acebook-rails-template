@@ -1,23 +1,13 @@
 <nav class="navbar">
     <%= link_to "AceBook", root_path %>
     <ul class="menu">
-        <li class="menu-item">
-            <%= link_to "Home", root_path, class: "menu-item" %>
-        </li>
-    <% if Current.user %>
-        <li>
-            Welcome, <%= Current.user.first_name %>!
-        </li>
-        <li>
-            <%= button_to "Logout", logout_path, method: :delete %>
-        </li>
-    <% else %>
-        <li>
-            <%= link_to "Sign up", sign_up_path %>
-        </li>
-        <li>
-            <%= link_to "Login", sign_in_path %>
-        </li>
-    <% end %>
+      <li class="menu-item"><%= link_to "Home", root_path, class: "menu-item" %></li>
+      <% if Current.user %>
+        <li>Welcome, <%= Current.user.first_name %>!</li>
+        <li><%= button_to "Log Out", logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Sign Up", sign_up_path %></li>
+        <li><%= link_to "Log In", sign_in_path %></li>
+      <% end %>
     </ul>
 </nav>
