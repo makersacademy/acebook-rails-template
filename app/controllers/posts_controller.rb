@@ -2,6 +2,10 @@
 
 class PostsController < ApplicationController
 
+  # Before action calls the login_required method from application controller,
+  # to create a post you must be signed in
+  before_action :login_required, :only => :new
+
   def new
     @post = Post.new
   end
