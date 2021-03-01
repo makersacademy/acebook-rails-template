@@ -61,7 +61,7 @@ jobs:
       # Run rspec in parallel
       - run:
           name: Rspec tests
-          command: rspec —format RspecJunitFormatter —out rspec.xml
+          command: bundle exec rspec —format RspecJunitFormatter —out rspec.xml
 
 # We use workflows to orchestrate the jobs that we declared above.
 workflows:
