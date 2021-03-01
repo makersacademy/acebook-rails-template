@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20210223153630) do
+=======
+ActiveRecord::Schema.define(version: 20210225152333) do
+>>>>>>> parent of 42a52ea... Merge pull request #4 from PetarSimonovic/development2
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
