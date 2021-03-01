@@ -1,0 +1,24 @@
+
+.post {
+  margin-top: 2em;
+  margin-bottom:  2em;
+  background-color: #E6EFEC;
+  padding: 0.5em;
+  padding-top: 1.5em;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+  text-align: center;
+  border-radius: 2.5em;
+  /* border: 0.1em solid #0a122a; */
+}
+
+#new-post-link {
+  padding: 0.5em;
+  padding-top: 1.5em;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
