@@ -16,7 +16,7 @@ RSpec.feature 'Timeline', type: :feature do
     expect(first('.post')).not_to have_content("Edit")
   end
 
-   context 'User does not refresh page when creating initial post' do
+  context 'User does not refresh page when creating initial post' do
     scenario 'User cannot reach edit page' do
       visit '/users/sign_up'
       fill_in 'Email', with: 'test@email.com'
