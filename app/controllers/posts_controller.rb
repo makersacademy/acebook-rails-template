@@ -3,7 +3,6 @@
 class PostsController < ApplicationController
 
   def new
-    p @posts
     @post = Post.new
   end
 
@@ -19,6 +18,8 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params_hash = params.require(:post).permit(:message)
+    params_hash["user_id"] = Current.user.id
+    params_hash
   end
 end
