@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
   end
@@ -15,10 +16,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    authenticate_post
   end
 
   def update
     @post = Post.find(params[:id])
+    authenticate_post
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to root_path, notice: "Post was successfully updated." }
@@ -29,7 +32,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    # @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
+    authenticate_post
     @post.destroy
     respond_to do |format|
       format.html { redirect_to root_path, notice: "Post was successfully destroyed." }
@@ -41,4 +45,13 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message, :user_id)
   end
+
+  def authenticate_post
+    if current_user.id != @post.user_id
+      flash.alert = "That is not your post"
+      redirect_to root_path
+    end
+  end
+
+
 end
