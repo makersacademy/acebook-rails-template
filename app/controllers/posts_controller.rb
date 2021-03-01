@@ -1,8 +1,5 @@
 class PostsController < ApplicationController
-  def index
-    @posts = Post.all
-  end
-  
+ 
   def new
     @post = Post.new
   end
@@ -13,6 +10,14 @@ class PostsController < ApplicationController
       redirect_to '/posts'
     else
       render 'new'
+    end
+  end
+  
+  def index
+    if user_signed_in?
+      @posts = Post.all
+    else
+      redirect_to root_url
     end
   end
   

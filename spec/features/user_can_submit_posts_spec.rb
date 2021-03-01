@@ -1,8 +1,8 @@
 require 'rails_helper'
-
+include WelcomeHelper
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
-    visit "/posts"
+    sign_up
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
@@ -10,7 +10,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "You can see the time the post was created" do
-    visit "/posts"
+    sign_up
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
