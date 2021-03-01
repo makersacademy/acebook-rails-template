@@ -51,7 +51,7 @@ Team notes
 * Redirect with ruby on rails
 * Well done team :)
 
-### Day 5
+### Day 6
 * Implemented CRUD well
 * CSS implemented partially
 * Energy level to be improved ^_^
