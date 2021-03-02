@@ -92,3 +92,8 @@
 ### Afternoon
 - Split into two groups. First one focused on setting up circleCI integration with our project. Currently running...
 - Second group focused on linking a post to a user. Updated schema and created addition db:migrate file for posts.
+
+## 2 March 2021
+### Morning
+- Discussed order of work prior to and after the sprint review later this morning.
+- Agreed prioritisation of tests (including confirmation of CircleCI configuration) for this morning's work, and CRUD/CSS functionality for the afternoon.
