@@ -1,67 +1,35 @@
 .demo-card-wide.mdl-card {
   width: 640px;
   height: 300px;
-
 }
 
-.mdl-card__actions {
-
-  outline: skyblue solid 5px;
-  z-index: 4;
-
-
-}
 #name {
-  display:flex;
-margin-top: 10px;
-  justify-content: left;
+  display: flex;
 }
 
 #contact{
-  diplay: flex;
-
+  display: flex;
 }
-
-
-.mdl-button {
-// outline: red solid 5px;
-  margin-left: 10px ;
-
-}
-.demo-card-wide {
-  height: 200px;
- // outline: limegreen 10px solid;
-}
-
 
 .demo-card-wide > .mdl-card__title {
   color: #fff;
   height: 64px;
-  background-color:indigo;
+  background-color: indigo;
 }
 
 .mdl-card__title-text {
   position: relative;
-  top: 6px;
-
 }
 
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
 
-
 #mycard {
   height: 600px;
-  width:100%;
- display:flex;
+  width: 100%;
+  display: flex;
   flex-direction: row;
-  // outline: red solid 10px;
   justify-content: center;
   align-items: center;
-}
-
-.mdl-textfield {
-  width: 250px;
-  margin-right: 10px;
 }
