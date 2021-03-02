@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-  def news
+  def new
   end
 
   def index
