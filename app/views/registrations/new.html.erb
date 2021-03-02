@@ -1,14 +1,8 @@
 <h1>Sign up</h1>
 
-
-
-
-
-
 <div id ="mycard">
 
   <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-
     <div class="mdl-card__title">
       <h2 class="mdl-card__title-text">Sign Up</h2>
     </div>
@@ -49,7 +43,6 @@
           <%= form.password_field :password, class: "mdl-textfield__input", id: "password-input" %>
           <label class="mdl-textfield__label" for="sample3">Password</label>
         </div>
-
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <%= form.password_field :password_confirmation, class: "mdl-textfield__input", id: "password-confirmation-input" %>
           <label class="mdl-textfield__label" for="sample3">Password Confirmation</label>
@@ -57,12 +50,10 @@
       </div>
 
     </div>
-
   </div>
 
-  <!-- FAB button with ripple -->
-  <div id="next">
-    <%= form.submit class: "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" do %>
+  <div id="next" style="padding-left: 10px" >
+    <%= button_tag( :class => "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ) do %>
       <i class="material-icons">arrow_forward</i>
     <% end %>
   </div>
