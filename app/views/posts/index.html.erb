@@ -12,16 +12,16 @@
     <p class='date'>Posted at <%= post.updated_at.strftime("%k:%M on %d/%m/%Y") %></p>
     <p class='user-email'><%= User.find_by(id: post.user_id).email %></p>
     <% if post.user.id == current_user.id %>
-    <% if Time.zone.now - post.created_at < (60 * 10) %>
-    <%= link_to "Edit", edit_post_path(post.id) %>
-    <% end %>
-    <%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: 'Are you certain you want to delete this post?' } %>
+      <% if Time.zone.now - post.created_at < (60 * 10) %>
+        <%= link_to "Edit", edit_post_path(post.id) %>
+      <% end %>
+      <%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: 'Are you certain you want to delete this post?' } %>
     <% end %>
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
     <% if pre_like %>
-    <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+      <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
     <% else %>
-    <%= button_to 'Like', post_likes_path(post), method: :post %>
+      <%= button_to 'Like', post_likes_path(post), method: :post, class: 'like' %>
     <% end %>
     <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   </div>

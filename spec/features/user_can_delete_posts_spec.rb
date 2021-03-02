@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-
 RSpec.feature 'Timeline', type: :feature do
   scenario 'User can delete a former post' do
     sign_up(email: 'test@email.com', password: 'testpass')
