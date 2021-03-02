@@ -1,15 +1,16 @@
 class ProfilePostsController < ApplicationController
   def new
     @user = User.find(params[:user_profile_id])
-    @profile_posts = current_user.profile_posts.create
+    @profile_posts = current_user.profile_posts.build
   end
 
   def create
     @profile_post = current_user.profile_posts.build(post_params)
+    user = User.find(@profile_post.user_profile_id)
     p params
     respond_to do |format|
       if @profile_post.save
-        format.html { redirect_to root_path, notice: 'Post was successfully created.' }
+        format.html { redirect_to user_path(user), notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @profile_post }
       else
         format.html { render :new }

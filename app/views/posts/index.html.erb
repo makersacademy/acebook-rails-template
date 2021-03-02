@@ -3,9 +3,7 @@
 
 <h2 class="new-post">
 <%  if current_user.present? %>
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+  <%= link_to 'New post', new_post_path %>
 <% end %>
 </h2>
 

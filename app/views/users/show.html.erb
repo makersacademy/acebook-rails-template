@@ -1,13 +1,16 @@
 <h1> <%= @user.name %> </h1>
-
-<%= link_to 'Post on wall', new_profile_post_path(:user_profile_id => @user.id) %>
+<% if current_user.id == @user.id %>
+<%= link_to 'New post', new_post_path %>
+<% else %> 
+  <%= link_to 'Post on wall', new_profile_post_path(:user_profile_id => @user.id) %>
+<% end %>
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <p class="user-name">Posted by <strong><%= User.find_by(id: post.user_id).name %></strong> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%>
-  <%unless post.created_at == post.updated_at%>
-Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%>
-  <%end%></p>
+  <p class="user-name">Posted by <strong><%= User.find_by(id: post.user_id).name %></strong> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%></p>
+  <% unless post.created_at == post.updated_at %>
+  <p>Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%></p>
+  <%end%>
 
   <%  if current_user.present? && current_user.id == post.user_id %>
     <p><%= link_to("Edit this post", edit_post_path(post)) %></p>
@@ -22,9 +25,9 @@ Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%>
   <% @profile_posts.each do |post| %>
     <p><%= post.message %></p>
     <p class="user-name">Posted by <%=link_to User.find_by(id: post.user_id).name, user_path(User.find_by(id: post.user_id))%> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%></p>
-    <%unless post.created_at == post.updated_at%>
-    <p>Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%>
-    <%end%></p>
+    <% unless post.created_at == post.updated_at %>
+    <p>Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%></p>
+    <% end %>
 
     <%  if current_user.present? && current_user.id == post.user_id %>
       <p><%= link_to("Edit this post", edit_profile_post_path(post)) %></p>
