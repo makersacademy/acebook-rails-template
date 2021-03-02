@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   # resources :users do
   #   resources :posts, only: [:new, :edit, :update, :destroy, :create, :show]
   # end
-  
+
   # resources :posts, only: [:index]
 
-  resources :posts
+  resources :posts do
+  resources :likes
+end
 
 
   root to: 'posts#index'
