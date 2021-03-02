@@ -27,9 +27,11 @@ feature 'sign up page' do
   end
 
   context 'when users correctly submit details' do
-    scenario 'user is redirected to their posts page' do
+    scenario 'user is redirected to the home page' do
+      visit('/')
+      click_link('Sign out')
       sign_up(email: 'test@email.com', password: 'testpass')
-      expect(page).to have_current_path('/posts')
+      expect(page).to have_current_path('/')
     end
   end
 
