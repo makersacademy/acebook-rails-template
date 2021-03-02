@@ -19,6 +19,7 @@ RSpec.feature 'User Wall', type: :feature do
     click_link 'Sign out'
     register_second_user
     click_link 'Katy Day'
+    click_link 'Post on wall'
     fill_in 'Post', with: 'Hello Katy'
     click_button 'Post'
     expect(page).to have_content('Hello Katy')

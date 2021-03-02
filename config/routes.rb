@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  resources :profile_posts
+
   root to: 'posts#index'
 end

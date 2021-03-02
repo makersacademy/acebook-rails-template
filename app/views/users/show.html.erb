@@ -1,5 +1,7 @@
 <h1> <%= @user.name %> </h1>
 
+<%= link_to 'Post on wall', new_profile_post_path %>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
   <p class="user-name">Posted by <strong><%= User.find_by(id: post.user_id).name %></strong> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%>
