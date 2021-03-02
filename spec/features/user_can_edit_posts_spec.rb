@@ -2,7 +2,7 @@
 
 RSpec.feature 'Timeline', type: :feature do
   scenario 'User can update a former post to display a new message' do
-    sign_up(email: 'test@email.com', password: 'testpass')
+    sign_up(email: 'test@email.com', username:'Troy', password: 'testpass')
     create_a_new_post_and_see_it_on_the_feed("Hello, world!")
     first('.post').click_link 'Edit'
     fill_in 'Message', with: 'I am updated!'
