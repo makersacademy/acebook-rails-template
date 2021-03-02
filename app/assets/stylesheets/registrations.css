@@ -1,0 +1,35 @@
+.demo-card-wide.mdl-card {
+  width: 640px;
+  height: 300px;
+}
+
+#name {
+  display: flex;
+}
+
+#contact{
+  display: flex;
+}
+
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 64px;
+  background-color: indigo;
+}
+
+.mdl-card__title-text {
+  position: relative;
+}
+
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+#mycard {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

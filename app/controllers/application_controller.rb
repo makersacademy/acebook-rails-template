@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   # This method ensures that the user is logged in, if not it will redirect back to homepage.
   def login_required
-    redirect_to('/') if !Current.user
+    redirect_to('/') unless Current.user
   end
 
   def set_current_user

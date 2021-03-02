@@ -14,13 +14,13 @@
   </head>
 
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <%= render partial: 'shared/navbar' %>
       <%= render partial: "shared/flash" %>
-      <!-- <div class="container"> -->
         <%= yield %>
-      <!-- </div> -->
     </div>
+    
     <script src="$$hosted_libs_prefix$$/$$version$$/material.min.js"></script>
   </body>
 </html>

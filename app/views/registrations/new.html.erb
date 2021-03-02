@@ -1,18 +1,62 @@
 <h1>Sign up</h1>
 
-<%= form_with model: @user, url: sign_up_path, local: true, method: :post do |form| %>
-  <% if @user.errors.any? %>
-    <div>
-      <% @user.errors.full_messages.each do |message| %>
-        <div><%= message %></div>
-      <% end %>
-    </div>
-  <% end %>
+<div id ="mycard">
 
-  <%= form.text_field :email, placeholder: "Enter e-Mail Address"%>
-  <%= form.text_field :first_name, placeholder: "Enter First Name"%>
-  <%= form.text_field :last_name, placeholder: "Enter Last Name"%>
-  <%= form.password_field :password, placeholder: "Enter Password"%>
-  <%= form.password_field :password_confirmation, placeholder: "Confirm Password" %>
-  <%= form.submit "Sign up" %>
-<% end %>
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">Sign Up</h2>
+    </div>
+
+    <div class="mdl-card__supporting-text">
+      Please fill in your details! We'll never share them with anyone except GitHub!
+
+      <%= form_with model: @user, url: sign_up_path, local: true, method: :post do |form| %>
+        <% if @user.errors.any? %>
+          <div>
+            <% @user.errors.full_messages.each do |message| %>
+              <div class="mdl-textfield__error"><%= message %></div>
+            <% end %>
+          </div>
+        <% end %>
+
+      <div id="name">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <%= form.text_field :first_name, class: "mdl-textfield__input", id: "first" %>
+          <label class="mdl-textfield__label" for="sample3">First Name</label>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <%= form.text_field :last_name, class: "mdl-textfield__input", id: "last" %>
+          <label class="mdl-textfield__label" for="sample3">Last Name</label>
+        </div>
+      </div>
+
+      <div id="email">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <%= form.text_field :email, class: "mdl-textfield__input", id: "email-input" %>
+          <label class="mdl-textfield__label" for="sample2">E-mail</label>
+        </div>
+      </div>
+
+      <div id="password" style="display: flex;">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <%= form.password_field :password, class: "mdl-textfield__input", id: "password-input" %>
+          <label class="mdl-textfield__label" for="sample3">Password</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <%= form.password_field :password_confirmation, class: "mdl-textfield__input", id: "password-confirmation-input" %>
+          <label class="mdl-textfield__label" for="sample3">Password Confirmation</label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="next" style="padding-left: 10px" >
+    <%= button_tag( :class => "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ) do %>
+      <i class="material-icons">arrow_forward</i>
+    <% end %>
+  </div>
+
+      <% end %>
+</div>
