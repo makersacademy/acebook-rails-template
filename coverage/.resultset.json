@@ -1,57 +1,37 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/dantyler/Makers/week_8/acebook-hemoglobin-trotters/spec/controllers/posts_controller_spec.rb": {
+      "/Users/ttwigden/Desktop/Makers/Projects/week-8/acebook-hemoglobin-trotters/spec/requests/posts_spec.rb": {
         "lines": [
-          null,
-          null,
           1,
           null,
           1,
           1,
           1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
           1,
           1,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
           null,
           null,
           null,
-          1,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
           null,
           null,
           null,
-          1,
-          1,
-          0,
-          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
         ]
       },
-      "/Users/dantyler/Makers/week_8/acebook-hemoglobin-trotters/app/controllers/posts_controller.rb": {
+      "/Users/ttwigden/Desktop/Makers/Projects/week-8/acebook-hemoglobin-trotters/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
@@ -77,7 +57,7 @@
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           1,
@@ -88,7 +68,7 @@
           null
         ]
       },
-      "/Users/dantyler/Makers/week_8/acebook-hemoglobin-trotters/app/controllers/application_controller.rb": {
+      "/Users/ttwigden/Desktop/Makers/Projects/week-8/acebook-hemoglobin-trotters/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -102,12 +82,40 @@
           null,
           null,
           1,
-          0,
+          1,
           null,
+          null
+        ]
+      },
+      "/Users/ttwigden/Desktop/Makers/Projects/week-8/acebook-hemoglobin-trotters/app/models/post.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ttwigden/Desktop/Makers/Projects/week-8/acebook-hemoglobin-trotters/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ttwigden/Desktop/Makers/Projects/week-8/acebook-hemoglobin-trotters/app/models/current.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
           null
         ]
       }
     },
-    "timestamp": 1614684962
+    "timestamp": 1614687835
   }
 }
