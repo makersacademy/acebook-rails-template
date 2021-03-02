@@ -12,8 +12,12 @@ class PostsController < ApplicationController
   def create
     # @post = Post.create(post_params)
     @post = current_user.posts.build(post_params)
-    @post.save
-    redirect_to posts_url
+    if @post.message == ""
+      redirect_to new_post_url, notice: "Cannot post an empty message!"
+    else
+      @post.save
+      redirect_to posts_url
+    end
   end
 
   def index
