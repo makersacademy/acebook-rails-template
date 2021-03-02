@@ -4,7 +4,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.order("created_at DESC")
-    @profile_posts = ProfilePost.all.order("created_at DESC")
+    # @profile_posts = ProfilePost.find.order("created_at DESC")
+    @profile_posts = ProfilePost.find_by(user_profile_id: params[:id])
+    p @profile_posts
   end
 
 
