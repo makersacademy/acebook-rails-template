@@ -17,11 +17,12 @@ ActiveRecord::Schema.define(version: 2021_02_28_140601) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "message"
+    t.string "message", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest"
@@ -30,5 +31,6 @@ ActiveRecord::Schema.define(version: 2021_02_28_140601) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+
   add_foreign_key "posts", "users"
 end
