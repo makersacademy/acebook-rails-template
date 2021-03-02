@@ -19,9 +19,12 @@ class ProfilePostsController < ApplicationController
   end
 
   def update
+    
     profile_post = ProfilePost.find(params[:id])
     profile_post.update(post_params)
-    redirect_to(root_path)
+
+    user = User.find(profile_post.user_profile_id)
+    redirect_to(user_path(user))
   end
 
   private

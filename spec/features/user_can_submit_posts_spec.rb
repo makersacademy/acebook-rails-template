@@ -20,7 +20,7 @@ RSpec.feature 'User Wall', type: :feature do
     register_second_user
     click_link 'Katy Day'
     click_link 'Post on wall'
-    fill_in 'Post', with: 'Hello Katy'
+    fill_in 'Message', with: 'Hello Katy'
     click_button 'Post'
     expect(page).to have_content('Hello Katy')
     expect(page).to have_link('John Smith')
