@@ -11,7 +11,7 @@ h1 {
 }
 h2 {
   font-family: 'DotGothic16', sans-serif;
-  color: white;
+  color: greenyellow;
   font-size: 100px;
 
 }
@@ -38,4 +38,9 @@ p {
 
 .container-fluid{
   background-color: greenyellow;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
 }
