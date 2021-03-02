@@ -1,15 +1,27 @@
 
-<% @posts.reverse.each do |post| %>
-  <h3><%= post.message.gsub(/\n/, '<br/>').html_safe %></h3>
-  <p>created @ <%= post.created_at.strftime('%d/%m/%y') %></p>
-  created by: <%= post.user.email %>
-  <%= link_to "/posts/#{post.id}/edit" do %>
-    Edit post
-  <% end %>
-  <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }%>
-<% end %>
-<%= link_to new_post_path do %>
-<br>
-  New post
 
+<%= link_to new_post_path do  %>
+New Post
 <% end %>
+<% @posts.reverse.each do |post| %>
+<div class="box" style="width: 40%;">
+  <div class="card-body">
+      <h3 class="card-text"><%= post.message.gsub(/\n/, '<br/>').html_safe %></h3>
+    <p>created @ <%= post.created_at.strftime('%d/%m/%y') %></p>
+    created by: <%= post.user.email %>
+    <br>
+    <%= link_to "/posts/#{post.id}/edit" do %>
+      Edit
+      <br>
+    <% end %>
+    <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }%>
+
+
+  <br>
+
+  </div>
+
+</div>
+
+<br>
+    <% end %>

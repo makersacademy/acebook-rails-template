@@ -17,7 +17,7 @@ h2 {
 }
 h3 {
   font-family: 'DotGothic16', sans-serif;
-  color: white;
+  color: black;
 }
 ul {
   font-family: 'DotGothic16', sans-serif;
@@ -25,7 +25,7 @@ ul {
 }
 p {
   font-family: 'DotGothic16', sans-serif;
-  color: white;
+  color: black;
 }
 .navbar-brand {
   font-family: 'DotGothic16', sans-serif;
@@ -43,4 +43,19 @@ p {
 .card {
   display: flex;
   justify-content: center;
+}
+
+.box {
+text-align: center;
+flex-direction: column;
+margin: 0 auto;
+border-radius: 5%;
+/* padding: 5%; */
+background-color: white;
+}
+
+a:link {
+  background-color: white;
+  color: green;
+  
 }
