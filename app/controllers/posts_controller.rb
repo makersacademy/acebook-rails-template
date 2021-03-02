@@ -15,6 +15,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path, notice: 'Post successfully created'
     else
+      flash[:alert] = "Post message is blank, try again."
       render :new
     end
   end
