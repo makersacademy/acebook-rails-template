@@ -1,16 +1,23 @@
-<h2>Forgot your password?</h2>
-
+<body>
+<main class='form-signin'>
+    <%= link_to root_path do %>
+    <%= image_tag('poke-2.png', class: "md-4", style: 'height:100px;width:auto;padding:15px;') %>
+<% end %>
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",
+    placeholder:"Email", class: 'form-control',
+    style: 'border-bottom-left-radius: .25rem;border-bottom-right-radius: .25rem;' %>
+  </div><br>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
+    <%= f.submit "Send me password reset instructions", class: "btn btn-primary btn-sm" %>
+  </div><br>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</main>
+</body>

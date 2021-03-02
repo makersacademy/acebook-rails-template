@@ -1,9 +1,9 @@
 <body class='text-center'>
 
   <main class="form-signin">
-
+    <%= link_to root_path do %>
     <%= image_tag('poke-2.png', class: "md-4", style: 'height:100px;width:auto;padding:15px;') %>
-
+    <% end %>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -14,7 +14,7 @@
       <div class="field">
         <%= f.password_field :password, autocomplete: "new-password",
         class: "form-control", placeholder: "Password (#{@minimum_password_length} - 10 characters)",
-        style: 'margin-bottom:0px;border-top-left-radius: 0;border-top-right-radius: 0;' %>
+        style: 'margin-bottom:-1px;border-bottom-left-radius: 0;border-bottom-right-radius: 0;' %>
       </div>
 
       <div class="field">
@@ -22,7 +22,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up", class: "w-100 btn btn-lg btn-primary",style: 'background-color:#44d9e6;border-color:#44d9e6' %>
+        <%= f.submit "Sign up", class: "w-100 btn btn-lg btn-primary" %>
       </div>
     <% end %>
 
