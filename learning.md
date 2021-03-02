@@ -50,3 +50,15 @@ Team notes
 * Still need to work on circleCI
 * Redirect with ruby on rails
 * Well done team :)
+
+### Day 6
+* Implemented CRUD well
+* CSS implemented partially
+* Energy level to be improved ^_^
+* Should switch group after lunch to work on different tasks
+
+### Day 7
+* Integrated CSS bootstrap cards
+* Users need a username to sign up
+* Users can only update and delete their own posts
+* Bigger and better tomorrow!
