@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'rails_helper'
+
 RSpec.describe 'Timeline', type: :feature do
   it 'Can submit posts and view them' do
     sign_up
