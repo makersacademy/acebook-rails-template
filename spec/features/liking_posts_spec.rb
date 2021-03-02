@@ -44,21 +44,17 @@ feature 'liking posts' do
   end
 
   context 'when you have already liked a post' do
-    before do
-      allow_any_instance_of(LikesController).to receive(:already_liked?) { true }
-    end
     scenario "get a warning to show you can't like again" do
+      allow_any_instance_of(LikesController).to receive(:already_liked?) { true }
       first('.post').click_button('Like')
       expect(page).to have_content("Yo, stop liking this")
     end
   end
 
   context 'when you have not already liked a post' do
-    before do
+    scenario "get a warning to show you can't unlike" do
       first('.post').click_button('Like')
       allow_any_instance_of(LikesController).to receive(:already_liked?) { false }
-    end
-    scenario "get a warning to show you can't unlike" do
       first('.post').click_button('Unlike')
       expect(page).to have_content("Can't unlike")
     end
