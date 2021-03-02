@@ -6,7 +6,7 @@
   <div style="border: 1px solid blue">
     <%= post.user.email %><br/>
     <%= post.created_at.strftime("%e %B %Y") %> 
-    <p><%= post.message %></p>
+    <p style="white-space: pre-wrap"><%= post.message %></p>
     <% if current_user.id == post.user_id %>
       <% if Time.now < post.created_at + 10.minutes %>
         <%= button_to "Edit post", edit_post_path(post), method: :get %>
