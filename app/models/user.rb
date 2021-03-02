@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates(:username, presence: true)
   # validates :username, uniqueness: true, if: ->{ self.username.present? }
-  # has_many :posts
+  has_many :posts
 end

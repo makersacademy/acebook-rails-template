@@ -1,4 +1,3 @@
-
 <% @posts.reverse.each do |post| %>
   <h3><%= post.message.gsub(/\n/, '<br/>').html_safe %></h3>
   <p>created @ <%= post.created_at.strftime('%d/%m/%y') %></p>
