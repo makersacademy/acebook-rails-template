@@ -1,4 +1,3 @@
-
 <div id="new-post-link">
   <%= link_to new_post_path do %>
     New post
@@ -8,7 +7,7 @@
 <% @posts.reverse_each do |post| %>
 
   <div class='post'>
-    <p class='message'> <%= post.message %></p>
+    <p class='message'><%= h(post.message).gsub(/\n/, '<br/>').html_safe %> </p>
     <p class='date'>Posted at <%= post.updated_at.strftime("%k:%M on %d/%m/%Y") %></p>
     <p class='user-email'><%= User.find_by(id: post.user_id).email %></p>
     <% if post.user.id == current_user.id %>
