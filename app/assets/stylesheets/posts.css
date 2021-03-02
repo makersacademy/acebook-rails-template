@@ -1,8 +1,7 @@
-
 .post {
   margin-top: 2em;
-  margin-bottom:  2em;
-  background-color: #E6EFEC;
+  margin-bottom: 2em;
+  background-color: #e6efec;
   padding: 0.5em;
   padding-top: 1.5em;
   width: 50%;
@@ -11,6 +10,7 @@
   word-wrap: break-word;
   text-align: center;
   border-radius: 2.5em;
+  box-shadow: 5px 5px 10px 2px;
   /* border: 0.1em solid #0a122a; */
 }
 
