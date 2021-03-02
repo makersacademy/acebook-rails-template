@@ -13,11 +13,13 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-    <%= render partial: 'shared/navbar' %>
-    <%= render partial: "shared/flash" %>
-    <div class="container">
-      <%= yield %>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <%= render partial: 'shared/navbar' %>
+      <%= render partial: "shared/flash" %>
+      <div class="container">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
