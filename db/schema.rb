@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 2021_03_02_115800) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
-    t.bigint "postee_id"
-    t.index ["postee_id"], name: "index_profile_posts_on_postee_id"
+    t.bigint "user_profile_id"
     t.index ["user_id"], name: "index_profile_posts_on_user_id"
+    t.index ["user_profile_id"], name: "index_profile_posts_on_user_profile_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,5 +50,5 @@ ActiveRecord::Schema.define(version: 2021_03_02_115800) do
 
   add_foreign_key "posts", "users"
   add_foreign_key "profile_posts", "users"
-  add_foreign_key "profile_posts", "users", column: "postee_id"
+  add_foreign_key "profile_posts", "users", column: "user_profile_id"
 end

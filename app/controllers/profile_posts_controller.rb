@@ -1,11 +1,11 @@
 class ProfilePostsController < ApplicationController
   def new
-    @user = User.find(params[:postee_id])
+    @user = User.find(params[:user_profile_id])
     @profile_posts = current_user.profile_posts.create
   end
 
   def create
-    @profile_post = current_user.profile_posts.build(params[:message, :user_id, :postee_id])
+    @profile_post = current_user.profile_posts.build(post_params)
     p params
     respond_to do |format|
       if @profile_post.save
@@ -27,7 +27,7 @@ class ProfilePostsController < ApplicationController
   private
 
   def post_params
-    params.require(:profile_post).permit(:message, :user_id, :postee_id)
+    params.require(:profile_post).permit(:message, :user_id, :user_profile_id)
   end
 
 end
