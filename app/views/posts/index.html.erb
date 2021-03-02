@@ -1,7 +1,22 @@
 
-  <% name = current_user.present? ? current_user.name : 'Stranger' %>
-  <h1>Hello, <%= name.capitalize %>!</h1>
-  <p>Something funny</p>
+<% name = current_user.present? ? current_user.name : 'Stranger' %>
+<h1>Hello, <%= name.capitalize %>!</h1>
+
+<h2 class="new-post">
+<%  if current_user.present? %>
+  <%= link_to 'New post', new_post_path %>
+<% end %>
+</h2>
+
+
+
+<% @posts.each do |post| %>
+  <div class="post">
+  <p><%= post.message %></p>
+  <p class="user-name">Posted by <%=link_to User.find_by(id: post.user_id).name, user_path(User.find_by(id: post.user_id))%> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%></p>
+  <%unless post.created_at == post.updated_at%>
+  <p>Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%></p>
+  <%end%>
 
   <% @posts.each do |post| %>
     <p><%= post.message %></p>
@@ -26,9 +41,6 @@
     <% else %>
     <% end %>
   <% end %>
+  </div>
+<% end %>
 
-  <%  if current_user.present? %>
-  <%= link_to new_post_path do %>
-    New post
-  <% end %>
-  <% end %>
