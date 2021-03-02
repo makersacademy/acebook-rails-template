@@ -13,6 +13,18 @@ module Helpers
       click_button 'Sign up'
     end
 
+    def register_second_user
+      visit '/'
+      click_link 'Register'
+      fill_in 'Name', with: 'John Smith'
+      fill_in 'Username', with: 'IPA'
+      fill_in 'Email', with: 'email@email.com'
+      fill_in 'Password', with: 'password123'
+      fill_in 'Password confirmation', with: 'password123'
+      click_button 'Sign up'
+    end
+
+
     def submit_post
       visit '/posts'
       click_link 'New post'

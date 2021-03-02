@@ -14,7 +14,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    p params
     @post = current_user.posts.build(post_params)
 
     respond_to do |format|
