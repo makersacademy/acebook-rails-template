@@ -1,37 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">
-      <%= image_tag('poke-2.png', class: "md-4", style: 'height:30px;width:auto;') %>
-    </a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <% if current_user.present? %>
-          <li class="nav-item">
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-          </li>
-        <% end %>
-      </ul>
+
+<body class="post-page">
+
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
+
+  <main class="post-feed">
+  <% @posts.reverse.each do |post| %>
+    <div style="border: 1px solid blue">
+      <%= post.user.email %><br/>
+      <%= post.created_at.strftime("%e %B %Y %H:%M") %> 
+      <p style="white-space: pre-wrap"><%= post.message %></p>
+      <% if current_user.id == post.user_id %>
+        <% if Time.now < post.created_at + 10.minutes %>
+          <%= button_to "Edit post", edit_post_path(post), method: :get %>
+          <% end %>
+        <%= button_to "Move to recycle bin", post_path(post), method: :delete  %>
+      <% end %>
     </div>
-  </div>
-</nav>
+    <br>
+  <% end %>
+  </main>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-
-<% @posts.reverse.each do |post| %>
-  <div style="border: 1px solid blue">
-    <%= post.user.email %><br/>
-    <%= post.created_at.strftime("%e %B %Y %H:%M") %> 
-    <p style="white-space: pre-wrap"><%= post.message %></p>
-    <% if current_user.id == post.user_id %>
-      <% if Time.now < post.created_at + 10.minutes %>
-        <%= button_to "Edit post", edit_post_path(post), method: :get %>
-        <% end %>
-      <%= button_to "Move to recycle bin", post_path(post), method: :delete  %>
-    <% end %>
-  </div>
-  <br>
-<% end %>
+</body>
 
 <!-- post_path(post), method: :delete -->
