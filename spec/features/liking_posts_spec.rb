@@ -24,6 +24,44 @@ feature 'liking posts' do
     scenario 'the unlike button is shown' do
       expect(first('.post')).to have_button('Unlike')
     end
+
+  end
+
+  context 'when you click unlike' do
+    before do
+      first('.post').click_button('Like')
+      first('.post').click_button('Unlike')
+    end
+
+    scenario 'number of likes decreases by 1' do
+      expect(first('.post')).to have_content '0 Likes'
+    end
+
+    scenario 'the unlike button is no longer shown' do
+      expect(first('.post')).to have_no_button('Unlike')
+    end
+
+  end
+
+  context 'when you have already liked a post' do
+    before do
+      allow_any_instance_of(LikesController).to receive(:already_liked?) { true }
+    end
+    scenario "get a warning to show you can't like again" do
+      first('.post').click_button('Like')
+      expect(page).to have_content("Yo, stop liking this")
+    end
+  end
+
+  context 'when you have not already liked a post' do
+    before do
+      first('.post').click_button('Like')
+      allow_any_instance_of(LikesController).to receive(:already_liked?) { false }
+    end
+    scenario "get a warning to show you can't unlike" do
+      first('.post').click_button('Unlike')
+      expect(page).to have_content("Can't unlike")
+    end
   end
 
 end
