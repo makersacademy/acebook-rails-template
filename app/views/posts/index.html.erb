@@ -19,9 +19,19 @@
     <% end %>
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
     <% if pre_like %>
-      <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
+      <!-- <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete, class: 'unlike-btn' %> -->
+      <%= button_to post_like_path(post, pre_like), class: "unlike-btn", method: :delete do %>
+        <div>
+          <img src= 'heart.png', class='unlike-btn-icon'></img>
+        </div>
+      <% end %>
     <% else %>
-      <%= button_to 'Like', post_likes_path(post), method: :post, class: 'like' %>
+      <!-- <%= button_to 'Like', post_likes_path(post), method: :post, class: 'like-btn' %> -->
+      <%= button_to post_likes_path(post), class: "like-btn", method: :post do %>
+        <div>
+          <img src= 'like.png', class='like-btn-icon'></img>
+        </div>
+      <% end %>
     <% end %>
     <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   </div>

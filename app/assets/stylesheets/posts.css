@@ -22,3 +22,23 @@
   margin-right: auto;
   text-align: center;
 }
+
+.like-btn {
+  background-color: #e6efec00;
+  border: none;
+}
+
+.like-btn-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.unlike-btn {
+  background-color: #e6efec00;
+  border: none;
+}
+
+.unlike-btn-icon {
+  width: 1em;
+  height: 1em;
+}
