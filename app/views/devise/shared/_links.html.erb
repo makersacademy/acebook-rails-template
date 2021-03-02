@@ -1,6 +1,6 @@
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+  <%= button_to "Sign up", new_registration_path(resource_name),method: :get, class: "btn btn-primary btn-sm", style: 'background-color:#44d9e6;border-color:#44d9e6' %><br />
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>

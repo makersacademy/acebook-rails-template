@@ -1,28 +1,33 @@
-<h2>Sign up</h2>
+<body class='text-center'>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <main class="form-signin">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <%= image_tag('poke-2.png', class: "md-4", style: 'height:100px;width:auto;padding:15px;') %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <em>(<%= @minimum_password_length %> - 10 characters)</em>
-    <br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, class: "form-control", autocomplete: "email", placeholder: "Email address" %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password",
+        class: "form-control", placeholder: "Password (#{@minimum_password_length} - 10 characters)",
+        style: 'margin-bottom:0px;border-top-left-radius: 0;border-top-right-radius: 0;' %>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: "w-100 btn btn-lg btn-primary",style: 'background-color:#44d9e6;border-color:#44d9e6' %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+
+  </main>
+
+</body>
