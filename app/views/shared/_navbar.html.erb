@@ -16,14 +16,18 @@
       <%= link_to "Sign Up", sign_up_path, class: "mdl-layout__tab" %>
       <%= link_to "Log In", sign_in_path, class: "mdl-layout__tab" %>
     <% end %>
+
+    <!-- <%= button_to new_post_path, method: :post, class: "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" %> -->
+<%= link_to new_post_path do %>
     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
       <i class="material-icons" role="presentation">add</i>
       <span class="visuallyhidden">Add</span>
     </button>
+<% end %>
   </div>
 </header>
 
-<nav class="navbar">
+<!-- <nav class="navbar">
     <%= link_to "AceBook", root_path %>
     <ul class="menu">
       <li class="menu-item"><%= link_to "Home", root_path, class: "menu-item" %></li>
@@ -35,4 +39,4 @@
         <li><%= link_to "Log In", sign_in_path %></li>
       <% end %>
     </ul>
-</nav>
+</nav> -->
