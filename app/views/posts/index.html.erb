@@ -18,6 +18,6 @@
     <%= link_to "Delete", post_path(post.id), method: :delete, data: { confirm: 'Are you certain you want to delete this post?' } %>
     <% end %>
     <%= button_to 'Like', post_likes_path(post), method: :post %>
-
+    <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   </div>
 <% end %>
