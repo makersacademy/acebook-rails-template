@@ -11,7 +11,6 @@ feature 'liking posts' do
 
   context 'when you click like button' do
     before do
-      # first('.post').click_button('Like')
       click_on(class: 'like-btn')
     end
     scenario 'number of likes increments by 1' do
@@ -19,7 +18,7 @@ feature 'liking posts' do
     end
 
     scenario 'the like button is no longer shown' do
-      expect(first('.post')).to have_no_button('Like')
+      expect(first('.post')).to have_no_css('.like-btn')
     end
 
     scenario 'the unlike button is shown' do
