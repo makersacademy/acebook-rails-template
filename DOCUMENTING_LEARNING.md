@@ -97,3 +97,8 @@
 ### Morning
 - Discussed order of work prior to and after the sprint review later this morning.
 - Agreed prioritisation of tests (including confirmation of CircleCI configuration) for this morning's work, and CRUD/CSS functionality for the afternoon.
+
+### Afternoon
+- Agreed that RSpec is not as big a priority as CRUD and CSS functionality for the initial demonstration.
+- Resolved to spend the afternoon working on prioritised development.
+- Agreed to work with Material Design Light.
