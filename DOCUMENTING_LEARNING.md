@@ -83,3 +83,12 @@
 `heroku pg:reset --app hemo-acebook`
 `heroku run rake db:schema:load --app hemo-acebook`
 `heroku run rake db:migrate --app hemo-acebook`
+
+## 1 March 2021
+### Morning
+- Kicked off the morning session with a GitHub merge to consolidate branches and prepare for the week's development.
+- Investigated circleci CI/CD framework
+
+### Afternoon
+- Split into two groups. First one focused on setting up circleCI integration with our project. Currently running...
+- Second group focused on linking a post to a user. Updated schema and created addition db:migrate file for posts.
