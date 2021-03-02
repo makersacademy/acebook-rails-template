@@ -1,0 +1,5 @@
+<div class="like-icon" data-id="<%= @post.id %>">
+  <div class="like-icon mx-2 <%= 'blue' if current_user.favorited?(@post) %>" data-id="<%= @post.id %>">
+    <p>Like This isn't here</p>
+  </div>
+</div>

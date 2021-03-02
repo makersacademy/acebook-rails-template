@@ -42,6 +42,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def toggle_favorite
+    @post = Post.find_by(id: params[:id])
+    if current_user.favorited?(@post)
+      current_user.unfavorite(@post)
+    else
+      current_user.favorite(@post)
+    end
+  end
+
   private
 
   def post_params

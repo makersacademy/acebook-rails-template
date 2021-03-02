@@ -1,0 +1,11 @@
+console.log("inside toggle favourite start")
+
+let postId = "<%= @post.id %>"
+function toggleLikeButton(postId, innerHTML) {
+  console.log("inside toggle favourite fucntion")
+  let likeButton = document.querySelector(`.like-icon[data-id='${postId}']`)
+  likeButton.classList.toggle('blue')
+}
+
+toggleLikeButton(postId)
+console.log("inside toggle favourite afterwards")
