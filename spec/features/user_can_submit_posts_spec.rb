@@ -11,3 +11,17 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content('Hello, world!')
   end
 end
+
+RSpec.feature 'User Wall', type: :feature do
+  scenario 'Signed in user can post on another users wall' do
+    register
+    submit_post
+    click_link 'Sign out'
+    register_second_user
+    click_link 'Katy Day'
+    fill_in 'Post', with: 'Hello Katy'
+    click_button 'Post'
+    expect(page).to have_content('Hello Katy')
+    expect(page).to have_link('John Smith')
+  end 
+end 
