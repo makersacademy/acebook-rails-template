@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-
 RSpec.feature 'Timeline', type: :feature do
   scenario 'User can update a former post to display a new message' do
     sign_up(email: 'test@email.com', password: 'testpass')
