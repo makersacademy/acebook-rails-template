@@ -4,9 +4,13 @@
 
 <% @posts.reverse.each do |post| %>
   <div style="border: 1px solid blue">
-    <p><%= post.message %></p>
+    <%= post.user.email %><br/>
+    <%= post.created_at.strftime("%e %B %Y") %> 
+    <p style="white-space: pre-wrap"><%= post.message %></p>
     <% if current_user.id == post.user_id %>
-      <%= button_to "Edit post", edit_post_path(post), method: :get %>
+      <% if Time.now < post.created_at + 10.minutes %>
+        <%= button_to "Edit post", edit_post_path(post), method: :get %>
+        <% end %>
       <%= button_to "Move to recycle bin", post_path(post), method: :delete  %>
     <% end %>
   </div>
