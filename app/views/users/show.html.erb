@@ -1,7 +1,8 @@
 <h1> <%= @user.name %> </h1>
+<button type="button" name="button">Be my Friend</button>
 <% if current_user.id == @user.id %>
 <%= link_to 'New post', new_post_path %>
-<% else %> 
+<% else %>
   <%= link_to 'Post on wall', new_profile_post_path(:user_profile_id => @user.id) %>
 <% end %>
 
