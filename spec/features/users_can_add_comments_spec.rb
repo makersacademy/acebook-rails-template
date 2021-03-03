@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+include WelcomeHelper
 
 RSpec.feature 'Adding comments', type: :feature do
   scenario 'You can add comments to a post ' do

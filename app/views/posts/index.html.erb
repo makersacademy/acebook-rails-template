@@ -2,6 +2,11 @@
 <% @posts.reverse.each do |post| %>
 
   <h3><%= post.message.gsub(/\n/, '<br/>').html_safe %></h3>
+  <% if post.image.attached? %>
+  <!-- <div style="width:400px; height:auto"> -->
+   <%= image_tag(post.image) %>
+   <!-- </div> -->
+  <%end%>
   <p>created @ <%= post.created_at.strftime('%d/%m/%y') %></p>
 
   created by: <%= post.user.username %>

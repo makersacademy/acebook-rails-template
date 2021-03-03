@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+include WelcomeHelper
 
 RSpec.feature 'Navigated to posts after signing in' do
   scenario 'A signed in user can see posts' do
