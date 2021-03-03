@@ -1,4 +1,5 @@
 require 'rails_helper'
+include WelcomeHelper
 
 
 RSpec.describe PostsController, type: :controller do
@@ -14,7 +15,7 @@ RSpec.describe PostsController, type: :controller do
   #   end
   # end
 
-
+  # 
   #
   # describe "POST /" do
   #   it "responds with 200" do
