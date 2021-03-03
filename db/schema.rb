@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20210302121331) do
-=======
 ActiveRecord::Schema.define(version: 20210302153120) do
->>>>>>> d0ad684... User name has been added to posts
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"

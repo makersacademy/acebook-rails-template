@@ -5,9 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
-<<<<<<< HEAD
   has_many :likes, dependent: :destroy
-=======
+
 
   validate :validate_username
 
@@ -20,5 +19,4 @@ class User < ApplicationRecord
     errors.add(:username, :already_exists) if User.exists?(username: username)
   end
 
->>>>>>> d81a420... Cannot sign up with same username twice with passing tests and change locales file
 end
