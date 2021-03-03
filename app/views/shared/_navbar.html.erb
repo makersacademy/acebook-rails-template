@@ -7,8 +7,8 @@
   <!-- <div class="mdl-layout--large-screen-only mdl-layout__header-row">
   </div> -->
   <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-    <%= link_to "Home", root_path, class: "mdl-layout__tab" %>
-    <a href="#overview" class="mdl-layout__tab is-active">About</a>
+    <%= link_to "Home", root_path, class: "mdl-layout__tab #{"is-active" if current_page?(root_path)}" %>
+    <a href="#overview" class="mdl-layout__tab">About</a>
     <div class="mdl-layout-spacer"></div>
     <% if Current.user %>
       <%= link_to "Log Out", logout_path, method: :delete, class: "mdl-layout__tab" %>
