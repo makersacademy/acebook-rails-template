@@ -13,14 +13,14 @@ RSpec.feature 'Sign up', type: :feature do
     expect(current_path).to eq('/posts')
   end
 
-  xscenario 'Gets redirected to / when not signed in and viewing /posts' do
+  scenario 'Gets redirected to / when not signed in and viewing /posts' do
     visit '/posts'
-    expect(current_path).to eq('/')
+    expect(current_path).to eq('/users/sign_in')
   end
 
   scenario 'Gets redirected to / when visting a page that doesnt exist' do
     visit '/foo'
-    expect(current_path).to eq('/')
+    expect(current_path).to eq('/users/sign_in')
   end
 
   scenario 'cannot create an account with a password less than 6 characters' do
