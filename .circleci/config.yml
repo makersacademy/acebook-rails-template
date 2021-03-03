@@ -64,7 +64,7 @@ jobs:
   deploy:
     machine:
         enabled: true
-    working_directory: ~/project
+    working_directory: ~/acebook-poke
     environment:
       HEROKU_APP: "gentle-beach-18739" # define env var $HEROKU_APP
     steps:
@@ -92,7 +92,7 @@ workflows:
             - build   # Finally, run the build job.
       - deploy: 
           requires:
-            - build
+            - test
           filters:
             branches:
-              only: sequential-branch-filter
+              only: master
