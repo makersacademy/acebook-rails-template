@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
-    redirect_to "/posts"
+    redirect_to '/posts'
   end
 
   private
@@ -10,5 +12,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:body)
   end
-
 end

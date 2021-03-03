@@ -49,6 +49,8 @@ GEM
     ast (2.4.2)
     bcrypt (3.1.16)
     bindex (0.8.1)
+    bootsnap (1.7.2)
+      msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (2.18.0)
@@ -94,6 +96,7 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.4)
+    msgpack (1.4.2)
     nio4r (2.5.5)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
@@ -231,6 +234,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootsnap
   byebug
   capybara (~> 2.13)
   devise
