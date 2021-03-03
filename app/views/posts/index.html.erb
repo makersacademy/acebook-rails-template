@@ -1,5 +1,5 @@
 
-<div style="background-color: white; padding: 10px; font-family: 'DotGothic16';    width: fit-content; margin-left: 290px;">
+<div style="background-color: white; padding: 10px; font-family: 'DotGothic16';    width: fit-content; margin-left: 325px;">
   <%= link_to new_post_path do  %>
   New Post
   <% end %>
@@ -18,13 +18,10 @@
       <br>
     <% end %>
     <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }%>
-
-
   <br>
 
   </div>
+  </div>
 
-</div>
-
-<br>
-    <% end %>
+  <br>
+<% end %>

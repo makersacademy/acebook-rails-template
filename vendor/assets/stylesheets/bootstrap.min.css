@@ -295,7 +295,7 @@ template {
     font-size: 1.25rem;
     font-weight: 300;
     color: white;
-    
+
 }
 .display-1 {
     font-size: 6rem;
@@ -1049,7 +1049,8 @@ pre code {
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
-    padding-left: 450px;
+    padding-left: 200px;
+    padding-right: 200px;
   }
 .order-lg-first {
     -ms-flex-order: -1;
