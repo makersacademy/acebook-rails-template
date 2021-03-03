@@ -223,3 +223,15 @@ body {
 .mdl-demo .mdl-menu__container {
   z-index: 99;
 }
+
+/* form  */
+
+.form-area {
+  justify-content: center;
+  display: flex;
+}
+
+.button-wrapper {
+  padding-left: 20px;
+  display: flex;
+}

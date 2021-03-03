@@ -8,15 +8,17 @@
     <div class="mdl-card__supporting-text">
 
       <%= form_for @post do |form| %>
-        <div class="mdl-textfield mdl-js-textfield extrawide">
-          <%= form.text_area :message, class: "mdl-textfield__input"%>
-          <label class="mdl-textfield__label" for="sample2"></label>
-        </div>
+        <div class="form-area">
+          <div class="mdl-textfield mdl-js-textfield extrawide">
+            <%= form.text_area :message, rows: 4, class: "mdl-textfield__input"%>
+            <label class="mdl-textfield__label" for="sample2">What's on your mind?</label>
+          </div>
 
-        <div id="next" style="padding-left: 10px" >
-          <%= button_tag( :class => "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--accent" ) do %>
-          <i class="material-icons">arrow_forward</i>
-          <% end %>
+          <div class="button-wrapper">
+            <%= button_tag( :class => "mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--accent" ) do %>
+            <i class="material-icons">arrow_forward</i>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>
