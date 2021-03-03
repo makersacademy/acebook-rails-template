@@ -1,36 +1,4 @@
-Skip to content
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@Mornevanzyl 
-google
-/
-material-design-lite
-1.3k
-31.7k
-5.2k
-Code
-Issues
-353
-Pull requests
-21
-Actions
-Wiki
-Security
-Insights
-material-design-lite/templates/text-only/styles.css
-@surma
-surma Make tabs in text-only template behave in mobile (fixes #835)
-Latest commit d53dceb on 8 Jul 2015
- History
- 3 contributors
-@surma@Garbee@addyosmani
-208 lines (206 sloc)  4.64 KB
-  
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -47,16 +15,28 @@ Latest commit d53dceb on 8 Jul 2015
  * limitations under the License.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   margin: 0;
   padding: 0;
 }
 .mdl-demo .mdl-layout__header-row {
-  padding-left: 40px;
+  padding: 100px 40px 100px 40px;
+  background: url('../images/bg.jpeg') center/cover;
+  filter: grayscale(40%);
+  font-family: 'Righteous', cursive;
 }
+
+.mdl-layout__header-row a {
+  font-family: 'Fredoka One', cursive;
+  text-decoration: none;
+}
+
 .mdl-demo .mdl-layout.is-small-screen .mdl-layout__header-row h3 {
   font-size: inherit;
+  font-family: 'Righteous', cursive;
 }
 .mdl-demo .mdl-layout__tab-bar-button {
   display: none;
