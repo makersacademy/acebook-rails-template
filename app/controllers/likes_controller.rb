@@ -7,7 +7,7 @@ class LikesController < ApplicationController
       redirect_to posts_path, notice: "Yo, stop liking this"
     else
       @post.likes.create(user_id: current_user.id)
-      redirect_to posts_path
+      render json: [@post.likes]
     end
   end
 

@@ -3,6 +3,7 @@
 class PostsController < ApplicationController
 
   before_action :correct_user, only: [:edit, :update, :destroy]
+  respond_to :js, :html, :json
 
   def new
     # @post = Post.new
