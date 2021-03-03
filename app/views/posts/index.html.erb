@@ -1,9 +1,9 @@
 
-
-<%= link_to new_post_path do  %>
-New Post
-<% end %>
-
+<div id='new-post-btn'>
+  <%= link_to new_post_path do  %>
+  New Post
+  <% end %>
+</div>
 <% @posts.reverse.each do |post| %>
 <div class="box" style="width: 40%;">
   <div class="card-body">

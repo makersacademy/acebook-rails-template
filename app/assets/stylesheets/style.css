@@ -49,9 +49,9 @@ p {
 text-align: center;
 flex-direction: column;
 margin: 0 auto;
-/* border-radius: 5%; */
-/* padding: 5%; */
-/* background-color: white; */
+border-radius: 5%; */
+padding: 5%;
+background-color: white;
 }
 
 a:link {
@@ -62,4 +62,9 @@ a:link {
 
 a:hover {
   background-color: #79e66f;
+}
+
+#new-post-btn {
+  background-color: white;
+  max-width: 55%;
 }
