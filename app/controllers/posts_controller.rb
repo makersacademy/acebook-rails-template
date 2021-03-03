@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  before_action :correct_user, only: [:edit, :update, :destroy]
   def new
     @post = current_user.posts.new
   end
@@ -56,4 +56,11 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message, :user_id)
   end
-end
+
+  def correct_user 
+    @post = Post.find(params[:id])
+    unless @post.user == current_user
+      redirect_to posts_path, notice: "No access"
+    end
+  end
+end 

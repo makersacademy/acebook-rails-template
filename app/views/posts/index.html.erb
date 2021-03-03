@@ -2,6 +2,7 @@
 <% @posts.reverse.each do |post| %>
   <h3><%= post.message.gsub(/\n/, '<br/>').html_safe %></h3>
   <p>created @ <%= post.created_at.strftime('%d/%m/%y') %></p>
+
   created by: <%= post.user.email %>
   <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>
@@ -10,11 +11,16 @@
   <%= button_to 'Like', post_likes_path(post), method: :post %>
 <% end %>
   <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
+  created by: <%= post.user.username %>
+
   <%= link_to "/posts/#{post.id}/edit" do %>
     Edit post
   <% end %>
+
   <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }%>
-<% end %>
+   <% end %>
+
 <%= link_to new_post_path do %>
 <br>
   New post
