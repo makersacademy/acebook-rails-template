@@ -6,7 +6,8 @@ RSpec.feature 'Adding comments', type: :feature do
     click_link 'New post'
     fill_in 'Message', with: 'post'
     click_button 'Submit'
-    click_link "Comment"
-    expect(page).to have_content "Add comment"
+    fill_in "comment", with: "hey sounds good buddy"
+    click_button 'Comment'
+    expect(page).to have_content "hey sounds good buddy"
   end
 end

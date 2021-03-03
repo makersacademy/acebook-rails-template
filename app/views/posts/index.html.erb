@@ -1,14 +1,37 @@
 
 <% @posts.reverse.each do |post| %>
+
   <h3><%= post.message.gsub(/\n/, '<br/>').html_safe %></h3>
   <p>created @ <%= post.created_at.strftime('%d/%m/%y') %></p>
+
   created by: <%= post.user.username %>
   <%= link_to "/posts/#{post.id}/edit" do %>
     Edit post
   <% end %>
 
   <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }%>
-   <% end %>
+
+  <h2>Comments</h2>
+  <% post.comments.each do |comment| %>
+    <p>
+      <strong>Comment:</strong>
+      <%= comment.body %>
+    </p>
+  <% end %>
+
+  <h4>Add Comment</h4>
+  <%= form_with model: [post, post.comments.build ], local: true do |form| %>
+
+  <p >
+  <%= form.text_area :body, id: "comment" %>
+  </p>
+  <p>
+    <%= form.submit "Comment" %>
+  </p>
+  <% end %>
+
+<% end %>
+
 
 <%= link_to new_post_path do %>
 <br>
