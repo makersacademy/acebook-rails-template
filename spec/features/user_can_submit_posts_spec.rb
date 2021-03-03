@@ -26,6 +26,24 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).not_to have_content('Move to recycle bin')
   end
 
+  scenario "User can edit own posts" do
+    sign_up
+    create_post
+    click_on 'Edit post'
+    fill_in 'Message', with: SECONDARY_POST
+    click_on 'Submit'
+    expect(page).to have_content(SECONDARY_POST)
+  end
+
+  scenario "User cannot edit a different user's post" do
+    sign_up
+    create_post
+    click_on 'Sign out'
+    sign_up(SECONDARY_EMAIL, SECONDARY_PASSWORD)
+    post = Post.last
+    id = post.id
+    visit "/posts/#{id}/edit?"
+    expect(page).to have_content("That is not your post")
+  end
+
 end
-
-
