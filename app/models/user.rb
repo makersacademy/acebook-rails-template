@@ -12,11 +12,14 @@ class User < ApplicationRecord
 
   validate :validate_username
 
+  validates :username, confirmation: true
+  validates :username, presence: true
+
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
   def validate_username
     if User.where(username: username).exists?
-      errors.add(:username, :already_exists) 
+      errors.add(:username, :already_exists)
     end
   end
 
