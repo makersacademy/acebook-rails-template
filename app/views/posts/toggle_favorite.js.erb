@@ -1,11 +1,19 @@
-console.log("inside toggle favourite start")
 
-let postId = "<%= @post.id %>"
+var postId = "<%= @post.id %>"
+console.log(postId);
+var thisPost = "<%= @post %>"
+console.log(thisPost);
+var postFave = "<%= @post.favourited %>"
+console.log(postFave);
+
 function toggleLikeButton(postId, innerHTML) {
-  console.log("inside toggle favourite fucntion")
-  let likeButton = document.querySelector(`.like-icon[data-id='${postId}']`)
-  likeButton.classList.toggle('blue')
+  let likeButton = document.querySelector(`#like-button-${postId}`)
+  let likeCount = document.querySelector(`#like-count-${postId}`)
+  if(likeButton.style.color === "grey"){
+    likeButton.style.color = "blue"
+  } else {
+    likeButton.style.color = "grey"
+  }
 }
 
 toggleLikeButton(postId)
-console.log("inside toggle favourite afterwards")
