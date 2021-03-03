@@ -6,22 +6,19 @@
       <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
         <div class="mdl-card mdl-cell mdl-cell--12-col">
           <div class="mdl-card__supporting-text">
-            <h5><%= User.find(post.user_id).first_name %></h5>
+            <h5 style="margin-top: 0"><%= User.find(post.user_id).first_name %></h5>
             <%= post.message %>
           </div>
-          <div class="mdl-card__actions">
+          <div class="mdl-card__actions" style="display: flex; justify-content: space-between">
             <a href="#" class="mdl-button">Posted at <%= post.created_at.strftime("%H:%M %d/%m/%y") %></a>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="<%= post.id %>">
+              <i class="material-icons">more_horiz</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--top-right" for="<%= post.id %>">
+              <li class="mdl-menu__item">Delete</li>
+              <li class="mdl-menu__item">Edit</li>
+            </ul>
           </div>
-        </div>
-        <div>
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="<%= post.id %>">
-          <i class="material-icons">more_horiz</i>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="<%= post.id %>">
-          <li class="mdl-menu__item">Lorem</li>
-          <li class="mdl-menu__item" disabled>Ipsum</li>
-          <li class="mdl-menu__item">Dolor</li>
-        </ul>
         </div>
       </section>
 
