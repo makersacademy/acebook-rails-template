@@ -1,82 +1,90 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/controllers/comments_controller_spec.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/spec/features/new_image_spec.rb": {
         "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/rails_helper.rb": {
-        "lines": [
-          null,
-          null,
-          null,
           1,
           1,
           null,
           1,
           1,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           1,
-          null,
           1,
-          null,
           1,
-          null,
-          null,
-          null,
-          null,
           1,
-          null,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           1,
-          null,
-          null,
-          1,
-          null,
           null,
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/environment.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/spec/rails_helper.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -87,7 +95,7 @@
           1
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/application.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/application.rb": {
         "lines": [
           null,
           null,
@@ -111,7 +119,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/boot.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/boot.rb": {
         "lines": [
           null,
           null,
@@ -121,7 +129,7 @@
           1
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/environments/test.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/environments/test.rb": {
         "lines": [
           null,
           null,
@@ -173,7 +181,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/initializers/application_controller_renderer.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -186,7 +194,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/initializers/assets.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -207,7 +215,7 @@
           1
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/initializers/backtrace_silencers.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -219,7 +227,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/initializers/content_security_policy.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -249,7 +257,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/initializers/cookies_serializer.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -260,7 +268,7 @@
           1
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/initializers/devise.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/initializers/devise.rb": {
         "lines": [
           null,
           null,
@@ -575,7 +583,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/initializers/filter_parameter_logging.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -585,7 +593,7 @@
           1
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/initializers/inflections.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -606,7 +614,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/initializers/mime_types.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -615,7 +623,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/initializers/new_framework_defaults_5_2.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/initializers/new_framework_defaults_5_2.rb": {
         "lines": [
           null,
           null,
@@ -658,7 +666,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/initializers/wrap_parameters.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -678,7 +686,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/config/routes.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/config/routes.rb": {
         "lines": [
           null,
           null,
@@ -692,7 +700,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/models/user.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -708,7 +716,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/models/application_record.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -717,7 +725,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/helpers/application_helper.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -728,7 +736,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/helpers/comments_helper.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/helpers/comments_helper.rb": {
         "lines": [
           null,
           null,
@@ -736,7 +744,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/helpers/likes_helper.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/helpers/likes_helper.rb": {
         "lines": [
           null,
           null,
@@ -744,25 +752,7 @@
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/helpers/welcome_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          10,
-          10,
-          10,
-          10,
-          10,
-          10,
-          10,
-          10,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/controllers/comments_controller.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/helpers/welcome_helper.rb": {
         "lines": [
           null,
           null,
@@ -771,515 +761,76 @@
           1,
           1,
           1,
-          null,
-          null,
           1,
-          null,
+          1,
+          1,
           1,
           1,
           null,
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/controllers/application_controller.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/controllers/welcome_controller.rb": {
         "lines": [
           null,
           null,
           1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          26,
-          10,
-          null,
-          28,
-          26,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/controllers/likes_controller_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
           1,
           null
         ]
       },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/controllers/likes_controller.rb": {
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
+          null,
           1,
-          1,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
           null,
           1,
           0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/controllers/welcome_controller_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/controllers/welcome_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/features/post_and_user_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/features/sign_out_button_to_welcome_page_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/features/unauthenticated_users_redirected_to_welcomepage_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/features/user_can_navigate_to_register_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/features/user_can_navigate_to_sign_in_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/features/user_can_submit_posts_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/features/user_is_redirected_after_registered_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/features/user_is_redirected_after_signing_in_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/features/users_can_add_comments_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/features/users_can_delete_posts_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/features/users_can_update_posts_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/helpers/comments_helper_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/helpers/likes_helper_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/helpers/welcome_helper_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/models/comment_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/models/comment.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/models/like_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/models/like.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/models/post_spec.rb": {
-        "lines": [
           null,
           null,
           1,
           null,
           1,
           2,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/models/post.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/spec/views/welcome/index.html.erb_spec.rb": {
-        "lines": [
-          null,
-          null,
           1,
           null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/controllers/registrations_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          10,
-          null,
-          null
-        ]
-      },
-      "/Users/jackshields/Desktop/projects/acebook--Pipeface-/app/controllers/posts_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          7,
-          null,
-          null,
-          1,
-          6,
-          6,
-          6,
-          null,
+          2,
+          2,
           0,
           null,
           null,
-          null,
-          1,
-          21,
-          20,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
+          null
+        ]
+      },
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/controllers/registrations_controller.rb": {
+        "lines": [
           null,
           null,
           1,
           1,
           null,
-          null,
           1,
           1,
           null,
+          null
+        ]
+      },
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/controllers/posts_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
           1,
           1,
           null,
@@ -1288,10 +839,36 @@
           null,
           null,
           1,
-          1,
-          1,
+          2,
+          2,
+          null,
+          0,
+          null,
+          null,
           null,
           1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
           null,
           null,
           1,
@@ -1302,17 +879,49 @@
           null,
           null,
           1,
-          7,
+          1,
           null,
           null,
           1,
-          3,
-          3,
+          0,
+          0,
           null,
+          null
+        ]
+      },
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/models/post.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/models/like.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/oscar/MakerAcademy/week8_9/acebook--Pipeface-/app/models/comment.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
           null
         ]
       }
     },
-    "timestamp": 1614783747
+    "timestamp": 1614790077
   }
 }
