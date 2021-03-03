@@ -10,7 +10,10 @@ Rails.application.routes.draw do
    # root to: 'post#index'
    # get 'new' => 'posts#new'
    resources :posts do
+
      resources :comments
+  
+     resources :likes
    end
 
 end
