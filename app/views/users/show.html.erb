@@ -1,7 +1,9 @@
 <h1> <%= @user.name %> </h1>
 
+<% if !current_user.pending_friends.map{|fr| fr.id}.include?(params[:id].to_i) && !current_user.requested_friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
 <% if current_user.id != @user.id %>
 <p><%= link_to "Be my friend", method: current_user.friend_request(User.find(params[:id])) %></p>
+<%end%>
 <%end%>
 
 <% if current_user.id == @user.id %>
