@@ -1,22 +1,23 @@
 class LikesController < ApplicationController
   before_action :find_post
   before_action :find_like, only: [:destroy]
+  respond_to :js, :html, :json
 
   def create
     if already_liked?
-      redirect_to posts_path, notice: "Yo, stop liking this"
+      render json: {error_message: "Yo, stop liking this"}
     else
       @post.likes.create(user_id: current_user.id)
-      render json: [@post.likes]
+      render json: {like_count: @post.likes.count, post_id: @post.id, user_like: @post.likes.find { |like| like.user_id == current_user.id}}
     end
   end
 
   def destroy
     if already_liked?
       @like.destroy
-      redirect_to posts_path
+      render json: {like_count: @post.likes.count, post_id: @post.id}
     else
-      redirect_to posts_path, notice: "Can't unlike"
+      render json: {error_message: "Can't unlike"}
     end
   end
 

@@ -14,6 +14,7 @@
 // // In likes_controller
 // - Change create, destroy paths to remove redirects and return JSON objects
 
+let arg;
 
 function test(input) { console.log(input) }
 $(document).ready(function() {
@@ -32,14 +33,35 @@ $(document).ready(function() {
   //
   // });
 
-  $(".like-btn").click(function() {
-    $(this).on("ajax:complete", function () {
-      console.log("I'm in heeeere!")
-      $(this)
-        .parent()
-        .find(".like-count")
-        .html("ajax yay");
-    });
-  })
+  $(".like-btn").parent().on("ajax:success", updateLikes)
 
-});
+  function updateLikes(event) {
+      let likeCountEl = $(this).parent().find(".like-count")
+      let likeIconEl = $(this).parent().find(".like-btn-icon")
+      let data = event.detail[0]
+
+      if(data.error_message) {
+        $('.notice').text(data.error_message)
+      }
+      else if(data.user_like) {
+        let likeCount = data.like_count
+        likeCountEl.html(`${likeCount} Like${likeCount === 1 ? "" : "s"}`);
+        likeIconEl.attr("src", "heart.png");
+        console.log($(this).parent())
+        console.log($(this))
+        $(this).attr("action", `posts/${data.post_id}/likes/${data.user_like.id}`)
+        // change url to be posts/posts_id/likes/likes_id
+        // change method to delete
+      }
+      else {
+        let likeCount = data.like_count
+        likeCountEl.html(`${likeCount} Like${likeCount === 1 ? "" : "s"}`);
+        likeIconEl.attr("src", "like.png");
+        $(this).attr("action", `posts/${data.post_id}/likes`)
+        // change url to be posts/posts_id/likes/
+        // change method to delete
+      }
+
+  };
+
+  })

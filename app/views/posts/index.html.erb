@@ -24,9 +24,9 @@
     <% end %>
     <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
     <% if pre_like %>
-      <%= button_to post_like_path(post, pre_like), class: "unlike-btn", method: :delete do %>
+      <%= button_to post_like_path(post, pre_like), class: "like-btn", method: :delete, remote: true do %>
         <div>
-          <img src= 'heart.png', class='unlike-btn-icon'></img>
+          <img src= 'heart.png', class='like-btn-icon'></img>
         </div>
       <% end %>
     <% else %>
