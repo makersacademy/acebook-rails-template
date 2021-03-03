@@ -9,18 +9,15 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
 =======
 
-
   validate :validate_username
 
   validates :username, confirmation: true
   validates :username, presence: true
 
-  validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
+  validates :username, format: { with: /^[a-zA-Z0-9_.]*$/, :multiline => true }
 
   def validate_username
-    if User.where(username: username).exists?
-      errors.add(:username, :already_exists)
-    end
+    errors.add(:username, :already_exists) if User.exists?(username: username)
   end
 
 >>>>>>> d81a420... Cannot sign up with same username twice with passing tests and change locales file
