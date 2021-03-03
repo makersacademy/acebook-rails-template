@@ -632,6 +632,15 @@
           1,
           null,
           1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -646,6 +655,7 @@
           1,
           null,
           null,
+          1,
           1,
           null
         ]
@@ -663,6 +673,12 @@
         "lines": [
           null,
           null,
+          1,
+          null
+        ]
+      },
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/helpers/friends_helper.rb": {
+        "lines": [
           1,
           null
         ]
@@ -789,11 +805,11 @@
           1,
           null,
           1,
-          2,
-          2,
+          4,
+          4,
           null,
-          2,
-          2,
+          4,
+          4,
           null,
           null,
           null,
@@ -809,6 +825,6 @@
         ]
       }
     },
-    "timestamp": 1614769191
+    "timestamp": 1614784651
   }
 }

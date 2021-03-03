@@ -7,7 +7,7 @@ RSpec.feature 'Friends', type: :feature do
     click_link 'Sign out'
     register_second_user
     click_link 'Katy Day'
-    click_button 'Be my Friend'
+    click_link 'Be my friend'
     expect(page).to have_content('You and Katy are now friends')
   end
 
@@ -17,7 +17,7 @@ RSpec.feature 'Friends', type: :feature do
     click_link 'Sign out'
     register_second_user
     click_link 'Katy Day'
-    click_button 'Be my Friend'
+    click_link 'Be my friend'
     expect(page).to have_content("Katy's Friends")
     expect(page).to have_content("John Smith")
   end
