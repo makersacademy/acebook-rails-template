@@ -1,9 +1,10 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/controllers/posts_controller_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           1,
+          1,
           null,
           null,
           1,
@@ -21,21 +22,23 @@
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          0,
+          0,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          0,
+          0,
           null,
           null,
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/rails_helper.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -98,7 +101,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/environment.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -107,7 +110,7 @@
           1
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/application.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/application.rb": {
         "lines": [
           1,
           null,
@@ -129,14 +132,14 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/boot.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/boot.rb": {
         "lines": [
           1,
           null,
           1
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/environments/test.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -182,7 +185,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/initializers/application_controller_renderer.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -192,7 +195,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/initializers/assets.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -204,26 +207,6 @@
           null,
           1,
           null,
-          null,
-          null,
-          null,
-          null,
-          1
-        ]
-      },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/initializers/backtrace_silencers.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/initializers/cookies_serializer.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -231,7 +214,27 @@
           1
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/initializers/devise.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/initializers/backtrace_silencers.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/initializers/cookies_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          1
+        ]
+      },
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/initializers/devise.rb": {
         "lines": [
           null,
           null,
@@ -546,7 +549,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/initializers/filter_parameter_logging.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -554,7 +557,7 @@
           1
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/initializers/inflections.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -574,7 +577,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/initializers/mime_types.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -582,7 +585,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/initializers/wrap_parameters.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -600,7 +603,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/config/routes.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/config/routes.rb": {
         "lines": [
           1,
           null,
@@ -618,52 +621,57 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/app/models/user.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/app/models/user.rb": {
         "lines": [
           1,
           null,
           null,
           1,
           null,
+          1,
           null,
           1,
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/app/models/application_record.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/app/helpers/welcome_helper.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null,
-          1,
-          9,
-          9,
-          9,
-          9,
-          9,
-          9,
-          9,
           null,
           null,
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/app/controllers/posts_controller.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null,
+          1,
+          11,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/app/controllers/posts_controller.rb": {
+        "lines": [
+          1,
+          1,
           1,
           6,
           null,
@@ -715,28 +723,39 @@
           1,
           6,
           null,
+          null,
+          1,
+          3,
+          3,
+          0,
+          null,
+          null,
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/app/controllers/application_controller.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           null,
           1,
+          null,
+          1,
           1,
           null,
           null,
           null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          33,
+          26,
+          24,
           null,
           null,
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/controllers/welcome_controller_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/controllers/welcome_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -752,7 +771,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/app/controllers/welcome_controller.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           1,
@@ -760,50 +779,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/features/post_and_user_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/features/sign_out_button_to_welcome_page_spec.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/features/unauthenticated_users_redirected_to_welcomepage_spec.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/features/user_can_navigate_to_register_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/features/post_and_user_spec.rb": {
         "lines": [
           1,
           null,
@@ -818,7 +794,35 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/features/user_can_navigate_to_sign_in_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/features/sign_out_button_to_welcome_page_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/features/unauthenticated_users_redirected_to_welcomepage_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/features/user_can_navigate_to_register_spec.rb": {
         "lines": [
           1,
           null,
@@ -833,7 +837,22 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/features/user_can_navigate_to_sign_in_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
           1,
           1,
@@ -865,7 +884,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/features/user_is_redirected_after_registered_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/features/user_is_redirected_after_registered_spec.rb": {
         "lines": [
           1,
           null,
@@ -877,45 +896,10 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/features/user_is_redirected_after_signing_in_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/features/user_is_redirected_after_signing_in_spec.rb": {
         "lines": [
           1,
           null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/features/users_can_delete_posts_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/features/users_can_update_posts_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
           1,
           1,
           1,
@@ -929,7 +913,42 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/helpers/welcome_helper_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/features/users_can_delete_posts_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/features/users_can_update_posts_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/helpers/welcome_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -948,7 +967,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/models/post_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/models/post_spec.rb": {
         "lines": [
           1,
           null,
@@ -957,7 +976,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/app/models/post.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/app/models/post.rb": {
         "lines": [
           1,
           1,
@@ -965,7 +984,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/spec/views/welcome/index.html.erb_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/spec/views/welcome/index.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -974,7 +993,7 @@
           null
         ]
       },
-      "/Users/megangosnell/Desktop/acebook--Pipeface-/app/controllers/registrations_controller.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Pipeface/app/controllers/registrations_controller.rb": {
         "lines": [
           1,
           null,
@@ -987,6 +1006,6 @@
         ]
       }
     },
-    "timestamp": 1614682403
+    "timestamp": 1614767804
   }
 }
