@@ -7,10 +7,15 @@
 <% @posts.reverse_each do |post| %>
 
   <div class='post'>
+<<<<<<< HEAD
     <p class='message'><%= h(post.message).gsub(/\n/, '<br/>').html_safe %> </p>
     <p class='date'>Posted at <%= post.updated_at.strftime("%k:%M on %d/%m/%Y") %></p>
     <p class='username'><%= User.find_by(id: post.user_id).username %></p>
     <p class='user-email'><%= User.find_by(id: post.user_id).email %></p>
+=======
+    <p class='message'> <%= post.message %></p>
+    <p class='date'>Posted at <%= post.updated_at.strftime("%k:%M on %d/%m/%Y") %> by <p class='username'><%= User.find_by(id: post.user_id).username %></p></p>
+>>>>>>> 44a34b1... Username now shows rather than email
     <% if post.user.id == current_user.id %>
       <% if Time.zone.now - post.created_at < (60 * 10) %>
         <%= link_to "Edit", edit_post_path(post.id) %>
