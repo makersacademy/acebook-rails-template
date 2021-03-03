@@ -1,19 +1,23 @@
 
 var postId = "<%= @post.id %>"
-console.log(postId);
-var thisPost = "<%= @post %>"
-console.log(thisPost);
-var postFave = "<%= @post.favourited %>"
-console.log(postFave);
+var postFaveCount = "<%= @post.favorited.count %>"
 
-function toggleLikeButton(postId, innerHTML) {
+function toggleLikeButton(postId, postFaveCount, innerHTML) {
   let likeButton = document.querySelector(`#like-button-${postId}`)
   let likeCount = document.querySelector(`#like-count-${postId}`)
+
   if(likeButton.style.color === "grey"){
     likeButton.style.color = "blue"
   } else {
     likeButton.style.color = "grey"
   }
+
+  likeCount.innerHTML = postFaveCount;
+  if(postFaveCount === "1") {
+    likeCount.innerHTML += " like"
+  } else {
+    likeCount.innerHTML += " likes"
+  }
 }
 
-toggleLikeButton(postId)
+toggleLikeButton(postId, postFaveCount)

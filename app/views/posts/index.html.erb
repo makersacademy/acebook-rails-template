@@ -41,9 +41,8 @@
         <% end %>
       </div>
       <div> <%= tag.div id: "like-count-#{post.id}" do %>
-          <%= post.favorited.count %>
+          <%= post.favorited.count %> <%= (post.favorited.count) == 1 ? 'like' : 'likes' %>
           <% end %>
-          <%= (post.favorited.count) == 1 ? 'Like' : 'Likes'%>
         </div>
   </div>
   <br>
