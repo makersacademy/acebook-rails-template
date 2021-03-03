@@ -7,6 +7,7 @@
 <% if current_user.id == @user.id %>
 <p><%= link_to 'New post', new_post_path %></p>
 <p><%= link_to "Friend Requests", friend_requests_path %></p>
+<p><%= link_to "Friend list", friends_list_path %></p>
 <% else %>
   <p><%= link_to 'Post on wall', new_profile_post_path(:user_profile_id => @user.id) %></p>
 <% end %>

@@ -16,9 +16,10 @@ end
 
   get 'friends/requests' => 'friends#requests', :as => :friend_requests
 
-  get 'friends/accept/:id' => 'friends#accept', :as => :accept_request 
+  get 'friends/accept/:id' => 'friends#accept', :as => :accept_request
 
   get 'friends/decline/:id'=> 'friends#decline', :as => :decline_request
 
+  get 'friends/:id/list' => 'friends#list', :as => :friends_list
 
 end
