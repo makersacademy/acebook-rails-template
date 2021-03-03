@@ -46,4 +46,25 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content("That is not your post")
   end
 
+  scenario "Can only edit post within 10min of creation" do
+    sign_up
+    create_post
+    allow(Time).to receive(:now).and_return(Post.last.created_at + 20.minutes)
+    expect(page).not_to have_content "Edit post"
+  end
+
+  scenario "Can't try to cheat to edit an old post'" do
+    sign_up
+    create_post
+    allow(Time).to receive(:now).and_return(Post.last.created_at + 20.minutes)
+    # allow(Post.last).to receive(:created_at).and_return(Time.now - 20.minutes)
+    # p Time.now
+    # p Post.last.created_at
+    post = Post.last
+    id = post.id
+    visit "/posts/#{id}/edit?"
+    expect(page).to have_content "You can no longer edit this post"
+    expect(current_path).to eq "/posts"
+  end
+
 end
