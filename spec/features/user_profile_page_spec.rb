@@ -52,5 +52,18 @@ RSpec.feature 'profile page', type: :feature do
     expect(page).to have_content('I dont like my message anymore')
   end
 
+  scenario "A user can delete their post on another users page" do
+    register
+    submit_post
+    click_link "Sign out"
+    register_second_user
+    click_link "Katy Day"
+    click_link "Post on wall"
+    fill_in "Message", with: "Im posting on my friends wall"
+    click_button "Post"
+    click_link "Delete post"
+    expect(page).not_to have_content('Im posting on my friends wall')
+  end
+
 
 end

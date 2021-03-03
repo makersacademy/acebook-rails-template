@@ -42,6 +42,14 @@ class ProfilePostsController < ApplicationController
     redirect_to(user_path(user))
   end
 
+  def destroy
+    profile_post = ProfilePost.find(params[:id])
+    profile_post.destroy
+    
+    user = User.find(profile_post.user_profile_id)
+    redirect_to(user_path(user))
+  end
+
   private
 
   def post_params
