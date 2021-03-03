@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :likes
-end
+  end
 
   resources :profile_posts
 
