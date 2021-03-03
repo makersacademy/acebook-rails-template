@@ -7,7 +7,6 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
 
-
   validate :validate_username
 
   validates :username, confirmation: true
