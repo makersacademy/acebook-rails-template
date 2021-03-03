@@ -3,24 +3,36 @@
   They will automatically be included in application.css.
 */
 
+$blue: rgb(112, 112, 218);
+
 p {
   white-space: pre-wrap;
 }
 
 .main {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
 }
 
 .post {
-  border: solid 10px blue;
+  grid-column: 1 / span 2;
+  background-color: orange;
   margin-bottom: 20px;
   padding: 12px;
   border-radius: 6px;
 }
 
 .new-post {
-  background-color: black;
+  
+
+  background-color: orange;
   border-radius: 6px;
+}
+
+.new-post a {
+  padding-left: 6px;
+  color: #000;
 }
