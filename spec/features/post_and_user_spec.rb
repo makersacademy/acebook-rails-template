@@ -7,5 +7,6 @@ RSpec.feature 'A post has a creator' do
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
     expect(page).to have_content("created by: username")
+
    end
 end
