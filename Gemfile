@@ -41,6 +41,8 @@ gem 'bulma-rails', '~> 0.9.1'
 
 gem 'rubocop-rails', require: false
 
+gem 'mini_racer'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
