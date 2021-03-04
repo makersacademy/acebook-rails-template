@@ -1,8 +1,11 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.feature "Redirected", type: :feature do
-  scenario "to posts route after user registered" do
+require 'rails_helper'
+include WelcomeHelper
+
+RSpec.feature 'Redirected', type: :feature do
+  scenario 'to posts route after user registered' do
     sign_up
-    expect(page).to have_content("Welcome! You have signed up successfully.")
+    expect(page).to have_content('Welcome! You have signed up successfully.')
   end
 end

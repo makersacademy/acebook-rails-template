@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 include WelcomeHelper
 
-RSpec.feature "Sign out", type: :feature do
+RSpec.feature 'Sign out', type: :feature do
   scenario 'Redirect to welcome page after signing out' do
     sign_up
     click_link('Sign out')

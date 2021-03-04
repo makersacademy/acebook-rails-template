@@ -19,6 +19,10 @@ h3 {
   font-family: 'DotGothic16', sans-serif;
   color: black;
 }
+h4 {
+  font-family: 'DotGothic16', sans-serif;
+  color: white;
+}
 ul {
   font-family: 'DotGothic16', sans-serif;
   color: white;
@@ -34,10 +38,6 @@ p {
 .mt-5 {
   font-size: 100px;
   font-weight: bold;
-}
-
-.container-fluid{
-
 }
 
 .card {
@@ -64,7 +64,4 @@ a:hover {
   background-color: #79e66f;
 }
 
-/* #new-post-btn {
-  background-color: white;
-  max-width: 55%;
-} */
+

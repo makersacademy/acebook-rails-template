@@ -1,1 +1,3 @@
 <h2><%= @post.message %></h2>
+<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<%= link_to 'Back', posts_path %>
