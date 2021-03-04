@@ -1,8 +1,9 @@
 
 <div id="content">
-<div id="left">
 <h1> <%= @user.name.capitalize %>'s Page </h1>
 <hr>
+<div id="left">
+
 <% unless current_user.friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
 <% if !current_user.pending_friends.map{|fr| fr.id}.include?(params[:id].to_i) && !current_user.requested_friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
 <% if current_user.id != @user.id %>
@@ -36,9 +37,9 @@
 <% end %>
 </div>
 
-
+<h1> Friend Posts </h1><hr>
 <div class="friends-posts" id="right">
-  <h1> Friend Posts </h1><hr>
+  
   <% @profile_posts.each do |post| %>
     <div class="post profile-posts">
     <p><%= post.message %></p>
