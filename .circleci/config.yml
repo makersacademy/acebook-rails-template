@@ -71,11 +71,9 @@ jobs:
       - checkout
       - run:
           name: Setup Heroku
-          command: bash .circleci/setup-heroku.sh
 
-      - run:
           command: |
-            git push heroku sequential-branch-filter:master
+            git push heroku master
             heroku run rake db:migrate
             sleep 5 # sleep for 5 seconds to wait for dynos
             heroku restart
