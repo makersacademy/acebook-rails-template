@@ -36,9 +36,11 @@
     padding: 5px;
     color: black;
     white-space: pre-wrap;
+    font-size: 15px;
   }
   * {
     color: #44d9e6;
+    font-size: 20px;
   }
   .align-left {
     float: left;
@@ -55,3 +57,9 @@
   color: #ffffff;
   margin-bottom: 0px;
 }
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+ }
