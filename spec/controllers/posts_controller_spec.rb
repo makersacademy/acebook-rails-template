@@ -13,9 +13,10 @@ RSpec.describe PostsController, type: :controller do
 
   describe 'POST /' do
     login_user
-    it 'responds with 200' do
+    it 'responds with 302' do
       post :create, params: { post: { message: 'Hello, world!' } }
       expect(response).to redirect_to(root_path)
+      expect(response).to have_http_status(302)
     end
 
     it 'creates a post' do
