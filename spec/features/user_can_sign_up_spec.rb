@@ -3,29 +3,29 @@ require 'rails_helper'
 RSpec.feature 'Sign up', type: :feature do
   scenario 'Can sign up from homepage' do
     visit '/'
-    # click_button 'Sign up'
+    click_button 'Sign up'
     expect(current_path).to eq('/users/sign_up')
     fill_in 'user_email', with: 'anna.cavalla@gmail.com'
     fill_in 'user_password', with: 'password'
     fill_in 'user_password_confirmation', with: 'password'
     click_button 'Sign up'
     expect(page).to have_content('Welcome! You have signed up successfully')
-    expect(current_path).to eq('/')
+    expect(current_path).to eq('/posts')
   end
 
-  xscenario 'Gets redirected to / when not signed in and viewing /posts' do
+  scenario 'Gets redirected to / when not signed in and viewing /posts' do
     visit '/posts'
-    expect(current_path).to eq('/')
+    expect(current_path).to eq('/users/sign_in')
   end
 
   scenario 'Gets redirected to / when visting a page that doesnt exist' do
     visit '/foo'
-    expect(current_path).to eq('/')
+    expect(current_path).to eq('/users/sign_in')
   end
 
   scenario 'cannot create an account with a password less than 6 characters' do
     visit '/'
-    # click_button 'Sign up'
+    click_button 'Sign up'
     expect(current_path).to eq('/users/sign_up')
     fill_in 'user_email', with: 'anna.cavalla@gmail.com'
     fill_in 'user_password', with: '12345'
@@ -36,7 +36,7 @@ RSpec.feature 'Sign up', type: :feature do
 
   scenario 'cannot create an account with a password more than 10 characters' do
     visit '/'
-    # click_button 'Sign up'
+    click_button 'Sign up'
     expect(current_path).to eq('/users/sign_up')
     fill_in 'user_email', with: 'anna.cavalla@gmail.com'
     fill_in 'user_password', with: '12345678901'
@@ -47,7 +47,7 @@ RSpec.feature 'Sign up', type: :feature do
 
   scenario 'Cannot sign up with an invaild email' do
     visit '/'
-    # click_button 'Sign up'
+    click_button 'Sign up'
     expect(current_path).to eq('/users/sign_up')
     fill_in 'user_email', with: 'anna.cavalla'
     fill_in 'user_password', with: 'password'
