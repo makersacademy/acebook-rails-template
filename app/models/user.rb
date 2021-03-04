@@ -7,5 +7,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
- has_many :profile_posts
+  has_many :profile_posts
+
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
+ # match "/users/:username" => "users#show"
+ # match '/:id', :to => "users#show", :as => :user, :via => :get
+
 end

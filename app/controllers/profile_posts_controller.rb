@@ -19,11 +19,33 @@ class ProfilePostsController < ApplicationController
     end
   end
 
+  def edit
+    @profile_post = ProfilePost.find(params[:id])
+  end
+
   def update
-    
+    profile_post = ProfilePost.find(params[:id])
+    profile_post.update(post_params)
+    redirect_to(user_path(user))
+  end
+
+  def show
+    redirect_to posts_url
+  end
+
+  def update
+
     profile_post = ProfilePost.find(params[:id])
     profile_post.update(post_params)
 
+    user = User.find(profile_post.user_profile_id)
+    redirect_to(user_path(user))
+  end
+
+  def destroy
+    profile_post = ProfilePost.find(params[:id])
+    profile_post.destroy
+    
     user = User.find(profile_post.user_profile_id)
     redirect_to(user_path(user))
   end

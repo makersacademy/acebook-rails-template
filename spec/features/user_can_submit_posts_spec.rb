@@ -33,7 +33,7 @@ RSpec.feature 'User Wall', type: :feature do
     expect(page).to have_link('New post')
   end
 
-  xscenario 'Signed in user can only edit friends post they have created' do
+  scenario 'Signed in user can only edit friends post they have created' do
     register
     submit_post
     click_link 'Sign out'

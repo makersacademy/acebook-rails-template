@@ -1,3 +1,11 @@
 // Place all the styles related to the ProfilePost controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.friends-posts {
+  grid-column: 1 / span 3;
+}
+
+.new-posts-link {
+  grid-column: 1 / span 2;
+}
