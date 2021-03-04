@@ -15,6 +15,7 @@ class FriendsController < ApplicationController
   end
 
   def list
+    @user = User.find(params[:id])
     @friends_list = User.find(params[:id]).friends
   end
 
