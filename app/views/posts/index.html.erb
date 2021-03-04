@@ -12,7 +12,7 @@
   <div class="card-body" style="margin: 20px;">
       <h3 class="card-text"><%= post.message.gsub(/\n/, '<br/>').html_safe %></h3>
   <% if post.image.attached? %>
-<div style="width:400px; height:auto">
+<div style="width:400px; height:auto; margin-right:70px; padding-right:30px ">
    <%= image_tag(post.image, style: "width: 100%") %>
 </div>
   <%end%>
