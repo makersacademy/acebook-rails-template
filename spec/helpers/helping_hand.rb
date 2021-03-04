@@ -24,12 +24,27 @@ module Helpers
       click_button 'Sign up'
     end
 
-
     def submit_post
       visit '/posts'
       click_link 'New post'
       fill_in 'Message', with: 'Hello, world!'
       click_button 'Submit'
+    end
+
+    def friend_request
+      register
+      submit_post
+      click_link 'Sign out'
+      register_second_user
+      click_link 'Katy Day'
+      click_link 'Be my friend'
+      click_link 'Sign out'
+      click_link 'Sign in'
+      fill_in 'Email', with: 'email@example.com'
+      fill_in 'Password', with: 'password123'
+      click_button 'Sign in'
+      click_link 'Profile'
+      click_link 'Friend Requests'
     end
   end
 end
