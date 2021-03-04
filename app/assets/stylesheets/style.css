@@ -30,6 +30,7 @@ ul {
 p {
   font-family: 'DotGothic16', sans-serif;
   color: black;
+  font-size:
 }
 .navbar-brand {
   font-family: 'DotGothic16', sans-serif;
@@ -71,4 +72,6 @@ a:hover {
 .box-new {
   color: #79e66f;
 }
-
+.nav-item {
+  color: black;
+}

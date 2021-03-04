@@ -12,13 +12,13 @@
   <div class="card-body" style="margin: 20px;">
       <h3 class="card-text"><%= post.message.gsub(/\n/, '<br/>').html_safe %></h3>
   <% if post.image.attached? %>
-
-   <%= image_tag(post.image) %>
-
+<div style="width:400px; height:auto">
+   <%= image_tag(post.image, style: "width: 100%") %>
+</div>
   <%end%>
   <p>Created @ <%= post.created_at.strftime('%d/%m/%y') %> by: <%= post.user.username %></p>
 
-  
+
   <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>
   <%= button_to 'Unlike', post_like_path(post, pre_like), method: :delete %>
@@ -28,7 +28,7 @@
   <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
   <%= link_to "/posts/#{post.id}/edit" do %>
-    Edit 
+    Edit
   <% end %>
 
   <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }%>
@@ -41,7 +41,7 @@
     </p>
   <% end %>
 
-  
+
   <%= form_with model: [post, post.comments.build ], local: true do |form| %>
 
   <p >
