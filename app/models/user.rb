@@ -15,4 +15,5 @@ class User < ApplicationRecord
  # match "/users/:username" => "users#show"
  # match '/:id', :to => "users#show", :as => :user, :via => :get
 
+ has_friendship
 end
