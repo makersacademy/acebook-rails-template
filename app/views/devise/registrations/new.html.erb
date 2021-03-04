@@ -1,4 +1,7 @@
-<h2>Sign up</h2>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h2 class="card-title">Sign Up</h2>
+    <p class="card-text"></p>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -32,3 +35,6 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+  </div>
+</div>

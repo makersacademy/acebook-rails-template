@@ -1,7 +1,16 @@
 
+
+<div style="background-color: white; padding: 10px; font-family: 'DotGothic16';    width: fit-content; margin-left: 325px; border-radius: 9%;">
+  <%= link_to new_post_path do  %>
+    New Post
+  <% end %>
+</div>
+
 <% @posts.reverse.each do |post| %>
 
-  <h3><%= post.message.gsub(/\n/, '<br/>').html_safe %></h3>
+  <div class="box" style="width: 40%;">
+  <div class="card-body">
+      <h3 class="card-text"><%= post.message.gsub(/\n/, '<br/>').html_safe %></h3>
   <% if post.image.attached? %>
   <!-- <div style="width:400px; height:auto"> -->
    <%= image_tag(post.image) %>
@@ -42,12 +51,9 @@
     <%= form.submit "Comment" %>
   </p>
   <% end %>
-
+    </div>
+</div>
 <% end %>
 
 
-<%= link_to new_post_path do %>
-<br>
-  New post
 
-<% end %>
