@@ -8,4 +8,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
  has_many :profile_posts
+ has_friendship
 end
