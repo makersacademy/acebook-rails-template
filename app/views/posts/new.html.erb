@@ -1,7 +1,15 @@
+<div class="box" style="width: 70%;">
+<div class="card-body">
+    <h3 class="card-text" style=''DotGothic16'; color: green; width: fit-content; margin-left: 325px; border-radius: 9%;'>
+
+
  <%= form_for @post do |form| %>
    <%= form.label :message %>
+   <br>
   <%= form.text_area :message %>
+  <br>
   <%= form.label "Image" %>
+  <br>
   <%= form.file_field :image %>
 
   <% if @post.errors.any? %>
@@ -11,3 +19,5 @@
   <% end %>
   <%= form.submit "Submit" %>
 <% end %>
+</div>
+</div>
