@@ -77,7 +77,7 @@ jobs:
           name: deploy to Heroku if tests pass and branch is master
           command: | 
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              git push --force git@heroku.com:$HEROKU_APP_NAME.git HEAD:refs/heads/master
+              git push --force git@heroku.com:gentle-beach-18739.git HEAD:refs/heads/master
               heroku run rake db:migrate 
               sleep 5
               heroku restart             
