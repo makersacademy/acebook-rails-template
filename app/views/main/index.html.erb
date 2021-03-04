@@ -9,16 +9,22 @@
             <h5 style="margin-top: 0"><%= User.find(post.user_id).first_name %></h5>
             <%= post.message %>
           </div>
+
           <div class="mdl-card__actions" style="display: flex; justify-content: space-between">
             <a href="#" class="mdl-button">Posted at <%= post.created_at.strftime("%H:%M %d/%m/%y") %></a>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="<%= post.id %>">
-              <i class="material-icons">more_horiz</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-menu--top-right" for="<%= post.id %>">
-              <li class="mdl-menu__item">Delete</li>
-              <li class="mdl-menu__item">Edit</li>
-            </ul>
+            <% if !Current.user %>
+            <!-- No user logged in -->
+            <% elsif Current.user.id == post.user_id %>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="<%= post.id %>">
+                <i class="material-icons">more_horiz</i>
+              </button>
+              <ul class="mdl-menu mdl-js-menu mdl-menu--top-right" for="<%= post.id %>">
+                <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'mdl-menu__item' %>
+                <%= link_to 'Edit', edit_post_path(post), method: :get, class: 'mdl-menu__item' %>
+              </ul>
+            <% end %>
           </div>
+
         </div>
       </section>
 

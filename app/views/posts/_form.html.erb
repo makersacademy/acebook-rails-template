@@ -1,0 +1,13 @@
+<%= form_with model: post, local: true do |form| %>
+    
+    <div class="mb-3">
+        <%= form.label :message %>
+        <%= form.text_field :message %>
+    </div>
+
+    <%= form.button 'Post', class: 'btn btn-primary' %>
+
+    <!-- <% if form.object.persisted? %>
+        <%= button_to 'Delete', form.object, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' %>
+    <% end %> -->
+<% end %>
