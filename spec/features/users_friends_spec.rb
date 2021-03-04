@@ -39,6 +39,7 @@ RSpec.feature 'Friends', type: :feature do
     click_button 'Sign in'
     click_link 'Katy Day'
     click_link 'Friend list'
+    expect(page).to have_content("Katy Day's friends")
     expect(page).to have_link('John Smith')
   end
 end

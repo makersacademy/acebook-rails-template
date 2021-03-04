@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/spec/features/users_friends_spec.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/spec/features/users_friends_spec.rb": {
         "lines": [
           1,
           null,
@@ -45,11 +45,12 @@
           1,
           1,
           1,
+          0,
           null,
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/spec/rails_helper.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/spec/rails_helper.rb": {
         "lines": [
           null,
           null,
@@ -114,7 +115,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/environment.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -125,7 +126,7 @@
           1
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/application.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/application.rb": {
         "lines": [
           null,
           null,
@@ -149,7 +150,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/boot.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/boot.rb": {
         "lines": [
           null,
           null,
@@ -158,7 +159,7 @@
           1
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/environments/test.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/environments/test.rb": {
         "lines": [
           null,
           null,
@@ -206,7 +207,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/initializers/application_controller_renderer.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -217,7 +218,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/initializers/assets.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -237,7 +238,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/initializers/backtrace_silencers.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -249,7 +250,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/initializers/cookies_serializer.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -260,7 +261,7 @@
           1
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/initializers/devise.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/devise.rb": {
         "lines": [
           null,
           null,
@@ -575,7 +576,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/initializers/filter_parameter_logging.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -585,7 +586,7 @@
           1
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/initializers/inflections.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -606,7 +607,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/initializers/mime_types.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -615,7 +616,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/initializers/wrap_parameters.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -635,7 +636,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/config/routes.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/config/routes.rb": {
         "lines": [
           null,
           null,
@@ -664,7 +665,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/models/user.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -680,7 +681,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/models/application_record.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -689,7 +690,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/helpers/application_helper.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -697,31 +698,31 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/helpers/friends_helper.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/helpers/friends_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/helpers/likes_helper.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/helpers/likes_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/helpers/profile_post_helper.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/helpers/profile_post_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/helpers/user_helper.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/helpers/user_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/controllers/application_controller.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -741,7 +742,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/controllers/posts_controller.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/controllers/posts_controller.rb": {
         "lines": [
           null,
           null,
@@ -801,7 +802,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/models/post.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/models/post.rb": {
         "lines": [
           null,
           null,
@@ -811,7 +812,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/models/like.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/models/like.rb": {
         "lines": [
           1,
           1,
@@ -819,7 +820,7 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/controllers/users_controller.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -837,14 +838,14 @@
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/models/profile_post.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/models/profile_post.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/bullhornfixie/Desktop/VSC/group projects/acebook-BBB/app/controllers/friends_controller.rb": {
+      "/Users/seanedwards/Makers/january/acebook-BBB/app/controllers/friends_controller.rb": {
         "lines": [
           1,
           null,
@@ -870,6 +871,6 @@
         ]
       }
     },
-    "timestamp": 1614856325
+    "timestamp": 1614858250
   }
 }
