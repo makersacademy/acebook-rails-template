@@ -23,18 +23,11 @@ class ProfilePostsController < ApplicationController
     @profile_post = ProfilePost.find(params[:id])
   end
 
-  def update
-    profile_post = ProfilePost.find(params[:id])
-    profile_post.update(post_params)
-    redirect_to(user_path(user))
-  end
-
   def show
     redirect_to posts_url
   end
 
   def update
-
     profile_post = ProfilePost.find(params[:id])
     profile_post.update(post_params)
 

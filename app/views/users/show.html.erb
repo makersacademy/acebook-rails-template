@@ -2,10 +2,10 @@
 
 <div class="new-posts-link">
 
-<% unless current_user.friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
-<% if !current_user.pending_friends.map{|fr| fr.id}.include?(params[:id].to_i) && !current_user.requested_friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
+<% unless current_user.friends.map{|fr| fr.id}.include?(@user.id) %>
+<% if !current_user.pending_friends.map{|fr| fr.id}.include?(@user.id) && !current_user.requested_friends.map{|fr| fr.id}.include?(@user.id) %>
 <% if current_user.id != @user.id %>
-<p><%= link_to "Be my friend", method: current_user.friend_request(User.find(params[:id])) %> </p>
+<p><%= link_to "Be my friend", method: current_user.friend_request(@user) %> </p>
 <%end%>
 <%end%>
 <%end%>
