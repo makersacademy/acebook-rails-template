@@ -1,0 +1,39 @@
+.time {
+  text-align: left;
+  width: 100%;
+}
+
+.username {
+
+}
+
+.post-page {
+  top: 0px;
+  background-color: #666666;
+  height: 100%;
+}
+
+.post-feed {
+  height: 100%;
+  margin: auto;
+  width: 80%;
+  background-color: #f6f6f6;
+}
+
+.post-body {
+  border: 1px solid blue;
+  p {
+    background-color: #ffffff;
+    width: 95%;
+    margin: auto;
+    text-align: left;
+    border-radius: .25rem;
+    padding: 5px;
+  }
+}
+
+.notice {
+  background-color: #44d9e6;
+  color: #ffffff;
+  margin-bottom: 0px;
+}

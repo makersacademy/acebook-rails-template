@@ -1,15 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light", style='position:fixed;width:100%;'>
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
       <%= image_tag('poke-2.png', class: "md-4", style: 'height:40px;width:auto;') %>
     </a>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <% if current_user.present? %>
-          <li class="nav-item">
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link', id: 'sign-out' %>
-          </li>
+      <ul class="navbar-nav  nav-plus">
+
+        <% if !current_page?('/posts/new') %>
+          <%= link_to (fa_icon "plus-square-o"), new_post_path, class: 'nav-link add-post' %>
         <% end %>
+
+        <% if current_user.present? %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link signout', id: 'sign-out' %>
+        <% end %>
+
       </ul>
     </div>
   </div>

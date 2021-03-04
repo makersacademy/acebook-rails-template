@@ -17,8 +17,18 @@
       <%= render "shared/navbar"%>
     <% end %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+      <%= tag.p class: 'notice' do%>
+        <%= notice %>
+      <% end %>
+    <% end %>
+
+    <% if alert %>
+      <%= tag.p class: 'alert' do%>
+        <%= alert %>
+      <% end %>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>

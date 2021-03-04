@@ -12,10 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
- body {
+ html, body {
    text-align: center;
    background-color: #f6f6f6;
+   height: 100%;
  }
 
  .form-signin {
@@ -53,4 +55,21 @@
  input[type='submit'] {
    background-color:#44d9e6;
    border-color:#44d9e6;
+ }
+
+ .nav-plus {
+   width: 100%;
+   position: relative;
+ }
+
+ .signout {
+   margin: 0 auto;
+   position: absolute;
+   right: 5px;
+ }
+
+ .add-post {
+   margin: 0 auto;
+   text-align: center;
+   font-size: 20px;
  }
