@@ -6,7 +6,7 @@
 $blue: rgb(112, 112, 218);
 
 body {
-  background-color: #f05365;
+  background-color: white;
   background-size: 100%;
   background-attachment: fixed;
   /* repeating-linear-gradient(42deg, #3c6e71, #5fbff9 , #5863f8 10%); */
@@ -17,8 +17,27 @@ p {
 }
 
 a {
-  color: black;
+  color: #f05365;
 }
+
+.Top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkgreen;
+  font-size: 3rem;
+  position: relative;
+  z-index: 10;
+  height: 100px;
+}
+
+.header-fixed {
+  position: fixed;
+  top: 100px;
+  display: block;
+  background-color: white;
+}
+
 .main {
   display: grid;
   grid-template-columns: auto auto auto auto;
