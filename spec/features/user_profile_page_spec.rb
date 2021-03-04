@@ -65,5 +65,16 @@ RSpec.feature 'profile page', type: :feature do
     expect(page).not_to have_content('Im posting on my friends wall')
   end
 
+  scenario "When a user visits a profile the url includes the profile user's username" do
+    register
+    click_link "Profile"
+    expect(page).to have_current_path("/users/katy_the_magnificent")
+  end
+
+  scenario "When a user visits a user profile that doesnt exist it shows a custom 404 page" do
+    register
+    visit ('/users/katy_not_so_magnificent')
+    expect(page).to have_content('User not found')
+  end
 
 end
