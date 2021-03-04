@@ -58,7 +58,30 @@
   margin-bottom: 0px;
 }
 
-.zoom:hover {
+.fa-trash:hover {
+  transition: transform .2s;
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+ }
+
+
+.fa-pencil:hover {
+  transition: transform .2s;
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+ }
+
+ .fa-thumbs-up:hover {
+  transition: transform .2s;
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+ }
+
+ .fa-plus-square-o:hover {
+  transition: transform .2s;
   -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.5); 
