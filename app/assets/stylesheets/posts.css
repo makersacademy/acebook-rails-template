@@ -1,7 +1,7 @@
 .post {
   margin-top: 2em;
-  margin-bottom:  2em;
-  background-color: #E6EFEC;
+  margin-bottom: 2em;
+  background-color: #e6efec;
   padding: 0.5em;
   padding-top: 1.5em;
   width: 50%;
@@ -10,17 +10,18 @@
   word-wrap: break-word;
   text-align: center;
   border-radius: 2.5em;
-  box-shadow: 5px 5px 10px 2px; 
+  box-shadow: 5px 5px 10px 2px;
   /* border: 0.1em solid #0a122a; */
 }
 
 .username {
-  display:inline-block;
-} 
+  display: inline-block;
+}
 
 .date {
-  display:inline-block;margin-right:4px;
-} 
+  display: inline-block;
+  margin-right: 4px;
+}
 
 #new-post-link {
   padding: 0.5em;
@@ -49,4 +50,21 @@
 .unlike-btn-icon {
   width: 1em;
   height: 1em;
+}
+
+.post-title {
+  margin: 0;
+  margin-left: 0%;
+  color: #f9f1e9;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  /* -webkit-transform: translate3d(-50%, -50%, 0); */
+  /* transform: translate3d(-50%, -50%, 0); */
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.post-title .thin {
+  font-weight: 200;
 }

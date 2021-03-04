@@ -1,9 +1,14 @@
+<div>
+  <h1 class="post-title"><span class="thin">Explore</span> Posts</h1>
+</div>
+
 <div id="new-post-link">
   <%= link_to new_post_path do %>
     New post
   <% end %>
 </div>
 
+<div>
 <% @posts.reverse_each do |post| %>
 
   <div class='post'>
@@ -32,3 +37,4 @@
     <p class='like-count'><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   </div>
 <% end %>
+</div>
