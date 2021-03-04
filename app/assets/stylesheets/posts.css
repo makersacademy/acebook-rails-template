@@ -1,19 +1,25 @@
 .post {
+  background-image: url("https://specials-images.forbesimg.com/imageserve/5f96fe1769feaff1500a01cf/960x0.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   margin-top: 2em;
   margin-bottom: 2em;
-  background-color: #e6efec;
+  background-color: #d4d1d1;
   padding: 0.5em;
   padding-top: 1.5em;
-  width: 50%;
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
   word-wrap: break-word;
   text-align: center;
   border-radius: 2.5em;
-  --box-shadow-color: rgb(255, 232, 22);
+  --box-shadow-color: rgb(129, 44, 214);
   box-shadow: 5px 5px 10px 2px var(--box-shadow-color);
-  color: black;
+  color: rgb(0, 0, 0);
   font-family: "Space Mono", monospace;
+  font-weight: bold;
+  font-size: 1.5em;
+
   /* border: 0.1em solid #0a122a; */
 }
 .message {
@@ -50,8 +56,8 @@
 }
 
 .like-btn-icon {
-  width: 1em;
-  height: 1em;
+  width: 1.8em;
+  height: 1.8em;
 }
 
 .unlike-btn {
@@ -60,8 +66,8 @@
 }
 
 .unlike-btn-icon {
-  width: 1em;
-  height: 1em;
+  width: 1.8em;
+  height: 1.8em;
 }
 
 .post-title {

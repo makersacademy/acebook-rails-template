@@ -24,13 +24,13 @@
     <% if pre_like %>
       <%= button_to post_like_path(post, pre_like), class: "like-btn", method: :delete, remote: true do %>
         <div>
-          <img src= 'heart.png', class='like-btn-icon'></img>
+          <img src= 'Moon-full.png', class='like-btn-icon'></img>
         </div>
       <% end %>
     <% else %>
       <%= button_to post_likes_path(post), class: "like-btn", method: :post, remote: true  do %>
         <div>
-          <img src= 'like.png', class='like-btn-icon'></img>
+          <img src= 'empty-moon.png', class='like-btn-icon'></img>
         </div>
       <% end %>
     <% end %>
