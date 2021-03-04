@@ -28,6 +28,8 @@ gem 'devise'
 
 gem 'acts_as_favoritor'
 
+gem 'rails_real_favicon'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
