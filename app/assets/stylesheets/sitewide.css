@@ -13,6 +13,10 @@ body {
   z-index: 1;
 }
 
+.container {
+  color: white;
+}
+
 .demo .large-header {
   background-color: #000000;
 }
