@@ -73,6 +73,7 @@ jobs:
           name: Setup Heroku
 
           command: |
+            heroku login
             heroku git:remote -a "gentle-beach-18739"
             git push heroku master
             heroku run rake db:migrate
