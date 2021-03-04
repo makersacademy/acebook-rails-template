@@ -3,10 +3,15 @@
 class PostsController < ApplicationController
   # Before action calls the login_required method from application controller,
   # to create a post you must be signed in
-  before_action :login_required, only: :new
+
+  # before_action :login_required, only: :new, alert: 'you must sign in first!'
 
   def new
-    @post = Post.new
+    if Current.user
+      @post = Post.new
+    else
+      flash[:alert] = "Please log in."
+    end
   end
 
   def create

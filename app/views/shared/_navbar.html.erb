@@ -8,7 +8,7 @@
   </div> -->
   <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
     <%= link_to "Home", root_path, class: "mdl-layout__tab" %>
-    <a href="#overview" class="mdl-layout__tab is-active">About</a>
+    <a href="about" class="mdl-layout__tab is-active">About</a>
     <div class="mdl-layout-spacer"></div>
     <% if Current.user %>
       <%= link_to "Log Out", logout_path, method: :delete, class: "mdl-layout__tab" %>
