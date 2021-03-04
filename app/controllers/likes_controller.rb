@@ -5,19 +5,19 @@ class LikesController < ApplicationController
 
   def create
     if already_liked?
-      render json: {error_message: "Yo, stop liking this"}
+      render json: { error_message: "Yo, stop liking this" }
     else
       @post.likes.create(user_id: current_user.id)
-      render json: {like_count: @post.likes.count, post_id: @post.id, user_like: @post.likes.find { |like| like.user_id == current_user.id}}
+      render json: { like_count: @post.likes.count, post_id: @post.id, user_like: @post.likes.find { |like| like.user_id == current_user.id } }
     end
   end
 
   def destroy
     if already_liked?
       @like.destroy
-      render json: {like_count: @post.likes.count, post_id: @post.id}
+      render json: { like_count: @post.likes.count, post_id: @post.id }
     else
-      render json: {error_message: "Can't unlike"}
+      render json: { error_message: "Can't unlike" }
     end
   end
 

@@ -1,6 +1,6 @@
 feature 'liking posts' do
-
   before do
+    Capybara.current_driver = :selenium_chrome_headless  
     sign_up(email: 'test@test.com', username: 'Troy', password: 'password')
     create_a_new_post_and_see_it_on_the_feed('Great post')
   end
@@ -13,32 +13,20 @@ feature 'liking posts' do
     before do
       click_on(class: 'like-btn')
     end
+
     scenario 'number of likes increments by 1' do
       expect(first('.post')).to have_content '1 Like'
     end
-
-    scenario 'the like button is no longer shown' do
-      expect(first('.post')).to have_no_css('.like-btn')
-    end
-
-    scenario 'the unlike button is shown' do
-      expect(first('.post')).to have_css('.unlike-btn')
-    end
-
   end
 
   context 'when you click unlike' do
     before do
       first('.post').click_on(class: 'like-btn')
-      first('.post').click_on(class: 'unlike-btn')
+      first('.post').click_on(class: 'like-btn')
     end
 
     scenario 'number of likes decreases by 1' do
       expect(first('.post')).to have_content '0 Likes'
-    end
-
-    scenario 'the unlike button is no longer shown' do
-      expect(first('.post')).to have_no_css('.unlike-btn')
     end
 
   end
@@ -55,9 +43,9 @@ feature 'liking posts' do
     scenario "get a warning to show you can't unlike" do
       first('.post').click_on(class: 'like-btn')
       allow_any_instance_of(LikesController).to receive(:already_liked?) { false }
-      first('.post').click_on(class: 'unlike-btn')
+      first('.post').click_on(class: 'like-btn')
       expect(page).to have_content("Can't unlike")
     end
   end
-
+  Capybara.use_default_driver
 end
