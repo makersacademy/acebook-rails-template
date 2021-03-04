@@ -2,11 +2,13 @@
 <% name = current_user.present? ? current_user.name : 'Stranger' %>
 <h1>Hello, <%= name.capitalize %>!</h1>
 
-<h2 class="new-post">
+
 <%  if current_user.present? %>
+<h2 class="new-post">
   <%= link_to 'New post', new_post_path %>
+  </h2>
 <% end %>
-</h2>
+
 
 
 

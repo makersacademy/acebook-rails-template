@@ -9,6 +9,9 @@ p {
   white-space: pre-wrap;
 }
 
+a {
+  color: #f05365;
+}
 .main {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -26,8 +29,6 @@ p {
 }
 
 .new-post {
-  
-
   background-color: orange;
   border-radius: 6px;
 }

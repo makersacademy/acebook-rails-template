@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean</title>
+    <style>
+div {display: block;}
+h1 {
+        color: #214252;
+        font-size: 48px;
+        font-weight: 100;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 20px;
+        border: 1px solid #214252;
+        border-radius: 4px;
+      }
+ h2 {
+        color: #e8ffff;
+        text-align: center;
+        font-weight: normal;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          padding: 0px
+      }
+      p {
+
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+      body {
+          background-color: #214252;
+      }
+
+            button {
+        color: #ebebeb;
+        font-size: 18px;
+        background: transparent;
+        display: block;
+        margin: 0 auto 30px auto;
+        padding: 15px 30px;
+        border-radius: 40px;
+        box-shadow: 5px 5px 5px  #41aea9;
+        border-color: #41aea9;
+        transition: all 200ms ease-in-out;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+      button:hover {
+        cursor: pointer;
+        color: white;
+        background:#41aea9;
+      }
+      a {
+          color: #214252;
+      }
+   
+      h4 {
+          text-align: center;
+          color: #41aea9;
+    }
+    hr {
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+span.water {
+    color: #214252;
+}
+.demo-project {
+    box-shadow: rgba(37,39,89,0.08) 0px 8px 8px 0;
+    background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+    border-radius: 10px;
+    color: #fff;
+    width: 50%;
+    padding: 30px;
+    margin: 30px auto;
+    font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
+   }
+.demo-project img {
+display: block;
+margin: 0 auto;
+border-radius: 4px;
+max-width: 80%;
+}
+    </style>
+</head>
+<body>
+   <div class="demo-project">
+        <h1> The Global Ocean <br> 🌊🌊🌊🌊🌊🌊🌊🌊
+    </h1>
+    <h2> All of the water!</h2>
+    <hr>
+    
+    <img class="ocean" src="https://en.unesco.org/sites/default/files/cover_photo.png"
+    alt= "Picture of the global ocean"
+    />
+    <hr>
+    <p> 
+    The Global Ocean (colloquially the <span class="water"><strong>sea</strong> </span>or the <span class="water"><strong>ocean</strong></span>) is the interconnected system of Earth's oceanic
+    waters, and comprises the bulk of the hydrosphere, covering 139,434,000 square miles, which is a <em>whopping</em> 70.8% of Earth's surface. Discover more about it by clicking 
+        <a href="https://en.wikipedia.org/wiki/World_Ocean" target="_blank"> here</a>!
+    </p>
+
+    <button>Learn more about the oceans here!</button>
+    <h4> Coded by ☸ Katy Day ☸</h4>
+</div>
+    <script>
+        function learnMore() {
+                let name = prompt("What is your name?");
+          if (name.length) {
+                    alert("Thanks, " + name + " - we'll be in touch soon!")}
+                
+                else {
+                    alert('No name, no ocean facts for you!')
+                }
+        }
+         let button = document.querySelector("button");
+            button.addEventListener("click", learnMore);
+    </script>
+</body>
+</html>
