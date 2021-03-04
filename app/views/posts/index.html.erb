@@ -6,16 +6,9 @@
 
 <% @posts.reverse_each do |post| %>
 
-<<<<<<< HEAD
   <div class='post'>
     <p class='message'><%= h(post.message).gsub(/\n/, '<br/>').html_safe %> </p>
     <p class='date'>Posted at <%= post.updated_at.strftime("%k:%M on %d/%m/%Y") %> by <p class='username'><%= User.find_by(id: post.user_id).username %></p></p>
-=======
-  <div class='post', id='<%=post.id%>'>
-    <p class='message'> <%= post.message %></p>
-    <p class='date'>Posted at <%= post.updated_at.strftime("%k:%M on %d/%m/%Y") %></p>
-    <p class='user-email'><%= User.find_by(id: post.user_id).email %></p>
->>>>>>> 3cb48be... Playing around with doing likes using JS
     <% if post.user.id == current_user.id %>
       <% if Time.zone.now - post.created_at < (60 * 10) %>
         <%= link_to "Edit", edit_post_path(post.id) %>
