@@ -74,6 +74,7 @@ jobs:
 
           command: |
             heroku login
+            $HEROKU_EMAIL
             heroku git:remote -a "gentle-beach-18739"
             git push heroku master
             heroku run rake db:migrate
