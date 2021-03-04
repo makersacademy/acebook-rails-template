@@ -1,45 +1,47 @@
-<h1> <%= @user.name %> </h1>
+<div id="content">
+<div id="left">
+<h1> <%= @user.name.capitalize %> </h1>
 
 <div class="new-posts-link">
 
 <% unless current_user.friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
 <% if !current_user.pending_friends.map{|fr| fr.id}.include?(params[:id].to_i) && !current_user.requested_friends.map{|fr| fr.id}.include?(params[:id].to_i) %>
 <% if current_user.id != @user.id %>
-<p><%= link_to "Be my friend", method: current_user.friend_request(User.find(params[:id])) %> </p>
+<%= link_to "Be my friend", method: current_user.friend_request(User.friendly.find(params[:id])) %> |
 <%end%>
 <%end%>
 <%end%>
 
 
 <% if current_user.id != @user.id %>
-<p><%= link_to "Friend list", friends_list_path %></p>
+<%= link_to "Friend list", friends_list_path %> |
 <%end%>
 
 <% if current_user.id == @user.id %>
 <p><%= link_to 'New post', new_post_path %> | <%= link_to "Friend Requests", friend_requests_path %> | <%= link_to "Friend list", friends_list_path %></p>
 <% else %>
-  <p><%= link_to 'Post on wall', new_profile_post_path(:user_profile_id => @user.id) %></p>
+  <%= link_to 'Post on wall', new_profile_post_path(:user_profile_id => @user.id) %>
 <% end %>
 </div>
+
 
 <% @posts.each do |post| %>
   <div class="post">
   <p><%= post.message %></p>
-  <p class="user-name">Posted by <strong><%= User.find_by(id: post.user_id).name %></strong> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%></p>
+  <p class="user-name">Posted by <strong><%= User.find_by(id: post.user_id).name.capitalize %></strong> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%></p>
   <% unless post.created_at == post.updated_at %>
   <p>Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%></p>
   <%end%>
-
   <%  if current_user.present? && current_user.id == post.user_id %>
     <p><%= link_to("Edit", edit_post_path(post)) %> | <%= link_to 'Delete', post, :confirm => "Are you sure you want to delete this post? HMMM?!", :method => :delete %></p>
   <% else %>
   <% end %>
    </div>
 <% end %>
+</div>
 
 
-
-<div class="friends-posts">
+<div class="friends-posts" id="right">
   <h1> Friends Posts </h1>
   <% @profile_posts.each do |post| %>
     <div class="post profile-posts">
@@ -56,4 +58,5 @@
     <% end %>
       </div>
   <% end %>
+</div>
 </div>

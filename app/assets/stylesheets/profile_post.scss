@@ -2,10 +2,50 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.friends-posts {
-  grid-column: 1 / span 3;
+
+
+#content, html, body {
+    height: 98%;
 }
 
-.new-posts-link {
-  grid-column: 1 / span 2;
+#left {
+    float: left;
+    width: 50%;
+    background: #f05365;
+    height: 100%;
+    overflow: scroll;
 }
+#right {
+    float: left;
+    width: 50%;
+    background: #f05365;
+    height: 100%;
+    overflow: scroll;
+}
+
+// .post {
+//   grid-column: 1 / span 1;
+//
+// }
+//
+// .friends-posts {
+//   grid-column: 2/ span 2;
+// }
+//
+// .new-posts-link {
+//   grid-column: 1 / span 2;
+// }
+
+// color: white;
+// background-color: rgba(197, 216, 109, 0.9);
+// width: 40%;
+// border-radius: 10px;
+// margin: auto;
+// word-wrap: break-word;
+// background-image: url("https://media.bleacherreport.com/f_auto,w_800,h_533,q_auto,c_fill/br-img-images/003/863/240/hi-res-b9bedc57cbec09240b29e467e53ee748_crop_north.jpg");
+// background-repeat: no-repeat;
+// background-attachment: fixed;
+// background-position: center;
+// background-size: 100%;
+//
+// }
