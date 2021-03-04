@@ -45,7 +45,7 @@ body {
   font-weight: 200;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-height: none) and (max-width: 768px) {
   .demo .main-title {
     font-size: 3em;
   }
