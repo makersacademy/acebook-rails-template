@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.feature 'User settings', type: :feature do
   scenario 'User can visit the settings page' do
     sign_up(email: 'test@email.com', username: 'Troy', password: 'testpass')
