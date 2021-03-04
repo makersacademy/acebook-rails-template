@@ -1,20 +1,3 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">
-      <%= image_tag('poke-2.png', class: "md-4", style: 'height:30px;width:auto;') %>
-    </a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <% if current_user.present? %>
-          <li class="nav-item">
-            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-</nav>
-
 
 <%= link_to new_post_path do %>
   New post
@@ -47,5 +30,3 @@
   </div>
   <br>
 <% end %>
-
-<!-- post_path(post), method: :delete -->
