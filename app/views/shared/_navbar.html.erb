@@ -3,8 +3,8 @@
     <h3><%= link_to "ace8ook", root_path %></h3>
   </div>
   <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-    <%= link_to "Home", root_path, class: "mdl-layout__tab #{"is-active" if current_page?(root_path)}" %>
-    <a href="#overview" class="mdl-layout__tab">About</a>
+    <%= link_to "Home", root_path, class: "mdl-layout__tab #{"is-active" if current_page?(root_path)}" %>  
+    <%= link_to "About", about_path, class: "mdl-layout__tab #{"is-active" if current_page?(about_path)}" %>
     <div class="mdl-layout-spacer"></div>
     <% if Current.user %>
       <%= link_to "Log Out", logout_path, method: :delete, class: "mdl-layout__tab" %>
