@@ -15,6 +15,7 @@
   </div>
 </nav>
 
+
 <%= link_to new_post_path do %>
   New post
 <% end %>
@@ -29,7 +30,20 @@
         <%= button_to "Edit post", edit_post_path(post), method: :get %>
         <% end %>
       <%= button_to "Move to recycle bin", post_path(post), method: :delete  %>
-    <% end %>
+      <br/>
+      <% end %>
+      <div><%= link_to toggle_favorite_post_path(post), remote: true, method: :post do %>
+          <% if current_user.favorited?(post) %>
+            <%= fa_icon "thumbs-up", style: 'color:blue', id: "like-button-#{post.id}" %>
+          <% else %>
+            <%= fa_icon "thumbs-up", style: 'color:grey', id: "like-button-#{post.id}" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div> <%= tag.div id: "like-count-#{post.id}" do %>
+          <%= post.favorited.count %> <%= (post.favorited.count) == 1 ? 'like' : 'likes' %>
+          <% end %>
+        </div>
   </div>
   <br>
 <% end %>
