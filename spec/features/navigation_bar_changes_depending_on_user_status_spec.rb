@@ -2,7 +2,7 @@
 
 RSpec.feature 'Nav bar', type: :feature do
   scenario "User's nav bar does not show sign in/up if signed in" do
-    sign_up(email: 'test@email.com', password: 'testpass')
+    sign_up(email: 'test@email.com', username: 'Troy', password: 'testpass')
     expect(page).not_to have_link('Sign in')
     expect(page).not_to have_link('Sign up')
   end
