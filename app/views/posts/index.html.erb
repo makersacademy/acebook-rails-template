@@ -1,19 +1,22 @@
 <body class="post-page">
 
-    <main class="post-feed">
+    <div class="post-feed">
     <% @posts.reverse.each do |post| %>
       <div class="post-body" >
-        <%= post.user.email %>
+        <span class='align-left'><%= post.user.email %></span>
         <%= post.created_at.strftime("%e %B %Y %H:%M") %>
-
+        <span class='align-right'>
         <% if current_user.id == post.user_id %>
           <% if Time.now < post.created_at + 10.minutes %>
             <%= link_to (fa_icon "pencil"), edit_post_path(post), method: :get %>
           <% end %>
           <%= link_to (fa_icon "trash"), post_path(post), method: :delete  %>
         <% end %>
+        </span>
 
-        <p style="white-space: pre-wrap"><%= post.message %></p>
+        <p><%= post.message %></p>
+
+        <span>
         <%= link_to toggle_favorite_post_path(post), remote: true, method: :post do %>
           <% if current_user.favorited?(post) %>
             <% colour = 'color:blue;' %>
@@ -25,9 +28,10 @@
             <%= post.favorited.count %> <%= (post.favorited.count) == 1 ? 'like' : 'likes' %>
           <% end %>
         <% end %>
+        </span>
       </div>
       <br>
     <% end %>
-    </main>
+    </div>
 
 </body>

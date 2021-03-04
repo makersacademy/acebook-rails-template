@@ -8,12 +8,14 @@
 }
 
 .post-page {
-  top: 0px;
+  position: relative;
   background-color: #666666;
   height: 100%;
 }
 
 .post-feed {
+  position: relative;
+  top: 0px;
   height: 100%;
   margin: auto;
   width: 80%;
@@ -21,7 +23,10 @@
 }
 
 .post-body {
-  border: 1px solid blue;
+  border: 1px solid #44d9e6;
+  width: 95%;
+  margin: auto;
+  border-radius: .25rem;
   p {
     background-color: #ffffff;
     width: 95%;
@@ -29,6 +34,19 @@
     text-align: left;
     border-radius: .25rem;
     padding: 5px;
+    color: black;
+    white-space: pre-wrap;
+  }
+  * {
+    color: #44d9e6;
+  }
+  .align-left {
+    float: left;
+    padding-left: 2.5%;
+  }
+  .align-right {
+    float: right;
+    padding-right: 2.5%;
   }
 }
 
