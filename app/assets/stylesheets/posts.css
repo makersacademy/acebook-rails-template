@@ -10,8 +10,10 @@
   word-wrap: break-word;
   text-align: center;
   border-radius: 2.5em;
-  box-shadow: 5px 5px 10px 2px;
+  --box-shadow-color: rgb(255, 232, 22);
+  box-shadow: 5px 5px 10px 2px var(--box-shadow-color);
   color: black;
+  font-family: "Space Mono" monospace;
   /* border: 0.1em solid #0a122a; */
 }
 
