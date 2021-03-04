@@ -1,7 +1,7 @@
 feature 'liking posts' do
 
   before do
-    sign_up(email: 'test@test.com', password: 'password')
+    sign_up(email: 'test@test.com', username: 'Troy', password: 'password')
     create_a_new_post_and_see_it_on_the_feed('Great post')
   end
 
