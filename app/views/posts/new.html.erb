@@ -1,7 +1,9 @@
 <%= form_for @post do |form| %>
   <%= form.label :message %>
+  <br>
   <%= form.text_area :message %>
-
+<br>
+<br>
   <%= form.submit "Submit" %>
   <%= form.number_field :user_id, id: :post_user_id, value: current_user.id, type: :hidden %>
 <% end %>
