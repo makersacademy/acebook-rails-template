@@ -1,13 +1,14 @@
-<h1> <%= current_user.name %>, here are your friend requests! </h1>
+<div class="full">
+  <h1> <%= current_user.name %>, here are your friend requests! </h1>
 
-<% if @friend_requests.length == 0 %>
-<p> You currently have no open friend requests. </p>
-<% else %>
-<% @friend_requests.each do |friend| %>
-<p>You have a pending friend request from: <%= link_to friend.name, user_path(friend.id) %>  </p>
-<p><%= link_to 'Accept Friend Request', accept_request_path(friend)%></p>
-<p><%= link_to 'Decline Friend Request', decline_request_path(friend)%></p>
-<% end %> 
-<% end %> 
-
+  <% if @friend_requests.length == 0 %>
+    <p> You currently have no open friend requests. </p>
+  <% else %>
+    <% @friend_requests.each do |friend| %>
+      <p>You have a pending friend request from: <%= link_to friend.name, user_path(friend.id) %>  </p>
+      <p><%= link_to 'Accept Friend Request', accept_request_path(friend)%></p>
+      <p><%= link_to 'Decline Friend Request', decline_request_path(friend)%></p>
+    <% end %> 
+  <% end %> 
+</div>
 
