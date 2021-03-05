@@ -41,7 +41,7 @@ RSpec.feature 'User Wall', type: :feature do
     click_link 'Post on wall'
     fill_in 'Message', with: 'Hello from Katy'
     click_button 'Post'
-    click_link("Edit this post")
+    click_link("Edit")
     fill_in 'Message', with: 'This is an updated post, but I am still awesome'
     click_button("Submit")
     expect(page).to have_content('This is an updated post, but I am still awesome')

@@ -4,7 +4,7 @@ RSpec.feature 'profile page', type: :feature do
   scenario 'A user can visit thier own profile page' do
     register
     click_link 'Profile'
-    expect(page).to have_content('Katy Day')
+    expect(page).to have_content('Katy')
   end
 
   scenario 'A user can see only thier own posts on thier profile page' do
@@ -13,7 +13,7 @@ RSpec.feature 'profile page', type: :feature do
     click_link "Sign out"
     register_second_user
     click_link 'Profile'
-    expect(page).to have_content('John Smith')
+    expect(page).to have_content('John')
     expect(page).not_to have_content('Katy Day')
     expect(page).not_to have_content('Hello, world!')
   end
@@ -24,7 +24,7 @@ RSpec.feature 'profile page', type: :feature do
     click_link "Sign out"
     register_second_user
     click_link 'Katy Day'
-    expect(page).to have_content('Katy Day')
+    expect(page).to have_content('Katy')
     expect(page).to have_content('Hello, world!')
   end
 
@@ -46,7 +46,7 @@ RSpec.feature 'profile page', type: :feature do
     click_link 'Post on wall'
     fill_in 'Message', with: 'Hello from Katy'
     click_button 'Post'
-    click_link "Delete post"
+    click_link "Delete"
     expect(page).not_to have_content('Hello from Katy')
   end
 
