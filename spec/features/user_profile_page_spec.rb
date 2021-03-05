@@ -37,32 +37,17 @@ RSpec.feature 'profile page', type: :feature do
     expect(page).to have_content('Log in')
   end
 
-  scenario "A user can edit their post on another users page" do
-    register
-    submit_post
-    click_link "Sign out"
-    register_second_user
-    click_link "Katy Day"
-    click_link "Post on wall"
-    fill_in "Message", with: "Im posting on my friends wall"
-    click_button "Post"
-    click_link "Edit this post"
-    fill_in "Message", with: "I dont like my message anymore"
-    click_button "Submit"
-    expect(page).to have_content('I dont like my message anymore')
-  end
-
   scenario "A user can delete their post on another users page" do
-    register
-    submit_post
-    click_link "Sign out"
-    register_second_user
-    click_link "Katy Day"
-    click_link "Post on wall"
-    fill_in "Message", with: "Im posting on my friends wall"
-    click_button "Post"
+    friend_request
+    click_link "Accept Friend Request"
+    click_link 'Profile'
+    click_link 'Friend list'
+    click_link 'John Smith'
+    click_link 'Post on wall'
+    fill_in 'Message', with: 'Hello from Katy'
+    click_button 'Post'
     click_link "Delete post"
-    expect(page).not_to have_content('Im posting on my friends wall')
+    expect(page).not_to have_content('Hello from Katy')
   end
 
   scenario "When a user visits a profile the url includes the profile user's username" do

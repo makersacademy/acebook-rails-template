@@ -24,7 +24,6 @@ gem 'font-awesome-rails'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -42,6 +41,8 @@ gem 'bulma-rails', '~> 0.9.1'
 
 gem 'rubocop-rails', require: false
 
+gem 'mini_racer'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -54,6 +55,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'simplecov'
   gem 'simplecov-console'
+  gem 'factory_bot_rails'
 end
 
 group :development do
