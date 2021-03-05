@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.com/bear99a9/acebook-BBB.svg?branch=master)](https://travis-ci.com/bear99a9/acebook-BBB)
 [![Maintainability](https://api.codeclimate.com/v1/badges/15ba9653be0d8342e6ee/maintainability)](https://codeclimate.com/github/bear99a9/acebook-BBB/maintainability)
 
-[Information](#Information) | [Quickstart](#Quickstart) | [Running Tests](#Running-Tests) | [Planning and Learning](#Planning) | [Technologies](#Technologies) | [Team BBB](#Team-BBB)
+[Information](#Information) | [Quickstart](#Quickstart) | [Running Tests](#Running-Tests) | [Planning and Learning](#Planning-and-Learning) | [Technologies](#Technologies) | [Team BBB](#Team-BBB)
 
 ## Information
 
