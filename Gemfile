@@ -31,6 +31,8 @@ gem 'commontator', '~> 5.1.0'
 
 gem 'jquery-rails'
 
+gem 'rails_real_favicon'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

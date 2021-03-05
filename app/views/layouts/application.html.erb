@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application' %>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
+    <%= render 'application/favicon' %>
   </head>
 
   <body>
@@ -17,8 +17,18 @@
       <%= render "shared/navbar"%>
     <% end %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+      <%= tag.p class: 'notice' do%>
+        <%= notice %>
+      <% end %>
+    <% end %>
+
+    <% if alert %>
+      <%= tag.p class: 'alert' do%>
+        <%= alert %>
+      <% end %>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>

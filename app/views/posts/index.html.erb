@@ -1,39 +1,44 @@
 <body class="post-page">
-  <%= link_to new_post_path do %>
-    New post
-  <% end %>
 
-    <main class="post-feed">
+    <div class="post-feed">
     <% @posts.reverse.each do |post| %>
-      <div class="post-body" style="border: 1px solid blue">
-        <%= post.user.email %><br/>
+      <div class="post-body" >
+        <span class='align-left'><%= post.user.email %></span>
         <%= post.created_at.strftime("%e %B %Y %H:%M") %>
-        <p style="white-space: pre-wrap"><%= post.message %></p>
+        <span class='align-right'>
         <% if current_user.id == post.user_id %>
           <% if Time.now < post.created_at + 10.minutes %>
-            <%= button_to "Edit post", edit_post_path(post), method: :get %>
-            <% end %>
-          <%= button_to "Move to recycle bin", post_path(post), method: :delete  %>
-          <br/>
+            <%= link_to (fa_icon "pencil"), edit_post_path(post), method: :get %>
           <% end %>
-          <div><%= link_to toggle_favorite_post_path(post), remote: true, method: :post do %>
-              <% if current_user.favorited?(post) %>
-                <%= fa_icon "thumbs-up", style: 'color:blue', id: "like-button-#{post.id}" %>
-              <% else %>
-                <%= fa_icon "thumbs-up", style: 'color:grey', id: "like-button-#{post.id}" %>
-              <% end %>
-            <% end %>
-          </div>
-              <%= tag.div id: "like-count-#{post.id}" do %>
-              <%= post.favorited.count %> <%= (post.favorited.count) == 1 ? 'like' : 'likes' %>
-              <% end %>
+
+          <%= link_to (fa_icon "trash"), post_path(post), method: :delete  %>
+        <% end %>
+        </span>
+
+        <p><%= post.message %></p>
+
+        <span>
+        <%= link_to toggle_favorite_post_path(post), remote: true, method: :post do %>
+          <% if current_user.favorited?(post) %>
+            <% colour = 'color:blue;' %>
+          <% else %>
+            <% colour = 'color:grey;' %>
+          <% end %>
+          <%= fa_icon "thumbs-up", style: colour, id: "like-button-#{post.id}" %>
+          <%= tag.span id: "like-count-#{post.id}" do %>
+            <%= post.favorited.count %> <%= (post.favorited.count) == 1 ? 'like' : 'likes' %>
+          <% end %>
+        <% end %>
+        </span>
+
           <div>
             <% @post = post %>
             <%= commontator_thread(@post) %>
           </div>
+
       </div>
       <br>
     <% end %>
-    </main>
+    </div>
 
 </body>
