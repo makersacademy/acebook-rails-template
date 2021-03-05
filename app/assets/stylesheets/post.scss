@@ -14,6 +14,10 @@ body {
   /* repeating-linear-gradient(42deg, #3c6e71, #5fbff9 , #5863f8 10%); */
 }
 
+.full {
+  grid-column: 1 / span 4;;
+}
+
 p {
   white-space: pre-wrap;
 }
@@ -65,7 +69,7 @@ a {
 .new-post {
   padding: 3px;
   grid-column: 1;
-  width: 50%;
+  width: 60%;
   background-color: black;
   border-radius: 6px;
 }
