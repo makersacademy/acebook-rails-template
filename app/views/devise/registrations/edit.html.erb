@@ -21,10 +21,9 @@ Please enter your details below if you wish to change your user details
   </div>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)<em> <%= @minimum_password_length %> - 10 characters</em></i><br />
     <%= f.password_field :password, autocomplete: "new-password",class: "form-control", placeholder: "Enter a new password here" %>
     <% if @minimum_password_length %>
-      <em><%= @minimum_password_length %> - 10 characters</em> <br>
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-control", placeholder: "Enter your previous password here" %>

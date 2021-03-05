@@ -65,7 +65,7 @@ div {
   border: 2px solid red;
   padding: 7px 7px 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #000000;
 
   h2 {
     text-align: left;
@@ -80,6 +80,7 @@ div {
   ul li {
     font-size: 12px;
     list-style: square;
+    color: rgb(255, 255, 255);
   }
 }
 

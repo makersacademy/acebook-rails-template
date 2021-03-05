@@ -51,12 +51,18 @@ body {
   }
 }
 .notice {
+  text-align: center;
   color: greenyellow;
-  position: absolute;
-  top: 20%;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  font-size: 1em;
 }
 .alert {
+  text-align: center;
   color: greenyellow;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+  font-size: 1em;
 }
 
 #demo-canvas {
