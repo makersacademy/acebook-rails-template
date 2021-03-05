@@ -1,16 +1,17 @@
 <h2>Sign up</h2>
-
+<br>
+<br>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control", placeholder: "Enter your email here - e.g. Salar_the_legend@sweatsuit.com" %>
   </div>
 
   <div class="field">
     <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+    <%= f.text_field :username, autofocus: true, autocomplete: "username",class: "form-control", placeholder: "Enter your username here" %>
   </div>
 
   <div class="field">
@@ -18,17 +19,17 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> - 10 characters)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password",class: "form-control", placeholder: "Please type in a password here" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-control", placeholder: "Please confirm your password here" %>
   </div>
-
+<br>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class:"btn btn-light" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links", class:"btn btn-light" %>

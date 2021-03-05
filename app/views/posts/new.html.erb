@@ -1,9 +1,12 @@
+ <h1>Create your post here</h1>
+ <br><br><br><br>
 <%= form_for @post do |form| %>
-  <%= form.label :message %>
+  <%= form.label :message %>:
   <br>
-  <%= form.text_area :message %>
+  <br>
+  <%= form.text_area :message, class: "form-control", placeholder: "Write something on your wall here!" %>
 <br>
 <br>
-  <%= form.submit "Submit" %>
+  <%= form.submit "Submit" ,class: 'btn btn-light'  %>
   <%= form.number_field :user_id, id: :post_user_id, value: current_user.id, type: :hidden %>
 <% end %>

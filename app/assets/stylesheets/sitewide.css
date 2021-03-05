@@ -49,3 +49,9 @@ body {
     font-size: 3em;
   }
 }
+.notice {
+  color: greenyellow;
+}
+.alert {
+  color: rgb(255, 0, 0);
+}

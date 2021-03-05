@@ -1,6 +1,10 @@
+<h1>Edit message</h1>
+<br><br><br><br>
 <%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
-
-  <%= form.submit "Submit", data: { confirm: 'Are you certain you want to update this post? It will be put to the top of the feed!' }%>
+  <%= form.label :message %>:
+  <br>
+  <br>
+  <%= form.text_area :message, class: "form-control", placeholder: "Enter the message you would like to change to in here" %>
+<br>
+  <%= form.submit "Submit", data: { confirm: 'Are you certain you want to update this post? It will be put to the top of the feed!' },class:"btn btn-light"%>
 <% end %>
