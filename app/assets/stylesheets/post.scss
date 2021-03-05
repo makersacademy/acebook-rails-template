@@ -4,6 +4,7 @@
 */
 
 $blue: rgb(112, 112, 218);
+$orange:#FFBD59;
 
 body {
   background-color: white;
@@ -48,14 +49,14 @@ a {
 
 .post {
   grid-column: 1 / span 2;
-  background-color: orange;
+  background-color: $orange;
   margin-bottom: 20px;
   padding: 12px;
   border-radius: 6px;
 }
 
 .new-post {
-  background-color: orange;
+  background-color: $orange;
   border-radius: 6px;
 }
 
