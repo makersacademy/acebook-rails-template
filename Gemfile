@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 gem 'acts_as_favoritor'
+gem 'commontator', '~> 5.1.0'
+
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

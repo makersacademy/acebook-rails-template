@@ -10,5 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require commontator/application
+//= require commontator/application.js
+
 //= require rails-ujs
 //= require_tree .

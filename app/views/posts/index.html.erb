@@ -24,10 +24,13 @@
               <% end %>
             <% end %>
           </div>
-          <div> <%= tag.div id: "like-count-#{post.id}" do %>
+              <%= tag.div id: "like-count-#{post.id}" do %>
               <%= post.favorited.count %> <%= (post.favorited.count) == 1 ? 'like' : 'likes' %>
               <% end %>
-            </div>
+          <div>
+            <% @post = post %>
+            <%= commontator_thread(@post) %>
+          </div>
       </div>
       <br>
     <% end %>
