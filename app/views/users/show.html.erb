@@ -16,7 +16,7 @@
 
 
     <% if current_user.id != @user.id %>
-    <%= link_to "Friend list", friends_list_path %> |
+    <%= link_to "Friend list", friends_list_path %> 
     <%end%>
 
     <% if current_user.friends.map{|fr| fr.id}.include?(@user.id) %>
