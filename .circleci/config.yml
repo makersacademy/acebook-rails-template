@@ -66,7 +66,7 @@ jobs:
         enabled: true
     working_directory: ~/acebook-poke
     environment:
-      HEROKU_APP: $HEROKU_APP_NAME # define env var $HEROKU_APP
+      HEROKU_APP: gentle-beach-18739 # define env var $HEROKU_APP
     steps:
       - checkout
       - run: bash .circleci/setup-heroku.sh
