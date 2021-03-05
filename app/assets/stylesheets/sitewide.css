@@ -29,11 +29,9 @@ body {
   top: 20%;
   left: 50%;
   /* -webkit-transform: translate3d(-50%, -50%, 0); */
-  transform: translate3d(-50%, -20%, 0); 
+  transform: translate3d(-50%, -20%, 0);
   width: 100%;
-  top:150px;
 }
-
 
 .demo .main-title-text {
   text-transform: uppercase;
@@ -51,17 +49,16 @@ body {
     font-size: 3em;
   }
 }
-<<<<<<< css-Salar
 .notice {
   color: greenyellow;
+  position: absolute;
+  top: 20%;
 }
 .alert {
-  color: rgb(255, 0, 0);
+  color: greenyellow;
 }
-=======
 
 #demo-canvas {
   width: 100%;
   height: 100%;
 }
->>>>>>> master
