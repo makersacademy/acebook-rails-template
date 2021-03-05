@@ -1,6 +1,4 @@
 # AceBook
-[![Build Status](https://github.com/bear99a9/acebook-BBB)](https://travis-ci.com/github/bear99a9/acebook-BBB/builds/219004680)
-[![Maintainability](https://codeclimate.com/repos/603512fafc4de60feb00ed32/settings/analysis_config/edit)]((https://codeclimate.com/github/bear99a9/acebook-BBB))
 
 [Information](#Information) | [Quickstart](#Quickstart) | [Running Tests](#Running-Tests) | [Planning and Learning](#Planning)  [Technologies](#Technologies) | [Team BBB](#Team-BBB)
 
