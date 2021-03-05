@@ -1,0 +1,82 @@
+// Place all the styles related to the ProfilePost controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+html,
+body {
+  height: 98%;
+}
+
+.left {
+  grid-column: 1 / span 2;
+}
+
+#left {
+  padding: 0 12px;
+  width: 100%;
+  background: white;
+  height: 100%;
+  overflow: scroll;
+}
+
+#right {
+  padding: 0 12px;
+  width: 100%;
+  background: white;
+  height: 100%;
+  overflow: scroll;
+}
+
+.right {
+  grid-column: 3/ span 2;
+}
+
+.buttonTo {
+  font-size: 18px;
+  background: black;
+  display: block;
+  border-radius: 4px;
+  // box-shadow: 2px 2px 2px black;
+  border-color: black;
+  transition: all 200ms ease-in-out;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.buttonTo:hover {
+  cursor: pointer;
+  color: white;
+  background: #f05365;
+}
+
+
+@media(max-width: 640px) {
+  .left, .right {
+    grid-column: 1 / span 4;
+  }
+}
+// .post {
+//   grid-column: 1 / span 1;
+//
+// }
+//
+// .friends-posts {
+//   grid-column: 2/ span 2;
+// }
+//
+// .new-posts-link {
+//   grid-column: 1 / span 2;
+// }
+
+// color: white;
+// background-color: rgba(197, 216, 109, 0.9);
+// width: 40%;
+// border-radius: 10px;
+// margin: auto;
+// word-wrap: break-word;
+// background-image: url("https://media.bleacherreport.com/f_auto,w_800,h_533,q_auto,c_fill/br-img-images/003/863/240/hi-res-b9bedc57cbec09240b29e467e53ee748_crop_north.jpg");
+// background-repeat: no-repeat;
+// background-attachment: fixed;
+// background-position: center;
+// background-size: 100%;
+//
+// }

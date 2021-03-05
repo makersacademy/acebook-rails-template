@@ -1,0 +1,64 @@
+  <div class="left">
+    <h1> <%= @user.name.capitalize %>'s Profile </h1>
+    <hr>
+    <div id="left">
+
+    <% unless current_user.friends.map{|fr| fr.id}.include?(@user.id) %>
+      <% if !current_user.pending_friends.map{|fr| fr.id}.include?(@user.id) && !current_user.requested_friends.map{|fr| fr.id}.include?(@user.id) %>
+        <% if current_user.id != @user.id %>
+          <p class="action-link"><%= link_to "Be my friend", method: current_user.friend_request(@user) %> </p>
+        <%end%>
+      <%end%>
+    <%end%>
+
+
+    <% if current_user.id != @user.id %>
+    <%= link_to "Friend list", friends_list_path %> 
+    <%end%>
+
+    <% if current_user.friends.map{|fr| fr.id}.include?(@user.id) %>
+      <p class="action-link"><%= link_to 'Post on wall', new_profile_post_path(:user_profile_id => @user.id) %></p>
+    <% end %>
+
+    <% if current_user.id == @user.id %>
+    <p class="action-link"><%= link_to 'New post', new_post_path %> <span class="pipe">|</span> <%= link_to "Friend Requests", friend_requests_path %> <span class="pipe">|</span> <%= link_to "Friend list", friends_list_path %></p>
+    <% else %>
+    <% end %>
+    <% @posts.each do |post| %>
+      <div class="post">
+      <p><%= post.message %></p>
+      <p class="user-name">Posted by <strong><%= User.find_by(id: post.user_id).name.capitalize %></strong> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%></p>
+      <% unless post.created_at == post.updated_at %>
+      <p>Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%></p>
+      <%end%>
+      <%  if current_user.present? && current_user.id == post.user_id %>
+        <p><%= link_to("Edit", edit_post_path(post)) %> | <%= link_to 'Delete', post, :confirm => "Are you sure you want to delete this post? HMMM?!", :method => :delete %></p>
+      <% else %>
+      <% end %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="right">
+    <h1 > Friend Posts </h1><hr><br>
+    <div class="friends-posts" id="right">
+      
+      <% @profile_posts.each do |post| %>
+        <div class="post profile-posts">
+        <p><%= post.message %></p>
+        <p class="user-name">Posted by <%=link_to User.find_by(id: post.user_id).name, user_path(User.find_by(id: post.user_id))%> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%></p>
+        <% unless post.created_at == post.updated_at %>
+        <p>Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%></p>
+        <% end %>
+
+        <%  if current_user.present? && current_user.id == post.user_id %>
+          <%= link_to("Edit", edit_profile_post_path(post)) %>
+          | <%= link_to 'Delete', post, :confirm => "Are you sure you want to delete this post? HMMM?!", :method => :delete %>
+        <% else %>
+        <% end %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+

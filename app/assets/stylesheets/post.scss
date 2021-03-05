@@ -1,0 +1,102 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+$blue: rgb(112, 112, 218);
+$orange:#FFBD59;
+$red: #ED1C24;
+
+body {
+  background-color: white;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.full {
+  grid-column: 1 / span 4;;
+}
+
+p {
+  white-space: pre-wrap;
+}
+
+p.action-link {
+  font-size: 24px;
+}
+
+a {
+  color: $red;
+  font-weight:bold;
+}
+
+.Top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkgreen;
+  font-size: 3rem;
+  position: relative;
+  z-index: 10;
+  height: 100px;
+}
+
+.header-fixed {
+  position: fixed;
+  top: 100px;
+  display: block;
+  background-color: white;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.post {
+  grid-column: 1 / span 2;
+  background-color: $orange;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+
+.new-post {
+  grid-column: 1 / span 4;
+}
+
+.new-post a {
+  background-color: black;
+  border-radius: 6px;
+  padding: 4px 8px;
+  color: $red;
+}
+
+.centered {
+  grid-column: 2 /span 2;
+}
+
+@media(max-width: 840px) {
+  .action-link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pipe {
+    display:none;
+  }
+}
+
+@media(max-width: 800px) {
+  .post {
+    grid-column: 1 / span 4;
+    padding-left: 24px;
+    padding-top: 24px;
+  }
+}
+
+

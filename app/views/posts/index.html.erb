@@ -1,7 +1,36 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
+
+<% name = current_user.present? ? current_user.name : 'Stranger' %>
+<h1 class="full">Hello, <%= name.capitalize %>!</h1>
+
+
+<%  if current_user.present? %>
+<h2 class="new-post">
+  <%= link_to 'New post', new_post_path %>
+  </h2>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+
+<% @posts.each do |post| %>
+  <div class="post">
+  <p><%= post.message %></p>
+  <p class="user-name">Posted by <%=link_to User.find_by(id: post.user_id).name, user_path(User.find_by(id: post.user_id))%> at <%=post.created_at.strftime("%k:%M on %B %e, %Y")%></p>
+  <%unless post.created_at == post.updated_at%>
+  <p>Post updated at <%=post.updated_at.strftime("%k:%M on %B %e, %Y")%></p>
+  <%end%>
+
+    <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+    <% if current_user.present? %>
+    <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+    <% if pre_like %>
+    <%= button_to '👎', post_like_path(post, pre_like), method: :delete, class: :"buttonTo" %>
+    <% else %>
+      <%= button_to '👍', post_likes_path(post), method: :post, class: :"buttonTo"  %>
+    <% end %>
+    <% end %>
+
+    <%  if current_user.present? && current_user.id == post.user_id %>
+      <p><%= link_to("Edit", edit_post_path(post)) %> | <%= link_to 'Delete', post, :confirm => "Are you sure you want to delete this post? HMMM?!", :method => :delete %></p>
+    <% else %>
+    <% end %>
+      </div>
+  <% end %>
