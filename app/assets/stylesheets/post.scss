@@ -5,6 +5,7 @@
 
 $blue: rgb(112, 112, 218);
 $orange:#FFBD59;
+$red: #ED1C24;
 
 body {
   background-color: white;
@@ -17,8 +18,13 @@ p {
   white-space: pre-wrap;
 }
 
+p.action-link {
+  font-size: 24px;
+}
+
 a {
-  color: #f05365;
+  color: $red;
+  font-weight:bold;
 }
 
 .Top {
@@ -41,7 +47,7 @@ a {
 
 .main {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 25% 25% 25% 25%;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
@@ -55,12 +61,20 @@ a {
   border-radius: 6px;
 }
 
+
 .new-post {
-  background-color: $orange;
+  padding: 3px;
+  grid-column: 1;
+  width: 50%;
+  background-color: black;
   border-radius: 6px;
 }
 
 .new-post a {
   padding-left: 6px;
-  color: #000;
+  color: $red;
+}
+
+.centered {
+  grid-column: 2 /span 2;
 }
