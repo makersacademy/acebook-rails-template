@@ -7,7 +7,7 @@ RSpec.feature 'Edit posts', type: :feature do
     fill_in 'Message', with: 'This is a post, and I am super cool.'
     click_button("Submit")
     expect(page).to have_current_path('/')
-    click_link("Edit this post")
+    click_link("Edit")
     fill_in 'Message', with: 'This is an updated post, but I am still awesome'
     click_button("Submit")
     expect(page).to have_current_path('/posts')
