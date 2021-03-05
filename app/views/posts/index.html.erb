@@ -8,10 +8,10 @@
         <span class='align-right'>
         <% if current_user.id == post.user_id %>
           <% if Time.now < post.created_at + 10.minutes %>
-            <%= link_to (fa_icon "pencil"), edit_post_path(post), method: :get %>
+            <%= link_to (fa_icon "pencil"), edit_post_path(post), id: "edit-post", method: :get %>
           <% end %>
 
-          <%= link_to (fa_icon "trash"), post_path(post), method: :delete  %>
+          <%= link_to (fa_icon "trash"), post_path(post), id: "delete-post", method: :delete  %>
         <% end %>
         </span>
 

@@ -21,7 +21,7 @@ def sign_in(email = DEFAULT_EMAIL, password = DEFAULT_PASSWORD)
 end
 
 def create_post(post = DEFAULT_POST)
-  click_link 'New post'
+  find('.add-post').click
   fill_in 'Message', with: post
   click_button 'Submit'
   expect(page).to have_content(post)

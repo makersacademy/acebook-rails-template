@@ -5,7 +5,7 @@ require 'web_helpers'
 RSpec.feature 'Timeline', type: :feature do
   scenario 'Can submit posts and view them' do
     sign_up
-    click_link 'New post'
+    find('.add-post').click
     fill_in 'Message', with: DEFAULT_POST
     click_button 'Submit'
     expect(page).to have_content(DEFAULT_POST)
@@ -14,7 +14,7 @@ RSpec.feature 'Timeline', type: :feature do
   scenario 'Can delete own post' do
     sign_up
     create_post
-    click_on 'Move to recycle bin'
+    find("#delete-post").click
     expect(page).not_to have_content(DEFAULT_POST)
   end
 
@@ -23,13 +23,13 @@ RSpec.feature 'Timeline', type: :feature do
     create_post
     click_on 'Sign out'
     sign_up(SECONDARY_EMAIL, SECONDARY_PASSWORD)
-    expect(page).not_to have_content('Move to recycle bin')
+    expect(page).not_to have_css('#delete-post')
   end
 
   scenario "User can edit own posts" do
     sign_up
     create_post
-    click_on 'Edit post'
+    find("#edit-post").click
     fill_in 'Message', with: SECONDARY_POST
     click_on 'Submit'
     expect(page).to have_content(SECONDARY_POST)
