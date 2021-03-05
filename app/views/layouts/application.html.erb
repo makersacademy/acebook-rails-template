@@ -17,13 +17,17 @@
 
   <%= render "welcome/header" %> <br>
   <div class="container demo">
-   <div class="content"> 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
+    <div class="content"> 
+      <div id="large-header" class="large-header">
+        <div class="main-title">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <%= yield %>
+        </div>
+        <canvas id="demo-canvas"></canvas>
       </div>
-   </div>
-</div>
+    </div>
+  </div>
 
   <%# <div class="container"> %>
     

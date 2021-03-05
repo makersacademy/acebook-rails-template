@@ -1,41 +1,45 @@
-<div>
-  <h1 class="post-title"><span class="thin">Explore</span> Posts</h1>
-</div>
+<div class=main-title>
+  <div class='posts-container'>
+  
+  <div>
+    <h1 class="post-title"><span class="thin">Explore</span> Posts</h1>
+  </div>
 
-<br>
-<div id="new-post-link" >
-  <%= link_to new_post_path do %>
-    New post
+
+  <div id="new-post-link">
+    <%= link_to new_post_path do %>
+      New post
+    <% end %>
+  </div>
+
+
+  <% @posts.reverse_each do |post| %>
+
+    <div class='post'>
+      <p class='message'><%= h(post.message).gsub(/\n/, '<br/>').html_safe %> </p>
+      <p class='date'>Posted at <%= post.updated_at.strftime("%k:%M on %d/%m/%Y") %> by <p class='username'><%= User.find_by(id: post.user_id).username %></p></p>
+      <% if post.user.id == current_user.id %>
+        <% if Time.zone.now - post.created_at < (60 * 10) %>
+          <%= link_to "Edit", class: 'btn btn-light', edit_post_path(post.id) %>
+        <% end %>
+        <%= link_to "Delete", post_path(post.id), method: :delete, class: 'btn btn-light', data: { confirm: 'Are you certain you want to delete this post?' } %>
+      <% end %>
+      <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+      <% if pre_like %>
+        <%= button_to post_like_path(post, pre_like), class: "like-btn", method: :delete, remote: true do %>
+          <div>
+            <img src= 'Moon-full.png', class='like-btn-icon'></img>
+          </div>
+        <% end %>
+      <% else %>
+        <%= button_to post_likes_path(post), class: "like-btn", method: :post, remote: true  do %>
+          <div>
+            <img src= 'empty-moon.png', class='like-btn-icon'></img>
+          </div>
+        <% end %>
+      <% end %>
+      <p class='like-count'><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+    </div>
   <% end %>
 </div>
-
-<div>
-<% @posts.reverse_each do |post| %>
-
-  <div class='post'>
-    <p class='message'><%= h(post.message).gsub(/\n/, '<br/>').html_safe %> </p>
-    <p class='date'>Posted at <%= post.updated_at.strftime("%k:%M on %d/%m/%Y") %> by <p class='username'><%= User.find_by(id: post.user_id).username %></p></p>
-    <% if post.user.id == current_user.id %>
-      <% if Time.zone.now - post.created_at < (60 * 10) %>
-        <%= link_to "Edit", edit_post_path(post.id), class: 'btn btn-light' %>
-      <% end %>
-      <%= link_to "Delete", post_path(post.id), method: :delete, class: 'btn btn-light', data: { confirm: 'Are you certain you want to delete this post?' } %>
-    <% end %>
-    <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
-    <% if pre_like %>
-      <%= button_to post_like_path(post, pre_like), class: "like-btn", method: :delete, remote: true do %>
-        <div>
-          <img src= 'Moon-full.png', class='like-btn-icon'></img>
-        </div>
-      <% end %>
-    <% else %>
-      <%= button_to post_likes_path(post), class: "like-btn", method: :post, remote: true  do %>
-        <div>
-          <img src= 'empty-moon.png', class='like-btn-icon'></img>
-        </div>
-      <% end %>
-    <% end %>
-    <p class='like-count'><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-  </div>
-<% end %>
 </div>

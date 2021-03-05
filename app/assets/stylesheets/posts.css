@@ -1,10 +1,10 @@
 .post {
-  background-image: url("https://specials-images.forbesimg.com/imageserve/5f96fe1769feaff1500a01cf/960x0.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+  /* background-image: url("https://specials-images.forbesimg.com/imageserve/5f96fe1769feaff1500a01cf/960x0.jpg"); */
+  /* background-repeat: no-repeat; */
+  /* background-size: 100% auto; */
   margin-top: 2em;
   margin-bottom: 2em;
-  background-color: #d4d1d1;
+  background-color: #ebe7e7b2;
   padding: 0.5em;
   padding-top: 1.5em;
   width: 75%;
@@ -12,15 +12,20 @@
   margin-right: auto;
   word-wrap: break-word;
   text-align: center;
-  border-radius: 2.5em;
-  --box-shadow-color: rgb(129, 44, 214);
-  box-shadow: 5px 5px 10px 2px var(--box-shadow-color);
+  border-radius: 0.5em;
+  --box-shadow-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px 2px var(--box-shadow-color);
   color: rgb(0, 0, 0);
   font-family: "Space Mono", monospace;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1em;
 
   /* border: 0.1em solid #0a122a; */
+}
+
+.post:hover {
+  /* background-color: #ebe7e7ee; */
+  box-shadow: 0px 0px 15px 12px var(--box-shadow-color);
 }
 .message {
   font: inherit;
@@ -86,3 +91,9 @@
 .post-title .thin {
   font-weight: 200;
 }
+
+.posts-container {
+  position: relative;
+}
+
+
