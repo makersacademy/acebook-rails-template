@@ -21,7 +21,7 @@
     <% end %>
 
     <% if current_user.id == @user.id %>
-    <p class="action-link"><%= link_to 'New post', new_post_path %> | <%= link_to "Friend Requests", friend_requests_path %> | <%= link_to "Friend list", friends_list_path %></p>
+    <p class="action-link"><%= link_to 'New post', new_post_path %> <span class="pipe">|</span> <%= link_to "Friend Requests", friend_requests_path %> <span class="pipe">|</span> <%= link_to "Friend list", friends_list_path %></p>
     <% else %>
     <% end %>
     <% @posts.each do |post| %>

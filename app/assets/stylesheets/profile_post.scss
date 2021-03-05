@@ -48,6 +48,12 @@ body {
   background: #f05365;
 }
 
+
+@media(max-width: 640px) {
+  .left, .right {
+    grid-column: 1 / span 4;
+  }
+}
 // .post {
 //   grid-column: 1 / span 1;
 //

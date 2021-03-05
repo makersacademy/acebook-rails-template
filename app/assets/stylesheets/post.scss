@@ -11,7 +11,6 @@ body {
   background-color: white;
   background-size: 100%;
   background-attachment: fixed;
-  /* repeating-linear-gradient(42deg, #3c6e71, #5fbff9 , #5863f8 10%); */
 }
 
 .full {
@@ -67,18 +66,37 @@ a {
 
 
 .new-post {
-  padding: 3px;
-  grid-column: 1;
-  width: 60%;
-  background-color: black;
-  border-radius: 6px;
+  grid-column: 1 / span 4;
 }
 
 .new-post a {
-  padding-left: 6px;
+  background-color: black;
+  border-radius: 6px;
+  padding: 4px 8px;
   color: $red;
 }
 
 .centered {
   grid-column: 2 /span 2;
 }
+
+@media(max-width: 840px) {
+  .action-link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pipe {
+    display:none;
+  }
+}
+
+@media(max-width: 800px) {
+  .post {
+    grid-column: 1 / span 4;
+    padding-left: 24px;
+    padding-top: 24px;
+  }
+}
+
+
