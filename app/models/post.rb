@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   acts_as_favoritable
+  acts_as_commontable dependent: :destroy
 
   def toggle_favorite
     @post = Post.find_by(id: params[:id])

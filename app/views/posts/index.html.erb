@@ -10,6 +10,7 @@
           <% if Time.now < post.created_at + 10.minutes %>
             <%= link_to (fa_icon "pencil"), edit_post_path(post), method: :get %>
           <% end %>
+
           <%= link_to (fa_icon "trash"), post_path(post), method: :delete  %>
         <% end %>
         </span>
@@ -29,6 +30,12 @@
           <% end %>
         <% end %>
         </span>
+
+          <div>
+            <% @post = post %>
+            <%= commontator_thread(@post) %>
+          </div>
+
       </div>
       <br>
     <% end %>
