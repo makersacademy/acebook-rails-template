@@ -1,16 +1,8 @@
-# AceBook
+# Simply Rails AceBook 
 
-REQUIRED INSTRUCTIONS:
+This is our project for Acebook.
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
-
-2. The card wall is here: <please update>
-
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+Trello - https://trello.com/b/z3ggmgJ9/acebook
 
 ## Quickstart
 
