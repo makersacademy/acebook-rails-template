@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p class="form"><%= post.message %></p>
   <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: "Are you sure?" }%></p>
 <% end %>
 
