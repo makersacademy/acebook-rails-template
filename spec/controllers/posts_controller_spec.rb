@@ -1,6 +1,13 @@
 require 'rails_helper'
 
+
 RSpec.describe PostsController, type: :controller do
+
+  let(:user) { User.create(email: 'test@test.com', password: 'password', password_confirmation: 'password') }
+  before do
+    sign_in user
+  end
+
   describe "GET /new " do
     it "responds with 200" do
       get :new
