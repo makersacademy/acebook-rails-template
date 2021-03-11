@@ -3,6 +3,5 @@
   <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: "Are you sure?" }%></p>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<%= link_to 'New post', new_post_path %>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
