@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Posts show newest first" do
+    sign_up
+    click_link "View posts"
     create_post
-    visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Testing latest post 1"
     click_button "Submit"
