@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user!
-  
+
   def new
     @post = Post.new
   end
@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     @post.user = current_user
-    @post.save 
+    @post.save
     redirect_to posts_url
   end
 
@@ -28,6 +28,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :user_id)
+    params.require(:post).permit(:message)
   end
 end
