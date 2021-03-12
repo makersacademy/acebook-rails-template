@@ -3,7 +3,9 @@
   <p class="form"><%= post.message %></p>
   <p><%= post.created_at %></p>
   <p><%= post.user.email.split('@')[0] %></p>
+  <% if post.user == current_user %>
   <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: "Are you sure?" }%></p>
+  <% end %>
 <% end %>
 
 <%= link_to 'New post', new_post_path %>
