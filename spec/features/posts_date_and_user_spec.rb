@@ -7,6 +7,6 @@ RSpec.feature "Posts Date & User", type: :feature do
     create_post
     expect(page).to have_content('Hello, world')
     expect(page).to have_content(Time.current)
-    expect(page).to have_content('test@test.com')
+    expect(page).to have_content('test')
   end
 end
