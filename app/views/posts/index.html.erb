@@ -1,7 +1,8 @@
 
 <% @posts.each do |post| %>
   <p class="form"><%= post.message %></p>
-  <p><%= post.created_at %></p>
+  <% time_posted = post.created_at %>
+  <%= time_posted.strftime("%m/%d/%Y %I:%M%p") %>
   <p><%= post.user.email.split('@')[0].capitalize %></p>
   <% if post.user == current_user %>
   <% if Time.now - post.created_at < 10.minutes%>
