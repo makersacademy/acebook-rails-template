@@ -1,16 +1,29 @@
-
-<% @posts.each do |post| %>
-  <p class="form"><%= post.message %></p>
-  <% time_posted = post.created_at %>
-  <%= time_posted.strftime("%m/%d/%Y %I:%M%p") %>
-  <p><%= post.user.email.split('@')[0].capitalize %></p>
-  <% if post.user == current_user %>
-  <% if Time.now - post.created_at < 10.minutes%>
-  <p><%= link_to 'Edit', edit_post_path(post) %></p>
-  <% end %>
-  <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: "Are you sure?" }%></p>
-  <% end %>
-<% end %>
-
+<div class="columns mt-6 is-centered table-container">
+  <div class="column is-half">
+    <% @posts.each do |post| %>
+    <div class="card">
+      <header class="card-header">
+        <% time_posted = post.created_at %>
+        <p class="card-header-title"><%= post.user.email.split('@')[0].capitalize %></p>
+        <p class="pr-2"><%= time_posted.strftime("%m/%d/%Y %I:%M%p") %></p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <p class="form"><%= post.message %></p>
+        </div>
+      </div>
+      <% if post.user == current_user %>
+      <div class="card-footer">
+        <% if Time.now - post.created_at < 10.minutes%>
+        <%= link_to 'Edit', edit_post_path(post), class: "card-footer-item" %>
+        <% end %>
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: "Are you sure?" }, class: "card-footer-item"%>
+      </div>
+        <% end %>
+    </div>
+    <br>
+    <% end %>
+  </div>
+</div>
+<br>
 <%= link_to 'New post', new_post_path %>
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>

@@ -1,6 +1,7 @@
 <%= form_for post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
-  <%= form.submit "Submit" %>
+  <%= form.label :message, class: "label" %>
+  <%= form.text_area :message, class: "input" %>
+  <br>
+  <%= form.submit "Submit", class: "button is-success" %>
 
 <% end %>

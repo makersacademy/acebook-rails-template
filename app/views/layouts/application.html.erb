@@ -3,14 +3,18 @@
   <head>
     <title>Acebook</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <%= render "shared/header" %>
+    <div class="container">
+      <p class=""message is-danger""><%= notice %></p>
+      <p class=""message is-danger""><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>
