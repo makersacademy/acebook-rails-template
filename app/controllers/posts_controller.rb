@@ -1,5 +1,6 @@
-class PostsController < ApplicationController
+# frozen_string_literal: true
 
+class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def new
@@ -36,7 +37,6 @@ class PostsController < ApplicationController
     @post.destroy
 
     redirect_to posts_url
-
   end
 
   private
@@ -44,5 +44,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message)
   end
-
 end
