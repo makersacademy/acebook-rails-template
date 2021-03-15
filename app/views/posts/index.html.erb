@@ -2,9 +2,11 @@
 <% @posts.each do |post| %>
   <p class="form"><%= post.message %></p>
   <p><%= post.created_at %></p>
-  <p><%= post.user.email.split('@')[0] %></p>
+  <p><%= post.user.email.split('@')[0].capitalize %></p>
   <% if post.user == current_user %>
+  <% if Time.now - post.created_at < 10.minutes%>
   <p><%= link_to 'Edit', edit_post_path(post) %></p>
+  <% end %>
   <p><%= link_to 'Destroy', post, method: :delete, data: { confirm: "Are you sure?" }%></p>
   <% end %>
 <% end %>
