@@ -1,0 +1,39 @@
+<section class="hero is-info is-small">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+            <span class="navbar-item">
+              <h1 class="title">Acebook</h1>
+            </span>
+          <span class="navbar-burger" data-target="navbarMenuHeroB">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroB" class="navbar-menu">
+          <div class="navbar-end">
+              <% if current_user %>
+              <span class="navbar-item">
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "button is-success" %>
+              </span>
+                <% unless current_page?('/posts')%>
+                <span class="navbar-item">
+                  <%= link_to 'View posts', posts_path, class: "button is-success" %>
+                </span>
+                <% end %>
+              <% else %>
+              <span class="navbar-item">
+                <%= link_to 'Sign in', new_user_session_path, class: "button is-success" %>
+              </span>
+              <span class="navbar-item">
+                <%= link_to 'Sign up', new_user_registration_path, class: "button is-success" %>
+              </span>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
