@@ -1,22 +1,28 @@
-<h2 class="is-size-2 has-text-weight-bold mb-3">Log in</h2>
+<h1>Login</h1> 
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   
-  <div class="columns is centered">
-    <div class="column is-one-fifth">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+ <div class="login-container"> 
+  <div class="field">
+    <label class="label">Email</label>
+      <div class="control">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
   </div>
 
-  <div class="columns is centered">
-    <div class="column is-one-fifth">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
+   <div class="field">
+    <label class="label">Password</label>
+      <div class="control">
+          <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
   </div>
 
-  <% if devise_mapping.rememberable? %>
-  <div class="columns is centered">
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name)%>
+<% end %>
+
+<% if devise_mapping.rememberable? %>
+  <div class="columns is multi-line">
     <div class="column is-one-fifth">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
@@ -25,8 +31,14 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Login",  class: "button is-info" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+  <div class="sign-up">
+    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+     <%= link_to "Sign up", new_registration_path(resource_name), class: "button is-success" %>
+    <% end %>
+  </div>
+</div>
+ 
