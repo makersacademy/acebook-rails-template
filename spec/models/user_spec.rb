@@ -34,4 +34,28 @@ RSpec.describe User, type: :model do
     
   end
 
+  describe "when email format is valid" do
+
+    it 'should be valid' do
+      emails = ["lizard@lizardcity.COM", "LI_ZA_RD@iam.alizard.org", "bernie.sanders@notalizard.jp", "l+iz@liz.cn"] 
+      emails.each do |valid_email|
+        @user.email = valid_email
+        expect(@user).to be_valid
+      end
+    end
+
+  end
+
+  describe "when email format is not valid" do
+    
+    it 'should not be valid' do
+      emails = ["lizard_lizardcity.COM", "LI_ZA_RD@iam-alizard-org", "bernie.sanders.notalizard.jp", "liz@liz+.cn"] 
+      emails.each do |invalid_email|
+        @user.email = invalid_email
+        expect(@user).not_to be_valid
+      end
+    end
+
+  end
+
 end
