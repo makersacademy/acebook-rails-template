@@ -37,6 +37,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 4.0'
   gem 'orderly'
+  gem 'webdrivers'
 end
 
 group :development do
