@@ -2,10 +2,10 @@ language: ruby
 rvm:
  - 2.7.2
 script:
- — bundle install
- — bundle exec rake db:create
- — bundle exec rake db:migrate
- — bundle exec rspec
+ - bundle install --jobs=3 --retry=3
+ - bundle exec rake db:create
+ - bundle exec rake db:migrate
+ - bundle exec rspec
 
 # research syntax for yml files. How to specify
 # script. Script or scripts? Find some more examples
