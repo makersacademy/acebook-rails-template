@@ -7,6 +7,12 @@ end
 
 ruby "2.7.2"
 
+gem 'rubocop', require: false
+gem 'rubocop-rails', require: false
+gem 'simplecov', require: false, group: :test
+gem 'rubocop-rspec', require: false
+gem 'coveralls', require: false
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 # Use postgresql as the database for Active Record
