@@ -2,7 +2,12 @@ language: ruby
 rvm:
  - 2.7.2
 script:
- — bundle install 
+ — bundle install
  — bundle exec rake db:create
  — bundle exec rake db:migrate
  — bundle exec rspec
+
+# research syntax for yml files. How to specify
+# script. Script or scripts? Find some more examples
+# of this file.
+# search for travis bundle install
