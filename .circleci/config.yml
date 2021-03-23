@@ -38,9 +38,9 @@ jobs:
   deploy:
     docker:
       - image: circleci/ruby:2.7.2
-        # auth:
-        #   username: mydockerhub-user
-        #   password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+        auth:
+          username: adamjonas25@gmail.com
+          password: $HEROKU_API_KEY  # context / project UI env-var reference
     steps:
       - checkout
       - run:
