@@ -1,11 +1,15 @@
 language: ruby
 rvm:
- - 2.7.2
+  - 2.7.2
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
 script:
- - bundle install --jobs=3 --retry=3
- - bundle exec rake db:create
- - bundle exec rake db:migrate
- - bundle exec rspec
+  - bundle install --jobs=3 --retry=3
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rspec
 
 # research syntax for yml files. How to specify
 # script. Script or scripts? Find some more examples
