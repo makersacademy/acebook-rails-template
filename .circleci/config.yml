@@ -12,7 +12,7 @@ jobs:
         environment:
           POSTGRES_USER: acebook-loungin-lizards
           POSTGRES_DB: pgapp_test
-          POSTGRES_PASSWORD: ""
+          POSTGRES_PASSWORD: "password"
     steps:
       - checkout
       # Restore Cached Dependencies
