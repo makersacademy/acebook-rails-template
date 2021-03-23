@@ -34,7 +34,7 @@ jobs:
       - run: bundle exec rake db:setup
             # Run the tests
       - run: bundle exec rake
-        
+
   deploy:
     docker:
       - image: circleci/ruby:2.7.2
@@ -58,4 +58,4 @@ workflows:
             - build # only run deploy-via-git job if the build job has completed
           filters:
             branches:
-              only: master # only run deploy-via-git job on master branch
+              only: master # only run deploy-via-git job on master branch #
