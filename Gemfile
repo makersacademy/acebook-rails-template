@@ -12,6 +12,7 @@ gem 'rubocop-rails', require: false
 gem 'simplecov', require: false, group: :test
 gem 'rubocop-rspec', require: false
 gem 'coveralls', require: false
+# gem 'travis'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
