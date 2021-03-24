@@ -1,0 +1,6 @@
+
+<form action=<%= "/posts/#{ @post.id }"%> method="patch">
+  <textarea><%= @post.message %></textarea>
+  <label for=<%= "submit_#{ @post.id }" %>>Submit post</label>
+  <input type='submit' id=<%= "submit_#{ @post.id }" %> value="Submit">
+</form>
