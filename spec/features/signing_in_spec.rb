@@ -1,12 +1,15 @@
 require 'rails_helper'
+require 'sessions_helper'
 
 feature "Authentication" do
 
     subject { page }
+    let(:submit) { "Sign in" }
 
     before do 
         @user = User.new(name: "Lizardo", email: "lizard@example.com", password: "123secure", password_confirmation: "123secure")
         @user.save
+        
     end
   
     feature "signin page" do
@@ -16,9 +19,9 @@ feature "Authentication" do
 
     feature 'with valid information' do
         before do
-            visit signin_path
-            fill_in 'email', with: @user.email.upcase
-            fill_in 'password', with: @user.password
+            visit('/signin')
+            fill_in 'session[email]', with: @user.email.upcase
+            fill_in 'session[password]', with: @user.password
             click_button 'Sign in'
         end
 
