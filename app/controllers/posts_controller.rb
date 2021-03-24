@@ -16,6 +16,11 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params["id"])
   end
 
+  def update
+    post = Post.find_by(id: params["id"])
+    post.update(message: params[:post])
+  end
+
   private
 
   def post_params
