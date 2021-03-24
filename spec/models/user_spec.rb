@@ -126,5 +126,12 @@ RSpec.describe User, type: :model do
       end
     end
 
+    describe "should be maximum 10 characters" do
+      before { @user.password = @user.password_confirmation = "a" * 11 }
+      it "should not be valid" do
+        expect(@user).not_to be_valid
+      end
+    end
+
   end
 end
