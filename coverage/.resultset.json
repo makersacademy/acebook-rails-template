@@ -1,19 +1,19 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/iain/Makers/projects/acebook-team-gets-railed/app/helpers/application_helper.rb": {
+      "/Users/Rorie/Projects/week_8/acebook-team-gets-railed/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/iain/Makers/projects/acebook-team-gets-railed/app/helpers/welcome_helper.rb": {
+      "/Users/Rorie/Projects/week_8/acebook-team-gets-railed/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/iain/Makers/projects/acebook-team-gets-railed/app/controllers/posts_controller.rb": {
+      "/Users/Rorie/Projects/week_8/acebook-team-gets-railed/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           1,
@@ -37,33 +37,33 @@
           null
         ]
       },
-      "/Users/iain/Makers/projects/acebook-team-gets-railed/app/controllers/application_controller.rb": {
+      "/Users/Rorie/Projects/week_8/acebook-team-gets-railed/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/iain/Makers/projects/acebook-team-gets-railed/app/controllers/welcome_controller.rb": {
+      "/Users/Rorie/Projects/week_8/acebook-team-gets-railed/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/iain/Makers/projects/acebook-team-gets-railed/app/models/post.rb": {
+      "/Users/Rorie/Projects/week_8/acebook-team-gets-railed/app/models/post.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/iain/Makers/projects/acebook-team-gets-railed/app/models/application_record.rb": {
+      "/Users/Rorie/Projects/week_8/acebook-team-gets-railed/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/iain/Makers/projects/acebook-team-gets-railed/app/mailers/application_mailer.rb": {
+      "/Users/Rorie/Projects/week_8/acebook-team-gets-railed/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -73,7 +73,7 @@
         "branches": {
         }
       },
-      "/Users/iain/Makers/projects/acebook-team-gets-railed/app/jobs/application_job.rb": {
+      "/Users/Rorie/Projects/week_8/acebook-team-gets-railed/app/jobs/application_job.rb": {
         "lines": [
           0,
           0
@@ -81,7 +81,7 @@
         "branches": {
         }
       },
-      "/Users/iain/Makers/projects/acebook-team-gets-railed/app/channels/application_cable/connection.rb": {
+      "/Users/Rorie/Projects/week_8/acebook-team-gets-railed/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -91,7 +91,7 @@
         "branches": {
         }
       },
-      "/Users/iain/Makers/projects/acebook-team-gets-railed/app/channels/application_cable/channel.rb": {
+      "/Users/Rorie/Projects/week_8/acebook-team-gets-railed/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -102,6 +102,6 @@
         }
       }
     },
-    "timestamp": 1616521815
+    "timestamp": 1616581216
   }
 }
