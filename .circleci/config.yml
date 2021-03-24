@@ -21,7 +21,7 @@ jobs:
         key: acebook-markzuckerbergisalizard-{{ checksum "Gemfile.lock" }}
       # Bundle install dependencies
       - run: gem install bundler
-      - run: bundle config set --local path 'vendor/bundle'
+      - run: bundle install --path vendor/cache
       # Cache Dependencies
       - type: cache-save
         name: Store bundle cache
