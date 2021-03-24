@@ -25,6 +25,7 @@ feature "User pages" do
 
         scenario 'should create a user' do
             expect { click_button submit }.to change { User.count }.by(1)
+            expect(page).to have_content("Welcome to Acebook, fellow lizard")
         end
     end
 
