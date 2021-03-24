@@ -20,6 +20,19 @@ u-->c:"return instance of user class"
 
 ![Signup](app/assets/images/sign_up_seq_diagram.png)
 
+alias c="Controller"
+alias u="User"
+alias p="Post"
+alias db="Database"
+
+c->u:"user.authenticate(email, plaintext password)"
+u->u:"decrypt plaintext password"
+u->db:"find user, return only if email and password match"
+db->u:"return authenticated user"
+u->c:"user.authenticated = true"
+
+![Signin](app/assets/images/sign_in_seq_diagram.png)
+
 REQUIRED INSTRUCTIONS:
 
 1. Fork this repository to `acebook-teamname` and customize
