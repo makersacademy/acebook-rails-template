@@ -1,17 +1,15 @@
 language: ruby
 rvm:
-  - 2.7.2
+- 2.7.2
 services:
-  - postgresql
+- postgresql
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
+- psql -c 'create database travis_ci_test;' -U postgres
 script:
-  - bundle install --jobs=3 --retry=3
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-  - bundle exec rspec
-
-# research syntax for yml files. How to specify
-# script. Script or scripts? Find some more examples
-# of this file.
-# search for travis bundle install
+- bundle install --jobs=3 --retry=3
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rspec
+deploy:
+  api_key:
+    secure: mZbKS7QjHx+Ey4/6fbuLeb/0h+XVkY7l+J12N71LtjwSqeZyDySI5ezkPSUy3oXFzbotqPHQMtHmdf7iBdyc+btKD09edr4iLJzVs5oTOWgZBW/iwqiozv/KKg+2rFPqlIj0/nnQzteB6A18RL7V8JnZlh01HRW8OkUZlwQRlUtt6bICl/PX1C2lh7kgxmERT56e5z+0yNeAtsFUV+YdVsKvDXJEKJ2hd5x8dWG8WFyCwWbjwyY9pnTz3DQBkT1l/BTGmGi2W5zYkmG5f52k5xjngdFb2Wv2hJb90DqgYAlPEMy9S5cQzzg1WCKEy41de3b7apFcEHkDi2T010DK//8h0WpAr6LNZIri5P1iDTaMTOtKwIMjLDI67tCE+dANgtDWZTLxra1EYjPPAin9migGqfFDzK3vesmpPsv2cZtl5SGCBahJY2yOUDixqYuab2Ibg1NldxEb/GwEIhaCMtYgulzm1aFH50HyWvBighGsQy0V7m4UtT9TwBy9qFIn318k7mQtVGRGVqTfC/m9nAzagQ5QCiZXM5F2a1O9BxI0IJog0pAQAxKvjTqDkVoloqkvreLc1Px+Bn9OwtmESo7nDFShf4QeKpsFZS6YKXGIv4UHJ6hdlitYPEPlxL/3QfnP2K1veG/RQ2noO4LVQpb6a7IcSykrL6vCZwVWyjk=
