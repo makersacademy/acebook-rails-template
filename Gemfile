@@ -38,6 +38,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0'
   gem 'rubocop', '~> 1.11', require: false
   gem 'rubocop-rails', require: false
+  gem 'rake', '~> 13.0.3'
   gem 'parallel', '~> 1.10'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false, group: :test
