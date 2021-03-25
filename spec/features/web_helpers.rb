@@ -17,3 +17,9 @@ def sign_up_as_specy
   fill_in('Password confirmation', with: 'Password123')
   click_button('Sign up')
 end
+
+def sign_up_as_testy_and_log_out
+  sign_up_as_testy
+  click_button("logout")
+end
+
