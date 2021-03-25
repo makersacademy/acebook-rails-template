@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def show
     if current_user
       @user = current_user
-      @user_posts = Post.find_by(user_id: current_user.id)
+      @user_posts = Post.all.select { |p| p.user_id == current_user.id }
     else
       flash[:not_signed_in] = "You must be signed in to view that page!"
       redirect_to :root

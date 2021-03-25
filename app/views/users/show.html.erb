@@ -1,6 +1,6 @@
 <%= @user.name %>, <%= @user.email %>
 
-<% if @user_posts %>
+<% if @user_posts.length > 0 %>
  <% @user_posts.each do |post| %>
     <%= simple_format(post.message) %>
   <% end %>
