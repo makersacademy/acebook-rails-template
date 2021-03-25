@@ -9,6 +9,11 @@
   </head>
 
   <body>
+  <div class="links">
+  <a href="/signup">Sign up for Acebook</a><br>
+  <a href="/signin">Sign in to Acebook</a><br>
+  <a href="#">Sign out of Acebook</a>
+  </div>
   <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
