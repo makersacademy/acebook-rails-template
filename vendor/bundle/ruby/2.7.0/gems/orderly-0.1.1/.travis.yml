@@ -1,0 +1,28 @@
+rvm:
+  - 2.0
+  - 2.4
+script: 'bundle exec rake'
+gemfile:
+  - gemfiles/capybara_1.1.gemfile
+  - gemfiles/capybara_2.0.gemfile
+  - gemfiles/capybara_3.0.gemfile
+  - gemfiles/rspec_2.gemfile
+env:
+  - DRIVER=rack_test
+  - DRIVER=selenium_chrome_headless
+matrix:
+  exclude:
+  - rvm: 2.0
+    env: DRIVER=selenium_chrome_headless
+  - rvm: 2.0
+    gemfile: gemfiles/capybara_3.0.gemfile
+  - gemfile: gemfiles/capybara_1.1.gemfile
+    env: DRIVER=selenium_chrome_headless
+  - gemfile: gemfiles/capybara_2.0.gemfile
+    env: DRIVER=selenium_chrome_headless
+  - gemfile: gemfiles/rspec_2.gemfile
+    env: DRIVER=selenium_chrome_headless
+cache: bundler
+sudo: false
+addons:
+  chrome: stable
