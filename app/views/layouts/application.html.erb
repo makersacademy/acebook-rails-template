@@ -13,7 +13,7 @@
   <% if signed_in? %>
   <%= link_to "Sign out", signout_path, method: "delete" %> <br>
   <%= link_to "Your Posts", "/users/#{current_user.id}" %> <br>
-  <%= link_to "New Post", "/posts/new" %>
+  <%= link_to "New Post", new_post_path %>
     <% else %>
   <%= link_to "Sign up for Acebook", "/signup" %> <br>
   <%= link_to "Sign in to Acebook", signin_path %><br>
