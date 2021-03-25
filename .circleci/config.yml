@@ -23,9 +23,6 @@ jobs:
         key: acebook-markzuckerbergisalizard-{{ checksum "Gemfile.lock" }}
       # Bundle install dependencies
       - browser-tools/install-browser-tools
-orbs:
-  browser-tools: circleci/browser-tools@x.y
-version: 2.1
       - run: gem install bundler
       - run: bundle install --path vendor/cache
       # Cache Dependencies
@@ -42,3 +39,6 @@ version: 2.1
       - run: bundle exec rake db:setup
       # Run the tests
       - run: bundle exec rake
+orbs:
+  browser-tools: circleci/browser-tools@x.y
+version: 2.1
