@@ -21,6 +21,11 @@ RSpec.describe User, type: :model do
     it { should_not be_valid }
   end
 
+  describe "when email is in an invalid format" do
+    before { @user.email = "fakeemail"}
+    it { should_not be_valid }
+  end
+
   describe "when password is too short" do
     before { @user.password = "12345"}
     it { should_not be_valid }
