@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find_by(id: params['id'])
+    redirect_to posts_url if current_user.id != @post.user_id
   end
 
   def update
