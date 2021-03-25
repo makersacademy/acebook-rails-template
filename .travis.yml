@@ -1,13 +1,13 @@
+
 language: ruby
-rvm:
-- 2.7.2
+cache:
+- bundle update --bundler
+- bundle install
 services:
-- postgresql
-before_script:
-- psql -c 'create database travis_ci_test;' -U postgres
+  - postgresql
+
 script:
-- bundle install --jobs=3 --retry=3
-- bundle exec rake db:create
-- bundle exec rake db:migrate
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+- bundle exec rails db:environment:set RAILS_ENV=test
 - bundle exec rspec
-# I'm adding a quote here
