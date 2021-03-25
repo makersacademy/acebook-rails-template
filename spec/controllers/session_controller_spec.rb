@@ -41,6 +41,7 @@ RSpec.describe SessionsController, type: :controller do
     it 'ends the session' do
       delete :destroy
       expect(signed_in?).to be false
+      expect(current_user).to be nil
     end
   end
 
