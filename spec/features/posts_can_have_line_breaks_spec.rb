@@ -15,8 +15,4 @@ RSpec.feature "Post", type: :feature do
       click_button "Submit"
       expect(page.html).to match(/Hello\s*<br>\s*world team lizard!/)
     end
-
-after(:all) do
-    Capybara.use_default_driver
-  end
 end
