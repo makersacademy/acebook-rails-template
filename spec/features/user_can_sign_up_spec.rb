@@ -12,6 +12,10 @@ feature "User pages" do
     let(:submit) { "Create my account" }
 
     feature 'with invalid information' do
+      scenario 'no info given' do
+        visit signup_path
+        expect { click_button "Create my account" }.not_to change(User, :count)
+      end
 
     end
 
