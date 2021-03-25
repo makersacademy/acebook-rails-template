@@ -1,15 +1,2 @@
 current directory: /Users/christinechee/Projects/acebook-markzuckerbergisalizard/vendor/bundle/ruby/2.7.0/gems/mimemagic-0.3.8/ext/mimemagic
 /Users/christinechee/.rvm/rubies/ruby-2.7.0/bin/ruby -I/Users/christinechee/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/rubygems -rrubygems /Users/christinechee/Projects/acebook-markzuckerbergisalizard/vendor/bundle/ruby/2.7.0/gems/rake-13.0.3/exe/rake RUBYARCHDIR\=/Users/christinechee/Projects/acebook-markzuckerbergisalizard/vendor/bundle/ruby/2.7.0/extensions/x86_64-darwin-19/2.7.0/mimemagic-0.3.8 RUBYLIBDIR\=/Users/christinechee/Projects/acebook-markzuckerbergisalizard/vendor/bundle/ruby/2.7.0/extensions/x86_64-darwin-19/2.7.0/mimemagic-0.3.8
-rake aborted!
-Could not find MIME type database in the following locations: ["/usr/local/share/mime/packages/freedesktop.org.xml", "/opt/homebrew/share/mime/packages/freedesktop.org.xml", "/usr/share/mime/packages/freedesktop.org.xml"]
-
-Ensure you have either installed the shared-mime-types package for your distribution, or 
-obtain a version of freedesktop.org.xml and set FREEDESKTOP_MIME_TYPES_PATH to the location 
-of that file.
-/Users/christinechee/Projects/acebook-markzuckerbergisalizard/vendor/bundle/ruby/2.7.0/gems/mimemagic-0.3.8/ext/mimemagic/Rakefile:14:in `locate_mime_database'
-/Users/christinechee/Projects/acebook-markzuckerbergisalizard/vendor/bundle/ruby/2.7.0/gems/mimemagic-0.3.8/ext/mimemagic/Rakefile:25:in `block in <top (required)>'
-/Users/christinechee/Projects/acebook-markzuckerbergisalizard/vendor/bundle/ruby/2.7.0/gems/rake-13.0.3/exe/rake:27:in `<main>'
-Tasks: TOP => default
-(See full trace by running task with --trace)
-
-rake failed, exit code 1
