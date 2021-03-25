@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require_relative '../../app/helpers/sessions_helper'
 
 RSpec.describe SessionsController, type: :controller do
 
@@ -13,7 +14,7 @@ RSpec.describe SessionsController, type: :controller do
     it 'responds with 200' do
       post :create, params: { session: { email: @user.email, password: @user.password } }
       expect(response).to redirect_to(:root)
-      # expect(signed_in?).to be true
+      expect(signed_in?).to be true
     end
   end 
 

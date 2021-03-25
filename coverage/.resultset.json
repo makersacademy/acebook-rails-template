@@ -1,10 +1,11 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/spec/controllers/session_controller_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/controllers/session_controller_spec.rb": {
         "lines": [
           null,
           null,
+          1,
           1,
           null,
           1,
@@ -41,7 +42,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/spec/rails_helper.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/rails_helper.rb": {
         "lines": [
           null,
           null,
@@ -109,7 +110,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/environment.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -120,7 +121,7 @@
           1
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/application.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/application.rb": {
         "lines": [
           null,
           null,
@@ -144,7 +145,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/boot.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/boot.rb": {
         "lines": [
           null,
           null,
@@ -153,7 +154,7 @@
           1
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/environments/test.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/environments/test.rb": {
         "lines": [
           null,
           null,
@@ -201,7 +202,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/initializers/application_controller_renderer.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -212,7 +213,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/initializers/assets.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -232,7 +233,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/initializers/backtrace_silencers.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -244,7 +245,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/initializers/cookies_serializer.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -255,7 +256,7 @@
           1
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/initializers/filter_parameter_logging.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -265,7 +266,7 @@
           1
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/initializers/inflections.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -286,7 +287,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/initializers/mime_types.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -295,7 +296,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/initializers/wrap_parameters.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -315,7 +316,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/config/routes.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/routes.rb": {
         "lines": [
           null,
           null,
@@ -333,7 +334,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/app/helpers/application_helper.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -341,42 +342,13 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/app/helpers/sessions_helper.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/app/helpers/users_helper.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/app/helpers/welcome_helper.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/helpers/welcome_helper.rb": {
         "lines": [
           null,
           null,
@@ -384,7 +356,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/app/controllers/sessions_controller.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -409,7 +381,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/app/controllers/application_controller.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -419,7 +391,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/app/models/user.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/models/user.rb": {
         "lines": [
           1,
           2,
@@ -440,7 +412,7 @@
           null
         ]
       },
-      "/Users/admin/Projects/makers/week_8/acebook-markzuckerbergisalizard/app/models/application_record.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -450,6 +422,6 @@
         ]
       }
     },
-    "timestamp": 1616676080
+    "timestamp": 1616684843
   }
 }
