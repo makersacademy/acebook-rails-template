@@ -3,6 +3,10 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <form action=<%= "/posts/#{ post.id }/edit" %>>
+    <label for=<%= "submit_#{ post.id }" %>>Update</label>
+    <input type='submit' id=<%= "submit_#{ post.id }" %> value="update">
+  </form>
 <% end %>
 
 <%= link_to new_post_path do %>
