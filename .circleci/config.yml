@@ -27,8 +27,8 @@ jobs:
           POSTGRES_USER: acebook-markzuckerbergisalizard
           POSTGRES_DB: pgapp_development_test
           POSTGRES_HOST_AUTH_METHOD: trust
-    steps:
-      - checkout
+    # steps:
+    #   - checkout
       # Restore Cached Dependencies
       - type: cache-restore
         name: Restore bundle cache
