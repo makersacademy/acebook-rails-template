@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  
   def index
     @posts = Post.all
   end
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find_by(id: params['id'])
-    redirect_to posts_url if current_user.id != @post.user_id
+    redirect_to posts_url, notice: "You can't edit other peoples posts." if current_user.id != @post.user_id
   end
 
   def update

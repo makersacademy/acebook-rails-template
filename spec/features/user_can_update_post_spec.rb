@@ -1,5 +1,5 @@
 feature 'updating own posts' do
-  scenario 'user can update their own posts up to 10 minutes' do
+  scenario 'user can update their own posts' do
     visit('/users/sign_up')
     fill_in('Name', with: 'Testy')
     fill_in('Surname', with: 'Testerson')
