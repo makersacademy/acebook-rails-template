@@ -15,15 +15,6 @@ jobs:
           POSTGRES_HOST_AUTH_METHOD: trust
     steps:
       - checkout
-      # Install Selenium
-      - run: mkdir test-reports
-      - run:
-          name: Download Selenium
-          command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
-      - run:
-          name: Start Selenium
-          command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
-          background: true
       # Restore Cached Dependencies
       - type: cache-restore
         name: Restore bundle cache
@@ -31,6 +22,15 @@ jobs:
       # Bundle install dependencies
       - run: gem install bundler
       - run: bundle install --path vendor/cache
+      # Install selenium
+      - run:
+          name: Download Selenium
+          command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+          
+      - run:
+          name: Start Selenium
+          command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
+          background: true
       # Cache Dependencies
       - type: cache-save
         name: Store bundle cache
