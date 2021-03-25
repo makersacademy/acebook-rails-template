@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  root 'posts#index'
+  root 'users#new'
   match '/signup',  to: 'users#new', via: [:get, :post]
   match '/signin',  to: 'sessions#new', via: [:get, :post]
   match '/signout', to: 'sessions#destroy', via: [:delete]
