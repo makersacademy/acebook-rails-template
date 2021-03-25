@@ -20,4 +20,20 @@ feature 'updating own posts' do
     expect(page).not_to have_content('test post')
     expect(page).to have_content('new post')
   end
+
+  scenario "users can't edit other peoples posts" do
+    sign_up_as_testy
+
+    click_link('New post')
+    fill_in('Message', with: 'test post')
+    click_button('Submit')
+    expect(page).to have_content('test post')
+
+    click_button('Sign out')
+
+    sign_up_as_specy
+
+    click_button('update')
+    expect(page).to have_content "You can't edit other peoples posts."
+  end
 end
