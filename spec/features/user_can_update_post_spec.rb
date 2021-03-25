@@ -1,12 +1,6 @@
 feature 'updating own posts' do
   scenario 'user can update their own posts up to 10 minutes' do
-    visit('/users/sign_up')
-    fill_in('Name', with: 'Testy')
-    fill_in('Surname', with: 'Testerson')
-    fill_in('Email', with: 'test@test.com')
-    fill_in('Password', with: 'Password123')
-    fill_in('Password confirmation', with: 'Password123')
-    click_button('Sign up')
+    sign_up_as_testy()
 
     click_link('New post')
     fill_in('Message', with: 'test post')

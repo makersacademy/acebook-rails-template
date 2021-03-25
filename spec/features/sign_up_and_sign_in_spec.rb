@@ -19,7 +19,7 @@ feature "signing up and signing in" do
     sign_up_as_testy_and_log_out
     visit('/users/sign_in')
     fill_in('Email', with: 'test@test.com')
-    fill_in('Password', with: 'Password123')
+    fill_in('Password', with: 'Password12')
     click_button('Log in')
     expect(page).to have_content("Signed in successfully.")
     expect(page).to have_link("New post")
@@ -68,5 +68,17 @@ feature "signing up and signing in" do
       expect(page).to have_button("Sign up")
     end
   end
+
+  scenario "a new visiter is redirected to sign in page" do
+    visit('/posts')
+    expect(current_path).to eq("/users/sign_in")
+  end
+
+  scenario "passwords must be longer than 5 characters"
+  # expect to see message "password too short"
+
+  scenario "passwords must be shorter than 11 characters"
+  # expect to see message "password too long"
+
 
 end
