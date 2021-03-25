@@ -8,10 +8,4 @@ RSpec.feature "Timeline", type: :feature do
     click_button "Submit"
     expect(page).to have_content("Hello, world!")
   end
-
-  scenario "Can click on sign up button" do
-    visit "/posts"
-    expect(page).to have_button("Sign Up")
-  end
-
 end
