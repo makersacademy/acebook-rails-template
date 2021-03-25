@@ -1,16 +1,12 @@
 language: ruby
-cache:
-  - bundler
-  - yarn
+rvm:
+- 2.7.2
 services:
-  - postgresql
-before_install:
-  - nvm install --lts
+- postgresql
 before_script:
-  - bundle install --jobs=3 --retry=3
-  - yarn
-  - bundle exec rake db:create
-  - bundle exec rake db:schema:load
+- psql -c 'create database travis_ci_test;' -U postgres
 script:
-  - bundle exec rake test
-  - bundle exec rspec
+- bundle install --jobs=3 --retry=3
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rspec
