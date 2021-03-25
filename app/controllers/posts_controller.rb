@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
+    puts(@post)
   end
 
   def create
@@ -17,8 +18,11 @@ class PostsController < ApplicationController
   end
 
   def update
+    puts(params)
     post = Post.find_by(id: params["id"])
+    print("pose: "); puts(post)
     post.update(message: params[:post])
+    redirect_to posts_url
   end
 
   private
