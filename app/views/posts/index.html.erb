@@ -4,8 +4,7 @@
   <li> <%= link_to "Delete", post_path(post.id),  
       method: :delete,
       data: {confirm: "are you sure? "} %> </li>
-  <li> <%= link_to "Update", post_path(post.id), 
-      method: :patch %> 
+  <li> <%= link_to "Update", edit_post_path(post.id)%> 
   
 <% end %>
 <br>
