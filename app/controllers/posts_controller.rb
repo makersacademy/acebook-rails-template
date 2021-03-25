@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+
   def new
     @post = Post.new
   end
 
   def create
-    @post = Post.create(post_params)
+    @user = current_user
+    @post = @user.posts.create(post_params)
     redirect_to posts_url
   end
 
