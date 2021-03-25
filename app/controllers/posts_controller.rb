@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find_by(id: params['id'])
-    redirect_to posts_url, notice: "You can't edit other peoples posts." if current_user.id != @post.user_id
+    validate_owner
   end
 
   def update
@@ -27,9 +27,17 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def delete
+
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:message)
+  end
+
+  def validate_owner
+    redirect_to posts_url, notice: "You can't edit other peoples posts." if current_user.id != @post.user_id
   end
 end
