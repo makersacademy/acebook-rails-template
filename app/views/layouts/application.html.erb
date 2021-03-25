@@ -10,9 +10,16 @@
 
   <body>
   <div class="links">
-  <a href="/signup">Sign up for Acebook</a><br>
-  <a href="/signin">Sign in to Acebook</a><br>
-  <a href="#">Sign out of Acebook</a>
+  <% if signed_in? %>
+  <%= link_to "Sign out", signout_path, method: "delete" %> <br>
+  <%= link_to "Your Posts", "#" %> <br>
+    <% else %>
+  <%= link_to "Sign up for Acebook", "/signup" %> <br>
+  <%= link_to "Sign in to Acebook", signin_path %><br>
+  <% end %>
+  <%= current_user.name %>
+  <%= signed_in? %>
+  
   </div>
   <div class="container">
       <% flash.each do |key, value| %>
