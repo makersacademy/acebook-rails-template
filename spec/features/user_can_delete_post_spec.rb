@@ -2,10 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Delete", type: :feature do
   scenario "Can delete posts" do
-    visit "/posts"
-    click_link "New post"
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    create_post
 
     click_link "Delete"
 
