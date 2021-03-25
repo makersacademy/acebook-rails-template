@@ -1,6 +1,14 @@
+
+<style>  
+  p.post {
+    white-space: pre-line;
+  }
+ </style> 
+
+
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
-  <p><%= post.created_at.strftime("%d/%m/%Y" + "  " + "%k:%M %p") %></p>
+  <p class="post"><%= post.message %></p>
+  <p class="time"><%= post.created_at.strftime("%d/%m/%Y" + "  " + "%k:%M %p") %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
