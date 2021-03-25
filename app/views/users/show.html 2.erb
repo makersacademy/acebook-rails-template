@@ -1,0 +1,10 @@
+<%= @user.name %>, <%= @user.email %>
+
+<% if @user_posts %>
+ <% @user_posts.each do |post| %>
+    <%= simple_format(post.message) %>
+  <% end %>
+  <% else %>
+  <p>You haven't posted yet! Why not <%= link_to "make a post", new_post_path %> now?</p>
+  <% end %>
+  
