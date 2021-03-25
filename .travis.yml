@@ -1,2 +1,9 @@
-language: ruby 
-script: -bundle exec rspec
+language: ruby
+cache:
+  - bundler
+  # - yarn
+before_script:
+  - bundle install --jobs=3 --retry=3
+  # - yarn
+script:
+  - bundle exec rspec
