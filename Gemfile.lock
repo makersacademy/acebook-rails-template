@@ -89,6 +89,9 @@ GEM
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.15.0)
+    ffi (1.15.0-java)
+    ffi (1.15.0-x64-mingw32)
+    ffi (1.15.0-x86-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.9)
@@ -96,6 +99,7 @@ GEM
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     json (2.5.1)
+    json (2.5.1-java)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -108,22 +112,34 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
-    mimemagic (0.3.6)
+    mimemagic (0.3.8)
+      nokogiri (~> 1)
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.4)
     nio4r (2.5.7)
+    nio4r (2.5.7-java)
     nokogiri (1.11.2)
       mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    nokogiri (1.11.2-java)
+      racc (~> 1.4)
+    nokogiri (1.11.2-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.11.2-x86-mingw32)
       racc (~> 1.4)
     nokogiri (1.11.2-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.11.2-x86_64-linux)
       racc (~> 1.4)
     pg (1.2.3)
+    pg (1.2.3-x64-mingw32)
+    pg (1.2.3-x86-mingw32)
     public_suffix (4.0.6)
     puma (3.12.6)
+    puma (3.12.6-java)
     racc (1.5.2)
+    racc (1.5.2-java)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -172,6 +188,8 @@ GEM
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
+    sassc (2.4.0-x64-mingw32)
+      ffi (~> 1.9)
     sassc-rails (2.1.2)
       railties (>= 4.0.0)
       sassc (>= 2.0)
@@ -190,11 +208,14 @@ GEM
       sprockets (>= 3.0.0)
     thor (1.1.0)
     thread_safe (0.3.6)
+    thread_safe (0.3.6-java)
     tilt (2.0.10)
     travis-lint (2.0.0)
       json
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2021.1)
+      tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     web-console (4.1.0)
@@ -204,13 +225,19 @@ GEM
       railties (>= 6.0.0)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
+    websocket-driver (0.7.3-java)
+      websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.4.2)
 
 PLATFORMS
+  java
   ruby
+  x64-mingw32
+  x86-mingw32
+  x86-mswin32
   x86_64-darwin-19
   x86_64-darwin-20
   x86_64-linux
@@ -232,4 +259,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   2.2.11
+   2.2.15

@@ -1,16 +1,16 @@
 language: ruby
 cache:
-  - bundler
-  - yarn
+- bundle update --bundler
+- bundle install
 services:
   - postgresql
-before_install:
-  - nvm install --lts
-before_script:
-  - bundle install --jobs=3 --retry=3
-  - yarn
-  - bundle exec rake db:create
-  - bundle exec rake db:schema:load
+
 script:
-  - bundle exec rake test
-  - bundle exec rspec
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+- bundle exec rails db:environment:set RAILS_ENV=test
+- bundle exec rspec
+
+
+
+
