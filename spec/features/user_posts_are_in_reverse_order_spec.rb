@@ -1,7 +1,14 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
-  xscenario 'create a post and it appears on the home page' do
+  before(:each) do
+    Capybara.current_driver= :selenium
+    @user = User.new(name: "Lizardo", email: "lizard@example.com", password: "123secure", password_confirmation: "123secure")
+    @user.save
+    sign_in_helper(@user)
+  end
+
+  scenario 'create a post and it appears on the home page' do
     visit "posts#index"
     click_link "New post"
     fill_in "Message", with: "Hello World"
