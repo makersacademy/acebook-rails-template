@@ -20,6 +20,8 @@ feature 'updating own posts' do
     expect(page).not_to have_content('test post')
     expect(page).to have_content('new post')
   end
+  
+  scenario 'user can update their own posts up to 10 minutes'
 
   scenario "users can't edit other peoples posts" do
     sign_up_as_testy
