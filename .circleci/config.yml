@@ -16,8 +16,8 @@ jobs:
     steps:
       - checkout
       # Restore Cached Dependencies
-      # - type: cache-restore
-        # name: Restore bundle cache
+      - type: cache-restore
+        name: Restore bundle cache
         key: acebook-markzuckerbergisalizard-{{ checksum "Gemfile.lock" }}
       # Bundle install dependencies
       - run: gem install bundler
