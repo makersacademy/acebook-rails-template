@@ -17,18 +17,20 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find_by(id: params['id'])
+    @post = Post.find_by(id: params[:id])
     validate_owner
   end
 
   def update
-    post = Post.find_by(id: params['id'])
+    post = Post.find_by(id: params[:id])
     post.update(message: params[:post])
     redirect_to posts_url
   end
 
   def destroy
-    Post.destroy_by(id: params[:id])
+    @post = Post.find_by(id: params[:id])
+    validate_owner
+    @post.destroy
     redirect_to posts_url
   end
 
@@ -39,6 +41,6 @@ class PostsController < ApplicationController
   end
 
   def validate_owner
-    redirect_to posts_url, notice: "You can't edit other peoples posts." if current_user.id != @post.user_id
+    redirect_to posts_url, notice: "Oops, that's not your post!" if current_user.id != @post.user_id
   end
 end

@@ -34,6 +34,6 @@ feature 'updating own posts' do
     sign_up_as_specy
 
     click_button('update')
-    expect(page).to have_content "You can't edit other peoples posts."
+    expect(page).to have_content "Oops, that's not your post!"
   end
 end
