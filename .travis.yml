@@ -3,8 +3,11 @@ cache:
   - bundler
   # - yarn
 before_script:
-  - bundle install --jobs=3 --retry=3
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate  # - yarn
+  # - bundle install --jobs=3 --retry=3
+  # - bundle exec rake db:create
+  # - bundle exec rake db:migrate  # - yarn
 script:
-  - bundle exec rspec
+   - bundle install — jobs=3 — retry=3
+   - bundle exec rake db:create
+   - bundle exec rake db:migrate
+   - bundle exec rspec
