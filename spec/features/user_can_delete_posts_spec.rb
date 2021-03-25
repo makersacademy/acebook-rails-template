@@ -1,5 +1,5 @@
-feature 'updating own posts' do
-  scenario 'user can update their own posts' do
+feature 'deleting own posts' do
+  scenario 'users can delete their own posts' do
     visit('/users/sign_up')
     fill_in('Name', with: 'Testy')
     fill_in('Surname', with: 'Testerson')
@@ -11,19 +11,15 @@ feature 'updating own posts' do
     click_link('New post')
     fill_in('Message', with: 'test post')
     click_button('Submit')
+
     expect(page).to have_content('test post')
 
-    click_button('update')
-    fill_in('post', with: 'new post')
-    click_button('Submit')
+    click_button('Delete')
 
     expect(page).not_to have_content('test post')
-    expect(page).to have_content('new post')
   end
-  
-  scenario 'user can update their own posts up to 10 minutes'
 
-  scenario "users can't edit other peoples posts" do
+  xscenario "users can't delete other peoples posts" do
     sign_up_as_testy
 
     click_link('New post')
@@ -35,7 +31,8 @@ feature 'updating own posts' do
 
     sign_up_as_specy
 
-    click_button('update')
+    click_button('Delete')
     expect(page).to have_content "Oops, that's not your post!"
+    expect(page).to have_content('test post')
   end
 end

@@ -1,24 +1,16 @@
-
-<%= button_to "logout", destroy_user_session_path, method: :delete  %>
+<%= button_to "Sign out", destroy_user_session_path, method: :delete %>
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <form action=<%= "/posts/#{ post.id }/edit" %>>
-    <label for=<%= "submit_#{ post.id }" %>>Update</label>
-    <input type='submit' id=<%= "submit_#{ post.id }" %> value="update">
+  <form action="/posts/<%= post.id %>/edit">
+    <input type="submit" id="submit_<%= post.id %>" value="update">
+  </form>
+  <form action="/posts/<%= post.id %>" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
   </form>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
-
-<%# Header - company name, logo %>
-    <%# user info / logged in confirmation %>
-    <%# user photo / thumbnail %>
-<%# posts %>
-    <%# username of post %>
-    <%# time + date of post %>
-    <%# posts space out and stand out %>
-    <%#  %>
-<%# footer - ts and cs %>
