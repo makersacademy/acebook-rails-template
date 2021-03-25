@@ -42,4 +42,31 @@ feature "signing up and signing in" do
     expect(page).to have_content("Invalid Email or password.")
   end
 
+  feature "a user can't sign up with an invalid email" do
+    
+    scenario ": email is test@me" do
+      sign_up_as_testy('test@me')
+      expect(page).not_to have_content("Signed in successfully.")
+      expect(page).to have_button("Sign up")
+    end
+
+    scenario ": email is t..est@me" do
+      sign_up_as_testy('t..est@me')
+      expect(page).not_to have_content("Signed in successfully.")
+      expect(page).to have_button("Sign up")
+    end
+
+    scenario ": email is test@me.c" do
+      sign_up_as_testy('test@me')
+      expect(page).not_to have_content("Signed in successfully.")
+      expect(page).to have_button("Sign up")
+    end
+
+    scenario ": email is te@st@me" do
+      sign_up_as_testy('test@me')
+      expect(page).not_to have_content("Signed in successfully.")
+      expect(page).to have_button("Sign up")
+    end
+  end
+
 end

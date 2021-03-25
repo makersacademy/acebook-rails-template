@@ -1,8 +1,8 @@
-def sign_up_as_testy
+def sign_up_as_testy(email = 'test@test.com')
   visit('/users/sign_up')
   fill_in('Name', with: 'Testy')
   fill_in('Surname', with: 'Testerson')
-  fill_in('Email', with: 'test@test.com')
+  fill_in('Email', with: email)
   fill_in('Password', with: 'Password123')
   fill_in('Password confirmation', with: 'Password123')
   click_button('Sign up')
