@@ -2,9 +2,12 @@
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  <form action=<%= "/posts/#{ post.id }/edit" %>>
-    <label for=<%= "submit_#{ post.id }" %>>Update</label>
-    <input type='submit' id=<%= "submit_#{ post.id }" %> value="update">
+  <form action="/posts/<%= post.id %>/edit">
+    <input type="submit" id="submit_<%= post.id %>" value="update">
+  </form>
+  <form action="/posts/<%= post.id %>" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
   </form>
 <% end %>
 

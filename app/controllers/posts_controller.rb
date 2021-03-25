@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  
+
   def index
     @posts = Post.all
   end
@@ -27,8 +27,9 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-  def delete
-
+  def destroy
+    Post.destroy_by(id: params[:id])
+    redirect_to posts_url
   end
 
   private
