@@ -14,6 +14,7 @@ jobs:
           POSTGRES_USER: acebook-markzuckerbergisalizard
           POSTGRES_DB: pgapp_development_test
           POSTGRES_HOST_AUTH_METHOD: trust
+      - image: 'cimg/node:13.12-browser'
     steps:
       - checkout
       # Restore Cached Dependencies
@@ -21,6 +22,10 @@ jobs:
         name: Restore bundle cache
         key: acebook-markzuckerbergisalizard-{{ checksum "Gemfile.lock" }}
       # Bundle install dependencies
+      - browser-tools/install-browser-tools
+orbs:
+  browser-tools: circleci/browser-tools@x.y
+version: 2.1
       - run: gem install bundler
       - run: bundle install --path vendor/cache
       # Cache Dependencies
