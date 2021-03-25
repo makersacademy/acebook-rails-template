@@ -15,6 +15,8 @@ RSpec.describe User, type: :model do
   it { is_expected.to respond_to(:password) }
   it { is_expected.to respond_to(:password_confirmation) }
   it { is_expected.to respond_to(:authenticate) }
+  it { is_expected.to respond_to(:remember_token) }
+
 
   it { is_expected.to be_valid }
 
@@ -121,6 +123,13 @@ RSpec.describe User, type: :model do
 
     describe "should be minimum 6 characters" do
       before { @user.password = @user.password_confirmation = "a" * 5 }
+      it "should not be valid" do
+        expect(@user).not_to be_valid
+      end
+    end
+
+    describe "should be maximum 10 characters" do
+      before { @user.password = @user.password_confirmation = "a" * 11 }
       it "should not be valid" do
         expect(@user).not_to be_valid
       end

@@ -1,0 +1,17 @@
+<h1>Sign up</h1>
+<%= form_for(@user) do |l| %>
+    <%= l.label :name %>
+    <%= l.text_field :name %>
+
+    <%= l.label :email %>
+    <%= l.text_field :email %>
+
+    <%= l.label :password %>
+    <%= l.password_field :password %>
+
+    <%= l.label :password_confirmation, "Confirmation" %>
+    <%= l.password_field :password_confirmation %>
+
+    <%= l.submit "Create my account", class: "btn btn-large btn-primary" %>
+
+    <% end %>

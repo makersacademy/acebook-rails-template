@@ -5,7 +5,7 @@ RSpec.feature "Post", type: :feature do
       Capybara.current_driver= :selenium
     end
     
-    scenario "Can submit and display posts with line breaks" do
+    xscenario "Can submit and display posts with line breaks" do
       visit "/posts"
       click_link "New post"
       fill_in "Message", with: "Hello\n world team lizard!"

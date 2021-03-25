@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
-  scenario 'create a post and it appears on the home page' do
+  xscenario 'create a post and it appears on the home page' do
     visit "posts#index"
     click_link "New post"
     fill_in "Message", with: "Hello World"
