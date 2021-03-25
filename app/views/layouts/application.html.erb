@@ -19,7 +19,7 @@
   <%= link_to "Sign in to Acebook", signin_path %><br>
   <% end %>
   <%= signed_in? %>
-  
+  <%= current_user %>
   </div>
   <div class="container">
       <% flash.each do |key, value| %>
