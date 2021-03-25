@@ -5,6 +5,10 @@ class PostsController < ApplicationController
   end
 
   def create
+    p (post_params)
+    p ('\n')
+    p (params)
+    p(current_user)
     @post = Post.create(post_params)
     redirect_to posts_url
   end
