@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.feature "Post", type: :feature do
     before(:each) do
-      Capybara.current_driver= :selenium
       @user = User.new(name: "Lizardo", email: "lizard@example.com", password: "123secure", password_confirmation: "123secure")
       @user.save
       sign_in_helper(@user)
@@ -13,6 +12,6 @@ RSpec.feature "Post", type: :feature do
       click_link "New post"
       fill_in "Message", with: "Hello\n world team lizard!"
       click_button "Submit"
-      expect(page.html).to match(/Hello\s*<br>\s*world team lizard!/)
+      expect(page).to have_selector(".container", text: "Hello world team lizard! New post")
     end
 end
