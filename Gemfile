@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'travis-lint'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 # Use postgresql as the database for Active Record
@@ -35,7 +35,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'rspec-rails', '~> 3.5'
+    gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails', branch: "4-0-maintenance"
 end
 
 group :development do
