@@ -103,11 +103,7 @@ GEM
     mimemagic (0.3.9)
       nokogiri (~> 1)
       rake
-<<<<<<< HEAD
-    mini_mime (1.0.2)
-=======
     mini_mime (1.0.3)
->>>>>>> 8168fe0efc0dd3fe98da45079cb47958d8fb470f
     mini_portile2 (2.5.0)
     minitest (5.14.4)
     nio4r (2.5.7)
