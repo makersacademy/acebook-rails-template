@@ -1,16 +1,5 @@
-orbs:
-   heroku: circleci/heroku@1.2.6
-version: 2.1
-workflows:
-   heroku_deploy:
-     jobs:
-       - build
-       - heroku/deploy-via-git:
-           requires:
-             - build # only run deploy-via-git job if the build job has completed
-           filters:
-             branches:
-               only: main # only run deploy-via-git job on master branch
+### pre deploy config
+version: 2
 jobs:
   build:
     working_directory: ~/acebook-markzuckerbergisalizard
@@ -48,3 +37,19 @@ jobs:
       - run: bundle exec rake db:setup
       # Run the tests
       - run: bundle exec rake
+      - run:
+           name: Deploy Master to Heroku
+           command: |
+             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+
+workflows:
+   version: 2
+   build-deploy:
+     jobs:
+       - build
+       - deploy:
+           requires:
+             - build # only run deploy-via-git job if the build job has completed
+           filters:
+             branches:
+               only: main # only run deploy-via-git job 
