@@ -1,4 +1,8 @@
-<%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+<p class="button"><%= button_to "Sign out", destroy_user_session_path, method: :delete %></p>
+
+<%= link_to new_post_path do %>
+  New post
+<% end %>
 
 <div class="all-posts">
 
@@ -16,7 +20,3 @@
   <% end %>
 
 </div>
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
