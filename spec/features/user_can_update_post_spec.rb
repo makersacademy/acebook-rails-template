@@ -1,6 +1,6 @@
 feature 'updating own posts' do
   scenario 'user can update their own posts up to 10 minutes' do
-    sign_up_as_testy()
+    sign_up_as_testy
 
     click_link('New post')
     fill_in('Message', with: 'test post')

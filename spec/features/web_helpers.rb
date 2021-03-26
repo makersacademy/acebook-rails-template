@@ -20,6 +20,5 @@ end
 
 def sign_up_as_testy_and_log_out
   sign_up_as_testy
-  click_button("logout")
+  click_button('logout')
 end
-
