@@ -1,11 +1,5 @@
 ### pre deploy config
 version: 2.1
-orbs:
-  heroku: circleci/heroku@1.2.6
-workflows:
-  heroku_deploy:
-    jobs:
-      - deploy
 jobs:
   build:
     working_directory: ~/acebook-markzuckerbergisalizard
@@ -44,12 +38,9 @@ jobs:
       # Run the tests
       - run: bundle exec rake
   deploy:
-    executor: heroku/default
     steps:
       - checkout
-      - heroku/install
       - run:
-          command: >
-            echo "The command above installs Heroku, the command below deploys.
-            What you do inbetween is up to you!"
-      - heroku/deploy-via-git
+          name: Deploy Main to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
