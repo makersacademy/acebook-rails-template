@@ -31,4 +31,11 @@ feature 'user homepage' do
         expect(page).not_to have_content("Hello Lizard")
       end
 
+    scenario 'post does not show for other users' do
+      click_link "Sign out"
+      visit("/users/#{@user.id}")
+      expect(page).to have_content("You must be signed in to view that page!")
+      expect(page).not_to have_content("Hello Lizard")
+    end
+
   end
