@@ -37,10 +37,24 @@ jobs:
       - run: bundle exec rake db:setup
       # Run the tests
       - run: bundle exec rake
-      - run:
-           name: Deploy Main to Heroku
+    deploy:
+     docker:
+       - image: circleci/ruby:2.6.3-stretch-node
+        environment:
+          PGHOST: localhost
+          PGUSER: acebook-markzuckerbergisalizard
+          RAILS_ENV: development
+      - image: postgres:9.5
+        environment:
+          POSTGRES_USER: acebook-markzuckerbergisalizard
+          POSTGRES_DB: pgapp_development_test
+          POSTGRES_HOST_AUTH_METHOD: trust
+     steps:
+       - checkout
+       - run:
+           name: Deploy Master to Heroku
            command: |
-             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
+             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 # heroku deploy 
 workflows:
    version: 2
