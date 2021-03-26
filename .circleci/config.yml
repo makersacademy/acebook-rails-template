@@ -1,5 +1,11 @@
 ### pre deploy config
-version: 2
+version: 2.1
+orbs:
+  heroku: circleci/heroku@1.2.6
+workflows:
+  heroku_deploy:
+    jobs:
+      - deploy
 jobs:
   build:
     working_directory: ~/acebook-markzuckerbergisalizard
@@ -37,33 +43,13 @@ jobs:
       - run: bundle exec rake db:setup
       # Run the tests
       - run: bundle exec rake
-    deploy:
-     docker:
-       - image: circleci/ruby:2.6.3-stretch-node
-        environment:
-          PGHOST: localhost
-          PGUSER: acebook-markzuckerbergisalizard
-          RAILS_ENV: development
-      - image: postgres:9.5
-        environment:
-          POSTGRES_USER: acebook-markzuckerbergisalizard
-          POSTGRES_DB: pgapp_development_test
-          POSTGRES_HOST_AUTH_METHOD: trust
-     steps:
-       - checkout
-       - run:
-           name: Deploy Master to Heroku
-           command: |
-             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
-# heroku deploy 
-workflows:
-   version: 2
-   build-deploy:
-     jobs:
-       - build
-       - deploy:
-           requires:
-             - build # only run deploy-via-git job if the build job has completed
-           filters:
-             branches:
-               only: main # only run deploy-via-git job 
+  deploy:
+    executor: heroku/default
+    steps:
+      - checkout
+      - heroku/install
+      - run:
+          command: >
+            echo "The command above installs Heroku, the command below deploys.
+            What you do inbetween is up to you!"
+      - heroku/deploy-via-git
