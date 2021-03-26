@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'user homepage' do
     before(:each) do
-      Capybara.current_driver= :selenium
       @user = User.new(name: "Lizardo", email: "lizard@example.com", password: "123secure", password_confirmation: "123secure")
       @user.save
       sign_in_helper(@user)
@@ -12,7 +11,7 @@ feature 'user homepage' do
         click_link "Your Posts"
         expect(page).to have_content("You haven't posted yet!")
     end
-  
+
     scenario 'create a post and it appears on their page' do
       click_link "New Post"
       fill_in "Message", with: "Hello Lizard"
@@ -33,4 +32,3 @@ feature 'user homepage' do
       end
 
   end
-  
