@@ -1,3 +1,4 @@
+
 def sign_up_as_testy(email = 'test@test.com')
   visit('/users/sign_up')
   fill_in('Name', with: 'Testy')
@@ -22,3 +23,4 @@ def sign_up_as_testy_and_log_out
   sign_up_as_testy
   click_button('logout')
 end
+
