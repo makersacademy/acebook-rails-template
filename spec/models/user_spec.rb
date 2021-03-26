@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
   end
 
   describe "when email is in an invalid format" do
-    before { @user.email = "fakeemail"}
+    before { @user.email = "fakeemail"} # add more testing scenarios
     it { should_not be_valid }
   end
 
