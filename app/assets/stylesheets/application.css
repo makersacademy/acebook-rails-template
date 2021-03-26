@@ -15,5 +15,28 @@
  */
 
  * {
-   background-color: rgb(189, 188, 188);
+   background-color: rgb(234, 241, 234);
+   text-align: center;
+   font-family: 'Montserrat', sans-serif;
  }
+
+.post {
+  border-style:solid;
+  border: 1px, slategray; 
+  max-width: 40%;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: snow;
+  
+}
+
+.button {
+  margin: 5px;
+  background-color: snow;
+}
+
+.message, .form {
+  background-color: snow;
+}
+

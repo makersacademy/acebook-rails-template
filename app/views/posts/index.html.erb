@@ -1,15 +1,21 @@
 <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
 
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-  <form action="/posts/<%= post.id %>/edit">
-    <input type="submit" id="submit_<%= post.id %>" value="update">
-  </form>
-  <form action="/posts/<%= post.id %>" method="post">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete">
-  </form>
-<% end %>
+<div class="all-posts">
+
+  <% @posts.each do |post| %>
+  <div class="post">
+    <p class="message"><%= post.message %></p>
+    <form class="form" action="/posts/<%= post.id %>/edit">
+      <input class="button" type="submit" id="submit_<%= post.id %>" value="update">
+    </form>
+    <form class="form" action="/posts/<%= post.id %>" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <input class="button" type="submit" value="Delete">
+    </form>
+  </div>
+  <% end %>
+
+</div>
 
 <%= link_to new_post_path do %>
   New post
