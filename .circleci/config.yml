@@ -49,6 +49,8 @@ jobs:
       # Run the tests
       - run: bundle exec rake
   deploy:
+    docker:
+      - image: circleci/ruby:2.6.3-stretch-node
     steps:
       - checkout
       - run:
