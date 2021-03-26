@@ -5,7 +5,6 @@ require 'selenium-webdriver'
 
 RSpec.feature 'Timeline', type: :feature do
   before(:each) do
-    Capybara.current_driver= :selenium
     @user = User.new(name: "Lizardo", email: "lizard@example.com", password: "123secure", password_confirmation: "123secure")
     @user.save
     sign_in_helper(@user)
