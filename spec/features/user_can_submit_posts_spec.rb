@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'selenium-webdriver'
 
 RSpec.feature 'Timeline', type: :feature do
   before(:each) do

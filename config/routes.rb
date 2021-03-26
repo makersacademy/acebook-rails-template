@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'users#new'
   match '/signup',  to: 'users#new', via: [:get, :post]
   match '/signin',  to: 'sessions#new', via: [:get, :post]
-  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/signout', to: 'sessions#destroy', via: [:delete]
+  match 'users/:id' => 'users#show', via: :get
 
 end

@@ -8,6 +8,7 @@ RSpec.feature "Post", type: :feature do
     end
 
     scenario "Can submit and display posts with line breaks" do
+      target = 'Hello\n world team lizard!'
       visit "/posts"
       click_link "New post"
       fill_in "Message", with: "Hello\n world team lizard!"

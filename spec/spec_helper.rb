@@ -1,4 +1,7 @@
 # frozen_string_literal: true
+
+require_relative '../app/helpers/sessions_helper'
+
 require 'simplecov'
 require_relative './webhelpers/sign_in.rb'
 require_relative './webhelpers/sign_up.rb'
@@ -25,10 +28,10 @@ SimpleCov.start
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.include SessionsHelper
-
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
