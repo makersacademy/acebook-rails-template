@@ -12,10 +12,10 @@
     <form class="form" action="/posts/<%= post.id %>/edit">
       <input class="button" type="submit" id="submit_<%= post.id %>" value="update">
     </form>
-    <form class="form" action="/posts/<%= post.id %>" method="post">
+    <%= form_for post do |form| %>
       <input type="hidden" name="_method" value="DELETE">
       <input class="button" type="submit" value="Delete">
-    </form>
+    <% end %>
   </div>
   <% end %>
 
