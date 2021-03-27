@@ -1,0 +1,20 @@
+language: ruby
+rvm:
+- 2.7.2
+services:
+- postgresql
+before_script:
+- psql -c 'create database travis_ci_test;' -U postgres
+script:
+- bundle install --jobs=3 --retry=3
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: pYCq9qASYjS4b9EC9Z19xafvAySrnM5yb+orKIJ2u6zWl0YrVHggtOi62bX9ZIDoNuVr4eTu1WS5N+t1vhHmBgXg/QA9SkFCy5Z8lsnXRRoaYEFVnbC4waw31428AnA7k+cPn5ge9pFKi4pWsbB0LjxzVi/N4MBlnqpSLt0GIAqm0N7IBfo/9LvjGwjdU4QZDBBe3VY5E/Mm2L1SVgW9DFJnBXga6d2CSAzc4HhJ4k8rqIqpNA0YEChUbhGvVACnHJCRMf9SDzR+Mko+Lay+xWdSu+lGNSunWkyZsS/N8t9aqi/H48So8UFOop++Pu+ckt3mF9NpGcytF2fQXdje7KTDkMUTccWP7zWdAacyLKVLzvdcRXkPcsktcgv68EutxD5WoZgg3GsARuL/WngGAId8/M4ucL7BLaRypcvzKxm+k3QBP5/ezS1hgaBVry0rVClVg6lX3liwG6skW76h0wrx0X3mJzGLhLVgNeXX3SYhtqdcOLJg3v+GV9+5XGxBA0pzAlckl62Jiao+g7YeuTjvo8xvimdWBg4JS7aMIN6QMfqN3ztxHfG6fnKfmC+Z9cmdyRhak2WJwqD1e/xPRU/UnPId9s8hgU2a0Q/eE2LNMalxJGMKHqH3DzL0l4E9ll738Ez8z2THKck4ldGoni2g5M2+TOQcXuoggz62EqQ=
+  app: acebook-gets-railed
+  on:
+    repo: iainaitken/acebook-team-gets-railed
+  skip_cleanup: 'true'
