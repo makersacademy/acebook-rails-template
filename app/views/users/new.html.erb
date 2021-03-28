@@ -1,22 +1,25 @@
-<h1>Sign up</h1>
-<%= form_for(@user) do |l| %>
-    <% if @user.errors.any? %>
-    <% @user.errors.full_messages.each do |msg| %>
-        <li>* <%= msg %></li>
+<!-- div was created for testing purpose to see bootstrap is enabled -->
+<div class="container text-center">
+  <h1>Sign up</h1>
+  <%= form_for(@user) do |l| %>
+      <% if @user.errors.any? %>
+      <% @user.errors.full_messages.each do |msg| %>
+          <li>* <%= msg %></li>
+        <% end %>
       <% end %>
-    <% end %>
-    <%= l.label :name %>
-    <%= l.text_field :name %>
+      <%= l.label :name %>
+      <%= l.text_field :name %>
 
-    <%= l.label :email %>
-    <%= l.text_field :email %>
+      <%= l.label :email %>
+      <%= l.text_field :email %>
 
-    <%= l.label :password %>
-    <%= l.password_field :password %>
+      <%= l.label :password %>
+      <%= l.password_field :password %>
 
-    <%= l.label :password_confirmation, "Confirmation" %>
-    <%= l.password_field :password_confirmation %>
+      <%= l.label :password_confirmation, "Confirmation" %>
+      <%= l.password_field :password_confirmation %>
 
-    <%= l.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= l.submit "Create my account", class: "btn btn-large btn-primary" %>
 
-    <% end %>
+      <% end %>
+  </div>
