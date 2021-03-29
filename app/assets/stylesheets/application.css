@@ -49,6 +49,8 @@ form {
   margin-top: 0px;
 }
 
+.messagePRE{overflow: scroll;}
+
 .form {
   background-color: snow;
 }
@@ -67,4 +69,8 @@ header, h1 {
   max-width: 40%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.post_message {
+  white-space: pre-wrap;
 }

@@ -1,12 +1,8 @@
+require_relative 'web_helpers'
+
 feature 'deleting own posts' do
   scenario 'users can delete their own posts' do
-    visit('/users/sign_up')
-    fill_in('Name', with: 'Testy')
-    fill_in('Surname', with: 'Testerson')
-    fill_in('Email', with: 'test@test.com')
-    fill_in('Password', with: 'Password123')
-    fill_in('Password confirmation', with: 'Password123')
-    click_button('Sign up')
+    sign_up_as_testy()
 
     click_link('New post')
     fill_in('Message', with: 'test post')
@@ -19,7 +15,7 @@ feature 'deleting own posts' do
     expect(page).not_to have_content('test post')
   end
 
-  xscenario "users can't delete other peoples posts" do
+  scenario "users can't delete other peoples posts" do
     sign_up_as_testy
 
     click_link('New post')
