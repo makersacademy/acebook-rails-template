@@ -2,9 +2,12 @@
 
 <% if @user_posts.length > 0 %>
  <% @user_posts.each do |post| %>
+ <div class="neonBox">
+   <div class="alert alert-custom" role="alert">
     <%= simple_format(post.message) %>
+    </div>
+  </div>
   <% end %>
   <% else %>
   <p>You haven't posted yet! Why not <%= link_to "make a post", new_post_path %> now?</p>
   <% end %>
-  

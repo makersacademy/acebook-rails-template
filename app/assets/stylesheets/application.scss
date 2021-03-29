@@ -18,16 +18,20 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100%;
+  font-family: 'Courier New', monospace;
  }
 
  .alert-custom {
-   // background-color: #d63384;
    border-style: solid;
    border-color: #f002ff;
    border-width: 5px;
    $alert-border-radius: 10px;
    color: #fff;
-   font-family: 'Courier New', monospace;
+ }
+
+ .alert-custom-login {
+   background-color: #f002ff;
+   color: #fff;
  }
 
  .neon {
@@ -66,6 +70,13 @@
   color: #fff;
 }
 
+a {
+  color: #FFF;
+}
+a:hover {
+   color: #00F
+}
+
 .form-box {
   text-align: right;
   margin-left: auto;
@@ -79,4 +90,9 @@
 }
 .center {
   text-align: center;
+}
+
+.navbar-brand {
+  padding-left: 10px;
+  padding-right: 10px;
 }

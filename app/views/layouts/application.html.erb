@@ -19,13 +19,15 @@
   <%# <%= link_to "Your Posts", "/users/#{current_user.id}" %> <br>
   <%# <%= link_to "New Post", new_post_path %>
     <% else %>
-  <%# <%= link_to "Sign up for Acebook", "/signup" %> <br> 
+  <%# <%= link_to "Sign up for Acebook", "/signup" %> <br>
   <%# <%= link_to "Sign in to Acebook", signin_path %><br>
   <% end %>
   </div>
   <div class="container">
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+        <div class="alert alert-custom-login alert-dismissible fade show <%= key %>" role="alert"><%= value %>
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        </div>
       <% end %>
     <%= yield %>
     <%# <%= debug(params) if Rails.env.development? %> %>

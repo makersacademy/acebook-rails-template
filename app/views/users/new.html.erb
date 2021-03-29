@@ -2,7 +2,7 @@
 <div class="container text-center">
   <div class="neonBox">
     <div class="alert alert-custom" role="alert">
-   
+
     <h1>Sign up</h1>
       <%= form_for(@user) do |l| %>
         <% if @user.errors.any? %>
@@ -30,10 +30,9 @@
           </div>
         </div>
       </div>
-    <%= l.submit "Create my account", class: "btn btn-large btn-alert" %>    
+      <br> 
+    <%= l.submit "Create my account", class: "btn btn-large btn-alert" %>
     <% end %>
     </div>
   </div>
 </div>
-
-
