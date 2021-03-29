@@ -1,8 +1,11 @@
 <% @posts.each do |post| %>
-  <%= simple_format(post.message) %>
+<div class="neonBox">
+  <div class="alert alert-custom" role="alert">
+    <%= simple_format(post.message) %>
+    </div>
+  </div>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
-

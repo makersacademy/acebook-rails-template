@@ -12,3 +12,45 @@
  *
  */
  @import "bootstrap";
+ body {
+  background-image: url("https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8&w=1000&q=80");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+ }
+
+ .alert-custom {
+   // background-color: #d63384;
+   border-style: solid;
+   border-color: #f002ff;
+   border-width: 5px;
+   $alert-border-radius: 10px;
+   color: #fff;
+   font-family: 'Courier New', monospace;
+ }
+
+ .neon {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+}
+
+.neonBox {
+ color: #f002ff;
+ box-shadow:
+   0 0 5px #f002ff,
+   0 0 10px #f334ff,
+   0 0 20px #f667ff,
+   0 0 40px #f999ff,
+   // 0 0 80px #0ff,
+   // 0 0 90px #0ff,
+   // 0 0 100px #0ff,
+   // 0 0 150px #0ff;
+}
