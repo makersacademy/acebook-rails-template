@@ -11,4 +11,21 @@ RSpec.feature "Register", type: :feature do
 		click_link("Sign Up")
 		expect(page).to have_content("Sign Up Page")
 	end
+
+	scenario "User can sign up" do
+		visit "/users/sign_up"
+		fill_in('email', with: 'test@test.com')
+		fill_in('password', with: 'password')
+		fill_in('password_confirmation', with: 'password')
+		click_button('Sign Up')
+		expect(page).to have_content('Welcome! You have signed up successfully.')
+	end
+
+	scenario "User can sign in" do	
+		visit "/users/sign_in"
+		fill_in('email', with: 'test@test.com')
+		fill_in('password', with: 'password')
+		click_button('Sign In')
+		expect(session[:user_id]).to_not be_nil
+	end
 end
