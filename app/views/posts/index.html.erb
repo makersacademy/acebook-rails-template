@@ -1,12 +1,13 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
-  
-  <li> <%= link_to "Delete", post_path(post.id),  
+
+  <li> <%= link_to "Delete", post_path(post.id),
       method: :delete,
       data: {confirm: "are you sure? "} %> </li>
-  <li> <%= link_to "Update", edit_post_path(post.id)%> 
-  
+  <li> <%= link_to "Update", edit_post_path(post.id)%>
+<br><br>
 <% end %>
+
 <br>
 <%= link_to new_post_path do %>
   New post
