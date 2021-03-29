@@ -5,6 +5,7 @@
   <%= User.find(post.user_id).name %>
   <%= post.created_at.strftime("posted on %m/%d/%Y at %I:%M%p")%>
      <% if current_user.id == post.user_id %>
+     <%= link_to "Edit Post", edit_post_path(post) %>
   <%= link_to "Delete Post", post_path(post), method: :delete,
   data: {confirm: 'Are you sure?'}%>
   <% end %>
