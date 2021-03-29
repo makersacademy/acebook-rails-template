@@ -22,6 +22,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find_by(id: params[:id])
+    post.update_time_check
     post.update(message: params[:post])
     redirect_to posts_url
   end
