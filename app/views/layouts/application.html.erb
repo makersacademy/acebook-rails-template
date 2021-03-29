@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Acebook</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+<head>
+  <title>Acebook</title>
+  <%= csrf_meta_tags %>
 
-  <body>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
 
   <%= render 'layouts/header' %>
 
-  <div class="links">
-  <% if signed_in? %>
-  <%# <%= link_to "Sign out", signout_path, method: "delete" %> <br>
-  <%# <%= link_to "All Posts", "/posts" %><br>
-  <%# <%= link_to "Your Posts", "/users/#{current_user.id}" %> <br>
-  <%# <%= link_to "New Post", new_post_path %>
-    <% else %>
-  <%# <%= link_to "Sign up for Acebook", "/signup" %> <br>
-  <%# <%= link_to "Sign in to Acebook", signin_path %><br>
-  <% end %>
-  </div>
   <div class="container">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-custom-login alert-dismissible fade show <%= key %>" role="alert"><%= value %>
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        </div>
-      <% end %>
-    <%= yield %>
-    <%# <%= debug(params) if Rails.env.development? %> %>
+    <% flash.each do |key, value| %>
+    <div class="alert alert-custom-login alert-dismissible fade show <%= key %>" role="alert"><%= value %>
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     </div>
-  </body>
+    <% end %>
+
+    <%= yield %>
+
+  </div>
+</body>
+
 </html>
