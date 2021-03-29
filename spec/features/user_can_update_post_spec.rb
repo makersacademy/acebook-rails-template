@@ -18,6 +18,8 @@ feature 'updating own posts' do
   
   scenario 'user can update their own posts up to 10 minutes'
 
+  scenario "user can't update their own posts after 10 minutes"
+
   scenario "users can't edit other peoples posts" do
     sign_up_as_testy
 

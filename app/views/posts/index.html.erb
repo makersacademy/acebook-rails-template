@@ -8,7 +8,10 @@
 
   <% @posts.each do |post| %>
   <div class="post">
-    <p class="message"><%= post.message %></p>
+    <p class="message">
+      <!-- PRE tags make HTML include whitespace -->
+      <PRE class="messagePRE"><%= post.message %></PRE>
+    </p>
     <form class="form" action="/posts/<%= post.id %>/edit">
       <input class="button" type="submit" id="submit_<%= post.id %>" value="update">
     </form>
