@@ -1,12 +1,28 @@
-<h1>Sign in</h1>
-<%= form_for(:session, url: sessions_path) do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-
-    <% end %>
-    <p>New to Acebook? <%= link_to "Sign up now!", signup_path %></p>
+<div class="container text-center">
+  <div class="neonBox">
+    <div class="alert alert-custom" role="alert">
+      <h1>Sign in</h1>
+        <div class="form-box">
+          <%= form_for(:session, url: sessions_path) do |f| %>
+         <div class="container">
+           <div class="row">
+             <div class="col-sm right">
+               <%= f.label :email %> <br>
+               <%= f.label :password %>
+            </div>
+            <div class="col-sm center">
+               <%= f.text_field :email %> <br>
+               <%= f.password_field :password %>
+            </div>
+            <div col-sm>
+            </div>
+          </div>
+        </div>
+     </div>
+    <br>
+    <%= f.submit "Sign in", class: "btn btn-large btn-alert" %>
+    <br>
+<% end %>
+  <p>New to Acebook? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>

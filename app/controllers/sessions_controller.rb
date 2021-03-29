@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:session][:password])
             flash[:success] = "You are now signed in as #{user.name}"
             sign_in(user)
-            redirect_to :posts_url
+            redirect_to posts_url
         elsif !user
             flash.now[:error] = "We can't find your info on our records - please try again."
             render 'new'

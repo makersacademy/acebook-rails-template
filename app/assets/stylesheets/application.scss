@@ -12,7 +12,7 @@
  *
  */
  @import "bootstrap";
- 
+
  body {
   background-image: url("https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8&w=1000&q=80");
   background-repeat: no-repeat;
@@ -56,8 +56,14 @@
    // 0 0 150px #0ff;
 }
 
+.navbar-default {
+  background-color: #f002ff;
+  color: #fff;
+}
+
 .nav-item {
   margin: 5px;
+  color: #fff;
 }
 
 .form-box {
