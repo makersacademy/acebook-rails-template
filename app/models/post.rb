@@ -3,12 +3,11 @@ class Post < ApplicationRecord
 
   # 
 
-  def self.update_time_check
-    if Time.now.to_i > self.created_at.since(600).to_i
+  def update_time_check
+    if Time.now.to_i < self.created_at.since(600).to_i
       true
     else 
-      flash[:alert] = "Post is older than 10 minutes"
-      # false
+      false
     end
   end
     
