@@ -13,6 +13,6 @@ RSpec.feature "Post", type: :feature do
       click_link "New post"
       fill_in "Message", with: "Hello\n world team lizard!"
       click_button "Submit"
-      expect(page).to have_selector(".container", text: "Hello world team lizard! New post")
+      expect(page).to have_selector(".container", text: "Hello world team lizard! Lizardo")
     end
 end
