@@ -17,4 +17,21 @@ RSpec.feature 'Timeline', type: :feature do
     click_button 'Submit'
     expect(page).to have_content('Hello, world!')
   end
+
+  scenario "Can't view all posts if not signed in" do
+    click_link("Sign out")
+    visit '/posts'
+    expect(page).to have_content('You must be signed in to view that page!')
+    expect(current_path).to eq('/')
+    visit('posts/new')
+    expect(page).to have_content('You must be signed in to view that page!')
+    expect(current_path).to eq('/')
+  end
+
+  scenario "Can't make new posts if not signed in" do
+    click_link("Sign out")
+    visit('posts/new')
+    expect(page).to have_content('You must be signed in to view that page!')
+    expect(current_path).to eq('/')
+  end
 end
