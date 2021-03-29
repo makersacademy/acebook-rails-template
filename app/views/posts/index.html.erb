@@ -1,5 +1,8 @@
 <% @posts.each do |post| %>
   <%= simple_format(post.message) %>
+  <% if current_user.id == post.user_id %>
+  <%= link_to "Edit Post", edit_post_path(post) %>
+  <% end %>
 <% end %>
 
 <%= link_to new_post_path do %>
