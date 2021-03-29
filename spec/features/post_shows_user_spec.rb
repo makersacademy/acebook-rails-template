@@ -4,6 +4,6 @@ feature 'showing posts attributes' do
    click_link 'New post'
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
-    expect('.post').to have_content ('Testy Testerson')
+    expect(page).to have_selector(".name", text: "Testy Testerson")
   end
 end
