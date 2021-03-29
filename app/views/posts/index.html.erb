@@ -7,8 +7,11 @@
 <div class="all-posts">
 
   <% @posts.each do |post| %>
+    <% user = User.find_by(id: post.user_id) %>
   <div class="post">
-    <p class="message"><%= post.message %></p>
+    <p class="message"> <%= post.message %> </p>
+    <p class="name"> <%= user.name %> <%= user.surname %> </p>
+
     <form class="form" action="/posts/<%= post.id %>/edit">
       <input class="button" type="submit" id="submit_<%= post.id %>" value="update">
     </form>
