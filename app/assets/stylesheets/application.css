@@ -49,6 +49,8 @@ form {
   margin-top: 0px;
 }
 
+.messagePRE{overflow: scroll;}
+
 .form {
   background-color: snow;
 }
