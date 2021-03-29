@@ -3,9 +3,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def show
-    @post = Post.find(params[:id])
-  end 
+  # Anna: I am not sure if we need it
+  # def show 
+  #   @post = Post.find(params[:id])
+  # end 
 
   def destroy
     @post = Post.find(params[:id])
