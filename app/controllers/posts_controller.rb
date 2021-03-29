@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
   end
 
   def new
@@ -28,10 +28,10 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find_by(id: params[:id])
-    
+
     if current_user.id != @post.user_id
       # this will work, but refreshes the page and puts the message at the top
-      redirect_to posts_url, notice: "Oops, that's not your post!" 
+      redirect_to posts_url, notice: "Oops, that's not your post!"
       # # this could work, but needs to be extracted and drawn on the post
       # flash.now[:alert] = {post: params[:id], message: "Oops, that's not your post!"}
       # print("flash hash: "); puts(flash[:alert])
