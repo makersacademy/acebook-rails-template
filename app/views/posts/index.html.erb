@@ -1,8 +1,12 @@
 <% @posts.each do |post| %>
+  <div class="posts">
   <%= simple_format(post.message) %>
+  <%= User.find(post.user_id).name %>
+  <%= post.created_at.strftime("posted on %m/%d/%Y at %I:%M%p")%>
+  </div>
+  <br>
 <% end %>
 
 <%= link_to new_post_path do %>
   New post
 <% end %>
-
