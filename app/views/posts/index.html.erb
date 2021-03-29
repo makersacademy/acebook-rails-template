@@ -1,5 +1,9 @@
 <p class="button"><%= button_to "Sign out", destroy_user_session_path, method: :delete %></p>
 
+<%= link_to edit_user_registration_path do %>
+  Edit Profile
+  <% end %>
+
 <%= link_to new_post_path do %>
   New post
 <% end %>
