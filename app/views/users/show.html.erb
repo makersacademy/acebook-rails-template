@@ -1,4 +1,11 @@
-<%= @user.name %>, <%= @user.email %>
+<div class="neonBox">
+  <div class="alert alert-custom" role="alert">
+    <div class="center">
+   <h1><%= @user.name.to_s.capitalize %>'s Posts</h1>
+    </div>
+  </div>
+</div>
+
 
 <% if @user_posts.length > 0 %>
  <% @user_posts.each do |post| %>
