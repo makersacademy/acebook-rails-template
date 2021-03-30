@@ -16,16 +16,22 @@
     <title>Acebook</title>
   </head>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
     <%= render 'posts/header' %>
-    <% if user_signed_in? %>
+    
+     <% if user_signed_in? %>
       Hi, <%= current_user.name %>
     <% end %>
     <br/>
-    <div class="container">
-    <%= yield %>
     
+    <div class="container"
+      <br/><br/>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+
+    <div class="container">
+     <%= yield %>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
