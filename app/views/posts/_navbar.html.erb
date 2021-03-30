@@ -9,9 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <span class="navbar-text">
-        <%= link_to "Hey #{ @user.name }!", edit_user_registration_path %> 
+        <%= "Hey #{ @user.name }!"%> 
         </span>
       </ul>
+
+      <span class="btn btn-outline-info">
+        <%= link_to "Edit Profile", edit_user_registration_path, :class => "btn" %> 
+      </span>
 
         <span class="btn btn-outline-info">
           <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "btn" %> 
