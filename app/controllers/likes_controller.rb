@@ -5,6 +5,8 @@ class LikesController < ApplicationController
   def create
     if already_liked?
       flash[:notice] = "You can't like more than once"
+    elsif @post.id == nil
+      flash[:notice] = "You can't like a non-post"
     else
       @post.likes.create(user_id: current_user.id)
       redirect_to posts_url
