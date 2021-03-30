@@ -13,8 +13,8 @@
       </ul>
 
       <% if user_signed_in? %>
-        <span class="btn btn-outline-info">
-          <%= link_to "Hey#{@user.name}!", edit_user_registration_path, :class => "btn" %> 
+        <span class="badge badge-light">
+          <%= link_to "Hey#{@user.name}!", edit_user_registration_path %> 
         </span>
 
         <span class="btn btn-outline-info">
