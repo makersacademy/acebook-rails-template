@@ -1,12 +1,24 @@
+<div class="jumbotron">
+  
+  <p class="lead">
+	
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p class="user"> <%= post.user[:email] %> says: </p>
+	<p class="message"> <%= post.message %> </p>
 
-  <li> <%= link_to "Delete", post_path(post.id),
+  <%= link_to "Delete", post_path(post.id),
       method: :delete,
-      data: {confirm: "are you sure? "} %> </li>
-  <li> <%= link_to "Update", edit_post_path(post.id)%>
+      data: {confirm: "are you sure? "}, class:"btn btn-outline-danger btn-sm" %> 
+   <%= link_to "Update", edit_post_path(post.id), class:"btn btn-outline-primary btn-sm" %>
 <br><br>
+	<hr class="my-4">
 <% end %>
+
+	</p>
+
+</div>
+
+
 
 <br>
 <%= link_to new_post_path do %>
