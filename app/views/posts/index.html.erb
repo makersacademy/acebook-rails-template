@@ -5,6 +5,7 @@
 <% @posts.each do |post| %>
   <p class="user"> <%= post.user[:email] %> says: </p>
 	<p class="message"> <%= post.message %> </p>
+  <p><%= post.created_at %></p> 
   <br/>
   <% if user_signed_in? %>
   <%= link_to "Delete", post_path(post.id),

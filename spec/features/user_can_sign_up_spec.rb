@@ -9,7 +9,7 @@ RSpec.feature "Register", type: :feature do
 	scenario "Takes user to sign up page" do
 		visit "/posts"
 		click_link("Sign Up")
-		expect(page).to have_content("Sign Up Page")
+		expect(page).to have_content("Sign up")
 	end
 
 	scenario "User can sign up" do
