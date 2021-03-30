@@ -14,6 +14,15 @@
   </div>
   </div>
   <br>
+  
+
+  <h3>Comments</h3>
+  <%= render partial: 'posts/comment', collection: @post.comments.reverse %>
+ 
+
+
+  <%= render partial: 'comments/form' %>
+ 
 
 
 <%# Attempt to add post/comment relationship (https://web-crunch.com/posts/lets-build-with-ruby-on-rails-blog-with-comments) %>

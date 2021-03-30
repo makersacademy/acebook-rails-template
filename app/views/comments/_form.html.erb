@@ -1,0 +1,25 @@
+<div class="neonBox">
+  <div class="alert alert-custom" role="alert">
+    <div class="center">
+      <h3>Post a comment</h3>
+
+      <%= form_for [ @post, @comment ] do |f| %>
+      <p>
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </p>
+
+      <p>
+        <%= f.label :comment %><br>
+        <%= f.text_area :comment %>
+      </p>
+
+      <p>
+        <%= f.submit 'Submit' %>
+      </p>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

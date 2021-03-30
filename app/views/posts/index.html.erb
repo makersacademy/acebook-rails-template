@@ -1,7 +1,7 @@
 <div class="neonBox">
   <div class="alert alert-custom" role="alert">
     <div class="center">
-   <h1>All Posts</h1>
+      <h1>All Posts</h1>
     </div>
   </div>
 </div>
@@ -10,21 +10,19 @@
 <div class="neonBox">
   <div class="alert alert-custom" role="alert">
     <%= simple_format(post.message) %>
-    
-    
-  <%= User.find(post.user_id).name %>
-  <%= post.created_at.strftime("posted on %m/%d/%Y at %I:%M%p")%>
-     <% if current_user.id == post.user_id %>
-     <%= link_to "Edit Post", edit_post_path(post) %>
-  <%= link_to "Delete Post", post_path(post), method: :delete,
-  data: {confirm: 'Are you sure?'}%>
-  <%= link_to "Comment",  post_path(post) %>
-  <% end %>
+    <%= User.find(post.user_id).name %>
+    <%= post.created_at.strftime("posted on %m/%d/%Y at %I:%M%p")%>
+    <% if current_user.id == post.user_id %>
+    <%= link_to "Edit Post", edit_post_path(post) %>
+    <%= link_to "Delete Post", post_path(post), method: :delete,
+    data: {confirm: 'Are you sure?'}%>
+    <% end %>
+    <%= link_to "Comment",  post_path(post) %>
   </div>
-  </div>
-  <br>
+</div>
+<br>
 <% end %>
 
 <%= link_to new_post_path do %>
-  New post
+New post
 <% end %>
