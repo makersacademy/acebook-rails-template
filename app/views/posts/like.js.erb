@@ -1,11 +1,19 @@
 $('.liked-btn').on('ajax:success', function() {
     $(this).parent().parent().find('.like_count')
     .html('<%= @post.get_likes.size %> &#128077');
-    $(this).closest('.liked-btn').html('Like');
+
+    var button = $(this).closest('.liked-btn');
+    button.html('Like');
+    button.addClass('like-btn');
+    button.removeClass('liked-btn')
 });
 
 $('.like-btn').on('ajax:success', function(){
     $(this).parent().parent().find('.like_count')
     .html('<%= @post.get_likes.size %> &#128077');
-    $(this).closest('.like-btn').html('Liked');
+
+    var button = $(this).closest('.like-btn');
+    button.html('Liked');
+    button.addClass('liked-btn');
+    button.removeClass('like-btn')
 });
