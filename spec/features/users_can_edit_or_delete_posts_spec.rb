@@ -6,7 +6,7 @@ feature 'delete_or_edit_posts' do
     @user.save
     sign_in_helper(@user)
     click_link "New Post"
-    fill_in "post[message]", with: "Hello Lizard"
+    fill_in "Message", with: "Hello Lizard"
     click_button "Submit"
   end
 

@@ -13,7 +13,13 @@
 
   <%= User.find(post.user_id).name %>
   <%= post.created_at.strftime("posted on %m/%d/%Y at %I:%M%p")%>
-  <%= button_to 'Like', post_likes_path(post), method: :post %>
+  <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+  <% if pre_like %>
+  <%= button_to '👎', post_like_path(post, pre_like), method: :delete %>
+  <% else %>
+  <%= button_to '👍', post_likes_path(post), method: :post %>
+  <% end %>
+  <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes' %></p>
      <% if current_user.id == post.user_id %>
      <%= link_to "Edit Post", edit_post_path(post) %>
   <%= link_to "Delete Post", post_path(post), method: :delete,
