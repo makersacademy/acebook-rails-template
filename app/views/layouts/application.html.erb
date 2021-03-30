@@ -18,17 +18,20 @@
   <body>
 
     <%= render 'posts/header' %>
-    
+
      <% if user_signed_in? %>
-      Hi, <%= current_user.name %>
+     <div class="container">
+      <h3>Hi, <%= current_user.name %><h3>
     <% end %>
+    </div>
     <br/>
-    
-    <div class="container"
+    <% if notice || alert %>
+    <div class="container">
       <br/><br/>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </div>
+    <% end %>
 
     <div class="container">
      <%= yield %>
