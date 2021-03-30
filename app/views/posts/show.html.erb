@@ -21,9 +21,10 @@
 <% @post.comments.reverse.each do |comment| %>
   <div class="neonBox">
   <div class="alert alert-custom" role="alert">
-<%= comment.name %>
+<%= User.find(comment.user_id).name %>
 <%= comment.created_at.strftime("commented on %m/%d/%Y at %I:%M%p")%>
 <%= simple_format(comment.comment) %>
+
 </div>
 </div>
 
