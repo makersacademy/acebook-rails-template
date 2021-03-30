@@ -6,19 +6,15 @@
   <% @posts.each do |post| %>
     <% user = User.find_by(id: post.user_id) %>
     
+    
     <div class="post">
         <p class="message">
-
-        <span id="text">
-        
-          
-        <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %> </span></h4>
-        <!-- PRE tags make HTML include whitespace -->
-        <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
-      </p>
+          <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
+          <!-- PRE tags make HTML include whitespace -->
+          <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
+          <h5> on <span id="date" class="badge badge-pill badge-light"> <%= post.created_at.to_formatted_s(:short) %></span></h5><br>
+        </p>
       
-       <h5> on <span id="date" class="badge badge-pill badge-light"> <%= post.created_at.to_formatted_s(:short) %></span></h5><br>
-      </span>
       <% if post.user_id == current_user.id %>
       <form class="form" action="/posts/<%= post.id %>/edit">
         <input class="btn btn-info" type="submit" id="submit_<%= post.id %>" value="Update">
@@ -29,6 +25,7 @@
       <% end %>
       <% end %>
     </div>
+    
     -------------------------------------------------------------------------------------------------------
   <% end %>
 </div>
