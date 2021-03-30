@@ -28,7 +28,7 @@ feature 'updating own posts' do
     click_button('Submit')
     expect(page).to have_content('test post')
 
-    click_button('Sign out')
+    click_link('Sign out')
 
     sign_up_as_specy
 

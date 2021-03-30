@@ -1,5 +1,3 @@
-<p class="button"><%= button_to "Sign out", destroy_user_session_path, method: :delete %></p>
-
 <%= link_to new_post_path do %>
   New post
 <% end %>
@@ -7,6 +5,7 @@
 <div class="all-posts">
   <% @posts.each do |post| %>
     <% user = User.find_by(id: post.user_id) %>
+    
     <div class="post">
         <p class="message">
         <p class="name"> <%= user.name %> <%= user.surname %></p>
@@ -15,12 +14,13 @@
         <PRE class="messagePRE"><%= post.message %></PRE>
       </p>
       <form class="form" action="/posts/<%= post.id %>/edit">
-        <input class="button" type="submit" id="submit_<%= post.id %>" value="update">
+        <input class="btn btn-info" type="submit" id="submit_<%= post.id %>" value="update">
       </form>
       <%= form_for post do |form| %>
         <input type="hidden" name="_method" value="DELETE">
-        <input class="button" type="submit" value="Delete">
+        <input class="btn btn-info" type="submit" value="Delete">
       <% end %>
     </div>
+    -------------------------------------------------------------------------------------------------------
   <% end %>
 </div>
