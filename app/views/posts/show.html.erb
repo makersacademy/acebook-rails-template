@@ -1,0 +1,38 @@
+
+<div class="neonBox">
+  <div class="alert alert-custom" role="alert">
+    <%= simple_format(@post.message) %>
+    
+    
+  <%= User.find(@post.user_id).name %>
+  <%= @post.created_at.strftime("posted on %m/%d/%Y at %I:%M%p")%>
+     <% if current_user.id == @post.user_id %>
+     <%= link_to "Edit Post", edit_post_path(@post) %>
+  <%= link_to "Delete Post", post_path(@post), method: :delete,
+  data: {confirm: 'Are you sure?'}%>
+  <% end %>
+  </div>
+  </div>
+  <br>
+
+
+<%# Attempt to add post/comment relationship (https://web-crunch.com/posts/lets-build-with-ruby-on-rails-blog-with-comments) %>
+
+  <%# <%= @post.id %>
+  <%# <%= @post.comments%> %>
+
+<%# <div class="neonBox"> %>
+  <%# <div class="alert alert-custom" role="alert"> %>
+    <%# <div class="center"> %>
+    <%# <h1>What's your comment Lizard?</h1> %>
+
+    <%# <%= form_for ([@post, @post.comments.build]) do |form| %> %>
+      <%# <%= form.number_field :post_id, value: @post.id %> <br> %>
+      <%# <%= form.text_field :name %> <br> %>
+      <%# <%= form.text_area :comment %> <br> %>
+      <%# <%= form.submit "Submit" %> %>
+    <%# <% end %> %>
+    
+    <%# </div> %>
+  <%# </div> %>
+<%# </div> %> %>
