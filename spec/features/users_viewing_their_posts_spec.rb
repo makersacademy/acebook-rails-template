@@ -14,7 +14,7 @@ feature 'user homepage' do
 
     scenario 'create a post and it appears on their page' do
       click_link "New Post"
-      fill_in "Message", with: "Hello Lizard"
+      fill_in "post[message]", with: "Hello Lizard"
       click_button "Submit"
       click_link "Your Posts"
       expect(page).not_to have_content("You haven't posted yet!")

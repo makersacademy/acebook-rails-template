@@ -19,7 +19,7 @@ RSpec.describe SessionsController, type: :controller do
   describe 'POST /' do
     it 'redirects to root' do
       post :create, params: { session: { email: @user.email, password: @user.password } }
-      expect(response).to redirect_to(:root)
+      expect(response).to redirect_to(posts_url)
       expect(signed_in?).to be true
     end
 

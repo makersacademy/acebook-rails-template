@@ -1,7 +1,17 @@
-<% @posts.each do |post| %>
-  <div class="posts">
-  <%= simple_format(post.message) %>
+<div class="neonBox">
+  <div class="alert alert-custom" role="alert">
+    <div class="center">
+   <h1>All Posts</h1>
+    </div>
+  </div>
+</div>
 
+<% @posts.each do |post| %>
+<div class="neonBox">
+  <div class="alert alert-custom" role="alert">
+    <%= simple_format(post.message) %>
+    
+    
   <%= User.find(post.user_id).name %>
   <%= post.created_at.strftime("posted on %m/%d/%Y at %I:%M%p")%>
      <% if current_user.id == post.user_id %>
@@ -10,8 +20,8 @@
   data: {confirm: 'Are you sure?'}%>
   <% end %>
   </div>
+  </div>
   <br>
-
 <% end %>
 
 <%= link_to new_post_path do %>

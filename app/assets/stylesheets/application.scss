@@ -12,3 +12,87 @@
  *
  */
  @import "bootstrap";
+
+ body {
+  background-image: url("https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTB8fHxlbnwwfHx8&w=1000&q=80");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  font-family: 'Courier New', monospace;
+ }
+
+ .container {
+   margin-top: 30px;
+ }
+
+ .alert-custom {
+   border-style: solid;
+   border-color: #f002ff;
+   border-width: 5px;
+   $alert-border-radius: 10px;
+   color: #fff;
+ }
+
+ .alert-custom-login {
+   background-color: #f002ff;
+   color: #fff;
+ }
+
+ .neon {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+}
+
+.neonBox {
+ color: #f002ff;
+ box-shadow:
+   0 0 5px #f002ff,
+   0 0 10px #f334ff,
+   0 0 20px #f667ff,
+   0 0 40px #f999ff,
+}
+
+.navbar-default {
+  background-color: #f002ff;
+  color: #fff;
+}
+
+.nav-item {
+  margin: 5px;
+  color: #fff;
+}
+
+a {
+  color: #FFF;
+}
+a:hover {
+   color: #00F
+}
+
+.form-box {
+  text-align: right;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 40%;
+}
+
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+
+.navbar-brand {
+  padding-left: 10px;
+  padding-right: 10px;
+}

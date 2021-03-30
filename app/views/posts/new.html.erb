@@ -1,5 +1,11 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
-  <%= form.submit "Submit" %>
-<% end %>
+<div class="neonBox">
+  <div class="alert alert-custom" role="alert">
+    <div class="center">
+    <h1>What's on your mind Lizard?</h1>
+    <%= form_for @post do |form| %>
+      <%= form.text_area :message %> <br>
+      <%= form.submit "Submit" %>
+    <% end %>
+    </div>
+  </div>
+</div>
