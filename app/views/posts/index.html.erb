@@ -8,12 +8,15 @@
     
     <div class="post">
         <p class="message">
-        <p class="name"> <%= user.name %> <%= user.surname %></p>
-        <p class="date"> <%= post.created_at.to_formatted_s(:short) %></p>
+        
+          <p class="badge rounded-pill bg-secondary"> <%= user.name %> <%= user.surname %></p> 
+        
         <!-- PRE tags make HTML include whitespace -->
         <PRE class="messagePRE"><%= post.message %></PRE>
       </p>
-
+      
+        on <p class="badge rounded-pill bg-light text-dark"> <%= post.created_at.to_formatted_s(:short) %></p><br>
+      
       <% if post.user_id == current_user.id %>
       <form class="form" action="/posts/<%= post.id %>/edit">
         <input class="btn btn-info" type="submit" id="submit_<%= post.id %>" value="update">
