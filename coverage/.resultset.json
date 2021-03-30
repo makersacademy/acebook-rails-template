@@ -321,6 +321,9 @@
           null,
           1,
           null,
+          1,
+          1,
+          null,
           null,
           1,
           1,
@@ -338,6 +341,12 @@
         "lines": [
           null,
           null,
+          1,
+          null
+        ]
+      },
+      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/helpers/comments_helper.rb": {
+        "lines": [
           1,
           null
         ]
@@ -387,6 +396,11 @@
           1,
           1,
           null,
+          null,
+          1,
+          0,
+          0,
+          0,
           null,
           null,
           1,
@@ -902,6 +916,42 @@
           null
         ]
       },
+      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/models/comment_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/models/comment.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/models/post_spec.rb": {
         "lines": [
           null,
@@ -936,17 +986,9 @@
           null,
           null,
           1,
-          85,
+          88,
           1,
           1,
-          1,
-          null
-        ]
-      },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
           1,
           1,
           null
@@ -1098,20 +1140,20 @@
       "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/models/user.rb": {
         "lines": [
           1,
+          58,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
           57,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          56,
           null,
           null,
           null
@@ -1131,6 +1173,6 @@
         ]
       }
     },
-    "timestamp": 1617096744
+    "timestamp": 1617115121
   }
 }

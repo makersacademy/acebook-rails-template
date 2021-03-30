@@ -16,32 +16,20 @@
   <br>
   
 
-  <h3>Comments</h3>
-  <%= render partial: 'posts/comment', collection: @post.comments.reverse %>
+<h3 class="commentBox">Comments</h3>
+<% if @post.comments.length > 0 %>
+<% @post.comments.reverse.each do |comment| %>
+  <div class="neonBox">
+  <div class="alert alert-custom" role="alert">
+<%= comment.name %>
+<%= comment.created_at.strftime("commented on %m/%d/%Y at %I:%M%p")%>
+<%= simple_format(comment.comment) %>
+</div>
+</div>
+
+<% end %>
+<% end %>
+
+<%= render partial: 'comments/form' %>
  
 
-
-  <%= render partial: 'comments/form' %>
- 
-
-
-<%# Attempt to add post/comment relationship (https://web-crunch.com/posts/lets-build-with-ruby-on-rails-blog-with-comments) %>
-
-  <%# <%= @post.id %>
-  <%# <%= @post.comments%> %>
-
-<%# <div class="neonBox"> %>
-  <%# <div class="alert alert-custom" role="alert"> %>
-    <%# <div class="center"> %>
-    <%# <h1>What's your comment Lizard?</h1> %>
-
-    <%# <%= form_for ([@post, @post.comments.build]) do |form| %> %>
-      <%# <%= form.number_field :post_id, value: @post.id %> <br> %>
-      <%# <%= form.text_field :name %> <br> %>
-      <%# <%= form.text_area :comment %> <br> %>
-      <%# <%= form.submit "Submit" %> %>
-    <%# <% end %> %>
-    
-    <%# </div> %>
-  <%# </div> %>
-<%# </div> %> %>

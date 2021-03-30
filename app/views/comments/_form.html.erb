@@ -4,11 +4,7 @@
       <h3>Post a comment</h3>
 
       <%= form_for [ @post, @comment ] do |f| %>
-      <p>
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
-      </p>
-
+  
       <p>
         <%= f.label :comment %><br>
         <%= f.text_area :comment %>

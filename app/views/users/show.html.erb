@@ -9,10 +9,10 @@
 
 <% if @user_posts.length > 0 %>
  <% @user_posts.each do |post| %>
- <div class="neonBox">
-   <div class="alert alert-custom" role="alert">
+  <div class="neonBox">
+  <div class="alert alert-custom" role="alert">
     <%= simple_format(post.message) %>
-    </div>
+  </div>
   </div>
   <% end %>
   <% else %>

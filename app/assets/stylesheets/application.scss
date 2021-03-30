@@ -52,12 +52,20 @@
 }
 
 .neonBox {
- color: #f002ff;
+ color: #fff;
+ margin: 10px;
  box-shadow:
    0 0 5px #f002ff,
    0 0 10px #f334ff,
    0 0 20px #f667ff,
    0 0 40px #f999ff,
+}
+
+.commentBox {
+  font-family: 'Courier New', monospace;
+  color: white;
+  text-align: center;
+  padding: 10px
 }
 
 .navbar-default {
