@@ -1,4 +1,7 @@
 # AceBook
+[![Maintainability](https://api.codeclimate.com/v1/badges/394792d5ea375ab45585/maintainability)](https://codeclimate.com/github/jgumoes/acebook-loungin-lizards/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/394792d5ea375ab45585/test_coverage)](https://codeclimate.com/github/jgumoes/acebook-loungin-lizards/test_coverage)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 
 REQUIRED INSTRUCTIONS:
 

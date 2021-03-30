@@ -1,4 +1,4 @@
-/*
+/* 
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,3 +13,60 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+   /* background-color: rgb(234, 241, 234); */
+   text-align: center;
+   font-family: 'Montserrat', sans-serif;
+   box-sizing: border-box;
+ }
+
+ #container {
+  background-color: rgba(237, 241, 232, 0.925);
+ }
+
+/* .post {
+  border-style: solid;
+  border: 1px, rgb(69, 82, 94);
+  max-width: 40%;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+} */
+
+/* .button {
+  background-color: rgb(231, 238, 233);
+} */
+
+form {
+  display: inline;
+  /* background-color: snow; */
+}
+
+.message {
+  /* background-color: rgba(102, 101, 101, 0.441); */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0px;
+}
+
+.messagePRE{overflow: scroll;}
+
+input {
+  margin-bottom: 10px;
+}
+
+header, h1 {
+  padding: 2px;
+  max-width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post_message {
+  white-space: pre-wrap;
+}
+
+
+
