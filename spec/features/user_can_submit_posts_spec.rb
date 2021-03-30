@@ -34,4 +34,12 @@ RSpec.feature 'Timeline', type: :feature do
     expect(page).to have_content('You must be signed in to view that page!')
     expect(current_path).to eq('/')
   end
+
+  scenario  "posts have a nametag" do
+    visit '/posts'
+    click_link 'New post'
+    fill_in 'Message', with: 'Hello, world!'
+    click_button 'Submit'
+    expect(page).to have_content(@user.name)
+  end
 end
