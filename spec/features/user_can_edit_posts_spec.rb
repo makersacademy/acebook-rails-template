@@ -6,7 +6,7 @@ feature 'editing posts' do
       @user.save
       sign_in_helper(@user)
       click_link "New Post"
-      fill_in "Message", with: "Hello Lizard"
+      fill_in "post[message]", with: "Hello Lizard"
       click_button "Submit"
     end
 

@@ -38,7 +38,7 @@ RSpec.feature 'Timeline', type: :feature do
   scenario  "posts have a nametag" do
     visit '/posts'
     click_link 'New post'
-    fill_in 'Message', with: 'Hello, world!'
+    fill_in 'post[message]', with: 'Hello, world!'
     click_button 'Submit'
     expect(page).to have_content(@user.name)
   end
