@@ -6,10 +6,12 @@
   <p class="user"> <%= post.user[:email] %> says: </p>
 	<p class="message"> <%= post.message %> </p>
   <br/>
+  <% if user_signed_in? %>
   <%= link_to "Delete", post_path(post.id),
       method: :delete,
       data: {confirm: "are you sure? "}, class:"btn btn-outline-danger btn-sm" %>
    <%= link_to "Update", edit_post_path(post.id), class:"btn btn-outline-primary btn-sm" %>
+   <% end %>
 <br>
 	<hr class="my-4"/>
 <% end %>
