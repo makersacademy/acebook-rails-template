@@ -21,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer', platforms: :ruby
 
 gem 'mimemagic', '~> 0.3.8'
-
+gem 'acts_as_votable'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production

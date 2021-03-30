@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  respond_to :js, :html, :json
+
   def index
     @posts = Post.order(created_at: :desc)
   end
@@ -46,6 +48,15 @@ class PostsController < ApplicationController
     else
       @post.destroy
       redirect_to posts_url
+    end
+  end
+
+  def like
+    @post = Post.find_by(id: params[:id])
+    if params[:format] == "like"
+      @post.liked_by current_user
+    elsif params[:format] == "unlike"
+      @post.unliked_by current_user
     end
   end
 
