@@ -11,13 +11,13 @@
 
         <span id="text">
         
-          <p class="name"> <%= user.name %> <%= user.surname %></p> 
-        
+          
+        <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %> </span></h4>
         <!-- PRE tags make HTML include whitespace -->
-        <PRE class="messagePRE"><%= post.message %></PRE>
+        <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
       </p>
       
-        on <p class="date"> <%= post.created_at.to_formatted_s(:short) %></p><br>
+       <h5> on <span id="date" class="badge badge-pill badge-light"> <%= post.created_at.to_formatted_s(:short) %></span></h5><br>
       </span>
       <% if post.user_id == current_user.id %>
       <form class="form" action="/posts/<%= post.id %>/edit">
