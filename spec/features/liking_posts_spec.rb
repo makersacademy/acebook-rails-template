@@ -7,12 +7,9 @@ feature 'liking posts' do
     click_button 'Submit'
 
     expect(page).to have_content('This post is likeable')
-    expect(page).to have_selector('#like-count', text: '0')
-    expect(Post.first.likes.count).to be(0)
+    expect(page).to have_selector('.like_count', text: '0')
 
-    click_button('👍')
-
-    expect(Post.first.likes.count).to be(1)
-    expect(page).to have_selector('#like-count', text: '1')
+    find('a.like-btn').click
+    expect(page).to have_selector('.like_count', text: '1')
   end
 end
