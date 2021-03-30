@@ -54,9 +54,15 @@ header, h1 {
   white-space: pre-wrap;
 }
 
-#text {
-  font-size: 130%;
+#post_message {
+  background-color: rgb(247, 243, 243);
+  border-style: none;
+  width: 450px;
+  height: 150px;
+  resize: both;
 }
+
+
 
 
 
