@@ -10,10 +10,10 @@
 <div class="neonBox">
   <div class="alert alert-custom" role="alert">
     <%= simple_format(post.message) %>
-    
-    
+
   <%= User.find(post.user_id).name %>
   <%= post.created_at.strftime("posted on %m/%d/%Y at %I:%M%p")%>
+  <%= button_to 'Like', post_likes_path(post), method: :post %>
      <% if current_user.id == post.user_id %>
      <%= link_to "Edit Post", edit_post_path(post) %>
   <%= link_to "Delete Post", post_path(post), method: :delete,
