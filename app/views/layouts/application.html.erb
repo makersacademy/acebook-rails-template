@@ -19,9 +19,13 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= render 'posts/header' %>
+    <% if user_signed_in? %>
+      Hi, <%= current_user.name %>
+    <% end %>
     <br/>
     <div class="container">
     <%= yield %>
+    
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
