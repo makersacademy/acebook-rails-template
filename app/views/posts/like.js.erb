@@ -5,7 +5,9 @@ $('.liked-btn').on('ajax:success', function() {
     var button = $(this).closest('.liked-btn');
     button.html('Like');
     button.addClass('like-btn');
-    button.removeClass('liked-btn')
+    button.removeClass('liked-btn');
+    console.log('<%= like_post_path(@post, 'like') %>');
+    button.attr("href", '<%= like_post_path(@post, 'like') %>')
 });
 
 $('.like-btn').on('ajax:success', function(){
@@ -15,5 +17,7 @@ $('.like-btn').on('ajax:success', function(){
     var button = $(this).closest('.like-btn');
     button.html('Liked');
     button.addClass('liked-btn');
-    button.removeClass('like-btn')
+    button.removeClass('like-btn');
+    console.log('<%= like_post_path(@post, 'unlike') %>');
+    button.attr("href", '<%= like_post_path(@post, 'unlike') %>')
 });
