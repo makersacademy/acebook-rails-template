@@ -5,8 +5,7 @@
 <div class="all-posts">
   <% @posts.each do |post| %>
     <% user = User.find_by(id: post.user_id) %>
-    
-    
+ 
     <div class="post">
         <p class="message">
           <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
@@ -15,7 +14,23 @@
           <h5> on <span id="date" class="badge badge-pill badge-light"> <%= post.created_at.to_formatted_s(:short) %></span></h5><br>
         </p>
       
-      <% if post.user_id == current_user.id %>
+      <span class="parent-likes">
+        <% if current_user.liked? post %>
+          <%= link_to like_post_path(post, 'unlike'), class: "liked-btn",
+            method: :put, remote: :true do %> <%= image_tag "green-thumb.png" %>
+          <% end %>
+        <% else %>
+          <%= link_to like_post_path(post, 'like'), class: "like-btn",
+            method: :put, remote: :true do %> <%= image_tag "grey-thumb.png" %>
+          <% end %>
+        <% end %>
+        <span class="like_count" <%= post.id %>>
+          <%= post.get_likes.size %>
+        </span>
+      </span>
+
+    <% if post.user_id == current_user.id %>
+
       <form class="form" action="/posts/<%= post.id %>/edit">
         <input class="btn btn-info" type="submit" id="submit_<%= post.id %>" value="Update">
       </form>
