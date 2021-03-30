@@ -31,11 +31,11 @@
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
     </ul>
+    <% if user_signed_in? %>
     <span class="btn btn-outline-info">
-    
        <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "btn" %> 
-     
     </span>
+    <% end %>
   </div>
 </nav>
 
