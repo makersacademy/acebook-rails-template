@@ -5,7 +5,7 @@ feature 'Likes & Dislikes' do
     @user = User.new(name: "Lizardo", email: "lizard@example.com", password: "123secure", password_confirmation: "123secure")
     @user.save
     @user2 = User.new(name: "Lizardi", email: "lizardi@example.com", password: "123secure", password_confirmation: "123secure")
-    @user.save
+    @user2.save
     sign_in_helper(@user)
     click_link "New Post"
     fill_in "post[message]", with: "Hello Lizard"

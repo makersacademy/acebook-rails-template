@@ -29,12 +29,13 @@ RSpec.describe Like, type: :model do
     it { is_expected.not_to be_valid }
   end
 
-  # describe "the likes count should be 2" do
-  #   before do
-  #     @like.save
-  #     @like2.save
-  #   end
-  #   expect(@post.likes.count).to equal(2)
-  # end
+  describe "the likes count should be 2" do
+   before do
+     @like.save
+    end
+    it 'should change the count of likes' do
+      expect{ @like2.save }.to change { @post.likes.count }.by(1)
+    end
+  end
 
 end
