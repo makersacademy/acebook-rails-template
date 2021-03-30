@@ -1,13 +1,16 @@
-
 language: ruby
 cache:
 - bundle update --bundler
 - bundle install
 services:
-  - postgresql
-
+- postgresql
 script:
 - bundle exec rails db:create
 - bundle exec rails db:migrate
 - bundle exec rails db:environment:set RAILS_ENV=test
 - bundle exec rspec
+deploy:
+  matrix:
+  - provider: heroku
+  api_key:
+    secure: TWlULCUV/rriPcBgLa7A6dixrbgb7YstgWfTcaqhqtx+ROrN9r27yx6guGyjbVvSuNYre5lsjHWuLnhtQeHssb8LvXLrCrV3yCAP0J8vX3G1tSJOlxHT4SlNshLkkPjBVcTJy80hxa01D8oDpqom+vIUzs53/g6tyWKnPHpp8VI5HChTOlN/AVo/2RHTSleNsYME1KMbjJKpB8Ug8Gt4nVQbkzb3GTYk6M15o8cJgKsAdfifkj/OHLNE+26slDkKhzGIRHXIJucwgzwCoC7NDjtlzyx6u/56AFKx9y9ryyyGqP6IqLJGnx4FrkZhZ6+oFtEoHuFy/MQJ7gRM50GHxU3SKSKJXs6zMnGJdO1jPrnmnwIRvAjgWO+aUSg58+TrkASGdzTN9f3rkEpP/iMKweyBUcooHjWcOXUg3CCt5EWhqR+xTPpRrgEDpLVCQLD2AYK4xSCyIpPp0/InFE+AIMYQg4L5AJ2QwC1UyoApo0HUJCiLYne03dNqke3MK/5kwNxKjGfxVJ/241ZAyZOeBs7rKaps/nIFae/Zf5fzXtwRuloi0LFbS7MiseBcx1qmXGY9bJkNozWDa/P0ChHCAJK2xFsXyeR3UOS1L0aYTHNYtBS7UndCIpOX1wH8oHu86OlZPV3Lcde/NqfLA2eiTQhtz44J1C4WrEdu0nSXigs=
