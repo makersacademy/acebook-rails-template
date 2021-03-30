@@ -2,5 +2,5 @@
   <%= form.label :message %>
   <%= form.text_field :message %>
 	<%= form.number_field :user_id, id: :post_user_id, value:current_user.id, type: :hidden %>
-  <%= form.submit "Submit" %>
+  <%= form.submit "Submit", class:"btn btn-outline-primary btn-sm" %>
 <% end %>

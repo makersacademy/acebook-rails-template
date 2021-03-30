@@ -16,10 +16,14 @@
     <title>Acebook</title>
   </head>
   <body>
+
+    <%= render 'posts/header' %>
+    <div class="container"
+    <br/><br/>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= render 'posts/header' %>
-    <br/>
+    </div>
+
     <div class="container">
     <%= yield %>
     </div>
