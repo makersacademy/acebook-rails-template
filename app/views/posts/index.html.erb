@@ -5,21 +5,26 @@
     </div>
   </div>
 </div>
-
 <% @posts.each do |post| %>
-<div class="neonBox">
-  <div class="alert alert-custom" role="alert">
-    <%= simple_format(post.message) %>
-    
-    
-  <%= User.find(post.user_id).name %>
-  <%= post.created_at.strftime("posted on %m/%d/%Y at %I:%M%p")%>
-     <% if current_user.id == post.user_id %>
-     <%= link_to "Edit Post", edit_post_path(post) %>
-  <%= link_to "Delete Post", post_path(post), method: :delete,
-  data: {confirm: 'Are you sure?'}%>
-  <% end %>
-  </div>
+  <div class="neonBox">
+    <div class="alert alert-custom" role="alert">
+      <%= simple_format(post.message) %>
+      <p class="timestamppost"> <%= User.find(post.user_id).name %> <%= post.created_at.strftime("posted on %m/%d/%Y at %I:%M%p")%> </p>
+      <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+      <% if pre_like %>
+        <%= button_to  '👎', post_like_path(post, pre_like), method: :delete, class: "dislikebutton" %>
+      <% else %>
+        <%= button_to '👍', post_likes_path(post), method: :post, class: "likebutton" %>
+      <% end %>
+      <% if post.likes.count > 0 %>
+        <p><%= post.likes.count %> <%= '🦎' %></p>
+      <% end %>
+      <% if current_user.id == post.user_id %>
+        <%= link_to "Edit Post", edit_post_path(post) %>
+        <%= link_to "Delete Post", post_path(post), method: :delete,
+        data: {confirm: 'Are you sure?'} %>
+      <% end %>
+    </div>
   </div>
   <br>
 <% end %>

@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/controllers/posts_controller_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           null,
           null,
@@ -41,7 +41,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/rails_helper.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/rails_helper.rb": {
         "lines": [
           null,
           null,
@@ -109,7 +109,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/environment.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -120,7 +120,7 @@
           1
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/application.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/application.rb": {
         "lines": [
           null,
           null,
@@ -144,7 +144,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/boot.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/boot.rb": {
         "lines": [
           null,
           null,
@@ -153,7 +153,7 @@
           1
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/environments/test.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/environments/test.rb": {
         "lines": [
           null,
           null,
@@ -201,7 +201,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/initializers/application_controller_renderer.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -212,7 +212,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/initializers/assets.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -232,7 +232,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/initializers/backtrace_silencers.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -244,7 +244,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/initializers/cookies_serializer.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -255,7 +255,7 @@
           1
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/initializers/filter_parameter_logging.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -265,7 +265,7 @@
           1
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/initializers/inflections.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -286,7 +286,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/initializers/mime_types.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -295,7 +295,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/initializers/wrap_parameters.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -315,7 +315,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/config/routes.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/config/routes.rb": {
         "lines": [
           null,
           null,
@@ -323,6 +323,8 @@
           null,
           null,
           1,
+          1,
+          null,
           1,
           1,
           1,
@@ -334,7 +336,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/helpers/application_helper.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -342,62 +344,68 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/helpers/users_helper.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/helpers/likes_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/controllers/posts_controller.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/helpers/users_helper.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/controllers/posts_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          17,
+          17,
+          null,
+          null,
+          1,
+          12,
+          12,
+          12,
+          12,
+          null,
+          null,
+          1,
+          47,
+          47,
+          47,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           null,
           1,
           null,
           1,
           13,
-          13,
-          null,
-          null,
-          1,
-          8,
-          8,
-          8,
-          8,
-          null,
-          null,
-          1,
-          31,
-          31,
-          31,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          9,
           null,
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/controllers/application_controller.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -407,7 +415,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/controllers/session_controller_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/controllers/session_controller_spec.rb": {
         "lines": [
           null,
           null,
@@ -459,18 +467,18 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/controllers/sessions_controller.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
           null,
           null,
           1,
-          18,
-          18,
-          16,
-          16,
-          16,
+          23,
+          23,
+          21,
+          21,
+          21,
           2,
           1,
           1,
@@ -481,13 +489,13 @@
           null,
           null,
           1,
-          6,
-          6,
+          7,
+          7,
           null,
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/controllers/users_controller_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/controllers/users_controller_spec.rb": {
         "lines": [
           1,
           null,
@@ -509,11 +517,11 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/controllers/users_controller.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
-          13,
+          14,
           null,
           null,
           1,
@@ -540,7 +548,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/features/posts_can_have_line_breaks_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/features/posts_can_have_line_breaks_spec.rb": {
         "lines": [
           1,
           null,
@@ -562,7 +570,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/features/signing_in_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/features/signing_in_spec.rb": {
         "lines": [
           1,
           1,
@@ -630,7 +638,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/features/user_can_edit_posts_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/features/user_can_edit_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -654,7 +662,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/features/user_can_sign_up_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/features/user_can_sign_up_spec.rb": {
         "lines": [
           1,
           null,
@@ -695,7 +703,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/features/user_can_submit_posts_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/features/user_can_submit_posts_spec.rb": {
         "lines": [
           null,
           null,
@@ -744,7 +752,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/features/user_posts_are_in_reverse_order_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/features/user_posts_are_in_reverse_order_spec.rb": {
         "lines": [
           1,
           null,
@@ -768,7 +776,7 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/features/users_can_edit_or_delete_posts_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/features/users_can_edit_or_delete_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -791,7 +799,52 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/features/users_viewing_their_posts_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/features/users_can_like_posts_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/features/users_viewing_their_posts_spec.rb": {
         "lines": [
           1,
           null,
@@ -836,7 +889,26 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/helpers/sessions_helper_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/helpers/likes_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/helpers/sessions_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -902,7 +974,71 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/models/post_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/models/like_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          null,
+          null,
+          4,
+          null,
+          2,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/models/like.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/models/post_spec.rb": {
         "lines": [
           null,
           null,
@@ -931,28 +1067,20 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/models/post.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/models/post.rb": {
         "lines": [
           null,
           null,
           1,
-          85,
+          139,
+          1,
           1,
           1,
           1,
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/models/user_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -1095,10 +1223,11 @@
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/app/models/user.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/models/user.rb": {
         "lines": [
           1,
-          57,
+          73,
+          1,
           1,
           1,
           1,
@@ -1111,13 +1240,24 @@
           1,
           null,
           1,
-          56,
+          72,
           null,
           null,
           null
         ]
       },
-      "/Users/christinechee/Projects/acebook-markzuckerbergisalizard/spec/requests/welcome_spec.rb": {
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/requests/likes_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/spec/requests/welcome_spec.rb": {
         "lines": [
           null,
           null,
@@ -1125,12 +1265,55 @@
           null,
           1,
           1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/joey/Desktop/Projects/acebook-markzuckerbergisalizard/app/controllers/likes_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          5,
+          0,
+          5,
+          0,
+          null,
+          5,
+          5,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          6,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          6,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1617096744
+    "timestamp": 1617117385
   }
 }

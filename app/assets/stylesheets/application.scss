@@ -21,9 +21,47 @@
   font-family: 'Courier New', monospace;
  }
 
+.likebutton {
+  border-radius: 25px;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+.timestamppost {
+  font-size: 9px;
+  font-style: italic;
+}
+
+.dislikebutton {
+  border-radius: 25px;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
  .container {
    margin-top: 30px;
  }
+
+.dislikebutton {
+  background-repeat:no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.likebutton {
+  background-repeat:no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
 
  .alert-custom {
    border-style: solid;
