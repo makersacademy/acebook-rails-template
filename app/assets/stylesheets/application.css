@@ -91,20 +91,17 @@ header, h1 {
   width: 700px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 10px;
 }
 
 
 #submit_4 {
   background-color: #68b0ab;
   border: none;
-
 }
 
 #delete_button {
   background-color: #68b0ab;
   border: none;
-
 }
 
 .navbar-brand {
@@ -129,6 +126,8 @@ header, h1 {
 
 #post-thumbnail {
   float: left;
+  margin-left: -5px;
+  margin-top: 5px;
 }
 
 #name {
@@ -144,4 +143,19 @@ header, h1 {
   background-color: rgb(247, 243, 243);
   height: 80px;
   width: 100%;
+}
+
+#date {
+  float: right;
+  margin-top: 5px;
+  margin-right: -5px;
+}
+
+.parent-likes {
+  float: left;
+  float: bottom;
+}
+
+.post-buttons {
+  /* float: right; */
 }
