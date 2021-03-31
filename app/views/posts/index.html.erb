@@ -47,7 +47,7 @@
     <% if post.user_id == current_user.id %>
 
       <form class="form" action="/posts/<%= post.id %>/edit">
-        <input class="btn btn-info" type="submit" id="submit_<%= post.id %>" value="Update">
+        <input class="btn btn-info" type="submit" id="post-submit" value="Update">
       </form>
       <%= form_for post do |form| %>
         <input type="hidden" name="_method" value="DELETE">
