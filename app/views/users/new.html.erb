@@ -1,0 +1,38 @@
+<!-- div was created for testing purpose to see bootstrap is enabled -->
+<div class="container text-center">
+  <div class="neonBox">
+    <div class="alert alert-custom" role="alert">
+
+    <h1>Sign up</h1>
+      <%= form_for(@user) do |l| %>
+        <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |msg| %>
+            <li>* <%= msg %></li>
+          <% end %>
+        <% end %>
+       <div class="form-box">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm right">
+              <%= l.label :name %><br/>
+              <%= l.label :email %><br/>
+              <%= l.label :password %><br/>
+              <%= l.label :password_confirmation, "Confirmation" %><br/>
+            </div>
+            <div class="col-sm center">
+              <%= l.text_field :name %><br/>
+              <%= l.text_field :email %><br/>
+              <%= l.password_field :password %><br/>
+              <%= l.password_field :password_confirmation %><br/>
+            </div>
+            <div class="col-sm">
+            </div>
+          </div>
+        </div>
+      </div>
+      <br> 
+    <%= l.submit "Create my account", class: "btn btn-large btn-alert" %>
+    <% end %>
+    </div>
+  </div>
+</div>

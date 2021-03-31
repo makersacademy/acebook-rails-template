@@ -7,7 +7,7 @@ the below**
 
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+2. The card wall is here: https://trello.com/b/N6ht59Tm/acebook-markzuckerbergisalizard
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -32,5 +32,11 @@ If you don't have Node.js installed yet, you might run into this error when runn
 ExecJS::RuntimeUnavailable:
   Could not find a JavaScript runtime. See https://github.com/rails/execjs for a list of available runtimes.
  ```
-That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` - 
+That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` -
 and then run `bundle exec rspec` again
+
+***TESTING***
+
+For a more in-depth view of the coverage report run
+
+`open coverage/index.html`

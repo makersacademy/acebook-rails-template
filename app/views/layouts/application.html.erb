@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Acebook</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+<head>
+  <title>Acebook</title>
+  <%= csrf_meta_tags %>
 
-  <body>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
+
+  <%= render 'layouts/header' %>
+
+  <div class="container">
+    <% flash.each do |key, value| %>
+    <div class="alert alert-custom-login alert-dismissible fade show <%= key %>" role="alert"><%= value %>
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    </div>
+    <% end %>
+
     <%= yield %>
-  </body>
+
+  </div>
+</body>
+
 </html>
