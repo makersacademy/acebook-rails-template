@@ -27,8 +27,7 @@ feature 'deleting own posts' do
 
     sign_up_as_specy
 
-    click_button('Delete')
-    expect(page).to have_content "Oops, that's not your post!"
-    expect(page).to have_content('test post')
+  
+    expect(page).not_to have_button('Delete')
   end
 end

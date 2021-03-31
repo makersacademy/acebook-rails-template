@@ -25,20 +25,6 @@
   background-color: rgba(237, 241, 232, 0.925);
  }
 
-/* .post {
-  border-style: solid;
-  border: 1px, rgb(69, 82, 94);
-  max-width: 40%;
-  margin: 20px;
-  margin-left: auto;
-  margin-right: auto;
-
-} */
-
-/* .button {
-  background-color: rgb(231, 238, 233);
-} */
-
 form {
   display: inline;
   /* background-color: snow; */
@@ -67,6 +53,17 @@ header, h1 {
 .post_message {
   white-space: pre-wrap;
 }
+
+#post_message {
+  background-color: rgb(247, 243, 243);
+  border-style: none;
+  width: 450px;
+  height: 150px;
+  resize: both;
+}
+
+
+
 
 
 
