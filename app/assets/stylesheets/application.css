@@ -84,6 +84,7 @@ header, h1 {
   padding-right: 10px;
   padding-left: 10px;
   border-radius: 12px;
+  
 }
 
 .all-posts{
@@ -113,7 +114,18 @@ header, h1 {
 
 #sign-out {
   background-color: #8fc0a9;
+  border: none;
 }
 
+#edit-profile {
+  background-color: #8fc0a9;
+  border: none;
+  margin-right: 10px;
+}
+
+#post-submit {
+  background-color: #68b0ab;
+  border: none;
+}
 
 

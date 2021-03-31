@@ -9,18 +9,18 @@
   </div>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <br>
+    <%= f.text_field :name, placeholder: "Name", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Name'" %>
   </div>
 
   <div class="field">
-    <%= f.label :surname %><br />
-    <%= f.text_field :surname %>
+    <br />
+    <%= f.text_field :surname, placeholder: "Surname", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Surname'" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email",onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Email'"%>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -28,22 +28,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+    <br />
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password",onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'New Password'" %>
+    
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation",onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Password Confirmation'" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <br />
+    <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password",onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Current Password'" %>
   </div>
 
   <div class="actions">
