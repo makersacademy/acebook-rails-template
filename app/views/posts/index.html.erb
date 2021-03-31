@@ -1,19 +1,33 @@
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<div>
+<!--
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar, class: "img-thumbnail", id: "new-post-pic" %>
+  <% end %>
+-->
+  <div class="new-post-form">
+    <%= form_for @post do |form| %>
+      <%= form.text_area :message, placeholder: "Write a new post...", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Write a new post...'", class: "new-post-textbox"  %> <br>
+      <%= form.hidden_field :user_id, :value => @user.id%>
+      <%= form.submit "Submit", class: "btn btn-info", id: "post-submit"  %>
+    <% end %>
+  </div>
+</div>
 
 <div class="all-posts">
   <% @posts.each do |post| %>
     <% user = User.find_by(id: post.user_id) %>
 
+    <% if user.avatar.attached? %>
+      <%= image_tag user.avatar, class: "img-thumbnail" %>
+    <% end %>
+
     <div class="post">
-      <div class="message">
-        <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
-        <!-- PRE tags make HTML include whitespace -->
-        <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
-      </div>
-      
-      <h5><span id="date" class="badge badge-pill badge-light"> <%= time_ago_in_words(post.created_at) %></span></h5><br>
+        <p class="message">
+          <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
+          <!-- PRE tags make HTML include whitespace -->
+          <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
+          <h5><span id="date" class="badge badge-pill badge-light"> <%= time_ago_in_words(post.created_at) %></span></h5><br>
+        </p>
 
       <span class="parent-likes">
         <% if current_user.liked? post %>
@@ -21,7 +35,7 @@
             method: :put, remote: :true do %> <%= image_tag "green-thumb.png" %>
           <% end %>
         <% else %>
-          <%= link_to like_post_path(post, 'like'), class: "like-btn",
+            <%= link_to like_post_path(post, 'like'), class: "like-btn",
             method: :put, remote: :true do %> <%= image_tag "grey-thumb.png" %>
           <% end %>
         <% end %>

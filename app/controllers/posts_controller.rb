@@ -2,13 +2,9 @@ class PostsController < ApplicationController
   respond_to :js, :html, :json
 
   def index
+    @post = Post.new
     @user = current_user
     @posts = Post.order(created_at: :desc)
-  end
-
-  def new
-    @user = current_user
-    @post = Post.new
   end
 
   def create
