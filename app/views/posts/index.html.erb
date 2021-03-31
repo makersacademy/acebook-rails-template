@@ -1,9 +1,12 @@
 <div class="top-content-container">
-    <% if @user.avatar.attached? %>
-      <div class="thumbnail-container">
-        <%= image_tag @user.avatar, class: "img-thumbnail", id: "new-post-pic" %>
-      </div>
-    <% end %>
+    <div class="profile-info">
+      <% if @user.avatar.attached? %>
+        <div class="thumbnail-container">
+          <%= image_tag @user.avatar, class: "img-thumbnail", id: "new-post-pic" %>
+        </div>
+      <% end %>
+      <div id="current-user-name"><%= @user.name %> <%= @user.surname %></div>
+    </div>
 
   <div class="new-post-form">
     <%= form_for @post do |form| %>
