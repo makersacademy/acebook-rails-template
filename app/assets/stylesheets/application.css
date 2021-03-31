@@ -15,11 +15,14 @@
  */
 
  * {
-   /* background-color: rgb(234, 241, 234); */
    text-align: center;
    font-family: 'Montserrat', sans-serif;
    box-sizing: border-box;
- }
+  }
+  
+body {
+  background-color: rgb(234, 241, 234);
+}
 
  #container {
   background-color: rgba(237, 241, 232, 0.925);
@@ -37,7 +40,10 @@ form {
   margin-top: 0px;
 }
 
-.messagePRE{overflow: scroll;}
+.messagePRE{
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
 
 input {
   margin-bottom: 10px;
@@ -62,8 +68,22 @@ header, h1 {
   resize: both;
 }
 
+.post {
+  background-color: aliceblue;
+  margin-top: 26px;
+  margin-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
 
 
+.all-posts{
+  max-width: 100vw;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+}
 
 
 

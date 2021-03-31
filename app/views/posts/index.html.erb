@@ -7,12 +7,13 @@
     <% user = User.find_by(id: post.user_id) %>
 
     <div class="post">
-        <p class="message">
-          <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
-          <!-- PRE tags make HTML include whitespace -->
-          <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
-          <h5><span id="date" class="badge badge-pill badge-light"> <%= time_ago_in_words(post.created_at) %></span></h5><br>
-        </p>
+      <div class="message">
+        <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
+        <!-- PRE tags make HTML include whitespace -->
+        <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
+      </div>
+      
+      <h5><span id="date" class="badge badge-pill badge-light"> <%= time_ago_in_words(post.created_at) %></span></h5><br>
 
       <span class="parent-likes">
         <% if current_user.liked? post %>
@@ -40,7 +41,5 @@
       <% end %>
       <% end %>
     </div>
-
-    -------------------------------------------------------------------------------------------------------
   <% end %>
 </div>
