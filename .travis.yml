@@ -16,7 +16,7 @@ deploy:
   app: gentle-cliffs-05214
   on:
     repo: ianmcnicholas/acebook-team.1
-    branch: travis
+    branch: master
   skip_cleanup: 'true'
   run:
     - "rake db:migrate"
