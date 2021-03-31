@@ -5,7 +5,7 @@ RSpec.describe Comment, type: :model do
     @user = User.new(name: "Lizardo", email: "lizard@example.com", password: "123secure", password_confirmation: "123secure")
     @user.save
     @post = @user.posts.build(message: "Hello world")
-    @comment = @post.comments.build(name: @user.name, comment: "Hemlo")
+    @comment = @post.comments.build(user_id: @user.id, comment: "Hemlo")
   end
 
   describe 'comment should be present' do
