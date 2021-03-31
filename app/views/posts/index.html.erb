@@ -1,7 +1,9 @@
 <div>
-  <% if @user.avatar.attached? %>
-    <%= image_tag @user.avatar, class: "img-thumbnail", id: "new-post-pic" %>
-  <% end %>
+  <div class="thumbnail-container">
+    <% if @user.avatar.attached? %>
+      <%= image_tag @user.avatar, class: "img-thumbnail", id: "new-post-pic" %>
+    <% end %>
+  </div>
 
   <div class="new-post-form">
     <%= form_for @post do |form| %>
@@ -22,16 +24,14 @@
           <%= image_tag user.avatar, class: "img-thumbnail", id: "post-thumbnail" %>
         <% end %>
 
-        <h4><span id="name"><%= user.name %> <%= user.surname %></span></h4>
+        <h4><span id="name" class="badge badge-pill badge-secondary"><%= user.name %> <%= user.surname %></span></h4>
         <h5><span id="date" class="badge badge-pill badge-light"><%= time_ago_in_words(post.created_at) %></span></h5><br>
       </div>
 
-      <div>
         <div class="message">
         <!-- PRE tags make HTML include whitespace -->
           <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
         </div>
-      </div>
 
       <div class="likes">
         <span class="parent-likes">
