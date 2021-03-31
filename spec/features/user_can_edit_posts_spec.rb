@@ -11,7 +11,7 @@ feature 'editing posts' do
     end
 
     scenario 'user can change content of their posts' do
-        first(:link, "Edit Post").click
+        first(:button, "Edit Post").click
         fill_in "Message", with: "Goodbye Lizard"
         click_button "Submit"
         expect(page).to have_content("Goodbye Lizard")

@@ -12,8 +12,8 @@ feature 'delete_or_edit_posts' do
 
 scenario 'delete posts' do
   expect(page).to have_content("Hello Lizard")
-  click_link "Delete Post"
+  click_button "Delete Post"
   expect(page).not_to have_content("Hello Lizard")
-  expect(page).to have_link("New post")
+  expect(page).to have_button("New post")
 end
 end

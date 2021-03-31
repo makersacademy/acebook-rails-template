@@ -10,7 +10,7 @@ RSpec.feature "Post", type: :feature do
     scenario "Can submit and display posts with line breaks" do
       target = 'Hello\n world team lizard!'
       visit "/posts"
-      click_link "New post"
+      click_button "New post"
       fill_in "post[message]", with: "Hello\n world team lizard!"
       click_button "Submit"
       expect(page).to have_selector(".container", text: "Hello world team lizard! Lizardo")
