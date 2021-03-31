@@ -72,10 +72,18 @@ header, h1 {
   background-color: aliceblue;
   margin-top: 26px;
   margin-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 
-
+.all-posts{
+  max-width: 100vw;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+}
 
 
 
