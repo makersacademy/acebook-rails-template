@@ -15,7 +15,7 @@
  */
 
  * {
-   /* background-color: rgb(234, 241, 234); */
+   background-color: rgb(234, 241, 234);
    text-align: center;
    font-family: 'Montserrat', sans-serif;
    box-sizing: border-box;
@@ -37,7 +37,10 @@ form {
   margin-top: 0px;
 }
 
-.messagePRE{overflow: scroll;}
+.messagePRE{
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
 
 input {
   margin-bottom: 10px;
