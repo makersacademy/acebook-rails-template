@@ -11,5 +11,6 @@ jobs:
       - checkout
       - run:
           name: Which bundler?
-          command: bundle -v
+          command: bundle update
       - ruby/bundle-install
+      
