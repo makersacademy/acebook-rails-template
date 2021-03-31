@@ -16,7 +16,7 @@
           <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
           <!-- PRE tags make HTML include whitespace -->
           <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
-          <h5> on <span id="date" class="badge badge-pill badge-light"> <%= post.created_at.to_formatted_s(:short) %></span></h5><br>
+          <h5><span id="date" class="badge badge-pill badge-light"> <%= time_ago_in_words(post.created_at) %></span></h5><br>
         </p>
 
       <span class="parent-likes">
@@ -45,7 +45,10 @@
       <% end %>
       <% end %>
     </div>
+<<<<<<< HEAD
 
     -------------------------------------------------------------------------------------------------------
+=======
+>>>>>>> master
   <% end %>
 </div>
