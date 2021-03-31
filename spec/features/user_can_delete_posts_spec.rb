@@ -4,8 +4,8 @@ feature 'deleting own posts' do
   scenario 'users can delete their own posts' do
     sign_up_as_testy()
 
-    click_link('New post')
-    fill_in('Message', with: 'test post')
+    page.find('#post_message', visible: :all)
+    fill_in('post_message', with: 'test post')
     click_button('Submit')
 
     expect(page).to have_content('test post')
@@ -18,8 +18,8 @@ feature 'deleting own posts' do
   scenario "users can't delete other peoples posts" do
     sign_up_as_testy
 
-    click_link('New post')
-    fill_in('Message', with: 'test post')
+    page.find('#post_message', visible: :all)
+    fill_in('post_message', with: 'test post')
     click_button('Submit')
     expect(page).to have_content('test post')
 

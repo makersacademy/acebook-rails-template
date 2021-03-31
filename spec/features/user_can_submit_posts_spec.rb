@@ -6,8 +6,8 @@ RSpec.feature 'Timeline', type: :feature do
 
     sign_up_as_testy
 
-    click_link 'New post'
-    fill_in 'Message', with: 'Hello, world!'
+    page.find('#post_message', visible: :all)
+    fill_in 'post_message', with: 'Hello, world!'
     click_button 'Submit'
     expect(page).to have_content('Hello, world!')
   end
