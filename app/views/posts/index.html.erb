@@ -2,9 +2,13 @@
   <div class="alert alert-custom" role="alert">
     <div class="center">
    <h1>All Posts</h1>
+   <%= button_to 'New post', new_post_path, method: :get, class: "newpostbutton" %><br>
     </div>
+    
   </div>
 </div>
+
+
 <% @posts.each do |post| %>
   <div class="neonBox">
     <div class="alert alert-custom" role="alert">
@@ -20,8 +24,8 @@
         <p><%= post.likes.count %> <%= '🦎' %></p>
       <% end %>
       <% if current_user.id == post.user_id %>
-        <%= button_to "Edit Post", edit_post_path(post), method: :get %>
-        <%= button_to "Delete Post", post_path(post), method: :delete,
+        <%= button_to "Edit Post", edit_post_path(post), method: :get, class: "postbuttons", id: "editpost" %>
+        <%= button_to "Delete Post", post_path(post), method: :delete, class: "postbuttons", id: "deletepost",
         data: {confirm: 'Are you sure?'} %>
       <% end %>
     </div>
@@ -29,4 +33,3 @@
   <br>
 <% end %>
 
-<%= button_to 'New post', new_post_path, method: :get, class: "newpostbutton" %>
