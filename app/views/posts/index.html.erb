@@ -7,12 +7,12 @@
     <% user = User.find_by(id: post.user_id) %>
  
     <div class="post">
-        <p class="message">
+        <div class="message">
           <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
           <!-- PRE tags make HTML include whitespace -->
           <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
           <h5> on <span id="date" class="badge badge-pill badge-light"> <%= post.created_at.to_formatted_s(:short) %></span></h5><br>
-        </p>
+        </div>
       
       <span class="parent-likes">
         <% if current_user.liked? post %>
@@ -41,6 +41,5 @@
       <% end %>
     </div>
     
-    -------------------------------------------------------------------------------------------------------
   <% end %>
 </div>
