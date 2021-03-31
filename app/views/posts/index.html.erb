@@ -16,7 +16,7 @@
       <p class="timestamppost"> <%= User.find(post.user_id).name %> <%= post.created_at.strftime("posted on %m/%d/%Y at %I:%M%p")%> </p>
       <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
       <% if pre_like %>
-        <%= button_to  '👎', post_like_path(post, pre_like), method: :delete, class: "dislikebutton" %>
+        <%= button_to  '👍', post_like_path(post, pre_like), method: :delete, class: "dislikebutton" %>
       <% else %>
         <%= button_to '👍', post_likes_path(post), method: :post, class: "likebutton" %>
       <% end %>

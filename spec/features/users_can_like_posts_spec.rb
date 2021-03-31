@@ -19,14 +19,15 @@ feature 'Likes & Dislikes' do
 
   scenario "can unlike a post" do
     click_button "👍"
-    click_button "👎"
+    click_button "👍"
     expect(page).not_to have_content("1 🦎")
   end
 
   scenario "cannot like twice the same post" do
     click_button "👍"
-    expect(page).to have_button("👎")
-    expect(page).not_to have_content("👍")
+    expect(page).to have_button("👍")
+    page.assert_selector('[class="dislikebutton"]')
+    page.assert_no_selector('[class="likebutton"]')
   end
 
   scenario "a second user can like the post too" do

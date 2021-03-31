@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-03-31T11:52:47+01:00">2021-03-31T11:52:47+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-03-31T12:31:01+01:00">2021-03-31T12:31:01+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.59
+         2.58
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>591</b> relevant lines,
-    <span class="green"><b>587</b> lines covered</span> and
+    <b>592</b> relevant lines,
+    <span class="green"><b>588</b> lines covered</span> and
     <span class="red"><b>4</b> lines missed. </span>
     (<span class="green">
   99.32%
@@ -469,11 +469,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#4d6675a5e5c61c828ecf68fbe82e4c28ae5ad7ec" class="src_link" title="spec/features/users_can_like_posts_spec.rb">spec/features/users_can_like_posts_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">41</td>
-            <td class="cell--number">29</td>
-            <td class="cell--number">29</td>
+            <td class="cell--number">42</td>
+            <td class="cell--number">30</td>
+            <td class="cell--number">30</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.83</td>
+            <td class="cell--number">1.80</td>
             
           </tr>
         
@@ -9511,8 +9511,8 @@
     
 
     <div class="t-line-summary">
-      <b>29</b> relevant lines.
-      <span class="green"><b>29</b> lines covered</span> and
+      <b>30</b> relevant lines.
+      <span class="green"><b>30</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -9761,7 +9761,7 @@
 
             
 
-            <code class="ruby">    click_button &quot;👎&quot;</code>
+            <code class="ruby">    click_button &quot;👍&quot;</code>
           </li>
         </div>
       
@@ -9827,7 +9827,7 @@
 
             
 
-            <code class="ruby">    expect(page).to have_button(&quot;👎&quot;)</code>
+            <code class="ruby">    expect(page).to have_button(&quot;👍&quot;)</code>
           </li>
         </div>
       
@@ -9838,18 +9838,18 @@
 
             
 
-            <code class="ruby">    expect(page).not_to have_content(&quot;👍&quot;)</code>
+            <code class="ruby">    page.assert_selector(&#39;[class=&quot;dislikebutton&quot;]&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="30">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="30">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    page.assert_no_selector(&#39;[class=&quot;likebutton&quot;]&#39;)</code>
           </li>
         </div>
       
@@ -9860,18 +9860,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="32">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="32">
+            
             
 
             
 
-            <code class="ruby">  scenario &quot;a second user can like the post too&quot; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -9882,7 +9882,7 @@
 
             
 
-            <code class="ruby">      click_button &quot;👍&quot;</code>
+            <code class="ruby">  scenario &quot;a second user can like the post too&quot; do</code>
           </li>
         </div>
       
@@ -9893,7 +9893,7 @@
 
             
 
-            <code class="ruby">      click_link &quot;Sign out&quot;</code>
+            <code class="ruby">      click_button &quot;👍&quot;</code>
           </li>
         </div>
       
@@ -9904,7 +9904,7 @@
 
             
 
-            <code class="ruby">      sign_in_helper(@user2)</code>
+            <code class="ruby">      click_link &quot;Sign out&quot;</code>
           </li>
         </div>
       
@@ -9915,7 +9915,7 @@
 
             
 
-            <code class="ruby">      click_link &quot;All Posts&quot;</code>
+            <code class="ruby">      sign_in_helper(@user2)</code>
           </li>
         </div>
       
@@ -9926,7 +9926,7 @@
 
             
 
-            <code class="ruby">      click_button &quot;👍&quot;</code>
+            <code class="ruby">      click_link &quot;All Posts&quot;</code>
           </li>
         </div>
       
@@ -9937,18 +9937,18 @@
 
             
 
-            <code class="ruby">      expect(page).to have_content(&quot;2 🦎&quot;)</code>
+            <code class="ruby">      click_button &quot;👍&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="39">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="39">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">      expect(page).to have_content(&quot;2 🦎&quot;)</code>
           </li>
         </div>
       
@@ -9959,12 +9959,23 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="41">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
             
             
 

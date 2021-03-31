@@ -16,9 +16,9 @@
        <% if post.likes.count > 0 %>
          <p><%= post.likes.count %> <%= '🦎' %></p>
        <% end %>
-         <%= button_to "Edit Post", edit_post_path(post), method: :get %>
-         <%= button_to "Delete Post", post_path(post), method: :delete,
-         data: {confirm: 'Are you sure?'} %>
+       <%= button_to "Edit Post", edit_post_path(post), method: :get, class: "postbuttons", id: "editpost" %>
+       <%= button_to "Delete Post", post_path(post), method: :delete, class: "postbuttons", id: "deletepost",
+       data: {confirm: 'Are you sure?'} %>
       </div>
     </div>
     <% end %>
