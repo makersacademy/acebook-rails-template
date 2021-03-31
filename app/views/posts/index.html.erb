@@ -3,10 +3,16 @@
   New post
 <% end %>
 
+
+
 <div class="all-posts">
   <% @posts.each do |post| %>
     <% user = User.find_by(id: post.user_id) %>
- 
+
+    <% if user.avatar.attached? %>
+      <%= image_tag user.avatar %>
+    <% end %>
+    
     <div class="post">
         <p class="message">
           <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
