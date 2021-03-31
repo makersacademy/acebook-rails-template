@@ -23,7 +23,7 @@
 
     <div class="post">
         <p class="message">
-          <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
+          <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span></h4>
           <!-- PRE tags make HTML include whitespace -->
           <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
           <h5><span id="date" class="badge badge-pill badge-light"> <%= time_ago_in_words(post.created_at) %></span></h5><br>
@@ -42,7 +42,7 @@
         <span class="like_count" <%= post.id %>>
           <%= post.get_likes.size %>
         </span>
-      </span>
+      </span><br><br> 
 
     <% if post.user_id == current_user.id %>
 
@@ -51,7 +51,7 @@
       </form>
       <%= form_for post do |form| %>
         <input type="hidden" name="_method" value="DELETE">
-        <input class="btn btn-info" type="submit" value="Delete">
+        <input class="btn btn-info" type="submit" value="Delete" id="delete_button">
       <% end %>
       <% end %>
     </div>
