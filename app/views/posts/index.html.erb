@@ -16,20 +16,21 @@
   <% @posts.each do |post| %>
     <% user = User.find_by(id: post.user_id) %>
 
-
     <div class="post">
-      <div>
+      <div class="post-header">
         <% if user.avatar.attached? %>
           <%= image_tag user.avatar, class: "img-thumbnail", id: "post-thumbnail" %>
         <% end %>
-          <h5><span id="date" class="badge badge-pill badge-light"> <%= time_ago_in_words(post.created_at) %></span></h5><br>
-        <h4><span id="name"> <%= user.name %> <%= user.surname %></span></h4>
+
+        <h4><span id="name"><%= user.name %> <%= user.surname %></span></h4>
+        <h5><span id="date" class="badge badge-pill badge-light"><%= time_ago_in_words(post.created_at) %></span></h5><br>
       </div>
+
       <div>
-        <p class="message">
+        <div class="message">
         <!-- PRE tags make HTML include whitespace -->
           <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
-        </p>
+        </div>
       </div>
 
       <span class="parent-likes">
@@ -47,15 +48,15 @@
         </span>
       </span>
 
-    <% if post.user_id == current_user.id %>
+      <% if post.user_id == current_user.id %>
+        <form class="form" action="/posts/<%= post.id %>/edit">
+          <input class="btn btn-info" type="submit" id="submit_<%= post.id %>" value="Update">
+        </form>
 
-      <form class="form" action="/posts/<%= post.id %>/edit">
-        <input class="btn btn-info" type="submit" id="submit_<%= post.id %>" value="Update">
-      </form>
-      <%= form_for post do |form| %>
-        <input type="hidden" name="_method" value="DELETE">
-        <input class="btn btn-info" type="submit" value="Delete">
-      <% end %>
+        <%= form_for post do |form| %>
+          <input type="hidden" name="_method" value="DELETE">
+          <input class="btn btn-info" type="submit" value="Delete">
+        <% end %>
       <% end %>
     </div>
   <% end %>
