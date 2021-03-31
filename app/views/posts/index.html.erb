@@ -1,3 +1,4 @@
+
 <%= link_to new_post_path do %>
   New post
 <% end %>
@@ -6,14 +7,17 @@
   <% @posts.each do |post| %>
     <% user = User.find_by(id: post.user_id) %>
 
+    <% if user.avatar.attached? %>
+      <%= image_tag user.avatar, class: "img-thumbnail" %>
+    <% end %>
+
     <div class="post">
-      <div class="message">
-        <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
-        <!-- PRE tags make HTML include whitespace -->
-        <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
-      </div>
-      
-      <h5><span id="date" class="badge badge-pill badge-light"> <%= time_ago_in_words(post.created_at) %></span></h5><br>
+        <p class="message">
+          <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
+          <!-- PRE tags make HTML include whitespace -->
+          <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
+          <h5><span id="date" class="badge badge-pill badge-light"> <%= time_ago_in_words(post.created_at) %></span></h5><br>
+        </p>
 
       <span class="parent-likes">
         <% if current_user.liked? post %>
@@ -41,5 +45,10 @@
       <% end %>
       <% end %>
     </div>
+<<<<<<< HEAD
+
+    -------------------------------------------------------------------------------------------------------
+=======
+>>>>>>> master
   <% end %>
 </div>
