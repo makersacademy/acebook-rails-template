@@ -5,7 +5,7 @@ feature 'signing up and signing in' do
     sign_up_as_testy
     expect(page).to have_content('Welcome! You have signed up successfully.')
     expect(page).to have_link('New post')
-    expect(page).to have_button('Sign out')
+    expect(page).to have_link('Sign out')
   end
 
   scenario 'a signed-in user can sign out' do
@@ -22,7 +22,7 @@ feature 'signing up and signing in' do
     click_button('Log in')
     expect(page).to have_content('Signed in successfully.')
     expect(page).to have_link('New post')
-    expect(page).to have_button('Sign out')
+    expect(page).to have_link('Sign out')
   end
 
   scenario 'a user tries to log in with an incorrect password' do

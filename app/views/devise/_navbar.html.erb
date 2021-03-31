@@ -1,0 +1,26 @@
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #cadacc;">
+   <a class="navbar-brand" href="/">AceBook</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <% if user_signed_in? %>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <span class="navbar-text">
+        <%= "Hey #{ @user.name }!"%> 
+        </span>
+      </ul>
+
+      <span class="btn btn-outline-info">
+        <%= link_to "Edit Profile", edit_user_registration_path %> 
+      </span>
+
+        <span class="btn btn-outline-info">
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "btn" %> 
+        </span>
+
+      <% end %>
+    </div>
+</nav>

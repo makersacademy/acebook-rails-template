@@ -56,6 +56,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    acts_as_votable (0.13.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
@@ -182,6 +183,8 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
+    rspec_junit_formatter (0.4.1)
+      rspec-core (>= 2, < 4, != 2.12.0)
     rubocop (1.12.0)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
@@ -256,6 +259,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_votable
   byebug
   capybara (~> 2.13)
   devise (~> 4.7)
@@ -268,6 +272,7 @@ DEPENDENCIES
   puma (~> 3.12.6)
   rails (~> 6.0.0)
   rspec-rails (~> 4.0)
+  rspec_junit_formatter
   rubocop
   rubocop-rails
   sass-rails (~> 5.1.0)

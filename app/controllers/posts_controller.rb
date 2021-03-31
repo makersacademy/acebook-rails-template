@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
+  respond_to :js, :html, :json
+
   def index
+    @user = current_user
     @posts = Post.order(created_at: :desc)
   end
 
@@ -17,13 +20,15 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find_by(id: params[:id])
-    validate_owner
+    validate_edit
   end
 
   def update
-    post = Post.find_by(id: params[:id])
-    post.update(message: params[:post])
-    redirect_to posts_url
+    @post = Post.find_by(id: params[:id])
+    if validate_edit == true # hopefully this will stop people from editing through an API POST request
+      @post.update(message: params[:post])
+      redirect_to posts_url
+    end
   end
 
   def destroy
@@ -47,13 +52,30 @@ class PostsController < ApplicationController
     end
   end
 
+  def like
+    @post = Post.find_by(id: params[:id])
+    if params[:format] == "like"
+      @post.liked_by current_user
+    elsif params[:format] == "unlike"
+      @post.unliked_by current_user
+    end
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:message)
   end
 
-  def validate_owner
-    redirect_to posts_url, notice: "Oops, that's not your post!" if current_user.id != @post.user_id
+  def validate_edit
+    if current_user.id != @post.user_id
+      redirect_to posts_url, notice: "Oops, that's not your post!"
+      return false
+    elsif @post.update_time_check == false
+      redirect_to posts_url, notice: "Post is older than 10 minutes"
+      return false
+    else
+      return true
+    end
   end
 end
