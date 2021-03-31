@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    redirect_to posts_url if signed_in?
     @user = User.new
   end
 
