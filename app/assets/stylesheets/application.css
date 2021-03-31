@@ -1,4 +1,4 @@
-/* 
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -19,7 +19,7 @@
    font-family: 'Montserrat', sans-serif;
    box-sizing: border-box;
   }
-  
+
 body {
   background-color: rgb(234, 241, 234);
 }
@@ -68,6 +68,10 @@ header, h1 {
   resize: both;
 }
 
+.img-thumbnail {
+  width: 100px;
+}
+
 .post {
   background-color: aliceblue;
   margin-top: 26px;
@@ -84,6 +88,3 @@ header, h1 {
   margin-right: auto;
   padding-left: 10px;
 }
-
-
-
