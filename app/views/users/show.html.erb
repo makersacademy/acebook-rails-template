@@ -8,13 +8,25 @@
 
 
 <% if @user_posts.length > 0 %>
- <% @user_posts.each do |post| %>
- <div class="neonBox">
-   <div class="alert alert-custom" role="alert">
-    <%= simple_format(post.message) %>
+   <% @user_posts.each do |post| %>
+   <div class="neonBox">
+     <div class="alert alert-custom" role="alert">
+       <%= simple_format(post.message) %>
+       <p class="timestamppost"> You <%= post.created_at.strftime("posted on %m/%d/%Y at %I:%M%p")%> </p>
+       <% if post.likes.count > 0 %>
+         <p><%= post.likes.count %> <%= '🦎' %></p>
+       <% end %>
+         <%= button_to "Edit Post", edit_post_path(post), method: :get %>
+         <%= button_to "Delete Post", post_path(post), method: :delete,
+         data: {confirm: 'Are you sure?'} %>
+      </div>
     </div>
-  </div>
-  <% end %>
+    <% end %>
   <% else %>
-  <p>You haven't posted yet! Why not <%= link_to "make a post", new_post_path %> now?</p>
+  <div class="neonBox">
+    <div class="alert alert-custom" role="alert">
+      <p>You haven't posted yet! Why not make a post now?</p>
+      <%= button_to "Make a post", new_post_path, method: :get, class: "newpostbutton" %>
+      </div>
+  </div>
   <% end %>
