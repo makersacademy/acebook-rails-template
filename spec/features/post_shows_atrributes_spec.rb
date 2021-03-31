@@ -13,7 +13,6 @@ feature 'showing posts attributes' do
     fill_in 'Message', with: 'Hello, world!'
     click_button 'Submit'
 
-    date = Post.first.created_at.to_formatted_s(:short)
-    expect(page).to have_selector("#date", text: date)
+    expect(page).to have_selector("#date", text: 'less than a minute')
   end
 end

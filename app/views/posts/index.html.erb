@@ -5,15 +5,16 @@
 <div class="all-posts">
   <% @posts.each do |post| %>
     <% user = User.find_by(id: post.user_id) %>
- 
+
     <div class="post">
-        <div class="message">
-          <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
-          <!-- PRE tags make HTML include whitespace -->
-          <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
-          <h5> on <span id="date" class="badge badge-pill badge-light"> <%= post.created_at.to_formatted_s(:short) %></span></h5><br>
-        </div>
+      <div class="message">
+        <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
+        <!-- PRE tags make HTML include whitespace -->
+        <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
+      </div>
       
+      <h5><span id="date" class="badge badge-pill badge-light"> <%= time_ago_in_words(post.created_at) %></span></h5><br>
+
       <span class="parent-likes">
         <% if current_user.liked? post %>
           <%= link_to like_post_path(post, 'unlike'), class: "liked-btn",
@@ -40,6 +41,5 @@
       <% end %>
       <% end %>
     </div>
-    
   <% end %>
 </div>
