@@ -53,9 +53,6 @@
           <input class="btn btn-info" type="submit" id="submit_<%= post.id %>" value="Update">
         </form>
 
-        <form class="form" action="/posts/<%= post.id %>/edit">
-          <input class="btn btn-info" type="submit" id="submit_<%= post.id %>" value="Update">
-        </form>
         <%= form_for post do |form| %>
           <input type="hidden" name="_method" value="DELETE">
           <input class="btn btn-info" type="submit" value="Delete" id="delete_button">
