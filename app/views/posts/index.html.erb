@@ -1,8 +1,9 @@
 <div>
+<!--
   <% if @user.avatar.attached? %>
     <%= image_tag @user.avatar, class: "img-thumbnail", id: "new-post-pic" %>
   <% end %>
-
+-->
   <div class="new-post-form">
     <%= form_for @post do |form| %>
       <%= form.text_area :message, placeholder: "Write a new post...", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Write a new post...'", class: "new-post-textbox"  %> <br>
