@@ -14,11 +14,11 @@
  *= require_self
  */
 
- * {
-   text-align: center;
-   font-family: 'Montserrat', sans-serif;
-   box-sizing: border-box;
-  }
+* {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
 
 body {
   background-color: rgb(234, 241, 234);
@@ -80,11 +80,14 @@ header, h1 {
   padding-left: 10px;
 }
 
-
 .all-posts{
   max-width: 100vw;
   width: 700px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 10px;
+}
+
+#new-post-pic {
+  /* margin-left: 20px; */
 }
