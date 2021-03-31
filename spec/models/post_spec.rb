@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-    before do   
+    before do
         @user = User.new(name: "Lizardo", email: "lizard@example.com", password: "123secure", password_confirmation: "123secure")
         @user.save
         @post = @user.posts.build(message: "Hello world")

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :comments 
   end
 
-  resources :posts
+  resources :posts do
+    resources :likes
+  end
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root 'users#new'
