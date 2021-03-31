@@ -19,7 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  PUT /resource
+  # PUT /resource
   def update
     super
     @user.avatar.attach(params[:avatar])

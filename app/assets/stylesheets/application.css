@@ -119,7 +119,7 @@ header, h1 {
   margin-right: 10px;
 }
 
-#post-submit {
+#post-submit, #account-submit {
   background-color: #68b0ab;
   border: none;
 }
