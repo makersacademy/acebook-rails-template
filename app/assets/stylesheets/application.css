@@ -20,22 +20,15 @@
   box-sizing: border-box;
 }
 
-/* body {
-  background-color: #8fc0a9;
-  opacity: 0.5;
-} */
-
  #container {
   background-color: rgba(143,192,169, 0.25);
  }
 
 form {
   display: inline;
-  /* background-color: snow; */
 }
 
 .message {
-  /* background-color: rgba(102, 101, 101, 0.441); */
   padding-top: 30px;
   padding-bottom: 30px;
   margin-top: 0px;
@@ -81,8 +74,6 @@ header, h1 {
   margin-left: auto;
   margin-right: auto;
   max-width: 500px;
-  /* padding-right: 10px; */
-  /* padding-left: 10px; */
   border-radius: 12px;
 }
 
