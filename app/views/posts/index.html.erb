@@ -1,9 +1,9 @@
 <div class="top-content-container">
-  <div class="thumbnail-container">
     <% if @user.avatar.attached? %>
-      <%= image_tag @user.avatar, class: "img-thumbnail", id: "new-post-pic" %>
+      <div class="thumbnail-container">
+        <%= image_tag @user.avatar, class: "img-thumbnail", id: "new-post-pic" %>
+      </div>
     <% end %>
-  </div>
 
   <div class="new-post-form">
     <%= form_for @post do |form| %>
@@ -20,9 +20,11 @@
 
     <div class="post">
       <div class="post-header">
-        <% if user.avatar.attached? %>
-          <%= image_tag user.avatar, class: "img-thumbnail", id: "post-thumbnail" %>
-        <% end %>
+        <div class="post-thumb-container">
+          <% if user.avatar.attached? %>
+            <%= image_tag user.avatar, class: "img-thumbnail", id: "post-thumbnail" %>
+          <% end %>
+        </div>
 
         <h4><span id="name" class="badge badge-pill badge-secondary"><%= user.name %> <%= user.surname %></span></h4>
         <h5><span id="date" class="badge badge-pill badge-light"><%= time_ago_in_words(post.created_at) %></span></h5><br>

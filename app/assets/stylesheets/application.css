@@ -64,7 +64,9 @@ header, h1 {
 }
 
 .img-thumbnail {
-  width: 80px;
+  width: 70px;
+  height: 65px;
+  /* object-fit: contain; */
 }
 
 .post {
@@ -158,6 +160,7 @@ header, h1 {
 
 .thumbnail-container {
   position: absolute;
+  /* object-fit: contain; */
 }
 
 .new-post-form {
