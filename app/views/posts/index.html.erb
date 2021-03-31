@@ -3,16 +3,14 @@
   New post
 <% end %>
 
-
-
 <div class="all-posts">
   <% @posts.each do |post| %>
     <% user = User.find_by(id: post.user_id) %>
 
     <% if user.avatar.attached? %>
-      <%= image_tag user.avatar %>
+      <%= image_tag user.avatar, class: "img-thumbnail" %>
     <% end %>
-    
+
     <div class="post">
         <p class="message">
           <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
@@ -20,7 +18,7 @@
           <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
           <h5> on <span id="date" class="badge badge-pill badge-light"> <%= post.created_at.to_formatted_s(:short) %></span></h5><br>
         </p>
-      
+
       <span class="parent-likes">
         <% if current_user.liked? post %>
           <%= link_to like_post_path(post, 'unlike'), class: "liked-btn",
@@ -47,7 +45,7 @@
       <% end %>
       <% end %>
     </div>
-    
+
     -------------------------------------------------------------------------------------------------------
   <% end %>
 </div>
