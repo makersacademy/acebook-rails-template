@@ -91,3 +91,11 @@ header, h1 {
 #new-post-pic {
   /* margin-left: 20px; */
 }
+
+#post-thumbnail {
+  float: left;
+}
+
+#name {
+  float: left;
+}

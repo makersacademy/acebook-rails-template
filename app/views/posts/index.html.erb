@@ -1,9 +1,8 @@
 <div>
-<!--
   <% if @user.avatar.attached? %>
     <%= image_tag @user.avatar, class: "img-thumbnail", id: "new-post-pic" %>
   <% end %>
--->
+
   <div class="new-post-form">
     <%= form_for @post do |form| %>
       <%= form.text_area :message, placeholder: "Write a new post...", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Write a new post...'", class: "new-post-textbox"  %> <br>
@@ -17,17 +16,21 @@
   <% @posts.each do |post| %>
     <% user = User.find_by(id: post.user_id) %>
 
-    <% if user.avatar.attached? %>
-      <%= image_tag user.avatar, class: "img-thumbnail" %>
-    <% end %>
 
     <div class="post">
-        <p class="message">
-          <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span>:</h4>
-          <!-- PRE tags make HTML include whitespace -->
-          <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
+      <div>
+        <% if user.avatar.attached? %>
+          <%= image_tag user.avatar, class: "img-thumbnail", id: "post-thumbnail" %>
+        <% end %>
           <h5><span id="date" class="badge badge-pill badge-light"> <%= time_ago_in_words(post.created_at) %></span></h5><br>
+        <h4><span id="name"> <%= user.name %> <%= user.surname %></span></h4>
+      </div>
+      <div>
+        <p class="message">
+        <!-- PRE tags make HTML include whitespace -->
+          <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
         </p>
+      </div>
 
       <span class="parent-likes">
         <% if current_user.liked? post %>
