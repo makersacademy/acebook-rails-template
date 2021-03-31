@@ -16,16 +16,17 @@
 
 * {
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family:'Quicksand', sans-serif;
   box-sizing: border-box;
 }
 
-body {
-  background-color: rgb(234, 241, 234);
-}
+/* body {
+  background-color: #8fc0a9;
+  opacity: 0.5;
+} */
 
  #container {
-  background-color: rgba(237, 241, 232, 0.925);
+  background-color: rgba(143,192,169, 0.25);
  }
 
 form {
@@ -66,6 +67,7 @@ header, h1 {
   width: 450px;
   height: 150px;
   resize: both;
+  border-radius: 12px;
 }
 
 .img-thumbnail {
@@ -73,12 +75,15 @@ header, h1 {
 }
 
 .post {
-  background-color: aliceblue;
+  background-color: rgb(247, 243, 243);
   margin-top: 26px;
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
   max-width: 500px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 12px;
 }
 
 .all-posts{
@@ -89,8 +94,37 @@ header, h1 {
   padding-left: 10px;
 }
 
-#new-post-pic {
-  /* margin-left: 20px; */
+
+#submit_4 {
+  background-color: #68b0ab;
+  border: none;
+
+}
+
+#delete_button {
+  background-color: #68b0ab;
+  border: none;
+
+}
+
+.navbar-brand {
+  font-size: 20px;
+}
+
+#sign-out {
+  background-color: #8fc0a9;
+  border: none;
+}
+
+#edit-profile {
+  background-color: #8fc0a9;
+  border: none;
+  margin-right: 10px;
+}
+
+#post-submit {
+  background-color: #68b0ab;
+  border: none;
 }
 
 #post-thumbnail {
