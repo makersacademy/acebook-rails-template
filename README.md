@@ -1,4 +1,6 @@
-# AceBook
+# AceBook...
+
+#Testing if Travis will deploy
 
 REQUIRED INSTRUCTIONS:
 
@@ -32,5 +34,5 @@ If you don't have Node.js installed yet, you might run into this error when runn
 ExecJS::RuntimeUnavailable:
   Could not find a JavaScript runtime. See https://github.com/rails/execjs for a list of available runtimes.
  ```
-That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` - 
+That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` -
 and then run `bundle exec rspec` again

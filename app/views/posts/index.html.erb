@@ -1,7 +1,22 @@
+<div class="jumbotron">
+
+  <p class="lead">
+
 <% @posts.each do |post| %>
-  <p><%= post.message %></p>
+  <p class="user"> <%= post.user[:name] %> says: </p>
+	<p class="message"> <%= post.message %> </p>
+  <p><%= post.created_at %></p>
+  <br/>
+  <% if user_signed_in? && current_user.id == post.user[:id]%>
+  <%= link_to "Delete", post_path(post.id),
+      method: :delete,
+      data: {confirm: "are you sure? "}, class:"btn btn-outline-danger btn-sm" %>
+   <%= link_to "Update", edit_post_path(post.id), class:"btn btn-outline-primary btn-sm" %>
+   <% end %>
+<br>
+	<hr class="my-4"/>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+	</p>
+
+</div>

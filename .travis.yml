@@ -1,0 +1,19 @@
+language: ruby
+cache:
+- bundle update --bundler
+- bundle install
+services:
+- postgresql
+script:
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+- bundle exec rails db:environment:set RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: md5PtvJXlEenTppvYhJ6b3/sDdb1RdtU9hniBvWs6efShEXgYcyYnGoNMQBUbzepWwkmDlQGBk8n4mQdc1/ToIT8OfldMUSO9UAi3XTWi6LVP2Z4MoRc5GE41fNLf3K/1NEDk1PwoeM8fZSRqhPsKCy6+Rt4C7MYQjuX7fRrvxLvXABBVoKri+2ztODfLPHN3RWH8RTExT6dL+5n9IjFSfmCT6eB+g2qgIwaYKOuSGAIj41F3peW4CagEAXDpaJLPXs3AClznMsd48kkZxsUvp7pnoEIM/qGi7gL6uOkYUh3ZBLlhqZ5vUIOlaBeLAIXXf0nsgA9jqPlvvTxJvMdVJpmux2xI9xXwwIMVY5Drbe06be6hiKQDJYj7Y51iCbmKprbbeEeFWeK7bC/Iv32JCAkdw7S3ap2L98bd07nejcC4864xg+02P/VKFuHcqwVm6PURVd3F9Yag3+jGYSfEbeN2ZAj90vNHi2YBUcptRc1u+tHklbWoR0u/FxY0SO//wJWvRjI5M9vyICxJvLwCpa5PmIqaTMLu8sUbKBPaO90gWmUPukREFQTEORma5zMX0q55fqMdJYybZt2TP1R4fY2s6RusEa4a0zt8AIJ67o/8Cnhqefey7GXMGvVUtcv3nK2RoobVg8RavfL8YlucbVoE5dqjKZ5sbLsKN/EI0Q=
+  app: gentle-cliffs-05214
+  on:
+    repo: ianmcnicholas/acebook-team.1
+  skip_cleanup: 'true'

@@ -1,6 +1,6 @@
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
-
-  <%= form.submit "Submit" %>
+	<%= form.number_field :user_id, id: :post_user_id, value:current_user.id, type: :hidden %>
+  <%= form.submit "Submit", class:"btn btn-outline-primary btn-sm" %>
 <% end %>
