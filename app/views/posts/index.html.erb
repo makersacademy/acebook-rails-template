@@ -7,7 +7,7 @@
 	<p class="message"> <%= post.message %> </p>
   <p><%= post.created_at %></p>
   <br/>
-  <% if user_signed_in? %>
+  <% if user_signed_in? && current_user.id == post.user[:id]%>
   <%= link_to "Delete", post_path(post.id),
       method: :delete,
       data: {confirm: "are you sure? "}, class:"btn btn-outline-danger btn-sm" %>
