@@ -4,7 +4,6 @@ feature 'signing up and signing in' do
   scenario 'users can sign up' do
     sign_up_as_testy
     expect(page).to have_content('Welcome! You have signed up successfully.')
-    expect(page).to have_link('New post')
     expect(page).to have_link('Sign out')
   end
 
@@ -21,7 +20,6 @@ feature 'signing up and signing in' do
     fill_in('Password', with: 'Password12')
     click_button('Log in')
     expect(page).to have_content('Signed in successfully.')
-    expect(page).to have_link('New post')
     expect(page).to have_link('Sign out')
   end
 

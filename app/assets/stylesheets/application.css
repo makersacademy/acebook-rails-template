@@ -20,7 +20,7 @@
    font-family:'Quicksand', sans-serif;
    box-sizing: border-box;
   }
-  
+
 /* body {
   background-color: #8fc0a9;
   opacity: 0.5;
@@ -84,7 +84,7 @@ header, h1 {
   padding-right: 10px;
   padding-left: 10px;
   border-radius: 12px;
-  
+
 }
 
 .all-posts{
@@ -127,5 +127,3 @@ header, h1 {
   background-color: #68b0ab;
   border: none;
 }
-
-
