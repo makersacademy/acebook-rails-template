@@ -5,7 +5,7 @@ def sign_up_as_testy(email = 'test@test.com')
   fill_in('Surname', with: 'Testerson')
   fill_in('Email', with: email)
   fill_in('Password', with: 'Password12')
-  fill_in('Password confirmation', with: 'Password12')
+  fill_in('user_password_confirmation', with: 'Password12')
   click_button('Sign up')
 end
 
@@ -15,12 +15,12 @@ def sign_up_as_specy
   fill_in('Surname', with: 'Specerson')
   fill_in('Email', with: 'spec@spec.com')
   fill_in('Password', with: 'Password12')
-  fill_in('Password confirmation', with: 'Password12')
+  fill_in('user_password_confirmation', with: 'Password12')
   click_button('Sign up')
 end
 
 def sign_up_as_testy_and_log_out
   sign_up_as_testy
-  click_link('Sign out')
+  click_link("sign-out-button")
 end
 

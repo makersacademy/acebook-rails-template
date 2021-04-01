@@ -4,7 +4,7 @@ feature 'signing up and signing in' do
   scenario 'users can sign up' do
     sign_up_as_testy
     expect(page).to have_content('Welcome! You have signed up successfully.')
-    expect(page).to have_link('Sign out')
+    expect(page).to have_link("sign-out-button")
   end
 
   scenario 'a signed-in user can sign out' do
@@ -20,7 +20,7 @@ feature 'signing up and signing in' do
     fill_in('Password', with: 'Password12')
     click_button('Log in')
     expect(page).to have_content('Signed in successfully.')
-    expect(page).to have_link('Sign out')
+    expect(page).to have_link("sign-out-button")
   end
 
   scenario 'a user tries to log in with an incorrect password' do
@@ -76,7 +76,7 @@ feature 'signing up and signing in' do
     fill_in('Surname', with: 'Testerson')
     fill_in('Email', with: 'test@test.com')
     fill_in('Password', with: 'Pass')
-    fill_in('Password confirmation', with: 'Pass')
+    fill_in('user_password_confirmation', with: 'Pass')
     click_button('Sign up')
     expect(page).to have_content('Password is too short')
     expect(page).not_to have_content('Signed in successfully.')
@@ -88,7 +88,7 @@ feature 'signing up and signing in' do
     fill_in('Surname', with: 'Testerson')
     fill_in('Email', with: 'test@test.com')
     fill_in('Password', with: 'Password12345')
-    fill_in('Password confirmation', with: 'Password12345')
+    fill_in('user_password_confirmation', with: 'Password12345')
     click_button('Sign up')
     expect(page).to have_content('Password is too long')
     expect(page).not_to have_content('Signed in successfully.')
