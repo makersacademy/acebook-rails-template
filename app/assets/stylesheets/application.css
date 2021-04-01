@@ -173,6 +173,10 @@ header, h1 {
   max-width: 100%;
 }
 
+textarea {
+  resize: none !important;
+}
+
 #current-user-name {
   font-size: 17px;
   position: absolute;

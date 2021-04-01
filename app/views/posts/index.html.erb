@@ -14,7 +14,7 @@
 
   <div class="new-post-form">
     <%= form_for @post do |form| %>
-      <%= form.text_area :message, placeholder: "Write a new post...", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Write a new post...'", class: "new-post-textbox"  %> <br>
+      <%= form.text_area :message, placeholder: "Write a new post...", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Write a new post...'", class: "new-post-textbox" %><br>
       <%= form.hidden_field :user_id, :value => @user.id%>
       <%= form.submit "Submit", class: "btn btn-info", id: "post-submit"  %>
     <% end %>
