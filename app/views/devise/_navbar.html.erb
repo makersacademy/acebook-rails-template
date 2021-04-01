@@ -1,16 +1,28 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #68b0ab;">
    <a class="navbar-brand" href="/">AceBook</a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="navbar-toggler-icon"></span>
+
+  <span class="navbar-text">
+    <%= "Hey #{ @user.name }!"%> 
+  </span>
+
+  <div class="dropdown">
+    <button class="navbar-toggler btn btn-primary dropdown-toggle header" type="button" data-toggle="dropdown">
+      <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="dropdown-menu dropdown-menu-right header">
+
+      <span class="dropdown-button btn btn-outline-info header">
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "btn" %> 
+      </span>
+    </div>
+  </div>
 
     <% if user_signed_in? %>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <span class="navbar-text">
-        <%= "Hey #{ @user.name }!"%> 
-        </span>
+        
       </ul>
 
         <span class="btn btn-outline-info" id="sign-out">
