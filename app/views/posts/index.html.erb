@@ -4,6 +4,10 @@
         <div class="thumbnail-container">
           <%= image_tag @user.avatar, class: "img-thumbnail", id: "new-post-pic" %>
         </div>
+      <% else %>
+        <div class="thumbnail-container">
+          <%= image_tag 'profile-pic.png', class: "img-thumbnail", id: "new-post-pic" %>
+        </div>
       <% end %>
       <div id="current-user-name"><%= @user.name %> <%= @user.surname %></div>
     </div>
@@ -26,6 +30,8 @@
         <div class="post-thumb-container">
           <% if user.avatar.attached? %>
             <%= image_tag user.avatar, class: "img-thumbnail", id: "post-thumbnail" %>
+          <% else %>
+            <%= image_tag 'profile-pic.png', class: "img-thumbnail", id: "post-thumbnail" %>
           <% end %>
         </div>
 
