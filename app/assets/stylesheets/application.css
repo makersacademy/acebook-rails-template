@@ -63,12 +63,6 @@ header, h1 {
   border-radius: 12px;
 }
 
-.img-thumbnail {
-  /* width: 70px;
-  height: 65px; */
-  /* object-fit: contain; */
-}
-
 .post {
   background-color: rgb(247, 243, 243);
   margin-top: 26px;
