@@ -7,31 +7,31 @@
 
   <div class="field">
     <br>
-    <%= f.text_field :name, placeholder: "Name", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Name'" %>
+    <%= f.text_field :name, placeholder: "Name", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Name'", class: "form-control" %>
   </div>
 
   <div class="field">
     <br />
-    <%= f.text_field :surname, placeholder: "Surname", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Surname'" %>
+    <%= f.text_field :surname, placeholder: "Surname", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Surname'", class: "form-control" %>
   </div>
 
   <div class="field">
     <br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Email'" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Email'", class: "form-control" %>
   </div>
 
   <div class="field">
     <br />
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Password(6 characters)'" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Password(6 characters)'", class: "form-control" %>
   </div>
 
   <div class="field">
     <br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Confirm Password'" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Confirm Password'", class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up", id: "post-submit", class: "btn btn-info" %>
+    <%= f.submit "Sign up", id: "post-submit", class: "btn btn-info"%>
   </div>
 <% end %>
 
