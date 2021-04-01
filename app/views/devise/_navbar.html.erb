@@ -1,5 +1,4 @@
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #cadacc;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #68b0ab;">
    <a class="navbar-brand" href="/">AceBook</a>
 
   <span class="navbar-text">
@@ -25,10 +24,9 @@
         
       </ul>
 
-
-      <span class="btn btn-outline-info">
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "btn" %> 
-      </span>
+        <span class="btn btn-outline-info" id="sign-out">
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "btn" %> 
+        </span>
 
       <% end %>
     </div>
