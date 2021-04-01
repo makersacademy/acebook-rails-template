@@ -21,16 +21,17 @@
    box-sizing: border-box;
   }
 
-/* body {
-  background-color: #8fc0a9;
-  opacity: 0.5;
-} */
+body {
+    background-color: rgba(143,192,169, 0.25); 
+    /* opacity: 0.5; */
+    /* height: 100vh; */
+  }
 
+/* #container {
+  /* height: 100vh; */
+  /* background-color: rgba(143,192,169, 0.25); */
 
- #container {
-  background-color: rgba(143,192,169, 0.25);
-
- }
+ /* } */
 
 form {
   display: inline;
