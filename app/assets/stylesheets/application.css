@@ -190,3 +190,19 @@ header, h1 {
 .profile-info {
   width: 20%;
 }
+
+#formFile {
+  max-width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edit-title {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  max-width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
