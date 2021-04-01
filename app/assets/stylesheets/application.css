@@ -22,7 +22,7 @@
   }
 
 body {
-    background-color: rgba(143,192,169, 0.25); 
+    background-color: rgba(143,192,169, 0.25);
     /* opacity: 0.5; */
     /* height: 100vh; */
   }
@@ -35,13 +35,11 @@ body {
 
 form {
   display: inline;
-  /* background-color: snow; */
 }
 
 .message {
-  /* background-color: rgba(102, 101, 101, 0.441); */
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   margin-top: 0px;
 }
 
@@ -74,18 +72,14 @@ header, h1 {
   border-radius: 12px;
 }
 
-.img-thumbnail {
-  width: 100px;
-}
-
 .post {
   background-color: rgb(247, 243, 243);
   margin-top: 26px;
   margin-bottom: 20px;
-  padding-right: 10px;
-  padding-left: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
   border-radius: 12px;
-
 }
 
 .all-posts{
@@ -93,20 +87,17 @@ header, h1 {
   width: 700px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 10px;
 }
 
 
 #submit_4 {
   background-color: #68b0ab;
   border: none;
-
 }
 
 #delete_button {
   background-color: #68b0ab;
   border: none;
-
 }
 
 .navbar-brand {
@@ -124,7 +115,101 @@ header, h1 {
   margin-right: 10px;
 }
 
-#post-submit {
+#post-submit, #account-submit {
   background-color: #68b0ab;
   border: none;
+}
+
+#post-thumbnail {
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 70px;
+  height: 65px;
+}
+
+.thumbnail-container {
+  overflow: hidden;
+  max-width: 90px;
+  max-height: 90px;
+  position: absolute;
+  object-fit: contain;
+  height: 60%;
+  background-color: #8fc0a9;
+  border-radius: 12px 12px 0px 0px;
+}
+
+#name {
+  float: left;
+  float: top;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.post-header {
+  position: relative;
+  background-color: #8fc0a9;
+  height: 75px;
+  width: 100%;
+  border-radius: 12px 12px 0px 0px;
+}
+
+#date {
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.top-content-container {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.new-post-form {
+  padding-left: 90px;
+}
+
+.new-post-textbox {
+  max-width: 100%;
+}
+
+textarea {
+  resize: none !important;
+}
+
+#current-user-name {
+  font-size: 17px;
+  position: absolute;
+  margin-top: 90px;
+  text-align: center;
+  width: 18%;
+  height: 30%;
+  background-color: #8fc0a9;
+  color: snow;
+  padding-bottom: 8px;
+  border-radius: 0px 0px 12px 12px;
+  overflow: scroll;
+}
+
+.profile-info {
+  width: 20%;
+}
+
+#formFile {
+  max-width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edit-title {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  max-width: 20%;
+  margin-left: auto;
+  margin-right: auto;
 }

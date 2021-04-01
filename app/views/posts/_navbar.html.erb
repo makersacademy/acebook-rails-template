@@ -2,40 +2,38 @@
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #68b0ab;">
    <a class="navbar-brand" href="/">AceBook</a>
 
-  <span class="navbar-text">
-    <%= "Hey #{ @user.name }!"%> 
-  </span>
-
-  <div class="dropdown">
-    <button class="navbar-toggler btn btn-primary dropdown-toggle header" type="button" data-toggle="dropdown">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="dropdown-menu dropdown-menu-right header">
-      <span class="dropdown-button btn btn-outline-info header">
-        <%= link_to "Edit Profile", edit_user_registration_path, :class => "btn" %> 
-      </span>
-
-      <span class="dropdown-button btn btn-outline-info header">
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "btn" %> 
-      </span>
-    </div>
-  </div>
 
     <% if user_signed_in? %>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        
-      </ul>
-
-      <span class="btn btn-outline-info", id="edit-profile">
-        <%= link_to "Edit Profile", edit_user_registration_path, :class => "btn" %> 
+      <span class="navbar-text">
+        <%= "Hey #{ @user.name }!"%>
       </span>
 
-        <span class="btn btn-outline-info", id="sign-out">
-          <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "btn" %> 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+
+        <span class="btn btn-outline-info", id="edit-profile">
+          <%= link_to "Edit Profile", edit_user_registration_path, :class => "btn" %>
         </span>
 
+        <span class="btn btn-outline-info", id="sign-out">
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "btn" %>
+        </span>
+
+        <div class="dropdown">
+          <button class="navbar-toggler btn btn-primary dropdown-toggle header" type="button" data-toggle="dropdown">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right header">
+            <span class="dropdown-button btn btn-outline-info header">
+              <%= link_to "Edit Profile", edit_user_registration_path, :class => "btn" %>
+            </span>
+
+            <span class="dropdown-button btn btn-outline-info header">
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "btn" %>
+            </span>
+          </div>
+        </div>
       <% end %>
     </div>
 </nav>

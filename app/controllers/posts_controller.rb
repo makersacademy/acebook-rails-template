@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @post = Post.find_by(id: params[:id])
     validate_edit
   end
