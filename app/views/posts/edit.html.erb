@@ -1,0 +1,6 @@
+
+<%= form_for @post do |form| %>
+  <input type="hidden" name="_method" value="PATCH">
+  <textarea name="post"><%= @post.message %></textarea>
+  <input type="submit" id="submit_<%= @post.id %>" value="Submit post">
+<% end %>

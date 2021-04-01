@@ -1,0 +1,23 @@
+$('.liked-btn').on('ajax:success', function() {
+    $(this).parent().parent().find('.like_count')
+    .html('<%= @post.get_likes.size %>');
+
+    var button = $(this).closest('.liked-btn');
+    button.html('<%= image_tag "grey-thumb.png" %>');
+    button.addClass('like-btn');
+    button.removeClass('liked-btn');
+    console.log('<%= like_post_path(@post, 'like') %>');
+    button.attr("href", '<%= like_post_path(@post, 'like') %>');
+});
+
+$('.like-btn').on('ajax:success', function(){
+    $(this).parent().parent().find('.like_count')
+    .html('<%= @post.get_likes.size %>');
+
+    var button = $(this).closest('.like-btn');
+    button.html('<%= image_tag "green-thumb.png" %>');
+    button.addClass('liked-btn');
+    button.removeClass('like-btn');
+    console.log('<%= like_post_path(@post, 'unlike') %>');
+    button.attr("href", '<%= like_post_path(@post, 'unlike') %>');
+});
