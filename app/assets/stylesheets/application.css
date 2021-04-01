@@ -14,15 +14,24 @@
  *= require_self
  */
 
-* {
-  text-align: center;
-  font-family:'Quicksand', sans-serif;
-  box-sizing: border-box;
-}
 
- #container {
-  background-color: rgba(143,192,169, 0.25);
- }
+ * {
+   text-align: center;
+   font-family:'Quicksand', sans-serif;
+   box-sizing: border-box;
+  }
+
+body {
+    background-color: rgba(143,192,169, 0.25);
+    /* opacity: 0.5; */
+    /* height: 100vh; */
+  }
+
+/* #container {
+  /* height: 100vh; */
+  /* background-color: rgba(143,192,169, 0.25); */
+
+ /* } */
 
 form {
   display: inline;

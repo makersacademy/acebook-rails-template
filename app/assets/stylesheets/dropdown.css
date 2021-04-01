@@ -1,0 +1,15 @@
+/* styling for the dropdown menu in the navbar */
+
+.dropdown-toggle.header:hover{
+  background-color: #82af88;
+}
+
+.dropdown-menu.header{
+  padding: 0px 8px 0px 8px;
+}
+
+.dropdown-button.header{  /* the dropdown buttons for the navbar. refered to this way incase we want dropdown buttons for the posts */
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
