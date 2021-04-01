@@ -72,7 +72,23 @@
             <input class="btn btn-info" type="submit" value="Delete" id="delete_button">
           <% end %>
         <% end %>
-      </div>
+
+        <span class="like_count" <%= post.id %>>
+          <%= post.get_likes.size %>
+        </span>
+      </span><br><br> 
+
+    <% if post.user_id == current_user.id %>
+
+      <form class="form" action="/posts/<%= post.id %>/edit">
+        <input class="btn btn-info" type="submit" id="post-submit" value="Update">
+      </form>
+      <%= form_for post do |form| %>
+        <input type="hidden" name="_method" value="DELETE">
+        <input class="btn btn-info" type="submit" value="Delete" id="delete_button">
+      <% end %>
+      <% end %>
+
     </div>
   <% end %>
 </div>
