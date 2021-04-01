@@ -210,6 +210,7 @@ textarea {
 
 .form-control {
   max-width: 20%;
+  min-width: 250px;
   margin-left: auto;
   margin-right: auto;
 }
