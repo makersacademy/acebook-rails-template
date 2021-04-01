@@ -1,12 +1,20 @@
-<div>
-<!--
-  <% if @user.avatar.attached? %>
-    <%= image_tag @user.avatar, class: "img-thumbnail", id: "new-post-pic" %>
-  <% end %>
--->
+<div class="top-content-container">
+    <div class="profile-info">
+      <% if @user.avatar.attached? %>
+        <div class="thumbnail-container">
+          <%= image_tag @user.avatar, class: "img-thumbnail", id: "new-post-pic" %>
+        </div>
+      <% else %>
+        <div class="thumbnail-container">
+          <%= image_tag 'profile-pic.png', class: "img-thumbnail", id: "new-post-pic" %>
+        </div>
+      <% end %>
+      <div id="current-user-name"><%= @user.name %> <%= @user.surname %></div>
+    </div>
+
   <div class="new-post-form">
     <%= form_for @post do |form| %>
-      <%= form.text_area :message, placeholder: "Write a new post...", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Write a new post...'", class: "new-post-textbox"  %> <br>
+      <%= form.text_area :message, placeholder: "Write a new post...", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Write a new post...'", class: "new-post-textbox" %><br>
       <%= form.hidden_field :user_id, :value => @user.id%>
       <%= form.submit "Submit", class: "btn btn-info", id: "post-submit"  %>
     <% end %>
@@ -17,28 +25,54 @@
   <% @posts.each do |post| %>
     <% user = User.find_by(id: post.user_id) %>
 
-    <% if user.avatar.attached? %>
-      <%= image_tag user.avatar, class: "img-thumbnail" %>
-    <% end %>
-
     <div class="post">
-        <p class="message">
-          <h4><span id="name" class="badge badge-pill badge-secondary"> <%= user.name %> <%= user.surname %></span></h4>
-          <!-- PRE tags make HTML include whitespace -->
-          <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
-          <h5><span id="date" class="badge badge-pill badge-light"> <%= time_ago_in_words(post.created_at) %></span></h5><br>
-        </p>
-
-      <span class="parent-likes">
-        <% if current_user.liked? post %>
-          <%= link_to like_post_path(post, 'unlike'), class: "liked-btn",
-            method: :put, remote: :true do %> <%= image_tag "green-thumb.png" %>
+      <div class="post-header">
+        <div class="post-thumb-container">
+          <% if user.avatar.attached? %>
+            <%= image_tag user.avatar, class: "img-thumbnail", id: "post-thumbnail" %>
+          <% else %>
+            <%= image_tag 'profile-pic.png', class: "img-thumbnail", id: "post-thumbnail" %>
           <% end %>
-        <% else %>
-            <%= link_to like_post_path(post, 'like'), class: "like-btn",
-            method: :put, remote: :true do %> <%= image_tag "grey-thumb.png" %>
+        </div>
+
+        <h4><span id="name" class="badge badge-pill badge-light"><%= user.name %> <%= user.surname %></span></h4>
+        <h5><span id="date" class="badge badge-pill badge-light"><%= time_ago_in_words(post.created_at) %></span></h5><br>
+      </div>
+
+        <div class="message">
+        <!-- PRE tags make HTML include whitespace -->
+          <h5><PRE class="messagePRE"><%= post.message %></PRE></h5>
+        </div>
+
+      <div class="likes">
+        <span class="parent-likes">
+          <% if current_user.liked? post %>
+            <%= link_to like_post_path(post, 'unlike'), class: "liked-btn",
+              method: :put, remote: :true do %> <%= image_tag "green-thumb.png" %>
+            <% end %>
+          <% else %>
+              <%= link_to like_post_path(post, 'like'), class: "like-btn",
+              method: :put, remote: :true do %> <%= image_tag "grey-thumb.png" %>
+            <% end %>
+          <% end %>
+          <span class="like_count" <%= post.id %>>
+            <%= post.get_likes.size %>
+          </span>
+        </span><br><br>
+      </div>
+
+      <div class="post-buttons">
+        <% if post.user_id == current_user.id %>
+          <form class="form" action="/posts/<%= post.id %>/edit">
+            <input class="btn btn-info" type="submit" id="submit_<%= post.id %>" value="Update">
+          </form>
+
+          <%= form_for post do |form| %>
+            <input type="hidden" name="_method" value="DELETE">
+            <input class="btn btn-info" type="submit" value="Delete" id="delete_button">
           <% end %>
         <% end %>
+
         <span class="like_count" <%= post.id %>>
           <%= post.get_likes.size %>
         </span>
@@ -54,6 +88,7 @@
         <input class="btn btn-info" type="submit" value="Delete" id="delete_button">
       <% end %>
       <% end %>
+
     </div>
   <% end %>
 </div>

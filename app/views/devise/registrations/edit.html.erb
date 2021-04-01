@@ -1,26 +1,26 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class="edit-title">Update Your Account Info</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label "Profile Photo" %>
-    <%= f.file_field :avatar, name: 'avatar' %>
+    <%= f.label "Add a profile photo" %>
+    <%= f.file_field :avatar, class: "form-control", id: "formFile" %>
   </div>
 
   <div class="field">
     <br>
-    <%= f.text_field :name, placeholder: "Name", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Name'" %>
+    <%= f.text_field :name, placeholder: "Name", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Name'", class: "form-control" %>
   </div>
 
   <div class="field">
     <br />
-    <%= f.text_field :surname, placeholder: "Surname", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Surname'" %>
+    <%= f.text_field :surname, placeholder: "Surname", onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Surname'", class: "form-control" %>
   </div>
 
   <div class="field">
     <br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email",onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Email'"%>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email",onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Email'", class: "form-control" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -29,25 +29,26 @@
 
   <div class="field">
     <br />
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password",onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'New Password'" %>
-    
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "New Password",onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'New Password'", class: "form-control" %>
+
   </div>
 
   <div class="field">
     <br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation",onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Password Confirmation'" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation",onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Password Confirmation'", class: "form-control" %>
   </div>
 
   <div class="field">
     <br />
-    <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password",onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Current Password'" %>
+    <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "Current Password",onfocus: "this.placeholder = ''", onblur:"this.placeholder = 'Current Password'", class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update", id: "post-submit", class: "btn btn-info" %>
-  </div>
+    <%= f.submit "Update", id: "account-submit", class: "btn btn-info" %>
+  </div><br>
 <% end %>
 
 <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, id: "post-submit", class: "btn btn-info" %></p>
 
 <%= link_to "Back", :back %>
+
