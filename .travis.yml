@@ -1,22 +1,19 @@
 Authorization: uF1ENl_b529seMUwCY2UjA
-
 install:
-  - bundle update --bundler
-  - bundle install
+- bundle update --bundler
+- bundle install
 services:
-  - postgresql
-
+- postgresql
 script:
-  - bundle exec bin/rails db:create
-  - bundle exec bin/rails db:migrate
-  - bundle exec bin/rails db:environment:set RAILS_ENV=test
-  - bundle exec rspec
-  - bundle exec rubocop
-
+- bundle exec bin/rails db:create
+- bundle exec bin/rails db:migrate
+- bundle exec bin/rails db:environment:set RAILS_ENV=test
+- bundle exec rspec
+- bundle exec rubocop
 deploy:
   provider: heroku:git
-  api_key: 657db9bb-d791-45d1-9c3c-3bb3725d5a7a
+  api_key:
+    secure: Nat1WSzDLpimT51v3kD8AaQnbjA9UWPpQ79i5QopvaErQtJSqRnSB3wU8+TTdpJGSL2IDPjpJaZ+XLKoSTNBqA4QbFIUZGPhWVYcv7ptrKDSYMH6c3EL0yMgizjDn1RkjbBPoW5LUXuq/KaIHFIIZ7DuwjiUNtZjzCo5/BWXVE8n1jY0YVVqfucomk02k2W3lurjPEgR7PV/c/FPsIj146Vzr7MO8m3+D17La4ISrH4/kjrv2CgrD0U8vwEcrbs3sUqt5dipsOrQ/Wtkzi8MuXCvjKgY7e+MruKMQiaKumD4KdTz0aC6hc9xAyWI5ktlGKU0GAEU3adu2yesYFTxc61ZC7Lk0QWa371nlQ6AIFmXkectPGIgQFWq0Izdv6Klxkyj4PlzgRsHaqV6Wjdef1RmE/XPbVDBJSN0Ci30ZbueU3b66fQBxmCUfQ33e8Ae36IBUBL2gyEXCDTBnJLPcxP6F465CiV1a/IhQFFtJRpV+ippQ2glzcuoSgiMIovHRLMcq1bO5vnRI/KIz6Fa3xslq0xpuJ19lcLpL5CMFdC9AW0FEeisLy1R6mmYH14S1dhXhjmcqer1SZzh/L3lqCEdh29jV6eiJ9vu5lBX0TYDxbknOtoOODY6MTMr2/xmH8lXE1YHtP6ipSEPk+2dT/whzegDnhTmzrTQOon6Co0=
   app: fierce-plains-18412
   edge: true
   run: rake db:migrate
-  
