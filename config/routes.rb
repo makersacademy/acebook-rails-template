@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :posts
 
   root to: "posts#index"
+
+  get '/new', to: 'posts#new'
 end
