@@ -1,8 +1,14 @@
-.navbar-default, .navbar-toggle:focus, .collapsed, button.navbar-toggle {
-  background: black !important;
+body {
+  margin-top: 50px;
+ }
+
+html * {font-family: verdana;}
+ 
+ .navbar-default, .navbar-toggle:focus, .collapsed, button.navbar-toggle {
+  background: rgb(42, 95, 179) !important;
   border: none;
   a {
-    color: white !important;
+    color: white;
   }
 }
 
@@ -11,6 +17,9 @@ nav {
     width: 100%;
     button, .navbar-brand {
       transition: opacity 0.15s;
+      color: white;
+      font-weight: bold;
+     font-size: 25px;
     }
     button {
       margin-right: 0;
@@ -18,5 +27,13 @@ nav {
     button:hover, .navbar-brand:hover {
       opacity: 0.8;
     }
+  }
+  .navbar-nav {
+    background-color: white !important;
+    color: rgb(42, 95, 179);
+  }
+  button:hover, .navbar-nav:hover {
+    opacity: 0.8;
+    background-color: rgb(42, 95, 179);
   }
 }
