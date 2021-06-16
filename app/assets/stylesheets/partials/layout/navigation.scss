@@ -1,0 +1,22 @@
+.navbar-default, .navbar-toggle:focus, .collapsed, button.navbar-toggle {
+  background: black !important;
+  border: none;
+  a {
+    color: white !important;
+  }
+}
+
+nav {
+  .navbar-header {
+    width: 100%;
+    button, .navbar-brand {
+      transition: opacity 0.15s;
+    }
+    button {
+      margin-right: 0;
+    }
+    button:hover, .navbar-brand:hover {
+      opacity: 0.8;
+    }
+  }
+}
