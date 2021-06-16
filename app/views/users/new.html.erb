@@ -6,12 +6,17 @@
       <span style="color:red;"><%= message %></span>
     <% end %>
   <div><strong><%= form.label :email %></strong></div>
-  <%= form.text_field :email %>
+  <%= form.email_field :email %>
   <% @user.errors.full_messages_for(:email).each do |message| %>
     <span style="color:red;"><%= message %></span>
   <% end %>
   <div><strong><%= form.label :password %></strong></div>
   <div><%= form.password_field :password %></div>
+  <% @user.errors.full_messages_for(:password).each do |message| %>
+    <span style="color:red;"><%= message %></span>
+  <% end %>
+  <div><strong><%= form.label :password_confirmation %></strong></div>
+  <div><%= form.password_field :password_confirmation %></div><br>
   <% @user.errors.full_messages_for(:password).each do |message| %>
     <span style="color:red;"><%= message %></span>
   <% end %>
