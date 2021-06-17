@@ -20,6 +20,9 @@
   <% @user.errors.full_messages_for(:password).each do |message| %>
     <span style="color:red;"><%= message %></span>
   <% end %><br>
+  <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
+    <span style="color:red;"><%= message %></span>
+  <% end %><br>
   <div><strong><%= form.submit "Register" %></strong></div>
 <% end %>
 
