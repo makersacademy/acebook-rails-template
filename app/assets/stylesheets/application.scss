@@ -30,6 +30,15 @@ a {
   color: inherit;
 }
 
+i {
+  font-size: 20px;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-color: #fff;
 }
@@ -49,6 +58,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 80%;
+  margin-top: 60px;
 }
 
 .post-container {
@@ -128,11 +138,99 @@ body {
 }
 
 .fa-heart {
-  font-size: 20px;
   color: red;
   transition: 0.3s;
 }
 
 .fa-heart:hover {
   transform: scale(1.2);
+}
+
+.new_comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  min-height: 40px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+  background-color: rgba(132, 200, 255, 0.801);
+}
+
+.new_comment textarea {
+  width: 70%;
+  height: 25px;
+  border: none;
+  border-radius: 10px;
+  padding: 4px 10px 0 10px;
+  font-size: 12px;
+  resize: none;
+  outline: none;
+}
+
+.new_comment button {
+  width: 20%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.fa-comment {
+  color: black;
+  transition: 0.3s;
+}
+
+.fa-comment:hover {
+  transform: scale(1.2);
+}
+
+.posts-comments {
+  width: 70%;
+}
+
+.user-profile-comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 70%;
+  height: 30px;
+}
+
+.user-profile-comment img {
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgb(212, 0, 255);
+  border-radius: 25px;
+  padding: 0;
+  margin: 0 15px 0 10px;
+}
+
+.posts-comments p {
+  font-size: 12px;
+  font-style: italic;
+  padding: 3px 5px 5px 100px;
+}
+
+.single-comment-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.single-comment-area button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.fa-trash-alt {
+  color: red;
 }

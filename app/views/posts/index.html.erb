@@ -1,26 +1,34 @@
 <div class="page-container">
   <div class="page-content">
-   <% @posts.reverse.each do |post| %>
-   <div class="post-container">
-     <p class="post-message"><%= post.message %></p>
-     <p class="time-stamp"><span>Posted </span><%= time_ago_in_words(post.created_at)%><span> ago</span></p>
-     <img src="https://images.unsplash.com/photo-1623847976687-8b742dc59073?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80" alt="">
-     <p class="like-btn"><button><i class="far fa-heart"></i></button></p>
-     <form class="comment-block">
-       <input type="text" required placeholder="Comment on this post...">
-       <button class="comment-submit">Submit</button>
-
-     </form>
-     <!-- <div class="post-btns">
-       <button class="inactive"><a class="inactive" href="#">Edit</a> </button>
-       <button class="show"><a href="#">Show</a> </button>
-       <button class="delete"><a href="#">Delete</a> </button>
-     </div> -->
-
-   </div>
+    <% @posts.reverse.each do |post| %>
+    <div class="post-container">
+      <p class="post-message"><%= post.message %></p>
+      <p class="time-stamp"><span>Posted </span><%= time_ago_in_words(post.created_at)%><span> ago</span></p>
+      <img src="https://images.unsplash.com/photo-1623847976687-8b742dc59073?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80" alt="">
+      <p class="like-btn"><button><i class="far fa-heart"></i></button></p>
+      <%= form_for([post, post.comments.build]) do |f| %>
+        <textarea name="comment[body]" id="comment_body" placeholder="Comment here..." required></textarea>
+        <button type="submit" name="commit">
+          <i class="far fa-comment"></i>
+        </button>
+      <% end %>
+      <p class="time-stamp"><span></span><%= post.comments.count %><span> Comments</span></p>
+      <div class="posts-comments">
+        <% post.comments.reverse.each do |comment| %>
+          <div class="user-profile-comment">
+            <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="">
+            <h5><strong>UserName</strong></h5>
+          </div>
+          <div class="single-comment-area">
+            <p><%= comment.body %></p>
+            <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>/comments/<%= comment.id %>"><i class="far fa-trash-alt"></i></a></button>
+          </div>
+        <% end %>
+      </div>
+    </div>
    <% end %>
   </div>
-<%= link_to new_post_path do %>
- New post
-<% end %>
+  <%= link_to new_post_path do %>
+    New post
+  <% end %>
 </div>
