@@ -16,10 +16,10 @@
     <span style="color:red;"><%= message %></span>
   <% end %>
   <div><strong><%= form.label :password_confirmation %></strong></div>
-  <div><%= form.password_field :password_confirmation %></div><br>
+  <div><%= form.password_field :password_confirmation %></div>
   <% @user.errors.full_messages_for(:password).each do |message| %>
     <span style="color:red;"><%= message %></span>
-  <% end %>
+  <% end %><br>
   <div><strong><%= form.submit "Register" %></strong></div>
 <% end %>
 
