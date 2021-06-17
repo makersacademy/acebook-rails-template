@@ -1,0 +1,25 @@
+<h1>Register</h1>
+<%= form_for @user do |form| %>
+<div><strong><%= form.label :username %></strong></div>
+  <%= form.text_field :username %>
+  <% @user.errors.full_messages_for(:username).each do |message| %>
+      <span style="color:red;"><%= message %></span>
+    <% end %>
+  <div><strong><%= form.label :email %></strong></div>
+  <%= form.email_field :email %>
+  <% @user.errors.full_messages_for(:email).each do |message| %>
+    <span style="color:red;"><%= message %></span>
+  <% end %>
+  <div><strong><%= form.label :password %></strong></div>
+  <div><%= form.password_field :password %></div>
+  <% @user.errors.full_messages_for(:password).each do |message| %>
+    <span style="color:red;"><%= message %></span>
+  <% end %>
+  <div><strong><%= form.label :password_confirmation %></strong></div>
+  <div><%= form.password_field :password_confirmation %></div>
+  <% @user.errors.full_messages_for(:password).each do |message| %>
+    <span style="color:red;"><%= message %></span>
+  <% end %><br>
+  <div><strong><%= form.submit "Register" %></strong></div>
+<% end %>
+
