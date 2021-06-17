@@ -29,11 +29,27 @@ nav {
     }
   }
   .navbar-nav {
-    background-color: white !important;
-    color: rgb(42, 95, 179);
+    color: rgb(42, 95, 179) !important;
+  }
+  .btn-default {
+    color: rgb(42, 95, 179) !important;
+    background-color: white;
+    border-color: white;
+    font-weight: bold;
+  }
+  button:hover, .btn-default:hover {
+    color: rgb(42, 95, 179) !important;
+    background-color: lightgray;
+    border-color: lightgray;
+    font-weight: bold;
   }
   button:hover, .navbar-nav:hover {
-    opacity: 0.8;
     background-color: rgb(42, 95, 179);
+    color: rgb(42, 95, 179) !important;
   }
+
+  .navbar-default .navbar-nav {
+    color: white;
+  
+}
 }
