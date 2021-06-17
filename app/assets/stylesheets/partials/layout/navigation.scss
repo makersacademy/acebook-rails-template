@@ -29,7 +29,7 @@ nav {
     }
   }
   .navbar-nav {
-    color: rgb(42, 95, 179) !important;
+    color: white !important;
   }
   .btn-default {
     color: rgb(42, 95, 179) !important;
@@ -45,11 +45,8 @@ nav {
   }
   button:hover, .navbar-nav:hover {
     background-color: rgb(42, 95, 179);
-    color: rgb(42, 95, 179) !important;
+    color: white !important;
   }
 
-  .navbar-default .navbar-nav {
-    color: white;
   
-}
 }
