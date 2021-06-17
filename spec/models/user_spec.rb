@@ -15,13 +15,28 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
+  it "username should not be too long" do
+    subject.username = "a"*51
+    expect(subject).to_not be_valid
+  end
+
   it "is not valid without a email" do 
     subject.email = nil
     expect(subject).to_not be_valid
   end
 
+  it "email should not be too long" do
+    subject.email = "a"*244 +"@example.com"
+    expect(subject).to_not be_valid
+  end
+
+
+  it "email should be correct format"
+
   it "is not valid without a password" do 
     subject.password = nil
     expect(subject).to_not be_valid
   end
+
+
 end
