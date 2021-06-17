@@ -25,5 +25,16 @@ RSpec.feature "Registration", type: :feature do
       expect(page).to have_content("Password confirmation doesn't match Password")
     end
 
+    scenario 'a user should enter unique email' do
+      User.create(username: "anything3", email: "test@example.com", password: "1234", password_confirmation: "1234")
+      visit "/users/new"
+      fill_in "Username", with: "test"
+      fill_in "Email", with: "test@example.com"
+      fill_in "Password", with: "password123"
+      fill_in "Password confirmation", with: "password123"
+      click_button "Register"
+
+      expect(page).to have_content("Email has already been taken")
+    end
   end
 end
