@@ -12,6 +12,12 @@ html * {font-family: verdana;}
   }
 }
 
+.navbar {
+  padding:5px;
+  padding-right:38px;
+}
+
+
 nav {
   .navbar-header {
     width: 100%;
@@ -29,11 +35,24 @@ nav {
     }
   }
   .navbar-nav {
-    background-color: white !important;
-    color: rgb(42, 95, 179);
+    color: white !important;
+  }
+  .btn-default {
+    color: rgb(42, 95, 179) !important;
+    background-color: white;
+    border-color: white;
+    font-weight: bold;
+  }
+  button:hover, .btn-default:hover {
+    color: rgb(42, 95, 179) !important;
+    background-color: lightgray;
+    border-color: lightgray;
+    font-weight: bold;
   }
   button:hover, .navbar-nav:hover {
-    opacity: 0.8;
     background-color: rgb(42, 95, 179);
+    color: white !important;
   }
+
+  
 }
