@@ -11,7 +11,7 @@
   <% end %>
   <% flash.each do |type, msg| %>
     <div style="color:red">
-      <%= msg %>
+      <%= "#{msg}." %>
     </div>
   <% end %>
   <p>New user? <%= link_to "Sign up now!", new_user_url %></p> </div>
