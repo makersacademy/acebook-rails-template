@@ -17,6 +17,7 @@ RSpec.feature "Timeline", type: :feature do
     click_button "add-post"
     fill_in "Message", with: "Message 2"
     click_button "Submit"
-    expect(page.find('p:nth-of-type(1)')).to have_content("Message 2")
+    expect(page.first('p:nth-of-type(1)')).to have_content("Message 2")
+    expect(page.first('p:nth-of-type(1)')).not_to have_content("Message 1")
   end
 end
