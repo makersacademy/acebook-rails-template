@@ -10,13 +10,27 @@
       </button>
 
       <%= link_to 'acebook', root_path, class: 'navbar-brand' %>
+      <% if logged_in? %>
       <ul class="nav navbar-nav navbar-right">
+
+        <li>
+        <%= link_to "Log out", logout_path, method: :delete %>
+        </li>
+        <li>
+        <%= link_to 'Profile', current_user %> 
+
       <li><a href="#" class="navbar-default navbar-nav">Posts</a></li>
           <li><p class="navbar-btn">
             <a href="#" class="btn btn-default">Log out</a>
           </p>
+
         </li>
       </ul>
+      <% else %>
+      <li>
+        <%= link_to 'Log in', login_path %>
+      </li>
+      <% end %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
