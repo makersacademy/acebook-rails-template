@@ -20,6 +20,7 @@
       <div class="posts-comments">
         <% if post.comments.count > 0 %>
           <% post.comments[0..2].reverse.each do |comment| %>
+            <% if !comment.id.nil? %>
             <div class="user-profile-comment">
               <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="">
               <h5><strong>UserName</strong></h5>
@@ -28,6 +29,7 @@
               <p><%= comment.body %></p>
               <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>/comments/<%= comment.id %>"><i class="far fa-trash-alt"></i></a></button>
             </div>
+            <% end %>
           <% end %>
         <% else %>
             <p>Be the first to comment ...</p>
