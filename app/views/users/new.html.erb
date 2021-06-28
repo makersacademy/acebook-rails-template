@@ -10,6 +10,9 @@
       <% @user.errors.full_messages_for(:username).each do |message| %>
           <span style="color:red;"><%= "#{message}." %></span>
       <% end %>
+    
+    <%= form.label "Profile Photo" %>
+    <%= form.file_field :avatar %>
 
     <%= form.label :email %>
       <%= form.email_field :email, class: 'form-control' %>
