@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    @user.avatar.attach(params[:avatar])
 
     if @user.save 
       log_in @user 
