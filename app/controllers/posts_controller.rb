@@ -4,6 +4,16 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def like
+    @post = Post.find(params[:id])
+    if current_user.voted_up_on? @post
+      @post.unvote_by current_user
+    else
+      @post.upvote_by current_user
+    end
+    render 'vote.js.erb'
+  end 
+
   def create
     @post = Post.create(post_params)
     redirect_to posts_url
