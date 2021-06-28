@@ -1,28 +1,39 @@
-<h1>Register</h1>
-<%= form_for @user do |form| %>
-<div><strong><%= form.label :username %></strong></div>
-  <%= form.text_field :username %>
-  <% @user.errors.full_messages_for(:username).each do |message| %>
-      <span style="color:red;"><%= message %></span>
-    <% end %>
-  <div><strong><%= form.label :email %></strong></div>
-  <%= form.email_field :email %>
-  <% @user.errors.full_messages_for(:email).each do |message| %>
-    <span style="color:red;"><%= message %></span>
+<% provide(:title, "Register") %><br>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+
+<h1 style="text-align:center">Register</h1>
+
+  <%= form_for @user do |form| %>
+    <%= form.label :username %>
+      <%= form.text_field :username, class: 'form-control' %>
+      <% @user.errors.full_messages_for(:username).each do |message| %>
+          <span style="color:red;"><%= "#{message}." %></span>
+      <% end %>
+
+    <%= form.label :email %>
+      <%= form.email_field :email, class: 'form-control' %>
+      <% @user.errors.full_messages_for(:email).each do |message| %>
+        <span style="color:red;"><%= "#{message}." %></span>
+      <% end %>
+
+      <%= form.label :password %>
+      <%= form.password_field :password, class: 'form-control' %>
+      <% @user.errors.full_messages_for(:password).each do |message| %>
+        <span style="color:red;"><%= "#{message}." %></span><br>
+      <% end %>
+
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, class: 'form-control' %>
+      <% @user.errors.full_messages_for(:password).each do |message| %>
+        <span style="color:red;"><%= "#{message}." %></span>
+      <% end %>
+      <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
+        <span style="color:red;"><%= "#{message}." %></span>
+      <% end %><br>
+
+      <%= form.submit "Register", class: "btn btn-primary" %>
   <% end %>
-  <div><strong><%= form.label :password %></strong></div>
-  <div><%= form.password_field :password %></div>
-  <% @user.errors.full_messages_for(:password).each do |message| %>
-    <span style="color:red;"><%= message %></span>
-  <% end %>
-  <div><strong><%= form.label :password_confirmation %></strong></div>
-  <div><%= form.password_field :password_confirmation %></div>
-  <% @user.errors.full_messages_for(:password).each do |message| %>
-    <span style="color:red;"><%= message %></span>
-  <% end %><br>
-  <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
-    <span style="color:red;"><%= message %></span>
-  <% end %><br>
-  <div><strong><%= form.submit "Register" %></strong></div>
-<% end %>
+<p>Already a user? <%= link_to "Log in here!", login_url %></p></div>
+</div>
 
