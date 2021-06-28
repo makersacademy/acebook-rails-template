@@ -1,6 +1,7 @@
-language: ruby
+language: 
+ — ruby
 rvm:
- - 2.7.0p0 
+ - 2.7.0p0
  - jruby
 
  script:
