@@ -11,19 +11,15 @@
 
       <%= link_to 'acebook', root_path, class: 'navbar-brand' %>
       <% if logged_in? %>
-      <ul class="nav navbar-nav navbar-right">
-
+      <ul class="nav navbar-nav navbar-right"> 
         <li>
-        <%= link_to "Log out", logout_path, method: :delete %>
+          <a href="/posts" class="navbar-default navbar-nav">Posts
+          </a>
         </li>
         <li>
-        <%= link_to 'Profile', current_user %> 
-
-      <li><a href="#" class="navbar-default navbar-nav">Posts</a></li>
-          <li><p class="navbar-btn">
-            <a href="#" class="btn btn-default">Log out</a>
+          <p class="navbar-btn">
+            <a  href="/logout" data-method="delete" rel="nofollow" class="btn btn-default">Log out</a>
           </p>
-
         </li>
       </ul>
       <% else %>
