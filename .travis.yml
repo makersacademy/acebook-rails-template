@@ -1,4 +1,12 @@
-language: ruby
+language: 
+ — ruby
 rvm:
- - 2.7
- - jruby
+ — 2.7
+cache:
+ — bundler
+script:
+ — bundle install
+ — bin/rails db:create
+ — bin/rails db:migrate
+services:
+ — postgresql
