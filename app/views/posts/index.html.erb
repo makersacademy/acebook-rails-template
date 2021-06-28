@@ -16,7 +16,10 @@
       </div>
       <!-- <p class="like-btn"><button><i class="far fa-heart"></i></button><span class="post-time-stamp">21 likes</span></p> -->
       <div class="like-btn">
-        <%= render 'posts/upvote_link', post: post %><div class="post-time-stamp">21 likes</div>
+        <%= render 'posts/upvote_link', post: post %>
+        <!-- <div class="post-time-stamp"> -->
+          <%= render 'posts/votes_score', post: post %>
+        <!-- </div> -->
       </div>
       
       <%= form_for([post, post.comments.build]) do |f| %>
