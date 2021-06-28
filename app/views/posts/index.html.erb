@@ -3,7 +3,7 @@
     <% @posts.reverse.each do |post| %>
     <div class="post-container">
       <div class="post-owner-pp">
-        <img class="display-prof-pic" src="<%=(url_for(post.user.avatar))%>" alt="">
+        <img class="display-prof-pic" <%= gravatar_for current_user %> >
         <h5><strong>UserName</strong> Posted:</h5>
         <p class="post-message"><%= post.message %></p>
         <p class="post-time-stamp"><span>Posted </span><%= time_ago_in_words(post.created_at)%><span> ago</span></p>
