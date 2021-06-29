@@ -62,8 +62,10 @@
         <% end %>
       </div>
       <a href="/posts/<%= post.id %>">Show</a>
+      <% if post.user_id === current_user.id %>
       <a href="/posts/<%= post.id%>/edit">Edit</a>
       <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>">Delete</a></button>
+      <% end %>
     </div>
    <% end %>
   </div>
