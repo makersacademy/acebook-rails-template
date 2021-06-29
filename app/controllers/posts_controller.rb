@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    # p @posts.last.comments.reverse[0..2]
   end
 
   def show
