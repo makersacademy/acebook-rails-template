@@ -61,6 +61,9 @@
             <p>Be the first to comment ...</p>
         <% end %>
       </div>
+      <a href="/posts/<%= post.id %>">Show</a>
+      <a href="/posts/<%= post.id%>/edit">Edit</a>
+      <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>">Delete</a></button>
     </div>
    <% end %>
   </div>
