@@ -1,6 +1,11 @@
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
-
+  <div class="field">
+    <input type="hidden" name="post[user_id]" id="post_user_id" value="<%= current_user.id %>">
+  </div>
+  <div class="field">
+    <input type="hidden" name="post[author]" id="post_author" value="<%= current_user.username %>">
+  </div>
   <%= form.submit "Submit" %>
 <% end %>
