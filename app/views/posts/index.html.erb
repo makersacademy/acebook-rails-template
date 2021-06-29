@@ -1,7 +1,4 @@
 <div class="page-container">
-  
-  <h2><%= current_user.username %></h2>
-
   <div class="page-content">
     <!-- New Post Form Start -->
     <div class="new-post-form">
@@ -34,6 +31,21 @@
    <!-- All Posts With Comments Start -->
     <% @posts.reverse.each do |post| %>
     <div class="post-container">
+    <!-- Post Hover Menu Start -->
+      <div class="post-menu">
+        <button class="dropdownbtn" id="post-dropdown"><i class="fas fa-ellipsis-v"></i></button>
+        <div class="dropdown-content">
+          <button class="show"><a href="/posts/<%= post.id %>"><i class="far fa-eye"></i></a></button>
+          <% if post.user_id === current_user.id %>
+            <button class="edit"><a href="/posts/<%= post.id %>/edit"><i class="far fa-edit"></i></a></button>
+            <button class="delete"><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>"><i class="far fa-trash-alt"></i></a> </button>
+          <% else %>
+            <button><a href="#"><i id="inactive" class="far fa-edit"></i></a></button>
+            <button><a href="#"><i id="inactive"  class="far fa-trash-alt"></i></a> </button>
+          <% end %>
+        </div>
+      </div>
+    <!-- Post Hover Menu End -->
       <div class="post-owner-pp">
         <img class="display-prof-pic"  src="https://images.unsplash.com/photo-1623847976687-8b742dc59073?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80" alt="" >
         <h5><strong><%= post.author %></strong>
