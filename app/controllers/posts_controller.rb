@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
     @post = Post.update(post_params)
     redirect_to posts_url
   end
@@ -33,7 +34,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    # p @posts.last.comments.reverse[0..2]
   end
 
   def show
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :author, :user_id)
+    params.require(:post).permit(:message, :author, :user_id, :image)
   end
 
 end
