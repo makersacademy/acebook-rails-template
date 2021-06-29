@@ -3,6 +3,17 @@
   <h2><%= current_user.username %></h2>
 
   <div class="page-content">
+    <%= form_for([Post.new]) do |form| %>
+      <%= form.label :message %>
+      <input type="text" name="post[message]" id="post_meesage" required>
+      <div class="field">
+        <input type="hidden" name="post[user_id]" id="post_user_id" value="<%= current_user.id %>">
+      </div>
+      <div class="field">
+        <input type="hidden" name="post[author]" id="post_author" value="<%= current_user.username %>">
+      </div>
+      <%= form.submit "Submit" %>
+    <% end %>
     <% @posts.reverse.each do |post| %>
     <div class="post-container">
       <div class="post-owner-pp">
@@ -20,10 +31,15 @@
         <%= render 'posts/upvote_link', post: post %>
           <%= render 'posts/votes_score', post: post %>
       </div>
-      <img class="post-image" src="https://images.unsplash.com/photo-1623847976687-8b742dc59073?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80" alt="">
-      <p class="like-btn"><button><i class="far fa-heart"></i></button></p>
+     
       <%= form_for([post, Comment.new] ) do |f| %>
         <textarea name="comment[body]" id="comment_body" placeholder="Comment here..." required></textarea>
+        <div class="field">
+        <input type="hidden" name="comment[user_id]" id="comment_user_id" value="<%= current_user.id %>">
+      </div>
+      <div class="field">
+        <input type="hidden" name="comment[author]" id="comment_author" value="<%= current_user.username %>">
+      </div>
         <button type="submit" name="commit">
           <i class="far fa-comment"></i>
         </button>
@@ -34,7 +50,7 @@
           <% post.comments[0..2].reverse.each do |comment| %>
             <div class="user-profile-comment">
               <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="">
-              <h5><strong>UserName</strong></h5>
+              <h5><strong><%= comment.author %></strong></h5>
             </div>
             <div class="single-comment-area">
               <p><%= comment.body %></p>
@@ -45,6 +61,11 @@
             <p>Be the first to comment ...</p>
         <% end %>
       </div>
+      <a href="/posts/<%= post.id %>">Show</a>
+      <% if post.user_id === current_user.id %>
+      <a href="/posts/<%= post.id%>/edit">Edit</a>
+      <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>">Delete</a></button>
+      <% end %>
     </div>
    <% end %>
   </div>
