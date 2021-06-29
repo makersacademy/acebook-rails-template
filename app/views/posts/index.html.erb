@@ -7,29 +7,32 @@
         <h5><strong><%= current_user.username %></strong>
       </div>
       <%= form_for([Post.new]) do |form| %>
-      <div class="new-post-input">
-        <input type="text" name="post[message]" id="post_meesage" required placeholder="What is on your mind...">
-      </div>
-      <div class="input-post">
-      <div class="post-file-img">
-        <label for="post_image"><i class="fas fa-image"></i></label>
-        <p>Tag an image</p>
-        <input class="hide" type="file" name="post[image]" id="post_image">
-      </div>
-        
-        <div class="field">
-          <input type="hidden" name="post[user_id]" id="post_user_id" value="<%= current_user.id %>">
+        <div class="new-post-input">
+          <input type="text" name="post[message]" id="post_meesage" required placeholder="What is on your mind...">
         </div>
-        <div class="field">
-          <input type="hidden" name="post[author]" id="post_author" value="<%= current_user.username %>">
+        <div class="input-post">
+          <div class="post-file-img">
+            <!-- <%= form.label :image, class: "post_image" %> -->
+            <%= form.file_field :image, class: "hide" %> 
+            <label for="post_image"><i class="fas fa-image"></i></label>
+            <p>Tag an image</p>
+            <!-- <input class="hide" type="file" name="post[image]" id="post_image"> -->
+          </div>
+          
+          <div class="field">
+            <input type="hidden" name="post[user_id]" id="post_user_id" value="<%= current_user.id %>">
+          </div>
+          <div class="field">
+            <input type="hidden" name="post[author]" id="post_author" value="<%= current_user.username %>">
+          </div>
         </div>
-      </div>
+        <!-- <%= form.submit "Submit" %> -->
         <input type="submit" name="commit" value="Post" class="post-btn" data-disable-with="Submit">
       <% end %>
     </div>
    <!-- New Post Form End -->
    <!-- All Posts With Comments Start -->
-    <% @posts.reverse.each do |post| %>
+    <% @posts.each do |post| %>
     <div class="post-container">
     <!-- Post Hover Menu Start -->
       <div class="post-menu">
@@ -91,11 +94,6 @@
             <p>Be the first to comment ...</p>
         <% end %>
       </div>
-      <a href="/posts/<%= post.id %>">Show</a>
-      <% if post.user_id === current_user.id %>
-      <a href="/posts/<%= post.id%>/edit">Edit</a>
-      <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>">Delete</a></button>
-      <% end %>
     </div>
    <% end %>
    <!-- All Posts With Comments End -->

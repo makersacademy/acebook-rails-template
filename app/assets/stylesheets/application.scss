@@ -141,6 +141,14 @@ p {
   width: 100%;
 }
 
+.input-post {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  margin: 30px 0 -30px 5px;
+}
+
 .new-post-input {
   display: flex;
   align-items: center;
@@ -160,13 +168,7 @@ p {
   border-radius: 10px;
 }
 
-.input-post {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 80%;
-  margin: 30px 0 -30px 5px;
-}
+
 
 .post-btn {
   margin-left: auto;
