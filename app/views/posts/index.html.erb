@@ -6,13 +6,7 @@
     <% @posts.reverse.each do |post| %>
     <div class="post-container">
       <div class="post-owner-pp">
-        <img class="display-prof-pic"
-          <%= if post.author.avatar.attached? %>
-            <%= image_tag(post.author.avatar, width: 80) %>
-          <% else %>    
-            <%= gravatar_for post.author %>
-          <% end %>  
-          alt="">
+        <img class="display-prof-pic"  src="https://images.unsplash.com/photo-1623847976687-8b742dc59073?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80" alt="" >
         <h5><strong><%= post.author %></strong>
         <p class="post-time-stamp"><span>Posted </span><%= time_ago_in_words(post.created_at)%><span> ago</span></p></h5>
       </div>
