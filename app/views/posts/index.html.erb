@@ -20,8 +20,9 @@
         <%= render 'posts/upvote_link', post: post %>
           <%= render 'posts/votes_score', post: post %>
       </div>
-      
-      <%= form_for([post, post.comments.build]) do |f| %>
+      <img class="post-image" src="https://images.unsplash.com/photo-1623847976687-8b742dc59073?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80" alt="">
+      <p class="like-btn"><button><i class="far fa-heart"></i></button></p>
+      <%= form_for([post, Comment.new] ) do |f| %>
         <textarea name="comment[body]" id="comment_body" placeholder="Comment here..." required></textarea>
         <button type="submit" name="commit">
           <i class="far fa-comment"></i>
