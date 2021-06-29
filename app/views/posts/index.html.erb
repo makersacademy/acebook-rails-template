@@ -1,15 +1,27 @@
 <div class="page-container">
+  
   <div class="page-content">
     <% @posts.reverse.each do |post| %>
     <div class="post-container">
       <div class="post-owner-pp">
         <img class="display-prof-pic" src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="">
-        <h5><strong>UserName</strong> Posted:</h5>
-        <p class="post-message"><%= post.message %></p>
-        <p class="post-time-stamp"><span>Posted </span><%= time_ago_in_words(post.created_at)%><span> ago</span></p>
+        <h5><strong>UserName</strong>
+        <p class="post-time-stamp"><span>Posted </span><%= time_ago_in_words(post.created_at)%><span> ago</span></p></h5>
       </div>
-      <img class="post-image" src="https://images.unsplash.com/photo-1623847976687-8b742dc59073?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80" alt="">
-      <p class="like-btn"><button><i class="far fa-heart"></i></button></p>
+      <div>
+        <p class="post-message"><%= post.message %></p>
+      </div>
+      <div class="post-img-container">
+        <img class="post-image" src="https://images.unsplash.com/photo-1623847976687-8b742dc59073?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80" alt="">
+      </div>
+      <!-- <p class="like-btn"><button><i class="far fa-heart"></i></button><span class="post-time-stamp">21 likes</span></p> -->
+      <div class="like-btn">
+        <%= render 'posts/upvote_link', post: post %>
+        <!-- <div class="post-time-stamp"> -->
+          <%= render 'posts/votes_score', post: post %>
+        <!-- </div> -->
+      </div>
+      
       <%= form_for([post, post.comments.build]) do |f| %>
         <textarea name="comment[body]" id="comment_body" placeholder="Comment here..." required></textarea>
         <button type="submit" name="commit">
