@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one_attached :avatar
   acts_as_voter
   has_many :posts
   has_many :comments

@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
-  acts_as_votable
   belongs_to :user
+  validates :user_id, presence: true
+  acts_as_votable
   has_many :comments, dependent: :destroy
 end

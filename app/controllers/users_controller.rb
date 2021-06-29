@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
 
-    if @user.save 
+    if @user.save
       log_in @user 
       redirect_to '/'
     else
@@ -16,19 +16,22 @@ class UsersController < ApplicationController
     end
   end
 
-  
+  def edit
+    @user = User.find(params[:id])
+  end
 
   def show
     @user = User.find(params[:id])
   end 
 
   def index
-    @users = User.all
+    @users = User.all.order(updated_at: :desc)
   end
 
-  private 
+  private
+
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :avatar)
   end
 end
 
