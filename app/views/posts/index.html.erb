@@ -1,15 +1,32 @@
 <div class="page-container">
+  
+  <h2><%= current_user.username %></h2>
+
   <div class="page-content">
     <% @posts.reverse.each do |post| %>
     <div class="post-container">
       <div class="post-owner-pp">
-        <img class="display-prof-pic" <%= gravatar_for current_user %> >
-        <h5><strong>UserName</strong> Posted:</h5>
-        <p class="post-message"><%= post.message %></p>
-        <p class="post-time-stamp"><span>Posted </span><%= time_ago_in_words(post.created_at)%><span> ago</span></p>
+        <img class="display-prof-pic"
+          <%= if post.author.avatar.attached? %>
+            <%= image_tag(post.author.avatar, width: 80) %>
+          <% else %>    
+            <%= gravatar_for post.author %>
+          <% end %>  
+          alt="">
+        <h5><strong><%= post.author %></strong>
+        <p class="post-time-stamp"><span>Posted </span><%= time_ago_in_words(post.created_at)%><span> ago</span></p></h5>
       </div>
-      <img class="post-image" src="https://images.unsplash.com/photo-1623847976687-8b742dc59073?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80" alt="">
-      <p class="like-btn"><button><i class="far fa-heart"></i></button></p>
+      <div class="post-message">
+        <p><%= post.message %></p>
+      </div>
+      <div class="post-img-container">
+        <img class="post-image" src="https://images.unsplash.com/photo-1623847976687-8b742dc59073?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80" alt="">
+      </div>
+      <div class="like-btn">
+        <%= render 'posts/upvote_link', post: post %>
+          <%= render 'posts/votes_score', post: post %>
+      </div>
+      
       <%= form_for([post, post.comments.build]) do |f| %>
         <textarea name="comment[body]" id="comment_body" placeholder="Comment here..." required></textarea>
         <button type="submit" name="commit">
