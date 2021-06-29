@@ -12,7 +12,7 @@
       <% end %>
     
     <%= form.label "Profile Photo" %>
-    <%= form.file_field :avatar %>
+    <%= form.file_field :avatar, accept: "image/jpeg,image/gif,image/png" %>
 
     <%= form.label :email %>
       <%= form.email_field :email, class: 'form-control' %>
