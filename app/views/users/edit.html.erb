@@ -23,7 +23,7 @@
             <%= form.label :hobbies %>
             <%= form.text_field :hobbies, class: 'form-control' %>
             <%= form.label :relationship_status %>
-            <%= form.collection_select :relationship_status, User::RELATIONSHIP, :to_s, :to_s, class: 'form-control' %><br>
+            <%= form.collection_select :relationship_status, User::RELATIONSHIP, :to_s, :to_s, {}, class: 'form-control' %>
             <%= form.label :birthday %>
             <%= form.date_field :birthday, class: 'form-control' %>
             <%= form.label :current_location %>
