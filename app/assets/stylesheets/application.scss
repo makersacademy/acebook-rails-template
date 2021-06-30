@@ -491,8 +491,33 @@ p {
   width: 100px;
   height: 100px;
   float: left; 
-  margin-right: 10px;
+  margin-right: 20px;
 }
+
+// USER PROFILE PAGE STYLING START
+
+.user_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 150px;
+  margin-top: 50px; 
+
+}
+
+.avatar-username {
+  display: flex;
+  align-items: flex-start;
+}
+
+.avatar-username h1 {
+  padding: 0;
+  margin: 0;
+}
+
+// USER PROFILE PAGE STYLING END
 
 // INACTIVE ICONS
 

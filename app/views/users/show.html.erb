@@ -1,24 +1,25 @@
 <% provide(:title, @user.username) %> 
 <div class="row">
     <section class="user_info">
-      <h1>
+      <div class="avatar-username">
         <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar, class:"display-prof-pic profile-picture" %>
-        <% else %>
-          <%= gravatar_for @user, class:"display-prof-pic profile-picture" %>
+            <%= image_tag @user.avatar, class:"display-prof-pic profile-picture" %>
+          <% else %>
+            <%= gravatar_for @user, class:"display-prof-pic profile-picture" %>
+          <% end %>
+        <div>
+          <h1><%= @user.username %></h1>
+          <%if @user.birthday %>
+          <p> Birthday: <%= @user.birthday %> </p>
         <% end %>
-        <%= @user.username %>
-      </h1>
-      <br>
 
-<%if @user.birthday %>
-    <p> Birthday: <%= @user.birthday %> </p>
-  <% end %>
-
-      <p> Email: <%= @user.email %> </p>
-      <p> Hobbies: <%= @user.hobbies %> </p>
-      <p> Marital Status: <%= @user.marital_status %></p>
-      <p> On Acebook since <%= time_ago_in_words(@user.created_at) %> </p>
+        <p> Email: <%= @user.email %> </p>
+        <p> Hobbies: <%= @user.hobbies %> </p>
+        <p> Marital Status: <%= @user.marital_status %></p>
+        <p> On Acebook since <%= time_ago_in_words(@user.created_at) %> </p>
+        </div>
+        
+      </div>
     </section>
 
     <% if current_user?(@user) %>
