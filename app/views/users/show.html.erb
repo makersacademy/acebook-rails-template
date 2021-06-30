@@ -4,13 +4,17 @@
     <section class="user_info">
       <h1>
         <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar %>
+          <%= image_tag @user.avatar, class:"display-prof-pic profile-picture" %>
         <% else %>
-          <%= gravatar_for @user %>
+          <%= gravatar_for @user, class:"display-prof-pic profile-picture" %>
         <% end %>
         <%= @user.username %>
       </h1> 
     </section>
-      <%= link_to 'Edit', edit_user_path(@user) %>
+
+    <% if current_user?(@user) %>
+       <%= link_to 'Edit', edit_user_path(@user) %>
+       <%= link_to 'Settings', "#" %>
+    <%end%>
   </aside>
 </div>
