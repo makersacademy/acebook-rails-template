@@ -8,8 +8,8 @@ local:
 
 amazon:
   service: S3
-  access_key_id: ENV['S3_KEY']
-  secret_access_key: ENV['S3_SECRET']
+  access_key_id: <%= ENV["ACCESS_KEY_ID"] %>
+  secret_access_key: <%= ENV["SECRET_ACCESS_KEY"] %>
   region: eu-west-2
   bucket: acebook-runtime-terrors
 
