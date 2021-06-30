@@ -10,6 +10,15 @@
         <%= @user.username %>
       </h1>
       <br>
+
+<%if @user.birthday %>
+    <p> Birthday: <%= @user.birthday %> </p>
+  <% end %>
+
+      <p> Email: <%= @user.email %> </p>
+      <p> Hobbies: <%= @user.hobbies %> </p>
+      <p> Marital Status: <%= @user.marital_status %></p>
+      <p> On Acebook since <%= time_ago_in_words(@user.created_at) %> </p>
     </section>
 
     <% if current_user?(@user) %>
