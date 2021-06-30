@@ -4,7 +4,7 @@
 <% @users.each do |user| %>
 <li>
 <% if user.avatar.attached? %>
-    <%= image_tag(user.avatar, width: 80) %>
+    <%= image_tag(user.avatar, class:"display-prof-pic") %>
 <% else %>
     <%= gravatar_for user %>
 <% end %>

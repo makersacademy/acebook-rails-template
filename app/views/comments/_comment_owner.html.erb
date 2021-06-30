@@ -1,0 +1,8 @@
+ <%= content_tag "div", class: "user-profile-comment" do %>
+  <% if comment.user.avatar.attached? %>
+      <%= image_tag comment.user.avatar %>
+  <% else %>
+      <%= gravatar_for comment.user %>
+  <% end %>
+  <h5><strong><%= comment.author %></strong></h5>
+<%end%>

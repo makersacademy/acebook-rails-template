@@ -50,7 +50,7 @@
       </div>
     <!-- Post Hover Menu End -->
       <div class="post-owner-pp">
-        <img class="display-prof-pic"  src="https://images.unsplash.com/photo-1623847976687-8b742dc59073?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80" alt="" >
+      <%= render 'posts/profile_link', post: post %>
         <h5><strong><%= post.author %></strong>
         <p class="post-time-stamp"><span>Posted </span><%= time_ago_in_words(post.created_at)%><span> ago</span></p></h5>
       </div>
@@ -81,10 +81,7 @@
       <div class="posts-comments">
         <% if post.comments.count > 0 %>
           <% post.comments[0..2].reverse.each do |comment| %>
-            <div class="user-profile-comment">
-              <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="">
-              <h5><strong><%= comment.author %></strong></h5>
-            </div>
+             <%= render 'comments/comment_owner', comment: comment %>
             <div class="single-comment-area">
               <p><%= comment.body %></p>
               <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>/comments/<%= comment.id %>"><i class="far fa-trash-alt"></i></a></button>
