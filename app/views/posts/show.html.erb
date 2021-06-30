@@ -4,6 +4,11 @@
   <%= @post.message %>
 
   <strong>Image:</strong>
+  <% if @post.image.attached? %>
+    <%= image_tag @post.image, width: "200px" %>
+  <% end %>
+
+  <strong>Image:</strong>
 </p>
 <br>
 

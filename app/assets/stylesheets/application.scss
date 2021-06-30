@@ -39,6 +39,42 @@ p {
   margin: 0;
 }
 
+// ICONS ICONS ICONS ICONS ICONS ICONS ICONS ICONS ICONS ICONS
+
+.fa-feather-alt {
+  color: #fff;
+}
+
+.fa-image {
+  color: red;
+  font-size: 30px;
+  margin-right: 5px;
+  transition: 0.2s;
+}
+
+.fa-image:hover {
+  font-size: 34px;
+}
+
+.fa-heart {
+  color: red;
+  margin-right: 20px;
+  transition: 0.1s;
+}
+
+.fa-heart:hover {
+  transform: scale(1.2);
+}
+
+.fa-comment {
+  color: black;
+  transition: 0.3s;
+}
+
+.fa-comment:hover {
+  transform: scale(1.2);
+}
+
 .add-post-btn {
   display: flex;
   flex-direction: column;
@@ -64,9 +100,7 @@ p {
   background-color: rgba(12, 0, 123, 0.563);
 }
 
-.fa-feather-alt {
-  color: #fff;
-}
+
 
 .page-container {
   display: flex;
@@ -82,8 +116,87 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 100%;
   margin-top: 60px;
+}
+
+.new-post-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding: 15px 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 24px -8px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 24px -8px rgba(0,0,0,0.5); 
+  box-shadow: 0px 0px 24px -8px rgba(0,0,0,0.5);
+}
+
+.new-post-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input-post {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  margin: 30px 0 -30px 5px;
+}
+
+.new-post-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.new-post-input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 60px;
+  padding: 10px;
+  font-size: 12px;
+  color: grey;
+  background-color: rgb(232, 232, 232);
+  border-radius: 10px;
+}
+
+
+
+.post-btn {
+  margin-left: auto;
+  margin-right: 10%;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #2a5fb3;
+}
+
+
+
+.post-file-img {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.post-file-img p {
+  font-size: 12px;
+  color: grey;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.hide {
+  display: none;
 }
 
 .post-container {
@@ -100,6 +213,73 @@ p {
   -moz-box-shadow: 0px 0px 24px -8px rgba(0,0,0,0.5); 
   box-shadow: 0px 0px 24px -8px rgba(0,0,0,0.5);
 }
+
+//  DROPDOWN BTN START DROPDOWN BTN START DROPDOWN BTN START DROPDOWN BTN START DROPDOWN BTN START
+
+.fa-ellipsis-v {
+  margin-left: 20px;
+}
+
+.dropdownbtn {
+  background-color: transparent;
+  color: rgb(46, 46, 46);
+  padding: 5px;
+  font-size: 15px;
+  border: none;
+  transition: 0.3s;
+}
+
+.dropdownbtn:hover {
+  transform: scale(1.2);
+}
+/* The container <div> - needed to position the dropdown content */
+.post-menu {
+  // display: inline-block;
+  display: flex;
+  width: 105%;
+  height: 0;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content button {
+  border: none;
+  width: 100%;
+  text-align: center;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content button:hover {background-color: lightblue;}
+
+/* Show the dropdown menu on hover */
+.post-menu:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.post-menu:hover .dropbtn {background-color: #3e8e41;}
+
+//  DROPDOWN BTN END DROPDOWN BTN END DROPDOWN BTN END DROPDOWN BTN END DROPDOWN BTN END DROPDOWN BTN END
 
 .post-img-container {
   display: flex;
@@ -194,6 +374,7 @@ p {
   font-size: 12px;
   font-style: italic;
   color: grey;
+  margin-top: 3px;
 }
 
 .num-of-comments {
@@ -219,15 +400,7 @@ p {
   outline: none;
 }
 
-.fa-heart {
-  color: red;
-  margin-right: 20px;
-  transition: 0.1s;
-}
 
-.fa-heart:hover {
-  transform: scale(1.2);
-}
 
 .new_comment {
   display: flex;
@@ -261,14 +434,7 @@ p {
   outline: none;
 }
 
-.fa-comment {
-  color: black;
-  transition: 0.3s;
-}
 
-.fa-comment:hover {
-  transform: scale(1.2);
-}
 
 .posts-comments {
   width: 70%;
@@ -327,3 +493,10 @@ p {
   float: left; 
   margin-right: 10px;
 }
+
+// INACTIVE ICONS
+
+#inactive {
+  color: grey;
+  cursor: not-allowed;
+} 
