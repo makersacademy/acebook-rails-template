@@ -3,7 +3,7 @@
         <h1 style="text-align:center">Edit</h1>
         <%= form_for @user do |form| %>
             <%= form.label :new_username %>
-            <%= form.text_field :username, class: 'form-control', disabled: true %>
+            <%= form.text_field :username, class: 'form-control' %>
             <% @user.errors.full_messages_for(:username).each do |message| %>
                 <span style="color:red;"><%= "#{message}." %></span>
             <% end %>
