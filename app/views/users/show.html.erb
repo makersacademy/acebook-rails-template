@@ -23,8 +23,7 @@
     </section>
 
     <% if current_user?(@user) %>
-       <%= link_to 'Edit', edit_user_path(@user) %>
-       <%= link_to 'Settings', "#" %>
+       <button class="edit-profile"><a href="<%=edit_user_path(@user)%>"><i class="far fa-edit"></i></a></button>
     <%end%>
   
   <div class="page-container">

@@ -517,6 +517,25 @@ p {
   margin: 0;
 }
 
+.edit-profile {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.edit-profile i {
+  font-size: 30px;
+  color: #2a5fb3;
+  margin-left: 50px;
+  transition: 0.2s;
+}
+
+.edit-profile i:hover {
+  font-size: 33px;
+}
+
 // USER PROFILE PAGE STYLING END
 
 // INACTIVE ICONS
