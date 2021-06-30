@@ -8,15 +8,31 @@
             <%= gravatar_for @user, class:"display-prof-pic profile-picture" %>
           <% end %>
         <div>
-          <h1><%= @user.username %></h1>
+         <h1><%= @user.username %></h1>
           <%if @user.birthday %>
-          <p> Birthday: <%= @user.birthday %> </p>
-        <% end %>
+            <p><i class="fas fa-birthday-cake fa-sm"></i> Born on <strong> <%= @user.birthday %> </strong> </p>
+          <% end %>
 
-        <p> Email: <%= @user.email %> </p>
-        <p> Hobbies: <%= @user.hobbies %> </p>
-        <p> Marital Status: <%= @user.marital_status %></p>
-        <p> On Acebook since <%= time_ago_in_words(@user.created_at) %> </p>
+        <%if @user.current_location %>
+          <p><i class="fas fa-map-marker-alt fa-sm"></i> Lives in <strong> <%= @user.current_location%></strong></p>
+        <%end%>
+        
+        <%if @user.home_town %>
+          <p><i class="fas fa-home fa-sm"></i> From <strong> <%= @user.home_town%></strong></p>
+        <%end%>
+
+        <p><i class="fas fa-phone fa-sm"></i> <strong><%= @user.phone_number %></strong></p>
+        <p><i class="fas fa-envelope-open-text fa-sm"></i> <a target="_blank" href="mailto:<%= @user.email %>"><strong><%= @user.email%></strong></a></p>
+        
+        <p> Likes <strong><%= @user.hobbies %> </strong></p>
+
+         <%if @user.relationship_status == "Complicated" %>
+          <p><i class="fas fa-heart-broken fa-sm mr-1" aria-hidden="false"></i> Relationship status:<strong><%= @user.relationship_status %></strong></p>
+          <% elsif ["Married", "Single", "In a Relationship", "Engaged"].include?(@user.relationship_status) %>
+          <p><i class="fas fa-heart fa-sm mr-1" style="color:black;" aria-hidden="false"></i> Relationship status: <strong><%= @user.relationship_status %></strong></p>
+          <% end %>
+
+        <p> On Acebook since <strong><%= time_ago_in_words(@user.created_at) %> </strong></p>
         </div>
         
       </div>

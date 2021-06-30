@@ -75,6 +75,11 @@ p {
   transform: scale(1.2);
 }
 
+.fa-heart-broken {
+  color: black
+}
+
+
 .add-post-btn {
   display: flex;
   flex-direction: column;
@@ -99,8 +104,6 @@ p {
   border: none;
   background-color: rgba(12, 0, 123, 0.563);
 }
-
-
 
 .page-container {
   display: flex;
@@ -400,8 +403,6 @@ p {
   outline: none;
 }
 
-
-
 .new_comment {
   display: flex;
   flex-direction: row;
@@ -515,6 +516,7 @@ p {
 .avatar-username h1 {
   padding: 0;
   margin: 0;
+  margin-bottom: 2px;
 }
 
 .edit-profile {
@@ -544,3 +546,7 @@ p {
   color: grey;
   cursor: not-allowed;
 } 
+
+.mr-1 {
+  margin-right: 0; 
+}
