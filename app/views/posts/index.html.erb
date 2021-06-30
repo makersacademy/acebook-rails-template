@@ -88,7 +88,9 @@
              <%= render 'comments/comment_owner', comment: comment %>
             <div class="single-comment-area">
               <p><%= comment.body %></p>
-              <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>/comments/<%= comment.id %>"><i class="far fa-trash-alt"></i></a></button>
+              <% if comment.user == current_user || post.user == current_user %>
+                <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>/comments/<%= comment.id %>"><i class="far fa-trash-alt"></i></a></button>
+              <% end %>
             </div>
           <% end %>
         <% else %>
