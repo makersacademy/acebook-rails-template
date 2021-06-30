@@ -34,6 +34,12 @@
                 <span style="color:red;"><%= "#{message}." %></span>
             <% end %><br>
 
+            <%= form.label :hobbies %>
+            <%= form.text_field :hobbies, class: 'form-control' %>
+            <%= form.label :marital_status %>
+            <%= form.text_field :marital_status, class: 'form-control' %>
+            <%= form.label :birthday %>
+            <%= form.text_field :birthday, class: 'form-control' %>
             <%= form.submit "Update", class: "btn btn-primary" %>
         <% end %>
     </div>
