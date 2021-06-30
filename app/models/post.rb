@@ -3,4 +3,5 @@ class Post < ApplicationRecord
   validates :user_id, presence: true
   acts_as_votable
   has_many :comments, dependent: :destroy
+  has_one_attached :image
 end
