@@ -9,15 +9,15 @@
           <% end %>
         <div>
          <h1><%= @user.username %></h1>
-          <%if @user.birthday %>
+          <%if @user.birthday.present? %>
             <p><i class="fas fa-birthday-cake fa-sm"></i> Born on <strong> <%= @user.birthday %> </strong> </p>
           <% end %>
 
-        <%if @user.current_location %>
+        <%if @user.current_location.present? %>
           <p><i class="fas fa-map-marker-alt fa-sm"></i> Lives in <strong> <%= @user.current_location%></strong></p>
         <%end%>
         
-        <%if @user.home_town %>
+        <%if @user.home_town.present? %>
           <p><i class="fas fa-home fa-sm"></i> From <strong> <%= @user.home_town%></strong></p>
         <%end%>
 
