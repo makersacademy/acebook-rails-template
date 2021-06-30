@@ -3,10 +3,14 @@
   <aside class="col-md-4"> 
     <section class="user_info">
       <h1>
-       <%= image_tag(@user.avatar) if @user.avatar.attached? %>
-       <%= @user.username %>
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar %>
+        <% else %>
+          <%= gravatar_for @user %>
+        <% end %>
+        <%= @user.username %>
       </h1> 
     </section>
+      <%= link_to 'Edit', edit_user_path(@user) %>
   </aside>
-  <%= link_to 'Edit', edit_user_path(@user) %>
 </div>
