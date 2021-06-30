@@ -4,5 +4,5 @@
   <% else %>
       <%= gravatar_for comment.user %>
   <% end %>
-  <h5><strong><%= comment.author %></strong></h5>
+  <h5><strong><%= link_to comment.author, comment.user %></strong></h5>
 <%end%>
