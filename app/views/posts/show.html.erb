@@ -1,0 +1,16 @@
+<p style="margin-top:100px;">
+
+  <strong>Message:</strong>
+  <%= @post.message %>
+
+  <strong>Image:</strong>
+</p>
+<br>
+
+<h3><%= @post.comments.count %></h3>
+<%= render @post.comments %>
+<%= render 'comments/form' %>
+<% if @post.user_id === current_user.id %>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
+<%= link_to 'Back', posts_path %>

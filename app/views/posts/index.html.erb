@@ -1,7 +1,73 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<div class="page-container">
+  
+  <h2><%= current_user.username %></h2>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+  <div class="page-content">
+    <%= form_for([Post.new]) do |form| %>
+      <%= form.label :message %>
+      <input type="text" name="post[message]" id="post_meesage" required>
+      <div class="field">
+        <input type="hidden" name="post[user_id]" id="post_user_id" value="<%= current_user.id %>">
+      </div>
+      <div class="field">
+        <input type="hidden" name="post[author]" id="post_author" value="<%= current_user.username %>">
+      </div>
+      <%= form.submit "Submit" %>
+    <% end %>
+    <% @posts.reverse.each do |post| %>
+    <div class="post-container">
+      <div class="post-owner-pp">
+      <%= render 'posts/profile_link', post: post %>
+        <h5><strong><%= post.author %></strong>
+        <p class="post-time-stamp"><span>Posted </span><%= time_ago_in_words(post.created_at)%><span> ago</span></p></h5>
+      </div>
+      <div class="post-message">
+        <p><%= post.message %></p>
+      </div>
+      <div class="post-img-container">
+        <img class="post-image" src="https://images.unsplash.com/photo-1623847976687-8b742dc59073?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1611&q=80" alt="">
+      </div>
+      <div class="like-btn">
+        <%= render 'posts/upvote_link', post: post %>
+          <%= render 'posts/votes_score', post: post %>
+      </div>
+     
+      <%= form_for([post, Comment.new] ) do |f| %>
+        <textarea name="comment[body]" id="comment_body" placeholder="Comment here..." required></textarea>
+        <div class="field">
+        <input type="hidden" name="comment[user_id]" id="comment_user_id" value="<%= current_user.id %>">
+      </div>
+      <div class="field">
+        <input type="hidden" name="comment[author]" id="comment_author" value="<%= current_user.username %>">
+      </div>
+        <button type="submit" name="commit">
+          <i class="far fa-comment"></i>
+        </button>
+      <% end %>
+      <p class="num-of-comments"><span></span><%= post.comments.count %><span> Comments</span></p>
+      <div class="posts-comments">
+        <% if post.comments.count > 0 %>
+          <% post.comments[0..2].reverse.each do |comment| %>
+             <%= render 'comments/comment_owner', comment: comment %>
+            <div class="single-comment-area">
+              <p><%= comment.body %></p>
+              <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>/comments/<%= comment.id %>"><i class="far fa-trash-alt"></i></a></button>
+            </div>
+          <% end %>
+        <% else %>
+            <p>Be the first to comment ...</p>
+        <% end %>
+      </div>
+      <a href="/posts/<%= post.id %>">Show</a>
+      <% if post.user_id === current_user.id %>
+      <a href="/posts/<%= post.id%>/edit">Edit</a>
+      <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>">Delete</a></button>
+      <% end %>
+    </div>
+   <% end %>
+  </div>
+
+  <form class="add-post-btn" action="/posts/new" method="get">
+    <button id="add-post" type="submit"><i class="fas fa-feather-alt"></i></button>
+  </form>
+</div>

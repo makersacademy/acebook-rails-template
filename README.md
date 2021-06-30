@@ -1,13 +1,8 @@
 # AceBook
 
-REQUIRED INSTRUCTIONS:
-
-1. Fork this repository to `acebook-teamname` and customize
-the below**
-
 [You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here: <please update>
+1. The card wall is available in the projects tab of this gitrepo
 
 ## How to contribute to this project
 See [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -17,6 +12,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 First, clone this repository. Then:
 
 ```bash
+> bundle update
 > bundle install
 > bin/rails db:create
 > bin/rails db:migrate
@@ -24,6 +20,7 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+visit localhost:3000/posts in your browser
 
 ## Troubleshooting
 
