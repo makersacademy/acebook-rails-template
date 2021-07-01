@@ -10,8 +10,7 @@ RSpec.feature "Registration", type: :feature do
       fill_in "Password confirmation", with: "password123"
       click_button "Register"
 
-      expect(current_path).to eq('/login') #to be replaced with the path to the login page 
-      expect(page).to have_content ("Log in") # to be replaced with the new log in page 
+      expect(current_path).to eq('/') #to be replaced with the path to the login page 
     end
 
     scenario 'a user should enter matching passwords' do

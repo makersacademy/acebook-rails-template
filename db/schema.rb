@@ -75,9 +75,6 @@ ActiveRecord::Schema.define(version: 2021_06_30_183226) do
     t.string "phone_number", default: "N/A"
     t.string "home_town"
     t.string "current_location"
-    t.string "reset_digest"
-    t.datetime "reset_sent_at"
-    t.datetime "last_seen_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
