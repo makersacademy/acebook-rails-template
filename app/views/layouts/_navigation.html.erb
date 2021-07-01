@@ -9,10 +9,12 @@
         <span class="icon-bar"></span>
       </button> -->
       <div class="navbar-profilepic">
-        <% if current_user.avatar.attached? %>
-        <%= image_tag current_user.avatar, class: "nav-pp", alt: "" %>
+        <% if !current_user %>
+        <img src="" alt="">
+        <% elsif current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar, class: "display-prof-pic", alt: "" %>
         <% else %>
-        <img src="/assets/default-pp.jpeg" alt="">
+          <%= image_tag("default-pp.png", class: "display-prof-pic")%>
         <% end %>
         <%= link_to 'acebook', root_path, class: 'navbar-brand' %>
         <% if logged_in? %>
