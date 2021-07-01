@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  auto_session_timeout_actions
+
   def new
   end
 

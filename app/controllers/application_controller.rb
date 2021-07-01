@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  auto_session_timeout 1.hour
   include SessionsHelper
   protect_from_forgery with: :exception
 
