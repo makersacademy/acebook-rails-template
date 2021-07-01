@@ -596,6 +596,35 @@ hr {
   font-size: 33px;
 }
 
+.login-img {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 50vh;
+}
+
+.login-img img{
+  width: 100%;
+}
+
+.input-form {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 50vh !important;
+  color: #636363;
+}
+
+.input-form form{
+  width: 100%;
+}
+
+.input-form input{
+ margin-bottom: 20px;
+}
+
 // USER PROFILE PAGE STYLING END
 
 
@@ -604,9 +633,8 @@ hr {
   flex-direction: column;
   justify-content: flex-start;
   width: 30%;
-  height: 80vh;
+  height: 90vh;
   margin-top: 60px;
-  
   -webkit-box-shadow: 0px 0px 24px -8px rgba(0,0,0,0.5);
   -moz-box-shadow: 0px 0px 24px -8px rgba(0,0,0,0.5); 
   box-shadow: 0px 0px 24px -8px rgba(0,0,0,0.5);
@@ -666,6 +694,32 @@ hr {
   border-color: #2a5fb3;
 }
 
+.adverts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50%;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.adverts hr {
+  width: 90%;
+}
+
+.adverts figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.add-img {
+  width: 80%;
+  object-fit: contain;
+}
 
 // INACTIVE ICONS
 
@@ -684,4 +738,57 @@ hr {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;
+}
+
+@media only screen and (max-width: 1200px) {
+  .page-content {
+    width: 70%;
+    margin-top: 80px;
+  }
+  .rightbar {
+    width: 30%;
+    margin-top: 80px;
+  }
+  .details {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .online-tag {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .rightbar {
+    display: none;
+  }
+  .page-content {
+    width: 100%;
+    margin-top: 100px;
+  }
+  .user_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70%;
+    height: 150px;
+    margin-top: 150px; 
+    margin-left: 20px;
+  }
+  .login-img {
+    margin-top: 150px;
+    height: 20vh;
+  }
+  .input-form {
+    height: 30vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .user_info {
+    width: 100%;
+  }
 }
