@@ -1,11 +1,19 @@
 class PostsController < ApplicationController
   before_action :logged_in_user
+  before_action :update_last_seen_at, if: -> { current_user && (current_user.last_seen_at.nil? || current_user.last_seen_at < 1.minute.ago) }
+
+  def update_last_seen_at
+    current_user.update_attribute(:last_seen_at, Time.current)
+  end
+
   def new
     @post = Post.new
   end
 
   def index
     @posts = Post.all
+    @users = User.all
+    @online_users = User.where("last_seen_at > ?", 1.minute.ago)
   end
 
   def show
@@ -14,6 +22,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    
   end
 
   def like
