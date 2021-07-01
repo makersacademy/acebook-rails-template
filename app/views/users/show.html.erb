@@ -5,7 +5,7 @@
         <% if @user.avatar.attached? %>
             <%= image_tag @user.avatar, class:"display-prof-pic profile-picture" %>
           <% else %>
-            <%= gravatar_for @user, class:"display-prof-pic profile-picture" %>
+            <%= image_tag("default-pp.png", class: "display-prof-pic profile-picture")%>
           <% end %>
         <div>
          <h1><%= @user.username %></h1>

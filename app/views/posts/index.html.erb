@@ -5,10 +5,10 @@
       <div class="post-owner-pp">
         <% if current_user.avatar.attached? %>
         <%= image_tag current_user.avatar, class: "display-prof-pic", alt: "" %>
-        <% else %>
-        <img src="/assets/default-pp.jpeg" alt="">
-        <% end %>
-        <h5><strong><%= link_to current_user.username, current_user %></strong>
+      <% else %>
+        <%= image_tag("default-pp.png", class: "display-prof-pic")%>
+      <% end %>
+      <h5><strong><%= link_to current_user.username, current_user %></strong>
       </div>
       <%= form_for([Post.new]) do |form| %>
       <div class="new-post-input">
@@ -120,7 +120,7 @@
           <% if user.avatar.attached? %>
           <%= image_tag(user.avatar, class:"display-prof-pic") %>
           <% else %>
-          <%= gravatar_for user %>
+            <%= image_tag("default-pp.png", class: "display-prof-pic")%>
           <% end %>
           <p><a href="/users/<%= user.id %>"><b><%= user.username %></b></a></p>
         </div>
