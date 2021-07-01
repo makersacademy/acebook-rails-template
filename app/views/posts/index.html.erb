@@ -102,6 +102,32 @@
    <!-- All Posts With Comments End -->
   </div>
 
+  <div class="rightbar">
+    <div class="rightbar-users">
+      <p><%= @online_users.size %></p>
+      <% @users.each do |user| %>
+      <div class="user">
+        <div class="pp-username">
+          <% if user.avatar.attached? %>
+              <%= image_tag(user.avatar, class:"display-prof-pic") %>
+          <% else %>
+              <%= gravatar_for user %>
+          <% end %>
+          <p><b><%= user.username %></b></p>
+        </div>
+        <div class="details">
+          <a href="tel:07484760753"><i class="fas fa-mobile-alt"></i> 07484 760 753</a>
+          <a target="_blank" href="mailto:<%= user.email %>"><i class="fas fa-at"></i> <%= user.email %></a>
+          <p>Online <%= time_ago_in_words(user.last_seen_at) unless user.last_seen_at.nil? %></p>
+
+        </div>
+      </div>
+      <hr>
+    <% end %>
+    </div>
+   <hr class="user-end">
+  </div>
+
   <form class="add-post-btn" action="/posts/new" method="get">
     <button id="add-post" type="submit"><i class="fas fa-feather-alt"></i></button>
   </form>

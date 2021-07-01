@@ -39,6 +39,11 @@ p {
   margin: 0;
 }
 
+hr {
+  padding: 0;
+  margin: 0;
+}
+
 // ICONS ICONS ICONS ICONS ICONS ICONS ICONS ICONS ICONS ICONS
 
 .fa-feather-alt {
@@ -75,10 +80,21 @@ p {
   transform: scale(1.2);
 }
 
+
 .fa-heart-broken {
   color: black
 }
 
+
+.fa-mobile-alt {
+  font-size: 15px;
+  color: #3e8e41;
+}
+
+.fa-at {
+  font-size: 15px;
+  color: #2a5fb3;
+}
 
 .add-post-btn {
   display: flex;
@@ -107,6 +123,7 @@ p {
 
 .page-container {
   display: flex;
+
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -119,7 +136,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 60%;
   margin-top: 60px;
 }
 
@@ -171,8 +188,6 @@ p {
   border-radius: 10px;
 }
 
-
-
 .post-btn {
   margin-left: auto;
   margin-right: 10%;
@@ -182,8 +197,6 @@ p {
   outline: none;
   color: #2a5fb3;
 }
-
-
 
 .post-file-img {
   display: flex;
@@ -315,7 +328,6 @@ p {
 .display-prof-pic {
   width: 40px;
   height: 40px;
-  border: 3px solid rgb(130, 0, 157);
   border-radius: 25px;
   padding: 0;
   margin: 0 10px;
@@ -488,6 +500,7 @@ p {
   color: red;
 }
 
+
 .profile-picture {
   width: 100px;
   height: 100px;
@@ -539,6 +552,58 @@ p {
 }
 
 // USER PROFILE PAGE STYLING END
+
+
+.rightbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 30%;
+  height: 80vh;
+  margin-top: 60px;
+  
+  -webkit-box-shadow: 0px 0px 24px -8px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 24px -8px rgba(0,0,0,0.5); 
+  box-shadow: 0px 0px 24px -8px rgba(0,0,0,0.5);
+}
+
+.rightbar-users {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.user {
+  display: flex;
+  align-items: flex-start;
+  margin: 20px 0 30px 0;
+}
+
+.pp-username {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 60%;
+  font-size: 12px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.user-end {
+  width: 90%;
+  margin: 0px auto 10px auto;
+  border-color: #2a5fb3;
+}
+
 
 // INACTIVE ICONS
 
