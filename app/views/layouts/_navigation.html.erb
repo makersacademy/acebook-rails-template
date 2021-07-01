@@ -2,26 +2,35 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
-
-      <%= link_to 'acebook', root_path, class: 'navbar-brand' %>
-      <% if logged_in? %>
-      <ul class="nav navbar-nav navbar-right"> 
-        <li>
-          <a href="/posts" class="navbar-default navbar-nav">Posts
-          </a>
-        </li>
-        <li>
-          <p class="navbar-btn">
-            <a  href="/logout" data-method="delete" rel="nofollow" class="btn btn-default">Log out</a>
-          </p>
-        </li>
-      </ul>
+      </button> -->
+      <div class="navbar-profilepic">
+        <% if current_user.avatar.attached? %>
+        <%= image_tag current_user.avatar, class: "nav-pp", alt: "" %>
+        <% else %>
+        <img src="/assets/default-pp.jpeg" alt="">
+        <% end %>
+        <%= link_to 'acebook', root_path, class: 'navbar-brand' %>
+        <% if logged_in? %>
+      </div>
+      <div class="nav-btns">
+        <ul class="nav navbar-nav navbar-right"> 
+          <li>
+            <a href="/posts" class="navbar-default navbar-nav">Posts
+            </a>
+          </li>
+          <li>
+            <p class="navbar-btn">
+              <a  href="/logout" data-method="delete" rel="nofollow" class="btn btn-default">Log out</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+      
       <% end %>
     </div>
 
