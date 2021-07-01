@@ -15,3 +15,4 @@ secure: 3qJJ/jVTO23y8coPdspWFSWN/+mNZ+fLdkNHe/ig5qPNAdMp9kukwLl4rDdFpDOHuBgj6vF/
 app: acebook-runtime-terrors
 on:
 repo: GunelMC/acebook-runtime-terrors
+run: rake db:migrate
