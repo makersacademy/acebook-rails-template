@@ -80,6 +80,12 @@ hr {
   transform: scale(1.2);
 }
 
+
+.fa-heart-broken {
+  color: black
+}
+
+
 .fa-mobile-alt {
   font-size: 15px;
   color: #3e8e41;
@@ -117,11 +123,12 @@ hr {
 
 .page-container {
   display: flex;
-  // flex-direction: column;
-  justify-content: space-around;
-  // align-items: center;
-  max-width: 100vw;
-  min-height: 100%;
+
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .page-content {
@@ -301,7 +308,7 @@ hr {
 .post-image {
   width: 100%;
   max-height: 450px;
-  object-fit: cover;
+  object-fit: contain;
   border: none;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 24px -8px rgba(0,0,0,0.7);
@@ -408,8 +415,6 @@ hr {
   outline: none;
 }
 
-
-
 .new_comment {
   display: flex;
   flex-direction: row;
@@ -495,6 +500,60 @@ hr {
   color: red;
 }
 
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  float: left; 
+  margin-right: 20px;
+}
+
+// USER PROFILE PAGE STYLING START
+
+.user_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 150px;
+  margin-top: 50px; 
+
+}
+
+.avatar-username {
+  display: flex;
+  align-items: flex-start;
+}
+
+.avatar-username h1 {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2px;
+}
+
+.edit-profile {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.edit-profile i {
+  font-size: 30px;
+  color: #2a5fb3;
+  margin-left: 50px;
+  transition: 0.2s;
+}
+
+.edit-profile i:hover {
+  font-size: 33px;
+}
+
+// USER PROFILE PAGE STYLING END
+
+
 .rightbar {
   display: flex;
   flex-direction: column;
@@ -545,9 +604,14 @@ hr {
   border-color: #2a5fb3;
 }
 
+
 // INACTIVE ICONS
 
 #inactive {
   color: grey;
   cursor: not-allowed;
+} 
+
+.mr-1 {
+  margin-right: 0; 
 }

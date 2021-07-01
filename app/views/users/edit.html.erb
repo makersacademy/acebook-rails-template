@@ -2,8 +2,8 @@
     <div class="col-md-6 col-md-offset-3">
         <h1 style="text-align:center">Edit</h1>
         <%= form_for @user do |form| %>
-            <%= form.label :username %>
-            <%= form.text_field :username, class: 'form-control', disabled: true %>
+            <%= form.label :new_username %>
+            <%= form.text_field :username, class: 'form-control' %>
             <% @user.errors.full_messages_for(:username).each do |message| %>
                 <span style="color:red;"><%= "#{message}." %></span>
             <% end %>
@@ -12,13 +12,26 @@
             <%= image_tag(@user.avatar, width: 80) if @user.avatar.attached? %>
             <%= form.file_field :avatar %>
 
-            <%= form.label :email %>
+            <%= form.label :phone_number %>
+            <%= form.telephone_field :phone_number, class: 'form-control', autofocus: true %>
+            <%= form.label :new_email %>
             <%= form.email_field :email, class: 'form-control' %>
             <% @user.errors.full_messages_for(:email).each do |message| %>
                 <span style="color:red;"><%= "#{message}." %></span>
             <% end %>
 
-            <%= form.label :password %>
+            <%= form.label :hobbies %>
+            <%= form.text_field :hobbies, class: 'form-control' %>
+            <%= form.label :relationship_status %>
+            <%= form.collection_select :relationship_status, User::RELATIONSHIP, :to_s, :to_s, {}, class: 'form-control' %>
+            <%= form.label :birthday %>
+            <%= form.date_field :birthday, class: 'form-control' %>
+            <%= form.label :current_location %>
+            <%= form.text_field :current_location, class: 'form-control' %>
+            <%= form.label :home_town %>
+            <%= form.text_field :home_town, class: 'form-control' %>
+
+            <%= form.label :new_password %>
             <%= form.password_field :password, class: 'form-control' %>
             <% @user.errors.full_messages_for(:password).each do |message| %>
                 <span style="color:red;"><%= "#{message}." %></span><br>
@@ -33,7 +46,6 @@
             <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
                 <span style="color:red;"><%= "#{message}." %></span>
             <% end %><br>
-
             <%= form.submit "Update", class: "btn btn-primary" %>
         <% end %>
     </div>
