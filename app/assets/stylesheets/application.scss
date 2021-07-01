@@ -555,7 +555,7 @@ hr {
   align-items: center;
   width: 50%;
   height: 150px;
-  margin-top: 50px; 
+  margin-top: 80px; 
   margin-left: 20px;
 }
 
@@ -568,6 +568,14 @@ hr {
   padding: 0;
   margin: 0;
   margin-bottom: 2px;
+}
+
+.user-details h1 {
+  margin-bottom: 10px;
+}
+
+.user-details {
+  line-height: 1.7;
 }
 
 .edit-profile {
