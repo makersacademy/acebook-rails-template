@@ -21,3 +21,9 @@
 /yarn-error.log
 
 .byebug_history
+
+
+storage/*
+
+/config/master.key
+

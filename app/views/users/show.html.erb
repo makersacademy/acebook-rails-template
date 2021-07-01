@@ -1,0 +1,118 @@
+<% provide(:title, @user.username) %> 
+<div class="user-profile-page">
+    <section class="user_info">
+      <div class="avatar-username">
+        <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar, class:"display-prof-pic profile-picture" %>
+          <% else %>
+            <%= gravatar_for @user, class:"display-prof-pic profile-picture" %>
+          <% end %>
+        <div>
+         <h1><%= @user.username %></h1>
+          <%if @user.birthday.present? %>
+            <p><i class="fas fa-birthday-cake fa-sm"></i> Born on <strong> <%= @user.birthday %> </strong> </p>
+          <% end %>
+
+        <%if @user.current_location.present? %>
+          <p><i class="fas fa-map-marker-alt fa-sm"></i> Lives in <strong> <%= @user.current_location%></strong></p>
+        <%end%>
+        
+        <%if @user.home_town.present? %>
+          <p><i class="fas fa-home fa-sm"></i> From <strong> <%= @user.home_town%></strong></p>
+        <%end%>
+
+        <p><i class="fas fa-phone fa-sm"></i> <strong><%= @user.phone_number %></strong></p>
+        <p><i class="fas fa-envelope-open-text fa-sm"></i> <a target="_blank" href="mailto:<%= @user.email %>"><strong><%= @user.email%></strong></a></p>
+        
+        <p> Likes <strong><%= @user.hobbies %> </strong></p>
+
+         <%if @user.relationship_status == "Complicated" %>
+          <p><i class="fas fa-heart-broken fa-sm mr-1" aria-hidden="false"></i> Relationship status:<strong><%= @user.relationship_status %></strong></p>
+          <% elsif ["Married", "Single", "In a Relationship", "Engaged"].include?(@user.relationship_status) %>
+          <p><i class="fas fa-heart fa-sm mr-1" style="color:black;" aria-hidden="false"></i> Relationship status: <strong><%= @user.relationship_status %></strong></p>
+          <% end %>
+
+        <p> On Acebook since <strong><%= time_ago_in_words(@user.created_at) %> </strong></p>
+        </div>
+        
+      </div>
+    </section>
+
+    <% if current_user?(@user) %>
+       <button class="edit-profile"><a href="<%=edit_user_path(@user)%>"><i class="far fa-edit"></i></a></button>
+    <%end%>
+  
+  <div class="page-container">
+  <div class="page-content">
+   <!-- All Posts With Comments Start -->
+    <% @user.posts.each do |post| %>
+    <div class="post-container">
+    <!-- Post Hover Menu Start -->
+      <div class="post-menu">
+        <button class="dropdownbtn" id="post-dropdown"><i class="fas fa-ellipsis-v"></i></button>
+        <div class="dropdown-content">
+          <button class="show"><a href="/posts/<%= post.id %>"><i class="far fa-eye"></i></a></button>
+          <% if post.user_id === current_user.id %>
+            <button class="edit"><a href="/posts/<%= post.id %>/edit"><i class="far fa-edit"></i></a></button>
+            <button class="delete"><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>"><i class="far fa-trash-alt"></i></a> </button>
+          <% else %>
+            <button><a href="#"><i id="inactive" class="far fa-edit"></i></a></button>
+            <button><a href="#"><i id="inactive"  class="far fa-trash-alt"></i></a> </button>
+          <% end %>
+        </div>
+      </div>
+    <!-- Post Hover Menu End -->
+      <div class="post-owner-pp">
+      <%= render 'posts/profile_link', post: post %>
+        <h5><strong><%= link_to post.author, post.user %></strong>
+        <p class="post-time-stamp"><span>Posted </span><%= time_ago_in_words(post.created_at)%><span> ago</span></p></h5>
+      </div>
+      <div class="post-message">
+        <p><%= post.message %></p>
+      </div>
+      <div class="post-img-container">
+        <%= image_tag post.image, class: "post-image" if post.image.attached?%>
+      </div>
+      <div class="like-btn">
+        <%= render 'posts/upvote_link', post: post %>
+          <%= render 'posts/votes_score', post: post %>
+      </div>
+     
+      <%= form_for([post, Comment.new] ) do |f| %>
+        <textarea name="comment[body]" id="comment_body" placeholder="Comment here..." required></textarea>
+        <div class="field">
+        <input type="hidden" name="comment[user_id]" id="comment_user_id" value="<%= current_user.id %>">
+      </div>
+      <div class="field">
+        <input type="hidden" name="comment[author]" id="comment_author" value="<%= current_user.username %>">
+      </div>
+        <button type="submit" name="commit">
+          <i class="far fa-comment"></i>
+        </button>
+      <% end %>
+      <p class="num-of-comments"><span></span><%= post.comments.count %><span> Comments</span></p>
+      <div class="posts-comments">
+        <% if post.comments.count > 0 %>
+          <% post.comments[0..2].reverse.each do |comment| %>
+             <%= render 'comments/comment_owner', comment: comment %>
+            <div class="single-comment-area">
+              <p><%= comment.body %></p>
+              <% if comment.user == current_user || post.user == current_user %>
+                <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/posts/<%= post.id %>/comments/<%= comment.id %>"><i class="far fa-trash-alt"></i></a></button>
+              <% end %>
+            </div>
+          <% end %>
+        <% else %>
+            <p>Be the first to comment ...</p>
+        <% end %>
+      </div>
+    </div>
+   <% end %>
+   <!-- All Posts With Comments End -->
+  </div>
+
+  <form class="add-post-btn" action="/posts/new" method="get">
+    <button id="add-post" type="submit"><i class="fas fa-feather-alt"></i></button>
+  </form>
+</div>
+</div>
