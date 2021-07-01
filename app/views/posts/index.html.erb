@@ -6,7 +6,7 @@
       <% if current_user.avatar.attached? %>
         <%= image_tag current_user.avatar, class: "display-prof-pic", alt: "" %>
       <% else %>
-        <%= gravatar_for current_user, class: "display-prof-pic" %>
+        <%= image_tag("default-pp.png", class: "display-prof-pic")%>
       <% end %>
       <h5><strong><%= link_to current_user.username, current_user %></strong>
       </div>
@@ -111,7 +111,7 @@
           <% if user.avatar.attached? %>
               <%= image_tag(user.avatar, class:"display-prof-pic") %>
           <% else %>
-              <%= gravatar_for user %>
+            <%= image_tag("default-pp.png", class: "display-prof-pic")%>
           <% end %>
           <p><b><%= user.username %></b></p>
         </div>

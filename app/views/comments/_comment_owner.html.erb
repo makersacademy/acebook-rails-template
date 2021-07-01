@@ -2,7 +2,7 @@
   <% if comment.user.avatar.attached? %>
       <%= image_tag comment.user.avatar %>
   <% else %>
-      <%= gravatar_for comment.user %>
+      <%= image_tag("default-pp.png", class: "user-profile-comment")%>
   <% end %>
   <h5><strong><%= link_to comment.author, comment.user %></strong></h5>
 <%end%>

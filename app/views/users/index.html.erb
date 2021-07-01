@@ -6,7 +6,7 @@
 <% if user.avatar.attached? %>
     <%= image_tag(user.avatar, class:"display-prof-pic") %>
 <% else %>
-    <%= gravatar_for user %>
+    <%= image_tag("default-pp.png", class: "display-prof-pic")%>
 <% end %>
 <%= link_to user.username, user %>
 <%= link_to user.email, user %>
