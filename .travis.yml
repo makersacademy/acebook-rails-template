@@ -7,8 +7,7 @@ cache:
 script:
   - bin/rails db:create 
   - bin/rails db:migrate
-  allow_failures:
-    - bundle exec rspec
+  - bundle exec rspec
 services:
  — postgresql
 deploy:
@@ -18,4 +17,6 @@ secure: 3qJJ/jVTO23y8coPdspWFSWN/+mNZ+fLdkNHe/ig5qPNAdMp9kukwLl4rDdFpDOHuBgj6vF/
 app: acebook-runtime-terrors
 on:
 repo: GunelMC/acebook-runtime-terrors
-run: rake db:migrate
+run: 
+  - rake db:migrate
+  - restart
