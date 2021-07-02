@@ -1,0 +1,7 @@
+<%= content_tag "img" do %>
+  <% if post.user.avatar.attached? %>
+      <%= image_tag post.user.avatar, class: "display-prof-pic" %>
+  <% else %>
+    <%= image_tag("default-pp.png", class: "display-prof-pic")%>
+  <% end %>
+<%end%>

@@ -1,0 +1,18 @@
+language: 
+ — ruby
+rvm:
+ — 2.7
+cache:
+ — bundler
+script:
+ — bundle install && bin/rails db:create && bin/rails db:migrate
+services:
+ — postgresql
+deploy:
+provider: heroku
+api_key:
+secure: 3qJJ/jVTO23y8coPdspWFSWN/+mNZ+fLdkNHe/ig5qPNAdMp9kukwLl4rDdFpDOHuBgj6vF/6HwNYBhcv75HkN8xelZU6EH8iXVT9HX90HfoU1LNm3Z4MLDSZPaVqnLO4gzXhreaNZUWJ4X+V1jQ1/kxd5SxnK4fDELurF3p/x3CzGWfbFhNg6AQR9keR5Wp6qFi+wYF183yS3U6llzUn2PgKqUGvypdlMcnlu+6sC6l9tQ3Ki3JVFDuRjciA29yhoOSxCY/n6EtYukgldjUOcrrBnBavNGoTPVsR8M5AXY1j43kFpy+W/EPAPuYefI19A4unzCZa6pzL54/pozBuXuLEHiMsCVoUQVa19UyUWWV6BDlFOB8AdcA3/K1VCRZ02VdmJU2JW5yB6ezITliEO6gT/3pHTKhA9MgwDGgeOeEc0SjSwdX/UtGzxPWI5fPBJQr8h0uIMBk5Twqf1jD5XYLIzjenZ+iwq/frikceuFUEhOEqfCF/2bvMMoM/hNbVX8PR+6sGNiJjs3LP4/1tut1Fu2WQdSevS+8mBShimv12QccFqzlqvlbi5dQP4TKhZmm4Fhh8K/Q6KW9JEle7Z77LkU6hAvOOJct+ElUpPG6x6Os1AeduDEM2UQQ1IlE9XdCIbUKpU1GKnDagtvy1lyljVqWh7pnCd45BBbgRn4=
+app: acebook-runtime-terrors
+on:
+repo: GunelMC/acebook-runtime-terrors
+run: rake db:migrate

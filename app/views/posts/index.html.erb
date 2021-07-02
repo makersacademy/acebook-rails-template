@@ -1,7 +1,143 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<div class="page-container">
+  <div class="page-content">
+    <!-- New Post Form Start -->
+    <div class="new-post-form">
+      <div class="post-owner-pp">
+        <% if current_user.avatar.attached? %>
+        <%= image_tag current_user.avatar, class: "display-prof-pic", alt: "" %>
+      <% else %>
+        <%= image_tag("default-pp.png", class: "display-prof-pic")%>
+      <% end %>
+      <h5><strong><%= link_to current_user.username, current_user %></strong>
+      </div>
+      <%= form_for([Post.new]) do |form| %>
+      <div class="new-post-input">
+        <input type="text" name="post[message]" id="post_meesage" required placeholder="What is on your mind...">
+      </div>
+      <div class="input-post">
+        <div class="post-file-img">
+          <!-- <%= form.label :image, class: "post_image" %> -->
+          <%= form.file_field :image, class: "hide" %>
+          <label for="post_image"><i class="fas fa-image"></i></label>
+          <p>Tag an image</p>
+          <!-- <input class="hide" type="file" name="post[image]" id="post_image"> -->
+        </div>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+        <div class="field">
+          <input type="hidden" name="post[user_id]" id="post_user_id" value="<%= current_user.id %>">
+        </div>
+        <div class="field">
+          <input type="hidden" name="post[author]" id="post_author" value="<%= current_user.username %>">
+        </div>
+      </div>
+      <!-- <%= form.submit "Submit" %> -->
+      <input type="submit" name="commit" value="Post" class="post-btn" data-disable-with="Submit">
+      <% end %>
+    </div>
+    <!-- New Post Form End -->
+    <!-- All Posts With Comments Start -->
+    <% @posts.each do |post| %>
+    <div class="post-container">
+      <!-- Post Hover Menu Start -->
+      <div class="post-menu">
+        <button class="dropdownbtn" id="post-dropdown"><i class="fas fa-ellipsis-v"></i></button>
+        <div class="dropdown-content">
+          <button class="show"><a href="/posts/<%= post.id %>"><i class="far fa-eye"></i></a></button>
+          <% if post.user_id === current_user.id %>
+          <button class="edit"><a href="/posts/<%= post.id %>/edit"><i class="far fa-edit"></i></a></button>
+          <button class="delete"><a data-confirm="Are you sure?" rel="nofollow" data-method="delete"
+              href="/posts/<%= post.id %>"><i class="far fa-trash-alt"></i></a> </button>
+          <% else %>
+          <button><a href="#"><i id="inactive" class="far fa-edit"></i></a></button>
+          <button><a href="#"><i id="inactive" class="far fa-trash-alt"></i></a> </button>
+          <% end %>
+        </div>
+      </div>
+      <!-- Post Hover Menu End -->
+      <div class="post-owner-pp">
+        <%= render 'posts/profile_link', post: post %>
+        <h5><strong><%= link_to post.author, post.user %></strong>
+          <p class="post-time-stamp"><span>Posted </span><%= time_ago_in_words(post.created_at)%><span> ago</span></p>
+        </h5>
+      </div>
+      <div class="post-message">
+        <p><%= post.message %></p>
+      </div>
+      <div class="post-img-container">
+        <%= image_tag post.image, class: "post-image" if post.image.attached?%>
+      </div>
+      <div class="like-btn">
+        <%= render 'posts/upvote_link', post: post %>
+        <%= render 'posts/votes_score', post: post %>
+      </div>
+
+      <%= form_for([post, Comment.new] ) do |f| %>
+      <textarea name="comment[body]" id="comment_body" placeholder="Comment here..." required></textarea>
+      <div class="field">
+        <input type="hidden" name="comment[user_id]" id="comment_user_id" value="<%= current_user.id %>">
+      </div>
+      <div class="field">
+        <input type="hidden" name="comment[author]" id="comment_author" value="<%= current_user.username %>">
+      </div>
+      <button type="submit" name="commit">
+        <i class="far fa-comment"></i>
+      </button>
+      <% end %>
+      <p class="num-of-comments"><span></span><%= post.comments.count %><span> Comments</span></p>
+      <div class="posts-comments">
+        <% if post.comments.count > 0 %>
+        <% post.comments[0..2].reverse.each do |comment| %>
+        <%= render 'comments/comment_owner', comment: comment %>
+        <div class="single-comment-area">
+          <p><%= comment.body %></p>
+          <% if comment.user == current_user || post.user == current_user %>
+          <button><a data-confirm="Are you sure?" rel="nofollow" data-method="delete"
+              href="/posts/<%= post.id %>/comments/<%= comment.id %>"><i class="far fa-trash-alt"></i></a></button>
+          <% end %>
+        </div>
+        <% end %>
+        <% else %>
+        <p>Be the first to comment ...</p>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+    <!-- All Posts With Comments End -->
+  </div>
+
+  <div class="rightbar">
+    <div class="rightbar-users">
+      <p class="online-tag">
+        <% if @online_users.size <= 1 %>
+        <%= @online_users.size %> User Online
+        <% else %>
+        <%= @online_users.size %> Users Online
+        <% end %>
+      </p>
+      <% @users.each do |user| %>
+      <div class="user">
+        <div class="pp-username">
+          <% if user.avatar.attached? %>
+          <%= image_tag(user.avatar, class:"display-prof-pic") %>
+          <% else %>
+            <%= image_tag("default-pp.png", class: "display-prof-pic")%>
+          <% end %>
+          <p><a href="/users/<%= user.id %>"><b><%= user.username %></b></a></p>
+        </div>
+        <div class="details">
+          <a href="tel:07484760753"><i class="fas fa-mobile-alt"></i> 07484 760 753</a>
+          <a target="_blank" href="mailto:<%= user.email %>"><i class="fas fa-at"></i> <%= user.email %></a>
+          <p>Online <%= time_ago_in_words(user.last_seen_at) unless user.last_seen_at.nil? %></p>
+
+        </div>
+      </div>
+      <hr>
+      <% end %>
+    </div>
+    <hr class="user-end">
+  </div>
+
+  <!-- <form class="add-post-btn" action="/posts/new" method="get">
+    <button id="add-post" type="submit"><i class="fas fa-feather-alt"></i></button>
+  </form> -->
+</div>

@@ -1,6 +1,19 @@
-<%= form_for @post do |form| %>
-  <%= form.label :message %>
-  <%= form.text_field :message %>
+<div style="margin-top: 100px;">
+  <h1>New Page</h1>
+  <%= form_for([Post.new]) do |form| %>
+      <%= form.label :message %>
+      <!-- <%= form.text_field :message %> -->
+      <input type="text" name="post[message]" id="post_meesage" required>
+      <%= form.label :image %>
+      <%= form.file_field :image %> 
+      
+      <div class="field">
+        <input type="hidden" name="post[user_id]" id="post_user_id" value="<%= current_user.id %>">
+      </div>
+      <div class="field">
+        <input type="hidden" name="post[author]" id="post_author" value="<%= current_user.username %>">
+      </div>
+      <%= form.submit "Submit" %>
+    <% end %>
+</div>
 
-  <%= form.submit "Submit" %>
-<% end %>
