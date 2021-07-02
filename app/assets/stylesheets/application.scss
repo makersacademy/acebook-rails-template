@@ -358,13 +358,15 @@ hr {
   margin-bottom: 10px;
 }
 
+
+
 .display-prof-pic {
   width: 40px;
-  height: 40px;
+  min-height: 40px;
   border-radius: 25px;
   padding: 0;
   margin: 0 10px;
-  object-fit: cover;
+  object-fit: contain;
   box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.75);
   -webkit-box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.75);
@@ -479,8 +481,6 @@ hr {
   border: none;
   outline: none;
 }
-
-
 
 .posts-comments {
   width: 70%;
@@ -601,7 +601,8 @@ hr {
   flex-direction: column;
   align-items: center !important;
   justify-content: center !important;
-  height: 50vh;
+  margin-top: 80px!important;
+  height: 50vh !important;
 }
 
 .login-img img{
@@ -615,6 +616,7 @@ hr {
   justify-content: center !important;
   height: 50vh !important;
   color: #636363;
+  margin-top: 80px !important;
 }
 
 .input-form form{
@@ -790,6 +792,13 @@ hr {
     justify-content: flex-start;
     width: 100%;
   }
+  .post-owner-pp {
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+  .post-menu {
+    width: 110%;
+  }
   .new-post-input input {
     font-size: 16px;
   }
@@ -800,17 +809,20 @@ hr {
     font-size: 25px;
   }
   .post-time-stamp {
-    font-size: 16px;
+    font-size: 12px;
   }
   .num-of-comments {
-    font-size: 16px;
+    font-size: 12px;
   }
   .new_comment textarea {
     font-size: 16px;
     height: 30px;
   }
+  .posts-comments {
+    width: 100%;
+  }
   .posts-comments p {
-    font-size: 16px;
+    font-size: 14px;
   }
   .online-tag {
     font-size: 16px;
@@ -825,7 +837,7 @@ hr {
     font-size: 16px;
   }
   .new_comment {
-    width: 90%;
+    width: 100%;
     min-height: 40px;
     margin-top: 12px;
   }
@@ -835,7 +847,7 @@ hr {
     font-size: 16px;
   }
   .new_comment button {
-    width: 10%;
+    width: 15%;
   }
   h5 {
     font-size: 18px;
@@ -869,6 +881,13 @@ hr {
   figcaption {
     display: none;
   }
+  .login-img {
+    margin-top: 120px;
+    height: 45vh;
+  }
+  .input-form {
+    height: 45vh;
+  }
 }
 
 @media only screen and (max-width: 900px) {
@@ -877,6 +896,28 @@ hr {
   }
   .page-content {
     width: 100%;
+  }
+  .post-container {
+    width: 95%;
+  }
+  .new-post-form {
+    width: 95%;
+  }
+  
+  .input-post {
+    width: 95%;
+  }
+  
+  .new-post-input {
+    width: 95%;
+  }
+  
+  .new-post-input input {
+    width: 100%;
+  }
+  .new-post-input input {
+    width: 100%;
+    font-size: 16px;
   }
 }
 
