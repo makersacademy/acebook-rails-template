@@ -1,11 +1,13 @@
 language: 
  — ruby
 rvm:
- — 2.7
+ — 2.7.0
 cache:
  — bundler
 script:
- — bundle install && bin/rails db:create && bin/rails db:migrate
+  - bin/rails db:create 
+  - bin/rails db:migrate
+  - bundle exec rspec
 services:
  — postgresql
 deploy:
@@ -15,4 +17,6 @@ secure: 3qJJ/jVTO23y8coPdspWFSWN/+mNZ+fLdkNHe/ig5qPNAdMp9kukwLl4rDdFpDOHuBgj6vF/
 app: acebook-runtime-terrors
 on:
 repo: GunelMC/acebook-runtime-terrors
-run: rake db:migrate
+run: 
+  - rake db:migrate
+  - restart

@@ -10,12 +10,18 @@
   </head>
 
   <body>
+  <% if current_user %>
+    <%= auto_session_timeout_js %>
+  <% end %>
     <%= render 'layouts/navigation' %>
     <div class='container'>
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
     </div>
+    
+
     <%= yield %>
+  
   </body>
 </html>
