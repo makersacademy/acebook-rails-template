@@ -59,6 +59,8 @@ GEM
     acts_as_votable (0.13.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    auto-session-timeout (0.9.7)
+      actionpack (>= 3.2, < 7)
     autoprefixer-rails (10.2.5.1)
       execjs (> 0)
     aws-eventstream (1.1.1)
@@ -227,6 +229,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable
+  auto-session-timeout
   aws-sdk-s3
   bcrypt (~> 3.1.7)
   bootstrap-sass
