@@ -752,11 +752,131 @@ hr {
   .details {
     display: none;
   }
+  .login-img {
+    margin-top: 80px;
+    height: 40vh;
+  }
+  .input-form {
+    height: 40vh;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
   .online-tag {
-    width: 60%;
+    margin-top: 15px;
+    width: 100%;
+    position: sticky;
+  }
+  .rightbar-users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    padding: 10px;
+    overflow-y: scroll;
+  }
+  
+  .user {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0 20px 0;
+  }
+  
+  .pp-username {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .new-post-input input {
+    font-size: 16px;
+  }
+  .post-file-img p {
+    font-size: 16px;
+  }
+  .dropdownbtn {
+    font-size: 25px;
+  }
+  .post-time-stamp {
+    font-size: 16px;
+  }
+  .num-of-comments {
+    font-size: 16px;
+  }
+  .new_comment textarea {
+    font-size: 16px;
+    height: 30px;
+  }
+  .posts-comments p {
+    font-size: 16px;
+  }
+  .online-tag {
+    font-size: 16px;
+  }
+  .details {
+    font-size: 16px;
+  }
+  i {
+    font-size: 30px;
+  }
+  .post-message {
+    font-size: 16px;
+  }
+  .new_comment {
+    width: 90%;
+    min-height: 40px;
+    margin-top: 12px;
+  }
+  .new_comment textarea {
+    width: 80%;
+    height: 40px;
+    font-size: 16px;
+  }
+  .new_comment button {
+    width: 10%;
+  }
+  h5 {
+    font-size: 18px;
+  }
+  .rightbar-users {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 10px;
+    overflow-y: scroll;
+  }
+  .pp-username {
+    font-size: 18px;
+  }
+  .adverts {
+    display: none;
+  }
+  .dropdown-content a {
+    padding: 0px 16px;
+  }
+  .show {
+    height: 40px;
+  }
+  .edit {
+    height: 40px;
+  }
+  .delete {
+    height: 40px;
+  }
+  figcaption {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .rightbar {
+    display: none;
+  }
+  .page-content {
+    width: 100%;
   }
 }
 
