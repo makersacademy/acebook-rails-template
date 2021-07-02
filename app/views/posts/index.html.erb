@@ -125,7 +125,7 @@
           <p><a href="/users/<%= user.id %>"><b><%= user.username %></b></a></p>
         </div>
         <div class="details">
-          <a href="tel:07484760753"><i class="fas fa-mobile-alt"></i> 07484 760 753</a>
+          <a href="tel:<%= user.phone_number %>"><i class="fas fa-mobile-alt"></i><%= user.phone_number %></a>
           <a target="_blank" href="mailto:<%= user.email %>"><i class="fas fa-at"></i> <%= user.email %></a>
           <p>Online <%= time_ago_in_words(user.last_seen_at) unless user.last_seen_at.nil? %></p>
         </div>
@@ -136,17 +136,17 @@
     <hr class="user-end">
     <div class="adverts">
       <figure>
-        <img class="add-img" src="/assets/ad1.png" alt="">
+        <%= image_tag "ad1.png", class: "add-img" %>
         <figcaption>This could be you!</figcaption>
       </figure>
       <hr>
       <figure>
-        <img class="add-img" src="/assets/ad2.jpg" alt="">
+        <%= image_tag "ad2.jpg", class: "add-img" %>
         <figcaption>Connecting People & Businesses</figcaption>
       </figure>
       <hr>
       <figure>
-        <img class="add-img" src="/assets/ad3.png" alt="">
+        <%= image_tag "ad3.png", class: "add-img" %>
         <figcaption>Keep your life private</figcaption>
       </figure>
       <hr>
