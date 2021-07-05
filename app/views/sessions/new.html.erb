@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <h1>Acebook</h1>
+  <p>Welcome to Acebook</p>
+</div>
+
+<div>
+  <%= form_for(:session, url: login_path) do |f| %>
+    <h4>Log in to your account:</h4>
+    <%# <%= f.label :email, "Email" %>
+    <%= f.email_field :email, placeholder: "Email" %>
+
+    <%# <%= f.label :password, "Password" %>
+    <%= f.password_field :password, placeholder: "Password" %>
+
+    <%= f.submit "Log In" %>
+  <% end %>
+</div>
+
+<div>
+  <h4>Not a member yet?</h4>
+  <%= form_with do %>
+    <%= link_to 'Join Now', signup_path, class: 'button alt' %> 
+  <% end %>
+</div>
