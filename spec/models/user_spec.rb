@@ -24,6 +24,21 @@ RSpec.describe User, type: :model do
       test_user = described_class.new(name: 'Test Name', email: 'testemail@test.com', password: '   ')
       expect(test_user).not_to be_valid
     end
+
+    it 'doesnt accept a name that is too long' do 
+      test_user = described_class.new(name: 'Test Name', email: 'testemail@test.com', password: 'password123')
+      test_user.name = 'a' * 51
+      expect(test_user).not_to be_valid
+    end
+
+    it 'doesnt accept an email that is too long' do 
+      test_user = described_class.new(name: 'Test Name', email: 'testemail@test.com', password: 'password123')
+      test_user.email = 'a' * 100 + '@test.com' 
+      expect(test_user).not_to be_valid
+    end
+
+
+
   end
 
 end
