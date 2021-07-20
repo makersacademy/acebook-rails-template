@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # bootstrap alternative
-# gem 'bulma-rails', '~> 0.9.1'
+gem 'bulma-rails', '~> 0.9.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
