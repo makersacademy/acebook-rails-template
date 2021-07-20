@@ -9,8 +9,15 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
+
+  def like
+    @post = Post.find(params[:id])
+    @post.likes += 1
+    @post.save!
+    redirect_to '/posts'
+end
 
   private
 
