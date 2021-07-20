@@ -18,6 +18,7 @@ gem 'sass-rails', '~> 6.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+# gem 'racc', '~> 1.5', '>= 1.5.2'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
@@ -25,6 +26,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# bootstrap alternative
+# gem 'bulma-rails', '~> 0.9.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -35,7 +39,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'rspec-rails', '~> 3.5'
+  # gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
 end
 
 group :development do
