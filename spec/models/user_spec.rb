@@ -54,6 +54,12 @@ RSpec.describe User, type: :model do
       end
     end
 
-  end
+    it 'doesnt accept duplicated emails' do
+      test_user.save
+      email = 'testemail@test.com'.upcase
+      duplicate_user = described_class.new(name: 'Test Name 2', email: email, password: 'password123')
 
+      expect(duplicate_user).not_to be_valid
+    end
+  end
 end
