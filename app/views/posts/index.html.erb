@@ -1,10 +1,22 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-  <a href="/posts/<%= post.id %>/like">Like</a>
-  <p><%= post.likes %> likes</p>
-<% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %> 
+<h1 class="title"> Ace Book </h1>
 
+<section class="section">
+  <div class="container">
+    <% @posts.each do |post| %>
+      <div class="card">
+        <div class="card-content">
+          <div class="content">
+          <%= post.message %>
+          <a href="/posts/<%= post.id %>/like">Like</a>
+          <p><%= post.likes %> likes</p>
+          </div>
+          <!-- <div class="comment-count">
+            <span class="tag is-rounded"><%# comment count %></span>
+          </div> --> 
+        </div>
+      </div>
+    <% end %>
+    
+  </div>
+</section>
