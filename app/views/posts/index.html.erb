@@ -62,6 +62,7 @@
           <a href="/posts/<%= post.id %>/like">Like</a>
           <p><%= post.likes %> likes</p>
           <%= link_to "Edit", edit_post_path(post) %>
+          <%= link_to "Delete", post, method: :delete, data: { confirm: "Delete this post?"} %>
           </div>
           <!-- <div class="comment-count">
             <span class="tag is-rounded"><%# comment count %></span>
