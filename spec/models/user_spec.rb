@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   context 'validating the user creation process' do
-    let(:test_user) { described_class.new(name: 'Test Name', email: 'testemail@test.com', password: 'password123') }
+    let(:test_user) { described_class.new(name: 'Test Name', email: 'testemail@test.com', password: 'password123', password_confirmation: 'password123') }
 
     it 'creates a valid user object' do
       expect(test_user).to be_valid
@@ -17,11 +17,6 @@ RSpec.describe User, type: :model do
 
     it 'doesnt accept an empty email field' do
       test_user.email = '  '
-      expect(test_user).not_to be_valid
-    end
-
-    it 'doesnt accept an empty password field' do
-      test_user.password = '  '
       expect(test_user).not_to be_valid
     end
 
@@ -61,5 +56,16 @@ RSpec.describe User, type: :model do
 
       expect(duplicate_user).not_to be_valid
     end
+
+    it 'should not accept a blank password' do
+      test_user.password = test_user.password_confirmation = ' ' * 6
+      expect(test_user).not_to be_valid
+    end
+
+    it 'should only accept a password that is atleast 6 characters long' do
+      test_user.password = test_user.password_confirmation = 'a' * 5
+      expect(test_user).not_to be_valid
+    end
+
   end
 end
