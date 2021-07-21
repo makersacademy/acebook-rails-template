@@ -15,3 +15,13 @@
  */
 
  @import "bulma";
+
+ .navbar-item img {
+    max-height: 3.75rem;
+    align-items: flex-end;
+}
+
+.navbar-item , .navbar-link {
+    align-items: flex-end;
+    display: flex;
+}
