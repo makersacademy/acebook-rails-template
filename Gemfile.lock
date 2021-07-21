@@ -195,6 +195,9 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -247,7 +250,9 @@ DEPENDENCIES
   rspec-rails (~> 5.0.1)
   sass-rails (~> 6.0)
   selenium-webdriver
-  travis
+
+  simple_form (~> 5.1)
+
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)

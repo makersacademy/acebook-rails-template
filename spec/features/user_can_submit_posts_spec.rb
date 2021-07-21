@@ -2,10 +2,17 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
-    visit "/posts"
-    click_link "New post"
+    visit "/posts/new"
     fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    click_button "Create new post"
     expect(page).to have_content("Hello, world!")
+  end
+
+  scenario "Can submit a post and like it, and see increased number of likes" do
+    visit "/posts/new"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Create new post"
+    click_link "Like"
+    expect(page).to have_content("1 likes")
   end
 end

@@ -14,4 +14,24 @@
  *= require_self
  */
 
- /* @import "bulma"; */
+ @import "bulma";
+
+ html {
+    background-color: #dfe3ee
+ }
+
+ .navbar-item img {
+    max-height: 3.75rem;
+    align-items: flex-end;
+}
+
+.navbar-item , .navbar-link {
+    align-items: flex-end;
+    display: flex;
+}
+
+.button.is-primary {
+    background-color: #3b5998;
+    border-color: transparent;
+    color: #fff;
+}
