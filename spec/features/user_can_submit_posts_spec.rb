@@ -26,4 +26,11 @@ scenario "Can edit posts" do
   expect(page).to have_content("Hello, Earth!")
 end
 
+scenario "Can delete posts" do
+  visit "/posts/new"
+  fill_in "Message", with: "Hello, world!"
+  click_button "Create new post"
+  click_link "Delete"
+  expect(page).not_to have_content("Hello, world!")
+end
 end
