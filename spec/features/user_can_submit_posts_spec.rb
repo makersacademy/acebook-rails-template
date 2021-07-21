@@ -15,4 +15,15 @@ RSpec.feature "Timeline", type: :feature do
     click_link "Like"
     expect(page).to have_content("1 likes")
   end
+
+scenario "Can edit posts" do
+  visit "/posts/new"
+  fill_in "Message", with: "Hello, world!"
+  click_button "Create new post"
+  click_link "Edit"
+  fill_in "Message", with: "Hello, Earth!"
+  click_button "Create new post"
+  expect(page).to have_content("Hello, Earth!")
+end
+
 end
