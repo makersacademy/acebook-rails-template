@@ -52,8 +52,12 @@
     </div>
   </div>
 </nav>
+
+
+
 <section class="section">
   <div class="container">
+  <%= link_to "New Post", new_post_path %>
     <% @posts.each do |post| %>
       <div class="card">
         <div class="card-content">
