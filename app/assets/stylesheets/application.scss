@@ -16,6 +16,8 @@
 
  @import "bulma";
 
+ 
+
  html {
     background-color: #dfe3ee
  }
@@ -25,8 +27,8 @@
     align-items: flex-end;
 }
 
-.navbar-item , .navbar-link {
-    align-items: flex-end;
+.navbar-item {
+    align-items: center;
     display: flex;
 }
 
