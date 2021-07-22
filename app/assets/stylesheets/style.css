@@ -22,12 +22,14 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  background-color: white;
+  background-color: #fff;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
 }
 
 #title {
   margin-left: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
 }
 
 .nav-bar {
@@ -38,6 +40,7 @@ header {
   display: flex;
   justify-content: space-between;
   margin-right: 50px;
+  letter-spacing: 1px;
 }
 
 a {
@@ -48,25 +51,45 @@ a {
   margin: 0;
 }
 
-.nav-bar p:hover {
-  border-bottom: 2px solid black;
-}
-
 .all_posts {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 3rem;
 }
 
 .post {
-  height: 200px;
-  width: 400px;
-  border: 1px solid black;
-  margin: 20px;
-  padding: 10px;
+  display: grid;
+  grid-template-areas: "message"
+                       "footer";
+  grid-template-rows: 3fr 1fr;
+  height: 12rem;
+  width: 35rem;;
+  background-color: #fff;
+  margin: 15px;
   border-radius: 0.5em;
   box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24), 0 8px 20px 0 rgba(0,0,0,0.19);
+}
+
+.post_message {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  grid-area: message;
+  padding: 20px;
+  margin: 0;
+}
+
+.post_footer {
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  grid-area: footer;
+}
+
+.post_footer p {
+  margin-left: 50px;
 }
 
 .post:hover {

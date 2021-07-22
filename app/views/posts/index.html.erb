@@ -20,13 +20,16 @@
     <div class ='all_posts'>
       <% @posts.each do |post| %>
         <div class ='post'>
-          <p><%= post.message %></p>
+          <p class ='post_message'><%= post.message %></p>
+          <div class ='post_footer'>
+            <p class ='post_likes'>Like</p>
+            <p class ='post_likes'>Comment</p>
+            <p class ='post_likes'>Share</p>
+          </div>
         </div>
       <% end %>
 
-    <%= link_to new_post_path do %>
-      New post
-    <% end %>
+   
     </div>
 
   </main>
