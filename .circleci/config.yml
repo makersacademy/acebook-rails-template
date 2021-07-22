@@ -5,4 +5,7 @@ jobs:
     steps:
       - checkout
       - run: ruby --version
+      - run: bundle install
+      - run: bin/rails db:create
+      - run: bin/rails db:migrate
       - run: bundle exec rspec
