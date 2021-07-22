@@ -1,8 +1,7 @@
 jobs:
   build:
     docker:
-      - image: cimg/ruby:3.0.1-node
-      - image: postgres:9.6-jessie
+      - image: cimg/ruby:2.7.0-node
     steps:
       - checkout
       - run: ruby --version
