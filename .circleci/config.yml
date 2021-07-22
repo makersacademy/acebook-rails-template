@@ -7,4 +7,3 @@ jobs:
       - run: ruby --version
       - run: bundle install
       - run: bundle exec rspec
-      - run: rspec
