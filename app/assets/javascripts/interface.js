@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector('#hi').style.color = "red";
+  document.querySelector('title').style.color = "red";
 })

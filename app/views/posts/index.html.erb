@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href ='public/styles/style.css' rel ='stylesheet' type ='text/css'>
-  <script src="public/src/interface.js"></script>
-  <title>Bowling Scorecard</title>
-</head>
+  <title>The name of your site</title>
+    <%= stylesheet_link_tag 'style' %>
+    <%= javascript_include_tag 'interface' %> 
+    <%= csrf_meta_tags %>
 <body>
-<header>
-  <div id ='hi'>Hi</div>
-  <a href="#" onclick="this.style.backgroundColor='#990000';event.preventDefault();">Paint it red</a>
-</header>
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+  <header>
+    <h1 id = 'title'>CatBook</h1>
+    <div class ='nav-bar'>
+      <a class ='nav-bar_li'>New Post</a>
+      <a class ='nav-bar_li'>Profile</a>
+      <a class ='nav-bar_li'>Sign Out</a>
+    </div>
+  </header>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-rrwhsrhsrhah
-<div>ewgg</div>
+  <main>
+    
+    <% @posts.each do |post| %>
+      <p><%= post.message %></p>
+    <% end %>
+
+    <%= link_to new_post_path do %>
+      New post
+    <% end %>
+  </main>
+
 </body>
 </html>
