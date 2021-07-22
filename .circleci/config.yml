@@ -5,3 +5,4 @@ jobs:
     steps:
       - checkout
       - run: ruby --version
+      - run: rspec
