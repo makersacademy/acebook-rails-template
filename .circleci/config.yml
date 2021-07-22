@@ -1,10 +1,8 @@
-version: 2
 jobs:
   build:
     docker:
-      - image: 'circleci/ruby:2.4.1'
-        environment:
-          RAILS_ENV: test
-  steps:
-    - checkout
-    - run: bundle exec rspec
+      - image: cimg/ruby:3.0.1-node
+    steps:
+      - checkout
+      - run: ruby --version
+      - run: bundle exec rspec
