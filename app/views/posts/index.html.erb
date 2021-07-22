@@ -1,7 +1,14 @@
+Welcome,   <%=current_user.email %>
+<br>
+<br>
+<%= link_to 'signout', destroy_user_session_path, method: :delete %>
+<br>
+<br>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
-
+<br>
+<br>
 <%= link_to new_post_path do %>
   New post
 <% end %>
