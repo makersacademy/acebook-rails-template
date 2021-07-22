@@ -1,7 +1,11 @@
 jobs:
   build:
     docker:
-      - image: cimg/ruby:2.7.0-node
+      - image: cimg/ruby:3.0.1-node
+        environment:
+          RAILS_ENV: test
+          PGHOST: 127.0.0.1
+          PGUSER: root
     steps:
       - checkout
       - run: ruby --version
