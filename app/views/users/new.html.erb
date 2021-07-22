@@ -5,6 +5,7 @@
     <h1 class="title has-text-centered">Sign up</h1>
     <div class="field">
       <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages' %>
         <%= f.label :name, class: "label" %>
         <%= f.text_field :name, class: "input", type: "name" %>
 
