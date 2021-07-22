@@ -86,15 +86,9 @@ aside {
 /* forms */
 
 #error_explanation {
-  color: red;
+  color: hsl(348, 100%, 61%);
   ul {
-    color: red;
+    color: hsl(348, 100%, 61%);
     margin: 0 0 30px 0;
-  }
-}
-
-.field_with_errors {
-  .form-control {
-    color: has-text-danger;
   }
 }

@@ -12,9 +12,16 @@
 
   <body>
     <div class="container is-fluid">
+    <% flash.each do |message_type, message| %>
+      <div class="notification is-<%= message_type %> is-light"> 
+      <%= message %>
+      </div>
+      <% end %>
       <%= yield %>
       <%# We need this for debugging %>
       <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
+
+      
