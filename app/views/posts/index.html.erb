@@ -1,19 +1,8 @@
 
 Welcome,   <%=current_user.email %>
 <br>
-<br>
 <%= link_to 'signout', destroy_user_session_path, method: :delete %>
-<br>
-<br>
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
-<br>
-<br>
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-=======
+
 <!DOCTYPE html>
 <html lang="en">
   <title>The name of your site</title>
@@ -37,6 +26,8 @@ Welcome,   <%=current_user.email %>
       <% @posts.each do |post| %>
         <div class ='post'>
           <p class ='post_message'><%= post.message %></p>
+          <br><br>
+          <p><%= post.likes %> likes</p>
           <div class ='post_footer'>
             <p class ='post_likes'>Like</p>
             <p class ='post_likes'>Comment</p>
