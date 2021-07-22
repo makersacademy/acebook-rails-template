@@ -252,7 +252,6 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
-  bootstrap-sass (~> 3.4, >= 3.4.1)
   bulma-rails (~> 0.9.1)
   byebug
   capybara (~> 3.35, >= 3.35.3)
@@ -266,6 +265,7 @@ DEPENDENCIES
   sass-rails (~> 6.0)
   selenium-webdriver
   shutup
+
   simple_form (~> 5.1)
   travis
   tzinfo-data
