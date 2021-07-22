@@ -36,9 +36,7 @@ Welcome,   <%=current_user.email %>
     <div class ='all_posts'>
       <% @posts.each do |post| %>
         <div class ='post'>
-        <a class = 'post_message' href='/posts/<%= post.id %>'>
-          <%= post.message %>
-        </a>
+            <%= link_to post.message, post %>
           <div class ='post_footer'>
             <p class ='post_likes'>Like</p>
             <p class ='post_likes'>Comment</p>
