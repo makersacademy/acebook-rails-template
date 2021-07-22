@@ -9,6 +9,7 @@ jobs:
     steps:
       - checkout
       - run: ruby --version
+      - run: rvm install "ruby-2.7.0"
       - run: bundle install
       - run: bin/rails db:create
       - run: bin/rails db:migrate
