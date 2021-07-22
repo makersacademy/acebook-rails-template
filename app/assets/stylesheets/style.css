@@ -17,6 +17,7 @@ header {
   align-items: center;
   height: 60px;
   background-color: rgb(209, 209, 190);
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
 }
 
 #title {
@@ -31,4 +32,18 @@ header {
   display: flex;
   justify-content: space-between;
   margin-right: 50px;
+}
+
+.all_posts {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 60px);
+  justify-content: center;
+  flex-direction: column;
+}
+
+.post {
+  height: 200px;
+  width: 400px;
+  border: 1px solid black;
 }

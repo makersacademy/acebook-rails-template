@@ -8,21 +8,29 @@
   <header>
     <h1 id = 'title'>CatBook</h1>
     <div class ='nav-bar'>
-      <a class ='nav-bar_li'>New Post</a>
+      
+        <%= content_tag(:a, class: 'nav-bar_li') link_to new_post_path do %>
+          <a>New Post</a>
+        <% end %>
+    
       <a class ='nav-bar_li'>Profile</a>
       <a class ='nav-bar_li'>Sign Out</a>
     </div>
   </header>
 
   <main>
-    
-    <% @posts.each do |post| %>
-      <p><%= post.message %></p>
-    <% end %>
+    <div class ='all_posts'>
+      <% @posts.each do |post| %>
+        <div class ='post'>
+          <p><%= post.message %></p>
+        </div>
+      <% end %>
 
     <%= link_to new_post_path do %>
       New post
     <% end %>
+    </div>
+
   </main>
 
 </body>
