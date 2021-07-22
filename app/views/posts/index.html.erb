@@ -20,7 +20,7 @@
     <div class ='all_posts'>
       <% @posts.each do |post| %>
         <div class ='post'>
-          <p class ='post_message'><%= post.message %></p>
+            <%= link_to post.message, post %>
           <div class ='post_footer'>
             <p class ='post_likes'>Like</p>
             <p class ='post_likes'>Comment</p>
