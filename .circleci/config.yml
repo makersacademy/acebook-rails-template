@@ -2,16 +2,6 @@ jobs:
   build:
     docker:
       - image: cimg/ruby:3.0.1-node
-        environment:
-          RAILS_ENV: test
-          PGHOST: 127.0.0.1
-          PGUSER: root
     steps:
       - checkout
       - run: ruby --version
-      - run: bundle install rvm
-      - run: rvm install "ruby-2.7.0"
-      - run: bundle install
-      - run: bin/rails db:create
-      - run: bin/rails db:migrate
-      - run: bundle exec rspec
