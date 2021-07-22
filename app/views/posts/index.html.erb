@@ -52,15 +52,23 @@
     </div>
   </div>
 </nav>
+
+
+
 <section class="section">
   <div class="container">
+  <%= link_to "New Post", new_post_path %>
     <% @posts.each do |post| %>
       <div class="card">
         <div class="card-content">
           <div class="content">
           <%= post.message %>
           <a href="/posts/<%= post.id %>/like">Like</a>
-          <p><%= post.likes %> likes</p>
+          <% if post.likes > 1 || post.likes == 0 %>
+            <p><%= post.likes %> likes</p>
+            <% else %>
+            <p><%= post.likes %> like</p>
+          <% end %>
           <%= link_to "Edit", edit_post_path(post) %>
           <%= link_to "Delete", post, method: :delete, data: { confirm: "Delete this post?"} %>
           </div>
