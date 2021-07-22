@@ -8,13 +8,11 @@
   <header>
     <h1 id = 'title'>CatBook</h1>
     <div class ='nav-bar'>
-      
-        <%= content_tag(:a, class: 'nav-bar_li') link_to new_post_path do %>
-          <a>New Post</a>
-        <% end %>
-    
-      <a class ='nav-bar_li'>Profile</a>
-      <a class ='nav-bar_li'>Sign Out</a>
+      <%= link_to new_post_path do %>
+        <p >New Post</p>
+      <% end %>
+      <p class ='nav-bar_li'>Profile</p>
+      <p class ='nav-bar_li'>Sign Out</p>
     </div>
   </header>
 

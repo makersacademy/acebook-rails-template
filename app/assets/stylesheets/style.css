@@ -28,10 +28,22 @@ header {
   display: flex;
 }
 
-.nav-bar_li {
+.nav-bar_li, p {
   display: flex;
   justify-content: space-between;
   margin-right: 50px;
+}
+
+a {
+  text-decoration: none;
+  list-style-type: none;
+  color: black;
+  padding: 0;
+  margin: 0;
+}
+
+p:hover {
+  border-bottom: 2px solid black;
 }
 
 .all_posts {
