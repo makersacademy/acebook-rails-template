@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    # get '/new', to: 'users#new' 
   end 
 end
