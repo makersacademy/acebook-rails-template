@@ -9,6 +9,12 @@ body {
   font-family: 'Poppins', sans-serif;
   padding: 0;
   margin: 0;
+  height: 100vh;
+}
+
+main {
+  overflow-y: scroll;
+  height: calc(100vh - 60px);
 }
 
 header {
@@ -16,7 +22,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  background-color: rgb(209, 209, 190);
+  background-color: white;
   box-shadow: 0 3px 4px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
 }
 
@@ -42,14 +48,13 @@ a {
   margin: 0;
 }
 
-p:hover {
+.nav-bar p:hover {
   border-bottom: 2px solid black;
 }
 
 .all_posts {
   display: flex;
   align-items: center;
-  height: calc(100vh - 60px);
   justify-content: center;
   flex-direction: column;
 }
@@ -58,4 +63,13 @@ p:hover {
   height: 200px;
   width: 400px;
   border: 1px solid black;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24), 0 8px 20px 0 rgba(0,0,0,0.19);
+}
+
+.post:hover {
+  box-shadow: 0 9px 12px 0 rgba(0,0,0,0.24), 0 12px 38px 0 rgba(0,0,0,0.19);
+  transition: 0.2s;
 }
