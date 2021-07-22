@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href ='styles/style.css' rel ='stylesheet' type ='text/css'>
+  <link href ='public/styles/style.css' rel ='stylesheet' type ='text/css'>
   <script src="public/src/interface.js"></script>
   <title>Bowling Scorecard</title>
 </head>
 <body>
 <header>
-  <div>Hi</div>
+  <div id ='hi'>Hi</div>
+  <a href="#" onclick="this.style.backgroundColor='#990000';event.preventDefault();">Paint it red</a>
 </header>
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
@@ -20,4 +21,6 @@
   New post
 <% end %>
 rrwhsrhsrhah
+<div>ewgg</div>
 </body>
+</html>
