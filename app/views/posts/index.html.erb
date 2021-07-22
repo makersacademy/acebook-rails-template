@@ -17,6 +17,8 @@
   </header>
 
   <main>
+    <%= render 'layouts/alerts' %>
+    
     <div class ='all_posts'>
       <% @posts.each do |post| %>
         <div class ='post'>
@@ -28,7 +30,6 @@
           </div>
         </div>
       <% end %>
-
    
     </div>
 

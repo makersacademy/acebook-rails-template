@@ -3,11 +3,11 @@ include Warden::Test::Helpers
 
 
 RSpec.feature "User authentication", type: :feature do
-  scenario "user can sign up" do
+  scenario "user can sign out" do
     user_sign_up
-    expect(page).to have_content("CatBook")
+    click_on 'Sign Out'
+    visit '/users/sign_in'
+    expect(page).to have_content("Log in")
     truncate_all_tables
   end
 end
-
-# f.email_field :email
