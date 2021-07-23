@@ -26,7 +26,7 @@ header {
   align-items: center;
   height: 60px;
   background-color: #fff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.178), 0 3px 4px 0 rgba(0, 0, 0, 0.158);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
 }
 
 #header__title {
@@ -71,7 +71,7 @@ a {
   margin: 6px;
   border: 00.1mm solid rgba(221, 221, 221, 0.616);
   border-radius: 0.5em;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.178), 0 3px 4px 0 rgba(0, 0, 0, 0.158);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
 }
 
 .post__message {
@@ -111,7 +111,7 @@ a {
   margin: 0 6px 6px 6px;
   border: 00.1mm solid rgba(221, 221, 221, 0.616);
   border-radius: 0.5em;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.178), 0 3px 4px 0 rgba(0, 0, 0, 0.158);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
 }
 
 .new-post__form input[type =text] {
