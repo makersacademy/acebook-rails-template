@@ -23,14 +23,14 @@
         <div class ='post'>
           <p class ='post_message'><%= post.message %></p>
           <p>
-          <a href="/posts/<%= post.id %>/like">LikeMe!</a>
+
           <%= post.likes %> likes
           </p>
           </div>
   
           <div class ='post_footer'>
-            <p class ='post_likes'>Like</p>
-            <p class ='post_likes'>Comment</p>
+            <p><a class ='post_likes' href="/posts/<%= post.id %>/like">Like</a><p>
+            <p><%= link_to "Comment", post, class: 'post_likes' %></p>
             <p class ='post_likes'>Share</p>
           </div>
       <% end %>
