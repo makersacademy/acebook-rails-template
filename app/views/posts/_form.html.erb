@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-    <%= form.text_field :message, placeholder: "What's on your mind [name]" %>
+    <%= form.text_field :message, placeholder: "What's on your mind #{@user.firstname}" %>
     <%= form.submit "Post"%>
 
   <% end %>
