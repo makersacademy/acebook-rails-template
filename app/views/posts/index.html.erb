@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <title>The name of your site</title>
@@ -17,21 +18,26 @@
   </header>
 
   <main>
+    <%= render 'layouts/alerts' %>
+    
     <div class ='all_posts'>
       <% @posts.each do |post| %>
         <div class ='post'>
-            <%= link_to post.message, post %>
+          <p class ='post_message'><%= post.message %></p>
+          <p>
+
+          <%= post.likes %> likes
+          </p>
+          </div>
+  
           <div class ='post_footer'>
-            <p class ='post_likes'>Like</p>
-            <p class ='post_likes'>Comment</p>
+            <p><a class ='post_likes' href="/posts/<%= post.id %>/like">Like</a><p>
+            <p><%= link_to "Comment", post, class: 'post_likes' %></p>
             <p class ='post_likes'>Share</p>
           </div>
-        </div>
       <% end %>
 
-   
     </div>
-
   </main>
 
 </body>
