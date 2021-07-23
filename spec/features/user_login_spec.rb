@@ -10,6 +10,7 @@ RSpec.feature "Login", type: :feature do
     click_button "Login"
     fill_in "Username", with: "jooomin"
     fill_in "Password", with: "123"
+    click_button "Login"
     expect(page).to have_content("Welcome You are Logged In, jooomin")
   end
 end

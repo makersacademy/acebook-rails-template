@@ -7,6 +7,6 @@ RSpec.feature "Sign up", type: :feature do
     fill_in "Username", with: "JooMin"
     fill_in "Password", with: "123"
     click_button "Create User"
-    expect(page).to have_content("Welcome You are Logged In, JooMin")
+    expect(page).to have_content("Welcome")
   end
 end
