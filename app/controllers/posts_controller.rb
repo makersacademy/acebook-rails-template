@@ -1,4 +1,12 @@
 class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+  end
+
+  def show
+    @posts = Post.find(params[:id])
+  end
+
   def new
     @post = Post.new
   end
@@ -8,11 +16,8 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
-  def index
-    @posts = Post.all
-  end
 
-  private
+
 
   def post_params
     params.require(:post).permit(:message)
