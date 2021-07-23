@@ -4,9 +4,10 @@ class PostsController < ApplicationController
   end
 
   def create
+    p render plain: params[:post].inspect
     p @post = Post.create(post_params)
-    p post_params["message"]
-    p post_params["images"]
+    p "images"
+    p params[:post][:images]
     redirect_to posts_url
   end
 
@@ -21,6 +22,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :images)
   end
 end
