@@ -1,4 +1,5 @@
 Rails.application.configure do
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's
@@ -18,8 +19,8 @@ Rails.application.configure do
     'Cache-Control' => "public, max-age=#{1.hour.seconds.to_i}"
   }
 
-  # Active storage images held locally 
-  config.active_storage.service = :local
+  # Active storage images held in test 
+  config.active_storage.service = :test
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true

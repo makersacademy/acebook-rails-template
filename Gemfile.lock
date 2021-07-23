@@ -219,7 +219,7 @@ DEPENDENCIES
   pg
   puma (~> 3.12.6)
   rails (~> 6.0.0)
-  rspec-rails (~> 4)
+  rspec-rails (~> 4.0)
   sass-rails (~> 6.0)
   selenium-webdriver
   tzinfo-data
