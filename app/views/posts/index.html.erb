@@ -16,12 +16,6 @@
   </header>
 
   <main>
-    <div id ='alerts'>
-        <%= yield %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    </div>
-
     <div class ='all_posts'>
       <div id ='new-post'>
         <div class ='new-post__form'><%= render j 'form' %></div>
@@ -38,6 +32,7 @@
   
           
       <% end %>
+
     </div>
   </main>
 
