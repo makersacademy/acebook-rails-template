@@ -9,6 +9,11 @@ Rails.application.routes.draw do
        root :to => 'devise/registrations#new', as: :unauthenticated_root
      end
    end
+   
+  devise_scope :posts do
+    get "/posts/:id/like", to: "posts#like", as: "like"
+  end
   
-  resources :posts
+  resources :posts 
 end
+

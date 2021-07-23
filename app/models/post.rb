@@ -1,7 +1,2 @@
-class Post < ApplicationRecord
-  attr_reader :likes
-  
-  def initialize
-    @likes = 10
-  end
+class Post < ApplicationRecord 
 end

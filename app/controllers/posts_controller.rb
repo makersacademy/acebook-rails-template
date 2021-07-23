@@ -12,6 +12,13 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def like
+    @post = Post.find(params[:id])
+    @post.likes += 1
+    @post.save!
+    redirect_to '/posts'
+  end
+
   private
 
   def post_params
