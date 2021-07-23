@@ -1,7 +1,15 @@
 <h1>Welcome</h1>
 <% if logged_in? %>
   <h1>You are Logged In, <%= current_user.username %></h1>
-  <% end %>
-<%= button_to "Login", '/login', method: :get%>
-<%= button_to "Sign Up", '/users/new', method: :get%>
-<%= button_to "Posts", '/posts', method: :get%>
+  <%= button_to 'Posts', '/posts', method: :get%>
+  <br>
+  <%= button_to 'Logout', '/logout', method: :post%>
+<% end %>
+<% if logged_in? == false %>
+  <%= button_to 'Login', '/login', method: :get%>
+  <br>
+  <%= button_to 'Sign Up', '/users/new', method: :get%>
+<% end %>
+
+
+

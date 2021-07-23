@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authorized
   helper_method :logged_in?
+  helper_method :logged_out?
   helper_method :current_user
 
   def current_user
@@ -11,6 +12,10 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !current_user.nil?
+  end
+
+  def logged_out?
+    current_user.nil?
   end
 
   def authorized
