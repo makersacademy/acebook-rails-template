@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <title>The name of your site</title>
@@ -27,14 +28,19 @@
       </div>
       <% @posts.each do |post| %>
         <div class ='post'>
-          <div class ='post__message'><%= link_to post.message, post %></div>
-          <div class ='post__footer'>
-            <p class ='post__footer-el'>Like</p>
-            <p class ='post__footer-el' id ='post_footer-comment'>Comment</p>
-            <p class ='post__footer-el'>Share</p>
+          <p class ='post_message'><%= post.message %></p>
+          <p>
+
+          <%= post.likes %> likes
+          </p>
           </div>
-        </div>
-        <%end%>
+  
+          <div class ='post_footer'>
+            <p><a class ='post_likes' href="/posts/<%= post.id %>/like">Like</a><p>
+            <p><%= link_to "Comment", post, class: 'post_likes' %></p>
+            <p class ='post_likes'>Share</p>
+          </div>
+      <% end %>
     </div>
   </main>
 
