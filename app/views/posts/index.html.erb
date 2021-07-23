@@ -6,32 +6,36 @@
     <%= csrf_meta_tags %>
 <body>
   <header>
-    <h1 id = 'title'>CatBook</h1>
-    <div class ='nav-bar'>
-      <%= link_to new_post_path do %>
-        <p >New Post</p>
-      <% end %>
-      <p class ='nav-bar_li'>Profile</p>
-      <p class ='nav-bar_li'><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
+    <h1 id = 'header__title'>CatBook</h1>
+    <div class ='header__nav-bar'>
+    <p class ='header__nav-bar_li'>Home</p>
+      <p class ='header__nav-bar_li'>Profile</p>
+      <p class ='header__nav-bar_li'><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
     </div>
   </header>
 
   <main>
-    <div class ='all_posts'>
-      <% @posts.each do |post| %>
-        <div class ='post'>
-            <%= link_to post.message, post %>
-          <div class ='post_footer'>
-            <p class ='post_likes'>Like</p>
-            <p class ='post_likes'>Comment</p>
-            <p class ='post_likes'>Share</p>
-          </div>
-        </div>
-      <% end %>
-
-   
+    <div id ='alerts'>
+        <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </div>
 
+    <div class ='all_posts'>
+      <div id ='new-post'>
+        <div class ='new-post__form'><%= render j 'form' %></div>
+      </div>
+      <% @posts.each do |post| %>
+        <div class ='post'>
+          <div class ='post__message'><%= link_to post.message, post %></div>
+          <div class ='post__footer'>
+            <p class ='post__footer-el'>Like</p>
+            <p class ='post__footer-el' id ='post_footer-comment'>Comment</p>
+            <p class ='post__footer-el'>Share</p>
+          </div>
+        </div>
+        <%end%>
+    </div>
   </main>
 
 </body>
