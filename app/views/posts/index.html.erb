@@ -1,12 +1,9 @@
 <h1>Your Posts:</h1>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<%= link_to "New Post", new_post_path %>
 
 <ul>
 <% @posts.each do |post| %>
-  <a href=" <%= post_path(post) %>">
-    <p><%= link_to post.message, post%></p>
+    <p><%= link_to post.message, post %></p>
   <% end %>
 </ul>

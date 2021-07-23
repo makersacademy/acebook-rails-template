@@ -1,2 +1,8 @@
 <p><%= @posts.message %></p>
 
+<ul>
+  <li><%= link_to "Edit", edit_post_path(@posts) %></li>
+  <li><%= link_to "Delete", post_path(@posts),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %></li>
+</ul>
