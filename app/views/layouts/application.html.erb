@@ -1,27 +1,85 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Acebook</title>
-    <%= favicon_link_tag asset_path('favicon.png') %>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Acebook</title>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="">
+        <img src="<%= asset_path('logo.png') %>">
+      </a>
+    </div>
+    <div>
+      <a role="button" class="navbar-burger burger" id='burger' aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu" id='nav-links'>
+      <div class="navbar-start">
+        <a class="navbar-item" href="http://localhost:3000/posts"> Home </a>
+        <a class="navbar-item"> Documentation</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">More</a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item">About</a>
+              <a class="navbar-item">Jobs</a>
+              <a class="navbar-item">Contact</a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">Report an issue</a>
+            </div>
+          </div>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <form action='/users/new' method='get'>
+              <button class="button is-primary">
+                <strong>Sign up</strong>
+              </button>
+            </form>
+              <form action='/users/sign-in' method='get'>
+                <button class="button is-light">
+                  <strong>Log in</strong>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
   
-    <%= csrf_meta_tags %>
+  <%= favicon_link_tag asset_path('favicon.png') %>
+  
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
 
-  <body>
-    <div class="container is-fluid">
+<body>
+  <div class="container is-fluid">
     <% flash.each do |message_type, message| %>
       <div class="notification is-<%= message_type %> is-light"> 
-      <%= message %>
+        <%= message %>
       </div>
       <% end %>
       <%= yield %>
       <%# We need this for debugging %>
       <%= debug(params) if Rails.env.development? %>
-    </div>
-  </body>
+  </div>
+  <script> 
+  const burgerIcon = document.querySelector('#burger');
+  const navBarMenu = document.querySelector('#nav-links');
+
+    burgerIcon.addEventListener('click', () => {
+    navBarMenu.classList.toggle('is-active')
+    });
+  </script>
+
+</body>
 </html>
 
       
