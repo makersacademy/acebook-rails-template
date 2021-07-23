@@ -18,9 +18,10 @@ class PostsController < ApplicationController
     @post.likes += 1
     @post.save!
     redirect_to '/posts'
+  end
 
   def show
-    @post = Post.find(params[:id]
+    @post = Post.find(params[:id])
   end
 
   private
