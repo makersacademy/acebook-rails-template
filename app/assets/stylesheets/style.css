@@ -105,10 +105,10 @@ a {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  width: 40rem;;
+  width: 40rem;
   height: 60px;
   padding: 2px;
-  margin: 0 6px 6px 6px;
+  margin: 4.5rem 6px 6px 6px;
   border: 00.1mm solid rgba(221, 221, 221, 0.616);
   border-radius: 0.5em;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
