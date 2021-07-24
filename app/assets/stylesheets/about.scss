@@ -10,3 +10,7 @@ h1,h2 {
 li{
     text-align: left;
 }
+
+.box:hover{
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.173) ;
+}
