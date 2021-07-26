@@ -7,6 +7,5 @@ RSpec.feature "User authentication", type: :feature do
     user_sign_up
     click_on 'Sign Out'
     expect(page).to have_content("Sign up")
-    truncate_all_tables
   end
 end
