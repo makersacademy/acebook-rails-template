@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    params.inspect
     @post = Post.create(post_params)
     redirect_to posts_url
   end
