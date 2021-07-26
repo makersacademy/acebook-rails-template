@@ -12,7 +12,9 @@
   <% end %>
 
     <%= form.text_field :message, placeholder: "What's on your mind #{@user.firstname}" %>
+
     <%# <%= form.file_field :image %>
     <%= form.submit "Post"%>
 
+    <button type="submit" name="commit" value="Post" class='btn btn-primary'>Post</button>
   <% end %>

@@ -2,17 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <title>The name of your site</title>
+  
     <%= stylesheet_link_tag 'style' %>
     <%= javascript_include_tag 'interface' %> 
     <%= csrf_meta_tags %>
 <body>
   <header>
-    <h1 id = 'header__title'>CatBook</h1>
-    <div class ='header__nav-bar'>
-    <p class ='header__nav-bar_li'>Home</p>
-      <p class ='header__nav-bar_li'>Profile</p>
-      <p class ='header__nav-bar_li'><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
-    </div>
+<%= render 'layouts/navbar' %>
   </header>
 
   <main>
