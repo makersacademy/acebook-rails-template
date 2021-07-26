@@ -1,27 +1,31 @@
 <section class="section">
   <div class="container">
 
-  <%= link_to "New Post", new_post_path %>
+    <%= link_to "New Post" , new_post_path %>
 
-    <% @posts.each do |post| %>
-      <div class="card">
-        <div class="card-content">
-          <div class="content">
-          <% if post.image.attached? %>
-            <%= image_tag(post.image, style:"width:30%") %>
-          <% end %>
-          <%= post.message %>
-          <a href="/posts/<%= post.id %>/like">Like</a>
-          <% if post.likes > 1 || post.likes == 0 %>
-            <p><%= post.likes %> likes</p>
-            <% else %>
-            <p><%= post.likes %> like</p>
-          <% end %>
-          <%= link_to "Edit", edit_post_path(post) %>
-          <%= button_to "Delete", post, method: :delete %>
+      <% @posts.each do |post| %>
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+
+              <%= post.message %>
+                <br>
+                <% if post.image.attached? %>
+                  <%= image_tag(post.image, style:"width:30%") %>
+                    <% end %>
+                      <br>
+                      <%= pluralize(post.likes,'like')%>
+                        <br>
+                        <a href="/posts/<%= post.id %>/like">Like</a>
+                        <br>
+                        <%= link_to "Edit" , edit_post_path(post) %>
+                          <%= link_to "Delete" , post, method: :delete, data: { confirm: "Delete this post?" } %>
+            </div>
+            <!-- <div class="comment-count">
+            <span class="tag is-rounded"><%# comment count %></span>
+          </div> -->
           </div>
         </div>
-      </div>
-    <% end %>
+        <% end %>
   </div>
 </section>
