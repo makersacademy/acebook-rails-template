@@ -13,6 +13,37 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "Message", with: "Hello, world!"
     click_button "Create new post"
     click_link "Like"
-    expect(page).to have_content("1 likes")
+    expect(page).to have_content("1 like")
+    click_link "Like"
+    expect(page).to have_content("2 likes")
   end
+
+  scenario "Can edit posts" do
+    visit "/posts/new"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Create new post"
+    click_link "Edit"
+    fill_in "Message", with: "Hello, Earth!"
+    click_button "Create new post"
+    expect(page).to have_content("Hello, Earth!")
+  end
+
+  scenario "Can delete posts" do
+    visit "/posts/new"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Create new post"
+    click_link "Delete"
+    expect(page).not_to have_content("Hello, world!")
+  end
+
+  scenario " Can add comment" do
+    visit "/posts/new"
+    fill_in "Message", with: "Hello, world!"
+    click_button "Create new post"
+    click_button "Comment"
+    fill_in "Comment message", with: "Hello, comment!"
+    click_link "Submit"
+    expect(page).to have_content("Hello, comment!")
+  end
+
 end

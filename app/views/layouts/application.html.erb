@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Acebook</title>
-    <%= favicon_link_tag asset_path('favicon.png') %>
-  
-    <%= csrf_meta_tags %>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Acebook</title>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
-
-  <body>
+  <%= render 'layouts/nav_bar' %>
   
-    <%= yield %>
-  </body>
+  <%= favicon_link_tag asset_path('favicon.png') %>
+  
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
+  <div class="container is-fluid">
+    <% flash.each do |message_type, message| %>
+      <div class="notification is-<%= message_type %> is-light"> 
+        <%= message %>
+      </div>
+      <% end %>
+      <%= yield %>
+      <%# We need this for debugging %>
+      <%= debug(params) if Rails.env.development? %>
+  </div>
+  <script> 
+  const burgerIcon = document.querySelector('#burger');
+  const navBarMenu = document.querySelector('#nav-links');
+
+    burgerIcon.addEventListener('click', () => {
+    navBarMenu.classList.toggle('is-active')
+    });
+  </script>
+
+</body>
 </html>
+
+      
