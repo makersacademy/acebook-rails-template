@@ -1,4 +1,7 @@
 $('.post__comments').show().html("<%= j render 'show', posts: @posts %>");
-$('.close_comment').click(function() {
+
+$('main').css("opacity", ".4");
+$('main').click(function() {
+  $('main').css("opacity", "1");
   $( ".post__comments" ).hide();
 });
