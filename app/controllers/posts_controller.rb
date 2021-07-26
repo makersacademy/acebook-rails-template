@@ -4,14 +4,12 @@ class PostsController < ApplicationController
   end
 
   def comment
-    
     @posts = Post.all
     @post = Post.find(params[:id])
     @comment = Comment.new
   end
 
   def create
-    params.inspect
     @post = Post.create(post_params)
     redirect_to posts_url
   end
@@ -21,7 +19,6 @@ class PostsController < ApplicationController
     @posts = Post.all
     @comment = Comment.new
   end
-
 
   def like
     @post = Post.find(params[:id])
@@ -33,6 +30,13 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
+    redirect_to posts_url
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
     redirect_to posts_url
   end
 
