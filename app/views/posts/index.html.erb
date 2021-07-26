@@ -1,3 +1,5 @@
+<h1>Welcome You are Logged In, <%= current_user.username %></h1>
+
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
@@ -5,3 +7,5 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
+<br>
+<%= button_to 'Logout', '/logout', method: :post%>

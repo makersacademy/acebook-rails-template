@@ -1,4 +1,6 @@
-Rails.application.routes.draw do 
+Rails.application.routes.draw do
+  root 'sessions#welcome'
+
   resources :users, only: [:new, :create, :destroy]
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
