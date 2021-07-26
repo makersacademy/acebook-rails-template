@@ -16,12 +16,16 @@
   <%# <% if @user.image.attached? %>
    <%# <%= image_tag(@user.image, style:'width:100%') %>
   <%# <% else %> 
-    <%= image_tag "default_image.jpg" %>
   <%# <% end %>
-
-  <h1>Profile Settings</h1>
-  <p>First Name: <%= current_user.firstname %></p>
-  <p>Last Name: <%= current_user.lastname %></p>
+  
+   <% if current_user  %> 
+   <%= image_tag "default_image.jpg" %>
+        <h1>Profile Settings</h1>
+        <p>First Name: <%= current_user.firstname %></p>
+        <p>Last Name: <%= current_user.lastname %></p>
+        <% else %>
+        <h1>Sign in to view this page.</h1>
+        <% end %>
   </main>
 
 </body>
