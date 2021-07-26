@@ -214,11 +214,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.4, >= 3.4.1)
-=======
->>>>>>> 54a2906066562116ed4928bb797435cd81a1cb0f
   bulma-rails (~> 0.9.1)
   byebug
   capybara (~> 3.35, >= 3.35.3)
@@ -231,13 +228,8 @@ DEPENDENCIES
   rspec-rails (~> 5.0.1)
   sass-rails (~> 6.0)
   selenium-webdriver
-<<<<<<< HEAD
   shutup
   simple_form (~> 5.1)
-=======
-  simple_form (~> 5.1)
-  travis
->>>>>>> 54a2906066562116ed4928bb797435cd81a1cb0f
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
