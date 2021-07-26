@@ -1,4 +1,3 @@
-require_relative 'helpers/database_truncation_spec.rb'
 require_relative 'helpers/sign_up_helper_spec'
 require 'devise'
 require_relative 'rails_helper'
