@@ -19,14 +19,16 @@ main {
 }
 
 .post__comments {
-  display: hidden;
+  display: none;
   font-size: 1rem;
   transform: translate(-50%, -50%);
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
-  height: 400px;
+  height: 660px;
+  width: 700px;
   background-color: white;
+  padding: 1rem;
   color: black;
   overflow-y: scroll;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
