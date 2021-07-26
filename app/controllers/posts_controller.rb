@@ -30,6 +30,6 @@ class PostsController < ApplicationController
 
   def post_params
     params.inspect
-    params.require(:post).permit(:message, :image)
+    params.require(:post).permit(:message, :image)[:message]
   end
 end
