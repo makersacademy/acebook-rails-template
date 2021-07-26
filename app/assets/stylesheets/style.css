@@ -14,6 +14,7 @@ body {
 main {
   height: calc(100vh - 60px);
   display: flex;
+  overflow-y: scroll;
   align-items: center;
   flex-direction: column;
 }
@@ -23,11 +24,13 @@ main {
   font-size: 1rem;
   transform: translate(-50%, -50%);
   position: absolute;
-  top: 70%;
+  top: 50%;
   left: 50%;
   height: 660px;
   width: 700px;
   background-color: white;
+  border: 00.1mm solid rgba(221, 221, 221, 0.616);
+  border-radius: 0.5em;
   padding: 1rem;
   color: black;
   overflow-y: scroll;
