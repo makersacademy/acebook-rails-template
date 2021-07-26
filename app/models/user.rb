@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one_attached :avatar
+  validates :firstname, presence: true
+  validates :lastname, presence: true
 
   def avatar_thumbnail
     avatar.variant(resize: "100x100!").processed
