@@ -69,7 +69,4 @@ RSpec.feature "User Sign Up", type: :feature do
   #   expect(page).to have_content('TestName')
   # end
 
-
 end
-
-
