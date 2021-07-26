@@ -6,6 +6,13 @@
     <div class="control">
       <%= f.input :message, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label'}%>
     </div>
+   
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+
+     
   </div>
   <%= f.button :submit, 'Create new post', class: "button is-primary"%>
   <% end %>

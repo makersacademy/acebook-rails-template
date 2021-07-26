@@ -1,10 +1,15 @@
 <section class="section">
   <div class="container">
+
   <%= link_to "New Post", new_post_path %>
+
     <% @posts.each do |post| %>
       <div class="card">
         <div class="card-content">
           <div class="content">
+          <% if post.image.attached? %>
+            <%= image_tag(post.image, style:"width:30%") %>
+          <% end %>
           <%= post.message %>
           <a href="/posts/<%= post.id %>/like">Like</a>
           <% if post.likes > 1 || post.likes == 0 %>
