@@ -6,7 +6,7 @@
 
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="">
+      <a class="navbar-item" href="/">
         <img src="<%= asset_path('logo.png') %>">
       </a>
     </div>
@@ -19,9 +19,10 @@
     </div>
     <div class="navbar-menu" id='nav-links'>
       <div class="navbar-start">
-        <a class="navbar-item" href="http://localhost:3000/posts"> Home </a>
-        <a class="navbar-item" href="http://localhost:3000/pages/about"> About </a>
-          <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-item" href="/posts"> Home </a>
+        <a class="navbar-item" href="/pages/about"> About </a>
+          <%# Drop down menu for nav bar %>
+          <%# <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">More</a>
             <div class="navbar-dropdown">
               <a class="navbar-item">About</a>
@@ -30,7 +31,7 @@
               <hr class="navbar-divider">
               <a class="navbar-item">Report an issue</a>
             </div>
-          </div>
+          </div> %>
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
