@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-    <%= form.text_field :message, placeholder: "What's on your mind #{@user.firstname}" %>
+    <%= form.text_field :message, placeholder: "What's on your mind, #{current_user.firstname}?" %>
 
 
     <%= form.file_field :image %>

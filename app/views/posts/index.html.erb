@@ -18,7 +18,7 @@
       </div>
       <% @posts.each do |post| %>
         <div class ='post'>
-          <p>User: <%= post.user%></p>
+          <p>Posted by: <%= post.user.firstname%> <%= post.user.lastname%></p>
           <p class ='post__message'><%= post.message %></p>
           <div class ='post_footer'>
             <p  class ='post__footer-el'><a href="/posts/<%= post.id %>/like">Like <p><%= post.likes %> likes</p></a><p>

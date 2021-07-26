@@ -4,8 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
-    @post.user = current_user
+    @post = Post.create(message: post_params, user: current_user)
     redirect_to posts_url
   end
 
