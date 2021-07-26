@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    params.inspect
     @post = Post.create(post_params)
     redirect_to posts_url
   end
@@ -38,15 +39,10 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
   
-  
-  
-  
-
-
-
   private
 
   def post_params
+    params.inspect
     params.require(:post).permit(:message, :image)
   end
 end

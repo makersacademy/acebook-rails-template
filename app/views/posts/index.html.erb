@@ -59,7 +59,9 @@
       <div class="card">
         <div class="card-content">
           <div class="content">
-          <%= image_tag(post.image) %>
+          <% if post.image.attached? %>
+            <%= image_tag(post.image, style:"width:30%") %>
+          <% end %>
           <%= post.message %>
           <a href="/posts/<%= post.id %>/like">Like</a>
           <p><%= post.likes %> likes</p>
