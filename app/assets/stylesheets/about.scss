@@ -1,0 +1,16 @@
+// Place all the styles related to the about controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bulma";
+
+h1,h2 {
+   text-align: center;
+}
+
+li{
+    text-align: left;
+}
+
+.box:hover{
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.173) ;
+}
