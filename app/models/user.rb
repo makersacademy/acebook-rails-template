@@ -6,10 +6,10 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   def avatar_thumbnail
-    avatar.variant(resize: "150x150!").processed
+    avatar.variant(resize: "100x100!").processed
   end
 
   def avatar_profile
-    avatar.variant(resize: "400x400!").processed
+    avatar.variant(resize: "350x525!").processed
   end
 end

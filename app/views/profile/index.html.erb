@@ -27,17 +27,13 @@
   <%= image_tag "default_image.jpg" %>
   <% end %>
      <%= form_with(model: @user, local: true) do |form| %>
-    <h3>Update Profile Photo</h3>
-    <%= form.file_field :avatar %>
-    <br>
-    
-    <button type="submit" name="upload" value="Post" class='btn btn-primary'>Upload Image</button>
     <% end %>
     </div>
     <div class="col">
         <h1>Profile Settings</h1>
         <p>First Name: <%= current_user.firstname %></p>
         <p>Last Name: <%= current_user.lastname %></p>
+        <h3><%= link_to 'Click to edit Account', edit_user_registration_path %></h3>
         <% else %>
         <h1>Sign in to view this page.</h1>
         <% end %>
