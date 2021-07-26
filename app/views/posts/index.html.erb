@@ -20,19 +20,19 @@
       <div id ='new-post'>
         <div class ='new-post__form'><%= render j 'form' %></div>
       </div>
-      <% @posts.each do |post| %>
+      <% @posts.reverse.each do |post| %>
         <div class ='post'>
           <p class ='post__message'><%= post.message %></p>
           <div class ='post_footer'>
-            <p  class ='post__footer-el'><a href="/posts/<%= post.id %>/like">Like <p><%= post.likes %> likes</p></a><p>
-            <div id= 'post__comments'>
-              <p  class ='post__footer-el'><%= link_to 'Comment', post_path(post), remote: true %></p>
-            </div>
+            <p  class ='post__footer-el'><a href="/posts/<%= post.id %>/like">Like </a><p>
+            <p><%= post.likes %> likes</p>
+            <p class ='post__footer-el'><%= link_to "Comment", post, class: 'post__footer-el', remote: true %></p>
             <p class ='post__footer-el'>Share</p>
           </div>
-          </div>
+           <div class= 'post__comments' id ='<% post.id %>'></div>
+        </div>
       <% end %>
-
+     
     </div>
   </main>
 

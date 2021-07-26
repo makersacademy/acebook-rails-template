@@ -18,6 +18,27 @@ main {
   flex-direction: column;
 }
 
+.post__comments {
+  display: hidden;
+  font-size: 1rem;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 400px;
+  background-color: white;
+  color: black;
+  overflow-y: scroll;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
+}
+
+.close_comment {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 5px;
+}
+
 header {
   position: fixed;
   width: 100%;

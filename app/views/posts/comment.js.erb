@@ -1,1 +1,4 @@
-$('#post__comment a').parent().html("<%= j render 'show', post: @post %>")
+$('.post__comments').show().html("<%= j render 'show', posts: @posts %>");
+$('.close_comment').click(function() {
+  $( ".post__comments" ).hide();
+});

@@ -3,6 +3,13 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def comment
+    
+    @posts = Post.all
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+  end
+
   def create
     params.inspect
     @post = Post.create(post_params)
@@ -12,7 +19,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.all
-    @user = User.new
+    @comment = Comment.new
   end
 
 
@@ -25,12 +32,13 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    redirect_to posts_url
   end
 
   private
 
   def post_params
-    params.inspect
     params.require(:post).permit(:message, :image)
   end
 end
