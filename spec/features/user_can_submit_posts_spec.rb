@@ -3,9 +3,8 @@ require 'rails_helper'
 RSpec.feature "Timeline", type: :feature do
   scenario "Can submit posts and view them" do
     user_sign_up
-    click_on 'New Post'
-    fill_in "Message", with: "Hello, world!"
-    click_button "Submit"
+    fill_in "post[message]", with: "Hello, world!"
+    click_button "Post"
     expect(page).to have_content("Hello, world!")
   end
 end
