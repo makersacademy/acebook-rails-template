@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  get 'profile/index'
-   devise_for :users, :controllers => {registrations: 'registrations'}
+
+  resources :posts do
+    resources :comments 
+  end
+
+  get "/profile", to: "profile#index"
+
+  devise_scope :user do
+  devise_for :users, :controllers => {registrations: 'registrations'}
+    get 'profile/edit', to: 'devise/registrations#edit',   :as => :edit_user_profile
+  end
 
    devise_scope :user do
      authenticated :user do
@@ -14,11 +23,5 @@ Rails.application.routes.draw do
   devise_scope :posts do
     get "/posts/:id/like", to: "posts#like", as: "like"
   end
-  
-  resources :posts do
-    resources :comments 
-  end
-
-    get "/profile", to: "profile#index"
 end
 

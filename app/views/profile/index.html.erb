@@ -17,15 +17,28 @@
    <%# <%= image_tag(@user.image, style:'width:100%') %>
   <%# <% else %> 
   <%# <% end %>
-  
-   <% if current_user  %> 
-   <%= image_tag "default_image.jpg" %>
+  <% if current_user  %> 
+  <div class="container">
+  <div class="row">
+    <div class="col">
+  <%= image_tag "default_image.jpg" %>
+     <%= form_with(model: @user, local: true) do |form| %>
+    <h3>Update Profile Photo</h3>
+    <%= form.file_field :image %>
+    <br>
+    
+    <button type="submit" name="upload" value="Post" class='btn btn-primary'>Upload Image</button>
+    <% end %>
+    </div>
+    <div class="col">
         <h1>Profile Settings</h1>
         <p>First Name: <%= current_user.firstname %></p>
         <p>Last Name: <%= current_user.lastname %></p>
         <% else %>
         <h1>Sign in to view this page.</h1>
         <% end %>
+    </div>
+  </div>
   </main>
 
 </body>
