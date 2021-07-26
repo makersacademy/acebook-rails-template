@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'profile/index'
    devise_for :users, :controllers => {registrations: 'registrations'}
 
    devise_scope :user do
@@ -17,5 +18,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments 
   end
+
+    get "/profile", to: "profile#index"
 end
 

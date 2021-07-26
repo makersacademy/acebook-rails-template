@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <title>Catbook</title>
+  
+    <%= stylesheet_link_tag 'style' %>
+    <%= javascript_include_tag 'interface' %> 
+    <%= csrf_meta_tags %>
+<body>
+  <header>
+<%= render 'layouts/navbar' %>
+  </header>
+
+  <main>
+
+  <h1>Profile Settings</h1>
+  <p>First Name: <%= current_user.firstname %></p>
+  <p>Last Name: <%= current_user.lastname %></p>
+  </main>
+
+</body>
+</html>
