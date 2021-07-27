@@ -4,7 +4,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    # p render plain: params[:post].inspect
+    @post = Post.create!(post_params)
+    #p "images"
+    #p @post.image.attach(params[:image])
+    #@post.save
+    #p params[:post][:image]
     redirect_to posts_url
   end
 
@@ -12,9 +17,13 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def like
+    
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :image)
   end
 end
