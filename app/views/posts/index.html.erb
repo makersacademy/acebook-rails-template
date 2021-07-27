@@ -1,5 +1,6 @@
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
+  <p><%= image_tag post.image if post.image.attached? %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
