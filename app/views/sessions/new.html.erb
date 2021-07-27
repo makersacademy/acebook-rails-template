@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% provide(:title, "log in") %>
 
 <div class="column is-half is-offset-one-quarter">
@@ -19,3 +20,26 @@
 			<p>New User? <%= link_to "Sign up now!", signup_path %>
   </div>
 </div>
+=======
+<% provide(:title, "Log in") %>
+
+<div class="column is-half is-offset-one-quarter">
+  <div class="box">
+    <h1 class="title has-text-centered">Log In</h1>
+    <div class="field">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :email, class: 'label' %>
+      <%= f.email_field :email, class: 'input', placeholder: "alex@example.com" %>
+
+      <%= f.label :password, class: 'label' %>
+      <%= f.password_field :password, class: 'input', placeholder: "********" %>
+      <br><br>
+
+      <%= f.submit "Log in", class: "button is-primary is-fullwidth" %>
+    <% end %>
+    <br>
+    <p>New user? <%= link_to "Sign up now!", '/users/new' %></p>
+  </div>
+  </div>
+</div>
+>>>>>>> sign in css
