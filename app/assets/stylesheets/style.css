@@ -138,8 +138,12 @@ a {
   border-radius: 25px;
   background-color: rgba(221, 221, 221, 0.616);
   outline: none;
-  margin: 2px 0 16px 10px;
+  margin: 2px 0 16px 15px;
   padding: 8px;
+}
+
+.comment__name {
+  font-weight: 600;
 }
 
 .comment__text-area input[type =text] {
@@ -152,6 +156,7 @@ a {
   padding: 10px;
   font-size: 1rem;
 }
+
 .close_comment {
   position: absolute;
   top: 0px;
