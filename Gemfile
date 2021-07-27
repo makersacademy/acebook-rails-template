@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'image_processing'
+
+gem 'mini_magick'
 
 group :test do
   gem 'database_cleaner-active_record'
