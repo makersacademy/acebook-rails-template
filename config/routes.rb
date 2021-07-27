@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   get 'pages/about'
   root "posts#index"
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
   resources :posts do
     get '/like', to: 'posts#like', on: :member
