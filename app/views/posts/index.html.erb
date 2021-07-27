@@ -25,7 +25,11 @@
           <p class ='post__message'><%= post.message %></p>
           <div class ='post__footer-info'>
             <div><%= post.likes %> <i style ='color: rgb(226, 30, 30)' class="fas fa-heart"></i></div>
-            <div><%= post.comments.length %> Comments</div>
+            <% if post.comments.length == 1 %>
+              <div><%= post.comments.length %> comment</div>
+            <% else %>
+            <div><%= post.comments.length %> comments</div>
+            <% end %>
           </div>
           <div class ='post_footer'>
             <p  class ='post__footer-el'>
