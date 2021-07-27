@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :set_post, only: [:like, :edit, :update, :destroy]
+
   def new
     @post = Post.new
   end
@@ -10,22 +13,18 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.order_by_created_at
   end
 
   def like
-    @post = Post.find(params[:id])
-    @post.likes += 1
+    @post.increment_likes(1)
     @post.save!
     redirect_to '/posts'
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to posts_path
     else
@@ -34,12 +33,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.inspect

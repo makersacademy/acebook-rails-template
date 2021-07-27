@@ -1,5 +1,4 @@
 class AboutController < ApplicationController
-  def about
-
-  end
+  def about; end
+  
 end
