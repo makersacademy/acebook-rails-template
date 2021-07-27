@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get "/profile", to: "profile#index"
 
   devise_scope :user do
