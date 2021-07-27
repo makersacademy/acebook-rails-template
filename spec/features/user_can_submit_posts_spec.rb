@@ -1,8 +1,9 @@
 require 'rails_helper'
+require_relative 'web_helpers/users_helper.rb'
 
-RSpec.feature "Posts", type: :feature do
-  scenario "Can submit posts and view them without an image" do
-    visit "/posts"
+RSpec.feature "Timeline", type: :feature do
+  scenario "Can submit posts and view them" do
+    signup_login
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
@@ -19,4 +20,3 @@ RSpec.feature "Posts", type: :feature do
     expect(page).to have_css("img[src*='test_image_1.png']")  
   end
 end
-
