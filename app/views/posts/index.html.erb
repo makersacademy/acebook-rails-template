@@ -23,13 +23,21 @@
 
 
           <p class ='post_header'>
-          <%= image_tag(post.user.avatar_thumbnail) if post.user.avatar.attached? %>
-          <%= post.user.firstname%> <%= post.user.lastname %>
-          <%= post.created_at.to_formatted_s(:time) %></p>
+
+            <h5 class="card-title d-inline"><%= post.user.firstname%> <%= post.user.lastname %></h5> 
+            <h6 class="card-subtitle mb-2 text-muted d-inline"> <%= post.created_at.to_formatted_s(:time) %> </h6>
+      
+            <%= image_tag(post.user.avatar_thumbnail) if post.user.avatar.attached? %>
+
+          </p>
+
         <%# <%= image_tag(@user.avatar_thumbnail) if @user.avatar.attached? %> 
 
-          <p class ='post_header'><%= post.user.firstname%> <%= post.user.lastname%></p>
-          <p class ='post__message'><%= post.message %></p>
+
+          <p class ='post__message'>
+          
+          <%= post.message %>
+          </p>
           <div class ='post_footer'>
             <p  class ='post__footer-el'><a href="/posts/<%= post.id %>/like">Like </a><p>
             <p><%= post.likes %> likes</p>

@@ -1,26 +1,34 @@
-<h2>Log in</h2>
+<div class='container-fluid vh-100'>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="row align-items-center h-100">
+    <div class="col">
+      <h1 class='m-2' >CatBook</h1>
+      <h6 class='m-2'>CatBook helps you connect and share with the felines in your life.</h6>
     </div>
-  <% end %>
+    <div class="col">
+    <div class="card">
+  <div class="card-body ">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field mb-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email address"%>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+        <div class="field mb-3">
+          <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"Password" %>
+        </div>
+
+          <div class="d-grid gap-2">
+            <button type="submit" name="commit" value="Post" class='btn btn-primary '>Log in</button>
+          </div>
+
+      <% end %>
+        </div>
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+  </div>
+
+
+
+</div>
+

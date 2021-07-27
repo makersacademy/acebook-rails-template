@@ -2,4 +2,11 @@
 <%= link_to 'signin', new_user_session_path%>
 <%= link_to 'signout', destroy_user_session_path, method: :delete %>
 <%= link_to 'Edit Account', edit_user_registration_path %>
+<%= render "devise/shared/links" %>
 
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
