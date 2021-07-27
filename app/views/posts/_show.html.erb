@@ -10,7 +10,7 @@
     </div>
   </p>
   <% @post.comments.each do |comment| %>
-    <span class ='comment'><%= current_user.firstname%>: <%= comment.body %></span>
+    <span class ='comment'><%= comment.user.firstname%> <%= comment.user.lastname%>: <%= comment.body %></span>
     <br>
     <br>
 <% end %>
