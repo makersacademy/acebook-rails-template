@@ -53,4 +53,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.active_storage.service = :local
+
+  config.hosts << "www.example.com"
 end

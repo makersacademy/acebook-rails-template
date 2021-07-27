@@ -12,9 +12,9 @@ RSpec.feature "Timeline", type: :feature do
     visit "/posts/new"
     fill_in "Message", with: "Hello, world!"
     click_button "Create new post"
-    click_link "Like"
+    click_link("Like", match: :first)
     expect(page).to have_content("1 like")
-    click_link "Like"
+    click_link("Like", match: :first)
     expect(page).to have_content("2 likes")
   end
 
@@ -22,7 +22,7 @@ RSpec.feature "Timeline", type: :feature do
     visit "/posts/new"
     fill_in "Message", with: "Hello, world!"
     click_button "Create new post"
-    click_link "Edit"
+    click_link("Edit", match: :first)
     fill_in "Message", with: "Hello, Earth!"
     click_button "Create new post"
     expect(page).to have_content("Hello, Earth!")
@@ -32,7 +32,8 @@ RSpec.feature "Timeline", type: :feature do
     visit "/posts/new"
     fill_in "Message", with: "Hello, world!"
     click_button "Create new post"
-    click_link "Delete"
+    save_and_open_page
+    click_link("Delete", match: :first)
     expect(page).not_to have_content("Hello, world!")
   end
 
