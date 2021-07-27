@@ -17,49 +17,6 @@ main {
   overflow-y: scroll;
   align-items: center;
   flex-direction: column;
-
-}
-
-.post__comments {
-  display: none;
-  font-size: 1rem;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  top: 50%;
-  left: 49.2%;
-  height: 400px;
-  width: 610px;
-  background-color: white;
-  border: 00.1mm solid rgba(221, 221, 221, 0.616);
-  border-radius: 0.5em;
-  padding: 1rem;
-  color: black;
-  overflow-y: scroll;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
-}
-
-.post__enter-comments {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  width: 35rem;
-  margin: 0 10px;
-}
-
-.comment__text-area input[type =text] {
-  width: 480px;
-  border: none;
-  border-radius: 25px;
-  background-color: rgba(221, 221, 221, 0.616);
-  outline: none;
-  margin: 0;
-  padding: 10px;
-}
-.close_comment {
-  position: absolute;
-  top: 0px;
-  left: 0px;
 }
 
 header {
@@ -71,6 +28,7 @@ header {
   height: 60px;
   background-color: #fff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
+  z-index: 200;
 }
 
 #header__title {
@@ -138,10 +96,56 @@ a {
   margin-left: 50px;
 }
 
-#alerts {
-  margin-top: 3rem;
-  padding: 0;
-  color: green;
+.post__comments {
+  display: none;
+  font-size: 1rem;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 49.2%;
+  height: 400px;
+  width: 610px;
+  background-color: white;
+  border: 00.1mm solid rgba(221, 221, 221, 0.616);
+  border-radius: 0.5em;
+  padding: 1rem;
+  color: black;
+  overflow-y: scroll;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
+}
+
+.post__enter-comments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 35rem;
+  margin: 0 10px;
+}
+
+.comment {
+  border: none;
+  border-radius: 25px;
+  background-color: rgba(221, 221, 221, 0.616);
+  outline: none;
+  margin: 2px 0 16px 10px;
+  padding: 8px;
+}
+
+.comment__text-area input[type =text] {
+  width: 480px;
+  border: none;
+  border-radius: 25px;
+  background-color: rgba(221, 221, 221, 0.616);
+  outline: none;
+  margin: 0;
+  padding: 10px;
+  font-size: 1rem;
+}
+.close_comment {
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
 #new-post {

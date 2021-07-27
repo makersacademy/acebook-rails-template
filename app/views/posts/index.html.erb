@@ -27,7 +27,7 @@
             <p  class ='post__footer-el'><a href="/posts/<%= post.id %>/like">Like </a><p>
             <p><%= post.likes %> likes</p>
             <p class ='post__footer-el'><%= link_to "Comment", post, class: 'post__footer-el', remote: true %></p>
-            <p  class ='post__footer-el'><%= link_to "Delete", post_path(post), method: :delete %></p>
+            <p  class ='post__footer-el delete'><%= link_to "Delete", post_path(post), method: :delete %></p>
           </div>
            
         </div>
