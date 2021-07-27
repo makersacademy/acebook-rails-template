@@ -12,7 +12,7 @@ body {
 }
 
 main {
-  height: 100vh;
+  height: calc(100vh - 60px);
   display: flex;
   overflow-y: scroll;
   align-items: center;
