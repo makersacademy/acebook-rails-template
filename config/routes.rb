@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     get "/posts/:id/like", to: "posts#like", as: "like"
   end
   
+  devise_scope :posts do
+    get "/posts/:id", to: "posts#comment", as: "comment"
+  end
+
   resources :posts do
     resources :comments 
   end
