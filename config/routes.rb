@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   root 'posts#index'
   get 'pages/about'
   get 'signup' => 'users#new'
@@ -10,6 +11,14 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+=======
+  get 'sessions/new'
+  get 'pages/about'
+  root "posts#index"
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+>>>>>>> sign in css
 
   resources :posts do
     get '/like', to: 'posts#like', on: :member
