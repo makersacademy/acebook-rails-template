@@ -1,3 +1,11 @@
+<nav>
+  <ul>
+    <%= button_to "Homepage", "/welcome", method: :get %>
+    <%= button_to 'Logout', '/logout', method: :post %>
+    <%= button_to 'Posts', '/posts', method: :get%>
+  </ul>
+</nav>
+
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>

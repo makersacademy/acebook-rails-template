@@ -1,11 +1,14 @@
-<h1>Welcome You are Logged In, <%= current_user.username %></h1>
+<nav>
+  <ul>
+    <%= button_to "Homepage", "/welcome", method: :get %>
+    <%= button_to 'Logout', '/logout', method: :post %>
+    <%= button_to "New post", "/posts/new", method: :get%>
+  </ul>
+</nav>
+
+<h1>Welcome, <%= current_user.username %></h1>
 
 <% @posts.each do |post| %>
   <p><%= post.message %></p>
 <% end %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-<br>
-<%= button_to 'Logout', '/logout', method: :post%>
