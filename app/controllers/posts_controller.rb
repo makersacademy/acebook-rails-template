@@ -14,11 +14,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order_by_created_at
-    # @posts = Post.all.order("created_at DESC")
   end
 
   def like
-    @post.likes += 1
+    @post.increment_likes(1)
     @post.save!
     redirect_to '/posts'
   end
