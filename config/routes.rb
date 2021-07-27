@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-
-
-  resources :posts do
-    resources :comments 
-  end
-
   get "/profile", to: "profile#index"
 
   devise_scope :user do
@@ -30,6 +24,10 @@ Rails.application.routes.draw do
     get "/profile", to: "profile#index"
   devise_scope :posts do
     get "/posts/:id", to: "posts#comment", as: "comment"
+  end
+
+  resources :posts do
+    resources :comments 
   end
 end
 
