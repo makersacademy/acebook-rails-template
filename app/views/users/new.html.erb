@@ -1,8 +1,11 @@
-<h1>Sign Up</h1>
+<h1 class="title">Sign Up</h1>
 <%= form_for @user do |f|%>
-  <%= f.label :username%><br>
+  <p><%= f.label :username%><br>
   <%= f.text_field :username%><br>
   <%= f.label :password%><br>
   <%= f.password_field :password%><br>
   <%= f.submit %>
+  </p>
 <%end%>
+
+<%= button_to 'Homepage', '/posts', method: :get%>  

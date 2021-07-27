@@ -6,3 +6,8 @@
   <%= password_field_tag :password%>
   <%= submit_tag "Login" %>
 <% end %>
+<br>
+
+<%# button that takes us to posts 
+but takes us to homepage since we're not logged in %>
+<%= button_to 'Homepage', '/posts', method: :get%>
