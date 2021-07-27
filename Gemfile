@@ -36,6 +36,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 5.0.1'
+  gem 'bcrypt'
 end
 
 group :development do

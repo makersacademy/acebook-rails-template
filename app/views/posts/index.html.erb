@@ -1,9 +1,15 @@
+
+<h1>Welcome You are Logged In, <%= current_user.username %></h1>
 <h1>Your Posts:</h1>
 
 <%= link_to "New Post", new_post_path %>
 
+
 <ul>
 <% @posts.each do |post| %>
     <p><%= link_to post.message, post %></p>
+    <p><%= image_tag post.image if post.image.attached? %></p>
   <% end %>
 </ul>
+
+<%= button_to 'Logout', '/logout', method: :post%>
