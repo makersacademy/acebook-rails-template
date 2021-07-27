@@ -8,6 +8,5 @@ RSpec.feature "User authentication", type: :feature do
     click_on 'Sign Out'
     visit '/users/sign_in'
     expect(page).to have_content("Log in")
-    truncate_all_tables
   end
 end

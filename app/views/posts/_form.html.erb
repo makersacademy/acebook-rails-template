@@ -10,8 +10,8 @@
       </ul>
     </div>
   <% end %>
-
     <%= form.text_field :message, placeholder: "What's on your mind, #{current_user.firstname}?" %>
     <%= form.submit "Post"%>
-
+    <%= form.file_field :image %>
+    <button type="submit" name="commit" value="Post" class='btn btn-primary'>Post</button>
   <% end %>
