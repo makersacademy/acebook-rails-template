@@ -3,17 +3,22 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def comment
+    @posts = Post.all
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+  end
+
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(message: post_params, user: current_user)
     redirect_to posts_url
   end
 
   def index
     @post = Post.new
     @posts = Post.all
-    @user = User.new
+    @comment = Comment.new
   end
-
 
   def like
     @post = Post.find(params[:id])
@@ -24,12 +29,20 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    redirect_to posts_url
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to posts_url
   end
 
   private
 
   def post_params
-    params.inspect
-    params.require(:post).permit(:message, :image)
+    params.require(:post).permit(:message, :image)[:message]
   end
 end

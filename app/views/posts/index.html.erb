@@ -16,20 +16,24 @@
       <div id ='new-post'>
         <div class ='new-post__form'><%= render j 'form' %></div>
       </div>
-      <% @posts.each do |post| %>
+      <% @posts.reverse.each do |post| %>
         <div class ='post'>
+
         <%= image_tag(@user.avatar_thumbnail) if @user.avatar.attached? %>
+          <p class ='post_header'><%= post.user.firstname%> <%= post.user.lastname%></p>
           <p class ='post__message'><%= post.message %></p>
           <div class ='post_footer'>
-            <p  class ='post__footer-el'><a href="/posts/<%= post.id %>/like">Like <p><%= post.likes %> likes</p></a><p>
-            <p  class ='post__footer-el'><%= link_to "Comment", post, class: 'post__footer-el' %>
-            <p class ='post__footer-el'>Share</p>
+            <p  class ='post__footer-el'><a href="/posts/<%= post.id %>/like">Like </a><p>
+            <p><%= post.likes %> likes</p>
+            <p class ='post__footer-el'><%= link_to "Comment", post, class: 'post__footer-el', remote: true %></p>
+            <p  class ='post__footer-el delete'><%= link_to "Delete", post_path(post), method: :delete %></p>
           </div>
-          </div>
+           
+        </div>
       <% end %>
-
+     
     </div>
   </main>
-
+<div class= 'post__comments'></div>
 </body>
 </html>

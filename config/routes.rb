@@ -28,5 +28,8 @@ Rails.application.routes.draw do
   
 
     get "/profile", to: "profile#index"
+  devise_scope :posts do
+    get "/posts/:id", to: "posts#comment", as: "comment"
+  end
 end
 
