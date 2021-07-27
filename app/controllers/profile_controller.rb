@@ -4,7 +4,6 @@ class ProfileController < ApplicationController
   end
 
   def post_params
-    params.inspect
     params.require(:user).permit(:avatar)
   end
 

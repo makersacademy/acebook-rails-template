@@ -18,6 +18,7 @@
       </div>
       <% @posts.each do |post| %>
         <div class ='post'>
+        <%= image_tag(@user.avatar_thumbnail) if @user.avatar.attached? %>
           <p class ='post__message'><%= post.message %></p>
           <div class ='post_footer'>
             <p  class ='post__footer-el'><a href="/posts/<%= post.id %>/like">Like <p><%= post.likes %> likes</p></a><p>
