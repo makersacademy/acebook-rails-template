@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> chore: review duplicated code and linting
   root 'posts#index'
   get 'pages/about'
   get 'signup' => 'users#new'
@@ -7,6 +10,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+<<<<<<< HEAD
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
@@ -20,6 +24,8 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 >>>>>>> sign in css
 
+=======
+>>>>>>> chore: review duplicated code and linting
   resources :posts do
     get '/like', to: 'posts#like', on: :member
   end
