@@ -223,6 +223,7 @@ PLATFORMS
   ruby
   x86_64-darwin-20
 
+
 DEPENDENCIES
   byebug
   capybara (~> 2.13)
@@ -245,3 +246,4 @@ DEPENDENCIES
 
 BUNDLED WITH
    2.2.24
+
