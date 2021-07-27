@@ -30,7 +30,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    redirect_to posts_url
   end
 
   def destroy

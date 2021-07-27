@@ -6,7 +6,8 @@
 <%= form_with(model: [@post, @comment], local: true) do |form| %>
    <div class ='post__enter-comments'>
       <div class ='comment__text-area'><%= form.text_field :body, placeholder: "Write a comment..." %></div>
-        <button id ='comment__btn' type ="submit" value ='comment' class='btn btn-primary'>Enter</button>
+          <button id ='comment__btn' value ='comment' type ='submit' class='btn btn-primary'>Enter</button>
+          <button><%= link_to 'Reload', @post, remote: true %></button>
     </div>
   </p>
   <% @post.comments.each do |comment| %>
