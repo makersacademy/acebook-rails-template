@@ -6,3 +6,22 @@
     method: :delete,
     data: { confirm: "Are you sure?" } %></li>
 </ul>
+
+<h2>Comments</h2>
+<% @posts.comments.each do |comment| %>
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_with model: [@posts, @posts.comments.build] do |form| %>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
