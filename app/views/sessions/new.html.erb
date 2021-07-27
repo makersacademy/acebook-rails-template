@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 <% provide(:title, "log in") %>
 
 <div class="column is-half is-offset-one-quarter">
@@ -7,44 +5,16 @@
     <h1 class="title has-text-centered">Log in</h1>
     <div class="field">
       <%= form_for(:session, url: login_path) do |f| %>
-        
 			
         <%= f.label :email, class: "label" %>
-        <%= f.email_field :email, class: "input", type: "email" %>
+        <%= f.email_field :email, class: "input", type: "email", placeholder: "alex@example.com"  %>
 
         <%= f.label :password, class: "label" %>
         <%= f.password_field :password, class: "input", type: "password", placeholder: "********" %>
     </div>
-        <%= f.submit "Log in", class: "button is-primary is-fullwidth" %>
+      <%= f.submit "Log in", class: "button is-primary is-fullwidth" %>
       <% end %>
 
-			<p>New User? <%= link_to "Sign up now!", signup_path %>
+      <p>New User? <%= link_to "Sign up now!", signup_path %>
   </div>
 </div>
-=======
-<% provide(:title, "Log in") %>
-
-<div class="column is-half is-offset-one-quarter">
-  <div class="box">
-    <h1 class="title has-text-centered">Log In</h1>
-    <div class="field">
-    <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.label :email, class: 'label' %>
-      <%= f.email_field :email, class: 'input', placeholder: "alex@example.com" %>
-
-      <%= f.label :password, class: 'label' %>
-      <%= f.password_field :password, class: 'input', placeholder: "********" %>
-      <br><br>
-
-      <%= f.submit "Log in", class: "button is-primary is-fullwidth" %>
-    <% end %>
-    <br>
-    <p>New user? <%= link_to "Sign up now!", '/users/new' %></p>
-  </div>
-  </div>
-</div>
->>>>>>> sign in css
-=======
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
->>>>>>> feat: sessions controller
