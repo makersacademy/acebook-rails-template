@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  root 'posts#index'
   get 'pages/about'
-  root "posts#index"
+  get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-
-  get    'signup'  => 'users#new'
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
 
   resources :posts do
     get '/like', to: 'posts#like', on: :member
