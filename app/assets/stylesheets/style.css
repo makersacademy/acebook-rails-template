@@ -68,8 +68,9 @@ a {
   display: grid;
   grid-template-areas: "header"
                        "message"
+                       "footer-info"
                        "footer";
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 40px 3fr 26px 45px;
   width: 40rem;;
   background-color: #fff;
   margin: 6px;
@@ -92,18 +93,27 @@ a {
   grid-area: message;
   padding: 20px;
   margin: 0;
-  justify-content: center;
 }
 
 .post_footer {
-  border-top: 1px solid #ddd;
+  font-size: .95rem;
   display: flex;
+  align-items: flex-end;
   justify-content: center;
   grid-area: footer;
 }
 
 .post_footer-el {
   margin-left: 50px;
+  padding: 0;
+}
+
+.post__footer-info {
+  margin: 0 15px;
+  font-size: .9rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
 }
 
 .post__comments {
