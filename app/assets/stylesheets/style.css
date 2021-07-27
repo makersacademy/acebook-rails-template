@@ -201,5 +201,6 @@ input[type="file"] {
 }
 
 .custom-file-upload{
-  margin-left: 5px;
+  margin: 5px;
+
 }
