@@ -2,6 +2,9 @@
   <%= form.label :message%>
   <%= form.text_field :message, placeholder: "WTF You Thinking?!" %>
   
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+    
   <% post.errors.full_messages_for(:message).each do |error_message| %>
     <div><%= error_message %></div>
   <% end %>
