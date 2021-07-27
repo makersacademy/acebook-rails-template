@@ -14,6 +14,7 @@
   <% if logged_in? %>
   <div class="navbar-menu" id='nav-links'>
     <div class="navbar-start">
+<<<<<<< HEAD
         <a class="navbar-item" href="/posts"> Home </a>
         <a class="navbar-item" href="/pages/about"> About </a>
       <div class="navbar-end">
@@ -26,6 +27,25 @@
           <%= button_to "Sign up", signup_path, class: "button is-primary", method: "get" %>
           <%= button_to "Log in", login_path, class: "button is-light", method: "get" %>
           </div>
+=======
+    <a class="navbar-item" href="/posts"> Home </a>
+    <a class="navbar-item" href="/pages/about"> About </a>
+    </div>
+    <div class="navbar-end">
+    <div class="navbar-item">
+        <div class="buttons">
+        <form action='/signup' method='get'>
+            <button class="button is-primary">
+            <strong>Sign up</strong>
+            </button>
+        </form>
+            <form action='/login' method='get'>
+            <button class="button is-light">
+                <strong>Log in</strong>
+            </button>
+            </form>
+        </div>
+>>>>>>> feat: sessions controller
         </div>
       </div>
     </div>

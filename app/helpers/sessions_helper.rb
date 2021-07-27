@@ -1,4 +1,5 @@
 module SessionsHelper
+<<<<<<< HEAD
 
   def log_in(user)
     session[:user_id] = user.id
@@ -17,4 +18,6 @@ module SessionsHelper
     @current_user = nil
   end
   
+=======
+>>>>>>> feat: sessions controller
 end

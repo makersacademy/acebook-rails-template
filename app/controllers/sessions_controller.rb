@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+<<<<<<< HEAD
 
   def new; end
 
@@ -18,4 +19,8 @@ class SessionsController < ApplicationController
     redirect_to root_url 
   end
 
+=======
+  def new
+  end
+>>>>>>> feat: sessions controller
 end
