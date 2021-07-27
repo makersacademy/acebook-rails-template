@@ -18,13 +18,5 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to '/welcome'
   end
-
-  def login
-  end
-
-  def welcome
-  end
-
-  def page_requires_login
-  end
+  
 end
