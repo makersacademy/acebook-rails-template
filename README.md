@@ -34,16 +34,15 @@ A full-stack web app inspired by the functionality of Facebook.
 * Hosting - [Heroku](https://soda-acebook.herokuapp.com/)
 
 --------
-REQUIRED INSTRUCTIONS:
 
-1. Fork this repository to `acebook-teamname` and customize
-   the below\*\*
+## Makers Project Intructions:
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+* [Original Repository at Makers](makersacademy/acebook-rails-template)
+* [Engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
 
-2. The card wall is here:
-
-[You can find the Trello board here](https://trello.com/b/Sj8Qlv4L/team-soda)
+Our card wall is here:
+* [Find our Trello board here](https://trello.com/b/Sj8Qlv4L/team-soda)
+* [Original Trello board from Makers](https://trello.com/b/aN3xtXXl/acebook-rails-template)
 
 ## How to contribute to this project
 
