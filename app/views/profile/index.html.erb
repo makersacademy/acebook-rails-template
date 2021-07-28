@@ -25,7 +25,8 @@
      <%= form_with(model: @user, local: true) do |form| %>
     <% end %>
     </div>
-    <div class="col">
+    <div class="col justify-content-center">
+    <div class="row justify-content-center">
     <div class="profile">
     <div class="profile_header">
         <h1 class="text-center text-primary">My Purrfile</h1>
@@ -38,7 +39,8 @@
         <h5><span class="text-muted">Interests:    </span><%= current_user.interests %></h5>
         <h5><span class="text-muted">About Me:</h5> <h6></span><%= current_user.about_me %></h6>
         <hr>
-        <a class="btn btn-success" href="<%=edit_user_registration_path%>">Update Details </a>
+        <a class="btn btn-success mx-auto d-block", style="width:50%;" href="<%=edit_user_registration_path%>">Update Details </a>
+        <br>
         <% else %>
         <h1>Sign in to view this page.</h1>
         <% end %>
