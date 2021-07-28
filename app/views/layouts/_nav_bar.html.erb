@@ -10,6 +10,7 @@
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
     </a>
+<<<<<<< HEAD
   </div>
   <% if logged_in? %>
   <div class="navbar-menu" id='nav-links'>
@@ -30,7 +31,17 @@
 =======
     <a class="navbar-item" href="/posts"> Home </a>
     <a class="navbar-item" href="/pages/about"> About </a>
+=======
+</div>
+ <% if logged_in? %>
+<div class="navbar-menu" id='nav-links'>
+    <div class="navbar-start">
+      <a class="navbar-item" href="/posts"> Home </a>
+      <a class="navbar-item" href="/pages/about"> About </a>
+      <a class="navbar-item" href=<%= link_to "Log out", logout_path, method: "delete" %>></a>
+>>>>>>> adding log out
     </div>
+    <% else %>
     <div class="navbar-end">
     <div class="navbar-item">
         <div class="buttons">
@@ -49,6 +60,11 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
   </div>
   <%end%>
+=======
+    </div>
+    <%end%>
+>>>>>>> adding log out
 </nav>
