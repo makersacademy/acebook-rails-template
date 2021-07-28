@@ -4,7 +4,7 @@
     <%= link_to "New Post" , new_post_path %>
 
       <% @posts.each do |post| %>
-        <div class="card">
+        <div class="card mb-5">
           <div class="card-content">
             <div class="content">
 
@@ -22,6 +22,7 @@
                           <%= link_to "Delete" , post, method: :delete, data: { confirm: "Delete this post?" } %>
             </div>
 
+          <br>
           <div class="card"> 
             <div class="card-content">
               <p class="has-text-weight-bold">Comments</p>
@@ -32,7 +33,8 @@
                 </div>
                 <%= f.submit 'Submit', class: 'button is-primary' %>
               <% end %>
-
+  
+            <br>
             <%= render post.comments %>
             </div>
           </div>
