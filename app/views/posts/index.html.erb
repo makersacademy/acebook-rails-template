@@ -26,16 +26,14 @@
           <div class="card"> 
             <div class="card-content">
               <p class="has-text-weight-bold">Comments</p>
+              <%= render post.comments %>
+
               <%= form_with(model: [post, post.comments.build]) do |f| %>
                 <div class="field">
-                  <%= f.label 'New comment' %>
-                  <%= f.text_area :body, class: 'input' %>
+                  <%= f.text_area :body, class: 'input', placeholder: "Write a comment..." %>
                 </div>
                 <%= f.submit 'Submit', class: 'button is-primary' %>
               <% end %>
-  
-            <br>
-            <%= render post.comments %>
             </div>
           </div>
           </div>
