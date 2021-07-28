@@ -8,5 +8,4 @@ class Post < ApplicationRecord
  		 self.likes += by_value
  	end
 	
-
 end
