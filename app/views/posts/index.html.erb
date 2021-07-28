@@ -22,6 +22,7 @@
         <div class ='post'>
 
 
+
           
         <%# <%= image_tag(@user.avatar_thumbnail) if @user.avatar.attached? %> 
 
@@ -30,7 +31,7 @@
             <div class ='post_header-name'><%= post.user.firstname%> <%= post.user.lastname%></div>
             <div><%= post.created_at.to_formatted_s(:time) %></div>
           </div>
-
+      
           <p class ='post__message'><%= post.message %></p>
 
           <div class ='post__footer-info'>
@@ -55,6 +56,9 @@
      
     </div>
   </main>
+
+  <div class= 'post__comments'></div>
+  
   <% else %>
     <h1>Sign in to view this page.</h1>
   <% end %>
