@@ -8,7 +8,7 @@
             <h4 class='m-2'>Catbook helps you connect and share with the felines in your life.</h4>
          </div>
          <div class="text-center">
-            <div class="card shadow p-2" style="width: 28rem; height: 21rem">
+            <div class="card shadow p-2" style="width: 28rem; height: 23rem">
                <div class="card-body">
                   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                   <div class="field mb-3">
@@ -20,6 +20,9 @@
                   <div class="d-grid gap-2">
                      <button type="submit" name="commit" value="Post" class='btn btn-primary btn-lg'>Log In</button>
                   </div>
+                  <br>
+                  <%= link_to "Forgotten password?", new_password_path(resource_name), class: "text-primary" %>
+                  <br>
                   <hr>
                   <a class="btn btn-success btn-lg" href="<%=new_user_registration_path%>">Create New Account </a>
                   <% end %>
