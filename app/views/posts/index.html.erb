@@ -2,7 +2,17 @@
   <div class="container">
 
     <div class="card p-5 m-5">
-      <%= render "form", post: @post %>
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-128x128">
+          <%# CURRENT USER PROFILE PIC %>
+          <img src="https://bulma.io/images/placeholders/128x128.png">
+          </p>
+        </figure>
+        <div class="media-content">
+          <%= render "form", post: @post %>
+        </div>
+      </article>
     </div>
 
       <% @posts.each do |post| %>
