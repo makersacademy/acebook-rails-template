@@ -19,15 +19,14 @@
         <div class ='new-post__form'><%= render j 'form' %></div>
       </div>
       <% @posts.reverse.each do |post| %>
-        <div class ='post'>
-
-
-
-          
+        <div class ='post'>          
         <%# <%= image_tag(@user.avatar_thumbnail) if @user.avatar.attached? %> 
-
           <div class ='post_header'>
-            <%= image_tag(post.user.avatar_thumbnail) if post.user.avatar.attached? %>
+           <% if post.user.avatar.attached? %>
+            <%= image_tag(post.user.avatar_thumbnail)%>
+            <% else %>
+            <%= image_tag("default_image.jpg") %>
+            <% end  %>
             <div class ='post_header-name'><%= post.user.firstname%> <%= post.user.lastname%></div>
             <div><%= post.created_at.to_formatted_s(:time) %></div>
           </div>
