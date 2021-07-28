@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     @posts = Post.order_by_created_at
   end
 
+
   def like
     @post.increment_likes(1)
     @post.save!
