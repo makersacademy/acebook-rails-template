@@ -85,8 +85,10 @@ a {
   grid-area: header;
   display: flex;
   justify-content: space-between;
-  margin: 5px;
+  margin: 5px 10px 1px 5px;
   font-weight: 650;
+  align-items: center;
+
 }
 
 .post_header--name-img {
@@ -110,14 +112,14 @@ a {
 .post__message-img {
   margin: 0 auto;
   grid-area: message;
-  width: 39rem;
+  width: 38rem;
   width: auto;
 }
 
 .post__message-img img {
   border-radius: 5px;
   background-position: center;
-  width: 38rem;
+  width: 36rem;
 }
 
 .post_footer {
