@@ -1,8 +1,8 @@
 <% if logged_in? %>
   <nav>
   <ul>
-    <%= button_to 'Posts', '/posts', method: :get%>
-    <%= button_to 'Logout', '/logout', method: :post%>
+    <%= link_to 'Posts', '/posts', method: :get%>
+    <%= link_to 'Logout', '/logout', method: :post%>
   </ul>
   </nav>
   <h1>You are Logged In, <%= current_user.username %></h1>
@@ -10,8 +10,8 @@
 <% if logged_in? == false %>
   <nav>
   <ul>
-    <%= button_to 'Login', '/login', method: :get%>
-    <%= button_to 'Sign Up', '/users/new', method: :get%>
+    <%= link_to 'Login', '/login', method: :get%>
+    <%= link_to 'Sign Up', '/users/new', method: :get%>
   </ul>
   </nav>
   <h1>Welcome to Acebook</h1>
