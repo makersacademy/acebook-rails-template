@@ -1,38 +1,31 @@
-<div class='container-fluid vh-100'>
+<section class='p-5 text-center text-sm-start'>
+   <div class='container'>
+      <div class="d-sm-flex align-items-center justify-content-between my-5">
+         <div class='w-50'>
+            <h1 class='m-2 text-primary' >CatBook</h1>
+            <h6 class='m-2'>CatBook helps you connect and share with the felines in your life.</h6>
+         </div>
+         <div class="text-center">
+            <div class="card shadow" style="width: 32rem;">
+               <div class="card-body">
+                  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <div class="field mb-3">
+                     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email address"%>
+                  </div>
+                  <div class="field mb-3">
+                     <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"Password" %>
+                  </div>
+                  <div class="d-grid gap-2">
+                     <button type="submit" name="commit" value="Post" class='btn btn-primary '>Log In</button>
+                  </div>
+                  <hr>
+                  <a class="btn btn-success" href="<%=new_user_registration_path%>">Create New account </a>
+                  <% end %>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
 
-<div class="row align-items-center h-100">
-    <div class="col">
-      <h1 class='m-2 text-primary' >CatBook</h1>
-      <h6 class='m-2'>CatBook helps you connect and share with the felines in your life.</h6>
-    </div>
-    <div class="col">
-    <div class="card shadow">
-  <div class="card-body ">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field mb-3">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email address"%>
-        </div>
-
-        <div class="field mb-3">
-          <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"Password" %>
-        </div>
-
-          <div class="d-grid gap-2">
-            <button type="submit" name="commit" value="Post" class='btn btn-primary '>Log In</button>
-          </div>
-          <hr>
-          <div class="col text-center">
-
-          <a class="btn btn-success" href="<%=new_user_registration_path%>">Create New account </a>
-          </div>
-      <% end %>
-        </div>
-  </div>
-</div>
-
-  </div>
-
-
-
-</div>
 
