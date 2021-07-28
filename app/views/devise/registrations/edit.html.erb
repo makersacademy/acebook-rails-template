@@ -8,9 +8,11 @@
   <%= image_tag(resource.avatar_thumbnail) if resource.avatar.attached? %>
   </div>
 
- <div class="field">
-  <%= f.file_field :avatar %>
-  </div>
+
+     <label class="custom-file-upload">
+  <%= f.file_field :avatar %> Upload profile picture: 
+    <i class="far fa-image fa-lg"></i>
+    </label>
 
   <div class="field">
     <%= f.label :email %><br />

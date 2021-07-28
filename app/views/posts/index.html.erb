@@ -20,14 +20,16 @@
       </div>
       <% @posts.reverse.each do |post| %>
         <div class ='post'>
-
-
           <p class ='post_header'>
-          <%= image_tag(post.user.avatar_thumbnail) if post.user.avatar.attached? %>
-          <%= post.user.firstname%> <%= post.user.lastname %>
-          <%= post.created_at.to_formatted_s(:time) %></p>
-        <%# <%= image_tag(@user.avatar_thumbnail) if @user.avatar.attached? %> 
-
+            <%= image_tag(post.user.avatar_thumbnail) if post.user.avatar.attached? %>
+            <span class="card-title d-inline"><%= post.user.firstname%> <%= post.user.lastname %></span> 
+            <span class="card-subtitle mb-2 text-muted d-inline"><br> <%= post.created_at.to_formatted_s(:time) %> </span>
+          <%= image_tag(post.image) if post.image.attached? %>
+          </p>
+          <p class ='post__message'>
+          
+          <%= post.message %>
+          </p>
           <p class ='post_header'><%= post.user.firstname%> <%= post.user.lastname%></p>
           <p class ='post__message'><%= post.message %></p>
           <div class ='post__footer-info'>
@@ -38,6 +40,8 @@
             <div><%= post.comments.length %> <%= link_to "Comments", post, remote: true %></div>
             <% end %>
           </div>
+          
+          
           <div class ='post_footer'>
             <p  class ='post__footer-el'>
             <a href="/posts/<%= post.id %>/like"><i style ='color: #ddd' class="fas fa-heart"></i>     Like</a>
@@ -51,6 +55,9 @@
      
     </div>
   </main>
+
+  <div class= 'post__comments'></div>
+  
   <% else %>
     <h1>Sign in to view this page.</h1>
   <% end %>

@@ -9,6 +9,9 @@ body {
   font-family: 'Poppins', sans-serif;
   padding: 0;
   margin: 0;
+
+  height: 100%;
+
   scroll-behavior: smooth;
 }
 
@@ -83,6 +86,7 @@ a {
 .post_header {
   grid-area: header;
   display: flex;
+  justify-content: flex-start;
   margin: 15px;
   font-weight: 650;
 }
@@ -218,4 +222,13 @@ input[type="file"] {
 .custom-file-upload{
   margin: 5px;
 
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid gray;
+  margin: 1em 0;
+  padding: 0;
 }
