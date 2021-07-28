@@ -1,6 +1,8 @@
 <section class="section">
   <div class="container">
 
+  <% if logged_in? %>
+
   <%= link_to "New Post", new_post_path %>
 
     <% @posts.each do |post| %>
@@ -27,4 +29,8 @@
       </div>
     <% end %>
   </div>
+
+  <% else%>
+    <% flash.now[:danger] = link_to "You are not logged in. Please, login here", login_path %>
+  <% end %>
 </section>

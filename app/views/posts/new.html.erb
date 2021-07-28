@@ -1,3 +1,5 @@
+<% if logged_in? %>
+
 <h1 class="title"> New Post </h1>
 
 <div class="section">
@@ -18,4 +20,9 @@
   <% end %>
 </div>
 
+<% else %>
+
+  <% flash.now[:danger] = link_to "You are not logged in. Please, login here", login_path %>
+
+<% end %>
 
