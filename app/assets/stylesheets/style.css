@@ -173,6 +173,34 @@ a {
   margin: 0 10px;
 }
 
+.profile {
+  text-align: center;
+  display: grid;
+  grid-template-areas: "header"
+                       "message"
+                       "footer-info"
+                       "footer";
+  grid-template-rows: 50px 3fr;
+  width: 40rem;;
+  background-color: #fff;
+  margin: 0px;
+  border: 00.1mm solid rgba(221, 221, 221, 0.616);
+  border-radius: 0.5em;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
+}
+
+.profile_header {
+  grid-area: header;
+  justify-content: space-between;
+  margin: 5px 10px 1px 5px;
+  font-weight: 650;
+  align-items: center;
+}
+
+.profile_text_head {
+  text-align: center;
+}
+
 .comment {
   border: none;
   border-radius: 25px;
