@@ -5,7 +5,9 @@
 
 <%= form_with(model: [@post, @comment]) do |form| %>
    <div class ='post__enter-comments'>
-      <span class ='comment__text-area'><%= form.text_field :body, placeholder: "Write a comment..." %></span>
+      <span class ='comment__text-area'>
+        <%= form.text_field :body, placeholder: "Write a comment..." %>
+      </span>
           
     </div>
   </p>

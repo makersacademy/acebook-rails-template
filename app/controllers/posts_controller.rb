@@ -7,6 +7,13 @@ class PostsController < ApplicationController
     @posts = Post.all
     @post = Post.find(params[:id])
     @comment = Comment.new
+    respond_to do |format|
+      if @post.save
+        format.js
+        format.html { redirect_to @post }
+        format.json { render 'show', status: :created, location: @post}
+      end
+    end
   end
 
   def create
@@ -24,13 +31,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.likes += 1
     @post.save!
-    redirect_to '/posts'
+    redirect_to posts_url
   end
 
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    redirect_to posts_url
   end
 
   def destroy
