@@ -1,18 +1,60 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+    <div class="row">
+    <div class="col justify-content-center">
+
+<h3>Update personal details</h3>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <div class="form-group">
+    <%= f.label :firstname %> <i></i><br />
+    <%= f.text_field :firstname %>
+  </div>
 
-  <div class="field">
+  <div class="form-group">
+    <%= f.label :lastname %> <i></i><br />
+    <%= f.text_field :lastname %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :date_of_birth %> <i></i><br />
+    <%= f.date_field :date_of_birth %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location %> <i></i><br />
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :interests %> <i></i><br />
+    <%= f.text_field :interests %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :about_me %> <i></i><br />
+    <%= f.text_field :about_me %>
+  </div>
+
+   <div class="form-group">
   <%= image_tag(resource.avatar_thumbnail) if resource.avatar.attached? %>
   </div>
 
 
   <label class="custom-file-upload">
-    <%= f.file_field :avatar %> Upload profile picture: 
+    <%= f.file_field :avatar %> Update profile picture: 
     <i class="far fa-image fa-lg"></i>
   </label>
+
+    <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+  </div>
+
+   <div class="col">
+
+  <h3>Edit login details</h3>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -42,39 +84,6 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :firstname %> <i></i><br />
-    <%= f.text_field :firstname %>
-  </div>
-
-  <div class="field">
-    <%= f.label :lastname %> <i></i><br />
-    <%= f.text_field :lastname %>
-  </div>
-
-  <div class="field">
-    <%= f.label :date_of_birth %> <i></i><br />
-    <%= f.date_field :date_of_birth %>
-  </div>
-
-  <div class="field">
-    <%= f.label :location %> <i></i><br />
-    <%= f.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= f.label :interests %> <i></i><br />
-    <%= f.text_field :interests %>
-  </div>
-
-  <div class="field">
-    <%= f.label :about_me %> <i></i><br />
-    <%= f.text_field :about_me %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
 <% end %>
 
 <h3>Cancel my account</h3>
@@ -82,3 +91,4 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+</div>
