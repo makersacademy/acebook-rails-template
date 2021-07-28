@@ -24,7 +24,9 @@
                   <%= link_to "Forgotten password?", new_password_path(resource_name), class: "text-primary" %>
                   <br>
                   <hr>
-                  <a class="btn btn-success btn-lg" href="<%=new_user_registration_path%>">Create New Account </a>
+                  <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Create New Account
+                  </button>
                   <% end %>
                </div>
             </div>
@@ -40,3 +42,20 @@
     </p>
   </div>
 </footer>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <%= render 'devise/registrations/new' %>
+      </div>
+      <div class="modal-footer d-flex align-items-center justify-content-center">
+        <input type="submit" name="commit" class="btn btn-success" value="Sign Up">
+      </div>
+    </div>
+  </div>
+</div>
