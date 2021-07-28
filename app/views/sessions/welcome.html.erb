@@ -1,21 +1,15 @@
 <% if logged_in? %>
-  <nav>
-  <ul>
-    <%= link_to 'Posts', '/posts', method: :get%>
-    <%= link_to 'Logout', '/logout', method: :post%>
-  </ul>
-  </nav>
+  <li><%= link_to 'Posts', '/posts', method: :get%></li>
+  <li><%= link_to 'Logout', '/logout', method: :post%></li>
+  <br>
   <h1>You are Logged In, <%= current_user.username %></h1>
 <% end %>
-<% if logged_in? == false %>
-  <nav>
-  <ul>
-    <%= link_to 'Login', '/login', method: :get%>
-    <%= link_to 'Sign Up', '/users/new', method: :get%>
-  </ul>
-  </nav>
-  <h1>Welcome to Acebook</h1>
 
+<% if logged_in? == false %>
+  <li><%= link_to 'Login', '/login', method: :get%></li>
+  <li><%= link_to 'Sign Up', '/users/new', method: :get%></li>
+  <br>
+  <h1>Welcome to Acebook</h1>
 <% end %>
 
 

@@ -1,9 +1,7 @@
- <nav>
-  <ul>
-    <%= link_to 'Homepage', '/posts', method: :get%>
-    <%= link_to 'Login', '/login', method: :get%>
-  </ul>
-  </nav>
+<li><%= link_to 'Homepage', '/posts', method: :get%></li>
+<li><%= link_to 'Login', '/login', method: :get%></li>
+
+<br>
 
 <h1>Sign Up</h1>
 <%= form_for @user do |f|%>

@@ -1,10 +1,8 @@
-<nav>
-  <ul>
-    <%= link_to "Homepage", "/welcome", method: :get %>
-    <%= link_to 'Posts', '/posts', method: :get%>
-    <%= link_to 'Logout', '/logout', method: :post %>
-  </ul>
-</nav>
+<li><%= link_to "Homepage", "/welcome", method: :get %></li>
+<li><%= link_to 'Posts', '/posts', method: :get%></li>
+<li><%= link_to 'Logout', '/logout', method: :post %></li>
+
+<br><br>
 
 <%= form_for @post do |form| %>
   <%= form.label :message %>
