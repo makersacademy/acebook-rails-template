@@ -86,7 +86,7 @@ a {
 .post_header {
   grid-area: header;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin: 15px;
   font-weight: 650;
 }
@@ -116,6 +116,7 @@ a {
 .post__footer-info {
   margin: 0 15px;
   font-size: .9rem;
+  grid-area: footer-info;
   border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
