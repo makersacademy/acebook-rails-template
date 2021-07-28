@@ -6,6 +6,12 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def show
+    respond_to do |format|
+      format.js {render inline: "location.reload();" }
+    end
+  end
+
   def create
     params.inspect
     @post = Post.create(post_params)
