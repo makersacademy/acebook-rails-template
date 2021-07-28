@@ -58,7 +58,7 @@ a:hover {
   background-color: #fff;
   margin: 6px;
   border: 00.1mm solid rgba(221, 221, 221, 0.616);
-  border-radius: 0.5em;
+  border-radius: 0.2em;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
 }
 
@@ -74,6 +74,10 @@ a:hover {
 
 .post_time {
   margin: 1rem 1rem 0 0;
+  font-size: .9rem;
+  font-weight: 400;
+  color: rgb(22, 22, 22);
+
 }
 
 .post_header--name-img {
@@ -101,16 +105,15 @@ a:hover {
 }
 
 .post__message-img {
-  margin: 1rem;
+  margin: 0 auto;
   grid-area: message;
-  width: 38rem;
   width: auto;
   padding-right: .5rem;
 }
 
 .post__message-img img {
   border-radius: 5px;
-  width: 36rem;
+  width: 34rem;
 }
 
 .post_footer {
@@ -141,14 +144,10 @@ a:hover {
 .post__comments {
   display: none;
   font-size: 1rem;
-  /* transform: translate(-50%, -50%);
-  position: absolute;
-  top: 50%;
-  left: 49.2%; */
-  height: 400px;
   width: 39.5rem;
+  height: 0;
   background-color: white;
-  border-radius: 0.5em;
+  border-radius: 0.2em;
   padding: 1rem;
   color: black;
 }
@@ -174,8 +173,15 @@ a:hover {
   background-color: rgba(221, 221, 221, 0.616);
   outline: none;
   padding: 5px 10px 5px 0;
-  margin-left: 10px;
+  margin-left: 16px;
   font-size: .8rem;
+}
+
+.comment-time {
+  float: right;
+  font-size: .7rem;
+  font-weight: 200;
+  color:rgba(0, 0, 0, 0.904);
 }
 
 .comments-container {
@@ -183,7 +189,7 @@ a:hover {
   height: 20rem;
 }
 
-::-webkit-scrollbar {
+.comments-container::-webkit-scrollbar {
   display: none;
 }
 
@@ -199,21 +205,30 @@ a:hover {
 }
 
 .comment__text-area input[type =text] {
-  width: 36rem;
-  border: none;
+  width: 32rem;
   border-radius: 25px;
-  background-color: rgba(221, 221, 221, 0.616);
+  border: 00.3mm solid rgba(0, 0, 0, 0.89);
   outline: none;
-  margin: 0;
+  margin: 0 6px 16px 0;
   padding: 7px;
-  font-size: .9rem;
-  box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.137), inset 1px 1px 3px 0 rgba(0, 0, 0, 0.103);
+  display: inline-block;
+  font-size: .8rem;
+}
+
+.comment__text-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .comment-img img {
   width: 32px;
   height: 32px;
   margin: 1px;
+}
+
+.comment-btn {
+  margin: 0 6px 16px 0;
 }
 
 #new-post {
@@ -226,7 +241,7 @@ a:hover {
   padding: 2px;
   margin: 12px 6px 6px 6px;
   border: 00.1mm solid rgba(221, 221, 221, 0.616);
-  border-radius: 0.5em;
+  border-radius: 0.2em;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
 }
 
@@ -274,7 +289,7 @@ hr {
 
 @media screen and (max-width: 600px ) {
   html {
-    font-size: 29px;
+    font-size: 15px;
   }
 
   .post {
@@ -309,13 +324,8 @@ hr {
   }
 
   .comment__text-area input[type =text] {
-    width: 85vw;
+    width: 75vw;
     padding: 5px 0 5px 10px;
-  }
 
-  @media screen and (max-width: 2000px) {
-    html {
-      font-size: 16px;
-    }
   }
 }

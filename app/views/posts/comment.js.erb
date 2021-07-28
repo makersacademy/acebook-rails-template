@@ -1,9 +1,16 @@
 
-
-$('#<%=@post.id%>').click(function() {
-  $('.post__comments').animate({
-    height: "400px"
-  })
+$(document).ready(function(){
+    $('#<%=@post.id%>').animate({
+      <% if @post.comments.length <= 1 %>
+        height: "<%= 110 %>px"
+      <% elsif @post.comments.length >= 5 %>
+        height: "<%= 390 %>px"
+        <% elsif @post.comments.length == 3 || @post.comments.length == 4 %>
+        height: "<%= 215%>px"
+        <% else %>
+        height: "<%= @post.comments.length * 80 %>px"
+      <%end%>
 })
+});
 
 $('#<%=@post.id%>').show().html("<%= j render 'show', posts: @posts %>");
