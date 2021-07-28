@@ -27,8 +27,12 @@
     </div>
     <div class="col">
         <h1>Profile Settings</h1>
-        <p>First Name: <%= current_user.firstname %></p>
-        <p>Last Name: <%= current_user.lastname %></p>
+        <p>First Name: <%= current_user.firstname.capitalize %></p>
+        <p>Last Name: <%= current_user.lastname.capitalize %></p>
+        <p>Date Of Birth: <%= current_user.date_of_birth %></p>
+        <p>Location: <%= current_user.location %></p>
+        <p>interests: <%= current_user.interests %></p>
+        <p>About Me: <%= current_user.about_me %></p>
         <h3><%= link_to 'Click to edit Account', edit_user_registration_path %></h3>
         <% else %>
         <h1>Sign in to view this page.</h1>
