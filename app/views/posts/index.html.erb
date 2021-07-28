@@ -12,13 +12,20 @@
   </header>
 
   <main>
+    <%if current_user %>
     <div class ='all_posts'>
       <div id ='new-post'>
+    
         <div class ='new-post__form'><%= render j 'form' %></div>
       </div>
       <% @posts.reverse.each do |post| %>
         <div class ='post'>
 
+
+          <p class ='post_header'>
+          <%= image_tag(post.user.avatar_thumbnail) if post.user.avatar.attached? %>
+          <%= post.user.firstname%> <%= post.user.lastname %>
+          <%= post.created_at.to_formatted_s(:time) %></p>
         <%# <%= image_tag(@user.avatar_thumbnail) if @user.avatar.attached? %> 
 
           <p class ='post_header'><%= post.user.firstname%> <%= post.user.lastname%></p>
@@ -44,5 +51,8 @@
      
     </div>
   </main>
+  <% else %>
+    <h1>Sign in to view this page.</h1>
+  <% end %>
 </body>
 </html>
