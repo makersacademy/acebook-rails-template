@@ -1,25 +1,27 @@
+<link href="https://blogfonts.com/css/aWQ9MTYyMTU2JnN1Yj0xNTYmYz1rJnR0Zj1rbGF2aWthLWJvbGQub3RmJm49a2xhdmlrYS0y/Klavika.otf" rel="stylesheet" type="text/css"/>
+
 <section class='p-5 text-center text-sm-start'>
    <div class='container'>
-      <div class="d-sm-flex align-items-center justify-content-between my-5">
-         <div class='w-50'>
-            <h1 class='m-2 text-primary' >CatBook</h1>
-            <h6 class='m-2'>CatBook helps you connect and share with the felines in your life.</h6>
+      <div class="d-flex align-items-center justify-content-between" style="height: 600px;">
+         <div class="m-2">
+            <h1 id="title-text" class='m-2 text-primary' style="font-size: 350%;"><strong>catbook</strong></h1>
+            <h4 class='m-2'>Catbook helps you connect and share with the felines in your life.</h4>
          </div>
          <div class="text-center">
-            <div class="card shadow" style="width: 30rem;">
+            <div class="card shadow p-2" style="width: 28rem; height: 21rem">
                <div class="card-body">
                   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                   <div class="field mb-3">
-                     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email address"%>
+                     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control p-3", placeholder:"Email address"%>
                   </div>
                   <div class="field mb-3">
-                     <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"Password" %>
+                     <%= f.password_field :password, autocomplete: "current-password", class:"form-control p-3", placeholder:"Password" %>
                   </div>
                   <div class="d-grid gap-2">
-                     <button type="submit" name="commit" value="Post" class='btn btn-primary '>Log In</button>
+                     <button type="submit" name="commit" value="Post" class='btn btn-primary btn-lg'>Log In</button>
                   </div>
                   <hr>
-                  <a class="btn btn-success" href="<%=new_user_registration_path%>">Create New account </a>
+                  <a class="btn btn-success btn-lg" href="<%=new_user_registration_path%>">Create New Account </a>
                   <% end %>
                </div>
             </div>
@@ -28,4 +30,10 @@
    </div>
 </section>
 
-
+<footer class="footer">
+  <div class="d-flex align-items-center justify-content-center" style="height: 500px;">
+    <p class="text-muted">
+      &copy; StringMe Along - Makers May21
+    </p>
+  </div>
+</footer>
