@@ -1,7 +1,9 @@
 <section class="section">
   <div class="container">
 
-    <%= link_to "New Post" , new_post_path %>
+    <div class="card p-5 m-5">
+      <%= link_to "New Post" , new_post_path %>
+    </div>
 
       <% @posts.each do |post| %>
         <div class="card p-5 m-5">
@@ -24,7 +26,7 @@
                   <br>
                   <% if post.image.attached? %>
                     <p class="image is-fullwidth">
-                      <%= image_tag(post.image) %>
+                      <%= image_tag(post.image, style: 'width:80%') %>
                     </p>
                   <% end %>
                   <small>
