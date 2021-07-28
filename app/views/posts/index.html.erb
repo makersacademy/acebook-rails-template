@@ -21,18 +21,20 @@
       <% @posts.reverse.each do |post| %>
         <div class ='post'>
 
-
-
-          
-        <%# <%= image_tag(@user.avatar_thumbnail) if @user.avatar.attached? %> 
-
           <div class ='post_header'>
-            <%= image_tag(post.user.avatar_thumbnail) if post.user.avatar.attached? %>
-            <div class ='post_header-name'><%= post.user.firstname%> <%= post.user.lastname%></div>
-            <div><%= post.created_at.to_formatted_s(:time) %></div>
+            <div class ='post_header--name-img'>
+              <div><%= image_tag(post.user.avatar_thumbnail, style: "border-radius: 50%") if post.user.avatar.attached? %></div>
+              <div><%= post.user.firstname%> <%= post.user.lastname %></div>
+              </div>
+            <div><%= post.created_at.to_formatted_s(:time) %> </div>
           </div>
-      
-          <p class ='post__message'><%= post.message %></p>
+
+          <div class ='post__message'>
+            <p><%= post.message %></p>
+            <% if post.image.attached? %>
+              <div class ='post__message-img'><%= image_tag(post.image) %></div>
+            <%end%>
+          </div>
 
           <div class ='post__footer-info'>
             <div><%= post.likes %> <i style ='color: rgb(226, 30, 30)' class="fas fa-heart"></i></div>
@@ -60,9 +62,6 @@
      
     </div>
   </main>
-
-  <div class= 'post__comments'></div>
-  
   <% else %>
     <h1>Sign in to view this page.</h1>
   <% end %>
