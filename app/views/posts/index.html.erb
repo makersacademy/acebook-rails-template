@@ -19,19 +19,25 @@
         <div class ='new-post__form'><%= render j 'form' %></div>
       </div>
       <% @posts.reverse.each do |post| %>
-        <div class ='post'>          
-        <%# <%= image_tag(@user.avatar_thumbnail) if @user.avatar.attached? %> 
+        <div class ='post'>
           <div class ='post_header'>
-           <% if post.user.avatar.attached? %>
-            <%= image_tag(post.user.avatar_thumbnail)%>
-            <% else %>
-            <%= image_tag("default_image.jpg") %>
-            <% end  %>
-            <div class ='post_header-name'><%= post.user.firstname%> <%= post.user.lastname%></div>
-            <div><%= post.created_at.to_formatted_s(:time) %></div>
+            <div class ='post_header--name-img'>
+              <% if post.user.avatar.attached? %>
+                <div><%= image_tag(post.user.avatar_thumbnail, style: "border-radius: 50%") %></div>
+              <% else %>
+                <div><%= image_tag("default_image.jpg") %></div>
+              <% end  %>
+              <div><%= post.user.firstname%> <%= post.user.lastname %></div>
+              </div>
+              <div><%= post.created_at.to_formatted_s(:time) %> </div>
           </div>
-      
-          <p class ='post__message'><%= post.message %></p>
+
+          <div class ='post__message'>
+            <p><%= post.message %></p>
+            <% if post.image.attached? %>
+              <div class ='post__message-img'><%= image_tag(post.image) %></div>
+            <%end%>
+          </div>
 
           <div class ='post__footer-info'>
             <div><%= post.likes %> <i style ='color: rgb(226, 30, 30)' class="fas fa-heart"></i></div>
@@ -59,9 +65,6 @@
      
     </div>
   </main>
-
-  <div class= 'post__comments'></div>
-  
   <% else %>
     <h1>Sign in to view this page.</h1>
   <% end %>
