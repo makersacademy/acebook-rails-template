@@ -23,9 +23,9 @@
           <div class ='post_header'>
             <div class ='post_header--name-img'>
               <% if post.user.avatar.attached? %>
-                <div><%= image_tag(post.user.avatar_thumbnail, style: "border-radius: 50%") %></div>
+                <div class = 'post_header-img-default'><%= image_tag(post.user.avatar, style: "border-radius: 50%") %></div>
               <% else %>
-                <div><%= image_tag("default_image.jpg") %></div>
+                <div class = 'post_header-img-default'><%= image_tag("default_image.jpg", style: "border-radius: 50%") %></div>
               <% end  %>
               <div><%= post.user.firstname%> <%= post.user.lastname %></div>
               </div>
