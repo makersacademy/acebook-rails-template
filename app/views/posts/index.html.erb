@@ -19,6 +19,20 @@
           <% end %>
           <%= link_to "Edit", edit_post_path(post) %>
           <%= button_to "Delete", post, method: :delete %>
+
+          <div class="card"> 
+            <div class="card-content">
+              <p class="has-text-weight-bold">Comments</p>
+              <%= form_with(model: [post, post.comments.build]) do |f| %>
+                <div class="field">
+                  <%= f.label 'New comment' %>
+                  <%= f.text_area :body, class: 'input' %>
+                </div>
+                <%= f.submit 'Submit', class: 'button is-primary' %>
+              <% end %>
+            </div>
+          </div>
+
           </div>
         </div>
       </div>

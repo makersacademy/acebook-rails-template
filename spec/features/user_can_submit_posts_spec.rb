@@ -35,6 +35,13 @@ RSpec.feature "Timeline", type: :feature do
     click_button("Delete")
     expect(page).not_to have_content("Hello, world!")
   end
+ # nope!
+  # scenario "cannot submit blank post" do
+  #   visit "/posts/new"
+  #   fill_in "Message", with: ""
+  #   click_button "Create new post"
+  #   expect(page).to have_current_path "/posts/new"
+  # end
 
   scenario " Can add comment" do
     visit "/posts/new"
