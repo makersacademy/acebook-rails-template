@@ -2,14 +2,27 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(body: comment_params, user: current_user)
-    # //redirect_to post_path(params[:post_id])
+    respond_to do |format|
+      if @post.save
+        format.js
+        format.html { redirect_to @post }
+        format.json { render 'show', status: :created, location: @post}
+      end
+    end
+    redirect_to @post
+  end
+
+  def showComment 
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new
   end
 
   def index 
     @post = Post.find(params[:post_id])
   end
 
-  def show
+
+  def comments
     @post = Post.find(params[:post_id])
     @comment = Comment.new
   end

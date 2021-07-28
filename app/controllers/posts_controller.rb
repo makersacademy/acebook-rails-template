@@ -7,6 +7,13 @@ class PostsController < ApplicationController
     @posts = Post.all
     @post = Post.find(params[:id])
     @comment = Comment.new
+    respond_to do |format|
+      if @post.save
+        format.js
+        format.html { redirect_to @post }
+        format.json { render 'show', status: :created, location: @post}
+      end
+    end
   end
 
   def create
