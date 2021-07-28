@@ -9,6 +9,7 @@ body {
   font-family: 'Poppins', sans-serif;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 main {
@@ -119,19 +120,17 @@ a {
 .post__comments {
   display: none;
   font-size: 1rem;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%);
   position: absolute;
   top: 50%;
-  left: 49.2%;
+  left: 49.2%; */
   height: 400px;
-  width: 610px;
+  width: 40rem;
   background-color: white;
   border: 00.1mm solid rgba(221, 221, 221, 0.616);
   border-radius: 0.5em;
   padding: 1rem;
   color: black;
-  overflow-y: scroll;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
 }
 
 .post__enter-comments {
@@ -149,7 +148,12 @@ a {
   background-color: rgba(221, 221, 221, 0.616);
   outline: none;
   margin: 2px 0 16px 15px;
-  padding: 8px;
+  padding: 6px;
+}
+
+.comments-container {
+  overflow-y: scroll;
+  height: 300px;
 }
 
 .comment__name {
@@ -157,20 +161,14 @@ a {
 }
 
 .comment__text-area input[type =text] {
-  width: 480px;
+  width: 36rem;
   border: none;
   border-radius: 25px;
   background-color: rgba(221, 221, 221, 0.616);
   outline: none;
   margin: 0;
-  padding: 10px;
+  padding: 8px;
   font-size: 1rem;
-}
-
-.close_comment {
-  position: absolute;
-  top: 0px;
-  left: 0px;
 }
 
 #new-post {

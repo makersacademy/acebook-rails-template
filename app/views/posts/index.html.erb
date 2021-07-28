@@ -26,9 +26,9 @@
           <div class ='post__footer-info'>
             <div><%= post.likes %> <i style ='color: rgb(226, 30, 30)' class="fas fa-heart"></i></div>
             <% if post.comments.length == 1 %>
-              <div><%= post.comments.length %> comment</div>
+              <div><%= post.comments.length %> <%= link_to "Comment", post, remote: true %></div>
             <% else %>
-            <div><%= post.comments.length %> comments</div>
+            <div><%= post.comments.length %> <%= link_to "Comments", post, remote: true %></div>
             <% end %>
           </div>
           <div class ='post_footer'>
@@ -38,12 +38,11 @@
             <p class ='post__footer-el'><%= link_to "Comment", post, class: 'post__footer-el', remote: true %></p>
             <p  class ='post__footer-el delete'><%= link_to "Delete", post_path(post), method: :delete %></p>
           </div>
-          
+          <div class= 'post__comments' id ='<%=post.id%>'></div>
         </div>
       <% end %>
      
     </div>
   </main>
-<div class= 'post__comments' id ='pc'></div>
 </body>
 </html>

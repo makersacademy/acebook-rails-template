@@ -5,18 +5,22 @@
 
 <%= form_with(model: [@post, @comment]) do |form| %>
    <div class ='post__enter-comments'>
-      <div class ='comment__text-area'><%= form.text_field :body, placeholder: "Write a comment..." %></div>
-          <button type ="submit" class='btn btn-primary'>Enter</button>
+      <span class ='comment__text-area'>
+        <%= form.text_field :body, placeholder: "Write a comment..." %>
+      </span>
+          
     </div>
   </p>
-  <% @post.comments.each do |comment| %>
-    <span class ='comment'>
-      <span class ='comment__name'><%= comment.user.firstname%> <%= comment.user.lastname%>: </span>
-      <span><%= comment.body %></span>
-    </span>
-    <br>
-    <br>
-<% end %>
+  <div class ='comments-container'>
+    <% @post.comments.each do |comment| %>
+        <span class ='comment'>
+          <span class ='comment__name'><%= comment.user.firstname%> <%= comment.user.lastname%>: </span>
+          <span><%= comment.body %></span>
+        </span>
+        <br>
+        <br>
+    <% end %>
+</div>
 
 <div style="width: 200px; height: auto">
   <% if @post.image.attached? %>
