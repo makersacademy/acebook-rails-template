@@ -2,10 +2,6 @@ class PostsController < ApplicationController
 
   before_action :set_post, only: [:like, :edit, :update, :destroy]
 
-  def new
-    @post = Post.new
-  end
-
   def show
     respond_to do |format|
       format.js {render inline: "location.reload();" }
@@ -20,6 +16,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order_by_created_at
+    @post = Post.new
   end
 
   def like

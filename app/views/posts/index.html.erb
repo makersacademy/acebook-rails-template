@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="card p-5 m-5">
-      <%= link_to "New Post" , new_post_path %>
+      <%= render "form", post: @post %>
     </div>
 
       <% @posts.each do |post| %>
