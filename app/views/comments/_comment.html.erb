@@ -1,5 +1,9 @@
-<div class="card">
-  <div class="card-content">
+<% if comment.body %>
+
+<article class ="message is-link">
+  <div class="message-body py-1">
     <%= comment.body %>
   </div>
-</div>
+</article>
+
+<% end %>

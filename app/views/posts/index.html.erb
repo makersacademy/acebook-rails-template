@@ -4,7 +4,7 @@
   <%= link_to "New Post", new_post_path %>
 
     <% @posts.each do |post| %>
-      <div class="card">
+      <div class="card mb-5">
         <div class="card-content">
           <div class="content">
           <% if post.image.attached? %>
@@ -20,6 +20,7 @@
           <%= link_to "Edit", edit_post_path(post) %>
           <%= button_to "Delete", post, method: :delete %>
 
+          <br>
           <div class="card"> 
             <div class="card-content">
               <p class="has-text-weight-bold">Comments</p>
@@ -30,7 +31,8 @@
                 </div>
                 <%= f.submit 'Submit', class: 'button is-primary' %>
               <% end %>
-
+  
+            <br>
             <%= render post.comments %>
             </div>
           </div>
