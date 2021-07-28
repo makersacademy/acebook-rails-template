@@ -186,7 +186,7 @@ a:hover {
 
 .comments-container {
   overflow-y: scroll;
-  height: 20rem;
+  height: 19.3rem;
 }
 
 .comments-container::-webkit-scrollbar {
