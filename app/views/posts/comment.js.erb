@@ -1,2 +1,9 @@
-$('#<%=@post.id%>').show().html("<%= j render 'show', posts: @posts %>");
 
+
+$('#<%=@post.id%>').click(function() {
+  $('.post__comments').animate({
+    height: "400px"
+  })
+})
+
+$('#<%=@post.id%>').show().html("<%= j render 'show', posts: @posts %>");

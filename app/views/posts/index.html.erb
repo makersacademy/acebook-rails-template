@@ -8,7 +8,7 @@
     <%= csrf_meta_tags %>
 <body>
   <header>
-<%= render 'layouts/navbar' %>
+    <%= render 'layouts/navbar' %>
   </header>
 
   <main>
@@ -29,7 +29,7 @@
               <% end  %>
               <div><%= post.user.firstname%> <%= post.user.lastname %></div>
               </div>
-              <div><%= post.created_at.to_formatted_s(:time) %> </div>
+              <div class ='post_time'><%= post.created_at.to_formatted_s(:time) %> </div>
           </div>
 
           <div class ='post__message'>
@@ -42,9 +42,9 @@
           <div class ='post__footer-info'>
             <div><%= post.likes %> <i style ='color: rgb(226, 30, 30)' class="fas fa-heart"></i></div>
             <% if post.comments.length == 1 %>
-              <div><%= post.comments.length %> <%= link_to "Comment", post, remote: true %></div>
+              <div class ='comments_num'><%= post.comments.length %> <%= link_to "Comment", post, remote: true %></div>
             <% else %>
-            <div><%= post.comments.length %> <%= link_to "Comments", post, remote: true %></div>
+            <div class ='comments_num'><%= post.comments.length %> <%= link_to "Comments", post, remote: true %></div>
             <% end %>
           </div>
 
