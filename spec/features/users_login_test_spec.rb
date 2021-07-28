@@ -12,7 +12,6 @@ RSpec.feature "User Sign in", type: :feature do
  		 visit '/login'
  		 fill_in 'session_email', with: 'test@test.com'
  		 fill_in 'session_password', with: 'password'
-<<<<<<< HEAD
 		  click_on('Log in')
 
 		  expect(page).to have_current_path('/login')
@@ -44,10 +43,6 @@ RSpec.feature "User Sign in", type: :feature do
 
  	  click_on('Create my account')
  	# find_button('Create my account').click
-=======
-
- 		 expect(flash[:danger]).to match('Invalid email/password combination')
->>>>>>> chore: review duplicated code and linting
 
  	# visit '/login'
  	# fill_in 'session_email', with: 'test@test.com'
