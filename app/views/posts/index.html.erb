@@ -20,13 +20,16 @@
       </div>
       <% @posts.reverse.each do |post| %>
         <div class ='post'>
-
           <div class ='post_header'>
             <div class ='post_header--name-img'>
-              <div><%= image_tag(post.user.avatar_thumbnail, style: "border-radius: 50%") if post.user.avatar.attached? %></div>
+              <% if post.user.avatar.attached? %>
+                <div><%= image_tag(post.user.avatar_thumbnail, style: "border-radius: 50%") %></div>
+              <% else %>
+                <div><%= image_tag("default_image.jpg") %></div>
+              <% end  %>
               <div><%= post.user.firstname%> <%= post.user.lastname %></div>
               </div>
-            <div><%= post.created_at.to_formatted_s(:time) %> </div>
+              <div><%= post.created_at.to_formatted_s(:time) %> </div>
           </div>
 
           <div class ='post__message'>
