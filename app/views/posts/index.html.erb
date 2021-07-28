@@ -32,16 +32,10 @@
                 </div>
                 <%= f.submit 'Submit', class: 'button is-primary' %>
               <% end %>
+
+            <%= render post.comments %>
             </div>
           </div>
-           <div class="card"> 
-            <div class="card-content">
-            </div>
-          </div>
-           <%= render post.comments %>
-
-
-
           </div>
         </div>
         <% end %>

@@ -29,9 +29,8 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { flash[:success] = "Comment was successfully created."
-          sleep(3)
-          redirect_to posts_path
-          puts "page not refreshed"}
+          redirect_to @post
+          }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new, status: :unprocessable_entity }
