@@ -11,17 +11,18 @@
     <span aria-hidden="true"></span>
     </a>
 </div>
- <% if logged_in? %>
+<% if logged_in? %>
 <div class="navbar-menu" id='nav-links'>
     <div class="navbar-start">
       <a class="navbar-item" href="/posts"> Home </a>
       <a class="navbar-item" href="/pages/about"> About </a>
-      <a class="navbar-item" href=<%= link_to "Log out", logout_path, method: "delete" %>></a>
+      <a class="navbar-item" <%= link_to "Log out", logout_path, method: "delete" %>></a>
+      <a class= "navbar-item" <%= link_to "Profile", user_path(current_user) %>> </a>
     </div>
-    <% else %>
     <div class="navbar-end">
     <div class="navbar-item">
         <div class="buttons">
+    <% else %>
         <form action='/signup' method='get'>
             <button class="button is-primary">
             <strong>Sign up</strong>
