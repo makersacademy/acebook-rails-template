@@ -7,8 +7,9 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/1 or /comments/1.json
-  def show
-  end
+  # def show
+
+  # end
 
   # GET /comments/new
   def new
@@ -28,7 +29,9 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { flash[:success] = "Comment was successfully created."
-          redirect_to posts_path }
+          sleep(3)
+          redirect_to posts_path
+          puts "page not refreshed"}
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new, status: :unprocessable_entity }
