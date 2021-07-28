@@ -125,9 +125,8 @@ a {
   top: 50%;
   left: 49.2%; */
   height: 400px;
-  width: 40rem;
+  width: 39.5rem;
   background-color: white;
-  border: 00.1mm solid rgba(221, 221, 221, 0.616);
   border-radius: 0.5em;
   padding: 1rem;
   color: black;
@@ -147,17 +146,19 @@ a {
   border-radius: 25px;
   background-color: rgba(221, 221, 221, 0.616);
   outline: none;
-  margin: 2px 0 16px 15px;
-  padding: 6px;
+  margin: 1px 0 16px 15px;
+  padding: 5px;
 }
 
 .comments-container {
+  padding-top: 6px;
   overflow-y: scroll;
   height: 300px;
 }
 
 .comment__name {
   font-weight: 600;
+  padding: 5px;
 }
 
 .comment__text-area input[type =text] {
@@ -169,6 +170,7 @@ a {
   margin: 0;
   padding: 8px;
   font-size: 1rem;
+  box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.137), inset 1px 1px 3px 0 rgba(0, 0, 0, 0.103);
 }
 
 #new-post {
