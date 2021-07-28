@@ -20,18 +20,22 @@
       </div>
       <% @posts.reverse.each do |post| %>
         <div class ='post'>
-          <p class ='post_header'>
-            <%= image_tag(post.user.avatar_thumbnail) if post.user.avatar.attached? %>
-            <span class="card-title d-inline"><%= post.user.firstname%> <%= post.user.lastname %></span> 
-            <span class="card-subtitle mb-2 text-muted d-inline"><br> <%= post.created_at.to_formatted_s(:time) %> </span>
-          <%= image_tag(post.image) if post.image.attached? %>
-          </p>
-          <p class ='post__message'>
-          
-          <%= post.message %>
-          </p>
-          <p class ='post_header'><%= post.user.firstname%> <%= post.user.lastname%></p>
-          <p class ='post__message'><%= post.message %></p>
+
+          <div class ='post_header'>
+            <div class ='post_header--name-img'>
+              <div><%= image_tag(post.user.avatar_thumbnail, style: "border-radius: 50%") if post.user.avatar.attached? %></div>
+              <div><%= post.user.firstname%> <%= post.user.lastname %></div>
+              </div>
+            <div><%= post.created_at.to_formatted_s(:time) %> </div>
+          </div>
+
+          <div class ='post__message'>
+            <p><%= post.message %></p>
+            <% if post.image.attached? %>
+              <div class ='post__message-img'><%= image_tag(post.image) %></div>
+            <%end%>
+          </div>
+
           <div class ='post__footer-info'>
             <div><%= post.likes %> <i style ='color: rgb(226, 30, 30)' class="fas fa-heart"></i></div>
             <% if post.comments.length == 1 %>

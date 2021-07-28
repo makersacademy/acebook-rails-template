@@ -9,9 +9,7 @@ body {
   font-family: 'Poppins', sans-serif;
   padding: 0;
   margin: 0;
-
   height: 100%;
-
   scroll-behavior: smooth;
 }
 
@@ -74,7 +72,7 @@ a {
                        "message"
                        "footer-info"
                        "footer";
-  grid-template-rows: 40px 3fr 26px 45px;
+  grid-template-rows: 50px 3fr 31px 46px;
   width: 40rem;;
   background-color: #fff;
   margin: 6px;
@@ -86,18 +84,40 @@ a {
 .post_header {
   grid-area: header;
   display: flex;
-  justify-content: flex-start;
-  margin: 15px;
+  justify-content: space-between;
+  margin: 5px;
   font-weight: 650;
+}
+
+.post_header--name-img {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 12rem;
+  margin: 32px 0 20px 7px;
 }
 
 .post__message {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  flex-direction: column;
   grid-area: message;
   padding: 20px;
-  margin: 0;
+  margin-top: 10px;
+}
+
+.post__message-img {
+  margin: 0 auto;
+  grid-area: message;
+  width: 39rem;
+  width: auto;
+}
+
+.post__message-img img {
+  border-radius: 5px;
+  background-position: center;
+  width: 38rem;
 }
 
 .post_footer {
@@ -192,7 +212,7 @@ a {
 }
 
 .new-post__form input[type =text] {
-  padding: 11px;
+  padding: 7px;
   width: 480px;
   border: none;
   border-radius: 25px;

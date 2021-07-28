@@ -17,7 +17,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(message: post_params, user: current_user)
+    @post = current_user.posts.create(post_params)
+    @post.image.attach(params[:post][:image])
     redirect_to posts_url
   end
 
@@ -49,6 +50,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message, :image)[:message]
+    params.require(:post).permit(:message, :image)
   end
 end
