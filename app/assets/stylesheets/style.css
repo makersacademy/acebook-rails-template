@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.page_footer, footer {
+  background-color: #0C6EFD;
+}
+
 body {
   background-color: rgba(221, 221, 221, 0.616);
   font-family: 'Poppins', sans-serif;
