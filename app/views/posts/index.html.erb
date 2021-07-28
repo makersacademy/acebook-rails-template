@@ -1,6 +1,7 @@
 <li><%= link_to "Homepage", "/welcome", method: :get %></li>
 <li><%= link_to "New post", "/posts/new", method: :get%></li>
 <li class="right_links"><%= link_to 'Logout', '/logout', method: :post %></li>
+<li class="right_links">Online: <%= current_user.username %></li>
 
 <br>
 
