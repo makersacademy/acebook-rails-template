@@ -20,20 +20,12 @@
       </div>
       <% @posts.reverse.each do |post| %>
         <div class ='post'>
-
-
           <p class ='post_header'>
-
-            <h5 class="card-title d-inline"><%= post.user.firstname%> <%= post.user.lastname %></h5> 
-            <h6 class="card-subtitle mb-2 text-muted d-inline"> <%= post.created_at.to_formatted_s(:time) %> </h6>
-      
             <%= image_tag(post.user.avatar_thumbnail) if post.user.avatar.attached? %>
-
+            <span class="card-title d-inline"><%= post.user.firstname%> <%= post.user.lastname %></span> 
+            <span class="card-subtitle mb-2 text-muted d-inline"><br> <%= post.created_at.to_formatted_s(:time) %> </span>
+          <%= image_tag(post.image) if post.image.attached? %>
           </p>
-
-        <%# <%= image_tag(@user.avatar_thumbnail) if @user.avatar.attached? %> 
-
-
           <p class ='post__message'>
           
           <%= post.message %>
@@ -50,7 +42,7 @@
      
     </div>
   </main>
-<div class= 'post__comments'></div>
+  <div class= 'post__comments'></div>
  <% else %>
         <h1>Sign in to view this page.</h1>
         <% end %>
