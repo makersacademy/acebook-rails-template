@@ -48,10 +48,6 @@ group :development, :test do
   gem "rubocop", "0.79.0", require: false
   gem "rubocop-rails"
   gem 'shoulda', '~> 3.5'
-<<<<<<< HEAD
-  
-=======
->>>>>>> feat: shoulda gem
 end
 
 group :development do
