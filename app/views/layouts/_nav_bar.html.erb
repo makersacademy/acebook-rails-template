@@ -1,49 +1,40 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
-<div class="navbar-brand">
+  <div class="navbar-brand">
     <a class="navbar-item" href="/">
     <img src="<%= asset_path('logo.png') %>">
     </a>
-</div>
-<div>
+  </div>
+  <div>
     <a role="button" class="navbar-burger burger" id='burger' aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
     </a>
-</div>
-<% if logged_in? %>
-<div class="navbar-menu" id='nav-links'>
+  </div>
+
+  <% if logged_in? %>
+  <div class="navbar-menu" id='nav-links'>
     <div class="navbar-start">
-<<<<<<< HEAD
-      <a class="navbar-item" href="/posts"> Home </a>
-      <a class="navbar-item" href="/pages/about"> About </a>
-      <%# It seems like the ending of the embeded ruby can also close the a tag in this instance %>
-      <a class="navbar-item" <%= link_to "Log out", logout_path, method: "delete" %></a>
-      <a class= "navbar-item" <%= link_to "Profile", user_path(current_user) %> </a>
-      <% else %>
-      <a class="navbar-item" <%= link_to "Sign up", signup_path, method: "get"%> </a>
-      <a class="navbar-item" <%= link_to "Log in", login_path, method: "get"%> </a>
-=======
-    <a class="navbar-item" href="/posts"> Home </a>
-    <a class="navbar-item" href="/pages/about"> About </a>
-    </div>
-    <div class="navbar-end">
-    <div class="navbar-item">
-        <div class="buttons">
-        <form action='/signup' method='get'>
-            <button class="button is-primary">
-            <strong>Sign up</strong>
-            </button>
-        </form>
-            <form action='/login' method='get'>
-            <button class="button is-light">
-                <strong>Log in</strong>
-            </button>
-            </form>
+        <a class="navbar-item" href="/posts"> Home </a>
+        <a class="navbar-item" href="/pages/about"> About </a>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+        <%# It seems like the ending of the embeded ruby can also close the a tag in this instance %>
+            <%= button_to "Profile", user_path(current_user), class: "button is-primary", method: "get" %>
+            <%= button_to "Log out", logout_path, method: "delete", class: "button is-primary" %>
+
+        <% else %>
+
+          <%= button_to "Sign up", signup_path, class: "button is-primary", method: "get" %>
+          <%= button_to "Log in", login_path, class: "button is-light", method: "get" %>
+          </div>
         </div>
-        </div>
->>>>>>> feat: sessions controller
+      </div>
+
     </div>
-    </div>
-    <%end%>
+  </div>
+
+  <%end%>
 </nav>
