@@ -12,4 +12,5 @@ $(document).ready(function(){
 })
 });
 
+$('#comments<%=@post.id%>').append().html('<%= @post.comments.length %> Comments');
 $('#<%=@post.id%>').show().html("<%= j render 'show', posts: @posts %>");
