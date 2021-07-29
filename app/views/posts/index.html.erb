@@ -47,11 +47,6 @@
                   <% end %>
                   <%= button_to 'SUPRISE', post_likes_path(post), method: :post %>
                   <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-                  <!-- <small>
-                    <a href="/posts/<%#= post.id %>/like">Like</a>
-                    <br>
-                    <%#= pluralize(post.likes,'like')%>
-                  <%# </small> %> -->
                 </p>
               </div>
               <%= render post.comments %>

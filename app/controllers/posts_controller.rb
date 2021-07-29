@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   def show
     respond_to do |format|
       format.js {render inline: "location.reload();" }
-      # format.html {render 'index'}
     end
   end
 
@@ -22,12 +21,6 @@ class PostsController < ApplicationController
     @posts = Post.order_by_created_at
     @post = Post.new
   end
-
-  # def like
-  #   @post.increment_likes(1)
-  #   @post.save!
-  #   redirect_to '/posts'
-  # end
 
   def edit; end
 
