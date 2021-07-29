@@ -19,11 +19,6 @@ Rails.application.routes.draw do
     get '/posts/:id/like', to: 'posts#like', as: 'like'
   end
 
-  
-  devise_scope :posts do
-    get "/posts/:id/destroy", to: "posts#destroy", as: "destroy"
-  end
-
   get '/profile', to: 'profile#index'
   devise_scope :posts do
     get '/posts/:id', to: 'posts#comment', as: 'comment'
