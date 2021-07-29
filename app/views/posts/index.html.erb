@@ -31,7 +31,9 @@
             <div class="media-content">
               <div class="content">
                 <p>
-                  <strong>POSTER NAME HERE</strong>
+                  <strong> <%= User.find(@post.user_id).name if @post.user_id != nil %></strong>
+                  
+                 
                   <%= link_to "Edit" , edit_post_path(post) %>
                   <%= link_to "Delete" , post, method: :delete, data: { confirm: "Delete this post?" } %>
                   <br>

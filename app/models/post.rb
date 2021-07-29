@@ -7,5 +7,5 @@ class Post < ApplicationRecord
 	 def increment_likes(by_value)
  		 self.likes += by_value
  	end
-	
+	 belongs_to :user
 end

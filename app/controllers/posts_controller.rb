@@ -10,13 +10,17 @@ class PostsController < ApplicationController
 
   def create
     params.inspect
-    @post = Post.create(post_params)
+    # @post = Post.create(post_params)
+    @post = Post.create(post_params.merge(user_id: current_user.id))
+    @user = User.find(1)
+    @user.posts << @post
     redirect_to posts_url
   end
 
   def index
     @posts = Post.order_by_created_at
     @post = Post.new
+    # @name = User.find(@post.user_id).name if @post.user_id != nil
   end
 
   def like
@@ -38,6 +42,10 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to posts_path
+  end
+
+  def as_json(options = {})
+    super(options.merge(include: [:user, comments: {include: :user}]))
   end
 
   private
