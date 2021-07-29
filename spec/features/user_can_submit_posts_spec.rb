@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.feature "Timeline", type: :feature do
 
   def sign_up
@@ -62,4 +61,3 @@ RSpec.feature "Timeline", type: :feature do
   end
 
 end
-
