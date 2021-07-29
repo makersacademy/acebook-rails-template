@@ -8,7 +8,26 @@
     <%= csrf_meta_tags %>
 <body>
   <header>
-    <%= render 'layouts/navbar' %>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <h1 class="navbar-brand m-0" style="font-size: 175%;" id="nav-txt"><strong>Catbook</strong></h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <% if current_user  %> 
+        <a class="nav-link active" aria-current="page" href="/posts">Home</a>
+        <a class="nav-link" href="/profile">Profile</a>
+        <%= link_to 'Sign Out', destroy_user_session_path, class:"nav-link", method: :delete %>
+        <% else %>
+        <%= link_to 'Sign Up', new_user_registration_path, class:"nav-link" %>
+        <%= link_to 'Sign In', new_user_session_path, class:"nav-link" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
   </header>
     
   <main>
@@ -52,11 +71,10 @@
             <p  class ='post__footer-el'>
               <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
               <% if pre_like %>
-                <%= link_to 'Like', post_like_path(post, pre_like), method: :delete, class: "text-primary" %><i class="fas fa-thumbs-up text-primary"></i></span>
+                <%= link_to 'Like', post_like_path(post, pre_like), method: :delete, class: "text-primary" %><span> <i class="fas fa-thumbs-up text-primary"></i></span>
               <% else %>
-                <%= link_to 'Like', post_likes_path(post), method: :post %> <span><i style ='color: #ddd' class="far fa-thumbs-up"></i></span>
+                <%= link_to 'Like', post_likes_path(post), method: :post %> <span> <i style ='color: #ddd' class="far fa-thumbs-up"></i></span>
               <% end %>
-
             </p>
             <p class ='post__footer-el'><%= link_to "Comment", post, class: 'post__footer-el', remote: true %></p>
             <% if post.user == current_user %>

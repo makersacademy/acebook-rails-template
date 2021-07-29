@@ -2,21 +2,21 @@
   <% if @post.errors.any? %>
     <div id ="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
       <% @post.errors.full_messages.each do |message| %>
-        <li><%= Whats on your mind  %></li>
       <% end %> 
-      </ul>
     </div>
   <% end %>
+          <div class="d-flex align-items-center">
     <%= form.text_field :message, placeholder: "What's on your mind, #{current_user.firstname}?" %>
-    
+        <button type="submit" name="commit" value="Post" class='btn-sm btn btn-primary'>Post</button>
+<div class="mt-1">
      <label class="custom-file-upload">
-  <%= form.file_field :image %> 
-    <i class="far fa-image fa-lg"></i>
+      <%= form.file_field :image %> 
+      <i class="far fa-image fa-lg"></i>
     </label>
-    <button type="submit" name="commit" value="Post" class='btn-sm btn btn-primary'>Post</button>
+    </div>
+        </div>
+
   
   <% end %>
 
