@@ -45,9 +45,29 @@
         <h1>Sign in to view this page.</h1>
         <% end %>
     </div>
+  
+    <main>
+
   </div>
+
   </div>
   </main>
 
+  <div>
+  <%=end%>
+      <% @user = current_user%>
+      <% @posts = @user.posts %>
+
+
+     <% @posts.each do |post| %>
+        <%= post.message %> <br>
+          <% if post.image.attached? %>
+            <div class ='post__message-img'><%= image_tag(post.image) %></div>
+        <%end%>
+            </div>
+     <% end %> 
+
+     
+    </div>
 </body>
 </html>

@@ -26,7 +26,7 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Active storage images held locally 
+  # Active storage images held locally
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.

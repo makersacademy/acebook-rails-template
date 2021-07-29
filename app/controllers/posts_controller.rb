@@ -11,7 +11,7 @@ class PostsController < ApplicationController
       if @post.save
         format.js
         format.html { redirect_to @post }
-        format.json { render 'show', status: :created, location: @post}
+        format.json { render 'show', status: :created, location: @post }
       end
     end
   end
