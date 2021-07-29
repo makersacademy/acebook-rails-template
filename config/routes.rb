@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'sessions#welcome'
 
   resources :users, only: [:new, :create, :destroy]
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     get 'like', on: :member
+    resources :comments
   end
-  
 end
+
