@@ -9,7 +9,7 @@
         <figure class="media-left">
           <p class="image is-128x128">
           <%# CURRENT USER PROFILE PIC %>
-          <img src="https://bulma.io/images/placeholders/128x128.png">
+          <%= gravatar_for current_user %>
           </p>
         </figure>
         <div class="media-content">
@@ -24,16 +24,19 @@
             <figure class="media-left">
               <p class="image is-64x64">
                 <%# POSTER PROFILE PIC %>
-                <img src="https://bulma.io/images/placeholders/128x128.png">
+                <%= gravatar_for post.user %>
               </p>
             </figure>
 
             <div class="media-content">
               <div class="content">
                 <p>
-                  <strong>POSTER NAME HERE</strong>
-                  <%= link_to "Edit" , edit_post_path(post) %>
-                  <%= link_to "Delete" , post, method: :delete, data: { confirm: "Delete this post?" } %>
+                  <strong> <%= post.user.name %></strong>
+                  
+                  <% if post.user.name == current_user.name %>
+                    <%= link_to "Edit" , edit_post_path(post) %>
+                    <%= link_to "Delete" , post, method: :delete, data: { confirm: "Delete this post?" } %>
+                  <% end %>
                   <br>
                   <%= post.message %>
                   <br>
@@ -59,7 +62,7 @@
             <figure class="media-left">
               <p class="image is-64x64">
                 <%# CURRENT USER PROFILE PIC %>
-                <img src="https://bulma.io/images/placeholders/128x128.png">
+                <%= gravatar_for current_user %>
               </p>
             </figure>
 
