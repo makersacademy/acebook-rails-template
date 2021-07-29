@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <title>Catbook</title>
@@ -10,27 +9,27 @@
   <header>
     <%= render 'layouts/navbar' %>
   </header>
-
+<br>
   <main>
-<br><br>
+
   <% if current_user  %> 
     <div class="container">
     <div class="row">
-    <div class="col d-flex justify-content-center">
-  <% if current_user.avatar.attached? %>
-  <%= image_tag(current_user.avatar_profile) %>
-  <% else %>
-  <%= image_tag("default_image.jpg") %>
-  <% end %>
-     <%= form_with(model: @user, local: true) do |form| %>
-    <% end %>
-    </div>
     <div class="col justify-content-center">
     <div class="row justify-content-center">
     <div class="profile">
     <div class="profile_header">
         <h1 class="text-center text-primary">My Purrfile</h1>
         </div>
+        <div class="col d-flex justify-content-center">
+  <% if current_user.avatar.attached? %>
+    <div class ='profile-img'><%= image_tag(current_user.avatar_profile, style: "border-radius: 50%") %></div>
+  <% else %>
+    <div class ='profile-img'><%= image_tag("default_image.jpg") %></div>
+  <% end %>
+     <%= form_with(model: @user, local: true) do |form| %>
+    <% end %>
+    </div>
         <hr>
         <h5><span class="text-muted">First Name: </span><%= current_user.firstname.capitalize %></h5>
         <h5><span class="text-muted">Last Name:    </span><%= current_user.lastname.capitalize %></h5>
@@ -45,29 +44,64 @@
         <h1>Sign in to view this page.</h1>
         <% end %>
     </div>
+  </div>
+  </div>
   
-    <main>
 
-  </div>
 
-  </div>
+<div class="container d-flex justify-content-center">
+    <div class="row">
+    <div class="col">
+  <% @user = current_user%>
+      <% @posts = @user.posts %>
+ <% @user.posts.each do |post| %>
+        <div class ='post'>
+          <div class ='post_header'>
+            <div class ='post_header--name-img'>
+              <% if post.user.avatar.attached? %>
+                <div class = 'post_header-img-default'><%= image_tag(post.user.avatar, style: "border-radius: 50%") %></div>
+              <% else %>
+                <div class = 'post_header-img-default'><%= image_tag("default_image.jpg", style: "border-radius: 50%") %></div>
+              <% end  %>
+              <div><%= post.user.firstname%> <%= post.user.lastname %></div>
+              </div>
+              <div><%= post.created_at.to_formatted_s(:time) %> </div>
+          </div>
+
+           <div class ='post__message'>
+            <p><%= post.message %></p>
+            <% if post.image.attached? %>
+              <div class ='post__message-img'><%= image_tag(post.image) %></div>
+            <%end%>
+          </div>
+
+          <div class ='post__footer-info'>
+            <div><%= post.likes %> <i style ='color: rgb(226, 30, 30)' class="fas fa-heart"></i></div>
+            <% if post.comments.length == 1 %>
+              <div><%= post.comments.length %> <%= link_to "Comment", post, remote: true %></div>
+            <% else %>
+            <div><%= post.comments.length %> <%= link_to "Comments", post, remote: true %></div>
+            <% end %>
+          </div>
+
+          <div class ='post_footer'>
+            <p  class ='post__footer-el'>
+              <a href="/posts/<%= post.id %>/like"><i style ='color: #ddd' class="fas fa-heart"></i>     Like</a>
+            </p>
+            <p class ='post__footer-el'><%= link_to "Comment", post, class: 'post__footer-el', remote: true %></p>
+            <% if post.user == current_user %>
+              <p class ='post__footer-el delete'><%= link_to "Delete", post_path(post), method: :delete %></p>
+            <% else %>
+              <p class ='post__footer-el delete'>Delete</p>
+            <% end %>
+          </div>
+          <div class= 'post__comments' id ='<%=post.id%>'></div>
+        </div>
+      <% end %>
+</div>
+     
+    
   </main>
 
-  <div>
-  <%=end%>
-      <% @user = current_user%>
-      <% @posts = @user.posts %>
-
-
-     <% @posts.each do |post| %>
-        <%= post.message %> <br>
-          <% if post.image.attached? %>
-            <div class ='post__message-img'><%= image_tag(post.image) %></div>
-        <%end%>
-            </div>
-     <% end %> 
-
-     
-    </div>
 </body>
 </html>

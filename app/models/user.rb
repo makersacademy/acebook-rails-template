@@ -13,7 +13,7 @@ class User < ApplicationRecord
   end
 
   def avatar_profile
-    avatar.variant(resize: '350x525!').processed
+    avatar.variant(resize: '220x220!').processed
   end
 
   has_many :posts
