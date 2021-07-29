@@ -50,7 +50,14 @@
 
           <div class ='post_footer'>
             <p  class ='post__footer-el'>
-              <%= link_to 'Like', post_likes_path(post), method: post, remote: true %><i style ='color: #ddd' class="fas fa-heart"></i>
+              <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+              <% if pre_like %>
+                <%= link_to 'Unlike', post_like_path(post, pre_like), method: :delete %><i style ='color: #ddd' class="fas fa-heart"></i>
+              <% else %>
+                <%= link_to 'Like', post_likes_path(post), method: :post %><i style ='color: #ddd' class="fas fa-heart"></i>
+              <% end %>
+
+
             </p>
             <p class ='post__footer-el'><%= link_to "Comment", post, class: 'post__footer-el', remote: true %></p>
             <% if post.user == current_user %>
