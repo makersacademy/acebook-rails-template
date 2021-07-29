@@ -177,6 +177,12 @@ a:hover {
   font-size: .8rem;
 }
 
+.likes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .comment-time {
   float: right;
   font-size: .7rem;
@@ -290,6 +296,10 @@ hr {
 @media screen and (max-width: 600px ) {
   html {
     font-size: 15px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 
   .post {

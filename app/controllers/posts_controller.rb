@@ -32,7 +32,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.likes += 1
     @post.save!
-    redirect_to posts_url
+    respond_to do |format|
+      if @post.save
+        format.js
+        format.html { redirect_to posts_url }
+        format.json { head :no_content }
+      end
+    end
   end
 
   def show
@@ -43,8 +49,13 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-
-    redirect_to posts_url
+    respond_to do |format|
+      if @post.save
+        format.js
+        format.html { redirect_to posts_url }
+        format.json { head :no_content }
+      end
+    end
   end
 
   private
