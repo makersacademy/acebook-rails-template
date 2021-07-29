@@ -9,27 +9,27 @@
   <header>
     <%= render 'layouts/navbar' %>
   </header>
-
+<br>
   <main>
-<br><br>
+
   <% if current_user  %> 
     <div class="container">
     <div class="row">
-    <div class="col d-flex justify-content-center">
-  <% if current_user.avatar.attached? %>
-  <%= image_tag(current_user.avatar_profile) %>
-  <% else %>
-  <%= image_tag("default_image.jpg") %>
-  <% end %>
-     <%= form_with(model: @user, local: true) do |form| %>
-    <% end %>
-    </div>
     <div class="col justify-content-center">
     <div class="row justify-content-center">
     <div class="profile">
     <div class="profile_header">
         <h1 class="text-center text-primary">My Purrfile</h1>
         </div>
+        <div class="col d-flex justify-content-center">
+  <% if current_user.avatar.attached? %>
+    <div class ='profile-img'><%= image_tag(current_user.avatar_profile, style: "border-radius: 50%") %></div>
+  <% else %>
+    <div class ='profile-img'><%= image_tag("default_image.jpg") %></div>
+  <% end %>
+     <%= form_with(model: @user, local: true) do |form| %>
+    <% end %>
+    </div>
         <hr>
         <h5><span class="text-muted">First Name: </span><%= current_user.firstname.capitalize %></h5>
         <h5><span class="text-muted">Last Name:    </span><%= current_user.lastname.capitalize %></h5>
@@ -49,10 +49,9 @@
   
 
 
-<div class="container">
+<div class="container d-flex justify-content-center">
     <div class="row">
     <div class="col">
-<br>
   <% @user = current_user%>
       <% @posts = @user.posts %>
  <% @user.posts.each do |post| %>
