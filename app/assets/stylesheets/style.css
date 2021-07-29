@@ -25,30 +25,7 @@ main {
   flex-direction: column;
 }
 
-/* header {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  background-color: #fff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
-  z-index: 200;
-} */
-
-
-#header__title {
-  margin-left: 20px;
-  font-weight: 500;
-  letter-spacing: 3px;
-}
-
-.header__nav-bar {
-  display: flex;
-}
-
-.header__nav-bar_li, p {
+ p {
   display: flex;
   justify-content: space-between;
   margin-right: 45px;
@@ -61,6 +38,10 @@ a {
   color: black;
   padding: 0;
   margin: 0;
+}
+
+a:hover {
+  color: black;
 }
 
 .all_posts {
@@ -76,12 +57,12 @@ a {
                        "message"
                        "footer-info"
                        "footer";
-  grid-template-rows: 50px 3fr 31px 46px;
+  grid-template-rows: 3.1rem 3fr 2rem 2.8rem;
   width: 40rem;;
   background-color: #fff;
   margin: 6px;
   border: 00.1mm solid rgba(221, 221, 221, 0.616);
-  border-radius: 0.5em;
+  border-radius: 0.2em;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
 }
 
@@ -89,9 +70,17 @@ a {
   grid-area: header;
   display: flex;
   justify-content: space-between;
-  margin: 5px 10px 1px 5px;
-  font-weight: 650;
+  margin-bottom: 1rem;
+  font-weight: 500;
   align-items: center;
+
+}
+
+.post_time {
+  margin: 1rem 1rem 0 0;
+  font-size: .9rem;
+  font-weight: 400;
+  color: rgb(22, 22, 22);
 
 }
 
@@ -99,13 +88,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 12rem;
-  margin: 32px 0 20px 7px;
+  width: 13rem;
+  margin: 3rem 0 1rem 7px;
+  font-size: 1.1rem;
 }
 
 .post_header-img-default img {
-  width: 50px;
-  height: 50px;
+  width: 3rem;
+  height: 3rem;
 }
 
 .post__message {
@@ -114,38 +104,40 @@ a {
   justify-content: flex-start;
   flex-direction: column;
   grid-area: message;
-  padding: 20px;
+  padding: 1.2rem;
   margin-top: 10px;
 }
 
 .post__message-img {
   margin: 0 auto;
   grid-area: message;
-  width: 38rem;
   width: auto;
+  padding-right: .5rem;
 }
 
 .post__message-img img {
   border-radius: 5px;
-  background-position: center;
-  width: 36rem;
+  width: 34rem;
 }
 
 .post_footer {
-  font-size: .95rem;
+  font-size: .85rem;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   grid-area: footer;
+  margin: 0 1rem;
+  border-bottom: 00.1mm solid #ddd;
 }
 
 .post_footer-el {
-  margin-left: 50px;
+  margin-left: 3.1rem;
   padding: 0;
+  margin: 0;
 }
 
 .post__footer-info {
-  margin: 0 15px;
+  margin: 0 1rem;
   font-size: .9rem;
   grid-area: footer-info;
   border-bottom: 1px solid #ddd;
@@ -156,25 +148,27 @@ a {
 .post__comments {
   display: none;
   font-size: 1rem;
-  /* transform: translate(-50%, -50%);
-  position: absolute;
-  top: 50%;
-  left: 49.2%; */
-  height: 400px;
   width: 39.5rem;
+  height: 0;
   background-color: white;
-  border-radius: 0.5em;
+  border-radius: 0.2em;
   padding: 1rem;
   color: black;
 }
 
 .post__enter-comments {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #fff;
-  width: 35rem;
-  margin: 0 10px;
+  width: 25rem;
+  margin: 0 auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post__enter-comments form {
+  padding: 0;
+  margin-top: -21px;
 }
 
 .profile {
@@ -210,31 +204,69 @@ a {
   border-radius: 25px;
   background-color: rgba(221, 221, 221, 0.616);
   outline: none;
-  margin: 1px 0 16px 15px;
-  padding: 5px;
+  padding: 5px 10px 5px 0;
+  margin-left: 16px;
+  font-size: .8rem;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-time {
+  float: right;
+  font-size: .7rem;
+  font-weight: 200;
+  color:rgba(0, 0, 0, 0.904);
 }
 
 .comments-container {
-  padding-top: 6px;
   overflow-y: scroll;
-  height: 300px;
+  height: 19.3rem;
+}
+
+.comments-container::-webkit-scrollbar {
+  display: none;
 }
 
 .comment__name {
-  font-weight: 600;
+  font-weight: 500;
+  font-size: .9rem;
   padding: 5px;
 }
 
+.comments_num {
+  font-size: .8rem;
+  color: black;
+}
+
 .comment__text-area input[type =text] {
-  width: 36rem;
-  border: none;
+  width: 32rem;
   border-radius: 25px;
-  background-color: rgba(221, 221, 221, 0.616);
+  border: 00.3mm solid rgba(0, 0, 0, 0.89);
   outline: none;
-  margin: 0;
-  padding: 8px;
-  font-size: 1rem;
-  box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.137), inset 1px 1px 3px 0 rgba(0, 0, 0, 0.103);
+  margin: 0 6px 16px 0;
+  padding: 7px;
+  display: inline-block;
+  font-size: .8rem;
+}
+
+.comment__text-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-img img {
+  width: 32px;
+  height: 32px;
+  margin: 1px;
+}
+
+.comment-btn {
+  margin: 0 6px 16px 0;
 }
 
 #new-post {
@@ -243,11 +275,11 @@ a {
   align-items: center;
   background-color: #fff;
   width: 40rem;
-  height: 60px;
+  height: 3.8rem;
   padding: 2px;
-  margin: 6px;
+  margin: 12px 6px 6px 6px;
   border: 00.1mm solid rgba(221, 221, 221, 0.616);
-  border-radius: 0.5em;
+  border-radius: 0.2em;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.137), 0 1px 3px 0 rgba(0, 0, 0, 0.103);
 }
 
@@ -297,7 +329,6 @@ hr {
   font-family: 'klavika-2', sans-serif;
 }
 
-
 .footer {
   position: absolute;
   bottom: 0;
@@ -305,4 +336,50 @@ hr {
   /* Set the fixed height of the footer here */
   height: 500px;
   background-color: #f5f5f5;
+}
+
+@media screen and (max-width: 600px ) {
+  html {
+    font-size: 15px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .post {
+    width: 95vw;;
+  }
+
+  #new-post {
+    width: 95vw;;
+  }
+
+  .new-post__form input[type =text] {
+    width: 70vw;
+    padding: 5px;
+  }
+
+  .post__message-img img {
+    width: 75vw;
+  }
+ 
+  .mobile-btn {
+    width: 50px;
+    height: 28px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .post__comments {
+    width: 94vw;
+    height: auto;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .comment__text-area input[type =text] {
+    width: 75vw;
+    padding: 5px 0 5px 10px;
+  }
 }

@@ -1,23 +1,28 @@
-<title>The name of your site</title>
     <%= stylesheet_link_tag 'style' %>
     <%= javascript_include_tag 'interface' %> 
     <%= csrf_meta_tags %>
 
-<%= form_with(model: [@post, @comment]) do |form| %>
-   <div class ='post__enter-comments'>
-      <span class ='comment__text-area'><%= form.text_field :body, placeholder: "Write a comment..." %></span>
-          
-    </div>
-  </p>
-  <div class ='comments-container'>
-    <% @post.comments.each do |comment| %>
-        <span class ='comment'>
-          <span class ='comment__name'><%= comment.user.firstname%> <%= comment.user.lastname%>: </span>
-          <span><%= comment.body %></span>
-        </span>
-        <br>
-        <br>
+
+  <%= form_with(model: [@post, @comment]) do |form| %>
+      <div class ='post__enter-comments'>
+        <div class ='comment__text-area'><%= form.text_field :body, placeholder: "Write a comment..." %></div>
+        <button type="submit" name="commit" value="Post" class='comment-btn btn-sm btn btn-primary'>Post</button>
+      </div>
+    
+    <div class ='comments-container'>
+      <% @post.comments.reverse.each do |comment| %>
+          <span class ='comment'>
+          <% if comment.user.avatar.attached? %>
+                  <span class='comment-img'><%= image_tag(comment.user.avatar, style: "border-radius: 50%") %></span>
+                <% else %>
+                  <span class='comment-img'><%= image_tag("default_image.jpg", style: "border-radius: 50%") %></span>
+                <% end  %>
+            <span class ='comment__name'><%= comment.user.firstname%> <%= comment.user.lastname%>: </span>
+            <span><%= comment.body %> </span>
+          </span>
+            <span class ='comment-time'><%= comment.created_at.to_formatted_s(:time) %></span>
+          <br>
+      <% end %>
+
     <% end %>
-</div>
-  <% end %>
- 
+ </div>
