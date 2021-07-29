@@ -1,9 +1,12 @@
 
-<h1>Welcome You are Logged In, <%= current_user.username %></h1>
-<h1>Your Posts:</h1>
+<li><%= link_to "Homepage", "/welcome", method: :get %></li>
+<li><%= link_to "New post", "/posts/new", method: :get%></li>
+<li class="right_links"><%= link_to 'Logout', '/logout', method: :post %></li>
+<li class="right_links">Online: <%= current_user.username %></li>
 
-<%= link_to "New Post", new_post_path %>
+<br>
 
+<h2>Posts</h2>
 
 <ul>
 <% @posts.each do |post| %>
