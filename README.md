@@ -1,15 +1,47 @@
 # AceBook
+## [Makers Academy](http://www.makersacademy.com) - Week 9 Group Project
+Team members:
+* [Merryn Hurley-Rawlins](https://github.com/merrynhr)
+* [Zsuzsanna Ver](https://github.com/MrsVer)
+* [Cynthia Fu](https://github.com/YinnyF)
+* [Fabio Rodriguez](https://github.com/frodri13)
+* [Masako Gray](https://github.com/1ugia)
+* [Sean Phillips](https://github.com/SeanEmmers)
+<br><br>
+--------
+## Project info:
+A full-stack web app inspired by the functionality of Facebook.
 
-REQUIRED INSTRUCTIONS:
+### Function created:
+- Sign up
+- Sign in 
+- Sign out
+- Create a post
+- Posts appear with the newest post first
+- View the new post on main home page
+- Like a post
+- Post images
+- CRUD on posts
+- Add comments
+- Nav bar and footer
+- Abouts page
+- Using Facebook Color Palette on CSS: `#3b5998 , #8b9dc3, #dfe3ee, #f7f7f7, 	#ffffff`
 
-1. Fork this repository to `acebook-teamname` and customize
-   the below\*\*
+### Technologies used:
+* Languages - Ruby on Rails, Ruby, HTML, CSS, JavaScript, 
+* Applications - Bulma, Rails, PostgreSQL, 
+* Testing - RSpec, Capybara, Rubocop
+* Hosting - [Heroku](https://soda-acebook.herokuapp.com/)
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+--------
 
-2. The card wall is here:
+## Makers Project Intructions:
 
-[You can find the Trello board here](https://trello.com/b/Sj8Qlv4L/team-soda)
+* [Original Repository at Makers](makersacademy/acebook-rails-template)
+* [Engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+
+Our card wall is here:
+* [Find our Trello board here](https://trello.com/b/Sj8Qlv4L/team-soda)
 
 ## How to contribute to this project
 
@@ -40,3 +72,4 @@ ExecJS::RuntimeUnavailable:
 
 That is because Rails will use a Javascript runtime (such as Node) under the hood. The easiest way is to install Node by running `brew install node` -
 and then run `bundle exec rspec` again
+
