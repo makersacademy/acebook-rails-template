@@ -7,7 +7,27 @@
     <%= csrf_meta_tags %>
 <body>
   <header>
-    <%= render 'layouts/navbar' %>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <h1 class="navbar-brand m-0" style="font-size: 175%;" id="nav-txt"><strong>Catbook</strong></h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <% if current_user  %> 
+        <a class="nav-link"  href="/posts">Home</a>
+        <a class="nav-link active" aria-current="page" href="/profile">Profile</a>
+        <%= link_to 'Sign Out', destroy_user_session_path, class:"nav-link", method: :delete %>
+        <% else %>
+        <%= link_to 'Sign Up', new_user_registration_path, class:"nav-link" %>
+        <%= link_to 'Sign In', new_user_session_path, class:"nav-link" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
+    
   </header>
 <br>
   <main>
@@ -18,10 +38,11 @@
     <div class="col justify-content-center">
     <div class="row justify-content-center">
     <div class="profile">
-    <div class="profile_header">
-        <h1 class="text-center text-primary">My Purrfile</h1>
-        </div>
-        <div class="col d-flex justify-content-center">
+    <div class="profile_header d-flex align-items-center">
+        <h1 class="text-primary">My Purrfile</h1>
+        <a class="btn btn-secondary" href="<%=edit_user_registration_path%>">Edit Details </a>
+    </div>
+    <div class="col d-flex justify-content-center">
   <% if current_user.avatar.attached? %>
     <div class ='profile-img'><%= image_tag(current_user.avatar_profile, style: "border-radius: 50%") %></div>
   <% else %>
@@ -31,15 +52,13 @@
     <% end %>
     </div>
         <hr>
-        <h5><span class="text-muted">First Name: </span><%= current_user.firstname.capitalize %></h5>
-        <h5><span class="text-muted">Last Name:    </span><%= current_user.lastname.capitalize %></h5>
-        <h5><span class="text-muted">Location:   </span><%= current_user.location %></h5>
-        <h5><span class="text-muted">Date Of Birth:    </span><%= current_user.date_of_birth %></h5>
-        <h5><span class="text-muted">Interests:    </span><%= current_user.interests %></h5>
-        <h5><span class="text-muted">About Me:</h5> <h6></span><%= current_user.about_me %></h6>
-        <hr>
-        <a class="btn btn-success mx-auto d-block", style="width:50%;" href="<%=edit_user_registration_path%>">Update Details </a>
-        <br>
+        <h5>First Name: <span class="text-muted"><%= current_user.firstname.capitalize %></span></h5>
+        <h5>Last Name:   <span class="text-muted"><%= current_user.lastname.capitalize %></span></h5>
+        <h5>Location:   <span class="text-muted"><%= current_user.location %></span></h5>
+        <h5>Date Of Birth:    <span class="text-muted"><%= current_user.date_of_birth %></span></h5>
+        <h5>Interests:    <span class="text-muted"><%= current_user.interests %></span></h5>
+        <h5>About Me: <span class="text-muted"><%= current_user.about_me %></span></h5>
+
         <% else %>
         <h1>Sign in to view this page.</h1>
         <% end %>
@@ -65,10 +84,10 @@
               <% end  %>
               <div><%= post.user.firstname%> <%= post.user.lastname %></div>
               </div>
-              <div><%= post.created_at.to_formatted_s(:time) %> </div>
+              <div class ='post_time text-secondary'><%= post.created_at.to_formatted_s(:time) %> </div>
           </div>
 
-           <div class ='post__message'>
+          <div class ='post__message'>
             <p><%= post.message %></p>
             <% if post.image.attached? %>
               <div class ='post__message-img'><%= image_tag(post.image) %></div>
@@ -76,21 +95,26 @@
           </div>
 
           <div class ='post__footer-info'>
-            <div><%= post.likes %> <i style ='color: rgb(226, 30, 30)' class="fas fa-heart"></i></div>
+            <div class ='likes text-secondary'><div id ='<%=post.id + 100%>'><%= post.likes.count %></div><i class="fas fa-thumbs-up text-primary"></i></div>
             <% if post.comments.length == 1 %>
-              <div><%= post.comments.length %> <%= link_to "Comment", post, remote: true %></div>
+              <div class ='comments_num text-secondary' id ='comments<%=post.id%>'><%= post.comments.length %> <%= link_to "Comment", post, remote: true, class: "text-secondary" %></div>
             <% else %>
-            <div><%= post.comments.length %> <%= link_to "Comments", post, remote: true %></div>
+            <div class ='comments_num text-secondary' id ='comments<%=post.id%>'><%= post.comments.length %> <%= link_to "Comments", post, remote: true, class: "text-secondary" %></div>
             <% end %>
           </div>
 
           <div class ='post_footer'>
             <p  class ='post__footer-el'>
-              <a href="/posts/<%= post.id %>/like"><i style ='color: #ddd' class="fas fa-heart"></i>     Like</a>
+              <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+              <% if pre_like %>
+                <%= link_to 'Like', post_like_path(post, pre_like), method: :delete, class: "text-primary" %> <span><i class="fas fa-thumbs-up text-primary"></i></span>
+              <% else %>
+                <%= link_to 'Like', post_likes_path(post), method: :post %> <span><i style ='color: #ddd' class="far fa-thumbs-up"></i></span>
+              <% end %>
             </p>
             <p class ='post__footer-el'><%= link_to "Comment", post, class: 'post__footer-el', remote: true %></p>
             <% if post.user == current_user %>
-              <p class ='post__footer-el delete'><%= link_to "Delete", post_path(post), method: :delete %></p>
+              <p class ='post__footer-el deletes'><%= link_to "Delete", post, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'deletes' %></p>
             <% else %>
               <p class ='post__footer-el delete'>Delete</p>
             <% end %>
