@@ -1,7 +1,18 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
+
+  def sign_up
+    visit '/users/new'
+    fill_in 'user_name', with: 'TestName'
+    fill_in 'user_email', with: 'testemail@test.com'
+    fill_in 'user_password', with: 'password123'
+    fill_in 'user_password_confirmation', with: 'password123'
+    click_button 'Create my account'
+  end
+  
   scenario "Can submit posts and view them" do
+    sign_up
     visit "/posts/new"
     fill_in "Message", with: "Hello, world!"
     click_button "Create new post"
@@ -9,6 +20,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can submit a post and like it, and see increased number of likes" do
+    sign_up
     visit "/posts/new"
     fill_in "Message", with: "Hello, world!"
     click_button "Create new post"
@@ -19,6 +31,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can edit posts" do
+    sign_up
     visit "/posts/new"
     fill_in "Message", with: "Hello, world!"
     click_button "Create new post"
@@ -29,6 +42,7 @@ RSpec.feature "Timeline", type: :feature do
   end
 
   scenario "Can delete posts" do
+    sign_up
     visit "/posts/new"
     fill_in "Message", with: "Hello, world!"
     click_button "Create new post"
@@ -43,7 +57,7 @@ RSpec.feature "Timeline", type: :feature do
   #   expect(page).to have_current_path "/posts/new"
   # end
 
-  scenario " Can add comment" do
+  xscenario " Can add comment" do
     visit "/posts/new"
     fill_in "Message", with: "Hello, world!"
     click_button "Create new post"

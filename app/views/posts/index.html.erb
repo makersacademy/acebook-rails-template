@@ -1,6 +1,9 @@
 <section class="section">
   <div class="container">
 
+  <% if logged_in? %>
+
+  <%= link_to "New Post", new_post_path %>
     <div class="card p-5 m-5">
       <article class="media">
         <figure class="media-left">
@@ -83,5 +86,8 @@
 
       <% end %>
   </div>
-</section>
 
+  <% else%>
+    <% flash.now[:danger] = link_to "You are not logged in. Please, login here", login_path %>
+  <% end %>
+</section>

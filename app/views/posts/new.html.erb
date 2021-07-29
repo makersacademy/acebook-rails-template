@@ -1,0 +1,27 @@
+<% if logged_in? %>
+
+<h1 class="title"> New Post </h1>
+
+<div class="section">
+  <%= simple_form_for @post do |f| %>
+  <div class="field">
+    <div class="control">
+      <%= f.input :message, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label'}%>
+    </div>
+   
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+
+  </div>
+  <%= f.button :submit, 'Create new post', class: "button is-primary"%>
+  <% end %>
+</div>
+
+<% else %>
+
+  <% flash.now[:danger] = link_to "You are not logged in. Please, login here", login_path %>
+
+<% end %>
+

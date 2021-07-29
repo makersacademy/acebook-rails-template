@@ -47,6 +47,8 @@ group :development, :test do
 
   gem "rubocop", "0.79.0", require: false
   gem "rubocop-rails"
+  gem 'shoulda', '~> 3.5'
+  
 end
 
 group :development do
