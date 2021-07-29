@@ -45,7 +45,7 @@
                       <%= image_tag(post.image, style: 'width:80%') %>
                     </p>
                   <% end %>
-                  <%= button_to 'SUPER', post_likes_path(post), method: :post %>
+                  <%= button_to 'Like', post_likes_path(post), method: :post %>
                   <p><%= pluralize(post.likes.count, 'like') %></p>
                 </p>
               </div>
