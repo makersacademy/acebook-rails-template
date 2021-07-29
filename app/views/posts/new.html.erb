@@ -1,6 +1,7 @@
 <li><%= link_to "Homepage", "/welcome", method: :get %></li>
 <li><%= link_to 'Posts', '/posts', method: :get%></li>
 <li class="right_links"><%= link_to 'Logout', '/logout', method: :post %></li>
+<li class="right_links"><img src="<%=(url_for(current_user.avatar))%>" width="25" height="30"><li>
 <li class="right_links">Online: <%= current_user.username %></li>
 
 <br><br>
@@ -8,10 +9,9 @@
 <%= form_for @post do |form| %>
   <%= form.label :message %>
   <%= form.text_field :message %>
-  <br>
   <%= form.label :image %>
   <%= form.file_field :image %>
-  <br>
+  <br><br>
   <%= form.submit "Submit" %>
   
 <% end %>
