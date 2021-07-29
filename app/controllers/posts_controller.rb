@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.js
-        format.html { redirect_to @post }
+        format.html { redirect_to posts_url }
         format.json { render 'show', status: :created, location: @post }
       end
     end
@@ -28,18 +28,18 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
 
-  def like
-    @post = Post.find(params[:id])
-    @post.likes += 1
-    @post.save!
-    respond_to do |format|
-      if @post.save
-        format.js
-        format.html { redirect_to posts_url }
-        format.json { head :no_content }
-      end
-    end
-  end
+  # def like
+  #   @post = Post.find(params[:id])
+  #   @post.likes += 1
+  #   @post.save!
+  #   respond_to do |format|
+  #     if @post.save
+  #       format.js
+  #       format.html { redirect_to posts_url }
+  #       format.json { head :no_content }
+  #     end
+  #   end
+  # end
 
   def show
     @post = Post.find(params[:id])

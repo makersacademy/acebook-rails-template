@@ -15,9 +15,9 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_scope :posts do
-    get '/posts/:id/like', to: 'posts#like', as: 'like'
-  end
+  # devise_scope :posts do
+  #   get '/posts/:id/like', to: 'posts#like', as: 'like'
+  # end
 
   get '/profile', to: 'profile#index'
   devise_scope :posts do
@@ -26,5 +26,6 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments
+    resources :likes
   end
 end
