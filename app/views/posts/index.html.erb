@@ -29,7 +29,7 @@
               <% end  %>
               <div><%= post.user.firstname%> <%= post.user.lastname %></div>
               </div>
-              <div class ='post_time'><%= post.created_at.to_formatted_s(:time) %> </div>
+              <div class ='post_time text-secondary'><%= post.created_at.to_formatted_s(:time) %> </div>
           </div>
 
           <div class ='post__message'>
@@ -40,17 +40,23 @@
           </div>
 
           <div class ='post__footer-info'>
-            <div class ='likes'><div id ='<%=post.id + 100%>'><%= post.likes %></div><i style ='color: rgb(226, 30, 30)' class="fas fa-heart"></i></div>
+            <div class ='likes text-secondary'><div id ='<%=post.id + 100%>'><%= post.likes.count %></div><i class="fas fa-thumbs-up text-primary"></i></div>
             <% if post.comments.length == 1 %>
-              <div class ='comments_num' id ='comments<%=post.id%>'><%= post.comments.length %> <%= link_to "Comment", post, remote: true %></div>
+              <div class ='comments_num text-secondary' id ='comments<%=post.id%>'><%= post.comments.length %> <%= link_to "Comment", post, remote: true, class: "text-secondary" %></div>
             <% else %>
-            <div class ='comments_num' id ='comments<%=post.id%>'><%= post.comments.length %> <%= link_to "Comments", post, remote: true %></div>
+            <div class ='comments_num text-secondary' id ='comments<%=post.id%>'><%= post.comments.length %> <%= link_to "Comments", post, remote: true, class: "text-secondary" %></div>
             <% end %>
           </div>
 
           <div class ='post_footer'>
-            <p  class ='post__footer-el likes'>
-              <%= link_to 'Like', like_path(post), remote: true %><i style ='color: #ddd' class="fas fa-heart"></i>
+            <p  class ='post__footer-el'>
+              <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+              <% if pre_like %>
+                <%= link_to 'Like', post_like_path(post, pre_like), method: :delete, class: "text-primary" %><i class="fas fa-thumbs-up text-primary"></i></span>
+              <% else %>
+                <%= link_to 'Like', post_likes_path(post), method: :post %> <span><i style ='color: #ddd' class="far fa-thumbs-up"></i></span>
+              <% end %>
+
             </p>
             <p class ='post__footer-el'><%= link_to "Comment", post, class: 'post__footer-el', remote: true %></p>
             <% if post.user == current_user %>
