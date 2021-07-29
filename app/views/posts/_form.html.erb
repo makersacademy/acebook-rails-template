@@ -1,0 +1,14 @@
+<%= simple_form_for @post do |f| %>
+<div class="field">
+  <div class="control">
+    <%= f.input :message, input_html: { class: 'textarea' }, wrapper: false, placeholder: "What's on your mind?" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :image, name: "Upload an image:" %>
+    <%= f.file_field :image %>
+  </div>
+
+</div>
+<%= f.button :submit, 'Create new post', class: "button is-primary"%>
+<% end %>

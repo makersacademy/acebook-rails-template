@@ -1,31 +1,87 @@
 <section class="section">
   <div class="container">
 
-    <%= link_to "New Post" , new_post_path %>
+    <div class="card p-5 m-5">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-128x128">
+          <%# CURRENT USER PROFILE PIC %>
+          <img src="https://bulma.io/images/placeholders/128x128.png">
+          </p>
+        </figure>
+        <div class="media-content">
+          <%= render "form", post: @post %>
+        </div>
+      </article>
+    </div>
 
       <% @posts.each do |post| %>
-        <div class="card">
-          <div class="card-content">
-            <div class="content">
+        <div class="card p-5 m-5">
+          <article class="media">
+            <figure class="media-left">
+              <p class="image is-64x64">
+                <%# POSTER PROFILE PIC %>
+                <img src="https://bulma.io/images/placeholders/128x128.png">
+              </p>
+            </figure>
 
-              <%= post.message %>
-                <br>
-                <% if post.image.attached? %>
-                  <%= image_tag(post.image, style:"width:30%") %>
-                    <% end %>
-                      <br>
-                      <%= pluralize(post.likes,'like')%>
-                        <br>
-                        <a href="/posts/<%= post.id %>/like">Like</a>
-                        <br>
-                        <%= link_to "Edit" , edit_post_path(post) %>
-                          <%= link_to "Delete" , post, method: :delete, data: { confirm: "Delete this post?" } %>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>POSTER NAME HERE</strong>
+                  <%= link_to "Edit" , edit_post_path(post) %>
+                  <%= link_to "Delete" , post, method: :delete, data: { confirm: "Delete this post?" } %>
+                  <br>
+                  <%= post.message %>
+                  <br>
+                  <% if post.image.attached? %>
+                    <p class="image is-fullwidth">
+                      <%= image_tag(post.image, style: 'width:80%') %>
+                    </p>
+                  <% end %>
+                  <small>
+                    <a href="/posts/<%= post.id %>/like">Like</a>
+                    <br>
+                    <%= pluralize(post.likes,'like')%>
+                  </small>
+                </p>
+              </div>
+
+              <%= render post.comments %>
+
             </div>
-            <!-- <div class="comment-count">
-            <span class="tag is-rounded"><%# comment count %></span>
-          </div> -->
-          </div>
-        </div>
-        <% end %>
+          </article>
+
+          <article class="media">
+            <figure class="media-left">
+              <p class="image is-64x64">
+                <%# CURRENT USER PROFILE PIC %>
+                <img src="https://bulma.io/images/placeholders/128x128.png">
+              </p>
+            </figure>
+
+            <div class="media-content">
+              <%= form_with(model: [post, post.comments.build]) do |f| %>
+
+              <div class="field">
+                <p class="control">
+                  <%= f.text_area :body, class: 'input', placeholder: "Write a comment..." %>
+                </p>
+              </div>
+
+              <div class="field">
+                <p class="control">
+                  <%= f.submit 'Submit', class: 'button is-primary' %>
+                </p>
+              </div>
+
+              <% end %>
+            </div>
+
+          </article>
+        </div>       
+
+      <% end %>
   </div>
 </section>
+
