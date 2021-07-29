@@ -12,8 +12,4 @@ end
 
 RSpec.configure do |config|
   config.include CapybaraHelpers, type: :feature
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> sign-in & sign-up finished
