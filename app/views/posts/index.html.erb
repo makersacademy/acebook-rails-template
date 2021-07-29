@@ -31,7 +31,7 @@
             <div class="media-content">
               <div class="content">
                 <p>
-                  <strong> <%= User.find(@post.user_id).name if @post.user_id != nil %></strong>
+                  <strong> <%= post.user.name %></strong>
                   
                  
                   <%= link_to "Edit" , edit_post_path(post) %>
