@@ -1,0 +1,24 @@
+<title>The name of your site</title>
+    <%= stylesheet_link_tag 'style' %>
+    <%= javascript_include_tag 'interface' %> 
+    <%= csrf_meta_tags %>
+
+<%= form_with(model: [@post, @comment], local: true) do |form| %>
+   <div class ='post__enter-comments'>
+      <div class ='comment__text-area'><%= form.text_field :body, placeholder: "Write a comment..." %></div>
+      <button type ="submit" class='btn btn-primary'>Enter</button>
+    </div>
+  </p>
+  <% @post.comments.each do |comment| %>
+    <span class ='comment'><%= current_user.firstname%>: <%= comment.body %></span>
+    <br>
+    <br>
+<% end %>
+
+<div style="width: 200px; height: auto">
+  <% if @post.image.attached? %>
+    <%= image_tag(@post.image, style:'width:100%') %>
+  <% end %>
+</div>
+  <% end %>
+ 
