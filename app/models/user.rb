@@ -7,11 +7,15 @@ class User < ApplicationRecord
   validates :firstname, presence: true
   validates :lastname, presence: true
 
-  
+
+  def avatar_thumbnail
+    avatar.variant(resize: "75x75!").processed
+  end
 
   def avatar_profile
-    avatar.variant(resize: "350x525!").processed
+    avatar.variant(resize: '350x525!').processed
   end
+
   has_many :posts
   has_many :comments
 end

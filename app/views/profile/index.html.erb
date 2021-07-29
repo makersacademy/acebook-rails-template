@@ -12,11 +12,11 @@
   </header>
 
   <main>
-
+<br><br>
   <% if current_user  %> 
     <div class="container">
     <div class="row">
-    <div class="col">
+    <div class="col d-flex justify-content-center">
   <% if current_user.avatar.attached? %>
   <%= image_tag(current_user.avatar_profile) %>
   <% else %>
@@ -25,17 +25,49 @@
      <%= form_with(model: @user, local: true) do |form| %>
     <% end %>
     </div>
-    <div class="col">
-        <h1>Profile Settings</h1>
-        <p>First Name: <%= current_user.firstname %></p>
-        <p>Last Name: <%= current_user.lastname %></p>
-        <h3><%= link_to 'Click to edit Account', edit_user_registration_path %></h3>
+    <div class="col justify-content-center">
+    <div class="row justify-content-center">
+    <div class="profile">
+    <div class="profile_header">
+        <h1 class="text-center text-primary">My Purrfile</h1>
+        </div>
+        <hr>
+        <h5><span class="text-muted">First Name: </span><%= current_user.firstname.capitalize %></h5>
+        <h5><span class="text-muted">Last Name:    </span><%= current_user.lastname.capitalize %></h5>
+        <h5><span class="text-muted">Location:   </span><%= current_user.location %></h5>
+        <h5><span class="text-muted">Date Of Birth:    </span><%= current_user.date_of_birth %></h5>
+        <h5><span class="text-muted">Interests:    </span><%= current_user.interests %></h5>
+        <h5><span class="text-muted">About Me:</h5> <h6></span><%= current_user.about_me %></h6>
+        <hr>
+        <a class="btn btn-success mx-auto d-block", style="width:50%;" href="<%=edit_user_registration_path%>">Update Details </a>
+        <br>
         <% else %>
         <h1>Sign in to view this page.</h1>
         <% end %>
     </div>
+  
+    <main>
+
+  </div>
+
   </div>
   </main>
 
+  <div>
+  <%=end%>
+      <% @user = current_user%>
+      <% @posts = @user.posts %>
+
+
+     <% @posts.each do |post| %>
+        <%= post.message %> <br>
+          <% if post.image.attached? %>
+            <div class ='post__message-img'><%= image_tag(post.image) %></div>
+        <%end%>
+            </div>
+     <% end %> 
+
+     
+    </div>
 </body>
 </html>
